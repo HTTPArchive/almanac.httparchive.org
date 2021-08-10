@@ -16,9 +16,9 @@ try {
     if (Array.isArray(element_count)) return [];
     if (typeof element_count != 'object') return [];
 
-    return Object.keys(element_count); 
+    return Object.keys(element_count);
 } catch (e) {
-    return []; 
+    return [];
 }
 ''';
 
@@ -31,8 +31,8 @@ try {
 FROM
   `httparchive.pages.2020_08_01_*`
 JOIN
-  (SELECT _TABLE_SUFFIX, COUNT(0) AS total 
-  FROM 
+  (SELECT _TABLE_SUFFIX, COUNT(0) AS total
+  FROM
   `httparchive.pages.2020_08_01_*`
   GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
 USING (_TABLE_SUFFIX),

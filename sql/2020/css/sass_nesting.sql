@@ -1,6 +1,9 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getNestedUsage(payload STRING) RETURNS
-ARRAY<STRUCT<nested STRING, freq INT64>> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getNestedUsage(payload STRING)
+RETURNS ARRAY<STRUCT<nested STRING, freq INT64>>
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
   var $ = JSON.parse(payload);
   var scss = JSON.parse($['_sass']);
@@ -16,8 +19,7 @@ try {
 } catch (e) {
   return [];
 }
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   client,

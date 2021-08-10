@@ -1,5 +1,5 @@
 #standardSQL
-# % of pages having specific custom elements 
+# % of pages having specific custom elements
 # See related: sql/2019/03_Markup/03_03c.sql
 
 # 4.9 seconds for sample 10k
@@ -11,7 +11,7 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
 );
 
 CREATE TEMPORARY FUNCTION get_element_types_with_a_dash(element_count_string STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS ''' 
+RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
     if (!element_count_string) return []; // 2019 had a few cases
 
@@ -21,11 +21,11 @@ try {
     if (typeof element_count != 'object') return [];
 
     var r = Object.keys(element_count).filter(e => e.includes('-')); // array of element type names that include a dash
-    if (r.length > 0) return r; 
+    if (r.length > 0) return r;
 
     return []; // could be handy having a row showing how many pages do not have one
 } catch (e) {
-    return []; 
+    return [];
 }
 ''';
 
@@ -37,9 +37,9 @@ SELECT
   AS_PERCENT(COUNT(DISTINCT url), total) AS pct
 FROM
   `httparchive.pages.2020_08_01_*`
-  
+
 JOIN
-  (SELECT _TABLE_SUFFIX, COUNT(0) AS total FROM 
+  (SELECT _TABLE_SUFFIX, COUNT(0) AS total FROM
   `httparchive.pages.2020_08_01_*`
   GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
 USING (_TABLE_SUFFIX),

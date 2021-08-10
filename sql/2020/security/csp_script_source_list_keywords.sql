@@ -1,8 +1,10 @@
 #standardSQL
 # CSP: usage of default/script-src, and within the directive usage of strict-dynamic, nonce values, unsafe-inline and unsafe-eval
-CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING)
-  RETURNS STRING DETERMINISTIC
-  LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING) -- noqa: PRS
+-- SQL Linter cannot handle DETERMINISTIC keyword so needs noqa ignore command on previous line
+RETURNS STRING
+DETERMINISTIC
+LANGUAGE js AS '''
   const parsed_headers = JSON.parse(headers);
   const matching_headers = parsed_headers.filter(h => h.name.toLowerCase() == headername.toLowerCase());
   if (matching_headers.length > 0) {
@@ -27,7 +29,7 @@ SELECT
   SAFE_DIVIDE(freq_unsafe_inline, freq_default_script_src) AS pct_unsafe_inline_over_csp_with_src,
   freq_unsafe_eval,
   SAFE_DIVIDE(freq_unsafe_eval, freq_csp) AS pct_unsafe_eval_over_csp,
-  SAFE_DIVIDE(freq_unsafe_eval, freq_default_script_src) AS pct_unsafe_eval_over_csp_with_src,
+  SAFE_DIVIDE(freq_unsafe_eval, freq_default_script_src) AS pct_unsafe_eval_over_csp_with_src
 FROM (
   SELECT
     client,
@@ -37,7 +39,7 @@ FROM (
     COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)(default|script)-src[^;]+strict-dynamic')) AS freq_strict_dynamic,
     COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)(default|script)-src[^;]+nonce-')) AS freq_nonce,
     COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)(default|script)-src[^;]+unsafe-inline')) AS freq_script_unsafe_inline,
-    COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)(default|script)-src[^;]+unsafe-eval')) AS freq_script_unsafe_eval
+    COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)(default|script)-src[^;]+unsafe-eval')) AS freq_script_unsafe_eval,
     COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)unsafe-inline')) AS freq_unsafe_inline,
     COUNTIF(REGEXP_CONTAINS(csp_header, '(?i)unsafe-eval')) AS freq_unsafe_eval
   FROM (

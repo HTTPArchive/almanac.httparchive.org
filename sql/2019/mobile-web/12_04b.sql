@@ -44,7 +44,7 @@ SELECT
 FROM
   `httparchive.pages.2019_07_01_mobile`,
   (SELECT COUNT(0) AS total_pages FROM `httparchive.pages.2019_07_01_mobile`),
-  UNNEST(getViewportDirectiveData(payload)) as viewport_info
+  UNNEST(getViewportDirectiveData(payload)) AS viewport_info
 GROUP BY
   total_pages,
   viewport_info.directive,

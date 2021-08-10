@@ -80,7 +80,7 @@ try {
       result.inputs_types_image_total = Object.entries(markup.inputs.types)
         .filter(([key, value]) => key.trim().toLowerCase() == "image")
         .reduce((total, [key, value]) => total + value, 0);
-        
+
       result.inputs_types_button_total = Object.entries(markup.inputs.types)
         .filter(([key, value]) => key.trim().toLowerCase() == "button")
         .reduce((total, [key, value]) => total + value, 0);
@@ -138,13 +138,13 @@ SELECT
   # pages with an svg iframe
   AS_PERCENT(COUNTIF(markup_info.svg_iframe_total > 0), COUNT(0)) AS pct_svg_iframe_m231,
 
-  # pages with an svg 
+  # pages with an svg
   AS_PERCENT(COUNTIF(markup_info.svg_total > 0), COUNT(0)) AS pct_svg__m233,
 
-  # pages with a button 
+  # pages with a button
   AS_PERCENT(COUNTIF(markup_info.buttons_total > 0), COUNT(0)) AS pct_buttons_m302,
 
-  # pages with a button without a type 
+  # pages with a button without a type
   AS_PERCENT(COUNTIF(markup_info.buttons_total > markup_info.buttons_with_type), COUNT(0)) AS pct_buttons_without_type_m303,
 
   # pages with autoplaying audio elements M312
@@ -166,16 +166,15 @@ SELECT
   AS_PERCENT(COUNTIF(markup_info.dirs_html_dir = "auto"), COUNT(0)) AS pct_html_dir_auto_m413,
 
   # pages with dir on other elements M414
-  AS_PERCENT(COUNTIF(markup_info.dirs_body_nodes_dir_total > 0), COUNT(0)) AS pct_body_nodes_dir_set_m414,
+  AS_PERCENT(COUNTIF(markup_info.dirs_body_nodes_dir_total > 0), COUNT(0)) AS pct_body_nodes_dir_set_m414
 
-  FROM
-    ( 
-      SELECT 
+FROM
+    (
+      SELECT
         _TABLE_SUFFIX AS client,
-        get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info     
+        get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
       FROM
         `httparchive.pages.2020_08_01_*`
     )
 GROUP BY
   client
-  

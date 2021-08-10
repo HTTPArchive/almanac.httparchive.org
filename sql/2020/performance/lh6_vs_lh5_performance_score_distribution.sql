@@ -6,7 +6,7 @@ FROM (
   SELECT
     perf_score_lh6 - perf_score_lh5 AS perf_score_delta,
     ROW_NUMBER() OVER (ORDER BY (perf_score_lh6 - perf_score_lh5)) AS row_number,
-    COUNT(0) OVER () AS n
+    COUNT(0) OVER (PARTITION BY 0) AS n
   FROM (
     SELECT
       CAST(JSON_EXTRACT(lh6.report, '$.categories.performance.score') AS NUMERIC) AS perf_score_lh6,

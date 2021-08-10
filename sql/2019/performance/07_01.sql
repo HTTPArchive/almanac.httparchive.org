@@ -10,7 +10,7 @@ FROM (
     ROUND(avg_fcp * 100, 2) AS avg,
     ROUND(slow_fcp * 100, 2) AS slow,
     ROW_NUMBER() OVER (ORDER BY fast_fcp DESC) AS row,
-    COUNT(0) OVER () AS n
+    COUNT(0) OVER (PARTITION BY 0) AS n
   FROM
     `chrome-ux-report.materialized.metrics_summary`
   WHERE

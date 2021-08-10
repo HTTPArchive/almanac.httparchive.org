@@ -6,7 +6,7 @@ LANGUAGE js AS """
   try {
     var $ = JSON.parse(payload);
     var headers = $.response.headers;
-    var st = headers.find(function(e) { 
+    var st = headers.find(function(e) {
       return e['name'].toLowerCase() === 'upgrade'
     });
     return st['value'];
@@ -15,16 +15,16 @@ LANGUAGE js AS """
   }
 """;
 
-SELECT 
+SELECT
   client,
   firstHtml,
-  JSON_EXTRACT_SCALAR(payload, '$._protocol') as http_version,
+  JSON_EXTRACT_SCALAR(payload, '$._protocol') AS http_version,
   COUNTIF(getUpgradeHeader(payload) LIKE "%h2%") AS num_requests,
   COUNT(0) AS total
-FROM 
+FROM
   `httparchive.almanac.requests`
 WHERE
-  date = '2020-08-01' AND 
+  date = '2020-08-01' AND
   url LIKE "https://%" AND
   LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) NOT LIKE "http/2" AND
   LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) NOT LIKE "%quic%" AND

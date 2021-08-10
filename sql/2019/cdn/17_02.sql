@@ -2,31 +2,31 @@
 # 17_02: Percentage of the sites which use a CDN for any resource
 SELECT
     client,
-    COUNTIF(firstHtml) as htmlHits,
-    COUNTIF(not firstHtml and sameHost) as domainHits,
-    COUNTIF(not sameHost and sameDomain) as subdomainHits,
-    COUNTIF(not sameHost and not sameDomain) as thirdPartyHits,
+    COUNTIF(firstHtml) AS htmlHits,
+    COUNTIF(NOT firstHtml AND sameHost) AS domainHits,
+    COUNTIF(NOT sameHost AND sameDomain) AS subdomainHits,
+    COUNTIF(NOT sameHost AND NOT sameDomain) AS thirdPartyHits,
     COUNT(0) AS hits,
-    sum(if(firstHtml, respBodySize, 0)) as htmlBytes,
-    sum(if(not firstHtml and sameHost, respBodySize, 0)) as domainBytes,
-    sum(if(not sameHost and sameDomain, respBodySize, 0)) as subdomainBytes,
-    sum(if(not sameHost and not sameDomain, respBodySize, 0)) as thirdPartyBytes,
-    sum(respBodySize) as bytes,
+    SUM(IF(firstHtml, respBodySize, 0)) AS htmlBytes,
+    SUM(IF(NOT firstHtml AND sameHost, respBodySize, 0)) AS domainBytes,
+    SUM(IF(NOT sameHost AND sameDomain, respBodySize, 0)) AS subdomainBytes,
+    SUM(IF(NOT sameHost AND NOT sameDomain, respBodySize, 0)) AS thirdPartyBytes,
+    SUM(respBodySize) AS bytes,
 
     COUNTIF(cdn != 'ORIGIN') AS cdnHits,
-    ROUND((COUNTIF(cdn != 'ORIGIN') * 100) / count(0), 2) AS hitsPct,
-    sum(case when cdn != 'ORIGIN' then respBodySize else 0 end) as cdnBytes,
-    ROUND((sum(case when _cdn_provider != '' then respBodySize else 0 end) * 100) / sum(respBodySize), 2) AS bytesPct
+    ROUND((COUNTIF(cdn != 'ORIGIN') * 100) / COUNT(0), 2) AS hitsPct,
+    SUM(CASE WHEN cdn != 'ORIGIN' THEN respBodySize ELSE 0 END) AS cdnBytes,
+    ROUND((SUM(CASE WHEN _cdn_provider != '' THEN respBodySize ELSE 0 END) * 100) / SUM(respBodySize), 2) AS bytesPct
   FROM
     (
       SELECT
         client, page, url, firstHtml, respBodySize,
-        ifnull(nullif(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') as cdn,
-        case when NET.HOST(url) = NET.HOST(page) then true else false end sameHost,
-        case when NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page) then true else false end sameDomain # if toplevel reg_domain will return null so we group this as sameDomain
+        IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') AS cdn,
+        CASE WHEN NET.HOST(url) = NET.HOST(page) THEN TRUE ELSE FALSE END AS sameHost,
+        CASE WHEN NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page) THEN TRUE ELSE FALSE END AS sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain
       FROM `httparchive.almanac.requests3`
       --GROUP BY client, pageid, requestid, page, url, firstHtml, _cdn_provider, respBodySize
     )
   GROUP BY
-    client DESC,
-    hits DESC
+    client,
+    hits

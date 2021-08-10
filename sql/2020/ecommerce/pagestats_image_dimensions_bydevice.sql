@@ -1,7 +1,7 @@
 #standardSQL
 # 13_06c: Distribution of image dimensions
 
-## $4.11 run 
+## $4.11 run
 
 CREATE TEMPORARY FUNCTION getImageDimensions(payload STRING)
 RETURNS ARRAY<STRUCT<height INT64, width INT64>> LANGUAGE js AS '''
