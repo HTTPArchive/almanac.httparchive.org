@@ -14,7 +14,7 @@ freq INT64
 >> LANGUAGE js AS '''
 var result = [];
 try {
-    var markup = JSON.parse(markup_string); 
+    var markup = JSON.parse(markup_string);
 
     if (Array.isArray(markup) || typeof markup != 'object') return result;
 
@@ -25,7 +25,7 @@ try {
 
       result.push({name:"NO_TYPE", freq: total - withType})
 
-      return result; 
+      return result;
     }
 
 } catch (e) {}
@@ -35,14 +35,14 @@ return result;
 SELECT
   _TABLE_SUFFIX AS client,
   markup_input_info.name AS input_type,
-  COUNTIF(markup_input_info.freq > 0) AS freq_page_with_input, 
+  COUNTIF(markup_input_info.freq > 0) AS freq_page_with_input,
   AS_PERCENT(COUNTIF(markup_input_info.freq > 0), total) AS pct_page_with_input,
-  SUM(markup_input_info.freq) AS freq_input, 
+  SUM(markup_input_info.freq) AS freq_input,
   AS_PERCENT(SUM(markup_input_info.freq), SUM(SUM(markup_input_info.freq)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct_input
 FROM
     `httparchive.pages.2020_08_01_*`
     JOIN
-      (SELECT _TABLE_SUFFIX, COUNT(0) AS total FROM 
+      (SELECT _TABLE_SUFFIX, COUNT(0) AS total FROM
       `httparchive.pages.2020_08_01_*`
       GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
     USING (_TABLE_SUFFIX),
@@ -51,6 +51,6 @@ GROUP BY
   client,
   input_type,
   total
-ORDER BY 
+ORDER BY
   freq_page_with_input DESC
 LIMIT 1000

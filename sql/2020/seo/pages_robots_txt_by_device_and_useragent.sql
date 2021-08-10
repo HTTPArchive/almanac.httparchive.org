@@ -16,13 +16,13 @@ var result = {
 };
 try {
     var robots_txt = JSON.parse(robots_txt_string);
- 
+
     if (Array.isArray(robots_txt) || typeof robots_txt != 'object') return result;
 
     if (robots_txt.user_agents) {
       var uas = robots_txt.user_agents.map(ua => ua.toLowerCase());
       var uas =  uas.filter(function(item, pos) { return uas.indexOf(item) == pos;}); // remove duplicates
-      result.user_agents = uas; 
+      result.user_agents = uas;
     }
 
 } catch (e) {}
@@ -32,25 +32,25 @@ return result;
 SELECT
   client,
   user_agent,
-  total, 
+  total,
   COUNT(0) AS count,
   AS_PERCENT(COUNT(0), total) AS pct
 FROM
-( 
-  SELECT 
+(
+  SELECT
     _TABLE_SUFFIX AS client,
     total,
-    get_robots_txt_info(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_info   
-  FROM 
-    `httparchive.pages.2020_08_01_*` 
+    get_robots_txt_info(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_info
+  FROM
+    `httparchive.pages.2020_08_01_*`
   JOIN
-  ( 
+  (
     # to get an accurate total of pages per device. also seems fast
-    SELECT _TABLE_SUFFIX, COUNT(0) AS total 
-    FROM 
+    SELECT _TABLE_SUFFIX, COUNT(0) AS total
+    FROM
     `httparchive.pages.2020_08_01_*`
     GROUP BY _TABLE_SUFFIX
-  ) 
+  )
   USING (_TABLE_SUFFIX)
 ),
 UNNEST(robots_txt_info.user_agents) AS user_agent

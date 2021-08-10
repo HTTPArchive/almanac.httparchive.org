@@ -29,14 +29,14 @@ SELECT
   APPROX_QUANTILES(fcp, 1000)[OFFSET(500)] AS median_fcp,
   APPROX_QUANTILES(lcp, 1000)[OFFSET(500)] AS median_lcp
 FROM (
-  SELECT
-    DISTINCT _TABLE_SUFFIX AS client,
+  SELECT DISTINCT
+    _TABLE_SUFFIX AS client,
     url AS page,
     hint.name,
     CAST(JSON_EXTRACT_SCALAR(payload,
         "$['_chromeUserTiming.firstContentfulPaint']") AS INT64) AS fcp,
     CAST(JSON_EXTRACT_SCALAR(payload,
-        "$['_chromeUserTiming.LargestContentfulPaint']") AS INT64) AS lcp,
+        "$['_chromeUserTiming.LargestContentfulPaint']") AS INT64) AS lcp
   FROM
     `httparchive.pages.2020_08_01_*`
   LEFT JOIN
@@ -49,11 +49,11 @@ LEFT JOIN (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date='2020-08-01')
+    date = '2020-08-01')
 USING
   (client, page)
 WHERE
-  type='font'
+  type = 'font'
 GROUP BY
   client,
   name,

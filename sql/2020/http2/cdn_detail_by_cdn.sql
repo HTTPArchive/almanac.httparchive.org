@@ -1,5 +1,5 @@
 # standardSQL
-# CDN Detail by CDN 
+# CDN Detail by CDN
 SELECT
   percentile,
   client,
@@ -18,7 +18,7 @@ FROM (
      client,
      page,
      firstHTML,
-     IFNULL(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'),'') as CDN,
+     IFNULL(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), '') AS CDN,
      url,
      JSON_EXTRACT_SCALAR(payload, '$._protocol') AS http_version
 FROM
@@ -41,4 +41,3 @@ ORDER BY
   client,
   firstHTML,
   CDN
-  

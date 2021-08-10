@@ -19,26 +19,26 @@ RETURNS STRUCT<
   target_blank_noreferrer_total INT64,
   target_blank_neither_total INT64,
 
-  n_h1 INT64, 
-  n_h2 INT64, 
-  n_h3 INT64, 
-  n_h4 INT64, 
-  n_h5 INT64, 
-  n_h6 INT64, 
-  n_h7 INT64, 
+  n_h1 INT64,
+  n_h2 INT64,
+  n_h3 INT64,
+  n_h4 INT64,
+  n_h5 INT64,
+  n_h6 INT64,
+  n_h7 INT64,
   n_h8 INT64,
-  n_non_empty_h1 INT64, 
-  n_non_empty_h2 INT64, 
-  n_non_empty_h3 INT64, 
+  n_non_empty_h1 INT64,
+  n_non_empty_h2 INT64,
+  n_non_empty_h3 INT64,
   n_non_empty_h4 INT64,
-  n_non_empty_h5 INT64, 
-  n_non_empty_h6 INT64, 
-  n_non_empty_h7 INT64, 
+  n_non_empty_h5 INT64,
+  n_non_empty_h6 INT64,
+  n_non_empty_h7 INT64,
   n_non_empty_h8 INT64
 > LANGUAGE js AS '''
 var result = {};
 try {
-    var wpt_bodies = JSON.parse(wpt_bodies_string); 
+    var wpt_bodies = JSON.parse(wpt_bodies_string);
 
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
@@ -143,14 +143,14 @@ SELECT
   AS_PERCENT(COUNTIF(wpt_bodies_info.target_blank_noreferrer_total > 0), COUNT(0)) AS pct_has_target_blank_noreferrer,
   AS_PERCENT(COUNTIF(wpt_bodies_info.target_blank_neither_total > 0), COUNT(0)) AS pct_has_target_blank_neither,
 
-  ROUND(AVG(wpt_bodies_info.n_h1),2) AS avg_h1,
-  ROUND(AVG(wpt_bodies_info.n_h2),2) AS avg_h2,
-  ROUND(AVG(wpt_bodies_info.n_h3),2) AS avg_h3,
-  ROUND(AVG(wpt_bodies_info.n_h4),2) AS avg_h4,
-  ROUND(AVG(wpt_bodies_info.n_h5),2) AS avg_h5,
-  ROUND(AVG(wpt_bodies_info.n_h6),2) AS avg_h6,
-  ROUND(AVG(wpt_bodies_info.n_h7),2) AS avg_h7,
-  ROUND(AVG(wpt_bodies_info.n_h8),2) AS avg_h8,
+  ROUND(AVG(wpt_bodies_info.n_h1), 2) AS avg_h1,
+  ROUND(AVG(wpt_bodies_info.n_h2), 2) AS avg_h2,
+  ROUND(AVG(wpt_bodies_info.n_h3), 2) AS avg_h3,
+  ROUND(AVG(wpt_bodies_info.n_h4), 2) AS avg_h4,
+  ROUND(AVG(wpt_bodies_info.n_h5), 2) AS avg_h5,
+  ROUND(AVG(wpt_bodies_info.n_h6), 2) AS avg_h6,
+  ROUND(AVG(wpt_bodies_info.n_h7), 2) AS avg_h7,
+  ROUND(AVG(wpt_bodies_info.n_h8), 2) AS avg_h8,
 
   SUM(wpt_bodies_info.n_h1) AS freq_h1,
   SUM(wpt_bodies_info.n_h2) AS freq_h2,
@@ -159,16 +159,15 @@ SELECT
   SUM(wpt_bodies_info.n_h5) AS freq_h5,
   SUM(wpt_bodies_info.n_h6) AS freq_h6,
   SUM(wpt_bodies_info.n_h7) AS freq_h7,
-  SUM(wpt_bodies_info.n_h8) AS freq_h8,
+  SUM(wpt_bodies_info.n_h8) AS freq_h8
 
-  FROM
-    ( 
-      SELECT 
+FROM
+    (
+      SELECT
         _TABLE_SUFFIX AS client,
-        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info      
+        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
       FROM
        `httparchive.pages.2020_08_01_*`
     )
 GROUP BY
   client
-  

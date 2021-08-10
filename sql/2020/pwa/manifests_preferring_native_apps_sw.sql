@@ -18,13 +18,13 @@ SELECT
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
   (SELECT DISTINCT
-    m.client,
-    m.page,
-    m.body
+    client,
+    page,
+    body
   FROM
-    `httparchive.almanac.manifests` m
+    `httparchive.almanac.manifests`
   JOIN
-    `httparchive.almanac.service_workers` sw
+    `httparchive.almanac.service_workers`
   USING
     (date, client, page)
   WHERE

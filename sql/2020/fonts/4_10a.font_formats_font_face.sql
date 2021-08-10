@@ -33,12 +33,12 @@ SELECT
  format,
  COUNT(0) AS freq,
  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
- COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct,
+ COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
  `httparchive.almanac.parsed_css`,
  UNNEST(getFontFormats(css)) AS format
 WHERE
- date='2020-08-01'
+ date = '2020-08-01'
 GROUP BY
  client,
  format

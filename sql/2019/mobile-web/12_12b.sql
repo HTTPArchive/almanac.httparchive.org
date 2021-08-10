@@ -80,7 +80,7 @@ SELECT
   ROUND(COUNT(DISTINCT url) * 100 / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY input_info.detected_type), 2) AS perc_sites
 FROM
   `httparchive.pages.2019_07_01_mobile`,
-  UNNEST(getInputInfo(payload)) as input_info
+  UNNEST(getInputInfo(payload)) AS input_info
 GROUP BY
   input_info.detected_type,
   input_info.using_best_type

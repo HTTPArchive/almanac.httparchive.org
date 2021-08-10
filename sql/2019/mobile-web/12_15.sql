@@ -30,14 +30,14 @@ RETURNS STRUCT<has_advanced_attributes BOOLEAN, total_inputs INT64> LANGUAGE js 
 ''';
 
 SELECT
-    COUNT(0) as count,
+    COUNT(0) AS count,
     COUNTIF(input_stats.total_inputs > 0) AS total_applicable,
 
     COUNTIF(input_stats.has_advanced_attributes) AS total_pages_using,
     ROUND(COUNTIF(input_stats.has_advanced_attributes) * 100 / COUNTIF(input_stats.total_inputs > 0), 2) AS occurence_perc
 FROM (
   SELECT
-    getInputStats(payload) as input_stats
+    getInputStats(payload) AS input_stats
   FROM
     `httparchive.pages.2019_07_01_mobile`
 )

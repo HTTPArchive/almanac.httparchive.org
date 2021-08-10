@@ -8,7 +8,7 @@ SELECT
 FROM
   `httparchive.summary_pages.2020_08_01_*`
 JOIN (
-  SELECT  DISTINCT 
+  SELECT DISTINCT
     _TABLE_SUFFIX,
     url
   FROM `httparchive.technologies.2020_08_01_*`

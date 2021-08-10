@@ -9,7 +9,7 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
 
 # returns all the data we need from _markup
 CREATE TEMPORARY FUNCTION get_markup_info(markup_string STRING)
-RETURNS STRUCT<  
+RETURNS STRUCT<
   loading ARRAY<STRING>
 > LANGUAGE js AS '''
 var result = {};
@@ -28,7 +28,7 @@ function getKey(dict){
 
 try {
     var markup = JSON.parse(markup_string);
-  
+
     if (Array.isArray(markup) || typeof markup != 'object') return result;
 
     if (markup.images && markup.images.img && markup.images.img.loading) {
@@ -40,23 +40,26 @@ return result;
 
 SELECT
 client,
-loading, 
-total, 
+loading,
+total,
 COUNT(0) AS count,
 AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 FROM
-    ( 
-      SELECT 
-        _TABLE_SUFFIX AS client,
-        total,
-        get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info      
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      total,
+      get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
+    FROM
+      `httparchive.pages.2020_08_01_*`
+    JOIN
+    (
+      SELECT _TABLE_SUFFIX, COUNT(0) AS total
       FROM
-        `httparchive.pages.2020_08_01_*` 
-        JOIN
-  (SELECT _TABLE_SUFFIX, COUNT(0) AS total 
-  FROM 
-  `httparchive.pages.2020_08_01_*` 
-  GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
-USING (_TABLE_SUFFIX)
-    ),UNNEST(markup_info.loading) AS loading
+      `httparchive.pages.2020_08_01_*`
+      GROUP BY _TABLE_SUFFIX
+    ) # to get an accurate total of pages per device. also seems fast
+    USING (_TABLE_SUFFIX)
+  ),
+  UNNEST(markup_info.loading) AS loading
 GROUP BY total, loading, client

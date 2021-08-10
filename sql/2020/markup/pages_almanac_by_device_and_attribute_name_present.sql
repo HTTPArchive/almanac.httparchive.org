@@ -8,18 +8,18 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
 CREATE TEMPORARY FUNCTION get_almanac_attribute_names(almanac_string STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
-    var almanac = JSON.parse(almanac_string); 
+    var almanac = JSON.parse(almanac_string);
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return [];
 
     if (almanac.attributes_used_on_elements) {
-      return Object.keys(almanac.attributes_used_on_elements); 
+      return Object.keys(almanac.attributes_used_on_elements);
     }
-    
+
 } catch (e) {
-    
+
 }
-return []; 
+return [];
 ''';
 
 SELECT
@@ -31,8 +31,8 @@ SELECT
 FROM
   `httparchive.pages.2020_08_01_*`
 JOIN
-  (SELECT _TABLE_SUFFIX, COUNT(0) AS total 
-  FROM 
+  (SELECT _TABLE_SUFFIX, COUNT(0) AS total
+  FROM
   `httparchive.pages.2020_08_01_*`
   GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
 USING (_TABLE_SUFFIX),

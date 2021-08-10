@@ -18,7 +18,7 @@ SELECT
     IF(DomainsOver50Table.requestDomain IS NULL, 'first-party', 'other')
   ) AS third_party_category,
   SUM(item.execution_time) AS total_execution_time,
-  ROUND(SUM(item.execution_time) * 100 / SUM(SUM(item.execution_time)) OVER (), 4) AS pct_execution_time
+  ROUND(SUM(item.execution_time) * 100 / SUM(SUM(item.execution_time)) OVER (PARTITION BY 0), 4) AS pct_execution_time
 FROM
   `httparchive.lighthouse.2019_07_01_mobile`,
   UNNEST(getExecutionTimes(report)) AS item

@@ -1,5 +1,9 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getVendorPrefixPseudoClasses(css STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getVendorPrefixPseudoClasses(css STRING)
+RETURNS ARRAY<STRING>
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
   function compute(ast) {
     let ret = {
@@ -74,8 +78,7 @@ try {
 } catch (e) {
   return [];
 }
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   *

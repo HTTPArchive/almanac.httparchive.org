@@ -30,7 +30,7 @@ try {
 
 SELECT
   client,
-  UPPER(unicode_range),
+  UPPER(unicode_range) AS unicode_range,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct

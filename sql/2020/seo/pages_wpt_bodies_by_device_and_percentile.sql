@@ -13,7 +13,7 @@ RETURNS STRUCT<
   visible_words_raw_count INT64,
   meta_description_words INT64,
   meta_description_characters INT64,
-  image_links INT64, 
+  image_links INT64,
   text_links INT64,
   hash_link INT64,
   hash_only_link INT64,
@@ -25,7 +25,7 @@ RETURNS STRUCT<
 var result = {};
 try {
     var wpt_bodies = JSON.parse(wpt_bodies_string);
-   
+
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
     if (wpt_bodies.title) {
@@ -45,7 +45,7 @@ try {
       result.links_other_property = anchors_rendered.other_property;
       result.links_same_site = anchors_rendered.same_site;
       result.links_same_property = anchors_rendered.same_property;
-    
+
       result.image_links = anchors_rendered.image_links;
       result.text_links = anchors_rendered.text_links;
 
@@ -84,8 +84,8 @@ SELECT
 
   # links
   APPROX_QUANTILES(wpt_bodies_info.links_other_property, 1000)[OFFSET(percentile * 10)] AS outgoing_links_external,
-  APPROX_QUANTILES(wpt_bodies_info.links_same_property+wpt_bodies_info.links_same_site+wpt_bodies_info.links_other_property, 1000)[OFFSET(percentile * 10)] AS outgoing_links,
-  APPROX_QUANTILES(wpt_bodies_info.links_same_property+wpt_bodies_info.links_same_site, 1000)[OFFSET(percentile * 10)] AS outgoing_links_internal,
+  APPROX_QUANTILES(wpt_bodies_info.links_same_property + wpt_bodies_info.links_same_site + wpt_bodies_info.links_other_property, 1000)[OFFSET(percentile * 10)] AS outgoing_links,
+  APPROX_QUANTILES(wpt_bodies_info.links_same_property + wpt_bodies_info.links_same_site, 1000)[OFFSET(percentile * 10)] AS outgoing_links_internal,
 
   APPROX_QUANTILES(wpt_bodies_info.image_links, 1000)[OFFSET(percentile * 10)] AS image_links,
   APPROX_QUANTILES(wpt_bodies_info.text_links, 1000)[OFFSET(percentile * 10)] AS text_links,
@@ -105,7 +105,7 @@ SELECT
   APPROX_QUANTILES(wpt_bodies_info.visible_words_raw_count, 1000)[OFFSET(percentile * 10)] AS visible_words_raw
 
 FROM (
-  SELECT 
+  SELECT
     _TABLE_SUFFIX AS client,
     percentile,
     url,

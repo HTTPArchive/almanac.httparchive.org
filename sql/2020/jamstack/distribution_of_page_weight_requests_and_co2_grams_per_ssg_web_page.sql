@@ -13,8 +13,7 @@ CREATE TEMP FUNCTION
   getCo2Renewable(energy FLOAT64) AS (energy * 0.1008 * 33.4 + energy * 0.8992 * 475);
 CREATE TEMP FUNCTION
   CO2(url STRING, bytes INT64) AS (
-  IF
-    (GREEN(url),
+  IF(GREEN(url),
       getCo2Renewable(energyConsumption(adjustDataTransfer(bytes))),
       getCo2Grid(energyConsumption(adjustDataTransfer(bytes)))));
 
@@ -43,7 +42,7 @@ FROM (
       app = "Next.js" OR
       app = "Nuxt.js" OR
       app = "Docusaurus"
-	)
+  )
   USING
     (_TABLE_SUFFIX, url)),
   UNNEST([10, 25, 50, 75, 90]) AS percentile

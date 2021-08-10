@@ -9,11 +9,12 @@ WITH requests AS (
   FROM
     `httparchive.requests.2020_08_01_*`
 ),
-base AS(
+
+base AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total_pages,
-    COUNT(DISTINCT IF(url LIKE "%fingerprint2.min.js%" OR url LIKE "%fingerprintjs2%", page, NULL)) AS fingerprint_pages,
+    COUNT(DISTINCT IF(url LIKE "%fingerprint2.min.js%" OR url LIKE "%fingerprintjs2%", page, NULL)) AS fingerprint_pages
   FROM
     requests
   GROUP BY
@@ -24,6 +25,6 @@ SELECT
   client,
   total_pages,
   fingerprint_pages,
-  fingerprint_pages / total_pages AS pct_fingerprint_pages,
+  fingerprint_pages / total_pages AS pct_fingerprint_pages
 FROM
   base

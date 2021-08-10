@@ -5,7 +5,7 @@ SELECT
   thirdPartyCategory,
   contentType,
   COUNT(0) AS totalRequests,
-  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (), 4) AS percentRequests
+  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY 0), 4) AS percentRequests
 FROM (
   SELECT
       client,

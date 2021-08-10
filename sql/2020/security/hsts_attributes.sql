@@ -15,7 +15,7 @@ FROM (
     REGEXP_EXTRACT(respOtherHeaders, r'(?i)strict-transport-security =([^,]+)') AS hsts_header_val
   FROM
     `httparchive.almanac.requests`
-  WHERE 
+  WHERE
     date = '2020-08-01' AND
     firstHtml
 )

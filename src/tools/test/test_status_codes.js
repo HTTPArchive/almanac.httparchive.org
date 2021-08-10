@@ -94,7 +94,11 @@ const test_search = async () => {
 const test_404_pages = async () => {
   for (const year in languages) {
     for (const language in languages[year]) {
-      await test_status_code(`/${languages[year][language]}/${year}/random`, 404);
+      if (year <= default_year) {
+        await test_status_code(`/${languages[year][language]}/${year}/random`, 404);
+      } else {
+        await test_status_code(`/${languages[year][language]}/${year}/random`, 302, `/${languages[year][language]}/${year}/`);
+      }
     }
   }
 }
