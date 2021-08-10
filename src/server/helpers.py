@@ -46,6 +46,12 @@ def render_template(template, *args, **kwargs):
         if os.path.isfile(year_lang_template):
             template_supported_years.append(y)
 
+    en_supported_years = []
+    for y in supported_years:
+        year_en_template = TEMPLATES_DIR + '/en/%s/%s' % (y, template[langcode_length + 1 + 4:])
+        if os.path.isfile(year_en_template):
+            en_supported_years.append(y)
+
     date_published = get_file_date_info(template, "date_published")
     date_modified = get_file_date_info(template, "date_modified")
     ebook_size_in_mb = get_ebook_size_in_mb(lang, year)
@@ -55,7 +61,7 @@ def render_template(template, *args, **kwargs):
                   supported_years=template_supported_years, all_supported_years=SUPPORTED_YEARS,
                   supported_chapters=supported_chapters, date_published=date_published, date_modified=date_modified,
                   ebook_size_in_mb=ebook_size_in_mb, get_file_date_info=get_file_date_info, config=config,
-                  plural_ru=plural_ru)
+                  plural_ru=plural_ru, DEFAULT_YEAR=DEFAULT_YEAR, en_supported_years=en_supported_years)
     return flask_render_template(template, *args, **kwargs)
 
 
