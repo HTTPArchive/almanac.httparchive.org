@@ -1,10 +1,9 @@
-CREATE TEMPORARY FUNCTION getSummary(payload STRING) -- noqa: PRS
--- SQL Linter expects STRUCT field names to beging with a-z or A-Z so needs noqa ignore command on previous line
+CREATE TEMPORARY FUNCTION getSummary(payload STRING)
 RETURNS STRUCT<requestId STRING, startedDateTime INT64, time INT64, method STRING, urlShort STRING, redirectUrl STRING, firstReq BOOLEAN, firstHtml BOOLEAN, reqHttpVersion STRING, reqHeadersSize INT64,
 reqBodySize INT64, reqCookieLen INT64, reqOtherHeaders STRING, status INT64, respHttpVersion STRING, respHeadersSize INT64, respBodySize INT64, respSize INT64, respCookieLen INT64, expAge NUMERIC, mimeType STRING, respOtherHeaders STRING,
 req_accept STRING, req_accept_charset STRING, req_accept_encoding STRING, req_accept_language STRING, req_connection STRING, req_host STRING, req_if_modified_since STRING, req_if_none_match STRING, req_referer STRING, req_user_agent STRING,
 resp_accept_ranges STRING, resp_age STRING, resp_cache_control STRING, resp_connection STRING, resp_content_encoding STRING, resp_content_language STRING, resp_content_length STRING, resp_content_location STRING, resp_content_type STRING, resp_date STRING, resp_etag STRING, resp_expires STRING, resp_keep_alive STRING, resp_last_modified STRING, resp_location STRING, resp_pragma STRING, resp_server STRING, resp_transfer_encoding STRING, resp_vary STRING, resp_via STRING, resp_x_powered_by STRING,
-_cdn_provider STRING, _gzip_save INT64, type STRING, ext STRING, format STRING>
+_cdn_provider STRING, _gzip_save INT64, type STRING, ext STRING, format STRING, protocol STRING, pushed STRING, tls_version STRING, tls_cipher_suite STRING, cert_issuer STRING, cert_keyexchange STRING, cert_cipher STRING, cert_protocol STRING>
 LANGUAGE js AS """
   function getHeader(headers, name) {
     try {
@@ -21,31 +20,25 @@ LANGUAGE js AS """
     if (iQ !== -1) {
       ext = ext.substr(0, iQ);
     }
-
     ext = ext.substr(ext.lastIndexOf('/') + 1);
-
     var iDot = ext.lastIndexOf('.');
     if (iDot === -1) {
       return '';
     }
-
     ext = ext.substr(iDot + 1);
     if (ext.length > 5) {
       return '';
     }
-
     return ext;
   }
   function prettyType(mimeType, ext) {
     mimeType = mimeType.toLowerCase();
-
     var types = ['font', 'css', 'image', 'script', 'video', 'audio', 'xml'];
     for (type of types) {
       if (mimeType.includes(type)) {
         return type;
       }
     }
-
     if (mimeType.includes('json') || ['js', 'json'].includes(ext)) {
       return 'script';
     } else if (['eot', 'ttf', 'woff', 'woff2', 'otf'].includes(ext)) {
@@ -61,7 +54,6 @@ LANGUAGE js AS """
     } else if (mimeType.includes('text')) {
       return 'text';
     }
-
     return 'other';
   }
   function getFormat(prettyType, mimeType, ext) {
@@ -72,7 +64,6 @@ LANGUAGE js AS """
           return type;
         }
       }
-
       if (mimeType.includes('jpeg') || ext == 'jpeg') {
         return 'jpg'
       }
@@ -83,7 +74,6 @@ LANGUAGE js AS """
         }
       }
     }
-
     return '';
   }
   function getExpAge(headers, startedDateTime) {
@@ -92,12 +82,10 @@ LANGUAGE js AS """
       if (cc && (cc.includes('must-revalidate') || cc.includes('no-cache') || cc.includes('no-store'))) {
         return 0;
       }
-
       var maxAge = cc.match(/max-age=(\\d+)/);
       if (maxAge) {
         return Math.min(Number.MAX_SAFE_INTEGER, +maxAge[1]);
       }
-
       var expires = getHeader(headers, 'expires');
       var date = getHeader(headers, 'date');
       if (expires && (date || startedDateTime)) {
@@ -105,24 +93,25 @@ LANGUAGE js AS """
         var expAge = new Date(expires).getTime() - startEpoch;
         return isNaN(expAge) ? 0 : expAge;
       }
-
       return 0;
     } catch (e) {
       return 0;
     }
   }
-
   try {
     var $ = JSON.parse(payload);
     var mimeType = $.response.content.mimeType;
     var ext = getExt($.request.url);
     var prettyType = prettyType(mimeType, ext);
     var reqHeaders = ["accept", "accept-charset", "accept-encoding", "accept-language", "connection", "host", "if-modified-since", "if-none-match", "referer", "user-agent", "cookie"];
-    var respHeaders = ["accept-ranges", "age", "cache-control", "connection", "content-encoding", "content-language", "content-length", "content-location", "content-type", "date", "etag", "expires", "keep-alive", "last-modified", "location", "pragma", "server", "transfer-encoding", "vary", "via", "x-powered-by", "set-cookie"];
+    var respHeaders = ["accept-ranges","age","cache-control","connection","content-encoding","content-language","content-length","content-location","content-type","date","etag","expires","keep-alive","last-modified","location","pragma","server","transfer-encoding","vary","via","x-powered-by","set-cookie"];
     var startedDateTime = new Date($.startedDateTime).getTime();
+    
+    var securityDetails = $._securityDetails || {};
+    
     return {
 requestId: $._request_id,
-startedDateTime: +startedDateTime,
+startedDateTime: Math.round(+startedDateTime/1000),
 time: +$.time,
 method: $.request.method,
 urlShort: $.request.url.substr(0, 255),
@@ -178,9 +167,17 @@ _cdn_provider: $._cdn_provider,
 _gzip_save: $._gzip_save,
 type: prettyType,
 ext: ext,
-format: getFormat(prettyType, mimeType, ext)
-    };
+format: getFormat(prettyType, mimeType, ext,),
+protocol: $._protocol,
+pushed: $._was_pushed,
+tls_version: $._tls_version,
+tls_cipher_suite: $._tls_cipher_suite,
+cert_issuer: securityDetails.issuer,
+cert_keyexchange: securityDetails.keyExchange,
+cert_cipher: securityDetails.cipher,
+cert_protocol: securityDetails.protocol
 
+    };
     return summary;
   } catch (e) {
     return e
@@ -188,11 +185,16 @@ format: getFormat(prettyType, mimeType, ext)
 """;
 
 SELECT
-  CAST('2020-08-01' AS DATE) AS date,
+  CAST('2021-07-01' AS DATE) AS date,
   _TABLE_SUFFIX AS client,
   page,
-  url,
-  getSummary(payload).*, --  noqa: PRS, L013
+  rank,
+  req.url as url,
+  getSummary(payload).*,
+  JSON_EXTRACT(payload, "$.request.headers") AS request_headers,
+  JSON_EXTRACT(payload, "$.response.headers") AS response_headers,
   payload
 FROM
-  `httparchive.requests.2020_08_01_*`
+  `httparchive.requests.2021_07_01_*` req
+LEFT JOIN (SELECT DISTINCT url, rank FROM `httparchive.summary_pages.2021_07_01_*`) rank_data
+ON req.page = rank_data.url
