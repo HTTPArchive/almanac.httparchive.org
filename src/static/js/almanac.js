@@ -38,8 +38,11 @@ function handleNavMenu() {
     };
 
     // If the click was in search nav, then ignore as don't want to close search menu.
-    if (document.querySelector('.search-nav ul:not(hidden)').contains(e.target)) {
-        return
+    var searchNavs = document.querySelectorAll('.search-nav ul:not(hidden)');
+    for (var i = 0; i < searchNavs.length; i++) {
+      if (searchNavs[i].contains(e.target)) {
+          return
+      }
     }
 
     // Else a click elsewhere so close all the menus

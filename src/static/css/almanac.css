@@ -558,6 +558,7 @@ header .cta {
 
 .search-nav input {
   min-width: 400px;
+  text-indent: 5px;
 }
 
 .header-search {
