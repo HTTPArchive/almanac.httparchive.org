@@ -14,6 +14,7 @@ WITH requests AS (
   FROM
     `httparchive.summary_requests.2020_08_01_*`
 ),
+
 third_party AS (
   SELECT
     domain
@@ -22,15 +23,16 @@ third_party AS (
   WHERE
     date = '2020-08-01'
 ),
+
 base AS (
   SELECT
     client,
     type,
     IF(
     (
-      status IN (301, 302, 307, 308, 410)
-      AND NOT REGEXP_CONTAINS(resp_cache_control, r'(?i)private|no-store')
-      AND NOT REGEXP_CONTAINS(reqOtherHeaders, r'Authorization')
+      status IN (301, 302, 307, 308, 410) AND
+      NOT REGEXP_CONTAINS(resp_cache_control, r'(?i)private|no-store') AND
+      NOT REGEXP_CONTAINS(reqOtherHeaders, r'Authorization')
     )
     OR (
       status IN (301, 302, 307, 308, 410)

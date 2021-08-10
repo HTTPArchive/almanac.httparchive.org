@@ -3,7 +3,7 @@
 title: HTTP/2
 description: Capitolo HTTP/2 del 2020 Web Almanac che copre l'adozione e l'impatto di HTTP/2, HTTP/2 Push, problemi HTTP/2 e HTTP/3.
 authors: [dotjs, rmarx, MikeBishop]
-reviewers: [LPardue, bazzadp, ibnesayeed]
+reviewers: [LPardue, tunetheweb, ibnesayeed]
 analysts: [gregorywolf]
 editors: [rviscomi]
 translators: [chefleo]

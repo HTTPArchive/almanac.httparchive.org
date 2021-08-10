@@ -4,6 +4,7 @@ from .helpers import render_template, convert_old_image_path, get_chapter_nextpr
 from .validate import validate
 from .config import get_config, DEFAULT_YEAR
 from . import stories_csp
+from . import search_csp
 import random
 
 
@@ -62,6 +63,32 @@ def accessibility_statement(lang):
         return render_template('%s/accessibility_statement.html' % (lang))
 
 
+# Search needs special case handling for trailing slashes
+# as, unlike Flask, we generally prefer no trailing slashes
+# For chapters we handle this in the validate function
+# It also needs a special CSP
+@app.route('/<lang>/search', strict_slashes=False)
+@validate
+@talisman(
+    content_security_policy=search_csp.csp,
+    content_security_policy_nonce_in=['script-src'],
+    frame_options=None
+)
+def search(lang):
+
+    if request.base_url[-1] == "/":
+        return redirect("/%s/search" % lang), 301
+    else:
+        return render_template('%s/search.html' % lang)
+
+
+# Redirect search by year
+@app.route('/<lang>/<year>/search', strict_slashes=False)
+@validate
+def search_year(lang, year):
+    return redirect("/%s/search" % lang), 301
+
+
 @app.route('/sitemap.xml')
 # Chrome and Safari use inline styles to display XMLs files.
 # https://bugs.chromium.org/p/chromium/issues/detail?id=924962
@@ -72,11 +99,6 @@ def accessibility_statement(lang):
     content_security_policy_nonce_in=['script-src']
 )
 def sitemap():
-    # Flask-Talisman doesn't allow override of content_security_policy_nonce_in
-    # per route yet
-    # https://github.com/GoogleCloudPlatform/flask-talisman/issues/62
-    # So remove Nonce value from request object for now which has same effect
-    delattr(request, 'csp_nonce')
     xml = render_template('sitemap.xml')
     resp = app.make_response(xml)
     resp.mimetype = "text/xml"
@@ -92,11 +114,6 @@ def sitemap():
     frame_options=None
 )
 def stories(lang, year, story):
-    # Flask-Talisman doesn't allow override of content_security_policy_nonce_in
-    # per route yet
-    # https://github.com/GoogleCloudPlatform/flask-talisman/issues/62
-    # So remove Nonce value from request object for now which has same effect
-    delattr(request, 'csp_nonce')
     return render_template('%s/%s/stories/%s.html' % (lang, year, story.replace('-', '_')))
 
 

@@ -2,7 +2,7 @@
 # 18_01: Distribution of page weight by resource type and client.
 SELECT
   percentile,
-  _TABLE_SUFFIX as client,
+  _TABLE_SUFFIX AS client,
   APPROX_QUANTILES(ROUND(bytesTotal / 1024, 2), 1000)[OFFSET(percentile * 10)] AS total_kbytes,
   APPROX_QUANTILES(ROUND(bytesHtml / 1024, 2), 1000)[OFFSET(percentile * 10)] AS html_kbytes,
   APPROX_QUANTILES(ROUND(bytesJS / 1024, 2), 1000)[OFFSET(percentile * 10)] AS js_kbytes,

@@ -6,7 +6,7 @@
 #
 # Run the GitHub Super-Linter locally
 # useful to avoid waiting on the push to get feed back
-# 
+#
 # It can be run to lint everthing if no params are passed
 # Or pass one or more params to just lint those files or folders
 #
@@ -36,6 +36,7 @@ if [ "$#" -gt 0 ]; then
   # Copy linter config files
   mkdir /tmp/lint/.github
   cp -r ../.github/linters /tmp/lint/.github
+  cp -r ../sql/.sqlfluff /tmp/lint/
   # Copy files provided
   for FILES in "$@"
   do
@@ -70,7 +71,9 @@ export VALIDATE_JSON=true
 export VALIDATE_MD=true
 export VALIDATE_PYTHON_PYLINT=true
 export VALIDATE_PYTHON_FLAKE8=true
+export VALIDATE_SQLFLUFF=true
 export VALIDATE_YAML=true
+export USE_FIND_ALGORITHM=true
 
 echo "Starting linting"
 /action/lib/linter.sh "$@"

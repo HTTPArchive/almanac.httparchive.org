@@ -4,8 +4,8 @@ title: PWA
 description: サービスワーカー（登録、インストール性、イベント、ファイルサイズ）、Web App Manifestsのプロパティ、Workboxをカバーする2020年Web AlmanacのPWAの章。
 authors: [hemanth]
 reviewers: [thepassle, jadjoubran, pearlbea, gokulkrishh]
-analysts: [bazzadp]
-editors: [bazzadp]
+analysts: [tunetheweb]
+editors: [tunetheweb]
 translators: [ksakae]
 hemanth_bio: <a hreflang="en" href="https://h3manth.com">Hemanth HM</a>は、コンピュータポリグロット、FOSS哲学者、Webと決済ドメインのためのGDE、DuckDuckGoコミュニティメンバー、TC39代表者、Google Launchpad Acceleratorメンター。WEB & CLIが大好き。<a hreflang="en" href="https://TC39er.us">TC39er.us</a>ポッドキャストを主催。
 discuss: 2050
@@ -37,7 +37,7 @@ Web Almanacのこの章では、データ駆動の観点から、PWAを現在の
 
 ### サービスワーカーの利用状況
 
-収集したデータから、デスクトップサイトの約0.88%、モバイルサイトの約0.87%がサービスワーカーを利用していることがわかります。これは2020年8月の月のデータで、これを考慮すると、デスクトップサイトは49,305件（5,593,642件のうち）、モバイルサイトは55,019件（6,347,919件のうち）に相当します。この使用率は低いように見えるかもしれませんが、他の測定値では<a hreflang="en" href="https://www.chromestatus.com/metrics/feature/timeline/popularity/990">ウェブトラフィック</a>の16.6%に相当し、トラフィックの多いウェブサイトではサービスワーカーの使用率が高くなる傾向があるため、その差は大きいことを認識することが重要です。
+収集したデータから、デスクトップサイトの約0.88%、モバイルサイトの約0.87%がサービスワーカーを利用していることがわかります。これは2020年8月の月のデータで、これを考慮すると、デスクトップサイトは49,305件（5,593,642件のうち）、モバイルサイトは55,019件（6,347,919件のうち）に相当します。
 
 {{ figure_markup(
   image="pwa-timeseries-of-service-worker-installations.png",
@@ -48,6 +48,8 @@ Web Almanacのこの章では、データ駆動の観点から、PWAを現在の
   sql_file="sw_adoption_over_time.sql"
   )
 }}
+
+この使用率は低いように見えるかもしれませんが、他の測定値では<a hreflang="en" href="https://www.chromestatus.com/metrics/feature/timeline/popularity/990">ウェブトラフィック</a>の16.6%に相当し、トラフィックの多いウェブサイトではサービスワーカーの使用率が高くなる傾向があるため、その差は大きいことを認識することが重要です。
 
 ## Lighthouseの洞察力
 

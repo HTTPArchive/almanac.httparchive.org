@@ -9,6 +9,8 @@ name: Test Website
 on:
   workflow_dispatch:
   pull_request:
+    paths-ignore:
+      - 'sql/**'
 jobs:
   build:
     name: Build and Test Website
@@ -21,7 +23,7 @@ jobs:
         # Full git history is needed to get a proper list of changed files within `super-linter`
         fetch-depth: 0
     - name: Setup Node.js for use with actions
-      uses: actions/setup-node@v2.1.5
+      uses: actions/setup-node@v2.4.0
       with:
         node-version:  '15'
     - name: Set up Python 3.8
@@ -35,22 +37,20 @@ jobs:
     - name: Use more complete checks for generated HTML linting
       run: cp -f .github/linters/.htmlhintrc_morechecks .github/linters/.htmlhintrc
     - name: Lint Generated HTML
-      # Run older version of super-linter to allow linting of generated files
-      # (see https://github.com/github/super-linter/issues/1289)
-      uses: docker://github/super-linter:v3.14.0
-      #uses: github/super-linter@v3.15.3
+      uses: github/super-linter@v4.6.0
       env:
         DEFAULT_BRANCH: main
         FILTER_REGEX_INCLUDE: src/static/html/.*
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         VALIDATE_HTML: true
+        USE_FIND_ALGORITHM: true
     - name: Set the list of URLs for Lighthouse to check
       env:
         RUN_TYPE: ${{ github.event_name }}
         COMMIT_SHA: ${{ github.sha }}
       run: ./src/tools/scripts/set_lighthouse_urls.sh
     - name: Audit URLs using Lighthouse
-      uses: treosh/lighthouse-ci-action@v7
+      uses: treosh/lighthouse-ci-action@8.0.0
       id: LHCIAction
       with:
         # For dev, turn off all timing perf audits (too unreliable) and a few others that don't work on dev

@@ -5,7 +5,7 @@ description: 2019年版Web Almanacのメディアの章では、画像ファイ�
 authors: [colinbendell, dougsillars]
 reviewers: [ahmadawais, eeeps]
 analysts: [dougsillars, rviscomi]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [ksakae]
 discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/

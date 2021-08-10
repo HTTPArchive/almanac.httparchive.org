@@ -1,5 +1,9 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getProperties(css STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getProperties(css STRING)
+RETURNS ARRAY<STRING>
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
 	function compute(ast) {
 		let ret = {};
@@ -8,7 +12,7 @@ try {
 			if (!property.startsWith("--")) { // Custom props are case sensitive
 				property = property.toLowerCase();
 			}
-			
+
 			incrementByKey(ret, property);
 		});
 
@@ -24,8 +28,7 @@ try {
 catch (e) {
 	return [];
 }
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   *

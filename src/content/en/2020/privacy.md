@@ -5,7 +5,7 @@ description: Privacy chapter of the 2020 Web Almanac covering online tracking co
 authors: [ydimova]
 reviewers: [ldevernay]
 analysts: [ydimova, max-ostapenko]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 ydimova_bio:  Yana Dimova is a PhD student at KU Leuven university in Belgium, working on privacy and web security.
 discuss: 2046

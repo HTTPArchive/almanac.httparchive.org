@@ -5,7 +5,7 @@ description: Capitolo sulla privacy del Web Almanac 2020 che copre i cookie di t
 authors: [ydimova]
 reviewers: [ldevernay]
 analysts: [ydimova, max-ostapenko]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [chefleo]
 ydimova_bio:  Yana Dimova è una studentessa di dottorato presso l'università KU Leuven in Belgio, che si occupa di privacy e sicurezza web.
 discuss: 2046

@@ -403,6 +403,10 @@ section.chapter {
     page-break-inside: avoid;
   }
 
+  figure .code-block {
+    text-align: left;
+  }
+
   figure .anchor-link {
     text-decoration: none;
   }

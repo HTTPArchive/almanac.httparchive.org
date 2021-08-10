@@ -5,7 +5,7 @@ description: 2020年版Web AlmanacのCMSの章では、CMSの導入、CMSスイ�
 authors: [alexdenning]
 reviewers: [sirjonathan, ernee, amedina]
 analysts: [GregBrimble, rviscomi]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [ksakae]
 alexdenning_bio: Alex Denningは、WordPressビジネス向けのマーケティングエージェンシーである <a hreflang="en" href="https://getellipsis.com/">Ellipsis Marketing</a> の創設者です。アレックスはWordPressのコア・コントリビューターであり、<a hreflang="en" href="https://london.wordcamp.org/">WordCamp London</a>の開催にも協力しています。
 discuss: 2051

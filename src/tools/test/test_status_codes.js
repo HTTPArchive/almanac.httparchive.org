@@ -83,10 +83,22 @@ const test_ebooks = async () => {
   }
 }
 
+const test_search = async () => {
+  for (const year in languages) {
+    for (const language in languages[year]) {
+      await test_status_code(`/${languages[year][language]}/search`, 200);
+    }
+  }
+}
+
 const test_404_pages = async () => {
   for (const year in languages) {
     for (const language in languages[year]) {
-      await test_status_code(`/${languages[year][language]}/${year}/random`, 404);
+      if (year <= default_year) {
+        await test_status_code(`/${languages[year][language]}/${year}/random`, 404);
+      } else {
+        await test_status_code(`/${languages[year][language]}/${year}/random`, 302, `/${languages[year][language]}/${year}/`);
+      }
     }
   }
 }
@@ -106,6 +118,7 @@ const test_status_codes = async () => {
   // Test success pages
   await test_sitemap_pages();
   await test_ebooks();
+  await test_search();
   await test_status_code('/sitemap.xml', 200);
   await test_status_code('/robots.txt', 200);
   await test_status_code('/favicon.ico', 200);

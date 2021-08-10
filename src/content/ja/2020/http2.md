@@ -3,7 +3,7 @@
 title: HTTP/2
 description: HTTP/2、HTTP/2 Push、HTTP/2 Issues、HTTP/3の採用と影響を網羅した2020年版Web AlmanacのHTTP/2の章。
 authors: [dotjs, rmarx, MikeBishop]
-reviewers: [LPardue, bazzadp, ibnesayeed]
+reviewers: [LPardue, tunetheweb, ibnesayeed]
 analysts: [gregorywolf]
 editors: [rviscomi]
 translators: [ksakae]

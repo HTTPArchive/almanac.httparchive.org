@@ -15,7 +15,7 @@ var result = {
   videos_total: 0
 };
 try {
-    var almanac = JSON.parse(almanac_string); 
+    var almanac = JSON.parse(almanac_string);
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return result;
 
@@ -35,8 +35,8 @@ SELECT
   AS_PERCENT(COUNTIF(almanac_info.videos_total > 0), COUNT(0)) AS pct_has_videos
 
 FROM
-    ( 
-      SELECT 
+    (
+      SELECT
         _TABLE_SUFFIX AS client,
         get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
       FROM
@@ -44,4 +44,3 @@ FROM
     )
 GROUP BY
   client
-  

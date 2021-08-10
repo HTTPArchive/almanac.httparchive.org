@@ -3,7 +3,7 @@
 title: リソースヒント
 description: 2019年のWeb Almanacのリソースヒントの章では、dns-prefetch、preconnect、preload、prefetch、priority hints、ネイティブの遅延ローディングの使用法をカバーしています。
 authors: [khempenius]
-reviewers: [andydavies, bazzadp, yoavweiss]
+reviewers: [andydavies, tunetheweb, yoavweiss]
 analysts: [rviscomi]
 editors: [rviscomi]
 translators: [ksakae]
@@ -238,9 +238,9 @@ HTTPヘッダー内のリソースヒントの使用量が非常に少ないた�
 
 <a hreflang="en" href="https://wicg.github.io/priority-hints/">優先度ヒント</a>は、リソースのフェッチの優先度を`high`,`low`,`auto`のいずれかで表現するためのAPIです。これらは幅広いHTMLタグで利用できます。とくに`<image>`,`<link`>,`<script>`,`<iframe>`などです。
 
-<figure>
+<figure class="figure-block">
 <div class="code-block floating-card">
-  <pre><code>&lt;carousel>
+  <pre role="region" aria-label="Code 0" tabindex="0"><code>&lt;carousel>
   &lt;img src="cat1.jpg" importance="high">
   &lt;img src="cat2.jpg" importance="low">
   &lt;img src="cat3.jpg" importance="low">

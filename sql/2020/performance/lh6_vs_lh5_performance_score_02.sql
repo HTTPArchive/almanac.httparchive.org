@@ -4,8 +4,8 @@ SELECT
   direction,
   magnitude,
   pages AS freq,
-  SUM(pages) OVER () AS total,
-  pages / SUM(pages) OVER () AS pct
+  SUM(pages) OVER (PARTITION BY 0) AS total,
+  pages / SUM(pages) OVER (PARTITION BY 0) AS pct
 FROM (
   SELECT
     CASE

@@ -3,7 +3,7 @@
 title: Resource Hints
 description: Resource Hints chapter of the 2019 Web Almanac covering usage of dns-prefetch, preconnect, preload, prefetch, priority hints, and native lazy loading.
 authors: [khempenius]
-reviewers: [andydavies, bazzadp, yoavweiss]
+reviewers: [andydavies, tunetheweb, yoavweiss]
 analysts: [rviscomi]
 editors: [rviscomi]
 translators: []
@@ -238,9 +238,9 @@ At the moment, there are no proposals to expand the current set of resource hint
 
 <a hreflang="en" href="https://wicg.github.io/priority-hints/">Priority hints</a> are an API for expressing the fetch priority of a resource: `high`, `low`, or `auto`. They can be used with a wide range of HTML tags: specifically `<image>`, `<link`>, `<script>`, and `<iframe>`.
 
-<figure>
+<figure class="figure-block">
 <div class="code-block floating-card">
-  <pre><code>&lt;carousel>
+  <pre role="region" aria-label="Code 0" tabindex="0"><code>&lt;carousel>
   &lt;img src="cat1.jpg" importance="high">
   &lt;img src="cat2.jpg" importance="low">
   &lt;img src="cat3.jpg" importance="low">

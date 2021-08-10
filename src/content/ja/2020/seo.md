@@ -3,7 +3,7 @@
 title: SEO
 description: コンテンツ、METAタグ、インデックス性、リンク、スピード、構造化データ、国際化、SPA、AMP、セキュリティを網羅した2020年Web AlmanacのSEO編。
 authors: [aleyda, ipullrank, fellowhuman1101]
-reviewers: [natedame, catalinred, dsottimano, dwsmart, en3r0, ibnesayeed, bazzadp]
+reviewers: [natedame, catalinred, dsottimano, dwsmart, en3r0, ibnesayeed, tunetheweb]
 analysts: [Tiggerito, antoineeripret]
 editors: [rviscomi]
 translators: [ksakae]
@@ -604,7 +604,7 @@ Googleがモバイルファーストインデックスだけでなく、モバ�
 {{ figure_markup(
   image="seo-text-links.png",
   caption="ページごとのテキストリンク数の分布。",
-  description="パーセンタイル（19、25、50、75、90）ごとのテキストリンク数を示す棒グラフ。モバイルとデスクトップではリンク数に格差がある（モバイル：62リンク、デスクトップ：68リンク）。",
+  description="パーセンタイル（10、25、50、75、90）ごとのテキストリンク数を示す棒グラフ。モバイルとデスクトップではリンク数に格差がある（モバイル：62リンク、デスクトップ：68リンク）。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1588324966&format=interactive",
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"

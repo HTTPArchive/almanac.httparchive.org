@@ -233,7 +233,16 @@
       "website": "https://AhmadAwais.com",
       "github": "ahmadawais",
       "twitter": "MrAhmadAwais"
-    } ,
+    },
+    "alangdm": {
+      "name": "Alan Dávalos",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/6799159?v=4&s=200",
+      "github": "alangdm",
+      "twitter": "AlanGDavalos"
+    },
     "alankent": {
       "name": "Alan Kent",
       "teams": [
@@ -339,7 +348,7 @@
       "github": "denar90",
       "twitter": "denar90_"
     },
-    "bazzadp": {
+    "tunetheweb": {
       "name": "Barry Pollard",
       "teams": [
         "analysts",
@@ -351,8 +360,8 @@
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/10931297?v=4&s=200",
       "website": "https://www.tunetheweb.com",
-      "github": "bazzadp",
-      "linkedin": "barry-pollard-developer",
+      "github": "tunetheweb",
+      "linkedin": "tunetheweb",
       "twitter": "tunetheweb"
     },
     "bseymour": {
@@ -415,6 +424,16 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/1588185?v=4&s=200",
       "github": "cqueern",
       "twitter": "httpsecheaders"
+    },
+    "carloscastromx": {
+      "name": "Carlos Castro",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/62315048?v=4&s=200",
+      "website": "https://carloscm.me/en/",
+      "github": "carloscastromx",
+      "twitter": "mxcarloscastro"
     },
     "catalinred": {
       "name": "Catalin Rosu",

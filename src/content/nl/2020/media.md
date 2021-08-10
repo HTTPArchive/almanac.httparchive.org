@@ -5,7 +5,7 @@ description: Mediahoofdstuk van de Web Almanac 2020 met betrekking tot bestandsg
 authors: [tpiros, bseymour, eeeps]
 reviewers: [nhoizey, colinbendell, dougsillars, Navaneeth-akam]
 analysts: [smatei]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [noah-vdv]
 tpiros_bio: Tamas Piros is een Developer Experience Engineer bij <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>, Google Developer Expert en technisch instructeur met <a hreflang="en" href="https://fullstacktraining.com">Full Stack-training</a>.
 bseymour_bio: Ben Seymour is een Dynamic Media & Content Specialist met <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>, auteur van <a hreflang="en" href="http://responsiveimag.es/">Practical Responsive Images</a> en mede-oprichter van <a hreflang="en" href="https://storyus.life/">Storyus</a> en <a hreflang="en" href="https://haktive.com/">Haktive</a>.

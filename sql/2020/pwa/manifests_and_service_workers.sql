@@ -16,7 +16,7 @@ FROM
         COUNT(DISTINCT m.page) AS manifests,
         COUNT(DISTINCT sw.page) AS serviceworkers,
         COUNT(DISTINCT IFNULL(m.page, sw.page)) AS either,
-        COUNT(DISTINCT (m.page || sw.page)) AS both
+        COUNT(DISTINCT m.page || sw.page) AS both
     FROM
         `httparchive.almanac.manifests` m
     FULL OUTER JOIN
@@ -31,7 +31,7 @@ JOIN
     (SELECT
         date,
         client,
-        count(DISTINCT page) AS total
+        COUNT(DISTINCT page) AS total
     FROM
         `httparchive.almanac.summary_requests`
     GROUP BY

@@ -5,7 +5,7 @@ description: Caching-hoofdstuk van de 2020 Web Almanac over Cache-Control, expir
 authors: [roryhewitt, raghuramakrishnan71]
 reviewers: [jzyang]
 analysts: [raghuramakrishnan71]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [noah-vdv]
 roryhewitt_bio: Enterprise Architect bij <a hreflang="en" href="https://www.akamai.com/">Akamai</a>, met een passie voor prestaties. Hij is een Britse expat en woont al meer dan twintig jaar in San Francisco. In zijn vrije tijd is hij een avontuurlijke motorrijder, snowboarder en bokser/karateka. Hij staat graag bekend als een onruststoker. Het belangrijkste is dat hij een vader en echtgenoot is en de eigenaar van Luna de kat.
 raghuramakrishnan71_bio: Enterprise-architect bij <a hreflang="en" href="https://www.tcs.com/">Tata Consultancy Services</a>, aan het werk voor grote digitale transformatieprogramma's in de publieke sector. Een technologieliefhebber met een bijzondere interesse in prestatie-engineering. Een fervent reiziger, geïntrigeerd door astronomie, geschiedenis, biologie en vooruitgang in de geneeskunde. Een sterke volgeling van vers 47, hoofdstuk 2 van de Bhagavad Gita "karmaṇy-evādhikāras te mā phaleṣhu kadāchana", wat betekent "U heeft het recht om uw voorgeschreven plicht te vervullen, maar u hebt geen recht op de vruchten van actie".

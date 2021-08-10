@@ -5,7 +5,7 @@ description: Chapitre Polices d'écriture du web Almanac 2019 couvrant l'endroit
 authors: [zachleat]
 reviewers: [hyperpress, AymenLoukil]
 analysts: [tjmonsi, rviscomi]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [arigaud-ca]
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/

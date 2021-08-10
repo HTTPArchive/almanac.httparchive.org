@@ -105,16 +105,56 @@
 {% block contributors %}{{ config.contributors.keys() | length }}{% endblock %}
 
 {% block non_chapter_nav_links %}
+{% if year <= DEFAULT_YEAR %}
 <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
 <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
+{% endif %}
 {% endblock %}
 
+{% macro nav_search(switcher_name) %}
+  {% if switcher_name == "mobile" or switcher_name == "mobile-footer" %}
+  <form class="search-nav" action="/{{ lang}}/search">
+    <label for="{{ switcher_name }}-search-box" class="visually-hidden">{{ self.search_title() }}</label>
+    <input id="{{ switcher_name }}-search-box" class="search-input" type="search" name="q" placeholder="{{ self.search_title() }}" title="{{ self.search_title() }}" aria-label="{{ self.search_title() }}">
+    <button class="search-button" type="submit">
+      <svg width="13" height="13" role="img" aria-labelledby="{{ switcher_name }}-search-icon">
+        <title id="{{ switcher_name }}-search-icon">{{ self.search_title() }}</title>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+      </svg>
+    </button>
+  </form>
+  {% else %}
+  <a class="nav-dropdown-btn js-hide" href="{{ url_for('search', lang=lang) }}">{{ self.search_title() }}</a>
+  <div class="nav-dropdown {{switcher_name}} search-nav js-enable hidden">
+    <button type="button" class="nav-dropdown-btn" aria-expanded="false">
+      {{ self.search_title() }}
+    </button>
+    <ul class="nav-dropdown-list align-right hidden {{switcher_name}}-search">
+      <li class="nav-dropdown-list-part">
+        <form action="/{{ lang}}/search">
+          <label for="{{ switcher_name }}-search-box" class="visually-hidden">{{ self.search_title() }}</label>
+          <input id="{{ switcher_name }}-search-box" class="search-input" type="search" name="q" placeholder="{{ self.search_title() }}" title="{{ self.search_title() }}" aria-label="{{ self.search_title() }}">
+          <button class="search-button" type="submit">
+            <svg width="13" height="13" role="img" aria-labelledby="{{ switcher_name }}-search-icon">
+              <title id="{{ switcher_name }}-search-icon">{{ self.search_title() }}</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+            </svg>
+          </button>
+        </form>
+      </li>
+    </ul>
+  </div>
+  {% endif %}
+{% endmacro %}
+
 {% macro nav_table_of_contents(switcher_name) %}
+{% if year <= DEFAULT_YEAR %}
   {% if switcher_name == "mobile" or switcher_name == "mobile-footer" %}
     {{ native_table_of_contents_dropdown(switcher_name) }}
   {% else %}
     {{ styled_table_of_contents_dropdown(switcher_name) }}
   {% endif %}
+{% endif %}
 {% endmacro %}
 
 {% macro native_table_of_contents_dropdown(switcher_name) %}
@@ -185,6 +225,16 @@
     {% else %}
     <option value="{{ url_for('contributors', year=year, lang=lang) }}">
       {{ self.contributors_title() }}
+    </option>
+    {% endif %}
+
+    {% if request.path.endswith("search") %}
+    <option selected disabled value="{{ url_for('search', lang=lang) }}">
+      {{ self.search_title() }}
+    </option>
+    {% else %}
+    <option value="{{ url_for('search', lang=lang) }}">
+      {{ self.search_title() }}
     </option>
     {% endif %}
 
@@ -293,6 +343,16 @@
     </li>
     {% endif %}
 
+    {% if request.path.endswith("search") %}
+    <li class="nav-dropdown-list-part nav-dropdown-list-current">
+      <span>{{ self.search_title() }}</span>
+    </li>
+    {% else %}
+    <li class="nav-dropdown-list-part">
+      <a href="{{ url_for('search', lang=lang) }}">{{ self.search_title() }}</a>
+    </li>
+    {% endif %}
+
     {% if ebook_size_in_mb and ebook_size_in_mb > 0 %}
     <li class="nav-dropdown-list-part">
       <a href="{{ url_for('table_of_contents', year=year, lang=lang, _anchor='ebook') }}">{{ self.ebook_title() }}</a>
@@ -318,6 +378,9 @@
           <ul>
             {{ self.non_chapter_nav_links() }}
             <li>
+              {{ nav_search('header') }}
+            </li>
+            <li>
               {{ nav_table_of_contents('header') }}
             </li>
             <li>
@@ -341,6 +404,9 @@
           </button>
           <ul class="menu">
             {{ self.non_chapter_nav_links() }}
+            <li>
+              {{ nav_search('mobile') }}
+            </li>
             <li>
               {{ nav_table_of_contents('mobile') }}
             </li>
@@ -423,6 +489,9 @@
           <ul>
             {{ self.non_chapter_nav_links() }}
             <li>
+              {{ nav_search('footer') }}
+            </li>
+            <li>
               {{ nav_table_of_contents('footer') }}
             </li>
             <li>
@@ -436,6 +505,9 @@
         <nav id="mobile-footer-nav-items" aria-label="{{ self.footer_title() }}" class="nav-items">
           <ul>
             {{ self.non_chapter_nav_links() }}
+            <li>
+              {{ nav_search('mobile-footer') }}
+            </li>
             <li>
               {{ nav_table_of_contents('mobile-footer') }}
             </li>
@@ -507,7 +579,7 @@
     </footer>
   {% endblock %}
   {% block scripts %}
-  <script async src="{{ get_versioned_filename('/static/js/almanac.js') }}"></script>
+  <script async src="{{ get_versioned_filename('/static/js/almanac.js') }}" nonce="{{ csp_nonce() }}"></script>
   {% endblock %}
 {% endblock %}
 
@@ -717,59 +789,78 @@
 </figure>
 {%- endmacro %}
 
+{# The year drop down is a bit complicated because we want to handle a few cases: #}
+{# - When chapter is not translated for a year (show link to English)             #}
+{# - When chapter is not available in English for a year (show link to home page) #}
+{# - When chapter is for a future year (show link to home page)                   #}
 {% macro native_year_dropdown(switcher_name)%}
   <div class="year-switcher js-show">
     <label for="year-switcher-{{switcher_name}}" class="visually-hidden">{{ self.year_switcher() }}</label>
     <select id="year-switcher-{{switcher_name}}">
-      {% for y in supported_years | sort %}
-        {% if y == year %}
-          <option selected="selected" value="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">
-            {{ y }}
-          </option>
-        {% else %}
-          <option value="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">
-            {{ y }}
-          </option>
-        {% endif %}
-      {% endfor %}
-      {# If the current page doesn't support a year, then show a home link for that year #}
-      {% if supported_years|length < all_supported_years|length %}
-        <option disabled="disabled" aria-hidden="true">
-          ────
-        </option>
-        {% for y in all_supported_years | sort %}
-          {% if y not in supported_years %}
-            <option value="{{ url_for('home', lang=lang,year=y) }}">
+      {% for y in all_supported_years | sort(reverse=true)%}
+        {% if y in supported_years %}
+          {% if y == year %}
+            <option selected="selected" value="{{ url_for(request.endpoint, **get_view_args(lang=lang, year=y)) }}">
+              {{ y }}
+            </option>
+          {% elif y <= DEFAULT_YEAR or request.path.endswith("/" + year + "/") %}
+            <option value="{{ url_for(request.endpoint, **get_view_args(lang=lang, year=y)) }}">
+              {{ y }}
+            </option>
+          {% elif y > DEFAULT_YEAR %}
+            <option value="{{ url_for('home', lang=lang, year=y) }}">
               {{ y }} {{ self.home() }}
             </option>
           {% endif %}
-        {% endfor %}
-      {% endif %}
+        {% else %}
+          {% if y in en_supported_years and y <= DEFAULT_YEAR %}
+          <option value="{{ url_for(request.endpoint, **get_view_args(lang='en', year=y)) }}">
+            {{ y }} {{ self.in_english() }}
+          </option>
+          {% else %}
+          <option value="{{ url_for('home', lang=lang, year=y) }}">
+            {{ y }} {{ self.home() }}
+          </option>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
     </select>
   </div>
 {% endmacro %}
 
+{# The year drop down is a bit complicated because we want to handle a few cases: #}
+{# - When chapter is not translated for a year (show link to English)             #}
+{# - When chapter is not available in English for a year (show link to home page) #}
+{# - When chapter is for a future year (show link to home page)                   #}
 {% macro styled_year_dropdown(switcher_name)%}
   <div class="nav-dropdown {{switcher_name}}">
     <button type="button" class="nav-dropdown-btn js-enable" disabled aria-expanded="false" aria-label="{{ self.year_switcher() }}">{{ year }}</button>
     <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
-      {% for y in supported_years | sort %}
-        {% if y != year %}
-          <li>
-            <a href="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">{{y}}</a>
-          </li>
-        {% endif %}
-      {% endfor %}
-      {# If the current page doesn't support a year, then show a home link for that year #}
-      {% if supported_years|length < all_supported_years|length %}
-        {% for y in all_supported_years | sort %}
-          {% if y not in supported_years %}
-            <li class="unsupported-year">
+      {% for y in all_supported_years | sort(reverse=true) %}
+        {% if y in supported_years %}
+          {% if y != year %}
+            {% if y <= DEFAULT_YEAR or request.path.endswith("/" + year + "/") %}
+            <li>
+              <a href="{{ url_for(request.endpoint, **get_view_args(lang=lang, year=y)) }}">{{ y }}</a>
+            </li>
+          {% else %}
+            <li>
               <a href="{{ url_for('home', lang=lang,year=y) }}">{{ y }} {{ self.home() }}</a>
             </li>
+            {% endif %}
           {% endif %}
-        {% endfor %}
-      {% endif %}
+        {% else %}
+          {% if y in en_supported_years and y <= DEFAULT_YEAR %}
+          <li class="unsupported-year">
+            <a href="{{ url_for(request.endpoint, **get_view_args(lang='en', year=y)) }}">{{ y }} {{ self.translation_not_available() }}</a>
+          </li>
+          {% else %}
+          <li class="unsupported-year">
+            <a href="{{ url_for('home', lang=lang,year=y) }}">{{ y }} {{ self.home() }}</a>
+          </li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
     </ul>
   </div>
 {% endmacro %}
