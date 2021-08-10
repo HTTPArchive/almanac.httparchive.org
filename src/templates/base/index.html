@@ -53,9 +53,7 @@
       <h1 class="title title-lg title-alt">{{ self.intro_title() }}</h1>
       <h2>{{ self.intro_sub_title() }}</h2>
       {% if year > DEFAULT_YEAR %}
-      <p>
-        <strong>{{ self.coming_soon() }}</strong>
-      </p>
+      <p class="coming-soon">{{ self.coming_soon() }}</p>
       {% else %}
       {{ self.mission() }}
       {% endif %}
