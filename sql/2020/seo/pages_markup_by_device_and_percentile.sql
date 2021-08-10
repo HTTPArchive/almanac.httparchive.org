@@ -16,7 +16,7 @@ var result = {
   images_with_alt_missing: 0
 };
 try {
-    var markup = JSON.parse(markup_string); 
+    var markup = JSON.parse(markup_string);
 
     if (Array.isArray(markup) || typeof markup != 'object') return result;
 
@@ -61,14 +61,14 @@ SELECT
   APPROX_QUANTILES(markup_info.images_with_alt_blank, 1000)[OFFSET(percentile * 10)] AS images_with_alt_blank,
 
   # number of images without an alt attribute
-  APPROX_QUANTILES(markup_info.images_with_alt_missing, 1000)[OFFSET(percentile * 10)] AS images_with_alt_missing,
+  APPROX_QUANTILES(markup_info.images_with_alt_missing, 1000)[OFFSET(percentile * 10)] AS images_with_alt_missing
 
 FROM (
-  SELECT 
+  SELECT
     _TABLE_SUFFIX AS client,
     percentile,
     url,
-    get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info 
+    get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
   FROM
   `httparchive.pages.2020_08_01_*`,
   UNNEST([10, 25, 50, 75, 90]) AS percentile

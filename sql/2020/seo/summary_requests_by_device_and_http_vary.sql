@@ -12,8 +12,8 @@ SELECT
   AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct
 FROM
    `httparchive.summary_requests.2020_08_01_*`
-WHERE 
-   firstHtml = True
+WHERE
+   firstHtml
 GROUP BY
   client,
   resp_vary_user_agent

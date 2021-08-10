@@ -1,6 +1,7 @@
 #standardSQL
 # 02_44: % of sites that use different class attr selectors
-CREATE TEMPORARY FUNCTION getAttributeSelectorType(css STRING)
+CREATE TEMPORARY FUNCTION getAttributeSelectorType(css STRING) -- noqa: PRS
+-- SQL Linter expects STRUCT field names to beging with a-z or A-Z so needs noqa ignore command on previous line
 RETURNS STRUCT<`=` BOOLEAN, `*=` BOOLEAN, `^=` BOOLEAN, `$=` BOOLEAN, `~=` BOOLEAN> LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {

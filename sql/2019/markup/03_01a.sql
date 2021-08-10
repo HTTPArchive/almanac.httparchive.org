@@ -5,7 +5,7 @@ RETURNS BOOLEAN LANGUAGE js AS '''
 try {
   var $ = JSON.parse(payload);
   var elements = JSON.parse($._element_count)
-  var deprecatedElements = new Set(["applet","acronym","bgsound","dir","frame","frameset","noframes","isindex","keygen","listing","menuitem","nextid","noembed","plaintext","rb","rtc","strike","xmp","basefont","big","blink","center","font","marquee","multicol","nobr","spacer","tt"]);
+  var deprecatedElements = new Set(["applet", "acronym", "bgsound", "dir", "frame", "frameset", "noframes", "isindex", "keygen", "listing", "menuitem", "nextid", "noembed", "plaintext", "rb", "rtc", "strike", "xmp", "basefont", "big", "blink", "center", "font", "marquee", "multicol", "nobr", "spacer", "tt"]);
   return !!Object.keys(elements).find(e => {
     return deprecatedElements.has(e);
   });

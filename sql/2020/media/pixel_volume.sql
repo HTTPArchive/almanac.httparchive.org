@@ -22,7 +22,7 @@ return null;
 
 SELECT
   client,
-  count(0) AS count,
+  COUNT(0) AS count,
   any_value(viewportHeight) AS viewportHeight,
   any_value(viewportWidth) AS viewportWidth,
   any_value(dpr) AS dpr,

@@ -9,7 +9,7 @@ WITH pages_privacy AS (
     `httparchive.pages.2020_08_01_*`
 )
 
-SELECT 
+SELECT
   client,
   COUNT(0) AS total_websites,
   COUNTIF(JSON_EXTRACT_SCALAR(metrics, "$.iab_tcf") = "1") AS websites_with_iab,

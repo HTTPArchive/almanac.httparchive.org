@@ -7,22 +7,22 @@ LANGUAGE js AS """
     var $ = JSON.parse(payload);
     var headers = $.response.headers;
     // Find server header
-    var st = headers.find(function(e) { 
+    var st = headers.find(function(e) {
       return e['name'].toLowerCase() === 'server'
     });
     // Remove everything after / in the server header value and return
-    return st['value'].split("/")[0]; 
+    return st['value'].split("/")[0];
   } catch (e) {
     return '';
   }
 """;
 
-SELECT 
+SELECT
   client,
   getServerHeader(payload) AS server_header,
   COUNT(0) AS num_pages,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
-FROM 
+FROM
   `httparchive.almanac.requests`
 WHERE
   date = '2019-07-01' AND

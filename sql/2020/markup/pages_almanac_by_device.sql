@@ -28,7 +28,7 @@ RETURNS STRUCT<
 > LANGUAGE js AS '''
 var result = {};
 try {
-    var almanac = JSON.parse(almanac_string); 
+    var almanac = JSON.parse(almanac_string);
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return result;
 
@@ -50,12 +50,12 @@ try {
             good = false;
           }
           previousLevel = level;
-      }); 
+      });
       result.good_heading_sequence = good;
     }
 
     if (almanac.videos) {
-      var autoplay_count = almanac.videos.nodes.filter(n => n.autoplay == "" || n.autoplay).length; // valid values are blank or autoplay. Im just checking it exists... 
+      var autoplay_count = almanac.videos.nodes.filter(n => n.autoplay == "" || n.autoplay).length; // valid values are blank or autoplay. Im just checking it exists...
 
       result.contains_videos_with_autoplay = autoplay_count > 0;
       result.contains_videos_without_autoplay = almanac.videos.total > autoplay_count;
@@ -74,15 +74,15 @@ SELECT
   COUNT(0) AS total,
 
   # has scripts that are not jsonld ones. i.e. has a none jsonld script.
-  AS_PERCENT(COUNTIF(almanac_info.none_jsonld_scripts_total > 0), COUNT(0)) AS pct_contains_none_jsonld_scripts_m204, 
+  AS_PERCENT(COUNTIF(almanac_info.none_jsonld_scripts_total > 0), COUNT(0)) AS pct_contains_none_jsonld_scripts_m204,
 
-  # has inline scripts 
+  # has inline scripts
   AS_PERCENT(COUNTIF(almanac_info.inline_scripts_total > 0), COUNT(0)) AS pct_contains_inline_scripts_m206,
 
-  # has src scripts 
+  # has src scripts
   AS_PERCENT(COUNTIF(almanac_info.src_scripts_total > 0), COUNT(0)) AS pct_contains_src_scripts_m208,
 
-  # has no scripts 
+  # has no scripts
   AS_PERCENT(COUNTIF(almanac_info.scripts_total = 0), COUNT(0)) AS pct_contains_no_scripts_m210,
 
   # Does the heading logical sequence make any sense
@@ -95,11 +95,11 @@ SELECT
   AS_PERCENT(COUNTIF(almanac_info.contains_videos_without_autoplay), COUNT(0)) AS pct_contains_videos_without_autoplay_m311,
 
   # pages with no html lang attribute M404
-  AS_PERCENT(COUNTIF(almanac_info.html_node_lang IS NULL OR LENGTH(almanac_info.html_node_lang) = 0), COUNT(0)) AS pct_no_html_lang_m404,
+  AS_PERCENT(COUNTIF(almanac_info.html_node_lang IS NULL OR LENGTH(almanac_info.html_node_lang) = 0), COUNT(0)) AS pct_no_html_lang_m404
 
 FROM
-    ( 
-      SELECT 
+    (
+      SELECT
         _TABLE_SUFFIX AS client,
         get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
       FROM
@@ -107,4 +107,3 @@ FROM
     )
 GROUP BY
   client
-  

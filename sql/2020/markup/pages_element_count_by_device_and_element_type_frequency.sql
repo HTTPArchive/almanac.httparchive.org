@@ -15,10 +15,10 @@ try {
 
     if (Array.isArray(element_count) || typeof element_count != 'object') return [];
 
-    return Object.entries(element_count).map(([name, freq]) => ({name, freq})); 
-    
+    return Object.entries(element_count).map(([name, freq]) => ({name, freq}));
+
 } catch (e) {
-    return []; 
+    return [];
 }
 ''';
 
@@ -33,7 +33,7 @@ FROM
 GROUP BY
   client,
   element_type_info.name
-ORDER BY 
+ORDER BY
   freq_m201 DESC,
   client
 LIMIT

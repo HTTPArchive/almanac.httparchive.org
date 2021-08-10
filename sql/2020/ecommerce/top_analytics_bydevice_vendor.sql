@@ -22,8 +22,8 @@ JOIN
 ON
   NET.HOST(url) = domain
 JOIN (
-  SELECT 
-    _TABLE_SUFFIX AS client, 
+  SELECT
+    _TABLE_SUFFIX AS client,
     COUNT(0) AS total
   FROM `httparchive.summary_pages.2020_08_01_*`
   GROUP BY _TABLE_SUFFIX)
@@ -31,7 +31,7 @@ USING
   (client)
 WHERE
     `httparchive.almanac.summary_requests`.date = '2020-08-01' AND
-    lower(category) = 'analytics'
+    LOWER(category) = 'analytics'
 GROUP BY
   client,
   total,

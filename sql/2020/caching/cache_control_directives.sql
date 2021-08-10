@@ -23,7 +23,7 @@ SELECT
   COUNTIF(uses_pre_check_zero AND uses_post_check_zero) AS total_using_pre_check_zero_and_post_check_zero,
   COUNTIF(uses_pre_check_zero) AS total_using_pre_check_zero,
   COUNTIF(uses_post_check_zero) AS total_using_post_check_zero,
-  COUNTIF(uses_cache_control AND NOT uses_max_age AND NOT uses_no_cache AND NOT uses_public AND NOT uses_must_revalidate AND NOT uses_no_store AND NOT uses_private AND NOT uses_proxy_revalidate AND NOT uses_s_maxage AND NOT uses_no_transform AND NOT uses_immutable AND NOT uses_stale_while_revalidate AND NOT uses_stale_if_error AND NOT uses_pre_check_zero AND NOT uses_post_check_zero) AS total_erroneous_directives, 
+  COUNTIF(uses_cache_control AND NOT uses_max_age AND NOT uses_no_cache AND NOT uses_public AND NOT uses_must_revalidate AND NOT uses_no_store AND NOT uses_private AND NOT uses_proxy_revalidate AND NOT uses_s_maxage AND NOT uses_no_transform AND NOT uses_immutable AND NOT uses_stale_while_revalidate AND NOT uses_stale_if_error AND NOT uses_pre_check_zero AND NOT uses_post_check_zero) AS total_erroneous_directives,
   COUNTIF(uses_cache_control) / COUNT(0) AS pct_using_cache_control,
   COUNTIF(uses_max_age) / COUNT(0) AS pct_using_max_age,
   COUNTIF(uses_no_cache) / COUNT(0) AS pct_using_no_cache,

@@ -1,5 +1,9 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION hasUnitlessZero(css STRING) RETURNS BOOLEAN LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION hasUnitlessZero(css STRING)
+RETURNS BOOLEAN
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
   function compute(ast) {
     let ret = {
@@ -84,8 +88,7 @@ try {
 } catch (e) {
   return false;
 }
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   client,
