@@ -2,7 +2,7 @@
 # WebVitals distribution by device
 
 WITH
-  base AS (
+base AS (
   SELECT
     device,
 

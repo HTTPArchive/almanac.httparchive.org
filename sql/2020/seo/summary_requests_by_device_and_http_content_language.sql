@@ -11,9 +11,9 @@ SELECT
   COUNT(0) AS freq,
   AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct
 FROM
-   `httparchive.summary_requests.2020_08_01_*`
+  `httparchive.summary_requests.2020_08_01_*`
 WHERE
-   firstHtml
+  firstHtml
 GROUP BY
   client,
   resp_content_language

@@ -8,7 +8,7 @@ SELECT
   ROUND(AVG(kb_transfered), 2) AS avg_kb_transfered
 FROM (
 
-SELECT
+  SELECT
     client,
     page,
     JSON_EXTRACT_SCALAR(payload, "$._contentType") AS content_type,

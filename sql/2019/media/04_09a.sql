@@ -11,17 +11,17 @@ SELECT client,
   ROUND(100 * COUNTIF( chHTML AND chHeader) / COUNT(0), 2) AS chBothPct,
   ROUND(100 * COUNTIF( chHTML OR chHeader) / COUNT(0), 2) AS chEitherPct
 FROM
-(
-  SELECT
-    client,
-    page,
-    REGEXP_CONTAINS(body, r'(?is)<meta[^><]*Accept-CH\b') AS chHTML,
-    REGEXP_CONTAINS(respOtherHeaders, r'(?is)Accept-CH = ') AS chHeader
-  FROM
-    `httparchive.almanac.summary_response_bodies`
-  WHERE
-    date = '2019-07-01' AND
-    firstHtml
-)
+  (
+    SELECT
+      client,
+      page,
+      REGEXP_CONTAINS(body, r'(?is)<meta[^><]*Accept-CH\b') AS chHTML,
+      REGEXP_CONTAINS(respOtherHeaders, r'(?is)Accept-CH = ') AS chHeader
+    FROM
+      `httparchive.almanac.summary_response_bodies`
+    WHERE
+      date = '2019-07-01' AND
+      firstHtml
+  )
 GROUP BY
   client

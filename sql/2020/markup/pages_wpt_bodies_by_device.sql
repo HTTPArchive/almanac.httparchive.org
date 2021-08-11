@@ -162,12 +162,12 @@ SELECT
   SUM(wpt_bodies_info.n_h8) AS freq_h8
 
 FROM
-    (
-      SELECT
-        _TABLE_SUFFIX AS client,
-        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
-      FROM
-       `httparchive.pages.2020_08_01_*`
-    )
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
+    FROM
+      `httparchive.pages.2020_08_01_*`
+  )
 GROUP BY
   client

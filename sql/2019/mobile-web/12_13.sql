@@ -26,11 +26,11 @@ RETURNS STRUCT<found_advanced_types BOOLEAN, total_inputs INT64> LANGUAGE js AS 
 ''';
 
 SELECT
-    COUNT(0) AS count,
-    COUNTIF(input_stats.total_inputs > 0) AS total_applicable,
+  COUNT(0) AS count,
+  COUNTIF(input_stats.total_inputs > 0) AS total_applicable,
 
-    COUNTIF(input_stats.found_advanced_types) AS total_pages_using,
-    ROUND(COUNTIF(input_stats.found_advanced_types) * 100 / COUNTIF(input_stats.total_inputs > 0), 2) AS occurence_perc
+  COUNTIF(input_stats.found_advanced_types) AS total_pages_using,
+  ROUND(COUNTIF(input_stats.found_advanced_types) * 100 / COUNTIF(input_stats.total_inputs > 0), 2) AS occurence_perc
 FROM (
   SELECT
     getInputStats(payload) AS input_stats
