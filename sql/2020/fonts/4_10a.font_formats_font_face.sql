@@ -29,18 +29,18 @@ try {
 }
 ''';
 SELECT
- client,
- format,
- COUNT(0) AS freq,
- SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
- COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+  client,
+  format,
+  COUNT(0) AS freq,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
- `httparchive.almanac.parsed_css`,
- UNNEST(getFontFormats(css)) AS format
+  `httparchive.almanac.parsed_css`,
+  UNNEST(getFontFormats(css)) AS format
 WHERE
- date = '2020-08-01'
+  date = '2020-08-01'
 GROUP BY
- client,
- format
+  client,
+  format
 ORDER BY
- client, pct DESC
+  client, pct DESC

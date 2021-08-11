@@ -39,11 +39,11 @@ return result;
 ''';
 
 SELECT
-client,
-loading,
-total,
-COUNT(0) AS count,
-AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
+  client,
+  loading,
+  total,
+  COUNT(0) AS count,
+  AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 FROM
   (
     SELECT
@@ -53,12 +53,12 @@ FROM
     FROM
       `httparchive.pages.2020_08_01_*`
     JOIN
-    (
-      SELECT _TABLE_SUFFIX, COUNT(0) AS total
-      FROM
-      `httparchive.pages.2020_08_01_*`
-      GROUP BY _TABLE_SUFFIX
-    ) # to get an accurate total of pages per device. also seems fast
+      (
+        SELECT _TABLE_SUFFIX, COUNT(0) AS total
+        FROM
+          `httparchive.pages.2020_08_01_*`
+        GROUP BY _TABLE_SUFFIX
+      ) # to get an accurate total of pages per device. also seems fast
     USING (_TABLE_SUFFIX)
   ),
   UNNEST(markup_info.loading) AS loading

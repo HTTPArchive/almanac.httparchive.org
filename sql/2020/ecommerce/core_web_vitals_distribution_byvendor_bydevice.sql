@@ -29,9 +29,9 @@ JOIN (
   FROM
     `httparchive.technologies.2020_08_01_*`
   WHERE
-  category = 'Ecommerce' AND
-  (app != 'Cart Functionality' AND
-   app != 'Google Analytics Enhanced eCommerce'))
+    category = 'Ecommerce' AND
+    (app != 'Cart Functionality' AND
+      app != 'Google Analytics Enhanced eCommerce'))
 ON
   CONCAT(origin, '/') = url AND
   IF(device = 'desktop', 'desktop', 'mobile') = client

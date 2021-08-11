@@ -33,5 +33,4 @@ GROUP BY
 ORDER BY
   freq DESC,
   client
-LIMIT
-  100
+LIMIT 100

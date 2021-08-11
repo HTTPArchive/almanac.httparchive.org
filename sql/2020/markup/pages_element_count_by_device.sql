@@ -50,12 +50,12 @@ SELECT
   AS_PERCENT(COUNTIF(element_count_info.contains_details_element AND element_count_info.contains_summary_element), COUNT(0)) AS pct_contains_details_and_summary_element_m214
 
 FROM
-    (
-      SELECT
-        _TABLE_SUFFIX AS client,
-        get_element_count_info(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS element_count_info
-      FROM
-        `httparchive.pages.2020_08_01_*`
-    )
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      get_element_count_info(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS element_count_info
+    FROM
+      `httparchive.pages.2020_08_01_*`
+  )
 GROUP BY
   client

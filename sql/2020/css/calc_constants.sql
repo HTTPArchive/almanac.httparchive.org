@@ -88,5 +88,4 @@ GROUP BY
   const
 ORDER BY
   pct DESC
-LIMIT
-  200
+LIMIT 200
