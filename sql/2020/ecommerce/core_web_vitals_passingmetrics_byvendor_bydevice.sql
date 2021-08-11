@@ -50,7 +50,7 @@ JOIN (
   WHERE
     category = 'Ecommerce' AND
     (app != 'Cart Functionality' AND
-    app != 'Google Analytics Enhanced eCommerce'))
+      app != 'Google Analytics Enhanced eCommerce'))
 ON
   CONCAT(origin, '/') = url AND
   IF(device = 'desktop', 'desktop', 'mobile') = client

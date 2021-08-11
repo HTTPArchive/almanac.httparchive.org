@@ -10,10 +10,10 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
 # returns all the data we need from _wpt_bodies
 CREATE TEMPORARY FUNCTION get_wpt_bodies_info(wpt_bodies_string STRING)
 RETURNS STRUCT<
-links_same_site INT64,
-links_window_location INT64,
-links_window_open INT64,
-links_href_javascript INT64
+  links_same_site INT64,
+  links_window_location INT64,
+  links_window_open INT64,
+  links_href_javascript INT64
 
 > LANGUAGE js AS '''
 var result = {};

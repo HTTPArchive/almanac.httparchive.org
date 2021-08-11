@@ -36,5 +36,4 @@ GROUP BY
 ORDER BY
   freq_m201 DESC,
   client
-LIMIT
-  1000
+LIMIT 1000

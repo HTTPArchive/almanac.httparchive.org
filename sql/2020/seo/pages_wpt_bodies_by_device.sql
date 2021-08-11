@@ -478,12 +478,12 @@ SELECT
   AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_nocache), COUNT(0)) AS pct_rendered_googlebot_news_nocache
 
 FROM (
-      SELECT
-        _TABLE_SUFFIX AS client,
-        SPLIT(url, ":")[OFFSET(0)] AS protocol,
-        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
-      FROM
-        `httparchive.pages.2020_08_01_*`
-    )
+  SELECT
+    _TABLE_SUFFIX AS client,
+    SPLIT(url, ":")[OFFSET(0)] AS protocol,
+    get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
+  FROM
+    `httparchive.pages.2020_08_01_*`
+)
 GROUP BY
   client

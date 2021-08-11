@@ -9,10 +9,10 @@ SELECT
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct_pages,
   ROUND(COUNTIF(url LIKE "https://%") * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct_https
 FROM
-   `httparchive.almanac.requests`
+  `httparchive.almanac.requests`
 WHERE
-   date = '2019-07-01' AND
-   firstHtml
+  date = '2019-07-01' AND
+  firstHtml
 GROUP BY
   client,
   protocol
