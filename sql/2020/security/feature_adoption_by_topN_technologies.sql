@@ -6,8 +6,7 @@ RETURNS ARRAY<STRING> AS (
   ARRAY(
     SELECT part
     FROM UNNEST(arr) part
-    -- SQL Linter can't handle WITH OFFSET syntax so escape it
-    WITH OFFSET index  -- noqa: PRS
+    WITH OFFSET AS index
     WHERE index BETWEEN start AND finish
     ORDER BY index
   )
