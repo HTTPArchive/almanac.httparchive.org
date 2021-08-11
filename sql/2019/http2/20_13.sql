@@ -26,7 +26,7 @@ FROM (
     firstHtml,
     getLinkHeaders(payload) AS link_headers
   FROM
-   `httparchive.almanac.requests`
+    `httparchive.almanac.requests`
   WHERE
     date = '2019-07-01'
 )

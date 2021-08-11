@@ -32,5 +32,4 @@ GROUP BY
   property
 ORDER BY
   freq / total DESC
-LIMIT
-  500
+LIMIT 500

@@ -558,14 +558,12 @@ header .cta {
 
 .search-nav input {
   min-width: 400px;
+  text-indent: 5px;
 }
 
-.header-search {
-  padding: 5px;
-}
-
+.header-search,
 .footer-search {
-  padding: 10px 5px 0;
+  padding: 5px;
 }
 
 .search-input {
@@ -1378,6 +1376,11 @@ p.copyright a {
   padding: 16px 8px 8px 16px;
   font-weight: bold;
   font-size: 1.25rem;
+}
+
+.header-search .nav-dropdown-list-part,
+.footer .footer-search .nav-dropdown-list-part {
+  padding: 16px;
 }
 
 .nav-dropdown-list-part a {

@@ -45,29 +45,29 @@ SELECT
   APPROX_QUANTILES(ROUND(100 * resourceBytes / IFNULL(NULLIF(pageBytes, 0), 0.1), 2), 1000)[OFFSET(990)] AS pct_p99,
   APPROX_QUANTILES(ROUND(100 * resourceBytes / IFNULL(NULLIF(pageBytes, 0), 0.1), 2), 1000)[OFFSET(900)] AS pct_p90
 FROM
-(
-  SELECT
-    type,
-    pageBytes,
-    IF(type = 'image', totalImageCount, totalImageCount + totalVideoCount) AS resourceCount,
-    IF(type = 'image', totalImageBytes, totalImageBytes + totalVideoBytes) AS resourceBytes
-  FROM
   (
     SELECT
-      url,
-      CAST(JSON_EXTRACT_SCALAR(report, '$.audits.resource-summary.details.items[0].size') AS INT64) AS pageBytes,
-      CAST(JSON_EXTRACT_SCALAR(report, '$.audits.resource-summary.details.items[1].size') AS INT64) AS totalImageBytes,
-      CAST(JSON_EXTRACT_SCALAR(report, '$.audits.resource-summary.details.items[1].requestCount') AS INT64) AS totalImageCount,
-      getVideoBytes(report) AS totalVideoBytes,
-      getVideoCount(report) AS totalVideoCount
+      type,
+      pageBytes,
+      IF(type = 'image', totalImageCount, totalImageCount + totalVideoCount) AS resourceCount,
+      IF(type = 'image', totalImageBytes, totalImageBytes + totalVideoBytes) AS resourceBytes
     FROM
-      `httparchive.lighthouse.2019_07_01_mobile`
+      (
+        SELECT
+          url,
+          CAST(JSON_EXTRACT_SCALAR(report, '$.audits.resource-summary.details.items[0].size') AS INT64) AS pageBytes,
+          CAST(JSON_EXTRACT_SCALAR(report, '$.audits.resource-summary.details.items[1].size') AS INT64) AS totalImageBytes,
+          CAST(JSON_EXTRACT_SCALAR(report, '$.audits.resource-summary.details.items[1].requestCount') AS INT64) AS totalImageCount,
+          getVideoBytes(report) AS totalVideoBytes,
+          getVideoCount(report) AS totalVideoCount
+        FROM
+          `httparchive.lighthouse.2019_07_01_mobile`
+      )
+    # we to make this a little easier to read we unnest with just image and image+video
+    # it's important to remember that each of the results is mutually exclusive and should not imply addition
+    # that is, you cannot assume that image + video at the p75 and image at p75 are the same webpages being collected
+    # if we wanted to do more advanced percentile based on page size, we would need a different statistics engine (eg: R)
+    CROSS JOIN UNNEST(['image', 'image+video']) AS type
   )
-  # we to make this a little easier to read we unnest with just image and image+video
-  # it's important to remember that each of the results is mutually exclusive and should not imply addition
-  # that is, you cannot assume that image + video at the p75 and image at p75 are the same webpages being collected
-  # if we wanted to do more advanced percentile based on page size, we would need a different statistics engine (eg: R)
-  CROSS JOIN UNNEST(['image', 'image+video']) AS type
-)
 GROUP BY
   type

@@ -102,5 +102,4 @@ FROM (
     media)
 ORDER BY
   pct DESC
-LIMIT
-  500
+LIMIT 500

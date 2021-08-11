@@ -12,9 +12,9 @@ exclude_rules = L003,L007,L011,L014,L016,L020,L026,L027,L028,L029,L030,L031,L032
 # L016 - We allow longer lines as some of our queries are complex. Maybe should limit in future?
 # L020 - Asks for unique table aliases meaning it complains if selecting from two 2021_07_01 tables as implicit alias is table name (not fully qualified) so same.
 # L026 - BigQuery uses arrays and functions which looks like incorrect references
-# L027 - Asks for qualified columns for ambiguous. Really should enable this but a lot to clean up. TODO
+# L027 - Asks for qualified columns for ambiguous one. Really should enable this but a lot to clean up. TODO
 # L028 - Insists on references in column names even if not ambiguous. Bit OTT.
-# L029 - Avoids keywords as identifiers but has some common ones we use (e.g. count, element).
+# L029 - Avoids keywords as identifiers but we use this a lot (e.g. AS count, AS max...etc.)
 # L030 - Function names will be mixed case so don't enforce case
 # L031 - Avoid aliases in from and join - why?
 # L032 - Uses joins instead of USING - why?
@@ -37,6 +37,7 @@ sql_file_exts = .sql,.sql.j2,.dml,.ddl
 
 [sqlfluff:indentation]
 indented_joins = False
+indented_using_on = False
 template_blocks_indent = True
 
 [sqlfluff:templater]
@@ -67,6 +68,9 @@ unquoted_identifiers_policy = all
 [sqlfluff:rules:L003]
 lint_templated_tokens = True
 
+[sqlfluff:rules:L007]
+operator_new_lines = before
+
 [sqlfluff:rules:L010]  # Keywords
 capitalisation_policy = upper
 
@@ -94,3 +98,4 @@ forbid_subquery_in = join
 
 [sqlfluff:rules:L047]  # Consistent syntax to count all rows
 prefer_count_1 = False
+prefer_count_0 = True

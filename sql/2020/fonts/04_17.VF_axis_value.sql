@@ -19,21 +19,21 @@ try {
 }
 ''';
 SELECT
- client,
- REGEXP_EXTRACT(LOWER(values), '[\'"]([\\w]{4})[\'"]') AS axis,
- CAST(REGEXP_EXTRACT(value, '\\d+') AS NUMERIC) AS num_axis,
- COUNT(DISTINCT page) AS pages,
- SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
- COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct
+  client,
+  REGEXP_EXTRACT(LOWER(values), '[\'"]([\\w]{4})[\'"]') AS axis,
+  CAST(REGEXP_EXTRACT(value, '\\d+') AS NUMERIC) AS num_axis,
+  COUNT(DISTINCT page) AS pages,
+  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
+  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct
 FROM
- `httparchive.almanac.parsed_css`,
- UNNEST(getFontVariationSettings(css)) AS value,
- UNNEST(SPLIT(value, ',')) AS values
+  `httparchive.almanac.parsed_css`,
+  UNNEST(getFontVariationSettings(css)) AS value,
+  UNNEST(SPLIT(value, ',')) AS values
 WHERE
- date = '2020-08-01'
+  date = '2020-08-01'
 GROUP BY
- client, axis, num_axis
+  client, axis, num_axis
 HAVING
- axis IS NOT NULL
+  axis IS NOT NULL
 ORDER BY
- pages DESC
+  pages DESC

@@ -14,8 +14,8 @@ JOIN (
   FROM
     `httparchive.technologies.2020_08_01_*`
   WHERE
-     category = 'Ecommerce'
-    )
+    category = 'Ecommerce'
+)
 USING
   (_TABLE_SUFFIX, url)
 JOIN (
@@ -25,10 +25,10 @@ JOIN (
   FROM
     `httparchive.technologies.2020_08_01_*`
   WHERE
-     category = 'Ecommerce'
+    category = 'Ecommerce'
   GROUP BY
     _TABLE_SUFFIX
-    )
+)
 USING
   (_TABLE_SUFFIX)
 WHERE
