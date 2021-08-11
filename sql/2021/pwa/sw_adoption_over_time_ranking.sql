@@ -7,8 +7,8 @@ SELECT
   CASE ranking
     WHEN 1000 THEN '<= 1,000'
     WHEN 10000000 THEN '> 1,000,000'
-  ELSE
-    FORMAT("%'d", CAST(ranking / 10 + 1 AS INT64)) || ' - ' || FORMAT("%'d", ranking)
+    ELSE
+      FORMAT("%'d", CAST(ranking / 10 + 1 AS INT64)) || ' - ' || FORMAT("%'d", ranking)
   END AS rank_text,
   COUNT(0) AS freq,
   total AS total,
