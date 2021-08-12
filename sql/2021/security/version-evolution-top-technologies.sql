@@ -24,7 +24,7 @@ FROM (
       TRIM(LOWER(category)) AS category_lower,
       TRIM(LOWER(app)) AS app_lower,
       LEFT(_TABLE_SUFFIX, 10) AS month,
-      IF(ENDS_WITH(_TABLE_SUFFIX, '_desktop'), 'desktop', 'mobile') AS client,
+      IF(ENDS_WITH(_TABLE_SUFFIX, '_desktop'), 'desktop', 'mobile') AS client
     FROM
       `httparchive.technologies.*`
     WHERE

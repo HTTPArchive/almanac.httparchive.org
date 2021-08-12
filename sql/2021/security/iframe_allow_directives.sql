@@ -17,18 +17,18 @@ SELECT
   COUNT(0) / total_iframes_with_allow AS pct
 FROM (
   SELECT
-    _TABLE_SUFFIX as client,
+    t._TABLE_SUFFIX as client,
     JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.iframe-allow-sandbox") AS iframeAttrs
   FROM
-    `httparchive.pages.2021_08_01_*`),
+    `httparchive.pages.2021_08_01_*` AS t),
   UNNEST(iframeAttrs) AS iframeAttr,
   UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT_SCALAR(iframeAttr, '$.allow'), r'(?i)([^,;]+)')) AS allow_attr
 JOIN (
   SELECT
-    _TABLE_SUFFIX as client,
+    t._TABLE_SUFFIX as client,
     SUM(getNumWithAllowAttribute(payload)) AS total_iframes_with_allow
   FROM
-    `httparchive.pages.2021_08_01_*`
+    `httparchive.pages.2021_08_01_*` AS t
   GROUP BY
     client
 ) USING (client)

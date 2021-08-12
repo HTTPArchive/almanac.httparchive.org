@@ -5,7 +5,7 @@ SELECT
   tls_version,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total_pages,
   COUNT(0) AS freq,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM (
   SELECT
     client,
@@ -15,7 +15,7 @@ FROM (
   WHERE
     date = '2021-08-01' AND
     STARTS_WITH(url, 'https') AND
-    firstHtml = true)
+    firsthtml = true)
 WHERE
   tls_version IS NOT NULL
 GROUP BY

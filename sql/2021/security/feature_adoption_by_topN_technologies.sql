@@ -4,7 +4,8 @@
 CREATE TEMP FUNCTION array_slice(arr ARRAY<STRING>, start INT64, finish INT64)
 RETURNS ARRAY<STRING> AS (
   ARRAY(
-    SELECT part FROM UNNEST(arr) part WITH OFFSET index
+    -- SQL Linter can't handle WITH OFFSET syntax so escape it
+    SELECT part FROM UNNEST(arr) part WITH OFFSET index  -- noqa: PRS
     WHERE index BETWEEN start AND finish ORDER BY index
   )
 );
