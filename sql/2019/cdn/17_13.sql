@@ -16,7 +16,7 @@ FROM (
       IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
       CAST(JSON_EXTRACT(payload, "$.timings.ssl") AS INT64) AS tlstime,
       ARRAY_LENGTH(split(JSON_EXTRACT(payload, '$._securityDetails.sanList'), "")) AS sanLength,
---       length(FROM_BASE64(REPLACE(REGEXP_REPLACE(JSON_EXTRACT_SCALAR(payload, '$._certificates[0]'), ""-----(BEGIN|END) CERTIFICATE-----"", """"), ""\n"", """"))) AS tlscertsize,
+      --       length(FROM_BASE64(REPLACE(REGEXP_REPLACE(JSON_EXTRACT_SCALAR(payload, '$._certificates[0]'), ""-----(BEGIN|END) CERTIFICATE-----"", """"), ""\n"", """"))) AS tlscertsize,
       IF(NET.HOST(url) = NET.HOST(page), TRUE, FALSE) AS sameHost,
       IF(NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page), TRUE, FALSE) AS sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain
     FROM `httparchive.almanac.requests`
@@ -27,8 +27,8 @@ WHERE
   tlstime != -1 AND
   sanLength IS NOT NULL
 GROUP BY
- client,
- cdn,
+  client,
+  cdn,
   firstHtml
 ORDER BY
   requests DESC

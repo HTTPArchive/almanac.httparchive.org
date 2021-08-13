@@ -22,9 +22,9 @@ FROM (
     date = '2020-08-01' AND
     JSON_EXTRACT_SCALAR(payload, "$._was_pushed") = "1" AND
     (LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "http/2" OR
-     LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "%quic%" OR
-     LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "h3%" OR
-     LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "http/3%")
+                               LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "%quic%" OR
+      LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "h3%" OR
+      LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "http/3%")
   GROUP BY
     client,
     http_version,

@@ -59,18 +59,17 @@ SELECT
 
   AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 
-  FROM
-    (
-      SELECT
-        _TABLE_SUFFIX AS client,
-        get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
-      FROM
-        `httparchive.pages.2020_08_01_*`
-    )
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
+    FROM
+      `httparchive.pages.2020_08_01_*`
+  )
 GROUP BY
   client,
   image_type_extension
 ORDER BY
   freq DESC
-LIMIT
-  1000
+LIMIT 1000
