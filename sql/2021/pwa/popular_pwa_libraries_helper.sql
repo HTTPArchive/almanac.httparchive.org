@@ -1,36 +1,56 @@
 #standardSQL
 # Use this sql to find popular library imports for popular_pwa_libraries.sql
 # And also other importscripts used in service workers
-#
-# TODO - CONVERT TO CUSTOM METRICS - IF WE STILL NEED THIS?
-#
+CREATE TEMPORARY FUNCTION getSWLibraries(importScriptsInfo STRING)
+RETURNS ARRAY<STRING> LANGUAGE js AS '''
+try {
+  /* 'importScriptsInfo' returns an array of libraries that might import other libraries
+     The final array of libraries comes from the combination of both */
+  var ObjKeys = Object.keys(JSON.parse(importScriptsInfo));
+  var ObjValues = Object.values(JSON.parse(importScriptsInfo));
+  if (typeof ObjKeys == 'string') {
+    ObjKeys = [ObjKeys];
+  }
+  if (typeof ObjValues == 'string') {
+    ObjValues = [ObjValues];
+  }
+  var libraries = ObjKeys.concat(ObjValues);
+  /* Replacing spaces and commas */
+  for (var i = 0; i < libraries.length; i++) {
+      libraries[i] = libraries[i].toString().trim().replace(/'/g, "");
+  }
+
+  /* Creating a Set to eliminate duplicates and transforming back to an array to respect the function signature */
+  return Array.from(new Set(libraries));
+} catch (e) {
+  return [e];
+}
+''';
+
 SELECT
-  client,
-  importscript,
-  COUNT(DISTINCT page) AS pages,
-  total,
-  COUNT(DISTINCT page) / total AS pct
+  _TABLE_SUFFIX AS client,
+  script,
+  COUNT(DISTINCT url) AS freq
 FROM
-  (SELECT DISTINCT * FROM `httparchive.almanac.service_workers`)
-JOIN
-  (SELECT client, date, COUNT(DISTINCT page) AS total FROM `httparchive.almanac.service_workers` GROUP BY client, date)
-USING (client, date),
-  UNNEST(ARRAY_CONCAT(REGEXP_EXTRACT_ALL(body, r'(?i)importscripts\([\'"]([^(]*)[\'"]\)'))) AS importscript
+  `httparchive.sample_data.pages_*`,
+  --`httparchive.pages.2021_07_01_*`,
+  UNNEST(getSWLibraries(JSON_EXTRACT(payload, '$._pwa.importScriptsInfo'))) AS script
 WHERE
-  date = '2021-07-01' AND
-  LOWER(body) LIKE '%importscripts%' AND
-  LOWER(ImportScript) NOT LIKE '%workbox%' AND
-  LOWER(ImportScript) NOT LIKE '%sw-toolbox%' AND
-  LOWER(ImportScript) NOT LIKE '%firebase%' AND
-  LOWER(ImportScript) NOT LIKE '%onesignalsdk%' AND
-  LOWER(ImportScript) NOT LIKE '%najva%' AND
-  LOWER(ImportScript) NOT LIKE '%upush%' AND
-  LOWER(ImportScript) NOT LIKE '%ache-polyfill%' AND
-  LOWER(ImportScript) NOT LIKE '%analytics-helper%'
+  JSON_EXTRACT(payload, '$._pwa') != "[]" AND
+  JSON_EXTRACT(payload, '$._pwa.importScriptsInfo') != "[]" AND
+  JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true' AND
+  LOWER(script) NOT LIKE '%workbox%' AND
+  LOWER(script) NOT LIKE '%sw-toolbox%' AND
+  LOWER(script) NOT LIKE '%firebase%' AND
+  LOWER(script) NOT LIKE '%onesignalsdk%' AND
+  LOWER(script) NOT LIKE '%najva%' AND
+  LOWER(script) NOT LIKE '%upush%' AND
+  LOWER(script) NOT LIKE '%cache-polyfill.js%' AND
+  LOWER(script) NOT LIKE '%analytics-helper.js%' AND
+  LOWER(script) NOT LIKE '%recaptcha%' AND
+  LOWER(script) NOT LIKE '%pwabuilder%'
 GROUP BY
-  client,
-  importscript,
-  total
+  _TABLE_SUFFIX,
+  script
 ORDER BY
-  pct DESC,
-  client
+  freq DESC
