@@ -197,6 +197,6 @@ SELECT
   payload
 FROM
   `httparchive.requests.2021_07_01_*` req
-LEFT JOIN (SELECT DISTINCT _TABLE_SUFFIX AS client, url, rank FROM `httparchive.summary_pages.2021_07_01_*`) rank_data
+LEFT JOIN (SELECT _TABLE_SUFFIX AS client, url, rank FROM `httparchive.summary_pages.2021_07_01_*`) rank_data
 ON req.page = rank_data.url AND
   req._TABLE_SUFFIX = rank_data.client
