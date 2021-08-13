@@ -13,7 +13,7 @@ FROM (
   SELECT
     info,
     tech.category_lower AS category,
-    tech.app_lower AS app,
+    top.app_lower AS app,
     month,
     client,
     COUNT(0) AS freq,
