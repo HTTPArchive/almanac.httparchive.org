@@ -49,33 +49,33 @@ FROM
     SELECT
       _TABLE_SUFFIX AS client,
       url,
-    COUNT(0) AS importscripts,
-    COUNTIF(LOWER(script) LIKE '%workbox%') AS workbox,
-    COUNTIF(LOWER(script) LIKE '%sw-toolbox%') AS sw_toolbox,
-    COUNTIF(LOWER(script) LIKE '%firebase%') AS firebase,
-    COUNTIF(LOWER(script) LIKE '%onesignalsdk%') AS OneSignalSDK,
-    COUNTIF(LOWER(script) LIKE '%najva%') AS najva,
-    COUNTIF(LOWER(script) LIKE '%upush%') AS upush,
-    COUNTIF(LOWER(script) LIKE '%cache-polyfill%') AS cache_polyfill,
-    COUNTIF(LOWER(script) LIKE '%analytics-helper%') AS analytics_helper,
-    COUNTIF(LOWER(script) LIKE '%recaptcha%') AS recaptcha,
-    COUNTIF(LOWER(script) LIKE '%pwabuilder%') AS pwabuilder,
-    COUNTIF(LOWER(script) LIKE '%pushprofit%') AS pushprofit,
-    COUNTIF(LOWER(script) LIKE '%sendpulse%') AS sendpulse,
-    COUNTIF(LOWER(script) LIKE '%quore%') AS quora,
-    COUNTIF(LOWER(script) NOT LIKE '%workbox%' AND
-      LOWER(script) NOT LIKE '%sw-toolbox%' AND
-      LOWER(script) NOT LIKE '%firebase%' AND
-      LOWER(script) NOT LIKE '%onesignalsdk%' AND
-      LOWER(script) NOT LIKE '%najva%' AND
-      LOWER(script) NOT LIKE '%upush%' AND
-      LOWER(script) NOT LIKE '%cache-polyfill.js%' AND
-      LOWER(script) NOT LIKE '%analytics-helper.js%' AND
-      LOWER(script) NOT LIKE '%recaptcha%' AND
-      LOWER(script) NOT LIKE '%pwabuilder%' AND
-      LOWER(script) NOT LIKE '%pushprofit%' AND
-      LOWER(script) NOT LIKE '%sendpulse%' AND
-      LOWER(script) NOT LIKE '%quora%') AS none_of_the_above
+      COUNT(0) AS importscripts,
+      COUNTIF(LOWER(script) LIKE '%workbox%') AS workbox,
+      COUNTIF(LOWER(script) LIKE '%sw-toolbox%') AS sw_toolbox,
+      COUNTIF(LOWER(script) LIKE '%firebase%') AS firebase,
+      COUNTIF(LOWER(script) LIKE '%onesignalsdk%') AS OneSignalSDK,
+      COUNTIF(LOWER(script) LIKE '%najva%') AS najva,
+      COUNTIF(LOWER(script) LIKE '%upush%') AS upush,
+      COUNTIF(LOWER(script) LIKE '%cache-polyfill%') AS cache_polyfill,
+      COUNTIF(LOWER(script) LIKE '%analytics-helper%') AS analytics_helper,
+      COUNTIF(LOWER(script) LIKE '%recaptcha%') AS recaptcha,
+      COUNTIF(LOWER(script) LIKE '%pwabuilder%') AS pwabuilder,
+      COUNTIF(LOWER(script) LIKE '%pushprofit%') AS pushprofit,
+      COUNTIF(LOWER(script) LIKE '%sendpulse%') AS sendpulse,
+      COUNTIF(LOWER(script) LIKE '%quore%') AS quora,
+      COUNTIF(LOWER(script) NOT LIKE '%workbox%' AND
+        LOWER(script) NOT LIKE '%sw-toolbox%' AND
+        LOWER(script) NOT LIKE '%firebase%' AND
+        LOWER(script) NOT LIKE '%onesignalsdk%' AND
+        LOWER(script) NOT LIKE '%najva%' AND
+        LOWER(script) NOT LIKE '%upush%' AND
+        LOWER(script) NOT LIKE '%cache-polyfill.js%' AND
+        LOWER(script) NOT LIKE '%analytics-helper.js%' AND
+        LOWER(script) NOT LIKE '%recaptcha%' AND
+        LOWER(script) NOT LIKE '%pwabuilder%' AND
+        LOWER(script) NOT LIKE '%pushprofit%' AND
+        LOWER(script) NOT LIKE '%sendpulse%' AND
+        LOWER(script) NOT LIKE '%quora%') AS none_of_the_above
     FROM
       `httparchive.pages.2021_07_01_*`,
       UNNEST(getSWLibraries(JSON_EXTRACT(payload, '$._pwa.importScriptsInfo'))) AS script

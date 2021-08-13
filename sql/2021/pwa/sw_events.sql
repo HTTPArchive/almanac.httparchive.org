@@ -39,9 +39,9 @@ JOIN
   )
 USING (_TABLE_SUFFIX)
 WHERE
-   JSON_EXTRACT(payload, '$._pwa') != "[]" AND
-   JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true" AND
-   JSON_EXTRACT(payload, '$._pwa.swEventListenersInfo') != "[]"
+  JSON_EXTRACT(payload, '$._pwa') != "[]" AND
+  JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true" AND
+  JSON_EXTRACT(payload, '$._pwa.swEventListenersInfo') != "[]"
 GROUP BY
   client,
   total,
