@@ -13,9 +13,11 @@ LANGUAGE js AS """
       return '';
     }
   }
+
   function getOtherHeaders(headers, excludes) {
     return headers.filter(h => !excludes.includes(h.name.toLowerCase())).map(h => `${h.name} = ${h.value}`).join(', ');
   }
+
   function getExt(ext) {
     var iQ = ext.indexOf('?');
     if (iQ !== -1) {
@@ -32,6 +34,7 @@ LANGUAGE js AS """
     }
     return ext;
   }
+
   function prettyType(mimeType, ext) {
     mimeType = mimeType.toLowerCase();
     var types = ['font', 'css', 'image', 'script', 'video', 'audio', 'xml'];
@@ -57,6 +60,7 @@ LANGUAGE js AS """
     }
     return 'other';
   }
+
   function getFormat(prettyType, mimeType, ext) {
     ext = ext.toLowerCase();
     if (prettyType == 'image') {
@@ -77,6 +81,7 @@ LANGUAGE js AS """
     }
     return '';
   }
+
   function getExpAge(headers, startedDateTime) {
     try {
       var cc = getHeader(headers, 'cache-control').toLowerCase();
@@ -99,6 +104,7 @@ LANGUAGE js AS """
       return 0;
     }
   }
+
   try {
     var $ = JSON.parse(payload);
     var mimeType = $.response.content.mimeType;
@@ -111,72 +117,72 @@ LANGUAGE js AS """
     var securityDetails = $._securityDetails || {};
 
     return {
-requestId: $._request_id,
-startedDateTime: Math.round(+startedDateTime/1000),
-time: +$.time,
-method: $.request.method,
-urlShort: $.request.url.substr(0, 255),
-redirectUrl: $.response.redirectUrl,
-firstReq: $._index === 0,
-firstHtml: !!$._final_base_page,
-reqHttpVersion: $.request.httpVersion,
-reqHeadersSize: +$.request.headersSize,
-reqBodySize: +$.request.bodySize,
-reqCookieLen: +getHeader($.request.headers, 'cookie').length,
-reqOtherHeaders: getOtherHeaders($.request.headers, reqHeaders),
-status: +$.response.status,
-respHttpVersion: $.response.httpVersion,
-respHeadersSize: +$.response.headersSize,
-respBodySize: +$.response.bodySize,
-respSize: +$.response.content.size,
-respCookieLen: +getHeader($.response.headers, 'set-cookie').length,
-expAge: getExpAge($.response.headers, startedDateTime),
-mimeType: mimeType,
-respOtherHeaders: getOtherHeaders($.response.headers, respHeaders),
-req_accept: getHeader($.request.headers, 'accept'),
-req_accept_charset: getHeader($.request.headers, 'accept-charset'),
-req_accept_encoding: getHeader($.request.headers, 'accept-encoding'),
-req_accept_language: getHeader($.request.headers, 'accept-language'),
-req_connection: getHeader($.request.headers, 'connection'),
-req_host: getHeader($.request.headers, 'host'),
-req_if_modified_since: getHeader($.request.headers, 'if-modified-since'),
-req_if_none_match: getHeader($.request.headers, 'if-none-match'),
-req_referer: getHeader($.request.headers, 'referer'),
-req_user_agent: getHeader($.request.headers, 'user-agent'),
-resp_accept_ranges: getHeader($.response.headers, 'accept-ranges'),
-resp_age: getHeader($.response.headers, 'age'),
-resp_cache_control: getHeader($.response.headers, 'cache-control'),
-resp_connection: getHeader($.response.headers, 'connection'),
-resp_content_encoding: getHeader($.response.headers, 'content-encoding'),
-resp_content_language: getHeader($.response.headers, 'content-language'),
-resp_content_length: getHeader($.response.headers, 'content-length'),
-resp_content_location: getHeader($.response.headers, 'content-location'),
-resp_content_type: getHeader($.response.headers, 'content-type'),
-resp_date: getHeader($.response.headers, 'date'),
-resp_etag: getHeader($.response.headers, 'etag'),
-resp_expires: getHeader($.response.headers, 'expires'),
-resp_keep_alive: getHeader($.response.headers, 'keep-alive'),
-resp_last_modified: getHeader($.response.headers, 'last-modified'),
-resp_location: getHeader($.response.headers, 'location'),
-resp_pragma: getHeader($.response.headers, 'pragma'),
-resp_server: getHeader($.response.headers, 'server'),
-resp_transfer_encoding: getHeader($.response.headers, 'transfer-encoding'),
-resp_vary: getHeader($.response.headers, 'vary'),
-resp_via: getHeader($.response.headers, 'via'),
-resp_x_powered_by: getHeader($.response.headers, 'x-powered-by'),
-_cdn_provider: $._cdn_provider,
-_gzip_save: $._gzip_save,
-type: prettyType,
-ext: ext,
-format: getFormat(prettyType, mimeType, ext,),
-protocol: $._protocol,
-pushed: $._was_pushed,
-tls_version: $._tls_version,
-tls_cipher_suite: $._tls_cipher_suite,
-cert_issuer: securityDetails.issuer,
-cert_keyexchange: securityDetails.keyExchange,
-cert_cipher: securityDetails.cipher,
-cert_protocol: securityDetails.protocol
+      requestId: $._request_id,
+      startedDateTime: Math.round(+startedDateTime / 1000),
+      time: +$.time,
+      method: $.request.method,
+      urlShort: $.request.url.substr(0, 255),
+      redirectUrl: $.response.redirectUrl,
+      firstReq: $._index === 0,
+      firstHtml: !!$._final_base_page,
+      reqHttpVersion: $.request.httpVersion,
+      reqHeadersSize: +$.request.headersSize,
+      reqBodySize: +$.request.bodySize,
+      reqCookieLen: +getHeader($.request.headers, 'cookie').length,
+      reqOtherHeaders: getOtherHeaders($.request.headers, reqHeaders),
+      status: +$.response.status,
+      respHttpVersion: $.response.httpVersion,
+      respHeadersSize: +$.response.headersSize,
+      respBodySize: +$.response.bodySize,
+      respSize: +$.response.content.size,
+      respCookieLen: +getHeader($.response.headers, 'set-cookie').length,
+      expAge: getExpAge($.response.headers, startedDateTime),
+      mimeType: mimeType,
+      respOtherHeaders: getOtherHeaders($.response.headers, respHeaders),
+      req_accept: getHeader($.request.headers, 'accept'),
+      req_accept_charset: getHeader($.request.headers, 'accept-charset'),
+      req_accept_encoding: getHeader($.request.headers, 'accept-encoding'),
+      req_accept_language: getHeader($.request.headers, 'accept-language'),
+      req_connection: getHeader($.request.headers, 'connection'),
+      req_host: getHeader($.request.headers, 'host'),
+      req_if_modified_since: getHeader($.request.headers, 'if-modified-since'),
+      req_if_none_match: getHeader($.request.headers, 'if-none-match'),
+      req_referer: getHeader($.request.headers, 'referer'),
+      req_user_agent: getHeader($.request.headers, 'user-agent'),
+      resp_accept_ranges: getHeader($.response.headers, 'accept-ranges'),
+      resp_age: getHeader($.response.headers, 'age'),
+      resp_cache_control: getHeader($.response.headers, 'cache-control'),
+      resp_connection: getHeader($.response.headers, 'connection'),
+      resp_content_encoding: getHeader($.response.headers, 'content-encoding'),
+      resp_content_language: getHeader($.response.headers, 'content-language'),
+      resp_content_length: getHeader($.response.headers, 'content-length'),
+      resp_content_location: getHeader($.response.headers, 'content-location'),
+      resp_content_type: getHeader($.response.headers, 'content-type'),
+      resp_date: getHeader($.response.headers, 'date'),
+      resp_etag: getHeader($.response.headers, 'etag'),
+      resp_expires: getHeader($.response.headers, 'expires'),
+      resp_keep_alive: getHeader($.response.headers, 'keep-alive'),
+      resp_last_modified: getHeader($.response.headers, 'last-modified'),
+      resp_location: getHeader($.response.headers, 'location'),
+      resp_pragma: getHeader($.response.headers, 'pragma'),
+      resp_server: getHeader($.response.headers, 'server'),
+      resp_transfer_encoding: getHeader($.response.headers, 'transfer-encoding'),
+      resp_vary: getHeader($.response.headers, 'vary'),
+      resp_via: getHeader($.response.headers, 'via'),
+      resp_x_powered_by: getHeader($.response.headers, 'x-powered-by'),
+      _cdn_provider: $._cdn_provider,
+      _gzip_save: $._gzip_save,
+      type: prettyType,
+      ext: ext,
+      format: getFormat(prettyType, mimeType, ext,),
+      protocol: $._protocol,
+      pushed: $._was_pushed,
+      tls_version: $._tls_version,
+      tls_cipher_suite: $._tls_cipher_suite,
+      cert_issuer: securityDetails.issuer,
+      cert_keyexchange: securityDetails.keyExchange,
+      cert_cipher: securityDetails.cipher,
+      cert_protocol: securityDetails.protocol
 
     };
     return summary;
