@@ -18,14 +18,14 @@ JOIN
     WHERE
       JSON_EXTRACT(payload, '$._pwa') != "[]" AND
       JSON_EXTRACT(payload, '$._pwa.manifests') != "[]" AND
-      JSON_EXTRACT(payload, '$._pwa. serviceWorkerHeuristics') = "true"
+      JSON_EXTRACT(payload, '$._pwa. serviceWorkerHeuristic') = "true"
     GROUP BY
       _TABLE_SUFFIX
   )
 USING (_TABLE_SUFFIX)
 WHERE
   JSON_EXTRACT(payload, '$._pwa') != "[]" AND
-  JSON_EXTRACT(payload, '$._pwa. serviceWorkerHeuristics') = "true" AND
+  JSON_EXTRACT(payload, '$._pwa. serviceWorkerHeuristic') = "true" AND
   JSON_EXTRACT(payload, '$._pwa.manifests') != "[]" AND
   JSON_EXTRACT(payload, '$._pwa') LIKE '%beforeinstallprompt%'
 GROUP BY
