@@ -373,7 +373,7 @@
         </div>
 
         <div class="contributor-search">
-          <a href="/{{ lang }}/search?q={{ contributor.name | urlencode }}" class="contributor-search-btn">{{ self.search_title() }}</a>
+          <a href="/{{ lang }}/search?q={{ contributor.name | urlencode }}" class="contributor-search-btn">{{ self.search_title() }}<span class="visually-hidden"> {{ contributor.name }}</span></a>
         </div>
       </li>
     {% endfor %}
