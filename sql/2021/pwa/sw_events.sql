@@ -47,4 +47,5 @@ GROUP BY
   total,
   event
 ORDER BY
-  freq / total DESC
+  freq / total DESC,
+  client

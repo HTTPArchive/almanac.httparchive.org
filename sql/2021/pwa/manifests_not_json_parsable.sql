@@ -1,5 +1,5 @@
 #standardSQL
-# Manifests that are not JSON parsable for all pages
+# Manifests that are not JSON parsable for service worker pages and all pages
 # Question: Below only uses first manifest - what should we do it more than one is defined?
 
 CREATE TEMP FUNCTION canParseManifest(manifest STRING)
@@ -19,6 +19,7 @@ try {
 ''';
 
 SELECT
+  'PWA Pages' AS type,
   _TABLE_SUFFIX AS client,
   canParseManifest(JSON_EXTRACT(payload, '$._pwa.manifests')) AS can_parse,
   COUNT(0) AS freq,
@@ -28,11 +29,26 @@ FROM
   `httparchive.pages.2021_07_01_*`
 WHERE
   JSON_EXTRACT(payload, '$._pwa') != "[]" AND
-  JSON_EXTRACT(payload, '$._pwa.manifests') != "[]"
+  JSON_EXTRACT(payload, '$._pwa.manifests') != "[]" AND
+  JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
+GROUP BY
+  client,
+  can_parse
+UNION ALL
+SELECT
+  'All Pages' AS type,
+  _TABLE_SUFFIX AS client,
+  canParseManifest(JSON_EXTRACT(payload, '$._pwa.manifests')) AS can_parse,
+  COUNT(0) AS freq,
+  SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS pct
+FROM
+  `httparchive.pages.2021_07_01_*`
 GROUP BY
   client,
   can_parse
 ORDER BY
+  type DESC,
   freq / total DESC,
   can_parse,
   client

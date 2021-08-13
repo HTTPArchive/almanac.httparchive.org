@@ -1,6 +1,6 @@
 #standardSQL
-#Workbox versions
-CREATE TEMPORARY FUNCTION getWorkboxVersions(workboxInfo STRING)
+#Workbox methods
+CREATE TEMPORARY FUNCTION getWorkboxMethods(workboxInfo STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
 
@@ -8,20 +8,17 @@ try {
   if (typeof workboxPackageMethods == 'string') {
     workboxPackageMethods = [workboxPackageMethods];
   }
-  var workboxVersions = [];
+  var workboxMethods = [];
   /* Replacing spaces and commas */
   for (var i = 0; i < workboxPackageMethods.length; i++) {
       var workboxItems = workboxPackageMethods[i].toString().trim().split(',');
       for(var j = 0; j < workboxItems.length; j++) {
-        var workboxItem = workboxItems[j];
-        var firstColonIndex = workboxItem.indexOf(':');
-        if(firstColonIndex > -1) {
-          var workboxVersion = workboxItem.trim().substring(workboxItem.indexOf(':', firstColonIndex + 1) + 1);
-          workboxVersions.push(workboxVersion);
+        if(workboxItems[j].indexOf(':') == -1) {
+          workboxMethods.push(workboxItems[j].trim());
         }
       }
   }
-  return Array.from(new Set(workboxVersions));
+  return Array.from(new Set(workboxMethods));
 } catch (e) {
   return [e];
 }
@@ -29,13 +26,13 @@ try {
 
 SELECT
   _TABLE_SUFFIX AS client,
-  workbox_version,
+  workbox_method,
   COUNT(0) AS freq,
   total,
   COUNT(0) / total AS pct
 FROM
   `httparchive.pages.2021_07_01_*`,
-  UNNEST(getWorkboxVersions(JSON_EXTRACT(payload, '$._pwa.workboxInfo'))) AS workbox_version
+  UNNEST(getWorkboxMethods(JSON_EXTRACT(payload, '$._pwa.workboxInfo'))) AS workbox_method
 JOIN
   (
     SELECT
@@ -55,8 +52,8 @@ WHERE
   JSON_EXTRACT(payload, '$._pwa.workboxInfo') != "[]" AND
   JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
 GROUP BY
-  _TABLE_SUFFIX,
-  workbox_version,
+  client,
+  workbox_method,
   total
 ORDER BY
   pct DESC,

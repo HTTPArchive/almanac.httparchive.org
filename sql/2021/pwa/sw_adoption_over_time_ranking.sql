@@ -1,25 +1,36 @@
 #standardSQL
 # SW adoption over time, including ranking
-SELECT
-  yyyymmdd AS date,
+SELECT DISTINCT
+  SUBSTRING(yyyymmdd, 0, 4) || '-' || SUBSTRING(yyyymmdd, 5, 2) || '-' || RIGHT(yyyymmdd, 2) AS date,
   client,
-  CAST(ranking AS STRING) AS rank,
-  CASE ranking
+  CAST(rank AS STRING) AS rank,
+  CASE rank
     WHEN 1000 THEN '<= 1,000'
     WHEN 10000000 THEN '> 1,000,000'
     ELSE
-      FORMAT("%'d", CAST(ranking / 10 + 1 AS INT64)) || ' - ' || FORMAT("%'d", ranking)
+      FORMAT("%'d", CAST(rank / 10 + 1 AS INT64)) || ' - ' || FORMAT("%'d", rank)
   END AS rank_text,
   COUNT(0) AS freq,
-  total AS total,
-  COUNT(0) / total AS pct
+  total,
+  COUNT(0) / total as pct
 FROM
-  `httparchive.blink_features.features`
+  (
+    SELECT
+      FORMAT_DATE('%Y%m%d', yyyymmdd) AS yyyymmdd,
+      client,
+      url,
+      rank
+    FROM
+      `httparchive.blink_features.features`
+    WHERE
+      feature = 'ServiceWorkerControlledPage' AND
+      yyyymmdd >= '2021-05-01'
+  )
 JOIN (
   SELECT
     REPLACE(SUBSTR(_TABLE_SUFFIX, 0, 10), '_', '') AS yyyymmdd,
     SUBSTR(_TABLE_SUFFIX, 12) AS client,
-    rank AS ranking,
+    rank,
     COUNT(0) AS total
   FROM
     `httparchive.summary_pages.*`
@@ -28,15 +39,15 @@ JOIN (
   GROUP BY
     yyyymmdd,
     client,
-    ranking
+    rank
 )
 USING
-  (yyyymmdd, client)
+  (yyyymmdd, client, rank)
 JOIN (
   SELECT
     REPLACE(SUBSTR(_TABLE_SUFFIX, 0, 10), '_', '') AS yyyymmdd,
     SUBSTR(_TABLE_SUFFIX, 12) AS client,
-    rank AS ranking,
+    rank,
     url
   FROM
     `httparchive.summary_pages.*`
@@ -44,10 +55,7 @@ JOIN (
     _TABLE_SUFFIX > '2021_05_01'
 )
 USING
-  (yyyymmdd, client, url, ranking)
-WHERE
-  feature = 'ServiceWorkerControlledPage' AND
-  yyyymmdd >= '20210501'
+  (yyyymmdd, client, url, rank)
 GROUP BY
   yyyymmdd,
   client,
@@ -55,8 +63,8 @@ GROUP BY
   rank_text,
   total
 UNION ALL
-SELECT
-  yyyymmdd AS date,
+SELECT DISTINCT
+  SUBSTRING(yyyymmdd, 0, 4) || '-' || SUBSTRING(yyyymmdd, 5, 2) || '-' || RIGHT(yyyymmdd, 2) AS date,
   client,
   'all' AS rank,
   'all' AS rank_text,

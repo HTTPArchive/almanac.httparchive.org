@@ -1,10 +1,11 @@
 #standardSQL
 # PWA features tracked in blink_features.usage
-SELECT
+SELECT DISTINCT
   client,
   feature,
   num_urls,
-  total_urls
+  total_urls,
+  num_urls / total_urls AS pct
 FROM
   `httparchive.blink_features.usage`
 WHERE
@@ -15,6 +16,6 @@ WHERE
     feature LIKE '%GetInstalledRelatedApps%'
   )
 ORDER BY
+  num_urls DESC,
   client,
-  num_urls,
   feature

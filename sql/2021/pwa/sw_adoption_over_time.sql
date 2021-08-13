@@ -1,7 +1,7 @@
 #standardSQL
-# SW adoption over time - based on 2019/11_01b.sql
-SELECT
-  yyyymmdd AS date,
+# SW adoption over time
+SELECT DISTINCT
+  SUBSTRING(yyyymmdd, 0, 4) || '-' || SUBSTRING(yyyymmdd, 5, 2) || '-' || RIGHT(yyyymmdd, 2) AS date,
   client,
   num_urls AS freq,
   total_urls AS total,

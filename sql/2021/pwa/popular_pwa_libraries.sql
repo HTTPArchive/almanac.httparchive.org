@@ -28,19 +28,22 @@ try {
 
 SELECT
   client,
-  total,
-  COUNTIF(importscripts > 0) AS uses_importscript,
-  COUNTIF(workbox > 0) AS workbox,
-  COUNTIF(sw_toolbox > 0) AS sw_toolbox,
-  COUNTIF(firebase > 0) AS firebase,
-  COUNTIF(OneSignalSDK > 0) AS OneSignalSDK,
-  COUNTIF(najva > 0) AS najva,
-  COUNTIF(upush > 0) AS upush,
-  COUNTIF(cache_polyfill > 0) AS cache_polyfill,
-  COUNTIF(analytics_helper > 0) AS analytics_helper,
-  COUNTIF(recaptcha > 0) AS recaptcha,
-  COUNTIF(pwabuilder > 0) AS pwabuilder,
-  COUNTIF(none_of_the_above > 0) AS none_of_the_above
+  COUNTIF(workbox > 0) / total AS workbox,
+  COUNTIF(sw_toolbox > 0) / total AS sw_toolbox,
+  COUNTIF(firebase > 0) / total AS firebase,
+  COUNTIF(OneSignalSDK > 0) / total AS OneSignalSDK,
+  COUNTIF(najva > 0) / total AS najva,
+  COUNTIF(upush > 0) / total AS upush,
+  COUNTIF(cache_polyfill > 0) / total AS cache_polyfill,
+  COUNTIF(analytics_helper > 0) / total AS analytics_helper,
+  COUNTIF(recaptcha > 0) / total AS recaptcha,
+  COUNTIF(pwabuilder > 0) / total AS pwabuilder,
+  COUNTIF(pushprofit > 0) / total AS pushprofit,
+  COUNTIF(sendpulse > 0) / total AS sendpulse,
+  COUNTIF(quora > 0) / total AS quora,
+  COUNTIF(none_of_the_above > 0) / total AS none_of_the_above,
+  COUNTIF(importscripts > 0) / total AS uses_importscript,
+  total
 FROM
   (
     SELECT
@@ -57,6 +60,9 @@ FROM
     COUNTIF(LOWER(script) LIKE '%analytics-helper%') AS analytics_helper,
     COUNTIF(LOWER(script) LIKE '%recaptcha%') AS recaptcha,
     COUNTIF(LOWER(script) LIKE '%pwabuilder%') AS pwabuilder,
+    COUNTIF(LOWER(script) LIKE '%pushprofit%') AS pushprofit,
+    COUNTIF(LOWER(script) LIKE '%sendpulse%') AS sendpulse,
+    COUNTIF(LOWER(script) LIKE '%quore%') AS quora,
     COUNTIF(LOWER(script) NOT LIKE '%workbox%' AND
       LOWER(script) NOT LIKE '%sw-toolbox%' AND
       LOWER(script) NOT LIKE '%firebase%' AND
@@ -66,7 +72,10 @@ FROM
       LOWER(script) NOT LIKE '%cache-polyfill.js%' AND
       LOWER(script) NOT LIKE '%analytics-helper.js%' AND
       LOWER(script) NOT LIKE '%recaptcha%' AND
-      LOWER(script) NOT LIKE '%pwabuilder%') AS none_of_the_above
+      LOWER(script) NOT LIKE '%pwabuilder%' AND
+      LOWER(script) NOT LIKE '%pushprofit%' AND
+      LOWER(script) NOT LIKE '%sendpulse%' AND
+      LOWER(script) NOT LIKE '%quora%') AS none_of_the_above
     FROM
       `httparchive.pages.2021_07_01_*`,
       UNNEST(getSWLibraries(JSON_EXTRACT(payload, '$._pwa.importScriptsInfo'))) AS script
@@ -96,5 +105,4 @@ GROUP BY
   client,
   total
 ORDER BY
-  client,
-  total
+  client
