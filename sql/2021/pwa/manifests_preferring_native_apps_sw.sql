@@ -23,7 +23,7 @@ FROM
 WHERE
   JSON_EXTRACT(payload, '$._pwa') != "[]" AND
   JSON_EXTRACT(payload, '$._pwa.manifests') != "[]" AND
-  JSON_EXTRACT(payload, '$._pwa. serviceWorkerHeuristic') = "true" AND
+  JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true" AND
   prefersNative(JSON_EXTRACT(payload, '$._pwa.manifests')) IS NOT NULL
 GROUP BY
   client,

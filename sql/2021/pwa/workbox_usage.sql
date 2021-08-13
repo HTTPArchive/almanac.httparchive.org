@@ -11,7 +11,7 @@ FROM
 WHERE
   JSON_EXTRACT(payload, '$._pwa') != "[]" AND
   JSON_EXTRACT(payload, '$._pwa.manifests') != "[]" AND
-  JSON_EXTRACT(payload, '$._pwa. serviceWorkerHeuristic') = "true"
+  JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
 GROUP BY
   client
 ORDER BY
