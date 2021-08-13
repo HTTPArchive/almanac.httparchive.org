@@ -1,6 +1,5 @@
 #standardSQL
 # Manifests that are not JSON parsable for service worker pages and all pages
-# Question: Below only uses first manifest - what should we do it more than one is defined?
 
 CREATE TEMP FUNCTION canParseManifest(manifest STRING)
 RETURNS BOOLEAN LANGUAGE js AS '''

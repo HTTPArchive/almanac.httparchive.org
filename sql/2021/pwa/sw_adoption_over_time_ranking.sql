@@ -1,6 +1,6 @@
 #standardSQL
 # SW adoption over time, including ranking
-SELECT DISTINCT
+SELECT
   SUBSTRING(yyyymmdd, 0, 4) || '-' || SUBSTRING(yyyymmdd, 5, 2) || '-' || RIGHT(yyyymmdd, 2) AS date,
   client,
   CAST(rank AS STRING) AS rank,
@@ -12,10 +12,10 @@ SELECT DISTINCT
   END AS rank_text,
   COUNT(0) AS freq,
   total,
-  COUNT(0) / total as pct
+  COUNT(0) / total AS pct
 FROM
   (
-    SELECT
+    SELECT DISTINCT
       FORMAT_DATE('%Y%m%d', yyyymmdd) AS yyyymmdd,
       client,
       url,

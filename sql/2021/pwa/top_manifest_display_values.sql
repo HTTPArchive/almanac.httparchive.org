@@ -1,6 +1,5 @@
 #standardSQL
 # Top most used display values in manifest files
-# Question: Below only uses first manifest - what should we do it more than one is defined?
 
 CREATE TEMP FUNCTION getDisplay(manifest STRING) RETURNS STRING LANGUAGE js AS '''
 try {

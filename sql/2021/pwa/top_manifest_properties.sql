@@ -1,6 +1,5 @@
 #standardSQL
 # Top manifest properties
-# Question: Below only uses first manifest - what should we do it more than one is defined?
 
 CREATE TEMP FUNCTION getManifestProps(manifest STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
