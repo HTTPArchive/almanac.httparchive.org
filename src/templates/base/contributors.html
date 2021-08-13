@@ -141,6 +141,7 @@
   color: #757575;
   font-size: 14px;
   font-size: 0.875rem;
+  flex-grow: 1;
 }
 
 .contributor-team {
@@ -148,6 +149,27 @@
   font-size: 0.875rem;
   white-space: nowrap;
 }
+
+.contributor-search-btn {
+  margin-top: 20px;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 29px;
+  text-decoration: none;
+  background-color: transparent;
+  border: 1px solid #757575;
+  cursor: pointer;
+  font-size: 13.6px;
+  font-size: 0.8em;
+}
+
+.contributor-search-btn:hover,
+.contributor-search-btn:focus {
+  background-color: #f7f779;
+  text-decoration: none;
+}
+
 
 {% for id in config.teams.keys() %}
 .contributors.{{ id }} .contributor.{{ id }} {
@@ -348,6 +370,10 @@
           <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{% if loop.length > 2 %}{{ self.comma() if loop.index < loop.length - 1 }}{{ self.oxford_comma() if loop.index == loop.length - 1 }}{% endif %}
           {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
           {% endfor %}
+        </div>
+
+        <div class="contributor-search">
+          <a href="/{{ lang }}/search?q={{ contributor.name | urlencode }}" class="contributor-search-btn">{{ self.search_title() }}</a>
         </div>
       </li>
     {% endfor %}
