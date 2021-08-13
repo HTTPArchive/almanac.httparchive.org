@@ -29,14 +29,20 @@ SELECT
   MAX(audits.audit_group) AS audit_group,
   MAX(audits.description) AS description
 FROM
-  --`httparchive.lighthouse.2021_07_01_mobile`,
-  `httparchive.sample_data.lighthouse_mobile_10k`,
+  `httparchive.lighthouse.2021_07_01_mobile`,
   UNNEST(getAudits(JSON_EXTRACT(report, '$.categories.pwa.auditRefs'), JSON_EXTRACT(report, '$.audits'))) AS audits
-WHERE
-  JSON_EXTRACT(payload, '$._pwa') != "[]" AND
-  JSON_EXTRACT(payload, '$._pwa.serviceWorkers') != "[]" AND
-  JSON_EXTRACT(payload, '$._pwa.manifests') != "[]" AND
-  LENGTH(report) < 20000000  # necessary to avoid out of memory issues. Excludes a handful of very large results
+JOIN
+  (
+    SELECT
+      url
+    FROM
+      `httparchive.pages.2021_07_01_mobile`
+    WHERE
+      JSON_EXTRACT(payload, '$._pwa') != "[]" AND
+      JSON_EXTRACT(payload, '$._pwa. serviceWorkerHeuristics') = "true" AND
+      JSON_EXTRACT(payload, '$._pwa.manifests') != "[]"
+  )
+USING (url)
 GROUP BY
   audits.id
 ORDER BY

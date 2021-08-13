@@ -10,11 +10,10 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    IF(JSON_EXTRACT(payload, '$._pwa') != "[]" AND JSON_EXTRACT(payload, '$._pwa.serviceWorkers') != "[]", 1, 0) AS ServiceWorker,
+    IF(JSON_EXTRACT(payload, '$._pwa') != "[]" AND JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') != "true", 1, 0) AS ServiceWorker,
     IF(JSON_EXTRACT(payload, '$._pwa') != "[]" AND JSON_EXTRACT(payload, '$._pwa.manifests') != "[]", 1, 0) AS manifests
   FROM
-    `httparchive.sample_data.pages_*`
-  --`httparchive.pages.2021_07_01_*`
+    `httparchive.pages.2021_07_01_*`
   )
 GROUP BY
   client

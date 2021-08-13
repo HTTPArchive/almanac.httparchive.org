@@ -22,8 +22,7 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS pct
 FROM
-  `httparchive.sample_data.pages_*`,
-  --`httparchive.pages.2021_07_01_*`,
+  `httparchive.pages.2021_07_01_*`,
   UNNEST(getManifestProps(JSON_EXTRACT(payload, '$._pwa.manifests') )) AS property
 WHERE
   JSON_EXTRACT(payload, '$._pwa') != "[]" AND

@@ -68,13 +68,12 @@ FROM
       LOWER(script) NOT LIKE '%recaptcha%' AND
       LOWER(script) NOT LIKE '%pwabuilder%') AS none_of_the_above
     FROM
-      `httparchive.sample_data.pages_*`,
-      --`httparchive.pages.2021_07_01_*`,
+      `httparchive.pages.2021_07_01_*`,
       UNNEST(getSWLibraries(JSON_EXTRACT(payload, '$._pwa.importScriptsInfo'))) AS script
     WHERE
       JSON_EXTRACT(payload, '$._pwa') != "[]" AND
       JSON_EXTRACT(payload, '$._pwa.importScriptsInfo') != "[]" AND
-      JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'
+      JSON_EXTRACT(payload, '$._pwa. serviceWorkerHeuristics') = "true"
     GROUP BY
       _TABLE_SUFFIX,
       url
@@ -85,11 +84,10 @@ JOIN
       _TABLE_SUFFIX AS client,
       COUNT(0) AS total
     FROM
-      `httparchive.sample_data.pages_*`
-      --`httparchive.pages.2021_07_01_*`
+      `httparchive.pages.2021_07_01_*`
     WHERE
       JSON_EXTRACT(payload, '$._pwa') != "[]" AND
-      JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'
+      JSON_EXTRACT(payload, '$._pwa. serviceWorkerHeuristics') = "true"
     GROUP BY
       client
   )

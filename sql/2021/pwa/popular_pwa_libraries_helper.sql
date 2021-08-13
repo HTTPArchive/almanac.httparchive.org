@@ -32,13 +32,12 @@ SELECT
   script,
   COUNT(DISTINCT url) AS freq
 FROM
-  `httparchive.sample_data.pages_*`,
-  --`httparchive.pages.2021_07_01_*`,
+  `httparchive.pages.2021_07_01_*`,
   UNNEST(getSWLibraries(JSON_EXTRACT(payload, '$._pwa.importScriptsInfo'))) AS script
 WHERE
   JSON_EXTRACT(payload, '$._pwa') != "[]" AND
   JSON_EXTRACT(payload, '$._pwa.importScriptsInfo') != "[]" AND
-  JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true' AND
+  JSON_EXTRACT(payload, '$._pwa. serviceWorkerHeuristics') = "true" AND
   LOWER(script) NOT LIKE '%workbox%' AND
   LOWER(script) NOT LIKE '%sw-toolbox%' AND
   LOWER(script) NOT LIKE '%firebase%' AND

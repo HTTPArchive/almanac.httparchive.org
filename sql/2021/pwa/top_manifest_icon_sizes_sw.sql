@@ -13,19 +13,34 @@ SELECT
   _TABLE_SUFFIX AS client,
   size,
   COUNT(0) AS freq,
-  SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS pct
+  total,
+  COUNT(0) / total AS pct
 FROM
-  `httparchive.sample_data.pages_*`,
-  --`httparchive.pages.2021_07_01_*`,
+  `httparchive.pages.2021_07_01_*`,
   UNNEST(getIconSizes(JSON_EXTRACT(payload, '$._pwa.manifests'))) AS size
+JOIN
+  (
+    SELECT
+      _TABLE_SUFFIX,
+      COUNT(0) AS total
+    FROM
+      `httparchive.pages.2021_07_01_*`
+    WHERE
+      JSON_EXTRACT(payload, '$._pwa') != "[]" AND
+      JSON_EXTRACT(payload, '$._pwa.manifests') != "[]" AND
+      JSON_EXTRACT(payload, '$._pwa. serviceWorkerHeuristics') = "true"
+    GROUP BY
+      _TABLE_SUFFIX
+  )
+USING (_TABLE_SUFFIX)
 WHERE
   JSON_EXTRACT(payload, '$._pwa') != "[]" AND
   JSON_EXTRACT(payload, '$._pwa.manifests') != "[]" AND
-  JSON_EXTRACT(payload, '$._pwa.serviceWorkers') != "[]"
+  JSON_EXTRACT(payload, '$._pwa. serviceWorkerHeuristics') = "true"
 GROUP BY
   client,
-  size
+  size,
+  total
 HAVING
   size IS NOT NULL
 ORDER BY

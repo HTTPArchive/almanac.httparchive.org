@@ -17,19 +17,34 @@ SELECT
   _TABLE_SUFFIX AS client,
   category,
   COUNT(0) AS freq,
-  SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS pct
+  total,
+  COUNT(0) / total AS pct
 FROM
-  `httparchive.sample_data.pages_*`,
-  --`httparchive.pages.2021_07_01_*`,
+  `httparchive.pages.2021_07_01_*`,
   UNNEST(getCategories(JSON_EXTRACT(payload, '$._pwa.manifests'))) AS category
+JOIN
+  (
+    SELECT
+      _TABLE_SUFFIX,
+      COUNT(0) AS total
+    FROM
+      `httparchive.pages.2021_07_01_*`
+    WHERE
+      JSON_EXTRACT(payload, '$._pwa') != "[]" AND
+      JSON_EXTRACT(payload, '$._pwa.manifests') != "[]" AND
+      JSON_EXTRACT(payload, '$._pwa. serviceWorkerHeuristics') = "true"
+    GROUP BY
+      _TABLE_SUFFIX
+  )
+USING (_TABLE_SUFFIX)
 WHERE
   JSON_EXTRACT(payload, '$._pwa') != "[]" AND
   JSON_EXTRACT(payload, '$._pwa.manifests') != "[]" AND
-  JSON_EXTRACT(payload, '$._pwa.serviceWorkers') != "[]"
+  JSON_EXTRACT(payload, '$._pwa. serviceWorkerHeuristics') = "true"
 GROUP BY
   client,
-  category
+  category,
+  total
 HAVING
   category IS NOT NULL
 ORDER BY
