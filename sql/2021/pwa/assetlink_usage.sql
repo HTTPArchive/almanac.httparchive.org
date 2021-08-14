@@ -28,13 +28,13 @@ WHERE
   JSON_EXTRACT(payload, '$._pwa') != "[]" AND
   JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true" AND
   JSON_EXTRACT(payload, '$._pwa.manifests') != "[]" AND
-  JSON_EXTRACT(payload, '$._well-known') LIKE '%assetlinks%'
+  JSON_EXTRACT_SCALAR(JSON_VALUE(payload, "$._well-known"), "$['/.well-known/assetlinks.json'].found") = 'true'
 GROUP BY
   client,
   total
 UNION ALL
 SELECT
-  'PWA sites' AS type,
+  'All sites' AS type,
   _TABLE_SUFFIX AS client,
   COUNT(0) AS freq,
   total,
@@ -53,7 +53,7 @@ JOIN
   )
 USING (_TABLE_SUFFIX)
 WHERE
-  JSON_EXTRACT(payload, '$._well-known') LIKE '%assetlinks%'
+  JSON_EXTRACT_SCALAR(JSON_VALUE(payload, "$._well-known"), "$['/.well-known/assetlinks.json'].found") = 'true'
 GROUP BY
   client,
   total
