@@ -58,6 +58,6 @@ GROUP BY
   client,
   total
 ORDER BY
-  type,
+  type DESC,
   freq / total DESC,
   client
