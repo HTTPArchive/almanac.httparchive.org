@@ -18,7 +18,7 @@ FROM (
     COUNTIF(protocol = 'http/1.1') / COUNT(0) AS http11_pct,
     COUNTIF(protocol = 'HTTP/2') / COUNT(0) AS http2_pct,
     COUNTIF(protocol = 'HTTP/3' OR protocl = 'h3-29' OR protocol = 'h3-Q050' OR protocol = 'QUIC') / COUNT(0) AS http3_pct,
-    COUNTIF(protocol NOT IN ('http/0.9', 'http/1.0', 'http/1.1', 'HTTP/2', 'HTTP/3', 'QUIC', 'h3-29', 'h3-Q050') / COUNT(0) AS other_pct,
+    COUNTIF(protocol NOT IN ('http/0.9', 'http/1.0', 'http/1.1', 'HTTP/2', 'HTTP/3', 'QUIC', 'h3-29', 'h3-Q050')) / COUNT(0) AS other_pct,
     COUNTIF(protocol IS NULL) / COUNT(0) AS null_pct
   FROM
     `httparchive.almanac.requests`
