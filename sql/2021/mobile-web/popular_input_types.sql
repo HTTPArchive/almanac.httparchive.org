@@ -4,8 +4,8 @@ CREATE TEMPORARY FUNCTION getInputTypes(payload STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
   try {
     const almanac = JSON.parse(payload);
-    return almanac['input-elements'] && almanac['input-elements'].map(function(node) {
-        return node.type.toLowerCase();
+    return almanac.input_elements && almanac.input_elements.map(function(node) {
+      return node.type.toLowerCase();
     });
   } catch (e) {
     return [];

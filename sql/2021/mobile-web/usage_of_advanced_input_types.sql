@@ -5,7 +5,7 @@ CREATE TEMPORARY FUNCTION getInputStats(payload STRING)
 RETURNS STRUCT<found_advanced_types BOOLEAN, total_inputs INT64> LANGUAGE js AS '''
   try {
     const almanac = JSON.parse(payload);
-    const found_index = almanac['input-elements'].findIndex(node => {
+    const found_index = almanac.input_elements.findIndex(node => {
       if(node.type && node.type.match(/(color|date|datetime-local|email|month|number|range|reset|search|tel|time|url|week|datalist)/i)) {
         return true;
       }
@@ -13,7 +13,7 @@ RETURNS STRUCT<found_advanced_types BOOLEAN, total_inputs INT64> LANGUAGE js AS 
 
     return {
       found_advanced_types: found_index >= 0,
-      total_inputs: almanac['input-elements'].length,
+      total_inputs: almanac.input_elements.length,
     };
   } catch (e) {
     return {

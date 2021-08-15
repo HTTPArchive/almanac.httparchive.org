@@ -33,13 +33,13 @@ RETURNS ARRAY<STRUCT<detected_type STRING, using_best_type BOOLEAN>> LANGUAGE js
 
   try {
     const almanac = JSON.parse(payload);
-    if (!almanac['input-elements']) {
+    if (!almanac.input_elements) {
       return [];
     }
 
     const email_input_signals = ['email', 'e-mail'];
     const tel_input_signals = ['phone', 'mobile', 'tel'];
-    return almanac['input-elements']
+    return almanac.input_elements
       .map(function(node) {
         if (node.type !== 'text' && node.type !== 'email' && node.type !== 'tel') {
           return false;
