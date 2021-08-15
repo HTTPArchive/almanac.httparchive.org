@@ -1,5 +1,5 @@
 # standardSQL
-# Usage of client hint diretivese headers
+# Usage of client hint directives
 CREATE TEMPORARY FUNCTION getClientHints(payload STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS """
 try {
