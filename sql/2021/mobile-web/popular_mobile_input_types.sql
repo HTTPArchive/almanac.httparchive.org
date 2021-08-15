@@ -2,14 +2,14 @@
 # Popular mobile input types
 CREATE TEMPORARY FUNCTION getInputTypes(payload STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
-  try {
-    const almanac = JSON.parse(payload);
-    return almanac.input_elements.nodes.map(function(node) {
-      return node.type.toLowerCase();
-    });
-  } catch (e) {
-    return [];
-  }
+try {
+  const almanac = JSON.parse(payload);
+  return almanac.input_elements.nodes.map(function(node) {
+    return node.type.toLowerCase();
+  });
+} catch (e) {
+  return [];
+}
 ''';
 
 SELECT
