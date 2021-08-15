@@ -1,5 +1,5 @@
 # standardSQL
-# Usage of various headers
+# Usage of client hint diretivese headers
 CREATE TEMPORARY FUNCTION getClientHints(payload STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS """
 try {
@@ -23,9 +23,12 @@ try {
 SELECT
   _TABLE_SUFFIX AS client,
   total_sites,
+  SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS total_sites_using_ch
+
   hint,
   COUNT(0) AS total_sites_using,
-  COUNT(0) / total_sites AS pct_sites_using
+  COUNT(0) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS pct_ch_sites_using,
+  COUNT(0) / total_sites AS pct_sites
 FROM
   `httparchive.pages.2021_07_01_*`,
   UNNEST(getClientHints(payload)) AS hint
@@ -45,4 +48,4 @@ GROUP BY
 HAVING
   total_sites_using >= 100
 ORDER BY
-  pct_sites_using DESC
+  pct_sites DESC
