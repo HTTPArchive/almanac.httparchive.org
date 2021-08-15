@@ -15,8 +15,8 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-     date = '2020-09-01' AND
-     type = 'font')
+    date = '2020-09-01' AND
+    type = 'font')
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

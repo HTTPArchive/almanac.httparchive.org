@@ -247,18 +247,20 @@ SELECT
   ROUND(COUNTIF(fast_fid >= .95) * 100 / COUNT(0), 2) AS pct_fast_fid,
   ROUND(COUNTIF(NOT(slow_fid >= .05) AND NOT(fast_fid >= .95)) * 100 / COUNT(0), 2) AS pct_avg_fid,
   ROUND(COUNTIF(slow_fid >= .05) * 100 / COUNT(0), 2) AS pct_slow_fid
-FROM (
-  SELECT
-    geo,
-    ROUND(SAFE_DIVIDE(SUM(IF(bin.start < 100, bin.density, 0)), SUM(bin.density)), 4) AS fast_fid,
-    ROUND(SAFE_DIVIDE(SUM(IF(bin.start >= 100 AND bin.start < 300, bin.density, 0)), SUM(bin.density)), 4) AS avg_fid,
-    ROUND(SAFE_DIVIDE(SUM(IF(bin.start >= 300, bin.density, 0)), SUM(bin.density)), 4) AS slow_fid
-  FROM
-    geos,
-    UNNEST(experimental.first_input_delay.histogram.bin) AS bin
-  GROUP BY
-    origin,
-    geo)
+FROM
+  (
+    SELECT
+      geo,
+      ROUND(SAFE_DIVIDE(SUM(IF(bin.start < 100, bin.density, 0)), SUM(bin.density)), 4) AS fast_fid,
+      ROUND(SAFE_DIVIDE(SUM(IF(bin.start >= 100 AND bin.start < 300, bin.density, 0)), SUM(bin.density)), 4) AS avg_fid,
+      ROUND(SAFE_DIVIDE(SUM(IF(bin.start >= 300, bin.density, 0)), SUM(bin.density)), 4) AS slow_fid
+    FROM
+      geos,
+      UNNEST(experimental.first_input_delay.histogram.bin) AS bin
+    GROUP BY
+      origin,
+      geo
+  )
 GROUP BY
   geo
 ORDER BY

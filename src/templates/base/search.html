@@ -1,0 +1,86 @@
+{% extends "%s/%s/base.html" % (lang, year) %}
+
+{% block image_url %}https://almanac.httparchive.org/static/images/methodology-characters-bg.png{% endblock %}
+{% block image_height %}354{% endblock %}
+{% block image_width %}984{% endblock %}
+
+{% block head %}
+{{ super() }}
+<meta name="robots" content="noindex">
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<style nonce="{{ csp_nonce() }}">
+  #search-area {
+    min-height: 100px;
+  }
+
+  .en-btn {
+    margin: 2rem auto 2rem;
+    text-align: center;
+  }
+
+  #main-search-form {
+    text-align: center;
+  }
+
+  #main-search-box {
+    width: 80%;
+    width: calc(100% - 80px);
+    border: 1px solid #939393;
+    padding: 0px 5px;
+    line-height: 1.85;
+  }
+
+  .main-search-button {
+    padding: 6px 27px;
+  }
+</style>
+{% endblock %}
+
+{% block main %}
+<main id="maincontent" class="main">
+  <h1 class="title title-lg">{{ self.search_title() }}</h1>
+
+  <div id="search-area">
+    <form id="main-search-form" action="/{{ lang}}/search">
+      <label for="main-search-box" class="visually-hidden">{{ self.search_title() }}</label>
+      <input id="main-search-box" type="search" name="q" class="search-input" placeholder="{{ self.search_title() }}" title="{{ self.search_title() }}" aria-label="{{ self.search_title() }}">
+      <button class="search-button main-search-button" aria-labelledby="main-search-icon" type="submit">
+        <svg width="13" height="13" role="img" aria-labelledby="main-search-icon">
+          <title id="main-search-icon">{{ self.search_title() }}</title>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+        </svg>
+      </button>
+    </form>
+    <div class="gcse-searchresults-only" data-lr="lang_{{ lang }}" data-noresultsstring="{{ self.no_results() }}" data-hl="lang_{{ lang }}"></div>
+  </div>
+  {% if lang != "en" %}
+  <div class="en-btn">
+    <a href="/en/search" class="alt btn" id="english-search-link">{{ self.search_in_english() }}</a>
+  </div>
+  {% endif %}
+</main>
+
+<script nonce="{{ csp_nonce() }}">
+  if (window.URLSearchParams) {
+    var searchParams = new URLSearchParams(window.location.search);
+    q = searchParams.get("q");
+    if (q != undefined) {
+      if (q != "") {
+        var x = document.getElementById("main-search-box");
+        if (x != undefined) {
+          x.value = q;
+        }
+        var x = document.getElementById("english-search-link");
+        if (x != undefined) {
+          x.href = "/en/search?q=" + q;
+        }
+      }
+    }
+  }
+</script>
+<script defer src="https://cse.google.com/cse.js?cx=ffb208d5eae47b5bf" nonce="{{ csp_nonce() }}"></script>
+
+{% endblock %}

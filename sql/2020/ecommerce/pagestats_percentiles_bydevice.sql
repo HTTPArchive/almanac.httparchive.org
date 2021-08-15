@@ -21,11 +21,11 @@ FROM (
   USING
     (client, page)
   WHERE
-    date = '2020-08-01' 
+    date = '2020-08-01'
   GROUP BY
     client,
     page),
-UNNEST([10, 25, 50, 75, 90]) AS percentile
+  UNNEST([10, 25, 50, 75, 90])
 GROUP BY
   percentile,
   client

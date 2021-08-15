@@ -1,9 +1,9 @@
 #standardSQL
 #font_subset_with_fcp
-CREATE TEMPORARY FUNCTION
-  getFont(css STRING)
-  RETURNS ARRAY<STRING>
-  LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getFont(css STRING)
+RETURNS ARRAY<STRING>
+LANGUAGE js
+AS '''
 try {
     var reduceValues = (values, rule) => {
         if ('rules' in rule) {
@@ -44,7 +44,7 @@ FROM (
   LEFT JOIN
     UNNEST(getFont(css)) AS font_subset
   WHERE
-    date='2020-08-01')
+    date = '2020-08-01')
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -52,7 +52,7 @@ JOIN (
     CAST(JSON_EXTRACT_SCALAR(payload,
         "$['_chromeUserTiming.firstContentfulPaint']") AS INT64) AS fcp,
     CAST(JSON_EXTRACT_SCALAR(payload,
-        "$['_chromeUserTiming.LargestContentfulPaint']") AS INT64) AS lcp,
+        "$['_chromeUserTiming.LargestContentfulPaint']") AS INT64) AS lcp
   FROM
     `httparchive.pages.2020_08_01_*`
   GROUP BY

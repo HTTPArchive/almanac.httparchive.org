@@ -30,7 +30,7 @@ Despite its complex multidisciplinary nature, in recent years SEO has evolved to
 {{ figure_markup(
   image="seo-google-trends.png",
   caption="Google Trends comparison of SEO versus pay-per-click and social media marketing.",
-  description="Screenshot from Google Trends showing the change in time for three three digital marketing related terms: Search Engine Optimization starts at 25% but shows an increasing importance over time to 75% now. Pay-per-click similarly starts at 25% but started falling in 2009 and looks to be less than 10% now. Social-media marketing starts very small (approximately 5%) and shows some slight growth over time ending up slightly above pay-per-click around the 10% mark.",
+  description="Screenshot from Google Trends showing the change in time for three digital marketing related terms: Search Engine Optimization starts at 25% but shows an increasing importance over time to 75% now. Pay-per-click similarly starts at 25% but started falling in 2009 and looks to be less than 10% now. Social-media marketing starts very small (approximately 5%) and shows some slight growth over time ending up slightly above pay-per-click around the 10% mark.",
   width=1600,
   height=844
   )
@@ -503,7 +503,7 @@ The median desktop page includes 21 `img` tags and the median mobile page has 19
 {{ figure_markup(
   image="seo-img-elements-per-page.png",
   caption="Distribution of the number of `<img>` elements per page.",
-  description="Bar chart showing the number of `<img>` elements per page per percentile (10, 25, 50, 75, and 90). The median desktop page features 21 `<img>` elements and the median mobile page features 19 `<<img>` tags..",
+  description="Bar chart showing the number of `<img>` elements per page per percentile (10, 25, 50, 75, and 90). The median desktop page features 21 `<img>` elements and the median mobile page features 19 `<img>` elements.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=923860709&format=interactive",
   sheets_gid="1317352222",
   sql_file="pages_markup_by_device_and_percentile.sql"
@@ -604,7 +604,7 @@ There is a disparity in the links between mobile and desktop that will negativel
 {{ figure_markup(
   image="seo-text-links.png",
   caption="Distribution of the number of text links per page.",
-  description="Bar chart showing the number of text links per percentile (19, 25, 50, 75, and 90). There is a disparity in the links between mobile and desktop (62 links on mobile versus 68 links on desktop).",
+  description="Bar chart showing the number of text links per percentile (10, 25, 50, 75, and 90). There is a disparity in the links between mobile and desktop (62 links on mobile versus 68 links on desktop).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1588324966&format=interactive",
   sheets_gid="775602646",
   sql_file="pages_wpt_bodies_by_device_and_percentile.sql"
@@ -638,7 +638,7 @@ Also, as mentioned before, <a hreflang="en" href="https://developers.google.com/
 
 Additionally, <a hreflang="en" href="https://developers.google.com/search/blog/2019/05/mobile-first-indexing-by-default-for">since July 2019</a> Google is using the mobile-first index for all new websites and earlier in March, it announced that <a hreflang="en" href="https://webmasters.googleblog.com/2020/03/announcing-mobile-first-indexing-for.html">70% of pages shown in their search results have already shifted over</a>. It is now expected that Google <a hreflang="en" href="https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html">fully switches to a mobile-first index in March 2021</a>.
 
-Mobile friendliness should be fundamental for any website looking to provide a good search experience—and as a consequence, grow in search results.
+Mobile friendliness should be fundamental for any website looking to provide a good search experience, and as a consequence, grow in search results.
 
 A mobile-friendly website can be implemented through different configurations: by using a responsive web design, with dynamic serving, or via a separate mobile web version. However, maintaining a separate mobile web version is not recommended anymore by Google, who endorse responsive web design instead.
 
@@ -646,7 +646,7 @@ A mobile-friendly website can be implemented through different configurations: b
 
 The browser's viewport is the visible area of a page content, which changes depending on the used device. The `<meta name="viewport">` tag (or viewport meta tag) allows you to specify to browsers the width and scaling of the viewport, so that it is correctly sized across different devices. Responsive websites use the viewport meta tag as well as CSS media queries to deliver a mobile friendly experience.
 
-42.98% of mobile pages and 43.2% desktop ones are have a viewport meta tag with the `content=initial-scale=1,width=device-width` attribute. However, 10.84% of mobile pages and 16.18% of desktop ones are not including the tag at all, suggesting that they are not yet mobile friendly.
+42.98% of mobile pages and 43.2% desktop ones have a viewport meta tag with the `content=initial-scale=1,width=device-width` attribute. However, 10.84% of mobile pages and 16.18% of desktop ones are not including the tag at all, suggesting that they are not yet mobile friendly.
 
 <figure>
   <table>
@@ -1170,7 +1170,7 @@ These frameworks required special SEO considerations, although Google has worked
 
 SPAs should utilize the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) for granular control of caching. The API allows for the passing of `Request` objects with specific cache overrides set and can be used to set the necessary `If-Modified` and `ETag` headers.
 
-Undiscoverable resources are still the primary concern of search engines and their web crawlers. Search crawlers look for the `href`  attributes in `<a>` tags to find linked pages. Without these, the page is seen as isolated without internal linking. 5.59% of desktop pages studied contained no internal links as well as 6.04% of mobile-rendered pages. This is a marker that the page is part of a JavaScript framework SPA and missing the necessary `<a>` tag with valid `href` attributes required for their internal linking to be discovered.
+Undiscoverable resources are still the primary concern of search engines and their web crawlers. Search crawlers look for the `href` attributes in `<a>` tags to find linked pages. Without these, the page is seen as isolated without internal linking. 5.59% of desktop pages studied contained no internal links as well as 6.04% of mobile-rendered pages. This is a marker that the page is part of a JavaScript framework SPA and missing the necessary `<a>` tag with valid `href` attributes required for their internal linking to be discovered.
 
 The discoverability of links in popular JavaScript frameworks used for SPAs increased dramatically in 2020 over [the previous year](../2019/seo#spa-crawlability). In 2019, 13.08% of mobile navigation links on React sites used deprecated hash URLs. For 2020, only 6.12% of the tested React links were hashed.
 

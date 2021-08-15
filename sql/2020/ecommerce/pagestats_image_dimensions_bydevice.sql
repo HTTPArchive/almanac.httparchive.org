@@ -1,7 +1,7 @@
 #standardSQL
 # 13_06c: Distribution of image dimensions
 
-## $4.11 run 
+## $4.11 run
 
 CREATE TEMPORARY FUNCTION getImageDimensions(payload STRING)
 RETURNS ARRAY<STRUCT<height INT64, width INT64>> LANGUAGE js AS '''
@@ -24,8 +24,8 @@ FROM
 JOIN
   `httparchive.technologies.2020_08_01_*`
 USING (_TABLE_SUFFIX, url),
-UNNEST(getImageDimensions(payload)) AS image,
-UNNEST([10, 25, 50, 75, 90]) AS percentile
+  UNNEST(getImageDimensions(payload)) AS image,
+  UNNEST([10, 25, 50, 75, 90]) AS percentile
 WHERE
   category = 'Ecommerce'
 GROUP BY

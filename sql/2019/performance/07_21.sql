@@ -10,7 +10,7 @@ FROM (
   _TABLE_SUFFIX AS client,
   (
     CAST(IFNULL(JSON_EXTRACT(payload, "$['_cpu.ParseAuthorStyleSheet']"), "0") AS INT64) +
-    CAST(IFNULL(JSON_EXTRACT(payload, "$['_cpu.Layout']"), "0") as INT64) +
+    CAST(IFNULL(JSON_EXTRACT(payload, "$['_cpu.Layout']"), "0") AS INT64) +
     CAST(IFNULL(JSON_EXTRACT(payload, "$['_cpu.UpdateLayoutTree']"), "0") AS INT64)
   ) AS layout_cpu_time
   FROM

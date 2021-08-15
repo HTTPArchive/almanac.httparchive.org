@@ -16,25 +16,25 @@ FROM (
     `httparchive.almanac.requests`
   JOIN (
     SELECT DISTINCT
-      _TABLE_SUFFIX AS client, 
+      _TABLE_SUFFIX AS client,
       url AS page
     FROM `httparchive.technologies.2020_08_01_*`
-    WHERE 
+    WHERE
       category = 'Ecommerce')
   USING
     (client, page)
   JOIN
     `httparchive.almanac.third_parties`
   ON
-    NET.HOST(url) = domain  
-WHERE 
-  `httparchive.almanac.requests`.date = '2020-08-01'
-GROUP BY
+    NET.HOST(url) = domain
+  WHERE
+    `httparchive.almanac.requests`.date = '2020-08-01'
+  GROUP BY
     client,
     category,
     page),
 
-UNNEST([10, 25, 50, 75, 90]) AS percentile
+  UNNEST([10, 25, 50, 75, 90])
 GROUP BY
   percentile,
   client,

@@ -14,7 +14,7 @@ FROM (
       _TABLE_SUFFIX AS client,
       url AS page,
       total,
-      ARRAY_TO_STRING(ARRAY_AGG(app ORDER BY app), ', ') AS apps,
+      ARRAY_TO_STRING(ARRAY_AGG(app ORDER BY app), ', ') AS apps
     FROM
       `httparchive.technologies.2020_08_01_*`
     JOIN (
