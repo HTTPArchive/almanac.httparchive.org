@@ -24,13 +24,13 @@ try {
 ''';
 
 SELECT
-  COUNT(0) as total_sites,
+  COUNT(0) AS total_sites,
   COUNTIF(input_stats.total_inputs > 0) AS total_applicable_sites,
   COUNTIF(input_stats.found_advanced_types) AS total_pages_using,
   COUNTIF(input_stats.found_advanced_types) / COUNTIF(input_stats.total_inputs > 0) AS occurence_perc
 FROM (
   SELECT
-    getInputStats(JSON_EXTRACT_SCALAR(payload, '$._almanac')) as input_stats
+    getInputStats(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS input_stats
   FROM
     `httparchive.pages.2021_07_01_mobile`
 )

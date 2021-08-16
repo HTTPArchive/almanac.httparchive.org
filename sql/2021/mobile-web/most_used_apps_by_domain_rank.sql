@@ -13,7 +13,7 @@ FROM
 JOIN (
   SELECT
     url,
-    rank,
+    rank
   FROM
     `httparchive.summary_pages.2021_07_01_mobile`
 ) USING (url)

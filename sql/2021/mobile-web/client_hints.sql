@@ -23,8 +23,7 @@ try {
 SELECT
   _TABLE_SUFFIX AS client,
   total_sites,
-  SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS total_sites_using_ch
-
+  SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS total_sites_using_ch,
   hint,
   COUNT(0) AS total_sites_using,
   COUNT(0) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS pct_ch_sites_using,

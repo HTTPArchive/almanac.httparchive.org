@@ -10,7 +10,7 @@ FROM (
   SELECT
     client,
     url,
-    TRUE as uses_payment_requst
+    TRUE AS uses_payment_requst
   FROM
     `httparchive.blink_features.features`
   WHERE

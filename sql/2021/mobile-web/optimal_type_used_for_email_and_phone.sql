@@ -79,7 +79,7 @@ SELECT
   COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY input_info.detected_type) AS perc_sites
 FROM
   `httparchive.pages.2019_07_01_mobile`,
-  UNNEST(getInputInfo(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) as input_info
+  UNNEST(getInputInfo(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS input_info
 GROUP BY
   input_info.detected_type,
   input_info.using_best_type
