@@ -33,7 +33,7 @@ FROM (
     COUNTIF(JSON_VALUE(metrics, "$.iab_tcf_v1.present") = "true" AND
             JSON_VALUE(metrics, "$.iab_tcf_v1.compliant_setup") = "true") AS nb_websites_with_iab_tcf_v1_compliant,
     COUNTIF(JSON_VALUE(metrics, "$.iab_tcf_v2.present") = "true" AND
-            JSON_VALUE(metrics, "$.iab_tcf_v2.compliant_setup") = "true") AS nb_websites_with_iab_tcf_v2_compliant,
+            JSON_VALUE(metrics, "$.iab_tcf_v2.compliant_setup") = "true") AS nb_websites_with_iab_tcf_v2_compliant
   FROM
     pages_privacy
   GROUP BY

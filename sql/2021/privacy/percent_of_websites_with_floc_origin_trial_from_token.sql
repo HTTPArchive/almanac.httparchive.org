@@ -1,20 +1,19 @@
 CREATE TEMP FUNCTION retrieveOriginTrials(tokenElem STRING)
-  RETURNS STRUCT<
-    validityElem STRING,
-    versionElem INTEGER,
-    originElem STRING,
-    subdomainElem BOOLEAN,
-    thirdpartyElem BOOLEAN,
-    usageElem STRING,
-    featureElem STRING,
-    expiryElem TIMESTAMP
-  >
-
-  LANGUAGE js
-  -- https://stackoverflow.com/questions/60094731/can-i-use-textencoder-in-bigquery-js-udf
-  OPTIONS (library="gs://fh-bigquery/js/inexorabletash.encoding.js");
-  -- https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/check-token.html
-  AS """
+RETURNS STRUCT<
+  validityElem STRING,
+  versionElem INTEGER,
+  originElem STRING,
+  subdomainElem BOOLEAN,
+  thirdpartyElem BOOLEAN,
+  usageElem STRING,
+  featureElem STRING,
+  expiryElem TIMESTAMP
+>
+LANGUAGE js
+-- https://stackoverflow.com/questions/60094731/can-i-use-textencoder-in-bigquery-js-udf
+OPTIONS (library = "gs://fh-bigquery/js/inexorabletash.encoding.js")
+-- https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/check-token.html
+AS """
   let validityElem,
     versionElem,
     originElem,
@@ -158,13 +157,13 @@ WITH pages_origin_trials AS (
     JSON_VALUE(payload, "$._origin-trials") AS metrics
   FROM
     `httparchive.pages.2021_08_01_*`
-)
+),
 
-, extracted_origin_trials AS (
+extracted_origin_trials AS (
 SELECT
   client,
-  url as site, -- the home page that was crawled
-  retrieveOriginTrials(JSON_VALUE(metric, "$.token")) origin_trials
+  url AS site, -- the home page that was crawled
+  retrieveOriginTrials(JSON_VALUE(metric, "$.token")) AS origin_trials
 FROM
   pages_origin_trials, UNNEST(JSON_QUERY_ARRAY(metrics)) metric
 )
@@ -173,8 +172,8 @@ FROM
 
 SELECT
   client,
-  COUNT(DISTINCT site) nb_websites, -- crawled sites containing at leat one origin trial
-  COUNT(DISTINCT origin_trials.originElem) nb_origins, -- origins with an origin trial
+  COUNT(DISTINCT site) AS nb_websites, -- crawled sites containing at leat one origin trial
+  COUNT(DISTINCT origin_trials.originElem) AS nb_origins -- origins with an origin trial
 FROM
   extracted_origin_trials
 WHERE

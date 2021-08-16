@@ -13,13 +13,15 @@ WITH apps AS (
     client,
     url,
     retargeting_app
-), base AS (
+),
+
+base AS (
   SELECT
     client,
     url,
     retargeting_app,
     COUNT(DISTINCT url) OVER (PARTITION BY client) AS total_pages,
-    COUNT(DISTINCT url) / COUNT(DISTINCT url) OVER () AS pct_pages_with_retargeting,
+    COUNT(DISTINCT url) / COUNT(DISTINCT url) OVER (PARTITION BY 0) AS pct_pages_with_retargeting
   FROM
     apps
   GROUP BY
@@ -32,7 +34,7 @@ SELECT
   client,
   retargeting_app,
   ANY_VALUE(total_pages) AS total_pages,
-  COUNT(DISTINCT url) / ANY_VALUE(total_pages) AS pct_pages_with_retargeting,
+  COUNT(DISTINCT url) / ANY_VALUE(total_pages) AS pct_pages_with_retargeting
 FROM
   base
 WHERE

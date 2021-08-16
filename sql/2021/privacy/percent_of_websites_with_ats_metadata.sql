@@ -11,7 +11,7 @@ WITH pages_privacy AS (
 
 SELECT
   client,
-  COUNT(0) nb_websites,
+  COUNT(0) AS nb_websites,
   COUNTIF(JSON_VALUE(metrics, "$.ads_transparency_spotlight.present") = "true") AS nb_websites_ats,
   COUNTIF(JSON_VALUE(metrics, "$.ads_transparency_spotlight.present") = "true") / COUNT(0) AS pct_websites_ats
 FROM

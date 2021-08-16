@@ -13,30 +13,30 @@ WITH pages_privacy AS (
 
 SELECT
   *,
-  100 * nb_websites_document_interestCohort / nb_websites 
+  100 * nb_websites_document_interestCohort / nb_websites
     AS pct_websites_document_interestCohort,
-  100 * nb_websites_navigator_doNotTrack / nb_websites 
+  100 * nb_websites_navigator_doNotTrack / nb_websites
     AS pct_websites_navigator_doNotTrack,
-  100 * nb_websites_navigator_globalPrivacyControl / nb_websites 
+  100 * nb_websites_navigator_globalPrivacyControl / nb_websites
     AS pct_websites_navigator_globalPrivacyControl,
-  100 * nb_websites_document_permissionsPolicy / nb_websites 
+  100 * nb_websites_document_permissionsPolicy / nb_websites
     AS pct_websites_document_permissionsPolicy,
-  100 * nb_websites_document_featurePolicy / nb_websites 
+  100 * nb_websites_document_featurePolicy / nb_websites
     AS pct_websites_document_featurePolicy,
-  100 * nb_websites_navigator_mediaDevices_enumerateDevices / nb_websites 
+  100 * nb_websites_navigator_mediaDevices_enumerateDevices / nb_websites
     AS pct_websites_navigator_mediaDevices_enumerateDevices,
-  100 * nb_websites_navigator_mediaDevices_getUserMedia / nb_websites 
+  100 * nb_websites_navigator_mediaDevices_getUserMedia / nb_websites
     AS pct_websites_navigator_mediaDevices_getUserMedia,
-  100 * nb_websites_navigator_mediaDevices_getDisplayMedia / nb_websites 
+  100 * nb_websites_navigator_mediaDevices_getDisplayMedia / nb_websites
     AS pct_websites_navigator_mediaDevices_getDisplayMedia,
-  100 * nb_websites_navigator_mediaDevices_any / nb_websites 
+  100 * nb_websites_navigator_mediaDevices_any / nb_websites
     AS pct_websites_navigator_mediaDevices_any,
-  100 * nb_websites_navigator_geolocation_getCurrentPosition / nb_websites 
+  100 * nb_websites_navigator_geolocation_getCurrentPosition / nb_websites
     AS pct_websites_navigator_geolocation_getCurrentPosition,
-  100 * nb_websites_navigator_geolocation_watchPosition / nb_websites 
+  100 * nb_websites_navigator_geolocation_watchPosition / nb_websites
     AS pct_websites_navigator_geolocation_watchPosition,
-  100 * nb_websites_navigator_geolocation_any / nb_websites 
-    AS pct_websites_navigator_geolocation_any,
+  100 * nb_websites_navigator_geolocation_any / nb_websites
+    AS pct_websites_navigator_geolocation_any
 FROM (
   SELECT
     client,
@@ -86,7 +86,7 @@ FROM (
       JSON_VALUE(metrics, "$.geolocation.navigator_geolocation_getCurrentPosition") = "true"
       OR
       JSON_VALUE(metrics, "$.geolocation.navigator_geolocation_watchPosition") = "true"
-      ) AS nb_websites_navigator_geolocation_any,
+      ) AS nb_websites_navigator_geolocation_any
 
   FROM
     pages_privacy

@@ -13,13 +13,15 @@ WITH apps AS (
     client,
     url,
     geolocation_app
-), base AS (
+),
+
+base AS (
   SELECT
     client,
     url,
     geolocation_app,
     COUNT(DISTINCT url) OVER (PARTITION BY client) AS total_pages,
-    COUNT(DISTINCT url) / COUNT(DISTINCT url) OVER () AS pct_pages_with_geolocation,
+    COUNT(DISTINCT url) / COUNT(DISTINCT url) OVER (PARTITION BY 0) AS pct_pages_with_geolocation
   FROM
     apps
   GROUP BY
@@ -32,7 +34,7 @@ SELECT
   client,
   geolocation_app,
   ANY_VALUE(total_pages) AS total_pages,
-  COUNT(DISTINCT url) / ANY_VALUE(total_pages) AS pct_pages_with_geolocation,
+  COUNT(DISTINCT url) / ANY_VALUE(total_pages) AS pct_pages_with_geolocation
 FROM
   base
 WHERE

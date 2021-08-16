@@ -6,12 +6,12 @@ WITH pages_well_known AS (
     `httparchive.pages.2021_08_01_*`
 )
 
-SELECT 
+SELECT
   client,
-  COUNT(0) nb_websites, -- crawled sites containing at leat one origin trial
-FROM 
+  COUNT(0) AS nb_websites -- crawled sites containing at leat one origin trial
+FROM
   pages_well_known
-WHERE 
+WHERE
   JSON_VALUE(pages_well_known.metrics, '$."/.well-known/gpc.json".found') = "true"
 GROUP BY
   1

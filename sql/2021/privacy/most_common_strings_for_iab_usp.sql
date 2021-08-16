@@ -8,25 +8,26 @@ WITH pages_privacy AS (
     JSON_VALUE(payload, "$._privacy") AS metrics
   FROM
     `httparchive.pages.2021_08_01_*`
-)
-, pages_iab_usp AS (
-  SELECT 
-    client, 
+),
+
+pages_iab_usp AS (
+  SELECT
+    client,
     JSON_QUERY(metrics, "$.iab_usp.privacy_string") AS metrics
   FROM
     pages_privacy
-  WHERE 
-    JSON_QUERY(metrics, "$.iab_usp.privacy_string") is not null
+  WHERE
+    JSON_QUERY(metrics, "$.iab_usp.privacy_string") IS NOT NULL
 )
 
-SELECT 
+SELECT
   client,
-  JSON_VALUE(metrics, '$.uspString') uspString,
+  JSON_VALUE(metrics, '$.uspString') AS uspString,
   COUNT(0) AS nb_websites,
-  COUNT(0) / (SELECT COUNT(0) FROM pages_iab_usp) pct_websites
+  COUNT(0) / (SELECT COUNT(0) FROM pages_iab_usp) AS pct_websites
 FROM
   pages_iab_usp
 WHERE
-  JSON_VALUE(metrics, '$.uspString') is not null
+  JSON_VALUE(metrics, '$.uspString') IS NOT NULL
 GROUP BY
   1, 2

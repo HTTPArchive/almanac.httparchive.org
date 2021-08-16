@@ -1,6 +1,6 @@
 # https://stackoverflow.com/questions/65048929/bigquery-extract-keys-from-json-object-convert-json-from-object-to-key-value-a
 CREATE TEMP FUNCTION jsonToKeyValueArray(input STRING)
-RETURNS Array<Struct<key String, value ARRAY<String>>>
+RETURNS ARRAY<STRUCT<key String, value ARRAY<String>>>
 LANGUAGE js AS """
   let json = JSON.parse(input);
   return Object.keys(json).map(e => {
@@ -15,28 +15,29 @@ WITH pages_events AS (
     JSON_VALUE(payload, "$._events") AS metrics
   FROM
     `httparchive.pages.2021_08_01_*`
-)
-, sites_and_events AS ( 
-  SELECT 
+),
+
+sites_and_events AS (
+  SELECT
     client,
     site, -- the home page that was crawled
-    url_and_events.key as url, -- the url that added the event listener, can be scripts etc.
+    url_and_events.key AS url, -- the url that added the event listener, can be scripts etc.
     event -- the name of the event
-  FROM 
-    (SELECT client, url as site, jsonToKeyValueArray(events) events_per_site from pages_events), 
-    UNNEST(events_per_site) url_and_events, 
+  FROM
+    (SELECT client, url AS site, jsonToKeyValueArray(events) AS events_per_site FROM pages_events),
+    UNNEST(events_per_site) url_and_events,
     UNNEST(url_and_events.value) event
 )
 
-SELECT 
+SELECT
   client,
   event,
-  COUNT(DISTINCT site) nb_websites,
-  COUNT(DISTINCT url) nb_urls,
+  COUNT(DISTINCT site) AS nb_websites,
+  COUNT(DISTINCT url) AS nb_urls
 FROM
   sites_and_events
 WHERE
   -- device* events, from https://www.esat.kuleuven.be/cosic/publications/article-3078.pdf
   event LIKE 'device%'
-GROUP BY 
+GROUP BY
   1, 2

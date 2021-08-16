@@ -9,7 +9,7 @@ WITH base AS (
     LOGICAL_OR(category = "Cookie compliance") AS with_cookie_compliance,
     LOGICAL_OR(category = "Browser fingerprinting") AS with_browser_fingerprinting,
     LOGICAL_OR(category = "Retargeting") AS with_retargeting,
-    LOGICAL_OR(category = "Geolocation") AS with_geolocation,
+    LOGICAL_OR(category = "Geolocation") AS with_geolocation
   FROM `httparchive.technologies.2021_08_01_*`
   GROUP BY
     client,
@@ -26,7 +26,7 @@ SELECT
   COUNTIF(with_retargeting) AS nb_websites_with_retargeting,
   COUNTIF(with_retargeting) / COUNT(url) AS pct_websites_with_retargeting,
   COUNTIF(with_geolocation) AS nb_websites_with_geolocation,
-  COUNTIF(with_geolocation) / COUNT(url) AS pct_websites_with_geolocation,
+  COUNTIF(with_geolocation) / COUNT(url) AS pct_websites_with_geolocation
 FROM
   base
 GROUP BY
