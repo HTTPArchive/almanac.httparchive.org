@@ -126,6 +126,51 @@ This can take a while to run so you can lint just subsets of files or folders:
 npm run lint tools/generate templates/base
 ```
 
+### Linting SQL files
+
+SQL files can be linted by [SQLFluff](https://www.sqlfluff.com/). This also adds the ability to autofix some simple errors (e.g. spacing, capitalisation and commas). To lint the 2020 resource-hints SQL files, install the python environment as per above, and then issue the following commands:
+
+```
+sqlfluff lint ../sql/2020/resource-hints
+```
+
+This will return errors like the following:
+
+```
+% sqlfluff lint ../sql/2020/resource-hints
+== [../sql/2020/resource-hints/adoption_service_workers.sql] FAIL
+L:  25 | P:  26 | L010 | Inconsistent capitalisation of keywords.
+L:  26 | P:  37 | L010 | Inconsistent capitalisation of keywords.
+L:  34 | P:  63 | L038 | Trailing comma in select statement forbidden
+All Finished 📜 🎉!
+```
+
+This states the on line 25, in position 26 you are using lowercase for keywords (e.g. `as` instead of `AS`).
+Similar on line 26, position 37
+And on line 34, position 63 you have an unnecessary comma (e.g. `SELECT a,b, FROM table`). Remove the extra comma.
+
+To attempt to autofix the errors you can use the `fix` command:
+
+```
+sqlfluff fix ../sql/2020/resource-hints
+```
+
+Which will produce similar output but with an offer to fix the issues it thinks it can fix:
+
+```
+% sqlfluff fix ../sql/2020/resource-hints
+==== finding fixable violations ====
+== [../sql/2020/resource-hints/adoption_service_workers.sql] FAIL
+L:  25 | P:  26 | L010 | Inconsistent capitalisation of keywords.
+L:  26 | P:  37 | L010 | Inconsistent capitalisation of keywords.
+L:  34 | P:  63 | L038 | Trailing comma in select statement forbidden
+==== fixing violations ====
+3 fixable linting violations found
+Are you sure you wish to attempt to fix these? [Y/n]
+```
+
+If you lint again you should see most of the errors are fixed. Note that not all errors can be autofixed and some will require manual intervention. But autofixing is useful for the simple errors.
+
 
 ## Generating Ebooks
 
