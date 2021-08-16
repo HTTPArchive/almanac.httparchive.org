@@ -2,7 +2,7 @@
 # Count of non H2 and H3 Sites Grouped By Server
 SELECT
   client,
-  JSON_EXTRACT_SCALAR(payload, '$._protocol') as http_version,
+  JSON_EXTRACT_SCALAR(payload, '$._protocol') AS http_version,
   # Omit server version
   NORMALIZE_AND_CASEFOLD(REGEXP_EXTRACT(resp_server, r'\s*([^/]*)\s*')) AS server_header,
   COUNT(0) AS num_pages,

@@ -13,7 +13,7 @@ RETURNS STRUCT<
 > LANGUAGE js AS '''
 var result = {};
 try {
-    var wpt_bodies = JSON.parse(wpt_bodies_string); 
+    var wpt_bodies = JSON.parse(wpt_bodies_string);
 
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
@@ -46,14 +46,14 @@ SELECT
   # size of the head section in characters
   APPROX_QUANTILES(wpt_bodies_info.head_size, 1000)[OFFSET(percentile * 10)] AS head_size_m234
 FROM (
-  SELECT 
+  SELECT
     _TABLE_SUFFIX AS client,
     percentile,
     url,
     get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
   FROM
-  `httparchive.pages.2020_08_01_*`,
-  UNNEST([10, 25, 50, 75, 90]) AS percentile
+    `httparchive.pages.2020_08_01_*`,
+    UNNEST([10, 25, 50, 75, 90])
 )
 GROUP BY
   percentile,

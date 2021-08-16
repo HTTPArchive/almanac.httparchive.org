@@ -10,6 +10,7 @@ WITH requests AS (
   FROM
     `httparchive.summary_requests.2020_08_01_*`
 ),
+
 third_party AS (
   SELECT
     category,
@@ -19,6 +20,7 @@ third_party AS (
   WHERE
     date = '2020-08-01'
 ),
+
 base AS (
   SELECT
     client,

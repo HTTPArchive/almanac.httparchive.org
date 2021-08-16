@@ -10,17 +10,17 @@ SELECT
 FROM
   `httparchive.technologies.2020_08_01_*`
 JOIN
-  (SELECT 
+  (SELECT
       _TABLE_SUFFIX,
       COUNT(DISTINCT url) AS total
-    FROM 
-      `httparchive.summary_pages.2020_08_01_*` 
-    GROUP BY 
+    FROM
+      `httparchive.summary_pages.2020_08_01_*`
+    GROUP BY
       _TABLE_SUFFIX)
 USING (_TABLE_SUFFIX)
 WHERE
-  category = 'Ecommerce' AND 
-  (app != 'Cart Functionality' AND 
+  category = 'Ecommerce' AND
+  (app != 'Cart Functionality' AND
    app != 'Google Analytics Enhanced eCommerce')
 GROUP BY
   client,

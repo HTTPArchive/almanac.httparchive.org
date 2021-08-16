@@ -21,7 +21,7 @@ try {
                 props.stretch = d.value;
             } else if (d.property.toLowerCase() == 'font-style') {
                 props.style = d.value;
-            }  
+            }
         });
          {
             values.push(props);
@@ -51,7 +51,7 @@ FROM (
     font.stretch AS stretch
   FROM
     `httparchive.almanac.parsed_css`
-     LEFT JOIN UNNEST(getFonts(css)) AS font
+  LEFT JOIN UNNEST(getFonts(css)) AS font
   WHERE
     date = '2020-08-01')
 JOIN (

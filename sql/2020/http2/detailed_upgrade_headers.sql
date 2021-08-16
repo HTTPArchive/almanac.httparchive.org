@@ -2,7 +2,7 @@
 # Detailed upgrade headers for 20.04, 20.05 and 20.06
 SELECT
   client,
-  firstHtml,  
+  firstHtml,
   JSON_EXTRACT_SCALAR(payload, '$._protocol') AS protocol,
   IF(url LIKE 'https://%', 'https', 'http') AS http_or_https,
   regexp_extract(regexp_extract(respOtherHeaders, r'(?is)Upgrade = (.*)'), r'(?im)^([^=]*?)(?:, [a-z-]+ = .*)') IS NOT NULL AS upgrade,

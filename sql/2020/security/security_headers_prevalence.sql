@@ -1,8 +1,11 @@
 #standardSQL
 # Prevalence of security headers set in a first-party context; count by number of hosts.
-CREATE TEMPORARY FUNCTION hasHeader(headers STRING, headername STRING)
-  RETURNS BOOL DETERMINISTIC
-  LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION hasHeader(headers STRING, headername STRING) -- noqa: PRS
+-- SQL Linter cannot handle DETERMINISTIC keyword so needs noqa ignore command on previous line
+RETURNS BOOL
+DETERMINISTIC
+LANGUAGE js
+AS '''
   const parsed_headers = JSON.parse(headers);
   const matching_headers = parsed_headers.filter(h => h.name.toLowerCase() == headername.toLowerCase());
   return matching_headers.length > 0;

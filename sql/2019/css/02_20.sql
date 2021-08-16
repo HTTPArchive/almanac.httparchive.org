@@ -19,5 +19,4 @@ GROUP BY
   filename
 ORDER BY
   freq / total DESC
-LIMIT
-  100
+LIMIT 100

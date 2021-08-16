@@ -37,13 +37,14 @@ WITH pages AS (
     payload
   FROM
     `httparchive.pages.2020_08_01_*`
-UNION ALL
+  UNION ALL
   SELECT
     _TABLE_SUFFIX,
     2019 AS year,
     payload
   FROM
-    `httparchive.pages.2019_07_01_*`)
+    `httparchive.pages.2019_07_01_*`
+)
 
 SELECT
   year,

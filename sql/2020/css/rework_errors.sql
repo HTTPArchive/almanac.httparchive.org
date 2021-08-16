@@ -3,8 +3,7 @@ SELECT
   client,
   parsed_stylesheets,
   total_stylesheets,
-  parsed_stylesheets / total_stylesheets AS pct_parsed,
-
+  parsed_stylesheets / total_stylesheets AS pct_parsed
 FROM (
   SELECT
     client,

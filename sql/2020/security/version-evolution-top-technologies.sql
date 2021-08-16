@@ -12,25 +12,25 @@ SELECT
 FROM (
   SELECT
     info,
-    tech.category_lower AS category,
-    tech.app_lower AS app,
+    category_lower AS category,
+    app_lower AS app,
     month,
     client,
     COUNT(0) AS freq,
-    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client, month, tech.category_lower, tech.app_lower) AS pct
+    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client, month, category_lower, app_lower) AS pct
   FROM (
     SELECT
       info,
       TRIM(LOWER(category)) AS category_lower,
       TRIM(LOWER(app)) AS app_lower,
       LEFT(_TABLE_SUFFIX, 10) AS month,
-      IF(ENDS_WITH(_TABLE_SUFFIX, '_desktop'), 'desktop', 'mobile') AS client,
+      IF(ENDS_WITH(_TABLE_SUFFIX, '_desktop'), 'desktop', 'mobile') AS client
     FROM
       `httparchive.technologies.*`
     WHERE
-      REGEXP_CONTAINS(info, r'\d+\.\d+')
-      AND REGEXP_CONTAINS(_TABLE_SUFFIX, r'^20(20|19).*')
-  ) AS tech
+      REGEXP_CONTAINS(info, r'\d+\.\d+') AND
+      REGEXP_CONTAINS(_TABLE_SUFFIX, r'^20(20|19).*')
+  )
   INNER JOIN (
     SELECT
       TRIM(LOWER(category)) AS category_lower,
@@ -46,10 +46,11 @@ FROM (
     ORDER BY
       num DESC
     LIMIT 20
-  ) AS top ON (tech.category_lower = top.category_lower AND tech.app_lower = top.app_lower)
+  )
+  USING (category_lower, app_lower)
   GROUP BY
-    tech.category_lower,
-    tech.app_lower,
+    category_lower,
+    app_lower,
     month,
     info,
     client)

@@ -14,7 +14,7 @@ FROM (
     COUNT(0) AS requests,
     SUM(respSize) AS bytes
   FROM
-    `httparchive.almanac.summary_requests` sr
+    `httparchive.almanac.summary_requests`
   JOIN (
     SELECT _TABLE_SUFFIX AS client, url AS page, app
     FROM `httparchive.technologies.2019_07_01_*`
@@ -28,7 +28,7 @@ FROM (
     client,
     app,
     page),
-UNNEST([10, 25, 50, 75, 90]) AS percentile
+  UNNEST([10, 25, 50, 75, 90])
 GROUP BY
   client,
   app,
