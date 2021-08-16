@@ -1,8 +1,8 @@
 #standardSQL
 # Top100 domains that set cookies via response header
 
-CREATE TEMPORARY FUNCTION
-  cookieNames(headers STRING)
+CREATE TEMPORARY FUNCTION cookieNames(headers STRING) -- noqa: PRS
+-- SQL Linter cannot handle DETERMINISTIC keyword so needs noqa ignore command on previous line
   RETURNS ARRAY<STRING> DETERMINISTIC
   LANGUAGE js AS '''
 try {
