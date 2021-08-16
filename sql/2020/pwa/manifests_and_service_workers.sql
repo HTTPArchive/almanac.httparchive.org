@@ -10,36 +10,36 @@ SELECT
   both / total AS both_pct,
   total
 FROM
-    (SELECT
-        date,
-        client,
-        COUNT(DISTINCT m.page) AS manifests,
-        COUNT(DISTINCT sw.page) AS serviceworkers,
-        COUNT(DISTINCT IFNULL(m.page, sw.page)) AS either,
-        COUNT(DISTINCT m.page || sw.page) AS both
+  (SELECT
+      date,
+      client,
+      COUNT(DISTINCT m.page) AS manifests,
+      COUNT(DISTINCT sw.page) AS serviceworkers,
+      COUNT(DISTINCT IFNULL(m.page, sw.page)) AS either,
+      COUNT(DISTINCT m.page || sw.page) AS both
     FROM
-        `httparchive.almanac.manifests` m
+      `httparchive.almanac.manifests` m
     FULL OUTER JOIN
-        `httparchive.almanac.service_workers` sw
+      `httparchive.almanac.service_workers` sw
     USING
-        (date, client, page)
+      (date, client, page)
     GROUP BY
-        date,
-        client
-    )
+      date,
+      client
+  )
 JOIN
-    (SELECT
-        date,
-        client,
-        COUNT(DISTINCT page) AS total
+  (SELECT
+      date,
+      client,
+      COUNT(DISTINCT page) AS total
     FROM
-        `httparchive.almanac.summary_requests`
+      `httparchive.almanac.summary_requests`
     GROUP BY
-        date,
-        client
-    )
+      date,
+      client
+  )
 USING
-    (date, client)
+  (date, client)
 ORDER BY
   date,
   client

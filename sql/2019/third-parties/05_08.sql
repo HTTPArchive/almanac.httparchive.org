@@ -32,16 +32,15 @@ FROM (
   ON
     NET.HOST(item.url) = DomainsOver50Table.requestDomain ) t1,
   (
-  SELECT
-    SUM(item.execution_time) AS totalExecutionTime
-  FROM
-    `httparchive.lighthouse.2019_07_01_mobile`,
-    UNNEST(getExecutionTimes(report)) AS item ) t2
+    SELECT
+      SUM(item.execution_time) AS totalExecutionTime
+    FROM
+      `httparchive.lighthouse.2019_07_01_mobile`,
+      UNNEST(getExecutionTimes(report)) AS item ) t2
 WHERE
   thirdPartyDomain IS NOT NULL
 GROUP BY
   thirdPartyDomain
 ORDER BY
   totalExecutionTime DESC
-LIMIT
-  100
+LIMIT 100

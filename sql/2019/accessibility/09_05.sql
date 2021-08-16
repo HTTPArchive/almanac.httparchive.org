@@ -22,5 +22,4 @@ GROUP BY
   role
 ORDER BY
   pages / total DESC
-LIMIT
-  1000
+LIMIT 1000

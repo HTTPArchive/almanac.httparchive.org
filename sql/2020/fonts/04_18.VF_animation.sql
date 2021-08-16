@@ -24,7 +24,7 @@ FROM (
     page,
     COUNTIF(animatesVariableFonts(css)) AS animates_variable_fonts
   FROM
-   `httparchive.almanac.parsed_css`
+    `httparchive.almanac.parsed_css`
   GROUP BY
     client,
     page)

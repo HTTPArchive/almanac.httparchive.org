@@ -30,26 +30,26 @@ SELECT
   APPROX_QUANTILES(ROUND(bytes / IF(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(750)] AS bpp_p75,
   APPROX_QUANTILES(ROUND(bytes / IF(imageType = 'svg' AND pixels > 0, pixels, naturalPixels), 4), 1000)[OFFSET(900)] AS bpp_p90
 FROM
-(
-  SELECT
-    _TABLE_SUFFIX AS client,
-    p.url AS page,
-    image.url AS url,
-    image.width AS width,
-    image.height AS height,
-    image.naturalWidth AS naturalWidth,
-    image.naturalHeight AS naturalHeight,
-    IFNULL(image.width, 0) * IFNULL(image.height, 0) AS pixels,
-    IFNULL(image.naturalWidth, 0) * IFNULL(image.naturalHeight, 0) AS naturalPixels
-  FROM
-    `httparchive.pages.2020_08_01_*` p
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      p.url AS page,
+      image.url AS url,
+      image.width AS width,
+      image.height AS height,
+      image.naturalWidth AS naturalWidth,
+      image.naturalHeight AS naturalHeight,
+      IFNULL(image.width, 0) * IFNULL(image.height, 0) AS pixels,
+      IFNULL(image.naturalWidth, 0) * IFNULL(image.naturalHeight, 0) AS naturalPixels
+    FROM
+      `httparchive.pages.2020_08_01_*` p
     CROSS JOIN UNNEST(getImages(payload)) AS image
-  WHERE
-    image.naturalHeight > 0 AND
-    image.naturalWidth > 0
-)
+    WHERE
+      image.naturalHeight > 0 AND
+      image.naturalWidth > 0
+  )
 LEFT JOIN
-(
+  (
     SELECT
       client,
       page,
@@ -62,19 +62,19 @@ LEFT JOIN
       # many 404s and redirects show up as image/gif
       status = 200 AND
 
-      # we are trying to catch images. WPO populates the format for media but it uses a file extension guess.
+        # we are trying to catch images. WPO populates the format for media but it uses a file extension guess.
       #So we exclude mimetypes that aren't image or where the format couldn't be guessed by WPO
-     (format <> '' OR mimetype LIKE 'image%') AND
+      (format <> '' OR mimetype LIKE 'image%') AND
 
       # many image/gifs are really beacons with 1x1 pixel, but svgs can get caught in the mix
-     (respSize > 1500 OR REGEXP_CONTAINS(mimetype, r'svg')) AND
+      (respSize > 1500 OR REGEXP_CONTAINS(mimetype, r'svg')) AND
 
       # strip favicon requests
-     format <> 'ico' AND
+      format <> 'ico' AND
 
       # strip video mimetypes and other favicons
       NOT REGEXP_CONTAINS(mimetype, r'video|ico')
-)
+  )
 USING (client, page, url)
 WHERE
   naturalPixels > 0 AND

@@ -7,13 +7,13 @@ SELECT
   SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
   COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct
 FROM
-    `httparchive.almanac.requests`
+  `httparchive.almanac.requests`
 WHERE
-    date = '2019-07-01' AND
-    type = 'font' AND
-    NET.HOST(page) != NET.HOST(url)
+  date = '2019-07-01' AND
+  type = 'font' AND
+  NET.HOST(page) != NET.HOST(url)
 GROUP BY
-    client, url, page
+  client, url, page
 HAVING
   pages >= 1000
 ORDER BY
