@@ -128,7 +128,7 @@ npm run lint tools/generate templates/base
 
 ### Linting SQL files
 
-SQL files can be linted by [SQLFluff](https://www.sqlfluff.com/). This also adds the ability to autofix some simple errors (e.g. spacing, capitalisation and commas). To lint the 2020 resource-hints SQL files, for example, install the python environment as per above, and then issue the following command:
+SQL files will be linted by [SQLFluff](https://www.sqlfluff.com/). This tools adds the ability to autofix some simple errors (e.g. spacing, capitalisation and commas) when run locally. To lint the 2020 resource-hints SQL files, for example, install the python environment as per above, and then issue the following command:
 
 ```
 sqlfluff lint ../sql/2020/resource-hints
@@ -150,9 +150,9 @@ This states that:
 - Similarly on line 26, position 37.
 - And finally on line 34, position 63 you have an unnecessary comma (e.g. `SELECT a,b, FROM table`) and so failed rule L038. Remove the extra comma.
 
-The list of rules can be found in [the SQL FLuff documentation](https://docs.sqlfluff.com/en/stable/rules.html) though we have turned a few of them off and configured others for our style (see the [our .sqlfluff file if curious](https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/.sqlfluff)).
+The list of rules can be found in [the SQLFLuff documentation](https://docs.sqlfluff.com/en/stable/rules.html) though we have turned a few of them off and configured others for our style (see the [our .sqlfluff file if curious](https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/.sqlfluff)).
 
-If you see any "unparseable" or PRS errors, then this is either an error in your code, or perhaps you've discovered a bug. Reach out to [Barry - @tunetheweb](https://github.com/tunetheweb) for help if stuck.
+If you see any "unparseable" or PRS errors, then this is either an error in your code, or perhaps you've discovered a bug. Reach out to [Barry (@tunetheweb)](https://github.com/tunetheweb) for help if stuck.
 
 To attempt to autofix the errors you can use the `fix` command, instead of `lint`:
 
