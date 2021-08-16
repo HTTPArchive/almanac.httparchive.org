@@ -22,14 +22,14 @@ FROM (
     COUNTIF(JSON_EXTRACT_SCALAR(payload, '$._protocol') = 'http/2+quic/46') / COUNT(0) AS http2quic46_pct,
     COUNTIF(JSON_EXTRACT_SCALAR(payload, '$._protocol') NOT IN ('http/0.9', 'http/1.0', 'http/1.1', 'HTTP/2', 'QUIC', 'http/2+quic/46')) / COUNT(0) AS other_pct,
     COUNTIF(JSON_EXTRACT_SCALAR(payload, '$._protocol') IS NULL) / COUNT(0) AS null_pct
-  FROM 
+  FROM
     `httparchive.almanac.requests`
   WHERE
     date = '2020-08-01'
   GROUP BY
     client,
     page)
-GROUP BY 
+GROUP BY
   client
 ORDER BY
   client

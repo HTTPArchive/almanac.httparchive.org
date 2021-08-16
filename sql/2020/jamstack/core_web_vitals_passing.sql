@@ -11,7 +11,7 @@ CREATE TEMP FUNCTION IS_NON_ZERO (good FLOAT64, needs_improvement FLOAT64, poor 
 
 SELECT
   app,
-	CDN,
+  CDN,
   client,
   COUNT(DISTINCT origin) AS origins,
   # Origins with good LCP divided by origins with any LCP.

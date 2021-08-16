@@ -9,7 +9,7 @@ FROM (
     client,
     page,
     COUNTIF(JSON_EXTRACT_SCALAR(payload, '$._protocol') IN ('HTTP/2', 'QUIC', 'http/2+quic/46')) / COUNT(0) AS http2_pct
-  FROM 
+  FROM
     `httparchive.almanac.requests`
   WHERE
     date = '2020-08-01'
@@ -17,7 +17,7 @@ FROM (
     client,
     page),
   UNNEST([5, 6, 7, 8, 9, 10, 25, 50, 75, 90, 95, 100]) AS percentile
-GROUP BY 
+GROUP BY
   client,
   percentile
 ORDER BY

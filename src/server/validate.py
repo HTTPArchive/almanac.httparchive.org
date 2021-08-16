@@ -53,11 +53,18 @@ def validate(func):
 
 
 def validate_chapter(chapter, year):
-    chapters_for_year = SUPPORTED_CHAPTERS.get(year)
+    chapters_for_year = []
+
+    if year <= DEFAULT_YEAR:
+        chapters_for_year = SUPPORTED_CHAPTERS.get(year)
+
     if chapter not in chapters_for_year:
         if chapter[-1] == "/":
             # Automatically remove any trailing slashes
             return chapter[:-1]
+        elif year > DEFAULT_YEAR:
+            # Until a year is live and the default year, redirect any requests back to the home page
+            return ""
         elif chapter.lower() in chapters_for_year:
             # Automatically redirect to lowercase
             return chapter.lower()

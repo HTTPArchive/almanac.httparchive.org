@@ -14,7 +14,7 @@ SELECT
   _TABLE_SUFFIX AS client,
   COUNTIF(stylesheets.remote = 1) AS one_remote,
   COUNT(0) AS total,
-  COUNTIF(stylesheets.remote = 1) / COUNT(0) AS pct_one_remote,
+  COUNTIF(stylesheets.remote = 1) / COUNT(0) AS pct_one_remote
 FROM (
   SELECT
     _TABLE_SUFFIX,
