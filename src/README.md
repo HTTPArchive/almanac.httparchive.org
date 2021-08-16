@@ -126,6 +126,56 @@ This can take a while to run so you can lint just subsets of files or folders:
 npm run lint tools/generate templates/base
 ```
 
+### Linting SQL files
+
+SQL files will be linted by [SQLFluff](https://www.sqlfluff.com/). This tools adds the ability to autofix some simple errors (e.g. spacing, capitalisation and commas) when run locally. To lint the 2020 resource-hints SQL files, for example, install the python environment as per above, and then issue the following command:
+
+```
+sqlfluff lint ../sql/2020/resource-hints
+```
+
+This will return errors like the following:
+
+```
+% sqlfluff lint ../sql/2020/resource-hints
+== [../sql/2020/resource-hints/adoption_service_workers.sql] FAIL
+L:  25 | P:  26 | L010 | Inconsistent capitalisation of keywords.
+L:  26 | P:  37 | L010 | Inconsistent capitalisation of keywords.
+L:  34 | P:  63 | L038 | Trailing comma in select statement forbidden
+All Finished 📜 🎉!
+```
+
+This states that:
+- On line 25, in position 26 you are using lowercase for keywords (e.g. `as` instead of `AS`) so failed rule L010.
+- Similarly on line 26, position 37.
+- And finally on line 34, position 63 you have an unnecessary comma (e.g. `SELECT a,b, FROM table`) and so failed rule L038. Remove the extra comma.
+
+The list of rules can be found in [the SQLFLuff documentation](https://docs.sqlfluff.com/en/stable/rules.html) though we have turned a few of them off and configured others for our style (see the [our .sqlfluff file if curious](https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/.sqlfluff)).
+
+If you see any "unparseable" or PRS errors, then this is either an error in your code, or perhaps you've discovered a bug. Reach out to [Barry (@tunetheweb)](https://github.com/tunetheweb) for help if stuck.
+
+To attempt to autofix the errors you can use the `fix` command, instead of `lint`:
+
+```
+sqlfluff fix ../sql/2020/resource-hints
+```
+
+Which will produce similar output but with an offer to fix the issues it thinks it can fix:
+
+```
+% sqlfluff fix ../sql/2020/resource-hints
+==== finding fixable violations ====
+== [../sql/2020/resource-hints/adoption_service_workers.sql] FAIL
+L:  25 | P:  26 | L010 | Inconsistent capitalisation of keywords.
+L:  26 | P:  37 | L010 | Inconsistent capitalisation of keywords.
+L:  34 | P:  63 | L038 | Trailing comma in select statement forbidden
+==== fixing violations ====
+3 fixable linting violations found
+Are you sure you wish to attempt to fix these? [Y/n]
+```
+
+If you lint again you should see most of the errors are fixed. Note that not all errors can be autofixed and some will require manual intervention but autofixing is useful for the simple errors. So while it's generally OK to run the `fix` command, do run the `lint` command when all clean to make sure the `fix` command didn't miss any issues.
+
 
 ## Generating Ebooks
 
