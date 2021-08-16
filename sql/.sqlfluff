@@ -12,7 +12,7 @@ exclude_rules = L003,L007,L011,L014,L016,L020,L026,L027,L028,L029,L030,L031,L032
 # L016 - We allow longer lines as some of our queries are complex. Maybe should limit in future?
 # L020 - Asks for unique table aliases meaning it complains if selecting from two 2021_07_01 tables as implicit alias is table name (not fully qualified) so same.
 # L026 - BigQuery uses arrays and functions which looks like incorrect references
-# L027 - Asks for qualified columns for ambiguous one. Really should enable this but a lot to clean up. TODO
+# L027 - Asks for qualified columns for ambiguous ones. Really should enable this but a lot to clean up. TODO
 # L028 - Insists on references in column names even if not ambiguous. Bit OTT.
 # L029 - Avoids keywords as identifiers but we use this a lot (e.g. AS count, AS max...etc.)
 # L030 - Function names will be mixed case so don't enforce case
