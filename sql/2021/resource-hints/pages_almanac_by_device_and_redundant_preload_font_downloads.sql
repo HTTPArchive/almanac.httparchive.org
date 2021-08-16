@@ -57,18 +57,18 @@ catch {
 
 SELECT
     client,
-    rd as redundantDownloads,
-    count(0) as freq,
+    rd AS redundantDownloads,
+    count(0) AS freq,
     AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 FROM (
-    SELECT 
+    SELECT
         _TABLE_SUFFIX AS client,
-        JSON_QUERY(payload, '$._almanac') AS almanac, 
-        getUnnecessaryFontDownloadsCount(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS rd 
+        JSON_QUERY(payload, '$._almanac') AS almanac,
+        getUnnecessaryFontDownloadsCount(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS rd
     FROM
         `httparchive.sample_data.pages*`
 )
-WHERE 
+WHERE
     rd > -1
 GROUP BY
     client,

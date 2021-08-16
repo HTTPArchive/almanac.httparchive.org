@@ -1,7 +1,7 @@
 #standardSQL
 
 # returns the number of valid and invalid preload resource types
-CREATE TEMPORARY FUNCTION getInvalidTypes(almanac_string STRING) RETURNS ARRAY<STRUCT<type STRING, num_occurrences NUMERIC>> 
+CREATE TEMPORARY FUNCTION getInvalidTypes(almanac_string STRING) RETURNS ARRAY<STRUCT<type STRING, num_occurrences NUMERIC>>
 LANGUAGE js AS '''
 try {
     // obtained from https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preload#what_types_of_content_can_be_preloaded
@@ -66,9 +66,9 @@ SELECT
     client,
     type,
     SUM(num_occurrences) AS total_occurrences
-FROM 
+FROM
   (
-    SELECT 
+    SELECT
         _TABLE_SUFFIX AS client,
         rd.type,
         rd.num_occurrences
