@@ -44,7 +44,8 @@ JOIN (
 )
 USING
   (yyyymmdd, client, rank_grouping)
-WHERE rank <= rank_grouping
+WHERE
+  rank <= rank_grouping
 GROUP BY
   yyyymmdd,
   client,
