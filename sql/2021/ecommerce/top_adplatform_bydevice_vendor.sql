@@ -12,8 +12,8 @@ SELECT
 FROM
   `httparchive.almanac.summary_requests`
 JOIN (
-  SELECT 
-    _TABLE_SUFFIX AS client, 
+  SELECT
+    _TABLE_SUFFIX AS client,
     url AS page
   FROM `httparchive.technologies.2021_08_01_*`
   WHERE category = 'Ecommerce')

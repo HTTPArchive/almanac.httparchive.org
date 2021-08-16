@@ -10,7 +10,7 @@ SELECT
   COUNTIF(ios_universal_links) / COUNT(0) AS pct_ios_universal_links
 FROM (
   SELECT DISTINCT
-    _TABLE_SUFFIX as client,
+    _TABLE_SUFFIX AS client,
     url
   FROM
     `httparchive.technologies.2021_08_01_*`
@@ -18,7 +18,7 @@ FROM (
     category = 'Ecommerce')
 JOIN (
   SELECT
-    _TABLE_SUFFIX as client,
+    _TABLE_SUFFIX AS client,
     url,
     JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._ecommerce'), '$.AndroidAppLinks') = '1' AS android_app_links,
     JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._ecommerce'), '$.iOSUniveralLinks') = '1' AS ios_universal_links
