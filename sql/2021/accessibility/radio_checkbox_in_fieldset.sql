@@ -45,8 +45,8 @@ SELECT
   COUNTIF(stats.checkboxes > 0) AS total_with_checkboxes,
   COUNTIF(stats.radios > 0) AS total_with_radios,
 
-  COUNTIF(stats.checkboxes_in_fieldset_with_legend = 0 AND stats.radios_in_fieldset_with_legend = 0) / COUNTIF(stats.checkboxes > 0 OR stats.radios > 0) perc_sites_with_none_in_legend,
-  COUNTIF(stats.checkboxes_in_fieldset_with_legend = stats.checkboxes AND stats.radios_in_fieldset_with_legend = stats.radios) / COUNTIF(stats.checkboxes > 0 OR stats.radios > 0) perc_sites_with_all_in_legend,
+  COUNTIF(stats.checkboxes_in_fieldset_with_legend = 0 AND stats.radios_in_fieldset_with_legend = 0) / COUNTIF(stats.checkboxes > 0 OR stats.radios > 0) AS perc_sites_with_none_in_legend,
+  COUNTIF(stats.checkboxes_in_fieldset_with_legend = stats.checkboxes AND stats.radios_in_fieldset_with_legend = stats.radios) / COUNTIF(stats.checkboxes > 0 OR stats.radios > 0) AS perc_sites_with_all_in_legend,
 
   SUM(stats.checkboxes_in_fieldset_with_legend) / SUM(stats.checkboxes) AS perc_checkboxes_in_legend,
   SUM(stats.radios_in_fieldset_with_legend) / SUM(stats.radios) AS perc_radios_in_legend
