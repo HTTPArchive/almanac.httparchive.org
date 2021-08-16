@@ -5,7 +5,7 @@ SELECT
       '$.structured_data')) AS `success`,
   COUNT(JSON_EXTRACT(`structured_data`,
       '$.log')) AS `errors`,
-  COUNT(*) AS `total`
+  COUNT(0) AS `total`
 FROM (
   SELECT
     JSON_VALUE(JSON_EXTRACT(payload,

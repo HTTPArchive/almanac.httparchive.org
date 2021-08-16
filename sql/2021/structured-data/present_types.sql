@@ -55,7 +55,7 @@ SELECT
     0
   END
     ) AS `opengraph`,
-  COUNT(*) AS `total`
+  COUNT(0) AS `total`
 FROM (
   SELECT
     JSON_VALUE(JSON_EXTRACT(payload,
