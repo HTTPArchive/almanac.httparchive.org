@@ -15,9 +15,9 @@ try {
 
     if (Array.isArray(element_count) || typeof element_count != 'object') return result;
 
-    result.elements_count = Object.values(element_count).reduce((total, freq) => total + (parseInt(freq, 10) || 0), 0);  
+    result.elements_count = Object.values(element_count).reduce((total, freq) => total + (parseInt(freq, 10) || 0), 0);
 
-    result.types_count = Object.keys(element_count).length;  
+    result.types_count = Object.keys(element_count).length;
 
 } catch (e) {}
 return result;
@@ -31,18 +31,18 @@ SELECT
   # total number of elements on a page
   APPROX_QUANTILES(element_count_info.elements_count, 1000)[OFFSET(percentile * 10)] AS elements_count,
 
-    # number of types of elements on a page
-  APPROX_QUANTILES(element_count_info.types_count, 1000)[OFFSET(percentile * 10)] AS types_count,
+  # number of types of elements on a page
+  APPROX_QUANTILES(element_count_info.types_count, 1000)[OFFSET(percentile * 10)] AS types_count
 
 FROM (
-  SELECT 
+  SELECT
     _TABLE_SUFFIX AS client,
     percentile,
     url,
     get_element_count_info(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS element_count_info
   FROM
-  `httparchive.pages.2020_08_01_*`,
-  UNNEST([10, 25, 50, 75, 90]) AS percentile
+    `httparchive.pages.2020_08_01_*`,
+    UNNEST([10, 25, 50, 75, 90])
 )
 GROUP BY
   percentile,

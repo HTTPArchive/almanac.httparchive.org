@@ -40,5 +40,4 @@ GROUP BY
   total
 ORDER BY
   pct DESC
-LIMIT
-  1000
+LIMIT 1000

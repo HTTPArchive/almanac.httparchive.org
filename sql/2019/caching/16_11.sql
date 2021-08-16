@@ -18,7 +18,7 @@ FROM (
     client,
     type,
     --- If the request url's host does not contain the domain of the request page, this is most likely a 3rd party resource
-    IF (STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party,
+    IF(STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party,
 
     REGEXP_CONTAINS(resp_cache_control, r'(?i)(no-cache|no-store)') AS not_cacheable,
     expAge > 0 AS uses_cache

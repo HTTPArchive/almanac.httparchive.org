@@ -37,5 +37,4 @@ GROUP BY
   snap_point
 ORDER BY
   freq / total DESC
-LIMIT
-  1000
+LIMIT 1000

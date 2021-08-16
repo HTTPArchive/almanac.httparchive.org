@@ -21,10 +21,10 @@ FROM
     client,
     page,
     body
-  FROM
-    `httparchive.almanac.manifests`
-  WHERE
-    date = '2020-08-01')
+    FROM
+      `httparchive.almanac.manifests`
+    WHERE
+      date = '2020-08-01')
 GROUP BY
   client,
   prefers_native

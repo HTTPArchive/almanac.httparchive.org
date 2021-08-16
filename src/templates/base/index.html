@@ -4,8 +4,6 @@
 {% block image_height %}600{% endblock %}
 {% block image_width %}1200{% endblock %}
 
-{% set year_with_chapters = featured_chapters_exists(lang, year) or featured_chapters_exists('en', year) %}
-
 {% block structured_data %}
 {{ super() }}
 <script type="application/ld+json">
@@ -54,8 +52,12 @@
       <div class="intro-year">{{ year }}</div>
       <h1 class="title title-lg title-alt">{{ self.intro_title() }}</h1>
       <h2>{{ self.intro_sub_title() }}</h2>
+      {% if year > DEFAULT_YEAR %}
+      <p class="coming-soon">{{ self.coming_soon() }}</p>
+      {% else %}
       {{ self.mission() }}
-      {% if year_with_chapters %}
+      {% endif %}
+      {% if year <= DEFAULT_YEAR %}
       <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="btn">
         {{ self.start_exploring() }}
       </a>
@@ -66,9 +68,9 @@
       {% endif %}
     </div>
     <div class="intro-image-wrapper">
-      {% if year < "2020" %}
+      {% if year != "2020" %}
       <svg viewBox="0 0 50 16">
-        <text x="7" y="15">{{ year }}</text>
+        <text x="8" y="15">{{ year }}</text>
       </svg>
       {% else %}
       <svg viewBox="0 0 56 16">
@@ -82,7 +84,7 @@
   {% macro featuredChapter(featured_chapter, featured_chapter_quote, featured_chapter_stats, quote_language) %}
   <section id="featured-chapter" class="featured-chapter">
     <div class="featured-chapter-content">
-      {% if year_with_chapters %}
+      {% if year <= DEFAULT_YEAR %}
       <h2 class="title title-center">{{ self.featured_chapter() }}</h2>
       {% else %}
       <h2 class="title title-center">{{ self.featured_chapter_last_year() }}</h2>
@@ -137,7 +139,7 @@
         {% endif %}
       </div>
       {% endif %}
-      {% if year_with_chapters %}
+      {% if year <= DEFAULT_YEAR %}
       <a href="{{ url_for('chapter', year=year, chapter=featured_chapter, lang=lang) }}" class="btn">
         {{ read_chapter(localizedChapterTitles[featured_chapter]) }}
       </a>
@@ -149,7 +151,7 @@
     </div>
   </section>
   {% endmacro %}
-  {% if year_with_chapters %}
+  {% if year <= DEFAULT_YEAR %}
     {% if featured_chapters_exists(lang, year) %}
     {% include "%s/%s/featured_chapters.html" % (lang, year) %}
     {% elif featured_chapters_exists('en', year) %}
@@ -163,6 +165,7 @@
     {% endif %}
   {% endif %}
   {% endblock %}
+  {% if year <= DEFAULT_YEAR %}
   <section id="contributors" class="contributors-container alt-bg">
     <div class="container">
       <div class="contributors">
@@ -204,7 +207,7 @@
       <p class="methodology-info">
         {{ self.methodology_description() }}
       </p>
-      {% if year_with_chapters %}
+      {% if year <= DEFAULT_YEAR %}
       <a href="{{ url_for('methodology', year=year, lang=lang) }}" class="alt btn">
         {{ self.methodology_link() }}
       </a>
@@ -212,5 +215,6 @@
       <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" width="984" height="354" loading="lazy" />
     </div>
   </section>
+  {% endif %}
 </main>
 {% endblock %}

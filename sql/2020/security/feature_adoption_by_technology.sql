@@ -11,7 +11,7 @@ SELECT
   SAFE_DIVIDE(COUNT(DISTINCT IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')), url, NULL)), COUNT(DISTINCT url)) AS pct,
   SAFE_DIVIDE(COUNT(DISTINCT IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')) AND STARTS_WITH(url, 'https'), url, NULL)), COUNT(DISTINCT IF(STARTS_WITH(url, 'https'), url, NULL))) AS pct_https
 FROM (
-  SELECT 
+  SELECT
     t._TABLE_SUFFIX AS client,
     category,
     app,
@@ -20,7 +20,7 @@ FROM (
     firstHtml
   FROM
     `httparchive.summary_requests.2020_08_01_*` AS r
-  INNER JOIN 
+  INNER JOIN
     `httparchive.technologies.2020_08_01_*` AS t
   ON r._TABLE_SUFFIX = t._TABLE_SUFFIX AND r.urlShort = t.url
   WHERE

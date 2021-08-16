@@ -6,7 +6,10 @@ RETURNS STRUCT<
   attribute ARRAY<STRUCT<name STRING, value INT64>>,
   pseudo_class ARRAY<STRUCT<name STRING, value INT64>>,
   pseudo_element ARRAY<STRUCT<name STRING, value INT64>>
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
   function compute(ast) {
     let ret = {
@@ -52,8 +55,7 @@ try {
 } catch (e) {
   return {class: [{name: e, value: 0}]};
 }
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 # https://www.stevenmoseley.com/blog/tech/high-performance-sql-correlated-scalar-aggregate-reduction-queries
 CREATE TEMPORARY FUNCTION encode(comparator STRING, data STRING) RETURNS STRING AS (
@@ -79,7 +81,7 @@ WITH selector_parts AS (
 
 SELECT
   client,
-  decode(MAX(encode(CAST(class_freq AS STRING), class_name))) AS class_name,
+  decode(MAX(encode(CAST(class_freq AS STRING), class_name))) AS class_name,
   MAX(class_freq) AS class_freq,
   decode(MAX(encode(CAST(id_freq AS STRING), id_name))) AS id_name,
   MAX(id_freq) AS id_freq,

@@ -4,7 +4,7 @@ SELECT
   * EXCEPT (row)
 FROM (
   SELECT
-    ROW_NUMBER() OVER () AS row,
+    ROW_NUMBER() OVER (PARTITION BY 0) AS row,
     ROUND(SAFE_DIVIDE(small_cls, small_cls + medium_cls + large_cls) * 100, 2) AS small_cls,
     ROUND(SAFE_DIVIDE(medium_cls, small_cls + medium_cls + large_cls) * 100, 2) AS medium_cls,
     ROUND(SAFE_DIVIDE(large_cls, small_cls + medium_cls + large_cls) * 100, 2) AS large_cls
