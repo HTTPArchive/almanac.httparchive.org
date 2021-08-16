@@ -1,18 +1,20 @@
 CREATE TEMP FUNCTION retrieveOriginTrials(tokenElem STRING)
-RETURNS STRUCT<
-  validityElem STRING, 
-  versionElem INTEGER, 
-  originElem STRING, 
-  subdomainElem BOOLEAN,
-  thirdpartyElem BOOLEAN,
-  usageElem STRING,
-  featureElem STRING,
-  expiryElem TIMESTAMP
->
+  RETURNS STRUCT<
+    validityElem STRING,
+    versionElem INTEGER,
+    originElem STRING,
+    subdomainElem BOOLEAN,
+    thirdpartyElem BOOLEAN,
+    usageElem STRING,
+    featureElem STRING,
+    expiryElem TIMESTAMP
+  >
 
-LANGUAGE js
--- https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/check-token.html
-AS """
+  LANGUAGE js
+  -- https://stackoverflow.com/questions/60094731/can-i-use-textencoder-in-bigquery-js-udf
+  OPTIONS (library="gs://fh-bigquery/js/inexorabletash.encoding.js");
+  -- https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/check-token.html
+  AS """
   let validityElem,
     versionElem,
     originElem,
@@ -35,25 +37,25 @@ AS """
   InvalidCharacterError.prototype = new Error;
   InvalidCharacterError.prototype.name = 'InvalidCharacterError';
 
-  // encoder                                                                                                                                                                                                                                                                                                               
-  // [https://gist.github.com/1020396] by [https://github.com/atk]                                                                                                                                                                                                                        
+  // encoder
+  // [https://gist.github.com/1020396] by [https://github.com/atk]
   const atob = function (input) {
-    var str = String(input).replace(/[=]+$/, ''); // #31: ExtendScript bad parse of /=                                                                                                                                                                                                    
+    var str = String(input).replace(/[=]+$/, ''); // #31: ExtendScript bad parse of /=
     if (str.length % 4 == 1) {
       throw new InvalidCharacterError("'atob' failed: The string to be decoded is not correctly encoded.");
     }
     for (
-      // initialize result and counters                                                                                                                                                                                                                                                   
+      // initialize result and counters
       var bc = 0, bs, buffer, idx = 0, output = '';
-      // get next character                                                                                                                                                                                                                                                               
+      // get next character
       buffer = str.charAt(idx++);
-      // character found in table? initialize bit storage and add its ascii value;                                                                                                                                                                                                        
+      // character found in table? initialize bit storage and add its ascii value;
       ~buffer && (bs = bc % 4 ? bs * 64 + buffer : buffer,
-        // and if not first of each 4 characters,                                                                                                                                                                                                                                         
-        // convert the first 8 bits to one ascii character                                                                                                                                                                                                                                
+        // and if not first of each 4 characters,
+        // convert the first 8 bits to one ascii character
         bc++ % 4) ? output += String.fromCharCode(255 & bs >> (-2 * bc & 6)) : 0
     ) {
-      // try to find character in table (0-63, not found => -1)                                                                                                                                                                                                                           
+      // try to find character in table (0-63, not found => -1)
       buffer = chars.indexOf(buffer);
     }
     return output;
@@ -147,9 +149,7 @@ AS """
   };
 
   return origin_trial_metadata;
-"""
--- https://stackoverflow.com/questions/60094731/can-i-use-textencoder-in-bigquery-js-udf
-OPTIONS (library="gs://fh-bigquery/js/inexorabletash.encoding.js");
+""";
 
 WITH pages_origin_trials AS (
   SELECT
@@ -171,13 +171,13 @@ FROM
 
 -- TODO: combine with header data
 
-SELECT 
+SELECT
   client,
   COUNT(DISTINCT site) nb_websites, -- crawled sites containing at leat one origin trial
   COUNT(DISTINCT origin_trials.originElem) nb_origins, -- origins with an origin trial
-FROM 
+FROM
   extracted_origin_trials
-WHERE 
+WHERE
   origin_trials.featureElem = 'InterestCohortAPI'
 GROUP BY
   1

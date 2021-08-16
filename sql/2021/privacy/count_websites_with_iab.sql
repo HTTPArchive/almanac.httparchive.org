@@ -9,7 +9,7 @@ WITH pages_privacy AS (
     `httparchive.pages.2021_08_01_*`
 )
 
-SELECT 
+SELECT
   *,
   100 * nb_websites_with_iab_tcf_v1 / nb_websites AS pct_websites_with_iab_tcf_v1,
   100 * nb_websites_with_iab_tcf_v2 / nb_websites AS pct_websites_with_iab_tcf_v2,
@@ -19,15 +19,15 @@ SELECT
   100 * nb_websites_with_iab_usp / nb_websites AS pct_websites_with_iab_usp,
   100 * nb_websites_with_iab_any / nb_websites AS pct_websites_with_iab_any
 FROM (
-  SELECT 
+  SELECT
     client,
     COUNT(0) AS nb_websites,
     COUNTIF(JSON_VALUE(metrics, "$.iab_tcf_v1.present") = "true") AS nb_websites_with_iab_tcf_v1,
     COUNTIF(JSON_VALUE(metrics, "$.iab_tcf_v2.present") = "true") AS nb_websites_with_iab_tcf_v2,
-    COUNTIF(JSON_VALUE(metrics, "$.iab_tcf_v1.present") = "true" OR 
+    COUNTIF(JSON_VALUE(metrics, "$.iab_tcf_v1.present") = "true" OR
             JSON_VALUE(metrics, "$.iab_tcf_v2.present") = "true") AS nb_websites_with_iab_tcf_any,
     COUNTIF(JSON_VALUE(metrics, "$.iab_usp.present") = "true") AS nb_websites_with_iab_usp,
-    COUNTIF(JSON_VALUE(metrics, "$.iab_tcf_v1.present") = "true" OR 
+    COUNTIF(JSON_VALUE(metrics, "$.iab_tcf_v1.present") = "true" OR
             JSON_VALUE(metrics, "$.iab_tcf_v2.present") = "true" OR
             JSON_VALUE(metrics, "$.iab_usp.present") = "true") AS nb_websites_with_iab_any,
     COUNTIF(JSON_VALUE(metrics, "$.iab_tcf_v1.present") = "true" AND
