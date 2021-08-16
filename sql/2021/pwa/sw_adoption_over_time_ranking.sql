@@ -44,19 +44,6 @@ JOIN (
 )
 USING
   (yyyymmdd, client, rank_grouping)
-JOIN (
-  SELECT
-    REPLACE(SUBSTR(_TABLE_SUFFIX, 0, 10), '_', '') AS yyyymmdd,
-    SUBSTR(_TABLE_SUFFIX, 12) AS client,
-    rank,
-    url
-  FROM
-    `httparchive.summary_pages.*`
-  WHERE
-    _TABLE_SUFFIX > '2021_05_01'
-)
-USING
-  (yyyymmdd, client, url, rank)
 WHERE rank <= rank_grouping
 GROUP BY
   yyyymmdd,
