@@ -23,16 +23,16 @@ FROM (
     (client, page)
   WHERE
     date = '2020-08-01' AND
-    NET.HOST(url) IN 
-      (SELECT domain 
-        FROM `httparchive.almanac.third_parties`
-        WHERE date = '2020-08-01'
-          AND category != 'hosting')
+    NET.HOST(url) IN
+    (SELECT domain
+            FROM `httparchive.almanac.third_parties`
+      WHERE date = '2020-08-01' AND
+        category != 'hosting')
   GROUP BY
     client,
     app,
     page),
-UNNEST([10, 25, 50, 75, 90]) AS percentile
+  UNNEST([10, 25, 50, 75, 90])
 GROUP BY
   client,
   app,

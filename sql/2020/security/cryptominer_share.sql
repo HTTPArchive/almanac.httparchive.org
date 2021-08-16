@@ -15,5 +15,5 @@ GROUP BY
   client,
   app
 ORDER BY
-   client,
-   pct DESC
+  client,
+  pct DESC

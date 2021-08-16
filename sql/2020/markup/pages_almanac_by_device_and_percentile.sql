@@ -13,7 +13,7 @@ RETURNS STRUCT<
 > LANGUAGE js AS '''
 var result = {};
 try {
-    var almanac = JSON.parse(almanac_string); 
+    var almanac = JSON.parse(almanac_string);
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return result;
 
@@ -43,17 +43,17 @@ SELECT
   APPROX_QUANTILES(almanac_info.inline_scripts_total, 1000)[OFFSET(percentile * 10)] AS inline_scripts_count_m207,
 
   # src scripts
-  APPROX_QUANTILES(almanac_info.src_scripts_total, 1000)[OFFSET(percentile * 10)] AS src_scripts_count_m209,
+  APPROX_QUANTILES(almanac_info.src_scripts_total, 1000)[OFFSET(percentile * 10)] AS src_scripts_count_m209
 
 FROM (
-  SELECT 
+  SELECT
     _TABLE_SUFFIX AS client,
     percentile,
     url,
     get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
   FROM
-  `httparchive.pages.2020_08_01_*`,
-  UNNEST([10, 25, 50, 75, 90]) AS percentile
+    `httparchive.pages.2020_08_01_*`,
+    UNNEST([10, 25, 50, 75, 90])
 )
 GROUP BY
   percentile,
