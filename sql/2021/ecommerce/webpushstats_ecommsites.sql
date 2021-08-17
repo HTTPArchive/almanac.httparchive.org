@@ -40,11 +40,11 @@ JOIN (
       _TABLE_SUFFIX AS client,
       RTRIM(url, "/") AS origin
     FROM
-      `httparchive.technologies.2021_08_01_*`
+      `httparchive.technologies.2021_07_01_*`
     WHERE category = 'Ecommerce')
 USING
   (origin)
-WHERE date IN ('2021-08-01') AND
+WHERE date IN ('2021-07-01') AND
   notification_permission_accept IS NOT NULL
 GROUP BY
   date,

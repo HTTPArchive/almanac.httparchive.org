@@ -6,12 +6,12 @@ SELECT
   APPROX_QUANTILES(reqImg, 1000)[OFFSET(percentile * 10)] AS image_count,
   ROUND(APPROX_QUANTILES(bytesImg, 1000)[OFFSET(percentile * 10)] / 1024, 2) AS image_kbytes
 FROM
-  `httparchive.summary_pages.2021_08_01_*`
+  `httparchive.summary_pages.2021_07_01_*`
 JOIN (
   SELECT DISTINCT
     _TABLE_SUFFIX,
     url
-  FROM `httparchive.technologies.2021_08_01_*`
+  FROM `httparchive.technologies.2021_07_01_*`
   WHERE category = 'Ecommerce')
 USING (_TABLE_SUFFIX, url),
 UNNEST([10, 25, 50, 75, 90]) AS percentile

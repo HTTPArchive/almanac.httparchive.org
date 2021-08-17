@@ -14,11 +14,11 @@
       _TABLE_SUFFIX AS client,
       RTRIM(url, "/") AS origin
     FROM
-      `httparchive.technologies.2021_08_01_*`
+      `httparchive.technologies.2021_07_01_*`
     WHERE category = 'Ecommerce')
   USING
     (origin)
-  WHERE date IN ('2021-08-01')
+  WHERE date IN ('2021-07-01')
   GROUP BY
     client
   ORDER BY

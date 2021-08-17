@@ -14,12 +14,12 @@ FROM (
     `httparchive.almanac.requests`
   JOIN (
     SELECT DISTINCT _TABLE_SUFFIX AS client, url AS page
-    FROM `httparchive.technologies.2021_08_01_*`
+    FROM `httparchive.technologies.2021_07_01_*`
     WHERE category = 'Ecommerce')
   USING
     (client, page)
   WHERE
-    date = '2021-08-01' AND
+    date = '2021-07-01' AND
     NET.HOST(url) IN
       (SELECT domain
         FROM `httparchive.almanac.third_parties`

@@ -13,7 +13,7 @@ FROM (
     _TABLE_SUFFIX AS client,
     url
   FROM
-    `httparchive.technologies.2021_08_01_*`
+    `httparchive.technologies.2021_07_01_*`
   WHERE
     category = 'Ecommerce')
 JOIN (
@@ -23,7 +23,7 @@ JOIN (
     JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._ecommerce'), '$.AndroidAppLinks') = '1' AS android_app_links,
     JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload, '$._ecommerce'), '$.iOSUniveralLinks') = '1' AS ios_universal_links
   FROM
-    `httparchive.pages.2021_08_01_*`)
+    `httparchive.pages.2021_07_01_*`)
 USING
   (client, url)
 GROUP BY

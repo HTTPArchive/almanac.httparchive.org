@@ -13,7 +13,7 @@ FROM
   `httparchive.almanac.summary_requests`
 JOIN (
   SELECT _TABLE_SUFFIX AS client, url AS page
-  FROM `httparchive.technologies.2021_08_01_*`
+  FROM `httparchive.technologies.2021_07_01_*`
   WHERE category = 'Ecommerce')
 USING
   (client, page)
@@ -23,12 +23,12 @@ ON
   NET.HOST(url) = domain
 JOIN (
   SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total
-  FROM `httparchive.summary_pages.2021_08_01_*`
+  FROM `httparchive.summary_pages.2021_07_01_*`
   GROUP BY _TABLE_SUFFIX)
 USING
   (client)
 WHERE
-    `httparchive.almanac.summary_requests`.date = '2021-08-01' AND
+    `httparchive.almanac.summary_requests`.date = '2021-07-01' AND
     lower(category) = 'cdn'
 GROUP BY
   client,

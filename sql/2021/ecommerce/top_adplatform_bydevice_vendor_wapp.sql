@@ -8,7 +8,7 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY vendor) AS total,
   ROUND(COUNTIF(category = 'Advertising') * 100 / SUM(COUNT(0)) OVER (PARTITION BY vendor), 2) AS pct
   FROM
-    `httparchive.technologies.2021_08_01_*`
+    `httparchive.technologies.2021_07_01_*`
 JOIN
 (
   SELECT
@@ -16,7 +16,7 @@ JOIN
     url,
     app AS vendor
   FROM
-    `httparchive.technologies.2021_08_01_*`
+    `httparchive.technologies.2021_07_01_*`
   WHERE
     category = 'Ecommerce'
  )

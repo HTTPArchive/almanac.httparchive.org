@@ -20,9 +20,9 @@ SELECT
   APPROX_QUANTILES(image.width, 1000)[OFFSET(percentile * 10)] AS image_width,
   APPROX_QUANTILES(image.height, 1000)[OFFSET(percentile * 10)] AS image_height
 FROM
-  `httparchive.pages.2021_08_01_*`
+  `httparchive.pages.2021_07_01_*`
 JOIN
-  `httparchive.technologies.2021_08_01_*`
+  `httparchive.technologies.2021_07_01_*`
 USING (_TABLE_SUFFIX, url),
 UNNEST(getImageDimensions(payload)) AS image,
 UNNEST([10, 25, 50, 75, 90]) AS percentile
