@@ -34,8 +34,7 @@ SELECT
   total,
   COUNT(DISTINCT url) / total AS pct
 FROM
-  `httparchive.sample_data.pages_*`,
-  --`httparchive.pages.2021_07_01_*`,
+  `httparchive.pages.2021_07_01_*`,
   UNNEST(getSWMethods(parseField(JSON_EXTRACT(payload, '$._pwa.swMethodsInfo')))) AS sw_method
 JOIN
   (
@@ -43,8 +42,7 @@ JOIN
       _TABLE_SUFFIX,
       COUNT(0) AS total
     FROM
-      `httparchive.sample_data.pages_*`
-    -- `httparchive.pages.2021_07_01_*`
+      `httparchive.pages.2021_07_01_*`
     WHERE
       JSON_EXTRACT(payload, '$._pwa') != "[]" AND
       JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"

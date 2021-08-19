@@ -35,7 +35,7 @@ SELECT
 FROM
   `httparchive.sample_data.pages_*`,
   --`httparchive.pages.2021_07_01_*`,
-  UNNEST(getInstallEvents(parseField(JSON_EXTRACT(payload, '$._pwa.windowEventListenersInfo')), parseField(JSON_EXTRACT(payload, '$._pwa.windowPropertiesInfo'))))
+  UNNEST(getInstallEvents(parseField(JSON_EXTRACT(payload, '$._pwa.windowEventListenersInfo')), parseField(JSON_EXTRACT(payload, '$._pwa.windowPropertiesInfo')))) AS install_event
 JOIN
   (
     SELECT
