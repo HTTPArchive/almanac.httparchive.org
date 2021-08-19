@@ -1,16 +1,17 @@
 #standardSQL
 # SW install events
-# TODO add filter to eliminate false positives (e.g Youtube)
+
 CREATE TEMPORARY FUNCTION getInstallEvents(windowEventListeners ARRAY<STRING>, windowPropertiesInfo ARRAY<STRING>)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
-  var installEvents = windowEventListeners.concat(windowPropertiesInfo);
-  return Array.from(new Set(installEvents));
+  return [...new Set([...windowEventListeners ,...windowPropertiesInfo])];
 } catch (e) {
   return [e];
 }
 ''';
-CREATE TEMPORARY FUNCTION parseField(field STRING)
+
+/* YouTube iFrames account for a lot of these, so let's exclude them */
+CREATE TEMPORARY FUNCTION parseFieldNoYouTube(field STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
     if(field == '[]' || field == '') {
@@ -35,11 +36,18 @@ try {
     if (typeof objectValues != 'string') {
         objectValues = objectValues.toString();
     }
+
+    // Double check we are not back to an empty string
+    if(field == '[]' || field == '') {
+        return [];
+    }
+
     return objectValues.trim().split(',');
 } catch (e) {
   return [e];
 }
 ''';
+
 SELECT
   _TABLE_SUFFIX AS client,
   install_event,
@@ -47,17 +55,15 @@ SELECT
   total,
   COUNT(DISTINCT url) / total AS pct
 FROM
-    `httparchive.sample_data.pages_*`,
-    --`httparchive.pages.2021_07_01_*`,
-    UNNEST(getInstallEvents(parseField(JSON_EXTRACT(payload, '$._pwa.windowEventListenersInfo')), parseField(JSON_EXTRACT(payload, '$._pwa.windowPropertiesInfo')))) AS install_event
+  `httparchive.pages.2021_07_01_*`,
+  UNNEST(getInstallEvents(parseFieldNoYouTube(JSON_EXTRACT(payload, '$._pwa.windowEventListenersInfo')), parseFieldNoYouTube(JSON_EXTRACT(payload, '$._pwa.windowPropertiesInfo')))) AS install_event
 JOIN
   (
     SELECT
       _TABLE_SUFFIX,
       COUNT(0) AS total
     FROM
-    `httparchive.sample_data.pages_*`
-      -- `httparchive.pages.2021_07_01_*`
+      `httparchive.pages.2021_07_01_*`
     WHERE
       JSON_EXTRACT(payload, '$._pwa') != "[]"
     GROUP BY
