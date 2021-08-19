@@ -33,17 +33,17 @@ SELECT
   total,
   COUNT(DISTINCT url) / total AS pct
 FROM
-    `httparchive.sample_data.pages_*`,
-    --`httparchive.pages.2021_07_01_*`,
-    UNNEST(getInstallEvents(parseField(JSON_EXTRACT(payload, '$._pwa.windowEventListenersInfo')), parseField(JSON_EXTRACT(payload, '$._pwa.windowPropertiesInfo')))) AS install_event
+  `httparchive.sample_data.pages_*`,
+  --`httparchive.pages.2021_07_01_*`,
+  UNNEST(getInstallEvents(parseField(JSON_EXTRACT(payload, '$._pwa.windowEventListenersInfo')), parseField(JSON_EXTRACT(payload, '$._pwa.windowPropertiesInfo'))))
 JOIN
   (
     SELECT
       _TABLE_SUFFIX,
       COUNT(0) AS total
     FROM
-    `httparchive.sample_data.pages_*`
-      -- `httparchive.pages.2021_07_01_*`
+      `httparchive.sample_data.pages_*`
+    -- `httparchive.pages.2021_07_01_*`
     WHERE
       JSON_EXTRACT(payload, '$._pwa') != "[]"
     GROUP BY

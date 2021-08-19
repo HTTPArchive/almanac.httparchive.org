@@ -29,10 +29,10 @@ JOIN
       _TABLE_SUFFIX,
       COUNT(0) AS total
     FROM
-    `httparchive.sample_data.pages_*`
-      -- `httparchive.pages.2021_07_01_*`
+      `httparchive.sample_data.pages_*`
+    -- `httparchive.pages.2021_07_01_*`
     WHERE
-      JSON_EXTRACT(payload, '$._pwa') != "[]" AND 
+      JSON_EXTRACT(payload, '$._pwa') != "[]" AND
       JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
     GROUP BY
       _TABLE_SUFFIX

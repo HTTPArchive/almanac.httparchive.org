@@ -33,7 +33,7 @@ JOIN (
     COUNT(0) AS total
   FROM
     `httparchive.summary_pages.*`,
-     UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
     _TABLE_SUFFIX > '2021_05_01' AND
     rank <= rank_grouping
