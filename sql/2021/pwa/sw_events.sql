@@ -1,37 +1,31 @@
 #standardSQL
 # SW events
 
-CREATE TEMPORARY FUNCTION getSWEvents(swEventListenersInfo STRING, swPropertiesInfo STRING)
+CREATE TEMPORARY FUNCTION getSWEvents(swEventListenersInfo ARRAY<STRING>, swPropertiesInfo ARRAY<STRING>)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
-  var swEventsListeners = new Array(0);
-  var swEventsOn = new Array(0);
-
-  // get the addEventListener(XXXX, ...) events
-  if (swEventListenersInfo != '[]') {
-    swEventsListeners = Object.values(JSON.parse(swEventListenersInfo));
-    if (typeof swEventsListeners != 'string') {
-      swEventsListeners = swEventsListeners.toString();
-    }
-    swEventsListeners = swEventsListeners.trim().split(',');
-    swEventsListeners = Array.from(new Set(swEventsListeners));
-  }
-
-  // get the onXXXX events
-  if (swPropertiesInfo != '[]') {
-    var swEventsOn = Object.values(JSON.parse(swPropertiesInfo));
-    if (typeof swEventsOn != 'string') {
-      swEventsOn = swEventsOn.toString();
-    }
-    swEventsOn = swEventsOn.trim().split(',');
-    swEventsOn = Array.from(new Set(swEventsOn));
-  }
-
-  return [...new Set([...swEventsListeners ,...swEventsOn])];
+  return [...new Set([...swEventListenersInfo ,...swPropertiesInfo])];
 } catch (e) {
   return [e];
 }
 ''';
+
+CREATE TEMPORARY FUNCTION parseField(field STRING)
+RETURNS ARRAY<STRING> LANGUAGE js AS '''
+ try {
+     if(field == '[]' || field == '') {
+         return [];
+     }
+     var parsedField = Object.values(JSON.parse(field));
+     if (typeof parsedField != 'string') {
+         parsedField = parsedField.toString();
+     }
+     parsedField = parsedField.trim().split(',');
+     return parsedField;
+ } catch (e) {
+   return [e];
+ }
+ ''';
 
 SELECT
   _TABLE_SUFFIX AS client,
@@ -41,7 +35,7 @@ SELECT
   COUNT(DISTINCT url) / total AS pct
 FROM
   `httparchive.pages.2021_07_01_*`,
-  UNNEST(getSWEvents(JSON_EXTRACT(payload, '$._pwa.swEventListenersInfo'), JSON_EXTRACT(payload, '$._pwa.swPropertiesInfo'))) AS event
+  UNNEST(getSWEvents(parseField(JSON_EXTRACT(payload, '$._pwa.swEventListenersInfo')), parseField(JSON_EXTRACT(payload, '$._pwa.swPropertiesInfo')))) AS event
 JOIN
   (
     SELECT

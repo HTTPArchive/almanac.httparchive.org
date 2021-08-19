@@ -4,8 +4,7 @@
 CREATE TEMPORARY FUNCTION getInstallEvents(windowEventListeners ARRAY<STRING>, windowPropertiesInfo ARRAY<STRING>)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
-  var installEvents = windowEventListeners.concat(windowPropertiesInfo);
-  return Array.from(new Set(installEvents));
+  return [...new Set([...windowEventListeners ,...windowPropertiesInfo])];
 } catch (e) {
   return [e];
 }
