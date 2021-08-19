@@ -7,7 +7,7 @@ try {
   var swEventsListeners = new Array(0);
   var swEventsOn = new Array(0);
 
-  /* get the addEventListener(XXXX, ...) events */
+  // get the addEventListener(XXXX, ...) events
   if (swEventListenersInfo != '[]') {
     swEventsListeners = Object.values(JSON.parse(swEventListenersInfo));
     if (typeof swEventsListeners != 'string') {
@@ -17,7 +17,7 @@ try {
     swEventsListeners = Array.from(new Set(swEventsListeners));
   }
 
-  /* get the onXXXX events */
+  // get the onXXXX events
   if (swPropertiesInfo != '[]') {
     var swEventsOn = Object.values(JSON.parse(swPropertiesInfo));
     if (typeof swEventsOn != 'string') {
@@ -27,10 +27,7 @@ try {
     swEventsOn = Array.from(new Set(swEventsOn));
   }
 
-  /* Combine the two */
-  var swEvents = swEventsListeners.concat(swEventsOn);
-  /* Filter out any duplicates - note BigQuery doesn't have Array.unique() :-( */
-  swEvents = swEvents.filter((item, pos) => swEvents.indexOf(item) === pos)
+  return [...new Set([...swEventsListeners ,...swEventsOn])];
 } catch (e) {
   return [e];
 }
