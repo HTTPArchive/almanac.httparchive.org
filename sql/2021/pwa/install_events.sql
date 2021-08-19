@@ -65,6 +65,7 @@ JOIN
     FROM
       `httparchive.pages.2021_07_01_*`
     WHERE
+      -- This condition filters out tests that might have broken when running the 'pwa' metric
       JSON_EXTRACT(payload, '$._pwa') != "[]"
     GROUP BY
       _TABLE_SUFFIX
