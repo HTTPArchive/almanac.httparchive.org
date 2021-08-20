@@ -82,7 +82,7 @@ INNER JOIN (
     headername)
 USING
   (client, headername),
-  UNNEST(GENERATE_ARRAY(1, 10))
+  UNNEST(GENERATE_ARRAY(1, 10)) AS topN
 GROUP BY
   client,
   topN,
