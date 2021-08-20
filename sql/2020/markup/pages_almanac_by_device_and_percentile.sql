@@ -53,7 +53,7 @@ FROM (
     get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
   FROM
     `httparchive.pages.2020_08_01_*`,
-    UNNEST([10, 25, 50, 75, 90])
+    UNNEST([10, 25, 50, 75, 90]) AS percentile
 )
 GROUP BY
   percentile,
