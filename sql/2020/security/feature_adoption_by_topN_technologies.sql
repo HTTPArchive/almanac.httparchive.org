@@ -5,8 +5,7 @@ CREATE TEMP FUNCTION array_slice(arr ARRAY<STRING>, start INT64, finish INT64)
 RETURNS ARRAY<STRING> AS (
   ARRAY(
     SELECT part
-    FROM UNNEST(arr) part
-    WITH OFFSET AS index
+    FROM UNNEST(arr) part WITH OFFSET AS index
     WHERE index BETWEEN start AND finish
     ORDER BY index
   )
@@ -83,7 +82,7 @@ INNER JOIN (
     headername)
 USING
   (client, headername),
-  UNNEST(GENERATE_ARRAY(1, 10))
+  UNNEST(GENERATE_ARRAY(1, 10)) AS topN
 GROUP BY
   client,
   topN,
