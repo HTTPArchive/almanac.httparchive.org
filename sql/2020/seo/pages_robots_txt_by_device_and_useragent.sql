@@ -53,7 +53,7 @@ FROM
       )
     USING (_TABLE_SUFFIX)
   ),
-  UNNEST(robots_txt_info.user_agents)
+  UNNEST(robots_txt_info.user_agents) AS user_agent
 GROUP BY total, user_agent, client
 HAVING count >= 100
 ORDER BY count DESC

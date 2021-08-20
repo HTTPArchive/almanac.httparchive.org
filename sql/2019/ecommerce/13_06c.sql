@@ -22,7 +22,7 @@ JOIN
   `httparchive.technologies.2019_07_01_*`
 USING (_TABLE_SUFFIX, url),
   UNNEST(getImageDimensions(payload)) AS image,
-  UNNEST([10, 25, 50, 75, 90])
+  UNNEST([10, 25, 50, 75, 90]) AS percentile
 WHERE
   category = 'Ecommerce'
 GROUP BY

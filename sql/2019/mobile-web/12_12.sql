@@ -23,6 +23,6 @@ SELECT
 FROM
   `httparchive.pages.2019_07_01_mobile`,
   (SELECT COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_mobile`),
-  UNNEST(getInputTypes(payload))
+  UNNEST(getInputTypes(payload)) AS input_type
 GROUP BY input_type, total
 ORDER BY occurence DESC

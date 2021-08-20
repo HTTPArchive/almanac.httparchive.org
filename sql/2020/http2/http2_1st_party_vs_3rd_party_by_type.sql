@@ -31,7 +31,7 @@ FROM (
     page,
     is_third_party,
     type),
-  UNNEST([5, 10, 20, 30, 40, 50, 60, 70, 90, 95, 100])
+  UNNEST([5, 10, 20, 30, 40, 50, 60, 70, 90, 95, 100]) AS percentile
 GROUP BY
   percentile,
   client,
