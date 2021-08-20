@@ -50,7 +50,7 @@ FROM
       )
     USING (_TABLE_SUFFIX)
   ),
-  UNNEST(almanac_info)
+  UNNEST(almanac_info) AS meta_tag_name
 GROUP BY
   total,
   meta_tag_name,
