@@ -34,7 +34,7 @@ FROM (
     category,
     page),
 
-  UNNEST([10, 25, 50, 75, 90])
+  UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,
   client,

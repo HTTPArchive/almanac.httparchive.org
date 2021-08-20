@@ -39,7 +39,7 @@ FROM (
     url
   FROM
     `httparchive.pages.2020_08_01_*`,
-    UNNEST([10, 25, 50, 75, 90]),
+    UNNEST([10, 25, 50, 75, 90]) AS percentile,
     UNNEST(get_heading_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'))) AS heading_info
 )
 GROUP BY
