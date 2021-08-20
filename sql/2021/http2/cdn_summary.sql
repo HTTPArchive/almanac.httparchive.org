@@ -30,7 +30,7 @@ FROM (
     page,
     firstHTML,
     CDN),
-  UNNEST(GENERATE_ARRAY(1, 100))
+  UNNEST(GENERATE_ARRAY(1, 100)) AS percentile
 GROUP BY
   percentile,
   client,
