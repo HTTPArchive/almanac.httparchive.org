@@ -1,5 +1,5 @@
 #standardSQL
-# Where input elements get their A11Y names from
+# Where button elements get their A11Y names from
 CREATE TEMPORARY FUNCTION a11yButtonNameSources(payload STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
   try {
@@ -51,9 +51,11 @@ FROM (
   FROM
     `httparchive.pages.2021_07_01_*`,
     UNNEST(
-      a11yButtonNameSources(JSON_EXTRACT_SCALAR(payload, '$._almanac'))
+      a11yButtonNameSources(JSON_EXTRACT_SCALAR(payload, '$._a11y'))
     ) AS button_name_source
 )
 GROUP BY
   client,
   button_name_source
+ORDER BY
+  perc_of_all_buttons DESC

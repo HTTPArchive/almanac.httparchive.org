@@ -8,7 +8,7 @@ SELECT
 
   SUM(total_with_track) / SUM(total_audios) AS pct_audios_with_tracks,
   COUNTIF(total_audios > 0) / COUNT(0) AS pct_sites_with_audios,
-  COUNTIF(total_with_tracks > 0) / COUNT(0) AS pct_sites_with_audios_with_tracks
+  COUNTIF(total_with_track > 0) / COUNT(0) AS pct_sites_with_audios_with_tracks
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

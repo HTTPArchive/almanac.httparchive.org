@@ -4,7 +4,8 @@
 # Note: Lengths of 2000+ characters are grouped together
 SELECT
   client,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_alt_tags,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_images,
+  SUM(COUNTIF(alt_length_clipped >= 0)) OVER (PARTITION BY client) AS total_alt_tags,
 
   alt_length_clipped AS alt_length,
   COUNT(0) AS occurrences,

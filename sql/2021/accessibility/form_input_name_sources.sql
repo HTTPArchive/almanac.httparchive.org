@@ -52,7 +52,7 @@ FROM (
   FROM
     `httparchive.pages.2021_07_01_*`,
     UNNEST(
-      a11yInputNameSources(JSON_EXTRACT_SCALAR(payload, '$._almanac'))
+      a11yInputNameSources(JSON_EXTRACT_SCALAR(payload, '$._a11y'))
     ) AS input_name_source
 )
 GROUP BY

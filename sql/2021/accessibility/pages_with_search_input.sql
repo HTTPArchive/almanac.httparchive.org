@@ -11,7 +11,7 @@ RETURNS BOOLEAN LANGUAGE js AS '''
 
       // Detect regular inputs of type text and the first word being "search"
       if (node.type.toLowerCase() === "text" &&
-          /^\s*search(\s|$)/i.test(node.placeholder || '')) {
+          /^\\s*search(\\s|$)/i.test(node.placeholder || '')) {
         return true;
       }
 
@@ -28,12 +28,11 @@ SELECT
   COUNT(0) AS total_sites,
   COUNTIF(has_inputs) AS total_with_inputs,
   COUNTIF(has_search_input) AS total_with_search_input,
+
   # Perc of all sites which have a search input
   COUNTIF(has_search_input) / COUNT(0) AS perc_sites_with_search_input,
   # Of sites that have at least 1 input element, how many have a search input
-  COUNTIF(has_search_input) / COUNT(0) AS perc_input_sites_with_search_input,
-  COUNT(input_type) / SUM(COUNT(0)) OVER (PARTITION BY 0) AS perc_of_all_inputs,
-  COUNT(DISTINCT url) / total_pages_with_inputs AS perc_used_in_pages
+  COUNTIF(has_search_input) / COUNTIF(has_inputs) AS perc_input_sites_with_search_input
 FROM
   (
     SELECT
