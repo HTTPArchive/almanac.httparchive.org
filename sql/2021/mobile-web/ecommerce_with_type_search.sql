@@ -22,10 +22,12 @@ RETURNS STRUCT<has_inputs BOOLEAN, has_search_inputs BOOLEAN> LANGUAGE js AS '''
 
 SELECT
   client,
+  COUNT(0) AS total_sites,
   COUNTIF(search_input_stats.has_inputs) AS sites_with_inputs,
-
   COUNTIF(search_input_stats.has_search_inputs) AS sites_with_search_inputs,
-  COUNTIF(search_input_stats.has_search_inputs) / COUNTIF(search_input_stats.has_inputs) AS perc_sites_with_search_inputs
+
+  COUNTIF(search_input_stats.has_search_inputs) / COUNT(0) AS perc_sites_with_search_inputs,
+  COUNTIF(search_input_stats.has_search_inputs) / COUNTIF(search_input_stats.has_inputs) AS perc_input_sites_with_search_inputs
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
