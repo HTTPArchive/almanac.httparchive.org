@@ -14,7 +14,7 @@ FROM (
   FROM
     `httparchive.blink_features.features`
   WHERE
-    yyyymmdd = '20210701' AND
+    yyyymmdd = CAST('2021-07-01' AS DATE) AND
     feature = 'PaymentRequestInitialized'
 )
 RIGHT JOIN (

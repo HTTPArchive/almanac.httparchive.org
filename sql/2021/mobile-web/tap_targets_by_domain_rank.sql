@@ -1,7 +1,7 @@
 #standardSQL
 # % mobile sites with correctly sized tap targets by domain rank (note: the score is not binary)
 SELECT
-  rank,
+  rank_grouping,
 
   COUNTIF(tap_targets_score IS NOT NULL) AS total_applicable,
   COUNTIF(CAST(tap_targets_score AS NUMERIC) = 1) AS total_sufficient,
@@ -13,12 +13,15 @@ FROM (
   FROM
     `httparchive.lighthouse.2021_07_01_mobile`
 )
-JOIN (
+LEFT JOIN (
   SELECT
     url,
-    rank
+    rank_grouping
   FROM
-    `httparchive.summary_pages.2021_07_01_mobile`
+    `httparchive.summary_pages.2021_07_01_mobile`,
+    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+  WHERE
+    rank <= rank_grouping
 ) USING (url)
 GROUP BY
-  rank
+  rank_grouping

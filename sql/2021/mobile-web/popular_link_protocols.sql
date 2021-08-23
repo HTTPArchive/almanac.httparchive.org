@@ -1,5 +1,5 @@
 #standardSQL
-# % of sites using each input element attribute
+# % of sites using each link protocol
 CREATE TEMPORARY FUNCTION getUsedProtocols(payload STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
@@ -17,7 +17,7 @@ SELECT
   COUNT(0) / total_sites AS pct_sites_using
 FROM
   `httparchive.pages.2021_07_01_*`,
-  UNNEST(getUsedAttributes(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS role
+  UNNEST(getUsedProtocols(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS protocol
 LEFT JOIN (
   SELECT
     _TABLE_SUFFIX,
@@ -29,7 +29,7 @@ LEFT JOIN (
 USING (_TABLE_SUFFIX)
 GROUP BY
   client,
-  role,
+  protocol,
   total_sites
 HAVING
   total_sites_using >= 100

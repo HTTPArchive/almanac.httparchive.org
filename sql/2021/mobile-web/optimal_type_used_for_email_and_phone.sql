@@ -39,7 +39,7 @@ RETURNS ARRAY<STRUCT<detected_type STRING, using_best_type BOOLEAN>> LANGUAGE js
 
     const email_input_signals = ['email', 'e-mail'];
     const tel_input_signals = ['phone', 'mobile', 'tel'];
-    return almanac.input_elements
+    return almanac.input_elements.nodes
       .map(function(node) {
         if (node.type !== 'text' && node.type !== 'email' && node.type !== 'tel') {
           return false;
@@ -78,7 +78,7 @@ SELECT
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY input_info.detected_type) AS perc_inputs,
   COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY input_info.detected_type) AS perc_sites
 FROM
-  `httparchive.pages.2019_07_01_mobile`,
+  `httparchive.pages.2021_07_01_mobile`,
   UNNEST(getInputInfo(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS input_info
 GROUP BY
   input_info.detected_type,
