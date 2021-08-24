@@ -7,7 +7,7 @@ WITH pages_privacy AS (
     _TABLE_SUFFIX AS client,
     JSON_VALUE(payload, "$._privacy") AS metrics
   FROM
-    `httparchive.pages.2021_08_01_*`
+    `httparchive.pages.2021_07_01_*`
 ),
 
 pages_iab_usp AS (

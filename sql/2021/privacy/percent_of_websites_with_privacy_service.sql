@@ -10,7 +10,7 @@ WITH base AS (
     LOGICAL_OR(category = "Browser fingerprinting") AS with_browser_fingerprinting,
     LOGICAL_OR(category = "Retargeting") AS with_retargeting,
     LOGICAL_OR(category = "Geolocation") AS with_geolocation
-  FROM `httparchive.technologies.2021_08_01_*`
+  FROM `httparchive.technologies.2021_07_01_*`
   GROUP BY
     client,
     url

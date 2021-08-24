@@ -17,7 +17,7 @@ WITH pages_events AS (
     url,
     JSON_VALUE(payload, "$._events") AS metrics
   FROM
-    `httparchive.pages.2021_08_01_*`
+    `httparchive.pages.2021_07_01_*`
 ),
 
 sites_and_events AS (

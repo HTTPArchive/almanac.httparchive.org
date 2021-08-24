@@ -8,7 +8,7 @@ WITH apps AS (
     _TABLE_SUFFIX AS client,
     url,
     IF(category = "Retargeting", app, "") AS retargeting_app
-  FROM `httparchive.technologies.2021_08_01_*`
+  FROM `httparchive.technologies.2021_07_01_*`
   GROUP BY
     client,
     url,

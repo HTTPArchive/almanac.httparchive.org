@@ -6,7 +6,7 @@ WITH pages_well_known AS (
     _TABLE_SUFFIX AS client,
     JSON_VALUE(payload, "$._well-known") AS metrics
   FROM
-    `httparchive.pages.2021_08_01_*`
+    `httparchive.pages.2021_07_01_*`
 )
 
 SELECT
