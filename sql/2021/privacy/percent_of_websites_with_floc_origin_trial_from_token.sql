@@ -1,3 +1,6 @@
+#standardSQL
+# Pages that participate in the FLoC origin trial
+
 CREATE TEMP FUNCTION retrieveOriginTrials(tokenElem STRING)
 RETURNS STRUCT<
   validityElem STRING,

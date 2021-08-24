@@ -1,3 +1,6 @@
+#standardSQL
+# Pages that request the FLoC cohort (based on Blink features)
+
 SELECT
   client,
   feature,

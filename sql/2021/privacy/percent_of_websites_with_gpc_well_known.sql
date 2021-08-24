@@ -1,3 +1,6 @@
+#standardSQL
+# Pages that provide `/.well-known/gpc.json` for Global Privacy Control
+
 WITH pages_well_known AS (
   SELECT
     _TABLE_SUFFIX AS client,

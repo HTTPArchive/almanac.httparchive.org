@@ -1,3 +1,6 @@
+#standardSQL
+# Pages that use media devices (using Blink features)
+
 SELECT
   client,
   feature,

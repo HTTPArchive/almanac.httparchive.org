@@ -1,3 +1,6 @@
+#standardSQL
+# Pages that use device sensors (based on event listeners)
+
 # https://stackoverflow.com/questions/65048929/bigquery-extract-keys-from-json-object-convert-json-from-object-to-key-value-a
 CREATE TEMP FUNCTION jsonToKeyValueArray(input STRING)
 RETURNS ARRAY<STRUCT<key String, value ARRAY<String>>>

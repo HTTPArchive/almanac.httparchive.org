@@ -1,3 +1,6 @@
+#standardSQL
+# Pages that use geolocation features (based on Blink features)
+
 SELECT
   client,
   feature,

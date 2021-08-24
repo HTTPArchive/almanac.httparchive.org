@@ -1,3 +1,6 @@
+#standardSQL
+# Pages that use a device sensor (based on Blink features)
+
 SELECT
   client,
   feature,

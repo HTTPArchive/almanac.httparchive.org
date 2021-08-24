@@ -1,3 +1,6 @@
+#standardSQL
+# Pages that request DNT status (based on Blink features)
+
 SELECT
   client,
   feature,
