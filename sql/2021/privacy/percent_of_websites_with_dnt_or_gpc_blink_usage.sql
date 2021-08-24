@@ -15,7 +15,7 @@ WHERE
 ORDER BY
   feature
 
-# releveant Blink features:
+# relevant Blink features:
 
 # DNT: NavigatorDoNotTrack
 # GPC: none
