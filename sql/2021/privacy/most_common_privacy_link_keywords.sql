@@ -9,6 +9,16 @@ WITH pages_privacy AS (
     `httparchive.pages.2021_07_01_*`
 ),
 
+total_nb_pages AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(*) AS total_nb_pages
+  FROM
+    `httparchive.pages.2021_07_01_*`
+  GROUP BY
+    1
+),
+
 privacy_link_keywords AS (
   SELECT
     client,
@@ -25,9 +35,9 @@ SELECT
   client,
   keyword,
   COUNT(0) AS nb_websites_with_keyword,
-  ROUND(COUNT(0) / (SELECT COUNT(0) FROM pages_privacy), 2) AS pct_websites_with_keyword
+  ROUND(COUNT(0) / MIN(total_nb_pages.total_nb_pages), 2) AS pct_websites_with_keyword
 FROM
-  privacy_link_keywords,
+  privacy_link_keywords JOIN total_nb_pages USING (client),
   UNNEST(keywords_per_site) keyword
 GROUP BY
   1, 2

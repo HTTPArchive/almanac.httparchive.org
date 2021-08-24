@@ -10,6 +10,16 @@ WITH pages_privacy AS (
     `httparchive.pages.2021_07_01_*`
 ),
 
+total_nb_pages AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(*) AS total_nb_pages
+  FROM
+    `httparchive.pages.2021_07_01_*`
+  GROUP BY
+    1
+),
+
 pages_iab_tcf_v2 AS (
   SELECT
     client,
@@ -24,9 +34,9 @@ SELECT
   client,
   JSON_VALUE(metrics, '$.cmpId') AS cmpId,
   COUNT(0) AS nb_websites,
-  ROUND(COUNT(0) / (SELECT COUNT(0) FROM pages_iab_tcf_v2), 2) AS pct_websites
+  ROUND(COUNT(0) / MIN(total_nb_pages.total_nb_pages), 2) AS pct_websites
 FROM
-  pages_iab_tcf_v2
+  pages_iab_tcf_v2 JOIN total_nb_pages USING (client)
 WHERE
   JSON_VALUE(metrics, '$.cmpId') IS NOT NULL
 GROUP BY
