@@ -24,7 +24,7 @@ SELECT
   client,
   JSON_VALUE(metrics, '$.uspString') AS uspString,
   COUNT(0) AS nb_websites,
-  COUNT(0) / (SELECT COUNT(0) FROM pages_iab_usp) AS pct_websites
+  ROUND(COUNT(0) / (SELECT COUNT(0) FROM pages_iab_usp), 2) AS pct_websites
 FROM
   pages_iab_usp
 WHERE

@@ -23,7 +23,7 @@ SELECT
   client,
   text,
   COUNT(0) AS nb_websites_with_text,
-  COUNT(0) / (SELECT COUNT(0) FROM pages_privacy) AS pct_websites_with_text
+  ROUND(COUNT(0) / (SELECT COUNT(0) FROM pages_privacy), 2) AS pct_websites_with_text
 FROM
   privacy_link_texts,
   UNNEST(texts_per_site) text
