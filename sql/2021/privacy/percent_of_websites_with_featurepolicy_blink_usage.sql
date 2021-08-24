@@ -3,7 +3,7 @@ SELECT
   feature,
   num_urls,
   total_urls,
-  ROUND(pct_urls * 100, 2) AS pct_urls
+  ROUND(pct_urls, 2) AS pct_urls
 FROM
   `httparchive.blink_features.usage`
 WHERE

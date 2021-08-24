@@ -11,13 +11,13 @@ WITH pages_privacy AS (
 
 SELECT
   *,
-  100 * nb_websites_with_iab_tcf_v1 / nb_websites AS pct_websites_with_iab_tcf_v1,
-  100 * nb_websites_with_iab_tcf_v2 / nb_websites AS pct_websites_with_iab_tcf_v2,
-  100 * nb_websites_with_iab_tcf_v1_compliant / nb_websites_with_iab_tcf_v1 AS pct_websites_with_iab_tcf_v1_compliant,
-  100 * nb_websites_with_iab_tcf_v2_compliant / nb_websites_with_iab_tcf_v2 AS pct_websites_with_iab_tcf_v2_compliant,
-  100 * nb_websites_with_iab_tcf_any / nb_websites AS pct_websites_with_iab_tcf_any,
-  100 * nb_websites_with_iab_usp / nb_websites AS pct_websites_with_iab_usp,
-  100 * nb_websites_with_iab_any / nb_websites AS pct_websites_with_iab_any
+  ROUND(nb_websites_with_iab_tcf_v1 / nb_websites, 2) AS pct_websites_with_iab_tcf_v1,
+  ROUND(nb_websites_with_iab_tcf_v2 / nb_websites, 2) AS pct_websites_with_iab_tcf_v2,
+  ROUND(nb_websites_with_iab_tcf_v1_compliant / nb_websites_with_iab_tcf_v1, 2) AS pct_websites_with_iab_tcf_v1_compliant,
+  ROUND(nb_websites_with_iab_tcf_v2_compliant / nb_websites_with_iab_tcf_v2, 2) AS pct_websites_with_iab_tcf_v2_compliant,
+  ROUND(nb_websites_with_iab_tcf_any / nb_websites, 2) AS pct_websites_with_iab_tcf_any,
+  ROUND(nb_websites_with_iab_usp / nb_websites, 2) AS pct_websites_with_iab_usp,
+  ROUND(nb_websites_with_iab_any / nb_websites, 2) AS pct_websites_with_iab_any
 FROM (
   SELECT
     client,
