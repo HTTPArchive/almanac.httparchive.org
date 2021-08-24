@@ -33,8 +33,8 @@ response_headers AS (
   SELECT
     client,
     page,
-    JSON_VALUE(response_header, '$.name') AS name,
-    JSON_VALUE(response_header, '$.value') AS value
+    LOWER(JSON_VALUE(response_header, '$.name')) AS name,
+    LOWER(JSON_VALUE(response_header, '$.value')) AS value
   FROM
     `httparchive.almanac.summary_response_bodies`,
     UNNEST(JSON_QUERY_ARRAY(response_headers)) response_header
@@ -52,7 +52,7 @@ referrer_policy_headers AS (
   FROM
     response_headers
   WHERE
-    name = 'Referrer-Policy'
+    name = 'referrer-policy'
 )
 
 SELECT
