@@ -15,15 +15,30 @@ WITH response_headers AS (
     date = '2021-07-01'
   AND
     firstHtml = TRUE
+),
+
+total_nb_pages AS (
+  SELECT
+    client,
+    rank,
+    COUNT(DISTINCT page) AS total_nb_pages
+  FROM
+    `httparchive.almanac.summary_response_bodies`
+  WHERE
+    date = '2021-07-01'
+  AND
+    firstHtml = TRUE
+  GROUP BY
+    1, 2
 )
 
 SELECT
   client,
   rank,
   COUNT(DISTINCT page) AS nb_websites,
-  ROUND(COUNT(0) / (SELECT COUNT(0) FROM response_headers), 2) AS pct_websites
+  ROUND(COUNT(DISTINCT page) / MIN(total_nb_pages.total_nb_pages), 2) AS pct_websites
 FROM
-  response_headers
+  response_headers JOIN total_nb_pages USING (client, rank)
 WHERE
   name = 'permissions-policy'
   AND
