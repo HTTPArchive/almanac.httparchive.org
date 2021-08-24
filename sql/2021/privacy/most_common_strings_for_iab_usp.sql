@@ -13,7 +13,7 @@ WITH pages_privacy AS (
 total_nb_pages AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    COUNT(*) AS total_nb_pages
+    COUNT(0) AS total_nb_pages
   FROM
     `httparchive.pages.2021_07_01_*`
   GROUP BY

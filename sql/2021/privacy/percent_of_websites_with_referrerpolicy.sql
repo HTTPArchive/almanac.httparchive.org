@@ -16,7 +16,7 @@ referrer_policy_custom_metrics AS (
     url,
     JSON_VALUE(metrics, "$.referrerPolicy.entire_document_policy") AS entire_document_policy_meta,
     JSON_QUERY_ARRAY(metrics, "$.referrerPolicy.individual_requests") AS individual_requests,
-    JSON_QUERY_ARRAY(metrics, "$.referrerPolicy.link_relations") AS link_relations,
+    JSON_QUERY_ARRAY(metrics, "$.referrerPolicy.link_relations") AS link_relations
    FROM
     pages_privacy
 ),
@@ -25,25 +25,25 @@ response_headers AS (
   SELECT
     client,
     page,
-    JSON_VALUE(response_header, '$.name') name,
-    JSON_VALUE(response_header, '$.value') value
+    JSON_VALUE(response_header, '$.name') AS name,
+    JSON_VALUE(response_header, '$.value') AS value
   FROM
     `httparchive.almanac.summary_response_bodies`,
     UNNEST(JSON_QUERY_ARRAY(response_headers)) response_header
   WHERE
     date = '2021-07-01'
   AND
-    firstHtml = true
+    firstHtml = TRUE
 ),
 
 referrer_policy_headers AS (
   SELECT
     client,
     page AS url,
-    value AS entire_document_policy_header,
+    value AS entire_document_policy_header
   FROM
-    response_headers 
-  WHERE    
+    response_headers
+  WHERE
     name = 'Referrer-Policy'
 )
 
