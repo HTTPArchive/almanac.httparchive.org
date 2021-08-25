@@ -27,8 +27,8 @@ FROM (
         WHERE
             date = "2021-07-01"
 ),
-UNNEST(max_age_values),
-UNNEST([10, 25, 50, 75, 90, 100])
+UNNEST(max_age_values) as max_age_value,
+UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
     percentile,
     client
