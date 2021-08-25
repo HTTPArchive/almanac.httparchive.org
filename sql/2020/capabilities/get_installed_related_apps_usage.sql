@@ -8,8 +8,7 @@ SELECT
 FROM
   `httparchive.blink_features.usage`
 WHERE
-  id = "1870"
-  OR feature = "V8Navigator_GetInstalledRelatedApps_Method"
+  id = "1870" OR feature = "V8Navigator_GetInstalledRelatedApps_Method"
 GROUP BY
   date,
   timestamp,
