@@ -1,7 +1,6 @@
 #standardSQL
 # 21_01: % of sites that use each type of hint.
-CREATE TEMPORARY FUNCTION getResourceHints(payload STRING) -- noqa: PRS
--- SQL Linter expects STRUCT field names to beging with a-z or A-Z so needs noqa ignore command on previous line
+CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
 RETURNS STRUCT<preload BOOLEAN, prefetch BOOLEAN, preconnect BOOLEAN, prerender BOOLEAN, `dns-prefetch` BOOLEAN>
 LANGUAGE js AS '''
 var hints = ['preload', 'prefetch', 'preconnect', 'prerender', 'dns-prefetch'];

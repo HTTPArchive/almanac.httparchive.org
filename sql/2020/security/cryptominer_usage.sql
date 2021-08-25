@@ -6,8 +6,8 @@ SELECT
 FROM
   `httparchive.technologies.*`
 WHERE
-  category = 'Cryptominers'
-  OR category = 'Cryptominer'
+  category = 'Cryptominers' OR
+  category = 'Cryptominer'
 GROUP BY
   _TABLE_SUFFIX
 ORDER BY

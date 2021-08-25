@@ -11,7 +11,7 @@ FROM (
     ROUND(SAFE_DIVIDE(avg_ttfb, fast_ttfb + avg_ttfb + slow_ttfb) * 100, 2) AS avg,
     ROUND(SAFE_DIVIDE(slow_ttfb, fast_ttfb + avg_ttfb + slow_ttfb) * 100, 2) AS slow,
     ROW_NUMBER() OVER (ORDER BY fast_ttfb DESC) AS row,
-    COUNT(0) OVER (PARTITION BY 0) AS n
+    COUNT(0) OVER () AS n
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
