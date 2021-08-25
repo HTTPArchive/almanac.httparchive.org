@@ -75,3 +75,5 @@ FROM (
   GROUP BY
     1
 )
+ORDER BY
+  client ASC

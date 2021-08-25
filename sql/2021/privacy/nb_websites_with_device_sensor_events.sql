@@ -44,3 +44,5 @@ WHERE
   event LIKE 'device%'
 GROUP BY
   1, 2
+ORDER BY
+  2 ASC, 1 ASC

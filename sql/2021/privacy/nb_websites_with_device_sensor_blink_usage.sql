@@ -18,4 +18,4 @@ WHERE
     feature LIKE '%DeviceLight%'
   )
 ORDER BY
-  feature
+  2 ASC, 1 ASC

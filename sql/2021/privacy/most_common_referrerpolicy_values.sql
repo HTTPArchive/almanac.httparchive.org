@@ -65,3 +65,5 @@ FROM
   JOIN total_nb_pages USING (client)
 GROUP BY
   1, 2
+ORDER BY
+  3 DESC

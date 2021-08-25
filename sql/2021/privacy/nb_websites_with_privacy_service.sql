@@ -31,3 +31,5 @@ FROM
   base
 GROUP BY
   client
+ORDER BY
+  1 ASC

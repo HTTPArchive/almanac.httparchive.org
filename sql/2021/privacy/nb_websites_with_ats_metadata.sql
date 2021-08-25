@@ -18,3 +18,5 @@ FROM
   pages_privacy
 GROUP BY
   1
+ORDER BY
+  1 ASC

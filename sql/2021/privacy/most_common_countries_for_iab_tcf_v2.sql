@@ -44,3 +44,5 @@ WHERE
   JSON_VALUE(metrics, '$.publisherCC') IS NOT NULL
 GROUP BY
   1, 2
+ORDER BY
+  3 DESC

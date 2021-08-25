@@ -64,3 +64,5 @@ WHERE
   (tag_name = 'permissions-policy' AND tag_value LIKE 'interest-cohort=()') # value could contain other policies
 GROUP BY
   1, 2
+ORDER BY
+  2 ASC, 1 ASC

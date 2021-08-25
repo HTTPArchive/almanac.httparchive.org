@@ -20,7 +20,7 @@ WHERE
     feature LIKE '%Microphone%'
   )
 ORDER BY
-  feature
+  2 ASC, 1 ASC
 
 # relevant Blink features:
 

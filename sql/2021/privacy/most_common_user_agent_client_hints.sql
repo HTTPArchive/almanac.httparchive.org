@@ -63,3 +63,5 @@ WHERE
   header_name = 'accept-ch' OR tag_name = 'accept-ch'
 GROUP BY
   1, 2, 3
+ORDER BY
+  4 DESC

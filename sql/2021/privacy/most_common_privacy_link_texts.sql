@@ -39,3 +39,5 @@ FROM
   UNNEST(texts_per_site) text
 GROUP BY
   1, 2
+ORDER BY
+  3 DESC

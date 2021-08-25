@@ -42,3 +42,5 @@ WHERE
 GROUP BY
   client,
   cmp_app
+ORDER BY
+  3 DESC
