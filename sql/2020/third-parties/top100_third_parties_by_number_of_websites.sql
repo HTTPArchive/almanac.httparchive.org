@@ -23,7 +23,7 @@ base AS (
   SELECT
     canonicalDomain,
     COUNT(DISTINCT page) AS total_pages,
-    COUNT(DISTINCT page) / COUNT(DISTINCT page) OVER (PARTITION BY 0) AS pct_pages
+    COUNT(DISTINCT page) / COUNT(DISTINCT page) OVER () AS pct_pages
   FROM
     requests
   LEFT JOIN
@@ -46,7 +46,7 @@ FROM (
     canonicalDomain,
     total_pages,
     pct_pages,
-    DENSE_RANK() OVER(PARTITION BY client ORDER BY total_pages DESC) AS rank
+    DENSE_RANK() OVER (PARTITION BY client ORDER BY total_pages DESC) AS rank
   FROM
     base
 )
