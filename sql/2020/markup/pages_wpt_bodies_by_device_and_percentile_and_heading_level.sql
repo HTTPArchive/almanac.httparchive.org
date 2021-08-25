@@ -4,9 +4,9 @@
 # returns all the data we need from _wpt_bodies
 CREATE TEMPORARY FUNCTION get_heading_info(wpt_bodies_string STRING)
 RETURNS ARRAY<STRUCT<
-heading STRING,
-total INT64
->> LANGUAGE js AS '''
+  heading STRING,
+  total INT64
+  >> LANGUAGE js AS '''
 var result = [];
 try {
     var wpt_bodies = JSON.parse(wpt_bodies_string);
@@ -38,9 +38,9 @@ FROM (
     heading_info.total AS total,
     url
   FROM
-  `httparchive.pages.2020_08_01_*`,
-  UNNEST([10, 25, 50, 75, 90]) AS percentile,
-  UNNEST(get_heading_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'))) AS heading_info
+    `httparchive.pages.2020_08_01_*`,
+    UNNEST([10, 25, 50, 75, 90]) AS percentile,
+    UNNEST(get_heading_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'))) AS heading_info
 )
 GROUP BY
   heading,

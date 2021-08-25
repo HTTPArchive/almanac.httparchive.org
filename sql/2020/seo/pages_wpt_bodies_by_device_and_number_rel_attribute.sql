@@ -10,7 +10,7 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
 # returns all the data we need from _wpt_bodies
 CREATE TEMPORARY FUNCTION get_wpt_bodies_info(wpt_bodies_string STRING)
 RETURNS STRUCT<
-    rel ARRAY<STRING>
+  rel ARRAY<STRING>
 > LANGUAGE js AS '''
 var result = {};
 
@@ -40,29 +40,29 @@ return result;
 ''';
 
 SELECT
-client,
-rel,
-total,
-COUNT(0) AS count,
-AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
+  client,
+  rel,
+  total,
+  COUNT(0) AS count,
+  AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 FROM
-(
+  (
     SELECT
-        _TABLE_SUFFIX AS client,
-        total,
-        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
+      _TABLE_SUFFIX AS client,
+      total,
+      get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
     FROM
-        `httparchive.pages.2020_08_01_*`
+      `httparchive.pages.2020_08_01_*`
     JOIN
-    (
+      (
         # to get an accurate total of pages per device. also seems fast
         SELECT _TABLE_SUFFIX, COUNT(0) AS total
         FROM
-        `httparchive.pages.2020_08_01_*`
+          `httparchive.pages.2020_08_01_*`
         GROUP BY _TABLE_SUFFIX
-    )
+      )
     USING (_TABLE_SUFFIX)
-),
-UNNEST(wpt_bodies_info.rel) AS rel
+  ),
+  UNNEST(wpt_bodies_info.rel) AS rel
 GROUP BY total, rel, client
 ORDER BY count DESC

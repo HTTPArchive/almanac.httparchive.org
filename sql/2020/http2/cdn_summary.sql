@@ -13,24 +13,24 @@ FROM (
     firstHTML,
     CDN,
     COUNTIF(http_version IN ('HTTP/2', 'QUIC', 'http/2+quic/46')) / COUNT(0) AS http2_pct
-FROM (
-  SELECT
+  FROM (
+    SELECT
+      client,
+      page,
+      firstHTML,
+      IF(IFNULL(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), '') = '', FALSE, TRUE) AS CDN,
+      url,
+      JSON_EXTRACT_SCALAR(payload, '$._protocol') AS http_version
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2020-08-01')
+  GROUP BY
     client,
     page,
     firstHTML,
-    IF(IFNULL(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), '') = '', FALSE, TRUE) AS CDN,
-    url,
-    JSON_EXTRACT_SCALAR(payload, '$._protocol') AS http_version
-FROM
-  `httparchive.almanac.requests`
-WHERE
-  date = '2020-08-01')
-GROUP BY
-  client,
-  page,
-  firstHTML,
-  CDN),
-UNNEST(GENERATE_ARRAY(1, 100)) AS percentile
+    CDN),
+  UNNEST(GENERATE_ARRAY(1, 100)) AS percentile
 GROUP BY
   percentile,
   client,

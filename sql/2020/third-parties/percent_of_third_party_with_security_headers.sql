@@ -30,24 +30,24 @@ headers AS (
 ),
 
 base AS (
-    SELECT
-      req_origin,
-      req_category,
-      IF(STRPOS(respOtherHeaders, "strict-transport-security") > 0, 1, 0) AS hsts_header,
-      IF(STRPOS(respOtherHeaders, "x-content-type-options") > 0, 1, 0) AS x_content_type_options_header,
-      IF(STRPOS(respOtherHeaders, "x-frame-options") > 0, 1, 0) AS x_frame_options_header,
-      IF(STRPOS(respOtherHeaders, "x-xss-protection") > 0, 1, 0) AS x_xss_protection_header
-    FROM headers
+  SELECT
+    req_origin,
+    req_category,
+    IF(STRPOS(respOtherHeaders, "strict-transport-security") > 0, 1, 0) AS hsts_header,
+    IF(STRPOS(respOtherHeaders, "x-content-type-options") > 0, 1, 0) AS x_content_type_options_header,
+    IF(STRPOS(respOtherHeaders, "x-frame-options") > 0, 1, 0) AS x_frame_options_header,
+    IF(STRPOS(respOtherHeaders, "x-xss-protection") > 0, 1, 0) AS x_xss_protection_header
+  FROM headers
 )
 
 SELECT
-    req_category,
-    COUNT(0) AS total_requests,
-    SUM(hsts_header) / COUNT(0) AS pct_hsts_header_requests,
-    SUM(x_content_type_options_header) / COUNT(0) AS pct_x_content_type_options_header_requests,
-    SUM(x_frame_options_header) / COUNT(0) AS pct_x_frame_options_header_requests,
-    SUM(x_xss_protection_header) / COUNT(0) AS pct_x_xss_protection_header_requests
+  req_category,
+  COUNT(0) AS total_requests,
+  SUM(hsts_header) / COUNT(0) AS pct_hsts_header_requests,
+  SUM(x_content_type_options_header) / COUNT(0) AS pct_x_content_type_options_header_requests,
+  SUM(x_frame_options_header) / COUNT(0) AS pct_x_frame_options_header_requests,
+  SUM(x_xss_protection_header) / COUNT(0) AS pct_x_xss_protection_header_requests
 FROM
-    base
+  base
 GROUP BY
-    req_category
+  req_category

@@ -21,10 +21,10 @@ FROM (
     client,
     getLinkHeaders(payload) AS link_headers
   FROM
-   `httparchive.almanac.requests`
+    `httparchive.almanac.requests`
   WHERE
-   date = '2020-08-01' AND
-   firstHtml),
+    date = '2020-08-01' AND
+    firstHtml),
   UNNEST(link_headers) AS link_header
 WHERE
   link_header LIKE '%preload%'

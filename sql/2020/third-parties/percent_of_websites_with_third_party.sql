@@ -25,7 +25,7 @@ SELECT
   COUNT(DISTINCT IF(domain IS NOT NULL, page, NULL)) / COUNT(DISTINCT page) AS pct_pages_with_third_party
 FROM
   requests
-  LEFT JOIN third_party
-  ON NET.HOST(requests.host) = NET.HOST(third_party.domain)
+LEFT JOIN third_party
+ON NET.HOST(requests.host) = NET.HOST(third_party.domain)
 GROUP BY
   client

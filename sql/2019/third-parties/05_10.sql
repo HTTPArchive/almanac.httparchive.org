@@ -27,15 +27,14 @@ FROM (
     `httparchive.lighthouse.2019_07_01_mobile`,
     UNNEST(getExecutionTimes(report)) AS item) t1,
   (
-  SELECT
-    SUM(item.execution_time) AS totalExecutionTime
-  FROM
-    `httparchive.lighthouse.2019_07_01_mobile`,
-    UNNEST(getExecutionTimes(report)) AS item ) t2
+    SELECT
+      SUM(item.execution_time) AS totalExecutionTime
+    FROM
+      `httparchive.lighthouse.2019_07_01_mobile`,
+      UNNEST(getExecutionTimes(report)) AS item ) t2
 WHERE requestUrl != 'Other'
 GROUP BY
   requestUrl
 ORDER BY
   totalExecutionTime DESC
-LIMIT
-  100
+LIMIT 100

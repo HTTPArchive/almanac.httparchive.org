@@ -36,24 +36,24 @@ SELECT
   COUNT(0) AS count,
   AS_PERCENT(COUNT(0), total) AS pct
 FROM
-(
-  SELECT
-    _TABLE_SUFFIX AS client,
-    total,
-    get_robots_txt_info(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_info
-  FROM
-    `httparchive.pages.2020_08_01_*`
-  JOIN
   (
-    # to get an accurate total of pages per device. also seems fast
-    SELECT _TABLE_SUFFIX, COUNT(0) AS total
+    SELECT
+      _TABLE_SUFFIX AS client,
+      total,
+      get_robots_txt_info(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_info
     FROM
-    `httparchive.pages.2020_08_01_*`
-    GROUP BY _TABLE_SUFFIX
-  )
-  USING (_TABLE_SUFFIX)
-),
-UNNEST(robots_txt_info.user_agents) AS user_agent
+      `httparchive.pages.2020_08_01_*`
+    JOIN
+      (
+        # to get an accurate total of pages per device. also seems fast
+        SELECT _TABLE_SUFFIX, COUNT(0) AS total
+        FROM
+          `httparchive.pages.2020_08_01_*`
+        GROUP BY _TABLE_SUFFIX
+      )
+    USING (_TABLE_SUFFIX)
+  ),
+  UNNEST(robots_txt_info.user_agents) AS user_agent
 GROUP BY total, user_agent, client
 HAVING count >= 100
 ORDER BY count DESC
