@@ -132,12 +132,13 @@ AS """
   return origin_trial_metadata;
   }
 
-  let expiryDate = new Date(expiry * 1000);
-  expiryElem = expiryDate;
-  if (expiryDate < new Date()) {
-    origin_trial_metadata.validityElem = 'Expired';
-  return origin_trial_metadata;
-  }
+  // ignore expiry date: evaluation happens retroactively
+  //// let expiryDate = new Date(expiry * 1000);
+  //// expiryElem = expiryDate;
+  //// if (expiryDate < new Date()) {
+  ////   origin_trial_metadata.validityElem = 'Expired';
+  //// return origin_trial_metadata;
+  //// }
 
   origin_trial_metadata = {
     validityElem: 'Valid',
@@ -162,26 +163,85 @@ WITH pages_origin_trials AS (
     `httparchive.pages.2021_07_01_*`
 ),
 
-extracted_origin_trials AS (
-SELECT
-  client,
-  url AS site, -- the home page that was crawled
-  retrieveOriginTrials(JSON_VALUE(metric, "$.token")) AS origin_trials
-FROM
-  pages_origin_trials, UNNEST(JSON_QUERY_ARRAY(metrics)) metric
+response_headers AS (
+  SELECT
+    client,
+    page,
+    rank,
+    LOWER(JSON_VALUE(response_header, '$.name')) AS header_name,
+    JSON_VALUE(response_header, '$.value') AS header_value  -- may not lowercase this value as it is a base64 string
+  FROM
+    `httparchive.almanac.summary_response_bodies`,
+    UNNEST(JSON_QUERY_ARRAY(response_headers)) response_header
+  WHERE
+    date = '2021-07-01'
+  AND
+    firstHtml = TRUE
+),
+
+meta_tags AS (
+  SELECT
+    client,
+    url AS page,
+    LOWER(JSON_VALUE(meta_node, '$.http-equiv')) AS tag_name,
+    JSON_VALUE(meta_node, '$.content') AS tag_value  -- may not lowercase this value as it is a base64 string
+  FROM (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url,
+      JSON_VALUE(payload, "$._almanac") AS metrics
+    FROM
+      `httparchive.pages.2021_07_01_*`
+    ),
+    UNNEST(JSON_QUERY_ARRAY(metrics, "$.meta-nodes.nodes")) meta_node
+  WHERE
+    JSON_VALUE(meta_node, '$.http-equiv') IS NOT NULL
+),
+
+extracted_origin_trials_from_custom_metric AS (
+  SELECT
+    client,
+    url AS site, -- the home page that was crawled
+    retrieveOriginTrials(JSON_VALUE(metric, "$.token")) AS origin_trials_from_custom_metric
+  FROM
+    pages_origin_trials, UNNEST(JSON_QUERY_ARRAY(metrics)) metric
+),
+
+extracted_origin_trials_from_headers_and_meta_tags AS (
+  SELECT
+    client,
+    page AS site, -- the home page that was crawled
+    retrieveOriginTrials(IF(header_name = 'origin-trial', header_value, tag_value)) AS origin_trials_from_headers_and_meta_tags
+  FROM
+    response_headers FULL OUTER JOIN meta_tags USING (client, page)
+  WHERE
+    header_name = 'origin-trial' OR tag_name = 'origin-trial'
 )
 
--- TODO: combine with header data
 
 SELECT
   client,
+  COALESCE(origin_trials_from_custom_metric.featureElem, origin_trials_from_headers_and_meta_tags.featureElem) AS featureElem,
   COUNT(DISTINCT site) AS nb_websites, -- crawled sites containing at leat one origin trial
-  COUNT(DISTINCT origin_trials.originElem) AS nb_origins -- origins with an origin trial
+  COUNT(DISTINCT COALESCE(origin_trials_from_custom_metric.originElem, origin_trials_from_headers_and_meta_tags.originElem))
+    AS nb_origins -- origins with an origin trial
 FROM
-  extracted_origin_trials
+  extracted_origin_trials_from_custom_metric FULL OUTER JOIN extracted_origin_trials_from_headers_and_meta_tags USING (client, site)
 WHERE
-  origin_trials.featureElem = 'InterestCohortAPI'
+  (
+    origin_trials_from_custom_metric.featureElem = 'InterestCohortAPI'
+    OR
+    origin_trials_from_custom_metric.featureElem = 'ConversionMeasurement'
+    OR
+    origin_trials_from_custom_metric.featureElem = 'TrustTokens'
+    OR
+    origin_trials_from_headers_and_meta_tags.featureElem = 'InterestCohortAPI'
+    OR
+    origin_trials_from_headers_and_meta_tags.featureElem = 'ConversionMeasurement'
+    OR
+    origin_trials_from_headers_and_meta_tags.featureElem = 'TrustTokens'
+  )
 GROUP BY
-  1
+  1, 2
 ORDER BY
-  1 ASC
+  2 ASC, 1 ASC
