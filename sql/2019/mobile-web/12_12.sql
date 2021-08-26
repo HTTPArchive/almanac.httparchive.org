@@ -16,7 +16,7 @@ RETURNS ARRAY<STRING> LANGUAGE js AS '''
 SELECT
   input_type,
   COUNT(input_type) AS occurence,
-  ROUND(COUNT(input_type) * 100 / SUM(COUNT(0)) OVER (PARTITION BY 0), 2) AS occurence_perc,
+  ROUND(COUNT(input_type) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurence_perc,
   COUNT(DISTINCT url) AS pages,
   total AS total_pages,
   ROUND(COUNT(DISTINCT url) * 100 / total, 2) AS pages_perc
