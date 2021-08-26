@@ -3,8 +3,8 @@
 
 CREATE TEMPORARY FUNCTION cookieNames(headers STRING) -- noqa: PRS
 -- SQL Linter cannot handle DETERMINISTIC keyword so needs noqa ignore command on previous line
-  RETURNS ARRAY<STRING> DETERMINISTIC
-  LANGUAGE js AS '''
+RETURNS ARRAY<STRING> DETERMINISTIC
+LANGUAGE js AS '''
 try {
   var headers = JSON.parse(headers);
   let cookies = headers.filter(h => h.name.match(/^set-cookie$/i));
@@ -16,7 +16,7 @@ try {
 } catch (e) {
   return null;
 }
-''';
+''' ;
 
 WITH request_headers AS (
   SELECT
@@ -43,8 +43,7 @@ cookies AS (
   FROM request_headers,
     UNNEST(cookie_names) AS cookie
   WHERE
-    cookie IS NOT NULL
-    AND cookie != ""
+    cookie IS NOT NULL AND cookie != ""
   GROUP BY
     client,
     domain

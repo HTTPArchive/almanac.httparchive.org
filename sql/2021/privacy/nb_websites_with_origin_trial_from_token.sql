@@ -152,7 +152,7 @@ AS """
   };
 
   return origin_trial_metadata;
-""";
+""" ;
 
 WITH pages_origin_trials AS (
   SELECT
@@ -174,9 +174,7 @@ response_headers AS (
     `httparchive.almanac.summary_response_bodies`,
     UNNEST(JSON_QUERY_ARRAY(response_headers)) response_header
   WHERE
-    date = '2021-07-01'
-  AND
-    firstHtml = TRUE
+    date = '2021-07-01' AND firstHtml = TRUE
 ),
 
 meta_tags AS (
@@ -224,21 +222,16 @@ SELECT
   COALESCE(origin_trials_from_custom_metric.featureElem, origin_trials_from_headers_and_meta_tags.featureElem) AS featureElem,
   COUNT(DISTINCT site) AS nb_websites, -- crawled sites containing at leat one origin trial
   COUNT(DISTINCT COALESCE(origin_trials_from_custom_metric.originElem, origin_trials_from_headers_and_meta_tags.originElem))
-    AS nb_origins -- origins with an origin trial
+  AS nb_origins -- origins with an origin trial
 FROM
   extracted_origin_trials_from_custom_metric FULL OUTER JOIN extracted_origin_trials_from_headers_and_meta_tags USING (client, site)
 WHERE
   (
-    origin_trials_from_custom_metric.featureElem = 'InterestCohortAPI'
-    OR
-    origin_trials_from_custom_metric.featureElem = 'ConversionMeasurement'
-    OR
-    origin_trials_from_custom_metric.featureElem = 'TrustTokens'
-    OR
-    origin_trials_from_headers_and_meta_tags.featureElem = 'InterestCohortAPI'
-    OR
-    origin_trials_from_headers_and_meta_tags.featureElem = 'ConversionMeasurement'
-    OR
+    origin_trials_from_custom_metric.featureElem = 'InterestCohortAPI' OR
+    origin_trials_from_custom_metric.featureElem = 'ConversionMeasurement' OR
+    origin_trials_from_custom_metric.featureElem = 'TrustTokens' OR
+    origin_trials_from_headers_and_meta_tags.featureElem = 'InterestCohortAPI' OR
+    origin_trials_from_headers_and_meta_tags.featureElem = 'ConversionMeasurement' OR
     origin_trials_from_headers_and_meta_tags.featureElem = 'TrustTokens'
   )
 GROUP BY

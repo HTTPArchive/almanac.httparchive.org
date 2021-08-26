@@ -25,7 +25,7 @@ referrer_policy_custom_metrics AS (
     client,
     url,
     JSON_VALUE(metrics, "$.referrerPolicy.entire_document_policy") AS entire_document_policy_meta
-   FROM
+  FROM
     pages_privacy
 ),
 
@@ -39,9 +39,7 @@ response_headers AS (
     `httparchive.almanac.summary_response_bodies`,
     UNNEST(JSON_QUERY_ARRAY(response_headers)) response_header
   WHERE
-    date = '2021-07-01'
-  AND
-    firstHtml = TRUE
+    date = '2021-07-01' AND firstHtml = TRUE
 ),
 
 referrer_policy_headers AS (
@@ -62,7 +60,7 @@ SELECT
   ROUND(COUNT(0) / MIN(total_nb_pages.total_nb_pages), 2) AS pct_websites_with_values
 FROM
   referrer_policy_custom_metrics FULL OUTER JOIN referrer_policy_headers USING (client, url)
-  JOIN total_nb_pages USING (client)
+JOIN total_nb_pages USING (client)
 GROUP BY
   1, 2
 ORDER BY

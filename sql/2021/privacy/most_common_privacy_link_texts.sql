@@ -25,7 +25,7 @@ privacy_link_texts AS (
     ARRAY(
       SELECT DISTINCT JSON_VALUE(p, '$.text') FROM
         UNNEST(JSON_QUERY_ARRAY(metrics, "$.privacy_wording_links")) AS p
-      ) AS texts_per_site FROM
+    ) AS texts_per_site FROM
     pages_privacy
 )
 

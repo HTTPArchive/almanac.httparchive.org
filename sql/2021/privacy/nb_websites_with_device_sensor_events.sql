@@ -9,7 +9,7 @@ LANGUAGE js AS """
   return Object.keys(json).map(e => {
     return { "key" : e, "value" : json[e] }
   });
-""";
+""" ;
 
 WITH pages_events AS (
   SELECT

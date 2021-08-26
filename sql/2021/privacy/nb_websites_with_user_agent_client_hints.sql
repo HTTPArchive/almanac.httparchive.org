@@ -12,9 +12,7 @@ WITH response_headers AS (
     `httparchive.almanac.summary_response_bodies`,
     UNNEST(JSON_QUERY_ARRAY(response_headers)) response_header
   WHERE
-    date = '2021-07-01'
-  AND
-    firstHtml = TRUE
+    date = '2021-07-01' AND firstHtml = TRUE
 ),
 
 meta_tags AS (
@@ -44,9 +42,7 @@ total_nb_pages AS (
   FROM
     `httparchive.almanac.summary_response_bodies`
   WHERE
-    date = '2021-07-01'
-  AND
-    firstHtml = TRUE
+    date = '2021-07-01' AND firstHtml = TRUE
   GROUP BY
     1, 2
 )

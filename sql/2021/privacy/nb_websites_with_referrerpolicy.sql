@@ -17,7 +17,7 @@ referrer_policy_custom_metrics AS (
     JSON_VALUE(metrics, "$.referrerPolicy.entire_document_policy") AS entire_document_policy_meta,
     JSON_QUERY_ARRAY(metrics, "$.referrerPolicy.individual_requests") AS individual_requests,
     JSON_QUERY_ARRAY(metrics, "$.referrerPolicy.link_relations") AS link_relations
-   FROM
+  FROM
     pages_privacy
 ),
 
@@ -31,9 +31,7 @@ response_headers AS (
     `httparchive.almanac.summary_response_bodies`,
     UNNEST(JSON_QUERY_ARRAY(response_headers)) response_header
   WHERE
-    date = '2021-07-01'
-  AND
-    firstHtml = TRUE
+    date = '2021-07-01' AND firstHtml = TRUE
 ),
 
 referrer_policy_headers AS (

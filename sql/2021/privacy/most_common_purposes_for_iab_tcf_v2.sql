@@ -14,7 +14,7 @@ AS
       trim(split(kv, ':')[SAFE_OFFSET(1)]) AS value
     FROM t.kv
   )
-FROM UNNEST([STRUCT(SPLIT(TRANSLATE(input, '{}"', '')) AS kv)]) t -- noqa: PRS
+  FROM UNNEST([STRUCT(SPLIT(TRANSLATE(input, '{}"', '')) AS kv)]) t -- noqa: PRS
 )
 );
 
@@ -37,78 +37,78 @@ pages_iab_tcf_v2 AS (
 )
 
 SELECT client, field, result.key, result.value, COUNT(0) AS nb_websites FROM
-(
-  SELECT
-    client,
-    'purpose.consents' AS field,
-    ExtractKeyValuePairs(JSON_QUERY(metrics, '$.purpose.consents')) AS results
-  FROM
-    pages_iab_tcf_v2
-  UNION ALL
-  SELECT
-    client,
-    'purpose.legitimateInterests' AS field,
-    ExtractKeyValuePairs(JSON_QUERY(metrics, '$.purpose.legitimateInterests')) AS results
-  FROM
-    pages_iab_tcf_v2
-  UNION ALL
-  SELECT
-    client,
-    'vendor.consents' AS field,
-    ExtractKeyValuePairs(JSON_QUERY(metrics, '$.vendor.consents')) AS results
-  FROM
-    pages_iab_tcf_v2
-  UNION ALL
-  SELECT
-    client,
-    'vendor.legitimateInterests' AS field,
-    ExtractKeyValuePairs(JSON_QUERY(metrics, '$.vendor.legitimateInterests')) AS results
-  FROM
-    pages_iab_tcf_v2
-  UNION ALL
-  SELECT
-    client,
-    'publisher.consents' AS field,
-    ExtractKeyValuePairs(JSON_QUERY(metrics, '$.publisher.consents')) AS results
-  FROM
-    pages_iab_tcf_v2
-  UNION ALL
-  SELECT
-    client,
-    'publisher.legitimateInterests' AS field,
-    ExtractKeyValuePairs(JSON_QUERY(metrics, '$.publisher.legitimateInterests')) AS results
-  FROM
-    pages_iab_tcf_v2
-  UNION ALL
-  SELECT
-    client,
-    'publisher.customPurpose.consents' AS field,
-    ExtractKeyValuePairs(JSON_QUERY(metrics, '$.publisher.customPurpose.consents')) AS results
-  FROM
-    pages_iab_tcf_v2
-  UNION ALL
-  SELECT
-    client,
-    'specialFeatureOptins' AS field,
-    ExtractKeyValuePairs(JSON_QUERY(metrics, '$.specialFeatureOptins')) AS results
-  FROM
-    pages_iab_tcf_v2
-  UNION ALL
-  SELECT
-    client,
-    'outOfBand.allowedVendors' AS field,
-    ExtractKeyValuePairs(JSON_QUERY(metrics, '$.outOfBand.allowedVendors')) AS results
-  FROM
-    pages_iab_tcf_v2
-  UNION ALL
-  SELECT
-    client,
-    'outOfBand.disclosedVendors' AS field,
-    ExtractKeyValuePairs(JSON_QUERY(metrics, '$.outOfBand.disclosedVendors')) AS results
-  FROM
-    pages_iab_tcf_v2
-),
-UNNEST(results) result
+  (
+    SELECT
+      client,
+      'purpose.consents' AS field,
+      ExtractKeyValuePairs(JSON_QUERY(metrics, '$.purpose.consents')) AS results
+    FROM
+      pages_iab_tcf_v2
+    UNION ALL
+    SELECT
+      client,
+      'purpose.legitimateInterests' AS field,
+      ExtractKeyValuePairs(JSON_QUERY(metrics, '$.purpose.legitimateInterests')) AS results
+    FROM
+      pages_iab_tcf_v2
+    UNION ALL
+    SELECT
+      client,
+      'vendor.consents' AS field,
+      ExtractKeyValuePairs(JSON_QUERY(metrics, '$.vendor.consents')) AS results
+    FROM
+      pages_iab_tcf_v2
+    UNION ALL
+    SELECT
+      client,
+      'vendor.legitimateInterests' AS field,
+      ExtractKeyValuePairs(JSON_QUERY(metrics, '$.vendor.legitimateInterests')) AS results
+    FROM
+      pages_iab_tcf_v2
+    UNION ALL
+    SELECT
+      client,
+      'publisher.consents' AS field,
+      ExtractKeyValuePairs(JSON_QUERY(metrics, '$.publisher.consents')) AS results
+    FROM
+      pages_iab_tcf_v2
+    UNION ALL
+    SELECT
+      client,
+      'publisher.legitimateInterests' AS field,
+      ExtractKeyValuePairs(JSON_QUERY(metrics, '$.publisher.legitimateInterests')) AS results
+    FROM
+      pages_iab_tcf_v2
+    UNION ALL
+    SELECT
+      client,
+      'publisher.customPurpose.consents' AS field,
+      ExtractKeyValuePairs(JSON_QUERY(metrics, '$.publisher.customPurpose.consents')) AS results
+    FROM
+      pages_iab_tcf_v2
+    UNION ALL
+    SELECT
+      client,
+      'specialFeatureOptins' AS field,
+      ExtractKeyValuePairs(JSON_QUERY(metrics, '$.specialFeatureOptins')) AS results
+    FROM
+      pages_iab_tcf_v2
+    UNION ALL
+    SELECT
+      client,
+      'outOfBand.allowedVendors' AS field,
+      ExtractKeyValuePairs(JSON_QUERY(metrics, '$.outOfBand.allowedVendors')) AS results
+    FROM
+      pages_iab_tcf_v2
+    UNION ALL
+    SELECT
+      client,
+      'outOfBand.disclosedVendors' AS field,
+      ExtractKeyValuePairs(JSON_QUERY(metrics, '$.outOfBand.disclosedVendors')) AS results
+    FROM
+      pages_iab_tcf_v2
+  ),
+  UNNEST(results) result
 GROUP BY
   1, 2, 3, 4
 ORDER BY
