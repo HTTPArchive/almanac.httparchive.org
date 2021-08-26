@@ -14,7 +14,7 @@ SELECT
   client,
   headername,
   COUNT(DISTINCT host) AS total_hosts,
-  COUNT(DISTINCT IF(hasHeader(headers, headername), host, NULL)) AS num_with_header,
+  COUNT(DISTINCT IF(hasHeader(headers, headername), host, NULL)) AS count_with_header,
   COUNT(DISTINCT IF(hasHeader(headers, headername), host, NULL)) / COUNT(DISTINCT host) AS pct_with_header
 FROM (
   SELECT
@@ -36,4 +36,4 @@ GROUP BY
 ORDER BY
   date,
   client,
-  headername
+  count_with_header DESC
