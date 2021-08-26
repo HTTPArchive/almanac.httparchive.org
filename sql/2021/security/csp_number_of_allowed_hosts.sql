@@ -31,7 +31,7 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = "2021-08-01" AND
+    date = "2021-07-01" AND
     firstHtml
 ),
 UNNEST([10, 25, 50, 75, 90, 100]) AS percentile

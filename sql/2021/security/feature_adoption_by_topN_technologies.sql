@@ -18,9 +18,9 @@ WITH app_headers AS (
     respOtherHeaders,
     t.url AS url
   FROM
-    `httparchive.summary_requests.2021_08_01_*` AS r
+    `httparchive.summary_requests.2021_07_01_*` AS r
   INNER JOIN
-    `httparchive.technologies.2021_08_01_*` AS t
+    `httparchive.technologies.2021_07_01_*` AS t
   ON
     r._TABLE_SUFFIX = t._TABLE_SUFFIX AND
     r.urlShort = t.url,

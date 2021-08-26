@@ -15,7 +15,7 @@ FROM (
     url,
     JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.sri-integrity") AS sris
   FROM
-    `httparchive.pages.2021_08_01_*`),
+    `httparchive.pages.2021_07_01_*`),
   UNNEST(sris) AS sri
 WHERE
   sri IS NOT NULL AND

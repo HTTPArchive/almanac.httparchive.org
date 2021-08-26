@@ -33,13 +33,13 @@ FROM (
     r.urlShort AS url,
     firstHtml
   FROM
-    `httparchive.summary_requests.2021_08_01_*` AS r
+    `httparchive.summary_requests.2021_07_01_*` AS r
   INNER JOIN
     `chrome-ux-report.experimental.country` AS c
   ON r.urlShort = CONCAT(c.origin, '/')
   WHERE
     firstHtml AND
-    yyyymm = 202108
+    yyyymm = 202107
 )
 GROUP BY
   client,

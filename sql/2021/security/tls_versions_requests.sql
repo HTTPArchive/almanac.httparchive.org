@@ -14,7 +14,7 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2021-08-01' AND
+    date = '2021-07-01' AND
     STARTS_WITH(url, 'https'))
 WHERE
   tls_version IS NOT NULL

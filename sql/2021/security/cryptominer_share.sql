@@ -7,7 +7,7 @@ SELECT
   COUNT(0) AS freq,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS pct
 FROM
-  `httparchive.technologies.2021_08_01_*`
+  `httparchive.technologies.2021_07_01_*`
 WHERE
   category = 'Cryptominers'
   OR category = 'Cryptominer'

@@ -25,7 +25,7 @@ FROM (
   FROM
     `httparchive.almanac.requests`
         WHERE
-            date = "2021-08-01"
+            date = "2021-07-01"
 ),
 UNNEST(max_age_values) AS max_age_value,
 UNNEST([10, 25, 50, 75, 90, 100]) AS percentile

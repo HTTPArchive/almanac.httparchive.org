@@ -14,7 +14,7 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2021-08-01' AND
+    date = '2021-07-01' AND
     NET.HOST(page) = NET.HOST(url) AND
     JSON_EXTRACT_SCALAR(payload, '$._securityDetails.issuer') IS NOT NULL
   GROUP BY client, request_host)

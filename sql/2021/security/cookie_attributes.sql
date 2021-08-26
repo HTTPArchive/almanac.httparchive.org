@@ -38,7 +38,7 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2021-08-01'
+    date = '2021-07-01'
 ),
 UNNEST(cookie_values) AS cookie_value
 GROUP BY

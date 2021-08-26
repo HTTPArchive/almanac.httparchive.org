@@ -10,6 +10,6 @@ FROM
 WHERE
   (feature LIKE 'Crypto%'
     OR feature LIKE 'Subtle%')
-  AND yyyymmdd = '20210801'
+  AND yyyymmdd = '20210701'
 ORDER BY
   pct_urls DESC

@@ -14,7 +14,7 @@ FROM (
     JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.sri-integrity") AS sris,
     SAFE_CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._element_count'), '$.script') AS INT64) AS num_scripts
   FROM
-    `httparchive.pages.2021_08_01_*`),
+    `httparchive.pages.2021_07_01_*`),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 WHERE
   getNumScriptElements(sris) > 0
