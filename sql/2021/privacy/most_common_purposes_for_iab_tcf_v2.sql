@@ -14,7 +14,7 @@ AS
       trim(split(kv, ':')[SAFE_OFFSET(1)]) AS value
     FROM t.kv
   )
-  FROM UNNEST([STRUCT(SPLIT(TRANSLATE(input, '{}"', '')) AS kv)]) t -- noqa: PRS
+  FROM UNNEST([STRUCT(SPLIT(TRANSLATE(input, '{}"', '')) AS kv)]) t
 )
 );
 
