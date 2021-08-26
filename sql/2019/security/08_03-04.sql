@@ -30,7 +30,7 @@ FROM (
       JSON_EXTRACT(payload, '$._securityDetails.keyExchange') AS key_exchange,
       JSON_EXTRACT_SCALAR(payload, '$._securityDetails.protocol') = 'TLS 1.3' AS tls13
     FROM
-     `httparchive.requests.2019_07_01_*`)
+      `httparchive.requests.2019_07_01_*`)
   WHERE
     cert IS NOT NULL
   GROUP BY

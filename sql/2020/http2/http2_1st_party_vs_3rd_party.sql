@@ -30,7 +30,7 @@ FROM (
     client,
     page,
     is_third_party),
-  UNNEST(GENERATE_ARRAY(1, 100))
+  UNNEST(GENERATE_ARRAY(1, 100)) AS percentile
 GROUP BY
   percentile,
   client,
