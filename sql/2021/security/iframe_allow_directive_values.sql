@@ -12,13 +12,7 @@ CREATE TEMP FUNCTION getNumWithAllowAttribute(payload STRING) AS ((
 SELECT
   client,
   SPLIT(TRIM(allow_attr), ' ')[OFFSET(0)] AS directive,
-  TRIM(SPLIT(TRIM(allow_attr), ' ')[SAFE_OFFSET(1)], "'") AS directive_value,
-  -- slice array: https://stackoverflow.com/a/54835472/7391782 + https://stackoverflow.com/a/59668907/7391782
-  (
-    SELECT STRING_AGG(origin, ' ' ORDER BY offset)
-    FROM UNNEST(SPLIT(TRIM(allow_attr), ' ')) AS origin WITH OFFSET AS offset
-    WHERE offset > 1
-  ) AS origins,
+  TRIM(origin) AS origin,
   total_iframes_with_allow,
   COUNT(0) AS freq,
   COUNT(0) / total_iframes_with_allow AS pct
@@ -38,12 +32,21 @@ JOIN (
     `httparchive.pages.2021_07_01_*`
   GROUP BY
     client
-) USING (client)
+) USING (client),
+UNNEST(  -- Directive may specify explicit origins or not.
+  IF(
+    ARRAY_LENGTH(SPLIT(TRIM(allow_attr), ' ')) = 1,  -- test if any explicit origin is provided
+    [TRIM(allow_attr), ''],  -- if not, add a dummy empty origin to make the query work
+    SPLIT(TRIM(allow_attr), ' '  -- if it is, split the different origins
+    )
+  )
+) AS origin WITH OFFSET AS offset
+WHERE
+  offset > 0  -- do not retain the first part of the directive (as this is the directive name)
 GROUP BY
   client,
   directive,
-  directive_value,
-  origins,
+  origin,
   total_iframes_with_allow
 HAVING
   pct > 0.001
