@@ -26,6 +26,8 @@ SELECT
   COUNTIF(REGEXP_CONTAINS(cookie_value, r'(?i);.*samesite\s*=\s*strict')) / COUNT(0) AS pct_samesite_strict,
   COUNTIF(REGEXP_CONTAINS(cookie_value, r'(?i);.*samesite\s*=\s*none')) AS count_samesite_none,
   COUNTIF(REGEXP_CONTAINS(cookie_value, r'(?i);.*samesite\s*=\s*none')) / COUNT(0) AS pct_samesite_none,
+  COUNTIF(REGEXP_CONTAINS(cookie_value, r'(?i);.*sameparty')) AS count_sameparty,
+  COUNTIF(REGEXP_CONTAINS(cookie_value, r'(?i);.*sameparty')) / COUNT(0) AS pct_sameparty,
   COUNTIF(REGEXP_CONTAINS(cookie_value, r'(?i)^\s*__Secure-')) AS count_secure_prefix,
   COUNTIF(REGEXP_CONTAINS(cookie_value, r'(?i)^\s*__Secure-')) / COUNT(0) AS pct_secure_prefix,
   COUNTIF(REGEXP_CONTAINS(cookie_value, r'(?i)^\s*__Host-')) AS count_host_prefix,
