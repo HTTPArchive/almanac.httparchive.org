@@ -1,41 +1,57 @@
 #standardSQL
-# Prevalence of server information headers set in a first-party context; count by number of hosts.
--- SQL Linter cannot handle DETERMINISTIC keyword so needs noqa ignore command on previous line
-CREATE TEMPORARY FUNCTION getServerHeaderValue(headers STRING)  -- noqa: PRS
-  RETURNS STRING DETERMINISTIC
-  LANGUAGE js AS '''
-  const parsed_headers = JSON.parse(headers);
-  const matching_headers = parsed_headers.filter(h => h.name.toLowerCase() == "server");
-  return matching_headers.length == 0 ? null : parsed_headers.filter(h => h.name.toLowerCase() == "server")[0]["value"];
-''';
+# Prevalence of values for Server and X-Powered-By headers set in a first-party context; count by number of hosts.
 
 SELECT
-  date,
-  client,
-  header_value,
-  SUM(COUNT(DISTINCT host)) OVER (PARTITION BY client) AS total_server_headers,
-  COUNT(DISTINCT host) AS header_value_count,
-  COUNT(DISTINCT host) / SUM(COUNT(DISTINCT host)) OVER (PARTITION BY client) AS header_value_pct
-FROM (
+  server.client,
+  resp_server,
+  total_server_headers,
+  freq_server,
+  pct_server,
+  server.n,
+  powered.client,
+  resp_x_powered_by,
+  total_powered_headers,
+  freq_powered,
+  pct_powered
+FROM
+(
   SELECT
-    date,
+    ROW_NUMBER() OVER (ORDER BY COUNT(DISTINCT NET.HOST(page)) DESC) AS n,
     client,
-    NET.HOST(urlShort) AS host,
-    getServerHeaderValue(JSON_EXTRACT(payload, '$.response.headers')) AS header_value
+    resp_server,
+    SUM(COUNT(DISTINCT NET.HOST(page))) OVER (PARTITION BY client) AS total_server_headers,
+    COUNT(DISTINCT NET.HOST(page)) AS freq_server,
+    COUNT(DISTINCT NET.HOST(page)) / SUM(COUNT(DISTINCT NET.HOST(page))) OVER (PARTITION BY client) AS pct_server
   FROM
     `httparchive.almanac.requests`
   WHERE
     (date = "2020-07-01" OR date = "2021-07-01") AND
-    NET.HOST(urlShort) = NET.HOST(page)
-)
-WHERE
-  header_value IS NOT NULL
-GROUP BY
-  date,
-  client,
-  header_value
-ORDER BY
-  date,
-  header_value_count DESC,
-  client
-LIMIT 40
+    NET.HOST(urlShort) = NET.HOST(page) AND
+    resp_server IS NOT NULL AND
+    resp_server <> ''
+  GROUP BY
+    client,
+    resp_server
+  ) AS server
+INNER JOIN
+  (
+  SELECT
+    ROW_NUMBER() OVER (ORDER BY COUNT(DISTINCT NET.HOST(page)) DESC) AS n,
+    client,
+    resp_x_powered_by,
+    SUM(COUNT(DISTINCT NET.HOST(page))) OVER (PARTITION BY client) AS total_powered_headers,
+    COUNT(DISTINCT NET.HOST(page)) AS freq_powered,
+    COUNT(DISTINCT NET.HOST(page)) / SUM(COUNT(DISTINCT NET.HOST(page))) OVER (PARTITION BY client) AS pct_powered
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    (date = "2020-07-01" OR date = "2021-07-01") AND
+    NET.HOST(urlShort) = NET.HOST(page) AND
+    resp_x_powered_by IS NOT NULL AND
+    resp_x_powered_by <> ''
+  GROUP BY
+    client,
+    resp_x_powered_by
+  ) AS powered ON server.n = powered.n
+  ORDER BY n
+  LIMIT 40
