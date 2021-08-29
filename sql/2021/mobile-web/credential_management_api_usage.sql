@@ -1,6 +1,6 @@
 #standardSQL
 # Usage of Credential Manager
-SELECT
+SELECT DISTINCT
   client,
   feature,
   num_urls AS freq,

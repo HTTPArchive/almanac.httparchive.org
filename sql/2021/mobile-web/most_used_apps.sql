@@ -1,5 +1,5 @@
 #standardSQL
-# Most used apps
+# Most used apps - mobile only
 SELECT
   total_sites,
 

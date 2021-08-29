@@ -1,15 +1,17 @@
 #standardSQL
-# Most used apps by domain rank
+# Most used apps by domain rank - mobile only
 SELECT
   rank_grouping,
   total_in_rank,
 
+  category,
   app,
   COUNT(0) AS sites_with_app,
   COUNT(0) / total_in_rank AS pct_sites_with_app
 FROM (
   SELECT
     app,
+    category,
     url
   FROM
     `httparchive.technologies.2021_07_01_mobile`
@@ -39,6 +41,7 @@ JOIN (
 GROUP BY
   rank_grouping,
   total_in_rank,
+  category,
   app
 ORDER BY
   app,
