@@ -1,10 +1,11 @@
 # standardSQL
 # Usage of client hint directives
-CREATE TEMPORARY FUNCTION getClientHints(payload STRING)
+CREATE TEMPORARY FUNCTION getClientHints(headers STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS """
 try {
+  const header_name = 'Accept-CH';
   const parsed_headers = JSON.parse(headers);
-  const matching_headers = parsed_headers.filter(h => h.name.toLowerCase() == headername.toLowerCase());
+  const matching_headers = parsed_headers.filter(h => h.name.toLowerCase() == header_name.toLowerCase());
   if (matching_headers.length <= 0) {
     return [];
   }
@@ -22,6 +23,7 @@ try {
   return [];
 }
 """;
+
 SELECT
   client,
   total_sites,
