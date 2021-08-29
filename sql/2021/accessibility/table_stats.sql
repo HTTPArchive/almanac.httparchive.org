@@ -16,8 +16,8 @@ SELECT
   SUM(total_captioned) AS total_captioned,
   SUM(total_presentational) AS total_presentational,
 
-  SUM(total_captioned) / SUM(total_tables) AS pct_all_captioned,
-  SUM(total_presentational) / SUM(total_tables) AS pct_all_presentational
+  SUM(total_captioned) / SUM(total_tables) AS pct_captioned,
+  SUM(total_presentational) / SUM(total_tables) AS pct_presentational
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
