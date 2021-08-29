@@ -1,5 +1,5 @@
 #standardSQL
-# Various stats for required form controls
+# Various stats for required form controls (form controls being: input, select, textarea)
 CREATE TEMPORARY FUNCTION requiredControls(payload STRING)
 RETURNS STRUCT<total INT64, asterisk INT64, required_attribute INT64, aria_required INT64, all_three INT64, asterisk_required INT64, asterisk_aria INT64, required_with_aria INT64> LANGUAGE js AS '''
   try {
@@ -20,7 +20,7 @@ RETURNS STRUCT<total INT64, asterisk INT64, required_attribute INT64, aria_requi
         asterisk++;
       }
       if (form_control.has_visible_required_asterisk && form_control.has_required) {
-        asterisk_requiredj++;
+        asterisk_required++;
       }
       if (form_control.has_visible_required_asterisk && form_control.has_aria_required) {
         asterisk_aria++;
