@@ -36,7 +36,7 @@ FROM (
     COUNT(0) AS total,
     COUNTIF(isModern(FORMAT("%'x", CAST(JSON_EXTRACT(payload, '$._tls_cipher_suite') AS INT64)))) AS modern_cipher_count
   FROM
-     `httparchive.requests.2019_07_01_*`
+    `httparchive.requests.2019_07_01_*`
   WHERE
     JSON_EXTRACT(payload, '$._securityDetails') IS NOT NULL
   GROUP BY
