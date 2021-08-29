@@ -27,14 +27,14 @@ FROM (
     `httparchive.almanac.third_parties`
   ON
     NET.HOST(url) = domain
-WHERE
-  `httparchive.almanac.requests`.date = '2021-07-01'
-GROUP BY
+  WHERE
+    `httparchive.almanac.requests`.date = '2021-07-01'
+  GROUP BY
     client,
     category,
     page),
 
-UNNEST([10, 25, 50, 75, 90]) AS percentile
+  UNNEST([10, 25, 50, 75, 90])
 GROUP BY
   percentile,
   client,

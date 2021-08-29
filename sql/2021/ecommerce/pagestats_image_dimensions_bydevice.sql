@@ -12,7 +12,7 @@ try {
 } catch (e) {
   return [];
 }
-''';
+''' ;
 
 SELECT
   percentile,
@@ -24,8 +24,8 @@ FROM
 JOIN
   `httparchive.technologies.2021_07_01_*`
 USING (_TABLE_SUFFIX, url),
-UNNEST(getImageDimensions(payload)) AS image,
-UNNEST([10, 25, 50, 75, 90]) AS percentile
+  UNNEST(getImageDimensions(payload)) AS image,
+  UNNEST([10, 25, 50, 75, 90])
 WHERE
   category = 'Ecommerce'
 GROUP BY

@@ -28,8 +28,8 @@ JOIN (
 USING
   (client)
 WHERE
-    `httparchive.almanac.summary_requests`.date = '2021-07-01' AND
-    lower(category) = 'cdn'
+  `httparchive.almanac.summary_requests`.date = '2021-07-01' AND
+  lower(category) = 'cdn'
 GROUP BY
   client,
   total,
