@@ -1,7 +1,7 @@
 CREATE TEMP FUNCTION
-  getFuguAPIs(DATA STRING)
-  RETURNS ARRAY<STRING>
-  LANGUAGE js AS '''
+getFuguAPIs(DATA STRING)
+RETURNS ARRAY<STRING>
+LANGUAGE js AS '''
 const $ = JSON.parse(data);
 return Object.keys($);
 ''';
@@ -16,7 +16,8 @@ FROM
 WHERE
   JSON_QUERY(payload,
     '$."_fugu-apis"') != "[]"
-  AND fuguAPI = "Notification Triggers"
+AND
+  fuguAPI = "Notification Triggers"
 GROUP BY
   fuguAPI,
   url,
