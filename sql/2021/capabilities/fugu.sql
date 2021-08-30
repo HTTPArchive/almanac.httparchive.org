@@ -4,6 +4,7 @@ LANGUAGE js AS '''
 const $ = JSON.parse(data);
 return Object.keys($);
 ''';
+
 SELECT
   _TABLE_SUFFIX AS client,
   fuguAPI,
