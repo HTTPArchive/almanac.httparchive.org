@@ -14,12 +14,9 @@ SELECT
   payload
 FROM
   \`httparchive.pages.2021_07_01_${platform}\`,
-  UNNEST(getFuguAPIs(JSON_QUERY(payload,
-        '$."_fugu-apis"'))) AS fuguAPI
+  UNNEST(getFuguAPIs(JSON_QUERY(payload, '$."_fugu-apis"'))) AS fuguAPI
 WHERE
-  JSON_QUERY(payload,
-    '$."_fugu-apis"') != "[]"
-AND
+  JSON_QUERY(payload, '$."_fugu-apis"') != "[]" AND
   fuguAPI = "${api}"
 GROUP BY
   fuguAPI,
@@ -91,7 +88,6 @@ platforms.forEach((platform) => {
   fs.mkdirSync(`./${platform}`);
   apis.forEach((api) => {
     const query = getQuery(api, platform);
-    console.log(query);
     fs.writeFileSync(
       `./${platform}/${api
         .toLowerCase()

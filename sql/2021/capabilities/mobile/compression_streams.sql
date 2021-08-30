@@ -11,12 +11,9 @@ SELECT
   payload
 FROM
   `httparchive.pages.2021_07_01_mobile`,
-  UNNEST(getFuguAPIs(JSON_QUERY(payload,
-        '$."_fugu-apis"'))) AS fuguAPI
+  UNNEST(getFuguAPIs(JSON_QUERY(payload, '$."_fugu-apis"'))) AS fuguAPI
 WHERE
-  JSON_QUERY(payload,
-    '$."_fugu-apis"') != "[]"
-AND
+  JSON_QUERY(payload, '$."_fugu-apis"') != "[]" AND
   fuguAPI = "Compression Streams"
 GROUP BY
   fuguAPI,
