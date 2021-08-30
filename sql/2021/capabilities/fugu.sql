@@ -33,5 +33,5 @@ GROUP BY
 HAVING
   COUNT(DISTINCT url) >= 10
 ORDER BY
-  pages / total DESC,
+  pct DESC,
   client;
