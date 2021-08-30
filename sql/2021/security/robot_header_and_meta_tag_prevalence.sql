@@ -11,7 +11,7 @@ WITH meta_tags AS (
       url,
       JSON_VALUE(payload, "$._almanac") AS metrics
     FROM
-      `httparchive.sample_data.pages_*`
+      `httparchive.pages.2021_07_01_*`
     ),
     UNNEST(JSON_QUERY_ARRAY(metrics, "$.meta-nodes.nodes")) meta_node
   WHERE LOWER(JSON_VALUE(meta_node, '$.name')) = "robots"
@@ -28,7 +28,7 @@ robot_headers AS (
       url,
       JSON_EXTRACT(payload, '$.response.headers') AS headers
     FROM
-      `httparchive.sample_data.requests`
+      `httparchive.almanac.requests`
     WHERE
       firstHtml = TRUE AND
       date = '2021-07-01'
@@ -43,7 +43,7 @@ total_nb_pages AS (
     _TABLE_SUFFIX AS client,
     COUNT(DISTINCT url) AS total_nb_pages
   FROM
-    `httparchive.sample_data.pages_*`
+    `httparchive.pages.2021_07_01_*`
   GROUP BY
     client
 )
