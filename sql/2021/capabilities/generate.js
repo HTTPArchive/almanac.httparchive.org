@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { platform } = require('os');
 
 const getQuery = (api, platform) => {
   return `CREATE TEMP FUNCTION
