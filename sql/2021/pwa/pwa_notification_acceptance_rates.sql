@@ -5,35 +5,11 @@
 SELECT
   date,
   client,
-
-  ROUND(APPROX_QUANTILES(notification_permission_accept, 1000 RESPECT NULLS)[OFFSET(100)], 3) AS notification_permission_accept_10th_percentile,
-  ROUND(APPROX_QUANTILES(notification_permission_accept, 1000 RESPECT NULLS)[OFFSET(250)], 3) AS notification_permission_accept_25th_percentile,
-  ROUND(APPROX_QUANTILES(notification_permission_accept, 1000 RESPECT NULLS)[OFFSET(500)], 3) AS notification_permission_accept_50th_percentile,
-  ROUND(APPROX_QUANTILES(notification_permission_accept, 1000 RESPECT NULLS)[OFFSET(750)], 3) AS notification_permission_accept_75th_percentile,
-  ROUND(APPROX_QUANTILES(notification_permission_accept, 1000 RESPECT NULLS)[OFFSET(900)], 3) AS notification_permission_accept_90th_percentile,
-  ROUND(APPROX_QUANTILES(notification_permission_accept, 1000 RESPECT NULLS)[OFFSET(1000)], 3) AS notification_permission_accept_100th_percentile,
-
-  ROUND(APPROX_QUANTILES(notification_permission_deny, 1000 RESPECT NULLS)[OFFSET(100)], 3) AS notification_permission_deny_10th_percentile,
-  ROUND(APPROX_QUANTILES(notification_permission_deny, 1000 RESPECT NULLS)[OFFSET(250)], 3) AS notification_permission_deny_25th_percentile,
-  ROUND(APPROX_QUANTILES(notification_permission_deny, 1000 RESPECT NULLS)[OFFSET(500)], 3) AS notification_permission_deny_50th_percentile,
-  ROUND(APPROX_QUANTILES(notification_permission_deny, 1000 RESPECT NULLS)[OFFSET(750)], 3) AS notification_permission_deny_75th_percentile,
-  ROUND(APPROX_QUANTILES(notification_permission_deny, 1000 RESPECT NULLS)[OFFSET(900)], 3) AS notification_permission_deny_90th_percentile,
-  ROUND(APPROX_QUANTILES(notification_permission_deny, 1000 RESPECT NULLS)[OFFSET(1000)], 3) AS notification_permission_deny_100th_percentile,
-
-  ROUND(APPROX_QUANTILES(notification_permission_ignore, 1000 RESPECT NULLS)[OFFSET(100)], 3) AS notification_permission_ignore_10th_percentile,
-  ROUND(APPROX_QUANTILES(notification_permission_ignore, 1000 RESPECT NULLS)[OFFSET(250)], 3) AS notification_permission_ignore_25th_percentile,
-  ROUND(APPROX_QUANTILES(notification_permission_ignore, 1000 RESPECT NULLS)[OFFSET(500)], 3) AS notification_permission_ignore_50th_percentile,
-  ROUND(APPROX_QUANTILES(notification_permission_ignore, 1000 RESPECT NULLS)[OFFSET(750)], 3) AS notification_permission_ignore_75th_percentile,
-  ROUND(APPROX_QUANTILES(notification_permission_ignore, 1000 RESPECT NULLS)[OFFSET(900)], 3) AS notification_permission_ignore_90th_percentile,
-  ROUND(APPROX_QUANTILES(notification_permission_ignore, 1000 RESPECT NULLS)[OFFSET(1000)], 3) AS notification_permission_ignore_100th_percentile,
-
-  ROUND(APPROX_QUANTILES(notification_permission_dismiss, 1000 RESPECT NULLS)[OFFSET(100)], 3) AS notification_permission_dismiss_10th_percentile,
-  ROUND(APPROX_QUANTILES(notification_permission_dismiss, 1000 RESPECT NULLS)[OFFSET(250)], 3) AS notification_permission_dismiss_25th_percentile,
-  ROUND(APPROX_QUANTILES(notification_permission_dismiss, 1000 RESPECT NULLS)[OFFSET(500)], 3) AS notification_permission_dismiss_50th_percentile,
-  ROUND(APPROX_QUANTILES(notification_permission_dismiss, 1000 RESPECT NULLS)[OFFSET(750)], 3) AS notification_permission_dismiss_75th_percentile,
-  ROUND(APPROX_QUANTILES(notification_permission_dismiss, 1000 RESPECT NULLS)[OFFSET(900)], 3) AS notification_permission_dismiss_90th_percentile,
-  ROUND(APPROX_QUANTILES(notification_permission_dismiss, 1000 RESPECT NULLS)[OFFSET(1000)], 3) AS notification_permission_dismis_100th_percentiles
-
+  percentile,
+  APPROX_QUANTILES(notification_permission_accept, 1000 RESPECT NULLS)[OFFSET(percentile * 10)] AS notification_permission_accept,
+  APPROX_QUANTILES(notification_permission_deny, 1000 RESPECT NULLS)[OFFSET(percentile * 10)] AS notification_permission_deny,
+  APPROX_QUANTILES(notification_permission_ignore, 1000 RESPECT NULLS)[OFFSET(percentile * 10)] AS notification_permission_ignore,
+  APPROX_QUANTILES(notification_permission_dismiss, 1000 RESPECT NULLS)[OFFSET(percentile * 10)] AS notification_permission_dismiss
 FROM
   `chrome-ux-report.materialized.metrics_summary`
 JOIN
@@ -45,19 +21,27 @@ JOIN
     FROM
       `httparchive.pages.2021_07_01_*`
     WHERE
-      JSON_EXTRACT(payload, '$._pwa') != "[]" AND
       JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
     GROUP BY
       _TABLE_SUFFIX,
       url
   )
 USING
-  (origin)
-WHERE date IN ('2021-07-01') AND
-  notification_permission_accept IS NOT NULL
+  (origin),
+  UNNEST ([10, 25, 50, 75, 90, 100]) AS percentile
+WHERE
+  date IN ('2021-07-01') AND
+  (
+    notification_permission_accept IS NOT NULL OR
+    notification_permission_deny IS NOT NULL OR
+    notification_permission_ignore IS NOT NULL OR
+    notification_permission_dismiss IS NOT NULL
+  )
 GROUP BY
   date,
-  client
+  client,
+  percentile
 ORDER BY
   date,
-  client
+  client,
+  percentile

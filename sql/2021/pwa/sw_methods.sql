@@ -1,32 +1,15 @@
 #standardSQL
 # SW methods
-CREATE TEMPORARY FUNCTION getSWMethods(swMethods ARRAY<STRING>)
+CREATE TEMPORARY FUNCTION getSWMethods(swMethodsInfo STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
-  return Array.from(new Set(swMethods));
+  var swMethods = JSON.parse(swMethodsInfo);
+  return Array.from(new Set(Object.values(swMethods).flat()));
 } catch (e) {
-  return [e];
+  return [];
 }
 ''';
-CREATE TEMPORARY FUNCTION parseField(field STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
-try {
-    if(field == '[]' || field == '') {
-        return [];
-    }
 
-    var parsedField = Object.values(JSON.parse(field));
-
-    if (typeof parsedField != 'string') {
-        parsedField = parsedField.toString();
-    }
-
-    parsedField = parsedField.trim().split(',');
-    return parsedField;
-} catch (e) {
-  return [e];
-}
-''';
 SELECT
   _TABLE_SUFFIX AS client,
   sw_method,
@@ -35,7 +18,7 @@ SELECT
   COUNT(DISTINCT url) / total AS pct
 FROM
   `httparchive.pages.2021_07_01_*`,
-  UNNEST(getSWMethods(parseField(JSON_EXTRACT(payload, '$._pwa.swMethodsInfo')))) AS sw_method
+  UNNEST(getSWMethods(JSON_EXTRACT(payload, '$._pwa.swMethodsInfo'))) AS sw_method
 JOIN
   (
     SELECT
@@ -44,14 +27,12 @@ JOIN
     FROM
       `httparchive.pages.2021_07_01_*`
     WHERE
-      JSON_EXTRACT(payload, '$._pwa') != "[]" AND
       JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
     GROUP BY
       _TABLE_SUFFIX
   )
 USING (_TABLE_SUFFIX)
 WHERE
-  JSON_EXTRACT(payload, '$._pwa') != "[]" AND
   JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true" AND
   JSON_EXTRACT(payload, '$._pwa.swMethodsInfo') != "[]"
 GROUP BY

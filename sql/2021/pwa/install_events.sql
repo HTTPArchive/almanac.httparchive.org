@@ -1,48 +1,32 @@
 #standardSQL
 # SW install events
 
-CREATE TEMPORARY FUNCTION getInstallEvents(windowEventListeners ARRAY<STRING>, windowPropertiesInfo ARRAY<STRING>)
+CREATE TEMPORARY FUNCTION getInstallEvents(payload STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
-  return [...new Set([...windowEventListeners ,...windowPropertiesInfo])];
-} catch (e) {
-  return [e];
-}
-''';
+  payloadJSON = JSON.parse(payload);
 
-/* YouTube iFrames account for a lot of these, so let's exclude them */
-CREATE TEMPORARY FUNCTION parseFieldNoYouTube(field STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
-try {
-    if(field == '[]' || field == '') {
-        return [];
-    }
+  /* YouTube iFrames account for a lot of these, so we exclude them */
+  /* Annoyingly BigQuery does not support filter yet so need to fo this manually */
+  function filterYouTube(info) {
 
-    var jsonObject = JSON.parse(field);
-
-    /* Remove entries with libraries that cause false positives (e.g. Youtube) */
-    var objectKeys = Object.keys(jsonObject);
+    var objectKeys = Object.keys(info);
     if (typeof objectKeys != 'string') {
         objectKeys = objectKeys.toString();
     }
     objectKeys = objectKeys.trim().split(',');
     for(var i = 0; i < objectKeys.length; i++) {
         if(objectKeys[i].toLowerCase().includes('youtube')) {
-            delete jsonObject[objectKeys[i]];
+            delete info[objectKeys[i]];
         }
     }
+    return info;
+  }
 
-    var objectValues = Object.values(jsonObject);
-    if (typeof objectValues != 'string') {
-        objectValues = objectValues.toString();
-    }
+  var windowEventListenersInfo = Object.values(filterYouTube(payloadJSON.windowEventListenersInfo)).flat();
+  var windowPropertiesInfo = Object.values(filterYouTube(payloadJSON.windowPropertiesInfo)).flat()
 
-    // Double check we are not back to an empty string
-    if(field == '[]' || field == '') {
-        return [];
-    }
-
-    return objectValues.trim().split(',');
+  return [...new Set([...windowEventListenersInfo ,...windowPropertiesInfo])];
 } catch (e) {
   return [e];
 }
@@ -56,7 +40,7 @@ SELECT
   COUNT(DISTINCT url) / total AS pct
 FROM
   `httparchive.pages.2021_07_01_*`,
-  UNNEST(getInstallEvents(parseFieldNoYouTube(JSON_EXTRACT(payload, '$._pwa.windowEventListenersInfo')), parseFieldNoYouTube(JSON_EXTRACT(payload, '$._pwa.windowPropertiesInfo')))) AS install_event
+  UNNEST(getInstallEvents(JSON_EXTRACT(payload, '$._pwa'))) AS install_event
 JOIN
   (
     SELECT
@@ -73,9 +57,12 @@ JOIN
   )
 USING (_TABLE_SUFFIX)
 WHERE
-  JSON_EXTRACT(payload, '$._pwa') != "[]" AND
-  (JSON_EXTRACT(payload, '$._pwa.windowEventListenersInfo') != "[]" OR JSON_EXTRACT(payload, '$._pwa.windowPropertiesInfo') != "[]") AND
-  install_event != '' AND install_event != '[]'
+  (
+    JSON_EXTRACT(payload, '$._pwa.windowEventListenersInfo') != "[]" OR
+    JSON_EXTRACT(payload, '$._pwa.windowPropertiesInfo') != "[]"
+  ) AND
+  install_event != '' AND
+  install_event != '[]'
 GROUP BY
   client,
   total,

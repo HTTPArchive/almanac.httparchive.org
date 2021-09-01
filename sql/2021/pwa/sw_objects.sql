@@ -10,7 +10,7 @@ try {
   swObjects = swObjects.trim().split(',');
   return Array.from(new Set(swObjects));
 } catch (e) {
-  return [e];
+  return [];
 }
 ''';
 SELECT
@@ -20,8 +20,7 @@ SELECT
   total,
   COUNT(DISTINCT url) / total AS pct
 FROM
-  `httparchive.sample_data.pages_*`,
-  --`httparchive.pages.2021_07_01_*`,
+  `httparchive.pages.2021_07_01_*`,
   UNNEST(getSWObjects(JSON_EXTRACT(payload, '$._pwa.swObjectsInfo'))) AS sw_object
 JOIN
   (
@@ -29,17 +28,14 @@ JOIN
       _TABLE_SUFFIX,
       COUNT(0) AS total
     FROM
-      `httparchive.sample_data.pages_*`
-    -- `httparchive.pages.2021_07_01_*`
+      `httparchive.pages.2021_07_01_*`
     WHERE
-      JSON_EXTRACT(payload, '$._pwa') != "[]" AND
       JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
     GROUP BY
       _TABLE_SUFFIX
   )
 USING (_TABLE_SUFFIX)
 WHERE
-  JSON_EXTRACT(payload, '$._pwa') != "[]" AND
   JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true" AND
   JSON_EXTRACT(payload, '$._pwa.swObjectsInfo') != "[]"
 GROUP BY

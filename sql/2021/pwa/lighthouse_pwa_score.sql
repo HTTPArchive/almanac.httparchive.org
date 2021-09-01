@@ -19,7 +19,6 @@ JOIN
     FROM
       `httparchive.pages.2021_07_01_mobile`
     WHERE
-      JSON_EXTRACT(payload, '$._pwa') != "[]" AND
       JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true" AND
       JSON_EXTRACT(payload, '$._pwa.manifests') != "[]"
   )

@@ -23,7 +23,7 @@ try {
   /* Creating a Set to eliminate duplicates and transforming back to an array to respect the function signature */
   return Array.from(new Set(libraries));
 } catch (e) {
-  return [e];
+  return [];
 }
 ''';
 
@@ -35,7 +35,6 @@ FROM
   `httparchive.pages.2021_07_01_*`,
   UNNEST(getSWLibraries(JSON_EXTRACT(payload, '$._pwa.importScriptsInfo'))) AS script
 WHERE
-  JSON_EXTRACT(payload, '$._pwa') != "[]" AND
   JSON_EXTRACT(payload, '$._pwa.importScriptsInfo') != "[]" AND
   JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true" AND
   LOWER(script) NOT LIKE '%workbox%' AND

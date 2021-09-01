@@ -31,7 +31,6 @@ JOIN
     FROM
       `httparchive.pages.2021_07_01_*`
     WHERE
-      JSON_EXTRACT(payload, '$._pwa') != "[]" AND
       JSON_EXTRACT(payload, '$._pwa.manifests') != "[]" AND
       JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
     GROUP BY
@@ -39,7 +38,6 @@ JOIN
   )
 USING (_TABLE_SUFFIX)
 WHERE
-  JSON_EXTRACT(payload, '$._pwa') != "[]" AND
   JSON_EXTRACT(payload, '$._pwa.manifests') != "[]" AND
   JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
 GROUP BY
@@ -67,14 +65,12 @@ JOIN
     FROM
       `httparchive.pages.2021_07_01_*`
     WHERE
-      JSON_EXTRACT(payload, '$._pwa') != "[]" AND
       JSON_EXTRACT(payload, '$._pwa.manifests') != "[]"
     GROUP BY
       _TABLE_SUFFIX
   )
 USING (_TABLE_SUFFIX)
 WHERE
-  JSON_EXTRACT(payload, '$._pwa') != "[]" AND
   JSON_EXTRACT(payload, '$._pwa.manifests') != "[]"
 GROUP BY
   client,

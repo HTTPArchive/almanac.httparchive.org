@@ -17,7 +17,6 @@ JOIN
     FROM
       `httparchive.pages.2021_07_01_*`
     WHERE
-      JSON_EXTRACT(payload, '$._pwa') != "[]" AND
       JSON_EXTRACT(payload, '$._pwa.manifests') != "[]" AND
       JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
     GROUP BY
@@ -25,7 +24,6 @@ JOIN
   )
 USING (_TABLE_SUFFIX)
 WHERE
-  JSON_EXTRACT(payload, '$._pwa') != "[]" AND
   JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true" AND
   JSON_EXTRACT(payload, '$._pwa.manifests') != "[]" AND
   JSON_EXTRACT_SCALAR(JSON_VALUE(payload, "$._well-known"), "$['/.well-known/assetlinks.json'].found") = 'true'
