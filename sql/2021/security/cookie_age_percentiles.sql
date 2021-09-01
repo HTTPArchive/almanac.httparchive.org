@@ -39,7 +39,7 @@ WITH age_values AS (
     client,
     getCookieAgeValues(JSON_EXTRACT(payload, '$.response.headers'), startedDateTime) AS values
   FROM
-    `httparchive.sample_data.requests`
+    `httparchive.almanac.requests`
   WHERE
     date = "2021-07-01"
 ),
