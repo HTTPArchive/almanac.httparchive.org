@@ -28,7 +28,7 @@ JOIN
   )
 USING
   (origin),
-  UNNEST ([10, 25, 50, 75, 90, 100]) AS percentile
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 WHERE
   date IN ('2021-07-01') AND
   (
