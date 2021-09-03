@@ -22,7 +22,7 @@ CREATE TEMPORARY FUNCTION getCookieAgeValues(headers STRING, epochOfRequest NUME
           result["maxAge"].push(maxAge);
       }
       if (regexExpires.exec(cookie)) {
-          expires = Number(Date(regexExpires.exec(cookie)[1])) - epochOfRequest;
+          expires = Math.round(Number(new Date(regexExpires.exec(cookie)[1])) / 1000) - epochOfRequest;
           result["expires"].push(Number.isSafeInteger(expires) ? expires : null);
       }
       if (maxAge) {
