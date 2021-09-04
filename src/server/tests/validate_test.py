@@ -118,7 +118,7 @@ def test_invalid_chapter():
 
 
 def test_typo_chapter():
-    assert_validate_chapter('http-2', '2019', 'http2')
+    assert_validate_chapter('http-2', '2019', 'http')
 
 
 def test_uppercase_chapter():
