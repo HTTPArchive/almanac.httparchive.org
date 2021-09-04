@@ -144,6 +144,7 @@ Tenzij anders vermeld, zijn de statistieken in alle {{ supported_chapters | leng
     "IV. Content Distribution": "IV. Contentdistributie"
   }
 %}
+
 {%
   set localizedChapterTitles = {
     "javascript": "JavaScript",
@@ -165,12 +166,15 @@ Tenzij anders vermeld, zijn de statistieken in alle {{ supported_chapters | leng
     "cdn": "CDN",
     "page-weight": "Paginagewicht",
     "resource-hints": "Bronhints",
-    "http2": "HTTP/2",
+    "http": "HTTP",
     "privacy": "Privacy",
     "capabilities": "Mogelijkheden",
     "jamstack": "Jamstack"
   }
 %}
+{% if (year == "2019" or year == "2020") %}
+{% set _dummy = localizedChapterTitles.__setitem__("http", "HTTP/2") %}
+{% endif %}
 
 {% set localizedTeamNames = {
   "analysts": "Analisten",
