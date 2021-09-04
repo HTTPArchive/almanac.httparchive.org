@@ -33,7 +33,7 @@ In 2016, when asked to explain why an Australian tourist I'd talked to was delig
 
 The point was simple: though you might benefit from increased bandwidth, the laws of physics still prevail. An Australian is unable to escape laws of latency. In the best case scenario, at home in Sydney, this Australian was experiencing enough latency that his internet was at times perceived as unresponsive.
 
-Now, imagine that the same Australian, knowing that at the 75th percentile, his page is making about 108 requests (more on that later), and we still have no idea of the network protocol, the resources being requested, the level of compression or optimization. You can pursue the [HTTP/2](./http2) and [Compression](./compression) chapters for more information on the life of a modern request.
+Now, imagine that the same Australian, knowing that at the 75th percentile, his page is making about 108 requests (more on that later), and we still have no idea of the network protocol, the resources being requested, the level of compression or optimization. You can pursue the [HTTP/2](./http) and [Compression](./compression) chapters for more information on the life of a modern request.
 
 ### Assets
 
