@@ -145,7 +145,7 @@ def get_view_args(lang=None, year=None):
 # Images were originally in folders with naming conventions like 05_Third_Parties
 # These have been mapped to the standard slug names (e.g. third-parties)
 def convert_old_image_path(folder):
-    return '%s' % folder[3:].replace('HTTP_2', 'http2').replace('_', '-').lower()
+    return '%s' % folder[3:].replace('HTTP_2', 'http').replace('http2', 'http').replace('_', '-').lower()
 
 
 # Render the methodology chapter and pull out the section. Also applies some

@@ -58,25 +58,25 @@ headers AS (
 ),
 
 base AS (
-    SELECT
-      client,
-      req_origin,
-      page_origin,
-      timing_allow_origin,
-      req_category,
-      IF(
-          page_origin = req_origin
-          OR timing_allow_origin = "*, "
-          OR STRPOS(timing_allow_origin, CONCAT(page_origin, ", ")) > 0,
+  SELECT
+    client,
+    req_origin,
+    page_origin,
+    timing_allow_origin,
+    req_category,
+    IF(
+      page_origin = req_origin OR
+      timing_allow_origin = "*, " OR
+      STRPOS(timing_allow_origin, CONCAT(page_origin, ", ")) > 0,
       1, 0) AS timing_allowed
-    FROM headers
+  FROM headers
 )
 
 SELECT
-    client,
-    COUNT(0) AS total_requests,
-    SUM(timing_allowed) / COUNT(0) AS pct_timing_allowed_requests
+  client,
+  COUNT(0) AS total_requests,
+  SUM(timing_allowed) / COUNT(0) AS pct_timing_allowed_requests
 FROM
-    base
+  base
 GROUP BY
   client

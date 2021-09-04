@@ -144,6 +144,7 @@ Web Almanac वेब समुदाय की मेहनत से संभ
     "IV. Content Distribution": "IV. सामग्री वितरण"
   }
 %}
+
 {%
   set localizedChapterTitles = {
     "javascript": "JavaScript",
@@ -165,12 +166,15 @@ Web Almanac वेब समुदाय की मेहनत से संभ
     "cdn": "CDN",
     "page-weight": "पेज वेट",
     "resource-hints": "संसाधन संकेत",
-    "http2": "HTTP/2",
+    "http": "HTTP",
     "privacy": "गोपनीयता",
     "capabilities": "क्षमता",
     "jamstack": "Jamstack"
   }
 %}
+{% if (year == "2019" or year == "2020") %}
+{% set _dummy = localizedChapterTitles.__setitem__("http", "HTTP/2") %}
+{% endif %}
 
 {% set localizedTeamNames = {
   "analysts": "विश्लेषक",

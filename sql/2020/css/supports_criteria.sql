@@ -63,5 +63,4 @@ GROUP BY
   supports
 ORDER BY
   pct DESC
-LIMIT
-  300
+LIMIT 300

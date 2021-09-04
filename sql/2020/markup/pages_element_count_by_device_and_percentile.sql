@@ -31,7 +31,7 @@ SELECT
   # total number of elements on a page
   APPROX_QUANTILES(element_count_info.elements_count, 1000)[OFFSET(percentile * 10)] AS elements_count,
 
-    # number of types of elements on a page
+  # number of types of elements on a page
   APPROX_QUANTILES(element_count_info.types_count, 1000)[OFFSET(percentile * 10)] AS types_count
 
 FROM (
@@ -41,8 +41,8 @@ FROM (
     url,
     get_element_count_info(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS element_count_info
   FROM
-  `httparchive.pages.2020_08_01_*`,
-  UNNEST([10, 25, 50, 75, 90]) AS percentile
+    `httparchive.pages.2020_08_01_*`,
+    UNNEST([10, 25, 50, 75, 90]) AS percentile
 )
 GROUP BY
   percentile,

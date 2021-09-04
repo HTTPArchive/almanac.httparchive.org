@@ -9,11 +9,11 @@ SELECT
 FROM
   `httparchive.technologies.2020_08_01_*`
 WHERE
-  category = 'Cryptominers'
-  OR category = 'Cryptominer'
+  category = 'Cryptominers' OR
+  category = 'Cryptominer'
 GROUP BY
   client,
   app
 ORDER BY
-   client,
-   pct DESC
+  client,
+  pct DESC

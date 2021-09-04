@@ -5,9 +5,7 @@ CREATE TEMP FUNCTION array_slice(arr ARRAY<STRING>, start INT64, finish INT64)
 RETURNS ARRAY<STRING> AS (
   ARRAY(
     SELECT part
-    FROM UNNEST(arr) part
-    -- SQL Linter can't handle WITH OFFSET syntax so escape it
-    WITH OFFSET index  -- noqa: PRS
+    FROM UNNEST(arr) part WITH OFFSET AS index
     WHERE index BETWEEN start AND finish
     ORDER BY index
   )
@@ -28,7 +26,7 @@ WITH app_headers AS (
   ON
     r._TABLE_SUFFIX = t._TABLE_SUFFIX AND
     r.urlShort = t.url,
-  UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy', 'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To', 'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection']) AS headername
+    UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy', 'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To', 'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection']) AS headername
   WHERE
     firstHtml AND
     category IN UNNEST(['Blogs', 'CDN', 'Web frameworks', 'Programming languages', 'CMS', 'Ecommerce', 'PaaS', 'Security'])
@@ -42,7 +40,7 @@ SELECT
   COUNT(DISTINCT IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')) AND CONCAT(category, '_', app) IN UNNEST(array_slice(top_apps, 0, topN - 1)), url, NULL)) AS freq_in_topN,
   SAFE_DIVIDE(COUNT(DISTINCT IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')) AND CONCAT(category, '_', app) IN UNNEST(array_slice(top_apps, 0, topN - 1)), url, NULL)), global_freq) AS pct_overall
 FROM
-    app_headers
+  app_headers
 INNER JOIN (
   SELECT
     headername,
@@ -84,7 +82,7 @@ INNER JOIN (
     headername)
 USING
   (client, headername),
-UNNEST(GENERATE_ARRAY(1, 10)) AS topN
+  UNNEST(GENERATE_ARRAY(1, 10)) AS topN
 GROUP BY
   client,
   topN,

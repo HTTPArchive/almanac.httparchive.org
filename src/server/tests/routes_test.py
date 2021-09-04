@@ -150,7 +150,11 @@ def test_render_en_2019_ebook(client):
 
 
 def test_render_old_image_dir_redirect(client):
-    assert_route(client, '/static/images/2019/20_HTTP2/random.png', 301, '/static/images/2019/http2/random.png')
+    assert_route(client, '/static/images/2019/02_CSS/random.png', 301, '/static/images/2019/css/random.png')
+
+
+def test_render_old_http_image_dir_redirect(client):
+    assert_route(client, '/static/images/2020/http2/random.png', 301, '/static/images/2020/http/random.png')
 
 
 def test_render_old_hero_image_dir_redirect(client):

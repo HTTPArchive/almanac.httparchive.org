@@ -7,7 +7,7 @@ SELECT
   ROUND(AVG(kb_transfered), 2) AS avg_kb_transfered
 FROM (
 
-SELECT
+  SELECT
     client,
     page,
     SUM(CAST(JSON_EXTRACT_SCALAR(payload, "$._bytesIn") AS INT64) / 1024) AS kb_transfered,

@@ -121,7 +121,7 @@ Support for `module` and `nomodule` is broadening, but still relatively new. As 
 
 ### Request count
 
-Another way of looking at how much JavaScript we use is to explore how many JavaScript requests are made on each page. While reducing the number of requests was paramount to maintaining good performance with HTTP/1.1, with HTTP/2 the opposite is the case: breaking JavaScript down into <a hreflang="en" href="https://web.dev/granular-chunking-nextjs/">smaller, individual files</a> is [typically better for performance](../2019/http2#impact-of-http2).
+Another way of looking at how much JavaScript we use is to explore how many JavaScript requests are made on each page. While reducing the number of requests was paramount to maintaining good performance with HTTP/1.1, with HTTP/2 the opposite is the case: breaking JavaScript down into <a hreflang="en" href="https://web.dev/granular-chunking-nextjs/">smaller, individual files</a> is [typically better for performance](../2019/http#impact-of-http2).
 
 {{ figure_markup(
   image="requests-2020.png",

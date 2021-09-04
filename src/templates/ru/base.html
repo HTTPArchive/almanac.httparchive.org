@@ -144,6 +144,7 @@
     "IV. Content Distribution": "IV. Распространение контента"
   }
 %}
+
 {%
   set localizedChapterTitles = {
     "javascript": "JavaScript",
@@ -165,12 +166,15 @@
     "cdn": "CDN",
     "page-weight": "Размер страницы",
     "resource-hints": "Ресурсные подсказки",
-    "http2": "HTTP/2",
+    "http": "HTTP",
     "privacy": "Приватность",
     "capabilities": "Возможности",
     "jamstack": "Jamstack"
   }
 %}
+{% if (year == "2019" or year == "2020") %}
+{% set _dummy = localizedChapterTitles.__setitem__("http", "HTTP/2") %}
+{% endif %}
 
 {% set localizedTeamNames = {
   "analysts": "Аналитики",

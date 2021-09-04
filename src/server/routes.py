@@ -148,7 +148,13 @@ def ebook(lang, year):
     return render_template('%s/%s/ebook.html' % (lang, year), config=config)
 
 
-# Redirect requests for the older image URLs to new URLs
+# Redirect requests for http2 to new http URLs
+@app.route('/static/images/20<regex("[0-9][0-9]"):year>/http2/<image>')
+def redirect_old_http2(year, image):
+    return redirect("/static/images/20%s/http/%s" % (year, image)), 301
+
+
+# Redirect requests for the older 2019 mage URLs to new URLs
 @app.route('/static/images/2019/<regex("[0-2][0-9]_.*"):folder>/<image>')
 def redirect_old_images(folder, image):
     return redirect("/static/images/2019/%s/%s" % (convert_old_image_path(folder), image)), 301

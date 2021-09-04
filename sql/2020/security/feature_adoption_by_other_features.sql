@@ -23,7 +23,7 @@ SELECT
   SAFE_DIVIDE(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')) AND REGEXP_CONTAINS(respOtherHeaders, '(?i)X-XSS-Protection ')), COUNTIF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')))) AS pct_header_and_xss
 FROM
   `httparchive.summary_requests.2020_08_01_*`,
-UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy', 'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To', 'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection']) AS headername
+  UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy', 'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To', 'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection']) AS headername
 WHERE
   firstHtml
 GROUP BY

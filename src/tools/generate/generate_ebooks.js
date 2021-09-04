@@ -22,7 +22,7 @@ const update_links = (chapter, chapter_config) => {
   body = body.replace(/ href="#([a-z0-9-]*)-fig-([0-9]*)"/g,' href="#fig-' + chapter_config.chapter_number + '-$2"');
   // Replace other chapter references to anchor link (e.g. ./javascript -> #javascript)
   body = body.replace(/ href="\.\//g,' href="#');
-  // Replace other year chapter references with absolute line (e.g. ../2019/http2 -> https://almanac.httparchive.org/en/2019/http2)
+  // Replace other year chapter references with absolute line (e.g. ../2019/http -> https://almanac.httparchive.org/en/2019/http)
   body = body.replace(/ href="\.\.\//g,' href="https://almanac.httparchive.org/{{ lang }}/');
   // For external links add footnote span - unless the link text is the address (begining with http, www or @ for Twitter ids)
   body = body.replace(/ href="(http[^"]*?)"([^>]*?)>((?!(?:www|http|@))[^<]*?)<\/a>/g,' href="$1"$2>$3</a><span class="fn">$1</span>');

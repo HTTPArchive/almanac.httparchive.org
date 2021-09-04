@@ -19,7 +19,7 @@ base AS (
     url,
     cmp_app,
     COUNT(DISTINCT url) OVER (PARTITION BY client) AS total_pages,
-    COUNT(DISTINCT url) / COUNT(DISTINCT url) OVER (PARTITION BY 0) AS pct_pages_with_cmp
+    COUNT(DISTINCT url) / COUNT(DISTINCT url) OVER () AS pct_pages_with_cmp
   FROM
     apps
   GROUP BY

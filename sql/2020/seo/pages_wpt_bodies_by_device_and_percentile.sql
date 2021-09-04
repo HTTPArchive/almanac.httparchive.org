@@ -111,8 +111,8 @@ FROM (
     url,
     get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
   FROM
-  `httparchive.pages.2020_08_01_*`,
-  UNNEST([10, 25, 50, 75, 90]) AS percentile
+    `httparchive.pages.2020_08_01_*`,
+    UNNEST([10, 25, 50, 75, 90]) AS percentile
 )
 GROUP BY
   percentile,
