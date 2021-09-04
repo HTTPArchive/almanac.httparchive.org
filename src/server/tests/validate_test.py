@@ -121,6 +121,10 @@ def test_typo_chapter():
     assert_validate_chapter('http-2', '2019', 'http')
 
 
+def test_typo_chapter2():
+    assert_validate_chapter('http2', '2020', 'http')
+
+
 def test_uppercase_chapter():
     assert_validate_chapter('Javascript', '2019', 'javascript')
 
