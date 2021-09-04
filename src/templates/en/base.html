@@ -144,6 +144,7 @@ Unless otherwise noted, the metrics in all of the {{ supported_chapters | length
     "IV. Content Distribution": "IV. Content Distribution"
   }
 %}
+
 {%
   set localizedChapterTitles = {
     "javascript": "JavaScript",
@@ -165,12 +166,15 @@ Unless otherwise noted, the metrics in all of the {{ supported_chapters | length
     "cdn": "CDN",
     "page-weight": "Page Weight",
     "resource-hints": "Resource Hints",
-    "http2": "HTTP/2",
+    "http": "HTTP",
     "privacy": "Privacy",
     "capabilities": "Capabilities",
     "jamstack": "Jamstack"
   }
 %}
+{% if (year == "2019" or year == "2020") %}
+{% set _dummy = localizedChapterTitles.__setitem__("http", "HTTP/2") %}
+{% endif %}
 
 {% set localizedTeamNames = {
   "analysts": "Analysts",

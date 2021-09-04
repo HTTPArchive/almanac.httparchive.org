@@ -121,7 +121,7 @@ La compatibilidad con `module` y `nomodule` va en aumento pero aún es una estra
 
 ### Conteo de peticiones
 
-Otra manera de ver cuánto JavaScript usamos es explorar cuantas peticiones de JavaScript son hechas por página. Reducir el número de peticiones era fundamental para tener un buen desempeño usando HTTP/1.1, sin embargo, con HTTP/2 aplica lo contrario: dividir el código en JavaScript en <a hreflang="en" href="https://web.dev/granular-chunking-nextjs/">archivos individuales y más pequeños</a> resulta en [un mejor desempeño en general.](../2019/http2#impact-of-http2).
+Otra manera de ver cuánto JavaScript usamos es explorar cuantas peticiones de JavaScript son hechas por página. Reducir el número de peticiones era fundamental para tener un buen desempeño usando HTTP/1.1, sin embargo, con HTTP/2 aplica lo contrario: dividir el código en JavaScript en <a hreflang="en" href="https://web.dev/granular-chunking-nextjs/">archivos individuales y más pequeños</a> resulta en [un mejor desempeño en general.](../2019/http#impact-of-http2).
 
 {{ figure_markup(
   image="requests-2020.png",

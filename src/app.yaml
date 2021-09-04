@@ -19,6 +19,9 @@ handlers:
 - url: /static/images/2019/[0-2][0-9]_.*/.*$
   script: auto
   secure: always
+- url: /static/images/20[0-9][0-9]/http2/.*$
+  script: auto
+  secure: always
 
 # Allow python redirects for 2019.css which was renamed alamanac.css
 - url: /static/css/2019.css.*$
