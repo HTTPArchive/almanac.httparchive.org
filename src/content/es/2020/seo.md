@@ -23,7 +23,7 @@ featured_stat_label_3: Más palabras son mostradas en el HTML renderizado que en
 
 ## Introducción
 
-La optimización para motores de búsqueda (SEO por sus siglas en inglés) es la práctica de optimizar la configuración técnica, relevancia de contenido y popularidad de enlaces de los sitios web para hacer su información más fácil de encontrar y más relevante para satisfacer las necesidades de búsqueda de los usuarios. Como consecuencia, los sitios web mejoran su visibilidad en los resultados de los motores de búsqueda para búsquedas relevantes relacionadas a su contenido y negocio, aumentando su tráfico, conversiones y ganancias. 
+La optimización para motores de búsqueda (SEO por sus siglas en inglés) es la práctica de optimizar la configuración técnica, relevancia de contenido y popularidad de enlaces de los sitios web para hacer su información más fácil de encontrar y más relevante para satisfacer las necesidades de búsqueda de los usuarios. Como consecuencia, los sitios web mejoran su visibilidad en los resultados de los motores de búsqueda para búsquedas relevantes relacionadas a su contenido y negocio, aumentando su tráfico, conversiones y ganancias.
 
 A pesar de su compleja naturaleza multidisciplinaria, en los últimos años, el SEO ha evolucionado a convertirse en una de las estrategias y canales de marketing digital más populares.
 
@@ -1133,9 +1133,9 @@ El resto de los valores de idioma y país más populares puede ser visualizado e
 
 Google presta especial atención a la seguridad en todos los aspectos. El buscador mantiene una lista de sitios que han mostrado actividad sospechosa o han sido hackeados. Search Console perfila estos problemas y los usuarios de Chrome son presentados con advertencias antes de visitar sitios con estos problemas. Además, Google proporciona un <a hreflang="en" href="https://developers.google.com/search/blog/2014/08/https-as-ranking-signal">impulso algorítmico</a> a páginas que se ofrecen a través de <a hreflang="en" href="https://developers.google.com/search/docs/advanced/security/https">HTTPS</a> (Protocolo seguro de transferencia de hipertextos). Para un análisis más profundo en este tema, revisa el capítulo de [Seguridad](./security).
 
-#### Uso de HTTPS 
+#### Uso de HTTPS
 
-Encontramos que 77.44% de las páginas de escritorio y 73.22% de las páginas móviles han adoptado el uso de HTTPS. Esto es un aumento de 10.38% respecto al año pasado. Es importante mencionar que los buscadores se han vuelto más agresivos en promover HTTPS al señalar que las páginas son inseguras cuando las visitas sin HTTPS. Además, HTTPS es un requisito actual para capitalizar en otros protocolos de mayor rendimiento como HTTP/2 and HTTP/3 (también conocido como HTTP sobre QUIC). Puedes aprender más sobre el estado de estos protocolos en el capítulo de [HTTP/2](./http2).
+Encontramos que 77.44% de las páginas de escritorio y 73.22% de las páginas móviles han adoptado el uso de HTTPS. Esto es un aumento de 10.38% respecto al año pasado. Es importante mencionar que los buscadores se han vuelto más agresivos en promover HTTPS al señalar que las páginas son inseguras cuando las visitas sin HTTPS. Además, HTTPS es un requisito actual para capitalizar en otros protocolos de mayor rendimiento como HTTP/2 and HTTP/3 (también conocido como HTTP sobre QUIC). Puedes aprender más sobre el estado de estos protocolos en el capítulo de [HTTP/2](./http).
 
 Todo esto ha probablemente contribuido a una mayor tasa de adopción año tras año.
 
@@ -1186,7 +1186,7 @@ Asimismo, identificamos que hubo una ligera mejora respecto a los descubrimiento
 
 - **`robots.txt`**: El año pasado 72.16% de los sitios móviles tenían un `robots.txt` válido comparado con 74.91% este año.
 - **etiqueta canonical**: El año pasado identificamos que 48.34% de las páginas móviles incluían una etiqueta canonical en comparación con 53.61% este año.
-- **etiqueta `title`**: Este año encontramos que 98.75% de las páginas de escritorio incluyen esta etiqueta, mientras que 98.7% de las páginas móviles también la incluyen. El año pasado se encontró que 97.1% de las páginas móviles tenían una etiqueta `title`. 
+- **etiqueta `title`**: Este año encontramos que 98.75% de las páginas de escritorio incluyen esta etiqueta, mientras que 98.7% de las páginas móviles también la incluyen. El año pasado se encontró que 97.1% de las páginas móviles tenían una etiqueta `title`.
 - **`meta` descripción**: Este año, encontramos que 68.62% de las páginas de escritorio y 68.22% de las páginas móviles incluían una `meta` descripción, una mejora respecto al año pasado donde 64.02% de las páginas móviles tenían una.
 - **datos estructurados**: A pesar de que las reseñas no deben asociarse con páginas de inicio, los datos indican que hay un aumento en `AggregateRating` de 23.9% en móvil y 23.7% en escritorio.
 - **uso de HTTPS**: 77.44% de las páginas de escritorio y 73.22% de las páginas móviles han adoptado HTTPS. Esto es un aumento de 10.38% respecto al año pasado.

@@ -135,7 +135,7 @@
     "date_modified": "2021-06-07T00:00:00.000Z",
     "hash": "ba87585ff3a39386fb311bc31feed006"
   },
-  "en/2019/chapters/http2.html": {
+  "en/2019/chapters/http.html": {
     "date_published": "2019-11-11T00:00:00.000Z",
     "date_modified": "2021-06-07T00:00:00.000Z",
     "hash": "08210e065ba19f4928201e02267ba8c0"
@@ -260,7 +260,7 @@
     "date_modified": "2021-06-07T00:00:00.000Z",
     "hash": "06b641d79ec830c6cdca93b5675b638e"
   },
-  "en/2020/chapters/http2.html": {
+  "en/2020/chapters/http.html": {
     "date_published": "2020-12-09T00:00:00.000Z",
     "date_modified": "2021-06-07T00:00:00.000Z",
     "hash": "45fdb073c9d62db149380ec8148eee73"
@@ -420,7 +420,7 @@
     "date_modified": "2021-05-02T00:00:00.000Z",
     "hash": "1e553a8bac65d6a6e4c043cd18901fd1"
   },
-  "en/2021/chapters/http2.html": {
+  "en/2021/chapters/http.html": {
     "date_published": "2021-05-02T00:00:00.000Z",
     "date_modified": "2021-05-02T00:00:00.000Z",
     "hash": "56622edb8d9d0f45453b30623bebb96c"
@@ -560,7 +560,7 @@
     "date_modified": "2020-12-19T00:00:00.000Z",
     "hash": "8e897c98d76f5bedb8713781b8cf5389"
   },
-  "es/2020/chapters/http2.html": {
+  "es/2020/chapters/http.html": {
     "date_published": "2021-01-03T00:00:00.000Z",
     "date_modified": "2021-06-07T00:00:00.000Z",
     "hash": "6aaa51188b6f2ffa0b2c7fe42558913e"
@@ -795,7 +795,7 @@
     "date_modified": "2021-06-07T00:00:00.000Z",
     "hash": "3a427b4e0f6dfd41b529f853ee366738"
   },
-  "it/2020/chapters/http2.html": {
+  "it/2020/chapters/http.html": {
     "date_published": "2021-03-17T00:00:00.000Z",
     "date_modified": "2021-06-07T00:00:00.000Z",
     "hash": "549f9be1da18b19c2f501f6925320f64"
@@ -895,7 +895,7 @@
     "date_modified": "2021-06-07T00:00:00.000Z",
     "hash": "c305cc10b7e475bd7d17d6ff4a8c25b7"
   },
-  "ja/2019/chapters/http2.html": {
+  "ja/2019/chapters/http.html": {
     "date_published": "2019-11-11T00:00:00.000Z",
     "date_modified": "2021-06-07T00:00:00.000Z",
     "hash": "7f389fc3f5e43131f7a0a4419cbc381a"
@@ -1020,7 +1020,7 @@
     "date_modified": "2021-06-07T00:00:00.000Z",
     "hash": "de3b6caeaab542d29d077afc952730b4"
   },
-  "ja/2020/chapters/http2.html": {
+  "ja/2020/chapters/http.html": {
     "date_published": "2021-02-06T00:00:00.000Z",
     "date_modified": "2021-06-07T00:00:00.000Z",
     "hash": "0637aaaf906f49d8d095aa9d03fd3e99"
@@ -1175,7 +1175,7 @@
     "date_modified": "2021-06-07T00:00:00.000Z",
     "hash": "6061e1cb715fa725710412c3242fd3d1"
   },
-  "nl/2020/chapters/http2.html": {
+  "nl/2020/chapters/http.html": {
     "date_published": "2021-04-02T00:00:00.000Z",
     "date_modified": "2021-06-07T00:00:00.000Z",
     "hash": "3d810dc731fe9e2be9b7e1c1568eedd4"
@@ -1285,7 +1285,7 @@
     "date_modified": "2021-06-10T00:00:00.000Z",
     "hash": "b5d36514d6c11e08f0b499375f83b343"
   },
-  "pt/2019/chapters/http2.html": {
+  "pt/2019/chapters/http.html": {
     "date_published": "2019-11-11T00:00:00.000Z",
     "date_modified": "2021-06-07T00:00:00.000Z",
     "hash": "b1e6fe0e3f6e8133149299426bfa5b0b"

@@ -144,6 +144,7 @@ Web Almanacは、ウェブ・コミュニティの努力によって実現して
     "IV. Content Distribution": "IV. コンテンツ配信"
   }
 %}
+
 {%
   set localizedChapterTitles = {
     "javascript": "JavaScript",
@@ -165,12 +166,15 @@ Web Almanacは、ウェブ・コミュニティの努力によって実現して
     "cdn": "CDN",
     "page-weight": "Page Weight",
     "resource-hints": "リソースのヒント",
-    "http2": "HTTP/2",
+    "http": "HTTP",
     "privacy": "プライバシー",
     "capabilities": "能力",
     "jamstack": "Jamstack"
   }
 %}
+{% if (year == "2019" or year == "2020") %}
+{% set _dummy = localizedChapterTitles.__setitem__("http", "HTTP/2") %}
+{% endif %}
 
 {% set localizedTeamNames = {
   "analysts": "分析者",

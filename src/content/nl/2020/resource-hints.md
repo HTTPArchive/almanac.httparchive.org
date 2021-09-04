@@ -264,7 +264,7 @@ Over het algemeen is voorspellend prefetchen nog onbekend terrein, maar in combi
 
 ## HTTP/2 Push
 
-[HTTP/2](./http2) heeft een functie genaamd "server push" die de paginaprestaties mogelijk kan verbeteren wanneer uw product lange Round Trip Times ([RTTs](https://developer.mozilla.org/en-US/docs/Glossary/Round_Trip_Time_(RTT))) of serververwerking ervaart. Kort gezegd, in plaats van te wachten tot de cliënt een verzoek verzendt, pusht de server preventief een bron waarvan hij voorspelt dat de cliënt deze spoedig daarna zal opvragen.
+[HTTP/2](./http) heeft een functie genaamd "server push" die de paginaprestaties mogelijk kan verbeteren wanneer uw product lange Round Trip Times ([RTTs](https://developer.mozilla.org/en-US/docs/Glossary/Round_Trip_Time_(RTT))) of serververwerking ervaart. Kort gezegd, in plaats van te wachten tot de cliënt een verzoek verzendt, pusht de server preventief een bron waarvan hij voorspelt dat de cliënt deze spoedig daarna zal opvragen.
 
 {{ figure_markup(
   caption="Het percentage HTTP / 2-push-pagina's dat gebruikmaakt van `preload`/`nopush`.",
