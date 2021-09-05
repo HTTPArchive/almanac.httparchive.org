@@ -13,12 +13,12 @@ FROM (
   SELECT
     client,
     page,
-    COUNTIF(protocol = 'http/0.9') / COUNT(0) AS http09_pct,
-    COUNTIF(protocol = 'http/1.0') / COUNT(0) AS http10_pct,
-    COUNTIF(protocol = 'http/1.1') / COUNT(0) AS http11_pct,
-    COUNTIF(protocol = 'HTTP/2') / COUNT(0) AS http2_pct,
-    COUNTIF(protocol = 'HTTP/3' OR protocl = 'h3-29' OR protocol = 'h3-Q050' OR protocol = 'QUIC') / COUNT(0) AS http3_pct,
-    COUNTIF(protocol NOT IN ('http/0.9', 'http/1.0', 'http/1.1', 'HTTP/2', 'HTTP/3', 'QUIC', 'h3-29', 'h3-Q050')) / COUNT(0) AS other_pct,
+    COUNTIF(LOWER(protocol) = 'http/0.9') / COUNT(0) AS http09_pct,
+    COUNTIF(LOWER(protocol) = 'http/1.0') / COUNT(0) AS http10_pct,
+    COUNTIF(LOWER(protocol) = 'http/1.1') / COUNT(0) AS http11_pct,
+    COUNTIF(LOWER(protocol) = 'http/2') / COUNT(0) AS http2_pct,
+    COUNTIF(LOWER(protocol) IN ('http/3', 'h3-29', 'h3-q050', 'quic')) / COUNT(0) AS http3_pct,
+    COUNTIF(LOWER(protocol) NOT IN ('http/0.9', 'http/1.0', 'http/1.1', 'http/2', 'http/3', 'quic', 'h3-29', 'h3-q050')) / COUNT(0) AS other_pct,
     COUNTIF(protocol IS NULL) / COUNT(0) AS null_pct
   FROM
     `httparchive.almanac.requests`

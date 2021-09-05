@@ -26,7 +26,7 @@ FROM
 WHERE
   date = '2021-07-01' AND
   url LIKE "https://%" AND
-  protocol = "HTTP/2"
+  LOWER(protocol) = "http/2"
 GROUP BY
   client,
   firstHtml,

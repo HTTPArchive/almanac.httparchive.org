@@ -12,7 +12,7 @@ FROM (
     page,
     is_third_party,
     type,
-    COUNTIF(http_version IN ('HTTP/2', 'HTTP/3', 'QUIC', 'h3-29', 'h3-Q050')) / COUNT(0) AS http2_3_pct
+    COUNTIF(LOWER(http_version) IN ('http/2', 'http/3', 'quic', 'h3-29', 'h3-q050')) / COUNT(0) AS http2_3_pct
   FROM (
     SELECT
       client,
