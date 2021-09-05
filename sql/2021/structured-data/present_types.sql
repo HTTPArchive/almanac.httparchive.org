@@ -55,7 +55,12 @@ SELECT
     0
   END
     ) AS `opengraph`,
-  COUNT(0) AS `total`
+  SUM(CASE
+      WHEN JSON_EXTRACT(`structured_data`, '$.structured_data') IS NOT NULL AND JSON_EXTRACT(`structured_data`, '$.log') IS NULL THEN 1
+    ELSE
+    0
+  END
+    ) AS `total`
 FROM (
   SELECT
     JSON_VALUE(JSON_EXTRACT(payload,
