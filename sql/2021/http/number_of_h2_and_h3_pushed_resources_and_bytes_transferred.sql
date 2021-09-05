@@ -12,13 +12,13 @@ FROM (
       client,
       page,
       protocol AS http_version,
-      SUM(CAST(JSON_EXTRACT_SCALAR(payload, '$._bytesIn') AS INT64) / 1024) AS kb_transfered,
+      SUM(respSize / 1024) AS kb_transfered,
       COUNT(0) AS num_requests
     FROM
       `httparchive.almanac.requests`
     WHERE
       date = '2021-07-01' AND
-      JSON_EXTRACT_SCALAR(payload, '$._was_pushed') = '1' AND
+      pushed = '1' AND
       (LOWER(protocol) = "http/2" OR
         LOWER(protocol) LIKE "%quic%" OR
         LOWER(protocol) LIKE "h3%" OR

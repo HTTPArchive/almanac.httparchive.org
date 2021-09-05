@@ -1,11 +1,25 @@
 # standardSQL
-# Detailed upgrade headers for 20.04, 20.05 and 20.06
+# Detailed alt-svc headers
+CREATE TEMPORARY FUNCTION extractHTTPHeader(HTTPheaders STRING, header STRING)
+RETURNS STRING LANGUAGE js AS """
+try {
+  var headers = JSON.parse(HTTPheaders);
+
+  // Filter by header name (which is case insensitive)
+  // If multiple headers it's the same as comma separated
+  return headers.filter(h => h.name.toLowerCase() == header.toLowerCase()).map(h => h.value).join(",");
+
+} catch (e) {
+  return "";
+}
+ """;
+
 SELECT
   client,
   firstHtml,
   protocol AS protocol,
   IF(url LIKE 'https://%', 'https', 'http') AS http_or_https,
-  regexp_extract(regexp_extract(respOtherHeaders, r'(?is)Upgrade = (.*)'), r'(?im)^([^=]*?)(?:, [a-z-]+ = .*)') IS NOT NULL AS upgrade,
+  NORMALIZE_AND_CASEFOLD(extractHTTPHeader(response_headers, "upgrade")) AS upgrade,
   COUNT(0) AS num_requests,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
@@ -19,7 +33,7 @@ GROUP BY
   protocol,
   http_or_https,
   upgrade
-HAVING
+QUALIFY -- Use QUALIFY rather than HAVING to allow total column to work
   num_requests >= 100
 ORDER BY
   num_requests DESC

@@ -1,25 +1,24 @@
 # standardSQL
 # Number of HTTPS requests using HTTP/2 which return upgrade HTTP header containing h2
-CREATE TEMPORARY FUNCTION getUpgradeHeader(payload STRING)
-RETURNS STRING
-LANGUAGE js AS """
-  try {
-    var $ = JSON.parse(payload);
-    var headers = $.response.headers;
-    var st = headers.find(function(e) {
-      return e['name'].toLowerCase() === 'upgrade'
-    });
-    return st['value'];
-  } catch (e) {
-    return '';
-  }
-""";
+CREATE TEMPORARY FUNCTION extractHTTPHeader(HTTPheaders STRING, header STRING)
+RETURNS STRING LANGUAGE js AS """
+try {
+  var headers = JSON.parse(HTTPheaders);
+
+  // Filter by header name (which is case insensitive)
+  // If multiple headers it's the same as comma separated
+  return headers.filter(h => h.name.toLowerCase() == header.toLowerCase()).map(h => h.value).join(",");
+
+} catch (e) {
+  return "";
+}
+ """;
 
 SELECT
   client,
   firstHtml,
   protocol AS http_version,
-  COUNTIF(getUpgradeHeader(payload) LIKE "%h2%") AS num_requests,
+  COUNTIF(extractHTTPHeader(response_headers, "upgrade") LIKE "%h2%") AS num_requests,
   COUNT(0) AS total
 FROM
   `httparchive.almanac.requests`

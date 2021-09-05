@@ -11,7 +11,7 @@ FROM (
     client,
     page,
     protocol AS http_version,
-    JSON_EXTRACT_SCALAR(payload, '$._was_pushed') = '1' AS was_pushed
+    pushed = '1' AS was_pushed
   FROM
     `httparchive.almanac.requests`
   WHERE

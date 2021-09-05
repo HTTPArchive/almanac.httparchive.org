@@ -1,15 +1,17 @@
 # standardSQL
 # Count of preload HTTP Headers with nopush attribute set. Once off stat for last crawl
-CREATE TEMPORARY FUNCTION getLinkHeaders(payload STRING)
+CREATE TEMPORARY FUNCTION extractHTTPHeaders(HTTPheaders STRING, header STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS """
 try {
-  var $ = JSON.parse(payload);
-  var headers = $.response.headers;
-  return headers.filter(h => h.name.toLowerCase() == 'link').map(h => h.value);
+  var headers = JSON.parse(HTTPheaders);
+
+  // Filter by header name (which is case insensitive) and return values
+  return headers.filter(h => h.name.toLowerCase() == header.toLowerCase()).map(h => h.value);
+
 } catch (e) {
   return [];
 }
-""";
+ """;
 
 SELECT
   client,
@@ -19,7 +21,7 @@ SELECT
 FROM (
   SELECT
     client,
-    getLinkHeaders(payload) AS link_headers
+    extractHTTPHeaders(response_headers, "link")  AS link_headers
   FROM
     `httparchive.almanac.requests`
   WHERE

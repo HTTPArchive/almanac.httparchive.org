@@ -1,22 +1,25 @@
 # standardSQL
 # Detailed alt-svc headers
-CREATE TEMPORARY FUNCTION getUpgradeHeader(payload STRING)
+CREATE TEMPORARY FUNCTION extractHTTPHeader(HTTPheaders STRING, header STRING)
 RETURNS STRING LANGUAGE js AS """
 try {
-  var $ = JSON.parse(payload);
-  var headers = $.response.headers;
-  return headers.find(h => h.name.toLowerCase() === 'alt-svc').value.trim();
+  var headers = JSON.parse(HTTPheaders);
+
+  // Filter by header name (which is case insensitive)
+  // If multiple headers it's the same as comma separated
+  return headers.filter(h => h.name.toLowerCase() == header.toLowerCase()).map(h => h.value).join(",");
+
 } catch (e) {
-  return '';
+  return "";
 }
-""";
+ """;
 
 SELECT
   client,
   firstHtml,
   protocol AS protocol,
   IF(url LIKE 'https://%', 'https', 'http') AS http_or_https,
-  NORMALIZE_AND_CASEFOLD(getUpgradeHeader(payload)) AS upgrade,
+  NORMALIZE_AND_CASEFOLD(extractHTTPHeader(response_headers, "alt-svc")) AS altsvc,
   COUNT(0) AS num_requests,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
@@ -29,8 +32,8 @@ GROUP BY
   firstHtml,
   protocol,
   http_or_https,
-  upgrade
-HAVING
+  altsvc
+QUALIFY -- Use QUALIFY rather than HAVING to allow total column to work
   num_requests >= 100
 ORDER BY
   num_requests DESC
