@@ -7,7 +7,7 @@ try {
   payloadJSON = JSON.parse(payload);
 
   /* YouTube iFrames account for a lot of these, so we exclude them */
-  /* Annoyingly BigQuery does not support filter yet so need to fo this manually */
+  /* Cannot use filter as it is a complex object and not a straight array */
   function filterYouTube(info) {
 
     var objectKeys = Object.keys(info);
