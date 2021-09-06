@@ -18,7 +18,7 @@ SELECT
   client,
   header_name AS header,
   percentile,
-  ROUND(APPROX_QUANTILES(header_length, 1000)[OFFSET(percentile * 10)], 2) AS length
+  APPROX_QUANTILES(header_length, 1000)[OFFSET(percentile * 10)] AS length
 FROM
   (
     SELECT

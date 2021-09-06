@@ -2,27 +2,43 @@
 # Count of H2 and H3 Sites Grouped By Server
 SELECT
   client,
-  protocol AS http_version,
-  # Omit server version
-  NORMALIZE_AND_CASEFOLD(REGEXP_EXTRACT(resp_server, r'\s*([^/]*)\s*')) AS server_header,
+  server_header,
+  http_version_category,
+  http_version,
   COUNT(0) AS num_pages,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  ROUND(COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client), 4) AS pct
+  SUM(COUNT(0)) OVER (PARTITION BY client, server_header) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client, server_header) AS pct
 FROM
-  `httparchive.almanac.requests`
-WHERE
-  date = '2021-07-01' AND
-  firstHtml AND
-  (LOWER(protocol) = "http/2" OR
-    LOWER(protocol) LIKE "%quic%" OR
-    LOWER(protocol) LIKE "h3%" OR
-    LOWER(protocol) = "http/3"
+  (
+    SELECT
+      client,
+      CASE
+        WHEN LOWER(protocol) = 'quic' OR LOWER(protocol) like 'h3%' THEN 'HTTP/2+'
+        WHEN LOWER(protocol) = 'http/2' OR LOWER(protocol) = 'http/3' THEN 'HTTP/2+'
+        WHEN protocol IS NULL THEN 'Unknown'
+        ELSE UPPER(protocol)
+      END AS http_version_category,
+      CASE
+        WHEN LOWER(protocol) = 'quic' OR LOWER(protocol) like 'h3%' THEN 'HTTP/3'
+        WHEN protocol IS NULL THEN 'Unknown'
+        ELSE UPPER(protocol)
+      END AS http_version,
+      # Omit server version
+      NORMALIZE_AND_CASEFOLD(REGEXP_EXTRACT(resp_server, r'\s*([^/]*)\s*')) AS server_header,
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2021-07-01' AND
+      firstHTML
   )
 GROUP BY
   client,
-  http_version,
-  server_header
-HAVING
-  num_pages >= 100
+  server_header,
+  http_version_category,
+  http_version
+QUALIFY
+  total >= 1000
 ORDER BY
-  num_pages DESC
+  num_pages DESC,
+  client,
+  server_header

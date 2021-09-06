@@ -5,7 +5,7 @@ SELECT
   client,
   is_third_party,
   type,
-  ROUND(APPROX_QUANTILES(http2_3_pct, 1000)[OFFSET(percentile * 10)], 2) AS http2_3_pct
+  APPROX_QUANTILES(http2_3_pct, 1000)[OFFSET(percentile * 10)] AS http2_3_pct
 FROM (
   SELECT
     client,
