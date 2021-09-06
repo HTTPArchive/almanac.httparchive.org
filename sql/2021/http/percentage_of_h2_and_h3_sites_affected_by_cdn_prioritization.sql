@@ -6,7 +6,7 @@ SELECT
   IF(pages.cdn = "", "Not using CDN", pages.cdn) AS CDN,
   IF(prioritization_status IS NOT NULL, prioritization_status, "Unknown") AS prioritizes_correctly,
   COUNT(0) AS num_pages,
-  ROUND(COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client), 4) AS pct
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM (
     SELECT
       date,

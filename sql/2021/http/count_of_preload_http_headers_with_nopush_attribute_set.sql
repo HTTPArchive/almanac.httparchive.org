@@ -17,7 +17,7 @@ SELECT
   client,
   COUNTIF(link_header LIKE '%nopush%') AS num_nopush,
   COUNT(0) AS total_preload,
-  ROUND(COUNTIF(link_header LIKE '%nopush%') / COUNT(0), 4) AS pct_nopush
+  COUNTIF(link_header LIKE '%nopush%') / COUNT(0) AS pct_nopush
 FROM (
   SELECT
     client,
