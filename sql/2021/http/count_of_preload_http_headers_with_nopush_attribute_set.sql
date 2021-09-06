@@ -21,7 +21,7 @@ SELECT
 FROM (
   SELECT
     client,
-    extractHTTPHeaders(response_headers, "link")  AS link_headers
+    extractHTTPHeaders(response_headers, "link") AS link_headers
   FROM
     `httparchive.almanac.requests`
   WHERE

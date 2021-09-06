@@ -17,7 +17,7 @@ try {
 SELECT
   client,
   firstHtml,
-  protocol AS protocol,
+  protocol,
   IF(url LIKE 'https://%', 'https', 'http') AS http_or_https,
   NORMALIZE_AND_CASEFOLD(extractHTTPHeader(response_headers, "alt-svc")) AS altsvc,
   COUNT(0) AS num_requests,
@@ -34,6 +34,6 @@ GROUP BY
   http_or_https,
   altsvc
 QUALIFY -- Use QUALIFY rather than HAVING to allow total column to work
-  num_requests >= 100
+  num_requests >= 100 -- noqa: PRS
 ORDER BY
   num_requests DESC
