@@ -3,7 +3,7 @@
 
 SELECT
   client,
-  LEFT(CAST(status AS STRING),1) AS status_group,
+  LEFT(CAST(status AS STRING), 1) AS status_group,
   status,
   COUNT(0) AS num_requests,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,

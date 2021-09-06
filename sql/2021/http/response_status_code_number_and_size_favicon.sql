@@ -12,7 +12,7 @@ FROM
   (
     SELECT
       client,
-      LEFT(CAST(status AS STRING),1) AS status_group,
+      LEFT(CAST(status AS STRING), 1) AS status_group,
       status,
       url,
       COUNT(0) AS number,
