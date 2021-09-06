@@ -8,7 +8,7 @@ FROM (
   SELECT
     client,
     page,
-    COUNTIF(protocol IN ('http/2', 'http/3', 'quic', 'h3-29', 'h3-q050')) / COUNT(0) AS http2_3_pct
+    COUNTIF(LOWER(protocol) IN ('http/2', 'http/3', 'quic', 'h3-29', 'h3-q050')) / COUNT(0) AS http2_3_pct
   FROM
     `httparchive.almanac.requests`
   WHERE
