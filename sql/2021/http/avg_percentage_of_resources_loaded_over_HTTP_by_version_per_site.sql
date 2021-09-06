@@ -7,7 +7,7 @@ SELECT
   APPROX_QUANTILES(http11_pct, 1000)[OFFSET(50 * 10)] AS http11_pct,
   APPROX_QUANTILES(http2_3_pct, 1000)[OFFSET(50 * 10)] AS http2_3_pct,
   APPROX_QUANTILES(other_pct, 1000)[OFFSET(50 * 10)] AS other_pct,
-  APPROX_QUANTILES(null_pct, 1000)[OFFSET(50 * 10)] AS null_pct,
+  APPROX_QUANTILES(null_pct, 1000)[OFFSET(50 * 10)] AS null_pct
 FROM
   (
     SELECT

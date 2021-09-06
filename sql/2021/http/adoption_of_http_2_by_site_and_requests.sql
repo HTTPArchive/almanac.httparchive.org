@@ -3,13 +3,13 @@
 SELECT
   client,
   CASE
-    WHEN LOWER(protocol) = 'quic' OR LOWER(protocol) like 'h3%' THEN 'HTTP/2+'
+    WHEN LOWER(protocol) = 'quic' OR LOWER(protocol) LIKE 'h3%' THEN 'HTTP/2+'
     WHEN LOWER(protocol) = 'http/2' OR LOWER(protocol) = 'http/3' THEN 'HTTP/2+'
     WHEN protocol IS NULL THEN 'Unknown'
     ELSE UPPER(protocol)
   END AS http_version_category,
   CASE
-    WHEN LOWER(protocol) = 'quic' OR LOWER(protocol) like 'h3%' THEN 'HTTP/3'
+    WHEN LOWER(protocol) = 'quic' OR LOWER(protocol) LIKE 'h3%' THEN 'HTTP/3'
     WHEN protocol IS NULL THEN 'Unknown'
     ELSE UPPER(protocol)
   END AS http_version,

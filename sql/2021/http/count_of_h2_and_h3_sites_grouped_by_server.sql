@@ -13,18 +13,18 @@ FROM
     SELECT
       client,
       CASE
-        WHEN LOWER(protocol) = 'quic' OR LOWER(protocol) like 'h3%' THEN 'HTTP/2+'
+        WHEN LOWER(protocol) = 'quic' OR LOWER(protocol) LIKE 'h3%' THEN 'HTTP/2+'
         WHEN LOWER(protocol) = 'http/2' OR LOWER(protocol) = 'http/3' THEN 'HTTP/2+'
         WHEN protocol IS NULL THEN 'Unknown'
         ELSE UPPER(protocol)
       END AS http_version_category,
       CASE
-        WHEN LOWER(protocol) = 'quic' OR LOWER(protocol) like 'h3%' THEN 'HTTP/3'
+        WHEN LOWER(protocol) = 'quic' OR LOWER(protocol) LIKE 'h3%' THEN 'HTTP/3'
         WHEN protocol IS NULL THEN 'Unknown'
         ELSE UPPER(protocol)
       END AS http_version,
-      # Omit server version
-      NORMALIZE_AND_CASEFOLD(REGEXP_EXTRACT(resp_server, r'\s*([^/]*)\s*')) AS server_header,
+      -- Omit server version
+      NORMALIZE_AND_CASEFOLD(REGEXP_EXTRACT(resp_server, r'\s*([^/]*)\s*')) AS server_header
     FROM
       `httparchive.almanac.requests`
     WHERE
@@ -37,7 +37,7 @@ GROUP BY
   http_version_category,
   http_version
 QUALIFY
-  total >= 1000
+  total >= 1000 -- noqa: PRS
 ORDER BY
   num_pages DESC,
   client,
