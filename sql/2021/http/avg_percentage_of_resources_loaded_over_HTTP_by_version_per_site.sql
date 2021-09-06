@@ -1,5 +1,5 @@
 # standardSQL
-# Average percentage of resources loaded over HTTP .9, 1, 1.1, 2, and QUIC per site
+# Average percentage of resources loaded over HTTP 0.9, 1.0, 1.1, 2, and QUIC per site
 SELECT
   client,
   AVG(http09_pct) AS http09_pct,

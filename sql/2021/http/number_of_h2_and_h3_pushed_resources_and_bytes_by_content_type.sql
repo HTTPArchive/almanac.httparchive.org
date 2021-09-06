@@ -7,14 +7,14 @@ SELECT
   type,
   COUNT(DISTINCT page) AS num_pages,
   APPROX_QUANTILES(num_requests, 1000)[OFFSET(percentile * 10)] AS pushed_requests,
-  APPROX_QUANTILES(kb_transfered, 1000)[OFFSET(percentile * 10)] AS kb_transfered
+  APPROX_QUANTILES(KiB_transfered, 1000)[OFFSET(percentile * 10)] AS KiB_transfered
 FROM (
   SELECT
     client,
     page,
     protocol AS http_version,
     type,
-    SUM(respSize / 1024) AS kb_transfered,
+    SUM(respSize / 1024) AS KiB_transfered,
     COUNT(0) AS num_requests
   FROM
     `httparchive.almanac.requests`
