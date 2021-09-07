@@ -33,7 +33,7 @@ Nel 2016, quando mi è stato chiesto di spiegare perché un turista australiano 
 
 Il punto era semplice: sebbene si possa trarre vantaggio da una maggiore larghezza di banda, le leggi della fisica continuano a prevalere. Un australiano non è in grado di sfuggire alle leggi sulla latenza. Nella migliore delle ipotesi, a casa a Sydney, questo australiano stava vivendo una latenza sufficiente che a volte la sua connessione Internet era percepita come non rispondente.
 
-Ora, immagina che lo stesso australiano, sapendo che al 75° percentile, la sua pagina stia facendo circa 108 richieste (ne parleremo più avanti), e non abbiamo ancora idea del protocollo di rete, delle risorse richieste, del livello di compressione o ottimizzazione. È possibile seguire i capitoli [HTTP/2](./http2) e [Compressione](./compression) per ulteriori informazioni sulla durata di una richiesta moderna.
+Ora, immagina che lo stesso australiano, sapendo che al 75° percentile, la sua pagina stia facendo circa 108 richieste (ne parleremo più avanti), e non abbiamo ancora idea del protocollo di rete, delle risorse richieste, del livello di compressione o ottimizzazione. È possibile seguire i capitoli [HTTP/2](./http) e [Compressione](./compression) per ulteriori informazioni sulla durata di una richiesta moderna.
 
 ### Gli Assets
 

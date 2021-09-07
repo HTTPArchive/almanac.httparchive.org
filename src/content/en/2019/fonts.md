@@ -33,7 +33,7 @@ Using hosted web fonts enables ease of implementation and maintenance, but self-
 
 ### Are fonts being hosted on the same host or by a different host?
 
-Differentiating self-hosting against third-party hosting is increasingly relevant in an [HTTP/2](./http2) world, where the performance gap between a same-host and different-host connection can be wider. Same-host requests have the huge benefit of a better potential for prioritization against other same-host requests in the waterfall.
+Differentiating self-hosting against third-party hosting is increasingly relevant in an [HTTP/2](./http) world, where the performance gap between a same-host and different-host connection can be wider. Same-host requests have the huge benefit of a better potential for prioritization against other same-host requests in the waterfall.
 
 Recommendations to mitigate the performance costs of loading web fonts from another host include using the `preconnect`, `dns-prefetch`, and `preload` [resource hints](./resource-hints), but high priority web fonts should be same-host requests to minimize the performance impact of web fonts. This is especially important for fonts used by very visually prominent content or body copy occupying the majority of a page.
 

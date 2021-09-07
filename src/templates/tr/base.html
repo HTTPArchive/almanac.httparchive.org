@@ -144,6 +144,7 @@ Aksi belirtilmedikçe, {{ year }} Web Almanac&#8217;ın tüm {{ supported_chapte
     "IV. Content Distribution": "IV. İçerik Dağıtımı"
   }
 %}
+
 {%
   set localizedChapterTitles = {
     "javascript": "JavaScript",
@@ -165,12 +166,15 @@ Aksi belirtilmedikçe, {{ year }} Web Almanac&#8217;ın tüm {{ supported_chapte
     "cdn": "CDN",
     "page-weight": "Sayfa Ağırlığı",
     "resource-hints": "Kaynak İpuçları",
-    "http2": "HTTP/2",
+    "http": "HTTP",
     "privacy": "Gizlilik",
     "capabilities": "Yetenekler",
     "jamstack": "Jamstack"
   }
 %}
+{% if (year == "2019" or year == "2020") %}
+{% set _dummy = localizedChapterTitles.__setitem__("http", "HTTP/2") %}
+{% endif %}
 
 {% set localizedTeamNames = {
   "analysts": "Analistler",
