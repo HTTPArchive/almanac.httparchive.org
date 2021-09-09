@@ -14,7 +14,7 @@ FROM (
     directive_name,
     COUNT(0) AS directive_occurrences,
     SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total_requests,
-    SUM(COUNTIF(TRIM(resp_cache_control) != '')) OVER (PARTITION BY _TABLE_SUFFIX) total_using_cache_control
+    SUM(COUNTIF(TRIM(resp_cache_control) != '')) OVER (PARTITION BY _TABLE_SUFFIX) AS total_using_cache_control
   FROM
     `httparchive.summary_requests.2021_07_01_*`
   LEFT JOIN
@@ -26,7 +26,7 @@ WHERE
   directive_name NOT IN (
     'max-age', 'public', 'no-cache', 'must-revalidate', 'no-store',
     'private', 'proxy-revalidate', 's-maxage', 'no-transform',
-    'immutable', 'stale-while-revalidate', 'stale-if-error', 
+    'immutable', 'stale-while-revalidate', 'stale-if-error',
     'pre-check', 'post-check')
 ORDER BY
   client,
