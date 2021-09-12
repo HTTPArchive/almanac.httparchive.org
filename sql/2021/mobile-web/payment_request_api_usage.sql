@@ -1,5 +1,5 @@
 #standardSQL
-# Payment request api usage on ecommerce sites
+# Payment request api usage on ecommerce pages
 SELECT
   client,
   COUNT(0) AS total_ecommerce,

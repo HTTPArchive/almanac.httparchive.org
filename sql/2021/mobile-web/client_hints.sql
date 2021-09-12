@@ -26,13 +26,13 @@ try {
 
 SELECT
   client,
-  total_sites,
-  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total_sites_using_ch,
+  total_pages,
+  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total_pages_using_ch,
 
   ch_directive,
-  COUNT(0) AS total_sites_using,
-  COUNT(0) / total_sites AS pct_sites,
-  COUNT(0) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct_ch_sites_using
+  COUNT(0) AS total_pages_using,
+  COUNT(0) / total_pages AS pct_pages,
+  COUNT(0) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct_ch_pages_using
 FROM (
   SELECT
     page,
@@ -48,7 +48,7 @@ FROM (
 LEFT JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_sites
+    COUNT(0) AS total_pages
   FROM
     `httparchive.pages.2021_07_01_*`
   GROUP BY _TABLE_SUFFIX
@@ -57,8 +57,8 @@ USING (client)
 GROUP BY
   client,
   ch_directive,
-  total_sites
+  total_pages
 HAVING
-  total_sites_using >= 100
+  total_pages_using >= 100
 ORDER BY
-  pct_sites DESC
+  pct_pages DESC

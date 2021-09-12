@@ -2,10 +2,10 @@
 # Usage of native lazy loading
 SELECT
   client,
-  COUNTIF(total_img > 0) AS sites_with_images,
+  COUNTIF(total_img > 0) AS pages_with_images,
 
-  COUNTIF(total_loading_attribute > 0) AS sites_using_loading_attribute,
-  COUNTIF(total_loading_attribute > 0) / COUNTIF(total_img > 0) AS pct_sites_using_loading_attribute
+  COUNTIF(total_loading_attribute > 0) AS pages_using_loading_attribute,
+  COUNTIF(total_loading_attribute > 0) / COUNTIF(total_img > 0) AS pct_pages_using_loading_attribute
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

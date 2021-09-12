@@ -1,5 +1,5 @@
 #standardSQL
-# % mobile sites with correctly sized tap targets by domain rank (note: the score is not binary)
+# % mobile pages with correctly sized tap targets by domain rank (note: the score is not binary)
 SELECT
   rank_grouping,
 

@@ -6,8 +6,8 @@ SELECT
 
   category,
   app,
-  COUNT(0) AS sites_with_app,
-  COUNT(0) / total_in_rank AS pct_sites_with_app
+  COUNT(0) AS pages_with_app,
+  COUNT(0) / total_in_rank AS pct_pages_with_app
 FROM (
   SELECT
     app,

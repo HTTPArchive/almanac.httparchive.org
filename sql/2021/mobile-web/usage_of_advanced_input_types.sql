@@ -24,8 +24,8 @@ try {
 ''';
 
 SELECT
-  COUNT(0) AS total_sites,
-  COUNTIF(input_stats.total_inputs > 0) AS total_applicable_sites,
+  COUNT(0) AS total_pages,
+  COUNTIF(input_stats.total_inputs > 0) AS total_applicable_pages,
   COUNTIF(input_stats.found_advanced_types) AS total_pages_using,
   COUNTIF(input_stats.found_advanced_types) / COUNTIF(input_stats.total_inputs > 0) AS occurence_perc
 FROM (

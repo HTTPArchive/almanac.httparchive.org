@@ -4,15 +4,15 @@ SELECT
   client,
   rank_grouping,
 
-  COUNT(0) AS total_sites,
+  COUNT(0) AS total_pages,
   COUNTIF(has_meta_viewport) AS total_viewports,
   COUNTIF(not_scalable) AS total_no_scale,
   COUNTIF(max_scale_1_or_less) AS total_locked_max_scale,
   COUNTIF(not_scalable OR max_scale_1_or_less) AS total_either,
 
-  COUNTIF(not_scalable) / COUNT(0) AS perc_sites_no_scale,
-  COUNTIF(max_scale_1_or_less) / COUNT(0) AS perc_sites_locked_max_scale,
-  COUNTIF(not_scalable OR max_scale_1_or_less) / COUNT(0) AS perc_sites_either
+  COUNTIF(not_scalable) / COUNT(0) AS perc_pages_no_scale,
+  COUNTIF(max_scale_1_or_less) / COUNT(0) AS perc_pages_locked_max_scale,
+  COUNTIF(not_scalable OR max_scale_1_or_less) / COUNT(0) AS perc_pages_either
 FROM (
   SELECT
     client,

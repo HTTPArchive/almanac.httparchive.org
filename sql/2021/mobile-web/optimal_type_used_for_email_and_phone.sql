@@ -70,13 +70,13 @@ SELECT
   input_info.detected_type AS detected_type,
   input_info.using_best_type AS using_best_type,
   SUM(COUNT(0)) OVER (PARTITION BY input_info.detected_type) AS total_type_occurences,
-  SUM(COUNT(DISTINCT url)) OVER (PARTITION BY input_info.detected_type) AS total_sites_with_type,
+  SUM(COUNT(DISTINCT url)) OVER (PARTITION BY input_info.detected_type) AS total_pages_with_type,
 
   COUNT(0) AS total,
-  COUNT(DISTINCT url) AS total_sites,
+  COUNT(DISTINCT url) AS total_pages,
 
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY input_info.detected_type) AS perc_inputs,
-  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY input_info.detected_type) AS perc_sites
+  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY input_info.detected_type) AS perc_pages
 FROM
   `httparchive.pages.2021_07_01_mobile`,
   UNNEST(getInputInfo(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS input_info
