@@ -58,7 +58,5 @@ GROUP BY
   client,
   ch_directive,
   total_pages
-HAVING
-  total_pages_using >= 100
 ORDER BY
   pct_pages DESC
