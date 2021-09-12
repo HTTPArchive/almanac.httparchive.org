@@ -8,9 +8,9 @@ SELECT
   COUNTIF(max_scale_1_or_less) AS total_locked_max_scale,
   COUNTIF(not_scalable OR max_scale_1_or_less) AS total_either,
 
-  COUNTIF(not_scalable) / COUNT(0) AS perc_pages_no_scale,
-  COUNTIF(max_scale_1_or_less) / COUNT(0) AS perc_pages_locked_max_scale,
-  COUNTIF(not_scalable OR max_scale_1_or_less) / COUNT(0) AS perc_pages_either
+  COUNTIF(not_scalable) / COUNT(0) AS pct_pages_no_scale,
+  COUNTIF(max_scale_1_or_less) / COUNT(0) AS pct_pages_locked_max_scale,
+  COUNTIF(not_scalable OR max_scale_1_or_less) / COUNT(0) AS pct_pages_either
 FROM (
   SELECT
     client,

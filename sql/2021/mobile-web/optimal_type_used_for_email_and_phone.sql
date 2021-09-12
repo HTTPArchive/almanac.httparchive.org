@@ -75,8 +75,8 @@ SELECT
   COUNT(0) AS total,
   COUNT(DISTINCT url) AS total_pages,
 
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY input_info.detected_type) AS perc_inputs,
-  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY input_info.detected_type) AS perc_pages
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY input_info.detected_type) AS pct_inputs,
+  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY input_info.detected_type) AS pct_pages
 FROM
   `httparchive.pages.2021_07_01_mobile`,
   UNNEST(getInputInfo(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS input_info

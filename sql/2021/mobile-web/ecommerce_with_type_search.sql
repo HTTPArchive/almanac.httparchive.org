@@ -26,8 +26,8 @@ SELECT
   COUNTIF(search_input_stats.has_inputs) AS pages_with_inputs,
   COUNTIF(search_input_stats.has_search_inputs) AS pages_with_search_inputs,
 
-  COUNTIF(search_input_stats.has_search_inputs) / COUNT(0) AS perc_pages_with_search_inputs,
-  COUNTIF(search_input_stats.has_search_inputs) / COUNTIF(search_input_stats.has_inputs) AS perc_input_pages_with_search_inputs
+  COUNTIF(search_input_stats.has_search_inputs) / COUNT(0) AS pct_pages_with_search_inputs,
+  COUNTIF(search_input_stats.has_search_inputs) / COUNTIF(search_input_stats.has_inputs) AS pct_input_pages_with_search_inputs
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

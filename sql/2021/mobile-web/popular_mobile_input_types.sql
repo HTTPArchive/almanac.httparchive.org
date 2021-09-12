@@ -20,8 +20,8 @@ SELECT
   COUNT(input_type) AS occurences,
   COUNT(DISTINCT url) AS total_pages_used_in,
 
-  COUNT(input_type) / SUM(COUNT(0)) OVER (PARTITION BY 0) AS perc_of_all_inputs,
-  COUNT(DISTINCT url) / total_pages_with_inputs AS perc_used_in_pages
+  COUNT(input_type) / SUM(COUNT(0)) OVER (PARTITION BY 0) AS pct_of_all_inputs,
+  COUNT(DISTINCT url) / total_pages_with_inputs AS pct_used_in_pages
 FROM
   `httparchive.pages.2021_07_01_mobile`,
   (
