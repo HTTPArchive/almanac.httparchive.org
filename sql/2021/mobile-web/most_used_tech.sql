@@ -1,5 +1,5 @@
 #standardSQL
-# Most used apps - mobile only
+# Most used technologies - mobile only
 SELECT
   total_pages,
 

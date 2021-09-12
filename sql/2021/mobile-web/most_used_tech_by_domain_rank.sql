@@ -1,5 +1,5 @@
 #standardSQL
-# Most used apps by domain rank - mobile only
+# Most used technologies by domain rank - mobile only
 SELECT
   rank_grouping,
   total_in_rank,
