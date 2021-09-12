@@ -68,8 +68,12 @@ RETURNS ARRAY<STRUCT<detected_type STRING, using_best_type BOOLEAN>> LANGUAGE js
 
 SELECT
   input_info.detected_type AS detected_type,
-  input_info.using_best_type AS using_best_type,
+  # is the input field using the best "type" attribute? E.g., type=email for an email
+  input_info.using_best_type AS using_best_type_attr,
+
+  # How many times an input requesting this type of data (email or phone) occurs
   SUM(COUNT(0)) OVER (PARTITION BY input_info.detected_type) AS total_type_occurences,
+  # How many sites have an input requesting this type of data (email or phone)
   SUM(COUNT(DISTINCT url)) OVER (PARTITION BY input_info.detected_type) AS total_pages_with_type,
 
   COUNT(0) AS total,
