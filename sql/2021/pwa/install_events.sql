@@ -28,7 +28,7 @@ try {
 
   return [...new Set([...windowEventListenersInfo ,...windowPropertiesInfo])];
 } catch (e) {
-  return [e];
+  return [];
 }
 ''';
 

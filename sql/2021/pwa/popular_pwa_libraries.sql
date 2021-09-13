@@ -7,12 +7,6 @@ try {
      The final array of script comes from the combination of both */
   var ObjKeys = Object.keys(JSON.parse(importScriptsInfo));
   var ObjValues = Object.values(JSON.parse(importScriptsInfo));
-  if (typeof ObjKeys == 'string') {
-    ObjKeys = [ObjKeys];
-  }
-  if (typeof ObjValues == 'string') {
-    ObjValues = [ObjValues];
-  }
   var script = ObjKeys.concat(ObjValues);
   /* Replacing spaces and commas */
   for (var i = 0; i < script.length; i++) {
