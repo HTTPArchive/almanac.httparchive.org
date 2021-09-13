@@ -8,12 +8,6 @@ try {
      The final array of libraries comes from the combination of both */
   var ObjKeys = Object.keys(JSON.parse(importScriptsInfo));
   var ObjValues = Object.values(JSON.parse(importScriptsInfo));
-  if (typeof ObjKeys == 'string') {
-    ObjKeys = [ObjKeys];
-  }
-  if (typeof ObjValues == 'string') {
-    ObjValues = [ObjValues];
-  }
   var libraries = ObjKeys.concat(ObjValues);
   /* Replacing spaces and commas */
   for (var i = 0; i < libraries.length; i++) {

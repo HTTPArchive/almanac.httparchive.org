@@ -4,7 +4,7 @@
 CREATE TEMP FUNCTION getManifestProps(manifest STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
-  manifestJSON = Object.values(JSON.parse(manifest))[0];
+  var manifestJSON = Object.values(JSON.parse(manifest))[0];
   if (typeof manifestJSON === 'string') {
     return null;
   }

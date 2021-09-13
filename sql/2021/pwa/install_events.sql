@@ -4,7 +4,7 @@
 CREATE TEMPORARY FUNCTION getInstallEvents(payload STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
-  payloadJSON = JSON.parse(payload);
+  var payloadJSON = JSON.parse(payload);
 
   /* YouTube iFrames account for a lot of these, so we exclude them */
   /* Cannot use filter as it is a complex object and not a straight array */
