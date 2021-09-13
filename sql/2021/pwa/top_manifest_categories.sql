@@ -32,9 +32,9 @@ manifests_categories AS (
     'All Sites' AS type,
     _TABLE_SUFFIX AS client,
     category,
-    COUNT(0) AS freq,
+    COUNT(DISTINCT url) AS freq,
     total,
-    COUNT(0) / total AS pct,
+    COUNT(DISTINCT url) / total AS pct,
     COUNTIF(JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true") AS pwa_freq,
     pwa_total,
     COUNTIF(JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true") / pwa_total AS pwa_pct

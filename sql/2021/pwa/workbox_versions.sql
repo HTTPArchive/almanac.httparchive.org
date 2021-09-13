@@ -29,9 +29,9 @@ try {
 SELECT
   _TABLE_SUFFIX AS client,
   workbox_version,
-  COUNT(0) AS freq,
+  COUNT(DISTINCT url) AS freq,
   total,
-  COUNT(0) / total AS pct
+  COUNT(DISTINCT url) / total AS pct
 FROM
   `httparchive.pages.2021_07_01_*`,
   UNNEST(getWorkboxVersions(JSON_EXTRACT(payload, '$._pwa.workboxInfo'))) AS workbox_version
