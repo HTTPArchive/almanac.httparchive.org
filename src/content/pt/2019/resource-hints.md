@@ -61,7 +61,7 @@ Apenas 3% do uso de dicas de recursos usaram [HTTP headers](https://developer.mo
 Link: <https://example.com/shopping-cart.js>; rel=prefetch
 ```
 
-Como o uso de dicas de recursos em cabeçalhos HTTP é muito baixo, o restante deste capítulo se concentrará exclusivamente na análise do uso de dicas de recursos em conjunto com a tag `<link>`. No entanto, é importante notar que, nos próximos anos, o uso de dicas de recursos em cabeçalhos HTTP pode aumentar à medida que o [HTTP/2 Push](./http2#http2-push) for adotado. Isso se deve ao fato de que o HTTP/2 Push redirecionou o `Link` cabeçalho de pré-carregamento HTTP como um sinal para enviar recursos.
+Como o uso de dicas de recursos em cabeçalhos HTTP é muito baixo, o restante deste capítulo se concentrará exclusivamente na análise do uso de dicas de recursos em conjunto com a tag `<link>`. No entanto, é importante notar que, nos próximos anos, o uso de dicas de recursos em cabeçalhos HTTP pode aumentar à medida que o [HTTP/2 Push](./http#http2-push) for adotado. Isso se deve ao fato de que o HTTP/2 Push redirecionou o `Link` cabeçalho de pré-carregamento HTTP como um sinal para enviar recursos.
 
 ## Dicas de recursos
 

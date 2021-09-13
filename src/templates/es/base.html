@@ -165,14 +165,18 @@ A menos que se indique lo contrario, las métricas en los {{ supported_chapters 
       "cdn": "CDN",
       "page-weight": "Peso de las Páginas",
       "resource-hints": "Sugerencias de Recursos",
-      "http2": "HTTP/2",
+      "http": "HTTP",
       "privacy": "Privacidad",
       "capabilities": "Capacidades",
       "jamstack": "Jamstack"
     }
   %}
 
-  {% set localizedTeamNames = {
+  {% if (year == "2019" or year == "2020") %}
+{% set _dummy = localizedChapterTitles.__setitem__("http", "HTTP/2") %}
+{% endif %}
+
+{% set localizedTeamNames = {
     "analysts": "Analistas",
     "authors": "Autores",
     "brainstormers": "Pensadores",

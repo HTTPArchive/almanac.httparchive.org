@@ -61,7 +61,7 @@ Seuls 3&nbsp;% des indices de ressources proviennent [d'en-têtes HTTP](https://
 Link: <https://example.com/shopping-cart.js>; rel=prefetch
 ```
 
-Comme l'utilisation des indices de ressources dans les en-têtes HTTP est très faible, le reste de ce chapitre se concentrera uniquement sur l'analyse de l'utilisation des indices de ressources passant par la balise `<link>`. Cependant, il convient de noter que dans les années à venir, l'utilisation des indices de ressources dans les en-têtes HTTP pourrait augmenter avec l'adoption de [HTTP/2 Push](./http2#http2-push). En effet, HTTP/2 Push réutilise l'en-tête HTTP de préchargement `Link` comme un signal permettant de pousser des ressources.
+Comme l'utilisation des indices de ressources dans les en-têtes HTTP est très faible, le reste de ce chapitre se concentrera uniquement sur l'analyse de l'utilisation des indices de ressources passant par la balise `<link>`. Cependant, il convient de noter que dans les années à venir, l'utilisation des indices de ressources dans les en-têtes HTTP pourrait augmenter avec l'adoption de [HTTP/2 Push](./http#http2-push). En effet, HTTP/2 Push réutilise l'en-tête HTTP de préchargement `Link` comme un signal permettant de pousser des ressources.
 
 ## Les indices de ressources
 
