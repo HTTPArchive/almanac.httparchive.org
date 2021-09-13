@@ -13,6 +13,7 @@ try {
   return [];
 }
 ''';
+
 SELECT
   _TABLE_SUFFIX AS client,
   sw_registration_properties,

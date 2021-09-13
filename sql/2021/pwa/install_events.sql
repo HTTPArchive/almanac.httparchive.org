@@ -11,9 +11,6 @@ try {
   function filterYouTube(info) {
 
     var objectKeys = Object.keys(info);
-    if (typeof objectKeys != 'string') {
-        objectKeys = objectKeys.toString();
-    }
     objectKeys = objectKeys.trim().split(',');
     for(var i = 0; i < objectKeys.length; i++) {
         if(objectKeys[i].toLowerCase().includes('youtube')) {

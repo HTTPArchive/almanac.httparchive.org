@@ -13,73 +13,74 @@ try {
   return null;
 }
 ''';
+
+WITH totals AS (
+  SELECT
+    _TABLE_SUFFIX,
+    COUNT(0) AS total,
+    COUNTIF(JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true") AS pwa_total
+  FROM
+    `httparchive.pages.2021_07_01_*`
+  WHERE
+    JSON_EXTRACT(payload, '$._pwa.manifests') != "[]"
+  GROUP BY
+    _TABLE_SUFFIX
+),
+
+manifests_categories AS (
+  SELECT
+    'All Sites' AS type,
+    _TABLE_SUFFIX AS client,
+    category,
+    COUNT(0) AS freq,
+    total,
+    COUNT(0) / total AS pct,
+    COUNTIF(JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true") AS pwa_freq,
+    pwa_total,
+    COUNTIF(JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true") / pwa_total AS pwa_pct
+  FROM
+    `httparchive.pages.2021_07_01_*`,
+    UNNEST(getCategories(JSON_EXTRACT(payload, '$._pwa.manifests'))) AS category
+  JOIN
+    totals
+  USING (_TABLE_SUFFIX)
+  WHERE
+    JSON_EXTRACT(payload, '$._pwa.manifests') != "[]"
+  GROUP BY
+    client,
+    category,
+    total,
+    pwa_total
+  HAVING
+    category IS NOT NULL
+  ORDER BY
+    type DESC,
+    freq / total DESC,
+    category,
+    client
+)
+
 SELECT
   'PWA Sites' AS type,
-  _TABLE_SUFFIX AS client,
-  category,
-  COUNT(0) AS freq,
-  total,
-  COUNT(0) / total AS pct
-FROM
-  `httparchive.pages.2021_07_01_*`,
-  UNNEST(getCategories(JSON_EXTRACT(payload, '$._pwa.manifests'))) AS category
-JOIN
-  (
-    SELECT
-      _TABLE_SUFFIX,
-      COUNT(0) AS total
-    FROM
-      `httparchive.pages.2021_07_01_*`
-    WHERE
-      JSON_EXTRACT(payload, '$._pwa.manifests') != "[]" AND
-      JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
-    GROUP BY
-      _TABLE_SUFFIX
-  )
-USING (_TABLE_SUFFIX)
-WHERE
-  JSON_EXTRACT(payload, '$._pwa.manifests') != "[]" AND
-  JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
-GROUP BY
   client,
   category,
-  total
-HAVING
-  category IS NOT NULL
+  pwa_freq AS freq,
+  pwa_total AS total,
+  pwa_pct AS pct
+FROM
+  manifests_categories
 UNION ALL
 SELECT
   'All Sites' AS type,
-  _TABLE_SUFFIX AS client,
-  category,
-  COUNT(0) AS freq,
-  total,
-  COUNT(0) / total AS pct
-FROM
-  `httparchive.pages.2021_07_01_*`,
-  UNNEST(getCategories(JSON_EXTRACT(payload, '$._pwa.manifests'))) AS category
-JOIN
-  (
-    SELECT
-      _TABLE_SUFFIX,
-      COUNT(0) AS total
-    FROM
-      `httparchive.pages.2021_07_01_*`
-    WHERE
-      JSON_EXTRACT(payload, '$._pwa.manifests') != "[]"
-    GROUP BY
-      _TABLE_SUFFIX
-  )
-USING (_TABLE_SUFFIX)
-WHERE
-  JSON_EXTRACT(payload, '$._pwa.manifests') != "[]"
-GROUP BY
   client,
   category,
-  total
-HAVING
-  category IS NOT NULL
+  freq,
+  total,
+  pct
+FROM
+  manifests_categories
 ORDER BY
   type DESC,
-  freq / total DESC,
+  pct DESC,
   category,
   client
