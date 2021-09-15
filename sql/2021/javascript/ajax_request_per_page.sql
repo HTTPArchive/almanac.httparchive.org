@@ -2,8 +2,7 @@ SELECT
   client,
   percentile,
   APPROX_QUANTILES(ajax_requests_total, 1000)[
-OFFSET
-  (percentile * 10)] AS ajax_requests_total
+    OFFSET(percentile * 10)] AS ajax_requests_total
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

@@ -2,8 +2,7 @@ SELECT
   client,
   percentile,
   APPROX_QUANTILES(iframe_total, 1000)[
-OFFSET
-  (percentile * 10)] AS iframe_total
+    OFFSET(percentile * 10)] AS iframe_total
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
