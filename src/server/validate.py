@@ -9,8 +9,9 @@ from .language import DEFAULT_LANGUAGE, LANGUAGE_MAPPING
 from .config import SUPPORTED_YEARS, DEFAULT_YEAR, SUPPORTED_CHAPTERS, SUPPORTED_LANGUAGES
 
 TYPO_CHAPTERS = {
-    'http-2': 'http2',
-    'http3': 'http3',
+    'http-2': 'http',
+    'http2': 'http',
+    'http3': 'http',
     'mobileweb': 'mobile-web',
     'pageweight': 'page-weight',
     'resourcehints': 'resource-hints',

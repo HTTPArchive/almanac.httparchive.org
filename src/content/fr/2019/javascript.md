@@ -84,7 +84,7 @@ Bien que ces données montrent combien de temps il peut falloir à un appareil m
 
 ### Nombre de requêtes
 
-Une piste à explorer pour analyser la quantité de JavaScript utilisée par les pages web est le nombre de requêtes envoyées. Avec [HTTP/2](./http2), l’envoi de plusieurs petits paquets peut améliorer le chargement des pages par rapport à l’envoi d’un paquet monolithique plus important. Si nous ventilons également par type de matériel, combien de ressources sont récupérées&nbsp;?
+Une piste à explorer pour analyser la quantité de JavaScript utilisée par les pages web est le nombre de requêtes envoyées. Avec [HTTP/2](./http), l’envoi de plusieurs petits paquets peut améliorer le chargement des pages par rapport à l’envoi d’un paquet monolithique plus important. Si nous ventilons également par type de matériel, combien de ressources sont récupérées&nbsp;?
 
 {{ figure_markup(
   image="fig5.png",
