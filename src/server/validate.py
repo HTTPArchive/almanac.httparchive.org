@@ -12,6 +12,7 @@ TYPO_CHAPTERS = {
     'http-2': 'http',
     'http2': 'http',
     'http3': 'http',
+    'html': 'markup',
     'mobileweb': 'mobile-web',
     'pageweight': 'page-weight',
     'resourcehints': 'resource-hints',
