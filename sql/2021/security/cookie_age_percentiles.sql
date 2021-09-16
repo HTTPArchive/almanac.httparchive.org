@@ -1,5 +1,5 @@
 #standardSQL
-# Percentiles of Max-Age-attribute, Expires-attribute and real age (Max-Age has precedence) of cookies.
+# Percentiles of Max-Age-attribute, Expires-attribute and real age (Max-Age has precedence) of cookies set over all requests
 -- SQL Linter cannot handle DETERMINISTIC keyword so needs noqa ignore command on previous line
 CREATE TEMPORARY FUNCTION getCookieAgeValues(headers STRING, epochOfRequest NUMERIC)  -- noqa: PRS
   RETURNS STRING DETERMINISTIC

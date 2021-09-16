@@ -1,5 +1,5 @@
 #standardSQL
-# Prevalence of server information headers set in a first-party context; count by number of hosts.
+# Prevalence of server information headers; count by number of hosts.
 -- SQL Linter cannot handle DETERMINISTIC keyword so needs noqa ignore command on previous line
 CREATE TEMPORARY FUNCTION hasHeader(headers STRING, headername STRING)  -- noqa: PRS
   RETURNS BOOL DETERMINISTIC
@@ -25,8 +25,7 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    (date = "2020-07-01" OR date = "2021-07-01") AND
-    NET.HOST(urlShort) = NET.HOST(page)
+    (date = "2020-07-01" OR date = "2021-07-01")
 ),
 UNNEST(['Server', 'X-Server', 'X-Backend-Server', 'X-Powered-By', 'X-Aspnet-Version']) AS headername
 GROUP BY

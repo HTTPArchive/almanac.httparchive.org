@@ -1,5 +1,5 @@
 #standardSQL
-# Prevalence of values for Server and X-Powered-By headers set in a first-party context; count by number of hosts.
+# Prevalence of values for Server and X-Powered-By headers; count by number of hosts.
 
 SELECT
   server.client,
@@ -26,7 +26,6 @@ FROM
     `httparchive.almanac.requests`
   WHERE
     (date = "2020-07-01" OR date = "2021-07-01") AND
-    NET.HOST(urlShort) = NET.HOST(page) AND
     resp_server IS NOT NULL AND
     resp_server <> ''
   GROUP BY
@@ -46,7 +45,6 @@ INNER JOIN
     `httparchive.almanac.requests`
   WHERE
     (date = "2020-07-01" OR date = "2021-07-01") AND
-    NET.HOST(urlShort) = NET.HOST(page) AND
     resp_x_powered_by IS NOT NULL AND
     resp_x_powered_by <> ''
   GROUP BY
