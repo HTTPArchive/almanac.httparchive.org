@@ -25,7 +25,7 @@ FROM (
     page,
     COUNT(DISTINCT tracker) AS nb_trackers
   FROM
-    `httparchive.sample_data.requests`
+    `httparchive.almanac.requests`
   JOIN
     whotracksme
   ON (
@@ -53,7 +53,7 @@ FROM (
     page,
     COUNT(DISTINCT tracker) AS nb_trackers
   FROM
-    `httparchive.sample_data.requests`
+    `httparchive.almanac.requests`
   JOIN
     whotracksme
   ON (
