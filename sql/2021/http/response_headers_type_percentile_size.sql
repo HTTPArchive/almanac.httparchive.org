@@ -18,7 +18,7 @@ SELECT
   client,
   header_name AS header,
   percentile,
-  COUNT(DISTINCT url) as URLs,
+  COUNT(DISTINCT url) AS URLs,
   APPROX_QUANTILES(header_length, 1000)[OFFSET(percentile * 10)] AS length
 FROM
   (

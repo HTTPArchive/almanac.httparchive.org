@@ -1,7 +1,7 @@
 #standardSQL
 SELECT
   IF(ENDS_WITH(_TABLE_SUFFIX, 'desktop'), 'desktop', 'mobile') AS client,
-  SUBSTRING(url, 1, 400) as url,
+  SUBSTRING(url, 1, 400) AS url,
   respHeadersSize / 1024 AS respHeadersSizeKiB
 FROM
   `httparchive.summary_requests.*`
