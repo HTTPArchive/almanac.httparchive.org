@@ -1,5 +1,8 @@
 # standardSQL
 # Count of H2 and H3 Sites Grouped By Server
+# Note this is a percentage of usage of that server not the total crawl
+# I.e. Do Apache servers tend to be on latest features or lagging? What about compared to Nginx?
+# Does that indicate server software is not upgrade as often (tied to OS?) or defaults are old?
 SELECT
   client,
   server_header,

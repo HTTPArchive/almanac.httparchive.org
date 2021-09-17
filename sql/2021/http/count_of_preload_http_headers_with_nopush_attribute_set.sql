@@ -16,8 +16,9 @@ try {
 SELECT
   client,
   COUNTIF(link_header LIKE '%nopush%') AS num_nopush,
-  COUNT(0) AS total_preload,
-  COUNTIF(link_header LIKE '%nopush%') / COUNT(0) AS pct_nopush
+  COUNT(0) AS total_preload_http_headers,
+  COUNTIF(link_header LIKE '%nopush%') / COUNT(0) AS pct_nopush,
+  COUNTIF(link_header NOT LIKE '%nopush%') / COUNT(0) AS pct_push
 FROM (
   SELECT
     client,
@@ -31,4 +32,6 @@ FROM (
 WHERE
   link_header LIKE '%preload%'
 GROUP BY
+  client
+ORDER BY
   client

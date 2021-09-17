@@ -3,7 +3,7 @@
 SELECT
   client,
   CDN,
-  COUNTIF(http2_3 AND firstHTML) / COUNT(DISTINCT page) AS http2_3_page_pct,
+  SAFE_DIVIDE(COUNTIF(http2_3 AND firstHTML), COUNTIF(firstHTML)) AS http2_3_page_pct,
   COUNTIF(http2_3) / COUNT(0) AS http2_3_request_pct
 FROM
   (
@@ -20,5 +20,9 @@ FROM
       date = '2021-07-01'
   )
 GROUP BY
+  client,
+  CDN
+ORDER BY
+  http2_3_request_pct DESC,
   client,
   CDN

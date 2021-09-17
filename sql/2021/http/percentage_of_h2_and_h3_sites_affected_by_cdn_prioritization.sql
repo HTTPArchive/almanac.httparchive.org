@@ -2,7 +2,6 @@
 # Percentage of H2 and H3 sites affected by CDN prioritization issues
 SELECT
   client,
-  http_version,
   IF(pages.cdn = "", "Not using CDN", pages.cdn) AS CDN,
   IF(prioritization_status IS NOT NULL, prioritization_status, "Unknown") AS prioritizes_correctly,
   COUNT(0) AS num_pages,
@@ -29,7 +28,6 @@ LEFT JOIN
 USING (cdn, date)
 GROUP BY
   client,
-  http_version,
   CDN,
   prioritizes_correctly
 ORDER BY

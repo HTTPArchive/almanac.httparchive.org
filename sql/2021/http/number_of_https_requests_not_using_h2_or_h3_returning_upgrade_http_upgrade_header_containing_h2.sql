@@ -17,7 +17,6 @@ try {
 SELECT
   client,
   firstHtml,
-  protocol AS http_version,
   COUNTIF(extractHTTPHeader(response_headers, "upgrade") LIKE "%h2%") AS num_requests,
   COUNT(0) AS total
 FROM
@@ -25,11 +24,10 @@ FROM
 WHERE
   date = '2021-07-01' AND
   url LIKE "https://%" AND
-  LOWER(protocol) = "http/2" AND
+  LOWER(protocol) != "http/2" AND
   LOWER(protocol) NOT LIKE "%quic%" AND
   LOWER(protocol) NOT LIKE "h3%" AND
-  LOWER(protocol) = "http/3"
+  LOWER(protocol) != "http/3"
 GROUP BY
   client,
-  firstHtml,
-  http_version
+  firstHtml

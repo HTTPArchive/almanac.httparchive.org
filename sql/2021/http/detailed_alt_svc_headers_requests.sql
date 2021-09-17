@@ -1,5 +1,5 @@
 # standardSQL
-# Detailed alt-svc headers
+# Detailed alt-svc headers per request
 CREATE TEMPORARY FUNCTION extractHTTPHeader(HTTPheaders STRING, header STRING)
 RETURNS STRING LANGUAGE js AS """
 try {
@@ -16,7 +16,6 @@ try {
 
 SELECT
   client,
-  firstHtml,
   protocol,
   IF(url LIKE 'https://%', 'https', 'http') AS http_or_https,
   NORMALIZE_AND_CASEFOLD(extractHTTPHeader(response_headers, "alt-svc")) AS altsvc,
@@ -29,7 +28,6 @@ WHERE
   date = '2021-07-01'
 GROUP BY
   client,
-  firstHtml,
   protocol,
   http_or_https,
   altsvc

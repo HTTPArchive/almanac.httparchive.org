@@ -3,15 +3,14 @@
 SELECT
   percentile,
   client,
-  http_version,
   COUNT(DISTINCT page) AS num_pages,
   APPROX_QUANTILES(num_requests, 1000)[OFFSET(percentile * 10)] AS pushed_requests,
   APPROX_QUANTILES(KiB_transfered, 1000)[OFFSET(percentile * 10)] AS KiB_transfered
-FROM (
+FROM
+  (
     SELECT
       client,
       page,
-      protocol AS http_version,
       SUM(respSize / 1024) AS KiB_transfered,
       COUNT(0) AS num_requests
     FROM
@@ -25,13 +24,12 @@ FROM (
         LOWER(protocol) = "http/3")
     GROUP BY
       client,
-      http_version,
-      page),
-  UNNEST([10, 25, 50, 75, 90]) AS percentile
+      page
+  ),
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,
-  client,
-  http_version
+  client
 ORDER BY
   percentile,
   client
