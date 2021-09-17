@@ -1,5 +1,5 @@
 # standardSQL
-# Size of 404 status codes by percentile
+# Number and size of status codes by percentile
 
 SELECT
   client,
@@ -7,7 +7,8 @@ SELECT
   status,
   percentile,
   APPROX_QUANTILES(number, 1000)[OFFSET(percentile * 10)] AS number,
-  APPROX_QUANTILES(sizeKiB, 1000)[OFFSET(percentile * 10)] AS sizeKiB
+  APPROX_QUANTILES(respHeaderSizeKiB, 1000)[OFFSET(percentile * 10)] AS respHeaderSizeKiB,
+  APPROX_QUANTILES(respBodySizeKiB, 1000)[OFFSET(percentile * 10)] AS respBodySizeKiB
 FROM
   (
     SELECT
@@ -16,7 +17,8 @@ FROM
       status,
       page,
       COUNT(0) AS number,
-      SUM(respHeadersSize) / 1024 AS sizeKiB
+      SUM(respHeadersSize) / 1024 AS respHeaderSizeKiB,
+      SUM(respBodySize) / 1024 AS respBodySizeKiB
     FROM
       `httparchive.almanac.requests`
     WHERE

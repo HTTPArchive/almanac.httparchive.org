@@ -2,7 +2,7 @@
 # Distribution of TLS versions by HHTP Version
 SELECT
   client,
-  protocol,
+  http_version_category,
   tls_version,
   COUNT(DISTINCT page) AS freq,
   total,
@@ -12,6 +12,17 @@ FROM (
     client,
     page,
     protocol,
+    CASE
+      WHEN LOWER(protocol) = 'quic' OR LOWER(protocol) LIKE 'h3%' THEN 'HTTP/2+'
+      WHEN LOWER(protocol) = 'http/2' OR LOWER(protocol) = 'http/3' THEN 'HTTP/2+'
+      WHEN protocol IS NULL THEN 'Unknown'
+      ELSE UPPER(protocol)
+    END AS http_version_category,
+    CASE
+      WHEN LOWER(protocol) = 'quic' OR LOWER(protocol) LIKE 'h3%' THEN 'HTTP/3'
+      WHEN protocol IS NULL THEN 'Unknown'
+      ELSE UPPER(protocol)
+    END AS http_version,
     IFNULL(tls_version, cert_protocol) AS tls_version
   FROM
     `httparchive.almanac.requests`
@@ -33,7 +44,7 @@ USING
   (client)
 GROUP BY
   client,
-  protocol,
+  http_version_category,
   tls_version,
   total
 ORDER BY

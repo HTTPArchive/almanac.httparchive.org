@@ -18,11 +18,13 @@ SELECT
   client,
   header_name AS header,
   percentile,
+  COUNT(DISTINCT url) as URLs,
   APPROX_QUANTILES(header_length, 1000)[OFFSET(percentile * 10)] AS length
 FROM
   (
     SELECT
       client,
+      url,
       JSON_EXTRACT_SCALAR(header, "$.name") AS header_name,
       LENGTH(JSON_EXTRACT_SCALAR(header, "$.value")) AS header_length
     FROM
@@ -36,9 +38,9 @@ GROUP BY
   client,
   header,
   percentile
+HAVING
+  COUNT(DISTINCT url) > 100000
 ORDER BY
-  COUNT(0) DESC,
   client,
   header,
   percentile
-LIMIT 1200

@@ -6,7 +6,8 @@ SELECT
   status,
   page,
   COUNT(0) AS number,
-  SUM(respHeadersSize) / 1024 AS sizeKiB
+  SUM(respHeadersSize) / 1024 AS respHeaderSizeKiB,
+  SUM(respBodySize) / 1024 AS respBodySizeKiB
 FROM
   `httparchive.almanac.requests`
 WHERE
@@ -18,7 +19,7 @@ GROUP BY
   page
 HAVING
   number > 1000 OR
-  sizeKiB > 500
+  respHeaderSizeKiB > 500
 ORDER BY
-  number,
-  sizeKiB
+  number DESC,
+  respHeaderSizeKiB DESC

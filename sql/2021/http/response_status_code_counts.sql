@@ -7,7 +7,8 @@ SELECT
   status,
   COUNT(0) AS num_requests,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct,
+  ARRAY_TO_STRING(ARRAY_AGG(DISTINCT url LIMIT 5), ' ') AS sample_urls
 FROM
   `httparchive.almanac.requests`
 WHERE
