@@ -123,7 +123,7 @@ SELECT
   rank,
   directive,
   COUNT(DISTINCT page) AS nb_websites_with_directive,
-  ROUND(COUNT(DISTINCT page) / MIN(total_nb_pages.total_nb_pages), 2) AS pct_websites_with_directive
+  COUNT(DISTINCT page) / MIN(total_nb_pages.total_nb_pages) AS pct_websites_with_directive
 FROM
   site_directives JOIN page_ranks USING (client, page) JOIN total_nb_pages USING (client, rank),
   UNNEST(site_directives.directives) directive

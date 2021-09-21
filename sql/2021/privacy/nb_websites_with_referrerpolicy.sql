@@ -47,12 +47,12 @@ referrer_policy_headers AS (
 
 SELECT
   *,
-  ROUND(nb_websites_with_entire_document_policy_meta / nb_websites, 2) AS pct_websites_with_entire_document_policy_meta,
-  ROUND(nb_websites_with_entire_document_policy_header / nb_websites, 2) AS pct_websites_with_entire_document_policy_header,
-  ROUND(nb_websites_with_entire_document_policy / nb_websites, 2) AS pct_websites_with_entire_document_policy,
-  ROUND(nb_websites_with_any_individual_requests / nb_websites, 2) AS pct_websites_with_any_individual_requests,
-  ROUND(nb_websites_with_any_link_relations / nb_websites, 2) AS pct_websites_with_any_link_relations,
-  ROUND(nb_websites_with_any_referrer_policy / nb_websites, 2) AS pct_websites_with_any_referrer_policy
+  nb_websites_with_entire_document_policy_meta / nb_websites AS pct_websites_with_entire_document_policy_meta,
+  nb_websites_with_entire_document_policy_header / nb_websites AS pct_websites_with_entire_document_policy_header,
+  nb_websites_with_entire_document_policy / nb_websites AS pct_websites_with_entire_document_policy,
+  nb_websites_with_any_individual_requests / nb_websites AS pct_websites_with_any_individual_requests,
+  nb_websites_with_any_link_relations / nb_websites AS pct_websites_with_any_link_relations,
+  nb_websites_with_any_referrer_policy / nb_websites AS pct_websites_with_any_referrer_policy
 FROM (
   SELECT
     client,

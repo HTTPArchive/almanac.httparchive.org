@@ -33,7 +33,7 @@ SELECT
   client,
   text,
   COUNT(0) AS nb_websites_with_text,
-  ROUND(COUNT(0) / MIN(total_nb_pages.total_nb_pages), 2) AS pct_websites_with_text
+  COUNT(0) / MIN(total_nb_pages.total_nb_pages) AS pct_websites_with_text
 FROM
   privacy_link_texts JOIN total_nb_pages USING (client),
   UNNEST(texts_per_site) text

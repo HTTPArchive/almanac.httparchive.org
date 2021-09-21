@@ -35,7 +35,7 @@ SELECT
   client,
   keyword,
   COUNT(0) AS nb_websites_with_keyword,
-  ROUND(COUNT(0) / MIN(total_nb_pages.total_nb_pages), 2) AS pct_websites_with_keyword
+  COUNT(0) / MIN(total_nb_pages.total_nb_pages) AS pct_websites_with_keyword
 FROM
   privacy_link_keywords JOIN total_nb_pages USING (client),
   UNNEST(keywords_per_site) keyword

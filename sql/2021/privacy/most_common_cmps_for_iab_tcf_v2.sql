@@ -34,7 +34,7 @@ SELECT
   client,
   JSON_VALUE(metrics, '$.cmpId') AS cmpId,
   COUNT(0) AS nb_websites,
-  ROUND(COUNT(0) / MIN(total_nb_pages.total_nb_pages), 2) AS pct_websites
+  COUNT(0) / MIN(total_nb_pages.total_nb_pages) AS pct_websites
 FROM
   pages_iab_tcf_v2 JOIN total_nb_pages USING (client)
 WHERE

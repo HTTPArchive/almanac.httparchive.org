@@ -46,9 +46,9 @@ meta_tags AS (
 
 SELECT
   *,
-  ROUND(nb_websites_with_feature_policy / nb_websites, 2) AS pct_websites_with_feature_policy,
-  ROUND(nb_websites_with_permissions_policy / nb_websites, 2) AS pct_websites_with_permissions_policy,
-  ROUND(nb_websites_with_any_policy / nb_websites, 2) AS pct_websites_with_any_policy
+  nb_websites_with_feature_policy / nb_websites AS pct_websites_with_feature_policy,
+  nb_websites_with_permissions_policy / nb_websites AS pct_websites_with_permissions_policy,
+  nb_websites_with_any_policy / nb_websites AS pct_websites_with_any_policy
 FROM (
   SELECT
     client,

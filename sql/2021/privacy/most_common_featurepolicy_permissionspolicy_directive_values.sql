@@ -114,7 +114,7 @@ SELECT
   SPLIT(TRIM(directive), ' ')[OFFSET(0)] AS directive_name,
   TRIM(origin) AS origin,
   COUNT(DISTINCT page) AS nb_websites_with_directive,
-  ROUND(COUNT(DISTINCT page) / MIN(total_nb_pages.total_nb_pages), 2) AS pct_websites_with_directive
+  COUNT(DISTINCT page) / MIN(total_nb_pages.total_nb_pages) AS pct_websites_with_directive
 FROM
   (
     SELECT DISTINCT * FROM (

@@ -57,7 +57,7 @@ SELECT
   client,
   COALESCE(entire_document_policy_header, entire_document_policy_meta) AS entire_document_policy,
   COUNT(0) AS nb_websites_with_values,
-  ROUND(COUNT(0) / MIN(total_nb_pages.total_nb_pages), 2) AS pct_websites_with_values
+  COUNT(0) / MIN(total_nb_pages.total_nb_pages) AS pct_websites_with_values
 FROM
   referrer_policy_custom_metrics FULL OUTER JOIN referrer_policy_headers USING (client, url)
 JOIN total_nb_pages USING (client)

@@ -51,7 +51,7 @@ SELECT
   client,
   rank,
   COUNT(DISTINCT page) AS nb_websites,
-  ROUND(COUNT(DISTINCT page) / MIN(total_nb_pages.total_nb_pages), 2) AS pct_websites
+  COUNT(DISTINCT page) / MIN(total_nb_pages.total_nb_pages) AS pct_websites
 FROM
   response_headers FULL OUTER JOIN meta_tags USING (client, page) JOIN total_nb_pages USING (client, rank)
 WHERE
