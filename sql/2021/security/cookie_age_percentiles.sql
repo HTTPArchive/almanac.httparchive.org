@@ -37,7 +37,7 @@ CREATE TEMPORARY FUNCTION getCookieAgeValues(headers STRING, epochOfRequest NUME
 WITH age_values AS (
   SELECT
     client,
-    getCookieAgeValues(JSON_EXTRACT(payload, '$.response.headers'), startedDateTime) AS values
+    getCookieAgeValues(response_headers, startedDateTime) AS values
   FROM
     `httparchive.almanac.requests`
   WHERE

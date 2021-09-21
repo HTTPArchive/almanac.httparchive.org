@@ -27,7 +27,7 @@ SELECT
 FROM (
   SELECT
     client,
-    getHeader(JSON_EXTRACT(payload, '$.response.headers'), 'Content-Security-Policy') AS csp_header
+    getHeader(response_headers, 'Content-Security-Policy') AS csp_header
   FROM
     `httparchive.almanac.requests`
   WHERE

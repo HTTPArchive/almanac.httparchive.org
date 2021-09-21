@@ -41,7 +41,7 @@ SELECT
 FROM (
   SELECT
     client,
-    getSetCookieHeaders(JSON_EXTRACT(payload, '$.response.headers')) AS cookie_values,
+    getSetCookieHeaders(response_headers) AS cookie_values,
     IF(NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page), 1, 3) AS party
   FROM
     `httparchive.almanac.requests`

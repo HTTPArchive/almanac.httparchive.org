@@ -14,14 +14,14 @@ SELECT
   client,
   headername,
   COUNT(DISTINCT host) AS total_hosts,
-  COUNT(DISTINCT IF(hasHeader(headers, headername), host, NULL)) AS num_with_header,
-  COUNT(DISTINCT IF(hasHeader(headers, headername), host, NULL)) / COUNT(DISTINCT host) AS pct_with_header
+  COUNT(DISTINCT IF(hasHeader(response_headers, headername), host, NULL)) AS num_with_header,
+  COUNT(DISTINCT IF(hasHeader(response_headers, headername), host, NULL)) / COUNT(DISTINCT host) AS pct_with_header
 FROM (
   SELECT
     date,
     client,
     NET.HOST(urlShort) AS host,
-    JSON_EXTRACT(payload, '$.response.headers') AS headers
+    response_headers
   FROM
     `httparchive.almanac.requests`
   WHERE

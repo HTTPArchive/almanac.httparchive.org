@@ -26,14 +26,14 @@ robot_headers AS (
     SELECT
       client,
       url,
-      JSON_EXTRACT(payload, '$.response.headers') AS headers
+      response_headers
     FROM
       `httparchive.almanac.requests`
     WHERE
       firstHtml = TRUE AND
       date = '2021-07-01'
     ),
-    UNNEST(JSON_QUERY_ARRAY(headers)) AS response_header
+    UNNEST(JSON_QUERY_ARRAY(response_headers)) AS response_header
   WHERE
     LOWER(JSON_VALUE(response_header, '$.name')) = "x-robots-tag"
 ),
