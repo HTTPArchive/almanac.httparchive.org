@@ -98,7 +98,11 @@ SELECT
   expires,
   real_age
 FROM
-  max_age_values JOIN expires_values USING (client, percentile) JOIN real_age_values USING (client, percentile)
+  max_age_values
+JOIN expires_values
+USING (client, percentile)
+JOIN real_age_values
+USING (client, percentile)
 ORDER BY
   client,
   percentile
