@@ -1,7 +1,6 @@
 #standardSQL
 # Prevalence of server information headers; count by number of hosts.
--- SQL Linter cannot handle DETERMINISTIC keyword so needs noqa ignore command on previous line
-CREATE TEMPORARY FUNCTION hasHeader(headers STRING, headername STRING)  -- noqa: PRS
+CREATE TEMPORARY FUNCTION hasHeader(headers STRING, headername STRING)
   RETURNS BOOL DETERMINISTIC
   LANGUAGE js AS '''
   const parsed_headers = JSON.parse(headers);

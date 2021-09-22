@@ -1,7 +1,6 @@
 #standardSQL
 # CSP on home pages: number of unique headers, header length and number of allowed hosts in all directives
--- SQL Linter cannot handle DETERMINISTIC keyword so needs noqa ignore command on previous line
-CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING)  -- noqa: PRS
+CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING)
   RETURNS STRING DETERMINISTIC
   LANGUAGE js AS '''
   const parsed_headers = JSON.parse(headers);

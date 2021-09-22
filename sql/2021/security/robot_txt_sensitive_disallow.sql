@@ -1,6 +1,6 @@
 #standardSQL
 # Prevalence of pages with /robots.txt and prevalence of pages with disallowed potentially sensitive endpoints (containing 'login', 'log-in', 'signin', 'sign-in', 'admin', 'auth', 'sso' or 'account'). 
-CREATE TEMPORARY FUNCTION getAllDisallowedEndpoints(data STRING)  -- noqa: PRS
+CREATE TEMPORARY FUNCTION getAllDisallowedEndpoints(data STRING)
   RETURNS ARRAY<STRING> DETERMINISTIC
   LANGUAGE js AS '''
   const parsed_data = JSON.parse(data);

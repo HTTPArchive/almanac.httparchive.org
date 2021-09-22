@@ -1,7 +1,6 @@
 #standardSQL
 # Top 10 values of Max-Age and Expires cookie attributes.
--- SQL Linter cannot handle DETERMINISTIC keyword so needs noqa ignore command on previous line
-CREATE TEMPORARY FUNCTION getCookieAgeValues(headers STRING, epochOfRequest NUMERIC)  -- noqa: PRS
+CREATE TEMPORARY FUNCTION getCookieAgeValues(headers STRING, epochOfRequest NUMERIC)
   RETURNS STRING DETERMINISTIC
   LANGUAGE js AS '''
   const regexMaxAge = new RegExp(/max-age\\s*=\\s*(?<value>-*[0-9]+)/i);
