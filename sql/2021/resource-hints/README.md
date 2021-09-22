@@ -14,7 +14,7 @@ Resources:
 - [Planning doc](https://docs.google.com/document/d/1zIKdkS65X9u3rGZOn1kG0rk9YveFb0zhdORBFOoIgQQ/edit?usp=sharing)
 - [2019 chapter](https://almanac.httparchive.org/en/2019/resource-hints)
 - [2020 chapter](https://almanac.httparchive.org/en/2020/resource-hints)
-- [Results](https://docs.google.com/spreadsheets/d/1m2HglZi0l4JO_VNCjwjymu3I1czoUIuEQ34zUuPGiKA/edit?usp=sharing)
+- [Results](https://docs.google.com/spreadsheets/d/1Mw6TjkIClRtlZPHbij5corOZbaSUp-vgTVq3Ig18IwQ/edit?usp=sharing)
 
 ## File Naming
 
