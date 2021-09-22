@@ -14,7 +14,12 @@ Resources:
 - [Planning doc](https://docs.google.com/document/d/1zIKdkS65X9u3rGZOn1kG0rk9YveFb0zhdORBFOoIgQQ/edit?usp=sharing)
 - [2019 chapter](https://almanac.httparchive.org/en/2019/resource-hints)
 - [2020 chapter](https://almanac.httparchive.org/en/2020/resource-hints)
+- [Results](https://docs.google.com/spreadsheets/d/1m2HglZi0l4JO_VNCjwjymu3I1czoUIuEQ34zUuPGiKA/edit?usp=sharing)
 
 ## File Naming
 
 File names start with the table being queried. Next is the custom metric if appropriate. Then "by" followed by how the query is grouped. Finally anything more specific needed.
+
+## Results
+
+Results are saved in a Google Sheet with one sheet per query. The sheet name should match the query to make it simpler for analysts to follow in the future.
