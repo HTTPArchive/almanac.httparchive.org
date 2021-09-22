@@ -31,7 +31,8 @@ response_headers AS (
     `httparchive.almanac.summary_response_bodies`,
     UNNEST(JSON_QUERY_ARRAY(response_headers)) response_header
   WHERE
-    date = '2021-07-01' AND firstHtml = TRUE
+    date = '2021-07-01' AND
+    firstHtml = TRUE
 ),
 
 referrer_policy_headers AS (
@@ -59,13 +60,16 @@ FROM (
     COUNTIF(entire_document_policy_meta IS NOT NULL) AS nb_websites_with_entire_document_policy_meta,
     COUNTIF(entire_document_policy_header IS NOT NULL) AS nb_websites_with_entire_document_policy_header,
     COUNTIF(
-      entire_document_policy_meta IS NOT NULL OR entire_document_policy_header IS NOT NULL
+      entire_document_policy_meta IS NOT NULL OR
+      entire_document_policy_header IS NOT NULL
     ) AS nb_websites_with_entire_document_policy,
     COUNTIF(ARRAY_LENGTH(individual_requests) > 0) AS nb_websites_with_any_individual_requests,
     COUNTIF(ARRAY_LENGTH(link_relations) > 0) AS nb_websites_with_any_link_relations,
     COUNTIF(
-      entire_document_policy_meta IS NOT NULL OR entire_document_policy_header IS NOT NULL OR
-      ARRAY_LENGTH(individual_requests) > 0 OR ARRAY_LENGTH(link_relations) > 0
+      entire_document_policy_meta IS NOT NULL OR
+      entire_document_policy_header IS NOT NULL OR
+      ARRAY_LENGTH(individual_requests) > 0 OR
+      ARRAY_LENGTH(link_relations) > 0
     ) AS nb_websites_with_any_referrer_policy,
     COUNT(0) AS nb_websites
   FROM

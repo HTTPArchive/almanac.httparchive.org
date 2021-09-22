@@ -9,7 +9,8 @@ WITH page_ranks AS (
   FROM
     `httparchive.almanac.summary_response_bodies`
   WHERE
-    date = '2021-07-01' AND firstHtml = TRUE
+    date = '2021-07-01' AND
+    firstHtml = TRUE
 ),
 
 response_headers AS (
@@ -22,7 +23,8 @@ response_headers AS (
     `httparchive.almanac.summary_response_bodies`,
     UNNEST(JSON_QUERY_ARRAY(response_headers)) response_header
   WHERE
-    date = '2021-07-01' AND firstHtml = TRUE
+    date = '2021-07-01' AND
+    firstHtml = TRUE
 ),
 
 meta_tags AS (
@@ -53,11 +55,19 @@ FROM (
   SELECT
     client,
     rank,
-    COUNTIF(header_name = 'feature-policy' OR tag_name = 'feature-policy') AS nb_websites_with_feature_policy,
-    COUNTIF(header_name = 'permissions-policy' OR tag_name = 'permissions-policy') AS nb_websites_with_permissions_policy,
     COUNTIF(
-      header_name = 'feature-policy' OR tag_name = 'feature-policy' OR
-      header_name = 'permissions-policy' OR tag_name = 'permissions-policy'
+      header_name = 'feature-policy' OR
+      tag_name = 'feature-policy'
+    ) AS nb_websites_with_feature_policy,
+    COUNTIF(
+      header_name = 'permissions-policy' OR
+      tag_name = 'permissions-policy'
+    ) AS nb_websites_with_permissions_policy,
+    COUNTIF(
+      header_name = 'feature-policy' OR
+      tag_name = 'feature-policy' OR
+      header_name = 'permissions-policy' OR
+      tag_name = 'permissions-policy'
     ) AS nb_websites_with_any_policy,
     COUNT(0) AS nb_websites
   FROM

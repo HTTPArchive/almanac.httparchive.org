@@ -54,7 +54,8 @@ cookies AS (
   FROM request_headers,
     UNNEST(cookie_names) AS cookie
   WHERE
-    cookie IS NOT NULL AND cookie != ""
+    cookie IS NOT NULL AND
+    cookie != ""
   GROUP BY
     client,
     domain

@@ -9,7 +9,8 @@ WITH page_ranks AS (
   FROM
     `httparchive.almanac.summary_response_bodies`
   WHERE
-    date = '2021-07-01' AND firstHtml = TRUE
+    date = '2021-07-01' AND
+    firstHtml = TRUE
 ),
 
 response_headers AS (
@@ -22,7 +23,8 @@ response_headers AS (
     `httparchive.almanac.summary_response_bodies`,
     UNNEST(JSON_QUERY_ARRAY(response_headers)) response_header
   WHERE
-    date = '2021-07-01' AND firstHtml = TRUE
+    date = '2021-07-01' AND
+    firstHtml = TRUE
 ),
 
 meta_tags AS (
@@ -52,7 +54,8 @@ total_nb_pages AS (
   FROM
     `httparchive.almanac.summary_response_bodies`
   WHERE
-    date = '2021-07-01' AND firstHtml = TRUE
+    date = '2021-07-01' AND
+    firstHtml = TRUE
   GROUP BY
     1, 2
 ),
@@ -68,7 +71,8 @@ merged_feature_policy AS (
     meta_tags
   USING (client, page)
   WHERE
-    header_name = 'feature-policy' OR tag_name = 'feature-policy'
+    header_name = 'feature-policy' OR
+    tag_name = 'feature-policy'
 ),
 
 merged_permissions_policy AS (
@@ -82,7 +86,8 @@ merged_permissions_policy AS (
     meta_tags
   USING (client, page)
   WHERE
-    header_name = 'permissions-policy' OR tag_name = 'permissions-policy'
+    header_name = 'permissions-policy' OR
+    tag_name = 'permissions-policy'
 ),
 
 feature_policy_directives AS (
@@ -115,10 +120,14 @@ site_directives AS (
     page,
     -- distinct directives; https://stackoverflow.com/a/58194837/7391782
     ARRAY(
-      SELECT DISTINCT d
-      FROM UNNEST(ARRAY_CONCAT(feature_policy_directives.directives, permissions_policy_directives.directives)) d
-      WHERE TRIM(d) != ""
-      ORDER BY d
+      SELECT DISTINCT
+        d
+      FROM
+        UNNEST(ARRAY_CONCAT(feature_policy_directives.directives, permissions_policy_directives.directives)) d
+      WHERE
+        TRIM(d) != ""
+      ORDER BY
+        d
     ) AS directives
   FROM
     feature_policy_directives

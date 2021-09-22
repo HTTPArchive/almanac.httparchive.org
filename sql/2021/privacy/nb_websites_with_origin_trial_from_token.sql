@@ -174,7 +174,8 @@ response_headers AS (
     `httparchive.almanac.summary_response_bodies`,
     UNNEST(JSON_QUERY_ARRAY(response_headers)) response_header
   WHERE
-    date = '2021-07-01' AND firstHtml = TRUE
+    date = '2021-07-01' AND
+    firstHtml = TRUE
 ),
 
 meta_tags AS (
@@ -216,7 +217,8 @@ extracted_origin_trials_from_headers_and_meta_tags AS (
     meta_tags
   USING (client, page)
   WHERE
-    header_name = 'origin-trial' OR tag_name = 'origin-trial'
+    header_name = 'origin-trial' OR
+    tag_name = 'origin-trial'
 )
 
 
