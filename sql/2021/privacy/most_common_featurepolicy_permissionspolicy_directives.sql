@@ -63,7 +63,10 @@ merged_feature_policy AS (
     page,
     IF(header_name = 'feature-policy', header_value, tag_value) AS feature_policy_value
   FROM
-    response_headers FULL OUTER JOIN meta_tags USING (client, page)
+    response_headers
+  FULL OUTER JOIN
+    meta_tags
+  USING (client, page)
   WHERE
     header_name = 'feature-policy' OR tag_name = 'feature-policy'
 ),
@@ -74,7 +77,10 @@ merged_permissions_policy AS (
     page,
     IF(header_name = 'permissions-policy', header_value, tag_value) AS permissions_policy_value
   FROM
-    response_headers FULL OUTER JOIN meta_tags USING (client, page)
+    response_headers
+  FULL OUTER JOIN
+    meta_tags
+  USING (client, page)
   WHERE
     header_name = 'permissions-policy' OR tag_name = 'permissions-policy'
 ),
@@ -115,7 +121,10 @@ site_directives AS (
       ORDER BY d
     ) AS directives
   FROM
-    feature_policy_directives FULL OUTER JOIN permissions_policy_directives USING (client, page)
+    feature_policy_directives
+  FULL OUTER JOIN
+    permissions_policy_directives
+  USING (client, page)
 )
 
 SELECT
@@ -125,7 +134,13 @@ SELECT
   COUNT(DISTINCT page) AS nb_websites_with_directive,
   COUNT(DISTINCT page) / MIN(total_nb_pages.total_nb_pages) AS pct_websites_with_directive
 FROM
-  site_directives JOIN page_ranks USING (client, page) JOIN total_nb_pages USING (client, rank),
+  site_directives
+JOIN
+  page_ranks
+USING (client, page)
+JOIN
+  total_nb_pages
+USING (client, rank),
   UNNEST(site_directives.directives) directive
 GROUP BY
   1, 2, 3

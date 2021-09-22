@@ -39,7 +39,10 @@ SELECT
   COUNT(0) AS nb_websites,
   COUNT(0) / MIN(total_nb_pages.total_nb_pages) AS pct_websites
 FROM
-  pages_iab_tcf_v2 JOIN total_nb_pages USING (client)
+  pages_iab_tcf_v2
+JOIN
+  total_nb_pages
+USING (client)
 WHERE
   JSON_VALUE(metrics, '$.publisherCC') IS NOT NULL
 GROUP BY

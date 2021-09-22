@@ -59,8 +59,13 @@ SELECT
   COUNT(0) AS nb_websites_with_values,
   COUNT(0) / MIN(total_nb_pages.total_nb_pages) AS pct_websites_with_values
 FROM
-  referrer_policy_custom_metrics FULL OUTER JOIN referrer_policy_headers USING (client, url)
-JOIN total_nb_pages USING (client)
+  referrer_policy_custom_metrics
+FULL OUTER JOIN
+  referrer_policy_headers
+USING (client, url)
+JOIN
+  total_nb_pages
+USING (client)
 GROUP BY
   1, 2
 ORDER BY

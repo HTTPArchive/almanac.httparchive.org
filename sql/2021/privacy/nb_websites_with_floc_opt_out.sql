@@ -53,7 +53,13 @@ SELECT
   COUNT(DISTINCT page) AS nb_websites,
   COUNT(DISTINCT page) / MIN(total_nb_pages.total_nb_pages) AS pct_websites
 FROM
-  response_headers FULL OUTER JOIN meta_tags USING (client, page) JOIN total_nb_pages USING (client, rank)
+  response_headers
+FULL OUTER JOIN
+  meta_tags
+USING (client, page)
+JOIN
+  total_nb_pages
+USING (client, rank)
 WHERE
   (header_name = 'permissions-policy' AND header_value LIKE 'interest-cohort=()') OR
   (tag_name = 'permissions-policy' AND tag_value LIKE 'interest-cohort=()') # value could contain other policies

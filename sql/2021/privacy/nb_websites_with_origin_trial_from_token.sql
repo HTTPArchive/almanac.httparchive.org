@@ -211,7 +211,10 @@ extracted_origin_trials_from_headers_and_meta_tags AS (
     page AS site, -- the home page that was crawled
     retrieveOriginTrials(IF(header_name = 'origin-trial', header_value, tag_value)) AS origin_trials_from_headers_and_meta_tags
   FROM
-    response_headers FULL OUTER JOIN meta_tags USING (client, page)
+    response_headers
+  FULL OUTER JOIN
+    meta_tags
+  USING (client, page)
   WHERE
     header_name = 'origin-trial' OR tag_name = 'origin-trial'
 )
@@ -224,7 +227,10 @@ SELECT
   COUNT(DISTINCT COALESCE(origin_trials_from_custom_metric.originElem, origin_trials_from_headers_and_meta_tags.originElem))
   AS nb_origins -- origins with an origin trial
 FROM
-  extracted_origin_trials_from_custom_metric FULL OUTER JOIN extracted_origin_trials_from_headers_and_meta_tags USING (client, site)
+  extracted_origin_trials_from_custom_metric
+FULL OUTER JOIN
+  extracted_origin_trials_from_headers_and_meta_tags
+USING (client, site)
 WHERE
   (
     origin_trials_from_custom_metric.featureElem = 'InterestCohortAPI' OR

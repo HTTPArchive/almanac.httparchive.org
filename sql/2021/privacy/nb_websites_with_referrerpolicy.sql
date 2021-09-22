@@ -69,7 +69,10 @@ FROM (
     ) AS nb_websites_with_any_referrer_policy,
     COUNT(0) AS nb_websites
   FROM
-    referrer_policy_custom_metrics FULL OUTER JOIN referrer_policy_headers USING (client, url)
+    referrer_policy_custom_metrics
+  FULL OUTER JOIN
+    referrer_policy_headers
+  USING (client, url)
   GROUP BY
     1
 )

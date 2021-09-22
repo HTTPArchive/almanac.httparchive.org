@@ -25,9 +25,16 @@ def load_tracker_db(loc=':memory:'):
 tracker_domains = {}
 
 sql_query = """
-    SELECT categories.name, tracker, domain FROM tracker_domains
-    INNER JOIN trackers ON trackers.id = tracker_domains.tracker
-    INNER JOIN categories ON categories.id = trackers.category_id;
+    SELECT
+      categories.name, tracker, domain
+    FROM
+      tracker_domains
+    INNER JOIN
+      trackers
+    ON trackers.id = tracker_domains.tracker
+    INNER JOIN
+      categories
+    ON categories.id = trackers.category_id;
 """
 with load_tracker_db() as connection:
     for (category, tracker, domain) in connection.execute(sql_query):

@@ -53,7 +53,13 @@ SELECT
   COUNT(DISTINCT page) AS nb_websites,
   COUNT(DISTINCT page) / MIN(total_nb_pages.total_nb_pages) AS pct_websites
 FROM
-  response_headers FULL OUTER JOIN meta_tags USING (client, page) JOIN total_nb_pages USING (client, rank)
+  response_headers
+FULL OUTER JOIN
+  meta_tags
+USING (client, page)
+JOIN
+  total_nb_pages
+USING (client, rank)
 WHERE
   header_name = 'accept-ch' OR tag_name = 'accept-ch'
 GROUP BY

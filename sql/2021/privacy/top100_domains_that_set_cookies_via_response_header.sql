@@ -66,9 +66,11 @@ SELECT
   cookies.domain,
   websites_count,
   pct_websites
-FROM cookies JOIN whotracksme ON (
-  NET.HOST(cookies.domain) = whotracksme.domain
-)
+FROM
+  cookies
+JOIN
+  whotracksme
+ON NET.HOST(cookies.domain) = whotracksme.domain
 ORDER BY
   websites_count DESC
 LIMIT 100

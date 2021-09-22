@@ -61,7 +61,13 @@ FROM (
     ) AS nb_websites_with_any_policy,
     COUNT(0) AS nb_websites
   FROM
-    response_headers FULL OUTER JOIN meta_tags USING (client, page) JOIN page_ranks USING (client, page)
+    response_headers
+  FULL OUTER JOIN
+    meta_tags
+  USING (client, page)
+  JOIN
+    page_ranks
+  USING (client, page)
   GROUP BY
     1, 2
 )
