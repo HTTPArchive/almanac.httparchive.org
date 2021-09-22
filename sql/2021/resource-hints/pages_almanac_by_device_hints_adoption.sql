@@ -33,7 +33,7 @@ SELECT
   COUNTIF(hints.`dns-prefetch`) AS dns_prefetch,
   COUNTIF(hints.`dns-prefetch`) / COUNT(0) AS pct_dns_prefetch,
   COUNTIF(hints.modulepreload) AS modulepreload,
-  COUNTIF(hints.modulepreload) / COUNT(0) AS pct_modulepreload,
+  COUNTIF(hints.modulepreload) / COUNT(0) AS pct_modulepreload
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
