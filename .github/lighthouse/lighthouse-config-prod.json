@@ -33,6 +33,7 @@
         "unused-css-rules": "off",
         "unused-javascript": "off",
         "uses-long-cache-ttl": "off",
+        "uses-passive-event-listeners": "off",
         "uses-rel-preconnect": "off",
         "uses-rel-preload": "off",
         "uses-responsive-images": "off",

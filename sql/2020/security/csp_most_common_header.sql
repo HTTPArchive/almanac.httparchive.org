@@ -1,7 +1,6 @@
 #standardSQL
 # CSP on home pages: most commonly used header values
-CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING) -- noqa: PRS
--- SQL Linter cannot handle DETERMINISTIC keyword so needs noqa ignore command on previous line
+CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING)
 RETURNS STRING
 DETERMINISTIC
 LANGUAGE js AS '''
