@@ -10,9 +10,9 @@ SELECT
   APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(report, '$.categories.seo.score') AS NUMERIC), 1000)[OFFSET(500)] AS median_seo,
   APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(report, '$.categories.best-practices.score') AS NUMERIC), 1000)[OFFSET(500)] AS median_best_practices
 FROM
-  `httparchive.sample_data.lighthouse_mobile_*`
+  `httparchive.lighthouse.2021_07_01_mobile`
 JOIN
-  `httparchive.sample_data.technologies_mobile_*`
+  `httparchive.technologies.2021_07_01_mobile`
 USING
   (url)
 WHERE

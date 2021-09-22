@@ -36,3 +36,12 @@ Current list of queries used
 * Consent Management Platform adoption - percent_of_ecommsites_using_cmp.sql
 * AMP usage on ecommerce sites (mobile). - pct_ampusage_bydevice_vendor.sql
 * Web Push Notification acceptance rates - webpushstats_ecommsites.sql
+* Top "JavaScript frameworks" - top_jsframework_providers_by_device.sql
+* Top "JavaScript libraries" category - top_jslibs_by_device.sql
+* Top CMS technology category - top_cms_by_device.sql
+* Top "Page Builders” technology category - top_pagebuilders_bydevice.sql
+* Top “A/B testing” technology category. - top_abtesting_bydevice.sql
+* Top “Personalisation” technology category - top_personalisation_bydevice.sql
+* Top “Loyalty & Rewards” technology category - top_loyaltyandrewards_bydevice.sql
+* All categories - all_categories.sql
+* Median lighthouse scores for ecommerce - median_lighthouse_score_ecommsites.sql
