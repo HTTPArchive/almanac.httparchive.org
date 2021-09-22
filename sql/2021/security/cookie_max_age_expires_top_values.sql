@@ -51,16 +51,17 @@ GROUP BY
 ),
 
 expires_values AS (
-SELECT
-  client,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_expires_values,
-  COUNT(0) AS expires_count,
-  expires_value
-FROM age_values,
-UNNEST(JSON_QUERY_ARRAY(values, "$.expires")) AS expires_value
-GROUP BY
-  client,
-  expires_value
+  SELECT
+    client,
+    SUM(COUNT(0)) OVER (PARTITION BY client) AS total_expires_values,
+    COUNT(0) AS expires_count,
+    expires_value
+  FROM
+    age_values,
+  UNNEST(JSON_QUERY_ARRAY(values, "$.expires")) AS expires_value
+  GROUP BY
+    client,
+    expires_value
 ),
 
 desktop_values AS (
