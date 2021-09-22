@@ -1,8 +1,8 @@
 #standardSQL
 # CSP on home pages: number of unique headers, header length and number of allowed hosts in all directives
 CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING)
-  RETURNS STRING DETERMINISTIC
-  LANGUAGE js AS '''
+RETURNS STRING DETERMINISTIC
+LANGUAGE js AS '''
   const parsed_headers = JSON.parse(headers);
   const matching_headers = parsed_headers.filter(h => h.name.toLowerCase() == headername.toLowerCase());
   if (matching_headers.length > 0) {

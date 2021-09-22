@@ -1,8 +1,8 @@
 #standardSQL
 # Percentiles of Max-Age-attribute, Expires-attribute and real age (Max-Age has precedence) of cookies set over all requests
 CREATE TEMPORARY FUNCTION getCookieAgeValues(headers STRING, epochOfRequest NUMERIC)
-  RETURNS STRING DETERMINISTIC
-  LANGUAGE js AS '''
+RETURNS STRING DETERMINISTIC
+LANGUAGE js AS '''
   const regexMaxAge = new RegExp(/max-age\\s*=\\s*(?<value>-*[0-9]+)/i);
   const regexExpires = new RegExp(/expires\\s*=\\s*(?<value>.*?)(;|$)/i);
   const parsed_headers = JSON.parse(headers);
@@ -44,51 +44,51 @@ WITH age_values AS (
 ),
 
 max_age_values AS (
-SELECT
-  client,
-  percentile,
-  APPROX_QUANTILES(SAFE_CAST(max_age_value AS NUMERIC), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS max_age
-FROM age_values,
-UNNEST(JSON_QUERY_ARRAY(values, "$.maxAge")) AS max_age_value,
-UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
-GROUP BY
-  percentile,
-  client
-ORDER BY
-  percentile,
-  client
+  SELECT
+    client,
+    percentile,
+    APPROX_QUANTILES(SAFE_CAST(max_age_value AS NUMERIC), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS max_age
+  FROM age_values,
+    UNNEST(JSON_QUERY_ARRAY(values, "$.maxAge")) AS max_age_value,
+    UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+  GROUP BY
+    percentile,
+    client
+  ORDER BY
+    percentile,
+    client
 ),
 
 expires_values AS (
-SELECT
-  client,
-  percentile,
-  APPROX_QUANTILES(SAFE_CAST(expires_value AS NUMERIC), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS expires
-FROM age_values,
-UNNEST(JSON_QUERY_ARRAY(values, "$.expires")) AS expires_value,
-UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
-GROUP BY
-  percentile,
-  client
-ORDER BY
-  percentile,
-  client
+  SELECT
+    client,
+    percentile,
+    APPROX_QUANTILES(SAFE_CAST(expires_value AS NUMERIC), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS expires
+  FROM age_values,
+    UNNEST(JSON_QUERY_ARRAY(values, "$.expires")) AS expires_value,
+    UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+  GROUP BY
+    percentile,
+    client
+  ORDER BY
+    percentile,
+    client
 ),
 
 real_age_values AS (
-SELECT
-  client,
-  percentile,
-  APPROX_QUANTILES(SAFE_CAST(real_age_value AS NUMERIC), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS real_age
-FROM age_values,
-UNNEST(JSON_QUERY_ARRAY(values, "$.realAge")) AS real_age_value,
-UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
-GROUP BY
-  percentile,
-  client
-ORDER BY
-  percentile,
-  client
+  SELECT
+    client,
+    percentile,
+    APPROX_QUANTILES(SAFE_CAST(real_age_value AS NUMERIC), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS real_age
+  FROM age_values,
+    UNNEST(JSON_QUERY_ARRAY(values, "$.realAge")) AS real_age_value,
+    UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+  GROUP BY
+    percentile,
+    client
+  ORDER BY
+    percentile,
+    client
 )
 
 SELECT

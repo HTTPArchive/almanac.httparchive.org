@@ -1,8 +1,8 @@
 #standardSQL
 # Top 10 values of Max-Age and Expires cookie attributes.
 CREATE TEMPORARY FUNCTION getCookieAgeValues(headers STRING, epochOfRequest NUMERIC)
-  RETURNS STRING DETERMINISTIC
-  LANGUAGE js AS '''
+RETURNS STRING DETERMINISTIC
+LANGUAGE js AS '''
   const regexMaxAge = new RegExp(/max-age\\s*=\\s*(?<value>-*[0-9]+)/i);
   const regexExpires = new RegExp(/expires\\s*=\\s*(?<value>.*?)(;|$)/i);
   const parsed_headers = JSON.parse(headers);
@@ -32,7 +32,7 @@ WITH max_age_values AS (
     max_age_value
   FROM
     `httparchive.almanac.requests`,
-  UNNEST(JSON_QUERY_ARRAY(getCookieAgeValues(response_headers, startedDateTime), "$.maxAge")) AS max_age_value
+    UNNEST(JSON_QUERY_ARRAY(getCookieAgeValues(response_headers, startedDateTime), "$.maxAge")) AS max_age_value
   WHERE
     date = "2021-07-01"
 ),
@@ -43,37 +43,37 @@ expires_values AS (
     expires_value
   FROM
     `httparchive.almanac.requests`,
-  UNNEST(JSON_QUERY_ARRAY(getCookieAgeValues(response_headers, startedDateTime), "$.expires")) AS expires_value
+    UNNEST(JSON_QUERY_ARRAY(getCookieAgeValues(response_headers, startedDateTime), "$.expires")) AS expires_value
   WHERE
     date = "2021-07-01"
 ),
 
 max_age AS (
-SELECT
-  client AS max_age_client,
-  ROW_NUMBER() OVER (ORDER BY COUNT(0) DESC) AS row,
-  MIN(total_cookies_with_max_age) AS total_cookies_with_max_age,
-  COUNT(0) AS max_age_count,
-    COUNT(0) /  MIN(total_cookies_with_max_age) AS max_age_pct,
-  max_age_value
-FROM
+  SELECT
+    client AS max_age_client,
+    ROW_NUMBER() OVER (ORDER BY COUNT(0) DESC) AS row,
+    MIN(total_cookies_with_max_age) AS total_cookies_with_max_age,
+    COUNT(0) AS max_age_count,
+    COUNT(0) / MIN(total_cookies_with_max_age) AS max_age_pct,
+    max_age_value
+  FROM
     max_age_values
-JOIN 
-(
-    SELECT 
+  JOIN
+    (
+      SELECT
         client,
-        COUNT(0) as total_cookies_with_max_age
-    FROM 
-        max_age_values 
-    GROUP BY 
+        COUNT(0) AS total_cookies_with_max_age
+      FROM
+        max_age_values
+      GROUP BY
         client
-)
-USING (client)
-GROUP BY
-  client,
-  max_age_value
-ORDER BY
-  max_age_count DESC
+    )
+  USING (client)
+  GROUP BY
+    client,
+    max_age_value
+  ORDER BY
+    max_age_count DESC
 ),
 
 expires AS (
@@ -82,21 +82,21 @@ expires AS (
     ROW_NUMBER() OVER (ORDER BY COUNT(0) DESC) AS row,
     MIN(total_cookies_with_expires) AS total_cookies_with_expires,
     COUNT(0) AS expires_count,
-    COUNT(0) /  MIN(total_cookies_with_expires) AS expires_pct,
+    COUNT(0) / MIN(total_cookies_with_expires) AS expires_pct,
     expires_value
   FROM
     expires_values
-JOIN 
-(
-    SELECT 
+  JOIN
+    (
+      SELECT
         client,
         COUNT(0) AS total_cookies_with_expires
-    FROM 
-        expires_values 
-    GROUP BY 
+      FROM
+        expires_values
+      GROUP BY
         client
-)
-USING (client)
+    )
+  USING (client)
   GROUP BY
     client,
     expires_value

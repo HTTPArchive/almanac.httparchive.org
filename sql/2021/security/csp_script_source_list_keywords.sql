@@ -1,8 +1,8 @@
 #standardSQL
 # CSP: usage of default/script-src, and within the directive usage of strict-dynamic, nonce values, unsafe-inline and unsafe-eval
 CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING)
-  RETURNS STRING DETERMINISTIC
-  LANGUAGE js AS '''
+RETURNS STRING DETERMINISTIC
+LANGUAGE js AS '''
   const parsed_headers = JSON.parse(headers);
   const matching_headers = parsed_headers.filter(h => h.name.toLowerCase() == headername.toLowerCase());
   if (matching_headers.length > 0) {

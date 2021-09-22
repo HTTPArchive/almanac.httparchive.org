@@ -4,7 +4,7 @@ SELECT
   app,
   COUNT(0) AS freq,
   total,
- COUNT(0) / total AS pct
+  COUNT(0) / total AS pct
 FROM
   `httparchive.technologies.2021_07_01_*`
 JOIN (

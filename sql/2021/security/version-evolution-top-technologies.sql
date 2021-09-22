@@ -28,8 +28,8 @@ FROM (
     FROM
       `httparchive.technologies.*`
     WHERE
-      REGEXP_CONTAINS(info, r'\d+\.\d+')
-      AND REGEXP_CONTAINS(_TABLE_SUFFIX, r'^20(21|20).*')
+      REGEXP_CONTAINS(info, r'\d+\.\d+') AND
+      REGEXP_CONTAINS(_TABLE_SUFFIX, r'^20(21|20).*')
   ) AS tech
   INNER JOIN (
     SELECT

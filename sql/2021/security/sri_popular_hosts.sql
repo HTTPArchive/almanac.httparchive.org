@@ -5,7 +5,7 @@ WITH totals AS (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_sri_scripts
   FROM
-     `httparchive.pages.2021_07_01_*`,
+    `httparchive.pages.2021_07_01_*`,
     UNNEST( JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.sri-integrity")) AS sri
   WHERE
     sri IS NOT NULL AND
@@ -31,7 +31,7 @@ FROM (
   FROM
     `httparchive.pages.2021_07_01_*`),
   UNNEST(sris) AS sri
-  JOIN totals USING (client)
+JOIN totals USING (client)
 WHERE
   sri IS NOT NULL AND
   JSON_EXTRACT_SCALAR(sri, '$.tagname') = 'script'
