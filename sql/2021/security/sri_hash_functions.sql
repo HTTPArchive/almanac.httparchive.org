@@ -14,7 +14,7 @@ WITH totals AS (
 SELECT
   client,
   hash_function,
-  MIN(total_sri_elements),
+  MIN(total_sri_elements) AS total_sri_elements,
   COUNT(0) AS freq,
   COUNT(0) / MIN(total_sri_elements) AS pct
 FROM (
