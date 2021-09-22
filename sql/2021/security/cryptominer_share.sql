@@ -9,8 +9,8 @@ SELECT
 FROM
   `httparchive.technologies.2021_07_01_*`
 WHERE
-  category = 'Cryptominers'
-  OR category = 'Cryptominer'
+  category = 'Cryptominers' OR
+  category = 'Cryptominer'
 GROUP BY
   client,
   app
