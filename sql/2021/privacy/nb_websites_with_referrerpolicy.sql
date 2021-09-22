@@ -1,24 +1,15 @@
 #standardSQL
 # Websites using Referrer-Policy
 
-WITH pages_privacy AS (
+referrer_policy_custom_metrics AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    JSON_VALUE(payload, "$._privacy") AS metrics
+    JSON_VALUE(metrics, "$._privacy.referrerPolicy.entire_document_policy") AS entire_document_policy_meta,
+    JSON_QUERY_ARRAY(metrics, "$._privacy.referrerPolicy.individual_requests") AS individual_requests,
+    JSON_QUERY_ARRAY(metrics, "$._privacy.referrerPolicy.link_relations") AS link_relations
   FROM
     `httparchive.pages.2021_07_01_*`
-),
-
-referrer_policy_custom_metrics AS (
-  SELECT
-    client,
-    url,
-    JSON_VALUE(metrics, "$.referrerPolicy.entire_document_policy") AS entire_document_policy_meta,
-    JSON_QUERY_ARRAY(metrics, "$.referrerPolicy.individual_requests") AS individual_requests,
-    JSON_QUERY_ARRAY(metrics, "$.referrerPolicy.link_relations") AS link_relations
-  FROM
-    pages_privacy
 ),
 
 response_headers AS (

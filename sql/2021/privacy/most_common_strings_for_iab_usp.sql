@@ -2,13 +2,15 @@
 # Counts of US Privacy String values for websites using IAB US Privacy Framework
 # cf. https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md
 
-WITH pages_privacy AS (
+WITH pages_iab_usp AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    JSON_VALUE(payload, "$._privacy") AS metrics
+    JSON_QUERY(metrics, "$._privacy.iab_usp.privacy_string") AS metrics
   FROM
     `httparchive.pages.2021_07_01_*`
-),
+  WHERE
+    JSON_QUERY(metrics, "$._privacy.iab_usp.privacy_string") IS NOT NULL
+)
 
 total_nb_pages AS (
   SELECT
@@ -18,16 +20,6 @@ total_nb_pages AS (
     `httparchive.pages.2021_07_01_*`
   GROUP BY
     1
-),
-
-pages_iab_usp AS (
-  SELECT
-    client,
-    JSON_QUERY(metrics, "$.iab_usp.privacy_string") AS metrics
-  FROM
-    pages_privacy
-  WHERE
-    JSON_QUERY(metrics, "$.iab_usp.privacy_string") IS NOT NULL
 )
 
 SELECT

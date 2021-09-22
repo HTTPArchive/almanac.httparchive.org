@@ -18,22 +18,14 @@ AS
 )
 );
 
-WITH pages_privacy AS (
+WITH pages_iab_tcf_v2 AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    JSON_VALUE(payload, "$._privacy") AS metrics
+    JSON_QUERY(metrics, "$._privacy.iab_tcf_v2.data") AS metrics
   FROM
     `httparchive.pages.2021_07_01_*`
-),
-
-pages_iab_tcf_v2 AS (
-  SELECT
-    client,
-    JSON_QUERY(metrics, "$.iab_tcf_v2.data") AS metrics
-  FROM
-    pages_privacy
   WHERE
-    JSON_QUERY(metrics, "$.iab_tcf_v2.data") IS NOT NULL
+    JSON_QUERY(metrics, "$._privacy.iab_tcf_v2.data") IS NOT NULL
 )
 
 SELECT client, field, result.key, result.value, COUNT(0) AS nb_websites FROM

@@ -1,11 +1,11 @@
 #standardSQL
 # Most common values for Referrer-Policy (at site level)
 
-WITH pages_privacy AS (
+WITH referrer_policy_custom_metrics AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    JSON_VALUE(payload, "$._privacy") AS metrics
+    JSON_VALUE(metrics, "$._privacy.referrerPolicy.entire_document_policy") AS entire_document_policy_meta
   FROM
     `httparchive.pages.2021_07_01_*`
 ),
@@ -18,16 +18,7 @@ total_nb_pages AS (
     `httparchive.pages.2021_07_01_*`
   GROUP BY
     1
-),
-
-referrer_policy_custom_metrics AS (
-  SELECT
-    client,
-    url,
-    JSON_VALUE(metrics, "$.referrerPolicy.entire_document_policy") AS entire_document_policy_meta
-  FROM
-    pages_privacy
-),
+)
 
 response_headers AS (
   SELECT
