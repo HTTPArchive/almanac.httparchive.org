@@ -39,7 +39,8 @@ WITH age_values AS (
 
 max_age_values AS (
 SELECT
-  client,
+  client AS max_age_client,
+  ROW_NUMBER() OVER (ORDER BY COUNT(0) DESC) AS row,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total_max_age_values,
   COUNT(0) AS max_age_count,
   max_age_value
@@ -48,11 +49,14 @@ UNNEST(JSON_QUERY_ARRAY(values, "$.maxAge")) AS max_age_value
 GROUP BY
   client,
   max_age_value
+ORDER BY
+  max_age_count DESC
 ),
 
 expires_values AS (
   SELECT
-    client,
+    client AS expires_client,
+    ROW_NUMBER() OVER (ORDER BY COUNT(0) DESC) AS row,
     SUM(COUNT(0)) OVER (PARTITION BY client) AS total_expires_values,
     COUNT(0) AS expires_count,
     expires_value
@@ -62,64 +66,14 @@ expires_values AS (
   GROUP BY
     client,
     expires_value
-),
-
-desktop_values AS (
-  SELECT
-    *
-  FROM (
-    SELECT
-      *,
-      ROW_NUMBER() OVER (ORDER BY max_age_count DESC) AS row
-    FROM
-      max_age_values
-    WHERE
-      client LIKE "%desktop%"
-  )
-  JOIN
-  (
-    SELECT
-      *,
-      ROW_NUMBER() OVER (ORDER BY expires_count DESC) AS row
-    FROM
-      expires_values
-    WHERE
-      client LIKE "%desktop%"
-  ) USING (client, row)
-    ORDER BY
-      row
-    LIMIT 10
-),
-
-mobile_values AS (
-  SELECT *
-  FROM (
-    SELECT
-      *,
-      ROW_NUMBER() OVER (ORDER BY max_age_count DESC) AS row
-    FROM
-      max_age_values
-    WHERE
-      client LIKE "%mobile%"
-  )
-  JOIN
-  (
-    SELECT
-      *,
-      ROW_NUMBER() OVER (ORDER BY expires_count DESC) AS row
-    FROM
-      expires_values
-    WHERE
-      client LIKE "%mobile%"
-  ) USING (client, row)
-    ORDER BY
-      row
-    LIMIT 20
+  ORDER BY
+    expires_count DESC
 )
 
 SELECT
   *
 FROM
-  desktop_values UNION DISTINCT (SELECT * FROM mobile_values)
+  max_age_values JOIN expires_values USING (row)
 ORDER BY
-  client
+  row
+LIMIT 100
