@@ -43,4 +43,5 @@ GROUP BY
   client,
   geolocation_app
 ORDER BY
-  3 DESC
+  client ASC,
+  total_pages DESC

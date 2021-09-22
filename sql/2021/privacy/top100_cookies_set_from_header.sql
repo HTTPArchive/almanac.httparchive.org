@@ -77,5 +77,6 @@ LEFT JOIN
   whotracksme
 ON NET.HOST(request) = domain
 ORDER BY
+  client ASC,
   websites_count DESC
 LIMIT 1000

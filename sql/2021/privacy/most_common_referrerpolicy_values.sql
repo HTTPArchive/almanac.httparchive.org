@@ -17,8 +17,8 @@ total_nb_pages AS (
   FROM
     `httparchive.pages.2021_07_01_*`
   GROUP BY
-    1
-)
+    client
+),
 
 response_headers AS (
   SELECT
@@ -59,6 +59,8 @@ JOIN
   total_nb_pages
 USING (client)
 GROUP BY
-  1, 2
+  client,
+  entire_document_policy
 ORDER BY
-  3 DESC
+  client ASC,
+  nb_websites_with_values DESC

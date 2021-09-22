@@ -10,7 +10,7 @@ WITH pages_iab_usp AS (
     `httparchive.pages.2021_07_01_*`
   WHERE
     JSON_QUERY(metrics, "$._privacy.iab_usp.privacy_string") IS NOT NULL
-)
+),
 
 total_nb_pages AS (
   SELECT
@@ -19,7 +19,7 @@ total_nb_pages AS (
   FROM
     `httparchive.pages.2021_07_01_*`
   GROUP BY
-    1
+    client
 )
 
 SELECT
@@ -35,6 +35,8 @@ USING (client)
 WHERE
   JSON_VALUE(metrics, '$.uspString') IS NOT NULL
 GROUP BY
-  1, 2
+  client,
+  uspString
 ORDER BY
-  3 DESC
+  client ASC,
+  nb_websites DESC

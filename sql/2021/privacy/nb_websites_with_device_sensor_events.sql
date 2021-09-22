@@ -43,6 +43,8 @@ WHERE
   -- device* events, from https://www.esat.kuleuven.be/cosic/publications/article-3078.pdf
   event LIKE 'device%'
 GROUP BY
-  1, 2
+  client,
+  event
 ORDER BY
-  2 ASC, 1 ASC
+  client ASC,
+  event ASC

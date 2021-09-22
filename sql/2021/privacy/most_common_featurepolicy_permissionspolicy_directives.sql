@@ -57,7 +57,8 @@ total_nb_pages AS (
     date = '2021-07-01' AND
     firstHtml = TRUE
   GROUP BY
-    1, 2
+    client,
+    rank
 ),
 
 merged_feature_policy AS (
@@ -99,7 +100,8 @@ feature_policy_directives AS (
     merged_feature_policy,
     UNNEST(SPLIT(feature_policy_value, ";")) feature_policy_directive
   GROUP BY
-    1, 2
+    client,
+    page
 ),
 
 permissions_policy_directives AS (
@@ -111,7 +113,8 @@ permissions_policy_directives AS (
     merged_permissions_policy,
     UNNEST(SPLIT(permissions_policy_value, ",")) permissions_policy_directive
   GROUP BY
-    1, 2
+    client,
+    page
 ),
 
 site_directives AS (
@@ -152,6 +155,11 @@ JOIN
 USING (client, rank),
   UNNEST(site_directives.directives) directive
 GROUP BY
-  1, 2, 3
+  client,
+  rank,
+  directive
 ORDER BY
-  2 ASC, 1 ASC, 4 DESC, 3 ASC
+  rank ASC,
+  client ASC,
+  nb_websites_with_directive DESC,
+  directive ASC

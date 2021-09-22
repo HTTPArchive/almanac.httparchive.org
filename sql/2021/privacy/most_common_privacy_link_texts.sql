@@ -12,7 +12,7 @@ WITH privacy_link_texts AS (
     ) AS texts_per_site
   FROM
     `httparchive.pages.2021_07_01_*`
-)
+),
 
 total_nb_pages AS (
   SELECT
@@ -21,7 +21,7 @@ total_nb_pages AS (
   FROM
     `httparchive.pages.2021_07_01_*`
   GROUP BY
-    1
+    client
 )
 
 SELECT
@@ -36,6 +36,9 @@ JOIN
 USING (client),
   UNNEST(texts_per_site) text
 GROUP BY
-  1, 2
+  client,
+  text
 ORDER BY
-  3 DESC
+  client ASC,
+  nb_websites_with_text DESC,
+  text ASC

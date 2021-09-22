@@ -17,6 +17,6 @@ FROM
 WHERE
   JSON_VALUE(pages_well_known.metrics, '$."/.well-known/gpc.json".found') = "true"
 GROUP BY
-  1
+  client
 ORDER BY
-  1 ASC
+  client ASC

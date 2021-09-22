@@ -79,7 +79,9 @@ FROM (
     page_ranks
   USING (client, page)
   GROUP BY
-    1, 2
+    client,
+    rank
 )
 ORDER BY
-  rank ASC, client ASC
+  rank ASC,
+  client ASC

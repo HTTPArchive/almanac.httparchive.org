@@ -37,7 +37,8 @@ FROM (
     NET.REG_DOMAIN(page) != NET.REG_DOMAIN(urlShort) -- third party
   GROUP BY
     client,
-    page )
+    page
+  )
 GROUP BY
   client,
   nb_trackers
@@ -67,7 +68,8 @@ FROM (
     whotracksme.category != 'hosting'
   GROUP BY
     client,
-    page )
+    page
+  )
 GROUP BY
   client,
   nb_trackers

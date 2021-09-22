@@ -1,7 +1,7 @@
 #standardSQL
 # Websites using Referrer-Policy
 
-referrer_policy_custom_metrics AS (
+WITH referrer_policy_custom_metrics AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
@@ -69,7 +69,7 @@ FROM (
     referrer_policy_headers
   USING (client, url)
   GROUP BY
-    1
+    client
 )
 ORDER BY
   client ASC

@@ -43,4 +43,5 @@ GROUP BY
   client,
   fingerprinting_app
 ORDER BY
-  3 DESC
+  client ASC,
+  total_pages DESC

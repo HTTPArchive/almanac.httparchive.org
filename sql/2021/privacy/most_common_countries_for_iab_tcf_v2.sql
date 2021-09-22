@@ -22,7 +22,7 @@ total_nb_pages AS (
   FROM
     `httparchive.pages.2021_07_01_*`
   GROUP BY
-    1
+    client
 )
 
 SELECT
@@ -38,6 +38,8 @@ USING (client)
 WHERE
   JSON_VALUE(metrics, '$.publisherCC') IS NOT NULL
 GROUP BY
-  1, 2
+  client,
+  publisherCC
 ORDER BY
-  3 DESC
+  client ASC,
+  nb_websites DESC

@@ -11,4 +11,4 @@ FROM
 GROUP BY
   client
 ORDER BY
-  1 ASC
+  client ASC

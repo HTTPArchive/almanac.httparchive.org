@@ -80,7 +80,7 @@ FROM (
   FROM
     `httparchive.pages.2021_07_01_*`
   GROUP BY
-    1
+    client
   )
 ORDER BY
   client ASC

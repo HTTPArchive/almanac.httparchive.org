@@ -43,4 +43,5 @@ GROUP BY
   client,
   retargeting_app
 ORDER BY
-  3 DESC
+  client ASC,
+  total_pages DESC

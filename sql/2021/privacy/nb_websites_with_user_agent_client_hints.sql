@@ -46,7 +46,8 @@ total_nb_pages AS (
     date = '2021-07-01' AND
     firstHtml = TRUE
   GROUP BY
-    1, 2
+    client,
+    rank
 )
 
 SELECT
@@ -66,6 +67,8 @@ WHERE
   header_name = 'accept-ch' OR
   tag_name = 'accept-ch'
 GROUP BY
-  1, 2
+  client,
+  rank
 ORDER BY
-  2 ASC, 1 ASC
+  rank ASC,
+  client ASC

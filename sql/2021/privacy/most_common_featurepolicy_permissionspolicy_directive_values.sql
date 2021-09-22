@@ -57,7 +57,8 @@ total_nb_pages AS (
     date = '2021-07-01' AND
     firstHtml = TRUE
   GROUP BY
-    1, 2
+    client,
+    rank
 ),
 
 merged_feature_policy AS (
@@ -153,6 +154,13 @@ WHERE
   TRIM(directive) != "" AND
   offset > 0
 GROUP BY
-  1, 2, 3, 4
+  client,
+  rank,
+  directive_name,
+  origin
 ORDER BY
-  2 ASC, 1 ASC, 5 DESC, 3 ASC, 4 ASC
+  rank ASC,
+  client ASC,
+  nb_websites_with_directive DESC,
+  directive_name ASC,
+  origin ASC

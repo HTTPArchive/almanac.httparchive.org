@@ -28,7 +28,13 @@ WITH pages_iab_tcf_v2 AS (
     JSON_QUERY(metrics, "$._privacy.iab_tcf_v2.data") IS NOT NULL
 )
 
-SELECT client, field, result.key, result.value, COUNT(0) AS nb_websites FROM
+SELECT
+  client,
+  field,
+  result.key AS key,
+  result.value AS value,
+  COUNT(0) AS nb_websites
+FROM
   (
     SELECT
       client,
@@ -102,6 +108,10 @@ SELECT client, field, result.key, result.value, COUNT(0) AS nb_websites FROM
   ),
   UNNEST(results) result
 GROUP BY
-  1, 2, 3, 4
+  client,
+  field,
+  key,
+  value
 ORDER BY
-  5 DESC
+  client ASC,
+  nb_websites DESC

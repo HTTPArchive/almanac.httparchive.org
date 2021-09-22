@@ -243,6 +243,8 @@ WHERE
     origin_trials_from_headers_and_meta_tags.featureElem = 'TrustTokens'
   )
 GROUP BY
-  1, 2
+  client,
+  featureElem
 ORDER BY
-  2 ASC, 1 ASC
+  client ASC,
+  featureElem ASC

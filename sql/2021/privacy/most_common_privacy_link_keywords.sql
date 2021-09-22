@@ -20,7 +20,7 @@ total_nb_pages AS (
   FROM
     `httparchive.pages.2021_07_01_*`
   GROUP BY
-    1
+    client
 )
 
 SELECT
@@ -35,6 +35,9 @@ JOIN
 USING (client),
   UNNEST(keywords_per_site) keyword
 GROUP BY
-  1, 2
+  client,
+  keyword
 ORDER BY
-  3 DESC
+  client ASC,
+  nb_websites_with_keyword DESC,
+  keyword ASC
