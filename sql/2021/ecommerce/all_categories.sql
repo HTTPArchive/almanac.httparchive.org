@@ -1,7 +1,7 @@
 #standardSQL
-# List of all categories
+# List of all categories for 2021_07_01
 SELECT DISTINCT
-  app
+  category
 FROM
   `httparchive.technologies.2021_07_01_*`
 ORDER BY
