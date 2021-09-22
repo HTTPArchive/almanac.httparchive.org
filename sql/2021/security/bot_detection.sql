@@ -24,4 +24,4 @@ GROUP BY
   total,
   app
 ORDER BY
-  freq / total DESC
+  pct DESC
