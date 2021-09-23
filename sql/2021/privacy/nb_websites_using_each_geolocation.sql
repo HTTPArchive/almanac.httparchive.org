@@ -21,7 +21,7 @@ base AS (
     url,
     geolocation_app,
     COUNT(DISTINCT url) OVER (PARTITION BY client) AS total_pages,
-    COUNT(DISTINCT url) / COUNT(DISTINCT url) OVER (PARTITION BY 0) AS pct_pages_with_geolocation
+    COUNT(DISTINCT url) / COUNT(DISTINCT url) OVER (PARTITION BY client) AS pct_pages_with_geolocation
   FROM
     apps
   GROUP BY

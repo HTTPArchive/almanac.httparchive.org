@@ -21,7 +21,7 @@ base AS (
     url,
     fingerprinting_app,
     COUNT(DISTINCT url) OVER (PARTITION BY client) AS total_pages,
-    COUNT(DISTINCT url) / COUNT(DISTINCT url) OVER (PARTITION BY 0) AS pct_pages_with_fingerprinting
+    COUNT(DISTINCT url) / COUNT(DISTINCT url) OVER (PARTITION BY client) AS pct_pages_with_fingerprinting
   FROM
     apps
   GROUP BY
