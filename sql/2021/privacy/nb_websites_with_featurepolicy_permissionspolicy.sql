@@ -7,7 +7,7 @@ WITH page_ranks AS (
     page,
     rank
   FROM
-    `httparchive.almanac.summary_response_bodies`
+    `httparchive.almanac.requests`
   WHERE
     date = '2021-07-01' AND
     firstHtml = TRUE
@@ -20,7 +20,7 @@ response_headers AS (
     LOWER(JSON_VALUE(response_header, '$.name')) AS header_name,
     LOWER(JSON_VALUE(response_header, '$.value')) AS header_value
   FROM
-    `httparchive.almanac.summary_response_bodies`,
+    `httparchive.almanac.requests`,
     UNNEST(JSON_QUERY_ARRAY(response_headers)) response_header
   WHERE
     date = '2021-07-01' AND

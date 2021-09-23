@@ -27,7 +27,7 @@ response_headers AS (
     LOWER(JSON_VALUE(response_header, '$.name')) AS name,
     LOWER(JSON_VALUE(response_header, '$.value')) AS value
   FROM
-    `httparchive.almanac.summary_response_bodies`,
+    `httparchive.almanac.requests`,
     UNNEST(JSON_QUERY_ARRAY(response_headers)) response_header
   WHERE
     date = '2021-07-01' AND

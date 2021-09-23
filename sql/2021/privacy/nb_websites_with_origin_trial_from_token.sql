@@ -171,7 +171,7 @@ response_headers AS (
     LOWER(JSON_VALUE(response_header, '$.name')) AS header_name,
     JSON_VALUE(response_header, '$.value') AS header_value  -- may not lowercase this value as it is a base64 string
   FROM
-    `httparchive.almanac.summary_response_bodies`,
+    `httparchive.almanac.requests`,
     UNNEST(JSON_QUERY_ARRAY(response_headers)) response_header
   WHERE
     date = '2021-07-01' AND
