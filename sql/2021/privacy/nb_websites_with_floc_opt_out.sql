@@ -35,11 +35,11 @@ meta_tags AS (
     JSON_VALUE(meta_node, '$.http-equiv') IS NOT NULL
 ),
 
-total_nb_pages AS (
+totals AS (
   SELECT
     client,
     rank,
-    COUNT(DISTINCT page) AS total_nb_pages
+    COUNT(DISTINCT page) AS total_websites
   FROM
     `httparchive.almanac.requests`
   WHERE
@@ -54,14 +54,15 @@ SELECT
   client,
   rank,
   COUNT(DISTINCT page) AS nb_websites,
-  COUNT(DISTINCT page) / MIN(total_nb_pages.total_nb_pages) AS pct_websites
+  total_websites,
+  COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS pct_websites
 FROM
   response_headers
 FULL OUTER JOIN
   meta_tags
 USING (client, page)
 JOIN
-  total_nb_pages
+  totals
 USING (client, rank)
 WHERE
   (
@@ -74,7 +75,8 @@ WHERE
   )
 GROUP BY
   client,
-  rank
+  rank,
+  total_websites
 ORDER BY
   rank ASC,
   client ASC

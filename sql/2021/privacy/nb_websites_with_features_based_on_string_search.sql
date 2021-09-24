@@ -34,47 +34,47 @@ FROM (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS nb_websites,
     COUNTIF(
-      JSON_VALUE(metrics, "$._privacy.document_interestCohort") = "true"
+      JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.document_interestCohort") = "true"
     ) AS nb_websites_document_interestCohort,
     COUNTIF(
-      JSON_VALUE(metrics, "$._privacy.navigator_doNotTrack") = "true"
+      JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.navigator_doNotTrack") = "true"
     ) AS nb_websites_navigator_doNotTrack,
     COUNTIF(
-      JSON_VALUE(metrics, "$._privacy.navigator_globalPrivacyControl") = "true"
+      JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.navigator_globalPrivacyControl") = "true"
     ) AS nb_websites_navigator_globalPrivacyControl,
     COUNTIF(
-      JSON_VALUE(metrics, "$._privacy.document_permissionsPolicy") = "true"
+      JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.document_permissionsPolicy") = "true"
     ) AS nb_websites_document_permissionsPolicy,
     COUNTIF(
-      JSON_VALUE(metrics, "$._privacy.document_featurePolicy") = "true"
+      JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.document_featurePolicy") = "true"
     ) AS nb_websites_document_featurePolicy,
 
     COUNTIF(
-      JSON_VALUE(metrics, "$._privacy.media_devices.navigator_mediaDevices_enumerateDevices") = "true"
+      JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.media_devices.navigator_mediaDevices_enumerateDevices") = "true"
     ) AS nb_websites_navigator_mediaDevices_enumerateDevices,
     COUNTIF(
-      JSON_VALUE(metrics, "$._privacy.media_devices.navigator_mediaDevices_getUserMedia") = "true"
+      JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.media_devices.navigator_mediaDevices_getUserMedia") = "true"
     ) AS nb_websites_navigator_mediaDevices_getUserMedia,
     COUNTIF(
-      JSON_VALUE(metrics, "$._privacy.media_devices.navigator_mediaDevices_getDisplayMedia") = "true"
+      JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.media_devices.navigator_mediaDevices_getDisplayMedia") = "true"
     ) AS nb_websites_navigator_mediaDevices_getDisplayMedia,
 
     COUNTIF(
-      JSON_VALUE(metrics, "$._privacy.media_devices.navigator_mediaDevices_enumerateDevices") = "true" OR
-      JSON_VALUE(metrics, "$._privacy.media_devices.navigator_mediaDevices_getUserMedia") = "true" OR
-      JSON_VALUE(metrics, "$._privacy.media_devices.navigator_mediaDevices_getDisplayMedia") = "true"
+      JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.media_devices.navigator_mediaDevices_enumerateDevices") = "true" OR
+      JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.media_devices.navigator_mediaDevices_getUserMedia") = "true" OR
+      JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.media_devices.navigator_mediaDevices_getDisplayMedia") = "true"
     ) AS nb_websites_navigator_mediaDevices_any,
 
     COUNTIF(
-      JSON_VALUE(metrics, "$._privacy.geolocation.navigator_geolocation_getCurrentPosition") = "true"
+      JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.geolocation.navigator_geolocation_getCurrentPosition") = "true"
     ) AS nb_websites_navigator_geolocation_getCurrentPosition,
     COUNTIF(
-      JSON_VALUE(metrics, "$._privacy.geolocation.navigator_geolocation_watchPosition") = "true"
+      JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.geolocation.navigator_geolocation_watchPosition") = "true"
     ) AS nb_websites_navigator_geolocation_watchPosition,
 
     COUNTIF(
-      JSON_VALUE(metrics, "$._privacy.geolocation.navigator_geolocation_getCurrentPosition") = "true" OR
-      JSON_VALUE(metrics, "$._privacy.geolocation.navigator_geolocation_watchPosition") = "true"
+      JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.geolocation.navigator_geolocation_getCurrentPosition") = "true" OR
+      JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.geolocation.navigator_geolocation_watchPosition") = "true"
     ) AS nb_websites_navigator_geolocation_any
 
   FROM

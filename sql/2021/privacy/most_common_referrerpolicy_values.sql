@@ -1,23 +1,23 @@
 #standardSQL
 # Most common values for Referrer-Policy (at site level)
 
-WITH referrer_policy_custom_metrics AS (
+WITH totals AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    url,
-    JSON_VALUE(metrics, "$._privacy.referrerPolicy.entire_document_policy") AS entire_document_policy_meta
-  FROM
-    `httparchive.pages.2021_07_01_*`
-),
-
-total_nb_pages AS (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_nb_pages
+    COUNT(0) AS total_websites
   FROM
     `httparchive.pages.2021_07_01_*`
   GROUP BY
     client
+),
+
+referrer_policy_custom_metrics AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    url,
+    JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.referrerPolicy.entire_document_policy") AS entire_document_policy_meta
+  FROM
+    `httparchive.pages.2021_07_01_*`
 ),
 
 response_headers AS (
@@ -49,18 +49,20 @@ SELECT
   client,
   COALESCE(entire_document_policy_header, entire_document_policy_meta) AS entire_document_policy,
   COUNT(0) AS nb_websites_with_values,
-  COUNT(0) / MIN(total_nb_pages.total_nb_pages) AS pct_websites_with_values
+  total_websites,
+  COUNT(0) / ANY_VALUE(total_websites) AS pct_websites_with_values
 FROM
   referrer_policy_custom_metrics
 FULL OUTER JOIN
   referrer_policy_headers
 USING (client, url)
 JOIN
-  total_nb_pages
+  totals
 USING (client)
 GROUP BY
   client,
-  entire_document_policy
+  entire_document_policy,
+  total_websites
 ORDER BY
   client ASC,
   nb_websites_with_values DESC

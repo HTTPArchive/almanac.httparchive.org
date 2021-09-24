@@ -46,11 +46,11 @@ meta_tags AS (
     JSON_VALUE(meta_node, '$.http-equiv') IS NOT NULL
 ),
 
-total_nb_pages AS (
+totals AS (
   SELECT
     client,
     rank,
-    COUNT(DISTINCT page) AS total_nb_pages
+    COUNT(DISTINCT page) AS total_websites
   FROM
     `httparchive.almanac.requests`
   WHERE
@@ -126,7 +126,8 @@ SELECT
   SPLIT(TRIM(directive), ' ')[OFFSET(0)] AS directive_name,
   TRIM(origin) AS origin,
   COUNT(DISTINCT page) AS nb_websites_with_directive,
-  COUNT(DISTINCT page) / MIN(total_nb_pages.total_nb_pages) AS pct_websites_with_directive
+  total_websites,
+  COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS pct_websites_with_directive
 FROM
   (
     SELECT DISTINCT * FROM (
@@ -139,7 +140,7 @@ JOIN
   page_ranks
 USING (client, page)
 JOIN
-  total_nb_pages
+  totals
 USING (client, rank),
   UNNEST(SPLIT(policy_value, ";")) directive,
   UNNEST(  -- Directive may specify explicit origins or not.
@@ -157,7 +158,8 @@ GROUP BY
   client,
   rank,
   directive_name,
-  origin
+  origin,
+  total_websites
 ORDER BY
   rank ASC,
   client ASC,

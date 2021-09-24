@@ -5,40 +5,32 @@
 #  reference.  Normally corresponds to the country code of the country
 #  in which the publisher's business entity is established."
 
-WITH pages_iab_tcf_v2 AS (
+WITH totals AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    JSON_QUERY(payload, "$._privacy.iab_tcf_v2.data") AS metrics
-  FROM
-    `httparchive.pages.2021_07_01_*`
-  WHERE
-    JSON_QUERY(metrics, "$.iab_tcf_v2.data") IS NOT NULL
-),
-
-total_nb_pages AS (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_nb_pages
+    _TABLE_SUFFIX,
+    COUNT(0) AS total_websites
   FROM
     `httparchive.pages.2021_07_01_*`
   GROUP BY
-    client
+    _TABLE_SUFFIX
 )
 
 SELECT
-  client,
-  JSON_VALUE(metrics, '$.publisherCC') AS publisherCC,
+  _TABLE_SUFFIX AS client,
+  LOWER(JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.iab_tcf_v2.data.publisherCC")) AS publisherCC,
   COUNT(0) AS nb_websites,
-  COUNT(0) / MIN(total_nb_pages.total_nb_pages) AS pct_websites
+  total_websites,
+  COUNT(0) / ANY_VALUE(total_websites) AS pct_websites
 FROM
-  pages_iab_tcf_v2
+  `httparchive.pages.2021_07_01_*`
 JOIN
-  total_nb_pages
-USING (client)
+  totals
+USING (_TABLE_SUFFIX)
 WHERE
-  JSON_VALUE(metrics, '$.publisherCC') IS NOT NULL
+  JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.iab_tcf_v2.data.publisherCC") IS NOT NULL
 GROUP BY
   client,
+  total_websites,
   publisherCC
 ORDER BY
   client ASC,

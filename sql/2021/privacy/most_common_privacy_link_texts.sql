@@ -6,18 +6,18 @@ WITH privacy_link_texts AS (
     _TABLE_SUFFIX AS client,
     ARRAY(
       SELECT DISTINCT
-        JSON_VALUE(p, '$._privacy.text')
+        LOWER(JSON_VALUE(p, '$.text'))
       FROM
-        UNNEST(JSON_QUERY_ARRAY(metrics, "$._privacy.privacy_wording_links")) AS p
+        UNNEST(JSON_QUERY_ARRAY(JSON_VALUE(payload, "$._privacy"), "$.privacy_wording_links")) AS p
     ) AS texts_per_site
   FROM
     `httparchive.pages.2021_07_01_*`
 ),
 
-total_nb_pages AS (
+totals AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_nb_pages
+    COUNT(0) AS total_websites
   FROM
     `httparchive.pages.2021_07_01_*`
   GROUP BY
@@ -28,16 +28,18 @@ SELECT
   client,
   text,
   COUNT(0) AS nb_websites_with_text,
-  COUNT(0) / MIN(total_nb_pages.total_nb_pages) AS pct_websites_with_text
+  total_websites,
+  COUNT(0) / ANY_VALUE(total_websites) AS pct_websites_with_text
 FROM
   privacy_link_texts
 JOIN
-  total_nb_pages
+  totals
 USING (client),
   UNNEST(texts_per_site) text
 GROUP BY
   client,
-  text
+  text,
+  total_websites
 ORDER BY
   client ASC,
   nb_websites_with_text DESC,
