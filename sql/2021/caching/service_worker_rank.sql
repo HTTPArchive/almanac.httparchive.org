@@ -1,3 +1,5 @@
+#standardSQL
+# Adoption of SW by CrUX rank
 SELECT
   client,
   rank_magnitude AS rank,
