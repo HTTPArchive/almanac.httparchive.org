@@ -1,3 +1,5 @@
+#standardSQL
+# Distribution of max-age values
 SELECT
   percentile,
   _TABLE_SUFFIX AS client,

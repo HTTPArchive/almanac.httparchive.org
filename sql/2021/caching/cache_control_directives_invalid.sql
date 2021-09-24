@@ -2,18 +2,18 @@
 # List of invalid Cache-Control directive names.
 SELECT
   client,
-  total_requests,
+  total_directives,
   total_using_cache_control,
   directive_name,
   directive_occurrences,
   directive_occurrences / total_using_cache_control AS pct_of_cache_control,
-  directive_occurrences / total_requests AS pct_of_total_requests
+  directive_occurrences / total_directives AS pct_of_total_directives
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     directive_name,
     COUNT(0) AS directive_occurrences,
-    SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total_requests,
+    SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total_directives,
     SUM(COUNTIF(TRIM(resp_cache_control) != '')) OVER (PARTITION BY _TABLE_SUFFIX) AS total_using_cache_control
   FROM
     `httparchive.summary_requests.2021_07_01_*`

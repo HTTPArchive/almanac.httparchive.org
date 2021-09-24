@@ -8,8 +8,6 @@ SELECT
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS pct_pages
 FROM
   `httparchive.lighthouse.2021_07_01_*`
-WHERE
-  JSON_EXTRACT_SCALAR(report, "$.audits.uses-long-cache-ttl.score") != "1"
 GROUP BY
   client,
   mbyte_savings
