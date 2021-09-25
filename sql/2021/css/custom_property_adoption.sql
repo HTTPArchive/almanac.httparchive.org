@@ -25,7 +25,7 @@ SELECT
   client,
   COUNTIF(num_stylesheets > 0) AS freq,
   total,
-  ROUND(COUNTIF(num_stylesheets > 0) * 100 / total, 2) AS pct
+  COUNTIF(num_stylesheets > 0) / total AS pct
 FROM (
   SELECT
     client,

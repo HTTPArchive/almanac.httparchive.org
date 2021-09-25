@@ -1,3 +1,5 @@
+#standardSQL
+# All features
 SELECT
   client,
   feature,

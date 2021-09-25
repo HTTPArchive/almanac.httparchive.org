@@ -1,7 +1,7 @@
 #standardSQL
 # flexbox and grid adoption
 SELECT
-  SUBSTR(yyyymmdd, 0, 4) AS year,
+  SUBSTR(CAST(yyyymmdd AS STRING), 0, 4) AS year,
   client,
   IF(feature = 'CSSFlexibleBox', 'flexbox', 'grid') AS layout,
   COUNT(DISTINCT url) AS freq,
@@ -14,7 +14,7 @@ JOIN
 USING
   (client)
 WHERE
-  yyyymmdd IN ('20210701', '20190701') AND
+  yyyymmdd IN ('2021-07-01', '2020-08-01', '2019-07-01') AND
   feature IN ('CSSFlexibleBox', 'CSSGridLayout')
 GROUP BY
   year,

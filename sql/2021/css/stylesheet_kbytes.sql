@@ -13,6 +13,13 @@ WITH summary_pages AS (
     _TABLE_SUFFIX AS client,
     bytesCSS
   FROM
+    `httparchive.summary_pages.2020_08_01_*`
+  UNION ALL
+  SELECT
+    2021 AS year,
+    _TABLE_SUFFIX AS client,
+    bytesCSS
+  FROM
     `httparchive.summary_pages.2021_07_01_*`
 )
 

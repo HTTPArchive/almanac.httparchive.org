@@ -1,10 +1,9 @@
 #standardSQL
 # Most popular custom property values as a percent of pages.
-CREATE TEMPORARY FUNCTION getCustomPropertyValues(payload STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getCustomPropertyValues(json STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
-  var $ = JSON.parse(payload);
-  var vars = JSON.parse($['_css-variables']);
-  return Object.values(vars.summary);
+  var vars = JSON.parse(json);
+  return Object.values(vars.summary).map(val => val.set[0].value)
 } catch (e) {
   return [];
 }
@@ -20,7 +19,7 @@ FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    getCustomPropertyValues(payload) AS values,
+    getCustomPropertyValues(JSON_VALUE(payload, '$."_css-variables"')) AS values,
     total
   FROM
     `httparchive.pages.2021_07_01_*`
