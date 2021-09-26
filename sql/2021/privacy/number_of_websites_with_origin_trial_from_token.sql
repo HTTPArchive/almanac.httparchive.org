@@ -132,14 +132,6 @@ AS """
   return origin_trial_metadata;
   }
 
-  // ignore expiry date: evaluation happens retroactively
-  //// let expiryDate = new Date(expiry * 1000);
-  //// expiryElem = expiryDate;
-  //// if (expiryDate < new Date()) {
-  ////   origin_trial_metadata.validityElem = 'Expired';
-  //// return origin_trial_metadata;
-  //// }
-
   origin_trial_metadata = {
     validityElem: 'Valid',
     versionElem: versionElem,
