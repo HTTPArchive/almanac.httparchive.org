@@ -1,5 +1,5 @@
 #standardSQL
-# Gather SEO data from lighthouse
+# Lighthouse SEO stats
 
 # live run is about $9
 

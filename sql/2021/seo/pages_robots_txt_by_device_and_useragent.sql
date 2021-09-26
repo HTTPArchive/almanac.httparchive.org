@@ -1,5 +1,5 @@
 #standardSQL
-# pages robots_txt metrics grouped by device and status code
+# Robots txt user agent usage
 
 # helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (

@@ -1,5 +1,5 @@
 #standardSQL
-# page wpt_bodies metrics grouped by device and rel attributes
+# Anchor rel attribute usage
 # Note: this query only reports if a rel attribute value was ever used on a page. It is not a per anchor report.
 
 # helper to create percent fields

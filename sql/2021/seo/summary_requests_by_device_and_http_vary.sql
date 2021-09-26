@@ -1,5 +1,5 @@
 #standardSQL
-# if header contains vary by user-agent
+# HTML response: vary header used
 
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq, total), 4)

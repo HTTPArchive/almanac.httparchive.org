@@ -1,6 +1,6 @@
 #standardSQL
-# pages markup metrics grouped by device and image loading attributes
-# Note: this query only reports if an attribute was ever used on a page. It is not a per img report.
+# Image loading property usage
+# Note: This query only reports if an attribute was ever used on a page. It is not a per img report.
 
 # helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (

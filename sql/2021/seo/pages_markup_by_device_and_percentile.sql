@@ -1,5 +1,5 @@
 #standardSQL
-# percientile data from markup per device
+# Image alt stats
 
 # returns all the data we need from _markup
 CREATE TEMPORARY FUNCTION get_markup_info(markup_string STRING)

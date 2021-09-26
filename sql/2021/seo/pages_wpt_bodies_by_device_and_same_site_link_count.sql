@@ -1,5 +1,5 @@
 #standardSQL
-# page wpt_bodies metrics grouped by device and number of same_site links
+# Anchor same site occurance stats
 # this query aims to highlight sites with few same site links, like SPAs
 
 # helper to create percent fields

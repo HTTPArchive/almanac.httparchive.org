@@ -1,5 +1,5 @@
 #standardSQL
-# page almanac favicon image types grouped by device and type M217
+# Content language
 
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq, total), 4)
@@ -28,8 +28,9 @@ return result;
 
 SELECT
   client,
-  content_language,
   total,
+
+  content_language,
   COUNT(0) AS count,
   AS_PERCENT(COUNT(0), total) AS pct
 FROM

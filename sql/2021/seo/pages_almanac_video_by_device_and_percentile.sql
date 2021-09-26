@@ -1,5 +1,5 @@
 #standardSQL
-# percientile data from almanac per device for video tags - only taking into account pages that have at least one video
+# Videos per page
 
 # returns all the data we need from _almanac
 CREATE TEMPORARY FUNCTION get_almanac_info(almanac_string STRING)
