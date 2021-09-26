@@ -161,8 +161,8 @@ GROUP BY
   origin,
   total_websites
 ORDER BY
-  rank ASC,
-  client ASC,
+  rank,
+  client,
   number_of_websites_with_directive DESC,
-  directive_name ASC,
-  origin ASC
+  directive_name,
+  origin

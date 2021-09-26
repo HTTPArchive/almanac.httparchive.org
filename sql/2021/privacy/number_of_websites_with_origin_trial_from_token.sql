@@ -238,5 +238,5 @@ GROUP BY
   client,
   featureElem
 ORDER BY
-  client ASC,
-  featureElem ASC
+  client,
+  featureElem

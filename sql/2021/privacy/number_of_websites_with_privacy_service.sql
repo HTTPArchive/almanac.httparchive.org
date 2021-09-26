@@ -17,4 +17,4 @@ FROM `httparchive.technologies.2021_07_01_*`
 GROUP BY
   client
 ORDER BY
-  client ASC
+  client

@@ -33,5 +33,5 @@ GROUP BY
   client,
   tracker
 ORDER BY
-  client ASC,
+  client,
   number_of_websites DESC

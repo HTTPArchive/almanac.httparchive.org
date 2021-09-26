@@ -33,5 +33,5 @@ GROUP BY
   client,
   uspString
 ORDER BY
-  client ASC,
+  client,
   nb_websites DESC

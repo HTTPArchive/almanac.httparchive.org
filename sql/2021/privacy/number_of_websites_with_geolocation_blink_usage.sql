@@ -13,8 +13,8 @@ WHERE
   yyyymmdd = '20210701' AND
   feature LIKE '%Geolocation%'
 ORDER BY
-  feature ASC,
-  client ASC
+  feature,
+  client
 
 # relevant Blink features:
 

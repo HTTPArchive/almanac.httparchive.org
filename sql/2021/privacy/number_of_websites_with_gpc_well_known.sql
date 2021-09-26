@@ -24,4 +24,4 @@ WHERE
 GROUP BY
   client
 ORDER BY
-  client ASC
+  client

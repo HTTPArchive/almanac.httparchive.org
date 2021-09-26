@@ -78,5 +78,5 @@ GROUP BY
   rank,
   total_websites
 ORDER BY
-  rank ASC,
-  client ASC
+  rank,
+  client

@@ -25,5 +25,5 @@ WHERE
     feature = 'HTMLFencedFrameElement'
   )
 ORDER BY
-  feature ASC,
-  client ASC
+  feature,
+  client

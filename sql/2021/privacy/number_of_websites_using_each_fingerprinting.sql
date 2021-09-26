@@ -29,5 +29,5 @@ GROUP BY
   client,
   app
 ORDER BY
-  client ASC,
+  client,
   number_of_websites DESC

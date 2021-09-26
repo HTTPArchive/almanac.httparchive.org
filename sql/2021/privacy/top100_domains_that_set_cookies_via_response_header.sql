@@ -73,6 +73,6 @@ JOIN
   whotracksme
 ON NET.HOST(cookies.domain) = whotracksme.domain
 ORDER BY
-  client ASC,
+  client,
   websites_count DESC
 LIMIT 100

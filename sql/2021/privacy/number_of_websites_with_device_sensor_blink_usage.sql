@@ -18,5 +18,5 @@ WHERE
     feature LIKE '%DeviceLight%'
   )
 ORDER BY
-  feature ASC,
-  client ASC
+  feature,
+  client

@@ -74,6 +74,6 @@ GROUP BY
   client,
   number_of_trackers
 ORDER BY
-  client ASC,
-  type ASC,
-  number_of_trackers ASC
+  client,
+  type,
+  number_of_trackers

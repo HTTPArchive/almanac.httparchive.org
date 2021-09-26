@@ -41,6 +41,6 @@ GROUP BY
   text,
   total_websites
 ORDER BY
-  client ASC,
+  client,
   number_of_websites_with_text DESC,
-  text ASC
+  text

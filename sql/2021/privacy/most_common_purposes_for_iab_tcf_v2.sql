@@ -146,5 +146,5 @@ GROUP BY
   key,
   value
 ORDER BY
-  client ASC,
+  client,
   number_of_websites DESC

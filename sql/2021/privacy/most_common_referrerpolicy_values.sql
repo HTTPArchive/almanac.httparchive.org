@@ -64,5 +64,5 @@ GROUP BY
   entire_document_policy,
   total_websites
 ORDER BY
-  client ASC,
+  client,
   number_of_websites_with_values DESC

@@ -48,5 +48,5 @@ WHERE
 GROUP BY
   client
 ORDER BY
-  client ASC,
+  client,
   number_of_websites DESC

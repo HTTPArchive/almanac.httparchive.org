@@ -33,5 +33,5 @@ GROUP BY
   total_websites,
   publisherCC
 ORDER BY
-  client ASC,
+  client,
   number_of_websites DESC

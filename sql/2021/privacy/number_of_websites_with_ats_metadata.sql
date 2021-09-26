@@ -11,5 +11,5 @@ FROM
 GROUP BY
   client
 ORDER BY
-  client ASC,
-  number_of_websites ASC
+  client,
+  number_of_websites

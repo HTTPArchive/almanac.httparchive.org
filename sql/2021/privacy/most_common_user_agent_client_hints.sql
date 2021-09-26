@@ -74,6 +74,6 @@ GROUP BY
   value,
   total_websites
 ORDER BY
-  rank ASC,
-  client ASC,
+  rank,
+  client,
   number_of_websites DESC

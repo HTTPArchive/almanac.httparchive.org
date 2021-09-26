@@ -83,5 +83,5 @@ FROM (
     rank
 )
 ORDER BY
-  rank ASC,
-  client ASC
+  rank,
+  client

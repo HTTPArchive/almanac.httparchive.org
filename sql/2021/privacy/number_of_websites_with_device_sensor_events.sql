@@ -46,5 +46,5 @@ GROUP BY
   client,
   event
 ORDER BY
-  client ASC,
-  event ASC
+  client,
+  event

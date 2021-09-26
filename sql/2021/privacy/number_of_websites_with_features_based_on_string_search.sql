@@ -93,4 +93,4 @@ FROM (
     client
   )
 ORDER BY
-  client ASC
+  client
