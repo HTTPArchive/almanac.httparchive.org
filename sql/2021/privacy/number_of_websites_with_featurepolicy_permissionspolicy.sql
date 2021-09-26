@@ -48,9 +48,9 @@ meta_tags AS (
 
 SELECT
   *,
-  nb_websites_with_feature_policy / nb_websites AS pct_websites_with_feature_policy,
-  nb_websites_with_permissions_policy / nb_websites AS pct_websites_with_permissions_policy,
-  nb_websites_with_any_policy / nb_websites AS pct_websites_with_any_policy
+  number_of_websites_with_feature_policy / number_of_websites AS pct_websites_with_feature_policy,
+  number_of_websites_with_permissions_policy / number_of_websites AS pct_websites_with_permissions_policy,
+  number_of_websites_with_any_policy / number_of_websites AS pct_websites_with_any_policy
 FROM (
   SELECT
     client,
@@ -58,18 +58,18 @@ FROM (
     COUNTIF(
       header_name = 'feature-policy' OR
       tag_name = 'feature-policy'
-    ) AS nb_websites_with_feature_policy,
+    ) AS number_of_websites_with_feature_policy,
     COUNTIF(
       header_name = 'permissions-policy' OR
       tag_name = 'permissions-policy'
-    ) AS nb_websites_with_permissions_policy,
+    ) AS number_of_websites_with_permissions_policy,
     COUNTIF(
       header_name = 'feature-policy' OR
       tag_name = 'feature-policy' OR
       header_name = 'permissions-policy' OR
       tag_name = 'permissions-policy'
-    ) AS nb_websites_with_any_policy,
-    COUNT(0) AS nb_websites
+    ) AS number_of_websites_with_any_policy,
+    COUNT(0) AS number_of_websites
   FROM
     response_headers
   FULL OUTER JOIN

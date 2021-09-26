@@ -25,7 +25,7 @@ totals AS (
 SELECT
   client,
   JSON_VALUE(metrics, '$.uspString') AS uspString,
-  COUNT(0) AS nb_websites,
+  COUNT(0) AS number_of_websites,
   total_websites,
   COUNT(0) / ANY_VALUE(total_websites) AS pct_websites
 FROM
@@ -41,4 +41,4 @@ GROUP BY
   total_websites
 ORDER BY
   client ASC,
-  nb_websites DESC
+  number_of_websites DESC

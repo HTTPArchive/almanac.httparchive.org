@@ -15,7 +15,7 @@ WITH totals AS (
 SELECT
   _TABLE_SUFFIX AS client,
   JSON_VALUE(JSON_VALUE(payload, "$._privacy"), '$.iab_tcf_v2.data.cmpId') AS cmpId,
-  COUNT(0) AS nb_websites,
+  COUNT(0) AS number_of_websites,
   total_websites,
   COUNT(0) / ANY_VALUE(total_websites) AS pct_websites
 FROM
@@ -31,4 +31,4 @@ GROUP BY
   cmpId
 ORDER BY
   client ASC,
-  nb_websites DESC
+  number_of_websites DESC

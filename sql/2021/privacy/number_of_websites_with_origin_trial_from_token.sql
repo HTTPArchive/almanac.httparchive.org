@@ -225,9 +225,9 @@ extracted_origin_trials_from_headers_and_meta_tags AS (
 SELECT
   client,
   COALESCE(origin_trials_from_custom_metric.featureElem, origin_trials_from_headers_and_meta_tags.featureElem) AS featureElem,
-  COUNT(DISTINCT site) AS nb_websites, -- crawled sites containing at leat one origin trial
+  COUNT(DISTINCT site) AS number_of_websites, -- crawled sites containing at leat one origin trial
   COUNT(DISTINCT COALESCE(origin_trials_from_custom_metric.originElem, origin_trials_from_headers_and_meta_tags.originElem))
-  AS nb_origins -- origins with an origin trial
+  AS number_of_origins -- origins with an origin trial
 FROM
   extracted_origin_trials_from_custom_metric
 FULL OUTER JOIN

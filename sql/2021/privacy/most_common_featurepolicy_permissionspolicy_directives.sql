@@ -143,7 +143,7 @@ SELECT
   client,
   rank,
   directive,
-  COUNT(DISTINCT page) AS nb_websites_with_directive,
+  COUNT(DISTINCT page) AS number_of_websites_with_directive,
   total_websites,
   COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS pct_websites_with_directive
 FROM
@@ -163,5 +163,5 @@ GROUP BY
 ORDER BY
   rank ASC,
   client ASC,
-  nb_websites_with_directive DESC,
+  number_of_websites_with_directive DESC,
   directive ASC

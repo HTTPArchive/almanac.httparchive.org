@@ -18,7 +18,7 @@ WITH totals AS (
 SELECT
   _TABLE_SUFFIX AS client,
   LOWER(JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.iab_tcf_v2.data.publisherCC")) AS publisherCC,
-  COUNT(0) AS nb_websites,
+  COUNT(0) AS number_of_websites,
   total_websites,
   COUNT(0) / ANY_VALUE(total_websites) AS pct_websites
 FROM
@@ -34,4 +34,4 @@ GROUP BY
   publisherCC
 ORDER BY
   client ASC,
-  nb_websites DESC
+  number_of_websites DESC

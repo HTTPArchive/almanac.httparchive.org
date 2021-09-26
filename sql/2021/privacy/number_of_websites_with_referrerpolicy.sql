@@ -39,30 +39,30 @@ referrer_policy_headers AS (
 
 SELECT
   *,
-  nb_websites_with_entire_document_policy_meta / nb_websites AS pct_websites_with_entire_document_policy_meta,
-  nb_websites_with_entire_document_policy_header / nb_websites AS pct_websites_with_entire_document_policy_header,
-  nb_websites_with_entire_document_policy / nb_websites AS pct_websites_with_entire_document_policy,
-  nb_websites_with_any_individual_requests / nb_websites AS pct_websites_with_any_individual_requests,
-  nb_websites_with_any_link_relations / nb_websites AS pct_websites_with_any_link_relations,
-  nb_websites_with_any_referrer_policy / nb_websites AS pct_websites_with_any_referrer_policy
+  number_of_websites_with_entire_document_policy_meta / number_of_websites AS pct_websites_with_entire_document_policy_meta,
+  number_of_websites_with_entire_document_policy_header / number_of_websites AS pct_websites_with_entire_document_policy_header,
+  number_of_websites_with_entire_document_policy / number_of_websites AS pct_websites_with_entire_document_policy,
+  number_of_websites_with_any_individual_requests / number_of_websites AS pct_websites_with_any_individual_requests,
+  number_of_websites_with_any_link_relations / number_of_websites AS pct_websites_with_any_link_relations,
+  number_of_websites_with_any_referrer_policy / number_of_websites AS pct_websites_with_any_referrer_policy
 FROM (
   SELECT
     client,
-    COUNTIF(entire_document_policy_meta IS NOT NULL) AS nb_websites_with_entire_document_policy_meta,
-    COUNTIF(entire_document_policy_header IS NOT NULL) AS nb_websites_with_entire_document_policy_header,
+    COUNTIF(entire_document_policy_meta IS NOT NULL) AS number_of_websites_with_entire_document_policy_meta,
+    COUNTIF(entire_document_policy_header IS NOT NULL) AS number_of_websites_with_entire_document_policy_header,
     COUNTIF(
       entire_document_policy_meta IS NOT NULL OR
       entire_document_policy_header IS NOT NULL
-    ) AS nb_websites_with_entire_document_policy,
-    COUNTIF(ARRAY_LENGTH(individual_requests) > 0) AS nb_websites_with_any_individual_requests,
-    COUNTIF(ARRAY_LENGTH(link_relations) > 0) AS nb_websites_with_any_link_relations,
+    ) AS number_of_websites_with_entire_document_policy,
+    COUNTIF(ARRAY_LENGTH(individual_requests) > 0) AS number_of_websites_with_any_individual_requests,
+    COUNTIF(ARRAY_LENGTH(link_relations) > 0) AS number_of_websites_with_any_link_relations,
     COUNTIF(
       entire_document_policy_meta IS NOT NULL OR
       entire_document_policy_header IS NOT NULL OR
       ARRAY_LENGTH(individual_requests) > 0 OR
       ARRAY_LENGTH(link_relations) > 0
-    ) AS nb_websites_with_any_referrer_policy,
-    COUNT(0) AS nb_websites
+    ) AS number_of_websites_with_any_referrer_policy,
+    COUNT(0) AS number_of_websites
   FROM
     referrer_policy_custom_metrics
   FULL OUTER JOIN

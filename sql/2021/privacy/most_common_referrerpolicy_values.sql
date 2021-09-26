@@ -48,7 +48,7 @@ referrer_policy_headers AS (
 SELECT
   client,
   COALESCE(entire_document_policy_header, entire_document_policy_meta) AS entire_document_policy,
-  COUNT(0) AS nb_websites_with_values,
+  COUNT(0) AS number_of_websites_with_values,
   total_websites,
   COUNT(0) / ANY_VALUE(total_websites) AS pct_websites_with_values
 FROM
@@ -65,4 +65,4 @@ GROUP BY
   total_websites
 ORDER BY
   client ASC,
-  nb_websites_with_values DESC
+  number_of_websites_with_values DESC

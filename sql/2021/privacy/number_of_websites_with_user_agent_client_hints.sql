@@ -1,5 +1,5 @@
 #standardSQL
-# Pages that opt out of FLoC
+# Pages that use User-Agent Client Hints
 
 WITH response_headers AS (
   SELECT
@@ -53,7 +53,7 @@ totals AS (
 SELECT
   client,
   rank,
-  COUNT(DISTINCT page) AS nb_websites,
+  COUNT(DISTINCT page) AS number_of_websites,
   total_websites,
   COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS pct_websites
 FROM
@@ -65,14 +65,8 @@ JOIN
   totals
 USING (client, rank)
 WHERE
-  (
-    header_name = 'permissions-policy' AND
-    header_value LIKE 'interest-cohort=()'  # value could contain other policies
-  ) OR
-  (
-    tag_name = 'permissions-policy' AND
-    tag_value LIKE 'interest-cohort=()'
-  )
+  header_name = 'accept-ch' OR
+  tag_name = 'accept-ch'
 GROUP BY
   client,
   rank,

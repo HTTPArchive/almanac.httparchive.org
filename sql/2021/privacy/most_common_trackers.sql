@@ -17,7 +17,7 @@ whotracksme AS (
 SELECT
   client,
   tracker,
-  COUNT(DISTINCT page) AS nb_websites
+  COUNT(DISTINCT page) AS number_of_websites
 FROM
   `httparchive.almanac.requests`
 JOIN
@@ -34,4 +34,4 @@ GROUP BY
   tracker
 ORDER BY
   client ASC,
-  nb_websites DESC
+  number_of_websites DESC

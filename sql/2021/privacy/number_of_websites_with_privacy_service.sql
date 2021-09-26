@@ -19,13 +19,13 @@ WITH base AS (
 SELECT
   client,
   COUNT(url) AS total_pages,
-  COUNTIF(with_cookie_compliance) AS nb_websites_with_cookie_compliance,
+  COUNTIF(with_cookie_compliance) AS number_of_websites_with_cookie_compliance,
   COUNTIF(with_cookie_compliance) / COUNT(url) AS pct_websites_with_cookie_compliance,
-  COUNTIF(with_browser_fingerprinting) AS nb_websites_with_browser_fingerprinting,
+  COUNTIF(with_browser_fingerprinting) AS number_of_websites_with_browser_fingerprinting,
   COUNTIF(with_browser_fingerprinting) / COUNT(url) AS pct_websites_with_browser_fingerprinting,
-  COUNTIF(with_retargeting) AS nb_websites_with_retargeting,
+  COUNTIF(with_retargeting) AS number_of_websites_with_retargeting,
   COUNTIF(with_retargeting) / COUNT(url) AS pct_websites_with_retargeting,
-  COUNTIF(with_geolocation) AS nb_websites_with_geolocation,
+  COUNTIF(with_geolocation) AS number_of_websites_with_geolocation,
   COUNTIF(with_geolocation) / COUNT(url) AS pct_websites_with_geolocation
 FROM
   base

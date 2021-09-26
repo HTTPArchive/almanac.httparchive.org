@@ -26,7 +26,7 @@ totals AS (
 SELECT
   client,
   keyword,
-  COUNT(0) AS nb_websites_with_keyword,
+  COUNT(0) AS number_of_websites_with_keyword,
   total_websites,
   COUNT(0) / ANY_VALUE(total_websites) AS pct_websites_with_keyword
 FROM
@@ -41,5 +41,5 @@ GROUP BY
   total_websites
 ORDER BY
   client ASC,
-  nb_websites_with_keyword DESC,
+  number_of_websites_with_keyword DESC,
   keyword ASC

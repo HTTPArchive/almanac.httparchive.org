@@ -11,7 +11,7 @@ WITH pages_well_known AS (
 
 SELECT
   client,
-  COUNT(0) AS nb_websites -- crawled sites containing at leat one origin trial
+  COUNT(0) AS number_of_websites -- crawled sites containing at leat one origin trial
 FROM
   pages_well_known
 WHERE

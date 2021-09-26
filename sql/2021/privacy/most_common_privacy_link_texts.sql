@@ -27,7 +27,7 @@ totals AS (
 SELECT
   client,
   text,
-  COUNT(0) AS nb_websites_with_text,
+  COUNT(0) AS number_of_websites_with_text,
   total_websites,
   COUNT(0) / ANY_VALUE(total_websites) AS pct_websites_with_text
 FROM
@@ -42,5 +42,5 @@ GROUP BY
   total_websites
 ORDER BY
   client ASC,
-  nb_websites_with_text DESC,
+  number_of_websites_with_text DESC,
   text ASC

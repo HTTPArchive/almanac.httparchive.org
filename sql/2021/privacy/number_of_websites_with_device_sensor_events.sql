@@ -35,8 +35,8 @@ sites_and_events AS (
 SELECT
   client,
   event,
-  COUNT(DISTINCT site) AS nb_websites,
-  COUNT(DISTINCT url) AS nb_urls
+  COUNT(DISTINCT site) AS number_of_websites,
+  COUNT(DISTINCT url) AS number_of_urls
 FROM
   sites_and_events
 WHERE

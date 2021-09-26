@@ -54,7 +54,7 @@ SELECT
   client,
   rank,
   IF(header_name = 'accept-ch', header_value, tag_value) AS value,
-  COUNT(DISTINCT page) AS nb_websites,
+  COUNT(DISTINCT page) AS number_of_websites,
   total_websites,
   COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS pct_websites
 FROM
@@ -76,4 +76,4 @@ GROUP BY
 ORDER BY
   rank ASC,
   client ASC,
-  nb_websites DESC
+  number_of_websites DESC

@@ -17,13 +17,13 @@ whotracksme AS (
 SELECT
   client,
   'any' AS type,
-  nb_trackers,
-  COUNT(DISTINCT page) AS nb_websites
+  number_of_trackers,
+  COUNT(DISTINCT page) AS number_of_websites
 FROM (
   SELECT
     client,
     page,
-    COUNT(DISTINCT tracker) AS nb_trackers
+    COUNT(DISTINCT tracker) AS number_of_trackers
   FROM
     `httparchive.almanac.requests`
   JOIN
@@ -41,18 +41,18 @@ FROM (
   )
 GROUP BY
   client,
-  nb_trackers
+  number_of_trackers
 UNION ALL
 SELECT
   client,
   'no_cdn_or_hosting' AS type,
-  nb_trackers,
-  COUNT(DISTINCT page) AS nb_websites
+  number_of_trackers,
+  COUNT(DISTINCT page) AS number_of_websites
 FROM (
   SELECT
     client,
     page,
-    COUNT(DISTINCT tracker) AS nb_trackers
+    COUNT(DISTINCT tracker) AS number_of_trackers
   FROM
     `httparchive.almanac.requests`
   JOIN
@@ -72,8 +72,8 @@ FROM (
   )
 GROUP BY
   client,
-  nb_trackers
+  number_of_trackers
 ORDER BY
   client ASC,
   type ASC,
-  nb_trackers ASC
+  number_of_trackers ASC

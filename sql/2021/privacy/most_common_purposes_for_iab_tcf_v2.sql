@@ -42,7 +42,7 @@ SELECT
   field,
   result.key AS key,
   result.value AS value,
-  COUNT(0) AS nb_websites
+  COUNT(0) AS number_of_websites
 FROM
   (
     SELECT
@@ -147,4 +147,4 @@ GROUP BY
   value
 ORDER BY
   client ASC,
-  nb_websites DESC
+  number_of_websites DESC

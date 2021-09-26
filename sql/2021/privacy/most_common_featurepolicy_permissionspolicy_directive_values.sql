@@ -125,7 +125,7 @@ SELECT
   rank,
   SPLIT(TRIM(directive), ' ')[OFFSET(0)] AS directive_name,
   TRIM(origin) AS origin,
-  COUNT(DISTINCT page) AS nb_websites_with_directive,
+  COUNT(DISTINCT page) AS number_of_websites_with_directive,
   total_websites,
   COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS pct_websites_with_directive
 FROM
@@ -163,6 +163,6 @@ GROUP BY
 ORDER BY
   rank ASC,
   client ASC,
-  nb_websites_with_directive DESC,
+  number_of_websites_with_directive DESC,
   directive_name ASC,
   origin ASC
