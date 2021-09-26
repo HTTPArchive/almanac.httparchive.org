@@ -20,53 +20,80 @@ RETURNS STRUCT<
   javascript_void_links INT64,
   same_page_jumpto_total INT64,
   same_page_dynamic_total INT64,
-  same_page_other_total INT64
+  same_page_other_total INT64,
+
+  valid_data BOOL
 > LANGUAGE js AS '''
-var result = {};
+
+function allPropsAreInt(props) {
+  const keys = Object.keys(props);
+  for (const key of keys) {
+    if (!Number.isInteger(props[key])) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
 try {
-    var wpt_bodies = JSON.parse(wpt_bodies_string);
+  var result = {};
 
-    if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
+  var wpt_bodies = JSON.parse(wpt_bodies_string);
 
-    if (wpt_bodies.title) {
-      if (wpt_bodies.title.rendered) {
-        result.title_words = wpt_bodies.title.rendered.primary.words;
-        result.title_characters = wpt_bodies.title.rendered.primary.characters;
-      }
+  if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') {
+    result.valid_data = false;
+    return result;
+  }
+
+  if (wpt_bodies.title) {
+    if (wpt_bodies.title.rendered) {
+      result.title_words = wpt_bodies.title.rendered.primary.words;
+      result.title_characters = wpt_bodies.title.rendered.primary.characters;
     }
-    if (wpt_bodies.visible_words) {
-      result.visible_words_rendered_count = wpt_bodies.visible_words.rendered;
-      result.visible_words_raw_count = wpt_bodies.visible_words.raw;
-    }
+  }
+  if (wpt_bodies.visible_words) {
+    result.visible_words_rendered_count = wpt_bodies.visible_words.rendered;
+    result.visible_words_raw_count = wpt_bodies.visible_words.raw;
+  }
 
-    if (wpt_bodies.anchors && wpt_bodies.anchors.rendered) {
-      var anchors_rendered = wpt_bodies.anchors.rendered;
+  if (wpt_bodies.anchors && wpt_bodies.anchors.rendered) {
+    var anchors_rendered = wpt_bodies.anchors.rendered;
 
-      result.links_other_property = anchors_rendered.other_property;
-      result.links_same_site = anchors_rendered.same_site;
-      result.links_same_property = anchors_rendered.same_property;
+    result.links_other_property = anchors_rendered.other_property;
+    result.links_same_site = anchors_rendered.same_site;
+    result.links_same_property = anchors_rendered.same_property;
 
-      result.image_links = anchors_rendered.image_links;
-      result.text_links = anchors_rendered.text_links;
+    result.image_links = anchors_rendered.image_links;
+    result.text_links = anchors_rendered.text_links;
 
-      result.hash_link = anchors_rendered.hash_link;
-      result.hash_only_link = anchors_rendered.hash_only_link;
-      result.javascript_void_links = anchors_rendered.javascript_void_links;
-      result.same_page_jumpto_total = anchors_rendered.same_page.jumpto.total;
-      result.same_page_dynamic_total = anchors_rendered.same_page.dynamic.total;
-      result.same_page_other_total = anchors_rendered.same_page.other.total;
+    result.hash_link = anchors_rendered.hash_link;
+    result.hash_only_link = anchors_rendered.hash_only_link;
+    result.javascript_void_links = anchors_rendered.javascript_void_links;
+    result.same_page_jumpto_total = anchors_rendered.same_page.jumpto.total;
+    result.same_page_dynamic_total = anchors_rendered.same_page.dynamic.total;
+    result.same_page_other_total = anchors_rendered.same_page.other.total;
+  }
 
-    }
+  if (wpt_bodies.meta_description && wpt_bodies.meta_description.rendered && wpt_bodies.meta_description.rendered.primary) {
+    result.meta_description_characters = wpt_bodies.meta_description.rendered.primary.characters;
+    result.meta_description_words = wpt_bodies.meta_description.rendered.primary.words;
+  }
 
-    if (wpt_bodies.meta_description && wpt_bodies.meta_description.rendered && wpt_bodies.meta_description.rendered.primary) {
+  // There was an invalid value somewhere. Throwout all the results for this page
+  if (!allPropsAreInt(result)) {
+    return {
+      valid_data: false,
+    };
+  }
 
-      result.meta_description_characters = wpt_bodies.meta_description.rendered.primary.characters;
-      result.meta_description_words = wpt_bodies.meta_description.rendered.primary.words;
-
-    }
-
-} catch (e) {}
-return result;
+  result.valid_data = true;
+  return result;
+} catch (e) {
+  return {
+    valid_data: false,
+  };
+}
 ''';
 
 SELECT
@@ -114,6 +141,8 @@ FROM (
     `httparchive.pages.2021_07_01_*`,
     UNNEST([10, 25, 50, 75, 90]) AS percentile
 )
+WHERE
+  wpt_bodies_info.valid_data
 GROUP BY
   percentile,
   client
