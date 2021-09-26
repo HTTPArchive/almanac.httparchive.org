@@ -11,7 +11,7 @@ CREATE TEMPORARY FUNCTION getUnnecessaryFontDownloadsCount(almanac_string STRING
 RETURNS INT64 LANGUAGE js AS '''
 try {
     var almanac = JSON.parse(almanac_string)
-    if (Array.isArray(almanac) || typeof almanac != 'object') return -1;
+    if (Array.isArray(almanac) || typeof almanac != 'object') return null;
     
     var nodes = almanac["link-nodes"]["nodes"]
     nodes = typeof nodes == 'string' ? JSON.parse(nodes) : nodes
@@ -26,12 +26,12 @@ try {
     
     // only include sites which preload at least one font file
     if (fontFiles.length === 0) {
-        return -1;
+        return null;
     }
     
     var fontsWithExt = {} // {"woff2": Set( 'font1', 'font2' ), "ttf": Set( 'font2' )}
     for(var i = 0; i < fontFiles.length; i++) {
-        var [fontName, ext] = fontFiles[i].split(".")
+        var [fontName, ext] = fontFiles[i].split(".") // TODO: A valid file name could have multiple dots in it. Maybe search for the index of the last dot and use that position to split the string in two?
         if(ext in fontsWithExt) {
             fontsWithExt[ext].add(fontName)
         } else {
@@ -51,14 +51,14 @@ try {
     return redundantDownloads;
 }
 catch {
-    return -1
+    return null
 }
 ''';
 
 SELECT
     client,
     rd AS redundantDownloads,
-    count(0) AS freq,
+    COUNT(0) AS freq,
     AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 FROM (
     SELECT
@@ -69,7 +69,7 @@ FROM (
         `httparchive.sample_data.pages*`
 )
 WHERE
-    rd > -1
+    rd IS NOT NULL
 GROUP BY
     client,
     rd
