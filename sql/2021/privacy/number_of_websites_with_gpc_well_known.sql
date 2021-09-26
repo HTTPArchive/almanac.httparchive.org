@@ -1,21 +1,26 @@
 #standardSQL
 # Pages that provide `/.well-known/gpc.json` for Global Privacy Control
 
-WITH pages_well_known AS (
+WITH totals AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    JSON_VALUE(payload, "$._well-known") AS metrics
+    _TABLE_SUFFIX,
+    COUNT(0) AS total_websites
   FROM
-    `httparchive.pages.2021_07_01_*`
+    `httparchive.technologies.2021_07_01_*`
+  GROUP BY
+    _TABLE_SUFFIX
 )
 
 SELECT
-  client,
-  COUNT(0) AS number_of_websites -- crawled sites containing at leat one origin trial
+  _TABLE_SUFFIX AS client,
+  ANY_VALUE(total_websites) AS total_websites,
+  COUNT(0) AS number_of_websites, -- crawled sites containing at least one origin trial
+  COUNT(0) / ANY_VALUE(total_websites) AS percent_of_websites
 FROM
-  pages_well_known
+  `httparchive.pages.2021_07_01_*`
+JOIN totals USING (_TABLE_SUFFIX)
 WHERE
-  JSON_VALUE(pages_well_known.metrics, '$."/.well-known/gpc.json".found') = "true"
+  JSON_VALUE(payload, '$._well-known."/.well-known/gpc.json".found') = "true"
 GROUP BY
   client
 ORDER BY
