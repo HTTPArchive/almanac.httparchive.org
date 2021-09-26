@@ -6,7 +6,7 @@ SELECT
   feature,
   num_urls,
   total_urls,
-  pct_urls AS pct_urls
+  pct_urls
 FROM
   `httparchive.blink_features.usage`
 WHERE
@@ -18,4 +18,5 @@ WHERE
     feature LIKE '%DeviceLight%'
   )
 ORDER BY
-  2 ASC, 1 ASC
+  feature ASC,
+  client ASC

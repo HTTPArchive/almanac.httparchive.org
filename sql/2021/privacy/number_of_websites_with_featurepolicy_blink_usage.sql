@@ -13,7 +13,8 @@ WHERE
   yyyymmdd = '20210701' AND
   feature LIKE '%FeaturePolicy%'
 ORDER BY
-  2 ASC, 1 ASC
+  feature ASC,
+  client ASC
 
 # relevant Blink features:
 
