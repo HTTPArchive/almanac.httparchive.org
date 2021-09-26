@@ -15,19 +15,19 @@ WITH totals AS (
 
 SELECT
   _TABLE_SUFFIX AS client,
-  app AS cmp_app,
+  app,
   ANY_VALUE(total_websites) AS total_websites,
-  COUNT(DISTINCT url) AS number_of_websites_with_cmp,
-  COUNT(DISTINCT url) / ANY_VALUE(total_websites) AS percent_of_websites_with_cmp
+  COUNT(DISTINCT url) AS number_of_websites,
+  COUNT(DISTINCT url) / ANY_VALUE(total_websites) AS percent_of_websites
 FROM
   `httparchive.technologies.2021_07_01_*`
 JOIN totals USING (_TABLE_SUFFIX)
 WHERE
-  category = "Cookie compliance"
-  AND app != ""
+  category = "Cookie compliance" AND
+  app != ""
 GROUP BY
   client,
-  cmp_app
+  app
 ORDER BY
   client ASC,
-  number_of_websites_with_cmp DESC
+  number_of_websites DESC
