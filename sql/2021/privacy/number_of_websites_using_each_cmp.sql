@@ -3,45 +3,31 @@
 # Alternatively, `core_web_vitals.technologies` could be used, but then we do not have
 #  access to the total number of websites
 
-WITH apps AS (
+WITH totals AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    url,
-    IF(category = "Cookie compliance", app, "") AS cmp_app
-  FROM `httparchive.technologies.2021_07_01_*`
-  GROUP BY
-    client,
-    url,
-    cmp_app
-),
-
-base AS (
-  SELECT
-    client,
-    url,
-    cmp_app,
-    COUNT(DISTINCT url) OVER (PARTITION BY client) AS total_pages,
-    COUNT(DISTINCT url) / COUNT(DISTINCT url) OVER (PARTITION BY client) AS pct_pages_with_cmp
+    _TABLE_SUFFIX,
+    COUNT(DISTINCT url) AS total_websites
   FROM
-    apps
+    `httparchive.technologies.2021_07_01_*`
   GROUP BY
-    client,
-    url,
-    cmp_app
+    _TABLE_SUFFIX
 )
 
 SELECT
-  client,
-  cmp_app,
-  ANY_VALUE(total_pages) AS total_pages,
-  COUNT(DISTINCT url) / ANY_VALUE(total_pages) AS pct_pages_with_cmp
+  _TABLE_SUFFIX AS client,
+  app AS cmp_app,
+  ANY_VALUE(total_websites) AS total_websites,
+  COUNT(DISTINCT url) AS number_of_websites_with_cmp,
+  COUNT(DISTINCT url) / ANY_VALUE(total_websites) AS percent_of_websites_with_cmp
 FROM
-  base
+  `httparchive.technologies.2021_07_01_*`
+JOIN totals USING (_TABLE_SUFFIX)
 WHERE
-  cmp_app != ""
+  category = "Cookie compliance"
+  AND app != ""
 GROUP BY
   client,
   cmp_app
 ORDER BY
   client ASC,
-  total_pages DESC
+  number_of_websites_with_cmp DESC

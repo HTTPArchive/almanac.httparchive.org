@@ -11,6 +11,7 @@ WITH totals AS (
   GROUP BY
     _TABLE_SUFFIX
 )
+
 SELECT
   _TABLE_SUFFIX AS client,
   JSON_QUERY(
@@ -18,11 +19,11 @@ SELECT
     "$.iab_usp.privacy_string.uspString"
   ) AS uspString,
   COUNT(0) AS nb_websites,
-  total_websites,
+  ANY_VALUE(total_websites) AS total_websites,
   COUNT(0) / ANY_VALUE(total_websites) AS pct_websites
 FROM
   `httparchive.pages.2021_07_01_*`
-  JOIN totals USING (_TABLE_SUFFIX)
+JOIN totals USING (_TABLE_SUFFIX)
 WHERE
   JSON_QUERY(
     JSON_VALUE(payload, "$._privacy"),
@@ -30,8 +31,7 @@ WHERE
   ) IS NOT NULL
 GROUP BY
   client,
-  uspString,
-  total_websites
+  uspString
 ORDER BY
   client ASC,
   nb_websites DESC
