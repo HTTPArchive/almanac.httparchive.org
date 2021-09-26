@@ -58,7 +58,7 @@ try {
     }
     return result;
 } catch (error) {
-    return [{type: "ERROR: " + error, num_occurrences: 1}]
+    return []
 }
 ''';
 
