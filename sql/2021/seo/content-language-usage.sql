@@ -38,7 +38,7 @@ FROM
     SELECT
       _TABLE_SUFFIX AS client,
       total,
-      get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
+      get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS content_languages
     FROM
       `httparchive.pages.2021_07_01_*`
     JOIN
@@ -51,7 +51,8 @@ FROM
         GROUP BY _TABLE_SUFFIX
       )
     USING (_TABLE_SUFFIX)
-  )
+  ),
+  UNNEST(content_languages) AS content_language
 GROUP BY total, content_language, client
 ORDER BY count DESC
 LIMIT 1000
