@@ -27,7 +27,7 @@ WITH totals AS (
 SELECT
   client,
   csp_allowed_host,
-  MIN(total) AS total_pages,
+  total AS total_pages,
   COUNT(DISTINCT page) AS freq,
   COUNT(DISTINCT page) / MIN(total) AS pct
 FROM (
@@ -40,12 +40,16 @@ FROM (
   WHERE
     date = "2021-07-01" AND
     firstHtml
-) JOIN totals USING (client),
+)
+JOIN
+  totals
+USING (client),
 UNNEST(REGEXP_EXTRACT_ALL(csp_header, r'(?i)(https*://[^\s;]+)[\s;]')) AS csp_allowed_host
 WHERE
   csp_header IS NOT NULL
 GROUP BY
   client,
+  total,
   csp_allowed_host
 ORDER BY
   pct DESC
