@@ -9,7 +9,7 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
 SELECT
     client,
     COUNTIF(REGEXP_CONTAINS(consoleLog, r'A preload for (.*) is found, but is not used because the script type does not match.')) AS freq,
-    COUNT(0) AS total,    
+    COUNT(0) AS total
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

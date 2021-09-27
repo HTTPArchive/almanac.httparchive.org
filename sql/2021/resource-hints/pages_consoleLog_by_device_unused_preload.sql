@@ -9,7 +9,7 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
 SELECT
     client,
     COUNTIF(REGEXP_CONTAINS(consoleLog, r'The resource (.*) was preloaded using link preload but not used within a few seconds from the window\'s load event')) AS freq,
-    COUNT(0) AS total,    
+    COUNT(0) AS total
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
