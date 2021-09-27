@@ -12,7 +12,6 @@ SELECT
 FROM
   `chrome-ux-report.materialized.device_summary`
 WHERE
-  date <= ('2021-07-01') AND
   (
     notification_permission_accept IS NOT NULL OR
     notification_permission_deny IS NOT NULL OR
