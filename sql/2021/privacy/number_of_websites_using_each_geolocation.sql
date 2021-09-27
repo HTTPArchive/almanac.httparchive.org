@@ -23,8 +23,8 @@ FROM
   `httparchive.technologies.2021_07_01_*`
 JOIN totals USING (_TABLE_SUFFIX)
 WHERE
-  category = "Geolocation"
-  AND app != ""
+  category = "Geolocation" AND
+  app != ""
 GROUP BY
   client,
   app

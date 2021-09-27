@@ -23,8 +23,8 @@ FROM
   `httparchive.technologies.2021_07_01_*`
 JOIN totals USING (_TABLE_SUFFIX)
 WHERE
-  category = "Browser fingerprinting"
-  AND app != ""
+  category = "Browser fingerprinting" AND
+  app != ""
 GROUP BY
   client,
   app

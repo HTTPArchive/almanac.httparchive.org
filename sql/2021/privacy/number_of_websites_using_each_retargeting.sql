@@ -23,8 +23,8 @@ FROM
   `httparchive.technologies.2021_07_01_*`
 JOIN totals USING (_TABLE_SUFFIX)
 WHERE
-  category = "Retargeting"
-  AND app != ""
+  category = "Retargeting" AND
+  app != ""
 GROUP BY
   client,
   app
