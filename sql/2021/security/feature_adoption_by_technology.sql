@@ -1,20 +1,37 @@
 #standardSQL
 # Adoption of features based on the technology that is used
+WITH totals AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    category,
+    app,
+    COUNT(url) AS total_pages_with_technology,
+    COUNT(DISTINCT IF(STARTS_WITH(url, 'https'), url, NULL)) AS total_https_pages
+  FROM
+    `httparchive.technologies.2021_07_01_*`
+  GROUP BY
+    client,
+    category,
+    app
+)
+
 SELECT
   client,
   category,
   app,
   headername,
-  COUNT(DISTINCT url) AS total_pages_with_technology,
-  COUNT(DISTINCT IF(STARTS_WITH(url, 'https'), url, NULL)) AS total_https_pages,
+  total_pages_with_technology,
+  total_https_pages,
   COUNT(DISTINCT IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')), url, NULL)) AS freq,
-  SAFE_DIVIDE(COUNT(DISTINCT IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')), url, NULL)), COUNT(DISTINCT url)) AS pct,
-  SAFE_DIVIDE(COUNT(DISTINCT IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')) AND STARTS_WITH(url, 'https'), url, NULL)), COUNT(DISTINCT IF(STARTS_WITH(url, 'https'), url, NULL))) AS pct_https
+  SAFE_DIVIDE(COUNT(DISTINCT IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')), url, NULL)), total_pages_with_technology) AS pct,
+  SAFE_DIVIDE(COUNT(DISTINCT IF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', headername, ' ')) AND STARTS_WITH(url, 'https'), url, NULL)), total_https_pages) AS pct_https
 FROM (
   SELECT
+    total_pages_with_technology,
+    total_https_pages,
     t._TABLE_SUFFIX AS client,
-    category,
-    app,
+    t.category,
+    t.app,
     respOtherHeaders,
     r.urlShort AS url,
     firstHtml
@@ -23,6 +40,9 @@ FROM (
   INNER JOIN
     `httparchive.technologies.2021_07_01_*` AS t
   ON r._TABLE_SUFFIX = t._TABLE_SUFFIX AND r.urlShort = t.url
+  INNER JOIN
+    totals
+  ON r._TABLE_SUFFIX = totals.client AND t.category = totals.category AND t.app = totals.app
   WHERE
     firstHtml
 ),
@@ -31,7 +51,9 @@ GROUP BY
   client,
   category,
   app,
-  headername
+  headername,
+  total_pages_with_technology,
+  total_https_pages
 HAVING
   total_pages_with_technology >= 1000 AND
   category IN UNNEST(['Blogs', 'CDN', 'Web frameworks', 'Programming languages', 'CMS', 'Ecommerce', 'PaaS', 'Security']) AND
