@@ -45,3 +45,6 @@ Current list of queries used
 * Top “Loyalty & Rewards” technology category - top_loyaltyandrewards_bydevice.sql
 * All categories - all_categories.sql
 * Median lighthouse scores for ecommerce - median_lighthouse_score_ecommsites.sql
+* Ecommerce sites using hreflang value through headers - percent_of_ecommsite_using_hreflang_value_headers.sql
+* Ecommerce sites using hreflang value through link rel - percent_of_ecommsites_using_hreflang_value_link.sql
+* Presence of `Content-Security-Policy` and `Content-Security-Policy-Report-Only` on `Ecommerce` sites - percent_of_ecommsites_csp.sql
