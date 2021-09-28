@@ -33,9 +33,12 @@ try {
             incrementByKey(ret.properties, property);
           }
 
-          // -prefix-function()
-          for (let call of extractFunctionCalls(value, {names: /^-[a-z]+-.+/})) {
-            incrementByKey(ret.functions, call.name);
+          // NOTE(rviscomi): Excluding XL values to avoid UDF timeouts.
+          if (value.length < 1000) {
+            // -prefix-function()
+            for (let call of extractFunctionCalls(value, {names: /^-[a-z]+-.+/})) {
+              incrementByKey(ret.functions, call.name);
+            }
           }
 
           // Prefixed keywords
