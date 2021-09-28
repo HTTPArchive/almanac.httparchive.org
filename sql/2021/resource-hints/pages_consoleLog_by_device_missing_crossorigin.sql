@@ -11,7 +11,7 @@ CREATE TEMP FUNCTION GET_TYPE (href STRING) RETURNS STRING AS (
   IF(
     REGEXP_CONTAINS(href, r'fonts\.googleapis\.com'),
     "fonts.googleapis.com",
-    TRIM(REGEXP_EXTRACT(href, r'\.[0-9a-z]+(?:[\?#]|$)'), '?')
+    TRIM(TRIM(REGEXP_EXTRACT(href, r'\.[0-9a-z]+(?:[\?#]|$)'), '?'), '#')
   )
 );
 
@@ -42,4 +42,4 @@ GROUP BY
   type
 ORDER BY
   client,
-  type
+  total DESC
