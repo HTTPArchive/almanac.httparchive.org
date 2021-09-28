@@ -48,6 +48,7 @@ WITH
     `httparchive.pages.2021_07_01_*`
     )
 SELECT
+  client,
   res AS numNonViewportPreloadedImages,
   COUNT(0) AS numPages
 FROM
