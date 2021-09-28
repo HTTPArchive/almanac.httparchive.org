@@ -15,17 +15,20 @@ try {
 ''';
 
 SELECT
-  _TABLE_SUFFIX AS client,
-  name,
-  COUNT(0) AS freq,
-  SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS pct
-FROM
-  `httparchive.pages.2021_07_01_*`,
-  UNNEST(getCombinedVariableNames(payload)) AS name
-GROUP BY
-  client,
-  name
+  *
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    name,
+    COUNT(0) AS freq,
+    SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
+    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS pct
+  FROM
+    `httparchive.pages.2021_07_01_*`,
+    UNNEST(getCombinedVariableNames(payload)) AS name
+  GROUP BY
+    client,
+    name)
 ORDER BY
   pct DESC
 LIMIT 100

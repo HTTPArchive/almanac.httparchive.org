@@ -102,7 +102,7 @@ SELECT
   APPROX_QUANTILES(duplicate_classes, 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS duplicate_classes_per_page,
   COUNTIF(root_descendant > 0) AS root_descendant_pages,
   COUNTIF(root_descendant > 0) / COUNT(0) AS root_descendant_pages_pct,
-  APPROX_QUANTILES(root_descendant, 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS root_descendantem_per_page,
+  APPROX_QUANTILES(root_descendant, 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS root_descendant_per_page,
   COUNTIF(html_descendant > 0) AS html_descendant_pages,
   COUNTIF(html_descendant > 0) / COUNT(0) AS html_descendant_pages_pct,
   APPROX_QUANTILES(html_descendant, 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS html_descendant_per_page,

@@ -42,5 +42,5 @@ GROUP BY
   sass_custom_function,
   total_sass
 ORDER BY
-  pct DESC
+  pct_pages DESC
 LIMIT 1000

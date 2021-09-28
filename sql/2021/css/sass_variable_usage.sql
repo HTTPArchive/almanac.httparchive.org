@@ -20,6 +20,8 @@ SELECT
   client,
   variable,
   COUNT(DISTINCT page) AS pages,
+  total_sass,
+  COUNT(DISTINCT page) / total_sass AS pct_sass_pages,
   SUM(freq) AS freq,
   SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
   SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
@@ -32,9 +34,21 @@ FROM (
   FROM
     `httparchive.pages.2021_07_01_*`,
     UNNEST(getVariableUsage(payload)) AS variable)
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(DISTINCT url) AS total_sass
+  FROM
+    `httparchive.pages.2021_07_01_*`,
+    UNNEST(getVariableUsage(payload))
+  GROUP BY
+    client)
+USING
+  (client)
 GROUP BY
   client,
-  variable
+  variable,
+  total_sass
 ORDER BY
   pct DESC
 LIMIT 500

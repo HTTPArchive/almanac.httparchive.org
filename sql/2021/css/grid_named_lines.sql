@@ -16,6 +16,7 @@ try {
 SELECT
   client,
   COUNTIF(grid_named_lines) AS pages_with_grid_named_lines,
+  # TODO: Update denominator to number of pages using `grid`.
   total,
   COUNTIF(grid_named_lines) / total AS pct
 FROM (

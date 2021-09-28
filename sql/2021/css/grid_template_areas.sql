@@ -33,6 +33,7 @@ try {
 SELECT
   client,
   COUNTIF(grid_template_areas) AS pages_with_grid_template_areas,
+  # TODO: Update denominator to number of pages using `grid`.
   total,
   COUNTIF(grid_template_areas) / total AS pct
 FROM (

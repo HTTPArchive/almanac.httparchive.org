@@ -64,5 +64,4 @@ WHERE
   REGEXP_CONTAINS(feature, r'(-width|-height|-aspect-ratio)$')
 GROUP BY
   client,
-  total,
-  responsive
+  total
