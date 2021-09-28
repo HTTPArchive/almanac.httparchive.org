@@ -1,9 +1,12 @@
 # standardSQL
 # Analyze the below the fold (i.e. not in the viewport) images that are preloaded 
 
-CREATE TEMPORARY FUNCTION preloadedNonViewportImages(almanacJsonStr STRING, imagesJsonStr STRING)
-RETURNS INT64 LANGUAGE js AS '''
-// try {
+CREATE TEMPORARY FUNCTION
+  preloadedNonViewportImages(almanacJsonStr STRING,
+    imagesJsonStr STRING)
+  RETURNS INT64
+  LANGUAGE js AS '''
+try {
     var almanac = JSON.parse(almanacJsonStr)
     if (Array.isArray(almanac) || typeof almanac != 'object' || almanac == null) return null;
 
@@ -24,22 +27,31 @@ RETURNS INT64 LANGUAGE js AS '''
     }
 
     return unnecessaryImgPreloads;
-/*}
+}
 catch {
     return null
-}*/
+}
 ''';
-
-WITH ImageStats AS (
-    SELECT 
-        preloadedNonViewportImages(JSON_EXTRACT_SCALAR(payload, '$._almanac'), JSON_EXTRACT_SCALAR(payload, '$._Images')) AS res,
-        JSON_EXTRACT_SCALAR(payload, '$._almanac') AS almanac,
-        JSON_QUERY(payload, '$._Images') AS images
-    FROM 
-        -- `httparchive.pages.2021_09_01_desktop` 
-        `httparchive.sample_data.pages*`
-)
-SELECT *
-FROM ImageStats 
-WHERE res > 0
-LIMIT 3
+WITH
+  ImageStats AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    preloadedNonViewportImages(JSON_EXTRACT_SCALAR(payload,
+        '$._almanac'),
+      JSON_EXTRACT_SCALAR(payload,
+        '$._Images')) AS res,
+    JSON_EXTRACT_SCALAR(payload,
+      '$._almanac') AS almanac,
+    JSON_QUERY(payload,
+      '$._Images') AS images
+  FROM
+    `httparchive.pages.2021_07_01_*`
+    )
+SELECT
+  res AS numNonViewportPreloadedImages,
+  COUNT(0) AS numPages
+FROM
+  ImageStats
+GROUP BY
+  client,
+  res
