@@ -33,7 +33,7 @@ Toen hem in 2016 werd gevraagd om uit te leggen waarom een Australische toerist 
 
 Het punt was simpel: hoewel u misschien profiteert van een grotere bandbreedte, gelden de wetten van de fysica nog steeds. Een Australiër kan niet ontsnappen aan de latentiewetten. In het beste geval, thuis in Sydney, ervoer deze Australiër genoeg latentie dat zijn internet soms als niet-reagerend werd ervaren.
 
-Stelt u nu voor dat dezelfde Australiër, wetende dat zijn pagina op het 75e percentiel ongeveer 108 verzoeken doet (daarover later meer), en we hebben nog steeds geen idee van het netwerkprotocol, de bronnen die worden aangevraagd, het compressieniveau of optimalisatie. U kunt de hoofdstukken [HTTP/2](./http2) en [Compressie](./compression) doornemen voor meer informatie over de levensduur van een modern verzoek.
+Stelt u nu voor dat dezelfde Australiër, wetende dat zijn pagina op het 75e percentiel ongeveer 108 verzoeken doet (daarover later meer), en we hebben nog steeds geen idee van het netwerkprotocol, de bronnen die worden aangevraagd, het compressieniveau of optimalisatie. U kunt de hoofdstukken [HTTP/2](./http) en [Compressie](./compression) doornemen voor meer informatie over de levensduur van een modern verzoek.
 
 ### Activa
 

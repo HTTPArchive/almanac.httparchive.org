@@ -203,8 +203,8 @@
         {
           "part": "IV",
           "chapter_number": "25",
-          "title": "HTTP/2",
-          "slug": "http2",
+          "title": "HTTP",
+          "slug": "http",
           "todo": "true"
         }
       ]

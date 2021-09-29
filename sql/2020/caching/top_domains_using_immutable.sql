@@ -5,8 +5,8 @@ SELECT
   NET.HOST(url) AS domain,
   COUNT(DISTINCT pageid) AS pages,
   COUNT(0) AS requests,
-  SUM(COUNT(DISTINCT pageid)) OVER (PARTITION BY 0) AS total_pages,
-  SUM(COUNT(0)) OVER(PARTITION BY 0) AS total_requests
+  SUM(COUNT(DISTINCT pageid)) OVER () AS total_pages,
+  SUM(COUNT(0)) OVER () AS total_requests
 FROM
   `httparchive.summary_requests.2020_08_01_*`
 WHERE

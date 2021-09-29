@@ -8,8 +8,7 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 
-CREATE TEMPORARY FUNCTION isCrawlableDetails(report STRING) -- noqa: PRS
--- SQL Linter cannot handle DETERMINISTIC keyword so needs noqa ignore command on previous line
+CREATE TEMPORARY FUNCTION isCrawlableDetails(report STRING)
 RETURNS STRUCT<
   disallow BOOL,
   noindex BOOL,

@@ -264,7 +264,7 @@ Nel complesso, il prefetching predittivo è ancora un territorio inesplorato, ma
 
 ## HTTP/2 Push
 
-<a href="./http2">HTTP/2</a> ha una feature chiamata "server push" che può potenzialmente migliorare le prestazioni della pagina quando il tuo prodotto ha lunghi Round Trip Times ([RTT](https://developer.mozilla.org/en-US/docs/Glossary/Round_Trip_Time_(RTT))) o elaborazione server. In breve, invece di aspettare che il client invii una richiesta, il server invia preventivamente una risorsa che prevede che il client richiederà subito dopo.
+<a href="./http">HTTP/2</a> ha una feature chiamata "server push" che può potenzialmente migliorare le prestazioni della pagina quando il tuo prodotto ha lunghi Round Trip Times ([RTT](https://developer.mozilla.org/en-US/docs/Glossary/Round_Trip_Time_(RTT))) o elaborazione server. In breve, invece di aspettare che il client invii una richiesta, il server invia preventivamente una risorsa che prevede che il client richiederà subito dopo.
 
 {{ figure_markup(
   caption="La percentuale di pagine HTTP/2 Push che utilizzano `preload`/`nopush`.",

@@ -140,7 +140,7 @@ def test_get_chapter_nextprev_mid_chapter():
 
 
 def test_get_chapter_nextprev_last_chapter():
-    nextprev = get_chapter_nextprev(get_config('2019'), 'http2')
+    nextprev = get_chapter_nextprev(get_config('2019'), 'http')
     prev_slug = nextprev[0]['slug']
     next_slug = nextprev[1]
     assert next_slug is None and prev_slug == 'resource-hints'
@@ -173,9 +173,9 @@ def test_get_chapter_config_hero_dir():
     assert chapter_config.get('hero_dir') == '2020'
 
 
-def test_convert_old_image_path_http2():
+def test_convert_old_image_path_http():
     new_folder = convert_old_image_path('20_HTTP_2')
-    assert new_folder == 'http2'
+    assert new_folder == 'http'
 
 
 def test_convert_old_image_path_fake_css():
