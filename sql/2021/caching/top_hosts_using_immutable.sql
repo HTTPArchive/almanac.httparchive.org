@@ -18,5 +18,4 @@ GROUP BY
 ORDER BY
   client,
   pct_requests DESC
-LIMIT
-  200
+LIMIT 200
