@@ -60,27 +60,27 @@ try {
 } catch (error) {
     return []
 }
-''';
+''' ;
 
 SELECT
-    client,
-    type,
-    SUM(num_occurrences) AS total_occurrences
+  client,
+  type,
+  SUM(num_occurrences) AS total_occurrences
 FROM
   (
     SELECT
-        _TABLE_SUFFIX AS client,
-        invalid_type.type,
-        invalid_type.num_occurrences
+      _TABLE_SUFFIX AS client,
+      invalid_type.type,
+      invalid_type.num_occurrences
     FROM
-        # `httparchive.sample_data.pages*`,
-        `httparchive.pages.2021_07_01_*`,
-        UNNEST(getInvalidTypes(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS invalid_type
+      # `httparchive.sample_data.pages*`,
+      `httparchive.pages.2021_07_01_*`,
+      UNNEST(getInvalidTypes(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS invalid_type
     WHERE
-        payload IS NOT NULL
+      payload IS NOT NULL
   )
 GROUP BY
-    client,
-    type
+  client,
+  type
 ORDER BY
-    total_occurrences DESC
+  total_occurrences DESC

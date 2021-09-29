@@ -2,10 +2,10 @@
 # Analyze the below the fold (i.e. not in the viewport) images that are preloaded 
 
 CREATE TEMPORARY FUNCTION
-  preloadedNonViewportImages(almanacJsonStr STRING,
-    imagesJsonStr STRING)
-  RETURNS INT64
-  LANGUAGE js AS '''
+preloadedNonViewportImages(almanacJsonStr STRING,
+  imagesJsonStr STRING)
+RETURNS INT64
+LANGUAGE js AS '''
 try {
     var almanac = JSON.parse(almanacJsonStr)
     if (Array.isArray(almanac) || typeof almanac != 'object' || almanac == null) return null;
@@ -31,9 +31,9 @@ try {
 catch {
     return null
 }
-''';
+''' ;
 WITH
-  ImageStats AS (
+ImageStats AS (
   SELECT
     _TABLE_SUFFIX AS client,
     preloadedNonViewportImages(JSON_EXTRACT_SCALAR(payload,
@@ -46,7 +46,8 @@ WITH
       '$._Images') AS images
   FROM
     `httparchive.pages.2021_07_01_*`
-    )
+)
+
 SELECT
   client,
   res AS numNonViewportPreloadedImages,

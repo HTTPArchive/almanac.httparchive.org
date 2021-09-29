@@ -2,13 +2,13 @@
 
 # helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
-    ROUND(SAFE_DIVIDE(freq, total), 4)
+  ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 
 # retruns the number of redundant font downloads
 # use https://replit.com/@NitinPasumarthy/almanac-2021-redundant-font-preloads#index.js to run the JS on several test payloads
 CREATE TEMPORARY FUNCTION getUnnecessaryFontDownloadsCount(almanac_string STRING)
-RETURNS INT64 LANGUAGE js AS '''
+RETURNS INT64 LANGUAGE js AS ''' 
 try {
     var almanac = JSON.parse(almanac_string)
     if (Array.isArray(almanac) || typeof almanac != 'object') return null;
@@ -53,25 +53,25 @@ try {
 catch {
     return null
 }
-''';
+''' ;
 
 SELECT
-    client,
-    rd AS redundantDownloads,
-    COUNT(0) AS freq,
-    AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
+  client,
+  rd AS redundantDownloads,
+  COUNT(0) AS freq,
+  AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 FROM (
     SELECT
-        _TABLE_SUFFIX AS client,
-        JSON_QUERY(payload, '$._almanac') AS almanac,
-        getUnnecessaryFontDownloadsCount(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS rd
+      _TABLE_SUFFIX AS client,
+      JSON_QUERY(payload, '$._almanac') AS almanac,
+      getUnnecessaryFontDownloadsCount(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS rd
     FROM
-        `httparchive.sample_data.pages*`
+      `httparchive.sample_data.pages*`
 )
 WHERE
-    rd IS NOT NULL
+  rd IS NOT NULL
 GROUP BY
-    client,
-    rd
+  client,
+  rd
 ORDER BY
-    rd DESC
+  rd DESC
