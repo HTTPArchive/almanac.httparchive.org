@@ -13,9 +13,9 @@ FROM (
   FROM
     `chrome-ux-report.materialized.country_summary`
   WHERE
-    yyyymm = 202108)
+    yyyymm = 202107)
 JOIN
-  `httparchive.summary_pages.2021_08_01_*`
+  `httparchive.summary_pages.2021_07_01_*`
 ON
   CONCAT(origin, '/') = url AND
   IF(device = 'desktop', 'desktop', 'mobile') = _TABLE_SUFFIX
