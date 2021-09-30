@@ -1,5 +1,5 @@
 #standardSQL
-# 21_12a: Count of pages using native lazy loading
+# 21_12a: Count of pages using native image lazy loading
 CREATE TEMPORARY FUNCTION nativeLazyLoads(payload STRING)
 RETURNS BOOLEAN LANGUAGE js AS '''
 try {
