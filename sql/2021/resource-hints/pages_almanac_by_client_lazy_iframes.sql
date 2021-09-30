@@ -1,9 +1,9 @@
 #standardSQL
   # Count the number of lazily loaded iframes
 CREATE TEMPORARY FUNCTION
-  countLazyIframes(almanac_string STRING)
-  RETURNS INT64
-  LANGUAGE js AS ''' 
+countLazyIframes(almanac_string STRING)
+RETURNS INT64
+LANGUAGE js AS ''' 
 try {
     var almanac = JSON.parse(almanac_string)
     if (Array.isArray(almanac) || typeof almanac != 'object') return null;
@@ -16,7 +16,7 @@ catch {
 }
 ''' ;
 WITH
-  iframe_stats_tb AS (
+iframe_stats_tb AS (
   SELECT
     _TABLE_SUFFIX AS client,
     JSON_EXTRACT_SCALAR(payload,
@@ -25,7 +25,8 @@ WITH
         '$._almanac')) AS res
   FROM
     -- `httparchive.sample_data.pages*`
-    `httparchive.pages.2021_07_01_*` )
+    `httparchive.pages.2021_07_01_*`)
+
 SELECT
   client,
   res AS numLazyIframes,
