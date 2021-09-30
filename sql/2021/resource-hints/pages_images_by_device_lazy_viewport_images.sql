@@ -14,8 +14,7 @@ catch {
     return null
 }
 ''' ;
-WITH
-ImageStats AS (
+WITH ImageStats AS (
   SELECT
     _TABLE_SUFFIX AS client,
     countLazilyLoadedVPImages( JSON_EXTRACT_SCALAR(payload,
@@ -26,7 +25,8 @@ ImageStats AS (
       '$._Images') AS images
   FROM
     -- `httparchive.sample_data.pages*`
-    `httparchive.pages.2021_07_01_*`)
+    `httparchive.pages.2021_07_01_*`
+)
 
 SELECT
   client,

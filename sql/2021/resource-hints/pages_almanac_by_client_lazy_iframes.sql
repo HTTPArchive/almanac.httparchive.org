@@ -15,8 +15,7 @@ catch {
     return null
 }
 ''' ;
-WITH
-iframe_stats_tb AS (
+WITH iframe_stats_tb AS (
   SELECT
     _TABLE_SUFFIX AS client,
     JSON_EXTRACT_SCALAR(payload,
@@ -25,7 +24,8 @@ iframe_stats_tb AS (
         '$._almanac')) AS res
   FROM
     -- `httparchive.sample_data.pages*`
-    `httparchive.pages.2021_07_01_*`)
+    `httparchive.pages.2021_07_01_*`
+)
 
 SELECT
   client,
