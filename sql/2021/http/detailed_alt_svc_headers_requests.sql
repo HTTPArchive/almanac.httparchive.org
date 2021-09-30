@@ -32,6 +32,6 @@ GROUP BY
   http_or_https,
   altsvc
 QUALIFY -- Use QUALIFY rather than HAVING to allow total column to work
-  num_requests >= 100 -- noqa: PRS
+  num_requests >= 100
 ORDER BY
   num_requests DESC

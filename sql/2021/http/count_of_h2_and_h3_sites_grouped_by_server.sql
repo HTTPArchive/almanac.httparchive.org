@@ -40,7 +40,7 @@ GROUP BY
   http_version_category,
   http_version
 QUALIFY
-  total >= 1000 -- noqa: PRS
+  total >= 1000
 ORDER BY
   num_pages DESC,
   client,
