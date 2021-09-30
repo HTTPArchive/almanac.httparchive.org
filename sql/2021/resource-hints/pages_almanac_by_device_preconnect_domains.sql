@@ -1,6 +1,11 @@
 #standardSQL
 # Most popular domains users preconnect to
 
+# helper to create percent fields
+CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+  ROUND(SAFE_DIVIDE(freq, total), 4)
+);
+
 CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
 RETURNS STRING
 LANGUAGE js AS '''
@@ -23,40 +28,40 @@ try {
 } catch (e) {
     return [];
 }
-''';
+''' ;
 
-SELECT 
-    client,
-    domain,
-    COUNT(0) as freq,
-    SUM(COUNT(0)) OVER() as total,
+SELECT
+  client,
+  domain,
+  COUNT(0) AS freq,
+  AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER()) AS pct
 FROM (
     SELECT
-    client,
-    REGEXP_EXTRACT(href, r'^https?\:\/\/(.+?)\/') AS domain,
+      client,
+      REGEXP_EXTRACT(href, r'^https?\:\/\/(.+?)\/') AS domain
     FROM (
         SELECT
-            client,
-            getHrefs(hints) as value
+          client,
+          getHrefs(hints) AS value
         FROM (
             SELECT
-                _TABLE_SUFFIX AS client,
-                getResourceHints(payload) AS hints
+              _TABLE_SUFFIX AS client,
+              getResourceHints(payload) AS hints
             FROM
-                `httparchive.pages.2021_07_01*`
-        )    
+              `httparchive.pages.2021_07_01*`
+        )
     )
     CROSS JOIN UNNEST(value) AS href
     WHERE
-        ARRAY_LENGTH(value) > 0
+      ARRAY_LENGTH(value) > 0
 )
 WHERE
-    domain IS NOT NULL
+  domain IS NOT NULL
 GROUP BY
-    client,
-    domain
+  client,
+  domain
 HAVING
-    freq > 1
+  freq > 1
 ORDER BY
-    client,
-    freq DESC
+  client,
+  freq DESC
