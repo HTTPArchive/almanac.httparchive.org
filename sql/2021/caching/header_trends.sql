@@ -7,14 +7,14 @@ WITH summary_requests AS (
     *
   FROM
     `httparchive.summary_requests.2019_07_01_*`
-UNION ALL
+  UNION ALL
   SELECT
     '2020' AS year,
     _TABLE_SUFFIX AS client,
     *
   FROM
     `httparchive.summary_requests.2020_08_01_*`
-UNION ALL
+  UNION ALL
   SELECT
     '2021' AS year,
     _TABLE_SUFFIX AS client,
