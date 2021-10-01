@@ -6,10 +6,9 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 
-CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
+CREATE TEMPORARY FUNCTION getResourceHints(payload STRING, hint STRING)
 RETURNS STRING
 LANGUAGE js AS '''
-var hint = 'preconnect';
 try {
   var $ = JSON.parse(payload);
   var almanac = JSON.parse($._almanac);
@@ -46,7 +45,7 @@ FROM (
         FROM (
             SELECT
               _TABLE_SUFFIX AS client,
-              getResourceHints(payload) AS hints
+              getResourceHints(payload, "preconnect") AS hints
             FROM
               `httparchive.pages.2021_07_01_*`
         )

@@ -44,7 +44,8 @@ WITH ResourceHints AS (
     JSON_EXTRACT_SCALAR(payload, '$._almanac') AS almanac
   FROM
     `httparchive.pages.2021_07_01_*`,
-    UNNEST(getResourceHints(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS res)
+    UNNEST(getResourceHints(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS res
+)
 
 SELECT
   client,
