@@ -1,11 +1,9 @@
   # standardSQL
-  # Analyze the below the fold (i.e. not in the viewport) images that are preloaded
-CREATE TEMPORARY FUNCTION
-  preloadedNonViewportImages(almanacJsonStr STRING)
-  RETURNS ARRAY<STRUCT<linkRel STRING,
-  linkType STRING,
-  numOccurrences NUMERIC>>
-  LANGUAGE js AS '''
+  # Analyze resource hints by distribution
+
+CREATE TEMPORARY FUNCTION getResourceHints(almanacJsonStr STRING)
+RETURNS ARRAY<STRUCT<linkRel STRING, linkType STRING, numOccurrences NUMERIC>>
+LANGUAGE js AS '''
 try {
     var almanac = JSON.parse(almanacJsonStr)
     if (Array.isArray(almanac) || typeof almanac != 'object' || almanac == null) return null;
@@ -37,20 +35,17 @@ catch {
     return null
 }
 ''' ;
-WITH
-  ImageStats AS (
+WITH ResourceHints AS (
   SELECT
     _TABLE_SUFFIX AS client,
     res.linkRel,
     res.linkType,
     res.numOccurrences,
-    JSON_EXTRACT_SCALAR(payload,
-      '$._almanac') AS almanac
+    JSON_EXTRACT_SCALAR(payload, '$._almanac') AS almanac
   FROM
-    -- `httparchive.pages.2021_07_01_*`,
-    `httparchive.sample_data.pages*`,
-    UNNEST(preloadedNonViewportImages(JSON_EXTRACT_SCALAR(payload,
-          '$._almanac'))) AS res )
+    `httparchive.pages.2021_07_01_*`,
+    UNNEST(getResourceHints(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS res)
+
 SELECT
   client,
   linkRel,
@@ -58,25 +53,25 @@ SELECT
   COUNT(0) AS total,
   AVG(numOccurrences) AS avgUsagePerDomain,
   APPROX_QUANTILES(numOccurrences, 100)[
-OFFSET
-  (10)] AS P10,
+    OFFSET
+    (10)] AS P10,
   APPROX_QUANTILES(numOccurrences, 100)[
-OFFSET
-  (25)] AS P25,
+    OFFSET
+    (25)] AS P25,
   APPROX_QUANTILES(numOccurrences, 100)[
-OFFSET
-  (50)] AS P50,
+    OFFSET
+    (50)] AS P50,
   APPROX_QUANTILES(numOccurrences, 100)[
-OFFSET
-  (75)] AS P75,
+    OFFSET
+    (75)] AS P75,
   APPROX_QUANTILES(numOccurrences, 100)[
-OFFSET
-  (90)] AS P90,
+    OFFSET
+    (90)] AS P90,
   APPROX_QUANTILES(numOccurrences, 100)[
-OFFSET
-  (99)] AS P99
+    OFFSET
+    (99)] AS P99
 FROM
-  ImageStats
+  ResourceHints
 WHERE
   linkType <> 'UNK'
 GROUP BY
