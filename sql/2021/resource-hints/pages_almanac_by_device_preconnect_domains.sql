@@ -48,7 +48,7 @@ FROM (
               _TABLE_SUFFIX AS client,
               getResourceHints(payload) AS hints
             FROM
-              `httparchive.pages.2021_07_01*`
+              `httparchive.pages.2021_07_01_*`
         )
     )
     CROSS JOIN UNNEST(value) AS href
@@ -65,3 +65,4 @@ HAVING
 ORDER BY
   client,
   freq DESC
+LIMIT 100
