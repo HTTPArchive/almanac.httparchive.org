@@ -1,6 +1,11 @@
 #standardSQL
 # Retrieves resource hints from HTTP headers
 
+# helper to create percent fields
+CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+  ROUND(SAFE_DIVIDE(freq, total), 4)
+);
+
 CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
 RETURNS STRUCT<preload BOOLEAN, prefetch BOOLEAN, preconnect BOOLEAN, prerender BOOLEAN, `dns-prefetch` BOOLEAN, `modulepreload` BOOLEAN>
 LANGUAGE js AS '''
@@ -24,17 +29,17 @@ try {
 SELECT
   client,
   COUNTIF(hints.preload) AS preload,
-  ROUND(COUNTIF(hints.preload) * 100 / COUNT(0), 2) AS pct_preload,
+  AS_PERCENT(COUNTIF(hints.preload), COUNT(0)) AS pct_preload,
   COUNTIF(hints.prefetch) AS prefetch,
-  ROUND(COUNTIF(hints.prefetch) * 100 / COUNT(0), 2) AS pct_prefetch,
+  AS_PERCENT(COUNTIF(hints.prefetch), COUNT(0)) AS pct_prefetch,
   COUNTIF(hints.preconnect) AS preconnect,
-  ROUND(COUNTIF(hints.preconnect) * 100 / COUNT(0), 2) AS pct_preconnect,
+  AS_PERCENT(COUNTIF(hints.preconnect), COUNT(0)) AS pct_preconnect,
   COUNTIF(hints.prerender) AS prerender,
-  ROUND(COUNTIF(hints.prerender) * 100 / COUNT(0), 2) AS pct_prerender,
+  AS_PERCENT(COUNTIF(hints.prerender), COUNT(0)) AS pct_prerender,
   COUNTIF(hints.`dns-prefetch`) AS dns_prefetch,
-  ROUND(COUNTIF(hints.`dns-prefetch`) * 100 / COUNT(0), 2) AS pct_dns_prefetch,
+  AS_PERCENT(COUNTIF(hints.`dns-prefetch`), COUNT(0)) AS pct_dns_prefetch,
   COUNTIF(hints.`modulepreload`) AS modulepreload,
-  ROUND(COUNTIF(hints.`modulepreload`) * 100 / COUNT(0), 2) AS pct_modulepreload
+  AS_PERCENT(COUNTIF(hints.`modulepreload`), COUNT(0)) AS pct_modulepreload
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
