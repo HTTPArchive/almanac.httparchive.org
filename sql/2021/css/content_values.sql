@@ -25,7 +25,7 @@ FROM (
   SELECT
     client,
     IF(
-      REGEXP_CONTAINS(content, r'[\'"]\\[ef][0-9a-f]{3}[\'"]'), '"\\f000"-like', 
+      REGEXP_CONTAINS(content, r'[\'"]\\[ef][0-9a-f]{3}[\'"]'), '"\\f000"-like',
     IF(
       REGEXP_CONTAINS(content, r'[\'"]\\[a-f0-9]{4}[\'"]'), '"\\hex{4}"-like', content)) AS content,
     COUNT(DISTINCT page) AS pages,
