@@ -13,7 +13,9 @@ try {
       var workboxItems = workboxPackageMethods[i].toString().trim().split(',');
       for(var j = 0; j < workboxItems.length; j++) {
         if(workboxItems[j].indexOf(':') == -1) {
-          workboxMethods.push(workboxItems[j].trim());
+          if (workboxItems[j].trim().startsWith('workbox.')) {
+            workboxMethods.push(workboxItems[j].trim().substring(8));
+          }
         }
       }
   }
@@ -26,6 +28,8 @@ try {
 SELECT
   _TABLE_SUFFIX AS client,
   workbox_method,
+  REGEXP_EXTRACT(workbox_method, r'^([^.]+)') AS module_only,
+  REGEXP_EXTRACT(workbox_method, r'^[^.]+\.([^.]+)') AS method_only,
   COUNT(DISTINCT url) AS freq,
   total,
   COUNT(DISTINCT url) / total AS pct
