@@ -22,18 +22,22 @@ FROM (
     date = '2021-07-01' AND
     type = 'font'
   GROUP BY
-    client, page)
+    client,
+    page)
 JOIN (
   SELECT
-    _TABLE_SUFFIX AS client, 
-    url AS page, 
-    CAST(JSON_EXTRACT_SCALAR(payload,"$['_chromeUserTiming.firstContentfulPaint']") AS INT64) AS fcp, 
+    _TABLE_SUFFIX AS client,
+    url AS page,
+    CAST(JSON_EXTRACT_SCALAR(payload,"$['_chromeUserTiming.firstContentfulPaint']") AS INT64) AS fcp,
     CAST(JSON_EXTRACT_SCALAR(payload,"$['_chromeUserTiming.LargestContentfulPaint']") AS INT64) AS lcp
   FROM
     `httparchive.pages.2021_07_01_*`)
 USING
-  (client, page)
+  (client,
+  page)
 GROUP BY
-  client, font_host
+  client,
+  font_host
 ORDER BY
-  font_host, client
+  font_host,
+  client
