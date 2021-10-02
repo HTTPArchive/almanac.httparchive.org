@@ -4,10 +4,8 @@ SELECT
   CASE
     WHEN pct_self_hosted_hosted = 1 THEN 'self-hosted'
     WHEN pct_self_hosted_hosted = 0 THEN 'external'
-  ELSE
-    'both'
-END
-  AS font_host,
+    ELSE 'both'
+  END AS font_host,
   COUNT(DISTINCT page) AS pages,
   SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
   COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct,
