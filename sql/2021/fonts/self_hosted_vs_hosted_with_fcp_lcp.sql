@@ -1,4 +1,4 @@
-#standardSQL #self_hosted_vs_hosted_with_fcp
+#standardSQL #self_hosted_vs_hosted_with_fcp_lcp
 SELECT
   client,
   CASE
