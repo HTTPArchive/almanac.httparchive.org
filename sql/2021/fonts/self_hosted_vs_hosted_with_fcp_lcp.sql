@@ -19,11 +19,10 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2021-07-01'
-    AND type = 'font'
+    date = '2021-07-01'AND
+    type = 'font'
   GROUP BY
-    client,
-    page)
+    client, page)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -33,11 +32,8 @@ JOIN (
   FROM
     `httparchive.pages.2021_07_01_*`)
 USING
-  (client,
-    page)
+  (client, page)
 GROUP BY
-  client,
-  font_host
+  client, font_host
 ORDER BY
-  font_host,
-  client
+  font_host, client
