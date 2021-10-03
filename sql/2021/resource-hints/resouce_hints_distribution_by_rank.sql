@@ -27,7 +27,8 @@ SELECT
   APPROX_QUANTILES(hints.preconnect, 1000)[OFFSET(percentile * 10)] AS preconnect,
   APPROX_QUANTILES(hints.prerender, 1000)[OFFSET(percentile * 10)] AS prerender,
   APPROX_QUANTILES(hints.`dns-prefetch`, 1000)[OFFSET(percentile * 10)] AS dns_prefetch,
-  APPROX_QUANTILES(hints.modulepreload, 1000)[OFFSET(percentile * 10)] AS modulepreload
+  APPROX_QUANTILES(hints.modulepreload, 1000)[OFFSET(percentile * 10)] AS modulepreload,
+  rank
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -37,9 +38,21 @@ FROM (
     `httparchive.pages.2021_07_01_*`
 ),
 UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+JOIN (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      url AS page,
+      rank
+    FROM
+      `httparchive.summary_pages.2021_07_01_*`
+)
+USING
+  (client, page)
 GROUP BY
   client,
+  rank,
   percentile
 ORDER BY
   client,
+  rank,
   percentile
