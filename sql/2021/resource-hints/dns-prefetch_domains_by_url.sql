@@ -37,9 +37,9 @@ SELECT
   AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER()) AS pct
 FROM (
     SELECT
-       client,
-       url,
-       domain
+      client,
+      url,
+      domain
     FROM (
         SELECT
           client,
@@ -64,9 +64,9 @@ FROM (
           ARRAY_LENGTH(value) > 0
     )
     GROUP BY
-       client,
-       url,
-       domain
+      client,
+      url,
+      domain
 )
 GROUP BY
   client,
