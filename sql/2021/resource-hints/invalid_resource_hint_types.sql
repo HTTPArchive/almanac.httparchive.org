@@ -73,7 +73,6 @@ FROM
       invalid_type.type,
       invalid_type.num_occurrences
     FROM
-      # `httparchive.sample_data.pages*`,
       `httparchive.pages.2021_07_01_*`,
       UNNEST(getInvalidTypes(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS invalid_type
     WHERE
