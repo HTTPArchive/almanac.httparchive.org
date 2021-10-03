@@ -1,0 +1,86 @@
+#standardSQL
+
+# helper to create percent fields
+CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+  ROUND(SAFE_DIVIDE(freq, total), 4)
+);
+
+# returns the number of unused font files (assuming they are the same font based on the filename) that were preloaded
+# Ex: The below HTML will return 1: 
+#
+# <link rel="preload" href="./roboto.woff2" as="font" />
+# <link rel="preload" href="./roboto.woff" as="font" />
+# <link rel="preload" href="./montserrat.woff2" as="font" />
+CREATE TEMPORARY FUNCTION getUnusedFontDownloadsCount(almanac_string STRING)
+RETURNS INT64 LANGUAGE js AS ''' 
+try {
+  const almanac = JSON.parse(almanac_string);
+  if (Array.isArray(almanac) || typeof almanac != "object") return null;
+
+  let nodes = almanac["link-nodes"]["nodes"];
+  nodes = typeof nodes == "string" ? JSON.parse(nodes) : nodes;
+
+  const preloadedFonts = nodes.filter(
+    (n) => n["as"] === "font" && n["rel"] === "preload"
+  );
+
+  // extract the font file name and extension
+  const fontFiles = preloadedFonts.map((r) => {
+    const filePathParts = r.href.split("/");
+    return filePathParts[filePathParts.length - 1];
+  });
+
+  if (fontFiles.length === 0) {
+    return null;
+  }
+
+  // returns a key-value-pair with the filename and array of extensions used
+  // Ex: { "roboto": [".woff2", ".woff"], "montserrat": [".woff2"] }
+  const preloadedFontSet = fontFiles.reduce((acc, n) => {
+    const regexp = new RegExp("\\.[0-9a-z]+$");
+    const match = n.match(regexp);
+
+    if (match) {
+      const ext = match[0];
+      const filename = n.replace(ext, "");
+
+      return {
+        ...acc,
+        [filename]: [...(acc[filename] ? acc[filename] : []), ext],
+      };
+    }
+  }, {});
+
+  return Object.values(preloadedFontSet).reduce((acc, n) => {
+    if (n.find((m) => m === ".woff2")) {
+      return acc + n.length - 1;
+    }
+
+    return acc;
+  }, 0);
+} catch {
+  return null;
+}
+''' ;
+
+SELECT
+  client,
+  unusedFontCount,
+  COUNT(0) AS freq,
+  AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
+FROM (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      JSON_QUERY(payload, '$._almanac') AS almanac,
+      getUnusedFontDownloadsCount(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS unusedFontCount
+    FROM
+      `httparchive.pages.2021_07_01_*`
+)
+WHERE
+  unusedFontCount IS NOT NULL
+GROUP BY
+  client,
+  unusedFontCount
+ORDER BY
+  client,
+  unusedFontCount
