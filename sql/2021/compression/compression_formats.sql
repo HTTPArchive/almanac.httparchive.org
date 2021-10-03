@@ -14,4 +14,3 @@ GROUP BY
   resp_content_encoding
 ORDER BY
   num_requests DESC
-  
