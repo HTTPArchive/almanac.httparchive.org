@@ -1,5 +1,5 @@
 #standardSQL
-# Number of pages all of whose properties have !important
+# Stats for pages whose properties all have !important
 CREATE TEMPORARY FUNCTION getImportantProperties(css STRING)
 RETURNS STRUCT<total INT64, important INT64>
 LANGUAGE js
@@ -32,7 +32,8 @@ try {
 
 SELECT
   client,
-  COUNTIF(important = total) AS all_important_pages
+  total AS num_properties_per_page,
+  COUNT(0) AS freq
 FROM (
   SELECT
     client,
@@ -51,5 +52,11 @@ FROM (
   GROUP BY
     client,
     page)
+WHERE
+  important = total AND
+  important > 0
 GROUP BY
-  client
+  client,
+  total
+ORDER BY
+  total

@@ -60,7 +60,7 @@ FROM (
   GROUP BY
     client,
     selector)
-WHERE
-  pct > 0.01
 ORDER BY
   pct DESC
+LIMIT
+  1000
