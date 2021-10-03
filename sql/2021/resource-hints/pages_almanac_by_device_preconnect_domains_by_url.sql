@@ -1,5 +1,6 @@
 #standardSQL
-# Most popular domains users dns-prefetch from
+# Most popular domains users preconnect to
+# capped to one hit per url to avoid having the results skewed by websites which preconnect to the same domain many times (!)
 
 # helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
@@ -35,24 +36,37 @@ SELECT
   COUNT(0) AS freq,
   AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER()) AS pct
 FROM (
-    SELECT
-      client,
-      REGEXP_EXTRACT(href, r'\/\/(.+?)$') AS domain
+    SELECT 
+        client,
+        url,
+        domain
     FROM (
         SELECT
-          client,
-          getHrefs(hints) AS value
+        client,
+        url,
+        REGEXP_EXTRACT(href, r'\/\/(.+?)$') AS domain
         FROM (
             SELECT
-              _TABLE_SUFFIX AS client,
-              getResourceHints(payload, "dns-prefetch") AS hints
-            FROM
-              `httparchive.pages.2021_07_01_*`
+            client,
+            url,
+            getHrefs(hints) AS value
+            FROM (
+                SELECT
+                _TABLE_SUFFIX AS client,
+                url,
+                getResourceHints(payload, "preconnect") AS hints
+                FROM
+                  `httparchive.pages.2021_07_01_*`
+            )
         )
+        CROSS JOIN UNNEST(value) AS href
+        WHERE
+        ARRAY_LENGTH(value) > 0
     )
-    CROSS JOIN UNNEST(value) AS href
-    WHERE
-      ARRAY_LENGTH(value) > 0
+    GROUP BY 
+        client,
+        url,
+        domain
 )
 GROUP BY
   client,

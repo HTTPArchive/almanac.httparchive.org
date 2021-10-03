@@ -54,8 +54,6 @@ FROM (
     WHERE
       ARRAY_LENGTH(value) > 0
 )
-WHERE
-  domain IS NOT NULL
 GROUP BY
   client,
   domain

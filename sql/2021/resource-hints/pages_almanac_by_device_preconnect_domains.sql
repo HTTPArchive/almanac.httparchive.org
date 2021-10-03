@@ -37,7 +37,7 @@ SELECT
 FROM (
     SELECT
       client,
-      REGEXP_EXTRACT(href, r'^https?\:\/\/(.+?)\/') AS domain
+      REGEXP_EXTRACT(href, r'\/\/(.+?)$') AS domain
     FROM (
         SELECT
           client,
@@ -54,8 +54,6 @@ FROM (
     WHERE
       ARRAY_LENGTH(value) > 0
 )
-WHERE
-  domain IS NOT NULL
 GROUP BY
   client,
   domain
