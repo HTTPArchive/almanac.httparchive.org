@@ -36,37 +36,37 @@ SELECT
   COUNT(0) AS freq,
   AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER()) AS pct
 FROM (
-    SELECT 
-        client,
-        url,
-        domain
+    SELECT
+       client,
+       url,
+       domain
     FROM (
         SELECT
-        client,
-        url,
-        REGEXP_EXTRACT(href, r'^https?\:\/\/(.+?)\/') AS domain
+          client,
+          url,
+          REGEXP_EXTRACT(href, r'^https?\:\/\/(.+?)\/') AS domain
         FROM (
             SELECT
-            client,
-            url,
-            getHrefs(hints) AS value
+              client,
+              url,
+              getHrefs(hints) AS value
             FROM (
                 SELECT
-                _TABLE_SUFFIX AS client,
-                url,
-                getResourceHints(payload, "preload") AS hints
+                  _TABLE_SUFFIX AS client,
+                  url,
+                  getResourceHints(payload, "preload") AS hints
                 FROM
                   `httparchive.pages.2021_07_01_*`
             )
         )
         CROSS JOIN UNNEST(value) AS href
         WHERE
-        ARRAY_LENGTH(value) > 0
+          ARRAY_LENGTH(value) > 0
     )
-    GROUP BY 
-        client,
-        url,
-        domain
+    GROUP BY
+       client,
+       url,
+       domain
 )
 GROUP BY
   client,
