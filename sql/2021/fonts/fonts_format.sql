@@ -16,4 +16,5 @@ GROUP BY
   client,
   mime_type
 ORDER BY
-  client, pct DESC
+  client,
+  pct DESC
