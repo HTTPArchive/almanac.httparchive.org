@@ -9,7 +9,9 @@ SELECT
 FROM
   `httparchive.almanac.requests`
 WHERE
-  type = 'font' AND mimeType != '' AND date = '2021-07-01'
+  date = '2021-07-01' AND
+  type = 'font' AND
+  mimeType != ''
 GROUP BY
   client,
   mime_type
