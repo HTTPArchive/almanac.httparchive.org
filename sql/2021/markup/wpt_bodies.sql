@@ -3,7 +3,7 @@
 
 # helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
-  ROUND(SAFE_DIVIDE(freq, total), 4)
+    (freq, total), 4)
 );
 
 # returns all the data we need from _wpt_bodies
@@ -43,9 +43,9 @@ try {
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
     if (wpt_bodies.raw_html) {
-      result.comment_count = wpt_bodies.raw_html.comment_count; // M103
-      result.conditional_comment_count = wpt_bodies.raw_html.conditional_comment_count; // M104
-      result.head_size = wpt_bodies.raw_html.head_size; // M234
+      result.comment_count = wpt_bodies.raw_html.comment_count;
+      result.conditional_comment_count = wpt_bodies.raw_html.conditional_comment_count;
+      result.head_size = wpt_bodies.raw_html.head_size;
     }
 
     result.no_h1 = !wpt_bodies.headings || !wpt_bodies.headings.rendered || !wpt_bodies.headings.rendered.h1 || !wpt_bodies.headings.rendered.h1.total || wpt_bodies.headings.rendered.h1.total === 0;
@@ -123,25 +123,25 @@ SELECT
   COUNT(0) AS total,
 
   # % of pages with comments
-  AS_PERCENT(COUNTIF(wpt_bodies_info.comment_count > 0), COUNT(0)) AS pct_contains_comment_m109,
+  COUNTIF(wpt_bodies_info.comment_count > 0) / COUNT(0) AS pct_contains_comment,
 
   # % of pages with conditional comments
-  AS_PERCENT(COUNTIF(wpt_bodies_info.conditional_comment_count > 0), COUNT(0)) AS pct_contains_conditional_comment_m110,
+  COUNTIF(wpt_bodies_info.conditional_comment_count > 0) / COUNT(0) AS pct_contains_conditional_comment,
 
   # pages without an h1
-  AS_PERCENT(COUNTIF(wpt_bodies_info.no_h1), COUNT(0)) AS pct_no_h1_m220,
+  COUNTIF(wpt_bodies_info.no_h1) / COUNT(0) AS pct_no_h1,
 
-  # pages with all target _banks including rel="noopener noreferrer" M420
-  AS_PERCENT(COUNTIF(wpt_bodies_info.target_blank_total IS NULL OR wpt_bodies_info.target_blank_total = wpt_bodies_info.target_blank_noopener_noreferrer_total), COUNT(0)) AS pct_always_target_blank_noopener_noreferrer_m420,
+  # pages with all target _banks including rel="noopener noreferrer"
+  COUNTIF(wpt_bodies_info.target_blank_total IS NULL OR wpt_bodies_info.target_blank_total = wpt_bodies_info.target_blank_noopener_noreferrer_total) / COUNT(0) AS pct_always_target_blank_noopener_noreferrer,
 
-  # pages with some target _banks not using rel="noopener noreferrer" M421
-  AS_PERCENT(COUNTIF(wpt_bodies_info.target_blank_total > wpt_bodies_info.target_blank_noopener_noreferrer_total), COUNT(0)) AS pct_some_target_blank_without_noopener_noreferrer_m421,
+  # pages with some target _banks not using rel="noopener noreferrer"
+  COUNTIF(wpt_bodies_info.target_blank_total > wpt_bodies_info.target_blank_noopener_noreferrer_total) / COUNT(0) AS pct_some_target_blank_without_noopener_noreferrer,
 
-  AS_PERCENT(COUNTIF(wpt_bodies_info.target_blank_total > 0), COUNT(0)) AS pct_has_target_blank,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.target_blank_noopener_noreferrer_total > 0), COUNT(0)) AS pct_has_target_blank_noopener_noreferrer,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.target_blank_noopener_total > 0), COUNT(0)) AS pct_has_target_blank_noopener,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.target_blank_noreferrer_total > 0), COUNT(0)) AS pct_has_target_blank_noreferrer,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.target_blank_neither_total > 0), COUNT(0)) AS pct_has_target_blank_neither,
+  COUNTIF(wpt_bodies_info.target_blank_total > 0) / COUNT(0) AS pct_has_target_blank,
+  COUNTIF(wpt_bodies_info.target_blank_noopener_noreferrer_total > 0) / COUNT(0) AS pct_has_target_blank_noopener_noreferrer,
+  COUNTIF(wpt_bodies_info.target_blank_noopener_total > 0) / COUNT(0) AS pct_has_target_blank_noopener,
+  COUNTIF(wpt_bodies_info.target_blank_noreferrer_total > 0) / COUNT(0) AS pct_has_target_blank_noreferrer,
+  COUNTIF(wpt_bodies_info.target_blank_neither_total > 0) / COUNT(0) AS pct_has_target_blank_neither,
 
   ROUND(AVG(wpt_bodies_info.n_h1), 2) AS avg_h1,
   ROUND(AVG(wpt_bodies_info.n_h2), 2) AS avg_h2,

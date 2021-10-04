@@ -1,22 +1,18 @@
 #standardSQL
-# Doctype M101
-
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
-  ROUND(SAFE_DIVIDE(freq, total), 4)
-);
+# doctype
 
 SELECT
   _TABLE_SUFFIX AS client,
   LOWER(REGEXP_REPLACE(TRIM(doctype), r" +", " ")) AS doctype, # remove extra spaces and make lower case
   COUNT(0) AS freq,
-  AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct_m101
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS pct
 FROM
   `httparchive.summary_pages.2021_07_01_*`
 GROUP BY
   client,
   doctype
 ORDER BY
-  freq DESC,
-  client
+  client,
+  freq DESC
 LIMIT
 100
