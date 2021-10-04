@@ -25,21 +25,21 @@ return '';
 SELECT
   client,
   COUNT(0) AS freq,
-  almanac_html_lang as html_lang,
+  almanac_html_lang AS html_lang,
 
   AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct_m107
 
-  FROM
-    ( 
-      SELECT 
-        _TABLE_SUFFIX AS client,
-        get_almanac_html_lang(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_html_lang 
-      FROM
-        `httparchive.pages.2021_07_01_*`
-    )
+FROM
+  (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      get_almanac_html_lang(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_html_lang
+    FROM
+      `httparchive.pages.2021_07_01_*`
+  )
 GROUP BY
   client,
   html_lang
-ORDER BY 
+ORDER BY
   freq DESC
-  
+

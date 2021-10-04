@@ -19,4 +19,4 @@ ORDER BY
   freq DESC,
   client
 LIMIT
-  100
+100
