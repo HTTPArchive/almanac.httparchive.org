@@ -32,7 +32,9 @@ FROM
 WHERE
   date = '2021-07-01'
 GROUP BY
-  client, axis, num_axis
+  client,
+  axis,
+  num_axis
 HAVING
   axis IS NOT NULL
 ORDER BY
