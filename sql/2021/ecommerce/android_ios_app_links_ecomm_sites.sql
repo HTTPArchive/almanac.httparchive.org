@@ -1,6 +1,6 @@
 #standardSQL
 # 13_21: Native app links association for ecommerce sites. 
-# This query uses custom metric 'ecommerce' - https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/ecommerce.js
+# This query uses custom metric 'ecommerce' - https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/well-known.js
 SELECT
   client,
   COUNTIF(android_app_links) AS android_app_links,
@@ -30,3 +30,4 @@ GROUP BY
   client
 ORDER BY
   client
+
