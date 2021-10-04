@@ -38,6 +38,6 @@ GROUP BY
   total,
   element_type
 ORDER BY
-  client
-  pages DESC,
+  client,
+  pages DESC
 LIMIT 1000

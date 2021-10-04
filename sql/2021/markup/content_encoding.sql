@@ -11,8 +11,7 @@ SELECT
 FROM
   `httparchive.almanac.requests`
 WHERE
-  mimeType = "text/html"
-  AND
+  mimeType = "text/html" AND
   date = '2021-07-01'
 GROUP BY
   client,
