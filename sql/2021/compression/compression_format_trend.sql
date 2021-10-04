@@ -3,7 +3,12 @@
 SELECT
   EXTRACT(YEAR FROM date) AS year,
   client,
-  IF(resp_content_encoding = "gzip", "Gzip", IF(resp_content_encoding = "br", "Brotli", IF(resp_content_encoding = "", "no text compression", "other"))) AS compression_type,
+  CASE
+    WHEN resp_content_encoding = 'gzip' THEN 'Gzip'
+    WHEN resp_content_encoding = 'br' THEN 'Brotli'
+    WHEN resp_content_encoding = '' THEN 'no text compression'
+    ELSE 'other'
+  END AS compression_type,
   COUNT(0) AS num_requests
 FROM
   (

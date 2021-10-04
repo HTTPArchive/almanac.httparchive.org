@@ -13,5 +13,5 @@ GROUP BY
   text_compression_score
 ORDER BY
   client,
-  text_compression_score ASC
+  text_compression_score
 
