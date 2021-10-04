@@ -22,6 +22,7 @@ try {
 
 SELECT
   client,
+  rank,
   COUNTIF(hints.preload) AS preload,
   COUNTIF(hints.preload) / COUNT(0) AS pct_preload,
   COUNTIF(hints.prefetch) AS prefetch,
@@ -33,8 +34,7 @@ SELECT
   COUNTIF(hints.`dns-prefetch`) AS dns_prefetch,
   COUNTIF(hints.`dns-prefetch`) / COUNT(0) AS pct_dns_prefetch,
   COUNTIF(hints.modulepreload) AS modulepreload,
-  COUNTIF(hints.modulepreload) / COUNT(0) AS pct_modulepreload,
-  rank
+  COUNTIF(hints.modulepreload) / COUNT(0) AS pct_modulepreload
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -47,12 +47,15 @@ JOIN (
     SELECT
       _TABLE_SUFFIX AS client,
       url AS page,
-      rank
+      rank AS _rank
     FROM
       `httparchive.summary_pages.2021_07_01_*`
 )
 USING
-  (client, page)
+  (client, page),
+  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank
+WHERE
+  _rank <= rank
 GROUP BY
   client,
   rank

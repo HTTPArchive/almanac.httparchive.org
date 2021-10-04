@@ -20,15 +20,15 @@ try {
 ''' ;
 
 SELECT
-  percentile,
   client,
+  rank,
+  percentile,
   APPROX_QUANTILES(hints.preload, 1000)[OFFSET(percentile * 10)] AS preload,
   APPROX_QUANTILES(hints.prefetch, 1000)[OFFSET(percentile * 10)] AS prefetch,
   APPROX_QUANTILES(hints.preconnect, 1000)[OFFSET(percentile * 10)] AS preconnect,
   APPROX_QUANTILES(hints.prerender, 1000)[OFFSET(percentile * 10)] AS prerender,
   APPROX_QUANTILES(hints.`dns-prefetch`, 1000)[OFFSET(percentile * 10)] AS dns_prefetch,
-  APPROX_QUANTILES(hints.modulepreload, 1000)[OFFSET(percentile * 10)] AS modulepreload,
-  rank
+  APPROX_QUANTILES(hints.modulepreload, 1000)[OFFSET(percentile * 10)] AS modulepreload
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -42,12 +42,15 @@ JOIN (
     SELECT
       _TABLE_SUFFIX AS client,
       url AS page,
-      rank
+      rank AS _rank
     FROM
       `httparchive.summary_pages.2021_07_01_*`
 )
 USING
-  (client, page)
+  (client, page),
+  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank
+WHERE
+  _rank <= rank
 GROUP BY
   client,
   rank,

@@ -1,9 +1,5 @@
 #standardSQL
 
-# helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
-  ROUND(SAFE_DIVIDE(freq, total), 4)
-);
 
 # returns the number of unused font files (assuming they are the same font based on the filename) that were preloaded
 # Ex: The below HTML will return 1: 
@@ -67,7 +63,7 @@ SELECT
   client,
   unusedFontCount,
   COUNT(0) AS freq,
-  AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM (
     SELECT
       _TABLE_SUFFIX AS client,

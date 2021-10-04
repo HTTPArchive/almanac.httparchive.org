@@ -1,15 +1,12 @@
 #standardSQL
 # returns the number of pages which preload a resource of the incorrect script type
 
-# helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
-  ROUND(SAFE_DIVIDE(freq, total), 4)
-);
-
 SELECT
   client,
-  ARRAY_LENGTH(value) AS freq,
-  COUNT(0) AS total
+  ARRAY_LENGTH(value) AS numOfIncorrectType,
+  COUNT(0) AS freq,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM (
   SELECT
     client,
@@ -24,11 +21,9 @@ FROM (
   WHERE
     consoleLog IS NOT NULL
 )
-WHERE
-  ARRAY_LENGTH(value) > 0
 GROUP BY
   client,
-  freq
+  numOfIncorrectType
 ORDER BY
   client,
-  freq
+  numOfIncorrectType
