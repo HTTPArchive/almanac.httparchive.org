@@ -27,15 +27,15 @@ SELECT
   COUNTIF(monetization != "") AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNTIF(monetization != "") / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
-FROM ( 
-  SELECT 
+FROM (
+  SELECT
     _TABLE_SUFFIX AS client,
-    get_almanac_meta_monetization(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS monetization 
+    get_almanac_meta_monetization(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS monetization
   FROM
     `httparchive.pages.2021_07_01_*`
 )
 GROUP BY
   client
-ORDER BY 
+ORDER BY
   client,
   freq DESC

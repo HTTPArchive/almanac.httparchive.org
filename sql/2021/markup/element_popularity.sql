@@ -30,7 +30,7 @@ JOIN (
   FROM
     `httparchive.pages.2021_07_01_*`
   GROUP BY _TABLE_SUFFIX
-) # to get an accurate total of pages per device. also seems fast
+)
 USING (_TABLE_SUFFIX),
   UNNEST(get_element_types(JSON_EXTRACT_SCALAR(payload, '$._element_count'))) AS element_type
 GROUP BY

@@ -18,9 +18,9 @@ SELECT
   name,
   COUNT(0) AS freq,
   COUNT(0) / SUM(COUNT(0)) OVER () AS pct
-FROM 
-    `httparchive.pages.2021_07_01_*`,
-    UNNEST(getMetaNodes(payload)) AS name
+FROM
+  `httparchive.pages.2021_07_01_*`,
+  UNNEST(getMetaNodes(payload)) AS name
 GROUP BY
   client,
   name
