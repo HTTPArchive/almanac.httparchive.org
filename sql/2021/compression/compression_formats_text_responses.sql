@@ -9,6 +9,7 @@ SELECT
     ELSE 'other'
   END AS compression_type,
   COUNT(0) AS num_requests,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
   `httparchive.almanac.requests`
