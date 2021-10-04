@@ -24,7 +24,6 @@ WITH ImageStats AS (
     JSON_QUERY(payload,
       '$._Images') AS images
   FROM
-    -- `httparchive.sample_data.pages*`
     `httparchive.pages.2021_07_01_*`
 )
 

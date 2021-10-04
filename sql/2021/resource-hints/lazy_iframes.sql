@@ -23,7 +23,6 @@ WITH iframe_stats_tb AS (
     countLazyIframes(JSON_EXTRACT_SCALAR(payload,
         '$._almanac')) AS res
   FROM
-    -- `httparchive.sample_data.pages*`
     `httparchive.pages.2021_07_01_*`
 )
 
