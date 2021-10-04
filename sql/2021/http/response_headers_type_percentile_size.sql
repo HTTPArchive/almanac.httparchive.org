@@ -1,19 +1,5 @@
 # standardSQL
 # List of the top used response headers
-CREATE TEMPORARY FUNCTION extractHTTPHeaders(HTTPheaders STRING)
-RETURNS ARRAY<STRUCT<name STRING, value STRING>> LANGUAGE js AS """
-try {
-  var headers = JSON.parse(HTTPheaders);
-
-  // Filter by header name (which is case insensitive)
-  // If multiple headers it's the same as comma separated
-  return headers.map(h => { h.name, h.value });
-
-} catch (e) {
-  return "";
-}
- """;
-
 SELECT
   client,
   header_name AS header,

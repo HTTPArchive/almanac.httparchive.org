@@ -1,13 +1,12 @@
 #standardSQL
 SELECT
-  IF(ENDS_WITH(_TABLE_SUFFIX, 'desktop'), 'desktop', 'mobile') AS client,
+  _TABLE_SUFFIX AS client,
   SUBSTRING(url, 1, 400) AS url,
   respHeadersSize / 1024 AS respHeadersSizeKiB
 FROM
-  `httparchive.summary_requests.*`
+  `httparchive.summary_requests.2021_07_01_*`
 WHERE
-  respHeadersSize IS NOT NULL AND
-  _TABLE_SUFFIX LIKE "2021_07_01%"
+  respHeadersSize IS NOT NULL
 ORDER BY
   respHeadersSizeKiB DESC
 LIMIT 200
