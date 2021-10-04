@@ -18,7 +18,7 @@ SELECT
   client,
   host,
   COUNT(0) AS freq,
-  COUNT(0) / SUM(COUNT(0)) OVER() AS pct
+  COUNT(0) / SUM(COUNT(0)) OVER () AS pct
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
