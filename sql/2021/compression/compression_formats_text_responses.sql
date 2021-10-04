@@ -2,7 +2,12 @@
 # compression_formats_text_responses.sql : What compression formats are being used (gzip, brotli, etc) on text responses
 SELECT
   client,
-  IF(resp_content_encoding = "gzip", "Gzip", IF(resp_content_encoding = "br", "Brotli", IF(resp_content_encoding = "", "no text compression", "other"))) AS compression_type,
+  CASE
+    WHEN resp_content_encoding = 'gzip' THEN 'Gzip'
+    WHEN resp_content_encoding = 'br' THEN 'Brotli'
+    WHEN resp_content_encoding = '' THEN 'no text compression'
+    ELSE 'other'
+  END AS compression_type,
   COUNT(0) AS num_requests,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
