@@ -121,7 +121,7 @@ JavaScriptは、CSSとHTMLと並んでウェブの3つの礎となる最後の�
 
 ### リクエスト数
 
-私たちがどれだけのJavaScriptを使用しているかを見るもう1つの方法は、各ページでどれだけのJavaScriptリクエストが行われているかを調べることです。HTTP/1.1ではリクエスト数を減らすことがパフォーマンスを維持するための最優先事項でしたが、HTTP/2ではその逆です。JavaScriptを<a hreflang="en" href="https://web.dev/granular-chunking-nextjs/">小さくて個別のファイル</a>に分解することが[通常はパフォーマンスを向上させる]のです(./2019/http2#impact-of-http2)。
+私たちがどれだけのJavaScriptを使用しているかを見るもう1つの方法は、各ページでどれだけのJavaScriptリクエストが行われているかを調べることです。HTTP/1.1ではリクエスト数を減らすことがパフォーマンスを維持するための最優先事項でしたが、HTTP/2ではその逆です。JavaScriptを<a hreflang="en" href="https://web.dev/granular-chunking-nextjs/">小さくて個別のファイル</a>に分解することが[通常はパフォーマンスを向上させる]のです../2019/http#impact-of-http2)。
 
 {{ figure_markup(
   image="requests-2020.png",

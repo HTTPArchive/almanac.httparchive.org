@@ -23,7 +23,7 @@ SELECT
   client,
   COUNTIF(has_eligible_type) AS freq,
   COUNT(0) AS total,
-  ROUND(COUNTIF(has_eligible_type) * 100 / SUM(COUNT(0)) OVER (PARTITION BY 0), 2) AS pct
+  ROUND(COUNTIF(has_eligible_type) * 100 / SUM(COUNT(0)) OVER (), 2) AS pct
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

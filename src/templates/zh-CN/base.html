@@ -144,6 +144,7 @@
     "IV. Content Distribution": "IV. 内容分发"
   }
 %}
+
 {%
   set localizedChapterTitles = {
     "javascript": "JavaScript",
@@ -165,12 +166,15 @@
     "cdn": "CDN",
     "page-weight": "页面重量",
     "resource-hints": "资源提示",
-    "http2": "HTTP/2",
+    "http": "HTTP",
     "privacy": "隐私",
     "capabilities": "能力",
     "jamstack": "Jamstack"
   }
 %}
+{% if (year == "2019" or year == "2020") %}
+{% set _dummy = localizedChapterTitles.__setitem__("http", "HTTP/2") %}
+{% endif %}
 
 {% set localizedTeamNames = {
   "analysts": "分析者",

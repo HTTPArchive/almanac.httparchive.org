@@ -144,6 +144,7 @@ Web Almanac 網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.co
     "IV. Content Distribution": "IV. 內容傳遞"
   }
 %}
+
 {%
   set localizedChapterTitles = {
     "javascript": "JavaScript",
@@ -165,12 +166,15 @@ Web Almanac 網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.co
     "cdn": "內容傳遞網路",
     "page-weight": "網頁大小",
     "resource-hints": "資源提示",
-    "http2": "超文字傳輸協定/第2版",
+    "http": "HTTP",
     "privacy": "隱私",
     "capabilities": "功能",
     "jamstack": "Jamstack"
   }
 %}
+{% if (year == "2019" or year == "2020") %}
+{% set _dummy = localizedChapterTitles.__setitem__("http", "HTTP/2") %}
+{% endif %}
 
 {% set localizedTeamNames = {
   "analysts": "分析者",

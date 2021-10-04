@@ -1,13 +1,13 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-title: Third Parties
+title: HTTP
 description: TODO
 authors: []
 reviewers: []
 analysts: []
 editors: []
 translators: []
-results: https://docs.google.com/spreadsheets/d/1tf4RMF8SYr6he9tbqt61yuFJ_QK-F-i7XPxaPkpKSDI/
+results: https://docs.google.com/spreadsheets/d/1pCdpndXTXexSIZLmVc-aUbp5PcHhZ83hbEEfmDyfD0U/
 featured_quote: TODO
 featured_stat_1: TODO
 featured_stat_label_1: TODO

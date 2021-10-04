@@ -1135,7 +1135,7 @@ Google pone uno specifico interesse sulla sicurezza sotto tutti gli aspetti. Il 
 
 #### Utilizzo di HTTPS
 
-Abbiamo rilevato che il 77.44% delle pagine desktop e il 73.22% delle pagine mobile hanno adottato HTTPS. Questo è il 10.38% rispetto allo scorso anno. È importante notare che i browser sono diventati più aggressivi nello spingere HTTPS segnalando che le pagine non sono sicure quando le visiti senza HTTPS. Inoltre, HTTPS è attualmente un requisito per capitalizzare su protocolli ad alte prestazioni come HTTP/2 e HTTP/3 (noto anche come HTTP su QUIC). Puoi saperne di più sullo stato di questi protocolli nel capitolo [HTTP/2](./http2).
+Abbiamo rilevato che il 77.44% delle pagine desktop e il 73.22% delle pagine mobile hanno adottato HTTPS. Questo è il 10.38% rispetto allo scorso anno. È importante notare che i browser sono diventati più aggressivi nello spingere HTTPS segnalando che le pagine non sono sicure quando le visiti senza HTTPS. Inoltre, HTTPS è attualmente un requisito per capitalizzare su protocolli ad alte prestazioni come HTTP/2 e HTTP/3 (noto anche come HTTP su QUIC). Puoi saperne di più sullo stato di questi protocolli nel capitolo [HTTP/2](./http).
 
 Tutte queste cose hanno probabilmente contribuito al tasso di adozione più elevato anno dopo anno.
 

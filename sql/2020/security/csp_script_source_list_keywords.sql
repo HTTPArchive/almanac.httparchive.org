@@ -1,7 +1,6 @@
 #standardSQL
 # CSP: usage of default/script-src, and within the directive usage of strict-dynamic, nonce values, unsafe-inline and unsafe-eval
-CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING) -- noqa: PRS
--- SQL Linter cannot handle DETERMINISTIC keyword so needs noqa ignore command on previous line
+CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING)
 RETURNS STRING
 DETERMINISTIC
 LANGUAGE js AS '''
