@@ -35,5 +35,6 @@ GROUP BY
   client,
   html_lang
 ORDER BY
+  client,
   freq DESC
 

@@ -12,11 +12,12 @@ FROM
   `httparchive.almanac.requests`
 WHERE
   mimeType = "text/html"
-  AND
+AND
   date = '2021-07-01'
 GROUP BY
   client,
   mimeType,
   content_encoding
 ORDER BY
-  num_requests DESC
+  client,
+  freq DESC

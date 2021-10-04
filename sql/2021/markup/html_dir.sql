@@ -35,5 +35,6 @@ GROUP BY
   client,
   html_dir
 ORDER BY
+  client,
   freq DESC
 
