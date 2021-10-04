@@ -33,7 +33,7 @@ Current list of queries used
 * Real-user Core Web Vitals experiences - core_web_vitals_passingmetrics_byvendor_bydevice.sql
 * Top analytics solutions on ecommerce sites - top_analytics_providers_bydevice_wapp.sql
 * Tag manager usage on ecommerce sites. - percent_of_ecommsites_using_each_tag_managers.sql
-* Consent Management Platform adoption - percent_of_ecommsites_using_cmp.sql
+* Consent Management Platform adoption - percent_of_ecommsites_using_cmp.sql, percent_of_ecommsites_using_cmp_aug21.sql, percent_of_ecommsites_using_cmp_sep21.sql
 * AMP usage on ecommerce sites (mobile). - pct_ampusage_bydevice_vendor.sql
 * Web Push Notification acceptance rates - webpushstats_ecommsites.sql
 * Top "JavaScript frameworks" - top_jsframework_providers_by_device.sql
@@ -48,3 +48,4 @@ Current list of queries used
 * Ecommerce sites using hreflang value through headers - percent_of_ecommsite_using_hreflang_value_headers.sql
 * Ecommerce sites using hreflang value through link rel - percent_of_ecommsites_using_hreflang_value_link.sql
 * Presence of `Content-Security-Policy` and `Content-Security-Policy-Report-Only` on `Ecommerce` sites - percent_of_ecommsites_csp.sql
+* App links association - android_ios_app_links_ecomm_sites.sql
