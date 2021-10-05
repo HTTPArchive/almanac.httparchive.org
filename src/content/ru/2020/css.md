@@ -998,18 +998,18 @@ HSL должен быть <a hreflang="en" href="https://drafts.csswg.org/css-co
 
 ## Раскладка {layout}
 
-CSS now has a number of layout options—a far cry from the days when tables had to be used for layouts. Flexbox, Grid and Multiple-column layouts are now well supported in most browsers so let's look at how these are being used.
+В CSS теперь есть несколько вариантов раскладки — большая разница с тем временем, когда для раскладки нужно было использовать таблицы. Раскладки на флексах, гридах и мультиколонках теперь хорошо поддерживаются в большинстве браузеров, поэтому давайте посмотрим, как они используются.
 
 ### Принятие флексов и гридов {flexbox-and-grid-adoption}
 
-In the [2019 edition](../2019/css#flexbox), 41% of pages across mobile and desktop were reported as containing [Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) properties. In 2020, this number has grown to 63% for mobile and 65% for desktop. With the number of legacy sites developed before Flexbox was a viable tool still in existence, we can safely say there is wide adoption of this layout method.
+В [издании 2019 года](../2019/css#flexbox) 41% мобильных и десктопных страниц были помечены как использующие свойства [флексбокса](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox). В 2020 году это число выросло до 63% для мобильных и 65% для десктопов. Учитывая количество легаси-сайтов, разработанных до того, как флексбокс стал жизнеспособным инструментом, мы можем с уверенностью сказать, что этот способ раскладки получил широкое распространение.
 
-If we look at [Grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout), the percentage of sites using Grid layout has grown to 4% for mobile and 5% for desktop. Usage has doubled since last year, but still lags far behind flex layout.
+Если мы посмотрим на [раскладку гридами](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout), то процент сайтов, использующих гриды, вырос до 4% для мобильных устройств и до 5% для десктопов. По сравнению с прошлым годом количество пользователей увеличилось вдвое, но по-прежнему сильно отстает от флексов.
 
 {{ figure_markup(
   image="flexbox-grid-mobile.png",
-  caption="Adoption of Flexbox and grid by year as a percent of mobile pages.",
-  description="Bar chart showing the adoption of Flexbox and Grid by year as a percent of mobile pages. Flexbox adoption grew from 2019 to 2020 from 41% to 63% of mobile pages. Grid adoption grew from 2% to 4% over the same time period.",
+  caption="Применение флексов и гридов по годам как процент мобильных страниц.",
+  description="Гистограмма показывает применение флексов и гридов по годам как процент мобильных страниц. Применение флексов выросло с 2019 по 2020 год с 41% до 63% на мобильных страницах. Применение гридов выросло с 2% до 4% за тот же период.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1879364309&format=interactive",
   sheets_gid="1330536609",
   sql_file="flexbox_grid.sql"
@@ -1017,21 +1017,21 @@ If we look at [Grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS
 
 {{ figure_markup(
   image="flexbox-grid-desktop.png",
-  caption="Adoption of flexbox and grid by year as a percent of desktop pages.",
-  description="Bar chart showing the adoption of flexbox and grid by year as a percent of desktop pages. Flexbox adoption grew from 2019 to 2020 from 41% to 65% of mobile pages. Grid adoption grew from 2% to 5% over the same time period.",
+  caption="Применение флексов и гридов по годам как процент десктопных страниц.",
+  description="Гистограмма показывает применение флексов и гридов по годам как процент десктопных страниц. Применение флексов выросло с 2019 по 2020 год с 41% до 65% на мобильных страницах. Применение гридов выросло с 2% до 5% за тот же период.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1140202160&format=interactive",
   sheets_gid="1330536609",
   sql_file="flexbox_grid.sql"
 ) }}
 
-Note that unlike most other metrics in this chapter this is actual measured Grid usage, and not just grid-related properties and values that are specified in a stylesheet and potentially not used. While at first glance this may seem more accurate, one thing to keep in mind is that HTTP Archive crawls homepages, so this data may be skewed lower due to grids often appearing more in internal pages.
+Заметьте, что в отличие от большинства других метрик в этой главе, это фактическое измеренное применение гридов, а не просто связанные с гридами свойства и значения, которые указаны в таблице стилей и потенциально не используются. Хоть на первый взгляд такой подход может показаться более точным, следует иметь в виду, что HTTP Archive краулит стартовые страницы, поэтому эти данные могут быть искажены в нижнюю сторону из-за того, что гриды чаще появляются на внутренних страницах.
 
-So, let's look at another metric as well: how many pages specify `display: grid` and `display: flex` in their stylesheets? That metric puts Grid layout at significantly higher adoption, with 30% of pages using `display: grid` at least once. It does not however affect the number for Flexbox as significantly, with 68% of pages specifying `display: flex`. While this sounds like impressively high adoption for Flexbox, it is worth noting that CSS tables are still far more popular with 80% of pages using table display modes! Some of this usage may be due to <a hreflang="en" href="https://css-tricks.com/snippets/css/clear-fix/">certain types of clearfix</a> which use `display: table`, and not for actual layout.
+Итак, давайте рассмотрим ещё одну метрику: на скольких страницах в таблицах стилей указаны `display: grid` и `display: flex`? Эта метрика значительно увеличивает применение гридов: 30% страниц используют `display: grid` хотя бы один раз. Однако такой подход не так сильно влияет на применение флексов, поскольку только 68% страниц содержат `display: flex`. Хоть это и звучит как впечатляюще-большое распространение флексов, стоит отметить, что таблицы в CSS по-прежнему гораздо более популярны: 80% страниц используют табличные значения для `display`! Частично такое использование может быть связано с <a hreflang="en" href="https://css-tricks.com/snippets/css/clear-fix/">определенными способами задать clearfix</a>, в которых используется `display: table`, а не с фактической раскладкой.
 
 {{ figure_markup(
   image="layout-methods.png",
-  caption="Layout modes and percentage of pages they appear on. This data is a combination of certain values from the `display`, `position`, and `float` properties.",
-  description="Bar chart showing the adoption of layout methods as a percent of desktop and mobile pages. Desktop and mobile results are similar unless otherwise noted. The top four layout methods are block, absolute, floats, and inline-block at 92%, 92%, 91%, and 90% adoption respectively. Following those, inline, fixed, and css tables have 81%, 80%, and 80% adoption respectively. Flex has 68% adoption, followed by box at 46% and distinctly larger than desktop adoption at 38%, inline-flex at 33%, grid at 30%, list-item at 26%, inline-table at 26%, inline-box at 20%, and sticky at 13% of mobile pages.",
+  caption="Методы раскладки и процент страниц, на которых они появляются. Эти данные представляют собой комбинацию определенных значений из свойств `display`, `position` и `float`",
+  description="Гистограмма показывает применение методов раскладки как процент десктопных и мобильных страниц. Если не указано иное, результаты для десктопов и мобильных страниц аналогичны. Топ-4 методов раскладки: block, absolute, float и inline-block — 92%, 92%, 91% и 90% применения соответственно. Далее inline, fixed и CSS-таблицы — 81%, 80% и 80% применения соответственно. У flexbox 68% применения, следом box с 46% и заметно большим применением на десктопе — 38%, inline-flex — 33%, grid — 30%, list-item — 26%, inline-table — 26%, inline-box — 20%, sticky — 13% мобильных страниц.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=2013998073&format=interactive",
   width="600",
   height="588",
@@ -1039,15 +1039,15 @@ So, let's look at another metric as well: how many pages specify `display: grid`
   sql_file="layout_properties.sql"
 ) }}
 
-Given that Flexbox was usable in browsers earlier than Grid layout, it is likely that some of the Flexbox usage is for setting up a grid system. In order to use Flexbox as a grid, authors need to disable some of the inherent flexibility of Flexbox. To do this you set the `flex-grow` property to `0`, then size flex items using percentages. Using this information we were able to report that 19% of sites both on desktop and mobile were using Flexbox in this grid-like way.
+Учитывая, что флексы можно было использовать в браузерах раньше, чем гриды, вполне вероятно, что частично флексы применялись для задания сеток. Чтобы использовать флексы в качестве сетки, авторам необходимо выключить некоторую гибкость, присущую флексам. Для этого вы устанавливаете для свойства `flex-grow` значение `0`, а затем задаёте размер флекс-элементов в процентах. Используя эту информацию, мы смогли разобраться, что 19% сайтов, как на десктопах, так и на мобильных, использовали флексы для задания сетки.
 
-The reasons for choosing Flexbox over Grid are frequently cited as browser support, given that Grid layout was <a hreflang="en" href="https://caniuse.com/css-grid">not supported in Internet Explorer</a>. In addition, some authors may well not have learned Grid layout yet or are using a framework with a Flexbox-based grid system. The <a hreflang="en" href="https://getbootstrap.com/docs/4.5/layout/grid/">Bootstrap</a> framework currently uses a Flexbox-based grid, in common with several other popular framework choices.
+Причиной выбора флексов вместо гридов часто упоминается браузерная поддержка, учитывая, что гридовая раскладка <a hreflang="en" href="https://caniuse.com/css-grid">не поддерживается в Internet Explorer</a>. Кроме того, некоторые авторы, возможно, ещё не изучили гриды или используют фреймворк с сеткой на основе флексов. Фреймворк <a hreflang="en" href="https://getbootstrap.com/docs/4.5/layout/grid/">Bootstrap</a> в настоящее время использует сетку на основе флексов, как и несколько других популярных фреймворков.
 
 ### Применение различных раскладок на гридах {usage-of-different-grid-layout-techniques}
 
-The Grid layout specification gives a number of ways to describe and define layout in CSS. The most basic usage involves laying items out <a hreflang="en" href="https://www.smashingmagazine.com/2020/01/understanding-css-grid-lines/">from one grid line to another</a>. What about [naming lines](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Layout_using_Named_Grid_Lines), or use of `grid-template-areas`?
+Спецификация гридов даёт множество способов описать и определить раскладку в CSS. Самый простой способ использования включает размещение элементов <a hreflang="en" href="https://www.smashingmagazine.com/2020/01/understanding-css-grid-lines/">от одной линии сетки к другой</a>. Как насчёт [именования линий](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Layout_using_Named_Grid_Lines) или использования `grid-template-areas`?
 
-For named lines, we checked for the presence of square brackets in a track listing. The name or names being placed inside square brackets.
+Для именованных линий мы проверяли на присутствие квадратных скобок в списке треков. Имя или имена размещаются внутри квадратных скобок.
 
 ```css
 .wrapper {
@@ -1056,30 +1056,30 @@ For named lines, we checked for the presence of square brackets in a track listi
 }
 ```
 
-The result of this showed that 0.23% of Grid-using pages on mobile had named lines, and 0.27% on desktop.
+Результат показал, что на 0,23% мобильных страниц, использующих гриды, есть именованные линии, аналогично на 0,27% десктопов.
 
-The [Grid template areas](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Grid_Template_Areas) feature, allowing authors to name grid items then place them on the grid as the value of the `grid-template-areas` property, fared a little better. Of Grid-using sites, 19% on mobile and 20% on desktop were using this method.
+[Грид-область](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Grid_Template_Areas), позволяющая авторам задавать имена грид-элементам, а затем помещать их в сетку в качестве значения свойства `grid-template-areas`, показала себя немного лучше. 19% сайтов, имеющих гриды на мобильных страницах, и 20% на десктопах использовали этот метод.
 
-These results show that not only is Grid layout usage still relatively low on production websites, but the usage of it is also relatively simple. Authors are choosing to use the simple line-based placement over methods which would allow them to name lines and areas. While there is nothing wrong in choosing to do so, I wonder if slow adoption of Grid layout is partly due to the fact that authors haven't yet realized the power of these features. If Grid layout is seen as essentially Flexbox with poor browser support, this would certainly make it a less compelling choice.
+Эти результаты показывают не только то, что использование грид-раскладки всё ещё относительно малое в продакшене, но и то, что её применение также относительно простое. Авторы предпочитают использовать простое размещение по линиям вместо методов, которые позволили бы им задавать имена линиям и областям. Хотя в этом нет ничего плохого, я задаюсь вопросом, является ли частично причиной медленного внедрения грид-раскладки то, что авторы ещё не осознали мощь её функций. Если гриды рассматриваются по сути как флексы с плохой браузерной поддержкой, то это, безусловно, делает выбор в их пользу менее убедительным.
 
 ### Мультиколоночная раскладка {multiple-column-layout}
 
-The [multiple-column layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns/Basic_Concepts_of_Multicol), or *multicol*, specification enables laying out of content in columns, much as in a newspaper. While popular in CSS as used for print, it is less useful on the web due to the risk of creating a situation where a reader needs to scroll up and down to read the content. Based on the data, however, there are significantly more pages using multicol than Grid layout with 15.33% on the desktop and 14.95% on mobile. While basic multicol properties are well supported, more complex usage and controlling column breaks with <a hreflang="en" href="https://www.smashingmagazine.com/2019/02/css-fragmentation/">fragmentation</a> has <a hreflang="en" href="https://caniuse.com/multicolumn">patchy support</a>. Considering this, it was quite surprising to see how much usage there is.
+Спецификация [мультиколоночной раскладки](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns/Basic_Concepts_of_Multicol) или *мультиколонок* позволяет размещать контент в столбцах, как в газете. Хотя мультиколонки и популярны в CSS, поскольку он используется для печати, они менее полезны в Интернете из-за риска создания ситуации, когда читателю нужно скроллить вверх и вниз, чтобы прочитать содержимое. Однако, судя по данным, мультиколоночных страниц значительно больше, чем гридовых: 15,33% на десктопах и 14,95% на мобильных устройствах. В то время как базовые свойства мультиколонок хорошо поддерживаются, более сложное использование и управление разрывами столбцов с помощью <a hreflang="en" href="https://www.smashingmagazine.com/2019/02/css-fragmentation/">фрагментации</a> имеет <a hreflang="en" href="https://caniuse.com/multicolumn">разношерстную поддержку</a>. Принимая этот факт во внимание, мы были удивлены, какое большое здесь применение.
 
 ### Размеры блока {box-sizing}
 
-It is useful to know how big the boxes on your page are going to be, but with the [standard CSS box model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#What_is_the_CSS_box_model) adding padding and border onto the size of the content-box, the size you gave your box is smaller than the box rendered on your page. While we can't change history, the `box-sizing` property allows authors to switch to applying the specified size to the `border-box`, so the size you set is the size you see rendered. How many sites are using the `box-sizing` property? Most of them! The `box-sizing` property appears in 83.79% of desktop CSS and 86.39% on mobile.
+Полезно знать, насколько большими будут блоки на вашей странице, но при использовании [стандартной блочной модели CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#What_is_the_CSS_box_model) добавление отступов и границ к размерам `content-box` требует задавать блоку размер меньше, чем необходимо для рендеринга на вашей странице. Хоть мы и не можем изменить прошлое, свойство `box-sizing` позволяет авторам переключаться на применение указанного размера к `border-box`, поэтому размер, который вы устанавливаете, соответствует размеру, который вы видите при рендеринге. Сколько сайтов используют свойство `box-sizing`? Большинство! Свойство `box-sizing` появляется в 83,79% десктопных CSS-файлов и в 86,39% CSS-файлов для мобильных.
 
 {{ figure_markup(
   image="box-sizing.png",
-  caption="Distribution of the number of `border-box` declarations per page.",
-  description="Bar chart showing the distribution of the number of `box-sizing` declarations per page for desktop and mobile. The mobile distribution leads desktop by 0 to 11 declarations per page, growing in the higher percentiles. The mobile distribution's 10, 25, 50, 75, and 90th percentiles are: 0, 4, 17, 46, and 96 `border-box` declarations per page.",
+  caption="Распределение количества объявлений `border-box` на странице.",
+  description="Гистограмма показывает распределение количества объявлений `border-box` на странице для десктопа и мобильных. Распределение на мобильных опережает десктопное на от 0 до 11 объявлений на страницу, показывая рост в более высоких перцентилях. 10, 25, 50, 75 и 90-е перцентили мобильного распределения: 0, 4, 17, 46 и 96 объявлений `border-box` на странице.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1626960751&format=interactive",
   sheets_gid="1982524793",
   sql_file="box_sizing.sql"
 ) }}
 
-The median desktop page has 14 `box-sizing` declarations. Mobile has 17. Perhaps due to component systems inserting the declaration per component, rather than globally as a rule for all elements in the stylesheet.
+Медианная десктопная страница имеет 14 объявлений `box-sizing`. Мобильная — 17. Возможно, из-за того, что системы компонентов вставляют объявление для каждого компонента отдельно, а не как глобальное правило для всех элементов в таблице стилей.
 
 ## Переходы и анимации {transitions-and-animations}
 
