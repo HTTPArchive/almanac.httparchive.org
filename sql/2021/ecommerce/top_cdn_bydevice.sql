@@ -7,8 +7,8 @@ SELECT
   COUNT(0) AS freq_requests,
   total AS total_pages,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total_requests,
-  ROUND(COUNT(DISTINCT page) * 100 / total, 2) AS pct_pages,
-  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct_requests
+  COUNT(DISTINCT page) / total AS pct_pages,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_requests
 FROM
   `httparchive.almanac.summary_requests`
 JOIN (

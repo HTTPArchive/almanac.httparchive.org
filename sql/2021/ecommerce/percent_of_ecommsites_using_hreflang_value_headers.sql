@@ -5,8 +5,8 @@
 CREATE TEMP FUNCTION
 AS_PERCENT (freq FLOAT64,
   total FLOAT64)
-RETURNS FLOAT64 AS ( ROUND(SAFE_DIVIDE(freq,
-  total), 4) );
+RETURNS FLOAT64 AS ( SAFE_DIVIDE(freq,
+  total) );
 # returns all the data we need from _wpt_bodies
 CREATE TEMPORARY FUNCTION
 get_wpt_bodies_info(wpt_bodies_string STRING)

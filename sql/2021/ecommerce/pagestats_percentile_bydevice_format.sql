@@ -5,7 +5,7 @@ SELECT
   client,
   type,
   APPROX_QUANTILES(requests, 1000)[OFFSET(percentile * 10)] AS requests,
-  ROUND(APPROX_QUANTILES(bytes, 1000)[OFFSET(percentile * 10)] / 1024, 2) AS kbytes
+  APPROX_QUANTILES(bytes, 1000)[OFFSET(percentile * 10)] / 1024 AS kbytes
 FROM (
   SELECT
     client,
@@ -28,7 +28,7 @@ FROM (
     client,
     type,
     page),
-  UNNEST([10, 25, 50, 75, 90])
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,
   client,

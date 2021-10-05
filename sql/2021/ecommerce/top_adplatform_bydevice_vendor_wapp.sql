@@ -6,7 +6,7 @@ SELECT
   app,
   COUNTIF(category = 'Advertising') AS AdPlatfromFreq,
   SUM(COUNT(0)) OVER (PARTITION BY vendor) AS total,
-  ROUND(COUNTIF(category = 'Advertising') * 100 / SUM(COUNT(0)) OVER (PARTITION BY vendor), 2) AS pct
+  COUNTIF(category = 'Advertising') / SUM(COUNT(0)) OVER (PARTITION BY vendor) AS pct
 FROM
   `httparchive.technologies.2021_07_01_*`
 JOIN

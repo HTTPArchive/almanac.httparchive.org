@@ -6,7 +6,7 @@ SELECT
   app,
   COUNTIF(category = 'CDN') AS Cdnfreq,
   SUM(COUNT(0)) OVER (PARTITION BY vendor) AS total,
-  ROUND(COUNTIF(category = 'CDN') * 100 / SUM(COUNT(0)) OVER (PARTITION BY vendor), 2) AS pct
+  COUNTIF(category = 'CDN') / SUM(COUNT(0)) OVER (PARTITION BY vendor) AS pct
 FROM
   `httparchive.technologies.2021_07_01_*`
 JOIN
