@@ -1,6 +1,5 @@
 #standardSQL
 # 13_20: Lighthouse category scores per eCommerce plaforms. Web Almanac run LightHouse only in mobile mode and hence references to mobile tables
-# See https://github.com/HTTPArchive/almanac.httparchive.org/pull/1087#issuecomment-684983795. Due to this, using Sep-2020 in this query
 SELECT
   app AS ecommVendor,
   COUNT(DISTINCT url) AS freq,
@@ -10,9 +9,9 @@ SELECT
   APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(report, '$.categories.seo.score') AS NUMERIC), 1000)[OFFSET(500)] AS median_seo,
   APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(report, '$.categories.best-practices.score') AS NUMERIC), 1000)[OFFSET(500)] AS median_best_practices
 FROM
-  `httparchive.sample_data.lighthouse_mobile_*`
+  `httparchive.lighthouse.2021_07_01_mobile`
 JOIN
-  `httparchive.sample_data.technologies_mobile_*`
+  `httparchive.technologies.2021_07_01_mobile`
 USING
   (url)
 WHERE
