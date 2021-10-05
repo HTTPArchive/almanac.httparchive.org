@@ -8,7 +8,7 @@ CREATE TEMP FUNCTION
     rendered = JSON.parse(rendered);
     return rendered.rdfa_vocabs.map(vocab => vocab.toLowerCase());
   } catch (e) {
-      return [];
+    return [];
   }
 """;
 WITH
@@ -21,7 +21,9 @@ WITH
             '$._structured-data')),
         '$.structured_data.rendered') AS rendered
     FROM
-      `httparchive.pages.2021_07_01_*`))
+      `httparchive.pages.2021_07_01_*`)
+)
+
 SELECT
   rdfaVocab,
   COUNT(rdfaVocab) AS count
