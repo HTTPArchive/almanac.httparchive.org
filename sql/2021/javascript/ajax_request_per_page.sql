@@ -10,7 +10,7 @@ FROM (
           '$._javascript'),
         '$.ajax_requests.total') AS INT64) AS ajax_requests_total
   FROM
-    `httparchive.sample_data.pages_*` ),
+    `httparchive.pages.2021_07_01_*` ),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 WHERE
   ajax_requests_total > 0

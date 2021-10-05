@@ -5,8 +5,7 @@ SELECT
   _TABLE_SUFFIX AS client,
   APPROX_QUANTILES(reqJS, 1000)[OFFSET(percentile * 10)] AS js_requests
 FROM
-  `httparchive.latest.summary_pages_*`,
-  -- `httparchive.sample_data.summary_pages_*`
+  `httparchive.summary_pages.2021_07_01_*`,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

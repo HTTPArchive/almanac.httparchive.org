@@ -20,7 +20,7 @@ FROM (
           '$._javascript'),
         '$.web_component_specs.template') AS INT64) AS template
   FROM
-    `httparchive.sample_data.pages_*` ),
+    `httparchive.pages.2021_07_01_*` ),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,
