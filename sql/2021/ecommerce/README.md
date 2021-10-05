@@ -52,12 +52,6 @@ Current list of queries used
 * A11y usage on Ecomm sites - percent_of_ecommsites_using_a11y_solutions.sql
 * Webpush adoption stats - webpush_adoption_by_ecommsites.sql
 
-Created for testing purposes only
-
-* payment_but_not_ecomm.sql
-* All categories - all_categories.sql
-
-
 Unused queries
 
 * percent_of_ecommsites_using_each_a11y_solutions.sql
