@@ -12,7 +12,7 @@
 Current list of queries used
 
 * Ecommerce comparison 2020 to 2021. - pct_ecommsites_bydevice_compare20202021.sql
-* Top ecommerce platforms. - top_vendors.sql
+* Top ecommerce platforms. - top_vendors.sql, top_vendors_crux_rank.sql
 * Enterprise ecommerce platforms (desktop) - top_vendors.sql
 * Enterprise ecommerce platforms - 2019 desktop
 * Enterprise ecommerce platforms - 2020 desktop
