@@ -1083,47 +1083,47 @@ HSL должен быть <a hreflang="en" href="https://drafts.csswg.org/css-co
 
 ## Переходы и анимации {transitions-and-animations}
 
-Transitions and animations have overall become very popular with the `transition` property being used on 81% of all pages and `animation` on 73% of mobile pages and 70% of desktop pages. It is somewhat surprising that usage is not lower on mobile, where one would expect that <a hreflang="en" href="https://css-tricks.com/how-web-content-can-affect-power-usage/">conserving battery power</a> would be a priority. On the other hand, CSS animations are far more battery efficient than JS animation, especially the majority of them that just animate transforms and opacity (see next section).
+Переходы (`transition`) и анимации (`animation`) в целом стали очень популярными: свойство `transition` используется на 81% всех страниц, а свойство `animation` — на 73% мобильных страниц и 70% десктопных страниц. Несколько удивительно, что использование на мобильных устройствах, где можно было бы ожидать, что <a hreflang="en" href="https://css-tricks.com/how-web-content-can-affect-power-usage/">экономия заряда батареи</a> будет приоритетной задачей, не ниже. С другой стороны, CSS-анимации намного более энергоэффективны, чем JS-анимации, особенно то большинство из них, которые анимируют только трансформации и непрозрачность (см. следующий раздел).
 
-The single most common transition property specified is `all`, used in 41% of pages. This is a little baffling because `all` is the initial value, so it does not actually need to be explicitly specified. After that, fade in/out transitions appear to be the most common type, used in over one third of crawled pages, followed by transitions on the `transform` property (most likely spin, scale, movement transitions). Surprisingly, transitioning `height` is much more popular than transitioning `max-height`, even though the latter is a commonly taught workaround when the start or end height is unknown (auto). It was also surprising to see significant usage for the `scale` property (2%), despite its lack of support beyond Firefox. Intentional usage of cutting edge CSS, a typo, or a misunderstanding of how to animate transforms?
+Наиболее часто задаваемое свойство перехода (`transition`) — `all`, оно используется на 41% страниц. Это немного сбивает с толку, потому что `all` — начальное значение, его не нужно явно указывать. Затем идут переходы постепенного появления/исчезновения, которые, по-видимому, являются наиболее распространенным типом, используемым более чем на трети просканированных страниц. За ними следуют переходы по свойству `transform` (чаще всего переходы вращения, масштабирования, перемещения). Удивительно, но переход `height` гораздо более популярен, чем переход `max-height`, даже несмотря на то, что последний — часто предлагаемый костыль в ситуациях, когда начальная или конечная высота неизвестны (`auto`). Также было удивительно увидеть значительное использование свойства `scale` (2%), несмотря на то, что оно не поддерживается нигде, кроме Firefox. Намеренное использование передового CSS, опечатка или непонимание того, как анимировать трансформации?
 
 {{ figure_markup(
   image="transition-properties.png",
-  caption="Adoption of transition properties as a percent of pages.",
-  description="Bar chart showing the adoption of the most popular transition properties. Desktop and mobile pages are very similar except filter doesn't appear to be used significantly at all on desktop. The most popular transition property on mobile pages is `all`, used on 41% of pages, followed by `opacity` at 37%, `transform` at 26%, `color` at 17%, `none` at 15%, `height` at 13%, `background-color` at 12%, `background` at 10%, `filter` at 7%, and the remaining properties used on 6% of mobile pages: `width`, `left`, `top`, `-webkit-transform`, `box-shadow`, and `border-color`.",
+  caption="Применение свойств перехода в процентах от страниц.",
+  description="Гистограмма показывает применение самых популярных свойств перехода. Десктопные и мобильные страницы очень похожи, за исключением того, что фильтры, по-видимому, вообще не используются в значительной степени на десктопах. Самое популярное свойство на мобильных — `all`, применяется на 41% страниц, следом `opacity` — 37%, `transform` — 26%, `color` — 17%, `none` — 15%, `height` — 13%, `background-color` — 12%, `background` — 10%, `filter` — 7%, оставшиеся свойства используются на 6% мобильных страниц: `width`, `left`, `top`, `-webkit-transform`, `box-shadow` и `border-color`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1677028861&format=interactive",
   sheets_gid="134272305",
   sql_file="transition_properties.sql"
 ) }}
 
-We were glad to discover that most of these transitions are fairly short, with the median transition duration being only 300ms, and 90% of websites having median durations of less than half a second. This is generally good practice, as longer transitions can make a UI feel sluggish, while a short transition communicates a change without getting in the way.
+Мы были рады обнаружить, что большинство этих переходов довольно короткие, при медианной продолжительности перехода всего 300 мс, а у 90% веб-сайтов медианная продолжительность составляет менее половины секунды. Это хорошая практика, поскольку более длинные переходы могут сделать пользовательский интерфейс медлительным, в то время как короткий переход сообщает об изменении, не мешая.
 
 {{ figure_markup(
   image="transition-durations.png",
-  caption="Distribution of transition durations.",
-  description="Bar chart showing the distribution of transition durations in milliseconds for desktop and mobile pages. Desktop and mobile are equivalent at the 10, 25, and 90th percentiles with 100, 150, and 500ms durations respectively. However at the median and 75th percentiles, desktop has higher durations by 50ms: 300 and 400ms respectively.",
+  caption="Распределение продолжительности переходов.",
+  description="Гистограмма показывает распределение продолжительности переходов в миллисекундах для десктопных и мобильных страниц. Десктопы и мобильные эквивалентны на 10, 25 и 90-м перцентилях с длительностями 100, 150 и 500 мс соответственно. Тем не менее на медиане и 75-м перцентиле десктопы имеют большие на 50 мс длительности: 300 и 400 мс соответственно.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1587838983&format=interactive",
   sheets_gid="286912288",
   sql_file="transition_durations.sql"
 ) }}
 
-The specification authors got it right! `Ease` is the most popular timing function specified, even though it is the default so it can actually be omitted. Perhaps people explicitly specify the defaults because they prefer the self-documenting verbosity, or—perhaps more likely—because they don't know that they are defaults. Despite the drawbacks of linearly progressing animation (it tends to look dull and unnatural), `linear` is the second most highly used timing function with 19.1%. It is also interesting that the built-in easing functions accommodate over 87% of all transitions: only 12.7% chose to specify a custom easing via `cubic-bezier()`.
+Авторы спецификации поняли всё правильно! `Ease` — самая популярная задаваемая функция времени, хоть она и используется по умолчанию и поэтому её можно опустить. Возможно, люди явно указывают значения по умолчанию, потому что предпочитают самодокументирующуюся многословность, или, что более вероятно, потому что они не знают, что это значения по умолчанию. Несмотря на недостатки линейно-прогрессирующей анимации (она имеет тенденцию выглядеть скучно и неестественно), `linear` является второй наиболее часто используемой функцией времени с показателем 19,1%. Интересно также, что встроенные функции плавности охватывают более 87% всех переходов: только 12,7% решили задать кастомную плавность через `cubic-bezier()`.
 
 {{ figure_markup(
   image="transition-timing-functions.png",
-  caption="Relative popularity of timing functions as a percent of occurrences on mobile pages.",
-  description="Pie chart showing the relative popularity of timing functions as a percent of occurrences on mobile pages. The most popular timing function is `ease` at 31% of occurrences, followed by `linear` at 19%, `ease-in-out` at 19%, `cubic-bezier` at 13%, `ease-out` at 9%, `steps` at 5%, and `ease`-in at 4%.",
+  caption="Относительная популярность функций времени как процент появления на мобильных страницах.",
+  description="Круговая диаграмма показывает относительную популярность функций времени как процент появления на мобильных страницах. Самая популярная функция времени — `ease` с 31% появлений, следом `linear` — 19%, `ease-in-out` — 19%, `cubic-bezier` — 13%, `ease-out` — 9%, `steps` — 5%, `ease-in` — 4%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=63879013&format=interactive",
   sheets_gid="1514240349",
   sql_file="transition_timing_functions.sql"
 ) }}
 
-A major driver of animation adoption seems to be Font Awesome, as evidenced by the animation name `fa-spin` appearing in one out of four pages and thus topping the list of most popular animation names. While there are a wide variety of animation names, it appears that most of them fall into only a few basic categories, with one in five animations being some kind of spin. That may also explain the high percentage of linearly progressing transitions & animations: if we want a smooth perpetual rotation, `linear` is the way to go.
+Похоже, что основным двигателем внедрения анимаций является Font Awesome, о чём свидетельствует имя анимации `fa-spin`, которое появляется на четверти страниц и, таким образом, возглавляет список самых популярных имён анимаций. Хотя существует множество имён анимаций, похоже, что большинство из них попадает всего в несколько основных категорий, причём каждая пятая анимация является своего рода анимацией вращения. Это также может объяснить высокий процент линейно-прогрессирующих переходов и анимаций: если мы хотим плавное постоянное вращение, то лучше всего использовать `linear`.
 
 {{ figure_markup(
   image="transition-animation-names.png",
-  caption="Relative popularity of the categories of animation names used as a percent of occurrences.",
-  description="Bar chart showing the relative popularity of animation name categories as a percent of occurrences. The most popular category is `rotate`, which makes up 21% of occurrences on mobile pages, followed by unknown/other at 13%, `fade` at 9%, `bounce` at 7%, `scale` at 6%, `wobble` and `slide` at 5%, `pulse` at 2%, and the rest at 1%: `visibility`, `flip`, and `move`.",
+  caption="Относительная популярность категорий используемых имён анимаций как процент появлений.",
+  description="Гистограмма показывает относитульную популярность категорий имён анимаций как процент появлений. Самая популярная категория — `rotate`, составляет 21% появлений на мобильных страницах, следом неизвестное/другое — 13%, `fade` — 9%, `bounce` — 7%, `scale` — 6%, `wobble` и `slide` — 5%, `pulse` — 2%, остальное — по 1%: `visibility`, `flip` и `move`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=709747830&format=interactive",
   sheets_gid="1998209374",
   sql_file="transition_animation_names.sql"
