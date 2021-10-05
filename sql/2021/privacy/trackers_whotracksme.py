@@ -9,15 +9,18 @@ Then, execute this script.
 Finally, copy the result into the tracker-related SQL queries.
 """
 
-import json
+import csv
 import sqlite3
 
 
 # https://github.com/ghostery/whotracks.me/blob/master/blog/generating_adblocker_filters.md#loading-the-data
-def load_tracker_db(loc=':memory:'):
+def load_tracker_db(loc=":memory:"):
     connection = sqlite3.connect(loc)
     with connection:
-        with open('trackerdb.sql', 'rt') as f:
+        with open(
+            "sql/2021/privacy/trackerdb.sql",
+            "rt",
+        ) as f:
             connection.executescript(f.read())
     return connection
 
@@ -36,9 +39,14 @@ sql_query = """
       categories
     ON categories.id = trackers.category_id;
 """
-with load_tracker_db() as connection:
-    for (category, tracker, domain) in connection.execute(sql_query):
-        tracker_domains[domain] = (category, tracker)
 
-formatted_json = [(k,) + v for k, v in tracker_domains.items()]
-print(json.dumps(formatted_json, separators=(',', ':')))
+with open("sql/2021/privacy/trackers.csv", mode="w") as trackers_file:
+    trackers_writer = csv.writer(
+        trackers_file, delimiter=",", quotechar='"', quoting=csv.QUOTE_MINIMAL
+    )
+    trackers_writer.writerow(["category", "tracker", "domain"])
+
+    with load_tracker_db() as connection:
+        for (category, tracker, domain) in connection.execute(sql_query):
+
+            trackers_writer.writerow([category, tracker, domain])
