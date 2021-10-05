@@ -1147,12 +1147,12 @@ CSS также предлагает огромное разнообразие в
 
 ### Маски {masks}
 
-A decade ago, we got masks in Safari with `-webkit-mask-image` and it was exciting. Everyone and their dog were using them. We eventually got <a hreflang="en" href="https://www.w3.org/TR/css-masking-1/">a spec</a> and a set of unprefixed properties closely modeled after the WebKit prototype, and it seemed a matter of time until masking became standard, with a consistent syntax across all browsers. Fast forward 10 years later, and the unprefixed syntax is <a hreflang="en" href="https://caniuse.com/css-masks">still not supported in Chrome or Safari, meaning its available on less than 5% of users' browsers worldwide</a>. It is therefore no surprise that `-webkit-mask-image` is still more popular than its standard counterpart, being found in 22% of pages. However, despite its very poor support, `mask-image` is found on 19% of pages. We see a similar pattern across most other masking properties with the unprefixed versions appearing in almost as many pages as the `-webkit-` ones. Overall, despite them falling out of hype, masks are still found in nearly a quarter of the web, indicating that the use cases are still there, despite lack of implementer interest (hint, hint!).
+Десять лет назад у нас появились маски в Safari с `-webkit-mask-image`, и это было волнующе. Их использовали все кому не лень. В конце концов мы получили <a hreflang="en" href="https://www.w3.org/TR/css-masking-1/">спецификацию</a> и набор свойств без префиксов, смоделированных по образцу прототипов в WebKit, и казалось только вопросом времени, когда маскирование станет стандартом с единым синтаксисом во всех браузерах. Перенесёмся на 10 лет вперед, а синтаксис без префикса <a hreflang="en" href="https://caniuse.com/css-masks">всё ещё не поддерживается в Chrome и Safari, что означает, что он доступен менее чем в 5% браузеров пользователей по всему миру</a>. Поэтому неудивительно, что `-webkit-mask-image` по-прежнему более популярен, чем его аналог из стандарта, и встречается на 22% страниц. Однако, несмотря на очень плохую поддержку, `mask-image` встречается на 19% страниц. Мы видим аналогичный паттерн для большинства других свойств маскирования, причем версии без префикса появляются почти на том же количестве страниц, что и страницы с `-webkit-`. В целом, несмотря на то, что они больше не на хайпе, маски всё ещё можно найти почти в четвёртой части веба, что указывает на то, что варианты применения всё ещё существуют, несмотря на отсутствие интереса со стороны разработчиков (намёк, намёк!).
 
 {{ figure_markup(
   image="mask-properties.png",
-  caption="Relative popularity of mask properties as a percent of occurrences.",
-  description="Relative popularity of mask properties as a percent of occurrences. `-webkit-mask-image` is used on 22% of mobile pages, up from 19% on desktop. The following properties are `mask-size` and `mask-image` at 19%, `mask-repeat`, `mask-position`, `mask-mode`, and `-webkit-mask-size` at 18%, `-webkit-mask-repeat` and `-webkit-mask-position` at 16%, and `-webkit-mask` and `mask` properties at 2% of mobile pages.",
+  caption="Относительная популярность свойств маскирования как процент появлений.",
+  description="Относительная популярность свойств маскирования как процент появлений. `-webkit-mask-image` используется на 22% мобильных страниц и до 19% десктопных страниц. Следующие свойства `mask-size` и `mask-image` — на 19%, `mask-repeat`, `mask-position`, `mask-mode`, и `-webkit-mask-size` — 18%, `-webkit-mask-repeat` и `-webkit-mask-position` — 16%, свойства `-webkit-mask` и `mask` — на 2% мобильных страниц.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=615866471&format=interactive",
   width="600",
   height="575",
@@ -1162,7 +1162,7 @@ A decade ago, we got masks in Safari with `-webkit-mask-image` and it was exciti
 
 ### Контуры обрезки {clipping-paths}
 
-Around the same time masks got popular, another similar but simpler property (originally from SVG) started making the rounds: `clip-path`. However, unlike masks, it had a brighter fate. It got standardized fairly quickly, and got support across the board relatively fast, with the last holdout being Safari which dropped the prefix in 2016. Today, it is found on 19% of pages unprefixed and 13% with the `-webkit-` prefix.
+Примерно в то же время, когда стали популярны маски, на сцену вышло ещё одно похожее, но более простое свойство (пришедшее из SVG): `clip-path`. В отличие от масок, у него была более яркая судьба. Оно довольно быстро было стандартизовано и относительно быстро получило поддержку по всем направлениям, последним форпостом стал Safari, отказавшийся от префикса в 2016 году. Сегодня оно встречается на 19% страниц без префикса и на 13% — с префиксом `-webkit-`.
 
 ## Отзывчивый дизайн {responsive-design}
 
