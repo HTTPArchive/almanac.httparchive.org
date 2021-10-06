@@ -33,4 +33,4 @@ FROM
 GROUP BY
   rdfa_prefix
 ORDER BY
-  count DESC;
+  count DESC

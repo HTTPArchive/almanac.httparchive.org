@@ -33,4 +33,4 @@ FROM
 GROUP BY
   microdata_item_type
 ORDER BY
-  count DESC;
+  count DESC

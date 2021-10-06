@@ -33,4 +33,4 @@ FROM
 GROUP BY
   dublin_core_type
 ORDER BY
-  count DESC;
+  count DESC

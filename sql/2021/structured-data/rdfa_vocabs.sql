@@ -33,4 +33,4 @@ FROM
 GROUP BY
   rdfa_vocab
 ORDER BY
-  count DESC;
+  count DESC

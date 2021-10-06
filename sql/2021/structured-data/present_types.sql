@@ -66,4 +66,4 @@ FROM (
     JSON_VALUE(JSON_EXTRACT(payload,
         '$._structured-data')) AS structured_data
   FROM
-    `httparchive.pages.2021_07_01_*`);
+    `httparchive.pages.2021_07_01_*`)

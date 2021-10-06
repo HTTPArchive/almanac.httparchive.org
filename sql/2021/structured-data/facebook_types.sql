@@ -33,4 +33,4 @@ FROM
 GROUP BY
   facebook_type
 ORDER BY
-  count DESC;
+  count DESC

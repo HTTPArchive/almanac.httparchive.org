@@ -10,4 +10,4 @@ FROM (
   FROM
     `httparchive.pages.2021_07_01_*`)
 WHERE
-  logs IS NOT NULL;
+  logs IS NOT NULL

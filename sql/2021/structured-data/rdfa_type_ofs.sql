@@ -33,4 +33,4 @@ FROM
 GROUP BY
   rdfa_type_of
 ORDER BY
-  count DESC;
+  count DESC

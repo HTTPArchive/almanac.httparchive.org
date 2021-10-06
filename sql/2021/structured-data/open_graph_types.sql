@@ -33,4 +33,4 @@ FROM
 GROUP BY
   open_graph_type
 ORDER BY
-  count DESC;
+  count DESC

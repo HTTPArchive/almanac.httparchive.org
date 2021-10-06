@@ -33,4 +33,4 @@ FROM
 GROUP BY
   microformats2_type
 ORDER BY
-  count DESC;
+  count DESC
