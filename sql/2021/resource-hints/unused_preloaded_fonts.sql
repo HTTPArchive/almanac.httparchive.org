@@ -48,7 +48,7 @@ try {
   }, {});
 
   return Object.values(preloadedFontSet).reduce((acc, n) => {
-    if (n.find((m) => m === ".woff2")) {
+    if (n.find((m) => m === ".woff2" || m === "woff2")) {
       return acc + n.length - 1;
     }
 
@@ -63,7 +63,7 @@ SELECT
   client,
   unused_font_count,
   COUNT(0) AS freq,
-  SUM(COUNT(0)) AS total,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM (
     SELECT
