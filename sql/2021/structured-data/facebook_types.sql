@@ -14,7 +14,7 @@ CREATE TEMP FUNCTION
 WITH
   rendered_data AS (
   SELECT
-    getFacebookTypes(rendered) AS facebookTypes
+    getFacebookTypes(rendered) AS facebook_types
   FROM (
     SELECT
       JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
@@ -25,12 +25,12 @@ WITH
 )
 
 SELECT
-  facebookType,
-  COUNT(facebookType) AS count
+  facebook_type,
+  COUNT(facebook_type) AS count
 FROM
   rendered_data,
-  UNNEST(facebookTypes) AS facebookType
+  UNNEST(facebook_types) AS facebook_type
 GROUP BY
-  facebookType
+  facebook_type
 ORDER BY
   count DESC;

@@ -14,7 +14,7 @@ CREATE TEMP FUNCTION
 WITH
   rendered_data AS (
   SELECT
-    getMicrodataItemTypes(rendered) AS microdataItemTypes
+    getMicrodataItemTypes(rendered) AS microdata_item_types
   FROM (
     SELECT
       JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
@@ -25,12 +25,12 @@ WITH
 )
 
 SELECT
-  microdataItemType,
-  COUNT(microdataItemType) AS count
+  microdata_item_type,
+  COUNT(microdata_item_type) AS count
 FROM
   rendered_data,
-  UNNEST(microdataItemTypes) AS microdataItemType
+  UNNEST(microdata_item_types) AS microdata_item_type
 GROUP BY
-  microdataItemType
+  microdata_item_type
 ORDER BY
   count DESC;

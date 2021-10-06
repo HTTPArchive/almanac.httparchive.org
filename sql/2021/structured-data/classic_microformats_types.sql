@@ -14,7 +14,7 @@ CREATE TEMP FUNCTION
 WITH
   rendered_data AS (
   SELECT
-    getClassicMicroformatsTypes(rendered) AS classicMicroformatsTypes
+    getClassicMicroformatsTypes(rendered) AS classic_microformats_types
   FROM (
     SELECT
       JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
@@ -25,12 +25,12 @@ WITH
 )
 
 SELECT
-  classicMicroformatsType.name AS classicMicroformatsType,
-  SUM(classicMicroformatsType.count) AS count
+  classic_microformats_type.name AS classic_microformats_type,
+  SUM(classic_microformats_type.count) AS count
 FROM
   rendered_data,
-  UNNEST(classicMicroformatsTypes) AS classicMicroformatsType
+  UNNEST(classic_microformats_types) AS classic_microformats_type
 GROUP BY
-  classicMicroformatsType
+  classic_microformats_type
 ORDER BY
   count DESC;

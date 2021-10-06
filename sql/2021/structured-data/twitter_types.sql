@@ -14,7 +14,7 @@ CREATE TEMP FUNCTION
 WITH
   rendered_data AS (
   SELECT
-    getTwitterTypes(rendered) AS twitterTypes
+    getTwitterTypes(rendered) AS twitter_types
   FROM (
     SELECT
       JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
@@ -25,12 +25,12 @@ WITH
 )
 
 SELECT
-  twitterType,
-  COUNT(twitterType) AS count
+  twitter_type,
+  COUNT(twitter_type) AS count
 FROM
   rendered_data,
-  UNNEST(twitterTypes) AS twitterType
+  UNNEST(twitter_types) AS twitter_type
 GROUP BY
-  twitterType
+  twitter_type
 ORDER BY
   count DESC;

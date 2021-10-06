@@ -14,7 +14,7 @@ CREATE TEMP FUNCTION
 WITH
   rendered_data AS (
   SELECT
-    getRDFaVocabs(rendered) AS rdfaVocabs
+    getRDFaVocabs(rendered) AS rdfa_vocabs
   FROM (
     SELECT
       JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
@@ -25,12 +25,12 @@ WITH
 )
 
 SELECT
-  rdfaVocab,
-  COUNT(rdfaVocab) AS count
+  rdfa_vocab,
+  COUNT(rdfa_vocab) AS count
 FROM
   rendered_data,
-  UNNEST(rdfaVocabs) AS rdfaVocab
+  UNNEST(rdfa_vocabs) AS rdfa_vocab
 GROUP BY
-  rdfaVocab
+  rdfa_vocab
 ORDER BY
   count DESC;

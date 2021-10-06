@@ -14,7 +14,7 @@ CREATE TEMP FUNCTION
 WITH
   rendered_data AS (
   SELECT
-    getOpenGraphTypes(rendered) AS openGraphTypes
+    getOpenGraphTypes(rendered) AS open_graph_types
   FROM (
     SELECT
       JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
@@ -25,12 +25,12 @@ WITH
 )
 
 SELECT
-  openGraphType,
-  COUNT(openGraphType) AS count
+  open_graph_type,
+  COUNT(open_graph_type) AS count
 FROM
   rendered_data,
-  UNNEST(openGraphTypes) AS openGraphType
+  UNNEST(open_graph_types) AS open_graph_type
 GROUP BY
-  openGraphType
+  open_graph_type
 ORDER BY
   count DESC;

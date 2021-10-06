@@ -14,7 +14,7 @@ CREATE TEMP FUNCTION
 WITH
   rendered_data AS (
   SELECT
-    getRDFaTypeOfs(rendered) AS rdfaTypeOfs
+    getRDFaTypeOfs(rendered) AS rdfa_type_ofs
   FROM (
     SELECT
       JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
@@ -25,12 +25,12 @@ WITH
 )
 
 SELECT
-  rdfaTypeOf,
-  COUNT(rdfaTypeOf) AS count
+  rdfa_type_of,
+  COUNT(rdfa_type_of) AS count
 FROM
   rendered_data,
-  UNNEST(rdfaTypeOfs) AS rdfaTypeOf
+  UNNEST(rdfa_type_ofs) AS rdfa_type_of
 GROUP BY
-  rdfaTypeOf
+  rdfa_type_of
 ORDER BY
   count DESC;

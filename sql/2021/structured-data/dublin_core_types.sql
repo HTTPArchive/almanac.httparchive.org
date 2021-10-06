@@ -14,7 +14,7 @@ CREATE TEMP FUNCTION
 WITH
   rendered_data AS (
   SELECT
-    getDublinCoreTypes(rendered) AS dublinCoreTypes
+    getDublinCoreTypes(rendered) AS dublin_core_types
   FROM (
     SELECT
       JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
@@ -25,12 +25,12 @@ WITH
 )
 
 SELECT
-  dublinCoreType,
-  COUNT(dublinCoreType) AS count
+  dublin_core_type,
+  COUNT(dublin_core_type) AS count
 FROM
   rendered_data,
-  UNNEST(dublinCoreTypes) AS dublinCoreType
+  UNNEST(dublin_core_types) AS dublin_core_type
 GROUP BY
-  dublinCoreType
+  dublin_core_type
 ORDER BY
   count DESC;

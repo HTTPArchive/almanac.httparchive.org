@@ -14,7 +14,7 @@ CREATE TEMP FUNCTION
 WITH
   rendered_data AS (
   SELECT
-    getRDFaPrefixes(rendered) AS rdfaPrefixes
+    getRDFaPrefixes(rendered) AS rdfa_prefixes
   FROM (
     SELECT
       JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
@@ -25,12 +25,12 @@ WITH
 )
 
 SELECT
-  rdfaPrefix,
-  COUNT(rdfaPrefix) AS count
+  rdfa_prefix,
+  COUNT(rdfa_prefix) AS count
 FROM
   rendered_data,
-  UNNEST(rdfaPrefixes) AS rdfaPrefix
+  UNNEST(rdfa_prefixes) AS rdfa_prefix
 GROUP BY
-  rdfaPrefix
+  rdfa_prefix
 ORDER BY
   count DESC;
