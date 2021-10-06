@@ -14,27 +14,24 @@ catch {
     return null
 }
 ''' ;
-WITH ImageStats AS (
+WITH image_stats_tb AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    countLazilyLoadedVPImages( JSON_EXTRACT_SCALAR(payload,
-        '$._Images')) AS res,
-    JSON_EXTRACT_SCALAR(payload,
-      '$._almanac') AS almanac,
-    JSON_QUERY(payload,
-      '$._Images') AS images
+    countLazilyLoadedVPImages( JSON_EXTRACT_SCALAR(payload, '$._Images')) AS num_lazy_viewport_images
   FROM
     `httparchive.pages.2021_07_01_*`
 )
 
 SELECT
   client,
-  res AS numLazyViewportImages,
-  COUNT(0) AS numPages
+  num_lazy_viewport_images,
+  COUNT(0) AS pages,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
-  ImageStats
+  image_stats_tb
 WHERE
-  res > 0
+  num_lazy_viewport_images > 0
 GROUP BY
   client,
-  res
+  num_lazy_viewport_images

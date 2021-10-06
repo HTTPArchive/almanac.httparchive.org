@@ -33,27 +33,25 @@ catch {
 }
 ''' ;
 WITH
-ImageStats AS (
+image_stats_tb AS (
   SELECT
     _TABLE_SUFFIX AS client,
     preloadedNonViewportImages(JSON_EXTRACT_SCALAR(payload,
         '$._almanac'),
       JSON_EXTRACT_SCALAR(payload,
-        '$._Images')) AS res,
-    JSON_EXTRACT_SCALAR(payload,
-      '$._almanac') AS almanac,
-    JSON_QUERY(payload,
-      '$._Images') AS images
+        '$._Images')) AS num_non_viewport_preload_images
   FROM
     `httparchive.pages.2021_07_01_*`
 )
 
 SELECT
   client,
-  res AS numNonViewportPreloadedImages,
-  COUNT(0) AS numPages
+  num_non_viewport_preload_images,
+  COUNT(0) AS pages,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
-  ImageStats
+  image_stats_tb
 GROUP BY
   client,
-  res
+  num_non_viewport_preload_images

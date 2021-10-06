@@ -18,22 +18,21 @@ catch {
 WITH iframe_stats_tb AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    JSON_EXTRACT_SCALAR(payload,
-      '$._almanac') AS almanac,
-    countLazyIframes(JSON_EXTRACT_SCALAR(payload,
-        '$._almanac')) AS res
+    countLazyIframes(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS num_lazy_iframes
   FROM
     `httparchive.pages.2021_07_01_*`
 )
 
 SELECT
   client,
-  res AS numLazyIframes,
-  COUNT(0) AS numPages
+  num_lazy_iframes,
+  COUNT(0) AS pages,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
   iframe_stats_tb
 WHERE
-  res > 0
+  num_lazy_iframes > 0
 GROUP BY
   client,
-  res
+  num_lazy_iframes
