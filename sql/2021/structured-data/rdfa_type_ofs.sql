@@ -6,7 +6,7 @@ CREATE TEMP FUNCTION
   LANGUAGE js AS r"""
   try {
     rendered = JSON.parse(rendered);
-    return rendered.rdfa_typeofs.map(typeOf => typeOf.toLowerCase());
+    return rendered.rdfa_typeofs.map(typeOf => typeOf.toLowerCase().trim().split(/\s+/)).flat();
   } catch (e) {
     return [];
   }
