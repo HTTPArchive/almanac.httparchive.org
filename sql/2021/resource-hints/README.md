@@ -18,7 +18,7 @@ Resources:
 
 ## File Naming
 
-File names start with the table being queried. Next is the custom metric if appropriate. Then "by" followed by how the query is grouped. Finally anything more specific needed.
+Choose simple file names that are descriptive of what is being queried.
 
 ## Results
 
