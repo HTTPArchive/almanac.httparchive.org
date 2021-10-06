@@ -18,21 +18,15 @@ SELECT
   client,
   host,
   COUNT(0) AS freq,
-  COUNT(0) / SUM(COUNT(0)) OVER () AS pct
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM (
-    SELECT
-      client,
-      NET.HOST(href) AS host
-    FROM (
-      SELECT
-        _TABLE_SUFFIX AS client,
-        getResourceHintsHrefs(payload, "preconnect") AS value
-      FROM
-        `httparchive.pages.2021_07_01_*`
-    )
-    CROSS JOIN UNNEST(value) AS href
-    WHERE
-      ARRAY_LENGTH(value) > 0
+  SELECT
+    _TABLE_SUFFIX AS client,
+    NET.HOST(href) AS host
+  FROM
+    `httparchive.pages.2021_07_01_*`,
+    UNNEST(getResourceHintsHrefs(payload, "preconnect")) AS href
 )
 GROUP BY
   client,

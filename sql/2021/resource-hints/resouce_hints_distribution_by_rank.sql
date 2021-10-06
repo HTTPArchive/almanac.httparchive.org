@@ -23,6 +23,7 @@ SELECT
   client,
   rank,
   percentile,
+  COUNT(0) AS total,
   APPROX_QUANTILES(hints.preload, 1000)[OFFSET(percentile * 10)] AS preload,
   APPROX_QUANTILES(hints.prefetch, 1000)[OFFSET(percentile * 10)] AS prefetch,
   APPROX_QUANTILES(hints.preconnect, 1000)[OFFSET(percentile * 10)] AS preconnect,

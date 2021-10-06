@@ -61,22 +61,22 @@ try {
 
 SELECT
   client,
-  unusedFontCount,
+  unused_font_count,
   COUNT(0) AS freq,
+  SUM(COUNT(0)) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM (
     SELECT
       _TABLE_SUFFIX AS client,
-      JSON_QUERY(payload, '$._almanac') AS almanac,
-      getUnusedFontDownloadsCount(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS unusedFontCount
+      getUnusedFontDownloadsCount(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS unused_font_count
     FROM
       `httparchive.pages.2021_07_01_*`
 )
 WHERE
-  unusedFontCount IS NOT NULL
+  unused_font_count IS NOT NULL
 GROUP BY
   client,
-  unusedFontCount
+  unused_font_count
 ORDER BY
   client,
-  unusedFontCount
+  unused_font_count

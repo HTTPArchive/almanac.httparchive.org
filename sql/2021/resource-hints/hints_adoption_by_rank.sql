@@ -23,6 +23,7 @@ try {
 SELECT
   client,
   rank,
+  COUNT(0) AS total,
   COUNTIF(hints.preload) AS preload,
   COUNTIF(hints.preload) / COUNT(0) AS pct_preload,
   COUNTIF(hints.prefetch) AS prefetch,
