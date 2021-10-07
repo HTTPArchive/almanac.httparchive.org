@@ -1,5 +1,5 @@
 #standardSQL
-# Prevalence of server redirects from HTTP to HTTPS over Jan 2021 to Aug 2021
+# Prevalence of server redirects from HTTP to HTTPS over Jan 2021 to Jul 2021
 SELECT
   client,
   date,
@@ -11,7 +11,7 @@ SELECT
 FROM
   `httparchive.almanac.requests`
 WHERE
-  "2021-01-01" <= date AND date <= "2021-08-01"
+  "2021-01-01" <= date AND date <= "2021-07-01"
 GROUP BY
   client,
   date

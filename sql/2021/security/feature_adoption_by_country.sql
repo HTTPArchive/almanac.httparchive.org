@@ -8,8 +8,7 @@ CREATE TEMP FUNCTION getNumSecurityHeaders(headers STRING) AS (
     FROM
       UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy',
               'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To',
-              'Strict-Transport-Security',, 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection']) AS headername
-     ) );
+              'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection']) AS headername
   )
 );
 
@@ -38,8 +37,14 @@ FROM (
   FROM
     `httparchive.summary_requests.2021_07_01_*` AS r
   INNER JOIN
+    `httparchive.summary_pages.2021_07_01_*` AS p
+  ON
+    r._TABLE_SUFFIX = p._TABLE_SUFFIX AND
+    r.pageid = p.pageid
+  INNER JOIN
     `chrome-ux-report.experimental.country` AS c
-  ON r.urlShort = CONCAT(c.origin, '/')
+  ON
+    p.url = CONCAT(c.origin, '/')
   WHERE
     firstHtml AND
     yyyymm = 202107
