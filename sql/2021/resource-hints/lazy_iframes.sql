@@ -1,7 +1,7 @@
 #standardSQL
-  # Count the number of lazily loaded iframes
-CREATE TEMPORARY FUNCTION
-countLazyIframes(almanac_string STRING)
+# Count the number of lazily loaded iframes
+
+CREATE TEMPORARY FUNCTION countLazyIframes(almanac_string STRING)
 RETURNS INT64
 LANGUAGE js AS ''' 
 try {
@@ -31,8 +31,9 @@ SELECT
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
   iframe_stats_tb
-WHERE
-  num_lazy_iframes > 0
 GROUP BY
+  client,
+  num_lazy_iframes
+ORDER BY 
   client,
   num_lazy_iframes

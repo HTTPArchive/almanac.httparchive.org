@@ -1,5 +1,5 @@
 #standardSQL
-# 21_12a: Count of pages using native image lazy loading
+# Count of pages using native image lazy loading
 CREATE TEMPORARY FUNCTION nativeLazyLoads(payload STRING)
 RETURNS BOOLEAN LANGUAGE js AS '''
 try {
@@ -20,3 +20,6 @@ FROM
   `httparchive.pages.2021_07_01_*`
 GROUP BY
   client
+ORDER BY
+  client,
+  freq DESC

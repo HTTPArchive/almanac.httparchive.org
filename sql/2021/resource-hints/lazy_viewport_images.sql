@@ -1,7 +1,7 @@
-  # standardSQL
-  # Lazily loaded viewport images
-CREATE TEMPORARY FUNCTION
-countLazilyLoadedVPImages(imagesJsonStr STRING)
+# standardSQL
+# Lazily loaded viewport images
+
+CREATE TEMPORARY FUNCTION countLazilyLoadedVPImages(imagesJsonStr STRING)
 RETURNS INT64
 LANGUAGE js AS '''
 try {
@@ -30,8 +30,9 @@ SELECT
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
   image_stats_tb
-WHERE
-  num_lazy_viewport_images > 0
 GROUP BY
+  client,
+  num_lazy_viewport_images
+ORDER BY 
   client,
   num_lazy_viewport_images

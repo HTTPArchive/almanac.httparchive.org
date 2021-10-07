@@ -1,5 +1,6 @@
 #standardSQL
-# 21_03: Attribute popularity for each hint.
+# Attribute popularity for each hint.
+
 CREATE TEMPORARY FUNCTION getResourceHintAttrs(payload STRING)
 RETURNS ARRAY<STRUCT<name STRING, attribute STRING, value STRING>>
 LANGUAGE js AS '''
@@ -46,4 +47,5 @@ GROUP BY
   attribute,
   value
 ORDER BY
+  client,
   pct DESC

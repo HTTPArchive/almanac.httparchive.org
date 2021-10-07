@@ -17,9 +17,7 @@ FROM (
       JSON_EXTRACT(payload, "$._consoleLog") AS consoleLog
     FROM
       `httparchive.pages.2021_07_01_*`
-    )
-  WHERE
-    consoleLog IS NOT NULL
+  )
 )
 GROUP BY
   client,
