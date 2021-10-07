@@ -53,9 +53,9 @@ max_age AS (
   SELECT
     client AS max_age_client,
     ROW_NUMBER() OVER (ORDER BY COUNT(0) DESC) AS row,
-    MIN(total_cookies_with_max_age) AS total_cookies_with_max_age,
+    total_cookies_with_max_age,
     COUNT(0) AS max_age_count,
-    COUNT(0) / MIN(total_cookies_with_max_age) AS max_age_pct,
+    COUNT(0) / total_cookies_with_max_age AS max_age_pct,
     max_age_value
   FROM
     max_age_values
