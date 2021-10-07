@@ -26,6 +26,7 @@ LANGUAGE js AS '''
   });
   return JSON.stringify(result);
 ''';
+
 WITH max_age_values AS (
   SELECT
     client,
