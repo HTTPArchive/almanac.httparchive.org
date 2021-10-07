@@ -72,6 +72,7 @@ max_age AS (
   USING (client)
   GROUP BY
     client,
+    total_cookies_with_max_age,
     max_age_value
   ORDER BY
     max_age_count DESC
