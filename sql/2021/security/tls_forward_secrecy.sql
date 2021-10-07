@@ -8,8 +8,8 @@ SELECT
 FROM (
   SELECT
     client,
-    JSON_EXTRACT(payload, '$._securityDetails.keyExchange') AS key_exchange,
-    JSON_EXTRACT_SCALAR(payload, '$._securityDetails.protocol') AS protocol
+    cert_keyexchange AS key_exchange,
+    cert_protocol AS protocol
   FROM
     `httparchive.almanac.requests`
   WHERE

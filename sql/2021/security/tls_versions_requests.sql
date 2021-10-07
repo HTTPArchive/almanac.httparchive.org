@@ -10,7 +10,7 @@ FROM (
   SELECT
     client,
     NET.HOST(url) AS host,
-    IFNULL(JSON_EXTRACT_SCALAR(payload, '$._tls_version'), JSON_EXTRACT_SCALAR(payload, '$._securityDetails.protocol')) AS tls_version
+    IFNULL(tls_version, cert_protocol) AS tls_version
   FROM
     `httparchive.almanac.requests`
   WHERE

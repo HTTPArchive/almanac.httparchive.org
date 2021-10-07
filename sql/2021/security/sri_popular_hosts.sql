@@ -17,9 +17,9 @@ WITH totals AS (
 SELECT
   client,
   NET.HOST(JSON_EXTRACT_SCALAR(sri, '$.src')) AS host,
-  MIN(total_sri_scripts) AS total_sri_scripts,
+  total_sri_scripts,
   COUNT(0) AS freq,
-  COUNT(0) / MIN(total_sri_scripts) AS pct,
+  COUNT(0) / total_sri_scripts AS pct,
   SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS total_urls,
   COUNT(DISTINCT url) AS freq_urls,
   COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS pct_urls
@@ -37,6 +37,7 @@ WHERE
   JSON_EXTRACT_SCALAR(sri, '$.tagname') = 'script'
 GROUP BY
   client,
+  total_sri_scripts,
   host
 ORDER BY
   pct DESC

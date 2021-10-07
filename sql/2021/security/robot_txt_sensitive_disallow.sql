@@ -11,6 +11,7 @@ LANGUAGE js AS '''
   const endpoints_list = Object.keys(parsed_endpoints).map(key => parsed_endpoints[key]).flat();
   return Array.from(new Set(endpoints_list));
 ''';
+
 SELECT
   client,
   COUNT(DISTINCT page) AS total_pages,

@@ -14,9 +14,9 @@ WITH totals AS (
 SELECT
   client,
   hash_function,
-  MIN(total_sri_elements) AS total_sri_elements,
+  total_sri_elements,
   COUNT(0) AS freq,
-  COUNT(0) / MIN(total_sri_elements) AS pct
+  COUNT(0) / total_sri_elements AS pct
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -30,6 +30,7 @@ WHERE
   sri IS NOT NULL
 GROUP BY
   client,
+  total_sri_elements,
   hash_function
 ORDER BY
   client,

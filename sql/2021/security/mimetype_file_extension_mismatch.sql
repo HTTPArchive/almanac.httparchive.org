@@ -21,9 +21,9 @@ SELECT
   client,
   mimetype,
   file_extension,
-  MIN(total_requests) AS total_requests,
+  total_requests,
   SUM(MIN(count_pair)) OVER (PARTITION BY client) AS count_mismatches,
-  SUM(MIN(count_pair)) OVER (PARTITION BY client) / MIN(total_requests) AS pct_mismatches,
+  SUM(MIN(count_pair)) OVER (PARTITION BY client) / total_requests AS pct_mismatches,
   MIN(count_pair) AS count_pair,
   MIN(count_pair) / SUM(MIN(count_pair)) OVER (PARTITION BY client) AS pct_pair
 FROM
@@ -41,6 +41,7 @@ WHERE
   NOT (mimetype = "audio/mpeg" AND file_extension = "mp3")
 GROUP BY
   client,
+  total_requests,
   mimetype,
   file_extension
 ORDER BY

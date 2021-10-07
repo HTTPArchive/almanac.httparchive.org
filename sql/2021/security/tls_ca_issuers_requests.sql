@@ -9,7 +9,7 @@ SELECT
 FROM (
   SELECT
     client,
-    JSON_EXTRACT_SCALAR(payload, '$._securityDetails.issuer') AS issuer
+    cer_issuer AS issuer
   FROM
     `httparchive.almanac.requests`
   WHERE

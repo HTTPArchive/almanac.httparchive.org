@@ -10,7 +10,7 @@ FROM (
   SELECT
     client,
     NET.HOST(url) AS request_host,
-    ANY_VALUE(JSON_EXTRACT_SCALAR(payload, '$._securityDetails.issuer')) AS issuer
+    ANY_VALUE(cert_issuer) AS issuer
   FROM
     `httparchive.almanac.requests`
   WHERE
