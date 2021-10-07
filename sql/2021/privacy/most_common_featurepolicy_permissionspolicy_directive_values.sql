@@ -49,16 +49,18 @@ meta_tags AS (
 totals AS (
   SELECT
     client,
-    rank,
+    rank_grouping,
     COUNT(DISTINCT page) AS total_websites
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.almanac.requests`,
+    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
     date = '2021-07-01' AND
-    firstHtml = TRUE
+    firstHtml = TRUE AND
+    rank <= rank_grouping
   GROUP BY
     client,
-    rank
+    rank_grouping
 ),
 
 merged_feature_policy AS (
@@ -122,8 +124,8 @@ normalized_permissions_policy AS (  -- normalize
 
 SELECT
   client,
-  rank,
-  SPLIT(TRIM(directive), ' ')[OFFSET(0)] AS directive_name,
+  rank_grouping,
+  RTRIM(SPLIT(TRIM(directive), ' ')[OFFSET(0)], ":") AS directive_name,
   TRIM(origin) AS origin,
   COUNT(DISTINCT page) AS number_of_websites_with_directive,
   total_websites,
@@ -135,13 +137,14 @@ FROM
       UNION ALL
       SELECT * FROM normalized_permissions_policy
     )
-  )
+  ),
+  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
 JOIN
   page_ranks
 USING (client, page)
 JOIN
   totals
-USING (client, rank),
+USING (client, rank_grouping),
   UNNEST(SPLIT(policy_value, ";")) directive,
   UNNEST(  -- Directive may specify explicit origins or not.
     IF(
@@ -153,15 +156,16 @@ USING (client, rank),
   ) AS origin WITH OFFSET AS offset
 WHERE
   TRIM(directive) != "" AND
-  offset > 0
+  offset > 0 AND
+  rank <= rank_grouping
 GROUP BY
   client,
-  rank,
+  rank_grouping,
   directive_name,
   origin,
   total_websites
 ORDER BY
-  rank,
+  rank_grouping,
   client,
   number_of_websites_with_directive DESC,
   directive_name,

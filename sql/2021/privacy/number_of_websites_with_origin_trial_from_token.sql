@@ -159,7 +159,6 @@ response_headers AS (
   SELECT
     client,
     page,
-    rank,
     LOWER(JSON_VALUE(response_header, '$.name')) AS header_name,
     JSON_VALUE(response_header, '$.value') AS header_value  -- may not lowercase this value as it is a base64 string
   FROM

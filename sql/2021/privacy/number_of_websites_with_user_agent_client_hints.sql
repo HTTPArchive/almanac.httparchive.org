@@ -38,21 +38,23 @@ meta_tags AS (
 totals AS (
   SELECT
     client,
-    rank,
+    rank_grouping,
     COUNT(DISTINCT page) AS total_websites
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.almanac.requests`,
+    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
     date = '2021-07-01' AND
-    firstHtml = TRUE
+    firstHtml = TRUE AND
+    rank <= rank_grouping
   GROUP BY
     client,
-    rank
+    rank_grouping
 )
 
 SELECT
   client,
-  rank,
+  rank_grouping,
   COUNT(DISTINCT page) AS number_of_websites,
   total_websites,
   COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS pct_websites
@@ -60,17 +62,21 @@ FROM
   response_headers
 FULL OUTER JOIN
   meta_tags
-USING (client, page)
+USING (client, page),
+  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
 JOIN
   totals
-USING (client, rank)
+USING (client, rank_grouping)
 WHERE
-  header_name = 'accept-ch' OR
-  tag_name = 'accept-ch'
+  (
+    header_name = 'accept-ch' OR
+    tag_name = 'accept-ch'
+  ) AND
+  rank <= rank_grouping
 GROUP BY
   client,
-  rank,
+  rank_grouping,
   total_websites
 ORDER BY
-  rank,
+  rank_grouping,
   client

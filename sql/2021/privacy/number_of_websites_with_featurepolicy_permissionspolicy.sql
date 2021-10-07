@@ -54,7 +54,7 @@ SELECT
 FROM (
   SELECT
     client,
-    rank,
+    rank_grouping,
     COUNTIF(
       header_name = 'feature-policy' OR
       tag_name = 'feature-policy'
@@ -77,11 +77,14 @@ FROM (
   USING (client, page)
   JOIN
     page_ranks
-  USING (client, page)
+  USING (client, page),
+    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+  WHERE
+    rank <= rank_grouping
   GROUP BY
     client,
-    rank
+    rank_grouping
 )
 ORDER BY
-  rank,
+  rank_grouping,
   client

@@ -49,16 +49,18 @@ meta_tags AS (
 totals AS (
   SELECT
     client,
-    rank,
+    rank_grouping,
     COUNT(DISTINCT page) AS total_websites
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.almanac.requests`,
+    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
     date = '2021-07-01' AND
-    firstHtml = TRUE
+    firstHtml = TRUE AND
+    rank <= rank_grouping
   GROUP BY
     client,
-    rank
+    rank_grouping
 ),
 
 merged_feature_policy AS (
@@ -141,27 +143,30 @@ site_directives AS (
 
 SELECT
   client,
-  rank,
+  rank_grouping,
   directive,
   COUNT(DISTINCT page) AS number_of_websites_with_directive,
   total_websites,
   COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS pct_websites_with_directive
 FROM
-  site_directives
+  site_directives,
+  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
 JOIN
   page_ranks
 USING (client, page)
 JOIN
   totals
-USING (client, rank),
+USING (client, rank_grouping),
   UNNEST(site_directives.directives) directive
+WHERE
+  rank <= rank_grouping
 GROUP BY
   client,
-  rank,
+  rank_grouping,
   directive,
   total_websites
 ORDER BY
-  rank,
+  rank_grouping,
   client,
   number_of_websites_with_directive DESC,
   directive
