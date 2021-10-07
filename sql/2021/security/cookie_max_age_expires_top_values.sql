@@ -82,9 +82,9 @@ expires AS (
   SELECT
     client AS expires_client,
     ROW_NUMBER() OVER (ORDER BY COUNT(0) DESC) AS row,
-    MIN(total_cookies_with_expires) AS total_cookies_with_expires,
+    total_cookies_with_expires,
     COUNT(0) AS expires_count,
-    COUNT(0) / MIN(total_cookies_with_expires) AS expires_pct,
+    COUNT(0) / total_cookies_with_expires AS expires_pct,
     expires_value
   FROM
     expires_values
@@ -101,6 +101,7 @@ expires AS (
   USING (client)
   GROUP BY
     client,
+    total_cookies_with_expires,
     expires_value
   ORDER BY
     expires_count DESC
