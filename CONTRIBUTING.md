@@ -1,5 +1,11 @@
 # Contributing
 
+## 2022
+
+We haven't begun organizing the 2022 edition yet, but if you'd be interested to contribute, you can sign up to be notified when the project planning kicks off by filling out [this interest form](https://forms.gle/Bb2ZZj6Yw5RnJHbj8). Check off all teams that interest you and give a detailed description of what your areas of expertise are so we can reach out to you with targeted opportunities.
+
+If you have any questions about contributing, you can start a discussion here on GitHub or visit the [`#web-almanac`](https://join.slack.com/t/httparchive/shared_invite/zt-45sgwmnb-eDEatOhqssqNAKxxOSLAaA) channel on Slack.
+
 ## 2021
 
 Thanks for your interest in contributing to the Web Almanac! We're currently developing the 2021 edition and actively looking for contributors! If you'd like to contribute to a specific chapter, please see [the list of open chapters](https://github.com/HTTPArchive/almanac.httparchive.org/issues/2167). We're also looking for contributors to join the [translators](https://github.com/HTTPArchive/almanac.httparchive.org/issues/923), [developers](https://github.com/HTTPArchive/almanac.httparchive.org/issues/2172), and [designers](https://github.com/HTTPArchive/almanac.httparchive.org/issues/2173) teams.
