@@ -5,12 +5,14 @@ CREATE TEMP FUNCTION
   RETURNS ARRAY<STRING>
   LANGUAGE js AS r"""
   try {
+    const arrayify = (value) => Array.isArray(value) ? value : [value];
+
     const getDeep = (key, o) => {
       if (Array.isArray(o)) return o.map(child => getDeep(key, child)).flat();
 
       if (o instanceof Object) {
         return Object.entries(o).map(([k, value]) => {
-          if (k === key) return [value, ...getDeep(value)];
+          if (k === key) return [...arrayify(value), ...getDeep(value)];
           return getDeep(value);
         }).flat();
       }
