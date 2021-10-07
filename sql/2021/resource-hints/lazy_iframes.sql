@@ -34,6 +34,6 @@ FROM
 GROUP BY
   client,
   num_lazy_iframes
-ORDER BY 
+ORDER BY
   client,
   num_lazy_iframes

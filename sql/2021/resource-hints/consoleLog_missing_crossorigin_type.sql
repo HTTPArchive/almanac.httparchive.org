@@ -1,9 +1,18 @@
 #standardSQL
-# returns the number of pages using preload tags without the required crossorigin attribute
+# returns the file types for preload tags without the required crossorigin attribute
+
+# helper to convert the href into a type
+CREATE TEMPORARY FUNCTION getType (href STRING) RETURNS STRING AS (
+  IF(
+    REGEXP_CONTAINS(href, r'fonts\.googleapis\.com'),
+    "fonts.googleapis.com",
+    TRIM(TRIM(REGEXP_EXTRACT(href, r'\.[0-9a-z]+(?:[\?#]|$)'), '?'), '#')
+  )
+);
 
 SELECT
   client,
-  ARRAY_LENGTH(value) AS numOfMissingCrossorigin,
+  getType(TRIM(href, '\'')) AS type,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
@@ -19,9 +28,10 @@ FROM (
       `httparchive.pages.2021_07_01_*`
   )
 )
+CROSS JOIN UNNEST(value) AS href
 GROUP BY
   client,
-  numOfMissingCrossorigin
+  type
 ORDER BY
   client,
   freq DESC

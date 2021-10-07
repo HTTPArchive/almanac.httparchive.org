@@ -33,6 +33,6 @@ FROM
 GROUP BY
   client,
   num_lazy_viewport_images
-ORDER BY 
+ORDER BY
   client,
   num_lazy_viewport_images
