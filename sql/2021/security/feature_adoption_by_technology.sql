@@ -38,11 +38,21 @@ FROM (
   FROM
     `httparchive.summary_requests.2021_07_01_*` AS r
   INNER JOIN
+    `httparchive.summary_pages.2021_07_01_*` AS p
+  ON
+    r._TABLE_SUFFIX = p._TABLE_SUFFIX AND
+    r.pageid = p.pageid
+  INNER JOIN
     `httparchive.technologies.2021_07_01_*` AS t
-  ON r._TABLE_SUFFIX = t._TABLE_SUFFIX AND r.urlShort = t.url
+  ON
+    p._TABLE_SUFFIX = t._TABLE_SUFFIX AND
+    p.urlShort = t.url
   INNER JOIN
     totals
-  ON r._TABLE_SUFFIX = totals.client AND t.category = totals.category AND t.app = totals.app
+  ON
+    t._TABLE_SUFFIX = totals.client AND
+    t.category = totals.category AND
+    t.app = totals.app
   WHERE
     firstHtml
 ),
