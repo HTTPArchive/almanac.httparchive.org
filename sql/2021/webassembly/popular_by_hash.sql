@@ -1,6 +1,6 @@
 SELECT
   MIN(url) AS url,
-  COUNT(*) AS count
+  COUNT(0) AS count
 FROM
   `httparchive.almanac.wasm_stats`
 GROUP BY

@@ -7,7 +7,7 @@ SELECT
   APPROX_QUANTILES(size.total_opt_br, 1000)[OFFSET(percentile * 10)] AS size_total_opt_br,
   APPROX_QUANTILES(opt_savings, 1000)[OFFSET(percentile * 10)] AS opt_savings,
   APPROX_QUANTILES(br_savings, 1000)[OFFSET(percentile * 10)] AS br_savings,
-  APPROX_QUANTILES(raw_savings, 1000)[OFFSET(percentile * 10)] AS raw_savings,
+  APPROX_QUANTILES(raw_savings, 1000)[OFFSET(percentile * 10)] AS raw_savings
 FROM
   (
     SELECT

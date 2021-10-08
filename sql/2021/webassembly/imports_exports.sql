@@ -8,7 +8,7 @@ SELECT
   APPROX_QUANTILES(exports.tables, 1000)[OFFSET(percentile * 10)] AS exports_tables,
   APPROX_QUANTILES(exports.memories, 1000)[OFFSET(percentile * 10)] AS exports_memories,
   APPROX_QUANTILES(exports.globals, 1000)[OFFSET(percentile * 10)] AS exports_globals,
-  APPROX_QUANTILES(exports.funcs, 1000)[OFFSET(percentile * 10)] AS exports_funcs,
+  APPROX_QUANTILES(exports.funcs, 1000)[OFFSET(percentile * 10)] AS exports_funcs
 FROM
   `httparchive.almanac.wasm_stats`,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
