@@ -30,9 +30,9 @@ return result;
 SELECT
   _TABLE_SUFFIX AS client,
   button_type_info.name AS button_type,
-  COUNTIF(button_type_info.freq > 0) AS freq_page_with_button,
-  COUNTIF(button_type_info.freq > 0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS pct_page_with_button,
-  SUM(button_type_info.freq) AS freq_button
+  COUNTIF(button_type_info.freq > 0) AS freq,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  COUNTIF(button_type_info.freq > 0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_page_with_button_type
 FROM
   `httparchive.pages.2021_07_01_*`,
   UNNEST(get_markup_buttons_info(JSON_EXTRACT_SCALAR(payload, '$._markup'))) AS button_type_info
