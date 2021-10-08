@@ -6,4 +6,4 @@ FROM
   `httparchive.summary_requests.2021_07_01_*`
 GROUP BY
   client,
-_cdn_provider
+  _cdn_provider
