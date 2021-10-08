@@ -23,12 +23,11 @@ SELECT
   COUNTIF(robots_sizes > 300 AND robots_sizes <= 400) / COUNT(0) AS pct_300_400,
   COUNTIF(robots_sizes > 400 AND robots_sizes <= 500) / COUNT(0) AS pct_400_500,
   COUNTIF(robots_sizes > 500) / COUNT(0) AS pct_gt500,
-  COUNTIF(robots_sizes > 500) AS count_gt500,
+  COUNTIF(robots_sizes > 500) AS count_gt500
 FROM (
   SELECT
     _TABLE_SUFFIX,
     getRobotsSize(payload) AS robots_sizes
   FROM
     `httparchive.pages.2021_07_01_*`
-  WHERE _TABLE_SUFFIX = 'desktop'
- )
+  WHERE _TABLE_SUFFIX = 'desktop')
