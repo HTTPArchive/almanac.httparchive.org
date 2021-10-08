@@ -5,5 +5,5 @@ SELECT
   AVG(respBodySize) / 1024 AS response_body_size
 FROM
   `httparchive.summary_requests.2021_07_01_*`
-  GROUP BY
+GROUP BY
   client
