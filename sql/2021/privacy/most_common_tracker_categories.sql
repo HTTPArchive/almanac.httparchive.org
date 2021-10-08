@@ -7,7 +7,9 @@ WITH whotracksme AS (
     category,
     tracker
   FROM
-    `httparchive.almanac.whotracks_me`
+    `httparchive.almanac.whotracksme`
+  WHERE
+    date = '2021-07-01'
 )
 
 SELECT
