@@ -29,11 +29,11 @@ for breach in breaches_data:
 
 # https://docs.google.com/spreadsheets/d/148SxZICZ24O44roIuEkRgbpIobWXpqLxegCDhIiX8XA/edit#gid=1158689200
 with open(
-    "sql/2021/privacy/data_breaches_pwned_websites_per_date_and_class.csv", "w"
+    "sql/2021/privacy/data_breaches_pwned_websites_per_date_and_class.tsv", "w"
 ) as of1:
     # https://docs.google.com/spreadsheets/d/148SxZICZ24O44roIuEkRgbpIobWXpqLxegCDhIiX8XA/edit#gid=1435927653
     with open(
-        "sql/2021/privacy/data_breaches_pwned_websites_per_date_and_breach_sensitivity.csv",
+        "sql/2021/privacy/data_breaches_pwned_websites_per_date_and_breach_sensitivity.tsv",
         "w",
     ) as of2:
 
