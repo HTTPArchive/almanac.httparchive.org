@@ -52,10 +52,10 @@ SELECT
 
   COUNTIF(legible_font_size) AS legible_font_size,
   AS_PERCENT(COUNTIF(legible_font_size), COUNT(0)) AS pct_legible_font_size,
-  
+
   COUNTIF(heading_order_valid) AS heading_order_valid,
   AS_PERCENT(COUNTIF(heading_order_valid), COUNT(0)) AS pct_heading_order_valid,
-  
+
   COUNTIF(robots_txt_valid) AS robots_txt_valid,
   AS_PERCENT(COUNTIF(robots_txt_valid), COUNT(0)) AS pct_robots_txt_valid,
 
