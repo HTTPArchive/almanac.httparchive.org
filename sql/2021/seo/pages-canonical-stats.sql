@@ -175,7 +175,7 @@ FROM (
     `httparchive.pages.2021_07_01_*`)
 
 -- Only reporting where wpt_bodies sucessfully extracted. ~20/100,000 pages missing wpt_bodies.
-WHERE  canonical_metrics.has_wpt_bodies
+WHERE canonical_metrics.has_wpt_bodies
 GROUP BY
   client,
   js_error
