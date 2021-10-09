@@ -1,7 +1,7 @@
 #standardSQL
 # Pages that use Feature-Policy (based on Blink features)
 
-SELECT
+SELECT DISTINCT
   client,
   feature,
   num_urls,

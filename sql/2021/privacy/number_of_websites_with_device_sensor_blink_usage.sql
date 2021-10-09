@@ -1,7 +1,7 @@
 #standardSQL
 # Pages that use a device sensor (based on Blink features)
 
-SELECT
+SELECT DISTINCT
   client,
   feature,
   num_urls,

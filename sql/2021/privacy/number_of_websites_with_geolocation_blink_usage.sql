@@ -1,7 +1,7 @@
 #standardSQL
 # Pages that use geolocation features (based on Blink features)
 
-SELECT
+SELECT DISTINCT
   client,
   feature,
   num_urls,
