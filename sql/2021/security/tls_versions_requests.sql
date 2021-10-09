@@ -3,7 +3,7 @@
 SELECT
   client,
   tls_version,
-  SUM(COUNT(DISTINCT host)) OVER (PARTITION BY client) AS total_hosts,
+  SUM(COUNT(DISTINCT host)) OVER (PARTITION BY client) AS total_https_hosts,
   COUNT(DISTINCT host) AS freq,
   COUNT(DISTINCT host) / SUM(COUNT(DISTINCT host)) OVER (PARTITION BY client) AS pct
 FROM (

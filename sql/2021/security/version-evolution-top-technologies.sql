@@ -29,7 +29,7 @@ FROM (
       `httparchive.technologies.*`
     WHERE
       REGEXP_CONTAINS(info, r'\d+\.\d+') AND
-      REGEXP_CONTAINS(_TABLE_SUFFIX, r'^20(21|20).*')
+      _TABLE_SUFFIX >= '2020'
   ) AS tech
   INNER JOIN (
     SELECT
@@ -39,7 +39,7 @@ FROM (
     FROM
       `httparchive.technologies.*`
     WHERE
-      REGEXP_CONTAINS(_TABLE_SUFFIX, r'^20(21|20).*')
+      _TABLE_SUFFIX >= '2020'
     GROUP BY
       category_lower,
       app_lower

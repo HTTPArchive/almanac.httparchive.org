@@ -3,7 +3,7 @@
 SELECT
   client,
   tls_version,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_pages,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_https_pages,
   COUNT(0) AS freq,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM (

@@ -3,7 +3,7 @@
 SELECT
   client,
   issuer,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_pages,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_https_pages,
   COUNT(0) AS freq,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM (
@@ -16,7 +16,7 @@ FROM (
   WHERE
     date = '2021-07-01' AND
     NET.HOST(page) = NET.HOST(url) AND
-    JSON_EXTRACT_SCALAR(payload, '$._securityDetails.issuer') IS NOT NULL
+    cert_issuer IS NOT NULL
   GROUP BY client, request_host)
 GROUP BY
   client,
