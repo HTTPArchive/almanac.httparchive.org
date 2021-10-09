@@ -1,5 +1,5 @@
 #standardSQL
-# Gather SEO data from lighthouse
+# Gather lighthouse unused css and js by CrUX rank
 
 SELECT
   client,
