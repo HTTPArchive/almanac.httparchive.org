@@ -1166,22 +1166,22 @@ CSS также предлагает огромное разнообразие в
 
 ## Отзывчивый дизайн {responsive-design}
 
-Making sites that cope with the many different screen sizes and devices that browse the web has become somewhat easier with the built-in flexible and responsive new layout methods such as Flexbox and Grid. These layout methods are usually further enhanced with the use of media queries. The data shows that 80% of desktop sites and 83% of mobile sites use media queries that are associated with responsive design, such as `min-width`.
+Создание сайтов, которые справляются с множеством различных размеров экрана и устройствами, через которые просматривают веб-сайты, стало несколько проще с новыми встроенными гибкими и отзывчивыми методами раскладки, такими как флексы и гриды. Эти методы обычно дополнительно усиливаются использованием медиавыражений. Данные показывают, что 80% десктопных сайтов и 83% мобильных сайтов используют связанные с отзывчивым дизайном медиавыражения, такие как `min-width`.
 
 ### Какие медиафичи используют люди? {which-media-features-are-people-using}
 
-As you might expect, the most common media features in use are the viewport size features which have been in use since the early days of responsive web design. The percentage of sites checking for `max-width` is 78% for both desktop and mobile. A check for `min-width` features on 75% of mobile and 73% of desktop sites.
+Как вы могли ожидать, наиболее распространенными медиафичами являются запросы размера вьюпорта, которые использовались с первых дней отзывчивого веб-дизайна. Процент сайтов, проверяющих `max-width` — 78% как для десктопов, так и для мобильных устройств. Проверка `min-width` есть на 75% мобильных и 73% десктопных сайтов.
 
-The `orientation` media feature, which allows authors to differentiate their layout based on whether the screen is portrait or landscape, can be found on 33% of all sites.
+Медиафичу `orientation`, которая позволяет авторам дифференцировать их раскладку, основываясь на том, портретная или альбомная ориентация у экрана, можно найти на 33% всех сайтов.
 
-We are seeing some newer media features come up in the statistics. The <a hreflang="en" href="https://web.dev/prefers-reduced-motion/">`prefers-reduced-motion`</a> media feature provides a way to check if the user has requested reduced motion, so that websites can adjust the amount of animation they use. This can be turned on either explicitly, through a user-controlled operating system setting, or implicitly, for example due to decreasing battery level. 24% of sites are checking for this feature.
+Мы видим, что в статистике появляются некоторые новые медиафичи. Медиафича <a hreflang="en" href="https://web.dev/prefers-reduced-motion/">`prefers-reduced-motion`</a> даёт способ проверить, запрашивал ли пользователь ограничение движений, чтобы веб-сайты могли регулировать количество используемых на них анимаций. Такое можно включить либо явно через пользовательскую настройку в операционной системе, либо неявно, например, из-за разрядки батареи. 24% сайтов проверяют эту медиафичу.
 
-In other good news, newer features from the <a hreflang="en" href="https://www.w3.org/TR/mediaqueries-4/">Media Queries Level 4</a> specification are starting to appear. On mobile 5% of sites are checking for the type of pointer the user has. A `coarse` pointer indicates they are using a touchscreen, whereas a `fine` pointer indicates a pointing device. Understanding the way a user is interacting with your site is often just as helpful, if not more helpful, than looking at screen size. A person might be using a small screen device with a keyboard and mouse, or a high resolution large screen device with a touchscreen and benefit from larger hit areas.
+Из других хороших новостей, начинают появляться более новые фичи из спецификации <a hreflang="en" href="https://www.w3.org/TR/mediaqueries-4/">Media Queries Level 4</a>. На мобильных устройствах 5% сайтов проверяют тип указателя, который есть у пользователей. Указатель `coarse` говорит, что они используют сенсорный экран, тогда как `fine` говорит про устройство с указателем. Понимание того, как пользователь взаимодействует с вашим сайтом, часто так же полезно, если не более полезно, чем анализ размера экрана. Человек может использовать небольшое экранное устройство с клавиатурой и мышью или устройство с большим экраном высокого разрешения с сенсорным экраном и извлечь выгоду из более крупных областей попадания.
 
 {{ figure_markup(
   image="media-query-features.png",
-  caption="The most popular media query features as a percent of pages.",
-  description="Bar chart of the most popular media query features as a percent of pages. Desktop and mobile are generally similar unless otherwise noted. The most popular media query feature on mobile pages is `max-width` at 79%, followed by `min-width` at 75%, `-webkit-min-device-pixel-ratio` at 45% (up from desktop at 39%), orientation at 33%, `max-device-width` at 28%, `-ms-high-contrast` at 24% (up from desktop at 15%), `prefers-reduced-motion` at 24%, `max-height` and `min-resolution` at 22%, `-webkit-transform-3d`, `transform-3d`, and `min-device-pixel-ratio` all at 15%, `min-height` used on 14% of mobile pages but only 3% of desktop pages, `-o-min-device-pixel-ratio` at 8%, `pointer` at 5%, and finally `device-width` at 2%.",
+  caption="Самые популярные медиафичи как процент страниц.",
+  description="Гистограмма самых популярных медиафичей как процент страниц. Десктопные и мобильные показатели в основном одинаковые, если не указано иное. Самая популярная медиафича на мобильных — `max-width` с 79%, следом `min-width` с 75%, `-webkit-min-device-pixel-ratio` с 45% (на десктопах — 39%), `orientation` — 33%, `max-device-width` — 28%, `-ms-high-contrast` — 24% (на десктопах — 15%), `prefers-reduced-motion` — 24%, `max-height` и `min-resolution` — 22%, `-webkit-transform-3d`, `transform-3d` и `min-device-pixel-ratio` — по 15%, `min-height` используется на 14% мобильных страниц, но только на 3% десктопных, `-o-min-device-pixel-ratio` — 8%, `pointer` — 5% и, наконец, `device-width` — 2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1998463556&format=interactive",
   sheets_gid="1374950017",
   width="600",
@@ -1191,27 +1191,27 @@ In other good news, newer features from the <a hreflang="en" href="https://www.w
 
 ### Распространённые контрольные точки {common-breakpoints}
 
-The most common breakpoint in use across desktop and mobile devices is a `min-width` of 768px. 54% of sites use this breakpoint, closely followed by a `max-width` of 767px at 50%. <a hreflang="en" href="https://getbootstrap.com/docs/4.1/layout/overview/">The Bootstrap framework</a> uses a `min-width` of 768px as its "Medium" size, so this may be the source of much of the usage. The other two high-ranking `min-width` values of 1200px (40%) and 992px (37%) are also found in Bootstrap.
+Самая распространённая контрольная точка, используемая на десктопных и мобильных — `min-width` в 768px. 54% сайтов используют эту контрольную точку, близко к следующей `max-width` в 767px в 50% случаев. <a hreflang="en" href="https://getbootstrap.com/docs/4.1/layout/overview/">Фреймворк Bootstrap</a> использует `min-width` в 768px как свой «средний» размер, так что это может быть причиной такого большого применения. Другие два топ-значения `min-width` в 1200px (40%) и 992px (37%) также найдены в Bootstrap.
 
 {{ figure_markup(
   image="breakpoints.png",
-  caption="The most popular breakpoints by `min-width` and `max-width` as a percent of mobile pages.",
-  description="The most popular breakpoints by `min-width` and `max-width` as a percent of mobile pages. `480px` is used as a min-width on 21% of mobile pages and as a `max-width` on 35%. `600px` on 27% and 37% for min and max widths respectively, `767px` on 8% and 50%, `768px` on 54% and 35%, `800px` on 8% and 24%, `991px` on 3% and 30%, `992px` on 37% and 11%, `1024px` on 13% and 23%, `1199px` on just 31% as a `max-width`, and `1200px` on 40% and 19%.",
+  caption="Самые популярные контрольные точки `min-width` и `max-width` как процент мобильных страниц.",
+  description="Самые популярные контрольные точки `min-width` и `max-width` как процент мобильных страниц. `480px` применяется как минимальная ширина на 21% мобильных страниц и как `max-width` — на 35%. `600px` на 27% и 37% как минимальная и максимальная ширины соответственно, `767px` — на 8% и 50%, `768px` — на 54% и 35%, `800px` — на 8% и 24%, `991px` — на 3% и 30%, `992px` — на 37% и 11%, `1024px` — на 13% и 23%, `1199px` — только как 31% от `max-width`, `1200px` — на 40% и 19%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=502128948&format=interactive",
   sheets_gid="1070028321",
   sql_file="media_query_values.sql"
 ) }}
 
-Pixels are very much the unit that is used for breakpoints. There are a few instances of `em`s a long way down the list, however setting breakpoints in pixels appears to be the popular choice. There are probably many reasons for this. Legacy: all of the early articles on responsive design use pixels, and many people still think about targeting particular devices when creating responsive designs. Sizing: <a hreflang="en" href="https://zellwk.com/blog/media-query-units/">using `em`s</a> involves considering the size of the content rather than the device, and this is a newer way of thinking about web design, perhaps one yet to fully be taken advantage of along with intrinsic sizing methods for layout.
+Пиксели — самая частая единица измерения, применяемая для контрольных точек. Есть несколько появлений `em` во всём списке, однако указание контрольных точек в пикселях, по-видимому, является популярным выбором. Вероятно, для этого есть много причин. Легаси: все ранние статьи про адаптивный дизайн используют пиксели, и многие люди всё ещё думают про завязывание на конкретные устройства при создании адаптивных дизайнов. Размеры: <a hreflang="en" href="https://zellwk.com/blog/media-query-units/">использование `em`</a> учитывает размер контента, а не устройства, и это более новый способ мышления про веб-дизайн — возможно, ещё один, позволяющий полностью воспользоваться преимуществами методов задания внутренних размеров для раскладки.
 
 ### Свойства внутри медиавыражений {properties-used-inside-media-queries}
 
-On mobile devices 79% and on desktop 77% of media queries are used to change the `display` property. Perhaps indicating that people are testing before switching to a Flex or Grid formatting context. Again, this may be linked frameworks, for example the <a hreflang="en" href="https://getbootstrap.com/docs/4.1/utilities/display/">Bootstrap responsive utilities</a>. 78% of authors change the `width` property inside media queries, `margin`, `padding` and `font-size` all rank highly for changed properties.
+На мобильных устройствах 79% и на десктопах 77% медиавыражений используются для изменения свойства `display`. Возможно, указывая на то, что люди проводят тесты перед переключением на контекст форматирования гридов или флексов. Опять же, это может быть связано с фреймворками, например, <a hreflang="en" href="https://getbootstrap.com/docs/4.1/Utivilites/display/">с утилитами отзывчивости в Bootstrap</a>. 78% авторов изменяют свойство `width` внутри медиавыражений, `margin`, `padding` и `font-size` также высоко в рейтинге изменяемых свойств.
 
 {{ figure_markup(
   image="media-query-properties.png",
-  caption="The most popular properties used in media queries as a percent of pages.",
-  description="Bar chart of the most popular properties used in media queries as a percent of pages. Desktop and mobile are very similar. The percent of mobile pages ranges from 79% to 71% for `display`, `width`, `margin-left`, `padding`, `font-size`, `height`, `margin`, `margin-right`, `margin-top`, and `position`, in that order.",
+  caption="Самые популярные свойства, используемые в медиавыражениях, как процент страниц.",
+  description="Гистограмма показывает самые популярные свойства, используемые в медиавыражениях, как процент страниц. Десктопы и мобильные очень похожи. Процент мобильных страниц варьируется от 79% до 71% для `display`, `width`, `margin-left`, `padding`, `font-size`, `height`, `margin`, `margin-right`, `margin-top` и `position`, в таком порядке.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1199544976&format=interactive",
   sheets_gid="190367365",
   sql_file="media_query_properties.sql"
