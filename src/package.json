@@ -42,7 +42,7 @@
     "rainbow-code": "2.1.7",
     "recursive-readdir": "2.2.2",
     "run-script-os": "1.1.6",
-    "showdown": "1.9.1",
+    "showdown": "^1.9.0",
     "smartypants": "0.1.6",
     "web-vitals": "2.1.1",
     "xml-js": "1.6.11"
