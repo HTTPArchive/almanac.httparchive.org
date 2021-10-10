@@ -29,7 +29,7 @@ SELECT
   text,
   COUNT(0) AS number_of_websites_with_text,
   total_websites,
-  COUNT(0) / ANY_VALUE(total_websites) AS pct_websites_with_text
+  COUNT(0) / total_websites AS pct_websites_with_text
 FROM
   privacy_link_texts
 JOIN

@@ -20,7 +20,7 @@ SELECT
   LOWER(JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.iab_tcf_v2.data.publisherCC")) AS publisherCC,
   COUNT(0) AS number_of_websites,
   total_websites,
-  COUNT(0) / ANY_VALUE(total_websites) AS pct_websites
+  COUNT(0) / total_websites AS pct_websites
 FROM
   `httparchive.pages.2021_07_01_*`
 JOIN

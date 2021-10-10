@@ -50,7 +50,7 @@ SELECT
   COALESCE(entire_document_policy_header, entire_document_policy_meta) AS entire_document_policy,
   COUNT(0) AS number_of_websites_with_values,
   total_websites,
-  COUNT(0) / ANY_VALUE(total_websites) AS pct_websites_with_values
+  COUNT(0) / total_websites AS pct_websites_with_values
 FROM
   referrer_policy_custom_metrics
 FULL OUTER JOIN

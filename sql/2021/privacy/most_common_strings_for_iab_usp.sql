@@ -19,8 +19,8 @@ SELECT
     "$.iab_usp.privacy_string.uspString"
   ) AS uspString,
   COUNT(0) AS nb_websites,
-  ANY_VALUE(total_websites) AS total_websites,
-  COUNT(0) / ANY_VALUE(total_websites) AS pct_websites
+  total_websites,
+  COUNT(0) / total_websites AS pct_websites
 FROM
   `httparchive.pages.2021_07_01_*`
 JOIN totals USING (_TABLE_SUFFIX)
@@ -31,6 +31,7 @@ WHERE
   ) IS NOT NULL
 GROUP BY
   client,
+  total_websites,
   uspString
 ORDER BY
   client,

@@ -49,7 +49,7 @@ cookies AS (
     client,
     domain,
     COUNT(DISTINCT page) AS websites_count,
-    COUNT(DISTINCT page) / ANY_VALUE(websites_per_client) AS pct_websites
+    COUNT(DISTINCT page) / websites_per_client AS pct_websites
   FROM request_headers,
     UNNEST(cookie_names) AS cookie
   WHERE
@@ -57,7 +57,8 @@ cookies AS (
     cookie != ""
   GROUP BY
     client,
-    domain
+    domain,
+    websites_per_client
 )
 
 SELECT

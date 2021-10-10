@@ -51,7 +51,7 @@ cookies AS (
     request,
     cookie,
     COUNT(DISTINCT page) AS websites_count,
-    COUNT(DISTINCT page) / ANY_VALUE(websites_per_client) AS pct_websites
+    COUNT(DISTINCT page) / websites_per_client AS pct_websites
   FROM
     request_headers,
     UNNEST(cookie_names) AS cookie
@@ -61,7 +61,8 @@ cookies AS (
   GROUP BY
     client,
     request,
-    cookie
+    cookie,
+    websites_per_client
 )
 
 SELECT

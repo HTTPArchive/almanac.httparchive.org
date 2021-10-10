@@ -28,7 +28,7 @@ SELECT
   keyword,
   COUNT(0) AS number_of_websites_with_keyword,
   total_websites,
-  COUNT(0) / ANY_VALUE(total_websites) AS pct_websites_with_keyword
+  COUNT(0) / total_websites AS pct_websites_with_keyword
 FROM
   privacy_link_keywords
 JOIN

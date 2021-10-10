@@ -57,7 +57,7 @@ SELECT
   rank_grouping,
   COUNT(DISTINCT page) AS number_of_websites,
   total_websites,
-  COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS pct_websites
+  COUNT(DISTINCT page) / total_websites AS pct_websites
 FROM
   response_headers
 FULL OUTER JOIN

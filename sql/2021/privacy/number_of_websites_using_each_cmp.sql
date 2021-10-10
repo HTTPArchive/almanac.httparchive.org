@@ -16,9 +16,9 @@ WITH totals AS (
 SELECT
   _TABLE_SUFFIX AS client,
   app,
-  ANY_VALUE(total_websites) AS total_websites,
+  total_websites AS total_websites,
   COUNT(DISTINCT url) AS number_of_websites,
-  COUNT(DISTINCT url) / ANY_VALUE(total_websites) AS percent_of_websites
+  COUNT(DISTINCT url) / total_websites AS percent_of_websites
 FROM
   `httparchive.technologies.2021_07_01_*`
 JOIN totals USING (_TABLE_SUFFIX)
@@ -27,6 +27,7 @@ WHERE
   app != ""
 GROUP BY
   client,
+  total_websites,
   app
 ORDER BY
   client,

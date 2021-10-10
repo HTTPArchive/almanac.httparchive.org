@@ -13,15 +13,16 @@ WITH totals AS (
 
 SELECT
   _TABLE_SUFFIX AS client,
-  ANY_VALUE(total_websites) AS total_websites,
+  total_websites AS total_websites,
   COUNT(0) AS number_of_websites, -- crawled sites containing at least one origin trial
-  COUNT(0) / ANY_VALUE(total_websites) AS percent_of_websites
+  COUNT(0) / total_websites AS percent_of_websites
 FROM
   `httparchive.pages.2021_07_01_*`
 JOIN totals USING (_TABLE_SUFFIX)
 WHERE
   JSON_VALUE(payload, '$._well-known."/.well-known/gpc.json".found') = "true"
 GROUP BY
-  client
+  client,
+  total_websites
 ORDER BY
   client

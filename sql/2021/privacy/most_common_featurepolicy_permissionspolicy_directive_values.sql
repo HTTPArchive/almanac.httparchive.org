@@ -129,7 +129,7 @@ SELECT
   TRIM(origin) AS origin,
   COUNT(DISTINCT page) AS number_of_websites_with_directive,
   total_websites,
-  COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS pct_websites_with_directive
+  COUNT(DISTINCT page) / total_websites AS pct_websites_with_directive
 FROM
   (
     SELECT DISTINCT * FROM (

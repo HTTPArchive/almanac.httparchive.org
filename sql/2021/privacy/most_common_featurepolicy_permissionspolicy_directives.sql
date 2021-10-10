@@ -147,7 +147,7 @@ SELECT
   directive,
   COUNT(DISTINCT page) AS number_of_websites_with_directive,
   total_websites,
-  COUNT(DISTINCT page) / ANY_VALUE(total_websites) AS pct_websites_with_directive
+  COUNT(DISTINCT page) / total_websites AS pct_websites_with_directive
 FROM
   site_directives,
   UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
