@@ -22,7 +22,6 @@ try {
 return result;
 ''';
 
-
 SELECT
   client,
   user_agent,
