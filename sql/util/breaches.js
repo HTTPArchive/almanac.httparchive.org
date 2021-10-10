@@ -16,7 +16,7 @@ fs.readFile("breaches", function(err, data) {
 
     for (var i in breaches) {
     	console.log(
-								 almanacDate
+    		almanacDate
     		+ '\t' + breaches[i].Name
     		+ '\t' + breaches[i].Title 
     		+ '\t' + breaches[i].Domain 
