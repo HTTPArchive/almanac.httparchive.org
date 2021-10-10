@@ -2,13 +2,7 @@
 # Anchor same site occurance stats
 # this query aims to highlight sites with few same site links, like SPAs
 
-# helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
-  ROUND(SAFE_DIVIDE(freq, total), 4)
-);
-
-# returns all the data we need from _wpt_bodies
-CREATE TEMPORARY FUNCTION get_wpt_bodies_info(wpt_bodies_string STRING)
+CREATE TEMPORARY FUNCTION getLinkDesciptionsWptBodies(wpt_bodies_string STRING)
 RETURNS STRUCT<
   links_same_site INT64,
   links_window_location INT64,
@@ -43,7 +37,7 @@ SELECT
 
   COUNT(0) AS pages,
 
-  AS_PERCENT(COUNT(0), total) AS pct_links_same_site,
+  SAFE_DIVIDE(COUNT(0), total) AS pct_links_same_site,
 
   AVG(wpt_bodies_info.links_window_location) AS avg_links_window_location,
   AVG(wpt_bodies_info.links_window_open) AS avg_links_window_open,
@@ -54,7 +48,7 @@ FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     total,
-    get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
+    getLinkDesciptionsWptBodies(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
   FROM
     `httparchive.pages.2021_07_01_*`
   JOIN (
