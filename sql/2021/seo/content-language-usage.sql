@@ -53,6 +53,12 @@ FROM
     USING (_TABLE_SUFFIX)
   ),
   UNNEST(content_languages) AS content_language
-GROUP BY total, content_language, client
-ORDER BY count DESC
+GROUP BY
+  total,
+  content_language,
+  client
+ORDER BY
+  count DESC,
+  content_language,
+  client DESC,
 LIMIT 1000
