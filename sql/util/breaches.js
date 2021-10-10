@@ -11,7 +11,7 @@ fs.readFile("breaches", function(err, data) {
     if (err) throw err;
     const breaches = JSON.parse(data);
     
-    	console.log('date\tName\tTitle\tDomain\tBreachDate\tAddedDate\tModifiedDate\tPwnCount\tDescription\t'
+    console.log('date\tName\tTitle\tDomain\tBreachDate\tAddedDate\tModifiedDate\tPwnCount\tDescription\t'
     						+ 'LogoPath\tIsVerified\tIsFabricated\tIsSensitive\tIsRetired\tIsSpamList\tDataClasses');
 
     for (var i in breaches) {
