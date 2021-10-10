@@ -39,7 +39,7 @@ SELECT
   COUNT(DISTINCT page) AS pages,
   APPROX_QUANTILES(outgoing_link_metrics.same_site, 1000)[OFFSET(percentile * 10)] AS outgoing_links_same_site,
   APPROX_QUANTILES(outgoing_link_metrics.same_property, 1000)[OFFSET(percentile * 10)] AS outgoing_links_same_property,
-  APPROX_QUANTILES(outgoing_link_metrics.other_property, 1000)[OFFSET(percentile * 10)] AS outgoing_other_property
+  APPROX_QUANTILES(outgoing_link_metrics.other_property, 1000)[OFFSET(percentile * 10)] AS outgoing_links_other_property
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
