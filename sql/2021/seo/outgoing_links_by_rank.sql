@@ -46,7 +46,8 @@ FROM (
     url AS page,
     getOutgoingLinkMetrics(payload) AS outgoing_link_metrics
   FROM
-    `httparchive.pages.2021_07_01_*`),
+    `httparchive.pages.2021_07_01_*`
+),
 UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 LEFT JOIN (
   SELECT
