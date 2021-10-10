@@ -53,5 +53,11 @@ FROM
     USING (_TABLE_SUFFIX)
   ),
   UNNEST(wpt_bodies_info.rel) AS rel
-GROUP BY total, rel, client
-ORDER BY count DESC
+GROUP BY
+  total,
+  rel,
+  client
+ORDER BY
+  count DESC,
+  rel,
+  client DESC
