@@ -50,13 +50,13 @@ total_nb_pages AS (
 
 SELECT
   client,
-  MIN(total_nb_pages.total_nb_pages) AS total,
+  total_nb_pages AS total,
   COUNTIF(robots_content IS NOT NULL OR robot_header_value IS NOT NULL) AS count_robots,
   COUNTIF(robots_content IS NOT NULL OR robot_header_value IS NOT NULL) / MIN(total_nb_pages.total_nb_pages) AS pct_robots,
   COUNT(robots_content) AS count_robots_content,
-  COUNT(robots_content) / MIN(total_nb_pages.total_nb_pages) AS pct_robots_content,
+  COUNT(robots_content) / total_nb_pages AS pct_robots_content,
   COUNT(robot_header_value) AS count_robot_header_value,
-  COUNT(robot_header_value) / MIN(total_nb_pages.total_nb_pages) AS pct_robot_header_value,
+  COUNT(robot_header_value) / total_nb_pages AS pct_robot_header_value,
   COUNTIF(REGEXP_CONTAINS(robots_content, r'.*noindex.*') OR REGEXP_CONTAINS(robot_header_value, r'.*noindex.*')) AS count_noindex,
   COUNTIF(REGEXP_CONTAINS(robots_content, r'.*noindex.*') OR REGEXP_CONTAINS(robot_header_value, r'.*noindex.*')) / COUNTIF(robots_content IS NOT NULL OR robot_header_value IS NOT NULL) AS pct_noindex,
   COUNTIF(REGEXP_CONTAINS(robots_content, r'.*nofollow.*') OR REGEXP_CONTAINS(robot_header_value, r'.*nofollow.*')) AS count_nofollow,
@@ -66,8 +66,12 @@ SELECT
   COUNTIF(REGEXP_CONTAINS(robots_content, r'.*noarchive.*') OR REGEXP_CONTAINS(robot_header_value, r'.*noarchive.*')) AS count_noarchive,
   COUNTIF(REGEXP_CONTAINS(robots_content, r'.*noarchive.*') OR REGEXP_CONTAINS(robot_header_value, r'.*noarchive.*')) / COUNTIF(robots_content IS NOT NULL OR robot_header_value IS NOT NULL) AS pct_noarchive
 FROM
-  meta_tags FULL OUTER JOIN robot_headers USING (client, page) JOIN total_nb_pages USING (client)
+  meta_tags FULL OUTER JOIN robot_headers USING (client, page)
+JOIN
+  total_nb_pages
+USING (client)
 GROUP BY
-  client
+  client,
+  total_nb_pages
 ORDER BY
   client
