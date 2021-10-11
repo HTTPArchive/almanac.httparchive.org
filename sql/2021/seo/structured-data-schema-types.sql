@@ -29,24 +29,27 @@ SELECT
   type,
   total,
   COUNT(0) AS count,
-  SAFE_DIVIDE(COUNT(0), total) AS pct
-
-FROM
-  (
+  SAFE_DIVIDE(COUNT(0),
+    total) AS pct
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    total,
+    getStructuredSchemaWptBodies(JSON_EXTRACT_SCALAR(payload,
+        '$._wpt_bodies')) AS structured_schema_wpt_bodies_info
+  FROM
+    `httparchive.pages.2021_07_01_*`
+  JOIN (
     SELECT
-      _TABLE_SUFFIX AS client,
-      total,
-      getStructuredSchemaWptBodies(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS structured_schema_wpt_bodies_info
+      _TABLE_SUFFIX,
+      COUNT(0) AS total
     FROM
       `httparchive.pages.2021_07_01_*`
-    JOIN
-      ( SELECT _TABLE_SUFFIX, COUNT(0) AS total
-        FROM
-          `httparchive.pages.2021_07_01_*`
-        GROUP BY
-          _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
-    USING (_TABLE_SUFFIX)
-  ), UNNEST(structured_schema_wpt_bodies_info.jsonld_and_microdata_types) AS type
+    GROUP BY
+      _TABLE_SUFFIX) # TO get an accurate total OF pages per device. also seems fast
+  USING
+    (_TABLE_SUFFIX) ),
+  UNNEST(structured_schema_wpt_bodies_info.jsonld_and_microdata_types) AS type
 GROUP BY
   total,
   type,
