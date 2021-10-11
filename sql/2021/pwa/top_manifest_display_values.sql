@@ -27,7 +27,7 @@ WHERE
   JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
 GROUP BY
   client,
-  display -- noqa: PRS
+  display
 QUALIFY
   display IS NOT NULL AND
   freq > 100
@@ -45,7 +45,7 @@ WHERE
   JSON_EXTRACT(payload, '$._pwa.manifests') != "[]"
 GROUP BY
   client,
-  display -- noqa: PRS
+  display
 QUALIFY
   display IS NOT NULL AND
   freq > 100

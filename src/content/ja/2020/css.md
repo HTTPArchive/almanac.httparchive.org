@@ -135,7 +135,7 @@ CSSには、クラスやID、スタイルの重複を避けるために重要な
 
 IDは、意図的に特異度を下げたり、上げたりするために使うこともできます。<a hreflang="en" href="https://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/">IDセレクタを属性セレクタとして書くという特異性ハック</a>（特異性を減らすために`#foo`の代わりに`[id="foo"]`を使う）は驚くほど珍しく、少なくとも一度は0.3%のページでしか使われていませんでした。もうひとつのID関連の特異性ハックは、`.foo`の代わりに`:not(#nonexistent) .foo`のような否定＋子孫セレクターを使って特異性を高めるというものですが、これも非常に稀で、0.1%のページでしか使われていませんでした。
 
-###`!important`{important}
+### `!important`{important}
 
 代わりに、古くて粗雑な`!important`は、その<a hreflang="en" href="https://www.impressivewebs.com/everything-you-need-to-know-about-the-important-css-declaration/#post-475:~:text=Drawbacks,-to">よく知られた欠点</a>にもかかわらず、まだかなり使われています。中央値のページでは、宣言のほぼ2％、つまり50分の1で`!important`が使用されています。
 
@@ -1139,7 +1139,7 @@ CSSはまた、デザイナーに少量のコードでアクセスできるブ�
 
 ### フィルター
 
-フィルターの採用率は依然として高く、`filter`プロパティは79.43%のページに登場しています。最初これは非常に刺激的でしたが、その多くは同じプロパティ名を共有していた古い[IE DX filters](https://developer.mozilla.org/en-US/docs/Archive/Web/CSS/-ms-filter)である可能性が高いです。Blinkが認識する有効なCSSフィルターのみを考慮した場合、使用率はモバイルで22%、デスクトップで20%にまで低下し、`blur()`が最も人気のあるフィルタタイプで、4%のページに表示されています。
+フィルターの採用率は依然として高く、`filter`プロパティは79.43%のページに登場しています。最初これは非常に刺激的でしたが、その多くは同じプロパティ名を共有していた古いIE DX filters (`-ms-filter`)である可能性が高いです。Blinkが認識する有効なCSSフィルターのみを考慮した場合、使用率はモバイルで22%、デスクトップで20%にまで低下し、`blur()`が最も人気のあるフィルタタイプで、4%のページに表示されています。
 
 これは、半透明の背景のコントラストを改善したり、多くのネイティブUIでおなじみのエレガントな<a hreflang="en" href="https://css-tricks.com/backdrop-filter-effect-with-css/">"すりガラス"効果</a>を作り出すのに非常に便利です。`フィルター`ほど人気があるわけではありませんが、ページの6%で`backdrop-filter`が見つかりました。
 
