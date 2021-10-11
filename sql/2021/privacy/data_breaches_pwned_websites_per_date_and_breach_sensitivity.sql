@@ -12,8 +12,8 @@ SELECT
 FROM
   `httparchive.almanac.breaches`
 WHERE
-  date = '2021-07-01'
-  AND BreachDate BETWEEN '2020-08-01' AND '2021-08-01'
+  date = '2021-07-01' AND
+  BreachDate BETWEEN '2020-08-01' AND '2021-08-01'
 GROUP BY
   breach_date,
   sensitivity

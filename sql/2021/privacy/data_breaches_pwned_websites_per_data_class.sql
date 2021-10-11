@@ -11,8 +11,8 @@ FROM
   `httparchive.almanac.breaches`,
   UNNEST(JSON_VALUE_ARRAY(DataClasses)) AS data_class
 WHERE
-  date = '2021-07-01'
-  AND BreachDate BETWEEN '2020-08-01' AND '2021-08-01'
+  date = '2021-07-01' AND
+  BreachDate BETWEEN '2020-08-01' AND '2021-08-01'
 GROUP BY
   data_class
 ORDER BY
