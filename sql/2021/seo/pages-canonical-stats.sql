@@ -120,9 +120,6 @@ SELECT
   COUNT(0) AS total,
   canonical_metrics.js_error AS js_error,
 
-  # Pages with wpt bodies
-  SAFE_DIVIDE(COUNTIF(canonical_metrics.has_wpt_bodies), COUNT(0)) AS pct_has_wpt_bodies,
-
   # Pages with canonical
   SAFE_DIVIDE(COUNTIF(canonical_metrics.has_canonicals), COUNT(0)) AS pct_has_canonical,
 
