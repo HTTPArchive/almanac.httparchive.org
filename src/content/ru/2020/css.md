@@ -1289,26 +1289,26 @@ CSS также предлагает огромное разнообразие в
 
 ## CSS и JS {css-and-js}
 
-The last few years has seen a greater interaction between CSS and JavaScript, beyond the simple setting of CSS classes and styles or off. So how much are we using technologies like Houdini and techniques like CSS-in-JS?
+В последние несколько лет наблюдается большее взаимодействие между CSS и JavaScript, чем простое указание CSS-классов и стилей или их выключение. Итак, как много мы используем такие технологии, как Houdini, и такие техники, как CSS-in-JS?
 
 ### <span lang="en">Houdini</span> {houdini}
 
-You have likely heard of [Houdini](https://developer.mozilla.org/en-US/docs/Web/Houdini) by now. Houdini is a set of low-level APIs that exposes parts of the CSS engine, giving developers the power to extend CSS by hooking into the styling and layout process of a browser's rendering engine. Since <a hreflang="en" href="https://ishoudinireadyyet.com/">several Houdini specs have shipped in browsers</a>, we figured it is time to see if they are actually used in the wild yet. Short answer: no. And now for the longer answer…
+Вероятно, вы уже слышали о [Houdini](https://developer.mozilla.org/en-US/docs/Web/Houdini). Houdini — это набор низкоуровневых API, которые раскрывают части движка CSS, давая разработчикам возможность расширять CSS, подключаясь к процессам стилизации и компоновки в движке рендеринга браузера. Поскольку <a hreflang="en" href="https://ishoudinireadyyet.com/">несколько спецификаций Houdini уже добавлены в браузеры</a>, мы решили, что пора проверить, действительно ли они применяются на практике. Короткий ответ: нет. А теперь более подробный ответ…
 
-First, we looked at the [Properties & Values API](https://developer.mozilla.org/en-US/docs/Web/API/CSS/RegisterProperty), which allows developers to register a custom property and give it a type, an initial value, and prevent it from being inherited. One of the primary use cases is being able to animate custom properties, so we also looked at how frequently custom properties are being animated.
+Сначала мы рассмотрели [Properties & Values API](https://developer.mozilla.org/en-US/docs/Web/API/CSS/RegisterProperty), который позволяет разработчикам зарегистрировать кастомное свойство и задать ему тип, начальное значение и предотвратить его наследование. Одним из основных вариантов использования является возможность анимировать кастомные свойства, поэтому мы также посмотрели, как часто анимируются кастомные свойства.
 
-As is common with bleeding edge tech, especially when not supported in all browsers, adoption in the wild has been extremely low. Only 32 desktop and 20 mobile pages were found to have any registered custom properties, though this excludes custom properties that were registered but were not being applied at the time of the crawl. Only 325 mobile pages and 330 desktop ones (0.00%) use custom properties in animations, and most (74%) of that seems to be driven by a <a hreflang="en" href="https://quasar.dev/vue-components/expansion-item">Vue component</a>. Virtually none of those appear to have registered them, though this is likely because the animation wasn't active at the time of the crawl, so there was no computed style needing to be registered.
+Как это часто бывает с передовыми технологиями, особенно когда они не поддерживаются во всех браузерах, применение в дикой природе было чрезвычайно низким. Было обнаружено, что только 32 десктопные страницы и 20 мобильных страниц имеют какие-либо зарегистрированные кастомные свойства, хотя это не включает кастомные свойства, которые были зарегистрированы, но не применялись во время сканирования. Только 325 мобильных страниц и 330 десктопных страниц (0,00%) используют кастомные свойства в анимации, и большая часть (74%) из них, похоже, привнесена <a hreflang="en" href="https://quasar.dev/vue-components/expansion-item">Vue-компонентом</a>. Практически никакие из них, похоже, не зарегистрированы, хотя, это может быть связано с тем, что анимация не была активна во время краулинга, поэтому не нужно было регистрировать вычисляемый стиль.
 
-The [Paint API](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_API) is a more broadly implemented Houdini spec which allows developers to create custom CSS functions that return `<image>` values, e.g. to implement custom gradients or patterns. Only 12 pages were found to be using `paint()`. Each worklet name (`hexagon`, `ruler`, `lozenge`, `image-cross`, `grid`, `dashed-line`, `ripple`) only appeared on one page each, so it appears the only in-the-wild use cases were likely demos.
+[Paint API](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_API) — более широко реализованная спецификация Houdini, которая позволяет разработчикам создавать кастомные CSS-функции, возвращающие значения `<image>`, например, для реализации кастомных градиентов или шаблонов. Было обнаружено, что всего 12 страниц использовали `paint()`. Имя каждого ворклета (`hexagon`, `ruler`, `lozenge`, `image-cross`, `grid`, `dashed-line`, `ripple`) появлялось всего на одной странице каждое, поэтому, скорее всего, единсветнные случаи применения в дикой природе — демки.
 
-<a hreflang="en" href="https://github.com/w3c/css-houdini-drafts/blob/master/css-typed-om/README.md">Typed OM</a>, another Houdini specification, allows access to structured values instead of the strings of the classic CSS OM. It appears to have considerably higher adoption compared to other Houdini specs, though still low overall. It is used in 9,864 desktop pages (0.18%) and 6,391 mobile ones (0.1%). While this may seem low, to put it in perspective, these are similar numbers to the adoption of `<input type="date">`! Note that unlike most stats in this chapter, these numbers reflect actual usage, and not just inclusion in a website's assets.
+<a hreflang="en" href="https://github.com/w3c/css-houdini-drafts/blob/master/css-typed-om/README.md">Typed OM</a>, ещё одна спецификация Houdini, позволяет получить доступ к структурированным значениям вместо строк в классическом CSS OM. Похоже, что этот API имеет значительно более широкое распространение по сравнению с другими спецификациями Houdini, хотя оно в целом всё ещё остается низким. Typed OM используется на 9 864 десктопных страницах (0,18%) и 6 391 мобильной (0,1%). Хотя эти значения могут показаться низкими, для сравнения, эти числа аналогичны применению `<input type="date">`! Обратите внимание, что в отличие от большинства статистических данных в этой главе, эти числа отражают фактическое применение, а не только включение в ассеты веб-сайта.
 
 ### <span lang="en">CSS-in-JS</span> {css-in-js}
 
-There is so much discussion (or argument) about CSS-in-JS that one could assume everyone and their dog is using it.
+По поводу CSS-in-JS ведётся так много дискуссий (или споров), что можно предположить, что все, кому не лень, применяют его.
 
 {{ figure_markup(
-  caption="The percentage of sites using any CSS-in-JS method.",
+  caption="Процент сайтов, использующих какую-либо технику CSS-in-JS.",
   content="2%",
   classes="big-number",
   sheets_gid="1368222498",
@@ -1316,12 +1316,12 @@ There is so much discussion (or argument) about CSS-in-JS that one could assume 
 )
 }}
 
-However, when we looked at usage of various CSS-in-JS libraries, it turned out that only about 2% of websites use any CSS-in-JS method, with <a hreflang="en" href="https://styled-components.com/">Styled Components</a> accounting for almost half of that.
+Тем не менее, когда мы посмотрели на использование различных CSS-in-JS-библиотек, оказалось, что всего около 2% веб-сайтов используют какую-либо технику CSS-in-JS, причём <a hreflang="en" href="https://styled-components.com/">Styled Components</a> составляют почти половину от этого.
 
 {{ figure_markup(
   image="css-in-js.png",
-  caption="Relative popularity of CSS-in-JS libraries as a percent of occurrences on mobile pages.",
-  description="Pie chart of the relative popularity of CSS-in-JS libraries as a percent of occurrences on mobile pages. Styled Components makes up 42% of occurrences on mobile pages, followed by Emotion at 30%, Aphrodite at 9%, React JSS at 8%, Glamor at 7%, Styled Jsx at 2%, and the rest having less than 1% of occurrences: Radium, React Native for Web, Goober, Merge Styles, Styletron, and Fela.",
+  caption="Относительная популярность библиотек CSS-in-JS как процент появлений на мобильных страницах.",
+  description="Круговая диаграмма показывает относительную популярность библиотек CSS-in-JS как процент появлений на мобильных страницах. Styled Components составляют 42% появлений на мобильных страницах, следом Emotion — 30%, Aphrodite — 9%, React JSS — 8%, Glamor — 7%, Styled Jsx — 2%, остальные имеют меньше 1% от появлений: Radium, React Native for Web, Goober, Merge Styles, Styletron и Fela.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=969014374&format=interactive",
   sheets_gid="1368222498",
   sql_file="css_in_js.sql"
