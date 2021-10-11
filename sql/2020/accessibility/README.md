@@ -1,3 +1,5 @@
+# Accessibility queries
+
 ## Files and their purpose
 
 ### [pages_with_longest_alts.sql](./pages_with_longest_alts.sql)

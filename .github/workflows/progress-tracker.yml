@@ -18,7 +18,7 @@ jobs:
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/github-script@v4.1
+      - uses: actions/github-script@v5
         if: github.event_name == 'workflow_dispatch' || contains(github.event.issue.labels.*.name, env.FILTER_LABEL)
         with:
           script: |
@@ -58,7 +58,7 @@ jobs:
               return items
             }
 
-            const progressIssue = await github.issues.get({
+            const progressIssue = await github.rest.issues.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: trackerIssueNumber
@@ -156,7 +156,7 @@ jobs:
               return `${chapter.number ? `<span title="Part: ${chapter.part}, Chapter: ${chapter.number}">${chapter.number}</span>. ` : ''}[${chapter.title}](${chapter.url}) | ${formatLinks(chapter.links)} | ${formatTeam(chapter.team)} | ${chapter.tasks.join(' | ')}`
             }
 
-            const taskIssues = await github.paginate(github.issues.listForRepo, {
+            const taskIssues = await github.paginate(github.rest.issues.listForRepo, {
               owner: context.repo.owner,
               repo: context.repo.repo,
               direction: 'asc',
@@ -227,7 +227,7 @@ jobs:
               return `### ${team} (${Object.keys(members).length})\n\n${memberList}`
             }).join('\n\n')
 
-            github.issues.update({
+            github.rest.issues.update({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: trackerIssueNumber,
