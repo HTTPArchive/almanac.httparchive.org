@@ -58,6 +58,6 @@ FROM
   ),
   UNNEST(loading_property_markup_info.loading) AS loading
 GROUP BY 
-total, 
-loading, 
-client
+  total,
+  loading,
+  client
