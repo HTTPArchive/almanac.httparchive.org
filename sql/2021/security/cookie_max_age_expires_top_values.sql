@@ -47,9 +47,9 @@ expires_values AS (
     UNNEST(JSON_QUERY_ARRAY(getCookieAgeValues(response_headers, startedDateTime), "$.expires")) AS expires_value
   WHERE
     date = "2021-07-01"
-)
+),
 
-(
+max_age AS (
   SELECT
     client,
     "max-age" AS type,
@@ -77,9 +77,9 @@ expires_values AS (
   ORDER BY
     freq DESC
   LIMIT 50
-)
-UNION ALL
-(
+),
+
+expires AS (
   SELECT
     client,
     "expires" AS type,
@@ -108,6 +108,14 @@ UNION ALL
     freq DESC
   LIMIT 50
 )
+
+SELECT *
+FROM
+  max_age
+UNION ALL
+SELECT *
+FROM
+  expires
 ORDER BY
   client,
   type,
