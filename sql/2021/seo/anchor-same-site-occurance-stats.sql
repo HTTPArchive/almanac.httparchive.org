@@ -2,6 +2,8 @@
 # Anchor same site occurance stats
 # this query aims to highlight sites with few same site links, like SPAs
 
+# TODO: this query may tell a better story if we use quantiles for links_same_site as that would allow us to truly compare low-a-linking sites verse high-a-linking sites.
+
 CREATE TEMPORARY FUNCTION getLinkDesciptionsWptBodies(wpt_bodies_string STRING)
 RETURNS STRUCT<
   links_same_site INT64,
