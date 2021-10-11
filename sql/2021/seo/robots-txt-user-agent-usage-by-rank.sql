@@ -47,7 +47,7 @@ LEFT JOIN (
       getRobotsTxtUserAgents(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_user_agent_info
     FROM
       `httparchive.pages.2021_07_01_*`),
-  UNNEST(robots_txt_user_agent_info.user_agents) AS user_agent
+UNNEST(robots_txt_user_agent_info.user_agents) AS user_agent
 
 )
 USING
