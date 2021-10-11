@@ -1139,7 +1139,7 @@ Last year, 8% of pages were using blend modes. This year, adoption has increased
 
 ### Filters
 
-Adoption of filters has remained high, with the `filter` property making an appearance in 79.43% of pages. While at first this was quite exciting, a lot of it is likely to be old [IE DX filters](https://developer.mozilla.org/en-US/docs/Archive/Web/CSS/-ms-filter), which shared the same property name. When we only took into account valid CSS filters that Blink recognizes, usage drops to 22% for mobile and 20% for desktop, with `blur()` being the most popular filter type, appearing in 4% of pages.
+Adoption of filters has remained high, with the `filter` property making an appearance in 79.43% of pages. While at first this was quite exciting, a lot of it is likely to be old IE DX filters (`-ms-filter`), which shared the same property name. When we only took into account valid CSS filters that Blink recognizes, usage drops to 22% for mobile and 20% for desktop, with `blur()` being the most popular filter type, appearing in 4% of pages.
 
 Another filter property, `backdrop-filter`, allows us to apply filters to only the area behind an element, which is incredibly useful for improving contrast on translucent backgrounds, and creating the elegant <a hreflang="en" href="https://css-tricks.com/backdrop-filter-effect-with-css/">"frosted glass" effect</a> we've come to know from many native UIs. While not nearly as popular as `filter`, we found `backdrop-filter` in 6% of pages.
 
