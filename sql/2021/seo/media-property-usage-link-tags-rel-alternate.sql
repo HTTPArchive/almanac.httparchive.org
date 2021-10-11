@@ -1,12 +1,8 @@
 #standardSQL
 # Media property usage of link tags with rel=alternate
 
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
-  ROUND(SAFE_DIVIDE(freq, total), 4)
-);
-
 # returns all the data we need from _almanac
-CREATE TEMPORARY FUNCTION get_almanac_info(almanac_string STRING)
+CREATE TEMPORARY FUNCTION getMediaPropertyAlmanacInfo(almanac_string STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js AS '''
 var result = [];
@@ -31,13 +27,13 @@ SELECT
   media,
   total,
   COUNT(0) AS count,
-  AS_PERCENT(COUNT(0), total) AS pct
+  SAFE_DIVIDE(COUNT(0), total) AS pct
 FROM
   (
     SELECT
       _TABLE_SUFFIX AS client,
       total,
-      get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
+      getMediaPropertyAlmanacInfo(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS media_property_almanac_info
     FROM
       `httparchive.pages.2021_07_01_*`
     JOIN
@@ -50,7 +46,11 @@ FROM
       )
     USING (_TABLE_SUFFIX)
   ),
-  UNNEST(almanac_info) AS media
-GROUP BY total, media, client
-ORDER BY count DESC
+  UNNEST(media_property_almanac_info) AS media
+GROUP BY 
+  total, 
+  media, 
+  client
+ORDER BY 
+  count DESC
 LIMIT 1000
