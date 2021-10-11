@@ -12,3 +12,5 @@ SELECT
   ROUND(SUM(instr.categories.local_var) / SUM(instr.total) * 1000) / 10 AS local_var_pct
 FROM
   `httparchive.almanac.wasm_stats`
+WHERE
+  date = '2021-09-01'

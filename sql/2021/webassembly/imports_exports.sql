@@ -12,6 +12,8 @@ SELECT
 FROM
   `httparchive.almanac.wasm_stats`,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+WHERE
+  date = '2021-09-01'
 GROUP BY
   percentile,
   client

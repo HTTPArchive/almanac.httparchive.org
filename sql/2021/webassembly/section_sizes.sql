@@ -8,5 +8,7 @@ SELECT
   ROUND(SUM(size.custom) / SUM(size.total) * 1000) / 10 AS custom_pct
 FROM
   `httparchive.almanac.wasm_stats`
+WHERE
+  date = '2021-09-01'
 GROUP BY
   client

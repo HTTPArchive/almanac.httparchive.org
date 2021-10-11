@@ -14,5 +14,7 @@ SELECT
   COUNTIF(instr.proposals.tail_calls > 0) AS proposals_tail_calls
 FROM
   `httparchive.almanac.wasm_stats`
+WHERE
+  date = '2021-09-01'
 GROUP BY
   client;

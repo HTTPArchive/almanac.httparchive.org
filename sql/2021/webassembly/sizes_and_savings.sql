@@ -17,6 +17,8 @@ FROM
       raw_size - size.total_opt_br AS raw_savings
     FROM
       `httparchive.almanac.wasm_stats`
+    WHERE
+      date = '2021-09-01'
   ),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
