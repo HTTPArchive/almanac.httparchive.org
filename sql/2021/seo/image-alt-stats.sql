@@ -46,13 +46,13 @@ SELECT
   APPROX_QUANTILES(markup_info.images_img_total, 1000)[OFFSET(percentile * 10)] AS img_count,
 
   # percent of images containg alt text (not blank)
-  ROUND(APPROX_QUANTILES(SAFE_DIVIDE(markup_info.images_with_alt_present, markup_info.images_img_total), 1000)[OFFSET(percentile * 10)], 4) AS images_with_alt_present_percent,
+  APPROX_QUANTILES(SAFE_DIVIDE(markup_info.images_with_alt_present, markup_info.images_img_total), 1000)[OFFSET(percentile * 10)] AS images_with_alt_present_percent,
 
   # percent of images containg a blank alt text
-  ROUND(APPROX_QUANTILES(SAFE_DIVIDE(markup_info.images_with_alt_blank, markup_info.images_img_total), 1000)[OFFSET(percentile * 10)], 4) AS images_with_alt_blank_percent,
+  APPROX_QUANTILES(SAFE_DIVIDE(markup_info.images_with_alt_blank, markup_info.images_img_total), 1000)[OFFSET(percentile * 10)] AS images_with_alt_blank_percent,
 
   # percent of images without an alt attribute
-  ROUND(APPROX_QUANTILES(SAFE_DIVIDE(markup_info.images_with_alt_missing, markup_info.images_img_total), 1000)[OFFSET(percentile * 10)], 4) AS images_with_alt_missing_percent,
+  APPROX_QUANTILES(SAFE_DIVIDE(markup_info.images_with_alt_missing, markup_info.images_img_total), 1000)[OFFSET(percentile * 10)] AS images_with_alt_missing_percent,
 
   # number of images containg alt text (not blank)
   APPROX_QUANTILES(markup_info.images_with_alt_present, 1000)[OFFSET(percentile * 10)] AS images_with_alt_present,
