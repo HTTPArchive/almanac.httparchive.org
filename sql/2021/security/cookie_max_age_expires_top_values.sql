@@ -47,16 +47,16 @@ expires_values AS (
     UNNEST(JSON_QUERY_ARRAY(getCookieAgeValues(response_headers, startedDateTime), "$.expires")) AS expires_value
   WHERE
     date = "2021-07-01"
-),
+)
 
-max_age AS (
+(
   SELECT
-    client AS max_age_client,
-    ROW_NUMBER() OVER (ORDER BY COUNT(0) DESC) AS row,
-    total_cookies_with_max_age,
-    COUNT(0) AS max_age_count,
-    COUNT(0) / total_cookies_with_max_age AS max_age_pct,
-    max_age_value
+    client,
+    "max-age" AS type,
+    total_cookies_with_max_age AS total,
+    COUNT(0) AS freq,
+    COUNT(0) / total_cookies_with_max_age AS pct,
+    max_age_value AS attribute_value
   FROM
     max_age_values
   JOIN
@@ -72,20 +72,21 @@ max_age AS (
   USING (client)
   GROUP BY
     client,
-    total_cookies_with_max_age,
-    max_age_value
+    total,
+    attribute_value
   ORDER BY
-    max_age_count DESC
-),
-
-expires AS (
+    freq DESC
+  LIMIT 50
+)
+UNION ALL
+(
   SELECT
-    client AS expires_client,
-    ROW_NUMBER() OVER (ORDER BY COUNT(0) DESC) AS row,
-    total_cookies_with_expires,
-    COUNT(0) AS expires_count,
-    COUNT(0) / total_cookies_with_expires AS expires_pct,
-    expires_value
+    client,
+    "expires" AS type,
+    total_cookies_with_expires AS total,
+    COUNT(0) AS freq,
+    COUNT(0) / total_cookies_with_expires AS pct,
+    expires_value AS attribute_value
   FROM
     expires_values
   JOIN
@@ -101,16 +102,13 @@ expires AS (
   USING (client)
   GROUP BY
     client,
-    total_cookies_with_expires,
-    expires_value
+    total,
+    attribute_value
   ORDER BY
-    expires_count DESC
+    freq DESC
+  LIMIT 50
 )
-
-SELECT
-  *
-FROM
-  max_age JOIN expires USING (row)
 ORDER BY
-  row
-LIMIT 100
+  client,
+  type,
+  freq DESC
