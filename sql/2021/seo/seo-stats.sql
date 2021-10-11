@@ -1,13 +1,10 @@
 #standardSQL
 # SEO stats
 
-# helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
-  ROUND(SAFE_DIVIDE(freq, total), 4)
-);
+# Note: Canonical metrics moved to pages-canonical-stats.sql.  Should be removed from here in 2022.
 
 # returns all the data we need from _wpt_bodies
-CREATE TEMPORARY FUNCTION get_wpt_bodies_info(wpt_bodies_string STRING)
+CREATE TEMPORARY FUNCTION getSeoStatsWptBodies(wpt_bodies_string STRING)
 RETURNS STRUCT<
 
   # tags
@@ -332,156 +329,156 @@ SELECT
   COUNT(0) AS total,
 
   # meta title inclusion
-  AS_PERCENT(COUNTIF(wpt_bodies_info.n_titles > 0), COUNT(0)) AS pct_has_title_tag,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.n_titles > 0), COUNT(0)) AS pct_has_title_tag,
 
   # meta description inclusion
-  AS_PERCENT(COUNTIF(wpt_bodies_info.n_meta_descriptions > 0), COUNT(0)) AS pct_has_meta_description,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.n_meta_descriptions > 0), COUNT(0)) AS pct_has_meta_description,
 
   # H1 inclusion
-  AS_PERCENT(COUNTIF(wpt_bodies_info.n_h1 > 0), COUNT(0)) AS pct_has_h1,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.n_h1 > 0), COUNT(0)) AS pct_has_h1,
 
   # H2 inclusion
-  AS_PERCENT(COUNTIF(wpt_bodies_info.n_h2 > 0), COUNT(0)) AS pct_has_h2,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.n_h2 > 0), COUNT(0)) AS pct_has_h2,
 
   # H3 inclusion
-  AS_PERCENT(COUNTIF(wpt_bodies_info.n_h3 > 0), COUNT(0)) AS pct_has_h3,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.n_h3 > 0), COUNT(0)) AS pct_has_h3,
 
   # H4 inclusion
-  AS_PERCENT(COUNTIF(wpt_bodies_info.n_h4 > 0), COUNT(0)) AS pct_has_h4,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.n_h4 > 0), COUNT(0)) AS pct_has_h4,
 
   # Non-empty H1 inclusion
-  AS_PERCENT(COUNTIF(wpt_bodies_info.n_non_empty_h1 > 0), COUNT(0)) AS pct_has_non_empty_h1,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.n_non_empty_h1 > 0), COUNT(0)) AS pct_has_non_empty_h1,
 
   # Non-empty H2 inclusion
-  AS_PERCENT(COUNTIF(wpt_bodies_info.n_non_empty_h2 > 0), COUNT(0)) AS pct_has_non_empty_h2,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.n_non_empty_h2 > 0), COUNT(0)) AS pct_has_non_empty_h2,
 
   # Non-empty H3 inclusion
-  AS_PERCENT(COUNTIF(wpt_bodies_info.n_non_empty_h3 > 0), COUNT(0)) AS pct_has_non_empty_h3,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.n_non_empty_h3 > 0), COUNT(0)) AS pct_has_non_empty_h3,
 
   # Non-empty H4 inclusion
-  AS_PERCENT(COUNTIF(wpt_bodies_info.n_non_empty_h4 > 0), COUNT(0)) AS pct_has_non_empty_h4,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.n_non_empty_h4 > 0), COUNT(0)) AS pct_has_non_empty_h4,
 
   # Same title and H1
-  AS_PERCENT(COUNTIF(wpt_bodies_info.has_same_h1_title ), COUNT(0)) AS pct_has_same_h1_title,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.has_same_h1_title ), COUNT(0)) AS pct_has_same_h1_title,
 
   # Meta Robots inclusion
-  AS_PERCENT(COUNTIF(wpt_bodies_info.robots_has_robots_meta_tag), COUNT(0)) AS pct_has_meta_robots,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.robots_has_robots_meta_tag), COUNT(0)) AS pct_has_meta_robots,
 
   # HTTP Header Robots inclusion
-  AS_PERCENT(COUNTIF(wpt_bodies_info.robots_has_x_robots_tag), COUNT(0)) AS pct_has_x_robots_tag,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.robots_has_x_robots_tag), COUNT(0)) AS pct_has_x_robots_tag,
 
   # Meta Robots and x-robots inclusion
-  AS_PERCENT(COUNTIF(wpt_bodies_info.robots_has_robots_meta_tag AND wpt_bodies_info.robots_has_x_robots_tag), COUNT(0)) AS pct_has_meta_robots_and_x_robots_tag,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.robots_has_robots_meta_tag AND wpt_bodies_info.robots_has_x_robots_tag), COUNT(0)) AS pct_has_meta_robots_and_x_robots_tag,
 
   # Rendering changed Robots
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendering_changed_robots_meta_tag), COUNT(0)) AS pct_rendering_changed_robots_meta_tag,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendering_changed_robots_meta_tag), COUNT(0)) AS pct_rendering_changed_robots_meta_tag,
 
   # Pages with canonical
-  AS_PERCENT(COUNTIF(wpt_bodies_info.has_canonicals), COUNT(0)) AS pct_has_canonical,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.has_canonicals), COUNT(0)) AS pct_has_canonical,
 
   # Pages with self-canonical
-  AS_PERCENT(COUNTIF(wpt_bodies_info.has_self_canonical), COUNT(0)) AS pct_has_self_canonical,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.has_self_canonical), COUNT(0)) AS pct_has_self_canonical,
 
   # Pages canonicalized
-  AS_PERCENT(COUNTIF(wpt_bodies_info.is_canonicalized), COUNT(0)) AS pct_is_canonicalized,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.is_canonicalized), COUNT(0)) AS pct_is_canonicalized,
 
   # Pages with canonical in HTTP header
-  AS_PERCENT(COUNTIF(wpt_bodies_info.has_http_canonical), COUNT(0)) AS pct_http_canonical,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.has_http_canonical), COUNT(0)) AS pct_http_canonical,
 
   # Pages with canonical in raw html
-  AS_PERCENT(COUNTIF(wpt_bodies_info.has_raw_canonical), COUNT(0)) AS pct_has_raw_canonical,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.has_raw_canonical), COUNT(0)) AS pct_has_raw_canonical,
 
   # Pages with canonical in rendered html
-  AS_PERCENT(COUNTIF(wpt_bodies_info.has_rendered_canonical), COUNT(0)) AS pct_has_rendered_canonical,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.has_rendered_canonical), COUNT(0)) AS pct_has_rendered_canonical,
 
   # Pages with canonical in rendered but not raw html
-  AS_PERCENT(COUNTIF(wpt_bodies_info.has_rendered_canonical AND NOT wpt_bodies_info.has_raw_canonical), COUNT(0)) AS pct_has_rendered_but_not_raw_canonical,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.has_rendered_canonical AND NOT wpt_bodies_info.has_raw_canonical), COUNT(0)) AS pct_has_rendered_but_not_raw_canonical,
 
   # Pages with canonical mismatch
-  AS_PERCENT(COUNTIF(wpt_bodies_info.has_canonical_mismatch), COUNT(0)) AS pct_has_canonical_mismatch,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.has_canonical_mismatch), COUNT(0)) AS pct_has_canonical_mismatch,
 
   # Pages with canonical conflict between raw and rendered
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendering_changed_canonical), COUNT(0)) AS pct_has_conflict_rendering_changed_canonical,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendering_changed_canonical), COUNT(0)) AS pct_has_conflict_rendering_changed_canonical,
 
   # Pages with canonical conflict between raw and http header
-  AS_PERCENT(COUNTIF(wpt_bodies_info.http_header_changed_canonical), COUNT(0)) AS pct_has_conflict_http_header_changed_canonical,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.http_header_changed_canonical), COUNT(0)) AS pct_has_conflict_http_header_changed_canonical,
 
   # Pages with canonical conflict between raw and http header
-  AS_PERCENT(COUNTIF(wpt_bodies_info.http_header_changed_canonical OR wpt_bodies_info.rendering_changed_canonical), COUNT(0)) AS pct_has_conflict_http_header_or_rendering_changed_canonical,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.http_header_changed_canonical OR wpt_bodies_info.rendering_changed_canonical), COUNT(0)) AS pct_has_conflict_http_header_or_rendering_changed_canonical,
 
   # Pages with hreflang conflict between raw and rendered
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendering_changed_hreflang), COUNT(0)) AS pct_has_conflict_raw_rendered_hreflang,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendering_changed_hreflang), COUNT(0)) AS pct_has_conflict_raw_rendered_hreflang,
 
   # Pages with hreflang
-  AS_PERCENT(COUNTIF(wpt_bodies_info.has_hreflang), COUNT(0)) AS pct_has_hreflang,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.has_hreflang), COUNT(0)) AS pct_has_hreflang,
 
   # Pages with http hreflang
-  AS_PERCENT(COUNTIF(wpt_bodies_info.has_http_hreflang), COUNT(0)) AS pct_has_http_hreflang,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.has_http_hreflang), COUNT(0)) AS pct_has_http_hreflang,
 
   # Pages with rendered hreflang
-  AS_PERCENT(COUNTIF(wpt_bodies_info.has_rendered_hreflang), COUNT(0)) AS pct_has_rendered_hreflang,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.has_rendered_hreflang), COUNT(0)) AS pct_has_rendered_hreflang,
 
   # Pages with raw hreflang
-  AS_PERCENT(COUNTIF(wpt_bodies_info.has_raw_hreflang), COUNT(0)) AS pct_has_raw_hreflang,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.has_raw_hreflang), COUNT(0)) AS pct_has_raw_hreflang,
 
   # Pages with hreflang in rendered but not raw html
-  AS_PERCENT(COUNTIF(wpt_bodies_info.has_rendered_hreflang AND NOT wpt_bodies_info.has_raw_hreflang), COUNT(0)) AS pct_has_rendered_but_not_raw_hreflang,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.has_rendered_hreflang AND NOT wpt_bodies_info.has_raw_hreflang), COUNT(0)) AS pct_has_rendered_but_not_raw_hreflang,
 
   # Pages with raw jsonld or microdata
-  AS_PERCENT(COUNTIF(wpt_bodies_info.has_raw_jsonld_or_microdata), COUNT(0)) AS pct_has_raw_jsonld_or_microdata,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.has_raw_jsonld_or_microdata), COUNT(0)) AS pct_has_raw_jsonld_or_microdata,
 
   # Pages with rendered jsonld or microdata
-  AS_PERCENT(COUNTIF(wpt_bodies_info.has_rendered_jsonld_or_microdata), COUNT(0)) AS pct_has_rendered_jsonld_or_microdata,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.has_rendered_jsonld_or_microdata), COUNT(0)) AS pct_has_rendered_jsonld_or_microdata,
 
   # Pages with only rendered jsonld or microdata
-  AS_PERCENT(COUNTIF(wpt_bodies_info.has_rendered_jsonld_or_microdata AND NOT wpt_bodies_info.has_raw_jsonld_or_microdata), COUNT(0)) AS pct_has_only_rendered_jsonld_or_microdata,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.has_rendered_jsonld_or_microdata AND NOT wpt_bodies_info.has_raw_jsonld_or_microdata), COUNT(0)) AS pct_has_only_rendered_jsonld_or_microdata,
 
   # Pages where rendering changed jsonld or microdata
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendering_changes_structured_data), COUNT(0)) AS pct_rendering_changes_structured_data,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendering_changes_structured_data), COUNT(0)) AS pct_rendering_changes_structured_data,
 
   # http or https
-  AS_PERCENT(COUNTIF(protocol = "https"), COUNT(0)) AS pct_https,
+  SAFE_DIVIDE(COUNTIF(protocol = "https"), COUNT(0)) AS pct_https,
 
   # meta robots
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_status_index), COUNT(0)) AS pct_rendered_otherbot_status_index,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_status_follow), COUNT(0)) AS pct_rendered_otherbot_status_follow,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_noarchive), COUNT(0)) AS pct_rendered_otherbot_noarchive,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_nosnippet), COUNT(0)) AS pct_rendered_otherbot_nosnippet,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_unavailable_after), COUNT(0)) AS pct_rendered_otherbot_unavailable_after,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_max_snippet), COUNT(0)) AS pct_rendered_otherbot_max_snippet,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_max_image_preview), COUNT(0)) AS pct_rendered_otherbot_max_image_preview,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_max_video_preview), COUNT(0)) AS pct_rendered_otherbot_max_video_preview,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_notranslate), COUNT(0)) AS pct_rendered_otherbot_notranslate,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_noimageindex), COUNT(0)) AS pct_rendered_otherbot_noimageindex,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_nocache), COUNT(0)) AS pct_rendered_otherbot_nocache,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_status_index), COUNT(0)) AS pct_rendered_googlebot_status_index,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_status_follow), COUNT(0)) AS pct_rendered_googlebot_status_follow,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_noarchive), COUNT(0)) AS pct_rendered_googlebot_noarchive,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_nosnippet), COUNT(0)) AS pct_rendered_googlebot_nosnippet,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_unavailable_after), COUNT(0)) AS pct_rendered_googlebot_unavailable_after,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_max_snippet), COUNT(0)) AS pct_rendered_googlebot_max_snippet,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_max_image_preview), COUNT(0)) AS pct_rendered_googlebot_max_image_preview,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_max_video_preview), COUNT(0)) AS pct_rendered_googlebot_max_video_preview,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_notranslate), COUNT(0)) AS pct_rendered_googlebot_notranslate,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_noimageindex), COUNT(0)) AS pct_rendered_googlebot_noimageindex,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_nocache), COUNT(0)) AS pct_rendered_googlebot_nocache,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_status_index), COUNT(0)) AS pct_rendered_googlebot_news_status_index,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_status_follow), COUNT(0)) AS pct_rendered_googlebot_news_status_follow,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_noarchive), COUNT(0)) AS pct_rendered_googlebot_news_noarchive,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_nosnippet), COUNT(0)) AS pct_rendered_googlebot_news_nosnippet,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_unavailable_after), COUNT(0)) AS pct_rendered_googlebot_news_unavailable_after,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_max_snippet), COUNT(0)) AS pct_rendered_googlebot_news_max_snippet,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_max_image_preview), COUNT(0)) AS pct_rendered_googlebot_news_max_image_preview,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_max_video_preview), COUNT(0)) AS pct_rendered_googlebot_news_max_video_preview,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_notranslate), COUNT(0)) AS pct_rendered_googlebot_news_notranslate,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_noimageindex), COUNT(0)) AS pct_rendered_googlebot_news_noimageindex,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_googlebot_news_nocache), COUNT(0)) AS pct_rendered_googlebot_news_nocache
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_otherbot_status_index), COUNT(0)) AS pct_rendered_otherbot_status_index,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_otherbot_status_follow), COUNT(0)) AS pct_rendered_otherbot_status_follow,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_otherbot_noarchive), COUNT(0)) AS pct_rendered_otherbot_noarchive,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_otherbot_nosnippet), COUNT(0)) AS pct_rendered_otherbot_nosnippet,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_otherbot_unavailable_after), COUNT(0)) AS pct_rendered_otherbot_unavailable_after,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_otherbot_max_snippet), COUNT(0)) AS pct_rendered_otherbot_max_snippet,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_otherbot_max_image_preview), COUNT(0)) AS pct_rendered_otherbot_max_image_preview,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_otherbot_max_video_preview), COUNT(0)) AS pct_rendered_otherbot_max_video_preview,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_otherbot_notranslate), COUNT(0)) AS pct_rendered_otherbot_notranslate,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_otherbot_noimageindex), COUNT(0)) AS pct_rendered_otherbot_noimageindex,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_otherbot_nocache), COUNT(0)) AS pct_rendered_otherbot_nocache,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_status_index), COUNT(0)) AS pct_rendered_googlebot_status_index,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_status_follow), COUNT(0)) AS pct_rendered_googlebot_status_follow,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_noarchive), COUNT(0)) AS pct_rendered_googlebot_noarchive,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_nosnippet), COUNT(0)) AS pct_rendered_googlebot_nosnippet,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_unavailable_after), COUNT(0)) AS pct_rendered_googlebot_unavailable_after,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_max_snippet), COUNT(0)) AS pct_rendered_googlebot_max_snippet,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_max_image_preview), COUNT(0)) AS pct_rendered_googlebot_max_image_preview,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_max_video_preview), COUNT(0)) AS pct_rendered_googlebot_max_video_preview,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_notranslate), COUNT(0)) AS pct_rendered_googlebot_notranslate,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_noimageindex), COUNT(0)) AS pct_rendered_googlebot_noimageindex,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_nocache), COUNT(0)) AS pct_rendered_googlebot_nocache,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_news_status_index), COUNT(0)) AS pct_rendered_googlebot_news_status_index,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_news_status_follow), COUNT(0)) AS pct_rendered_googlebot_news_status_follow,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_news_noarchive), COUNT(0)) AS pct_rendered_googlebot_news_noarchive,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_news_nosnippet), COUNT(0)) AS pct_rendered_googlebot_news_nosnippet,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_news_unavailable_after), COUNT(0)) AS pct_rendered_googlebot_news_unavailable_after,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_news_max_snippet), COUNT(0)) AS pct_rendered_googlebot_news_max_snippet,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_news_max_image_preview), COUNT(0)) AS pct_rendered_googlebot_news_max_image_preview,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_news_max_video_preview), COUNT(0)) AS pct_rendered_googlebot_news_max_video_preview,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_news_notranslate), COUNT(0)) AS pct_rendered_googlebot_news_notranslate,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_news_noimageindex), COUNT(0)) AS pct_rendered_googlebot_news_noimageindex,
+  SAFE_DIVIDE(COUNTIF(wpt_bodies_info.rendered_googlebot_news_nocache), COUNT(0)) AS pct_rendered_googlebot_news_nocache
 
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     SPLIT(url, ":")[OFFSET(0)] AS protocol,
-    get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
+    getSeoStatsWptBodies(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
   FROM
     `httparchive.pages.2021_07_01_*`
 )
