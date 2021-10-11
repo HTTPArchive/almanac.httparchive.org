@@ -29,8 +29,7 @@ SELECT
   type,
   total,
   COUNT(0) AS count,
-  SAFE_DIVIDE(COUNT(0),
-    total) AS pct
+  SAFE_DIVIDE(COUNT(0), total) AS pct
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -46,7 +45,7 @@ FROM (
     FROM
       `httparchive.pages.2021_07_01_*`
     GROUP BY
-      _TABLE_SUFFIX) # TO get an accurate total OF pages per device. also seems fast
+      _TABLE_SUFFIX)
   USING
     (_TABLE_SUFFIX) ),
   UNNEST(structured_schema_wpt_bodies_info.jsonld_and_microdata_types) AS type

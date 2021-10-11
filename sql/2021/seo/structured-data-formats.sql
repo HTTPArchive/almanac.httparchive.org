@@ -54,7 +54,7 @@ FROM
       (SELECT _TABLE_SUFFIX, COUNT(0) AS total
                                    FROM
         `httparchive.pages.2021_07_01_*`
-        GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
+        GROUP BY _TABLE_SUFFIX)
     USING (_TABLE_SUFFIX)
   ), UNNEST(structured_data_wpt_bodies_info.items_by_format) AS format
 GROUP BY

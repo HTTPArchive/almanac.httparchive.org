@@ -39,7 +39,8 @@ FROM (
     `httparchive.pages.2021_07_01_*`,
     UNNEST([10, 25, 50, 75, 90]) AS percentile
 )
-WHERE video_almanac_info.videos_total > 0
+WHERE
+  video_almanac_info.videos_total > 0
 GROUP BY
   percentile,
   client

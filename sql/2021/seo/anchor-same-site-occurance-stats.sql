@@ -54,7 +54,7 @@ FROM (
   FROM
     `httparchive.pages.2021_07_01_*`
   JOIN (
-    # to get an accurate total of pages per device. also seems fast
+
     SELECT
       _TABLE_SUFFIX,
       COUNT(0) AS total

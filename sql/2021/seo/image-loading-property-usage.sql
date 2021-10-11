@@ -53,7 +53,7 @@ FROM
         FROM
           `httparchive.pages.2021_07_01_*`
         GROUP BY _TABLE_SUFFIX
-      ) # to get an accurate total of pages per device. also seems fast
+      )
     USING (_TABLE_SUFFIX)
   ),
   UNNEST(loading_property_markup_info.loading) AS loading
