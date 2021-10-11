@@ -36,22 +36,22 @@ FROM (
   FROM
     `httparchive.summary_pages.2021_07_01_*`)
 LEFT JOIN (
-  SELECT DISTINCT
-    _TABLE_SUFFIX AS client,
+  SELECT
+    DISTINCT _TABLE_SUFFIX AS client,
     user_agent,
     url AS page
   FROM (
     SELECT
       _TABLE_SUFFIX,
       url,
-      getRobotsTxtUserAgents(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_user_agent_info
+      getRobotsTxtUserAgents(JSON_EXTRACT_SCALAR(payload,
+          '$._robots_txt')) AS robots_txt_user_agent_info
     FROM
       `httparchive.pages.2021_07_01_*`),
-UNNEST(robots_txt_user_agent_info.user_agents) AS user_agent
-
-)
+    UNNEST(robots_txt_user_agent_info.user_agents) AS user_agent )
 USING
-  (client, page),
+  (client,
+    page),
   UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank
 WHERE
   _rank <= rank
