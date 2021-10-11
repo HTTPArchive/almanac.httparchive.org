@@ -13,7 +13,7 @@ WHERE
 GROUP BY
   client,
   resp_content_language
-HAVING
+QUALIFY
   freq >= 100
 ORDER BY
   freq DESC,
