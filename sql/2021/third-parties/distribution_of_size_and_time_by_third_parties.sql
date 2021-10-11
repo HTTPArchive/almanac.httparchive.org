@@ -36,6 +36,7 @@ base AS (
 )
 
 SELECT
+  client,
   category,
   percentile,
   APPROX_QUANTILES(body_size, 1000)[OFFSET(percentile * 10)] AS body_size,
@@ -44,8 +45,10 @@ FROM
   base,
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
+  client,
   category,
   percentile
 ORDER BY
+  client,
   category,
   percentile
