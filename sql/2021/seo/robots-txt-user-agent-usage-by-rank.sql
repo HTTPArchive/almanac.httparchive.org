@@ -3,7 +3,7 @@
 
 
 # returns all the data we need from _robots_txt
-CREATE TEMPORARY FUNCTION get_robots_txt_info(robots_txt_string STRING)
+CREATE TEMPORARY FUNCTION getRobotsTxtUserAgents(robots_txt_string STRING)
 RETURNS STRUCT<
   user_agents ARRAY<STRING>
 > LANGUAGE js AS '''
@@ -44,13 +44,10 @@ LEFT JOIN (
     SELECT
       _TABLE_SUFFIX,
       url,
-      get_robots_txt_info(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_info
+      getRobotsTxtUserAgents(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_user_agent_info
     FROM
-      `httparchive.pages.2021_07_01_*`
-    WHERE _TABLE_SUFFIX = 'desktop'
-
-  ),
-  UNNEST(robots_txt_info.user_agents) AS user_agent
+      `httparchive.pages.2021_07_01_*`),
+  UNNEST(robots_txt_user_agent_info.user_agents) AS user_agent
 
 )
 USING
@@ -62,6 +59,8 @@ GROUP BY
   client,
   user_agent,
   rank
+HAVING
+  pages > 20
 ORDER BY
   rank,
   pct DESC
