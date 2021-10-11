@@ -2,7 +2,7 @@
 # Videos per page
 
 # returns all the data we need from _almanac
-CREATE TEMPORARY FUNCTION get_almanac_info(almanac_string STRING)
+CREATE TEMPORARY FUNCTION getVideosAlmanacInfo(almanac_string STRING)
 RETURNS STRUCT<
   videos_total INT64
 > LANGUAGE js AS '''
@@ -34,12 +34,12 @@ FROM (
     _TABLE_SUFFIX AS client,
     percentile,
     url,
-    get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
+    getVideosAlmanacInfo(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS video_almanac_info
   FROM
     `httparchive.pages.2021_07_01_*`,
     UNNEST([10, 25, 50, 75, 90]) AS percentile
 )
-WHERE almanac_info.videos_total > 0
+WHERE video_almanac_info.videos_total > 0
 GROUP BY
   percentile,
   client
