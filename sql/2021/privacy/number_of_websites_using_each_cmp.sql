@@ -8,7 +8,7 @@ WITH totals AS (
     _TABLE_SUFFIX,
     COUNT(DISTINCT url) AS total_websites
   FROM
-    `httparchive.technologies.2021_07_01_*`
+    `httparchive.technologies.2021_09_01_*`
   GROUP BY
     _TABLE_SUFFIX
 )
@@ -20,7 +20,7 @@ SELECT
   COUNT(DISTINCT url) AS number_of_websites,
   COUNT(DISTINCT url) / total_websites AS percent_of_websites
 FROM
-  `httparchive.technologies.2021_07_01_*`
+  `httparchive.technologies.2021_09_01_*`
 JOIN totals USING (_TABLE_SUFFIX)
 WHERE
   category = "Cookie compliance" AND
