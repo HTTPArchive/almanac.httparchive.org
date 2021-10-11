@@ -3,7 +3,7 @@
 
 SELECT
   client,
-  CAST(rank AS INT64) AS rank,
+  rank_grouping,
   COUNT(DISTINCT page) AS pages,
   SUM(unused_javascript) / COUNT(DISTINCT page) AS unused_javascript_kib_avg,
   SUM(unused_css_rules) / COUNT(DISTINCT page) AS unused_css_rules_kib_avg
@@ -12,7 +12,7 @@ FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page,
-    rank AS _rank
+    rank
   FROM
     `httparchive.summary_pages.2021_07_01_*`
   WHERE _TABLE_SUFFIX = 'mobile')
@@ -28,11 +28,11 @@ LEFT JOIN (
 
 USING
   (client, page),
-  UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank
+  UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_grouping
 WHERE
-  _rank <= rank
+  rank <= rank_grouping
 GROUP BY
   client,
-  rank
+  rank_grouping
 ORDER BY
-  rank
+  rank_grouping
