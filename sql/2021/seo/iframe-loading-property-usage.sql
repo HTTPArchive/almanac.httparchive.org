@@ -2,13 +2,8 @@
 # Iframe loading property usage
 # Note: This query only reports if an attribute was ever used on a page. It is not a per iframe report.
 
-# helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
-  ROUND(SAFE_DIVIDE(freq, total), 4)
-);
-
 # returns all the data we need from _markup
-CREATE TEMPORARY FUNCTION get_markup_info(markup_string STRING)
+CREATE TEMPORARY FUNCTION getIframeMarkupInfo(markup_string STRING)
 RETURNS STRUCT<
   loading ARRAY<STRING>
 > LANGUAGE js AS '''
@@ -44,12 +39,12 @@ SELECT
   total,
   COUNT(0) AS count,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS device_count,
-  AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
+  SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     total,
-    get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
+    getIframeMarkupInfo(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS iframe_markup_info
   FROM
     `httparchive.pages.2021_07_01_*`
   JOIN (
@@ -63,6 +58,8 @@ FROM (
   USING
     (_TABLE_SUFFIX)
 ),
-UNNEST(markup_info.loading) AS loading
+UNNEST(iframe_markup_info.loading) AS loading
 GROUP BY
-  total, loading, client
+  total, 
+  loading, 
+  client
