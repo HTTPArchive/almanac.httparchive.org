@@ -1,6 +1,5 @@
-#standardSQL
-# Robots txt user agent usage by rank
-
+#standardSQL 
+# Robots txt user agent usage BY rank
 
 # returns all the data we need from _robots_txt
 CREATE TEMPORARY FUNCTION getRobotsTxtUserAgents(robots_txt_string STRING)
@@ -22,19 +21,33 @@ try {
 return result;
 ''';
 
+
 SELECT
   client,
   user_agent,
-  rank,
+  rank_grouping,
+  rank_page_count,
   COUNT(DISTINCT page) AS pages,
-  COUNT(DISTINCT page) / rank AS pct
+  SAFE_DIVIDE(COUNT(DISTINCT page),
+    rank_page_count) AS pct
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
+    rank_page_count,
     url AS page,
-    rank AS _rank
+    rank
   FROM
-    `httparchive.summary_pages.2021_07_01_*`)
+    `httparchive.summary_pages.2021_07_01_*`
+  LEFT JOIN (
+    SELECT
+      rank,
+      COUNT(DISTINCT(url)) AS rank_page_count,
+    FROM
+      `httparchive.summary_pages.2021_07_01_*`
+    GROUP BY
+      rank )
+  USING
+    (rank))
 LEFT JOIN (
   SELECT
     DISTINCT _TABLE_SUFFIX AS client,
@@ -52,15 +65,16 @@ LEFT JOIN (
 USING
   (client,
     page),
-  UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank
+  UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_grouping
 WHERE
-  _rank <= rank
+  rank <= rank_grouping
 GROUP BY
   client,
   user_agent,
-  rank
+  rank_grouping,
+  rank_page_count
 HAVING
-  pages > 20
+  pages > 50
 ORDER BY
-  rank,
+  rank_grouping,
   pct DESC
