@@ -4,11 +4,6 @@
 # Note: Contains redundant stats to seo-stats.sql in order to start better segmenting metrics away from monolithic queries.
 
 
-# helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
-  ROUND(SAFE_DIVIDE(freq, total), 4)
-);
-
 # JS parsing of payload
 CREATE TEMPORARY FUNCTION getCanonicalMetrics(payload STRING)
 RETURNS STRUCT<
@@ -126,46 +121,46 @@ SELECT
   canonical_metrics.js_error AS js_error,
 
   # Pages with wpt bodies
-  AS_PERCENT(COUNTIF(canonical_metrics.has_wpt_bodies), COUNT(0)) AS pct_has_wpt_bodies,
+  SAFE_DIVIDE(COUNTIF(canonical_metrics.has_wpt_bodies), COUNT(0)) AS pct_has_wpt_bodies,
 
   # Pages with canonical
-  AS_PERCENT(COUNTIF(canonical_metrics.has_canonicals), COUNT(0)) AS pct_has_canonical,
+  SAFE_DIVIDE(COUNTIF(canonical_metrics.has_canonicals), COUNT(0)) AS pct_has_canonical,
 
   # Pages with self-canonical
-  AS_PERCENT(COUNTIF(canonical_metrics.has_self_canonical), COUNT(0)) AS pct_has_self_canonical,
+  SAFE_DIVIDE(COUNTIF(canonical_metrics.has_self_canonical), COUNT(0)) AS pct_has_self_canonical,
 
   # Pages canonicalized
-  AS_PERCENT(COUNTIF(canonical_metrics.is_canonicalized), COUNT(0)) AS pct_is_canonicalized,
+  SAFE_DIVIDE(COUNTIF(canonical_metrics.is_canonicalized), COUNT(0)) AS pct_is_canonicalized,
 
   # Pages with canonical in HTTP header
-  AS_PERCENT(COUNTIF(canonical_metrics.has_http_canonical), COUNT(0)) AS pct_http_canonical,
+  SAFE_DIVIDE(COUNTIF(canonical_metrics.has_http_canonical), COUNT(0)) AS pct_http_canonical,
 
   # Pages with canonical in raw html
-  AS_PERCENT(COUNTIF(canonical_metrics.has_raw_canonical), COUNT(0)) AS pct_has_raw_canonical,
+  SAFE_DIVIDE(COUNTIF(canonical_metrics.has_raw_canonical), COUNT(0)) AS pct_has_raw_canonical,
 
   # Pages with canonical in rendered html
-  AS_PERCENT(COUNTIF(canonical_metrics.has_rendered_canonical), COUNT(0)) AS pct_has_rendered_canonical,
+  SAFE_DIVIDE(COUNTIF(canonical_metrics.has_rendered_canonical), COUNT(0)) AS pct_has_rendered_canonical,
 
   # Pages with canonical in rendered but not raw html
-  AS_PERCENT(COUNTIF(canonical_metrics.has_rendered_canonical AND NOT canonical_metrics.has_raw_canonical), COUNT(0)) AS pct_has_rendered_but_not_raw_canonical,
+  SAFE_DIVIDE(COUNTIF(canonical_metrics.has_rendered_canonical AND NOT canonical_metrics.has_raw_canonical), COUNT(0)) AS pct_has_rendered_but_not_raw_canonical,
 
   # Pages with canonical mismatch
-  AS_PERCENT(COUNTIF(canonical_metrics.has_canonical_mismatch), COUNT(0)) AS pct_has_canonical_mismatch,
+  SAFE_DIVIDE(COUNTIF(canonical_metrics.has_canonical_mismatch), COUNT(0)) AS pct_has_canonical_mismatch,
 
   # Pages with canonical conflict between raw and rendered
-  AS_PERCENT(COUNTIF(canonical_metrics.rendering_changed_canonical), COUNT(0)) AS pct_has_conflict_rendering_changed_canonical,
+  SAFE_DIVIDE(COUNTIF(canonical_metrics.rendering_changed_canonical), COUNT(0)) AS pct_has_conflict_rendering_changed_canonical,
 
   # Pages with canonical conflict between raw and http header
-  AS_PERCENT(COUNTIF(canonical_metrics.http_header_changed_canonical), COUNT(0)) AS pct_has_conflict_http_header_changed_canonical,
+  SAFE_DIVIDE(COUNTIF(canonical_metrics.http_header_changed_canonical), COUNT(0)) AS pct_has_conflict_http_header_changed_canonical,
 
   # Pages with canonical conflict between raw and http header
-  AS_PERCENT(COUNTIF(canonical_metrics.http_header_changed_canonical OR canonical_metrics.rendering_changed_canonical), COUNT(0)) AS pct_has_conflict_http_header_or_rendering_changed_canonical,
+  SAFE_DIVIDE(COUNTIF(canonical_metrics.http_header_changed_canonical OR canonical_metrics.rendering_changed_canonical), COUNT(0)) AS pct_has_conflict_http_header_or_rendering_changed_canonical,
 
   # Pages with canonicals that are absolute
-  AS_PERCENT(COUNTIF(canonical_metrics.has_absolute_canonical), COUNTIF(canonical_metrics.has_canonicals)) AS pct_canonicals_absolute,
+  SAFE_DIVIDE(COUNTIF(canonical_metrics.has_absolute_canonical), COUNTIF(canonical_metrics.has_canonicals)) AS pct_canonicals_absolute,
 
   # Pages with canonicals that are relative
-  AS_PERCENT(COUNTIF(canonical_metrics.has_relative_canonical), COUNTIF(canonical_metrics.has_canonicals)) AS pct_canonicals_relative
+  SAFE_DIVIDE(COUNTIF(canonical_metrics.has_relative_canonical), COUNTIF(canonical_metrics.has_canonicals)) AS pct_canonicals_relative
 
 FROM (
   SELECT
