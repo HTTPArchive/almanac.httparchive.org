@@ -60,6 +60,6 @@ FROM (
 ),
 UNNEST(iframe_markup_info.loading) AS loading
 GROUP BY
-  total, 
-  loading, 
+  total,
+  loading,
   client
