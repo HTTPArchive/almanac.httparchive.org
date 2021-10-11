@@ -1024,7 +1024,7 @@ The results show that almost half of the pages we analyzed are using the typical
 
 ### Favicons
 
-The situation around favicons is fascinating. Favicons work with or without markup—some browsers would fall back to <a hreflang="en" href="https://realfavicongenerator.net/faq#why_icons_in_root">looking at the domain root</a>—, accept several image formats, and then also promote several dozen sizes (some tools are reported to generate 45 of them; <a hreflang="en" href="https://realfavicongenerator.net/">realfavicongenerator.net</a> would return _37_ if requested to handle every case). As of this time of writing, there is an <a hreflang="en" href="https://github.com/whatwg/html/issues/4758">open issue</a> for the HTML spec to help improve the situation.
+The situation around favicons is fascinating. Favicons work with or without markup (some browsers would fall back to <a hreflang="en" href="https://realfavicongenerator.net/faq#why_icons_in_root">looking at the domain root</a>), accept several image formats, and then also promote several dozen sizes (some tools are reported to generate 45 of them; <a hreflang="en" href="https://realfavicongenerator.net/">realfavicongenerator.net</a> would return _37_ if requested to handle every case). As of this time of writing, there is an <a hreflang="en" href="https://github.com/whatwg/html/issues/4758">open issue</a> for the HTML spec to help improve the situation.
 
 When we built our tests we didn't check for the presence of images, but only looked at the markup. That means, when you review the following, note that it's more about _how_ favicons are referenced rather than whether or how often they are used.
 

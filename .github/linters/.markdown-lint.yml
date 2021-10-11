@@ -25,11 +25,12 @@ MD013: false                  # Don't demand maximum line lengths
 MD024:
   siblings_only: true         # Allows sub-headings to be reused under different headings
 MD026:
-  punctuation: ".,;:!。，；:"  # List of not allowed
+  punctuation: ".,;:。，；:"  # List of not allowed
 MD029: false                  # Ordered list item prefix
 MD033: false                  # Allow inline HTML
 MD034: false                  # Allow base URLs
 MD036: false                  # Emphasis used instead of a heading
+MD037: false                  # Checks for no spaces in emphasis but subject to false positives so turn off
 MD040: false                  # Don't demand language for all code blocks
 
 #################
