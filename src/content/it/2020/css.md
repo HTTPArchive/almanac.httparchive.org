@@ -1162,7 +1162,7 @@ Un decennio fa, abbiamo ottenuto le maschere in Safari con `-webkit-mask-image` 
 
 ### I clipping path
 
-Più o meno nello stesso periodo le maschere sono diventate popolari, un'altra proprietà simile ma più semplice (originariamente da SVG) ha iniziato a girare: `clip-path`. Tuttavia, a differenza delle maschere, ha avuto un destino migliore. È stato standardizzato abbastanza rapidamente e ha ottenuto supporto su tutta la linea relativamente velocemente, con l'ultimo blocco è stato Safari che ha abbandonato il prefisso nel 2016. Oggi, si trova sul 19% delle pagine non prefissate e sul 13% con il prefisso `-webkit-` .
+Più o meno nello stesso periodo le maschere sono diventate popolari, un'altra proprietà simile ma più semplice (originariamente da SVG) ha iniziato a girare: `clip-path`. Tuttavia, a differenza delle maschere, ha avuto un destino migliore. È stato standardizzato abbastanza rapidamente e ha ottenuto supporto su tutta la linea relativamente velocemente, con l'ultimo blocco è stato Safari che ha abbandonato il prefisso nel 2016. Oggi, si trova sul 19% delle pagine non prefissate e sul 13% con il prefisso `-webkit-`.
 
 ## Responsive design
 
@@ -1196,7 +1196,7 @@ Il breakpoint più comune in uso tra desktop e mobile è un `min-width` di 768px
 {{ figure_markup(
   image="breakpoints.png",
   caption="I breakpoint più popolari per `min-width` e `max-width` come percentuale delle pagine per dispositivi mobile",
-  description="I breakpoint più popolari di `min-width` e `max-width` come percentuale delle pagine mobile. `480px` viene utilizzato come min-width sul 21% delle pagine per dispositivi mobile e come `max-width` sul 35%. `600px` su 27% e 37% rispettivamente per larghezze min e max, `767px` su 8% e 50%, `768px` su 54% e 35%,` 800px` su 8% e 24%, `991px` su 3% e 30%, `992px` su 37% e 11%, `1024px` su 13% e 23%, `1199px` su solo 31% come `max-width` e `1200px` su 40% e 19%.",
+  description="I breakpoint più popolari di `min-width` e `max-width` come percentuale delle pagine mobile. `480px` viene utilizzato come min-width sul 21% delle pagine per dispositivi mobile e come `max-width` sul 35%. `600px` su 27% e 37% rispettivamente per larghezze min e max, `767px` su 8% e 50%, `768px` su 54% e 35%, `800px` su 8% e 24%, `991px` su 3% e 30%, `992px` su 37% e 11%, `1024px` su 13% e 23%, `1199px` su solo 31% come `max-width` e `1200px` su 40% e 19%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=502128948&format=interactive",
   sheets_gid="1070028321",
   sql_file="media_query_values.sql"
@@ -1211,7 +1211,7 @@ Il 79% delle media query sui dispositivi mobile e il 77% sui desktop vengono uti
 {{ figure_markup(
   image="media-query-properties.png",
   caption="Le proprietà più popolari utilizzate nelle media query come percentuale delle pagine.",
-  description="Grafico a barre delle proprietà più popolari utilizzate nelle media query come percentuale delle pagine. Desktop e mobile sono molto simili. La percentuale di pagine mobile varia dal 79% al 71% per `display`, `width`, `margin-left`, `padding`, `font-size`,` height`, `margin`, `margin-right` , `margin-top` e `position`, in quest'ordine.",
+  description="Grafico a barre delle proprietà più popolari utilizzate nelle media query come percentuale delle pagine. Desktop e mobile sono molto simili. La percentuale di pagine mobile varia dal 79% al 71% per `display`, `width`, `margin-left`, `padding`, `font-size`, `height`, `margin`, `margin-right` , `margin-top` e `position`, in quest'ordine.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1199544976&format=interactive",
   sheets_gid="190367365",
   sql_file="media_query_properties.sql"
@@ -1568,7 +1568,7 @@ Quindi con che frequenza si verifica questo? Molto, a quanto pare. L'88% delle p
 {{ figure_markup(
   image="most-popular-longhand-after-shorthand.png",
   caption="Le forme complete più popolari che vengono dopo le abbreviazioni nella stessa regola.",
-  description="Grafico a barre che mostra `background-size` al 15% per desktop e 41% per mobile, `background-image` rispettivamente all'8% e al 6%, `margin-bottom` al 6% e 4%, `margin-top` a 6% e 4%, `border-bottom-color` al 5% e 3%, `font-size` al 4% e 3%, `border-top-color` al 4% e 3%, `background-color` al 4% e al 2%, `padding-left` al 3% e al 2% e infine `margin-left ` al 3% e al 2%.",
+  description="Grafico a barre che mostra `background-size` al 15% per desktop e 41% per mobile, `background-image` rispettivamente all'8% e al 6%, `margin-bottom` al 6% e 4%, `margin-top` a 6% e 4%, `border-bottom-color` al 5% e 3%, `font-size` al 4% e 3%, `border-top-color` al 4% e 3%, `background-color` al 4% e al 2%, `padding-left` al 3% e al 2% e infine `margin-left` al 3% e al 2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=176504610&format=interactive",
   sheets_gid="17890636",
   sql_file="meta_shorthand_first_properties.sql",
