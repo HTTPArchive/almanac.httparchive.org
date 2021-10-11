@@ -1139,7 +1139,7 @@ L'anno scorso, l'8% delle pagine utilizzava i metodi di fusione (blend modes). Q
 
 ### Filtri
 
-L'adozione dei filtri è rimasta elevata, con la proprietà `filter` che compare nel 79.43% delle pagine. Anche se all'inizio era abbastanza eccitante, è probabile che molti siano vecchi [filtri DX IE](https://developer.mozilla.org/en-US/docs/Archive/Web/CSS/-ms-filter), che condividevano lo stesso nome di proprietà. Quando abbiamo preso in considerazione solo i filtri CSS validi che Blink riconosce, l'utilizzo scende al 22% per i dispositivi mobile e al 20% per i desktop, con `blur()` che è il tipo di filtro più popolare e compare nel 4% delle pagine.
+L'adozione dei filtri è rimasta elevata, con la proprietà `filter` che compare nel 79.43% delle pagine. Anche se all'inizio era abbastanza eccitante, è probabile che molti siano vecchi filtri DX IE (`-ms-filter`), che condividevano lo stesso nome di proprietà. Quando abbiamo preso in considerazione solo i filtri CSS validi che Blink riconosce, l'utilizzo scende al 22% per i dispositivi mobile e al 20% per i desktop, con `blur()` che è il tipo di filtro più popolare e compare nel 4% delle pagine.
 
 Un'altra proprietà del filtro, `background-filter`, ci consente di applicare filtri solo all'area dietro un elemento, che è incredibilmente utile per migliorare il contrasto su sfondi traslucidi e creare l'elegante <a hreflang="en" href="https://css-tricks.com/backdrop-filter-effect-with-css/">effetto "vetro smerigliato"</a> che abbiamo imparato da molte interfacce utente native. Anche se non così popolare come `filter`, abbiamo trovato `background-filter` nel 6% delle pagine.
 
