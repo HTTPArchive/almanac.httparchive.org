@@ -1,6 +1,9 @@
 #standardSQL
 
 # Robots txt size by size bins (size in KiB)
+# Note: Main story is robots.txt over 500 KiB which is Google's limit
+# This is reason that size bins were used instead of quantiles
+
 
 # helper to get robots size in kibibytes (KiB)
 # Note: Assumes mostly ASCII 1byte = 1character.  Size is collected by
@@ -17,17 +20,25 @@ try {
 ''';
 
 SELECT
-  COUNTIF(robots_sizes <= 100) / COUNT(0) AS pct_0_100,
-  COUNTIF(robots_sizes > 100 AND robots_sizes <= 200) / COUNT(0) AS pct_100_200,
-  COUNTIF(robots_sizes > 200 AND robots_sizes <= 300) / COUNT(0) AS pct_200_300,
-  COUNTIF(robots_sizes > 300 AND robots_sizes <= 400) / COUNT(0) AS pct_300_400,
-  COUNTIF(robots_sizes > 400 AND robots_sizes <= 500) / COUNT(0) AS pct_400_500,
-  COUNTIF(robots_sizes > 500) / COUNT(0) AS pct_gt500,
-  COUNTIF(robots_sizes > 500) AS count_gt500
+  client,
+  COUNT(DISTINCT(site)) AS sites,
+  SAFE_DIVIDE(COUNTIF(robots_size > 0 AND robots_size <= 100), COUNT(DISTINCT(site))) AS pct_0_100,
+  SAFE_DIVIDE(COUNTIF(robots_size > 100 AND robots_size <= 200), COUNT(DISTINCT(site))) AS pct_100_200,
+  SAFE_DIVIDE(COUNTIF(robots_size > 200 AND robots_size <= 300), COUNT(DISTINCT(site))) AS pct_200_300,
+  SAFE_DIVIDE(COUNTIF(robots_size > 300 AND robots_size <= 400), COUNT(DISTINCT(site))) AS pct_300_400,
+  SAFE_DIVIDE(COUNTIF(robots_size > 400 AND robots_size <= 500), COUNT(DISTINCT(site))) AS pct_400_500,
+  SAFE_DIVIDE(COUNTIF(robots_size > 500), COUNT(DISTINCT(site))) AS pct_gt500,
+  SAFE_DIVIDE(COUNTIF(robots_size = 0), COUNT(DISTINCT(site))) AS pct_missing,
+  COUNTIF(robots_size > 500) AS count_gt500,
+  COUNTIF(robots_size = 0) AS count_missing
 FROM (
   SELECT
-    _TABLE_SUFFIX,
-    getRobotsSize(payload) AS robots_sizes
+    _TABLE_SUFFIX AS client,
+    url AS site,
+    getRobotsSize(payload) AS robots_size
   FROM
-    `httparchive.pages.2021_07_01_*`
-  WHERE _TABLE_SUFFIX = 'desktop')
+    `httparchive.pages.2021_07_01_*`)
+GROUP BY
+  client
+ORDER BY
+  client DESC
