@@ -35,7 +35,7 @@ return result;
 SELECT
   client,
   percentile,
-  rank,
+  rank_grouping,
   COUNT(DISTINCT page) AS pages,
   APPROX_QUANTILES(outgoing_link_metrics.same_site, 1000)[OFFSET(percentile * 10)] AS outgoing_links_same_site,
   APPROX_QUANTILES(outgoing_link_metrics.same_property, 1000)[OFFSET(percentile * 10)] AS outgoing_links_same_property,
@@ -53,20 +53,20 @@ LEFT JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page,
-    rank AS _rank
+    rank
   FROM
     `httparchive.summary_pages.2021_07_01_*`
 )
 USING
   (client, page),
-  UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank
+  UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_grouping
 WHERE
-  _rank <= rank
+  rank <= rank_grouping
 GROUP BY
   client,
-  rank,
+  rank_grouping,
   percentile
 ORDER BY
   client,
-  rank,
+  rank_grouping,
   percentile
