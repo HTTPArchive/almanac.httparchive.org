@@ -1238,23 +1238,23 @@ CSS также предлагает огромное разнообразие в
 
 ### Применение по типу {usage-by-type}
 
-The biggest usage of custom properties appears to be naming colors and keeping colors consistent throughout. Approximately 1 in 5 desktop pages and 1 in 6 mobile pages uses custom properties in `background-color`, and the top 11 properties that contain `var()` references are either color properties or shorthands that contain colors. Lengths is the second biggest usage, with `width` and `height` being used with `var()` in 7% of mobile pages (interestingly, only around 3% of desktop pages). This is also confirmed by the types of most popular values, with color values accounting for 52% of all custom property declarations. Dimensions (a number + a unit, e.g. lengths, angles, times etc.) were the second more popular type, higher than unitless numbers (12%). This is despite guidance to prefer the latter, since numbers can be converted to dimensions via `calc()` and multiplication, but dimensions cannot be converted to numbers as dividing with dimensions is not supported yet.
+Чаще всего кастомные свойства используются, судя по всему, для присвоения имён цветам и поддержания консистентности цветов повсюду. Примерно 1 из 5 десктопных страниц и 1 из 6 мобильных страниц используют кастомные свойства внутри `background-color`, а топ-11 свойств, которые содержат ссылки на `var()`, являются либо свойствами цвета, либо сокращениями, которые содержат цвета. Длина является вторым типом по количеству применений, при этом `width` и `height` используются с `var()` на 7% мобильных страниц (что интересно, только на около 3% десктопных страниц). Это также подтверждается типами наиболее популярных значений: значения цветов составляют 52% от всех объявлений кастомных свойств. Размеры (число + единица измерения, например, длины, углы, время и т.д.) были вторым по популярности типом, превышающим безразмерные числа (12%). И это несмотря на рекомендацию отдавать предпочтение последним, поскольку числа могут быть преобразованы в размеры с помощью `calc()` и умножения, а размеры не могут быть преобразованы в числа, поскольку деление на размеры пока не поддерживается.
 
 {{ figure_markup(
   image="custom-property-properties.png",
-  caption="The most popular property names used with custom properties as a percent of pages.",
-  description="Bar chart of the most popular property names used with custom properties, as a percent of pages. Mobile adoption is much higher for each property than their desktop counterparts. Custom properties are used on `background-color` and `color` on 19% and 15% of mobile pages respectively. The remaining properties use custom properties from 9% to 6% in descending order: `border`, `background`, `border-top`, `border-bottom`, `background-image`, `box-shadow`, `height`, `width`, `border-left`, `min-height`, `margin-top`, `border-right`, and `border-left-color`. Desktop adoption is about 4 percentage points smaller.",
+  caption="Самые частые имена свойств, использующие внутри кастомные свойства, как процент страниц.",
+  description="Гистограмма показывает самые частые имена свойств, использующие внутри кастомные свойства, как процент страниц. Применение на мобильных намного больше для каждого свойства, чем их десктопных аналогов. Кастомные свойства используются в `background-color` и `color` — 19% и 15% мобильных страниц соответственно. Остальные свойства используют кастомные свойства от 9% до 6% в убывающем порядке: `border`, `background`, `border-top`, `border-bottom`, `background-image`, `box-shadow`, `height`, `width`, `border-left`, `min-height`, `margin-top`, `border-right` и `border-left-color`. Применение на десктопах приблизительно на 4 процентных пункта меньше.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=16420165&format=interactive",
   sheets_gid="556945658",
   sql_file="custom_property_properties.sql"
 ) }}
 
-In preprocessors, color variables are often manipulated to generate color variations, such as different tints. However, in CSS <a hreflang="en" href="https://drafts.csswg.org/css-color-5/">color modification functions</a> are merely an unimplemented draft. Right now, the only way to generate new colors from variables is to use variables for individual components and plug them into color functions, such as `rgba()` and `hsla()`. However, fewer than 4% of mobile pages and 0.6% of desktop pages do that, indicating that the high usage of color variables is primarily to hold entire colors, with variations thereof being separate variables instead of dynamically generated.
+В препроцессорах цветовыми переменными часто манипулируют для создания цветовых вариаций, например, различных оттенков. Однако в CSS <a hreflang="en" href="https://drafts.csswg.org/css-color-5/">функции модификации цветов</a> являются просто нереализованным черновиком. Прямо сейчас единственный способ генерировать новые цвета из переменных — использовать переменные для отдельных компонентов и вставлять их в функции цвета, такие как `rgba()` и `hsla()`. Однако так делают менее 4% мобильных страниц и 0,6% десктопных страниц, указывая, что частое использование цветовых переменных в первую очередь нужно для хранения целых цветов, причем их вариации являются отдельными переменными, а не генерируются динамически.
 
 {{ figure_markup(
   image="custom-property-functions.png",
-  caption="The most popular function names used with custom properties as a percent of pages.",
-  description="Bar chart of the most popular function names used with custom properties, as a percent of pages. Mobile adoption is much higher for the first six functions: `calc` (7%), `linear-gradient`, `rgba` (4%), `radial-gradient`, `hsla`, and `drop-shadow`. The following functions have 1% adoption on desktop and mobile pages: `-o-linear-gradient`, `translate`, and `-webkit-linear-gradient`. And finally these functions have approximately 0% adoption on desktop and mobile pages: `scale`, `-webkit-gradient`, `max`, `to`, `from`, and `rotate`.",
+  caption="Самые популярные имена функций, использующих кастомные свойства, как процент страниц.",
+  description="Гистограмма показывает самые популярные имена функций, использующих кастомные свойства, как процент страниц. Применение на мобильных значительно выше для первых шести функций: `calc` (7%), `linear-gradient`, `rgba` (4%), `radial-gradient`, `hsla` и `drop-shadow`. Следующие функции имеют применение в 1% на десктопных и мобильных страницах: `-o-linear-gradient`, `translate` и `-webkit-linear-gradient`. И, наконец, эти функции имеют около 0% применения на десктопных и мобильных страницах: `scale`, `-webkit-gradient`, `max`, `to`, `from` и `rotate`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1986770560&format=interactive",
   width="600",
   height="525",
@@ -1264,28 +1264,28 @@ In preprocessors, color variables are often manipulated to generate color variat
 
 ### Сложность {complexity}
 
-Next, we looked at how complex custom property usage is. One way to assess code complexity in software engineering is the shape of the dependency graph. We first looked at the *depth* of each custom property. A custom property set to a literal value like e.g. `#fff` has a depth of 0, whereas a property referencing that via var() would have a depth of 1 and so on. For example:
+Затем мы рассмотрели, насколько сложным является применение кастомных свойств. Один из способов оценить сложность кода при разработке программного обеспечения — это форма графа зависимостей. Сначала мы рассмотрели *глубину* каждого кастомного свойства. Кастомное свойство, для которого задано буквальное значение, например, `#fff`, имеет глубину 0, тогда как свойство, ссылающееся на него через `var()`, будет иметь глубину 1 и так далее. Например:
 
 ```css
 :root {
-  --base-hue: 335; /* depth = 0 */
-  --base-color: hsl(var(--base-hue) 90% 50%); /* depth = 1 */
-  --background: linear-gradient(var(--base-color), black); /* depth = 2 */
+  --base-hue: 335; /* глубина = 0 */
+  --base-color: hsl(var(--base-hue) 90% 50%); /* глубина = 1 */
+  --background: linear-gradient(var(--base-color), black); /* глубина = 2 */
 }
 ```
 
-2 out of 3 custom properties examined (67%) had a depth of 0, and 30% had a depth of 1 (slightly less on mobile). Less than 1.8% had a depth of 2, and virtually none (0.7%) had a depth of 3+, which indicates rather basic usage. The upside of such basic usage is that it is harder to make mistakes: fewer than 0.5% of pages included cycles.
+2 из 3 проверенных кастомных свойств (67%) имели глубину, равную 0, 30% — глубину 1 (немного меньше на мобильных). Менее 1,8% имели глубину 2, практически никакие (0,7%) имели глубину 3 и больше, что говорит о базовом применении. Плюс такого базового применения в том, что так труднее делать ошибки: менее 0,5% страниц содержат циклы.
 
 {{ figure_markup(
   image="custom-property-depth.png",
-  caption="Distribution of depths of custom properties as a percent of occurrences.",
-  description="Bar chart of the distribution of depths of custom properties as a percent of occurrences. Custom properties on desktop and mobile page have a depth of 0 for 67% and 60% of occurrences, respectively. For a depth of 1 it is 31% and 38%. At a depth of 2, just 2% each. Approximately 0% of occurrences have a depth of 3 or more.",
+  caption="Распределение глубин кастомных свойств как процент появлений.",
+  description="Гистограмма показывает распределение глубин кастомных свойств как процент появлений. Кастомные свойства на десктопных и мобильных страницах имеют глубину 0 в 67% и 60% случаев соответственно. Для глубины 1 это 31% и 38%. Глубина 2 всего у 2% страниц. Приблизительно 0% появлений имеют глубину 3 и больше.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=262191540&format=interactive",
   sheets_gid="1368222498",
   sql_file="custom_property_depth.sql"
 ) }}
 
-Examining the selectors on which custom properties are declared further confirms that most custom property usage in the wild is fairly basic. Two out of three custom property declarations are on the root element, indicating that they are used essentially as global constants. It is important to note that many popular polyfills have required them to be global in this vein, so developers using said polyfills may not have had a choice.
+Изучение селекторов, в которых объявляются кастомные свойства, дополнительно подтверждает, что в большинстве случаев использование кастомных свойств в дикой природе является довольно простым. Два из трёх объявлений кастомных свойств находятся в корневом элементе, что указывает на то, что они используются по существу как глобальные константы. Важно отметить, что многие популярные полифиллы требовали, чтобы они были глобальными в этом ключе, поэтому у разработчиков, использующих эти полифилы, возможно, не было выбора.
 
 ## CSS и JS {css-and-js}
 
