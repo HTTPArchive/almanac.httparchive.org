@@ -174,14 +174,14 @@ Uw app zou wat inhoud moeten weergeven wanneer JavaScript is uitgeschakeld, ook 
 
 Bij een service worker kan naar een aantal gebeurtenissen worden geluisterd:
 
-1.  `install`, wat gebeurt bij de installatie van een service worker.
-2.  `activate`, wat gebeurt bij activering van de service worker.
-3.  `fetch`, wat gebeurt wanneer een bron wordt opgehaald.
-4.  `push`, wat gebeurt wanneer een push-melding binnenkomt.
-5.  `notificationclick`, wat gebeurt wanneer er op een melding wordt geklikt.
-6.  `notificationclose`, wat gebeurt wanneer een melding wordt gesloten.
-7.  `message`, wat gebeurt wanneer een bericht verzonden via postMessage() binnenkomt.
-8.  `sync`, wat gebeurt wanneer een achtergrondsynchronisatiegebeurtenis plaatsvindt.
+1. `install`, wat gebeurt bij de installatie van een service worker.
+2. `activate`, wat gebeurt bij activering van de service worker.
+3. `fetch`, wat gebeurt wanneer een bron wordt opgehaald.
+4. `push`, wat gebeurt wanneer een push-melding binnenkomt.
+5. `notificationclick`, wat gebeurt wanneer er op een melding wordt geklikt.
+6. `notificationclose`, wat gebeurt wanneer een melding wordt gesloten.
+7. `message`, wat gebeurt wanneer een bericht verzonden via postMessage() binnenkomt.
+8. `sync`, wat gebeurt wanneer een achtergrondsynchronisatiegebeurtenis plaatsvindt.
 
 We hebben onderzocht naar welke van deze gebeurtenissen wordt geluisterd door service workers in onze dataset.
 
