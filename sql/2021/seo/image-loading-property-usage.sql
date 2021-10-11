@@ -2,13 +2,8 @@
 # Image loading property usage
 # Note: This query only reports if an attribute was ever used on a page. It is not a per img report.
 
-# helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
-  ROUND(SAFE_DIVIDE(freq, total), 4)
-);
-
 # returns all the data we need from _markup
-CREATE TEMPORARY FUNCTION get_markup_info(markup_string STRING)
+CREATE TEMPORARY FUNCTION getLoadingPropertyMarkupInfo(markup_string STRING)
 RETURNS STRUCT<
   loading ARRAY<STRING>
 > LANGUAGE js AS '''
@@ -43,13 +38,13 @@ SELECT
   loading,
   total,
   COUNT(0) AS count,
-  AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
+  SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 FROM
   (
     SELECT
       _TABLE_SUFFIX AS client,
       total,
-      get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
+      getLoadingPropertyMarkupInfo(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS loading_property_markup_info
     FROM
       `httparchive.pages.2021_07_01_*`
     JOIN
@@ -61,5 +56,8 @@ FROM
       ) # to get an accurate total of pages per device. also seems fast
     USING (_TABLE_SUFFIX)
   ),
-  UNNEST(markup_info.loading) AS loading
-GROUP BY total, loading, client
+  UNNEST(loading_property_markup_info.loading) AS loading
+GROUP BY 
+total, 
+loading, 
+client
