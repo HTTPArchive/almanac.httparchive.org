@@ -1331,12 +1331,12 @@ CSS также предлагает огромное разнообразие в
 
 Английский, как и многие другие языки, пишется горизонтальными линиями, а символы располагаются слева направо. Но некоторые языки (например, арабский и иврит) в основном пишутся справа налево, а есть языки, которые могут быть написаны вертикальными линиями сверху вниз. Не говоря уже о цитатах с других языков. Так что некоторые вещи могут стать довольно сложными. И в HTML, и в CSS есть способы справиться с этим.
 
-### Направление чтения {direction}
+### Направление письма {direction}
 
 Когда текст представлен горизонтальными линиями, большинство систем письма отображают символы слева направо. Урду, арабский язык и иврит отображают символы справа налево, за исключением цифр, которые пишутся слева направо — эти языки двунаправленные. Некоторые символы, такие как скобки, кавычки, знаки препинания, могут использоваться в контексте слева направо или справа налево и считаются нейтральными к направлению. Ситуация усложняется, когда текстовые строки на разных языках вложены друг в друга: например, английский текст, содержащий короткую цитату на иврите, которая содержит некоторые английские слова. Двунаправленный алгоритм Юникода определяет, как размещать абзацы текста с разнонаправленным текстом, но ему необходимо знать базовое направление абзаца.
-  
-Для поддержки двунаправленности явная поддержка задания направления доступна как в HTML через (<a hreflang="en" href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">атрибут `dir`</a> и <a hreflang="en" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdo-element">элемент `<bdo>`</a>), так и в CSS (свойства <a hreflang="en" href="https://www.w3.org/TR/css-writing-modes-3/#direction">`direction`</a> и <a hreflang="en" href="https://www.w3.org/TR/css-writing-modes-3/#unicode-bidi">`unicode-bidi`</a>). Мы рассмотрели использование как HTML, так и CSS.
-  
+
+Для поддержки двунаправленности явная поддержка задания направления доступна как в HTML (через <a hreflang="en" href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">атрибут `dir`</a> и <a hreflang="en" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdo-element">элемент `bdo`</a>), так и в CSS (свойства <a hreflang="en" href="https://www.w3.org/TR/css-writing-modes-3/#direction">`direction`</a> и <a hreflang="en" href="https://www.w3.org/TR/css-writing-modes-3/#unicode-bidi">`unicode-bidi`</a>). Мы рассмотрели использование как HTML, так и CSS.
+
 Только 12,14% мобильных страниц (и примерно 10,76% десктопных) задают атрибут `dir` в элементе `<html>`. И это нормально: большинство систем письма в мире — `ltr`, а значение `dir` по умолчанию — `ltr`. Из страниц, которые установили `dir` на `<html>`, 91% задали ему значение `ltr`, в то время как 8,5% задали значение `rtl` и 0,32% — `auto` (явное направление — неизвестное значение, в основном полезно для шаблонов, которые будут заполнены неизвестным содержимым). Ещё меньшее число, 2,63%, устанавливают `dir` на `<body>`, а не на `<html>`. Это хорошо, потому что задание его на `<html>` также затрагивает содержимое в `<head>`: например, в `<title>`.
 
 Зачем задавать направление с помощью атрибутов HTML, а не стилей CSS? Одна из причин — разделение ответственности: направление связано с контентом, который входит в компетенцию HTML. Это также <a hreflang="en" href="https://www.w3.org/International/tutorials/bidi-xhtml/index.en">рекомендуемая практика</a>: <q>Избегайте использования CSS или управляющих кодов Юникода для задания направления, если вы можете использовать разметку </q>. В конце концов, таблица стилей может не загрузиться, а текст по-прежнему должен быть читабельным.
@@ -1351,35 +1351,35 @@ CSS также предлагает огромное разнообразие в
 
 ## Браузерная поддержка {browser-support}
 
-A perennial problem with the web platform is how to introduce new features and extend the platform. CSS has seen us moving from vendor prefixes to feature queries as a better way of introducing change so we wanted to look at how those two techniques were being used.
+Постоянная проблема веб-платформы заключается в вопросе, как вводить новые функции и расширять платформу. CSS видел, как мы перешли от вендорных префиксов к запросам фичей, как к лучшему способу внести изменения, поэтому мы хотели посмотреть, как используются эти два метода.
 
 ### Вендорные префиксы {vendor-prefixes}
 
 {{ figure_markup(
-  caption="Percent of mobile pages using any vendor prefixed feature.",
+  caption="Процент мобильных страниц, применяющих какие-либо фичи за вендорным префиксом.",
   content="91,05%",
   classes="big-number",
   sheets_gid="1944012653",
   sql_file="vendor_prefix_summary.sql"
 ) }}
 
-Even though prefixing is now recognized as a failed way to introduce experimental features to developers, and browsers have largely stopped using it, opting for flags instead, a whopping 91% of pages still use at least one prefixed feature.
+Несмотря на то, что добавление префиксов сейчас признано неудачным способом представить разработчикам экспериментальные фичи, а браузеры в основном перестали его применять, отдавая предпочтение флагам, колоссальный 91% страниц по-прежнему используют по крайней мере одну фичу с префиксом.
 
 {{ figure_markup(
   image="vendor-prefix-features.png",
-  caption="The most popular vendor-prefixed features by type as a percent of pages.",
-  description="Bar chart of the most popular vendor-prefixed features by type as a percent of pages. Desktop and mobile are very similar. 91% of mobile pages use vendor-prefixed properties, 77% use keywords and pseudo-elements, 65% use functions, 61% use pseudo-classes, and 52% use media.",
+  caption="Самые популярные фичи с вендорными префиксами по типу как процент страниц.",
+  description="Гистограмма показывает самые популярные фичи с вендорными префиксами по типу как процент страниц. Десктопные и мобильные страницы очень похожи. 91% мобильных страниц используют вендорные префиксы, 77% используют ключевые слова и псевдоэлементы, 65% используют функции, 61% используют псевдоклассы и 52% используют медиа.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1057411197&format=interactive",
   sheets_gid="1944012653",
   sql_file="vendor_prefix_summary.sql"
 ) }}
 
-Prefixed properties take up the lion's share of that, since 84% of all prefixed features used were properties and these were used on 90.76% of mobile pages, and 89.66% of desktop pages. This is most likely a remnant of the prefix-happy CSS3 era circa 2009-2014. This is also evident from the most popular prefixed ones, none of which have actually needed prefixes since 2014:
+Львиная доля от этого приходится на свойства за префиксом, поскольку 84% всех используемых фичей с префиксом были свойствами, и они использовались на 90,76% мобильных страниц и 89,66% десктопных страниц. Скорее всего, это пережиток префиксной эпохи в CSS3 примерно 2009–2014 годов. Это также видно по самым популярным префиксам, ни один из которых не нуждается в префиксе с 2014 года:
 
 {{ figure_markup(
   image="vendor-prefix-properties.png",
-  caption="Relative popularity of properties that are most used with vendor prefixes, as a percent of occurrences.",
-  description="Bar chart of the relative popularity of properties that are most used with vendor prefixes, as a percent of occurrences. Desktop and mobile have similar results. The `transform` property makes up 19% of vendor prefix usage, followed by 12% `transition`, 9% `border-radius`, 8% `box-shadow`, 5% `user-select` and `box-sizing`, 4% `animation`, 3% `filter`, 2% each of `font-smoothing`, `backface-visibility`, `appearance`, and `flex`, and 1% usage for the remaining properties: `transform-origin`, `osx-font-smoothing`, `animation-name`, `background-size`, `transition-property`, and `tap-highlight-color`.",
+  caption="Относительная популярность свойств, которые больше всего используются с вендорными префиксами, как процент появлений.",
+  description="Гистограмма показывает относительную популярность свойств, которые больше всего используются с вендорными префиксами, как процент появлений. Десктопы и мобильные имеют одинаковые результаты. Свойство `transform` достигает 19% от использования вендорных префиксов, следом 12% у `transition`, 9% у `border-radius`, 8% у `box-shadow`, 5% у `user-select` и `box-sizing`, 4% у `animation`, 3% у `filter`, 2% у `font-smoothing`, `backface-visibility`, `appearance` и `flex`, 1% применения у остальных свойств: `transform-origin`, `osx-font-smoothing`, `animation-name`, `background-size`, `transition-property` и `tap-highlight-color`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=859599479&format=interactive",
   sheets_gid="67014375",
   sql_file="vendor_prefix_properties.sql",
@@ -1387,25 +1387,25 @@ Prefixed properties take up the lion's share of that, since 84% of all prefixed 
   height="627"
 ) }}
 
-Some of these prefixes, like `-moz-border-radius`, haven't been useful since 2011. Even more mind-boggling, other prefixed properties that never existed, are still moderately common, with roughly 9% of all pages including `-o-border-radius`!
+Некоторые их этих префиксов, вроде `-moz-border-radius`, не были полезными с 2011 года. Еще больший взрыв мозга от того, что другие свойства с префиксом, которые никогда не существовали, всё ещё довольно распространены: примерно 9% всех страниц включают `-o-border-radius`!
 
-It may come as no surprise that `-webkit-` is by far the most popular prefix, with half of prefixed properties using it:
+Не будет сюрпризом, что `-webkit-` — самый популярный префикс, половина свойств за префиксом используют его:
 
 {{ figure_markup(
   image="top-vendor-prefixes.png",
-  caption="Relative popularity of vendor prefixes, as a percent of occurrences.",
-  description="Bar chart of the relative popularity of vendor prefixes, as a percent of occurrences. `-webkit` makes up 49% of vendor prefix usage on mobile pages, `-moz` 23%, `-ms` 19%, `-o` 8%, `-khtml` 1%, and 0% for `-pie`, `-js`, and `-ie`. Desktop is similar.",
+  caption="Относительная популярность вендорных префиксов, как процент появлений.",
+  description="Гистограмма показывает относительную популярность вендорных префиксов, как процент появлений. `-webkit` составляет 49% от использования вендорных префиксом на мобильных страницах, `-moz` — 23%, `-ms` — 19%, `-o` — 8%, `-khtml` — 1% и 0% для `-pie`, `-js` и `-ie`. На десктопе так же.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=702800205&format=interactive",
   sheets_gid="67014375",
   sql_file="vendor_prefix_properties.sql"
 ) }}
 
-Prefixed pseudo-classes are not nearly as common as properties, with none of them being used in more than 10% of pages. Nearly two thirds of all prefixed pseudo-classes overall are for styling placeholders. In contrast, the standard `:placeholder-shown` pseudo-class is barely used, encountered in less than 0.34% of pages.
+Псевдоклассы с префиксом не так распространены, как свойства, и ни один из них не используется более чем на 10% страниц. Почти две трети всех псевдоклассов с префиксом в целом предназначены для стилизации плейсхолдеров. Напротив, стандартный псевдокласс `:placeholder-shown` почти не используется, встречается менее чем на 0,34% страниц.
 
 {{ figure_markup(
   image="vendor-prefix-pseudo-classes.png",
-  caption="The most popular vendor-prefixed pseudo-classes as a percent of pages.",
-  description="Bar chart of the most popular vendor-prefixed pseudo-classes as a percent of pages. `:ms-input-placeholder` is used on 10% of mobile pages, `:-moz-placeholder` 8%, `:-mox-focusring` 2%, and 1% or less for the following: `:-webkit-full-screen`, :-moz-full-screen, :-moz-any-link, `:-webkit-autofill`, `:-o-prefocus,` `:-ms-fullscreen`, `:-ms-input-placeholder` [sic], `:-ms-lang`, `:-moz-ui-invalid`, `:-webkit-input-placeholder`, `:-moz-input-placeholder`, and `:-webkit-any-link`.",
+  caption="Самые популярные псевдоклассы с вендорным префиксом в процентах от страниц.",
+  description="Гистограмма показывает самые популярные псевдоклассы с вендорным префиксом в процентах от страниц. `:ms-input-placeholder` применяется на 10% мобильных страниц, `:-moz-placeholder` — 8%, `:-mox-focusring` — 2%, и 1% и менее для следующих: `:-webkit-full-screen`, :-moz-full-screen, :-moz-any-link, `:-webkit-autofill`, `:-o-prefocus,` `:-ms-fullscreen`, `:-ms-input-placeholder` [sic], `:-ms-lang`, `:-moz-ui-invalid`, `:-webkit-input-placeholder`, `:-moz-input-placeholder` и `:-webkit-any-link`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1884876858&format=interactive",
   sheets_gid="1477158006",
   width="600",
@@ -1413,14 +1413,14 @@ Prefixed pseudo-classes are not nearly as common as properties, with none of the
   sql_file="vendor_prefix_pseudo_classes.sql"
 ) }}
 
-The most common prefixed pseudo-element is `::-moz-focus-inner`, used to disable Firefox's inner focus ring. It makes up almost a quarter of prefixed pseudo-elements and for which there is no standard alternative. Another quarter of prefixed pseudo-elements is yet again for styling placeholders, while the standard version, `::placeholder`, trails far behind, used in only 4% of pages.
+Самый распространенный псевдоэлемент с префиксом — `::-moz-focus-inner`, используемый для отключения внутреннего кольца фокуса в Firefox. Он составляет почти четверть от префиксных псевдоэлементов, для которых нет стандартной альтернативы. Еще одна четверть псевдоэлементов с префиксом снова предназначена для стилизации плейсхолдеров, в то время как стандартная версия, `::placeholder`, сильно отстаёт и используется только на 4% страниц.
 
-The remaining half of prefixed pseudo-elements is primarily devoted to styling scrollbars and Shadow DOM of native elements (search inputs, video & audio controls, spinner buttons, sliders, meters, progress bars). This indicates a strong developer need for customization of built-in UI controls, for which standards-compliant CSS still falls short, although there are <a hreflang="en" href="https://github.com/w3c/csswg-drafts/issues/4410">multiple ongoing</a> CSS WG <a hreflang="en" href="https://github.com/w3c/csswg-drafts/issues/5187">discussions</a> to ameliorate that.
+Оставшаяся половина псевдоэлементов с префиксом в основном предназначена для стилизации полос прокрутки и Shadow DOM нативных элементов (инпуты поиска, элементы управления видео и аудио, кнопки-спиннеры, слайдеры, индикаторы, прогрессбары). Это указывает на сильную потребность разработчика в кастомизации нативных элементов управления пользовательского интерфейса, для которой соответствующий стандартам CSS всё ещё не соответствует требованиям, хотя есть <a hreflang="en" href="https://github.com/w3c/csswg-drafts/issues/4410">несколько текущих</a> <a hreflang="en" href="https://github.com/w3c/csswg-drafts/issues/5187">обсуждений</a> рабочей группы CSS, чтобы исправить это.
 
 {{ figure_markup(
   image="vendor-prefix-pseudo-elements.png",
-  caption="Usage of prefixed pseudo-elements by category.",
-  description="Bar chart of the relative popularity of vendor-prefixed pseudo-elements by their purpose as a percent of occurrences. placeholder is used in 29% of prefixed occurrences, focus ring 21%, scrollbar 11%, search input 10%, media controls 8%, spinner 7%, other, selection, slider, clear button all at 3%, progress bar 2%, file upload 1%, and the remainder all at approximately 0% relative popularity on mobile pages: date picker, validation, meter, details marker, and resizer.",
+  caption="Использование псевдоэлементов с префиксом по категориям.",
+  description="Гистограмма относительной популярности псевдоэлементов с префиксом по их назначению как процент появлений. Плейсхолдер используется в 29% появлений префиксов, кольцо фокуса — 21%, полоса прокрутки — 11%, инпут поиска — 10%, элементы управления медиа — 8%, спиннер — 7%, другие, выделение, слайдер, кнопка сброса — все по 3%, прогрессбар 2%, загрузка файла 1%, у остальных приблизительно 0% относительной популярности на мобильных страницах: выбор даты, валидация, индикатор, маркер у details, полоска ресайза.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=2013685965&format=interactive",
   sheets_gid="1466863581",
   width="600",
@@ -1428,12 +1428,12 @@ The remaining half of prefixed pseudo-elements is primarily devoted to styling s
   sql_file="vendor_prefix_pseudo_elements.sql"
 ) }}
 
-It is no secret that Chrome and Safari have been way more prefix-happy, but it is especially true with pseudo-elements: nearly half of all prefixed pseudo-elements we found had a `-webkit-` prefix.
+Не секрет, что Chrome и Safari были более удобны для использования префиксов, но это особенно верно для псевдоэлементов: почти половина всех префиксных псевдоэлементов, которые мы обнаружили, имели префикс `-webkit-`.
 
 {{ figure_markup(
   image="top-pseudo-element-prefixes.png",
-  caption="Relative popularity of pseudo-element vendor prefixes as a percent of occurrences on mobile pages.",
-  description="Pie chart of the relative popularity of pseudo-element vendor prefixes as a percent of occurrences on mobile pages. `-webkit` makes up 47% of pseudo-element vendor prefix usage, followed by, 26% `-moz`, 15% `-ms`, 7% `-o`, and 6% other.",
+  caption="Относительная популярность вендорных префиксов у псевдоэлементов в процентах от их появления на мобильных страницах.",
+  description="Круговая диаграмма показывает относительную популярность вендорных префиксов у псевдоэлементов в процентах от их появления на мобильных страницах. `-webkit` достигает 47% применения псевдоэлементов с префиксами, следом 26% у `-moz`, 15% у `-ms`, 7% у `-o` и 6% у других.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=744523431&format=interactive",
   sheets_gid="1466863581",
   sql_file="vendor_prefix_pseudo_elements.sql"
@@ -1441,22 +1441,24 @@ It is no secret that Chrome and Safari have been way more prefix-happy, but it i
 
 Nearly all usage of prefixed functions (98%) is to specify gradients, even though <a hreflang="en" href="https://caniuse.com/css-gradients">this has not been necessary since 2014</a>. The most popular of these is `-webkit-linear-gradient()` used in over a quarter of pages examined. The remaining <2% is primarily for calc, <a hreflang="en" href="https://caniuse.com/calc">for which a prefix has not been necessary since 2013</a>.
 
+Практически все функции с префиксом (98%) используются для задания градиентов, хотя <a hreflang="en" href="https://caniuse.com/css-gradients">в этом нет необходимости с 2014 года</a>. Самая популярная из них — `-webkit-linear-gradient()`, которая используется более чем на четверти изученных страниц. Остальные <2% в основном предназначены для `calc`, <a hreflang="en" href="https://caniuse.com/calc">для которого префикс не нужен с 2013 года</a>.
+
 {{ figure_markup(
-  caption="Percent of gradient functions across all occurrences of vendor-prefixed functions in mobile pages",
+  caption="Процент градиентных функций среди всех появлений функций с вендорным префиксом на мобильных страницах",
   content="98,22%",
   classes="big-number",
   sheets_gid="1586213539",
   sql_file="vendor_prefix_functions.sql"
 ) }}
 
-Usage of prefixed media features is lower overall, with the most popular one, `-webkit-min-pixel-ratio` used in 13% of pages to detect "Retina" displays. The corresponding standard media feature, [`resolution`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/resolution) has finally surpassed it in popularity and is used in 22% of mobile pages and 15% desktop pages.
+Использование медиафичей с префиксом в целом ниже, при этом самая популярная из них, `-webkit-min-pixel-ratio`, используется на 13% страниц для определения Retina-экранов. Соответствующая стандартная медиафича [`resolution`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/resolution) наконец превзошла её по популярности и используется на 22% мобильных страниц и 15% десктопных страниц.
 
-Overall, `-*-min-pixel-ratio` comprises three quarters of prefixed media features on desktop and about half on mobile. The reason for the difference is not reduced mobile usage, but that another prefixed media feature, `-*-high-contrast`, is far more popular on mobile making up almost the entire other half of prefixed media features, but only 18% on desktop. The corresponding standard media feature, [forced-colors](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors) is still experimental and behind a flag in Chrome and Firefox and did not appear at all in our analysis.
+В целом, `-*-min-pixel-ratio` включает три четверти медиафичей с префиксом на десктопах и около половины на мобильных устройствах. Причина такой разницы не в уменьшении использования мобильных устройств, а в том, что другая медиафича с префиксом, `-*-high-contrast`, гораздо более популярна на мобильных устройствах, составляя почти всю вторую половину медиафичей с префиксом, но всего 18% на десктопах. Соответствующая стандартная медиафича [forced-colors](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors) все еще является экспериментальной и находится под флагом в Chrome и Firefox и вообще не фигурировала в нашем анализе.
 
 {{ figure_markup(
   image="vendor-prefixed-media.png",
-  caption="Relative popularity of vendor-prefixed media features as a percent of occurrences on mobile pages.",
-  description="Pie chart of the relative popularity of vendor-prefixed media features as a percent of occurrences on mobile pages. `min-device-pixel-ratio` and `high-contrast` each make up 47% of occurrences, `transform-3d` at 5%, and the remaining features less than 1% are `device-pixel-ratio`, `max-device-pixel-ratio`, and other features",
+  caption="Относительная популярность медиафичей с вендорным префиксом как процент появлений на мобильных страницах.",
+  description="Круговая диаграмма показывает относительную популярность медиафичей с вендорным префиксом как процент появлений на мобильных страницах. `min-device-pixel-ratio` и `high-contrast` составляют по 47% появлений, `transform-3d` — 5%, остальные фичи с меньше 1% — `device-pixel-ratio`, `max-device-pixel-ratio` и другие фичи.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1940027848&format=interactive",
   sheets_gid="1192245087",
   sql_file="vendor_prefix_media.sql"
@@ -1464,20 +1466,20 @@ Overall, `-*-min-pixel-ratio` comprises three quarters of prefixed media feature
 
 ### Директива поддержки фичей {feature-queries}
 
-Feature queries ([@supports](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports)) have been steadily gaining traction for the past few years, and were used in 39% of pages, a notable increase from last year's 30%.
+Директива поддержки фичей ([@supports](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports)) в течение последних нескольких лет неуклонно набирала обороты и использовалась на 39% страниц, что является заметным увеличением по сравнению с 30% в прошлом году.
 
-But what are they used for? We looked at the most popular queries. The results may come as a big surprise—it was to us! We expected Grid-related queries to top the list, but instead, the most popular feature queries by far are for `position: sticky`! They comprise half of all feature queries and are used in about a quarter of pages. In contrast, Grid-related queries account for only 2% of all queries, indicating that developers feel comfortable enough with Grid's browser support that they don't need to use it only as progressive enhancement.
+Но для чего они используются? Мы рассмотрели самые популярные проверки. Результаты могут стать большим сюрпризом — так было для нас! Мы ожидали, что проверки, связанные с гридами, будут возглавлять список, но вместо этого наиболее популярные проверки фичей на сегодняшний день относятся к `position: sticky`! Они составляют половину всех директив поддержки фичей и используются примерно на четверти страниц. Напротив, проверки, связанные с гридами, составляют всего 2% всех проверок, что указывает на то, что разработчики чувствуют себя достаточно комфортно с браузерной поддержкой гридов, что им не нужно использовать их только в качестве прогрессивного улучшения.
 
-What is even more mysterious is that `position: sticky` itself is not used as much as the feature queries about it, appearing in 10% of desktop pages and 13% of mobile pages. So there are over half a million pages that detect `position: sticky` without ever using it! Why?!
+Что ещё большая загадка, так это то, что сам `position: sticky` не применяется так часто, как проверка его поддержки, появляясь на 10% десктопных страниц и 13% мобильных страниц. Таким образом, существует более полумиллиона страниц, которые проверяют поддержку `position: sticky`, даже не используя его! Чтобы что?!
 
-Lastly, it was encouraging to see `max()` already in the top 10 most detected features, appearing in 0.6% of desktop pages and 0.7% of mobile pages. Given that `max()` (and `min()`, and `clamp()`) was <a hreflang="en" href="https://caniuse.com/mdn-css_types_max">only supported across the board this year</a>, it is quite impressive adoption and highlights how desperately developers needed this.
+Наконец, обнадеживает то, что `max()` уже входит в десятку наиболее часто проверяемых функций, появляясь на 0,6% десктопных страниц и 0,7% мобильных страниц. Учитывая, что `max()` (и `min()`, и `clamp()`) <a hreflang="en" href="https://caniuse.com/mdn-css_types_max"> получили поддержку только в этом году</a>, это впечатляющее внедрение и подчеркивает, насколько отчаянно в нём нуждались разработчики.
 
-A small but notable number of pages (around 3000 or 0.05%) were oddly using `@supports` with CSS 2 syntax, such as `display: block` or `padding: 0px`, syntax that existed well before `@supports` was implemented. It is unclear what this was meant to achieve. Perhaps it was used to shield CSS rules from old browsers that don't implement `@supports`?
+Небольшое, но заметное количество страниц (около 3000 или 0,05%) странным образом использовало `@supports` с синтаксисом CSS 2, таким как `display: block` или `padding: 0px`, который существовал задолго до того, как `@supports` был реализован. Непонятно, для чего это было нужно. Возможно, он использовался для отделения CSS-правил в старых браузерах, которые ещё не реализовали `@supports`?
 
 {{ figure_markup(
   image="supports-criteria.png",
-  caption="Relative popularity of `@supports` features queried as a percent of occurrences.",
-  description="Bar chart of the relative popularity of @supports features queried as a percent of occurrences. The most popular feature queried is `sticky` at 49% of occurrences on mobile pages, followed by `ime-align` at 24%, `mask-image` at 12%, `overflow-scrolling` at 5%, `grid` at 2%, custom properties, `transform-style`, `max()`, and `object-fit `all at 1%, and `appearance` at approximately 0%.",
+  caption="Относительная популярность фичей внутри `@supports` как процент появлений.",
+  description="Гистограмма показывает относительную популярность фичей внутри @supports как процент появлений. Самая популярная проверка — у `sticky` с 49% появлений на мобильных страницах, следом `ime-align` — 24%, `mask-image` — 12%, `overflow-scrolling` — 5%, `grid` — 2%, кастомные свойства, `transform-style`, `max()` и `object-fit` — по 1%, `appearance` — приблизительно 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1901533222&format=interactive",
   sheets_gid="1155233487",
   sql_file="supports_criteria.sql"
