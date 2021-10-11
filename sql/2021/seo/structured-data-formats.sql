@@ -1,13 +1,8 @@
 #standardSQL
 # Structured data formats
 
-# helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
-  ROUND(SAFE_DIVIDE(freq, total), 4)
-);
-
 # returns all the data we need from _wpt_bodies
-CREATE TEMPORARY FUNCTION get_wpt_bodies_info(wpt_bodies_string STRING)
+CREATE TEMPORARY FUNCTION getStructuredDataWptBodies(wpt_bodies_string STRING)
 RETURNS STRUCT<
   items_by_format ARRAY<STRING>
 > LANGUAGE js AS '''
@@ -45,14 +40,14 @@ SELECT
   format,
   total,
   COUNT(0) AS count,
-  AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
+  SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 
 FROM
   (
     SELECT
       _TABLE_SUFFIX AS client,
       total,
-      get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
+      getStructuredDataWptBodies(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS structured_data_wpt_bodies_info
     FROM
       `httparchive.pages.2021_07_01_*`
     JOIN
@@ -61,7 +56,7 @@ FROM
         `httparchive.pages.2021_07_01_*`
         GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
     USING (_TABLE_SUFFIX)
-  ), UNNEST(wpt_bodies_info.items_by_format) AS format
+  ), UNNEST(structured_data_wpt_bodies_info.items_by_format) AS format
 GROUP BY
   total,
   format,
