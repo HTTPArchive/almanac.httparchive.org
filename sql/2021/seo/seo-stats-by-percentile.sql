@@ -125,7 +125,7 @@ SELECT
   APPROX_QUANTILES(wpt_bodies_info.same_page_other_total, 1000)[OFFSET(percentile * 10)] AS same_page_other_links,
 
   # percent of links are image links
-  ROUND(APPROX_QUANTILES(SAFE_DIVIDE(wpt_bodies_info.image_links, wpt_bodies_info.image_links + wpt_bodies_info.text_links), 1000)[OFFSET(percentile * 10)], 4) AS image_links_percent,
+  APPROX_QUANTILES(SAFE_DIVIDE(wpt_bodies_info.image_links, wpt_bodies_info.image_links + wpt_bodies_info.text_links), 1000)[OFFSET(percentile * 10)] AS image_links_percent,
 
   # words
   APPROX_QUANTILES(wpt_bodies_info.visible_words_rendered_count, 1000)[OFFSET(percentile * 10)] AS visible_words_rendered,
