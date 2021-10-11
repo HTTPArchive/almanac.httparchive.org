@@ -41,7 +41,7 @@ FROM (
   LEFT JOIN (
     SELECT
       rank,
-      COUNT(DISTINCT(url)) AS rank_page_count,
+      COUNT(DISTINCT(url)) AS rank_page_count
     FROM
       `httparchive.summary_pages.2021_07_01_*`
     GROUP BY
@@ -49,8 +49,8 @@ FROM (
   USING
     (rank))
 LEFT JOIN (
-  SELECT
-    DISTINCT _TABLE_SUFFIX AS client,
+  SELECT DISTINCT
+    _TABLE_SUFFIX AS client,
     user_agent,
     url AS page
   FROM (
