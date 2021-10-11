@@ -1439,8 +1439,6 @@ CSS также предлагает огромное разнообразие в
   sql_file="vendor_prefix_pseudo_elements.sql"
 ) }}
 
-Nearly all usage of prefixed functions (98%) is to specify gradients, even though <a hreflang="en" href="https://caniuse.com/css-gradients">this has not been necessary since 2014</a>. The most popular of these is `-webkit-linear-gradient()` used in over a quarter of pages examined. The remaining <2% is primarily for calc, <a hreflang="en" href="https://caniuse.com/calc">for which a prefix has not been necessary since 2013</a>.
-
 Практически все функции с префиксом (98%) используются для задания градиентов, хотя <a hreflang="en" href="https://caniuse.com/css-gradients">в этом нет необходимости с 2014 года</a>. Самая популярная из них — `-webkit-linear-gradient()`, которая используется более чем на четверти изученных страниц. Остальные <2% в основном предназначены для `calc`, <a hreflang="en" href="https://caniuse.com/calc">для которого префикс не нужен с 2013 года</a>.
 
 {{ figure_markup(
