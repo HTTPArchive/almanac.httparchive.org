@@ -1,13 +1,8 @@
 #standardSQL
 # Robots txt status codes
 
-# helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
-  ROUND(SAFE_DIVIDE(freq, total), 4)
-);
-
 # returns all the data we need from _robots_txt
-CREATE TEMPORARY FUNCTION get_robots_txt_info(robots_txt_string STRING)
+CREATE TEMPORARY FUNCTION getRobotsStatusInfo(robots_txt_string STRING)
 RETURNS STRUCT<
   status_code STRING
 > LANGUAGE js AS '''
@@ -27,22 +22,21 @@ return result;
 
 SELECT
   client,
-  robots_txt_info.status_code AS status_code,
-
+  robots_txt_status_info.status_code AS status_code,
   COUNT(0) AS total,
-
-  AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
+  SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 
 FROM
   (
     SELECT
       _TABLE_SUFFIX AS client,
-      get_robots_txt_info(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_info
+      getRobotsStatusInfo(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_status_info
     FROM
       `httparchive.pages.2021_07_01_*`
   )
 GROUP BY
   client,
   status_code
-ORDER BY total DESC
+ORDER BY
+  total DESC
 
