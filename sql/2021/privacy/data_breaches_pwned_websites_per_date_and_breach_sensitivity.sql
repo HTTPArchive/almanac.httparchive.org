@@ -3,28 +3,20 @@
 # https://haveibeenpwned.com/FAQs#SensitiveBreach
 # https://docs.google.com/spreadsheets/d/148SxZICZ24O44roIuEkRgbpIobWXpqLxegCDhIiX8XA/edit#gid=1435927653
 
+
 SELECT
-  is_sensitive,
+  DATE_TRUNC(DATE(BreachDate), MONTH) AS breach_date,
+  IF(isSensitive, "Sensitive", "Not sensitive") AS sensitivity,
+  COUNT(DISTINCT Domain) AS number_of_affected_domains,
+  SUM(PwnCount) AS number_of_affected_accounts
+FROM
+  `httparchive.almanac.breaches`
+WHERE
+  date = '2021-07-01'
+  and BreachDate BETWEEN '2020-07-01' AND '2021-07-01'
+GROUP BY
   breach_date,
-  total_number_of_affected_accounts,
-  SUM(total_number_of_affected_accounts) OVER (
-    PARTITION BY is_sensitive
-    ORDER BY is_sensitive, breach_date
-    ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
-  ) AS cumulative_number_of_affected_accounts
-FROM (
-  SELECT
-    isSensitive AS is_sensitive,
-    BreachDate AS breach_date,
-    SUM(PwnCount) AS total_number_of_affected_accounts
-  FROM
-    `httparchive.almanac.breaches`
-  WHERE
-    date = '2021-07-01'
-  GROUP BY
-    is_sensitive,
-    breach_date
-)
+  sensitivity
 ORDER BY
-  is_sensitive,
-  breach_date
+  breach_date,
+  sensitivity
