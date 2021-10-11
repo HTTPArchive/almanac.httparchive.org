@@ -135,7 +135,7 @@ CSSには、クラスやID、スタイルの重複を避けるために重要な
 
 IDは、意図的に特異度を下げたり、上げたりするために使うこともできます。<a hreflang="en" href="https://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/">IDセレクタを属性セレクタとして書くという特異性ハック</a>（特異性を減らすために`#foo`の代わりに`[id="foo"]`を使う）は驚くほど珍しく、少なくとも一度は0.3%のページでしか使われていませんでした。もうひとつのID関連の特異性ハックは、`.foo`の代わりに`:not(#nonexistent) .foo`のような否定＋子孫セレクターを使って特異性を高めるというものですが、これも非常に稀で、0.1%のページでしか使われていませんでした。
 
-###`!important`{important}
+### `!important`{important}
 
 代わりに、古くて粗雑な`!important`は、その<a hreflang="en" href="https://www.impressivewebs.com/everything-you-need-to-know-about-the-important-css-declaration/#post-475:~:text=Drawbacks,-to">よく知られた欠点</a>にもかかわらず、まだかなり使われています。中央値のページでは、宣言のほぼ2％、つまり50分の1で`!important`が使用されています。
 
