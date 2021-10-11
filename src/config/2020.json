@@ -1023,7 +1023,7 @@
       "name": "Navaneeth Krishna M P",
       "teams": [
         "reviewers"
-       ],
+      ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/69532755?s=200&v=4",
       "website": "http://www.nparthas.com/",
       "github": "Navaneeth-akam",
@@ -1440,6 +1440,15 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/17976139?v=4&s=460",
       "github": "Zuckjet",
       "twitter": "Zuckjet"
+    },
+    "MeFoDy": {
+      "name": "Nikita Dubko",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1439919?v=4&s=200",
+      "website": "https://mefody.dev/",
+      "github": "MeFoDy"
     }
   }
 }
