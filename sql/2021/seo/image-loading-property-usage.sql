@@ -57,7 +57,7 @@ FROM
     USING (_TABLE_SUFFIX)
   ),
   UNNEST(loading_property_markup_info.loading) AS loading
-GROUP BY 
+GROUP BY
   total,
   loading,
   client
