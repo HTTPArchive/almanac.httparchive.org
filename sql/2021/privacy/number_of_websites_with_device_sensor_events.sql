@@ -7,7 +7,7 @@ RETURNS ARRAY<STRUCT<key String, value ARRAY<String>>>
 LANGUAGE js AS """
   try {
     let json = JSON.parse(input ? input: "{}");
-    return Object.keys(json).map(e = > ({ "key": e, "value": json [e] }));
+    return Object.keys(json).map(e => ({"key": e, "value": json[e]}));
   } catch (error) {
     return []
   }
