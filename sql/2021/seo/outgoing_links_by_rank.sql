@@ -1,5 +1,5 @@
 #standardSQL
-# Lighthouse SEO stats
+# Internal and external link metrics by quantile and rank
 
 CREATE TEMPORARY FUNCTION getOutgoingLinkMetrics(payload STRING)
 RETURNS STRUCT<
