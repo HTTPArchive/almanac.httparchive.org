@@ -33,7 +33,7 @@ SELECT
   rel,
   total,
   COUNT(0) AS count,
-  SAFE_DIVIDE(COUNT(0),total) AS pct
+  SAFE_DIVIDE(COUNT(0), total) AS pct
 FROM
   (
     SELECT
