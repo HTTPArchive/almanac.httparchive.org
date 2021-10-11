@@ -1,13 +1,9 @@
 #standardSQL
 # Robots txt user agent usage
 
-# helper to create percent fields
-CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
-  ROUND(SAFE_DIVIDE(freq, total), 4)
-);
 
 # returns all the data we need from _robots_txt
-CREATE TEMPORARY FUNCTION get_robots_txt_info(robots_txt_string STRING)
+CREATE TEMPORARY FUNCTION getRobotsTextUserAgents(robots_txt_string STRING)
 RETURNS STRUCT<
   user_agents ARRAY<STRING>
 > LANGUAGE js AS '''
@@ -34,13 +30,13 @@ SELECT
   user_agent,
   total,
   COUNT(0) AS count,
-  AS_PERCENT(COUNT(0), total) AS pct
+  SAFE_DIVIDE(COUNT(0), total) AS pct
 FROM
   (
     SELECT
       _TABLE_SUFFIX AS client,
       total,
-      get_robots_txt_info(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_info
+      getRobotsTextUserAgents(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_user_agent_info
     FROM
       `httparchive.pages.2021_07_01_*`
     JOIN
@@ -53,7 +49,12 @@ FROM
       )
     USING (_TABLE_SUFFIX)
   ),
-  UNNEST(robots_txt_info.user_agents) AS user_agent
-GROUP BY total, user_agent, client
-HAVING count >= 100
-ORDER BY count DESC
+  UNNEST(robots_txt_user_agent_info.user_agents) AS user_agent
+GROUP BY
+  total,
+  user_agent,
+  client
+HAVING
+  count >= 20
+ORDER BY
+  count DESC
