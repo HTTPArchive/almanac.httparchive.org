@@ -47,10 +47,10 @@ FROM
     USING (_TABLE_SUFFIX)
   ),
   UNNEST(media_property_almanac_info) AS media
-GROUP BY 
-  total, 
-  media, 
+GROUP BY
+  total,
+  media,
   client
-ORDER BY 
+ORDER BY
   count DESC
 LIMIT 1000
