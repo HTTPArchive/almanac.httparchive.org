@@ -12,7 +12,8 @@ SELECT
   APPROX_QUANTILES(bytesHtmlDoc / 1024, 1000)[OFFSET(percentile * 10)] AS html_doc_kbytes,
   APPROX_QUANTILES(bytesFont / 1024, 1000)[OFFSET(percentile * 10)] AS font_kbytes
 FROM
-  `httparchive.summary_pages.2020_07_01_*`,
+  `httparchive.summary_pages.2020_08_01_*`,
+
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,
