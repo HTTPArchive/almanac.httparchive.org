@@ -42,12 +42,14 @@ WITH
         '$.structured_data.rendered') AS rendered,
       _TABLE_SUFFIX AS client
     FROM
-      `httparchive.pages.2021_07_01_*` LIMIT 1000)
+      `httparchive.pages.2021_07_01_*`)
 )
 
 SELECT
   jsonld_relationship,
   COUNT(jsonld_relationship) AS count,
+  SUM(COUNT(jsonld_relationship)) OVER (PARTITION BY client) AS total,
+  COUNT(jsonld_relationship) / SUM(COUNT(jsonld_relationship)) OVER (PARTITION BY client) AS pct,
   client
 FROM
   rendered_data,
@@ -57,3 +59,5 @@ GROUP BY
   client
 ORDER BY
   count DESC
+LIMIT
+  10000

@@ -29,10 +29,17 @@ WITH
 SELECT
   microdata_item_type,
   COUNT(microdata_item_type) AS count,
+  SUM(COUNT(microdata_item_type)) OVER (PARTITION BY client) AS total,
+  COUNT(microdata_item_type) / SUM(COUNT(microdata_item_type)) OVER (PARTITION BY client) AS pct,
   client
-FROM
-  rendered_data,
-  UNNEST(microdata_item_types) AS microdata_item_type
+FROM (
+  SELECT
+    CONCAT(NET.REG_DOMAIN(microdata_item_type), SPLIT(microdata_item_type, NET.REG_DOMAIN(microdata_item_type))[SAFE_OFFSET(1)]) AS microdata_item_type,
+    client
+  FROM
+    rendered_data,
+    UNNEST(microdata_item_types) AS microdata_item_type
+)
 GROUP BY
   microdata_item_type,
   client

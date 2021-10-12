@@ -29,6 +29,8 @@ WITH
 SELECT
   classic_microformats_type.name AS classic_microformats_type,
   SUM(classic_microformats_type.count) AS count,
+  SUM(SUM(classic_microformats_type.count)) OVER (PARTITION BY client) AS total,
+  SUM(classic_microformats_type.count) / SUM(SUM(classic_microformats_type.count)) OVER (PARTITION BY client) AS pct,
   client
 FROM
   rendered_data,

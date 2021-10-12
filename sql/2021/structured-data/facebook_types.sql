@@ -29,6 +29,8 @@ WITH
 SELECT
   facebook_type,
   COUNT(facebook_type) AS count,
+  SUM(COUNT(facebook_type)) OVER (PARTITION BY client) AS total,
+  COUNT(facebook_type) / SUM(COUNT(facebook_type)) OVER (PARTITION BY client) AS pct,
   client
 FROM
   rendered_data,

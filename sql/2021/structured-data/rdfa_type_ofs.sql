@@ -29,6 +29,8 @@ WITH
 SELECT
   rdfa_type_of,
   COUNT(rdfa_type_of) AS count,
+  SUM(COUNT(rdfa_type_of)) OVER (PARTITION BY client) AS total,
+  COUNT(rdfa_type_of) / SUM(COUNT(rdfa_type_of)) OVER (PARTITION BY client) AS pct,
   client
 FROM
   rendered_data,

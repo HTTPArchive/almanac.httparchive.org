@@ -25,7 +25,7 @@ CREATE TEMP FUNCTION
     return jsonld_scripts.map(jsonld_script => {
       jsonld_script = JSON.parse(jsonld_script)
       return getDeep('@context', jsonld_script)
-    }).flat()
+    }).flat().filter(context => typeof context === 'string');
   } catch (e) {
     return [];
   }
@@ -46,8 +46,10 @@ WITH
 )
 
 SELECT
-  jsonld_context,
-  COUNT(jsonld_context) AS count,
+  NET.REG_DOMAIN(jsonld_context) as jsonld_context,
+  COUNT(NET.REG_DOMAIN(jsonld_context)) AS count,
+  SUM(COUNT(NET.REG_DOMAIN(jsonld_context))) OVER (PARTITION BY client) AS total,
+  COUNT(NET.REG_DOMAIN(jsonld_context)) / SUM(COUNT(NET.REG_DOMAIN(jsonld_context))) OVER (PARTITION BY client) AS pct,
   client
 FROM
   rendered_data,

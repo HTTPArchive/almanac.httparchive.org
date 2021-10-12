@@ -29,10 +29,17 @@ WITH
 SELECT
   rdfa_vocab,
   COUNT(rdfa_vocab) AS count,
+  SUM(COUNT(rdfa_vocab)) OVER (PARTITION BY client) AS total,
+  COUNT(rdfa_vocab) / SUM(COUNT(rdfa_vocab)) OVER (PARTITION BY client) AS pct,
   client
-FROM
-  rendered_data,
-  UNNEST(rdfa_vocabs) AS rdfa_vocab
+FROM (
+  SELECT
+    CONCAT(NET.REG_DOMAIN(rdfa_vocab), SPLIT(rdfa_vocab, NET.REG_DOMAIN(rdfa_vocab))[SAFE_OFFSET(1)]) AS rdfa_vocab,
+    client
+  FROM
+    rendered_data,
+    UNNEST(rdfa_vocabs) AS rdfa_vocab
+)
 GROUP BY
   rdfa_vocab,
   client

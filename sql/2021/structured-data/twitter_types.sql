@@ -29,6 +29,8 @@ WITH
 SELECT
   twitter_type,
   COUNT(twitter_type) AS count,
+  SUM(COUNT(twitter_type)) OVER (PARTITION BY client) AS total,
+  COUNT(twitter_type) / SUM(COUNT(twitter_type)) OVER (PARTITION BY client) AS pct,
   client
 FROM
   rendered_data,

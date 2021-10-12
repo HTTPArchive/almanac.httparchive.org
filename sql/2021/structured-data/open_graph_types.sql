@@ -29,6 +29,8 @@ WITH
 SELECT
   open_graph_type,
   COUNT(open_graph_type) AS count,
+  SUM(COUNT(open_graph_type)) OVER (PARTITION BY client) AS total,
+  COUNT(open_graph_type) / SUM(COUNT(open_graph_type)) OVER (PARTITION BY client) AS pct,
   client
 FROM
   rendered_data,

@@ -33,10 +33,17 @@ WITH
 SELECT
   rdfa_prefix,
   COUNT(rdfa_prefix) AS count,
+  SUM(COUNT(rdfa_prefix)) OVER (PARTITION BY client) AS total,
+  COUNT(rdfa_prefix) / SUM(COUNT(rdfa_prefix)) OVER (PARTITION BY client) AS pct,
   client
-FROM
-  rendered_data,
-  UNNEST(rdfa_prefixes) AS rdfa_prefix
+FROM (
+  SELECT
+    CONCAT(NET.REG_DOMAIN(rdfa_prefix), SPLIT(rdfa_prefix, NET.REG_DOMAIN(rdfa_prefix))[SAFE_OFFSET(1)]) AS rdfa_prefix,
+    client
+  FROM
+    rendered_data,
+    UNNEST(rdfa_prefixes) AS rdfa_prefix
+)
 GROUP BY
   rdfa_prefix,
   client

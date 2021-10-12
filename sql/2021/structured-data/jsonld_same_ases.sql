@@ -5,16 +5,6 @@ CREATE TEMP FUNCTION
   RETURNS ARRAY<STRING>
   LANGUAGE js AS r"""
   try {
-    class URL {
-      constructor(str) {
-        this._str = str.trim();
-      }
-
-      get host() {
-        return this._str.split('/')[2];
-      }
-    }
-
     const arrayify = (value) => Array.isArray(value) ? value : [value];
 
     const getDeep = (key, o) => {
@@ -35,11 +25,7 @@ CREATE TEMP FUNCTION
     return jsonld_scripts.map(jsonld_script => {
       jsonld_script = JSON.parse(jsonld_script)
       return getDeep('sameAs', jsonld_script)
-    }).flat().map(url => {
-        try {
-          return new URL(url).host
-        } catch {}
-    })
+    }).flat();
   } catch (e) {
     return [];
   }
@@ -60,8 +46,10 @@ WITH
 )
 
 SELECT
-  jsonld_sameas,
-  COUNT(jsonld_sameas) AS count,
+  NET.REG_DOMAIN(jsonld_sameas) AS jsonld_sameas,
+  COUNT(NET.REG_DOMAIN(jsonld_sameas)) AS count,
+  SUM(COUNT(NET.REG_DOMAIN(jsonld_sameas))) OVER (PARTITION BY client) AS total,
+  COUNT(NET.REG_DOMAIN(jsonld_sameas)) / SUM(COUNT(NET.REG_DOMAIN(jsonld_sameas))) OVER (PARTITION BY client) AS pct,
   client
 FROM
   rendered_data,
@@ -71,3 +59,5 @@ GROUP BY
   client
 ORDER BY
   count DESC
+LIMIT
+  10000

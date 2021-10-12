@@ -48,6 +48,8 @@ WITH
 SELECT
   jsonld_type,
   COUNT(jsonld_type) AS count,
+  SUM(COUNT(jsonld_type)) OVER (PARTITION BY client) AS total,
+  COUNT(jsonld_type) / SUM(COUNT(jsonld_type)) OVER (PARTITION BY client) AS pct,
   client
 FROM
   rendered_data,

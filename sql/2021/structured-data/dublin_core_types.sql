@@ -29,6 +29,8 @@ WITH
 SELECT
   dublin_core_type,
   COUNT(dublin_core_type) AS count,
+  SUM(COUNT(dublin_core_type)) OVER (PARTITION BY client) AS total,
+  COUNT(dublin_core_type) / SUM(COUNT(dublin_core_type)) OVER (PARTITION BY client) AS pct,
   client
 FROM
   rendered_data,
