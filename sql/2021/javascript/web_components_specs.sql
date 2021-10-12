@@ -12,13 +12,13 @@ FROM (
     _TABLE_SUFFIX AS client,
     CAST(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload,
           '$._javascript'),
-        '$.web_component_specs.custom_elements') AS INT64) AS custom_elements,
+        '$.web_component_specs.custom_elements.length') AS INT64) AS custom_elements,
     CAST(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload,
           '$._javascript'),
-        '$.web_component_specs.shadow_roots') AS INT64) AS shadow_roots,
+        '$.web_component_specs.shadow_roots.length') AS INT64) AS shadow_roots,
     CAST(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload,
           '$._javascript'),
-        '$.web_component_specs.template') AS INT64) AS template
+        '$.web_component_specs.template.length') AS INT64) AS template
   FROM
     `httparchive.pages.2021_07_01_*` ),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
