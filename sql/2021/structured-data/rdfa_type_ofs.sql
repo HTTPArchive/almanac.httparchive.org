@@ -14,23 +14,27 @@ CREATE TEMP FUNCTION
 WITH
   rendered_data AS (
   SELECT
-    getRDFaTypeOfs(rendered) AS rdfa_type_ofs
+    getRDFaTypeOfs(rendered) AS rdfa_type_ofs,
+    client
   FROM (
     SELECT
       JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
             '$._structured-data')),
-        '$.structured_data.rendered') AS rendered
+        '$.structured_data.rendered') AS rendered,
+      _TABLE_SUFFIX AS client
     FROM
       `httparchive.pages.2021_07_01_*`)
 )
 
 SELECT
   rdfa_type_of,
-  COUNT(rdfa_type_of) AS count
+  COUNT(rdfa_type_of) AS count,
+  client
 FROM
   rendered_data,
   UNNEST(rdfa_type_ofs) AS rdfa_type_of
 GROUP BY
-  rdfa_type_of
+  rdfa_type_of,
+  client
 ORDER BY
   count DESC

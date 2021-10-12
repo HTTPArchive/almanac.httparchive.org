@@ -60,10 +60,14 @@ SELECT
     ELSE
     0
   END
-    ) AS total
+    ) AS total,
+  client
 FROM (
   SELECT
     JSON_VALUE(JSON_EXTRACT(payload,
-        '$._structured-data')) AS structured_data
+        '$._structured-data')) AS structured_data,
+    _TABLE_SUFFIX AS client
   FROM
     `httparchive.pages.2021_07_01_*`)
+GROUP BY
+  client

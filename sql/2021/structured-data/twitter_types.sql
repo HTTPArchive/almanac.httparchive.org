@@ -14,23 +14,27 @@ CREATE TEMP FUNCTION
 WITH
   rendered_data AS (
   SELECT
-    getTwitterTypes(rendered) AS twitter_types
+    getTwitterTypes(rendered) AS twitter_types,
+    client
   FROM (
     SELECT
       JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
             '$._structured-data')),
-        '$.structured_data.rendered') AS rendered
+        '$.structured_data.rendered') AS rendered,
+      _TABLE_SUFFIX AS client
     FROM
       `httparchive.pages.2021_07_01_*`)
 )
 
 SELECT
   twitter_type,
-  COUNT(twitter_type) AS count
+  COUNT(twitter_type) AS count,
+  client
 FROM
   rendered_data,
   UNNEST(twitter_types) AS twitter_type
 GROUP BY
-  twitter_type
+  twitter_type,
+  client
 ORDER BY
   count DESC

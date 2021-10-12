@@ -14,23 +14,27 @@ CREATE TEMP FUNCTION
 WITH
   rendered_data AS (
   SELECT
-    getFacebookTypes(rendered) AS facebook_types
+    getFacebookTypes(rendered) AS facebook_types,
+    client
   FROM (
     SELECT
       JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
             '$._structured-data')),
-        '$.structured_data.rendered') AS rendered
+        '$.structured_data.rendered') AS rendered,
+      _TABLE_SUFFIX AS client
     FROM
       `httparchive.pages.2021_07_01_*`)
 )
 
 SELECT
   facebook_type,
-  COUNT(facebook_type) AS count
+  COUNT(facebook_type) AS count,
+  client
 FROM
   rendered_data,
   UNNEST(facebook_types) AS facebook_type
 GROUP BY
-  facebook_type
+  facebook_type,
+  client
 ORDER BY
   count DESC

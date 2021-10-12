@@ -47,23 +47,27 @@ CREATE TEMP FUNCTION
 WITH
   rendered_data AS (
   SELECT
-    getJSONLDSameAses(rendered) AS jsonld_sameases
+    getJSONLDSameAses(rendered) AS jsonld_sameases,
+    client
   FROM (
     SELECT
       JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
             '$._structured-data')),
-        '$.structured_data.rendered') AS rendered
+        '$.structured_data.rendered') AS rendered,
+      _TABLE_SUFFIX AS client
     FROM
       `httparchive.pages.2021_07_01_*`)
 )
 
 SELECT
   jsonld_sameas,
-  COUNT(jsonld_sameas) AS count
+  COUNT(jsonld_sameas) AS count,
+  client
 FROM
   rendered_data,
   UNNEST(jsonld_sameases) AS jsonld_sameas
 GROUP BY
-  jsonld_sameas
+  jsonld_sameas,
+  client
 ORDER BY
   count DESC

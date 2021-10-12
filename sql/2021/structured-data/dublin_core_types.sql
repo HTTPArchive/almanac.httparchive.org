@@ -14,23 +14,27 @@ CREATE TEMP FUNCTION
 WITH
   rendered_data AS (
   SELECT
-    getDublinCoreTypes(rendered) AS dublin_core_types
+    getDublinCoreTypes(rendered) AS dublin_core_types,
+    client
   FROM (
     SELECT
       JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
             '$._structured-data')),
-        '$.structured_data.rendered') AS rendered
+        '$.structured_data.rendered') AS rendered,
+      _TABLE_SUFFIX AS client
     FROM
       `httparchive.pages.2021_07_01_*`)
 )
 
 SELECT
   dublin_core_type,
-  COUNT(dublin_core_type) AS count
+  COUNT(dublin_core_type) AS count,
+  client
 FROM
   rendered_data,
   UNNEST(dublin_core_types) AS dublin_core_type
 GROUP BY
-  dublin_core_type
+  dublin_core_type,
+  client
 ORDER BY
   count DESC

@@ -14,23 +14,27 @@ CREATE TEMP FUNCTION
 WITH
   rendered_data AS (
   SELECT
-    getMicroformats2Types(rendered) AS microformats2_types
+    getMicroformats2Types(rendered) AS microformats2_types,
+    client
   FROM (
     SELECT
       JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
             '$._structured-data')),
-        '$.structured_data.rendered') AS rendered
+        '$.structured_data.rendered') AS rendered,
+      _TABLE_SUFFIX AS client
     FROM
       `httparchive.pages.2021_07_01_*`)
 )
 
 SELECT
   microformats2_type.name AS microformats2_type,
-  SUM(microformats2_type.count) AS count
+  SUM(microformats2_type.count) AS count,
+  client
 FROM
   rendered_data,
   UNNEST(microformats2_types) AS microformats2_type
 GROUP BY
-  microformats2_type
+  microformats2_type,
+  client
 ORDER BY
   count DESC
