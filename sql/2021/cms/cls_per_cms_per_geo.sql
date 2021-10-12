@@ -24,7 +24,8 @@ UNION ALL
     `chrome-ux-report.materialized.country_summary`
   WHERE
     yyyymm = 202107 AND
-    device IN ('desktop', 'phone'))
+    device IN ('desktop', 'phone')
+)
 
 SELECT
   date,
