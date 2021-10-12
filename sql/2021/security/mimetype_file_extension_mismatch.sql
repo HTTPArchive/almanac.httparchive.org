@@ -1,5 +1,5 @@
 #standardSQL
-# Prevalence of mimetype - file extension mismatches among all requests.
+# Prevalence of mimetype - file extension mismatches among all requests. Non-SVG images are ignored.
 WITH mimtype_file_ext_pairs AS (
   SELECT
     client,
@@ -35,10 +35,9 @@ WHERE
   file_extension != "" AND
   mimetype NOT LIKE CONCAT("%", file_extension) AND
   NOT (REGEXP_CONTAINS(mimetype, "(application|text)/(x-)*javascript") AND REGEXP_CONTAINS(file_extension, "m*js")) AND
-  NOT (mimetype = "image/jpeg" AND file_extension = "jpg") AND
   NOT (mimetype = "image/svg+xml" AND file_extension = "svg") AND
-  NOT (mimetype = "image/x-icon" AND file_extension = "ico") AND
-  NOT (mimetype = "audio/mpeg" AND file_extension = "mp3")
+  NOT (mimetype = "audio/mpeg" AND file_extension = "mp3") AND
+  NOT (STARTS_WITH(mimetype, "image/") AND REGEXP_CONTAINS(file_extension, "apng|avif|bmp|gif|jpeg|jpg|jfif|ico|pjpeg|pjp|png|tiff|webp"))
 GROUP BY
   client,
   total_requests,
