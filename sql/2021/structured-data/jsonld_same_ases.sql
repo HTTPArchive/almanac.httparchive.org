@@ -21,10 +21,10 @@ CREATE TEMP FUNCTION
     }
 
     rendered = JSON.parse(rendered);
-    const jsonld_scripts = rendered.jsonld_scripts
+    const jsonld_scripts = rendered.jsonld_scripts;
     return jsonld_scripts.map(jsonld_script => {
-      jsonld_script = JSON.parse(jsonld_script)
-      return getDeep('sameAs', jsonld_script)
+      jsonld_script = JSON.parse(jsonld_script);
+      return getDeep('sameAs', jsonld_script);
     }).flat();
   } catch (e) {
     return [];
