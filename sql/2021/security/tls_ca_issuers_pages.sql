@@ -10,14 +10,18 @@ FROM (
   SELECT
     client,
     NET.HOST(url) AS request_host,
-    ANY_VALUE(cert_issuer) AS issuer
+    cert_issuer AS issuer
   FROM
     `httparchive.almanac.requests`
   WHERE
     date = '2021-07-01' AND
     NET.HOST(page) = NET.HOST(url) AND
     cert_issuer IS NOT NULL
-  GROUP BY client, request_host)
+  GROUP BY
+    client,
+    request_host
+    cert_issuer
+  )
 GROUP BY
   client,
   issuer

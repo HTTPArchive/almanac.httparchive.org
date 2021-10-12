@@ -24,7 +24,7 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    (date = "2020-07-01" OR date = "2021-07-01") AND
+    (date = "2020-08-01" OR date = "2021-07-01") AND
     NET.HOST(urlShort) = NET.HOST(page)
 ),
 UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy',
