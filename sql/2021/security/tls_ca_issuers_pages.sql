@@ -19,7 +19,7 @@ FROM (
     cert_issuer IS NOT NULL
   GROUP BY
     client,
-    request_host
+    request_host,
     cert_issuer
   )
 GROUP BY
