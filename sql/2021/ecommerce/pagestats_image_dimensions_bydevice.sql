@@ -27,7 +27,9 @@ USING (_TABLE_SUFFIX, url),
   UNNEST(getImageDimensions(payload)) AS image,
   UNNEST([10, 25, 50, 75, 90])
 WHERE
-  category = 'Ecommerce'
+  category = 'Ecommerce' AND
+  (app != 'Cart Functionality' AND
+   app != 'Google Analytics Enhanced eCommerce')
 GROUP BY
   percentile,
   client

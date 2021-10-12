@@ -20,7 +20,7 @@ FROM (
       url AS page
     FROM `httparchive.technologies.2021_07_01_*`
     WHERE
-      category = 'Ecommerce')
+      category = 'Ecommerce' AND (app != 'Cart Functionality' AND app != 'Google Analytics Enhanced eCommerce'))
   USING
     (client, page)
   JOIN

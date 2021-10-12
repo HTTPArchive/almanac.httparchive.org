@@ -19,7 +19,7 @@ FROM (
       _TABLE_SUFFIX AS client,
       url AS page
     FROM `httparchive.technologies.2021_07_01_*`
-    WHERE category = 'Ecommerce')
+    WHERE category = 'Ecommerce' AND (app != 'Cart Functionality' AND app != 'Google Analytics Enhanced eCommerce'))
   USING
     (client, page)
   WHERE
