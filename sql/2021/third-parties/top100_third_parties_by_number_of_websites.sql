@@ -13,7 +13,7 @@ WITH requests AS (
 totals AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    COUNT(DISTINCT pageid) as total_pages
+    COUNT(DISTINCT pageid) AS total_pages
   FROM
     `httparchive.summary_requests.2021_07_01_*`
   GROUP BY _TABLE_SUFFIX
