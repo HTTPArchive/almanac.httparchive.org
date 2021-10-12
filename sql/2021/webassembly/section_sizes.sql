@@ -1,11 +1,11 @@
 SELECT
   client,
-  ROUND(SUM(size.code) / SUM(size.total) * 1000) / 10 AS code_pct,
-  ROUND(SUM(size.init) / SUM(size.total) * 1000) / 10 AS init_pct,
-  ROUND(SUM(size.descriptors) / SUM(size.total) * 1000) / 10 AS descriptors_pct,
-  ROUND(SUM(size.externals) / SUM(size.total) * 1000) / 10 AS externals_pct,
-  ROUND(SUM(size.types) / SUM(size.total) * 1000) / 10 AS types_pct,
-  ROUND(SUM(size.custom) / SUM(size.total) * 1000) / 10 AS custom_pct
+  SUM(size.code) / SUM(size.total) AS code_pct,
+  SUM(size.init) / SUM(size.total) AS init_pct,
+  SUM(size.descriptors) / SUM(size.total) AS descriptors_pct,
+  SUM(size.externals) / SUM(size.total) AS externals_pct,
+  SUM(size.types) / SUM(size.total) AS types_pct,
+  SUM(size.custom) / SUM(size.total) AS custom_pct
 FROM
   `httparchive.almanac.wasm_stats`
 WHERE
