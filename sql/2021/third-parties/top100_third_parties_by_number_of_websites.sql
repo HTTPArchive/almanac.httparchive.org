@@ -10,6 +10,15 @@ WITH requests AS (
     `httparchive.summary_requests.2021_07_01_*`
 ),
 
+totals AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(DISTINCT pageid) as total_pages
+  FROM
+    `httparchive.summary_requests.2021_07_01_*`
+  GROUP BY _TABLE_SUFFIX
+),
+
 third_party AS (
   SELECT
     domain,
@@ -18,43 +27,33 @@ third_party AS (
     `httparchive.almanac.third_parties`
   WHERE
     date = '2021-07-01'
-),
-
-base AS (
-  SELECT
-    client,
-    canonicalDomain,
-    COUNT(DISTINCT page) AS total_pages,
-    COUNT(DISTINCT page) / COUNT(0) OVER () AS pct_pages
-  FROM
-    requests
-  LEFT JOIN
-    third_party
-  ON
-    NET.HOST(requests.host) = NET.HOST(third_party.domain)
-  WHERE
-    canonicalDomain IS NOT NULL
-  GROUP BY
-    client,
-    canonicalDomain
 )
-
 
 SELECT
+  client,
   canonicalDomain,
+  COUNT(DISTINCT page) AS pages,
   total_pages,
-  pct_pages
-FROM (
-  SELECT
-    client,
-    canonicalDomain,
-    total_pages,
-    pct_pages,
-    DENSE_RANK() OVER (PARTITION BY client ORDER BY total_pages DESC) AS rank
-  FROM
-    base
-)
+  COUNT(DISTINCT page) / total_pages AS pct_pages,
+  DENSE_RANK() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT page) DESC) AS sorted_order
+FROM
+  requests
+LEFT JOIN
+  third_party
+ON
+  NET.HOST(requests.host) = NET.HOST(third_party.domain)
+JOIN
+  totals
+USING (client)
 WHERE
-  rank <= 100
+  canonicalDomain IS NOT NULL
+GROUP BY
+  client,
+  total_pages,
+  canonicalDomain
+QUALIFY
+  sorted_order <= 100
 ORDER BY
-  total_pages DESC
+  pct_pages DESC,
+  client
+

@@ -17,35 +17,25 @@ third_party AS (
     `httparchive.almanac.third_parties`
   WHERE
     date = '2021-07-01'
-),
-
-base AS (
-  SELECT
-    client,
-    contentType,
-    COUNT(0) OVER (PARTITION BY client) AS total_requests
-  FROM
-    requests
-  LEFT JOIN
-    third_party
-  ON
-    NET.HOST(requests.host) = NET.HOST(third_party.domain)
-  WHERE
-    domain IS NOT NULL
 )
 
 SELECT
   client,
   contentType,
-  total_requests,
   COUNT(0) AS requests,
-  COUNT(0) / total_requests AS pct_requests
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_requests,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_requests
 FROM
-  base
+  requests
+LEFT JOIN
+  third_party
+ON
+  NET.HOST(requests.host) = NET.HOST(third_party.domain)
+WHERE
+  domain IS NOT NULL
 GROUP BY
   client,
-  contentType,
-  total_requests
+  contentType
 ORDER BY
   client,
   contentType
