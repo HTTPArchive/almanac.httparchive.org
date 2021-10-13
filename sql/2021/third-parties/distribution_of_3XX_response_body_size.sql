@@ -41,7 +41,7 @@ SELECT
   APPROX_QUANTILES(body_size, 1000)[OFFSET(percentile * 10)] AS approx_redirect_body_size
 FROM
   base,
-  UNNEST([10, 25, 50, 75, 90]) AS percentile
+  UNNEST(GENERATE_ARRAY(1, 100)) AS percentile
 WHERE
   redirected = 1
 GROUP BY

@@ -43,7 +43,7 @@ SELECT
   APPROX_QUANTILES(time, 1000)[OFFSET(percentile * 10)] AS time
 FROM
   base,
-  UNNEST([10, 25, 50, 75, 90]) AS percentile
+  UNNEST(GENERATE_ARRAY(1, 100)) AS percentile
 GROUP BY
   client,
   category,
