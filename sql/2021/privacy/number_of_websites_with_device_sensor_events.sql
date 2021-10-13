@@ -5,17 +5,19 @@
 CREATE TEMP FUNCTION jsonToKeyValueArray(input STRING)
 RETURNS ARRAY<STRUCT<key String, value ARRAY<String>>>
 LANGUAGE js AS """
-  let json = JSON.parse(input);
-  return Object.keys(json).map(e => {
-    return { "key" : e, "value" : json[e] }
-  });
+  try {
+    let json = JSON.parse(input ? input: "{}");
+    return Object.keys(json).map(e => ({"key": e, "value": json[e]}));
+  } catch (error) {
+    return []
+  }
 """ ;
 
 WITH pages_events AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    JSON_VALUE(payload, "$._events") AS metrics
+    JSON_QUERY(payload, "$._event-names") AS events
   FROM
     `httparchive.pages.2021_07_01_*`
 ),
