@@ -37,7 +37,7 @@ WHERE
   NOT (REGEXP_CONTAINS(mimetype, "(application|text)/(x-)*javascript") AND REGEXP_CONTAINS(file_extension, r"(?i)^m?js$")) AND
   NOT (mimetype = "image/svg+xml" AND REGEXP_CONTAINS(file_extension, r"(?i)^svg$")) AND
   NOT (mimetype = "audio/mpeg" AND REGEXP_CONTAINS(file_extension, r"(?i)^mp3$")) AND
-  NOT (STARTS_WITH(mimetype, "image/") AND REGEXP_CONTAINS(file_extension, r"(?i)^(png|avif|bmp|cur|gif|jpeg|jpg|jfif|ico|pjpeg|pjp|png|tif|tiff|webp)$"))
+  NOT (STARTS_WITH(mimetype, "image/") AND REGEXP_CONTAINS(file_extension, r"(?i)^(apng|avif|bmp|cur|gif|jpeg|jpg|jfif|ico|pjpeg|pjp|png|tif|tiff|webp)$"))
 GROUP BY
   client,
   total_requests,
