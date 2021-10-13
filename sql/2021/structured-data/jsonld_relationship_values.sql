@@ -59,7 +59,7 @@ WITH
 SELECT
   jsonld_entity_relationship.relationship,
   jsonld_entity_relationship._to,
-  COUNT(*) AS count,
+  COUNT(0) AS count,
   client
 FROM
   rendered_data,

@@ -46,7 +46,7 @@ WITH
 )
 
 SELECT
-  NET.REG_DOMAIN(jsonld_context) as jsonld_context,
+  NET.REG_DOMAIN(jsonld_context) AS jsonld_context,
   COUNT(NET.REG_DOMAIN(jsonld_context)) AS count,
   SUM(COUNT(NET.REG_DOMAIN(jsonld_context))) OVER (PARTITION BY client) AS total,
   COUNT(NET.REG_DOMAIN(jsonld_context)) / SUM(COUNT(NET.REG_DOMAIN(jsonld_context))) OVER (PARTITION BY client) AS pct,

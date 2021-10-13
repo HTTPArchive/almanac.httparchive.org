@@ -61,7 +61,7 @@ SELECT
   jsonld_entity_relationship.relationship,
   jsonld_entity_relationship._to,
   jsonld_entity_relationship.depth,
-  COUNT(*) AS count,
+  COUNT(0) AS count,
   client
 FROM
   rendered_data,

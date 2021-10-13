@@ -57,7 +57,7 @@ WITH
 )
 
 SELECT
-  MAX(jsonld_entity_relationship.depth) as max_depth,
+  MAX(jsonld_entity_relationship.depth) AS max_depth,
   client
 FROM
   rendered_data,
