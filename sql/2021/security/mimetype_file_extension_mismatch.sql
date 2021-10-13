@@ -34,9 +34,9 @@ WHERE
   file_extension IS NOT NULL AND
   file_extension != "" AND
   mimetype NOT LIKE CONCAT("%", file_extension) AND
-  NOT (REGEXP_CONTAINS(mimetype, "(application|text)/(x-)*javascript") AND REGEXP_CONTAINS(file_extension, "m*js")) AND
-  NOT (mimetype = "image/svg+xml" AND file_extension = "svg") AND
-  NOT (mimetype = "audio/mpeg" AND file_extension = "mp3") AND
+  NOT (REGEXP_CONTAINS(mimetype, "(application|text)/(x-)*javascript") AND REGEXP_CONTAINS(file_extension, r"(?i)^m?js$")) AND
+  NOT (mimetype = "image/svg+xml" AND REGEXP_CONTAINS(file_extension, r"(?i)^svg$")) AND
+  NOT (mimetype = "audio/mpeg" AND REGEXP_CONTAINS(file_extension, r"(?i)^mp3$")) AND
   NOT (STARTS_WITH(mimetype, "image/") AND REGEXP_CONTAINS(file_extension, r"(?i)^(png|avif|bmp|cur|gif|jpeg|jpg|jfif|ico|pjpeg|pjp|png|tif|tiff|webp)$"))
 GROUP BY
   client,
