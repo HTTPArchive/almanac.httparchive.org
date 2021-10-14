@@ -30,7 +30,7 @@ FROM (
     client,
     position,
     COUNT(DISTINCT page) AS pages,
-    ANY_VALUE(total) AS total,
+    ANY_VALUE(total) AS total_pages,
     COUNT(DISTINCT page) / ANY_VALUE(total) AS pct_pages,
     COUNT(0) AS freq,
     SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
