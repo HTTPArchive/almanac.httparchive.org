@@ -29,12 +29,25 @@ FROM (
   SELECT
     client,
     position,
+    COUNT(DISTINCT page) AS pages,
+    ANY_VALUE(total) AS total,
+    COUNT(DISTINCT page) / ANY_VALUE(total) AS pct_pages,
     COUNT(0) AS freq,
     SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
     COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
   FROM
     `httparchive.almanac.parsed_css`,
     UNNEST(getKeyframePositions(css)) AS position
+  JOIN (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      COUNT(0) AS total
+    FROM
+      `httparchive.summary_pages.2021_07_01_*`
+    GROUP BY
+      client)
+  USING
+    (client)
   WHERE
     date = '2021-07-01'
   GROUP BY
