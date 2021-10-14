@@ -34,7 +34,7 @@ SELECT
   APPROX_QUANTILES(bytesHtml, 1000)[OFFSET(500)] AS median_bytes_html,
   COUNTIF(bytesHtml = 0) AS freq_zero_bytes_html,
   COUNTIF(bytesHtml = 0) / COUNT(0) AS pct_zero_bytes_html,
-  COUNT(0) as total,
+  COUNT(0) AS total
 FROM
   summary_requests
 GROUP BY
