@@ -30,8 +30,8 @@ FROM (
     CAST('2021-07-01' AS DATE) AS date,
     category,
     app,
-    _TABLE_SUFFIX AS client,
-    url
+    url,
+    _TABLE_SUFFIX AS client
   FROM
     `httparchive.technologies.2021_07_01_*`
   WHERE
