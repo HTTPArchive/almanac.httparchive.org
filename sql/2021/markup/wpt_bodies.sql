@@ -13,23 +13,6 @@ RETURNS STRUCT<
   target_blank_noopener_total INT64,
   target_blank_noreferrer_total INT64,
   target_blank_neither_total INT64,
-
-  n_h1 INT64,
-  n_h2 INT64,
-  n_h3 INT64,
-  n_h4 INT64,
-  n_h5 INT64,
-  n_h6 INT64,
-  n_h7 INT64,
-  n_h8 INT64,
-  n_non_empty_h1 INT64,
-  n_non_empty_h2 INT64,
-  n_non_empty_h3 INT64,
-  n_non_empty_h4 INT64,
-  n_non_empty_h5 INT64,
-  n_non_empty_h6 INT64,
-  n_non_empty_h7 INT64,
-  n_non_empty_h8 INT64
 > LANGUAGE js AS '''
 var result = {};
 try {
@@ -52,63 +35,6 @@ try {
       result.target_blank_noreferrer_total = wpt_bodies.anchors.rendered.target_blank.noreferrer;
       result.target_blank_neither_total = wpt_bodies.anchors.rendered.target_blank.neither;
     }
-
-    var headings = wpt_bodies.headings;
-    if (headings) {
-      var headings_rendered = headings.rendered;
-      if (headings_rendered) {
-
-        //If the webpage has h1
-        result.n_h1 = headings_rendered.h1.total;
-
-        //If the webpage has h2
-        result.n_h2 = headings_rendered.h2.total;
-
-        //If the webpage has h3
-        result.n_h3 = headings_rendered.h3.total;
-
-        //If the webpage has h4
-        result.n_h4 = headings_rendered.h4.total;
-
-        //If the webpage has h5
-        result.n_h5 = headings_rendered.h5.total;
-
-        //If the webpage has h6
-        result.n_h6 = headings_rendered.h6.total;
-
-        //If the webpage has h7
-        result.n_h7 = headings_rendered.h7.total;
-
-        //If the webpage has h8
-        result.n_h8 = headings_rendered.h8.total;
-
-        //If the webpage has a non empty h1
-        result.n_non_empty_h1 = headings_rendered.h1.non_empty_total;
-
-        //If the webpage has a non empty h2
-        result.n_non_empty_h2 = headings_rendered.h2.non_empty_total;
-
-        //If the webpage has a non empty h3
-        result.n_non_empty_h3 = headings_rendered.h3.non_empty_total;
-
-        //If the webpage has a non empty h4
-        result.n_non_empty_h4 = headings_rendered.h4.non_empty_total;
-
-        //If the webpage has a non empty h5
-        result.n_non_empty_h5 = headings_rendered.h5.non_empty_total;
-
-        //If the webpage has a non empty h6
-        result.n_non_empty_h6 = headings_rendered.h6.non_empty_total;
-
-        //If the webpage has a non empty h7
-        result.n_non_empty_h7 = headings_rendered.h7.non_empty_total;
-
-        //If the webpage has a non empty h8
-        result.n_non_empty_h8 = headings_rendered.h8.non_empty_total;
-
-      }
-    }
-
 } catch (e) {}
 return result;
 ''';
@@ -137,24 +63,6 @@ SELECT
   COUNTIF(wpt_bodies_info.target_blank_noopener_total > 0) / COUNT(0) AS pct_has_target_blank_noopener,
   COUNTIF(wpt_bodies_info.target_blank_noreferrer_total > 0) / COUNT(0) AS pct_has_target_blank_noreferrer,
   COUNTIF(wpt_bodies_info.target_blank_neither_total > 0) / COUNT(0) AS pct_has_target_blank_neither,
-
-  APPROX_QUANTILES(wpt_bodies_info.n_h1, 1000)[OFFSET(500)] AS median_h1,
-  APPROX_QUANTILES(wpt_bodies_info.n_h2, 1000)[OFFSET(500)] AS median_h2,
-  APPROX_QUANTILES(wpt_bodies_info.n_h3, 1000)[OFFSET(500)] AS median_h3,
-  APPROX_QUANTILES(wpt_bodies_info.n_h4, 1000)[OFFSET(500)] AS median_h4,
-  APPROX_QUANTILES(wpt_bodies_info.n_h5, 1000)[OFFSET(500)] AS median_h5,
-  APPROX_QUANTILES(wpt_bodies_info.n_h6, 1000)[OFFSET(500)] AS median_h6,
-  APPROX_QUANTILES(wpt_bodies_info.n_h7, 1000)[OFFSET(500)] AS median_h7,
-  APPROX_QUANTILES(wpt_bodies_info.n_h8, 1000)[OFFSET(500)] AS median_h8,
-
-  SUM(wpt_bodies_info.n_h1) AS freq_h1,
-  SUM(wpt_bodies_info.n_h2) AS freq_h2,
-  SUM(wpt_bodies_info.n_h3) AS freq_h3,
-  SUM(wpt_bodies_info.n_h4) AS freq_h4,
-  SUM(wpt_bodies_info.n_h5) AS freq_h5,
-  SUM(wpt_bodies_info.n_h6) AS freq_h6,
-  SUM(wpt_bodies_info.n_h7) AS freq_h7,
-  SUM(wpt_bodies_info.n_h8) AS freq_h8
 
 FROM
   (
