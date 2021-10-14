@@ -1,5 +1,5 @@
 #standardSQL
-  # CMS adoptions, compared to 2020
+# CMS adoptions, compared to 2020
 SELECT
   _TABLE_SUFFIX AS client,
   2021 AS year,
