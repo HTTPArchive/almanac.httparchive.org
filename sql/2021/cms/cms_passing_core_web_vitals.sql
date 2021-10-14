@@ -31,7 +31,7 @@ SELECT
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
       IS_GOOD(fast_lcp, avg_lcp, slow_lcp) AND
-      IS_GOOD(fast_fid, avg_fid, slow_fid) AND
+      (NOT IS_NON_ZERO(fast_fid, avg_fid, slow_fid) OR IS_GOOD(fast_fid, avg_fid, slow_fid)) AND
       IS_GOOD(small_cls, medium_cls, large_cls), origin, NULL)),
     COUNT(DISTINCT IF(
       IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp) AND
