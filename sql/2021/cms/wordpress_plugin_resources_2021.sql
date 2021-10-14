@@ -12,7 +12,7 @@ FROM (
   FROM
     (SELECT _TABLE_SUFFIX, url AS page FROM `httparchive.technologies.2021_07_01_*` WHERE app = 'Wordpress')
   JOIN
-    (SELECT _TABLE_SUFFIX, pageid, url AS page FROM `httparchive.summary_pages.2021_08_01_*`)
+    (SELECT _TABLE_SUFFIX, pageid, url AS page FROM `httparchive.summary_pages.2021_07_01_*`)
   USING
     (_TABLE_SUFFIX, page)
   JOIN
