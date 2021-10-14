@@ -8,9 +8,9 @@ LANGUAGE js AS '''
 try {
   var markup = JSON.parse(markup_string);
 
-  if (Array.isArray(markup) || typeof markup != 'object') return result;
+  if (Array.isArray(markup) || typeof markup != 'object') return null;
 
-  return markup.form;
+  return markup.form || 0;
 } catch (e) {
   return 0;
 }
@@ -19,9 +19,9 @@ try {
 SELECT
   client,
   forms_count,
-  COUNTIF(forms_count > 0) AS freq,
+  COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNTIF(forms_count > 0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_page_with_form
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_page_with_form
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -34,4 +34,4 @@ GROUP BY
   forms_count
 ORDER BY
   client,
-  freq DESC
+  forms_count

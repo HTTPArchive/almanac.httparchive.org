@@ -25,8 +25,8 @@ try {
 SELECT
   client,
   COUNTIF(monetization != "") AS freq,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNTIF(monetization != "") / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+  COUNT(0) AS total,
+  COUNTIF(monetization != "") / COUNT(0) AS pct
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

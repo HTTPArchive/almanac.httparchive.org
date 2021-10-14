@@ -25,7 +25,9 @@ SELECT
   _TABLE_SUFFIX AS client,
   element_type AS obsolete_element_type,
   COUNT(0) AS freq,
-  COUNT(0) / total AS pct_pages_with_obsolete_elements,
+  COUNT(DISTINCT url) AS pages,
+  total AS total_pages,
+  COUNT(DISTINCT url) / total AS pct_pages_with_obsolete_elements,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS ratio_compared_to_all_obsolete_elements
 FROM
   `httparchive.pages.2021_07_01_*`

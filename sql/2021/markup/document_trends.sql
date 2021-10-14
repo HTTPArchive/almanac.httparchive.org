@@ -28,12 +28,13 @@ SELECT
   year,
   client,
   COUNTIF(TRIM(doctype) <> '') AS freq_doctype,
-  COUNTIF(TRIM(doctype) <> '') / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_doctype,
+  COUNTIF(TRIM(doctype) <> '') / COUNT(0) AS pct_doctype,
   MIN(bytesHtml) AS min_bytes_html,
   MAX(bytesHtml) AS max_bytes_html,
-  ROUND(AVG(bytesHtml), 0) AS avg_bytes_html,
+  APPROX_QUANTILES(bytesHtml, 1000)[OFFSET(500)] AS median_bytes_html,
   COUNTIF(bytesHtml = 0) AS freq_zero_bytes_html,
-  COUNTIF(bytesHtml = 0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_zero_bytes_html
+  COUNTIF(bytesHtml = 0) / COUNT(0) AS pct_zero_bytes_html,
+  COUNT(0) as total,
 FROM
   summary_requests
 GROUP BY
