@@ -62,7 +62,7 @@ SELECT
   COUNTIF(wpt_bodies_info.target_blank_noopener_noreferrer_total > 0) / COUNT(0) AS pct_has_target_blank_noopener_noreferrer,
   COUNTIF(wpt_bodies_info.target_blank_noopener_total > 0) / COUNT(0) AS pct_has_target_blank_noopener,
   COUNTIF(wpt_bodies_info.target_blank_noreferrer_total > 0) / COUNT(0) AS pct_has_target_blank_noreferrer,
-  COUNTIF(wpt_bodies_info.target_blank_neither_total > 0) / COUNT(0) AS pct_has_target_blank_neither,
+  COUNTIF(wpt_bodies_info.target_blank_neither_total > 0) / COUNT(0) AS pct_has_target_blank_neither
 
 FROM
   (
