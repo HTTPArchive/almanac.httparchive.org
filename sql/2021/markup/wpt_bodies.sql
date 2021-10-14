@@ -12,7 +12,7 @@ RETURNS STRUCT<
   target_blank_noopener_noreferrer_total INT64,
   target_blank_noopener_total INT64,
   target_blank_noreferrer_total INT64,
-  target_blank_neither_total INT64,
+  target_blank_neither_total INT64
 > LANGUAGE js AS '''
 var result = {};
 try {
