@@ -7,7 +7,6 @@ CREATE TEMP FUNCTION IS_NON_ZERO (good FLOAT64, needs_improvement FLOAT64, poor 
   good + needs_improvement + poor > 0
 );
 
-
 SELECT
   client,
   cms,
