@@ -8,7 +8,7 @@ SELECT
   total,
   COUNT(0) / total AS pct
 FROM
-  `httparchive.technologies.2021_08_01_*`
+  `httparchive.technologies.2021_07_01_*`
 JOIN (
   SELECT
     _TABLE_SUFFIX,
