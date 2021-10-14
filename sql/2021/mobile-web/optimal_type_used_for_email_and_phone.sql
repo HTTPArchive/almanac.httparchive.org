@@ -72,18 +72,32 @@ SELECT
   input_info.using_best_type AS using_best_type_attr,
 
   # How many times an input requesting this type of data (email or phone) occurs
-  SUM(COUNT(0)) OVER (PARTITION BY input_info.detected_type) AS total_type_occurences,
+  total_type_occurences,
   # How many sites have an input requesting this type of data (email or phone)
-  SUM(COUNT(DISTINCT url)) OVER (PARTITION BY input_info.detected_type) AS total_pages_with_type,
+  total_pages_with_type,
 
   COUNT(0) AS total,
   COUNT(DISTINCT url) AS total_pages,
 
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY input_info.detected_type) AS pct_inputs,
-  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY input_info.detected_type) AS pct_pages
+  COUNT(0) / total_type_occurences AS pct_inputs,
+  COUNT(DISTINCT url) / total_pages_with_type AS pct_pages
 FROM
   `httparchive.pages.2021_07_01_mobile`,
   UNNEST(getInputInfo(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS input_info
+LEFT JOIN (
+  SELECT
+    input_info.detected_type AS detected_type,
+    # How many times an input requesting this type of data (email or phone) occurs
+    COUNT(0) AS total_type_occurences,
+    # How many sites have an input requesting this type of data (email or phone)
+    COUNT(DISTINCT url) AS total_pages_with_type
+  FROM
+    `httparchive.pages.2021_07_01_mobile`,
+    UNNEST(getInputInfo(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS input_info
+  GROUP BY
+    input_info.detected_type
+)
+USING (detected_type)
 GROUP BY
   input_info.detected_type,
   input_info.using_best_type
