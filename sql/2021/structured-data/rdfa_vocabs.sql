@@ -34,6 +34,9 @@ SELECT
   client
 FROM (
   SELECT
+    -- Removes the protocol and any subdomains from the URL.
+    -- e.g. "https://my.example.com/pathname" becomes "example.com/pathname"
+    -- This is done to normalize the URL a bit before counting.
     CONCAT(NET.REG_DOMAIN(rdfa_vocab), SPLIT(rdfa_vocab, NET.REG_DOMAIN(rdfa_vocab))[SAFE_OFFSET(1)]) AS rdfa_vocab,
     client
   FROM
