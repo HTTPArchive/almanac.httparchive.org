@@ -16,7 +16,7 @@ FROM (
   USING
     (_TABLE_SUFFIX, page)
   JOIN
-    (SELECT _TABLE_SUFFIX, pageid, url FROM `httparchive.summary_requests.2021_08_01_*`)
+    (SELECT _TABLE_SUFFIX, pageid, url FROM `httparchive.summary_requests.2021_07_01_*`)
   USING
     (_TABLE_SUFFIX, pageid)
   GROUP BY
