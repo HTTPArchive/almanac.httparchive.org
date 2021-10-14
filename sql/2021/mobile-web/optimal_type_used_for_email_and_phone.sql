@@ -100,4 +100,6 @@ LEFT JOIN (
 USING (detected_type)
 GROUP BY
   input_info.detected_type,
-  input_info.using_best_type
+  input_info.using_best_type,
+  total_type_occurences,
+  total_pages_with_type
