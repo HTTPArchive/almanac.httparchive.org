@@ -7,23 +7,6 @@ CREATE TEMP FUNCTION IS_NON_ZERO(good FLOAT64, needs_improvement FLOAT64, poor F
   good + needs_improvement + poor > 0
 );
 
-WITH geo_summary AS (
-  SELECT
-    *,
-  FROM
-    `chrome-ux-report.materialized.country_summary`
-  WHERE
-    yyyymm = 202107 AND
-    device IN ('desktop', 'phone')
-UNION ALL
-  SELECT
-    *,
-  FROM
-    `chrome-ux-report.materialized.country_summary`
-  WHERE
-    yyyymm = 202107 AND
-    device IN ('desktop', 'phone'))
-
 SELECT
   date,
   ARRAY_TO_STRING(ARRAY_AGG(DISTINCT category IGNORE NULLS ORDER BY category), ', ') AS categories,
@@ -41,7 +24,7 @@ FROM (
     IS_NON_ZERO(small_cls, medium_cls, large_cls) AS any_cls,
     IS_GOOD(small_cls, medium_cls, large_cls) AS good_cls
   FROM
-    geo_summary
+    `chrome-ux-report.materialized.device_summary`
 ) JOIN (
   SELECT DISTINCT
     CAST('2021-07-01' AS DATE) AS date,
