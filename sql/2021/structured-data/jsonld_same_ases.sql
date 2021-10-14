@@ -47,9 +47,9 @@ WITH
 
 SELECT
   NET.REG_DOMAIN(jsonld_sameas) AS jsonld_sameas,
-  COUNT(NET.REG_DOMAIN(jsonld_sameas)) AS count,
-  SUM(COUNT(NET.REG_DOMAIN(jsonld_sameas))) OVER (PARTITION BY client) AS total,
-  COUNT(NET.REG_DOMAIN(jsonld_sameas)) / SUM(COUNT(NET.REG_DOMAIN(jsonld_sameas))) OVER (PARTITION BY client) AS pct,
+  COUNT(0) AS count,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct,
   client
 FROM
   rendered_data,
