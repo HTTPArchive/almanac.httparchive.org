@@ -19,15 +19,6 @@ FROM (
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
-    url,
-    rank
-  FROM
-    `httparchive.summary_pages.2021_07_01_*`)
-USING
-  (client, url)
-JOIN (
-  SELECT
-    _TABLE_SUFFIX AS client,
     rank_magnitude AS rank,
     COUNT(0) AS total
   FROM
@@ -45,7 +36,7 @@ WHERE
   rank <= rank_magnitude
 GROUP BY
   client,
-  cms,
+  geo,
   rank
 ORDER BY
   rank,

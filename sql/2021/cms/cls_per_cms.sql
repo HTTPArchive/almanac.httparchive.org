@@ -1,4 +1,5 @@
-#cls per cms
+
+# CLS per CMS
 CREATE TEMP FUNCTION IS_GOOD(good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
   good / (good + needs_improvement + poor) >= 0.75
 );
@@ -8,11 +9,12 @@ CREATE TEMP FUNCTION IS_NON_ZERO(good FLOAT64, needs_improvement FLOAT64, poor F
 );
 
 SELECT
-  app,
+  cms,
   client,
   COUNT(DISTINCT url) AS origins,
   COUNT(DISTINCT IF(good_cls, url, NULL)) AS origins_with_good_cls,
-  COUNT(DISTINCT IF(any_cls, url, NULL)) AS origins_with_any_cls
+  COUNT(DISTINCT IF(any_cls, url, NULL)) AS origins_with_any_cls,
+  COUNT(DISTINCT IF(good_cls, url, NULL)) / COUNT(DISTINCT IF(any_cls, url, NULL)) AS pct_good_cls
 FROM (
   SELECT
     CONCAT(origin, '/') AS url,
@@ -27,7 +29,7 @@ FROM (
 ) JOIN (
   SELECT DISTINCT
     category,
-    app,
+    app AS cms,
     _TABLE_SUFFIX AS client,
     url
   FROM
@@ -38,7 +40,7 @@ FROM (
     app != ''
 ) USING (url, client)
 GROUP BY
-  app,
+  cms,
   client
 HAVING
   origins >= 1000
