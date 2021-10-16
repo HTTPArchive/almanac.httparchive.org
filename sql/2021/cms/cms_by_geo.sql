@@ -1,23 +1,23 @@
 #standardSQL
 # CMS popularity per geo
 WITH geo_summary AS (
-  SELECT
-    `chrome-ux-report`.experimental.GET_COUNTRY(country_code) AS geo,
-    device,
-    origin
-  FROM
-    `chrome-ux-report.materialized.country_summary`
-  WHERE
-    yyyymm = 202107
+SELECT
+  `chrome-ux-report`.experimental.GET_COUNTRY(country_code) AS geo,
+  device,
+  origin
+FROM
+  `chrome-ux-report.materialized.country_summary`
+WHERE
+  yyyymm = 202107
 UNION ALL
-  SELECT
-    'ALL' AS geo,
-    device,
-    origin
-  FROM
-    `chrome-ux-report.materialized.device_summary`
-  WHERE
-    yyyymm = 202107)
+SELECT
+  'ALL' AS geo,
+  device,
+  origin
+FROM
+  `chrome-ux-report.materialized.device_summary`
+WHERE
+  yyyymm = 202107)
 
 SELECT
   *
