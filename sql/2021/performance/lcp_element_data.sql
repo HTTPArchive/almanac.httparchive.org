@@ -58,8 +58,8 @@ SELECT
   client,
   nodeName,
   COUNT(DISTINCT url) AS pages,
-  SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS total,
-  COUNT(DISTINCT url) / SUM(COUNT(DISTINCT url)) OVER (PARTITION BY client) AS pct,
+  ANY_VALUE(total) AS total,
+  COUNT(DISTINCT url) / ANY_VALUE(total) AS pct,
   COUNTIF(elementUrl != "") AS haveImages,
   COUNTIF(elementUrl != "") / COUNT(DISTINCT url) AS pct_haveImages,
   COUNTIF(loading = "eager") AS native_eagerload,
@@ -72,9 +72,20 @@ SELECT
   COUNTIF(decoding = "auto") AS auto_decoding
 FROM
   lcp_stats
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(0) AS total
+  FROM
+    `httparchive.summary_pages.2021_07_01_*`
+  GROUP BY
+    _TABLE_SUFFIX)
+USING
+  (client)
 GROUP BY
   client,
   nodeName
+HAVING
+  pages > 1000
 ORDER BY
-  client,
   pct DESC

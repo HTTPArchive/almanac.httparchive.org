@@ -87,9 +87,9 @@ fcp AS (
   SELECT
     origin,
     network,
-    SUM(IF(bin.start < 1500, bin.density, 0)) AS fast,
-    SUM(IF(bin.start >= 1500 AND bin.start < 2500, bin.density, 0)) AS avg,
-    SUM(IF(bin.start >= 2500, bin.density, 0)) AS slow,
+    SUM(IF(bin.start < 1800, bin.density, 0)) AS fast,
+    SUM(IF(bin.start >= 1800 AND bin.start < 3000, bin.density, 0)) AS avg,
+    SUM(IF(bin.start >= 3000, bin.density, 0)) AS slow,
     `chrome-ux-report`.experimental.PERCENTILE(ARRAY_AGG(bin), 75) AS p75
   FROM
     base
@@ -172,11 +172,10 @@ SELECT
 
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
-        IS_GOOD(fast_fid, avg_fid, slow_fid) AND
+        (NOT IS_NON_ZERO(fast_fid, avg_fid, slow_fid) OR IS_GOOD(fast_fid, avg_fid, slow_fid)) AND
         IS_GOOD(fast_lcp, avg_lcp, slow_lcp) AND
         IS_GOOD(small_cls, medium_cls, large_cls), origin, NULL)),
     COUNT(DISTINCT IF(
-        IS_NON_ZERO(fast_fid, avg_fid, slow_fid) AND
         IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp) AND
         IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_cwv_good,
 
