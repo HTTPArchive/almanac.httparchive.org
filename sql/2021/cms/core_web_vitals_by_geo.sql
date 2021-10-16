@@ -40,7 +40,7 @@ FROM (
   SELECT
     *,
     CONCAT(origin, '/') AS url,
-    IF(device = 'desktop', 'desktop', 'mobile') AS client,
+    IF(device = 'desktop', 'desktop', 'mobile') AS client
   FROM
     `chrome-ux-report.materialized.country_summary`
   WHERE
