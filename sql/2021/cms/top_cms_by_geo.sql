@@ -17,7 +17,8 @@ WITH geo_summary AS (
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
-    yyyymm = 202107)
+    yyyymm = 202107
+)
 
 SELECT
   *
