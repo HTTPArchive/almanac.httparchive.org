@@ -1,4 +1,3 @@
-# FIXME
 SELECT
   percentile,
   client,
@@ -11,7 +10,7 @@ FROM (
     REGEXP_EXTRACT(url, r'/(themes|plugins|wp-includes)/') AS path,
     COUNT(0) AS freq
   FROM
-    (SELECT _TABLE_SUFFIX, url AS page FROM `httparchive.technologies.2021_07_01_*` WHERE app = 'Wordpress')
+    (SELECT _TABLE_SUFFIX, url AS page FROM `httparchive.technologies.2021_07_01_*` WHERE app = 'WordPress')
   JOIN
     (SELECT _TABLE_SUFFIX, pageid, url AS page FROM `httparchive.summary_pages.2021_07_01_*`)
   USING
