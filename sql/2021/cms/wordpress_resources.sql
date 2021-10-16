@@ -1,3 +1,5 @@
+#standardSQL
+# Distribution of WordPress resource types by path
 SELECT
   percentile,
   client,
