@@ -16,7 +16,7 @@ WITH geo_summary AS (
   WHERE
     yyyymm = 202107 AND
     device IN ('desktop', 'phone')
-  UNION ALL
+UNION ALL
   SELECT
     *,
     'ALL' AS geo_code
@@ -24,8 +24,7 @@ WITH geo_summary AS (
     `chrome-ux-report.materialized.country_summary`
   WHERE
     yyyymm = 202107 AND
-    device IN ('desktop', 'phone')
-)
+    device IN ('desktop', 'phone'))
 
 SELECT
   date,
@@ -44,7 +43,12 @@ FROM (
     CONCAT(origin, '/') AS url,
     IF(device = 'desktop', 'desktop', 'mobile') AS client,
     IS_NON_ZERO(fast_fid, avg_fid, slow_fid) AS any_fid,
+<<<<<<< HEAD
     (IS_GOOD(fast_fid, avg_fid, slow_fid) OR fast_fid IS NULL) AS good_fid
+=======
+    IS_GOOD(fast_fid, avg_fid, slow_fid) AS good_fid,
+    (IS_GOOD(fast_fid, avg_fid, slow_fid) OR fast_fid IS NULL)
+>>>>>>> parent of 29b2e3df (Fix CMS queries)
   FROM
     geo_summary
 ) JOIN (
