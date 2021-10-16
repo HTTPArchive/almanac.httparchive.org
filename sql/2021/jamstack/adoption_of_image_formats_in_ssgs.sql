@@ -21,7 +21,7 @@ JOIN (
     _TABLE_SUFFIX AS client,
     url AS page
   FROM
-    `httparchive.technologies.2021_08_01_*`
+    `httparchive.technologies.2021_07_01_*`
   WHERE
     LOWER(category) = "static site generator" OR
     app = "Next.js" OR
