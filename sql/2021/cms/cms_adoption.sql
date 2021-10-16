@@ -1,12 +1,11 @@
 #standardSQL
-# Top CMS platforms, compared to 2020
+# CMS adoption over time
 SELECT
   _TABLE_SUFFIX AS client,
   2021 AS year,
-  app AS cms,
-  COUNT(0) AS freq,
+  COUNT(DISTINCT url) AS freq,
   total,
-  COUNT(0) / total AS pct
+  COUNT(DISTINCT url) / total AS pct
 FROM
   `httparchive.technologies.2021_07_01_*`
 JOIN (
@@ -23,16 +22,14 @@ WHERE
   category = 'CMS'
 GROUP BY
   client,
-  total,
-  cms
+  total
 UNION ALL
 SELECT
   _TABLE_SUFFIX AS client,
   2020 AS year,
-  app AS cms,
-  COUNT(0) AS freq,
+  COUNT(DISTINCT url) AS freq,
   total,
-  COUNT(0) / total AS pct
+  COUNT(DISTINCT url) / total AS pct
 FROM
   `httparchive.technologies.2020_08_01_*`
 JOIN (
@@ -49,8 +46,31 @@ WHERE
   category = 'CMS'
 GROUP BY
   client,
+  total
+UNION ALL
+SELECT
+  _TABLE_SUFFIX AS client,
+  2019 AS year,
+  COUNT(DISTINCT url) AS freq,
   total,
-  cms
+  COUNT(DISTINCT url) / total AS pct
+FROM
+  `httparchive.technologies.2019_07_01_*`
+JOIN (
+  SELECT
+    _TABLE_SUFFIX,
+    COUNT(0) AS total
+  FROM
+    `httparchive.summary_pages.2019_07_01_*`
+  GROUP BY
+    _TABLE_SUFFIX)
+USING
+  (_TABLE_SUFFIX)
+WHERE
+  category = 'CMS'
+GROUP BY
+  client,
+  total
 ORDER BY
   year DESC,
   pct DESC
