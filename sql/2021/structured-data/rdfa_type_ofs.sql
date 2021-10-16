@@ -1,9 +1,8 @@
 # standardSQL
-  # Count RDFa Type Ofs
-CREATE TEMP FUNCTION
-  getRDFaTypeOfs(rendered STRING)
-  RETURNS ARRAY<STRING>
-  LANGUAGE js AS r"""
+# Count RDFa Type Ofs
+CREATE TEMP FUNCTION getRDFaTypeOfs(rendered STRING)
+RETURNS ARRAY<STRING>
+LANGUAGE js AS """
   try {
     rendered = JSON.parse(rendered);
     return rendered.rdfa_typeofs.map(typeOf => typeOf.toLowerCase().trim().split(/\s+/)).flat();
@@ -11,8 +10,9 @@ CREATE TEMP FUNCTION
     return [];
   }
 """;
+
 WITH
-  rendered_data AS (
+rendered_data AS (
   SELECT
     getRDFaTypeOfs(rendered) AS rdfa_type_ofs,
     client

@@ -1,9 +1,8 @@
 # standardSQL
-  # Count Dublin Core types
-CREATE TEMP FUNCTION
-  getDublinCoreTypes(rendered STRING)
-  RETURNS ARRAY<STRING>
-  LANGUAGE js AS r"""
+# Count Dublin Core types
+CREATE TEMP FUNCTION getDublinCoreTypes(rendered STRING)
+RETURNS ARRAY<STRING>
+LANGUAGE js AS """
   try {
     rendered = JSON.parse(rendered);
     return rendered.dublin_core.map(dublin_core => dublin_core.name.toLowerCase());
@@ -11,8 +10,9 @@ CREATE TEMP FUNCTION
     return [];
   }
 """;
+
 WITH
-  rendered_data AS (
+rendered_data AS (
   SELECT
     getDublinCoreTypes(rendered) AS dublin_core_types,
     client
