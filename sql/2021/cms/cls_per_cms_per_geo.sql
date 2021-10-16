@@ -16,7 +16,7 @@ WITH geo_summary AS (
   WHERE
     yyyymm = 202107 AND
     device IN ('desktop', 'phone')
-UNION ALL
+  UNION ALL
   SELECT
     *,
     'ALL' AS geo_code

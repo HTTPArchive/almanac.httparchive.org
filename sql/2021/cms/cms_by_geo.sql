@@ -14,7 +14,7 @@ WITH geo_summary AS (
     `chrome-ux-report.materialized.country_summary`
   WHERE
     yyyymm = 202107
-UNION ALL
+  UNION ALL
   SELECT
     *,
     'ALL' AS geo_code
@@ -35,7 +35,7 @@ FROM (
     yyyymm,
     PARSE_DATE('%Y%m', CAST(yyyymm AS STRING)) AS date,
     geo_code,
-    CONCAT(origin, '/') AS url,
+    CONCAT(origin, '/') AS url
   FROM
     geo_summary
 ) JOIN (

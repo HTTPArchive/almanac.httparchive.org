@@ -16,7 +16,7 @@ WITH geo_summary AS (
   WHERE
     yyyymm = 202107 AND
     device IN ('desktop', 'phone')
-UNION ALL
+  UNION ALL
   SELECT
     *,
     'ALL' AS geo_code
@@ -24,7 +24,8 @@ UNION ALL
     `chrome-ux-report.materialized.country_summary`
   WHERE
     yyyymm = 202107 AND
-    device IN ('desktop', 'phone'))
+    device IN ('desktop', 'phone')
+)
 
 SELECT
   date,
@@ -34,7 +35,7 @@ SELECT
   client,
   COUNT(DISTINCT url) AS origins,
   COUNT(DISTINCT IF(good_lcp, url, NULL)) AS origins_with_good_lcp,
-  COUNT(DISTINCT IF(any_lcp, url, NULL)) AS origins_with_any_lcp,
+  COUNT(DISTINCT IF(any_lcp, url, NULL)) AS origins_with_any_lcp
 FROM (
   SELECT
     yyyymm,
@@ -43,7 +44,7 @@ FROM (
     CONCAT(origin, '/') AS url,
     IF(device = 'desktop', 'desktop', 'mobile') AS client,
     IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp) AS any_lcp,
-    IS_GOOD(fast_lcp, avg_lcp, slow_lcp) AS good_lcp,
+    IS_GOOD(fast_lcp, avg_lcp, slow_lcp) AS good_lcp
   FROM
     geo_summary
 ) JOIN (
