@@ -3,64 +3,64 @@
 SELECT
   SUM(CASE
       WHEN CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.rdfa') AS BOOL) = TRUE THEN 1
-    ELSE
-    0
-  END
-    ) AS rdfa,
+      ELSE
+        0
+    END
+  ) AS rdfa,
   SUM(CASE
       WHEN CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.json_ld') AS BOOL) = TRUE THEN 1
-    ELSE
-    0
-  END
-    ) AS json_ld,
+      ELSE
+        0
+    END
+  ) AS json_ld,
   SUM(CASE
       WHEN CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.microdata') AS BOOL) = TRUE THEN 1
-    ELSE
-    0
-  END
-    ) AS microdata,
+      ELSE
+        0
+    END
+  ) AS microdata,
   SUM(CASE
       WHEN CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.microformats2') AS BOOL) = TRUE THEN 1
-    ELSE
-    0
-  END
-    ) AS microformats2,
+      ELSE
+        0
+    END
+  ) AS microformats2,
   SUM(CASE
       WHEN CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.microformats_classic') AS BOOL) = TRUE THEN 1
-    ELSE
-    0
-  END
-    ) AS microformats_classic,
+      ELSE
+        0
+    END
+  ) AS microformats_classic,
   SUM(CASE
       WHEN CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.dublin_core') AS BOOL) = TRUE THEN 1
-    ELSE
-    0
-  END
-    ) AS dublin_core,
+      ELSE
+        0
+    END
+  ) AS dublin_core,
   SUM(CASE
       WHEN CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.twitter') AS BOOL) = TRUE THEN 1
-    ELSE
-    0
-  END
-    ) AS twitter,
+      ELSE
+        0
+    END
+  ) AS twitter,
   SUM(CASE
       WHEN CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.facebook') AS BOOL) = TRUE THEN 1
-    ELSE
-    0
-  END
-    ) AS facebook,
+      ELSE
+        0
+    END
+  ) AS facebook,
   SUM(CASE
       WHEN CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.opengraph') AS BOOL) = TRUE THEN 1
-    ELSE
-    0
-  END
-    ) AS opengraph,
+      ELSE
+        0
+    END
+  ) AS opengraph,
   SUM(CASE
       WHEN JSON_EXTRACT(structured_data, '$.structured_data') IS NOT NULL AND JSON_EXTRACT(structured_data, '$.log') IS NULL THEN 1
-    ELSE
-    0
-  END
-    ) AS total,
+      ELSE
+        0
+    END
+  ) AS total,
   client
 FROM (
   SELECT

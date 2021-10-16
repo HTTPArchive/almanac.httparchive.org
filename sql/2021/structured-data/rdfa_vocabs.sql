@@ -1,9 +1,8 @@
 # standardSQL
-  # Count RDFa Vocabs
-CREATE TEMP FUNCTION
-  getRDFaVocabs(rendered STRING)
-  RETURNS ARRAY<STRING>
-  LANGUAGE js AS r"""
+# Count RDFa Vocabs
+CREATE TEMP FUNCTION getRDFaVocabs(rendered STRING)
+RETURNS ARRAY<STRING>
+LANGUAGE js AS """
   try {
     rendered = JSON.parse(rendered);
     return rendered.rdfa_vocabs.map(vocab => vocab.toLowerCase());
@@ -11,8 +10,9 @@ CREATE TEMP FUNCTION
     return [];
   }
 """;
+
 WITH
-  rendered_data AS (
+rendered_data AS (
   SELECT
     getRDFaVocabs(rendered) AS rdfa_vocabs,
     client

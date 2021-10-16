@@ -1,9 +1,8 @@
 # standardSQL
-  # Count JSON-LD relationships
-CREATE TEMP FUNCTION
-  getJSONLDRelationships(rendered STRING)
-  RETURNS ARRAY<STRING>
-  LANGUAGE js AS r"""
+# Count JSON-LD relationships
+CREATE TEMP FUNCTION getJSONLDRelationships(rendered STRING)
+RETURNS ARRAY<STRING>
+LANGUAGE js AS """
   try {
     const arrayify = (value) => Array.isArray(value) ? value : [value];
 
@@ -30,8 +29,9 @@ CREATE TEMP FUNCTION
     return [];
   }
 """;
+
 WITH
-  rendered_data AS (
+rendered_data AS (
   SELECT
     getJSONLDRelationships(rendered) AS jsonld_relationships,
     client
@@ -59,5 +59,4 @@ GROUP BY
   client
 ORDER BY
   count DESC
-LIMIT
-  10000
+LIMIT 10000

@@ -1,9 +1,8 @@
 # standardSQL
-  # Count JSON-LD relationships with their value entity types
-CREATE TEMP FUNCTION
-  getJSONLDEntitiesRelationships(rendered STRING)
-  RETURNS ARRAY<STRUCT<_from STRING, relationship STRING, _to STRING, depth NUMERIC>>
-  LANGUAGE js AS r"""
+# Count JSON-LD relationships with their value entity types
+CREATE TEMP FUNCTION getJSONLDEntitiesRelationships(rendered STRING)
+RETURNS ARRAY<STRUCT<_from STRING, relationship STRING, _to STRING, depth NUMERIC>>
+LANGUAGE js AS """
   try {
     const types = new Map();
 
@@ -41,8 +40,9 @@ CREATE TEMP FUNCTION
     return [];
   }
 """;
+
 WITH
-  rendered_data AS (
+rendered_data AS (
   SELECT
     getJSONLDEntitiesRelationships(rendered) AS jsonld_entities_relationships,
     client
@@ -70,5 +70,4 @@ GROUP BY
   client
 ORDER BY
   count DESC
-LIMIT
-  10000
+LIMIT 10000
