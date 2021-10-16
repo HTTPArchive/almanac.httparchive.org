@@ -8,8 +8,11 @@
 #
 name: Lint Code Base
 on:
-  - workflow_dispatch
-  - pull_request
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
 jobs:
   lint:
     name: Lint Code Base

@@ -1,9 +1,8 @@
 # standardSQL
-  # Count Twitter types
-CREATE TEMP FUNCTION
-  getTwitterTypes(rendered STRING)
-  RETURNS ARRAY<STRING>
-  LANGUAGE js AS r"""
+# Count Twitter types
+CREATE TEMP FUNCTION getTwitterTypes(rendered STRING)
+RETURNS ARRAY<STRING>
+LANGUAGE js AS """
   try {
     rendered = JSON.parse(rendered);
     return rendered.twitter.map(twitter => twitter.name.toLowerCase());
@@ -11,8 +10,9 @@ CREATE TEMP FUNCTION
     return [];
   }
 """;
+
 WITH
-  rendered_data AS (
+rendered_data AS (
   SELECT
     getTwitterTypes(rendered) AS twitter_types,
     client
