@@ -9,7 +9,7 @@ WITH totals AS (
     `httparchive.summary_pages.2021_07_01_*`
   GROUP BY
     client
-UNION ALL
+  UNION ALL
   SELECT
     CAST('2020-08-01' AS DATE) AS yyyymmdd,
     _TABLE_SUFFIX AS client,
@@ -18,7 +18,7 @@ UNION ALL
     `httparchive.summary_pages.2020_08_01_*`
   GROUP BY
     client
-UNION ALL
+  UNION ALL
   SELECT
     CAST('2019-07-01' AS DATE) AS yyyymmdd,
     _TABLE_SUFFIX AS client,
