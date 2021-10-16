@@ -70,7 +70,7 @@ JOIN (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2021-08-01' AND
+    date = '2021-07-01' AND
     firstHtml)
 USING
   (client, url)
@@ -80,7 +80,7 @@ JOIN (
     app,
     url
   FROM
-    `httparchive.technologies.2021_08_01_*`
+    `httparchive.technologies.2021_07_01_*`
   WHERE
     LOWER(category) = "static site generator" OR
     app = "Next.js" OR

@@ -8,13 +8,13 @@ SELECT
   total,
   COUNT(0) / total AS pct
 FROM
-  `httparchive.technologies.2021_08_01_*`
+  `httparchive.technologies.2021_07_01_*`
 JOIN (
   SELECT
     _TABLE_SUFFIX,
     COUNT(0) AS total
   FROM
-    `httparchive.summary_pages.2021_08_01_*`
+    `httparchive.summary_pages.2021_07_01_*`
   GROUP BY
     _TABLE_SUFFIX)
 USING

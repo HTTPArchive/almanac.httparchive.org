@@ -30,13 +30,13 @@ FROM (
     bytesTotal AS bytes,
     CO2(url, bytesTotal) AS co2grams
   FROM
-    `httparchive.summary_pages.2021_08_01_*`
+    `httparchive.summary_pages.2021_07_01_*`
   JOIN (
     SELECT
       _TABLE_SUFFIX,
       url
     FROM
-      `httparchive.technologies.2021_08_01_*`
+      `httparchive.technologies.2021_07_01_*`
     WHERE
       LOWER(category) = "static site generator" OR
       app = "Next.js" OR
