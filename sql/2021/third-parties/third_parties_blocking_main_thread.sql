@@ -1,5 +1,9 @@
 #standardSQL
 # Third-Party domains which block the main thread
+#
+# As Lighthouse measures all impact there is no need to do a separate total
+# Lighthouse also gives a useable category. So no need to use almanac.third-parties table
+#
 # Based heavily on research by Houssein Djirdeh:
 # https://docs.google.com/spreadsheets/d/1Td-4qFjuBzxp8af_if5iBC0Lkqm_OROb7_2OcbxrU_g/edit?resourcekey=0-ZCfve5cngWxF0-sv5pLRzg#gid=1628564987
 

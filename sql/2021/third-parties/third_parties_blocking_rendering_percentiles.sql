@@ -1,5 +1,11 @@
 #standardSQL
 # Third-Party domains which render block paint by percentile
+#
+# Unlike the blocking main thread queries, light nhouse only contains details if the
+# third-party is render blocking (i.e. wastedMs/total_bytes are never 0)
+# And also there are no categories given to each third-party
+# So we join to the usual almanac.third_parties table to get those totals and categories
+#
 # Based heavily on research by Houssein Djirdeh:
 # https://docs.google.com/spreadsheets/d/1Td-4qFjuBzxp8af_if5iBC0Lkqm_OROb7_2OcbxrU_g/edit?resourcekey=0-ZCfve5cngWxF0-sv5pLRzg#gid=1628564987
 
