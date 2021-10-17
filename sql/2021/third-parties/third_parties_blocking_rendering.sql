@@ -77,5 +77,4 @@ GROUP BY
 ORDER BY
   total_pages DESC,
   category
-LIMIT
-  200
+LIMIT 200

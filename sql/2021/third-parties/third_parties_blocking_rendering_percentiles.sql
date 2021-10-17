@@ -77,5 +77,4 @@ ORDER BY
   total_pages DESC,
   category,
   percentile
-LIMIT
-  200
+LIMIT 200

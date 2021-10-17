@@ -42,5 +42,4 @@ GROUP BY
   category
 ORDER BY
   total_pages DESC
-LIMIT
-  200
+LIMIT 200
