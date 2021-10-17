@@ -47,7 +47,7 @@ FROM (
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
-    date = '2021-08-01')
+    date = '2021-07-01')
 JOIN (
   SELECT
     CASE
