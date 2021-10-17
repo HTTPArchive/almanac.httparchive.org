@@ -16,7 +16,7 @@ try {
       total_positive++;
     } else if (int < 0) {
       total_negative++;
-    } else {
+    } else if (int === 0) {
       total_zero++;
     }
   }
