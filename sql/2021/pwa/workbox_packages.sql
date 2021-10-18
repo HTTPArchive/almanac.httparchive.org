@@ -15,7 +15,7 @@ try {
         var workboxItem = workboxItems[j];
         var firstColonIndex = workboxItem.indexOf(':');
         if(firstColonIndex > -1) {
-          var workboxPackage = workboxItem.trim().substring(0, workboxItem.indexOf(':', firstColonIndex + 1));
+          var workboxPackage = workboxItem.trim().substring(firstColonIndex + 1, workboxItem.indexOf(':', firstColonIndex + 1));
           workboxPackages.push(workboxPackage);
         }
       }

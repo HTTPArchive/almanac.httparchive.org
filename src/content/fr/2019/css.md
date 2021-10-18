@@ -90,7 +90,7 @@ Eh bien, nous sommes curieux de savoir combien de couleurs en double sont prése
 
 ## Unités
 
-Avec CSS, il existe de nombreuses façons d’obtenir le même résultat visuel en utilisant différents types d’unités&nbsp;: `rem`,` px`, `em`, `ch`, ou même `cm`&nbsp;! Alors, quels types d’unités sont les plus populaires&nbsp;?
+Avec CSS, il existe de nombreuses façons d’obtenir le même résultat visuel en utilisant différents types d’unités&nbsp;: `rem`, `px`, `em`, `ch`, ou même `cm`&nbsp;! Alors, quels types d’unités sont les plus populaires&nbsp;?
 
 {{ figure_markup(
   image="fig5.png",
@@ -110,7 +110,7 @@ En ce qui concerne les unités basées sur l’espace physique, l’unité `cm` 
 
 ### Unités basées sur la taille de fenêtre (<i lang="en">viewport</i> {unites-basees-sur-la-taille-de-fenetre-viewport}
 
-Nous avons constaté des différences plus importantes pour les unités basées sur le <i lang="en">viewport</i> entre les appareils mobiles et les ordinateurs de bureau. 36,8&nbsp;% des sites mobiles utilisent `vh` (hauteur de <i lang="en">viewport</i>), alors que seuls 31&nbsp;% des sites pour ordinateur le font. Nous avons également constaté que `vh` est plus courant que `vw` (largeur de <i lang="en">viewport</i>) d’environ 11&nbsp;%. `vmin` (<i lang="en">viewport</i> minimum) est plus populaire que `vmax` (<i lang="en">viewport</i> maximum), avec environ 8&nbsp;% d’utilisation de `vmin` sur mobile tandis que` vmax` n’est utilisé que par 1&nbsp;% des sites Web.
+Nous avons constaté des différences plus importantes pour les unités basées sur le <i lang="en">viewport</i> entre les appareils mobiles et les ordinateurs de bureau. 36,8&nbsp;% des sites mobiles utilisent `vh` (hauteur de <i lang="en">viewport</i>), alors que seuls 31&nbsp;% des sites pour ordinateur le font. Nous avons également constaté que `vh` est plus courant que `vw` (largeur de <i lang="en">viewport</i>) d’environ 11&nbsp;%. `vmin` (<i lang="en">viewport</i> minimum) est plus populaire que `vmax` (<i lang="en">viewport</i> maximum), avec environ 8&nbsp;% d’utilisation de `vmin` sur mobile tandis que `vmax` n’est utilisé que par 1&nbsp;% des sites Web.
 
 ### Propriétés personnalisées (<i lang="en">custom properties</i>) {proprietes-personnalisees-custom-properties}
 
