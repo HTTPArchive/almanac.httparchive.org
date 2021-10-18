@@ -75,10 +75,10 @@ Belangrijke punten:
   * De top 30 herkomsten vormen 25% van het totale verkeer op mobiele apparaten.
   * De top 200 herkomsten vormen 33% van het totale verkeer op mobiele apparaten.
 * Het web heeft een **brede romp**.
- * De top 10k-herkomsten vormen ongeveer tweederde van het verkeer: 64% van het verkeer op mobiele apparaten.
+  * De top 10k-herkomsten vormen ongeveer tweederde van het verkeer: 64% van het verkeer op mobiele apparaten.
 * Het web heeft een **lange staart**.
- * 3M herkomsten in de top 98% op Android versus 1,8M op Windows.
- * De staart is op Android ongeveer twee keer zo lang als op Windows. Dit is hoogstwaarschijnlijk toe te schrijven aan het grotere aantal mobiele apparaten en gebruikers in vergelijking met desktop.
+  * 3M herkomsten in de top 98% op Android versus 1,8M op Windows.
+  * De staart is op Android ongeveer twee keer zo lang als op Windows. Dit is hoogstwaarschijnlijk toe te schrijven aan het grotere aantal mobiele apparaten en gebruikers in vergelijking met desktop.
 
 #### Verkeer naar een site van mobiel versus desktop (CrUX)
 
@@ -385,7 +385,7 @@ De laatste fase in de reis is gebruikersbehoud, dit betekent de gebruiker opnieu
 
 Terugkerende gebruikers profiteren van een native app-achtige ervaring met een [PWA](./pwa). Een belangrijk waardevoorstel voor gebruikersbehoud is de installeerbaarheid van een PWA. Wanneer een PWA is geïnstalleerd, is deze beschikbaar vanaf de plaatsen waar een mobiele gebruiker een app verwacht te vinden: het startscherm en de app-lade. Wanneer de gebruiker op de PWA tikt en deze start, wordt deze op volledig scherm geladen en is deze beschikbaar in de taakwisselaar, net als een native app.
 
-Rakuten 24 is een online winkel van Rakuten, een van de grootste e-commercebedrijven in Japan. Een recente <a hreflang="en" href="https://web.dev/rakuten-24/">casestudy met Rakuten 24</a> toonde aan dat het maken van hun webapp <a hreflang="en" href="https://web.dev/define-install-strategy/">installeerbaar</a>, resulteerde in maar liefst 450% in bezoekersbehoud in vergelijking met de vorige mobiele webstroom, over een periode van 1 maand .
+Rakuten 24 is een online winkel van Rakuten, een van de grootste e-commercebedrijven in Japan. Een recente <a hreflang="en" href="https://web.dev/rakuten-24/">casestudy met Rakuten 24</a> toonde aan dat het maken van hun webapp <a hreflang="en" href="https://web.dev/define-install-strategy/">installeerbaar</a>, resulteerde in maar liefst 450% in bezoekersbehoud in vergelijking met de vorige mobiele webstroom, over een periode van 1 maand.
 
 Door installeerbaarheid te implementeren, zag Rakuten 24 ook deze verbeteringen over een tijdsbestek van 1 maand:
 * 310% stijging van de bezoekfrequentie per gebruiker, vergeleken met de rest van hun internetgebruikers

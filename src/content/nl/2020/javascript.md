@@ -367,7 +367,7 @@ Vorig jaar stelde [Houssein een paar redenen voor waarom de dominantie van jQuer
 
 Beide zijn zeer goede gissingen, en het lijkt erop dat de situatie op geen van beide fronten veel is veranderd.
 
-In feite wordt de dominantie van jQuery nog verder ondersteund als u bedenkt dat van de top 10 bibliotheken er 6 jQuery zijn of jQuery nodig hebben om te kunnen worden gebruikt: jQuery UI, jQuery <span lang="en">Migrate</span>, <span lang="en">FancyBox, Lightbox</span> en Slick .
+In feite wordt de dominantie van jQuery nog verder ondersteund als u bedenkt dat van de top 10 bibliotheken er 6 jQuery zijn of jQuery nodig hebben om te kunnen worden gebruikt: jQuery UI, jQuery <span lang="en">Migrate</span>, <span lang="en">FancyBox, Lightbox</span> en Slick.
 
 ### Frameworks
 

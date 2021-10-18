@@ -188,7 +188,7 @@ These statistics are interesting when compared with last years data:
 {{ figure_markup(
   image="cache-control-and-max-age-and-expires-2019.png",
   caption="Usage of `Cache-Control` and `Expires` headers in 2019.",
-  description="A bar chart showing the usage of `Cache-Control` and `Expires` headers. In desktop, 72.3% of responses are served with a `Cache-Control` header. 56.3% are served with an `Expires` header, 55.2%	use both `Cache-Control` and `Expires` header, and 26.7% did not include either header. In mobile, 71.7% of responses are served with a `Cache-Control` header, 56.4% are served with an `Expires` header, 55.5% use both `Cache-Control` and `Expires` header, and 27.4% did not include either header.",
+  description="A bar chart showing the usage of `Cache-Control` and `Expires` headers. In desktop, 72.3% of responses are served with a `Cache-Control` header. 56.3% are served with an `Expires` header, 55.2% use both `Cache-Control` and `Expires` header, and 26.7% did not include either header. In mobile, 71.7% of responses are served with a `Cache-Control` header, 56.4% are served with an `Expires` header, 55.5% use both `Cache-Control` and `Expires` header, and 27.4% did not include either header.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=651240480&format=interactive",
   sheets_gid="664360335",
   sql_file="cache_control_and_max_age_and_expires_2019.sql"
@@ -302,7 +302,7 @@ We can see a few common errors that are made when attempting to configure a resp
 
 Functionally, `no-cache` and `max-age=0` are similar, since they both require revalidation of a cached resource. The `no-cache` directive can also be used alongside a `max-age` directive that is greater than 0—this results in the object being cached for the specified TTL but being revalidated prior to every use.
 
-When looking at the above three discussed directives, 2.7% of responses include the combination of all three `no-store`, `no-cache` and `max-age=0`	directives, 6.7% of responses include both `no-store` and `no-cache`, and a negligible number of responses (< 0.15%) include `no-store` alone.
+When looking at the above three discussed directives, 2.7% of responses include the combination of all three `no-store`, `no-cache` and `max-age=0` directives, 6.7% of responses include both `no-store` and `no-cache`, and a negligible number of responses (< 0.15%) include `no-store` alone.
 
 As noted above, where `no-store` is specified with either/both of `no-cache` and `max-age=0`, the no-store directive takes precedence, and the other directives are ignored. Therefore, if you don't want content to be cached anywhere, simply specifying `Cache-Control: no-store` is sufficient and is both simpler and uses the minimum number of header bytes.
 
