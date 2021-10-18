@@ -63,7 +63,7 @@ LEFT JOIN
       # many 404s and redirects show up as image/gif
       status = 200 AND
 
-        # we are trying to catch images. WPO populates the format for media but it uses a file extension guess.
+      # we are trying to catch images. WPO populates the format for media but it uses a file extension guess.
       #So we exclude mimetypes that aren't image or where the format couldn't be guessed by WPO
       (format <> '' OR mimetype LIKE 'image%') AND
 

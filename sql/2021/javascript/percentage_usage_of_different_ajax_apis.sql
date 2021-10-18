@@ -20,7 +20,7 @@ FROM (
           '$._javascript'),
         '$.ajax_requests.beacon') AS beacon_total
     FROM
-      `httparchive.sample_data.pages_*`),
+      `httparchive.pages.2021_07_01_*`),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

@@ -10,17 +10,26 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    CAST(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload,
+    (CASE 
+     WHEN ARRAY_LENGTH(JSON_QUERY_ARRAY(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload,
           '$._javascript'),
-        '$.web_component_specs.custom_elements') AS INT64) AS custom_elements,
-    CAST(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload,
+        '$.web_component_specs.custom_elements'))) > 1 THEN 1
+    ELSE 0 
+    END) AS custom_elements,
+     (CASE 
+     WHEN ARRAY_LENGTH( JSON_QUERY_ARRAY(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload,
           '$._javascript'),
-        '$.web_component_specs.shadow_roots') AS INT64) AS shadow_roots,
-    CAST(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload,
+        '$.web_component_specs.shadow_roots'))) > 1 THEN 1
+    ELSE 0 
+    END) AS shadow_roots,
+    (CASE 
+     WHEN ARRAY_LENGTH( JSON_QUERY_ARRAY(JSON_EXTRACT(JSON_EXTRACT_SCALAR(payload,
           '$._javascript'),
-        '$.web_component_specs.template') AS INT64) AS template
+        '$.web_component_specs.template'))) > 1 THEN 1
+    ELSE 0 
+    END) AS template
   FROM
-    `httparchive.sample_data.pages_*` ),
+    `httparchive.pages.2021_09_01_*` ),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

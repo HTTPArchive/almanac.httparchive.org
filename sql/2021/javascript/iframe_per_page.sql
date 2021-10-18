@@ -10,7 +10,7 @@ FROM (
           '$._javascript'),
         '$.iframe') AS INT64) AS iframe_total
   FROM
-    `httparchive.sample_data.pages_*` ),
+    `httparchive.pages.2021_07_01_*` ),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 WHERE
   iframe_total > 0
