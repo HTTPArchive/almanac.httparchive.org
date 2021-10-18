@@ -1,5 +1,5 @@
 #standardSQL
-# CMS popularity per geo
+# All CMS popularity per geo
 WITH geo_summary AS (
   SELECT
     `chrome-ux-report`.experimental.GET_COUNTRY(country_code) AS geo,
@@ -15,16 +15,6 @@ WITH geo_summary AS (
     # belong to different countries (as opposed to CWV field data)
     # it's not necessary to look at the 202107 dataset.
     yyyymm = 202105
-  UNION ALL
-  SELECT
-    'ALL' AS geo,
-    IF(device = 'desktop', 'desktop', 'mobile') AS client,
-    origin,
-    COUNT(DISTINCT origin) OVER (PARTITION BY IF(device = 'desktop', 'desktop', 'mobile')) AS total
-  FROM
-    `chrome-ux-report.materialized.device_summary`
-  WHERE
-    yyyymm = 202105
 )
 
 SELECT
@@ -33,35 +23,29 @@ FROM (
   SELECT
     client,
     geo,
-    cms,
     COUNT(0) AS pages,
     ANY_VALUE(total) AS total,
-    COUNT(DISTINCT url) / ANY_VALUE(total) AS pct
+    COUNT(0) / ANY_VALUE(total) AS pct
   FROM (
     SELECT DISTINCT
       geo,
       client,
-      CONCAT(origin, '/') AS url,
-      total
+      total,
+      CONCAT(origin, '/') AS url
     FROM
       geo_summary
   ) JOIN (
     SELECT DISTINCT
       _TABLE_SUFFIX AS client,
-      category,
-      app AS cms,
       url
     FROM
       `httparchive.technologies.2021_07_01_*`
     WHERE
-      app IS NOT NULL AND
-      category = 'CMS' AND
-      app != ''
+      category = 'CMS'
   ) USING (client, url)
   GROUP BY
     client,
-    geo,
-    cms)
+    geo)
 WHERE
   pages > 1000
 ORDER BY
