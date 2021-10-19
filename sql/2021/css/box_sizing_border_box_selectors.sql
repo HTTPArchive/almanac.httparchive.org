@@ -1,16 +1,16 @@
 #standardSQL
 # Top selectors used with box-sizing: border-box
 CREATE TEMP FUNCTION
-  getBorderBoxSelectors(css STRING)
-  RETURNS ARRAY<STRING>
-  LANGUAGE js AS '''
+getBorderBoxSelectors(css STRING)
+RETURNS ARRAY<STRING>
+LANGUAGE js AS '''
 try {
   var $ = JSON.parse(css);
   return $.stylesheet.rules.flatMap(rule => {
     if (!rule.selectors) {
       return [];
     }
-    
+
     const boxSizingPattern = /^(-(o|moz|webkit|ms)-)?box-sizing$/;
     const borderBoxPattern = /border-box/;
     if (!rule.declarations.find(d => {
@@ -18,7 +18,7 @@ try {
     })) {
       return [];
     }
-    
+
     return rule.selectors;
   });
 } catch (e) {
@@ -62,5 +62,4 @@ FROM (
     selector)
 ORDER BY
   pct DESC
-LIMIT
-  1000
+LIMIT 1000

@@ -1,9 +1,8 @@
 # standardSQL
-  # Count RDFa Prefixes
-CREATE TEMP FUNCTION
-  getRDFaPrefixes(rendered STRING)
-  RETURNS ARRAY<STRING>
-  LANGUAGE js AS r"""
+# Count RDFa Prefixes
+CREATE TEMP FUNCTION getRDFaPrefixes(rendered STRING)
+RETURNS ARRAY<STRING>
+LANGUAGE js AS """
   try {
     rendered = JSON.parse(rendered);
     const prefixRegExp = new RegExp(/(?<ncname>[^:]*):\s+(?<uri>[^\s]*)\s*/gm)
@@ -15,8 +14,9 @@ CREATE TEMP FUNCTION
     return [];
   }
 """;
+
 WITH
-  rendered_data AS (
+rendered_data AS (
   SELECT
     getRDFaPrefixes(rendered) AS rdfa_prefixes,
     client

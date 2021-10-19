@@ -1,9 +1,8 @@
 # standardSQL
-  # Count microformats2 types
-CREATE TEMP FUNCTION
-  getMicroformats2Types(rendered STRING)
-  RETURNS ARRAY<STRUCT<name STRING, count NUMERIC>>
-  LANGUAGE js AS r"""
+# Count microformats2 types
+CREATE TEMP FUNCTION getMicroformats2Types(rendered STRING)
+RETURNS ARRAY<STRUCT<name STRING, count NUMERIC>>
+LANGUAGE js AS """
   try {
     rendered = JSON.parse(rendered);
     return rendered.microformats2_types.map(microformat2_type => ({name: microformat2_type.name, count: microformat2_type.count}));
@@ -11,8 +10,9 @@ CREATE TEMP FUNCTION
     return [];
   }
 """;
+
 WITH
-  rendered_data AS (
+rendered_data AS (
   SELECT
     getMicroformats2Types(rendered) AS microformats2_types,
     client

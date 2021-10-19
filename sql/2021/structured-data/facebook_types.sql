@@ -1,9 +1,8 @@
 # standardSQL
-  # Count Facebook types
-CREATE TEMP FUNCTION
-  getFacebookTypes(rendered STRING)
-  RETURNS ARRAY<STRING>
-  LANGUAGE js AS r"""
+# Count Facebook types
+CREATE TEMP FUNCTION getFacebookTypes(rendered STRING)
+RETURNS ARRAY<STRING>
+LANGUAGE js AS """
   try {
     rendered = JSON.parse(rendered);
     return rendered.facebook.map(facebook => facebook.property.toLowerCase());
@@ -11,8 +10,9 @@ CREATE TEMP FUNCTION
     return [];
   }
 """;
+
 WITH
-  rendered_data AS (
+rendered_data AS (
   SELECT
     getFacebookTypes(rendered) AS facebook_types,
     client

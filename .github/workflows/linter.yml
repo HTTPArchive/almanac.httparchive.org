@@ -8,15 +8,18 @@
 #
 name: Lint Code Base
 on:
-  - workflow_dispatch
-  - pull_request
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
 jobs:
   lint:
     name: Lint Code Base
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v2.3.5
         with:
           # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0

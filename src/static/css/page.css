@@ -623,6 +623,7 @@ figure .big-number {
   color: #62718b;
   word-break: break-word;
   overflow-wrap: break-word;
+  margin: 0.1em 0;
 }
 
 figure .medium-number {
