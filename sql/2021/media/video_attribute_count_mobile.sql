@@ -10,21 +10,32 @@ WITH video_attributes AS (
       ARRAY_TO_STRING( JSON_QUERY_ARRAY(JSON_VALUE( payload, "$._media" ), "$.video_attributes_values_counts"), " ") AS video_attributes_values_counts,
       ( JSON_QUERY_ARRAY(JSON_VALUE( payload, "$._media" ), "$.video_source_format_count") ) AS video_source_format_count,
       ( JSON_QUERY_ARRAY(JSON_VALUE( payload, "$._media" ), "$.video_source_format_type") ) AS video_source_format_type
-    FROM `httparchive.summary_pages.2021_07_01_mobile`
+    FROM
+      `httparchive.summary_pages.2021_07_01_mobile`
   )
 
 
-  SELECT pageURL,
+  SELECT
+    pageURL,
     JSON_VALUE(video_attributes_values_counts, "$.attribute") AS attribute,
     JSON_VALUE(video_attributes_values_counts, "$.value") AS value,
     cast( JSON_VALUE(video_attributes_values_counts, "$.count") AS int64) AS cnt,
     video_attributes_values_counts
-  FROM videonotes
-  WHERE num_video_nodes > 0
+  FROM
+    videonotes
+  WHERE
+    num_video_nodes > 0
 
 )
 
-SELECT attribute, value, sum(cnt)
-FROM video_attributes
-GROUP BY attribute, value
-ORDER BY attribute ASC
+SELECT
+  attribute,
+  value,
+  SUM(cnt) AS freq
+FROM
+  video_attributes
+GROUP BY
+  attribute,
+  value
+ORDER BY
+  attribute ASC

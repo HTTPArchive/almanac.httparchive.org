@@ -16,15 +16,24 @@ WITH videonotes AS (
         ( JSON_QUERY_ARRAY(JSON_VALUE( payload, "$._media" ), "$.video_attributes_values_counts") ) AS video_attributes_values_counts,
         ( JSON_QUERY_ARRAY(JSON_VALUE( payload, "$._media" ), "$.video_source_format_count") ) AS video_source_format_count,
         ( JSON_QUERY_ARRAY(JSON_VALUE( payload, "$._media" ), "$.video_source_format_type") ) AS video_source_format_type
-      FROM `httparchive.summary_pages.2021_07_01_mobile`
+      FROM
+        `httparchive.summary_pages.2021_07_01_mobile`
     )
-  CROSS JOIN UNNEST(video_source_format_type) AS source_formats
-  CROSS JOIN UNNEST(video_source_format_count) AS source_format_count
+  CROSS JOIN
+    UNNEST(video_source_format_type) AS source_formats
+  CROSS JOIN
+    UNNEST(video_source_format_count) AS source_format_count
 )
 
 
-SELECT source_formats, count(source_formats) AS numberofoccurances
-FROM videonotes
-WHERE num_video_nodes > 0
-GROUP BY source_formats
-ORDER BY numberofoccurances DESC
+SELECT
+  source_formats,
+  COUNT(source_formats) AS numberofoccurances
+FROM
+  videonotes
+WHERE
+  num_video_nodes > 0
+GROUP BY
+  source_formats
+ORDER BY
+  numberofoccurances DESC

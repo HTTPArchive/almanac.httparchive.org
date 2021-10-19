@@ -27,14 +27,24 @@ WITH videonotes AS (
         ( JSON_QUERY_ARRAY(JSON_VALUE( payload, "$._media" ), "$.video_attributes_values_counts") ) AS video_attributes_values_counts,
         ( JSON_QUERY_ARRAY(JSON_VALUE( payload, "$._media" ), "$.video_source_format_count") ) AS video_source_format_count,
         ( JSON_QUERY_ARRAY(JSON_VALUE( payload, "$._media" ), "$.video_source_format_type") ) AS video_source_format_type
-      FROM `httparchive.summary_pages.2021_07_01_desktop`
+      FROM
+        `httparchive.summary_pages.2021_07_01_desktop`
     )
-  CROSS JOIN UNNEST(video_duration) AS durations
-  WHERE num_video_nodes > 0 AND durations != "null"
-  ORDER BY durations DESC
+  CROSS JOIN
+    UNNEST(video_duration) AS durations
+  WHERE
+    num_video_nodes > 0 AND
+    durations != "null"
+  ORDER BY
+    durations DESC
 )
 
-SELECT duration_bucket, count(duration_bucket)
-FROM videonotes
-GROUP BY duration_bucket
-ORDER BY duration_bucket ASC
+SELECT
+  duration_bucket,
+  COUNT(duration_bucket) AS freq
+FROM
+  videonotes
+GROUP BY
+  duration_bucket
+ORDER BY
+  duration_bucket ASC

@@ -17,17 +17,18 @@ WITH videonotes AS (
     FROM
       `httparchive.summary_pages.2021_07_01_desktop`
   )
-  CROSS JOIN UNNEST(video_display_style) AS styles
+  CROSS JOIN
+    UNNEST(video_display_style) AS styles
 )
 
 SELECT
-
   styles,
-  count(styles)
-
-
-FROM videonotes
+  COUNT(styles) AS freq
+FROM
+  videonotes
 WHERE
   num_video_nodes > 0
-GROUP BY styles
-ORDER BY styles ASC
+GROUP BY
+  styles
+ORDER BY
+  styles ASC
