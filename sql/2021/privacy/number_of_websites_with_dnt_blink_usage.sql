@@ -19,4 +19,3 @@ ORDER BY
 # relevant Blink features:
 
 # DNT: NavigatorDoNotTrack
-# GPC: none

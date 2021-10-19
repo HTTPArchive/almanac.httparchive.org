@@ -2,6 +2,8 @@
 # Percent of websites using a specific CMP (Based on wappalyzer 'Cookie compliance' category)
 # Alternatively, `core_web_vitals.technologies` could be used, but then we do not have
 #  access to the total number of websites
+# Note: we did not use the results of this query in 2021, since Wappalyzer definitions/detections
+#  were unreliable. (https://github.com/HTTPArchive/almanac.httparchive.org/issues/2292)
 
 WITH totals AS (
   SELECT
