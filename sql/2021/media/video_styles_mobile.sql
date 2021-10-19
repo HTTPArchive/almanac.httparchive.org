@@ -1,3 +1,4 @@
+#standardSQL
 
 WITH videonotes AS (
   SELECT
@@ -16,7 +17,7 @@ WITH videonotes AS (
       JSON_QUERY_ARRAY(JSON_VALUE(payload, "$._media"), "$.video_source_format_type") AS video_source_format_type
     FROM
       `httparchive.summary_pages.2021_07_01_mobile`
-  )
+ )
   CROSS JOIN
     UNNEST(video_display_style) AS styles
 )
