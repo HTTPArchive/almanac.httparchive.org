@@ -3,7 +3,7 @@
 
 WITH requests AS (
   SELECT
-    _TABLE_SUFFIX as client,
+    _TABLE_SUFFIX AS client,
     pageid AS page,
     req_host AS host,
     type AS contentType,
