@@ -21,6 +21,7 @@ third_party AS (
 
 SELECT
   client,
+  COUNT(DISTINCT IF(domain IS NOT NULL, page, NULL)) AS pages_with_third_party,
   COUNT(DISTINCT page) AS total_pages,
   COUNT(DISTINCT IF(domain IS NOT NULL, page, NULL)) / COUNT(DISTINCT page) AS pct_pages_with_third_party
 FROM
