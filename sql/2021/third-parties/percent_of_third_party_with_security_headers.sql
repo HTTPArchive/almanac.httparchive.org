@@ -3,10 +3,11 @@
 
 WITH requests AS (
   SELECT
+    _TABLE_SUFFIX as client,
     RTRIM(urlShort, '/') AS origin,
     respOtherHeaders
   FROM
-    `httparchive.summary_requests.2021_07_01_mobile`
+    `httparchive.summary_requests.2021_07_01_*`
 ),
 
 third_party AS (
@@ -21,6 +22,7 @@ third_party AS (
 
 headers AS (
   SELECT
+    client,
     requests.origin AS req_origin,
     LOWER(respOtherHeaders) AS respOtherHeaders,
     third_party.category AS req_category
@@ -31,6 +33,7 @@ headers AS (
 
 base AS (
   SELECT
+    client,
     req_origin,
     req_category,
     IF(STRPOS(respOtherHeaders, "strict-transport-security") > 0, 1, 0) AS hsts_header,
@@ -41,6 +44,7 @@ base AS (
 )
 
 SELECT
+  client,
   req_category,
   COUNT(0) AS total_requests,
   SUM(hsts_header) / COUNT(0) AS pct_hsts_header_requests,
@@ -50,4 +54,8 @@ SELECT
 FROM
   base
 GROUP BY
+  client,
+  req_category
+ORDER BY
+  client,
   req_category

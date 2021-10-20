@@ -3,12 +3,13 @@
 
 WITH requests AS (
   SELECT
+    _TABLE_SUFFIX as client,
     pageid AS page,
     req_host AS host,
     type AS contentType,
     respBodySize AS body_size
   FROM
-    `httparchive.summary_requests.2021_07_01_mobile`
+    `httparchive.summary_requests.2021_07_01_*`
 ),
 
 third_party AS (
@@ -23,6 +24,7 @@ third_party AS (
 
 base AS (
   SELECT
+    client,
     page,
     category,
     contentType,
@@ -37,6 +39,7 @@ base AS (
 
 requests_per_page_and_category AS (
   SELECT
+    client,
     page,
     category,
     contentType,
@@ -47,12 +50,14 @@ requests_per_page_and_category AS (
   FROM
     base
   GROUP BY
+    client,
     page,
     category,
     contentType
 )
 
 SELECT
+  client,
   category,
   contentType,
   SUM(requests) AS requests,
@@ -62,8 +67,10 @@ SELECT
   SAFE_DIVIDE(SUM(body_size), SUM(total_page_size)) AS avg_pct_body_size_per_page
 FROM requests_per_page_and_category
 GROUP BY
+  client,
   category,
   contentType
 ORDER BY
+  client,
   category,
   contentType
