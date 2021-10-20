@@ -60,10 +60,6 @@ headers AS (
 base AS (
   SELECT
     client,
-    req_origin,
-    page_origin,
-    timing_allow_origin,
-    req_category,
     IF(
       page_origin = req_origin OR
       timing_allow_origin = "*, " OR
