@@ -52,6 +52,7 @@ base AS (
 SELECT
   client,
   type,
+  SUM(cached) AS cached_requests,
   COUNT(0) AS total_requests,
   SUM(cached) / COUNT(0) AS pct_cached_requests
 FROM
