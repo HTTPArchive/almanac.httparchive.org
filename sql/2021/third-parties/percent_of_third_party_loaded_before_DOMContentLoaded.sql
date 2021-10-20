@@ -46,6 +46,7 @@ base AS (
 SELECT
   client,
   request_category,
+  SUM(early_request) AS early_requests,
   COUNT(0) AS total_requests,
   SUM(early_request) / COUNT(0) AS pct_early_requests
 FROM
