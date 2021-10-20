@@ -31,6 +31,7 @@ pages AS (
 SELECT
   client,
   rank_grouping,
+  COUNT(DISTINCT IF(domain IS NOT NULL, pageid, NULL)) AS pages_with_third_party,
   COUNT(DISTINCT pageid) AS total_pages,
   COUNT(DISTINCT IF(domain IS NOT NULL, pageid, NULL)) / COUNT(DISTINCT pageid) AS pct_pages_with_third_party
 FROM
