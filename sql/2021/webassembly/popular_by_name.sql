@@ -1,4 +1,5 @@
 SELECT
+  client,
   CASE
     WHEN REGEXP_CONTAINS(url, r'/(hyphenopoly|patterns).*/[a-z-]{2,5}\.wasm') THEN '(hyphenopoly dictionary)'
     WHEN ENDS_WITH(url, '.unityweb') THEN '(unityweb app)'
@@ -15,6 +16,7 @@ FROM
 WHERE
   date = '2021-09-01'
 GROUP BY
+  client,
   name
 ORDER BY
   count DESC
