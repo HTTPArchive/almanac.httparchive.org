@@ -74,6 +74,7 @@ base AS (
 
 SELECT
   client,
+  SUM(timing_allowed) AS timing_allowed_requests,
   COUNT(0) AS total_requests,
   SUM(timing_allowed) / COUNT(0) AS pct_timing_allowed_requests
 FROM
