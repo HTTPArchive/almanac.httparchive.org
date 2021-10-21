@@ -5,7 +5,7 @@ WITH requests AS (
   SELECT
     _TABLE_SUFFIX AS client,
     pageid AS page,
-    req_host AS host
+    url
   FROM
     `httparchive.summary_requests.2021_07_01_*`
 ),
@@ -16,7 +16,8 @@ third_party AS (
   FROM
     `httparchive.almanac.third_parties`
   WHERE
-    date = '2021-07-01'
+    date = '2021-07-01' AND
+    category != 'hosting'
 )
 
 SELECT
@@ -27,6 +28,6 @@ SELECT
 FROM
   requests
 LEFT JOIN third_party
-ON NET.HOST(requests.host) = NET.HOST(third_party.domain)
+ON NET.HOST(requests.url) = NET.HOST(third_party.domain)
 GROUP BY
   client

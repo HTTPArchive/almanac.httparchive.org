@@ -5,7 +5,7 @@ WITH requests AS (
   SELECT
     _TABLE_SUFFIX AS client,
     pageid AS page,
-    req_host AS host
+    NET.HOST(url)  AS host
   FROM
     `httparchive.summary_requests.2021_07_01_*`
 ),
@@ -13,9 +13,9 @@ WITH requests AS (
 totals AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    COUNT(DISTINCT pageid) AS total_pages
+    COUNT(0) AS total_pages
   FROM
-    `httparchive.summary_requests.2021_07_01_*`
+    `httparchive.summary_pages.2021_07_01_*`
   GROUP BY _TABLE_SUFFIX
 ),
 
@@ -26,7 +26,8 @@ third_party AS (
   FROM
     `httparchive.almanac.third_parties`
   WHERE
-    date = '2021-07-01'
+    date = '2021-07-01' AND
+    category != 'hosting'
 )
 
 SELECT
@@ -41,7 +42,7 @@ FROM
 LEFT JOIN
   third_party
 ON
-  NET.HOST(requests.host) = NET.HOST(third_party.domain)
+  NET.HOST(requests.url) = NET.HOST(third_party.domain)
 JOIN
   totals
 USING (client)
@@ -56,4 +57,3 @@ QUALIFY
 ORDER BY
   pct_pages DESC,
   client
-

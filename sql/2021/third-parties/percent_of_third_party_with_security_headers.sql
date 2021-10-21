@@ -17,7 +17,8 @@ third_party AS (
   FROM
     `httparchive.almanac.third_parties`
   WHERE
-    date = '2021-07-01'
+    date = '2021-07-01' AND
+    category != 'hosting'
 ),
 
 headers AS (

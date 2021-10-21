@@ -24,7 +24,8 @@ total_third_party_usage AS (
     `httparchive.almanac.third_parties`
   ON
     NET.HOST(sr.url) = NET.HOST(domain) AND
-    date = '2021-07-01'
+    date = '2021-07-01' AND
+    category != 'hosting'
   GROUP BY
     canonicalDomain,
     category
