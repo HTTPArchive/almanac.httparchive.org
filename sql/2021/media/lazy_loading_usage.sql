@@ -9,8 +9,8 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    SAFE_CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.images.imgs.total') AS INT64) AS total_img,
-    SAFE_CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.images.imgs.attribute_usage_count.loading') AS INT64) AS total_loading_attribute,
+    SAFE_CAST(JSON_VALUE(JSON_VALUE(payload, '$._almanac'), '$.images.imgs.total') AS INT64) AS total_img,
+    SAFE_CAST(JSON_VALUE(JSON_VALUE(payload, '$._almanac'), '$.images.imgs.attribute_usage_count.loading') AS INT64) AS total_loading_attribute,
   FROM
     `httparchive.pages.2021_08_01_*`
 )
