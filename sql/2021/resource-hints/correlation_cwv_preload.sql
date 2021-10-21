@@ -43,9 +43,9 @@ SELECT
   device,
 
   CASE
-     WHEN hints.preload >= 20 THEN 20
-     ELSE hints.preload
- END AS preload,
+    WHEN hints.preload >= 20 THEN 20
+    ELSE hints.preload
+  END AS preload,
 
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY device) AS total,
@@ -66,11 +66,11 @@ SELECT
   COUNTIF(CrUX.largest_contentful_paint AND CrUX.first_input_delay AND CrUX.cumulative_layout_shift) / COUNT(0) AS pct_cwv_good
 FROM (
     SELECT
-       _TABLE_SUFFIX AS device,
-       getResourceHints(payload) AS hints,
-       getGoodCwv(payload) AS CrUX
+      _TABLE_SUFFIX AS device,
+      getResourceHints(payload) AS hints,
+      getGoodCwv(payload) AS CrUX
     FROM
-       `httparchive.pages.2021_07_01_*`
+      `httparchive.pages.2021_07_01_*`
 )
 WHERE
   CrUX IS NOT NULL
