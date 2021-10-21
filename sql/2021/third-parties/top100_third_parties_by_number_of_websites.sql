@@ -5,7 +5,7 @@ WITH requests AS (
   SELECT
     _TABLE_SUFFIX AS client,
     pageid AS page,
-    NET.HOST(url) AS host
+    url
   FROM
     `httparchive.summary_requests.2021_07_01_*`
 ),
