@@ -40,43 +40,43 @@ try {
 ''' ;
 
 SELECT
-    device,
+  device,
 
-    CASE        
-        WHEN hints.preload >= 20 THEN 20
-        ELSE hints.preload
-    END AS preload,
+  CASE
+    WHEN hints.preload >= 20 THEN 20
+    ELSE hints.preload
+  END AS preload,
 
-    COUNT(0) AS freq,
-    SUM(COUNT(0)) OVER (PARTITION BY device) AS total,
+  COUNT(0) AS freq,
+  SUM(COUNT(0)) OVER (PARTITION BY device) AS total,
 
-    COUNTIF(CrUX.largest_contentful_paint) AS lcp_good,
-    COUNTIF(CrUX.largest_contentful_paint) / COUNT(0) AS pct_lcp_good,
+  COUNTIF(CrUX.largest_contentful_paint) AS lcp_good,
+  COUNTIF(CrUX.largest_contentful_paint) / COUNT(0) AS pct_lcp_good,
 
-    COUNTIF(CrUX.first_input_delay) AS fid_good,
-    COUNTIF(CrUX.first_input_delay) / COUNT(0) AS pct_fid_good,
+  COUNTIF(CrUX.first_input_delay) AS fid_good,
+  COUNTIF(CrUX.first_input_delay) / COUNT(0) AS pct_fid_good,
 
-    COUNTIF(CrUX.cumulative_layout_shift) AS cls_good,
-    COUNTIF(CrUX.cumulative_layout_shift) / COUNT(0) AS pct_cls_good,
+  COUNTIF(CrUX.cumulative_layout_shift) AS cls_good,
+  COUNTIF(CrUX.cumulative_layout_shift) / COUNT(0) AS pct_cls_good,
 
-    COUNTIF(CrUX.first_contentful_paint) AS fcp_good,
-    COUNTIF(CrUX.first_contentful_paint) / COUNT(0) AS pct_fcp_good,
+  COUNTIF(CrUX.first_contentful_paint) AS fcp_good,
+  COUNTIF(CrUX.first_contentful_paint) / COUNT(0) AS pct_fcp_good,
 
-    COUNTIF(CrUX.largest_contentful_paint AND CrUX.first_input_delay AND CrUX.cumulative_layout_shift) AS cwv_good,
-    COUNTIF(CrUX.largest_contentful_paint AND CrUX.first_input_delay AND CrUX.cumulative_layout_shift) / COUNT(0) AS pct_cwv_good,
+  COUNTIF(CrUX.largest_contentful_paint AND CrUX.first_input_delay AND CrUX.cumulative_layout_shift) AS cwv_good,
+  COUNTIF(CrUX.largest_contentful_paint AND CrUX.first_input_delay AND CrUX.cumulative_layout_shift) / COUNT(0) AS pct_cwv_good
 FROM (
     SELECT
-        _TABLE_SUFFIX AS device,
-        getResourceHints(payload) AS hints,
-        getGoodCwv(payload) AS CrUX
+      _TABLE_SUFFIX AS device,
+      getResourceHints(payload) AS hints,
+      getGoodCwv(payload) AS CrUX
     FROM
-        `httparchive.pages.2021_07_01_*`
+      `httparchive.pages.2021_07_01_*`
 )
 WHERE
-    CrUX IS NOT NULL
-GROUP BY 
-    device,
-    preload
-ORDER BY 
-    device,
-    preload
+  CrUX IS NOT NULL
+GROUP BY
+  device,
+  preload
+ORDER BY
+  device,
+  preload
