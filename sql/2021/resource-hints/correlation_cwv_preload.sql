@@ -8,12 +8,12 @@ try {
   return hints.reduce((results, hint) => {
     // Null values are omitted from BigQuery aggregations.
     // This means only pages with at least one hint are considered.
-    results[hint] = almanac['link-nodes'].nodes.filter(link => link.rel.toLowerCase() == hint).length || null;
+    results[hint] = almanac['link-nodes'].nodes.filter(link => link.rel.toLowerCase() == hint).length || 0;
     return results;
   }, {});
 } catch (e) {
   return hints.reduce((results, hint) => {
-    results[hint] = null;
+    results[hint] = 0;
     return results;
   }, {});
 }
@@ -41,16 +41,29 @@ try {
 
 SELECT
     device,
-    CASE
-        WHEN hints.preload IS NULL THEN 0
+
+    CASE        
         WHEN hints.preload >= 20 THEN 20
         ELSE hints.preload
     END AS preload,
+
     COUNT(0) AS freq,
     SUM(COUNT(0)) OVER (PARTITION BY device) AS total,
-    COUNTIF(CrUX IS NOT NULL) AS hasCwv,
-    COUNTIF(CrUX.largest_contentful_paint) AS good_largest_contentful_paint,
-    COUNTIF(CrUX.largest_contentful_paint) / COUNTIF(CrUX IS NOT NULL) AS pct_good_largest_contentful_paint
+
+    COUNTIF(CrUX.largest_contentful_paint) AS lcp_good,
+    COUNTIF(CrUX.largest_contentful_paint) / COUNT(0) AS pct_lcp_good,
+
+    COUNTIF(CrUX.first_input_delay) AS fid_good,
+    COUNTIF(CrUX.first_input_delay) / COUNT(0) AS pct_fid_good,
+
+    COUNTIF(CrUX.cumulative_layout_shift) AS cls_good,
+    COUNTIF(CrUX.cumulative_layout_shift) / COUNT(0) AS pct_cls_good,
+
+    COUNTIF(CrUX.first_contentful_paint) AS fcp_good,
+    COUNTIF(CrUX.first_contentful_paint) / COUNT(0) AS pct_fcp_good,
+
+    COUNTIF(CrUX.largest_contentful_paint AND CrUX.first_input_delay AND CrUX.cumulative_layout_shift) AS cwv_good,
+    COUNTIF(CrUX.largest_contentful_paint AND CrUX.first_input_delay AND CrUX.cumulative_layout_shift) / COUNT(0) AS pct_cwv_good,
 FROM (
     SELECT
         _TABLE_SUFFIX AS device,
