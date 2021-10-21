@@ -33,9 +33,9 @@ try {
     }), {})
   }  
   
-  return {};
+  return null;
 } catch (e) {
-  return {};
+  return null;
 }
 ''' ;
 
@@ -48,8 +48,9 @@ SELECT
     END AS preload,
     COUNT(0) AS freq,
     SUM(COUNT(0)) OVER (PARTITION BY device) AS total,
+    COUNTIF(CrUX IS NOT NULL) AS hasCwv,
     COUNTIF(CrUX.largest_contentful_paint) AS good_largest_contentful_paint,
-    COUNTIF(CrUX.largest_contentful_paint) / COUNT(0) AS pct_good_largest_contentful_paint
+    COUNTIF(CrUX.largest_contentful_paint) / COUNTIF(CrUX IS NOT NULL) AS pct_good_largest_contentful_paint
 FROM (
     SELECT
         _TABLE_SUFFIX AS device,
