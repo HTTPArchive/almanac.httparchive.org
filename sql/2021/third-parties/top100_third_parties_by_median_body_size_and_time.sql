@@ -1,0 +1,77 @@
+#standardSQL
+# Top 100 third parties by median response body size, time
+
+WITH requests AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    url,
+    respBodySize AS body_size,
+    time
+  FROM
+    `httparchive.summary_requests.2021_07_01_*`
+),
+
+third_party AS (
+  SELECT
+    domain,
+    canonicalDomain,
+    category
+  FROM
+    `httparchive.almanac.third_parties`
+  WHERE
+    date = '2021-07-01' AND
+    category != 'hosting'
+),
+
+base AS (
+  SELECT
+    client,
+    category,
+    canonicalDomain,
+    APPROX_QUANTILES(body_size, 1000)[OFFSET(500)] / 1024 AS median_body_size_kb,
+    APPROX_QUANTILES(time, 1000)[OFFSET(500)] / 1000 AS median_time_s
+  FROM
+    requests
+  INNER JOIN
+    third_party
+  ON
+    NET.HOST(requests.url) = NET.HOST(third_party.domain)
+  GROUP BY
+    client,
+    category,
+    canonicalDomain
+)
+
+SELECT
+  ranking,
+  client,
+  category,
+  canonicalDomain,
+  metric,
+  sorted_order
+FROM (
+  SELECT
+    'median_body_size_kb' AS ranking,
+    client,
+    category,
+    canonicalDomain,
+    median_body_size_kb AS metric,
+    DENSE_RANK() OVER (PARTITION BY client ORDER BY median_body_size_kb DESC) AS sorted_order
+  FROM base
+  UNION ALL (
+    SELECT
+      'median_time_s' AS ranking,
+      client,
+      category,
+      canonicalDomain,
+      median_time_s AS metric,
+      DENSE_RANK() OVER (PARTITION BY client ORDER BY median_time_s DESC) AS sorted_order
+    FROM base
+  )
+)
+WHERE
+  sorted_order <= 100
+ORDER BY
+  ranking,
+  client,
+  metric DESC
