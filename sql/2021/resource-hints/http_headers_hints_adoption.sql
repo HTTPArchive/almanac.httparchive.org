@@ -1,7 +1,6 @@
 #standardSQL
 # Retrieves resource hints from HTTP headers
 
-
 CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
 RETURNS STRUCT<preload BOOLEAN, prefetch BOOLEAN, preconnect BOOLEAN, prerender BOOLEAN, `dns-prefetch` BOOLEAN, `modulepreload` BOOLEAN>
 LANGUAGE js AS '''
@@ -39,12 +38,13 @@ SELECT
   COUNTIF(hints.`modulepreload`) / COUNT(0) AS pct_modulepreload
 FROM (
   SELECT
-    _TABLE_SUFFIX AS client,
+    client,
     getResourceHints(payload) AS hints
   FROM
-    `httparchive.requests.2021_07_01_*`
+    `httparchive.almanac.requests`
   WHERE
-    payload IS NOT NULL
+    payload IS NOT NULL AND
+    firstHtml
 )
 GROUP BY
   client
