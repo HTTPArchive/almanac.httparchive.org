@@ -95,6 +95,23 @@
     "hash": "992232d60eedce978109f7c0eb463c6c",
     "size": 25
   },
+  "/static/pdfs/web_almanac_2020_ja.pdf": {
+    "date_published": "2021-10-24T00:00:00.000Z",
+    "date_modified": "2021-10-24T00:00:00.000Z",
+    "hash": "a1b2378518027b793c861c037ab595f8",
+    "size": 26
+  },
+  "/static/pdfs/web_almanac_2020_ja_cover_A5.pdf": {
+    "date_published": "2021-10-24T00:00:00.000Z",
+    "date_modified": "2021-10-24T00:00:00.000Z",
+    "hash": "45713dc5f5a5312921e8f17973105665"
+  },
+  "/static/pdfs/web_almanac_2020_ja_print_A5.pdf": {
+    "date_published": "2021-10-24T00:00:00.000Z",
+    "date_modified": "2021-10-24T00:00:00.000Z",
+    "hash": "5cd5192959ad87577fdf74b177c58d74",
+    "size": 25
+  },
   "en/2019/chapters/accessibility.html": {
     "date_published": "2019-11-11T00:00:00.000Z",
     "date_modified": "2021-06-04T00:00:00.000Z",
@@ -1054,6 +1071,11 @@
     "date_published": "2021-02-20T00:00:00.000Z",
     "date_modified": "2021-10-11T00:00:00.000Z",
     "hash": "4ceb71f791733f3049b6c7284b578682"
+  },
+  "ja/2020/chapters/performance.html": {
+    "date_published": "2021-10-24T00:00:00.000Z",
+    "date_modified": "2021-10-24T00:00:00.000Z",
+    "hash": "64459e36963a452ef9f928cfd8dfda5e"
   },
   "ja/2020/chapters/privacy.html": {
     "date_published": "2021-06-04T00:00:00.000Z",
