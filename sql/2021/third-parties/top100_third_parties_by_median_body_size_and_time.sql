@@ -17,7 +17,7 @@ third_party AS (
     domain,
     category,
     canonicalDomain,
-    COUNT(DISTINCT page) as page_usage
+    COUNT(DISTINCT page) AS page_usage
   FROM
     `httparchive.almanac.third_parties` tp
   JOIN
