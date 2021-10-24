@@ -15,7 +15,8 @@ RETURNS ARRAY<STRING> LANGUAGE js AS '''
 
       if (tree_node.accessible_name.length === 0) {
         // No A11Y name given
-        accessible_name_sources("No accessible name");
+        accessible_name_sources.push("No accessible name");
+        continue;
       }
 
       if (tree_node.accessible_name_sources.length <= 0) {
