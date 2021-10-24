@@ -21,7 +21,7 @@ JOIN (
   SELECT
     client,
     page AS url,
-    format
+    IF(mimeType = 'image/avif', 'avif', IF(mimeType = 'image/webp', 'webp', format)) AS format
   FROM
     `httparchive.almanac.requests`
   WHERE
