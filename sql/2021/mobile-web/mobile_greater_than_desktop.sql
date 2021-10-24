@@ -24,13 +24,13 @@ SELECT
 
   COUNT(DISTINCT origin) AS total_origins,
 
-  COUNTIF(desktopDensity = phoneDensity) AS total_equal,
-  COUNTIF(desktopDensity < phoneDensity) AS total_more_mobile,
-  COUNTIF(desktopDensity > phoneDensity) AS total_more_desktop,
+  COUNT(DISTINCT IF(desktopDensity = phoneDensity, origin, NULL)) AS total_equal,
+  COUNT(DISTINCT IF(desktopDensity < phoneDensity, origin, NULL)) AS total_more_mobile,
+  COUNT(DISTINCT IF(desktopDensity > phoneDensity, origin, NULL)) AS total_more_desktop,
 
-  SAFE_DIVIDE(COUNTIF(desktopDensity = phoneDensity), COUNT(DISTINCT origin)) AS perc_equal,
-  SAFE_DIVIDE(COUNTIF(desktopDensity < phoneDensity), COUNT(DISTINCT origin)) AS perc_more_mobile,
-  SAFE_DIVIDE(COUNTIF(desktopDensity > phoneDensity), COUNT(DISTINCT origin)) AS perc_more_desktop,
+  SAFE_DIVIDE(COUNT(DISTINCT IF(desktopDensity = phoneDensity, origin, NULL)), COUNT(DISTINCT origin)) AS perc_equal,
+  SAFE_DIVIDE(COUNT(DISTINCT IF(desktopDensity < phoneDensity, origin, NULL)), COUNT(DISTINCT origin)) AS perc_more_mobile,
+  SAFE_DIVIDE(COUNT(DISTINCT IF(desktopDensity > phoneDensity, origin, NULL)), COUNT(DISTINCT origin)) AS perc_more_desktop
 FROM
   base,
   UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
