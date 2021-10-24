@@ -207,7 +207,7 @@ First Input Delay (FID) は、ユーザーが最初にインタラクション�
 
 FIDスコアの地理的分布は、先に紹介したデバイス集計表の結果を裏付けるものです。最悪の場合、79％のWebサイトが良好なFIDを持っていますが、トップは97％と印象的で、韓国が再びリードしています。興味深いことに、CLSとLCPのランキングで上位を占めていたチェコ、ポーランド、ウクライナ、ロシアなどの国々が、このランキングでは最下位になっています。
 
-ここでも、その理由を推測できますが、本当のところを確かめるには、さらなる分析が必要です。FIDがJavaScriptの実行能力と相関していると仮定すると、より高性能なデバイスがより高価で高級品として扱われる国ではFIDランキングが、低くなる可能性があります。 ポーランドを例に挙げると、米国に比べて<a hreflang="en" href="https://qz.com/1106603/where-the-iphone-x-is-cheapest-and-most-expensive-in-dollars-pounds-and-yuan/">iPhoneの価格がもっとも高い</a>国のひとつであり、[相対的に低い賃金](https://en.wikipedia.org/wiki/List_of_European_countries_by_average_wage#Net_average_monthly_salary)と相まって、1回の給料ではアップルの主力製品を購入するには不十分です。対照的に、<a hreflang="en" href="https://www.news.com.au/finance/average-australian-salary-how-much-you-have-to-earn-to-be-better-off-than-most/news-story/6fcdde092e87872b9957d2ab8eda1cbd">平均的な給料をもらっているオーストラリア人は、1週間分の給料でiPhoneを購入できます。幸いなことに、低評価のウェブサイトの割合はほとんどが0で、1～2％の読み取り率の例外もあり、インタラクションに対する反応が比較的スピーディであることを指し示しています。
+ここでも、その理由を推測できますが、本当のところを確かめるには、さらなる分析が必要です。FIDがJavaScriptの実行能力と相関していると仮定すると、より高性能なデバイスがより高価で高級品として扱われる国ではFIDランキングが、低くなる可能性があります。 ポーランドを例に挙げると、米国に比べて<a hreflang="en" href="https://qz.com/1106603/where-the-iphone-x-is-cheapest-and-most-expensive-in-dollars-pounds-and-yuan/">iPhoneの価格がもっとも高い</a>国のひとつであり、[相対的に低い賃金](https://en.wikipedia.org/wiki/List_of_European_countries_by_average_wage#Net_average_monthly_salary)と相まって、1回の給料ではアップルの主力製品を購入するには不十分です。対照的に、<a hreflang="en" href="https://www.news.com.au/finance/average-australian-salary-how-much-you-have-to-earn-to-be-better-off-than-most/news-story/6fcdde092e87872b9957d2ab8eda1cbd">平均的な給料</a>をもらっているオーストラリア人は、1週間分の給料でiPhoneを購入できます。幸いなことに、低評価のウェブサイトの割合はほとんどが0で、1～2％の読み取り率の例外もあり、インタラクションに対する反応が比較的スピーディであることを指し示しています。
 
 ### 接続タイプ別FID
 
