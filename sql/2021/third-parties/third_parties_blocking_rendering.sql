@@ -29,16 +29,18 @@ total_third_party_usage AS (
   GROUP BY
     canonicalDomain,
     category
+  HAVING
+    total_pages >= 50
 )
 
 SELECT
   canonicalDomain,
   category,
   total_pages,
-  COUNT(0) AS blocking_pages,
-  total_pages - COUNT(0) AS non_blocking_pages,
-  COUNT(0) / total_pages AS blocking_pages_pct,
-  1 - (COUNT(0) / total_pages) AS non_blocking_pages_pct,
+  COUNT(DISTINCT page) AS blocking_pages,
+  total_pages - COUNT(DISTINCT page) AS non_blocking_pages,
+  COUNT(DISTINCT page) / total_pages AS blocking_pages_pct,
+  (total_pages - COUNT(DISTINCT page)) / total_pages AS non_blocking_pages_pct,
   APPROX_QUANTILES(wasted_ms, 1000)[OFFSET(500)] AS p50_wastedMs,
   APPROX_QUANTILES(total_bytes_kib, 1000)[OFFSET(500)] AS p50_total_bytes_kib
 FROM (

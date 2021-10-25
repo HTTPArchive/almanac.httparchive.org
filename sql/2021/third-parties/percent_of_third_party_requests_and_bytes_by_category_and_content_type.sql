@@ -14,13 +14,22 @@ WITH requests AS (
 
 third_party AS (
   SELECT
+    domain,
     category,
-    domain
+    COUNT(DISTINCT page) AS page_usage
   FROM
-    `httparchive.almanac.third_parties`
+    `httparchive.almanac.third_parties` tp
+  JOIN
+    requests r
+  ON NET.HOST(r.url) = NET.HOST(tp.domain)
   WHERE
     date = '2021-07-01' AND
     category != 'hosting'
+  GROUP BY
+    domain,
+    category
+  HAVING
+    page_usage >= 50
 ),
 
 base AS (
@@ -62,11 +71,11 @@ SELECT
   category,
   contentType,
   SUM(requests) AS requests,
-  AVG(requests) AS avg_requests_per_page,
-  SAFE_DIVIDE(SUM(requests), SUM(total_page_requests)) AS avg_pct_requests_per_page,
-  AVG(body_size) AS avg_body_size_per_page,
-  SAFE_DIVIDE(SUM(body_size), SUM(total_page_size)) AS avg_pct_body_size_per_page
-FROM requests_per_page_and_category
+  SAFE_DIVIDE(SUM(requests), SUM(SUM(requests)) OVER (PARTITION BY client, category)) AS pct_requests,
+  SUM(body_size) AS body_size,
+  SAFE_DIVIDE(SUM(body_size), SUM(SUM(body_size)) OVER (PARTITION BY client, category)) AS pct_body_size
+FROM
+  requests_per_page_and_category
 GROUP BY
   client,
   category,
