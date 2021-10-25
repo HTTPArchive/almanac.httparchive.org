@@ -71,9 +71,9 @@ SELECT
   category,
   contentType,
   SUM(requests) AS requests,
-  SAFE_DIVIDE(SUM(requests), SUM(SUM(requests)) OVER (PARTITION by client, category)) AS pct_requests,
+  SAFE_DIVIDE(SUM(requests), SUM(SUM(requests)) OVER (PARTITION BY client, category)) AS pct_requests,
   SUM(body_size) AS body_size,
-  SAFE_DIVIDE(SUM(body_size), SUM(SUM(body_size)) OVER (PARTITION by client, category)) AS pct_body_size
+  SAFE_DIVIDE(SUM(body_size), SUM(SUM(body_size)) OVER (PARTITION BY client, category)) AS pct_body_size
 FROM
   requests_per_page_and_category
 GROUP BY

@@ -20,7 +20,7 @@ FROM (
     JSON_VALUE(third_party_items, "$.entity.url") AS domain,
     page,
     JSON_VALUE(third_party_items, "$.entity.text") AS category,
-    COUNTIF(JSON_VALUE(third_party_items, "$.blockingTime") != "0") AS blocking,
+    COUNTIF(SAFE_CAST(JSON_VALUE(third_party_items, "$.blockingTime") AS FLOAT64) > 250) AS blocking,
     SUM(SAFE_CAST(JSON_VALUE(third_party_items, "$.blockingTime") AS FLOAT64)) AS blocking_time,
     SUM(SAFE_CAST(JSON_VALUE(third_party_items, "$.transferSize") AS FLOAT64) / 1024) AS transfer_size_kib
   FROM
