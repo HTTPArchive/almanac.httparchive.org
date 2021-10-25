@@ -1,6 +1,5 @@
 #standardSQL
-# Percent of websites with third parties by ranking
-
+# Number of third-parties per websites by rank
 WITH requests AS (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -8,6 +7,15 @@ WITH requests AS (
     url
   FROM
     `httparchive.summary_requests.2021_07_01_*`
+),
+
+pages AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    pageid AS page,
+    rank
+  FROM
+    `httparchive.summary_pages.2021_07_01_*`
 ),
 
 third_party AS (
@@ -30,29 +38,34 @@ third_party AS (
     page_usage >= 50
 ),
 
-pages AS (
+base AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    pageid AS page,
-    rank
+    client,
+    page,
+    rank,
+    COUNT(domain) AS third_parties_per_page
   FROM
-    `httparchive.summary_pages.2021_07_01_*`
+    requests
+  LEFT JOIN
+    third_party
+  ON
+    NET.HOST(requests.url) = NET.HOST(third_party.domain)
+  INNER JOIN
+    pages
+  USING
+    (client, page)
+  GROUP BY
+    client,
+    page,
+    rank
 )
 
 SELECT
   client,
   rank_grouping,
-  COUNT(DISTINCT IF(domain IS NOT NULL, page, NULL)) AS pages_with_third_party,
-  COUNT(DISTINCT page) AS total_pages,
-  COUNT(DISTINCT IF(domain IS NOT NULL, page, NULL)) / COUNT(DISTINCT page) AS pct_pages_with_third_party
+  APPROX_QUANTILES(third_parties_per_page, 1000)[OFFSET(500)] AS p50_third_parties_per_page
 FROM
-  pages
-JOIN
-  requests
-USING (client, page)
-LEFT JOIN
-  third_party
-ON NET.HOST(requests.url) = NET.HOST(third_party.domain),
+  base,
   UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
 WHERE
   rank <= rank_grouping
