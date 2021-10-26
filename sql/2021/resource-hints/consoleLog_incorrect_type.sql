@@ -1,9 +1,28 @@
 #standardSQL
 # returns the number of pages which preload a resource of the incorrect script type
 
+CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
+RETURNS STRUCT<preload BOOLEAN, prefetch BOOLEAN, preconnect BOOLEAN, prerender BOOLEAN, `dns-prefetch` BOOLEAN, `modulepreload` BOOLEAN>
+LANGUAGE js AS '''
+var hints = ['preload', 'prefetch', 'preconnect', 'prerender', 'dns-prefetch', 'modulepreload'];
+try {
+  var $ = JSON.parse(payload);
+  var almanac = JSON.parse($._almanac);
+  return hints.reduce((results, hint) => {
+    results[hint] = !!almanac['link-nodes'].nodes.find(link => link.rel.toLowerCase() == hint);
+    return results;
+  }, {});
+} catch (e) {
+  return hints.reduce((results, hint) => {
+    results[hint] = false;
+    return results;
+  }, {});
+}
+''' ;
+
 SELECT
   client,
-  ARRAY_LENGTH(value) AS numOfIncorrectType,
+  ARRAY_LENGTH(value) AS num_incorrect_type,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
@@ -14,14 +33,16 @@ FROM (
   FROM (
     SELECT
       _TABLE_SUFFIX AS client,
-      JSON_EXTRACT(payload, "$._consoleLog") AS consoleLog
+      JSON_EXTRACT(payload, "$._consoleLog") AS consoleLog,
+      getResourceHints(payload) AS hints
     FROM
       `httparchive.pages.2021_07_01_*`
   )
+  WHERE hints.preload
 )
 GROUP BY
   client,
-  numOfIncorrectType
+  num_incorrect_type
 ORDER BY
   client,
-  numOfIncorrectType
+  num_incorrect_type

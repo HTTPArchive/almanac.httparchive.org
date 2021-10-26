@@ -1,5 +1,5 @@
 #standardSQL
-# returns the number of unused preloaded resources
+# returns the number of pages using preload tags without the required crossorigin attribute
 
 CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
 RETURNS STRUCT<preload BOOLEAN, prefetch BOOLEAN, preconnect BOOLEAN, prerender BOOLEAN, `dns-prefetch` BOOLEAN, `modulepreload` BOOLEAN>
@@ -22,14 +22,14 @@ try {
 
 SELECT
   client,
-  ARRAY_LENGTH(value) AS num_unused_preload,
+  ARRAY_LENGTH(value) AS num_incorrect_crossorigin,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM (
   SELECT
     client,
-    REGEXP_EXTRACT_ALL(consoleLog, r'The resource (.*?) was preloaded using link preload but not used within a few seconds from the window\'s load event') AS value
+    REGEXP_EXTRACT_ALL(consoleLog, r'A preload for (.+?) is found, but is not used because the request credentials mode does not match') AS value
   FROM (
     SELECT
       _TABLE_SUFFIX AS client,
@@ -38,11 +38,11 @@ FROM (
     FROM
       `httparchive.pages.2021_07_01_*`
   )
-  WHERE hints.preload
+  WHERE hints.preload IS NOT NULL
 )
 GROUP BY
   client,
-  num_unused_preload
+  num_incorrect_crossorigin
 ORDER BY
   client,
-  num_unused_preload
+  freq DESC
