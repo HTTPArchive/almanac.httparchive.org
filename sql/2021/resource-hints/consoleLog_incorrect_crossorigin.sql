@@ -38,7 +38,7 @@ FROM (
     FROM
       `httparchive.pages.2021_07_01_*`
   )
-  WHERE hints.preload IS NOT NULL
+  WHERE hints.preload
 )
 GROUP BY
   client,
