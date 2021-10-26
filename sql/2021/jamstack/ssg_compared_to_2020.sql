@@ -36,7 +36,7 @@ SELECT
   total,
   COUNT(0) / total AS pct
 FROM
-  `httparchive.technologies.2020_07_01_*`
+  `httparchive.technologies.2020_08_01_*`
 JOIN (
   SELECT
     _TABLE_SUFFIX,
