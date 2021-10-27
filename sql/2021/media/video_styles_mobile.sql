@@ -16,11 +16,23 @@ WITH videonotes AS (
       JSON_QUERY_ARRAY(JSON_VALUE(payload, "$._media"), "$.video_source_format_count") AS video_source_format_count,
       JSON_QUERY_ARRAY(JSON_VALUE(payload, "$._media"), "$.video_source_format_type") AS video_source_format_type
     FROM
+<<<<<<< HEAD
       `httparchive.summary_pages.2021_07_01_mobile`
     )
   CROSS JOIN
     UNNEST(video_display_style) AS styles
 )
+||||||| parent of fd5fb93b... fixed table, added a few more
+      `httparchive.summary_pages.2021_07_01_mobile`
+  )
+  CROSS JOIN UNNEST(video_display_style) AS styles
+)  
+=======
+      `httparchive.pages.2021_07_01_mobile`
+  )
+  CROSS JOIN UNNEST(video_display_style) AS styles
+)  
+>>>>>>> fd5fb93b... fixed table, added a few more
 
 SELECT
   styles,
