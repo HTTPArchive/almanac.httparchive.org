@@ -30,7 +30,7 @@ WITH videonotes AS (
         (JSON_QUERY_ARRAY(JSON_VALUE(payload, "$._media"), "$.video_source_format_count")) AS video_source_format_count,
         (JSON_QUERY_ARRAY(JSON_VALUE(payload, "$._media"), "$.video_source_format_type")) AS video_source_format_type
       FROM
-        `httparchive.summary_pages.2021_07_01_desktop`
+        `httparchive.pages.2021_07_01_desktop`
     )
   CROSS JOIN
     UNNEST(video_duration) AS durations
