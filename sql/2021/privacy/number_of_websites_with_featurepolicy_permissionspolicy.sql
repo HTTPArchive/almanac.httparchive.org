@@ -55,21 +55,24 @@ FROM (
   SELECT
     client,
     rank_grouping,
-    COUNTIF(
+    COUNT(DISTINCT IF(
       header_name = 'feature-policy' OR
-      tag_name = 'feature-policy'
+      tag_name = 'feature-policy',
+      page, NULL)
     ) AS number_of_websites_with_feature_policy,
-    COUNTIF(
+    COUNT(DISTINCT IF(
       header_name = 'permissions-policy' OR
-      tag_name = 'permissions-policy'
+      tag_name = 'permissions-policy',
+      page, NULL)
     ) AS number_of_websites_with_permissions_policy,
-    COUNTIF(
+    COUNT(DISTINCT IF(
       header_name = 'feature-policy' OR
       tag_name = 'feature-policy' OR
       header_name = 'permissions-policy' OR
-      tag_name = 'permissions-policy'
+      tag_name = 'permissions-policy',
+      page, NULL)
     ) AS number_of_websites_with_any_policy,
-    COUNT(0) AS number_of_websites
+    COUNT(DISTINCT page) AS number_of_websites
   FROM
     response_headers
   FULL OUTER JOIN

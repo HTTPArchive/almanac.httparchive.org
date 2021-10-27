@@ -10,13 +10,27 @@ WITH whotracksme AS (
     `httparchive.almanac.whotracksme`
   WHERE
     date = '2021-07-01'
+),
+
+totals AS (
+  SELECT
+    client,
+    COUNT(DISTINCT page) AS total_websites
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    date = '2021-07-01'
+  GROUP BY
+    client
 )
 
 SELECT
   client,
   'any' AS type,
   number_of_trackers,
-  COUNT(DISTINCT page) AS number_of_websites
+  COUNT(DISTINCT page) AS number_of_websites,
+  total_websites,
+  COUNT(DISTINCT page) / total_websites AS pct_websites
 FROM (
   SELECT
     client,
@@ -37,15 +51,21 @@ FROM (
     client,
     page
   )
+JOIN
+  totals
+USING (client)
 GROUP BY
   client,
-  number_of_trackers
+  number_of_trackers,
+  total_websites
 UNION ALL
 SELECT
   client,
-  'no_cdn_or_hosting' AS type,
+  'any_tracker' AS type,
   number_of_trackers,
-  COUNT(DISTINCT page) AS number_of_websites
+  COUNT(DISTINCT page) AS number_of_websites,
+  total_websites,
+  COUNT(DISTINCT page) / total_websites AS pct_websites
 FROM (
   SELECT
     client,
@@ -62,15 +82,24 @@ FROM (
   WHERE
     date = "2021-07-01" AND
     NET.REG_DOMAIN(page) != NET.REG_DOMAIN(urlShort) AND -- third party
-    whotracksme.category != 'cdn' AND
-    whotracksme.category != 'hosting'
+    (
+      -- categories selected from https://whotracks.me/blog/tracker_categories.html
+      whotracksme.category = 'advertising' OR
+      whotracksme.category = 'pornvertising' OR
+      whotracksme.category = 'site_analytics' OR
+      whotracksme.category = 'social_media'
+    )
   GROUP BY
     client,
     page
   )
+JOIN
+  totals
+USING (client)
 GROUP BY
   client,
-  number_of_trackers
+  number_of_trackers,
+  total_websites
 ORDER BY
   client,
   type,
