@@ -35,8 +35,8 @@ SELECT
   hint.name AS name,
   hint.attribute AS attribute,
   COUNTIF(hint.value IS NOT NULL) AS freq,
-  SUM(COUNT(0)) OVER () AS total,
-  COUNTIF(hint.value IS NOT NULL) / SUM(COUNT(0)) OVER () AS pct
+  SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, hint.name) AS total,
+  COUNTIF(hint.value IS NOT NULL) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, hint.name) AS pct
 FROM
   `httparchive.pages.2021_07_01_*`,
   UNNEST(getResourceHintAttrs(payload)) AS hint
