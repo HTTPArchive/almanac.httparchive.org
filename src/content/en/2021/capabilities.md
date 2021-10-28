@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Capabilities
-description: TODO
+description: Capabilities give web apps access to hardware interfaces and enhance web-based productivity apps.
 authors: [christianliebel]
 reviewers: [tomayac, hemanth]
 analysts: [tomayac]
@@ -9,13 +9,13 @@ editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1b4moteB9EiLYkH1Ln9qfi1tnU-E4N2UQ87uayWytDKw/
 christianliebel_bio: Christian Liebel is a consultant at <a hreflang="en" href="https://thinktecture.com">Thinktecture</a>, supporting clients from various business areas in implementing first-class web applications. He is a Microsoft MVP for Developer Technologies, Google GDE for Web/Capabilities and Angular, and participates in the W3C Web Applications Working Group.
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: Capabilities are new web platform APIs that unlock entirely new use cases for web applications.
+featured_stat_1: 9%
+featured_stat_label_1: Desktop web sites use the Web Share API
+featured_stat_2: 8.25%
+featured_stat_label_2: Mobile sites use the Async Clipboard API
+featured_stat_3: 11
+featured_stat_label_3: Mobile sites use Declarative Link Capturing
 ---
 
 ## Capabilities
