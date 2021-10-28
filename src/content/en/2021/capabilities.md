@@ -28,30 +28,38 @@ This chapter uses the HTTP Archive data set. For security reasons, some APIs req
 Please note that most of the APIs presented here are so-called incubations. Unless noted, they are not (yet) W3C Recommendations, i.e., official web standards. Instead, these APIs are being worked on in the Web Platform Incubator Community Group (WICG), where browser vendors and developers can discuss new features. Some APIs have already shipped in several browsers; others are only available on Chromium-based ones. These browsers include Google Chrome, Microsoft Edge, Opera, Brave, or Samsung Internet. Please note that vendors of Chromium-based browsers can choose to disable specific capabilities, so not all APIs may be available in all browsers based on Chromium. Some capabilities may only be available after activating a flag in the browser settings.
 
 ### File System Access API
-The first productivity-related API is the [File System Access API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API). It allows your application to access the user’s file system securely: The user can select one or more files they want to give the web app access via a file picker. In particular, the API does not grant random access to the file system. When the user has selected a file, the application can either create it (in case it didn’t exist before) or modify its contents.
+The first productivity-related API is the [File System Access API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API). Web apps could already open files from the file system via `input[type=file]`: In a file picker, the user can choose one or more files to give the web application access to. Also, they could already save files to the Downloads folder via `a[download]`. The File System Access API adds support for additional use cases: Opening and modifying directories, saving files to a location specified by the user, and overwriting files that were opened by them. In particular, the API does not grant random access to the file system.
 
 #### Write Access
-When calling the `showSaveFilePicker()` method on the global window object, the browser will show a native file picker. When the user successfully picks a file from the local file system, you will receive its handle. With the help of the `createWritable()` method on the handle, you can access a stream writer. In the following example, this writer writes the text `hello world` to the file and closes it afterward.
+When calling the [`showSaveFilePicker()` method](https://developer.mozilla.org/en-US/docs/Web/API/Window/showSaveFilePicker) on the global window object, the browser will show a native file picker. The method takes an optional options object where you can specify which file types are allowed for saving (`types`, default: all types), and whether the user can disable this filter via an “accept all” option (`excludeAcceptAllOption`, default: `false`). When the user successfully picks a file from the local file system, you will receive its handle. With the help of the `createWritable()` method on the handle, you can access a stream writer. In the following example, this writer writes the text `hello world` to the file and closes it afterward.
 
 ```js
-const handle = await window.showSaveFilePicker();
+const handle = await window.showSaveFilePicker({
+  types: [{
+    description: 'PNG files',
+    accept: { 'image/png': ['.png'] }
+  }],
+  excludeAcceptAllOption: true
+});
 const writable = await handle.createWritable();
 await writable.write('hello world');
 await writable.close();
 ```
 
 #### Read Access
-To show an open file picker, call the `showOpenFilePicker()` method on the global window object. This time, the user could potentially select more than one file. As a result, you will receive an array of file handles. Using the destructuring expression `[handle]`, you will receive the handle of the first selected file as the first element in the array. By calling the `getFile()` method on the file handle, you will receive a File object which gives you access to the file’s binary data. By calling the `text()` method, you will receive the plain text from the opened file.
+To show an open file picker, call the [`showOpenFilePicker()` method](https://developer.mozilla.org/en-US/docs/Web/API/Window/showOpenFilePicker) on the global window object. This method also takes an optional options object with the same properties from above (`types`, `excludeAcceptAllOption`). Additionally, you can specify if the user can select one or multiple files (`multiple`, default: `false`). As the user could potentially select more than one file, you will receive an array of file handles. Using the destructuring expression `[handle]`, you will receive the handle of the first selected file as the first element in the array. By calling the `getFile()` method on the file handle, you will receive a File object which gives you access to the file’s binary data. By calling the `text()` method, you will receive the plain text from the opened file.
 
 ```js
-const [handle] = await window.showOpenFilePicker();
+const [handle] = await window.showOpenFilePicker({
+  multiple: false
+});
 const blob = await handle.getFile();
 const text = await blob.text();
 console.log(text);
 ```
 
 #### Opening Directories
-Furthermore, the API allows web apps (e.g., integrated development environments) to get a handle for an entire directory. Using this handle, you can create, update or delete existing files or folders within the opened directory. This time, the method is called `showDirectoryPicker()`:
+Furthermore, the API allows web apps (e.g., integrated development environments) to get a handle for an entire directory. Using this handle, you can create, update or delete existing files or folders within the opened directory. This time, the method is called [`showDirectoryPicker()`](https://developer.mozilla.org/en-US/docs/Web/API/window/showDirectoryPicker):
 
 ```js
 const handle = window.showDirectoryPicker();
@@ -65,7 +73,7 @@ Out of all 6,286,373 desktop and 7,491,840 mobile websites in the HTTP Archive, 
 The [Async Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) allows you to read and write data from or to the clipboard. Due to its asynchronous nature, it enables use cases like scaling down an image while pasting it—all without blocking the UI. It replaces less capable APIs like `document.execCommand()` that were previously used to interact with the clipboard.
 
 #### Write Access
-The Async Clipboard API offers two methods to copy data to the clipboard: The shorthand method `writeText()` takes plain text as an argument which the browser then copies to the clipboard. The `write()` method takes an array of clipboard items that could contain arbitrary data. WebKit currently restricts the supported data formats to plain text, HTML, URL lists, and PNG images.
+The Async Clipboard API offers two methods to copy data to the clipboard: The [shorthand method `writeText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText) takes plain text as an argument which the browser then copies to the clipboard. The [`write()` method](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/write) takes an array of clipboard items that could contain arbitrary data. Browsers can decide to only implement certain data formats. The Clipboard API specification specifies a list of [mandatory data types](https://www.w3.org/TR/clipboard-apis/#mandatory-data-types-x) browsers must support as a minimum, including plain text, HTML, URI lists, or PNG images.
 
 ```js
 await navigator.clipboard.writeText('hello world');
@@ -73,7 +81,7 @@ await navigator.clipboard.write([new ClipboardItem('hello world')]);
 ```
 
 #### Read Access
-Similar to copying data to the clipboard, there are two methods to paste data back from the clipboard: First, another shorthand method called `readText()` that returns plain text from the clipboard. Using the `read()` method, you access all items in the clipboard in the data formats supported by the browser.
+Similar to copying data to the clipboard, there are two methods to paste data back from the clipboard: First, another [shorthand method called `readText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/readText) that returns plain text from the clipboard. Using the [`read()` method](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/read), you access all items in the clipboard in the data formats supported by the browser.
 
 ```js
 const item = await navigator.clipboard.readText();
@@ -85,7 +93,7 @@ The browser may show a permission prompt or a different UI for privacy reasons b
 With 560,359 (8.91%) desktop and 618,062 (8.25%) mobile sites, the Async Clipboard API (`writeText()` method) is one of the most used Fugu APIs. The `write()` method is used on 1,180 desktop and 1,227 mobile sites. The commercial website [Clipping Magic](https://clippingmagic.com/) allows you to remove the background of an image with the help of an AI algorithm. Just paste an image from the clipboard, and the website will remove its background.
 
 ### Web Share API
-The [Web Share API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share) allows you to share text, a URL, or files from a website or web application with other applications, e.g., mail clients or messengers. To do so, call the `navigator.share()` method. It takes an object with the data to share with another application. The browser then opens the native share sheet, where the user can select the target application from. The method returns a promise that resolves in case the content was successfully shared; otherwise, it will be rejected.
+The [Web Share API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share) allows you to share text, a URL, or files from a website or web application with other applications, e.g., mail clients or messengers. To do so, call the [`navigator.share()` method](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share). It takes an object with the data to share with another application. The browser then opens the native share sheet, where the user can select the target application from. The method returns a promise that resolves in case the content was successfully shared; otherwise, it will be rejected.
 
 ```js
 await navigator.share({
