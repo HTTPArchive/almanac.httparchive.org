@@ -13,6 +13,7 @@ WITH requests AS (
 third_party AS (
   SELECT
     domain,
+    canonicalDomain,
     category,
     COUNT(DISTINCT page) AS page_usage
   FROM
@@ -25,6 +26,7 @@ third_party AS (
     category != 'hosting'
   GROUP BY
     domain,
+    canonicalDomain,
     category
   HAVING
     page_usage >= 50
@@ -34,7 +36,7 @@ base AS (
   SELECT
     client,
     page,
-    COUNT(domain) AS third_parties_per_page
+    COUNT(canonicalDomain) AS third_parties_per_page
   FROM
     requests
   LEFT JOIN
