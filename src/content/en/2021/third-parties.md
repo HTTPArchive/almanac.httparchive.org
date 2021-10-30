@@ -24,9 +24,9 @@ unedited: true
 
 Ah third parties - the solution to so many problems on the web… and cause of so many others! The web has fundamentally always been about interconnectivity and sharing. Using third-party content on a website is a natural extension of that and was first set into motion with the introduction of the [`<img>` element in HTML 2.0](https://www.w3.org/MarkUp/html-spec/html-spec_5.html#SEC5.10), we have been able to hyperlink external content straight into our documents. This has only grown with the introduction of [CSS](./css), and [JavaScript](./javascript) allowing part (or all!) of the page and site to be changed completely just by including a seemingly simple `<link>` or `<script>` element.
 
-Third parties provide a never ending collection of images, videos, fonts, tools, libraries, widgets, trackers, ads and anything else you can imagine to embed into our web pages. This enables even the most non-technical to be able to create and publish content to the web. Without third parties, the web would likely be a very boring, text-based, academic medium instead of the rich, immersive, complex platform that is so integral to the lives of many of us today.
+Third parties provide a never-ending collection of images, videos, fonts, tools, libraries, widgets, trackers, ads and anything else you can imagine to embed into our web pages. This enables even the most non-technical to be able to create and publish content to the web. Without third parties, the web would likely be a very boring, text-based, academic medium instead of the rich, immersive, complex platform that is so integral to the lives of many of us today.
 
-However, there is a dark side to using third party content on the web. An innocuous include of an image, or a helpful library, opens the floodgates of all sorts of [performance](./performance), [privacy](./performance), and [security](./security) implications that many do not consider fully. Speak to any professionals in those industries and they will lament the use of third-party content making their lives more difficult. This is surely only going to grow with performance getting extra attention through the likes of the [Core Web Vitals initiative from Google](https://web.dev/vitals/), and increased focus on privacy from governments and individuals alike, and the ever present threat of exploitable vulnerabilities and malicious threats inherent to the web.
+However, there is a dark side to using third party content on the web. An innocuous include of an image, or a helpful library, opens the floodgates of all sorts of [performance](./performance), [privacy](./performance), and [security](./security) implications that many do not consider fully. Speak to any professionals in those industries and they will lament the use of third-party content making their lives more difficult. This is surely only going to grow with performance getting extra attention through the likes of the [Core Web Vitals initiative from Google](https://web.dev/vitals/), and increased focus on privacy from governments and individuals alike, and the ever-present threat of exploitable vulnerabilities and malicious threats inherent to the web.
 
 In this chapter we're going to have a look at the state of third parties on the web: how much are we using them, what are we using them for, has our use changed over the last year given in particular the three concerns listed above? These are questions I'm looking to answer here.
 
@@ -53,7 +53,7 @@ Similarly, first-party content served from a third-party domain is counted as th
 
 ### Third-party categories
 
-This year we will, again, be drawing heavily on the [third-party-web repository](https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5) from [Patrick Hulce](https://twitter.com/patrickhulce) to help us identify and categorise third parties. This repository categorises commonly used third-party URLs into the following categories:
+This year we will, again, be drawing heavily on the [third-party-web repository](https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5) from [Patrick Hulce](https://twitter.com/patrickhulce) to help us identify and categorize third parties. This repository categorizes commonly used third-party URLs into the following categories:
 - **Ad** - display and measurement of advertisements
 - **Analytics** - tracking site visitor behavior
 - **CDN** - providers that host public shared utilities or private content of their users
@@ -71,7 +71,7 @@ This year we will, again, be drawing heavily on the [third-party-web repository]
 
 One difference that we have taken this year is to remove the Hosting category from our data this year. If you happen to use Wordpress.com for your blog, or Shopify for your ecommerce platform, then we're going to ignore other requests for those domains by that site as not truly "third-party", as they are in many ways part of hosting on those platforms. Similar to the way we noted above, we do not consider CDNs in front of a page to be "third party".
 
-In reality this made very little difference to the numbers  but we feel it's a more accurate reflection of what we should consider "third party" by above definition, and also aligns more closely with how the other chapters use this term.
+In reality this made very little difference to the numbers, but we feel it's a more accurate reflection of what we should consider "third party" by above definition, and also aligns more closely with how the other chapters use this term.
 
 ### Caveats
 
@@ -84,7 +84,7 @@ Learn more about our [methodology](./methodology).
 
 ## Prevalence
 
-So how much are third parties used? Well the answer is a lot!
+So how much are third parties used? Well, the answer is a lot!
 
 {{ figure_markup(
   caption="Percentage of mobile sites using at least one third-party resource.",
@@ -107,7 +107,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
   )
 }}
 
-Rerunning the last three Almanac years with the new, stricter definition, we see in the chart above that our usage of third -parties on our website has grown slightly on last year by 0.2% on desktop and 0.4% on mobile.
+Rerunning the last three Almanac years with the new, stricter definition, we see in the chart above that our usage of third parties on our website has grown slightly on last year by 0.2% on desktop and 0.4% on mobile.
 
 45.85% of requests on mobile and 45.09% of requests on desktop are third-party requests and this is similar to last year.
 
@@ -122,7 +122,7 @@ Rerunning the last three Almanac years with the new, stricter definition, we see
 
 It would appear that the impact of privacy-preserving regulations like [GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) and [CCPA](https://en.wikipedia.org/wiki/California_Consumer_Privacy_Act) are not dampening our appetite for third-party content. Though it should be remembered that our websites crawl from US locations and so may not be served GDPR-compliant websites.
 
-So we know nearly all sites use third parties, but how many do they use?
+So, we know nearly all sites use third parties, but how many do they use?
 
 {{ figure_markup(
   image="third-parties-number-of-third-parties-per-website.png",
@@ -152,7 +152,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
   )
 }}
 
-This year we have access to the [CrUX "rank"](https://developers.google.com/web/updates/2021/03/crux-rank-magnitude) for each website—that is a popularity assignment for each site (e.g. top 1,000 most used site, top 10,000 most used site...etc.). Slicing the data by that shows that there is a slight decrease in third-party usage for the less popular websites but it never dips below 93.28%, again reiterating that pretty much all websites love to include at least one third party.
+This year we have access to the [CrUX "rank"](https://developers.google.com/web/updates/2021/03/crux-rank-magnitude) for each website—that is a popularity assignment for each site (e.g. top 1,000 most used site, top 10,000 most used site...etc.). Slicing the data by that shows that there is a slight decrease in third-party usage for the less popular websites, but it never dips below 93.28%, again reiterating that pretty much all websites love to include at least one third party.
 
 However, what does change is the number of third parties used by website:
 
@@ -166,11 +166,11 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
   )
 }}
 
-Looking at the median (50th percentile) statistics, we see a marked decline as we go up the rankings, with the most popular websites using twice as many third parties as the whole data set. We'll see in a moment that that is driven almost entirely by ads. It is perhaps unsurprising that these are much more prevalent on more popular websites, with more eyeballs to monetise.
+Looking at the median (50th percentile) statistics, we see a marked decline as we go up the rankings, with the most popular websites using twice as many third parties as the whole data set. We'll see in a moment that that is driven almost entirely by ads. It is perhaps unsurprising that these are much more prevalent on more popular websites, with more eyeballs to monetize.
 
-### Third-party type
+## Third-party type
 
-So we know we're using third parties a lot, but what are we using them for? Look at the categories of each third-party request we see the following:
+Our analysis shows we're using third parties a lot, but what are we using them for? Look at the categories of each third-party request we see the following:
 
 
 {{ figure_markup(
@@ -183,9 +183,9 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
   )
 }}
 
-Ads are the most common requests, followed by "unknown"—a collection of various uncategorised or lesser used sites—then CDN, social and utility and then analytics. So while there are some categories more popular than others, what's perhaps the bigger takeaway here is how varied third-party usage is. They really are used for all sorts of reasons rather than one or two use cases dominating all the others.
+Ads are the most common requests, followed by "unknown"—a collection of various uncategorized or lesser used sites—then CDN, social and utility and then analytics. So, while there are some categories more popular than others, what's perhaps the bigger takeaway here is how varied third-party usage is. They really are used for all sorts of reasons rather than one or two use cases dominating all the others.
 
-#### Third-party requests by type and rank
+### Third-party requests by type and rank
 
 {{ figure_markup(
   image="third-parties-medium-third-party-requests-by-type-and-rank-on-mobile.png",
@@ -199,9 +199,9 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
 
 Splitting the requests by rank and category, we see the reason for the larger number of requests discussed previously.  Ads are much more heavily used on the more popular sites.
 
-Note this chart shows the medium number of requests for each category, by rank, but not every category is used on every page, explaining why the totals per domain are much higher then the number of requests from the previous chart.
+Note this chart shows the medium number of requests for each category, by rank, but not every category is used on every page, explaining why the totals per domain are much higher than the number of requests from the previous chart.
 
-### Content types
+## Content types
 
 Related to the categories, let's see what type of content we're getting back from all those third-party requests.
 
@@ -215,7 +215,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
   )
 }}
 
-JavaScript, images, and HTML mostly it seems. To be honest there aren't many surprises here. JavaScript is used by most third parties to add functionality (whether that be in ads, trackers, libraries, or whatever). Similarly the high usage of images is to be expected, as they will include the 1 pixel blank images so beloved of tracking solutions.
+JavaScript, images, and HTML mostly it seems. To be honest there aren't many surprises here. JavaScript is used by most third parties to add functionality (whether that be in ads, trackers, libraries, or whatever). Similarly, the high usage of images is to be expected, as they will include the 1-pixel blank images so beloved of tracking solutions.
 
 The high usage of HTML surprised me initially (surely documents would be the prevalent form of HTML and they would be first-party requests?), but investigation showed them mostly to be iframes which makes much more sense as they are often used to house ads, or other widgets (e.g. YouTube serves an HTML document in an iframe including the player, rather than just the video itself).
 
@@ -231,7 +231,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
   )
 }}
 
-Splitting the content types by the type of third party, we see the prevalence of those three main types (scripts, images and HTML) across most types, though the worrying amount of JavaScript (even for video type!) is already apparent. The above chart is for mobile and the desktop picture is very similar but is not shown for brevity reasons.
+Splitting the content types by the type of third party, we see the prevalence of those three main types (scripts, images and HTML) across most types, though the worrying amount of JavaScript (even for video type!) is already apparent. The above chart is for mobile, but the desktop picture is very similar.
 
 {{ figure_markup(
   image="third-parties-requests-by-content-type-and-category-on-mobile.png",
@@ -243,11 +243,13 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
   )
 }}
 
-When looking by bytes, rather than by requests, the amount of JavaScript is even more worrying. Again I've shown mobile here, but there are no major differences for desktop.
+When looking by bytes, rather than by requests, the amount of JavaScript is even more worrying. Again, I've shown mobile here, but there are no major differences for desktop.
 
-To quote [Addy Osmani](https://twitter.com/addyosmani) (twice!) in the same sentence from his ["Cost of JavaScript"](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4) post, "byte-for-byte, JavaScript is still the most expensive resource we send", and "a 200 KB script and a 200 KB image have very different costs". Some categories like analytics, constent-provider, tag-manager are pretty much all JavaScript, while others like ad, customer-success, are not far behind. We'll return to the performance impact of using third-party resources later - often caused by costly use of JavaScript.
-Third-Party Domains
-So who are we loading all these third-party requests from? Most of these names won't be surprising, but the prevalence of one name just reiterates the dominance that company has across a number of different categories:
+To quote [Addy Osmani](https://twitter.com/addyosmani) (twice!) in the same sentence from his ["Cost of JavaScript"](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4) post, "byte-for-byte, JavaScript is still the most expensive resource we send", and "a 200 KB script and a 200 KB image have very different costs". Some categories like analytics, consent-provider, tag-manager are pretty much all JavaScript, while others like ad, customer-success, are not far behind. We'll return to the performance impact of using third-party resources later - often caused by costly use of JavaScript.
+
+## Third-Party Domains
+
+Who are we loading all these third-party requests from? Most of these names won't be surprising, but the prevalence of one name just reiterates the dominance that company has across a number of different categories:
 
 {{ figure_markup(
   image="third-parties-top-15-by-usage.png",
@@ -263,19 +265,17 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
 
 Google takes 8 of the top 15 most used third parties — including the top six spots! — and has no one even close. Google are market leaders in Analytics, Fonts, Ads, Accounts, Tag Managers, and Video to name but a few. A staggering 62.69% of mobile websites use Google Analytics, and almost as many use Google Fonts, with Ads, Accounts and Tag Manager usage not far behind in the 42% - 49 % range.
 
-The first non-Google entity is Facebook with a comparatively low usage of 29.18%. This is followed by CloudFlare's CDN fronting popular libraries and other resources (despite being listed as amp.cloudflare.com it also includes the much larger cdnjs.cloudflare.com).
+The first non-Google entity is Facebook with a comparatively low usage of 29.18%. This is followed by Cloudflare's CDN fronting popular libraries and other resources (despite being listed as amp.cloudflare.com it also includes the much larger cdnjs.cloudflare.com).
 
 After this we're back to Google with YouTube, and Maps two spots later. The remaining spots are filled with CDNs for other popular libraries and tools.
 
-## Performance impact of third-parties
+## Performance impact of third parties
 
-It's difficult to definitely explain the performance impact of third parties on websites. There is no clear cut answer as to whether using a third party is good or bad.
-
-While there are certainly impacts on needlessly loading up your website with every third-party tool, widget, tracker and whatever else you can think of, that's also true of first-party content. Bloat is bad, wherever it comes from and blaming third parties for making it too easy for websites to add, is perhaps pointing the finger at the wrong party here!
+It's difficult to definitely explain the performance impact of third parties on websites. There is no clear-cut answer as to whether using a third party is good or bad. While there are certainly impacts on needlessly loading up your website with every third-party tool, widget, tracker and whatever else you can think of, that's also true of first-party content. Bloat is bad, wherever it comes from and blaming third parties for making it too easy for websites to add, is perhaps pointing the finger at the wrong party here!
 
 There is a definite cost to connecting to another domain, even though most third parties will be using a globally distributed, high performance CDN and many web performance advocates (including myself!) recommend self-hosting where possible to avoid this penalty. This is particularly relevant now that all the major browsers have moved away from sharing caches between pages, so the claim that once one site has downloaded that resource, others can benefit from it is no longer true. Though this was a questionable claim even in the past in this author's opinion given the number of versions of libraries, and limitations of the HTTP cache.
 
-Saying that, rarely is life as definitive as we would like and, in some cases self-hosting may actually cost performance. I've [written before how the question on whether to self-host Google Fonts](https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/) is not as clear cut as it might seem and requires a degree of expertise to ensure you are replicating all that Google Fonts does for you in the performance front. Similarly, image CDNs can optimise media better than most and, more importantly, can do this automatically without the need of manual steps that will inevitably be skipped or done incorrectly on occasion.
+Saying that, rarely is life as definitive as we would like and, in some cases self-hosting may actually cost performance. I've [written before how the question on whether to self-host Google Fonts](https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/) is not as clear cut as it might seem and requires a degree of expertise to ensure you are replicating all that Google Fonts does for you in the performance front. Similarly, image CDNs can optimize media better than most and, more importantly, can do this automatically without the need of manual steps that will inevitably be skipped or done incorrectly on occasion.
 
 To try to investigate the performance impact of third parties, we will instead look at some of the most popular third-party embeds as some have a bad name in web performance circles so let's see if the bad reputation is really deserved. To do that we'll be making use of two Lighthouse audits: [Eliminate render blocking resources](https://web.dev/render-blocking-resources/) and [Reduce the impact of third-party code](https://web.dev/third-party-summary/), based on some [similar research](https://docs.google.com/spreadsheets/d/1Td-4qFjuBzxp8af_if5iBC0Lkqm_OROb7_2OcbxrU_g/edit?usp=sharing&resourcekey=0-ZCfve5cngWxF0-sv5pLRzg) by [Houssein Djirdeh](https://twitter.com/hdjirdeh).
 
@@ -362,7 +362,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
   )
 }}
 
-Google Analytics is pretty good, so obviously a lot of work has gone into optimising this, given all that it tracks.
+Google Analytics is pretty good, so obviously a lot of work has gone into optimizing this, given all that it tracks.
 
 #### Google/Doubleclick Ads
 
@@ -376,7 +376,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
   )
 }}
 
-Google Ads was doing so well, until we hit the 90th percentile, when it got blown off the chart. Again a reminder that this means 10% of websites have worse numbers than these.
+Google Ads was doing so well, until we hit the 90th percentile, when it got blown off the chart. Again, a reminder that this means 10% of websites have worse numbers than these.
 
 #### Google Tag Manager
 
@@ -439,14 +439,14 @@ Twitter as a third-party can be used in one of two ways: as a retargeting advert
 
 While some of the above examples fare better or worse, it must be remembered that it's the cumulative effect of these which really impact the performance of a website. It's rare for websites to only use one of these so add together Google Analytics, GTM loading Facebook and Twitter Tracking, on a page with a Map and an embedded Tweet and you'll begin to understand why your phone sometimes feels too hot to handle, or your PC fan starts going into overdrive just from surfing the web!
 
-All this shows why the Google Developers recommend [reducing the impact of embeds](https://web.dev/embed-best-practices/) (mostly their own ironically!), through the use of document ordering, lazy loading, facades, and other techniques. However it's really quite infuriating that some of these are not the default and that advanced techniques like these must fall on the responsibility of the website owner. The third parties highlighted here really do have the resources, and technical know-how to reduce the impact of using their products for everyone by default but often choose not to.
+All this shows why the Google Developers recommend [reducing the impact of embeds](https://web.dev/embed-best-practices/) (mostly their own ironically!), through the use of document ordering, lazy loading, facades, and other techniques. However, it's really quite infuriating that some of these are not the default and that advanced techniques like these must fall on the responsibility of the website owner. The third parties highlighted here really do have the resources, and technical know-how to reduce the impact of using their products for everyone by default but often choose not to.
 
-Hopefully highlighting some of these well-known examples will cause readers to investigate the impact of third-party embeds on their own sites and ask themselves if they really are all worth it? Perhaps if we make this subject more important to the third parties they will prioritise performance.
+Hopefully highlighting some of these well-known examples will cause readers to investigate the impact of third-party embeds on their own sites and ask themselves if they really are all worth it? Perhaps if we make this subject more important to the third parties, they will prioritize performance.
 
 
 ### Timing-Allow-Origin header prevalence
 
-Last year we looked at the [prevalence of the `timing-allow-origin` header](./third-parties#timing-allow-origin-prevalence), which allows the [Resource Timing API](https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API) to be used on third-party requests. Without this HTTP header, the information available to on-page performance monitoring tools for third-party requests is restricted for security and privacy reasons. However for static requests, third parties which allow this header give a greater transparency into the performance timings of their resources.
+Last year we looked at the [prevalence of the `timing-allow-origin` header](./third-parties#timing-allow-origin-prevalence), which allows the [Resource Timing API](https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API) to be used on third-party requests. Without this HTTP header, the information available to on-page performance monitoring tools for third-party requests is restricted for security and privacy reasons. However, for static requests, third parties which allow this header give a greater transparency into the performance timings of their resources.
 
 {{ figure_markup(
   image="third-parties-timing-allow-origin-header-usage.png",
