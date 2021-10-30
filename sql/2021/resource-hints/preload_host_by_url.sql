@@ -2,7 +2,6 @@
 # Most popular hosts users preload from
 # capped to one hit per url to avoid having the results skewed by websites which preload many resources from the same host
 
-
 CREATE TEMPORARY FUNCTION getResourceHintsHrefs(payload STRING, hint STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js AS '''
@@ -18,34 +17,41 @@ try {
 SELECT
   client,
   host,
-  COUNT(0) AS freq,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+  freq,
+  total,
+  pct
 FROM (
-  SELECT
-    client,
-    url,
-    host
-  FROM (
     SELECT
-      _TABLE_SUFFIX AS client,
-      url,
-      NET.HOST(href) AS host
-    FROM
-      `httparchive.pages.2021_07_01_*`,
-      UNNEST(getResourceHintsHrefs(payload, "preload")) AS href
-  )
-  GROUP BY
-    client,
-    url,
-    host
+      client,
+      host,
+      COUNT(0) AS freq,
+      SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+      COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct,
+      ROW_NUMBER() OVER (PARTITION BY client ORDER BY COUNT(0) DESC) AS pos
+    FROM (
+      SELECT
+        client,
+        url,
+        host
+      FROM (
+          SELECT
+            _TABLE_SUFFIX AS client,
+            url,
+            NET.HOST(href) AS host
+          FROM
+            `httparchive.pages.2021_07_01_*`,
+            UNNEST(getResourceHintsHrefs(payload, "preload")) AS href
+        )
+      GROUP BY
+        client,
+        url,
+        host
+    )
+    GROUP BY
+      client,
+      host
+    ORDER BY
+      client,
+      freq DESC
 )
-GROUP BY
-  client,
-  host
-HAVING
-  freq > 1
-ORDER BY
-  client,
-  freq DESC
-LIMIT 100
+WHERE pos <= 100
