@@ -120,7 +120,7 @@ Rerunning the last three Almanac years with the new, stricter definition, we see
 )
 }}
 
-It would appear that the impact of privacy-preserving regulations like [GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) and [CCPA](https://en.wikipedia.org/wiki/California_Consumer_Privacy_Act) are not dampening our appetite for third-party content. Though it should be remembered that our websites crawl from US locations and so may not be served GDPR-compliant websites.
+It would appear that the impact of privacy-preserving regulations like [GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) and [CCPA](https://en.wikipedia.org/wiki/California_Consumer_Privacy_Act) are not dampening our appetite for third-party usage. Though it should be remembered that our websites crawl from US locations and so may not be served GDPR-compliant websites.
 
 So, we know nearly all sites use third parties, but how many do they use?
 
@@ -205,8 +205,8 @@ Note this chart shows the medium number of requests for each category, by rank, 
 Related to the categories, let's see what type of content we're getting back from all those third-party requests.
 
 {{ figure_markup(
-  image="third-parties-content-by-type.png",
-  caption="Third-party content by type.",
+  image="third-parties-usage-by-content-type.png",
+  caption="Third-party usage by content type.",
   description="Stacked bar chart showing. `script` resources make up 33.6% of third-party requests on desktop, `image` 28.7%, `html` 10.6%, `other` 7.9%, `font` 8.4%, `css` 6.4%, `text` 3.8%, `video` 0.3%, `audio` 0.2%, and finally `xml` 0.1%. On mobile `script` resources are 33.2% of third-party resources, `image` 28.6%, `html` 12.3%, `other` 8.6%, `font` 6.7%, `css` 6.3%, `text` 3.7%, `video` 0.2%, `audio` 0.2%, and finally `xml` 0.1%.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=521975460&format=interactive",
   sheets_gid="655382603",
@@ -458,9 +458,30 @@ Looking at the usage over the last three Web Almanac years usage has dropped con
 
 ## Security and Privacy
 
-Cookies - same-site impact? HTTP-Only
-CSP - continues lack of published CSP requirements, and warning when these change. Google ads domains.
-Privacy - so much power in Google and Facebook. Cookie banner adherence.
+Measuring the security and privacy impact of using third parties is more difficult.  Undoubtedly giving access to third parties increases risks on both security and privacy, and then giving access to run scripts—which we've shown to be the most prevalent type—effectively gives full access to the website. However, the entire intent of third-party resources is to make it easy to share. Therefore security issues through the use of third parties are often only discovered after the fact, rather than something we can actively analyse.
+
+### Security
+
+Sites themselves can reduce the risk of using third parties in a number of ways. [Restricting access to cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#restrict_access_to_cookies) with the `HttpOnly` attribute, so they can not be accessed by JavaScript, and through appropriate use of SameSite attributes. These are explored more in the [Security chapter](./security) so will not delve further into them here.
+
+Another security feature that can be used when making use of third-party resources is through the use of [Subresource Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) (SRI) which is enabled by adding a cryptographic hash of a resource to the `<link>` or `<script>` element loading the resource. This hash is then checked by the browser to ensure that the content downloaded is exactly what is expected. However, the varying nature of third-party resources could mean this introduces more risks than it solves with sites breaking when resources are intentionally updated by the third party And if content really is static, then it can be self-hosted removing the need of SRI. So this author remains unconvinced that it really offers the security benefits that proponents claim.
+
+One of the best ways sites can reduce the security risk of any third-party content coming onto their site—from either third-party resource use, or even user-entered content—is with a robust [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) (CSP). This is an HTTP Header setting sent with the original website that tells the browser exactly what resources can and cannot be loaded and by whole. It is a more-advanced technique that not many sites use, according to the [Security chapter](./security), and we'll leave that chapter to analyse their usage but what is worth covering here is that one of the reasons for the lack of uptake, may be third parties. Very few third parties publish CSP information with the exact requirements that sites must add to their policy to use the third party without issue. Worse still is that others are incompatible with a secure CSP using inline script elements, or changing domains without notification, breaking that functionality for sites adding this security, until they update their policy. Google Ads is another example which, [through the use of a different domain per country makes it difficult to really lock down CSP](https://stackoverflow.com/questions/34361383/google-adwords-csp-content-security-policy-img-src).
+
+It is difficult enough to set up CSP in the first place for the parts of the site in your control, without the added complexity of third parties making it even more difficult for things outside your control! Third parties really should get better at supporting CSP to make it easier for sites to reduce the risk of using them.
+
+### Privacy
+
+The privacy implications of using third parties is something we will again [leave to the chapter dedicated to this topic](./privacy), but what should already be apparent from above analysis is two things that majorly impact privacy of web users:
+
+The prevalence of third-party usage on the web at just shy of 95% of websites.
+The dominance of particular third parties, like Google and Facebook, who are not known for being on the side of privacy.
+
+Of course, one of the major reasons for using third parties on your site is for tracking for advertisement purposes which by its very nature is not going to be in the best privacy interests of your visitors. Alternatives to this pervasive tracking, which is basically only possible by the use of third parties, [have been suggested](https://web.dev/floc/) but have failed to gain traction.
+
+What is perhaps more concerning is the tracking that can occur without website users and owners being aware. There is the old adage that if you're not paying for a product or service, then you are the product, and many third parties give away their product for "free", which for most means they are monetizing it in some other way—usually at the expense of your visitor's privacy!
+
+Use of newer technologies like [`feature-policy` and `permission-policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy) can restrict the usage of certain functionalities of the browser such as microphones and video cameras, which can at least reduce the privacy and security risks, but it still seems to be swimming against the tide given the intent of many third party resources.
 
 ## Conclusion
 
