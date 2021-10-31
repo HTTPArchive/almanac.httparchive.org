@@ -3,7 +3,7 @@
 title: Third Parties
 description: TODO
 authors: [tunetheweb]
-reviewers: [patrickhulce, andydavies, csswizardry]
+reviewers: [patrickhulce, andydavies, csswizardry, housseindjirdeh]
 analysts: [tunetheweb]
 editors: []
 translators: []
@@ -11,12 +11,12 @@ discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1tf4RMF8SYr6he9tbqt61yuFJ_QK-F-i7XPxaPkpKSDI/
 tunetheweb_bio: Barry Pollard is a software developer and author of the Manning book <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. He thinks the web is amazing but wants to make it even better. You can find him tweeting <a href="https://twitter.com/tunetheweb">@tunetheweb</a> and blogging at <a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
 featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_stat_1: 94.40%
+featured_stat_label_1: Sites using third parties
+featured_stat_2: 45.85%
+featured_stat_label_2: Requests which are 3rd party
+featured_stat_3: 1,625
+featured_stat_label_3: YouTube main thread blocking time
 unedited: true
 ---
 
@@ -100,7 +100,7 @@ A staggering 94.40% of mobile sites, and 94.07% of desktop sites use at least on
 {{ figure_markup(
   image="third-parties-websites-using-third-parties-by-year.png",
   caption="Websites using third-parties by year.",
-  description="Bar chart showing the number of websites using third parties over the last three  years, split by desktop and mobile. On desktop 89.1% of websites used a third party in 2019, followed by 93.9% in 2020, and 94.1% in 2021. On mobile 88.5% used a third party in 2019, followed by 94.0% in 2020, and 94.4% in 2021",
+  description="Bar chart showing the number of websites using third parties over the last three years, split by desktop and mobile. On desktop 89.1% of websites used a third party in 2019, followed by 93.9% in 2020, and 94.1% in 2021. On mobile 88.5% used a third party in 2019, followed by 94.0% in 2020, and 94.4% in 2021",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=1728778967&format=interactive",
   sheets_gid="1082574922",
   sql_file="percent_of_websites_with_third_party.sql"
@@ -172,14 +172,13 @@ Looking at the median (50th percentile) statistics, we see a marked decline as w
 
 Our analysis shows we're using third parties a lot, but what are we using them for? Look at the categories of each third-party request we see the following:
 
-
 {{ figure_markup(
   image="third-parties-requests-by-type.png",
   caption="Third-party requests by type.",
   description="Stacked bar chart showing that `ad` third-parties are 25.7% desktop third parties and 29.1% of mobile, `unknown` are 19.8% and 19.6% respectively, `cdn` 15.2% and 13.4%, `social` 11.0% and 10.1%, `utility` 8.6% and 8.7%, `analytics` 8.0% and 8.6%, `video` 4.0% and 3.5%, `tag-manager` 2.5% and 2.4%, `customer-success` 1.6% and 1.5%, `marketing` 1.4% and 1.2%, `content` 1.1% and 0.9%, `other` 0.9% and 0.8%, and finally `consent-provider` 0.2% and 0.2%.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=1925773513&format=interactive",
   sheets_gid="1613966374",
-   sql_file="percent_of_third_party_requests_and_bytes_by_category_and_content_type.sql"
+  sql_file="percent_of_third_party_requests_and_bytes_by_category_and_content_type.sql"
   )
 }}
 
@@ -197,7 +196,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
   )
 }}
 
-Splitting the requests by rank and category, we see the reason for the larger number of requests discussed previously.  Ads are much more heavily used on the more popular sites.
+Splitting the requests by rank and category, we see the reason for the larger number of requests discussed previously. Ads are much more heavily used on the more popular sites.
 
 Note this chart shows the medium number of requests for each category, by rank, but not every category is used on every page, explaining why the totals per domain are much higher than the number of requests from the previous chart.
 
@@ -286,7 +285,7 @@ To investigate this, we use the Lighthouse render-blocking resources audit, and 
 {{ figure_markup(
   image="third-parties-most-popular-third-parties-impact-on-render.png",
   caption="Top 15 third parties impact on render.",
-  description="Bar chart showing the percentage of times the top 15 third parties block render. `*.google-analytics.com` is blocking render 0.07% of the time, `fonts.googleapis.com` is 51.25%  `accounts.google.com` is 3.17% `adservice.google.com` is 0.49% `*.googletagmanager.com` is 4.52% `ajax.googleapis.com` is 22.65% `*.facebook.com` is 0.10% `amp.cloudflare.com` is 44.95% `*.youtube.com` is 1.04% `*.bootstrapcdn.com` is 63.16% `maps.google.com` is 13.63% `*.jsdelivr.net` is 30.27% `*.jquery.com` is 46.38% `*.fontawesome.com` is 66.04% `*.adobedtm.com` is 3.06%.",
+  description="Bar chart showing the percentage of times the top 15 third parties block render. `*.google-analytics.com` is blocking render 0.07% of the time, `fonts.googleapis.com` is 51.25% `accounts.google.com` is 3.17% `adservice.google.com` is 0.49% `*.googletagmanager.com` is 4.52% `ajax.googleapis.com` is 22.65% `*.facebook.com` is 0.10% `amp.cloudflare.com` is 44.95% `*.youtube.com` is 1.04% `*.bootstrapcdn.com` is 63.16% `maps.google.com` is 13.63% `*.jsdelivr.net` is 30.27% `*.jquery.com` is 46.38% `*.fontawesome.com` is 66.04% `*.adobedtm.com` is 3.06%.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=1221471478&format=interactive",
   width=600,
   height=585,
@@ -349,7 +348,6 @@ We can see a huge impact of 1.63 seconds of main thread activity at the median (
 
 Let's dig a little deeper, into the other third party embeds on our list (note we switch to milliseconds rather than seconds on the remaining charts).
 
-
 #### Google Analytics
 
 {{ figure_markup(
@@ -406,7 +404,6 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
 
 Facebook also isn't as resource intensive as I thought it would be. Facebook embeds of posts seems to be less popular than Twitter embeds so these will likely be Facebook retargeting trackers—which should be working silently in the background and not impacting the main thread at all, so it's apparent there is still more work for Facebook to do here. I've even had good success in [not using the Facebook JavaScript API and using pixel tracking through Google Tag Manager](https://www.tunetheweb.com/blog/adding-controls-to-google-tag-manager/#pixels) without losing any functionality, and would encourage others to consider this option.
 
-
 #### Google Maps
 
 {{ figure_markup(
@@ -423,7 +420,7 @@ Google Maps definitely needs some improvement. Especially as it's often present 
 
 #### Twitter
 
-And finally, I wanted to look at one further down the list: Twitter:
+And finally, I wanted to look at one further down the list: Twitter.
 
 {{ figure_markup(
   image="third-parties-twitter-main-thread-impact.png",
@@ -442,7 +439,6 @@ While some of the above examples fare better or worse, it must be remembered tha
 All this shows why the Google Developers recommend [reducing the impact of embeds](https://web.dev/embed-best-practices/) (mostly their own ironically!), through the use of document ordering, lazy loading, facades, and other techniques. However, it's really quite infuriating that some of these are not the default and that advanced techniques like these must fall on the responsibility of the website owner. The third parties highlighted here really do have the resources, and technical know-how to reduce the impact of using their products for everyone by default but often choose not to.
 
 Hopefully highlighting some of these well-known examples will cause readers to investigate the impact of third-party embeds on their own sites and ask themselves if they really are all worth it? Perhaps if we make this subject more important to the third parties, they will prioritize performance.
-
 
 ### Timing-Allow-Origin header prevalence
 
