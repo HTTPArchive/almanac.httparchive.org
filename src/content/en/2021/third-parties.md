@@ -198,7 +198,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
 
 Splitting the requests by rank and category, we see the reason for the larger number of requests discussed previously. Ads are much more heavily used on the more popular sites.
 
-Note this chart shows the median number of requests for each category, by rank, but not every category is used on every page, explaining why the totals per domain are much higher than the number of requests from the previous chart.
+Note this chart shows the median number of requests for each category, by rank, but not every category is used on every page, explaining why the totals per domain are much higher than the median number of requests per rank from the previous chart.
 
 ## Content types
 
@@ -270,7 +270,12 @@ After this we're back to Google with YouTube, and Maps two spots later. The rema
 
 ## Performance impact of third parties
 
-It's difficult to definitely explain the performance impact of third parties on websites. While there are certainly impacts on needlessly loading up your website with every third-party tool, widget, tracker and whatever else you can think of, that's also true of first-party content. Bloat is bad, wherever it comes from, and blaming third parties for making it too easy for websites to add, is perhaps pointing the finger at the wrong party here! Site owners have a responsibility to look at the impact of all that third-party content and decide if the functionality is worth the potential performance impact. Saying that, as a third party’s business is in allowing their content or service to be hosted on many websites, they have a duty too to ensure they minimise the negative impact of that.
+Using third parties can have a noticeable impact on performance. That's not necessarily a consequence of them being a third party per se—the same functionality implemented by a site owner as a first-party resource would often cause similar performance issues—if not worse, given the expertise the third party should have on the particular field.
+
+So it's not the fact they are third-party resources, so much as what those resources are doing. And most third-party usage depends on the third-party service, rather than just as a place to serve it from.
+
+However, a third party's business is in allowing their content or service to be hosted on many websites, they have a duty to ensure they minimise the negative impact of that. Especially since site owners often have limited control over, and influence on the performance impact of third parties other than to use them or not.
+
 
 ### Using third-party domains versus self-hosting
 
@@ -280,11 +285,9 @@ Saying that, rarely is life as definitive as we would like and, in some cases se
 
 Similarly, image CDNs can optimize media better than most and, more importantly, can do this automatically without the need of manual steps that will inevitably be skipped or done incorrectly on occasion.
 
-So it's not the fact they are third-party resources, so much as what those resources are doing. And most third-party usage depends on the third-party service, rather than just as a place to serve it from.
-
 ### Popular third parties embeds and their performance impact
 
-To try to investigate the performance impact of third parties, we will instead look at some of the most popular third-party embeds as some have a bad name in web performance circles so let's see if the bad reputation is really deserved. To do that we'll be making use of two Lighthouse audits: [Eliminate render blocking resources](https://web.dev/render-blocking-resources/) and [Reduce the impact of third-party code](https://web.dev/third-party-summary/), based on some [similar research](https://docs.google.com/spreadsheets/d/1Td-4qFjuBzxp8af_if5iBC0Lkqm_OROb7_2OcbxrU_g/edit?usp=sharing&resourcekey=0-ZCfve5cngWxF0-sv5pLRzg) by [Houssein Djirdeh](https://twitter.com/hdjirdeh).
+To try to investigate the performance impact of third parties, we will look at some of the most popular third-party embeds as some have a bad name in web performance circles so let's see if the bad reputation is really deserved. To do that we'll be making use of two Lighthouse audits: [Eliminate render blocking resources](https://web.dev/render-blocking-resources/) and [Reduce the impact of third-party code](https://web.dev/third-party-summary/), based on some [similar research](https://docs.google.com/spreadsheets/d/1Td-4qFjuBzxp8af_if5iBC0Lkqm_OROb7_2OcbxrU_g/edit?usp=sharing&resourcekey=0-ZCfve5cngWxF0-sv5pLRzg) by [Houssein Djirdeh](https://twitter.com/hdjirdeh).
 
 #### Popular third parties and their impact on render
 
@@ -310,23 +313,7 @@ Often third-party embeds advise using `async` or `defer` with the specific aim o
 
 #### Popular third parties and their impact on main thread
 
-Lighthouse has a [Reduce the impact of third-party code](https://web.dev/third-party-summary/) audit which checks if all third parties on a page contribute to [more than 250ms of main thread time](https://web.dev/third-party-summary/#how-the-lighthouse-audit-for-third-party-code-fails). Checking the pages which fail this audit, and then the third parties that are used on these failing pages we see the following:
-
-{{ figure_markup(
-  image="third-parties-popular-third-parties-main-thread-impact.png",
-  caption="Top 15 third parties impact on the main thread.",
-  description="Bar chart showing the percentage of third-party usage which blocks the main thread for the top 15 third parties. Google Analytics contributes to a main-thread blocking audit fail 70.97% of pages that used it, Google Fonts is 65.69%, Google/DoubleClick Ads is 80.43%, Other Google APIs/SDKs is 80.43%, Google Tag Manager is 84.12%, Google CDN is 79.61%, Facebook is 84.40%, Cloudflare CDN is 73.37%, YouTube is 90.19%, Bootstrap CDN is 69.45%, Google Maps is 84.00%, JSDelivr CDN is 80.48%, jQuery CDN is 73.10%, FontAwesome CDN is 69.52%, Adobe Tag Manager is 94.52%",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=1466249466&format=interactive",
-  width=600,
-  height=585,
-  sheets_gid="329121076",
-  sql_file="third_parties_blocking_main_thread.sql"
-  )
-}}
-
-That is, for example, 70.97% of websites with Google Analytics fail that audit. That is not to say Google Analytics is to blame for that failure—it may itself be lightweight in CPU terms, but perhaps is often coupled with other, more heavyweight, third parties. Or it could be that every third party is fine by itself, but the combination of them together is what causes the audit to fail.
-
-So, a better measure than how often they contribute to overall main thread blocking, is how long they themselves block the main thread for?
+Lighthouse has a [Reduce the impact of third-party code](https://web.dev/third-party-summary/) audit lists the main-thread times of all third-party resources. So how long do the most popular ones block the main thread for?
 
 {{ figure_markup(
   image="third-parties-popular-third-parties-main-thread-blocking-time.png",
@@ -499,4 +486,7 @@ Third parties are integral to the web. In many ways they are the web—without t
 
 However, using third parties is not without risks and in this chapter we have explored the performance impact of third parties and discussed the potential security and privacy risks of using them on your site.
 
-It's easy to get sucked into the negative however, so to finish off the chapter, I wish to circle back round to the positives. There is a reason that third parties are so prevalent and they are (usually!) used out of choice. Sharing is what the web is about and so third parties are very much in the spirit of the web.
+There are consequences to needlessly loading up your website with every third-party tool, widget, tracker and whatever else you can think of. Site owners have a responsibility to look at the impact of all that third-party content and decide if the functionality is worth that potential impact.
+
+It's easy to get sucked into the negative however, so to finish off the chapter, I wish to circle back round to the positives. There is a reason that third parties are so prevalent and they are (usually!) used out of choice. Sharing is what the web is about and so third parties are very much in the spirit of the web. It's amazing what functionality we web developers have at our disposal and how easy it is to add them to our sites. But hopefully this chapter has opened your eyes a little more to give a little more thought to make sure you fully understand the deal you're making when you do that.
+
