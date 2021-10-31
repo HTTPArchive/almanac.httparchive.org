@@ -246,7 +246,7 @@ When looking by bytes, rather than by requests, the amount of JavaScript is even
 
 To quote [Addy Osmani](https://twitter.com/addyosmani) (twice!) in the same sentence from his ["Cost of JavaScript"](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4) post, "byte-for-byte, JavaScript is still the most expensive resource we send", and "a 200 KB script and a 200 KB image have very different costs". Some categories like analytics, consent-provider, tag-manager are pretty much all JavaScript, while others like ad, customer-success, are not far behind. We'll return to the performance impact of using third-party resources later - often caused by costly use of JavaScript.
 
-## Third-Party Domains
+## Third-party domains
 
 Who are we loading all these third-party requests from? Most of these names won't be surprising, but the prevalence of one name just reiterates the dominance that company has across a number of different categories:
 
