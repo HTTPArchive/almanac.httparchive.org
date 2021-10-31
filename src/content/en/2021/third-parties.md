@@ -10,13 +10,13 @@ translators: []
 discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1tf4RMF8SYr6he9tbqt61yuFJ_QK-F-i7XPxaPkpKSDI/
 tunetheweb_bio: Barry Pollard is a software developer and author of the Manning book <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. He thinks the web is amazing but wants to make it even better. You can find him tweeting <a href="https://twitter.com/tunetheweb">@tunetheweb</a> and blogging at <a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
-featured_quote: TODO
+featured_quote: Third parties are integral to the web. In many ways they are the web—without the prevalence of third-parties websites would be harder to build, and be less feature rich.
 featured_stat_1: 94.40%
 featured_stat_label_1: Sites using third parties
-featured_stat_2: 45.85%
-featured_stat_label_2: Requests which are 3rd party
-featured_stat_3: 1,625
-featured_stat_label_3: YouTube main thread blocking time
+featured_stat_2: 1,625
+featured_stat_label_2: YouTube embed main thread blocking time
+featured_stat_3: 45.85%
+featured_stat_label_3: Requests which are 3rd party
 unedited: true
 ---
 
@@ -485,3 +485,8 @@ Use of newer technologies like [`feature-policy` and `permission-policy`](https:
 
 ## Conclusion
 
+Third parties are integral to the web. In many ways they are the web—without the prevalence of third-parties websites would be harder to build, and be less feature rich. As mentioned at the beginning, interconnectedness is at the very heart of the web, and third parties are the natural extension of this. Our analysis has shown that third parties are more prevalent than ever: sites without them are very much the exception!
+
+However, using third parties is not without risks and in this chapter we have explored the performance impact of third parties and, without analysing, discussed the potential security and privacy risks of using them on your site.
+
+It's easy to get sucked into the negative however, so to finish off the chapter, I wish to circle back round to the positives. There is a reason that third parties are so prevalent and they are (usually!) used out of choice. Sharing is what the web is about and so third parties are very much in the spirit of the web.
