@@ -310,12 +310,12 @@ Often third-party embeds advise using `async` or `defer` with the specific aim o
 
 #### Popular third parties and their impact on main thread
 
-Looking at main-thread blocking, it also doesn't look too bad:
+Lighthouse has a [Reduce the impact of third-party code](https://web.dev/third-party-summary/) audit which checks if all third parties on a page contribute to [more than 250ms of main thread time](https://web.dev/third-party-summary/#how-the-lighthouse-audit-for-third-party-code-fails). Checking the pages which fail this audit, and then the third parties that are used on these failing pages we see the following:
 
 {{ figure_markup(
   image="third-parties-popular-third-parties-main-thread-impact.png",
   caption="Top 15 third parties impact on the main thread.",
-  description="Bar chart showing the percentage of third-party usage which blocks the main thread for the top 15 third parties. Google Analytics is render blocking on 9.95% of pages that used it, Google Fonts is 0.01%, Google/Doubleclick Ads is 20.00%, Other Google APIs/SDKs is 13.12%, Google Tag Manager is 11.53%, Google CDN is 30.85%, Facebook is 24.94%, Cloudflare CDN is 6.07%, YouTube is 69.74%, Bootstrap CDN is 0.01%, Google Maps is 50.45%, JSDelivr CDN is 8.48%, jQuery CDN is 15.15%, FontAwesome CDN is 0.79%, Adobe Tag Manager is 6.93%",
+  description="Bar chart showing the percentage of third-party usage which blocks the main thread for the top 15 third parties. Google Analytics contributes to a main-thread blocking audit fail 70.97% of pages that used it, Google Fonts is 65.69%, Google/DoubleClick Ads is 80.43%, Other Google APIs/SDKs is 80.43%, Google Tag Manager is 84.12%, Google CDN is 79.61%, Facebook is 84.40%, Cloudflare CDN is 73.37%, YouTube is 90.19%, Bootstrap CDN is 69.45%, Google Maps is 84.00%, JSDelivr CDN is 80.48%, jQuery CDN is 73.10%, FontAwesome CDN is 69.52%, Adobe Tag Manager is 94.52%",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=1466249466&format=interactive",
   width=600,
   height=585,
@@ -324,7 +324,9 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
   )
 }}
 
-Here blocking is defined as [more than 250 milliseconds of main-thread usage](https://web.dev/third-party-summary/#how-the-lighthouse-audit-for-third-party-code-fails). More important than how often they block the main thread, is how long for?
+That is, for example, 70.97% of websites with Google Analytics fail that audit. That is not to say Google Analytics is to blame for that failure—it may itself be lightweight in CPU terms, but perhaps is often coupled with other, more heavyweight, third parties. Or it could be that every third party is fine by itself, but the combination of them together is what causes the audit to fail.
+
+So, a better measure than how often they contribute to overall main thread blocking, is how long they themselves block the main thread for?
 
 {{ figure_markup(
   image="third-parties-popular-third-parties-main-thread-blocking-time.png",
