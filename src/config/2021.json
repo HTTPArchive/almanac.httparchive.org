@@ -286,6 +286,12 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/58731469?v=4",
       "github": "lucasbona05"
     },
+    "michelleoconnor": {
+      "name": "Michelle O'Connor",
+      "teams": [
+        "designers"
+      ]
+    },
     "patrickhulce": {
       "name": "Patrick Hulce",
       "teams": [
@@ -314,6 +320,24 @@
       "avatar_url": "https://avatars0.githubusercontent.com/u/1120896?v=4&s=200",
       "github": "rviscomi",
       "twitter": "rick_viscomi"
+    },
+    "shantsis": {
+      "name": "Shaina Hantsis",
+      "teams": [
+        "designers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/22671477?v=4&s=200",
+      "github": "shantsis"
+    },
+    "GeekBoySupreme": {
+      "name": "Shuvam Manna",
+      "teams": [
+        "designers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/15321738?v=4&s=200",
+      "github": "GeekBoySupreme",
+      "twitter": "shuvam360",
+      "website": "https://shuvam.xyz"
     }
   }
 }
