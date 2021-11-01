@@ -25,9 +25,9 @@ catch {
 SELECT
   client,
   COUNTIF(has_lazy_iframes) AS is_lazy,
-  SUM(COUNTIF(has_lazy_iframes IS NOT NULL)) OVER (PARTITION BY client) AS has_iframe,
-  COUNTIF(has_lazy_iframes) / SUM(COUNTIF(has_lazy_iframes IS NOT NULL)) OVER (PARTITION BY client) AS pct,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total
+  COUNTIF(has_lazy_iframes IS NOT NULL) AS has_iframe,
+  COUNTIF(has_lazy_iframes) / COUNTIF(has_lazy_iframes IS NOT NULL) AS pct,
+  COUNT(0) AS total
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
