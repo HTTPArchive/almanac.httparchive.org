@@ -68,7 +68,24 @@ const handle = await window.showDirectoryPicker();
 
 The File System Access API is only available on Chromium-based browsers and desktop systems. Fortunately, the web platform offers fallback approaches to provide similar functionality on mobile devices and other browsers as well: With the `input<a hreflang="en" href="https://github.com/GoogleChromeLabs/browser-fs-access">type=file]` control, it's possible to give a web application access to the binary contents of a file. The `a[download]` mechanism allows users to download a dynamically generated file to their Downloads folder. Developers can also use the Google-developed library [browser-fs-access</a> that uses the File System Access API if present and otherwise falls back to the alternative implementation.
 
+{{ figure_markup(
+caption="Mobile websites use the File System Access API",
+content="7,491,840",
+classes="big-number",
+sheets_gid="2077755325",
+sql_file="fugu.sql"
+)
+}}
+
 Out of all 6,286,373 desktop and 7,491,840 mobile websites in the HTTP Archive, the File System Access API is used on 29 desktop and 23 mobile sites. Examples for those sites are the image editor <a hreflang="en" href="https://excalidraw.com/">Excalidraw</a>, which allows you to sketch diagrams in a hand-drawn look and save them to the disk. Another example is <a hreflang="en" href="https://coreldraw.app/">CorelDRAW.app</a>, a web version of the image editing software CorelDRAW.
+
+{{ figure_markup(
+image="file-system-access-api.png",
+caption='The Excalidraw PWA uses the File System Access API to save images to the local file system via the built-in save dialog',
+description='Screenshot showing a drawing application with an open file save dialog.',
+width=656,
+height=409
+) }}
 
 ## Async Clipboard API
 The [Async Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) allows you to read and write data from or to the clipboard. Due to its asynchronous nature, it enables use cases like scaling down an image while pasting it—all without blocking the UI. It replaces less capable APIs like `document.execCommand()` that were previously used to interact with the clipboard.
@@ -97,7 +114,24 @@ const items = await navigator.clipboard.read();
 
 The browser may show a permission prompt or a different UI for privacy reasons before granting the website access to the clipboard contents. The Async Clipboard API is available in Chrome, Edge, and Safari. Firefox only supports the `writeText()` method.
 
+{{ figure_markup(
+caption="Mobile websites use the Async Clipboard API",
+content="618,062",
+classes="big-number",
+sheets_gid="2077755325",
+sql_file="fugu.sql"
+)
+}}
+
 With 560,359 (8.91%) desktop and 618,062 (8.25%) mobile sites, the Async Clipboard API (`writeText()` method) is one of the most used Fugu APIs. The `write()` method is used on 1,180 desktop and 1,227 mobile sites. The commercial website <a hreflang="en" href="https://clippingmagic.com/">Clipping Magic</a> allows you to remove the background of an image with the help of an AI algorithm. Just paste an image from the clipboard, and the website will remove its background.
+
+{{ figure_markup(
+image="async-clipboard-api.png",
+caption='Clipping Magic uses artificial intelligence to remove the background of images pasted via the Async Clipboard API',
+description='Screenshot showing an application with an image on the left, and the same image without a background on the right',
+width=699,
+height=440
+) }}
 
 ## Web Share API
 The [Web Share API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share) allows you to share text, a URL, or files from a website or web application with other applications, e.g., mail clients or messengers. To do so, call the [`navigator.share()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share) method. It takes an object with the data to share with another application. The browser then opens the built-in share sheet, where the user can select the target application from. The method returns a promise that resolves in case the content was successfully shared; otherwise, it will be rejected.
@@ -112,7 +146,24 @@ await navigator.share({
 
 The Web Share API is supported by Safari (iOS, macOS), and Chrome and Edge (Windows, Chrome OS). It's currently a <a hreflang="en" href="https://www.w3.org/TR/web-share/">Working Draft</a> at the Web Applications Working Group. This is one of the first stages of the track to becoming a W3C Recommendation.
 
+{{ figure_markup(
+caption="Mobile websites use the Web Share API",
+content="642,507",
+classes="big-number",
+sheets_gid="2077755325",
+sql_file="fugu.sql"
+)
+}}
+
 With 566,049 (9.00%) desktop and 642,507 (8.58%) mobile sites, the Web Share API is the most used Fugu API. For example, the <a hreflang="en" href="https://beta.paintz.app/">beta version of the PaintZ app</a> allows you to share a drawing with another locally installed application via the save dialog.
+
+{{ figure_markup(
+image="web-share-api.png",
+caption='The beta version of PaintZ uses the Web Share API to share drawings with local applications',
+description='Screenshot showing a drawing application with an overlay of the built-in messaging application that received the drawing from the app.',
+width=676,
+height=419
+) }}
 
 ## URL Handlers and Declarative Link Capturing
 The last two productivity-related capabilities described in this chapter are URL Handlers and Declarative Link Capturing, additional methods for even deeper integration with the operating system.
@@ -129,6 +180,15 @@ With the help of <a hreflang="en" href="https://web.dev/pwa-url-handler/">URL Ha
 ```
 
 If you want to register for origins other than your web app's origin, you need to <a hreflang="en" href="https://web.dev/pwa-url-handler/#the-web-app-origin-association-file">verify your ownership of them</a>. The capability is at a relatively early stage: It's only supported on Chrome and Edge on the desktop. URL Handling is currently available as an Origin Trial. This means that the capability is not generally available yet. Instead, developers need to register for an Origin Trial token first and deliver this token along with their website to use this capability. You can find more information in the <a hreflang="en" href="https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md">Origin Trials Guide for Web Developers</a>.
+
+{{ figure_markup(
+caption="Desktop websites use URL Handling",
+content="44",
+classes="big-number",
+sheets_gid="2077755325",
+sql_file="fugu.sql"
+)
+}}
 
 44 desktop and 41 mobile websites make use of URL Handling. For example, the Pinterest PWA registers itself as a URL handler for the different Pinterest origins (e.g., `*.pinterest.com` and `*.pinterest.de`) on installation.
 
@@ -151,6 +211,15 @@ Declarative Link Capturing also is an extension of the Web Application Manifest.
 }
 ```
 
+{{ figure_markup(
+caption="Desktop websites use Declarative Link Capturing",
+content="36",
+classes="big-number",
+sheets_gid="2077755325",
+sql_file="fugu.sql"
+)
+}}
+
 This capability is at an early stage as well. It is only supported on Chrome OS. Currently, 36 desktop sites and 11 mobile sites use this capability, for example, <a hreflang="en" href="https://periodex.co/">Periodex</a>, a PWA showing the periodic table of elements. This app uses the `capture_links` configuration as shown in the listing above: If supported, the browser should reuse the existing window, otherwise, open a new one, and if that's not supported, it should behave as normal.
 
 ## Hardware APIs
@@ -169,7 +238,24 @@ try {
 }
 ```
 
+{{ figure_markup(
+caption="Desktop websites use Web USB",
+content="182",
+classes="big-number",
+sheets_gid="2077755325",
+sql_file="fugu.sql"
+)
+}}
+
 The API is generally available on Chromium-based browsers since version 61. 182 desktop and 155 mobile sites use this API, for example, the PWA <a hreflang="en" href="https://app.vysor.io/#/">Vysor</a> that allows you to mirror the screen of an Android or iOS device—all without installing any additional software on your computer.
+
+{{ figure_markup(
+image="web-usb.png",
+caption='The Vysor PWA uses Web USB to connect to USB devices and project their screen contents onto the desktop',
+description='Screenshot showing a website with a modal dialog open listing the connected USB devices.',
+width=699,
+height=440
+) }}
 
 ### Web Bluetooth API
 The <a hreflang="en" href="https://web.dev/bluetooth/">Web Bluetooth API</a> allows you to communicate with nearby Bluetooth Low Energy devices using the Generic Attribute Profile (GATT). To find a matching device, call the `navigator.bluetooth.requestDevice()` method. In the following example, the list of Bluetooth devices is filtered by whether they offer a battery service or not. The browser shows a device picker where the user can choose a Bluetooth device. Afterward, you can connect to the remote device and gather the data.
@@ -183,7 +269,24 @@ try {
 }
 ```
 
+{{ figure_markup(
+caption="Desktop websites use the Web USB API",
+content="71",
+classes="big-number",
+sheets_gid="2077755325",
+sql_file="fugu.sql"
+)
+}}
+
 The API is generally available on Chromium-based browsers on Chrome OS, Android, macOS, and Windows starting from version 56. On Linux, the API is provided behind a flag. 71 desktop and 45 mobile sites make use of this capability. For instance, the <a hreflang="en" href="https://web.brewfather.app/">Brewfather</a> PWA targeted at home-brewers allows them to send a beer recipe wirelessly over to a Bluetooth-enabled brewing system. Again, all without installing any third-party software.
+
+{{ figure_markup(
+image="web-bluetooth.png",
+caption='The Brewfather app uses Web Bluetooth to send recipes to a brew controller',
+description='Screenshot showing a web application that displays a beer recipe.',
+width=699,
+height=440
+) }}
 
 ### Web Serial API
 The <a hreflang="en" href="https://web.dev/serial/">Web Serial API</a> allows you to connect with serial devices such as microcontrollers. To do so, call the `navigator.serial.requestPort()` method. You can optionally pass in a method to filter the device list. The browser shows a device picker where the user can choose a device. Next, you can open the connection by calling the port's `open()` method.
@@ -197,7 +300,24 @@ try {
 }
 ```
 
+{{ figure_markup(
+caption="Desktop websites use the Web Serial API",
+content="15",
+classes="big-number",
+sheets_gid="2077755325",
+sql_file="fugu.sql"
+)
+}}
+
 This capability is relatively new, as it shipped with Chromium 89 in March 2021. Currently, 15 desktop and 14 mobile sites use the Web Serial API, including the <a hreflang="en" href="https://duino.app/">Duino App</a> that allows you to develop programs for Arduino and ESP microcontrollers right in your browser. They are compiled on a remote server and then uploaded to a connected board via the Web Serial API.
+
+{{ figure_markup(
+image="web-serial.png",
+caption='The Duino app is a web-based IDE that uses Web Serial to upload programs to Arduino microcontrollers',
+description='Screenshot showing a web-based code editor application compiling code.',
+width=699,
+height=440
+) }}
 
 ### Generic Sensor API
 Finally, the <a hreflang="en" href="https://web.dev/generic-sensor/">Generic Sensor API</a> allows you to read sensor data from the device's sensors, such as the accelerometer, gyroscope, or orientation sensor. To access a sensor, you create a new instance of a sensor class, e.g., `Accelerometer`. The constructor takes a configuration object with the requested frequency. By attaching to the `onreading` and `onerror` events, you can get notified for updated sensor values, or errors respectively. Finally, you need to start the reading by calling the `start()` method.
@@ -217,6 +337,15 @@ try {
 }
 ```
 
+{{ figure_markup(
+caption="Mobile websites use the Generic Sensor API",
+content="831",
+classes="big-number",
+sheets_gid="2077755325",
+sql_file="fugu.sql"
+)
+}}
+
 The capability is supported by Chromium browsers starting from version 67. The relative orientation sensor is used by 824 desktop and 831 mobile sites, the linear acceleration sensor by 257 desktop and 237 mobile sites, and the gyroscope by 36 desktop and 22 mobile sites. An example application that uses all three of them is <a hreflang="en" href="https://obs.ninja/">VDO.Ninja</a>, the former OBS Ninja. This software allows you to remotely connect with video broadcasting software such as OBS. The app allows the connected broadcasting software to read sensor data from the device. For example, to capture a smartphone's movements when streaming virtual reality content.
 
 ## Sites using the most capabilities
@@ -227,9 +356,13 @@ The analysis also identified the websites using the most capabilities from the H
 1. The website <a hreflang="en" href="https://system-scanner.net/">System Scanner</a> uses nine APIs: It shows an overview of the system information exposed by the browser, including sensor information provided by the Generic Sensor API.
 1. Eight sites use eight Fugu APIs: One of them is the aforementioned <a hreflang="en" href="https://excalidraw.com/">Excalidraw</a>, an online drawing tool for creating drawings in a hand-drawn style. As a traditional productivity app, it benefits from the new capabilities.
 
+Some websites from the result set are Internet forums based on <a hreflang="en" href="https://www.discourse.org/">Discourse</a>. This forum software supports a total of eight Fugu APIs. Discourse-based forums are installable and support, among others, the Badging API to show the amount of unread notifications.
+
 The results also include sites that aren't proactively using the APIs. For example, some sites ship library code that could theoretically access the capabilities. Some sites check for the presence of Fugu APIs to determine the user's browser.
 
 ## Conclusion
 Capabilities help move the web forward by unlocking more and more use cases for developers. As this chapter shows, developers use the new web platform APIs to build powerful applications. In contrast to their platform-specific counterparts, those applications don't necessarily need to be installed to the system and don't require any additional third-party runtimes or plug-ins to work. They run on any platform that can run a powerful browser.
 
-One example of this concept working is the Visual Studio Code IDE. This application has always been web-based, but it still relied on platform-specific application wrappers like Electron. Thanks to capabilities like the File System Access API, Microsoft was able to release the application as a browser application (<a hreflang="en" href="https://vscode.dev">vscode.dev</a>) in October 2021. Almost all IDE features work here, except access to the terminal, since there is no capability for this yet.
+One example of this concept working is Visual Studio Code. This application has always been web-based, but it still relied on platform-specific application wrappers like Electron. Thanks to capabilities like the File System Access API, Microsoft was able to release the application as a browser application (<a hreflang="en" href="https://vscode.dev">vscode.dev</a>) in October 2021. Almost all features work here, except debugging or terminal access, since there is no capability for this yet.
+
+Another example is <a hreflang="en" href="https://photoshop.adobe.com">Adobe Photoshop</a>, which was also released as a web application in October 2021. Photoshop also uses several of the capabilities presented here, as well as WebAssembly, to migrate existing code to the web. Thus, the Capabilities project paves the way for entire categories of applications to finally migrate to the web.
