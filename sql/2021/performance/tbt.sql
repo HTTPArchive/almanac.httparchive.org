@@ -24,7 +24,7 @@ tbt_stats AS (
 
 SELECT
   threshold,
-  COUNT(DISTINCT url) AS pages,
+  COUNT(DISTINCT url) AS pages
 FROM
   tbt_stats
 GROUP BY
