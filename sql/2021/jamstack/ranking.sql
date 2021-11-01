@@ -1,53 +1,50 @@
 #standardSQL
 SELECT
-  client,
-  rank,
+  rank_grouping,
+  total_in_rank,
+  category,
   app,
-  COUNT(DISTINCT url) AS pages,
-  total_pages,
-  COUNT(DISTINCT url) / total_pages AS pct,
-  COUNT(DISTINCT url) / rank AS rank_pct
+  COUNT(0) AS pages_with_app,
+  COUNT(0) / total_in_rank AS pct_pages_with_app
 FROM (
   SELECT
-    _TABLE_SUFFIX AS client,
     app,
+    category,
     url
   FROM
     `httparchive.technologies.2021_07_01_*`
   WHERE
     LOWER(category) = 'static site generator' OR
     app = 'Next.js' OR
-    app = 'Nuxt.js')
-JOIN (
+    app = 'Nuxt.js'
+)
+LEFT OUTER JOIN (
   SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_pages
-  FROM
-    `httparchive.summary_pages.2021_07_01_*`
-  GROUP BY
-    client)
-USING
-  (client)
-JOIN (
-  SELECT
-    _TABLE_SUFFIX AS client,
     url,
-    MAX(rank) AS rank
+    rank_grouping
   FROM
     `httparchive.summary_pages.2021_07_01_*`,
-    UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_magnitude
+    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
-    rank <= rank_magnitude
+    rank <= rank_grouping
+) USING (url)
+JOIN (
+  SELECT
+    rank_grouping,
+    COUNT(0) AS total_in_rank
+  FROM
+    `httparchive.summary_pages.2021_07_01_*`,
+    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+  WHERE
+    rank <= rank_grouping
   GROUP BY
-    client,
-    url)
-USING
-  (client, url)
+    rank_grouping
+) USING (rank_grouping)
 GROUP BY
-  client,
-  rank,
-  app,
-  total_pages
+  rank_grouping,
+  total_in_rank,
+  category,
+  app
 ORDER BY
-  rank,
-  pct DESC
+  app,
+  rank_grouping
