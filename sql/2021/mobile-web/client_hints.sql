@@ -14,7 +14,7 @@ try {
   for (const header of matching_headers) {
     const directives = header.value.split(/\\s*,\\s*/);
     for (const directive of directives) {
-      unique_directives.add(directive);
+      unique_directives.add(directive.toLowerCase());
     }
   }
 
