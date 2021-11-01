@@ -66,7 +66,7 @@ Finally, the API allows web apps (e.g., integrated development environments) to 
 const handle = await window.showDirectoryPicker();
 ```
 
-The File System Access API is only available on Chromium-based browsers and desktop systems. Fortunately, the web platform offers fallback approaches to provide similar functionality on mobile devices and other browsers as well: With the `input<a hreflang="en" href="https://github.com/GoogleChromeLabs/browser-fs-access">type=file]` control, it's possible to give a web application access to the binary contents of a file. The `a[download]` mechanism allows users to download a dynamically generated file to their Downloads folder. Developers can also use the Google-developed library [browser-fs-access</a> that uses the File System Access API if present and otherwise falls back to the alternative implementation.
+The File System Access API is only available on Chromium-based browsers and desktop systems. Fortunately, the web platform offers the aforementioned fallback approaches to provide similar functionality on mobile devices and other browsers. Developers can use the Google-developed library <a hreflang="en" href="https://github.com/GoogleChromeLabs/browser-fs-access">browser-fs-access</a> that uses the File System Access API if present and otherwise falls back to the alternative implementation.
 
 {{ figure_markup(
 caption="Mobile websites use the File System Access API",
