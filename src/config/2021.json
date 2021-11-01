@@ -245,6 +245,36 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/44442451?v=4&s=200",
       "github": "AbbyTsai"
     },
+    "christianliebel": {
+      "name": "Christian Liebel",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6698344?v=4&s=200",
+      "website": "https://christianliebel.com",
+      "github": "christianliebel",
+      "twitter": "christianliebel"
+    },
+    "hemanth": {
+      "name": "Hemanth HM",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/18315?v=4&s=200",
+      "website": "https://h3manth.com",
+      "github": "hemanth",
+      "twitter": "gnumanth"
+    },
+    "tomayac": {
+      "name": "Thomas Steiner",
+      "teams": [
+        "analysts",
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/145676?v=4&s=200",
+      "website": "https://blog.tomayac.com/",
+      "github": "tomayac"
+    },
     "tunetheweb": {
       "name": "Barry Pollard",
       "teams": [
