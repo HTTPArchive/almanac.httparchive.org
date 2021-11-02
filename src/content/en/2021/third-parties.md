@@ -3,7 +3,7 @@
 title: Third Parties
 description: Third Parties chapter of the 2021 Web Almanac covering data of what third parties are used, what they are used for, a deep dive into performance impacts and a discussion on security and privacy impacts.
 authors: [tunetheweb]
-reviewers: [patrickhulce, csswizardry]
+reviewers: [patrickhulce, andydavies, csswizardry]
 analysts: [tunetheweb]
 editors: []
 translators: []
@@ -126,7 +126,7 @@ So, we know nearly all sites use third parties, but how many do they use?
 {{ figure_markup(
   image="third-parties-number-of-third-parties-per-website.png",
   caption="Number of third parties per website.",
-  description="Bar chart showing the number of third parties per website on desktop and mobile at various percentiles. At the 10th percentile both desktop and mobile have 2 third parties per site, at the 25th it's 9 third parties on desktop and 8 on mobile, at the 25th is't 23 and 21 respectively, at the 50th it's 50 and 46, and at the 75th percentile it's 91 and 89 respectively.",
+  description="Bar chart showing the number of third party domains per website on desktop and mobile at various percentiles. At the 10th percentile both desktop and mobile have 2 third parties per site, at the 25th it's 9 third parties on desktop and 8 on mobile, at the 25th is't 23 and 21 respectively, at the 50th it's 50 and 46, and at the 75th percentile it's 91 and 89 respectively.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=2111523872&format=interactive",
   sheets_gid="1338630434",
   sql_file="distribution_of_websites_by_number_of_third_parties.sql"
@@ -158,7 +158,7 @@ However, what does change is the number of third parties used by website:
 {{ figure_markup(
   image="third-parties-per-website-by-rank.png",
   caption="Median number of third parties per website by rank.",
-  description="Bar chart showing the median number of third parties per website by desktop and mobile across various rankings. For the top 1,000 websites, 47 third parties are used on desktop and 40 on mobile, this drops to 42 and 39 respectively for the top 10,000 websites, to 32 and 30 for the top 100,000 websites, 26 and 25 for the top million websites, and 23 and 21 for all websites.",
+  description="Bar chart showing the median number of third party domains per website by desktop and mobile across various rankings. For the top 1,000 websites, 47 third parties are used on desktop and 40 on mobile, this drops to 42 and 39 respectively for the top 10,000 websites, to 32 and 30 for the top 100,000 websites, 26 and 25 for the top million websites, and 23 and 21 for all websites.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=1770094484&format=interactive",
   sheets_gid="1338630434",
   sql_file="number_of_third_parties_by_rank.sql"
@@ -188,7 +188,7 @@ Ads are the most common requests, followed by "unknown"—a collection of variou
 {{ figure_markup(
   image="third-parties-median-third-party-requests-by-type-and-rank-on-mobile.png",
   caption="Median third-party requests by type and rank.",
-  description="Stacked bar chart showing the number of requests of each type by ranking. For the top 1,000 websites there are a median of 20 `ad` third parties, 17 `unknown`, 9 `customer-success`, 3 `video`, 6 `social`, 5 `content`, 4 `cdn`, 5 `analytics`, 6 `consent-provider`, 3 `utility`, 2 `marketing`, 2 `other`, 2`tag-manager`, and 0 `advertising`. For the top 10,000 websites the median values are 19, 12, 9, 4, 6, 5, 4, 5, 6, 4, 2, 2, 2, and 0. For the top 100,000 it's 13, 9, 10, 9, 6, 5, 5, 4, 4, 3, 3, 2, 2, and 2. For the top million it's 6, 7, 10, 11, 5, 5, 5, 3, 2, 3, 3, 2, 1, and 2. For all sites it's 4, 7, 9, 11, 5, 5, 5, 3, 1, 3, 3, 2, 1, and 2.",
+  description="Stacked bar chart showing the number of requests of each type by ranking. For the top 1,000 websites there are a median of 20 `ad` third parties, 17 `unknown`, 4 `cdn`, 6 `social`, 3 `utility`, 5 `analytics`, 3 `video`, 2 `tag-manager`, 9 `customer-success`, 2 `marketing`, 5 `content`, 2 `other`, and 6 `consent-provider`. For the top 10,000 websites the median values are 19, 12, 4, 6, 4, 5, 4, 2, 9, 2, 5, 2, and 6. For the top 100,000 it's 13, 9, 5, 6, 3, 4, 9, 2, 10, 3, 5, 2, and 4. For the top million it's 6, 7, 5, 5, 3, 3, 11, 1, 10, 3, 5, 2, and 2. For all sites it's 4, 7, 5, 5, 3, 3, 11, 1, 9, 3, 5, 2, and 1.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=1542898751&format=interactive",
   sheets_gid="1430893885",
   sql_file="number_of_third_parties_by_rank_and_category.sql"
