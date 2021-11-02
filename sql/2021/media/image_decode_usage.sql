@@ -10,8 +10,6 @@ RETURNS STRUCT<
 var result = {};
 try {
     var images = JSON.parse(images_string);
-
-    if (Array.isArray(markup) || typeof markup != 'object') return result;
 	
     result.total = images.length;
     result.decode_lazy = 0;
