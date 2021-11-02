@@ -7,7 +7,6 @@ reviewers: [tomayac, hemanth]
 analysts: [tomayac]
 editors: []
 translators: []
-discuss: ????
 results: https://docs.google.com/spreadsheets/d/1b4moteB9EiLYkH1Ln9qfi1tnU-E4N2UQ87uayWytDKw/
 christianliebel_bio: Christian Liebel is a consultant at <a hreflang="en" href="https://thinktecture.com">Thinktecture</a>, supporting clients from various business areas in implementing great web applications. He is a Microsoft MVP for Developer Technologies, Google GDE for Web/Capabilities and Angular, and participates in the W3C Web Applications Working Group.
 featured_quote: Capabilities are new web platform APIs that unlock entirely new use cases for web applications.
@@ -22,17 +21,27 @@ featured_stat_label_3: Mobile sites use Declarative Link Capturing
 ## Introduction
 Capabilities are new web platform APIs that unlock entirely new use cases for web applications. Those new APIs are essential for [Progressive Web Apps (PWA)](../pwa), a web-based application model. A PWA is a web app that users can install to their system. PWAs run even offline and launch quickly. To integrate with the underlying operating system, PWAs can only use web platform APIs. While browsers have already exposed some lower-level features to the web (e.g., geolocation, gamepad, or webcam access), many APIs were still missing or were clumsy to use (e.g., file system or clipboard access).
 
-The <a hreflang="en" href="https://www.chromium.org/teams/web-capabilities-fugu">Capabilities Project</a> (codename Fugu) is a joint effort by Microsoft, Intel, Google, and other Chromium contributors. It tries to bridge the gap between platform-specific applications and web apps by designing and implementing new powerful web platform APIs in a secure and privacy-preserving manner. As capabilities unlock more and more use cases, they lay the path for entire new application categories to finally make the shift to the web (e.g., IDEs, image editors, or office applications). Over the last two years, the focus for the Fugu team has been on capabilities for desktop productivity applications and hardware-related APIs. This chapter briefly introduces several new capabilities and analyzes how many different desktop and mobile websites use them. As capabilities are particularly interesting for app-like websites, their relative usage is comparatively low. This is why absolute website numbers are used in this chapter. For each capability, there will be a demo website or app that makes use of it.
+The <a hreflang="en" href="https://www.chromium.org/teams/web-capabilities-fugu">Capabilities Project</a> (codename Fugu) is a joint effort by Microsoft, Intel, Google, and other Chromium contributors. It tries to bridge the gap between platform-specific applications and web apps by designing and implementing new powerful web platform APIs in a secure and privacy-preserving manner. As capabilities unlock more and more use cases, they lay the path for entire new application categories to finally make the shift to the web (e.g., IDEs, image editors, or office applications).
 
-This chapter uses the HTTP Archive data set. For security reasons, some APIs require a user gesture (i.e., a click or keypress) to function. As the HTTP Archive crawler does not support detecting those APIs during runtime, the source code of the websites is parsed statically instead: For instance, the regular expression `/navigator\.share\s*\(/g` is matched against the website's source code to determine if it (potentially) makes use of the Web Share API. This method is not perfectly accurate, as it doesn't measure the actual use of an API, and developers may invoke an API using a different syntax or work with minified code. However, this approach should provide a sufficiently good overview. You can find the exact regular expressions for the 30 supported capabilities in this <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/fugu-apis.js">source file</a>. All usage data in this chapter is based on the July 2021 crawl. You can find the raw data in the <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1b4moteB9EiLYkH1Ln9qfi1tnU-E4N2UQ87uayWytDKw/edit#gid=2077755325">Capabilities 2021 Results Sheet</a>.
+Over the last two years, the focus for the Fugu team has been on capabilities for desktop productivity applications and hardware-related APIs. This chapter briefly introduces several new capabilities and analyzes how many different desktop and mobile websites use them. As capabilities are particularly interesting for app-like websites, their relative usage is comparatively low. This is why absolute website numbers are used in this chapter. For each capability, there will be a demo website or app that makes use of it.
 
-Please note that most of the APIs presented here are so-called incubations. Unless noted, they are not (yet) W3C Recommendations, i.e., official web standards. Instead, these APIs are being worked on in the Web Platform Incubator Community Group (WICG), where browser vendors and developers can discuss new features. Some APIs have already shipped in several browsers; others are only available on Chromium-based ones. These browsers include Google Chrome, Microsoft Edge, Opera, Brave, or Samsung Internet. Please note that vendors of Chromium-based browsers can choose to disable specific capabilities, so not all APIs may be available in all browsers based on Chromium. Some capabilities may also only be available after activating a flag in the browser settings.
+This chapter uses the HTTP Archive data set. For security reasons, some APIs require a user gesture (i.e., a click or keypress) to function. As the HTTP Archive crawler does not support detecting those APIs during runtime, the source code of the websites is parsed statically instead: For instance, the regular expression `/navigator\.share\s*\(/g` is matched against the website's source code to determine if it (potentially) makes use of the Web Share API.
+
+This method is not perfectly accurate, as it doesn't measure the actual use of an API, and developers may invoke an API using a different syntax or work with minified code. However, this approach should provide a sufficiently good overview. You can find the exact regular expressions for the 30 supported capabilities in this <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/fugu-apis.js">source file</a>.
+
+All usage data in this chapter is based on the July 2021 crawl. You can find the raw data in the <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1b4moteB9EiLYkH1Ln9qfi1tnU-E4N2UQ87uayWytDKw/">Capabilities 2021 Results Sheet</a>.
+
+Please note that most of the APIs presented here are so-called _incubations_. Unless noted, they are not (yet) W3C Recommendations, i.e., official web standards. Instead, these APIs are being worked on in the Web Platform Incubator Community Group (WICG), where browser vendors and developers can discuss new features.
+
+Some APIs have already shipped in several browsers; others are only available on Chromium-based ones. These browsers include Google Chrome, Microsoft Edge, Opera, Brave, or Samsung Internet. Please note that vendors of Chromium-based browsers can choose to disable specific capabilities, so not all APIs may be available in all browsers based on Chromium. Some capabilities may also only be available after activating a flag in the browser settings.
 
 ## File System Access API
 The first productivity-related API is the [File System Access API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API). Web apps could already open files from the file system via `input[type=file]`: In a file picker, the user can choose one or more files to give the web application access to. Also, they could already save files to the Downloads folder via `a[download]`. The File System Access API adds support for additional use cases: Opening and modifying directories, saving files to a location specified by the user, and overwriting files that were opened by them. It is also possible to persist file handles to IndexedDB to allow for continued (permission-gated) access, even after a page reload. In particular, the API does not grant random access to the file system and certain system folders are blocked by default.
 
 ### Write Access
-When calling the [`showSaveFilePicker()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/showSaveFilePicker) method on the global `window` object, the browser will show the operating system's file picker. The method takes an optional options object where you can specify which file types are allowed for saving (`types`, default: all types), and whether the user can disable this filter via an "accept all" option (`excludeAcceptAllOption`, default: `false`). When the user successfully picks a file from the local file system, you will receive its handle. With the help of the `createWritable()` method on the handle, you can access a stream writer. In the following example, this writer writes the text `hello world` to the file and closes it afterward.
+When calling the [`showSaveFilePicker()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/showSaveFilePicker) method on the global `window` object, the browser will show the operating system's file picker. The method takes an optional options object where you can specify which file types are allowed for saving (`types`, default: all types), and whether the user can disable this filter via an "accept all" option (`excludeAcceptAllOption`, default: `false`).
+
+When the user successfully picks a file from the local file system, you will receive its handle. With the help of the `createWritable()` method on the handle, you can access a stream writer. In the following example, this writer writes the text `hello world` to the file and closes it afterward.
 
 ```js
 const handle = await window.showSaveFilePicker({
@@ -48,7 +57,9 @@ await writable.close();
 ```
 
 ### Read Access
-To show an open file picker, call the [`showOpenFilePicker()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/showOpenFilePicker) method on the global `window` object. This method also takes an optional options object with the same properties from above (`types`, `excludeAcceptAllOption`). Additionally, you can specify if the user can select one or multiple files (`multiple`, default: `false`). As the user could potentially select more than one file, you will receive an array of file handles. Using the array destructuring expression `[handle]`, you will receive the handle of the first selected file as the first element in the array. By calling the `getFile()` method on the file handle, you will receive a `File` object which gives you access to the file's binary data. By calling the `text()` method, you will receive the plain text from the opened file.
+To show an open file picker, call the [`showOpenFilePicker()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/showOpenFilePicker) method on the global `window` object. This method also takes an optional options object with the same properties from above (`types`, `excludeAcceptAllOption`). Additionally, you can specify if the user can select one or multiple files (`multiple`, default: `false`).
+
+As the user could potentially select more than one file, you will receive an array of file handles. Using the array destructuring expression `[handle]`, you will receive the handle of the first selected file as the first element in the array. By calling the `getFile()` method on the file handle, you will receive a `File` object which gives you access to the file's binary data. By calling the `text()` method, you will receive the plain text from the opened file.
 
 ```js
 const [handle] = await window.showOpenFilePicker({
@@ -70,7 +81,7 @@ The File System Access API is only available on Chromium-based browsers and desk
 
 {{ figure_markup(
 caption="Mobile websites use the File System Access API",
-content="7,491,840",
+content="23",
 classes="big-number",
 sheets_gid="2077755325",
 sql_file="fugu.sql"
@@ -82,7 +93,7 @@ Out of all 6,286,373 desktop and 7,491,840 mobile websites in the HTTP Archive, 
 {{ figure_markup(
 image="file-system-access-api.png",
 caption='The Excalidraw PWA uses the File System Access API to save images to the local file system via the built-in save dialog',
-description='Screenshot showing a drawing application with an open file save dialog.',
+description='Screenshot showing the Excalidraw drawing application with an open file save dialog.',
 width=656,
 height=409
 ) }}
@@ -123,12 +134,12 @@ sql_file="fugu.sql"
 )
 }}
 
-With 560,359 (8.91%) desktop and 618,062 (8.25%) mobile sites, the Async Clipboard API (`writeText()` method) is one of the most used Fugu APIs. The `write()` method is used on 1,180 desktop and 1,227 mobile sites. The commercial website <a hreflang="en" href="https://clippingmagic.com/">Clipping Magic</a> allows you to remove the background of an image with the help of an AI algorithm. Just paste an image from the clipboard, and the website will remove its background.
+With 560,359 (8.91%) desktop and 618,062 (8.25%) mobile sites, the Async Clipboard API (`writeText()` method) is one of the most used Fugu APIs. The `write()` method is used on 1,180 desktop and 1,227 mobile sites. As an example, the commercial website <a hreflang="en" href="https://clippingmagic.com/">Clipping Magic</a> allows you to remove the background of an image with the help of an AI algorithm. Just paste an image from the clipboard, and the website will remove its background.
 
 {{ figure_markup(
 image="async-clipboard-api.png",
 caption='Clipping Magic uses artificial intelligence to remove the background of images pasted via the Async Clipboard API',
-description='Screenshot showing an application with an image on the left, and the same image without a background on the right',
+description='Screenshot of the Clipping Magic application with an image on the left, and the same image without a background on the right',
 width=699,
 height=440
 ) }}
@@ -160,7 +171,7 @@ With 566,049 (9.00%) desktop and 642,507 (8.58%) mobile sites, the Web Share API
 {{ figure_markup(
 image="web-share-api.png",
 caption='The beta version of PaintZ uses the Web Share API to share drawings with local applications',
-description='Screenshot showing a drawing application with an overlay of the built-in messaging application that received the drawing from the app.',
+description='Screenshot showing the PaintZ drawing application with an overlay of the built-in messaging application that received the drawing from the app.',
 width=676,
 height=419
 ) }}
@@ -179,7 +190,7 @@ With the help of <a hreflang="en" href="https://web.dev/pwa-url-handler/">URL Ha
 }
 ```
 
-If you want to register for origins other than your web app's origin, you need to <a hreflang="en" href="https://web.dev/pwa-url-handler/#the-web-app-origin-association-file">verify your ownership of them</a>. The capability is at a relatively early stage: It's only supported on Chrome and Edge on the desktop. URL Handling is currently available as an Origin Trial. This means that the capability is not generally available yet. Instead, developers need to register for an Origin Trial token first and deliver this token along with their website to use this capability. You can find more information in the <a hreflang="en" href="https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md">Origin Trials Guide for Web Developers</a>.
+If you want to register for origins other than your web app's origin, you need to <a hreflang="en" href="https://web.dev/pwa-url-handler/#the-web-app-origin-association-file">verify your ownership of them</a>. The capability is at a relatively early stage: it's only supported on Chrome and Edge on the desktop. URL Handling is currently available as an Origin Trial. This means that the capability is not generally available yet. Instead, developers need to register for an Origin Trial token first and deliver this token along with their website to use this capability. You can find more information in the <a hreflang="en" href="https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md">Origin Trials Guide for Web Developers</a>.
 
 {{ figure_markup(
 caption="Desktop websites use URL Handling",
@@ -220,7 +231,7 @@ sql_file="fugu.sql"
 )
 }}
 
-This capability is at an early stage as well. It is only supported on Chrome OS. Currently, 36 desktop sites and 11 mobile sites use this capability, for example, <a hreflang="en" href="https://periodex.co/">Periodex</a>, a PWA showing the periodic table of elements. This app uses the `capture_links` configuration as shown in the listing above: If supported, the browser should reuse the existing window, otherwise, open a new one, and if that's not supported, it should behave as normal.
+This capability is at an early stage as well. It is only supported on Chrome OS. Currently, 36 desktop sites and 11 mobile sites use this capability, for example, <a hreflang="en" href="https://periodex.co/">Periodex</a>, a PWA showing the periodic table of elements. This app uses the `capture_links` configuration as shown in the listing above meaning that, if supported, the browser should reuse the existing window, otherwise, open a new one, and if that's not supported, it should behave as normal.
 
 ## Hardware APIs
 The next set of capabilities focuses on hardware-related APIs. In Chromium-based browsers, there are many APIs to access hardware interfaces, including but not limited to USB, Bluetooth, and serial devices. Furthermore, the Generic Sensor API allows you to read from device sensors. All capabilities discussed in this section are only available on Chromium-based browsers and on systems where the respective hardware interface or sensor is present.
@@ -247,18 +258,18 @@ sql_file="fugu.sql"
 )
 }}
 
-The API is generally available on Chromium-based browsers since version 61. 182 desktop and 155 mobile sites use this API, for example, the PWA <a hreflang="en" href="https://app.vysor.io/#/">Vysor</a> that allows you to mirror the screen of an Android or iOS device—all without installing any additional software on your computer.
+The API has been generally available on Chromium-based browsers since version 61. 182 desktop and 155 mobile sites use this API, for example, the PWA <a hreflang="en" href="https://app.vysor.io/#/">Vysor</a> that allows you to mirror the screen of an Android or iOS device—all without installing any additional software on your computer.
 
 {{ figure_markup(
 image="web-usb.png",
 caption='The Vysor PWA uses Web USB to connect to USB devices and project their screen contents onto the desktop',
-description='Screenshot showing a website with a modal dialog open listing the connected USB devices.',
+description='Screenshot of the Vysor web application with a modal dialog open listing the connected USB devices.',
 width=699,
 height=440
 ) }}
 
 ### Web Bluetooth API
-The <a hreflang="en" href="https://web.dev/bluetooth/">Web Bluetooth API</a> allows you to communicate with nearby Bluetooth Low Energy devices using the Generic Attribute Profile (GATT). To find a matching device, call the `navigator.bluetooth.requestDevice()` method. In the following example, the list of Bluetooth devices is filtered by whether they offer a battery service or not. The browser shows a device picker where the user can choose a Bluetooth device. Afterward, you can connect to the remote device and gather the data.
+The <a hreflang="en" href="https://web.dev/bluetooth/">Web Bluetooth API</a> allows you to communicate with nearby Bluetooth low energy devices using the <a hreflang="en" href="https://www.bluetooth.com/bluetooth-resources/intro-to-bluetooth-gap-gatt/">Generic Attribute Profile (GATT)</a>. To find a matching device, call the `navigator.bluetooth.requestDevice()` method. In the following example, the list of Bluetooth devices is filtered by whether they offer a battery service or not. The browser shows a device picker where the user can choose a Bluetooth device. Afterward, you can connect to the remote device and gather the data.
 
 ```js
 try {
@@ -283,7 +294,7 @@ The API is generally available on Chromium-based browsers on Chrome OS, Android,
 {{ figure_markup(
 image="web-bluetooth.png",
 caption='The Brewfather app uses Web Bluetooth to send recipes to a brew controller',
-description='Screenshot showing a web application that displays a beer recipe.',
+description='Screenshot showing the Brewfather web application that displays a beer recipe, and the ability to start brewing.',
 width=699,
 height=440
 ) }}
@@ -314,7 +325,7 @@ This capability is relatively new, as it shipped with Chromium 89 in March 2021.
 {{ figure_markup(
 image="web-serial.png",
 caption='The Duino app is a web-based IDE that uses Web Serial to upload programs to Arduino microcontrollers',
-description='Screenshot showing a web-based code editor application compiling code.',
+description='Screenshot showing the web-based Duino code editor application compiling code.',
 width=699,
 height=440
 ) }}
@@ -361,8 +372,8 @@ Some websites from the result set are Internet forums based on <a hreflang="en" 
 The results also include sites that aren't proactively using the APIs. For example, some sites ship library code that could theoretically access the capabilities. Some sites check for the presence of Fugu APIs to determine the user's browser.
 
 ## Conclusion
-Capabilities help move the web forward by unlocking more and more use cases for developers. As this chapter shows, developers use the new web platform APIs to build powerful applications. In contrast to their platform-specific counterparts, those applications don't necessarily need to be installed to the system and don't require any additional third-party runtimes or plug-ins to work. They run on any platform that can run a powerful browser.
+Capabilities help move the web forward by unlocking more and more use cases for developers. As this chapter shows, developers use the new web platform APIs to build powerful applications. In contrast to their platform-specific counterparts, those applications don't necessarily need to be installed to the system and don't require any additional third-party runtimes or plugins to work. They run on any platform that can run a powerful browser.
 
-One example of this concept working is Visual Studio Code. This application has always been web-based, but it still relied on platform-specific application wrappers like Electron. Thanks to capabilities like the File System Access API, Microsoft was able to release the application as a browser application (<a hreflang="en" href="https://vscode.dev">vscode.dev</a>) in October 2021. Almost all features work here, except debugging or terminal access, since there is no capability for this yet.
+One example of this concept working is Visual Studio Code. This application has always been web-based, but it still relied on platform-specific application wrappers like Electron. Thanks to capabilities like the File System Access API, Microsoft was able to release the application as a browser application (<a hreflang="en" href="https://vscode.dev">vscode.dev</a>) in October 2021. Almost all features work here, except debugging or terminal access, since there is no capability for this (yet!).
 
 Another example is <a hreflang="en" href="https://photoshop.adobe.com">Adobe Photoshop</a>, which was also released as a web application in October 2021. Photoshop also uses several of the capabilities presented here, as well as WebAssembly, to migrate existing code to the web. Thus, the Capabilities project paves the way for entire categories of applications to finally migrate to the web.
