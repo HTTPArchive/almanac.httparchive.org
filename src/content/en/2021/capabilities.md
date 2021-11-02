@@ -273,7 +273,9 @@ The <a hreflang="en" href="https://web.dev/bluetooth/">Web Bluetooth API</a> all
 
 ```js
 try {
-  const device = await navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] });
+  const device = await navigator.bluetooth.requestDevice({
+    filters: [{ services: ['battery_service'] }]
+  });
   console.log(device.name);
 } catch (err) {
   console.log(err);
