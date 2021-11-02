@@ -363,7 +363,7 @@ sql_file="fugu.sql"
 
 The capability is supported by Chromium browsers starting from version 67. The relative orientation sensor is used by 824 desktop and 831 mobile sites, the linear acceleration sensor by 257 desktop and 237 mobile sites, and the gyroscope by 36 desktop and 22 mobile sites. An example application that uses all three of them is <a hreflang="en" href="https://obs.ninja/">VDO.Ninja</a>, the former OBS Ninja. This software allows you to remotely connect with video broadcasting software such as OBS. The app allows the connected broadcasting software to read sensor data from the device. For example, to capture a smartphone's movements when streaming virtual reality content.
 
-## Sites using the most capabilities
+## Sites Using the Most Capabilities
 The analysis also identified the websites using the most capabilities from the HTTP Archive data set. The detection script is capable of identifying 30 Fugu APIs in total.
 
 1. The number one site is <a hreflang="en" href="https://whatwebcando.today/">whatwebcando.today</a>, which uses 28 capabilities. It showcases different HTML5 device integration APIs by providing a live demo for every capability. Naturally, the number of used APIs is very high. In the result set, a similar site called <a hreflang="en" href="https://whatpwacando.today/">whatpwacando.today</a> showcases PWA capabilities and uses eight APIs.
