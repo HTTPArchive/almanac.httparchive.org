@@ -26,7 +26,7 @@ return result;
 SELECT
   client,
   SAFE_DIVIDE(COUNTIF(images_info.total > 0), COUNT(0)) AS pages_with_img_pct,
-  SAFE_DIVIDE(COUNTIF(images_info.decode_lazy > 0), COUNT(0)) AS pages_with_decode_lazy,
+  SAFE_DIVIDE(COUNTIF(images_info.decode_lazy > 0), COUNT(0)) AS pages_with_decode_lazy_pct,
   SUM(images_info.total) AS img_total,
   SAFE_DIVIDE(SUM(images_info.decode_lazy), SUM(images_info.total)) AS decode_lazy_pct
 FROM (
