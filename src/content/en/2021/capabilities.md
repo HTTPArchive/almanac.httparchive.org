@@ -241,7 +241,9 @@ The <a hreflang="en" href="https://web.dev/usb/">Web USB API</a> allows develope
 
 ```js
 try {
-  const device = await navigator.usb.requestDevice({ filters: [{ vendorId: 0x8086 }] });
+  const device = await navigator.usb.requestDevice({
+    filters: [{ vendorId: 0x8086 }]
+  });
   console.log(device.productName);
   console.log(device.manufacturerName);
 } catch (err) {
