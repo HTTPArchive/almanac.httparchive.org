@@ -3,7 +3,7 @@
 title: Third Parties
 description: Third Parties chapter of the 2021 Web Almanac covering data of what third parties are used, what they are used for, a deep dive into performance impacts and a discussion on security and privacy impacts.
 authors: [tunetheweb]
-reviewers: [patrickhulce, andydavies, csswizardry]
+reviewers: [patrickhulce, andydavies, simonhearne, csswizardry]
 analysts: [tunetheweb]
 editors: []
 translators: []
