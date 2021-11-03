@@ -353,9 +353,10 @@ try {
 ```
 
 {{ figure_markup(
-caption="Mobile websites use the Generic Sensor API",
-content="831",
-classes="big-number",
+image="generic-sensor-api-usage.png",
+caption='Usage of Generic Sensor APIs on desktop and mobile websites',
+description="Chart showing the use of the Generic Sensor API. It compares three different sensor APIs: The relative orientation sensor is the most used with 824 desktop and 831 mobile sites. The linear acceleration sensor follows far behind with 257 desktop and 237 mobile sites. The gyroscope is used the least with 36 desktop and 22 mobile sites.",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5Byx-_990HdH35no6J879Vk-wNe6EJGHfJJEP61RuLYHyVJfRU0X0L96-kpFAEmWt7x4pB9aiMfQr/pubchart?oid=1901915946&format=interactive",
 sheets_gid="2077755325",
 sql_file="fugu.sql"
 )
