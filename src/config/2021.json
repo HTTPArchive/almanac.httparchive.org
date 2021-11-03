@@ -348,6 +348,16 @@
       "github": "GeekBoySupreme",
       "twitter": "shuvam360",
       "website": "https://shuvam.xyz"
+    },
+    "simonhearne": {
+      "name": "Simon Hearne",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/496189?v=4&s=200",
+      "website": "https://simonhearne.com",
+      "github": "simonhearne",
+      "twitter": "simonhearne"
     }
   }
 }

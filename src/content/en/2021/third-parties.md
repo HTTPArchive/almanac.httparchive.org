@@ -48,7 +48,7 @@ To match these goals as closely as possible, the formal definition used througho
 
 Note that using these definitions, third-party content served from a first-party domain is counted as first-party content. For example, self-hosting Google Fonts or `bootstrap.css` is counted as _first-party content_.
 
-Similarly, first-party content served from a third-party domain is counted as third-party content. For example, first-party images served over a CDN on a third-party domain are considered _third-party content_.
+Similarly, first-party content served from a third-party domain is counted as third-party content—assuming it passes the "more than 50 pages criteria", which it may well do based on domain, even if the resource itself is unique to that website. For example, first-party images served over a CDN on a third-party domain are considered _third-party content_.
 
 ### Third-party categories
 
@@ -133,7 +133,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
   )
 }}
 
-Looking at the spread, we see there is a large variance with websites only using two third parties at the 10th percentile, up to 89 or 91 at the 90th percentile.
+Looking at the spread, we see there is a large variance with websites only using two third parties–measured as the number of distinct third-party hostnames–at the 10th percentile, up to 89 or 91 at the 90th percentile.
 
 Note the 90th percentile is down a bit from [last year's analysis](../2020/third-parties#fig-2), where we had 104 and 106 third parties for desktop and mobile respectively but this looks to be due to restricting our domains to assets used by 50 websites or more this year, which was not done for this statistic last year.
 
@@ -151,7 +151,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
   )
 }}
 
-This year we have access to the <a hreflang="en" href="https://developers.google.com/web/updates/2021/03/crux-rank-magnitude">CrUX "rank"</a> for each website—that is a popularity assignment for each site which allows us to group our data into the top 1,000 most used sites, top 10,000 most used sites...etc. Slicing the data by this popularity rank shows that there is a slight decrease in third-party usage for the less popular websites, but it never dips below 93.28%, again reiterating that pretty much all websites love to include at least one third party.
+This year we have access to the <a hreflang="en" href="https://developers.google.com/web/updates/2021/03/crux-rank-magnitude">CrUX "rank"</a> for each website—that is a popularity assignment for each site which allows us to group our data into the top 1,000 most-used sites (based on page views), top 10,000 most-used sites...etc. Slicing the data by this popularity rank shows that there is a slight decrease in third-party usage for the less popular websites, but it never dips below 93.28%, again reiterating that pretty much all websites love to include at least one third party.
 
 However, what does change is the number of third parties used by website:
 
@@ -169,7 +169,7 @@ Looking at the median (50th percentile) statistics, we see a marked decline as w
 
 ## Third-party type
 
-Our analysis shows we're using third parties a lot, but what are we using them for? Look at the categories of each third-party request we see the following:
+Our analysis shows we're using third parties a lot, but what are we using them for? Looking at the categories of each third-party request we see the following:
 
 {{ figure_markup(
   image="third-parties-requests-by-type.png",
@@ -213,7 +213,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
   )
 }}
 
-Unsurprisingly, JavaScript, images, and HTML comprise the majority of third-party requests. JavaScript is used by most third parties to add functionality (whether that be in ads, trackers, libraries, or whatever). Similarly, the high usage of images is to be expected, as they will include the 1-pixel blank images so beloved of tracking solutions.
+Unsurprisingly, JavaScript, images, and HTML comprise the majority of third-party requests. JavaScript is used by most third parties to add functionality (whether that be in ads, trackers, or libraries). Similarly, the high usage of images is to be expected, as they will include the 1-pixel blank images so beloved of tracking solutions.
 
 The high usage of HTML surprised me initially (surely documents would be the prevalent form of HTML and they would be first-party requests?), but investigation showed them mostly to be iframes which makes much more sense as they are often used to house ads, or other widgets (e.g. YouTube serves an HTML document in an iframe including the player, rather than just the video itself).
 
@@ -412,7 +412,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
   )
 }}
 
-Google Maps definitely needs some improvement. Especially as it's often present as a small extra piece on a page, rather than the main content.
+Google Maps definitely needs some improvement. Especially as it's often present as a small extra piece on a page, rather than the main content. As a website owner, this highlights the importance of only including the Google Maps code on pages which require it.
 
 ##### Twitter
 
