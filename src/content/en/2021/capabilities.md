@@ -180,7 +180,7 @@ height=419
 The last two productivity-related capabilities described in this chapter are URL Handlers and Declarative Link Capturing, additional methods for even deeper integration with the operating system.
 
 ### URL Handling
-With the help of <a hreflang="en" href="https://web.dev/pwa-url-handler/">URL Handling</a>, PWAs can register themselves as handlers for certain URL schemes upon installation, e.g., for `https://*.example.com`. When the user opens a URL that matches this scheme, the installed PWA will open instead of a new browser tab. URL Handling is an extension of the <a hreflang="en" href="https://www.w3.org/TR/appmanifest/">Web Application Manifest</a>, a file that contains metadata for web applications. To register for URL schemes, you have to add the `url_handlers` property to your manifest. This property takes an array containing objects with an `origin` property.
+With the help of <a hreflang="en" href="https://web.dev/pwa-url-handler/">URL Handling</a>, PWAs can register themselves as handlers for certain URL schemes upon installation, e.g., for `https://*.example.com`. When the user opens a URL that matches this scheme, the installed PWA will open instead of a new browser tab. URL Handling is an extension of the <a hreflang="en" href="https://www.w3.org/TR/appmanifest/">Web Application Manifest</a>, a file that contains [metadata for web applications](https://developer.mozilla.org/en-US/docs/Web/Manifest). To register for URL schemes, you have to add the `url_handlers` property to your manifest. This property takes an array containing objects with an `origin` property.
 
 ```json
 {
