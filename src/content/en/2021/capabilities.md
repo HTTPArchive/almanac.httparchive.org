@@ -271,7 +271,7 @@ height=440
 ) }}
 
 ### Web Bluetooth API
-The <a hreflang="en" href="https://web.dev/bluetooth/">Web Bluetooth API</a> allows you to communicate with nearby Bluetooth low energy devices using the <a hreflang="en" href="https://www.bluetooth.com/bluetooth-resources/intro-to-bluetooth-gap-gatt/">Generic Attribute Profile (GATT)</a>. To find a matching device, call the `navigator.bluetooth.requestDevice()` method. In the following example, the list of Bluetooth devices is filtered by whether they offer a battery service or not. The browser shows a device picker where the user can choose a Bluetooth device. Afterward, you can connect to the remote device and gather the data.
+The <a hreflang="en" href="https://web.dev/bluetooth/">Web Bluetooth API</a> allows you to communicate with nearby Bluetooth Low Energy devices using the <a hreflang="en" href="https://www.bluetooth.com/bluetooth-resources/intro-to-bluetooth-gap-gatt/">Generic Attribute Profile (GATT)</a>. To find a matching device, call the `navigator.bluetooth.requestDevice()` method. In the following example, the list of Bluetooth devices is filtered by whether they offer a battery service or not. The browser shows a device picker where the user can choose a Bluetooth device. Afterward, you can connect to the remote device and gather the data.
 
 ```js
 try {
