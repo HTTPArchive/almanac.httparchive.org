@@ -80,8 +80,8 @@ const handle = await window.showDirectoryPicker();
 The File System Access API is only available on Chromium-based browsers and desktop systems. Fortunately, the web platform offers the aforementioned fallback approaches to provide similar functionality on mobile devices and other browsers. Developers can use the Google-developed library <a hreflang="en" href="https://github.com/GoogleChromeLabs/browser-fs-access">browser-fs-access</a> that uses the File System Access API if present and otherwise falls back to the alternative implementation.
 
 {{ figure_markup(
-caption="Mobile websites use the File System Access API",
-content="23",
+caption="Desktop websites use the File System Access API",
+content="29",
 classes="big-number",
 sheets_gid="2077755325",
 sql_file="fugu.sql"
@@ -126,8 +126,8 @@ const items = await navigator.clipboard.read();
 The browser may show a permission prompt or a different UI for privacy reasons before granting the website access to the clipboard contents. The Async Clipboard API is available in Chrome, Edge, and Safari. Firefox only supports the `writeText()` method.
 
 {{ figure_markup(
-caption="Mobile websites use the Async Clipboard API",
-content="618,062",
+caption="Desktop websites use the Async Clipboard API",
+content="560,359",
 classes="big-number",
 sheets_gid="2077755325",
 sql_file="fugu.sql"
@@ -158,8 +158,8 @@ await navigator.share({
 The Web Share API is supported by Safari (iOS, macOS), and Chrome and Edge (Windows, Chrome OS). It's currently a <a hreflang="en" href="https://www.w3.org/TR/web-share/">Working Draft</a> at the Web Applications Working Group. This is one of the first stages of the track to becoming a W3C Recommendation.
 
 {{ figure_markup(
-caption="Mobile websites use the Web Share API",
-content="642,507",
+caption="Desktop websites use the Web Share API",
+content="566,049",
 classes="big-number",
 sheets_gid="2077755325",
 sql_file="fugu.sql"
