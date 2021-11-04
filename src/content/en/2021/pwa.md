@@ -1,13 +1,13 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: PWA
-description: TODO
-authors: []
-reviewers: []
-analysts: []
-editors: []
+description: PWA chapter of the 2021 Web Almanac covering service workers (usage and features), Web App Manifests, Lighthouse insights, service worker libraries (including Workbox), Web Push notifications and distribution.
+authors: [demianrenzulli]
+reviewers: [webmaxru, andreban, jeffposnick, Schweinepriester, thepassle, hemanth, tropicadri]
+analysts: [tunetheweb, demianrenzulli]
+editors: [tunetheweb]
 translators: []
-results: https://docs.google.com/spreadsheets/d/16AkIdDBBkCR5Kgb7kyfYvnNLQBu23Vsh7MUSFHW9RtA/
+results: https://docs.google.com/spreadsheets/d/16AkIdDBBkCR5Kgb7kyfYvnNLQBu23Vsh7MUSFHW9RtA
 featured_quote: TODO
 featured_stat_1: TODO
 featured_stat_label_1: TODO
