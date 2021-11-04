@@ -82,7 +82,7 @@ And how can we explain that approximately 3% of sites represent around 19% of th
 {{ figure_markup(
   image="pwa-service-worker-controlled-pages-by-rank.png",
   caption="Service worker controlled pages by rank.",
-  description="Bar chart showing service worker controlled pages by ranking. For desktop 8.55%	of the top 1,000 pages, 7.75% of the top 10,000 pages, 4.32% or the top 100,000 pages, 2.07% of the top 1,000,000 pages and 1.22% of all pages are controlled by a service worker. For mobile 8.62% for top 1,000, 8.05% for top 10,000, 4.61% for top 100,000, 2.17% for top 1 million, and 1.19% for all pages.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=719919882&format=interactive",
+  description="Bar chart showing service worker controlled pages by ranking. For desktop 8.55% of the top 1,000 pages, 7.75% of the top 10,000 pages, 4.32% or the top 100,000 pages, 2.07% of the top 1,000,000 pages and 1.22% of all pages are controlled by a service worker. For mobile 8.62% for top 1,000, 8.05% for top 10,000, 4.61% for top 100,000, 2.17% for top 1 million, and 1.19% for all pages.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=719919882&format=interactive",
   sheets_gid="1703190302",
   sql_file="sw_adoption_over_time_ranking.sql"
   )
@@ -466,10 +466,10 @@ The following table shows the usage of Workbox of the most popular packages:
 
 The chart above shows that the following packages are the four most widely used:
 
--  <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-core">Workbox Core</a>: This package contains the common code that each Workbox module relies on (for example, the code to interact with the console and throw meaningful errors). That's why it's the most widely used.
--  <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-routing">Workbox Routing</a>: This package allows to intercept requests and respond to them in different ways. It's also a very common task inside a service worker, so it's quite popular.
--  <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-precaching">Workbox Precaching</a>: This package allows sites to save some files to the cache while the service worker is installing. This set of files usually constitute the "version" of a PWA (similar to the version of a native app).
--  <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies">Workbox Strategies</a>: Unlike preaching, which takes place at the service worker "install" event, this package enables runtime caching strategies to determine how a service worker generates a response after receiving a `fetch` event.
+- <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-core">Workbox Core</a>: This package contains the common code that each Workbox module relies on (for example, the code to interact with the console and throw meaningful errors). That's why it's the most widely used.
+- <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-routing">Workbox Routing</a>: This package allows to intercept requests and respond to them in different ways. It's also a very common task inside a service worker, so it's quite popular.
+- <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-precaching">Workbox Precaching</a>: This package allows sites to save some files to the cache while the service worker is installing. This set of files usually constitute the "version" of a PWA (similar to the version of a native app).
+- <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies">Workbox Strategies</a>: Unlike preaching, which takes place at the service worker "install" event, this package enables runtime caching strategies to determine how a service worker generates a response after receiving a `fetch` event.
 
 ### Workbox strategies
 
