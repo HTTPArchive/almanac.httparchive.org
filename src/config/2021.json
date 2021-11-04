@@ -266,6 +266,52 @@
       "github": "obto",
       "twitter": "theobto"
     },
+    "edmondwwchan": {
+      "name": "Edmond W. W. Chan",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/68361682?v=4&s=200",
+      "website": "",
+      "github": "edmondwwchan",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "estelle": {
+      "name": "Estelle Weyl",
+      "teams": [
+        "reviewers",
+        "editors"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69888?v=4&s=200",
+      "website": "",
+      "github": "estelle",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "fili": {
+      "name": "Fili",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/115263?v=4&s=200",
+      "website": "",
+      "github": "fili",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "jzyang": {
+      "name": "Julia Yang",
+      "teams": [
+        "reviewers",
+        "editors"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2634031?v=4&s=200",
+      "website": "",
+      "github": "jzyang",
+      "linkedin": "",
+      "twitter": ""
+    },
     "lucasbona05": {
       "name": "Lucas Gonçalves",
       "teams": [
@@ -280,6 +326,17 @@
         "designers"
       ]
     },
+    "Nithanaroy": {
+      "name": "Nitin Pasumarthy",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/670556?v=4&s=200",
+      "website": "",
+      "github": "Nithanaroy",
+      "linkedin": "",
+      "twitter": ""
+    },
     "paulcalvano": {
       "name": "Paul Calvano",
       "teams": [
@@ -293,11 +350,24 @@
     "rviscomi": {
       "name": "Rick Viscomi",
       "teams": [
-        "leads"
+        "leads",
+        "reviewers",
+        "analysts"
       ],
       "avatar_url": "https://avatars0.githubusercontent.com/u/1120896?v=4&s=200",
       "github": "rviscomi",
       "twitter": "rick_viscomi"
+    },
+    "samarpanda": {
+      "name": "Samar Panda",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/802163?v=4&s=200",
+      "website": "",
+      "github": "samarpanda",
+      "linkedin": "",
+      "twitter": ""
     },
     "shantsis": {
       "name": "Shaina Hantsis",
@@ -316,6 +386,30 @@
       "github": "GeekBoySupreme",
       "twitter": "shuvam360",
       "website": "https://shuvam.xyz"
+    },
+    "siakaramalegos": {
+      "name": "Sia Karamalegos",
+      "teams": [
+        "authors",
+        "leads",
+        "analysts"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4777393?v=4&s=200",
+      "website": "https://sia.codes",
+      "github": "siakaramalegos",
+      "linkedin": "karamalegos",
+      "twitter": "TheGreenGreek"
+    },
+    "ziemek-bucko": {
+      "name": "Ziemek Bućko",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/60089915?v=4&s=200",
+      "website": "",
+      "github": "ziemek-bucko",
+      "linkedin": "",
+      "twitter": ""
     }
   }
 }
