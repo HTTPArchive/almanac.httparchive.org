@@ -7,9 +7,9 @@ LANGUAGE js AS '''
         const dataRegEx = new RegExp('^data');
 		return parsed.map( d => ({
             imgURL: d.url,
-            approximateResourceWidth: d.approximateResourceWidth,
-            approximateResourceHeight: d.approximateResourceHeight,
-            byteSize: d.byteSize,
+            approximateResourceWidth: Math.floor( d.approximateResourceWidth || 0 ),
+            approximateResourceHeight: Math.floor( d.approximateResourceHeight || 0 ),
+            byteSize: Math.floor( d.byteSize || 0 ),
             isPixel: d.approximateResourceWidth == 1 && d.approximateResourceHeight == 1,
             isDataURL: dataRegEx.test(d.url)
 		}) );
@@ -19,7 +19,7 @@ LANGUAGE js AS '''
 WITH imgs AS (
   SELECT
     _TABLE_SUFFIX as client, url as pageURL, imgURL, approximateResourceWidth, approximateResourceHeight, byteSize, isPixel, isDataURL,
-    approximateResourceWidth * approximateResourceHeight AS pixels
+    ( approximateResourceWidth * approximateResourceHeight ) / 1000000 AS megapixels
   FROM `httparchive.pages.2021_07_01_*`, UNNEST(getSrcsetInfo( JSON_QUERY( JSON_VALUE( payload, '$._responsive_images' ), '$.responsive-images' ) ) )
 ), one_pixel_images AS (
     SELECT
@@ -34,7 +34,7 @@ WITH imgs AS (
     COUNT(0) as total_imgs,
     SUM(approximateResourceWidth) as total_width,
     SUM(approximateResourceHeight) as total_height,
-    SUM(pixels) as total_pixels,
+    SUM(megapixels) as total_megapixels,
     SUM(byteSize) as total_bytes
   FROM imgs
   WHERE isPixel = false AND approximateResourceWidth > 0
@@ -44,7 +44,7 @@ WITH imgs AS (
         client,
         SAFE_DIVIDE( total_width, total_imgs ) AS average_width,
         SAFE_DIVIDE( total_height, total_imgs ) AS average_height,
-        SAFE_DIVIDE( total_pixels, total_imgs ) AS average_pixels,
+        SAFE_DIVIDE( total_megapixels, total_imgs ) AS average_megapixels,
         SAFE_DIVIDE( total_bytes, total_imgs ) AS average_bytes
     FROM img_sums_excluding_one_pixel_images
 )
