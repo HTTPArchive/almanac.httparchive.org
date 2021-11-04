@@ -79,7 +79,7 @@ else
     LIGHTHOUSE_URLS=$(grep loc templates/sitemap.xml | grep -v "/static/" | grep -v stories | sed 's/ *<loc>//g' | sed 's/<\/loc>//g' | sed 's/https:\/\/almanac.httparchive.org/http:\/\/127.0.0.1:8080/g')
 
     # Temporarily remove Russian CSS file as failing in Lighthouse - TODO remove this
-    LIGHTHOUSE_URLS=$(echo "${LIGHTHOUSE_URLS}" | grep -v "/ru/css")
+    LIGHTHOUSE_URLS=$(echo "${LIGHTHOUSE_URLS}" | grep -v "/ru/2020/css")
 
 fi
 
