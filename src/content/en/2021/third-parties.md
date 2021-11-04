@@ -5,7 +5,7 @@ description: Third Parties chapter of the 2021 Web Almanac covering data of what
 authors: [tunetheweb]
 reviewers: [patrickhulce, andydavies, simonhearne, csswizardry]
 analysts: [tunetheweb]
-editors: []
+editors: [rviscomi]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1tf4RMF8SYr6he9tbqt61yuFJ_QK-F-i7XPxaPkpKSDI/
 tunetheweb_bio: Barry Pollard is a software developer and author of the Manning book <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. He thinks the web is amazing but wants to make it even better. You can find him tweeting <a href="https://twitter.com/tunetheweb">@tunetheweb</a> and blogging at <a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
@@ -16,7 +16,6 @@ featured_stat_2: 1,625
 featured_stat_label_2: YouTube embed main-thread blocking time
 featured_stat_3: 45.85%
 featured_stat_label_3: Requests which are 3rd party
-unedited: true
 ---
 
 ## Introduction
@@ -53,18 +52,18 @@ Similarly, first-party content served from a third-party domain is counted as th
 ### Third-party categories
 
 This year we will, again, be drawing heavily on the <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/blob/master/data/entities.js">third-party-web</a> repository from <a hreflang="en" href="https://twitter.com/patrickhulce">Patrick Hulce</a> to help us identify and categorize third parties. This repository categorizes commonly used third-party URLs into the following categories:
-- **Ad** - display and measurement of advertisements
-- **Analytics** - tracking site visitor behavior
-- **CDN** - providers that host public shared utilities or private content of their users
-- **Content** - providers that facilitate publishers and host syndicated content
-- **Customer Success** - support and customer relationship management functionality
-- **Hosting** - providers that host the arbitrary content of their users
-- **Marketing** - sales, lead generation, and email marketing functionality
-- **Social** - social networks and their affiliated integrations
-- **Tag Manager** - provider whose sole role is to manage the inclusion of other third parties
-- **Utility** - code that aids the development objectives of the site owner
-- **Video** - providers that host the arbitrary video content of their users
-- **Other** - uncategorized or non-conforming activity
+- **Ad** - These scripts are part of advertising networks, either serving or measuring.
+- **Analytics** -These scripts measure or track users and their actions. There's a wide range in impact here depending on what's being tracked.
+- **CDN** - These are a mixture of publicly hosted open source libraries (e.g. jQuery) served over different public CDNs and private CDN usage.
+- **Content** - These scripts are from content providers or publishing-specific affiliate tracking.
+- **Customer Success** - These scripts are from customer support/marketing providers that offer chat and contact solutions. These scripts are generally heavier in weight.
+- **Hosting** - These scripts are from web hosting platforms (WordPress, Wix, Squarespace, etc).
+- **Marketing** - These scripts are from marketing tools that add popups/newsletters/etc.
+- **Social** - These scripts enable social features.
+- **Tag Manager** - These scripts tend to load lots of other scripts and initiate many tasks.
+- **Utility** - These scripts are developer utilities (API clients, site monitoring, fraud detection, etc).
+- **Video** - These scripts enable video player and streaming functionality.
+- **Other** - These are miscellaneous scripts delivered via a shared origin with no precise category or attribution.
 
 <p class="note">Note: The CDN category here includes providers that provide resources on public CDN domains (e.g. bootstrapcdn.com, cdnjs.cloudflare.com, etc.) and does not include resources that are simply served over a CDN. For example, putting Cloudflare in front of a page would not influence its first-party designation according to our criteria.</p>
 
