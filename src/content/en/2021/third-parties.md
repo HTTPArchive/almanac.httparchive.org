@@ -141,7 +141,7 @@ The median website uses 21 third parties on mobile and 23 on desktop, which stil
 {{ figure_markup(
   image="third-parties-websites-using-third-parties-by-rank.png",
   caption="Websites using third parties by rank.",
-  description="Bar chart showing the percentage of websites using third parties by mobile and desktop, across various rank categories. For the top 1,000 websites 96.60% of desktop 96.91% of mobile sites use websites, which is similar to the top 10,000 sites at 96.76% and 96.58% respectively, and the top 100,000 at 94.53% and 94.41%, and the top million websites at 93.37% and 93.28% and finally all sites are at 94.07% and 94.40% respectively.",
+  description="Bar chart showing the percentage of websites using third parties by mobile and desktop, across various rank categories. For the top 1,000 websites 96.6% of desktop 96.9% of mobile sites use websites, which is similar to the top 10,000 sites at 96.8% and 96.6% respectively, and the top 100,000 at 94.5% and 94.4%, and the top million websites at 93.4% and 93.3% and finally all sites are at 94.1% and 94.4% respectively.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=871714070&format=interactive",
   sheets_gid="1082574922",
   sql_file="percent_of_websites_with_third_party_by_ranking.sql"
@@ -249,7 +249,7 @@ Who are we loading all these third-party requests from? Most of these names won'
 {{ figure_markup(
   image="third-parties-top-15-by-usage.png",
   caption="Top 15 third parties by usage.",
-  description="Bar chart showing the top 15 third parties by percentage of websites using them separated by desktop and mobile. `*.google-analytics.com` is used on 66.17% of desktop pages and 62.69% of mobile, `fonts.googleapis.com` is 65.12% and 62.02% respectively, `adservice.google.com` is 50.53% and 48.87%, `accounts.google.com` is 50.32% and 48.94%, `*.googletagmanager.com` is 44.82% and 42.50%, `ajax.googleapis.com` is 35.47% and 31.06%, `*.facebook.com` is 30.84% and 29.18%, `amp.cloudflare.com` is 12.84% and 12.01%, `*.youtube.com` is 11.29% and 10.20%, `*.bootstrapcdn.com` is 10.08% and 9.71%, `maps.google.com` is 7.96% and 9.07%, `*.jsdelivr.net` is 7.06% and 6.61%, `*.jquery.com` is 6.25% and 5.88%, `*.fontawesome.com` is 6.31% and 5.80%, and finally `*.adobedtm.com` is 4.46% and 5.57%.",
+  description="Bar chart showing the top 15 third parties by percentage of websites using them separated by desktop and mobile. `*.google-analytics.com` is used on 66.2% of desktop pages and 62.7% of mobile, `fonts.googleapis.com` is 65.1% and 62.0% respectively, `adservice.google.com` is 50.5% and 48.9%, `accounts.google.com` is 50.3% and 48.9%, `*.googletagmanager.com` is 44.8% and 42.5%, `ajax.googleapis.com` is 35.5% and 31.1%, `*.facebook.com` is 30.8% and 29.2%, `amp.cloudflare.com` is 12.8% and 12.0%, `*.youtube.com` is 11.3% and 10.2%, `*.bootstrapcdn.com` is 10.1% and 9.7%, `maps.google.com` is 8.0% and 9.1%, `*.jsdelivr.net` is 7.1% and 6.6%, `*.jquery.com` is 6.3% and 5.9%, `*.fontawesome.com` is 6.3% and 5.8%, and finally `*.adobedtm.com` is 4.5% and 5.6%.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=1408467789&format=interactive",
   sheets_gid="564520146",
   width=600,
@@ -292,7 +292,7 @@ To understand third parties' impact on rendering, we've analyzed how sites perfo
 {{ figure_markup(
   image="third-parties-most-popular-third-parties-impact-on-render.png",
   caption="Top 15 third parties impact on render.",
-  description="Bar chart showing the percentage of times the top 15 third parties block render. `*.google-analytics.com` is blocking render 0.07% of the time, `fonts.googleapis.com` is 51.25% `accounts.google.com` is 3.17% `adservice.google.com` is 0.49% `*.googletagmanager.com` is 4.52% `ajax.googleapis.com` is 22.65% `*.facebook.com` is 0.10% `amp.cloudflare.com` is 44.95% `*.youtube.com` is 1.04% `*.bootstrapcdn.com` is 63.16% `maps.google.com` is 13.63% `*.jsdelivr.net` is 30.27% `*.jquery.com` is 46.38% `*.fontawesome.com` is 66.04% `*.adobedtm.com` is 3.06%.",
+  description="Bar chart showing the percentage of times the top 15 third parties block render. `*.google-analytics.com` is blocking render 0.1% of the time, `fonts.googleapis.com` is 51.3% `accounts.google.com` is 3.2% `adservice.google.com` is 0.5% `*.googletagmanager.com` is 4.52% `ajax.googleapis.com` is 22.7% `*.facebook.com` is 0.1% `amp.cloudflare.com` is 45.0% `*.youtube.com` is 1.0% `*.bootstrapcdn.com` is 63.1% `maps.google.com` is 13.6% `*.jsdelivr.net` is 30.3% `*.jquery.com` is 46.4% `*.fontawesome.com` is 66.0% `*.adobedtm.com` is 3.1%.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=1221471478&format=interactive",
   width=600,
   height=585,
