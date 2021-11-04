@@ -178,7 +178,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
   )
 }}
 
-Ads are the most common requests, followed by "unknown"—a collection of various uncategorized or lesser used sites—then CDN, social and utility and then analytics. So, while there are some categories more popular than others, what's perhaps the bigger takeaway here is how varied third-party usage is. They really are used for all sorts of reasons rather than one or two use cases dominating all the others.
+Ads are the most common third-party requests, followed by "unknown"—a collection of various uncategorized or lesser-used sites—then CDN, social, utility, and analytics. So, while some categories are more popular than others, what's perhaps the bigger takeaway here is how varied third-party usage is. They really are used for all sorts of reasons, rather than one or two use cases dominating all the others.
 
 ### Third-party requests by type and rank
 
