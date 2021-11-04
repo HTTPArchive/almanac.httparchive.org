@@ -31,17 +31,17 @@ What's new this year? We're excited to share performance data by traffic ranking
 
 One thing that makes the performance chapter different from the others is that we rely heavily on the [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) (CrUX) for our analyses. Why? If our number one priority is user experience, then the best way to measure performance is with real user data (real user metrics, or RUM for short).
 
-> The Chrome User Experience Report provides user experience metrics for how real-world Chrome users experience popular destinations on the web. [big fancy quote - from [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)]
+> The Chrome User Experience Report provides user experience metrics for how real-world Chrome users experience popular destinations on the web. -[Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
 
 CrUX data only provides high-level field/RUM metrics like the Web Vitals and only for the Chrome browser. Additionally, CrUX reports data by origin, or website, instead of by page.
 
-We supplement our CrUX RUM data with targeted analyses using WebPageTest data from HTTP Archive. WebPageTest data includes very detailed information about each page, including the full Lighthouse report. Note that WebPageTest is measured in [California and Oregon](https://almanac.httparchive.org/en/2020/methodology#webpagetest), but the performance data in CrUX is global since it represents real user page loads.
+We supplement our CrUX RUM data with targeted analyses using WebPageTest data from HTTP Archive. WebPageTest data includes very detailed information about each page, including the full Lighthouse report. Note that WebPageTest is measured in [California and Oregon](https://almanac.httparchive.org/en/2021/methodology#webpagetest), but the performance data in CrUX is global since it represents real user page loads.
 
 When comparing performance year-over-year, keep in mind that:
 
-+   The Cumulative Layout Shift (CLS) calculation has changed since 2020.
-+   The First Contentful Paint (FCP) thresholds ("good", "needs improvement", and "poor") have changed since 2020.
-+   Last year's report was based on August 2020 data, and this year's report was based on the July 2021 run.
+- The Cumulative Layout Shift (CLS) calculation has changed since 2020.
+- The First Contentful Paint (FCP) thresholds ("good", "needs improvement", and "poor") have changed since 2020.
+- Last year's report was based on August 2020 data, and this year's report was based on the July 2021 run.
 
 Read the full [methodology](./methodology) for the Web Almanac to learn more.
 
@@ -55,7 +55,8 @@ This section will focus on websites that reached the "good" threshold on all thr
 
 ![image](insert_image_url_here)
 
-Note: As the CLS calculation changed since last year, this is not an apples-to-apples comparison.
+<!-- TODO: note style -->
+<p class="note"><strong>Note:</strong> As the CLS calculation changed since last year, this is not an apples-to-apples comparison.</p>
 
 The Core Web Vitals for websites in the Chrome User Experience Report improved year-over-year. However, a good portion of this improvement could be due to a change in how CLS is calculated, not necessarily to a performance improvement in CLS. The resulting CLS "improvement" was 8 points on desktop (2 for mobile). LCP improved by 7 points for desktop (2 for mobile). FID was already at 100% for desktop for both years, and improved by 10 points on mobile.
 
@@ -84,13 +85,14 @@ Performance by connection type would be easier to understand if we could start t
 Regions in parts of Asia and Europe continued to have higher performance possibly due to higher network speeds, wealthier populations with faster devices, and closer edge-caching locations.  However, we should look more closely at the dataset before drawing too many conclusions. Here are the top 10 regions by number of websites in CrUX versus their relative population sizes:
 
 ![image](insert_image_url_here)
-
+<!-- TODO: add to figure caption -->
 Source: [https://datacommons.org/](https://datacommons.org/) Population data is for 2020. Original data comes  from the World Bank, the US Census, INSEE, and WikiData.
 
 Similarly, here are the 10 top regions by population and their corresponding share of websites in CrUX:
 
 ![image](insert_image_url_here)
 
+<!-- TODO: add to figure caption -->
 Source: U.S. Census Bureau Current Population (population clock) at Nov 02, 2021 18:31 UTC (+4) [https://www.census.gov/popclock/print.php?component=counter](https://www.census.gov/popclock/print.php?component=counter) Population data is for 2021
 
 The US, Japan, Brazil, and Western Europe are over-represented in the CrUX dataset origins. Many large countries like China, India, and Nigeria, and Pakistan are underrepresented.
@@ -105,7 +107,7 @@ This year for the first time, we have ranking data! ​​CrUX rankings are dete
 
 The top 1,000 sites had significantly better performance than the rest in terms of the Core Web Vitals. An interesting trough of poorer performance occurs in the middle of the chart which is due to CLS. FID was flat across all buckets, and all other metrics were correlated with higher performance for higher ranking.
 
-Correlation is not causation, but company after company has shown performance improvements that led to bottom-line business impacts. [reference WPO stats here [https://wpostats.com/](https://wpostats.com/)] You don't want performance to be the reason you can't achieve higher traffic and increased engagement.
+Correlation is not causation, but company after company has shown performance improvements that led to bottom-line business impacts ([WPO stats](https://wpostats.com/)). You don't want performance to be the reason you can't achieve higher traffic and increased engagement.
 
 ## Analysis by Metric
 
@@ -117,7 +119,7 @@ In this section, we will focus on the analysis of each metric. Links to explanat
 
 ![image](insert_image_url_here)
 
-TTFB was faster on desktop than mobile, presumably because of faster network speeds on average. Compared to last year [link to last year's chart [https://almanac.httparchive.org/en/2020/performance#fig-17](https://almanac.httparchive.org/en/2020/performance#fig-17)], TTFB marginally improved on desktop and slowed on mobile.
+TTFB was faster on desktop than mobile, presumably because of faster network speeds on average. Compared to [last year](https://almanac.httparchive.org/en/2020/performance#fig-17), TTFB marginally improved on desktop and slowed on mobile.
 
 ![image](insert_image_url_here)
 
@@ -129,7 +131,8 @@ You may be asking yourself how TTFB can even occur with offline connections. Pre
 
 In terms of rank, TTFB was faster for higher-ranking sites. This might be due to most of these being larger companies that prioritize performance, committing part of their budgets toward improving server-side performance and delivering assets through edge CDNs. Another reason could be selection bias - the top origins might be accessed more in regions with closer servers, i.e., lower latency.
 
-One more possibility has to do with CMS adoption. The [CMS Chapter](link) shows CMS adoption by rank.
+<!-- TODO: validate CMS chapter link works -->
+One more possibility has to do with CMS adoption. The [CMS Chapter](./cms) shows CMS adoption by rank.
 
 ![image](insert_image_url_here)
 
@@ -139,11 +142,12 @@ Then, if we look at the top 5 CMSs by rank, we see that WordPress is used at the
 
 ![image](insert_image_url_here)
 
-Finally, if we look at the [Core Web Vitals Technology Report](https://datastudio.google.com/u/0/reporting/55bc8fad-44c2-4280-aa0b-5f3f0cd3d2be/page/M6ZPC?s=gIMIWF38pWI), we see how each CMS performs by metric:
+Finally, if we look at the [Core Web Vitals Technology Report](https://datastudio.google.com/s/o6zLzlTpWaI), we see how each CMS performs by metric:
 
 ![image](insert_image_url_here)
 
-Figure: Origins having good TTFB by CMS ([Core Web Vitals Technology Report]([https://datastudio.google.com/u/0/reporting/55bc8fad-44c2-4280-aa0b-5f3f0cd3d2be/page/M6ZPC?s=gIMIWF38pWI](https://datastudio.google.com/u/0/reporting/55bc8fad-44c2-4280-aa0b-5f3f0cd3d2be/page/M6ZPC?s=gIMIWF38pWI)))
+<!-- TODO: figcaption -->
+Figure: Origins having good TTFB by CMS ([Core Web Vitals Technology Report](https://datastudio.google.com/s/o6zLzlTpWaI))
 
 Only 5% of origins on WordPress experienced good TTFB in July 2021. Considering WordPress's large share of the top 10M sites, it could be a contributor to the overall TTFB degradation by lower rank.
 
@@ -155,7 +159,7 @@ Only 5% of origins on WordPress experienced good TTFB in July 2021. Considering 
 
 As with most performance metrics, FCP was faster on desktop than mobile, likely due to both faster average network speeds and faster processors. Only 38% of origins had "good" FCP on mobile. Render-blocking resources such as synchronous JavaScript can be a common culprit. Remember that TTFB is the first portion of FCP so a poor TTFB will make it more difficult to achieve a good FCP.
 
-Note: The thresholds for FCP have changed since last year so be careful if you try to compare this year's data to last year's data.
+<p class="note"><strong>Note:</strong> The thresholds for FCP have changed since last year so be careful if you try to compare this year's data to last year's data.</p>
 
 ![image](insert_image_url_here)
 
@@ -165,7 +169,7 @@ Origins at 3G speeds and below experienced significant degradations in FCP. Agai
 
 ![image](insert_image_url_here)
 
-Similar to TTFB, FCP improved with higher rankings. Also similar to TTFB, only 19.5% of origins on Wordpress experienced good FCP performance (from the [Core Web Vitals Technology Report](https://datastudio.google.com/u/0/reporting/55bc8fad-44c2-4280-aa0b-5f3f0cd3d2be/page/M6ZPC?s=gIMIWF38pWI)). Since their TTFB performance was relatively poor, I am not surprised that their FCP is also low. It's difficult to achieve good scores on FCP and LCP if TTFB is slow.
+Similar to TTFB, FCP improved with higher rankings. Also similar to TTFB, only [19.5% of origins on Wordpress experienced good FCP performance](https://datastudio.google.com/s/kZ9K0d-sBQw). Since their TTFB performance was relatively poor, I am not surprised that their FCP is also low. It's difficult to achieve good scores on FCP and LCP if TTFB is slow.
 
 Common culprits for poor FCP are render-blocking resources, server response times (and anything associated with a slow TTFB), large network payloads (minify and chunk!), and more.
 
@@ -183,7 +187,7 @@ Similar to FCP, LCP is affected by TTFB and was faster on desktop than mobile. C
 
 ![image](insert_image_url_here)
 
-LCP varied slightly from FCP in terms of differences in performance by rank. For LCP, these differences were closer, and a higher proportion of origins in the top 1,000 had poor LCP. On WordPress, 28% of origins experienced good LCP (from the [Core Web Vitals Technology Report](https://datastudio.google.com/u/0/reporting/55bc8fad-44c2-4280-aa0b-5f3f0cd3d2be/page/M6ZPC?s=gIMIWF38pWI)). This is an opportunity to improve user experience as poor LCP is usually caused by a handful of problems.
+LCP varied slightly from FCP in terms of differences in performance by rank. For LCP, these differences were closer, and a higher proportion of origins in the top 1,000 had poor LCP. On WordPress, [28% of origins experienced good LCP](https://datastudio.google.com/s/kvq1oJ60jaQ). This is an opportunity to improve user experience as poor LCP is usually caused by a handful of problems.
 
 ### The LCP Element
 
@@ -201,16 +205,21 @@ In both cases, images comprised the majority of LCP elements. This warrants a de
 
 ![image](insert_image_url_here)
 
-For user experience, we want LCP elements to load as fast as possible. User experience is why LCP was created as one of the Core Web Vitals. This means that we do not want it to be lazy-loaded nor decoded asynchronously as that further delays the render. However, we can see that 9.3% of pages were using the native loading=lazy flag on an LCP <img> element.
+For user experience, we want LCP elements to load as fast as possible. User experience is why LCP was created as one of the Core Web Vitals. This means that we do not want it to be lazy-loaded nor decoded asynchronously as that further delays the render. However, we can see that 9.3% of pages were using the native loading=lazy flag on an LCP `<img>` element.
 
-Not all browsers support native lazy loading, so popular lazy loading JavaScript packages detect a "lazyload" class on an image element. If we look for classes that contain the string "lazyload" and combine those with the native lazy-loaded images, the percent of sites probably lazy loading their LCP <img> element jumps up to 16.5% on mobile.
+Not all browsers support native lazy loading, so popular lazy loading JavaScript packages detect a "lazyload" class on an image element. If we look for classes that contain the string "lazyload" and combine those with the native lazy-loaded images, the percent of sites probably lazy loading their LCP `<img>` element jumps up to 16.5% on mobile.
 
 Lazy-loading your LCP element will result in worse performance. Don't do it! Luckily, only 0.4% of sites were decoding their LCP images asynchronously, and the negative impact of asynchronous decode is probably not as high as lazy loading.
 
-**354 origins **
-attempted to use native lazy-loading on LCP elements that are not images or iframes
+{{ figure_markup(
+  content="354 websites",
+  caption="attempted to use native lazy-loading on LCP elements that are not images or iframes",
+  sheets_gid="1423728540",
+  sql_file="lcp_element_data.sql"
+  )
+}}
 
-Interestingly, 354 origins on desktop were attempting to use native-lazy loading on HTML elements that do not support the loading attribute (e.g., <div>). The loading attribute is only supported on <img> and <iframe> elements, and only on supported browsers ([caniuse](https://caniuse.com/loading-lazy-attr)).
+Interestingly, 354 origins on desktop were attempting to use native-lazy loading on HTML elements that do not support the loading attribute (e.g., `<div>`). The loading attribute is only supported on `<img>` and `<iframe>` elements, and only on supported browsers ([caniuse](https://caniuse.com/loading-lazy-attr)).
 
 ### Cumulative Layout Shift (CLS)
 
@@ -224,7 +233,7 @@ Performance degradation from 4G to 3G and below was not as pronounced as with FC
 
 ![image](insert_image_url_here)
 
-In terms of ranking, CLS performance showed an interesting trough for the top 10,000 websites. In addition, all the ranked groups above 1M performed worse than the sites ranked under 1M (the  "all"  group had better performance than all the other ranked groupings even though it includes those groupings; therefore, the sub-1M group performs better). Wordpress may again play a role in this as 60% of origins on Wordpress experienced good CLS.
+In terms of ranking, CLS performance showed an interesting trough for the top 10,000 websites. In addition, all the ranked groups above 1M performed worse than the sites ranked under 1M (the  "all"  group had better performance than all the other ranked groupings even though it includes those groupings; therefore, the sub-1M group performs better). Wordpress may again play a role in this as [60% of origins on Wordpress experienced good CLS](https://datastudio.google.com/s/qG00yMxSa3o).
 
 Common culprits for poor CLS include not reserving space for images, text shifts when web fonts are loaded, top banners inserted after first paint, non-composited animations, and iframes (especially from third parties).
 
@@ -250,20 +259,26 @@ If your site's performance is not in the "good" category, then you definitely ha
 
 ### Total Blocking Time (TBT)
 
-> The Total Blocking Time (TBT) metric measures the total amount of time between First Contentful Paint (FCP) and Time to Interactive (TTI) where the main thread was blocked for long enough to prevent input responsiveness. [big fancy quote, source is [https://web.dev/tbt/](https://web.dev/tbt/) ]
+> The Total Blocking Time (TBT) metric measures the total amount of time between First Contentful Paint (FCP) and Time to Interactive (TTI) where the main thread was blocked for long enough to prevent input responsiveness. --[Web.dev](https://web.dev/tbt/) ]
 
-TBT is a lab-based metric that helps us debug potential interactivity issues. FID is a field-based metric, and TBT is its lab-based analog. Currently, when evaluating client websites, I reach for total blocking time ([TBT](https://web.dev/tbt/)) as an extended indicator of possible performance issues due to JavaScript.
+[Total Blocking Time (TBT)](https://web.dev/tbt/) is a lab-based metric that helps us debug potential interactivity issues. FID is a field-based metric, and TBT is its lab-based analog. Currently, when evaluating client websites, I reach for total blocking time TBT as an extended indicator of possible performance issues due to JavaScript.
 
 Unfortunately, TBT is not measured in the Chrome User Experience Report, but we can still get an idea of what's going on using the HTTP Archive Lighthouse data (only collected for mobile):
 
 ![image](insert_image_url_here)
 
-Note: The buckets in the chart are based off of the Lighthouse score for TBT (e.g., >= 0.9 results in "good"), which is how Lighthouse presents it. Due to rounding of the score, some TBT values slightly above 200ms get categorized as "good" (and similarly at the 600ms threshold).
+<p class="note"><strong>Note:</strong> The buckets in the chart are based off of the Lighthouse score for TBT (e.g., >= 0.9 results in "good"), which is how Lighthouse presents it. Due to rounding of the score, some TBT values slightly above 200ms get categorized as "good" (and similarly at the 600ms threshold).</p>
 
 Remember that this is based on a single, throttled-CPU Lighthouse run through WebPageTest and does not reflect real user experiences. However, potential interactivity looked much worse when looking at TBT versus FID. The "real" evaluation of your interactivity is probably somewhere in between. Thus, if you're "good" in terms of FID, it's valuable to take a look at TBT just in case you're missing some poor user experiences that FID can't catch yet. The same issues that cause poor FID also cause poor TBT.
 
-**67 seconds**
-Longest TBT
+<!-- TODO: check -->
+{{ figure_markup(
+  content="67 seconds",
+  caption="Longest TBT",
+  sheets_gid="1423728540",
+  sql_file="lcp_element_data.sql"
+  )
+}}
 
 ## Conclusion
 
@@ -275,4 +290,4 @@ Second, as new features in HTML, CSS, and JavaScript are released, make sure you
 
 Finally, until we have a better metric for interactivity, optimize for FID (field/real-user data) and TBT (lab data). Take a look at the [proposals](https://web.dev/better-responsiveness-metric/) for new metrics and participate by providing your own feedback.
 
-What did you find most interesting or surprising? Share your thoughts with us on Twitter (@HTTPArchive)!
+What did you find most interesting or surprising? Share your thoughts with us on Twitter ([@HTTPArchive](https://twitter.com/HTTPArchive))!
