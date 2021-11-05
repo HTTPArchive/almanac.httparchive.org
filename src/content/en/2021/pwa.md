@@ -3,18 +3,19 @@
 title: PWA
 description: PWA chapter of the 2021 Web Almanac covering service workers (usage and features), Web App Manifests, Lighthouse insights, service worker libraries (including Workbox), Web Push notifications and distribution.
 authors: [demianrenzulli]
-reviewers: [webmaxru, andreban, jeffposnick, Schweinepriester, thepassle, hemanth, tropicadri]
+reviewers: [tunetheweb, webmaxru, jeffposnick, andreban, Schweinepriester, hemanth, thepassle, tropicadri]
 analysts: [tunetheweb, demianrenzulli]
-editors: [tunetheweb]
+editors: [rviscomi]
 translators: []
+demianrenzulli_bio: Demian is a member of Google's Web Ecosystems Consulting team, born in Buenos Aires, Argentina and currently based in New York. His focus is on Progressive Web Apps and Advanced Capabilities. He often writes at <a hreflang="en" href="https://web.dev/authors/demianrenzulli/">web.dev</a>.
 results: https://docs.google.com/spreadsheets/d/16AkIdDBBkCR5Kgb7kyfYvnNLQBu23Vsh7MUSFHW9RtA
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: The most popular sites are more prone to use features like service workers and advanced capabilities
+featured_stat_1: 3.22%
+featured_stat_label_1: Percent of mobile sites that use service workers.
+featured_stat_2: 98.03%
+featured_stat_label_2: Percent of manifests preferring native app.
+featured_stat_3: 32.19%
+featured_stat_label_3: Percentage of mobile sites with service workers that use the Workbox library.
 ---
 
 ## Introduction
@@ -42,7 +43,7 @@ In this year's PWA chapter, we'll focus on all the measurable aspects of a PWA: 
 
 ## Service workers
 
-[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API") (introduced in December 2014) are one of the core components of a PWA. They act as a network proxy and allow for features like offline, push notifications, and background processing, which are characteristic of "app-like" experiences.
+[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) (introduced in December 2014) are one of the core components of a PWA. They act as a network proxy and allow for features like offline, push notifications, and background processing, which are characteristic of "app-like" experiences.
 
 It took some time for service workers to become widely adopted, but today they are supported by <a hreflang="en" href="https://caniuse.com/serviceworkers">most major browsers</a>. However, this doesn't mean that all service worker features work across browsers. For example, while most of the core functionalities like network proxying are available, APIs like `Push` <a hreflang="en" href="https://caniuse.com/push-api">are not yet available in Webkit</a>.
 
@@ -110,6 +111,7 @@ this.addEventListener('install', function(event) {
 this.oninstall = function(event) {
   // …
 };
+```
 
 We have measured and combined both ways of implementing event listeners and obtained the following stats:
 
@@ -316,10 +318,6 @@ In last year's PWA chapter we included a section about <a hreflang="en" href="..
 
 This year we decided not to rely on this property to determine how many PWAs of each category are out there, since the usage of this property is incredibly low (less than 1% of sites have this property set).
 
-In the next section, we'll use an external data source to get an approximation of this.
-
-## PWA use cases by industry
-
 Given our lack of data on categories and industries using PWAs, we turn to external sources for this information. Mobsted recently published their own <a hreflang="en" href="https://mobsted.com/world_state_of_pwa_2021">analysis of the use of PWAs</a>, which analyzed the percentage of PWAs by industry, among other things:
 
 {{ figure_markup(
@@ -333,6 +331,8 @@ Given our lack of data on categories and industries using PWAs, we turn to exter
 }}
 
 According to Mobstead's analysis, the most common categories are "Business & Industrial", "Arts & Entertainment", and "Home & Garden".
+
+This seems to correlate with [last year's analysis of the "category" web manifest property](../2020/pwa#top-manifest-categories), where the top three values were "shopping", "business" and "entertainment".
 
 ## Lighthouse insights
 
@@ -500,7 +500,7 @@ The service worker interface also allows listening to some events to handle user
 
 <p class="note">Note: It's interesting to see that service worker notification events (e.g. <code>push</code>, <code>notificationclick</code>) have even more usage the <code>pushManager</code> property, which is used, for example, to request permission for WebPush notifications (via <code>pushManager.subscribe</code>). One of the reasons for this might be that some sites have implemented WebPush and decided to roll them back at some point, by eliminating the code to request permission for them, but leaving the service worker code unchanged.</p>
 
-### Web Push Notification acceptance rates
+### Web Push notification acceptance rates
 
 For a notification to be useful it has to be <a hreflang="en" href="https://developers.google.com/web/fundamentals/push-notifications">timely, precise, and relevant</a>. At the moment of showing the prompt to request permission, the user needs to understand the value of the service. Good notification updates have to provide something useful to the users, and related to the reason why the permission was granted.
 

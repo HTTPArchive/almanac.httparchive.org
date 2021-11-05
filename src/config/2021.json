@@ -316,6 +316,78 @@
       "github": "GeekBoySupreme",
       "twitter": "shuvam360",
       "website": "https://shuvam.xyz"
+    },
+    "demianrenzulli": {
+      "name": "Demian Renzulli",
+      "teams": [
+        "authors",
+        "analysts"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/15170359?v=4&s=200",
+      "github": "demianrenzulli",
+      "twitter": "drenzulli"
+    },
+    "hemanth": {
+      "name": "Hemanth HM",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/18315?v=4&s=200",
+      "website": "https://h3manth.com",
+      "github": "hemanth",
+      "twitter": "gnumanth"
+    },
+    "jeffposnick": {
+      "name": "Jeff Posnick",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1749548?v=4&s=200",
+      "website": "https://jeffy.info",
+      "github": "jeffposnick",
+      "twitter": "jeffposnick"
+    },
+    "thepassle": {
+      "name": "Pascal Schilp",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/17054057?v=4&s=200",
+      "github": "thepassle"
+    },
+    "webmaxru": {
+      "name": " Maxim Salnikov",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/1560278?v=4&s=200",
+      "github": "webmaxru",
+      "twitter": "webmaxru"
+    },
+    "andreban": {
+      "name": "André Cipriani Bandarra",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/1733592?v=4&s=200",
+      "github": "andreban",
+      "twitter": "andreban"
+    },
+    "Schweinepriester": {
+      "name": "Kai Schweinepriester",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/2644614?v=4&s=200",
+      "github": "Schweinepriester"
+    },
+    "tropicadri": {
+      "name": "Adriana Jara",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/32825533?v=4&s=200",
+      "github": "tropicadri"
     }
   }
 }
