@@ -126,11 +126,11 @@ SELECT
     mimeType,
     number_of_images,
     bpp_quantiles[OFFSET(0)] as min_bpp,
-    bpp_quantiles[OFFSET(5)] as p5_bpp,
+    bpp_quantiles[OFFSET(10)] as p10_bpp,
     bpp_quantiles[OFFSET(25)] as p25_bpp,
     bpp_quantiles[OFFSET(50)] as p50_bpp,
     bpp_quantiles[OFFSET(75)] as p75_bpp,
-    bpp_quantiles[OFFSET(95)] as p95_bpp,
+    bpp_quantiles[OFFSET(90)] as p90_bpp,
     bpp_quantiles[OFFSET(100)] as max_bpp
 FROM percentiles
 ORDER BY number_of_images DESC
