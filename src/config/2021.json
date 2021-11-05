@@ -317,6 +317,18 @@
       "github": "GeekBoySupreme",
       "twitter": "shuvam360",
       "website": "https://shuvam.xyz"
+    },
+    "victorlep": {
+      "name": "Victor Le Pochat",
+      "teams": [
+        "analysts",
+        "authors"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/6874341?v=4&s=200",
+      "github": "VictorLeP",
+      "linkedin": "victor-le-pochat",
+      "twitter": "VictorLePochat",
+      "website": "https://lepoch.at"
     }
   }
 }
