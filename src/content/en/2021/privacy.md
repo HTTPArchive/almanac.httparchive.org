@@ -154,7 +154,7 @@ The most popular company performing CNAME-based tracking is [Pardot](https://www
 }}
 
 
-When we look at the rank of the websites that use CNAME-based tracking, we see that 4.2% of the top 1000 websites embed a CNAME tracker. In the top 10000, that number falls to 3.33% of websites.
+When we look at the rank of the websites that use CNAME-based tracking, we see that 4.2% of the top 1,000 websites embed a CNAME tracker. In the top 10,000, that number falls to 3.33% of websites.
 
 
 
