@@ -10,11 +10,11 @@ translators: []
 results: https://docs.google.com/spreadsheets/d/1tf4RMF8SYr6he9tbqt61yuFJ_QK-F-i7XPxaPkpKSDI/
 tunetheweb_bio: Barry Pollard is a software developer and author of the Manning book <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. He thinks the web is amazing but wants to make it even better. You can find him tweeting <a href="https://twitter.com/tunetheweb">@tunetheweb</a> and blogging at <a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
 featured_quote: Third parties are integral to the web. In many ways they are the web—without the prevalence of third-parties websites would be harder to build, and be less feature rich.
-featured_stat_1: 94.40%
+featured_stat_1: 94.4%
 featured_stat_label_1: Sites using third parties
 featured_stat_2: 1,625
 featured_stat_label_2: YouTube embed main-thread blocking time
-featured_stat_3: 45.85%
+featured_stat_3: 45.9%
 featured_stat_label_3: Requests which are 3rd party
 ---
 
@@ -292,7 +292,7 @@ To understand third parties' impact on rendering, we've analyzed how sites perfo
 {{ figure_markup(
   image="third-parties-most-popular-third-parties-impact-on-render.png",
   caption="Top 15 third parties impact on render.",
-  description="Bar chart showing the percentage of times the top 15 third parties block render. `*.google-analytics.com` is blocking render 0.1% of the time, `fonts.googleapis.com` is 51.3% `accounts.google.com` is 3.2% `adservice.google.com` is 0.5% `*.googletagmanager.com` is 4.52% `ajax.googleapis.com` is 22.7% `*.facebook.com` is 0.1% `amp.cloudflare.com` is 45.0% `*.youtube.com` is 1.0% `*.bootstrapcdn.com` is 63.1% `maps.google.com` is 13.6% `*.jsdelivr.net` is 30.3% `*.jquery.com` is 46.4% `*.fontawesome.com` is 66.0% `*.adobedtm.com` is 3.1%.",
+  description="Bar chart showing the percentage of times the top 15 third parties block render. `*.google-analytics.com` is blocking render 0.1% of the time, `fonts.googleapis.com` is 51.3% `accounts.google.com` is 3.2% `adservice.google.com` is 0.5% `*.googletagmanager.com` is 4.5% `ajax.googleapis.com` is 22.7% `*.facebook.com` is 0.1% `amp.cloudflare.com` is 45.0% `*.youtube.com` is 1.0% `*.bootstrapcdn.com` is 63.1% `maps.google.com` is 13.6% `*.jsdelivr.net` is 30.3% `*.jquery.com` is 46.4% `*.fontawesome.com` is 66.0% `*.adobedtm.com` is 3.1%.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=1221471478&format=interactive",
   width=600,
   height=585,
