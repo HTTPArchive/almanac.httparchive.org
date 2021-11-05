@@ -21,15 +21,29 @@ featured_stat_label_3: Mobile sites use Declarative Link Capturing
 ## Introduction
 Capabilities are new web platform APIs that unlock entirely new use cases for web applications. Those new APIs are essential for [Progressive Web Apps (PWA)](../pwa), a web-based application model. A PWA is a web app that users can install to their system. PWAs run even offline and launch quickly. To integrate with the underlying operating system, PWAs can only use web platform APIs. While browsers have already exposed some lower-level features to the web (e.g., [geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API), [gamepad](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API), or [webcam](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) access), many APIs were still missing or were clumsy to use (e.g., file system or clipboard access).
 
+### Project Fugu
+
+{{ figure_markup(
+image="fugu.svg",
+caption='The puffer fish is Project Fugu's mascot (license: <a hreflang="en" href="https://github.com/googlefonts/noto-emoji/blob/main/LICENSE">Apache License 2.0</a>)',
+description='An illustration of a puffer fish.',
+width=128,
+height=128
+) }}
+
 The <a hreflang="en" href="https://www.chromium.org/teams/web-capabilities-fugu">Capabilities Project</a> (codename Fugu) is a joint effort by Microsoft, Intel, Google, and other Chromium contributors. It tries to bridge the gap between platform-specific applications and web apps by designing and implementing new powerful web platform APIs in a secure and privacy-preserving manner. As capabilities unlock more and more use cases, they lay the path for entire new application categories to finally make the shift to the web (e.g., IDEs, image editors, or office applications).
 
 Over the last two years, the focus for the Fugu team has been on capabilities for desktop productivity applications and hardware-related APIs. This chapter briefly introduces several new capabilities and analyzes how many different desktop and mobile websites use them. As capabilities are particularly interesting for app-like websites, their relative usage is comparatively low. This is why absolute website numbers are used in this chapter. For each capability, there will be a demo website or app that makes use of it.
+
+### Methodology
 
 This chapter uses the HTTP Archive data set. For security reasons, some APIs require a user gesture (i.e., a click or keypress) to function. As the HTTP Archive crawler does not support detecting those APIs during runtime, the source code of the websites is parsed statically instead: For instance, the regular expression `/navigator\.share\s*\(/g` is matched against the website's source code to determine if it (potentially) makes use of the Web Share API.
 
 This method is not perfectly accurate, as it doesn't measure the actual use of an API, and developers may invoke an API using a different syntax or work with minified code. However, this approach should provide a sufficiently good overview. You can find the exact regular expressions for the 30 supported capabilities in this <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/fugu-apis.js">source file</a>.
 
 All usage data in this chapter is based on the July 2021 crawl. You can find the raw data in the <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1b4moteB9EiLYkH1Ln9qfi1tnU-E4N2UQ87uayWytDKw/">Capabilities 2021 Results Sheet</a>.
+
+### Status of the presented APIs
 
 Please note that most of the APIs presented here are so-called _incubations_. Unless noted, they are not (yet) W3C Recommendations, i.e., official web standards. Instead, these APIs are being worked on in the Web Platform Incubator Community Group (WICG), where browser vendors and developers can discuss new features.
 
