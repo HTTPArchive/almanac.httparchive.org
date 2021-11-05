@@ -244,9 +244,27 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/44442451?v=4&s=200",
       "github": "AbbyTsai"
     },
+    "tropicadri": {
+      "name": "Adriana Jara",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/32825533?v=4&s=200",
+      "github": "tropicadri"
+    },
+    "andreban": {
+      "name": "André Cipriani Bandarra",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/1733592?v=4&s=200",
+      "github": "andreban",
+      "twitter": "andreban"
+    },
     "tunetheweb": {
       "name": "Barry Pollard",
       "teams": [
+        "analysts",
         "developers",
         "leads"
       ],
@@ -265,57 +283,6 @@
       "website": "https://www.lookzook.com",
       "github": "obto",
       "twitter": "theobto"
-    },
-    "lucasbona05": {
-      "name": "Lucas Gonçalves",
-      "teams": [
-        "developers"
-      ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/58731469?v=4",
-      "github": "lucasbona05"
-    },
-    "michelleoconnor": {
-      "name": "Michelle O'Connor",
-      "teams": [
-        "designers"
-      ]
-    },
-    "paulcalvano": {
-      "name": "Paul Calvano",
-      "teams": [
-        "leads"
-      ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/7459458?v=4&s=200",
-      "github": "paulcalvano",
-      "twitter": "paulcalvano",
-      "website": "https://paulcalvano.com"
-    },
-    "rviscomi": {
-      "name": "Rick Viscomi",
-      "teams": [
-        "leads"
-      ],
-      "avatar_url": "https://avatars0.githubusercontent.com/u/1120896?v=4&s=200",
-      "github": "rviscomi",
-      "twitter": "rick_viscomi"
-    },
-    "shantsis": {
-      "name": "Shaina Hantsis",
-      "teams": [
-        "designers"
-      ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/22671477?v=4&s=200",
-      "github": "shantsis"
-    },
-    "GeekBoySupreme": {
-      "name": "Shuvam Manna",
-      "teams": [
-        "designers"
-      ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/15321738?v=4&s=200",
-      "github": "GeekBoySupreme",
-      "twitter": "shuvam360",
-      "website": "https://shuvam.xyz"
     },
     "demianrenzulli": {
       "name": "Demian Renzulli",
@@ -347,13 +314,21 @@
       "github": "jeffposnick",
       "twitter": "jeffposnick"
     },
-    "thepassle": {
-      "name": "Pascal Schilp",
+    "Schweinepriester": {
+      "name": "Kai Schweinepriester",
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/17054057?v=4&s=200",
-      "github": "thepassle"
+      "avatar_url": "https://avatars.githubusercontent.com/u/2644614?v=4&s=200",
+      "github": "Schweinepriester"
+    },
+    "lucasbona05": {
+      "name": "Lucas Gonçalves",
+      "teams": [
+        "developers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/58731469?v=4",
+      "github": "lucasbona05"
     },
     "webmaxru": {
       "name": " Maxim Salnikov",
@@ -364,30 +339,57 @@
       "github": "webmaxru",
       "twitter": "webmaxru"
     },
-    "andreban": {
-      "name": "André Cipriani Bandarra",
+    "michelleoconnor": {
+      "name": "Michelle O'Connor",
       "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/1733592?v=4&s=200",
-      "github": "andreban",
-      "twitter": "andreban"
+        "designers"
+      ]
     },
-    "Schweinepriester": {
-      "name": "Kai Schweinepriester",
+    "thepassle": {
+      "name": "Pascal Schilp",
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/2644614?v=4&s=200",
-      "github": "Schweinepriester"
+      "avatar_url": "https://avatars3.githubusercontent.com/u/17054057?v=4&s=200",
+      "github": "thepassle"
     },
-    "tropicadri": {
-      "name": "Adriana Jara",
+    "paulcalvano": {
+      "name": "Paul Calvano",
       "teams": [
-        "reviewers"
+        "leads"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/32825533?v=4&s=200",
-      "github": "tropicadri"
+      "avatar_url": "https://avatars3.githubusercontent.com/u/7459458?v=4&s=200",
+      "github": "paulcalvano",
+      "twitter": "paulcalvano",
+      "website": "https://paulcalvano.com"
+    },
+    "rviscomi": {
+      "name": "Rick Viscomi",
+      "teams": [
+        "editors",
+        "leads"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1120896?v=4&s=200",
+      "github": "rviscomi",
+      "twitter": "rick_viscomi"
+    },
+    "shantsis": {
+      "name": "Shaina Hantsis",
+      "teams": [
+        "designers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/22671477?v=4&s=200",
+      "github": "shantsis"
+    },
+    "GeekBoySupreme": {
+      "name": "Shuvam Manna",
+      "teams": [
+        "designers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/15321738?v=4&s=200",
+      "github": "GeekBoySupreme",
+      "twitter": "shuvam360",
+      "website": "https://shuvam.xyz"
     }
   }
 }

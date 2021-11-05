@@ -9,11 +9,11 @@ editors: [rviscomi]
 translators: []
 demianrenzulli_bio: Demian is a member of Google's Web Ecosystems Consulting team, born in Buenos Aires, Argentina and currently based in New York. His focus is on Progressive Web Apps and Advanced Capabilities. He often writes at <a hreflang="en" href="https://web.dev/authors/demianrenzulli/">web.dev</a>.
 results: https://docs.google.com/spreadsheets/d/16AkIdDBBkCR5Kgb7kyfYvnNLQBu23Vsh7MUSFHW9RtA
-featured_quote: The most popular sites are more prone to use features like service workers and advanced capabilities
-featured_stat_1: 3.22%
-featured_stat_label_1: Percent of mobile sites that use service workers.
-featured_stat_2: 98.03%
-featured_stat_label_2: Percent of manifests preferring native app.
+featured_quote: The most popular sites are more prone to use features like service workers and advanced capabilities.
+featured_stat_1: 8.62%
+featured_stat_label_1: Percentage of top sites using service workers.
+featured_stat_2: 57.88%
+featured_stat_label_2: Percentage of PWAs using the service worker cache.
 featured_stat_3: 32.19%
 featured_stat_label_3: Percentage of mobile sites with service workers that use the Workbox library.
 ---
@@ -63,7 +63,7 @@ We estimate that between 1.22% to 3.22% of sites use service workers in 2021, de
 
 Measuring whether a service worker is used is not as simple as might seem. For example, Lighthouse detects 1.5%, however it adds <a hreflang="en" href="https://web.dev/service-worker">some extra checks in that definition</a> rather than just service worker usage so could be seen as a lower bound. <a hreflang="en" href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">Chrome itself measures 1.22% sites using service workers</a>, which is strangely less than Lighthouse for reasons that we have not been able to ascertain.
 
-For this year's PWA chapter, we've updated our measurement techniques by creating a <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/pwa.js">new set of metrics</a>. For example, we're now using heuristics that check for several service worker characteristics, like having <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration">service worker registration</a> calls and use of service worker specific methods, libraries, and events.
+For this year's PWA chapter, we've updated our measurement techniques by creating a <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/pwa.js">new set of metrics</a>. For example, we're now using heuristics that check for several service worker characteristics, like having [service worker registration](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration) calls and use of service worker specific methods, libraries, and events.
 
 From the data we gathered, we can see that about 3.05% of desktop sites and 3.22% of mobile sites use service workers features, which suggests that service worker usage might be higher than measured in <a hreflang="en" href="https://almanac.httparchive.org/en/2020/pwa#service-worker-usage">last year's chapter (0.88% in desktop and 0.87% in mobile)</a>.
 
@@ -93,11 +93,11 @@ When measuring the top 1,000 sites, 8.62% of them use service workers. As we bro
 
 ### Service worker features
 
-In this section, we'll analyze the adoption of various service worker features (<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope#events">events</a>, <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope#properties">properties</a>, <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope#methods">methods</a>) for most common PWA tasks (offline, push notifications, background processing, etc).
+In this section, we'll analyze the adoption of various service worker features ([events](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope#events), [properties](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope#properties), [methods](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope#methods)) for most common PWA tasks (offline, push notifications, background processing, etc).
 
 #### Service worker events
 
-The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope">ServiceWorkerGlobalScope interface</a> interface represents the global execution context of a service worker and is governed by different <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope#events">events</a>. One can listen to them in two ways: via event listeners or service worker properties.
+The [ServiceWorkerGlobalScope interface](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope) interface represents the global execution context of a service worker and is governed by different [events](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope#events). One can listen to them in two ways: via event listeners or service worker properties.
 
 For example, here are two ways of listening to the `install` event in a service worker:
 
@@ -146,7 +146,7 @@ The most widely adopted is `push`, which lets you listen for push events sent by
 
 The last group of events in [Figure 16.4](#fig-4) allow you to run certain tasks in service workers in the background, for example, to synchronize data or retry tasks when the connectivity fails. <a hreflang="en" href="https://developers.google.com/web/updates/2015/12/background-sync">Background Sync</a> (via `sync` event listener)  allows a web app to delegate a task to the service worker and automatically retry it if it fails or there's no connectivity (in which case the service worker waits for connectivity to be back to automatically retry). <a hreflang="en" href="https://web.dev/periodic-background-sync/">Periodic Background Sync</a> (via `periodicSync`) allows running tasks at periodic intervals in the service worker (for example, fetching and caching the top news every morning). Other APIs like <a hreflang="en" href="https://developers.google.com/web/updates/2018/12/background-fetch">Background Fetch</a>, don't show up in the chart, as their usage is still quite low.
 
-As seen, background sync techniques don't have wide adoption yet compared to the others. This is in part because use cases for background sync are less frequent and the APIs are not yet available across all browsers.  <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Periodic_Background_Synchronization_API">Periodic Background Sync</a> also requires the PWA to be installed for it to be used, which makes it unavailable for sites that don't provide <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen">"add to home screen"</a> functionality.
+As seen, background sync techniques don't have wide adoption yet compared to the others. This is in part because use cases for background sync are less frequent and the APIs are not yet available across all browsers.  [Periodic Background Sync](https://developer.mozilla.org/en-US/docs/Web/API/Web_Periodic_Background_Synchronization_API) also requires the PWA to be installed for it to be used, which makes it unavailable for sites that don't provide ["add to home screen"](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen) functionality.
 
 Despite that, there are some important reasons for using background sync in modern web apps: one of them being offline analytics (<a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-google-analytics">Workbox Analytics uses Background Sync for this</a>), or retrying failed queries due to lack of connectivity (as <a hreflang="en" href="https://web.dev/google-search-sw/">some search engines do</a>).
 
@@ -161,10 +161,10 @@ The following two events are quite popular and frequently used in tandem:
 - `ServiceWorkerGlobalScope.skipWaiting()`
 - `Clients.claim()`
 
-<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting">`ServiceWorkerGlobalScope.skipWaiting()`</a> is usually called at the beginning of the `install` event and allows a newly installed service worker to immediately move to the `active` state, even if there's another active service worker. Our analysis showed that it is used in 60.47% of desktop and 59.60% of mobile PWAs.
+[`ServiceWorkerGlobalScope.skipWaiting()`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting) is usually called at the beginning of the `install` event and allows a newly installed service worker to immediately move to the `active` state, even if there's another active service worker. Our analysis showed that it is used in 60.47% of desktop and 59.60% of mobile PWAs.
 
 {{ figure_markup(
-  caption="Percent of mobile sites with service workers that call skipWaiting()",
+  caption="Percent of mobile sites with service workers that call `skipWaiting()`",
   content="59.60%",
   classes="big-number",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=2101442063&format=interactive",
@@ -173,10 +173,10 @@ The following two events are quite popular and frequently used in tandem:
 )
 }}
 
-<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Clients/claim">`Clients.claim()`</a> is frequently used in combination with `skipWaiting()`, and it allows active service workers to "claim control" of all the clients under its scope. Appears in 48.98% of desktop pages and 47.14% of mobile.
+[`Clients.claim()`](https://developer.mozilla.org/en-US/docs/Web/API/Clients/claim) is frequently used in combination with `skipWaiting()`, and it allows active service workers to "claim control" of all the clients under its scope. Appears in 48.98% of desktop pages and 47.14% of mobile.
 
 {{ figure_markup(
-  caption="Percent of mobile sites with service workers that call clients.claim()",
+  caption="Percent of mobile sites with service workers that call `clients.claim()`",
   content="47.14%",
   classes="big-number",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=2101442063&format=interactive",
@@ -189,7 +189,7 @@ Combining both of the previous events means that a new service worker will immed
 Developers find this technique useful to ensure that every critical update goes through immediately, which explains its wide adoption.
 
 Another interesting aspect to analyze are caching operations, which are frequently used in service workers and are at a core of a PWA experience, since they enable features like offline and help improving performance.
-The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/caches">`ServiceWorkerGlobalScope.caches`</a> property returns the <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage">CacheStorage object</a> associated with a service worker allowing access to the different <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Cache">caches</a>. We've found that it is used in 57.41% desktop and in 57.88% mobile sites that use service workers.
+The [`ServiceWorkerGlobalScope.caches`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/caches) property returns the [CacheStorage object](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage) associated with a service worker allowing access to the different [caches](https://developer.mozilla.org/en-US/docs/Web/API/Cache). We've found that it is used in 57.41% desktop and in 57.88% mobile sites that use service workers.
 
 {{ figure_markup(
   caption="Percent of mobile sites with service workers that use the service worker cache",
@@ -203,7 +203,7 @@ The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Serv
 
 Its high usage is not unexpected as caching allows for reliable and performant web applications, which is often one of the main reasons why developers work on PWAs.
 
-Finally it's worth taking a look at <a hreflang="en" href="https://developers.google.com/web/updates/2017/02/navigation-preload">Navigation Preloads</a>, which allows you to make the requests in parallel with the service worker boot-up time to avoid delaying the requests in those situations. The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/NavigationPreloadManager">`NavigationPreloadManager`</a> interface provides a set of methods to implement this technique, and according to our analysis, it is currently used in 11.02% of desktop and 9.78% of mobile sites that use service workers.
+Finally it's worth taking a look at <a hreflang="en" href="https://developers.google.com/web/updates/2017/02/navigation-preload">Navigation Preloads</a>, which allows you to make the requests in parallel with the service worker boot-up time to avoid delaying the requests in those situations. The [`NavigationPreloadManager`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationPreloadManager) interface provides a set of methods to implement this technique, and according to our analysis, it is currently used in 11.02% of desktop and 9.78% of mobile sites that use service workers.
 
 {{ figure_markup(
   caption="Percent of mobile sites with use navigation preloads",
@@ -215,11 +215,11 @@ Finally it's worth taking a look at <a hreflang="en" href="https://developers.go
 )
 }}
 
-Navigation Preloads counts with a decent level of adoption, despite the fact that it's <a hreflang="en" href="https://caniuse.com/?search=navigation%20preload%20manager">not yet available in all browsers</a>. It's a technique that many developers could benefit from, and they can implement it as a <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement">progressive enhancement</a>.
+Navigation Preloads counts with a decent level of adoption, despite the fact that it's <a hreflang="en" href="https://caniuse.com/?search=navigation%20preload%20manager">not yet available in all browsers</a>. It's a technique that many developers could benefit from, and they can implement it as a [progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement).
 
 ## Web App Manifests
 
-<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/Manifest">The Web App Manifest</a> is a JSON file that contains metadata about a web application and it's one of the main components of a PWA, as publishing a web app manifest is one of the preconditions to provide the "add to home screen" functionality, which allows users to install a web app on their device. Other conditions include serving the site via HTTPS, having an icon, and in some browsers (like Chrome and Edge), having a service worker.
+[The Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) is a JSON file that contains metadata about a web application and it's one of the main components of a PWA, as publishing a web app manifest is one of the preconditions to provide the "add to home screen" functionality, which allows users to install a web app on their device. Other conditions include serving the site via HTTPS, having an icon, and in some browsers (like Chrome and Edge), having a service worker.
 Take into account that <a hreflang="en" href="https://web.dev/installable-manifest/#in-other-browsers">different browsers have different criteria for installation</a>.
 
 Here are some usage stats about Web App Manifests. It's useful to visualize them along with the service worker ones, to start having an idea of the potential percentage of "installable" web applications:
@@ -314,7 +314,7 @@ Despite the fact that the vast majority of PWA developers prefer promoting their
 
 ### Top manifest categories
 
-In last year's PWA chapter we included a section about <a hreflang="en" href="../2020/pwa#top-manifest-categories">manifest categories</a>, showing the percentage of PWAs per industry, based on the <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/Manifest/categories">manifest categories</a> property.
+In last year's PWA chapter we included a section about <a hreflang="en" href="../2020/pwa#top-manifest-categories">manifest categories</a>, showing the percentage of PWAs per industry, based on the [manifest categories](https://developer.mozilla.org/en-US/docs/Web/Manifest/categories) property.
 
 This year we decided not to rely on this property to determine how many PWAs of each category are out there, since the usage of this property is incredibly low (less than 1% of sites have this property set).
 
@@ -357,7 +357,7 @@ Lighthouse also provides a <a hreflang="en" href="https://web.dev/lighthouse-pwa
 
 {{ figure_markup(
   image="pwa-lighthouse-pwa-scores.png",
-  caption="Lighthouse PWA audits.",
+  caption="Lighthouse PWA scores.",
   description="Bar chart showing Lighthouse PWA scores for all websites and PWA websites by percentile with PWA site scoring approximately double the all sites score at all percentiles. 10th percentile has a score of 25 for all sites, and 50 for PWA sites, 25th has 33 and 58 respectively, 50th has 42 and 83, 75th has 50 and 92, and finally 90th percentile has 50 and 100.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=2065040053&format=interactive",
   sheets_gid="1466930372",
   sql_file="lighthouse_pwa_score.sql"
@@ -374,9 +374,9 @@ Once again, the difference between both groups is expected, as "PWA sites" are n
 
 ## Service worker libraries
 
-Service workers can use libraries to take care of common tasks, functionalities and best practices (e.g. to implement caching techniques, push notifications, etc.). The most common way of doing this is by using <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts">importScripts()</a>, which is the way of importing javascript libraries in workers. In other cases, build tools can also inject the code of libraries directly into service workers at build time.
+Service workers can use libraries to take care of common tasks, functionalities and best practices (e.g. to implement caching techniques, push notifications, etc.). The most common way of doing this is by using [importScripts()](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts), which is the way of importing javascript libraries in workers. In other cases, build tools can also inject the code of libraries directly into service workers at build time.
 
-Take into account that not all libraries can be used in worker contexts. Workers don't have access to the <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Window">Window</a>, and therefore, the <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Document">Document</a> object,  and have limited access to browser APIs. For that reason, service worker libraries are specifically designed to be used in these contexts.
+Take into account that not all libraries can be used in worker contexts. Workers don't have access to the [Window](https://developer.mozilla.org/en-US/docs/Web/API/Window), and therefore, the [Document](https://developer.mozilla.org/en-US/docs/Web/API/Document) object,  and have limited access to browser APIs. For that reason, service worker libraries are specifically designed to be used in these contexts.
 
 In this section we'll analyze the popularity of various service worker libraries.
 
@@ -397,7 +397,7 @@ Workbox is still the most popular library, being used by 15.43% of desktop and 1
 
 It's also important to note that the Workbox predecessor `sw_toolbox`, which had <a hreflang="en" href="../2020/pwa#popular-import-scripts">13.92% of usage in desktop and 12.84% in mobile last year</a> dropped to 0.51% and 0.36% respectively this year. This is in part due to the fact that `sw_toolbox` was <a hreflang="en" href="https://github.com/GoogleChromeLabs/sw-toolbox/pull/288">deprecated in 2019</a>. It might have taken some time for some popular frameworks and build tools to remove this package, so we are seeing the drop in adoption more clearly this year. Also, our measurement has changed compared to 2020, by adding more sites, which made this metric decrease even more, making it difficult to do a direct year on year comparison.
 
-<p class="note">Note: Take into account that <code><a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts">importScripts()</a></code> is an API of <code><a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope">WorkerGlobalScope</a></code> that can be used in other types of worker context like <code><a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Web Workers</a></code>. <a hreflang="en" href="https://www.google.com/recaptcha/about/">reCaptcha</a>, for example, appears as the second most widely used library, as it uses a web worker that contains an <code>importScripts()</code> call to retrieve the reCaptcha JS code. For that reason, we should consider <a hreflang="en" href="https://firebase.google.com/docs/web/setup">Firebase</a> instead as the second most widely used library in service worker contexts.
+<p class="note">Note: Take into account that <code>[importScripts()](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts)</code> is an API of <code>[WorkerGlobalScope](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope)</code> that can be used in other types of worker context like <code>[Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)</code>. <a hreflang="en" href="https://www.google.com/recaptcha/about/">reCaptcha</a>, for example, appears as the second most widely used library, as it uses a web worker that contains an <code>importScripts()</code> call to retrieve the reCaptcha JS code. For that reason, we should consider <a hreflang="en" href="https://firebase.google.com/docs/web/setup">Firebase</a> instead as the second most widely used library in service worker contexts.
 </p>
 
 ### Workbox usage
@@ -446,7 +446,7 @@ The following table shows the usage of Workbox of the most popular packages:
 {{ figure_markup(
   image="pwa-top-workbox-packages.png",
   caption="Top workbox packages.",
-  description="Bar chart showing popular top Workbox packages by desktop and mobile. `core` is used by 22.0% of desktop Workbox usage and 23.7% of mobile, `routing` by 17.9% and 20.1%, `strategies` by 15.8% and 15.7%, `precaching` by 14.4% and 14.4%, `sw` by 8.4% and 10.3%, `expiration` by 8.3% and 8.9%, `cacheable-response` by 5.9% and 6.6%, `background-sync` by 3.3% and 3.2%, `window` by 3.4% and3.1%, and finally `google-analytics` by 1.9% and 1.9%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=1408852146&format=interactive",
+  description="Bar chart showing popular top Workbox packages by desktop and mobile. `core` is used by 21.96% of desktop Workbox usage and 23.66% of mobile, `routing` by 17.88% and 20.14%, `strategies` by 15.82% and 15.70%, `precaching` by 14.41% and 14.35%, `sw` by 8.38% and 10.29%, `expiration` by 8.30% and 8.93%, `cacheable-response` by 5.87% and 6.64%, `background-sync` by 3.27% and 3.21%, `window` by 3.36% and 3.08%, and finally `google-analytics` by 1.91% and 1.86%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=1408852146&format=interactive",
   sheets_gid="1733966367",
   sql_file="workbox_packages.sql"
   )
@@ -466,7 +466,7 @@ As mentioned, Workbox provides a set of built-in strategies to respond to networ
 {{ figure_markup(
   image="pwa-workbox-runtime-caching-strategies.png",
   caption="Top Workbox runtime caching strategies.",
-  description="Bar chart showing popular runtime caching strategies packages by desktop and mobile. `NetworkFirst` is the caching strategy 31.5% of the time on desktop and 31.7% on mobile, `CacheFirst` by 31.7% and 30.5%, `StaleWhileRevalidate` by 27.0% and 26.7%, `NetworkOnly` by 8.8% and 9.7%, and finally `CacheOnly` by 0.9% and 1.4%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=761410022&format=interactive",
+  description="Bar chart showing popular runtime caching strategies packages by desktop and mobile. `NetworkFirst` is the caching strategy 31.52% of the time on desktop and 31.71% on mobile, `CacheFirst` by 31.72% and 30.51%, `StaleWhileRevalidate` by 27.03% and 26.74%, `NetworkOnly` by 8.81% and 9.66%, and finally `CacheOnly` by 0.92% and 1.37%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=761410022&format=interactive",
   sheets_gid="1537625006",
   sql_file="workbox_methods.sql"
   )
@@ -482,10 +482,10 @@ Web Push notifications are one of the most powerful ways of keeping users engage
 
 Here are some usage stats for some most popular notification-related APIs:
 
-Pages subscribe to notifications via the <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/PushManager">PushManager</a> interface of the <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API">Push API</a>, which is accessed via the `pushManager` property of the <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration">ServiceWorkerRegistration interface</a>. It's used by 44.14% of desktop and 45.09% of mobile PWAs.
+Pages subscribe to notifications via the [PushManager](https://developer.mozilla.org/en-US/docs/Web/API/PushManager) interface of the [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API), which is accessed via the `pushManager` property of the [ServiceWorkerRegistration interface](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration). It's used by 44.14% of desktop and 45.09% of mobile PWAs.
 
 {{ figure_markup(
-  caption="Percent of mobile sites with service workers that some method of the pushManager property",
+  caption="Percent of mobile sites with service workers that some method of the `pushManager` property",
   content="45.09%",
   classes="big-number",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=1163792530&format=interactive",
@@ -525,7 +525,7 @@ An important aspect of a PWA is that it allows users to access the web experienc
 
 Ways to distribute this installable experience include:
 
-- Prompting the user to install the PWA via the <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen">add to home screen</a> functionality.
+- Prompting the user to install the PWA via the [add to home screen](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen) functionality.
 - Uploading the PWA to App Stores by packaging it with <a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity/">Trusted Web Activity (TWA)</a> (currently available in any Android app store, including Google Play and Microsoft Store).
 
 Next, we'll share some stats related to these techniques, to have an idea of the usage and growth of these trends.
@@ -536,7 +536,7 @@ So far, we have analyzed the pre-conditions for add to home screen, like having 
 
 In addition to the browser-provided install experience, developers can provide their own custom install flow directly within the app.
 
-The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/onbeforeinstallprompt">`onbeforeinstallprompt`</a> property of the `Window` object allows the document to capture the event fired when the user is about to be prompted to install a web application. Developers can then decide if they want to show the prompt directly, or defer it to show it when they think it's more appropriate.
+The [`onbeforeinstallprompt`](https://developer.mozilla.org/en-US/docs/Web/API/Window/onbeforeinstallprompt) property of the `Window` object allows the document to capture the event fired when the user is about to be prompted to install a web application. Developers can then decide if they want to show the prompt directly, or defer it to show it when they think it's more appropriate.
 
 Our analysis showed that `beforeinstallprompt` is being used in 0.48% of desktop and 0.63% of mobile sites that have a service worker and a manifest.
 
@@ -577,7 +577,7 @@ Developers can package their PWAs into native apps with TWA directly, <a hreflan
 
 <a hreflang="en" href="https://www.pwabuilder.com/">PWA Builder</a> is an open-source project that can help web developers to build Progressive Web Apps and package them for app stores like the Microsoft Store and Google Play Store. It starts by reviewing a provided URL to check for an available manifest, service worker, and SSL.
 
-<a hreflang="en" href="https://twitter.com/pwabuilder/status/1454250060326318082?s=21">PWA Builder reviewed 200k URLs over a 3 month timeslot</a> and discovered that:
+[PWA Builder reviewed 200k URLs over a 3 month timeslot](https://twitter.com/pwabuilder/status/1454250060326318082?s=21) and discovered that:
 
 - 75% had a manifest detected
 - 11.5% had a service worker detected
