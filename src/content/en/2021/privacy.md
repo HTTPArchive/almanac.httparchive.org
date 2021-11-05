@@ -282,12 +282,9 @@ We find that 0.59% of websites on a desktop client and 0.63% of websites on a mo
 
 ### Data breaches
 
-Poor security management within a company can have a significant impact on its customers' private data. In 2020, , 40 domains were breached and personal data about thousands of users leaked. 
+Poor security management within a company can have a significant impact on its customers' private data. [HaveIBeenPwned](https://haveibeenpwned.com/) allows users to check whether their email address or phone number was leaked in a data breach. Up until now, HaveIBeenPwned has tracked 562 breaches, leaking 640 million records. In 2020, 40 domains were breached and personal data about millions more users leaked, as we show in {add ref to graph?}.Breaches that are _sensitive_ in nature refer to the possibility of a negative impact on the user, if someone were to find that user's data in the breach. One example of a sensitive breach is "[Carding Mafia](https://www.vice.com/en/article/v7m9jx/credit-card-hacking-forum-gets-hacked-exposing-300000-hackers-accounts)", a platform where stolen credit cards are traded. 
 
-[HaveIBeenPwned](https://haveibeenpwned.com/) allows users to check whether their email address or phone number was leaked in a data breach. Up until now, HaveIBeenPwned has tracked 562 breaches, leaking 640 million records. We show the number of data breaches that have occurred in the previous year. Breaches that are _sensitive_ in nature refer to the possibility of a negative impact on the user, if someone were to find that user's data in the breach. One example of a sensitive breach is "[Carding Mafia](https://www.vice.com/en/article/v7m9jx/credit-card-hacking-forum-gets-hacked-exposing-300000-hackers-accounts)", a platform where stolen credit cards are traded. 
-
-Note that 40 breaches in the previous year is a lower bound, since many breaches are only discovered, or made public, several months after they have occurred.
-
+<p class="note">Note that 40 breaches in the previous year is a lower bound, since many breaches are only discovered, or made public, several months after they have occurred.</p> 
 
 
 {{ figure_markup(
@@ -297,21 +294,6 @@ Note that 40 breaches in the previous year is a lower bound, since many breaches
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2029950563&format=interactive",
   sheets_gid="1435927653",
   sql_file="data_breaches_pwned_websites_per_date_and_breach_sensitivity.sql"
-  )
-}}
-
-
-
-
-
-
-{{ figure_markup(
-  image="data_breaches_pwned_websites_per_class.png",
-  caption="Number of domains per data breach",
-  description="Bar chart showing the number of domains involved in a data breach according to the class of data that leaked.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1612339126&format=interactive",
-  sheets_gid="1158689200",
-  sql_file="data_breaches_pwned_websites_per_class.sql"
   )
 }}
 
