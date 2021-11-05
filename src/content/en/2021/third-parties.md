@@ -212,7 +212,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
 
 Unsurprisingly, [JavaScript](./javascript), [images](./media), and [HTML](./markup) comprise the majority of third-party requests. JavaScript is used by most third parties to add functionality, whether that be in ads, trackers, or libraries. Similarly, the high usage of images is to be expected, as they will include the 1-pixel blank images so beloved of tracking solutions.
 
-The high usage of HTML surprised me initially (surely documents would be the prevalent form of HTML and they would be first-party requests?), but investigation showed them mostly to be iframes which makes much more sense as they are often used to house ads, or other widgets (e.g. YouTube serves an HTML document in an iframe including the player, rather than just the video itself).
+The high usage of HTML may seem surprising initially (surely documents would be the prevalent form of HTML and they would be first-party requests?), but our investigation showed them mostly to be iframes, which makes much more sense as they are often used to house ads, or other widgets (e.g. YouTube serves an HTML document in an iframe including the player, rather than just the video itself).
 
 So based purely on the number of requests, third parties seem to be adding functionality more so than content—though that's a little misleading since, as per the YouTube example, some third parties add functionality in order to enable the content.
 
@@ -253,20 +253,20 @@ Who are we loading all these third-party requests from? Most of these names won'
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=1408467789&format=interactive",
   sheets_gid="564520146",
   width=600,
-  height=486,
+  height=494,
   sql_file="top100_third_parties_by_number_of_websites.sql"
   )
 }}
 
-Google takes 8 of the top 15 most used third parties—including the top six spots!—and has no else comes close. Google is a market leader in Analytics, Fonts, Ads, Accounts, Tag Managers, and Video to name but a few. A staggering 62.69% of mobile websites use Google Analytics, and almost as many use Google Fonts, with Ads, Accounts and Tag Manager usage not far behind in the 42% - 49 % range.
+Google takes 8 of the top 15 most-used third parties—including the top 6 spots!—and has no else comes close. Google is a market leader in Analytics, Fonts, Ads, Accounts, Tag Managers, and Video to name but a few. A staggering 62.7% of mobile websites use Google Analytics, and almost as many use Google Fonts, with Ads, Accounts and Tag Manager usage not far behind in the 42%-49% range.
 
-The first non-Google entity is Facebook with a comparatively low usage of 29.18%. This is followed by Cloudflare's CDN fronting popular libraries and other resources (despite being listed as amp.cloudflare.com it also includes the much larger cdnjs.cloudflare–this has been updated to show the more commonly used domain for next year).
+The first non-Google entity is Facebook, with comparatively low usage of 29.2%. This is followed by Cloudflare's CDN fronting popular libraries and other resources. Despite being listed as amp.cloudflare.com, it also includes the much larger cdnjs.cloudflare–this has been updated to show the more commonly used domain for next year.
 
 After this we're back to Google with YouTube, and Maps two spots later. The remaining spots are filled with CDNs for other popular libraries and tools.
 
 ## Performance impact of third parties
 
-Using third parties can have a noticeable impact on performance. That's not necessarily a consequence of them being a third party per se—the same functionality implemented by a site owner as a first-party resource would often cause similar performance issues—if not worse, given the expertise the third party should have on the particular field.
+Using third parties can have a noticeable impact on performance. That's not necessarily a consequence of them being a third party per se. The same functionality implemented by a site owner as a first-party resource can often be less performant, given the expertise the third party should have on the particular field.
 
 So performance isn't necessarily impacted by the fact that the resources are third-party, it's more of a matter of what those resources are doing. And most third-party usage depends on the third-party service, rather than just as a place to serve it from.
 
@@ -277,9 +277,9 @@ However, a third party's business is in allowing their content or service to be 
 
 There is a definite cost to connecting to another domain, even though most third parties will be using globally distributed, high-performance CDNs, and many web performance advocates (including this author!) recommend self-hosting where possible to avoid this penalty. This is particularly relevant now that all the major browsers have moved away from sharing caches between origins, so the claim that once one site has downloaded that resource, others can benefit from it is no longer true. Though this was a questionable claim even in the past, given the number of versions of libraries, and limitations of the HTTP cache.
 
-Saying that, rarely is life as definitive as we would like and, in some cases self-hosting may actually cost performance. I've <a hreflang="en" href="https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/">written before how the question on whether to self-host Google Fonts</a> is not as clear cut as it might seem and requires a degree of expertise to ensure you are replicating all that Google Fonts does for you in the performance front. To avoid that hassle you can just use the hosted version, and ensure you're <a hreflang="en" href="https://csswizardry.com/2020/05/the-fastest-google-fonts/">reducing the performance impact as much as possible</a>.
+Saying that, rarely is life as definitive as we would like and, in some cases self-hosting may actually cost performance. This author has <a hreflang="en" href="https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/">written before how the question on whether to self-host Google Fonts</a> is not as clear cut as it might seem and requires a degree of expertise to ensure you are replicating all that Google Fonts does for you in the performance front. To avoid that hassle you can just use the hosted version, and ensure you're reducing the performance impact as much as possible, as discussed by <a hreflang="en" href="https://twitter.com/csswizardry">Harry Roberts</a> in his <a hreflang="en" href="https://csswizardry.com/2020/05/the-fastest-google-fonts/">The Fastest Google Fonts</a> post.
 
-Similarly, image CDNs can optimize media better than most and, more importantly, can do this automatically without the need of manual steps that will inevitably be skipped or done incorrectly on occasion.
+Similarly, image CDNs can optimize media better than most firsty-parties and, more importantly, can do this automatically without the need for manual steps that will inevitably be skipped or done incorrectly on occasion.
 
 ### Popular third parties embeds and their performance impact
 
@@ -313,8 +313,8 @@ Lighthouse has a <a hreflang="en" href="https://web.dev/third-party-summary/">Re
 
 {{ figure_markup(
   image="third-parties-popular-third-parties-main-thread-blocking-time.png",
-  caption="Top 15 third parties' median main-thread blocking time.",
-  description="Bar chart showing median main-thread blocking times on mobile for the most popular third parties.",
+  caption="Main-thread blocking time of top 15 third parties.",
+  description="Bar chart showing median main-thread blocking times on mobile for the most popular third parties. Google Analytics blocks the main-thread for 96 milliseconds at the median,  ms, Google Fonts for 0 ms ms, Google/Doubleclick Ads for 0 ms, Other Google APIs/SDKs for 0 ms, Google Tag Manager for 42 ms, Google CDN for 54 ms, Facebook for 139 ms, Cloudflare CDN for 0 ms, YouTube for 1,625 ms, Bootstrap CDN for 0 ms, Google Maps for 259 ms, JSDelivr CDN for 0 ms, jQuery CDN for 38 ms, FontAwesome CDN for 0 ms, and Adobe Tag Manager for 0 ms.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=973901251&format=interactive",
   sheets_gid="329121076",
   width=600,
@@ -329,23 +329,25 @@ Here we see YouTube sticking out like a sore thumb so let's delve into that a li
 
 {{ figure_markup(
   image="third-parties-youtube-main-thread-impact.png",
-  caption="YouTube impact on the main thread.",
-  description="Bar chart showing the impact YouTube has on the main thread on mobile by blocking time, and transfer size by percentile. The blocking time is 0.00 seconds at the 10th and 25th percentile, 1.63 seconds at the 50th percentile, 2.51 seconds at the 75th percentile, and 4.55 seconds at the 90th percentile. This correlates closely with the increase in transfer size from 43 kilobytes at the 10th percentiles, 129 KiB at the 25th percentile, 703 at 50th, 800 at the 75th and 968 at the 90th percentile.",
+  caption="YouTube's impact on the main thread.",
+  description="Bar chart showing the impact YouTube has on the main thread on mobile by blocking time, and transfer size by percentile. The blocking time is 0.0 seconds at the 10th and 25th percentile, 1,626 milliseconds at the 50th percentile, 2,512 ms at the 75th percentile, and 4,551 ms at the 90th percentile. This correlates somewhat with the increase in transfer size from 43 kilobytes at the 10th percentiles, 129 KiB at the 25th percentile, 703 at 50th, 800 at the 75th and 968 at the 90th percentile.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=291120635&format=interactive",
   sheets_gid="1536436674",
   sql_file="third_parties_blocking_main_thread_percentiles.sql"
   )
 }}
 
-We can see a huge impact of 1.63 seconds of main-thread activity at the median (50th percentile), rising to a shocking 4.55 seconds of main-thread blocking at the 90th percentile (still meaning 10% of websites have a worse impact than even that!). It's also apparent that the impact increases with transfer size–perhaps not surprising as there is more to process. And remember that our crawl does not interact with these videos, so these are either auto-playing videos, or the YouTube player itself causing all this use.
+We can see a huge impact of 1.6 seconds of main-thread activity at the median (50th percentile), rising to a shocking 4.6 seconds of main-thread blocking at the 90th percentile (still meaning 10% of websites have a worse impact than even that!). It should be remembered however that these are throttled, lab-simulated timings, so many real users may not be experiencing this level of impact, but it is still a lot.
 
-Let's dig a little deeper into the other third party embeds on our list (note we switch to milliseconds rather than seconds on the remaining charts).
+It's also apparent that the impact increases with transfer size–perhaps not surprising as there is more to process. And remember that our crawl does not interact with these videos, so these are either auto-playing videos, or the YouTube player itself causing all this use.
+
+Let's dig a little deeper into some of the other third party embeds on our list.
 
 ##### Google Analytics
 
 {{ figure_markup(
   image="third-parties-google-analytics-main-thread-impact.png",
-  caption="Google Analytics impact on the main thread.",
+  caption="Google Analytics' impact on the main thread.",
   description="Bar chart showing the impact Google Analytics has on the main thread on mobile by blocking time, and transfer size by percentile. The blocking time is 0 milliseconds at the 10th percentile, 62 milliseconds at the 25th percentile, 96 milliseconds at the 50th percentile, 154 milliseconds at the 75th percentile, and 250 milliseconds at the 90th percentile. This does not correlates with the approximately static transfer size of 17 kilobytes at the 10th percentiles, 20 KiB at the 25th percentile, 20 at 50th, 20 at the 75th and 21 at the 90th percentile.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=1235735976&format=interactive",
   sheets_gid="1536436674",
@@ -359,7 +361,7 @@ Google Analytics is pretty good, so obviously a lot of work has gone into optimi
 
 {{ figure_markup(
   image="third-parties-google-doubleclick-ads-main-thread-impact.png",
-  caption="Google/Doubleclick Ads impact on the main thread.",
+  caption="Google/Doubleclick Ads' impact on the main thread.",
   description="Bar chart showing the impact Google/Doubleclick Ads has on the main thread on mobile by blocking time, and transfer size by percentile. The blocking time is 0.00 milliseconds at the 10th, 25th and 50th percentile, 14 milliseconds at the 75th percentile, and then shoots up to 1,429 milliseconds at the 90th percentile. This correlates closely with the increase in transfer size from 0 kilobytes at the 10th and 25th percentiles, 2 KiB at the 50th percentile, 21 at the 75th and 289 at the 90th percentile.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=2069770165&format=interactive",
   sheets_gid="1536436674",
@@ -373,7 +375,7 @@ Google Ads was doing so well, until we hit the 90th percentile, when it got blow
 
 {{ figure_markup(
   image="third-parties-google-tag-manager-main-thread-impact.png",
-  caption="Google Tag Manager impact on the main thread.",
+  caption="Google Tag Manager's impact on the main thread.",
   description="Bar chart showing the impact Google Tag Manager has on the main thread on mobile by blocking time, and transfer size by percentile. The blocking time is 0 milliseconds at the 10th percentile, 4 milliseconds at the 25th percentile, 42 milliseconds at the 50th percentile, 129 milliseconds at the 75th percentile, and 275 milliseconds at the 90th percentile. This correlates closely with the increase in transfer size from 35 kilobytes at the 10th percentiles, 36 KiB at the 25th percentile, 39 at 50th, 74 at the 75th and 116 at the 90th percentile.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=1275343309&format=interactive",
   sheets_gid="1536436674",
@@ -381,13 +383,13 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
   )
 }}
 
-Google Tag Manager fares much better than I thought it would to be honest. I've seen some horrific GTM implementations overloaded with old tags and triggers that are no longer used. But GTM seems to do well at not blocking the main thread for too long in our test page loads.
+Google Tag Manager fares much better than expected to be honest. This author has seen some horrific GTM implementations, overloaded with old tags and triggers that are no longer used. But GTM seems to do well at not blocking the main thread for too long in our test page loads.
 
 ##### Facebook
 
 {{ figure_markup(
   image="third-parties-facebook-main-thread-impact.png",
-  caption="Facebook impact on the main thread.",
+  caption="Facebook's impact on the main thread.",
   description="Bar chart showing the impact Facebook has on the main thread on mobile by blocking time, and transfer size by percentile. The blocking time is 0.00 milliseconds at the 10th percentile, 58 milliseconds at the 25th percentile, 139 milliseconds at the 50th percentile, 250 milliseconds at the 75th percentile, and 415 milliseconds at the 90th percentile. This correlates closely with the increase in transfer size from 69 kilobytes at the 10th percentiles, 72 KiB at the 25th percentile, 100 at 50th, 167 at the 75th and 233 at the 90th percentile.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=1572246557&format=interactive",
   sheets_gid="1536436674",
@@ -401,7 +403,7 @@ Facebook also isn't as resource-intensive as I thought it would be. Facebook emb
 
 {{ figure_markup(
   image="third-parties-google-maps-main-thread-impact.png",
-  caption="Google Maps impact on the main thread.",
+  caption="Google Maps' impact on the main thread.",
   description="Bar chart showing the impact Google Maps has on the main thread on mobile by blocking time, and transfer size by percentile. The blocking time is 18 milliseconds at the 10th percentile, 61 at the 25th percentile, 259 milliseconds at the 50th percentile, 617 milliseconds at the 75th percentile, and 930 milliseconds at the 90th percentile. This correlates somewhat with the increase in transfer size from 164 kilobytes at the 10th percentiles, 165 KiB at the 25th percentile, 273 at 50th, 310 at the 75th and 434 at the 90th percentile.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=934181875&format=interactive",
   sheets_gid="1536436674",
@@ -413,11 +415,11 @@ Google Maps definitely needs some improvement. Especially as it's often present 
 
 ##### Twitter
 
-And finally, I wanted to look at one further down the list: Twitter.
+And finally, let's look at one further down the list: Twitter.
 
 {{ figure_markup(
   image="third-parties-twitter-main-thread-impact.png",
-  caption="Twitter impact on the main thread.",
+  caption="Twitter's impact on the main thread.",
   description="Bar chart showing the impact Twitter has on the main thread on mobile by blocking time, and transfer size by percentile. The blocking time is 0 milliseconds at the 10th percentile, 58 milliseconds at the 25th percentile, 134 milliseconds at the 50th percentile, 307 milliseconds at the 75th percentile, and 685 milliseconds at the 90th percentile. This correlates closely with the increase in transfer size from 132 kilobytes at the 10th and 25th percentiles, 148 KiB at 50th, 673 at the 75th and 1,538 at the 90th percentile.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=1661844053&format=interactive",
   sheets_gid="1536436674",
@@ -425,11 +427,11 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
   )
 }}
 
-Twitter as a third-party can be used in one of two ways: as a retargeting advertising tracker, and as a way of embedding tweets. Embedding tweets in pages is more popular than other social networks in my experience but has been <a hreflang="en" href="https://nooshu.com/blog/2021/02/06/using-puppeteer-and-squoosh-to-fix-twitter-embeds/">called out by many in the web performance community</a> as being pretty terrible for performance and our analysis above backs that up. Especially as those use cases will be diluted with the (presumably lighter) tracking use case in the above graph.
+Twitter as a third-party can be used in one of two ways: as a retargeting advertising tracker, and as a way of embedding tweets. Embedding tweets in pages is more popular than other social networks. However it has been called out as having an undue impact on the page by many in the web performance community, including <a href="https://twitter.com/TheRealNooshu">Matt Hobbs</a> in his <a hreflang="en" href="https://nooshu.com/blog/2021/02/06/using-puppeteer-and-squoosh-to-fix-twitter-embeds/">Using Puppeteer and Squoosh to fix the web performance of embedded tweets</a> post. Our analysis backs that up—especially as those use cases will be diluted with the (presumably lighter) tracking use case in the above graph.
 
 While some of the above examples fare better or worse, it must be remembered that it's the cumulative effect of these that really impacts the performance of a website. It's rare for websites to only use one of these, so add together Google Analytics, GTM loading Facebook and Twitter Tracking, on a page with a Map and an embedded Tweet, and it really starts to add up. Sometimes it's unsurprising why your phone sometimes feels too hot to handle, or your PC fan starts going into overdrive just from surfing the web!
 
-All this shows why the Google Developers recommend <a hreflang="en" href="https://web.dev/embed-best-practices/">reducing the impact of embeds</a> (mostly their own ironically!), through the use of document ordering, lazy loading, facades, and other techniques. However, it's really quite infuriating that some of these are not the default and that advanced techniques like these must fall on the responsibility of the website owner. The third parties highlighted here really do have the resources, and technical know-how to reduce the impact of using their products for everyone by default but often choose not to. I started this performance section by saying that using third parties wasn't necessarily bad for performance, but these examples show there is certainly more that some of them can do in this area!
+All this shows why the Google recommends <a hreflang="en" href="https://web.dev/embed-best-practices/">reducing the impact of embeds</a> (mostly their own ironically!), through the use of document ordering, lazy-loading, facades, and other techniques. However, it's really quite infuriating that some of these are not the default and that advanced techniques like these must fall on the responsibility of the website owner. The third parties highlighted here really do have the resources, and technical know-how to reduce the impact of using their products for everyone by default, but often choose not to. This performance section started by saying that using third parties wasn't necessarily bad for performance, but these examples show there is certainly more that some of them can do in this area!
 
 Hopefully highlighting some of these well-known examples will cause readers to investigate the impact of third-party embeds on their own sites and ask themselves if they really are all worth it. Perhaps if we make this subject more important to the third parties, they will prioritize performance.
 
@@ -470,7 +472,7 @@ The privacy implications of using third parties is something we will again leave
 - The prevalence of third-party usage on the web at just shy of 95% of websites.
 - The dominance of particular third parties, like Google and Facebook, who are not known for being on the side of privacy.
 
-Of course, one of the major reasons for using third parties on your site is for tracking for advertisement purposes which by its very nature is not going to be in the best privacy interests of your visitors. Alternatives to this pervasive tracking, which is basically only possible by the use of third parties, <a hreflang="en" href="https://web.dev/floc/">have been suggested</a> but have failed to gain traction.
+Of course, one of the major reasons for using third parties on your site is for tracking for advertisement purposes, which by its very nature is not going to be in the best privacy interests of your visitors. Alternatives to this pervasive tracking, which is basically only possible by the use of third parties, have been suggested <a hreflang="en" href="https://blog.google/products/ads-commerce/2021-01-privacy-sandbox/">such as Google's Privacy Sandbox and FLoC initiative</a> but have failed to gain traction.
 
 What is perhaps more concerning is the tracking that can occur without website users and owners being aware. There is the old adage that if you're not paying for a product or service, then you are the product. Many third parties give away their product for "free", which for most means they are monetizing it in some other way—usually at the expense of your visitors' privacy!
 
