@@ -330,9 +330,7 @@ Given our lack of data on categories and industries using PWAs, we turn to exter
   )
 }}
 
-According to Mobstead's analysis, the most common categories are "Business & Industrial", "Arts & Entertainment", and "Home & Garden".
-
-This seems to correlate with [last year's analysis of the "category" web manifest property](../2020/pwa#top-manifest-categories), where the top three values were "shopping", "business" and "entertainment".
+According to Mobstead's analysis, the most common categories are "Business & Industrial", "Arts & Entertainment", and "Home & Garden".This seems to correlate with [last year's analysis of the "category" web manifest property](../2020/pwa#top-manifest-categories), where the top three values were "shopping", "business" and "entertainment".
 
 ## Lighthouse insights
 
