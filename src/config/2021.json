@@ -197,8 +197,7 @@
           "part": "IV",
           "chapter_number": "24",
           "title": "Resource Hints",
-          "slug": "resource-hints",
-          "todo": "true"
+          "slug": "resource-hints"
         },
         {
           "part": "IV",
@@ -317,6 +316,18 @@
       "github": "GeekBoySupreme",
       "twitter": "shuvam360",
       "website": "https://shuvam.xyz"
+    },
+    "kevinfarrugia": {
+      "name": "Kevin Farrugia",
+      "teams": [
+        "leads",
+        "analysts",
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/8075326?v=4&s=200",
+      "website": "https://imkev.dev",
+      "github": "kevinfarrugia",
+      "twitter": "imkevdev"
     }
   }
 }
