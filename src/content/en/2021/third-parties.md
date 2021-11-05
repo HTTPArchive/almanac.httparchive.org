@@ -210,7 +210,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
   )
 }}
 
-Unsurprisingly, JavaScript, images, and HTML comprise the majority of third-party requests. JavaScript is used by most third parties to add functionality (whether that be in ads, trackers, or libraries). Similarly, the high usage of images is to be expected, as they will include the 1-pixel blank images so beloved of tracking solutions.
+Unsurprisingly, [JavaScript](./javascript), [images](./media), and [HTML](./markup) comprise the majority of third-party requests. JavaScript is used by most third parties to add functionality, whether that be in ads, trackers, or libraries. Similarly, the high usage of images is to be expected, as they will include the 1-pixel blank images so beloved of tracking solutions.
 
 The high usage of HTML surprised me initially (surely documents would be the prevalent form of HTML and they would be first-party requests?), but investigation showed them mostly to be iframes which makes much more sense as they are often used to house ads, or other widgets (e.g. YouTube serves an HTML document in an iframe including the player, rather than just the video itself).
 
