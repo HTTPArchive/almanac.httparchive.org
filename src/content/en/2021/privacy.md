@@ -2,15 +2,15 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Privacy
 description: Privacy chapter of the 2021 Web Almanac covering adoption and impact of online tracking, privacy preference signals and browser initiatives for a privacy-friendlier web.
-authors: [ydimova, victor_lepochat]
+authors: [ydimova, victorlep]
 reviewers: [maudn]
-analysts: [victor_lepochat, max_ostapenko]
+analysts: [victorlep, max_ostapenko]
 editors: []
 translators: []
 discuss: 1775
 results: https://docs.google.com/spreadsheets/d/148SxZICZ24O44roIuEkRgbpIobWXpqLxegCDhIiX8XA/
 ydimova_bio: Yana Dimova is a PhD student at imec-DistriNet, working on web privacy. Her general interests and work focus on online tracking, privacy vulnerabilites and privacy legislation and policies.
-victor_lepochat_bio: 
+victorlep_bio: Victor Le Pochat is a PhD researcher at the [imec-DistriNet](https://distrinet.cs.kuleuven.be/) research group of KU Leuven in Belgium. His interests lie in the exploration of web ecosystems, and in web security/privacy research metholodogy, both analyzing and improving current methods.
 featured_quote: "Browsers are paving the way for better user privacy: Firefox and Safari have already deployed Tracking Protection, while Chrome is proposing new privacy-protecting technologies that are discussed in the open and can be tested by website owners."
 featured_stat_1: 82/83%
 featured_stat_label_1: Websites that include at least one tracker
