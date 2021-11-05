@@ -24,25 +24,25 @@ featured_stat_label_3: Popular sites opted out of FLoC cohorts
 
 ## Introduction
 
-_“On the Internet, nobody knows you're a dog.”_ While it might be true that you could try to remain anonymous to use the Internet as such, it can be quite hard to keep your personal data fully private. A [whole industry](https://crackedlabs.org/en/corporate-surveillance/) is dedicated to tracking users online, to build detailed user profiles for purposes such as targeted advertising, fraud detection, price differentiation, or even credit scoring.. Sharing geolocation data with websites can prove very useful in day-to-day life, but may also allow them to [see your every movement](https://www.nytimes.com/interactive/2019/12/19/opinion/location-tracking-cell-phone.html). Even if a service treats a user’s private information diligently, the mere act of storing personal data provides hackers with an opportunity to [breach services and leak millions of personal records online](https://haveibeenpwned.com/). 
+_"On the Internet, nobody knows you're a dog."_ While it might be true that you could try to remain anonymous to use the Internet as such, it can be quite hard to keep your personal data fully private. A [whole industry](https://crackedlabs.org/en/corporate-surveillance/) is dedicated to tracking users online, to build detailed user profiles for purposes such as targeted advertising, fraud detection, price differentiation, or even credit scoring. Sharing geolocation data with websites can prove very useful in day-to-day life, but may also allow them to [see your every movement](https://www.nytimes.com/interactive/2019/12/19/opinion/location-tracking-cell-phone.html). Even if a service treats a user's private information diligently, the mere act of storing personal data provides hackers with an opportunity to [breach services and leak millions of personal records online](https://haveibeenpwned.com/). 
 
-Recent legislative efforts such as the [GDPR ](https://gdpr-info.eu/)in Europe, [CCPA ](https://www.oag.ca.gov/privacy/ccpa)in California, [LGPD ](https://www.upguard.com/blog/lgpd)in Brazil, or the [PDP Bill](https://dataprotectionindia.in/act/) in India all strive to require companies to protect personal data and implement privacy by default, including online. Major technology companies such as Google, Facebook and Amazon have already received [massive fines](https://en.wikipedia.org/wiki/GDPR_fines_and_notices) for alleged violations of user privacy. These new laws have given users a much larger say in how comfortable they are with sharing personal data — you probably already have clicked through quite a few cookie consent banners that enable this choice. Furthermore, web browsers are implementing [technological solutions](https://privacysandbox.com/) to improve user privacy, from blocking third-party cookies over hiding sensitive data to innovative ways to balance legitimate use cases on personal attributes with individual user privacy.
+Recent legislative efforts such as the [GDPR](https://gdpr-info.eu/) in Europe, [CCPA](https://www.oag.ca.gov/privacy/ccpa) in California, [LGPD](https://www.upguard.com/blog/lgpd) in Brazil, or the [PDP Bill](https://dataprotectionindia.in/act/) in India all strive to require companies to protect personal data and implement privacy by default, including online. Major technology companies such as Google, Facebook and Amazon have already received [massive fines](https://en.wikipedia.org/wiki/GDPR_fines_and_notices) for alleged violations of user privacy. These new laws have given users a much larger say in how comfortable they are with sharing personal data — you probably already have clicked through quite a few cookie consent banners that enable this choice. Furthermore, web browsers are implementing [technological solutions](https://privacysandbox.com/) to improve user privacy, from blocking third-party cookies over hiding sensitive data to innovative ways to balance legitimate use cases on personal attributes with individual user privacy.
 
-In this chapter, we give an overview of the current state of privacy on the web. We first consider how user privacy can be harmed: we discuss how websites profile you through [online tracking](#how-websites-profile-you-online-online-tracking), and how they [access your sensitive data](#how-websites-handle-your-sensitive-data).  We then look at the impact of tools that empower users to protect their privacy. Next, we dive into ways websites [protect sensitive data](#how-websites-protect-your-sensitive-data) and give you a choice through [privacy preference signals](#how-websites-give-you-a-privacy-choice-privacy-preference-signals). We close with an [outlook on the efforts that browsers are making to safeguard your privacy in the future](#how-browsers-are-evolving-their-privacy-approaches).
+In this chapter, we give an overview of the current state of privacy on the web. We first consider how user privacy can be harmed: we discuss how websites profile you through [online tracking](#how-websites-profile-you-online-online-tracking), and how they [access your sensitive data](#how-websites-handle-your-sensitive-data). We then look at the impact of tools that empower users to protect their privacy. Next, we dive into ways websites [protect sensitive data](#how-websites-protect-your-sensitive-data) and give you a choice through [privacy preference signals](#how-websites-give-you-a-privacy-choice-privacy-preference-signals). We close with an [outlook on the efforts that browsers are making to safeguard your privacy in the future](#how-browsers-are-evolving-their-privacy-approaches).
 
 
 ## How websites profile you online: Online tracking
 
 The HTTP protocol is inherently stateless, so by default there is no way for a website to know whether two visits to the same website, or two visits to different websites, are from the same user. However, such information could be useful for websites to build more personalized user experiences, and for third parties building profiles of user behavior across websites for funding content on the web through targeted advertising or providing services such as fraud detection.
 
-Unfortunately, obtaining this information currently often relies on online tracking, [around which many large and small companies have built their business](https://crackedlabs.org/en/corporate-surveillance/). This has even led to [calls to ban targeted advertising](https://www.forbrukerradet.no/wp-content/uploads/2021/06/20210622-final-report-time-to-ban-surveillance-based-advertising.pdf), since invasive tracking  is at odds with users’ privacy: users might not want anyone to follow their tracks across the web, especially when visiting websites on sensitive topics. We’ll look at the main companies and technologies that make up the online tracking ecosystem.
+Unfortunately, obtaining this information currently often relies on online tracking, [around which many large and small companies have built their business](https://crackedlabs.org/en/corporate-surveillance/). This has even led to [calls to ban targeted advertising](https://www.forbrukerradet.no/wp-content/uploads/2021/06/20210622-final-report-time-to-ban-surveillance-based-advertising.pdf), since invasive tracking is at odds with users' privacy: users might not want anyone to follow their tracks across the web, especially when visiting websites on sensitive topics. We'll look at the main companies and technologies that make up the online tracking ecosystem.
 
 
 ### Third-party tracking
 
 Online tracking is often done through certain third-party libraries. These libraries usually provide some (useful) service, but in the process some of them also generate a unique identifier for each user, which can then be used to follow and profile users across websites. The [WhoTracksMe](https://whotracks.me/) project is dedicated to discovering the most widely deployed online trackers. We use WhoTracksMe's classification of trackers, but restrict ourselves to four [categories](https://whotracks.me/blog/tracker_categories.html): advertising, pornvertising, site analytics and social media.
 
-We see that Google-owned domains are prevalent in the online tracking market, namely  in site analytics.  Google Analytics, which reports website traffic, is present on almost two thirds of all websites. Around 30% of sites include Facebook libraries, while other trackers only reach single-digit percentages. Overall, 82% of mobile sites and 83% of desktop sites include at least one tracker, usually for site analytics or advertising purposes. Three out of four websites have fewer than 10 trackers, but there is a long tail of sites with many more trackers: one desktop site contacted 133 (!) distinct trackers.
+We see that Google-owned domains are prevalent in the online tracking market, namely in site analytics. Google Analytics, which reports website traffic, is present on almost two thirds of all websites. Around 30% of sites include Facebook libraries, while other trackers only reach single-digit percentages. Overall, 82% of mobile sites and 83% of desktop sites include at least one tracker, usually for site analytics or advertising purposes. Three out of four websites have fewer than 10 trackers, but there is a long tail of sites with many more trackers: one desktop site contacted 133 (!) distinct trackers.
 
 
 
@@ -118,7 +118,7 @@ With Lax becoming the default value of the [SameSite cookie attribute](https://w
 
 With the rise of privacy-protecting tools such as ad blockers and initiatives to phase out third-party cookies from major browsers such as [Firefox](https://blog.mozilla.org/en/products/firefox/todays-firefox-blocks-third-party-tracking-cookies-and-cryptomining-by-default/), [Safari](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/), and by 2023 also [Chrome](https://blog.google/products/chrome/updated-timeline-privacy-sandbox-milestones/#:~:text=Chrome%20could%20then%20phase%20out%20third-party%20cookies%20over%20a%20three%20month%20period%2C%20starting%20in%20mid-2023%20and%20ending%20in%20late%202023), trackers are looking for more persistent and stealthy ways to track users across sites. One such technique is _browser fingerprinting_. A website collects information about the user's device, such as the [user agent](https://developer.mozilla.org/en-US/docs/Glossary/User_agent), screen resolution and installed fonts, and uses the often unique combination of those values to create a _fingerprint_. This fingerprint is recreated every time a user visits the website, and can then be matched to identify the user. While this method can be used for fraud detection, it is also used to persistently track recurring users, or to track users across sites. 
 
-Detecting fingerprinting is complex:it is effective through a combination of method calls and event listeners that may also be used for non-tracking purposes. Instead of focusing on these individual methods, we  therefore focus on five popular libraries that make it easy for a website to implement fingerprinting. From the percentage of websites using these third-party services, we can see that the most widely used library, [Fingerprint.js](https://fingerprintjs.com/), is used 19 times more on desktop than the second most popular library. However, the overall percentage of websites that use an external library to fingerprint their users is quite small.
+Detecting fingerprinting is complex:it is effective through a combination of method calls and event listeners that may also be used for non-tracking purposes. Instead of focusing on these individual methods, we therefore focus on five popular libraries that make it easy for a website to implement fingerprinting. From the percentage of websites using these third-party services, we can see that the most widely used library, [Fingerprint.js](https://fingerprintjs.com/), is used 19 times more on desktop than the second most popular library. However, the overall percentage of websites that use an external library to fingerprint their users is quite small.
 
 
 
@@ -137,7 +137,7 @@ Detecting fingerprinting is complex:it is effective through a combination of met
 
 ### CNAME tracking
 
-Continuing with techniques that circumvent blocks on third-party tracking, [CNAME](https://medium.com/nextdns/cname-cloaking-the-dangerous-disguise-of-third-party-trackers-195205dc522a) tracking is a novel approach where a first-party subdomain redirects to a third-party tracker using a CNAME record at the [DNS](https://adguard.com/en/blog/cname-tracking.html) level. From the viewpoint of  the browser, everything happens within a first-party context, so none of the third-party countermeasures are applied. Major tracking companies such as Adobe and Oracle are already offering CNAME tracking solutions to their customers.
+Continuing with techniques that circumvent blocks on third-party tracking, [CNAME](https://medium.com/nextdns/cname-cloaking-the-dangerous-disguise-of-third-party-trackers-195205dc522a) tracking is a novel approach where a first-party subdomain redirects to a third-party tracker using a CNAME record at the [DNS](https://adguard.com/en/blog/cname-tracking.html) level. From the viewpoint of the browser, everything happens within a first-party context, so none of the third-party countermeasures are applied. Major tracking companies such as Adobe and Oracle are already offering CNAME tracking solutions to their customers.
 
 The most popular company performing CNAME-based tracking is Pardot, which is present on 6619 desktop websites. Also notable in size is Adobe, with 2671 publisher domains. 
 
@@ -169,7 +169,7 @@ When we look at the rank of the websites that use CNAME-based tracking, we see t
 }}
 
 
-Apart from the ".com'' suffix, a large number of the websites using CNAME-based tracking have a .jp domain. Also a notable amount of CNAME trackers are prevalent on .uk and .fr websites. 
+Apart from the .com suffix, a large number of the websites using CNAME-based tracking have a .jp domain. Also a notable amount of CNAME trackers are prevalent on .uk and .fr websites. 
 
 {{ figure_markup(
   image="nb_sites_with_cname_tracking_per_public_suffix.png",
@@ -286,9 +286,9 @@ We find that 0.59% of websites on a desktop client and 0.63% of websites on a mo
 
 Poor security management within a company can have a significant impact on its customers' private data. In 2020, , 40 domains were breached and personal data about thousands of users leaked. 
 
-HaveIBeenPwned [[https://haveibeenpwned.com/](https://haveibeenpwned.com/)] allows users to check whether their email address or phone number was leaked in a data breach. Up until now, HaveIBeenPwned has tracked 562 breaches, leaking 640 million records. We show the number of data breaches that have occurred in the previous year. Breaches that are _sensitive_ in nature refer to the possibility of a negative impact on the user, if someone were to find that user's data in the breach. One example of a sensitive breach is "[Carding Mafia](https://www.vice.com/en/article/v7m9jx/credit-card-hacking-forum-gets-hacked-exposing-300000-hackers-accounts)", a platform where stolen credit cards are traded. 
+[https://haveibeenpwned.com/](HaveIBeenPwned) allows users to check whether their email address or phone number was leaked in a data breach. Up until now, HaveIBeenPwned has tracked 562 breaches, leaking 640 million records. We show the number of data breaches that have occurred in the previous year. Breaches that are _sensitive_ in nature refer to the possibility of a negative impact on the user, if someone were to find that user's data in the breach. One example of a sensitive breach is "[Carding Mafia](https://www.vice.com/en/article/v7m9jx/credit-card-hacking-forum-gets-hacked-exposing-300000-hackers-accounts)", a platform where stolen credit cards are traded. 
 
-Note that 40 breaches in the previous year is a lower bound, since many  breaches are only discovered, or made public, several months after they have occurred.
+Note that 40 breaches in the previous year is a lower bound, since many breaches are only discovered, or made public, several months after they have occurred.
 
 
 
@@ -339,7 +339,7 @@ While you're browsing the web, there is certain data that you might want to keep
 
 ### Permissions policy / Feature policy
 
-The [Permissions Policy](https://www.w3.org/TR/permissions-policy-1/) (previously Feature Policy) provides a way for websites to define which web features they intend to use, and which features will need to be explicitly approved by the user—when requested by third parties for instance  This gives websites control over what features embedded third-party scripts can request to access; for example, Permissions-Policy can be used by a website to ensure that no third-party requests microphone access on their site. The policy allows developers to granularly choose web APIs they intend to use, by specifying them with the 'allow' attribute. 
+The [Permissions Policy](https://www.w3.org/TR/permissions-policy-1/) (previously Feature Policy) provides a way for websites to define which web features they intend to use, and which features will need to be explicitly approved by the user—when requested by third parties for instance. This gives websites control over what features embedded third-party scripts can request to access; for example, Permissions-Policy can be used by a website to ensure that no third-party requests microphone access on their site. The policy allows developers to granularly choose web APIs they intend to use, by specifying them with the 'allow' attribute. 
 
 The most commonly used directives with relation to the feature policy are shown below. On 3049 websites on mobile and 2901 websites on desktop, the use of the microphone feature is specified. Other often accessed features are geolocation, camera and payment. 
 
@@ -371,7 +371,7 @@ To gain a deeper understanding of how the directives are used, we looked at the 
 }}
 
 
-'none' is the most used value. This specifies that the feature is disabled in top-level and nested browsing contexts. The second most used value, 'self' is used  to specify that the feature is allowed in the current document and within the same origin, while '*' allows cross-origin access. 
+'none' is the most used value. This specifies that the feature is disabled in top-level and nested browsing contexts. The second most used value, 'self' is used to specify that the feature is allowed in the current document and within the same origin, while '*' allows cross-origin access. 
 
 
 ### Referrer-Policy 
@@ -432,8 +432,6 @@ Note: Websites may also send the referrer information as a URL parameter to the 
 
 When a web browser makes an HTTP request, it will include a [User-Agent header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) that provides information about the client's browser, device and network capabilities. However, this can be abused for profiling users or uniquely identifying them through [fingerprinting](#fingerprinting). [User-Agent Client Hints](https://wicg.github.io/ua-client-hints/) enable access to the same information as the User-Agent string, but in a more privacy-preserving way. This will in turn enable browsers to eventually reduce the amount of information provided by default by the User-Agent string, as Chrome is proposing with a gradual plan for [User Agent Reduction](https://www.chromium.org/updates/ua-reduction).
 
-  
-
 Servers can indicate their support for these client hints by specifying the "Accept-CH" header. This header lists the attributes that the server requests from the client in order to serve a device-specific or network-specific resource. In general, client hints provide a way for servers to obtain only the minimum information necessary to serve content in an efficient manner.
 
 However, at this point, few websites have implemented client hints. We also see a big difference between the use of client hints on popular websites and on less popular ones. 3.6% of the top 1,000 most popular websites request client hints. In the top 10,000 websites, the implementation rate drops to less than 1.4%. 
@@ -492,11 +490,11 @@ Consent Management Platforms (CMPs) are third-party libraries that websites can 
 
 The [Transparency and Consent Framework](https://iabeurope.eu/transparency-consent-framework/) (TCF) is an initiative of the Interactive Advertising Bureau Europe for providing an industry standard for communicating user consent to advertisers. The framework consists of a Global Vendor List, in which vendors can specify the legitimate purpose of the processed data, and a list of CMPs who act as an intermediary between the vendors and the publishers. Each CMP is responsible for communicating the legal basis and storing the consent option provided by the user in the browser. We refer to the stored cookie as the "consent string". 
 
-TCF is meant as a GDPR-compliant mechanism in Europe, although a decision by the Belgian Data Protection Authority found this system to still be infringing.  When the CCPA came into play in California, IAB Tech Lab US came up with a [CCPA Compliance Framework for Publishers & Technology Companies](https://iabtechlab.com/standards/ccpa/) (USP), using the same concepts.
+TCF is meant as a GDPR-compliant mechanism in Europe, although [a recent decision by the Belgian Data Protection Authority](FIXME) found this system to still be infringing. When the CCPA came into play in California, IAB Tech Lab US came up with a [CCPA Compliance Framework for Publishers & Technology Companies](https://iabtechlab.com/standards/ccpa/) (USP), using the same concepts.
 
-Below, we show the distribution of the usage of both versions of TCF and of USP. Note that the crawl is US-based, therefore we do not expect many websites to have implemented TCF. This is depicted in the graph: less than 2% of websites use any TCF version, while twice that many websites use the US Privacy framework. 
+Below, we show the distribution of the usage of both versions of TCF and of USP. Note that the crawl is US-based, therefore we do not expect many websites to have implemented TCF. This is depicted in the graph: less than 2% of websites use any TCF version, while twice that many websites use the US Privacy framework.
 
-   	
+
 
 {{ figure_markup(
   image="nb_websites_with_iab.png",
@@ -508,7 +506,7 @@ Below, we show the distribution of the usage of both versions of TCF and of USP.
   )
 }}
 
- In the 10 most popular consent management platforms that are part of the framework, At the top we find Quantcast with 0.34% on mobile and 0.32% on desktop. Other popular solutions are Didomi and Wikia, with 0.3% and 0.23% on mobile and desktop respectively.
+In the 10 most popular consent management platforms that are part of the framework, At the top we find Quantcast with 0.34% on mobile and 0.32% on desktop. Other popular solutions are Didomi and Wikia, with 0.3% and 0.23% on mobile and desktop respectively.
 
 
 
@@ -523,7 +521,7 @@ Below, we show the distribution of the usage of both versions of TCF and of USP.
 }}
 
 
-In the USP framework, the website's and user's privacy settings are encoded in a "[privacy string](https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md)". As shown in the following graph, the most common privacy string is "1---". This indicates that CCPA does not apply to the website and therefore the website  not obliged to provide an opt-out for the user. CCPA only applies to companies whose main business involves selling personal data, or to companies that process data and have an annual turnover of more thanan $25 million. The second most recurring string is "1YNY". This indicates that the website provided "notice and opportunity to opt-out of sale of data", but that the user has _not_ opted out of the sale of their personal data. 
+In the USP framework, the website's and user's privacy settings are encoded in a "[privacy string](https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md)". As shown in the following graph, the most common privacy string is "1---". This indicates that CCPA does not apply to the website and therefore the website not obliged to provide an opt-out for the user. CCPA only applies to companies whose main business involves selling personal data, or to companies that process data and have an annual turnover of more thanan $25 million. The second most recurring string is "1YNY". This indicates that the website provided "notice and opportunity to opt-out of sale of data", but that the user has _not_ opted out of the sale of their personal data. 
 
 
 {{ figure_markup(
@@ -560,7 +558,7 @@ Nowadays, most websites have a privacy policy, where users can learn about the t
 
 The [Do Not Track](https://www.eff.org/issues/do-not-track) (DNT) HTTP header can be used to communicate to websites that a user does not wish to be tracked. We can see the number of sites that appear to access the current value for DNT below, based on the presence of the [Navigator.doNotTrack](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/doNotTrack) JavaScript call.
 
-Around the same percentage of pages on mobile and desktop clients use DNT. However, in practice hardly any websites actually respect the DNT opt-outs. The Tracking Protection Working Group, which specifies DNT, [closed down](https://www.w3.org/2016/11/tracking-protection-wg.html) in 2018, due to ["lack of support"](https://lists.w3.org/Archives/Public/public-tracking/2018Oct/0000.html)<span style="text-decoration:underline;">. </span>Safari then [stopped supporting DNT](https://developer.apple.com/documentation/safari-release-notes/safari-12_1-release-notes#:~:text=Removed%20support%20for%20the%20expired%20Do%20Not%20Track).
+Around the same percentage of pages on mobile and desktop clients use DNT. However, in practice hardly any websites actually respect the DNT opt-outs. The Tracking Protection Working Group, which specifies DNT, [closed down](https://www.w3.org/2016/11/tracking-protection-wg.html) in 2018, due to ["lack of support"](https://lists.w3.org/Archives/Public/public-tracking/2018Oct/0000.html). Safari then [stopped supporting DNT](https://developer.apple.com/documentation/safari-release-notes/safari-12_1-release-notes#:~:text=Removed%20support%20for%20the%20expired%20Do%20Not%20Track).
 
 {{ figure_markup(
   image="nb_websites_with_dnt_blink_usage.png",
@@ -578,12 +576,12 @@ DNT's successor [Global Privacy Control](https://globalprivacycontrol.org/) (GPC
 
 ## How browsers are evolving their privacy approaches
 
-Given the push to better protect users' privacy while browsing the web,major browsers are implementing new features that should better safeguard users' sensitive data. We already covered ways in which browsers have started enforcing more privacy-preserving default settings for [Referrer-Policy headers](link) and [SameSite cookies](link). Furthermore, Firefox and Safari seek to block tracking through [Enhanced Tracking Protection](https://developer.mozilla.org/en-US/docs/Web/Privacy/Tracking_Protection) and [Intelligent Tracking Prevention](https://webkit.org/tracking-prevention/) respectively. Beyond blocking trackers, Chrome has launched the [Privacy Sandbox](https://privacysandbox.com/) to develop new web standards that provide more privacy-friendly functionality for various use cases, such as advertising and fraud protection. We'll look more closely at these up-and-coming technologies that are designed to reduce the opportunity for sites to track users.
+Given the push to better protect users' privacy while browsing the web,major browsers are implementing new features that should better safeguard users' sensitive data. We already covered ways in which browsers have started enforcing more privacy-preserving default settings for [Referrer-Policy headers](FIXME) and [SameSite cookies](FIXME). Furthermore, Firefox and Safari seek to block tracking through [Enhanced Tracking Protection](https://developer.mozilla.org/en-US/docs/Web/Privacy/Tracking_Protection) and [Intelligent Tracking Prevention](https://webkit.org/tracking-prevention/) respectively. Beyond blocking trackers, Chrome has launched the [Privacy Sandbox](https://privacysandbox.com/) to develop new web standards that provide more privacy-friendly functionality for various use cases, such as advertising and fraud protection. We'll look more closely at these up-and-coming technologies that are designed to reduce the opportunity for sites to track users.
 
 
 ### Privacy Sandbox
 
-To seek ecosystem feedback, early and experimental versions of Privacy Sandbox APIs are made available initially behind [feature flags](https://www.chromium.org/developers/how-tos/run-chromium-with-flags) for testing by individual developers, and then in Chrome via [origin trials.](https://developer.chrome.com/blog/origin-trials/) Sites can take part in these origin trials to test experimental web platform features, and give feedback to the web standards community on a feature's usability, practicality, and effectiveness, before it's made available to all websites by default.
+To seek ecosystem feedback, early and experimental versions of Privacy Sandbox APIs are made available initially behind [feature flags](https://www.chromium.org/developers/how-tos/run-chromium-with-flags) for testing by individual developers, and then in Chrome via [origin trials](https://developer.chrome.com/blog/origin-trials/). Sites can take part in these origin trials to test experimental web platform features, and give feedback to the web standards community on a feature's usability, practicality, and effectiveness, before it's made available to all websites by default.
 
 **Disclaimer:** Origin trials are only available for a limited amount of time. The numbers below represent the state or Privacy Sandbox origin trials at the time of this writing, in October 2021.
 
@@ -598,7 +596,7 @@ With FLoC, instead of assigning unique identifiers to users, the browser determi
 
 Since FLoC was an experiment, it was not widely deployed. Instead, websites could test it by enrolling in an origin trial. We found 62 and 64 websites that tested FLoC across desktop and mobile respectively.
 
-Here is how the first FloC experiment worked:  as a user moved around the web, their browser used the FLoC algorithm to work out its _interest cohort_, which was the same for thousands of browsers with a similar recent browsing history. The browser recalculated its cohort periodically, on the user's device, without sharing individual browsing data with the browser vendor or other parties. When working out its cohort, a browser was choosing between cohorts that [didn't reveal sensitive categories](https://www.chromium.org/Home/chromium-privacy/privacy-sandbox/floc#:~:text=web%20pages%20on%20sensitive%20topics). 
+Here is how the first FloC experiment worked: as a user moved around the web, their browser used the FLoC algorithm to work out its _interest cohort_, which was the same for thousands of browsers with a similar recent browsing history. The browser recalculated its cohort periodically, on the user's device, without sharing individual browsing data with the browser vendor or other parties. When working out its cohort, a browser was choosing between cohorts that [didn't reveal sensitive categories](https://www.chromium.org/Home/chromium-privacy/privacy-sandbox/floc#:~:text=web%20pages%20on%20sensitive%20topics). 
 
 Individual users and websites could opt out of being included in the cohort calculation. 
 
@@ -650,7 +648,7 @@ Finally, [First-Party Sets](https://developer.chrome.com/docs/privacy-sandbox/fi
 
 ## Conclusion
 
-￼Users' privacy remains at risk on the web today: over 80% of all websites have some form of tracking enabled, and novel tracking mechanisms such as CNAME tracking are being developed. Some sites also handle sensitive data such as geolocation, and if they're not careful, potential breaches could result in users' personal data being exposed.
+Users' privacy remains at risk on the web today: over 80% of all websites have some form of tracking enabled, and novel tracking mechanisms such as CNAME tracking are being developed. Some sites also handle sensitive data such as geolocation, and if they're not careful, potential breaches could result in users' personal data being exposed.
 
 Fortunately, increased awareness about the need for privacy on the web has led to concrete action. Websites now have access to features that allow them to safeguard access to sensitive resources. Legislation across the globe enforces explicit user consent for sharing personal data. Websites are implementing privacy policies and cookie banners to comply. Finally, browsers are proposing and developing innovative technologies to continue supporting use cases such as advertising and fraud detection in a more privacy-friendly way.
 
