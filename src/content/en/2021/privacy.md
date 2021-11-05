@@ -7,7 +7,7 @@ reviewers: [maudn]
 analysts: [victorlep, max_ostapenko]
 editors: []
 translators: []
-discuss: 1775
+discuss: 
 results: https://docs.google.com/spreadsheets/d/148SxZICZ24O44roIuEkRgbpIobWXpqLxegCDhIiX8XA/
 ydimova_bio: Yana Dimova is a PhD student at imec-DistriNet, working on web privacy. Her general interests and work focus on online tracking, privacy vulnerabilites and privacy legislation and policies.
 victorlep_bio: Victor Le Pochat is a PhD researcher at the [imec-DistriNet](https://distrinet.cs.kuleuven.be/) research group of KU Leuven in Belgium. His interests lie in the exploration of web ecosystems, and in web security/privacy research metholodogy, both analyzing and improving current methods.
@@ -26,7 +26,7 @@ featured_stat_label_3: Popular sites opted out of FLoC cohorts
 
 _"On the Internet, nobody knows you're a dog."_ While it might be true that you could try to remain anonymous to use the Internet as such, it can be quite hard to keep your personal data fully private. A [whole industry](https://crackedlabs.org/en/corporate-surveillance/) is dedicated to tracking users online, to build detailed user profiles for purposes such as targeted advertising, fraud detection, price differentiation, or even credit scoring. Sharing geolocation data with websites can prove very useful in day-to-day life, but may also allow them to [see your every movement](https://www.nytimes.com/interactive/2019/12/19/opinion/location-tracking-cell-phone.html). Even if a service treats a user's private information diligently, the mere act of storing personal data provides hackers with an opportunity to [breach services and leak millions of personal records online](https://haveibeenpwned.com/). 
 
-Recent legislative efforts such as the [GDPR](https://gdpr-info.eu/) in Europe, [CCPA](https://www.oag.ca.gov/privacy/ccpa) in California, [LGPD](https://www.upguard.com/blog/lgpd) in Brazil, or the [PDP Bill](https://dataprotectionindia.in/act/) in India all strive to require companies to protect personal data and implement privacy by default, including online. Major technology companies such as Google, Facebook and Amazon have already received [massive fines](https://en.wikipedia.org/wiki/GDPR_fines_and_notices) for alleged violations of user privacy. These new laws have given users a much larger say in how comfortable they are with sharing personal data — you probably already have clicked through quite a few cookie consent banners that enable this choice. Furthermore, web browsers are implementing [technological solutions](https://privacysandbox.com/) to improve user privacy, from blocking third-party cookies over hiding sensitive data to innovative ways to balance legitimate use cases on personal attributes with individual user privacy.
+Recent legislative efforts such as the [GDPR](https://ec.europa.eu/info/law/law-topic/data-protection/data-protection-eu) in Europe, [CCPA](https://www.oag.ca.gov/privacy/ccpa) in California, <a hreflang="pt-br" href="https://www.gov.br/cidadania/pt-br/acesso-a-informacao/lgpd">LGPD</a> in Brazil, or the [PDP Bill](https://www.meity.gov.in/data-protection-framework) in India all strive to require companies to protect personal data and implement privacy by default, including online. Major technology companies such as Google, Facebook and Amazon have already received [massive fines](https://en.wikipedia.org/wiki/GDPR_fines_and_notices) for alleged violations of user privacy. These new laws have given users a much larger say in how comfortable they are with sharing personal data — you probably already have clicked through quite a few cookie consent banners that enable this choice. Furthermore, web browsers are implementing [technological solutions](https://privacysandbox.com/) to improve user privacy, from blocking third-party cookies over hiding sensitive data to innovative ways to balance legitimate use cases on personal attributes with individual user privacy.
 
 In this chapter, we give an overview of the current state of privacy on the web. We first consider how user privacy can be harmed: we discuss how websites profile you through [online tracking](#how-websites-profile-you-online-online-tracking), and how they [access your sensitive data](#how-websites-handle-your-sensitive-data). We then look at the impact of tools that empower users to protect their privacy. Next, we dive into ways websites [protect sensitive data](#how-websites-protect-your-sensitive-data) and give you a choice through [privacy preference signals](#how-websites-give-you-a-privacy-choice-privacy-preference-signals). We close with an [outlook on the efforts that browsers are making to safeguard your privacy in the future](#how-browsers-are-evolving-their-privacy-approaches).
 
@@ -96,7 +96,7 @@ The main technical approach to store and retrieve cross-site user identifiers is
 }}
 
 
-Looking at the specific cookies that these websites set, the most common cookie from a tracker is the test_cookie from doubleclick.net. The next most common cookies are advertising-related and remain on a user's device much longer: Facebook's fr cookie persists for [90 days](https://www.facebook.com/policy/cookies/), while DoubleClick's IDE cookie stays for [13 months in Europe and 2 years elsewhere](https://business.safety.google/adscookies/).
+Looking at the specific cookies that these websites set, the most common cookie from a tracker is the `test_cookie` from doubleclick.net. The next most common cookies are advertising-related and remain on a user's device much longer: Facebook's `fr` cookie persists for [90 days](https://www.facebook.com/policy/cookies/), while DoubleClick's `IDE` cookie stays for [13 months in Europe and 2 years elsewhere](https://business.safety.google/adscookies/).
 
 
 
@@ -111,14 +111,14 @@ Looking at the specific cookies that these websites set, the most common cookie 
 }}
 
 
-With Lax becoming the default value of the [SameSite cookie attribute](https://web.dev/samesite-cookies-explained/), sites that want to continue sharing third-party cookies across websites must explicitly set this attribute to None. For third parties, 85% have done this so far on mobile and 64% on desktop, potentially for tracking purposes. You can read more about the SameSite cookie attribute over at the [Security chapter](# link to security chapter). 
+With `Lax` becoming the default value of the [`SameSite` cookie attribute](https://web.dev/samesite-cookies-explained/), sites that want to continue sharing third-party cookies across websites must explicitly set this attribute to `None`. For third parties, 85% have done this so far on mobile and 64% on desktop, potentially for tracking purposes. You can read more about the `SameSite` cookie attribute over at the [Security chapter](FIXME # link to security chapter). 
 
 
 ### Fingerprinting
 
 With the rise of privacy-protecting tools such as ad blockers and initiatives to phase out third-party cookies from major browsers such as [Firefox](https://blog.mozilla.org/en/products/firefox/todays-firefox-blocks-third-party-tracking-cookies-and-cryptomining-by-default/), [Safari](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/), and by 2023 also [Chrome](https://blog.google/products/chrome/updated-timeline-privacy-sandbox-milestones/#:~:text=Chrome%20could%20then%20phase%20out%20third-party%20cookies%20over%20a%20three%20month%20period%2C%20starting%20in%20mid-2023%20and%20ending%20in%20late%202023), trackers are looking for more persistent and stealthy ways to track users across sites. One such technique is _browser fingerprinting_. A website collects information about the user's device, such as the [user agent](https://developer.mozilla.org/en-US/docs/Glossary/User_agent), screen resolution and installed fonts, and uses the often unique combination of those values to create a _fingerprint_. This fingerprint is recreated every time a user visits the website, and can then be matched to identify the user. While this method can be used for fraud detection, it is also used to persistently track recurring users, or to track users across sites. 
 
-Detecting fingerprinting is complex:it is effective through a combination of method calls and event listeners that may also be used for non-tracking purposes. Instead of focusing on these individual methods, we therefore focus on five popular libraries that make it easy for a website to implement fingerprinting. From the percentage of websites using these third-party services, we can see that the most widely used library, [Fingerprint.js](https://fingerprintjs.com/), is used 19 times more on desktop than the second most popular library. However, the overall percentage of websites that use an external library to fingerprint their users is quite small.
+Detecting fingerprinting is complex: it is effective through a combination of method calls and event listeners that may also be used for non-tracking purposes. Instead of focusing on these individual methods, we therefore focus on five popular libraries that make it easy for a website to implement fingerprinting. From the percentage of websites using these third-party services, we can see that the most widely used library, [Fingerprint.js](https://fingerprintjs.com/), is used 19 times more on desktop than the second most popular library. However, the overall percentage of websites that use an external library to fingerprint their users is quite small.
 
 
 
@@ -139,7 +139,7 @@ Detecting fingerprinting is complex:it is effective through a combination of met
 
 Continuing with techniques that circumvent blocks on third-party tracking, [CNAME](https://medium.com/nextdns/cname-cloaking-the-dangerous-disguise-of-third-party-trackers-195205dc522a) tracking is a novel approach where a first-party subdomain redirects to a third-party tracker using a CNAME record at the [DNS](https://adguard.com/en/blog/cname-tracking.html) level. From the viewpoint of the browser, everything happens within a first-party context, so none of the third-party countermeasures are applied. Major tracking companies such as Adobe and Oracle are already offering CNAME tracking solutions to their customers.
 
-The most popular company performing CNAME-based tracking is Pardot, which is present on 6619 desktop websites. Also notable in size is Adobe, with 2671 publisher domains. 
+The most popular company performing CNAME-based tracking is [Pardot](https://www.pardot.com/), which is present on 6619 desktop websites. Also notable in size is Adobe, with 2671 publisher domains. 
 
 
 
@@ -169,7 +169,7 @@ When we look at the rank of the websites that use CNAME-based tracking, we see t
 }}
 
 
-Apart from the .com suffix, a large number of the websites using CNAME-based tracking have a .jp domain. Also a notable amount of CNAME trackers are prevalent on .uk and .fr websites. 
+Apart from the `.com` suffix, a large number of the websites using CNAME-based tracking have a `.jp` domain. Also a notable amount of CNAME trackers are prevalent on `.uk` and `.fr` websites. 
 
 {{ figure_markup(
   image="nb_sites_with_cname_tracking_per_public_suffix.png",
@@ -207,7 +207,7 @@ Ad retargeting refers to the practice of keeping track of the products that a us
 
 ## How websites handle your sensitive data
 
-Some websites request access to specific features and browser APIs that can impact the user's privacy, for instance by accessing the geolocation data, microphone, camera… While these features usually serve very useful purposes, such as discovering nearby points of interest or allowing people to communicate with each other, there is a risk of exposing sensitive data if the user does not fully understand how those resources are used, or if a site misbehaves. We'll look at how often websites request access to sensitive resources. Moreover, any time a service stores sensitive data, there is the danger of hackers stealing and leaking that data. We'll look at recent data breaches that prove that this danger is real. 
+Some websites request access to specific features and browser APIs that can impact the user's privacy, for instance by accessing the geolocation data, microphone, camera, etc. While these features usually serve very useful purposes, such as discovering nearby points of interest or allowing people to communicate with each other, there is a risk of exposing sensitive data if the user does not fully understand how those resources are used, or if a site misbehaves. We'll look at how often websites request access to sensitive resources. Moreover, any time a service stores sensitive data, there is the danger of hackers stealing and leaking that data. We'll look at recent data breaches that prove that this danger is real. 
 
 
 ### Device sensors
@@ -230,7 +230,7 @@ Sensors can be useful to make a website more interactive, but could also be abus
 
 ### Media devices
 
-The MediaDevices API can be used to access connected media input such as cameras, microphones and screen sharing. On 7.23% of websites, the enumerateDevices() method is called, which provides a list of the connected input devices.
+The MediaDevices API can be used to access connected media input such as cameras, microphones and screen sharing. On 7.23% of websites, the `enumerateDevices()` method is called, which provides a list of the connected input devices.
 
 
 
@@ -248,9 +248,8 @@ The MediaDevices API can be used to access connected media input such as cameras
 
 ### Geolocation-as-a-service
 
-Geolocations services provide GPS and other location data of the user (such as [IP address](https://developer.mozilla.org/en-US/docs/Glossary/IP_Address)) and can be used by trackers to provide more relevant content to the user among other things. 
-
-Therefore, we analyze the use of geolocation-as-a-service technologies on websites, based on libraries detected through Wappalyzer. We find that the most popular service [ipify](https://www.ipify.org/) is used on 0.09% of desktop websites and 0.07% of mobile websites. 
+Geolocations services provide GPS and other location data of the user (such as [IP address](https://developer.mozilla.org/en-US/docs/Glossary/IP_Address)) and can be used by trackers to provide more relevant content to the user among other things.
+Therefore, we analyze the use of geolocation-as-a-service technologies on websites, based on libraries detected through Wappalyzer. We find that the most popular service, [ipify](https://www.ipify.org/), is used on 0.09% of desktop websites and 0.07% of mobile websites. 
 
 
 
@@ -266,7 +265,6 @@ Therefore, we analyze the use of geolocation-as-a-service technologies on websit
 
 
 According to our data, few websites utilize geolocation services. Geolocation data can also be accessed by websites through a [web browser API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API).
-
 We find that 0.59% of websites on a desktop client and 0.63% of websites on a mobile client access the current position of the user (based on Blink features), as can be seen in graph {add ref to graph}.
 
 
@@ -286,7 +284,7 @@ We find that 0.59% of websites on a desktop client and 0.63% of websites on a mo
 
 Poor security management within a company can have a significant impact on its customers' private data. In 2020, , 40 domains were breached and personal data about thousands of users leaked. 
 
-[https://haveibeenpwned.com/](HaveIBeenPwned) allows users to check whether their email address or phone number was leaked in a data breach. Up until now, HaveIBeenPwned has tracked 562 breaches, leaking 640 million records. We show the number of data breaches that have occurred in the previous year. Breaches that are _sensitive_ in nature refer to the possibility of a negative impact on the user, if someone were to find that user's data in the breach. One example of a sensitive breach is "[Carding Mafia](https://www.vice.com/en/article/v7m9jx/credit-card-hacking-forum-gets-hacked-exposing-300000-hackers-accounts)", a platform where stolen credit cards are traded. 
+[HaveIBeenPwned](https://haveibeenpwned.com/) allows users to check whether their email address or phone number was leaked in a data breach. Up until now, HaveIBeenPwned has tracked 562 breaches, leaking 640 million records. We show the number of data breaches that have occurred in the previous year. Breaches that are _sensitive_ in nature refer to the possibility of a negative impact on the user, if someone were to find that user's data in the breach. One example of a sensitive breach is "[Carding Mafia](https://www.vice.com/en/article/v7m9jx/credit-card-hacking-forum-gets-hacked-exposing-300000-hackers-accounts)", a platform where stolen credit cards are traded. 
 
 Note that 40 breaches in the previous year is a lower bound, since many breaches are only discovered, or made public, several months after they have occurred.
 
@@ -334,12 +332,12 @@ The email addresses of users are leaked in _every_ breach. This is already a hug
 
 ## How websites protect your sensitive data
 
-While you're browsing the web, there is certain data that you might want to keep private: the web pages that you visit, any sensitive data that you enter into forms, your location, and so on. Over at the [Security chapter](# add link to security chapter), you can learn how 92.5% of desktop sites have enabled HTTPS to protect your data from snooping while it traverses the Internet. Here, we'll focus on how websites can further instruct browsers to ensure privacy for sensitive resources.
+While you're browsing the web, there is certain data that you might want to keep private: the web pages that you visit, any sensitive data that you enter into forms, your location, and so on. Over at the [Security chapter](FIXME # add link to security chapter), you can learn how 92.5% of desktop sites have enabled HTTPS to protect your data from snooping while it traverses the Internet. Here, we'll focus on how websites can further instruct browsers to ensure privacy for sensitive resources.
 
 
-### Permissions policy / Feature policy
+### Permissions Policy / Feature Policy
 
-The [Permissions Policy](https://www.w3.org/TR/permissions-policy-1/) (previously Feature Policy) provides a way for websites to define which web features they intend to use, and which features will need to be explicitly approved by the user—when requested by third parties for instance. This gives websites control over what features embedded third-party scripts can request to access; for example, Permissions-Policy can be used by a website to ensure that no third-party requests microphone access on their site. The policy allows developers to granularly choose web APIs they intend to use, by specifying them with the 'allow' attribute. 
+The [Permissions Policy](https://www.w3.org/TR/permissions-policy-1/) (previously Feature Policy) provides a way for websites to define which web features they intend to use, and which features will need to be explicitly approved by the user — when requested by third parties for instance. This gives websites control over what features embedded third-party scripts can request to access; for example, a permissions policy can be used by a website to ensure that no third-party requests microphone access on their site. The policy allows developers to granularly choose web APIs they intend to use, by specifying them with the `allow` attribute. 
 
 The most commonly used directives with relation to the feature policy are shown below. On 3049 websites on mobile and 2901 websites on desktop, the use of the microphone feature is specified. Other often accessed features are geolocation, camera and payment. 
 
@@ -371,31 +369,25 @@ To gain a deeper understanding of how the directives are used, we looked at the 
 }}
 
 
-'none' is the most used value. This specifies that the feature is disabled in top-level and nested browsing contexts. The second most used value, 'self' is used to specify that the feature is allowed in the current document and within the same origin, while '*' allows cross-origin access. 
+`none` is the most used value. This specifies that the feature is disabled in top-level and nested browsing contexts. The second most used value, `self` is used to specify that the feature is allowed in the current document and within the same origin, while `*` allows cross-origin access. 
 
 
-### Referrer-Policy 
+### Referrer Policy 
 
-HTTP requests may include the optional 'Referer' header, which indicates the origin or web page URL a request was made from.
-
-The 'Referer' header might be present in different types of requests:
-
-
+HTTP requests may include the optional `Referer` header, which indicates the origin or web page URL a request was made from.
+The `Referer` header might be present in different types of requests:
 
 * Navigation requests, when a user clicks a link.
 * Subresource requests, when a browser requests images, iframes, scripts, and other resources that a page needs.
 
-For navigations and iframes, this data can also be accessed via JavaScript using 'document.referrer'.
+For navigations and iframes, this data can also be accessed via JavaScript using `document.referrer`.
 
-The 'Referer' value can be insightful. But when the full URL including the path and query string is sent in the 'Referer' across origins, this can be privacy-hindering: URLs can contain private information—sometimes even identifying or sensitive information. Leaking this silently across origins can compromise users' privacy, and pose security risks.
+The `Referer` value can be insightful. But when the full URL including the path and query string is sent in the `Referer` across origins, this can be privacy-hindering: URLs can contain private information—sometimes even identifying or sensitive information. Leaking this silently across origins can compromise users' privacy, and pose security risks.
+Therefore, the [`Referrer-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) HTTP header allows developers to restrict what referrer data is made available for requests made from their site.
 
-Therefore, the [Referrer-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) HTTP header allows developers to restrict what referrer data is made available for requests made from their site.
-
-We show the most commonly assigned values to the referrer policy header below. 
-
-A first point to note is that most sites do not explicitly set a Referrer-Policy. 
-
-Only 11.2% of desktop websites and 10.4% of mobile websites explicitly define a referrer policy. The rest of them (the other 88.8% on desktop and 89.6% on mobile) will fall back to the browser's default policy. [Most major browsers](https://web.dev/referrer-best-practices/#default-referrer-policies-in-browsers) use a default policy of strict-origin-when-cross-origin (see [Firefox](https://blog.mozilla.org/security/2021/03/22/firefox-87-trims-http-referrers-by-default-to-protect-user-privacy/) and [Chrome)](https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default). 'strict-origin-when-cross-origin' removes the path and query fragments of the URL on cross-origin requests, which reduces security and privacy risks.
+We show the most commonly assigned values to the `Referrer-Policy` header below. 
+A first point to note is that most sites do not explicitly set a referrer policy. 
+Only 11.2% of desktop websites and 10.4% of mobile websites explicitly define a referrer policy. The rest of them (the other 88.8% on desktop and 89.6% on mobile) will fall back to the browser's default policy. [Most major browsers](https://web.dev/referrer-best-practices/#default-referrer-policies-in-browsers) use a default policy of `strict-origin-when-cross-origin` (see [Firefox](https://blog.mozilla.org/security/2021/03/22/firefox-87-trims-http-referrers-by-default-to-protect-user-privacy/) and [Chrome)](https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default). `strict-origin-when-cross-origin` removes the path and query fragments of the URL on cross-origin requests, which reduces security and privacy risks.
 
 
 
@@ -410,9 +402,9 @@ Only 11.2% of desktop websites and 10.4% of mobile websites explicitly define a 
 }}
 
 
-The most common Referrer-Policy that is explicitly set is "no-referrer-when-downgrade". It's set on 3.38% of websites on mobile clients and 3.81% of websites on desktop clients. "no-referrer-when-downgrade" is not privacy-enhancing. With this policy, full URLs of pages a user visits on a given site are shared in cross-origin requests, which makes this information accessible to other parties (origins).
+The most common referrer policy that is explicitly set is `no-referrer-when-downgrade`. It's set on 3.38% of websites on mobile clients and 3.81% of websites on desktop clients. `no-referrer-when-downgrade` is not privacy-enhancing. With this policy, full URLs of pages a user visits on a given site are shared in cross-origin requests, which makes this information accessible to other parties (origins).
 
-In addition, around 0.5% of websites set the value of the referrer policy to 'unsafe-url', which allows the origin, host and query string to be sent with _any_ request, regardless of the security level of the receiver. In this case, a referrer could be sent in the clear, potentially leaking private information. Worryingly, sites are actively being configured to enable this behavior.
+In addition, around 0.5% of websites set the value of the referrer policy to `unsafe-url`, which allows the origin, host and query string to be sent with _any_ request, regardless of the security level of the receiver. In this case, a referrer could be sent in the clear, potentially leaking private information. Worryingly, sites are actively being configured to enable this behavior.
 
 {{ figure_markup(
   image="most_common_referrerpolicy_values.png",
@@ -430,9 +422,9 @@ Note: Websites may also send the referrer information as a URL parameter to the 
 
 ### User-Agent Client Hints
 
-When a web browser makes an HTTP request, it will include a [User-Agent header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) that provides information about the client's browser, device and network capabilities. However, this can be abused for profiling users or uniquely identifying them through [fingerprinting](#fingerprinting). [User-Agent Client Hints](https://wicg.github.io/ua-client-hints/) enable access to the same information as the User-Agent string, but in a more privacy-preserving way. This will in turn enable browsers to eventually reduce the amount of information provided by default by the User-Agent string, as Chrome is proposing with a gradual plan for [User Agent Reduction](https://www.chromium.org/updates/ua-reduction).
+When a web browser makes an HTTP request, it will include a [`User-Agent` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) that provides information about the client's browser, device and network capabilities. However, this can be abused for profiling users or uniquely identifying them through [fingerprinting](#fingerprinting). [User-Agent Client Hints](https://wicg.github.io/ua-client-hints/) enable access to the same information as the `User-Agent` string, but in a more privacy-preserving way. This will in turn enable browsers to eventually reduce the amount of information provided by default by the `User-Agent` string, as Chrome is proposing with a gradual plan for [User Agent Reduction](https://www.chromium.org/updates/ua-reduction).
 
-Servers can indicate their support for these client hints by specifying the "Accept-CH" header. This header lists the attributes that the server requests from the client in order to serve a device-specific or network-specific resource. In general, client hints provide a way for servers to obtain only the minimum information necessary to serve content in an efficient manner.
+Servers can indicate their support for these client hints by specifying the `Accept-CH` header. This header lists the attributes that the server requests from the client in order to serve a device-specific or network-specific resource. In general, client hints provide a way for servers to obtain only the minimum information necessary to serve content in an efficient manner.
 
 However, at this point, few websites have implemented client hints. We also see a big difference between the use of client hints on popular websites and on less popular ones. 3.6% of the top 1,000 most popular websites request client hints. In the top 10,000 websites, the implementation rate drops to less than 1.4%. 
 
@@ -452,7 +444,7 @@ However, at this point, few websites have implemented client hints. We also see 
 
 ## How websites give you a privacy choice: Privacy preference signals
 
-In light of the recent introduction of privacy regulations, such as the GDPR in Europe, CCPA in California, LGPD in Brazil, and more, websites are required to obtain explicit user consent about the collection of personal data for any non essential features such as marketing and analytics. 
+In light of the recent introduction of privacy regulations, such as the [GDPR](https://ec.europa.eu/info/law/law-topic/data-protection/data-protection-eu) in Europe, [CCPA](https://www.oag.ca.gov/privacy/ccpa) in California, <a hreflang="pt-br" href="https://www.gov.br/cidadania/pt-br/acesso-a-informacao/lgpd">LGPD</a> in Brazil, the [PDP Bill](https://www.meity.gov.in/data-protection-framework) in India, and more, websites are required to obtain explicit user consent about the collection of personal data for any non-essential features such as marketing and analytics. 
 
 Therefore, websites turned to the use of cookie consent banners, privacy policies and other mechanisms to inform users about data sites process, and give them a choice. In this section, we look at the prevalence of such tools.
 
@@ -490,9 +482,9 @@ Consent Management Platforms (CMPs) are third-party libraries that websites can 
 
 The [Transparency and Consent Framework](https://iabeurope.eu/transparency-consent-framework/) (TCF) is an initiative of the Interactive Advertising Bureau Europe for providing an industry standard for communicating user consent to advertisers. The framework consists of a Global Vendor List, in which vendors can specify the legitimate purpose of the processed data, and a list of CMPs who act as an intermediary between the vendors and the publishers. Each CMP is responsible for communicating the legal basis and storing the consent option provided by the user in the browser. We refer to the stored cookie as the "consent string". 
 
-TCF is meant as a GDPR-compliant mechanism in Europe, although [a recent decision by the Belgian Data Protection Authority](FIXME) found this system to still be infringing. When the CCPA came into play in California, IAB Tech Lab US came up with a [CCPA Compliance Framework for Publishers & Technology Companies](https://iabtechlab.com/standards/ccpa/) (USP), using the same concepts.
+TCF is meant as a GDPR-compliant mechanism in Europe, although [a recent decision by the Belgian Data Protection Authority](FIXME #) found this system to still be infringing. When the CCPA came into play in California, IAB Tech Lab US developed a [CCPA Compliance Framework for Publishers & Technology Companies](https://iabtechlab.com/standards/ccpa/) (USP), using the same concepts.
 
-Below, we show the distribution of the usage of both versions of TCF and of USP. Note that the crawl is US-based, therefore we do not expect many websites to have implemented TCF. This is depicted in the graph: less than 2% of websites use any TCF version, while twice that many websites use the US Privacy framework.
+Below, we show the distribution of the usage of both versions of TCF and of USP. Note that the crawl is US-based, therefore we do not expect many websites to have implemented TCF. This is depicted in the graph: less than 2% of websites use any TCF version, while twice as many websites use the US Privacy framework.
 
 
 
@@ -506,7 +498,7 @@ Below, we show the distribution of the usage of both versions of TCF and of USP.
   )
 }}
 
-In the 10 most popular consent management platforms that are part of the framework, At the top we find Quantcast with 0.34% on mobile and 0.32% on desktop. Other popular solutions are Didomi and Wikia, with 0.3% and 0.23% on mobile and desktop respectively.
+In the 10 most popular consent management platforms that are part of the framework, at the top we find [Quantcast](https://www.quantcast.com/products/choice-consent-management-platform/) with 0.34% on mobile and 0.32% on desktop. Other popular solutions are [Didomi](https://www.didomi.io/) and Wikia, with 0.3% and 0.23% on mobile and desktop respectively.
 
 
 
@@ -521,7 +513,7 @@ In the 10 most popular consent management platforms that are part of the framewo
 }}
 
 
-In the USP framework, the website's and user's privacy settings are encoded in a "[privacy string](https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md)". As shown in the following graph, the most common privacy string is "1---". This indicates that CCPA does not apply to the website and therefore the website not obliged to provide an opt-out for the user. CCPA only applies to companies whose main business involves selling personal data, or to companies that process data and have an annual turnover of more thanan $25 million. The second most recurring string is "1YNY". This indicates that the website provided "notice and opportunity to opt-out of sale of data", but that the user has _not_ opted out of the sale of their personal data. 
+In the USP framework, the website's and user's privacy settings are encoded in a "[privacy string](https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md)". As shown in the following graph, the most common privacy string is `1---`. This indicates that CCPA does not apply to the website and therefore the website not obliged to provide an opt-out for the user. CCPA only applies to companies whose main business involves selling personal data, or to companies that process data and have an annual turnover of more than $25 million. The second most recurring string is `1YNY`. This indicates that the website provided "notice and opportunity to opt-out of sale of data", but that the user has _not_ opted out of the sale of their personal data. 
 
 
 {{ figure_markup(
@@ -538,7 +530,7 @@ In the USP framework, the website's and user's privacy settings are encoded in a
 
 ### Privacy policies
 
-Nowadays, most websites have a privacy policy, where users can learn about the types of information that is stored and processed about them. By looking for keywords such as ‘privacy policy', ‘cookie policy', and more, in a [number of languages](https://github.com/RUB-SysSec/we-value-your-privacy/blob/master/privacy_wording.json), we see that almost 40% of websites refer to some sort of privacy policy. While some websites are not required to have such a policy, many websites handle personal data and should therefore have a privacy policy to be fully transparent towards their users.
+Nowadays, most websites have a privacy policy, where users can learn about the types of information that is stored and processed about them. By looking for keywords such as 'privacy policy', 'cookie policy', and more, in a [number of languages](https://github.com/RUB-SysSec/we-value-your-privacy/blob/master/privacy_wording.json), we see that almost 40% of websites refer to some sort of privacy policy. While some websites are not required to have such a policy, many websites handle personal data and should therefore have a privacy policy to be fully transparent towards their users.
 
 
 
@@ -556,7 +548,7 @@ Nowadays, most websites have a privacy policy, where users can learn about the t
 
 ### Do Not Track - Global Privacy Control
 
-The [Do Not Track](https://www.eff.org/issues/do-not-track) (DNT) HTTP header can be used to communicate to websites that a user does not wish to be tracked. We can see the number of sites that appear to access the current value for DNT below, based on the presence of the [Navigator.doNotTrack](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/doNotTrack) JavaScript call.
+The [Do Not Track](https://www.eff.org/issues/do-not-track) (DNT) HTTP header can be used to communicate to websites that a user does not wish to be tracked. We can see the number of sites that appear to access the current value for DNT below, based on the presence of the [`Navigator.doNotTrack`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/doNotTrack) JavaScript call.
 
 Around the same percentage of pages on mobile and desktop clients use DNT. However, in practice hardly any websites actually respect the DNT opt-outs. The Tracking Protection Working Group, which specifies DNT, [closed down](https://www.w3.org/2016/11/tracking-protection-wg.html) in 2018, due to ["lack of support"](https://lists.w3.org/Archives/Public/public-tracking/2018Oct/0000.html). Safari then [stopped supporting DNT](https://developer.apple.com/documentation/safari-release-notes/safari-12_1-release-notes#:~:text=Removed%20support%20for%20the%20expired%20Do%20Not%20Track).
 
@@ -576,7 +568,7 @@ DNT's successor [Global Privacy Control](https://globalprivacycontrol.org/) (GPC
 
 ## How browsers are evolving their privacy approaches
 
-Given the push to better protect users' privacy while browsing the web,major browsers are implementing new features that should better safeguard users' sensitive data. We already covered ways in which browsers have started enforcing more privacy-preserving default settings for [Referrer-Policy headers](FIXME) and [SameSite cookies](FIXME). Furthermore, Firefox and Safari seek to block tracking through [Enhanced Tracking Protection](https://developer.mozilla.org/en-US/docs/Web/Privacy/Tracking_Protection) and [Intelligent Tracking Prevention](https://webkit.org/tracking-prevention/) respectively. Beyond blocking trackers, Chrome has launched the [Privacy Sandbox](https://privacysandbox.com/) to develop new web standards that provide more privacy-friendly functionality for various use cases, such as advertising and fraud protection. We'll look more closely at these up-and-coming technologies that are designed to reduce the opportunity for sites to track users.
+Given the push to better protect users' privacy while browsing the web,major browsers are implementing new features that should better safeguard users' sensitive data. We already covered ways in which browsers have started enforcing more privacy-preserving default settings for [`Referrer-Policy` headers](#referrer-policy) and [`SameSite` cookies](#third-party-cookies). Furthermore, Firefox and Safari seek to block tracking through [Enhanced Tracking Protection](https://developer.mozilla.org/en-US/docs/Web/Privacy/Tracking_Protection) and [Intelligent Tracking Prevention](https://webkit.org/tracking-prevention/) respectively. Beyond blocking trackers, Chrome has launched the [Privacy Sandbox](https://privacysandbox.com/) to develop new web standards that provide more privacy-friendly functionality for various use cases, such as advertising and fraud protection. We'll look more closely at these up-and-coming technologies that are designed to reduce the opportunity for sites to track users.
 
 
 ### Privacy Sandbox
@@ -599,7 +591,6 @@ Since FLoC was an experiment, it was not widely deployed. Instead, websites coul
 Here is how the first FloC experiment worked: as a user moved around the web, their browser used the FLoC algorithm to work out its _interest cohort_, which was the same for thousands of browsers with a similar recent browsing history. The browser recalculated its cohort periodically, on the user's device, without sharing individual browsing data with the browser vendor or other parties. When working out its cohort, a browser was choosing between cohorts that [didn't reveal sensitive categories](https://www.chromium.org/Home/chromium-privacy/privacy-sandbox/floc#:~:text=web%20pages%20on%20sensitive%20topics). 
 
 Individual users and websites could opt out of being included in the cohort calculation. 
-
 We saw that 4.1% of the top 1,000 websites have opted out of FLoC. Across all other websites, around 1% have opted out.
 
 
@@ -620,7 +611,7 @@ We saw that 4.1% of the top 1,000 websites have opted out of FLoC. Across all ot
 
 Within the Privacy Sandbox, a number of experiments are in various stages of development. 
 
-The [Attribution Reporting API](https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/) (previously called Conversion Measurement) makes it possible to measure when user interaction with an ad leads to a conversion — for example, whenan ad click eventually led to a purchase. We saw the first origin trial (which ended in October 2021) enabled on 10 origins. 
+The [Attribution Reporting API](https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/) (previously called Conversion Measurement) makes it possible to measure when user interaction with an ad leads to a conversion — for example, when an ad click eventually led to a purchase. We saw the first origin trial (which ended in October 2021) enabled on 10 origins. 
 
 [FLEDGE](https://developer.chrome.com/docs/privacy-sandbox/fledge/) seeks to address ad targeting. The API can be tested in current versions of Chrome [locally by individual developers](https://developer.chrome.com/docs/privacy-sandbox/fledge/) but there is no origin trial as of October 2021.
 
@@ -630,7 +621,7 @@ The [Attribution Reporting API](https://developer.chrome.com/docs/privacy-sandbo
 
 [Fenced Frames](https://github.com/shivanigithub/fenced-frame) protect frame access to data from the embedding page. As of October 2021, there iss no origin trial. 
 
-Finally, [First-Party Sets](https://developer.chrome.com/docs/privacy-sandbox/first-party-sets/) allow website owners to define a set of distinct domains that actually belong to the same entity. Owners can then set a SameParty attribute on cookies that should be sent across cross-site contexts, as long as the sites are in the same first-party set. A first origin trial ended in September 2021. We saw the 'SameParty' attribute on a few thousand cookies.
+Finally, [First-Party Sets](https://developer.chrome.com/docs/privacy-sandbox/first-party-sets/) allow website owners to define a set of distinct domains that actually belong to the same entity. Owners can then set a `SameParty` attribute on cookies that should be sent across cross-site contexts, as long as the sites are in the same first-party set. A first origin trial ended in September 2021. We saw the `SameParty` attribute on a few thousand cookies.
 
 
 
