@@ -25,7 +25,7 @@ Capabilities are new web platform APIs that unlock entirely new use cases for we
 
 {{ figure_markup(
 image="fugu.svg",
-caption='The puffer fish is Project Fugu's mascot (license: <a hreflang="en" href="https://github.com/googlefonts/noto-emoji/blob/main/LICENSE">Apache License 2.0</a>)',
+caption='The puffer fish is Project Fugu\'s mascot (license: <a hreflang="en" href="https://github.com/googlefonts/noto-emoji/blob/main/LICENSE">Apache License 2.0</a>)',
 description='An illustration of a puffer fish.',
 width=128,
 height=128
