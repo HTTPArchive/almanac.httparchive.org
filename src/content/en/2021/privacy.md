@@ -17,7 +17,7 @@ featured_stat_label_1: Websites that include at least one tracker
 featured_stat_2: 43.02/39.7%
 featured_stat_label_2: Websites that contain a privacy policy link
 featured_stat_3: 4.18%
-featured_stat_label_3: Popular sites opted out of FLoC cohorts
+featured_stat_label_3: Popular sites opting out of FLoC cohorts
 ---
 
 
