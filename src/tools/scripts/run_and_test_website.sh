@@ -79,6 +79,12 @@ npm run pytest
 echo "Testing website"
 npm run test
 
+if [ -n "$(git status --porcelain)" ]; then
+  echo "Generating the website produced a different file than is in the branch"
+  git status
+  exit 1
+fi
+
 echo "Website started successfully"
 
 # If in debug more then restart server in debug mode so it picks up new files
