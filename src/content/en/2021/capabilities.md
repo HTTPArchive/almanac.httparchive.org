@@ -60,7 +60,7 @@ const item = await navigator.clipboard.readText();
 const items = await navigator.clipboard.read();
 ```
 
-The browser may show a permission prompt or a different UI for privacy reasons before granting the website access to the clipboard contents. The Async Clipboard API is available in Chrome, Edge, and Safari. Firefox only supports the `writeText()` method.
+The browser may show a permission prompt or a different UI for privacy reasons before granting the website access to the clipboard contents. The Async Clipboard API is available in Chrome, Edge, and Safari (<a hreflang="en" href="https://caniuse.com/async-clipboard">current browser support for the Async Clipboard API</a>). Firefox only supports the `writeText()` method.
 
 {{ figure_markup(
 caption="Desktop websites use the Async Clipboard API",
@@ -123,7 +123,7 @@ Finally, the API allows web apps (e.g., integrated development environments) to 
 const handle = await window.showDirectoryPicker();
 ```
 
-The File System Access API is only available on Chromium-based browsers and desktop systems. Fortunately, the web platform offers the aforementioned fallback approaches to provide similar functionality on mobile devices and other browsers. Developers can use the Google-developed library <a hreflang="en" href="https://github.com/GoogleChromeLabs/browser-fs-access">browser-fs-access</a> that uses the File System Access API if present and otherwise falls back to the alternative implementation.
+The File System Access API is only available on Chromium-based browsers and desktop systems (<a hreflang="en" href="https://caniuse.com/native-filesystem-api">current browser support for the File System Access API</a>). Fortunately, the web platform offers the aforementioned fallback approaches to provide similar functionality on mobile devices and other browsers. Developers can use the Google-developed library <a hreflang="en" href="https://github.com/GoogleChromeLabs/browser-fs-access">browser-fs-access</a> that uses the File System Access API if present and otherwise falls back to the alternative implementation.
 
 {{ figure_markup(
 caption="Desktop websites use the File System Access API",
@@ -155,7 +155,7 @@ await navigator.share({
 })
 ```
 
-The Web Share API is supported by Safari (iOS, macOS), and Chrome and Edge (Windows, Chrome OS). It's currently a <a hreflang="en" href="https://www.w3.org/TR/web-share/">Working Draft</a> at the Web Applications Working Group. This is one of the first stages of the track to becoming a W3C Recommendation.
+The Web Share API is supported by Safari on iOS and macOS, and Chrome and Edge on Windows and Chrome OS (<a hreflang="en" href="https://caniuse.com/web-share">current browser support for the Web Share API</a>). It's currently a <a hreflang="en" href="https://www.w3.org/TR/web-share/">Working Draft</a> at the Web Applications Working Group. This is one of the first stages of the track to becoming a W3C Recommendation.
 
 {{ figure_markup(
 caption="Desktop websites use the Web Share API",
@@ -260,7 +260,7 @@ sql_file="fugu.sql"
 )
 }}
 
-The API has been generally available on Chromium-based browsers since version 61. 182 desktop and 155 mobile sites use this API, for example, the PWA <a hreflang="en" href="https://app.vysor.io/#/">Vysor</a> that allows you to mirror the screen of an Android or iOS device—all without installing any additional software on your computer.
+The API has been generally available on Chromium-based browsers since version 61 (<a hreflang="en" href="https://caniuse.com/web-usb">current browser support for the Web USB API</a>). 182 desktop and 155 mobile sites use this API, for example, the PWA <a hreflang="en" href="https://app.vysor.io/#/">Vysor</a> that allows you to mirror the screen of an Android or iOS device—all without installing any additional software on your computer.
 
 {{ figure_markup(
 image="web-usb.png",
@@ -293,7 +293,7 @@ sql_file="fugu.sql"
 )
 }}
 
-The API is generally available on Chromium-based browsers on Chrome OS, Android, macOS, and Windows starting from version 56. On Linux, the API is provided behind a flag. 71 desktop and 45 mobile sites make use of this capability. For instance, the <a hreflang="en" href="https://web.brewfather.app/">Brewfather</a> PWA targeted at home-brewers allows them to send a beer recipe wirelessly over to a Bluetooth-enabled brewing system. Again, all without installing any third-party software.
+The API is generally available on Chromium-based browsers on Chrome OS, Android, macOS, and Windows starting from version 56 (<a hreflang="en" href="https://caniuse.com/web-bluetooth">current browser support for the Web Bluetooth API</a>). On Linux, the API is provided behind a flag. 71 desktop and 45 mobile sites make use of this capability. For instance, the <a hreflang="en" href="https://web.brewfather.app/">Brewfather</a> PWA targeted at home-brewers allows them to send a beer recipe wirelessly over to a Bluetooth-enabled brewing system. Again, all without installing any third-party software.
 
 {{ figure_markup(
 image="web-bluetooth.png",
@@ -324,7 +324,7 @@ sql_file="fugu.sql"
 )
 }}
 
-This capability is relatively new, as it shipped with Chromium 89 in March 2021. Currently, 15 desktop and 14 mobile sites use the Web Serial API, including the <a hreflang="en" href="https://duino.app/">Duino App</a> that allows you to develop programs for Arduino and ESP microcontrollers right in your browser. They are compiled on a remote server and then uploaded to a connected board via the Web Serial API.
+This capability is relatively new, as it shipped with Chromium 89 in March 2021 (<a hreflang="en" href="https://caniuse.com/web-serial">current browser support for the Web Serial API</a>). Currently, 15 desktop and 14 mobile sites use the Web Serial API, including the <a hreflang="en" href="https://duino.app/">Duino App</a> that allows you to develop programs for Arduino and ESP microcontrollers right in your browser. They are compiled on a remote server and then uploaded to a connected board via the Web Serial API.
 
 {{ figure_markup(
 image="web-serial.png",
@@ -362,7 +362,7 @@ sql_file="fugu.sql"
 )
 }}
 
-The capability is supported by Chromium browsers starting from version 67. The relative orientation sensor is used by 824 desktop and 831 mobile sites, the linear acceleration sensor by 257 desktop and 237 mobile sites, and the gyroscope by 36 desktop and 22 mobile sites. An example application that uses all three of them is <a hreflang="en" href="https://obs.ninja/">VDO.Ninja</a>, the former OBS Ninja. This software allows you to remotely connect with video broadcasting software such as OBS. The app allows the connected broadcasting software to read sensor data from the device. For example, to capture a smartphone's movements when streaming virtual reality content.
+The capability is supported by Chromium browsers starting from version 67 (<a hreflang="en" href="https://caniuse.com/mdn-api_sensor">current browser support for the Generic Sensor API</a>). The relative orientation sensor is used by 824 desktop and 831 mobile sites, the linear acceleration sensor by 257 desktop and 237 mobile sites, and the gyroscope by 36 desktop and 22 mobile sites. An example application that uses all three of them is <a hreflang="en" href="https://obs.ninja/">VDO.Ninja</a>, the former OBS Ninja. This software allows you to remotely connect with video broadcasting software such as OBS. The app allows the connected broadcasting software to read sensor data from the device. For example, to capture a smartphone's movements when streaming virtual reality content.
 
 ## Sites using the most capabilities
 The analysis also identified the websites using the most capabilities from the HTTP Archive data set. The detection script is capable of identifying 30 Fugu APIs in total.
