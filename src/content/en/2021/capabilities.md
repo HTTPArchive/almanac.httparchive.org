@@ -35,8 +35,54 @@ Please note that most of the APIs presented here are so-called _incubations_. Un
 
 Some APIs have already shipped in several browsers; others are only available on Chromium-based ones. These browsers include Google Chrome, Microsoft Edge, Opera, Brave, or Samsung Internet. Please note that vendors of Chromium-based browsers can choose to disable specific capabilities, so not all APIs may be available in all browsers based on Chromium. Some capabilities may also only be available after activating a flag in the browser settings.
 
+## Async Clipboard API
+The [Async Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) allows you to read and write data from or to the clipboard. Due to its asynchronous nature, it enables use cases like scaling down an image while pasting it—all without blocking the UI. It replaces less capable APIs like `document.execCommand()` that were previously used to interact with the clipboard.
+
+### Write access
+The Async Clipboard API offers two methods to copy data to the clipboard: The shorthand method [`writeText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText) takes plain text as an argument which the browser then copies to the clipboard. The [`write()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/write) method takes an array of clipboard items that could contain arbitrary data. Browsers can decide to only implement certain data formats. The Clipboard API specification specifies a <a hreflang="en" href="https://www.w3.org/TR/clipboard-apis/#mandatory-data-types-x">list of mandatory data types</a> browsers must support as a minimum, including plain text, HTML, URI lists, and PNG images.
+
+```js
+await navigator.clipboard.writeText('hello world');
+
+const blob = new Blob(['hello world'], { type: 'text/plain' });
+await navigator.clipboard.write([
+  new ClipboardItem({
+    [blob.type]: blob,
+  }),
+]);
+```
+
+### Read access
+Similar to copying data to the clipboard, there are two methods to paste data back from the clipboard: First, another shorthand method called [`readText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/readText) that returns plain text from the clipboard. Using the [`read()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/read) method, you access all items in the clipboard in the data formats supported by the browser.
+
+```js
+const item = await navigator.clipboard.readText();
+const items = await navigator.clipboard.read();
+```
+
+The browser may show a permission prompt or a different UI for privacy reasons before granting the website access to the clipboard contents. The Async Clipboard API is available in Chrome, Edge, and Safari. Firefox only supports the `writeText()` method.
+
+{{ figure_markup(
+caption="Desktop websites use the Async Clipboard API",
+content="560,359",
+classes="big-number",
+sheets_gid="2077755325",
+sql_file="fugu.sql"
+)
+}}
+
+With 560,359 (8.91%) desktop and 618,062 (8.25%) mobile sites, the Async Clipboard API (`writeText()` method) is one of the most used Fugu APIs. The `write()` method is used on 1,180 desktop and 1,227 mobile sites. As an example, the commercial website <a hreflang="en" href="https://clippingmagic.com/">Clipping Magic</a> allows you to remove the background of an image with the help of an AI algorithm. Just paste an image from the clipboard, and the website will remove its background.
+
+{{ figure_markup(
+image="async-clipboard-api.png",
+caption='Clipping Magic uses artificial intelligence to remove the background of images pasted via the Async Clipboard API',
+description='Screenshot of the Clipping Magic application with an image on the left, and the same image without a background on the right',
+width=699,
+height=440
+) }}
+
 ## File System Access API
-The first productivity-related API is the [File System Access API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API). Web apps could <a hreflang="en" href="https://web.dev/browser-fs-access/#the-traditional-way-of-dealing-with-files">already deal with files</a>: `<input type="file">` allows the user to open one or more files via a file picker. Also, they could already save files to the Downloads folder via `<a download>`. The File System Access API adds support for additional use cases: Opening and modifying directories, saving files to a location specified by the user, and overwriting files that were opened by them. It is also possible to persist file handles to IndexedDB to allow for continued (permission-gated) access, even after a page reload. In particular, the API does not grant random access to the file system and certain system folders are blocked by default.
+The next productivity-related API is the [File System Access API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API). Web apps could <a hreflang="en" href="https://web.dev/browser-fs-access/#the-traditional-way-of-dealing-with-files">already deal with files</a>: `<input type="file">` allows the user to open one or more files via a file picker. Also, they could already save files to the Downloads folder via `<a download>`. The File System Access API adds support for additional use cases: Opening and modifying directories, saving files to a location specified by the user, and overwriting files that were opened by them. It is also possible to persist file handles to IndexedDB to allow for continued (permission-gated) access, even after a page reload. In particular, the API does not grant random access to the file system and certain system folders are blocked by default.
 
 ### Write access
 When calling the [`showSaveFilePicker()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/showSaveFilePicker) method on the global `window` object, the browser will show the operating system's file picker. The method takes an optional options object where you can specify which file types are allowed for saving (`types`, default: all types), and whether the user can disable this filter via an "accept all" option (`excludeAcceptAllOption`, default: `false`).
@@ -96,52 +142,6 @@ caption='The Excalidraw PWA uses the File System Access API to save images to th
 description='Screenshot showing the Excalidraw drawing application with an open file save dialog.',
 width=656,
 height=409
-) }}
-
-## Async Clipboard API
-The [Async Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API) allows you to read and write data from or to the clipboard. Due to its asynchronous nature, it enables use cases like scaling down an image while pasting it—all without blocking the UI. It replaces less capable APIs like `document.execCommand()` that were previously used to interact with the clipboard.
-
-### Write access
-The Async Clipboard API offers two methods to copy data to the clipboard: The shorthand method [`writeText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText) takes plain text as an argument which the browser then copies to the clipboard. The [`write()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/write) method takes an array of clipboard items that could contain arbitrary data. Browsers can decide to only implement certain data formats. The Clipboard API specification specifies a <a hreflang="en" href="https://www.w3.org/TR/clipboard-apis/#mandatory-data-types-x">list of mandatory data types</a> browsers must support as a minimum, including plain text, HTML, URI lists, and PNG images.
-
-```js
-await navigator.clipboard.writeText('hello world');
-
-const blob = new Blob(['hello world'], { type: 'text/plain' });
-await navigator.clipboard.write([
-  new ClipboardItem({
-    [blob.type]: blob,
-  }),
-]);
-```
-
-### Read access
-Similar to copying data to the clipboard, there are two methods to paste data back from the clipboard: First, another shorthand method called [`readText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/readText) that returns plain text from the clipboard. Using the [`read()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/read) method, you access all items in the clipboard in the data formats supported by the browser.
-
-```js
-const item = await navigator.clipboard.readText();
-const items = await navigator.clipboard.read();
-```
-
-The browser may show a permission prompt or a different UI for privacy reasons before granting the website access to the clipboard contents. The Async Clipboard API is available in Chrome, Edge, and Safari. Firefox only supports the `writeText()` method.
-
-{{ figure_markup(
-caption="Desktop websites use the Async Clipboard API",
-content="560,359",
-classes="big-number",
-sheets_gid="2077755325",
-sql_file="fugu.sql"
-)
-}}
-
-With 560,359 (8.91%) desktop and 618,062 (8.25%) mobile sites, the Async Clipboard API (`writeText()` method) is one of the most used Fugu APIs. The `write()` method is used on 1,180 desktop and 1,227 mobile sites. As an example, the commercial website <a hreflang="en" href="https://clippingmagic.com/">Clipping Magic</a> allows you to remove the background of an image with the help of an AI algorithm. Just paste an image from the clipboard, and the website will remove its background.
-
-{{ figure_markup(
-image="async-clipboard-api.png",
-caption='Clipping Magic uses artificial intelligence to remove the background of images pasted via the Async Clipboard API',
-description='Screenshot of the Clipping Magic application with an image on the left, and the same image without a background on the right',
-width=699,
-height=440
 ) }}
 
 ## Web Share API
