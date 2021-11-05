@@ -54,10 +54,10 @@ WITH videonotes AS (
         ) 
     CROSS JOIN UNNEST(video_source_format_type) AS source_formats
     CROSS JOIN UNNEST(video_source_format_count) AS source_format_count
->>>>>>> fd5fb93b... fixed table, added a few more
+
 )
 
-<<<<<<< HEAD
+
 SELECT
   source_formats,
   COUNT(source_formats) AS numberofoccurances
@@ -69,18 +69,4 @@ GROUP BY
   source_formats
 ORDER BY
   numberofoccurances DESC
-||||||| parent of fd5fb93b... fixed table, added a few more
 
-SELECT  source_formats,count(source_formats) as numberofoccurances
-from videonotes
-WHERE num_video_nodes>0
-group by  source_formats
-order by numberofoccurances desc
-=======
-
-SELECT  source_formats,source_format_count,count(source_formats) as numberofoccurances
-from videonotes
-WHERE num_video_nodes>0
-group by  source_formats,source_format_count
-order by numberofoccurances desc
->>>>>>> fd5fb93b... fixed table, added a few more

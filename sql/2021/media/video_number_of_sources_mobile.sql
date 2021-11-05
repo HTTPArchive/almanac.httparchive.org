@@ -8,7 +8,6 @@ WITH videonotes AS (
     source_count,
     video_source_format_type
   FROM (
-<<<<<<< HEAD
       SELECT
         url AS pageURL,
         JSON_VALUE(payload, "$._media") AS media,
@@ -23,33 +22,6 @@ WITH videonotes AS (
     )
   CROSS JOIN
     UNNEST(video_source_format_count) AS source_count
-||||||| parent of fd5fb93b... fixed table, added a few more
-        SELECT
-            url as pageURL,
-            JSON_VALUE( payload, "$._media" ) as media,
-            CAST( JSON_VALUE(JSON_VALUE( payload, "$._media" ),"$.num_video_nodes") AS INT64) as num_video_nodes,
-            ( JSON_QUERY(JSON_VALUE( payload, "$._media" ),"$.video_durations")  ) as video_duration,
-            ( JSON_QUERY(JSON_VALUE( payload, "$._media" ),"$.video_display_style")) as video_display_style,
-            ( JSON_QUERY_ARRAY(JSON_VALUE( payload, "$._media" ),"$.video_attributes_values_counts") ) as video_attributes_values_counts,
-            ( JSON_QUERY_ARRAY(JSON_VALUE( payload, "$._media" ),"$.video_source_format_count") ) as video_source_format_count,
-            ( JSON_QUERY(JSON_VALUE( payload, "$._media" ),"$.video_source_format_type") ) as video_source_format_type,
-        FROM `httparchive.summary_pages.2021_07_01_mobile`
-        ) 
-    CROSS JOIN UNNEST(video_source_format_count) AS source_count
-=======
-        SELECT
-            url as pageURL,
-            JSON_VALUE( payload, "$._media" ) as media,
-            CAST( JSON_VALUE(JSON_VALUE( payload, "$._media" ),"$.num_video_nodes") AS INT64) as num_video_nodes,
-            ( JSON_QUERY(JSON_VALUE( payload, "$._media" ),"$.video_durations")  ) as video_duration,
-            ( JSON_QUERY(JSON_VALUE( payload, "$._media" ),"$.video_display_style")) as video_display_style,
-            ( JSON_QUERY_ARRAY(JSON_VALUE( payload, "$._media" ),"$.video_attributes_values_counts") ) as video_attributes_values_counts,
-            ( JSON_QUERY_ARRAY(JSON_VALUE( payload, "$._media" ),"$.video_source_format_count") ) as video_source_format_count,
-            ( JSON_QUERY(JSON_VALUE( payload, "$._media" ),"$.video_source_format_type") ) as video_source_format_type,
-        FROM `httparchive.pages.2021_07_01_mobile`
-        ) 
-    CROSS JOIN UNNEST(video_source_format_count) AS source_count
->>>>>>> fd5fb93b... fixed table, added a few more
 )
 
 SELECT
