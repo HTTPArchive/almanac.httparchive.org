@@ -64,20 +64,9 @@ elif [ "${RUN_TYPE}" == "pull_request" ] && [ "${COMMIT_SHA}" != "" ]; then
     # Uses similar logic to GitHub Super Linter (https://github.com/github/super-linter/blob/master/lib/buildFileList.sh)
     # First checkout main to get list of differences
     git pull --quiet
-    CHANGED_FILES=""
-
-    # The comparison to main is slightly different depending if we're on a fork or not
-    FORK=$(git remote -v | grep origin | grep fetch | grep git@github.com:HTTPArchive/almanac.httparchive.org.git)
-    if [ ${FORK} ]; then
-        git remote add upstream git@github.com:HTTPArchive/almanac.httparchive.org.git
-        git checkout upstream/main
-        # Then get the changes
-        CHANGED_FILES=$(git diff --name-only "upstream/main...${COMMIT_SHA}" --diff-filter=d content templates | grep -v base.html | grep -v ejs | grep -v base_ | grep -v sitemap | grep -v error.html | grep -v stories)
-    else
-        git checkout main
-        # Then get the changes
-        CHANGED_FILES=$(git diff --name-only "main...${COMMIT_SHA}" --diff-filter=d content templates | grep -v base.html | grep -v ejs | grep -v base_ | grep -v sitemap | grep -v error.html | grep -v stories)
-    fi
+    git checkout main
+    # Then get the changes
+    CHANGED_FILES=$(git diff --name-only "main...${COMMIT_SHA}" --diff-filter=d content templates | grep -v base.html | grep -v ejs | grep -v base_ | grep -v sitemap | grep -v error.html | grep -v stories)
 
     # Then back to the pull request changes
     git checkout --progress --force "${COMMIT_SHA}"
