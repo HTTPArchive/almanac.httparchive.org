@@ -4,7 +4,10 @@ LANGUAGE js AS r"""
 
 const subtypeMap = {
     'svg+xml': 'svg',
+    'svgz': 'svg',
     'jpeg': 'jpg',
+    'jfif': 'jpg',
+    'x-png': 'png',
     'vnd.microsoft.icon': 'ico',
     'x-icon': 'ico',
     'jxr': 'jxr',
@@ -46,7 +49,7 @@ function normalizeSubtype( subtype ) {
     if ( subtypeMap[ subtype ] ) {
         return subtypeMap[ subtype ];
     }
-    return subtype; // switch to subtype to see everything and see if there's anything else worth capturing
+    return 'unknown'; // switch to subtype to see everything and see if there's anything else worth capturing
                     // or 'unknown' to make results manageable
 }
 
@@ -62,7 +65,7 @@ if ( url &&
 // if we get a content-type header, use it!
 if ( contentType &&
      typeof contentType === "string" ) {
-    const match = contentType.toLowerCase().match( /image\/([\w\d\-\.\+]+)/ );
+    const match = contentType.toLowerCase().match( /image\/([\w\-\.\+]+)/ );
     if ( match && match[ 1 ] ) {
         return normalizeSubtype( match[ 1 ] );
     }
@@ -79,7 +82,7 @@ if ( url &&
             return normalizeSubtype(
                 splitOnDots[ splitOnDots.length - 1 ]
                 .toLowerCase()
-                .replace( /^(\w+)[\?\&\#].+/, '$1' ) // strip query params
+                .replace( /^(\w+)[\?\&\#].*/, '$1' ) // strip query params
             );
         }
     }
@@ -100,12 +103,12 @@ SELECT
         ),
         '$."responsive-images"'
     ) AS imgElements
-FROM `httparchive.pages_2021_07_01_*`
+FROM `httparchive.pages.2021_07_01_*`
 ), imgElements AS (
 SELECT
     client,
 	CAST( JSON_VALUE(imgElement, '$.bitsPerPixel') AS NUMERIC) as bitsPerPixel,
-	CAST( JSON_VALUE(imgElement, '$.approximateResourceWidth') AS INT64 ) as approximateResourceWidth,
+	CAST( ROUND( CAST( JSON_VALUE(imgElement, '$.approximateResourceWidth') AS NUMERIC ) ) AS INT64 ) as approximateResourceWidth,
 	normalizeMimeType( JSON_VALUE(imgElement, '$.mimeType'), JSON_VALUE(imgElement, '$.url') ) as mimeType,
 FROM pages CROSS JOIN UNNEST(imgElements) AS imgElement
 ), percentiles AS (
