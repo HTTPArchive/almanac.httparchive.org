@@ -619,7 +619,7 @@ The [Attribution Reporting API](https://developer.chrome.com/docs/privacy-sandbo
 
 [CHIPS (Cookies Having Independent Partitioned State)](https://github.com/WICG/CHIPS) allows websites to mark cross-site cookies as "Partitioned", putting them in a separate cookie jar per top-level site. (Firefox has already introduced the similar [Total Cookie Protection](https://blog.mozilla.org/security/2021/02/23/total-cookie-protection/) feature for cookie partitioning.) As of October 2021, there is no origin trial for CHIPS.
 
-[Fenced Frames](https://github.com/shivanigithub/fenced-frame) protect frame access to data from the embedding page. As of October 2021, there iss no origin trial. 
+[Fenced Frames](https://github.com/shivanigithub/fenced-frame) protect frame access to data from the embedding page. As of October 2021, there is no origin trial. 
 
 Finally, [First-Party Sets](https://developer.chrome.com/docs/privacy-sandbox/first-party-sets/) allow website owners to define a set of distinct domains that actually belong to the same entity. Owners can then set a `SameParty` attribute on cookies that should be sent across cross-site contexts, as long as the sites are in the same first-party set. A first origin trial ended in September 2021. We saw the `SameParty` attribute on a few thousand cookies.
 
