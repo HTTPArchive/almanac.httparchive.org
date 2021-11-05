@@ -552,6 +552,7 @@ Our analysis showed that `beforeinstallprompt` is being used in 0.48% of desktop
 The `BeforeInstallPromptEvent` API is <a hreflang="en" href="https://caniuse.com/mdn-api_beforeinstallpromptevent">not yet available in all browsers</a>, which explains the relatively low usage. Let's take a look now at the percentage of traffic that this represents:
 
 {{ figure_markup(
+  link="https://www.chromestatus.com/metrics/feature/timeline/popularity/1436",
   image='pwa-before-install-prompt-page-loads.png',
   caption='Percentage of page view on a page that use `beforeinstallprompt` (Source: <a hreflang="en" href="https://www.chromestatus.com/metrics/feature/timeline/popularity/1436">Chrome Platform Status</a>)',
   description='Time series of page loads from 1st January 2019 until September 2021 showing a growth from 1% to just over 4% with a large growth in January 2021.',
