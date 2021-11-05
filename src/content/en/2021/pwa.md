@@ -385,7 +385,7 @@ In any case, the median score of 83 for PWA sites, suggests that a good portion 
 Service workers can use libraries to take care of common tasks, functionalities and best practices (e.g. to implement caching techniques, push notifications, etc).
 The most common way of doing this is by using <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts">importScripts()</a>, which is the way of importing javascript libraries in workers. In other cases, build tools can also inject the code of libraries directly into service workers at build time.
 
-Take into account that not all libraries can be used in worker contexts. Workers don't have access to the <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Window">Window</a>, and therefore, the <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Document">Document<a> object,  and have limited access to browser APIs. For that reason, service worker libraries are specifically designed to be used in these contexts.
+Take into account that not all libraries can be used in worker contexts. Workers don't have access to the <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Window">Window</a>, and therefore, the <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Document">Document</a> object,  and have limited access to browser APIs. For that reason, service worker libraries are specifically designed to be used in these contexts.
 
 In this section we'll analyze the popularity of various service worker libraries.
 
