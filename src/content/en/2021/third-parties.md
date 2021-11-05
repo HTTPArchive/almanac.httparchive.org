@@ -22,7 +22,7 @@ featured_stat_label_3: Requests which are 3rd party
 
 Ah third parties, the solution to so many problems on the web… and cause of so many others! Fundamentally, the web has always been about interconnectivity and sharing. Using third-party content on a website is a natural extension of that and was first set into motion with the introduction of the <a hreflang="en" href="https://www.w3.org/MarkUp/html-spec/html-spec_5.html#SEC5.10">`<img>` element in HTML 2.0</a>; we have been able to hyperlink external content straight into our documents ever since. This has only grown with the introduction of [CSS](./css), and [JavaScript](./javascript) allowing part (or all!) of the page to be changed completely just by including a seemingly simple `<link>` or `<script>` element.
 
-Third parties provide a never-ending collection of images, videos, fonts, tools, libraries, widgets, trackers, ads, and anything else you can imagine to embed into our web pages. This enables even the most non-technical to be able to create and publish content to the web. Without third parties, the web would likely be a very boring, text-based, academic medium instead of the rich, immersive, complex platform that is so integral to the lives of many of us today.
+Third parties provide a never-ending collection of images, videos, fonts, tools, libraries, widgets, trackers, ads, and anything else you can imagine embedding into our web pages. This enables even the most non-technical to be able to create and publish content to the web. Without third parties, the web would likely be a very boring, text-based, academic medium instead of the rich, immersive, complex platform that is so integral to the lives of many of us today.
 
 However, there is a dark side to using third-party content on the web. An innocuous inclusion of an image or a helpful library opens the floodgates to all sorts of [performance](./performance), [privacy](./performance), and [security](./security) implications that many developers do not consider fully. Speak to any professionals in those industries and they will lament the use of third-party content making their lives more difficult. Scrutiny is surely only going to grow with performance getting extra attention through the <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals initiative from Google</a>, increased focus on privacy from governments and individuals, and the ever-increasing threat of exploitable vulnerabilities and malicious threats inherent to the web.
 
@@ -57,11 +57,11 @@ This year we will, again, be drawing heavily on the <a hreflang="en" href="https
 - **CDN** - These are a mixture of publicly hosted open source libraries (e.g. jQuery) served over different public CDNs and private CDN usage.
 - **Content** - These scripts are from content providers or publishing-specific affiliate tracking.
 - **Customer Success** - These scripts are from customer support/marketing providers that offer chat and contact solutions. These scripts are generally heavier in weight.
-- **Hosting** - These scripts are from web hosting platforms (WordPress, Wix, Squarespace, etc).
+- **Hosting** - These scripts are from web hosting platforms (WordPress, Wix, Squarespace, etc.).
 - **Marketing** - These scripts are from marketing tools that add popups/newsletters/etc.
 - **Social** - These scripts enable social features.
 - **Tag Manager** - These scripts tend to load lots of other scripts and initiate many tasks.
-- **Utility** - These scripts are developer utilities (API clients, site monitoring, fraud detection, etc).
+- **Utility** - These scripts are developer utilities (API clients, site monitoring, fraud detection, etc.).
 - **Video** - These scripts enable video player and streaming functionality.
 - **Other** - These are miscellaneous scripts delivered via a shared origin with no precise category or attribution.
 
@@ -72,9 +72,9 @@ One change that we have made to our methodology this year is to remove the Hosti
 ### Caveats
 
 - All data presented here is based on a non-interactive, cold load. These values could start to look quite different after user interaction.
-- The pages are tested from servers in the US with no cookies set, so third-parties requested after opt-in are not included. This will especially affect pages hosted and predominantly served to countries in scope for the <a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">General Data Protection Regulation</a>, or other similar legislation.
+- The pages are tested from servers in the US with no cookies set, so third parties requested after opt-in are not included. This will especially affect pages hosted and predominantly served to countries in scope for the <a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">General Data Protection Regulation</a>, or other similar legislation.
 - Only the home pages are tested. Other pages may have different third-party requirements.
-- Some of the lesser-used third-party domains are grouped into the _unknown_ category. As part of this analysis we submitted more categories for the top-used domains to improve the third-party-web dataset.
+- Some of the lesser-used third-party domains are grouped into the _unknown_ category. As part of this analysis, we submitted more categories for the top-used domains to improve the third-party-web dataset.
 
 Learn more about our [methodology](./methodology).
 
@@ -91,11 +91,11 @@ So how much are third parties used? Well, the answer is a lot!
 )
 }}
 
-A staggering 94.4% of mobile sites and 94.1% of desktop sites use at least one third-party resource. Even with our newer restrictive definition of third-parties, this represents a continued growth from when the Web Almanac started in [2019](../2019/third-parties).
+A staggering 94.4% of mobile sites and 94.1% of desktop sites use at least one third-party resource. Even with our newer restrictive definition of third parties, this represents a continued growth from when the Web Almanac started in [2019](../2019/third-parties).
 
 {{ figure_markup(
   image="third-parties-websites-using-third-parties-by-year.png",
-  caption="Websites using third-parties by year.",
+  caption="Websites using third parties by year.",
   description="Bar chart showing the number of websites using third parties over the last three years, split by desktop and mobile. On desktop 89.1% of websites used a third party in 2019, followed by 93.9% in 2020, and 94.1% in 2021. On mobile 88.5% used a third party in 2019, followed by 94.0% in 2020, and 94.4% in 2021",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=1728778967&format=interactive",
   sheets_gid="1082574922",
@@ -268,7 +268,7 @@ After this we're back to Google with YouTube, and Maps two spots later. The rema
 
 Using third parties can have a noticeable impact on performance. That's not necessarily a consequence of them being a third party per se. The same functionality implemented by a site owner as a first-party resource can often be less performant, given the expertise the third party should have on the particular field.
 
-So performance isn't necessarily impacted by the fact that the resources are third-party, it's more of a matter of what those resources are doing. And most third-party usage depends on the third-party service, rather than just as a place to serve it from.
+So, performance isn't necessarily impacted by the fact that the resources are third-party, it's more of a matter of what those resources are doing. And most third-party usage depends on the third-party service, rather than just as a place to serve it from.
 
 However, a third party's business is in allowing their content or service to be hosted on many websites. Third parties have a duty to ensure that they minimize the negative impact of that dependency. This is an especially important duty given that site owners often have limited control over and influence on the performance impact of third parties other than to use them or not.
 
@@ -279,7 +279,7 @@ There is a definite cost to connecting to another domain, even though most third
 
 Saying that, rarely is life as definitive as we would like and, in some cases self-hosting may actually cost performance. This author has <a hreflang="en" href="https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/">written before how the question on whether to self-host Google Fonts</a> is not as clear cut as it might seem and requires a degree of expertise to ensure you are replicating all that Google Fonts does for you in the performance front. To avoid that hassle you can just use the hosted version, and ensure you're reducing the performance impact as much as possible, as discussed by <a hreflang="en" href="https://twitter.com/csswizardry">Harry Roberts</a> in his <a hreflang="en" href="https://csswizardry.com/2020/05/the-fastest-google-fonts/">The Fastest Google Fonts</a> post.
 
-Similarly, image CDNs can optimize media better than most firsty-parties and, more importantly, can do this automatically without the need for manual steps that will inevitably be skipped or done incorrectly on occasion.
+Similarly, image CDNs can optimize media better than most first-parties and, more importantly, can do this automatically without the need for manual steps that will inevitably be skipped or done incorrectly on occasion.
 
 ### Popular third parties embeds and their performance impact
 
@@ -397,7 +397,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
   )
 }}
 
-Facebook also isn't as resource-intensive as I thought it would be. Facebook embeds of posts seem to be less popular than Twitter embeds, so these will likely be Facebook retargeting trackers. These trackers should be working silently in the background and not impacting the main thread at all, so it's apparent there is still more work for Facebook to do here. I've even had good success in <a hreflang="en" href="https://www.tunetheweb.com/blog/adding-controls-to-google-tag-manager/#pixels">not using the Facebook JavaScript API and using pixel tracking through Google Tag Manager</a> without losing any functionality, and would encourage others to consider this option.
+Facebook also isn't as resource intensive as I thought it would be. Facebook embeds of posts seem to be less popular than Twitter embeds, so these will likely be Facebook retargeting trackers. These trackers should be working silently in the background and not impacting the main thread at all, so it's apparent there is still more work for Facebook to do here. I've even had good success in <a hreflang="en" href="https://www.tunetheweb.com/blog/adding-controls-to-google-tag-manager/#pixels">not using the Facebook JavaScript API and using pixel tracking through Google Tag Manager</a> without losing any functionality, and would encourage others to consider this option.
 
 ##### Google Maps
 
@@ -453,13 +453,13 @@ Looking at the usage over the last three Web Almanac years, usage has dropped co
 
 ## Security and Privacy
 
-Measuring the security and privacy impact of using third parties is more difficult.  Undoubtedly, giving access to third parties increases risks on both security and privacy, and then giving access to run scripts—which we've shown to be the most prevalent type—effectively gives full access to the website. However, the entire intent of third-party resources is to make it easy to share. Therefore security issues through the use of third parties are often only discovered after the fact, rather than something we can actively analyze.
+Measuring the security and privacy impact of using third parties is more difficult.  Undoubtedly, giving access to third parties increases risks on both security and privacy, and then giving access to run scripts—which we've shown to be the most prevalent type—effectively gives full access to the website. However, the entire intent of third-party resources is to make it easy to share. Therefore, security issues through the use of third parties are often only discovered after the fact, rather than something we can actively analyze.
 
 ### Security
 
-Sites themselves can reduce the risk of using third parties in a number of ways: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#restrict_access_to_cookies">restricting access to cookies</a> with the `HttpOnly` attribute, so they can not be accessed by JavaScript, and through appropriate use of `SameSite` attributes. These are explored more in the [Security chapter](./security) so we will not delve further into them here.
+Sites themselves can reduce the risk of using third parties in a number of ways: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#restrict_access_to_cookies">restricting access to cookies</a> with the `HttpOnly` attribute, so they cannot be accessed by JavaScript, and through appropriate use of `SameSite` attributes. These are explored more in the [Security chapter](./security) so we will not delve further into them here.
 
-Another security feature that can make third-party resources safer is the use of <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity">Subresource Integrity</a> (SRI), which is enabled by adding a cryptographic hash of a resource to the `<link>` or `<script>` element loading the resource. This hash is then checked by the browser to ensure that the content downloaded is exactly what is expected. However, the varying nature of third-party resources could mean that this introduces more risks than it solves, with sites breaking when resources are intentionally updated by the third party And if content really is static, then it can be self-hosted, removing the need of SRI. So, while many people recommend SRI, this author remains unconvinced that it really offers the security benefits that proponents claim.
+Another security feature that can make third-party resources safer is the use of <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity">Subresource Integrity</a> (SRI), which is enabled by adding a cryptographic hash of a resource to the `<link>` or `<script>` element loading the resource. This hash is then checked by the browser to ensure that the content downloaded is exactly what is expected. However, the varying nature of third-party resources could mean that this introduces more risks than it solves, with sites breaking when resources are intentionally updated by the third party. If content really is static, then it can be self-hosted, removing the need of SRI. So, while many people recommend SRI, this author remains unconvinced that it really offers the security benefits that proponents claim.
 
 One of the best ways sites can reduce the security risk of any third-party content coming onto their site—from either third-party resource use, or even user-generated content—is with a robust <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">Content Security Policy</a> (CSP). This is an HTTP header sent with the original website that tells the browser exactly what resources can and cannot be loaded and by whom. It is a more advanced technique that few sites use, according to the [Security](./security) chapter, and we'll leave it to them to analyze CSP usage, but what _is_ worth covering here is that one of the reasons for the lack of uptake may be third parties. In this author's experience, very few third parties publish CSP information with the exact requirements that sites must add to their policy to use the third party without issue. Worse still is that others are incompatible with a secure CSP. Some third parties use inline script elements or change domains without notification, which breaks that functionality for sites using CSP until they update their policy. Google Ads is another example which, <a hreflang="en" href="https://stackoverflow.com/questions/34361383/google-adwords-csp-content-security-policy-img-src">through the use of a different domain per country</a>, makes it difficult to really lock down CSP.
 
@@ -476,13 +476,13 @@ Of course, one of the major reasons for using third parties on your site is for 
 
 What is perhaps more concerning is the tracking that can occur without website users and owners being aware. There is the old adage that if you're not paying for a product or service, then you are the product. Many third parties give away their product for "free", which for most means they are monetizing it in some other way—usually at the expense of your visitors' privacy!
 
-Adoption of newer technologies like <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy">`feature-policy` and `permission-policy`</a> can restrict the usage of certain functionalities of the browser, such as microphones and video cameras. These can reduce the privacy and security risks though many of these will usually be secured behind a browser prompt to ensure they are not silently activated. Google is also working on a <a hreflang="en" href="https://github.com/bslassey/privacy-budget">Privacy Budget proposal</a> to limit the privacy impact of web browser, though others <a hreflang="en" href="https://blog.mozilla.org/en/mozilla/google-privacy-budget-analysis/">remain skeptical of their work in this space</a>. All in all, adding privacy controls seems to be swimming against the tide given the intent of many third party resources.
+Adoption of newer technologies like <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy">`feature-policy` and `permission-policy`</a> can restrict the usage of certain functionalities of the browser, such as microphones and video cameras. These can reduce the privacy and security risks though many of these will usually be secured behind a browser prompt to ensure they are not silently activated. Google is also working on a <a hreflang="en" href="https://github.com/bslassey/privacy-budget">Privacy Budget proposal</a> to limit the privacy impact of web browser, though others <a hreflang="en" href="https://blog.mozilla.org/en/mozilla/google-privacy-budget-analysis/">remain skeptical of their work in this space</a>. All in all, adding privacy controls seems to be swimming against the tide given the intent of many third-party resources.
 
 ## Conclusion
 
 Third parties are integral to the web. In many ways they are the web; without the prevalence of third parties, websites would be harder to build and less feature rich. As mentioned at the beginning, interconnectedness is at the very heart of the web, and third parties are the natural extension of this. Our analysis has shown that third parties are more prevalent than ever—sites without them are very much the exception!
 
-However, using third parties is not without risks and in this chapter we have explored the performance impact of third parties and discussed the potential security and privacy risks of using them on your site.
+However, using third parties is not without risks and in this chapter, we have explored the performance impact of third parties and discussed the potential security and privacy risks of using them on your site.
 
 There are consequences to needlessly loading up your website with every third-party tool, widget, tracker and whatever else you can think of. Site owners have a responsibility to look at the impact of all that third-party content and decide if the functionality is worth that potential impact.
 
