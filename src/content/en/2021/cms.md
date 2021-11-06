@@ -7,7 +7,7 @@ reviewers: [alankent, andreyl, chrissater]
 analysts: [rviscomi, tosin]
 editors: []
 translators: []
-alonko_bio: Alon Kochba is a software developer at Wix, where he leads the performance efforts.
+alonko_bio: Alon Kochba is a software developer at Wix, and the head of performance. Alon comes from a back-end background, with extensive experience in networking.
 results: https://docs.google.com/spreadsheets/d/1gAJh4VcSEU6-6aQxBiTFl-7cbyHukfdhg-Iaq9y5pnc/
 featured_quote: CMS platforms continue to grow and are becoming more ubiquitous year-over-year. They are essential for easily creating and consuming content on the internet, especially as more people and businesses establish an online presence.
 featured_stat_1: TODO
@@ -36,6 +36,7 @@ In some of the sections, we focus only on the top platforms in terms of adoption
 
 Let’s dive into our analysis.
 
+_**Disclaimer:** Alon works at Wix where he leads the web performance efforts, but opinions are his own._
 
 ## What is a CMS?
 
@@ -61,26 +62,21 @@ Some of them are open source (e.g. WordPress, Joomla, others) and some of them a
 
 The CMS space as a whole is a complex, federated universe of CMS ecosystems, all separated and at the same time intertwined.
 
-
 ## Why Use a CMS?
-
 
 ## CMS Adoption
 
 Our analysis throughout this work looks at desktop and mobile websites. The vast majority of URLs we looked at are in both datasets, but some URLs are only accessed by desktop or mobile devices. This can cause small divergences in the data, and we thus look at desktop and mobile results separately.
-
-
 
 {{ figure_markup(
 image="cms-adoption.png",
 caption="CMS adoption year-over-year.",
 description="Column chart showing the adoption of CMS over the past 3 years. 45% of desktop websites and 46% of mobile websites are built using a CMS.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=551554892&format=interactive",
-sheets_gid="693111191",
+sheets_gid="362035103",
 sql_file="cms_adoption.sql"
 )
 }}
-
 
 As of July 2021, over 45% of public websites are powered by a CMS platform, indicating growth of over 7% from 2020. This breaks down to 45% on desktop, up from 42% in 2019, and 46% on mobile, up from 42% in 2020.
 
@@ -92,84 +88,75 @@ W3Techs definition is the following: “_Content management systems are applicat
 
 You can read more about ours on the [Methodology](https://almanac.httparchive.org/en/2021/methodology) page.
 
-
 ### CMS Adoption By Geography
 
 CMS platforms are extensively used around the world, with some variance by country.
 
-
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image3.png "image_tooltip")
-
+{{ figure_markup(
+image="cms-adoption-geo.png",
+caption="CMS adoption by geography.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=2092976179&format=interactive",
+sheets_gid="1226921580",
+sql_file="cms_adoption_by_geo.sql"
+)
+}}
 
 Among the geographies with the highest number of websites, CMS adoption percentage is the highest in the US, Italy, and Spain, where 46% - 47% of mobile pages visited by users are built with a CMS. India and Brazil have the lowest adoption with only 35% and 37%.
 
 We can also split this data into [subregions](https://github.com/GoogleChrome/CrUX/blob/main/utils/countries.json) around the globe, sorted by the most popular regions, to better identify macro-trends:
 
+{{ figure_markup(
+image="cms-adoption-geo-region.png",
+caption="CMS adoption by region.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1483728038&format=interactive",
+sheets_gid="180022563",
+sql_file="cms_adoption_by_region.sql"
+)
+}}
 
-
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image4.png "image_tooltip")
 Adoption is highest in Southern Europe where half of the sites are using a CMS, and lowest in Eastern Asia where only a third of sites in our dataset use a CMS.
-
-
-
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image5.png "image_tooltip")
-
-
-
-###
-
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image6.png "image_tooltip")
-
-
 
 ### CMS Adoption By Rank
 
 We also examined CMS adoption by the estimated rank of the sites.
 
-
-
-<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image7.png "image_tooltip")
-
+{{ figure_markup(
+image="cms-adoption-rank.png",
+caption="CMS adoption by rank.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=409766380&format=interactive",
+sheets_gid="158167539",
+sql_file="cms_adoption_by_rank.sql"
+)
+}}
 
 CMSs account for only 7% of the top 1000 mobile pages, compared to 42% of the top 10M pages. This can be explained by the fact that smaller businesses and websites tend to use a CMS due to the ease of use, and the higher ranked websites tend to be built with proprietary solutions by professional web developers. With the continuing growth in usage of CMS platforms, it would be interesting to see if CMS platforms will also be able to increase adoption rates among the higher-ranking sites in the coming years.
 
-
 ## Top CMSs
 
-
-
-
-<p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image8.png "image_tooltip")
-
+{{ figure_markup(
+image="cms-adoption-share.png",
+caption="CMS adoption share.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1206051687&format=interactive",
+sheets_gid="891456070",
+sql_file="top_cms.sql"
+)
+}}
 
 Among all websites that use a CMS, WordPress sites account for a large part of the relative market share, with over 75% adoption, followed by Joomla, Drupal, Wix, and Squarespace.
 
-
-
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image9.png "image_tooltip")
-
+{{ figure_markup(
+image="top-cms.png",
+caption="Top 5 CMSs year-over-year.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=845658898&format=interactive",
+sheets_gid="891456070",
+sql_file="top_cms.sql"
+)
+}}
 
 Drilling into the adoption by CMS across all websites, out of 218 different CMS platforms only 5 platforms had over 1% of usage.
 
@@ -181,19 +168,19 @@ Wix adoption grew from 1.2% to 1.6% (33% increase) and Squarespace grew from 0.9
 
 Examining the adoption of these sites built on CMS platforms by their popularity rank reveals an interesting distribution between platforms.
 
-
-
-<p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image10.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image10.png "image_tooltip")
-
+{{ figure_markup(
+image="top-cms-by-rank.png",
+caption="Top 5 CMSs by rank.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=2087254046&format=interactive",
+sheets_gid="670045665",
+sql_file="top_cms_by_rank.sql"
+)
+}}
 
 3.1% of mobile sites in the top 1K are built with WordPress, and 30.9% of the top 10M. Drupal maintains a higher adoption rate within the mid-ranged rankings (10K - 1M), while most of Wix and Squarespace sites are ranked outside the top 1M sites.
 
-
 ## CMS User Experience
-
 
 ### Core Web Vitals
 
@@ -203,8 +190,6 @@ The [Core Web Vitals Technology Report](https://httparchive.org/reports/cwv-tech
 
 In this section we focus on data from July 2021 to provide a consistent timeframe for data presented across the Web Almanac, and examine three important factors provided by the [Chrome User Experience Report](https://almanac.httparchive.org/en/2021/methodology#chrome-ux-report), which can shed light on our understanding of how users are experiencing CMS-powered web pages in the wild:
 
-
-
 * Largest Contentful Paint (LCP)
 * First Input Delay (FID)
 * Cumulative Layout Shift (CLS)
@@ -213,13 +198,15 @@ These metrics aim to cover the core elements which are indicative of a great web
 
 Initially, let’s review the 10 CMS platforms with the highest number of domains, and examine what percentage of sites on each platform have a **passing** grade, meaning that the 75th percentile of each of the above metrics must be in the “good” (green) range for each site.
 
-
-
-<p id="gdcalert11" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image11.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert12">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image11.png "image_tooltip")
-
+{{ figure_markup(
+image="core-web-vitals.png",
+caption="Top 10 CMSs core web vitals performance.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=126065751&format=interactive",
+sheets_gid="113092024",
+sql_file="core_web_vitals.sql"
+)
+}}
 
 We can see that desktop visitors generally score slightly better than mobile, which can be explained by weaker mobile devices and poorer connections.
 
@@ -229,18 +216,20 @@ In July, for mobile devices, TYPO3 CMS (used mostly in European countries) had t
 
 Desktop device experience was slightly better, with 1C-Bitrix (used mostly in Russia) having the largest percentage of 56% sites passing CWVs. WordPress has the lowest ratio of passing sites, with only 26%.
 
-
-
 * _Duda deserves an honorable mention, with 47% sites passing in August and overall great progress since last year. They were not included in this report due to broken data collection in July, related to a wrong detection in [Wappalyzer](https://github.com/AliasIO/wappalyzer/pull/4189), incorrectly inflating their origins, and reducing their CWV percentage._
 
 We can also evaluate the progress of these CMS platforms compared to last year’s data, focusing on mobile views:
 
+{{ figure_markup(
+image="core-web-vitals.png",
+caption="Top 10 CMSs core web vitals performance for mobile views year-over-year.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=904891027&format=interactive",
+sheets_gid="7628223",
+sql_file="core_web_vitals_yoy.sql"
+)
+}}
 
-
-<p id="gdcalert12" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image12.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert13">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image12.png "image_tooltip")
 All of these CMSs showed an improvement in the percentage of origins with good CWVs since August 2020. Wix and Squarespace made the most noticeable progress, closing the gap from the other CMSs.
 
 Let’s drill into the three Core Web Vitals, to see where each platform has room to improve, and which metrics improved the most since last year:
@@ -251,24 +240,30 @@ Largest Contentful Paint (LCP) measures the point in time when the page’s main
 
 A “good” LCP is regarded as being under 2.5 seconds.
 
-
-
-<p id="gdcalert13" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image13.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert14">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image13.png "image_tooltip")
-
+{{ figure_markup(
+image="core-web-vitals-lcp.png",
+caption="Top 10 CMSs LCP performance.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=22169494&format=interactive",
+sheets_gid="113092024",
+sql_file="core_web_vitals.sql"
+)
+}}
 
 TYPO3 CMS has the best LCP scores with 69% of origins having a “good” LCP experience, while WordPress and Adobe Experience Manager have the worst LCP scores, with only 28% of origins having a good LCP score.
 
 In general, it seems that most platforms are struggling with the LCP metric. This probably relates to the fact that the LCP is dependent on the download of image/font/CSS and then displaying the appropriate HTML elements. Achieving this in under 2.5 seconds for all device types and connection speeds can be challenging. Improving LCP scores usually involves the correct use of caching, pre-loading, resource prioritization, and lazy loading of other competing resources.
 
+{{ figure_markup(
+image="core-web-vitals-lcp-yoy.png",
+caption="Top 10 CMSs LCP performance for mobile views year-over-year.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=5489725&format=interactive",
+sheets_gid="7628223",
+sql_file="core_web_vitals_yoy.sql"
+)
+}}
 
-
-<p id="gdcalert14" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image14.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert15">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image14.png "image_tooltip")
 We can see that all CMSs improved their LCP in the past year, but most of them had modest improvements. The largest jump came from Wix and Squarespace, who had very low LCP scores last year. Tilda also seems to have made considerable progress.
 
 **First Input Delay (FID)**
@@ -279,24 +274,30 @@ Any delay is a pain point and could correlate with interference from other aspec
 
 A “good” FID is regarded as being under 100 milliseconds.
 
-
-
-<p id="gdcalert15" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image15.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert16">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image15.png "image_tooltip")
-
+{{ figure_markup(
+image="core-web-vitals-fid.png",
+caption="Top 10 CMSs FID performance.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1139890716&format=interactive",
+sheets_gid="113092024",
+sql_file="core_web_vitals.sql"
+)
+}}
 
 FID is very good for most CMSs on desktop, with all platforms scoring a perfect 100%. Most CMSs also deliver a good mobile FID of over 90%, except Bitrix and Joomla with only 83% and 85% of origins having a good FID.
 
 The fact that almost all platforms manage to deliver a good FID, has recently raised questions about the strictness of this metric. The Chrome team recently published an [article](https://web.dev/responsiveness/), which detailed the thoughts towards having a better responsiveness metric in the future.
 
+{{ figure_markup(
+image="core-web-vitals-fid-yoy.png",
+caption="Top 10 CMSs FID performance for mobile views year-over-year.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=516116235&format=interactive",
+sheets_gid="7628223",
+sql_file="core_web_vitals_yoy.sql"
+)
+}}
 
-
-<p id="gdcalert16" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image16.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert17">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image16.png "image_tooltip")
 Yearly data shows that all these CMSs managed to improve their FID over the past year. Wix had the most catching up to do on FID, and considerably improved their numbers. Joomla and Bitrix had the lowest FID scores this year, but still managed to improve.
 
 **Cumulative Layout Shift (CLS)**
@@ -309,22 +310,28 @@ The CLS metric has [evolved](https://web.dev/evolving-cls/) in the past year, ma
 
 A score of 0.1 or below is measured as “good”, over 0.25 as “poor”, and anything in between as “needs improvement”.
 
+{{ figure_markup(
+image="core-web-vitals-cls.png",
+caption="Top 10 CMSs CLS performance.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1800297769&format=interactive",
+sheets_gid="113092024",
+sql_file="core_web_vitals.sql"
+)
+}}
 
+Wix had the best CLS score, with 81% of mobile origins having a “good” CLS. Adobe Experience Manager has the lowest CLS scores, with only 44% of mobile origins having a good CLS. Because layout shifts can usually be avoided, regardless of connection speeds - all platforms should strive to improve these numbers by reducing layout shifts to the bare minimum.
 
-<p id="gdcalert17" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image17.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert18">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{{ figure_markup(
+image="core-web-vitals-cls-yoy.png",
+caption="Top 10 CMSs CLS performance for mobile views year-over-year.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1814103651&format=interactive",
+sheets_gid="7628223",
+sql_file="core_web_vitals_yoy.sql"
+)
+}}
 
-
-![alt_text](images/image17.png "image_tooltip")
-
-
-Wix has the best CLS score, with 81% of mobile origins having a “good” CLS. Adobe Experience Manager has the lowest CLS scores, with only 44% of mobile origins having a good CLS. Because layout shifts can usually be avoided, regardless of connection speeds - all platforms should strive to improve these numbers by reducing layout shifts to the bare minimum.
-
-
-
-<p id="gdcalert18" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image18.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert19">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image18.png "image_tooltip")
 Comparing yearly data, we can see that most CMSs made some progress, or benefited from the change to a windowed CLS metric. However, we can see that certain CMSs such as Weebly regressed in CLS scores over the past year.
 
 
@@ -340,13 +347,15 @@ We can analyze this data to provide another perspective on CMS performance, usin
 
 The Lighthouse [performance score](https://web.dev/performance-scoring/) is a weighted average of several metric scores.
 
-
-
-<p id="gdcalert19" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image19.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert20">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image19.png "image_tooltip")
-
+{{ figure_markup(
+image="lighthouse-performance.png",
+caption="Top 10 CMSs median Lighthouse performance score.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1164945994&format=interactive",
+sheets_gid="267449225",
+sql_file="lighthouse_category_scores_per_cms.sql"
+)
+}}
 
 We can see that the median performance scores for all the top platforms on mobile are low, ranging from 17 to 35. As we saw above, this [does not directly imply bad results](https://philipwalton.com/articles/my-challenge-to-the-web-performance-community/) in mobile field data but does imply that all platforms have room for improvements, especially for low-end devices and network connections similar to those Lighthouse attempts to emulate.
 
@@ -354,13 +363,15 @@ We can see that the median performance scores for all the top platforms on mobil
 
 Search Engine Optimization (or SEO) is the practice of improving a website to make it more easily found in search engines. This is covered more in-depth in our [SEO](https://almanac.httparchive.org/en/2020/seo) chapter, but one part involves ensuring the site is coded in such a way to serve as much information to search engine crawlers to make it as easy as possible for them to show a site appropriately in search engine results. Compared to a custom-created website, one might expect a CMS to provide good SEO capabilities, and the Lighthouse scores in this category are appropriately high.
 
-
-
-<p id="gdcalert20" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image20.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert21">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image20.png "image_tooltip")
-
+{{ figure_markup(
+image="lighthouse-seo.png",
+caption="Top 10 CMSs median Lighthouse SEO score.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=98244918&format=interactive",
+sheets_gid="267449225",
+sql_file="lighthouse_category_scores_per_cms.sql"
+)
+}}
 
 The median SEO score in all of the top 10 platforms is over 84, with Drupal scoring the lowest and Wix scoring the highest with a median score of 95.
 
@@ -372,13 +383,15 @@ Lighthouse provides a set of accessibility audits and it returns a weighted aver
 
 Each accessibility audit is either a pass or a fail, but unlike other Lighthouse audits, a page doesn’t get points for partially passing an accessibility audit. For example, if some elements have screen reader-friendly names, but others don’t, that page gets a 0 for the screen reader-friendly-names audit.
 
-
-
-<p id="gdcalert21" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image21.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert22">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image21.png "image_tooltip")
-
+{{ figure_markup(
+image="lighthouse-accessibility.png",
+caption="Top 10 CMSs median Lighthouse accessibility score.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=306783633&format=interactive",
+sheets_gid="267449225",
+sql_file="lighthouse_category_scores_per_cms.sql"
+)
+}}
 
 The median Lighthouse accessibility score for the top 10 CMSs ranges between 76 and 91. Squarespace and Weebly have the highest scores of 91, while Tilda has the lowest accessibility scores.
 
@@ -386,38 +399,43 @@ The median Lighthouse accessibility score for the top 10 CMSs ranges between 76 
 
 The Lighthouse [best practices](https://web.dev/lighthouse-best-practices/) try to ensure that web pages are following best practices for the web, for a variety of different metrics, for example, supporting HTTPS, no errors logged in the console, and more.
 
-
-
-<p id="gdcalert22" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image22.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert23">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image22.png "image_tooltip")
-
+{{ figure_markup(
+image="lighthouse-accessibility.png",
+caption="Top 10 CMSs median Lighthouse accessibility score.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=813154253&format=interactive",
+sheets_gid="267449225",
+sql_file="lighthouse_category_scores_per_cms.sql"
+)
+}}
 
 Wix has the highest median best practices score of 93, while many of the other top 10 platforms share the lowest score of 73.
-
 
 ## Resource Weights
 
 We can also use HTTPArchive data to analyze the weight of resources used across different platforms, to highlight possible opportunities. Page loading performance does not exclusively depend on the number of downloaded bytes, but fewer bytes necessary to load a page results in reduced costs, carbon emissions, and potentially faster performance, especially for slower connections.
 
-
-
-<p id="gdcalert23" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image23.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert24">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image23.png "image_tooltip")
-
+{{ figure_markup(
+image="resource-weights-page.png",
+caption="Top 5 CMSs median page weight.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=658342587&format=interactive",
+sheets_gid="740406389",
+sql_file="resource_weights.sql"
+)
+}}
 
 Most of the top 5 CMSs deliver a median page weight of around ~2MB, except Squarespace which delivers a larger ~3.3MB. Squarespace is the only platform that delivers more bytes in mobile views than on desktop.
 
-
-
-<p id="gdcalert24" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image24.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert25">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image24.png "image_tooltip")
-
+{{ figure_markup(
+image="resource-weights-distribution.png",
+caption="Top 5 CMSs median page weight.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1895669428&format=interactive",
+sheets_gid="1101340213",
+sql_file="page_weight_distribution.sql"
+)
+}}
 
 The distribution of page weight in each platform’s percentiles is substantial, probably related to the difference in user content across different web pages, the amount of images used, plugins, etc. The smallest pages delivered per platform come from Drupal, which only sends 595KB for their 10th percentile of visits. The largest pages come from Squarespace, with ~9.6MB delivered for their 90th percentile of visits.
 
@@ -431,13 +449,15 @@ Page Weight is a sum of resources used. We can attempt to evaluate these differe
 
 Images, which are usually the heaviest resource, account for a large portion of the resource weight.
 
-
-
-<p id="gdcalert25" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image25.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert26">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image25.png "image_tooltip")
-
+{{ figure_markup(
+image="resource-weights-images.png",
+caption="Top 5 CMSs median image weight.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1403287616&format=interactive",
+sheets_gid="740406389",
+sql_file="resource_weights.sql"
+)
+}}
 
 Wix delivers substantially fewer image bytes, with only 357KB delivered on the median of mobile views, suggesting good use of image compression and lazy image loading. All of the other top 5 platforms deliver over 1MB of images, with Squarespace delivering the largest ~1.7MB.
 
@@ -445,68 +465,77 @@ Advanced image formats provide a considerable improvement in compression, enabli
 
 We can examine the usage of the different image formats across the top CMSs:
 
-
-
-<p id="gdcalert26" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image26.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert27">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image26.png "image_tooltip")
-
+{{ figure_markup(
+image="image-formats.png",
+caption="Top 15 CMSs image format popularity.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=542088957&format=interactive",
+sheets_gid="105465286",
+sql_file="resource_weights.sql"
+)
+}}
 
 GoDaddy Website Builder and Wix make the most use of WebP, with ~58% and 33% adoption respectively, while WordPress, Joomla, and Drupal barely serve WebP - only ~5.7% of images served by WordPress sites are WebP. AVIF is barely used by these platforms, with less than ~0.1% on all platforms.
 
 With the [growing support of WebP](https://caniuse.com/webp), it seems all platforms have work to do to reduce the usage of the older JPEG and PNG formats, where it is applicable without compromising on image quality.
 
-
 #### JavaScript
 
-
-
-<p id="gdcalert27" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image27.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert28">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image27.png "image_tooltip")
-
+{{ figure_markup(
+image="resource-weights-images.png",
+caption="Top 5 CMSs median JavaScript weight.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=289342580&format=interactive",
+sheets_gid="740406389",
+sql_file="resource_weights.sql"
+)
+}}
 
 The largest five CMSs all deliver pages that rely on JS, with Drupal delivering the least amount of JS bytes - 372KB on mobile, while Wix delivers the most JS bytes, over 1.1MB.
 
-
 #### HTML Document
 
-
-
-<p id="gdcalert28" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image28.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert29">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image28.png "image_tooltip")
-
+{{ figure_markup(
+image="resource-weights-html.png",
+caption="Top 5 CMSs median HTML weight.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=890684063&format=interactive",
+sheets_gid="740406389",
+sql_file="resource_weights.sql"
+)
+}}
 
 Examining the HTML document sizes, we can see that most of the top CMSs deliver a median HTML size of ~22KB-34KB, except Wix which delivers substantially more HTML of ~123KB. This can suggest extensive use of inlined resources and shows an area that can be further improved.
 
 
 #### CSS
 
-<p id="gdcalert29" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image29.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert30">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image29.png "image_tooltip")
-
+{{ figure_markup(
+image="resource-weights-css.png",
+caption="Top 5 CMSs median CSS weight.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=806030448&format=interactive",
+sheets_gid="740406389",
+sql_file="resource_weights.sql"
+)
+}}
 
 Next, we examine the use of explicit CSS resources that are downloaded. Here we can see a different distribution between platforms, strengthening the differences in inlining approaches. Wix delivers the fewest CSS resources, with only ~25KB sent on mobile views; WordPress delivers the most with ~115KB.
 
 
 #### Fonts
 
-
-
-<p id="gdcalert30" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image30.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert31">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image30.png "image_tooltip")
-
+{{ figure_markup(
+image="resource-weights-fonts.png",
+caption="Top 5 CMSs median CSS weight.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=750270305&format=interactive",
+sheets_gid="740406389",
+sql_file="resource_weights.sql"
+)
+}}
 
 To display text, web developers often choose to use a variety of fonts. Joomla delivers the fewest font bytes, with 75KB on mobile views, and Squarespace delivers the most with 212KB.
-
 
 ## WordPress Specific
 
@@ -522,13 +551,15 @@ Contributors from the WordPress community recently acknowledged the current stat
 
 First, we’ll examine WordPress adoption by geography, across all sites in our dataset.
 
-
-
-<p id="gdcalert31" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image31.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert32">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image31.png "image_tooltip")
-
+{{ figure_markup(
+image="wordpress-adoption-geo.png",
+caption="WordPress adoption by geography.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=625154641&format=interactive",
+sheets_gid="43346414",
+sql_file="core_web_vitals_by_geo.sql"
+)
+}}
 
 In the top 10 countries with the most sites in our dataset, WordPress has over 27% adoption. Spain has the highest WordPress adoption among these countries with 37% of mobile pages using WordPress, compared with Germany where _only_ 28% of mobile pages use WordPress.
 
@@ -536,13 +567,15 @@ In the top 10 countries with the most sites in our dataset, WordPress has over 2
 
 Next, let’s look at the amount of WordPress origins with passing Core Web Vitals, but this time, breakdown by geography, for mobile devices.
 
-
-
-<p id="gdcalert32" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image32.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert33">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image32.png "image_tooltip")
-
+{{ figure_markup(
+image="wordpress-passing-cwv.png",
+caption="WordPress origins passing CWV by geography.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=642184103&format=interactive",
+sheets_gid="1013591764",
+sql_file="core_web_vitals_by_geo.sql"
+)
+}}
 
 We can see that while WordPress was passing on 19% of the total origins counted across all countries, WordPress sites are passing at a higher percentage in various countries. In Japan, 38% of sites have good CWVs for mobile visitors, but in Brazil, only 5% have good CWVs.
 
@@ -558,14 +591,15 @@ The median mobile WordPress page loads 24 resources under the /plugins/ path, 18
 
 WordPress’s extension ecosystem provides extraordinary flexibility and may be a major contributor to its high adoption rate. On balance it also appears detrimental to performance in many cases, due to the number of plugins available and the many resources they depend on.
 
-
-
-<p id="gdcalert33" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image33.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert34">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image33.png "image_tooltip")
-
-
+{{ figure_markup(
+image="wordpress-resources-loaded.png",
+caption="Distrubition of WordPress resources loaded by type.",
+description="TODO",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=920269713&format=interactive",
+sheets_gid="296303301",
+sql_file="wordpress_resources.sql"
+)
+}}
 
 ## Conclusion
 
@@ -580,18 +614,3 @@ On the other hand, Core Web Vitals still have some progress and evolving to do.
 We mentioned the thoughts towards a [better responsiveness metric](https://web.dev/responsiveness/) above. In addition, navigations between pages in a site should be better tracked, and take into account the difference between Single-Page Applications (SPAs) and Multi-Page Applications (MPAs) architectures - you can read more about this [here](https://web.dev/vitals-spa-faq).
 
 Let’s continue pushing forward.
-
-
-
-?
-
-
-<p id="gdcalert34" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: Definition term(s) &uarr;&uarr; missing definition? </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert35">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-
-
-
-
-**Disclaimer: **Alon works at Wix where he leads the web performance efforts, but opinions are his own.
-
