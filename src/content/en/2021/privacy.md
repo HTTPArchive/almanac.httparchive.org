@@ -7,7 +7,6 @@ reviewers: [maudn]
 analysts: [victorlep, max_ostapenko]
 editors: []
 translators: []
-discuss: 
 results: https://docs.google.com/spreadsheets/d/148SxZICZ24O44roIuEkRgbpIobWXpqLxegCDhIiX8XA/
 ydimova_bio: Yana Dimova is a PhD student at imec-DistriNet, working on web privacy. Her general interests and work focus on online tracking, privacy vulnerabilites and privacy legislation and policies.
 victorlep_bio: Victor Le Pochat is a PhD researcher at the [imec-DistriNet](https://distrinet.cs.kuleuven.be/) research group of KU Leuven in Belgium. His interests lie in the exploration of web ecosystems, and in web security/privacy research metholodogy, both analyzing and improving current methods.
