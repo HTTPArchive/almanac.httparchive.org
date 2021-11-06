@@ -425,26 +425,24 @@ Wix has the highest median best practices score of 93, while many of the other t
 We can also use HTTPArchive data to analyze the weight of resources used across different platforms, to highlight possible opportunities. Page loading performance does not exclusively depend on the number of downloaded bytes, but fewer bytes necessary to load a page results in reduced costs, carbon emissions, and potentially faster performance, especially for slower connections.
 
 {{ figure_markup(
-image="resource-weights-page.png",
-caption="Top 5 CMSs median page weight.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=658342587&format=interactive",
-sheets_gid="740406389",
-sql_file="resource_weights.sql"
-)
-}}
+  image="resource-weights-page.png",
+  caption="Top 5 CMSs median page weight.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=658342587&format=interactive",
+  sheets_gid="740406389",
+  sql_file="resource_weights.sql"
+) }}
 
 Most of the top 5 CMSs deliver a median page weight of around ~2MB, except Squarespace which delivers a larger ~3.3MB. Squarespace is the only platform that delivers more bytes in mobile views than on desktop.
 
 {{ figure_markup(
-image="resource-weights-distribution.png",
-caption="Top 5 CMSs median page weight.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1895669428&format=interactive",
-sheets_gid="1101340213",
-sql_file="page_weight_distribution.sql"
-)
-}}
+  image="resource-weights-distribution.png",
+  caption="Top 5 CMSs median page weight.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1895669428&format=interactive",
+  sheets_gid="1101340213",
+  sql_file="page_weight_distribution.sql"
+) }}
 
 The distribution of page weight in each platform’s percentiles is substantial, probably related to the difference in user content across different web pages, the amount of images used, plugins, etc. The smallest pages delivered per platform come from Drupal, which only sends 595KB for their 10th percentile of visits. The largest pages come from Squarespace, with ~9.6MB delivered for their 90th percentile of visits.
 
@@ -459,14 +457,13 @@ Page Weight is a sum of resources used. We can attempt to evaluate these differe
 Images, which are usually the heaviest resource, account for a large portion of the resource weight.
 
 {{ figure_markup(
-image="resource-weights-images.png",
-caption="Top 5 CMSs median image weight.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1403287616&format=interactive",
-sheets_gid="740406389",
-sql_file="resource_weights.sql"
-)
-}}
+  image="resource-weights-images.png",
+  caption="Top 5 CMSs median image weight.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1403287616&format=interactive",
+  sheets_gid="740406389",
+  sql_file="resource_weights.sql"
+) }}
 
 Wix delivers substantially fewer image bytes, with only 357KB delivered on the median of mobile views, suggesting good use of image compression and lazy image loading. All of the other top 5 platforms deliver over 1MB of images, with Squarespace delivering the largest ~1.7MB.
 
@@ -475,14 +472,15 @@ Advanced image formats provide a considerable improvement in compression, enabli
 We can examine the usage of the different image formats across the top CMSs:
 
 {{ figure_markup(
-image="image-formats.png",
-caption="Top 15 CMSs image format popularity.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=542088957&format=interactive",
-sheets_gid="105465286",
-sql_file="resource_weights.sql"
-)
-}}
+  image="image-formats.png",
+  caption="Top 15 CMSs image format popularity.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=542088957&format=interactive",
+  width=600,
+  height=556,
+  sheets_gid="105465286",
+  sql_file="resource_weights.sql"
+) }}
 
 GoDaddy Website Builder and Wix make the most use of WebP, with ~58% and 33% adoption respectively, while WordPress, Joomla, and Drupal barely serve WebP - only ~5.7% of images served by WordPress sites are WebP. AVIF is barely used by these platforms, with less than ~0.1% on all platforms.
 
@@ -491,28 +489,26 @@ With the [growing support of WebP](https://caniuse.com/webp), it seems all platf
 #### JavaScript
 
 {{ figure_markup(
-image="resource-weights-images.png",
-caption="Top 5 CMSs median JavaScript weight.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=289342580&format=interactive",
-sheets_gid="740406389",
-sql_file="resource_weights.sql"
-)
-}}
+  image="resource-weights-images.png",
+  caption="Top 5 CMSs median JavaScript weight.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=289342580&format=interactive",
+  sheets_gid="740406389",
+  sql_file="resource_weights.sql"
+) }}
 
 The largest five CMSs all deliver pages that rely on JS, with Drupal delivering the least amount of JS bytes - 372KB on mobile, while Wix delivers the most JS bytes, over 1.1MB.
 
 #### HTML Document
 
 {{ figure_markup(
-image="resource-weights-html.png",
-caption="Top 5 CMSs median HTML weight.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=890684063&format=interactive",
-sheets_gid="740406389",
-sql_file="resource_weights.sql"
-)
-}}
+  image="resource-weights-html.png",
+  caption="Top 5 CMSs median HTML weight.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=890684063&format=interactive",
+  sheets_gid="740406389",
+  sql_file="resource_weights.sql"
+) }}
 
 Examining the HTML document sizes, we can see that most of the top CMSs deliver a median HTML size of ~22KB-34KB, except Wix which delivers substantially more HTML of ~123KB. This can suggest extensive use of inlined resources and shows an area that can be further improved.
 
@@ -520,14 +516,13 @@ Examining the HTML document sizes, we can see that most of the top CMSs deliver 
 #### CSS
 
 {{ figure_markup(
-image="resource-weights-css.png",
-caption="Top 5 CMSs median CSS weight.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=806030448&format=interactive",
-sheets_gid="740406389",
-sql_file="resource_weights.sql"
-)
-}}
+  image="resource-weights-css.png",
+  caption="Top 5 CMSs median CSS weight.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=806030448&format=interactive",
+  sheets_gid="740406389",
+  sql_file="resource_weights.sql"
+) }}
 
 Next, we examine the use of explicit CSS resources that are downloaded. Here we can see a different distribution between platforms, strengthening the differences in inlining approaches. Wix delivers the fewest CSS resources, with only ~25KB sent on mobile views; WordPress delivers the most with ~115KB.
 
@@ -535,14 +530,13 @@ Next, we examine the use of explicit CSS resources that are downloaded. Here we 
 #### Fonts
 
 {{ figure_markup(
-image="resource-weights-fonts.png",
-caption="Top 5 CMSs median CSS weight.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=750270305&format=interactive",
-sheets_gid="740406389",
-sql_file="resource_weights.sql"
-)
-}}
+  image="resource-weights-fonts.png",
+  caption="Top 5 CMSs median CSS weight.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=750270305&format=interactive",
+  sheets_gid="740406389",
+  sql_file="resource_weights.sql"
+) }}
 
 To display text, web developers often choose to use a variety of fonts. Joomla delivers the fewest font bytes, with 75KB on mobile views, and Squarespace delivers the most with 212KB.
 
@@ -561,14 +555,15 @@ Contributors from the WordPress community recently acknowledged the current stat
 First, we’ll examine WordPress adoption by geography, across all sites in our dataset.
 
 {{ figure_markup(
-image="wordpress-adoption-geo.png",
-caption="WordPress adoption by geography.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=625154641&format=interactive",
-sheets_gid="43346414",
-sql_file="core_web_vitals_by_geo.sql"
-)
-}}
+  image="wordpress-adoption-geo.png",
+  caption="WordPress adoption by geography.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=625154641&format=interactive",
+  width=600,
+  height=579,
+  sheets_gid="43346414",
+  sql_file="core_web_vitals_by_geo.sql"
+) }}
 
 In the top 10 countries with the most sites in our dataset, WordPress has over 27% adoption. Spain has the highest WordPress adoption among these countries with 37% of mobile pages using WordPress, compared with Germany where _only_ 28% of mobile pages use WordPress.
 
@@ -577,14 +572,13 @@ In the top 10 countries with the most sites in our dataset, WordPress has over 2
 Next, let’s look at the amount of WordPress origins with passing Core Web Vitals, but this time, breakdown by geography, for mobile devices.
 
 {{ figure_markup(
-image="wordpress-passing-cwv.png",
-caption="WordPress origins passing CWV by geography.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=642184103&format=interactive",
-sheets_gid="1013591764",
-sql_file="core_web_vitals_by_geo.sql"
-)
-}}
+  image="wordpress-passing-cwv.png",
+  caption="WordPress origins passing CWV by geography.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=642184103&format=interactive",
+  sheets_gid="1013591764",
+  sql_file="core_web_vitals_by_geo.sql"
+) }}
 
 We can see that while WordPress was passing on 19% of the total origins counted across all countries, WordPress sites are passing at a higher percentage in various countries. In Japan, 38% of sites have good CWVs for mobile visitors, but in Brazil, only 5% have good CWVs.
 
@@ -601,14 +595,13 @@ The median mobile WordPress page loads 24 resources under the /plugins/ path, 18
 WordPress’s extension ecosystem provides extraordinary flexibility and may be a major contributor to its high adoption rate. On balance it also appears detrimental to performance in many cases, due to the number of plugins available and the many resources they depend on.
 
 {{ figure_markup(
-image="wordpress-resources-loaded.png",
-caption="Distrubition of WordPress resources loaded by type.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=920269713&format=interactive",
-sheets_gid="296303301",
-sql_file="wordpress_resources.sql"
-)
-}}
+  image="wordpress-resources-loaded.png",
+  caption="Distrubition of WordPress resources loaded by type.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=920269713&format=interactive",
+  sheets_gid="296303301",
+  sql_file="wordpress_resources.sql"
+) }}
 
 ## Conclusion
 
