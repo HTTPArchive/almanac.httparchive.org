@@ -69,14 +69,13 @@ The CMS space as a whole is a complex, federated universe of CMS ecosystems, all
 Our analysis throughout this work looks at desktop and mobile websites. The vast majority of URLs we looked at are in both datasets, but some URLs are only accessed by desktop or mobile devices. This can cause small divergences in the data, and we thus look at desktop and mobile results separately.
 
 {{ figure_markup(
-image="cms-adoption.png",
-caption="CMS adoption year-over-year.",
-description="Column chart showing the adoption of CMS over the past 3 years. 45% of desktop websites and 46% of mobile websites are built using a CMS.",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=551554892&format=interactive",
-sheets_gid="362035103",
-sql_file="cms_adoption.sql"
-)
-}}
+  image="cms-adoption.png",
+  caption="CMS adoption year-over-year.",
+  description="Column chart showing the adoption of CMS over the past 3 years. 45% of desktop websites and 46% of mobile websites are built using a CMS.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=551554892&format=interactive",
+  sheets_gid="362035103",
+  sql_file="cms_adoption.sql"
+) }}
 
 As of July 2021, over 45% of public websites are powered by a CMS platform, indicating growth of over 7% from 2020. This breaks down to 45% on desktop, up from 42% in 2019, and 46% on mobile, up from 42% in 2020.
 
@@ -93,28 +92,30 @@ You can read more about ours on the [Methodology](https://almanac.httparchive.or
 CMS platforms are extensively used around the world, with some variance by country.
 
 {{ figure_markup(
-image="cms-adoption-geo.png",
-caption="CMS adoption by geography.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=2092976179&format=interactive",
-sheets_gid="1226921580",
-sql_file="cms_adoption_by_geo.sql"
-)
-}}
+  image="cms-adoption-geo.png",
+  caption="CMS adoption by geography.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=2092976179&format=interactive",
+  width=600,
+  height=538,
+  sheets_gid="1226921580",
+  sql_file="cms_adoption_by_geo.sql"
+) }}
 
 Among the geographies with the highest number of websites, CMS adoption percentage is the highest in the US, Italy, and Spain, where 46% - 47% of mobile pages visited by users are built with a CMS. India and Brazil have the lowest adoption with only 35% and 37%.
 
 We can also split this data into [subregions](https://github.com/GoogleChrome/CrUX/blob/main/utils/countries.json) around the globe, sorted by the most popular regions, to better identify macro-trends:
 
 {{ figure_markup(
-image="cms-adoption-geo-region.png",
-caption="CMS adoption by region.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1483728038&format=interactive",
-sheets_gid="180022563",
-sql_file="cms_adoption_by_region.sql"
-)
-}}
+  image="cms-adoption-geo-region.png",
+  caption="CMS adoption by subregion.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1483728038&format=interactive",
+  width=600,
+  height=701,
+  sheets_gid="180022563",
+  sql_file="cms_adoption_by_region.sql"
+) }}
 
 Adoption is highest in Southern Europe where half of the sites are using a CMS, and lowest in Eastern Asia where only a third of sites in our dataset use a CMS.
 
@@ -123,14 +124,13 @@ Adoption is highest in Southern Europe where half of the sites are using a CMS, 
 We also examined CMS adoption by the estimated rank of the sites.
 
 {{ figure_markup(
-image="cms-adoption-rank.png",
-caption="CMS adoption by rank.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=409766380&format=interactive",
-sheets_gid="158167539",
-sql_file="cms_adoption_by_rank.sql"
-)
-}}
+  image="cms-adoption-rank.png",
+  caption="CMS adoption by rank.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=409766380&format=interactive",
+  sheets_gid="158167539",
+  sql_file="cms_adoption_by_rank.sql"
+) }}
 
 CMSs account for only 7% of the top 1000 mobile pages, compared to 42% of the top 10M pages. This can be explained by the fact that smaller businesses and websites tend to use a CMS due to the ease of use, and the higher ranked websites tend to be built with proprietary solutions by professional web developers. With the continuing growth in usage of CMS platforms, it would be interesting to see if CMS platforms will also be able to increase adoption rates among the higher-ranking sites in the coming years.
 
