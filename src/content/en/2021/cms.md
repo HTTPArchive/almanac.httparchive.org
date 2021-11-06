@@ -137,26 +137,24 @@ CMSs account for only 7% of the top 1000 mobile pages, compared to 42% of the to
 ## Top CMSs
 
 {{ figure_markup(
-image="cms-adoption-share.png",
-caption="CMS adoption share.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1206051687&format=interactive",
-sheets_gid="891456070",
-sql_file="top_cms.sql"
-)
-}}
+  image="cms-adoption-share.png",
+  caption="CMS adoption share.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1206051687&format=interactive",
+  sheets_gid="891456070",
+  sql_file="top_cms.sql"
+) }}
 
 Among all websites that use a CMS, WordPress sites account for a large part of the relative market share, with over 75% adoption, followed by Joomla, Drupal, Wix, and Squarespace.
 
 {{ figure_markup(
-image="top-cms.png",
-caption="Top 5 CMSs year-over-year.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=845658898&format=interactive",
-sheets_gid="891456070",
-sql_file="top_cms.sql"
-)
-}}
+  image="top-cms.png",
+  caption="Top 5 CMSs year-over-year.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=845658898&format=interactive",
+  sheets_gid="891456070",
+  sql_file="top_cms.sql"
+) }}
 
 Drilling into the adoption by CMS across all websites, out of 218 different CMS platforms only 5 platforms had over 1% of usage.
 
@@ -169,14 +167,13 @@ Wix adoption grew from 1.2% to 1.6% (33% increase) and Squarespace grew from 0.9
 Examining the adoption of these sites built on CMS platforms by their popularity rank reveals an interesting distribution between platforms.
 
 {{ figure_markup(
-image="top-cms-by-rank.png",
-caption="Top 5 CMSs by rank.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=2087254046&format=interactive",
-sheets_gid="670045665",
-sql_file="top_cms_by_rank.sql"
-)
-}}
+  image="top-cms-by-rank.png",
+  caption="Top 5 CMSs by rank.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=2087254046&format=interactive",
+  sheets_gid="670045665",
+  sql_file="top_cms_by_rank.sql"
+) }}
 
 3.1% of mobile sites in the top 1K are built with WordPress, and 30.9% of the top 10M. Drupal maintains a higher adoption rate within the mid-ranged rankings (10K - 1M), while most of Wix and Squarespace sites are ranked outside the top 1M sites.
 
@@ -199,14 +196,15 @@ These metrics aim to cover the core elements which are indicative of a great web
 Initially, let’s review the 10 CMS platforms with the highest number of domains, and examine what percentage of sites on each platform have a **passing** grade, meaning that the 75th percentile of each of the above metrics must be in the “good” (green) range for each site.
 
 {{ figure_markup(
-image="core-web-vitals.png",
-caption="Top 10 CMSs core web vitals performance.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=126065751&format=interactive",
-sheets_gid="113092024",
-sql_file="core_web_vitals.sql"
-)
-}}
+  image="core-web-vitals.png",
+  caption="Top 10 CMSs core web vitals performance.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=126065751&format=interactive",
+  width=600,
+  height=559,
+  sheets_gid="113092024",
+  sql_file="core_web_vitals.sql"
+) }}
 
 We can see that desktop visitors generally score slightly better than mobile, which can be explained by weaker mobile devices and poorer connections.
 
@@ -221,14 +219,15 @@ Desktop device experience was slightly better, with 1C-Bitrix (used mostly in Ru
 We can also evaluate the progress of these CMS platforms compared to last year’s data, focusing on mobile views:
 
 {{ figure_markup(
-image="core-web-vitals.png",
-caption="Top 10 CMSs core web vitals performance for mobile views year-over-year.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=904891027&format=interactive",
-sheets_gid="7628223",
-sql_file="core_web_vitals_yoy.sql"
-)
-}}
+  image="core-web-vitals-yoy.png",
+  caption="Top 10 CMSs core web vitals performance for mobile views year-over-year.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=904891027&format=interactive",
+  width=600,
+  height=559,
+  sheets_gid="7628223",
+  sql_file="core_web_vitals_yoy.sql"
+) }}
 
 All of these CMSs showed an improvement in the percentage of origins with good CWVs since August 2020. Wix and Squarespace made the most noticeable progress, closing the gap from the other CMSs.
 
@@ -241,28 +240,30 @@ Largest Contentful Paint (LCP) measures the point in time when the page’s main
 A “good” LCP is regarded as being under 2.5 seconds.
 
 {{ figure_markup(
-image="core-web-vitals-lcp.png",
-caption="Top 10 CMSs LCP performance.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=22169494&format=interactive",
-sheets_gid="113092024",
-sql_file="core_web_vitals.sql"
-)
-}}
+  image="core-web-vitals-lcp.png",
+  caption="Top 10 CMSs LCP performance.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=22169494&format=interactive",
+  width=600,
+  height=559,
+  sheets_gid="113092024",
+  sql_file="core_web_vitals.sql"
+) }}
 
 TYPO3 CMS has the best LCP scores with 69% of origins having a “good” LCP experience, while WordPress and Adobe Experience Manager have the worst LCP scores, with only 28% of origins having a good LCP score.
 
 In general, it seems that most platforms are struggling with the LCP metric. This probably relates to the fact that the LCP is dependent on the download of image/font/CSS and then displaying the appropriate HTML elements. Achieving this in under 2.5 seconds for all device types and connection speeds can be challenging. Improving LCP scores usually involves the correct use of caching, pre-loading, resource prioritization, and lazy loading of other competing resources.
 
 {{ figure_markup(
-image="core-web-vitals-lcp-yoy.png",
-caption="Top 10 CMSs LCP performance for mobile views year-over-year.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=5489725&format=interactive",
-sheets_gid="7628223",
-sql_file="core_web_vitals_yoy.sql"
-)
-}}
+  image="core-web-vitals-lcp-yoy.png",
+  caption="Top 10 CMSs LCP performance for mobile views year-over-year.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=5489725&format=interactive",
+  width=600,
+  height=559,
+  sheets_gid="7628223",
+  sql_file="core_web_vitals_yoy.sql"
+) }}
 
 We can see that all CMSs improved their LCP in the past year, but most of them had modest improvements. The largest jump came from Wix and Squarespace, who had very low LCP scores last year. Tilda also seems to have made considerable progress.
 
@@ -275,28 +276,30 @@ Any delay is a pain point and could correlate with interference from other aspec
 A “good” FID is regarded as being under 100 milliseconds.
 
 {{ figure_markup(
-image="core-web-vitals-fid.png",
-caption="Top 10 CMSs FID performance.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1139890716&format=interactive",
-sheets_gid="113092024",
-sql_file="core_web_vitals.sql"
-)
-}}
+  image="core-web-vitals-fid.png",
+  caption="Top 10 CMSs FID performance.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1139890716&format=interactive",
+  width=600,
+  height=559,
+  sheets_gid="113092024",
+  sql_file="core_web_vitals.sql"
+) }}
 
 FID is very good for most CMSs on desktop, with all platforms scoring a perfect 100%. Most CMSs also deliver a good mobile FID of over 90%, except Bitrix and Joomla with only 83% and 85% of origins having a good FID.
 
 The fact that almost all platforms manage to deliver a good FID, has recently raised questions about the strictness of this metric. The Chrome team recently published an [article](https://web.dev/responsiveness/), which detailed the thoughts towards having a better responsiveness metric in the future.
 
 {{ figure_markup(
-image="core-web-vitals-fid-yoy.png",
-caption="Top 10 CMSs FID performance for mobile views year-over-year.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=516116235&format=interactive",
-sheets_gid="7628223",
-sql_file="core_web_vitals_yoy.sql"
-)
-}}
+  image="core-web-vitals-fid-yoy.png",
+  caption="Top 10 CMSs FID performance for mobile views year-over-year.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=516116235&format=interactive",
+  width=600,
+  height=559,
+  sheets_gid="7628223",
+  sql_file="core_web_vitals_yoy.sql"
+) }}
 
 Yearly data shows that all these CMSs managed to improve their FID over the past year. Wix had the most catching up to do on FID, and considerably improved their numbers. Joomla and Bitrix had the lowest FID scores this year, but still managed to improve.
 
@@ -311,26 +314,28 @@ The CLS metric has [evolved](https://web.dev/evolving-cls/) in the past year, ma
 A score of 0.1 or below is measured as “good”, over 0.25 as “poor”, and anything in between as “needs improvement”.
 
 {{ figure_markup(
-image="core-web-vitals-cls.png",
-caption="Top 10 CMSs CLS performance.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1800297769&format=interactive",
-sheets_gid="113092024",
-sql_file="core_web_vitals.sql"
-)
-}}
+  image="core-web-vitals-cls.png",
+  caption="Top 10 CMSs CLS performance.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1800297769&format=interactive",
+  width=600,
+  height=559,
+  sheets_gid="113092024",
+  sql_file="core_web_vitals.sql"
+) }}
 
 Wix had the best CLS score, with 81% of mobile origins having a “good” CLS. Adobe Experience Manager has the lowest CLS scores, with only 44% of mobile origins having a good CLS. Because layout shifts can usually be avoided, regardless of connection speeds - all platforms should strive to improve these numbers by reducing layout shifts to the bare minimum.
 
 {{ figure_markup(
-image="core-web-vitals-cls-yoy.png",
-caption="Top 10 CMSs CLS performance for mobile views year-over-year.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1814103651&format=interactive",
-sheets_gid="7628223",
-sql_file="core_web_vitals_yoy.sql"
-)
-}}
+  image="core-web-vitals-cls-yoy.png",
+  caption="Top 10 CMSs CLS performance for mobile views year-over-year.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1814103651&format=interactive",
+  width=600,
+  height=559,
+  sheets_gid="7628223",
+  sql_file="core_web_vitals_yoy.sql"
+) }}
 
 Comparing yearly data, we can see that most CMSs made some progress, or benefited from the change to a windowed CLS metric. However, we can see that certain CMSs such as Weebly regressed in CLS scores over the past year.
 
@@ -348,14 +353,15 @@ We can analyze this data to provide another perspective on CMS performance, usin
 The Lighthouse [performance score](https://web.dev/performance-scoring/) is a weighted average of several metric scores.
 
 {{ figure_markup(
-image="lighthouse-performance.png",
-caption="Top 10 CMSs median Lighthouse performance score.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1164945994&format=interactive",
-sheets_gid="267449225",
-sql_file="lighthouse_category_scores_per_cms.sql"
-)
-}}
+  image="lighthouse-performance.png",
+  caption="Top 10 CMSs median Lighthouse performance score.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1164945994&format=interactive",
+  width=600,
+  height=559,
+  sheets_gid="267449225",
+  sql_file="lighthouse_category_scores_per_cms.sql"
+) }}
 
 We can see that the median performance scores for all the top platforms on mobile are low, ranging from 17 to 35. As we saw above, this [does not directly imply bad results](https://philipwalton.com/articles/my-challenge-to-the-web-performance-community/) in mobile field data but does imply that all platforms have room for improvements, especially for low-end devices and network connections similar to those Lighthouse attempts to emulate.
 
@@ -364,14 +370,15 @@ We can see that the median performance scores for all the top platforms on mobil
 Search Engine Optimization (or SEO) is the practice of improving a website to make it more easily found in search engines. This is covered more in-depth in our [SEO](https://almanac.httparchive.org/en/2020/seo) chapter, but one part involves ensuring the site is coded in such a way to serve as much information to search engine crawlers to make it as easy as possible for them to show a site appropriately in search engine results. Compared to a custom-created website, one might expect a CMS to provide good SEO capabilities, and the Lighthouse scores in this category are appropriately high.
 
 {{ figure_markup(
-image="lighthouse-seo.png",
-caption="Top 10 CMSs median Lighthouse SEO score.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=98244918&format=interactive",
-sheets_gid="267449225",
-sql_file="lighthouse_category_scores_per_cms.sql"
-)
-}}
+  image="lighthouse-seo.png",
+  caption="Top 10 CMSs median Lighthouse SEO score.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=98244918&format=interactive",
+  width=600,
+  height=559,
+  sheets_gid="267449225",
+  sql_file="lighthouse_category_scores_per_cms.sql"
+) }}
 
 The median SEO score in all of the top 10 platforms is over 84, with Drupal scoring the lowest and Wix scoring the highest with a median score of 95.
 
@@ -384,14 +391,15 @@ Lighthouse provides a set of accessibility audits and it returns a weighted aver
 Each accessibility audit is either a pass or a fail, but unlike other Lighthouse audits, a page doesn’t get points for partially passing an accessibility audit. For example, if some elements have screen reader-friendly names, but others don’t, that page gets a 0 for the screen reader-friendly-names audit.
 
 {{ figure_markup(
-image="lighthouse-accessibility.png",
-caption="Top 10 CMSs median Lighthouse accessibility score.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=306783633&format=interactive",
-sheets_gid="267449225",
-sql_file="lighthouse_category_scores_per_cms.sql"
-)
-}}
+  image="lighthouse-accessibility.png",
+  caption="Top 10 CMSs median Lighthouse accessibility score.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=306783633&format=interactive",
+  width=600,
+  height=559,
+  sheets_gid="267449225",
+  sql_file="lighthouse_category_scores_per_cms.sql"
+) }}
 
 The median Lighthouse accessibility score for the top 10 CMSs ranges between 76 and 91. Squarespace and Weebly have the highest scores of 91, while Tilda has the lowest accessibility scores.
 
@@ -400,14 +408,15 @@ The median Lighthouse accessibility score for the top 10 CMSs ranges between 76 
 The Lighthouse [best practices](https://web.dev/lighthouse-best-practices/) try to ensure that web pages are following best practices for the web, for a variety of different metrics, for example, supporting HTTPS, no errors logged in the console, and more.
 
 {{ figure_markup(
-image="lighthouse-accessibility.png",
-caption="Top 10 CMSs median Lighthouse accessibility score.",
-description="TODO",
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=813154253&format=interactive",
-sheets_gid="267449225",
-sql_file="lighthouse_category_scores_per_cms.sql"
-)
-}}
+  image="lighthouse-best-practices.png",
+  caption="Top 10 CMSs median Lighthouse best practices score.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=813154253&format=interactive",
+  width=600,
+  height=559,
+  sheets_gid="267449225",
+  sql_file="lighthouse_category_scores_per_cms.sql"
+) }}
 
 Wix has the highest median best practices score of 93, while many of the other top 10 platforms share the lowest score of 73.
 
