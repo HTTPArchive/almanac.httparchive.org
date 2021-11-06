@@ -52,7 +52,15 @@ link.href="https://example.com";
 document.head.appendChild(link);
 ```
 
-![](https://lh6.googleusercontent.com/4YQ2F-Rry32FC_b2pOXRqQMakNDe0zd6wlAHceUm2qr4WJXg9icI9uMD4M-WwheFZDxWIN60HalLKtVcFCm026OGl0IeQ1qzN6u_xwDCEkbeOg_9JFiCGVOeUcq99Ou9S1hne6Il)
+{{ figure_markup(
+  image="http-headers-vs-html-markup.png",
+  caption="Popularity of resource hints as HTTP Headers and HTML markup.",
+  description="Bar chart showing the popularity of resource hints as HTTP Headers and HTML markup. HTML markup is used on 91.24% of instances on desktop and 94.13% of instances on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1056457221&format=interactive",
+  sheets_gid="1707816066",
+  sql_file="http_headers_hints_adoption.sql"
+  )
+}}
 
 Adoption for HTTP Headers is significantly lower than having resource hints implemented as part of the document markup; with less than 1.5% of the pages analyzed implementing resource hints through HTTP Headers. This is likely attributed to the ease with which they may be added or modified from within the HTML source, when compared to adding an HTTP header on the server.
 
@@ -102,25 +110,65 @@ Most modern browsers also <a hreflang="en" href="https://caniuse.com/link-rel-pr
 
 ## Adoption & Trends
 
-![](https://lh6.googleusercontent.com/L8MXZ46-pZd1UbHFOloEtPhfhMe-WNnGkiGm6jYzmAz8a0RQk6E7WZ1CW2lr2LDrv31q9i2mreYzp-KtsLMv5Uo8nVnsnsIpy_bNvr3j8SWFSNl7XDtJLCEYXPAc-3yMyR9NQAVa)
+{{ figure_markup(
+  image="resource-hints-adoption.png",
+  caption="Adoption of the link rel attribute.",
+  description="Bar chart showing the percent of pages using the link rel attribute values. dns-prefetch has 36.43% adoption on mobile and 35.74% on desktop. preload has 22.10% adoption on mobile and 22.02% on desktop. preconnect has 12.72% adoption on mobile and 12.93% on desktop. prefetch has 2.14% adoption on mobile and 2.42% on desktop. prerender has 0.13% adoption on mobile and 0.12% on desktop. modulepreload has 0.08% adoption on mobile and 0.09% on desktop.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1740212588&format=interactive",
+  sheets_gid="2077755325",
+  sql_file="hints_adoption.sql"
+  )
+}}
 
 The most widely used resource hint is `dns-prefetch` (36.43% on mobile) - which is unsurprising, considering it was introduced in <a hreflang="en" href="https://caniuse.com/link-rel-dns-prefetch">2009</a> - however with the widespread use of HTTPS, in many cases it should be replaced with `preconnect` (12.72% on mobile). When considering that the `preload` hint is comparatively new - first appearing in Chrome in <a hreflang="en" href="https://groups.google.com/a/chromium.org/g/blink-dev/c/_nu6HlbNQfo/m/XzaLNb1bBgAJ?pli=1">2016</a>, it is the second most widely adopted resource hint (22.10% on mobile) and is seeing constant growth year-on-year - a testament to the importance and flexibility of this directive.
 
 As shown in the charts above, the adoption rates on mobile and desktop are near-identical.
 
-![](https://lh4.googleusercontent.com/R-mO_NPvAe52Im0NfJA7Q3SwoVHsOSWtx9iW4Rw06-wtKixPrwOdAfzv7Fh7p_2UPdW-EvPlIpdOd2kkpTcxzsvx80gnrw0XIOAmWv-FKtzpdfGvKJppCvYmM-1dcCLCX2yJqD-I)
+{{ figure_markup(
+  image="resource-hint-adoption-trends.png",
+  caption="Trends in adoption of resource hints.",
+  description="Time series showing the adoption of resource hints on mobile. dns-prefetch has increased from 29% in 2019 to 34% in 2020 and 36% in 2021. preload has increased from 16% in 2019 to 18% in 2020 and 22% in 2021. preconnect has increased from 4% in 2019 to 9% in 2020 and 13% in 2021. prefetch has decreased from 3% in 2019 to 3% in 2020 and 2% in 2021.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=726424530&format=interactive",
+  sheets_gid="785516229",
+  sql_file="hints_adoption_trends.sql"
+  )
+}}
 
 ### By Rank
 
-![](https://lh4.googleusercontent.com/jOhFDxZPSOUfd5aftoHZA4_ylV8sRJSWENuInNps_bxoKTgREi-WZFLBixkmWymFxJUeL-vhTw9GQzMHiLtCFzD4726rnD5B7iQ9cChfPgArHGgq32l0_fkm6ZqsUZOOXMKAnL_9)
+{{ figure_markup(
+  image="http-headers-vs-html-markup.png",
+  caption="Popularity of resource hints as HTTP Headers and HTML markup.",
+  description="Bar chart showing the popularity of resource hints as HTTP Headers and HTML markup. HTML markup is used on 91.24% of instances on desktop and 94.13% of instances on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1056457221&format=interactive",
+  sheets_gid="1707816066",
+  sql_file="http_headers_hints_adoption.sql"
+  )
+}}
 
 You can observe that when segmenting the data by [rank](./methodology#chrome-ux-report), the adoption rates change notably, with the `preload` hint increasing from 22.10% unranked, to claim the top spot with an adoption rate of 44.28% amongst the top 1,000 sites.
 
-![](https://lh4.googleusercontent.com/phTk_mFr9nPDX_Ps7nTbepfiVwvCKsxJl6rKBN6odV3hSfeQqmY30DG6KNsPyoEWkvFXCYVTGTzWFeHESgJO0V_QnRBHWpm44cds-28ksBQpBkHMKkK63ybVKSk_2He8wZITT9-j)
+{{ figure_markup(
+  image="http-headers-vs-html-markup.png",
+  caption="Popularity of resource hints as HTTP Headers and HTML markup.",
+  description="Bar chart showing the popularity of resource hints as HTTP Headers and HTML markup. HTML markup is used on 91.24% of instances on desktop and 94.13% of instances on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1056457221&format=interactive",
+  sheets_gid="1707816066",
+  sql_file="http_headers_hints_adoption.sql"
+  )
+}}
 
 `dns-prefetch` is the only resource hint which exhibits a decrease in adoption when comparing the top 1,000 sites with the overall adoption.
 
-![](https://lh5.googleusercontent.com/3Nebgh6w8WZt7e4HPWV6DFnNdRW9wn7yBmBZFvqcZ7gb7PrDE1Z85u-nd1mCuOihkYQvD2sxOFC-P6Pld0dmv6TIUuHXMXaTqXoEZJK7C3AsZ8LdpK2P_RSQn2wudfVSUqNVE-G3)
+{{ figure_markup(
+  image="http-headers-vs-html-markup.png",
+  caption="Popularity of resource hints as HTTP Headers and HTML markup.",
+  description="Bar chart showing the popularity of resource hints as HTTP Headers and HTML markup. HTML markup is used on 91.24% of instances on desktop and 94.13% of instances on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1056457221&format=interactive",
+  sheets_gid="1707816066",
+  sql_file="http_headers_hints_adoption.sql"
+  )
+}}
 
 To counter this decrease, the top 1,000 pages have an increased adoption for the `preconnect` hint taking advantage of the benefits covered earlier on in the chapter.
 
@@ -136,11 +184,27 @@ Of the sites using resource hints, when comparing top 1000 ranking sites to the 
 
 ### Correlation with Core Web Vitals
 
-![](https://lh6.googleusercontent.com/XOvE8eYW63LWKA02RleWESmixnumsNV3ZIdvkqM0ernplzjtqpxS-UW08bee0HJFEeh6oUdpsTHcIs4voWHTex_5YYRt6FlI_zqoOoyQ9SaPFqmJpNTkvYr03x-68lmsNpgBTGNV)
+{{ figure_markup(
+  image="http-headers-vs-html-markup.png",
+  caption="Popularity of resource hints as HTTP Headers and HTML markup.",
+  description="Bar chart showing the popularity of resource hints as HTTP Headers and HTML markup. HTML markup is used on 91.24% of instances on desktop and 94.13% of instances on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1056457221&format=interactive",
+  sheets_gid="1707816066",
+  sql_file="http_headers_hints_adoption.sql"
+  )
+}}
 
 By combining a page's <a hreflang="en" href="https://web.dev/cwv">Core Web Vitals</a> scores in the CrUX dataset and the usage of the preload resource hint, you can observe a negative correlation between the number of link elements and the percentage of pages which score a good rating on CWV - the pages which use fewer preload hints are more likely to have a good rating.
 
-![](https://lh5.googleusercontent.com/yKUu9S8hBmWt-iimjSCx1W80uS1tGsKNUGj9ZlbK5JW6GvldlOkMsKJ_sQZHaKNXiiK99KP1LbD4_8EIN1mtHADMJwnJ6_Sms--4Q8g8-Yn8-EoNBFeu8h-NY9QM_skWyNu2YMgp)
+{{ figure_markup(
+  image="http-headers-vs-html-markup.png",
+  caption="Popularity of resource hints as HTTP Headers and HTML markup.",
+  description="Bar chart showing the popularity of resource hints as HTTP Headers and HTML markup. HTML markup is used on 91.24% of instances on desktop and 94.13% of instances on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1056457221&format=interactive",
+  sheets_gid="1707816066",
+  sql_file="http_headers_hints_adoption.sql"
+  )
+}}
 
 This same observation may be seen on a page's <a hreflang="en" href="https://web.dev/lcp">Largest Contentful Paint</a> and <a hreflang="en" href="https://web.dev/fcp">First Contentful Paint</a>, indicating that in many cases, the developer is prioritizing resources which aren't needed to render the LCP element and as a consequence degrading the user experience.
 
@@ -156,7 +220,15 @@ With that being said, and the expectation that more websites will adopt `preload
 
 The `as` attribute should be specified when using `rel="preload"` (or rel="prefetch") to specify the type of resource being downloaded. Applying the correct `as` attribute allows the browser to prioritize the resource more accurately, improve caching for future requests and apply the correct <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">content-security policy</a>.
 
-![](https://lh4.googleusercontent.com/SA8emNGNyq9WN0YQbaxBzDG24ckC77eH6TyrAzX3VNLbRUYmwHEZMpIVMxUVa8yl_6P-p8Sn5Ka8QUyAe0BzhICb7dHSL5JZdAgPHo3jO3sbgcIUpn-v-yySPYZW_DBuDe6pN52a)
+{{ figure_markup(
+  image="http-headers-vs-html-markup.png",
+  caption="Popularity of resource hints as HTTP Headers and HTML markup.",
+  description="Bar chart showing the popularity of resource hints as HTTP Headers and HTML markup. HTML markup is used on 91.24% of instances on desktop and 94.13% of instances on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1056457221&format=interactive",
+  sheets_gid="1707816066",
+  sql_file="http_headers_hints_adoption.sql"
+  )
+}}
 
 ##### script
 
@@ -222,7 +294,15 @@ In such cases, the preload hint is regressing the website's performance, as you 
 
 Attempting to preload a CORS-enabled resource without including the correct `crossorigin` attribute will download the same resource twice. The `crossorigin` attribute is required on the `<link>` element if the eventual request would also use CORS. This is also the case when requesting font files, even when self-hosting font files on the same origin, as font files are always treated as CORS-enabled.
 
-![](https://lh6.googleusercontent.com/Tbs1hLdDacIKI4TyMzSzyZbUnLv_9EQN9sa2EHp9xnhz293wy649o6Ek9iFCvr0jF8yJcJ5_jTHEWTmZEzv_mn2assZJqIybk1Q21vEaZkdXR0UmyxIH4JhsxWOvS0vmHhreUD52)
+{{ figure_markup(
+  image="http-headers-vs-html-markup.png",
+  caption="Popularity of resource hints as HTTP Headers and HTML markup.",
+  description="Bar chart showing the popularity of resource hints as HTTP Headers and HTML markup. HTML markup is used on 91.24% of instances on desktop and 94.13% of instances on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1056457221&format=interactive",
+  sheets_gid="1707816066",
+  sql_file="http_headers_hints_adoption.sql"
+  )
+}}
 
 More than half of the cases when the `crossorigin` attribute on the `rel="preload"` hint is either missing or incorrect are linked to the preloading of font files, with a total of 14,818 instances across the dataset.
 
@@ -266,13 +346,29 @@ Native image and iframe lazy-loading have been standardized in 2019 and since th
 
 Browsers which do not support the loading attribute, will simply ignore it - making it safe to add without unwanted side-effects. JavaScript based alternatives, such as <a hreflang="en" href="https://github.com/aFarkas/lazysizes">lazysizes</a> may still be used, however considering that full browser support is around the corner, it may not be worth adding to a project at this stage.
 
-![](https://lh5.googleusercontent.com/fUgZHiwFaCNN209PcAllIohazj6Clf8y3fd8Shx_l3AKnicRd3QM1oD-Au1pbWaRC7D3ZUbuHF06W8amsiVNxenyjxI5c4vk8CzkY-3C83uuX9hY9xsfgNMTYS5sAl0tWwWGpMRp)
+{{ figure_markup(
+  image="http-headers-vs-html-markup.png",
+  caption="Popularity of resource hints as HTTP Headers and HTML markup.",
+  description="Bar chart showing the popularity of resource hints as HTTP Headers and HTML markup. HTML markup is used on 91.24% of instances on desktop and 94.13% of instances on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1056457221&format=interactive",
+  sheets_gid="1707816066",
+  sql_file="http_headers_hints_adoption.sql"
+  )
+}}
 
 The number of pages using `loading="lazy"` has grown from 4.17% in 2020 to 18.28% in 2021. This rapid growth is extraordinary and is likely driven by two key elements. The ease with which it could be added to pages without cross-browser compatibility issues, and the frameworks or technologies powering these websites. In WordPress 5.5, <a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">lazy-loading images became the default implementation</a>, supercharging the adoption rate of `loading="lazy"`, with WordPress sites now making up <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">84%</a> of all pages which use native image lazy-loading.
 
 An <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">analysis</a> of the load times for pages which use lazy-loading indicated that pages which use lazy-loading tend to have a worse LCP performance, possibly caused by overusing the lazy-loading attribute on the LCP element which shouldn't be lazy-loaded. If you are using `loading="lazy"`, you should check that the lazily-loaded images are below the fold and more critically, that the [LCP element is not lazy-loaded](./performance). More than 60% of all images which are lazy-load are actually within the initial viewport and shouldn't be lazy-loaded.)
 
-![](https://lh6.googleusercontent.com/ilEMPIT4mHlOaQGOyLntcaHwp6A7qlyec_BsxuXbUtP6QU5WMYnWQe1-i958s-g49EfEfdD9QdfEsFh4RQpFvtCBK50vacYpLB71Hud7g8dJoR5V-Quv3p8YBFTm3Ds8csI01NnH)
+{{ figure_markup(
+  image="http-headers-vs-html-markup.png",
+  caption="Popularity of resource hints as HTTP Headers and HTML markup.",
+  description="Bar chart showing the popularity of resource hints as HTTP Headers and HTML markup. HTML markup is used on 91.24% of instances on desktop and 94.13% of instances on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1056457221&format=interactive",
+  sheets_gid="1707816066",
+  sql_file="http_headers_hints_adoption.sql"
+  )
+}}
 
 The likelihood of a page containing at least one iframe is much lower than for that containing an image with only 2.56% of pages containing an iframe taking advantage of native lazy-loading. The benefits of lazy-loading an iframe are potentially important, as an iframe could initiate further requests to download even more resources, including scripts and images. This is especially true when using embeds, such as YouTube or Twitter embeds. Similarly to when deciding the loading strategy for an image, you must check whether the iframe is shown within the initial viewport or not. If it isn't, then it is usually safe to add `loading="lazy"` to the `<iframe>` element to benefit from a reduced initial load & boost performance.
 
