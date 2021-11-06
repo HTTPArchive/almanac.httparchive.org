@@ -5,7 +5,7 @@ description: Resource Hints cahpter of the 2021 Web Almanac covering adoption of
 authors: [kevinfarrugia]
 reviewers: [siakaramalegos, tunetheweb, samarpanda]
 analysts: [nithanaroy]
-editors: [rviscomi]
+editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1Mw6TjkIClRtlZPHbij5corOZbaSUp-vgTVq3Ig18IwQ/
 kevinfarrugia_bio: Kevin Farrugia is a consultant on web performance and software architecture. You can find him on <a hreflang="en" href="https://imkev.dev">imkev.dev</a>.
@@ -33,7 +33,7 @@ These may implemented in one of three ways:
 **HTML Element**
 
 ```
-<linkrel="dns-prefetch" href="https://example.com" /\>
+<link rel="dns-prefetch" href="https://example.com" /\>
 ```
 
 **HTTP Header**
@@ -58,7 +58,7 @@ Adoption for HTTP Headers is significantly lower than having resource hints impl
 
 Using our current methodology, it is not possible to reliably measure resource hints which are added following user-interaction, such as <a hreflang="en" href="https://github.com/GoogleChromeLabs/quicklink">QuickLink</a>, which featured on less than 0.1% of pages analyzed.
 
-Considering that the adoption of resource hints using HTTP Headers is markedly smaller than adoption for `<link rel\>`, the rest of this chapter will focus on analyzing the usage of resource hints through the HTML Element unless otherwise specified.
+Considering that the adoption of resource hints using HTTP Headers is markedly smaller than adoption for the `<link>` HTML element, the rest of this chapter will focus on analyzing the usage of resource hints through the HTML Element.
 
 #### Types of Resource Hints
 
@@ -136,7 +136,7 @@ Of the sites using resource hints, when comparing top 1000 ranking sites to the 
 
 ### Correlation with Core Web Vitals
 
-![](https://lh6.googleusercontent.com/XOvE8eYW63LWKA02RleWESmixnumsNV3ZIdvkqM0ernplzjtqpxS-UW08bee0HJFEeh6oUdpsTHcIs4voWHTex_5YYRt6FlI_zqoOoyQ9SaPFqmJpNTkvYr03x-68lmsNpgBTGNV)B
+![](https://lh6.googleusercontent.com/XOvE8eYW63LWKA02RleWESmixnumsNV3ZIdvkqM0ernplzjtqpxS-UW08bee0HJFEeh6oUdpsTHcIs4voWHTex_5YYRt6FlI_zqoOoyQ9SaPFqmJpNTkvYr03x-68lmsNpgBTGNV)
 
 By combining a page's <a hreflang="en" href="https://web.dev/cwv">Core Web Vitals</a> scores in the CrUX dataset and the usage of the preload resource hint, you can observe a negative correlation between the number of link elements and the percentage of pages which score a good rating on CWV - the pages which use fewer preload hints are more likely to have a good rating.
 
@@ -158,13 +158,21 @@ The `as` attribute should be specified when using `rel="preload"` (or rel="prefe
 
 ![](https://lh4.googleusercontent.com/SA8emNGNyq9WN0YQbaxBzDG24ckC77eH6TyrAzX3VNLbRUYmwHEZMpIVMxUVa8yl_6P-p8Sn5Ka8QUyAe0BzhICb7dHSL5JZdAgPHo3jO3sbgcIUpn-v-yySPYZW_DBuDe6pN52a)
 
-**script**: `script` is the most common value by a significant margin. `<script>` elements are usually discovered early as they are embedded in the initial HTML document, but it is a common practice to place `<script>` elements before the closing `<body>` tag. Since HTML is parsed sequentially, this means that the scripts will be discovered after the DOM is downloaded and parsed - and with more websites dependent on JavaScript frameworks, the necessity to have JavaScript load early has increased. The downside is that JavaScript resources would be prioritized over the other resources discovered within the HTML document, including images and stylesheets, possibly compromising the user experience.
+##### script
 
-**font**: The second most commonly preloaded resource is the `font`, which is a late-discovered resource since the browser will only download a font file after the layout phase when the browser knows that the font will be rendered on the page.
+`script` is the most common value by a significant margin. `<script>` elements are usually discovered early as they are embedded in the initial HTML document, but it is a common practice to place `<script>` elements before the closing `<body>` tag. Since HTML is parsed sequentially, this means that the scripts will be discovered after the DOM is downloaded and parsed - and with more websites dependent on JavaScript frameworks, the necessity to have JavaScript load early has increased. The downside is that JavaScript resources would be prioritized over the other resources discovered within the HTML document, including images and stylesheets, possibly compromising the user experience.
 
-**style**: Stylesheets are ordinarily embedded in the document's `<head>` and discovered early during the document parsing. Additionally, as stylesheets are render-blocking resources they are assigned the _Highest_ request priority. This should make preloading stylesheets unnecessary but it is sometimes required to re-prioritize the requests. A <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=629420">bug</a> in Google Chrome (fixed in Chrome 95) prioritizes preloaded resources ahead of other higher-priority resources discovered by the preload scanner, including CSS files. Preloading the stylesheet will restore its _Highest_ priority. Another instance when stylesheets are preloaded is when they are not downloaded directly from the HTML document, such as the <a hreflang="en" href="https://www.filamentgroup.com/lab/async-css.html">asynchronous CSS</a> "hack" which uses an `onload` event to avoid render-blocking the page with non-critical CSS.
+##### font
 
-**fetch**: Preload may also be used to initiate a request to retrieve data which you know is critical to the rendering of the page, such as a JSON response or stream.
+The second most commonly preloaded resource is the `font`, which is a late-discovered resource since the browser will only download a font file after the layout phase when the browser knows that the font will be rendered on the page.
+
+##### style
+
+Stylesheets are ordinarily embedded in the document's `<head>` and discovered early during the document parsing. Additionally, as stylesheets are render-blocking resources they are assigned the _Highest_ request priority. This should make preloading stylesheets unnecessary but it is sometimes required to re-prioritize the requests. A <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=629420">bug</a> in Google Chrome (fixed in Chrome 95) prioritizes preloaded resources ahead of other higher-priority resources discovered by the preload scanner, including CSS files. Preloading the stylesheet will restore its _Highest_ priority. Another instance when stylesheets are preloaded is when they are not downloaded directly from the HTML document, such as the <a hreflang="en" href="https://www.filamentgroup.com/lab/async-css.html">asynchronous CSS</a> "hack" which uses an `onload` event to avoid render-blocking the page with non-critical CSS.
+
+##### fetch
+
+Preload may also be used to initiate a request to retrieve data which you know is critical to the rendering of the page, such as a JSON response or stream.
 
 #### The `crossorigin` attribute
 
@@ -172,9 +180,13 @@ The `crossorigin` attribute is used to indicate whether CORS must be used when f
 
 // TODO: Table
 
-**anonymous**: The default value when no value is specified, `anonymous` will set the credentials flag to <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy">`same-origin`</a> and is required when downloading resources protected by CORS. It is also a <a hreflang="en" href="https://drafts.csswg.org/css-fonts/#font-fetching-requirements">requirement</a> when downloading font files - even if they are on the same origin! If you omit the `crossorigin` attribute when the eventual request for the preloaded resource uses CORS, you will end up with a duplicate request since it won't match in the preload cache.
+##### anonymous
 
-**use-credentials**: When requesting cross-origin resources which require authentication, for example through the use of cookies, client certificates or the `Authorization` header; setting the `crossorigin="use-credentials"` attribute will include this data in the request and allowing the server to respond to the request so that the resource may be preloaded. This is not a common scenario with 0.04% usage, however if your page content is dependent on an authenticated status, it could be used to initiate an early fetch request to get the login status.
+The default value when no value is specified, `anonymous` will set the credentials flag to <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy">`same-origin`</a> and is required when downloading resources protected by CORS. It is also a <a hreflang="en" href="https://drafts.csswg.org/css-fonts/#font-fetching-requirements">requirement</a> when downloading font files - even if they are on the same origin! If you omit the `crossorigin` attribute when the eventual request for the preloaded resource uses CORS, you will end up with a duplicate request since it won't match in the preload cache.
+
+##### use-credentials
+
+When requesting cross-origin resources which require authentication, for example through the use of cookies, client certificates or the `Authorization` header; setting the `crossorigin="use-credentials"` attribute will include this data in the request and allowing the server to respond to the request so that the resource may be preloaded. This is not a common scenario with 0.04% usage, however if your page content is dependent on an authenticated status, it could be used to initiate an early fetch request to get the login status.
 
 #### The `media` attribute
 
@@ -182,7 +194,7 @@ An oft neglected feature available to `rel="preload"`, is the ability to specify
 
 In addition to the `media` attribute, the `<link>` element supports `imagesrcset` and `imagesizes` attributes which correspond to the `srcset` and `sizes` attributes on `<img>` elements. Using these attributes, you are able to use the same resource selection criteria that you would use on your image. Unfortunately their adoption is very low (less than 1%); most likely owing to the lack of <a hreflang="en" href="https://caniuse.com/mdn-html_elements_link_imagesizes">support</a> on Safari.
 
-<p class="note">Note: The `media` attribute is not available on all `<link>` elements as the spec suggests, but it is only available on `rel="preload"`.</p>
+<p class="note">Note: The <code>media</code> attribute is not available on all <code>&lt;link&gt;</code> elements as the spec suggests, but it is only available on <code>rel="preload"</code>.</p>
 
 ### Bad practices
 
@@ -192,9 +204,13 @@ Owing to the versatility of `rel="preload"`, there isn't a clear set of rules di
 
 We have already seen that there is a negative correlation between a website's performance and the number of preload hints. This relationship may be influenced by two factors:
 
-**Incorrect preloads**: When you preload a resource which is not as important as the other resources which the browser would have otherwise prioritized. We are unable to measure the extent of incorrect preloads as you would need to A/B test the page with and without each hint.
+##### Incorrect preloads
 
-**Unused preloads**: When you preload a resource which is not needed within the first few seconds of the page loading.
+When you preload a resource which is not as important as the other resources which the browser would have otherwise prioritized. We are unable to measure the extent of incorrect preloads as you would need to A/B test the page with and without each hint.
+
+##### Unused preloads
+
+When you preload a resource which is not needed within the first few seconds of the page loading.
 
 // TODO: 21.48% of preload hints are unused within the first 3 seconds
 
@@ -220,7 +236,7 @@ There are 17,861 cases of unrecognised values, with the most frequent error bein
 
 When using an incorrect `as` attribute value - as opposed to unrecognised value, such as using `style` instead of `script`; the browser will duplicate the file download as the request won't match the resource stored in the preload cache.
 
-<p class="note">Note: While `video` is included in the spec, it isn't supported by any browser and would be treated as an invalid value and ignored.</p>
+<p class="note">Note: While <code>video</code> is included in the spec, it isn't supported by any browser and would be treated as an invalid value and ignored.</p>
 
 #### Unused font files
 
@@ -240,7 +256,7 @@ Prioritising third party resources over your own content is potentially a warnin
 
 Analysing the table above, 42.72% of all pages which include a `preload` hint are preloading resources hosted on adservice.google.com, while s.w.org (WordPress) is the most popular domain for `dns-prefetch` and `fonts.gstatic.com` for the `preconnect` directive.
 
-<p class="note">Note: Google Fonts now includes instructions to `preconnect` to both the fonts.gstatic.com origin and fonts.googleapis.com.</p>
+<p class="note">Note: Google Fonts now includes instructions to <code>preconnect</code> to both the fonts.gstatic.com origin and fonts.googleapis.com.</p>
 
 ### Native Lazy Loading
 
