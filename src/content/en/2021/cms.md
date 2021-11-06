@@ -337,7 +337,7 @@ Comparing yearly data, we can see that most CMSs made some progress, or benefite
 
 ### Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) is an open-source, automated tool for improving the quality of web pages. One key aspect of the tool is that it provides a set of audits to assess the status of a website in terms of performance, accessibility, SEO, best practices, and more. Lighthouse reports provide lab data, a way developers can get suggestions on how to improve website performance, but the Lighthouse score has no direct implications on the actual field data collected by [CrUX](https://developers.google.com/web/tools/chrome-user-experience-report). You can read more on Lighthouse and the correlation between its scores and Field Data [here](https://web.dev/lab-and-field-data-differences/).
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) is an open-source, automated tool for improving the quality of web pages. One key aspect of the tool is that it provides a set of audits to assess the status of a website in terms of performance, accessibility, SEO, best practices, and more. Lighthouse reports provide lab data, a way developers can get suggestions on how to improve website performance, but the Lighthouse score has no direct implications on the actual field data collected by [CrUX](https://developers.google.com/web/tools/chrome-user-experience-report). You can read more on Lighthouse and the correlation between its [scores and Field Data](https://web.dev/lab-and-field-data-differences/).
 
 HTTPArchive runs Lighthouse on all its mobile web pages (unfortunately, no desktop results), which are also [throttled](https://github.com/GoogleChrome/lighthouse/blob/master/docs/throttling.md) to emulate a slow 4G connection with a CPU slowdown, as detailed in our [methodology](https://almanac.httparchive.org/en/2021/methodology#lighthouse).
 
@@ -611,6 +611,6 @@ CMSs are doing great work, and have a huge opportunity to further improve user e
 
 On the other hand, Core Web Vitals still have some progress and evolving to do.
 
-We mentioned the thoughts towards a [better responsiveness metric](https://web.dev/responsiveness/) above. In addition, navigations between pages in a site should be better tracked, and take into account the difference between Single-Page Applications (SPAs) and Multi-Page Applications (MPAs) architectures - you can read more about this [here](https://web.dev/vitals-spa-faq).
+We mentioned the thoughts towards a [better responsiveness metric](https://web.dev/responsiveness/) above. In addition, navigations between pages in a site should be better tracked, and take into account the difference between [Single-Page Applications (SPAs) and Multi-Page Applications (MPAs)](https://web.dev/vitals-spa-faq) architectures.
 
 Let’s continue pushing forward.
