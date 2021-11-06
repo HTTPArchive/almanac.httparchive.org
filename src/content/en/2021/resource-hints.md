@@ -8,14 +8,14 @@ analysts: [nithanaroy]
 editors: [rviscomi]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1Mw6TjkIClRtlZPHbij5corOZbaSUp-vgTVq3Ig18IwQ/
-kevinfarrugia_bio: Kevin Farrugia is a consultant on web performance and software architecture. You can find him on <a hreflang="en" href="https://imkev.dev">imkev.dev</a> or <a href="https://twitter.com/imkevdev">@imkevdev</a>.
-featured_quote: Resource hints could become a double-edged sword if the benefit for your users is not evaluated. Almost a quarter of preload requests went unused while the number of preload hits correlated with slower load times.
-featured_stat_1: 21.48%
-featured_stat_label_1: Unused preload hints within the first 3 seconds.
-featured_stat_2: 44.28%
-featured_stat_label_2: Adoption of preload in the top 1,000 rank.
+kevinfarrugia_bio: Kevin Farrugia is a consultant on web performance and software architecture. You can find him on <a hreflang="en" href="https://imkev.dev">imkev.dev</a>.
+featured_quote: Resource hints could become a double-edged sword if the benefit for your users is not evaluated. A quarter of preload requests went unused while the number of preload hits correlated with slower load times.
+featured_stat_1: 44.28%
+featured_stat_label_1: Adoption of preload in the top 1,000 websites.
+featured_stat_2: 21.48%
+featured_stat_label_2: Unused preload hints within the first 3 seconds.
 featured_stat_3: 60%
-featured_stat_label_3: Lazy loaded images are within the initial viewport.
+featured_stat_label_3: Lazy loaded images within the initial viewport.
 ---
 
 ## Introduction
@@ -146,7 +146,7 @@ This same observation may be seen on a page's [Largest Contentful Paint](https:/
 
 While this doesn't prove that having preload hints causes a page to get slower, having many does coincide with having slower performance. Every page has its own unique requirements and it is impossible to apply a "one size fits all" approach, but in the majority of cases the number of preloaded resources should be kept low and resource prioritization should be delegated to the browser when possible.
 
-_Note: In addition to the number of hints, the size of each preloaded resource has an impact on the website performance. The above figure does not take into consideration the size of each preloaded resource._
+<p class="note">Note: In addition to the number of hints, the size of each preloaded resource has an impact on the website performance. The above figure does not take into consideration the size of each preloaded resource.</p>
 
 ### `rel="preload"`
 
@@ -182,7 +182,7 @@ An oft neglected feature available to `rel="preload"`, is the ability to specify
 
 In addition to the `media` attribute, the `<link>` element supports `imagesrcset` and `imagesizes` attributes which correspond to the `srcset` and `sizes` attributes on `<img>` elements. Using these attributes, you are able to use the same resource selection criteria that you would use on your image. Unfortunately their adoption is very low (less than 1%); most likely owing to the lack of [support](https://caniuse.com/mdn-html_elements_link_imagesizes) on Safari.
 
-_Note: The `media` attribute is not available on all `<link>` elements as the spec suggests, but it is only available on `rel="preload"`._
+<p class="note">Note: The `media` attribute is not available on all `<link>` elements as the spec suggests, but it is only available on `rel="preload"`.</p>
 
 ### Bad practices
 
@@ -220,7 +220,7 @@ There are 17,861 cases of unrecognised values, with the most frequent error bein
 
 When using an incorrect `as` attribute value - as opposed to unrecognised value, such as using `style` instead of `script`; the browser will duplicate the file download as the request won't match the resource stored in the preload cache.
 
-_Note: While `video` is included in the spec, it isn't supported by any browser and would be treated as an invalid value and ignored._
+<p class="note">Note: While `video` is included in the spec, it isn't supported by any browser and would be treated as an invalid value and ignored.</p>
 
 #### Unused font files
 
@@ -240,7 +240,7 @@ Prioritising third party resources over your own content is potentially a warnin
 
 Analysing the table above, 42.72% of all pages which include a `preload` hint are preloading resources hosted on adservice.google.com, while s.w.org (WordPress) is the most popular domain for `dns-prefetch` and `fonts.gstatic.com` for the `preconnect` directive.
 
-_Note: Google Fonts now includes instructions to `preconnect` to both the fonts.gstatic.com origin and fonts.googleapis.com._
+<p class="note">Note: Google Fonts now includes instructions to `preconnect` to both the fonts.gstatic.com origin and fonts.googleapis.com.</p>
 
 ### Native Lazy Loading
 
