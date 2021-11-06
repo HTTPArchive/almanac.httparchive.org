@@ -16,7 +16,7 @@ rendered_data AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    getTwitterTypes(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,'$._structured-data')),'$.structured_data.rendered')) AS twitter_types
+    getTwitterTypes(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')), '$.structured_data.rendered')) AS twitter_types
   FROM
     `httparchive.pages.2021_07_01_*`
 ),

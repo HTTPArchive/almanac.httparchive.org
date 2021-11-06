@@ -20,7 +20,7 @@ rendered_data AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    getRDFaPrefixes(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,'$._structured-data')),'$.structured_data.rendered')) AS rdfa_prefixes
+    getRDFaPrefixes(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')), '$.structured_data.rendered')) AS rdfa_prefixes
   FROM
     `httparchive.pages.2021_07_01_*`
 ),
@@ -51,7 +51,7 @@ FROM (
     -- Removes the protocol and any subdomains from the URL.
     -- e.g. "https://my.example.com/pathname" becomes "example.com/pathname"
     -- This is done to normalize the URL a bit before counting.
-    CONCAT(NET.REG_DOMAIN(rdfa_prefix), SPLIT(rdfa_prefix, NET.REG_DOMAIN(rdfa_prefix))[SAFE_OFFSET(1)]) AS rdfa_prefix,
+    CONCAT(NET.REG_DOMAIN(rdfa_prefix), SPLIT(rdfa_prefix, NET.REG_DOMAIN(rdfa_prefix))[SAFE_OFFSET(1)]) AS rdfa_prefix
   FROM
     rendered_data,
     UNNEST(rdfa_prefixes) AS rdfa_prefix

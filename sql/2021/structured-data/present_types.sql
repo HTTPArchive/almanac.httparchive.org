@@ -22,7 +22,7 @@ SELECT
   COUNTIF(CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.twitter') AS BOOL) = TRUE) / COUNT(0) AS pct_twitter,
   COUNTIF(CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.facebook') AS BOOL) = TRUE) / COUNT(0) AS pct_facebook,
   COUNTIF(CAST(JSON_EXTRACT(structured_data, '$.structured_data.rendered.present.opengraph') AS BOOL) = TRUE) / COUNT(0) AS pct_opengraph,
-  COUNTIF(JSON_EXTRACT(structured_data, '$.structured_data') IS NOT NULL AND JSON_EXTRACT(structured_data, '$.log') IS NULL) / COUNT(0) AS pct_total_structured_data_ran,
+  COUNTIF(JSON_EXTRACT(structured_data, '$.structured_data') IS NOT NULL AND JSON_EXTRACT(structured_data, '$.log') IS NULL) / COUNT(0) AS pct_total_structured_data_ran
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

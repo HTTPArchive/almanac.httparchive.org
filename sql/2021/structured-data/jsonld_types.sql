@@ -35,7 +35,7 @@ rendered_data AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    getJSONLDTypes(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,'$._structured-data')),'$.structured_data.rendered')) AS jsonld_types
+    getJSONLDTypes(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')), '$.structured_data.rendered')) AS jsonld_types
   FROM
     `httparchive.pages.2021_07_01_*`
 ),

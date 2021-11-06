@@ -16,7 +16,7 @@ rendered_data AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    getFacebookTypes(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,'$._structured-data')),'$.structured_data.rendered')) AS facebook_type
+    getFacebookTypes(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')), '$.structured_data.rendered')) AS facebook_type
   FROM
     `httparchive.pages.2021_07_01_*`
 ),

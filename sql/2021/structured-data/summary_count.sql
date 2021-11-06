@@ -4,16 +4,16 @@ SELECT
   client,
   COUNTIF(success IS NOT NULL) AS success,
   COUNTIF(errors IS NOT NULL) AS errors,
-  COUNTIF(success IS NOT NULL AND errors is NULL) AS success_no_errors,
-  COUNTIF(errors IS NOT NULL AND success is NULL) AS errors_no_success,
-  COUNTIF(success IS NOT NULL AND errors is NOT NULL) AS success_errors,
+  COUNTIF(success IS NOT NULL AND errors IS NULL) AS success_no_errors,
+  COUNTIF(errors IS NOT NULL AND success IS NULL) AS errors_no_success,
+  COUNTIF(success IS NOT NULL AND errors IS NOT NULL) AS success_errors,
   COUNTIF(success IS NULL AND errors IS NULL) AS no_success_no_errors,
   COUNTIF(success IS NOT NULL) / COUNT(0) AS pct_success,
   COUNTIF(errors IS NOT NULL) / COUNT(0) AS pct_errors,
-  COUNTIF(success IS NOT NULL AND errors is NULL) / COUNT(0) AS pct_success_no_errors,
-  COUNTIF(errors IS NOT NULL AND success is NULL) / COUNT(0) AS pct_errors_no_success,
-  COUNTIF(success IS NOT NULL AND errors is NOT NULL) / COUNT(0) AS pct_success_errors,
-  COUNTIF(success IS NULL AND errors IS NULL) / COUNT(0) AS pct_no_success_no_errors,
+  COUNTIF(success IS NOT NULL AND errors IS NULL) / COUNT(0) AS pct_success_no_errors,
+  COUNTIF(errors IS NOT NULL AND success IS NULL) / COUNT(0) AS pct_errors_no_success,
+  COUNTIF(success IS NOT NULL AND errors IS NOT NULL) / COUNT(0) AS pct_success_errors,
+  COUNTIF(success IS NULL AND errors IS NULL) / COUNT(0) AS pct_no_success_no_errors
 FROM (
   SELECT
     client,

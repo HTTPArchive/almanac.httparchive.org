@@ -35,7 +35,7 @@ rendered_data AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    getJSONLDRelationships(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,'$._structured-data')),'$.structured_data.rendered')) AS jsonld_relationships
+    getJSONLDRelationships(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')), '$.structured_data.rendered')) AS jsonld_relationships
   FROM
     `httparchive.pages.2021_07_01_*`
 ),

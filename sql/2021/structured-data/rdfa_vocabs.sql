@@ -16,7 +16,7 @@ rendered_data AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    getRDFaVocabs(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,'$._structured-data')),'$.structured_data.rendered')) AS rdfa_vocabs
+    getRDFaVocabs(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')), '$.structured_data.rendered')) AS rdfa_vocabs
   FROM
     `httparchive.pages.2021_07_01_*`
 ),
@@ -47,7 +47,7 @@ FROM (
     -- Removes the protocol and any subdomains from the URL.
     -- e.g. "https://my.example.com/pathname" becomes "example.com/pathname"
     -- This is done to normalize the URL a bit before counting.
-    CONCAT(NET.REG_DOMAIN(rdfa_vocab), SPLIT(rdfa_vocab, NET.REG_DOMAIN(rdfa_vocab))[SAFE_OFFSET(1)]) AS rdfa_vocab,
+    CONCAT(NET.REG_DOMAIN(rdfa_vocab), SPLIT(rdfa_vocab, NET.REG_DOMAIN(rdfa_vocab))[SAFE_OFFSET(1)]) AS rdfa_vocab
   FROM
     rendered_data,
     UNNEST(rdfa_vocabs) AS rdfa_vocab
