@@ -132,8 +132,7 @@
           "part": "III",
           "chapter_number": "16",
           "title": "CMS",
-          "slug": "cms",
-          "todo": "true"
+          "slug": "cms"
         },
         {
           "part": "III",
@@ -579,6 +578,36 @@
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/9135107?v=4&s=200",
       "github": "ydimova"
+    },
+    "alonko": {
+      "name": "Alon Kochba",
+      "teams": [
+        "leads",
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/7407047?v=4&s=200",
+      "github": "alonkochba",
+      "twitter": "alonkochba"
+    },
+    "hyperpress": {
+      "name": "John Teague",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/25212653?v=4&s=200",
+      "website": "https://gemservers.com",
+      "github": "logicalphase",
+      "twitter": "jtteag"
+    },
+    "alankent": {
+      "name": "Alan Kent",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/5702163?v=4&s=200",
+      "website": "https://alankent.me",
+      "github": "alankent",
+      "twitter": "akent99"
     }
   }
 }
