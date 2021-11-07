@@ -32,9 +32,9 @@ There are many interesting and important aspects to analyze and questions to ans
 
 These platforms play a key role for us to succeed in our collective quest for a fast and resilient web. This has become increasingly apparent in the past year, and we expect it to continue to be the case going forward.
 
-It is important to take some of these comparisons with a grain of salt, considering the variability between platforms, and the differing types of user content which are built on these platforms.
+It is important to take some of these comparisons with a grain of salt, considering the variability between CMSs, and the differing types of user content which are built on these platforms.
 
-In some of the sections, we focus only on the top platforms in terms of adoption, due to the large number of CMS platforms.
+In some of the sections, we focus only on the top CMSs in terms of adoption, due to the large number of CMS platforms.
 
 Let’s dive into our analysis.
 
@@ -48,7 +48,7 @@ There is great variability in the type and scope of the support CMSs provide for
 
 When we think about CMSs, we need to account for all the components that play a role in the viability of such a system for providing a platform for publishing content on the web. All of these components form an ecosystem surrounding the CMS platform, and they include hosting providers, extension developers, development agencies, site builders, etc. Thus, when we talk about a CMS, we usually refer to both the platform itself and its surrounding ecosystem.
 
-Our definition of a CMS in this chapter uses [Wappalyzer](https://almanac.httparchive.org/en/2021/methodology#wappalyzer)’s definition of a CMS.
+Our definition of a CMS in this chapter uses Wappalyzer’s [definition](https://almanac.httparchive.org/en/2021/methodology#wappalyzer) of a CMS.
 
 Shopify, Magento, Webflow, and some other platforms do not appear in this chapter’s analysis, because they are not marked as a CMS in [Wappalyzer](https://www.wappalyzer.com/technologies/cms).
 
@@ -102,7 +102,7 @@ CMS platforms are extensively used around the world, with some variance by count
   sql_file="cms_adoption_by_geo.sql"
 ) }}
 
-Among the geographies with the highest number of websites, CMS adoption percentage is the highest in the US, Italy, and Spain, where 46% - 47% of mobile pages visited by users are built with a CMS. India and Brazil have the lowest adoption with only 35% and 37%.
+Among the geographies with the highest number of websites, CMS adoption percentage is the highest in the US, Italy, and Spain, where 46% - 47% of mobile sites visited by users are built with a CMS. India and Brazil have the lowest adoption with only 35% and 37%.
 
 We can also split this data into [subregions](https://github.com/GoogleChrome/CrUX/blob/main/utils/countries.json) around the globe, sorted by the most popular regions, to better identify macro-trends:
 
@@ -132,7 +132,7 @@ We also examined CMS adoption by the estimated rank of the sites.
   sql_file="cms_adoption_by_rank.sql"
 ) }}
 
-CMSs account for only 7% of the top 1000 mobile pages, compared to 42% of the top 10M pages. This can be explained by the fact that smaller businesses and websites tend to use a CMS due to the ease of use, and the higher ranked websites tend to be built with proprietary solutions by professional web developers. With the continuing growth in usage of CMS platforms, it would be interesting to see if CMS platforms will also be able to increase adoption rates among the higher-ranking sites in the coming years.
+CMSs account for only 7% of the top 1000 mobile websites, compared to 42% of the top 10M websites. This can be explained by the fact that smaller businesses and websites tend to use a CMS due to the ease of use, and the higher ranked websites tend to be built with proprietary solutions by professional web developers. With the continuing growth in usage of CMS platforms, it would be interesting to see if CMS platforms will also be able to increase adoption rates among the higher-ranking sites in the coming years.
 
 ## Top CMSs
 
@@ -164,7 +164,7 @@ Joomla and Drupal adoption is dropping - Joomla sites accounted for 1.9% of webs
 
 Wix adoption grew from 1.2% to 1.6% (33% increase) and Squarespace grew from 0.9% to 1% (11% increase).
 
-Examining the adoption of these sites built on CMS platforms by their popularity rank reveals an interesting distribution between platforms.
+Examining the adoption of these sites built on CMS platforms by their [rank magnitude](https://developers.google.com/web/updates/2021/03/crux-rank-magnitude) reveals an interesting distribution between platforms.
 
 {{ figure_markup(
   image="top-cms-by-rank.png",
@@ -193,7 +193,7 @@ In this section we focus on data from July 2021 to provide a consistent timefram
 
 These metrics aim to cover the core elements which are indicative of a great web user experience. The [Performance](https://almanac.httparchive.org/en/2021/performance) chapter covers these in more detail, but here we are interested in looking at these metrics specifically in terms of CMSs.
 
-Initially, let’s review the 10 CMS platforms with the highest number of domains, and examine what percentage of sites on each platform have a **passing** grade, meaning that the 75th percentile of each of the above metrics must be in the “good” (green) range for each site.
+Initially, let’s review the 10 CMS platforms with the highest number of origins, and examine what percentage of sites on each platform have a **passing** grade, meaning that the 75th percentile of each of the above metrics must be in the “good” (green) range for each site.
 
 {{ figure_markup(
   image="core-web-vitals.png",
@@ -212,7 +212,7 @@ The large difference between mobile and desktop in certain platforms also sugges
 
 In July, for mobile devices, TYPO3 CMS (used mostly in European countries) had the largest percentage of passing sites, with 46% of mobile sites passing all three CWVs. WordPress, Squarespace, and Adobe Experience Manager had less than 20% of their sites passing.
 
-Desktop device experience was slightly better, with 1C-Bitrix (used mostly in Russia) having the largest percentage of 56% sites passing CWVs. WordPress has the lowest ratio of passing sites, with only 26%.
+Desktop device experience was slightly better, with 1C-Bitrix (used mostly in Russia) having the largest percentage of 56% sites passing CWVs. WordPress had the lowest ratio of passing sites, with only 26%.
 
 * _Duda deserves an honorable mention, with 47% sites passing in August and overall great progress since last year. They were not included in this report due to broken data collection in July, related to a wrong detection in [Wappalyzer](https://github.com/AliasIO/wappalyzer/pull/4189), incorrectly inflating their origins, and reducing their CWV percentage._
 
@@ -250,7 +250,7 @@ A “good” LCP is regarded as being under 2.5 seconds.
   sql_file="core_web_vitals.sql"
 ) }}
 
-TYPO3 CMS has the best LCP scores with 69% of origins having a “good” LCP experience, while WordPress and Adobe Experience Manager have the worst LCP scores, with only 28% of origins having a good LCP score.
+TYPO3 CMS had the best LCP scores with 69% of origins having a “good” LCP experience, while WordPress and Adobe Experience Manager have the worst LCP scores, with only 28% of origins having a good LCP score.
 
 In general, it seems that most platforms are struggling with the LCP metric. This probably relates to the fact that the LCP is dependent on the download of image/font/CSS and then displaying the appropriate HTML elements. Achieving this in under 2.5 seconds for all device types and connection speeds can be challenging. Improving LCP scores usually involves the correct use of caching, pre-loading, resource prioritization, and lazy loading of other competing resources.
 
@@ -324,7 +324,7 @@ A score of 0.1 or below is measured as “good”, over 0.25 as “poor”, and 
   sql_file="core_web_vitals.sql"
 ) }}
 
-Wix had the best CLS score, with 81% of mobile origins having a “good” CLS. Adobe Experience Manager had the lowest CLS scores, with only 44% of mobile origins having a good CLS. Because layout shifts can usually be avoided, regardless of connection speeds - all platforms should strive to improve these numbers by reducing layout shifts to the bare minimum.
+Wix had the best CLS score, with 81% of mobile origins having a “good” CLS. Adobe Experience Manager had the lowest CLS scores, with only 44% of mobile origins having a good CLS. Because layout shifts can usually be avoided, regardless of connection speeds - all platforms should strive to improve these numbers by [reducing layout shifts](https://web.dev/optimize-cls/) to the bare minimum.
 
 {{ figure_markup(
   image="core-web-vitals-cls-yoy.png",
@@ -339,10 +339,9 @@ Wix had the best CLS score, with 81% of mobile origins having a “good” CLS. 
 
 Comparing yearly data, we can see that most CMSs made some progress, or benefited from the change to a windowed CLS metric. However, we can see that certain CMSs such as Weebly regressed in CLS scores over the past year.
 
-
 ### Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) is an open-source, automated tool for improving the quality of web pages. One key aspect of the tool is that it provides a set of audits to assess the status of a website in terms of performance, accessibility, SEO, best practices, and more. Lighthouse reports provide lab data, a way developers can get suggestions on how to improve website performance, but the Lighthouse score has no direct implications on the actual field data collected by [CrUX](https://developers.google.com/web/tools/chrome-user-experience-report). You can read more on Lighthouse and the correlation between its [lab scores and Field Data](https://web.dev/lab-and-field-data-differences/).
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) is an open-source, automated tool for improving the quality of web pages. One key aspect of the tool is that it provides a set of audits to assess the status of a website in terms of performance, accessibility, SEO, best practices, and more. Lighthouse reports provide lab data, a way developers can get suggestions on how to improve website performance, but the Lighthouse score has no direct implications on the actual field data collected by [CrUX](https://developers.google.com/web/tools/chrome-user-experience-report). You can read more on Lighthouse and the correlation between its [lab scores and field data](https://web.dev/lab-and-field-data-differences/).
 
 HTTPArchive runs Lighthouse on all its mobile web pages (unfortunately, no desktop results), which are also [throttled](https://github.com/GoogleChrome/lighthouse/blob/master/docs/throttling.md) to emulate a slow 4G connection with a CPU slowdown, as detailed in our [methodology](https://almanac.httparchive.org/en/2021/methodology#lighthouse).
 
@@ -405,7 +404,7 @@ The median Lighthouse accessibility score for the top 10 CMSs ranges between 76 
 
 **Best Practices**
 
-The Lighthouse [best practices](https://web.dev/lighthouse-best-practices/) try to ensure that web pages are following best practices for the web, for a variety of different metrics, for example, supporting HTTPS, no errors logged in the console, and more.
+The Lighthouse [best practices](https://web.dev/lighthouse-best-practices/) try to ensure that web pages are following best practices for the web, for a variety of different metrics, such as supporting HTTPS, no errors logged in the console, and more.
 
 {{ figure_markup(
   image="lighthouse-best-practices.png",
@@ -489,7 +488,7 @@ With the [growing support of WebP](https://caniuse.com/webp), it seems all platf
 #### JavaScript
 
 {{ figure_markup(
-  image="resource-weights-images.png",
+  image="resource-weights-javascript.png",
   caption="Top 5 CMSs median JavaScript weight.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=289342580&format=interactive",
@@ -584,7 +583,7 @@ We can see that while WordPress was passing on 19% of the total origins counted 
 
 This exposes a very interesting view of Core Web Vitals and hints at a geographical bias when comparing CWV for different platforms. If a CMS only has a presence in certain countries, comparing the aggregate percentage isn’t a fair comparison.
 
-WordPress, with a very large adoption around the world, including countries with less powerful devices and slower connections, may suffer from this comparison, but likely has room to improve in all geographies. On the other hand, CMSs should strive to offer the best experience in the geography they are targeting, which sometimes means making sites fast enough to work well even under stricter conditions.
+WordPress, with a very large adoption around the world, including countries with less powerful devices and slower connections, may suffer from this comparison in some cases, but likely has room to improve in all geographies. On the other hand, CMSs should strive to offer the best experience in the geography they are targeting, which sometimes means making sites fast enough to work well even under stricter conditions.
 
 **Plugins**
 
