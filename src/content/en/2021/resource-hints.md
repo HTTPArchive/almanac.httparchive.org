@@ -137,36 +137,36 @@ As shown in the charts above, the adoption rates on mobile and desktop are near-
 ### By Rank
 
 {{ figure_markup(
-  image="http-headers-vs-html-markup.png",
-  caption="Popularity of resource hints as HTTP Headers and HTML markup.",
-  description="Bar chart showing the popularity of resource hints as HTTP Headers and HTML markup. HTML markup is used on 91.24% of instances on desktop and 94.13% of instances on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1056457221&format=interactive",
-  sheets_gid="1707816066",
-  sql_file="http_headers_hints_adoption.sql"
+  image="rel-preload-adoption-by-rank.png",
+  caption="Adoption of rel=\"preload\" segmented by CrUX rank.",
+  description="Bar chart showing the adoption of rel=\"preload\" segmented by CrUX rank. rel=\"preload\" has a 44% for the top 1,000 sites on mobile and 44% on desktop. rel=\"preload\" has a 43% for the top 10,000 sites on mobile and 44% on desktop. rel=\"preload\" has a 35% for the top 100,000 sites on mobile and 36% on desktop. rel=\"preload\" has a 27% for the top 1 million sites on mobile and 27% on desktop. rel=\"preload\" has a 22% for the top 10 million sites on mobile and 22% on desktop.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=291501434&format=interactive",
+  sheets_gid="1880502987",
+  sql_file="hints_adoption_by_rank.sql"
   )
 }}
 
 You can observe that when segmenting the data by [rank](./methodology#chrome-ux-report), the adoption rates change notably, with the `preload` hint increasing from 22.10% unranked, to claim the top spot with an adoption rate of 44.28% amongst the top 1,000 sites.
 
 {{ figure_markup(
-  image="http-headers-vs-html-markup.png",
-  caption="Popularity of resource hints as HTTP Headers and HTML markup.",
-  description="Bar chart showing the popularity of resource hints as HTTP Headers and HTML markup. HTML markup is used on 91.24% of instances on desktop and 94.13% of instances on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1056457221&format=interactive",
-  sheets_gid="1707816066",
-  sql_file="http_headers_hints_adoption.sql"
+  image="rel-dns-prefetch-adoption-by-rank.png",
+  caption="Adoption of rel=\"dns-prefetch\" segmented by CrUX rank.",
+  description="Bar chart showing the adoption of rel=\"dns-prefetch\" segmented by CrUX rank. rel=\"dns-prefetch\" has a 29% for the top 1,000 sites on mobile and 28% on desktop. rel=\"dns-prefetch\" has a 25% for the top 10,000 sites on mobile and 25% on desktop. rel=\"dns-prefetch\" has a 23% for the top 100,000 sites on mobile and 23% on desktop. rel=\"dns-prefetch\" has a 27% for the top 1 million sites on mobile and 27% on desktop. rel=\"dns-prefetch\" has a 36% for the top 10 million sites on mobile and 36% on desktop.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1340595902&format=interactive",
+  sheets_gid="1880502987",
+  sql_file="hints_adoption_by_rank.sql"
   )
 }}
 
 `dns-prefetch` is the only resource hint which exhibits a decrease in adoption when comparing the top 1,000 sites with the overall adoption.
 
 {{ figure_markup(
-  image="http-headers-vs-html-markup.png",
-  caption="Popularity of resource hints as HTTP Headers and HTML markup.",
-  description="Bar chart showing the popularity of resource hints as HTTP Headers and HTML markup. HTML markup is used on 91.24% of instances on desktop and 94.13% of instances on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1056457221&format=interactive",
-  sheets_gid="1707816066",
-  sql_file="http_headers_hints_adoption.sql"
+  image="rel-preconnect-adoption-by-rank.png",
+  caption="Adoption of rel=\"preconnect\" segmented by CrUX rank.",
+  description="Bar chart showing the adoption of rel=\"preconnect\" segmented by CrUX rank. rel=\"preconnect\" has a 30% for the top 1,000 sites on mobile and 29% on desktop. rel=\"preconnect\" has a 25% for the top 10,000 sites on mobile and 25% on desktop. rel=\"preconnect\" has a 18% for the top 100,000 sites on mobile and 18% on desktop. rel=\"preconnect\" has a 14% for the top 1 million sites on mobile and 14% on desktop. rel=\"preconnect\" has a 13% for the top 10 million sites on mobile and 13% on desktop.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1818271680&format=interactive",
+  sheets_gid="1880502987",
+  sql_file="hints_adoption_by_rank.sql"
   )
 }}
 
@@ -176,33 +176,41 @@ To counter this decrease, the top 1,000 pages have an increased adoption for the
 
 Resource hints can be very effective if used correctly. By shifting the responsibility from the browser to the developer, it allows you to prioritise resources required for the critical rendering path and improve the load times & user experience.
 
-**Median number of hints by rank**
+<figure markdown>
+| rank       | preload | prefetch | preconnect | prerender | dns-prefetch | modulepreload |
+|------------|---------|----------|------------|-----------|--------------|-------------- |
+| 1,000      |       3 |        2 |          4 |         0 |            4 |             1 |
+| 10,000     |       3 |        1 |          4 |         1 |            3 |             1 |
+| 100,000    |       2 |        2 |          3 |         1 |            3 |             1 |
+| 1,000,000  |       2 |        2 |          2 |         1 |            2 |             1 |
+| 10,000,000 |       2 |        2 |          1 |         1 |            2 |             1 |
 
-// TODO: table
+<figcaption>{{ figure_link(caption="Resource hint adoption by rank.", sheets_gid="528380369", sql_file="resource_hints_distribution_by_rank.sql") }}</figcaption>
+</figure>
 
-Of the sites using resource hints, when comparing top 1000 ranking sites to the entire corpus, the top ranking sites have more resource hints per page (median). The only hint which observes a different pattern is `prerender`; which has a total of 0 occurrences in the top 1000 sites.
+Of the sites using resource hints, when comparing the median for the top 1,000 sites to the entire corpus, the top ranking sites have more resource hints per page. The only hint which observes a different pattern is `prerender`; which has a total of 0 occurrences in the top 1,000 sites.
 
 ### Correlation with Core Web Vitals
 
 {{ figure_markup(
-  image="http-headers-vs-html-markup.png",
-  caption="Popularity of resource hints as HTTP Headers and HTML markup.",
-  description="Bar chart showing the popularity of resource hints as HTTP Headers and HTML markup. HTML markup is used on 91.24% of instances on desktop and 94.13% of instances on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1056457221&format=interactive",
-  sheets_gid="1707816066",
-  sql_file="http_headers_hints_adoption.sql"
+  image="correlation-of-good-cwv-and-preload.png",
+  caption="Correlation between good CWV score and number of rel=\"preload\" hints",
+  description="Scatter plot with trend lines showing the number of pages which have a good CWV score and the number of rel=\"preload\" hints on that page. Pages with 0 preload hints have a 43% likelihood of having a good CWV score. Pages with 20 preload hints have a 21% likelihood of having a good CWV score.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=122948841&format=interactive",
+  sheets_gid="2032682744",
+  sql_file="correlation_cwv_preload.sql"
   )
 }}
 
-By combining a page's <a hreflang="en" href="https://web.dev/cwv">Core Web Vitals</a> scores in the CrUX dataset and the usage of the preload resource hint, you can observe a negative correlation between the number of link elements and the percentage of pages which score a good rating on CWV - the pages which use fewer preload hints are more likely to have a good rating.
+By combining a page's <a hreflang="en" href="https://web.dev/cwv">Core Web Vitals</a> scores in the CrUX dataset and the usage of the preload resource hint, you can observe a negative correlation between the number of link elements and the percentage of pages which score a good rating on CWV. The pages which use fewer preload hints are more likely to have a good rating.
 
 {{ figure_markup(
-  image="http-headers-vs-html-markup.png",
-  caption="Popularity of resource hints as HTTP Headers and HTML markup.",
-  description="Bar chart showing the popularity of resource hints as HTTP Headers and HTML markup. HTML markup is used on 91.24% of instances on desktop and 94.13% of instances on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1056457221&format=interactive",
-  sheets_gid="1707816066",
-  sql_file="http_headers_hints_adoption.sql"
+  image="correlation-of-good-lcp-and-preload.png",
+  caption="Correlation between good LCP score and number of rel=\"preload\" hints",
+  description="Scatter plot with trend lines showing the number of pages which have a good LCP score and the number of rel=\"preload\" hints on that page. Pages with 0 preload hints have a 62% likelihood of having a good LCP score. Pages with 20 preload hints have a 38% likelihood of having a good LCP score.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1380182218&format=interactive",
+  sheets_gid="2032682744",
+  sql_file="correlation_cwv_preload.sql"
   )
 }}
 
@@ -218,15 +226,15 @@ With that being said, and the expectation that more websites will adopt `preload
 
 #### The `as` attribute
 
-The `as` attribute should be specified when using `rel="preload"` (or rel="prefetch") to specify the type of resource being downloaded. Applying the correct `as` attribute allows the browser to prioritize the resource more accurately, improve caching for future requests and apply the correct <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">content-security policy</a>.
+The `as` attribute should be specified when using `rel="preload"` (or rel="prefetch") to specify the type of resource being downloaded. Applying the correct `as` attribute allows the browser to prioritize the resource more accurately. For example, preload as="script" will get a low or medium priority, while preload as="style" would get the highest priority. The `as` attribute is required for caching the resource for future requests and applying the correct <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">content-security policy</a>.
 
 {{ figure_markup(
-  image="http-headers-vs-html-markup.png",
-  caption="Popularity of resource hints as HTTP Headers and HTML markup.",
-  description="Bar chart showing the popularity of resource hints as HTTP Headers and HTML markup. HTML markup is used on 91.24% of instances on desktop and 94.13% of instances on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1056457221&format=interactive",
-  sheets_gid="1707816066",
-  sql_file="http_headers_hints_adoption.sql"
+  image="preload-as-attribute-values.png",
+  caption="rel=\"preload\" as attribute values.",
+  description="Bar chart showing the usage of values for rel=\"preload\". script is used 55% of the time on mobile and 54% on desktop. font is used 22% of the time on mobile and 23% on desktop. style is used 11% of the time on mobile and 11% on desktop. fetch is used 9% of the time on mobile and 8% on desktop. image is used 3% of the time on mobile and 3% on desktop. video is used 0% of the time on mobile and 0% on desktop. document is used 0% of the time on mobile and 0% on desktop. worker is used 0% of the time on mobile and 0% on desktop. audio is used 0% of the time on mobile and 0% on desktop. object is used 0% of the time on mobile and 0% on desktop. embed is used 0% of the time on mobile and 0% on desktop. track is used 0% of the time on mobile and 0% on desktop.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1844544440&format=interactive",
+  sheets_gid="1246058294",
+  sql_file="hint_attribute_usage.sql"
   )
 }}
 
@@ -250,7 +258,16 @@ Preload may also be used to initiate a request to retrieve data which you know i
 
 The `crossorigin` attribute is used to indicate whether CORS must be used when fetching the requested resource. This could apply to any resource type, but it is most commonly associated with font files as they should always be requested using CORS.
 
-// TODO: Table
+<figure markdown>
+| value           | desktop | mobile | 
+|-----------------|---------|--------| 
+| not set         | 66.61%  | 65.91% | 
+|                 | 14.23%  | 13.23% | 
+| crossorigin     | 0.26%   | 0.25%  | 
+| use-credentials | 0.04%   | 0.04%  | 
+
+<figcaption>{{ figure_link(caption="rel=\"preload\" crossorigin attribute values.", sheets_gid="1246058294", sql_file="hint_attribute_usage.sql") }}</figcaption>
+</figure>
 
 ##### anonymous
 
@@ -284,23 +301,37 @@ When you preload a resource which is not as important as the other resources whi
 
 When you preload a resource which is not needed within the first few seconds of the page loading.
 
-// TODO: 21.48% of preload hints are unused within the first 3 seconds
+{{ figure_markup(
+  caption="Percent of unused preload hints within the first 3 seconds.",
+  content="21.48%",
+  classes="big-number",
+  sheets_gid="2013605735",
+  sql_file="consoleLog_unused_preload.sql"
+)
+}}
 
 In such cases, the preload hint is regressing the website's performance, as you are instructing the browser to download and prioritize files or resources which are not needed immediately - or even not needed at all. This is one of the challenges when using resource hints, as they require regular maintenance and automating the process opens the door to allow such issues to creep in.
 
-// TODO: 389 The most unused `rel="preload"` on a single page
+{{ figure_markup(
+  caption="The most unused `rel="preload"` hints on a single page",
+  content="389",
+  classes="big-number",
+  sheets_gid="2013605735",
+  sql_file="consoleLog_unused_preload.sql"
+)
+}}
 
 #### Incorrect `crossorigin` attribute
 
 Attempting to preload a CORS-enabled resource without including the correct `crossorigin` attribute will download the same resource twice. The `crossorigin` attribute is required on the `<link>` element if the eventual request would also use CORS. This is also the case when requesting font files, even when self-hosting font files on the same origin, as font files are always treated as CORS-enabled.
 
 {{ figure_markup(
-  image="http-headers-vs-html-markup.png",
-  caption="Popularity of resource hints as HTTP Headers and HTML markup.",
-  description="Bar chart showing the popularity of resource hints as HTTP Headers and HTML markup. HTML markup is used on 91.24% of instances on desktop and 94.13% of instances on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1056457221&format=interactive",
-  sheets_gid="1707816066",
-  sql_file="http_headers_hints_adoption.sql"
+  image="incorrect-crossorigin-attribute-by-file-extension.png",
+  caption="Percent of incorrect crossorigin values segmented by file extension on mobile devices.",
+  description="Pie chart showing the percent of incorrect crossorigin values segmented by file extension on mobile devices. \"woff2\" is 29.9% likely. \"woff\" is 19.1% likely. \"js\" is 9.9% likely. \"css\" is 7.6% likely. \"gif\" is 7.2% likely. fonts.googleapis.com is 7.1% likely. \"png\" is 6.9% likely. \"ttf\" is 6.6% likely. \"jpg\" is 2.0% likely.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=277634745&format=interactive",
+  sheets_gid="699889350",
+  sql_file="consoleLog_incorrect_crossorigin_type.sql"
   )
 }}
 
@@ -312,7 +343,14 @@ The `as` attribute plays an important role when preloading your resources and ge
 
 There are 17,861 cases of unrecognised values, with the most frequent error being omitting it completely; while the most common invalid as values are `other` and `stylesheet` (the correct value is `style`).
 
-// TODO: 1114 pages incorrectly used `stylesheet` instead of `style`
+{{ figure_markup(
+  caption="Pages incorrectly used as=\"stylesheet\" instead of \"style\"",
+  content="1114",
+  classes="big-number",
+  sheets_gid="1681733418",
+  sql_file="consoleLog_unused_preload.sql"
+)
+}}
 
 When using an incorrect `as` attribute value - as opposed to unrecognised value, such as using `style` instead of `script`; the browser will duplicate the file download as the request won't match the resource stored in the preload cache.
 
@@ -330,9 +368,22 @@ When considering which resource hints you should use for third party resources, 
 
 Prioritising third party resources over your own content is potentially a warning sign, however there are cases when this is recommended. As an example, if we look at cookie notice scripts; which are required in the European Union by General Data Protection Regulation; these are usually accompanied by a `dns-prefetch` or `preconnect` script as they are highly obtrusive to the user experience and also a prerequisite for some site functions, such as serving personalised ads.
 
-**Third parties connected to using resource hints**
+<figure markdown>
+| host                       | dns-prefetch | preconnect | preload | Total       | 
+|----------------------------|--------------|------------|---------|-------------| 
+| adservice.google.com       | 0.25%        | 0.37%      | 42.72%  | 43.34%      | 
+| fonts.gstatic.com          | 0.82%        | 25.45%     | 0.74%   | 27.01%      | 
+| fonts.googleapis.com       | 14.09%       | 4.59%      | 3.05%   | 21.72%      | 
+| s.w.org                    | 20.00%       | 0.25%      | -       | 20.25%      | 
+| cdn.shopify.com            | -            | 1.82%      | 12.16%  | 13.98%      | 
+| www.google-analytics.com   | 1.27%        | 4.05%      | 0.17%   | 5.49%       | 
+| www.googletagmanager.com   | 1.94%        | 3.14%      | 0.25%   | 5.32%       | 
+| siteassets.parastorage.com | -            | -          | 5.24%   | 5.24%       | 
+| images.squarespace-cdn.com | -            | 4.51%      | -       | 4.51%       | 
+| ajax.googleapis.com        | 2.30%        | 1.79%      | 0.36%   | 4.45%       | 
 
-// TODO: table
+<figcaption>{{ figure_link(caption="Most popular third parties connected to using resource hints.", sheets_gid="1254656281", sql_file="preload_host_by_url.sql") }}</figcaption>
+</figure>
 
 Analysing the table above, 42.72% of all pages which include a `preload` hint are preloading resources hosted on adservice.google.com, while s.w.org (WordPress) is the most popular domain for `dns-prefetch` and `fonts.gstatic.com` for the `preconnect` directive.
 
@@ -400,6 +451,6 @@ During the past year, resource hint adoption grew and is expected to continue gr
 
 Resource hints could become a double-edged sword if the benefit for your users is not evaluated. Almost a quarter of preload requests went unused while the number of preload hits correlated with slower load times.
 
-Resource hints are akin to fine tuning a race car's engine. They would not turn a slow engine into a fast one, and too many adjustments could break it. Yet, some small tweaks here and there would allow you to maximize it.
+Resource hints are akin to fine-tuning a race car's engine. They would not turn a slow engine into a fast one, and too many adjustments could break it. Yet, some small tweaks here and there would allow you to maximize it.
 
 So once again, the mantra behind resource hints remains, "if everything is important, then nothing is". Use resource hints wisely and don't overuse them.
