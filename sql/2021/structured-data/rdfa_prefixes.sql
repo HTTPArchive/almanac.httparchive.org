@@ -2,10 +2,10 @@
 # Count RDFa Prefixes
 CREATE TEMP FUNCTION getRDFaPrefixes(rendered STRING)
 RETURNS ARRAY<STRING>
-LANGUAGE js AS """
+LANGUAGE js AS r"""
   try {
     rendered = JSON.parse(rendered);
-    const prefixRegExp = new RegExp(/(?<ncname>[^:]*):\\s+(?<uri>[^\\s]*)\\s*/gm)
+    const prefixRegExp = new RegExp(/(?<ncname>[^:]*):\s+(?<uri>[^\s]*)\s*/gm)
     return rendered.rdfa_prefixes.map(prefix => {
       const matches = [...prefix.toLowerCase().trim().matchAll(prefixRegExp)];
       return matches.map(match => match.groups.uri);
