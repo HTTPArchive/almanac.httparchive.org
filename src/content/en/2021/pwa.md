@@ -455,7 +455,7 @@ The chart above shows that the following packages are the four most widely used:
 - <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-core">Workbox Core</a>: This package contains the common code that each Workbox module relies on (for example, the code to interact with the console and throw meaningful errors). That's why it's the most widely used.
 - <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-routing">Workbox Routing</a>: This package allows to intercept requests and respond to them in different ways. It's also a very common task inside a service worker, so it's quite popular.
 - <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-precaching">Workbox Precaching</a>: This package allows sites to save some files to the cache while the service worker is installing. This set of files usually constitute the "version" of a PWA (similar to the version of a native app).
-- <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies">Workbox Strategies</a>: Unlike preaching, which takes place at the service worker "install" event, this package enables runtime caching strategies to determine how a service worker generates a response after receiving a `fetch` event.
+- <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies">Workbox Strategies</a>: Unlike precaching, which takes place at the service worker "install" event, this package enables runtime caching strategies to determine how a service worker generates a response after receiving a `fetch` event.
 
 ### Workbox strategies
 

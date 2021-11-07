@@ -370,109 +370,109 @@ Lighthouse также предоставляет <a hreflang="en" href="https://
 
 Опять же, разница между обеими группами является ожидаемой, поскольку «PWA-сайты», естественно, склонны проходить специфические для PWA требования чаще, чем «Все сайты». В любом случае средний балл 83 для PWA-сайтов предполагает, что значительная часть PWA-разработчиков придерживается лучших практик.
 
-## Service worker libraries
+## Библиотеки для работы с сервис-воркерами {service-worker-libraries}
 
-Service workers can use libraries to take care of common tasks, functionalities and best practices (e.g., to implement caching techniques, push notifications, etc.). The most common way of doing this is by using [importScripts()](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts), which is the way of importing JavaScript libraries in workers. In other cases, build tools can also inject the code of libraries directly into service workers at build time.
+Сервис-воркеры могут использовать библиотеки для решения общих задач, применения функций и лучших практик (например, для реализации техник кэширования, push-уведомлений и т.д.). Наиболее распространенный способ делать это — использовать [importScripts()](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts), который является способом импорта JavaScript-библиотек в воркеры. В других случаях инструменты сборки также могут вставлять код библиотек прямо в сервис-воркеры во время сборки.
 
-Take into account that not all libraries can be used in worker contexts. Workers don't have access to the [Window](https://developer.mozilla.org/en-US/docs/Web/API/Window), and therefore, the [Document](https://developer.mozilla.org/en-US/docs/Web/API/Document) object,  and have limited access to browser APIs. For that reason, service worker libraries are specifically designed to be used in these contexts.
+Учтите, что не все библиотеки можно использовать в контекстах воркеров. У воркеров нет доступа к объекту [Window](https://developer.mozilla.org/en-US/docs/Web/API/Window) и, следовательно, к объекту [Document](https://developer.mozilla.org/en-US/docs/Web/API/Document), они имеют ограниченный доступ к браузерным API. По этой причине библиотеки для работы с сервис-воркерами специально разработаны для использования в этих контекстах.
 
-In this section we'll analyze the popularity of various service worker libraries.
+В этом разделе мы проанализируем популярность различных библиотек для работы с сервис-воркерами.
 
-### Popular import scripts
+### Популярные импортируемые скрипты {popular-import-scripts}
 
-The following chart shows the percentage of usage for the various libraries imported via `importScripts()`.
+Следующая диаграмма показывает процент использования различных библиотек, импортированных через `importScripts()`.
 
 {{ figure_markup(
   image="pwa-libraries-and-scripts.png",
-  caption="Popular PWA libraries and scripts.",
-  description="Bar chart showing popular PWA libraries and scripts by desktop and mobile with `workbox` dominatine at 15.43% of desktop and 16.58% of mobile, `recaptcha` at 5.19% and 5.70% respectively, `firebase` at 2.45% and 2.63%, `OneSignalSDK` at 2.53% and 2.51%, `sendpulse` at 1.83% and 1.68%, `pushprofit` at 1.42% and 1.65%, `quora` at 1.28% and 1.07%, and finally `sw_toolbox` by 0.51% on desktop and 0.36% on mobile.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=1758350320&format=interactive",
+  caption="Популярные PWA-библиотеки и скрипты.",
+  description="Гистограмма показывает популярные PWA-библиотеки и скрипты на десктопах и мобильных, с доминированием `workbox` на 15,43% десктопных сайтов и 16,58% мобильных, `recaptcha` — на 5,19% и 5,70% соответствено, `firebase` — на 2,45% и 2,63%, `OneSignalSDK` — на 2,53% и 2,51%, `sendpulse` — на 1,83% и 1,68%, `pushprofit` — на 1,42% и 1,65%, `quora` — на 1,28% и 1,07%, и, наконец, `sw_toolbox` — на 0,51% десктопных сайтов и 0,36% мобильных.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=1758350320&format=interactive",
   sheets_gid="645109672",
   sql_file="popular_pwa_libraries.sql"
   )
 }}
 
-Workbox is still the most popular library, being used by 15.43% of desktop and 16.58% of mobile sites with service workers, although this may be interpreted as a proxy for Workbox adoption in general. The next section takes a more holistic and accurate approach to measuring adoption.
+Workbox по-прежнему остается самой популярной библиотекой, которую используют 15,43% десктопных и 16,58% мобильных сайтов с сервис-воркерами, хотя это можно интерпретировать как доверие для распространения Workbox в целом. В следующем разделе используется более целостный и точный подход к измерению распространения.
 
-It's also important to note that the Workbox predecessor `sw_toolbox`, which had <a hreflang="en" href="../2020/pwa#popular-import-scripts">13.92% of usage in desktop and 12.84% in mobile last year</a> dropped to 0.51% and 0.36% respectively this year. This is in part due to the fact that `sw_toolbox` was <a hreflang="en" href="https://github.com/GoogleChromeLabs/sw-toolbox/pull/288">deprecated in 2019</a>. It might have taken some time for some popular frameworks and build tools to remove this package, so we are seeing the drop in adoption more clearly this year. Also, our measurement has changed compared to 2020, by adding more sites, which made this metric decrease even more, making it difficult to do a direct year on year comparison.
+Также важно отметить, что предшественник Workbox `sw_toolbox`, который имел <a hreflang="en" href="../2020/pwa#popular-import-scripts">13,92% использования на десктопах и 12,84% на мобильных устройствах в прошлом году</a>, упал до 0,51% и 0,36% соответственно в этом году. Отчасти это связано с тем, что `sw_toolbox` был <a hreflang="en" href="https://github.com/GoogleChromeLabs/sw-toolbox/pull/288">признан устаревшим в 2019 году</a>. Некоторым популярным фреймворкам и инструментам сборки, возможно, потребовалось некоторое время, чтобы удалить этот пакет, поэтому в этом году мы более отчетливо наблюдаем снижение числа пользователей. Кроме того, наши измерения изменились по сравнению с 2020 годом из-за добавления большего количества сайтов, что ещё больше уменьшило этот показатель и затруднило прямое сравнение год-к-году.
 
-<p class="note">Note: Take into account that <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts">importScripts()</a></code> is an API of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope">WorkerGlobalScope</a></code> that can be used in other types of worker context like <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Web Workers</a></code>. <a hreflang="en" href="https://www.google.com/recaptcha/about/">reCaptcha</a>, for example, appears as the second most widely used library, as it uses a web worker that contains an <code>importScripts()</code> call to retrieve the reCaptcha JavaScript code. For that reason, we should consider <a hreflang="en" href="https://firebase.google.com/docs/web/setup">Firebase</a> instead as the second most widely used library in service worker contexts.
+<p class="note">Примечание: учтите, что <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts">importScripts()</a></code></code> представляет собой API из <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope">WorkerGlobalScope</a></code>, который можно использовать в других типах контекста воркера, вроде <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers">веб-воркеров</a></code>. <a hreflang="en" href="https://www.google.com/recaptcha/about/">reCaptcha</a>, например, является второй по популярности библиотекой, поскольку в ней используется веб-воркер, который содержит вызов <code>importScripts()</code> для получения JavaScript-кода reCaptcha. По этой причине мы должны рассматривать <a hreflang="en" href="https://firebase.google.com/docs/web/setup">Firebase</a> как вторую по популярности библиотеку в контексте сервис-воркеров.
 </p>
 
-### Workbox usage
+### Использование Workbox {workbox-usage}
 
-<a hreflang="en" href="https://developers.google.com/web/tools/workbox">Workbox</a> is a set of libraries that packages a set of common tasks and best practices for building PWAs. According to the previous chart, Workbox is the most popular library in service workers. So, let's take a closer look at how it's used in the wild.
+<a hreflang="en" href="https://developers.google.com/web/tools/workbox">Workbox</a> — это набор библиотек, который объединяет список популярных задач и лучшие практики создания PWA. Согласно предыдущей диаграмме, Workbox — самая популярная библиотека для сервис-воркеров. Итак, давайте подробнее рассмотрим, как он используется в дикой природе.
 
-Starting with <a hreflang="en" href="https://github.com/GoogleChrome/workbox/releases/tag/v5.0.0">Workbox 5</a>, the Workbox team has encouraged developers to create custom bundles of the Workbox runtime instead of using `importScripts()` to load <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-sw">`workbox-sw`</a> (the runtime). The Workbox team will continue supporting `workbox-sw`, but the new technique is now the recommended approach. In fact, the defaults for the build tools have switched to prefer that method.
+Начиная с <a hreflang="en" href="https://github.com/GoogleChrome/workbox/releases/tag/v5.0.0">Workbox 5</a>, команда Workbox поощряла разработчиков создавать собственные бандлы для рантайма Workbox вместо использования `importScripts()` для загрузки <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-sw">`workbox-sw`</a> (рантайма). Команда Workbox продолжит поддерживать `workbox-sw`, но теперь рекомендуется использовать новый подход. Фактически, настройки по умолчанию для сборщиков переключились на этот метод.
 
-Based on that, we measured sites using any type of Workbox features and found that the number of sites with service workers using it is much higher than noted above: 33.04% of desktop and 32.19% of mobile PWAs.
+Основываясь на этом, мы измерили сайты, использующие любой тип функций Workbox, и обнаружили, что количество сайтов с сервис-воркерами, использующими Workbox, намного выше, чем указано выше: 33,04% для десктопных и 32,19% для мобильных PWA.
 
 {{ figure_markup(
-  caption="Percentage of mobile sites with service workers that use the Workbox library.",
-  content="32.19%",
+  caption="Процент мобильных сайтов с сервис-воркерами, которые используют библиотеку Workbox.",
+  content="32,19%",
   classes="big-number",
   sheets_gid="2116306680",
   sql_file="workbox_usage.sql"
  )
 }}
 
-### Workbox versions
+### Версии Workbox {workbox-versions}
 
 {{ figure_markup(
   image="pwa-top-workbox-versions.png",
-  caption="Top 10 workbox versions.",
-  description="Bar chart showing the most popular 10 Workbox versions by desktop and mobile. 3.0.0 is used by 3.45% of desktop PWA sites and 5.42% of mobile, 3.4.1 by 0.54% and 0.49% respectively, 3.5.0 by 0.66% and 0.57%, 3.6.3 by 1.54% and 1.36%, 4.3.1 by 5.09% and 4.63%, 5.1.2 by 0.50% and 0.52%, 5.1.3 by 0.95% and 0.88%, 5.1.4 by 3.21% and 3.04%, 6.0.2 by 0.61% and 0.58%, and finally 6.1.5 by 4.71% and 5.25%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=554211152&format=interactive",
+  caption="Топ-10 версий Workbox.",
+  description="Гистограмма показывает самые популярные версии Workbox на десктопных и мобильных сайтах. 3.0.0 используется на 3,45% десктопных PWA-сайтов и на 5,42% мобильных, 3.4.1 — на 0,54% и 0,49% соответственно, 3.5.0 — на 0,66% и 0,57%, 3.6.3 — на 1.54% и 1.36%, 4.3.1 — на 5.09% и 4.63%, 5.1.2 — на 0,50% и 0,52%, 5.1.3 — на 0,95% и 0,88%, 5.1.4 — на 3.21% и 3.04%, 6.0,2 — на 0,61% и 0,58%, и, наконец, 6.1.5 — на 4.71% и 5.25%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=554211152&format=interactive",
   sheets_gid="988853150",
   sql_file="workbox_versions.sql"
   )
 }}
 
-The chart shows that version <a hreflang="en" href="https://github.com/GoogleChrome/workbox/releases/tag/v6.1.5">6.1.15</a> has the highest level of adoption compared to others. That version was released on April 13th, 2021, and was the latest version at the time of our crawl in July 2021.
+На диаграмме показано, что версия <a hreflang="en" href="https://github.com/GoogleChrome/workbox/releases/tag/v6.1.5">6.1.15</a> имеет самый высокий уровень распространения по сравнению с другим. Эта версия была выпущена 13 апреля 2021 года и была последней версией на момент нашего краулинга в июле 2021 года.
 
-There were <a hreflang="en" href="https://github.com/GoogleChrome/workbox/releases">more versions</a> released since that time, and based on the behavior observed on the chart, we expect them to become the most widely used shortly after being launched.
+С того времени были выпущены <a hreflang="en" href="https://github.com/GoogleChrome/workbox/releases">другие версии</a>, и, исходя из поведения, наблюдаемого на диаграмме, мы ожидаем, что они стали наиболее широко используемыми вскоре после запуска.
 
-There are also older versions that still count with wide adoption. The reason for that is that some popular tools have adopted older Workbox versions in the past and continue providing it, namely:
+Существуют также более старые версии, которые всё ещё имеют широкое распространение. Причина в том, что некоторые популярные инструменты переняли старые версии Workbox в прошлом и продолжают предоставлять их, а именно:
 
-- Version 4.3.1 usage is mostly driven by <a hreflang="en" href="https://github.com/facebook/create-react-app/blob/v3.4.4/packages/react-scripts/package.json#L82">create-react-app version 3</a>.
-- Version 3.0.0 similarly, is included in <a hreflang="en" href="https://github.com/facebook/create-react-app/blob/v2.1.8/packages/react-scripts/package.json#L72">create-react-app version 2</a>.
+- Применение версии 4.3.1 в основном обусловлено <a hreflang="en" href="https://github.com/facebook/create-react-app/blob/v3.4.4/packages/react-scripts/package.json#L82">create-react-app версии 3</a>.
+- Версия 3.0.0, аналогично, включена в <a hreflang="en" href="https://github.com/facebook/create-react-app/blob/v2.1.8/packages/react-scripts/package.json#L72">create-react-app версии 2</a>.
 
-### Workbox packages
+### Пакеты Workbox {workbox-packages}
 
-The Workbox library is provided as a <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules">set of packages or modules</a> that contain specific functionalities. Each package serves a specific need and can be used together or on its own.
+Библиотека Workbox поставляется в виде <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules">набора пакетов или модулей</a>, которые содержат определенные функции. Каждый пакет решает определенную потребность и может использоваться вместе с другими пакетами или отдельно.
 
-The following table shows the usage of Workbox of the most popular packages:
+В следующей таблице показано использование наиболее популярных пакетов Workbox:
 
 {{ figure_markup(
   image="pwa-top-workbox-packages.png",
-  caption="Top workbox packages.",
-  description="Bar chart showing popular top Workbox packages by desktop and mobile. `core` is used by 21.96% of desktop Workbox usage and 23.66% of mobile, `routing` by 17.88% and 20.14%, `strategies` by 15.82% and 15.70%, `precaching` by 14.41% and 14.35%, `sw` by 8.38% and 10.29%, `expiration` by 8.30% and 8.93%, `cacheable-response` by 5.87% and 6.64%, `background-sync` by 3.27% and 3.21%, `window` by 3.36% and 3.08%, and finally `google-analytics` by 1.91% and 1.86%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=1408852146&format=interactive",
+  caption="Самые популярные пакеты Workbox.",
+  description="Гистограмма показывает самые популярные пакеты Workbox на десктопных и мобильных сайтах. `core` используется на 21,96% десктопного применения Workbox и 23,66% мобильного, `routing` — на 17,88% и 20,14%, `strategies` — на 15,82% и 15,70%, `precaching` — на 14,41% и 14,35%, `sw` — на 8,38% и 10,29%, `expiration` — на 8,30% и 8,93%, `cacheable-response` — на 5,87% и 6,64%, `background-sync` — на 3,27% и 3,21%, `window` — на 3,36% и 3,08%, и, наконец, `google-analytics` — на 1,91% и 1,86%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=1408852146&format=interactive",
   sheets_gid="1733966367",
   sql_file="workbox_packages.sql"
   )
 }}
 
-The chart above shows that the following packages are the four most widely used:
+На диаграмме выше показано, что следующие четыре пакета используются наиболее широко:
 
-- <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-core">Workbox Core</a>: This package contains the common code that each Workbox module relies on (for example, the code to interact with the console and throw meaningful errors). That's why it's the most widely used.
-- <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-routing">Workbox Routing</a>: This package allows to intercept requests and respond to them in different ways. It's also a very common task inside a service worker, so it's quite popular.
-- <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-precaching">Workbox Precaching</a>: This package allows sites to save some files to the cache while the service worker is installing. This set of files usually constitute the "version" of a PWA (similar to the version of a native app).
-- <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies">Workbox Strategies</a>: Unlike preaching, which takes place at the service worker "install" event, this package enables runtime caching strategies to determine how a service worker generates a response after receiving a `fetch` event.
+- <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-core">Workbox Core</a>: этот пакет содержит общий код, на который полагается каждый Workbox-модуль (например, код для взаимодействия с консолью и выдачи значимых ошибок). Вот почему он наиболее широко используется.
+- <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-routing">Workbox Routing</a>: этот пакет позволяет перехватывать запросы и отвечать на них по-разному. Это также очень распространенная задача внутри сервис-воркера, поэтому он довольно популярен.
+- <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-precaching">Workbox Precaching</a>: этот пакет позволяет сайтам сохранять некоторые файлы в кэш во время установки сервис-воркера. Этот набор файлов обычно образует «версию» PWA (аналогично версии нативного приложения).
+- <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies">Workbox Strategies</a>: в отличие от предварительного кэширования, которое проводится сервис-воркером по событию `install`, этот пакет включает стратегии кэширования во время выполнения, чтобы определить, как сервис-воркер генерирует ответ после получения события `fetch`.
 
-### Workbox strategies
+### Стратегии Workbox {workbox-strategies}
 
-As mentioned, Workbox provides a set of built-in strategies to respond to network requests. The following chart helps us see the adoption of the most popular runtime caching strategies:
+Как уже упоминалось, Workbox предоставляет набор встроенных стратегий для ответа на сетевые запросы. Следующая диаграмма помогает нам увидеть распространение наиболее популярных стратегий кэширования во время выполнения:
 
 {{ figure_markup(
   image="pwa-workbox-runtime-caching-strategies.png",
-  caption="Top Workbox runtime caching strategies.",
-  description="Bar chart showing popular runtime caching strategies packages by desktop and mobile. `NetworkFirst` is the caching strategy 31.52% of the time on desktop and 31.71% on mobile, `CacheFirst` by 31.72% and 30.51%, `StaleWhileRevalidate` by 27.03% and 26.74%, `NetworkOnly` by 8.81% and 9.66%, and finally `CacheOnly` by 0.92% and 1.37%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=761410022&format=interactive",
+  caption="Топ Workbox-стратегий кэширования во время выполнения.",
+  description="Гистограмма показывает популярные пакеты Workbox-стратегий кэширования во время выполнения на десктопах и мобильных. `NetworkFirst` — стратегия кэширования с 31,52% времени на десктопах и 31,71% на мобильных, `CacheFirst` — на 31,72% и 30,51%, `StaleWhileRevalidate` — на 27,03% и 26,74%, `NetworkOnly` — на 8,81% и 9,66%, и, наконец, `CacheOnly` — на 0,92% и 1,37%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=761410022&format=interactive",
   sheets_gid="1537625006",
   sql_file="workbox_methods.sql"
   )
 }}
 
-<a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies#network_first_network_falling_back_to_cache">`NetworkFirst`</a>, <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network">`CacheFirst`</a> and <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies#stale-while-revalidate">`Stale While Revalidate`</a> are, by far, the most widely used. These strategies let you respond to requests by combining the network and the cache in different ways. For example: the most popular runtime caching strategy: `NetworkFirst` will try to fetch the latest response from the network. If the result is successful, it will put the result in the cache. If the network fails, the cache response will be used.
+<a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies#network_first_network_falling_back_to_cache">`NetworkFirst`</a>, <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network">`CacheFirst`</a> и <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies#stale-while-revalidate">`Stale While Revalidate`</a>, безусловно, наиболее широко используются. Эти стратегии позволяют вам отвечать на запросы, по-разному комбинируя сеть и кэш. Например: самая популярная стратегия кэширования во время выполнения `NetworkFirst` попытается получить последний ответ из сети. Если результат успешный, она поместит результат в кэш. В случае сбоя сети будет использован ответ кэша.
 
-Other strategies, like <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies#network_only">`NetworkOnly`</a> and <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_only">`CacheOnly`</a> will resolve a `fetch()` request by going either to the network or cache, without combining these two options. This might make them less attractive for PWAs, but there are still some use cases where they make sense. For example, they can be combined with <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies#using_plugins">plugins</a> to extend their functionality.
+Другие стратегии, такие как <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies#network_only">`NetworkOnly`</a> и <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_only">`CacheOnly`</a>, разрезолвят запрос `fetch()`, перейдя либо в сеть, либо в кэш, без комбинирования этих двух вариантов. Это может сделать их менее привлекательными для PWA, но все же есть некоторые варианты использования, в которых они имеют смысл. Например, их можно комбинировать с <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies#using_plugins">плагинами</a> для расширения их функциональности.
 
 ## Web Push notifications
 
