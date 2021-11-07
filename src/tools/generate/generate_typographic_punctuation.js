@@ -13,8 +13,7 @@ const generate_typographic_punctuation_body = (body) => {
   body = body.replace(/(\{\{[^}]*caption=')(.*?[^\\])(')/g,'$1<jinja-arg>-->$2<!--</jinja-arg>$3');
 
   // Now do the actual conversion
-  // Avoid -- to em-dash conversion - see #2445
-  body = smartypants.smartypants(body, 'qBe');
+  body = smartypants.smartypants(body);
 
   // Uncomment Jinja functions
   body = body.replace(/<!--<jinja-macro/g,'');
