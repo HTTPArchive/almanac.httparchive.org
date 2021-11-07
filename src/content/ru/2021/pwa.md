@@ -137,35 +137,35 @@ this.oninstall = function(event) {
 Оба обработчика событий получили широкое распространение: 70,40% мобильных и 70,73% десктопных PWA реализуют обработчик события `install`, а 63,00% мобильных и 64,85% десктопов подписаны на `activate`. Это ожидаемо, поскольку задачи, которые могут выполняться внутри этих событий, имеют решающее значение для производительности и надёжности (например, <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-precaching">предварительное кэширование</a>).
 Причины отказа от обработчиков событий жизненного цикла включают: использование сервис-воркеров только для уведомлений (без какой-либо стратегии кэширования) или применение методов кэширования только к запросам, сделанным сайтом во время его работы — метод, называемый <a hreflang="en" href="https://web.dev/runtime-caching-with-workbox/">рантайм-кэширование</a>, которое часто (но не исключительно) используется в сочетании с методами предварительного кэширования.
 
-##### Notification-related events
+##### События, связанные с уведомлениями {notification-related-events}
 
-As shown in [Figure 16.4](#fig-4) the next group of event listeners in popularity are `push`, `notificationclick` and `notificationclose`, which are related to <a hreflang="en" href="https://developers.google.com/web/fundamentals/push-notifications">Web Push Notifications</a>.
-The most widely adopted is `push`, which lets you listen for push events sent by the server, and it is used by 43.88% of desktop and 45.44% of mobile sites with service workers. This demonstrates how popular web push notifications are in PWAs even when they are <a hreflang="en" href="https://caniuse.com/push-api">not yet available in all browsers</a>.
+Как показано на [Графике 16.4](#fig-4), следующая по популярности группа обработчиков событий — это `push`,` notificationclick` и `notificationclose`, которые связаны с <a hreflang="en" href="https://developers.google.com/web/fundamentals/push-notifications">Web Push Notifications</a>.
+Наиболее распространенным является `push`, который позволяет вам прослушивать push-события, отправляемые сервером — его используют 43,88% десктопных и 45,44% мобильных сайтов с сервис-воркерами. Это демонстрирует, насколько популярны веб-push-уведомления в PWA, даже если они <a hreflang="en" href="https://caniuse.com/push-api">ещё не доступны во всех браузерах</a>.
 
-##### Background processing events
+##### События фоновой обработки {background-processing-events}
 
-The last group of events in [Figure 16.4](#fig-4) allow you to run certain tasks in service workers in the background, for example, to synchronize data or retry tasks when the connectivity fails. <a hreflang="en" href="https://developers.google.com/web/updates/2015/12/background-sync">Background Sync</a> (via `sync` event listener)  allows a web app to delegate a task to the service worker and automatically retry it if it fails or there's no connectivity (in which case the service worker waits for connectivity to be back to automatically retry). <a hreflang="en" href="https://web.dev/periodic-background-sync/">Periodic Background Sync</a> (via `periodicSync`) allows running tasks at periodic intervals in the service worker (for example, fetching and caching the top news every morning). Other APIs like <a hreflang="en" href="https://developers.google.com/web/updates/2018/12/background-fetch">Background Fetch</a>, don't show up in the chart, as their usage is still quite low.
+Последняя группа событий на [Графике 16.4](#fig-4) позволяет вам запускать определенные задачи в сервис-воркерах в фоновом режиме, например, для синхронизации данных или повторения задач при сбое подключения. <a hreflang="en" href="https://developers.google.com/web/updates/2015/12/background-sync">Фоновая синхронизация</a> (через обработчик события `sync`) позволяет веб-приложению делегировать задачу сервис-воркеру и автоматически повторить её в случае сбоя или отсутствия подключения (в этом случае сервис-воркер ожидает восстановления подключения, чтобы автоматически повторить попытку). <a hreflang="en" href="https://web.dev/periodic-background-sync/">Периодическая фоновая синхронизация</a> (через `periodSync`) позволяет запускать задачи в сервис-воркере через определенные промежутки времени (например, для получения и кэширования главных новостей каждое утро). Другие API, такие как <a hreflang="en" href="https://developers.google.com/web/updates/2018/12/background-fetch">Background Fetch</a>, не отображаются на графике, так как их использование всё ещё довольно малое.
 
-As seen, background sync techniques don't have wide adoption yet compared to the others. This is in part because use cases for background sync are less frequent, and the APIs are not yet available across all browsers.  [Periodic Background Sync](https://developer.mozilla.org/en-US/docs/Web/API/Web_Periodic_Background_Synchronization_API) also requires the PWA to be installed for it to be used, which makes it unavailable for sites that don't provide ["add to home screen"](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen) functionality.
+Как видно, методы фоновой синхронизации пока не получили широкого распространения по сравнению с другими. Отчасти это связано с тем, что случаев для применения фоновой синхронизации меньше, а API пока доступны не во всех браузерах. [Периодическая фоновая синхронизация](https://developer.mozilla.org/en-US/docs/Web/API/Web_Periodic_Background_Synchronization_API) для её использования также требует, чтобы PWA был установлен, что делает её недоступной для сайтов, у которых нет функциональности [«добавить на домашний экран»](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen).
 
-Despite that, there are some important reasons for using background sync in modern web apps: one of them being offline analytics (<a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-google-analytics">Workbox Analytics uses Background Sync for this</a>), or retrying failed queries due to lack of connectivity (as <a hreflang="en" href="https://web.dev/google-search-sw/">some search engines do</a>).
+Несмотря на это, есть несколько важных причин для применения фоновой синхронизации в современных веб-приложениях: одна из них — офлайн-аналитика (<a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-google-analytics">Workbox Analytics использует для этого фоновую синхронизацию</a>), вторая — повтор неудачных запросов из-за отсутствия подключения (как <a hreflang="en" href="https://web.dev/google-search-sw/">делают некоторые поисковики</a>).
 
-<p class="note">Note: Unlike previous years, we have decided not to include the <code>fetch</code> and <code>message</code> events in this analysis, as those can also appear outside service workers, which could lead to a high number of false positives. So, the above analysis is for service worker-specific events. <a hreflang="en" href="../2020/pwa#service-worker-events">According to 2020 data, <code>fetch</code> was used almost as much as <code>install</code>.</a></p>
+<p class="note">Примечание: в отличие от предыдущих лет, мы решили не включать в этот анализ события <code>fetch</code> и <code>message</code>, поскольку они также могут появляться вне сервис-воркеров, что может привести к высокому количеству ложных срабатываний. Поэтому приведённый выше анализ относится к событиям, специфичным для сервис-воркеров. <a hreflang="en" href="../2020/pwa#service-worker-events">Согласно данным за 2020 год, <code>fetch</code> использовался почти столько же, сколько <code>install</code>.</a></p>
 
-#### Other popular service worker features
+#### Другие популярные функции сервис-воркеров {other-popular-service-worker-features}
 
-Besides event listeners, there are other important service worker functionalities that are interesting to call out, given their usefulness and popularity.
+Помимо обработчиков событий, есть и другие важные функции сервис-воркеров, которые интересно отметить, учитывая их полезность и популярность.
 
-The following two events are quite popular and frequently used in tandem:
+Следующие два ивента довольно популярны и часто используются в тандеме:
 
 - `ServiceWorkerGlobalScope.skipWaiting()`
 - `Clients.claim()`
 
-[`ServiceWorkerGlobalScope.skipWaiting()`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting) is usually called at the beginning of the `install` event and allows a newly installed service worker to immediately move to the `active` state, even if there's another active service worker. Our analysis showed that it is used in 60.47% of desktop and 59.60% of mobile PWAs.
+[`ServiceWorkerGlobalScope.skipWaiting()`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting) обычно вызывается в начале события `install` и позволяет заново установленному сервис-воркеру немедленно перейти в состояние `active`, даже если есть другой активный сервис-воркер. Наш анализ показал, что он используется в 60,47% десктопных и 59,60% мобильных PWA.
 
 {{ figure_markup(
-  caption="Percent of mobile sites with service workers that call `skipWaiting()`",
-  content="59.60%",
+  caption="Процент мобильных сайтов с сервис-воркерами, которые вызывают `skipWaiting()`",
+  content="59,60%",
   classes="big-number",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=2101442063&format=interactive",
   sheets_gid="1589747311",
@@ -173,11 +173,11 @@ The following two events are quite popular and frequently used in tandem:
 )
 }}
 
-[`Clients.claim()`](https://developer.mozilla.org/en-US/docs/Web/API/Clients/claim) is frequently used in combination with `skipWaiting()`, and it allows active service workers to "claim control" of all the clients under its scope. Appears in 48.98% of desktop pages and 47.14% of mobile.
+[`Clients.claim()`](https://developer.mozilla.org/en-US/docs/Web/API/Clients/claim) часто используется в сочетании со `skipWaiting()`, что позволяет активным сервис-воркерам «требовать контроль» над всеми клиентами, находящимися в его скоупе. Встречается на 48,98% десктопных страниц и 47,14% мобильных.
 
 {{ figure_markup(
-  caption="Percent of mobile sites with service workers that call `clients.claim()`",
-  content="47.14%",
+  caption="Процент мобильных сайтов с сервис-воркерами, которые вызывают `clients.claim()`",
+  content="47,14%",
   classes="big-number",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=2101442063&format=interactive",
   sheets_gid="1786812377",
@@ -185,15 +185,15 @@ The following two events are quite popular and frequently used in tandem:
 )
 }}
 
-Combining both of the previous events means that a new service worker will immediately come into effect, replacing the previous one, without having to wait for active clients (for example, tabs) to be closed and reopen at a later point (for example, a new user session), which is the default behavior.
-Developers find this technique useful to ensure that every critical update goes through immediately, which explains its wide adoption.
+Комбинирование обоих предыдущих ивентов означает, что новый сервис-воркер немедленно вступит в силу, заменив предыдущий, без необходимости ждать, пока активные клиенты (например, вкладки) будут закрыты и снова будут открыты позже (например, новая пользовательская сессия), что является поведением по умолчанию.
+Разработчики считают эту технику полезной для обеспечения немедленного выполнения каждого критического обновления, что объясняет его широкое распространение.
 
-Another interesting aspect to analyze are caching operations, which are frequently used in service workers and are at a core of a PWA experience, since they enable features like offline and help improving performance.
-The [`ServiceWorkerGlobalScope.caches`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/caches) property returns the [CacheStorage object](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage) associated with a service worker allowing access to the different [caches](https://developer.mozilla.org/en-US/docs/Web/API/Cache). We've found that it is used in 57.41% desktop and in 57.88% mobile sites that use service workers.
+Ещё один интересный аспект для анализа — операции кэширования, которые часто используются в сервис-воркерах и лежат в основе работы PWA, поскольку они включают такие функции, как офлайн, и помогают повысить производительность.
+Свойство [`ServiceWorkerGlobalScope.caches`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/caches) возвращает объект [CacheStorage](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage), связанный с сервис-воркером, дающий доступ к различным [кэшам](https://developer.mozilla.org/en-US/docs/Web/API/Cache). Мы обнаружили, что оно используется на 57,41% десктопных и 57,88% мобильных сайтов, использующих сервис-воркеры.
 
 {{ figure_markup(
-  caption="Percent of mobile sites with service workers that use the service worker cache",
-  content="57.88%",
+  caption="Процент мобильных сайтов с сервис-воркерами, использующих кэш сервис-воркера",
+  content="57,88%",
   classes="big-number",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=107056879&format=interactive",
   sheets_gid="1879897527",
@@ -201,13 +201,13 @@ The [`ServiceWorkerGlobalScope.caches`](https://developer.mozilla.org/en-US/docs
 )
 }}
 
-Its high usage is not unexpected as caching allows for reliable and performant web applications, which is often one of the main reasons why developers work on PWAs.
+Его частое использование не является неожиданным, поскольку кэширование позволяет создавать надёжные и производительные веб-приложения, что часто является одной из основных причин, по которым разработчики работают над PWA.
 
-Finally, it's worth taking a look at <a hreflang="en" href="https://developers.google.com/web/updates/2017/02/navigation-preload">Navigation Preloads</a>, which allows you to make the requests in parallel with the service worker boot-up time to avoid delaying the requests in those situations. The [`NavigationPreloadManager`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationPreloadManager) interface provides a set of methods to implement this technique, and according to our analysis, it is currently used in 11.02% of desktop and 9.78% of mobile sites that use service workers.
+Наконец, стоит взглянуть на <a hreflang="en" href="https://developers.google.com/web/updates/2017/02/navigation-preload">предзагрузки навигации</a>, которые позволяют вам делать запросы параллельно со временем загрузки сервис-воркера, чтобы избежать задержки запросов в таких ситуациях. Интерфейс [`NavigationPreloadManager`](https://developer.mozilla.org/en-US/docs/Web/API/NavigationPreloadManager) предоставляет набор методов для реализации этой техники, и, согласно нашему анализу, он в настоящее время используется на 11,02% десктопных и 9,78% мобильных сайтов, на которых используются сервис-воркеры.
 
 {{ figure_markup(
-  caption="Percent of mobile sites with use navigation preloads",
-  content="9.78%",
+  caption="Процент мобильных сайтов, которые используют предзагрузку навигации",
+  content="9,78%",
   classes="big-number",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=1163792530&format=interactive",
   sheets_gid="504745822",
@@ -215,122 +215,122 @@ Finally, it's worth taking a look at <a hreflang="en" href="https://developers.g
 )
 }}
 
-Navigation Preloads counts with a decent level of adoption, despite the fact that it's <a hreflang="en" href="https://caniuse.com/?search=navigation%20preload%20manager">not yet available in all browsers</a>. It's a technique that many developers could benefit from, and they can implement it as a [progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement).
+Предзагрузка навигации считается достаточно популярной, несмотря на то, что она <a hreflang="en" href="https://caniuse.com/?search=navigation%20preload%20manager">пока доступна не во всех браузерах</a>. От применения этой техники могут выиграть многие разработчики, и они могут реализовать её как [прогрессивное улучшение](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement).
 
-## Web App Manifests
+## Манифесты веб-приложений {web-app-manifests}
 
-[The Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) is a JSON file that contains metadata about a web application and it's one of the main components of a PWA, as publishing a web app manifest is one of the preconditions to provide the "add to home screen" functionality, which allows users to install a web app on their device. Other conditions include serving the site via HTTPS, having an icon, and in some browsers (like Chrome and Edge), having a service worker.
-Take into account that <a hreflang="en" href="https://web.dev/installable-manifest/#in-other-browsers">different browsers have different criteria for installation</a>.
+[Манифест веб-приложения](https://developer.mozilla.org/en-US/docs/Web/Manifest) — это файл JSON, который содержит метаданные о веб-приложении и является одним из основных компонентов PWA, поскольку публикация манифеста веб-приложения является одним из предварительных условий для предоставления функции «добавить на домашний экран», которая позволяет пользователям устанавливать веб-приложение на свои устройства. Другие условия включают работу сайта через HTTPS, наличие иконки и в некоторых браузерах (например, Chrome и Edge) наличие сервис-воркера.
+Учтите, что <a hreflang="en" href="https://web.dev/installable-manifest/#in-other-browsers">разные браузеры имеют разные критерии для установки</a>.
 
-Here are some usage stats about Web App Manifests. It's useful to visualize them along with the service worker ones, to start having an idea of the potential percentage of "installable" web applications:
+Вот некоторая статистика использования манифестов веб-приложений. Их полезно визуализировать рядом с сервис-воркерами, чтобы получить представление о потенциальном проценте «устанавливаемых» веб-приложений:
 
 {{ figure_markup(
   image="pwa-service-worker-and-manifest-usage.png",
-  caption="Service worker and manifest usage.",
-  description="Bar chart showing service worker and manifest usage by desktop and mobile. Service workers are used by 3.05% of pages on desktop, and 3.22% on mobile, Manifests by 7.43%, and 7.26% respectively, Either by 8.91% and 8.76%, and Both by 1.57% and 1.71%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=1499608158&format=interactive",
+  caption="Использование сервис-воркеров и манифестов",
+  description="Гистограмма показывает использование сервис-воркеров и манифестов на десктопных и мобильных сайтах. Сервис-воркеры применяются на 3,05% десктопных страниц и на 3,22% мобильных страниц, манифесты — на 7,43% и 7,26% соответственно, какой-нибудь из них — на 8,91% и 8,76%, оба — на 1,57% и 1,71%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=1499608158&format=interactive",
   sheets_gid="398503119",
   sql_file="manifests_and_service_workers.sql"
   )
 }}
 
-Manifests are used on more than twice as many pages as service workers. One of the reasons being that some platforms (like [CMSs](./cms)) automatically generate manifest files for sites, even those without service workers.
+Манифесты используются на страницах более чем в два раза чаще, чем сервис-воркеры. Одна из причин заключается в том, что некоторые платформы (например, [CMS](./cms)) автоматически создают файлы манифеста для сайтов, даже для тех, у которых нет сервис-воркеров.
 
-On the other hand, service workers can be used without a manifest. For example, some developers might want to add push notifications, caching or offline functionality to their sites, but might not be interested in installability, and therefore, not create a manifest.
+С другой стороны, сервис-воркеры могут использоваться без манифеста. Например, некоторые разработчики могут захотеть добавить на свои сайты push-уведомления, кэширование или работу в офлайне, но могут не быть заинтересованы в возможности установки и, следовательно, не создавать манифест.
 
-In the figure above, we can see that 1.57% of desktop and 1.71% of mobile sites have both a service worker and a manifest. This is a first approximation to the potential percentage of "installable" websites.
+На графике выше мы видим, что 1,57% десктопных сайтов и 1,71% мобильных сайтов имеют как сервис-воркер, так и манифест. Это первое приближение к потенциальному проценту «устанавливаемых» веб-сайтов.
 
-Besides having a web app manifest and service worker, the content of the manifest also needs to meet some additional <a hreflang="en" href="https://web.dev/installable-manifest/">installability criteria</a> for a web application to be installable. We'll analyze each of its properties next.
+Помимо манифеста веб-приложения и сервис-воркера, содержимое манифеста также должно соответствовать некоторым дополнительным <a hreflang="en" href="https://web.dev/installable-manifest/">критериям устанавливаемости</a> для установки веб-приложения. Далее мы проанализируем каждое из его свойств.
 
-### Manifest properties
+### Свойства манифеста {manifest-properties}
 
-The following chart shows the usage of <a hreflang="en" href="https://w3c.github.io/manifest/#web-application-manifest">standard manifest properties</a>, in the group of sites that also have a service worker.
+На следующей диаграмме показано использование <a hreflang="en" href="https://w3c.github.io/manifest/#web-application-manifest">стандартных свойств манифеста</a> для группы сайтов, у которых также есть сервис-воркер.
 
 {{ figure_markup(
   image="pwa-top-pwa-manifest-properties.png",
-  caption="Top PWA manifest properties.",
-  description="Bar chart showing top PWA manifest properties by desktop and mobile. `name` is used by 94.78% of desktop PWA manifests and 94.61% of mobile, `icons` by 92.22% and 92.18% respectively, `display` by 72.77% and 74.27%, `theme_color` by 70.64% and 71.64%, `background_color` by 67.87% and 69.53%, `short_name` by 64.57% and 63.64%, `start_url` by 37.27% and 42.35%, `description` by 11.86% and 12.59%, `scope` by 10.20% and 11.66%, and finally `orientation` by 8.71% and 12.16%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=105221079&format=interactive",
+  caption="Топ свойств манифеста PWA.",
+  description="Гистограмма показывает топ свойств манифеста PWA для десктопов и мобильных. `name` используется в 94,78% манифестов десктопных PWA и 94,61% мобильных, `icons` — в 92,22% и 92,18% соответственно, `display` — в 72,77% и 74,27%, `theme_color` — в 70,64% и 71,64%, `background_color` — в 67,87% и 69,53%, `short_name` — в 64,57% и 63,64%, `start_url` — в 37,27% и 42,35%, `description` — в 11,86% и 12,59%, `scope` — в 10,20% и 11,66%, и, наконец, `orientation` — в 8,71% и 12,16%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=105221079&format=interactive",
   sheets_gid="137691358",
   sql_file="top_manifest_properties.sql"
   )
 }}
 
-This chart is interesting when combined with the <a hreflang="en" href="https://web.dev/installable-manifest/">Lighthouse Installable Manifests criteria</a>. <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> is a popular tool to analyze the quality of websites and, as we'll see in the <a href="#lighthouse-insights">Lighthouse Insights section</a>, 61.73% of PWA sites have an installable manifest based on these criteria.
+Эта диаграмма интересна в сочетании с <a hreflang="en" href="https://web.dev/installable-manifest/">критериями устанавливаемых манифестов Lighthouse</a>. <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> — популярный инструмент для анализа качества веб-сайтов и, как мы увидим в <a href="#lighthouse-insights">разделе инсайтов из Lighthouse</a>, 61,73% PWA-сайтов имеют устанавливаемый манифест, основанный на этих критериях.
 
-Next we'll analyze each of the Lighthouse installability requirements, one by one, according to the previous chart:
+Далее мы проанализируем каждое из требований к установке от Lighthouse, одно за другим, в соответствии с предыдущим графиком:
 
-- A `name` or `short_name`: The `name` property is present in 90% of sites, while the `short_name` appears on 83.08% and 84.69% of desktop and mobile sites respectively. The high usage of these properties makes sense as both are key attributes: the `name` is displayed in the user's home screen, but if it's too long or the space in the screen is too small, the `short_name` might end up being displayed instead.
-- `icon`: This property appears in 84.69% of desktop and 86.11% of mobile sites. Icons are used in various places: the home screen, the OS task switcher, etc. This explains its high adoption.
-- `start_url`: This property exists in 82.84% of desktop and 84.66% mobile sites. This is another important property for PWAs, as it indicates what URL will be opened when the user launches the web application.
-- `display`: This property is declared in 86.49% of desktop and 87.67% of mobile sites. It's used to indicate the display mode of the website. If it's not indicated, the default value is `browser`, which is the conventional browser tab, so most PWAs declare it to indicate that it should be opened in `standalone` mode instead. The ability to open in standalone mode is one of the things that help create an "app-like" experience.
-- `prefer_related_applications`: This property appears in 6.87% of desktop and 7.66% of mobile sites, which seems like a low percentage compared to the rest of the properties in this list. The reason is that Lighthouse doesn't require it to be present, it only suggests against having it set with a value of `true`.
+- `name` или `short_name`: свойство `name` присутствует на 90% сайтов, в то время как `short_name` появляется на 83,08% и 84,69% сайтов для десктопных и мобильных устройств соответственно. Частое использование этих свойств имеет смысл, поскольку оба являются ключевыми атрибутами: на домашнем экране пользователя отображается `name`, но если оно слишком длинное или пространства на экране слишком мало, вместо него может отображаться` short_name`.
+- `icon`: это свойство появляется на 84,69% десктопных и 86,11% мобильных сайтов. Иконки используются в различных местах: на домашнем экране, в переключателе задач операционной системы и т.д. Это объясняет его широкое распространение.
+- `start_url`: это свойство присутствует на 82,84% десктопных и 84,66% мобильных сайтов. Это ещё одно важное свойство для PWA, поскольку оно указывает, какой URL будет открыт, когда пользователь запускает веб-приложение.
+- `display`: это свойство объявлено на 86,49% десктопных и 87,67% мобильных сайтов. Оно используется для обозначения режима отображения веб-сайта. Если оно не указано, значением по умолчанию является `browser`, который является обычной вкладкой браузера, поэтому большинство PWA объявляют его, чтобы указать, что вместо этого сайт должен быть открыт в режиме `standalone`. Возможность открываться в автономном режиме — одна из вещей, которая помогает создать «нативное» впечатление.
+- `prefer_related_applications`: это свойство присутствует на 6,87% сайтов для десктопов и 7,66% сайтов для мобильных устройств, что кажется низким процентом по сравнению с остальными свойствами в этом списке. Причина в том, что Lighthouse не требует, чтобы оно присутствовало, он только предлагает не устанавливать для него значение `true`.
 
-Next, we'll dig deeper into the properties that allow us to define a set of values. To understand which ones are the most widely used.
+Далее мы углубимся в свойства, которые позволяют нам определять набор значений. Чтобы понять, какие из них наиболее широко используются.
 
-### Top manifest icon sizes
+### Самые популярные размеры иконок в манифестах {top-manifest-icon-sizes}
 
 {{ figure_markup(
   image="pwa-top-pwa-manifest-icon-sizes.png",
-  caption="Top PWA manifest icon sizes.",
-  description="Bar chart showing top PWA manifest icon sizes by desktop and mobile. `192x192` is used by 72.58% of desktop PWA sites and 74.20% mobile, `512x512` by 70.09% and 70.36% respectively,`144x144` by 32.76% and 32.59%, `96x96` by 23.73% and 23.39%, `48x48` by 23.10% and 22.50%, `72x72` by 21.03% and 21.30%, `128x128` by 16.19% and 16.30%, `152x152` by 14.11% and 14.52%, `384x384` by 12.93% and 11.84%, `256x256` by 11.73% and 11.86%, `16x16` by 8.10% and 8.32%, `36x36` by 7.36% and 7.01%, `64x64` by 6.18% and 6.38%, `32x32` by 6.05% and 6.37%, and finally `120x120` by 6.14% and 5.61%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=1930133957&format=interactive",
+  caption="Самые популярные размеры иконок в манифестах.",
+  description="Гистограмма показывает самые популярные размеры иконок в манифестах для десктопов и мобильных. `192x192` применяется на 72,58% десктопных PWA-сайтов и 74,20% мобильных, `512x512` — на 70,09% и 70,36% соответственно,`144x144` — на 32,76% и 32,59%, `96x96` — на 23,73% и 23,39%, `48x48` — на 23,10% и 22,50%, `72x72` — на 21,03% и 21,30%, `128x128` — на 16,19% и 16,30%, `152x152` — на 14,11% и 14,52%, `384x384` — на 12,93% и 11,84%, `256x256` — на 11,73% и 11,86%, `16x16` — на 8,10% и 8,32%, `36x36` — на 7,36% и 7,01%, `64x64` — на 6,18% и 6,38%, `32x32` — на 6,05% и 6,37%, и, наконец, `120x120` — на 6,14% and 5,61%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=1930133957&format=interactive",
   sheets_gid="1450624146",
   sql_file="top_manifest_icon_sizes.sql"
   )
 }}
 
-The most popular icon sizes, by far, are: 192x192 and 512x512, which are the sizes that <a hreflang="en" href="https://web.dev/add-manifest/#icons">Lighthouse recommends</a>. In practice, developers also provide a variety of sizes, to make sure that they look good on various device screens.
+Самыми популярными размерами иконок на сегодняшний день являются 192x192 и 512x512, которые <a hreflang="en" href="https://web.dev/add-manifest/#icons">рекомендуются в Lighthouse</a>. На практике разработчики также предоставляют другие размеры, чтобы они хорошо смотрелись на различных экранах устройств.
 
-### Top manifest display values
+### Самые популярные значения свойства display {top-manifest-display-values}
 
 {{ figure_markup(
   image="pwa-manifest-display-values.png",
-  caption="PWA manifest display values.",
-  description="Bar chart showing PWA manifest display values by desktop and mobile. `standalone` is used by 74.83% of desktop PWA pages, and 79.02% of mobile, (not set) by 13.51% and 12.33% respectively, `minimal-ui` by 6.89% and 4.10%, `fullscreen` by 3.74% and 3.64%, and finally `browser` by 0.92% and 0.82%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=270665105&format=interactive",
+  caption="Самые популярные значения свойства display.",
+  description="Гистограмма показывает самые популярные значения свойства display на десктопных и мобильных. `standalone` применяется на 74,83% десктопных PWA-страниц и 79,02% мобильных, (не задано) — на 13,51% и 12,33% соответственно, `minimal-ui` — на 6,89% и 4,10%, `fullscreen` — на 3,74% и 3,64%, и ,наконец, `browser` — на 0,92% и 0,82%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=270665105&format=interactive",
   sheets_gid="403639702",
   sql_file="top_manifest_display_values.sql"
   )
 }}
 
-The display property determines the developer's preferred mode for the website.
-The `standalone` mode makes installed PWAs open without any browser UI element, making it "feel like an app". The chart shows that the most sites with a service worker and manifest uses this value: 74.83% on desktop and 79.02% on mobile.
+Свойство display определяет предпочитаемый разработчиком режим для веб-сайта.
+В режиме `standalone` установленные PWA открываются без каких-либо элементов пользовательского интерфейса браузера, что делает их «похожими на приложение». Диаграмма показывает, что большинство сайтов с сервис-воркером и манифестом используют это значение: 74,83% на десктопах и 79,02% на мобильных.
 
-### Manifests preferring native
+### Предпочтение нативным приложениям {manifests-preferring-native}
 
-Finally, we'll analyze `prefer_related_applications`. If the value of this property is set to `true`, the browser might suggest installing one of the related applications instead of the web app.
+Наконец, мы проанализируем `prefer_related_applications`. Если для этого свойства установлено значение `true`, браузер может предложить установить одно из связанных приложений вместо веб-приложения.
 
 {{ figure_markup(
   image="pwa-manifests-preferring-native-app.png",
-  caption="Manifests preferring native app.",
-  description="Bar chart showing PWA manifests preferring native app with 97.92% of desktop PWA pages, and 98.03% of mobile PWA pages having this set to `false`, and only 1.86% of desktop pages, and 1.79% of mobile pages having it set to `true`.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=1882009659&format=interactive",
+  caption="Манифесты, отдающие предпочтения нативным приложениям.",
+  description="Гистограмма показывает PWA-манифесты, отдающие предпочтения нативным приложениям, с 97,92% десктопных PWA-страниц и 98,03% мобильных PWA-страниц с этим свойством со значением `false`, и только 1,86% десктопных страниц и 1,79% мобильных страниц с этим свойством в значении `true`.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=1882009659&format=interactive",
   sheets_gid="1552027039",
   sql_file="manifests_preferring_native_apps.sql"
   )
 }}
 
-`prefer_related_applications` appears only in 6.87% of desktop and 7.66% of sites. The chart shows that 97.92% of desktop and 93.03% of mobile sites that defined this property have a value of `false`. This indicates that most PWA developers prefer to offer the PWA experience rather than a native app.
+`prefer_related_applications` появляется только на 6,87% десктопных и 7,66% мобильных сайтов. На диаграмме показано, что 97,92% десктопных сайтов и 93,03% мобильных сайтов, для которых определено это свойство, имеют значение `false`. Это указывает на то, что большинство разработчиков PWA предпочитают предлагать возможности PWA, а не нативное приложение.
 
-Despite the fact that the vast majority of PWA developers prefer promoting their PWA experiences to native applications, some well-known PWAs (like Twitter), still prefer recommending the native app over the PWA experience. This might be due to a preference of the teams building these experiences, or some specific business needs (lack of some API in the web).
+Несмотря на то, что подавляющее большинство разработчиков PWA предпочитают продвигать свой PWA вместо нативных приложений, некоторые известные PWA (например, Twitter) по-прежнему предпочитают рекомендовать нативное приложение, а не PWA. Это может быть связано с предпочтениями команд, создающих эти приложения, или с некоторыми конкретными бизнес-потребностями (отсутствие некоторых API в вебе).
 
-<p class="note">Note: Instead of making this decision statically at configuration, developers can also <a hreflang="en" href="https://web.dev/define-install-strategy/">create more dynamic heuristics</a> to promote an experience, for example, based on the user's behavior or other characteristics (device, connection, location, etc.).</p>
+<p class="note">Примечание: вместо того, чтобы принимать это решение статически во время настройки, разработчики также могут <a hreflang="en" href="https://web.dev/define-install-strategy/">создавать более динамические эвристики</a> для продвижения приложения, например, основанные на поведении пользователя или других характеристиках (устройство, соединение, местоположение и т.д.).</p>
 
-### Top manifest categories
+### Самые популярные категории манифеста {top-manifest-categories}
 
-In last year's PWA chapter we included a section about <a hreflang="en" href="../2020/pwa#top-manifest-categories">manifest categories</a>, showing the percentage of PWAs per industry, based on the [manifest categories](https://developer.mozilla.org/en-US/docs/Web/Manifest/categories) property.
+В прошлогоднюю главу, посвященную PWA, мы включили раздел о <a hreflang="en" href="../2020/pwa#top-manifest-categories">категориях в манифестах</a>, показывающий процентное соотношение PWA по отрасли, основанный на свойстве манифеста [categories](https://developer.mozilla.org/en-US/docs/Web/Manifest/categories).
 
-This year we decided not to rely on this property to determine how many PWAs of each category are out there, since the usage of this property is incredibly low (less than 1% of sites have this property set).
+В этом году мы решили не полагаться на это свойство, чтобы определить, сколько существует PWA каждой категории, поскольку использование этого свойства невероятно низкое (менее 1% сайтов имеют это свойство).
 
-Given our lack of data on categories and industries using PWAs, we turn to external sources for this information. Mobsted recently published their own <a hreflang="en" href="https://mobsted.com/world_state_of_pwa_2021">analysis of the use of PWAs</a>, which analyzed the percentage of PWAs by industry, among other things:
+Ввиду отсутствия данных по категориям и отраслям, использующим PWA, мы обращаемся за этой информацией к внешним источникам. Компания Mobsted недавно опубликовала собственный <a hreflang="en" href="https://mobsted.com/world_state_of_pwa_2021">анализ использования PWA</a>, в котором, среди прочего, анализировался процент PWA по отраслям:
 
 {{ figure_markup(
   image="pwa-industry-categories.png",
-  caption='PWA industry categories (Source: <a hreflang="en" href="https://mobsted.com/world_state_of_pwa_2021">Mobsted PWA 2021 report</a>).',
-  description="Bar chart showing PWA industry categories with a wide variety of usage across industries. Adult industry used 0.3% of PWAs, Arts & Entertainment 10.0%, Autos & Vehicles 2.8%, Beauty & Fitness 5.0%, Books & Literature 0.9%, Business & Industrial 14.4%, Computers & Electronics 2.1%, Finance 3.2%, Food & Drink 5.6%, Games 1.2%, Health 5.7%, Hobbies & Leisure 5.6%, Home & Garden 8.8%, Internet & Telecom 1.5%, Jobs & Education 3.1%, Law & Government 3.3%, News 1.1%, Online Communities 0.8%, People & Society 6.1%, Pets & Animals 0.4%, Real Estate 4.3%, Reference 0.8%, Science 1.5%, Sensitive Subjects 0.9%, Shopping 5.1%, Sports 2.3%, and finally Travel 3.3%", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=891344722&format=interactive",
+  caption='Отраслевые категории PWA (Источник: <a hreflang="en" href="https://mobsted.com/world_state_of_pwa_2021">отчёт компании Mobsted «PWA 2021»</a>).',
+  description="Гистограмма показывает отраслевые категории PWA с большим разнообразием применения среди индустрий. Индустрия Взрослого контента использует 0,3% PWA, Искусство и Развлечения — 10,0%, Авто и Транспорт — 2,8%, Красота и Фитнес — 5,0%, Книги и Литература — 0,9%, Бизнес и Промышленность — 14,4%, Компьютеры и Электроника — 2,1%, Финансы — 3,2%, Еда и Напитки — 5,6%, Игры — 1,2%, Здоровье — 5,7%, Хобби и Отдых — 5,6%, Дом и Сад — 8,8%, Интернет и Телеком — 1,5%, Работа и Образование — 3,1%, Закон и Правительство — 3,3%, Новости — 1,1%, Онлайн-сообщества — 0,8%, Люди и Общество — 6,1%, Животные — 0,4%, Недвижимость — 4,3%, Ссылки — 0,8%, Наука — 1,5%, Чувствительные темы — 0,9%, Покупки — 5,1%, Спорт — 2,3%, и, наконец, Путешествия — 3,3%", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=891344722&format=interactive",
   sheets_gid="1817367668",
   width=590,
   height=600
   )
 }}
 
-According to Mobsted's analysis, the most common categories are "Business & Industrial", "Arts & Entertainment", and "Home & Garden".This seems to correlate with [last year's analysis of the "category" web manifest property](../2020/pwa#top-manifest-categories), where the top three values were "shopping", "business" and "entertainment".
+Согласно анализу компании Mobsted, наиболее распространенными категориями являются «Бизнес и Промышленность», «Искусство и Развлечения» и «Дом и Сад». Это, похоже, коррелирует с [прошлогодним анализом свойства веб-манифеста category](../2020/pwa#top-manifest-categories), где тремя самыми популярными значениями были «покупки», «бизнес» и «развлечения».
 
 ## Lighthouse insights
 
