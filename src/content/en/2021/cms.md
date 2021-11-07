@@ -324,7 +324,7 @@ A score of 0.1 or below is measured as “good”, over 0.25 as “poor”, and 
   sql_file="core_web_vitals.sql"
 ) }}
 
-Wix had the best CLS score, with 81% of mobile origins having a “good” CLS. Adobe Experience Manager has the lowest CLS scores, with only 44% of mobile origins having a good CLS. Because layout shifts can usually be avoided, regardless of connection speeds - all platforms should strive to improve these numbers by reducing layout shifts to the bare minimum.
+Wix had the best CLS score, with 81% of mobile origins having a “good” CLS. Adobe Experience Manager had the lowest CLS scores, with only 44% of mobile origins having a good CLS. Because layout shifts can usually be avoided, regardless of connection speeds - all platforms should strive to improve these numbers by reducing layout shifts to the bare minimum.
 
 {{ figure_markup(
   image="core-web-vitals-cls-yoy.png",
@@ -401,7 +401,7 @@ Each accessibility audit is either a pass or a fail, but unlike other Lighthouse
   sql_file="lighthouse_category_scores_per_cms.sql"
 ) }}
 
-The median Lighthouse accessibility score for the top 10 CMSs ranges between 76 and 91. Squarespace and Weebly have the highest scores of 91, while Tilda has the lowest accessibility scores.
+The median Lighthouse accessibility score for the top 10 CMSs ranges between 76 and 91. Squarespace and Weebly have the highest scores of 91, while Tilda had the lowest accessibility scores.
 
 **Best Practices**
 
@@ -418,7 +418,7 @@ The Lighthouse [best practices](https://web.dev/lighthouse-best-practices/) try 
   sql_file="lighthouse_category_scores_per_cms.sql"
 ) }}
 
-Wix has the highest median best practices score of 93, while many of the other top 10 platforms share the lowest score of 73.
+Wix had the highest median best practices score of 93, while many of the other top 10 platforms share the lowest score of 73.
 
 ## Resource Weights
 
@@ -565,7 +565,7 @@ First, we’ll examine WordPress adoption by geography, across all sites in our 
   sql_file="core_web_vitals_by_geo.sql"
 ) }}
 
-In the top 10 countries with the most sites in our dataset, WordPress has over 27% adoption. Spain has the highest WordPress adoption among these countries with 37% of mobile pages using WordPress, compared with Germany where _only_ 28% of mobile pages use WordPress.
+In the top 10 countries with the most sites in our dataset, WordPress had over 27% adoption. Spain had the highest WordPress adoption among these countries with 37% of mobile pages using WordPress, compared with Germany where _only_ 28% of mobile pages used WordPress.
 
 **Passing CWVs by Geo**
 
