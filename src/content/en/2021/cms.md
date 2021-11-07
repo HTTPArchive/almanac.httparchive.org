@@ -175,7 +175,7 @@ Examining the adoption of these sites built on CMS platforms by their popularity
   sql_file="top_cms_by_rank.sql"
 ) }}
 
-3.1% of mobile sites in the top 1K are built with WordPress, and 30.9% of the top 10M. Drupal maintains a higher adoption rate within the mid-ranged rankings (10K - 1M), while most of Wix and Squarespace sites are ranked outside the top 1M sites.
+3.1% of mobile sites in the top 1K are built with WordPress, and 33.6% of the top 10M. Drupal maintains a higher adoption rate within the mid-ranged rankings (10K - 1M), while most of Wix and Squarespace sites are ranked outside the top 1M sites.
 
 ## CMS User Experience
 
