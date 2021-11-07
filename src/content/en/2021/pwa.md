@@ -306,7 +306,7 @@ Finally, we'll analyze `prefer_related_applications`. If the value of this prope
   )
 }}
 
-`prefer_related_applications` appears only in 6.87% of desktop and 7.66% of sites. The chart shows that 97.92% of desktop and 93.03% of mobile sites that defined this property have a value of `false`. This indicates that most PWA developers prefer to offer the PWA experience rather than a native app.
+`prefer_related_applications` appears only in 6.87% of desktop and 7.66% of mobile sites. The chart shows that 97.92% of desktop and 93.03% of mobile sites that defined this property have a value of `false`. This indicates that most PWA developers prefer to offer the PWA experience rather than a native app.
 
 Despite the fact that the vast majority of PWA developers prefer promoting their PWA experiences to native applications, some well-known PWAs (like Twitter), still prefer recommending the native app over the PWA experience. This might be due to a preference of the teams building these experiences, or some specific business needs (lack of some API in the web).
 
@@ -334,14 +334,14 @@ According to Mobsted's analysis, the most common categories are "Business & Indu
 
 ## Lighthouse insights
 
-In the <a hreflang="en" href="#">manifest properties section</a> we mentioned the <a hreflang="en" href="https://web.dev/installable-manifest/">installability requirements</a> that Lighthouse has on web app manifest files. Lighthouse also provides checks for other aspects that make a PWA. It should be noted that the HTTP Archive currently only runs the Lighthouse tests as part of its mobile crawl, as noted in our <a hreflang="en" href="../methodology">Methodology</a>.
+In the <a href="#manifest-properties">manifest properties section</a> we mentioned the <a hreflang="en" href="https://web.dev/installable-manifest/">installability requirements</a> that Lighthouse has on web app manifest files. Lighthouse also provides checks for other aspects that make a PWA. It should be noted that the HTTP Archive currently only runs the Lighthouse tests as part of its mobile crawl, as noted in our <a hreflang="en" href="../methodology">Methodology</a>.
 
 The following chart shows the percentage of sites that pass each criteria, where "PWA sites" contains stats for sites that have a service worker and a manifest, "All sites" contains data for all the totality sites:
 
 {{ figure_markup(
   image="pwa-lighthouse-pwa-audits.png",
   caption="Lighthouse PWA audits.",
-  description="Bar chart showing Lighthouse PWA audits by All websites and PWA websites. While some audits have high usage for both, many only have high usage only by PWA websites and PWA websites comfortably beat all websites in all categories. `viewport` audit is passed by 91.16% of all sites, and 99.42% of PWA sites, `redirects-http` by 78.01% and 98.23% retrospectively, `content-width` by 81.86% and 94.70%, `service-worker` by 1.50% and 84.86%, `apple-touch-icon` by 39.25% and 77.78%, `themed-omnibox` by 4.64% and 68.78%, `splash-screen` by 2.28% and 63.40%, `installable-manifest` by 1.08% and 61.73%, `maskable-icon` by 0.38% and 17.46%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=991530366&format=interactive",
+  description="Bar chart showing Lighthouse PWA audits by All websites and PWA websites. While some audits have high usage for both, many only have high usage only by PWA websites and PWA websites comfortably beat all websites in all categories. `viewport` audit is passed by 91.16% of all sites, and 99.42% of PWA sites, `redirects-http` by 78.01% and 98.23% respectively, `content-width` by 81.86% and 94.70%, `service-worker` by 1.50% and 84.86%, `apple-touch-icon` by 39.25% and 77.78%, `themed-omnibox` by 4.64% and 68.78%, `splash-screen` by 2.28% and 63.40%, `installable-manifest` by 1.08% and 61.73%, `maskable-icon` by 0.38% and 17.46%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=991530366&format=interactive",
   sheets_gid="1312576011",
   sql_file="lighthouse_pwa_audits.sql"
   )
