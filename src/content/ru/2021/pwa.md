@@ -139,7 +139,7 @@ this.oninstall = function(event) {
 
 ##### События, связанные с уведомлениями {notification-related-events}
 
-Как показано на [Графике 16.4](#fig-4), следующая по популярности группа обработчиков событий — это `push`,` notificationclick` и `notificationclose`, которые связаны с <a hreflang="en" href="https://developers.google.com/web/fundamentals/push-notifications">Web Push Notifications</a>.
+Как показано на [Графике 16.4](#fig-4), следующая по популярности группа обработчиков событий — это `push`,`notificationclick` и `notificationclose`, которые связаны с <a hreflang="en" href="https://developers.google.com/web/fundamentals/push-notifications">Web Push Notifications</a>.
 Наиболее распространенным является `push`, который позволяет вам прослушивать push-события, отправляемые сервером — его используют 43,88% десктопных и 45,44% мобильных сайтов с сервис-воркерами. Это демонстрирует, насколько популярны веб-push-уведомления в PWA, даже если они <a hreflang="en" href="https://caniuse.com/push-api">ещё не доступны во всех браузерах</a>.
 
 ##### События фоновой обработки {background-processing-events}
@@ -258,7 +258,7 @@ this.oninstall = function(event) {
 
 Далее мы проанализируем каждое из требований к установке от Lighthouse, одно за другим, в соответствии с предыдущим графиком:
 
-- `name` или `short_name`: свойство `name` присутствует на 90% сайтов, в то время как `short_name` появляется на 83,08% и 84,69% сайтов для десктопных и мобильных устройств соответственно. Частое использование этих свойств имеет смысл, поскольку оба являются ключевыми атрибутами: на домашнем экране пользователя отображается `name`, но если оно слишком длинное или пространства на экране слишком мало, вместо него может отображаться` short_name`.
+- `name` или `short_name`: свойство `name` присутствует на 90% сайтов, в то время как `short_name` появляется на 83,08% и 84,69% сайтов для десктопных и мобильных устройств соответственно. Частое использование этих свойств имеет смысл, поскольку оба являются ключевыми атрибутами: на домашнем экране пользователя отображается `name`, но если оно слишком длинное или пространства на экране слишком мало, вместо него может отображаться `short_name`.
 - `icon`: это свойство появляется на 84,69% десктопных и 86,11% мобильных сайтов. Иконки используются в различных местах: на домашнем экране, в переключателе задач операционной системы и т.д. Это объясняет его широкое распространение.
 - `start_url`: это свойство присутствует на 82,84% десктопных и 84,66% мобильных сайтов. Это ещё одно важное свойство для PWA, поскольку оно указывает, какой URL будет открыт, когда пользователь запускает веб-приложение.
 - `display`: это свойство объявлено на 86,49% десктопных и 87,67% мобильных сайтов. Оно используется для обозначения режима отображения веб-сайта. Если оно не указано, значением по умолчанию является `browser`, который является обычной вкладкой браузера, поэтому большинство PWA объявляют его, чтобы указать, что вместо этого сайт должен быть открыт в режиме `standalone`. Возможность открываться в автономном режиме — одна из вещей, которая помогает создать «нативное» впечатление.
@@ -332,43 +332,43 @@ this.oninstall = function(event) {
 
 Согласно анализу компании Mobsted, наиболее распространенными категориями являются «Бизнес и Промышленность», «Искусство и Развлечения» и «Дом и Сад». Это, похоже, коррелирует с [прошлогодним анализом свойства веб-манифеста category](../2020/pwa#top-manifest-categories), где тремя самыми популярными значениями были «покупки», «бизнес» и «развлечения».
 
-## Lighthouse insights
+## Инсайты из Lighthouse {lighthouse-insights}
 
-In the <a hreflang="en" href="#">manifest properties section</a> we mentioned the <a hreflang="en" href="https://web.dev/installable-manifest/">installability requirements</a> that Lighthouse has on web app manifest files. Lighthouse also provides checks for other aspects that make a PWA. It should be noted that the HTTP Archive currently only runs the Lighthouse tests as part of its mobile crawl, as noted in our <a hreflang="en" href="../methodology">Methodology</a>.
+В разделе <a href="#manifest-properties">про свойства манифеста</a> мы упомянули <a hreflang="en" href="https://web.dev/installable-manifest/">требования к устанавливаемости</a>, которые Lighthouse имеет к файлам манифеста веб-приложения. Lighthouse также предоставляет проверки для других аспектов, которые определяют PWA. Следует отметить, что HTTP Archive в настоящее время прогоняет тесты Lighthouse только во время своего мобильного краулинга, как указано в нашей <a hreflang="en" href="../methodology">методологии</a>.
 
-The following chart shows the percentage of sites that pass each criteria, where "PWA sites" contains stats for sites that have a service worker and a manifest, "All sites" contains data for all the totality sites:
+На следующей диаграмме показан процент сайтов, соответствующих каждому критерию, где пункт «PWA sites» содержит статистику для сайтов, у которых есть сервис-воркер и манифест, пункт «All sites» содержит данные для всех сайтов в целом:
 
 {{ figure_markup(
   image="pwa-lighthouse-pwa-audits.png",
-  caption="Lighthouse PWA audits.",
-  description="Bar chart showing Lighthouse PWA audits by All websites and PWA websites. While some audits have high usage for both, many only have high usage only by PWA websites and PWA websites comfortably beat all websites in all categories. `viewport` audit is passed by 91.16% of all sites, and 99.42% of PWA sites, `redirects-http` by 78.01% and 98.23% retrospectively, `content-width` by 81.86% and 94.70%, `service-worker` by 1.50% and 84.86%, `apple-touch-icon` by 39.25% and 77.78%, `themed-omnibox` by 4.64% and 68.78%, `splash-screen` by 2.28% and 63.40%, `installable-manifest` by 1.08% and 61.73%, `maskable-icon` by 0.38% and 17.46%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=991530366&format=interactive",
+  caption="Аудиты PWA в Lighthouse.",
+  description="Гистограмма показывает аудиты PWA в Lighthouse для всех сайтов и PWA-сайтов. В то время, как некоторые проверки широко используются для обоих категорий, многие из них широко используются только PWA-сайтами, и PWA-сайты с комфортом опережают все веб-сайты во всех категориях. Аудит `viewport` проходят 91,16% всех сайтов и 99,42% PWA-сайтов, `redirects-http` — 78,01% и 98,23% соответственно, `content-width` — 81,86% и 94,70%, `service-worker` — 1,50% и 84,86%, `apple-touch-icon` — 39,25% и 77,78%, `themed-omnibox` — 4,64% и 68,78%, `splash-screen` — 2,28% и 63,40%, `installable-manifest` — 1,08% и 61,73%, `maskable-icon` — 0,38% и 17,46%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=991530366&format=interactive",
   sheets_gid="1312576011",
   sql_file="lighthouse_pwa_audits.sql"
   )
 }}
 
-As expected, the table shows that the group of sites that we have identified as PWAs (those having a service worker and manifest) tend to pass each Lighthouse PWA audit. While some audits that are non-PWA specific (for example, setting viewports, or redirecting HTTP to HTTPS) are scored highly by all sites, there is a distinct difference for the PWA-specific audits, with these really only being used by PWA sites.
+Как и ожидалось, таблица показывает, что группа сайтов, которые мы определили как PWA (те, у которых есть сервис-воркер и манифест), как правило, проходит каждый PWA-аудит в Lighthouse. Хотя некоторые аудиты, не относящиеся к PWA (например, настройка вьюпорта или редирект с HTTP на HTTPS), получают высокие оценки на всех сайтах, существует явная разница для аудитов, специфичных для PWA, которые на самом деле используются только PWA-сайтами.
 
-It's interesting to note that <a hreflang="en" href="https://web.dev/maskable-icon/">maskable icons</a> have a low pass-rate even for PWA sites compared to the rest of the PWA audits. Using maskable icons lets you enhance the look and feel of icons in Android devices, making them fill up the entire shape assigned to it (like a responsive feature for icons). This feature is optional and mostly interesting for PWAs that offer an installable experience. Unlike other PWA features (like offline), sites that are not PWAs will rarely be interested in it.
+Интересно отметить, что <a hreflang="en" href="https://web.dev/maskable-icon/">маскируемые иконки</a> имеют низкий рейтинг прохождения даже для PWA-сайтов по сравнению с остальными PWA-аудитами. Использование маскируемых иконок позволяет улучшить внешний вид иконок на устройствах Android, заставляя их заполнять всю доступную им форму (как отзывчивость для иконок). Эта функция не является обязательной и в основном интересна для PWA, которые предлагают возможность установки. В отличие от других функций PWA (вроде офлайна), сайтам, не являющимся PWA, такое редко будет интересно.
 
-Lighthouse also provides a <a hreflang="en" href="https://web.dev/lighthouse-pwa/">PWA score</a>, based on the "pass rate" of all these audits. The following chart compares the resulting scores among the two groups analyzed before:
+Lighthouse также предоставляет <a hreflang="en" href="https://web.dev/lighthouse-pwa/">оценку PWA</a>, основанную на «успешности» всех этих аудитов. На следующей диаграмме сравниваются полученные баллы в двух группах, проанализированных ранее:
 
 {{ figure_markup(
   image="pwa-lighthouse-pwa-scores.png",
-  caption="Lighthouse PWA scores.",
-  description="Bar chart showing Lighthouse PWA scores for all websites and PWA websites by percentile with PWA site scoring approximately double the all sites score at all percentiles. 10th percentile has a score of 25 for all sites, and 50 for PWA sites, 25th has 33 and 58 respectively, 50th has 42 and 83, 75th has 50 and 92, and finally 90th percentile has 50 and 100.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=2065040053&format=interactive",
+  caption="Оценки PWA в Lighthouse.",
+  description="Гистограмма показывает оценки PWA в Lighthouse для всех веб-сайтов и PWA-сайтов как перцентиль, с оценками PWA-сайтов приблизительно в два раза лучше, чем на всех сайтах, по всем перцентилям. 10-й перцентиль имеет оценку 25 для всех сайтов и 50 для PWA-сайтов, 25-й — 33 и 58 соответственно, 50-й — 42 и 83, 75-й — 50 и 92, и, наконец, 90-й перцентиль имеет оценки 50 и 100.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=2065040053&format=interactive",
   sheets_gid="1466930372",
   sql_file="lighthouse_pwa_score.sql"
   )
 }}
 
-Here are some observations:
+Вот несколько наблюдений:
 
-- The median score for "PWA sites" is 83, versus 42 for "All sites".
-- At the top end we see that for the "PWA sites", at least 10% score the maximum (100) score for PWA. When looking at "All sites" the 75th and 90th percentile reach a value of, at most, 50.
-- Taking a look at the lower end of the chart, 90% of "PWA sites" have a Lighthouse PWA score of, at least 50, compared to 25 when we look across all sites.
+- Медианная оценка для «PWA-сайтов» составляет 83, по сравнению с 42 для «Всех сайтов».
+- В верхней части мы видим, что для «PWA-сайтов» не менее 10% получают максимальную (100) оценку в категории PWA. При просмотре «Всех сайтов» 75-й и 90-й процентили достигают значения не более 50.
+- Взглянув на нижнюю часть диаграммы, мы видим, что 90% «PWA-сайтов» имеют оценку PWA в Lighthouse не менее 50 по сравнению с 25 для «Всех сайтов».
 
-Once again, the difference between both groups is expected, as "PWA sites" are naturally prone to pass the PWA-specific requirements more often than "All sites". In any case, the median score of 83 for PWA sites, suggests that a good portion of PWA developers are aligned with best practices.
+Опять же, разница между обеими группами является ожидаемой, поскольку «PWA-сайты», естественно, склонны проходить специфические для PWA требования чаще, чем «Все сайты». В любом случае средний балл 83 для PWA-сайтов предполагает, что значительная часть PWA-разработчиков придерживается лучших практик.
 
 ## Service worker libraries
 
