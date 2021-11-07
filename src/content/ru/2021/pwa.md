@@ -517,84 +517,84 @@ Workbox по-прежнему остается самой популярной �
 
 Мобильные устройства также имеют более высокий процент отказов, чем десктопные (45,32% против 10,70%), а пользователи десктопов, как правило, чаще «игнорируют» уведомления (19,45% на мобильных устройствах по сравнению с 29,21% на десктопах). Причина в том, что мобильный пользовательский интерфейс регистрации намного более навязчив, чем десктопный, что заставляет пользователя чаще принимать решение о принятии или отклонении уведомления. Кроме того, на десктопных устройствах бывают ситуации, когда, если пользователь уходит из вкладки, приглашение отклоняется, и решение записывается как «игнорирование», пространство для клика за пределами приглашения для «игнорирования» приглашения намного больше.
 
-## Distribution
+## Дистрибуция {distribution}
 
-An important aspect of a PWA is that it allows users to access the web experience in ways beyond typing a URL in the browser URL bar. Users can also install the web app in various ways and access it via a home screen icon. This is one of the most engaging features of native apps, that PWAs also make possible.
+Важным аспектом PWA является то, что он позволяет пользователям получать доступ к веб-интерфейсу способами, не требующими ввода URL в браузерной строке URL-адреса. Пользователи также могут установить веб-приложение различными способами и получить к нему доступ через иконку на домашнем экране. Это одна из самых привлекательных фичей нативных приложений, которую PWA также делает возможной.
 
-Ways to distribute this installable experience include:
+Способы дистрибуции этой устанавливаемой версии включают:
 
-- Prompting the user to install the PWA via the [add to home screen](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen) functionality.
-- Uploading the PWA to App Stores by packaging it with <a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity/">Trusted Web Activity (TWA)</a> (currently available in any Android app store, including Google Play and Microsoft Store).
+- Предложение пользователю установить PWA через функциональность [«добавить на домашний экран»](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen).
+- Загрузка PWA в магазины приложений путем упаковки его с помощью <a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity/">Trusted Web Activity (TWA)</a> (в настоящее время доступно в любом магазине приложений Android, включая Google Play и Microsoft Store).
 
-Next, we'll share some stats related to these techniques, to have an idea of the usage and growth of these trends.
+Далее мы поделимся некоторой статистикой, связанной с этими методами, чтобы иметь представление об использовании и росте этих тенденций.
 
-### Add to home screen
+### Добавление на домашний экран {add-to-home-screen}
 
-So far, we have analyzed the pre-conditions for add to home screen, like having a service worker and an installable web app manifest.
+Пока мы проанализировали предварительные условия для добавления на домашний экран, такие как наличие сервис-воркера и манифеста устанавливаемого веб-приложения.
 
-In addition to the browser-provided install experience, developers can provide their own custom install flow directly within the app.
+Помимо возможности установки, предоставляемой браузером, разработчики могут предоставить собственный процесс установки непосредственно в приложении.
 
-The [`onbeforeinstallprompt`](https://developer.mozilla.org/en-US/docs/Web/API/Window/onbeforeinstallprompt) property of the `Window` object allows the document to capture the event fired when the user is about to be prompted to install a web application. Developers can then decide if they want to show the prompt directly or defer it to show it when they think it's more appropriate.
+Свойство [`onbeforeinstallprompt`](https://developer.mozilla.org/en-US/docs/Web/API/Window/onbeforeinstallprompt) объекта `Window` позволяет документу захватывать событие, срабатывающее, когда пользователю вот-вот покажется запрос на установку веб-приложения. Затем разработчики могут решить, хотят ли они показать запрос напрямую или отложить его, чтобы показать, когда они сочтут его более подходящим.
 
-Our analysis showed that `beforeinstallprompt` is being used in 0.48% of desktop and 0.63% of mobile sites that have a service worker and a manifest.
+Наш анализ показал, что `beforeinstallprompt` используется на 0,48% десктопных и 0,63% мобильных сайтов, на которых есть сервис-воркер и манифест.
 
 {{ figure_markup(
   image="pwa-install-events.png",
-  caption="PWA install events.",
-  description="Stacked bar chart showing the install events used by desktop and mobile PWA sites. `appinstalled` is used by 0.21% of desktop, and 0.22% of mobile, while `beforeinstallprompt` is used by 0.48% of desktop and 0.63% of mobile.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=1538269319&format=interactive",
+  caption="События установки PWA.",
+  description="Диаграмма показывает события установки, используемых на десктопных и мобильных PWA-сайтах. `appinstalled` используется на 0,21% десктопных и 0,22% мобильных сайтов, в то время как `beforeinstallprompt` используется на 0,48% десктопных и 0,63% мобильных сайтов.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=1538269319&format=interactive",
   sheets_gid="840472840",
   sql_file="install_events.sql"
   )
 }}
 
-The `BeforeInstallPromptEvent` API is <a hreflang="en" href="https://caniuse.com/mdn-api_beforeinstallpromptevent">not yet available in all browsers</a>, which explains the relatively low usage. Let's take a look now at the percentage of traffic that this represents:
+`BeforeInstallPromptEvent` API <a hreflang="en" href="https://caniuse.com/mdn-api_beforeinstallpromptevent">ещё не доступен во всех браузерах</a>, что объясняет его относительно низкое использование. Давайте теперь посмотрим на процент трафика, который это показывает:
 
 {{ figure_markup(
   link="https://www.chromestatus.com/metrics/feature/timeline/popularity/1436",
   image='pwa-before-install-prompt-page-loads.png',
-  caption='Percentage of page view on a page that use `beforeinstallprompt` (Source: <a hreflang="en" href="https://www.chromestatus.com/metrics/feature/timeline/popularity/1436">Chrome Platform Status</a>)',
-  description='Time series of page loads from 1st January 2019 until September 2021 showing a growth from 1% to just over 4% with a large growth in January 2021.',
+  caption='Процент просмотров страниц, когда на странице используется `beforeinstallprompt` (Источник: <a hreflang="en" href="https://www.chromestatus.com/metrics/feature/timeline/popularity/1436">Chrome Platform Status</a>)',
+  description='Временная последовательность загрузок страниц с 1 января 2019 года до сентября 2021 года показывает рост с 1% до всего 4% с большим ростом в январе 2021 года.',
   width=1460,
   height=786
   )
 }}
 
-According to <a hreflang="en" href="https://www.chromestatus.com/metrics/feature/timeline/popularity/1436">Chrome Platform Status</a>, the percentage of page loads using this feature <a hreflang="en" href="https://www.chromestatus.com/metrics/feature/timeline/popularity/1436">is near 4%</a>, which suggests that some high traffic sites might be using it. Additionally, we can see that there was a 2.5 percentage point growth in adoption compared to last year.
+Согласно <a hreflang="en" href="https://www.chromestatus.com/metrics/feature/timeline/popularity/1436">Chrome Platform Status</a>, процент загрузки страниц с использованием этой функции — <a hreflang="en" href="https://www.chromestatus.com/metrics/feature/timeline/popularity/1436">около 4%</a>, что говорит о том, что его могут использовать некоторые сайты с высоким трафиком. Кроме того, мы видим, что внедрение выросло на 2,5 процентных пункта по сравнению с прошлым годом.
 
-### App Store distribution
+### Дистрибуция через магазины приложений {app-store-distribution}
 
-Historically, developers have built web-based mobile applications and uploaded them to App Stores as an alternative to building apps with OS-specific languages (Java or Kotlin for Android, Objective-C or Swift for iOS). The most common approach is to use a cross-platform, hybrid solution like <a hreflang="en" href="https://cordova.apache.org/">Cordova</a> that allows one to write the code once and generate multiple versions of it for various platforms. The resulting code usually uses the <a hreflang="en" href="https://developer.android.com/reference/android/webkit/WebView">WebView</a> to render web content, but also provides a series of non-standard APIs that can access features from the device.
+Исторически сложилось так, что разработчики создавали мобильные веб-приложения и загружали их в магазины приложений в качестве альтернативы созданию приложений на языках, специфичных для ОС (Java или Kotlin для Android, Objective-C или Swift для iOS). Наиболее распространенный подход — использовать кроссплатформенное гибридное решение, вроде <a hreflang="en" href="https://cordova.apache.org/">Cordova</a>, которое позволяет написать код один раз и сгенерировать несколько его версий для разных платформ. Результирующий код обычно использует <a hreflang="en" href="https://developer.android.com/reference/android/webkit/WebView">WebView</a> для отображения веб-содержимого, но также предоставляет серию нестандартных API, которые могут получить доступ к функциям устройства.
 
-WebView-based apps may look similar to native apps, but certainly there are some caveats. Since a WebView is just a rendering engine, users may have different experiences than in a full browser. The latest browser APIs might not be available and most importantly, cookies are not shareable between WebViews and browsers.
+Приложения на основе WebView могут выглядеть аналогично нативным приложениям, но, безусловно, есть некоторые особенности. Поскольку WebView — это всего лишь механизм рендеринга, пользователи могут работать с приложением иначе, чем в полнофункциональном браузере. Последние версии браузерных API могут быть недоступны, и, что наиболее важно, файлы cookie не шарятся между WebView и браузерами.
 
-TWAs allow you to package your PWA into a native application shell and upload it to some App Stores. Unlike WebView-based solutions, a TWA is not just a rendering engine; it's the full browser running in fullscreen mode. For that reason, it's feature-complete and evergreen, meaning that it's always up to date and will give you access to the latest web APIs.
+TWA позволяют упаковать PWA в оболочку нативного приложения и загрузить его в некоторые магазины приложений. В отличие от решений на основе WebView, TWA — не просто движок рендеринга; это полноценный браузер, работающий в полноэкранном режиме. По этой причине он полнофункциональный и вечнозелёный, а это означает, что он всегда актуален и предоставит вам доступ к самым новым веб-API.
 
-Developers can package their PWAs into native apps with TWA directly, <a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity/integration-guide/">by using Android Studio</a>, but there are several tools that make this task much easier. Next, we'll analyze two of them: PWA Builder and Bubblewrap.
+Разработчики могут упаковать свои PWA в нативные приложения с TWA напрямую, <a hreflang="en" href="https://developer.chrome.com/docs/android/trusted-web-activity/integration-guide/">с помощью Android Studio</a>, но есть несколько инструментов, которые значительно облегчают эту задачу. Далее мы разберем два из них: PWA Builder и Bubblewrap.
 
 #### PWA Builder
 
-<a hreflang="en" href="https://www.pwabuilder.com/">PWA Builder</a> is an open-source project that can help web developers to build Progressive Web Apps and package them for app stores like the Microsoft Store and Google Play Store. It starts by reviewing a provided URL to check for an available manifest, service worker, and SSL.
+<a hreflang="en" href="https://www.pwabuilder.com/">PWA Builder</a> — проект с открытым исходным кодом, который может помочь веб-разработчикам создавать прогрессивные веб-приложения и упаковывать их для магазинов приложений вроде Microsoft Store и Google Play Store. Он стартует с просмотра указанного URL-адреса, чтобы проверить наличие доступного манифеста, сервис-воркера и SSL.
 
-[PWA Builder reviewed 200k URLs over a 3-month timeslot](https://twitter.com/pwabuilder/status/1454250060326318082?s=21) and discovered that:
+[PWA Builder проверил 200 тысяч URL-адресов за 3 месяца](https://twitter.com/pwabuilder/status/1454250060326318082?s=21) и обнаружил следующее:
 
-- 75% had a manifest detected
-- 11.5% had a service worker detected
-- 9.6% are installable PWAs from the browser (manifest and SW and https)
+- у 75% обнаружен манифест;
+- у 11,5% обнаружен сервис-воркер;
+- 9,6% — устанавливаемые из браузера PWA (манифест, сервис-воркер и https).
 
 #### Bubblewrap
 
-<a hreflang="en" href="https://github.com/GoogleChromeLabs/bubblewrap">Bubblewrap</a> is a set of tools and libraries designed to help developers to create, build, and update projects for Android apps that launch PWAs using TWA.
+<a hreflang="en" href="https://github.com/GoogleChromeLabs/bubblewrap">Bubblewrap</a> — набор инструментов и библиотек, призванных помочь разработчикам создавать, собирать и обновлять проекты для Android-приложений, которые запускают PWA с использованием TWA.
 
-By using Bubblewrap, developers don't need to be aware of any details around Android tools (like Android Studio), which makes it very easy to use for web developers.
+Используя Bubblewrap, разработчикам не нужно знать какие-либо подробности об инструментах Android (например, Android Studio), что делает его очень простым в использовании для веб-разработчиков.
 
-While we don't have usage stats for Bubblewrap, there are some notable tools that are known to rely on it. For example, PWA Builder and <a hreflang="en" href="https://appmaker.xyz/pwa-to-apk">PWA2APK</a> are powered by Bubblewrap.
+Хотя у нас нет статистики использования Bubblewrap, есть некоторые заметные инструменты, которые, как известно, полагаются на него. Например, PWA Builder и <a hreflang="en" href="https://appmaker.xyz/pwa-to-apk">PWA2APK</a> работают на Bubblewrap.
 
-## Conclusion
+## Заключение {conclusion}
 
-Six years after the term "Progressive Web Apps" was coined, the adoption of its core technologies continues to grow. Service workers will soon control 20% of web traffic, and sites continue adding more capabilities each year.
+Спустя шесть лет после появления термина «прогрессивное веб-приложение» внедрение его основных технологий продолжает расти. Сервис-воркеры скоро будут контролировать 20% веб-трафика, а сайты продолжают добавлять новые возможности каждый год.
 
-In 2021, developers have a diverse range of options to build and distribute their web applications, including tools that allow them to take on the most common tasks, and offer easy ways of uploading these experiences to app stores.
+В 2021 году у разработчиков будет широкий спектр возможностей для создания и распространения своих веб-приложений, включая инструменты, которые позволят им выполнять наиболее распространенные задачи и предлагают простые способы загрузки этих интерфейсов в магазины приложений.
 
-Year over year the web continues demonstrating that applications that used to be built only with OS-specific languages can be developed with web technologies and <a hreflang="en" href="https://www.theverge.com/2021/10/26/22738125/adobe-photoshop-illustrator-web-announced">companies continue investing</a> in bringing these app-like experiences to the web.
+Год за годом Интернет продолжает демонстрировать, что приложения, которые раньше создавались только на языках, специфичных для ОС, можно разрабатывать с помощью веб-технологий, а <a hreflang="en" href="https://www.theverge.com/2021/10/26/22738125/adobe-photoshop-illustrator-web-announced">компании продолжают инвестировать</a> в то, чтобы эти приложения, похожие на нативные, стали доступны в Интернете.
 
-We hope this analysis will assist you in making more informed decisions around your PWA projects. We are looking forward to seeing how much all these trends will grow in 2022!
+Мы надеемся, что этот анализ поможет вам принимать более обоснованные решения вокруг ваших PWA-проектов. Мы с нетерпением ждём, насколько все эти тренды вырастут в 2022 году!
