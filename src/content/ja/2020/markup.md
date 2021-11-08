@@ -47,7 +47,7 @@ HTMLをどのように使うのかでは、どれだけ素晴らしい基盤が�
   sql_file="summary_pages_by_device_and_doctype.sql"
 ) }}
 
-96.82%のページが[ _doctype_ ](https://developer.mozilla.org/ja/docs/Glossary/Doctype)を宣言しています。HTML文書がdoctypeを宣言することは、<a hreflang="en" href="https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html">Ian Hickson氏が2009年に説明したように</a>、「ブラウザのquirksモードのトリガーを避けるため」という歴史的な理由から有用です。もっとも人気のある値は何ですか？
+96.82%のページが[_doctype_](https://developer.mozilla.org/ja/docs/Glossary/Doctype)を宣言しています。HTML文書がdoctypeを宣言することは、<a hreflang="en" href="https://lists.w3.org/Archives/Public/public-html-comments/2009Jul/0020.html">Ian Hickson氏が2009年に説明したように</a>、「ブラウザのquirksモードのトリガーを避けるため」という歴史的な理由から有用です。もっとも人気のある値は何ですか？
 
 <figure>
   <table>

@@ -132,9 +132,9 @@ Web Almanacは、ウェブ・コミュニティの努力によって実現して
 {% block appendices %}付属資料{% endblock %}
 
 {% block ebook_title %}電子ブック{% endblock %}
-{% block ebook_download_short %}電子ブックPDF ({{ ebook_size_in_mb }}MB){% endblock %}
-{% block ebook_download %} {{ year }} Web AlmanacのPDFファイルをダウンロードする ({{ ebook_size_in_mb }}MB){% endblock %}
-{% block ebook_download_note %}(generated with <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
+{% block ebook_download_short %}電子ブックPDF（{{ ebook_size_in_mb }}MB）{% endblock %}
+{% block ebook_download %} {{ year }} Web AlmanacのPDFファイルをダウンロードする（{{ ebook_size_in_mb }}MB）{% endblock %}
+{% block ebook_download_note %}（<a href="https://www.princexml.com/">www.princexml.com</a>で生成）{% endblock %}
 
 {%
   set localizedPartTitles = {
@@ -169,7 +169,9 @@ Web Almanacは、ウェブ・コミュニティの努力によって実現して
     "http": "HTTP",
     "privacy": "プライバシー",
     "capabilities": "能力",
-    "jamstack": "Jamstack"
+    "jamstack": "Jamstack",
+    "webassembly": "WebAssembly",
+    "structured-data": "構造化データ"
   }
 %}
 {% if (year == "2019" or year == "2020") %}

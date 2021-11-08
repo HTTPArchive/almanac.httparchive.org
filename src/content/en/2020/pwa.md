@@ -174,14 +174,14 @@ Your app should display some content when JavaScript is disabled, even if it is 
 
 In a service worker one can listen for a number of events:
 
-1.  `install`, which occurs upon service worker installation.
-2.  `activate`, which occurs upon service worker activation.
-3.  `fetch`, which occurs whenever a resource is fetched.
-4.  `push`, which occurs when a push notification arrives.
-5.  `notificationclick`, which occurs when a notification is being clicked.
-6.  `notificationclose`, which occurs when a notification is being closed.
-7.  `message`, which occurs when a message sent via postMessage() arrives.
-8.  `sync`, which occurs when a background sync event occurs.
+1. `install`, which occurs upon service worker installation.
+2. `activate`, which occurs upon service worker activation.
+3. `fetch`, which occurs whenever a resource is fetched.
+4. `push`, which occurs when a push notification arrives.
+5. `notificationclick`, which occurs when a notification is being clicked.
+6. `notificationclose`, which occurs when a notification is being closed.
+7. `message`, which occurs when a message sent via postMessage() arrives.
+8. `sync`, which occurs when a background sync event occurs.
 
 We have examined which of these events are being listened to by service workers in our dataset.
 

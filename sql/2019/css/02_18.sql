@@ -1,7 +1,7 @@
 #standardSQL
 # 02_18: % of pages using all/print/screen/speech in media queries
 CREATE TEMPORARY FUNCTION getMediaType(css STRING)
-RETURNS STRUCT<all BOOLEAN, print BOOLEAN, screen BOOLEAN, speech BOOLEAN> LANGUAGE js AS '''
+RETURNS STRUCT<all_media BOOLEAN, print_media BOOLEAN, screen_media BOOLEAN, speech_media BOOLEAN> LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
     if (rule.type != 'media') {
@@ -12,7 +12,7 @@ try {
     var types = ['all', 'print', 'screen', 'speech'];
     types.forEach(type => {
       if (media.includes(type)) {
-        values[type] = true;
+        values[type + '_media'] = true;
       }
     });
 
@@ -27,22 +27,22 @@ try {
 
 SELECT
   client,
-  COUNTIF(all > 0) AS freq_all,
-  COUNTIF(print > 0) AS freq_print,
-  COUNTIF(screen > 0) AS freq_screen,
-  COUNTIF(speech > 0) AS freq_speech,
+  COUNTIF(all_media > 0) AS freq_all,
+  COUNTIF(print_media > 0) AS freq_print,
+  COUNTIF(screen_media > 0) AS freq_screen,
+  COUNTIF(speech_media > 0) AS freq_speech,
   total,
-  ROUND(COUNTIF(all > 0) * 100 / total, 2) AS pct_all,
-  ROUND(COUNTIF(print > 0) * 100 / total, 2) AS pct_print,
-  ROUND(COUNTIF(screen > 0) * 100 / total, 2) AS pct_screen,
-  ROUND(COUNTIF(speech > 0) * 100 / total, 2) AS pct_speech
+  ROUND(COUNTIF(all_media > 0) * 100 / total, 2) AS pct_all,
+  ROUND(COUNTIF(print_media > 0) * 100 / total, 2) AS pct_print,
+  ROUND(COUNTIF(screen_media > 0) * 100 / total, 2) AS pct_screen,
+  ROUND(COUNTIF(speech_media > 0) * 100 / total, 2) AS pct_speech
 FROM (
   SELECT
     client,
-    COUNTIF(type.all) AS all,
-    COUNTIF(type.print) AS print,
-    COUNTIF(type.screen) AS screen,
-    COUNTIF(type.speech) AS speech
+    COUNTIF(type.all_media) AS all_media,
+    COUNTIF(type.print_media) AS print_media,
+    COUNTIF(type.screen_media) AS screen_media,
+    COUNTIF(type.speech_media) AS speech_media
   FROM (
     SELECT
       client,
