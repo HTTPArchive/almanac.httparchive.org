@@ -255,32 +255,32 @@ Preloading images may be helpful in improving the LCP score when the image is no
 The `crossorigin` attribute is used to indicate whether CORS must be used when fetching the requested resource. This could apply to any resource type, but it is most commonly associated with font files as they should always be requested using CORS.
 
 <figure>
-	<table>
-	  <thead>
-	    <tr>
-	      <th>value</th>
-	      <th>desktop</th>
-	      <th>mobile</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr>
-	      <td>not set</td>
-	      <td class="numeric">66.61%</td>
-	      <td class="numeric">65.91%</td>
-	    </tr>
-	    <tr>
-	      <td><code>crossorigin</code> (or equivalent)</td>
-	      <td class="numeric">14.50%</td>
-	      <td class="numeric">13.48%</td>
-	    </tr>
-	    <tr>
-	      <td><code>use-credentials</code></td>
-	      <td class="numeric">0.04%</td>
-	      <td class="numeric">0.04%</td>
-	    </tr>
-	  </tbody>
-	</table>
+  <table>
+    <thead>
+      <tr>
+        <th>value</th>
+        <th>desktop</th>
+        <th>mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>not set</td>
+        <td class="numeric">66.61%</td>
+        <td class="numeric">65.91%</td>
+      </tr>
+      <tr>
+        <td><code>crossorigin</code> (or equivalent)</td>
+        <td class="numeric">14.50%</td>
+        <td class="numeric">13.48%</td>
+      </tr>
+      <tr>
+        <td><code>use-credentials</code></td>
+        <td class="numeric">0.04%</td>
+        <td class="numeric">0.04%</td>
+      </tr>
+    </tbody>
+  </table>
 
 <figcaption>{{ figure_link(caption='`rel="preload"` `crossorigin` attribute values.', sheets_gid="1246058294", sql_file="hint_attribute_usage.sql") }}</figcaption>
 </figure>
