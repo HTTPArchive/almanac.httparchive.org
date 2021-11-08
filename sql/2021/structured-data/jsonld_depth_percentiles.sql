@@ -41,26 +41,27 @@ LANGUAGE js AS """
   }
 """;
 
-WITH
-rendered_data AS (
+WITH rendered_data AS (
   SELECT
-    getJSONLDEntitiesRelationships(rendered) AS jsonld_entities_relationships,
-    client
-  FROM (
-    SELECT
-      JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
-            '$._structured-data')),
-        '$.structured_data.rendered') AS rendered,
-      _TABLE_SUFFIX AS client
-    FROM
-      `httparchive.pages.2021_07_01_*`)
+    _TABLE_SUFFIX AS client,
+    url,
+    getJSONLDEntitiesRelationships(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')), '$.structured_data.rendered')) AS jsonld_entities_relationships
+  FROM
+    `httparchive.pages.2021_07_01_*`
 )
 
 SELECT
-  MAX(jsonld_entity_relationship.depth) AS max_depth,
-  client
+  client,
+  percentile,
+  APPROX_QUANTILES(jsonld_entity_relationship.depth, 1000)[OFFSET(percentile * 10)] AS depth,
+  ARRAY_TO_STRING(ARRAY_AGG(DISTINCT url LIMIT 5), ' ') AS sample_urls
 FROM
   rendered_data,
-  UNNEST(jsonld_entities_relationships) AS jsonld_entity_relationship
+  UNNEST(jsonld_entities_relationships) AS jsonld_entity_relationship,
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
-  client
+  client,
+  percentile
+ORDER BY
+  client,
+  percentile
