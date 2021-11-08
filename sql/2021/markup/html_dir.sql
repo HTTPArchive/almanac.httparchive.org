@@ -37,4 +37,3 @@ GROUP BY
 ORDER BY
   client,
   freq DESC
-
