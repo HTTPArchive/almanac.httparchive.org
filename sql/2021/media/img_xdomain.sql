@@ -1,5 +1,5 @@
 #standardSQL
-# usage of alt text in images
+# Cross domain image requests 
 
 # returns all the data we need from _markup
 CREATE TEMPORARY FUNCTION get_images(images_string STRING)
