@@ -136,7 +136,7 @@ Detecting fingerprinting is complex: it is effective through a combination of me
 
 ### CNAME tracking
 
-Continuing with techniques that circumvent blocks on third-party tracking, [CNAME](https://medium.com/nextdns/cname-cloaking-the-dangerous-disguise-of-third-party-trackers-195205dc522a) tracking is a novel approach where a first-party subdomain redirects to a third-party tracker using a CNAME record at the [DNS](https://adguard.com/en/blog/cname-tracking.html) level. From the viewpoint of the browser, everything happens within a first-party context, so none of the third-party countermeasures are applied. Major tracking companies such as Adobe and Oracle are already offering CNAME tracking solutions to their customers.
+Continuing with techniques that circumvent blocks on third-party tracking, [CNAME tracking](https://medium.com/nextdns/cname-cloaking-the-dangerous-disguise-of-third-party-trackers-195205dc522a) is a novel approach where a first-party subdomain redirects to a third-party tracker using a CNAME record at the [DNS level](https://adguard.com/en/blog/cname-tracking.html). From the viewpoint of the browser, everything happens within a first-party context, so none of the third-party countermeasures are applied. Major tracking companies such as Adobe and Oracle are [already offering CNAME tracking solutions](https://sciendo.com/article/10.2478/popets-2021-0053) to their customers.
 
 The most popular company performing CNAME-based tracking is [Pardot](https://www.pardot.com/), which is present on 6619 desktop websites. Also notable in size is Adobe, with 2671 publisher domains. 
 
@@ -425,9 +425,7 @@ However, at this point, few websites have implemented client hints. We also see 
 
 ## How websites give you a privacy choice: Privacy preference signals
 
-In light of the recent introduction of privacy regulations, such as the [GDPR](https://ec.europa.eu/info/law/law-topic/data-protection/data-protection-eu) in Europe, [CCPA](https://www.oag.ca.gov/privacy/ccpa) in California, <a hreflang="pt-br" href="https://www.gov.br/cidadania/pt-br/acesso-a-informacao/lgpd">LGPD</a> in Brazil, the [PDP Bill](https://www.meity.gov.in/data-protection-framework) in India, and more, websites are required to obtain explicit user consent about the collection of personal data for any non-essential features such as marketing and analytics. 
-
-Therefore, websites turned to the use of cookie consent banners, privacy policies and other mechanisms to inform users about data sites process, and give them a choice. In this section, we look at the prevalence of such tools.
+In light of the recent introduction of privacy regulations, such as the [GDPR](https://ec.europa.eu/info/law/law-topic/data-protection/data-protection-eu) in Europe, [CCPA](https://www.oag.ca.gov/privacy/ccpa) in California, <a hreflang="pt-br" href="https://www.gov.br/cidadania/pt-br/acesso-a-informacao/lgpd">LGPD</a> in Brazil, the [PDP Bill](https://www.meity.gov.in/data-protection-framework) in India, and more, websites are required to obtain explicit user consent about the collection of personal data for any non-essential features such as marketing and analytics. Therefore, websites turned to the use of cookie consent banners, privacy policies and other mechanisms (which have [evolved over time](https://sciendo.com/article/10.2478/popets-2021-0069)) to inform users about what data these sites process, and give them a choice. In this section, we look at the prevalence of such tools.
 
 
 ### Consent Management Platforms
