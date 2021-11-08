@@ -226,12 +226,12 @@ With that being said, and the expectation that more websites will adopt `preload
 
 #### The `as` attribute
 
-The `as` attribute should be specified when using `rel="preload"` (or rel="prefetch") to specify the type of resource being downloaded. Applying the correct `as` attribute allows the browser to prioritize the resource more accurately. For example, preload as="script" will get a low or medium priority, while preload as="style" would get the highest priority. The `as` attribute is required for caching the resource for future requests and applying the correct <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">content-security policy</a>.
+The `as` attribute should be specified when using `rel="preload"` (or `rel="prefetch"`) to specify the type of resource being downloaded. Applying the correct `as` attribute allows the browser to prioritize the resource more accurately. For example, preload as="script" will get a low or medium priority, while preload as="style" would get the highest priority. The `as` attribute is required for caching the resource for future requests and applying the correct <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">content-security policy</a>.
 
 {{ figure_markup(
   image="preload-as-attribute-values.png",
   caption="rel=\"preload\" as attribute values.",
-  description="Bar chart showing the usage of values for rel=\"preload\". script is used 55% of the time on mobile and 54% on desktop. font is used 22% of the time on mobile and 23% on desktop. style is used 11% of the time on mobile and 11% on desktop. fetch is used 9% of the time on mobile and 8% on desktop. image is used 3% of the time on mobile and 3% on desktop. video is used 0% of the time on mobile and 0% on desktop. document is used 0% of the time on mobile and 0% on desktop. worker is used 0% of the time on mobile and 0% on desktop. audio is used 0% of the time on mobile and 0% on desktop. object is used 0% of the time on mobile and 0% on desktop. embed is used 0% of the time on mobile and 0% on desktop. track is used 0% of the time on mobile and 0% on desktop.",
+  description="Bar chart showing the usage of values for rel=\"preload\". script is used 55% of the time on mobile and 54% on desktop. font is used 22% of the time on mobile and 23% on desktop. style is used 11% of the time on mobile and 11% on desktop. fetch is used 9% of the time on mobile and 8% on desktop. image is used 3% of the time on mobile and 3% on desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1844544440&format=interactive",
   sheets_gid="1246058294",
   sql_file="hint_attribute_usage.sql"
@@ -254,17 +254,20 @@ Stylesheets are ordinarily embedded in the document's `<head>` and discovered ea
 
 Preload may also be used to initiate a request to retrieve data which you know is critical to the rendering of the page, such as a JSON response or stream.
 
+##### image
+
+Preloading images may be helpful in improving the LCP score when the image is not included in the initial HTML, such as a CSS `background-image`.
+
 #### The `crossorigin` attribute
 
 The `crossorigin` attribute is used to indicate whether CORS must be used when fetching the requested resource. This could apply to any resource type, but it is most commonly associated with font files as they should always be requested using CORS.
 
 <figure markdown>
-| value           | desktop | mobile | 
-|-----------------|---------|--------| 
-| not set         | 66.61%  | 65.91% | 
-|                 | 14.23%  | 13.23% | 
-| crossorigin     | 0.26%   | 0.25%  | 
-| use-credentials | 0.04%   | 0.04%  | 
+| value                       | desktop | mobile | 
+|-----------------------------|---------|--------| 
+| not set                     | 66.61%  | 65.91% | 
+| crossorigin (or equivalent) | 14.50%  | 13.48% | 
+| use-credentials             | 0.04%   | 0.04%  | 
 
 <figcaption>{{ figure_link(caption="rel=\"preload\" crossorigin attribute values.", sheets_gid="1246058294", sql_file="hint_attribute_usage.sql") }}</figcaption>
 </figure>
@@ -313,7 +316,7 @@ When you preload a resource which is not needed within the first few seconds of 
 In such cases, the preload hint is regressing the website's performance, as you are instructing the browser to download and prioritize files or resources which are not needed immediately - or even not needed at all. This is one of the challenges when using resource hints, as they require regular maintenance and automating the process opens the door to allow such issues to creep in.
 
 {{ figure_markup(
-  caption="The most unused `rel="preload"` hints on a single page",
+  caption="The most unused rel=\"preload\" hints on a single page",
   content="389",
   classes="big-number",
   sheets_gid="2013605735",
@@ -345,7 +348,7 @@ There are 17,861 cases of unrecognised values, with the most frequent error bein
 
 {{ figure_markup(
   caption="Pages incorrectly used as=\"stylesheet\" instead of \"style\"",
-  content="1114",
+  content="1,114",
   classes="big-number",
   sheets_gid="1681733418",
   sql_file="consoleLog_unused_preload.sql"
@@ -398,26 +401,26 @@ Native image and iframe lazy-loading have been standardized in 2019 and since th
 Browsers which do not support the loading attribute, will simply ignore it - making it safe to add without unwanted side-effects. JavaScript based alternatives, such as <a hreflang="en" href="https://github.com/aFarkas/lazysizes">lazysizes</a> may still be used, however considering that full browser support is around the corner, it may not be worth adding to a project at this stage.
 
 {{ figure_markup(
-  image="http-headers-vs-html-markup.png",
-  caption="Popularity of resource hints as HTTP Headers and HTML markup.",
-  description="Bar chart showing the popularity of resource hints as HTTP Headers and HTML markup. HTML markup is used on 91.24% of instances on desktop and 94.13% of instances on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1056457221&format=interactive",
-  sheets_gid="1707816066",
-  sql_file="http_headers_hints_adoption.sql"
+  image="adoption-of-loading-lazy-on-img.png",
+  caption="The percent of pages that have the loading=lazy attribute on img elements.",
+  description="Time series showing the percent of pages that have the loading=lazy attribute on img elements on desktop and mobile. At 01/01/2019 the adoption rate is 0% on desktop and 0% on mobile. At 01/01/2020 the adoption rate is 0% on desktop and 0% on mobile. At 01/01/2021 the adoption rate is 14.2% on desktop and 13.5% on mobile. At 10/01/2021, the adoption rate is 19.4% on desktop and 19.4% on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1314627953&format=interactive",
+  sheets_gid="157636784",
+  sql_file="imgLazy.sql"
   )
 }}
 
 The number of pages using `loading="lazy"` has grown from 4.17% in 2020 to 18.28% in 2021. This rapid growth is extraordinary and is likely driven by two key elements. The ease with which it could be added to pages without cross-browser compatibility issues, and the frameworks or technologies powering these websites. In WordPress 5.5, <a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">lazy-loading images became the default implementation</a>, supercharging the adoption rate of `loading="lazy"`, with WordPress sites now making up <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">84%</a> of all pages which use native image lazy-loading.
 
-An <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">analysis</a> of the load times for pages which use lazy-loading indicated that pages which use lazy-loading tend to have a worse LCP performance, possibly caused by overusing the lazy-loading attribute on the LCP element which shouldn't be lazy-loaded. If you are using `loading="lazy"`, you should check that the lazily-loaded images are below the fold and more critically, that the [LCP element is not lazy-loaded](./performance). More than 60% of all images which are lazy-load are actually within the initial viewport and shouldn't be lazy-loaded.)
+A <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">study</a> on the load times for pages which use lazy-loading, indicated that pages which use lazy-loading tend to have a worse LCP performance, possibly caused by overusing the lazy-loading attribute. This is increasingly significant on the LCP element, which shouldn't be lazy-loaded. If you are using `loading="lazy"`, you should check that the lazily-loaded images are below the fold and more critically, that the [LCP element is not lazy-loaded](./performance). More than 60% of all images which are lazy-load are actually within the initial viewport and shouldn't be lazy-loaded.)
 
 {{ figure_markup(
-  image="http-headers-vs-html-markup.png",
-  caption="Popularity of resource hints as HTTP Headers and HTML markup.",
-  description="Bar chart showing the popularity of resource hints as HTTP Headers and HTML markup. HTML markup is used on 91.24% of instances on desktop and 94.13% of instances on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1056457221&format=interactive",
-  sheets_gid="1707816066",
-  sql_file="http_headers_hints_adoption.sql"
+  image="lazy-loaded-images.png",
+  caption="Percent of img elements with loading=lazy which are in the initial viewport.",
+  description="Bar chart showing the percent of img elements with loading=lazy which are within the initial viewport. 61.54% on mobile and 63.10% on desktop of lazy-loaded images are within the initial viewport.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=977858704&format=interactive",
+  sheets_gid="1468369891",
+  sql_file="lazy_viewport_images.sql"
   )
 }}
 
