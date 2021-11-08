@@ -8,7 +8,7 @@ SELECT
 
   SUM(total_with_track) / SUM(total_videos) AS pct_videos_with_tracks,
   COUNTIF(total_videos > 0) / COUNT(0) AS pct_sites_with_videos,
-  COUNTIF(total_with_track > 0) / COUNT(0) AS pct_sites_with_videos_with_tracks
+  COUNTIF(total_with_track > 0) / COUNTIF(total_videos > 0) AS pct_video_sites_with_tracks
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
