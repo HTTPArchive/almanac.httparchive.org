@@ -9,7 +9,7 @@ editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1Mw6TjkIClRtlZPHbij5corOZbaSUp-vgTVq3Ig18IwQ/
 kevinfarrugia_bio: Kevin Farrugia is a consultant on web performance and software architecture. You can find him blogging on <a hreflang="en" href="https://imkev.dev">imkev.dev</a>.
-featured_quote: Resource hints could become a double-edged sword if the benefit for your users is not evaluated. A quarter of preload requests went unused while the number of preload hits correlated with slower load times.
+featured_quote: Resource hints could become a double-edged sword if the benefit for your users is not evaluated. Nearly a quarter of preload requests went unused while the number of preload hits correlated with slower load times.
 featured_stat_1: 44.28%
 featured_stat_label_1: Adoption of preload in the top 1,000 websites.
 featured_stat_2: 21.48%
@@ -365,11 +365,11 @@ More than 5% of pages which preload font files, preload more font files than nee
 
 ### Third Parties
 
-You are able to use resource hints to connect to or download resources from both first and [third parties](./third-parties). While `dns-prefetch` and `preconnect` are only useful when connecting to different origins, including subdomains; `preload` and `prefetch` may be used for both resources on the same origin and resources hosted by third parties.
+You are able to use resource hints to connect to, or download resources from, both first and [third parties](./third-parties). While `dns-prefetch` and `preconnect` are only useful when connecting to different origins, including subdomains; `preload` and `prefetch` may be used for both resources on the same origin and resources hosted by third parties.
 
-When considering which resource hints you should use for third party resources, you need to evaluate the priority and role of each third party on your application's loading experience and whether the costs are justified. 
+When considering which resource hints you should use for third-party resources, you need to evaluate the priority and role of each third party on your application's loading experience and whether the costs are justified. 
 
-Prioritising third party resources over your own content is potentially a warning sign, however there are cases when this is recommended. As an example, if we look at cookie notice scripts; which are required in the European Union by General Data Protection Regulation; these are usually accompanied by a `dns-prefetch` or `preconnect` script as they are highly obtrusive to the user experience and also a prerequisite for some site functions, such as serving personalised ads.
+Prioritising third-party resources over your own content is potentially a warning sign, however there are cases when this is recommended. As an example, if we look at cookie notice scripts; which are required in the European Union by General Data Protection Regulation; these are usually accompanied by a `dns-prefetch` or `preconnect` script as they are highly obtrusive to the user experience and also a prerequisite for some site functions, such as serving personalised ads.
 
 <figure markdown>
 | host                       | dns-prefetch | preconnect | preload | Total       | 
@@ -398,7 +398,7 @@ Native image and iframe lazy-loading have been standardized in 2019 and since th
 
 `loading="lazy"` on images is supported on most major browsers. On Safari, it is marked as <a hreflang="en" href="https://bugs.webkit.org/show_bug.cgi?id=200764">in progress</a> and is available behind a flag, but not yet enabled by default. Lazy-loading of iframes has similar support, although it is <a hreflang="en" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1622090">not yet supported on Firefox</a>.
 
-Browsers which do not support the loading attribute, will simply ignore it - making it safe to add without unwanted side-effects. JavaScript based alternatives, such as <a hreflang="en" href="https://github.com/aFarkas/lazysizes">lazysizes</a> may still be used, however considering that full browser support is around the corner, it may not be worth adding to a project at this stage.
+Browsers which do not support the `loading` attribute, will simply ignore it - making it safe to add without unwanted side-effects. JavaScript based alternatives, such as <a hreflang="en" href="https://github.com/aFarkas/lazysizes">lazysizes</a> may still be used, however considering that full browser support is around the corner, it may not be worth adding to a project at this stage.
 
 {{ figure_markup(
   image="adoption-of-loading-lazy-on-img.png",
