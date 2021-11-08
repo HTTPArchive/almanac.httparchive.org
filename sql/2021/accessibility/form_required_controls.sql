@@ -74,6 +74,7 @@ RETURNS STRUCT<total INT64, asterisk INT64, required_attribute INT64, aria_requi
 SELECT
   client,
   COUNT(0) AS total_sites,
+  COUNTIF(stats.total > 0) AS total_sites_with_required_controls,
   SUM(stats.total) AS total_required_controls,
 
   SUM(stats.asterisk) AS total_asterisk,
