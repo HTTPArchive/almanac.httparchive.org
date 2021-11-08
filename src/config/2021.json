@@ -244,11 +244,22 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/44442451?v=4&s=200",
       "github": "AbbyTsai"
     },
+    "andydavies": {
+      "name": "Andy Davies",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/427052?v=4&s=200",
+      "website": "http://andydavies.me/",
+      "github": "andydavies",
+      "twitter": "AndyDavies"
+    },
     "tunetheweb": {
       "name": "Barry Pollard",
       "teams": [
         "developers",
-        "leads"
+        "leads",
+        "reviewers"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/10931297?v=4&s=200",
       "website": "https://www.tunetheweb.com",
@@ -266,6 +277,17 @@
       "github": "obto",
       "twitter": "theobto"
     },
+    "kevinfarrugia": {
+      "name": "Kevin Farrugia",
+      "teams": [
+        "authors",
+        "leads"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/8075326?v=4&s=200",
+      "website": "https://imkev.dev",
+      "github": "kevinfarrugia",
+      "twitter": "imkevdev"
+    },
     "lucasbona05": {
       "name": "Lucas Gonçalves",
       "teams": [
@@ -279,6 +301,15 @@
       "teams": [
         "designers"
       ]
+    },
+    "nithanaroy": {
+      "name": "Nitin Pasumarthy",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/670556?v=4&s=200",
+      "github": "nithanaroy",
+      "twitter": "nithanaroy"
     },
     "paulcalvano": {
       "name": "Paul Calvano",
@@ -299,33 +330,6 @@
       "github": "rviscomi",
       "twitter": "rick_viscomi"
     },
-    "shantsis": {
-      "name": "Shaina Hantsis",
-      "teams": [
-        "designers"
-      ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/22671477?v=4&s=200",
-      "github": "shantsis"
-    },
-    "GeekBoySupreme": {
-      "name": "Shuvam Manna",
-      "teams": [
-        "designers"
-      ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/15321738?v=4&s=200",
-      "github": "GeekBoySupreme",
-      "twitter": "shuvam360",
-      "website": "https://shuvam.xyz"
-    },
-    "nithanaroy": {
-      "name": "Nitin Pasumarthy",
-      "teams": [
-        "analysts"
-      ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/670556?v=4&s=200",
-      "github": "nithanaroy",
-      "twitter": "nithanaroy"
-    },
     "samarpanda": {
       "name": "Samar Panda",
       "teams": [
@@ -333,6 +337,14 @@
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/802163?v=4&s=200",
       "github": "samarpanda"
+    },
+    "shantsis": {
+      "name": "Shaina Hantsis",
+      "teams": [
+        "designers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/22671477?v=4&s=200",
+      "github": "shantsis"
     },
     "siakaramalegos": {
       "name": "Sia Karamalegos",
@@ -345,16 +357,15 @@
       "linkedin": "karamalegos",
       "twitter": "TheGreenGreek"
     },
-    "kevinfarrugia": {
-      "name": "Kevin Farrugia",
+    "GeekBoySupreme": {
+      "name": "Shuvam Manna",
       "teams": [
-        "authors",
-        "leads"
+        "designers"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/8075326?v=4&s=200",
-      "website": "https://imkev.dev",
-      "github": "kevinfarrugia",
-      "twitter": "imkevdev"
+      "avatar_url": "https://avatars3.githubusercontent.com/u/15321738?v=4&s=200",
+      "github": "GeekBoySupreme",
+      "twitter": "shuvam360",
+      "website": "https://shuvam.xyz"
     }
   }
 }
