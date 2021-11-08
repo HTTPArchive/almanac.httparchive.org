@@ -7,11 +7,11 @@ SELECT
   COUNTIF(firstHtml) AS firstHtmlHits,
   SUM(COUNTIF(firstHtml)) OVER (PARTITION BY client) AS firstHtmlTotalHits,
   ROUND((COUNTIF(firstHtml) * 100 / (0.001 + SUM(COUNTIF(firstHtml)) OVER (PARTITION BY client))), 2) AS firstHtmlHitsPct,
-  
+
   COUNTIF(NOT firstHtml AND NOT sameHost AND sameDomain) AS subDomainHits,
   SUM(COUNTIF(NOT firstHtml AND NOT sameHost AND sameDomain)) OVER (PARTITION BY client) AS subDomainTotalHits,
   ROUND((COUNTIF(NOT firstHtml AND NOT sameHost AND sameDomain) * 100 / (0.001 + SUM(COUNTIF(NOT firstHtml AND NOT sameHost AND sameDomain)) OVER (PARTITION BY client))), 2) AS subDomainHitsPct,
-  
+
   COUNTIF(NOT firstHtml AND NOT sameHost AND NOT sameDomain) AS thirdPartyHits,
   SUM(COUNTIF(NOT firstHtml AND NOT sameHost AND NOT sameDomain)) OVER (PARTITION BY client) AS thirdPartyTotalHits,
   ROUND((COUNTIF(NOT firstHtml AND NOT sameHost AND NOT sameDomain) * 100 / (0.001 + SUM(COUNTIF(NOT firstHtml AND NOT sameHost AND NOT sameDomain)) OVER (PARTITION BY client))), 2) AS thirdPartyHitsPct,

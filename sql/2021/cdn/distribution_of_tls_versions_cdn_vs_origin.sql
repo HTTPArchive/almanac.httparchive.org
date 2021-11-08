@@ -1,7 +1,7 @@
 #standardSQL
 # distribution_of_tls_versions_cdn_vs_origin: Percentage of HTTPS responses by TLS Version with and without CDN
 SELECT
-  a.client, 
+  a.client,
   IF(cdn = "ORIGIN", "ORIGIN", "CDN") AS cdn, firstHtml,
   COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.0') AS tls10,
   COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.1') AS tls11,
