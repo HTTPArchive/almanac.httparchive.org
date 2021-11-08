@@ -5,19 +5,19 @@ SELECT
   cdn,
   COUNTIF(firstHtml) AS firstHtmlHits,
   SUM(COUNTIF(firstHtml)) OVER (PARTITION BY client) AS firstHtmlTotalHits,
-  ROUND((COUNTIF(firstHtml) * 100 / (0.001 + SUM(COUNTIF(firstHtml)) OVER (PARTITION BY client))) AS firstHtmlHitsPct,
+  SAFE_DIVIDE(COUNTIF(firstHtml), SUM(COUNTIF(firstHtml)) OVER (PARTITION BY client)) AS firstHtmlHitsPct,
 
   COUNTIF(NOT firstHtml AND NOT sameHost AND sameDomain) AS subDomainHits,
   SUM(COUNTIF(NOT firstHtml AND NOT sameHost AND sameDomain)) OVER (PARTITION BY client) AS subDomainTotalHits,
-  ROUND((COUNTIF(NOT firstHtml AND NOT sameHost AND sameDomain) * 100 / (0.001 + SUM(COUNTIF(NOT firstHtml AND NOT sameHost AND sameDomain)) OVER (PARTITION BY client))) AS subDomainHitsPct,
+  SAFE_DIVIDE(COUNTIF(NOT firstHtml AND NOT sameHost AND sameDomain), SUM(COUNTIF(NOT firstHtml AND NOT sameHost AND sameDomain)) OVER (PARTITION BY client)) AS subDomainHitsPct,
 
   COUNTIF(NOT firstHtml AND NOT sameHost AND NOT sameDomain) AS thirdPartyHits,
   SUM(COUNTIF(NOT firstHtml AND NOT sameHost AND NOT sameDomain)) OVER (PARTITION BY client) AS thirdPartyTotalHits,
-  ROUND((COUNTIF(NOT firstHtml AND NOT sameHost AND NOT sameDomain) * 100 / (0.001 + SUM(COUNTIF(NOT firstHtml AND NOT sameHost AND NOT sameDomain)) OVER (PARTITION BY client))) AS thirdPartyHitsPct,
+  SAFE_DIVIDE(COUNTIF(NOT firstHtml AND NOT sameHost AND NOT sameDomain), SUM(COUNTIF(NOT firstHtml AND NOT sameHost AND NOT sameDomain)) OVER (PARTITION BY client)) AS thirdPartyHitsPct,
 
   COUNT(0) AS hits,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS totalHits,
-  ROUND((COUNT(0) * 100 / (0.001 + SUM(COUNT(0)) OVER (PARTITION BY client))) AS hitsPct
+  SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS hitsPct
 FROM
   (
     SELECT
