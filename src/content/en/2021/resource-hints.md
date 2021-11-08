@@ -8,7 +8,7 @@ analysts: [nithanaroy]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1Mw6TjkIClRtlZPHbij5corOZbaSUp-vgTVq3Ig18IwQ/
-kevinfarrugia_bio: Kevin Farrugia is a consultant on web performance and software architecture. You can find him on <a hreflang="en" href="https://imkev.dev">imkev.dev</a>.
+kevinfarrugia_bio: Kevin Farrugia is a consultant on web performance and software architecture. You can find him blogging on <a hreflang="en" href="https://imkev.dev">imkev.dev</a>.
 featured_quote: Resource hints could become a double-edged sword if the benefit for your users is not evaluated. A quarter of preload requests went unused while the number of preload hits correlated with slower load times.
 featured_stat_1: 44.28%
 featured_stat_label_1: Adoption of preload in the top 1,000 websites.
