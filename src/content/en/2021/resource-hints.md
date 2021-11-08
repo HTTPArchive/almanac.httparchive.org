@@ -384,7 +384,6 @@ You are able to use resource hints to connect to, or download resources from, bo
 
 When considering which resource hints you should use for third-party resources, you need to evaluate the priority and role of each third party on your application's loading experience and whether the costs are justified. 
 
-<<<<<<< HEAD
 Prioritising third-party resources over your own content is potentially a warning sign, however there are cases when this is recommended. As an example, if we look at cookie notice scripts; which are required in the European Union by <a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">General Data Protection Regulation</a>; these are usually accompanied by a `dns-prefetch` or `preconnect` script as they are highly obtrusive to the user experience and also a prerequisite for some site functions, such as serving personalised ads.
 
 <figure>
@@ -471,23 +470,6 @@ Prioritising third-party resources over your own content is potentially a warnin
       </tr>
     </tbody>
   </table>
-=======
-Prioritising third-party resources over your own content is potentially a warning sign, however there are cases when this is recommended. As an example, if we look at cookie notice scripts; which are required in the European Union by General Data Protection Regulation; these are usually accompanied by a `dns-prefetch` or `preconnect` script as they are highly obtrusive to the user experience and also a prerequisite for some site functions, such as serving personalised ads.
-
-<figure markdown>
-| host                       | dns-prefetch | preconnect | preload | Total       | 
-|----------------------------|--------------|------------|---------|-------------| 
-| adservice.google.com       | 0.25%        | 0.37%      | 42.72%  | 43.34%      | 
-| fonts.gstatic.com          | 0.82%        | 25.45%     | 0.74%   | 27.01%      | 
-| fonts.googleapis.com       | 14.09%       | 4.59%      | 3.05%   | 21.72%      | 
-| s.w.org                    | 20.00%       | 0.25%      | -       | 20.25%      | 
-| cdn.shopify.com            | -            | 1.82%      | 12.16%  | 13.98%      | 
-| www.google-analytics.com   | 1.27%        | 4.05%      | 0.17%   | 5.49%       | 
-| www.googletagmanager.com   | 1.94%        | 3.14%      | 0.25%   | 5.32%       | 
-| siteassets.parastorage.com | -            | -          | 5.24%   | 5.24%       | 
-| images.squarespace-cdn.com | -            | 4.51%      | -       | 4.51%       | 
-| ajax.googleapis.com        | 2.30%        | 1.79%      | 0.36%   | 4.45%       | 
->>>>>>> 6392925d93123bead467d5f63919829bf5144a28
 
 <figcaption>{{ figure_link(caption="Most popular third parties connected to using resource hints.", sheets_gid="1254656281", sql_file="preload_host_by_url.sql") }}</figcaption>
 </figure>
