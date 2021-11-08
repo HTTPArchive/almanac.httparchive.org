@@ -320,7 +320,7 @@
     "nithanaroy": {
       "name": "Nitin Pasumarthy",
       "teams": [
-        "reviewers"
+        "analysts"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/670556?v=4&s=200",
       "github": "nithanaroy",
@@ -334,12 +334,22 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/802163?v=4&s=200",
       "github": "samarpanda"
     },
+    "siakaramalegos": {
+      "name": "Sia Karamalegos",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4777393?v=4&s=200",
+      "website": "https://sia.codes",
+      "github": "siakaramalegos",
+      "linkedin": "karamalegos",
+      "twitter": "TheGreenGreek"
+    },
     "kevinfarrugia": {
       "name": "Kevin Farrugia",
       "teams": [
-        "leads",
-        "analysts",
-        "reviewers"
+        "authors",
+        "leads"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/8075326?v=4&s=200",
       "website": "https://imkev.dev",
