@@ -45,4 +45,3 @@ GROUP BY
   client,
   status_code
 ORDER BY total DESC
-

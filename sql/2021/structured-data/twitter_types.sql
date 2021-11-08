@@ -14,29 +14,42 @@ LANGUAGE js AS """
 WITH
 rendered_data AS (
   SELECT
-    getTwitterTypes(rendered) AS twitter_types,
-    client
-  FROM (
-    SELECT
-      JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
-            '$._structured-data')),
-        '$.structured_data.rendered') AS rendered,
-      _TABLE_SUFFIX AS client
-    FROM
-      `httparchive.pages.2021_07_01_*`)
+    _TABLE_SUFFIX AS client,
+    url,
+    getTwitterTypes(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')), '$.structured_data.rendered')) AS twitter_types
+  FROM
+    `httparchive.pages.2021_07_01_*`
+),
+
+page_totals AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(0) AS total_pages
+  FROM
+    `httparchive.pages.2021_07_01_*`
+  GROUP BY
+    _TABLE_SUFFIX
 )
 
 SELECT
+  client,
   twitter_type,
-  COUNT(twitter_type) AS count,
-  SUM(COUNT(twitter_type)) OVER (PARTITION BY client) AS total,
-  COUNT(twitter_type) / SUM(COUNT(twitter_type)) OVER (PARTITION BY client) AS pct,
-  client
+  COUNT(twitter_type) AS freq_twitter,
+  SUM(COUNT(twitter_type)) OVER (PARTITION BY client) AS total_twitter,
+  COUNT(twitter_type) / SUM(COUNT(twitter_type)) OVER (PARTITION BY client) AS pct_twitter,
+  COUNT(DISTINCT url) AS freq_pages,
+  total_pages,
+  COUNT(DISTINCT url) / total_pages AS pct_pages
 FROM
   rendered_data,
   UNNEST(twitter_types) AS twitter_type
+JOIN
+  page_totals
+USING (client)
 GROUP BY
+  client,
   twitter_type,
-  client
+  total_pages
 ORDER BY
-  count DESC
+  pct_twitter DESC,
+  client
