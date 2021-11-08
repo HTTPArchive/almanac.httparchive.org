@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Resource Hints
-description: Resource Hints cahpter of the 2021 Web Almanac covering adoption of resource hints, their uses, bad practices and their impact on performance.
+description: Resource Hints chapter of the 2021 Web Almanac covering adoption of resource hints, their uses, bad practices and their impact on performance.
 authors: [kevinfarrugia]
 reviewers: [siakaramalegos, tunetheweb, samarpanda]
 analysts: [nithanaroy]
@@ -20,7 +20,7 @@ featured_stat_label_3: Lazy loaded images within the initial viewport.
 
 ## Introduction
 
-Resource Hints are instructions to the browser that you may use to improve a website's performance. This set of instructions enables you to assist the browser in prioritizing origins or resources which need to be fetched and processed.
+Resource Hints are instructions to the browser that you may use to improve a website's performance. This set of instructions enable you to assist the browser in prioritizing origins or resources which need to be fetched and processed.
 
 Let's take a closer look at how resource hints are implemented, what are the most common pitfalls and what we can do to make sure we are using resource hints as effectively as possible. 
 
