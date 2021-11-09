@@ -746,6 +746,228 @@ featured_stat_label_3: TODO
 
 
 
+{{ figure_markup(
+  image="most-color-stops.png",
+  classes="height-16vw-122px",
+  caption="The linear gradient with the most color stops.",
+  description="A screenshot of the gradient with the most color stops, which is a series of intricate multicolor stripes of varying hues.",
+  width=600,
+  height=100
+) }}
+
+
+
+{{ figure_markup(
+  image="top-layout-methods.png",
+  caption="The most commonly-declared layout types.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1090750625&format=interactive",
+  height=756,
+  sheets_gid="1349743417",
+  sql_file="layout_properties.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="flexbox-grid-adoption.png",
+  caption="Adoption of Flexbox and Grid layout on mobile devices.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1784148592&format=interactive",
+  sheets_gid="928762069",
+  sql_file="flexbox_grid.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="border-box-declarations-per-page.png",
+  caption="Distribution of the median number of `border-box` declarations per page.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1213231382&format=interactive",
+  sheets_gid="477060329",
+  sql_file="box_sizing.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="most-popular-transition-properties.png",
+  caption="The most popular properties given transition effects.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1505834154&format=interactive",
+  sheets_gid="1623088261",
+  sql_file="transition_properties.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="distribution-of-transition-durations.png",
+  caption="Distribution of transition durations.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=894159072&format=interactive",
+  sheets_gid="432079881",
+  sql_file="transition_durations.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="distribution-of-transition-delays.png",
+  caption="Distribution of transition delays.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=501863648&format=interactive",
+  sheets_gid="909003541",
+  sql_file="transition_delays.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="timing-functions.png",
+  caption="Adoption of transition timing functions.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1700244926&format=interactive",
+  sheets_gid="1217291895",
+  sql_file="transition_timing_functions.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="animation-name-categories.png",
+  caption="The most popular types of animation.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=676429696&format=interactive",
+  sheets_gid="721830186",
+  sql_file="transition_animation_names.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="media-query-features.png",
+  caption="The most popular features used as media queries.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1275783028&format=interactive",
+  height=671,
+  sheets_gid="1192142763",
+  sql_file="media_query_features.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="most-popular-breakpoints.png",
+  caption="The most popular media query breakpoints.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=990843085&format=interactive",
+  sheets_gid="1275086846",
+  sql_file="media_query_values.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="most-popular-properties-used-in-media-queries.png",
+  caption="The most popular properties to be changed via media queries.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=285981171&format=interactive",
+  sheets_gid="1782726219",
+  sql_file="media_query_properties.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="most-popular-features-queried.png",
+  caption="The most popular CSS features to be queried with `@supports`.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1806919245&format=interactive",
+  sheets_gid="349568482",
+  sql_file="supports_criteria.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="custom-property-usage.png",
+  caption="Change in custom property usage, 2019-2021.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=752724350&format=interactive",
+  sheets_gid="1813615348",
+  sql_file="custom_property_adoption.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="custom-property-names.png",
+  caption="The most popular custom property names.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=205956063&format=interactive",
+  sheets_gid="725813203",
+  sql_file="custom_property_names.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="custom-property-properties.png",
+  caption="The most popular properties to be given a custom-property value.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=951347176&format=interactive",
+  sheets_gid="1369726995",
+  sql_file="custom_property_properties.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="custom-property-value-types.png",
+  caption="Distribution of types of custom property values.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1962152689&format=interactive",
+  sheets_gid="2132273363",
+  sql_file="custom_property_value_types.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="custom-property-depth.png",
+  caption="Distribution of median custom property depth.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1735836564&format=interactive",
+  sheets_gid="1066390528",
+  sql_file="custom_property_depth.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="logical-property-and-value-usage.png",
+  caption="Distribution of property types of logical properties.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=190768531&format=interactive",
+  sheets_gid="1595217858",
+  sql_file="i18n_logical_properties.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="css-in-js-libraries.png",
+  caption="Distribution of CSS-in-JS libraries.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1003466201&format=interactive",
+  sheets_gid="1851845193",
+  sql_file="css_in_js.sql"
+) }}
+
+
+
 
 {# Reusable figure stubs
 
