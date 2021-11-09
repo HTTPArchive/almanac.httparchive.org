@@ -617,7 +617,7 @@ td .numeric-good {
 }
 
 td .numeric-bad {
-  color: #f00;
+  color: #e00;
 }
 
 tbody tr:nth-child(even) {
