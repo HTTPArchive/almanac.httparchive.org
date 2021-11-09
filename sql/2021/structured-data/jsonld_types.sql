@@ -33,29 +33,42 @@ LANGUAGE js AS """
 WITH
 rendered_data AS (
   SELECT
-    getJSONLDTypes(rendered) AS jsonld_types,
-    client
-  FROM (
-    SELECT
-      JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
-            '$._structured-data')),
-        '$.structured_data.rendered') AS rendered,
-      _TABLE_SUFFIX AS client
-    FROM
-      `httparchive.pages.2021_07_01_*`)
+    _TABLE_SUFFIX AS client,
+    url,
+    getJSONLDTypes(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')), '$.structured_data.rendered')) AS jsonld_types
+  FROM
+    `httparchive.pages.2021_07_01_*`
+),
+
+page_totals AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(0) AS total_pages
+  FROM
+    `httparchive.pages.2021_07_01_*`
+  GROUP BY
+    _TABLE_SUFFIX
 )
 
 SELECT
+  client,
   jsonld_type,
-  COUNT(jsonld_type) AS count,
-  SUM(COUNT(jsonld_type)) OVER (PARTITION BY client) AS total,
-  COUNT(jsonld_type) / SUM(COUNT(jsonld_type)) OVER (PARTITION BY client) AS pct,
-  client
+  COUNT(jsonld_type) AS freq_jsonld_type,
+  SUM(COUNT(jsonld_type)) OVER (PARTITION BY client) AS total_jsonld_type,
+  COUNT(jsonld_type) / SUM(COUNT(jsonld_type)) OVER (PARTITION BY client) AS pct_jsonld_type,
+  COUNT(DISTINCT url) AS freq_pages,
+  total_pages,
+  COUNT(DISTINCT url) / total_pages AS pct_pages
 FROM
   rendered_data,
   UNNEST(jsonld_types) AS jsonld_type
+JOIN
+  page_totals
+USING (client)
 GROUP BY
+  client,
   jsonld_type,
-  client
+  total_pages
 ORDER BY
-  count DESC
+  pct_jsonld_type DESC,
+  client
