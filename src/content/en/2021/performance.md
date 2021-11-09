@@ -175,24 +175,24 @@ In this section, we will dive down into each metric. For those who are less fami
 [Time-to-first-byte](https://web.dev/ttfb/) (TTFB) is the time between the browser requesting a page and when it receives the first byte of information from the server. It is the first metric in the chain for website loading. A poor TTFB will result in a chain reaction impacting FCP and LCP. It's also why we're choosing to talk about it first.
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
+  image="performance-TTFB-by-device.png",
+  caption="TTFB performance by device",
+  description="Stacked bar chart showing TTFB performance for desktop and mobile devices. For desktop devices, 26% of websites had good (< 0.5s), 55% needs improvement, and 19% poor (>= 1.5s) TTFB performance. For mobile, 15% were good, 59% needs improvement, and 26% poor.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=594735556&format=interactive",
   sheets_gid="730149797",
-  sql_file=".sql"
+  sql_file="web_vitals_by_device.sql"
   )
 }}
 
 TTFB was faster on desktop than mobile, presumably because of faster network speeds. Compared to [last year](https://almanac.httparchive.org/en/2020/performance#fig-17), TTFB marginally improved on desktop and slowed on mobile.
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
+  image="performance-TTFB-by-ect.png",
+  caption="TTFB performance by connection type",
+  description="Stacked bar chart showing TTFB performance for effective connection type. For offline websites, 43% had good, 39% needs improvement, and 18% poor performance. For slow 2G, 1% were good, 2% needs improvement, and 98% poor. For 2G, 0% were good, 2% needs improvement, and 97% poor. For 3G, 1% were good, 27% needs improvement, and 72% poor. For 4G, 19% were good, 58% needs improvement, and 23% poor.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1059484029&format=interactive",
   sheets_gid="730149797",
-  sql_file=".sql"
+  sql_file=web_vitals_by_eff_connection_type.sql"
   )
 }}
 
@@ -201,12 +201,12 @@ We have a long way to go for TTFB. 75% of our websites were in the 4G connection
 You may be asking yourself how TTFB can even occur with offline connections. Presumably, most of the offline sites that record and send TTFB data use [service worker caching](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Offline_Service_workers). Service worker startup time can be long (> 1 second) which could be why their "TTFB" isn't always below 0.5 seconds. Remember that the offline category only represents 0.02% of the data.
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
+  image="performance-TTFB-by-rank.png",
+  caption="TTFB performance by rank",
+  description="Stacked bar chart showing TTFB performance for each ranking group. For the top 1,000 websites, 32% had good, 63% needs improvement, and 5% poor performance. For the top 10,000, 27% were good, 66% needs improvement, and 7% poor. For the top 100,000, 22% were good, 65% needs improvement, and 13% poor. For the top 1,000,000, 18% were good, 62% needs improvement, and 20% poor. For all, 18% were good, 58% needs improvement, and 24% poor.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=829561432&format=interactive",
   sheets_gid="730149797",
-  sql_file=".sql"
+  sql_file="web_vitals_by_rank.sql"
   )
 }}
 
@@ -261,12 +261,12 @@ Only 5% of origins on WordPress experienced good TTFB in July 2021. Considering 
 [First Contentful Paint (FCP)](https://web.dev/fcp/) measures the time from when a load first begins until the browser first renders any contentful part of the page (e.g, text, images, etc.).
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
+  image="performance-FCP-by-device.png",
+  caption="FCP performance by device",
+  description="Stacked bar chart showing FCP performance for desktop and mobile devices. For desktop devices, 60% of websites had good (< 1.8s), 27% needs improvement, and 13% poor (>= 3.0s) FCP performance. For mobile, 38% were good, 38% needs improvement, and 24% poor.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1509111466&format=interactive",
   sheets_gid="730149797",
-  sql_file=".sql"
+  sql_file="web_vitals_by_device.sql"
   )
 }}
 
@@ -275,12 +275,12 @@ FCP was faster on desktop than mobile, likely due to both faster average network
 <p class="note"><strong>Note:</strong> The thresholds for FCP have changed since last year so be careful if you try to compare this year's data to last year's data.</p>
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
+  image="performance-FCP-by-ect.png",
+  caption="FCP performance by connection type",
+  description="Stacked bar chart showing FCP performance for effective connection type. For offline websites, 38% had good, 26% needs improvement, and 36% poor performance. For slow 2G, 100% were poor. For 2G, 1% were needs improvement, and 99% poor. For 3G, 4% were good, 21% needs improvement, and 75% poor. For 4G, 46% were good, 35% needs improvement, and 19% poor.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=679577784&format=interactive",
   sheets_gid="730149797",
-  sql_file=".sql"
+  sql_file="web_vitals_by_eff_connection_type.sql"
   )
 }}
 
@@ -289,12 +289,12 @@ Origins at 3G speeds and below experienced significant degradations in FCP. Agai
 [insert comment on offline - maybe slow startup of service workers (TTFB phase) plus too much JavaScript used for rendering? Could it also be that it times out/never renders?]
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
+  image="performance-FCP-by-rank.png",
+  caption="FCP performance by rank",
+  description="Stacked bar chart showing FCP performance for each ranking group. For the top 1,000 websites, 67% had good, 28% needs improvement. For the top 10,000, 62% were good, 31% needs improvement, and 7% poor. For the top 100,000, 54% were good, 35% needs improvement, and 12% poor. For the top 1,000,000, 49% were good, 35% needs improvement, and 16% poor. For all, 45% were good, 35% needs improvement, and 20% poor.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=965739974&format=interactive",
   sheets_gid="730149797",
-  sql_file=".sql"
+  sql_file="web_vitals_by_rank.sql"
   )
 }}
 
@@ -307,36 +307,36 @@ Common culprits for poor FCP are render-blocking resources, server response time
 [Largest Contentful Paint (LCP)](https://web.dev/lcp/) measures the time from start load to when the browser renders the largest image or text in the viewport.
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
+  image="performance-LCP-by-device.png",
+  caption="LCP performance by device",
+  description="Stacked bar chart showing LCP performance for desktop and mobile devices. For desktop devices, 60% of websites had good (< 2.5s), 27% needs improvement, and 12% poor (>= 4s) LCP performance. For mobile, 45% were good, 35% needs improvement, and 19% poor.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=556816803&format=interactive",
   sheets_gid="730149797",
-  sql_file=".sql"
+  sql_file="web_vitals_by_device.sql"
   )
 }}
 
 LCP was faster on desktop than mobile. TTFB affects LCP like FCP.  Comparisons by device, connection type, and rank all mirror the trends of FCP. Render-blocking resources, total weight, and loading strategies all affect LCP performance.
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
+  image="performance-LCP-by-ect.png",
+  caption="LCP performance by connection type",
+  description="Stacked bar chart showing LCP performance for effective connection type. For offline websites, 49% had good, 17% needs improvement, and 34% poor performance. For slow 2G, 1%  were needs improvement and 99% poor. For 2G, 4% were needs improvement and 96% poor. For 3G, 8% were good, 28% needs improvement, and 65% poor. For 4G, 51% were good, 33% needs improvement, and 16% poor.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=583947675&format=interactive",
   sheets_gid="730149797",
-  sql_file=".sql"
+  sql_file="web_vitals_by_eff_connection_type.sql"
   )
 }}
 
 [offline still mirrors fcp - see that explanation and include anything possibly unique for lcp - like maybe the image isn't in the cache or font-display block and no font in the cache. Though then something else would be marked as lcp so not sure it's any different than fcp in terms of reasons]
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
+  image="performance-LCP-by-rank.png",
+  caption="LCP performance by rank",
+  description="Stacked bar chart showing LCP performance for each ranking group. For the top 1,000 websites, 64% had good, 25% needs improvement, and 11% poor performance. For the top 10,000, 59% were good, 30% needs improvement, and 11% poor. For the top 100,000, 55% were good, 32% needs improvement, and 13% poor. For the top 1,000,000, 53% were good, 33% needs improvement, and 14% poor. For all, 50% were good, 33% needs improvement, and 17% poor.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1080361066&format=interactive",
   sheets_gid="730149797",
-  sql_file=".sql"
+  sql_file="web_vitals_by_rank.sql"
   )
 }}
 
@@ -401,36 +401,36 @@ Interestingly, 354 origins on desktop attempted to use native-lazy loading on HT
 ### Cumulative Layout Shift (CLS)
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
+  image="performance-CLS-by-device.png",
+  caption="CLS performance by device",
+  description="Stacked bar chart showing CLS performance for desktop and mobile devices. For desktop devices, 62% of websites had good (< 0.1), 23% needs improvement, and 15% poor (>= 0.25) CLS performance. For mobile, 62% were good, 21% needs improvement, and 17% poor.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=160840238&format=interactive",
   sheets_gid="730149797",
-  sql_file=".sql"
+  sql_file="web_vitals_by_device.sql"
   )
 }}
 
 [Cumulative Layout Shift (CLS)](https://web.dev/cls/) is characterized by how much shift a user experiences, not how long it takes to visually see something like FCP and LCP. As such, performance by device was fairly equivalent.
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
+  image="performance-CLS-by-ect.png",
+  caption="CLS performance by connection type",
+  description="Stacked bar chart showing CLS performance for effective connection type. For offline websites, 87% had good and 4% poor performance. For slow 2G and 2G, 53-52% were good, 15% needs improvement, and 32-33% poor. For 3G, 58% were good, 16% needs improvement, and 26% poor. For 4G, 69% were good, 13% needs improvement, and 18% poor.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1650043738&format=interactive",
   sheets_gid="730149797",
-  sql_file=".sql"
+  sql_file="web_vitals_by_eff_connection_type.sql"
   )
 }}
 
 Performance degradation from 4G to 3G and below was not as pronounced as with FCP and LCP. Some degradation exists, but it's not reflected in the device data, only the connection type.
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
+  image="performance-CLS-by-rank.png",
+  caption="CLS performance by rank",
+  description="Stacked bar chart showing CLS performance for each ranking group. For the top 1,000 websites, 53% had good, 25% needs improvement, and 21% poor performance. For the top 10,000, 46% were good, 27% needs improvement, and 27% poor. For the top 100,000, 48% were good, 26% needs improvement, and 26% poor. For the top 1,000,000, 54% were good, 25% needs improvement, and 21% poor. For all, 61% were good, 23% needs improvement, and 16% poor.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1468770181&format=interactive",
   sheets_gid="730149797",
-  sql_file=".sql"
+  sql_file="web_vitals_by_rank.sql"
   )
 }}
 
@@ -443,36 +443,36 @@ Common culprits for poor CLS include not reserving space for images, text shifts
 [First Input Delay (FID)](https://web.dev/fid/) measures the time from when a user first interacts with a page to the time the browser begins processing event handlers in response to that interaction.
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
+  image="performance-FID-by-device.png",
+  caption="FID performance by device",
+  description="Stacked bar chart showing FID performance for desktop and mobile devices. For desktop devices, 100% of websites had good (< 100ms). For mobile, 90% were good, 10% needs improvement, and 0% poor (>= 300ms).",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=230841623&format=interactive",
   sheets_gid="730149797",
-  sql_file=".sql"
+  sql_file="web_vitals_by_device.sql"
   )
 }}
 
 FID performance was better on desktop than on mobile devices likely due to device speeds which can better handle larger amounts of JavaScript.
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
+  image="performance-FID-by-ect.png",
+  caption="FID performance by connection type",
+  description="Stacked bar chart showing FID performance for effective connection type. For offline websites, 78% had good, 17% needs improvement, and 5% poor performance. For slow 2G and 2G, 81-82% were good, 18% needs improvement, and 0-1% poor. For 3G, 90% were good and 10% needs improvement. For 4G, 93% were good, 7% needs improvement, and 0% poor.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1135701788&format=interactive",
   sheets_gid="730149797",
-  sql_file=".sql"
+  sql_file="web_vitals_by_eff_connection_type.sql"
   )
 }}
 
 FID performance degraded some by connection type, but less so than the other metrics. The high distribution of scores seems to be reducing the amount of variance we're seeing in the analysis.
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
+  image="performance-FID-by-rank.png",
+  caption="FID performance by rank",
+  description="Stacked bar chart showing FID performance for each ranking group. For all categories, 93-94% had good, 5-7% needs improvement, and 0% poor performance.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1539782601&format=interactive",
   sheets_gid="730149797",
-  sql_file=".sql"
+  sql_file="web_vitals_by_rank.sql"
   )
 }}
 
