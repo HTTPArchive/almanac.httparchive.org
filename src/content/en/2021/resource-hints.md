@@ -282,7 +282,7 @@ The `crossorigin` attribute is used to indicate whether CORS must be used when f
     </tbody>
   </table>
 
-<figcaption>{{ figure_link(caption='`rel="preload" crossorigin` attribute values.', sheets_gid="1246058294", sql_file="hint_attribute_usage.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption='<code>rel="preload" crossorigin</code> attribute values.', sheets_gid="1246058294", sql_file="hint_attribute_usage.sql") }}</figcaption>
 </figure>
 
 ##### `anonymous`
