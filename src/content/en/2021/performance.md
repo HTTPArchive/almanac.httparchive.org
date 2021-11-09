@@ -198,7 +198,7 @@ TTFB was faster on desktop than mobile, presumably because of faster network spe
 
 We have a long way to go for TTFB. 75% of our websites were in the 4G connection group and 25% in the 3G group, with the remaining ones negligible. At 4G effective speeds, only 19% of origins had "good" performance.
 
-You may be asking yourself how TTFB can even occur with offline connections. Presumably, most of the offline sites that record and send TTFB data use [service worker caching](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Offline_Service_workers). Service worker startup time can be long (> 1 second) which could be why their "TTFB" isn't always below 0.5 seconds. Remember that the offline category only represents 0.02% of the data.
+You may be asking yourself how TTFB can even occur with offline connections. Presumably, most of the offline sites that record and send TTFB data use [service worker caching](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Offline_Service_workers). TTFB can also be thought of as "response start" regardless of whether a server is involved. Service worker startup times can be long, which could be why their "TTFB" isn't always below 0.5 seconds. Also, some of these sites may first check for a cache handler fail before serving up the service worker cache. Even with longer startup times, these sites on average achieve first byte faster than the other connection categories.
 
 {{ figure_markup(
   image="performance-TTFB-by-rank.png",
@@ -286,7 +286,7 @@ FCP was faster on desktop than mobile, likely due to both faster average network
 
 Origins at 3G speeds and below experienced significant degradations in FCP. Again, ensure that you are profiling your website using real devices and networks that reflect your user data from analytics. Your JavaScript bundles may not seem significant when you're only profiling on high-end desktops with fiber connections.
 
-[insert comment on offline - maybe slow startup of service workers (TTFB phase) plus too much JavaScript used for rendering? Could it also be that it times out/never renders?]
+Offline connections were closer in performance to 4G though not quite as good. Service worker start-up time plus multiple cache reads could be some causes. More factors come into play with FCP than with TTFB.
 
 {{ figure_markup(
   image="performance-FCP-by-rank.png",
@@ -328,7 +328,7 @@ LCP was faster on desktop than mobile. TTFB affects LCP like FCP.  Comparisons b
   )
 }}
 
-[offline still mirrors fcp - see that explanation and include anything possibly unique for lcp - like maybe the image isn't in the cache or font-display block and no font in the cache. Though then something else would be marked as lcp so not sure it's any different than fcp in terms of reasons]
+Offline origins with good LCP more closely matched 4G experiences, though poor LCP experiences were higher for offline. LCP occurs after FCP, and the additional budget of 0.7 seconds could be why more offline websites achieved good LCP than FCP.
 
 {{ figure_markup(
   image="performance-LCP-by-rank.png",
@@ -424,6 +424,8 @@ Interestingly, 354 origins on desktop attempted to use native-lazy loading on HT
 
 Performance degradation from 4G to 3G and below was not as pronounced as with FCP and LCP. Some degradation exists, but it's not reflected in the device data, only the connection type.
 
+Offline websites had the highest CLS performance of all connection types. For sites with service worker caching, some assets like images and ads that would otherwise cause layout shifts may not be cached. Thus, they would never load and never cause a layout shift. Often fallback HTML for these sites can be more basic versions of the online website.
+
 {{ figure_markup(
   image="performance-CLS-by-rank.png",
   caption="CLS performance by rank",
@@ -465,6 +467,8 @@ FID performance was better on desktop than on mobile devices likely due to devic
 }}
 
 FID performance degraded some by connection type, but less so than the other metrics. The high distribution of scores seems to be reducing the amount of variance we're seeing in the analysis.
+
+Unlike the other metrics, FID was worse for offline websites than any other connection category. This could be due to the more complex nature of many websites with service workers. Having a service worker does not eliminate the impact of client-side JavaScript running on the main thread.
 
 {{ figure_markup(
   image="performance-FID-by-rank.png",
