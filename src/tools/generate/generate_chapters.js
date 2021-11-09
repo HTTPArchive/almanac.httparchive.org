@@ -5,6 +5,7 @@ const prettier = require('prettier');
 
 const { convertSimpleMarkdown, find_markdown_files, get_yearly_configs, size_of, parse_array } = require('./shared');
 const { generate_table_of_contents } = require('./generate_table_of_contents');
+const { generate_extra_markdown_conversions } = require('./generate_extra_markdown_conversions');
 const { generate_header_links } = require('./generate_header_links');
 const { generate_figure_ids } = require('./generate_figure_ids');
 const { generate_typographic_punctuation_body, generate_typographic_punctuation_metadata } = require('./generate_typographic_punctuation');
@@ -144,6 +145,7 @@ const parse_file = async (markdown,chapter) => {
   let body = html;
 
   let m = converter.getMetadata();
+  body = generate_extra_markdown_conversions(body);
   body = generate_syntax_highlighting(body);
   body = generate_header_links(body);
   body = generate_figure_ids(body);
