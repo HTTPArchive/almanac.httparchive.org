@@ -99,7 +99,6 @@
           "chapter_number": "12",
           "title": "Privacy",
           "slug": "privacy",
-          "todo": "true",
           "hero_dir": "2020"
         },
         {
@@ -331,14 +330,23 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/58731469?v=4",
       "github": "lucasbona05"
     },
-    "webmaxru": {
-      "name": " Maxim Salnikov",
+    "max-ostapenko": {
+      "name": "Max Ostapenko",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/1611259?v=4&s=200",
+      "website": "https://maxostapenko.com",
+      "github": "max-ostapenko",
+      "twitter": "themax_o"
+    },
+    "maudnals": {
+      "name": " Maud",
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/1560278?v=4&s=200",
-      "github": "webmaxru",
-      "twitter": "webmaxru"
+      "avatar_url": "https://avatars.githubusercontent.com/u/9762897?v=4&s=200",
+      "github": "maudnals"
     },
     "michelleoconnor": {
       "name": "Michelle O'Connor",
@@ -398,11 +406,19 @@
         "analysts",
         "authors"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/6874341?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6874341?v=4&s=200",
       "github": "VictorLeP",
       "linkedin": "victor-le-pochat",
       "twitter": "VictorLePochat",
       "website": "https://lepoch.at"
-    }
+    },
+    "ydimova": {
+      "name": "Yana Dimova",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/9135107?v=4&s=200",
+      "github": "ydimova"
+    },
   }
 }
