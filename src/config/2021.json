@@ -341,7 +341,10 @@
       "twitter": "themax_o"
     },
     "webmaxru": {
-      "name": " Maxim Salnikov",
+      "name": " Maxim Salnikov",,
+      "teams": [
+        "reviewers"
+      ],
       "avatar_url": "https://avatars.githubusercontent.com/u/1560278?v=4&s=200",
       "github": "webmaxru",
       "twitter": "webmaxru"
