@@ -495,12 +495,12 @@ If your site's performance is not in the "good" category, then you definitely ha
 Unfortunately, TBT is not measured in the Chrome User Experience Report. But, we can still get an idea of what's going on using the HTTP Archive Lighthouse data (only collected for mobile):
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
+  image="performance-tbt.png",
+  caption="Lighthouse TBT scores",
+  description="Bar chart showing 31% of mobile pages with good TBT (<= 200ms), 11% with needs improvement, and 58% with poor (> 600ms) TBT.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=2135422883&format=interactive",
   sheets_gid="730149797",
-  sql_file=".sql"
+  sql_file="tbt.sql"
   )
 }}
 
