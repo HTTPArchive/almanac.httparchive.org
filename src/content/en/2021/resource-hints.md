@@ -72,7 +72,7 @@ Considering that the adoption of resource hints using HTTP headers is markedly s
 
 There are five resource hint link relationships supported by most browsers today: `dns-prefetch`, `preconnect`, `prefetch`, `prerender` and `preload`.
 
-##### dns-prefetch
+##### `dns-prefetch`
 
 The `dns-prefetch` link initiates an early request to resolve a domain name. It is only effective for DNS lookups on cross-origin domains and may be paired together with `preconnect`. While Chrome now supports a maximum of <a hreflang="en" href="https://source.chromium.org/chromium/chromium/src/+/fdf9418d23d434e0f7134da67dc41b0fe8268e91:net/dns/host_resolver_manager.cc;l=416">64</a> concurrent in-flight DNS requests - up from 6 last year - other browsers still have tighter limitations. For example, it is limited to <a hreflang="en" href="https://github.com/mozilla/gecko-dev/blob/master/netwerk/dns/nsHostResolver.h#L48">8</a> on Firefox.
 
@@ -80,7 +80,7 @@ The `dns-prefetch` link initiates an early request to resolve a domain name. It 
 <link rel="dns-prefetch" href="https://example.com/">
 ```
 
-##### preconnect
+##### `preconnect`
 
 The `preconnect` link behaves similarly to `dns-prefetch`, but in addition to DNS lookups, it also establishes a connection together with TLS handshake if served over HTTPS. You can use `preconnect` in place of `dns-prefetch` as it gives a greater performance boost; but you must use it sparingly as each certificate weighs at least 3KB, which would be competing with bandwidth for other resources. You also want to avoid wasting CPU time opening connections which aren't required for critical resource. Keep in mind that if a connection isn't used within a short time (e.g. 10 seconds on Chrome), it would automatically be closed by the browser.
 
@@ -88,7 +88,7 @@ The `preconnect` link behaves similarly to `dns-prefetch`, but in addition to DN
 <link rel="preconnect" href="https://example.com/">
 ```
 
-##### prefetch
+##### `prefetch`
 
 The `prefetch` link allows you to recommend to the browser that a resource might be required by the next navigation. The browser may initiate a low-priority request for the resource, possibly improving the user experience as it would be fetched from the cache when needed. The resource would not be preprocessed or executed until the user navigates to the page which requires the resource.
 
@@ -96,7 +96,7 @@ The `prefetch` link allows you to recommend to the browser that a resource might
 <link rel="prefetch" href="/library.js" as="script">
 ```
 
-##### prerender
+##### `prerender`
 
 The `prerender` link allows you render a page in the background, improving its load time if the user navigates to it. In addition to requesting the resource, the browser may preprocess and fetch and execute subresources. `prerender` could end up wasteful if the user does not navigate to the prerendered page. To reduce this risk, Chrome treats the `prerender` hint as a NoState Prefetch. Unlike a full prerender it won't execute JavaScript or render any part of the page in advance.
 
@@ -104,7 +104,7 @@ The `prerender` link allows you render a page in the background, improving its l
 <link rel="prerender" href="https://example.com/page-2/">
 ```
 
-##### preload
+##### `preload`
 
 Most modern browsers also <a hreflang="en" href="https://caniuse.com/link-rel-preload">support</a> the `preload` hint - and to a <a hreflang="en" href="https://caniuse.com/link-rel-modulepreload">lesser degree</a>, the <a hreflang="en" href="https://html.spec.whatwg.org/multipage/links.html#link-type-modulepreload">`modulepreload`</a> hint. The `preload` instruction initiates an early fetch for a resource which is required in the loading of a page and is most commonly used for late-discovered resources, such as font files or images referenced in stylesheets. Preloading a resource may be used to elevate its priority, allowing the developer to prioritize the loading of an LCP (<a hreflang="en" href="https://web.dev/lcp">Largest Contentful Paint</a>) image, even if this would otherwise be discovered while parsing the HTML.
 
@@ -222,7 +222,7 @@ The `as` attribute should be specified when using `rel="preload"` (or `rel="pref
 
 {{ figure_markup(
   image="preload-as-attribute-values.png",
-  caption='rel="preload" as attribute values.',
+  caption='`rel="preload" as` attribute values.',
   description='Bar chart showing the usage of values for rel="preload". script is used 55% of the time on mobile and 54% on desktop. font is used 22% of the time on mobile and 23% on desktop. style is used 11% of the time on mobile and 11% on desktop. fetch is used 9% of the time on mobile and 8% on desktop. image is used 3% of the time on mobile and 3% on desktop.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1844544440&format=interactive",
   sheets_gid="1246058294",
@@ -282,7 +282,7 @@ The `crossorigin` attribute is used to indicate whether CORS must be used when f
     </tbody>
   </table>
 
-<figcaption>{{ figure_link(caption='`rel="preload"` `crossorigin` attribute values.', sheets_gid="1246058294", sql_file="hint_attribute_usage.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption='`rel="preload" crossorigin` attribute values.', sheets_gid="1246058294", sql_file="hint_attribute_usage.sql") }}</figcaption>
 </figure>
 
 ##### `anonymous`
