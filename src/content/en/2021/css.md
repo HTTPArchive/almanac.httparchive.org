@@ -968,6 +968,144 @@ featured_stat_label_3: TODO
 
 
 
+{{ figure_markup(
+  image="declaration-repetition.png",
+  caption="Distribution of repetition of declarations per page.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1849063734&format=interactive",
+  sheets_gid="560362648",
+  sql_file="repetition.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="most-popular-longhand-properties-after-shorthands.png",
+  caption="The most common longhand properties to appear after their corresponding shorthand properties.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1051485878&format=interactive",
+  sheets_gid="1761101514",
+  sql_file="meta_shorthand_first_properties.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="usage-of-background-shorthand-vs-longhands.png",
+  caption="The most commonly used background properties.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=668445598&format=interactive",
+  height=429,
+  sheets_gid="886194727",
+  sql_file="all_properties.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="usage-of-margin-padding-shorthands-vs-longhands.png",
+  caption="The most commonly used margin and padding properties.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=918848418&format=interactive",
+  sheets_gid="886194727",
+  sql_file="all_properties.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="usage-of-font-shorthand-vs-longhands.png",
+  caption="The most commonly used font properties",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1034544520&format=interactive",
+  sheets_gid="886194727",
+  sql_file="all_properties.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="usage-of-flex-shorthands-vs-longhands.png",
+  caption="The most commonly used Flexbox-related properties.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=772069330&format=interactive",
+  sheets_gid="886194727",
+  sql_file="all_properties.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="usage-of-grid-properties.png",
+  caption="The most commonly used Grid-related properties.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=2100289470&format=interactive",
+  height=575,
+  sheets_gid="886194727",
+  sql_file="all_properties.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="most-popular-unknown-properties.png",
+  caption="The most common unknown properties.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=946019101&format=interactive",
+  height=401,
+  sheets_gid="1993096589",
+  sql_file="meta_unknown_properties.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="most-common-shorthands-after-longhands.png",
+  caption="The most common shorthand properties to (improperly) appear after any of their corresponding longhand properties.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=288419798&format=interactive",
+  height=388,
+  sheets_gid="1352208996",
+  sql_file="meta_longhand_first_properties.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="most-popular-sass-function-calls.png",
+  caption="The most commonly used Sass function calls.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=714529985&format=interactive",
+  height=552,
+  sheets_gid="400373190",
+  sql_file="sass_function_calls.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="usage-of-control-flow-statements-in-scss.png",
+  caption="The most commonly used Sass flow control structures.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=438915471&format=interactive",
+  sheets_gid="920758691",
+  sql_file="sass_control_flow_statements.sql"
+) }}
+
+
+
+{{ figure_markup(
+  image="usage-of-explicit-nesting-in-scss.png",
+  caption="The prevalence of rule-nesting in Sass.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=61926709&format=interactive",
+  height=455,
+  sheets_gid="1859409315",
+  sql_file="sass_nesting.sql"
+) }}
+
+
+
 
 {# Reusable figure stubs
 
