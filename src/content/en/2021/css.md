@@ -174,7 +174,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="top-important-properties.png",
   caption="The most popular properties targeted by `!important`.",
-  description="A chart showing the most properties most likely to be marked important using the '!important' keyword, as a percentage of all pages containing a property so marked.  Values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts.  The list is as follows: display 81% of pages, color 74% of pages, width 72%, height 70%, background 69%, padding 69%, margin 67%, border 66%, background-color 65%, position 61%.",
+  description="A chart showing the properties most likely to be marked important using the '!important' keyword, as a percentage of all pages containing a property so marked.  Values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts.  The list is as follows: display 81% of pages, color 74% of pages, width 72%, height 70%, background 69%, padding 69%, margin 67%, border 66%, background-color 65%, position 61%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=905910904&format=interactive",
   sheets_gid="1381789151",
   sql_file="meta_important_properties.sql"
@@ -231,7 +231,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-length-units.png",
   caption="The most popular length units.",
-  description="TODO",
+  description="A paired-column chart showing the most popular units used in length values.  The numbers are as follows.  px (pixel) 71% for both desktop and mobile.  % (percentage) 17% for desktop, 18% for mobile.  em (the m unit) 9% for both desktop and mobile.  rem (root-relative em) 2% for both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1920968690&format=interactive",
   sheets_gid="529909801",
   sql_file="units_frequency.sql"
@@ -375,7 +375,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-font-relative-units-of-length.png",
   caption="The most popular font-relative length units.",
-  description="TODO",
+  description="A pie chart showing the distribution of font-relative length values.  The figures are as follows.  em (the m unit) 81.7%, rem (root-relative em) 17.8%, ch (zero-width advance) 0.5%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=658259611&format=interactive",
   sheets_gid="529909801",
   sql_file="units_properties.sql"
@@ -386,7 +386,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="zero-lengths-by-unit.png",
   caption="The units (or lack thereof) used on zero-length values.",
-  description="TODO",
+  description="A pie chart showing the distribution of how zero lengths are labeled, or not.  The figures are as follows.  Unitless zero values 87.8%, 0px (pixels) 11.6%, all others 0.6%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=758334535&format=interactive",
   sheets_gid="2139699206",
   sql_file="units_zero.sql"
@@ -397,7 +397,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-properties-using-calc.png",
   caption="The most popular properties using `calc()` functions.",
-  description="TODO",
+  description="A paired-column chart showing the properties most likely to appear in calculation values.  Values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts.  The list is as follows: width 39%, left 18%, top 7%, height 5%, max-width 5%, min-height 3%, margin-left 3%, margin-right 3%, max-height 2%, right 2%, padding-bottom 1%, flex-basis 1%, padding-left 1%, font-size 1%, margin-top 1%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=907378413&format=interactive",
   sheets_gid="212269204",
   sql_file="calc_properties.sql"
@@ -408,7 +408,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-units-using-calc.png",
   caption="The most popular length units used in `calc()` functions.",
-  description="TODO",
+  description="A paired-column chart showing the value units most likely to be used in calculation values.  Values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts.  The list is as follows: px (pixels) 51%, percentage 38%, rem (root-relative em) 3%, vw (viewport width) 2%, em (the m unit) 2%, vh (viewport height) 2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=833777702&format=interactive",
   sheets_gid="605954740",
   sql_file="calc_units.sql"
@@ -419,7 +419,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-operators-using-calc.png",
   caption="The most popular operators used in `calc()` functions.",
-  description="TODO",
+  description="A paired-column chart showing the value units most likely to be used in calculation values.  Values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts.  The list is as follows: - 61%. + 18%, / (division) 14%, * (multiplication) 7%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1708226150&format=interactive",
   sheets_gid="464539022",
   sql_file="calc_operators.sql"
@@ -430,7 +430,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="units-per-calc-occurence.png",
   caption="The number of unique units used in `calc()` functions.",
-  description="TODO",
+  description="A paired-column chart showing how many unique unit types are used in calculation values.  Values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts.  The list is as follows.  One unit type, 16%.  Two unit types, 82%.  Three or mroe unit types, 1%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=276182784&format=interactive",
   sheets_gid="856430777",
   sql_file="calc_complexity_units.sql"
@@ -441,7 +441,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="global-keyword-adoption.png",
   caption="Usage of global keyword values.",
-  description="TODO",
+  description="A paired-column chart showing the usage of global keywords as a percentage of all pages using any global keyword.  Values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts.  The list is as follows: inherit 87%, initial 57%, unset 48%, revert 1%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=884074059&format=interactive",
   sheets_gid="731307554",
   sql_file="keyword_totals.sql"
@@ -452,7 +452,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-color-formats.png",
   caption="The most popular color value formats.",
-  description="TODO",
+  description="A paired-column chart showing the color syntax formats used, as a percentage of all occurrences of color values.  Values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts.  The list is as follows: #rrggbb 50%, #rgb 25%, rgba() 14%, transparent 8%, namedColor 1%.  Beyond that, the rest of the values are shown at 0%, in this order: rgb(), hsla(), #rrggbbaa, currentColor, system, hsl(), #rgba, color().",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=936970618&format=interactive",
   sheets_gid="2108707108",
   sql_file="color_formats.sql"
