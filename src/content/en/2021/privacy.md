@@ -298,10 +298,10 @@ Poor security management within a company can have a significant impact on its c
 
 
 {{ figure_markup(
-  image="data_breaches_pwned_domains_per_class.png",
+  image="data_breaches_pwned_accounts_per_class.png",
   caption="Number of impacted accounts in breaches per data class",
   description="Bar chart showing the number of user accounts involved in data breaches, according to the data class that leaked in the breach.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1542571659&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1612339126&format=interactive",
   sheets_gid="1158689200",
   sql_file="data_breaches_pwned_accounts_per_class.sql"
   )
