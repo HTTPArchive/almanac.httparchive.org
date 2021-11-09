@@ -8,9 +8,9 @@ LANGUAGE js AS '''
 var result = [];
 try {
     var images = JSON.parse(images_string);
-    for(index in images){            
+    for(img of images){            
       result.push({ 
-          url: images[index].url          
+          url: img.url          
       })
     }         
 } catch (e) {}
