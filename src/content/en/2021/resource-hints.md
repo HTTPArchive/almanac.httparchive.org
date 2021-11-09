@@ -82,7 +82,7 @@ The `dns-prefetch` link initiates an early request to resolve a domain name. It 
 
 ##### `preconnect`
 
-The `preconnect` link behaves similarly to `dns-prefetch`, but in addition to DNS lookups, it also establishes a connection together with TLS handshake if served over HTTPS. You can use `preconnect` in place of `dns-prefetch` as it gives a greater performance boost; but you must use it sparingly as each certificate weighs at least 3KB, which would be competing with bandwidth for other resources. You also want to avoid wasting CPU time opening connections which aren't required for critical resource. Keep in mind that if a connection isn't used within a short time (e.g. 10 seconds on Chrome), it would automatically be closed by the browser.
+The `preconnect` link behaves similarly to `dns-prefetch`, but in addition to DNS lookups, it also establishes a connection together with TLS handshake if served over HTTPS. You are able to use `preconnect` in place of `dns-prefetch` as it gives a greater performance boost; but you must use it sparingly as certificates are usually upwards of 3KB, which would be competing with bandwidth for other resources. You also want to avoid wasting CPU time opening connections which aren't required for critical resource. Keep in mind that if a connection isn't used within a short period of time (e.g., 10 seconds on Chrome), it would automatically be closed by the browser, wasting any `preconnect` effort.
 
 ```html
 <link rel="preconnect" href="https://example.com/">
@@ -98,7 +98,7 @@ The `prefetch` link allows you to recommend to the browser that a resource might
 
 ##### `prerender`
 
-The `prerender` link allows you render a page in the background, improving its load time if the user navigates to it. In addition to requesting the resource, the browser may preprocess and fetch and execute subresources. `prerender` could end up wasteful if the user does not navigate to the prerendered page. To reduce this risk, Chrome treats the `prerender` hint as a NoState Prefetch. Unlike a full prerender it won't execute JavaScript or render any part of the page in advance.
+The `prerender` link allows you render a page in the background, improving its load time if the user navigates to it. In addition to requesting the resource, the browser may preprocess and fetch and execute subresources. `prerender` could end up wasteful if the user does not navigate to the prerendered page. To reduce this risk, Chrome treats the `prerender` hint as a <a hreflang="en" href="https://developers.google.com/web/updates/2018/07/nostate-prefetch">NoState Prefetch</a>. Unlike a full prerender it won't execute JavaScript or render any part of the page in advance.
 
 ```html
 <link rel="prerender" href="https://example.com/page-2/">
@@ -480,7 +480,7 @@ Analyzing the table above, 42.72% of all pages which include a `preload` hint ar
   image="google-fonts.png",
   alt="Google Fonts instructions to embed a font.",
   caption='Google Fonts instructions to preconnect to fonts.gstatic.com and fonts.googleapis.com. From <a hreflang="en" href="https://fonts.google.com/">Google Fonts</a>.',
-  description='Code snippet titled "Use on the web" and preded with "To embed a font, copy the code into the &lt;head&gt; of your html". Code snippet states `&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;&lt;link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"&gt;`',
+  description='Code snippet titled "Use on the web" and subtitled with "To embed a font, copy the code into the &lt;head&gt; of your html". Code snippet states `&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;&lt;link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"&gt;`',
   width=536,
   height=510
   )
