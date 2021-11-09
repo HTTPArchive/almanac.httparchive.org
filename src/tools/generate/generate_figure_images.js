@@ -1,4 +1,7 @@
+const fs = require('fs-extra');
 const puppeteer = require('puppeteer');
+
+const { find_markdown_files } = require('./shared');
 
 const take_single_screenshot = async (graphUrl, filename) => {
   const browser = await puppeteer.launch();
@@ -16,12 +19,69 @@ const take_single_screenshot = async (graphUrl, filename) => {
   await browser.close();
 }
 
-const generate_images = async (chapter) => {
-  console.log("Generating for chapter:", chapter)
-  await take_single_screenshot('https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=290736860&format=interactive', 'static/images/2021/privacy/most_common_trackers.png')
-  await take_single_screenshot('https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1126546581&format=interactive', 'static/images/2021/privacy/most_common_tracker_categories.png')
-  //...etc.
+const generate_images = async (chapter_match) => {
+
+  if (chapter_match) {
+    // Remove any trailing .md and replace all paths with brackets to capture components
+    // en/2019/javascript.md -> (en)/(2019)/(javascript).md
+    chapter_match = chapter_match.replace(/\.md$/,'');
+    chapter_match = chapter_match.replace(/^content[\/\\]*/,'');
+    chapter_match = (process.platform != 'win32')
+                ? 'content\/' +  '(' + chapter_match.replace(/\//g,')/(') + ').md'
+                : 'content\\\\' +  '(' + chapter_match.replace(/\\/g,')\\\\(') + ').md';
+    re = new RegExp(chapter_match);
+  } else {
+    console.log('Please provide an argument of the form: en/2020/performance')
+    process.exit(1);
+  }
+
+  for (const file of await find_markdown_files()) {
+
+    let path, language, year, chapter;
+
+    try {
+      [path, language, year, chapter] = file.match(re);
+    } catch(error) {
+      // No match - skip to next in for loop
+      continue;
+    }
+
+    if (language !== "en") {
+      console.log("Skipping non-English chapter");
+      continue;
+    }
+
+    console.log(`Generating for chapter: ${chapter} for year ${year}`)
+
+    const markdown = await fs.readFile(file, 'utf-8');
+
+    const figure_regexp = /{{ figure_markup\([^}]*image=["']([^'"]*)["'][^}]*chart_url=["']([^'"]*)["'][^}]*\)[^}]*}}/g;
+    const matches = markdown.matchAll(figure_regexp);
+
+    for (const match of matches) {
+
+      const image_file = match[1];
+      const chart_url = match[2];
+
+      if (image_file.startsWith('..') || image_file.startsWith('http')) {
+        console.log(`Skipping: ${image_file} as not a chapter image`);
+        continue;
+      }
+
+      const file_path = `static/images/${year}/${chapter}/${image_file}`;
+
+      if (fs.existsSync(file_path)) {
+        console.log(`Skipping: ${image_file} as image already exists`);
+        continue;
+      }
+
+      console.log(`Generating image ${image_file}...`);
+      await take_single_screenshot(chart_url, file_path);
+    }
+  }
 }
+
+
 
 (async () => {
   try {
