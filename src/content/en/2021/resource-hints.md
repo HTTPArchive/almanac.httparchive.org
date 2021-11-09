@@ -14,8 +14,8 @@ featured_stat_1: 44.28%
 featured_stat_label_1: Adoption of preload in the top 1,000 websites.
 featured_stat_2: 21.48%
 featured_stat_label_2: Unused preload hints within the first 3 seconds.
-featured_stat_3: 60%
-featured_stat_label_3: Lazy loaded images are within the initial viewport.
+featured_stat_3: 438%
+featured_stat_label_3: Growth in adoption of native lazy loading on images.
 ---
 
 ## Introduction
@@ -82,7 +82,7 @@ The `dns-prefetch` link initiates an early request to resolve a domain name. It 
 
 ##### preconnect
 
-The `preconnect` link behaves similarly to `dns-prefetch`, but in addition to DNS lookups, it also establishes a connection together with TLS handshake if served over HTTPS. You are able to use `preconnect` in place of `dns-prefetch` as it gives a greater performance boost; but you must use it sparingly as each certificate weighs at least 3KB, which would be competing with bandwidth for other resources. You also want to avoid wasting CPU time opening connections which aren't required for critical resource. Keep in mind that if a connection isn't used within a short period of time (e.g. 10 seconds on Chrome), it would automatically be closed by the browser.
+The `preconnect` link behaves similarly to `dns-prefetch`, but in addition to DNS lookups, it also establishes a connection together with TLS handshake if served over HTTPS. You can use `preconnect` in place of `dns-prefetch` as it gives a greater performance boost; but you must use it sparingly as each certificate weighs at least 3KB, which would be competing with bandwidth for other resources. You also want to avoid wasting CPU time opening connections which aren't required for critical resource. Keep in mind that if a connection isn't used within a short time (e.g. 10 seconds on Chrome), it would automatically be closed by the browser.
 
 ```html
 <link rel="preconnect" href="https://example.com/">
@@ -98,7 +98,7 @@ The `prefetch` link allows you to recommend to the browser that a resource might
 
 ##### prerender
 
-The `prerender` link allows you render a page in the background, improving its load time if the user navigates to it. In addition to requesting the resource, the browser may also preprocess and fetch and execute subresources. `prerender` could end up wasteful if the user does not navigate to the prerendered page. To reduce this risk, Chrome treats the `prerender` hint as a NoState Prefetch. Unlike a full prerender it won't execute JavaScript or render any part of the page in advance.
+The `prerender` link allows you render a page in the background, improving its load time if the user navigates to it. In addition to requesting the resource, the browser may preprocess and fetch and execute subresources. `prerender` could end up wasteful if the user does not navigate to the prerendered page. To reduce this risk, Chrome treats the `prerender` hint as a NoState Prefetch. Unlike a full prerender it won't execute JavaScript or render any part of the page in advance.
 
 ```html
 <link rel="prerender" href="https://example.com/page-2/">
@@ -106,7 +106,7 @@ The `prerender` link allows you render a page in the background, improving its l
 
 ##### preload
 
-Most modern browsers also <a hreflang="en" href="https://caniuse.com/link-rel-preload">support</a> the `preload` hint - and to a <a hreflang="en" href="https://caniuse.com/link-rel-modulepreload">lesser degree</a>, the <a hreflang="en" href="https://html.spec.whatwg.org/multipage/links.html#link-type-modulepreload">`modulepreload`</a> hint. The `preload` instruction initiates an early fetch for a resource which is required in the loading of a page and is most commonly used for late-discovered resources, such as font files or images referenced in stylesheets. Preloading a resource may also be used to elevate its priority, allowing the developer to prioritize the loading of an LCP (<a hreflang="en" href="https://web.dev/lcp">Largest Contentful Paint</a>) image, even if this would otherwise be discovered while parsing the HTML.
+Most modern browsers also <a hreflang="en" href="https://caniuse.com/link-rel-preload">support</a> the `preload` hint - and to a <a hreflang="en" href="https://caniuse.com/link-rel-modulepreload">lesser degree</a>, the <a hreflang="en" href="https://html.spec.whatwg.org/multipage/links.html#link-type-modulepreload">`modulepreload`</a> hint. The `preload` instruction initiates an early fetch for a resource which is required in the loading of a page and is most commonly used for late-discovered resources, such as font files or images referenced in stylesheets. Preloading a resource may be used to elevate its priority, allowing the developer to prioritize the loading of an LCP (<a hreflang="en" href="https://web.dev/lcp">Largest Contentful Paint</a>) image, even if this would otherwise be discovered while parsing the HTML.
 
 `modulepreload` is a specialized alternative to `preload` and behaves similarly, however its usage is limited to <a hreflang="en" href="https://html.spec.whatwg.org/multipage/webappapis.html#module-script">module scripts</a>.
 
@@ -166,7 +166,7 @@ To counter this decrease, the top 1,000 pages have an increased adoption for the
 
 ### Usage
 
-Resource hints can be very effective if used correctly. By shifting the responsibility from the browser to the developer, it allows you to prioritise resources required for the critical rendering path and improve the load times & user experience.
+Resource hints can be very effective if used correctly. By shifting the responsibility from the browser to the developer, it allows you to prioritize resources required for the critical rendering path and improve the load times & user experience.
 
 <figure markdown>
 | rank       | preload | prefetch | preconnect | prerender | dns-prefetch | modulepreload |
@@ -208,7 +208,7 @@ By combining a page's <a hreflang="en" href="https://web.dev/cwv">Core Web Vital
 
 This same observation may be seen on a page's <a hreflang="en" href="https://web.dev/lcp">Largest Contentful Paint</a> and <a hreflang="en" href="https://web.dev/fcp">First Contentful Paint</a>, indicating that in many cases, the developer is prioritizing resources which aren't needed to render the LCP element and as a consequence degrading the user experience.
 
-While this doesn't prove that having preload hints causes a page to get slower, having many does coincide with having slower performance. Every page has its own unique requirements and it is impossible to apply a "one size fits all" approach, but in the majority of cases the number of preloaded resources should be kept low and resource prioritization should be delegated to the browser when possible.
+While this doesn't prove that having preload hints causes a page to get slower, having many does coincide with having slower performance. Every page has its unique requirements and it is impossible to apply a "one size fits all" approach, but in the majority of cases the number of preloaded resources should be kept low and resource prioritization should be delegated to the browser when possible.
 
 <p class="note">Note: In addition to the number of hints, the size of each preloaded resource has an impact on the website performance. The above figure does not take into consideration the size of each preloaded resource.</p>
 
@@ -244,11 +244,11 @@ Stylesheets are ordinarily embedded in the document's `<head>` and discovered ea
 
 ##### `fetch`
 
-Preload may also be used to initiate a request to retrieve data which you know is critical to the rendering of the page, such as a JSON response or stream.
+Preload may be used to initiate a request to retrieve data which you know is critical to the rendering of the page, such as a JSON response or stream.
 
 ##### `image`
 
-Preloading images may be helpful in improving the LCP score when the image is not included in the initial HTML, such as a CSS `background-image`.
+Preloading images may help improve the LCP score when the image is not included in the initial HTML, such as a CSS `background-image`.
 
 #### The `crossorigin` attribute
 
@@ -297,13 +297,13 @@ When requesting cross-origin resources which require authentication, for example
 
 An oft neglected feature available to `rel="preload"`, is the ability to specify media queries through the `media` attribute - with less than 4% of all preloads using this attribute. The `media` attribute accepts media queries allowing you to target the media type and specific browser features, such as viewport width. As an example, the `media` attribute would allow you to preload a low-resolution image on devices with a narrow viewport and a full-sized image on devices with a large viewport.
 
-In addition to the `media` attribute, the `<link>` element supports `imagesrcset` and `imagesizes` attributes which correspond to the `srcset` and `sizes` attributes on `<img>` elements. Using these attributes, you are able to use the same resource selection criteria that you would use on your image. Unfortunately their adoption is very low (less than 1%); most likely owing to the lack of <a hreflang="en" href="https://caniuse.com/mdn-html_elements_link_imagesizes">support</a> on Safari.
+In addition to the `media` attribute, the `<link>` element supports `imagesrcset` and `imagesizes` attributes which correspond to the `srcset` and `sizes` attributes on `<img>` elements. Using these attributes, you can use the same resource selection criteria that you would use on your image. Unfortunately their adoption is very low (less than 1%); most likely owing to the lack of <a hreflang="en" href="https://caniuse.com/mdn-html_elements_link_imagesizes">support</a> on Safari.
 
 <p class="note">Note: The <code>media</code> attribute is not available on all <code>&lt;link&gt;</code> elements as the spec suggests, but it is only available on <code>rel="preload"</code>.</p>
 
 ### Bad practices
 
-Owing to the versatility of `rel="preload"`, there isn't a clear set of rules dictating how to implement the preload hint, but we are able to learn a lot from our mistakes and understand how to avoid them.
+Owing to the versatility of `rel="preload"`, there isn't a clear set of rules dictating how to implement the preload hint, but we can learn a lot from our mistakes and understand how to avoid them.
 
 #### Unused preload
 
@@ -357,7 +357,7 @@ More than half of the cases when the `crossorigin` attribute on the `rel="preloa
 
 #### Invalid `as` attribute
 
-The `as` attribute plays an important role when preloading your resources and getting this wrong may also result in downloading the same resource twice. On most browsers, specifying an unrecognized `as` attribute will ignore the preload. The supported values are `audio`, `document`, `embed`, `fetch`, `font`, `image`, `object`, `script`, `style`, `track`, `worker` and `video`. 
+The `as` attribute plays an important role when preloading your resources and getting this wrong may result in downloading the same resource twice. On most browsers, specifying an unrecognized `as` attribute will ignore the preload. The supported values are `audio`, `document`, `embed`, `fetch`, `font`, `image`, `object`, `script`, `style`, `track`, `worker` and `video`. 
 
 There are 17,861 cases of unrecognised values, with the most frequent error being omitting it completely; while the most common invalid as values are `other` and `stylesheet` (the correct value is `style`).
 
@@ -380,7 +380,7 @@ More than 5% of pages which preload font files, preload more font files than nee
 
 ### Third Parties
 
-You are able to use resource hints to connect to, or download resources from, both first and [third parties](./third-parties). While `dns-prefetch` and `preconnect` are only useful when connecting to different origins, including subdomains; `preload` and `prefetch` may be used for both resources on the same origin and resources hosted by third parties.
+You can use resource hints to connect to, or download resources from, both first and [third parties](./third-parties). While `dns-prefetch` and `preconnect` are only useful when connecting to different origins, including subdomains; `preload` and `prefetch` may be used for both resources on the same origin and resources hosted by third parties.
 
 When considering which resource hints you should use for third-party resources, you need to evaluate the priority and role of each third party on your application's loading experience and whether the costs are justified. 
 
@@ -508,9 +508,9 @@ Browsers which do not support the `loading` attribute, will simply ignore it - m
   )
 }}
 
-The number of pages using `loading="lazy"` has grown from 4.17% in 2020 to 18.28% in 2021. This rapid growth is extraordinary and is likely driven by two key elements. The ease with which it could be added to pages without cross-browser compatibility issues, and the frameworks or technologies powering these websites. In WordPress 5.5, <a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">lazy-loading images became the default implementation</a>, supercharging the adoption rate of `loading="lazy"`, with WordPress sites now making up <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">84%</a> of all pages which use native image lazy-loading.
+The number of pages using `loading="lazy"` has grown from 4.17% in 2020 to 18.28% in 2021. That's a whopping 438% growth! This rapid growth is extraordinary and is likely driven by two key elements. The ease with which it could be added to pages without cross-browser compatibility issues, and the frameworks or technologies powering these websites. In WordPress 5.5, <a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">lazy-loading images became the default implementation</a>, supercharging the adoption rate of `loading="lazy"`, with WordPress sites now making up <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">84%</a> of all pages which use native image lazy-loading.
 
-A <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">study</a> on the load times for pages which use lazy-loading, indicated that pages which use lazy-loading tend to have a worse LCP performance, possibly caused by overusing the lazy-loading attribute. This is increasingly significant on the LCP element, which shouldn't be lazy-loaded. If you are using `loading="lazy"`, you should check that the lazily-loaded images are below the fold and more critically, that the [LCP element is not lazy-loaded](./performance). More than 60% of all images which are lazy-load are actually within the initial viewport and shouldn't be lazy-loaded.)
+A <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">study</a> on the load times for pages which use lazy-loading, indicated that pages which use lazy-loading tend to have a worse LCP performance, possibly caused by overusing the lazy-loading attribute. This is increasingly significant on the LCP element, which shouldn't be lazy-loaded. If you are using `loading="lazy"`, you should check that the lazily-loaded images are below the fold and more critically, that the [LCP element is not lazy-loaded](./performance). More than 60% of all lazy-load images are actually within the initial viewport and shouldn't be lazy-loaded.)
 
 {{ figure_markup(
   image="lazy-loaded-images.png",
@@ -530,13 +530,13 @@ HTTP/2 supports a technology called _Server Push_ that preemptively pushes a res
 
 Unfortunately HTTP/2 push has been disappointing with little evidence that it provides the performance boost promised, compared to the risk of over pushing resources that either the browser already has, or that are of less importance than resources the browser requests.
 
-So while the technology is widely available, overcoming these obstacles makes it highly unpopular - with less than 1% adoption on Chrome. Chrome has also filed an <a hreflang="en" href="https://lists.w3.org/Archives/Public/ietf-http-wg/2019JulSep/0078.html">Intent to Remove</a> that is paused until a testable implementation of 103 Early Hints is available.
+So while the technology is widely available, overcoming these obstacles makes it highly unpopular - with less than 1% adoption on Chrome. Chrome has also filed an <a hreflang="en" href="https://lists.w3.org/Archives/Public/ietf-http-wg/2019JulSep/0078.html">Intent to Remove</a> that is paused until a testable implementation of 103 Early Hints is available. Chrome <a hreflang="en" href="https://github.com/httpwg/http2-spec/issues/786#issuecomment-724371629">does not support</a> _Server Push_ on HTTP/3 either.
 
 ### Future
 
 While there are no proposals to add new rel directives, improvements from the browser vendors to the current set of resource hints - such as the prioritization <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=629420">bug</a> in Chrome - are expected to have a positive impact. Hint adoption is expected to evolve and the use of `preload` should shift towards its intended purpose - late discovered resources.
 
-Additionally, two proposals, 103 Early Hints and Priority Hints are expected to be made available in the near future, with experimental support already available on Chrome.
+Additionally, two proposals, 103 Early Hints and Priority Hints are expected to be made available soon, with experimental support already available on Chrome.
 
 #### 103 Early Hints
 
@@ -544,7 +544,7 @@ Chrome 95 added experimental support for <a hreflang="en" href="https://datatrac
 
 #### Priority Hints
 
-Priority hints inform the browser of the relative importance of resources within the page, with the goal of prioritising more important resources and improving Core Web Vitals. Priority Hints are enabled through the document markup by adding the `importance` attribute to resources, such as `<img>` or `<script>`. The `importance` attribute accepts an enumeration of `high`, `low` or `auto` and by combining this with the type of resource, the browser would be able to assign the optimal fetch priority based on its own heuristics. Priority Hints are available on Chrome 96 as an origin trial.
+Priority hints inform the browser of the relative importance of resources within the page, intending to prioritize critical resources and improve Core Web Vitals. Priority Hints are enabled through the document markup by adding the `importance` attribute to resources, such as `<img>` or `<script>`. The `importance` attribute accepts an enumeration of `high`, `low` or `auto` and by combining this with the type of resource, the browser would be able to assign the optimal fetch priority based on its heuristics. Priority Hints are available on Chrome 96 as an origin trial.
 
 ### Conclusion
 
