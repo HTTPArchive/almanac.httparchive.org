@@ -55,28 +55,40 @@ const generate_images = async (chapter_match) => {
 
     const markdown = await fs.readFile(file, 'utf-8');
 
-    const figure_regexp = /{{ figure_markup\([^}]*image=["']([^'"]*)["'][^}]*chart_url=["']([^'"]*)["'][^}]*\)[^}]*}}/g;
-    const matches = markdown.matchAll(figure_regexp);
+    // Let's not depend on the order of arguments to test for both
+    const figure_regexp1 = /{{ figure_markup\([^}]*image=["']([^'"]*)["'][^}]*chart_url=["']([^'"]*)["'][^}]*\)[^}]*}}/g;
+    const figure_regexp2 = /{{ figure_markup\([^}]*chart_url=["']([^'"]*)["'][^}]*image=["']([^'"]*)["'][^}]*\)[^}]*}}/g;
 
-    for (const match of matches) {
+    for (const regexp_type of [1, 2]) {
 
-      const image_file = match[1];
-      const chart_url = match[2];
+      const figure_regexp = (regexp_type == 1) ? figure_regexp1 : figure_regexp2;
 
-      if (image_file.startsWith('..') || image_file.startsWith('http')) {
-        console.log(`Skipping: ${image_file} as not a chapter image`);
-        continue;
+      const matches = markdown.matchAll(figure_regexp);
+      for (const match of matches) {
+
+        let image_file = match[1];
+        let chart_url = match[2];
+
+        if (figure_regexp == figure_regexp2) {
+          image_file = match[2];
+          chart_url = match[1];
+        }
+
+        if (image_file.startsWith('..') || image_file.startsWith('http')) {
+          console.log(`  Skipping: ${image_file} as not a chapter image`);
+          continue;
+        }
+
+        const file_path = `static/images/${year}/${chapter}/${image_file}`;
+
+        if (fs.existsSync(file_path)) {
+          console.log(`  Skipping: ${image_file} as image already exists`);
+          continue;
+        }
+
+        console.log(`  Generating image ${image_file}...`);
+        await take_single_screenshot(chart_url, file_path);
       }
-
-      const file_path = `static/images/${year}/${chapter}/${image_file}`;
-
-      if (fs.existsSync(file_path)) {
-        console.log(`Skipping: ${image_file} as image already exists`);
-        continue;
-      }
-
-      console.log(`Generating image ${image_file}...`);
-      await take_single_screenshot(chart_url, file_path);
     }
   }
 }

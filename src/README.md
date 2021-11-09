@@ -101,6 +101,42 @@ There is also a file watcher, which monitors the `content` directory and automat
 npm run watch
 ```
 
+## Generating chapter images
+
+To help in the conversion to markup dynamically generate chapter images from the command line to save this onus task.
+
+It can be run by passing a chapter markdown (with ot without the `.md` extension):
+
+```
+npm run figure-images en/2021/pwa
+```
+
+Which will then generate any missing figures based on the chapter markup, skipping images that already exist:
+
+```
+> almanac.httparchive.org@0.0.1 figure-images
+> node ./tools/generate/generate_figure_images "en/2021/pwa"
+
+Generating for chapter: pwa for year 2021
+  Skipping: pwa-service-worker-controlled-pages-by-rank.png as image already exists
+  Skipping: pwa-most-used-service-worker-events.png as image already exists
+  Skipping: pwa-service-worker-and-manifest-usage.png as image already exists
+  Skipping: pwa-top-pwa-manifest-properties.png as image already exists
+  Skipping: pwa-top-pwa-manifest-icon-sizes.png as image already exists
+  Skipping: pwa-manifest-display-values.png as image already exists
+  Skipping: pwa-manifests-preferring-native-app.png as image already exists
+  Skipping: pwa-industry-categories.png as image already exists
+  Skipping: pwa-lighthouse-pwa-audits.png as image already exists
+  Skipping: pwa-lighthouse-pwa-scores.png as image already exists
+  Skipping: pwa-libraries-and-scripts.png as image already exists
+  Skipping: pwa-top-workbox-versions.png as image already exists
+  Skipping: pwa-top-workbox-packages.png as image already exists
+  Generating image pwa-workbox-runtime-caching-strategies.png...
+  Generating image pwa-notification-acceptance-rates.png...
+  Generating image pwa-install-events.png...
+```
+
+Authors can delete images and rerun if they want to, to regenerate images.
 
 ## Linting files
 
