@@ -53,7 +53,15 @@ This section focuses on websites that reached the "good" threshold on all three 
 
 ### By Device
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image="performance-1-good-cwv-by-device.png",
+  caption="Good Core Web Vitals by Device from 2020 to 2021",
+  description="Bar chart showing the percent of origins with good Core Web Vitals in 2020 and 2021. In 2020, 34% of desktop websites were good and 24% of mobile websites. In 2021, 41% of desktop websites were good, and 29% of mobile ones.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=116267418&format=interactive",
+  sheets_gid="730149797",
+  sql_file="web_vitals_by_device.sql"
+  )
+}}
 
 <!-- TODO: note style -->
 <p class="note"><strong>Note:</strong> As the CLS calculation changed since last year, this is not an apples-to-apples comparison.</p>
@@ -66,13 +74,29 @@ As in previous years, performance was better on desktop machines than mobile dev
 
 The data by connection type in CrUX can be difficult to understand. It is not based on traffic. If a website has any experiences in a connection type, then it increases the denominator for that connection type. If the experiences were good for that website in that connection type, then it increases the numerator. Said another way, for all the websites which experienced page loads at 4G speed, 36% of those websites had good CWV:
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image="performance-2-good-cwv-by-ect.png",
+  caption="Good CWV performance by effective connection type",
+  description="Bar chart showing the percent of origins in a connection type with good Core Web Vitals. The offline category had 44% of websites with good CWV, 0% for slow 2G and 2G, 5% for 3G, and 36% for 4G.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=150765595&format=interactive",
+  sheets_gid="730149797",
+  sql_file="web_vitals_by_eff_connection_type.sql"
+  )
+}}
 
 Faster connections correlated with better Core Web Vitals performance. Offline performance was better presumably because of service worker caching in progressive web apps. Yet, the number of origins in the offline effective connection type category is negligible at 2,634 total (0.02%).
 
 The top takeaway is that 3G speeds and lower correlated with significant performance degradation. Consider providing pared-down experiences for access at low connection speeds (e.g., [data saver mode](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data/)). Profile your site with devices and connections that represent your users (based on your analytics data).
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image="performance-3-change-in-ect.png",
+  caption="Change in effective connection type 2020-2021 ",
+  description="Bar chart showing the percent of total origins within each connection type for 2020 and 2021. The offline category went from 0% to 0% of origins (2020 to 2021), 1% to 0% for slow 2G and 2G, 27% to 25% for 3G, and 72% to 75% for 4G.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=658987455&format=interactive",
+  sheets_gid="730149797",
+  sql_file="web_vitals_by_eff_connection_type.sql"
+  )
+}}
 
 Earlier, we mentioned year-over-year improvements in LCP and FID improvements. These could be partly due to faster mobile devices and mobile networks. The chart above shows total origins accessed on 3G speed dropped by 2 points while 4G origins increased by 3 points. Percent of origins is not necessarily correlated with traffic. But, I would guess if people have more access to higher speeds, then more origins would be accessed from that connection type.
 
@@ -80,20 +104,45 @@ Performance by connection type would be easier to understand if we could start t
 
 ### By Geographic Region
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image="performance-4-top-cwv-country.png",
+  caption="Top 30 regions for good CWV performance",
+  description="Bar chart showing the percent of origins within a country with good CWV. Korea, Republic of 56%, Japan 50%, Czechia 48%, Germany 47%, Netherlands 45%, Taiwan, Province of China 45%, Belgium 45%, Canada 43%, United Kingdom of Great Britain and Northern Ireland 42%, Poland 42%, United States of America 40%, Romania 38%, France 38%, Ukraine 37%, Russian Federation 35%, Turkey 34%, Spain 34%, Italy 33%, Australia 28%, Viet Nam 28%, Thailand 27%, Malaysia 27%, Indonesia 20%, Mexico 19%, Chile 19%, Brazil 17%, Philippines 17%, India 16%, Colombia 15%, Argentina 14%",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=162241310&format=interactive",
+  width=645,
+  height=792,
+  sheets_gid="730149797",
+  sql_file="web_vitals_by_country.sql"
+  )
+}}
 
 Regions in parts of Asia and Europe continued to have higher performance. This may be due to higher network speeds, wealthier populations with faster devices, and closer edge-caching locations.  We should inspect the dataset before drawing too many conclusions. Here are the top 10 regions by the number of websites in CrUX versus their relative population sizes:
 
-![image](insert_image_url_here)
-<!-- TODO: add to figure caption -->
-Source: [https://datacommons.org/](https://datacommons.org/) Population data is for 2020. Original data comes from the World Bank, the US Census, INSEE, and WikiData.
+{{ figure_markup(
+  image="performance-5-country-top-origins-vs-pop.png",
+  caption="Top 10 regions by CrUX origins vs population. Source: <a href="https://datacommons.org/">datacommons.org</a>. Population data is for 2020. Original data comes from the World Bank, the US Census, INSEE, and WikiData.",
+  description="Bar chart showing for each country, the percent of total origins versus the percent of total population. Data listed as country, percent of origins, percent of population: United States 12.3% 4.3%, Japan 5.0% 1.6%, Brazil 4.3% 2.7%, Germany 3.9% 1.1%, India 3.8% 17.8%, United Kingdom 3.6% 0.9%, Russian Federation 3.0% 1.9%, Italy 2.8% 0.8%, Spain 2.8% 0.6%, France 2.7% 0.9%",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=200409532&format=interactive",
+  width=600,
+  height=792,
+  sheets_gid="730149797",
+  sql_file="web_vitals_by_country.sql"
+  )
+}}
 
 Similarly, here are the 10 top regions by population and their corresponding share of websites in CrUX:
 
-![image](insert_image_url_here)
-
-<!-- TODO: add to figure caption -->
-Source: U.S. Census Bureau Current Population (population clock) at Nov 02, 2021 18:31 UTC (+4) [https://www.census.gov/popclock/print.php?component=counter](https://www.census.gov/popclock/print.php?component=counter) Population data is for 2021
+{{ figure_markup(
+  image="performance-6-country-top-pop-vs-origins.png",
+  caption="Top 10 regions by population vs CrUX origins. Source: <a href="https://www.census.gov/popclock/print.php?component=counter">U.S. Census Bureau Current Population</a> (population clock) at Nov 02, 2021 18:31 UTC (+4). Population data is for 2021",
+  description="Bar chart showing for each country, the percent of total population versus the percent of total origins. Data listed as country, percent of population, percent of origins: 1. China 17.9% 0.3%, 1a. Taiwan 0.3% 1.2%, 2. India 17.2% 3.8%, 3. United States 4.3% 12.3%, 4. Indonesia 3.5% 2.1%, 5. Pakistan 3.1% 0.6%, 6. Nigeria 2.8% 0.3%, 7. Brazil 2.7% 4.3%, 8. Bangladesh 2.1% 0.5%, 9. Russia 1.8% 3.0%, 10. Mexico 1.7% 1.9%",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1955368947&format=interactive",
+  width=600,
+  height=792,
+  sheets_gid="730149797",
+  sql_file="web_vitals_by_country.sql"
+  )
+}}
 
 The US, Japan, Brazil, and Western Europe are over-represented in the CrUX dataset origins. Many large countries like China, India, and Nigeria, and Pakistan are underrepresented.
 
@@ -103,7 +152,15 @@ Remember that CrUX data is only gathered in Chrome. The percent of origins by co
 
 This year for the first time, we have ranking data! ​​CrUX determines ranking by the number of page views per website measured in Chrome. In the charts, the categories are additive. The top 10,000 sites include the top 1,000 sites, and so forth. The "all" category is sometimes referred to as the top 10,000,000, but it does not have a full 10 million websites in it. See the [methodology](./methodology#chrome-ux-report) for more details.
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image="performance-7-cwv-by-rank.png",
+  caption="Good CWV performance by rank",
+  description="Bar chart showing percent of websites in each ranking group with good CWV. 37% of the top 1,000 websites had good CWV, 31% of the top 10,000, 29% of the top 100,000, 30% of the top 1,000,000, and 32% of all origins in CrUX.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=444585880&format=interactive",
+  sheets_gid="730149797",
+  sql_file="web_vitals_by_rank.sql"
+  )
+}}
 
 The top 1,000 sites significantly outperformed the rest in the Core Web Vitals. An interesting trough of poorer performance occurs in the middle of the chart which is due to CLS. FID was flat across all buckets, and all other metrics correlated with higher performance for higher ranking.
 
@@ -117,34 +174,82 @@ In this section, we will dive down into each metric. For those who are less fami
 
 [Time-to-first-byte](https://web.dev/ttfb/) (TTFB) is the time between the browser requesting a page and when it receives the first byte of information from the server. It is the first metric in the chain for website loading. A poor TTFB will result in a chain reaction impacting FCP and LCP. It's also why we're choosing to talk about it first.
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 TTFB was faster on desktop than mobile, presumably because of faster network speeds. Compared to [last year](https://almanac.httparchive.org/en/2020/performance#fig-17), TTFB marginally improved on desktop and slowed on mobile.
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 We have a long way to go for TTFB. 75% of our websites were in the 4G connection group and 25% in the 3G group, with the remaining ones negligible. At 4G effective speeds, only 19% of origins had "good" performance.
 
 You may be asking yourself how TTFB can even occur with offline connections. Presumably, most of the offline sites that record and send TTFB data use [service worker caching](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Offline_Service_workers). Service worker startup time can be long (> 1 second) which could be why their "TTFB" isn't always below 0.5 seconds. Remember that the offline category only represents 0.02% of the data.
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 For rank, TTFB was faster for higher-ranking sites. One reason could be that most of these are larger companies with more resources to prioritize performance. They may focus on improving server-side performance and delivering assets through edge CDNs. Another reason could be selection bias - the top origins might be accessed more in regions with closer servers, i.e., lower latency.
 
 <!-- TODO: validate CMS chapter link works -->
 One more possibility has to do with CMS adoption. The [CMS Chapter](./cms) shows CMS adoption by rank.
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 42% of pages (mobile) in the "all" group used a CMS whereas the top 1,000 sites only had 7% adoption.
 
 Then, if we look at the top 5 CMSs by rank, we see that WordPress has the highest adoption at for 31% of "all" pages:
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 Finally, if we look at the [Core Web Vitals Technology Report](https://datastudio.google.com/s/o6zLzlTpWaI), we see how each CMS performs by metric:
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 <!-- TODO: figcaption -->
 Figure: Origins having good TTFB by CMS ([Core Web Vitals Technology Report](https://datastudio.google.com/s/o6zLzlTpWaI))
@@ -155,19 +260,43 @@ Only 5% of origins on WordPress experienced good TTFB in July 2021. Considering 
 
 [First Contentful Paint (FCP)](https://web.dev/fcp/) measures the time from when a load first begins until the browser first renders any contentful part of the page (e.g, text, images, etc.).
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 FCP was faster on desktop than mobile, likely due to both faster average network speeds and faster processors. Only 38% of origins had "good" FCP on mobile. Render-blocking resources such as synchronous JavaScript can be a common culprit. Remember that TTFB is the first part of FCP so a poor TTFB will make it more difficult to achieve a good FCP.
 
 <p class="note"><strong>Note:</strong> The thresholds for FCP have changed since last year so be careful if you try to compare this year's data to last year's data.</p>
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 Origins at 3G speeds and below experienced significant degradations in FCP. Again, ensure that you are profiling your website using real devices and networks that reflect your user data from analytics. Your JavaScript bundles may not seem significant when you're only profiling on high-end desktops with fiber connections.
 
 [insert comment on offline - maybe slow startup of service workers (TTFB phase) plus too much JavaScript used for rendering? Could it also be that it times out/never renders?]
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 Like TTFB, FCP improved with higher rankings. Also like TTFB, only [19.5% of origins on Wordpress experienced good FCP performance](https://datastudio.google.com/s/kZ9K0d-sBQw). Since their TTFB performance was poor, I am not surprised that their FCP is also slow. It's difficult to achieve good scores on FCP and LCP if TTFB is slow.
 
@@ -177,15 +306,39 @@ Common culprits for poor FCP are render-blocking resources, server response time
 
 [Largest Contentful Paint (LCP)](https://web.dev/lcp/) measures the time from start load to when the browser renders the largest image or text in the viewport.
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 LCP was faster on desktop than mobile. TTFB affects LCP like FCP.  Comparisons by device, connection type, and rank all mirror the trends of FCP. Render-blocking resources, total weight, and loading strategies all affect LCP performance.
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 [offline still mirrors fcp - see that explanation and include anything possibly unique for lcp - like maybe the image isn't in the cache or font-display block and no font in the cache. Though then something else would be marked as lcp so not sure it's any different than fcp in terms of reasons]
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 For LCP, the differences in performance by rank were closer than FCP. Also, a higher proportion of origins in the top 1,000 had poor LCP. On WordPress, [28% of origins experienced good LCP](https://datastudio.google.com/s/kvq1oJ60jaQ). This is an opportunity to improve user experience as poor LCP is usually caused by a handful of problems.
 
@@ -193,17 +346,41 @@ For LCP, the differences in performance by rank were closer than FCP. Also, a hi
 
 Let's take a deeper dive look at the LCP element.
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 IMG, DIV, P, and H1 made up 83% of all LCP nodes (on mobile). This doesn't tell us if the content was an image or text though as background images can be applied with CSS.
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 We can see that 71-79% of pages had an LCP element that was an image, regardless of HTML node. Furthermore, desktop devices had a higher rate of LCPs as images. This could be due to less real estate on smaller screens pushing images out of the viewport resulting in heading text being the largest element.
 
 In both cases, images comprised the majority of LCP elements. This warrants a deeper dive into how those images are loading.
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 For user experience, we want LCP elements to load as fast as possible. User experience is why LCP was selected as one of the Core Web Vitals. We do not want it to be lazy-loaded nor decoded asynchronously as that further delays the render. However, we can see that 9.3% of pages were using the native loading=lazy flag on an LCP `<img>` element.
 
@@ -223,15 +400,39 @@ Interestingly, 354 origins on desktop attempted to use native-lazy loading on HT
 
 ### Cumulative Layout Shift (CLS)
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 [Cumulative Layout Shift (CLS)](https://web.dev/cls/) is characterized by how much shift a user experiences, not how long it takes to visually see something like FCP and LCP. As such, performance by device was fairly equivalent.
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 Performance degradation from 4G to 3G and below was not as pronounced as with FCP and LCP. Some degradation exists, but it's not reflected in the device data, only the connection type.
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 For ranking, CLS performance showed an interesting trough for the top 10,000 websites. In addition, all the ranked groups above 1M performed worse than the sites ranked under 1M. Since the "all"  group had better performance than all the other ranked groupings the sub-1M group performs better. Wordpress may again play a role in this as [60% of origins on Wordpress experienced a good CLS](https://datastudio.google.com/s/qG00yMxSa3o).
 
@@ -241,15 +442,39 @@ Common culprits for poor CLS include not reserving space for images, text shifts
 
 [First Input Delay (FID)](https://web.dev/fid/) measures the time from when a user first interacts with a page to the time the browser begins processing event handlers in response to that interaction.
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 FID performance was better on desktop than on mobile devices likely due to device speeds which can better handle larger amounts of JavaScript.
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 FID performance degraded some by connection type, but less so than the other metrics. The high distribution of scores seems to be reducing the amount of variance we're seeing in the analysis.
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 FID performance by rank was flat.
 
@@ -265,7 +490,15 @@ If your site's performance is not in the "good" category, then you definitely ha
 
 Unfortunately, TBT is not measured in the Chrome User Experience Report. But, we can still get an idea of what's going on using the HTTP Archive Lighthouse data (only collected for mobile):
 
-![image](insert_image_url_here)
+{{ figure_markup(
+  image=".png",
+  caption="",
+  description="",
+  chart_url="",
+  sheets_gid="730149797",
+  sql_file=".sql"
+  )
+}}
 
 <p class="note"><strong>Note:</strong> The groups in the chart are based off of the Lighthouse score for TBT (e.g., >= 0.9 results in "good"). Due to rounding of the score, some TBT values slightly above 200ms get categorized as "good" (and similarly at the 600ms threshold).</p>
 
