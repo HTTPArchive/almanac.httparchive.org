@@ -1103,31 +1103,3 @@ featured_stat_label_3: TODO
   sheets_gid="1859409315",
   sql_file="sass_nesting.sql"
 ) }}
-
-
-
-
-{# Reusable figure stubs
-
-
-
-{{ figure_markup(
-  image=".png",
-  caption="",
-  description="TODO",
-  chart_url="",
-  sheets_gid="",
-  sql_file=""
-) }}
-
-
-
-<figure>
-  <figcaption>{{ figure_link(
-    caption="",
-    sheets_gid="",
-    sql_file=""
-  ) }}</figcaption>
-</figure>
-
-#}
