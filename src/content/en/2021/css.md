@@ -24,7 +24,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="stylesheet-transfer-size.png",
   caption="Distribution of stylesheet transfer sizes per page.",
-  description="TODO",
+  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the total weight of the stylesheets for a page.  Each percentile has two columns, one for desktop and one for mobile.  The numbers are as follows.  10th percentile, 9 kilobytes on desktop and 6 kilobytes on mobile.  25th percentile, 31 KB desktop and 27 KB mobile.  50th percentile, 71 KB desktop and 66 KB mobile.  75th percentile, 142 KB desktop and 135KB mobile.  90th percentile, 257 KB desktop and 250 KB mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=900703452&format=interactive",
   sheets_gid="350963758",
   sql_file="stylesheet_kbytes.sql"
@@ -71,7 +71,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="stylesheets-per-page.png",
   caption="Distribution of the number of stylesheets per page.",
-  description="TODO",
+  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the total number of stylesheets loaded per page.  Each percentile has two columns, one for desktop and one for mobile.  The numbers are as follows.  10th percentile, 1 stylesheet for desktop and 1 stylesheet for mobile.  25th percentile, 3 for both desktop and mobile.  50th percentile, 7 for desktop and 6 for mobile.  75th percentile, 13 for both desktop and mobile.  90th percentile, 22 for both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1775427809&format=interactive",
   sheets_gid="751625680",
   sql_file="stylesheet_count.sql"
@@ -92,7 +92,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="rules-per-page.png",
   caption="Distribution of the total number of style rules per page.",
-  description="TODO",
+  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the total number of CSS rules.  Each percentile has two columns, one for desktop and one for mobile.  The numbers are as follows.  10th percentile, 17 rules for desktop and 15 rules for mobile.  25th percentile, 145 rules for desktop and 152 for mobile.  50th percentile, 512 for desktop and 483 for mobile.  75th percentile, 1,078 for desktop and 1,063 for mobile.  90th percentile, 1,841 for  desktop and 1,821 for mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=472863207&format=interactive",
   sheets_gid="697775839",
   sql_file="selectors.sql"
@@ -103,7 +103,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-class-names.png",
   caption="The most popular class names.",
-  description="TODO",
+  description="A chart showing the most popular class names, with percentage share given for mobile.  The desktop bars are all within a percent or two of their mobile cousins.  The list is as follows, with the values indicating the percent of all pages containing the given class name: active 42%; fa 32%; fa-* 32%, pull-right 29%, pull-left 28%, disabled 24%, selected 22%, button 22%, container 20%, wp-* 20%, sr-only 20%, title 20%, btn 19%, sr-only-focusable 19%, clearfix 17%, current 16%, right 16%, rtl 15%, widget 15%, row 15%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1533988979&format=interactive",
   width=600,
   height=691,
@@ -116,7 +116,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-id-names.png",
   caption="The most popular ID names.",
-  description="TODO",
+  description="A chart showing the most popular ID names, with percentage share given for mobile.  The desktop bars are all within a percent or two of their mobile cousins.  The list is as follows, with the values indicating the percent of all pages containing the given ID name: content 14%, footer 11%, header 10%, logo 7%, rc-imageselect 7%, comments 7%, main 7%, rc-anchor-alert 7%, rc-anchor-over-quota 7%, rc-anchor-invisible-over 7%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=609865919&format=interactive",
   width=600,
   height=497,
@@ -129,7 +129,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-attribute-selectors.png",
   caption="The most popular attribute selectors.",
-  description="TODO",
+  description="A chart showing the most popular attributes selected via attribute selectors.  The list is as follows: type, class, disabled, dir, title, hidden, aria-disabled, role, href, controls, src, style, data-type, lang, xmlns, id, data-align, poster, name, readonly.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1836678858&format=interactive",
   sheets_gid="942534767",
   sql_file="top_selector_attributes.sql"
@@ -140,7 +140,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-pseudo-classes.png",
   caption="The most popular pseudo-classes.",
-  description="TODO",
+  description="A chart showing the most popular pseudo-classes.  The list is as follows: hover, focus, active, first-child, last-child, not, visited, root, nth-child, link, disabled, empty, checked, -ms-input, last-of-type.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1619223389&format=interactive",
   sheets_gid="843054585",
   sql_file="top_selector_pseudo_classes.sql"
@@ -151,7 +151,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-unprefixed-pseudo-elements.png",
   caption="The most popular unprefixed pseudo-elements.",
-  description="TODO",
+  description="A chart showing the most popular pseudo-elements that are not vendor prefixed.  The list is as follows: before, after, selection, placeholder, first-letter, marker.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1825062416&format=interactive",
   height=500,
   sheets_gid="1863963291",
@@ -163,7 +163,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="important-properties-per-page.png",
   caption="Distribution of the percentage of page rules using `!important`.",
-  description="TODO",
+  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the percentage of properties marked important with the '!important' keyword.  Each percentile has two columns, one for desktop and one for mobile.  The numbers are as follows.  10th percentile, 0% for both desktop and mobile.  25th percentile, 1% for both desktop and mobile.  50th percentile, 2% for both desktop and mobile.  75th percentile, 4% for both desktop and mobile.  90th percentile, 8% for both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1184051032&format=interactive",
   sheets_gid="1176732383",
   sql_file="meta_important_adoption.sql"
@@ -174,7 +174,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="top-important-properties.png",
   caption="The most popular properties targeted by `!important`.",
-  description="TODO",
+  description="A chart showing the most properties most likely to be marked important using the '!important' keyword, as a percentage of all pages containing a property so marked.  Values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts.  The list is as follows: display 81% of pages, color 74% of pages, width 72%, height 70%, background 69%, padding 69%, margin 67%, border 66%, background-color 65%, position 61%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=905910904&format=interactive",
   sheets_gid="1381789151",
   sql_file="meta_important_properties.sql"
