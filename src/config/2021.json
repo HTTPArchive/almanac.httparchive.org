@@ -361,6 +361,14 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/2644614?v=4&s=200",
       "github": "Schweinepriester"
     },
+    "kevinfarrugia": {
+      "name": "Kevin Farrugia",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/670556?v=4&s=200",
+      "github": "kevinfarrugia"
+    },
     "lucasbona05": {
       "name": "Lucas Gonçalves",
       "teams": [
@@ -387,7 +395,7 @@
     "Nithanaroy": {
       "name": "Nitin Pasumarthy",
       "teams": [
-        "reviewers"
+        "analysts"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/670556?v=4&s=200",
       "github": "Nithanaroy"
@@ -470,10 +478,7 @@
         "reviewers"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/60089915?v=4&s=200",
-      "website": "",
-      "github": "ziemek-bucko",
-      "linkedin": "",
-      "twitter": ""
+      "github": "ziemek-bucko"
     }
   }
 }
