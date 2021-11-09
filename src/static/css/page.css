@@ -611,11 +611,13 @@ th.numeric,
 td.numeric {
   text-align: right;
 }
+
 td .numeric-good {
   color: #38761d;
 }
+
 td .numeric-bad {
-  color: #ff0000;
+  color: #f00;
 }
 
 tbody tr:nth-child(even) {
