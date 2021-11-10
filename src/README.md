@@ -103,9 +103,9 @@ npm run watch
 
 ## Generating chapter images
 
-To help in the conversion to markup dynamically generate chapter images from the command line to save this onus task.
+We can automate the generation of chapter images from the command line to save this onerous task.
 
-It can be run by passing a chapter markdown (with ot without the `.md` extension):
+It can be run like below, by passing a chapter markdown (with or without the `.md` extension):
 
 ```
 npm run figure-images en/2021/pwa
