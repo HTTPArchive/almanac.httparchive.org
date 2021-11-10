@@ -21,6 +21,7 @@ const take_single_screenshot = async (graphUrl, filename) => {
 
 const generate_images = async (chapter_match) => {
 
+  // This next bit is taken from generate_chapters.js, but only allow it to match one chapter
   if (chapter_match) {
     // Remove any trailing .md and replace all paths with brackets to capture components
     // en/2019/javascript.md -> (en)/(2019)/(javascript).md
@@ -64,12 +65,14 @@ const generate_images = async (chapter_match) => {
       const image_file = (match[1] === 'image') ? match[2] : match[4];
       const chart_url = (match[1] === 'image') ? match[4] : match[2];
 
-      if (!image_file || image_file.startsWith('..') || image_file.startsWith('http:') || image_file.startsWith('https:')) {
+      // Test for blank image (not set yet), or an image which is from another location
+      if (!image_file || image_file.startsWith('/') || image_file.startsWith('..') || image_file.startsWith('http:') || image_file.startsWith('https:')) {
         console.log(`  Skipping: ${image_file} as not a chapter image`);
         continue;
       }
 
-      if (!chart_url.startsWith('https://docs.google.com/spreadsheets')) {
+      // Test chart_url is a Google Sheets URL
+      if (!chart_url.startsWith('https://docs.google.com/spreadsheets') || !chart_url.endsWith("&format=interactive")) {
         console.log(`  Skipping: ${image_file} as chart_url is not of the correct format`);
         continue;
       }
