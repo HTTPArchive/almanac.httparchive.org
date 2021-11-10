@@ -7,15 +7,15 @@ reviewers: [alankent, andreyl, chrissater]
 analysts: [rviscomi, tosin]
 editors: []
 translators: []
-alonko_bio: Alon Kochba is a software developer at Wix, and the head of performance. Alon comes from a back-end background, with extensive experience in networking.
+alonko_bio: Alon Kochba is a software developer at Wix, where he heads the performance efforts. Alon comes from a back-end background, with extensive experience in networking, and enjoys making the web faster.
 results: https://docs.google.com/spreadsheets/d/1gAJh4VcSEU6-6aQxBiTFl-7cbyHukfdhg-Iaq9y5pnc/
 featured_quote: CMS platforms continue to grow and are becoming more ubiquitous year-over-year. They are essential for easily creating and consuming content on the internet, especially as more people and businesses establish an online presence.
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_stat_1: 46%
+featured_stat_label_1: Websites are built using a CMS
+featured_stat_2: 2MB
+featured_stat_label_2: Median CMS page weight among the top CMSs
+featured_stat_3: 5.7%
+featured_stat_label_3: WebP usage in WordPress websites
 ---
 
 ## TL;DR
@@ -360,7 +360,7 @@ The Lighthouse [performance score](https://web.dev/performance-scoring/) is a we
   sql_file="lighthouse_category_scores_per_cms.sql"
 ) }}
 
-We can see that the median performance scores for all the top platforms on mobile are low, ranging from 17 to 35. As we saw above, this [does not directly imply bad results](https://philipwalton.com/articles/my-challenge-to-the-web-performance-community/) in mobile field data but does imply that all platforms have room for improvements, especially for low-end devices and network connections similar to those Lighthouse attempts to emulate.
+We can see that the median performance scores for all the top platforms on mobile are low, ranging from 17 to 33. As we saw above, this [does not directly imply bad results](https://philipwalton.com/articles/my-challenge-to-the-web-performance-community/) in mobile field data but does imply that all platforms have room for improvements, especially for low-end devices and network connections similar to those Lighthouse attempts to emulate.
 
 **SEO Score**
 
@@ -577,7 +577,7 @@ Next, let’s look at the amount of WordPress origins with passing Core Web Vita
   sql_file="core_web_vitals_by_geo.sql"
 ) }}
 
-We can see that while WordPress was passing on 19% of the total origins counted across all countries, WordPress sites are passing at a higher percentage in various countries. In Japan, 38% of sites have good CWVs for mobile visitors, but in Brazil, only 5% have good CWVs.
+We can see that while WordPress was passing on 19% of the total origins counted across all countries, WordPress sites are passing in a very different percentage in various countries. In Japan, 38% of sites have good CWVs for mobile visitors, but in Brazil, only 5% have good CWVs.
 
 This exposes a very interesting view of Core Web Vitals and hints at a geographical bias when comparing CWV for different platforms. If a CMS only has a presence in certain countries, comparing the aggregate percentage isn’t a fair comparison.
 
@@ -587,10 +587,6 @@ WordPress, with a very large adoption around the world, including countries with
 
 We explored how WordPress sites use external resources, and separated them between resources that are included in plugins, themes, and shipped in WordPress core (wp-includes).
 
-The median mobile WordPress page loads 24 resources under the /plugins/ path, 18 resources under the /themes/ path, and 12 resources under the /wp-includes/ path. In the 90th percentile, we see a huge amount of resource requests, with 78 plugin resources, 56 themes, and 24 wp-includes!
-
-WordPress’s extension ecosystem provides extraordinary flexibility and may be a major contributor to its high adoption rate. On balance it also appears detrimental to performance in many cases, due to the number of plugins available and the many resources they depend on.
-
 {{ figure_markup(
   image="wordpress-resources-loaded.png",
   caption="Distrubition of WordPress resources loaded by type.",
@@ -599,6 +595,10 @@ WordPress’s extension ecosystem provides extraordinary flexibility and may be 
   sheets_gid="296303301",
   sql_file="wordpress_resources.sql"
 ) }}
+
+The median mobile WordPress page loads 24 resources under the /plugins/ path, 18 resources under the /themes/ path, and 12 resources under the /wp-includes/ path. In the 90th percentile, we see a huge amount of resource requests, with 78 plugin resources, 56 themes, and 24 wp-includes!
+
+WordPress’s extension ecosystem provides extraordinary flexibility and may be a major contributor to its high adoption rate. On balance it also appears detrimental to performance in many cases, due to the number of plugins available and the many resources they depend on.
 
 ## Conclusion
 
