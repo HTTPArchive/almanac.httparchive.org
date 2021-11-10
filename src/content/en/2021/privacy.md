@@ -211,7 +211,7 @@ Some websites request access to specific features and browser APIs that can impa
 
 ### Device sensors
 
-Sensors can be useful to make a website more interactive, but could also be abused for <a hreflang="en" href="https://www.esat.kuleuven.be/cosic/publications/article-3078.pdf">fingerprinting users</a>. The graph shows the most commonly accessed sensor events, based on the use of JavaScript event listeners. The orientation of the device is accessed the most, both on mobile and on desktop clients. Note that we searched for the presence of event listeners on websites, but we do not know if the code is actually executed. Therefore, the access to device sensor events in this section is an upper bound.
+Sensors can be useful to make a website more interactive, but could also be abused for <a hreflang="en" href="https://www.esat.kuleuven.be/cosic/publications/article-3078.pdf">fingerprinting users</a>. Based on the use of JavaScript event listeners, the orientation of the device is accessed the most, both on mobile and on desktop clients. Note that we searched for the presence of event listeners on websites, but we do not know if the code is actually executed. Therefore, the access to device sensor events in this section is an upper bound.
 
 
 
@@ -264,7 +264,7 @@ Therefore, we analyze the use of geolocation-as-a-service technologies on websit
 
 
 According to our data, few websites utilize geolocation services. Geolocation data can also be accessed by websites through a <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API">web browser API</a>.
-We find that 0.59% of websites on a desktop client and 0.63% of websites on a mobile client access the current position of the user (based on [Blink features](./methodology#blink-features)), as can be seen in graph {add ref to graph}.
+We find that 0.59% of websites on a desktop client and 0.63% of websites on a mobile client access the current position of the user (based on [Blink features](./methodology#blink-features)).
 
 
 {{ figure_markup(
@@ -281,7 +281,7 @@ We find that 0.59% of websites on a desktop client and 0.63% of websites on a mo
 
 ### Data breaches
 
-Poor security management within a company can have a significant impact on its customers' private data. <a hreflang="en" href="https://haveibeenpwned.com/">HaveIBeenPwned</a> allows users to check whether their email address or phone number was leaked in a data breach. Up until now, HaveIBeenPwned has tracked 562 breaches, leaking 640 million records. In 2020, 40 domains were breached and personal data about millions more users leaked, as we show in {add ref to graph?}.Breaches that are _sensitive_ in nature refer to the possibility of a negative impact on the user, if someone were to find that user's data in the breach. One example of a sensitive breach is "[Carding Mafia](https://www.vice.com/en/article/v7m9jx/credit-card-hacking-forum-gets-hacked-exposing-300000-hackers-accounts)", a platform where stolen credit cards are traded.
+Poor security management within a company can have a significant impact on its customers' private data. <a hreflang="en" href="https://haveibeenpwned.com/">HaveIBeenPwned</a> allows users to check whether their email address or phone number was leaked in a data breach. Up until now, HaveIBeenPwned has tracked 562 breaches, leaking 640 million records. In 2020, 40 domains were breached and personal data about millions more users leaked. Breaches that are _sensitive_ in nature refer to the possibility of a negative impact on the user, if someone were to find that user's data in the breach. One example of a sensitive breach is "[Carding Mafia](https://www.vice.com/en/article/v7m9jx/credit-card-hacking-forum-gets-hacked-exposing-300000-hackers-accounts)", a platform where stolen credit cards are traded.
 
 <p class="note">Note that 40 breaches in the previous year is a lower bound, since many breaches are only discovered, or made public, several months after they have occurred.</p>
 
@@ -463,7 +463,7 @@ The <a hreflang="en" href="https://iabeurope.eu/transparency-consent-framework/"
 
 TCF is meant as a GDPR-compliant mechanism in Europe, although [a recent decision by the Belgian Data Protection Authority](FIXME # https://iabeurope.eu/all-news/update-on-the-belgian-data-protection-authoritys-investigation-of-iab-europe/ or https://www.iccl.ie/news/online-consent-pop-ups-used-by-google-and-other-tech-firms-declared-illegal/) found that this system is still infringing. When the CCPA came into play in California, IAB Tech Lab US developed a <a hreflang="en" href="https://iabtechlab.com/standards/ccpa/">CCPA Compliance Framework for Publishers & Technology Companies</a> (USP), using the same concepts.
 
-Below, we show the distribution of the usage of both versions of TCF and of USP. Note that the crawl is US-based, therefore we do not expect many websites to have implemented TCF. This is depicted in the graph: less than 2% of websites use any TCF version, while twice as many websites use the US Privacy framework.
+Below, we show the distribution of the usage of both versions of TCF and of USP. Note that the crawl is US-based, therefore we do not expect many websites to have implemented TCF. Fewer than 2% of websites use any TCF version, while twice as many websites use the US Privacy framework.
 
 
 
@@ -492,7 +492,7 @@ In the 10 most popular consent management platforms that are part of the framewo
 }}
 
 
-In the USP framework, the website's and user's privacy settings are encoded in a "<a hreflang="en" href="https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md">privacy string</a>". As shown in the following graph, the most common privacy string is `1---`. This indicates that CCPA does not apply to the website and therefore the website not obliged to provide an opt-out for the user. CCPA only applies to companies whose main business involves selling personal data, or to companies that process data and have an annual turnover of more than $25 million. The second most recurring string is `1YNY`. This indicates that the website provided "notice and opportunity to opt-out of sale of data", but that the user has _not_ opted out of the sale of their personal data.
+In the USP framework, the website's and user's privacy settings are encoded in a "<a hreflang="en" href="https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md">privacy string</a>". The most common privacy string is `1---`. This indicates that CCPA does not apply to the website and therefore the website not obliged to provide an opt-out for the user. CCPA only applies to companies whose main business involves selling personal data, or to companies that process data and have an annual turnover of more than $25 million. The second most recurring string is `1YNY`. This indicates that the website provided "notice and opportunity to opt-out of sale of data", but that the user has _not_ opted out of the sale of their personal data.
 
 
 {{ figure_markup(
