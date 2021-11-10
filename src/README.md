@@ -138,7 +138,7 @@ Generating for chapter: pwa for year 2021
 
 Authors can delete images and rerun if they want to, to regenerate images.
 
-Images will automatically be compress by our Calibre GitHub Action when uploaded to GitHub, but you can get a lot more compression (about 44% more!) by running them through https://tinypng.com instead (at which point the Calibre Action will usually not find any further compression gains). It's quite simple to drag them up, and download them, so would encourage analysts/authors to take this step.
+Images will automatically be compressed by our Calibre GitHub Action when uploaded to GitHub, but you can get a lot more compression (about 44% more!) by running them through https://tinypng.com instead (at which point the Calibre Action will usually not find any further compression gains). It's quite simple to drag them up, and download them, so would encourage analysts/authors to take this step.
 
 ## Linting files
 
