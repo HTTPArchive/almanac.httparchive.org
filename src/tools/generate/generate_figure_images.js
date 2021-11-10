@@ -55,7 +55,7 @@ const generate_images = async (chapter_match) => {
 
     const markdown = await fs.readFile(file, 'utf-8');
 
-    // Let's not depend on the order of arguments to test for both
+    // Let's not depend on the order of arguments so test for both
     const figure_regexp1 = /{{ figure_markup\([^}]*image=["']([^'"]*)["'][^}]*chart_url=["']([^'"]*)["'][^}]*\)[^}]*}}/g;
     const figure_regexp2 = /{{ figure_markup\([^}]*chart_url=["']([^'"]*)["'][^}]*image=["']([^'"]*)["'][^}]*\)[^}]*}}/g;
 
@@ -91,6 +91,8 @@ const generate_images = async (chapter_match) => {
       }
     }
   }
+
+  console.log('All done!');
 }
 
 
