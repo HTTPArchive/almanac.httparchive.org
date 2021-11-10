@@ -59,6 +59,7 @@ We see that Google-owned domains are prevalent in the online tracking market, na
   image="most_common_tracker_categories.png",
   caption="Percentage of websites that use each tracker category",
   description="Bar chart showing the most popular tracker categories and the number of websites embedding a tracker from that category.",
+  height=421,
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1126546581&format=interactive",
   sheets_gid="2084631443",
   sql_file="most_common_tracker_categories.sql"
@@ -88,6 +89,7 @@ The main technical approach to store and retrieve cross-site user identifiers is
   image="top100_domains_that_set_cookies_via_response_header.png",
   caption="Most popular tracker domains that set cookies",
   description="Chart showing the percentage of websites that include a cookie set via the response header for the 10 most popular tracking domains setting cookies.",
+  height=421,
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=932933299&format=interactive",
   sheets_gid="1256177287",
   sql_file="top100_domains_that_set_cookies_via_response_header.sql"
@@ -103,6 +105,7 @@ Looking at the specific cookies that these websites set, the most common cookie 
   image="top100_cookies_set_from_header.png",
   caption="10 most popular cookies set from header",
   description="Chart showing the name of the cookies set on the largest number of websites.",
+  height=421,
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=293333315&format=interactive",
   sheets_gid="1599373042",
   sql_file="top100_cookies_set_from_header.sql"
@@ -196,6 +199,7 @@ Ad retargeting refers to the practice of keeping track of the products that a us
   image="nb_websites_using_each_retargeting.png",
   caption="Percentage of pages using a retargeting service",
   description="Chart showing the most popular services used for retargeting and the number of wesites that use them.",
+  height=421,
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=882622568&format=interactive",
   sheets_gid="1940290757",
   sql_file="nb_websites_using_each_retargeting.sql"
@@ -328,6 +332,7 @@ The most commonly used directives with relation to the feature policy are shown 
   image="most_common_featurepolicy_permissionspolicy_directives.png",
   caption="Number of websites accessing a feature policy directive",
   description="Bar chart showing the most common directives used to define the feature policy and the number of websites that are using them.",
+  height=421,
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1180513630&format=interactive",
   sheets_gid="899874026",
   sql_file="most_common_featurepolicy_permissionspolicy_directives.sql"
@@ -391,6 +396,7 @@ In addition, around 0.5% of websites set the value of the referrer policy to `un
   image="most_common_referrerpolicy_values.png",
   caption="Percentage of pages using referrer policy values",
   description="Bar chart showing the percentage of pages that use each referrer policy value.",
+  height=421,
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1467607776&format=interactive",
   sheets_gid="1846818406",
   sql_file="most_common_referrerpolicy_values.sql"
@@ -449,6 +455,7 @@ Consent Management Platforms (CMPs) are third-party libraries that websites can 
   image="nb_websites_using_each_cmp.png",
   caption="10 most popular consent management platforms",
   description="Bar chart showing tthe percentage of pages using the 10 most popular third-party libraries for providing consent management.",
+  height=421,
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=619927070&format=interactive",
   sheets_gid="387302670",
   sql_file="nb_websites_using_each_cmp.sql"
@@ -499,6 +506,7 @@ In the USP framework, the website's and user's privacy settings are encoded in a
   image="most_common_strings_for_iab_usp.png",
   caption="Percentage of websites using IAB US privacy strings",
   description="Bar chart showing the percentage of websites that use each privacy string for IAB US' consent framework.",
+  height=421,
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2039463193&format=interactive",
   sheets_gid="1524219137",
   sql_file="most_common_strings_for_iab_usp.sql"
