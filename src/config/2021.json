@@ -64,8 +64,7 @@
           "part": "I",
           "chapter_number": "8",
           "title": "Third Parties",
-          "slug": "third-parties",
-          "todo": "true"
+          "slug": "third-parties"
         }
       ]
     },
@@ -265,7 +264,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/427052?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/427052?v=4&s=200",
       "website": "http://andydavies.me/",
       "github": "andydavies",
       "twitter": "AndyDavies"
@@ -274,6 +273,7 @@
       "name": "Barry Pollard",
       "teams": [
         "analysts",
+        "authors",
         "developers",
         "leads",
         "reviewers"
@@ -303,6 +303,16 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/15170359?v=4&s=200",
       "github": "demianrenzulli",
       "twitter": "drenzulli"
+    },
+    "csswizardry": {
+      "name": "Harry Roberts",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/751944?v=4&s=200",
+      "website": "https://csswizardry.com/",
+      "github": "csswizardry",
+      "twitter": "csswizardry"
     },
     "hemanth": {
       "name": "Hemanth HM",
@@ -383,6 +393,16 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/17054057?v=4&s=200",
       "github": "thepassle"
     },
+    "patrickhulce": {
+      "name": "Patrick Hulce",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/2301202?v=4&s=200",
+      "website": "http://patrickhulce.com",
+      "github": "patrickhulce",
+      "twitter": "patrickhulce"
+    },
     "paulcalvano": {
       "name": "Paul Calvano",
       "teams": [
@@ -439,6 +459,16 @@
       "github": "GeekBoySupreme",
       "twitter": "shuvam360",
       "website": "https://shuvam.xyz"
+    },
+    "simonhearne": {
+      "name": "Simon Hearne",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/496189?v=4&s=200",
+      "website": "https://simonhearne.com",
+      "github": "simonhearne",
+      "twitter": "simonhearne"
     }
   }
 }
