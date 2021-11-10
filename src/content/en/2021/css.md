@@ -584,7 +584,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="css-initiated-image-formats.png",
   caption="Distribution of the formats of external images loaded via CSS.",
-  description="TODO",
+  description="A pie chart showing the distribution of image formats among images loaded via CSS.  The results are as follows: PNG 44.1%, GIF 18.3%, SVG 17.2%, JPG 16.4%, WEBP 3.7%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=868556131&format=interactive",
   sheets_gid="1133067574",
   sql_file="image_formats.sql"
@@ -595,7 +595,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="number-of-images-loaded.png",
   caption="Distribution of the number of external images loaded via CSS.",
-  description="TODO",
+  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the number of images loaded via CSS.  Each percentile has two columns, one for desktop and one for mobile.  The numbers are as follows.  10th and 25th percentiles, 1 on both desktop and mobile.  50th percentile, 3 on both dekstop and mobile.  75th percentile, 6 on desktop and 5 on mobile.  90th percentile, 11 on desktop and 10 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1206209320&format=interactive",
   sheets_gid="361647805",
   sql_file="image_weights.sql"
@@ -604,9 +604,19 @@ featured_stat_label_3: TODO
 
 
 {{ figure_markup(
+  caption="The heaviest total weight of images loaded via CSS, in KB.",
+  content="314,386",
+  classes="big-number",
+  sheets_gid="TODO",
+  sql_file="TODO"
+) }}
+
+
+
+{{ figure_markup(
   image="total-image-weight.png",
   caption="Distribution of the total weight in KB of external images loaded via CSS.",
-  description="TODO",
+  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the total weight of images loaded via CSS.  Each percentile has two columns, one for desktop and one for mobile, but figures are only given for mobile.  The results are as follows.  10th percentile, 1.0 KB.  25th percentile, 3.0 KB.  50th percentile, 16.3 KB.  75th percentile, 119.3 KB.  90th percentile, 479.7 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1022255274&format=interactive",
   sheets_gid="361647805",
   sql_file="image_weights.sql"
@@ -738,7 +748,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-unprefixed-gradient-functions.png",
   caption="The most popular types of gradient image values.",
-  description="TODO",
+  description="A paired-column chart listing the most popular graident functions.  Values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts.  The list is as follows: linear-gradient 74.3%, radial-gradient 14.5%, repeating-linear-gradient 3.7%, repeating-radial-gradient 0.1%, conic-gradient 0%, repeating-conic-gradient 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=2004838082&format=interactive",
   sheets_gid="1135532290",
   sql_file="gradient_functions.sql"
