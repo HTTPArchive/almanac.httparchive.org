@@ -61,4 +61,3 @@ GROUP BY
   ecomm
 ORDER BY
   origins DESC
-

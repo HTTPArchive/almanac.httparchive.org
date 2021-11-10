@@ -95,7 +95,7 @@
                                 <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
                                     <svg aria-hidden="true">
                                         <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>
                                     </svg>
                                     @{{ authordata.twitter }}
                                 </a>
@@ -104,7 +104,7 @@
                                 <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
                                     <svg aria-hidden="true">
                                         <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
                                     </svg>
                                     {{ authordata.github }}
                                 </a>
@@ -113,7 +113,7 @@
                                 <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
                                     <svg aria-hidden="true">
                                         <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin-logo"></use>
                                     </svg>
                                     {{ authordata.linkedin }}
                                 </a>
@@ -122,7 +122,7 @@
                                 <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
                                     <svg aria-hidden="true">
                                         <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe-logo"></use>
                                     </svg>
                                     {{ authordata.website }}
                                 </a>

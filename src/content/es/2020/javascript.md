@@ -121,7 +121,7 @@ La compatibilidad con `module` y `nomodule` va en aumento pero aún es una estra
 
 ### Conteo de peticiones
 
-Otra manera de ver cuánto JavaScript usamos es explorar cuantas peticiones de JavaScript son hechas por página. Reducir el número de peticiones era fundamental para tener un buen desempeño usando HTTP/1.1, sin embargo, con HTTP/2 aplica lo contrario: dividir el código en JavaScript en <a hreflang="en" href="https://web.dev/granular-chunking-nextjs/">archivos individuales y más pequeños</a> resulta en [un mejor desempeño en general.](../2019/http#impact-of-http2).
+Otra manera de ver cuánto JavaScript usamos es explorar cuantas peticiones de JavaScript son hechas por página. Reducir el número de peticiones era fundamental para tener un buen desempeño usando HTTP/1.1, sin embargo, con HTTP/2 aplica lo contrario: dividir el código en JavaScript en <a hreflang="en" href="https://web.dev/granular-chunking-nextjs/">archivos individuales y más pequeños</a> resulta en [un mejor desempeño en general](../2019/http#impact-of-http2).
 
 {{ figure_markup(
   image="requests-2020.png",
@@ -231,7 +231,7 @@ En días recientes, este patrón no es necesario para la mayoría de los sitios 
 
 Pero hay una historia alentadora sobre esto.
 
-Harry Roberts [hizo un _tweet_ sobre este antipatrón en Twitter](https://twitter.com/csswizardry/status/1331721659498319873), lo cual fue lo que nos motivó a medir que tan frecuentemente ocurre en realidad. [Rick Viscomi revisó quiénes eran culpables de esto con mayor frecuencia](https://twitter.com/rick_viscomi/status/1331735748060524551), y resultó que "stats.wp.com" era la fuente de los culpables más frecuentes. @Kraft de Automattic respondió y el patrón será [removido de ahora en adelante](https://twitter.com/Kraft/status/1336772912414601224)
+Harry Roberts [hizo un _tweet_ sobre este antipatrón en Twitter](https://twitter.com/csswizardry/status/1331721659498319873), lo cual fue lo que nos motivó a medir que tan frecuentemente ocurre en realidad. [Rick Viscomi revisó quiénes eran culpables de esto con mayor frecuencia](https://twitter.com/rick_viscomi/status/1331735748060524551), y resultó que "stats.wp.com" era la fuente de los culpables más frecuentes. @Kraft de Automattic respondió y el patrón será [removido de ahora en adelante](https://twitter.com/Kraft/status/1336772912414601224).
 
 Una de las grandes ventajas sobre lo abierta que es la web es que una observación puede llevar a un cambio significativo como el que vimos aquí.
 

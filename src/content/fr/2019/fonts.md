@@ -595,7 +595,7 @@ Après avoir plongé dans le code, toutes ces 718 requêtes vont à Google Fonts
 
 Il est ironique qu'un plugin d'optimisation des performances puisse rendre vos performances bien pires&nbsp;!
 
-## Une correspondance plus précise avec `unicode-range`.
+## Une correspondance plus précise avec `unicode-range`
 
 {{ figure_markup(
   caption="Pourcentage des pages mobiles qui déclarent une police web avec la propriété <code>unicode-range</code>.",

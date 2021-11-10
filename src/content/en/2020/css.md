@@ -1139,7 +1139,7 @@ Last year, 8% of pages were using blend modes. This year, adoption has increased
 
 ### Filters
 
-Adoption of filters has remained high, with the `filter` property making an appearance in 79.43% of pages. While at first this was quite exciting, a lot of it is likely to be old [IE DX filters](https://developer.mozilla.org/en-US/docs/Archive/Web/CSS/-ms-filter), which shared the same property name. When we only took into account valid CSS filters that Blink recognizes, usage drops to 22% for mobile and 20% for desktop, with `blur()` being the most popular filter type, appearing in 4% of pages.
+Adoption of filters has remained high, with the `filter` property making an appearance in 79.43% of pages. While at first this was quite exciting, a lot of it is likely to be old IE DX filters (`-ms-filter`), which shared the same property name. When we only took into account valid CSS filters that Blink recognizes, usage drops to 22% for mobile and 20% for desktop, with `blur()` being the most popular filter type, appearing in 4% of pages.
 
 Another filter property, `backdrop-filter`, allows us to apply filters to only the area behind an element, which is incredibly useful for improving contrast on translucent backgrounds, and creating the elegant <a hreflang="en" href="https://css-tricks.com/backdrop-filter-effect-with-css/">"frosted glass" effect</a> we've come to know from many native UIs. While not nearly as popular as `filter`, we found `backdrop-filter` in 6% of pages.
 
@@ -1477,7 +1477,7 @@ A small but notable number of pages (around 3000 or 0.05%) were oddly using `@su
 {{ figure_markup(
   image="supports-criteria.png",
   caption="Relative popularity of `@supports` features queried as a percent of occurrences.",
-  description="Bar chart of the relative popularity of @supports features queried as a percent of occurrences. The most popular feature queried is `sticky` at 49% of occurrences on mobile pages, followed by `ime-align` at 24%, `mask-image` at 12%, `overflow-scrolling` at 5%, `grid` at 2%, custom properties, `transform-style`, `max()`, and `object-fit `all at 1%, and `appearance` at approximately 0%.",
+  description="Bar chart of the relative popularity of @supports features queried as a percent of occurrences. The most popular feature queried is `sticky` at 49% of occurrences on mobile pages, followed by `ime-align` at 24%, `mask-image` at 12%, `overflow-scrolling` at 5%, `grid` at 2%, custom properties, `transform-style`, `max()`, and `object-fit` all at 1%, and `appearance` at approximately 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=1901533222&format=interactive",
   sheets_gid="1155233487",
   sql_file="supports_criteria.sql"
@@ -1734,7 +1734,7 @@ Another future spec that is currently worked on is <a hreflang="en" href="https:
 {{ figure_markup(
   image="usage-of-explicit-nesting-in-scss.png",
   caption="Usage of explicit nesting in SCSS.",
-  description="Bar chart showing `Total` is used by 85% on desktop and 85% on mobile, `&:pseudo-class` is 83% and 83% respectively, `&.class` is 80% and 80%, `&::pseudo-element` is 66% and 66%, `& (by itself)` is 62% and 62%, `&[attr]` is 57% and 57%, `& >`	24% and 23%, `& +`	21% and 20%, `& descendant` is 16% and 15%, and `&#id` is 6% on desktop and 6% on mobile.",
+  description="Bar chart showing `Total` is used by 85% on desktop and 85% on mobile, `&:pseudo-class` is 83% and 83% respectively, `&.class` is 80% and 80%, `&::pseudo-element` is 66% and 66%, `& (by itself)` is 62% and 62%, `&[attr]` is 57% and 57%, `& >` 24% and 23%, `& +` 21% and 20%, `& descendant` is 16% and 15%, and `&#id` is 6% on desktop and 6% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRpe_HsNGpekn6YZV9k6QGmcZPxalqnDrL7DrDY-7X65RZEf_-aGfWuEvhk-yWV83ctIceE1bppCLpj/pubchart?oid=370242263&format=interactive",
   sheets_gid="1872903377",
   sql_file="sass_nesting.sql"

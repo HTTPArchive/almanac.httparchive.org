@@ -101,6 +101,56 @@ There is also a file watcher, which monitors the `content` directory and automat
 npm run watch
 ```
 
+## Generating chapter images
+
+We can automate the generation of chapter images from the command line to save this onerous task.
+
+This requires the figure markup to exist in the chapter's markdown file, including the `image` and `chart_url` attributes:
+
+```py
+{{ figure_markup(
+  image="pwa-timeseries-of-service-worker-installations.png",
+  ...
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRRpTSA4fsHwUap-ByQ08j95uo7Zm1kY6lTSvA-DZT54g2QZ0guV7db3QyQwQgMPzsKsJ43gbzqfJst/pubchart?oid=1883263914&format=interactive",
+  ...
+  )
+}}
+```
+
+It can be run like below, by passing a chapter markdown (with or without the `.md` extension):
+
+```
+npm run figure-images en/2021/pwa
+```
+
+Which will then generate any missing figures based on the chapter markup, skipping images that already exist:
+
+```
+> almanac.httparchive.org@0.0.1 figure-images
+> node ./tools/generate/generate_figure_images "en/2021/pwa"
+
+Generating for chapter: pwa for year 2021
+  Skipping: pwa-service-worker-controlled-pages-by-rank.png as image already exists
+  Skipping: pwa-most-used-service-worker-events.png as image already exists
+  Skipping: pwa-service-worker-and-manifest-usage.png as image already exists
+  Skipping: pwa-top-pwa-manifest-properties.png as image already exists
+  Skipping: pwa-top-pwa-manifest-icon-sizes.png as image already exists
+  Skipping: pwa-manifest-display-values.png as image already exists
+  Skipping: pwa-manifests-preferring-native-app.png as image already exists
+  Skipping: pwa-industry-categories.png as image already exists
+  Skipping: pwa-lighthouse-pwa-audits.png as image already exists
+  Skipping: pwa-lighthouse-pwa-scores.png as image already exists
+  Skipping: pwa-libraries-and-scripts.png as image already exists
+  Skipping: pwa-top-workbox-versions.png as image already exists
+  Skipping: pwa-top-workbox-packages.png as image already exists
+  Generating image pwa-workbox-runtime-caching-strategies.png...
+  Generating image pwa-notification-acceptance-rates.png...
+  Generating image pwa-install-events.png...
+```
+
+Authors can delete images and rerun if they want to, to regenerate images.
+
+Images will automatically be compressed by our Calibre GitHub Action when uploaded to GitHub, but you can get a lot more compression (about 44% more!) by running them through https://tinypng.com instead (at which point the Calibre Action will usually not find any further compression gains). It's quite simple to drag them up, and download them, so would encourage analysts/authors to take this step.
 
 ## Linting files
 
