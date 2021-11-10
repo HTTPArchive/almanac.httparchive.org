@@ -21,6 +21,7 @@
             <li><a href="#lighthouse">Lighthouse</a></li>
             <li><a href="#wappalyzer">Wappalyzer</a></li>
             <li><a href="#chrome-ux-report">Chrome UX Report</a></li>
+            <li><a href="#blink-features">Blink Features</a></li>
             <li><a href="#third-party-web">Third Party Web</a></li>
             <li><a href="#rework-css">Rework CSS</a>
               <ul>
@@ -327,6 +328,22 @@
 
       <p>
         You can learn more about the dataset in the <a hreflang="en" href="https://web.dev/chrome-ux-report-bigquery">Using the Chrome UX Report on BigQuery</a> guide on <a hreflang="en" href="https://web.dev/">web.dev</a>.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="blink-features"><a href="#blink-features" class="anchor-link">Blink Features</a></h3>
+
+      <p>
+        <a href="https://chromium.googlesource.com/chromium/src/+/HEAD/docs/use_counter_wiki.md">Blink Features</a> are indicators flagged by Chrome whenever a particular web platform feature is detected to be used.
+      </p>
+
+      <p>
+        We use Blink Features to get a different perspective on feature adoption. This data is especially useful to distinguish between features that are implemented on a page and features that are actually used. For example, the <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> chapter's section on Grid layout uses Blink Features data to measure whether some part of the actual page layout is built with Grid. By comparison, many more pages happen to include an unused Grid style in their stylesheets. Both stats are interesting in their own way and tell us something about how the web is built.
+      </p>
+
+      <p>
+        Blink Features are reported by <a href="#webpagetest">WebPageTest</a> as part of our regular testing.
       </p>
     </section>
 
