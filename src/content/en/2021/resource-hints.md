@@ -173,12 +173,12 @@ Resource hints can be very effective if used correctly. By shifting the responsi
   <thead>
     <tr>
       <th>Rank</th>
-      <th>`preload`</th>
-      <th>`prefetch`</th>
-      <th>`preconnect`</th>
-      <th>`prerender`</th>
+      <th>`pre`&shy;`load`</th>
+      <th>`pre`&shy;`fetch`</th>
+      <th>`pre`&shy;`connect`</th>
+      <th>`pre`&shy;`render`</th>
       <th>`dns-prefetch`</th>
-      <th>`modulepreload`</th>
+      <th>`module`&shy;`preload`</th>
     </tr>
   </thead>
   <tbody>
