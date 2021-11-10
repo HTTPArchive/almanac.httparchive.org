@@ -62,8 +62,6 @@ Some of them are open source (e.g. WordPress, Joomla, others) and some of them a
 
 The CMS space as a whole is a complex, federated universe of CMS ecosystems, all separated and at the same time intertwined.
 
-## Why Use a CMS?
-
 ## CMS Adoption
 
 Our analysis throughout this work looks at desktop and mobile websites. The vast majority of URLs we looked at are in both datasets, but some URLs are only accessed by desktop or mobile devices. This can cause small divergences in the data, and we thus look at desktop and mobile results separately.
@@ -71,7 +69,7 @@ Our analysis throughout this work looks at desktop and mobile websites. The vast
 {{ figure_markup(
   image="cms-adoption.png",
   caption="CMS adoption year-over-year.",
-  description="Column chart showing the adoption of CMS over the past 3 years. 45% of desktop websites and 46% of mobile websites are built using a CMS.",
+  description="Column chart showing the adoption of CMSs over the past 3 years. 45% of desktop websites and 46% of mobile websites are built using a CMS.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=551554892&format=interactive",
   sheets_gid="362035103",
   sql_file="cms_adoption.sql"
@@ -94,7 +92,7 @@ CMS platforms are extensively used around the world, with some variance by count
 {{ figure_markup(
   image="cms-adoption-geo.png",
   caption="CMS adoption by geography.",
-  description="TODO",
+  description="Bar chart showcasing the adoption of CMSs by geography, in the 10 countries with the largest amount of websites. In the US, 47% of mobile websites are built using a CMS, and 46% of desktop websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=2092976179&format=interactive",
   width=600,
   height=538,
@@ -109,7 +107,7 @@ We can also split this data into [subregions](https://github.com/GoogleChrome/Cr
 {{ figure_markup(
   image="cms-adoption-geo-region.png",
   caption="CMS adoption by subregion.",
-  description="TODO",
+  description="Bar chart showcasing the adoption of CMSs by sub-regions around the world. Southern Europe has the highest CMS adoption of 50% on mobile sites, while Eastern Asia, Northern Africa and Middle Africa have the lowest adoption of 33%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1483728038&format=interactive",
   width=600,
   height=701,
@@ -126,7 +124,7 @@ We also examined CMS adoption by the estimated rank of the sites.
 {{ figure_markup(
   image="cms-adoption-rank.png",
   caption="CMS adoption by rank.",
-  description="TODO",
+  description="Column chart showing the adoption of CMSs split by the rank of the websites. Higher ranking sites are less likely to use a CMS, while a larger percentage of lower ranking sites uses a CMS.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=409766380&format=interactive",
   sheets_gid="158167539",
   sql_file="cms_adoption_by_rank.sql"
@@ -139,7 +137,7 @@ CMSs account for only 7% of the top 1000 mobile websites, compared to 42% of the
 {{ figure_markup(
   image="cms-adoption-share.png",
   caption="CMS adoption share.",
-  description="TODO",
+  description="Pie chart showing the relative share of each CMS, among all websites that use a CMS. 75% of sites built using a CMS are built on WordPress.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1206051687&format=interactive",
   sheets_gid="891456070",
   sql_file="top_cms.sql"
@@ -150,7 +148,7 @@ Among all websites that use a CMS, WordPress sites account for a large part of t
 {{ figure_markup(
   image="top-cms.png",
   caption="Top 5 CMSs year-over-year.",
-  description="TODO",
+  description="Column chart depicting the percent of websites built on each of the top 5 CMSs, in the past 3 years. WordPress, Wix and Squarespace are growing in adoption year-over-year, while Drupal and Joomla are dropping.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=845658898&format=interactive",
   sheets_gid="891456070",
   sql_file="top_cms.sql"
@@ -169,7 +167,7 @@ Examining the adoption of these sites built on CMS platforms by their [rank magn
 {{ figure_markup(
   image="top-cms-by-rank.png",
   caption="Top 5 CMSs by rank.",
-  description="TODO",
+  description="Column chart depicting the percent of websites built on each of the top 5 CMSs, segmented by the website's ranking.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=2087254046&format=interactive",
   sheets_gid="670045665",
   sql_file="top_cms_by_rank.sql"

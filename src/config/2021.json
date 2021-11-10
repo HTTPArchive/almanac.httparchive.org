@@ -496,7 +496,8 @@
       "name": "Rick Viscomi",
       "teams": [
         "editors",
-        "leads"
+        "leads",
+        "analysts"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/1120896?v=4&s=200",
       "github": "rviscomi",
@@ -587,6 +588,7 @@
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/7407047?v=4&s=200",
       "github": "alonkochba",
+      "linkedin": "alonkochba",
       "twitter": "alonkochba"
     },
     "hyperpress": {
@@ -599,6 +601,15 @@
       "github": "logicalphase",
       "twitter": "jtteag"
     },
+    "andreylipattsev": {
+      "name": "Andrey Lipattsev",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/16627210?v=4&s=200",
+      "github": "andreylipattsev",
+      "twitter": "AndreyLipattsev"
+    },
     "alankent": {
       "name": "Alan Kent",
       "teams": [
@@ -608,6 +619,22 @@
       "website": "https://alankent.me",
       "github": "alankent",
       "twitter": "akent99"
+    },
+    "chrissater": {
+      "name": "Chris Sater",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "TODO",
+      "linkedin": "christophersater"
+    },
+    "tosinarasi": {
+      "name": "Tosin Arasi",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "TODO",
+      "github": "tosinarasi"
     }
   }
 }
