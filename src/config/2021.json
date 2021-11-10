@@ -42,30 +42,22 @@
         {
           "part": "I",
           "chapter_number": "5",
-          "title": "Fonts",
-          "slug": "fonts",
-          "todo": "true"
-        },
-        {
-          "part": "I",
-          "chapter_number": "6",
           "title": "Media",
           "slug": "media",
           "todo": "true"
         },
         {
           "part": "I",
-          "chapter_number": "7",
+          "chapter_number": "6",
           "title": "WebAssembly",
           "slug": "webassembly",
           "todo": "true"
         },
         {
           "part": "I",
-          "chapter_number": "8",
+          "chapter_number": "7",
           "title": "Third Parties",
-          "slug": "third-parties",
-          "todo": "true"
+          "slug": "third-parties"
         }
       ]
     },
@@ -75,27 +67,27 @@
       "chapters": [
         {
           "part": "II",
-          "chapter_number": "9",
+          "chapter_number": "8",
           "title": "SEO",
           "slug": "seo",
           "todo": "true"
         },
         {
           "part": "II",
-          "chapter_number": "10",
+          "chapter_number": "9",
           "title": "Accessibility",
           "slug": "accessibility",
           "todo": "true"
         },
         {
           "part": "II",
-          "chapter_number": "11",
+          "chapter_number": "10",
           "title": "Performance",
           "slug": "performance"
         },
         {
           "part": "II",
-          "chapter_number": "12",
+          "chapter_number": "11",
           "title": "Privacy",
           "slug": "privacy",
           "todo": "true",
@@ -103,21 +95,21 @@
         },
         {
           "part": "II",
-          "chapter_number": "13",
+          "chapter_number": "12",
           "title": "Security",
           "slug": "security",
           "todo": "true"
         },
         {
           "part": "II",
-          "chapter_number": "14",
+          "chapter_number": "13",
           "title": "Mobile Web",
           "slug": "mobile-web",
           "todo": "true"
         },
         {
           "part": "II",
-          "chapter_number": "15",
+          "chapter_number": "14",
           "title": "Capabilities",
           "slug": "capabilities",
           "todo": "true",
@@ -125,7 +117,7 @@
         },
         {
           "part": "II",
-          "chapter_number": "16",
+          "chapter_number": "15",
           "title": "PWA",
           "slug": "pwa"
         }
@@ -137,21 +129,21 @@
       "chapters": [
         {
           "part": "III",
-          "chapter_number": "17",
+          "chapter_number": "16",
           "title": "CMS",
           "slug": "cms",
           "todo": "true"
         },
         {
           "part": "III",
-          "chapter_number": "18",
+          "chapter_number": "17",
           "title": "Ecommerce",
           "slug": "ecommerce",
           "todo": "true"
         },
         {
           "part": "III",
-          "chapter_number": "19",
+          "chapter_number": "18",
           "title": "Jamstack",
           "slug": "jamstack",
           "todo": "true",
@@ -165,42 +157,42 @@
       "chapters": [
         {
           "part": "IV",
-          "chapter_number": "20",
+          "chapter_number": "19",
           "title": "Page Weight",
           "slug": "page-weight",
           "todo": "true"
         },
         {
           "part": "IV",
-          "chapter_number": "21",
+          "chapter_number": "20",
           "title": "Compression",
           "slug": "compression",
           "todo": "true"
         },
         {
           "part": "IV",
-          "chapter_number": "22",
+          "chapter_number": "21",
           "title": "Caching",
           "slug": "caching",
           "todo": "true"
         },
         {
           "part": "IV",
-          "chapter_number": "23",
+          "chapter_number": "22",
           "title": "CDN",
           "slug": "cdn",
           "todo": "true"
         },
         {
           "part": "IV",
-          "chapter_number": "24",
+          "chapter_number": "23",
           "title": "Resource Hints",
           "slug": "resource-hints",
           "todo": "true"
         },
         {
           "part": "IV",
-          "chapter_number": "25",
+          "chapter_number": "24",
           "title": "HTTP",
           "slug": "http",
           "todo": "true"
@@ -260,10 +252,21 @@
       "github": "andreban",
       "twitter": "andreban"
     },
+    "andydavies": {
+      "name": "Andy Davies",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/427052?v=4&s=200",
+      "website": "http://andydavies.me/",
+      "github": "andydavies",
+      "twitter": "AndyDavies"
+    },
     "tunetheweb": {
       "name": "Barry Pollard",
       "teams": [
         "analysts",
+        "authors",
         "developers",
         "leads",
         "reviewers"
@@ -321,6 +324,16 @@
       "github": "fili",
       "linkedin": "filiwiese",
       "twitter": "filiwiese"
+    },
+    "csswizardry": {
+      "name": "Harry Roberts",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/751944?v=4&s=200",
+      "website": "https://csswizardry.com/",
+      "github": "csswizardry",
+      "twitter": "csswizardry"
     },
     "hemanth": {
       "name": "Hemanth HM",
@@ -408,6 +421,16 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/17054057?v=4&s=200",
       "github": "thepassle"
     },
+    "patrickhulce": {
+      "name": "Patrick Hulce",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/2301202?v=4&s=200",
+      "website": "http://patrickhulce.com",
+      "github": "patrickhulce",
+      "twitter": "patrickhulce"
+    },
     "paulcalvano": {
       "name": "Paul Calvano",
       "teams": [
@@ -471,6 +494,16 @@
       "github": "siakaramalegos",
       "linkedin": "karamalegos",
       "twitter": "TheGreenGreek"
+    },
+    "simonhearne": {
+      "name": "Simon Hearne",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/496189?v=4&s=200",
+      "website": "https://simonhearne.com",
+      "github": "simonhearne",
+      "twitter": "simonhearne"
     },
     "ziemek-bucko": {
       "name": "Ziemek Bućko",
