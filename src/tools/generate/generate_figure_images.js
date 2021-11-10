@@ -51,7 +51,7 @@ const generate_images = async (chapter_match) => {
       continue;
     }
 
-    console.log(`Generating for chapter: ${chapter} for year ${year}`)
+    console.log(`Generating for the ${year} ${chapter} chapter:`)
 
     const markdown = await fs.readFile(file, 'utf-8');
 
