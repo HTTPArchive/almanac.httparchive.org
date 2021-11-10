@@ -57,7 +57,7 @@ We see that Google-owned domains are prevalent in the online tracking market, na
 
 {{ figure_markup(
   image="most_common_tracker_categories.png",
-  caption="Percentage of webistes that use each tracker category",
+  caption="Percentage of websites that use each tracker category",
   description="Bar chart showing the most popular tracker categories and the number of websites embedding a tracker from that category.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1126546581&format=interactive",
   sheets_gid="2084631443",
@@ -217,7 +217,7 @@ Sensors can be useful to make a website more interactive, but could also be abus
 
 {{ figure_markup(
   image="nb_websites_with_device_sensor_events.png",
-  caption="10 most used sensor events",
+  caption="5 most used sensor events",
   description="Bar chart showing the most widely accessed sensor events, based on the use of JavaScript listeners.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=40988621&format=interactive",
   sheets_gid="1513080238",
@@ -447,8 +447,8 @@ Consent Management Platforms (CMPs) are third-party libraries that websites can 
 
 {{ figure_markup(
   image="nb_websites_using_each_cmp.png",
-  caption="20 most popular consent management platforms",
-  description="Bar chart showing tthe percentage of pages using the 20 most popular third-party libraries for providing consent management.",
+  caption="10 most popular consent management platforms",
+  description="Bar chart showing tthe percentage of pages using the 10 most popular third-party libraries for providing consent management.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=619927070&format=interactive",
   sheets_gid="387302670",
   sql_file="nb_websites_using_each_cmp.sql"
