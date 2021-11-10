@@ -61,16 +61,16 @@ const generate_images = async (chapter_match) => {
     const matches = markdown.matchAll(figure_regexp);
     for (const match of matches) {
 
-      let image_file = match[2];
-      let chart_url = match[4];
+      const image_file = (match[1] === 'image') ? match[2] : match[4];
+      const chart_url = (match[1] === 'image') ? match[4] : match[2];
 
-      if (match[1] != 'image') {
-        image_file = match[4];
-        chart_url = match[2];
+      if (!image_file || image_file.startsWith('..') || image_file.startsWith('http:') || image_file.startsWith('https:')) {
+        console.log(`  Skipping: ${image_file} as not a chapter image`);
+        continue;
       }
 
-      if (image_file.startsWith('..') || image_file.startsWith('http:') || image_file.startsWith('https:')) {
-        console.log(`  Skipping: ${image_file} as not a chapter image`);
+      if (!chart_url.startsWith('https://docs.google.com/spreadsheets')) {
+        console.log(`  Skipping: ${image_file} as chart_url is not of the correct format`);
         continue;
       }
 
