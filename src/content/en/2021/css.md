@@ -607,8 +607,8 @@ featured_stat_label_3: TODO
   caption="The heaviest total weight of images loaded via CSS, in KB.",
   content="314,386",
   classes="big-number",
-  sheets_gid="TODO",
-  sql_file="TODO"
+  sheets_gid="361647805",
+  sql_file="image_weights.sql"
 ) }}
 
 
