@@ -270,7 +270,7 @@ With that being said, and the expectation that more websites will adopt `preload
 
 ### The `as` attribute
 
-The `as` attribute should be specified when using `rel="preload"` (or `rel="prefetch"`) to specify the type of resource being downloaded. Applying the correct `as` attribute allows the browser to prioritize the resource more accurately. For example, `preload as="script"` will get a low or medium priority, while `preload as="style"` would get the highest priority. The `as` attribute is required for caching the resource for future requests and applying the correct <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">Content Security Policy</a>.
+The `as` attribute should be specified when using `rel="preload"` (or `rel="prefetch"`) to specify the type of resource being downloaded. Applying the correct `as` attribute allows the browser to prioritize the resource more accurately. For example, `preload as="script"` will get a low or medium priority, while `preload as="style"` would be assigned an internal request priority of _Highest_. The `as` attribute is required for caching the resource for future requests and applying the correct <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">Content Security Policy</a>.
 
 {{ figure_markup(
   image="preload-as-attribute-values.png",
@@ -292,7 +292,7 @@ The second most commonly preloaded resource is the `font`, which is a late-disco
 
 #### `style`
 
-Stylesheets are ordinarily embedded in the document's `<head>` and discovered early during the document parsing. Additionally, as stylesheets are render-blocking resources they are assigned the _highest_ request priority. This should make preloading stylesheets unnecessary, but it is sometimes required to re-prioritize the requests. A <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=629420">bug</a> in Google Chrome (fixed in Chrome 95) prioritizes preloaded resources ahead of other higher-priority resources discovered by the preload scanner, including CSS files. Preloading the stylesheet will restore its _highest_ priority. Another instance when stylesheets are preloaded is when they are not downloaded directly from the HTML document, such as the <a hreflang="en" href="https://www.filamentgroup.com/lab/async-css.html">asynchronous CSS</a> "hack" which uses an `onload` event to avoid render-blocking the page with non-critical CSS.
+Stylesheets are ordinarily embedded in the document's `<head>` and discovered early during the document parsing. Additionally, as stylesheets are render-blocking resources they are assigned the _Highest_ request priority. This should make preloading stylesheets unnecessary, but it is sometimes required to re-prioritize the requests. A <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=629420">bug</a> in Google Chrome (fixed in Chrome 95) prioritizes preloaded resources ahead of other higher-priority resources discovered by the preload scanner, including CSS files. Preloading the stylesheet will restore its _Highest_ priority. Another instance when stylesheets are preloaded is when they are not downloaded directly from the HTML document, such as the <a hreflang="en" href="https://www.filamentgroup.com/lab/async-css.html">asynchronous CSS</a> "hack" which uses an `onload` event to avoid render-blocking the page with non-critical CSS.
 
 #### `fetch`
 
@@ -328,8 +328,8 @@ The `crossorigin` attribute is used to indicate whether [Cross-Origin Resource S
       </tr>
       <tr>
         <td><code>use-credentials</code></td>
-        <td class="numeric">0.1%</td>
-        <td class="numeric">0.1%</td>
+        <td class="numeric">&lt; 0.1%</td>
+        <td class="numeric">&lt; 0.1%</td>
       </tr>
     </tbody>
   </table>
@@ -405,7 +405,7 @@ Attempting to preload a CORS-enabled resource without including the correct `cro
   )
 }}
 
-More than half of the cases when the `crossorigin` attribute on the `rel="preload"` hint is either missing or incorrect, are linked to the preloading of font files, with a total of 14,818 instances across the dataset.
+More than half (63.6%) of the cases when the `crossorigin` attribute on the `rel="preload"` hint is either missing or incorrect, are linked to the preloading of font files, with a total of 14,818 instances across the dataset.
 
 #### Invalid `as` attribute
 
