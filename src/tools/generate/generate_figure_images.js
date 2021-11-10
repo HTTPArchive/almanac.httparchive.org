@@ -74,7 +74,7 @@ const generate_images = async (chapter_match) => {
           chart_url = match[1];
         }
 
-        if (image_file.startsWith('..') || image_file.startsWith('http')) {
+        if (image_file.startsWith('..') || image_file.startsWith('http:') || image_file.startsWith('https:')) {
           console.log(`  Skipping: ${image_file} as not a chapter image`);
           continue;
         }
