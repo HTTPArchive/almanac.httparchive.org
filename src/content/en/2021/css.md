@@ -770,7 +770,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="top-layout-methods.png",
   caption="The most commonly-declared layout types.",
-  description="TODO",
+  description="A paired-column chart listing the most frequently detected layout methods as a percentage of all pages.  Values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts.  The list is as follows: absolute 93%, block 93%, inline-block 91%, floats 91%, inline 82%, fixed 82%, css-tables 81%, flex 74%, box 50%, inline-flex 39%, grid 36%, list-item 29%, inline-table 23%, inline-box 22%, stick 17%, inline-grid 12%, none 8%, flexbox 8%, inline-stack 5%, contents 5%, auto 2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1090750625&format=interactive",
   height=756,
   sheets_gid="1349743417",
@@ -782,7 +782,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="flexbox-grid-adoption.png",
   caption="Adoption of Flexbox and Grid layout on mobile devices.",
-  description="TODO",
+  description="A chart showing the increase in Flexbox and Grid adoption by year, from 2019 through 2021, on mobile.  For Flexbox, adoption was a bit below 50% in 2019, about 65% in 2020, and 71% in 2021 (only 2021 is labeled).  For Grid, adoption was 2% in 2019, 4% in 2020, and 8% in 2021.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1784148592&format=interactive",
   sheets_gid="928762069",
   sql_file="flexbox_grid.sql"
@@ -793,7 +793,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="border-box-declarations-per-page.png",
   caption="Distribution of the median number of `border-box` declarations per page.",
-  description="TODO",
+  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the number of border-box declarations on a page.  The results are as follows.  For the 10th, 25th, and 50th percentiles, 0 for both desktop and mobile.  75th percentile, 2 for both desktop and mobile.  90th percentile, 9 for both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1213231382&format=interactive",
   sheets_gid="477060329",
   sql_file="box_sizing.sql"
@@ -804,7 +804,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-transition-properties.png",
   caption="The most popular properties given transition effects.",
-  description="TODO",
+  description="A chart listing the most commonly animated properties for both desktop and mobile, with the values given for mobile (desktop is always within a percent or two of mobile).  The results are as follows.  all 46%, opacity 42%, transform 30%, none 20%, height 18%, color 18%, background-color 13%, background 12%, left 8%, width 8%, box-shadow 8%, -webkit-transform 7%, top 7%, border-color 6%, visibility 6%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1505834154&format=interactive",
   sheets_gid="1623088261",
   sql_file="transition_properties.sql"
@@ -815,7 +815,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="distribution-of-transition-durations.png",
   caption="Distribution of transition durations.",
-  description="TODO",
+  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for transition durations.  In all percentiles save one, the values are exactly the same for desktop and mobile.  The results are as follows.  For the 10th percentile, 100 milliseconds.  For the 25th percentile, 150 milliseconds.  50th percentile, 250ms.  75th percentile, 330ms on desktop and 333ms on mobile.  90th percentile, 500ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=894159072&format=interactive",
   sheets_gid="432079881",
   sql_file="transition_durations.sql"
@@ -826,7 +826,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="distribution-of-transition-delays.png",
   caption="Distribution of transition delays.",
-  description="TODO",
+  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for transition durations.  In all percentiles, the values are exactly the same for desktop and mobile.  The results are as follows.  For the 10th percentile, -320 milliseconds.  For the 25th percentile, 0 milliseconds.  50th percentile, 200ms.  75th percentile, 600ms.  90th percentile, 1,700ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=501863648&format=interactive",
   sheets_gid="909003541",
   sql_file="transition_delays.sql"
@@ -837,7 +837,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="timing-functions.png",
   caption="Adoption of transition timing functions.",
-  description="TODO",
+  description="A pie chart showing the distribution of timing functions in all transitions.  The figures are as follows: ease 31.7%, linear 18.8%, ease-in-out 18.2%, cubic-bezier 14.4%, ease-out 8.3%, ease-in 4.8%, steps 3.8%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1700244926&format=interactive",
   sheets_gid="1217291895",
   sql_file="transition_timing_functions.sql"
@@ -848,7 +848,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="animation-name-categories.png",
   caption="The most popular types of animation.",
-  description="TODO",
+  description="A chart listing the most popular types of animations, with the values given for mobile (desktop is always within a percent or two of mobile).  The results are as follows.  rotate 18%, unkonwn or other 14%, fade 9%, wobble 7%, bounce 7%, scale 6%, slide 5%, pulse 2%, visibility 2%, flip 1%, move 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=676429696&format=interactive",
   sheets_gid="721830186",
   sql_file="transition_animation_names.sql"
