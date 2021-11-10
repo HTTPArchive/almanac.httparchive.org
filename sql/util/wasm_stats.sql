@@ -10,9 +10,9 @@ AS (
     *
   FROM (
     SELECT
-      * EXCEPT (_TABLE_SUFFIX),
-    _TABLE_SUFFIX AS client
-    FROM (
+      * EXCEPT (_TABLE_SUFFIX),
+    _TABLE_SUFFIX AS client
+    FROM (
       SELECT
         * EXCEPT (size)
       FROM
@@ -25,12 +25,12 @@ AS (
       `httparchive.summary_requests.2021_09_01_*`
     USING
       (url)
-    JOIN (
+    JOIN (
       SELECT
-        url AS page,
+        ur AS page,
         pageid,
         _TABLE_SUFFIX
       FROM
         `httparchive.summary_pages.2021_09_01_*`)
     USING
-      (_TABLE_SUFFIX, pageid)))
+      (_TABLE_SUFFIX, pageid)))
