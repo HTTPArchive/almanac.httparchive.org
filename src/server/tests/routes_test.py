@@ -92,9 +92,8 @@ def test_render_caps_en_2019_meth(client):
     assert_route(client, '/EN/2019/methodology', 302, '/en/2019/methodology')
 
 
-# Temporarily comment out until 2021 Methodology is available
-# def test_render_en_default_year_meth(client):
-#     assert_route(client, '/en/' + DEFAULT_YEAR + '/methodology', 200)
+def test_render_en_default_year_meth(client):
+    assert_route(client, '/en/' + DEFAULT_YEAR + '/methodology', 200)
 
 
 def test_render_en_accessibility_statement(client):
