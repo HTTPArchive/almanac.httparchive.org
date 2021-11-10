@@ -94,7 +94,7 @@ const generate_images = async (chapter_match) => {
 
 (async () => {
   try {
-    const first_arg = process.argv.slice(2)[0]
+    const first_arg = process.argv.slice(2)[0];
     await generate_images(first_arg);
   } catch (error) {
     console.error(error);

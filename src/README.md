@@ -105,6 +105,18 @@ npm run watch
 
 We can automate the generation of chapter images from the command line to save this onerous task.
 
+This requires the figure markup to exist in the chapter's markdown file, including the `image` and `chart_url` attributes:
+
+```py
+{{ figure_markup(
+  image="pwa-timeseries-of-service-worker-installations.png",
+  ...
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRRpTSA4fsHwUap-ByQ08j95uo7Zm1kY6lTSvA-DZT54g2QZ0guV7db3QyQwQgMPzsKsJ43gbzqfJst/pubchart?oid=1883263914&format=interactive",
+  ...
+  )
+}}
+```
+
 It can be run like below, by passing a chapter markdown (with or without the `.md` extension):
 
 ```
