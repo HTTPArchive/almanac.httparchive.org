@@ -55,40 +55,34 @@ const generate_images = async (chapter_match) => {
 
     const markdown = await fs.readFile(file, 'utf-8');
 
-    // Let's not depend on the order of arguments so test for both
-    const figure_regexp1 = /{{[\s]*figure_markup\([^}]*image=["']([^'"]*)["'][^}]*chart_url=["']([^'"]*)["'][^}]*\)[^}]*}}/g;
-    const figure_regexp2 = /{{[\s]*figure_markup\([^}]*chart_url=["']([^'"]*)["'][^}]*image=["']([^'"]*)["'][^}]*\)[^}]*}}/g;
+    // Let's not depend on the order of arguments:
+    const figure_regexp = /{{[\s]*figure_markup\([^}]*(image|chart_url)=["']([^'"]*)["'][^}]*(image|chart_url)=["']([^'"]*)["'][^}]*\)[^}]*}}/g;
 
-    for (const regexp_type of [1, 2]) {
+    const matches = markdown.matchAll(figure_regexp);
+    for (const match of matches) {
 
-      const figure_regexp = (regexp_type == 1) ? figure_regexp1 : figure_regexp2;
+      let image_file = match[2];
+      let chart_url = match[4];
 
-      const matches = markdown.matchAll(figure_regexp);
-      for (const match of matches) {
-
-        let image_file = match[1];
-        let chart_url = match[2];
-
-        if (figure_regexp == figure_regexp2) {
-          image_file = match[2];
-          chart_url = match[1];
-        }
-
-        if (image_file.startsWith('..') || image_file.startsWith('http:') || image_file.startsWith('https:')) {
-          console.log(`  Skipping: ${image_file} as not a chapter image`);
-          continue;
-        }
-
-        const file_path = `static/images/${year}/${chapter}/${image_file}`;
-
-        if (fs.existsSync(file_path)) {
-          console.log(`  Skipping: ${image_file} as image already exists`);
-          continue;
-        }
-
-        console.log(`  Generating image ${image_file}...`);
-        await take_single_screenshot(chart_url, file_path);
+      if (match[1] != 'image') {
+        image_file = match[4];
+        chart_url = match[2];
       }
+
+      if (image_file.startsWith('..') || image_file.startsWith('http:') || image_file.startsWith('https:')) {
+        console.log(`  Skipping: ${image_file} as not a chapter image`);
+        continue;
+      }
+
+      const file_path = `static/images/${year}/${chapter}/${image_file}`;
+
+      if (fs.existsSync(file_path)) {
+        console.log(`  Skipping: ${image_file} as image already exists`);
+        continue;
+      }
+
+      console.log(`  Generating image ${image_file}...`);
+      await take_single_screenshot(chart_url, file_path);
     }
   }
 
