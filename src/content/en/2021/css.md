@@ -904,7 +904,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="custom-property-usage.png",
   caption="Change in custom property usage, 2019-2021.",
-  description="TODO",
+  description="A chart showing the evolution over time for the use of custom properties and the var() value function.  Custom properties were used in 5% of stylesheets using custom-property features in 2019, 19.3% in 2020, and 28.6% in 2021.  The var() value function was used in 27% of stylesheets using custom-property features in 2020 and 35.2% in 2021.  There is no data for 2019 for var().",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=752724350&format=interactive",
   sheets_gid="1813615348",
   sql_file="custom_property_adoption.sql"
@@ -915,7 +915,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="custom-property-names.png",
   caption="The most popular custom property names.",
-  description="TODO",
+  description="A chart listing the most popular custom properties names.  The results are given for mobile, as desktop is always within a percent or two.  The results are: --wp-style--color--link, 18.1%.  --wp-admin-theme-color, 7.5%.  --red, --blue, and --gren are all at 7.2%.  --dark and --white are both at 7.1%.  --primary and --secondary are at 6.9%.  --gray-dark, 6.8%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=205956063&format=interactive",
   sheets_gid="725813203",
   sql_file="custom_property_names.sql"
@@ -926,7 +926,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="custom-property-properties.png",
   caption="The most popular properties to be given a custom-property value.",
-  description="TODO",
+  description="A chart with the values given for mobile (desktop is always within a percent or two of mobile).  The results are as follows.  color 31%, background-color 17%, background 15%, border-color 13%, height 12%, width 12%, border 11%, box-shadow 11%, margin-top 10%, font-size 9%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=951347176&format=interactive",
   sheets_gid="1369726995",
   sql_file="custom_property_properties.sql"
@@ -937,7 +937,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="custom-property-value-types.png",
   caption="Distribution of types of custom property values.",
-  description="TODO",
+  description="A pie chart with the values given for mobile.  The results are: color 40%, dimension (length) 27.2%, font_stack 10.9%, number 11.1%, other 10.8%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1962152689&format=interactive",
   sheets_gid="2132273363",
   sql_file="custom_property_value_types.sql"
@@ -948,7 +948,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="custom-property-depth.png",
   caption="Distribution of median custom property depth.",
-  description="TODO",
+  description="A paired-column chart.  The results are as follows.  For zero custom property depth, 64% of desktop and 68% of mobile occurrences.  For one level of custom property depth, 32% on desktop and 29% on mobile.  For two levels of depth, 3% on both desktop and mobile.  For three or more levels, 0% on both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1735836564&format=interactive",
   sheets_gid="1066390528",
   sql_file="custom_property_depth.sql"
@@ -959,7 +959,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="logical-property-and-value-usage.png",
   caption="Distribution of property types of logical properties.",
-  description="TODO",
+  description="A pie chart showing distribution on mobile.  The results are: text-align 34%, margin 26.4%, padding 21.6%, border 11.8%, size 2.2%, min-size 2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=190768531&format=interactive",
   sheets_gid="1595217858",
   sql_file="i18n_logical_properties.sql"
@@ -970,7 +970,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="css-in-js-libraries.png",
   caption="Distribution of CSS-in-JS libraries.",
-  description="TODO",
+  description="A pie chart showing distribution on mobile.  The results are: Styled Components 57.7%, Emotion 24.4%, Glamor 7.5%, Aphrodite 6.6%, Styled Jsx 2%.  There are a few tiny slices that are not labeled.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1003466201&format=interactive",
   sheets_gid="1851845193",
   sql_file="css_in_js.sql"
@@ -981,7 +981,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="declaration-repetition.png",
   caption="Distribution of repetition of declarations per page.",
-  description="TODO",
+  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the percentage of properties that are repetitively declared.  Each percentile has two columns, one for desktop and one for mobile, but only mobile values are given (desktop is always within a percent or two).  The numbers are as follows.  10th percentile, 30%.  25th percentile, 36%.  50th percentile, 44%.  75th percentile, 53%.  90th percentile, 62%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1849063734&format=interactive",
   sheets_gid="560362648",
   sql_file="repetition.sql"
@@ -992,7 +992,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-longhand-properties-after-shorthands.png",
   caption="The most common longhand properties to appear after their corresponding shorthand properties.",
-  description="TODO",
+  description="A chart listing with all values given for mobile (desktop is always within a percent or two).  The results are as follows.  background-size, 15%.  background image, 7%.  margin-bottom, margin-top, border-bottom-color, and font size, 5%.  border-top-color, 4%.  margin-left, line-height, and background color, 3%. ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1051485878&format=interactive",
   sheets_gid="1761101514",
   sql_file="meta_shorthand_first_properties.sql"
@@ -1003,7 +1003,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="usage-of-background-shorthand-vs-longhands.png",
   caption="The most commonly used background properties.",
-  description="TODO",
+  description="A chart with all values given for mobile (desktop is almost always within a percent or two).  The results are as follows.  background 96%, background-color 95%, background-position 91%, background-image 90%, background-repeat 85%, background-size 82%, background-clip 47% width desktop at 56%, background-attachment 37%, background-origin 5% with desktop nearly 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=668445598&format=interactive",
   height=429,
   sheets_gid="886194727",
@@ -1015,7 +1015,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="usage-of-margin-padding-shorthands-vs-longhands.png",
   caption="The most commonly used margin and padding properties.",
-  description="TODO",
+  description="A chart with all values given for mobile (desktop is almost always within a percent or two).  The results are as follows.  margin-left 96%, margin 9%, margin-top and padding 93%.  padding-bottom, margin-bottom, and margin-right, 92%.  padding-left 91%, padding-right 90%.  padding-top 73%, with desktop at 90%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=918848418&format=interactive",
   sheets_gid="886194727",
   sql_file="all_properties.sql"
@@ -1026,7 +1026,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="usage-of-font-shorthand-vs-longhands.png",
   caption="The most commonly used font properties",
-  description="TODO",
+  description="A chart with all values given for mobile (desktop is almost always within a percent or two).  The results are as follows.  font-size 95%, font-familt 94%, font-weight 92%, font-style 86%, font 82% with desktop at 57%, font-variant 23% with desktop at 12%, font-stretch 5%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1034544520&format=interactive",
   sheets_gid="886194727",
   sql_file="all_properties.sql"
@@ -1037,7 +1037,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="usage-of-flex-shorthands-vs-longhands.png",
   caption="The most commonly used Flexbox-related properties.",
-  description="TODO",
+  description="A paired-column chart.  The results are as follows.  flex-basis, 35% desktop and 82% mobile.  flex-direction, 90% desktop and 75% mobile.  flex, 89% desktop and 68% mobile.  flex-grow, 43% desktop and 66% mobile.  flex-wrap, 70% desktop and 66% mobile.  flex-flow, 23% desktop and 35% mobile.  flex-shrink, 32% for both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=772069330&format=interactive",
   sheets_gid="886194727",
   sql_file="all_properties.sql"
@@ -1048,7 +1048,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="usage-of-grid-properties.png",
   caption="The most commonly used Grid-related properties.",
-  description="TODO",
+  description="A chart with all values given for mobile.  The results are as follows: grid-template-columns 71%, grid-template-rows 34%, grid-row-start 33%, grid-row 32%, grid-column-start 27%, grid-column-end 26%, grid-template-areas 25%, grid-gap 24%, grid-column 23%, grid-row-end 10%, grid-area 9%, grid-column-gap 9%, grid-auto-flow 3%, grid-row-gap 2%, grid-auto-rows 1%.  The following are all at 0%: grid-auto-column, grid-template, grid, grid-column-span, grid-columns, grid-rows.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=2100289470&format=interactive",
   height=575,
   sheets_gid="886194727",
@@ -1060,7 +1060,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-unknown-properties.png",
   caption="The most common unknown properties.",
-  description="TODO",
+  description="A chart listing results for mobile.  The results are: webkit-transition 14%, font-smoothing 14%, tap-highlight-color 9%, behavior 8%, box-orient 5%, -archetype 4%.  webkit-box-orient, box-flex, box-align, and box-pack are all 3%.  ms-transform and margin-center are both 2%.  Font-rendering, user-drag, and text-fill-color are all just above 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=946019101&format=interactive",
   height=401,
   sheets_gid="1993096589",
@@ -1072,7 +1072,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-common-shorthands-after-longhands.png",
   caption="The most common shorthand properties to (improperly) appear after any of their corresponding longhand properties.",
-  description="TODO",
+  description="A paired-column chart with values for mobile (desktop is always within a percentage or two).  The results are: background 53%, margin 12%, font 12%, padding 8%, animation 4%, border-radius 3%, list-style 2%, flex 1%, overflow 1%, transition 1%, all others 3%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=288419798&format=interactive",
   height=388,
   sheets_gid="1352208996",
@@ -1084,7 +1084,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-sass-function-calls.png",
   caption="The most commonly used Sass function calls.",
-  description="TODO",
+  description="A paired-column chart with values for mobile (desktop is always within a percentage or two).  The results are: (other) 18%, darken 16%, if 15%, map-get 10%, map-keys 9%, percentage 7%, nth 5%, lighten 5%, mix 4%, (alpha adjustment) 3%, length 3%, type-of 3%, unit 2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=714529985&format=interactive",
   height=552,
   sheets_gid="400373190",
@@ -1096,7 +1096,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="usage-of-control-flow-statements-in-scss.png",
   caption="The most commonly used Sass flow control structures.",
-  description="TODO",
+  description="A paired-column chart with values for mobile (desktop is always within a percentage or two).  The results are: @if 66%, @for 58%, @each 58%, @while 2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=438915471&format=interactive",
   sheets_gid="920758691",
   sql_file="sass_control_flow_statements.sql"
@@ -1107,7 +1107,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="usage-of-explicit-nesting-in-scss.png",
   caption="The prevalence of rule-nesting in Sass.",
-  description="TODO",
+  description="A paired-column chart with values for mobile (desktop is always within a percentage or two).  The results are: Total 87%, @:pseudo-class 85%, &.class 81%, &::pseudo-element 70%, & (by itself) 64%, $[attr] 59%, & > 27%, & + 26%, & descendant 18%, &#id 7%, & - 5%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=61926709&format=interactive",
   height=455,
   sheets_gid="1859409315",
