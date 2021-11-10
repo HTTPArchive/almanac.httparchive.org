@@ -24,7 +24,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="stylesheet-transfer-size.png",
   caption="Distribution of stylesheet transfer sizes per page.",
-  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the total weight of the stylesheets for a page.  Each percentile has two columns, one for desktop and one for mobile.  The numbers are as follows.  10th percentile, 9 kilobytes on desktop and 6 kilobytes on mobile.  25th percentile, 31 KB desktop and 27 KB mobile.  50th percentile, 71 KB desktop and 66 KB mobile.  75th percentile, 142 KB desktop and 135KB mobile.  90th percentile, 257 KB desktop and 250 KB mobile.",
+  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the total weight of the stylesheets for a page.  The numbers are as follows.  10th percentile, 9 kilobytes on desktop and 6 kilobytes on mobile.  25th percentile, 31 KB desktop and 27 KB mobile.  50th percentile, 71 KB desktop and 66 KB mobile.  75th percentile, 142 KB desktop and 135KB mobile.  90th percentile, 257 KB desktop and 250 KB mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=900703452&format=interactive",
   sheets_gid="350963758",
   sql_file="stylesheet_kbytes.sql"
@@ -71,7 +71,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="stylesheets-per-page.png",
   caption="Distribution of the number of stylesheets per page.",
-  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the total number of stylesheets loaded per page.  Each percentile has two columns, one for desktop and one for mobile.  The numbers are as follows.  10th percentile, 1 stylesheet for desktop and 1 stylesheet for mobile.  25th percentile, 3 for both desktop and mobile.  50th percentile, 7 for desktop and 6 for mobile.  75th percentile, 13 for both desktop and mobile.  90th percentile, 22 for both desktop and mobile.",
+  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the total number of stylesheets loaded per page.  The results are as follows.  10th percentile, 1 stylesheet for desktop and 1 stylesheet for mobile.  25th percentile, 3 for both desktop and mobile.  50th percentile, 7 for desktop and 6 for mobile.  75th percentile, 13 for both desktop and mobile.  90th percentile, 22 for both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1775427809&format=interactive",
   sheets_gid="751625680",
   sql_file="stylesheet_count.sql"
@@ -92,7 +92,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="rules-per-page.png",
   caption="Distribution of the total number of style rules per page.",
-  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the total number of CSS rules.  Each percentile has two columns, one for desktop and one for mobile.  The numbers are as follows.  10th percentile, 17 rules for desktop and 15 rules for mobile.  25th percentile, 145 rules for desktop and 152 for mobile.  50th percentile, 512 for desktop and 483 for mobile.  75th percentile, 1,078 for desktop and 1,063 for mobile.  90th percentile, 1,841 for  desktop and 1,821 for mobile.",
+  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the total number of CSS rules.  The results are as follows.  10th percentile, 17 rules for desktop and 15 rules for mobile.  25th percentile, 145 rules for desktop and 152 for mobile.  50th percentile, 512 for desktop and 483 for mobile.  75th percentile, 1,078 for desktop and 1,063 for mobile.  90th percentile, 1,841 for  desktop and 1,821 for mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=472863207&format=interactive",
   sheets_gid="697775839",
   sql_file="selectors.sql"
@@ -129,7 +129,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-attribute-selectors.png",
   caption="The most popular attribute selectors.",
-  description="A chart showing the most popular attributes selected via attribute selectors.  The list is as follows: type, class, disabled, dir, title, hidden, aria-disabled, role, href, controls, src, style, data-type, lang, xmlns, id, data-align, poster, name, readonly.",
+  description="A chart listing the most popular attributes selected via attribute selectors.  The list is as follows: type, class, disabled, dir, title, hidden, aria-disabled, role, href, controls, src, style, data-type, lang, xmlns, id, data-align, poster, name, readonly.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1836678858&format=interactive",
   sheets_gid="942534767",
   sql_file="top_selector_attributes.sql"
@@ -140,7 +140,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-pseudo-classes.png",
   caption="The most popular pseudo-classes.",
-  description="A chart showing the most popular pseudo-classes.  The list is as follows: hover, focus, active, first-child, last-child, not, visited, root, nth-child, link, disabled, empty, checked, -ms-input, last-of-type.",
+  description="A chart listing the most popular pseudo-classes.  The list is as follows: hover, focus, active, first-child, last-child, not, visited, root, nth-child, link, disabled, empty, checked, -ms-input, last-of-type.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1619223389&format=interactive",
   sheets_gid="843054585",
   sql_file="top_selector_pseudo_classes.sql"
@@ -151,7 +151,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-unprefixed-pseudo-elements.png",
   caption="The most popular unprefixed pseudo-elements.",
-  description="A chart showing the most popular pseudo-elements that are not vendor prefixed.  The list is as follows: before, after, selection, placeholder, first-letter, marker.",
+  description="A chart listing the most popular pseudo-elements that are not vendor prefixed.  The list is as follows: before, after, selection, placeholder, first-letter, marker.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1825062416&format=interactive",
   height=500,
   sheets_gid="1863963291",
@@ -163,7 +163,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="important-properties-per-page.png",
   caption="Distribution of the percentage of page rules using `!important`.",
-  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the percentage of properties marked important with the '!important' keyword.  Each percentile has two columns, one for desktop and one for mobile.  The numbers are as follows.  10th percentile, 0% for both desktop and mobile.  25th percentile, 1% for both desktop and mobile.  50th percentile, 2% for both desktop and mobile.  75th percentile, 4% for both desktop and mobile.  90th percentile, 8% for both desktop and mobile.",
+  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the percentage of properties marked important with the '!important' keyword.  The results are as follows.  10th percentile, 0% for both desktop and mobile.  25th percentile, 1% for both desktop and mobile.  50th percentile, 2% for both desktop and mobile.  75th percentile, 4% for both desktop and mobile.  90th percentile, 8% for both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1184051032&format=interactive",
   sheets_gid="1176732383",
   sql_file="meta_important_adoption.sql"
@@ -231,7 +231,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-length-units.png",
   caption="The most popular length units.",
-  description="A paired-column chart showing the most popular units used in length values.  The numbers are as follows.  px (pixel) 71% for both desktop and mobile.  % (percentage) 17% for desktop, 18% for mobile.  em (the m unit) 9% for both desktop and mobile.  rem (root-relative em) 2% for both desktop and mobile.",
+  description="A paired-column chart showing the most popular units used in length values.  The results are as follows.  px (pixel) 71% for both desktop and mobile.  % (percentage) 17% for desktop, 18% for mobile.  em (the m unit) 9% for both desktop and mobile.  rem (root-relative em) 2% for both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1920968690&format=interactive",
   sheets_gid="529909801",
   sql_file="units_frequency.sql"
@@ -375,7 +375,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-font-relative-units-of-length.png",
   caption="The most popular font-relative length units.",
-  description="A pie chart showing the distribution of font-relative length values.  The figures are as follows.  em (the m unit) 81.7%, rem (root-relative em) 17.8%, ch (zero-width advance) 0.5%.",
+  description="A pie chart with the following results.  em (the m unit) 81.7%, rem (root-relative em) 17.8%, ch (zero-width advance) 0.5%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=658259611&format=interactive",
   sheets_gid="529909801",
   sql_file="units_properties.sql"
@@ -386,7 +386,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="zero-lengths-by-unit.png",
   caption="The units (or lack thereof) used on zero-length values.",
-  description="A pie chart showing the distribution of how zero lengths are labeled, or not.  The figures are as follows.  Unitless zero values 87.8%, 0px (pixels) 11.6%, all others 0.6%.",
+  description="A pie chart with the following results.  Unitless zero values 87.8%, 0px (pixels) 11.6%, all others 0.6%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=758334535&format=interactive",
   sheets_gid="2139699206",
   sql_file="units_zero.sql"
@@ -397,7 +397,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-properties-using-calc.png",
   caption="The most popular properties using `calc()` functions.",
-  description="A paired-column chart showing the properties most likely to appear in calculation values.  Values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts.  The list is as follows: width 39%, left 18%, top 7%, height 5%, max-width 5%, min-height 3%, margin-left 3%, margin-right 3%, max-height 2%, right 2%, padding-bottom 1%, flex-basis 1%, padding-left 1%, font-size 1%, margin-top 1%.",
+  description="A paired-column chart where values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts.  The list is as follows: width 39%, left 18%, top 7%, height 5%, max-width 5%, min-height 3%, margin-left 3%, margin-right 3%, max-height 2%, right 2%, padding-bottom 1%, flex-basis 1%, padding-left 1%, font-size 1%, margin-top 1%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=907378413&format=interactive",
   sheets_gid="212269204",
   sql_file="calc_properties.sql"
@@ -419,7 +419,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-operators-using-calc.png",
   caption="The most popular operators used in `calc()` functions.",
-  description="A paired-column chart showing the value units most likely to be used in calculation values.  Values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts.  The list is as follows: - 61%. + 18%, / (division) 14%, * (multiplication) 7%.",
+  description="A paired-column chart where values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts.  The list is as follows: - 61%. + 18%, / (division) 14%, * (multiplication) 7%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1708226150&format=interactive",
   sheets_gid="464539022",
   sql_file="calc_operators.sql"
@@ -430,7 +430,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="units-per-calc-occurence.png",
   caption="The number of unique units used in `calc()` functions.",
-  description="A paired-column chart showing how many unique unit types are used in calculation values.  Values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts.  The list is as follows.  One unit type, 16%.  Two unit types, 82%.  Three or mroe unit types, 1%.",
+  description="A paired-column chart where values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts.  The list is as follows.  One unit type, 16%.  Two unit types, 82%.  Three or mroe unit types, 1%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=276182784&format=interactive",
   sheets_gid="856430777",
   sql_file="calc_complexity_units.sql"
@@ -584,7 +584,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="css-initiated-image-formats.png",
   caption="Distribution of the formats of external images loaded via CSS.",
-  description="A pie chart showing the distribution of image formats among images loaded via CSS.  The results are as follows: PNG 44.1%, GIF 18.3%, SVG 17.2%, JPG 16.4%, WEBP 3.7%.",
+  description="A pie chart with the following results: PNG 44.1%, GIF 18.3%, SVG 17.2%, JPG 16.4%, WEBP 3.7%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=868556131&format=interactive",
   sheets_gid="1133067574",
   sql_file="image_formats.sql"
@@ -595,7 +595,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="number-of-images-loaded.png",
   caption="Distribution of the number of external images loaded via CSS.",
-  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the number of images loaded via CSS.  Each percentile has two columns, one for desktop and one for mobile.  The numbers are as follows.  10th and 25th percentiles, 1 on both desktop and mobile.  50th percentile, 3 on both dekstop and mobile.  75th percentile, 6 on desktop and 5 on mobile.  90th percentile, 11 on desktop and 10 on mobile.",
+  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the number of images loaded via CSS.  The results are as follows.  10th and 25th percentiles, 1 on both desktop and mobile.  50th percentile, 3 on both dekstop and mobile.  75th percentile, 6 on desktop and 5 on mobile.  90th percentile, 11 on desktop and 10 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1206209320&format=interactive",
   sheets_gid="361647805",
   sql_file="image_weights.sql"
@@ -616,7 +616,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="total-image-weight.png",
   caption="Distribution of the total weight in KB of external images loaded via CSS.",
-  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the total weight of images loaded via CSS.  Each percentile has two columns, one for desktop and one for mobile, but figures are only given for mobile.  The results are as follows.  10th percentile, 1.0 KB.  25th percentile, 3.0 KB.  50th percentile, 16.3 KB.  75th percentile, 119.3 KB.  90th percentile, 479.7 KB.",
+  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the total weight of images loaded via CSS on mobile.  The results are as follows.  10th percentile, 1.0 KB.  25th percentile, 3.0 KB.  50th percentile, 16.3 KB.  75th percentile, 119.3 KB.  90th percentile, 479.7 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1022255274&format=interactive",
   sheets_gid="361647805",
   sql_file="image_weights.sql"
@@ -748,7 +748,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-unprefixed-gradient-functions.png",
   caption="The most popular types of gradient image values.",
-  description="A paired-column chart listing the most popular graident functions.  Values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts.  The list is as follows: linear-gradient 74.3%, radial-gradient 14.5%, repeating-linear-gradient 3.7%, repeating-radial-gradient 0.1%, conic-gradient 0%, repeating-conic-gradient 0%.",
+  description="A paired-column chart where values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts.  The list is as follows: linear-gradient 74.3%, radial-gradient 14.5%, repeating-linear-gradient 3.7%, repeating-radial-gradient 0.1%, conic-gradient 0%, repeating-conic-gradient 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=2004838082&format=interactive",
   sheets_gid="1135532290",
   sql_file="gradient_functions.sql"
@@ -770,7 +770,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="top-layout-methods.png",
   caption="The most commonly-declared layout types.",
-  description="A paired-column chart listing the most frequently detected layout methods as a percentage of all pages.  Values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts.  The list is as follows: absolute 93%, block 93%, inline-block 91%, floats 91%, inline 82%, fixed 82%, css-tables 81%, flex 74%, box 50%, inline-flex 39%, grid 36%, list-item 29%, inline-table 23%, inline-box 22%, stick 17%, inline-grid 12%, none 8%, flexbox 8%, inline-stack 5%, contents 5%, auto 2%.",
+  description="A paired-column chart where values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts.  The list is as follows: absolute 93%, block 93%, inline-block 91%, floats 91%, inline 82%, fixed 82%, css-tables 81%, flex 74%, box 50%, inline-flex 39%, grid 36%, list-item 29%, inline-table 23%, inline-box 22%, stick 17%, inline-grid 12%, none 8%, flexbox 8%, inline-stack 5%, contents 5%, auto 2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1090750625&format=interactive",
   height=756,
   sheets_gid="1349743417",
