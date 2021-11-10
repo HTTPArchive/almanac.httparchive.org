@@ -848,7 +848,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="animation-name-categories.png",
   caption="The most popular types of animation.",
-  description="A chart listing the most popular types of animations, with the values given for mobile (desktop is always within a percent or two of mobile).  The results are as follows.  rotate 18%, unkonwn or other 14%, fade 9%, wobble 7%, bounce 7%, scale 6%, slide 5%, pulse 2%, visibility 2%, flip 1%, move 0%.",
+  description="A chart listing the most popular types of animations, with the values given for mobile (desktop is always within a percent or two of mobile).  The results are as follows.  rotate 18%, unknown or other 14%, fade 9%, wobble 7%, bounce 7%, scale 6%, slide 5%, pulse 2%, visibility 2%, flip 1%, move 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=676429696&format=interactive",
   sheets_gid="721830186",
   sql_file="transition_animation_names.sql"
@@ -859,7 +859,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="media-query-features.png",
   caption="The most popular features used as media queries.",
-  description="TODO",
+  description="A chart listing the most commonly used media queries, with the values given for mobile (desktop is always within a percent or two of mobile).  The results are as follows.  max-width 81%, min-width 78%, -webkit-min-device-pixel-ratio 42%, orientation 34%, prefers-reduced-motion 32%, max-device-width 28%, min-resolution 23%, -ms-high-contrast 23%, max-height 22%, -webkit-transform-3d 14%, transform-3d 14%, min-device-pixel-ratio 14%, min--moz-device-pixel-ratio 12%, min-height 11%, -o-min-device-pixel-ratio 9%, min-device-width 8%, prefers-color-scheme 7%, forced-colors 7%, hover 4%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1275783028&format=interactive",
   height=671,
   sheets_gid="1192142763",
@@ -871,7 +871,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-breakpoints.png",
   caption="The most popular media query breakpoints.",
-  description="TODO",
+  description="A stacked-column chart listing the most popular media query breakpoints.  The results are as follows.  480 pixels, 24% min-width and 36% max-width.  600 pixels, 31% min-width and 38% max-width.  767px, 9% min-width and 52% max-width.  768px, 57% min-width and 38% max-width.  782px, 25% min-width and 10% max-width.  800px, 8% min-width and 26% max-width.  991px, 3% min-width and 30% max-width.  992px, 40% min-width and 13% max-width.  1024px, 16% min-width and 27% max-width.  1200px, 44% min-width and 18% max-width.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=990843085&format=interactive",
   sheets_gid="1275086846",
   sql_file="media_query_values.sql"
@@ -882,7 +882,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-properties-used-in-media-queries.png",
   caption="The most popular properties to be changed via media queries.",
-  description="TODO",
+  description="A chart with the values given for mobile (desktop is always within a percent or two of mobile).  The results are as follows.  display 81%, color 74%, width 72%, height 70%, background 69%, padding 69%, margin 67%, border 66%, background-color 65%, position 61%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=285981171&format=interactive",
   sheets_gid="1782726219",
   sql_file="media_query_properties.sql"
@@ -893,7 +893,7 @@ featured_stat_label_3: TODO
 {{ figure_markup(
   image="most-popular-features-queried.png",
   caption="The most popular CSS features to be queried with `@supports`.",
-  description="TODO",
+  description="A chart with the values given for mobile (desktop is always within a percent or two of mobile).  The results are as follows.  sticky 53%, mask-image 15%, ime-aligh 7%, overflow-scrolling 6%, touch-callout 5%, grid 3%, appearance 1%, custom properties 1%, max() 1%, transform-style 1%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1806919245&format=interactive",
   sheets_gid="349568482",
   sql_file="supports_criteria.sql"
