@@ -248,7 +248,7 @@ The MediaDevices API can be used to access connected media input such as cameras
 ### Geolocation-as-a-service
 
 Geolocations services provide GPS and other location data of the user (such as <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Glossary/IP_Address">IP address</a>) and can be used by trackers to provide more relevant content to the user among other things.
-Therefore, we analyze the use of geolocation-as-a-service technologies on websites, based on libraries detected through Wappalyzer. We find that the most popular service, <a hreflang="en" href="https://www.ipify.org/">ipify</a>, is used on 0.09% of desktop websites and 0.07% of mobile websites.
+Therefore, we analyze the use of geolocation-as-a-service technologies on websites, based on libraries detected through [Wappalyzer](./methodology#wappalyzer). We find that the most popular service, <a hreflang="en" href="https://www.ipify.org/">ipify</a>, is used on 0.09% of desktop websites and 0.07% of mobile websites.
 
 
 
@@ -264,7 +264,7 @@ Therefore, we analyze the use of geolocation-as-a-service technologies on websit
 
 
 According to our data, few websites utilize geolocation services. Geolocation data can also be accessed by websites through a <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API">web browser API</a>.
-We find that 0.59% of websites on a desktop client and 0.63% of websites on a mobile client access the current position of the user (based on Blink features), as can be seen in graph {add ref to graph}.
+We find that 0.59% of websites on a desktop client and 0.63% of websites on a mobile client access the current position of the user (based on [Blink features](./methodology#blink-features)), as can be seen in graph {add ref to graph}.
 
 
 {{ figure_markup(
