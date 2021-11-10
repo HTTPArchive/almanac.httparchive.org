@@ -334,17 +334,6 @@
       "github": "jeffposnick",
       "twitter": "jeffposnick"
     },
-    "kevinfarrugia": {
-      "name": "Kevin Farrugia",
-      "teams": [
-        "authors",
-        "leads"
-      ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/8075326?v=4&s=200",
-      "website": "https://imkev.dev",
-      "github": "kevinfarrugia",
-      "twitter": "imkevdev"
-    },
     "Schweinepriester": {
       "name": "Kai Schweinepriester",
       "teams": [
@@ -352,6 +341,16 @@
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/2644614?v=4&s=200",
       "github": "Schweinepriester"
+    },
+    "kevinfarrugia": {
+      "name": "Kevin Farrugia",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/8075326?v=4&s=200",
+      "website": "https://imkev.dev",
+      "github": "kevinfarrugia",
+      "twitter": "imkevdev"
     },
     "lucasbona05": {
       "name": "Lucas Gonçalves",
@@ -439,6 +438,16 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/22671477?v=4&s=200",
       "github": "shantsis"
     },
+    "GeekBoySupreme": {
+      "name": "Shuvam Manna",
+      "teams": [
+        "designers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/15321738?v=4&s=200",
+      "github": "GeekBoySupreme",
+      "twitter": "shuvam360",
+      "website": "https://shuvam.xyz"
+    },
     "siakaramalegos": {
       "name": "Sia Karamalegos",
       "teams": [
@@ -449,16 +458,6 @@
       "github": "siakaramalegos",
       "linkedin": "karamalegos",
       "twitter": "TheGreenGreek"
-    },
-    "GeekBoySupreme": {
-      "name": "Shuvam Manna",
-      "teams": [
-        "designers"
-      ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/15321738?v=4&s=200",
-      "github": "GeekBoySupreme",
-      "twitter": "shuvam360",
-      "website": "https://shuvam.xyz"
     },
     "simonhearne": {
       "name": "Simon Hearne",
