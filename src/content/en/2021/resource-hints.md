@@ -10,9 +10,9 @@ translators: []
 results: https://docs.google.com/spreadsheets/d/1Mw6TjkIClRtlZPHbij5corOZbaSUp-vgTVq3Ig18IwQ/
 kevinfarrugia_bio: Kevin Farrugia is a consultant on web performance and software architecture. You can find him blogging on <a hreflang="en" href="https://imkev.dev">imkev.dev</a>.
 featured_quote: Resource hints could become a double-edged sword if the benefit for your users is not evaluated. Nearly a quarter of preload requests went unused while the number of preload hints correlated with slower load times.
-featured_stat_1: 44.28%
+featured_stat_1: 44.3%
 featured_stat_label_1: Adoption of preload in the top 1,000 websites.
-featured_stat_2: 21.48%
+featured_stat_2: 21.5%
 featured_stat_label_2: Unused preload hints within the first 3 seconds.
 featured_stat_3: 438%
 featured_stat_label_3: Growth in adoption of native lazy loading on images.
@@ -22,7 +22,7 @@ featured_stat_label_3: Growth in adoption of native lazy loading on images.
 
 Resource Hints are instructions to the browser that you may use to improve a website's performance. This set of instructions enable you to assist the browser in prioritizing origins or resources which need to be fetched and processed.
 
-Let's take a closer look at how resource hints are implemented, what are the most common pitfalls and what we can do to make sure we are using resource hints as effectively as possible. 
+Let's take a closer look at how resource hints are implemented, what are the most common pitfalls and what we can do to make sure we are using resource hints as effectively as possible.
 
 ### The Link directive
 
@@ -57,7 +57,7 @@ Adoption for HTTP headers is significantly lower than having resource hints impl
 {{ figure_markup(
   image="http-headers-vs-html-markup.png",
   caption='Popularity of resource hints as HTTP headers and HTML markup.',
-  description='Bar chart showing the popularity of resource hints as HTTP headers and HTML markup. HTML markup is used on 91.24% of instances on desktop and 94.13% of instances on mobile. HTTP headers are used on 8.76% of instances on desktop and 5.87% of instances on mobile.',
+  description='Bar chart showing the popularity of resource hints as HTTP headers and HTML markup. HTML markup is used on 91.2% of instances on desktop and 94.1% of instances on mobile. HTTP headers are used on 8.8% of instances on desktop and 5.9% of instances on mobile.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1056457221&format=interactive",
   sheets_gid="1707816066",
   sql_file="http_headers_hints_adoption.sql"
@@ -115,14 +115,14 @@ Most modern browsers also <a hreflang="en" href="https://caniuse.com/link-rel-pr
 {{ figure_markup(
   image="resource-hints-adoption.png",
   caption='Adoption of the link rel attribute.',
-  description='Bar chart showing the percent of pages using the link rel attribute values. `dns-prefetch` has 36.43% adoption on mobile and 35.74% on desktop. `preload` has 22.10% adoption on mobile and 22.02% on desktop. `preconnect` has 12.72% adoption on mobile and 12.93% on desktop. `prefetch` has 2.14% adoption on mobile and 2.42% on desktop. `prerender` has 0.13% adoption on mobile and 0.12% on desktop. `modulepreload` has 0.08% adoption on mobile and 0.09% on desktop.',
+  description='Bar chart showing the percent of pages using the link rel attribute values. `dns-prefetch` has 36.4% adoption on mobile and 35.7% on desktop. `preload` has 22.1% adoption on mobile and 22.0% on desktop. `preconnect` has 12.7% adoption on mobile and 12.9% on desktop. `prefetch` has 2.1% adoption on mobile and 2.4% on desktop. `prerender` has 0.1% adoption on mobile and 0.1% on desktop. `modulepreload` has 0.1% adoption on mobile and 0.1% on desktop.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1740212588&format=interactive",
   sheets_gid="2077755325",
   sql_file="hints_adoption.sql"
   )
 }}
 
-The most widely used resource hint is `dns-prefetch` (36.43% on mobile); which is unsurprising, considering it was introduced in <a hreflang="en" href="https://caniuse.com/link-rel-dns-prefetch">2009</a>. With the widespread use of HTTPS, in many cases it should be replaced with `preconnect` (12.72% on mobile). Considering that the `preload` hint is comparatively new, first appearing in Chrome in <a hreflang="en" href="https://groups.google.com/a/chromium.org/g/blink-dev/c/_nu6HlbNQfo/m/XzaLNb1bBgAJ?pli=1">2016</a>, it is the second most widely adopted resource hint (22.10% on mobile) and is seeing constant growth year-on-year - a testament to the importance and flexibility of this directive.
+The most widely used resource hint is `dns-prefetch` (36.4% on mobile); which is unsurprising, considering it was introduced in <a hreflang="en" href="https://caniuse.com/link-rel-dns-prefetch">2009</a>. With the widespread use of HTTPS, in many cases it should be replaced with `preconnect` (12.7% on mobile). Considering that the `preload` hint is comparatively new, first appearing in Chrome in <a hreflang="en" href="https://groups.google.com/a/chromium.org/g/blink-dev/c/_nu6HlbNQfo/m/XzaLNb1bBgAJ?pli=1">2016</a>, it is the second most widely adopted resource hint (22.1% on mobile) and is seeing constant growth year-on-year - a testament to the importance and flexibility of this directive.
 
 As shown in the charts above, the adoption rates on mobile and desktop are near-identical.
 
@@ -131,19 +131,19 @@ As shown in the charts above, the adoption rates on mobile and desktop are near-
 {{ figure_markup(
   image="rel-preload-adoption-by-rank.png",
   caption='Adoption of `rel="preload"` segmented by CrUX rank.',
-  description='Bar chart showing the adoption of `rel="preload"` segmented by CrUX rank. `rel="preload"` has a 44% for the top 1,000 sites on mobile and 44% on desktop. `rel="preload"` has a 43% for the top 10,000 sites on mobile and 44% on desktop. `rel="preload"` has a 35% for the top 100,000 sites on mobile and 36% on desktop. `rel="preload"` has a 27% for the top 1 million sites on mobile and 27% on desktop. `rel="preload"` has a 22% for all sites on mobile and 22% on desktop.',
+  description='Bar chart showing the adoption of `rel="preload"` segmented by CrUX rank. `rel="preload"` has a 44.2% for the top 1,000 sites on mobile and 44.3% on desktop. `rel="preload"` has a 43.3% for the top 10,000 sites on mobile and 44.1% on desktop. `rel="preload"` has a 35.3% for the top 100,000 sites on mobile and 35.7% on desktop. `rel="preload"` has a 27.2% for the top 1 million sites on mobile and 27.3% on desktop. `rel="preload"` has a 22.1% for all sites on mobile and 22.0% on desktop.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=291501434&format=interactive",
   sheets_gid="1880502987",
   sql_file="hints_adoption_by_rank.sql"
   )
 }}
 
-You can observe that when segmenting the data by [rank](./methodology#chrome-ux-report), the adoption rates change notably, with the `preload` hint increasing from 22.10% unranked, to claim the top spot with an adoption rate of 44.28% amongst the top 1,000 sites.
+You can observe that when segmenting the data by [rank](./methodology#chrome-ux-report), the adoption rates change notably, with the `preload` hint increasing from 22.1% unranked, to claim the top spot with an adoption rate of 44.3% amongst the top 1,000 sites.
 
 {{ figure_markup(
   image="rel-dns-prefetch-adoption-by-rank.png",
   caption='Adoption of `rel="dns-prefetch"` segmented by CrUX rank.',
-  description='Bar chart showing the adoption of `rel="dns-prefetch"` segmented by CrUX rank. `rel="dns-prefetch"` has a 29% for the top 1,000 sites on mobile and 28% on desktop. `rel="dns-prefetch"` has a 25% for the top 10,000 sites on mobile and 25% on desktop. `rel="dns-prefetch"` has a 23% for the top 100,000 sites on mobile and 23% on desktop. `rel="dns-prefetch"` has a 27% for the top 1 million sites on mobile and 27% on desktop. `rel="dns-prefetch"` has a 36% for all sites on mobile and 36% on desktop.',
+  description='Bar chart showing the adoption of `rel="dns-prefetch"` segmented by CrUX rank. `rel="dns-prefetch"` has a 28.6% for the top 1,000 sites on mobile and 28.2% on desktop. `rel="dns-prefetch"` has a 25.5% for the top 10,000 sites on mobile and 25.3% on desktop. `rel="dns-prefetch"` has a 22.9% for the top 100,000 sites on mobile and 22.7% on desktop. `rel="dns-prefetch"` has a 27.0% for the top 1 million sites on mobile and 27.1% on desktop. `rel="dns-prefetch"` has a 36.4% for all sites on mobile and 35.7% on desktop.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1340595902&format=interactive",
   sheets_gid="1880502987",
   sql_file="hints_adoption_by_rank.sql"
@@ -155,7 +155,7 @@ You can observe that when segmenting the data by [rank](./methodology#chrome-ux-
 {{ figure_markup(
   image="rel-preconnect-adoption-by-rank.png",
   caption='Adoption of `rel="preconnect"` segmented by CrUX rank.',
-  description='Bar chart showing the adoption of `rel="preconnect"` segmented by CrUX rank. `rel="preconnect"` has a 30% for the top 1,000 sites on mobile and 29% on desktop. `rel="preconnect"` has a 25% for the top 10,000 sites on mobile and 25% on desktop. `rel="preconnect"` has a 18% for the top 100,000 sites on mobile and 18% on desktop. `rel="preconnect"` has a 14% for the top 1 million sites on mobile and 14% on desktop. `rel="preconnect"` has a 13% for all sites on mobile and 13% on desktop.',
+  description='Bar chart showing the adoption of `rel="preconnect"` segmented by CrUX rank. `rel="preconnect"` has a 29.7% for the top 1,000 sites on mobile and 29.0% on desktop. `rel="preconnect"` has a 24.9% for the top 10,000 sites on mobile and 24.9% on desktop. `rel="preconnect"` has a 18.2% for the top 100,000 sites on mobile and 18.4% on desktop. `rel="preconnect"` has a 13.6% for the top 1 million sites on mobile and 13.7% on desktop. `rel="preconnect"` has a 12.7% for all sites on mobile and 12.9% on desktop.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1818271680&format=interactive",
   sheets_gid="1880502987",
   sql_file="hints_adoption_by_rank.sql"
@@ -187,7 +187,7 @@ Of the sites using resource hints, when comparing the median for the top 1,000 s
 {{ figure_markup(
   image="correlation-of-good-cwv-and-preload.png",
   caption='Correlation between good CWV score and number of `rel="preload"` hints',
-  description='Scatter plot with trend lines showing the number of pages which have a good CWV score and the number of `rel="preload"` hints on that page. Pages with 0 preload hints have a 43% likelihood of having a good CWV score. Pages with 20 preload hints have a 21% likelihood of having a good CWV score.',
+  description='Scatter plot with trend lines showing the number of pages which have a good CWV score and the number of `rel="preload"` hints on that page. 42.8% of desktop pages, and 30.1% of mobile pages with 0 preload hints have a good CWV score. 21.5% of desktop pages and 11.1% of mobiles page, with 20 preload hints have a good CWV score.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=122948841&format=interactive",
   sheets_gid="2032682744",
   sql_file="correlation_cwv_preload.sql"
@@ -199,7 +199,7 @@ By combining a page's <a hreflang="en" href="https://web.dev/cwv">Core Web Vital
 {{ figure_markup(
   image="correlation-of-good-lcp-and-preload.png",
   caption='Correlation between good LCP score and number of `rel="preload"` hints',
-  description='Scatter plot with trend lines showing the number of pages which have a good LCP score and the number of `rel="preload"` hints on that page. Pages with 0 preload hints have a 62% likelihood of having a good LCP score. Pages with 20 preload hints have a 38% likelihood of having a good LCP score.',
+  description='Scatter plot with trend lines showing the number of pages which have a good LCP score and the number of `rel="preload"` hints on that page. 62.5% of desktop pages, and 47.5% of mobile page with 0 preload hints have a good LCP score. 38.2% of desktop pages, and 20.7% of mobile pages with 20 preload hints have a good LCP score.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1380182218&format=interactive",
   sheets_gid="2032682744",
   sql_file="correlation_cwv_preload.sql"
@@ -223,7 +223,7 @@ The `as` attribute should be specified when using `rel="preload"` (or `rel="pref
 {{ figure_markup(
   image="preload-as-attribute-values.png",
   caption='`rel="preload" as` attribute values.',
-  description='Bar chart showing the usage of values for rel="preload". script is used 55% of the time on mobile and 54% on desktop. font is used 22% of the time on mobile and 23% on desktop. style is used 11% of the time on mobile and 11% on desktop. fetch is used 9% of the time on mobile and 8% on desktop. image is used 3% of the time on mobile and 3% on desktop.',
+  description='Bar chart showing the usage of values for rel="preload". script is used 54.6% of the time on mobile and 54.5% on desktop. font is used 21.9% of the time on mobile and 23.5% on desktop. style is used 10.9% of the time on mobile and 11.3% on desktop. fetch is used 9.4% of the time on mobile and 7.5% on desktop. image is used 2.8% of the time on mobile and 2.8% on desktop.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1844544440&format=interactive",
   sheets_gid="1246058294",
   sql_file="hint_attribute_usage.sql"
@@ -266,18 +266,18 @@ The `crossorigin` attribute is used to indicate whether CORS must be used when f
     <tbody>
       <tr>
         <td>not set</td>
-        <td class="numeric">66.61%</td>
-        <td class="numeric">65.91%</td>
+        <td class="numeric">66.6%</td>
+        <td class="numeric">65.9%</td>
       </tr>
       <tr>
         <td><code>crossorigin</code> (or equivalent)</td>
-        <td class="numeric">14.50%</td>
-        <td class="numeric">13.48%</td>
+        <td class="numeric">14.5%</td>
+        <td class="numeric">13.5%</td>
       </tr>
       <tr>
         <td><code>use-credentials</code></td>
-        <td class="numeric">0.04%</td>
-        <td class="numeric">0.04%</td>
+        <td class="numeric">0.1%</td>
+        <td class="numeric">0.1%</td>
       </tr>
     </tbody>
   </table>
@@ -291,7 +291,7 @@ The default value when no value is specified, `anonymous` will set the credentia
 
 ##### `use-credentials`
 
-When requesting cross-origin resources which require authentication, for example through the use of cookies, client certificates or the `Authorization` header; setting the `crossorigin="use-credentials"` attribute will include this data in the request and allowing the server to respond to the request so that the resource may be preloaded. This is not a common scenario with 0.04% usage, however if your page content is dependent on an authenticated status, it could be used to initiate an early fetch request to get the login status.
+When requesting cross-origin resources which require authentication, for example through the use of cookies, client certificates or the `Authorization` header; setting the `crossorigin="use-credentials"` attribute will include this data in the request and allowing the server to respond to the request so that the resource may be preloaded. This is not a common scenario with 0.1% usage, however if your page content is dependent on an authenticated status, it could be used to initiate an early fetch request to get the login status.
 
 #### The `media` attribute
 
@@ -321,7 +321,7 @@ When you preload a resource which is not needed within the first few seconds of 
 
 {{ figure_markup(
   caption='Percent of unused preload hints within the first 3 seconds.',
-  content="21.48%",
+  content="21.5%",
   classes="big-number",
   sheets_gid="2013605735",
   sql_file="consoleLog_unused_preload.sql"
@@ -357,7 +357,7 @@ More than half of the cases when the `crossorigin` attribute on the `rel="preloa
 
 #### Invalid `as` attribute
 
-The `as` attribute plays an important role when preloading your resources and getting this wrong may result in downloading the same resource twice. On most browsers, specifying an unrecognized `as` attribute will ignore the preload. The supported values are `audio`, `document`, `embed`, `fetch`, `font`, `image`, `object`, `script`, `style`, `track`, `worker` and `video`. 
+The `as` attribute plays an important role when preloading your resources and getting this wrong may result in downloading the same resource twice. On most browsers, specifying an unrecognized `as` attribute will ignore the preload. The supported values are `audio`, `document`, `embed`, `fetch`, `font`, `image`, `object`, `script`, `style`, `track`, `worker` and `video`.
 
 There are 17,861 cases of unrecognized values, with the most frequent error being omitting it completely; while the most common invalid as values are `other` and `stylesheet` (the correct value is `style`).
 
@@ -382,7 +382,7 @@ More than 5% of pages which preload font files, preload more font files than nee
 
 You can use resource hints to connect to, or download resources from, both first and [third parties](./third-parties). While `dns-prefetch` and `preconnect` are only useful when connecting to different origins, including subdomains; `preload` and `prefetch` may be used for both resources on the same origin and resources hosted by third parties.
 
-When considering which resource hints you should use for third-party resources, you need to evaluate the priority and role of each third party on your application's loading experience and whether the costs are justified. 
+When considering which resource hints you should use for third-party resources, you need to evaluate the priority and role of each third party on your application's loading experience and whether the costs are justified.
 
 Prioritizing third-party resources over your own content is potentially a warning sign, however there are cases when this is recommended. As an example, if we look at cookie notice scripts; which are required in the European Union by <a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">General Data Protection Regulation</a>; these are usually accompanied by a `dns-prefetch` or `preconnect` script as they are highly obtrusive to the user experience and also a prerequisite for some site functions, such as serving personalized ads.
 
@@ -400,73 +400,73 @@ Prioritizing third-party resources over your own content is potentially a warnin
     <tbody>
       <tr>
         <td>adservice.google.com</td>
-        <td class="numeric">0.25%</td>
-        <td class="numeric">0.37%</td>
-        <td class="numeric">42.72%</td>
-        <td class="numeric">43.34%</td>
+        <td class="numeric">0.3%</td>
+        <td class="numeric">0.4%</td>
+        <td class="numeric">42.7%</td>
+        <td class="numeric">43.3%</td>
       </tr>
       <tr>
         <td>fonts.gstatic.com</td>
-        <td class="numeric">0.82%</td>
-        <td class="numeric">25.45%</td>
-        <td class="numeric">0.74%</td>
-        <td class="numeric">27.01%</td>
+        <td class="numeric">0.8%</td>
+        <td class="numeric">25.5%</td>
+        <td class="numeric">0.7%</td>
+        <td class="numeric">27.0%</td>
       </tr>
       <tr>
         <td>fonts.googleapis.com</td>
-        <td class="numeric">14.09%</td>
-        <td class="numeric">4.59%</td>
-        <td class="numeric">3.05%</td>
-        <td class="numeric">21.72%</td>
+        <td class="numeric">14.1%</td>
+        <td class="numeric">4.6%</td>
+        <td class="numeric">3.1%</td>
+        <td class="numeric">21.7%</td>
       </tr>
       <tr>
         <td>s.w.org</td>
-        <td class="numeric">20.00%</td>
-        <td class="numeric">0.25%</td>
+        <td class="numeric">20.0%</td>
+        <td class="numeric">0.3%</td>
         <td class="numeric">-</td>
-        <td class="numeric">20.25%</td>
+        <td class="numeric">20.3%</td>
       </tr>
       <tr>
         <td>cdn.shopify.com</td>
         <td class="numeric">-</td>
-        <td class="numeric">1.82%</td>
-        <td class="numeric">12.16%</td>
-        <td class="numeric">13.98%</td>
+        <td class="numeric">1.8%</td>
+        <td class="numeric">12.2%</td>
+        <td class="numeric">14.0%</td>
       </tr>
       <tr>
         <td><a href="http://www.google-analytics.com">www.google-analytics.com</a></td>
-        <td class="numeric">1.27%</td>
-        <td class="numeric">4.05%</td>
-        <td class="numeric">0.17%</td>
-        <td class="numeric">5.49%</td>
+        <td class="numeric">1.3%</td>
+        <td class="numeric">4.1%</td>
+        <td class="numeric">0.2%</td>
+        <td class="numeric">5.5%</td>
       </tr>
       <tr>
         <td><a href="http://www.googletagmanager.com">www.googletagmanager.com</a></td>
-        <td class="numeric">1.94%</td>
-        <td class="numeric">3.14%</td>
-        <td class="numeric">0.25%</td>
-        <td class="numeric">5.32%</td>
+        <td class="numeric">1.9%</td>
+        <td class="numeric">3.1%</td>
+        <td class="numeric">0.3%</td>
+        <td class="numeric">5.3%</td>
       </tr>
       <tr>
         <td>siteassets.parastorage.com</td>
         <td class="numeric">-</td>
         <td class="numeric">-</td>
-        <td class="numeric">5.24%</td>
-        <td class="numeric">5.24%</td>
+        <td class="numeric">5.2%</td>
+        <td class="numeric">5.2%</td>
       </tr>
       <tr>
         <td>images.squarespace-cdn.com</td>
         <td class="numeric">-</td>
-        <td class="numeric">4.51%</td>
+        <td class="numeric">4.5%</td>
         <td class="numeric">-</td>
-        <td class="numeric">4.51%</td>
+        <td class="numeric">4.5%</td>
       </tr>
       <tr>
         <td>ajax.googleapis.com</td>
-        <td class="numeric">2.30%</td>
-        <td class="numeric">1.79%</td>
-        <td class="numeric">0.36%</td>
-        <td class="numeric">4.45%</td>
+        <td class="numeric">2.3%</td>
+        <td class="numeric">1.8%</td>
+        <td class="numeric">0.4%</td>
+        <td class="numeric">4.5%</td>
       </tr>
     </tbody>
   </table>
@@ -474,7 +474,7 @@ Prioritizing third-party resources over your own content is potentially a warnin
 <figcaption>{{ figure_link(caption="Most popular third parties connected to using resource hints.", sheets_gid="1254656281", sql_file="preload_host_by_url.sql") }}</figcaption>
 </figure>
 
-Analyzing the table above, 42.72% of all pages which include a `preload` hint are preloading resources hosted on adservice.google.com, while s.w.org (WordPress) is the most popular domain for `dns-prefetch` and `fonts.gstatic.com` for the `preconnect` directive.
+Analyzing the table above, 42.7% of all pages which include a `preload` hint are preloading resources hosted on adservice.google.com, while s.w.org (WordPress) is the most popular domain for `dns-prefetch` and `fonts.gstatic.com` for the `preconnect` directive.
 
 {{ figure_markup(
   image="google-fonts.png",
@@ -508,21 +508,21 @@ Browsers which do not support the `loading` attribute, will simply ignore it - m
   )
 }}
 
-The number of pages using `loading="lazy"` has grown from 4.17% in 2020 to 18.28% in 2021. That's a whopping 438% growth! This rapid growth is extraordinary and is likely driven by two key elements. The ease with which it could be added to pages without cross-browser compatibility issues, and the frameworks or technologies powering these websites. In WordPress 5.5, <a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">lazy-loading images became the default implementation</a>, supercharging the adoption rate of `loading="lazy"`, with WordPress sites now making up <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">84%</a> of all pages which use native image lazy-loading.
+The number of pages using `loading="lazy"` has grown from 4.2% in 2020 to 18.3% in 2021. That's a whopping 438% growth! This rapid growth is extraordinary and is likely driven by two key elements. The ease with which it could be added to pages without cross-browser compatibility issues, and the frameworks or technologies powering these websites. In WordPress 5.5, <a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">lazy-loading images became the default implementation</a>, supercharging the adoption rate of `loading="lazy"`, with WordPress sites now making up <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">84%</a> of all pages which use native image lazy-loading.
 
 A <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">study</a> on the load times for pages which use lazy-loading, indicated that pages which use lazy-loading tend to have a worse LCP performance, possibly caused by overusing the lazy-loading attribute. This is increasingly significant on the LCP element, which shouldn't be lazy-loaded. If you are using `loading="lazy"`, you should check that the lazily-loaded images are below the fold and more critically, that the [LCP element is not lazy-loaded](./performance). More than 60% of all lazy-load images are actually within the initial viewport and shouldn't be lazy-loaded.)
 
 {{ figure_markup(
   image="lazy-loaded-images.png",
   caption='Percent of `img` elements with `loading="lazy"` which are in the initial viewport.',
-  description='Bar chart showing the percent of `img` elements with `loading="lazy"` which are within the initial viewport. 61.54% on mobile and 63.10% on desktop of lazy-loaded images are within the initial viewport. 38.46% on mobile and 36.90% on desktop of lazy-loaded images are not within the initial viewport.',
+  description='Bar chart showing the percent of `img` elements with `loading="lazy"` which are within the initial viewport. 61.5% on mobile and 63.1% on desktop of lazy-loaded images are within the initial viewport. 38.5% on mobile and 36.9% on desktop of lazy-loaded images are not within the initial viewport.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=977858704&format=interactive",
   sheets_gid="1468369891",
   sql_file="lazy_viewport_images.sql"
   )
 }}
 
-The likelihood of a page containing at least one iframe is much lower than for that containing an image with only 2.56% of pages containing an iframe taking advantage of native lazy-loading. The benefits of lazy-loading an iframe are potentially important, as an iframe could initiate further requests to download even more resources, including scripts and images. This is especially true when using embeds, such as YouTube or Twitter embeds. Similarly, to when deciding the loading strategy for an image, you must check whether the iframe is shown within the initial viewport or not. If it isn't, then it is usually safe to add `loading="lazy"` to the `<iframe>` element to benefit from a reduced initial load & boost performance.
+The likelihood of a page containing at least one iframe is much lower than for that containing an image with only 2.6% of pages containing an iframe taking advantage of native lazy-loading. The benefits of lazy-loading an iframe are potentially important, as an iframe could initiate further requests to download even more resources, including scripts and images. This is especially true when using embeds, such as YouTube or Twitter embeds. Similarly, to when deciding the loading strategy for an image, you must check whether the iframe is shown within the initial viewport or not. If it isn't, then it is usually safe to add `loading="lazy"` to the `<iframe>` element to benefit from a reduced initial load & boost performance.
 
 ### HTTP/2 Server Push
 
