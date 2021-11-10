@@ -108,7 +108,7 @@
         </div>
 
         <p>
-          Results for each metric are publicly viewable in chapter-specific spreadsheets, for example <a href="https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/edit?usp=sharing">JavaScript results</a>. Scroll to the bottom of each chapter for links to their queries, results, and comments from readers, and each figure is also linked to the tab on each sheet and the query that generated those results.
+          Results for each metric are publicly viewable in chapter-specific spreadsheets, for example <a href="https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/edit?usp=sharing">JavaScript results</a>. Links to the raw results, queries, and reader comments are available at the bottom of each chapter. Metric-specific results and queries are also linked directly from each figure.
         </p>
     </section>
 
@@ -116,7 +116,7 @@
         <h3 id="websites"><a href="#websites" class="anchor-link">Websites</a></h3>
 
         <p>
-          There are 8,198,531 websites in the dataset. Among those, 7,499,763 are mobile websites and 6,294,605 are desktop websites. Most websites are included in both the mobile and desktop subsets.
+          There are 8,198,531 websites in the dataset. This represents an increase of 9% compared to the <a href="../2020/methodology#websites">2020 edition</a> of the Web Almanac. Among those, 7,499,763 are mobile websites and 6,294,605 are desktop websites. Most websites are included in both the mobile and desktop subsets.
         </p>
 
         <p>
@@ -125,10 +125,6 @@
 
         <p>
           The July {{ year }} HTTP Archive crawl used by the Web Almanac used the most recently available Chrome UX Report release for its list of websites. The {{ year }}05 dataset was released on June 8, {{ year }} and captures websites visited by Chrome users during the month of May.
-        </p>
-
-        <p>
-          There was was a 8-15% growth in the number of websites analyzed compared to those in the <a href="../2020/methodology#websites">2020 Web Almanac</a>. See previous analysis on this continued growth completed last year by <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='paulcalvano') }}">Paul Calvano</a> in his <a hreflang="en" href="https://paulcalvano.com/{{ year }}-09-29-growth-of-the-web-in-2020/">Growth of the Web in 2020</a> post.
         </p>
 
         <p>
@@ -242,7 +238,7 @@
       </p>
 
       <p>
-        HTTP Archive&#8217;s private instance of WebPageTest is kept in sync with the latest public version and augmented with <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">custom metrics</a>. These are snippets of JavaScript that are evaluated on each website at the end of the test. Thanks to the <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/commits/master/custom_metrics">contributions</a> of many data analysts.
+        HTTP Archive&#8217;s private instance of WebPageTest is kept in sync with the latest public version and augmented with <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">custom metrics</a>, which are snippets of JavaScript that are evaluated on each website at the end of the test.
       </p>
 
       <p>
@@ -302,7 +298,7 @@
       <h3 id="wappalyzer"><a href="#wappalyzer" class="anchor-link">Wappalyzer</a></h3>
 
       <p>
-        <a hreflang="en" href="https://www.wappalyzer.com/">Wappalyzer</a> is a tool for detecting technologies used by web pages. There are <a hreflang="en" href="https://www.wappalyzer.com/technologies">90 categories</a> of technologies tested, ranging from JavaScript frameworks, to CMS platforms, and even cryptocurrency miners. There are over 2,600 supported technologies (and increase from 1,400 last year).
+        <a hreflang="en" href="https://www.wappalyzer.com/">Wappalyzer</a> is a tool for detecting technologies used by web pages. There are <a hreflang="en" href="https://www.wappalyzer.com/technologies">90 categories</a> of technologies tested, ranging from JavaScript frameworks, to CMS platforms, and even cryptocurrency miners. There are over 2,600 supported technologies (an increase from 1,400 last year).
       </p>
 
       <p>
@@ -366,7 +362,7 @@
       <h4 id="rework-utils"><a href="#rework-utils" class="anchor-link">Rework Utils</a></h4>
 
       <p>
-        This year&#8217;s <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> chapter continued the 2020 methodology led by <a href="{{ url_for('contributors', year=2019, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a> who took a significantly more detailed look at the state of CSS, spread over <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}/css">100+ queries</a>. To make this scale of analysis feasible, Lea open sourced the <a hreflang="en" href="https://github.com/LeaVerou/rework-utils">Rework Utils</a>. These utilities take the JSON data from Rework to the next level by providing helpful scripts to more easily extract CSS insights. Most of the stats you see in the CSS chapter are powered by these scripts.
+        This year&#8217;s <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> chapter revisits many of the metrics introduced in last year's CSS chapter, which was led by <a href="{{ url_for('contributors', year=2019, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a>. Lea wrote <a hreflang="en" href="https://github.com/LeaVerou/rework-utils">Rework Utils</a> to more easily extract insights from Rework CSS's output. Most of the stats you see in the CSS chapter continue to be powered by these scripts.
       </p>
     </section>
 
@@ -390,11 +386,11 @@
       <h3 id="planning"><a href="#planning" class="anchor-link">Planning</a></h3>
 
       <p>
-        The {{ year }} Web Almanac kicked off in <a href="https://twitter.com/rick_viscomi/status/1273135952848977920">April {{ year }}</a> and, simialr to the 2020 edition, was completed during the continued COVID-19 pandemic. This and other events of {{ year }} were an undercurrent throughout the entire production process and put a lot of additional strain on our contributors beyond the stresses of a fast-paced project like this.
+        The {{ year }} Web Almanac kicked off in April {{ year }} with a <a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/2167">call for contributors</a>. We initialized the project with all 23 chapters from previous years and the community suggested additional topics that became two new chapters this year: <a href="{{ url_for('chapter', year=year, lang=lang, chapter='structured-data') }}">Structured Data</a> and <a href="{{ url_for('chapter', year=year, lang=lang, chapter='webassembly') }}">WebAssembly</a>.
       </p>
 
       <p>
-        As we <a href="../2019/methodology#brainstorming">stated in inaugral year&#8217;s Methodology</a>:
+        As we <a href="../2019/methodology#brainstorming">stated in the inaugural year&#8217;s Methodology</a>:
       </p>
 
       <blockquote>
@@ -402,7 +398,7 @@
       </blockquote>
 
       <p>
-        To that end, this year we&#8217;ve continued our changes to the way that we seek and select authors:
+        To that end, this year we&#8217;ve refined our <a href="https://github.com/HTTPArchive/almanac.httparchive.org/discussions/2165">author selection process</a>:
       </p>
 
       <ul>
@@ -420,25 +416,21 @@
       <p>
         We hope to iterate on this process in the future to ensure that the Web Almanac is a more diverse and inclusive project with contributors from all backgrounds.
       </p>
-
-      <p>
-        Finally, in July {{ year }}, after rounds of brainstorming and nominations, 25 chapters were solidified and we formed content teams for each chapter tasked with writing, reviewing, and analysis.
-      </p>
     </section>
 
     <section>
       <h3 id="analysis"><a href="#analysis" class="anchor-link">Analysis</a></h3>
 
       <p>
-        In May and June {{ year }}, with the stable list of metrics and chapters, data analysts triaged the metrics for feasibility. In some cases, <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">custom metrics</a> were created to fill gaps in our analytic capabilities.
+        In May and June {{ year }}, data analysts worked with authors and peer reviews to come up with a list of metrics that would need to be queried for each chapter. In some cases, <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">custom metrics</a> were created to fill gaps in our analytic capabilities.
       </p>
 
       <p>
-        Throughout July {{ year }}, the HTTP Archive data pipeline crawled several million websites, gathering the metadata to be used in the Web Almanac.
+        Throughout July {{ year }}, the HTTP Archive data pipeline crawled several million websites, gathering the metadata to be used in the Web Almanac. These results were post-processed and saved to <a href="https://console.cloud.google.com/bigquery?p=httparchive&d=almanac&page=dataset">BigQuery</a>.
       </p>
 
       <p>
-        The data analysts began writing queries to extract the results for each metric. In total, hundreds of queries were written by hand! You can browse all of the queries by year and chapter in our open source <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}">query repository</a> on GitHub.
+        Being our third year, we were able to update and reuse the queries written by previous analysts. Still, there were many new metrics that needed to be written from scratch. You can browse all of the queries by year and chapter in our open source <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}">query repository</a> on GitHub.
       </p>
     </section>
 
