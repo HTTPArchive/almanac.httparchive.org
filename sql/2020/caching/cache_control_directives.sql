@@ -69,4 +69,3 @@ FROM (
 )
 GROUP BY
   client
-

@@ -14,5 +14,4 @@ GROUP BY
 ORDER BY
   client,
   freq DESC
-LIMIT
-100
+LIMIT 100
