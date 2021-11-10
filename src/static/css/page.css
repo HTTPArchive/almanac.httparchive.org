@@ -852,3 +852,7 @@ pre {
 .code-block code {
   width: 100%;
 }
+
+/* Needed for Safari to hide the index properly */
+@media print {
+
