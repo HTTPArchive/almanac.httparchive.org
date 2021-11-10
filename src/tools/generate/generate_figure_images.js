@@ -89,8 +89,6 @@ const generate_images = async (chapter_match) => {
   console.log('All done!');
 }
 
-
-
 (async () => {
   try {
     const first_arg = process.argv.slice(2)[0]
@@ -100,5 +98,3 @@ const generate_images = async (chapter_match) => {
     process.exit(1);
   }
 })();
-
-
