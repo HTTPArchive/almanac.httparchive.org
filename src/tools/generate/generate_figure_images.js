@@ -31,7 +31,7 @@ const generate_images = async (chapter_match) => {
                 : 'content\\\\' +  '(' + chapter_match.replace(/\\/g,')\\\\(') + ').md';
     re = new RegExp(chapter_match);
   } else {
-    console.log('Please provide an argument of the form: en/2020/performance');
+    console.log('Please provide an argument of the form: en/2020/performance')
     process.exit(1);
   }
 
@@ -51,7 +51,7 @@ const generate_images = async (chapter_match) => {
       continue;
     }
 
-    console.log(`Generating for the ${year} ${chapter} chapter:`);
+    console.log(`Generating for the ${year} ${chapter} chapter:`)
 
     const markdown = await fs.readFile(file, 'utf-8');
 
