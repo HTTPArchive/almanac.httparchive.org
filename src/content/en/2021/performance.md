@@ -120,7 +120,7 @@ Regions in parts of Asia and Europe continued to have higher performance. This m
 
 {{ figure_markup(
   image="performance-5-country-top-origins-vs-pop.png",
-  caption="Top 10 regions by CrUX origins vs population. Source: <a href="https://datacommons.org/">datacommons.org</a>. Population data is for 2020. Original data comes from the World Bank, the US Census, INSEE, and WikiData.",
+  caption='Top 10 regions by CrUX origins vs population. Source: <a href="https://datacommons.org/">datacommons.org</a>. Population data is for 2020. Original data comes from the World Bank, the US Census, INSEE, and WikiData.',
   description="Bar chart showing for each country, the percent of total origins versus the percent of total population. Data listed as country, percent of origins, percent of population: United States 12.3% 4.3%, Japan 5.0% 1.6%, Brazil 4.3% 2.7%, Germany 3.9% 1.1%, India 3.8% 17.8%, United Kingdom 3.6% 0.9%, Russian Federation 3.0% 1.9%, Italy 2.8% 0.8%, Spain 2.8% 0.6%, France 2.7% 0.9%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=200409532&format=interactive",
   width=600,
@@ -134,7 +134,7 @@ Similarly, here are the 10 top regions by population and their corresponding sha
 
 {{ figure_markup(
   image="performance-6-country-top-pop-vs-origins.png",
-  caption="Top 10 regions by population vs CrUX origins. Source: <a href="https://www.census.gov/popclock/print.php?component=counter">U.S. Census Bureau Current Population</a> (population clock) at Nov 02, 2021 18:31 UTC (+4). Population data is for 2021",
+  caption='Top 10 regions by population vs CrUX origins. Source: <a href="https://www.census.gov/popclock/print.php?component=counter">U.S. Census Bureau Current Population</a> (population clock) at Nov 02, 2021 18:31 UTC (+4). Population data is for 2021',
   description="Bar chart showing for each country, the percent of total population versus the percent of total origins. Data listed as country, percent of population, percent of origins: 1. China 17.9% 0.3%, 1a. Taiwan 0.3% 1.2%, 2. India 17.2% 3.8%, 3. United States 4.3% 12.3%, 4. Indonesia 3.5% 2.1%, 5. Pakistan 3.1% 0.6%, 6. Nigeria 2.8% 0.3%, 7. Brazil 2.7% 4.3%, 8. Bangladesh 2.1% 0.5%, 9. Russia 1.8% 3.0%, 10. Mexico 1.7% 1.9%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1955368947&format=interactive",
   width=600,
@@ -192,7 +192,7 @@ TTFB was faster on desktop than mobile, presumably because of faster network spe
   description="Stacked bar chart showing TTFB performance for effective connection type. For offline websites, 43% had good, 39% needs improvement, and 18% poor performance. For slow 2G, 1% were good, 2% needs improvement, and 98% poor. For 2G, 0% were good, 2% needs improvement, and 97% poor. For 3G, 1% were good, 27% needs improvement, and 72% poor. For 4G, 19% were good, 58% needs improvement, and 23% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1059484029&format=interactive",
   sheets_gid="730149797",
-  sql_file=web_vitals_by_eff_connection_type.sql"
+  sql_file="web_vitals_by_eff_connection_type.sql"
   )
 }}
 
@@ -216,43 +216,38 @@ For rank, TTFB was faster for higher-ranking sites. One reason could be that mos
 One more possibility has to do with CMS adoption. The [CMS Chapter](./cms) shows CMS adoption by rank.
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
+  image="cms-adoption-by-rank.png",
+  caption="CMS adoption by rank",
+  description="Bar chart showing percent of websites using a CMS for each ranking category. On mobile, the numbers are 7% of websites in the top 1,000, 15% in the top 10,000, 20% in the top 100,000, 29% in the top 1,000,000, and 42% in the top 10,000,000.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=409766380&format=interactive",
   sheets_gid="730149797",
-  sql_file=".sql"
+  sql_file="../cms/cms_adoption_by_rank.sql"
   )
 }}
 
 42% of pages (mobile) in the "all" group used a CMS whereas the top 1,000 sites only had 7% adoption.
 
-Then, if we look at the top 5 CMSs by rank, we see that WordPress has the highest adoption at for 31% of "all" pages:
+Then, if we look at the top 5 CMSs by rank, we see that WordPress has the highest adoption at for 33.6% of "all" pages:
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
+  image="top-cmss-by-rank.png",
+  caption="Top 5 CMSs by rank",
+  description="Bar chart showing the top CMSs percent of share of each ranking category. Wordpress had 3.1% of the top 1,000, 8.6% of the top 10,000, 13.2% of the top 100,000, 21.1% of the top 1,000,000, and 33.6% of the top 10,000,000. The remaining CMSs had less than 3% share of all rankings.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=2087254046&format=interactive",
   sheets_gid="730149797",
-  sql_file=".sql"
+  sql_file="../cms/top_cms_by_rank.sql"
   )
 }}
 
 Finally, if we look at the [Core Web Vitals Technology Report](https://datastudio.google.com/s/o6zLzlTpWaI), we see how each CMS performs by metric:
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
-  sheets_gid="730149797",
-  sql_file=".sql"
+  link="https://datastudio.google.com/s/o6zLzlTpWaI",
+  image="cms_ttfb_cwv_report.png",
+  caption="Origins having good TTFB by CMS ([Core Web Vitals Technology Report](https://datastudio.google.com/s/o6zLzlTpWaI))",
+  description="Time series chart of Origins Having Good TTFB for Wordpress, Wix, and Squarespace. In July, Wordpress and Wix were at 5% and Squarespace at 20%."
   )
 }}
-
-<!-- TODO: figcaption -->
-Figure: Origins having good TTFB by CMS ([Core Web Vitals Technology Report](https://datastudio.google.com/s/o6zLzlTpWaI))
 
 Only 5% of origins on WordPress experienced good TTFB in July 2021. Considering WordPress's large share of the top 10M sites, its poor TTFB could be a contributor to the TTFB degradation by rank.
 
