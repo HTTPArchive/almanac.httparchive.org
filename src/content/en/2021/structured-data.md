@@ -55,7 +55,7 @@ To date, some of the broadest consumers of structured data are _search engines_ 
 
 In most major search engines, website owners may become eligible for various forms of '<a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/search-gallery">rich results</a>' (which may influence visibility and traffic) by implementing various types of structured data on their websites.
 
-In fact, search engines have played such a significant role in the general adoption of (and <a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data">education</a> arond) structured data across the web, that this chapter was born out of Web Almanac [SEO chapters from previous years](../seo#structured-data). In recent years, the influence of search engines has also popularized <a hreflang="en" href="https://schema.org/">schema.org</a> the vocabulary of choice for structured data.
+In fact, search engines have played such a significant role in the general adoption of (and <a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data">education</a> around) structured data across the web, that this chapter was born out of Web Almanac [SEO chapters from previous years](../seo#structured-data). In recent years, the influence of search engines has also popularized <a hreflang="en" href="https://schema.org/">schema.org</a> the vocabulary of choice for structured data.
 
 In addition to this, social media platforms rely on structured data to influence how they read and display content when it's shared (or linked to) on their platforms. Rich previews, tailored titles and descriptions, and interactivity in these platforms are often 'powered' by structured data.
 
@@ -66,9 +66,9 @@ For example, structured data facilitates:
 * Easier topic modelling and clustering across multiple pages, websites and concepts; enabling new types of research, comparison and services.
 * Enriching analytics data, to allow for deeper and horizontalized analysis of content and performance.
 * Creating a unified (or at least, connected) language and syntax for querying business systems and website content.
-* Semantic Search; using the same rich metadata used for search engine optimization, to create and manage internal search systems.
+* Semantic search; using the same rich metadata used for search engine optimization, to create and manage internal search systems.
 
-Whilst the findings of our research is inevitably shaped by the influence of search engines, we hope to also explore other types, formats, and use-cases of structured data.
+Whilst the findings of our research are inevitably shaped by the influence of search engines, we hope to also explore other types, formats, and use-cases of structured data.
 
 ## Types of structured data and coverage
 
@@ -93,15 +93,15 @@ Before we explore specific usage across the various structured data types, we sh
 
 #### 1. The influence of content management systems
 
-Many of the pages we've evaluated are from websites which use a [content management system](https://en.wikipedia.org/wiki/Content_management_system) (or 'CMS'; such as <a hreflang="en" href="https://wordpress.org/">WordPress</a> or <a hreflang="en" href="https://www.drupal.org/">Drupal</a>). These systems - or the themes/plugins/modules which enhance their functionality - are often responsible for generating the HTML markup which contains the structured data which we're analysing.
+Many of the pages we've evaluated are from websites which use a [content management system](https://en.wikipedia.org/wiki/Content_management_system) (or 'CMS'; such as <a hreflang="en" href="https://wordpress.org/">WordPress</a> or <a hreflang="en" href="https://www.drupal.org/">Drupal</a>). These systems - or the themes/plugins/modules which enhance their functionality - are often responsible for generating the HTML markup which contains the structured data which we're analyzing.
 
-That means that our findings are unavoidably skewed to aligning with the behaviours and output of the most prevalent CMS'. For example, many websites using Drupal automatically output structured data in the form of RDFa, and WordPress (which powers [a significant percentage of websites](./cms)) often includes microformats markup in template code. This contributes significantly to the shape of our findings.
+That means that our findings are unavoidably skewed to aligning with the behaviors and output of the most prevalent CMS'. For example, many websites using Drupal automatically output structured data in the form of RDFa, and WordPress (which powers [a significant percentage of websites](./cms)) often includes microformats markup in template code. This contributes significantly to the shape of our findings.
 
 #### 2. The limitations of homepage-only data
 
 Unfortunately, the nature and scale of our data-collection methods limit our analysis to _homepages only_ (i.e., the _root URL_ of each hostname we evaluate).
 
-This significantly limits the amount of data we can collect and analyse, and, undoubtedly skews the _kinds_ of data we've collected.
+This significantly limits the amount of data we can collect and analyze, and undoubtedly skews the _kinds_ of data we've collected.
 
 As most homepages act as 'portals' to more specific pages, we can reasonably expect that our analysis underestimates the prevalence of the kinds of content present on that 'deeper' pages. That likely includes information relating to _articles_, _people_, _products_ and similar.
 
@@ -130,19 +130,19 @@ We can see that there's a broad range of different types of structured data acro
   )
 }}
 
-We can also see that _RDFa_ and _Open Graph tags_ in particular are extremely prevalent; appearing on 60.61% and 57.45% of pages respectively.
+We can also see that _RDFa_ and _Open Graph tags_ in particular are extremely prevalent, appearing on 60.61% and 57.45% of pages respectively.
 
 At the other end of the scale, 'legacy' formats, like _Microformats_ and _microformats2_, appear on fewer than 1% of pages.
 
 ### Coverage by syntax type
 
-In addition to identifying when a certain type of structured data is present, we collect information on the types of data it describes. We can break each of these down, and explore how each format and syntax is being used.
+In addition to identifying when a certain type of structured data is present, we collect information on the types of data it describes. We can break each of these down and explore how each format and syntax is being used.
 
 #### RDFa
 
 <a hreflang="en" href="https://www.w3.org/TR/rdfa-lite/">RDFa</a> (Resource Description Framework in Attributes) is a technology for linked data markup, which was introduced by W3C in 2015. It allows users to augment and translate visual information on a web page by adding additional attributes to markup.
 
-E.g., a website owner might add a `rel="license"` attribute to a hyperlink in order to explicitly describe it as a link to a licensing information page.
+For example, a website owner might add a `rel="license"` attribute to a hyperlink in order to explicitly describe it as a link to a licensing information page.
 
 {{ figure_markup(
   image="structured-data-rdfa-types.jpg",
@@ -168,13 +168,13 @@ FOAF uses W3C's RDF syntax and in its <a hreflang="en" href="https://web.archive
 
 <p class="note">"Consider a Web of inter-related home pages, each describing things of interest to a group of friends. Each new home page that appears on the Web tells the world something new, providing factoids and gossip that make the Web a mine of disconnected snippets of information. FOAF provides a way to make sense of all this."</p>
 
-Anecdotally, we can attribute a prominence of `foaf` markup in our results to sites running on older versions of the Drupal CMS; which historically added `typeof="foaf:image"` and `foaf:document` markup to its HTML by default.
+Anecdotally, we can attribute a prominence of `foaf` markup in our results to sites running on older versions of the Drupal CMS, which historically added `typeof="foaf:image"` and `foaf:document` markup to its HTML by default.
 
 ##### On other notable RDFa findings
 
 As well as FOAF properties, various other standards and syntaxes show up in our list.
 
-Notably, we can see several 'sioc' properties, such as `sioc:item` (0.24% of pages) and `sioc:useraccount` (0.03% of pages). <a hreflang="en" href="https://www.w3.org/Submission/sioc-spec/">SIOC</a> is a standard designed to describe structured data relating to _online communities_, such as message boards, forums, wikis and blogs.
+Notably, we can see several `sioc` properties, such as `sioc:item` (0.24% of pages) and `sioc:useraccount` (0.03% of pages). <a hreflang="en" href="https://www.w3.org/Submission/sioc-spec/">SIOC</a> is a standard designed to describe structured data relating to _online communities_, such as message boards, forums, wikis and blogs.
 
 We can also see a <a hreflang="en" href="https://www.w3.org/TR/skos-primer/">SKOS</a> property - `skos:concept` - on 0.04% of pages. SKOS is another standard, which aims to provide a way of describing taxonomies and classifications (e.g., tags, data sets, and so on).
 
@@ -208,13 +208,13 @@ While it might seem to many that Schema.org is predominant in the context of SEO
 
 ##### Open Graph
 
-<a hreflang="en" href="https://ogp.me/">The Open Graph protocol</a> is an open source standard, originally created by Facebook. It is a type of structured data specific to the context of _sharing content_, based loosely on Dublin Core, Microformats and similar standards.
+<a hreflang="en" href="https://ogp.me/">The Open Graph protocol</a> is an open-source standard, originally created by Facebook. It is a type of structured data specific to the context of _sharing content_, based loosely on Dublin Core, Microformats and similar standards.
 
-It describes a series of meta tags and properties, which may be used to define how content should be (re)presented when shared between platforms. E.g., when 'liking' or embedding a post, or sharing a link.
+It describes a series of meta tags and properties, which may be used to define how content should be (re)presented when shared between platforms. For example, when 'liking' or embedding a post, or sharing a link.
 
 These tags are typically implemented in the `<head>` of a HTML document, and define elements such as the page's _title_, _description_, _URL_, and _featured image_.
 
-The Open Graph protocol has since been broadly adopted by many platforms and services; including _Twitter_, _Skype_, _LinkedIn_, _Pinterest_, _Outlook _and more. When platforms don't have their own standards for how shared/embedded content should be presented (and sometimes, even when they do), Open Graph tags are often used to define the default behaviour.
+The Open Graph protocol has since been broadly adopted by many platforms and services, including _Twitter_, _Skype_, _LinkedIn_, _Pinterest_, _Outlook _and more. When platforms don't have their own standards for how shared/embedded content should be presented (and sometimes, even when they do), Open Graph tags are often used to define the default behavior.
 
 {{ figure_markup(
   image="structured-data-open-graph.jpg",
@@ -230,17 +230,17 @@ The Open Graph protocol has since been broadly adopted by many platforms and ser
 
 The most common type of Open Graph tag is the `og:title`, which can be found on an incredible 54.87% of pages. That's followed closely by a set of related attributes, which describe what _type_ of thing is being represented (e.g., `og:type`, on 48.18% of pages) and _how_ it should be represented (e.g., `og:description`, on 48.55% of pages).
 
-This narrow distribution is to be expected, as these tags are often used together as part of a 'boilerplate' set of tags used in the `&lt;head&gt;` across all pages on a site.
+This narrow distribution is to be expected, as these tags are often used together as part of a "boilerplate" set of tags used in the `<head>` across all pages on a site.
 
 Slightly less common is `og:locale` (26.39% of pages), which is used to define the language of the page's content.
 
 Less common still is more specific metadata about the `og:image` tag, in the form of `og:image:width` (12.95% of pages), `og:image:height` (12.91% of pages), `og:image:secure_url` (5.61% of pages) and `og:image:alt` (1.75% of pages). It's worth noting that with HTTPS adoption now increasingly the norm, `og:image:secure_url` (which was intended to identify a `https` version of the `og:image`) is now largely redundant.
 
-Beyond these examples, usage drops off rapidly, into a long-tail of (often malformed, deprecated or erroneous) tags.
+Beyond these examples, usage drops off rapidly, into a long tail of (often malformed, deprecated or erroneous) tags.
 
 ##### Twitter
 
-Though Twitter uses Open Graph tags as fallbacks and defaults, the platform supports its own flavour of structured data. A set of specific meta tags (all prefixed with `twitter:`) can be used to define how pages should be presented when URLs are shared on Twitter.
+Though Twitter uses Open Graph tags as fallbacks and defaults, the platform supports its own flavor of structured data. A set of specific meta tags (all prefixed with `twitter:`) can be used to define how pages should be presented when URLs are shared on Twitter.
 
 {{ figure_markup(
   image="structured-data-twitter.jpg",
@@ -266,7 +266,7 @@ Also of interest are:
 * The `twitter:creator` tag (3.58% of pages), which defines the Twitter account of the author of the webpage's content.
 * The `twitter:label1` and `twitter:data1` tags (both on 6.85% of pages), which can be used to define custom data and attributes about the webpage. Additional label/data pairs (e.g., `twitter:label2` and `twitter:data2`) are also present on a significant number (0.5%) of pages.
 
-Beyond these examples, usage drops off rapidly, into a long-tail of (often malformed, deprecated or erroneous) tags.
+Beyond these examples, usage drops off rapidly, into a long tail of (often malformed, deprecated or erroneous) tags.
 
 ##### Facebook
 
@@ -298,7 +298,7 @@ They are composed of a set of defined classes that describe the meanings behind 
 
 The guiding principle behind this format for structured data is to convey semantics by ​reusing widely adopted standards (semantic (X)HTML). The <a hreflang="en" href="https://microformats.org/wiki/what-are-microformats">official documentation</a> describes Microformats as "designed for humans first and machines second", and are "a set of simple, open data formats built upon existing and widely adopted standards".
 
-Microformats are available in two versions: Microformats v1 and Microformats v2 (microformats2). The latter, introduced in March 2014,  replaces and supersedes v1 and takes advantage of some important lessons learned from both microdata and rdfa syntaxes.
+Microformats are available in two versions: Microformats v1 and Microformats v2 (microformats2). The latter, introduced in March 2014,  replaces and supersedes v1 and takes advantage of some important lessons learned from both microdata and RDFa syntaxes.
 
 {{ figure_markup(
   image="structured-data-microformats.jpg",
@@ -322,23 +322,23 @@ Historically and due to its nature (as an extension of HTML), Microformats have 
   )
 }}
 
-The difference between legacy microformats and the more modern version is significant, and an interesting insight into changing behaviours and preferences in the use of markup.
+The difference between legacy microformats and the more modern version is significant, and an interesting insight into changing behaviors and preferences in the use of markup.
 
 Where the `adr` class dominated the classic microformats data set, the equivalent `h-adr` property only occurs on 0.02% of pages. The results here are dominated instead by the `h-entry` property (on 0.08% of pages; which describes blog posts and similar content 'units'), and the `h-card` property (on 0.04% of pages; which describes a 'business card' of an organization or individual).
 
 We can speculate on three likely causes for this difference:
 
 * Data for common class names (like `adr`) is almost certainly over-inflated in our microformats v1 data; where it's difficult to distinguish between when these values are used for _structured data_ vs more _generic_ reasons (e.g., as a HTML class attribute value with associated CSS rules).
-* The use of microformats in general (regardless of type) has decreased significantly, and been replaced with other formats, and;
-* Many websites and themes still include `h-entry` (and sometimes `h-card`) markup on common design elements and layouts. E.g., many WordPress themes continue to output a `h-entry` class on the main content container.
+* The use of microformats in general (regardless of type) has decreased significantly, and been replaced with other formats.
+* Many websites and themes still include `h-entry` (and sometimes `h-card`) markup on common design elements and layouts. For example, many WordPress themes continue to output a `h-entry` class on the main content container.
 
 #### Microdata
 
-Like microformats and RDFa, [microdata](https://en.wikipedia.org/wiki/Microdata_(HTML)) is based on adding attributes to HTML elements. Unlike microformats, but in common with RDfa, it's not tied to a set of defined meanings. The standard is extensible, and allows authors to declare which vocabularies of data they're describing; most commonly schema.org.
+Like microformats and RDFa, [microdata](https://en.wikipedia.org/wiki/Microdata_(HTML)) is based on adding attributes to HTML elements. Unlike microformats, but in common with RDFa, it's not tied to a set of defined meanings. The standard is extensible and allows authors to declare which vocabularies of data they're describing; most commonly schema.org.
 
 One of the limitations of microdata is that it can be difficult to describe abstract or complex relationships between entities, when those relationships aren't explicitly reflected in the HTML structure of the page.
 
-For example, it may be hard to describe the _opening hours_ of an _organization_ if that information isn't concurrent or logically structured in the document. Note that, there are standards and methodologies for solving this problem (e.g., by including inline `&lt;meta&gt;` tags and properties), but these aren't widely adopted.
+For example, it may be hard to describe the _opening hours_ of an _organization_ if that information isn't concurrent or logically structured in the document. Note that, there are standards and methodologies for solving this problem (e.g., by including inline `<meta>` tags and properties), but these aren't widely adopted.
 
 {{ figure_markup(
   image="structured-data-microdata.jpg",
@@ -352,7 +352,7 @@ For example, it may be hard to describe the _opening hours_ of an _organization_
   )
 }}
 
-The most common types of microdata across the pages we analysed describe the webpage itself; via properties like `webpage` (7.44% of pages), `sitenavigationelement` (5.62% of pages), `wpheader` (4.87% of pages) and `wpfooter` (4.56% of pages).
+The most common types of microdata across the pages we analyzed describe the webpage itself; via properties like `webpage` (7.44% of pages), `sitenavigationelement` (5.62% of pages), `wpheader` (4.87% of pages) and `wpfooter` (4.56% of pages).
 
 It's easy to speculate on why these types of 'structural' descriptors are more prominent than 'content' descriptors (such as `person` or `product`); creating and maintaining microdata requires content producers to add specific code to their content - and that's often easier to do at 'template' level than it is at 'content' level.
 
@@ -361,9 +361,9 @@ Whilst one of the strengths of microdata is its explicit relationship with (and 
 That said, we see a broad adoption and variety of microdata types. Of note:
 
 * `Organization` (4.02%), which typically describes the company which _publishes_ the website, the _manufacturer_ of a product, the _employer_ of an author, or similar.
-* `CreativeWork` (2.14%) the most generic 'parent' type to describe all written and visual content; e.g., blog posts, images, video, music, art.
+* `CreativeWork` (2.14%) the most generic 'parent' type to describe all written and visual content (e.g., blog posts, images, video, music, art).
 * `BlogPosting` (1.34%), which describes an individual blog post (which commonly also identifies a `Person` as an author).
-* `Person` (1.37%) which is often used to describe content authors and people related to the page (e.g., the publisher of the website, the owner of the publishing organization, the individual selling a product, etc).
+* `Person` (1.37%) which is often used to describe content authors and people related to the page (e.g., the publisher of the website, the owner of the publishing organization, the individual selling a product, etc.).
 * `Product` (1.22%) and `Offer` (1.09%), which, when used together, describe a product which is available for purchase (typically with additional properties which describe pricing, reviews and availability).
 
 #### JSON-LD
@@ -388,10 +388,10 @@ As we might expect, our findings are similar to our findings from evaluating the
 
 Because the JSON-LD format allows for site owners to describe their content independently of the HTML markup, it can be easier to represent more abstract complex relationships, which aren't tied so strictly to the content of the page.
 
-We can see this reflected in our findings; where more specific and structured descriptors are more common than with microdata. E.g:
+We can see this reflected in our findings, where more specific and structured descriptors are more common than with microdata. For example:
 
-* `BreadcrumbList` (1.45% of pages) describes the hierarchical position of the webpage in the website (and describes each 'parent' page).
-* `ItemList` (0.5% of pages), which describes a 'set' of entities; such as _steps_ in a _recipe_, or _products_ in a _category_.
+* `BreadcrumbList` (1.45% of pages) describes the hierarchical position of the webpage on the website (and describes each 'parent' page).
+* `ItemList` (0.5% of pages), which describes a 'set' of entities, such as _steps_ in a _recipe_, or _products_ in a _category_.
 
 Outside of these examples, we continue to see a similar pattern as we did with microdata (though at a much lower scale). Descriptions of websites, local businesses, organizations and the structure of webpages account for the majority of broad adoption.
 
@@ -399,9 +399,9 @@ Outside of these examples, we continue to see a similar pattern as we did with m
 
 One key advantage of JSON-LD is that we can more easily describe the _relationships_ between entities than we can in other formats.
 
-An _event_, for example, may have an organizing _corporation_, be located at a specific _location_, and have tickets available on sale as part of an _offer_. A _blog post_ describing that event might have an _author_, and so on, and so on. Describing these kinds of relationships is much easier with JSON-LD than with other syntaxes, and can help us tell rich stories about entities.
+An _event_, for example, may have an organizing _corporation_, be located at a specific _location_, and have tickets available on sale as part of an _offer_. A _blog post_ describing that event might have an _author_, and so on, and so on. Describing these kinds of relationships is much easier with JSON-LD than with other syntaxes and can help us tell rich stories about entities.
 
-However, these relationships can often become deep, complex and intertwined. So for the purposes of this analysis, we're only looking at the most common _types_ of relationships between entities; not evaluating entire trees and relationship structures.
+However, these relationships can often become deep, complex and intertwined. So, for the purposes of this analysis, we're only looking at the most common _types_ of relationships between entities; not evaluating entire trees and relationship structures.
 
 Below are the most common connections between types, based on how frequently they occur within _all_ structure/relationship values. Note that some of these structures and values may sometimes _overlap_, as they're small parts of larger relationship chains.
 
@@ -517,9 +517,9 @@ Below are the most common connections between types, based on how frequently the
 
 The most common structure is the relationship between `website`, `potentialAction`, and `SearchAction` schema (accounting for 6.15% of structures). Collectively, this relationship enables the use of a '<a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox">Sitelinks Search Box</a>' in Google's search results.
 
-Perhaps most interestingly, the next most popular structure (4.85% of relationships) defines _no_ relationships. These pages output only the simplest types of structured data; defining individual, isolated entities and their properties.
+Perhaps most interestingly, the next most popular structure (4.85% of relationships) defines _no_ relationships. These pages output only the simplest types of structured data, defining individual, isolated entities and their properties.
 
-The next most popular structure (4.69% of relationships) introduces the `@graph` property (in conjunction with describing a `website`). The `@graph` property doesn't is not an entity in its own right, but can be used in JSON-LD to 'contain' and group relationships between entities.
+The next most popular structure (4.69% of relationships) introduces the `@graph` property (in conjunction with describing a `website`). The `@graph` property doesn't is not an entity in its own right but can be used in JSON-LD to 'contain' and group relationships between entities.
 
 As we explore further relationships, we can see various descriptions of content and organizational relationships, such as `WebPage > isPartOf > WebSite` (3.81% of relationships), `Organization > logo > ImageObject` (3.03% of relationships), and `WebSite > publisher > Organization` (2.09% of relationships).
 
@@ -531,7 +531,7 @@ We can also see lots of structures related to breadcrumb navigation, such as:
 
 Beyond these most popular structures, we see an extremely long-tail of relationships, describing all manner of entities, content types and concepts; as niche as `ApartmentComplex > amenityFeature > LocationFeatureSpecification` (0.1% of relationships) and `AutoDealer > department > AutoRepair` (0.04% of relationships) and `MusicEvent > performer > PerformingGroup` (0.01% of relationships).
 
-We should re-iterate that these types of structures and relationships are likely to be much more common than our data set represents, as we're limited to analysing the 'homepages' of websites. That means that, for example, a website which lists many thousands of individual _apartment complexes_, but does so on 'inner pages', wouldn't be reflected in this data.
+We should re-iterate that these types of structures and relationships are likely to be much more common than our data set represents, as we're limited to analyzing the 'homepages' of websites. That means that, for example, a website which lists many thousands of individual _apartment complexes_, but does so on 'inner pages', wouldn't be reflected in this data.
 
 ##### Relationship depth
 
@@ -564,7 +564,7 @@ Because this is such a powerful tool, we've taken the time to explore some of th
   )
 }}
 
-The `sameAs` property accounts for 1.6% of all JSON-LD markup, and is present on 13.03% of pages.
+The `sameAs` property accounts for 1.6% of all JSON-LD markup and is present on 13.03% of pages.
 
 We can see that the most common values of the `sameAs` property (normalizing from _URLs_ to _hostnames_) are 'social media' platforms (e.g., facebook.com, instagram.com), and 'official sources' (e.g., wikipedia.org, yelp.com) - with the sum of the former accounting for ~75% of usage.
 
