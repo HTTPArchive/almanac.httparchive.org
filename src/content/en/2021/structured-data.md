@@ -124,7 +124,7 @@ We can see that there's a broad range of different types of structured data acro
 {{ figure_markup(
   image="structured-data-usage-by-type.jpg",
   caption="Structured data usage",
-  description="Bar chart showing the popularity of different structured data types across the web. Of all (mobile) pages in our data: RDFa is on 60.61%, Open Graph tags are on 57.45%, Twitter tags are on 37.48%, Microdata is on 24.91%, Facebook tags are on 8.15%, Dublin Core tags are on 1.22%, Microformats are used on 0.68%, and microformats2 are used on 0.11%.",
+  description="Bar chart showing the popularity of different structured data types across the web. Of all mobile pages in our data: RDFa is on 60.61%, Open Graph tags are on 57.45%, Twitter tags are on 37.48%, Microdata is on 24.91%, Facebook tags are on 8.15%, Dublin Core tags are on 1.22%, Microformats are used on 0.68%, and microformats2 are used on 0.11%. Desktop usage is similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3kZ1Ys-9tId-WBa_8muMzrTAu1Ad5TXYgkopXMmBVc1xmd2N_4PZIpEZEOqRL7baymle0kHzaC6KY/pubchart?oid=501587417&format=interactive",
   sheets_gid="1876349096"
   )
@@ -184,7 +184,7 @@ We can also see a <a hreflang="en" href="https://www.w3.org/TR/skos-primer/">SKO
 
 It was designed to describe a broad range of resources (both digital and physical) and can be used in various business scenarios. Starting in 2000 it became extremely popular among RDF-based vocabularies and received the adoption of the W3C.
 
-Since 2008 it is managed by the Dublin Core Metadata Initiative (DCMI) and remains highly interoperable with other linked data vocabularies. It is typically implemented as a collection of meta tags in a HTML document.
+Since 2008 it is managed by the Dublin Core Metadata Initiative (DCMI) and remains highly interoperable with other linked data vocabularies. It is typically implemented as a collection of meta tags in an HTML document.
 
 {{ figure_markup(
   image="structured-data-dublin-core.jpg",
@@ -212,7 +212,7 @@ While it might seem to many that Schema.org is predominant in the context of SEO
 
 It describes a series of meta tags and properties, which may be used to define how content should be (re)presented when shared between platforms. For example, when liking or embedding a post, or sharing a link.
 
-These tags are typically implemented in the `<head>` of a HTML document, and define elements such as the page's _title_, _description_, _URL_, and _featured image_.
+These tags are typically implemented in the `<head>` of an HTML document, and define elements such as the page's _title_, _description_, _URL_, and _featured image_.
 
 The Open Graph protocol has since been broadly adopted by many platforms and services, including _Twitter_, _Skype_, _LinkedIn_, _Pinterest_, _Outlook_ and more. When platforms don't have their own standards for how shared/embedded content should be presented (and sometimes, even when they do), Open Graph tags are often used to define the default behavior.
 
@@ -275,7 +275,7 @@ In addition to Open Graph tags, Facebook supports additional metadata (meta tags
 {{ figure_markup(
   image="structured-data-facebook.jpg",
   caption="Facebook meta tag usage",
-  description="Bar chart showing the usage of Facebook meta tags across the web. Of all (mobile) pages in our data: `fb:app_id` is on 6.06%, `fb:admins` is on 2.63%, `fb:pages` is on 0.86%, `fb:page_id` is on 0.13%, `fb:profile_id` is on 0.06%, `fb:use_automatic_ad_placement` is on 0.01%, and `fb:article_style` is on less than 0.01%.",
+  description="Bar chart showing the usage of Facebook meta tags across the web. Of all mobile pages in our data: `fb:app_id` is on 6.06%, `fb:admins` is on 2.63%, `fb:pages` is on 0.86%, `fb:page_id` is on 0.13%, `fb:profile_id` is on 0.06%, `fb:use_automatic_ad_placement` is on 0.01%, and `fb:article_style` is on less than 0.01%. Desktop usage is similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3kZ1Ys-9tId-WBa_8muMzrTAu1Ad5TXYgkopXMmBVc1xmd2N_4PZIpEZEOqRL7baymle0kHzaC6KY/pubchart?oid=1536454005&format=interactive",
   sheets_gid="1437193020",
   sql_file="facebook_types.sql"
@@ -328,7 +328,7 @@ Where the `adr` class dominated the classic microformats data set, the equivalen
 
 We can speculate on three likely causes for this difference:
 
-* Data for common class names (like `adr`) is almost certainly over-inflated in our microformats v1 data; where it's difficult to distinguish between when these values are used for _structured data_ vs more _generic_ reasons (e.g., as a HTML class attribute value with associated CSS rules).
+* Data for common class names (like `adr`) is almost certainly over-inflated in our microformats v1 data; where it's difficult to distinguish between when these values are used for _structured data_ vs more _generic_ reasons (e.g., as an HTML class attribute value with associated CSS rules).
 * The use of microformats in general (regardless of type) has decreased significantly, and been replaced with other formats.
 * Many websites and themes still include `h-entry` (and sometimes `h-card`) markup on common design elements and layouts. For example, many WordPress themes continue to output a `h-entry` class on the main content container.
 
