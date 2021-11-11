@@ -27,7 +27,7 @@ But this kind of intuition and context is difficult for _software_ to replicate.
 
 These limitations can constrain the kinds of things which we can effectively build and create, and limits how 'smart' web technology can be.
 
-By introducing _structure_ to information, we can make it _much_ easier for software to 'understand' content. We do this by adding labels and metadata which identify key concepts and entities - as well as their properties and relationships.
+By introducing _structure_ to information, we can make it _much_ easier for software to 'understand' content. We do this by adding labels and metadata which identify key concepts and entities—as well as their properties and relationships.
 
 When machines can reliably extract structured data, at scale, we enable new and smarter types of software, systems, services and businesses.
 
@@ -39,7 +39,7 @@ This is the first time that this chapter has been included in the Web Almanac, a
 
 ### The semantic web
 
-When we add structured data to public webpages - and we define the entities that those pages contain (or are about, or reference) - we create a form of [linked data](https://en.wikipedia.org/wiki/Linked_data).
+When we add structured data to public webpages—and we define the entities that those pages contain (or are about, or reference)—we create a form of [linked data](https://en.wikipedia.org/wiki/Linked_data).
 
 We make _statements_ about the things in (and related to) our content in the form of '[triples](https://en.wikipedia.org/wiki/Semantic_triple)'. Statements like, "This _article_ was _authored_ by this _person_", or "That _video _is _about_ a _cat_".
 
@@ -93,7 +93,7 @@ Before we explore specific usage across the various structured data types, we sh
 
 #### 1. The influence of content management systems
 
-Many of the pages we've evaluated are from websites which use a [content management system](https://en.wikipedia.org/wiki/Content_management_system) (or 'CMS'; such as <a hreflang="en" href="https://wordpress.org/">WordPress</a> or <a hreflang="en" href="https://www.drupal.org/">Drupal</a>). These systems - or the themes/plugins/modules which enhance their functionality - are often responsible for generating the HTML markup which contains the structured data which we're analyzing.
+Many of the pages we've evaluated are from websites which use a [content management system](https://en.wikipedia.org/wiki/Content_management_system) (or 'CMS'; such as <a hreflang="en" href="https://wordpress.org/">WordPress</a> or <a hreflang="en" href="https://www.drupal.org/">Drupal</a>). These systems—or the themes/plugins/modules which enhance their functionality—are often responsible for generating the HTML markup which contains the structured data which we're analyzing.
 
 That means that our findings are unavoidably skewed to aligning with the behaviors and output of the most prevalent CMS'. For example, many websites using Drupal automatically output structured data in the form of RDFa, and WordPress (which powers [a significant percentage of websites](./cms)) often includes microformats markup in template code. This contributes significantly to the shape of our findings.
 
@@ -105,7 +105,7 @@ This significantly limits the amount of data we can collect and analyze, and und
 
 As most homepages act as 'portals' to more specific pages, we can reasonably expect that our analysis underestimates the prevalence of the kinds of content present on that 'deeper' pages. That likely includes information relating to _articles_, _people_, _products_ and similar.
 
-Conversely, we likely _over-index_ on information typically found on homepages, and 'site-wide' information which is present on all pages - like information about _webpages_, _websites_ and _organizations_.
+Conversely, we likely _over-index_ on information typically found on homepages, and 'site-wide' information which is present on all pages—like information about _webpages_, _websites_ and _organizations_.
 
 #### 3. Data overlaps
 
@@ -156,7 +156,7 @@ For example, a website owner might add a `rel="license"` attribute to a hyperlin
   )
 }}
 
-When we evaluate the _types_ of RDFa, we can see that the `foaf:image` syntax is present on far more pages than any other type - on upwards of 0.86% of all pages in our data set. Whilst that may seem like a small proportion, it represents over ~65,000 pages, and over 60% of the total RDFa markup that we discovered.
+When we evaluate the _types_ of RDFa, we can see that the `foaf:image` syntax is present on far more pages than any other type—on upwards of 0.86% of all pages in our data set. Whilst that may seem like a small proportion, it represents over ~65,000 pages, and over 60% of the total RDFa markup that we discovered.
 
 Beyond this outlier, the use of RDFa diminishes and fragments considerably, though there are still some interesting discoveries to explore.
 
@@ -176,7 +176,7 @@ As well as FOAF properties, various other standards and syntaxes show up in our 
 
 Notably, we can see several `sioc` properties, such as `sioc:item` (0.24% of pages) and `sioc:useraccount` (0.03% of pages). <a hreflang="en" href="https://www.w3.org/Submission/sioc-spec/">SIOC</a> is a standard designed to describe structured data relating to _online communities_, such as message boards, forums, wikis and blogs.
 
-We can also see a <a hreflang="en" href="https://www.w3.org/TR/skos-primer/">SKOS</a> property - `skos:concept` - on 0.04% of pages. SKOS is another standard, which aims to provide a way of describing taxonomies and classifications (e.g., tags, data sets, and so on).
+We can also see a <a hreflang="en" href="https://www.w3.org/TR/skos-primer/">SKOS</a> property—`skos:concept`—on 0.04% of pages. SKOS is another standard, which aims to provide a way of describing taxonomies and classifications (e.g., tags, data sets, and so on).
 
 #### Dublin Core
 
@@ -200,7 +200,7 @@ Since 2008 it is managed by DCMI (Dublin Core Metadata Initiative (DCMI) and rem
 
 That the most popular attribute type is `dc:title` (on 0.7% of pages) comes as no surprise; but it is interesting to see that `dc:language` is next (above common descriptors like _description_, _subject_ and _publisher_) with a penetration of 0.49%. This makes sense, when you consider that Dublin Core is often used in multilingual metadata management systems.
 
-It's also interesting to see the relatively prominent appearance of  `dc:relation` (on 0.16% of pages) - an attribute that is capable of expressing relationships between different concepts.
+It's also interesting to see the relatively prominent appearance of  `dc:relation` (on 0.16% of pages)—an attribute that is capable of expressing relationships between different concepts.
 
 While it might seem to many that Schema.org is predominant in the context of SEO, the role of DC remains pivotal because of its broad interpretation of concepts and its deep roots in the _linked open data movement_.
 
@@ -258,7 +258,7 @@ The most common Twitter meta tag is `twitter:card`, which was found on 35.42% of
 
 Beyond this outlier, adoption drops off steeply. The next most common tags are `twitter:title` and `twitter:description` (both also used to define how shared URLs are presented), which appear on 20.86% and 18.68% of all pages, respectively.
 
-It's understandable why these particular tags - as well as the `twitter:image` tag (11.41% of pages) and `twitter:url` tag (3.13% of pages) - aren't more prevalent, as Twitter falls back to the equivalent Open Graph tags (`og:title`, `og:description` and `og:image`) when they're not defined.
+It's understandable why these particular tags—as well as the `twitter:image` tag (11.41% of pages) and `twitter:url` tag (3.13% of pages)—aren't more prevalent, as Twitter falls back to the equivalent Open Graph tags (`og:title`, `og:description` and `og:image`) when they're not defined.
 
 Also of interest are:
 
@@ -288,7 +288,7 @@ Those are `fb:app_id`, `fb:admins`, and `fb:pages`; which we found on 6.06%, 2.6
 
 These tags are used to explicitly relate a webpage to a Facebook Page/Brand, or to grant permissions to a user (or users)  who administrates those profiles.
 
-Anecdotally, it's unclear how well these are supported by Facebook. The platform has gone through radical changes over the past few years, and their technical documentation hasn't been well-maintained. However, many content management systems, templates and best practice guides - as well as some of Facebook's debugging tools - still include and make reference to them.
+Anecdotally, it's unclear how well these are supported by Facebook. The platform has gone through radical changes over the past few years, and their technical documentation hasn't been well-maintained. However, many content management systems, templates and best practice guides—as well as some of Facebook's debugging tools—still include and make reference to them.
 
 ##### Microformats (and microformats2)
 
@@ -353,7 +353,7 @@ For example, it may be hard to describe the _opening hours_ of an _organization_
 
 The most common types of microdata across the pages we analyzed describe the webpage itself; via properties like `webpage` (7.44% of pages), `sitenavigationelement` (5.62% of pages), `wpheader` (4.87% of pages) and `wpfooter` (4.56% of pages).
 
-It's easy to speculate on why these types of 'structural' descriptors are more prominent than 'content' descriptors (such as `person` or `product`); creating and maintaining microdata requires content producers to add specific code to their content - and that's often easier to do at 'template' level than it is at 'content' level.
+It's easy to speculate on why these types of 'structural' descriptors are more prominent than 'content' descriptors (such as `person` or `product`); creating and maintaining microdata requires content producers to add specific code to their content—and that's often easier to do at 'template' level than it is at 'content' level.
 
 Whilst one of the strengths of microdata is its explicit relationship with (and authoring in) the HTML markup, this has limited its approach to content authors with the technical knowledge and capabilities to use it.
 
@@ -534,7 +534,7 @@ We should re-iterate that these types of structures and relationships are likely
 
 ##### Relationship depth
 
-Out of curiosity, we also calculated the deepest, most complex relationships between entities - in both our mobile and desktop data sets.
+Out of curiosity, we also calculated the deepest, most complex relationships between entities—in both our mobile and desktop data sets.
 
 Deeper relationships _tend_ to equate to richer, more comprehensive descriptions of entities (and the other entities they're related to).
 
@@ -565,7 +565,7 @@ Because this is such a powerful tool, we've taken the time to explore some of th
 
 The `sameAs` property accounts for 1.6% of all JSON-LD markup and is present on 13.03% of pages.
 
-We can see that the most common values of the `sameAs` property (normalizing from _URLs_ to _hostnames_) are 'social media' platforms (e.g., facebook.com, instagram.com), and 'official sources' (e.g., wikipedia.org, yelp.com) - with the sum of the former accounting for ~75% of usage.
+We can see that the most common values of the `sameAs` property (normalizing from _URLs_ to _hostnames_) are 'social media' platforms (e.g., facebook.com, instagram.com), and 'official sources' (e.g., wikipedia.org, yelp.com)—with the sum of the former accounting for ~75% of usage.
 
 It's clear that this property is primarily used to identify the social media accounts of websites and businesses; likely motivated by Google's historical reliance on this data as an input for managing 'knowledge panels' in their search results. Given that this requirement was <a hreflang="en" href="https://twitter.com/googlesearchc/status/1143558928439005184">deprecated in 2019</a>, we might expect this data set to gradually alter in coming years.
 
