@@ -24,7 +24,6 @@ EOF
 OPTIND=1 #Reseting is good practive
 force=0
 no_promote=0
-URL=""
 while getopts ":h?fns:" opt; do
     case "$opt" in
     h|\?)
@@ -75,7 +74,7 @@ if [ "${no_promote}" == "1" ]; then
   if [[ -z "${STAGE_VERSION}" ]]; then
     echo "Y" | gcloud app deploy --project webalmanac --no-promote
   else
-    echo "Y" | gcloud app deploy --project webalmanac --no-promote --version=${STAGE_VERSION}
+    echo "Y" | gcloud app deploy --project webalmanac --no-promote --version="${STAGE_VERSION}"
   fi
   echo "Done"
   exit 0
