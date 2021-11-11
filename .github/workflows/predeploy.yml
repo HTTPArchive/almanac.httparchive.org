@@ -21,7 +21,7 @@ on:
       ebooks:
         type: boolean
         description: "Regenerate Ebooks?"
-        required: false
+        required: true
         default: true
 
 jobs:
