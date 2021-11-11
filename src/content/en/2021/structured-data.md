@@ -5,6 +5,8 @@ description: Structured Data chapter of the 2021 Web Almanac covering adoption a
 authors: [jonoalderson, cyberandy]
 reviewers: [vdwijngaert, philbarker]
 analysts: [GregBrimble]
+translators: []
+editors: [jvandriel, JasmineDWillson]
 results: https://docs.google.com/spreadsheets/d/1uEA217YjpX1xdRVBnIz9ekjpjIrpGIh5GwUxvnzJNig/edit?usp=sharing
 jonoalderson_bio: Jono Alderson is a digital strategist, marketing technologist, and full stack developer. He enjoys dabbling with website performance, technical SEO, schema.org and all things structured data.
 cyberandy_bio: Andrea Volpini is the CEO of WordLift, and is currently focusing on the semantic web, SEO and artificial intelligence.
@@ -33,11 +35,11 @@ This is the first time that this chapter has been included in the Web Almanac, a
 
 ### The semantic web
 
-When we add structured data to public webpages - and we define the entities that those pages contain (or are about, or reference) - we create a form of[ linked data](https://en.wikipedia.org/wiki/Linked_data).
+When we add structured data to public webpages - and we define the entities that those pages contain (or are about, or reference) - we create a form of [linked data](https://en.wikipedia.org/wiki/Linked_data).
 
 We make _statements_ about the things in (and related to) our content in the form of '[triples](https://en.wikipedia.org/wiki/Semantic_triple)'. Statements like, "This _article_ was _authored_ by this _person_", or "That _video _is _about_ a _cat_".
 
-Describing our content in this way enables machines to treat webpages and websites as databases. At scale, it creates a[ semantic web](https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/); a giant global database of information.
+Describing our content in this way enables machines to treat webpages and websites as databases. At scale, it creates a [semantic web](https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/); a giant global database of information.
 
     <p class="note">"The Semantic Web is the name of a long-term project started by W3C with the stated purpose of realizing the idea of having data on the Web defined and linked in a way that it can be used by machines not just for display purposes, but for automation, integration, and reuse of data across various applications"[ https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/](https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/)</p>
 
@@ -96,7 +98,7 @@ Before we explore specific usage across the various structured data types, we sh
 
 #### 1. The influence of content management systems
 
-Many of the pages we've evaluated are from websites which use a [content management system](https://en.wikipedia.org/wiki/Content_management_system) (or 'CMS'; such as[ WordPress](https://wordpress.org/) or[ Drupal](https://www.drupal.org/)). These systems - or the themes/plugins/modules which enhance their functionality - are often responsible for generating the HTML markup which contains the structured data which we're analysing.
+Many of the pages we've evaluated are from websites which use a [content management system](https://en.wikipedia.org/wiki/Content_management_system) (or 'CMS'; such as [WordPress](https://wordpress.org/) or [Drupal](https://www.drupal.org/)). These systems - or the themes/plugins/modules which enhance their functionality - are often responsible for generating the HTML markup which contains the structured data which we're analysing.
 
 That means that our findings are unavoidably skewed to aligning with the behaviours and output of the most prevalent CMS'. For example, many websites using Drupal automatically output structured data in the form of `RDFa`, and WordPress (which powers over X% of websites) often includes `microformats` in template code. This contributes significantly to the shape of our findings.
 
