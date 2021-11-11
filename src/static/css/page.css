@@ -856,6 +856,7 @@ pre {
 /* Needed for Safari to hide the index properly */
 @media print {
   .main {
-    grid-template-columns: 0px auto;
+    grid-template-areas: 'content';
+    grid-template-columns: auto;
   }
 }
