@@ -424,7 +424,7 @@ Below are the most common connections between types, based on how frequently the
   </thead>
   <tbody>
     <tr>
-      <td>WebSite &gt; potentialAction &gt; SearchAction</td>
+      <td>`WebSite > potentialAction > SearchAction`</td>
       <td class="numeric">6.44%</td>
       <td class="numeric">6.15%</td>
     </tr>
@@ -434,87 +434,87 @@ Below are the most common connections between types, based on how frequently the
       <td class="numeric">4.85%</td>
     </tr>
     <tr>
-      <td>@graph &gt; WebSite</td>
+      <td>`@graph > WebSite`</td>
       <td class="numeric">4.89%</td>
       <td class="numeric">4.69%</td>
     </tr>
     <tr>
-      <td>WebPage &gt; isPartOf &gt; WebSite</td>
+      <td>`WebPage > isPartOf > WebSite`</td>
       <td class="numeric">4.02%</td>
       <td class="numeric">3.81%</td>
     </tr>
     <tr>
-      <td>@graph &gt; WebPage</td>
+      <td>`@graph > WebPage`</td>
       <td class="numeric">4.01%</td>
       <td class="numeric">3.79%</td>
     </tr>
     <tr>
-      <td>BreadcrumbList &gt; itemListElement &gt; ListItem</td>
+      <td>`BreadcrumbList > itemListElement > ListItem`</td>
       <td class="numeric">3.93%</td>
       <td class="numeric">3.78%</td>
     </tr>
     <tr>
-      <td>Organization &gt; logo &gt; ImageObject</td>
+      <td>`Organization > logo > ImageObject`</td>
       <td class="numeric">2.85%</td>
       <td class="numeric">3.03%</td>
     </tr>
     <tr>
-      <td>@graph &gt; BreadcrumbList</td>
+      <td>`@graph > BreadcrumbList`</td>
       <td class="numeric">3.18%</td>
       <td class="numeric">2.99%</td>
     </tr>
     <tr>
-      <td>WebPage &gt; potentialAction &gt; ReadAction</td>
+      <td>`WebPage > potentialAction > ReadAction`</td>
       <td class="numeric">2.92%</td>
       <td class="numeric">2.71%</td>
     </tr>
     <tr>
-      <td>WebPage &gt; breadcrumb &gt; BreadcrumbList</td>
+      <td>`WebPage > breadcrumb > BreadcrumbList`</td>
       <td class="numeric">2.60%</td>
       <td class="numeric">2.44%</td>
     </tr>
     <tr>
-      <td>WebSite</td>
+      <td>`WebSite`</td>
       <td class="numeric">2.49%</td>
       <td class="numeric">2.30%</td>
     </tr>
     <tr>
-      <td>@graph &gt; Organization</td>
+      <td>`@graph > Organization`</td>
       <td class="numeric">2.26%</td>
       <td class="numeric">2.13%</td>
     </tr>
     <tr>
-      <td>WebSite &gt; publisher &gt; Organization</td>
+      <td>`WebSite > publisher > Organization`</td>
       <td class="numeric">2.22%</td>
       <td class="numeric">2.09%</td>
     </tr>
     <tr>
-      <td>Product &gt; offers &gt; Offer</td>
+      <td>`Product > offers > Offer`</td>
       <td class="numeric">1.47%</td>
       <td class="numeric">1.89%</td>
     </tr>
     <tr>
-      <td>Product</td>
+      <td>`Product`</td>
       <td class="numeric">1.41%</td>
       <td class="numeric">1.73%</td>
     </tr>
     <tr>
-      <td>@graph &gt; ImageObject</td>
+      <td>`@graph > ImageObject`</td>
       <td class="numeric">1.80%</td>
       <td class="numeric">1.71%</td>
     </tr>
     <tr>
-      <td>ItemList &gt; itemListElement &gt; ListItem</td>
+      <td>`ItemList > itemListElement > ListItem`</td>
       <td class="numeric">1.71%</td>
       <td class="numeric">1.69%</td>
     </tr>
     <tr>
-      <td>@graph &gt; SiteNavigationElement</td>
+      <td>`@graph > SiteNavigationElement`</td>
       <td class="numeric">1.70%</td>
       <td class="numeric">1.66%</td>
     </tr>
     <tr>
-      <td>WebPage &gt; primaryImageOfPage &gt; ImageObject</td>
+      <td>`WebPage > primaryImageOfPage > ImageObject`</td>
       <td class="numeric">1.67%</td>
       <td class="numeric">1.59%</td>
     </tr>
