@@ -37,6 +37,8 @@ This is the first time that this chapter has been included in the Web Almanac, a
 
 ## Key concepts
 
+Structured dats is a complex landscape, and one which is by nature abstract and 'meta'. To understand the significance and potential impact of structured data, it's worth exploring the following key concepts.
+
 ### The semantic web
 
 When we add structured data to public webpages—and we define the entities that those pages contain (or are about, or reference)—we create a form of [linked data](https://en.wikipedia.org/wiki/Linked_data).
@@ -210,6 +212,8 @@ It's also interesting to see the relatively prominent appearance of `dc:relation
 While it might seem to many that Schema.org is predominant in the context of SEO, the role of DC remains pivotal because of its broad interpretation of concepts and its deep roots in the _linked open data movement_.
 
 #### Social metadata
+
+Social networks and platforms are some of the biggest publishers and consumers of structured data. This section explores the roles, breadth of adoption, and scale of some of their specific structured data formats.
 
 ##### Open Graph
 
