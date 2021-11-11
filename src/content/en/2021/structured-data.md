@@ -2,20 +2,13 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Structured Data
 description: Structured Data chapter of the 2021 Web Almanac covering adoption and impact of schema.org, RDFa, Microdata and more.
-authors: [jonoalderson]
-reviewers: [bagder, rmarx, dotjs]
-analysts: [paulcalvano]
-editors: [rviscomi]
-translators: []
+authors: [jonoalderson, cyberandy]
+reviewers: [vdwijngaert, philbarker]
+analysts: [GregBrimble]
 results: https://docs.google.com/spreadsheets/d/1uEA217YjpX1xdRVBnIz9ekjpjIrpGIh5GwUxvnzJNig/edit?usp=sharing
-tunetheweb_bio: Barry Pollard is a software developer and author of the Manning book <a href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. He thinks the web is amazing but wants to make it even better. You can find him tweeting <a href="https://twitter.com/tunetheweb">@tunetheweb</a> and blogging at <a href="https://www.tunetheweb.com">www.tunetheweb.com</a>.
-featured_quote: HTTP/2 was the first major update to the main transport protocol of the web in nearly 20 years. It arrived with a wealth of expectations&colon; it promised a free performance boost with no downsides. More than that, we could stop doing all the hacks and work arounds that HTTP/1.1 forced us into, due to its inefficiencies. Bundling, spriting, inlining, and even sharding domains would all become anti-patterns in an HTTP/2 world, as improved performance would be provided by default. This chapter examines how this relatively new technology has fared in the real world.
-featured_stat_1: 95%
-featured_stat_label_1: Users who can use HTTP/2
-featured_stat_2: 27.83%
-featured_stat_label_2: Requests with HTTP/2 prioritisation issues
-featured_stat_3: 8.38%
-featured_stat_label_3: Sites supporting QUIC
+jonoalderson_bio: Jono Alderson is a digital strategist, marketing technologist, and full stack developer. He enjoys dabbling with website performance, technical SEO, schema.org and all things structured data.
+cyberandy_bio: Andrea Volpini is the CEO of WordLift, and is currently focusing on the semantic web, SEO and artificial intelligence.
+featured_quote: Describing our content using structured data enables machines to treat webpages and websites as databases. That creates a wealth of possibilities for business, technology, and society.
 ---
 
 
