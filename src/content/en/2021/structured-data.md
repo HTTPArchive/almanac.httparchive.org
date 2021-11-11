@@ -3,10 +3,10 @@
 title: Structured Data
 description: Structured Data chapter of the 2021 Web Almanac covering adoption and impact of schema.org, RDFa, Microdata and more.
 authors: [jonoalderson, cyberandy]
-reviewers: [vdwijngaert, philbarker, tunetheweb]
+reviewers: [vdwijngaert, philbarker]
 analysts: [GregBrimble]
+editors: [jvandriel, JasmineDWillson, tunetheweb]
 translators: []
-editors: [jvandriel, JasmineDWillson]
 results: https://docs.google.com/spreadsheets/d/1uEA217YjpX1xdRVBnIz9ekjpjIrpGIh5GwUxvnzJNig/edit?usp=sharing
 jonoalderson_bio: Jono Alderson is a digital strategist, marketing technologist, and full stack developer. He enjoys dabbling with website performance, technical SEO, schema.org and all things structured data.
 cyberandy_bio: Andrea Volpini is the CEO of WordLift, and is currently focusing on the semantic web, SEO and artificial intelligence.
