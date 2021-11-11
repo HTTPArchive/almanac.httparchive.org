@@ -45,7 +45,11 @@ We make _statements_ about the things in (and related to) our content in the for
 
 Describing our content in this way enables machines to treat webpages and websites as databases. At scale, it creates a <a hreflang="en" href="https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/">semantic web</a>; a giant global database of information.
 
-<p class="note">"_The Semantic Web_ is the name of a long-term project started by W3C with the stated purpose of realizing the idea of having data on the Web defined and linked in a way that it can be used by machines not just for display purposes, but for automation, integration, and reuse of data across various applications" <a hreflang="en" href="https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/">https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/</a></p>
+<figure>
+<blockquote>_The Semantic Web_ is the name of a long-term project started by W3C with the stated purpose of realizing the idea of having data on the Web defined and linked in a way that it can be used by machines not just for display purposes, but for automation, integration, and reuse of data across various applications
+<figcaption>— Greg Ross, <cite><a hreflang="en" href="https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/">An introduction to Tim Berners-Lee's Semantic Web</a></cite></figcaption>
+</blockquote>
+</figure>
 
 That creates a wealth of possibilities for business, technology, and society.
 
@@ -166,7 +170,9 @@ Beyond this outlier, the use of RDFa diminishes and fragments considerably, thou
 
 FOAF uses W3C's RDF syntax and in its <a hreflang="en" href="https://web.archive.org/web/20140331104046/http://www.foaf-project.org/original-intro">original introduction</a> was explained as follows:
 
-<p class="note">"Consider a Web of inter-related home pages, each describing things of interest to a group of friends. Each new home page that appears on the Web tells the world something new, providing factoids and gossip that make the Web a mine of disconnected snippets of information. FOAF provides a way to make sense of all this."</p>
+<figure>
+<blockquote>Consider a Web of inter-related home pages, each describing things of interest to a group of friends. Each new home page that appears on the Web tells the world something new, providing factoids and gossip that make the Web a mine of disconnected snippets of information. FOAF provides a way to make sense of all this.</blockquote>
+</figure>
 
 Anecdotally, we can attribute a prominence of `foaf` markup in our results to sites running on older versions of the Drupal CMS, which historically added `typeof="foaf:image"` and `foaf:document` markup to its HTML by default.
 
