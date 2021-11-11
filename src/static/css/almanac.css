@@ -727,6 +727,10 @@ blockquote::before {
   line-height: 1;
 }
 
+blockquote em {
+  font-style: normal;
+}
+
 /* Footer */
 footer .container {
   display: grid;
