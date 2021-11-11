@@ -408,6 +408,11 @@ aside,
   font-style: italic;
 }
 
+aside em,
+.note em {
+  font-style: normal;
+}
+
 table,
 figure {
   max-width: 100%;
