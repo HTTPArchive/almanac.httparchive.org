@@ -13,11 +13,11 @@ FROM (
   SELECT
     info,
     tech.category_lower AS category,
-    tech.app_lower AS app,
+    top.app_lower AS app,
     month,
     client,
     COUNT(0) AS freq,
-    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client, month, tech.category_lower, tech.app_lower) AS pct
+    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client, month, tech.category_lower, top.app_lower) AS pct
   FROM (
     SELECT
       info,
@@ -49,7 +49,7 @@ FROM (
   ) AS top ON (tech.category_lower = top.category_lower AND tech.app_lower = top.app_lower)
   GROUP BY
     tech.category_lower,
-    tech.app_lower,
+    top.app_lower,
     month,
     info,
     client)
