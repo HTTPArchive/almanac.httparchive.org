@@ -859,4 +859,8 @@ pre {
     grid-template-areas: 'content';
     grid-template-columns: auto;
   }
+
+  .figure-dropdown {
+    display: none;
+  }
 }
