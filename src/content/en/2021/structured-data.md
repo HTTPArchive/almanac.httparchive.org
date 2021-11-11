@@ -41,14 +41,13 @@ This is the first time that this chapter has been included in the Web Almanac, a
 
 When we add structured data to public webpages—and we define the entities that those pages contain (or are about, or reference)—we create a form of [linked data](https://en.wikipedia.org/wiki/Linked_data).
 
-We make _statements_ about the things in (and related to) our content in the form of [_triples_](https://en.wikipedia.org/wiki/Semantic_triple). Statements like, "This _article_ was _authored_ by this _person_", or "That _video _is _about_ a _cat_".
+We make _statements_ about the things in (and related to) our content in the form of [_triples_](https://en.wikipedia.org/wiki/Semantic_triple). Statements like, "This __article__ was __authored__ by this __person__", or "That __video__ is __about__ a __cat__".
 
 Describing our content in this way enables machines to treat webpages and websites as databases. At scale, it creates a <a hreflang="en" href="https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/">semantic web</a>; a giant global database of information.
 
 <figure>
-<blockquote>_The Semantic Web_ is the name of a long-term project started by W3C with the stated purpose of realizing the idea of having data on the Web defined and linked in a way that it can be used by machines not just for display purposes, but for automation, integration, and reuse of data across various applications
+<blockquote>_The Semantic Web_ is the name of a long-term project started by W3C with the stated purpose of realizing the idea of having data on the Web defined and linked in a way that it can be used by machines not just for display purposes, but for automation, integration, and reuse of data across various applications</blockquote>
 <figcaption>— Greg Ross, <cite><a hreflang="en" href="https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/">An introduction to Tim Berners-Lee's Semantic Web</a></cite></figcaption>
-</blockquote>
 </figure>
 
 That creates a wealth of possibilities for business, technology, and society.
