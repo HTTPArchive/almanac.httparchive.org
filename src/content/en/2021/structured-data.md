@@ -547,6 +547,15 @@ Out of curiosity, we also calculated the deepest, most complex relationships bet
 
 Deeper relationships _tend_ to equate to richer, more comprehensive descriptions of entities (and the other entities they're related to).
 
+{{ figure_markup(
+  caption="Deepest nested relationship on desktop.",
+  content="18",
+  classes="big-number",
+  sheets_gid="597889314",
+  sql_file="jsonld_depth_percentiles.sql"
+)
+}}
+
 The deepest relationships are:
 
 * On desktop, a depth of 18 nested connections.
