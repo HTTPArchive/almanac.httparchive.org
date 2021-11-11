@@ -1569,8 +1569,11 @@ html:not([lang="en"]) main a[href*="/en-US/"]::after,
 html:not([lang="en"]) main a[href*="/en/"]::after,
 html:not([lang="en"]) main a[href^="https://en."]::after {
   content: '(en)';
-  vertical-align: super;
+  /* vertical-align: super; */
   font-size: 0.6em;
+  vertical-align: baseline;
+  position: relative;
+  top: -1em;
 }
 
 /*
@@ -1578,8 +1581,11 @@ html:not([lang="en"]) main a[href^="https://en."]::after {
  */
 main a[hreflang]::after {
   content: '(' attr(hreflang) ')';
-  vertical-align: super;
+  /* vertical-align: super; */
   font-size: 0.6em;
+  vertical-align: baseline;
+  position: relative;
+  top: -1em;
 }
 
 /*
@@ -1587,7 +1593,7 @@ main a[hreflang]::after {
  * (allows us to add this to base content to make it easier for translators)
  */
 html[lang="en"] main a[hreflang="en"]::after {
-  content: '';
+  content: initial;
 }
 
 @media print {
