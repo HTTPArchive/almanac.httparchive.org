@@ -53,7 +53,7 @@ In most major search engines, website owners may become eligible for various for
 
 [ image demonstrating rich results concept ]
 
-In fact, search engines have played such a significant role in the general adoption of (and [education](https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data) arond) structured data across the web, that this chapter was born out of Web Almanac[ SEO chapters from previous years](https://almanac.httparchive.org/en/2020/seo#structured-data). In recent years, the influence of search engines has also popularized [schema.org](https://schema.org/) the vocabulary of choice for structured data.
+In fact, search engines have played such a significant role in the general adoption of (and [education](https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data) arond) structured data across the web, that this chapter was born out of Web Almanac [SEO chapters from previous years](https://almanac.httparchive.org/en/2020/seo#structured-data). In recent years, the influence of search engines has also popularized [schema.org](https://schema.org/) the vocabulary of choice for structured data.
 
 In addition to this, social media platforms rely on structured data to influence how they read and display content when it's shared (or linked to) on their platforms. Rich previews, tailored titles and descriptions, and interactivity in these platforms are often 'powered' by structured data.
 
