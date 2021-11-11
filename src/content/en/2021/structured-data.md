@@ -344,8 +344,7 @@ For example, it may be hard to describe the _opening hours_ of an _organization_
   image="structured-data-microdata.jpg",
   caption="Microdata types",
   description="Bar chart showing the usage of microdata across the web. Of all (mobile) pages in our data (normalized to remove the `schema.org/` prefix): `webpage` is on 7.44%, `sitenavigationelement` is on 5.62%, `wpheader` is on 4.87%, `wpfooter` is on 4.56%, `organization` is on 4.02%, `blog` is on 3.66%, `creativework` is on 2.14%, `imageobject` is on 1.83%, `blogposting` is on 1.34%, `person` is on 1.37%, `postaladdress` is on 1.34%, `website` is on 1.33%, `wpsidebar` is on 1.38%, `product` is on 1.22%, `imagegallery` is on 1.11%, `offer` is on 1.09%, `listitem` is on 0.96%, `breadcrumblist` is on 0.96%, and `article` is on 0.85%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3kZ1Ys-9tId-WBa_8muMzrTAu1Ad5TXYgkopXMmBVc1xmd2N_4PZIpEZEOqRL7baymle0kHzaC6KY/pubchart?oid=216200284&format=interactive",
-  sheets_gid="225059758",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3kZ1Ys-9tId-WBa_8muMzrTAu1Ad5TXYgkopXMmBVc1xmd2N_4PZIpEZEOqRL7baymle0kHzaC6KY/pubchart?oid=1112123145&format=interactive",
   width=600,
   height=715,
   sql_file="microdata_item_types.sql"
