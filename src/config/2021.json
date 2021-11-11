@@ -37,7 +37,7 @@
           "chapter_number": "4",
           "title": "Structured Data",
           "slug": "structured-data",
-          "todo": "false"
+          "hero_dir": "2021"
         },
         {
           "part": "I",
@@ -244,7 +244,7 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/32825533?v=4&s=200",
       "github": "tropicadri"
     },
-    "CyberAndy": {
+    "cyberandy": {
       "name": "Andrea Volpini",
       "teams": [
         "authors"
@@ -308,7 +308,7 @@
       "github": "demianrenzulli",
       "twitter": "drenzulli"
     },
-    "GregBrimble": {
+    "gregbrimble": {
       "name": "Greg Brimble",
       "teams": [
         "analysts"
@@ -338,6 +338,25 @@
       "github": "hemanth",
       "twitter": "gnumanth"
     },
+    "jvandriel": {
+      "name": "Jarno van Driel",
+      "teams": [
+        "editors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/7320889?v=4&s=200",
+      "github": "jvandriel",
+      "twitter": "JarnoVanDriel",
+      "linkedin": "jarno-van-driel-36a47075"
+    },
+    "JasmineDWillson": {
+      "name": "Jasmine Drudge-Willson",
+      "teams": [
+        "editors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/58438178?v=4&s=200",
+      "github": "JasmineDWillson",
+      "twitter": "jasminedwillson"
+    },
     "jeffposnick": {
       "name": "Jeff Posnick",
       "teams": [
@@ -348,7 +367,7 @@
       "github": "jeffposnick",
       "twitter": "jeffposnick"
     },
-    "JonoAlderson": {
+    "jonoalderson": {
       "name": "Jono Alderson",
       "teams": [
         "authors"
@@ -366,12 +385,12 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/2644614?v=4&s=200",
       "github": "Schweinepriester"
     },
-    "KoenVandenWijngaert": {
+    "vdwijngaert": {
       "name": "Koen Van den Wijngaert",
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/837037?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/772137?v=4&s=200",
       "website": "https://www.neok.be/",
       "github": "vdwijngaert",
       "twitter": "vdwijngaert"
@@ -427,7 +446,7 @@
       "twitter": "paulcalvano",
       "website": "https://paulcalvano.com"
     },
-    "PhilBarker": {
+    "philbarker": {
       "name": "Phil Barker",
       "teams": [
         "reviewers"

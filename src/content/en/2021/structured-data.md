@@ -11,6 +11,12 @@ results: https://docs.google.com/spreadsheets/d/1uEA217YjpX1xdRVBnIz9ekjpjIrpGIh
 jonoalderson_bio: Jono Alderson is a digital strategist, marketing technologist, and full stack developer. He enjoys dabbling with website performance, technical SEO, schema.org and all things structured data.
 cyberandy_bio: Andrea Volpini is the CEO of WordLift, and is currently focusing on the semantic web, SEO and artificial intelligence.
 featured_quote: Describing our content using structured data enables machines to treat webpages and websites as databases. That creates a wealth of possibilities for business, technology, and society.
+featured_stat_1: TODO
+featured_stat_label_1: TODO
+featured_stat_2: TODO
+featured_stat_label_2: TODO
+featured_stat_3: TODO
+featured_stat_label_3: TODO
 ---
 
 
@@ -41,7 +47,7 @@ We make _statements_ about the things in (and related to) our content in the for
 
 Describing our content in this way enables machines to treat webpages and websites as databases. At scale, it creates a [semantic web](https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/); a giant global database of information.
 
-    <p class="note">"The Semantic Web is the name of a long-term project started by W3C with the stated purpose of realizing the idea of having data on the Web defined and linked in a way that it can be used by machines not just for display purposes, but for automation, integration, and reuse of data across various applications"[ https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/](https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/)</p>
+<p class="note">"The Semantic Web is the name of a long-term project started by W3C with the stated purpose of realizing the idea of having data on the Web defined and linked in a way that it can be used by machines not just for display purposes, but for automation, integration, and reuse of data across various applications"[https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/](https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/)</p>
 
 That creates a wealth of possibilities for business, technology, and society.
 
