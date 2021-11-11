@@ -425,7 +425,7 @@ Below are the most common connections between types, based on how frequently the
       <td class="numeric">4.85%</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/graph">@graph</a> &gt; WebSite</td>
+      <td>graph &gt; WebSite</td>
       <td class="numeric">4.89%</td>
       <td class="numeric">4.69%</td>
     </tr>
@@ -435,7 +435,7 @@ Below are the most common connections between types, based on how frequently the
       <td class="numeric">3.81%</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/graph">@graph</a> &gt; WebPage</td>
+      <td>graph &gt; WebPage</td>
       <td class="numeric">4.01%</td>
       <td class="numeric">3.79%</td>
     </tr>
@@ -450,7 +450,7 @@ Below are the most common connections between types, based on how frequently the
       <td class="numeric">3.03%</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/graph">@graph</a> &gt; BreadcrumbList</td>
+      <td>graph &gt; BreadcrumbList</td>
       <td class="numeric">3.18%</td>
       <td class="numeric">2.99%</td>
     </tr>
@@ -470,7 +470,7 @@ Below are the most common connections between types, based on how frequently the
       <td class="numeric">2.30%</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/graph">@graph</a> &gt; Organization</td>
+      <td>graph &gt; Organization</td>
       <td class="numeric">2.26%</td>
       <td class="numeric">2.13%</td>
     </tr>
@@ -490,7 +490,7 @@ Below are the most common connections between types, based on how frequently the
       <td class="numeric">1.73%</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/graph">@graph</a> &gt; ImageObject</td>
+      <td>graph &gt; ImageObject</td>
       <td class="numeric">1.80%</td>
       <td class="numeric">1.71%</td>
     </tr>
@@ -500,7 +500,7 @@ Below are the most common connections between types, based on how frequently the
       <td class="numeric">1.69%</td>
     </tr>
     <tr>
-      <td><a href="https://github.com/graph">@graph</a> &gt; SiteNavigationElement</td>
+      <td>graph &gt; SiteNavigationElement</td>
       <td class="numeric">1.70%</td>
       <td class="numeric">1.66%</td>
     </tr>
