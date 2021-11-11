@@ -39,13 +39,13 @@ This is the first time that this chapter has been included in the Web Almanac, a
 
 ### The semantic web
 
-When we add structured data to public webpages - and we define the entities that those pages contain (or are about, or reference) - we create a form of[ linked data](https://en.wikipedia.org/wiki/Linked_data).
+When we add structured data to public webpages - and we define the entities that those pages contain (or are about, or reference) - we create a form of [linked data](https://en.wikipedia.org/wiki/Linked_data).
 
 We make _statements_ about the things in (and related to) our content in the form of '[triples](https://en.wikipedia.org/wiki/Semantic_triple)'. Statements like, "This _article_ was _authored_ by this _person_", or "That _video _is _about_ a _cat_".
 
-Describing our content in this way enables machines to treat webpages and websites as databases. At scale, it creates a[ semantic web](https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/); a giant global database of information.
+Describing our content in this way enables machines to treat webpages and websites as databases. At scale, it creates a <a hreflang="en" href="https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/">semantic web</a>; a giant global database of information.
 
-<p class="note">"The Semantic Web is the name of a long-term project started by W3C with the stated purpose of realizing the idea of having data on the Web defined and linked in a way that it can be used by machines not just for display purposes, but for automation, integration, and reuse of data across various applications"[ https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/](https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/)</p>
+<p class="note">"The Semantic Web is the name of a long-term project started by W3C with the stated purpose of realizing the idea of having data on the Web defined and linked in a way that it can be used by machines not just for display purposes, but for automation, integration, and reuse of data across various applications" <a hreflang="en" href="https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/">https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/</a></p>
 
 That creates a wealth of possibilities for business, technology, and society.
 
@@ -53,9 +53,9 @@ That creates a wealth of possibilities for business, technology, and society.
 
 To date, some of the broadest consumers of structured data are _search engines_ and _social media platforms_.
 
-In most major search engines, website owners may become eligible for various forms of '[rich results](https://developers.google.com/search/docs/advanced/structured-data/search-gallery)' (which may influence visibility and traffic) by implementing various types of structured data on their websites.
+In most major search engines, website owners may become eligible for various forms of '<a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/search-gallery">rich results</a>' (which may influence visibility and traffic) by implementing various types of structured data on their websites.
 
-In fact, search engines have played such a significant role in the general adoption of (and [education](https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data) arond) structured data across the web, that this chapter was born out of Web Almanac[ SEO chapters from previous years](https://almanac.httparchive.org/en/2020/seo#structured-data). In recent years, the influence of search engines has also popularized [schema.org](https://schema.org/) the vocabulary of choice for structured data.
+In fact, search engines have played such a significant role in the general adoption of (and <a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data">education</a> arond) structured data across the web, that this chapter was born out of Web Almanac [SEO chapters from previous years](../seo#structured-data). In recent years, the influence of search engines has also popularized <a hreflang="en" href="https://schema.org/">schema.org</a> the vocabulary of choice for structured data.
 
 In addition to this, social media platforms rely on structured data to influence how they read and display content when it's shared (or linked to) on their platforms. Rich previews, tailored titles and descriptions, and interactivity in these platforms are often 'powered' by structured data.
 
@@ -77,13 +77,13 @@ Structured data comes in many formats, standards, and syntaxes. We've collected 
 Specifically, we've identified and extracted structured data relating to:
 
 * [Schema.org](http://schema.org/)
-* [Dublin core](https://www.dublincore.org/specifications/dublin-core/)
+* <a hreflang="en" href="https://www.dublincore.org/specifications/dublin-core/">Dublin core</a>
 * Meta tags used by social networks:
-    * [Open Graph](https://ogp.me/)
-    * [Twitter](https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started)
-    * [Facebook](https://developers.facebook.com/docs/sharing/webmasters/)
-* [Microformats](http://microformats.org/) (and [microformats2](https://microformats.org/wiki/microformats2))
-* [RDFa](https://en.wikipedia.org/wiki/RDFa), [Microdata](https://en.wikipedia.org/wiki/Microdata_(HTML)) and [JSON-LD](https://json-ld.org/)
+    * <a hreflang="en" href="https://ogp.me/">Open Graph</a>
+    * <a hreflang="en" href="https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started">Twitter</a>
+    * <a hreflang="en" href="https://developers.facebook.com/docs/sharing/webmasters/">Facebook</a>
+* [Microformats](http://microformats.org/) (and <a hreflang="en" href="https://microformats.org/wiki/microformats2">microformats2</a>)
+* [RDFa](https://en.wikipedia.org/wiki/RDFa), [Microdata](https://en.wikipedia.org/wiki/Microdata_(HTML)) and <a hreflang="en" href="https://json-ld.org/">JSON-LD</a>
 
 Collectively, these provide a broad overview of different use-cases and scenarios; and include both 'legacy' standards and modern approaches (e.g., microformats vs JSON-LD).
 
@@ -93,9 +93,9 @@ Before we explore specific usage across the various structured data types, we sh
 
 #### 1. The influence of content management systems
 
-Many of the pages we've evaluated are from websites which use a [content management system](https://en.wikipedia.org/wiki/Content_management_system) (or 'CMS'; such as [WordPress](https://wordpress.org/) or [Drupal](https://www.drupal.org/)). These systems - or the themes/plugins/modules which enhance their functionality - are often responsible for generating the HTML markup which contains the structured data which we're analysing.
+Many of the pages we've evaluated are from websites which use a [content management system](https://en.wikipedia.org/wiki/Content_management_system) (or 'CMS'; such as <a hreflang="en" href="https://wordpress.org/">WordPress</a> or <a hreflang="en" href="https://www.drupal.org/">Drupal</a>). These systems - or the themes/plugins/modules which enhance their functionality - are often responsible for generating the HTML markup which contains the structured data which we're analysing.
 
-That means that our findings are unavoidably skewed to aligning with the behaviours and output of the most prevalent CMS'. For example, many websites using Drupal automatically output structured data in the form of RDFa, and WordPress (which powers [a significant percentage of websites](https://almanac.httparchive.org/en/2021/cms)) often includes microformats markup in template code. This contributes significantly to the shape of our findings.
+That means that our findings are unavoidably skewed to aligning with the behaviours and output of the most prevalent CMS'. For example, many websites using Drupal automatically output structured data in the form of RDFa, and WordPress (which powers <a hreflang="en" href="https://almanac.httparchive.org/en/2021/cms">a significant percentage of websites</a>) often includes microformats markup in template code. This contributes significantly to the shape of our findings.
 
 #### 2. The limitations of homepage-only data
 
@@ -140,7 +140,7 @@ In addition to identifying when a certain type of structured data is present, we
 
 #### RDFa
 
-[RDFa](https://www.w3.org/TR/rdfa-lite/) (Resource Description Framework in Attributes) is a technology for linked data markup, which was introduced by W3C in 2015. It allows users to augment and translate visual information on a web page by adding additional attributes to markup.
+<a hreflang="en" href="https://www.w3.org/TR/rdfa-lite/">RDFa</a> (Resource Description Framework in Attributes) is a technology for linked data markup, which was introduced by W3C in 2015. It allows users to augment and translate visual information on a web page by adding additional attributes to markup.
 
 E.g., a website owner might add a `rel="license"` attribute to a hyperlink in order to explicitly describe it as a link to a licensing information page.
 
@@ -164,7 +164,7 @@ Beyond this outlier, the use of RDFa diminishes and fragments considerably, thou
 
 [FOAF](http://xmlns.com/foaf/spec/) is a linked data dictionary of people-related terms, created in the early-2000s. It can be used to describing _people_, _groups_ and _documents_.
 
-FOAF uses W3C's RDF syntax and in its [original introduction](https://web.archive.org/web/20140331104046/http://www.foaf-project.org/original-intro) was explained as follows:
+FOAF uses W3C's RDF syntax and in its <a hreflang="en" href="https://web.archive.org/web/20140331104046/http://www.foaf-project.org/original-intro">original introduction</a> was explained as follows:
 
 <p class="note">"Consider a Web of inter-related home pages, each describing things of interest to a group of friends. Each new home page that appears on the Web tells the world something new, providing factoids and gossip that make the Web a mine of disconnected snippets of information. FOAF provides a way to make sense of all this."</p>
 
@@ -174,13 +174,13 @@ Anecdotally, we can attribute a prominence of `foaf` markup in our results to si
 
 As well as FOAF properties, various other standards and syntaxes show up in our list.
 
-Notably, we can see several 'sioc' properties, such as `sioc:item` (0.24% of pages) and `sioc:useraccount` (0.03% of pages). [SIOC](https://www.w3.org/Submission/sioc-spec/) is a standard designed to describe structured data relating to _online communities_, such as message boards, forums, wikis and blogs.
+Notably, we can see several 'sioc' properties, such as `sioc:item` (0.24% of pages) and `sioc:useraccount` (0.03% of pages). <a hreflang="en" href="https://www.w3.org/Submission/sioc-spec/">SIOC</a> is a standard designed to describe structured data relating to _online communities_, such as message boards, forums, wikis and blogs.
 
-We can also see a [SKOS](https://www.w3.org/TR/skos-primer/) property - `skos:concept` - on 0.04% of pages. SKOS is another standard, which aims to provide a way of describing taxonomies and classifications (e.g., tags, data sets, and so on).
+We can also see a <a hreflang="en" href="https://www.w3.org/TR/skos-primer/">SKOS</a> property - `skos:concept` - on 0.04% of pages. SKOS is another standard, which aims to provide a way of describing taxonomies and classifications (e.g., tags, data sets, and so on).
 
 #### Dublin Core
 
-[Dublin Core](https://dublincore.org/) is a vocabulary interoperable with linked data standards that was originally conceived in Dublin, Ohio in 1995 at an OCLC (Online Computer Library Center) and NCSA (National Center for Supercomputing Applications) workshop.
+<a hreflang="en" href="https://dublincore.org/">Dublin Core</a> is a vocabulary interoperable with linked data standards that was originally conceived in Dublin, Ohio in 1995 at an OCLC (Online Computer Library Center) and NCSA (National Center for Supercomputing Applications) workshop.
 
 It was designed to describe a broad range of resources (both digital and physical) and can be used in various business scenarios. Starting in 2000 it became extremely popular among RDF-based vocabularies and received the adoption of the W3C.
 
@@ -208,7 +208,7 @@ While it might seem to many that Schema.org is predominant in the context of SEO
 
 ##### Open Graph
 
-[The Open Graph protocol](https://ogp.me/) is an open source standard, originally created by Facebook. It is a type of structured data specific to the context of _sharing content_, based loosely on Dublin Core, Microformats and similar standards.
+<a hreflang="en" href="https://ogp.me/">The Open Graph protocol</a> is an open source standard, originally created by Facebook. It is a type of structured data specific to the context of _sharing content_, based loosely on Dublin Core, Microformats and similar standards.
 
 It describes a series of meta tags and properties, which may be used to define how content should be (re)presented when shared between platforms. E.g., when 'liking' or embedding a post, or sharing a link.
 
@@ -296,7 +296,7 @@ Microformats (commonly abbreviated as `μF`) are an open data standard for metad
 
 They are composed of a set of defined classes that describe the meanings behind normal HTML elements, such as headings and paragraphs.
 
-The guiding principle behind this format for structured data is to convey semantics by ​reusing widely adopted standards (semantic (X)HTML). The [official documentation](https://microformats.org/wiki/what-are-microformats) describes Microformats as "designed for humans first and machines second", and are "a set of simple, open data formats built upon existing and widely adopted standards".
+The guiding principle behind this format for structured data is to convey semantics by ​reusing widely adopted standards (semantic (X)HTML). The <a hreflang="en" href="https://microformats.org/wiki/what-are-microformats">official documentation</a> describes Microformats as "designed for humans first and machines second", and are "a set of simple, open data formats built upon existing and widely adopted standards".
 
 Microformats are available in two versions: Microformats v1 and Microformats v2 (microformats2). The latter, introduced in March 2014,  replaces and supersedes v1 and takes advantage of some important lessons learned from both microdata and rdfa syntaxes.
 
@@ -368,7 +368,7 @@ That said, we see a broad adoption and variety of microdata types. Of note:
 
 #### JSON-LD
 
-Unlike microdata and microformats, [JSON-LD](https://json-ld.org/) isn't implemented by adding properties or classes to HTML markup. Instead, machine-readable code is added to the page as one or more standalone 'blobs' of JavaScript. This code contains descriptions of the entities on the page, and their relationships.
+Unlike microdata and microformats, <a hreflang="en" href="https://json-ld.org/">JSON-LD</a> isn't implemented by adding properties or classes to HTML markup. Instead, machine-readable code is added to the page as one or more standalone 'blobs' of JavaScript. This code contains descriptions of the entities on the page, and their relationships.
 
 Because the implementation isn't tied directly to the HTML structure of the page, it can be much easier to describe complex or abstract relationships, as well as representing information which isn't readily available in the human-readable content of the page.
 
@@ -515,7 +515,7 @@ Below are the most common connections between types, based on how frequently the
 <figcaption>{{ figure_link(caption="JSON-LD entity relations.", sheets_gid="1786787384", sql_file="jsonld_entities_relationships.sql") }}</figcaption>
 </figure>
 
-The most common structure is the relationship between `website`, `potentialAction`, and `SearchAction` schema (accounting for 6.15% of structures). Collectively, this relationship enables the use of a '[Sitelinks Search Box](https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox)' in Google's search results.
+The most common structure is the relationship between `website`, `potentialAction`, and `SearchAction` schema (accounting for 6.15% of structures). Collectively, this relationship enables the use of a '<a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox">Sitelinks Search Box</a>' in Google's search results.
 
 Perhaps most interestingly, the next most popular structure (4.85% of relationships) defines _no_ relationships. These pages output only the simplest types of structured data; defining individual, isolated entities and their properties.
 
@@ -568,7 +568,7 @@ The `sameAs` property accounts for 1.6% of all JSON-LD markup, and is present on
 
 We can see that the most common values of the `sameAs` property (normalizing from _URLs_ to _hostnames_) are 'social media' platforms (e.g., facebook.com, instagram.com), and 'official sources' (e.g., wikipedia.org, yelp.com) - with the sum of the former accounting for ~75% of usage.
 
-It's clear that this property is primarily used to identify the social media accounts of websites and businesses; likely motivated by Google's historical reliance on this data as an input for managing 'knowledge panels' in their search results. Given that this requirement was [deprecated in 2019](https://twitter.com/googlesearchc/status/1143558928439005184), we might expect this data set to gradually alter in coming years.
+It's clear that this property is primarily used to identify the social media accounts of websites and businesses; likely motivated by Google's historical reliance on this data as an input for managing 'knowledge panels' in their search results. Given that this requirement was <a hreflang="en" href="https://twitter.com/googlesearchc/status/1143558928439005184">deprecated in 2019</a>, we might expect this data set to gradually alter in coming years.
 
 ## Conclusion
 
