@@ -55,7 +55,7 @@ To date, some of the broadest consumers of structured data are _search engines_ 
 
 In most major search engines, website owners may become eligible for various forms of '<a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/search-gallery">rich results</a>' (which may influence visibility and traffic) by implementing various types of structured data on their websites.
 
-In fact, search engines have played such a significant role in the general adoption of (and <a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data">education</a> around) structured data across the web, that this chapter was born out of Web Almanac [SEO chapters from previous years](../seo#structured-data). In recent years, the influence of search engines has also popularized <a hreflang="en" href="https://schema.org/">schema.org</a> the vocabulary of choice for structured data.
+In fact, search engines have played such a significant role in the general adoption of (and <a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data">education</a> around) structured data across the web, that this chapter was born out of Web Almanac [SEO chapters from previous years](../2020/seo#structured-data). In recent years, the influence of search engines has also popularized <a hreflang="en" href="https://schema.org/">schema.org</a> the vocabulary of choice for structured data.
 
 In addition to this, social media platforms rely on structured data to influence how they read and display content when it's shared (or linked to) on their platforms. Rich previews, tailored titles and descriptions, and interactivity in these platforms are often 'powered' by structured data.
 
@@ -425,7 +425,7 @@ Below are the most common connections between types, based on how frequently the
       <td class="numeric">4.85%</td>
     </tr>
     <tr>
-      <td>graph &gt; WebSite</td>
+      <td>@graph &gt; WebSite</td>
       <td class="numeric">4.89%</td>
       <td class="numeric">4.69%</td>
     </tr>
@@ -435,7 +435,7 @@ Below are the most common connections between types, based on how frequently the
       <td class="numeric">3.81%</td>
     </tr>
     <tr>
-      <td>graph &gt; WebPage</td>
+      <td>@graph &gt; WebPage</td>
       <td class="numeric">4.01%</td>
       <td class="numeric">3.79%</td>
     </tr>
@@ -450,7 +450,7 @@ Below are the most common connections between types, based on how frequently the
       <td class="numeric">3.03%</td>
     </tr>
     <tr>
-      <td>graph &gt; BreadcrumbList</td>
+      <td>@graph &gt; BreadcrumbList</td>
       <td class="numeric">3.18%</td>
       <td class="numeric">2.99%</td>
     </tr>
@@ -470,7 +470,7 @@ Below are the most common connections between types, based on how frequently the
       <td class="numeric">2.30%</td>
     </tr>
     <tr>
-      <td>graph &gt; Organization</td>
+      <td>@graph &gt; Organization</td>
       <td class="numeric">2.26%</td>
       <td class="numeric">2.13%</td>
     </tr>
@@ -490,7 +490,7 @@ Below are the most common connections between types, based on how frequently the
       <td class="numeric">1.73%</td>
     </tr>
     <tr>
-      <td>graph &gt; ImageObject</td>
+      <td>@graph &gt; ImageObject</td>
       <td class="numeric">1.80%</td>
       <td class="numeric">1.71%</td>
     </tr>
@@ -500,7 +500,7 @@ Below are the most common connections between types, based on how frequently the
       <td class="numeric">1.69%</td>
     </tr>
     <tr>
-      <td>graph &gt; SiteNavigationElement</td>
+      <td>@graph &gt; SiteNavigationElement</td>
       <td class="numeric">1.70%</td>
       <td class="numeric">1.66%</td>
     </tr>
