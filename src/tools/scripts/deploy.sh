@@ -10,20 +10,21 @@ set -e
 # Usage info
 show_help() {
 cat << EOF
-Usage: ${0##*/} [-hv] [-f OUTFILE] [FILE]...
+Usage: ${0##*/} [-hv] [-u URL]...
 Release the Web Alamanac to Google Cloud Platform
 Requires Permissions on Google Cloud Platform for the Web Amanac account
 
     -h   display this help and exit
     -f   force mode (no interactive prompts for each step)
     -n   no-promote - release a test version
+    -s   stage version to use (e.g. 20211111t105151)
 EOF
 }
 
 OPTIND=1 #Reseting is good practive
 force=0
 no_promote=0
-while getopts "h?fn" opt; do
+while getopts ":h?fns:" opt; do
     case "$opt" in
     h|\?)
         show_help
@@ -32,6 +33,8 @@ while getopts "h?fn" opt; do
     f)  force=1
         ;;
     n)  no_promote=1
+        ;;
+    s)  STAGE_VERSION=${OPTARG}
         ;;
     esac
 done
@@ -68,7 +71,11 @@ fi
 
 if [ "${no_promote}" == "1" ]; then
   echo "Deploying to GCP (no promote)"
-  echo "Y" | gcloud app deploy --project webalmanac --no-promote
+  if [[ -z "${STAGE_VERSION}" ]]; then
+    echo "Y" | gcloud app deploy --project webalmanac --no-promote
+  else
+    echo "Y" | gcloud app deploy --project webalmanac --no-promote --version="${STAGE_VERSION}"
+  fi
   echo "Done"
   exit 0
 fi
