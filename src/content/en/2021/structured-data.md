@@ -299,7 +299,7 @@ These tags are used to explicitly relate a webpage to a Facebook Page/Brand, or 
 
 Anecdotally, it's unclear how well these are supported by Facebook. The platform has gone through radical changes over the past few years, and their technical documentation hasn't been well-maintained. However, many content management systems, templates and best practice guides—as well as some of Facebook's debugging tools—still include and make reference to them.
 
-##### Microformats (and microformats2)
+##### Microformats and microformats2
 
 Microformats (commonly abbreviated as `μF`) are an open data standard for metadata to embed semantics and structured data in HTML.
 
