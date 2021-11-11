@@ -11,12 +11,12 @@ results: https://docs.google.com/spreadsheets/d/1uEA217YjpX1xdRVBnIz9ekjpjIrpGIh
 jonoalderson_bio: Jono Alderson is a digital strategist, marketing technologist, and full stack developer. He enjoys dabbling with website performance, technical SEO, schema.org and all things structured data.
 cyberandy_bio: Andrea Volpini is the CEO of WordLift, and is currently focusing on the semantic web, SEO and artificial intelligence.
 featured_quote: Describing our content using structured data enables machines to treat webpages and websites as databases. That creates a wealth of possibilities for business, technology, and society.
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_stat_1: 33.53%
+featured_stat_label_1: Pages which contain JSON-LD markup
+featured_stat_2: 8.9%
+featured_stat_label_2: Pages which include 'WebSite' markup in JSON-LD
+featured_stat_3: 18
+featured_stat_label_3: The greatest number of nested relationships between entities
 ---
 
 ## Introduction
