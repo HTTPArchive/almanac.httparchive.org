@@ -306,7 +306,7 @@ With the print-ready eBook and Cover you can send them to a printer. I used http
 
 If you've been added to the "App Engine Deployers" role in the GCP project, you're able to push code changes to the production website.
 
-Thsi must first be setup:
+You must first do some setup locally:
 
 1. Install the [`gcloud`](https://cloud.google.com/sdk/install) Google Cloud SDK.
 
@@ -354,7 +354,7 @@ The deploy script will do the following:
 - Push changes to `production` branch on GitHub
 - Ask you to update the release section of GitHub
 
-4. Browse the website in production to verify that the new changes have taken effect. Not we have 3 hour caching so add random query params to pages to ensure you get latest version.
+4. Browse the website in production to verify that the new changes have taken effect. Note we have 10 minute caching so add random query params to pages to ensure you get latest version.
 
 ## Developing in Docker
 
