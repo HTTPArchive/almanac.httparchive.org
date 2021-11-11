@@ -14,7 +14,7 @@ featured_quote: Describing our content using structured data enables machines to
 featured_stat_1: 33.53%
 featured_stat_label_1: Pages which contain JSON-LD markup
 featured_stat_2: 8.9%
-featured_stat_label_2: Pages which include 'WebSite' markup in JSON-LD
+featured_stat_label_2: Pages which include `WebSite` markup in JSON-LD
 featured_stat_3: 18
 featured_stat_label_3: The greatest number of nested relationships between entities
 ---
