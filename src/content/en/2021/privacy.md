@@ -17,6 +17,7 @@ featured_stat_2: 39.7%
 featured_stat_label_2: Websites that contain a privacy policy link
 featured_stat_3: 4.10%
 featured_stat_label_3: Popular sites opting out of FLoC cohorts
+unedited: true
 ---
 
 
