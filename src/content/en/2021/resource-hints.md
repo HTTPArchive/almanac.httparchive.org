@@ -356,19 +356,15 @@ In addition to the `media` attribute, the `<link>` element supports `imagesrcset
 
 Owing to the versatility of `rel="preload"`, there isn't a clear set of rules dictating how to implement the preload hint, but we can learn a lot from our mistakes and understand how to avoid them.
 
-#### Unused preload
+#### Unused preloads
 
 We have already seen that there is a negative correlation between a website's performance and the number of preload hints. This relationship may be influenced by two factors:
 - Incorrect preloads
 - Unused preloads
 
-##### Incorrect preloads
+An incorrect preload refers to when you preload a resource which is not as important as the other resources which the browser would have otherwise prioritized. We are unable to measure the extent of incorrect preloads as you would need to A/B test the page with and without each hint.
 
-When you preload a resource which is not as important as the other resources which the browser would have otherwise prioritized. We are unable to measure the extent of incorrect preloads as you would need to A/B test the page with and without each hint.
-
-##### Unused preloads
-
-When you preload a resource which is not needed within the first few seconds of the page loading.
+An unused preload occurs when you preload a resource which is not needed within the first few seconds of loading the page.
 
 {{ figure_markup(
   caption='Percent of unused preload hints within the first 3 seconds.',
@@ -380,15 +376,6 @@ When you preload a resource which is not needed within the first few seconds of 
 }}
 
 In such cases, the preload hint is regressing the website's performance, as you are instructing the browser to download and prioritize files or resources which are not needed immediately—or even not needed at all. This is one of the challenges when using resource hints, as they require regular maintenance and automating the process opens the door to allow such issues to creep in.
-
-{{ figure_markup(
-  caption='The most unused `rel="preload"` hints on a single page',
-  content="389",
-  classes="big-number",
-  sheets_gid="2013605735",
-  sql_file="consoleLog_unused_preload.sql"
-)
-}}
 
 #### Incorrect `crossorigin` attribute
 
@@ -431,7 +418,7 @@ More than 5% of pages which preload font files preload more font files than need
 
 ## Third parties
 
-You can use resource hints to connect to, or download resources from, both first and [third parties](./third-parties). While `dns-prefetch` and `preconnect` are only useful when connecting to different origins, including subdomains, `preload` and `prefetch` may be used for both resources on the same origin and resources hosted by third parties.
+You can use resource hints to connect to, or download resources from, both first and third parties. While `dns-prefetch` and `preconnect` are only useful when connecting to different origins, including subdomains, `preload` and `prefetch` may be used for both resources on the same origin and resources hosted by third parties.
 
 When considering which resource hints you should use for third-party resources, you need to evaluate the priority and role of each third party on your application's loading experience and whether the costs are justified.
 
@@ -579,6 +566,8 @@ Analyzing the table above, 36.7% of all pages which include a `preload` hint are
 
 Google Fonts now includes instructions to `preconnect` to both the fonts.gstatic.com origin and fonts.googleapis.com, which is usually good practice to offset the impact of these late discovered resources.
 
+To learn more about the state of third parties, check out the [Third Parties](./third-parties) chapter.
+
 ## Native lazy-loading
 
 Lazy-loading refers to the technique to defer downloading a resource—in this case an image or iframe—until it is needed or visible within the viewport. Native lazy-loading refers to the ability to specify this in the HTML with a `loading="lazy"` attribute, rather than having to use a JavaScript library to handle this. Native image and iframe lazy-loading have been standardized in 2019 and since then their adoption—especially for images—has grown exponentially.
@@ -601,8 +590,6 @@ Browsers which do not support the `loading` attribute will simply ignore it—ma
 
 The percent of pages using `loading="lazy"` has grown from 4.2% in 2020 to 17.8% by the time of our analysis. That's a whopping 423% growth! This rapid growth is extraordinary and is likely driven by two key elements: the ease with which it could be added to pages without cross-browser compatibility issues, and the frameworks or technologies powering these websites. In WordPress 5.5, <a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">lazy-loading images became the default implementation</a>, supercharging the adoption rate of `loading="lazy"`, with WordPress sites now making up <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">84%</a> of all pages which use native image lazy-loading.
 
-A <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">study</a> on the load times for pages which use lazy-loading indicated that pages which use lazy-loading tend to have a worse LCP performance, possibly caused by overusing the lazy-loading attribute. This is increasingly significant on the LCP element, which shouldn't be lazy-loaded. If you are using `loading="lazy"`, you should check that the lazily-loaded images are below the fold and more critically, that the [LCP element is not lazy-loaded](./performance). More than 60% of all lazy-load images are actually within the initial viewport and shouldn't be lazy-loaded.
-
 {{ figure_markup(
   image="lazy-loaded-images.png",
   caption='Percent of `img` elements with `loading="lazy"` which are in the initial viewport.',
@@ -611,6 +598,17 @@ A <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">study</a> on the loa
   sheets_gid="1468369891",
   sql_file="lazy_viewport_images.sql"
   )
+}}
+
+61.5% of lazy-loaded images on mobile and 63.1% of lazy-loaded images on desktop are actually within the initial viewport and shouldn't be lazy-loaded. A <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">study</a> on the load times for pages which use lazy-loading indicated that pages which use lazy-loading tend to have a worse LCP performance, possibly caused by overusing the lazy-loading attribute. This is increasingly significant on the LCP element, which shouldn't be lazy-loaded. If you are using `loading="lazy"`, you should check that the lazily-loaded images are below the fold and more critically, that the LCP element is not lazy-loaded. You may dig deeper into the effects of lazy-loading the LCP image on your Core Web Vitals in the [Performance](./performance) chapter.
+
+{{ figure_markup(
+  caption='Percent of pages that have the `loading="lazy"` attribute on `iframe` elements.',
+  content="2.6%",
+  classes="big-number",
+  sheets_gid="1935094298",
+  sql_file="native_iframe_lazy_loading.sql"
+)
 }}
 
 The likelihood of a page containing at least one iframe is much lower than for that containing an image with only 2.6% of pages containing an iframe taking advantage of native lazy-loading. The benefits of lazy-loading an iframe are potentially important, as an iframe could initiate further requests to download even more resources, including scripts and images. This is especially true when using embeds, such as YouTube or Twitter embeds. Similarly, when deciding the loading strategy for an image, you must check whether the iframe is shown within the initial viewport or not. If it isn't, then it is usually safe to add `loading="lazy"` to the `<iframe>` element to benefit from a reduced initial load and boost performance.
@@ -622,6 +620,8 @@ HTTP/2 supports a technology called _Server Push_ that preemptively pushes a res
 Unfortunately, HTTP/2 push has been disappointing, with little evidence that it provides the performance boost promised compared to the risk of over pushing resources that either the browser already has, or that are of less importance than resources the browser requests.
 
 So, while the technology is widely available, overcoming these obstacles makes it highly unpopular—with less than 1% adoption. Chrome has also filed an <a hreflang="en" href="https://lists.w3.org/Archives/Public/ietf-http-wg/2019JulSep/0078.html">Intent to Remove</a> that is paused until a testable implementation of 103 Early Hints (covered next) is available. Chrome <a hreflang="en" href="https://github.com/httpwg/http2-spec/issues/786#issuecomment-724371629">does not support</a> Server Push on HTTP/3 either.
+
+You can read more about HTTP, HTTP/2, and HTTP/3 in the [HTTP Chapter](./http).
 
 ## Future
 
