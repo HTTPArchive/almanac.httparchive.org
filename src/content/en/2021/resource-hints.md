@@ -5,7 +5,7 @@ description: Resource Hints chapter of the 2021 Web Almanac covering adoption of
 authors: [kevinfarrugia]
 reviewers: [siakaramalegos, tunetheweb, andydavies, samarpanda]
 analysts: [nithanaroy]
-editors: [tunetheweb]
+editors: [rviscomi]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1Mw6TjkIClRtlZPHbij5corOZbaSUp-vgTVq3Ig18IwQ/
 kevinfarrugia_bio: Kevin Farrugia is a consultant on web performance and software architecture. You can find him blogging on <a hreflang="en" href="https://imkev.dev">imkev.dev</a>.
@@ -20,7 +20,7 @@ featured_stat_label_3: Growth in adoption of native lazy loading on images.
 
 ## Introduction
 
-Resource Hints are instructions to the browser that you may use to improve a website's performance. This set of instructions enable you to assist the browser in prioritizing origins or resources which need to be fetched and processed.
+Resource hints are instructions to the browser that you may use to improve a website's performance. This set of instructions enable you to assist the browser in prioritizing origins or resources which need to be fetched and processed.
 
 Let's take a closer look at how resource hints are implemented, what are the most common pitfalls and what we can do to make sure we are using resource hints as effectively as possible.
 
@@ -48,7 +48,6 @@ It is also possible to dynamically inject the HTML element through the use of Ja
 const link = document.createElement("link");
 link.rel="prefetch";
 link.href="https://example.com";
-
 document.head.appendChild(link);
 ```
 
@@ -106,7 +105,7 @@ The `prerender` link allows you render a page in the background, improving its l
 
 #### `preload`
 
-Most modern browsers also <a hreflang="en" href="https://caniuse.com/link-rel-preload">support</a> the `preload` hint—and to a <a hreflang="en" href="https://caniuse.com/link-rel-modulepreload">lesser degree</a>, the <a hreflang="en" href="https://html.spec.whatwg.org/multipage/links.html#link-type-modulepreload">`modulepreload`</a> hint. The `preload` instruction initiates an early fetch for a resource which is required in the loading of a page and is most commonly used for late-discovered resources, such as font files or images referenced in stylesheets. Preloading a resource may be used to elevate its priority, allowing the developer to prioritize the loading of the <a hreflang="en" href="https://web.dev/lcp">Largest Contentful Paint</a> image for, even if this would otherwise be discovered while parsing the HTML.
+Most modern browsers also <a hreflang="en" href="https://caniuse.com/link-rel-preload">support</a> the `preload` hint—and to a <a hreflang="en" href="https://caniuse.com/link-rel-modulepreload">lesser degree</a>, the <a hreflang="en" href="https://html.spec.whatwg.org/multipage/links.html#link-type-modulepreload">`modulepreload`</a> hint. The `preload` instruction initiates an early fetch for a resource which is required in the loading of a page and is most commonly used for late-discovered resources, such as font files or images referenced in stylesheets. Preloading a resource may be used to elevate its priority, allowing the developer to prioritize the loading of the <a hreflang="en" href="https://web.dev/lcp">Largest Contentful Paint</a> (LCP) image for, even if this would otherwise be discovered while parsing the HTML.
 
 `modulepreload` is a specialized alternative to `preload` and behaves similarly, however its usage is limited to <a hreflang="en" href="https://html.spec.whatwg.org/multipage/webappapis.html#module-script">module scripts</a>.
 
@@ -229,10 +228,10 @@ Resource hints can be very effective if used correctly. By shifting the responsi
     </tr>
   </tbody>
 </table>
-<figcaption>{{ figure_link(caption='Median resource hint adoption by rank.', sheets_gid="528380369", sql_file="resource_hints_distribution_by_rank.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption='Median number of resource hints per page by rank.', sheets_gid="528380369", sql_file="resource_hints_distribution_by_rank.sql") }}</figcaption>
 </figure>
 
-Of the sites using resource hints, when comparing the median for the top 1,000 sites to the entire corpus, the top-ranking sites have more resource hints per page. The only hint which observes a different pattern is `prerender`—which has a total of 0 occurrences in the top 1,000 sites.
+Of the sites using resource hints, when comparing the median for the top 1,000 sites to the entire corpus, the top-ranking sites have more resource hints per page. The only hint which observes a different pattern is `prerender`, which has a total of 0 occurrences in the top 1,000 sites.
 
 ## Correlation with Core Web Vitals
 
@@ -258,9 +257,9 @@ By combining a page's <a hreflang="en" href="https://web.dev/cwv">Core Web Vital
   )
 }}
 
-This same observation may be seen on a page's <a hreflang="en" href="https://web.dev/lcp">Largest Contentful Paint</a>, indicating that in many cases, the developer is prioritizing resources which aren't needed to render the LCP element and as a consequence degrading the user experience.
+This same observation may be seen on a page's LCP, indicating that in many cases, the developer is prioritizing resources which aren't needed to render the LCP element and as a consequence degrading the user experience.
 
-While this doesn't prove that having preload hints causes a page to get slower, having many does coincide with having slower performance. Every page has its unique requirements and it is impossible to apply a "one size fits all" approach, but in the majority of cases the number of preloaded resources should be kept low and resource prioritization should be delegated to the browser when possible.
+While this doesn't prove that having preload hints causes a page to get slower, having many hints does correlate with having slower performance. Every page has its unique requirements and it is impossible to apply a "one size fits all" approach, but in the majority of cases the number of preloaded resources should be kept low and resource prioritization should be delegated to the browser when possible.
 
 <p class="note">Note: In addition to the number of hints, the size of each preloaded resource has an impact on the website performance. The above figure does not take into consideration the size of each preloaded resource.</p>
 
@@ -304,7 +303,7 @@ Preloading images may help improve the LCP score when the image is not included 
 
 ### The `crossorigin` attribute
 
-The `crossorigin` attribute is used to indicate whether [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) must be used when fetching the requested resource. This could apply to any resource type, but it is most commonly associated with font files as they should always be requested using CORS.
+The `crossorigin` attribute is used to indicate whether [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) (CORS) must be used when fetching the requested resource. This could apply to any resource type, but it is most commonly associated with font files as they should always be requested using CORS.
 
 <figure>
   <table>
@@ -343,11 +342,11 @@ The default value when no value is specified, `anonymous` will set the credentia
 
 #### `use-credentials`
 
-When requesting cross-origin resources which require authentication, for example through the use of cookies, client certificates or the `Authorization` header; setting the `crossorigin="use-credentials"` attribute will include this data in the request and allowing the server to respond to the request so that the resource may be preloaded. This is not a common scenario with 0.1% usage, however if your page content is dependent on an authenticated status, it could be used to initiate an early fetch request to get the login status.
+When requesting cross-origin resources which require authentication, for example through the use of cookies, client certificates or the `Authorization` header; setting the `crossorigin="use-credentials"` attribute will include this data in the request and allow the server to respond to the request so that the resource may be preloaded. This is not a common scenario with 0.1% usage, however if your page content is dependent on an authenticated status, it could be used to initiate an early fetch request to get the login status.
 
 ### The `media` attribute
 
-An oft-neglected feature available to `rel="preload"`, is the ability to specify media queries through the `media` attribute—with less than 4% of all preloads using this attribute. The `media` attribute accepts media queries allowing you to target the media type and specific browser features, such as viewport width. As an example, the `media` attribute would allow you to preload a low-resolution image on devices with a narrow viewport and a full-sized image on devices with a large viewport.
+An oft-neglected feature available to `rel="preload"` is the ability to specify media queries through the `media` attribute—with less than 4% of all preloads using this attribute. The `media` attribute accepts media queries allowing you to target the media type and specific browser features, such as viewport width. As an example, the `media` attribute would allow you to preload a low-resolution image on devices with a narrow viewport and a full-sized image on devices with a large viewport.
 
 In addition to the `media` attribute, the `<link>` element supports `imagesrcset` and `imagesizes` attributes which correspond to the `srcset` and `sizes` attributes on `<img>` elements. Using these attributes, you can use the same resource selection criteria that you would use on your image. Unfortunately, their adoption is very low (less than 1%); most likely owing to the lack of <a hreflang="en" href="https://caniuse.com/mdn-html_elements_link_imagesizes">support</a> on Safari.
 
@@ -422,21 +421,21 @@ There are 17,861 cases of unrecognized values, with the most frequent error bein
 )
 }}
 
-When using an incorrect `as` attribute value—as opposed to unrecognized value, such as using `style` instead of `script`; the browser will duplicate the file download as the request won't match the resource stored in the preload cache.
+When using an incorrect `as` attribute value—as opposed to unrecognized value, such as using `style` instead of `script`—the browser will duplicate the file download as the request won't match the resource stored in the preload cache.
 
 <p class="note">Note: While <code>video</code> is included in the spec, it isn't supported by any browser and would be treated as an invalid value and ignored.</p>
 
 #### Unused font files
 
-More than 5% of pages which preload font files, preload more font files than needed. When preloading font files, all browsers which support `preload` also support `.woff2`. This means that, assuming that the `.woff2` font files are available, it is not necessary to preload older formats, including `.woff`.
+More than 5% of pages which preload font files preload more font files than needed. When preloading font files, all browsers which support `preload` also support `.woff2`. This means that, assuming that the `.woff2` font files are available, it is not necessary to preload older formats, including `.woff`.
 
 ## Third parties
 
-You can use resource hints to connect to, or download resources from, both first and [third parties](./third-parties). While `dns-prefetch` and `preconnect` are only useful when connecting to different origins, including subdomains; `preload` and `prefetch` may be used for both resources on the same origin and resources hosted by third parties.
+You can use resource hints to connect to, or download resources from, both first and [third parties](./third-parties). While `dns-prefetch` and `preconnect` are only useful when connecting to different origins, including subdomains, `preload` and `prefetch` may be used for both resources on the same origin and resources hosted by third parties.
 
 When considering which resource hints you should use for third-party resources, you need to evaluate the priority and role of each third party on your application's loading experience and whether the costs are justified.
 
-Prioritizing third-party resources over your own content is potentially a warning sign, however there are cases when this is recommended. As an example, if we look at cookie notice scripts; which are required in the European Union by <a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">General Data Protection Regulation</a>; these are usually accompanied by a `dns-prefetch` or `preconnect` script as they are highly obtrusive to the user experience and also a prerequisite for some site functions, such as serving personalized ads.
+Prioritizing third-party resources over your own content is potentially a warning sign, however there are cases when this is recommended. As an example, if we look at cookie notice scripts—which are required in the European Union by <a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">General Data Protection Regulation</a>—these are usually accompanied by a `dns-prefetch` or `preconnect` hint as they are highly obtrusive to the user experience and also a prerequisite for some site functions, such as serving personalized ads.
 
 <figure>
   <table>
@@ -523,7 +522,7 @@ Prioritizing third-party resources over your own content is potentially a warnin
     </tbody>
   </table>
 
-<figcaption>{{ figure_link(caption="Most popular third parties connected to using resource hints.", sheets_gid="1254656281", sql_file="preload_host_by_url.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Most popular third-party connections using resource hints.", sheets_gid="1254656281", sql_file="preload_host_by_url.sql") }}</figcaption>
 </figure>
 
 Analyzing the table above, 42.7% of all pages which include a `preload` hint are preloading resources hosted on adservice.google.com, while s.w.org (WordPress) is the most popular domain for `dns-prefetch` and `fonts.gstatic.com` for the `preconnect` directive.
@@ -531,7 +530,7 @@ Analyzing the table above, 42.7% of all pages which include a `preload` hint are
 {{ figure_markup(
   image="google-fonts.png",
   alt="Google Fonts instructions to embed a font.",
-  caption='Google Fonts instructions to preconnect to fonts.gstatic.com and fonts.googleapis.com. From <a hreflang="en" href="https://fonts.google.com/">Google Fonts</a>.',
+  caption='Google Fonts instructions to preconnect to fonts.gstatic.com and fonts.googleapis.com. (Source: <a hreflang="en" href="https://fonts.google.com/">Google Fonts</a>)',
   description='Code snippet titled "Use on the web" and subtitled with "To embed a font, copy the code into the `<head>` of your html". Code snippet states `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">`',
   width=536,
   height=510
@@ -548,7 +547,7 @@ Lazy-loading refers to the technique to defer downloading a resource—in this c
 
 Lazy-loading of iframes is supported on Chrome, once again behind a flag on Safari but <a hreflang="en" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1622090">not yet supported on Firefox</a>.
 
-Browsers which do not support the `loading` attribute, will simply ignore it—making it safe to add without unwanted side-effects. JavaScript based alternatives, such as <a hreflang="en" href="https://github.com/aFarkas/lazysizes">lazysizes</a> may still be used, however considering that full browser support is around the corner, it may not be worth adding to a project at this stage.
+Browsers which do not support the `loading` attribute will simply ignore it—making it safe to add without unwanted side-effects. JavaScript based alternatives, such as <a hreflang="en" href="https://github.com/aFarkas/lazysizes">lazysizes</a> may still be used, however considering that full browser support is around the corner, it may not be worth adding to a project at this stage.
 
 {{ figure_markup(
   image="adoption-of-loading-lazy-on-img.png",
@@ -560,9 +559,9 @@ Browsers which do not support the `loading` attribute, will simply ignore it—m
   )
 }}
 
-The number of pages using `loading="lazy"` has grown from 4.2% in 2020 to 17.8% by the time of our analysis. That's a whopping 423% growth! This rapid growth is extraordinary and is likely driven by two key elements. The ease with which it could be added to pages without cross-browser compatibility issues, and the frameworks or technologies powering these websites. In WordPress 5.5, <a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">lazy-loading images became the default implementation</a>, supercharging the adoption rate of `loading="lazy"`, with WordPress sites now making up <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">84%</a> of all pages which use native image lazy-loading.
+The percent of pages using `loading="lazy"` has grown from 4.2% in 2020 to 17.8% by the time of our analysis. That's a whopping 423% growth! This rapid growth is extraordinary and is likely driven by two key elements: the ease with which it could be added to pages without cross-browser compatibility issues, and the frameworks or technologies powering these websites. In WordPress 5.5, <a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">lazy-loading images became the default implementation</a>, supercharging the adoption rate of `loading="lazy"`, with WordPress sites now making up <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">84%</a> of all pages which use native image lazy-loading.
 
-A <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">study</a> on the load times for pages which use lazy-loading, indicated that pages which use lazy-loading tend to have a worse LCP performance, possibly caused by overusing the lazy-loading attribute. This is increasingly significant on the LCP element, which shouldn't be lazy-loaded. If you are using `loading="lazy"`, you should check that the lazily-loaded images are below the fold and more critically, that the [LCP element is not lazy-loaded](./performance). More than 60% of all lazy-load images are actually within the initial viewport and shouldn't be lazy-loaded.)
+A <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">study</a> on the load times for pages which use lazy-loading indicated that pages which use lazy-loading tend to have a worse LCP performance, possibly caused by overusing the lazy-loading attribute. This is increasingly significant on the LCP element, which shouldn't be lazy-loaded. If you are using `loading="lazy"`, you should check that the lazily-loaded images are below the fold and more critically, that the [LCP element is not lazy-loaded](./performance). More than 60% of all lazy-load images are actually within the initial viewport and shouldn't be lazy-loaded.
 
 {{ figure_markup(
   image="lazy-loaded-images.png",
@@ -574,7 +573,7 @@ A <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">study</a> on the loa
   )
 }}
 
-The likelihood of a page containing at least one iframe is much lower than for that containing an image with only 2.6% of pages containing an iframe taking advantage of native lazy-loading. The benefits of lazy-loading an iframe are potentially important, as an iframe could initiate further requests to download even more resources, including scripts and images. This is especially true when using embeds, such as YouTube or Twitter embeds. Similarly, to when deciding the loading strategy for an image, you must check whether the iframe is shown within the initial viewport or not. If it isn't, then it is usually safe to add `loading="lazy"` to the `<iframe>` element to benefit from a reduced initial load and boost performance.
+The likelihood of a page containing at least one iframe is much lower than for that containing an image with only 2.6% of pages containing an iframe taking advantage of native lazy-loading. The benefits of lazy-loading an iframe are potentially important, as an iframe could initiate further requests to download even more resources, including scripts and images. This is especially true when using embeds, such as YouTube or Twitter embeds. Similarly, when deciding the loading strategy for an image, you must check whether the iframe is shown within the initial viewport or not. If it isn't, then it is usually safe to add `loading="lazy"` to the `<iframe>` element to benefit from a reduced initial load and boost performance.
 
 ## HTTP/2 Server Push
 
@@ -586,9 +585,9 @@ So, while the technology is widely available, overcoming these obstacles makes i
 
 ## Future
 
-While there are no proposals to add new `rel` directives, improvements from the browser vendors to the current set of resource hints—such as the prioritization <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=629420">bug</a> in Chrome—are expected to have a positive impact. Hint adoption is expected to evolve, and the use of `preload` should shift towards its intended purpose—late discovered resources.
+While there are no proposals to add new `rel` directives, improvements from the browser vendors to the current set of resource hints—such as the prioritization <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=629420">bug</a> in Chrome—are expected to have a positive impact. Hint adoption is expected to evolve, and the use of `preload` should shift towards its intended purpose: late discovered resources.
 
-Additionally, two proposals, 103 Early Hints and Priority Hints are expected to be made available soon, with experimental support already available on Chrome.
+Additionally, two proposals, 103 Early Hints and Priority Hints, are expected to be made available soon, with experimental support already available on Chrome.
 
 ### 103 Early Hints
 
