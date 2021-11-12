@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Performance
-description: Performance chapter of the 2020 Web Almanac covering Core Web Vitals (Largest Contentful Paint, Cumulative Layout Shift, First Input Delay) as well as First Contentful Paint and Time to First Byte
+description: Performance chapter of the 2021 Web Almanac covering Core Web Vitals (Largest Contentful Paint, Cumulative Layout Shift, First Input Delay) as well as First Contentful Paint and Time to First Byte
 authors: [siakaramalegos]
 reviewers: [rviscomi, kevinfarrugia, estelle, ziemek-bucko, jzyang, fili, samarpanda, edmondwwchan]
 analysts: [siakaramalegos, rviscomi, Nithanaroy]
@@ -168,7 +168,7 @@ Correlation is not causation. Yet countless companies have shown performance imp
 
 ## Analysis by Metric
 
-In this section, we will dive down into each metric. For those who are less familiar, we include links to articles that explain them in depth.
+In this section, we will dive down into each metric. For those who are less familiar, we include links to articles that explain that metric in depth.
 
 ### Time-to-First-Byte (TTFB)
 
@@ -198,9 +198,7 @@ TTFB was faster on desktop than mobile, presumably because of faster network spe
 
 We have a long way to go for TTFB. 75% of our websites were in the 4G connection group and 25% in the 3G group, with the remaining ones negligible. At 4G effective speeds, only 19% of origins had "good" performance.
 
-You may be asking yourself how TTFB can even occur with offline connections. Presumably, most of the offline sites that record and send TTFB data use [service worker caching](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Offline_Service_workers).
-
-TTFB measures how long it takes the first byte of the response for the page to be received, even if that response is coming from the Cache Storage API or the HTTP Cache. An actual server doesn't have to be involved. If the response requires action from the service worker, then the time it takes the service worker thread to start up and handle the response can also contribute to TTFB. But even considering service worker startup times, these sites on average receive their first byte faster than the other connection categories.
+You may be asking yourself how TTFB can even occur with offline connections. Presumably, most of the offline sites that record and send TTFB data use [service worker caching](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Offline_Service_workers). TTFB measures how long it takes the first byte of the response for the page to be received, even if that response is coming from the Cache Storage API or the HTTP Cache. An actual server doesn't have to be involved. If the response requires action from the service worker, then the time it takes the service worker thread to start up and handle the response can also contribute to TTFB. But even considering service worker startup times, these sites on average receive their first byte faster than the other connection categories.
 
 {{ figure_markup(
   image="performance-TTFB-by-rank.png",
@@ -381,13 +379,13 @@ In both cases, images comprised the majority of LCP elements. This warrants a de
   )
 }}
 
-For user experience, we want LCP elements to load as fast as possible. User experience is why LCP was selected as one of the Core Web Vitals. We do not want it to be lazy-loaded nor decoded asynchronously as that further delays the render. However, we can see that 9.3% of pages were using the native loading=lazy flag on an LCP `<img>` element.
+For user experience, we want LCP elements to load as fast as possible. User experience is why LCP was selected as one of the Core Web Vitals. We do not want it to be lazy-loaded nor decoded asynchronously as that further delays the render. However, we can see that 9.3% of pages used the native loading=lazy flag on the LCP `<img>` element.
 
 Not all browsers support native lazy loading. Popular lazy loading polyfills detect a "lazyload" class on an image element. Thus, we can identify more possibly lazy-loaded images by adding images with a "lazyload" class to the total. The percent of sites probably lazy loading their LCP `<img>` element jumps up to 16.5% on mobile.
 
 Lazy-loading your LCP element will result in worse performance. Don't do it! WordPress was an early adopter of native lazy loading. The early method was a naive solution applying lazy loading to all images, and the results showed a <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">negative performance correlation</a>. They were able to use this data to implement a more nuanced approach for better performance.
 
-Luckily, only 0.4% of sites were decoding their LCP images asynchronously. And, the negative impact of asynchronous decode is not as high as lazy loading.
+Luckily, only 0.4% of sites used the async decode directive for their LCP image. And, the negative impact of asynchronous decode is not as high as lazy loading.
 
 {{ figure_markup(
   content="354",
@@ -398,7 +396,7 @@ Luckily, only 0.4% of sites were decoding their LCP images asynchronously. And, 
   )
 }}
 
-Interestingly, 354 origins on desktop attempted to use native-lazy loading on HTML elements that do not support the loading attribute (e.g., `<div>`). The loading attribute is only supported on `<img>` and  sometimes `<iframe>` elements (<a hreflang="en" href="https://caniuse.com/loading-lazy-attr">caniuse</a>).
+Interestingly, 354 origins on desktop attempted to use native-lazy loading on HTML elements that do not support the loading attribute (e.g., `<div>`). The loading attribute is only supported on `<img>` and  sometimes `<iframe>` elements (see <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">caniuse</a>).
 
 ### Cumulative Layout Shift (CLS)
 
@@ -529,6 +527,6 @@ Second, as new features in HTML, CSS, and JavaScript are released, make sure you
 
 Additionally, continue to optimize for both FID (field/real-user data) and TBT (lab data). Take a look at the <a hreflang="en" href="https://web.dev/responsiveness/">proposal</a> for a new responsiveness metric and participate by providing feedback. A new <a hreflang="en" href="https://web.dev/smoothness/">animation smoothness metric</a> is also being proposed. In our quest for a faster web, change is inevitable and for the better. As we continue to optimize, you're participation is key.
 
-Finally, we saw that WordPress can impact the performance of the top 10M websites, and maybe more. This is a lesson that every CMS and framework should heed. The more we can set up smart defaults for performance at the framework, the better we can make the web while also make developers' jobs easier.
+Finally, we saw that WordPress can impact the performance of the top 10M websites, and maybe more. This is a lesson that every CMS and framework should heed. The more we can set up smart defaults for performance at the framework level, the better we can make the web while also make developers' jobs easier.
 
 What did you find most interesting or surprising? Share your thoughts with us on Twitter ([@HTTPArchive](https://twitter.com/HTTPArchive))!
