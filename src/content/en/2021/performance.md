@@ -511,7 +511,7 @@ Remember that the data is a single, throttled-CPU Lighthouse run through WebPage
 {{ figure_markup(
   content="67 seconds",
   caption="Longest TBT",
-  classes="big-number",
+  classes="medium-number",
   sheets_gid="1423728540",
   sql_file="lcp_element_data.sql"
   )
