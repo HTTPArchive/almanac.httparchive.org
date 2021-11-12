@@ -344,24 +344,26 @@ For LCP, the differences in performance by rank were closer than FCP. Also, a hi
 Let's take a deeper dive look at the LCP element.
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
+  image="performance-top-15-lcp-nodes.png",
+  caption="Top 15 LCP HTML element nodes",
+  description="Bar chart showing the percent share of pages for each node type for the LCP element- data listed by desktop then mobile: IMG 47% 42%, DIV 28% 27%, P 6% 10%, H1 3% 5%, SECTION 3% 2%, undetected 2% 2%, H2 2% 2%, A 1% 2%, SPAN 1% 1%, HEADER 1% 1%, LI 1% 1%, RS-SBG 1% 1%, H3 0% 1%, TD 1% 1%, VIDEO 0% 0%",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1549429021&format=interactive",
+  width=600,
+  height=909,
   sheets_gid="730149797",
-  sql_file=".sql"
+  sql_file="lcp_element_data.sql"
   )
 }}
 
 IMG, DIV, P, and H1 made up 83% of all LCP nodes (on mobile). This doesn't tell us if the content was an image or text though as background images can be applied with CSS.
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
+  image="performance-lcp-with-image.png",
+  caption="LCP elements with images, by device",
+  description="Bar chart showing 79% of desktop pages have an LCP element with an image and 71% of mobile pages",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=992354142&format=interactive",
   sheets_gid="730149797",
-  sql_file=".sql"
+  sql_file="lcp_element_data.sql"
   )
 }}
 
@@ -370,12 +372,12 @@ We can see that 71-79% of pages had an LCP element that was an image, regardless
 In both cases, images comprised the majority of LCP elements. This warrants a deeper dive into how those images are loading.
 
 {{ figure_markup(
-  image=".png",
-  caption="",
-  description="",
-  chart_url="",
+  image="performance-lcp-antipatterns.png",
+  caption="LCP elements with performance anti-patterns",
+  description="Bar chart showing 9.3% of pages on mobile use native lazy load on the LCP element, 16.5% probably lazy load, and 0.4% use async decode.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=130632749&format=interactive",
   sheets_gid="730149797",
-  sql_file=".sql"
+  sql_file="lcp_element_data.sql"
   )
 }}
 
@@ -388,8 +390,8 @@ Lazy-loading your LCP element will result in worse performance. Don't do it! Wor
 Luckily, only 0.4% of sites were decoding their LCP images asynchronously. And, the negative impact of asynchronous decode is not as high as lazy loading.
 
 {{ figure_markup(
-  content="354 websites",
-  caption="attempted to use native lazy-loading on LCP elements that are not images or iframes",
+  content="354",
+  caption="Websites attempted to use native lazy-loading on LCP elements that are not images or iframes",
   classes="big-number",
   sheets_gid="1423728540",
   sql_file="lcp_element_data.sql"
