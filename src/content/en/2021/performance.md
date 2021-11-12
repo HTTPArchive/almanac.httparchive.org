@@ -120,7 +120,7 @@ Regions in parts of Asia and Europe continued to have higher performance. This m
 
 {{ figure_markup(
   image="performance-5-country-top-origins-vs-pop.png",
-  caption="Top 10 regions by CrUX origins vs population. Source: [datacommons.org](https://datacommons.org/). Population data is for 2020. Original data comes from the World Bank, the US Census, INSEE, and WikiData.",
+  caption='Top 10 regions by CrUX origins vs population. Source: [datacommons.org](https://datacommons.org/). Population data is for 2020. Original data comes from the World Bank, the US Census, INSEE, and WikiData.',
   description="Bar chart showing for each country, the percent of total origins versus the percent of total population. Data listed as country, percent of origins, percent of population: United States 12.3% 4.3%, Japan 5.0% 1.6%, Brazil 4.3% 2.7%, Germany 3.9% 1.1%, India 3.8% 17.8%, United Kingdom 3.6% 0.9%, Russian Federation 3.0% 1.9%, Italy 2.8% 0.8%, Spain 2.8% 0.6%, France 2.7% 0.9%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=200409532&format=interactive",
   width=600,
@@ -134,7 +134,7 @@ Similarly, here are the 10 top regions by population and their corresponding sha
 
 {{ figure_markup(
   image="performance-6-country-top-pop-vs-origins.png",
-  caption="Top 10 regions by population vs CrUX origins. Source: [U.S. Census Bureau Current Population](https://www.census.gov/popclock/print.php?component=counter) (population clock) at Nov 02, 2021 18:31 UTC (+4). Population data is for 2021",
+  caption='Top 10 regions by population vs CrUX origins. Source: [U.S. Census Bureau Current Population](https://www.census.gov/popclock/print.php?component=counter) (population clock) at Nov 02, 2021 18:31 UTC (+4). Population data is for 2021',
   description="Bar chart showing for each country, the percent of total population versus the percent of total origins. Data listed as country, percent of population, percent of origins: 1. China 17.9% 0.3%, 1a. Taiwan 0.3% 1.2%, 2. India 17.2% 3.8%, 3. United States 4.3% 12.3%, 4. Indonesia 3.5% 2.1%, 5. Pakistan 3.1% 0.6%, 6. Nigeria 2.8% 0.3%, 7. Brazil 2.7% 4.3%, 8. Bangladesh 2.1% 0.5%, 9. Russia 1.8% 3.0%, 10. Mexico 1.7% 1.9%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1955368947&format=interactive",
   width=600,
@@ -246,7 +246,7 @@ Finally, if we look at the [Core Web Vitals Technology Report](https://datastudi
 {{ figure_markup(
   link="https://datastudio.google.com/s/o6zLzlTpWaI",
   image="cms_ttfb_cwv_report.png",
-  caption="Origins having good TTFB by CMS ([Core Web Vitals Technology Report](https://datastudio.google.com/s/o6zLzlTpWaI))",
+  caption='Origins having good TTFB by CMS ([Core Web Vitals Technology Report](https://datastudio.google.com/s/o6zLzlTpWaI))',
   description="Time series chart of Origins Having Good TTFB for WordPress, Wix, and Squarespace. In July, WordPress and Wix were at 5% and Squarespace at 20%."
   )
 }}
