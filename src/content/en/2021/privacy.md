@@ -75,7 +75,7 @@ Overall, 82.08% of mobile sites and 83.33% of desktop sites include at least one
 {{ figure_markup(
   image="nb_websites_with_nb_trackers.png",
   caption="The number of trackers per website",
-  description="Line chart showing the number of trackers per website starting at 15.62% of desktop sites and 16.31% of mobile sites having one tracker and curving down past 9.30%	and 8.64% respectively for 5%, 0.38% and 0.41% for 15 trackers and then a long tail cut off at 0.12% and 0.15% for 25 trackers. Mobile and desktop have near identical numbers throughout.",
+  description="Line chart showing the number of trackers per website starting at 15.62% of desktop sites and 16.31% of mobile sites having one tracker and curving down past 9.30% and 8.64% respectively for 5%, 0.38% and 0.41% for 15 trackers and then a long tail cut off at 0.12% and 0.15% for 25 trackers. Mobile and desktop have near identical numbers throughout.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=268105548&format=interactive",
   sheets_gid="690197217",
   sql_file="nb_websites_with_nb_trackers.sql"
@@ -251,7 +251,7 @@ Geolocations services provide GPS and other location data of the user (such as [
 {{ figure_markup(
   image="nb_websites_using_each_geolocation.png",
   caption="Percentage of websites that use geolocation services",
-  description="Chart that shows the percentage of websites using each of the geolocation service libraries. ipify	is used by 0.09% of desktop sites and 0.07% of mobile sites, MaxMind by 0.03% and 0.02% respectively, db-ip by 0.01% and 0.01%, and finally ipstack by 0.01% and 0.01%.",
+  description="Chart that shows the percentage of websites using each of the geolocation service libraries. ipify is used by 0.09% of desktop sites and 0.07% of mobile sites, MaxMind by 0.03% and 0.02% respectively, db-ip by 0.01% and 0.01%, and finally ipstack by 0.01% and 0.01%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2115506749&format=interactive",
   sheets_gid="1274602607",
   sql_file="nb_websites_using_each_geolocation.sql"
@@ -294,7 +294,7 @@ Poor security management within a company can have a significant impact on its c
 {{ figure_markup(
   image="data_breaches_pwned_accounts_per_class.png",
   caption="Number of impacted accounts in breaches per data class",
-  description="Bar chart showing the number of user accounts involved in data breaches, according to the data class that leaked in the breach. 641 million Email addresses	were included in breaches, 428 million Passwords, 369 million Names, 173 million Geographic locations, 149 million Phone numbers, 149 million Genders, 134 million Social media profiles, 127 million Education levels, 126 million Job titles, and finally 110 million Physical addresses.",
+  description="Bar chart showing the number of user accounts involved in data breaches, according to the data class that leaked in the breach. 641 million Email addresses were included in breaches, 428 million Passwords, 369 million Names, 173 million Geographic locations, 149 million Phone numbers, 149 million Genders, 134 million Social media profiles, 127 million Education levels, 126 million Job titles, and finally 110 million Physical addresses.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1612339126&format=interactive",
   sheets_gid="1158689200",
   sql_file="data_breaches_pwned_accounts_per_class.sql"
@@ -321,7 +321,7 @@ The <a hreflang="en" href="https://www.w3.org/TR/permissions-policy-1/">Permissi
   sheets_gid="899874026",
   sql_file="most_common_featurepolicy_permissionspolicy_directives.sql",
   width=600,
-  height=421,
+  height=421
   )
 }}
 
@@ -370,10 +370,11 @@ A first point to note is that most sites do not explicitly set a Referrer Policy
   image="most_common_referrerpolicy_values.png",
   caption="Percentage of pages using Referrer Policy values",
   description="Bar chart showing the percentage of pages that use each Referrer Policy value. `no-referrer-when-downgrade` is used on 3.63% of desktop sites and 3.31% of mobile sites, `strict-origin-when-cross-origin` on 1.95% and 1.56% respectively, `always` on 1.08% and 0.82%, `unsafe-url` on 0.47% and 0.52%, `same-origin` on 0.51% and 0.44%, `origin` on 0.39% and 0.51%, `no-referrer` on 0.34% and 0.31%, `origin-when-cross-origin` on 0.31% and 0.29%, `strict-origin` on 0.26% and 0.23%, and finally `no-referrer, strict-origin-when-cross-origin` on 0.09% and 0.08%.",
-  height=421,
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=406890714&format=interactive",
   sheets_gid="1846818406",
-  sql_file="most_common_referrerpolicy_values.sql"
+  sql_file="most_common_referrerpolicy_values.sql",
+  width=600,
+  height=421
   )
 }}
 
@@ -428,10 +429,11 @@ Consent Management Platforms (CMPs) are third-party libraries that websites can 
   caption="10 most popular consent management platforms",
   description="Bar chart showing the percentage of pages using the 10 most popular third-party libraries for providing consent management. CookieYes is used on 1.65% of desktop sites and 1.70% of mobile sites, Osano on 1.64% and 1.59% respectively, OneTrust on 0.90% and 0.73%, Cookiebot on 0.74% and 0.64%, AdRoll CMP System on 0.50% and 0.36%, iubenda on 0.34% and 0.35%, Quantcast Choice on 0.37% and 0.34%, Didomi on 0.29% and 0.24%, Usercentrics on 0.18% and 0.19%, and finally HubSpot Cookie Policy Banner on 0.26% and 0.17%.
 ",
-  height=421,
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=619927070&format=interactive",
   sheets_gid="387302670",
   sql_file="nb_websites_using_each_cmp.sql",
+  width=600,
+  height=421
   )
 }}
 
@@ -477,10 +479,11 @@ In the USP framework, the website's and user's privacy settings are encoded in a
   image="most_common_strings_for_iab_usp.png",
   caption="Percentage of websites using IAB US privacy strings",
   description="Bar chart showing the percentage of websites that use each privacy string for IAB US' consent framework. `1---` is used by 0.87% of desktop websites and 0.80% of mobile websites, `1YNY` is 0.72% and 0.64% respectively, `1YNN` is 0.07% and 0.06%, and blank is 0.01% and 0.00%.",
-  height=421,
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2039463193&format=interactive",
   sheets_gid="1524219137",
-  sql_file="most_common_strings_for_iab_usp.sql"
+  sql_file="most_common_strings_for_iab_usp.sql",
+  width=600,
+  height=421
   )
 }}
 
