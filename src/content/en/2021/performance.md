@@ -220,7 +220,7 @@ One more possibility has to do with CMS adoption. The [CMS Chapter](./cms) shows
   caption="CMS adoption by rank",
   description="Bar chart showing percent of websites using a CMS for each ranking category. On mobile, the numbers are 7% of websites in the top 1,000, 15% in the top 10,000, 20% in the top 100,000, 29% in the top 1,000,000, and 42% in the top 10,000,000.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=409766380&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="https://docs.google.com/spreadsheets/d/1gAJh4VcSEU6-6aQxBiTFl-7cbyHukfdhg-Iaq9y5pnc/#gid=158167539",
   sql_file="../cms/cms_adoption_by_rank.sql"
   )
 }}
