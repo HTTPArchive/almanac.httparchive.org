@@ -338,7 +338,7 @@ The `crossorigin` attribute is used to indicate whether [Cross-Origin Resource S
 
 #### `anonymous`
 
-The default value when no value is specified, `anonymous` will set the credentials flag to <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy">`same-origin`</a> and is required when downloading resources protected by CORS. It is also a <a hreflang="en" href="https://drafts.csswg.org/css-fonts/#font-fetching-requirements">requirement</a> when downloading font files—even if they are on the same origin! If you omit the `crossorigin` attribute when the eventual request for the preloaded resource uses CORS, you will end up with a duplicate request since it won't match in the preload cache.
+The default value when no value is specified is `anonymous` and this value will set the credentials flag to <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy">`same-origin`</a>. It is required when downloading resources protected by CORS. It is also a <a hreflang="en" href="https://drafts.csswg.org/css-fonts/#font-fetching-requirements">requirement</a> when downloading font files—even if they are on the same origin! If you omit the `crossorigin` attribute when the eventual request for the preloaded resource uses CORS, you will end up with a duplicate request since it won't match in the preload cache.
 
 #### `use-credentials`
 
