@@ -598,8 +598,6 @@ A web made of deeply connected, structured data which powers a more integrated w
 
 ### Future years
 
-As this is the first time this chapter has been included in the Web Almanac, we don't have any data we can use to explore change over time.
-
-In future years, we'll be able to assess how the distribution, types, and formats of structured data have changed across the web. This may provide valuable insight into growing/declining technologies, strategies, and opportunities.
+In future years we hope to be able to continue this analysis the analysis started here, and to map the evolution of structured data usage over time.
 
 We look forward to exploring further.
