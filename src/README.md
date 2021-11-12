@@ -306,7 +306,7 @@ With the print-ready eBook and Cover you can send them to a printer. I used http
 
 If you've been added to the "App Engine Deployers" role in the GCP project, you're able to push code changes to the production website.
 
-_Make sure you have generated the ebooks PDFs first in the main branch, by running the Generate Ebooks GitHub Action_
+You must first do some setup locally:
 
 1. Install the [`gcloud`](https://cloud.google.com/sdk/install) Google Cloud SDK.
 
@@ -316,7 +316,25 @@ _Make sure you have generated the ebooks PDFs first in the main branch, by runni
 gcloud init
 ```
 
-3. Deploy the site:
+## Deploying staged versions of the site
+
+It's sometimes useful to deploy a staged version of the site for others to see this.
+
+```
+npm run stage
+```
+
+You can redeploy the same staged url by passing it in with the `-s` paramter:
+
+```
+npm run stage -- -s 20211111t105151
+```
+
+## Deploying production changes
+
+_Make sure you have generated the ebooks PDFs first in the main branch, by running the Generate Ebooks GitHub Action_
+
+To deploy the site to production run the following:
 
 ```
 npm run deploy
@@ -336,7 +354,7 @@ The deploy script will do the following:
 - Push changes to `production` branch on GitHub
 - Ask you to update the release section of GitHub
 
-4. Browse the website in production to verify that the new changes have taken effect. Not we have 3 hour caching so add random query params to pages to ensure you get latest version.
+4. Browse the website in production to verify that the new changes have taken effect. Note we have 10 minute caching so add random query params to pages to ensure you get latest version.
 
 ## Developing in Docker
 
