@@ -552,7 +552,7 @@ Prioritizing third-party resources over your own content is potentially a warnin
 <figcaption>{{ figure_link(caption="Most popular third-party connections using resource hints on mobile devices.", sheets_gid="1254656281", sql_file="preload_host_by_url.sql") }}</figcaption>
 </figure>
 
-Analyzing the table above, 36.7% of all pages which include a `preload` hint are preloading resources hosted on adservice.google.com. s.w.org (WordPress) is the most popular domain for `dns-prefetch` and is added by default on new WordPress.org installations. Google Fonts related services on `fonts.gstatic.com` and `fonts.googleapis.com` are the two most popular hosts for the `preconnect` directive.
+Analyzing the table above, 36.7% of all pages which include a `preload` hint are preloading resources hosted on adservice.google.com. The s.w.org host is the most popular domain for `dns-prefetch` and is used on WordPress sites (since version 4.6) for the loading of SVG images from its Twemoji CDN, when the browser is detected to not support native emoji characters. Google Fonts related services on `fonts.gstatic.com` and `fonts.googleapis.com` are the two most popular hosts for the `preconnect` directive.
 
 {{ figure_markup(
   image="google-fonts.png",
@@ -621,7 +621,7 @@ Unfortunately, HTTP/2 push has been disappointing, with little evidence that it 
 
 So, while the technology is widely available, overcoming these obstacles makes it highly unpopular—with less than 1% adoption. Chrome has also filed an <a hreflang="en" href="https://lists.w3.org/Archives/Public/ietf-http-wg/2019JulSep/0078.html">Intent to Remove</a> that is paused until a testable implementation of 103 Early Hints (covered next) is available. Chrome <a hreflang="en" href="https://github.com/httpwg/http2-spec/issues/786#issuecomment-724371629">does not support</a> Server Push on HTTP/3 either.
 
-You can read more about HTTP, HTTP/2, and HTTP/3 in the [HTTP Chapter](./http).
+You can read more about HTTP, HTTP/2, and HTTP/3 in the [HTTP](./http) chapter.
 
 ## Future
 
