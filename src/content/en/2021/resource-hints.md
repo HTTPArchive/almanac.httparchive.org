@@ -101,7 +101,7 @@ The `prefetch` hint allows you to recommend to the browser that a resource might
 <link rel="prerender" href="https://example.com/page-2/">
 ```
 
-The `prerender` hint allows you render a page in the background, improving its load time if the user navigates to it. In addition to requesting the resource, the browser may preprocess and fetch and execute subresources. `prerender` could end up wasteful if the user does not navigate to the prerendered page. To reduce this risk, Chrome treats the `prerender` hint as a <a hreflang="en" href="https://developers.google.com/web/updates/2018/07/nostate-prefetch">NoState Prefetch</a>. Unlike a full prerender it won't execute JavaScript or render any part of the page in advance.
+The `prerender` hint allows you render a page in the background, improving its load time if the user navigates to it. In addition to requesting the resource, the browser may preprocess and fetch and execute subresources. `prerender` could end up wasteful if the user does not navigate to the prerendered page. Contrary to the specification, Chrome treats the `prerender` hint as a <a hreflang="en" href="https://developers.google.com/web/updates/2018/07/nostate-prefetch">NoState Prefetch</a> to reduce this risk. Unlike a full prerender it won't execute JavaScript or render any part of the page in advance but only fetch the resources in advance.
 
 #### `preload`
 
@@ -238,8 +238,8 @@ Of the sites using resource hints, when comparing the median for the top 1,000 s
 {{ figure_markup(
   image="correlation-of-good-cwv-and-preload.png",
   caption='Correlation between good CWV score and number of `rel="preload"` hints',
-  description='Scatter plot with trend lines showing the number of pages which have a good CWV score and the number of `rel="preload"` hints on that page. 42.8% of desktop pages, and 30.1% of mobile pages with 0 preload hints have a good CWV score. 21.5% of desktop pages and 11.1% of mobiles page, with 20 preload hints have a good CWV score.',
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=122948841&format=interactive",
+  description='Scatter plot with trend lines showing the number of pages which have a good CWV score and the number of `rel="preload"` hints on that page. 30.8% of desktop pages, and 23.0% of mobile pages with 0 preload hints have a good CWV score. 25.1% of desktop pages and 18.2% of mobiles page, with 20 preload hints have a good CWV score.',
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=450137807&format=interactive",
   sheets_gid="2032682744",
   sql_file="correlation_cwv_preload.sql"
   )
@@ -250,8 +250,8 @@ By combining a page's <a hreflang="en" href="https://web.dev/cwv">Core Web Vital
 {{ figure_markup(
   image="correlation-of-good-lcp-and-preload.png",
   caption='Correlation between good LCP score and number of `rel="preload"` hints',
-  description='Scatter plot with trend lines showing the number of pages which have a good LCP score and the number of `rel="preload"` hints on that page. 62.5% of desktop pages, and 47.5% of mobile page with 0 preload hints have a good LCP score. 38.2% of desktop pages, and 20.7% of mobile pages with 20 preload hints have a good LCP score.',
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1380182218&format=interactive",
+  description='Scatter plot with trend lines showing the number of pages which have a good LCP score and the number of `rel="preload"` hints on that page. 49.0% of desktop pages, and 37.2% of mobile page with 0 preload hints have a good LCP score. 42.8% of desktop pages, and 31.1% of mobile pages with 20 preload hints have a good LCP score.',
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1720796384&format=interactive",
   sheets_gid="2032682744",
   sql_file="correlation_cwv_preload.sql"
   )
@@ -439,101 +439,141 @@ Prioritizing third-party resources over your own content is potentially a warnin
 
 <figure>
   <table>
-    <thead>
-      <tr>
-        <th>Host</th>
-        <th>`dns-prefetch`</th>
-        <th>`preconnect`</th>
-        <th>`preload`</th>
-        <th>Total</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>`adservice.google.com`</td>
-        <td class="numeric">0.3%</td>
-        <td class="numeric">0.4%</td>
-        <td class="numeric">42.7%</td>
-        <td class="numeric">43.3%</td>
-      </tr>
-      <tr>
-        <td>`fonts.gstatic.com`</td>
-        <td class="numeric">0.8%</td>
-        <td class="numeric">25.5%</td>
-        <td class="numeric">0.7%</td>
-        <td class="numeric">27.0%</td>
-      </tr>
-      <tr>
-        <td>`fonts.googleapis.com`</td>
-        <td class="numeric">14.1%</td>
-        <td class="numeric">4.6%</td>
-        <td class="numeric">3.1%</td>
-        <td class="numeric">21.7%</td>
-      </tr>
-      <tr>
-        <td>`s.w.org`</td>
-        <td class="numeric">20.0%</td>
-        <td class="numeric">0.3%</td>
-        <td class="numeric">-</td>
-        <td class="numeric">20.3%</td>
-      </tr>
-      <tr>
-        <td>`cdn.shopify.com`</td>
-        <td class="numeric">-</td>
-        <td class="numeric">1.8%</td>
-        <td class="numeric">12.2%</td>
-        <td class="numeric">14.0%</td>
-      </tr>
-      <tr>
-        <td>`www.google-analytics.com`</td>
-        <td class="numeric">1.3%</td>
-        <td class="numeric">4.1%</td>
-        <td class="numeric">0.2%</td>
-        <td class="numeric">5.5%</td>
-      </tr>
-      <tr>
-        <td>`www.googletagmanager.com`</td>
-        <td class="numeric">1.9%</td>
-        <td class="numeric">3.1%</td>
-        <td class="numeric">0.3%</td>
-        <td class="numeric">5.3%</td>
-      </tr>
-      <tr>
-        <td>`siteassets.parastorage.com`</td>
-        <td class="numeric">-</td>
-        <td class="numeric">-</td>
-        <td class="numeric">5.2%</td>
-        <td class="numeric">5.2%</td>
-      </tr>
-      <tr>
-        <td>`images.squarespace-cdn.com`</td>
-        <td class="numeric">-</td>
-        <td class="numeric">4.5%</td>
-        <td class="numeric">-</td>
-        <td class="numeric">4.5%</td>
-      </tr>
-      <tr>
-        <td>`ajax.googleapis.com`</td>
-        <td class="numeric">2.3%</td>
-        <td class="numeric">1.8%</td>
-        <td class="numeric">0.4%</td>
-        <td class="numeric">4.5%</td>
-      </tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th>host</th>
+      <th>`dns-prefetch`</th>
+      <th>`preconnect`</th>
+      <th>`preload`</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>adservice.google.com</td>
+      <td class="numeric">0.2%</td>
+      <td class="numeric">0.5%</td>
+      <td class="numeric">35.7%</td>
+      <td class="numeric">36.4%</td>
+    </tr>
+    <tr>
+      <td>fonts.gstatic.com</td>
+      <td class="numeric">0.9%</td>
+      <td class="numeric">24.0%</td>
+      <td class="numeric">0.6%</td>
+      <td class="numeric">25.5%</td>
+    </tr>
+    <tr>
+      <td>fonts.googleapis.com</td>
+      <td class="numeric">14.0%</td>
+      <td class="numeric">4.5%</td>
+      <td class="numeric">2.7%</td>
+      <td class="numeric">21.2%</td>
+    </tr>
+    <tr>
+      <td>s.w.org</td>
+      <td class="numeric">19.7%</td>
+      <td class="numeric">0.2%</td>
+      <td class="numeric">-</td>
+      <td class="numeric">19.9%</td>
+    </tr>
+    <tr>
+      <td>cdn.shopify.com</td>
+      <td class="numeric">-</td>
+      <td class="numeric">1.7%</td>
+      <td class="numeric">9.6%</td>
+      <td class="numeric">11.2%</td>
+    </tr>
+    <tr>
+      <td>siteassets.parastorage.com</td>
+      <td class="numeric">-</td>
+      <td class="numeric">-</td>
+      <td class="numeric">5.9%</td>
+      <td class="numeric">5.9%</td>
+    </tr>
+    <tr>
+      <td>
+        www.google-analytics.com
+      </td>
+      <td class="numeric">1.2%</td>
+      <td class="numeric">3.9%</td>
+      <td class="numeric">0.2%</td>
+      <td class="numeric">5.3%</td>
+    </tr>
+    <tr>
+      <td>
+          www.googletagmanager.com
+      </td>
+      <td class="numeric">1.9%</td>
+      <td class="numeric">2.7%</td>
+      <td class="numeric">0.2%</td>
+      <td class="numeric">4.8%</td>
+    </tr>
+    <tr>
+      <td>static.parastorage.com</td>
+      <td class="numeric">-</td>
+      <td class="numeric">-</td>
+      <td class="numeric">4.7%</td>
+      <td class="numeric">4.7%</td>
+    </tr>
+    <tr>
+      <td>ajax.googleapis.com</td>
+      <td class="numeric">2.2%</td>
+      <td class="numeric">1.6%</td>
+      <td class="numeric">0.3%</td>
+      <td class="numeric">4.1%</td>
+    </tr>
+    <tr>
+      <td>www.google.com</td>
+      <td class="numeric">2.7%</td>
+      <td class="numeric">1.0%</td>
+      <td class="numeric">0.1%</td>
+      <td class="numeric">3.8%</td>
+    </tr>
+    <tr>
+      <td>images.squarespace-cdn.com</td>
+      <td class="numeric">-</td>
+      <td class="numeric">3.5%</td>
+      <td class="numeric">-</td>
+      <td class="numeric">3.5%</td>
+    </tr>
+    <tr>
+      <td>cdnjs.cloudflare.com</td>
+      <td class="numeric">1.6%</td>
+      <td class="numeric">1.0%</td>
+      <td class="numeric">0.4%</td>
+      <td class="numeric">2.9%</td>
+    </tr>
+    <tr>
+      <td>monorail-edge.shopifysvc.com</td>
+      <td class="numeric">2.0%</td>
+      <td class="numeric">0.8%</td>
+      <td class="numeric">-</td>
+      <td class="numeric">2.8%</td>
+    </tr>
+    <tr>
+      <td>fonts.shopifycdn.com</td>
+      <td class="numeric">-</td>
+      <td class="numeric">1.1%</td>
+      <td class="numeric">1.0%</td>
+      <td class="numeric">2.1%</td>
+    </tr>
+  </tbody>
+</table>
 
-<figcaption>{{ figure_link(caption="Most popular third-party connections using resource hints.", sheets_gid="1254656281", sql_file="preload_host_by_url.sql") }}</figcaption>
+
+<figcaption>{{ figure_link(caption="Most popular third-party connections using resource hints on mobile devices.", sheets_gid="1254656281", sql_file="preload_host_by_url.sql") }}</figcaption>
 </figure>
 
-Analyzing the table above, 42.7% of all pages which include a `preload` hint are preloading resources hosted on adservice.google.com, while s.w.org (WordPress) is the most popular domain for `dns-prefetch` and `fonts.gstatic.com` for the `preconnect` directive.
+Analyzing the table above, 36.7% of all pages which include a `preload` hint are preloading resources hosted on adservice.google.com. s.w.org (WordPress) is the most popular domain for `dns-prefetch` and is added by default on new WordPress.org installations. Google Fonts related services on `fonts.gstatic.com` and `fonts.googleapis.com` are the two most popular hosts for the `preconnect` directive.
 
 {{ figure_markup(
   image="google-fonts.png",
   alt="Google Fonts instructions to embed a font.",
   caption='Google Fonts instructions to preconnect to fonts.gstatic.com and fonts.googleapis.com. (Source: <a hreflang="en" href="https://fonts.google.com/">Google Fonts</a>)',
   description='Code snippet titled "Use on the web" and subtitled with "To embed a font, copy the code into the `<head>` of your html". Code snippet states `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">`',
-  width=536,
-  height=510
+  width=268,
+  height=255
   )
 }}
 
