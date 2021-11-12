@@ -3,9 +3,9 @@
 title: Performance
 description: Performance chapter of the 2020 Web Almanac covering Core Web Vitals (Largest Contentful Paint, Cumulative Layout Shift, First Input Delay) as well as First Contentful Paint and Time to First Byte
 authors: [siakaramalegos]
-reviewers: [rviscomi, kevinfarrugia, estelle, ziemek-bucko, jzyang, samarpanda, edmondwwchan, fili]
+reviewers: [rviscomi, kevinfarrugia, estelle, ziemek-bucko, jzyang, fili, samarpanda, edmondwwchan]
 analysts: [siakaramalegos, rviscomi, Nithanaroy]
-editors: [estelle, jzyang]
+editors: [jzyang]
 translators: []
 results: https://docs.google.com/spreadsheets/d/13xhPx6o2Nowz_3b3_5ojiF_mY3Lhs25auBKM6eqGZmo/
 siakaramalegos_bio: Sia Karamalegos is a web developer, international conference speaker, and writer. She is a Google Developer Expert in Web Technologies, a Cloudinary Media Developer Expert, a Stripe Community Expert, and co-organizes the Eleventy Meetup. Check out her writing, speaking, and newsletter on <a hreflang="en" href="https://sia.codes/">sia.codes</a> or find her on <a hreflang="en" href="https://twitter.com/thegreengreek">Twitter</a>.
@@ -23,7 +23,7 @@ unedited: true
 
 Performance is important for user experience. Slow-loading and slow-to-respond websites frustrate users and cause lost conversions. This is the first year that the [Core Web Vitals](https://web.dev/vitals/) have contributed to Google search rankings. As such, we've seen greater interest in  improving website performance which is great news for users.
 
-What are our top takeaways from this year's report? First, we still have a long way to go in providing a good user experience. For example, faster networks and devices have not yet reached the point where we can ignore how much JavaScript we deliver to a site. And, we may never get there. Second, sometimes we misuse new features for performance resulting in poorer performance. Finally, we need a better metric for measuring interactivity (and you can help).
+What are our top takeaways from this year's report? First, we still have a long way to go in providing a good user experience. For example, faster networks and devices have not yet reached the point where we can ignore how much JavaScript we deliver to a site. And, we may never get there. Second, sometimes we misuse new features for performance resulting in poorer performance. Additionally, we need better metrics for measuring interactivity, and those are on the way. Finally, CMS- and framework-level work on performance can significantly impact user experience for the top 10M websites.
 
 What's new this year? We're excited to share performance data by traffic ranking for the first time. We also have all the core performance metrics from previous years. Finally, we added a deeper dive into the Largest Contentful Paint (LCP) element.
 
@@ -120,7 +120,7 @@ Regions in parts of Asia and Europe continued to have higher performance. This m
 
 {{ figure_markup(
   image="performance-5-country-top-origins-vs-pop.png",
-  caption='Top 10 regions by CrUX origins vs population. Source: <a href="https://datacommons.org/">datacommons.org</a>. Population data is for 2020. Original data comes from the World Bank, the US Census, INSEE, and WikiData.',
+  caption="Top 10 regions by CrUX origins vs population. Source: [datacommons.org](https://datacommons.org/). Population data is for 2020. Original data comes from the World Bank, the US Census, INSEE, and WikiData.",
   description="Bar chart showing for each country, the percent of total origins versus the percent of total population. Data listed as country, percent of origins, percent of population: United States 12.3% 4.3%, Japan 5.0% 1.6%, Brazil 4.3% 2.7%, Germany 3.9% 1.1%, India 3.8% 17.8%, United Kingdom 3.6% 0.9%, Russian Federation 3.0% 1.9%, Italy 2.8% 0.8%, Spain 2.8% 0.6%, France 2.7% 0.9%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=200409532&format=interactive",
   width=600,
@@ -134,7 +134,7 @@ Similarly, here are the 10 top regions by population and their corresponding sha
 
 {{ figure_markup(
   image="performance-6-country-top-pop-vs-origins.png",
-  caption='Top 10 regions by population vs CrUX origins. Source: <a href="https://www.census.gov/popclock/print.php?component=counter">U.S. Census Bureau Current Population</a> (population clock) at Nov 02, 2021 18:31 UTC (+4). Population data is for 2021',
+  caption="Top 10 regions by population vs CrUX origins. Source: [U.S. Census Bureau Current Population](https://www.census.gov/popclock/print.php?component=counter) (population clock) at Nov 02, 2021 18:31 UTC (+4). Population data is for 2021",
   description="Bar chart showing for each country, the percent of total population versus the percent of total origins. Data listed as country, percent of population, percent of origins: 1. China 17.9% 0.3%, 1a. Taiwan 0.3% 1.2%, 2. India 17.2% 3.8%, 3. United States 4.3% 12.3%, 4. Indonesia 3.5% 2.1%, 5. Pakistan 3.1% 0.6%, 6. Nigeria 2.8% 0.3%, 7. Brazil 2.7% 4.3%, 8. Bangladesh 2.1% 0.5%, 9. Russia 1.8% 3.0%, 10. Mexico 1.7% 1.9%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1955368947&format=interactive",
   width=600,
@@ -198,7 +198,9 @@ TTFB was faster on desktop than mobile, presumably because of faster network spe
 
 We have a long way to go for TTFB. 75% of our websites were in the 4G connection group and 25% in the 3G group, with the remaining ones negligible. At 4G effective speeds, only 19% of origins had "good" performance.
 
-You may be asking yourself how TTFB can even occur with offline connections. Presumably, most of the offline sites that record and send TTFB data use [service worker caching](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Offline_Service_workers). TTFB can also be thought of as "response start" regardless of whether a server is involved. Service worker startup times can be long, which could be why their "TTFB" isn't always below 0.5 seconds. Also, some of these sites may first check for a cache handler fail before serving up the service worker cache. Even with longer startup times, these sites on average achieve first byte faster than the other connection categories.
+You may be asking yourself how TTFB can even occur with offline connections. Presumably, most of the offline sites that record and send TTFB data use [service worker caching](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Offline_Service_workers).
+
+TTFB measures how long it takes the first byte of the response for the page to be received, even if that response is coming from the Cache Storage API or the HTTP Cache. An actual server doesn't have to be involved. If the response requires action from the service worker, then the time it takes the service worker thread to start up and handle the response can also contribute to TTFB. But even considering service worker startup times, these sites on average receive their first byte faster than the other connection categories.
 
 {{ figure_markup(
   image="performance-TTFB-by-rank.png",
@@ -232,7 +234,7 @@ Then, if we look at the top 5 CMSs by rank, we see that WordPress has the highes
 {{ figure_markup(
   image="top-cmss-by-rank.png",
   caption="Top 5 CMSs by rank",
-  description="Bar chart showing the top CMSs percent of share of each ranking category. Wordpress had 3.1% of the top 1,000, 8.6% of the top 10,000, 13.2% of the top 100,000, 21.1% of the top 1,000,000, and 33.6% of the top 10,000,000. The remaining CMSs had less than 3% share of all rankings.",
+  description="Bar chart showing the top CMSs percent of share of each ranking category. WordPress had 3.1% of the top 1,000, 8.6% of the top 10,000, 13.2% of the top 100,000, 21.1% of the top 1,000,000, and 33.6% of the top 10,000,000. The remaining CMSs had less than 3% share of all rankings.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=2087254046&format=interactive",
   sheets_gid="730149797",
   sql_file="../cms/top_cms_by_rank.sql"
@@ -245,7 +247,7 @@ Finally, if we look at the [Core Web Vitals Technology Report](https://datastudi
   link="https://datastudio.google.com/s/o6zLzlTpWaI",
   image="cms_ttfb_cwv_report.png",
   caption="Origins having good TTFB by CMS ([Core Web Vitals Technology Report](https://datastudio.google.com/s/o6zLzlTpWaI))",
-  description="Time series chart of Origins Having Good TTFB for Wordpress, Wix, and Squarespace. In July, Wordpress and Wix were at 5% and Squarespace at 20%."
+  description="Time series chart of Origins Having Good TTFB for WordPress, Wix, and Squarespace. In July, WordPress and Wix were at 5% and Squarespace at 20%."
   )
 }}
 
@@ -293,7 +295,7 @@ Offline connections were closer in performance to 4G though not quite as good. S
   )
 }}
 
-Like TTFB, FCP improved with higher rankings. Also like TTFB, only [19.5% of origins on Wordpress experienced good FCP performance](https://datastudio.google.com/s/kZ9K0d-sBQw). Since their TTFB performance was poor, I am not surprised that their FCP is also slow. It's difficult to achieve good scores on FCP and LCP if TTFB is slow.
+Like TTFB, FCP improved with higher rankings. Also like TTFB, only [19.5% of origins on WordPress experienced good FCP performance](https://datastudio.google.com/s/kZ9K0d-sBQw). Since their TTFB performance was poor, I am not surprised that their FCP is also slow. It's difficult to achieve good scores on FCP and LCP if TTFB is slow.
 
 Common culprits for poor FCP are render-blocking resources, server response times (anything associated with a slow TTFB), large network payloads, and more.
 
@@ -381,11 +383,14 @@ For user experience, we want LCP elements to load as fast as possible. User expe
 
 Not all browsers support native lazy loading. Popular lazy loading polyfills detect a "lazyload" class on an image element. Thus, we can identify more possibly lazy-loaded images by adding images with a "lazyload" class to the total. The percent of sites probably lazy loading their LCP `<img>` element jumps up to 16.5% on mobile.
 
-Lazy-loading your LCP element will result in worse performance. Don't do it! Luckily, only 0.4% of sites were decoding their LCP images asynchronously. And, the negative impact of asynchronous decode is not as high as lazy loading.
+Lazy-loading your LCP element will result in worse performance. Don't do it! WordPress was an early adopter of native lazy loading. The early method was a naive solution applying lazy loading to all images, and the results showed a [negative performance correlation](https://web.dev/lcp-lazy-loading/). They were able to use this data to implement a more nuanced approach for better performance.
+
+Luckily, only 0.4% of sites were decoding their LCP images asynchronously. And, the negative impact of asynchronous decode is not as high as lazy loading.
 
 {{ figure_markup(
   content="354 websites",
   caption="attempted to use native lazy-loading on LCP elements that are not images or iframes",
+  classes="big-number",
   sheets_gid="1423728540",
   sql_file="lcp_element_data.sql"
   )
@@ -431,7 +436,7 @@ Offline websites had the highest CLS performance of all connection types. For si
   )
 }}
 
-For ranking, CLS performance showed an interesting trough for the top 10,000 websites. In addition, all the ranked groups above 1M performed worse than the sites ranked under 1M. Since the "all"  group had better performance than all the other ranked groupings the sub-1M group performs better. Wordpress may again play a role in this as [60% of origins on Wordpress experienced a good CLS](https://datastudio.google.com/s/qG00yMxSa3o).
+For ranking, CLS performance showed an interesting trough for the top 10,000 websites. In addition, all the ranked groups above 1M performed worse than the sites ranked under 1M. Since the "all"  group had better performance than all the other ranked groupings the sub-1M group performs better. WordPress may again play a role in this as [60% of origins on WordPress experienced a good CLS](https://datastudio.google.com/s/qG00yMxSa3o).
 
 Common culprits for poor CLS include not reserving space for images, text shifts when web fonts are loaded, top banners inserted after first paint, non-composited animations, and iframes.
 
@@ -477,7 +482,7 @@ Unlike the other metrics, FID was worse for offline websites than any other conn
 
 FID performance by rank was flat.
 
-For all FID metrics, we see very large bars in the "good" category which tells me we should work toward finding a better metric. The good news is the [Chrome team is evaluating this now](https://web.dev/better-responsiveness-metric/) and would like your feedback.
+For all FID metrics, we see very large bars in the "good" category which makes it less effective unless we've truly hit peak performance. The good news is the [Chrome team is evaluating this now](https://web.dev/better-responsiveness-metric/) and would like your feedback.
 
 If your site's performance is not in the "good" category, then you definitely have a performance problem. A common culprit for FID issues is too much long-running JavaScript. Keep your bundle sizes small and pay attention to third-party scripts.
 
@@ -503,10 +508,10 @@ Unfortunately, TBT is not measured in the Chrome User Experience Report. But, we
 
 Remember that the data is a single, throttled-CPU Lighthouse run through WebPageTest and does not reflect real user experiences. Yet, potential interactivity looked much worse when looking at TBT versus FID. The "real" evaluation of your interactivity is probably somewhere between. Thus, if your FID is "good", take a look at TBT in case you're missing some poor user experiences that FID can't catch yet. The same issues that cause poor FID also cause poor TBT.
 
-<!-- TODO: check -->
 {{ figure_markup(
   content="67 seconds",
   caption="Longest TBT",
+  classes="big-number",
   sheets_gid="1423728540",
   sql_file="lcp_element_data.sql"
   )
@@ -520,6 +525,8 @@ First, you cannot improve performance unless you can measure it. A good first st
 
 Second, as new features in HTML, CSS, and JavaScript are released, make sure you understand them before implementing them. Use A/B testing to verify that adopting a new strategy results in improved performance. For example, don't lazy-load images above the fold. If you have a RUM tool implemented, you can better detect when your changes accidentally cause regressions.
 
-Finally, until we have a better metric for interactivity, optimize for both FID (field/real-user data) and TBT (lab data). Take a look at the [proposals](https://web.dev/better-responsiveness-metric/) for new metrics and participate by providing your own feedback.
+Additionally, continue to optimize for both FID (field/real-user data) and TBT (lab data). Take a look at the [proposal](https://web.dev/responsiveness/) for a new responsiveness metric and participate by providing feedback. A new [animation smoothness metric](https://web.dev/smoothness/) is also being proposed. In our quest for a faster web, change is inevitable and for the better. As we continue to optimize, you're participation is key.
+
+Finally, we saw that WordPress can impact the performance of the top 10M websites, and maybe more. This is a lesson that every CMS and framework should heed. The more we can set up smart defaults for performance at the framework, the better we can make the web while also make developers' jobs easier.
 
 What did you find most interesting or surprising? Share your thoughts with us on Twitter ([@HTTPArchive](https://twitter.com/HTTPArchive))!

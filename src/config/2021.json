@@ -308,8 +308,7 @@
     "estelle": {
       "name": "Estelle Weyl",
       "teams": [
-        "reviewers",
-        "editors"
+        "reviewers"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/69888?v=4&s=200",
       "github": "estelle"
