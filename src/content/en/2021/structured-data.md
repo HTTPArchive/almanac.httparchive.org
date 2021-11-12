@@ -187,7 +187,7 @@ We can also see a <a hreflang="en" href="https://www.w3.org/TR/skos-primer/">SKO
 
 #### Dublin Core
 
-<a hreflang="en" href="https://dublincore.org/">Dublin Core</a> is a vocabulary interoperable with linked data standards that was originally conceived in Dublin, Ohio in 1995 at an OCLC (Online Computer Library Center) and NCSA (National Center for Supercomputing Applications) workshop.
+<a hreflang="en" href="https://dublincore.org/">Dublin Core</a> is a vocabulary interoperable with linked data standards that was originally conceived in Dublin, Ohio in 1995 at an [Online Computer Library Center](https://www.oclc.org/en/home.html) (OCLC) and <a hreflang="en" href="https://www.ncsa.illinois.edu/">National Center for Supercomputing Applications</a> (NCSA) workshop.
 
 It was designed to describe a broad range of resources (both digital and physical) and can be used in various business scenarios. Starting in 2000 it became extremely popular among RDF-based vocabularies and received the adoption of the W3C.
 
