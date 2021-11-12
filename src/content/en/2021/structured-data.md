@@ -167,12 +167,13 @@ Beyond this outlier, the use of RDFa diminishes and fragments considerably, thou
 
 ##### On FOAF
 
-[FOAF](http://xmlns.com/foaf/spec/) is a linked data dictionary of people-related terms, created in the early-2000s. It can be used to describing _people_, _groups_ and _documents_.
+[FOAF](http://xmlns.com/foaf/spec/) (or "Friend of a Friend") is a linked data dictionary of people-related terms, created in the early-2000s. It can be used to describing _people_, _groups_ and _documents_.
 
-FOAF uses W3C's RDFa syntax and in its <a hreflang="en" href="https://web.archive.org/web/20140331104046/http://www.foaf-project.org/original-intro">original introduction</a> was explained as follows:
+FOAF uses W3C's RDF syntax and in its <a hreflang="en" href="https://web.archive.org/web/20140331104046/http://www.foaf-project.org/original-intro">original introduction</a> was explained as follows:
 
 <figure>
 <blockquote>Consider a Web of inter-related home pages, each describing things of interest to a group of friends. Each new home page that appears on the Web tells the world something new, providing factoids and gossip that make the Web a mine of disconnected snippets of information. FOAF provides a way to make sense of all this.</blockquote>
+<figcaption><cite><a hreflang="en" href="https://web.archive.org/web/20140331104046/http://www.foaf-project.org/original-intro">Introducing FOAF</a></cite></figcaption>
 </figure>
 
 Anecdotally, we can attribute a prominence of `foaf` markup in our results to sites running on older versions of the Drupal CMS, which historically added `typeof="foaf:image"` and `foaf:document` markup to its HTML by default.
@@ -183,11 +184,11 @@ As well as FOAF properties, various other standards and syntaxes show up in our 
 
 Notably, we can see several `sioc` properties, such as `sioc:item` (0.24% of pages) and `sioc:useraccount` (0.03% of pages). <a hreflang="en" href="https://www.w3.org/Submission/sioc-spec/">SIOC</a> is a standard designed to describe structured data relating to _online communities_, such as message boards, forums, wikis and blogs.
 
-We can also see a <a hreflang="en" href="https://www.w3.org/TR/skos-primer/">SKOS</a> property—`skos:concept`—on 0.04% of pages. SKOS is another standard, which aims to provide a way of describing taxonomies and classifications (e.g., tags, data sets, and so on).
+We can also see a <a hreflang="en" href="https://www.w3.org/TR/skos-primer/">SKOS</a> (or "Simple Knowledge Organization System") property—`skos:concept`—on 0.04% of pages. SKOS is another standard, which aims to provide a way of describing taxonomies and classifications (e.g., tags, data sets, and so on).
 
 #### Dublin Core
 
-<a hreflang="en" href="https://dublincore.org/">Dublin Core</a> is a vocabulary interoperable with linked data standards that was originally conceived in Dublin, Ohio in 1995 at an [Online Computer Library Center](https://www.oclc.org/en/home.html) (OCLC) and <a hreflang="en" href="https://www.ncsa.illinois.edu/">National Center for Supercomputing Applications</a> (NCSA) workshop.
+<a hreflang="en" href="https://dublincore.org/">Dublin Core</a> is a vocabulary interoperable with linked data standards that was originally conceived in Dublin, Ohio in 1995 at an OCLC (Online Computer Library Center) and NCSA (National Center for Supercomputing Applications) workshop.
 
 It was designed to describe a broad range of resources (both digital and physical) and can be used in various business scenarios. Starting in 2000 it became extremely popular among RDF-based vocabularies and received the adoption of the W3C.
 
