@@ -493,6 +493,16 @@
       "twitter": "VictorLePochat",
       "website": "https://lepoch.at"
     },
+    "westonruter": {
+      "name": "Weston Ruter",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/134745?v=4&s=200",
+      "website": "https://weston.ruter.net/",
+      "github": "westonruter",
+      "twitter": "westonruter"
+    },
     "ydimova": {
       "name": "Yana Dimova",
       "teams": [

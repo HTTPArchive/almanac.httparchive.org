@@ -3,7 +3,7 @@
 title: Resource Hints
 description: Resource Hints chapter of the 2021 Web Almanac covering adoption of resource hints, their uses, bad practices, and their impact on performance.
 authors: [kevinfarrugia]
-reviewers: [siakaramalegos, tunetheweb, andydavies, samarpanda]
+reviewers: [siakaramalegos, tunetheweb, andydavies, samarpanda, westonruter]
 analysts: [nithanaroy]
 editors: [rviscomi]
 translators: []
