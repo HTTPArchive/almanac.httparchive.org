@@ -77,7 +77,7 @@ There are five resource hint link relationships supported by most browsers today
 <link rel="dns-prefetch" href="https://example.com/">
 ```
 
-The `dns-prefetch` link initiates an early request to resolve a domain name. It is only effective for DNS lookups on cross-origin domains and may be paired together with `preconnect`. While Chrome now supports a maximum of <a hreflang="en" href="https://source.chromium.org/chromium/chromium/src/+/fdf9418d23d434e0f7134da67dc41b0fe8268e91:net/dns/host_resolver_manager.cc;l=416">64</a> concurrent in-flight DNS requests—up from 6 last year—other browsers still have tighter limitations. For example, it is limited to <a hreflang="en" href="https://github.com/mozilla/gecko-dev/blob/master/netwerk/dns/nsHostResolver.h#L48">8</a> on Firefox.
+The `dns-prefetch` hint initiates an early request to resolve a domain name. It is only effective for DNS lookups on cross-origin domains and may be paired together with `preconnect`. While Chrome now supports a maximum of <a hreflang="en" href="https://source.chromium.org/chromium/chromium/src/+/fdf9418d23d434e0f7134da67dc41b0fe8268e91:net/dns/host_resolver_manager.cc;l=416">64</a> concurrent in-flight DNS requests—up from 6 last year—other browsers still have tighter limitations. For example, it is limited to <a hreflang="en" href="https://github.com/mozilla/gecko-dev/blob/master/netwerk/dns/nsHostResolver.h#L48">8</a> on Firefox.
 
 #### `preconnect`
 
@@ -85,7 +85,7 @@ The `dns-prefetch` link initiates an early request to resolve a domain name. It 
 <link rel="preconnect" href="https://example.com/">
 ```
 
-The `preconnect` link behaves similarly to `dns-prefetch`, but in addition to DNS lookups, it also establishes a connection together with TLS handshake if served over HTTPS. You are able to use `preconnect` in place of `dns-prefetch` as it gives a greater performance boost; but you must use it sparingly as certificates are usually upwards of 3 KB, which would be competing with bandwidth for other resources. You also want to avoid wasting CPU time opening connections which aren't required for critical resource. Keep in mind that if a connection isn't used within a short period of time (e.g., 10 seconds on Chrome), it would automatically be closed by the browser, wasting any `preconnect` effort.
+The `preconnect` hint behaves similarly to `dns-prefetch`, but in addition to DNS lookups, it also establishes a connection together with TLS handshake if served over HTTPS. You are able to use `preconnect` in place of `dns-prefetch` as it gives a greater performance boost; but you must use it sparingly as certificates are usually upwards of 3 KB, which would be competing with bandwidth for other resources. You also want to avoid wasting CPU time opening connections which aren't required for critical resource. Keep in mind that if a connection isn't used within a short period of time (e.g., 10 seconds on Chrome), it would automatically be closed by the browser, wasting any `preconnect` effort.
 
 #### `prefetch`
 
@@ -93,7 +93,7 @@ The `preconnect` link behaves similarly to `dns-prefetch`, but in addition to DN
 <link rel="prefetch" href="/library.js" as="script">
 ```
 
-The `prefetch` link allows you to recommend to the browser that a resource might be required by the next navigation. The browser may initiate a low-priority request for the resource, possibly improving the user experience as it would be fetched from the cache when needed. While resource may be fetched in advanced with `prefetch`, it will not be preprocessed or executed until the user navigates to the page which requires the resource.
+The `prefetch` hint allows you to recommend to the browser that a resource might be required by the next navigation. The browser may initiate a low-priority request for the resource, possibly improving the user experience as it would be fetched from the cache when needed. While resource may be fetched in advanced with `prefetch`, it will not be preprocessed or executed until the user navigates to the page which requires the resource.
 
 #### `prerender`
 
@@ -101,7 +101,7 @@ The `prefetch` link allows you to recommend to the browser that a resource might
 <link rel="prerender" href="https://example.com/page-2/">
 ```
 
-The `prerender` link allows you render a page in the background, improving its load time if the user navigates to it. In addition to requesting the resource, the browser may preprocess and fetch and execute subresources. `prerender` could end up wasteful if the user does not navigate to the prerendered page. To reduce this risk, Chrome treats the `prerender` hint as a <a hreflang="en" href="https://developers.google.com/web/updates/2018/07/nostate-prefetch">NoState Prefetch</a>. Unlike a full prerender it won't execute JavaScript or render any part of the page in advance.
+The `prerender` hint allows you render a page in the background, improving its load time if the user navigates to it. In addition to requesting the resource, the browser may preprocess and fetch and execute subresources. `prerender` could end up wasteful if the user does not navigate to the prerendered page. To reduce this risk, Chrome treats the `prerender` hint as a <a hreflang="en" href="https://developers.google.com/web/updates/2018/07/nostate-prefetch">NoState Prefetch</a>. Unlike a full prerender it won't execute JavaScript or render any part of the page in advance.
 
 #### `preload`
 
