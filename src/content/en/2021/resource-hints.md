@@ -121,7 +121,7 @@ Most modern browsers also <a hreflang="en" href="https://caniuse.com/link-rel-pr
   )
 }}
 
-The most widely used resource hint is `dns-prefetch` (36.4% on mobile); which is unsurprising, considering it was introduced in <a hreflang="en" href="https://caniuse.com/link-rel-dns-prefetch">2009</a>. With the widespread use of HTTPS, in many cases you should replace it with `preconnect` (12.7% on mobile) if you are certain that you will be connecting to that domain. Considering that the `preload` hint is comparatively new, first appearing in Chrome in <a hreflang="en" href="https://groups.google.com/a/chromium.org/g/blink-dev/c/_nu6HlbNQfo/m/XzaLNb1bBgAJ?pli=1">2016</a>, it is the second most widely adopted resource hint (22.1% on mobile) and is seeing constant growth year-on-year—a testament to the importance and flexibility of this directive.
+The most widely used resource hint is `dns-prefetch` (36.4% on mobile); which is unsurprising, considering it was introduced in <a hreflang="en" href="https://caniuse.com/link-rel-dns-prefetch">2009</a>. With the widespread use of HTTPS, in many cases you should replace it with `preconnect` (12.7% on mobile), if you are certain that you will be connecting to that domain. Considering that the `preload` hint is comparatively new, first appearing in Chrome in <a hreflang="en" href="https://groups.google.com/a/chromium.org/g/blink-dev/c/_nu6HlbNQfo/m/XzaLNb1bBgAJ?pli=1">2016</a>, it is the second most widely adopted resource hint (22.1% on mobile) and is seeing constant growth year-on-year—a testament to the importance and flexibility of this directive.
 
 As shown in the charts above, the adoption rates on mobile and desktop are near-identical.
 
