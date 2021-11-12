@@ -19,9 +19,10 @@ on:
   workflow_dispatch:
     inputs:
       ebooks:
-        description: "Regenerate Ebooks [Y/N]?"
-        required: false
-        default: 'Y'
+        type: boolean
+        description: "Regenerate Ebooks?"
+        required: true
+        default: true
 
 jobs:
   build:
@@ -39,7 +40,7 @@ jobs:
       with:
         python-version: '3.8'
     - name: Install Asian Fonts
-      if: github.event.inputs.ebooks != 'N' && github.event.inputs.ebooks != 'n'
+      if: github.event.inputs.ebooks
       run: |
         # Install Japanese san-serif font
         sudo apt-get install -y fonts-ipafont-gothic
