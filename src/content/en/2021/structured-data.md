@@ -169,7 +169,7 @@ Beyond this outlier, the use of RDFa diminishes and fragments considerably, thou
 
 [FOAF](http://xmlns.com/foaf/spec/) is a linked data dictionary of people-related terms, created in the early-2000s. It can be used to describing _people_, _groups_ and _documents_.
 
-FOAF uses W3C's RDF syntax and in its <a hreflang="en" href="https://web.archive.org/web/20140331104046/http://www.foaf-project.org/original-intro">original introduction</a> was explained as follows:
+FOAF uses W3C's RDFa syntax and in its <a hreflang="en" href="https://web.archive.org/web/20140331104046/http://www.foaf-project.org/original-intro">original introduction</a> was explained as follows:
 
 <figure>
 <blockquote>Consider a Web of inter-related home pages, each describing things of interest to a group of friends. Each new home page that appears on the Web tells the world something new, providing factoids and gossip that make the Web a mine of disconnected snippets of information. FOAF provides a way to make sense of all this.</blockquote>
