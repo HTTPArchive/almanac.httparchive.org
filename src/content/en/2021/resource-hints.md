@@ -63,7 +63,7 @@ Adoption for HTTP headers is significantly lower than having resource hints impl
   )
 }}
 
-Using our current [methodology](./methodology), it is not possible to reliably measure resource hints that are added following user-interaction, such as those added through <a hreflang="en" href="https://github.com/GoogleChromeLabs/quicklink">QuickLink</a>, though that particular library featured on less than 0.1% of pages analyzed.
+Using our current [methodology](./methodology), it is not possible to reliably measure resource hints that are added following user-interaction, such as those added through <a hreflang="en" href="https://github.com/GoogleChromeLabs/quicklink">QuickLink</a>, though that particular library featured on less than 0.1% of pages analyzed, according to the [Core Web Vitals Technology Report](https://datastudio.google.com/s/uMbv5CQfW4Q).
 
 Considering that the adoption of resource hints using HTTP headers is markedly smaller than adoption for the `<link>` HTML element, the rest of this chapter will focus on analyzing the usage of resource hints through the HTML element.
 
