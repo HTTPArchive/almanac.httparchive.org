@@ -234,7 +234,7 @@ Then, if we look at the top 5 CMSs by rank, we see that WordPress has the highes
   caption="Top 5 CMSs by rank",
   description="Bar chart showing the top CMSs percent of share of each ranking category. WordPress had 3.1% of the top 1,000, 8.6% of the top 10,000, 13.2% of the top 100,000, 21.1% of the top 1,000,000, and 33.6% of the top 10,000,000. The remaining CMSs had less than 3% share of all rankings.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=2087254046&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="https://docs.google.com/spreadsheets/d/1gAJh4VcSEU6-6aQxBiTFl-7cbyHukfdhg-Iaq9y5pnc/#gid=670045665",
   sql_file="../cms/top_cms_by_rank.sql"
   )
 }}
