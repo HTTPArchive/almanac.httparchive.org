@@ -3,8 +3,8 @@
 title: CMS
 description: TODO
 authors: [alonko]
-reviewers: [alankent, andreyl, chrissater, hyperpress]
-analysts: [rviscomi, tosin]
+reviewers: [alankent, andreylipattsev, chrissater, hyperpress]
+analysts: [rviscomi, tosinarasi]
 editors: []
 translators: []
 alonko_bio: Alon Kochba is a software developer at Wix, where he heads the performance efforts. Alon comes from a back-end background, with extensive experience in networking, and enjoys making the web faster at scale.
