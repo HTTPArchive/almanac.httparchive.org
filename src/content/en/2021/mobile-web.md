@@ -2,9 +2,9 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Mobile Web
 description: TODO
-authors: []
+authors: [fellowhuman1101, dwsmart, ashleyish]
 reviewers: []
-analysts: []
+analysts: [rvth, obto]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1mdma245ja_THTBApaJTeS4vmLY_Fn8VC6Kd8qx7wp-o/
@@ -68,8 +68,6 @@ What percentage of traffic comes from  mobile devices vs. desktop? Predicting th
 
 #### Traffic Use by Popularity
 
-New this year, the CrUX dataset allows us to query the most popular sites ([ranked by magnitude](https://developers.google.com/web/updates/2021/03/crux-rank-magnitude),  by traffic recorded to th%ese origins).
-
 {{ figure_markup(
   caption="Percent of the  817,4923 origins in the July 2021 data received more mobile traffic than desktop traffic.",
   content="77.35%",
@@ -78,6 +76,8 @@ New this year, the CrUX dataset allows us to query the most popular sites ([rank
   sql_file="mobile_greater_than_desktop.sql"
 )
 }}
+
+New this year, the CrUX dataset allows us to query the most popular sites ([ranked by magnitude](https://developers.google.com/web/updates/2021/03/crux-rank-magnitude),  by traffic recorded to th%ese origins).
 
 {{ figure_markup(
   image="mobile-web-more-mobile-than-desktop-traffic.png",
@@ -1082,9 +1082,12 @@ The poor adoption of good accessibility practice creates a technical barrier to 
 
 In many jurisdictions, accessibility is not just good practice.
 
- "Last year [lawsuits related to the Americans with Disabilities Act were up 20%](https://info.usablenet.com/2020-report-on-digital-accessibility-lawsuits)."
 
-Quote from [Accessibility (Web Almanac 2021)](https://docs.google.com/document/d/1Te6U3T94bieq4K4KXyYhmXQf2KGQXdnYYzwh_erYdt0/edit#)
+<figure>
+<blockquote>Last year [lawsuits related to the Americans with Disabilities Act were up 20%](https://info.usablenet.com/2020-report-on-digital-accessibility-lawsuits).</blockquote>
+<figcaption>— Web Almanac <cite><a hreflang="en" href="https://almanac.httparchive.org/en/2021/accessibility">2021 Accessibility Chapter</a></cite></figcaption>
+</figure>
+
 
 To learn more about accessibility on the mobile web, vist the [Accessibility chapter](https://almanac.httparchive.org/en/2021/accessibility).
 
