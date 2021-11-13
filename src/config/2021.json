@@ -188,8 +188,7 @@
           "part": "IV",
           "chapter_number": "23",
           "title": "Resource Hints",
-          "slug": "resource-hints",
-          "todo": "true"
+          "slug": "resource-hints"
         },
         {
           "part": "IV",
@@ -386,6 +385,16 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/2644614?v=4&s=200",
       "github": "Schweinepriester"
     },
+    "kevinfarrugia": {
+      "name": "Kevin Farrugia",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/8075326?v=4&s=200",
+      "website": "https://imkev.dev",
+      "github": "kevinfarrugia",
+      "twitter": "imkevdev"
+    },
     "vdwijngaert": {
       "name": "Koen Van den Wijngaert",
       "teams": [
@@ -436,6 +445,15 @@
       "teams": [
         "designers"
       ]
+    },"nithanaroy": {
+      "name": "Nitin Pasumarthy",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/670556?v=4&s=200",
+      "github": "nithanaroy",
+      "linkedin": "nitinpasumarthy",
+      "website": "https://nithanaroy.medium.com/"
     },
     "thepassle": {
       "name": "Pascal Schilp",
@@ -485,6 +503,14 @@
       "github": "rviscomi",
       "twitter": "rick_viscomi"
     },
+    "samarpanda": {
+      "name": "Samar Panda",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/802163?v=4&s=200",
+      "github": "samarpanda"
+    },
     "shantsis": {
       "name": "Shaina Hantsis",
       "teams": [
@@ -502,6 +528,17 @@
       "github": "GeekBoySupreme",
       "twitter": "shuvam360",
       "website": "https://shuvam.xyz"
+    },
+    "siakaramalegos": {
+      "name": "Sia Karamalegos",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4777393?v=4&s=200",
+      "website": "https://sia.codes",
+      "github": "siakaramalegos",
+      "linkedin": "karamalegos",
+      "twitter": "TheGreenGreek"
     },
     "simonhearne": {
       "name": "Simon Hearne",
@@ -524,6 +561,16 @@
       "linkedin": "victor-le-pochat",
       "twitter": "VictorLePochat",
       "website": "https://lepoch.at"
+    },
+    "westonruter": {
+      "name": "Weston Ruter",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/134745?v=4&s=200",
+      "website": "https://weston.ruter.net/",
+      "github": "westonruter",
+      "twitter": "westonruter"
     },
     "ydimova": {
       "name": "Yana Dimova",
