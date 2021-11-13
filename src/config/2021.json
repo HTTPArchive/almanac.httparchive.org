@@ -37,35 +37,28 @@
           "chapter_number": "4",
           "title": "Structured Data",
           "slug": "structured-data",
-          "todo": "true"
+          "hero_dir": "2021"
         },
         {
           "part": "I",
           "chapter_number": "5",
-          "title": "Fonts",
-          "slug": "fonts",
-          "todo": "true"
-        },
-        {
-          "part": "I",
-          "chapter_number": "6",
           "title": "Media",
           "slug": "media",
           "todo": "true"
         },
         {
           "part": "I",
-          "chapter_number": "7",
+          "chapter_number": "6",
           "title": "WebAssembly",
           "slug": "webassembly",
-          "todo": "true"
+          "todo": "true",
+          "hero_dir": "2021"
         },
         {
           "part": "I",
-          "chapter_number": "8",
+          "chapter_number": "7",
           "title": "Third Parties",
-          "slug": "third-parties",
-          "todo": "true"
+          "slug": "third-parties"
         }
       ]
     },
@@ -75,50 +68,49 @@
       "chapters": [
         {
           "part": "II",
-          "chapter_number": "9",
+          "chapter_number": "8",
           "title": "SEO",
           "slug": "seo",
           "todo": "true"
         },
         {
           "part": "II",
-          "chapter_number": "10",
+          "chapter_number": "9",
           "title": "Accessibility",
           "slug": "accessibility",
           "todo": "true"
         },
         {
           "part": "II",
-          "chapter_number": "11",
+          "chapter_number": "10",
           "title": "Performance",
           "slug": "performance",
           "todo": "true"
         },
         {
           "part": "II",
-          "chapter_number": "12",
+          "chapter_number": "11",
           "title": "Privacy",
           "slug": "privacy",
-          "todo": "true",
           "hero_dir": "2020"
         },
         {
           "part": "II",
-          "chapter_number": "13",
+          "chapter_number": "12",
           "title": "Security",
           "slug": "security",
           "todo": "true"
         },
         {
           "part": "II",
-          "chapter_number": "14",
+          "chapter_number": "13",
           "title": "Mobile Web",
           "slug": "mobile-web",
           "todo": "true"
         },
         {
           "part": "II",
-          "chapter_number": "15",
+          "chapter_number": "14",
           "title": "Capabilities",
           "slug": "capabilities",
           "todo": "true",
@@ -126,7 +118,7 @@
         },
         {
           "part": "II",
-          "chapter_number": "16",
+          "chapter_number": "15",
           "title": "PWA",
           "slug": "pwa"
         }
@@ -138,21 +130,21 @@
       "chapters": [
         {
           "part": "III",
-          "chapter_number": "17",
+          "chapter_number": "16",
           "title": "CMS",
           "slug": "cms",
           "todo": "true"
         },
         {
           "part": "III",
-          "chapter_number": "18",
+          "chapter_number": "17",
           "title": "Ecommerce",
           "slug": "ecommerce",
           "todo": "true"
         },
         {
           "part": "III",
-          "chapter_number": "19",
+          "chapter_number": "18",
           "title": "Jamstack",
           "slug": "jamstack",
           "todo": "true",
@@ -166,42 +158,41 @@
       "chapters": [
         {
           "part": "IV",
-          "chapter_number": "20",
+          "chapter_number": "19",
           "title": "Page Weight",
           "slug": "page-weight",
           "todo": "true"
         },
         {
           "part": "IV",
-          "chapter_number": "21",
+          "chapter_number": "20",
           "title": "Compression",
           "slug": "compression",
           "todo": "true"
         },
         {
           "part": "IV",
-          "chapter_number": "22",
+          "chapter_number": "21",
           "title": "Caching",
           "slug": "caching",
           "todo": "true"
         },
         {
           "part": "IV",
-          "chapter_number": "23",
+          "chapter_number": "22",
           "title": "CDN",
           "slug": "cdn",
           "todo": "true"
         },
         {
           "part": "IV",
-          "chapter_number": "24",
+          "chapter_number": "23",
           "title": "Resource Hints",
-          "slug": "resource-hints",
-          "todo": "true"
+          "slug": "resource-hints"
         },
         {
           "part": "IV",
-          "chapter_number": "25",
+          "chapter_number": "24",
           "title": "HTTP",
           "slug": "http",
           "todo": "true"
@@ -241,7 +232,7 @@
       "teams": [
         "developers"
       ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/44442451?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/44442451?v=4&s=200",
       "github": "AbbyTsai"
     },
     "tropicadri": {
@@ -252,6 +243,16 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/32825533?v=4&s=200",
       "github": "tropicadri"
     },
+    "cyberandy": {
+      "name": "Andrea Volpini",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/837037?v=4&s=200",
+      "website": "https://wordlift.io/blog/en/entity/andrea-volpini/",
+      "github": "cyberandy",
+      "twitter": "cyberandy"
+    },
     "andreban": {
       "name": "André Cipriani Bandarra",
       "teams": [
@@ -261,15 +262,27 @@
       "github": "andreban",
       "twitter": "andreban"
     },
+    "andydavies": {
+      "name": "Andy Davies",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/427052?v=4&s=200",
+      "website": "http://andydavies.me/",
+      "github": "andydavies",
+      "twitter": "AndyDavies"
+    },
     "tunetheweb": {
       "name": "Barry Pollard",
       "teams": [
         "analysts",
+        "authors",
         "developers",
+        "editors",
         "leads",
         "reviewers"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/10931297?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10931297?v=4&s=200",
       "website": "https://www.tunetheweb.com",
       "github": "tunetheweb",
       "linkedin": "tunetheweb",
@@ -280,7 +293,7 @@
       "teams": [
         "leads"
       ],
-      "avatar_url": "https://avatars2.githubusercontent.com/u/684747?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/684747?v=4&s=200",
       "website": "https://www.lookzook.com",
       "github": "obto",
       "twitter": "theobto"
@@ -295,25 +308,74 @@
       "github": "demianrenzulli",
       "twitter": "drenzulli"
     },
+    "GregBrimble": {
+      "name": "Greg Brimble",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/8484333?v=4&s=200",
+      "website": "https://gregbrimble.com/",
+      "github": "GregBrimble",
+      "twitter": "gregbrimble"
+    },
+    "csswizardry": {
+      "name": "Harry Roberts",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/751944?v=4&s=200",
+      "website": "https://csswizardry.com/",
+      "github": "csswizardry",
+      "twitter": "csswizardry"
+    },
     "hemanth": {
       "name": "Hemanth HM",
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/18315?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/18315?v=4&s=200",
       "website": "https://h3manth.com",
       "github": "hemanth",
       "twitter": "gnumanth"
+    },
+    "jvandriel": {
+      "name": "Jarno van Driel",
+      "teams": [
+        "editors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/7320889?v=4&s=200",
+      "github": "jvandriel",
+      "twitter": "JarnoVanDriel",
+      "linkedin": "jarno-van-driel-36a47075"
+    },
+    "JasmineDWillson": {
+      "name": "Jasmine Drudge-Willson",
+      "teams": [
+        "editors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/58438178?v=4&s=200",
+      "github": "JasmineDWillson",
+      "twitter": "jasminedwillson"
     },
     "jeffposnick": {
       "name": "Jeff Posnick",
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/1749548?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1749548?v=4&s=200",
       "website": "https://jeffy.info",
       "github": "jeffposnick",
       "twitter": "jeffposnick"
+    },
+    "jonoalderson": {
+      "name": "Jono Alderson",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/11629607?v=4&s=200",
+      "website": "https://www.jonoalderson.com",
+      "github": "jonoalderson",
+      "twitter": "jonoalderson"
     },
     "Schweinepriester": {
       "name": "Kai Schweinepriester",
@@ -323,6 +385,26 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/2644614?v=4&s=200",
       "github": "Schweinepriester"
     },
+    "kevinfarrugia": {
+      "name": "Kevin Farrugia",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/8075326?v=4&s=200",
+      "website": "https://imkev.dev",
+      "github": "kevinfarrugia",
+      "twitter": "imkevdev"
+    },
+    "vdwijngaert": {
+      "name": "Koen Van den Wijngaert",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/772137?v=4&s=200",
+      "website": "https://www.neok.be/",
+      "github": "vdwijngaert",
+      "twitter": "vdwijngaert"
+    },
     "lucasbona05": {
       "name": "Lucas Gonçalves",
       "teams": [
@@ -331,8 +413,18 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/58731469?v=4",
       "github": "lucasbona05"
     },
+    "max-ostapenko": {
+      "name": "Max Ostapenko",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/1611259?v=4&s=200",
+      "website": "https://maxostapenko.com",
+      "github": "max-ostapenko",
+      "twitter": "themax_o"
+    },
     "webmaxru": {
-      "name": " Maxim Salnikov",
+      "name": "Maxim Salnikov",
       "teams": [
         "reviewers"
       ],
@@ -340,57 +432,19 @@
       "github": "webmaxru",
       "twitter": "webmaxru"
     },
+    "maudnals": {
+      "name": "Maud Nalpas",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/9762897?v=4&s=200",
+      "github": "maudnals"
+    },
     "michelleoconnor": {
       "name": "Michelle O'Connor",
       "teams": [
         "designers"
       ]
-    },
-    "thepassle": {
-      "name": "Pascal Schilp",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/17054057?v=4&s=200",
-      "github": "thepassle"
-    },
-    "paulcalvano": {
-      "name": "Paul Calvano",
-      "teams": [
-        "leads"
-      ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/7459458?v=4&s=200",
-      "github": "paulcalvano",
-      "twitter": "paulcalvano",
-      "website": "https://paulcalvano.com"
-    },
-    "rviscomi": {
-      "name": "Rick Viscomi",
-      "teams": [
-        "editors",
-        "leads"
-      ],
-      "avatar_url": "https://avatars0.githubusercontent.com/u/1120896?v=4&s=200",
-      "github": "rviscomi",
-      "twitter": "rick_viscomi"
-    },
-    "shantsis": {
-      "name": "Shaina Hantsis",
-      "teams": [
-        "designers"
-      ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/22671477?v=4&s=200",
-      "github": "shantsis"
-    },
-    "GeekBoySupreme": {
-      "name": "Shuvam Manna",
-      "teams": [
-        "designers"
-      ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/15321738?v=4&s=200",
-      "github": "GeekBoySupreme",
-      "twitter": "shuvam360",
-      "website": "https://shuvam.xyz"
     },
     "MeFoDy": {
       "name": "Nikita Dubko",
@@ -401,6 +455,141 @@
       "website": "https://mefody.dev/",
       "github": "MeFoDy",
       "twitter": "dark_mefody"
+    },
+    "nithanaroy": {
+      "name": "Nitin Pasumarthy",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/670556?v=4&s=200",
+      "github": "nithanaroy",
+      "linkedin": "nitinpasumarthy",
+      "website": "https://nithanaroy.medium.com/"
+    },
+    "thepassle": {
+      "name": "Pascal Schilp",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/17054057?v=4&s=200",
+      "github": "thepassle"
+    },
+    "patrickhulce": {
+      "name": "Patrick Hulce",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/2301202?v=4&s=200",
+      "website": "http://patrickhulce.com",
+      "github": "patrickhulce",
+      "twitter": "patrickhulce"
+    },
+    "paulcalvano": {
+      "name": "Paul Calvano",
+      "teams": [
+        "leads"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/7459458?v=4&s=200",
+      "github": "paulcalvano",
+      "twitter": "paulcalvano",
+      "website": "https://paulcalvano.com"
+    },
+    "philbarker": {
+      "name": "Phil Barker",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/658047?v=4&s=200",
+      "website": "https://blogs.pjjk.net/phil/",
+      "github": "philbarker",
+      "twitter": "philbarker"
+    },
+    "rviscomi": {
+      "name": "Rick Viscomi",
+      "teams": [
+        "editors",
+        "leads"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/1120896?v=4&s=200",
+      "github": "rviscomi",
+      "twitter": "rick_viscomi"
+    },
+    "samarpanda": {
+      "name": "Samar Panda",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/802163?v=4&s=200",
+      "github": "samarpanda"
+    },
+    "shantsis": {
+      "name": "Shaina Hantsis",
+      "teams": [
+        "designers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/22671477?v=4&s=200",
+      "github": "shantsis"
+    },
+    "GeekBoySupreme": {
+      "name": "Shuvam Manna",
+      "teams": [
+        "designers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/15321738?v=4&s=200",
+      "github": "GeekBoySupreme",
+      "twitter": "shuvam360",
+      "website": "https://shuvam.xyz"
+    },
+    "siakaramalegos": {
+      "name": "Sia Karamalegos",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4777393?v=4&s=200",
+      "website": "https://sia.codes",
+      "github": "siakaramalegos",
+      "linkedin": "karamalegos",
+      "twitter": "TheGreenGreek"
+    },
+    "simonhearne": {
+      "name": "Simon Hearne",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/496189?v=4&s=200",
+      "website": "https://simonhearne.com",
+      "github": "simonhearne",
+      "twitter": "simonhearne"
+    },
+    "victorlep": {
+      "name": "Victor Le Pochat",
+      "teams": [
+        "analysts",
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/6874341?v=4&s=200",
+      "github": "VictorLeP",
+      "linkedin": "victor-le-pochat",
+      "twitter": "VictorLePochat",
+      "website": "https://lepoch.at"
+    },
+    "westonruter": {
+      "name": "Weston Ruter",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/134745?v=4&s=200",
+      "website": "https://weston.ruter.net/",
+      "github": "westonruter",
+      "twitter": "westonruter"
+    },
+    "ydimova": {
+      "name": "Yana Dimova",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/9135107?v=4&s=200",
+      "github": "ydimova"
     }
   }
 }

@@ -39,4 +39,3 @@ GROUP BY
   status_code
 ORDER BY
   total DESC
-

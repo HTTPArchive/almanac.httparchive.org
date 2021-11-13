@@ -408,6 +408,11 @@ aside,
   font-style: italic;
 }
 
+aside em,
+.note em {
+  font-style: normal;
+}
+
 table,
 figure {
   max-width: 100%;
@@ -610,6 +615,14 @@ td {
 th.numeric,
 td.numeric {
   text-align: right;
+}
+
+td .numeric-good {
+  color: #38761d;
+}
+
+td .numeric-bad {
+  color: #b60000;
 }
 
 tbody tr:nth-child(even) {
@@ -843,4 +856,16 @@ pre {
 
 .code-block code {
   width: 100%;
+}
+
+/* Needed for Safari to hide the index properly */
+@media print {
+  .main {
+    grid-template-areas: 'content';
+    grid-template-columns: auto;
+  }
+
+  .figure-dropdown {
+    display: none;
+  }
 }
