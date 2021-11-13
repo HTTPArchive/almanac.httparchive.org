@@ -58,7 +58,7 @@ ECommerce platforms make a substantial part of non-CMS sites and are covered in 
 
 Our research identified over 200 individual CMSs, with these ranging from a single install to millions on a single CMS.
 
-Some of them are open source (e.g. WordPress, Joomla, others) and some of them are proprietary (e.g. Wix, Squarespace, others). Some CMS platforms can be used on “free” hosted or self-hosted plans, and there are also options for using these platforms on higher-tiered plans even at the enterprise level.
+Some of them are open source (e.g. WordPress, Joomla, others) and some of them are proprietary (e.g. Wix, Squarespace, others). Some CMS platforms can be used on "free" hosted or self-hosted plans, and there are also options for using these platforms on higher-tiered plans even at the enterprise level.
 
 The CMS space as a whole is a complex, federated universe of CMS ecosystems, all separated and at the same time intertwined.
 
@@ -81,7 +81,7 @@ It is interesting to compare these numbers with another commonly used dataset, s
 
 The deviation between our analysis and W3Techs’ analysis can be explained by a difference in research methodologies, and the definition of what is a CMS.
 
-W3Techs definition is the following: “_Content management systems are applications for creating and managing the content of a website. We include all such systems in this category, also systems that are often classified as wikis, blog engines, discussion boards, static site generators, website editors or any type of software that provides website content_.”
+W3Techs definition is the following: "_Content management systems are applications for creating and managing the content of a website. We include all such systems in this category, also systems that are often classified as wikis, blog engines, discussion boards, static site generators, website editors or any type of software that provides website content_."
 
 You can read more about ours on the [Methodology](https://almanac.httparchive.org/en/2021/methodology) page.
 
@@ -191,7 +191,7 @@ In this section we focus on data from July 2021 to provide a consistent timefram
 
 These metrics aim to cover the core elements which are indicative of a great web user experience. The [Performance](https://almanac.httparchive.org/en/2021/performance) chapter covers these in more detail, but here we are interested in looking at these metrics specifically in terms of CMSs.
 
-Initially, let’s review the 10 CMS platforms with the highest number of origins, and examine what percentage of sites on each platform have a **passing** grade, meaning that the 75th percentile of each of the above metrics must be in the “good” (green) range for each site.
+Initially, let’s review the 10 CMS platforms with the highest number of origins, and examine what percentage of sites on each platform have a **passing** grade, meaning that the 75th percentile of each of the above metrics must be in the "good" (green) range for each site.
 
 {{ figure_markup(
   image="core-web-vitals.png",
@@ -235,12 +235,12 @@ Let’s drill into the three Core Web Vitals, to see where each platform has roo
 
 Largest Contentful Paint (LCP) measures the point in time when the page’s main content has likely loaded and thus the page is useful to the user. It does this by measuring the render time of the largest image or text block visible within the viewport.
 
-A “good” LCP is regarded as being under 2.5 seconds.
+A "good" LCP is regarded as being under 2.5 seconds.
 
 {{ figure_markup(
   image="core-web-vitals-lcp.png",
   caption="Top 10 CMSs LCP performance.",
-  description="Bar chart showcasing the percentage of sites with "good" LCP, for each of the 10 most adopted CMSs. WordPress has 28% of mobile sites with a "good" LCP, and 40% of desktop.",
+  description="Bar chart showcasing the percentage of sites with good LCP, for each of the 10 most adopted CMSs. WordPress has 28% of mobile sites with a good LCP, and 40% of desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=22169494&format=interactive",
   width=600,
   height=559,
@@ -248,14 +248,14 @@ A “good” LCP is regarded as being under 2.5 seconds.
   sql_file="core_web_vitals.sql"
 ) }}
 
-TYPO3 CMS had the best LCP scores with 69% of origins having a “good” LCP experience, while WordPress and Adobe Experience Manager have the worst LCP scores, with only 28% of origins having a good LCP score.
+TYPO3 CMS had the best LCP scores with 69% of origins having a "good" LCP experience, while WordPress and Adobe Experience Manager have the worst LCP scores, with only 28% of origins having a good LCP score.
 
 In general, it seems that most platforms are struggling with the LCP metric. This probably relates to the fact that the LCP is dependent on the download of image/font/CSS and then displaying the appropriate HTML elements. Achieving this in under 2.5 seconds for all device types and connection speeds can be challenging. Improving LCP scores usually involves the correct use of caching, pre-loading, resource prioritization, and lazy loading of other competing resources.
 
 {{ figure_markup(
   image="core-web-vitals-lcp-yoy.png",
   caption="Top 10 CMSs LCP performance for mobile views year-over-year.",
-  description="Bar chart showing the change in the percentage of "good" LCP mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage. TYPO3 CMS had 69% of mobile sites with a "good" LCP in 2021, up from 66% in 2020.",
+  description="Bar chart showing the change in the percentage of good LCP mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage. TYPO3 CMS had 69% of mobile sites with a good LCP in 2021, up from 66% in 2020.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=5489725&format=interactive",
   width=600,
   height=559,
@@ -267,16 +267,16 @@ We can see that all CMSs improved their LCP in the past year, but most of them h
 
 #### First Input Delay (FID)
 
-First Input Delay (FID) measures the time from when a user first interacts with the page (i.e. when they click a link, tap on a button, or use a custom, JavaScript-powered control) to the time when the browser is able to process that interaction. A “fast” FID from a user’s perspective would be almost immediate feedback from their actions on a site rather than a stalled experience.
+First Input Delay (FID) measures the time from when a user first interacts with the page (i.e. when they click a link, tap on a button, or use a custom, JavaScript-powered control) to the time when the browser is able to process that interaction. A "fast" FID from a user’s perspective would be almost immediate feedback from their actions on a site rather than a stalled experience.
 
 Any delay is a pain point and could correlate with interference from other aspects of the site loading when the user tries to interact with the site.
 
-A “good” FID is regarded as being under 100 milliseconds.
+A "good" FID is regarded as being under 100 milliseconds.
 
 {{ figure_markup(
   image="core-web-vitals-fid.png",
   caption="Top 10 CMSs FID performance.",
-  description="Bar chart showcasing the percentage of sites with "good" FID, for each of the 10 most adopted CMSs. WordPress has 96% of mobile sites with a "good" FID, and 100% of desktop.",
+  description="Bar chart showcasing the percentage of sites with good FID, for each of the 10 most adopted CMSs. WordPress has 96% of mobile sites with a good FID, and 100% of desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1139890716&format=interactive",
   width=600,
   height=559,
@@ -291,7 +291,7 @@ The fact that almost all platforms manage to deliver a good FID, has recently ra
 {{ figure_markup(
   image="core-web-vitals-fid-yoy.png",
   caption="Top 10 CMSs FID performance for mobile views year-over-year.",
-  description="Bar chart showing the change in the percentage of "good" FID mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage. Squarespace had 98% of mobile sites with a "good" FID in 2021, up from 91% in 2020.",
+  description="Bar chart showing the change in the percentage of good FID mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage. Squarespace had 98% of mobile sites with a good FID in 2021, up from 91% in 2020.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=516116235&format=interactive",
   width=600,
   height=559,
@@ -309,12 +309,12 @@ A layout shift occurs any time a visible element changes its position from one r
 
 The CLS metric has [evolved](https://web.dev/evolving-cls/) in the past year, mainly introducing the concept of Session Windows, to be fairer to long-lived pages and Single Page Apps (SPAs).
 
-A score of 0.1 or below is measured as “good”, over 0.25 as “poor”, and anything in between as “needs improvement”.
+A score of 0.1 or below is measured as "good", over 0.25 as "poor", and anything in between as "needs improvement".
 
 {{ figure_markup(
   image="core-web-vitals-cls.png",
   caption="Top 10 CMSs CLS performance.",
-  description="Bar chart showcasing the percentage of sites with "good" CLS, for each of the 10 most adopted CMSs. WordPress has 61% of mobile sites with a "good" CLS, and 58% of desktop.",
+  description="Bar chart showcasing the percentage of sites with good CLS, for each of the 10 most adopted CMSs. WordPress has 61% of mobile sites with a good CLS, and 58% of desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1800297769&format=interactive",
   width=600,
   height=559,
@@ -322,12 +322,12 @@ A score of 0.1 or below is measured as “good”, over 0.25 as “poor”, and 
   sql_file="core_web_vitals.sql"
 ) }}
 
-Wix had the best CLS score, with 81% of mobile origins having a “good” CLS. Adobe Experience Manager had the lowest CLS scores, with only 44% of mobile origins having a good CLS. Because layout shifts can usually be avoided, regardless of connection speeds - all platforms should strive to improve these numbers by [reducing layout shifts](https://web.dev/optimize-cls/) to the bare minimum.
+Wix had the best CLS score, with 81% of mobile origins having a "good" CLS. Adobe Experience Manager had the lowest CLS scores, with only 44% of mobile origins having a good CLS. Because layout shifts can usually be avoided, regardless of connection speeds - all platforms should strive to improve these numbers by [reducing layout shifts](https://web.dev/optimize-cls/) to the bare minimum.
 
 {{ figure_markup(
   image="core-web-vitals-cls-yoy.png",
   caption="Top 10 CMSs CLS performance for mobile views year-over-year.",
-  description="Bar chart showing the change in the percentage of "good" CLS mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage. Wix had 81% of mobile sites with a "good" CLS in 2021, up from 57% in 2020.",
+  description="Bar chart showing the change in the percentage of good CLS mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage. Wix had 81% of mobile sites with a good CLS in 2021, up from 57% in 2020.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1814103651&format=interactive",
   width=600,
   height=559,
