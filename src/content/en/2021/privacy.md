@@ -40,9 +40,7 @@ Unfortunately, obtaining this information currently often relies on online track
 
 ### Third-party tracking
 
-Online tracking is often done through third-party libraries. These libraries usually provide some (useful) service, but in the process some of them also generate a unique identifier for each user, which can then be used to follow and profile users across websites. The <a hreflang="en" href="https://whotracks.me/">WhoTracksMe</a> project is dedicated to discovering the most widely deployed online trackers. We use WhoTracksMe's classification of trackers but restrict ourselves to four <a hreflang="en" href="https://whotracks.me/blog/tracker_categories.html">categories</a>: _advertising_, _pornvertising_, _site analytics_ and _social media_.
-
-{# TODO - Can you explain _why_ you are restricting yourselves to just those four categories? #}
+Online tracking is often done through third-party libraries. These libraries usually provide some (useful) service, but in the process some of them also generate a unique identifier for each user, which can then be used to follow and profile users across websites. The <a hreflang="en" href="https://whotracks.me/">WhoTracksMe</a> project is dedicated to discovering the most widely deployed online trackers. We use WhoTracksMe's classification of trackers but restrict ourselves to four <a hreflang="en" href="https://whotracks.me/blog/tracker_categories.html">categories</a>, because they are the most likely to cover services where tracking is part of the primary purpose: _advertising_, _pornvertising_, _site analytics_ and _social media_.
 
 {{ figure_markup(
   image="most_common_trackers.png",
@@ -208,9 +206,7 @@ A number of trackers provide a solution for ad retargeting. The most widely used
 
 ## How websites handle your sensitive data
 
-Some websites request access to specific features and browser APIs that can impact the user's privacy, for instance by accessing the geolocation data, microphone, camera, etc. While these features usually serve very useful purposes, such as discovering nearby points of interest or allowing people to communicate with each other, there is a risk of exposing sensitive data if the user does not fully understand how those resources are used, or if a site misbehaves.
-
-{# TODO I feel we should make it clearer that these cannot be activated by user consent (though of course once that consent's been given, it can be abused!). Otherwise is comes across as a bit inaccurate and fear mongering #}
+Some websites request access to specific features and browser APIs that can impact the user's privacy, for instance by accessing the geolocation data, microphone, camera, etc. These features usually serve very useful purposes, such as discovering nearby points of interest or allowing people to communicate with each other. While these features are only activated when a user consents, there is a risk of exposing sensitive data if the user does not fully understand how those resources are used, or if a site misbehaves.
 
 We looked at how often websites request access to sensitive resources. Moreover, any time a service stores sensitive data, there is the danger of hackers stealing and leaking that data. We'll look at recent data breaches that prove that this danger is real.
 
@@ -307,7 +303,7 @@ The email addresses of users are leaked in _every_ breach. This is already a hug
 
 ## How websites protect your sensitive data
 
-While you're browsing the web, there is certain data that you might want to keep private: the web pages that you visit, any sensitive data that you enter into forms, your location, and so on. Over at the [Security](./security) chapter, you can learn how 92.5% of desktop sites have enabled HTTPS to protect your data from snooping while it traverses the Internet. Here, we'll focus on how websites can further instruct browsers to ensure privacy for sensitive resources.
+While you're browsing the web, there is certain data that you might want to keep private: the web pages that you visit, any sensitive data that you enter into forms, your location, and so on. Over at the [Security](./security){# TODO - add id link after security publishes #} chapter, you can learn how 92.5% of desktop sites have enabled HTTPS to protect your data from snooping while it traverses the Internet. Here, we'll focus on how websites can further instruct browsers to ensure privacy for sensitive resources.
 
 ### Permissions Policy / Feature Policy
 
@@ -362,9 +358,7 @@ The `Referer` value can be insightful. But when the full URL including the path 
   )
 }}
 
-A first point to note is that most sites do not explicitly set a Referrer Policy. Only 11.12% of desktop websites and 10.38% of mobile websites explicitly define a Referrer Policy. The rest of them (the other 88.88% on desktop and 89.62% on mobile) will fall back to the browser's default policy. <a hreflang="en" href="https://web.dev/referrer-best-practices/#default-referrer-policies-in-browsers">Most major browsers</a> use a default policy of `strict-origin-when-cross-origin` (see <a hreflang="en" href="https://blog.mozilla.org/security/2021/03/22/firefox-87-trims-http-referrers-by-default-to-protect-user-privacy/">Firefox</a> and <a hreflang="en" href="https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default">Chrome)</a>. `strict-origin-when-cross-origin` removes the path and query fragments of the URL on cross-origin requests, which reduces security and privacy risks.
-
-{# TODO Worth pointing out that this tighting up of what is shown is fairly recent? Not sure if there's a reference for that but seem to recall it was in last year or two. #}
+A first point to note is that most sites do not explicitly set a Referrer Policy. Only 11.12% of desktop websites and 10.38% of mobile websites explicitly define a Referrer Policy. The rest of them (the other 88.88% on desktop and 89.62% on mobile) will fall back to the browser's default policy. <a hreflang="en" href="https://web.dev/referrer-best-practices/#default-referrer-policies-in-browsers">Most major browsers</a> recently introduced a default policy of `strict-origin-when-cross-origin`, such as <a hreflang="en" href="https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default">Chrome</a> in August 2020 and <a hreflang="en" href="https://blog.mozilla.org/security/2021/03/22/firefox-87-trims-http-referrers-by-default-to-protect-user-privacy/">Firefox</a> in March 2021. `strict-origin-when-cross-origin` removes the path and query fragments of the URL on cross-origin requests, which reduces security and privacy risks.
 
 {{ figure_markup(
   image="most_common_referrerpolicy_values.png",
@@ -443,9 +437,7 @@ The most popular libraries are <a hreflang="en" href="https://www.cookieyes.com/
 
 The <a hreflang="en" href="https://iabeurope.eu/transparency-consent-framework/">Transparency and Consent Framework</a> (TCF) is an initiative of the Interactive Advertising Bureau Europe (IAB) for providing an industry standard for communicating user consent to advertisers. The framework consists of a <a hreflang="en" href="https://iabeurope.eu/vendor-list/">Global Vendor List</a>, in which vendors can specify the legitimate purpose of the processed data, and a list of CMPs who act as an intermediary between the vendors and the publishers. Each CMP is responsible for communicating the legal basis and storing the consent option provided by the user in the browser. We refer to the stored cookie as the _consent string_.
 
-TCF is meant as a GDPR-compliant mechanism in Europe, although [a recent decision by the Belgian Data Protection Authority](https://iabeurope.eu/all-news/update-on-the-belgian-data-protection-authoritys-investigation-of-iab-europe/){# TODO decide if using that URL or https://www.iccl.ie/news/online-consent-pop-ups-used-by-google-and-other-tech-firms-declared-illegal/ #} found that this system is still infringing. When the CCPA came into play in California, IAB Tech Lab US developed a <a hreflang="en" href="https://iabtechlab.com/standards/ccpa/">CCPA Compliance Framework for Publishers & Technology Companies</a> (USP), using the same concepts.
-
-{# TODO what's the USP? Why not CFPTC? #}
+TCF is meant as a GDPR-compliant mechanism in Europe, although [a recent decision by the Belgian Data Protection Authority](https://iabeurope.eu/all-news/update-on-the-belgian-data-protection-authoritys-investigation-of-iab-europe/) found that this system is still infringing. When the CCPA came into play in California, IAB Tech Lab US developed the <a hreflang="en" href="https://iabtechlab.com/standards/ccpa/">U.S. Privacy</a> (USP) technical specifications, using the same concepts.
 
 {{ figure_markup(
   image="nb_websites_with_iab.png",
@@ -518,9 +510,7 @@ The <a hreflang="en" href="https://www.eff.org/issues/do-not-track">Do Not Track
   )
 }}
 
-Around the same percentage of pages on mobile and desktop clients use DNT. However, in practice hardly any websites actually respect the DNT opt-outs. The Tracking Protection Working Group, which specifies DNT, <a hreflang="en" href="https://www.w3.org/2016/11/tracking-protection-wg.html">closed down</a> in 2018, due to <a hreflang="en" href="https://lists.w3.org/Archives/Public/public-tracking/2018Oct/0000.html">"lack of support"</a>. Safari then <a hreflang="en" href="https://developer.apple.com/documentation/safari-release-notes/safari-12_1-release-notes#:~:text=Removed%20support%20for%20the%20expired%20Do%20Not%20Track">stopped supporting DNT</a>.
-
-{# TODO - worth pointing out WHY Safari removed it? "to prevent potential use as a fingerprinting variable." #}
+Around the same percentage of pages on mobile and desktop clients use DNT. However, in practice hardly any websites actually respect the DNT opt-outs. The Tracking Protection Working Group, which specifies DNT, <a hreflang="en" href="https://www.w3.org/2016/11/tracking-protection-wg.html">closed down</a> in 2018, due to <a hreflang="en" href="https://lists.w3.org/Archives/Public/public-tracking/2018Oct/0000.html">"lack of support"</a>. Safari then <a hreflang="en" href="https://developer.apple.com/documentation/safari-release-notes/safari-12_1-release-notes#:~:text=Removed%20support%20for%20the%20expired%20Do%20Not%20Track">stopped supporting DNT</a> to prevent potential abuse for [fingerprinting](#fingerprinting).
 
 DNT's successor <a hreflang="en" href="https://globalprivacycontrol.org/">Global Privacy Control</a> (GPC) was released in October 2020 and is meant to provide a more enforceable alternative, with the hopes of better adoption. This privacy preference signal is implemented with a single bit in all HTTP requests. We did not yet observe any uptake, but we can expect this to improve in future as <a hreflang="en" href="https://www.washingtonpost.com/technology/2021/10/26/global-privacy-control-firefox/">major browsers are now starting to implement GPC</a>.
 
