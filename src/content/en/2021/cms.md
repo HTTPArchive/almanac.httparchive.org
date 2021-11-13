@@ -231,7 +231,7 @@ All of these CMSs showed an improvement in the percentage of origins with good C
 
 Let’s drill into the three Core Web Vitals, to see where each platform has room to improve, and which metrics improved the most since last year:
 
-**Largest Contentful Paint**
+#### Largest Contentful Paint
 
 Largest Contentful Paint (LCP) measures the point in time when the page’s main content has likely loaded and thus the page is useful to the user. It does this by measuring the render time of the largest image or text block visible within the viewport.
 
@@ -265,7 +265,7 @@ In general, it seems that most platforms are struggling with the LCP metric. Thi
 
 We can see that all CMSs improved their LCP in the past year, but most of them had modest improvements. The largest jump came from Wix and Squarespace, who had very low LCP scores last year. Tilda also seems to have made considerable progress.
 
-**First Input Delay (FID)**
+#### First Input Delay (FID)
 
 First Input Delay (FID) measures the time from when a user first interacts with the page (i.e. when they click a link, tap on a button, or use a custom, JavaScript-powered control) to the time when the browser is able to process that interaction. A “fast” FID from a user’s perspective would be almost immediate feedback from their actions on a site rather than a stalled experience.
 
@@ -301,7 +301,7 @@ The fact that almost all platforms manage to deliver a good FID, has recently ra
 
 Yearly data shows that all these CMSs managed to improve their FID over the past year. Wix had the most catching up to do on FID, and considerably improved their numbers. Joomla and Bitrix had the lowest FID scores this year, but still managed to improve.
 
-**Cumulative Layout Shift (CLS)**
+#### Cumulative Layout Shift (CLS)
 
 Cumulative Layout Shift (CLS) measures the visual stability of content on a web page, measuring the largest burst of layout shift scores for every unexpected layout shift that occurs during the entire lifespan of a page that was not caused by direct user interactions.
 
@@ -345,7 +345,7 @@ HTTPArchive runs Lighthouse on all its mobile web pages (unfortunately, no deskt
 
 We can analyze this data to provide another perspective on CMS performance, using the results of these synthetic tests, which also include metrics that are not tracked in CrUX.
 
-**Performance Score**
+#### Performance Score
 
 The Lighthouse [performance score](https://web.dev/performance-scoring/) is a weighted average of several metric scores.
 
@@ -362,7 +362,7 @@ The Lighthouse [performance score](https://web.dev/performance-scoring/) is a we
 
 We can see that the median performance scores for all the top platforms on mobile are low, ranging from 17 to 33. As we saw above, this [does not directly imply bad results](https://philipwalton.com/articles/my-challenge-to-the-web-performance-community/) in mobile field data but does imply that all platforms have room for improvements, especially for low-end devices and network connections similar to those Lighthouse attempts to emulate.
 
-**SEO Score**
+#### SEO Score
 
 Search Engine Optimization (or SEO) is the practice of improving a website to make it more easily found in search engines. This is covered more in-depth in our [SEO](https://almanac.httparchive.org/en/2020/seo) chapter, but one part involves ensuring the site is coded in such a way to serve as much information to search engine crawlers to make it as easy as possible for them to show a site appropriately in search engine results. Compared to a custom-created website, one might expect a CMS to provide good SEO capabilities, and the Lighthouse scores in this category are appropriately high.
 
@@ -379,7 +379,7 @@ Search Engine Optimization (or SEO) is the practice of improving a website to ma
 
 The median SEO score in all of the top 10 platforms is over 84, with Drupal scoring the lowest and Wix scoring the highest with a median score of 95.
 
-**Accessibility Score**
+#### Accessibility Score
 
 An accessible website is a site designed and developed so that people with disabilities can use them. Web accessibility also benefits people without disabilities, such as those on slow internet connections. Read more in our [Accessibility](https://almanac.httparchive.org/en/2021/accessibility) chapter.
 
@@ -400,7 +400,7 @@ Each accessibility audit is either a pass or a fail, but unlike other Lighthouse
 
 The median Lighthouse accessibility score for the top 10 CMSs ranges between 76 and 91. Squarespace and Weebly have the highest scores of 91, while Tilda had the lowest accessibility scores.
 
-**Best Practices**
+#### Best Practices
 
 The Lighthouse [best practices](https://web.dev/lighthouse-best-practices/) try to ensure that web pages are following best practices for the web, for a variety of different metrics, such as supporting HTTPS, no errors logged in the console, and more.
 
@@ -547,7 +547,7 @@ The WordPress community maintains the CMS and services requirements for addition
 
 Contributors from the WordPress community recently acknowledged the current state of performance, in this [proposal](https://make.wordpress.org/core/2021/10/12/proposal-for-a-performance-team/) to create a performance dedicated core team, which can hopefully improve the current performance of the average WordPress sites.
 
-**Adoption**
+### Adoption
 
 First, we’ll examine WordPress adoption by geography, across all sites in our dataset.
 
@@ -564,7 +564,7 @@ First, we’ll examine WordPress adoption by geography, across all sites in our 
 
 In the top 10 countries with the most sites in our dataset, WordPress had over 27% adoption. Spain had the highest WordPress adoption among these countries with 37% of mobile pages using WordPress, compared with Germany where _only_ 28% of mobile pages used WordPress.
 
-**Passing CWVs by Geo**
+### Passing CWVs by Geo
 
 Next, let’s look at the amount of WordPress origins with passing Core Web Vitals, but this time, breakdown by geography, for mobile devices.
 
@@ -583,7 +583,7 @@ This exposes a very interesting view of Core Web Vitals and hints at a geographi
 
 WordPress, with a very large adoption around the world, including countries with less powerful devices and slower connections, may suffer from this comparison in some cases, but likely has room to improve in all geographies. On the other hand, CMSs should strive to offer the best experience in the geography they are targeting, which sometimes means making sites fast enough to work well even under stricter conditions.
 
-**Plugins**
+### Plugins
 
 We explored how WordPress sites use external resources, and separated them between resources that are included in plugins, themes, and shipped in WordPress core (wp-includes).
 
