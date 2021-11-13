@@ -574,7 +574,7 @@ The <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/att
   description="Bar chart showing the percentage of cookies with the SameParty cookie attribute according to the request context. For first-party cookies `SameParty` is used on 38 desktop sites and 73 mobile sites for third-party cookies it's 2,527 for desktop sites and 1,805 mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=935824621&format=interactive",
   sheets_gid="858972835",
-  sql_file=""
+  sql_file="../security/cookie_attributes.sql"
   )
 }}
 
