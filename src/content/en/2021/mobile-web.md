@@ -1169,16 +1169,15 @@ Too often an approach to responsive web design is to supply an image whose nativ
 #### Appropriately sized images
 
 {{ figure_markup(
-   image="mobile-web-properly-sized-images.png",
-   caption="Percentage of Properly Sized Images",
-   description="Bar chart showing the percentage of mobile and desktop page loads that served correctly sized images.",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=869423062&format=interactive",
-   sheets_gid="1754517886",
+  caption="percent of mobile page loads had appropriately sized images",
+  content="56.6%",
+  classes="big-number",
+  sheets_gid="1754517886",
   sql_file="correctly_sized_images.sql"
-   )
+)
 }}
 
-This year, 56.6% of the mobile page loads got this right, sadly a step back from 58.8% in 2020. That's 43.4% of mobile users getting the wrong size images.
+This is sadly a step back from 58.8% in 2020. That's 43.4% of mobile users getting the wrong size images.
 
 
 #### Responsive Images
