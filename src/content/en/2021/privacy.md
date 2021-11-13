@@ -400,7 +400,7 @@ However, at this point, few websites have implemented Client Hints. We also see 
 
 ## How websites give you a privacy choice: Privacy preference signals
 
-In light of the recent introduction of privacy regulations, such as those mentioned in the introduction and more, websites are required to obtain explicit user consent about the collection of personal data for any non-essential features such as marketing and analytics.
+In light of the recent introduction of privacy regulations, such as those mentioned in the introduction, websites are required to obtain explicit user consent about the collection of personal data for any non-essential features such as marketing and analytics.
 
 Therefore, websites turned to the use of cookie consent banners, privacy policies and other mechanisms (which have <a hreflang="en" href="https://sciendo.com/article/10.2478/popets-2021-0069">evolved over time</a>) to inform users about what data these sites process, and give them a choice. In this section, we look at the prevalence of such tools.
 
