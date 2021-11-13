@@ -2,12 +2,12 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CMS
 description: TODO
-authors: [alonko, hyperpress]
-reviewers: [alankent, andreyl, chrissater]
+authors: [alonko]
+reviewers: [alankent, andreyl, chrissater, hyperpress]
 analysts: [rviscomi, tosin]
 editors: []
 translators: []
-alonko_bio: Alon Kochba is a software developer at Wix, where he heads the performance efforts. Alon comes from a back-end background, with extensive experience in networking, and enjoys making the web faster.
+alonko_bio: Alon Kochba is a software developer at Wix, where he heads the performance efforts. Alon comes from a back-end background, with extensive experience in networking, and enjoys making the web faster at scale.
 results: https://docs.google.com/spreadsheets/d/1gAJh4VcSEU6-6aQxBiTFl-7cbyHukfdhg-Iaq9y5pnc/
 featured_quote: CMS platforms continue to grow and are becoming more ubiquitous year-over-year. They are essential for easily creating and consuming content on the internet, especially as more people and businesses establish an online presence.
 featured_stat_1: 46%
@@ -196,7 +196,7 @@ Initially, let’s review the 10 CMS platforms with the highest number of origin
 {{ figure_markup(
   image="core-web-vitals.png",
   caption="Top 10 CMSs core web vitals performance.",
-  description="TODO",
+  description="Bar chart showcasing the percentage of sites with good Core Web Vitals, for each of the 10 most adopted CMSs. WordPress has 19% of mobile sites passing, and 26% of desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=126065751&format=interactive",
   width=600,
   height=559,
@@ -219,7 +219,7 @@ We can also evaluate the progress of these CMS platforms compared to last year�
 {{ figure_markup(
   image="core-web-vitals-yoy.png",
   caption="Top 10 CMSs core web vitals performance for mobile views year-over-year.",
-  description="TODO",
+  description="Bar chart showing the change in the percentage of passing Core Web Vitals mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage. TYPO3 CMS had 46% of mobile sites passing CWV in 2021, up from 40% in 2020.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=904891027&format=interactive",
   width=600,
   height=559,
@@ -240,7 +240,7 @@ A “good” LCP is regarded as being under 2.5 seconds.
 {{ figure_markup(
   image="core-web-vitals-lcp.png",
   caption="Top 10 CMSs LCP performance.",
-  description="TODO",
+  description="Bar chart showcasing the percentage of sites with "good" LCP, for each of the 10 most adopted CMSs. WordPress has 28% of mobile sites with a "good" LCP, and 40% of desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=22169494&format=interactive",
   width=600,
   height=559,
@@ -255,7 +255,7 @@ In general, it seems that most platforms are struggling with the LCP metric. Thi
 {{ figure_markup(
   image="core-web-vitals-lcp-yoy.png",
   caption="Top 10 CMSs LCP performance for mobile views year-over-year.",
-  description="TODO",
+  description="Bar chart showing the change in the percentage of "good" LCP mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage. TYPO3 CMS had 69% of mobile sites with a "good" LCP in 2021, up from 66% in 2020.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=5489725&format=interactive",
   width=600,
   height=559,
@@ -276,7 +276,7 @@ A “good” FID is regarded as being under 100 milliseconds.
 {{ figure_markup(
   image="core-web-vitals-fid.png",
   caption="Top 10 CMSs FID performance.",
-  description="TODO",
+  description="Bar chart showcasing the percentage of sites with "good" FID, for each of the 10 most adopted CMSs. WordPress has 96% of mobile sites with a "good" FID, and 100% of desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1139890716&format=interactive",
   width=600,
   height=559,
@@ -291,7 +291,7 @@ The fact that almost all platforms manage to deliver a good FID, has recently ra
 {{ figure_markup(
   image="core-web-vitals-fid-yoy.png",
   caption="Top 10 CMSs FID performance for mobile views year-over-year.",
-  description="TODO",
+  description="Bar chart showing the change in the percentage of "good" FID mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage. Squarespace had 98% of mobile sites with a "good" FID in 2021, up from 91% in 2020.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=516116235&format=interactive",
   width=600,
   height=559,
@@ -314,7 +314,7 @@ A score of 0.1 or below is measured as “good”, over 0.25 as “poor”, and 
 {{ figure_markup(
   image="core-web-vitals-cls.png",
   caption="Top 10 CMSs CLS performance.",
-  description="TODO",
+  description="Bar chart showcasing the percentage of sites with "good" CLS, for each of the 10 most adopted CMSs. WordPress has 61% of mobile sites with a "good" CLS, and 58% of desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1800297769&format=interactive",
   width=600,
   height=559,
@@ -327,7 +327,7 @@ Wix had the best CLS score, with 81% of mobile origins having a “good” CLS. 
 {{ figure_markup(
   image="core-web-vitals-cls-yoy.png",
   caption="Top 10 CMSs CLS performance for mobile views year-over-year.",
-  description="TODO",
+  description="Bar chart showing the change in the percentage of "good" CLS mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage. Wix had 81% of mobile sites with a "good" CLS in 2021, up from 57% in 2020.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1814103651&format=interactive",
   width=600,
   height=559,
@@ -352,7 +352,7 @@ The Lighthouse [performance score](https://web.dev/performance-scoring/) is a we
 {{ figure_markup(
   image="lighthouse-performance.png",
   caption="Top 10 CMSs median Lighthouse performance score.",
-  description="TODO",
+  description="Bar chart showcasing the median Lighthouse mobile performance score for each of the top 10 most adopted CMSs. In general all platforms score poorly here, with TYPO3 CMS scoring the highest at 33.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1164945994&format=interactive",
   width=600,
   height=559,
@@ -369,7 +369,7 @@ Search Engine Optimization (or SEO) is the practice of improving a website to ma
 {{ figure_markup(
   image="lighthouse-seo.png",
   caption="Top 10 CMSs median Lighthouse SEO score.",
-  description="TODO",
+  description="Bar chart showcasing the median Lighthouse mobile SEO score for each of the top 10 most adopted CMSs. Wix has a median score of 95.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=98244918&format=interactive",
   width=600,
   height=559,
@@ -390,7 +390,7 @@ Each accessibility audit is either a pass or a fail, but unlike other Lighthouse
 {{ figure_markup(
   image="lighthouse-accessibility.png",
   caption="Top 10 CMSs median Lighthouse accessibility score.",
-  description="TODO",
+  description="Bar chart showcasing the median Lighthouse mobile accessibility score for each of the top 10 most adopted CMSs. Squarespace and Weebly have a median score of 91.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=306783633&format=interactive",
   width=600,
   height=559,
@@ -407,7 +407,7 @@ The Lighthouse [best practices](https://web.dev/lighthouse-best-practices/) try 
 {{ figure_markup(
   image="lighthouse-best-practices.png",
   caption="Top 10 CMSs median Lighthouse best practices score.",
-  description="TODO",
+  description="Bar chart showcasing the median Lighthouse mobile best practices score for each of the top 10 most adopted CMSs. Wix has a median score of 93.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=813154253&format=interactive",
   width=600,
   height=559,
@@ -424,7 +424,7 @@ We can also use HTTPArchive data to analyze the weight of resources used across 
 {{ figure_markup(
   image="resource-weights-page.png",
   caption="Top 5 CMSs median page weight.",
-  description="TODO",
+  description="Column chart showing the median total page weight of each of the top 5 most adopted CMSs, for each device. All CMSs have a median page weight of over 2MB, Squarespace has a page weight of ~3.3MB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=658342587&format=interactive",
   sheets_gid="740406389",
   sql_file="resource_weights.sql"
@@ -435,7 +435,7 @@ Most of the top 5 CMSs deliver a median page weight of around ~2MB, except Squar
 {{ figure_markup(
   image="resource-weights-distribution.png",
   caption="Top 5 CMSs median page weight.",
-  description="TODO",
+  description="Column chart showing the percentile distribution of total mobile page weight among each of the top 5 most adopted CMSs. WordPress sites weight between ~684KB in the 10th percentile and 7.4MB in the 90th percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1895669428&format=interactive",
   sheets_gid="1101340213",
   sql_file="page_weight_distribution.sql"
@@ -456,7 +456,7 @@ Images, which are usually the heaviest resource, account for a large portion of 
 {{ figure_markup(
   image="resource-weights-images.png",
   caption="Top 5 CMSs median image weight.",
-  description="TODO",
+  description="Column chart showing the median weight of image resources downloaded in each of the top 5 most adopted CMSs, for each device. The median WordPress site downloads a total image weight of ~1.1MB on mobile and desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1403287616&format=interactive",
   sheets_gid="740406389",
   sql_file="resource_weights.sql"
@@ -471,7 +471,7 @@ We can examine the usage of the different image formats across the top CMSs:
 {{ figure_markup(
   image="image-formats.png",
   caption="Top 15 CMSs image format popularity.",
-  description="TODO",
+  description="Bar chart showcasing the relative popularity of each image format, among the top 15 most adopted CMSs. WordPress sites use the following image formats: 41.2% JPEG, 30.2% PNG, 18.3% GIF, 5.7% WebP, 3.3% SVG and 1.1% ICO.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=542088957&format=interactive",
   width=600,
   height=556,
@@ -488,7 +488,7 @@ With the [growing support of WebP](https://caniuse.com/webp), it seems all platf
 {{ figure_markup(
   image="resource-weights-javascript.png",
   caption="Top 5 CMSs median JavaScript weight.",
-  description="TODO",
+  description="Column chart showing the median weight of JavaScript resources downloaded in each of the top 5 most adopted CMSs, for each device. The median WordPress site uses 469KB of JS on mobile, and 494KB on desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=289342580&format=interactive",
   sheets_gid="740406389",
   sql_file="resource_weights.sql"
@@ -501,7 +501,7 @@ The largest five CMSs all deliver pages that rely on JS, with Drupal delivering 
 {{ figure_markup(
   image="resource-weights-html.png",
   caption="Top 5 CMSs median HTML weight.",
-  description="TODO",
+  description="Column chart showing the median weight of the HTML resource downloaded in each of the top 5 most adopted CMSs, for each device. The median WordPress site has an HTML size of 34KB on mobile, and 36KB on desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=890684063&format=interactive",
   sheets_gid="740406389",
   sql_file="resource_weights.sql"
@@ -515,7 +515,7 @@ Examining the HTML document sizes, we can see that most of the top CMSs deliver 
 {{ figure_markup(
   image="resource-weights-css.png",
   caption="Top 5 CMSs median CSS weight.",
-  description="TODO",
+  description="Column chart showing the median weight of CSS resources downloaded in each of the top 5 most adopted CMSs, for each device. The median WordPress site uses 115KB of CSS on mobile, and 119KB on desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=806030448&format=interactive",
   sheets_gid="740406389",
   sql_file="resource_weights.sql"
@@ -528,8 +528,8 @@ Next, we examine the use of explicit CSS resources that are downloaded. Here we 
 
 {{ figure_markup(
   image="resource-weights-fonts.png",
-  caption="Top 5 CMSs median CSS weight.",
-  description="TODO",
+  caption="Top 5 CMSs median fonts weight.",
+  description="Column chart showing the median weight of fonts resources downloaded in each of the top 5 most adopted CMSs, for each device. The median WordPress site uses 121KB of fonts on mobile, and 159KB on desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=750270305&format=interactive",
   sheets_gid="740406389",
   sql_file="resource_weights.sql"
@@ -554,7 +554,7 @@ First, we’ll examine WordPress adoption by geography, across all sites in our 
 {{ figure_markup(
   image="wordpress-adoption-geo.png",
   caption="WordPress adoption by geography.",
-  description="TODO",
+  description="Bar chart depicting the adoption of WordPress in each of the 10 geographies with the most websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=625154641&format=interactive",
   width=600,
   height=579,
@@ -571,7 +571,7 @@ Next, let’s look at the amount of WordPress origins with passing Core Web Vita
 {{ figure_markup(
   image="wordpress-passing-cwv.png",
   caption="WordPress origins passing CWV by geography.",
-  description="TODO",
+  description="Bar chart showcasing the percentage of WordPress origins passing Core Web Vitals in each of the 10 geographies with the most websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=642184103&format=interactive",
   sheets_gid="1013591764",
   sql_file="core_web_vitals_by_geo.sql"
@@ -589,8 +589,8 @@ We explored how WordPress sites use external resources, and separated them betwe
 
 {{ figure_markup(
   image="wordpress-resources-loaded.png",
-  caption="Distrubition of WordPress resources loaded by type.",
-  description="TODO",
+  caption="Distribution of WordPress resources loaded by type.",
+  description="Column chart showing the percentile distributions of resources used for WordPress websites. 4 plugins/themes/wp-includes resources are used in the 10th percentile, while 78 plugins, 56 themes and 24 wp-includes are used in the 90th percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=920269713&format=interactive",
   sheets_gid="296303301",
   sql_file="wordpress_resources.sql"
