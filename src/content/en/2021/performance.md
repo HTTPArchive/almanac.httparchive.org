@@ -21,11 +21,11 @@ unedited: true
 
 ## Introduction
 
-Performance is important for user experience. Slow-loading and slow-to-respond websites frustrate users and cause lost conversions. This is the first year that the <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> have contributed to Google search rankings. As such, we've seen greater interest in  improving website performance which is great news for users.
+Performance is important for the user experience. Slow-to-load and slow-to-respond websites frustrate users and cause lost conversions. This is the first year that <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> have contributed to Google search rankings. As such, we've seen greater interest in improving website performance which is great news for users.
 
-What are our top takeaways from this year's report? First, we still have a long way to go in providing a good user experience. For example, faster networks and devices have not yet reached the point where we can ignore how much JavaScript we deliver to a site. And, we may never get there. Second, sometimes we misuse new features for performance resulting in poorer performance. Additionally, we need better metrics for measuring interactivity, and those are on the way. Finally, CMS- and framework-level work on performance can significantly impact user experience for the top 10M websites.
+<i>What are our top takeaways from this year's report?</i> First, we still have a long way to go in providing a good user experience. For example, faster networks and devices have not yet reached the point where we can ignore how much JavaScript we deliver to a site; and, we may never get there. Second, sometimes we misuse new features for performance, resulting in poorer performance. Third, we need better metrics for measuring interactivity, and those are on the way. And fourth, CMS- and framework-level work on performance can significantly impact user experience for the top 10M websites.
 
-What's new this year? We're excited to share performance data by traffic ranking for the first time. We also have all the core performance metrics from previous years. Finally, we added a deeper dive into the Largest Contentful Paint (LCP) element.
+<i>What's new this year?</i> We're excited to share performance data by traffic ranking for the first time. We also have all the core performance metrics from previous years. Finally, we added a deeper dive into the Largest Contentful Paint (LCP) element.
 
 ### Notes on Methodology
 
