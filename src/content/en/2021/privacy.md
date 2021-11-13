@@ -64,7 +64,7 @@ We see that Google-owned domains are prevalent in the online tracking market. Go
   sheets_gid="2084631443",
   sql_file="most_common_tracker_categories.sql",
   width=600,
-  height=465
+  height=421
   )
 }}
 
@@ -353,7 +353,7 @@ A first point to note is that most sites do not explicitly set a Referrer Policy
   sheets_gid="1846818406",
   sql_file="most_common_referrerpolicy_values.sql",
   width=600,
-  height=421
+  height=580
   )
 }}
 
