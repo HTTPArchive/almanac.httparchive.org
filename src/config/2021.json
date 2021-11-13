@@ -37,7 +37,7 @@
           "chapter_number": "4",
           "title": "Structured Data",
           "slug": "structured-data",
-          "todo": "true"
+          "hero_dir": "2021"
         },
         {
           "part": "I",
@@ -188,8 +188,7 @@
           "part": "IV",
           "chapter_number": "23",
           "title": "Resource Hints",
-          "slug": "resource-hints",
-          "todo": "true"
+          "slug": "resource-hints"
         },
         {
           "part": "IV",
@@ -243,6 +242,16 @@
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/32825533?v=4&s=200",
       "github": "tropicadri"
+    },
+    "cyberandy": {
+      "name": "Andrea Volpini",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/837037?v=4&s=200",
+      "website": "https://wordlift.io/blog/en/entity/andrea-volpini/",
+      "github": "cyberandy",
+      "twitter": "cyberandy"
     },
     "andreban": {
       "name": "André Cipriani Bandarra",
@@ -299,6 +308,16 @@
       "github": "demianrenzulli",
       "twitter": "drenzulli"
     },
+    "GregBrimble": {
+      "name": "Greg Brimble",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/8484333?v=4&s=200",
+      "website": "https://gregbrimble.com/",
+      "github": "GregBrimble",
+      "twitter": "gregbrimble"
+    },
     "csswizardry": {
       "name": "Harry Roberts",
       "teams": [
@@ -319,6 +338,25 @@
       "github": "hemanth",
       "twitter": "gnumanth"
     },
+    "jvandriel": {
+      "name": "Jarno van Driel",
+      "teams": [
+        "editors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/7320889?v=4&s=200",
+      "github": "jvandriel",
+      "twitter": "JarnoVanDriel",
+      "linkedin": "jarno-van-driel-36a47075"
+    },
+    "JasmineDWillson": {
+      "name": "Jasmine Drudge-Willson",
+      "teams": [
+        "editors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/58438178?v=4&s=200",
+      "github": "JasmineDWillson",
+      "twitter": "jasminedwillson"
+    },
     "jeffposnick": {
       "name": "Jeff Posnick",
       "teams": [
@@ -329,6 +367,16 @@
       "github": "jeffposnick",
       "twitter": "jeffposnick"
     },
+    "jonoalderson": {
+      "name": "Jono Alderson",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/11629607?v=4&s=200",
+      "website": "https://www.jonoalderson.com",
+      "github": "jonoalderson",
+      "twitter": "jonoalderson"
+    },
     "Schweinepriester": {
       "name": "Kai Schweinepriester",
       "teams": [
@@ -336,6 +384,26 @@
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/2644614?v=4&s=200",
       "github": "Schweinepriester"
+    },
+    "kevinfarrugia": {
+      "name": "Kevin Farrugia",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/8075326?v=4&s=200",
+      "website": "https://imkev.dev",
+      "github": "kevinfarrugia",
+      "twitter": "imkevdev"
+    },
+    "vdwijngaert": {
+      "name": "Koen Van den Wijngaert",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/772137?v=4&s=200",
+      "website": "https://www.neok.be/",
+      "github": "vdwijngaert",
+      "twitter": "vdwijngaert"
     },
     "lucasbona05": {
       "name": "Lucas Gonçalves",
@@ -377,6 +445,15 @@
       "teams": [
         "designers"
       ]
+    },"nithanaroy": {
+      "name": "Nitin Pasumarthy",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/670556?v=4&s=200",
+      "github": "nithanaroy",
+      "linkedin": "nitinpasumarthy",
+      "website": "https://nithanaroy.medium.com/"
     },
     "thepassle": {
       "name": "Pascal Schilp",
@@ -406,6 +483,16 @@
       "twitter": "paulcalvano",
       "website": "https://paulcalvano.com"
     },
+    "philbarker": {
+      "name": "Phil Barker",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/658047?v=4&s=200",
+      "website": "https://blogs.pjjk.net/phil/",
+      "github": "philbarker",
+      "twitter": "philbarker"
+    },
     "rviscomi": {
       "name": "Rick Viscomi",
       "teams": [
@@ -415,6 +502,14 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/1120896?v=4&s=200",
       "github": "rviscomi",
       "twitter": "rick_viscomi"
+    },
+    "samarpanda": {
+      "name": "Samar Panda",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/802163?v=4&s=200",
+      "github": "samarpanda"
     },
     "shantsis": {
       "name": "Shaina Hantsis",
@@ -433,6 +528,17 @@
       "github": "GeekBoySupreme",
       "twitter": "shuvam360",
       "website": "https://shuvam.xyz"
+    },
+    "siakaramalegos": {
+      "name": "Sia Karamalegos",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4777393?v=4&s=200",
+      "website": "https://sia.codes",
+      "github": "siakaramalegos",
+      "linkedin": "karamalegos",
+      "twitter": "TheGreenGreek"
     },
     "simonhearne": {
       "name": "Simon Hearne",
@@ -455,6 +561,16 @@
       "linkedin": "victor-le-pochat",
       "twitter": "VictorLePochat",
       "website": "https://lepoch.at"
+    },
+    "westonruter": {
+      "name": "Weston Ruter",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/134745?v=4&s=200",
+      "website": "https://weston.ruter.net/",
+      "github": "westonruter",
+      "twitter": "westonruter"
     },
     "ydimova": {
       "name": "Yana Dimova",
