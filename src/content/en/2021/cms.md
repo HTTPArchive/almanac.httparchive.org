@@ -573,6 +573,7 @@ Next, let’s look at the amount of WordPress origins with passing Core Web Vita
   caption="WordPress origins passing CWV by geography.",
   description="Bar chart showcasing the percentage of WordPress origins passing Core Web Vitals in each of the 10 geographies with the most websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=642184103&format=interactive",
+  height=579,
   sheets_gid="1013591764",
   sql_file="core_web_vitals_by_geo.sql"
 ) }}
