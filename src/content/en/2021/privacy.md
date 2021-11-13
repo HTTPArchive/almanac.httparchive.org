@@ -521,7 +521,7 @@ With FLoC, instead of assigning unique identifiers to users, the browser determi
 
 Since FLoC was an experiment, it was not widely deployed. Instead, websites could test it by enrolling in an origin trial. We found 62 and 64 websites that tested FLoC across desktop and mobile respectively.
 
-Here is how the first FloC experiment worked: as a user moved around the web, their browser used the FLoC algorithm to work out its _interest cohort_, which was the same for thousands of browsers with a similar recent browsing history. The browser recalculated its cohort periodically, on the user's device, without sharing individual browsing data with the browser vendor or other parties. When working out its cohort, a browser was choosing between cohorts that <a hreflang="en" href="https://www.chromium.org/Home/chromium-privacy/privacy-sandbox/floc#:~:text=web%20pages%20on%20sensitive%20topics">didn't reveal sensitive categories</a>.
+Here is how the first FLoC experiment worked: as a user moved around the web, their browser used the FLoC algorithm to work out its _interest cohort_, which was the same for thousands of browsers with a similar recent browsing history. The browser recalculated its cohort periodically, on the user's device, without sharing individual browsing data with the browser vendor or other parties. When working out its cohort, a browser was choosing between cohorts that <a hreflang="en" href="https://www.chromium.org/Home/chromium-privacy/privacy-sandbox/floc#:~:text=web%20pages%20on%20sensitive%20topics">didn't reveal sensitive categories</a>.
 
 Individual users and websites could opt out of being included in the cohort calculation.
 
