@@ -77,7 +77,9 @@ const generate_images = async (chapter_match) => {
         continue;
       }
 
-      const file_path = `static/images/${year}/${chapter}/${image_file}`;
+      const file_path = (process.platform != 'win32')
+          ? `static/images/${year}/${chapter}/${image_file}`
+          : `static\\images\\${year}\\${chapter}\\${image_file}`;
 
       if (fs.existsSync(file_path)) {
         console.log(`  Skipping: ${image_file} as image already exists`);
