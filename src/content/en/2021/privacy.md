@@ -21,9 +21,9 @@ featured_stat_label_3: Popular sites opting out of FLoC cohorts
 
 ## Introduction
 
-[_"On the Internet, nobody knows you're a dog."_](https://en.wikipedia.org/wiki/On_the_Internet,_nobody_knows_you%27re_a_dog) While it might be true that you could try to remain anonymous to use the Internet as such, it can be quite hard to keep your personal data fully private. A [whole industry](https://crackedlabs.org/en/corporate-surveillance/) is dedicated to tracking users online, to build detailed user profiles for purposes such as targeted advertising, fraud detection, price differentiation, or even credit scoring.
+[_"On the Internet, nobody knows you're a dog."_](https://en.wikipedia.org/wiki/On_the_Internet,_nobody_knows_you%27re_a_dog) While it might be true that you could try to remain anonymous to use the Internet as such, it can be quite hard to keep your personal data fully private.
 
-Sharing geolocation data with websites can prove very useful in day-to-day life, but may also allow companies to <a hreflang="en" href="https://www.nytimes.com/interactive/2019/12/19/opinion/location-tracking-cell-phone.html">see your every movement</a>. Even if a service treats a user's private information diligently, the mere act of storing personal data provides hackers with an opportunity to <a hreflang="en" href="https://haveibeenpwned.com/">breach services and leak millions of personal records online</a>.
+A [whole industry](https://crackedlabs.org/en/corporate-surveillance/) is dedicated to tracking users online, to build detailed user profiles for purposes such as targeted advertising, fraud detection, price differentiation, or even credit scoring. Sharing geolocation data with websites can prove very useful in day-to-day life, but may also allow companies to <a hreflang="en" href="https://www.nytimes.com/interactive/2019/12/19/opinion/location-tracking-cell-phone.html">see your every movement</a>. Even if a service treats a user's private information diligently, the mere act of storing personal data provides hackers with an opportunity to <a hreflang="en" href="https://haveibeenpwned.com/">breach services and leak millions of personal records online</a>.
 
 Recent legislative efforts such as the <a hreflang="en" href="https://ec.europa.eu/info/law/law-topic/data-protection/data-protection-eu">GDPR</a> in Europe, <a hreflang="en" href="https://www.oag.ca.gov/privacy/ccpa">CCPA</a> in California, <a hreflang="pt-br" href="https://www.gov.br/cidadania/pt-br/acesso-a-informacao/lgpd">LGPD</a> in Brazil, or the <a hreflang="en" href="https://www.meity.gov.in/data-protection-framework">PDP Bill</a> in India all strive to require companies to protect personal data and implement privacy by default, including online. Major technology companies such as Google, Facebook and Amazon have already received <a hreflang="en" href="https://en.wikipedia.org/wiki/GDPR_fines_and_notices">massive fines</a> for alleged violations of user privacy.
 
@@ -270,22 +270,9 @@ Geolocation data can also be accessed by websites through a [web browser API](ht
 
 ### Data breaches
 
-Poor security management within a company can have a significant impact on its customers' private data. <a hreflang="en" href="https://haveibeenpwned.com/">HaveIBeenPwned</a> allows users to check whether their email address or phone number was leaked in a data breach. At the time of this writing, HaveIBeenPwned has tracked 562 breaches, leaking 640 million records. In 2020 alone, 40 domains were breached and personal data about millions of users leaked. Breaches that are _sensitive_ in nature refer to the possibility of a negative impact on the user if someone were to find that user's data in the breach. One example of a sensitive breach is "[Carding Mafia](https://www.vice.com/en/article/v7m9jx/credit-card-hacking-forum-gets-hacked-exposing-300000-hackers-accounts)", a platform where stolen credit cards are traded.
+Poor security management within a company can have a significant impact on its customers' private data. <a hreflang="en" href="https://haveibeenpwned.com/">HaveIBeenPwned</a> allows users to check whether their email address or phone number was leaked in a data breach. At the time of this writing, HaveIBeenPwned has tracked 562 breaches, leaking 640 million records. In 2020 alone, 40 services were breached and personal data about millions of users leaked. Three of these breaches were marked as _sensitive_, referring to the possibility of a negative impact on the user if someone were to find that user's data in the breach. One example of a sensitive breach is "[Carding Mafia](https://www.vice.com/en/article/v7m9jx/credit-card-hacking-forum-gets-hacked-exposing-300000-hackers-accounts)", a platform where stolen credit cards are traded.
 
 <p class="note">Note that 40 breaches in the previous year is a lower bound, since many breaches are only discovered, or made public, several months after they have occurred.</p>
-
-
-{{ figure_markup(
-  image="data_breaches_pwned_websites_per_date_and_breach_sensitivity.png",
-  caption="Data breaches in the previous year and their sensitivity",
-  description="Chart that shows the number of domains involved in a breach over the course of the previous year and the sensitivity of the data breach. For Not Sensitive breaches it was 4 in August 2020, 2 in September, 6 in October, 1 in November, 6 in December, 5 in January 2021, 3 in February, 5 in March, 2 in April, 1 in May, 1 in June, and finally 1 in July. For Sensitive breaches it's just 1 in February 2021 and 2 in March 2021.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2029950563&format=interactive",
-  sheets_gid="1435927653",
-  sql_file="data_breaches_pwned_websites_per_date_and_breach_sensitivity.sql"
-  )
-}}
-
-{# TODO - do we have anything to say about this chart? Perhaps that it's a year-round problem and that the recent tail off is probably more indiciative of under reporting as some breaches will not have been discovered and/or made public yet? If we don't have anything to say then should we just drop the chart? #}
 
 {{ figure_markup(
   image="data_breaches_pwned_accounts_per_class.png",
@@ -297,9 +284,7 @@ Poor security management within a company can have a significant impact on its c
   )
 }}
 
-{# TODO - are email addresses _always_ leaked? Or only in HaveIBeenPwned's dataset since that is the primary key they use? #}
-
-The email addresses of users are leaked in _every_ breach. This is already a huge privacy risk, since many users employ their full name or credentials to set up their email address. Furthermore, a lot of other highly sensitive information is leaked in some breaches, such as users' genders, bank account numbers and even full physical addresses.
+Every data breach tracked by HaveIBeenPwned leaks email addresses, since this is how users query whether their data was breached. Leaked email addresses are already a huge privacy risk, since many users employ their full name or credentials to set up their email address. Furthermore, a lot of other highly sensitive information is leaked in some breaches, such as users' genders, bank account numbers and even full physical addresses.
 
 ## How websites protect your sensitive data
 
@@ -462,8 +447,6 @@ Above, we show the distribution of the usage of both versions of TCF and of USP.
 }}
 
 In the 10 most popular consent management platforms that are part of the framework, at the top we find <a hreflang="en" href="https://www.quantcast.com/products/choice-consent-management-platform/">Quantcast</a> with 0.34% on mobile. Other popular solutions are <a hreflang="en" href="https://www.didomi.io/">Didomi</a> with 0.24%, and Wikia, with 0.30%.
-
-{# TODO why no link for Wikia? #}
 
 In the USP framework, the website's and user's privacy settings are encoded in a <a hreflang="en" href="https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md">_privacy string_</a>.
 
