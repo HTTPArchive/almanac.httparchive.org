@@ -147,7 +147,12 @@ On weekends the split between mobile and desktop traffic remains more stable.
 
 This all suggests that people who have the choice between different devices are more likely to use mobile ones in their personal time.
 
- Cloudflare also released a great study, [ Where is mobile traffic the most and least popular?](https://blog.cloudflare.com/where-mobile-traffic-more-and-less-popular/) Like the Akamai data, this  study shows a much closer split between mobile and desktop devices than the CrUX dataset. In the 30 days leading up to October 4th, 52% of traffic was mobile.
+ Cloudflare also released a great study. Like the Akamai data, this  study shows a much closer split between mobile and desktop devices than the CrUX dataset. In the 30 days leading up to October 4th, 52% of traffic was mobile.
+
+ <figure>
+<blockquote>We looked for, in the past month, the country with the highest proportion of mobile Internet traffic. And the answer is... Sudan, with 83% of Internet traffic is done using mobile devices — actually it’s a tie with Yemen.</blockquote>
+<figcaption>— João Tomé, <cite><a hreflang="en" href="https://blog.cloudflare.com/where-mobile-traffic-more-and-less-popular/">Where is mobile traffic the most and least popular?</a></cite></figcaption>
+</figure>
 
 [Cloudflare's Radar](https://radar.cloudflare.com/) trend reports allow them to segment traffic by geographic region, and it's interesting to see the variations regionally between the split of mobile vs. desktop, from Sudan and Yemen tying at 83% usage, compared to the Seychelles at just 29% mobile.
 
