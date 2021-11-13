@@ -42,7 +42,7 @@ We’ve used a few different data sources in this chapter:
 * HTTP archive
 * Lighthouse
 * Wappalyzer
-* [Akamai](https://docs.google.com/spreadsheets/d/1UFWPs2yKlFASa5sVxFZ1ox2NRzgu9goXMWyRoyKChnY/edit?usp=sharing)
+* [Akamai](https://twitter.com/paulcalvano/status/1454866401781587969)
 
 It is worth noting that HTTP Archive and Lighthouse data is limited to the data identified from websites’ home pages only, and not site-wide.
 
@@ -68,7 +68,16 @@ What percentage of traffic comes from  mobile devices vs. desktop? Predicting th
 
 #### Traffic Use by Popularity
 
-New this year, the CrUX dataset allows us to query the most popular sites ([ranked by magnitude](https://developers.google.com/web/updates/2021/03/crux-rank-magnitude),  by traffic recorded to these origins). Across all the 817,4923 origins in the July 2021 data **77.35%** received more mobile traffic than desktop traffic.
+New this year, the CrUX dataset allows us to query the most popular sites ([ranked by magnitude](https://developers.google.com/web/updates/2021/03/crux-rank-magnitude),  by traffic recorded to th%ese origins).
+
+{{ figure_markup(
+  caption="Percent of the  817,4923 origins in the July 2021 data received more mobile traffic than desktop traffic.",
+  content="77.35%",
+  classes="big-number",
+  sheets_gid="601797488",
+  sql_file="mobile_greater_than_desktop.sql"
+)
+}}
 
 {{ figure_markup(
   image="mobile-web-more-mobile-than-desktop-traffic.png",
