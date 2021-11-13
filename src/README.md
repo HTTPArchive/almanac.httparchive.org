@@ -55,6 +55,8 @@ To stop the server run the following:
 npm run stop
 ```
 
+## More details on the `npm run start` script
+
 The `npm run start` is a wrapper script which does the following steps:
 
 - `pip install -r requirements.txt` - Installs any python requirements
@@ -62,7 +64,7 @@ The `npm run start` is a wrapper script which does the following steps:
 - `npm run generate` - to convert all the chapters from markdown to HTML
 - `npm run pytest` - to test the python code
 - `npm run test` - to test all the URLs
-- `npm run watch &` - run run the chapter watcher to regenerate the chapter if you edit and save.
+- `npm run watch &` - run run the chapter watcher to automatically regenerate the chapter if you edit and save.
 - `python main.py` - we kill and webserver and restart it in debug mode so if you change any Python code it will auto restart.
 
 These individual steps are listed in more detail below, but that one `npm run start` script should be enough for most people to get started.
@@ -330,7 +332,7 @@ You must first do some setup locally:
 gcloud init
 ```
 
-## Deploying staged versions of the site
+### Deploying staged versions of the site
 
 It's sometimes useful to deploy a staged version of the site for others to see this.
 
@@ -338,17 +340,17 @@ It's sometimes useful to deploy a staged version of the site for others to see t
 npm run stage
 ```
 
-You can redeploy the same staged url by passing it in with the `-s` paramter (note you also need the `--` separater to differentiate these script params from npm params):
+You can redeploy the same staged url by passing it in with the `-s` parameter (note you also need the `--` separater to differentiate these script params from npm params):
 
 ```
 npm run stage -- -s 20211111t105151
 ```
 
-## Deploying production changes
-
-_Make sure you have updated the timestamps and generated the ebooks PDFs first in the main branch, by running the "Predeploy script" GitHub Action_
+### Deploying production changes
 
 To deploy the site to production run the following:
+
+_Make sure you have updated the timestamps and generated the ebooks PDFs first in the main branch, by running the "Predeploy script" GitHub Action_
 
 ```
 npm run deploy
@@ -366,6 +368,7 @@ The deploy script will do the following:
 - Generate a `deploy.zip` file of what has been deployed
 - Deploy to GCP
 - Push changes to `production` branch on GitHub
+- Switch you back to the `main` branch.
 - Ask you to update the release section of GitHub
 
 Browse the website in production to verify that the new changes have taken effect. Note we have 10 minute caching so add random query params to pages to ensure you get latest version.
