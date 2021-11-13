@@ -21,7 +21,7 @@ unedited: true
 
 ## Introduction
 
-Performance is important for the user experience. Slow-to-load and slow-to-respond websites frustrate users and cause lost conversions. This is the first year that <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> have contributed to Google search rankings. As such, we've seen greater interest in improving website performance which is great news for users.
+Performance is important for the user experience. Slow-to-load and slow-to-respond websites frustrate users and cause lost conversions. This is the first year that the <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> have contributed to Google search rankings. As such, we've seen greater interest in improving website performance which is great news for users.
 
 <i>What are our top takeaways from this year's report?</i> First, we still have a long way to go in providing a good user experience. For example, faster networks and devices have not yet reached the point where we can ignore how much JavaScript we deliver to a site; and, we may never get there. Second, sometimes we misuse new features for performance, resulting in poorer performance. Third, we need better metrics for measuring interactivity, and those are on the way. And fourth, CMS- and framework-level work on performance can significantly impact user experience for the top 10M websites.
 
@@ -47,7 +47,7 @@ Read the full [methodology](./methodology) for the Web Almanac to learn more.
 
 ## High-Level Performance: Core Web Vitals
 
-Before we dive into the individual metrics, let's take a look at combined performance for the <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> (CWV). The Core Web Vitals (LCP, CLS, FID) are a set of performance metrics focused on user experience. They focus on loading, interactivity, and visual stability. Web performance is notorious for an alphabet soup of metrics, but the community is coalescing on this framework.
+Before we dive into the individual metrics, let's take a look at combined performance for <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> (CWV). The Core Web Vitals (LCP, CLS, FID) are a set of performance metrics focused on user experience. They focus on loading, interactivity, and visual stability. Web performance is notorious for an alphabet soup of metrics, but the community is coalescing on this framework.
 
 This section focuses on websites that reached the "good" threshold on all three CWV metrics to understand how the web is performing at a high level. In the Analysis by Metric section, we'll cover the same charts by each metric in detail, plus more metrics not in the CWV.
 
