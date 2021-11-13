@@ -1203,18 +1203,20 @@ A more healthy 32% of mobile page loads including images use the srcset attribut
 
 Deferring, or lazy loading,  images that aren't in the initial viewport is a good strategy to help resources be focused on loading things that are visible. The native lazy-load attribute, supported in Chrome, Opera, and from September 2021 Firefox for Android (source: [caniuse.com](https://caniuse.com/loading-lazy-attr)) allows this to happen without JavaScript work-arounds.
 
+
+This is a big jump up from just 4.1% in 2020.
+
+
+Looking at the http archive's [Native Image Lazy Loading Report](https://httparchive.org/reports/state-of-images#imgLazy), uptake of using the attribute on the `<img>` tag specifically shows the same, impressive growth.
+
 {{ figure_markup(
-   image="mobile-web-native-lazy-loading.png",
-   caption="Usage of Loading Attribute",
-   description="Bar chart showing the percentage of mobile and desktop pages using the loading='lazy' attribute",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=2024607517&format=interactive",
-   sheets_gid="1889147690",
-  sql_file="lazy_loading_usage.sql"
+   image="mobile-web-native-lazy-loading-over-time.png",
+   caption="Usage of Lazy Loading Attribute Overtime",
+   description="Chart from http archive data showing the percentage of mobile and desktop pages using the loading='lazy' attribute over time",
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=62374244&format=interactive",
+   sheets_gid="1889147690"
    )
 }}
-
-18.4% of mobile page loads that contained images used loading="lazy", a big jump up from just 4.1% in 2020.
-
 
 #### Image conclusions
 
