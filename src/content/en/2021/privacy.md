@@ -242,7 +242,7 @@ On 7.23% of desktop websites, and 5.33% of mobile websites the `enumerateDevices
 
 ### Geolocation-as-a-service
 
-Geolocations services provide GPS and other location data of the user (such as [IP address](https://developer.mozilla.org/en-US/docs/Glossary/IP_Address)) and can be used by trackers to provide more relevant content to the user among other things. Therefore, we analyze the use of "geolocation-as-a-service" technologies on websites, based on libraries detected through [Wappalyzer](./methodology#wappalyzer).
+Geolocation services provide GPS and other location data (such as [IP address](https://developer.mozilla.org/en-US/docs/Glossary/IP_Address)) of the user and can be used by trackers to provide more relevant content to the user among other things. Therefore, we analyze the use of "geolocation-as-a-service" technologies on websites, based on libraries detected through [Wappalyzer](./methodology#wappalyzer).
 
 {{ figure_markup(
   image="nb_websites_using_each_geolocation.png",
@@ -254,7 +254,7 @@ Geolocations services provide GPS and other location data of the user (such as [
   )
 }}
 
-We find that the most popular service, <a hreflang="en" href="https://www.ipify.org/">ipify</a>, is used on 0.09% of desktop websites and 0.07% of mobile websites. So, it would appear that few websites utilize geolocation services.
+We find that the most popular service, <a hreflang="en" href="https://www.ipify.org/">ipify</a>, is used on 0.09% of desktop websites and 0.07% of mobile websites. So, it would appear that few websites use geolocation services.
 
 {{ figure_markup(
   image="nb_websites_with_geolocation_blink_usage.png",
@@ -470,7 +470,7 @@ In the USP framework, the website's and user's privacy settings are encoded in a
 {{ figure_markup(
   image="most_common_strings_for_iab_usp.png",
   caption="Percentage of websites using IAB US privacy strings",
-  description="Bar chart showing the percentage of websites that use each privacy string for IAB US' consent framework. `1---` is used by 0.87% of desktop websites and 0.80% of mobile websites, `1YNY` is 0.72% and 0.64% respectively, `1YNN` is 0.07% and 0.06%, and blank is 0.01% and 0.00%.",
+  description="Bar chart showing the percentage of websites that use each privacy string for IAB's USP consent framework. `1---` is used by 0.87% of desktop websites and 0.80% of mobile websites, `1YNY` is 0.72% and 0.64% respectively, `1YNN` is 0.07% and 0.06%, and blank is 0.01% and 0.00%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2039463193&format=interactive",
   sheets_gid="1524219137",
   sql_file="most_common_strings_for_iab_usp.sql",
