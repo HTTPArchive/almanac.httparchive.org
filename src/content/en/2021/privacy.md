@@ -89,7 +89,7 @@ The main technical approach to store and retrieve cross-site user identifiers is
 {{ figure_markup(
   image="top100_domains_that_set_cookies_via_response_header.png",
   caption="Top 10 domains setting cookies from header.",
-  description="Chart showing the percentage of websites that include a cookie set via the response header for the 10 most popular tracking domains setting cookies. `doubleclick.net` is used on 30.49% of desktop pages and 28.72% of mobile pages, `facebook.com` on 23.075 and 21.43% respectively, `youtube.com` on 10.02% and 8.83%, `google.com` on 8.62% and 8.45%, `yandex.ru` on 4.42% and 5.17%, `pubmatic.com` on 3.82% and 4.73%, `rlcdn.com` on 4.01% and 3.99%, `openx.net` on 3.57% and 4.42%, `adsrvr.org` on 4.00% and 3.90%, and finally `yahoo.com` on 3.80% and 3.70%.",
+  description="Chart showing the percentage of websites that include a cookie set via the response header for the 10 most popular tracking domains setting cookies. `doubleclick.net` is used on 30.49% of desktop pages and 28.72% of mobile pages, `facebook.com` on 23.07 and 21.43% respectively, `youtube.com` on 10.02% and 8.83%, `google.com` on 8.62% and 8.45%, `yandex.ru` on 4.42% and 5.17%, `pubmatic.com` on 3.82% and 4.73%, `rlcdn.com` on 4.01% and 3.99%, `openx.net` on 3.57% and 4.42%, `adsrvr.org` on 4.00% and 3.90%, and finally `yahoo.com` on 3.80% and 3.70%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=162165227&format=interactive",
   sheets_gid="1256177287",
   sql_file="top100_domains_that_set_cookies_via_response_header.sql",
@@ -218,7 +218,7 @@ Sensors can be useful to make a website more interactive but could also be abuse
 {{ figure_markup(
   image="nb_websites_with_device_sensor_events.png",
   caption="5 most used sensor events",
-  description="Bar chart showing the most widely accessed sensor events, based on the use of JavaScript listeners. `deviceOrientation` is found on 3.32% of desktop sites and 3.23% of mobile, `deviceReady` on 1.12% and 1.23%, `devicemotion` on 0.65% and 0.66%, `deviceChange` on 0.03% and 0.02%, and finally `deviceproximity` on 0.03% and 0.02%.",
+  description="Bar chart showing the most widely accessed sensor events, based on the use of JavaScript listeners. `deviceOrientation` is found on 3.32% of desktop sites and 3.23% of mobile sites, `deviceReady` on 1.12% and 1.23%, `devicemotion` on 0.65% and 0.66%, `deviceChange` on 0.03% and 0.02%, and finally `deviceproximity` on 0.03% and 0.02%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=40988621&format=interactive",
   sheets_gid="1513080238",
   sql_file="nb_websites_with_device_sensor_events.sql"
@@ -278,7 +278,7 @@ Poor security management within a company can have a significant impact on its c
 {{ figure_markup(
   image="data_breaches_pwned_websites_per_date_and_breach_sensitivity.png",
   caption="Data breaches in the previous year and their sensitivity",
-  description="Chart that shows the number of domains involved in a breach over the course of the previous year and the sensitivity of the data breach. For Not Sensitive breaches it was 4 in August 2020, 2 in September, 6 in October, 1 in November, 6 in December, 5 in January 2021, 3 in February, 5 in March, 2 in April 1 in May, 1 in June, and finally 1 in July. For Sensitive breaches it's just 1 in February 2021 and 2 in March 2021.",
+  description="Chart that shows the number of domains involved in a breach over the course of the previous year and the sensitivity of the data breach. For Not Sensitive breaches it was 4 in August 2020, 2 in September, 6 in October, 1 in November, 6 in December, 5 in January 2021, 3 in February, 5 in March, 2 in April, 1 in May, 1 in June, and finally 1 in July. For Sensitive breaches it's just 1 in February 2021 and 2 in March 2021.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2029950563&format=interactive",
   sheets_gid="1435927653",
   sql_file="data_breaches_pwned_websites_per_date_and_breach_sensitivity.sql"
@@ -312,7 +312,7 @@ The <a hreflang="en" href="https://www.w3.org/TR/permissions-policy-1/">Permissi
 {{ figure_markup(
   image="most_common_featurepolicy_permissionspolicy_directives.png",
   caption="Number of websites accessing a feature policy directive",
-  description="Bar chart showing the most common directives used to define the feature policy and the number of websites that are using them. `geolocation` is used by 2,222 of desktop sites and 2,323 of mobile sites, `microphone` by 2,199 and 2,310 respectively, `camera` by 2,082 and 2,197, `payment` by 1,748 and 1,879, `usb` by 1,354 and 1,492, `gyroscope` by 1,145 and 1,025, `magnetometer` by 1,141 and 1,024, `interest-cohort` by 1,037 and 1,019, `fullscreen` by 940 and 873, `accelerometer` by 892 and 852.",
+  description="Bar chart showing the most common directives used to define the feature policy and the number of websites that are using them. `geolocation` is used by 2,222 desktop sites and 2,323 mobile sites, `microphone` by 2,199 and 2,310 respectively, `camera` by 2,082 and 2,197, `payment` by 1,748 and 1,879, `usb` by 1,354 and 1,492, `gyroscope` by 1,145 and 1,025, `magnetometer` by 1,141 and 1,024, `interest-cohort` by 1,037 and 1,019, `fullscreen` by 940 and 873, `accelerometer` by 892 and 852.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=820718961&format=interactive",
   sheets_gid="899874026",
   sql_file="most_common_featurepolicy_permissionspolicy_directives.sql",
@@ -328,7 +328,7 @@ To gain a deeper understanding of how the directives are used, we looked at the 
 {{ figure_markup(
   image="most_common_featurepolicy_permissionspolicy_directive_values.png",
   caption="Values used for the most popular feature policy directives",
-  description="Bar chart showing the distribution of the values assigned to the 3 most popular directives for the feature policy. `microphone` is set to `self` for 0.08% of mobiles sites, it is set to `none` for 0.49% of sites, and is set to `*` for 0.03% of sites. `geolocation` is set to `self` for 0.17% of mobiles sites, it is set to `none` for 0.34% of sites, and is set to `*` for 0.05% of sites. `camera` is set to `self` for 0.09% of mobiles sites, it is set to `none` for 0.46% of sites, and is set to `*` for 0.03% of sites.",
+  description="Bar chart showing the distribution of the values assigned to the 3 most popular directives for the feature policy. `microphone` is set to `self` for 0.08% of mobile sites, it is set to `none` for 0.49% of sites, and is set to `*` for 0.03% of sites. `geolocation` is set to `self` for 0.17% of mobile sites, it is set to `none` for 0.34% of sites, and is set to `*` for 0.05% of sites. `camera` is set to `self` for 0.09% of mobile sites, it is set to `none` for 0.46% of sites, and is set to `*` for 0.03% of sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=280518522&format=interactive",
   sheets_gid="436267650",
   sql_file="most_common_featurepolicy_permissionspolicy_directive_values.sql"
@@ -409,7 +409,7 @@ Therefore, websites turned to the use of cookie consent banners, privacy policie
 {{ figure_markup(
   image="nb_websites_with_cmp.png",
   caption="Percentage of websites that use a Consent Management Platform",
-  description="Bar chart showing the percentage of websites that use a third-party library for consent management. 7.10% of desktop sites and 6.97% of mobile sites us a CMP.",
+  description="Bar chart showing the percentage of websites that use a third-party library for consent management. 7.10% of desktop sites and 6.97% of mobile sites use a CMP.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=246947280&format=interactive",
   sheets_gid="147308043",
   sql_file="nb_websites_with_privacy_service.sql"
@@ -494,7 +494,7 @@ Nowadays, most websites have a privacy policy, where users can learn about the t
 )
 }}
 
-By looking for keywords such as "privacy policy", "cookie policy", and more, in a <a hreflang="en" href="https://github.com/RUB-SysSec/we-value-your-privacy/blob/master/privacy_wording.json">number of languages</a>, we see that almost 39.70% of mobiles websites, and 43.02% of desktop sites refer to some sort of privacy policy. While some websites are not required to have such a policy, many websites handle personal data and should therefore have a privacy policy to be fully transparent towards their users.
+By looking for keywords such as "privacy policy", "cookie policy", and more, in a <a hreflang="en" href="https://github.com/RUB-SysSec/we-value-your-privacy/blob/master/privacy_wording.json">number of languages</a>, we see that almost 39.70% of mobile websites, and 43.02% of desktop sites refer to some sort of privacy policy. While some websites are not required to have such a policy, many websites handle personal data and should therefore have a privacy policy to be fully transparent towards their users.
 
 ### Do Not Track - Global Privacy Control
 
