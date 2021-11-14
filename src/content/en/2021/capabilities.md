@@ -376,7 +376,15 @@ sql_file="fugu.sql"
 )
 }}
 
-The capability is supported by Chromium browsers starting from version 67 (<a hreflang="en" href="https://caniuse.com/mdn-api_sensor">current browser support for the Generic Sensor API</a>). The relative orientation sensor is used by 824 desktop and 831 mobile sites, the linear acceleration sensor by 257 desktop and 237 mobile sites, and the gyroscope by 36 desktop and 22 mobile sites. An example application that uses all three of them is <a hreflang="en" href="https://obs.ninja/">VDO.Ninja</a>, the former OBS Ninja. This software allows you to remotely connect with video broadcasting software such as OBS. The app allows the connected broadcasting software to read sensor data from the device. For example, to capture a smartphone's movements when streaming virtual reality content.
+The capability is supported by Chromium browsers starting from version 67 (<a hreflang="en" href="https://caniuse.com/mdn-api_sensor">current browser support for the Generic Sensor API</a>). The relative orientation sensor is used by 824 desktop and 831 mobile sites, the linear acceleration sensor by 257 desktop and 237 mobile sites, and the gyroscope by 36 desktop and 22 mobile sites. An example application that uses all three of them is <a hreflang="en" href="https://obs.ninja/">VDO.Ninja</a>, the former OBS Ninja. This software allows you to remotely connect with video broadcasting software such as OBS. The app allows the connected broadcasting software to read sensor data from the device. For example, to capture a smartphone's movements when streaming virtual reality content. Fugu contributor Intel provides additional <a hreflang="en" href="https://intel.github.io/generic-sensor-demos/">demos for the Generic Sensor API</a>.
+
+{{ figure_markup(
+image="generic-sensor-api.png",
+caption='The Generic Sensor API can be used to rotate 3D models according to the orientation of the device',
+description='Two screenshots of a cell phone showing a 3D model. In the second screenshot, the 3D model has been rotated because the orientation of the device has changed.',
+width=808,
+height=822
+) }}
 
 ## Sites using the most capabilities
 The analysis also identified the websites using the most capabilities from the HTTP Archive data set. The detection script is capable of identifying 30 Fugu APIs in total.
