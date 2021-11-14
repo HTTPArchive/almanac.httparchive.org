@@ -413,7 +413,7 @@ The analysis also identified the websites using the most capabilities from the H
 {{ figure_markup(
 image="fugu-podium.png",
 caption='The three websites that use the most Fugu APIs',
-description='The image shows a winner's podium with screenshots of the three websites that use the most Fugu APIs.',
+description="The image shows a winner's podium with screenshots of the three websites that use the most Fugu APIs.'"
 width=1050,
 height=442
 ) }}
