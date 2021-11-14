@@ -113,7 +113,6 @@
           "chapter_number": "14",
           "title": "Capabilities",
           "slug": "capabilities",
-          "todo": "true",
           "hero_dir": "2020"
         },
         {
@@ -287,6 +286,16 @@
       "github": "tunetheweb",
       "linkedin": "tunetheweb",
       "twitter": "tunetheweb"
+    },
+    "christianliebel": {
+      "name": "Christian Liebel",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6698344?v=4&s=200",
+      "website": "https://christianliebel.com",
+      "github": "christianliebel",
+      "twitter": "christianliebel"
     },
     "obto": {
       "name": "David Fox",
@@ -549,6 +558,16 @@
       "website": "https://simonhearne.com",
       "github": "simonhearne",
       "twitter": "simonhearne"
+    },
+    "tomayac": {
+      "name": "Thomas Steiner",
+      "teams": [
+        "analysts",
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/145676?v=4&s=200",
+      "website": "https://blog.tomayac.com/",
+      "github": "tomayac"
     },
     "victorlep": {
       "name": "Victor Le Pochat",
