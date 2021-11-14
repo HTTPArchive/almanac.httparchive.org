@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Markup
 description: TODO
-authors: []
+authors: [AlexLakatos]
 reviewers: []
 analysts: []
 editors: []
