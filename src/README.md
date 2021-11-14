@@ -357,7 +357,7 @@ npm run deploy
 ```
 
 The deploy script will do the following:
-- Ask you to confirm you've ru the pre-deploy script via GitHub Actions
+- Ask you to confirm you've run the pre-deploy script via GitHub Actions
 - Switch to the production branch
 - Merge changes from main
 - Do a clean install
