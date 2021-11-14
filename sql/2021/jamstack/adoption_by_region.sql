@@ -1195,6 +1195,7 @@ var countries = {
 };
 return countries[country_code][geo];
 ''';
+
 WITH geo_summary AS (
   SELECT
     GET_GEO(country_code, 'region') AS region,
@@ -1211,6 +1212,7 @@ WITH geo_summary AS (
     # it's not necessary to look at the 202107 dataset.
     yyyymm = 202105
 )
+
 SELECT
   *
 FROM (
