@@ -581,6 +581,7 @@ header .cta {
 
 .search-button svg {
   fill: #000;
+  color: #000
 }
 
 .table-of-contents-switcher:hover,
