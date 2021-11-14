@@ -11,11 +11,11 @@ results: https://docs.google.com/spreadsheets/d/1b4moteB9EiLYkH1Ln9qfi1tnU-E4N2U
 christianliebel_bio: Christian Liebel is a consultant at <a hreflang="en" href="https://thinktecture.com">Thinktecture</a>, supporting clients from various business areas in implementing great web applications. He is a Microsoft MVP for Developer Technologies, Google GDE for Web/Capabilities and Angular, and participates in the W3C Web Applications Working Group.
 featured_quote: Capabilities are new web platform APIs that unlock entirely new use cases for web applications.
 featured_stat_1: 9%
-featured_stat_label_1: Desktop web sites use the Web Share API
+featured_stat_label_1: Desktop web sites using the _Web Share API_
 featured_stat_2: 8.25%
-featured_stat_label_2: Mobile sites use the Async Clipboard API
+featured_stat_label_2: Mobile sites using the _Async Clipboard API_
 featured_stat_3: 11
-featured_stat_label_3: Mobile sites use Declarative Link Capturing
+featured_stat_label_3: Mobile sites using _Declarative Link Capturing_
 ---
 
 ## Introduction
@@ -412,12 +412,12 @@ height=822
 ) }}
 
 ## Sites using the most capabilities
-The analysis also identified the websites using the most capabilities from the HTTP Archive data set. The detection script is capable of identifying 30 Fugu APIs in total. So let's give an award to the websites that use the most Fugu APIs. The excitement is building!
+The analysis also identified the websites using the most capabilities from the HTTP Archive data set. The detection script is capable of identifying 30 Fugu APIs in total. So, let's give an award to the websites that use the most Fugu APIs. The excitement is building!
 
 {{ figure_markup(
 image="fugu-podium.png",
 caption='The three websites that use the most Fugu APIs',
-description="The image shows a winner's podium with screenshots of the three websites that use the most Fugu APIs.'",
+description="The image shows a winner's podium with screenshots of the three websites that use the most Fugu APIs.",
 width=1050,
 height=442
 ) }}
@@ -434,7 +434,7 @@ The results also include sites that aren't proactively using the APIs. For examp
 ## Conclusion
 Capabilities help move the web forward by unlocking more and more use cases for developers. As this chapter shows, developers use the new web platform APIs to build powerful applications. In contrast to their platform-specific counterparts, those applications don't necessarily need to be installed to the system and don't require any additional third-party runtimes or plugins to work. They run on any platform that can run a powerful browser.
 
-One example of this concept working is Visual Studio Code. This application has always been web-based, but it still relied on platform-specific application wrappers like Electron. Thanks to capabilities like the File System Access API, Microsoft was able to release the application as a browser application (<a hreflang="en" href="https://vscode.dev">vscode.dev</a>) in October 2021. Almost all features work here, except debugging or terminal access, since there is no capability for this (yet!).
+One example of this concept working is Visual Studio Code. This application has always been web-based, but it still relied on platform-specific application wrappers like Electron. Thanks to capabilities like the File System Access API, Microsoft was able to release the application as a browser application (<a hreflang="en" href="https://vscode.dev">vscode.dev</a>) in October 2021. Almost all features work here, except debugging or terminal access since there is no capability for this (yet!).
 
 Another example is <a hreflang="en" href="https://photoshop.adobe.com">Adobe Photoshop</a>, which was also <a hreflang="en" href="https://web.dev/ps-on-the-web/">released as a web application</a> in October 2021. Photoshop uses several of the capabilities presented here, as well as WebAssembly, to migrate existing code to the web. Its vector-based counterpart Illustrator is currently available as a closed beta and will be released at a later date. While the first editions will still have a limited feature set, Adobe has already announced that it won't stop there, but that <a hreflang="en" href="https://web.dev/ps-on-the-web/#what's-next-for-adobe-on-the-web">further expansion to the web is planned</a>.
 
