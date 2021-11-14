@@ -23,15 +23,12 @@ Capabilities are new web platform APIs that unlock entirely new use cases for we
 
 ### Project Fugu
 
-{{ figure_markup(
-image="fugu.svg",
-caption='The puffer fish is Project Fugu\'s mascot (license: <a hreflang="en" href="https://github.com/googlefonts/noto-emoji/blob/main/LICENSE">Apache License 2.0</a>)',
-description='An illustration of a puffer fish.',
-width=128,
-height=128
-) }}
-
 The <a hreflang="en" href="https://www.chromium.org/teams/web-capabilities-fugu">Capabilities Project</a> (codename Fugu) is a joint effort by Microsoft, Intel, Google, and other Chromium contributors. It tries to bridge the gap between platform-specific applications and web apps by designing and implementing new powerful web platform APIs in a secure and privacy-preserving manner. As capabilities unlock more and more use cases, they lay the path for entire new application categories to finally make the shift to the web (e.g., IDEs, image editors, or office applications).
+
+<figure>
+<blockquote>Project Fugu 🐡 is an effort to close gaps in the web's capabilities enabling new classes of applications to run on the web. […] APIs that Project Fugu is delivering enable new experiences on the web while preserving the web's core benefits of security, low-friction, and cross-platform delivery. All Project Fugu API proposals are made in the open and on the standards track.</blockquote>
+<figcaption>— <cite><a hreflang="en" href="https://www.chromium.org/teams/web-capabilities-fugu">Web Capabilities Team</a></cite></figcaption>
+</figure>
 
 Over the last two years, the focus for the Fugu team has been on capabilities for desktop productivity applications and hardware-related APIs. This chapter briefly introduces several new capabilities and analyzes how many different desktop and mobile websites use them. As capabilities are particularly interesting for app-like websites, their relative usage is comparatively low. This is why absolute website numbers are used in this chapter. For each capability, there will be a demo website or app that makes use of it.
 
