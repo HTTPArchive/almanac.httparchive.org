@@ -86,6 +86,8 @@ sql_file="fugu.sql"
 
 With 560,359 (8.91%) desktop and 618,062 (8.25%) mobile sites, the Async Clipboard API (`writeText()` method) is one of the most used Fugu APIs. The `write()` method is used on 1,180 desktop and 1,227 mobile sites. As an example, the commercial website <a hreflang="en" href="https://clippingmagic.com/">Clipping Magic</a> allows you to remove the background of an image with the help of an AI algorithm. Just paste an image from the clipboard, and the website will remove its background.
 
+The high usage of this API is probably related to a script that is included with embedded YouTube videos. The `writeText()` method is called when the user clicks the "copy link" button in the video player.
+
 {{ figure_markup(
 image="async-clipboard-api.png",
 caption='Clipping Magic uses artificial intelligence to remove the background of images pasted via the Async Clipboard API',
@@ -191,6 +193,8 @@ sql_file="fugu.sql"
 }}
 
 With 566,049 (9.00%) desktop and 642,507 (8.58%) mobile sites, the Web Share API is the most used Fugu API. For example, the <a hreflang="en" href="https://beta.paintz.app/">beta version of the PaintZ app</a> allows you to share a drawing with another locally installed application via the save dialog.
+
+The high usage of this API is probably related to a script that is included with embedded YouTube videos. If the Web Share API is available on the device, it is executed when the user clicks the "Share" button in the video player.
 
 {{ figure_markup(
 image="web-share-api.png",
@@ -413,7 +417,7 @@ The analysis also identified the websites using the most capabilities from the H
 {{ figure_markup(
 image="fugu-podium.png",
 caption='The three websites that use the most Fugu APIs',
-description="The image shows a winner's podium with screenshots of the three websites that use the most Fugu APIs.'"
+description="The image shows a winner's podium with screenshots of the three websites that use the most Fugu APIs.'",
 width=1050,
 height=442
 ) }}
