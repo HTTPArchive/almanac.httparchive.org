@@ -371,7 +371,7 @@ The deploy script will do the following:
 - Switch you back to the `main` branch.
 - Ask you to update the release section of GitHub
 
-Browse the website in production to verify that the new changes have taken effect. Note we have 10 minute caching so add random query params to pages to ensure you get latest version.
+Browse the website in production to verify that the new changes have taken effect. Note we have 10 minute caching so add random query params to pages to ensure you get the latest version.
 
 ## Developing in Docker
 
