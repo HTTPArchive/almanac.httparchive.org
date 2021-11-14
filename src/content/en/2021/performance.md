@@ -21,11 +21,11 @@ unedited: true
 
 ## Introduction
 
-Performance is important for user experience. Slow-loading and slow-to-respond websites frustrate users and cause lost conversions. This is the first year that the <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> have contributed to Google search rankings. As such, we've seen greater interest in  improving website performance which is great news for users.
+Performance is important for the user experience. Slow-to-load and slow-to-respond websites frustrate users and cause lost conversions. This is the first year that the <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> have contributed to Google search rankings. As such, we've seen greater interest in improving website performance which is great news for users.
 
-What are our top takeaways from this year's report? First, we still have a long way to go in providing a good user experience. For example, faster networks and devices have not yet reached the point where we can ignore how much JavaScript we deliver to a site. And, we may never get there. Second, sometimes we misuse new features for performance resulting in poorer performance. Additionally, we need better metrics for measuring interactivity, and those are on the way. Finally, CMS- and framework-level work on performance can significantly impact user experience for the top 10M websites.
+<i>What are our top takeaways from this year's report?</i> First, we still have a long way to go in providing a good user experience. For example, faster networks and devices have not yet reached the point where we can ignore how much JavaScript we deliver to a site; and, we may never get there. Second, sometimes we misuse new features for performance, resulting in poorer performance. Third, we need better metrics for measuring interactivity, and those are on the way. And fourth, CMS- and framework-level work on performance can significantly impact user experience for the top 10M websites.
 
-What's new this year? We're excited to share performance data by traffic ranking for the first time. We also have all the core performance metrics from previous years. Finally, we added a deeper dive into the Largest Contentful Paint (LCP) element.
+<i>What's new this year?</i> We're excited to share performance data by traffic ranking for the first time. We also have all the core performance metrics from previous years. Finally, we added a deeper dive into the Largest Contentful Paint (LCP) element.
 
 ### Notes on Methodology
 
@@ -47,7 +47,7 @@ Read the full [methodology](./methodology) for the Web Almanac to learn more.
 
 ## High-Level Performance: Core Web Vitals
 
-Before we dive into the individual metrics, let's take a look at combined performance for the <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> (CWV). The Core Web Vitals (LCP, CLS, FID) are a set of performance metrics focused on user experience. They focus on loading, interactivity, and visual stability. Web performance is notorious for an alphabet soup of metrics, but the community is coalescing on this framework.
+Before we dive into the individual metrics, let's take a look at combined performance for <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> (CWV). The Core Web Vitals (LCP, CLS, FID) are a set of performance metrics focused on user experience. They focus on loading, interactivity, and visual stability. Web performance is notorious for an alphabet soup of metrics, but the community is coalescing on this framework.
 
 This section focuses on websites that reached the "good" threshold on all three CWV metrics to understand how the web is performing at a high level. In the Analysis by Metric section, we'll cover the same charts by each metric in detail, plus more metrics not in the CWV.
 
@@ -220,7 +220,7 @@ One more possibility has to do with CMS adoption. The [CMS Chapter](./cms) shows
   caption="CMS adoption by rank",
   description="Bar chart showing percent of websites using a CMS for each ranking category. On mobile, the numbers are 7% of websites in the top 1,000, 15% in the top 10,000, 20% in the top 100,000, 29% in the top 1,000,000, and 42% in the top 10,000,000.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=409766380&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="https://docs.google.com/spreadsheets/d/1gAJh4VcSEU6-6aQxBiTFl-7cbyHukfdhg-Iaq9y5pnc/#gid=158167539",
   sql_file="../cms/cms_adoption_by_rank.sql"
   )
 }}
@@ -234,7 +234,7 @@ Then, if we look at the top 5 CMSs by rank, we see that WordPress has the highes
   caption="Top 5 CMSs by rank",
   description="Bar chart showing the top CMSs percent of share of each ranking category. WordPress had 3.1% of the top 1,000, 8.6% of the top 10,000, 13.2% of the top 100,000, 21.1% of the top 1,000,000, and 33.6% of the top 10,000,000. The remaining CMSs had less than 3% share of all rankings.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=2087254046&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="https://docs.google.com/spreadsheets/d/1gAJh4VcSEU6-6aQxBiTFl-7cbyHukfdhg-Iaq9y5pnc/#gid=670045665",
   sql_file="../cms/top_cms_by_rank.sql"
   )
 }}
