@@ -40,6 +40,8 @@ This method is not perfectly accurate, as it doesn't measure the actual use of a
 
 All usage data in this chapter is based on the July 2021 crawl. You can find the raw data in the <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1b4moteB9EiLYkH1Ln9qfi1tnU-E4N2UQ87uayWytDKw/">Capabilities 2021 Results Sheet</a>.
 
+For the two more commonly used APIs in this chapter, additional data from Chrome Platform Status is presented. This data shows how the API usage has changed over the last 12 months prior to the publication of this chapter.
+
 ### Status of the presented APIs
 
 Please note that most of the APIs presented here are so-called _incubations_. Unless noted, they are not (yet) W3C Recommendations, i.e., official web standards. Instead, these APIs are being worked on in the Web Platform Incubator Community Group (WICG), where browser vendors and developers can discuss new features.
@@ -91,6 +93,17 @@ description='Screenshot of the Clipping Magic application with an image on the l
 width=699,
 height=440
 ) }}
+
+In recent months, the use of the API has increased sharply at a low level. While the `read()` method was active on only 0.00032 percent of all page loads in November 2020, usage increased exponentially to 0.002921 percent by October 2021. The `write()` method increased from 0.000674 to 0.001601 percent in the same period.
+
+{{ figure_markup(
+image="async-clipboard-api-page-loads.png",
+caption='Percentage of page loads in Chrome using Async Clipboard API.<br>(Sources: <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2369">Async Clipboard Read</a>, <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2370">Async Clipboard Write</a>)',
+description="Chart of Async Clipboard API usage, based on the percentage of page loads in Chrome using this feature. It compares the usage of the read and write methods, showing an exponential growth for read over the course of 2021, while write grows linear. In October 2021, read was called during 0.0029% of all page loads in Chrome, write for 0.0016%.",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5Byx-_990HdH35no6J879Vk-wNe6EJGHfJJEP61RuLYHyVJfRU0X0L96-kpFAEmWt7x4pB9aiMfQr/pubchart?oid=1933317785&format=interactive",
+sheets_gid="1382342903"
+)
+}}
 
 ## File System Access API
 The next productivity-related API is the [File System Access API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API). Web apps could <a hreflang="en" href="https://web.dev/browser-fs-access/#the-traditional-way-of-dealing-with-files">already deal with files</a>: `<input type="file">` allows the user to open one or more files via a file picker. Also, they could already save files to the Downloads folder via `<a download>`. The File System Access API adds support for additional use cases: Opening and modifying directories, saving files to a location specified by the user, and overwriting files that were opened by them. It is also possible to persist file handles to IndexedDB to allow for continued (permission-gated) access, even after a page reload. In particular, the API does not grant random access to the file system and certain system folders are blocked by default.
@@ -186,6 +199,17 @@ description='Screenshot showing the PaintZ drawing application with an overlay o
 width=676,
 height=419
 ) }}
+
+In recent months, the overall use of the Web Share API has increased: The Chrome Platform Status data shows a rather linear growth in the period from November 2020, where the API was called on 0.0097% of all page loads, to 0.0136% in October 2021.
+
+{{ figure_markup(
+image="web-share-api-page-loads.png",
+caption='Percentage of page loads in Chrome using Web Share API. (<a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/1501">Source</a>)',
+description="Chart of Web Share API usage, based on the percentage of page loads in Chrome using this feature. It shows a rather linear growth in the period from November 2020 to October 2021: in November 2020, the API was called on 0.0097% of all page loads, in October 2021 on 0.0136% of all page loads.",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5Byx-_990HdH35no6J879Vk-wNe6EJGHfJJEP61RuLYHyVJfRU0X0L96-kpFAEmWt7x4pB9aiMfQr/pubchart?oid=2113981194&format=interactive",
+sheets_gid="1372715282"
+)
+}}
 
 ## URL Handlers and Declarative Link Capturing
 The last two productivity-related capabilities described in this chapter are URL Handlers and Declarative Link Capturing, additional methods for even deeper integration with the operating system.
