@@ -143,11 +143,13 @@ For the results on CNAME-based tracking included in this chapter, we refer to [r
 
 {{ figure_markup(
   image="nb_sites_with_cname_tracking.png",
-  caption="Websites using CNAME-based tracking on a desktop clien.",
+  caption="Websites using CNAME-based tracking on a desktop client.",
   description="Chart showing the number of websites that use a CNAME-based tracker, ordered by the popularity of the tracker. Adobe Experience Cloud is used on 0.59% of desktop sites and 0.41% of mobile sites, Pardot on 0.41% and 0.26% respectively, Oracle Eloqua on 0.05% and 0.03%, Act-On Software on 0.05% and 0.03%, Webtrekk on 0.01% and 0.01%, and finally Eulerian on 0.01% and 0.01%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=450379066&format=interactive",
   sheets_gid="1286114815",
-  sql_file="nb_sites_with_cname_tracking.sql"
+  sql_file="nb_sites_with_cname_tracking.sql",
+  width=600,
+  height=516
   )
 }}
 
@@ -173,7 +175,9 @@ When we look at the rank of the websites that use CNAME-based tracking, we see t
   description="Chart showing the number of websites that use CNAME-based tracking on a desktop client, according to the public suffix of the website. 0.64% of desktop websites and 0.42% of mobile websites with a `com` suffix use CNAME track, for `edu` it's 0.18% and 0.10% respectively, for `jp` it's 0.03% and 0.04%, for `org` 0.04% and 0.03%, for `co.jp` 0.03% and 0.02%, for `ca` 0.02% and 0.01%, for `de` 0.02% and 0.02%, for `ru` 0.01% and 0.01%, for `com.au` 0.02% and 0.01%, and finally for `edu.au` 0.02% and 0.01%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1816699194&format=interactive",
   sheets_gid="1155429637",
-  sql_file="nb_sites_with_cname_tracking_per_public_suffix.sql"
+  sql_file="nb_sites_with_cname_tracking_per_public_suffix.sql",
+  width=600,
+  height=543
   )
 }}
 
