@@ -490,7 +490,10 @@ If your site's performance is not in the "good" category, then you definitely ha
 
 ### Total Blocking Time (TBT)
 
-> The Total Blocking Time (TBT) metric measures the total amount of time between First Contentful Paint (FCP) and Time to Interactive (TTI) where the main thread was blocked for long enough to prevent input responsiveness. --<a hreflang="en" href="https://web.dev/tbt/">Web.dev</a> ]
+<figure>
+<blockquote>The Total Blocking Time (TBT) metric measures the total amount of time between First Contentful Paint (FCP) and Time to Interactive (TTI) where the main thread was blocked for long enough to prevent input responsiveness.</blockquote>
+<figcaption>— <cite><a hreflang="en" href="https://web.dev/tbt/">Web.dev</a></cite></figcaption>
+</figure>
 
 <a hreflang="en" href="https://web.dev/tbt/">Total Blocking Time (TBT)</a> is a lab-based metric that helps us debug potential interactivity issues. FID is a field-based metric, and TBT is its lab-based analog. Currently, when evaluating client websites, I reach for total blocking time TBT as another indicator of possible performance issues due to JavaScript.
 
