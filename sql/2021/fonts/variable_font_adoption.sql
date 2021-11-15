@@ -33,12 +33,11 @@ FROM (
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
-    url AS page,
     COUNT(0) AS total_page
   FROM
     `httparchive.pages.2021_07_01_*`
   GROUP BY
-    _TABLE_SUFFIX, url, payload)
+    _TABLE_SUFFIX)
 USING
   (client, page)
 WHERE
