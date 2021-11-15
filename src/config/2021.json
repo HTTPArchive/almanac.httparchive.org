@@ -317,6 +317,15 @@
       "github": "demianrenzulli",
       "twitter": "drenzulli"
     },
+    "dominiclovell": {
+      "name": "Dominic Lovell",
+      "teams": [
+        "authors",
+        "analysts"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/131131?v=4&s=200",
+      "github": "dominiclovell"
+    },
     "GregBrimble": {
       "name": "Greg Brimble",
       "teams": [
@@ -511,6 +520,15 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/1120896?v=4&s=200",
       "github": "rviscomi",
       "twitter": "rick_viscomi"
+    },
+    "rmarx": {
+      "name": "Robin Marx",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/2240689?v=4&s=200",
+      "github": "rmarx",
+      "twitter": "programmingart"
     },
     "samarpanda": {
       "name": "Samar Panda",
