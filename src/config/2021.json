@@ -251,6 +251,15 @@
       "github": "alankent",
       "twitter": "akent99"
     },
+    "kripken": {
+      "name": "Alon Zakai",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/173661?v=4&s=200",
+      "github": "kripken",
+      "twitter": "kripken"
+    },
     "cyberandy": {
       "name": "Andrea Volpini",
       "teams": [
@@ -287,14 +296,6 @@
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/35119235?v=4&s=200",
       "github": "ashleyish"
-    },
-    "azakai": {
-      "name": "azakai",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/451275?v=4&s=200",
-      "github": "azakai"
     },
     "tunetheweb": {
       "name": "Barry Pollard",
