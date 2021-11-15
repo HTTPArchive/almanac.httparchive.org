@@ -113,7 +113,6 @@
           "chapter_number": "14",
           "title": "Capabilities",
           "slug": "capabilities",
-          "todo": "true",
           "hero_dir": "2020"
         },
         {
@@ -272,6 +271,14 @@
       "github": "andydavies",
       "twitter": "AndyDavies"
     },
+    "ashleyish": {
+      "name": "Ashley Berman Hale",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/35119235?v=4&s=200",
+      "github": "ashleyish"
+    },
     "tunetheweb": {
       "name": "Barry Pollard",
       "teams": [
@@ -288,10 +295,32 @@
       "linkedin": "tunetheweb",
       "twitter": "tunetheweb"
     },
+    "christianliebel": {
+      "name": "Christian Liebel",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6698344?v=4&s=200",
+      "website": "https://christianliebel.com",
+      "github": "christianliebel",
+      "twitter": "christianliebel"
+    },
+    "dwsmart": {
+      "name": "Dave Smart",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/11179452?v=4&s=200",
+      "website": "https://tamethebots.com/",
+      "github": "dwsmart",
+      "twitter": "davewsmart"
+    },
     "obto": {
       "name": "David Fox",
       "teams": [
-        "leads"
+        "analysts",
+        "leads",
+        "reviewers"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/684747?v=4&s=200",
       "website": "https://www.lookzook.com",
@@ -307,6 +336,15 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/15170359?v=4&s=200",
       "github": "demianrenzulli",
       "twitter": "drenzulli"
+    },
+    "fili": {
+      "name": "Fili",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/115263?v=4&s=200",
+      "github": "fili",
+      "website": "https://fili.com/"
     },
     "GregBrimble": {
       "name": "Greg Brimble",
@@ -337,6 +375,16 @@
       "website": "https://h3manth.com",
       "github": "hemanth",
       "twitter": "gnumanth"
+    },
+    "fellowhuman1101": {
+      "name": "Jamie Indigo",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/52051775?v=4&s=200",
+      "website": "https://not-a-robot.com/",
+      "github": "fellowhuman1101",
+      "twitter": "Jammer_Volts"
     },
     "jvandriel": {
       "name": "Jarno van Driel",
@@ -376,6 +424,14 @@
       "website": "https://www.jonoalderson.com",
       "github": "jonoalderson",
       "twitter": "jonoalderson"
+    },
+    "jzyang": {
+      "name": "Julia Yang",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/2634031?v=4&s=200",
+      "github": "jzyang"
     },
     "Schweinepriester": {
       "name": "Kai Schweinepriester",
@@ -456,6 +512,14 @@
       "github": "MeFoDy",
       "twitter": "dark_mefody"
     },
+    "Navaneeth-akam": {
+      "name": "Navaneeth",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/69532755?v=4&s=200",
+      "github": "Navaneeth-akam"
+    },
     "nithanaroy": {
       "name": "Nitin Pasumarthy",
       "teams": [
@@ -514,6 +578,16 @@
       "github": "rviscomi",
       "twitter": "rick_viscomi"
     },
+    "rvth": {
+      "name": "Ruth Everett",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/62478401?v=4&s=200",
+      "website": "https://rvth.blog/",
+      "github": "rvth",
+      "twitter": "rvtheverett"
+    },
     "samarpanda": {
       "name": "Samar Panda",
       "teams": [
@@ -529,6 +603,14 @@
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/22671477?v=4&s=200",
       "github": "shantsis"
+    },
+    "boosef": {
+      "name": "Shilpa Raghunathan",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/65818702?v=4&s=200",
+      "github": "boosef"
     },
     "GeekBoySupreme": {
       "name": "Shuvam Manna",
@@ -560,6 +642,16 @@
       "website": "https://simonhearne.com",
       "github": "simonhearne",
       "twitter": "simonhearne"
+    },
+    "tomayac": {
+      "name": "Thomas Steiner",
+      "teams": [
+        "analysts",
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/145676?v=4&s=200",
+      "website": "https://blog.tomayac.com/",
+      "github": "tomayac"
     },
     "victorlep": {
       "name": "Victor Le Pochat",
