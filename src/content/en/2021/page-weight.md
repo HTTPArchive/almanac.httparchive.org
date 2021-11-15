@@ -3,9 +3,9 @@
 title: Page Weight
 description: TODO
 authors: [logicalphase]
-reviewers: []
-analysts: []
-editors: []
+reviewers: [siakaramalegos]
+analysts: [jessthebp]
+editors: [RMHolmlund]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1XApPAC8m2jLJR3Ok1yAoc9PzAFtq-Z41LoakXHUVeag/
 featured_quote: TODO
