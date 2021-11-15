@@ -43,7 +43,7 @@ featured_stat_label_3: The median number of mobile page requests
 
 ---
 
-##  Introduction
+## Introduction
 
 Unless you're a web performance junkie like me the weight of a web page is about as exciting as licking stamps. But, I'm going to try my best to convince you as to why page weight is not only important but arguably **the** most important factor effecting creators, hosting providers, and consumers. To that end, we'll use real data to show how the weight of a page influences the performance of the website or web application, how page weight can impact user experience, and some ways we can reduce the weight of our web pages. 
 
@@ -89,7 +89,7 @@ If a web page requests a large number of files, it's going to take longer to tra
 
 There are certainly optimizations that can be done such as compressing and combining certain file requests, using HTTP/2 or the newer HTTP/3 protocols, and using modern browsers ability to preconnect and preload certain files to speed the process up. 
 
-##  Assets
+## Assets
 As explained in last years chapter, there's been little change in most assets in terms of technology, but there are some notable exceptions. 
 
 ### Static
@@ -108,18 +108,18 @@ Page weight can also be effected by external services that are attached to web p
 ### Cached
 [Caching](https://almanac.httparchive.org/en/2021/caching), are special services that make copies of previously requested optimized assets that get stored on remote server disks, or in in the client browser, until needed again. Caching servers dramatically speed up making files and dynamic results available without having to process a full dynamic request for the asset again. 
 
-####  A word about rampant increases in the use of JavaScript
+#### A word about rampant increases in the use of JavaScript
 JavaScript can be a wonderful tool to use for a website, but using it unchecked can create serious performance problems and a horrible experience for the user. There has been a proliferation in the use of complex JavaScript frameworks over the past decade. Some of them cause build sizes of a site to skyrocket causing performance bottlenecks so bad that a site can become unusable. Blocking scripts, defined as a request of a script that must be transmitted and processed before the user can begin interacting with the site often will block the further loading of the page until it finished executing causing confusion and frustration. 
 
 Example: You navigate to a e-commerce site on your nifty smartphone on slow 4G internet connection, but the site is taking forever to load. It even throws a warning that the page is taking too long to load and asks if you want to continue waiting. Your phone stalls and has to be rebooted. Nine times out of ten you just ran into a blocking JavaScript that is causing your smartphone to run out of processing power or memory. The judicious or expert use of JavaScript can create great user experiences. **But remember this**: *JavaScript is executed on the client side. It's using the client computers resources to process and execute the script, and there is a finite amount of resources on every device*. 
 
 The [JavaScript](https://almanac.httparchive.org/en/2021/javascript) chapter contains a wealth of information about this issue and how to avoid it.
 
-##  Analysis
+## Analysis
 
 As we post and parse the statistical results, the data is often based on transfer sizes. However, we are employing decompressed sizes in this analysis when possible. Please note that many of the results listed below are similar or the same as those queries used in 2020.
 
-###  Page weight by the numbers
+### Page weight by the numbers
 
 Looking at the page weight on both desktop and mobile devices, the deltas are due to a small difference in the amount of transferred resources on the mobile device, but the difference is pretty insignificant between the two.
 
@@ -159,7 +159,7 @@ sql_file="bytes_per_type_2021.sql"
 
 A closer inspection shows that the media and average for each resource, and following the trend from years previous to this one, images remain the largest resource with JavaScript following. 
 
-###  Requests
+### Requests
 
 We have an old adage: the quickest request is the one never made. Dare we then say: the smallest resource is one never requested. At the request level, much is the same. The weightiest resources are making the most requests.
 
@@ -199,7 +199,7 @@ sql_file="request_type_distribution_2021.sql"
 
 Images again make up the largest number of requests, though JavaScript is closing in as the gap has narrowed slightly in the last year.
 
-###  File formats
+### File formats
 
 {{ figure_markup(
 
@@ -219,7 +219,7 @@ sql_file="requests_format_distribution.sql"
 
 We know that images are a great source of page weight. This graphic above shows us the top sources of image weight and the weight distribution. Top 3: JPG, PNG and WebP. So not only is the JPG the most popular image format, it also tends to be the largest by size as well - even larger than a lossless format like the PNG. But as we [noted last year](../2020/page-weight#file-size-by-image-format-for-images--1024-bytes), that has to do with the predominant use case for the PNG, which seems to be icons and logos.
 
-###  Image bytes
+### Image bytes
 
 {{ figure_markup(
 
@@ -239,10 +239,10 @@ sql_file="request_type_distribution_2021.sql"
 
 Looking at total image bytes, we see the same trend upwards, as noted previously on overall page weight.
 
-##  Looking ahead
+## Looking ahead
 
 Still needs to be written
 
-##  Conclusion
+## Conclusion
 
 Still needs to be written
