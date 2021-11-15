@@ -11,6 +11,9 @@ on:
   pull_request:
     paths-ignore:
       - 'sql/**'
+  push:
+    branches:
+      - main
 jobs:
   build:
     name: Build and Test Website
