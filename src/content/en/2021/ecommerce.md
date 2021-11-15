@@ -3,9 +3,9 @@
 title: Ecommerce
 description: TODO
 authors: [bobbyshaw]
-reviewers: []
-analysts: []
-editors: []
+reviewers: [rockeynebhwani, alankent, soulcorrosion, fili]
+analysts: [rrajiv]
+editors: [shantsis]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1HCfrXJ52lV46UvxOvDVjJj70fOeFVrTTD8DUm0tPVXE/
 featured_quote: TODO
