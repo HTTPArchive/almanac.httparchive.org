@@ -3,9 +3,9 @@
 title: JavaScript
 description: TODO
 authors: [NishuGoel]
-reviewers: []
-analysts: []
-editors: []
+reviewers: [soulcorrosion, mgechev, rviscomi, pankajparkar, tunetheweb]
+analysts: [pankajparkar, max-ostapenko, rviscomi]
+editors: [rviscomi, pankajparkar]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1zU9rHpI3nC6jTz3xgN6w13afW7x34xAKBh2IPH-lVxk/
 featured_quote: TODO

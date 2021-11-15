@@ -506,6 +506,22 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/58731469?v=4",
       "github": "lucasbona05"
     },
+    "soulcorrosion": {
+      "name": "Manuel Garcia",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/7148510?v=4&s=200",
+      "github": "soulcorrosion"
+    },
+    "maudnals": {
+      "name": "Maud Nalpas",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/9762897?v=4&s=200",
+      "github": "maudnals"
+    },
     "max-ostapenko": {
       "name": "Max Ostapenko",
       "teams": [
@@ -525,19 +541,21 @@
       "github": "webmaxru",
       "twitter": "webmaxru"
     },
-    "maudnals": {
-      "name": "Maud Nalpas",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/9762897?v=4&s=200",
-      "github": "maudnals"
-    },
     "michelleoconnor": {
       "name": "Michelle O'Connor",
       "teams": [
         "designers"
       ]
+    },
+    "mgechev": {
+      "name": "Minko Gechev",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/455023?v=4&s=200",
+      "website": "https://blog.mgechev.com/",
+      "github": "mgechev",
+      "twitter": "mgechev"
     },
     "Navaneeth-akam": {
       "name": "Navaneeth",
@@ -546,6 +564,16 @@
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/69532755?v=4&s=200",
       "github": "Navaneeth-akam"
+    },
+    "NishuGoel": {
+      "name": "Nishu Goel",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/26349046?v=4s=200",
+      "website": "http://unravelweb.dev/",
+      "github": "NishuGoel",
+      "twitter": "TheNishuGoel"
     },
     "nithanaroy": {
       "name": "Nitin Pasumarthy",
@@ -556,6 +584,18 @@
       "github": "nithanaroy",
       "linkedin": "nitinpasumarthy",
       "website": "https://nithanaroy.medium.com/"
+    },
+    "pankajparkar": {
+      "name": "Pankaj Parkar",
+      "teams": [
+        "analysts",
+        "editors",
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/5320044?v=4&s=200",
+      "website": "https://medium.com/@pankajparkar",
+      "github": "pankajparkar",
+      "twitter": "pankajparkar"
     },
     "thepassle": {
       "name": "Pascal Schilp",
@@ -598,8 +638,10 @@
     "rviscomi": {
       "name": "Rick Viscomi",
       "teams": [
+        "analysts",
         "editors",
-        "leads"
+        "leads",
+        "reviewers"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/1120896?v=4&s=200",
       "github": "rviscomi",
