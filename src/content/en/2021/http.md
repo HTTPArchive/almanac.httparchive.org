@@ -3,8 +3,8 @@
 title: HTTP
 description: TODO
 authors: [dominiclovell]
-reviewers: []
-analysts: []
+reviewers: [tunetheweb, rmarx]
+analysts: [tunetheweb]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1pCdpndXTXexSIZLmVc-aUbp5PcHhZ83hbEEfmDyfD0U/
