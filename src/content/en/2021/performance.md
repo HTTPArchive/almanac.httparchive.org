@@ -5,7 +5,7 @@ description: Performance chapter of the 2021 Web Almanac covering Core Web Vital
 authors: [siakaramalegos]
 reviewers: [rviscomi, kevinfarrugia, estelle, ziemek-bucko, jzyang, fili, samarpanda, edmondwwchan]
 analysts: [siakaramalegos, rviscomi, Nithanaroy]
-editors: [jzyang]
+editors: [jzyang, tunetheweb]
 translators: []
 results: https://docs.google.com/spreadsheets/d/13xhPx6o2Nowz_3b3_5ojiF_mY3Lhs25auBKM6eqGZmo/
 siakaramalegos_bio: Sia Karamalegos is a web developer, international conference speaker, and writer. She is a Google Developer Expert in Web Technologies, a Cloudinary Media Developer Expert, a Stripe Community Expert, and co-organizes the Eleventy Meetup. Check out her writing, speaking, and newsletter on <a hreflang="en" href="https://sia.codes/">sia.codes</a> or find her on <a hreflang="en" href="https://twitter.com/thegreengreek">Twitter</a>.
@@ -16,12 +16,11 @@ featured_stat_2: TODO
 featured_stat_label_2: TODO
 featured_stat_3: TODO
 featured_stat_label_3: TODO
-unedited: true
 ---
 
 ## Introduction
 
-Performance is important for user experience. Slow-to-load and slow-to-respond websites frustrate users and cause lost conversions. This is the first year that the <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> have contributed to Google search rankings. As such, we've seen greater interest in improving website performance which is great news for users.
+Performance is important for user experience. Slow-to-load and slow-to-respond websites frustrate users and cause lost conversions. This is the first year that the <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> have <a hreflang="en" href="https://developers.google.com/search/blog/2020/11/timing-for-page-experience">contributed to Google search rankings</a>. As such, we've seen greater interest in improving website performance which is great news for users.
 
 *What are our top takeaways from this year's report?* First, we still have a long way to go in providing a good user experience. For example, faster networks and devices have not yet reached the point where we can ignore how much JavaScript we deliver to a site; and, we may never get there. Second, sometimes we misuse new features for performance, resulting in poorer performance. Third, we need better metrics for measuring interactivity, and those are on the way. And fourth, CMS- and framework-level work on performance can significantly impact user experience for the top 10M websites.
 
@@ -31,7 +30,10 @@ Performance is important for user experience. Slow-to-load and slow-to-respond w
 
 One thing that makes the performance chapter different from the others is that we rely heavily on the <a hreflang="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome User Experience Report</a> (CrUX) for our analyses. Why? If our number one priority is user experience, then the best way to measure performance is with real user data (real user metrics, or RUM for short).
 
-> The Chrome User Experience Report provides user experience metrics for how real-world Chrome users experience popular destinations on the web. -<a hreflang="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome User Experience Report</a>
+<figure>
+<blockquote>The Chrome User Experience Report provides user experience metrics for how real-world Chrome users experience popular destinations on the web.</blockquote>
+<figcaption>— <cite><a hreflang="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome User Experience Report</a></cite></figcaption>
+</figure>
 
 CrUX data only provides high-level field/RUM metrics and only for the Chrome browser. Additionally, CrUX reports data by origin, or website, instead of by page.
 
@@ -214,7 +216,7 @@ You may be asking yourself how TTFB can even occur with offline connections. Pre
 
 For rank, TTFB was faster for higher-ranking sites. One reason could be that most of these are larger companies with more resources to prioritize performance. They may focus on improving server-side performance and delivering assets through edge CDNs. Another reason could be selection bias - the top origins might be accessed more in regions with closer servers, i.e., lower latency.
 
-<!-- TODO: validate CMS chapter link works -->
+{# TODO: validate CMS chapter link works #}
 One more possibility has to do with CMS adoption. The [CMS Chapter](./cms) shows CMS adoption by rank.
 
 {{ figure_markup(
