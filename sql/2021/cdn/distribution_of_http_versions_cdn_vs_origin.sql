@@ -49,7 +49,6 @@ LEFT JOIN
       ANY_VALUE(JSON_EXTRACT_SCALAR(payload, '$._tls_version')) AS tlsVersion
     FROM
       `httparchive.almanac.requests`
-    --    `httparchive.sample_data.requests`
     WHERE
       JSON_EXTRACT_SCALAR(payload, '$._tls_version') IS NOT NULL AND
       IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(concat("HTTP/",
