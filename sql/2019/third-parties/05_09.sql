@@ -22,4 +22,3 @@ GROUP BY
 ORDER BY
   totalRequests DESC
 LIMIT 100
-

@@ -1,16 +1,16 @@
 #standardSQL
 # distribution_of_tls_versions_cdn_vs_origin: Percentage of HTTPS responses by TLS Version with and without CDN
 SELECT
-  a.client, 
+  a.client,
   IF(cdn = "ORIGIN", "ORIGIN", "CDN") AS cdn, firstHtml,
   COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.0') AS tls10,
   COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.1') AS tls11,
   COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.2') AS tls12,
   COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.3') AS tls13,
-  ROUND(100 * COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.0') / COUNT(0), 2) AS tls10_pct,
-  ROUND(100 * COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.1') / COUNT(0), 2) AS tls11_pct,
-  ROUND(100 * COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.2') / COUNT(0), 2) AS tls12_pct,
-  ROUND(100 * COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.3') / COUNT(0), 2) AS tls13_pct,
+  COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.0') / COUNT(0) AS tls10_pct,
+  COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.1') / COUNT(0) AS tls11_pct,
+  COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.2') / COUNT(0) AS tls12_pct,
+  COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.3') / COUNT(0) AS tls13_pct,
   COUNT(0) AS total
 FROM
   (

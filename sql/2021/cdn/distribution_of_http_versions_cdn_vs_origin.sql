@@ -1,7 +1,7 @@
 #standardSQL
 # 17_19: Percentage of HTTPS responses by protocol
 SELECT
-  a.client, 
+  a.client,
   IF(cdn = "ORIGIN", "ORIGIN", "CDN") AS cdn, firstHtml,
   COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/0.9') AS http09,
   COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.0') AS http10,
@@ -10,13 +10,13 @@ SELECT
   COUNTIF(IFNULL(a.protocol, b.protocol) = 'H3-29' OR IFNULL(a.protocol, b.protocol) = 'H3-Q050') AS http3,
   COUNTIF(IFNULL(a.protocol, b.protocol) NOT IN ('HTTP/0.9', 'HTTP/1.0', 'HTTP/1.1', 'HTTP/2', 'H3-29', 'H3-Q050')) AS http_other,
   COUNTIF(isSecure OR IFNULL(a.protocol, b.protocol) = 'HTTP/2') AS tls_total,
-  ROUND(100 * COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/0.9') / COUNT(0), 2) AS http09_pct,
-  ROUND(100 * COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.0') / COUNT(0), 2) AS http10_pct,
-  ROUND(100 * COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.1') / COUNT(0), 2) AS http11_pct,
-  ROUND(100 * COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/2') / COUNT(0), 2) AS http2_pct,
-  ROUND(100 * COUNTIF(IFNULL(a.protocol, b.protocol) = 'H3-29' OR IFNULL(a.protocol, b.protocol) = 'H3-Q050') / COUNT(0), 2) AS http3_pct,  
-  ROUND(100 * COUNTIF(IFNULL(a.protocol, b.protocol) NOT IN ('HTTP/0.9', 'HTTP/1.0', 'HTTP/1.1', 'HTTP/2', 'H3-29', 'H3-Q050')) / COUNT(0), 2) AS http_other_pct,
-  ROUND(100 * COUNTIF(isSecure OR IFNULL(a.protocol, b.protocol) = 'HTTP/2') / COUNT(0), 2) AS tls_pct,
+  COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/0.9') / COUNT(0) AS http09_pct,
+  COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.0') / COUNT(0) AS http10_pct,
+  COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.1') / COUNT(0) AS http11_pct,
+  COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/2') / COUNT(0) AS http2_pct,
+  COUNTIF(IFNULL(a.protocol, b.protocol) = 'H3-29' OR IFNULL(a.protocol, b.protocol) = 'H3-Q050') / COUNT(0) AS http3_pct,
+  COUNTIF(IFNULL(a.protocol, b.protocol) NOT IN ('HTTP/0.9', 'HTTP/1.0', 'HTTP/1.1', 'HTTP/2', 'H3-29', 'H3-Q050')) / COUNT(0) AS http_other_pct,
+  COUNTIF(isSecure OR IFNULL(a.protocol, b.protocol) = 'HTTP/2') / COUNT(0) AS tls_pct,
   COUNT(0) AS total
 FROM
   (
@@ -38,8 +38,8 @@ FROM
     --`httparchive.sample_data.requests`
     WHERE
       # WPT changes the response fields based on a redirect (url becomes the Location path instead of the original) causing insonsistencies in the counts, so we ignore them
-      resp_location = '' OR resp_location IS NULL
-      AND date = '2021-07-01'
+      resp_location = '' OR resp_location IS NULL AND
+      date = '2021-07-01'
   ) a
 LEFT JOIN
   (
@@ -50,11 +50,11 @@ LEFT JOIN
       ANY_VALUE(JSON_EXTRACT_SCALAR(payload, '$._tls_version')) AS tlsVersion
     FROM
       `httparchive.almanac.requests`
---    `httparchive.sample_data.requests`
+    --    `httparchive.sample_data.requests`
     WHERE
       JSON_EXTRACT_SCALAR(payload, '$._tls_version') IS NOT NULL AND
-      IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(concat("HTTP/", 
-      JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'HTTP/'))) IS NOT NULL AND
+      IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(concat("HTTP/",
+        JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'HTTP/'))) IS NOT NULL AND
       jSON_EXTRACT(payload, "$._socket") IS NOT NULL AND
       date = '2021-07-01'
     GROUP BY client, page, socket

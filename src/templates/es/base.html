@@ -144,35 +144,37 @@ A menos que se indique lo contrario, las métricas en los {{ supported_chapters 
       "IV. Content Distribution": "IV. Distribución de contenido"
     }
   %}
-  {%
-    set localizedChapterTitles = {
-      "javascript": "JavaScript",
-      "css": "CSS",
-      "markup": "Marcado Web",
-      "media": "Media",
-      "third-parties": "Contenido de Terceros",
-      "fonts": "Fuentes",
-      "performance": "Rendimiento",
-      "security": "Seguridad",
-      "accessibility": "Accesibilidad",
-      "seo": "SEO",
-      "pwa": "PWA",
-      "mobile-web": "Web Móvil",
-      "ecommerce": "Comercio electrónico",
-      "cms": "CMS",
-      "compression": "Compresión",
-      "caching": "Almacenamiento en Caché",
-      "cdn": "CDN",
-      "page-weight": "Peso de las Páginas",
-      "resource-hints": "Sugerencias de Recursos",
-      "http": "HTTP",
-      "privacy": "Privacidad",
-      "capabilities": "Capacidades",
-      "jamstack": "Jamstack"
-    }
-  %}
+{%
+  set localizedChapterTitles = {
+    "javascript": "JavaScript",
+    "css": "CSS",
+    "markup": "Marcado Web",
+    "media": "Media",
+    "third-parties": "Contenido de Terceros",
+    "fonts": "Fuentes",
+    "performance": "Rendimiento",
+    "security": "Seguridad",
+    "accessibility": "Accesibilidad",
+    "seo": "SEO",
+    "pwa": "PWA",
+    "mobile-web": "Web Móvil",
+    "ecommerce": "Comercio electrónico",
+    "cms": "CMS",
+    "compression": "Compresión",
+    "caching": "Almacenamiento en Caché",
+    "cdn": "CDN",
+    "page-weight": "Peso de las Páginas",
+    "resource-hints": "Sugerencias de Recursos",
+    "http": "HTTP",
+    "privacy": "Privacidad",
+    "capabilities": "Capacidades",
+    "jamstack": "Jamstack",
+    "webassembly": "WebAssembly",
+    "structured-data": "Datos estructurados"
+  }
+%}
 
-  {% if (year == "2019" or year == "2020") %}
+{% if (year == "2019" or year == "2020") %}
 {% set _dummy = localizedChapterTitles.__setitem__("http", "HTTP/2") %}
 {% endif %}
 
