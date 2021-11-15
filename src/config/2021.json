@@ -386,6 +386,14 @@
       "github": "jonoalderson",
       "twitter": "jonoalderson"
     },
+    "jzyang": {
+      "name": "Julia Yang",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/2634031?v=4&s=200",
+      "github": "jzyang"
+    },
     "Schweinepriester": {
       "name": "Kai Schweinepriester",
       "teams": [
@@ -454,7 +462,16 @@
       "teams": [
         "designers"
       ]
-    },"nithanaroy": {
+    },
+    "Navaneeth-akam": {
+      "name": "Navaneeth",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/69532755?v=4&s=200",
+      "github": "Navaneeth-akam"
+    },
+    "nithanaroy": {
       "name": "Nitin Pasumarthy",
       "teams": [
         "analysts"
@@ -527,6 +544,14 @@
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/22671477?v=4&s=200",
       "github": "shantsis"
+    },
+    "boosef": {
+      "name": "Shilpa Raghunathan",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/65818702?v=4&s=200",
+      "github": "boosef"
     },
     "GeekBoySupreme": {
       "name": "Shuvam Manna",
