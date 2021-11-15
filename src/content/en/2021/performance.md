@@ -9,13 +9,13 @@ editors: [jzyang]
 translators: []
 results: https://docs.google.com/spreadsheets/d/13xhPx6o2Nowz_3b3_5ojiF_mY3Lhs25auBKM6eqGZmo/
 siakaramalegos_bio: Sia Karamalegos is a web developer, international conference speaker, and writer. She is a Google Developer Expert in Web Technologies, a Cloudinary Media Developer Expert, a Stripe Community Expert, and co-organizes the Eleventy Meetup. Check out her writing, speaking, and newsletter on <a hreflang="en" href="https://sia.codes/">sia.codes</a> or find her on <a hreflang="en" href="https://twitter.com/thegreengreek">Twitter</a>.
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: The more we can set up smart defaults for performance at the framework level, the better we can make the web while also make developers’ jobs easier.
+featured_stat_1: 37%
+featured_stat_label_1: Percent of top 1,000 websites passing Core Web Vitals
+featured_stat_2: 79%
+featured_stat_label_2: Pages on desktop with an image as an LCP element
+featured_stat_3: 67 s
+featured_stat_label_3: Longest total blocking time
 ---
 
 ## Introduction
@@ -215,7 +215,6 @@ You may be asking yourself how TTFB can even occur with offline connections. Pre
 
 For rank, TTFB was faster for higher-ranking sites. One reason could be that most of these are larger companies with more resources to prioritize performance. They may focus on improving server-side performance and delivering assets through edge CDNs. Another reason could be selection bias - the top origins might be accessed more in regions with closer servers, i.e., lower latency.
 
-{# TODO: validate CMS chapter link works #}
 One more possibility has to do with CMS adoption. The [CMS Chapter](./cms) shows CMS adoption by rank.
 
 {{ figure_markup(
@@ -340,7 +339,7 @@ Offline origins with good LCP more closely matched 4G experiences, though poor L
 
 For LCP, the differences in performance by rank were closer than FCP. Also, a higher proportion of origins in the top 1,000 had poor LCP. On WordPress, <a hreflang="en" href="https://datastudio.google.com/s/kvq1oJ60jaQ">28% of origins experienced good LCP</a>. This is an opportunity to improve user experience as poor LCP is usually caused by a handful of problems.
 
-### The LCP Element
+#### The LCP Element
 
 Let's take a deeper dive into the LCP element.
 
@@ -374,7 +373,7 @@ In both cases, images comprised the majority of LCP elements. This warrants a de
 
 {{ figure_markup(
   image="performance-lcp-antipatterns.png",
-  caption="LCP elements with performance anti-patterns",
+  caption="LCP elements with potential performance anti-patterns",
   description="Bar chart showing 9.3% of pages on mobile use native lazy load on the LCP element, 16.5% probably lazy load, and 0.4% use async decode.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=130632749&format=interactive",
   sheets_gid="730149797",
@@ -382,13 +381,13 @@ In both cases, images comprised the majority of LCP elements. This warrants a de
   )
 }}
 
-For user experience, we want LCP elements to load as fast as possible. User experience is why LCP was selected as one of the Core Web Vitals. We do not want it to be lazy-loaded nor decoded asynchronously as that further delays the render. However, we can see that 9.3% of pages used the native loading=lazy flag on the LCP `<img>` element.
+For user experience, we want LCP elements to load as fast as possible. User experience is why LCP was selected as one of the Core Web Vitals. We do not want it to be lazy-loaded as that further delays the render. However, we can see that 9.3% of pages used the native loading=lazy flag on the LCP `<img>` element.
 
 Not all browsers support native lazy loading. Popular lazy loading polyfills detect a "lazyload" class on an image element. Thus, we can identify more possibly lazy-loaded images by adding images with a "lazyload" class to the total. The percent of sites probably lazy loading their LCP `<img>` element jumps up to 16.5% on mobile.
 
 Lazy loading your LCP element will result in worse performance. *Don't do it!* WordPress was an early adopter of native lazy loading. The early method was a naive solution applying lazy loading to all images, and the results showed a <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">negative performance correlation</a>. They were able to use this data to implement a more nuanced approach for better performance.
 
-Luckily, only 0.4% of sites used the async decode directive for their LCP image. The negative impact of asynchronous decode is not as high as lazy loading.
+The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-decoding">`decode` attribute</a> for images is relatively new. Setting it to `async` can improve load and scroll performance. Currently, 0.4% of sites used the async decode directive for their LCP image. The negative impact of asynchronous decode on an LCP image is currently unclear. Thus, test your site before and after if you choose to set an LCP image to `decode="async"`.
 
 {{ figure_markup(
   content="354",
