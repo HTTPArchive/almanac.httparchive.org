@@ -37,7 +37,7 @@ One thing that makes the performance chapter different from the others is that w
 
 CrUX data only provides high-level field/RUM metrics and only for the Chrome browser. Additionally, CrUX reports data by origin, or website, instead of by page.
 
-We supplement our CrUX RUM data with lab data from WebPageTest in HTTP Archive. WebPageTest includes very detailed information about each page, including the full Lighthouse report. Note that WebPageTest measures performance in <a hreflang="en" href="https://almanac.httparchive.org/en/2021/methodology#webpagetest">locations across the U.S</a>. The performance data in CrUX is global since it represents real user page loads.
+We supplement our CrUX RUM data with lab data from WebPageTest in HTTP Archive. WebPageTest includes very detailed information about each page, including the full Lighthouse report. Note that WebPageTest measures performance in <a hreflang="en" href="https://almanac.httparchive.org/en/2021/methodology#webpagetest">locations across the U.S.</a> The performance data in CrUX is global since it represents real user page loads.
 
 When comparing performance year-over-year, keep in mind that:
 
