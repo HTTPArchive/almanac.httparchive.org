@@ -581,6 +581,7 @@ header .cta {
 
 .search-button svg {
   fill: #000;
+  color: #000;
 }
 
 .table-of-contents-switcher:hover,
@@ -725,6 +726,10 @@ blockquote::before {
   font-size: 20rem;
   font-family: 'Courier New', Courier, monospace;
   line-height: 1;
+}
+
+blockquote em {
+  font-style: normal;
 }
 
 /* Footer */
@@ -1493,7 +1498,7 @@ pre .comment {
 }
 
 pre .support {
-  color: #0086b3;
+  color: #006080;
 }
 
 pre .tag,
@@ -1565,8 +1570,11 @@ html:not([lang="en"]) main a[href*="/en-US/"]::after,
 html:not([lang="en"]) main a[href*="/en/"]::after,
 html:not([lang="en"]) main a[href^="https://en."]::after {
   content: '(en)';
-  vertical-align: super;
+  /* vertical-align: super; */
   font-size: 0.6em;
+  vertical-align: baseline;
+  position: relative;
+  top: -1em;
 }
 
 /*
@@ -1574,8 +1582,11 @@ html:not([lang="en"]) main a[href^="https://en."]::after {
  */
 main a[hreflang]::after {
   content: '(' attr(hreflang) ')';
-  vertical-align: super;
+  /* vertical-align: super; */
   font-size: 0.6em;
+  vertical-align: baseline;
+  position: relative;
+  top: -1em;
 }
 
 /*
@@ -1583,7 +1594,7 @@ main a[hreflang]::after {
  * (allows us to add this to base content to make it easier for translators)
  */
 html[lang="en"] main a[hreflang="en"]::after {
-  content: '';
+  content: initial;
 }
 
 @media print {
