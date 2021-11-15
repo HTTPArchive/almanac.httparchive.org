@@ -279,6 +279,14 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/35119235?v=4&s=200",
       "github": "ashleyish"
     },
+    "azakai": {
+      "name": "azakai",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/451275?v=4&s=200",
+      "github": "azakai"
+    },
     "tunetheweb": {
       "name": "Barry Pollard",
       "teams": [
@@ -294,6 +302,15 @@
       "github": "tunetheweb",
       "linkedin": "tunetheweb",
       "twitter": "tunetheweb"
+    },
+    "carlopi": {
+      "name": "Carlo Piovesan",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/842657?v=4&s=200",
+      "github": "carlopi",
+      "twitter": "carlop54002226"
     },
     "christianliebel": {
       "name": "Christian Liebel",
@@ -376,6 +393,17 @@
       "github": "hemanth",
       "twitter": "gnumanth"
     },
+    "RReverser": {
+      "name": "Ingvar Stepanyan",
+      "teams": [
+        "analysts",
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/557590?v=4&s=200",
+      "website": "https://rreverser.com/",
+      "github": "RReverser",
+      "twitter": "RReverser"
+    },
     "fellowhuman1101": {
       "name": "Jamie Indigo",
       "teams": [
@@ -395,6 +423,15 @@
       "github": "jvandriel",
       "twitter": "JarnoVanDriel",
       "linkedin": "jarno-van-driel-36a47075"
+    },
+    "jsoverson": {
+      "name": "Jarrod Overson",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/842798?v=4&s=200",
+      "website": "http://jarrodoverson.com/",
+      "github": "jsoverson"
     },
     "JasmineDWillson": {
       "name": "Jasmine Drudge-Willson",
