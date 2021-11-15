@@ -16,7 +16,7 @@ FROM (
   GROUP BY
     client,
     page),
-  UNNEST([5, 6, 7, 8, 9, 10, 25, 50, 75, 90, 95, 100]) AS percentile
+  UNNEST(GENERATE_ARRAY(1, 100)) AS percentile
 GROUP BY
   client,
   percentile
