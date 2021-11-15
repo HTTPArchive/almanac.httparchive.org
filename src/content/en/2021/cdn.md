@@ -3,7 +3,7 @@
 title: CDN
 description: TODO
 authors: [Navaneeth-akam]
-reviewers: [jzyang][boosef]
+reviewers: [jzyang, boosef]
 analysts: [paulcalvano]
 editors: [jzyang]
 translators: []
