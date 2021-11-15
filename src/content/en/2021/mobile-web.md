@@ -8,6 +8,7 @@ analysts: [rvth, obto]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1mdma245ja_THTBApaJTeS4vmLY_Fn8VC6Kd8qx7wp-o/
+fellowhuman1101_bio: Jamie Indigo isn’t a robot, but speaks bot.  As a technical SEO consultant at <a href="https://www.deepcrawl.com">Deepcrawl</a>, they study how search engines crawl, render, and index the web.  They love to tame wild JavaScript frameworks and optimize rendering strategies. When not working, Jamie likes horror movies, graphic novels, and Dungeons & Dragons.
 featured_quote: TODO
 featured_stat_1: TODO
 featured_stat_label_1: TODO
@@ -194,11 +195,11 @@ These hints can be roughly assigned into three groups:
 
 
 
-* **Device client hints**  
+* **Device client hints**
 Details of the capabilities and features of the device accessing the site.
-* **Network client hints**  
+* **Network client hints**
 Details of the network connection between the device and the server.
-* **User Agent Hints**  
+* **User Agent Hints**
 Details about the agent accessing the site.
 
 
@@ -882,10 +883,10 @@ Mobile devices whilst limited in some aspects do tend to be better connected, th
 
 #### mailto
 
-`mailto:` invokes the users chosen email client, clicking: 
+`mailto:` invokes the users chosen email client, clicking:
 ```
 <a href="mailto:enquiries@example.com?subject=Enquiring about Red Widgets">enquiries@example.com</a>
-``` 
+```
 Would prefill an email with the specified email address and subject line. Helpful on mobile, but probably pretty relevant for desktop too.
 
 
