@@ -3,7 +3,7 @@
 title: WebAssembly
 description: TODO
 authors: [RReverser]
-reviewers: [jsoverson, carlopi, azakai]
+reviewers: [jsoverson, carlopi, kripken]
 analysts: [RReverser]
 editors: []
 translators: []

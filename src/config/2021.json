@@ -84,8 +84,7 @@
           "part": "II",
           "chapter_number": "10",
           "title": "Performance",
-          "slug": "performance",
-          "todo": "true"
+          "slug": "performance"
         },
         {
           "part": "II",
@@ -251,6 +250,15 @@
       "github": "alankent",
       "twitter": "akent99"
     },
+    "kripken": {
+      "name": "Alon Zakai",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/173661?v=4&s=200",
+      "github": "kripken",
+      "twitter": "kripken"
+    },
     "cyberandy": {
       "name": "Andrea Volpini",
       "teams": [
@@ -287,14 +295,6 @@
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/35119235?v=4&s=200",
       "github": "ashleyish"
-    },
-    "azakai": {
-      "name": "azakai",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/451275?v=4&s=200",
-      "github": "azakai"
     },
     "tunetheweb": {
       "name": "Barry Pollard",
@@ -363,14 +363,41 @@
       "github": "demianrenzulli",
       "twitter": "drenzulli"
     },
-    "fili": {
-      "name": "Fili Wiese",
+    "dominiclovell": {
+      "name": "Dominic Lovell",
+      "teams": [
+        "authors",
+        "analysts"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/131131?v=4&s=200",
+      "github": "dominiclovell"
+    },
+    "edmondwwchan": {
+      "name": "Edmond W. W. Chan",
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/115263?v=4&s=200",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/68361682?v=4&s=200",
+      "github": "edmondwwchan"
+    },
+    "estelle": {
+      "name": "Estelle Weyl",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69888?v=4&s=200",
+      "github": "estelle"
+    },
+    "fili": {
+      "name": "Fili",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/115263?v=4&s=200",
+      "website": "https://fili.com/",
       "github": "fili",
-      "website": "https://fili.com/"
+      "linkedin": "filiwiese",
+      "twitter": "filiwiese"
     },
     "GregBrimble": {
       "name": "Greg Brimble",
@@ -494,10 +521,13 @@
     "jzyang": {
       "name": "Julia Yang",
       "teams": [
-        "reviewers"
+        "reviewers",
+        "editors"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/2634031?v=4&s=200",
-      "github": "jzyang"
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2634031?v=4&s=200",
+      "github": "jzyang",
+      "linkedin": "yangzhe",
+      "twitter": "Jules_Yang"
     },
     "Schweinepriester": {
       "name": "Kai Schweinepriester",
@@ -510,7 +540,8 @@
     "kevinfarrugia": {
       "name": "Kevin Farrugia",
       "teams": [
-        "authors"
+        "authors",
+        "reviewers"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/8075326?v=4&s=200",
       "website": "https://imkev.dev",
@@ -674,6 +705,14 @@
       "github": "philbarker",
       "twitter": "philbarker"
     },
+    "RMHolmlund": {
+      "name": "RMHolmlund",
+      "teams": [
+        "editors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/61608378?v=4&s=200",
+      "github": "RMHolmlund"
+    },
     "rrajiv": {
       "name": "Rajiv Ramnath",
       "teams": [
@@ -694,13 +733,14 @@
       "github": "rviscomi",
       "twitter": "rick_viscomi"
     },
-    "RMHolmlund": {
-      "name": "RMHolmlund",
+    "rmarx": {
+      "name": "Robin Marx",
       "teams": [
-        "editors"
+        "reviewers"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/61608378?v=4&s=200",
-      "github": "RMHolmlund"
+      "avatar_url": "https://avatars.githubusercontent.com/u/2240689?v=4&s=200",
+      "github": "rmarx",
+      "twitter": "programmingart"
     },
     "rockeynebhwani": {
       "name": "Rockey Nebhwani",
@@ -760,6 +800,8 @@
     "siakaramalegos": {
       "name": "Sia Karamalegos",
       "teams": [
+        "analysts",
+        "authors",
         "reviewers"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/4777393?v=4&s=200",
@@ -828,6 +870,14 @@
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/9135107?v=4&s=200",
       "github": "ydimova"
+    },
+    "ziemek-bucko": {
+      "name": "Ziemek Bućko",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/60089915?v=4&s=200",
+      "github": "ziemek-bucko"
     }
   }
 }
