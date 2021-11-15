@@ -1033,6 +1033,60 @@ featured_stat_label_3: TODO
 ) }}
 
 
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>font-variant</td>
+        <td class="numeric">3,098,211</td>
+        <td class="numeric">3,641,216</td>
+      </tr>
+      <tr>
+        <td>font-variant-numeric</td>
+        <td class="numeric">153,932</td>
+        <td class="numeric">166,744</td>
+      </tr>
+      <tr>
+        <td>font-variant-ligatures</td>
+        <td class="numeric">107,211</td>
+        <td class="numeric">112,345</td>
+      </tr>
+      <tr>
+        <td>font-variant-caps</td>
+        <td class="numeric">81,734</td>
+        <td class="numeric">86,673</td>
+      </tr>
+      <tr>
+        <td>font-variant-east-asian</td>
+        <td class="numeric">20,662</td>
+        <td class="numeric">20,340</td>
+      </tr>
+      <tr>
+        <td>font-variant-position</td>
+        <td class="numeric">5,198</td>
+        <td class="numeric">5,842</td>
+      </tr>
+      <tr>
+        <td>font-variant-alternates</td>
+        <td class="numeric">4,876</td>
+        <td class="numeric">5,511</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(
+    caption="Number of pages using `font-variant` properties.",
+    sheets_gid="886194727",
+    sql_file="all_properties.sql"
+  ) }}</figcaption>
+</figure>
+
 
 {{ figure_markup(
   image="usage-of-flex-shorthands-vs-longhands.png",

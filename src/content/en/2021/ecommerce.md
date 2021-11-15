@@ -2,10 +2,10 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Ecommerce
 description: TODO
-authors: []
-reviewers: []
-analysts: []
-editors: []
+authors: [bobbyshaw]
+reviewers: [rockeynebhwani, alankent, soulcorrosion, fili]
+analysts: [rrajiv]
+editors: [shantsis]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1HCfrXJ52lV46UvxOvDVjJj70fOeFVrTTD8DUm0tPVXE/
 featured_quote: TODO
