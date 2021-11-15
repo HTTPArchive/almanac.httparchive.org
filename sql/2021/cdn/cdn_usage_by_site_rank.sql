@@ -17,5 +17,11 @@ FROM (
     firstHtml AND
     rank IS NOT NULL
   )
-GROUP BY client, cdn, rank
-ORDER BY client, rank, cdn
+GROUP BY
+  client,
+  cdn,
+  rank
+ORDER BY
+  client,
+  rank,
+  cdn
