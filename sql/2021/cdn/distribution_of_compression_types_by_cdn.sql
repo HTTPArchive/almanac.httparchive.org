@@ -19,7 +19,7 @@ FROM (
     `httparchive.almanac.requests`
   WHERE
     date = '2021-07-01' AND
-    resp_content_encoding != '' 
- ) 
- GROUP BY client, cdn, compression_type
+    resp_content_encoding != ''
+  )
+GROUP BY client, cdn, compression_type
 ORDER BY client, cdn, compression_type
