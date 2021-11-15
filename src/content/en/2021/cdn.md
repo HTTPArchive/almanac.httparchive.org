@@ -3,9 +3,9 @@
 title: CDN
 description: TODO
 authors: [Navaneeth-akam]
-reviewers: []
-analysts: []
-editors: []
+reviewers: [jzyang][boosef]
+analysts: [paulcalvano]
+editors: [jzyang]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1DL7Pn1vbBwYmQZ5JPAjD69oCOvUidbuoNvdrw--j00U/
 featured_quote: TODO
