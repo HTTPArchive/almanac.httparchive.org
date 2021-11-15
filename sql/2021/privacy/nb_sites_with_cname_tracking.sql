@@ -24,7 +24,7 @@ WITH websites_using_cname_tracking AS (
 ),
 
 totals AS (
-  SELECT DISTINCT
+  SELECT
     _TABLE_SUFFIX AS _TABLE_SUFFIX,
     count(0) AS total_pages
   FROM
@@ -33,7 +33,7 @@ totals AS (
     _TABLE_SUFFIX
 )
 
-SELECT DISTINCT
+SELECT
   _TABLE_SUFFIX AS client,
   company,
   COUNT(DISTINCT NET.REG_DOMAIN(domain)) AS nb_domains,

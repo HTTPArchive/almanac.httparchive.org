@@ -7,7 +7,7 @@ WITH websites_using_cname_tracking AS (
 ),
 
 totals AS (
-  SELECT DISTINCT
+  SELECT
     _TABLE_SUFFIX AS _TABLE_SUFFIX,
     rank_grouping,
     count(0) AS total_pages
@@ -21,7 +21,7 @@ totals AS (
     rank_grouping
 )
 
-SELECT DISTINCT
+SELECT
   _TABLE_SUFFIX AS client,
   rank_grouping,
   CASE rank_grouping
