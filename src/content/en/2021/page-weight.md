@@ -82,7 +82,7 @@ Too many files, especially large media and large complex scripts that must get r
 
 <!-- markdownlint-enable MD018 -->
 
-## Transmission
+### Transmission
 There are several factors during the transmission of web page assets and connected services that are important. Transmission is basically  the process of transferring a web file from one computer to another through one of several communication methods or channels. When a user requests a web page via HTTP(S), all files needed to render the page are requested. This means locating the file and using a transport protocol to send a copy of the file to the users browser. Page weight becomes important during this process because the size of the file determines how long it will take to complete the transfer. 
 
 If a web page requests a large number of files, it's going to take longer to transport them all. Usually there is increased latency (the time it takes for the request to connect to and begin the transportation of the requested file) if bunches of files are required, and no matter the technology there is a limit on how much can be transferred at one time. I've audited WordPress sites that request as high as 170 files or more, which ensures terrible page loading performance. 
