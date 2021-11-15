@@ -271,6 +271,14 @@
       "github": "andydavies",
       "twitter": "AndyDavies"
     },
+    "ashleyish": {
+      "name": "Ashley Berman Hale",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/35119235?v=4&s=200",
+      "github": "ashleyish"
+    },
     "tunetheweb": {
       "name": "Barry Pollard",
       "teams": [
@@ -297,10 +305,22 @@
       "github": "christianliebel",
       "twitter": "christianliebel"
     },
+    "dwsmart": {
+      "name": "Dave Smart",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/11179452?v=4&s=200",
+      "website": "https://tamethebots.com/",
+      "github": "dwsmart",
+      "twitter": "davewsmart"
+    },
     "obto": {
       "name": "David Fox",
       "teams": [
-        "leads"
+        "analysts",
+        "leads",
+        "reviewers"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/684747?v=4&s=200",
       "website": "https://www.lookzook.com",
@@ -316,6 +336,15 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/15170359?v=4&s=200",
       "github": "demianrenzulli",
       "twitter": "drenzulli"
+    },
+    "fili": {
+      "name": "Fili",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/115263?v=4&s=200",
+      "github": "fili",
+      "website": "https://fili.com/"
     },
     "GregBrimble": {
       "name": "Greg Brimble",
@@ -346,6 +375,16 @@
       "website": "https://h3manth.com",
       "github": "hemanth",
       "twitter": "gnumanth"
+    },
+    "fellowhuman1101": {
+      "name": "Jamie Indigo",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/52051775?v=4&s=200",
+      "website": "https://not-a-robot.com/",
+      "github": "fellowhuman1101",
+      "twitter": "Jammer_Volts"
     },
     "jvandriel": {
       "name": "Jarno van Driel",
@@ -511,6 +550,16 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/1120896?v=4&s=200",
       "github": "rviscomi",
       "twitter": "rick_viscomi"
+    },
+    "rvth": {
+      "name": "Ruth Everett",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/62478401?v=4&s=200",
+      "website": "https://rvth.blog/",
+      "github": "rvth",
+      "twitter": "rvtheverett"
     },
     "samarpanda": {
       "name": "Samar Panda",
