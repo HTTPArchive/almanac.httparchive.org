@@ -3,9 +3,9 @@
 title: Performance
 description: Performance chapter of the 2021 Web Almanac covering Core Web Vitals (Largest Contentful Paint, Cumulative Layout Shift, First Input Delay) as well as First Contentful Paint and Time to First Byte
 authors: [siakaramalegos]
-reviewers: [rviscomi, kevinfarrugia, estelle, ziemek-bucko, jzyang, fili, samarpanda, edmondwwchan]
+reviewers: [rviscomi, kevinfarrugia, estelle, ziemek-bucko, jzyang, fili, tunetheweb, samarpanda, edmondwwchan]
 analysts: [siakaramalegos, rviscomi, Nithanaroy]
-editors: [jzyang, tunetheweb]
+editors: [jzyang]
 translators: []
 results: https://docs.google.com/spreadsheets/d/13xhPx6o2Nowz_3b3_5ojiF_mY3Lhs25auBKM6eqGZmo/
 siakaramalegos_bio: Sia Karamalegos is a web developer, international conference speaker, and writer. She is a Google Developer Expert in Web Technologies, a Cloudinary Media Developer Expert, a Stripe Community Expert, and co-organizes the Eleventy Meetup. Check out her writing, speaking, and newsletter on <a hreflang="en" href="https://sia.codes/">sia.codes</a> or find her on <a hreflang="en" href="https://twitter.com/thegreengreek">Twitter</a>.
@@ -41,8 +41,8 @@ We supplement our CrUX RUM data with lab data from WebPageTest in HTTP Archive. 
 
 When comparing performance year-over-year, keep in mind that:
 
-- The Cumulative Layout Shift (CLS) calculation has changed since 2020.
-- The First Contentful Paint (FCP) thresholds ("good", "needs improvement", and "poor") have changed since 2020.
+- The <a hreflang="en" href="https://web.dev/cls-web-tooling/">Cumulative Layout Shift (CLS) calculation has changed</a> since 2020.
+- The <a hreflang="en" href="https://web.dev/cls-web-tooling/#additional-updates">First Contentful Paint (FCP) thresholds ("good", "needs improvement", and "poor") have changed</a> since 2020.
 - Last year's report was based on August 2020 data, and this year's report was based on the July 2021 run.
 
 Read the full [methodology](./methodology) for the Web Almanac to learn more.
@@ -67,7 +67,6 @@ This section focuses on websites that reached the "good" threshold on all three 
   )
 }}
 
-<!-- TODO: note style -->
 <p class="note"><strong>Note:</strong> As the CLS calculation changed since last year, this is not an apples-to-apples comparison.</p>
 
 Core Web Vitals for websites in the Chrome User Experience Report improved year-over-year. But, a good part of this improvement could be due to a change in the CLS calculation, not necessarily to a performance improvement in CLS. The resulting CLS "improvement" was 8 points on desktop (2 for mobile). LCP improved by 7 points for desktop (2 for mobile). FID was already at 100% for desktop for both years and improved by 10 points on mobile.
@@ -102,7 +101,7 @@ The top takeaway is that 3G and lower speeds correlated with significant perform
   )
 }}
 
-Earlier, we mentioned year-over-year improvements in LCP and FID improvements. These could be partly due to faster mobile devices and mobile networks. The chart above shows total origins accessed on 3G dropped by 2 percentage points while 4G access increased by 3 percentage points.. Percent of origins is not necessarily correlated with traffic. But, I would guess if people have more access to higher speeds, then more origins would be accessed from that connection type.
+Earlier, we mentioned year-over-year improvements in LCP and FID improvements. These could be partly due to faster mobile devices and mobile networks. The chart above shows total origins accessed on 3G dropped by 2 percentage points while 4G access increased by 3 percentage points. Percent of origins is not necessarily correlated with traffic. But, I would guess if people have more access to higher speeds, then more origins would be accessed from that connection type.
 
 Performance by connection type would be easier to understand if we could start tracking by traffic and not just origin.  It would also be nice to see data for higher speeds. However, [the API is currently limited](https://developer.mozilla.org/en-US/docs/Glossary/Effective_connection_type) to grouping anything above 4G as 4G.
 
@@ -154,7 +153,7 @@ Remember that CrUX data is only gathered in Chrome. The percent of origins by co
 
 ### By Rank
 
-This year for the first time, we have ranking data! ​​CrUX determines ranking by the number of page views per website measured in Chrome. In the charts, the categories are additive. The top 10,000 sites include the top 1,000 sites, and so forth. The "all" category is sometimes referred to as the top 10,000,000, but it does not have a full 10 million websites in it. See the [methodology](./methodology#chrome-ux-report) for more details.
+This year for the first time, we have ranking data! ​​CrUX determines ranking by the number of page views per website measured in Chrome. In the charts, the categories are additive. The top 10,000 sites include the top 1,000 sites, and so forth. See the [methodology](./methodology#chrome-ux-report) for more details.
 
 {{ figure_markup(
   image="performance-7-cwv-by-rank.png",
@@ -222,7 +221,7 @@ One more possibility has to do with CMS adoption. The [CMS Chapter](./cms) shows
 {{ figure_markup(
   image="cms-adoption-by-rank.png",
   caption="CMS adoption by rank",
-  description="Bar chart showing percent of websites using a CMS for each ranking category. On mobile, the numbers are 7% of websites in the top 1,000, 15% in the top 10,000, 20% in the top 100,000, 29% in the top 1,000,000, and 42% in the top 10,000,000.",
+  description="Bar chart showing percent of websites using a CMS for each ranking category. On mobile, the numbers are 7% of websites in the top 1,000, 15% in the top 10,000, 20% in the top 100,000, 29% in the top 1,000,000, and 42% for all sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=409766380&format=interactive",
   sheets_gid="https://docs.google.com/spreadsheets/d/1gAJh4VcSEU6-6aQxBiTFl-7cbyHukfdhg-Iaq9y5pnc/#gid=158167539",
   sql_file="../cms/cms_adoption_by_rank.sql"
@@ -236,8 +235,8 @@ Then, if we look at the top 5 CMSs by rank, we see that WordPress has the highes
 {{ figure_markup(
   image="top-cmss-by-rank.png",
   caption="Top 5 CMSs by rank",
-  description="Bar chart showing the top CMSs percent of share of each ranking category. WordPress had 3.1% of the top 1,000, 8.6% of the top 10,000, 13.2% of the top 100,000, 21.1% of the top 1,000,000, and 33.6% of the top 10,000,000. The remaining CMSs had less than 3% share of all rankings.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=2087254046&format=interactive",
+  description="Bar chart showing the top CMSs percent of share of each ranking category. WordPress had 3.1% of the top 1,000, 8.6% of the top 10,000, 13.2% of the top 100,000, 21.1% of the top 1,000,000, and 33.6% of all sites. The remaining CMSs had less than 3% share of all rankings.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1745757207&format=interactive",
   sheets_gid="https://docs.google.com/spreadsheets/d/1gAJh4VcSEU6-6aQxBiTFl-7cbyHukfdhg-Iaq9y5pnc/#gid=670045665",
   sql_file="../cms/top_cms_by_rank.sql"
   )
@@ -269,7 +268,7 @@ Only 5% of origins on WordPress experienced good TTFB in July 2021. Considering 
   )
 }}
 
-FCP was faster on desktop than mobile, likely due to both faster average network speeds and faster processors. Only 38% of origins had "good" FCP on mobile. Render-blocking resources such as synchronous JavaScript can be a common culprit. Because TTFB is the first part of FCP, poor TTFB will make it difficult to achieve a good FCP.
+FCP was faster on desktop than mobile, likely due to both faster average network speeds and faster processors. Only 38% of origins had good FCP on mobile. Render-blocking resources such as synchronous JavaScript can be a common culprit. Because TTFB is the first part of FCP, poor TTFB will make it difficult to achieve a good FCP.
 
 <p class="note"><strong>Note:</strong> The thresholds for FCP have changed since last year. Be careful if you try to compare this year's data to last year's data.</p>
 
@@ -400,7 +399,7 @@ Luckily, only 0.4% of sites used the async decode directive for their LCP image.
   )
 }}
 
-Interestingly, 354 origins on desktop attempted to use native lazy-loading on HTML elements that do not support the loading attribute (e.g., `<div>`). The loading attribute is only supported on `<img>` and  sometimes `<iframe>` elements (see <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">caniuse</a>).
+Interestingly, 354 origins on desktop attempted to use native lazy-loading on HTML elements that do not support the loading attribute (e.g., `<div>`). The loading attribute is only supported on `<img>` and, in some browsers, `<iframe>` elements (see <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">caniuse</a>).
 
 ### Cumulative Layout Shift (CLS)
 
@@ -414,7 +413,7 @@ Interestingly, 354 origins on desktop attempted to use native lazy-loading on HT
   )
 }}
 
-<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift (CLS)</a> is characterized by how much shift a user experiences, not how long it takes to visually see something like FCP and LCP. As such, performance by device was fairly equivalent.
+<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift (CLS)</a> is characterized by how much layout shift a user experiences, not how long it takes to visually see something like FCP and LCP. As such, performance by device was fairly equivalent.
 
 {{ figure_markup(
   image="performance-CLS-by-ect.png",
@@ -470,7 +469,7 @@ FID performance was better on desktop than on mobile devices likely due to devic
   )
 }}
 
-FID performance degraded some by connection type, but less so than the other metrics. The high distribution of scores seems to be reducing the amount of variance we're seeing in the analysis.
+FID performance degraded some by connection type, but less so than the other metrics. The high distribution of scores seemed to reduce the amount of variance in the results.
 
 Unlike the other metrics, FID was worse for offline websites than any other connection category. This could be due to the more complex nature of many websites with service workers. Having a service worker does not eliminate the impact of client-side JavaScript running on the main thread.
 
@@ -523,7 +522,7 @@ Remember that the data is a single, throttled-CPU Lighthouse run through WebPage
 
 ## Conclusion
 
-We still have a long way to go to provide great user experience, but we can take steps to improve it.
+Performance improved since 2020. Though we still have a long way to go to provide great user experience, we can take steps to improve it.
 
 First, you cannot improve performance unless you can measure it. A good first step here is to measure your site using real user devices and to set up real-user monitoring (RUM). You can get a flavor of how your site performs with Chrome users with the <a hreflang="en" href="https://rviscomi.github.io/crux-dash-launcher/">CrUX dashboard launcher</a> (if your site is in the dataset). You should set up a RUM solution that measures across multiple browsers. You can build this yourself or use one of many analytics vendors' solutions.
 

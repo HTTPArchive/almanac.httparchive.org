@@ -3,7 +3,10 @@
 SELECT
   client,
   CDN,
+  COUNTIF(firstHTML) AS pages,
+  COUNTIF(http2_3 AND firstHTML) AS http2_3_pages,
   SAFE_DIVIDE(COUNTIF(http2_3 AND firstHTML), COUNTIF(firstHTML)) AS http2_3_page_pct,
+  COUNTIF(http2_3) AS http2_3_requests,
   COUNTIF(http2_3) / COUNT(0) AS http2_3_request_pct
 FROM
   (
