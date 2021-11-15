@@ -241,6 +241,35 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/32825533?v=4&s=200",
       "github": "tropicadri"
     },
+    "alankent": {
+      "name": "Alan Kent",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/5702163?v=4&s=200",
+      "website": "https://alankent.me",
+      "github": "alankent",
+      "twitter": "akent99"
+    },
+    "alonko": {
+      "name": "Alon Kochba",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/7407047?v=4&s=200",
+      "github": "alonkochba",
+      "linkedin": "alonkochba",
+      "twitter": "alonkochba"
+    },
+    "andreylipattsev": {
+      "name": "Andrey Lipattsev",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/16627210?v=4&s=200",
+      "github": "andreylipattsev",
+      "twitter": "AndreyLipattsev"
+    },
     "cyberandy": {
       "name": "Andrea Volpini",
       "teams": [
@@ -310,6 +339,14 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/842657?v=4&s=200",
       "github": "carlopi",
       "twitter": "carlop54002226"
+    },
+    "chrissater": {
+      "name": "Chris Sater",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/62304935?v=4&s=200",
+      "linkedin": "christophersater"
     },
     "christianliebel": {
       "name": "Christian Liebel",
@@ -450,6 +487,16 @@
       "website": "https://jeffy.info",
       "github": "jeffposnick",
       "twitter": "jeffposnick"
+    },
+    "hyperpress": {
+      "name": "John Teague",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/25212653?v=4&s=200",
+      "website": "https://gemservers.com",
+      "github": "logicalphase",
+      "twitter": "jtteag"
     },
     "jonoalderson": {
       "name": "Jono Alderson",
@@ -680,6 +727,14 @@
       "website": "https://blog.tomayac.com/",
       "github": "tomayac"
     },
+    "tosinarasi": {
+      "name": "Tosin Arasi",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/89331243?v=4&s=200",
+      "github": "tosinarasi"
+    },
     "victorlep": {
       "name": "Victor Le Pochat",
       "teams": [
@@ -709,61 +764,6 @@
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/9135107?v=4&s=200",
       "github": "ydimova"
-    },
-    "alonko": {
-      "name": "Alon Kochba",
-      "teams": [
-        "authors"
-      ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/7407047?v=4&s=200",
-      "github": "alonkochba",
-      "linkedin": "alonkochba",
-      "twitter": "alonkochba"
-    },
-    "hyperpress": {
-      "name": "John Teague",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/25212653?v=4&s=200",
-      "website": "https://gemservers.com",
-      "github": "logicalphase",
-      "twitter": "jtteag"
-    },
-    "andreylipattsev": {
-      "name": "Andrey Lipattsev",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/16627210?v=4&s=200",
-      "github": "andreylipattsev",
-      "twitter": "AndreyLipattsev"
-    },
-    "alankent": {
-      "name": "Alan Kent",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars0.githubusercontent.com/u/5702163?v=4&s=200",
-      "website": "https://alankent.me",
-      "github": "alankent",
-      "twitter": "akent99"
-    },
-    "chrissater": {
-      "name": "Chris Sater",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars0.githubusercontent.com/u/62304935?v=4&s=200",
-      "linkedin": "christophersater"
-    },
-    "tosinarasi": {
-      "name": "Tosin Arasi",
-      "teams": [
-        "analysts"
-      ],
-      "avatar_url": "https://avatars0.githubusercontent.com/u/89331243?v=4&s=200",
-      "github": "tosinarasi"
     }
   }
 }
