@@ -9,7 +9,7 @@ editors: [RMHolmlund]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1XApPAC8m2jLJR3Ok1yAoc9PzAFtq-Z41LoakXHUVeag/
 logicalphase_bio: John currently works as a [Google Cloud Platform](https://cloud.google.com) senior developer and architect. He started his technology journey as a web developer focused on web performance and leveraging browser standards. He applied those principles as a freelance [WordPress](https://wordpress.org) developer, and as an architect and engineer for several managed hosting providers. He is a firm believer in open web standards and sustainable web best practices. To that end, John has worked on several open source projects, including Google's [Lit](https://lit.dev/) project, and is a strong advocate for [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components).
-featured_quote: It's critically important to stop optimizing web pages for $1200.00 smartphones with ultra-fast internet connections because the vast majority of internet users don't live in that world, and the energy required to power that world is unsustainable.
+featured_quote: It's critically important to stop optimizing web pages for &dollar;1,200.00 smartphones with ultra-fast internet connections because the vast majority of internet users don't live in that world, and the energy required to power that world is unsustainable.
 featured_stat_1: 1,915
 featured_stat_label_1: The median number of mobile page bytes
 featured_stat_2: 916
@@ -35,7 +35,7 @@ How much energy can we afford to use to power the transmission of large complex 
 
 In order to understand and find opportunities to keep web pages lighter and faster loading, it's instructive to examine what page weight actually means.
 
-##  What is page weight?
+## What is page weight?
 
 Page weight describes the total number of bytes (a measurement of data that contains eight bits) of a particular web page. A web page is comprised of specific elements and assets that can be rendered and viewed in a web browser, including:
 
@@ -103,8 +103,8 @@ Looking at the page weight on both desktop and mobile devices, the deltas are du
   image="bytes-distribution.png",
   caption="Distribution of total bytes per page.",
   description="Bar chart showing the distribution of the total bytes per page. Desktop pages tend to have more bytes throughout the distribution. The 10, 25, 50, 75, and 90th percentiles for mobile pages are: ~~369~~, X, X, X, and X KB per page.",
-  chart_url="",
-  sheets_gid="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vThwYNAo2K8eVJVNH_4TuA7IZpG534jXn5vFWphLLuHUo_VNGehDMKoIFWf0GquINRKWNHX66MXUmn9/pubchart?oid=8302830&format=interactive",
+  sheets_gid="895329225",
   sql_file="bytes_per_type_2021.sql"
 ) }}
 
@@ -114,8 +114,8 @@ The key data here shows we are closing in on X MB of page weight on mobile and X
   image="bytes-distribution-content-type.png",
   caption="Median bytes per page by content type.",
   description="Bar chart showing the median number of bytes per page for images, JavaScript, CSS, and HTML. The median desktop page tends to have more bytes. The median mobile page has ~~916~~ KB of images, ~~411~~ KB of JS, ~~62~~ KB of CSS, and ~~25~~ KB of HTML.",
-  chart_url="",
-  sheets_gid="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vThwYNAo2K8eVJVNH_4TuA7IZpG534jXn5vFWphLLuHUo_VNGehDMKoIFWf0GquINRKWNHX66MXUmn9/pubchart?oid=263743460&format=interactive",
+  sheets_gid="895329225",
   sql_file="bytes_per_type_2021.sql"
 ) }}
 
@@ -129,8 +129,8 @@ We have an old adage: the quickest request is the one never made. Dare we then s
   image="requests-distribution.png",
   caption="Distribution of requests per page.",
   description="Bar chart showing the distribution of requests per page. Desktop pages tend to load more requests. The 10, 25, 50, 75, and 90th percentiles for mobile pages are: ~~23, 42, 70, 114, and 174~~ requests per page.",
-  chart_url="",
-  sheets_gid="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vThwYNAo2K8eVJVNH_4TuA7IZpG534jXn5vFWphLLuHUo_VNGehDMKoIFWf0GquINRKWNHX66MXUmn9/pubchart?oid=356516185&format=interactive",
+  sheets_gid="2090334936",
   sql_file="request_type_distribution_2021.sql"
 ) }}
 
@@ -140,8 +140,8 @@ The request distribution shows that the difference between desktop and mobile is
   image="requests-content-type.png",
   caption="Median number of requests per mobile page by content type.",
   description="Bar chart showing the median number of requests per mobile page by content type. The median number of image requests per page is ~~27, 19~~ for JS, ~~7~~ for CSS, and ~~3~~ for HTML. Desktop and mobile tend to be equal except desktop pages load slightly more image and JS requests.",
-  chart_url="",
-  sheets_gid="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vThwYNAo2K8eVJVNH_4TuA7IZpG534jXn5vFWphLLuHUo_VNGehDMKoIFWf0GquINRKWNHX66MXUmn9/pubchart?oid=568469823&format=interactive",
+  sheets_gid="2090334936",
   sql_file="request_type_distribution_2021.sql"
 ) }}
 
@@ -153,8 +153,8 @@ Images again make up the largest number of requests, though JavaScript is closin
   image="response-distribution-format.png",
   caption="Distribution of image sizes by format.",
   description="Box plot of the distribution of image sizes by format: gif, ico, jpg, png, svg, and webp. Jpg sticks out as having the highest distribution with a 90th percentile exceeding 150 KB per image. Png is second highest at about 100 KB at the 90th percentile. While WebP has a smaller 90th percentile than png, its 75th percentile is higher. gif, ico, and svg all have relatively small distributions near 0 KB.",
-  chart_url="",
-  sheets_gid="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vThwYNAo2K8eVJVNH_4TuA7IZpG534jXn5vFWphLLuHUo_VNGehDMKoIFWf0GquINRKWNHX66MXUmn9/pubchart?oid=1911661099&format=interactive",
+  sheets_gid="38001790",
   sql_file="requests_format_distribution.sql"
 ) }}
 
@@ -166,8 +166,8 @@ We know that images are a great source of page weight. This graphic above shows 
   image="response-distribution-images.png",
   caption="Distribution of image response sizes per page.",
   description="Bar chart showing the distribution of image bytes per page. Desktop pages tend to load more image bytes per page throughout the distribution. The 10, 25, 50, 75, and 90th percentiles for mobile pages are: ~~67, 284, 928, 2,365, and 4,975~~ KB of images per page.",
-  chart_url="",
-  sheets_gid="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vThwYNAo2K8eVJVNH_4TuA7IZpG534jXn5vFWphLLuHUo_VNGehDMKoIFWf0GquINRKWNHX66MXUmn9/pubchart?oid=1440589973&format=interactive",
+  sheets_gid="895329225",
   sql_file="request_type_distribution_2021.sql"
 ) }}
 
