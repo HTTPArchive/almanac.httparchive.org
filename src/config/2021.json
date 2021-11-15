@@ -84,8 +84,7 @@
           "part": "II",
           "chapter_number": "10",
           "title": "Performance",
-          "slug": "performance",
-          "todo": "true"
+          "slug": "performance"
         },
         {
           "part": "II",
@@ -364,14 +363,32 @@
       "github": "demianrenzulli",
       "twitter": "drenzulli"
     },
-    "fili": {
-      "name": "Fili Wiese",
+    "edmondwwchan": {
+      "name": "Edmond W. W. Chan",
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/115263?v=4&s=200",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/68361682?v=4&s=200",
+      "github": "edmondwwchan"
+    },
+    "estelle": {
+      "name": "Estelle Weyl",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69888?v=4&s=200",
+      "github": "estelle"
+    },
+    "fili": {
+      "name": "Fili",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/115263?v=4&s=200",
+      "website": "https://fili.com/",
       "github": "fili",
-      "website": "https://fili.com/"
+      "linkedin": "filiwiese",
+      "twitter": "filiwiese"
     },
     "GregBrimble": {
       "name": "Greg Brimble",
@@ -475,10 +492,13 @@
     "jzyang": {
       "name": "Julia Yang",
       "teams": [
-        "reviewers"
+        "reviewers",
+        "editors"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/2634031?v=4&s=200",
-      "github": "jzyang"
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2634031?v=4&s=200",
+      "github": "jzyang",
+      "linkedin": "yangzhe",
+      "twitter": "Jules_Yang"
     },
     "Schweinepriester": {
       "name": "Kai Schweinepriester",
@@ -491,7 +511,8 @@
     "kevinfarrugia": {
       "name": "Kevin Farrugia",
       "teams": [
-        "authors"
+        "authors",
+        "reviewers"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/8075326?v=4&s=200",
       "website": "https://imkev.dev",
@@ -733,6 +754,8 @@
     "siakaramalegos": {
       "name": "Sia Karamalegos",
       "teams": [
+        "analysts",
+        "authors",
         "reviewers"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/4777393?v=4&s=200",
@@ -801,6 +824,14 @@
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/9135107?v=4&s=200",
       "github": "ydimova"
+    },
+    "ziemek-bucko": {
+      "name": "Ziemek Bućko",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/60089915?v=4&s=200",
+      "github": "ziemek-bucko"
     }
   }
 }
