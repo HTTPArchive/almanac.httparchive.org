@@ -853,7 +853,7 @@ The share of pages using CSS gradients was roughly the same as last year: 77% of
   ) }}</figcaption>
 </figure>
 
-Linear gradients continue to be the clear favorite, maintaining the 5-to-1 lead over radial gradients seen in the 2020 Web Almanac.
+Linear gradients continue to be the clear favorite, maintaining the 5-to-1 lead over radial gradients seen in the [2020 Web Almanac](../2020/css).
 
 {{ figure_markup(
   image="most-popular-unprefixed-gradient-functions.png",
