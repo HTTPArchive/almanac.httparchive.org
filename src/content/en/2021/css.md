@@ -1367,7 +1367,7 @@ The other low scoring property, `font-stretch`, is heavily dependent on both fon
 
 #### Flexbox
 
-Some of the Flexbox longhand and shorthand properties have had a turbulent history; for example, the CSS Flexbox specification itself [recommends that authors avoid ](https://drafts.csswg.org/css-flexbox-1/#flex-grow-property)using `flex-grow`, `flex-shrink`, and `flex-basis` and use the `flex` shorthand instead.  This ensures that unset properties have sensible values. Unfortunately, this doesn’t seem to be bearing out in the wild, where `flex-basis` is used more often on mobile pages than is `flex`, by a margin of more than 10%.
+Some of the Flexbox longhand and shorthand properties have had a turbulent history; for example, the CSS Flexbox specification itself [recommends that authors avoid](https://drafts.csswg.org/css-flexbox-1/#flex-grow-property) using `flex-grow`, `flex-shrink`, and `flex-basis` and use the `flex` shorthand instead.  This ensures that unset properties have sensible values. Unfortunately, this doesn’t seem to be bearing out in the wild, where `flex-basis` is used more often on mobile pages than is `flex`, by a margin of more than 10%.
 
 {{ figure_markup(
   image="usage-of-flex-shorthands-vs-longhands.png",
