@@ -877,7 +877,7 @@ We also saw a dramatic reduction at the top end of gradient complexity.  Last ye
 {{ figure_markup(
   image="most-color-stops.png",
   classes="height-16vw-122px",
-  caption="The linear gradient with the most color stops foudn in our analysis.",
+  caption="The linear gradient with the most color stops.",
   description="A screenshot of the gradient with the most color stops, which is a series of intricate multicolor stripes of varying hues.",
   width=600,
   height=100
