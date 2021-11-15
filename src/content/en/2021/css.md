@@ -683,7 +683,7 @@ What we found was that most CSS doesn’t result in a lot of image loads: the lo
 
 {{ figure_markup(
   image="number-of-images-loaded.png",
-  caption="Distribution of the median number of external images loaded via CSS.",
+  caption="Distribution of the number of external images loaded via CSS.",
   description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the number of images loaded via CSS.  The results are as follows.  10th and 25th percentiles, 1 on both desktop and mobile.  50th percentile, 3 on both dekstop and mobile.  75th percentile, 6 on desktop and 5 on mobile.  90th percentile, 11 on desktop and 10 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1206209320&format=interactive",
   sheets_gid="361647805",
