@@ -1081,7 +1081,7 @@ featured_stat_label_3: TODO
     </tbody>
   </table>
   <figcaption>{{ figure_link(
-    caption="Number of pages using font-variant properties.",
+    caption="Number of pages using `font-variant` properties.",
     sheets_gid="886194727",
     sql_file="all_properties.sql"
   ) }}</figcaption>
