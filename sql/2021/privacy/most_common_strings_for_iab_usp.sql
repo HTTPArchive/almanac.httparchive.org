@@ -34,5 +34,6 @@ GROUP BY
   total_websites,
   uspString
 ORDER BY
+  pct_websites DESC,
   client,
-  nb_websites DESC
+  uspString
