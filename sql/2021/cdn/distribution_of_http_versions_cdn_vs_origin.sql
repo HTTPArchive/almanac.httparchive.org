@@ -35,7 +35,6 @@ FROM
       CAST(jSON_EXTRACT(payload, "$._socket") AS INT64) AS socket
     FROM
       `httparchive.almanac.requests`
-    --`httparchive.sample_data.requests`
     WHERE
       # WPT changes the response fields based on a redirect (url becomes the Location path instead of the original) causing insonsistencies in the counts, so we ignore them
       resp_location = '' OR resp_location IS NULL AND
