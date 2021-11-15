@@ -37,6 +37,7 @@ SELECT
   client,
   tracker,
   category,
+  tracker || ' (' || category || ')' AS tracker_and_category,
   isTrackerCategory(category) AS isTracker,
   COUNT(DISTINCT page) AS number_of_websites,
   total_websites,
@@ -62,5 +63,6 @@ GROUP BY
   isTracker,
   total_websites
 ORDER BY
-  client,
-  number_of_websites DESC
+  pct_websites DESC,
+  client
+LIMIT 1000
