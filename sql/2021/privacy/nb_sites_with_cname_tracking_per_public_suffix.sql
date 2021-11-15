@@ -1,23 +1,41 @@
 WITH websites_using_cname_tracking AS (
-  SELECT DISTINCT NET.REG_DOMAIN(d) AS d
+  SELECT DISTINCT
+    NET.REG_DOMAIN(domain) AS domain,
+    NET.PUBLIC_SUFFIX(NET.REG_DOMAIN(domain)) AS suffix,
+    tracker
   FROM
-    `bamboo-chariot-267911.cname_analysis.results_tracking_2021_08_01`,
-    UNNEST(domains) AS d
+    `httparchive.almanac.cname_tracking`,
+    UNNEST(SPLIT(SUBSTRING(domains, 2, LENGTH(domains) - 2))) AS domain
 ),
 
-suffixes AS (
-  SELECT
-    NET.PUBLIC_SUFFIX(d) AS suffix
+totals AS (
+  SELECT DISTINCT
+    _TABLE_SUFFIX AS _TABLE_SUFFIX,
+    count(0) AS total_pages
   FROM
-    websites_using_cname_tracking
+    `httparchive.summary_pages.2021_07_01_*`
+  GROUP BY
+    _TABLE_SUFFIX
 )
 
-SELECT
+SELECT DISTINCT
+  _TABLE_SUFFIX AS client,
   suffix,
-  COUNT(suffix) AS nb_websites_with_suffix
+  COUNT(0) AS num_pages,
+  total_pages,
+  COUNT(0) / total_pages AS pct_pages
 FROM
-  suffixes
+  `httparchive.summary_pages.2021_07_01_*`
+JOIN
+  totals
+USING (_TABLE_SUFFIX)
+JOIN
+  websites_using_cname_tracking
+ON domain = NET.REG_DOMAIN(urlShort)
 GROUP BY
+  client,
+  total_pages,
   suffix
 ORDER BY
-  nb_websites_with_suffix DESC
+  pct_pages DESC,
+  client

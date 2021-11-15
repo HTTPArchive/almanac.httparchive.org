@@ -1,34 +1,51 @@
-SELECT
-  rank,
-  COUNT(d) AS nb_sites
-FROM (
-  SELECT
-    d,
-    MIN(rank) AS rank
-  FROM (
-    WITH websites_using_cname_tracking AS (
-      SELECT DISTINCT NET.REG_DOMAIN(d) AS d
-      FROM
-        `bamboo-chariot-267911.cname_analysis.results_tracking_2021_08_01`,
-        UNNEST(domains) AS d
-    )
+WITH websites_using_cname_tracking AS (
+  SELECT DISTINCT
+    NET.REG_DOMAIN(domain) AS domain
+  FROM
+    `httparchive.almanac.cname_tracking`,
+    UNNEST(SPLIT(SUBSTRING(domains, 2, LENGTH(domains) - 2))) AS domain
+),
 
-    SELECT
-      d,
-      ARRAY_AGG(rank) AS ranks
-    FROM
-      `httparchive.summary_pages.2021_08_01_desktop`
-    JOIN
-      websites_using_cname_tracking
-    ON d = NET.REG_DOMAIN(urlShort)
-    GROUP BY
-      d
-    ),
-    UNNEST(ranks) AS rank
+totals AS (
+  SELECT DISTINCT
+    _TABLE_SUFFIX AS _TABLE_SUFFIX,
+    rank_grouping,
+    count(0) AS total_pages
+  FROM
+    `httparchive.summary_pages.2021_07_01_*`,
+    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+  WHERE
+    rank <= rank_grouping
   GROUP BY
-    d
+    _TABLE_SUFFIX,
+    rank_grouping
 )
+
+SELECT DISTINCT
+  _TABLE_SUFFIX AS client,
+  rank_grouping,
+  CASE rank_grouping
+    WHEN 10000000 THEN 'all'
+    ELSE TRIM(CAST(rank_grouping AS STRING FORMAT '99,999,999'))
+  END AS rank_grouping_text,
+  count(0) AS num_cname_pages,
+  total_pages,
+  count(0) / total_pages AS pct_pages
+FROM
+  `httparchive.summary_pages.2021_07_01_*`,
+  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+JOIN
+  totals
+USING (_TABLE_SUFFIX, rank_grouping)
+JOIN
+  websites_using_cname_tracking
+ON domain = NET.REG_DOMAIN(urlShort)
+WHERE
+  rank <= rank_grouping
 GROUP BY
-  rank
+  client,
+  total_pages,
+  rank_grouping
 ORDER BY
-  rank
+  rank_grouping,
+  client
