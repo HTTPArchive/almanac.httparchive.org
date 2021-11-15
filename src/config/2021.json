@@ -241,6 +241,16 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/32825533?v=4&s=200",
       "github": "tropicadri"
     },
+    "alankent": {
+      "name": "Alan Kent",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/5702163?v=4&s=200",
+      "website": "https://alankent.me",
+      "github": "alankent",
+      "twitter": "akent99"
+    },
     "cyberandy": {
       "name": "Andrea Volpini",
       "teams": [
@@ -270,6 +280,22 @@
       "github": "andydavies",
       "twitter": "AndyDavies"
     },
+    "ashleyish": {
+      "name": "Ashley Berman Hale",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/35119235?v=4&s=200",
+      "github": "ashleyish"
+    },
+    "azakai": {
+      "name": "azakai",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/451275?v=4&s=200",
+      "github": "azakai"
+    },
     "tunetheweb": {
       "name": "Barry Pollard",
       "teams": [
@@ -286,6 +312,15 @@
       "linkedin": "tunetheweb",
       "twitter": "tunetheweb"
     },
+    "carlopi": {
+      "name": "Carlo Piovesan",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/842657?v=4&s=200",
+      "github": "carlopi",
+      "twitter": "carlop54002226"
+    },
     "christianliebel": {
       "name": "Christian Liebel",
       "teams": [
@@ -296,10 +331,22 @@
       "github": "christianliebel",
       "twitter": "christianliebel"
     },
+    "dwsmart": {
+      "name": "Dave Smart",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/11179452?v=4&s=200",
+      "website": "https://tamethebots.com/",
+      "github": "dwsmart",
+      "twitter": "davewsmart"
+    },
     "obto": {
       "name": "David Fox",
       "teams": [
-        "leads"
+        "analysts",
+        "leads",
+        "reviewers"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/684747?v=4&s=200",
       "website": "https://www.lookzook.com",
@@ -373,6 +420,27 @@
       "github": "hemanth",
       "twitter": "gnumanth"
     },
+    "RReverser": {
+      "name": "Ingvar Stepanyan",
+      "teams": [
+        "analysts",
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/557590?v=4&s=200",
+      "website": "https://rreverser.com/",
+      "github": "RReverser",
+      "twitter": "RReverser"
+    },
+    "fellowhuman1101": {
+      "name": "Jamie Indigo",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/52051775?v=4&s=200",
+      "website": "https://not-a-robot.com/",
+      "github": "fellowhuman1101",
+      "twitter": "Jammer_Volts"
+    },
     "jvandriel": {
       "name": "Jarno van Driel",
       "teams": [
@@ -382,6 +450,15 @@
       "github": "jvandriel",
       "twitter": "JarnoVanDriel",
       "linkedin": "jarno-van-driel-36a47075"
+    },
+    "jsoverson": {
+      "name": "Jarrod Overson",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/842798?v=4&s=200",
+      "website": "http://jarrodoverson.com/",
+      "github": "jsoverson"
     },
     "JasmineDWillson": {
       "name": "Jasmine Drudge-Willson",
@@ -460,6 +537,22 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/58731469?v=4",
       "github": "lucasbona05"
     },
+    "soulcorrosion": {
+      "name": "Manuel Garcia",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/7148510?v=4&s=200",
+      "github": "soulcorrosion"
+    },
+    "maudnals": {
+      "name": "Maud Nalpas",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/9762897?v=4&s=200",
+      "github": "maudnals"
+    },
     "max-ostapenko": {
       "name": "Max Ostapenko",
       "teams": [
@@ -479,19 +572,21 @@
       "github": "webmaxru",
       "twitter": "webmaxru"
     },
-    "maudnals": {
-      "name": "Maud Nalpas",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/9762897?v=4&s=200",
-      "github": "maudnals"
-    },
     "michelleoconnor": {
       "name": "Michelle O'Connor",
       "teams": [
         "designers"
       ]
+    },
+    "mgechev": {
+      "name": "Minko Gechev",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/455023?v=4&s=200",
+      "website": "https://blog.mgechev.com/",
+      "github": "mgechev",
+      "twitter": "mgechev"
     },
     "Navaneeth-akam": {
       "name": "Navaneeth",
@@ -500,6 +595,26 @@
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/69532755?v=4&s=200",
       "github": "Navaneeth-akam"
+    },
+    "MeFoDy": {
+      "name": "Nikita Dubko",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/1439919?v=4&s=200",
+      "website": "https://mefody.dev/",
+      "github": "MeFoDy",
+      "twitter": "dark_mefody"
+    },
+    "NishuGoel": {
+      "name": "Nishu Goel",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/26349046?v=4s=200",
+      "website": "http://unravelweb.dev/",
+      "github": "NishuGoel",
+      "twitter": "TheNishuGoel"
     },
     "nithanaroy": {
       "name": "Nitin Pasumarthy",
@@ -511,13 +626,17 @@
       "linkedin": "nitinpasumarthy",
       "website": "https://nithanaroy.medium.com/"
     },
-    "Nithanaroy": {
-      "name": "Nitin Pasumarthy",
+    "pankajparkar": {
+      "name": "Pankaj Parkar",
       "teams": [
-        "analysts"
+        "analysts",
+        "editors",
+        "reviewers"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/670556?v=4&s=200",
-      "github": "Nithanaroy"
+      "avatar_url": "https://avatars.githubusercontent.com/u/5320044?v=4&s=200",
+      "website": "https://medium.com/@pankajparkar",
+      "github": "pankajparkar",
+      "twitter": "pankajparkar"
     },
     "thepassle": {
       "name": "Pascal Schilp",
@@ -557,17 +676,45 @@
       "github": "philbarker",
       "twitter": "philbarker"
     },
+    "rrajiv": {
+      "name": "Rajiv Ramnath",
+      "teams": [
+        "analysts"
+      ],
+      "github": "rrajiv",
+      "linkedin": "rajivramnath"
+    },
     "rviscomi": {
       "name": "Rick Viscomi",
       "teams": [
-        "reviewers",
         "analysts",
         "editors",
-        "leads"
+        "leads",
+        "reviewers"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/1120896?v=4&s=200",
       "github": "rviscomi",
       "twitter": "rick_viscomi"
+    },
+    "rockeynebhwani": {
+      "name": "Rockey Nebhwani",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/1718757?v=4&s=200",
+      "github": "rockeynebhwani",
+      "twitter": "rnebhwani",
+      "linkedin": "rockeynebhwani"
+    },
+    "rvth": {
+      "name": "Ruth Everett",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/62478401?v=4&s=200",
+      "website": "https://rvth.blog/",
+      "github": "rvth",
+      "twitter": "rvtheverett"
     },
     "samarpanda": {
       "name": "Samar Panda",
@@ -580,7 +727,8 @@
     "shantsis": {
       "name": "Shaina Hantsis",
       "teams": [
-        "designers"
+        "designers",
+        "editors"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/22671477?v=4&s=200",
       "github": "shantsis"
@@ -635,6 +783,17 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/145676?v=4&s=200",
       "website": "https://blog.tomayac.com/",
       "github": "tomayac"
+    },
+    "bobbyshaw": {
+      "name": "Tom Robertshaw",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/553566?v=4&s=200",
+      "website": "https://www.space48.com",
+      "github": "bobbyshaw",
+      "linkedin": "tomrobertshaw",
+      "twitter": "bobbyshaw"
     },
     "victorlep": {
       "name": "Victor Le Pochat",
