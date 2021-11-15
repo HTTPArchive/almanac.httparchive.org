@@ -13,7 +13,9 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2021-07-01'
+    date = '2021-07-01' AND
+    firstHtml
+    AND rank IS NOT null
   )
 GROUP BY client, cdn, rank
 ORDER BY client, rank, cdn
