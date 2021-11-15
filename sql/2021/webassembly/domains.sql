@@ -11,7 +11,7 @@ FROM
     GROUP BY
       client
   )
-  JOIN (
+JOIN (
     SELECT
       client,
       COUNT(DISTINCT NET.REG_DOMAIN(page)) AS domains_using_wasm
@@ -22,4 +22,4 @@ FROM
     GROUP BY
       client
   )
-  USING (client)
+USING (client)
