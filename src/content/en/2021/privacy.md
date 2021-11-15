@@ -139,6 +139,7 @@ From the percentage of websites using these third-party services, we can see tha
 ### CNAME tracking
 
 Continuing with techniques that circumvent blocks on third-party tracking, <a hreflang="en" href="https://medium.com/nextdns/cname-cloaking-the-dangerous-disguise-of-third-party-trackers-195205dc522a">CNAME tracking</a> is a novel approach where a first-party subdomain masks the use of a third-party service using a CNAME record at the [DNS level](https://adguard.com/en/blog/cname-tracking.html). From the viewpoint of the browser, everything happens within a first-party context, so none of the third-party countermeasures are applied. Major tracking companies such as Adobe and Oracle are <a hreflang="en" href="https://sciendo.com/article/10.2478/popets-2021-0053">already offering CNAME tracking solutions</a> to their customers.
+For the results on CNAME-based tracking included in this chapter, we refer to [research](https://arxiv.org/pdf/2102.09301.pdf) completed by Y. Dimova and others where we developed a method to detect CNAME-based tracking, based on DNS data and request data from HTTP Archive. 
 
 {{ figure_markup(
   image="nb_sites_with_cname_tracking.png",
@@ -150,7 +151,6 @@ Continuing with techniques that circumvent blocks on third-party tracking, <a hr
   )
 }}
 
-{# TODO - this SQL doesn't exist. Also why only desktop? #}
 
 The most popular company performing CNAME-based tracking is <a hreflang="en" href="https://www.pardot.com/">Pardot</a>, which is present on 6,619 desktop websites. Also notable in size is Adobe, with 2,671 publisher domains.
 
@@ -166,7 +166,6 @@ Those numbers may seem a small percentage of our 6.2 million websites crawled on
   )
 }}
 
-{# TODO - this SQL doesn't exist. Also why only desktop? #}
 
 When we look at the rank of the websites that use CNAME-based tracking, we see that 4.20% of the top 1,000 websites embed a CNAME tracker. In the top 10,000, that number falls to 3.33% of websites.
 
@@ -180,7 +179,6 @@ When we look at the rank of the websites that use CNAME-based tracking, we see t
   )
 }}
 
-{# TODO - this SQL doesn't exist. Also why desktop? #}
 
 Apart from the `.com` suffix, a large number of the websites using CNAME-based tracking have a `.jp` domain. Also, a notable amount of CNAME trackers are prevalent on `.uk` and `.fr` websites.
 
