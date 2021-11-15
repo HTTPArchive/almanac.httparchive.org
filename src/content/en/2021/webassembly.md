@@ -3,8 +3,8 @@
 title: WebAssembly
 description: TODO
 authors: [RReverser]
-reviewers: []
-analysts: []
+reviewers: [jsoverson, carlopi, azakai]
+analysts: [RReverser]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1IMa2SbdQgshb4pGWF1KOh9s4zMtLbRymWZGYjdaatXY/
