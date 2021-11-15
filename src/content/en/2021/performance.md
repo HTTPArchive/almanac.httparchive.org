@@ -348,7 +348,7 @@ Let's take a deeper dive into the LCP element.
 {{ figure_markup(
   image="performance-top-15-lcp-nodes.png",
   caption="Top 15 LCP HTML element nodes",
-  description="Bar chart showing the percent share of pages for each node type for the LCP element- data listed by desktop then mobile: IMG 47% 42%, DIV 28% 27%, P 6% 10%, H1 3% 5%, SECTION 3% 2%, undetected 2% 2%, H2 2% 2%, A 1% 2%, SPAN 1% 1%, HEADER 1% 1%, LI 1% 1%, RS-SBG 1% 1%, H3 0% 1%, TD 1% 1%, VIDEO 0% 0%",
+  description="Bar chart showing the percent share of pages for each node type for the LCP element- data listed by desktop then mobile: `IMG` 47% and 42%, `DIV` 28% and 27%, `P` 6% and 10%, `H1` 3% and 5%, `SECTION` 3% and 2%, undetected 2% and 2%, `H2` 2% and 2%, `A` 1% and 2%, `SPAN` 1% and 1%, `HEADER` 1% and 1%, `LI` 1% and 1%, `RS-SBG` 1% and 1%, `H3` 0% and 1%, `TD` 1% and 1%, `VIDEO` 0% and 0%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1549429021&format=interactive",
   width=600,
   height=909,
