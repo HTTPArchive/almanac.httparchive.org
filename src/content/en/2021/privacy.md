@@ -388,7 +388,7 @@ Therefore, websites turned to the use of cookie consent banners, privacy policie
 
 {{ figure_markup(
   image="nb_websites_with_cmp.png",
-  caption="Percentage of websites that use a Consent Management Platfor.",
+  caption="Percentage of websites that use a Consent Management Platform.",
   description="Bar chart showing the percentage of websites that use a third-party library for consent management. 7.10% of desktop sites and 6.97% of mobile sites use a CMP.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=246947280&format=interactive",
   sheets_gid="147308043",
