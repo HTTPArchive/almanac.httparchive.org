@@ -29,9 +29,9 @@ For WebAssembly content analysis, we couldn't use BigQuery directly. Instead, we
 
 Using crawler requests as a source for analysis has its own tradeoffs you need to be aware of when looking at the numbers in this article:
 
-+   First, we don't have information about requests that can be triggered by user interaction. We include only resources collected during the page load.
-+   Second, some websites are more popular than others, but we don't have precise visitor data and don't take it into account - instead, each detected Wasm usage is treated as equal.
-+   Finally, in graphs like sizes we count the same WebAssembly module used across multiple websites as unique usages, instead of comparing only unique files. This is because we are most interested in the global picture of WebAssembly usage across the web pages rather than comparing libraries to each other.
+- First, we don't have information about requests that can be triggered by user interaction. We include only resources collected during the page load.
+- Second, some websites are more popular than others, but we don't have precise visitor data and don't take it into account - instead, each detected Wasm usage is treated as equal.
+- Finally, in graphs like sizes we count the same WebAssembly module used across multiple websites as unique usages, instead of comparing only unique files. This is because we are most interested in the global picture of WebAssembly usage across the web pages rather than comparing libraries to each other.
 
 Those tradeoffs are most consistent with analysis done in other chapters, but if you're interested in gathering other statistics, you're welcome to run your own queries against the table `httparchive.almanac.wasm_stats`.
 
@@ -67,18 +67,18 @@ The next up is [Hyphenopoly](https://github.com/mnater/Hyphenopoly) - a library 
 
 Other libraries from both top 10 desktop and mobile lists account for up to 5% of WebAssembly requests each. Here's a complete list of libraries from the graph above, with toolchains and links to the corresponding homepages:
 
-+   [Amazon IVS](https://aws.amazon.com/ivs/) (Emscripten)
-+   [Hyphenopoly](https://mnater.github.io/Hyphenopoly/) (AssemblyScript)
-+   [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) (.NET)
-+   [ArcGIS](https://developers.arcgis.com/javascript/latest/) (Emscripten)
-+   [Draco](https://google.github.io/draco/) (Emscripten)
-+   [CanvasKit](https://skia.org/docs/user/modules/canvaskit/) (Emscripten)
-+   [Playa Games](https://www.playa-games.com/en/) (Unity via Emscripten)
-+   [Tableau](https://help.tableau.com/current/api/js_api/en-us/JavaScriptAPI/js_api.htm) (Emscripten)
-+   [Xat](https://xat.com/) (Emscripten)
-+   [Tencent Video](https://intl.cloud.tencent.com/products/vod) (Emscripten)
-+   [Nimiq](https://www.npmjs.com/package/@nimiq/core-web) (Emscripten)
-+   [Scandit](https://www.scandit.com/developers/) (Emscripten)
+- [Amazon IVS](https://aws.amazon.com/ivs/) (Emscripten)
+- [Hyphenopoly](https://mnater.github.io/Hyphenopoly/) (AssemblyScript)
+- [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) (.NET)
+- [ArcGIS](https://developers.arcgis.com/javascript/latest/) (Emscripten)
+- [Draco](https://google.github.io/draco/) (Emscripten)
+- [CanvasKit](https://skia.org/docs/user/modules/canvaskit/) (Emscripten)
+- [Playa Games](https://www.playa-games.com/en/) (Unity via Emscripten)
+- [Tableau](https://help.tableau.com/current/api/js_api/en-us/JavaScriptAPI/js_api.htm) (Emscripten)
+- [Xat](https://xat.com/) (Emscripten)
+- [Tencent Video](https://intl.cloud.tencent.com/products/vod) (Emscripten)
+- [Nimiq](https://www.npmjs.com/package/@nimiq/core-web) (Emscripten)
+- [Scandit](https://www.scandit.com/developers/) (Emscripten)
 
 ## How much do we ship?
 
@@ -146,67 +146,18 @@ _Percent of total Wasm size in the dataset that belongs to custom sections_
 
 Custom sections are mainly used in WebAssembly for 3rd-party tooling - they might contain information for type binding systems, linkers, DevTools and such. While all of those are legitimate use-cases, they are rarely necessary in production code, so such a large percentage is suspicious. Let's take a look at what they are in top 10 files with largest custom sections:
 
-<table>
-<thead>
-<tr>
-<th>url</th>
-<th>custom_sections_size</th>
-<th>custom_sections</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://gallery.platform.uno/package_85a43e09d7152711f12894936a8986e20694304a/dotnet.wasm">https://gallery.platform.uno/package_85a43e09d7152711f12894936a8986e20694304a/dotnet.wasm</a></td>
-<td>15053733</td>
-<td>name</td>
-</tr>
-<tr>
-<td><a href="https://cdn.decentraland.org/@dcl/unity-renderer/1.0.12536-20210902152600.commit-86fe4be/unity.wasm.br?v=1.0.8874">https://cdn.decentraland.org/@dcl/unity-renderer/1.0.12536-20210902152600.commit-86fe4be/unity.wasm.br?v=1.0.8874</a></td>
-<td>9705643</td>
-<td>name</td>
-</tr>
-<tr>
-<td><a href="https://nanoleq.com/nanoleq-HTML5-Shipping.wasmgz">https://nanoleq.com/nanoleq-HTML5-Shipping.wasmgz</a></td>
-<td>8531376</td>
-<td>name</td>
-</tr>
-<tr>
-<td><a href="https://convertmodel.com/export.wasm">https://convertmodel.com/export.wasm</a></td>
-<td>7306371</td>
-<td>name</td>
-</tr>
-<tr>
-<td><a href="https://webasset-akm.imvu.com/asset/c0c43115a4de5de0/build/northstar/js/northstar_api.wasm">https://webasset-akm.imvu.com/asset/c0c43115a4de5de0/build/northstar/js/northstar_api.wasm</a></td>
-<td>6470360</td>
-<td>name, external_debug_info</td>
-</tr>
-<tr>
-<td><a href="https://webasset-akm.imvu.com/asset/9982942a9e080158/build/northstar/js/northstar_api.wasm">https://webasset-akm.imvu.com/asset/9982942a9e080158/build/northstar/js/northstar_api.wasm</a></td>
-<td>6435469</td>
-<td>name, external_debug_info</td>
-</tr>
-<tr>
-<td><a href="https://superctf.com/ReactGodot.wasm">https://superctf.com/ReactGodot.wasm</a></td>
-<td>4672588</td>
-<td>name</td>
-</tr>
-<tr>
-<td><a href="https://ui.perfetto.dev/v18.0-591dd9336/trace_processor.wasm">https://ui.perfetto.dev/v18.0-591dd9336/trace_processor.wasm</a></td>
-<td>2079991</td>
-<td>name</td>
-</tr>
-<tr>
-<td><a href="https://ui.perfetto.dev/v18.0-615704773/trace_processor.wasm">https://ui.perfetto.dev/v18.0-615704773/trace_processor.wasm</a></td>
-<td>2079991</td>
-<td>name</td>
-</tr>
-<tr>
-<td><a href="https://unpkg.com/canvaskit-wasm@0.25.1/bin/profiling/canvaskit.wasm">https://unpkg.com/canvaskit-wasm@0.25.1/bin/profiling/canvaskit.wasm</a></td>
-<td>1491602</td>
-<td>name</td>
-</tr>
-</tbody>
-</table>
+| url                                                                                                               | custom_sections_size | custom_sections           |
+|-------------------------------------------------------------------------------------------------------------------|----------------------|---------------------------|
+| https://gallery.platform.uno/package_85a43e09d7152711f12894936a8986e20694304a/dotnet.wasm                         |             15053733 | name                      |
+| https://cdn.decentraland.org/@dcl/unity-renderer/1.0.12536-20210902152600.commit-86fe4be/unity.wasm.br?v=1.0.8874 |              9705643 | name                      |
+| https://nanoleq.com/nanoleq-HTML5-Shipping.wasmgz                                                                 |              8531376 | name                      |
+| https://convertmodel.com/export.wasm                                                                              |              7306371 | name                      |
+| https://webasset-akm.imvu.com/asset/c0c43115a4de5de0/build/northstar/js/northstar_api.wasm                        |              6470360 | name, external_debug_info |
+| https://webasset-akm.imvu.com/asset/9982942a9e080158/build/northstar/js/northstar_api.wasm                        |              6435469 | name, external_debug_info |
+| https://superctf.com/ReactGodot.wasm                                                                              |              4672588 | name                      |
+| https://ui.perfetto.dev/v18.0-591dd9336/trace_processor.wasm                                                      |              2079991 | name                      |
+| https://ui.perfetto.dev/v18.0-615704773/trace_processor.wasm                                                      |              2079991 | name                      |
+| https://unpkg.com/canvaskit-wasm@0.25.1/bin/profiling/canvaskit.wasm                                              |              1491602 | name                      |
 
 All of those are almost exclusively the `name` section which contains function names for basic debugging. In fact, if we keep looking through the dataset, we can see that almost all of those custom sections contain just the debug information.
 
@@ -239,7 +190,7 @@ We've decided to check the performance of wasm-opt on the collected HTTP Archive
 As mentioned above, wasm-opt is already used by most compiler toolchains, so most of the modules in the dataset are already its resulting artifacts. Unlike in compression analysis above, there's no way for us to reverse existing optimizations and run wasm-opt on the originals. Instead, we're re-running wasm-opt on pre-optimized binaries, which skews the results. This is the command we've used on binaries produced after the strip-debug step:
 
 ```bash
-$ wasm-opt -O -all some.wasm -o some.opt.wasm
+wasm-opt -O -all some.wasm -o some.opt.wasm
 ```
 
 Then, we compressed the results to Brotli and compared to the previous step, as usual.
@@ -256,10 +207,10 @@ If we look at the uncompressed savings, it becomes more clear that, even on our 
 
 This suggests several reasons for the surprising distribution in the post-compression graph:
 
-1.  As mentioned above, our dataset does not resemble real-world wasm-opt usage as the majority of the files have been already pre-optimized by wasm-opt. Further instruction reordering that improves uncompressed size a bit further, is bound to make certain patterns either more or less compressible than others, which, in turn, produces statistical noise.
-1.  Also as mentioned earlier, the network (compressed) size is not everything.
+1. As mentioned above, our dataset does not resemble real-world wasm-opt usage as the majority of the files have been already pre-optimized by wasm-opt. Further instruction reordering that improves uncompressed size a bit further, is bound to make certain patterns either more or less compressible than others, which, in turn, produces statistical noise.
+1. Also as mentioned earlier, the network (compressed) size is not everything.
 Smaller WebAssembly binaries tend to mean faster compilation in the VM, less memory consumption while compiling, and less memory to hold the compiled code. wasm-opt has to strike a balance here, which might also mean that the compressed size might sometimes regress in favor of better raw sizes.
-1.  Finally, some regressions at the extreme end of the graph look like potentially valuable examples to study and improve that balance. We've [reported them back](https://github.com/WebAssembly/binaryen/issues/4322) to the Binaryen team so that they could look deeper into potential optimizations.
+1. Finally, some regressions at the extreme end of the graph look like potentially valuable examples to study and improve that balance. We've [reported them back](https://github.com/WebAssembly/binaryen/issues/4322) to the Binaryen team so that they could look deeper into potential optimizations.
 
 ## What are the most popular instructions?
 
@@ -288,8 +239,6 @@ For example, [non-trapping float-to-int conversions](https://github.com/WebAssem
 Other features with zero detected usages - multi-value, reference types and tail calls - are in a similar situation and they could also be useful for most WebAssembly modules, but they additionally suffer from either incomplete compiler or browser support.
 
 Among the remaining, used, features, two that are particularly interesting are SIMD and atomics. Both provide instructions for parallelising and speeding up execution at different levels: [SIMD](https://v8.dev/features/simd) allows to perform math operations on several values at once, and atomics provide a basis for [multithreading in Wasm](https://web.dev/webassembly-threads/). They are not enabled by default, require specific use-cases, and multithreading in particular requires using special libraries in the source code as well as additional configuration to make the website [cross-origin isolated](https://web.dev/coop-coep/) before it can be used on the web. As a result, a relatively low usage level is expected, although we expect them to grow over time.
-
-##
 
 ## Conclusion
 
