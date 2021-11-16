@@ -50,7 +50,7 @@ npm run generate
 echo "Diff the two folders"
 #Don't fail if there are differences so turn that check off that temporarily
 set +e
-diff -r templates "${TEMP_TEMPLATES_DIRECTORY}" > "${DIFF_FILENAME}"
+diff -r --exclude=ebook templates "${TEMP_TEMPLATES_DIRECTORY}" > "${DIFF_FILENAME}"
 set -e
 
 echo "Differences:"
