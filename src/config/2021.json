@@ -317,6 +317,14 @@
       "github": "demianrenzulli",
       "twitter": "drenzulli"
     },
+    "eustas": {
+      "name": "Eugene Kliuchnikov",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/203457?v=4&s=200",
+      "github": "eustas"
+    },
     "GregBrimble": {
       "name": "Greg Brimble",
       "teams": [
@@ -386,6 +394,15 @@
       "github": "jonoalderson",
       "twitter": "jonoalderson"
     },
+    "jyrkialakuijala": {
+      "name": "Jyrki Alakuijala",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/9086028?v=4&s=200",
+      "github": "jyrkialakuijala",
+      "twitter": "jyzg"
+    },
     "Schweinepriester": {
       "name": "Kai Schweinepriester",
       "teams": [
@@ -422,6 +439,13 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/58731469?v=4",
       "github": "lucasbona05"
     },
+    "lvandeve": {
+      "name": "Lode Vandevenne",
+      "teams": [
+        "authors"
+      ],
+      "github": "lvandeve"
+    },
     "max-ostapenko": {
       "name": "Max Ostapenko",
       "teams": [
@@ -454,7 +478,16 @@
       "teams": [
         "designers"
       ]
-    },"nithanaroy": {
+    },
+    "mo271": {
+      "name": "Moritz Firsching",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/3491627?v=4&s=200",
+      "github": "mo271"
+    },
+    "nithanaroy": {
       "name": "Nitin Pasumarthy",
       "teams": [
         "analysts"
