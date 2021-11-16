@@ -28,7 +28,6 @@ WITH videonotes AS (
 
 )
 
-
 SELECT
   source_formats,
   COUNT(source_formats) AS numberofoccurances
@@ -40,4 +39,3 @@ GROUP BY
   source_formats
 ORDER BY
   numberofoccurances DESC
-
