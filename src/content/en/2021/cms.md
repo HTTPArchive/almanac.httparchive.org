@@ -3,7 +3,7 @@
 title: CMS
 description: CMS chapter of the 2021 Web Almanac covering CMS adoption, user experience of websites running on CMS platforms, and CMS resource weights.
 authors: [alonko]
-reviewers: [alankent, andreylipattsev, chrissater, hyperpress]
+reviewers: [alankent, andreylipattsev, chrissater, logicalphase]
 analysts: [rviscomi, tosinarasi]
 editors: []
 translators: []
