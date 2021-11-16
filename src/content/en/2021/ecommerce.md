@@ -2,10 +2,10 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Ecommerce
 description: Ecommerce chapter of the 2021 Web Almanac covering ecommerce platforms, page weight, images, third-parties, core web vitals and lighthouse performance metrics, SEO, and PWAs.
-authors: []
-reviewers: []
-analysts: []
-editors: []
+authors: [bobbyshaw]
+reviewers: [rockeynebhwani, alankent, soulcorrosion, fili]
+analysts: [rrajiv]
+editors: [shantsis]
 translators: []
 bobbyshaw_bio: Tom is Innovation Director at <a hreflang="en" href="https://www.space48.com">Space 48</a>, an ecommerce agency for ambitious retailers. He has over a decade of experience in ecommerce working with brands such as Ordnance Survey, Betty's & Taylors of Harrogate and Smythson. He is now leading an initiative to launch a suite of apps for merchants on BigCommerce.
 results: https://docs.google.com/spreadsheets/d/1HCfrXJ52lV46UvxOvDVjJj70fOeFVrTTD8DUm0tPVXE/
