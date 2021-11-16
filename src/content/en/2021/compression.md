@@ -3,7 +3,7 @@
 title: Compression
 description: TODO
 authors: [lvandeve, mo271, jyrkialakuijala]
-reviewers: [eustas]
+reviewers: [fischbacher, eustas]
 analysts: [paulcalvano]
 reviewers: []
 analysts: []
