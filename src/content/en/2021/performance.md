@@ -37,7 +37,7 @@ One thing that makes the performance chapter different from the others is that w
 
 CrUX data only provides high-level field/RUM metrics and only for the Chrome browser. Additionally, CrUX reports data by origin, or website, instead of by page.
 
-We supplement our CrUX RUM data with lab data from WebPageTest in HTTP Archive. WebPageTest includes very detailed information about each page, including the full Lighthouse report. Note that WebPageTest measures performance in <a hreflang="en" href="https://almanac.httparchive.org/en/2021/methodology#webpagetest">locations across the U.S.</a> The performance data in CrUX is global since it represents real user page loads.
+We supplement our CrUX RUM data with lab data from WebPageTest in HTTP Archive. WebPageTest includes very detailed information about each page, including the full Lighthouse report. Note that WebPageTest measures performance in [locations across the U.S.](./methodology#webpagetest) The performance data in CrUX is global since it represents real user page loads.
 
 When comparing performance year-over-year, keep in mind that:
 
@@ -187,7 +187,7 @@ In this section, we dive into each metric. For those who are less familiar, we'v
   )
 }}
 
-TTFB was faster on desktop than mobile, presumably because of faster network speeds. Compared to <a hreflang="en" href="https://almanac.httparchive.org/en/2020/performance#fig-17">last year</a>, TTFB marginally improved on desktop and slowed on mobile.
+TTFB was faster on desktop than mobile, presumably because of faster network speeds. Compared to [last year](../2020/performance#fig-17_), TTFB marginally improved on desktop and slowed on mobile.
 
 {{ figure_markup(
   image="performance-TTFB-by-ect.png",
