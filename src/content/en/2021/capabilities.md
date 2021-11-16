@@ -19,7 +19,7 @@ featured_stat_label_3: Mobile sites using _Declarative Link Capturing_
 ---
 
 ## Introduction
-Capabilities are new web platform APIs that unlock entirely new use cases for web applications. Those new APIs are essential for [Progressive Web Apps (PWA)](../pwa), a web-based application model. A PWA is a web app that users can install to their system. PWAs run even offline and launch quickly. To integrate with the underlying operating system, PWAs can only use web platform APIs. While browsers have already exposed some lower-level features to the web (e.g., [geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API), [gamepad](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API), or [webcam](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) access), many APIs were still missing or were clumsy to use (e.g., file system or clipboard access).
+Capabilities are new web platform APIs that unlock entirely new use cases for web applications. Those new APIs are essential for [Progressive Web Apps (PWA)](./pwa), a web-based application model. A PWA is a web app that users can install to their system. PWAs run even offline and launch quickly. To integrate with the underlying operating system, PWAs can only use web platform APIs. While browsers have already exposed some lower-level features to the web (e.g., [geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API), [gamepad](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API), or [webcam](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) access), many APIs were still missing or were clumsy to use (e.g., file system or clipboard access).
 
 ### Project Fugu
 
