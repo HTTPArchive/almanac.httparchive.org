@@ -149,12 +149,18 @@
         {
           "part": "IV",
           "chapter_number": "18",
+          "title": "Page Weight",
+          "slug": "page-weight"
+        },
+        {
+          "part": "IV",
+          "chapter_number": "19",
           "title": "Resource Hints",
           "slug": "resource-hints"
         },
         {
           "part": "IV",
-          "chapter_number": "19",
+          "chapter_number": "20",
           "title": "HTTP",
           "slug": "http",
           "todo": "true"
