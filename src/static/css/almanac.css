@@ -726,6 +726,7 @@ blockquote::before {
   font-size: 20rem;
   font-family: 'Courier New', 'Courier', monospace;
   line-height: 1;
+  pointer-events: none;
 }
 
 blockquote em {
