@@ -211,6 +211,16 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/44442451?v=4&s=200",
       "github": "AbbyTsai"
     },
+    "argyleink": {
+      "name": "Adam Argyle",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/1134620?v=4&s=200",
+      "website": "https://nerdy.dev",
+      "github": "argyleink",
+      "twitter": "argyleink"
+    },
     "tropicadri": {
       "name": "Adriana Jara",
       "teams": [
@@ -310,6 +320,16 @@
       "linkedin": "tunetheweb",
       "twitter": "tunetheweb"
     },
+    "bkardell": {
+      "name": "Brian Kardell",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/870501?v=4&s=200",
+      "website": "https://bkardell.com",
+      "github": "bkardell",
+      "twitter": "briankardell"
+    },
     "carlopi": {
       "name": "Carlo Piovesan",
       "teams": [
@@ -326,6 +346,16 @@
       ],
       "avatar_url": "https://avatars0.githubusercontent.com/u/62304935?v=4&s=200",
       "linkedin": "christophersater"
+    },
+    "svgeesus": {
+      "name": "Chris Lilley",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/2506926?v=4&s=200",
+      "website": "https://svgees.us/",
+      "github": "svgeesus",
+      "twitter": "svgeesus"
     },
     "christianliebel": {
       "name": "Christian Liebel",
@@ -385,13 +415,24 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/68361682?v=4&s=200",
       "github": "edmondwwchan"
     },
+    "meyerweb": {
+      "name": "Eric A. Meyer",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/939727?v=4&s=200",
+      "github": "meyerweb",
+      "website": "http://meyerweb.com/"
+    },
     "estelle": {
       "name": "Estelle Weyl",
       "teams": [
         "reviewers"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/69888?v=4&s=200",
-      "github": "estelle"
+      "website": "http://standardista.com/",
+      "github": "estelle",
+      "twitter": "estellevw"
     },
     "fili": {
       "name": "Fili",
@@ -493,6 +534,16 @@
       "github": "jeffposnick",
       "twitter": "jeffposnick"
     },
+    "j9t": {
+      "name": "Jens Oliver Meiert",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/1700772?v=4&s=200",
+      "website": "https://meiert.com/en/",
+      "github": "j9t",
+      "twitter": "j9t"
+    },
     "jessthebp": {
       "name": "Jess Peck",
       "teams": [
@@ -563,6 +614,16 @@
       "website": "https://www.neok.be/",
       "github": "vdwijngaert",
       "twitter": "vdwijngaert"
+    },
+    "LeaVerou": {
+      "name": "Lea Verou",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/175836?v=4&s=200",
+      "website": "https://lea.verou.me/",
+      "github": "LeaVerou",
+      "twitter": "leaverou"
     },
     "lucasbona05": {
       "name": "Lucas Gonçalves",
@@ -797,6 +858,7 @@
     "GeekBoySupreme": {
       "name": "Shuvam Manna",
       "teams": [
+        "authors",
         "designers"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/15321738?v=4&s=200",
