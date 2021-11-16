@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Mobile Web
-description: TODO
+description: Mobile Web chapter of the 2021 Web Almanac covering page web vitals, images, technology adoption, accessibility and more.
 authors: [fellowhuman1101, dwsmart, ashleyish]
 reviewers: [obto, fili]
 analysts: [rvth, obto]
@@ -10,13 +10,13 @@ translators: []
 results: https://docs.google.com/spreadsheets/d/1mdma245ja_THTBApaJTeS4vmLY_Fn8VC6Kd8qx7wp-o/
 fellowhuman1101_bio: Jamie Indigo isn’t a robot, but speaks bot.  As a technical SEO consultant at <a href="https://www.deepcrawl.com">Deepcrawl</a>, they study how search engines crawl, render, and index the web.  They love to tame wild JavaScript frameworks and optimize rendering strategies. When not working, Jamie likes horror movies, graphic novels, and Dungeons & Dragons.
 dwsmart_bio: Dave Smart is a developer and technical search engine consultant at <a href="https://tamthebots.com">Tame the Bots</a>. They love building tools and experimenting with the modern web, and can often be found at the front in a gig or two.
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: In 2021, the perception of a distinct "mobile web" is outdated. Across multiple data sources, it seems that the mobile is one of many ways a user can interact with digital content.
+featured_stat_1: 18.4%
+featured_stat_label_1: Mobile page loads using native lazy-loading
+featured_stat_2: 43.4%
+featured_stat_label_2: Mobile page loads contain inappropriately sized images
+featured_stat_3: 45.03%
+featured_stat_label_3: Of the top 1000 mobile page loads prevent zooming
 ---
 
 
@@ -114,7 +114,7 @@ The distribution shows a similar, mobile heavy trend. At the 50th Percentile, **
 
 #### Beyond CrUX Data
 
-A limitation of the CrUX dataset is that it can only collect data from Chrome users, who are signed in, have syncing enabled and have not disabled the “Make searches and browsing better / Sends URLs of pages you visit to Google” setting. This means that:
+A limitation of the CrUX dataset is that it can only collect data from Chrome users, who are signed in, have syncing enabled and have not disabled the "Make searches and browsing better / Sends URLs of pages you visit to Google" setting. This means that:
 
 
 
@@ -993,6 +993,15 @@ A more healthy **32%** of mobile page loads including images use the `srcset` at
 #### Lazy Loading
 
 Deferring, or lazy loading,  images that aren't in the initial viewport is a good strategy to help resources be focused on loading things that are visible. The native lazy-load attribute, supported in Chrome, Opera, and from September 2021 Firefox for Android (source: [caniuse.com](https://caniuse.com/loading-lazy-attr)) allows this to happen without JavaScript work-arounds.
+
+{{ figure_markup(
+  caption='Mobile page loads that contained images used loading="lazy"',
+  content="18.4%",
+  classes="big-number",
+  sheets_gid="1889147690",
+  sql_file="lazy_loading_usage.sql"
+)
+}}
 
 
 This is a big jump up from just 4.1% in 2020.
