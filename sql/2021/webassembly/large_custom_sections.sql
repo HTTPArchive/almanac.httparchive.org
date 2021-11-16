@@ -5,7 +5,8 @@ SELECT
 FROM
   `httparchive.almanac.wasm_stats`
 WHERE
-  date = '2021-09-01'
+  date = '2021-09-01' AND
+  size.custom > 0
 GROUP BY
   filename
 ORDER BY
