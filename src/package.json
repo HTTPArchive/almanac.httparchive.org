@@ -33,6 +33,7 @@
     "stop:win32": "call tools/scripts/stop_website.bat",
     "timestamps": "node ./tools/generate/generate_timestamps"
   },
+
   "devDependencies": {
     "ejs": "3.1.6",
     "fs-extra": "10.0.0",
