@@ -8,7 +8,7 @@ analysts: [rviscomi]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/12vQIA0xsC5Jr3J9Sh03AcAvgFjMAmP1xSS6Tjai9LF0/
-featured_quote: While the topic of “CSS in JS” is good for a Twitter flame war or two, its use in the wild continues to be very small. 
+featured_quote: The 2021 Web Almanac offers deeper insight into how the use of CSS differs in the realm of what we all think we need versus what we actually see in production. 
 featured_stat_1: 71%
 featured_stat_label_1: The percentage of pages using Flexbox for some form of layout.
 featured_stat_2: 3
@@ -23,7 +23,7 @@ featured_stat_label_3: The percentage of pages using custom properties.
 
 CSS (Cascading Style Sheets) is one of the three main pillars for building pages on the web - with HTML, used to define the structure; and Javascript, used to specify behaviour and interactions, completing the triumvirate.
 
-Compared to last edition, the 2021 Web Almanac offers a deeper insight into how the use of CSS differs in the realm of what we all think we need vs. what we actually see in production. As the calls for more robust CSS features and the challenge of centering a `<div>` with CSS kept making the rounds on our blog posts, conference talks, and Twitter chatter, pages around the web offered us vastly contradicting results, betraying the fact that CSS has, perhaps, become old enough to put more thought on staying stable instead of going wild with the zaniest of toys.
+Compared to last edition, the 2021 Web Almanac offers a deeper insight into how the use of CSS differs in the realm of what we all think we need versus what we actually see in production. As the calls for more robust CSS features and the challenge of centering a `<div>` with CSS kept making the rounds on our blog posts, conference talks, and Twitter chatter, pages around the web offered us vastly contradicting results, betraying the fact that CSS has, perhaps, become old enough to put more thought on staying stable instead of going wild with the zaniest of toys.
 
 While CSS-in-JS adoption grew to 3% of all pages crawled (a 1% jump from last year), cutting-edge Houdini features are still mostly confined to tutorials and example galleries. Responsiveness continued to be one of most engrossing priorities, with `max-width` and `min-width` being the top media queries, and calc() being the top CSS function most commonly in use to determine widths.
 
