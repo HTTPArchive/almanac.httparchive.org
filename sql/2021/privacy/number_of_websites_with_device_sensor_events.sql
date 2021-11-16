@@ -32,21 +32,36 @@ sites_and_events AS (
     (SELECT client, url AS site, jsonToKeyValueArray(events) AS events_per_site FROM pages_events),
     UNNEST(events_per_site) url_and_events,
     UNNEST(url_and_events.value) event
+),
+
+total_pages AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(0) AS total
+  FROM
+    `httparchive.pages.2021_07_01_*`
+  GROUP BY
+    _TABLE_SUFFIX
 )
 
 SELECT
   client,
   event,
   COUNT(DISTINCT site) AS number_of_websites,
+  COUNT(DISTINCT site) / total AS pct_of_websites,
   COUNT(DISTINCT url) AS number_of_urls
 FROM
   sites_and_events
+JOIN
+  total_pages
+USING (client)
 WHERE
   -- device* events, from https://www.esat.kuleuven.be/cosic/publications/article-3078.pdf
   event LIKE 'device%'
 GROUP BY
   client,
-  event
+  event,
+  total
 ORDER BY
   client,
   event

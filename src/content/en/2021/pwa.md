@@ -65,7 +65,7 @@ Measuring whether a service worker is used is not as simple as might seem. For e
 
 For this year's PWA chapter, we've updated our measurement techniques by creating a <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/pwa.js">new set of metrics</a>. For example, we're now using heuristics that check for several service worker characteristics, like having [service worker registration](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration) calls and use of service worker specific methods, libraries, and events.
 
-From the data we gathered, we can see that about 3.05% of desktop sites and 3.22% of mobile sites use service workers features, which suggests that service worker usage might be higher than measured in <a hreflang="en" href="https://almanac.httparchive.org/en/2020/pwa#service-worker-usage">last year's chapter (0.88% in desktop and 0.87% in mobile)</a>.
+From the data we gathered, we can see that about 3.05% of desktop sites and 3.22% of mobile sites use service workers features, which suggests that service worker usage might be higher than measured in [last year's chapter](../2020/pwa#service-worker-usage) (0.88% in desktop and 0.87% in mobile).
 
 One might think that having a little more than 3% of sites registering a service worker in mobile and desktop is a low number, but how does this translate to web traffic?
 
@@ -306,7 +306,7 @@ Finally, we'll analyze `prefer_related_applications`. If the value of this prope
   )
 }}
 
-`prefer_related_applications` appears only in 6.87% of desktop and 7.66% of sites. The chart shows that 97.92% of desktop and 93.03% of mobile sites that defined this property have a value of `false`. This indicates that most PWA developers prefer to offer the PWA experience rather than a native app.
+`prefer_related_applications` appears only in 6.87% of desktop and 7.66% of mobile sites. The chart shows that 97.92% of desktop and 93.03% of mobile sites that defined this property have a value of `false`. This indicates that most PWA developers prefer to offer the PWA experience rather than a native app.
 
 Despite the fact that the vast majority of PWA developers prefer promoting their PWA experiences to native applications, some well-known PWAs (like Twitter), still prefer recommending the native app over the PWA experience. This might be due to a preference of the teams building these experiences, or some specific business needs (lack of some API in the web).
 
@@ -334,14 +334,14 @@ According to Mobsted's analysis, the most common categories are "Business & Indu
 
 ## Lighthouse insights
 
-In the <a hreflang="en" href="#">manifest properties section</a> we mentioned the <a hreflang="en" href="https://web.dev/installable-manifest/">installability requirements</a> that Lighthouse has on web app manifest files. Lighthouse also provides checks for other aspects that make a PWA. It should be noted that the HTTP Archive currently only runs the Lighthouse tests as part of its mobile crawl, as noted in our <a hreflang="en" href="../methodology">Methodology</a>.
+In the <a href="#manifest-properties">manifest properties section</a> we mentioned the <a hreflang="en" href="https://web.dev/installable-manifest/">installability requirements</a> that Lighthouse has on web app manifest files. Lighthouse also provides checks for other aspects that make a PWA. It should be noted that the HTTP Archive currently only runs the Lighthouse tests as part of its mobile crawl, as noted in our [Methodology](./methodology)</a>.
 
 The following chart shows the percentage of sites that pass each criteria, where "PWA sites" contains stats for sites that have a service worker and a manifest, "All sites" contains data for all the totality sites:
 
 {{ figure_markup(
   image="pwa-lighthouse-pwa-audits.png",
   caption="Lighthouse PWA audits.",
-  description="Bar chart showing Lighthouse PWA audits by All websites and PWA websites. While some audits have high usage for both, many only have high usage only by PWA websites and PWA websites comfortably beat all websites in all categories. `viewport` audit is passed by 91.16% of all sites, and 99.42% of PWA sites, `redirects-http` by 78.01% and 98.23% retrospectively, `content-width` by 81.86% and 94.70%, `service-worker` by 1.50% and 84.86%, `apple-touch-icon` by 39.25% and 77.78%, `themed-omnibox` by 4.64% and 68.78%, `splash-screen` by 2.28% and 63.40%, `installable-manifest` by 1.08% and 61.73%, `maskable-icon` by 0.38% and 17.46%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=991530366&format=interactive",
+  description="Bar chart showing Lighthouse PWA audits by All websites and PWA websites. While some audits have high usage for both, many only have high usage only by PWA websites and PWA websites comfortably beat all websites in all categories. `viewport` audit is passed by 91.16% of all sites, and 99.42% of PWA sites, `redirects-http` by 78.01% and 98.23% respectively, `content-width` by 81.86% and 94.70%, `service-worker` by 1.50% and 84.86%, `apple-touch-icon` by 39.25% and 77.78%, `themed-omnibox` by 4.64% and 68.78%, `splash-screen` by 2.28% and 63.40%, `installable-manifest` by 1.08% and 61.73%, `maskable-icon` by 0.38% and 17.46%.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=991530366&format=interactive",
   sheets_gid="1312576011",
   sql_file="lighthouse_pwa_audits.sql"
   )
@@ -455,7 +455,7 @@ The chart above shows that the following packages are the four most widely used:
 - <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-core">Workbox Core</a>: This package contains the common code that each Workbox module relies on (for example, the code to interact with the console and throw meaningful errors). That's why it's the most widely used.
 - <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-routing">Workbox Routing</a>: This package allows to intercept requests and respond to them in different ways. It's also a very common task inside a service worker, so it's quite popular.
 - <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-precaching">Workbox Precaching</a>: This package allows sites to save some files to the cache while the service worker is installing. This set of files usually constitute the "version" of a PWA (similar to the version of a native app).
-- <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies">Workbox Strategies</a>: Unlike preaching, which takes place at the service worker "install" event, this package enables runtime caching strategies to determine how a service worker generates a response after receiving a `fetch` event.
+- <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies">Workbox Strategies</a>: Unlike precaching, which takes place at the service worker "install" event, this package enables runtime caching strategies to determine how a service worker generates a response after receiving a `fetch` event.
 
 ### Workbox strategies
 
@@ -483,7 +483,7 @@ Here are some usage stats for some most popular notification-related APIs:
 Pages subscribe to notifications via the [`PushManager`](https://developer.mozilla.org/en-US/docs/Web/API/PushManager) interface of the [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API), which is accessed via the `pushManager` property of the [`ServiceWorkerRegistration`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration) interface. It's used by 44.14% of desktop and 45.09% of mobile PWAs.
 
 {{ figure_markup(
-  caption="Percent of mobile sites with service workers that some method of the `pushManager` property",
+  caption="Percent of mobile sites with service workers that used some method of the `pushManager` property",
   content="45.09%",
   classes="big-number",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHHnqNdpRUjoeTfsN9_irK57PvZn_Q2X842RLl-RL4ibWmZFvO-S1x35PjVE3-xUlHFS_Zurd22rOq/pubchart?oid=1163792530&format=interactive",
