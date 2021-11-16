@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CMS
-description: TODO
+description: CMS chapter of the 2021 Web Almanac covering CMS adoption, user experience of websites running on CMS platforms, and CMS resource weights.
 authors: [alonko]
 reviewers: [alankent, andreylipattsev, chrissater, hyperpress]
 analysts: [rviscomi, tosinarasi]
