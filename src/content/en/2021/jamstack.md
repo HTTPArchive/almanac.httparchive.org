@@ -4,7 +4,7 @@ title: Jamstack
 description: TODO
 authors: [denar90]
 reviewers: []
-analysts: []
+analysts: [denar90]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1anlgeaBH2Yui2kFWuRGxHU2QdMiCKOgDrn4WyXkt5ro/
