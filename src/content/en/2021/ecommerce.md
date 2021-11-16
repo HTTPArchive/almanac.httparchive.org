@@ -101,7 +101,7 @@ Four of the top 10 platforms have open-source and self-hosted editions: WooComme
 
 Six of the 10 platforms are SaaS (or have SaaS versions): Shopify, <a hreflang="en" href="https://www.wix.com/ecommerce/website">Wix eCommerce</a>, <a hreflang="en" href="https://www.squarespace.com/ecommerce-website">Squarespace Commerce</a>, <a hreflang="en" href="https://www.bigcommerce.com/">BigCommerce</a>, Shopware, and <a hreflang="pt" href="https://lojaintegrada.com.br/">Loja Integrada</a>.
 
-_Note: There was <a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/issues/414">an issue</a> with the July 2021 HTTP Archive data which resulted in the number of <a hreflang="en" href="https://www.opencart.com/">OpenCart</a> sites being under-reported. It is worth acknowledging that in the September results 10,801 OpenCart sites were detected. If a similar number of OpenCart sites were to have been detected in July, it would put it in between BigCommerce and Shopware in terms of popularity.
+<p class="note">Note: There was <a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/issues/414">an issue</a> with the July 2021 HTTP Archive data which resulted in the number of <a hreflang="en" href="https://www.opencart.com/">OpenCart</a> sites being under-reported. It is worth acknowledging that in the September results 10,801 OpenCart sites were detected. If a similar number of OpenCart sites were to have been detected in July, it would put it in between BigCommerce and Shopware in terms of popularity.</p>
 
 ### Top ecommerce platforms by website popularity {#top-ecommerce-platforms-by-website-popularity}
 
@@ -238,7 +238,7 @@ At the same time, it is now common knowledge that a faster site leads to a highe
 
 What's more, there is often more nuance to the decision to include a feature. For example, do the benefits of a live chat widget outweigh the performance impact? Does the answer change depending on the context? Should you wait for a developer to install it to ensure that it's lazy-loaded or just use Google Tag Manager? What's the opportunity cost of not using that development time for something else?
 
-Another way of viewing performance is that it is a shared resource that suffers from the <a hreflang="en">tragedy of the commons paradigm](). It's at its highest level at the start of a project and is depleted over time with requests from different stakeholders that all have a right to consume it.
+Another way of viewing performance is that it is a shared resource that suffers from the <a hreflang="en" href="https://www.investopedia.com/terms/t/tragedy-of-the-commons.asp">tragedy of the commons paradigm</a>. It's at its highest level at the start of a project and is depleted over time with requests from different stakeholders that all have a right to consume it.
 
 The best results are likely to be found by those businesses that can find a balance between site speed and user experience. They will minimize the impact of features on the initial page load, while still being able to offer a great user experience.
 
