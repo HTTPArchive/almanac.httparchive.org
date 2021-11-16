@@ -390,7 +390,7 @@ Comparing these ecommerce sites metrics to the wider web, we see that the top ec
 
 When it comes to understanding the reasons behind a site's performance, some of the first things that you will look into are the page weight (the number of kilobytes that need to be downloaded), and the number of requests required to load the page.
 
-#### Page Requests {#page-requests}
+### Page Requests {#page-requests}
 
 {{ figure_markup(
   image="ecommerce-page-requests-distribution.png",
@@ -414,7 +414,7 @@ The 50th percentile of all ecommerce sites had 101 requests on the homepage on m
 
 Breaking these requests down by type and we can see that JavaScript is the most popular resource to be requested with 37 requests on an average ecommerce mobile homepage. This is a 23% increase from last year where there were 30 JavaScript requests per page. Previously images were the most requested resource with 34 requests per page on mobile but this is down slightly to 29 requests.
 
-#### Page Weight {#page-weight}
+### Page Weight {#page-weight}
 
 The page weight of a site includes all HTML, CSS, JavaScript, JSON, XML, images, audio, and video.
 
