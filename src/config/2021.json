@@ -242,6 +242,16 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/32825533?v=4&s=200",
       "github": "tropicadri"
     },
+    "alextait1": {
+      "name": "Alex Tait",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/24625637?v=4&s=200",
+      "website": "https://togethertech.ca/",
+      "github": "alextait1",
+      "twitter": "at_fresh_dev"
+    },
     "cyberandy": {
       "name": "Andrea Volpini",
       "teams": [
@@ -287,6 +297,15 @@
       "linkedin": "tunetheweb",
       "twitter": "tunetheweb"
     },
+    "clottman": {
+      "name": "Cassey Lottman",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4480480?v=4&s=200",
+      "website": "https://cassey.dev/",
+      "github": "clottman"
+    },
     "christianliebel": {
       "name": "Christian Liebel",
       "teams": [
@@ -297,9 +316,17 @@
       "github": "christianliebel",
       "twitter": "christianliebel"
     },
+    "digitala11ies": {
+      "name": "digitala11ies",
+      "teams": [
+        "reviewers
+      ],
+      "github": "digitala11ies"
+    },
     "obto": {
       "name": "David Fox",
       "teams": [
+        "analysts,
         "leads"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/684747?v=4&s=200",
@@ -316,6 +343,16 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/15170359?v=4&s=200",
       "github": "demianrenzulli",
       "twitter": "drenzulli"
+    },
+    "ericwbailey": {
+      "name": "Eric Bailey",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/634191?v=4&s=200",
+      "website": "https://ericwbailey.design/",
+      "github": "ericwbailey",
+      "twitter": "ericwbailey"
     },
     "GregBrimble": {
       "name": "Greg Brimble",
@@ -464,6 +501,16 @@
       "linkedin": "nitinpasumarthy",
       "website": "https://nithanaroy.medium.com/"
     },
+    "oluoluoxenfree": {
+      "name": "Olu Niyi-Awosusi",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/3077443?v=4&s=200",
+      "website": "https://olu.online/",
+      "github": "oluoluoxenfree",
+      "twitter": "oluoluoxenfree"
+    },
     "thepassle": {
       "name": "Pascal Schilp",
       "teams": [
@@ -520,10 +567,19 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/802163?v=4&s=200",
       "github": "samarpanda"
     },
+    "scottdavis99": {
+      "name": "Scott Davis",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/15577?v=4&s=200",
+      "github": "scottdavis99"
+    },
     "shantsis": {
       "name": "Shaina Hantsis",
       "teams": [
-        "designers"
+        "designers",
+        "reviewers"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/22671477?v=4&s=200",
       "github": "shantsis"
