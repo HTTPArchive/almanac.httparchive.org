@@ -291,7 +291,7 @@
       "teams": [
         "authors"
       ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/6698344?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6698344?v=4&s=200",
       "website": "https://christianliebel.com",
       "github": "christianliebel",
       "twitter": "christianliebel"
@@ -331,8 +331,7 @@
     "dominiclovell": {
       "name": "Dominic Lovell",
       "teams": [
-        "authors",
-        "analysts"
+        "authors"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/131131?v=4&s=200",
       "github": "dominiclovell"
@@ -342,7 +341,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/68361682?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/68361682?v=4&s=200",
       "github": "edmondwwchan"
     },
     "estelle": {
@@ -350,7 +349,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/69888?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/69888?v=4&s=200",
       "github": "estelle"
     },
     "fili": {
@@ -358,7 +357,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/115263?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/115263?v=4&s=200",
       "website": "https://fili.com/",
       "github": "fili",
       "linkedin": "filiwiese",
@@ -469,7 +468,7 @@
         "reviewers",
         "editors"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/2634031?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2634031?v=4&s=200",
       "github": "jzyang",
       "linkedin": "yangzhe",
       "twitter": "Jules_Yang"
@@ -508,7 +507,7 @@
       "teams": [
         "developers"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/58731469?v=4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/58731469?v=4&s=200",
       "github": "lucasbona05"
     },
     "soulcorrosion": {
@@ -590,13 +589,13 @@
       "github": "NishuGoel",
       "twitter": "TheNishuGoel"
     },
-    "nithanaroy": {
+    "Nithanaroy": {
       "name": "Nitin Pasumarthy",
       "teams": [
         "analysts"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/670556?v=4&s=200",
-      "github": "nithanaroy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/670556?v=4&s=200",
+      "github": "Nithanaroy",
       "linkedin": "nitinpasumarthy",
       "website": "https://nithanaroy.medium.com/"
     },
@@ -633,6 +632,7 @@
     "paulcalvano": {
       "name": "Paul Calvano",
       "teams": [
+        "analysts",
         "leads"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/7459458?v=4&s=200",
@@ -704,7 +704,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/802163?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/802163?v=4&s=200",
       "github": "samarpanda"
     },
     "shantsis": {
@@ -741,7 +741,7 @@
         "authors",
         "reviewers"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/4777393?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4777393?v=4&s=200",
       "website": "https://sia.codes",
       "github": "siakaramalegos",
       "linkedin": "karamalegos",
@@ -763,7 +763,7 @@
         "analysts",
         "reviewers"
       ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/145676?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/145676?v=4&s=200",
       "website": "https://blog.tomayac.com/",
       "github": "tomayac"
     },
@@ -813,7 +813,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/60089915?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60089915?v=4&s=200",
       "github": "ziemek-bucko"
     }
   }
