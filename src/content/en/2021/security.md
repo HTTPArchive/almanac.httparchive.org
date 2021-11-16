@@ -4,7 +4,7 @@ title: Security
 description: TODO
 authors: [saptaks, tomvangoethem, nrllh]
 reviewers: [cqueern, edmondwwchan]
-analysts: [gjfr, tomvangoethem]
+analysts: [gjfr]
 editors: [tunetheweb]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1kwjKoa8tV87XzlF6eetf2sfcMDFqVVaT25w_gm_SRwA/
