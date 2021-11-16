@@ -239,6 +239,16 @@
       "github": "alankent",
       "twitter": "akent99"
     },
+    "AlexLakatos": {
+      "name": "Alex Lakatos",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/690132?v=4&s=200",
+      "website": "http://alexlakatos.com/",
+      "github": "AlexLakatos",
+      "twitter": "lakatos88"
+    },
     "alonko": {
       "name": "Alon Kochba",
       "teams": [
@@ -615,6 +625,7 @@
     "kevinfarrugia": {
       "name": "Kevin Farrugia",
       "teams": [
+        "analysts",
         "authors",
         "reviewers"
       ],
