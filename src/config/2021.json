@@ -427,6 +427,15 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/131131?v=4&s=200",
       "github": "dominiclovell"
     },
+    "dougsillars": {
+      "name": "Doug Sillars",
+      "teams": [
+        "authors",
+        "analysts"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/1514288?v=4&s=200",
+      "github": "dougsillars"
+    },
     "edmondwwchan": {
       "name": "Edmond W. W. Chan",
       "teams": [
@@ -443,6 +452,16 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/939727?v=4&s=200",
       "github": "meyerweb",
       "website": "http://meyerweb.com/"
+    },
+    "eeeps": {
+      "name": "Eric Portis",
+      "teams": [
+        "authors",
+        "analysts"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/3441390?v=4&s=200",
+      "website": "https://ericportis.com/",
+      "github": "eeeps"
     },
     "estelle": {
       "name": "Estelle Weyl",
