@@ -15,6 +15,7 @@ featured_stat_2: 3
 featured_stat_label_2: The average number of images loaded via CSS.
 featured_stat_3: 28.6%
 featured_stat_label_3: The percentage of pages using custom properties.
+unedited: true
 ---
 
 
