@@ -17,7 +17,6 @@ featured_stat_label_2: The median number of mobile page image bytes
 featured_stat_3: 69
 featured_stat_label_3: The median number of mobile page requests
 unedited: true
-
 ---
 
 ## TODO
