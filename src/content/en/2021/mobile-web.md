@@ -385,7 +385,7 @@ Of the top five mobile web technologies, adoption rates for three were higher on
   <tr>
    <td><strong>App</strong>
    </td>
-   <td>Diff Desktop v Mobile use
+   <td><strong>Difference in Desktop v Mobile use</strong>
    </td>
   </tr>
   <tr>
@@ -523,9 +523,9 @@ The top five content management systems on the mobile web in 2021 were:
   <tr>
    <td><strong>app</strong>
    </td>
-   <td><strong>Pct_pages_with_app (Mobile)</strong>
+   <td><strong>Percentage Mobile Sites with App</strong>
    </td>
-   <td><strong>Pct_pages_with_app (Desktop)</strong>
+   <td><strong>Percentage Desktop Sites with App</strong>
    </td>
   </tr>
   <tr>
@@ -604,15 +604,15 @@ Technology adoption rates for the mobile web moved in step with desktop.  The mo
 
 <table>
   <tr>
-   <td><strong>category</strong>
+   <td><strong>Category</strong>
    </td>
-   <td><strong>app</strong>
+   <td><strong>App</strong>
    </td>
-   <td><strong>Pct_pages_with_app (Desktop)</strong>
+   <td><strong>Percentage Desktop Sites with App</strong>
    </td>
-   <td><strong>Pct_pages_with_app (Mobile)</strong>
+   <td><strong>Percentage Mobile Sites with App</strong>
    </td>
-   <td>% higher Desktop adoption rate
+   <td><strong>% higher Desktop adoption rate</strong>
    </td>
   </tr>
   <tr>
@@ -715,15 +715,15 @@ Mobile sites were more likely to adopt certain technologies, but with a smaller 
 
 <table>
   <tr>
-   <td><strong>category</strong>
+   <td><strong>Category</strong>
    </td>
-   <td><strong>app</strong>
+   <td><strong>App</strong>
    </td>
-   <td><strong>Pct_pages_with_app (Desktop)</strong>
+   <td><strong>Percentage Desktop Sites with App</strong>
    </td>
-   <td><strong>Pct_pages_with_app (Mobile)</strong>
+   <td><strong>Percentage Mobile Sites with App</strong>
    </td>
-   <td>% higher Mobile adoption rate
+   <td><strong>% Higher Mobile Adoption Rate
    </td>
   </tr>
   <tr>
@@ -832,7 +832,7 @@ After webpage links, the next five most used protocols in  anchor href values  o
    <td><strong>URI Scheme</strong>
    </td>
    <td><p style="text-align: right">
-<strong>pct_sites_using</strong></p>
+<strong>Percentage of Mobile Sites Using</strong></p>
 
    </td>
   </tr>
