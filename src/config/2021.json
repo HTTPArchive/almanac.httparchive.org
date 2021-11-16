@@ -124,8 +124,7 @@
           "part": "III",
           "chapter_number": "15",
           "title": "CMS",
-          "slug": "cms",
-          "todo": "true"
+          "slug": "cms"
         },
         {
           "part": "III",
@@ -240,6 +239,16 @@
       "github": "alankent",
       "twitter": "akent99"
     },
+    "alonko": {
+      "name": "Alon Kochba",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/7407047?v=4&s=200",
+      "github": "alonkochba",
+      "linkedin": "alonkochba",
+      "twitter": "alonkochba"
+    },
     "kripken": {
       "name": "Alon Zakai",
       "teams": [
@@ -267,6 +276,15 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/1733592?v=4&s=200",
       "github": "andreban",
       "twitter": "andreban"
+    },
+    "andreylipattsev": {
+      "name": "Andrey Lipattsev",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/16627210?v=4&s=200",
+      "github": "andreylipattsev",
+      "twitter": "AndreyLipattsev"
     },
     "andydavies": {
       "name": "Andy Davies",
@@ -329,6 +347,14 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/842657?v=4&s=200",
       "github": "carlopi",
       "twitter": "carlop54002226"
+    },
+    "chrissater": {
+      "name": "Chris Sater",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/62304935?v=4&s=200",
+      "linkedin": "christophersater"
     },
     "svgeesus": {
       "name": "Chris Lilley",
@@ -549,7 +575,8 @@
     "logicalphase": {
       "name": "John Teague",
       "teams": [
-        "authors"
+        "authors",
+        "reviewers"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/25212653?v=4&s=200",
       "website": "https://gemservers.com",
@@ -929,6 +956,14 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/4355579?v=4&s=200",
       "github": "tomvangoethem",
       "twitter": "tomvangoethem"
+    },
+    "tosinarasi": {
+      "name": "Tosin Arasi",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/89331243?v=4&s=200",
+      "github": "tosinarasi"
     },
     "victorlep": {
       "name": "Victor Le Pochat",
