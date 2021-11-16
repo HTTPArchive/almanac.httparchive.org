@@ -10,7 +10,7 @@ translators: []
 results: https://docs.google.com/spreadsheets/d/1uEA217YjpX1xdRVBnIz9ekjpjIrpGIh5GwUxvnzJNig/edit?usp=sharing
 jonoalderson_bio: Jono Alderson is a digital strategist, marketing technologist, and full stack developer. He enjoys dabbling with website performance, technical SEO, schema.org and all things structured data.
 cyberandy_bio: Andrea Volpini is the CEO of WordLift, and is currently focusing on the semantic web, SEO and artificial intelligence.
-featured_quote: Describing our content using structured data enables machines to treat webpages and websites as databases. That creates a wealth of possibilities for business, technology, and society.
+featured_quote: Describing our content using structured data enables machines to treat web pages and websites as databases. That creates a wealth of possibilities for business, technology, and society.
 featured_stat_1: 33.53%
 featured_stat_label_1: Pages which contain JSON-LD markup
 featured_stat_2: 8.9%
@@ -37,15 +37,15 @@ This is the first time that this chapter has been included in the Web Almanac, a
 
 ## Key concepts
 
-Structured dats is a complex landscape, and one which is by nature abstract and 'meta'. To understand the significance and potential impact of structured data, it's worth exploring the following key concepts.
+Structured data is a complex landscape, and one which is by nature abstract and 'meta'. To understand the significance and potential impact of structured data, it's worth exploring the following key concepts.
 
 ### The semantic web
 
-When we add structured data to public webpages—and we define the entities that those pages contain (or are about, or reference)—we create a form of [linked data](https://en.wikipedia.org/wiki/Linked_data).
+When we add structured data to public web pages—and we define the entities that those pages contain (or are about, or reference)—we create a form of [linked data](https://en.wikipedia.org/wiki/Linked_data).
 
 We make _statements_ about the things in (and related to) our content in the form of [_triples_](https://en.wikipedia.org/wiki/Semantic_triple). Statements like, "This __article__ was __authored__ by this __person__", or "That __video__ is __about__ a __cat__".
 
-Describing our content in this way enables machines to treat webpages and websites as databases. At scale, it creates a <a hreflang="en" href="https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/">semantic web</a>; a giant global database of information.
+Describing our content in this way enables machines to treat web pages and websites as databases. At scale, it creates a <a hreflang="en" href="https://www.techrepublic.com/article/an-introduction-to-tim-berners-lees-semantic-web/">semantic web</a>; a giant global database of information.
 
 <figure>
 <blockquote>_The Semantic Web_ is the name of a long-term project started by W3C with the stated purpose of realizing the idea of having data on the Web defined and linked in a way that it can be used by machines not just for display purposes, but for automation, integration, and reuse of data across various applications</blockquote>
@@ -110,7 +110,7 @@ This significantly limits the amount of data we can collect and analyze, and und
 
 As most homepages act as portals to more specific pages, we can reasonably expect that our analysis underestimates the prevalence of the kinds of content present on that deeper pages. That likely includes information relating to _articles_, _people_, _products_ and similar.
 
-Conversely, we likely over-index on information typically found on homepages, and site-wide information which is present on all pages—like information about _webpages_, _websites_ and _organizations_.
+Conversely, we likely over-index on information typically found on homepages, and site-wide information which is present on all pages—like information about _web pages_, _websites_ and _organizations_.
 
 #### 3. Data overlaps
 
@@ -273,14 +273,14 @@ It's understandable why these particular tags—as well as the `twitter:image` t
 Also of interest are:
 
 * The `twitter:site` tag (11.31% of pages) which defines the Twitter account associated with the website in question.
-* The `twitter:creator` tag (3.58% of pages), which defines the Twitter account of the author of the webpage's content.
-* The `twitter:label1` and `twitter:data1` tags (both on 6.85% of pages), which can be used to define custom data and attributes about the webpage. Additional label/data pairs (e.g., `twitter:label2` and `twitter:data2`) are also present on a significant number (0.5%) of pages.
+* The `twitter:creator` tag (3.58% of pages), which defines the Twitter account of the author of the web page's content.
+* The `twitter:label1` and `twitter:data1` tags (both on 6.85% of pages), which can be used to define custom data and attributes about the web page. Additional label/data pairs (e.g., `twitter:label2` and `twitter:data2`) are also present on a significant number (0.5%) of pages.
 
 Beyond these examples, usage drops off rapidly, into a long tail of (often malformed, deprecated or erroneous) tags.
 
 ##### Facebook
 
-In addition to Open Graph tags, Facebook supports additional metadata (meta tags, prefixed with `fb:`) for relating webpages to specific brands, properties and people on their platform.
+In addition to Open Graph tags, Facebook supports additional metadata (meta tags, prefixed with `fb:`) for relating web pages to specific brands, properties and people on their platform.
 
 {{ figure_markup(
   image="structured-data-facebook.jpg",
@@ -296,7 +296,7 @@ Of all of the Facebook tags that we detected, there are only three tags with sig
 
 Those are `fb:app_id`, `fb:admins`, and `fb:pages`; which we found on 6.06%, 2.63% and 0.86% of pages respectively.
 
-These tags are used to explicitly relate a webpage to a Facebook Page/Brand, or to grant permissions to a user (or users)  who administrates those profiles.
+These tags are used to explicitly relate a web page to a Facebook Page/Brand, or to grant permissions to a user (or users)  who administrates those profiles.
 
 Anecdotally, it's unclear how well these are supported by Facebook. The platform has gone through radical changes over the past few years, and their technical documentation hasn't been well-maintained. However, many content management systems, templates and best practice guides—as well as some of Facebook's debugging tools—still include and make reference to them.
 
@@ -361,7 +361,7 @@ For example, it may be hard to describe the _opening hours_ of an _organization_
   )
 }}
 
-The most common types of microdata across the pages we analyzed describe the webpage itself; via properties like `webpage` (7.44% of pages), `sitenavigationelement` (5.62% of pages), `wpheader` (4.87% of pages) and `wpfooter` (4.56% of pages).
+The most common types of microdata across the pages we analyzed describe the web page itself; via properties like `webpage` (7.44% of pages), `sitenavigationelement` (5.62% of pages), `wpheader` (4.87% of pages) and `wpfooter` (4.56% of pages).
 
 It's easy to speculate on why these types of structural descriptors are more prominent than content descriptors (such as `person` or `product`); creating and maintaining microdata requires content producers to add specific code to their content—and that's often easier to do at template level than it is at content level.
 
@@ -399,10 +399,10 @@ Because the JSON-LD format allows for site owners to describe their content inde
 
 We can see this reflected in our findings, where more specific and structured descriptors are more common than with microdata. For example:
 
-* `BreadcrumbList` (1.45% of pages) describes the hierarchical position of the webpage on the website (and describes each parent page).
+* `BreadcrumbList` (1.45% of pages) describes the hierarchical position of the web page on the website (and describes each parent page).
 * `ItemList` (0.5% of pages), which describes a set of entities, such as _steps_ in a _recipe_, or _products_ in a _category_.
 
-Outside of these examples, we continue to see a similar pattern as we did with microdata (though at a much lower scale). Descriptions of websites, local businesses, organizations and the structure of webpages account for the majority of broad adoption.
+Outside of these examples, we continue to see a similar pattern as we did with microdata (though at a much lower scale). Descriptions of websites, local businesses, organizations and the structure of web pages account for the majority of broad adoption.
 
 ##### JSON-LD structures & relationships
 
@@ -573,7 +573,7 @@ Because this is such a powerful tool, we've taken the time to explore some of th
 {{ figure_markup(
   image="structured-data-json-ld.jpg",
   caption="SameAs usage",
-  description="Bar chart showing the usage of `sameAs` declarations on pages across the web. Of all mobile in our data: `facebook.com` occurs on 4.26%, `instagram.com` occurs on 2.74%, `twitter.com` occurs on 2.46%, `youtube.com` occurs on 1.78%, `linkedin.com` occurs on 1.04%, `pinterest.com` occurs on 0.60%, `google.com` occurs on 0.51%, `yelp.com`, `wikidata.org` occurs on 0.12%, `wikipedia.org` occurs on 0.11%, `tumblr.com` occurs on 0.08%, `uptodown.io` occurs on 0.10%, `vk.com` ocurs on 0.08%, `soundcloud.com` occurs on 0.04%, `vimeo.com` occurs on 0.03%, `pinterest.co.uk` occurs on 0.03%, `tripadvisor.com` occurs on 0.03%, `t.me` occurs on 0.03%, and `flickr.com` occurs on 0.02%. Desktop usage is similar.",
+  description="Bar chart showing the usage of `sameAs` declarations on pages across the web. Of all mobile in our data: `facebook.com` occurs on 4.26%, `instagram.com` occurs on 2.74%, `twitter.com` occurs on 2.46%, `youtube.com` occurs on 1.78%, `linkedin.com` occurs on 1.04%, `pinterest.com` occurs on 0.60%, `google.com` occurs on 0.51%, `yelp.com`, `wikidata.org` occurs on 0.12%, `wikipedia.org` occurs on 0.11%, `tumblr.com` occurs on 0.08%, `uptodown.io` occurs on 0.10%, `vk.com` occurs on 0.08%, `soundcloud.com` occurs on 0.04%, `vimeo.com` occurs on 0.03%, `pinterest.co.uk` occurs on 0.03%, `tripadvisor.com` occurs on 0.03%, `t.me` occurs on 0.03%, and `flickr.com` occurs on 0.02%. Desktop usage is similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3kZ1Ys-9tId-WBa_8muMzrTAu1Ad5TXYgkopXMmBVc1xmd2N_4PZIpEZEOqRL7baymle0kHzaC6KY/pubchart?oid=1501633178&format=interactive",
   sheets_gid="685929099",
   width=600,

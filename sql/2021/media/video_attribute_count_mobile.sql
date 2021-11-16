@@ -15,7 +15,6 @@ WITH videonotes AS (
     `httparchive.pages.2021_07_01_mobile`
 ),
 
-
 video_attributes AS (
   SELECT
     pageURL,
@@ -29,7 +28,6 @@ video_attributes AS (
     num_video_nodes > 0
 )
 
-
 SELECT
   attribute,
   value,
@@ -41,4 +39,3 @@ GROUP BY
   value
 ORDER BY
   attribute ASC
-
