@@ -9,7 +9,7 @@ editors: [jzyang]
 translators: []
 results: https://docs.google.com/spreadsheets/d/13xhPx6o2Nowz_3b3_5ojiF_mY3Lhs25auBKM6eqGZmo/
 siakaramalegos_bio: Sia Karamalegos is a web developer, international conference speaker, and writer. She is a Google Developer Expert in Web Technologies, a Cloudinary Media Developer Expert, a Stripe Community Expert, and co-organizes the Eleventy Meetup. Check out her writing, speaking, and newsletter on <a hreflang="en" href="https://sia.codes/">sia.codes</a> or find her on <a hreflang="en" href="https://twitter.com/thegreengreek">Twitter</a>.
-featured_quote: The more we can set up smart defaults for performance at the framework level, the better we can make the web while also make developers’ jobs easier.
+featured_quote: The more we can set up smart defaults for performance at the framework level, the better we can make the web while also make developers' jobs easier.
 featured_stat_1: 37%
 featured_stat_label_1: Percent of top 1,000 websites passing Core Web Vitals
 featured_stat_2: 79%
@@ -37,7 +37,7 @@ One thing that makes the performance chapter different from the others is that w
 
 CrUX data only provides high-level field/RUM metrics and only for the Chrome browser. Additionally, CrUX reports data by origin, or website, instead of by page.
 
-We supplement our CrUX RUM data with lab data from WebPageTest in HTTP Archive. WebPageTest includes very detailed information about each page, including the full Lighthouse report. Note that WebPageTest measures performance in <a hreflang="en" href="https://almanac.httparchive.org/en/2021/methodology#webpagetest">locations across the U.S.</a> The performance data in CrUX is global since it represents real user page loads.
+We supplement our CrUX RUM data with lab data from WebPageTest in HTTP Archive. WebPageTest includes very detailed information about each page, including the full Lighthouse report. Note that WebPageTest measures performance in [locations across the U.S.](./methodology#webpagetest) The performance data in CrUX is global since it represents real user page loads.
 
 When comparing performance year-over-year, keep in mind that:
 
@@ -187,7 +187,7 @@ In this section, we dive into each metric. For those who are less familiar, we'v
   )
 }}
 
-TTFB was faster on desktop than mobile, presumably because of faster network speeds. Compared to <a hreflang="en" href="https://almanac.httparchive.org/en/2020/performance#fig-17">last year</a>, TTFB marginally improved on desktop and slowed on mobile.
+TTFB was faster on desktop than mobile, presumably because of faster network speeds. Compared to [last year](../2020/performance#fig-17_), TTFB marginally improved on desktop and slowed on mobile.
 
 {{ figure_markup(
   image="performance-TTFB-by-ect.png",

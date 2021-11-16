@@ -153,7 +153,7 @@ function handleMobileMenu() {
 
   function toggleNavMenu() {
     var menuOpen = document.body.classList.toggle('menu-open');
-    menuBtn.classList.toggle("menu-btn--active");
+    menuBtn.classList.toggle("menu-btn-active");
     menuBtn.setAttribute('aria-expanded', menuOpen);
     var ariaLabel = menuOpen ? menuBtn.getAttribute('data-close-text') : menuBtn.getAttribute('data-open-text');
     menuBtn.setAttribute('aria-label', ariaLabel);
@@ -464,7 +464,7 @@ function setDiscussionCount() {
           if (isNaN(comments)) {
             return;
           }
-          document.querySelectorAll('.num_comments').forEach(el => {
+          document.querySelectorAll('.num-comments').forEach(el => {
             el.innerText = comments;
           });
 
