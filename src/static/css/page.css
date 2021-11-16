@@ -650,8 +650,8 @@ figure .medium-number {
 
 figure .really-big-number {
   text-align: center;
-  font: bold 24px/1em Poppins, sans-serif;
-  font: bold 1.5rem/1em Poppins, sans-serif;
+  font: bold 24px/1em 'Poppins', sans-serif;
+  font: bold 1.5rem/1em 'Poppins', sans-serif;
   color: #62718b;
   word-break: break-word;
   overflow-wrap: break-word;
