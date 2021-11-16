@@ -44,7 +44,7 @@ Online tracking is often done through third-party libraries. These libraries usu
 
 {{ figure_markup(
   image="most_common_trackers.png",
-  caption="10 most popular trackers and their prevalenc.",
+  caption="10 most popular trackers and their prevalence.",
   description="Bar chart showing the 10 most popular trackers and the percentage of mobile and desktop websites that include them. Google_analytics (site_analytics) is used on 66.01% of desktop and 62.53% of mobile sites, google (advertising) on 50.89% and 49.51% respectively, doubleclick (advertising) on 49.99% and 47.51%, facebook (advertising) on 30.71% and 29.04%, google_adservices (advertising) on 21.17% and 19.98%, google_syndication (advertising) on 11.12% and 11.91%, wordpress_stats (site_analytics) on 6.63% and 6.79%, twitter (social_media) on 6.42% and 5.48%, adobe_audience_manager (advertising) on 4.35% and 5.49%, and finally yandex (advertising) on 4.50% and 5.28%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=290736860&format=interactive",
   sheets_gid="1466954359",
@@ -58,7 +58,7 @@ We see that Google-owned domains are prevalent in the online tracking market. Go
 
 {{ figure_markup(
   image="most_common_tracker_categories.png",
-  caption="Most common tracker categorie.",
+  caption="Most common tracker categories.",
   description="Bar chart showing the most popular tracker categories and the number of websites embedding a tracker from that category. 83.33% of desktop sites and 82.08% of mobile sites us a tracker. `site_analytics` is used on 73.53% and 70.46% respectively, `advertising` on 68.83% and 67.99%, `social_media` on 12.89% and 11.66%, and finally `pornvertising` on 0.56% and 0.60%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1126546581&format=interactive",
   sheets_gid="2084631443",
@@ -72,7 +72,7 @@ Overall, 82.08% of mobile sites and 83.33% of desktop sites include at least one
 
 {{ figure_markup(
   image="nb_websites_with_nb_trackers.png",
-  caption="The number of trackers per websit.",
+  caption="The number of trackers per website.",
   description="Line chart showing the number of trackers per website starting at 15.62% of desktop sites and 16.31% of mobile sites having one tracker and curving down past 9.30% and 8.64% respectively for 5%, 0.38% and 0.41% for 15 trackers and then a long tail cut off at 0.12% and 0.15% for 25 trackers. Mobile and desktop have near identical numbers throughout.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=268105548&format=interactive",
   sheets_gid="690197217",
@@ -88,7 +88,7 @@ The main technical approach to store and retrieve cross-site user identifiers is
 
 {{ figure_markup(
   image="top100_domains_that_set_cookies_via_response_header.png",
-  caption="Top 10 domains setting cookies from header.",
+  caption="Top 10 domains setting cookies from headers.",
   description="Chart showing the percentage of websites that include a cookie set via the response header for the 10 most popular tracking domains setting cookies. `doubleclick.net` is used on 30.49% of desktop pages and 28.72% of mobile pages, `facebook.com` on 23.07 and 21.43% respectively, `youtube.com` on 10.02% and 8.83%, `google.com` on 8.62% and 8.45%, `yandex.ru` on 4.42% and 5.17%, `pubmatic.com` on 3.82% and 4.73%, `rlcdn.com` on 4.01% and 3.99%, `openx.net` on 3.57% and 4.42%, `adsrvr.org` on 4.00% and 3.90%, and finally `yahoo.com` on 3.80% and 3.70%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=162165227&format=interactive",
   sheets_gid="1256177287",
@@ -102,7 +102,7 @@ Google's subsidiary DoubleClick takes the top spot by setting cookies on 31.4% o
 
 {{ figure_markup(
   image="top100_cookies_set_from_header.png",
-  caption="Top 10 cookies set from heade.",
+  caption="Top 10 cookies set from headers.",
   description="Chart showing the name of the cookies set on the largest number of websites. These cookies seem to be set more often on desktop sites than mobile. `test_cookie` for doubleclick.net is used by 30.20% of desktop sites and 28.66% of mobile sites, `fr` for facebook.com by 23.04% and 20.96% respectively, `IDE` for doubleclick.net by 18.03% and 16.96%, `NID` for google.com by 4.92% and 5.09%, `yandexuid` for yandex.ru by 4.38% and 5.14%, `yuidss` for yandex.ru by 4.38% and 5.14%, `i` for yandex.ru by 4.34% and 5.09%, `ymex` for yandex.ru by 4.32% and 5.08%, `yabs-sid` for yandex.ru by 4.32% and 5.08%, `TDID` for adsrvr.org by 3.71% and 3.89%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2052032481&format=interactive",
   sheets_gid="1599373042",
@@ -126,7 +126,7 @@ Detecting fingerprinting is complex: it is effective through a combination of me
 
 {{ figure_markup(
   image="nb_websites_using_each_fingerprinting.png",
-  caption="Websites using each fingerprinting librar.",
+  caption="Websites using each fingerprinting library.",
   description="Chart showing the percentage of websites that include each of the third-party fingerprinting libraries. FingerprintJS is used by 0.74% of desktop sites and 0.64% of mobile sites, ClientJS by 0.04% and 0.04% respectively, MaxMind by 0.03% and 0.02%, TruValidate by 0.03% and 0.02%, ThreatMetrix by 0.00% and 0.00%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1537414997&format=interactive",
   sheets_gid="1785016530",
@@ -138,16 +138,18 @@ From the percentage of websites using these third-party services, we can see tha
 
 ### CNAME tracking
 
-Continuing with techniques that circumvent blocks on third-party tracking, <a hreflang="en" href="https://medium.com/nextdns/cname-cloaking-the-dangerous-disguise-of-third-party-trackers-195205dc522a">CNAME tracking</a> is a novel approach where a first-party subdomain masks the use of a third-party service using a CNAME record at the [DNS level](https://adguard.com/en/blog/cname-tracking.html). From the viewpoint of the browser, everything happens within a first-party context, so none of the third-party countermeasures are applied. Major tracking companies such as Adobe and Oracle are <a hreflang="en" href="https://sciendo.com/article/10.2478/popets-2021-0053">already offering CNAME tracking solutions</a> to their customers.
-For the results on CNAME-based tracking included in this chapter, we refer to [research](https://arxiv.org/pdf/2102.09301.pdf) completed by one of this chapters authors (and others) where we developed a method to detect CNAME-based tracking, based on DNS data and request data from HTTP Archive.
+Continuing with techniques that circumvent blocks on third-party tracking, <a hreflang="en" href="https://medium.com/nextdns/cname-cloaking-the-dangerous-disguise-of-third-party-trackers-195205dc522a">CNAME tracking</a> is a novel approach where a first-party subdomain masks the use of a third-party service using a CNAME record at the [DNS level](https://adguard.com/en/blog/cname-tracking.html). From the viewpoint of the browser, everything happens within a first-party context, so none of the third-party countermeasures are applied. Major tracking companies such as Adobe and Oracle are already offering CNAME tracking solutions to their customers.
+For the results on CNAME-based tracking included in this chapter, we refer to <a hreflang="en" href="https://sciendo.com/article/10.2478/popets-2021-0053">research</a> completed by one of this chapter's authors (and others) where they developed a method to detect CNAME-based tracking, based on DNS data and request data from HTTP Archive.
 
 {{ figure_markup(
   image="nb_sites_with_cname_tracking.png",
-  caption="Websites using CNAME-based tracking on a desktop clien.",
+  caption="Websites using CNAME-based tracking on a desktop client.",
   description="Chart showing the number of websites that use a CNAME-based tracker, ordered by the popularity of the tracker. Adobe Experience Cloud is used on 0.59% of desktop sites and 0.41% of mobile sites, Pardot on 0.41% and 0.26% respectively, Oracle Eloqua on 0.05% and 0.03%, Act-On Software on 0.05% and 0.03%, Webtrekk on 0.01% and 0.01%, and finally Eulerian on 0.01% and 0.01%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=450379066&format=interactive",
   sheets_gid="1286114815",
-  sql_file="nb_sites_with_cname_tracking.sql"
+  sql_file="nb_sites_with_cname_tracking.sql",
+  width=600,
+  height=516
   )
 }}
 
@@ -173,7 +175,9 @@ When we look at the rank of the websites that use CNAME-based tracking, we see t
   description="Chart showing the number of websites that use CNAME-based tracking on a desktop client, according to the public suffix of the website. 0.64% of desktop websites and 0.42% of mobile websites with a `com` suffix use CNAME track, for `edu` it's 0.18% and 0.10% respectively, for `jp` it's 0.03% and 0.04%, for `org` 0.04% and 0.03%, for `co.jp` 0.03% and 0.02%, for `ca` 0.02% and 0.01%, for `de` 0.02% and 0.02%, for `ru` 0.01% and 0.01%, for `com.au` 0.02% and 0.01%, and finally for `edu.au` 0.02% and 0.01%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1816699194&format=interactive",
   sheets_gid="1155429637",
-  sql_file="nb_sites_with_cname_tracking_per_public_suffix.sql"
+  sql_file="nb_sites_with_cname_tracking_per_public_suffix.sql",
+  width=600,
+  height=543
   )
 }}
 
@@ -187,7 +191,7 @@ Advertisement retargeting refers to the practice of keeping track of the product
 
 {{ figure_markup(
   image="nb_websites_using_each_retargeting.png",
-  caption="Percentage of pages using a retargeting servic.",
+  caption="Percentage of pages using a retargeting service.",
   description="Bar chart showing the most popular services used for retargeting and the number of websites that use them. Google Remarketing Tag is used by 26.92% of desktop sites and 26.64% of mobile sites, Criteo by 1.25% and 1.21% respectively, AdRoll by 0.48% and 0.38%, SharpSpring Ads by 0.12% and 0.09%, Albacross by 0.04% and 0.03%, SteelHouse by 0.03% and 0.02%, Smarter Click by 0.02% and 0.01%, Blue by 0.02% and 0.01%, Cross Pixel by 0.02% and 0.01%, and finally Picreel by 0.01% and 0.01%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=882622568&format=interactive",
   sheets_gid="1940290757",
@@ -212,7 +216,7 @@ Sensors can be useful to make a website more interactive but could also be abuse
 
 {{ figure_markup(
   image="nb_websites_with_device_sensor_events.png",
-  caption="5 most used sensor event.",
+  caption="5 most used sensor events.",
   description="Bar chart showing the most widely accessed sensor events, based on the use of JavaScript listeners. `deviceOrientation` is found on 3.32% of desktop sites and 3.23% of mobile sites, `deviceReady` on 1.12% and 1.23%, `devicemotion` on 0.65% and 0.66%, `deviceChange` on 0.03% and 0.02%, and finally `deviceproximity` on 0.03% and 0.02%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=40988621&format=interactive",
   sheets_gid="1513080238",
@@ -241,7 +245,7 @@ Geolocation services provide GPS and other location data (such as [IP address](h
 
 {{ figure_markup(
   image="nb_websites_using_each_geolocation.png",
-  caption="Percentage of websites that use geolocation service.",
+  caption="Percentage of websites that use geolocation services.",
   description="Chart that shows the percentage of websites using each of the geolocation service libraries. ipify is used by 0.09% of desktop sites and 0.07% of mobile sites, MaxMind by 0.03% and 0.02% respectively, db-ip by 0.01% and 0.01%, and finally ipstack by 0.01% and 0.01%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2115506749&format=interactive",
   sheets_gid="1274602607",
@@ -253,7 +257,7 @@ We find that the most popular service, <a hreflang="en" href="https://www.ipify.
 
 {{ figure_markup(
   image="nb_websites_with_geolocation_blink_usage.png",
-  caption="Percentage of websites that use geolocation feature.",
+  caption="Percentage of websites that use geolocation features.",
   description="Bar chart that shows the percentage of websites using each geolocation feature. `GeolocationGetCurrentPosition` is used by 0.59% of desktop sites and 0.63% of mobile sites, `GeolocationSecureOrigin` by 0.59% and 0.62% respectively, `GeolocationInsecureOrigin` by 0.01% and 0.02%, `GeolocationWatchPosition` by 0.02% and 0.02%, `GeolocationSecureOriginIframe` by 0.02% and 0.02%, `GeolocationDisabledByFeaturePolicy` by 0.02% and 0.01%, and finally `GeolocationInsecureOriginIframe` by 0.00% and 0.01%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1513111756&format=interactive",
   sheets_gid="1110372680",
@@ -271,7 +275,7 @@ Poor security management within a company can have a significant impact on its c
 
 {{ figure_markup(
   image="data_breaches_pwned_accounts_per_class.png",
-  caption="Number of impacted accounts in breaches per data clas.",
+  caption="Number of impacted accounts in breaches per data class.",
   description="Bar chart showing the number of user accounts involved in data breaches, according to the data class that leaked in the breach. 641 million Email addresses were included in breaches, 428 million Passwords, 369 million Names, 173 million Geographic locations, 149 million Phone numbers, 149 million Genders, 134 million Social media profiles, 127 million Education levels, 126 million Job titles, and finally 110 million Physical addresses.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1612339126&format=interactive",
   sheets_gid="1158689200",
@@ -291,7 +295,7 @@ The <a hreflang="en" href="https://www.w3.org/TR/permissions-policy-1/">Permissi
 
 {{ figure_markup(
   image="most_common_featurepolicy_permissionspolicy_directives.png",
-  caption="Number of websites accessing a feature policy directiv.",
+  caption="Number of websites accessing a feature policy directive.",
   description="Bar chart showing the most common directives used to define the feature policy and the number of websites that are using them. `geolocation` is used by 2,222 desktop sites and 2,323 mobile sites, `microphone` by 2,199 and 2,310 respectively, `camera` by 2,082 and 2,197, `payment` by 1,748 and 1,879, `usb` by 1,354 and 1,492, `gyroscope` by 1,145 and 1,025, `magnetometer` by 1,141 and 1,024, `interest-cohort` by 1,037 and 1,019, `fullscreen` by 940 and 873, `accelerometer` by 892 and 852.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=820718961&format=interactive",
   sheets_gid="899874026",
@@ -307,7 +311,7 @@ To gain a deeper understanding of how the directives are used, we looked at the 
 
 {{ figure_markup(
   image="most_common_featurepolicy_permissionspolicy_directive_values.png",
-  caption="Values used for the most popular feature policy directive.",
+  caption="Values used for the 3 most popular feature policy directives.",
   description="Bar chart showing the distribution of the values assigned to the 3 most popular directives for the feature policy. `microphone` is set to `self` for 0.08% of mobile sites, it is set to `none` for 0.49% of sites, and is set to `*` for 0.03% of sites. `geolocation` is set to `self` for 0.17% of mobile sites, it is set to `none` for 0.34% of sites, and is set to `*` for 0.05% of sites. `camera` is set to `self` for 0.09% of mobile sites, it is set to `none` for 0.46% of sites, and is set to `*` for 0.03% of sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=280518522&format=interactive",
   sheets_gid="436267650",
@@ -330,7 +334,7 @@ The `Referer` value can be insightful. But when the full URL including the path 
 
 {{ figure_markup(
   image="nb_websites_with_referrerpolicy.png",
-  caption="Percentage of websites that specify a Referrer Polic.",
+  caption="Percentage of websites that specify a Referrer Policy.",
   description="Bar chart showing the percentage of websites that use a Referrer Policy according to how the websites specified the policy. Any referrer policy is set on 11.12% of desktop and 10.38% of mobile sites, Entire document policy on 9.66% and 8.68%, Entire document policy header on 7.37% and 6.49%, Entire document policy meta on 2.65% and 2.51%, Any individual requests on 1.92% and 2.10%, Any link relations on 0.00% and 0.00%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2144839216&format=interactive",
   sheets_gid="1720798838",
@@ -342,7 +346,7 @@ A first point to note is that most sites do not explicitly set a Referrer Policy
 
 {{ figure_markup(
   image="most_common_referrerpolicy_values.png",
-  caption="Percentage of pages using Referrer Policy value.",
+  caption="Percentage of pages using Referrer Policy values.",
   description="Bar chart showing the percentage of pages that use each Referrer Policy value. `no-referrer-when-downgrade` is used on 3.63% of desktop sites and 3.31% of mobile sites, `strict-origin-when-cross-origin` on 1.95% and 1.56% respectively, `always` on 1.08% and 0.82%, `unsafe-url` on 0.47% and 0.52%, `same-origin` on 0.51% and 0.44%, `origin` on 0.39% and 0.51%, `no-referrer` on 0.34% and 0.31%, `origin-when-cross-origin` on 0.31% and 0.29%, `strict-origin` on 0.26% and 0.23%, and finally `no-referrer, strict-origin-when-cross-origin` on 0.09% and 0.08%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=406890714&format=interactive",
   sheets_gid="1846818406",
@@ -368,8 +372,8 @@ Servers can indicate their support for these Client Hints by specifying the `Acc
 
 {{ figure_markup(
   image="nb_websites_with_user_agent_client_hints.png",
-  caption="Percentage of pages that use user agent Client Hint.",
-  description="Bar chart showing the percentage of pages that use user agent Client Hints according to the rank of the website. For the top 1,000 websites it's 3.67% on desktop and 3.56% on mobile, for the top 10,000 it's 1.35% and 1.44% respectively, for the top 100,000 it's 0.40% and 0.42%, for the top 1,000,000 it's 0.14% and 0.15%, and finally for the all sites it's 0.15% and 0.20%.",
+  caption="Percentage of pages that use User-Agent Client Hints.",
+  description="Bar chart showing the percentage of pages that use User-Agent Client Hints according to the rank of the website. For the top 1,000 websites it's 3.67% on desktop and 3.56% on mobile, for the top 10,000 it's 1.35% and 1.44% respectively, for the top 100,000 it's 0.40% and 0.42%, for the top 1,000,000 it's 0.14% and 0.15%, and finally for the all sites it's 0.15% and 0.20%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2107002085&format=interactive",
   sheets_gid="190615661",
   sql_file="nb_websites_with_user_agent_client_hints.sql"
@@ -388,7 +392,7 @@ Therefore, websites turned to the use of cookie consent banners, privacy policie
 
 {{ figure_markup(
   image="nb_websites_with_cmp.png",
-  caption="Percentage of websites that use a Consent Management Platfor.",
+  caption="Percentage of websites that use a Consent Management Platform.",
   description="Bar chart showing the percentage of websites that use a third-party library for consent management. 7.10% of desktop sites and 6.97% of mobile sites use a CMP.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=246947280&format=interactive",
   sheets_gid="147308043",
@@ -400,7 +404,7 @@ Consent Management Platforms (CMPs) are third-party libraries that websites can 
 
 {{ figure_markup(
   image="nb_websites_using_each_cmp.png",
-  caption="10 most popular consent management platform.",
+  caption="10 most popular consent management platforms.",
   description="Bar chart showing the percentage of pages using the 10 most popular third-party libraries for providing consent management. CookieYes is used on 1.65% of desktop sites and 1.70% of mobile sites, Osano on 1.64% and 1.59% respectively, OneTrust on 0.90% and 0.73%, Cookiebot on 0.74% and 0.64%, AdRoll CMP System on 0.50% and 0.36%, iubenda on 0.34% and 0.35%, Quantcast Choice on 0.37% and 0.34%, Didomi on 0.29% and 0.24%, Usercentrics on 0.18% and 0.19%, and finally HubSpot Cookie Policy Banner on 0.26% and 0.17%.
 ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=619927070&format=interactive",
@@ -421,7 +425,7 @@ TCF is meant as a GDPR-compliant mechanism in Europe, although [a recent decisio
 
 {{ figure_markup(
   image="nb_websites_with_iab.png",
-  caption="Percentage of websites using IAB compliance framework.",
+  caption="Percentage of websites using IAB compliance frameworks.",
   description="Bar chart showing the percentage of websites using each compliance framework of both IAB Europe and US. IAB TCF v1 is used on 0.35% of desktop and 0.30% of mobile sites, IAB TCF v2 on 1.58% and 1.49% respectively, IAB TCF any on 1.67% and 1.57%, IAB USP on 3.13% and 3.19%, IAB USP on 3.13% and 3.19%, and finally IAB any on 3.92% and 3.97%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1697790298&format=interactive",
   sheets_gid="1662197018",
@@ -447,7 +451,7 @@ In the USP framework, the website's and user's privacy settings are encoded in a
 
 {{ figure_markup(
   image="most_common_strings_for_iab_usp.png",
-  caption="Percentage of websites using IAB US privacy string.",
+  caption="Percentage of websites using IAB US privacy strings.",
   description="Bar chart showing the percentage of websites that use each privacy string for IAB's USP consent framework. `1---` is used by 0.87% of desktop websites and 0.80% of mobile websites, `1YNY` is 0.72% and 0.64% respectively, `1YNN` is 0.07% and 0.06%, and blank is 0.01% and 0.00%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2039463193&format=interactive",
   sheets_gid="1524219137",
@@ -464,7 +468,7 @@ The most common privacy string is `1---`. This indicates that CCPA does not appl
 Nowadays, most websites have a privacy policy, where users can learn about the types of information that is stored and processed about them.
 
 {{ figure_markup(
-  caption="Percentage of mobile websites with privacy policy link.",
+  caption="Percentage of mobile websites with a privacy policy link.",
   content="39.70%",
   classes="big-number",
   sheets_gid="473955086",
@@ -480,7 +484,7 @@ The <a hreflang="en" href="https://www.eff.org/issues/do-not-track">Do Not Track
 
 {{ figure_markup(
   image="nb_websites_with_dnt_blink_usage.png",
-  caption="Percentage of websites using Do Not Track (DNT.",
+  caption="Percentage of websites using Do Not Track (DNT).",
   description="Bar chart showing the percentage of websites that access the value of DNT by using the `NavigatorDoNotTrack` feature. 17.37% of desktop sites and 17.39% of mobile sites access this. ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1302428398&format=interactive",
   sheets_gid="485103492",
@@ -522,7 +526,7 @@ Individual users and websites could opt out of being included in the cohort calc
 
 {{ figure_markup(
   image="nb_websites_with_floc_opt_out.png",
-  caption="Percentages of websites that opt out of FLoC cohort.",
+  caption="Percentages of websites that opt out of FLoC cohorts.",
   description="Bar chart showing the percentage of pages that opt out of FLoC cohorts, according to the rank of the website. Of the top 1,000 sites 3.29% of desktop sites and 4.10% of mobile sites opt out, for the top 10,000 it's 1.10% and 1.26% respectively, for the top 100,000 it's 0.64% and 0.67%, for the top million it's 0.69% and 0.69%, for all it's 0.95% and 0.86%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=129384991&format=interactive",
   sheets_gid="637590731",
@@ -548,7 +552,7 @@ The <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/att
 
 {{ figure_markup(
   image="same_party_cookie_attribute.png",
-  caption="Percentage of cookies with the SameParty cookie attribut.",
+  caption="Percentage of cookies with the SameParty cookie attribute.",
   description="Bar chart showing the percentage of cookies with the SameParty cookie attribute according to the request context. For first-party cookies `SameParty` is used on 38 desktop sites and 73 mobile sites for third-party cookies it's 2,527 for desktop sites and 1,805 mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=935824621&format=interactive",
   sheets_gid="858972835",
