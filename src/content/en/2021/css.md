@@ -4,7 +4,7 @@ title: CSS
 description: CSS chapter of the 2021 Web Almanac covering trends, changes, and patterns in CSS use across the web.
 authors: [meyerweb, GeekBoySupreme]
 reviewers: [svgeesus, j9t, estelle, bkardell, argyleink, LeaVerou]
-analysts: [rviscomi, thecraftysoul]
+analysts: [rviscomi]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/12vQIA0xsC5Jr3J9Sh03AcAvgFjMAmP1xSS6Tjai9LF0/
