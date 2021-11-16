@@ -92,7 +92,7 @@ const generate_chapters = async (chapter_match) => {
       const { metadata, body, toc } = await parse_file(markdown,chapter);
 
       // Only included "done" chapters in featured quotes, sitemaps...etc.
-      if (!chapter_config[year][chapter].todo) {
+      if (chapter_config[year][chapter] && !chapter_config[year][chapter].todo) {
         const chapter_featured_quote = generate_chapter_featured_quote(metadata);
         if (Object.keys(chapter_featured_quote).length > 0) {
           if (!(language in featured_quotes)) {
@@ -107,6 +107,8 @@ const generate_chapters = async (chapter_match) => {
           sitemap.push({ language, year, chapter });
         }
         ebook_chapters.push({ language, year, chapter, metadata, body, toc });
+
+        await write_template(language, year, chapter, metadata, body, toc);
       }
 
       const {authors, reviewers, analysts, editors} = metadata;
@@ -118,8 +120,6 @@ const generate_chapters = async (chapter_match) => {
         analysts.forEach(analyst=>contributors[year]["analysts"].add(analyst));
       if(editors && editors.length > 0)
         editors.forEach(editor=>contributors[year]["editors"].add(editor));
-
-      await write_template(language, year, chapter, metadata, body, toc);
     } catch (error) {
       console.error(error);
       console.error('  Failed to generate chapter, moving onto the next one. ');

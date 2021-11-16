@@ -30,5 +30,6 @@ GROUP BY
   total_websites,
   cmpId
 ORDER BY
+  pct_websites DESC,
   client,
-  number_of_websites DESC
+  cmpId

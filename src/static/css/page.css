@@ -229,18 +229,18 @@
   margin-left: 1em;
 }
 
-.chapter_links .btn {
+.chapter-links .btn {
   display: inline-block;
   margin: 10px;
 }
 
-.chapter_links svg {
+.chapter-links svg {
   margin-right: 10px;
   margin-right: 0.625rem;
   vertical-align: middle;
 }
 
-#num_comments {
+#num-comments {
   line-height: 24px;
   line-height: 1.5rem;
 }
@@ -250,15 +250,15 @@
 }
 
 .authors h2,
-.chapter_links h2 {
+.chapter-links h2 {
   padding: 16px 0;
   padding: 1rem 0;
 }
 
 .authors,
 .authors h2,
-.chapter_links,
-.chapter_links h2 {
+.chapter-links,
+.chapter-links h2 {
   border-bottom: 1px solid #1a2b490a;
   font-size: 17px;
   font-size: 1.0625rem;
@@ -631,8 +631,8 @@ tbody tr:nth-child(even) {
 
 figure .big-number {
   text-align: center;
-  font: bold 128px/1em Poppins, sans-serif;
-  font: bold 8rem/1em Poppins, sans-serif;
+  font: bold 128px/1em 'Poppins', sans-serif;
+  font: bold 8rem/1em 'Poppins', sans-serif;
   color: #62718b;
   word-break: break-word;
   overflow-wrap: break-word;
@@ -641,8 +641,8 @@ figure .big-number {
 
 figure .medium-number {
   text-align: center;
-  font: bold 48px/1em Poppins, sans-serif;
-  font: bold 3rem/1em Poppins, sans-serif;
+  font: bold 48px/1em 'Poppins', sans-serif;
+  font: bold 3rem/1em 'Poppins', sans-serif;
   color: #62718b;
   word-break: break-word;
   overflow-wrap: break-word;
@@ -650,8 +650,8 @@ figure .medium-number {
 
 figure .really-big-number {
   text-align: center;
-  font: bold 24px/1em Poppins, sans-serif;
-  font: bold 1.5rem/1em Poppins, sans-serif;
+  font: bold 24px/1em 'Poppins', sans-serif;
+  font: bold 1.5rem/1em 'Poppins', sans-serif;
   color: #62718b;
   word-break: break-word;
   overflow-wrap: break-word;
