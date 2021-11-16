@@ -249,7 +249,7 @@ Currently, only Chrome, (and Chromium based browsers like Microsoft's Edge) & Op
 }}
 
 
-Network client hints show a similar uptake to Device client hints, with [Downlink](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Downlink)and [ECT ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ECT)(effective connection type) being requested by **0.15%** of loads on mobile, and [RTT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/RTT) (round trip time) on 0.14% of loads on mobile.
+Network client hints show a similar uptake to Device client hints, with [Downlink](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Downlink)and [ECT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ECT) (effective connection type) being requested by **0.15%** of loads on mobile, and [RTT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/RTT) (round trip time) on 0.14% of loads on mobile.
 
 Save-Data is surprisingly present less, at just 0.08% of mobile requests, seemingly a missed opportunity, given the user benefits possible, as detailed in the Google Web Fundamentals article, [Delivering Fast and Light Applications with Save-Data](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data/).
 
