@@ -360,6 +360,14 @@
       "github": "cqueern",
       "twitter": "httpsecheaders"
     },
+    "cdixon83": {
+      "name": "Carlie Dixon",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/76669481?v=4&s=200",
+      "github": "cdixon83"
+    },
     "carlopi": {
       "name": "Carlo Piovesan",
       "teams": [
@@ -520,6 +528,13 @@
       "linkedin": "filiwiese",
       "twitter": "filiwiese"
     },
+    "gwilhelm": {
+      "name": "Gary Wilhelm",
+      "teams": [
+        "authors"
+      ],
+      "github": "gwilhelm"
+    },
     "gjfr": {
       "name": "Gertjan Franken",
       "teams": [
@@ -528,6 +543,13 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/5749508?v=4&s=200",
       "github": "gjfr",
       "twitter": "GJFR_"
+    },
+    "GigiRajani": {
+      "name": "Gigi Rajani",
+      "teams": [
+        "reviewers"
+      ],
+      "github": "GigiRajani"
     },
     "GregBrimble": {
       "name": "Greg Brimble",
@@ -690,6 +712,14 @@
       "github": "kevinfarrugia",
       "twitter": "imkevdev"
     },
+    "kachiden": {
+      "name": "Katriel Paige",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/54685625?v=4&s=200",
+      "github": "kachiden"
+    },
     "vdwijngaert": {
       "name": "Koen Van den Wijngaert",
       "teams": [
@@ -709,6 +739,16 @@
       "website": "https://lea.verou.me/",
       "github": "LeaVerou",
       "twitter": "leaverou"
+    },
+    "Zizzamia": {
+      "name": "Leonardo Zizzamia",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/829214?v=4&s=200",
+      "website": "https://twitter.com/zizzamia",
+      "github": "Zizzamia",
+      "twitter": "Zizzamia"
     },
     "lucasbona05": {
       "name": "Lucas Gonçalves",
