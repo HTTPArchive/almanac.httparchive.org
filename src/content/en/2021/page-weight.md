@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Page Weight
-description: Page Weight chapter of the 2020 Web Almanac covering why page weight matters, bandwidth, complex pages, page weight over time, page requests, and file formats.
+description: Page Weight chapter of the 2021 Web Almanac covering why page weight matters, bandwidth, complex pages, page weight over time, page requests, and file formats.
 authors: [logicalphase]
 reviewers: [siakaramalegos]
 analysts: [jessthebp]
