@@ -92,7 +92,7 @@ const generate_chapters = async (chapter_match) => {
       const { metadata, body, toc } = await parse_file(markdown,chapter);
 
       // Only included "done" chapters in featured quotes, sitemaps...etc.
-      if (!chapter_config[year][chapter].todo) {
+      if (chapter_config[year][chapter] && !chapter_config[year][chapter].todo) {
         const chapter_featured_quote = generate_chapter_featured_quote(metadata);
         if (Object.keys(chapter_featured_quote).length > 0) {
           if (!(language in featured_quotes)) {
