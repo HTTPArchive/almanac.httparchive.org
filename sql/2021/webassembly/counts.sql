@@ -1,6 +1,7 @@
 SELECT
   client,
-  COUNTIF(NET.REG_DOMAIN(page) != NET.REG_DOMAIN(url)) / COUNT(0) AS cross_origin_pct
+  COUNT(0) AS total_count,
+  COUNT(DISTINCT filename) AS distinct_count
 FROM
   `httparchive.almanac.wasm_stats`
 WHERE

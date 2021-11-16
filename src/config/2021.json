@@ -30,6 +30,7 @@
           "chapter_number": "3",
           "title": "Markup",
           "slug": "markup",
+          "hero_dir": "2021",
           "todo": "true"
         },
         {
@@ -42,13 +43,6 @@
         {
           "part": "I",
           "chapter_number": "5",
-          "title": "Media",
-          "slug": "media",
-          "todo": "true"
-        },
-        {
-          "part": "I",
-          "chapter_number": "6",
           "title": "WebAssembly",
           "slug": "webassembly",
           "todo": "true",
@@ -56,7 +50,7 @@
         },
         {
           "part": "I",
-          "chapter_number": "7",
+          "chapter_number": "6",
           "title": "Third Parties",
           "slug": "third-parties"
         }
@@ -68,55 +62,55 @@
       "chapters": [
         {
           "part": "II",
-          "chapter_number": "8",
+          "chapter_number": "7",
           "title": "SEO",
           "slug": "seo",
           "todo": "true"
         },
         {
           "part": "II",
-          "chapter_number": "9",
+          "chapter_number": "8",
           "title": "Accessibility",
           "slug": "accessibility",
           "todo": "true"
         },
         {
           "part": "II",
-          "chapter_number": "10",
+          "chapter_number": "9",
           "title": "Performance",
           "slug": "performance"
         },
         {
           "part": "II",
-          "chapter_number": "11",
+          "chapter_number": "10",
           "title": "Privacy",
           "slug": "privacy",
           "hero_dir": "2020"
         },
         {
           "part": "II",
-          "chapter_number": "12",
+          "chapter_number": "11",
           "title": "Security",
           "slug": "security",
           "todo": "true"
         },
         {
           "part": "II",
-          "chapter_number": "13",
+          "chapter_number": "12",
           "title": "Mobile Web",
           "slug": "mobile-web",
           "todo": "true"
         },
         {
           "part": "II",
-          "chapter_number": "14",
+          "chapter_number": "13",
           "title": "Capabilities",
           "slug": "capabilities",
           "hero_dir": "2020"
         },
         {
           "part": "II",
-          "chapter_number": "15",
+          "chapter_number": "14",
           "title": "PWA",
           "slug": "pwa"
         }
@@ -128,24 +122,16 @@
       "chapters": [
         {
           "part": "III",
-          "chapter_number": "16",
+          "chapter_number": "15",
           "title": "CMS",
           "slug": "cms"
         },
         {
           "part": "III",
-          "chapter_number": "17",
+          "chapter_number": "16",
           "title": "Ecommerce",
           "slug": "ecommerce",
           "todo": "true"
-        },
-        {
-          "part": "III",
-          "chapter_number": "18",
-          "title": "Jamstack",
-          "slug": "jamstack",
-          "todo": "true",
-          "hero_dir": "2020"
         }
       ]
     },
@@ -153,6 +139,20 @@
       "part": "IV. Content Distribution",
       "part_number": "4",
       "chapters": [
+        {
+          "part": "IV",
+          "chapter_number": "17",
+          "title": "Compression",
+          "slug": "compression",
+          "todo": "true"
+        },
+        {
+          "part": "IV",
+          "chapter_number": "18",
+          "title": "CDN",
+          "slug": "cdn",
+          "todo": "true"
+        },
         {
           "part": "IV",
           "chapter_number": "19",
@@ -163,33 +163,12 @@
         {
           "part": "IV",
           "chapter_number": "20",
-          "title": "Compression",
-          "slug": "compression",
-          "todo": "true"
-        },
-        {
-          "part": "IV",
-          "chapter_number": "21",
-          "title": "Caching",
-          "slug": "caching",
-          "todo": "true"
-        },
-        {
-          "part": "IV",
-          "chapter_number": "22",
-          "title": "CDN",
-          "slug": "cdn",
-          "todo": "true"
-        },
-        {
-          "part": "IV",
-          "chapter_number": "23",
           "title": "Resource Hints",
           "slug": "resource-hints"
         },
         {
           "part": "IV",
-          "chapter_number": "24",
+          "chapter_number": "21",
           "title": "HTTP",
           "slug": "http",
           "todo": "true"
@@ -353,7 +332,7 @@
       "teams": [
         "authors"
       ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/6698344?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6698344?v=4&s=200",
       "website": "https://christianliebel.com",
       "github": "christianliebel",
       "twitter": "christianliebel"
@@ -390,12 +369,20 @@
       "github": "demianrenzulli",
       "twitter": "drenzulli"
     },
+    "dominiclovell": {
+      "name": "Dominic Lovell",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/131131?v=4&s=200",
+      "github": "dominiclovell"
+    },
     "edmondwwchan": {
       "name": "Edmond W. W. Chan",
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/68361682?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/68361682?v=4&s=200",
       "github": "edmondwwchan"
     },
     "estelle": {
@@ -403,7 +390,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/69888?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/69888?v=4&s=200",
       "github": "estelle"
     },
     "fili": {
@@ -411,7 +398,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/115263?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/115263?v=4&s=200",
       "website": "https://fili.com/",
       "github": "fili",
       "linkedin": "filiwiese",
@@ -506,12 +493,23 @@
       "github": "jeffposnick",
       "twitter": "jeffposnick"
     },
-    "hyperpress": {
+    "jessthebp": {
+      "name": "Jess Peck",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/17071492?v=4&s=200",
+      "website": "https://jessbpeck.com/",
+      "github": "jessthebp",
+      "twitter": "jessthebp"
+    },
+    "logicalphase": {
       "name": "John Teague",
       "teams": [
+        "authors",
         "reviewers"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/25212653?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25212653?v=4&s=200",
       "website": "https://gemservers.com",
       "github": "logicalphase",
       "twitter": "jtteag"
@@ -532,7 +530,7 @@
         "reviewers",
         "editors"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/2634031?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2634031?v=4&s=200",
       "github": "jzyang",
       "linkedin": "yangzhe",
       "twitter": "Jules_Yang"
@@ -571,7 +569,7 @@
       "teams": [
         "developers"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/58731469?v=4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/58731469?v=4&s=200",
       "github": "lucasbona05"
     },
     "soulcorrosion": {
@@ -653,13 +651,13 @@
       "github": "NishuGoel",
       "twitter": "TheNishuGoel"
     },
-    "nithanaroy": {
+    "Nithanaroy": {
       "name": "Nitin Pasumarthy",
       "teams": [
         "analysts"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/670556?v=4&s=200",
-      "github": "nithanaroy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/670556?v=4&s=200",
+      "github": "Nithanaroy",
       "linkedin": "nitinpasumarthy",
       "website": "https://nithanaroy.medium.com/"
     },
@@ -696,6 +694,7 @@
     "paulcalvano": {
       "name": "Paul Calvano",
       "teams": [
+        "analysts",
         "leads"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/7459458?v=4&s=200",
@@ -712,6 +711,14 @@
       "website": "https://blogs.pjjk.net/phil/",
       "github": "philbarker",
       "twitter": "philbarker"
+    },
+    "RMHolmlund": {
+      "name": "RMHolmlund",
+      "teams": [
+        "editors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/61608378?v=4&s=200",
+      "github": "RMHolmlund"
     },
     "rrajiv": {
       "name": "Rajiv Ramnath",
@@ -732,6 +739,15 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/1120896?v=4&s=200",
       "github": "rviscomi",
       "twitter": "rick_viscomi"
+    },
+    "rmarx": {
+      "name": "Robin Marx",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/2240689?v=4&s=200",
+      "github": "rmarx",
+      "twitter": "programmingart"
     },
     "rockeynebhwani": {
       "name": "Rockey Nebhwani",
@@ -758,7 +774,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/802163?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/802163?v=4&s=200",
       "github": "samarpanda"
     },
     "shantsis": {
@@ -795,7 +811,7 @@
         "authors",
         "reviewers"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/4777393?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4777393?v=4&s=200",
       "website": "https://sia.codes",
       "github": "siakaramalegos",
       "linkedin": "karamalegos",
@@ -817,7 +833,7 @@
         "analysts",
         "reviewers"
       ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/145676?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/145676?v=4&s=200",
       "website": "https://blog.tomayac.com/",
       "github": "tomayac"
     },
@@ -875,7 +891,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/60089915?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60089915?v=4&s=200",
       "github": "ziemek-bucko"
     }
   }

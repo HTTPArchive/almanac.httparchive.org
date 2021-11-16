@@ -3,7 +3,7 @@
 title: フォント
 description: フォントがどこから読み込まれるか、フォントのフォーマット、フォントの読み込み性能、可変フォント、カラーフォントを網羅した2019年Web AlmanacのFontsの章。
 authors: [zachleat]
-reviewers: [hyperpress, AymenLoukil]
+reviewers: [logicalphase, AymenLoukil]
 analysts: [tjmonsi, rviscomi]
 editors: [tunetheweb]
 translators: [ksakae]
