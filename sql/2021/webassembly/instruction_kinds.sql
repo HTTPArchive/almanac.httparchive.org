@@ -1,4 +1,5 @@
 SELECT
+  client,
   SUM(instr.categories.other) / SUM(instr.total) AS other_pct,
   SUM(instr.categories.constants) / SUM(instr.total) AS constants_pct,
   SUM(instr.categories.wait_notify) / SUM(instr.total) AS wait_notify_pct,
@@ -14,3 +15,7 @@ FROM
   `httparchive.almanac.wasm_stats`
 WHERE
   date = '2021-09-01'
+GROUP BY
+  client
+ORDER BY
+  client

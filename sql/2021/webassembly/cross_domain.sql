@@ -7,3 +7,5 @@ WHERE
   date = '2021-09-01'
 GROUP BY
   client
+ORDER BY
+  client
