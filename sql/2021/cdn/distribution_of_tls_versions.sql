@@ -47,7 +47,7 @@ LEFT JOIN (
     date = '2021-07-01'
   GROUP BY client, page, socket
 ) b ON (a.client = b.client AND a.page = b.page AND a.socket = b.socket)
-
+WHERE a.tlsVersion IS NOT NULL OR b.tlsVersion IS NOT NULL
 GROUP BY
   a.client,
   cdn,
