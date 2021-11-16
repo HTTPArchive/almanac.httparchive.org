@@ -229,12 +229,12 @@
   margin-left: 1em;
 }
 
-.chapter_links .btn {
+.chapter-links .btn {
   display: inline-block;
   margin: 10px;
 }
 
-.chapter_links svg {
+.chapter-links svg {
   margin-right: 10px;
   margin-right: 0.625rem;
   vertical-align: middle;
@@ -250,15 +250,15 @@
 }
 
 .authors h2,
-.chapter_links h2 {
+.chapter-links h2 {
   padding: 16px 0;
   padding: 1rem 0;
 }
 
 .authors,
 .authors h2,
-.chapter_links,
-.chapter_links h2 {
+.chapter-links,
+.chapter-links h2 {
   border-bottom: 1px solid #1a2b490a;
   font-size: 17px;
   font-size: 1.0625rem;
