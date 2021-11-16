@@ -312,6 +312,15 @@
       "github": "bkardell",
       "twitter": "briankardell"
     },
+    "cqueern": {
+      "name": "Caleb Queern",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/1588185?v=4&s=200",
+      "github": "cqueern",
+      "twitter": "httpsecheaders"
+    },
     "carlopi": {
       "name": "Carlo Piovesan",
       "teams": [
@@ -418,6 +427,15 @@
       "github": "fili",
       "linkedin": "filiwiese",
       "twitter": "filiwiese"
+    },
+    "gjfr": {
+      "name": "Gertjan Franken",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/5749508?v=4&s=200",
+      "github": "gjfr",
+      "twitter": "GJFR_"
     },
     "GregBrimble": {
       "name": "Greg Brimble",
@@ -695,6 +713,16 @@
       "linkedin": "nitinpasumarthy",
       "website": "https://nithanaroy.medium.com/"
     },
+    "nrllh": {
+      "name": "Nurullah Demir",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/13475745?v=4&s=200",
+      "website": "https://internet-sicherheit.de",
+      "github": "nrllh",
+      "twitter": "nrllah"
+    },
     "pankajparkar": {
       "name": "Pankaj Parkar",
       "teams": [
@@ -811,6 +839,16 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/802163?v=4&s=200",
       "github": "samarpanda"
     },
+    "saptaks": {
+      "name": "Saptak Sengupta",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/9530293?v=4&s=200",
+      "website": "https://saptaks.website/",
+      "github": "saptaks",
+      "twitter": "Saptak013"
+    },
     "shantsis": {
       "name": "Shaina Hantsis",
       "teams": [
@@ -882,6 +920,16 @@
       "github": "bobbyshaw",
       "linkedin": "tomrobertshaw",
       "twitter": "bobbyshaw"
+    },
+    "tomvangoethem": {
+      "name": "Tom Van Goethem",
+      "teams": [
+        "analysts",
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/4355579?v=4&s=200",
+      "github": "tomvangoethem",
+      "twitter": "tomvangoethem"
     },
     "victorlep": {
       "name": "Victor Le Pochat",
