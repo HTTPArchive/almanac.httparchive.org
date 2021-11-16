@@ -458,6 +458,26 @@
       "github": "jeffposnick",
       "twitter": "jeffposnick"
     },
+    "jessthebp": {
+      "name": "Jess Peck",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/17071492?v=4&s=200",
+      "website": "https://jessbpeck.com/",
+      "github": "jessthebp",
+      "twitter": "jessthebp"
+    },
+    "logicalphase": {
+      "name": "John Teague",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/25212653?v=4&s=200",
+      "website": "https://gemservers.com",
+      "github": "logicalphase",
+      "twitter": "jtteag"
+    },
     "jonoalderson": {
       "name": "Jono Alderson",
       "teams": [
@@ -663,6 +683,14 @@
       ],
       "github": "rrajiv",
       "linkedin": "rajivramnath"
+    },
+    "RMHolmlund": {
+      "name": "RMHolmlund",
+      "teams": [
+        "editors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/61608378?v=4&s=200",
+      "github": "RMHolmlund"
     },
     "rviscomi": {
       "name": "Rick Viscomi",
