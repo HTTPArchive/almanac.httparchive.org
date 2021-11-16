@@ -654,6 +654,14 @@ In last year’s Web Almanac, there was a note about “the once-deprecated—no
 
 The usage of the display-p3 color space remains about as vanishingly small as was found in 2020, probably because it’s only supported in Safari (both desktop and mobile) as of this writing.  Desktop and mobile use roughly tripled, to 90 and 105 pages, respectively.  In the cases where `color(display-p3)` was used, it was with good reason: 79% of the colors expressed using display-p3 on mobile were colors that cannot be represented in the sRGB color space.  Until the `color()` function becomes more widely supported by browsers, the web will remain stuck in sRGB, which permits about two-thirds of the colors that screens can actually display.
 
+{{ figure_markup(
+  caption="Percentage of display-p3 colors that lie outside the sRGB space.",
+  content="79%",
+  classes="big-number",
+  sheets_gid="721597121",
+  sql_file="color_p3.sql"
+) }}
+
 
 ## Images
 
@@ -898,7 +906,7 @@ We have come a long, long way from using tables to create layouts on the web to 
   sql_file="layout_properties.sql"
 ) }}
 
-Note that this doesn’t chart primary layout methods — we are not claiming here that 93% of the pages we analyzed are laid out using absolute positioning!  Rather, what the chart says is that `position: absolute` appeared in the styles for 93% of the page we analyzed, even if that was just to put an icon in a corner or place bits of content `-9999px` offscreen.  Similarly, `display: grid` may have appeared in 36% of page’s styles, but that doesn’t mean 37% of all pages are Grid pages, just that they combination appeared somewhere in the stylesheet.
+Note that this doesn’t chart primary layout methods — we are not claiming here that 93% of the pages we analyzed are laid out using absolute positioning!  Rather, what the chart says is that `position: absolute` appeared in the styles for 93% of the page we analyzed, even if that was just to put an icon in a corner or place bits of content `-9999px` offscreen.  Similarly, `display: grid` may have appeared in 36% of page’s styles, but that doesn’t mean 37% of all pages are Grid pages, just that the combination appeared somewhere in the stylesheet.
 
 The rest of this section is where more in-depth analyses were done, looking not just for property-value combinations, but for evidence of actual usage on pages.
 
@@ -928,6 +936,14 @@ We also analyzed Flexbox layouts to see which ones set the flex grow and shrink 
 ### Multicolumn
 
 Even though multicolumn layout is a bit fraught on the web, where it can force users to scroll down to the bottom of a column and then back up to the top of the next column, we detected multicolumn use on 20% of the pages we analyzed, which is a 5% rise over the 2020 Web Almanac.  We continue to be surprised to see it on so many pages, and even more surprised to see its adoption increasing.
+
+{{ figure_markup(
+  caption="The percentage of pages using multicolumn layout.",
+  content="20%",
+  classes="big-number",
+  sheets_gid="1371521792",
+  sql_file="multicol.sql"
+) }}
 
 ### Box sizing
 
