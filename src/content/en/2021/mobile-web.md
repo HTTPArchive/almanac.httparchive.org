@@ -121,7 +121,7 @@ A limitation of the CrUX dataset is that it can only collect data from Chrome us
 * Other major browsers, like FireFox and Safari are missing
 * There is no data from iOS users at all (Chrome uses WebKit on iOS, like all other browsers on iOS devices)
 
-Fortunately there are a few other sources. Paul Calvano ran some analysis on the [Akamai  mPulse ](https://www.akamai.com/products/mpulse-real-user-monitoring)real user monitoring data for July 2021. It found a slightly more even match between Mobile and Desktop traffic, at **59.4%** being from mobile devices. The mPulse data is aggregated hourly, so it reveals some interesting trends
+Fortunately there are a few other sources. Paul Calvano ran some analysis on the [Akamai  mPulse](https://www.akamai.com/products/mpulse-real-user-monitoring)real user monitoring data for July 2021. It found a slightly more even match between Mobile and Desktop traffic, at **59.4%** being from mobile devices. The mPulse data is aggregated hourly, so it reveals some interesting trends
 
 
 ##### Not all days are equal
@@ -230,7 +230,7 @@ Details about the agent accessing the site.
 }}
 
 
-Uptake here is low, with [DPR](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/DPR) & [Viewport-Width](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Viewport-Width) leading with **0.15%** of mobile sites requesting this, [Device-Memory](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Device-Memory) a little behind at **0.14%** and [Width ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Width)at just **0.01%**, but this is now deprecated, the proposed replacement being Sec-CH-Width, we detected no sites requesting this.
+Uptake here is low, with [DPR](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/DPR) & [Viewport-Width](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Viewport-Width) leading with **0.15%** of mobile sites requesting this, [Device-Memory](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Device-Memory) a little behind at **0.14%** and [Width](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Width)at just **0.01%**, but this is now deprecated, the proposed replacement being Sec-CH-Width, we detected no sites requesting this.
 
 Currently, only Chrome, (and Chromium based browsers like Microsoft's Edge) & Opera support these headers, with Safari and Firefox not yet onboard (source: [CanIUse.com](https://caniuse.com/client-hints-dpr-width-viewport)).
 
@@ -248,7 +248,7 @@ Currently, only Chrome, (and Chromium based browsers like Microsoft's Edge) & Op
 }}
 
 
-Network client hints show a similar uptake to Device client hints, with [Downlink ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Downlink)and [ECT ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ECT)(effective connection type) being requested by **0.15%** of loads on mobile, and [RTT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/RTT) (round trip time) on 0.14% of loads on mobile.
+Network client hints show a similar uptake to Device client hints, with [Downlink](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Downlink)and [ECT ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ECT)(effective connection type) being requested by **0.15%** of loads on mobile, and [RTT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/RTT) (round trip time) on 0.14% of loads on mobile.
 
 Save-Data is surprisingly present less, at just 0.08% of mobile requests, seemingly a missed opportunity, given the user benefits possible, as detailed in the Google Web Fundamentals article, [Delivering Fast and Light Applications with Save-Data](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data/).
 
@@ -301,7 +301,7 @@ This api returns an approximate amount of device memory, useful to judge what th
 
 **10.88%** of mobile page loads utilised this api, slightly higher than **10.19%** for desktop loads.
 
-Much like Client Hints, these APIs are still experimental, and also do not have universal support across browsers.  (source:[ Network Information API](https://caniuse.com/netinfo) & [Navigator API: deviceMemory](https://caniuse.com/mdn-api_navigator_devicememory) caniuse.com) but have much wider adoption.
+Much like Client Hints, these APIs are still experimental, and also do not have universal support across browsers.  (source: [Network Information API](https://caniuse.com/netinfo) & [Navigator API: deviceMemory](https://caniuse.com/mdn-api_navigator_devicememory) caniuse.com) but have much wider adoption.
 
 One reason for wider adoption could be third party scripts requesting these on page loads. Another reason may be ease of implementation. Setting and reading http headers may be seen as more complex and more likely to involve  changes to infrastructure.
 
@@ -785,7 +785,7 @@ The low rates of adoption for input types like telephone and email are surprisin
 
 ### Accessibility on the mobile web
 
-The pandemic forced humans around the world to isolate themselves from friends, family, and community.  The number of persons facing disabilities also increased due to[ post-COVID conditions](https://www.hhs.gov/civil-rights/for-providers/civil-rights-covid19/guidance-long-covid-disability/index.html#footnote10_0ac8mdc). This shift forced digital spaces to the new default as in-person services, commerce, and communication were disrupted.
+The pandemic forced humans around the world to isolate themselves from friends, family, and community.  The number of persons facing disabilities also increased due to [post-COVID conditions](https://www.hhs.gov/civil-rights/for-providers/civil-rights-covid19/guidance-long-covid-disability/index.html#footnote10_0ac8mdc). This shift forced digital spaces to the new default as in-person services, commerce, and communication were disrupted.
 
 The goal of accessibility is to create web experiences which provide feature and information parity to all users.  Users on the mobile benefit from accessibility as accessibility practices make information available to people using slow internet connections, or who have limited or expensive data plans.
 
@@ -901,7 +901,7 @@ This means that if you have content or markup that's only served to desktop devi
 
 ### Mobile-Friendliness
 
-Both [Google ](https://developers.google.com/search/blog/2015/04/rolling-out-mobile-friendly-update)and [Bing](https://blogs.bing.com/webmaster/2015/11/12/mobile-friendly-test), amongst other search engines, use some concept of mobile friendliness  as a direct ranking signal. This mostly comprises testing to make sure that the content fits in the viewport, text is legible and tap targets are of a reasonable size.
+Both [Google](https://developers.google.com/search/blog/2015/04/rolling-out-mobile-friendly-update)and [Bing](https://blogs.bing.com/webmaster/2015/11/12/mobile-friendly-test), amongst other search engines, use some concept of mobile friendliness  as a direct ranking signal. This mostly comprises testing to make sure that the content fits in the viewport, text is legible and tap targets are of a reasonable size.
 
 Google offers a [mobile-friendly test](https://search.google.com/test/mobile-friendly), as does [Bing](https://www.bing.com/webmaster/tools/mobile-friendliness) to help diagnose if your pages are passing.
 
@@ -912,7 +912,7 @@ The recommended way of achieving this is using responsive web design, web.dev ha
 
 On July 15th 2021, Google announced that they were rolling out the [Page Experience Ranking Update](https://developers.google.com/search/blog/2021/04/more-details-page-experience). This comprises a few different signals, including mobile-friendliness, with the major new additions being the [Core Web Vitals metrics](https://web.dev/vitals/).
 
-Of particular interest to the mobile web is that the core web vitals part is[ mobile specific](https://support.google.com/webmasters/thread/104436075/core-web-vitals-page-experience-faqs-updated-march-2021), these metrics only play a part in the mobile results so far, although a roll out to desktop is planned in [February 2022](https://developers.google.com/search/blog/2021/11/bringing-page-experience-to-desktop).
+Of particular interest to the mobile web is that the core web vitals part is[mobile specific](https://support.google.com/webmasters/thread/104436075/core-web-vitals-page-experience-faqs-updated-march-2021), these metrics only play a part in the mobile results so far, although a roll out to desktop is planned in [February 2022](https://developers.google.com/search/blog/2021/11/bringing-page-experience-to-desktop).
 
 You can learn more about the role of mobile-friendliness and the core web vitals in SEO over in the [SEO Chapter](https://almanac.httparchive.org/en/2020/seo#mobile-friendliness).
 
@@ -947,7 +947,7 @@ The data shows that just 45% of mobile page loads recorded in the CrUX dataset a
 
 It does represent an small improvement from 2020, where only [43% of mobile page loads](https://almanac.httparchive.org/en/2020/performance#lcp-by-device) met the 2.5 second or under threshold.
 
-There are clearly bigger challenges to achieving good LCP scores for the mobile demographic, but one worth chasing. A recent [study from Vodafone ](https://web.dev/vodafone/)showed that a reduction of just **8%** in LCP times lead to increased conversions of **31%**. Performance can have a direct effect on revenue.
+There are clearly bigger challenges to achieving good LCP scores for the mobile demographic, but one worth chasing. A recent [study from Vodafone](https://web.dev/vodafone/)showed that a reduction of just **8%** in LCP times lead to increased conversions of **31%**. Performance can have a direct effect on revenue.
 
 
 ### Images
@@ -973,7 +973,7 @@ This is sadly a step back from 58.8% in 2020. That's 43.4% of mobile users getti
 
 #### Responsive Images
 
-Images can be [served responsively ](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)too, the srcset attribute, and the &lt;picture> element allow appropriately sized, and appropriately formatted images to be specified, allowing the browser to download the one that best matches the screen and device.
+Images can be [served responsively](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)too, the srcset attribute, and the &lt;picture> element allow appropriately sized, and appropriately formatted images to be specified, allowing the browser to download the one that best matches the screen and device.
 
 {{ figure_markup(
    image="mobile-web-responsive-images.png",
@@ -1084,7 +1084,7 @@ The CrUX dataset shows that 62% of mobile page loads had a CLS of **0.1** or und
 }}
 
 
-This is a big step over the 43% achieved last year, but direct comparison is hard, as the metric changed on the [1st of June 2021 ](https://web.dev/evolving-cls/)to better capture the experience on long-lived pages, so some of this jump could be attributable to this.
+This is a big step over the 43% achieved last year, but direct comparison is hard, as the metric changed on the [1st of June 2021](https://web.dev/evolving-cls/)to better capture the experience on long-lived pages, so some of this jump could be attributable to this.
 
 
 ### Response to User Interaction
