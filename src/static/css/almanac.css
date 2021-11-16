@@ -1206,21 +1206,21 @@ p.copyright a {
     margin-left: auto;
   }
 
-  .menu-btn--active .menu-btn-bar {
+  .menu-btn-active .menu-btn-bar {
     margin: 0;
     position: absolute;
   }
 
-  .menu-btn--active .menu-btn-bar:nth-child(1) {
+  .menu-btn-active .menu-btn-bar:nth-child(1) {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
   }
 
-  .menu-btn--active .menu-btn-bar:nth-child(2) {
+  .menu-btn-active .menu-btn-bar:nth-child(2) {
     opacity: 0;
   }
 
-  .menu-btn--active .menu-btn-bar:nth-child(3) {
+  .menu-btn-active .menu-btn-bar:nth-child(3) {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
   }
