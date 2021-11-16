@@ -2,8 +2,8 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Accessibility
 description: TODO
-authors: [alextait1, scottdavis99, oluoluoxenfree]
-reviewers: [ericwbailey, clottman, shantsis, digitala11ies]
+authors: [alextait1, scottdavis99, oluoluoxenfree, gwilhelm, kachiden]
+reviewers: [ericwbailey, clottman, shantsis, digitala11ies, GigiRajani, cdixon83]
 analysts: [obto]
 editors: []
 translators: []
