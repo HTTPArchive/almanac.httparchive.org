@@ -4,7 +4,7 @@ title: Markup
 description: TODO
 authors: [AlexLakatos]
 reviewers: []
-analysts: []
+analysts: [kevinfarrugia]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1Ta5Ck7y3W6LCn2CeGtW7dAdLF6Lh5wV2UBQJZTz3W5Q/
