@@ -631,8 +631,8 @@ tbody tr:nth-child(even) {
 
 figure .big-number {
   text-align: center;
-  font: bold 128px/1em Poppins, sans-serif;
-  font: bold 8rem/1em Poppins, sans-serif;
+  font: bold 128px/1em 'Poppins', sans-serif;
+  font: bold 8rem/1em 'Poppins', sans-serif;
   color: #62718b;
   word-break: break-word;
   overflow-wrap: break-word;
@@ -641,8 +641,8 @@ figure .big-number {
 
 figure .medium-number {
   text-align: center;
-  font: bold 48px/1em Poppins, sans-serif;
-  font: bold 3rem/1em Poppins, sans-serif;
+  font: bold 48px/1em 'Poppins', sans-serif;
+  font: bold 3rem/1em 'Poppins', sans-serif;
   color: #62718b;
   word-break: break-word;
   overflow-wrap: break-word;
