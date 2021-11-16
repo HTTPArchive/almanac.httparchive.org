@@ -242,6 +242,16 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/32825533?v=4&s=200",
       "github": "tropicadri"
     },
+    "AlexLakatos": {
+      "name": "Alex Lakatos",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/690132?v=4&s=200",
+      "website": "http://alexlakatos.com/",
+      "github": "AlexLakatos",
+      "twitter": "lakatos88"
+    },
     "cyberandy": {
       "name": "Andrea Volpini",
       "teams": [
@@ -397,7 +407,8 @@
     "kevinfarrugia": {
       "name": "Kevin Farrugia",
       "teams": [
-        "authors"
+        "authors",
+        "analysts"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/8075326?v=4&s=200",
       "website": "https://imkev.dev",
