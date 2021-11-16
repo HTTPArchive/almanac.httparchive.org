@@ -3,12 +3,13 @@
 title: Mobile Web
 description: TODO
 authors: [fellowhuman1101, dwsmart, ashleyish]
-reviewers: []
+reviewers: [obto, fili]
 analysts: [rvth, obto]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1mdma245ja_THTBApaJTeS4vmLY_Fn8VC6Kd8qx7wp-o/
 fellowhuman1101_bio: Jamie Indigo isn’t a robot, but speaks bot.  As a technical SEO consultant at <a href="https://www.deepcrawl.com">Deepcrawl</a>, they study how search engines crawl, render, and index the web.  They love to tame wild JavaScript frameworks and optimize rendering strategies. When not working, Jamie likes horror movies, graphic novels, and Dungeons & Dragons.
+dwsmart_bio: Dave Smart is a developer and technical search engine consultant at <a href="https://tamthebots.com">Tame the Bots</a>. They love building tools and experimenting with the modern web, and can often be found at the front in a gig or two.
 featured_quote: TODO
 featured_stat_1: TODO
 featured_stat_label_1: TODO
@@ -45,7 +46,7 @@ We’ve used a few different data sources in this chapter:
 * Wappalyzer
 * [Akamai](https://twitter.com/paulcalvano/status/1454866401781587969)
 
-It is worth noting that HTTP Archive and Lighthouse data is limited to the data identified from website home pages only, and not site-wide.
+It is worth noting that HTTP Archive and Lighthouse data is limited to the data identified from websites’ home pages only, and not site-wide.
 
 
 ## Worldwide connectivity
@@ -78,7 +79,7 @@ What percentage of traffic comes from  mobile devices vs. desktop? Predicting th
 )
 }}
 
-New this year, the CrUX dataset allows us to query the most popular sites ([ranked by magnitude](https://developers.google.com/web/updates/2021/03/crux-rank-magnitude),  by traffic recorded to these origins).
+New this year, the CrUX dataset allows us to query the most popular sites ([ranked by magnitude](https://developers.google.com/web/updates/2021/03/crux-rank-magnitude),  by traffic recorded to th%ese origins).
 
 {{ figure_markup(
   image="mobile-web-more-mobile-than-desktop-traffic.png",
@@ -138,20 +139,33 @@ Fortunately there are a few other sources. Paul Calvano ran some analysis on the
 
 
 
-Weekend days show a greater proportion of Mobile traffic, with 66.06% on Saturdays, **66.54% **on Sundays, and a slight increase to **59.06%**. Globally, not every country have Monday - Friday work weeks, Sunday - Thursday is another common pattern, (source: [Wikipedia](https://en.wikipedia.org/wiki/Workweek_and_weekend))
+Weekend days show a greater proportion of Mobile traffic, with 66.06% on Saturdays, **66.54%** on Sundays, and a slight increase to **59.06%**. Globally, not every country have Monday - Friday work weeks, Sunday - Thursday is another common pattern, (source: [Wikipedia](https://en.wikipedia.org/wiki/Workweek_and_weekend))
 
 
 ##### Not all times are equal
 
 On weekdays, mobile usage dips vs. desktop usage around 5 am UTC and starts climbing again at 7pm UTC (with a small bump around 10 / 11am). This aligns with working hours.
 
+{{ figure_markup(
+   image="mobile-web-akimai-device-distribution-by-hour-weekdays.png",
+   caption="Device type distribution by hour on weekend - mPulse July 2021",
+   description="Mobile vs. Desktop traffic distribution, by the hour of the day on weekdays, in UTC, from Akimai's mPulse in July 2021",
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=12081105&format=interactive",
+   sheets_gid="300179855",
+   width="600",
+   height="480"
+   )
+   }}
+
 On weekends the split between mobile and desktop traffic remains more stable.
 {{ figure_markup(
    image="mobile-web-akimai-device-distribution-by-hour-weekends.png",
    caption="Device type distribution by hour on weekend - mPulse July 2021",
-   description="Mobile vs. Desktop traffic distribution, by the hour of the day on Saturdays adn Sundays, in UTC, from Akimai's mPulse in July 2021",
+   description="Mobile vs. Desktop traffic distribution, by the hour of the day on Saturdays and Sundays, in UTC, from Akimai's mPulse in July 2021",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1776273851&format=interactive",
-   sheets_gid="300179855"
+   sheets_gid="300179855",
+   width="600",
+   height="480"
    )
    }}
 
@@ -245,7 +259,7 @@ Major browsers like Chrome (Source: [Chromium Blog](https://blog.chromium.org/20
 
 Traditionally, sites may have used this information to tailor the experience to those devices. This approach has always had some drawbacks in trying to keep up with the ever changing landscape of devices, and the fact the user-agent string is easily changeable and spoofable.
 
-User Agent Client hints offer a way to get  this information, but unlike the Device and Network Hints do not require the server to request this via the [Accept-CH](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-CH) header. This is perhaps why we detected only a tiny handful of sites requesting this.
+User Agent Client hints offer a way to get  this information, but unlike the Device and Network Hints do not require the server to request this via the Accept-CH header. This is perhaps why we detected only a tiny handful of sites requesting this.
 
 
 ### Network Information API and Device Memory API Usage
@@ -305,131 +319,83 @@ The most commonly used libraries and technologies found on the mobile web impact
 
 According to [Wappalyzer](https://www.wappalyzer.com/) data, JavaScript library JQuery is the dominant library of the mobile web, present in 84.38% of tested sites.  Google is the dominant provider, holding three of the top five spots.
 
-
+<figure>
 <table>
-  <tr>
-   <td><strong>App</strong>
-   </td>
-   <td><strong>Percentage Mobile Sites with App</strong>
-   </td>
-   <td><strong>Percentage Desktop Sites with App</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>jQuery
-   </td>
-   <td><p style="text-align: right">
-84.38%</p>
-
-   </td>
-   <td><p style="text-align: right">
-84.38%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Google Analytics
-   </td>
-   <td><p style="text-align: right">
-65.40%</p>
-
-   </td>
-   <td><p style="text-align: right">
-68.64%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>PHP
-   </td>
-   <td><p style="text-align: right">
-50.46%</p>
-
-   </td>
-   <td><p style="text-align: right">
-50.46%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Google Font API
-   </td>
-   <td><p style="text-align: right">
-47.56%</p>
-
-   </td>
-   <td><p style="text-align: right">
-47.56%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Google Tag Manager
-   </td>
-   <td><p style="text-align: right">
-43.37%</p>
-
-   </td>
-   <td><p style="text-align: right">
-43.37%</p>
-
-   </td>
-  </tr>
+  <thead>
+    <tr>
+      <th scope="col">App</th>
+      <th scope="col">Percentage Mobile Sites with App</th>
+      <th scope="col">Percentage Desktop Sites with App</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>jQuery</td>
+      <td>84.38%</td>
+      <td>84.38%</td>
+    </tr>
+    <tr>
+      <td>Google Analytics</td>
+      <td>65.40%</td>
+      <td>68.64%</td>
+    </tr>
+    <tr>
+      <td>PHP</td>
+      <td>50.46%</td>
+      <td>50.46%</td>
+    </tr>
+    <tr>
+      <td>Google Font API</td>
+      <td>47.56%</td>
+      <td>47.56%</td>
+    </tr>
+    <tr>
+      <td>Google Tag Manager</td>
+      <td>43.37%</td>
+      <td>43.37%</td>
+    </tr>
+  </tbody>
 </table>
+
+<figcaption>{{ figure_link(caption="Popular Technology Usage.", sheets_gid="1172584192", sql_file="most_used_tech_by_domain_rank.sql") }}</figcaption>
+</figure>
 
 
 Of the top five mobile web technologies, adoption rates for three were higher on desktop sites.
 
-
+<figure>
 <table>
-  <tr>
-   <td><strong>App</strong>
-   </td>
-   <td><strong>Difference in Desktop v Mobile use</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>jQuery
-   </td>
-   <td><p style="text-align: right">
-1.02%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Google Analytics
-   </td>
-   <td><p style="text-align: right">
-3.24%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>PHP
-   </td>
-   <td><p style="text-align: right">
--0.38%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Google Font API
-   </td>
-   <td><p style="text-align: right">
--0.13%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Google Tag Manager
-   </td>
-   <td><p style="text-align: right">
-2.60%</p>
-
-   </td>
-  </tr>
+  <thead>
+    <tr>
+      <th scope="col">App</th>
+      <th scope="col">Diff Desktop v Mobile use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>jQuery</td>
+      <td>1.02%</td>
+    </tr>
+    <tr>
+      <td>Google Analytics</td>
+      <td>3.24%</td>
+    </tr>
+    <tr>
+      <td>PHP</td>
+      <td>-0.38%</td>
+    </tr>
+    <tr>
+      <td>Google Font API</td>
+      <td>-0.13%</td>
+    </tr>
+    <tr>
+      <td>Google Tag Manager</td>
+      <td>2.60%</td>
+    </tr>
+  </tbody>
 </table>
-
+<figcaption>{{ figure_link(caption="Technologies - Mobile Vs. Desktop Uptake.", sheets_gid="1172584192", sql_file="most_used_tech_by_domain_rank.sql") }}</figcaption>
+</figure>
 
 JavaScript library JQuery is the dominant library of the mobile web, present in 84.38%.  Google is the dominant provider, holding three of the top five spots.  The most
 
@@ -438,77 +404,45 @@ JavaScript library JQuery is the dominant library of the mobile web, present in 
 
 The most prominent programming language on the mobile web is PHP with 50.46% of tested sites using the language.  There is a large gap between PHP and the next most prevalent, Java, which appeared on 3.95% of sites.
 
-
+<figure>
 <table>
-  <tr>
-   <td>Language
-   </td>
-   <td><strong>Percentage Mobile Sites with App</strong>
-   </td>
-   <td><strong>Percentage Desktop Sites with App</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>PHP
-   </td>
-   <td><p style="text-align: right">
-50.46%</p>
-
-   </td>
-   <td><p style="text-align: right">
-50.08%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Java
-   </td>
-   <td><p style="text-align: right">
-3.95%</p>
-
-   </td>
-   <td><p style="text-align: right">
-2.75%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Python
-   </td>
-   <td><p style="text-align: right">
-3.57%</p>
-
-   </td>
-   <td><p style="text-align: right">
-2.18%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Node.js
-   </td>
-   <td><p style="text-align: right">
-1.68%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.87%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Ruby
-   </td>
-   <td><p style="text-align: right">
-1.12%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.53%</p>
-
-   </td>
-  </tr>
+  <thead>
+    <tr>
+      <th scope="col">Language</th>
+      <th scope="col">Percentage of Mobile Page Loads</th>
+      <th scope="col">Percentage of Desktop Page Loads</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PHP</td>
+      <td>50.46%</td>
+      <td>50.08%</td>
+    </tr>
+    <tr>
+      <td>Java</td>
+      <td>3.95%</td>
+      <td>2.75%</td>
+    </tr>
+    <tr>
+      <td>Python</td>
+      <td>3.57%</td>
+      <td>2.18%</td>
+    </tr>
+    <tr>
+      <td>Node.js</td>
+      <td>1.68%</td>
+      <td>1.87%</td>
+    </tr>
+    <tr>
+      <td>Ruby</td>
+      <td>1.12%</td>
+      <td>1.53%</td>
+    </tr>
+  </tbody>
 </table>
+<figcaption>{{ figure_link(caption="Prominent Mobile vs. Desktop Programming Languages.", sheets_gid="1172584192", sql_file="most_used_tech_by_domain_rank.sql") }}</figcaption>
+</figure>
 
 
 Content management systems allow site owners to publish, update, and control content through an authenticated backend.   WordPress, an open-source CMS written in PHP, was the dominant CMS in 2021.  The technology appeared on 33.57% of sites.
@@ -518,77 +452,45 @@ Content management systems allow site owners to publish, update, and control con
 
 The top five content management systems on the mobile web in 2021 were:
 
-
+<figure>
 <table>
-  <tr>
-   <td><strong>app</strong>
-   </td>
-   <td><strong>Percentage Mobile Sites with App</strong>
-   </td>
-   <td><strong>Percentage Desktop Sites with App</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>WordPress
-   </td>
-   <td><p style="text-align: right">
-33.57%</p>
-
-   </td>
-   <td><p style="text-align: right">
-32.94%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Joomla
-   </td>
-   <td><p style="text-align: right">
-1.95%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.74%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Drupal
-   </td>
-   <td><p style="text-align: right">
-1.76%</p>
-
-   </td>
-   <td><p style="text-align: right">
-2.12%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Wix
-   </td>
-   <td><p style="text-align: right">
-1.64%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.22%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Squarespace
-   </td>
-   <td><p style="text-align: right">
-1.01%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.24%</p>
-
-   </td>
-  </tr>
+  <thead>
+    <tr>
+      <th scope="col">CMS</th>
+      <th scope="col">Percentage of Mobile Page Loads</th>
+      <th scope="col">Percentage of Desktop Page Loads</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>WordPress</td>
+      <td>33.57%</td>
+      <td>32.94%</td>
+    </tr>
+    <tr>
+      <td>Joomla</td>
+      <td>1.95%</td>
+      <td>1.74%</td>
+    </tr>
+    <tr>
+      <td>Drupal</td>
+      <td>1.76%</td>
+      <td>2.12%</td>
+    </tr>
+    <tr>
+      <td>Wix</td>
+      <td>1.64%</td>
+      <td>1.22%</td>
+    </tr>
+    <tr>
+      <td>Squarespace</td>
+      <td>1.01%</td>
+      <td>1.24%</td>
+    </tr>
+  </tbody>
 </table>
+<figcaption>{{ figure_link(caption="Prominent Mobile vs. Desktop CMS.", sheets_gid="1172584192", sql_file="most_used_tech_by_domain_rank.sql") }}</figcaption>
+</figure>
 
 
 
@@ -601,204 +503,106 @@ The most prevalent web servers powering the mobile web in 2021 were Apache at 30
 
 Technology adoption rates for the mobile web moved in step with desktop.  The most notable difference  came in the form of third-party pixel use.  68.64% of desktop sites used Google Analytics compared to 65.40% of mobile sites.
 
-
+<figure>
 <table>
-  <tr>
-   <td><strong>Category</strong>
-   </td>
-   <td><strong>App</strong>
-   </td>
-   <td><strong>Percentage Desktop Sites with App</strong>
-   </td>
-   <td><strong>Percentage Mobile Sites with App</strong>
-   </td>
-   <td><strong>% higher Desktop adoption rate</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Analytics
-   </td>
-   <td>Google Analytics
-   </td>
-   <td><p style="text-align: right">
-68.64%</p>
-
-   </td>
-   <td><p style="text-align: right">
-65.40%</p>
-
-   </td>
-   <td><p style="text-align: right">
-3.24%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Tag managers
-   </td>
-   <td>Google Tag Manager
-   </td>
-   <td><p style="text-align: right">
-45.97%</p>
-
-   </td>
-   <td><p style="text-align: right">
-43.37%</p>
-
-   </td>
-   <td><p style="text-align: right">
-2.60%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Analytics
-   </td>
-   <td>Facebook Pixel
-   </td>
-   <td><p style="text-align: right">
-20.56%</p>
-
-   </td>
-   <td><p style="text-align: right">
-18.86%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.70%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Widgets
-   </td>
-   <td>Facebook
-   </td>
-   <td><p style="text-align: right">
-27.95%</p>
-
-   </td>
-   <td><p style="text-align: right">
-26.32%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.63%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>JavaScript libraries
-   </td>
-   <td>jQuery UI
-   </td>
-   <td><p style="text-align: right">
-23.77%</p>
-
-   </td>
-   <td><p style="text-align: right">
-22.24%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.53%</p>
-
-   </td>
-  </tr>
+  <thead>
+    <tr>
+      <th scope="col">Category</th>
+      <th scope="col">Percentage of Desktop Page Loads</th>
+      <th scope="col">Percentage of Mobile Page Loads</th>
+      <th scope="col">% higher Desktop Adoption Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Analytics</td>
+      <td>Google Analytics</td>
+      <td>68.64%</td>
+      <td>65.40%</td>
+      <td>3.24%</td>
+    </tr>
+    <tr>
+      <td>Tag managers</td>
+      <td>Google Tag Manager</td>
+      <td>45.97%</td>
+      <td>43.37%</td>
+      <td>2.60%</td>
+    </tr>
+    <tr>
+      <td>Analytics</td>
+      <td>Facebook Pixel</td>
+      <td>20.56%</td>
+      <td>18.86%</td>
+      <td>1.70%</td>
+    </tr>
+    <tr>
+      <td>Widgets</td>
+      <td>Facebook</td>
+      <td>27.95%</td>
+      <td>26.32%</td>
+      <td>1.63%</td>
+    </tr>
+    <tr>
+      <td>JavaScript libraries</td>
+      <td>jQuery UI</td>
+      <td>23.77%</td>
+      <td>22.24%</td>
+      <td>1.53%</td>
+    </tr>
+  </tbody>
 </table>
+
+<figcaption>{{ figure_link(caption="Technology with higher desktop adoption rates.", sheets_gid="1172584192", sql_file="most_used_tech_by_domain_rank.sql") }}</figcaption>
+</figure>
 
 
 Given the changes to performance measurement and prioritization, it's reasonable to consider the absence of these JavaScript-heavy third party assets as part of an intentional effort to improve mobile page experience.  The Facebook Pixel analytics script was found on -1.70% fewer mobile sites than desktop.
 
 Mobile sites were more likely to adopt certain technologies, but with a smaller margin.  Blogger was found on 3.13% of mobile sites and 1.67% of desktop sites
 
-
+<figure>
 <table>
-  <tr>
-   <td><strong>Category</strong>
-   </td>
-   <td><strong>App</strong>
-   </td>
-   <td><strong>Percentage Desktop Sites with App</strong>
-   </td>
-   <td><strong>Percentage Mobile Sites with App</strong>
-   </td>
-   <td><strong>% Higher Mobile Adoption Rate
-   </td>
-  </tr>
-  <tr>
-   <td>Blogs
-   </td>
-   <td>Blogger
-   </td>
-   <td><p style="text-align: right">
-1.67%</p>
-
-   </td>
-   <td><p style="text-align: right">
-3.13%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.46%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Web servers
-   </td>
-   <td>OpenGSE
-   </td>
-   <td><p style="text-align: right">
-1.71%</p>
-
-   </td>
-   <td><p style="text-align: right">
-3.16%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.45%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Programming languages
-   </td>
-   <td>Python
-   </td>
-   <td><p style="text-align: right">
-2.18%</p>
-
-   </td>
-   <td><p style="text-align: right">
-3.57%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.39%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Programming languages
-   </td>
-   <td>Java
-   </td>
-   <td><p style="text-align: right">
-2.75%</p>
-
-   </td>
-   <td><p style="text-align: right">
-3.95%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.19%</p>
-
-   </td>
-  </tr>
+  <thead>
+    <tr>
+      <th scope="col">Category</th>
+      <th scope="col">Percentage of Desktop Page Loads</th>
+      <th scope="col">Percentage of Mobile Page Loads</th>
+      <th scope="col">% higher Mobile Adoption Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Blogs</td>
+      <td>Blogger</td>
+      <td>1.67%</td>
+      <td>3.13%</td>
+      <td>1.46%</td>
+    </tr>
+    <tr>
+      <td>Web servers</td>
+      <td>OpenGSE</td>
+      <td>1.71%</td>
+      <td>3.16%</td>
+      <td>1.45%</td>
+    </tr>
+    <tr>
+      <td>Programming languages</td>
+      <td>Python</td>
+      <td>2.18%</td>
+      <td>3.57%</td>
+      <td>1.39%</td>
+    </tr>
+    <tr>
+      <td>Programming languages</td>
+      <td>Java</td>
+      <td>2.75%</td>
+      <td>3.95%</td>
+      <td>1.19%</td>
+    </tr>
+  </tbody>
 </table>
+<figcaption>{{ figure_link(caption="Technology with higher mobile adoption rates.", sheets_gid="1172584192", sql_file="most_used_tech_by_domain_rank.sql") }}</figcaption>
+</figure>
 
 
 
@@ -826,57 +630,38 @@ The most prevalent URI schemes were https, found on 93.15% of sites, and it's no
 
 After webpage links, the next five most used protocols in  anchor href values  on the mobile web are as follows:
 
-
+<figure>
 <table>
-  <tr>
-   <td><strong>URI Scheme</strong>
-   </td>
-   <td><p style="text-align: right">
-<strong>Percentage of Mobile Sites Using</strong></p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>mailto
-   </td>
-   <td><p style="text-align: right">
-28.25%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>tel
-   </td>
-   <td><p style="text-align: right">
-24.21%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>whatsapp
-   </td>
-   <td><p style="text-align: right">
-0.61%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>viber
-   </td>
-   <td><p style="text-align: right">
-0.46%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>skype
-   </td>
-   <td><p style="text-align: right">
-0.30%</p>
-
-   </td>
-  </tr>
+  <thead>
+  <th scope="col">URI Protocol</th>
+    <th scope="col">Percent of Mobile Page Loads</th>
+    </thead>
+  <tbody>
+    <tr>
+      <td><code>mailto:</code></td>
+      <td>28.25%</td>
+    </tr>
+    <tr>
+      <td><code>tel:</code></td>
+      <td>24.21%</td>
+    </tr>
+    <tr>
+      <td><code>whatsapp:</code></td>
+      <td>0.61%</td>
+    </tr>
+    <tr>
+      <td><code>viber:</code></td>
+      <td>0.46%</td>
+    </tr>
+    <tr>
+      <td><code>skype:</code></td>
+      <td>0.30%</td>
+    </tr>
+  </tbody>
 </table>
+
+<figcaption>{{ figure_link(caption="Popular alternative protocol links.", sheets_gid="115658247", sql_file="popular_link_protocols.sql") }}</figcaption>
+</figure>
 
 Mobile devices whilst limited in some aspects do tend to be better connected, they are a phone, have SMS and other messaging services where desktop clients may not. Usage of other link protocols past the standard http / https can help unlock some of these capabilities. Providing a tapable link to call or send a message without having to copy and paste makes for a smoother, more integrated user interaction.
 
@@ -1015,11 +800,11 @@ The most prevalent ARIA role in 2021 was `button` which appeared on 29% of sites
 
 {{ figure_markup(
    image="mobile-web-most-common-mobile-aria-roles.png",
-   caption="Top 10 most common ARIA roles on mobile web",
-   description="Bar chart showing the most defined ARIA role on mobile page loads",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=634683822&format=interactive",
+   caption='Top 10 most common ARIA roles on mobile web. Data from the [Accessibility Chapter](/en/2021/accessibility)',
+   description="Bar chart showing the most defined ARIA role on mobile page loads.",
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=23131628&format=interactive",
    sheets_gid="1584971419",
-  sql_file="navigator_device_memory_usage.sql"
+  sql_file="../accessibility/common_aria_role.sql"
    )
 }}
 
@@ -1033,12 +818,15 @@ A lack of color contrast impacts users with color blindness as well as low color
 
 Despite the potential for increased conversion, 77.8% of sites failed lighthouse audits for use of sufficient color contrast.  This is a slight improvement year over year.
 
-
-
-<p id="gdcalert12" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image12.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert13">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image12.png "image_tooltip")
+{{ figure_markup(
+  image="mobile-web-sufficient-color-contrast.png",
+  caption='Mobile Sites with sufficient color contrast. Data from the [Accessibility Chapter](/en/2021/accessibility)',
+  description="Bar chart showing percent of mobile page loads with a sufficient colour contrast.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1440359640&format=interactive",
+  sheets_gid="1628455121",
+  sql_file="../accessibility/color_contrast.sql"
+  )
+}}
 
 
 
@@ -1145,13 +933,15 @@ Grabbing the attention of your newly acquired user, or keeping the attention of 
 
 A LCP of 2.5 seconds or less is considered a good score.
 
-
-
-<p id="gdcalert14" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image14.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert15">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image14.png "image_tooltip")
-
+{{ figure_markup(
+  image="mobile-web-largest-contentful-paint.png",
+  caption='LCP performance by device. data from the [Performance Chapter](/en/2021/performance)',
+  description="Chart showing mobile and desktop page loads reaching the LCP thresholds.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=875306231&format=interactive",
+  sheets_gid="1682201087",
+  sql_file="../performance/web_vitals_by_device.sql"
+  )
+}}
 
 The data shows that just 45% of mobile page loads recorded in the CrUX dataset are meeting the 2.5 second or under target, far lower than the 60% desktop achieves.
 
@@ -1195,9 +985,9 @@ Images can be [served responsively ](https://developer.mozilla.org/en-US/docs/Le
    )
 }}
 
-Just **6.2%** of mobile page loads that included images used the &lt;picture> element, slightly lower than desktop.
+Just **6.2%** of mobile page loads that included images used the `<picture>` element, slightly lower than desktop.
 
-A more healthy 32% of mobile page loads including images use the srcset attribute. It is worth mentioning here that this attribute can be used in both the &lt;picture> element and the &lt;img> element, so there's likely to be some crossover here.
+A more healthy **32%** of mobile page loads including images use the `srcset` attribute. It is worth mentioning here that this attribute can be used in both the `<picture>` element and the `<img>` element, so there's likely to be some crossover here.
 
 
 #### Lazy Loading
@@ -1241,7 +1031,7 @@ One of the Core Web Vitals, [Cumulative Layout Shift](https://web.dev/cls/) is a
 
 The metric is a calculation of impact fraction * distance fraction. The impact fraction is how much of the area of the screen is shifted, the distance fraction is how much of the screen it moved by.
 
-A CLS score of** 0.1** or under is considered good, under 0.25 considered indeed of improvement, and over that it's considered a poor experience
+A CLS score of **0.1** or under is considered good, under 0.25 considered indeed of improvement, and over that it's considered a poor experience
 
 Smaller screen sizes are susceptible to greater shifts, at 360 x 640px, this example block causes a CLS score of **0.22**
 
@@ -1256,7 +1046,7 @@ Smaller screen sizes are susceptible to greater shifts, at 360 x 640px, this exa
   )
 }}
 
-At desktop screen sizes, the same element appearing leads to a CLS score of just **0.06**.
+At desktop screen sizes, the same element appearing leads to a CLS score of just **0.07**.
 
 
 {{ figure_markup(
@@ -1265,7 +1055,7 @@ At desktop screen sizes, the same element appearing leads to a CLS score of just
   caption="Screen capture GIF of a mock-up showing an ad causing CLS on a desktop sized screen",
   description="The Aad insert causes a relatively small amount of content to be shifted on screen at desktop viewport sizes.",
   width=600,
-  height=295
+  height=341
   )
 }}
 
@@ -1274,11 +1064,15 @@ At desktop screen sizes, the same element appearing leads to a CLS score of just
 The CrUX dataset shows that 62% of mobile page loads had a CLS of **0.1** or under
 
 
-
-<p id="gdcalert20" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image20.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert21">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image20.png "image_tooltip")
+{{ figure_markup(
+  image="mobile-web-cumulative-layout-shift.png",
+  caption='CLS performance by device. data from the [Performance Chapter](/en/2021/performance)',
+  description="Chart showing mobile and desktop page loads reaching the CLS thresholds.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=776500715&format=interactive",
+  sheets_gid="1682201087",
+  sql_file="../performance/web_vitals_by_device.sql"
+  )
+}}
 
 
 This is a big step over the 43% achieved last year, but direct comparison is hard, as the metric changed on the [1st of June 2021 ](https://web.dev/evolving-cls/)to better capture the experience on long-lived pages, so some of this jump could be attributable to this.
@@ -1297,15 +1091,17 @@ Mobile devices are generally much lower powered than desktop and laptops, so the
 
 A good FID score is  **100ms** or under, a poor FID score is over **300ms**.
 
+{{ figure_markup(
+  image="mobile-web-first-input-delay.png",
+  caption='FID performance by device. data from the [Performance Chapter](/en/2021/performance)',
+  description="Chart showing mobile and desktop page loads reaching the FID thresholds.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1158252805&format=interactive",
+  sheets_gid="1682201087",
+  sql_file="../performance/web_vitals_by_device.sql"
+  )
+}}
 
-
-<p id="gdcalert21" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image21.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert22">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image21.png "image_tooltip")
-
-
-Encouragingly, **90% **of mobile page loads in the CrUX dataset had a good FID score, up from **80%** from 2020.
+Encouragingly, **90%** of mobile page loads in the CrUX dataset had a good FID score, up from **80%** from 2020.
 
 Efforts are being made to better capture responsiveness, with the Chrome Speed Metrics team [sharing some plans and inviting feedback](https://web.dev/responsiveness/) on a new responsiveness metric.
 
@@ -1316,7 +1112,7 @@ If you are looking to learn more about Core Web Vitals in general, the  [perform
 
 [Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) whilst not only applying to mobile devices do become uniquely useful in their ability to add offline capabilities, and better control of loading from caches  to web apps, both features which are often more relevant to mobile users, who are more likely to encounter poor or total loss of connectivity.
 
-**14.8% **of sites register a service worker, a sizeable uptake since 2020's **0.87%**
+**14.8%** of sites register a service worker, a sizeable uptake since 2020's **0.87%**
 
 To learn more about service workers and PWA (progressive web apps), vist the [PWA chapter](https://almanac.httparchive.org/en/2020/pwa).
 
