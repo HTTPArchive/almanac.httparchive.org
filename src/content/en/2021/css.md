@@ -8,13 +8,13 @@ analysts: [rviscomi]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/12vQIA0xsC5Jr3J9Sh03AcAvgFjMAmP1xSS6Tjai9LF0/
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: While the topic of “CSS in JS” is good for a Twitter flame war or two, its use in the wild continues to be very small. 
+featured_stat_1: 71%
+featured_stat_label_1: The percentage of pages using Flexbox for some form of layout.
+featured_stat_2: 3
+featured_stat_label_2: The average number of images loaded via CSS.
+featured_stat_3: 28.6%
+featured_stat_label_3: The percentage of pages using custom properties.
 ---
 
 
