@@ -179,7 +179,9 @@
     {% else %}
       <option value="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</option>
     {% endif %}
+    {% if self.foreword() | trim | length > 0 %}
     <option value="{{ url_for('table_of_contents', year=year, lang=lang, _anchor='foreword') }}">{{ self.foreword_title() }}</option>
+    {% endif %}
     {% for part_config in config.outline %}
     {% for chapter_config in part_config.chapters %}
       {% set title = localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title %}
@@ -279,9 +281,11 @@
       <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a>
     </li>
     {% endif %}
+    {% if self.foreword() | trim | length > 0 %}
     <li class="nav-dropdown-list-chapter foreword">
       <a href="{{ url_for('table_of_contents', year=year, lang=lang, _anchor='foreword') }}">{{ self.foreword_title() }}</a>
     </li>
+    {% endif %}
 
     {% for part_config in config.outline %}
     <li class="nav-dropdown-list-part">
