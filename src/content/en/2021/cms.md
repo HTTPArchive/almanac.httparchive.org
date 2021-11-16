@@ -16,6 +16,7 @@ featured_stat_2: 2MB
 featured_stat_label_2: Median CMS page weight among the top CMSs
 featured_stat_3: 5.7%
 featured_stat_label_3: WebP usage in WordPress websites
+unedited: true
 ---
 
 ## TL;DR
