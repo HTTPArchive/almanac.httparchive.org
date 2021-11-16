@@ -17,6 +17,7 @@ featured_stat_2: 43.4%
 featured_stat_label_2: Mobile page loads contain inappropriately sized images
 featured_stat_3: 45.03%
 featured_stat_label_3: Of the top 1000 mobile page loads prevent zooming
+unedited: true
 ---
 
 
