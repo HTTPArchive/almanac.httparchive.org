@@ -963,6 +963,13 @@
       "github": "philbarker",
       "twitter": "philbarker"
     },
+    "fischbacher": {
+      "name": "Philip Fischbacher",
+      "teams": [
+        "reviewers"
+      ],
+      "github": "fischbacher"
+    },
     "RMHolmlund": {
       "name": "RMHolmlund",
       "teams": [
