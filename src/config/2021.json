@@ -483,8 +483,16 @@
       "github": "estelle",
       "twitter": "estellevw"
     },
+    "eustas": {
+      "name": "Eugene Kliuchnikov",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/203457?v=4&s=200",
+      "github": "eustas"
+    },
     "fili": {
-      "name": "Fili",
+      "name": "Fili Wiese",
       "teams": [
         "reviewers"
       ],
@@ -644,6 +652,15 @@
       "linkedin": "yangzhe",
       "twitter": "Jules_Yang"
     },
+    "jyrkialakuijala": {
+      "name": "Jyrki Alakuijala",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/9086028?v=4&s=200",
+      "github": "jyrkialakuijala",
+      "twitter": "jyzg"
+    },
     "Schweinepriester": {
       "name": "Kai Schweinepriester",
       "teams": [
@@ -683,6 +700,13 @@
       "website": "https://lea.verou.me/",
       "github": "LeaVerou",
       "twitter": "leaverou"
+    },
+    "lvandeve": {
+      "name": "Lode Vandevenne",
+      "teams": [
+        "authors"
+      ],
+      "github": "lvandeve"
     },
     "lucasbona05": {
       "name": "Lucas Gonçalves",
@@ -742,6 +766,14 @@
       "website": "https://blog.mgechev.com/",
       "github": "mgechev",
       "twitter": "mgechev"
+    },
+    "mo271": {
+      "name": "Moritz Firsching",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/3491627?v=4&s=200",
+      "github": "mo271"
     },
     "Navaneeth-akam": {
       "name": "Navaneeth",
