@@ -45,7 +45,7 @@ We’ve used a few different data sources in this chapter:
 * Wappalyzer
 * [Akamai](https://twitter.com/paulcalvano/status/1454866401781587969)
 
-It is worth noting that HTTP Archive and Lighthouse data is limited to the data identified from websites’ home pages only, and not site-wide.
+It is worth noting that HTTP Archive and Lighthouse data is limited to the data identified from website home pages only, and not site-wide.
 
 
 ## Worldwide connectivity
@@ -78,7 +78,7 @@ What percentage of traffic comes from  mobile devices vs. desktop? Predicting th
 )
 }}
 
-New this year, the CrUX dataset allows us to query the most popular sites ([ranked by magnitude](https://developers.google.com/web/updates/2021/03/crux-rank-magnitude),  by traffic recorded to th%ese origins).
+New this year, the CrUX dataset allows us to query the most popular sites ([ranked by magnitude](https://developers.google.com/web/updates/2021/03/crux-rank-magnitude),  by traffic recorded to these origins).
 
 {{ figure_markup(
   image="mobile-web-more-mobile-than-desktop-traffic.png",
@@ -245,7 +245,7 @@ Major browsers like Chrome (Source: [Chromium Blog](https://blog.chromium.org/20
 
 Traditionally, sites may have used this information to tailor the experience to those devices. This approach has always had some drawbacks in trying to keep up with the ever changing landscape of devices, and the fact the user-agent string is easily changeable and spoofable.
 
-User Agent Client hints offer a way to get  this information, but unlike the Device and Network Hints do not require the server to request this via the Accept-CH header. This is perhaps why we detected only a tiny handful of sites requesting this.
+User Agent Client hints offer a way to get  this information, but unlike the Device and Network Hints do not require the server to request this via the [Accept-CH](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-CH) header. This is perhaps why we detected only a tiny handful of sites requesting this.
 
 
 ### Network Information API and Device Memory API Usage
@@ -308,7 +308,7 @@ According to [Wappalyzer](https://www.wappalyzer.com/) data, JavaScript library 
 
 <table>
   <tr>
-   <td><strong>app</strong>
+   <td><strong>App</strong>
    </td>
    <td><strong>Percentage Mobile Sites with App</strong>
    </td>
@@ -383,7 +383,7 @@ Of the top five mobile web technologies, adoption rates for three were higher on
 
 <table>
   <tr>
-   <td><strong>app</strong>
+   <td><strong>App</strong>
    </td>
    <td>Diff Desktop v Mobile use
    </td>
@@ -443,9 +443,9 @@ The most prominent programming language on the mobile web is PHP with 50.46% of 
   <tr>
    <td>Language
    </td>
-   <td><strong>Pct_pages_with_app (Mobile)</strong>
+   <td><strong>Percentage Mobile Sites with App</strong>
    </td>
-   <td><strong>Pct_pages_with_app (Desktop)</strong>
+   <td><strong>Percentage Desktop Sites with App</strong>
    </td>
   </tr>
   <tr>
