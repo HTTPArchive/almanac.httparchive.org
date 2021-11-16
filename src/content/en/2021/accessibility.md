@@ -3,7 +3,7 @@
 title: Accessibility
 description: TODO
 authors: [alextait1, scottdavis99, oluoluoxenfree, gwilhelm, kachiden]
-reviewers: [ericwbailey, clottman, shantsis, digitala11ies, GigiRajani, cdixon83]
+reviewers: [ericwbailey, clottman, shantsis, estelle, GigiRajani, cdixon83]
 analysts: [obto]
 editors: []
 translators: []
