@@ -4,18 +4,18 @@ title: Resource Hints
 description: Resource Hints chapter of the 2021 Web Almanac covering adoption of resource hints, their uses, bad practices, and their impact on performance.
 authors: [kevinfarrugia]
 reviewers: [siakaramalegos, tunetheweb, andydavies, samarpanda, westonruter]
-analysts: [nithanaroy]
+analysts: [Nithanaroy]
 editors: [rviscomi]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1Mw6TjkIClRtlZPHbij5corOZbaSUp-vgTVq3Ig18IwQ/
 kevinfarrugia_bio: Kevin Farrugia is a consultant on web performance and software architecture. You can find him blogging on <a hreflang="en" href="https://imkev.dev">imkev.dev</a>.
 featured_quote: Resource hints are akin to fine-tuning a race car's engine. They would not turn a slow engine into a fast one, and too many adjustments could break it. Yet, some small tweaks here and there would allow you to maximize it.
 featured_stat_1: 44.3%
-featured_stat_label_1: Adoption of preload in the top 1,000 websites.
+featured_stat_label_1: Adoption of preload in the top 1,000 websites
 featured_stat_2: 21.5%
-featured_stat_label_2: Unused preload hints within the first 3 seconds.
+featured_stat_label_2: Unused preload hints within the first 3 seconds
 featured_stat_3: 423%
-featured_stat_label_3: Growth in adoption of native lazy loading on images.
+featured_stat_label_3: Growth in adoption of native lazy loading on images
 ---
 
 ## Introduction

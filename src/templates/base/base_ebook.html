@@ -271,6 +271,7 @@
   <section id="toc" class="contents-wrapper">
     <h1>{{ self.table_of_contents_title() }}</h1>
     <div class="parts">
+      {% if self.foreword() | trim | length > 0 %}
       <div class="part">
         <h2 class="part-name">{{ self.introduction() }}</h2>
         <div class="toc-chapters">
@@ -279,6 +280,7 @@
           </div>
         </div>
       </div>
+      {% endif %}
       {% for part_config in config.outline %}
       <div class="part">
         <h2 class="part-name">{{ self.part() }} {{ localizedPartTitles[part_config.part] if localizedPartTitles[part_config.part]|length else chapter_config.title }}</h2>
@@ -317,10 +319,12 @@
     </div>
   </section>
 
+  {% if self.foreword() | trim | length > 0 %}
   <section id="foreword">
     <h1>{{ self.foreword_title() }}</h1>
     {{ self.foreword() | replace('/%s/%s/contributors#' % (lang, year), '#contributors-') }}
   </section>
+  {% endif %}
 
   {{ self.chapters() }}
 

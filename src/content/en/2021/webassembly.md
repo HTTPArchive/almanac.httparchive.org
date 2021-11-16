@@ -2,9 +2,9 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: WebAssembly
 description: TODO
-authors: []
-reviewers: []
-analysts: []
+authors: [RReverser]
+reviewers: [jsoverson, carlopi, kripken]
+analysts: [RReverser]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1IMa2SbdQgshb4pGWF1KOh9s4zMtLbRymWZGYjdaatXY/
