@@ -11,7 +11,7 @@
         "color-function-notation": null,
         "comment-empty-line-before": null,
         "declaration-block-no-redundant-longhand-properties": null,
-        "font-family-name-quotes": "always-where-recommended",
+        "font-family-name-quotes": "always-unless-keyword",
         "font-family-no-duplicate-names": [
             true,
             {
@@ -36,7 +36,7 @@
         "property-no-vendor-prefix": [
             true,
             {
-                "ignoreProperties": ["appearance", "grid-row", "grid-column", "text-size-adjust", "transform"]
+                "ignoreProperties": ["appearance", "grid-row", "grid-column", "text-size-adjust", "transform", "transition"]
             }
         ],
         "selector-list-comma-newline-after": "always",
@@ -57,7 +57,7 @@
         "value-no-vendor-prefix": [
             true,
             {
-                "ignoreProperties": ["grid", "sticky"]
+                "ignoreValues": ["grid", "sticky"]
             }
         ]
     }
