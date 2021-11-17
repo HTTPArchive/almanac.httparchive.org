@@ -7,6 +7,8 @@ reviewers: [svgeesus, j9t, estelle, bkardell, argyleink, LeaVerou]
 analysts: [rviscomi]
 editors: [shantsis]
 translators: []
+meyerweb_bio:
+GeekBoySupreme_bio:
 results: https://docs.google.com/spreadsheets/d/12vQIA0xsC5Jr3J9Sh03AcAvgFjMAmP1xSS6Tjai9LF0/
 featured_quote: The 2021 Web Almanac offers deeper insight into how the use of CSS differs in the realm of what we all think we need versus what we actually see in production.
 featured_stat_1: 71%
