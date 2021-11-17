@@ -38,6 +38,7 @@ GROUP BY
   total,
   element_type
 ORDER BY
+  pct DESC,
   client,
   pages DESC
 LIMIT 1000

@@ -28,6 +28,7 @@ GROUP BY
   client,
   meta_viewport
 ORDER BY
+  pct DESC,
   client,
   freq DESC
 LIMIT 100
