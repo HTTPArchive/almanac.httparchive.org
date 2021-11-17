@@ -8,14 +8,13 @@ analysts: [rviscomi]
 editors: [shantsis]
 translators: []
 results: https://docs.google.com/spreadsheets/d/12vQIA0xsC5Jr3J9Sh03AcAvgFjMAmP1xSS6Tjai9LF0/
-featured_quote: The 2021 Web Almanac offers deeper insight into how the use of CSS differs in the realm of what we all think we need versus what we actually see in production. 
+featured_quote: The 2021 Web Almanac offers deeper insight into how the use of CSS differs in the realm of what we all think we need versus what we actually see in production.
 featured_stat_1: 71%
 featured_stat_label_1: The percentage of pages using Flexbox for some form of layout.
 featured_stat_2: 3
 featured_stat_label_2: The average number of images loaded via CSS.
 featured_stat_3: 28.6%
 featured_stat_label_3: The percentage of pages using custom properties.
-unedited: true
 ---
 
 
@@ -489,7 +488,7 @@ As with last year, when it comes to calculation operators, subtraction is the cl
   sql_file="calc_operators.sql"
 ) }}
 
-`calc()` values remain relatively simple, with the overwhelming preponderance of calculations using two different units, such as to subtract pixels from the calculated result of a percent value.  A total of 99% of all `calc()` expressions use either one or two unit types. 
+`calc()` values remain relatively simple, with the overwhelming preponderance of calculations using two different units, such as to subtract pixels from the calculated result of a percent value.  A total of 99% of all `calc()` expressions use either one or two unit types.
 
 {{ figure_markup(
   image="units-per-calc-occurence.png",
@@ -896,7 +895,7 @@ We also saw a dramatic reduction at the top end of gradient complexity.  Last ye
 
 ## Layout
 
-We have come a long, long way from using tables to create layouts on the web to a time when we have a number of options to choose from - Flexbox, Grid, and Multicolumn, as well as old chestnuts like floats, positioning and even CSS table properties.  We did a simple search of stylesheets to see which property and value combinations were present, and came up with the following figures. 
+We have come a long, long way from using tables to create layouts on the web to a time when we have a number of options to choose from - Flexbox, Grid, and Multicolumn, as well as old chestnuts like floats, positioning and even CSS table properties.  We did a simple search of stylesheets to see which property and value combinations were present, and came up with the following figures.
 
 {{ figure_markup(
   image="top-layout-methods.png",
@@ -1030,7 +1029,7 @@ The weak showing of “move” and “slide” style animations might seem surpr
 
 ## Responsive design
 
-Making a site that copes well with all the different screen sizes wherein you can now browse the web has become significantly easier with the advent of built-in tools like Flexbox and Grid, which are further enhanced by using media-queries. 
+Making a site that copes well with all the different screen sizes wherein you can now browse the web has become significantly easier with the advent of built-in tools like Flexbox and Grid, which are further enhanced by using media-queries.
 
 ### Media features in use
 
@@ -1093,7 +1092,7 @@ One of the most notable changes between 2020 and 2021 was the fall of `font-size
 
 Feature queries (`@supports`) continue to grow in usage.  In 2019, 30% of pages were found to use them, and last year it was 39%.  In 2021, almost 48% of pages are using feature queries to decide which CSS to apply in what contexts.
 
-So what do authors condition CSS upon?  Sticky positioning was far and away the most popular query, accounting for over half of all feature queries. 
+So what do authors condition CSS upon?  Sticky positioning was far and away the most popular query, accounting for over half of all feature queries.
 
 {{ figure_markup(
   image="most-popular-features-queried.png",
