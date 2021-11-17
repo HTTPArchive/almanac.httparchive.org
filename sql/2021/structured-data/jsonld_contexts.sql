@@ -33,29 +33,42 @@ LANGUAGE js AS """
 WITH
 rendered_data AS (
   SELECT
-    getJSONLDContexts(rendered) AS jsonld_contexts,
-    client
-  FROM (
-    SELECT
-      JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
-            '$._structured-data')),
-        '$.structured_data.rendered') AS rendered,
-      _TABLE_SUFFIX AS client
-    FROM
-      `httparchive.pages.2021_07_01_*`)
+    _TABLE_SUFFIX AS client,
+    url,
+    getJSONLDContexts(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')), '$.structured_data.rendered')) AS jsonld_context
+  FROM
+    `httparchive.pages.2021_07_01_*`
+),
+
+page_totals AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(0) AS total_pages
+  FROM
+    `httparchive.pages.2021_07_01_*`
+  GROUP BY
+    _TABLE_SUFFIX
 )
 
 SELECT
+  client,
   NET.REG_DOMAIN(jsonld_context) AS jsonld_context,
-  COUNT(0) AS count,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct,
-  client
+  COUNT(0) AS freq_jsonld_context,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_jsonld_context,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_jsonld_context,
+  COUNT(DISTINCT url) AS freq_pages,
+  total_pages,
+  COUNT(DISTINCT url) / total_pages AS pct_pages
 FROM
   rendered_data,
-  UNNEST(jsonld_contexts) AS jsonld_context
+  UNNEST(jsonld_context) AS jsonld_context
+JOIN
+  page_totals
+USING (client)
 GROUP BY
+  client,
   jsonld_context,
-  client
+  total_pages
 ORDER BY
-  count DESC
+  pct_jsonld_context DESC,
+  client

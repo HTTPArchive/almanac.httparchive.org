@@ -4,7 +4,7 @@
 WITH referrer_policy_custom_metrics AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    url,
+    url AS page,
     JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.referrerPolicy.entire_document_policy") AS entire_document_policy_meta,
     JSON_QUERY_ARRAY(JSON_VALUE(payload, "$._privacy"), "$.referrerPolicy.individual_requests") AS individual_requests,
     JSON_QUERY_ARRAY(JSON_VALUE(payload, "$._privacy"), "$.referrerPolicy.link_relations") AS link_relations
@@ -29,7 +29,7 @@ response_headers AS (
 referrer_policy_headers AS (
   SELECT
     client,
-    page AS url,
+    page,
     value AS entire_document_policy_header
   FROM
     response_headers
@@ -48,26 +48,36 @@ SELECT
 FROM (
   SELECT
     client,
-    COUNTIF(entire_document_policy_meta IS NOT NULL) AS number_of_websites_with_entire_document_policy_meta,
-    COUNTIF(entire_document_policy_header IS NOT NULL) AS number_of_websites_with_entire_document_policy_header,
-    COUNTIF(
+    COUNT(DISTINCT IF(
+        entire_document_policy_meta IS NOT NULL,
+        page, NULL)) AS number_of_websites_with_entire_document_policy_meta,
+    COUNT(DISTINCT IF(
+        entire_document_policy_header IS NOT NULL,
+        page, NULL)) AS number_of_websites_with_entire_document_policy_header,
+    COUNT(DISTINCT IF(
       entire_document_policy_meta IS NOT NULL OR
-      entire_document_policy_header IS NOT NULL
+      entire_document_policy_header IS NOT NULL,
+      page, NULL)
     ) AS number_of_websites_with_entire_document_policy,
-    COUNTIF(ARRAY_LENGTH(individual_requests) > 0) AS number_of_websites_with_any_individual_requests,
-    COUNTIF(ARRAY_LENGTH(link_relations) > 0) AS number_of_websites_with_any_link_relations,
-    COUNTIF(
+    COUNT(DISTINCT IF(
+        ARRAY_LENGTH(individual_requests) > 0,
+        page, NULL)) AS number_of_websites_with_any_individual_requests,
+    COUNT(DISTINCT IF(
+        ARRAY_LENGTH(link_relations) > 0,
+        page, NULL)) AS number_of_websites_with_any_link_relations,
+    COUNT(DISTINCT IF(
       entire_document_policy_meta IS NOT NULL OR
       entire_document_policy_header IS NOT NULL OR
       ARRAY_LENGTH(individual_requests) > 0 OR
-      ARRAY_LENGTH(link_relations) > 0
+      ARRAY_LENGTH(link_relations) > 0,
+      page, NULL)
     ) AS number_of_websites_with_any_referrer_policy,
-    COUNT(0) AS number_of_websites
+    COUNT(DISTINCT page) AS number_of_websites
   FROM
     referrer_policy_custom_metrics
   FULL OUTER JOIN
     referrer_policy_headers
-  USING (client, url)
+  USING (client, page)
   GROUP BY
     client
 )

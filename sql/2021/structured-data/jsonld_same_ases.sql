@@ -33,30 +33,43 @@ LANGUAGE js AS """
 WITH
 rendered_data AS (
   SELECT
-    getJSONLDSameAses(rendered) AS jsonld_sameases,
-    client
-  FROM (
-    SELECT
-      JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
-            '$._structured-data')),
-        '$.structured_data.rendered') AS rendered,
-      _TABLE_SUFFIX AS client
-    FROM
-      `httparchive.pages.2021_07_01_*`)
+    _TABLE_SUFFIX AS client,
+    url,
+    getJSONLDSameAses(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')), '$.structured_data.rendered')) AS jsonld_sameases
+  FROM
+    `httparchive.pages.2021_07_01_*`
+),
+
+page_totals AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(0) AS total_pages
+  FROM
+    `httparchive.pages.2021_07_01_*`
+  GROUP BY
+    _TABLE_SUFFIX
 )
 
 SELECT
+  client,
   NET.REG_DOMAIN(jsonld_sameas) AS jsonld_sameas,
-  COUNT(0) AS count,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct,
-  client
+  COUNT(0) AS freq_jsonld_sameas,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_jsonld_sameas,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_jsonld_sameas,
+  COUNT(DISTINCT url) AS freq_pages,
+  total_pages,
+  COUNT(DISTINCT url) / total_pages AS pct_pages
 FROM
   rendered_data,
   UNNEST(jsonld_sameases) AS jsonld_sameas
+JOIN
+  page_totals
+USING (client)
 GROUP BY
+  client,
   jsonld_sameas,
-  client
+  total_pages
 ORDER BY
-  count DESC
-LIMIT 10000
+  pct_jsonld_sameas DESC,
+  client
+LIMIT 1000

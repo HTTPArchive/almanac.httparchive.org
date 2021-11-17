@@ -4,7 +4,7 @@
 WITH requests AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    pageid,
+    pageid AS page,
     url
   FROM
     `httparchive.summary_requests.2021_07_01_*`
@@ -12,18 +12,28 @@ WITH requests AS (
 
 third_party AS (
   SELECT
-    domain
+    domain,
+    category,
+    COUNT(DISTINCT page) AS page_usage
   FROM
-    `httparchive.almanac.third_parties`
+    `httparchive.almanac.third_parties` tp
+  JOIN
+    requests r
+  ON NET.HOST(r.url) = NET.HOST(tp.domain)
   WHERE
     date = '2021-07-01' AND
     category != 'hosting'
+  GROUP BY
+    domain,
+    category
+  HAVING
+    page_usage >= 50
 ),
 
 pages AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    pageid,
+    pageid AS page,
     rank
   FROM
     `httparchive.summary_pages.2021_07_01_*`
@@ -32,14 +42,14 @@ pages AS (
 SELECT
   client,
   rank_grouping,
-  COUNT(DISTINCT IF(domain IS NOT NULL, pageid, NULL)) AS pages_with_third_party,
-  COUNT(DISTINCT pageid) AS total_pages,
-  COUNT(DISTINCT IF(domain IS NOT NULL, pageid, NULL)) / COUNT(DISTINCT pageid) AS pct_pages_with_third_party
+  COUNT(DISTINCT IF(domain IS NOT NULL, page, NULL)) AS pages_with_third_party,
+  COUNT(DISTINCT page) AS total_pages,
+  COUNT(DISTINCT IF(domain IS NOT NULL, page, NULL)) / COUNT(DISTINCT page) AS pct_pages_with_third_party
 FROM
   pages
 JOIN
   requests
-USING (client, pageid)
+USING (client, page)
 LEFT JOIN
   third_party
 ON NET.HOST(requests.url) = NET.HOST(third_party.domain),

@@ -16,7 +16,8 @@ RETURNS ARRAY<STRING> LANGUAGE js AS '''
 
       if (tree_node.accessible_name.length === 0) {
         // No A11Y name given
-        accessible_name_sources("No accessible name");
+        accessible_name_sources.push("No accessible name");
+        continue;
       }
 
       if (tree_node.accessible_name_sources.length <= 0) {
@@ -27,6 +28,12 @@ RETURNS ARRAY<STRING> LANGUAGE js AS '''
       let pretty_name_source = name_source.type;
       if (name_source.type === "attribute") {
         pretty_name_source = `${name_source.type}: ${name_source.attribute}`;
+      } else if (name_source.type === "relatedElement") {
+        if (name_source.attribute) {
+          pretty_name_source = `${name_source.type}: ${name_source.attribute}`;
+        } else {
+          pretty_name_source = `${name_source.type}: label`;
+        }
       }
 
       accessible_name_sources.push(pretty_name_source);

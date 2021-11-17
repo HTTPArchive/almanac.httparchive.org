@@ -11,6 +11,9 @@ on:
   pull_request:
     paths-ignore:
       - 'sql/**'
+  push:
+    branches:
+      - main
 jobs:
   build:
     name: Build and Test Website
@@ -18,7 +21,7 @@ jobs:
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     steps:
     - name: Checkout branch
-      uses: actions/checkout@v2.3.5
+      uses: actions/checkout@v2.4.0
       with:
         # Full git history is needed to get a proper list of changed files within `super-linter`
         fetch-depth: 0
@@ -37,7 +40,7 @@ jobs:
     - name: Use more complete checks for generated HTML linting
       run: cp -f .github/linters/.htmlhintrc_morechecks .github/linters/.htmlhintrc
     - name: Lint Generated HTML
-      uses: github/super-linter@v4.8.1
+      uses: github/super-linter@v4.8.4
       env:
         DEFAULT_BRANCH: main
         FILTER_REGEX_INCLUDE: src/static/html/.*

@@ -5,6 +5,7 @@
 WITH requests AS (
   SELECT
     _TABLE_SUFFIX AS client,
+    pageid AS page,
     url,
     status,
     respBodySize AS body_size
@@ -14,12 +15,22 @@ WITH requests AS (
 
 third_party AS (
   SELECT
-    domain
+    domain,
+    category,
+    COUNT(DISTINCT page) AS page_usage
   FROM
-    `httparchive.almanac.third_parties`
+    `httparchive.almanac.third_parties` tp
+  JOIN
+    requests r
+  ON NET.HOST(r.url) = NET.HOST(tp.domain)
   WHERE
     date = '2021-07-01' AND
     category != 'hosting'
+  GROUP BY
+    domain,
+    category
+  HAVING
+    page_usage >= 50
 ),
 
 base AS (

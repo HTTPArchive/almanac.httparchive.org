@@ -271,6 +271,7 @@
   <section id="toc" class="contents-wrapper">
     <h1>{{ self.table_of_contents_title() }}</h1>
     <div class="parts">
+      {% if self.foreword() | trim | length > 0 %}
       <div class="part">
         <h2 class="part-name">{{ self.introduction() }}</h2>
         <div class="toc-chapters">
@@ -279,6 +280,7 @@
           </div>
         </div>
       </div>
+      {% endif %}
       {% for part_config in config.outline %}
       <div class="part">
         <h2 class="part-name">{{ self.part() }} {{ localizedPartTitles[part_config.part] if localizedPartTitles[part_config.part]|length else chapter_config.title }}</h2>
@@ -317,10 +319,12 @@
     </div>
   </section>
 
+  {% if self.foreword() | trim | length > 0 %}
   <section id="foreword">
     <h1>{{ self.foreword_title() }}</h1>
     {{ self.foreword() | replace('/%s/%s/contributors#' % (lang, year), '#contributors-') }}
   </section>
+  {% endif %}
 
   {{ self.chapters() }}
 
@@ -355,7 +359,7 @@
             <a href="https://twitter.com/{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-twitter">
               <svg role="img">
                 <title id="contributors-{{ id }}-twitter">{{ onTwitter(contributor.twitter) }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>
               </svg>
               @{{ contributor.twitter }}
             </a>
@@ -366,7 +370,7 @@
             <a href="https://github.com/{{ contributor.github }}" aria-labelledby="contributors-{{ id }}-github">
               <svg role="img">
                 <title id="contributors-{{ id }}-github">{{ onTwitter(contributor.github) }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
               </svg>
               {{ contributor.github }}
             </a>
@@ -377,7 +381,7 @@
             <a href="https://www.linkedin.com/in/{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-linkedin">
               <svg role="img">
                 <title id="contributors-{{ id }}-linkedin">{{ onTwitter(contributor.linkedin) }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin-logo"></use>
               </svg>
               {{ contributor.linkedin }}
             </a>
@@ -388,7 +392,7 @@
             <a href="{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-website">
               <svg role="img">
                 <title id="contributors-{{ id }}-website">{{ contributor.website }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe-logo"></use>
               </svg>
               {{ contributor.website }}
             </a>
@@ -429,7 +433,7 @@
       <div class="ha-logo-wrapper">
         <svg role="img">
           <title id="ha-logo-front-cover">HTTP Archive home</title>
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha-logo"></use>
         </svg>
       </div>
 
@@ -454,7 +458,7 @@
       <div class="ha-logo-wrapper">
         <svg role="img">
           <title id="ha-logo-spine">HTTP Archive home</title>
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha-logo"></use>
         </svg>
       </div>
 
@@ -496,7 +500,7 @@
       <div class="ha-logo-wrapper">
         <svg role="img">
           <title id="ha-logo-back-cover">HTTP Archive home</title>
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha-logo"></use>
         </svg>
       </div>
 

@@ -10,9 +10,11 @@
 SELECT
   domain,
   category,
-  COUNT(0) AS total_pages,
+  COUNT(DISTINCT page) AS total_pages,
   COUNTIF(blocking > 0) AS blocking_pages,
+  COUNT(DISTINCT page) - COUNTIF(blocking > 0) AS non_blocking_pages,
   COUNTIF(blocking > 0) / COUNT(0) AS blocking_pages_pct,
+  (COUNT(DISTINCT page) - COUNTIF(blocking > 0)) / COUNT(0) AS non_blocking_pages_pct,
   APPROX_QUANTILES(transfer_size_kib, 1000)[OFFSET(500)] AS p50_transfer_size_kib,
   APPROX_QUANTILES(blocking_time, 1000)[OFFSET(500)] AS p50_blocking_time
 FROM (
@@ -20,7 +22,7 @@ FROM (
     JSON_VALUE(third_party_items, "$.entity.url") AS domain,
     page,
     JSON_VALUE(third_party_items, "$.entity.text") AS category,
-    COUNTIF(JSON_VALUE(third_party_items, "$.blockingTime") != "0") AS blocking,
+    COUNTIF(SAFE_CAST(JSON_VALUE(report, "$.audits.third-party-summary.details.summary.wastedMs") AS FLOAT64) > 250) AS blocking,
     SUM(SAFE_CAST(JSON_VALUE(third_party_items, "$.blockingTime") AS FLOAT64)) AS blocking_time,
     SUM(SAFE_CAST(JSON_VALUE(third_party_items, "$.transferSize") AS FLOAT64) / 1024) AS transfer_size_kib
   FROM
@@ -40,6 +42,8 @@ FROM (
 GROUP BY
   domain,
   category
+HAVING
+  total_pages >= 50
 ORDER BY
   total_pages DESC
 LIMIT 200

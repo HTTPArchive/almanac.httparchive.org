@@ -31,18 +31,18 @@ WITH whotracksme AS (
 
 request_headers AS (
   SELECT
-    _TABLE_SUFFIX AS client,
+    client,
     page,
     NET.REG_DOMAIN(url) AS request,
-    cookieNames(JSON_EXTRACT(payload, '$.response.headers')) AS cookie_names,
-    COUNT(0) OVER (PARTITION BY _TABLE_SUFFIX) AS websites_per_client
+    cookieNames(response_headers) AS cookie_names,
+    COUNT(DISTINCT page) OVER (PARTITION BY client) AS websites_per_client
   FROM
-    `httparchive.requests.2021_07_01_*`
+    `httparchive.almanac.requests`
   GROUP BY
     client,
     page,
     url,
-    payload
+    response_headers
 ),
 
 cookies AS (
@@ -51,6 +51,7 @@ cookies AS (
     request,
     cookie,
     COUNT(DISTINCT page) AS websites_count,
+    websites_per_client,
     COUNT(DISTINCT page) / websites_per_client AS pct_websites
   FROM
     request_headers,
@@ -70,7 +71,9 @@ SELECT
   whotracksme.category,
   request,
   cookie,
+  cookie || ' - ' || request AS cookie_and_request,
   websites_count,
+  websites_per_client,
   pct_websites
 FROM
   cookies
@@ -78,6 +81,6 @@ LEFT JOIN
   whotracksme
 ON NET.HOST(request) = domain
 ORDER BY
-  client,
-  websites_count DESC
+  pct_websites DESC,
+  client
 LIMIT 1000

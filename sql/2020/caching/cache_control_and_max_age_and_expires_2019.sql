@@ -30,5 +30,3 @@ FROM (
 )
 GROUP BY
   client
-
-

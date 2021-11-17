@@ -27,4 +27,3 @@ GROUP BY
 ORDER BY
   totalBytes DESC
 LIMIT 100
-

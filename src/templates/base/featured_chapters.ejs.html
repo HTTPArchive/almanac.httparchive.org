@@ -3,6 +3,9 @@
 <% } else { -%>
 {%- set featured_chapter = ("<%- Object.keys(featured_quotes).join('","') %>") | random %}
 <% } -%>
+{%- if request.args.get('feat') != None and request.args.get('feat') in [ "<%-Object.keys(featured_quotes).join('","') %>"] %}
+{%- set featured_chapter = request.args.get('feat') %}
+{%- endif %}
 
 <% let loop = 0 -%>
 <% for (chapter in featured_quotes) { -%>

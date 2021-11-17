@@ -13,7 +13,7 @@
 {% block author_structured_data %}
 {
   "@type": "Person",
-  "sameas": [
+  "sameAs": [
     "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}",
     "https://twitter.com/rick_viscomi",
     "https://github.com/rviscomi"
@@ -69,7 +69,7 @@
 	  	      "height": 160,
 	  	      "width": 320
 	  	  },
-        "sameas": [
+        "sameAs": [
           "https://httparchive.org",
           "https://twitter.com/HTTPArchive",
           "https://github.com/HTTPArchive"
@@ -123,7 +123,7 @@
     <button class="search-button" type="submit">
       <svg width="13" height="13" role="img" aria-labelledby="{{ switcher_name }}-search-icon">
         <title id="{{ switcher_name }}-search-icon">{{ self.search_title() }}</title>
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search-logo"></use>
       </svg>
     </button>
   </form>
@@ -141,7 +141,7 @@
           <button class="search-button" type="submit">
             <svg width="13" height="13" role="img" aria-labelledby="{{ switcher_name }}-search-icon">
               <title id="{{ switcher_name }}-search-icon">{{ self.search_title() }}</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search-logo"></use>
             </svg>
           </button>
         </form>
@@ -179,7 +179,9 @@
     {% else %}
       <option value="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</option>
     {% endif %}
+    {% if self.foreword() | trim | length > 0 %}
     <option value="{{ url_for('table_of_contents', year=year, lang=lang, _anchor='foreword') }}">{{ self.foreword_title() }}</option>
+    {% endif %}
     {% for part_config in config.outline %}
     {% for chapter_config in part_config.chapters %}
       {% set title = localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title %}
@@ -279,9 +281,11 @@
       <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a>
     </li>
     {% endif %}
+    {% if self.foreword() | trim | length > 0 %}
     <li class="nav-dropdown-list-chapter foreword">
       <a href="{{ url_for('table_of_contents', year=year, lang=lang, _anchor='foreword') }}">{{ self.foreword_title() }}</a>
     </li>
+    {% endif %}
 
     {% for part_config in config.outline %}
     <li class="nav-dropdown-list-part">
@@ -397,14 +401,14 @@
         </nav>
         <nav id="menu" aria-labelledby="menu-btn">
           <a href="#footer" class="menu-btn js-hide" aria-label="{{ self.menu_title() }}">
-            <span class="menu-btn__bar"></span>
-            <span class="menu-btn__bar"></span>
-            <span class="menu-btn__bar"></span>
+            <span class="menu-btn-bar"></span>
+            <span class="menu-btn-bar"></span>
+            <span class="menu-btn-bar"></span>
           </a>
           <button type="button" class="menu-btn js-enable hidden" disabled id="menu-btn" aria-label="{{ self.open_the_menu() }}" aria-expanded="false" data-open-text="{{ self.open_the_menu() }}" data-close-text="{{ self.close_the_menu() }}">
-            <span class="menu-btn__bar"></span>
-            <span class="menu-btn__bar"></span>
-            <span class="menu-btn__bar"></span>
+            <span class="menu-btn-bar"></span>
+            <span class="menu-btn-bar"></span>
+            <span class="menu-btn-bar"></span>
           </button>
           <ul class="menu">
             {{ self.non_chapter_nav_links() }}
@@ -426,7 +430,7 @@
                   <a href="https://httparchive.org/" aria-labelledby="ha-logo-mobile">
                     <svg width="70" height="35" role="img">
                       <title id="ha-logo-mobile">{{ self.http_archive_link() }}</title>
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha-logo"></use>
                     </svg>
                   </a>
                 </li>
@@ -436,7 +440,7 @@
                       <a href="https://twitter.com/HTTPArchive" aria-labelledby="twitter-logo-mobile">
                         <svg width="20" height="20" role="img">
                           <title id="twitter-logo-mobile">Twitter</title>
-                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>
                         </svg>
                       </a>
                     </li>
@@ -444,7 +448,7 @@
                       <a href="https://github.com/HTTPArchive/almanac.httparchive.org" aria-labelledby="github-logo-mobile">
                         <svg width="20" height="20" role="img">
                           <title id="github-logo-mobile">GitHub</title>
-                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
                         </svg>
                       </a>
                     </li>
@@ -527,7 +531,7 @@
           <a class="ha-logo" href="https://httparchive.org/" aria-labelledby="httparchive-logo-footer-mobile">
             <svg width="70" height="35" role="img">
               <title id="httparchive-logo-footer-mobile">{{ self.http_archive_link() }}</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha-logo"></use>
             </svg>
           </a>
           <ul class="social-media">
@@ -535,7 +539,7 @@
               <a href="https://twitter.com/HTTPArchive" aria-labelledby="twitter-logo-footer-mobile">
                 <svg width="20" height="20" role="img">
                   <title id="twitter-logo-footer-mobile">Twitter</title>
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>
                 </svg>
               </a>
             </li>
@@ -543,7 +547,7 @@
               <a href="https://github.com/HTTPArchive/almanac.httparchive.org" rel="me" aria-labelledby="github-logo-footer-mobile">
                 <svg width="20" height="20" role="img">
                   <title id="github-logo-footer-mobile">GitHub</title>
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
                 </svg>
               </a>
             </li>
@@ -558,7 +562,7 @@
         <a class="ha-logo not-mobile" href="https://httparchive.org/" aria-labelledby="ha-logo-footer">
           <svg width="70" height="35" role="img">
             <title id="ha-logo-footer">{{ self.http_archive_link() }}</title>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha-logo"></use>
           </svg>
         </a>
         <ul class="social-media not-mobile">
@@ -566,7 +570,7 @@
             <a href="https://twitter.com/HTTPArchive" aria-labelledby="twitter-logo-footer">
               <svg width="20" height="20" role="img">
                 <title id="twitter-logo-footer">Twitter</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>
               </svg>
             </a>
           </li>
@@ -574,7 +578,7 @@
             <a href="https://github.com/HTTPArchive/almanac.httparchive.org" rel="me" aria-labelledby="github-logo-footer">
               <svg width="20" height="20" role="img">
                 <title id="github-logo-footer">GitHub</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
               </svg>
             </a>
           </li>
