@@ -688,7 +688,7 @@ The usage of the display-p3 color space remains about as vanishingly small as wa
 
 ## Images
 
-They say a picture is worth a thousand words, but byte wise, they often cost an order of magnitude or two more. While there are a myriad approaches to embedding images with Javascript, or include them with the HTML scaffolding, here we looked at how CSS-loaded images are used.
+They say a picture is worth a thousand words, but byte wise, they often cost an order of magnitude or two more. While there are a myriad approaches to embedding images with JavaScript, or include them with the HTML scaffolding, here we looked at how CSS-loaded images are used.
 
 ### Formats of images in CSS
 
