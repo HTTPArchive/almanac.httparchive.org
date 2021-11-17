@@ -8,7 +8,7 @@ analysts: [jroakes, rvth]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/11hw7zg4dpIY8XbQR5bNp5LvwbaQF0TjV0X5cK0ng8Bg/
-patrickstox_bio: Patrick is Product Advisor, Technical SEO, and Brand Ambassador at <a href="https://ahrefs.com/">Ahrefs</a>. He's an organizer for the <a href="https://www.meetup.com/RaleighSEO/">Raleigh SEO Meetup</a> (the most successful SEO Meetup in the US), the <a href="https://www.meetup.com/beerandseo/">Beer and SEO Meetup</a>, and the <a href="https://raleighseomeetup.org/conference/">Raleigh SEO Conference</a>. He also runs a Technical SEO Slack group and is a moderator for <a href="https://www.reddit.com/r/TechSEO">/r/TechSEO on Reddit</a>. Patrick also likes to share random SEO knowledge in Twitter threads he calls Uncommon SEO Knowledge. 
+patrickstox_bio: Patrick is Product Advisor, Technical SEO, and Brand Ambassador at <a href="https://ahrefs.com/">Ahrefs</a>. He's an organizer for the <a href="https://www.meetup.com/RaleighSEO/">Raleigh SEO Meetup</a> (the most successful SEO Meetup in the US), the <a href="https://www.meetup.com/beerandseo/">Beer and SEO Meetup</a>, and the <a href="https://raleighseomeetup.org/conference/">Raleigh SEO Conference</a>. He also runs a Technical SEO Slack group and is a moderator for <a href="https://www.reddit.com/r/TechSEO">/r/TechSEO on Reddit</a>. Patrick also likes to share random SEO knowledge in Twitter threads he calls Uncommon SEO Knowledge.
 
 He's a well known conference speaker, industry blogger (mostly on the <a href="https://ahrefs.com/blog/">Ahref's blog</a> these days), judge of search awards, and he helped define the role of Search Marketing Strategist for the US Department of Labor.
 Tomek3c_bio:
