@@ -12,7 +12,7 @@ tunetheweb_bio: Barry Pollard is a software developer and author of the Manning 
 featured_quote: Third parties are integral to the web. In many ways they are the web—without the prevalence of third-parties websites would be harder to build, and be less feature rich.
 featured_stat_1: 94.4%
 featured_stat_label_1: Sites using third parties
-featured_stat_2: 1,625
+featured_stat_2: 1,626 ms
 featured_stat_label_2: YouTube embed main-thread blocking time
 featured_stat_3: 45.9%
 featured_stat_label_3: Requests which are 3rd party

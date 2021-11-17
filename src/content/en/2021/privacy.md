@@ -10,7 +10,7 @@ translators: []
 results: https://docs.google.com/spreadsheets/d/148SxZICZ24O44roIuEkRgbpIobWXpqLxegCDhIiX8XA/
 ydimova_bio: Yana Dimova is a PhD student at imec-DistriNet, working on web privacy. Her general interests and work focus on online tracking, privacy vulnerabilities and privacy legislation and policies.
 victorlep_bio: Victor Le Pochat is a PhD researcher at the <a hreflang="en" href="https://distrinet.cs.kuleuven.be/">imec-DistriNet</a> research group of KU Leuven in Belgium. His interests lie in the exploration of web ecosystems, and in web security/privacy research methodology, both analyzing and improving current methods.
-featured_quote: "Browsers are paving the way for better user privacy&colon; Firefox and Safari have already deployed Tracking Protection, while Chrome is proposing new privacy-protecting technologies that are discussed in the open and can be tested by website owners."
+featured_quote: Browsers are paving the way for better user privacy&colon; Firefox and Safari have already deployed Tracking Protection, while Chrome is proposing new privacy-protecting technologies that are discussed in the open and can be tested by website owners.
 featured_stat_1: 82.08%
 featured_stat_label_1: Mobile websites that include at least one tracker
 featured_stat_2: 39.70%

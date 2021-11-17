@@ -65,7 +65,7 @@ Measuring whether a service worker is used is not as simple as might seem. For e
 
 For this year's PWA chapter, we've updated our measurement techniques by creating a <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/pwa.js">new set of metrics</a>. For example, we're now using heuristics that check for several service worker characteristics, like having [service worker registration](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration) calls and use of service worker specific methods, libraries, and events.
 
-From the data we gathered, we can see that about 3.05% of desktop sites and 3.22% of mobile sites use service workers features, which suggests that service worker usage might be higher than measured in <a hreflang="en" href="https://almanac.httparchive.org/en/2020/pwa#service-worker-usage">last year's chapter (0.88% in desktop and 0.87% in mobile)</a>.
+From the data we gathered, we can see that about 3.05% of desktop sites and 3.22% of mobile sites use service workers features, which suggests that service worker usage might be higher than measured in [last year's chapter](../2020/pwa#service-worker-usage) (0.88% in desktop and 0.87% in mobile).
 
 One might think that having a little more than 3% of sites registering a service worker in mobile and desktop is a low number, but how does this translate to web traffic?
 
@@ -334,7 +334,7 @@ According to Mobsted's analysis, the most common categories are "Business & Indu
 
 ## Lighthouse insights
 
-In the <a href="#manifest-properties">manifest properties section</a> we mentioned the <a hreflang="en" href="https://web.dev/installable-manifest/">installability requirements</a> that Lighthouse has on web app manifest files. Lighthouse also provides checks for other aspects that make a PWA. It should be noted that the HTTP Archive currently only runs the Lighthouse tests as part of its mobile crawl, as noted in our <a hreflang="en" href="../methodology">Methodology</a>.
+In the <a href="#manifest-properties">manifest properties section</a> we mentioned the <a hreflang="en" href="https://web.dev/installable-manifest/">installability requirements</a> that Lighthouse has on web app manifest files. Lighthouse also provides checks for other aspects that make a PWA. It should be noted that the HTTP Archive currently only runs the Lighthouse tests as part of its mobile crawl, as noted in our [Methodology](./methodology)</a>.
 
 The following chart shows the percentage of sites that pass each criteria, where "PWA sites" contains stats for sites that have a service worker and a manifest, "All sites" contains data for all the totality sites:
 

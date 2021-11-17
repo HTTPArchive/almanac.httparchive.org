@@ -14,4 +14,3 @@ GROUP BY
 ORDER BY
   client,
   text_compression_score
-
