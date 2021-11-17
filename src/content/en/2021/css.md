@@ -535,6 +535,7 @@ In the realm of just the named colors, `transparent` is still the faraway favori
   <table>
     <thead>
       <tr>
+        <td></td>
         <th>Keyword</th>
         <th>Desktop</th>
         <th>Mobile</th>
