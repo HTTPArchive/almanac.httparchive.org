@@ -3,10 +3,8 @@
 title: Compression
 description: TODO
 authors: [lvandeve, mo271, jyrkialakuijala]
-reviewers: [eustas]
+reviewers: [fischbacher, eustas]
 analysts: [paulcalvano]
-reviewers: []
-analysts: []
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1-FQlNvtBw9ai8cBF7wEich_AcXnrNkNGW7dMYvHFl2w/

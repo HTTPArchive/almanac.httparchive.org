@@ -400,7 +400,6 @@
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars0.githubusercontent.com/u/62304935?v=4&s=200",
       "linkedin": "christophersater"
     },
     "svgeesus": {
@@ -591,6 +590,14 @@
       "github": "hemanth",
       "twitter": "gnumanth"
     },
+    "wrttnwrd": {
+      "name": "Ian Lurie",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/382649?v=4&s=200",
+      "github": "wrttnwrd"
+    },
     "RReverser": {
       "name": "Ingvar Stepanyan",
       "teams": [
@@ -605,7 +612,8 @@
     "fellowhuman1101": {
       "name": "Jamie Indigo",
       "teams": [
-        "authors"
+        "authors",
+        "reviewers"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/52051775?v=4&s=200",
       "website": "https://not-a-robot.com/",
@@ -691,13 +699,22 @@
       "github": "jonoalderson",
       "twitter": "jonoalderson"
     },
+    "jroakes": {
+      "name": "JR Oakes",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/10191545?v=4&s=200",
+      "website": "https://codeseo.io/",
+      "github": "jroakes",
+      "twitter": "jroakes"
+    },
     "jzyang": {
       "name": "Julia Yang",
       "teams": [
         "reviewers",
         "editors"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/2634031?v=4&s=200",
       "github": "jzyang",
       "linkedin": "yangzhe",
       "twitter": "Jules_Yang"
@@ -781,7 +798,6 @@
       "teams": [
         "developers"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/58731469?v=4&s=200",
       "github": "lucasbona05"
     },
     "soulcorrosion": {
@@ -962,12 +978,18 @@
       "github": "philbarker",
       "twitter": "philbarker"
     },
+    "fischbacher": {
+      "name": "Thomas Fischbacher",
+      "teams": [
+        "reviewers"
+      ],
+      "github": "fischbacher"
+    },
     "RMHolmlund": {
       "name": "RMHolmlund",
       "teams": [
         "editors"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/61608378?v=4&s=200",
       "github": "RMHolmlund"
     },
     "rrajiv": {
@@ -989,6 +1011,15 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/1120896?v=4&s=200",
       "github": "rviscomi",
       "twitter": "rick_viscomi"
+    },
+    "SeoRobt": {
+      "name": "Rob Teitelman",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/83400777?v=4&s=200",
+      "github": "SeoRobt",
+      "twitter": "teitelmanrob"
     },
     "rmarx": {
       "name": "Robin Marx",
@@ -1127,12 +1158,19 @@
       "github": "tomvangoethem",
       "twitter": "tomvangoethem"
     },
+    "Tomek3c": {
+      "name": "Tomek Rudzki",
+      "teams": [
+        "authors"
+      ],
+      "github": "Tomek3c",
+      "twitter": "TomekRudzki"
+    },
     "tosinarasi": {
       "name": "Tosin Arasi",
       "teams": [
         "analysts"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/89331243?v=4&s=200",
       "github": "tosinarasi"
     },
     "victorlep": {
@@ -1162,7 +1200,6 @@
       "teams": [
         "authors"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/9135107?v=4&s=200",
       "github": "ydimova"
     },
     "ziemek-bucko": {
