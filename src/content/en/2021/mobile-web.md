@@ -5,7 +5,7 @@ description: Mobile Web chapter of the 2021 Web Almanac covering page web vitals
 authors: [fellowhuman1101, dwsmart, ashleyish]
 reviewers: [obto, fili]
 analysts: [rvth, obto]
-editors: []
+editors: [shantsis]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1mdma245ja_THTBApaJTeS4vmLY_Fn8VC6Kd8qx7wp-o/
 fellowhuman1101_bio: Jamie Indigo isn’t a robot, but speaks bot.  As a technical SEO consultant at <a href="https://www.deepcrawl.com">Deepcrawl</a>, they study how search engines crawl, render, and index the web.  They love to tame wild JavaScript frameworks and optimize rendering strategies. When not working, Jamie likes horror movies, graphic novels, and Dungeons & Dragons.
@@ -17,17 +17,17 @@ featured_stat_2: 43.4%
 featured_stat_label_2: Mobile page loads contain inappropriately sized images
 featured_stat_3: 45.03%
 featured_stat_label_3: Of the top 1000 mobile page loads prevent zooming
-unedited: true
+
 ---
 
 
 ## Introduction
 
-In January 2021, 59.5% of the global population was on the internet.  Of the global 4.66 billion active internet users, [92.6% accessed the internet on a mobile device](https://www.statista.com/statistics/617136/digital-population-worldwide/).
+In January 2021, 59.5% of the global population was on the internet.  Of the global 4.66 billion active internet users, <a hreflang="en" href="https://www.statista.com/statistics/617136/digital-population-worldwide/">[92.6% accessed the internet on a mobile device</a>.
 
-With the ubiquity of mobile web tucked in our pockets, [Statista](https://www.statista.com/statistics/330695/number-of-smartphone-users-worldwide/) reports that 80.76% of the global population owns a smartphone.  This is a relatively minor growth of 0.03% year over year. In comparison, 49.40% of the population in 2016 owned a smartphone.
+With the ubiquity of mobile web tucked in our pockets, <a hreflang="en" href="https://www.statista.com/statistics/330695/number-of-smartphone-users-worldwide/">Statista</a> reports that 80.76% of the global population owns a smartphone.  This is a relatively minor growth of 0.03% year over year. In comparison, 49.40% of the population in 2016 owned a smartphone.
 
-In this chapter, we take a look at recent trends on the mobile web including worldwide connectivity, technology adoption, and mobile-friendly feature usage..
+In this chapter, we looked at recent trends on the mobile web including worldwide connectivity, technology adoption, and mobile-friendly feature usage.
 
 
 ### A note on methodology
@@ -42,26 +42,26 @@ We’ve used a few different data sources in this chapter:
 
 
 * CrUX
-* HTTP archive
+* HTTP Archive
 * Lighthouse
 * Wappalyzer
-* [Akamai](https://twitter.com/paulcalvano/status/1454866401781587969)
+* <a hreflang="en" href="https://twitter.com/paulcalvano/status/1454866401781587969">Akamai</a>
 
 It is worth noting that HTTP Archive and Lighthouse data is limited to the data identified from websites’ home pages only, and not site-wide.
 
 
 ## Worldwide connectivity
 
-2021 is another year affected by the global COVID-19 pandemic, which has both affected different regions of the world differently, and the measures to combat the pandemic have varied from area to area too. Has this changed how people use their mobile devices vs. laptops & computers?
+2021 is another year affected by the global COVID-19 pandemic, which has both affected different regions of the world differently, and the measures to combat the pandemic have varied from area to area too. Has this changed how people use their mobile devices versus laptops and computers?
 
 
 ### Cost of Mobile Web Access
 
-The financial cost of mobile web access varied greatly in 2021.  One [analysis](https://www.cable.co.uk/mobiles/worldwide-data-pricing/) showed that the average price of 1GB cost only $0.05 USD in Israel.  The same data cost usage in Equatorial Guinea would cost a user $49.67 USD.
+The financial cost of mobile web access varied greatly in 2021.  One <a hreflang="en" href="https://www.cable.co.uk/mobiles/worldwide-data-pricing/">analysis</a> showed that the average price of 1 GB cost only $0.05 USD in Israel.  The same data cost usage in Equatorial Guinea would cost a user $49.67 USD.
 
-Data from the Performance chapter shows the median site now weighs 2205kb.  Using market data, [What Does My Site Cost](https://whatdoesmysitecost.com/#usdCost) calculated the best case scenario price to load the median site.
+Data from the Performance chapter shows the median site now weighs 2205 KB.  Using market data, <a hreflang="en" href="https://whatdoesmysitecost.com/#usdCost">What Does My Site Cost</a> calculated the best case scenario price to load the median site.
 
-The most expensive paid loads cost Canadian users $0.26USD, followed by Brazil at $0.18USD.  The same page  loaded on a commonly available data plan in Poland or Russia would barely register on a users' bill, costing less than $0.01 USD.
+The most expensive paid loads cost Canadian users $0.26 USD, followed by Brazil at $0.18 USD.  The same page loaded on a commonly available data plan in Poland or Russia would barely register on a users' bill, costing less than $0.01 USD.
 
 
 ### Traffic to a site from mobile versus desktop (CrUX)
@@ -80,7 +80,7 @@ What percentage of traffic comes from  mobile devices vs. desktop? Predicting th
 )
 }}
 
-New this year, the CrUX dataset allows us to query the most popular sites ([ranked by magnitude](https://developers.google.com/web/updates/2021/03/crux-rank-magnitude),  by traffic recorded to th%ese origins).
+New this year, the CrUX dataset allows us to query the most popular sites (<a hreflang="en" href="https://developers.google.com/web/updates/2021/03/crux-rank-magnitude">ranked by magnitude</a>, by traffic recorded to these origins).
 
 {{ figure_markup(
   image="mobile-web-more-mobile-than-desktop-traffic.png",
@@ -92,6 +92,7 @@ New this year, the CrUX dataset allows us to query the most popular sites ([rank
   )
 }}
 
+{# TODO (Authors/Editors) - description is not specific enough #}
 
 When grouped by CrUX ranking, (the top 1000, 10,000 and so on origins by traffic in the dataset) the more traffic a site receives,  there is a slight increase of the percentage of traffic it gets from mobile, all except the top 1000, which get slightly less (84.90% vs. 85.08%) mobile vs. desktop.
 
@@ -110,7 +111,7 @@ When grouped by CrUX ranking, (the top 1000, 10,000 and so on origins by traffic
    }}
 
 
-The distribution shows a similar, mobile heavy trend. At the 50th Percentile, **79.44%** of traffic comes from mobile devices, an increase over **77.61%** in 2020, and catching up with the **79.93%** percentage in 2019.
+The distribution shows a similar, mobile heavy trend. At the 50th percentile, **79.44%** of traffic comes from mobile devices, an increase over **77.61%** in 2020, and catching up with the **79.93%** percentage in 2019.
 
 
 #### Beyond CrUX Data
@@ -122,7 +123,7 @@ A limitation of the CrUX dataset is that it can only collect data from Chrome us
 * Other major browsers, like FireFox and Safari are missing
 * There is no data from iOS users at all (Chrome uses WebKit on iOS, like all other browsers on iOS devices)
 
-Fortunately there are a few other sources. Paul Calvano ran some analysis on the [Akamai  mPulse](https://www.akamai.com/products/mpulse-real-user-monitoring)real user monitoring data for July 2021. It found a slightly more even match between Mobile and Desktop traffic, at **59.4%** being from mobile devices. The mPulse data is aggregated hourly, so it reveals some interesting trends
+Fortunately there are a few other sources. Paul Calvano ran some analysis on the <a hreflang="en" href="https://www.akamai.com/products/mpulse-real-user-monitoring">[Akamai  mPulse</a> real user monitoring data for July 2021. It found a slightly more even match between Mobile and Desktop traffic, at **59.4%** being from mobile devices. The mPulse data is aggregated hourly, so it reveals some interesting trends
 
 
 ##### Not all days are equal
@@ -140,12 +141,16 @@ Fortunately there are a few other sources. Paul Calvano ran some analysis on the
 
 
 
-Weekend days show a greater proportion of Mobile traffic, with 66.06% on Saturdays, **66.54%** on Sundays, and a slight increase to **59.06%**. Globally, not every country have Monday - Friday work weeks, Sunday - Thursday is another common pattern, (source: [Wikipedia](https://en.wikipedia.org/wiki/Workweek_and_weekend))
+Weekend days show a greater proportion of mobile traffic, with 66.06% on Saturdays, **66.54%** on Sundays, and a slight increase to **59.06%**. Globally, not every country has Monday to Friday work weeks -  Sunday to Thursday is also <a hreflang="en" href="https://en.wikipedia.org/wiki/Workweek_and_weekend">another common pattern</a>.
+
+{# TODO (Authors) - I dont get the use of bold here, and i'm confused what "a slight increase to" is referring to. A slight increase from? Is something missing? #}
 
 
 ##### Not all times are equal
 
-On weekdays, mobile usage dips vs. desktop usage around 5 am UTC and starts climbing again at 7pm UTC (with a small bump around 10 / 11am). This aligns with working hours.
+On weekdays, mobile usage dips vs. desktop usage around 5 AM UTC and starts climbing again at 7 PM UTC (with a small bump around 10 / 11 AM). This aligns with working hours.
+
+{# TODO (Authors) - I dont get what "mobile usage dips vs. desktop usage" is trying to say. One decreases while another increases? #}
 
 {{ figure_markup(
    image="mobile-web-akimai-device-distribution-by-hour-weekdays.png",
@@ -157,6 +162,9 @@ On weekdays, mobile usage dips vs. desktop usage around 5 am UTC and starts clim
    height="480"
    )
    }}
+   
+   
+{# TODO (Authors/Editors) - description is not descriptive enough of the data #}
 
 On weekends the split between mobile and desktop traffic remains more stable.
 {{ figure_markup(
@@ -169,6 +177,8 @@ On weekends the split between mobile and desktop traffic remains more stable.
    height="480"
    )
    }}
+   
+ {# TODO (Authors/Editors) - description is not descriptive enough of the data #}
 
 This all suggests that people who have the choice between different devices are more likely to use mobile ones in their personal time.
 
@@ -182,9 +192,9 @@ This all suggests that people who have the choice between different devices are 
 [Cloudflare's Radar](https://radar.cloudflare.com/) trend reports allow them to segment traffic by geographic region, and it's interesting to see the variations regionally between the split of mobile vs. desktop, from Sudan and Yemen tying at 83% usage, compared to the Seychelles at just 29% mobile.
 
 
-#### Drawing Conclusions
+#### Drawing conclusions
 
-Mobile device usage remains strong, and It's apparent that despite a global trend of people being at home more than ever before, due to restrictions and advice from health authorities and governments, that mobile devices remain the  most popular way to access websites. The popularity of mobile over desktop seems to have regained most of the ground lost last year (itself a fairly small regression).
+Mobile device usage remains strong, and it's apparent that despite a global trend of people being at home more than ever before (due to restrictions and advice from health authorities and governments), mobile devices remain the most popular way to access websites. The popularity of mobile over desktop seems to have regained most of the ground lost last year (itself a fairly small regression).
 
 Naturally the figures cannot tell us the reasons behind that, but it's worth remembering that for a large amount of web users, mobile devices may be the only device available to them, and there is no choice between using a mobile or a desktop.
 
@@ -196,13 +206,13 @@ Whilst it can be hard to predict if your mobile traffic percentage is expected, 
 
 ### Client Hints
 
-[Client Hints](https://developer.mozilla.org/en-US/docs/Glossary/Client_hints) are a collection of HTTP request header fields a server can request from the client accessing it to get information on the device, it's capabilities, the network conditions and other agent settings and preferences.
+<a href="https://developer.mozilla.org/en-US/docs/Glossary/Client_hints">Client Hints</a> are a collection of HTTP request header fields a server can request from the client accessing it to get information on the device, it's capabilities, the network conditions and other agent settings and preferences.
 
 This gives the ability to make decisions and serve code, content and experience that's more tailored to that device.
 
 For the mobile web, poor network conditions and lower powered devices are much more common, and sites that are proactively requesting this information are likely to be thinking beyond merely squeezing down their desktop pages to fit on a mobile screen.
 
-HTTP client hints are a relatively new, and somewhat experimental feature, with the [RFC only published in February this year](https://www.rfc-editor.org/rfc/rfc8942#section-3.1). It's therefore fairly encouraging that we found **1. 41%** of sites are requesting at least one of these Client Hints from mobile users, compared with just **0.95%** for desktop users.
+HTTP client hints are a relatively new, and somewhat experimental feature, with the <a href="https://www.rfc-editor.org/rfc/rfc8942#section-3.1">RFC only published in February this year</a>. It's therefore fairly encouraging that we found **1.41%** of sites are requesting at least one of these Client Hints from mobile users, compared with just **0.95%** for desktop users.
 
 Whilst we are not able to tell what the sites might do with that information, and exactly how they use these hints to tailor the experience to mobile users, asking is a good first sign.
 
@@ -217,6 +227,8 @@ Details of the network connection between the device and the server.
 * **User Agent Hints**
 Details about the agent accessing the site.
 
+{# TODO - this looks like a formatting error but i'm not sure what's wrong with it #}
+
 
 #### Device client hints
 
@@ -230,10 +242,11 @@ Details about the agent accessing the site.
    )
 }}
 
+{# TODO (Authors/Editors) figure description does not describe the data #}
 
-Uptake here is low, with [DPR](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/DPR) & [Viewport-Width](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Viewport-Width) leading with **0.15%** of mobile sites requesting this, [Device-Memory](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Device-Memory) a little behind at **0.14%** and [Width](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Width)at just **0.01%**, but this is now deprecated, the proposed replacement being Sec-CH-Width, we detected no sites requesting this.
+Uptake here is low, with <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/DPR">DPR</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Viewport-Width">Viewport-Width</a> leading with **0.15%** of mobile sites requesting this, <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Device-Memory">Device-Memory</a> a little behind at **0.14%** and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Width">Width</a> at just **0.01%**, but this is now deprecated, the proposed replacement being Sec-CH-Width, we detected no sites requesting this.
 
-Currently, only Chrome, (and Chromium based browsers like Microsoft's Edge) & Opera support these headers, with Safari and Firefox not yet onboard (source: [CanIUse.com](https://caniuse.com/client-hints-dpr-width-viewport)).
+Currently, only Chrome, (and Chromium based browsers like Microsoft's Edge) and Opera support these headers, with <a hreflang="en" href="https://caniuse.com/client-hints-dpr-width-viewport">Safari and Firefox not yet onboard</a>.
 
 
 #### Network client hints
@@ -249,14 +262,14 @@ Currently, only Chrome, (and Chromium based browsers like Microsoft's Edge) & Op
 }}
 
 
-Network client hints show a similar uptake to Device client hints, with [Downlink](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Downlink)and [ECT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ECT) (effective connection type) being requested by **0.15%** of loads on mobile, and [RTT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/RTT) (round trip time) on 0.14% of loads on mobile.
+Network client hints show a similar uptake to Device client hints, with <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Downlink">Downlink</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ECT">ECT</a> (effective connection type) being requested by **0.15%** of loads on mobile, and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/RTT">RTT</a> (round trip time) on 0.14% of loads on mobile.
 
-Save-Data is surprisingly present less, at just 0.08% of mobile requests, seemingly a missed opportunity, given the user benefits possible, as detailed in the Google Web Fundamentals article, [Delivering Fast and Light Applications with Save-Data](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data/).
+Save-Data is surprisingly present less, at just 0.08% of mobile requests, seemingly a missed opportunity, given the user benefits possible, as detailed in the Google Web Fundamentals article, <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data/">Delivering Fast and Light Applications with Save-Data</a>.
 
 
 #### User Agent Hints
 
-Major browsers like Chrome (Source: [Chromium Blog](https://blog.chromium.org/2021/05/update-on-user-agent-string-reduction.html)), Safari (Source: [WebKi Bugzilla](https://bugs.webkit.org/show_bug.cgi?id=216593)) and FireFox (source: [Mozilla Bugzilla](https://bugzilla.mozilla.org/show_bug.cgi?id=1679929)) reducing and capping the User-Agent string to reduce [passive fingerprinting](https://www.w3.org/2001/tag/doc/unsanctioned-tracking/#unsanctioned-tracking-tracking-without-user-control).
+Major browsers like <a hreflang="en" href="https://blog.chromium.org/2021/05/update-on-user-agent-string-reduction.html">Chrome</a>, <a hreflang="en" href="https://bugs.webkit.org/show_bug.cgi?id=216593">Safari</a> and <a hreflang="en" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1679929">FireFox</a> reducing and capping the User-Agent string to reduce <a hreflang="en" href="https://www.w3.org/2001/tag/doc/unsanctioned-tracking/#unsanctioned-tracking-tracking-without-user-control">passive fingerprinting</a>.
 
 Traditionally, sites may have used this information to tailor the experience to those devices. This approach has always had some drawbacks in trying to keep up with the ever changing landscape of devices, and the fact the user-agent string is easily changeable and spoofable.
 
@@ -265,7 +278,7 @@ User Agent Client hints offer a way to get  this information, but unlike the Dev
 
 ### Network Information API and Device Memory API Usage
 
-The [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API) and [Navigator.deviceMemory](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory) offer an interface to JavaScript to gather device and connection information, similar in scope to those exposed with Client Hints.
+The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API">Network Information API</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory">Navigator.deviceMemory</a> offer an interface to JavaScript to gather device and connection information, similar in scope to those exposed with Client Hints.
 
 
 #### Network Information API
@@ -280,13 +293,14 @@ The [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/N
    )
 }}
 
+{# TODO (Authors/Editors) - figure description does not describe the data #}
 
-We focused of mobile vs. desktop page loads making use of [NetworkInformation.effectiveType](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/effectiveType), which returns a string based on the effective connection type, 'slow-2g', '2g', '3g', or '4g'. 4g is the top tier, so could really be seen as 4g or faster, including 5g and broadband, fixed connections.
+We focused of mobile vs. desktop page loads making use of <a href="https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/effectiveType">NetworkInformation.effectiveType</a>, which returns a string based on the effective connection type, 'slow-2g', '2g', '3g', or '4g'. 4g is the top tier, so could really be seen as 4g or faster, including 5g and broadband, fixed connections.
 
-**18.19%** of mobile requests had page loads utilising NetworkInformation.effectiveType, but surprisingly, a very slightly higher **18.41%** of desktop requests detected use of this API
+**18.19%** of mobile requests had page loads utilising NetworkInformation.effectiveType, but surprisingly, a very slightly higher **18.41%** of desktop requests detected use of this API.
 
 
-#### Device Memory API
+#### Device memory API
 
 {{ figure_markup(
    image="mobile-web-usage-of-navigator-devicememory.png",
@@ -298,27 +312,29 @@ We focused of mobile vs. desktop page loads making use of [NetworkInformation.ef
    )
 }}
 
-This api returns an approximate amount of device memory, useful to judge what the client might be capable of handling and adapt accordingly.
+{# TODO (Authors/Editors) - figure description does not describe the data #}
 
-**10.88%** of mobile page loads utilised this api, slightly higher than **10.19%** for desktop loads.
+This API returns an approximate amount of device memory, useful to judge what the client might be capable of handling and adapt accordingly.
 
-Much like Client Hints, these APIs are still experimental, and also do not have universal support across browsers.  (source: [Network Information API](https://caniuse.com/netinfo) & [Navigator API: deviceMemory](https://caniuse.com/mdn-api_navigator_devicememory) caniuse.com) but have much wider adoption.
+10.88% of mobile page loads utilised this API, slightly higher than 10.19% for desktop loads.
 
-One reason for wider adoption could be third party scripts requesting these on page loads. Another reason may be ease of implementation. Setting and reading http headers may be seen as more complex and more likely to involve  changes to infrastructure.
+Much like Client Hints, these APIs are still experimental, and also do not have universal support across browsers (source: <a hreflang="en" href="https://caniuse.com/netinfo">Network Information API</a> & <a hreflang="en" href="https://caniuse.com/mdn-api_navigator_devicememory">Navigator API: deviceMemory</a> but have much wider adoption.
+
+One reason for wider adoption could be third party scripts requesting these on page loads. Another reason may be ease of implementation. Setting and reading HTTP headers may be seen as more complex and more likely to involve  changes to infrastructure.
 
 
 ### Client Hints, Network Information API and Device Memory API Conclusions
 
-For experimental APIs and features, there is already some encouraging take up of these features, hopefully as browser support growns and the APIs move from experimental status, uptake will grow further.
+For experimental APIs and features, there are already some encouraging take up of these features. Hopefully as browser support grows and the APIs move from experimental status, uptake will grow further.
 
-If you have a network or device capability limited web app, and you have a significant proportion of users accessing from lower powered devices, and / or poor network connections, now might be the time to investigate if these APIs can let you offer a better user experience for them.
+If you have a network or device capability limited web app, and you have a significant proportion of users accessing from lower powered devices, and/or poor network connections, now might be the time to investigate if these APIs can let you offer a better user experience for them.
 
 
 ### App usage on the Mobile Web
 
 The most commonly used libraries and technologies found on the mobile web impact performance and inform us on technology adoption.
 
-According to [Wappalyzer](https://www.wappalyzer.com/) data, JavaScript library JQuery is the dominant library of the mobile web, present in 84.38% of tested sites.  Google is the dominant provider, holding three of the top five spots.
+According to <a hreflang="en" href="https://www.wappalyzer.com/">Wappalyzer</a> data, JavaScript library JQuery is the dominant library of the mobile web, present in 84.38% of tested sites.  Google is the dominant provider, holding three of the top five spots.
 
 <figure>
 <table>
@@ -400,6 +416,8 @@ Of the top five mobile web technologies, adoption rates for three were higher on
 
 JavaScript library JQuery is the dominant library of the mobile web, present in 84.38%.  Google is the dominant provider, holding three of the top five spots.  The most
 
+{# TODO (Authors) - Unsure if this is a typo or there's a thought missing here #}
+
 
 #### Programming languages
 
@@ -446,12 +464,9 @@ The most prominent programming language on the mobile web is PHP with 50.46% of 
 </figure>
 
 
-Content management systems allow site owners to publish, update, and control content through an authenticated backend.   WordPress, an open-source CMS written in PHP, was the dominant CMS in 2021.  The technology appeared on 33.57% of sites.
-
-
 #### Content Management Systems
 
-The top five content management systems on the mobile web in 2021 were:
+Content management systems allow site owners to publish, update, and control content through an authenticated backend. WordPress, an open-source CMS written in PHP, was the dominant CMS in 2021. The technology appeared on 33.57% of sites. The top five content management systems on the mobile web in 2021 were:
 
 <figure>
 <table>
@@ -556,8 +571,9 @@ Technology adoption rates for the mobile web moved in step with desktop.  The mo
 <figcaption>{{ figure_link(caption="Technology with higher desktop adoption rates.", sheets_gid="1172584192", sql_file="most_used_tech_by_domain_rank.sql") }}</figcaption>
 </figure>
 
+{# TODO (Authors) - Column alignment looks really off on this chart, its hard to read the last 3 columns #}
 
-Given the changes to performance measurement and prioritization, it's reasonable to consider the absence of these JavaScript-heavy third party assets as part of an intentional effort to improve mobile page experience.  The Facebook Pixel analytics script was found on -1.70% fewer mobile sites than desktop.
+Given the changes to performance measurement and prioritization, it's reasonable to consider the absence of these JavaScript-heavy third party assets as part of an intentional effort to improve mobile page experience. The Facebook Pixel analytics script was found on -1.70% fewer mobile sites than desktop.
 
 Mobile sites were more likely to adopt certain technologies, but with a smaller margin.  Blogger was found on 3.13% of mobile sites and 1.67% of desktop sites
 
@@ -605,7 +621,7 @@ Mobile sites were more likely to adopt certain technologies, but with a smaller 
 <figcaption>{{ figure_link(caption="Technology with higher mobile adoption rates.", sheets_gid="1172584192", sql_file="most_used_tech_by_domain_rank.sql") }}</figcaption>
 </figure>
 
-
+{# TODO (Authors) - Column alignment looks really off on this chart, its hard to read the last 3 columns #}
 
 #### Drawing Conclusions on Mobile Web App Usage
 
@@ -613,9 +629,9 @@ JavaScript via JQuery permeated the mobile web in 2021.  Third-party analytics t
 
 One thing that shines through in the data is that at a CMS and web server level, mobile and desktop share a close correlation in how people develop sites, perhaps in large part to the lower overheads of responsive design, meaning one codebase for all experiences.
 
-With WordPress not only maintaining, but extending its popularity for mobile sites, and other CMSs enjoying a similar share to the desktop experience, there's a great opportunity for CMS core improvements and optimisations to bring an outsized benefit to the whole mobile web.
+With WordPress not only maintaining, but extending its popularity for mobile sites, and other CMSs enjoying a similar share to the desktop experience, there's a great opportunity for CMS core improvements and optimizations to bring an outsized benefit to the whole mobile web.
 
-This makes drives like the [proposed WordPress Performance Team](https://make.wordpress.org/core/2021/10/12/proposal-for-a-performance-team/) important and valuable.
+This makes drives like the <a hreflang="en" href="https://make.wordpress.org/core/2021/10/12/proposal-for-a-performance-team/">proposed WordPress Performance Team</a> important and valuable.
 
 
 ## Interacting with the Mobile Web
@@ -629,7 +645,9 @@ The web is built on links.  On the mobile web, Unique Resource Identifier scheme
 
 The most prevalent URI schemes were https, found on 93.15% of sites, and it's non-secure equivalent, http, appearing on 56.65%.  The high use of non-secure link protocols is noteworthy as 2020 saw major announcements from browsers to protect users' safety by alerting them when content is not secure.
 
-After webpage links, the next five most used protocols in  anchor href values  on the mobile web are as follows:
+{# TODO (Authors) - I think this is a good spot to put an external link to read more on it, even if there's one example #}
+
+After webpage links, the next five most used protocols in anchor href values on the mobile web are as follows:
 
 <figure>
 <table>
@@ -673,7 +691,7 @@ Mobile devices whilst limited in some aspects do tend to be better connected, th
 ```
 <a href="mailto:enquiries@example.com?subject=Enquiring about Red Widgets">enquiries@example.com</a>
 ```
-Would prefill an email with the specified email address and subject line. Helpful on mobile, but probably pretty relevant for desktop too.
+Would prefill an email with the specified email address and subject line. Helpful on mobile, but also relevant for desktop too.
 
 
 #### tel
@@ -694,25 +712,23 @@ Would open the phone app, ready to dial that number.  This saves copy / paste an
 When clicked would prefill a message with the right number, you can also prefill the message body.  This fell out of the top 5, with just **0.27%** of mobile site loads utilizing this.
 
 
-#### Other Messaging Apps
+#### Other messaging apps
 
-Other messaging apps can register a protocol to have a `<a href="">` open them, as seen in the table above, whats app & viber are the two leading ones here, outstripping the native sms: app usage.
+Other messaging apps can register a protocol to have a `<a href="">` open them, as seen in the table above, whatsapp and viber are the two leading ones here, outstripping the native sms: app usage.
 
 
-#### Alternative Protocol Links Conclusions
+#### Alternative protocol links conclusions
 
-`mailto:` has a long history on the internet, [right back to 1994](https://datatracker.ietf.org/doc/html/rfc1738#section-3), but it's encouraging to see tel: reach 24% usage, not a long way behind, given its additional usefulness on mobile devices.
+`mailto:` has a long history on the internet, <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc1738#section-3">right back to 1994</a>, but it's encouraging to see tel: reach 24% usage, not a long way behind, given its additional usefulness on mobile devices.
 
 It's surprising to see sms with such small uptake, and disappointing that its uptake is  below proprietary apps like whatsapp and viber.
 
-SMS is more likely to be available as default and require no additional installations, so seemingly more accessible.
-
- However whatsapp and viber messages are free, SMS messages may incur charges from the users mobile provider. This could explain that relative popularity.
+SMS is more likely to be available as default and require no additional installations, so seemingly more accessible. However whatsapp and viber messages are free, while SMS messages may incur charges from the users mobile provider. This could explain that relative popularity.
 
 If you aren't using some of the extended capabilities for communication that protocols past https can offer your users, and it's a good fit for your mobile website, these could offer a simple, user friendly, low development benefit.
 
 
-### Input Fields
+### Input fields
 
 While URI schemes allow users to take actions from a website, input fields allow users to provide information to a website.
 
@@ -721,7 +737,7 @@ Input elements are one of the most powerful and complex features in HTML.  Input
 71.48% of mobile pages tested contained inputs.  This is slightly higher than the 71.14% of desktop.
 
 
-#### Type Declarations
+#### Type declarations
 
 We can track occurrences of interactive controls created by input by looking for the "type" attribute.  The type attribute is the most important because it controls how the input element works. The type input value was declared on 70.92% of tested sites.
 
@@ -734,14 +750,14 @@ If the type attribute is not present the input defaults to text, a single line t
 The declared text value combined with the fallback value indicates that 99.65% of sites using input elements capture a text value.
 
 
-#### Advanced Input Types
+#### Advanced input types
 
 Of pages with at least one input, 44.8% of them use one or more "advanced input types".  Advanced input types include color, date, datetime-local, email, month, number, range, reset, search, tel, time, url, week, datalist.
 
 
 ##### Telephone
 
-Similarly, 5.40% of pages asked users for their telephone number.  For mobile users, navigating from the alpha to numeric keyboard is a high friction point.  62.60% of pages soliciting a telephone number used an input field missing the type=tel value.
+5.40% of pages asked users for their telephone number.  For mobile users, navigating from the alpha to numeric keyboard is a high friction point.  62.60% of pages soliciting a telephone number used an input field missing the type=tel value.
 
 
 ##### Email
@@ -768,16 +784,16 @@ Business value appears to impact input type adoption.  Ecommerce sites have a ve
 
 #### Autocomplete
 
-The [autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) attribute allows some control over how forms and inputs work with browsers autofill features. There are a number of options, from disabling it entirely, to providing hints as to what to autofill, like a name, or street address.
+The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">autocomplete</a> attribute allows some control over how forms and inputs work with browsers autofill features. There are a number of options, from disabling it entirely, to providing hints as to what to autofill, like a name, or street address.
 
-Inputting text and data on mobile devices is a generally more tedious process than on a device with a full keyboard, so autofill becomes an even more useful and time saving feature than for desktop users.  Google discovered a 25% increase in form submission when autofill is used. (source: [Keynote by Darin Fisher, VP of Chrome (Chrome Dev Summit 2015) video on YouTube](https://www.youtube.com/watch?v=m2a9hlUFRhg&t=1433s))
+Inputting text and data on mobile devices is a generally more tedious process than on a device with a full keyboard, so autofill becomes an even more useful and time saving feature than for desktop users. <a hreflang="en" href="https://www.youtube.com/watch?v=m2a9hlUFRhg&t=1433s">Google discovered</a> a 25% increase in form submission when autofill is used.
 
 For mobile page loads, **24.8%** of pages utilized the autocomplete attribute, lower than the **27%** of desktop page loads.
 
-As the http archive data captures only homepages, usage could be much higher in checkout, contact and other places that are likely to require inputs, but it is perhaps disappointing to see lower usage on mobile experiences, where arguably it is the most useful.
+As the HTTP Archive data captures only homepages, usage could be much higher in checkout, contact and other places that are likely to require inputs, but it is perhaps disappointing to see lower usage on mobile experiences, where arguably it is the most useful.
 
 
-### Input field Conclusions
+### Input field conclusions
 
 Input type declarations are critical in reducing friction.  If an input element is marked up using the appropriate type, input elements can prompt different keyboards to improve the experience.  The boon to user experience makes the low-lift adoption of input types a meaningful investment.
 
@@ -786,14 +802,13 @@ The low rates of adoption for input types like telephone and email are surprisin
 
 ### Accessibility on the mobile web
 
-The pandemic forced humans around the world to isolate themselves from friends, family, and community.  The number of persons facing disabilities also increased due to [post-COVID conditions](https://www.hhs.gov/civil-rights/for-providers/civil-rights-covid19/guidance-long-covid-disability/index.html#footnote10_0ac8mdc). This shift forced digital spaces to the new default as in-person services, commerce, and communication were disrupted.
+The pandemic forced humans around the world to isolate themselves from friends, family, and community.  The number of persons facing disabilities also increased due to <a hreflang="en" href="https://www.hhs.gov/civil-rights/for-providers/civil-rights-covid19/guidance-long-covid-disability/index.html#footnote10_0ac8mdc">post-COVID conditions</a>. This shift forced digital spaces to the new default as in-person services, commerce, and communication were disrupted.
 
 The goal of accessibility is to create web experiences which provide feature and information parity to all users.  Users on the mobile benefit from accessibility as accessibility practices make information available to people using slow internet connections, or who have limited or expensive data plans.
 
+#### ARIA roles
 
-#### ARIA Roles
-
-Accessible Rich Internet Applications (ARIA) is a set of attributes that supplement HTML so that commonly used interactions and widgets can be passed to assistive technologies.  These attributes are also [useful to search engines in understanding  page content](https://webaim.org/blog/web-accessibility-and-seo/).
+Accessible Rich Internet Applications (ARIA) is a set of attributes that supplement HTML so that commonly used interactions and widgets can be passed to assistive technologies.  These attributes are also <a hreflang="en" href="https://webaim.org/blog/web-accessibility-and-seo/">useful to search engines in understanding  page content</a>.
 
 When a site is accessed using assistive technology, an element's ARIA role communicates information about how the user can interact.
 
@@ -809,13 +824,14 @@ The most prevalent ARIA role in 2021 was `button` which appeared on 29% of sites
    )
 }}
 
+{# TODO (Authors/Editors) figure description does not describe the data #}
 
 While over 71% of mobile sites have interactive-controls for web based forms, the most commonly adopted ARIA attribute, aria-label, only appeared on 11.23% of tested sites. This accessibility-focused attribute is used to label input with a text string.
 
 
-#### Color Contrast
+#### Color contrast
 
-A lack of color contrast impacts users with color blindness as well as low color sensitivity, a condition common in older people.  Sufficient color contrast allows for equal access to content and a positive impact to business goals.  In a case study by Google, ecommerce site Eastpak saw a [20% increase in click thru rate](https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/)  when call-to-action buttons used sufficient contrast between text color and its background.
+A lack of color contrast impacts users with color blindness as well as low color sensitivity, a condition common in older people.  Sufficient color contrast allows for equal access to content and a positive impact to business goals.  In a case study by Google, ecommerce site Eastpak saw a <a hreflang="en" href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/">20% increase in click thru rate</a>  when call-to-action buttons used sufficient contrast between text color and its background.
 
 Despite the potential for increased conversion, 77.8% of sites failed lighthouse audits for use of sufficient color contrast.  This is a slight improvement year over year.
 
@@ -829,9 +845,10 @@ Despite the potential for increased conversion, 77.8% of sites failed lighthouse
   )
 }}
 
+{# TODO (Authors/Editors) figure description does not describe the data #}
 
 
-#### Tap Targets
+#### Tap targets
 
 Tap targets are elements that respond to user input.  These include links, buttons, form fields, and many others.
 
@@ -840,13 +857,13 @@ In order for effective user interactions, tap targets need to be both appropriat
 Overall, 39.3% of sites tested used sufficiently sized mobile tap targets.  Tap target adoption was consistent across domain rank groupings.  This is a slight increase from 2020, which saw 36.31% of tap targets properly sized.
 
 
-#### Zoom and Scaling
+#### Zoom and scaling
 
 The Viewport meta element is important to inform a browser how to lay out the page on a users device. It's also possible to configure this by adding the user-scalable="no" or a small maximum-scale: parameter to prevent totally, or limit the ability for users to zoom in on the content. On mobile devices, this is commonly pinch zooming.
 
-Preventing the ability to zoom in is an issue for low vision users, and is [something that would fail](https://dequeuniversity.com/rules/axe/3.3/meta-viewport) the WCAG 2.0 guidance.
+Preventing the ability to zoom in is an issue for low vision users, and is <a hreflang="en" href="https://dequeuniversity.com/rules/axe/3.3/meta-viewport">something that would fail</a> the WCAG 2.0 guidance.
 
-Disappointingly, **29.4%** of mobile page loads  fail this requirement, and contained a viewport that prevented zooming, this is a slight improvement over the **30.7%** (source: [2020 Web Almanac Accessibility Chapter](https://almanac.httparchive.org/en/2020/accessibility#zooming-and-scaling))
+Disappointingly, **29.4%** of mobile page loads  fail this requirement, and contained a viewport that prevented zooming, this is a slight improvement over the **30.7%** (source: [2020 Web Almanac Accessibility Chapter](../en/2020/accessibility#zooming-and-scaling))
 
 Things look even worse when looking at the usage by domain ranking.
 
@@ -860,13 +877,15 @@ Things look even worse when looking at the usage by domain ranking.
    )
 }}
 
+{# TODO (Authors/Editors) figure description does not describe the data #}
+
 The more popular sites are more likely to fail this, meaning that overall, more users are reaching mobile sites that are not compliant.
 
 #### Accessibility conclusions
 
 When the web is accessible, more people can perceive, understand, navigate, interact with, and contribute to the web.  Equal and inclusive access must be prioritized in order to keep pace with the growth and necessity of web access.
 
-The areas we've covered here are a small part of accessibility, ARIA. zooming and colour contrasts are bare minimum requirements. A study from W3C's Web Accessibility Initiative (source: [The Business Case for Digital Accessibility](https://www.w3.org/WAI/business-case/#increase-market-reach)) show that 15% of the world's population, that's 1 billion plus people have a recognized disability, far more may go unregistered, or will develop a disability at some point in their lives that may affect their ability to access your sites. Accessibility isn't for a tiny minority.
+The areas we've covered here are a small part of accessibility. ARIA, zooming, and color contrasts are bare minimum requirements. <a hreflang="en" href="https://www.w3.org/WAI/business-case/#increase-market-reach">A study from W3C's Web Accessibility Initiative</a> show that 15% of the world's population (over 1 billion people) have a recognized disability. Far more may go unregistered, or will develop a disability at some point in their lives that may affect their ability to access your sites. Accessibility isn't for a tiny minority.
 
 The poor adoption of good accessibility practice creates a technical barrier to these users that should disturb us as humans, aside from the clear commercial opportunity of properly catering for this sizable group of potential users.
 
@@ -874,15 +893,15 @@ In many jurisdictions, accessibility is not just good practice.
 
 
 <figure>
-<blockquote>Last year [lawsuits related to the Americans with Disabilities Act were up 20%](https://info.usablenet.com/2020-report-on-digital-accessibility-lawsuits).</blockquote>
+  <blockquote>Last year <a hreflang="en" href="https://info.usablenet.com/2020-report-on-digital-accessibility-lawsuits">lawsuits related to the Americans with Disabilities Act were up 20%</a>.</blockquote>
 <figcaption>— Web Almanac <cite><a hreflang="en" href="https://almanac.httparchive.org/en/2021/accessibility">2021 Accessibility Chapter</a></cite></figcaption>
 </figure>
 
 
-To learn more about accessibility on the mobile web, vist the [Accessibility chapter](https://almanac.httparchive.org/en/2021/accessibility).
+To learn more about accessibility on the mobile web, vist the [Accessibility chapter](../en/2021/accessibility).
 
 
-## Mobile Search Engine Optimisation (SEO)
+## Mobile Search Engine Optimization (SEO)
 
 For any website, acquisition is a critical step, the best optimised mobile website is no different to the worse if no one finds and visits it.
 
@@ -893,50 +912,50 @@ With search engines being the primary source of acquisition for many sites, and 
 There are some mobile specific areas and concerns in SEO.
 
 
-### Mobile-First Index
+### Mobile-First index
 
-Google recognizes that the predominant method of accessing the web is now mobile, and now index websites predominately with a [mobile user-agent](https://developers.google.com/search/mobile-sites/mobile-first-indexing). Since July 2019, all new sites have been indexed this way, and most existing sites have now transitioned to mobile-first indexing too.
+Google recognizes that the predominant method of accessing the web is now mobile, and now index websites predominately with a <a hreflang="en" href="https://developers.google.com/search/mobile-sites/mobile-first-indexing">mobile user-agent</a>. Since July 2019, all new sites have been indexed this way, and most existing sites have now transitioned to mobile-first indexing too.
 
 This means that if you have content or markup that's only served to desktop devices, google will no longer index that part.
 
 
 ### Mobile-Friendliness
 
-Both [Google](https://developers.google.com/search/blog/2015/04/rolling-out-mobile-friendly-update)and [Bing](https://blogs.bing.com/webmaster/2015/11/12/mobile-friendly-test), amongst other search engines, use some concept of mobile friendliness  as a direct ranking signal. This mostly comprises testing to make sure that the content fits in the viewport, text is legible and tap targets are of a reasonable size.
+Both <a hreflang="en" href="https://developers.google.com/search/blog/2015/04/rolling-out-mobile-friendly-update">Google</a> and <a hreflang="en" href="https://blogs.bing.com/webmaster/2015/11/12/mobile-friendly-test">Bing</a>, among other search engines, use some concept of mobile friendliness  as a direct ranking signal. This mostly comprises testing to make sure that the content fits in the viewport, text is legible and tap targets are of a reasonable size.
 
-Google offers a [mobile-friendly test](https://search.google.com/test/mobile-friendly), as does [Bing](https://www.bing.com/webmaster/tools/mobile-friendliness) to help diagnose if your pages are passing.
+Google offers a <a hreflang="en" href="https://search.google.com/test/mobile-friendly">mobile-friendly test</a>, as does <a hreflang="en" href="https://www.bing.com/webmaster/tools/mobile-friendliness">Bing</a> to help diagnose if your pages are passing.
 
-The recommended way of achieving this is using responsive web design, web.dev have a [great learning resource here](https://web.dev/learn/design/)
+The recommended way of achieving this is using responsive web design, web.dev have a <a hreflang="en" href="https://web.dev/learn/design/">great learning resource</a>.
 
 
 ### Core Web Vitals & Page Experience
 
-On July 15th 2021, Google announced that they were rolling out the [Page Experience Ranking Update](https://developers.google.com/search/blog/2021/04/more-details-page-experience). This comprises a few different signals, including mobile-friendliness, with the major new additions being the [Core Web Vitals metrics](https://web.dev/vitals/).
+On July 15th 2021, Google announced that they were rolling out the <a hreflang="en" href="https://developers.google.com/search/blog/2021/04/more-details-page-experience">Page Experience Ranking Update</a>. This comprises a few different signals, including mobile-friendliness, with the major new additions being the <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals metrics</a>.
 
-Of particular interest to the mobile web is that the core web vitals part is[mobile specific](https://support.google.com/webmasters/thread/104436075/core-web-vitals-page-experience-faqs-updated-march-2021), these metrics only play a part in the mobile results so far, although a roll out to desktop is planned in [February 2022](https://developers.google.com/search/blog/2021/11/bringing-page-experience-to-desktop).
+Of particular interest to the mobile web is that the core web vitals part is <a hreflang="en" href="https://support.google.com/webmasters/thread/104436075/core-web-vitals-page-experience-faqs-updated-march-2021">mobile specific</a>, these metrics only play a part in the mobile results so far, although a roll out to desktop is planned in <a hreflang="en" href="https://developers.google.com/search/blog/2021/11/bringing-page-experience-to-desktop">February 2022</a>.
 
-You can learn more about the role of mobile-friendliness and the core web vitals in SEO over in the [SEO Chapter](https://almanac.httparchive.org/en/2020/seo#mobile-friendliness).
+You can learn more about the role of mobile-friendliness and the core web vitals in SEO over in the [SEO Chapter](../en/2020/seo#mobile-friendliness).
 
 
-## Mobile Performance
+## Mobile performance
 
 A mobile device is likely to be lower powered, and on a slower and less reliable network connection than desktop devices. Given these circumstances, performance can be a bigger challenge and a bigger priority.
 
 
-### Loading Performance
+### Loading performance
 
 Grabbing the attention of your newly acquired user, or keeping the attention of a returning user begins with making sure they see the important content of the site quickly.
 
 
-#### Largest Contentful Paint
+#### Largest contentful paint
 
-[Largest contentful paint](https://web.dev/lcp/) (LCP) is a metric designed to capture this experience (and is one of the core web vitals). It's a measure of when the largest element in the viewport is rendered, it's limited to &lt;img>, &lt;image> inside an &lt;svg>, &lt;video> (if the poster is set), a block element with a background image, or a text block.
+<a hreflang="en" href="https://web.dev/lcp/">Largest contentful paint</a> (LCP) is a metric designed to capture this experience (and is one of the core web vitals). It's a measure of when the largest element in the viewport is rendered, it's limited to &lt;img>, &lt;image> inside an &lt;svg>, &lt;video> (if the poster is set), a block element with a background image, or a text block.
 
 A LCP of 2.5 seconds or less is considered a good score.
 
 {{ figure_markup(
   image="mobile-web-largest-contentful-paint.png",
-  caption='LCP performance by device. data from the [Performance Chapter](/en/2021/performance)',
+  caption='LCP performance by device. data from the [Performance Chapter](../en/2021/performance)',
   description="Chart showing mobile and desktop page loads reaching the LCP thresholds.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=875306231&format=interactive",
   sheets_gid="1682201087",
@@ -944,11 +963,13 @@ A LCP of 2.5 seconds or less is considered a good score.
   )
 }}
 
+{# TODO (Authors/Editors) figure description does not describe the data #}
+
 The data shows that just 45% of mobile page loads recorded in the CrUX dataset are meeting the 2.5 second or under target, far lower than the 60% desktop achieves.
 
-It does represent an small improvement from 2020, where only [43% of mobile page loads](https://almanac.httparchive.org/en/2020/performance#lcp-by-device) met the 2.5 second or under threshold.
+It does represent an small improvement from 2020, where only [43% of mobile page loads](../en/2020/performance#lcp-by-device) met the 2.5 second or under threshold.
 
-There are clearly bigger challenges to achieving good LCP scores for the mobile demographic, but one worth chasing. A recent [study from Vodafone](https://web.dev/vodafone/)showed that a reduction of just **8%** in LCP times lead to increased conversions of **31%**. Performance can have a direct effect on revenue.
+There are clearly bigger challenges to achieving good LCP scores for the mobile demographic, but one worth chasing. A recent <a hreflang="en" href="https://web.dev/vodafone/">study from Vodafone</a> showed that a reduction of just **8%** in LCP times lead to increased conversions of **31%**. Performance can have a direct effect on revenue.
 
 
 ### Images
@@ -974,7 +995,7 @@ This is sadly a step back from 58.8% in 2020. That's 43.4% of mobile users getti
 
 #### Responsive Images
 
-Images can be [served responsively](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)too, the srcset attribute, and the &lt;picture> element allow appropriately sized, and appropriately formatted images to be specified, allowing the browser to download the one that best matches the screen and device.
+Images can be <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images">served responsively</a> too, the `srcset` attribute, and the `<picture>` element allow appropriately sized, and appropriately formatted images to be specified, allowing the browser to download the one that best matches the screen and device.
 
 {{ figure_markup(
    image="mobile-web-responsive-images.png",
@@ -986,14 +1007,16 @@ Images can be [served responsively](https://developer.mozilla.org/en-US/docs/Lea
    )
 }}
 
+{# TODO (Authors/Editors) figure description does not describe the data #}
+
 Just **6.2%** of mobile page loads that included images used the `<picture>` element, slightly lower than desktop.
 
 A more healthy **32%** of mobile page loads including images use the `srcset` attribute. It is worth mentioning here that this attribute can be used in both the `<picture>` element and the `<img>` element, so there's likely to be some crossover here.
 
 
-#### Lazy Loading
+#### Lazy loading
 
-Deferring, or lazy loading,  images that aren't in the initial viewport is a good strategy to help resources be focused on loading things that are visible. The native lazy-load attribute, supported in Chrome, Opera, and from September 2021 Firefox for Android (source: [caniuse.com](https://caniuse.com/loading-lazy-attr)) allows this to happen without JavaScript work-arounds.
+Deferring, or lazy loading,  images that aren't in the initial viewport is a good strategy to help resources be focused on loading things that are visible. The native lazy-load attribute, supported in Chrome, Opera, and from September 2021 Firefox for Android (source: <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">caniuse.com</a>) allows this to happen without JavaScript work-arounds.
 
 {{ figure_markup(
   caption='Mobile page loads that contained images used loading="lazy"',
@@ -1008,7 +1031,7 @@ Deferring, or lazy loading,  images that aren't in the initial viewport is a goo
 This is a big jump up from just 4.1% in 2020.
 
 
-Looking at the http archive's [Native Image Lazy Loading Report](https://httparchive.org/reports/state-of-images#imgLazy), uptake of using the attribute on the `<img>` tag specifically shows the same, impressive growth.
+Looking at the HTTP Archive's <a hreflang="en" href="https://httparchive.org/reports/state-of-images#imgLazy">Native Image Lazy Loading Report</a>, uptake of using the attribute on the `<img>` tag specifically shows the same, impressive growth.
 
 {{ figure_markup(
    image="mobile-web-native-lazy-loading-over-time.png",
@@ -1019,27 +1042,29 @@ Looking at the http archive's [Native Image Lazy Loading Report](https://httparc
    )
 }}
 
+{# TODO (Authors/Editors) figure description does not describe the data #}
+
 #### Image conclusions
 
-It's disappointing to see that more mobile page loads this year had images that were not correctly sized. &lt;picture> uptake remains low too, perhaps based on the complexity compared to the &lt;img> element.
+It's disappointing to see that more mobile page loads this year had images that were not correctly sized. `<picture>` uptake remains low too, perhaps based on the complexity compared to the `<img>` element.
 
 But great strides have been made in adoption of the loading="lazy" attribute, a huge jump in just one year.
 
 Images remain a vital part of the web, and that doesn't change for mobile users. If your site doesn't take advantage of some of the available approaches to serve mobile appropriate images, it's time to investigate this.
 
 
-### Layout Stability
+### Layout stability
 
 With a generally smaller form factor, and limited screen real estate, unexpected shifting content can be particularly jarring on mobile devices.
 
 Reading an article only to have the paragraph you are on jump down the screen as an ad loads in above, or shift around as a font loads in and changes before your eyes is an uncomfortable and negative experience.
 
 
-#### Cumulative Layout Shift
+#### Cumulative layout shift
 
-One of the Core Web Vitals, [Cumulative Layout Shift](https://web.dev/cls/) is a metric designed to capture the impact of this kind of shifting of elements.
+One of the Core Web Vitals, <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLS) is a metric designed to capture the impact of this kind of shifting of elements.
 
-The metric is a calculation of impact fraction * distance fraction. The impact fraction is how much of the area of the screen is shifted, the distance fraction is how much of the screen it moved by.
+The metric is a calculation of impact fraction multiplied by distance fraction. The impact fraction is how much of the area of the screen is shifted, the distance fraction is how much of the screen it moved by.
 
 A CLS score of **0.1** or under is considered good, under 0.25 considered indeed of improvement, and over that it's considered a poor experience
 
@@ -1084,11 +1109,13 @@ The CrUX dataset shows that 62% of mobile page loads had a CLS of **0.1** or und
   )
 }}
 
+{# TODO (Authors/Editors) figure description does not describe the data #}
 
-This is a big step over the 43% achieved last year, but direct comparison is hard, as the metric changed on the [1st of June 2021](https://web.dev/evolving-cls/)to better capture the experience on long-lived pages, so some of this jump could be attributable to this.
+
+This is a big step over the 43% achieved last year, but direct comparison is hard, as the metric changed on the <a hreflang="en" href="https://web.dev/evolving-cls/">1st of June 2021</a>to better capture the experience on long-lived pages, so some of this jump could be attributable to this.
 
 
-### Response to User Interaction
+### Response to user interaction
 
 When a user interacts with a site, long delays from clicking on something, to something actually happening make a website or app feel sluggish and slow. This lag between input and the action happening is often down to heavy JavaScript processes blocking the main thread, leaving the browser unable to process the command the user issued until it had completed those processes.
 
@@ -1097,9 +1124,9 @@ Mobile devices are generally much lower powered than desktop and laptops, so the
 
 #### First Input Delay
 
-[First input delay](https://web.dev/fid/) (FID) is the third Core Web Vital metric designed to capture this. It measures the time between the first interaction (a tap or a click on an element) until the browser can start processing that it has happened. It doesn't measure how long the process that tap may have triggered takes.
+<a hreflang="en" href="https://web.dev/fid/">First input delay</a> (FID) is the third Core Web Vital metric designed to capture this. It measures the time between the first interaction (a tap or a click on an element) until the browser can start processing that it has happened. It doesn't measure how long the process that tap may have triggered takes.
 
-A good FID score is  **100ms** or under, a poor FID score is over **300ms**.
+A good FID score is  **100 ms** or under, a poor FID score is over **300 ms**.
 
 {{ figure_markup(
   image="mobile-web-first-input-delay.png",
@@ -1111,32 +1138,34 @@ A good FID score is  **100ms** or under, a poor FID score is over **300ms**.
   )
 }}
 
+{# TODO (Authors/Editors) figure description does not describe the data #}
+
 Encouragingly, **90%** of mobile page loads in the CrUX dataset had a good FID score, up from **80%** from 2020.
 
-Efforts are being made to better capture responsiveness, with the Chrome Speed Metrics team [sharing some plans and inviting feedback](https://web.dev/responsiveness/) on a new responsiveness metric.
+Efforts are being made to better capture responsiveness, with the Chrome Speed Metrics team <a hreflang="en" href="https://web.dev/responsiveness/">sharing some plans and inviting feedback]</a> on a new responsiveness metric.
 
-If you are looking to learn more about Core Web Vitals in general, the  [performance chapter](https://almanac.httparchive.org/en/2021/performance) has plenty of details about the core web vitals.
+If you are looking to learn more about Core Web Vitals in general, the  [performance chapter](../en/2021/performance) has plenty of details about the core web vitals.
 
 
-### Service Workers
+### Service workers
 
-[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) whilst not only applying to mobile devices do become uniquely useful in their ability to add offline capabilities, and better control of loading from caches  to web apps, both features which are often more relevant to mobile users, who are more likely to encounter poor or total loss of connectivity.
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API">Service workers</a> while not only applying to mobile devices do become uniquely useful in their ability to add offline capabilities, and better control of loading from caches  to web apps, both features which are often more relevant to mobile users, who are more likely to encounter poor or total loss of connectivity.
 
 **14.8%** of sites register a service worker, a sizeable uptake since 2020's **0.87%**
 
-To learn more about service workers and PWA (progressive web apps), vist the [PWA chapter](https://almanac.httparchive.org/en/2020/pwa).
+To learn more about service workers and PWA (progressive web apps), vist the [PWA chapter](../en/2020/pwa).
 
 
-### Mobile Performance Conclusions
+### Mobile performance conclusions
 
 Overall, performance has taken a step forward over 2020, with a particularly strong improvement in layout stability.
 
 There are some good, positive signs too in impressive usage growth in loading="lazy" and the uptake of service workers. The fact developers are embracing these is a positive sign that performance is being taken seriously.
 
-It does however seem that improving  Large Contentful Paint, and handing images are areas developers are struggling with more than other areas. Hopefully tooling  and libraries like [next/image](https://nextjs.org/docs/api-reference/next/image) for the nextjs framework, and  adoption by popular CMSs like WordPress will help developers overcome these pain points.
+It does however seem that improving  Large Contentful Paint, and handing images are areas developers are struggling with more than other areas. Hopefully tooling  and libraries like <a hreflang="en" href="https://nextjs.org/docs/api-reference/next/image">next/image</a> for the nextjs framework, and  adoption by popular CMSs like WordPress will help developers overcome these pain points.
 
 
-## Mobile Web Conclusions
+## Mobile web conclusions
 
 In 2021, the perception of a distinct "mobile web" is outdated.
 
