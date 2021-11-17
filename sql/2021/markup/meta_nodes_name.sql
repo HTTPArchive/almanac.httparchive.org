@@ -8,7 +8,7 @@ try {
   var $ = JSON.parse(payload);
   var almanac = JSON.parse($._almanac);
   return almanac['meta-nodes'].nodes.map(n => n.name || n.property);
-} catch (e) {  
+} catch (e) {
   return [];
 }
 ''' ;
@@ -27,6 +27,7 @@ GROUP BY
 HAVING
   freq > 1
 ORDER BY
+  pct DESC,
   client,
-  freq DESC
-LIMIT 100
+  name
+LIMIT 200
