@@ -250,6 +250,16 @@
       "github": "AlexLakatos",
       "twitter": "avolakatos"
     },
+    "alextait1": {
+      "name": "Alex Tait",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/24625637?v=4&s=200",
+      "website": "https://togethertech.ca/",
+      "github": "alextait1",
+      "twitter": "at_fresh_dev"
+    },
     "alonko": {
       "name": "Alon Kochba",
       "teams": [
@@ -307,6 +317,16 @@
       "github": "andydavies",
       "twitter": "AndyDavies"
     },
+    "denar90": {
+      "name": "Artem Denysov",
+      "teams": [
+        "authors",
+        "analysts"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/6231516?v=4&s=200",
+      "github": "denar90",
+      "twitter": "denar90_"
+    },
     "ashleyish": {
       "name": "Ashley Berman Hale",
       "teams": [
@@ -350,6 +370,14 @@
       "github": "cqueern",
       "twitter": "httpsecheaders"
     },
+    "cdixon83": {
+      "name": "Carlie Dixon",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/76669481?v=4&s=200",
+      "github": "cdixon83"
+    },
     "carlopi": {
       "name": "Carlo Piovesan",
       "teams": [
@@ -358,6 +386,15 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/842657?v=4&s=200",
       "github": "carlopi",
       "twitter": "carlop54002226"
+    },
+    "clottman": {
+      "name": "Cassey Lottman",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4480480?v=4&s=200",
+      "website": "https://cassey.dev/",
+      "github": "clottman"
     },
     "chrissater": {
       "name": "Chris Sater",
@@ -453,6 +490,16 @@
       "github": "meyerweb",
       "website": "http://meyerweb.com/"
     },
+    "ericwbailey": {
+      "name": "Eric Bailey",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/634191?v=4&s=200",
+      "website": "https://ericwbailey.design/",
+      "github": "ericwbailey",
+      "twitter": "ericwbailey"
+    },
     "eeeps": {
       "name": "Eric Portis",
       "teams": [
@@ -473,8 +520,16 @@
       "github": "estelle",
       "twitter": "estellevw"
     },
+    "eustas": {
+      "name": "Eugene Kliuchnikov",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/203457?v=4&s=200",
+      "github": "eustas"
+    },
     "fili": {
-      "name": "Fili",
+      "name": "Fili Wiese",
       "teams": [
         "reviewers"
       ],
@@ -484,6 +539,13 @@
       "linkedin": "filiwiese",
       "twitter": "filiwiese"
     },
+    "gwilhelm": {
+      "name": "Gary Wilhelm",
+      "teams": [
+        "authors"
+      ],
+      "github": "gwilhelm"
+    },
     "gjfr": {
       "name": "Gertjan Franken",
       "teams": [
@@ -492,6 +554,13 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/5749508?v=4&s=200",
       "github": "gjfr",
       "twitter": "GJFR_"
+    },
+    "GigiRajani": {
+      "name": "Gigi Rajani",
+      "teams": [
+        "reviewers"
+      ],
+      "github": "GigiRajani"
     },
     "GregBrimble": {
       "name": "Greg Brimble",
@@ -634,6 +703,15 @@
       "linkedin": "yangzhe",
       "twitter": "Jules_Yang"
     },
+    "jyrkialakuijala": {
+      "name": "Jyrki Alakuijala",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/9086028?v=4&s=200",
+      "github": "jyrkialakuijala",
+      "twitter": "jyzg"
+    },
     "Schweinepriester": {
       "name": "Kai Schweinepriester",
       "teams": [
@@ -654,6 +732,14 @@
       "github": "kevinfarrugia",
       "twitter": "imkevdev"
     },
+    "kachiden": {
+      "name": "Katriel Paige",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/54685625?v=4&s=200",
+      "github": "kachiden"
+    },
     "vdwijngaert": {
       "name": "Koen Van den Wijngaert",
       "teams": [
@@ -673,6 +759,23 @@
       "website": "https://lea.verou.me/",
       "github": "LeaVerou",
       "twitter": "leaverou"
+    },
+    "Zizzamia": {
+      "name": "Leonardo Zizzamia",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/829214?v=4&s=200",
+      "website": "https://twitter.com/zizzamia",
+      "github": "Zizzamia",
+      "twitter": "Zizzamia"
+    },
+    "lvandeve": {
+      "name": "Lode Vandevenne",
+      "teams": [
+        "authors"
+      ],
+      "github": "lvandeve"
     },
     "lucasbona05": {
       "name": "Lucas Gonçalves",
@@ -733,6 +836,14 @@
       "github": "mgechev",
       "twitter": "mgechev"
     },
+    "mo271": {
+      "name": "Moritz Firsching",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/3491627?v=4&s=200",
+      "github": "mo271"
+    },
     "Navaneeth-akam": {
       "name": "Navaneeth",
       "teams": [
@@ -780,6 +891,16 @@
       "website": "https://internet-sicherheit.de",
       "github": "nrllh",
       "twitter": "nrllah"
+    },
+    "oluoluoxenfree": {
+      "name": "Olu Niyi-Awosusi",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/3077443?v=4&s=200",
+      "website": "https://olu.online/",
+      "github": "oluoluoxenfree",
+      "twitter": "oluoluoxenfree"
     },
     "pankajparkar": {
       "name": "Pankaj Parkar",
@@ -841,6 +962,13 @@
       "website": "https://blogs.pjjk.net/phil/",
       "github": "philbarker",
       "twitter": "philbarker"
+    },
+    "fischbacher": {
+      "name": "Thomas Fischbacher",
+      "teams": [
+        "reviewers"
+      ],
+      "github": "fischbacher"
     },
     "RMHolmlund": {
       "name": "RMHolmlund",
@@ -917,11 +1045,20 @@
       "github": "saptaks",
       "twitter": "Saptak013"
     },
+    "scottdavis99": {
+      "name": "Scott Davis",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/15577?v=4&s=200",
+      "github": "scottdavis99"
+    },
     "shantsis": {
       "name": "Shaina Hantsis",
       "teams": [
         "designers",
-        "editors"
+        "editors",
+        "reviewers"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/22671477?v=4&s=200",
       "github": "shantsis"

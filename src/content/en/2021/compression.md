@@ -2,9 +2,9 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Compression
 description: TODO
-authors: []
-reviewers: []
-analysts: []
+authors: [lvandeve, mo271, jyrkialakuijala]
+reviewers: [fischbacher, eustas]
+analysts: [paulcalvano]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1-FQlNvtBw9ai8cBF7wEich_AcXnrNkNGW7dMYvHFl2w/
