@@ -15,7 +15,7 @@ try {
 
 SELECT
   _TABLE_SUFFIX AS client,
-  name,
+  IF(IFNULL(TRIM(name), '') = '', '(not set)', name) AS name,
   COUNT(0) AS freq,
   COUNT(0) / SUM(COUNT(0)) OVER () AS pct
 FROM

@@ -20,8 +20,12 @@ return '';
 
 SELECT
   client,
-  IFNULL(almanac_html_lang, '(not set)') AS html_lang_country,
-  IFNULL(SUBSTR(almanac_html_lang, 0, LENGTH(almanac_html_lang) - STRPOS(almanac_html_lang, '-')), '(not set)') AS html_lang,
+  IF(IFNULL(TRIM(almanac_html_lang), '') = '', '(not set)', almanac_html_lang) AS html_lang_country,
+  IF(
+    IFNULL(TRIM(SUBSTR(almanac_html_lang, 0, LENGTH(almanac_html_lang) - STRPOS(almanac_html_lang, '-'))), '') = '',
+    '(not set)',
+    SUBSTR(almanac_html_lang, 0, LENGTH(almanac_html_lang) - STRPOS(almanac_html_lang, '-'))
+  ) AS html_lang,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
