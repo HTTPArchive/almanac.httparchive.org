@@ -22,6 +22,7 @@ SELECT
   _TABLE_SUFFIX AS client,
   almanac_attribute_info.name,
   SUM(almanac_attribute_info.freq) AS freq, # total count from all pages
+  SUM(SUM(almanac_attribute_info.freq)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
   SUM(almanac_attribute_info.freq) / SUM(SUM(almanac_attribute_info.freq)) OVER (PARTITION BY _TABLE_SUFFIX) AS pct_ratio
 FROM
   `httparchive.pages.2021_07_01_*`,
@@ -30,6 +31,7 @@ GROUP BY
   client,
   almanac_attribute_info.name
 ORDER BY
+  pct_ratio DESC,
   client,
   freq DESC
 LIMIT 1000
