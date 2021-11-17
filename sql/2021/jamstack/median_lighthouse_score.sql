@@ -27,6 +27,6 @@ JOIN (
 USING
   (url)
 GROUP BY
-  SSG
+  ssg
 ORDER BY
   freq DESC
