@@ -295,24 +295,24 @@ Whatever you may think of pixel lengths, it's still the most popular length unit
   sql_file="units_frequency.sql"
 ) }}
 
-Where things become interesting is in the breakdown of exactly how the various length units are used.  To pick one example, the most common length unit used on `line-height` is pixels, followed by `<number>` values (which includes all instances of unitless zero length values).  Ems are the most popular length unit for `vertical-align` and `padding-inline-start`.
+Where things become interesting is in the breakdown of exactly how the various length units are used.  To pick one example, the most common length unit used on `line-height` is pixels, followed by `<number>` values (which includes all instances of unitless zero length values).  `Em`s are the most popular length unit for `vertical-align` and `padding-inline-start`.
 
 <figure>
   <table>
     <thead>
       <tr>
         <th>Property</th>
-        <th>px</th>
-        <th>&lt;number&gt;</th>
-        <th>em</th>
-        <th>%</th>
-        <th>rem</th>
-        <th>pt</th>
+        <th>`px`</th>
+        <th>`<number>`</th>
+        <th>`em`</th>
+        <th>`%`</th>
+        <th>`rem`</th>
+        <th>`pt`</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>font-size</td>
+        <td>`font-size`</td>
         <td class="numeric"><span class="numeric-bad">(▼1%)</span> 69%</td>
         <td class="numeric">2%</td>
         <td class="numeric"><span class="numeric-bad">(▼1%)</span> 16%</td>
@@ -321,7 +321,7 @@ Where things become interesting is in the breakdown of exactly how the various l
         <td class="numeric">2%</td>
       </tr>
       <tr>
-        <td>line-height</td>
+        <td>`line-height`</td>
         <td class="numeric"><span class="numeric-bad">(▼5%)</span> 49%</td>
         <td class="numeric"><span class="numeric-good">(▲3%)</span> 34%</td>
         <td class="numeric"><span class="numeric-good">(▲1%)</span> 14%</td>
@@ -330,7 +330,7 @@ Where things become interesting is in the breakdown of exactly how the various l
         <td class="numeric">0%</td>
       </tr>
       <tr>
-        <td>border-radius</td>
+        <td>`border-radius`</td>
         <td class="numeric">65%</td>
         <td class="numeric"><span class="numeric-bad">(▼1%)</span> 20%</td>
         <td class="numeric">3%</td>
@@ -339,7 +339,7 @@ Where things become interesting is in the breakdown of exactly how the various l
         <td class="numeric">0%</td>
       </tr>
       <tr>
-        <td>border</td>
+        <td>`border`</td>
         <td class="numeric">71%</td>
         <td class="numeric"><span class="numeric-good">(▲1%)</span> 28%</td>
         <td class="numeric">2%</td>
@@ -348,7 +348,7 @@ Where things become interesting is in the breakdown of exactly how the various l
         <td class="numeric">0%</td>
       </tr>
       <tr>
-        <td>text-indent</td>
+        <td>`text-indent`</td>
         <td class="numeric"><span class="numeric-bad">(▼1%)</span> 31%</td>
         <td class="numeric"><span class="numeric-good">(▲1%)</span> 52%</td>
         <td class="numeric">8%</td>
@@ -357,7 +357,7 @@ Where things become interesting is in the breakdown of exactly how the various l
         <td class="numeric">0%</td>
       </tr>
       <tr>
-        <td>gap</td>
+        <td>`gap`</td>
         <td class="numeric"><span class="numeric-bad">(▼8%)</span> 13%</td>
         <td class="numeric"><span class="numeric-good">(▲2%)</span> 18%</td>
         <td class="numeric"><span class="numeric-bad">(▼1%)</span> 0%</td>
@@ -366,7 +366,7 @@ Where things become interesting is in the breakdown of exactly how the various l
         <td class="numeric">0%</td>
       </tr>
       <tr>
-        <td>vertical-align</td>
+        <td>`vertical-align`</td>
         <td class="numeric"><span class="numeric-bad">(▼11%)</span> 18%</td>
         <td class="numeric">12%</td>
         <td class="numeric"><span class="numeric-good">(▲11%)</span> 66%</td>
@@ -375,7 +375,7 @@ Where things become interesting is in the breakdown of exactly how the various l
         <td class="numeric">0%</td>
       </tr>
       <tr>
-        <td>grid-gap</td>
+        <td>`grid-gap`</td>
         <td class="numeric"><span class="numeric-good">(▲3%)</span> 66%</td>
         <td class="numeric"><span class="numeric-bad">(▼1%)</span> 10%</td>
         <td class="numeric">9%</td>
@@ -384,7 +384,7 @@ Where things become interesting is in the breakdown of exactly how the various l
         <td class="numeric">0%</td>
       </tr>
       <tr>
-        <td>padding-inline-start</td>
+        <td>`padding-inline-start`</td>
         <td class="numeric"><span class="numeric-bad">(▼7%)</span> 26%</td>
         <td class="numeric"><span class="numeric-good">(▲2%)</span> 7%</td>
         <td class="numeric"><span class="numeric-good">(▲4%)</span> 66%</td>
@@ -393,7 +393,7 @@ Where things become interesting is in the breakdown of exactly how the various l
         <td class="numeric">0%</td>
       </tr>
       <tr>
-        <td>mask-position</td>
+        <td>`mask-position`</td>
         <td class="numeric">0%</td>
         <td class="numeric">0%</td>
         <td class="numeric"><span class="numeric-bad">(▼1%)</span> 49%</td>
@@ -402,7 +402,7 @@ Where things become interesting is in the breakdown of exactly how the various l
         <td class="numeric">0%</td>
       </tr>
       <tr>
-        <td>margin-inline-start</td>
+        <td>`margin-inline-start`</td>
         <td class="numeric"><span class="numeric-bad">(▼7%)</span> 31%</td>
         <td class="numeric"><span class="numeric-good">(▲5%)</span> 51%</td>
         <td class="numeric"><span class="numeric-good">(▲1%)</span> 15%</td>
@@ -411,7 +411,7 @@ Where things become interesting is in the breakdown of exactly how the various l
         <td class="numeric">0%</td>
       </tr>
       <tr>
-        <td>margin-block-end</td>
+        <td>`margin-block-end`</td>
         <td class="numeric"><span class="numeric-good">(▲1%)</span> 5%</td>
         <td class="numeric"><span class="numeric-good">(▲7%)</span> 38%</td>
         <td class="numeric"><span class="numeric-bad">(▼9%)</span> 56%</td>
@@ -535,109 +535,129 @@ In the realm of just the named colors, `transparent` is still the faraway favori
   <table>
     <thead>
       <tr>
-        <th>keyword</th>
-        <th>desktop</th>
-        <th>mobile</th>
+        <th>Keyword</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>transparent</td>
+        <td>{{ swatch('transparent') }}</td>
+        <td>`transparent`</td>
         <td class="numeric">82.24%</td>
         <td class="numeric">82.93%</td>
       </tr>
       <tr>
-        <td>white</td>
+        <td>{{ swatch('white') }}</td>
+        <td>`white`</td>
         <td class="numeric">7.97%</td>
         <td class="numeric">7.59%</td>
       </tr>
       <tr>
-        <td>black</td>
+        <td>{{ swatch('black') }}</td>
+        <td>`black`</td>
         <td class="numeric">2.44%</td>
         <td class="numeric">2.29%</td>
       </tr>
       <tr>
-        <td>red</td>
+        <td>{{ swatch('red') }}</td>
+        <td>`red`</td>
         <td class="numeric">2.23%</td>
         <td class="numeric">2.17%</td>
       </tr>
       <tr>
-        <td>currentColor</td>
+        <td>{{ swatch('currentColor') }}</td>
+        <td>`currentColor`</td>
         <td class="numeric">1.94%</td>
         <td class="numeric">2.03%</td>
       </tr>
       <tr>
-        <td>gray</td>
+        <td>{{ swatch('gray') }}</td>
+        <td>`gray`</td>
         <td class="numeric">0.68%</td>
         <td class="numeric">0.64%</td>
       </tr>
       <tr>
-        <td>silver</td>
+        <td>{{ swatch('silver') }}</td>
+        <td>`silver`</td>
         <td class="numeric">0.56%</td>
         <td class="numeric">0.55%</td>
       </tr>
       <tr>
-        <td>grey</td>
+        <td>{{ swatch('grey') }}</td>
+        <td>`grey`</td>
         <td class="numeric">0.39%</td>
         <td class="numeric">0.37%</td>
       </tr>
       <tr>
-        <td>green</td>
+        <td>{{ swatch('green') }}</td>
+        <td>`green`</td>
         <td class="numeric">0.32%</td>
         <td class="numeric">0.31%</td>
       </tr>
       <tr>
-        <td>blue</td>
+        <td>{{ swatch('blue') }}</td>
+        <td>`blue`</td>
         <td class="numeric">0.15%</td>
         <td class="numeric">0.12%</td>
       </tr>
       <tr>
-        <td>whitesmoke</td>
+        <td>{{ swatch('whitesmoke') }}</td>
+        <td>`whitesmoke`</td>
         <td class="numeric">0.12%</td>
         <td class="numeric">0.11%</td>
       </tr>
       <tr>
-        <td>orange</td>
+        <td>{{ swatch('orange') }}</td>
+        <td>`orange`</td>
         <td class="numeric">0.12%</td>
         <td class="numeric">0.10%</td>
       </tr>
       <tr>
-        <td>lightgray</td>
+        <td>{{ swatch('lightgray') }}</td>
+        <td>`lightgray`</td>
         <td class="numeric">0.08%</td>
         <td class="numeric">0.08%</td>
       </tr>
       <tr>
-        <td>lightgrey</td>
+        <td>{{ swatch('lightgrey') }}</td>
+        <td>`lightgrey`</td>
         <td class="numeric">0.07%</td>
         <td class="numeric">0.07%</td>
       </tr>
       <tr>
-        <td>yellow</td>
+        <td>{{ swatch('yellow') }}</td>
+        <td>`yellow`</td>
         <td class="numeric">0.07%</td>
         <td class="numeric">0.06%</td>
       </tr>
       <tr>
-        <td>gold</td>
+        <td>{{ swatch('gold') }}</td>
+        <td>`gold`</td>
         <td class="numeric">0.04%</td>
         <td class="numeric">0.03%</td>
       </tr>
       <tr>
-        <td>magenta</td>
+        <td>{{ swatch('magenta') }}</td>
+        <td>`magenta`</td>
         <td class="numeric">0.03%</td>
         <td class="numeric">0.03%</td>
       </tr>
       <tr>
-        <td>Background</td>
+        <td>{{ swatch('Background') }}</td>
+        <td>`Background`</td>
         <td class="numeric">0.02%</td>
         <td class="numeric">0.03%</td>
       </tr>
       <tr>
-        <td>Highlight</td>
+        <td>{{ swatch('Highlight') }}</td>
+        <td>`Highlight`</td>
         <td class="numeric">0.02%</td>
         <td class="numeric">0.03%</td>
       </tr>
       <tr>
-        <td>pink</td>
+        <td>{{ swatch('pink') }}</td>
+        <td>`pink`</td>
         <td class="numeric">0.03%</td>
         <td class="numeric">0.03%</td>
       </tr>
@@ -741,7 +761,7 @@ When we broke down the image weights by format, we discovered a fascinating tidb
   <table>
     <thead>
       <tr>
-        <th>percentile</th>
+        <th>Percentile</th>
         <th>JPG</th>
         <th>PNG</th>
         <th>GIF</th>
@@ -823,32 +843,32 @@ The share of pages using CSS gradients was roughly the same as last year: 77% of
     </thead>
     <tbody>
       <tr>
-        <td>background</td>
+        <td>`background`</td>
         <td class="numeric">62%</td>
         <td class="numeric">62%</td>
       </tr>
       <tr>
-        <td>background-image</td>
+        <td>`background-image`</td>
         <td class="numeric">62%</td>
         <td class="numeric">61%</td>
       </tr>
       <tr>
-        <td>-webkit-mask-image</td>
+        <td>`-webkit-mask-image`</td>
         <td class="numeric">5%</td>
         <td class="numeric">5%</td>
       </tr>
       <tr>
-        <td>&#8209;&#8209;*</td>
+        <td>`--*`</td>
         <td class="numeric">1%</td>
         <td class="numeric">1%</td>
       </tr>
       <tr>
-        <td>mask-image</td>
+        <td>`mask-image`</td>
         <td class="numeric">1%</td>
         <td class="numeric">1%</td>
       </tr>
       <tr>
-        <td>border-image</td>
+        <td>`border-image`</td>
         <td class="numeric">1%</td>
         <td class="numeric">1%</td>
       </tr>
@@ -1334,37 +1354,37 @@ It's worth taking a little closer look at `font-variant`.  While it's used on 23
     </thead>
     <tbody>
       <tr>
-        <td>font-variant</td>
+        <td>`font-variant`</td>
         <td class="numeric">3,098,211</td>
         <td class="numeric">3,641,216</td>
       </tr>
       <tr>
-        <td>font-variant-numeric</td>
+        <td>`font-variant-numeric`</td>
         <td class="numeric">153,932</td>
         <td class="numeric">166,744</td>
       </tr>
       <tr>
-        <td>font-variant-ligatures</td>
+        <td>`font-variant-ligatures`</td>
         <td class="numeric">107,211</td>
         <td class="numeric">112,345</td>
       </tr>
       <tr>
-        <td>font-variant-caps</td>
+        <td>`font-variant-caps`</td>
         <td class="numeric">81,734</td>
         <td class="numeric">86,673</td>
       </tr>
       <tr>
-        <td>font-variant-east-asian</td>
+        <td>`font-variant-east-asian`</td>
         <td class="numeric">20,662</td>
         <td class="numeric">20,340</td>
       </tr>
       <tr>
-        <td>font-variant-position</td>
+        <td>`font-variant-position`</td>
         <td class="numeric">5,198</td>
         <td class="numeric">5,842</td>
       </tr>
       <tr>
-        <td>font-variant-alternates</td>
+        <td>`font-variant-alternates`</td>
         <td class="numeric">4,876</td>
         <td class="numeric">5,511</td>
       </tr>
