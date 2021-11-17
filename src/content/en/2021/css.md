@@ -5,7 +5,7 @@ description: CSS chapter of the 2021 Web Almanac covering trends, changes, and p
 authors: [meyerweb, GeekBoySupreme]
 reviewers: [svgeesus, j9t, estelle, bkardell, argyleink, LeaVerou]
 analysts: [rviscomi]
-editors: []
+editors: [shantsis]
 translators: []
 results: https://docs.google.com/spreadsheets/d/12vQIA0xsC5Jr3J9Sh03AcAvgFjMAmP1xSS6Tjai9LF0/
 featured_quote: The 2021 Web Almanac offers deeper insight into how the use of CSS differs in the realm of what we all think we need versus what we actually see in production. 
@@ -28,7 +28,7 @@ Compared to last edition, the 2021 Web Almanac offers a deeper insight into how 
 
 While CSS-in-JS adoption grew to 3% of all pages crawled (a 1% jump from last year), cutting-edge Houdini features are still mostly confined to tutorials and example galleries. Responsiveness continued to be one of most engrossing priorities, with `max-width` and `min-width` being the top media queries, and calc() being the top CSS function most commonly in use to determine widths.
 
-As users continue to throng to the web, let’s jump into the data that would give us a better insight into how we have been faring in painting the internet - a place that is a second home, a workspace, a garage, or a rabbithole for the rest  of us.
+As users continue to throng to the web, let’s jump into the data that would give us a better insight into how we have been faring in painting the internet - a place that is a second home, a workspace, a garage, or a rabbit hole for the rest  of us.
 
 
 ## Usage
@@ -38,13 +38,13 @@ It isn’t the heaviest component of most pages, but CSS — like the rest of th
 {{ figure_markup(
   image="stylesheet-transfer-size.png",
   caption="Distribution of stylesheet transfer sizes per page.",
-  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the total weight of the stylesheets for a page.  The numbers are as follows.  10th percentile, 9 kilobytes on desktop and 6 kilobytes on mobile.  25th percentile, 31 KB desktop and 27 KB mobile.  50th percentile, 71 KB desktop and 66 KB mobile.  75th percentile, 142 KB desktop and 135KB mobile.  90th percentile, 257 KB desktop and 250 KB mobile.",
+  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the total weight of the stylesheets for a page.  The numbers are as follows.  10th percentile, 9 KB on desktop and 6 KB on mobile.  25th percentile, 31 KB desktop and 27 KB mobile.  50th percentile, 71 KB desktop and 66 KB mobile.  75th percentile, 142 KB desktop and 135KB mobile.  90th percentile, 257 KB desktop and 250 KB mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=900703452&format=interactive",
   sheets_gid="350963758",
   sql_file="stylesheet_kbytes.sql"
 ) }}
 
-Not every page was so constrained: the page with the greatest CSS weight loaded 64,628KB.  The biggest mobile CSS weight seems positively svelte in comparison: only 17,823KB.
+Not every page was so constrained: the page with the greatest CSS weight loaded 64,628 KB. The biggest mobile CSS weight seems positively svelte in comparison: only 17,823 KB.
 
 As in 2020, it was found that page weight wasn’t significantly driven by preprocessors.  17% of desktop pages and 16.5% of mobile pages included sourcemaps, up slightly from 15% last year.  The consistent share of CSS including sourcemaps seems to indicate that the sourcemap share is due more to build tool usage than sourcemap adoption, as we would expect to see much bigger year-over-year changes to sourcemap usage otherwise.
 
@@ -107,7 +107,7 @@ Incredibly, this year’s record for the largest number of external stylesheets 
   sql_file="stylesheet_count.sql"
 ) }}
 
-Number of style_sheets_ is one thing, but what about the number of actual style _rules_?  Compared to last year, the lower percentiles rose a bit, while the highest barely budged.  What _is_ different in 2021 versus 2020 is that across nearly all percentiles, desktop pages have more rules on average than do mobile pages.
+Number of style sheets is one thing, but what about the number of actual style rules?  Compared to last year, the lower percentiles rose a bit, while the highest barely budged.  What is different in 2021 versus 2020 is that across nearly all percentiles, desktop pages have more rules on average than mobile pages do.
 
 {{ figure_markup(
   image="rules-per-page.png",
@@ -120,7 +120,7 @@ Number of style_sheets_ is one thing, but what about the number of actual style 
 
 ## Selectors and the cascade
 
-Understanding cascade is an incredibly important part of working with CSS, more so for instances when you’d see that the styles you had written for an element, not working at all.
+Understanding cascade is an incredibly important part of working with CSS. Even more so for instances when you’d see that the styles you had written for an element are not working at all.
 
 CSS offers a number of ways of applying styles to pages, from classes, ids and using the all-important cascade to avoid duplicating styles.
 
@@ -158,7 +158,7 @@ Pages continue to use IDs, and at about the same rate as seen in 2020.  Even the
 ) }}
 
 We were unhappy to see so many IDs starting with `rc-`.  These are part of the reCAPTCHA system, which is inaccessible to the members of the deafblind community.
-
+{# TODO: (Authors) it would be a great to add a reference here to learn more, or to link to the a11y chapter's captcha section #}
 
 ### Attribute selectors
 
@@ -196,7 +196,7 @@ Most of the pseudo-elements in use are browser-specific ways of selecting things
 {{ figure_markup(
   image="most-popular-unprefixed-pseudo-elements.png",
   caption="The most popular unprefixed pseudo-elements.",
-  description="A chart listing the most popular pseudo-elements that are not vendor prefixed.  The list is as follows: before, after, selection, placeholder, first-letter, marker.",
+  description="A chart listing the most popular pseudo-elements that are not vendor prefixed.  The list is as follows: before (34% desktop and 33% mobile), after (31% desktop and mobile), selection (7% desktop and mobile), placeholder (7% desktop and mobile), first-letter (1% desktop and mobile), marker (0% desktop and mobile).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1825062416&format=interactive",
   height=500,
   sheets_gid="1863963291",
@@ -232,7 +232,7 @@ As for what `!important` gets applied to, as with last year, it’s `display`, w
 
 ### Selector specificity
 
-Many CSS methodologies recommend that authors restrict themselves to single classes in order to squash all selector specificity into a single layer that is more easily managed.  The [BEM methodology](​​https://en.bem.info/methodology/css/), for example, was found on 34% of all pages.  The 10th percentile of median selector specificity shows further evidence of this type of thinking, where both desktop and mobile specificity averages at (0,1,0).  This is in line with last year’s findings, as are nearly all the medians — with the exception of mobile’s 25th percentile, which rose a little bit.
+Many CSS methodologies recommend that authors restrict themselves to single classes in order to squash all selectors specificity into a single layer that is more easily managed.  The [BEM methodology](https://en.bem.info/methodology/css/), for example, was found on 34% of all pages.  The 10th percentile of median selector specificity shows further evidence of this type of thinking, where both desktop and mobile specificity averages at (0,1,0).  This is in line with last year’s findings, as are nearly all the medians — with the exception of mobile’s 25th percentile, which rose a little bit.
 
 <figure>
   <table>
@@ -442,7 +442,7 @@ Although `em` maintains a huge dominance over `rem` when it comes to sizing font
   sql_file="units_properties.sql"
 ) }}
 
-There are a few properties that allow bare `<number>` units (e.g., `line-height`), but `<length>` values have a special case where a length of zero does not require a unit.  When we looked at all zero-length values, almost 88% of them omitted the unit.  Nearly all of those zero lengths that included a unit used pixels (`0px`).  This was a nice result to see, since any length of zero doesn’t need a unit and including one is fairly pointless.  We hope the share of unitless zero values will grow in the future.
+There are a few properties that allow bare `<number>` units (e.g. `line-height`), but `<length>` values have a special case where a length of zero does not require a unit.  When we looked at all zero-length values, almost 88% of them omitted the unit.  Nearly all of those zero lengths that included a unit used pixels (`0px`).  This was a nice result to see, since any length of zero doesn’t need a unit and including one is fairly pointless.  We hope the share of unitless zero values will grow in the future.
 
 {{ figure_markup(
   image="zero-lengths-by-unit.png",
@@ -666,7 +666,7 @@ The usage of the display-p3 color space remains about as vanishingly small as wa
 
 ## Images
 
-They say a picture is worth a thousand words, but byte wise, they often cost an order of magnitude or two more. While there are a myriad approaches to embedding images with javascript, or include them with the HTML scaffolding, here we take a look at how CSS-loaded images are getting used.
+They say a picture is worth a thousand words, but byte wise, they often cost an order of magnitude or two more. While there are a myriad approaches to embedding images with Javascript, or include them with the HTML scaffolding, here we looked at how CSS-loaded images are used.
 
 ### Formats of images in CSS
 
@@ -688,7 +688,7 @@ Please also note that this analysis only covers the images loaded by CSS: we did
 
 ### Number of images in CSS
 
-What we found was that most CSS doesn’t result in a lot of image loads: the lower two percentiles came in at one image each, and even the 90th percentile hovered around 10 images, across all image types.
+We found that most CSS doesn’t result in a lot of image loads: the lower two percentiles came in at one image each, and even the 90th percentile hovered around 10 images, across all image types.
 
 {{ figure_markup(
   image="number-of-images-loaded.png",
@@ -712,7 +712,7 @@ We did find one site where the desktop CSS loaded 6,088 PNG images.  The mobile 
 
 ### Weight of images in CSS
 
-The number of images is one thing, but how much they weigh is at least as important — loading a single 10MB background is worse than loading 10 100KB pictures, after all, even with server compression factored in.
+The number of images is one thing, but how much they weigh is at least as important — loading a single 10 MB background is worse than loading ten 100 KB pictures, after all, even with server compression factored in.
 
 
 {{ figure_markup(
@@ -724,9 +724,9 @@ The number of images is one thing, but how much they weigh is at least as import
   sql_file="image_weights.sql"
 ) }}
 
-All told, things were not as bad as we’d feared going in: the median page’s CSS loads a total of 16KB or so in images.  It was also encouraging to see that overall, mobile image loading via CSS was consistently a bit lower than desktop — a sign that CSS developers do keep the limitations of mobile contexts at least somewhat in mind.
+All told, things were not as bad as we’d feared going in: the median page’s CSS loads a total of 16 KB or so in images.  It was also encouraging to see that overall, mobile image loading via CSS was consistently a bit lower than desktop — a sign that CSS developers do keep the limitations of mobile contexts at least somewhat in mind.
 
-Sometimes, anyway.  We did find a page where the total weight of the images loaded by CSS was a gargantuan 314,386.1KB — a third of a _gigabyte_.
+Sometimes, anyway.  We did find a page where the total weight of the images loaded by CSS was a gargantuan 314,386.1 KB — a third of a _gigabyte_.
 
 {{ figure_markup(
   caption="The heaviest total weight of images loaded via CSS, in KB.",
@@ -873,7 +873,7 @@ Linear gradients continue to be the clear favorite, maintaining the 5-to-1 lead 
   sql_file="gradient_functions.sql"
 ) }}
 
-When prefixed versions of gradients (e.g., `-webkit-linear-gradient`) were included, the resulting graph looked basically the same as last year’s.
+When prefixed versions of gradients (e.g. `-webkit-linear-gradient`) were included, the resulting graph looked basically the same as last year’s.
 
 Some other things we found in analyzing gradient values:
 
@@ -892,10 +892,11 @@ We also saw a dramatic reduction at the top end of gradient complexity.  Last ye
   height=100
 ) }}
 
+{# TODO: (Authors) I think the figure caption can be expanded to say it goes from ugly yellow to blue to pink to orange... #}
 
 ## Layout
 
-We have come a long, long way from using tables to create layouts on the web to a time when we have a number of options - Flexbox, Grid, and Multicolumn, as well as old chestnuts like floats, positioning and even CSS table properties.  We did a simple search of stylesheets to see which property and value combinations were present, and came up with the following figures. 
+We have come a long, long way from using tables to create layouts on the web to a time when we have a number of options to choose from - Flexbox, Grid, and Multicolumn, as well as old chestnuts like floats, positioning and even CSS table properties.  We did a simple search of stylesheets to see which property and value combinations were present, and came up with the following figures. 
 
 {{ figure_markup(
   image="top-layout-methods.png",
@@ -982,7 +983,7 @@ Among all those transitions, we took a look at the duration and delay times of t
 {{ figure_markup(
   image="distribution-of-transition-durations.png",
   caption="Distribution of transition durations.",
-  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for transition durations.  In all percentiles save one, the values are exactly the same for desktop and mobile.  The results are as follows.  For the 10th percentile, 100 milliseconds.  For the 25th percentile, 150 milliseconds.  50th percentile, 250ms.  75th percentile, 330ms on desktop and 333ms on mobile.  90th percentile, 500ms.",
+  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for transition durations.  In all percentiles save one, the values are exactly the same for desktop and mobile.  The results are as follows.  For the 10th percentile, 100 milliseconds.  For the 25th percentile, 150 milliseconds.  50th percentile, 250 milliseconds.  75th percentile, 330 milliseconds on desktop and 333 milliseconds on mobile.  90th percentile, 500 milliseconds.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=894159072&format=interactive",
   sheets_gid="432079881",
   sql_file="transition_durations.sql"
@@ -991,7 +992,7 @@ Among all those transitions, we took a look at the duration and delay times of t
 {{ figure_markup(
   image="distribution-of-transition-delays.png",
   caption="Distribution of transition delays.",
-  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for transition durations.  In all percentiles, the values are exactly the same for desktop and mobile.  The results are as follows.  For the 10th percentile, -320 milliseconds.  For the 25th percentile, 0 milliseconds.  50th percentile, 200ms.  75th percentile, 600ms.  90th percentile, 1,700ms.",
+  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for transition durations.  In all percentiles, the values are exactly the same for desktop and mobile.  The results are as follows.  For the 10th percentile, -320 milliseconds.  For the 25th percentile, 0 milliseconds.  50th percentile, 200 milliseconds.  75th percentile, 600 milliseconds.  90th percentile, 1,700 milliseconds.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=501863648&format=interactive",
   sheets_gid="909003541",
   sql_file="transition_delays.sql"
@@ -1011,7 +1012,7 @@ As for the timing functions used during the transitions, the clear leader is the
   sql_file="transition_timing_functions.sql"
 ) }}
 
-Okay, but, what _kinds_ of animations are being performed?  To determine this, we classified various animation labels by the type of animation being performed.  For example, animations labeled `fa-spin`, `spin`, `spinner-spin`,  and so on were classified as “rotate” animations, and these were the most popular.
+Okay, but, what kinds of animations are being performed?  To determine this, we classified various animation labels by the type of animation being performed.  For example, animations labeled `fa-spin`, `spin`, `spinner-spin`,  and so on were classified as “rotate” animations, and these were the most popular.
 
 {{ figure_markup(
   image="animation-name-categories.png",
@@ -1033,7 +1034,7 @@ Making a site that copes well with all the different screen sizes wherein you ca
 
 ### Media features in use
 
-When authors build their media queries, they most often test the width of the viewport: `max-width` and `min-width` were the most popular queries by far, the same as in 2020.  There was no ranking change in the third and fourth place results, either.
+When authors build their media queries, they most often test the width of the viewport. `max-width` and `min-width` were the most popular queries by far, the same as in 2020.  There was no ranking change in the third and fourth place results either.
 
 {{ figure_markup(
   image="media-query-features.png",
@@ -1049,7 +1050,7 @@ Where we did see a notable change was in the ranking of the `prefers-reduced-mot
 
 We also saw newcomers come and go at the bottom of the list.  [`pointer`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer), a query which checks to see if the display device’s primary input mechanism is a pointing device such as a mouse and which placed 19th last year, fell off the chart as it slipped to 21st place.  The [`hover` media feature](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover), on the other hand, entered the chart at 20th place.  `hover` is used to test if the display device’s primary input mechanism can cause a hover state in elements on the page.
 
-Both queries have a similar aim, which is (put simply) to figure out if the device being used to display the page is mouse-driven or not.  Combined with a mobile-first design philosophy, where desktop styles are added to or override the default mobile styling, one can see how queries like `pointer` or `hover` would be useful.  While it’s too soon to say if one or the other will become dominant, the trends this year swung toward `hover`.
+Both queries have a similar aim, which is (put simply) to figure out if the device being used to display the page is mouse-driven or not.  Combined with a mobile-first design philosophy, where desktop styles are added to override the default mobile styling, one can see how queries like `pointer` or `hover` would be useful.  While it’s too soon to say if one or the other will become dominant, the trends this year swung toward `hover`.
 
 This year also saw the debut of `prefers-color-scheme`, coming in at 7%.  This may be due to iOS devices adding dark mode support since last year’s report, but in any event, it’s good to see that designers are starting to take color scheme preferences into account.
 
@@ -1060,13 +1061,13 @@ As in 2020, the most common breakpoints by far are at 767 and 768 pixels, which 
 {{ figure_markup(
   image="most-popular-breakpoints.png",
   caption="The most popular media query breakpoints.",
-  description="A stacked-column chart listing the most popular media query breakpoints.  The results are as follows.  480 pixels, 24% min-width and 36% max-width.  600 pixels, 31% min-width and 38% max-width.  767px, 9% min-width and 52% max-width.  768px, 57% min-width and 38% max-width.  782px, 25% min-width and 10% max-width.  800px, 8% min-width and 26% max-width.  991px, 3% min-width and 30% max-width.  992px, 40% min-width and 13% max-width.  1024px, 16% min-width and 27% max-width.  1200px, 44% min-width and 18% max-width.",
+  description="A stacked-column chart listing the most popular media query breakpoints.  The results are as follows.  480 pixels, 24% min-width and 36% max-width.  600 pixels, 31% min-width and 38% max-width.  767 pixels, 9% min-width and 52% max-width.  768 pixels, 57% min-width and 38% max-width.  782 pixels, 25% min-width and 10% max-width.  800 pixels, 8% min-width and 26% max-width.  991 pixels, 3% min-width and 30% max-width.  992 pixels, 40% min-width and 13% max-width.  1024 pixels, 16% min-width and 27% max-width.  1200 pixels, 44% min-width and 18% max-width.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=990843085&format=interactive",
   sheets_gid="1275086846",
   sql_file="media_query_values.sql"
 ) }}
 
-Beyond the 767-768 range, the next most popular breakpoints were at 600 and 1,200 pixels, and close behind that comes 480 pixels.
+Beyond the 767-768 range, the next most popular breakpoints were at 600 and 1,200 pixels, and close behind that was 480 pixels.
 
 Lest you think we converted all the breakpoint queries to pixels, we’re sorry to say we did not: these are the straight values from stylesheets.  Out of all the breakpoints we analyzed, the first non-pixel value on the list is `48em`, which came in at 76th on the ranking list, appearing in 1% of desktop and 2% of mobile styles.  The next em-based value, `40em`, is found in 85th place.
 
@@ -1127,7 +1128,7 @@ The first thing we checked was, “What are developers calling their custom prop
 {{ figure_markup(
   image="custom-property-names.png",
   caption="The most popular custom property names.",
-  description="A chart listing the most popular custom properties names.  The results are given for mobile, as desktop is always within a percent or two.  The results are: --wp-style--color--link, 18.1%.  --wp-admin-theme-color, 7.5%.  --red, --blue, and --gren are all at 7.2%.  --dark and --white are both at 7.1%.  --primary and --secondary are at 6.9%.  --gray-dark, 6.8%.",
+  description="A chart listing the most popular custom properties names.  The results are given for mobile, as desktop is always within a percent or two.  The results are: --wp-style--color--link, 18.1%.  --wp-admin-theme-color, 7.5%.  --red, --blue, and --green are all at 7.2%.  --dark and --white are both at 7.1%.  --primary and --secondary are at 6.9%.  --gray-dark, 6.8%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=205956063&format=interactive",
   sheets_gid="725813203",
   sql_file="custom_property_names.sql"
@@ -1191,7 +1192,7 @@ As in 2020, we also checked the selectors in which custom-property values were u
 
 ## Internationalization
 
-English is written horizontally and the characters flow from left to right. But languages such as Arabic, Hebrew and Urdu, among others, are mostly written right to left and then there are languages and scripts — such as Mongolian, Chinese, and Japanese — which can be written in vertical lines, from top to bottom. Owing to this, things can get quite complicated. Both HTML and CSS provide ways to handle this.
+English is written horizontally and the characters are read from left to right. But for languages such as Arabic, Hebrew and Urdu, among others, are written right to left and then there are languages and scripts — such as Mongolian, Chinese, and Japanese — which can be written in vertical lines, from top to bottom. Owing to this, things can get quite complicated. Both HTML and CSS provide ways to handle this.
 
 ### Direction
 
@@ -1260,7 +1261,7 @@ The degree of this drop is on the order of 2% for the 10th, 50th, and 90th perce
 
 ### Shorthands and longhands
 
-There are many parts of CSS where a collection of very specific properties are also covered by a single “umbrella” property that can set the more specific properties’ values in a single declaration.  `font`, for example, encompasses the values of `font-family`, `font-size`, `line-height`, `font-weight`, `font-style`, and `font-variant`.  The umbrella property `font` is what’s called a “shorthand” property, because it allows authors to set a number of things in a kind of shorthand.  The corresponding specific properties (e.g., `font-family`) are referred to as “longhand” properties.
+There are many parts of CSS where a collection of very specific properties are also covered by a single “umbrella” property that can set the more specific properties’ values in a single declaration.  `font`, for example, encompasses the values of `font-family`, `font-size`, `line-height`, `font-weight`, `font-style`, and `font-variant`.  The umbrella property `font` is what’s called a “shorthand” property, because it allows authors to set a number of things in a kind of shorthand.  The corresponding specific properties (e.g. `font-family`) are referred to as “longhand” properties.
 
 #### Shorthands before longhands
 
