@@ -27,12 +27,12 @@ Compared to last edition, the 2021 Web Almanac offers a deeper insight into how 
 
 While CSS-in-JS adoption grew to 3% of all pages crawled (a 1% jump from last year), cutting-edge Houdini features are still mostly confined to tutorials and example galleries. Responsiveness continued to be one of most engrossing priorities, with `max-width` and `min-width` being the top media queries, and calc() being the top CSS function most commonly in use to determine widths.
 
-As users continue to throng to the web, let’s jump into the data that would give us a better insight into how we have been faring in painting the internet - a place that is a second home, a workspace, a garage, or a rabbit hole for the rest  of us.
+As users continue to throng to the web, let's jump into the data that would give us a better insight into how we have been faring in painting the internet - a place that is a second home, a workspace, a garage, or a rabbit hole for the rest  of us.
 
 
 ## Usage
 
-It isn’t the heaviest component of most pages, but CSS — like the rest of the web — continues to grow in size from year to year.  The median web page loads around 70 KB of CSS, and at the upper end, the average size is just over a quarter of a megabyte.  Compared to 2020, the median total CSS weight rose about 7.9%, and the 90th percentile just under 7%, while preserving the pattern seen last year that mobile CSS is a little smaller than desktop CSS across all percentiles.
+It isn't the heaviest component of most pages, but CSS — like the rest of the web — continues to grow in size from year to year.  The median web page loads around 70 KB of CSS, and at the upper end, the average size is just over a quarter of a megabyte.  Compared to 2020, the median total CSS weight rose about 7.9%, and the 90th percentile just under 7%, while preserving the pattern seen last year that mobile CSS is a little smaller than desktop CSS across all percentiles.
 
 {{ figure_markup(
   image="stylesheet-transfer-size.png",
@@ -45,7 +45,7 @@ It isn’t the heaviest component of most pages, but CSS — like the rest of th
 
 Not every page was so constrained: the page with the greatest CSS weight loaded 64,628 KB. The biggest mobile CSS weight seems positively svelte in comparison: only 17,823 KB.
 
-As in 2020, it was found that page weight wasn’t significantly driven by preprocessors.  17% of desktop pages and 16.5% of mobile pages included sourcemaps, up slightly from 15% last year.  The consistent share of CSS including sourcemaps seems to indicate that the sourcemap share is due more to build tool usage than sourcemap adoption, as we would expect to see much bigger year-over-year changes to sourcemap usage otherwise.
+As in 2020, it was found that page weight wasn't significantly driven by preprocessors.  17% of desktop pages and 16.5% of mobile pages included sourcemaps, up slightly from 15% last year.  The consistent share of CSS including sourcemaps seems to indicate that the sourcemap share is due more to build tool usage than sourcemap adoption, as we would expect to see much bigger year-over-year changes to sourcemap usage otherwise.
 
 As for what kinds of sourcemaps were used, the numbers were largely consistent with last year
 
@@ -83,9 +83,9 @@ As for what kinds of sourcemaps were used, the numbers were largely consistent w
   ) }}</figcaption>
 </figure>
 
-While this could be taken as evidence that Sass continues to gain ground over Less, the changes are small enough that it’s difficult to call them significant, statistically or otherwise.  Time, as always, will tell.
+While this could be taken as evidence that Sass continues to gain ground over Less, the changes are small enough that it's difficult to call them significant, statistically or otherwise.  Time, as always, will tell.
 
-In terms of the average number of stylesheets per page, whether embedded or external, the numbers this year are up only slightly from last year.  The 50th through 90th percentiles went up by one each, while the 10th and 25th percentiles didn’t budge.
+In terms of the average number of stylesheets per page, whether embedded or external, the numbers this year are up only slightly from last year.  The 50th through 90th percentiles went up by one each, while the 10th and 25th percentiles didn't budge.
 
 {{ figure_markup(
   image="stylesheets-per-page.png",
@@ -96,7 +96,7 @@ In terms of the average number of stylesheets per page, whether embedded or exte
   sql_file="stylesheet_count.sql"
 ) }}
 
-Incredibly, this year’s record for the largest number of external stylesheets beat last year’s by nearly a factor of two: 2,368 versus 1,379 in 2020.  Whoever’s done this, we beg you — combine some files and give your server a rest!
+Incredibly, this year's record for the largest number of external stylesheets beat last year's by nearly a factor of two: 2,368 versus 1,379 in 2020.  Whoever's done this, we beg you — combine some files and give your server a rest!
 
 {{ figure_markup(
   caption="The largest number of external stylesheets loaded by a page.",
@@ -119,7 +119,7 @@ Number of style sheets is one thing, but what about the number of actual style r
 
 ## Selectors and the cascade
 
-Understanding cascade is an incredibly important part of working with CSS. Even more so for instances when you’d see that the styles you had written for an element are not working at all.
+Understanding cascade is an incredibly important part of working with CSS. Even more so for instances when you'd see that the styles you had written for an element are not working at all.
 
 CSS offers a number of ways of applying styles to pages, from classes, ids and using the all-important cascade to avoid duplicating styles.
 
@@ -143,7 +143,7 @@ We were also heartened to see the placement of `sr-only-focusable`, which is a B
 
 ### IDs
 
-Pages continue to use IDs, and at about the same rate as seen in 2020.  Even the list of popular ID names is consistent: `content` sits in the top spot at about 14% of pages, followed by `footer` and `header`.  These latter two IDs dropped about a percent versus last year, which isn’t really enough to say anything definitive about them other than, developers should replace them with the corresponding HTML elements `<header>` and `<footer>` whenever possible.
+Pages continue to use IDs, and at about the same rate as seen in 2020.  Even the list of popular ID names is consistent: `content` sits in the top spot at about 14% of pages, followed by `footer` and `header`.  These latter two IDs dropped about a percent versus last year, which isn't really enough to say anything definitive about them other than, developers should replace them with the corresponding HTML elements `<header>` and `<footer>` whenever possible.
 
 {{ figure_markup(
   image="most-popular-id-names.png",
@@ -190,7 +190,7 @@ Just as in 2020, the user-action pseudo-classes `:hover`, `:focus`, and `:active
 
 One thing we did check specifically this year was the use of [`:focus-visible`, a way to style elements in focus in a way that better matches user expectations](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible).  This capability landed in Chromium in 2020, Firefox in January 2021, and (as of publication) is available in Safari 15 behind an experimental flag.  Likely reflecting its recent implementation status, it appeared in less than 1% of the pages analyzed.  It will be interesting to see if that number changes over the next few years.
 
-Most of the pseudo-elements in use are browser-specific ways of selecting things like specific interface components, parts of browser chrome, or highlighted text.  Once we filtered those out, we found that `::first-letter` is used on a very small number of pages, but still many more than `::first-line`, which didn’t make it onto the chart at all.  `::marker`, a way of selecting list item markers like bullets or counters in an ordered list, has much less than 1% page share, yet still made it onto the list. We should note here that cross-browser support for `::marker` [is relatively new](https://caniuse.com/css-marker-pseudo) (October 2020). It will be interesting to see if use increases over the next few years.
+Most of the pseudo-elements in use are browser-specific ways of selecting things like specific interface components, parts of browser chrome, or highlighted text.  Once we filtered those out, we found that `::first-letter` is used on a very small number of pages, but still many more than `::first-line`, which didn't make it onto the chart at all.  `::marker`, a way of selecting list item markers like bullets or counters in an ordered list, has much less than 1% page share, yet still made it onto the list. We should note here that cross-browser support for `::marker` <a hreflang="en" href="https://caniuse.com/css-marker-pseudo">is relatively new</a> (October 2020). It will be interesting to see if use increases over the next few years.
 
 {{ figure_markup(
   image="most-popular-unprefixed-pseudo-elements.png",
@@ -218,7 +218,7 @@ That old battleaxe `!important` maintains a toehold on the web, with its share o
 
 If that seems like a lot, hold on to your IDEs: we found a mobile page with 17,990 rules marked `!important`!  That just edged out the most-important desktop page, which had 17,648 specificity-busting rules.  We sincerely, truly hope these were the result of a script or preprocessor gone wrong.
 
-As for what `!important` gets applied to, as with last year, it’s `display`, with the rest of the chart falling in the same order as in 2020 — with the exception of the last item on the chart, where `position` bumped off `float`.
+As for what `!important` gets applied to, as with last year, it's `display`, with the rest of the chart falling in the same order as in 2020 — with the exception of the last item on the chart, where `position` bumped off `float`.
 
 {{ figure_markup(
   image="top-important-properties.png",
@@ -231,7 +231,7 @@ As for what `!important` gets applied to, as with last year, it’s `display`, w
 
 ### Selector specificity
 
-Many CSS methodologies recommend that authors restrict themselves to single classes in order to squash all selectors specificity into a single layer that is more easily managed.  The [BEM methodology](https://en.bem.info/methodology/css/), for example, was found on 34% of all pages.  The 10th percentile of median selector specificity shows further evidence of this type of thinking, where both desktop and mobile specificity averages at (0,1,0).  This is in line with last year’s findings, as are nearly all the medians — with the exception of mobile’s 25th percentile, which rose a little bit.
+Many CSS methodologies recommend that authors restrict themselves to single classes in order to squash all selectors specificity into a single layer that is more easily managed.  The [BEM methodology](https://en.bem.info/methodology/css/), for example, was found on 34% of all pages.  The 10th percentile of median selector specificity shows further evidence of this type of thinking, where both desktop and mobile specificity averages at (0,1,0).  This is in line with last year's findings, as are nearly all the medians — with the exception of mobile's 25th percentile, which rose a little bit.
 
 <figure>
   <table>
@@ -284,7 +284,7 @@ CSS provides multiple ways to specify values and units, either in set lengths or
 
 ### Lengths
 
-Whatever you may think of pixel lengths, it’s still the most popular length unit by far, appearing in about 71% of all pages.  The second-place length unit, percentage, trailed pixels by an overwhelming distance.
+Whatever you may think of pixel lengths, it's still the most popular length unit by far, appearing in about 71% of all pages.  The second-place length unit, percentage, trailed pixels by an overwhelming distance.
 
 {{ figure_markup(
   image="most-popular-length-units.png",
@@ -441,7 +441,7 @@ Although `em` maintains a huge dominance over `rem` when it comes to sizing font
   sql_file="units_properties.sql"
 ) }}
 
-There are a few properties that allow bare `<number>` units (e.g. `line-height`), but `<length>` values have a special case where a length of zero does not require a unit.  When we looked at all zero-length values, almost 88% of them omitted the unit.  Nearly all of those zero lengths that included a unit used pixels (`0px`).  This was a nice result to see, since any length of zero doesn’t need a unit and including one is fairly pointless.  We hope the share of unitless zero values will grow in the future.
+There are a few properties that allow bare `<number>` units (e.g. `line-height`), but `<length>` values have a special case where a length of zero does not require a unit.  When we looked at all zero-length values, almost 88% of them omitted the unit.  Nearly all of those zero lengths that included a unit used pixels (`0px`).  This was a nice result to see, since any length of zero doesn't need a unit and including one is fairly pointless.  We hope the share of unitless zero values will grow in the future.
 
 {{ figure_markup(
   image="zero-lengths-by-unit.png",
@@ -466,7 +466,7 @@ As in past years, the most popular usage of `calc()` is to set widths, although 
   sql_file="calc_properties.sql"
 ) }}
 
-Although pixel units didn’t shift at all in terms of their usage in calculations, percentages lost a bit of ground compared to the long tail of other units, falling four points since 2020.
+Although pixel units didn't shift at all in terms of their usage in calculations, percentages lost a bit of ground compared to the long tail of other units, falling four points since 2020.
 
 {{ figure_markup(
   image="most-popular-units-using-calc.png",
@@ -650,9 +650,9 @@ In the realm of just the named colors, `transparent` is still the faraway favori
   ) }}</figcaption>
 </figure>
 
-In last year’s Web Almanac, there was a note about “the once-deprecated—now partially un-deprecated—system colors like `Canvas` and `ThreeDDarkShadow`” being just barely in use.  This is still true, but oddly, there are now two such values in the top 20 instead of just one (`Highlight`).  That said, both occur in the realm of tiny, tiny numbers of pages, so such shifts are probably unremarkable.
+In last year's Web Almanac, there was a note about "the once-deprecated—now partially un-deprecated—system colors like `Canvas` and `ThreeDDarkShadow`" being just barely in use.  This is still true, but oddly, there are now two such values in the top 20 instead of just one (`Highlight`).  That said, both occur in the realm of tiny, tiny numbers of pages, so such shifts are probably unremarkable.
 
-The usage of the display-p3 color space remains about as vanishingly small as was found in 2020, probably because it’s only supported in Safari (both desktop and mobile) as of this writing.  Desktop and mobile use roughly tripled, to 90 and 105 pages, respectively.  In the cases where `color(display-p3)` was used, it was with good reason: 79% of the colors expressed using display-p3 on mobile were colors that cannot be represented in the sRGB color space.  Until the `color()` function becomes more widely supported by browsers, the web will remain stuck in sRGB, which permits about two-thirds of the colors that screens can actually display.
+The usage of the display-p3 color space remains about as vanishingly small as was found in 2020, probably because it's only supported in Safari (both desktop and mobile) as of this writing.  Desktop and mobile use roughly tripled, to 90 and 105 pages, respectively.  In the cases where `color(display-p3)` was used, it was with good reason: 79% of the colors expressed using display-p3 on mobile were colors that cannot be represented in the sRGB color space.  Until the `color()` function becomes more widely supported by browsers, the web will remain stuck in sRGB, which permits about two-thirds of the colors that screens can actually display.
 
 {{ figure_markup(
   caption="Percentage of display-p3 colors that lie outside the sRGB space.",
@@ -669,7 +669,7 @@ They say a picture is worth a thousand words, but byte wise, they often cost an 
 
 ### Formats of images in CSS
 
-First, here’s a breakdown of the image formats we looked for, and how often each format appeared.  PNG was the clear favorite, with a surprisingly close clustering of GIF, SVG, and JPG following behind.  The fairly new WEBP format accounted for only 3.7% of images loaded by CSS, and the tiny slice at the top corresponds to unrecognized values and the ICO format.
+First, here's a breakdown of the image formats we looked for, and how often each format appeared.  PNG was the clear favorite, with a surprisingly close clustering of GIF, SVG, and JPG following behind.  The fairly new WEBP format accounted for only 3.7% of images loaded by CSS, and the tiny slice at the top corresponds to unrecognized values and the ICO format.
 
 {{ figure_markup(
   image="css-initiated-image-formats.png",
@@ -682,12 +682,12 @@ First, here’s a breakdown of the image formats we looked for, and how often ea
 
 We did not attempt to determine whether any of the images were animated.
 
-Please also note that this analysis only covers the images loaded by CSS: we did not check the HTML to see what was being loaded there.  Thus, the following results cannot be taken as a metric of how heavy web pages are, or even how heavy CSS is or is not.  It can only show how much CSS-loaded images contribute to a page’s total weight.
+Please also note that this analysis only covers the images loaded by CSS: we did not check the HTML to see what was being loaded there.  Thus, the following results cannot be taken as a metric of how heavy web pages are, or even how heavy CSS is or is not.  It can only show how much CSS-loaded images contribute to a page's total weight.
 
 
 ### Number of images in CSS
 
-We found that most CSS doesn’t result in a lot of image loads: the lower two percentiles came in at one image each, and even the 90th percentile hovered around 10 images, across all image types.
+We found that most CSS doesn't result in a lot of image loads: the lower two percentiles came in at one image each, and even the 90th percentile hovered around 10 images, across all image types.
 
 {{ figure_markup(
   image="number-of-images-loaded.png",
@@ -698,10 +698,10 @@ We found that most CSS doesn’t result in a lot of image loads: the lower two p
   sql_file="image_weights.sql"
 ) }}
 
-We did find one site where the desktop CSS loaded 6,088 PNG images.  The mobile version of the site actually added an image, bringing it to 6,089 PNGs.  We hope they were all small and color-indexed for efficiency’s sake.
+We did find one site where the desktop CSS loaded 6,088 PNG images.  The mobile version of the site actually added an image, bringing it to 6,089 PNGs.  We hope they were all small and color-indexed for efficiency's sake.
 
 {{ figure_markup(
-  caption="The largest number of external images loaded by a page’s CSS.",
+  caption="The largest number of external images loaded by a page's CSS.",
   content="6,089",
   classes="big-number",
   sheets_gid="361647805",
@@ -723,7 +723,7 @@ The number of images is one thing, but how much they weigh is at least as import
   sql_file="image_weights.sql"
 ) }}
 
-All told, things were not as bad as we’d feared going in: the median page’s CSS loads a total of 16 KB or so in images.  It was also encouraging to see that overall, mobile image loading via CSS was consistently a bit lower than desktop — a sign that CSS developers do keep the limitations of mobile contexts at least somewhat in mind.
+All told, things were not as bad as we'd feared going in: the median page's CSS loads a total of 16 KB or so in images.  It was also encouraging to see that overall, mobile image loading via CSS was consistently a bit lower than desktop — a sign that CSS developers do keep the limitations of mobile contexts at least somewhat in mind.
 
 Sometimes, anyway.  We did find a page where the total weight of the images loaded by CSS was a gargantuan 314,386.1 KB — a third of a _gigabyte_.
 
@@ -872,13 +872,13 @@ Linear gradients continue to be the clear favorite, maintaining the 5-to-1 lead 
   sql_file="gradient_functions.sql"
 ) }}
 
-When prefixed versions of gradients (e.g. `-webkit-linear-gradient`) were included, the resulting graph looked basically the same as last year’s.
+When prefixed versions of gradients (e.g. `-webkit-linear-gradient`) were included, the resulting graph looked basically the same as last year's.
 
 Some other things we found in analyzing gradient values:
 
 * The median number of color stops in gradients is just two, except at the 90th percentile, where the four stops was the median.
 * Hard color stops — that is, gradients where two color stops were placed at the same position — occurred in just over half of all gradients.
-* Color-stop interpolation (a.k.a “midpoints”) were used in 21% of all gradient instances.
+* Color-stop interpolation (a.k.a "midpoints") were used in 21% of all gradient instances.
 
 We also saw a dramatic reduction at the top end of gradient complexity.  Last year, the gradient with the largest number of color stops had 646 stops.  This year, the winner had only 81 color stops.
 
@@ -907,7 +907,7 @@ We have come a long, long way from using tables to create layouts on the web to 
   sql_file="layout_properties.sql"
 ) }}
 
-Note that this doesn’t chart primary layout methods — we are not claiming here that 93% of the pages we analyzed are laid out using absolute positioning!  Rather, what the chart says is that `position: absolute` appeared in the styles for 93% of the page we analyzed, even if that was just to put an icon in a corner or place bits of content `-9999px` offscreen.  Similarly, `display: grid` may have appeared in 36% of page’s styles, but that doesn’t mean 37% of all pages are Grid pages, just that the combination appeared somewhere in the stylesheet.
+Note that this doesn't chart primary layout methods — we are not claiming here that 93% of the pages we analyzed are laid out using absolute positioning!  Rather, what the chart says is that `position: absolute` appeared in the styles for 93% of the page we analyzed, even if that was just to put an icon in a corner or place bits of content `-9999px` offscreen.  Similarly, `display: grid` may have appeared in 36% of page's styles, but that doesn't mean 37% of all pages are Grid pages, just that the combination appeared somewhere in the stylesheet.
 
 The rest of this section is where more in-depth analyses were done, looking not just for property-value combinations, but for evidence of actual usage on pages.
 
@@ -932,7 +932,7 @@ Digging into the various Grid properties, we discovered a few interesting patter
 * About 15% of all Grid pages used `grid-template-areas` to define named areas of the grid.
 * When we looked for square brackets in Grid templates, which would indicate the presence of named Grid lines, we found a little fewer than 10,000 pages out of the seven million or so analyzed.
 
-We also analyzed Flexbox layouts to see which ones set the flex grow and shrink values to zero, and then set all the flex item widths to be something static, like percentage or pixel widths.  These are referred to as “Grid-like Flexbox,” and we found that just over a quarter of all Flexbox layouts met these criteria.  Given the complexity of the analysis, it is entirely possible that we missed many cases.  Still, it seems clear that designers are strongly interested in grid-style layouts, and this could drive migration to Grid in the coming years.
+We also analyzed Flexbox layouts to see which ones set the flex grow and shrink values to zero, and then set all the flex item widths to be something static, like percentage or pixel widths.  These are referred to as "Grid-like Flexbox," and we found that just over a quarter of all Flexbox layouts met these criteria.  Given the complexity of the analysis, it is entirely possible that we missed many cases.  Still, it seems clear that designers are strongly interested in grid-style layouts, and this could drive migration to Grid in the coming years.
 
 ### Multicolumn
 
@@ -948,7 +948,7 @@ Even though multicolumn layout is a bit fraught on the web, where it can force u
 
 ### Box sizing
 
-The principles of the original W3C box model continue to be rejected: when we looked to see how many pages were using `box-sizing: border-box`, it was an overwhelming 90%, up around 5% from 2020.  Almost half of all pages analyzed apply border-box sizing to every element on the page via the universal selector (`*`).  This “one sizing fitted to all” approach may help explain why the median number of `border-box` declarations per page is so low across the bottom three percentiles.
+The principles of the original W3C box model continue to be rejected: when we looked to see how many pages were using `box-sizing: border-box`, it was an overwhelming 90%, up around 5% from 2020.  Almost half of all pages analyzed apply border-box sizing to every element on the page via the universal selector (`*`).  This "one sizing fitted to all" approach may help explain why the median number of `border-box` declarations per page is so low across the bottom three percentiles.
 
 {{ figure_markup(
   image="border-box-declarations-per-page.png",
@@ -966,7 +966,7 @@ In addition, about a quarter of pages apply `box-sizing` to checkboxes and radio
 
 Animations continue to be widely used, with the `animation` property appearing on 77% of all mobile and 73% of all desktop pages analyzed.   Its even more popular cousin, `transition`, is used on 85% of all mobile and 90% of all desktop pages.
 
-Among those transitions, the most common application is to all [animatable properties]([https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties)) using the `all` keyword (whether explicitly or by default), which occurred in 46% of the analyzed pages.  Just behind that is `opacity`, at 42% of all pages containing transitions.
+Among those transitions, the most common application is to all [animatable properties]([https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties) using the `all` keyword (whether explicitly or by default), which occurred in 46% of the analyzed pages.  Just behind that is `opacity`, at 42% of all pages containing transitions.
 
 {{ figure_markup(
   image="most-popular-transition-properties.png",
@@ -998,9 +998,9 @@ Among all those transitions, we took a look at the duration and delay times of t
 ) }}
 
 
-A closer look at the range of transition durations and delays revealed some seriously lengthy spans of time.  The largest duration value we found was 9,999,999,999,999,996 seconds, which corresponds to almost 317 million years.  Put another way, if that duration were used in a horizontal scroll transition of [If the Moon Were Only 1 Pixel](https://www.joshworth.com/dev/pixelspace/pixelspace_solarsystem.html), it would take just over two _centuries_ to scroll to the right by a single pixel.  This, however, pales in comparison to the longest transition delay we found: a value in milliseconds that equals not quite 31.7 _quintillion_ years.
+A closer look at the range of transition durations and delays revealed some seriously lengthy spans of time.  The largest duration value we found was 9,999,999,999,999,996 seconds, which corresponds to almost 317 million years.  Put another way, if that duration were used in a horizontal scroll transition of <a href="https://www.joshworth.com/dev/pixelspace/pixelspace_solarsystem.html">If the Moon Were Only 1 Pixel</a>, it would take just over two _centuries_ to scroll to the right by a single pixel.  This, however, pales in comparison to the longest transition delay we found: a value in milliseconds that equals not quite 31.7 _quintillion_ years.
 
-As for the timing functions used during the transitions, the clear leader is the default value, `ease`.  There’s a virtual tie for second between `ease-in-out` and `linear`, but the surprise was our fourth-place finisher, `cubic-bezier`.  This seems most likely to come from a library or some sort of tool, because while it’s possible to learn how to construct cubic Bézier curves by hand, very few people bother to do so (nor is there much reason why they should).
+As for the timing functions used during the transitions, the clear leader is the default value, `ease`.  There's a virtual tie for second between `ease-in-out` and `linear`, but the surprise was our fourth-place finisher, `cubic-bezier`.  This seems most likely to come from a library or some sort of tool, because while it's possible to learn how to construct cubic Bézier curves by hand, very few people bother to do so (nor is there much reason why they should).
 
 {{ figure_markup(
   image="timing-functions.png",
@@ -1011,7 +1011,7 @@ As for the timing functions used during the transitions, the clear leader is the
   sql_file="transition_timing_functions.sql"
 ) }}
 
-Okay, but, what kinds of animations are being performed?  To determine this, we classified various animation labels by the type of animation being performed.  For example, animations labeled `fa-spin`, `spin`, `spinner-spin`,  and so on were classified as “rotate” animations, and these were the most popular.
+Okay, but, what kinds of animations are being performed?  To determine this, we classified various animation labels by the type of animation being performed.  For example, animations labeled `fa-spin`, `spin`, `spinner-spin`,  and so on were classified as "rotate" animations, and these were the most popular.
 
 {{ figure_markup(
   image="animation-name-categories.png",
@@ -1022,9 +1022,9 @@ Okay, but, what kinds of animations are being performed?  To determine this, we 
   sql_file="transition_animation_names.sql"
 ) }}
 
-One reason for the high ranking of “unknown/other” is the animation label `a`, which was around 6-7% of all named animations.  (The most likely companion to these, `b`, had a 2% prevalence.)
+One reason for the high ranking of "unknown/other" is the animation label `a`, which was around 6-7% of all named animations.  (The most likely companion to these, `b`, had a 2% prevalence.)
 
-The weak showing of “move” and “slide” style animations might seem surprising, but remember: these are specifically types of `animation`.  Transitions driven by the `transition` property are not represented in this sample.  It is highly likely that many simple movements (and fades) are handled with transitions, and `animation` is reserved mostly for more complex effects.
+The weak showing of "move" and "slide" style animations might seem surprising, but remember: these are specifically types of `animation`.  Transitions driven by the `transition` property are not represented in this sample.  It is highly likely that many simple movements (and fades) are handled with transitions, and `animation` is reserved mostly for more complex effects.
 
 
 ## Responsive design
@@ -1045,13 +1045,13 @@ When authors build their media queries, they most often test the width of the vi
   sql_file="media_query_features.sql"
 ) }}
 
-Where we did see a notable change was in the ranking of the `prefers-reduced-motion` query.  This query placed 7th in 2020, with a share of 24%; this year, with a share of 32%, it’s up to fifth, where it just missed edging out `orientation`.
+Where we did see a notable change was in the ranking of the `prefers-reduced-motion` query.  This query placed 7th in 2020, with a share of 24%; this year, with a share of 32%, it's up to fifth, where it just missed edging out `orientation`.
 
-We also saw newcomers come and go at the bottom of the list.  [`pointer`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer), a query which checks to see if the display device’s primary input mechanism is a pointing device such as a mouse and which placed 19th last year, fell off the chart as it slipped to 21st place.  The [`hover` media feature](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover), on the other hand, entered the chart at 20th place.  `hover` is used to test if the display device’s primary input mechanism can cause a hover state in elements on the page.
+We also saw newcomers come and go at the bottom of the list. [`pointer`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer), a query which checks to see if the display device's primary input mechanism is a pointing device such as a mouse and which placed 19th last year, fell off the chart as it slipped to 21st place.  The [`hover` media feature](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover), on the other hand, entered the chart at 20th place.  `hover` is used to test if the display device's primary input mechanism can cause a hover state in elements on the page.
 
-Both queries have a similar aim, which is (put simply) to figure out if the device being used to display the page is mouse-driven or not.  Combined with a mobile-first design philosophy, where desktop styles are added to override the default mobile styling, one can see how queries like `pointer` or `hover` would be useful.  While it’s too soon to say if one or the other will become dominant, the trends this year swung toward `hover`.
+Both queries have a similar aim, which is (put simply) to figure out if the device being used to display the page is mouse-driven or not.  Combined with a mobile-first design philosophy, where desktop styles are added to override the default mobile styling, one can see how queries like `pointer` or `hover` would be useful.  While it's too soon to say if one or the other will become dominant, the trends this year swung toward `hover`.
 
-This year also saw the debut of `prefers-color-scheme`, coming in at 7%.  This may be due to iOS devices adding dark mode support since last year’s report, but in any event, it’s good to see that designers are starting to take color scheme preferences into account.
+This year also saw the debut of `prefers-color-scheme`, coming in at 7%.  This may be due to iOS devices adding dark mode support since last year's report, but in any event, it's good to see that designers are starting to take color scheme preferences into account.
 
 ### Common breakpoints
 
@@ -1068,7 +1068,7 @@ As in 2020, the most common breakpoints by far are at 767 and 768 pixels, which 
 
 Beyond the 767-768 range, the next most popular breakpoints were at 600 and 1,200 pixels, and close behind that was 480 pixels.
 
-Lest you think we converted all the breakpoint queries to pixels, we’re sorry to say we did not: these are the straight values from stylesheets.  Out of all the breakpoints we analyzed, the first non-pixel value on the list is `48em`, which came in at 76th on the ranking list, appearing in 1% of desktop and 2% of mobile styles.  The next em-based value, `40em`, is found in 85th place.
+Lest you think we converted all the breakpoint queries to pixels, we're sorry to say we did not: these are the straight values from stylesheets.  Out of all the breakpoints we analyzed, the first non-pixel value on the list is `48em`, which came in at 76th on the ranking list, appearing in 1% of desktop and 2% of mobile styles.  The next em-based value, `40em`, is found in 85th place.
 
 ### Properties inside media queries
 
@@ -1122,7 +1122,7 @@ Over the three years of the Web Almanac, custom properties (also known as CSS va
 
 ### Naming
 
-The first thing we checked was, “What are developers calling their custom properties?”  As it turned out, the prevalence of WordPress came out here, with the top entry being a link-coloring custom property defined by the WP core.
+The first thing we checked was, "What are developers calling their custom properties?"  As it turned out, the prevalence of WordPress came out here, with the top entry being a link-coloring custom property defined by the WP core.
 
 {{ figure_markup(
   image="custom-property-names.png",
@@ -1163,7 +1163,7 @@ Each custom property gets a CSS value of one type or another.  For example, `--r
 
 ### Complexity
 
-It’s possible to include custom properties in the values of other custom properties.  Consider this example from the 2020 Web Almanac:
+It's possible to include custom properties in the values of other custom properties.  Consider this example from the 2020 Web Almanac:
 
 ```css
 :root {
@@ -1201,7 +1201,7 @@ Of those pages that used CSS to set direction, 92% of `<html>` elements and 82% 
 
 ### Logical and physical properties
 
-Another CSS feature useful for internationalization are the “logical” properties like `margin-block-start`, `padding-inline-end`, and so on, as well as values such as `start` and `end` for properties like `text-align`.  These properties and values allow box features to be tied to the direction of text flow, rather than physical directions like top, right, bottom, and so on.
+Another CSS feature useful for internationalization are the "logical" properties like `margin-block-start`, `padding-inline-end`, and so on, as well as values such as `start` and `end` for properties like `text-align`.  These properties and values allow box features to be tied to the direction of text flow, rather than physical directions like top, right, bottom, and so on.
 
 As of mid-2021, only 4% of pages were found to be using logical properties of any kind.  Of the pages that did, about 33% were using it to set `text-align` to `start` or `end`.  Another 46% or so (combined) were setting logical margins and padding.  Again, note that there could be overlap in these figures.
 
@@ -1221,7 +1221,7 @@ In addition to directionality and logical features, CSS also offers internationa
 
 ## CSS and JS
 
-While the topic of “CSS in JS” is good for at least a Twitter flame war or two, its use in the wild continues to be very small.  This year, we found that about 3% of pages are using some form of CSS-in-JS, up from 2% in 2020.  Furthermore, nearly all of it comes from libraries built for the purpose, and more than half of that usage is from the Styled Components library.
+While the topic of "CSS in JS" is good for at least a Twitter flame war or two, its use in the wild continues to be very small.  This year, we found that about 3% of pages are using some form of CSS-in-JS, up from 2% in 2020.  Furthermore, nearly all of it comes from libraries built for the purpose, and more than half of that usage is from the Styled Components library.
 
 {{ figure_markup(
   image="css-in-js-libraries.png",
@@ -1234,7 +1234,7 @@ While the topic of “CSS in JS” is good for at least a Twitter flame war or t
 
 ### Houdini
 
-In some ways, CSS Houdini represents the opposite of the CSS-in-JS approach: it allows authors to mix a little JS into their CSS.  Perhaps in part due to [slow implementation](https://ishoudinireadyyet.com/) (in browsers that aren’t based on Blink) of core parts of the specification, Houdini has struggled to find its feet.  We find that it’s effectively not used on the open web in 2021: only 1,030 desktop pages and 1,175 mobile pages show evidence of animated custom properties, a feature of Houdini.  This is a threefold increase over the 2020 findings, but it looks like it will still be some time before Houdini finds an audience.
+In some ways, CSS Houdini represents the opposite of the CSS-in-JS approach: it allows authors to mix a little JS into their CSS.  Perhaps in part due to <a hreflang="en" href="https://ishoudinireadyyet.com/">slow implementation</a> (in browsers that aren't based on Blink) of core parts of the specification, Houdini has struggled to find its feet.  We find that it's effectively not used on the open web in 2021: only 1,030 desktop pages and 1,175 mobile pages show evidence of animated custom properties, a feature of Houdini.  This is a threefold increase over the 2020 findings, but it looks like it will still be some time before Houdini finds an audience.
 
 
 ## Meta
@@ -1243,7 +1243,7 @@ In this section, we take a look at more generic concepts in CSS, such as how oft
 
 ### Declaration repetition
 
-In the 2020 Web Almanac, analysis was done to determine the amount of “declaration repetition” — a metric meant to roughly estimate the efficiency of a stylesheet by determining how many declarations used the same property and value, and how many were unique within the page’s styles.
+In the 2020 Web Almanac, analysis was done to determine the amount of "declaration repetition" — a metric meant to roughly estimate the efficiency of a stylesheet by determining how many declarations used the same property and value, and how many were unique within the page's styles.
 
 The 2021 figures are in, and appear to show a slight drop in the median amount of repetition across all percentiles.
 
@@ -1260,7 +1260,7 @@ The degree of this drop is on the order of 2% for the 10th, 50th, and 90th perce
 
 ### Shorthands and longhands
 
-There are many parts of CSS where a collection of very specific properties are also covered by a single “umbrella” property that can set the more specific properties’ values in a single declaration.  `font`, for example, encompasses the values of `font-family`, `font-size`, `line-height`, `font-weight`, `font-style`, and `font-variant`.  The umbrella property `font` is what’s called a “shorthand” property, because it allows authors to set a number of things in a kind of shorthand.  The corresponding specific properties (e.g. `font-family`) are referred to as “longhand” properties.
+There are many parts of CSS where a collection of very specific properties are also covered by a single "umbrella" property that can set the more specific properties' values in a single declaration.  `font`, for example, encompasses the values of `font-family`, `font-size`, `line-height`, `font-weight`, `font-style`, and `font-variant`.  The umbrella property `font` is what's called a "shorthand" property, because it allows authors to set a number of things in a kind of shorthand.  The corresponding specific properties (e.g. `font-family`) are referred to as "longhand" properties.
 
 #### Shorthands before longhands
 
@@ -1279,7 +1279,7 @@ As in 2020, the winner was `background-size`, although last year it showed up in
 
 #### Background
 
-Since background longhand properties were at the top of the previous section’s chart, we turned our attention to the use of background shorthands and longhands.  It will come as little surprise that these are used almost universally; if anything, it came as a small surprise that there were any pages that didn’t set them.  An overwhelming 96% of pages used the `background` shorthand, which goes back to CSS1 in 1996.  The same went for the longhand properties of the same age, which were found being applied 85% or more of pages.
+Since background longhand properties were at the top of the previous section's chart, we turned our attention to the use of background shorthands and longhands.  It will come as little surprise that these are used almost universally; if anything, it came as a small surprise that there were any pages that didn't set them.  An overwhelming 96% of pages used the `background` shorthand, which goes back to CSS1 in 1996.  The same went for the longhand properties of the same age, which were found being applied 85% or more of pages.
 
 {{ figure_markup(
   image="usage-of-background-shorthand-vs-longhands.png",
@@ -1295,7 +1295,7 @@ That said, the much more recent `background-size` has seen rapid and widespread 
 
 #### Margins and paddings
 
-Moving down the list, we took a look at margin and padding properties.  Much as with backgrounds, it’s more a surprise that any pages don’t set these properties than that so many do.  What interested us this year was that the longhand `margin-left` edged out its shorthand counterpart `margin` to take the top ranking.
+Moving down the list, we took a look at margin and padding properties.  Much as with backgrounds, it's more a surprise that any pages don't set these properties than that so many do.  What interested us this year was that the longhand `margin-left` edged out its shorthand counterpart `margin` to take the top ranking.
 
 {{ figure_markup(
   image="usage-of-margin-padding-shorthands-vs-longhands.png",
@@ -1308,7 +1308,7 @@ Moving down the list, we took a look at margin and padding properties.  Much as 
 
 #### Font
 
-Just as was the case in 2020, the shorthand `font` came in behind all of its common longhand counterparts, with `font-size` leading the way and taking the top spot from last year’s winner, `font-weight`.
+Just as was the case in 2020, the shorthand `font` came in behind all of its common longhand counterparts, with `font-size` leading the way and taking the top spot from last year's winner, `font-weight`.
 
 {{ figure_markup(
   image="usage-of-font-shorthand-vs-longhands.png",
@@ -1321,7 +1321,7 @@ Just as was the case in 2020, the shorthand `font` came in behind all of its com
 
 The also-rans here, `font-variant` and `font-stretch`, have two very different stories.  `font-variant` has been around since CSS1, but never really caught on with designers, perhaps because for a long time, the only thing you could do with it was set `small-caps`.  Nowadays you can do a lot more with it and downloadable fonts, but authors do not seem to be making use of this capability.  Its use dropped significantly this year, down from 43% in 2020 to 23% in 2021.
 
-It’s worth taking a little closer look at `font-variant`.  While it’s used on 23% of mobile pages, the longhand properties that it’s now a shorthand for are barely used at all.  Here are the actual number of pages found that use not just `font-variant`, but each of its corresponding longhands.
+It's worth taking a little closer look at `font-variant`.  While it's used on 23% of mobile pages, the longhand properties that it's now a shorthand for are barely used at all.  Here are the actual number of pages found that use not just `font-variant`, but each of its corresponding longhands.
 
 <figure>
   <table>
@@ -1384,7 +1384,7 @@ The other low scoring property, `font-stretch`, is heavily dependent on both fon
 
 #### Flexbox
 
-Some of the Flexbox longhand and shorthand properties have had a turbulent history; for example, the CSS Flexbox specification itself [recommends that authors avoid](https://drafts.csswg.org/css-flexbox-1/#flex-grow-property) using `flex-grow`, `flex-shrink`, and `flex-basis` and use the `flex` shorthand instead.  This ensures that unset properties have sensible values. Unfortunately, this doesn’t seem to be bearing out in the wild, where `flex-basis` is used more often on mobile pages than is `flex`, by a margin of more than 10%.
+Some of the Flexbox longhand and shorthand properties have had a turbulent history; for example, the CSS Flexbox specification itself <a hreflang="en" href="https://drafts.csswg.org/css-flexbox-1/#flex-grow-property">recommends that authors avoid</a> using `flex-grow`, `flex-shrink`, and `flex-basis` and use the `flex` shorthand instead.  This ensures that unset properties have sensible values. Unfortunately, this doesn't seem to be bearing out in the wild, where `flex-basis` is used more often on mobile pages than is `flex`, by a margin of more than 10%.
 
 {{ figure_markup(
   image="usage-of-flex-shorthands-vs-longhands.png",
@@ -1395,7 +1395,7 @@ Some of the Flexbox longhand and shorthand properties have had a turbulent histo
   sql_file="all_properties.sql"
 ) }}
 
-It must be noted that there is a great deal of volatility in these figures as compared to last year’s, such as `flex-basis` doubling in usage on mobile while not really shifting on desktop.  This could be due to changes in a common framework used in mobile development, or it could be some other factor.
+It must be noted that there is a great deal of volatility in these figures as compared to last year's, such as `flex-basis` doubling in usage on mobile while not really shifting on desktop.  This could be due to changes in a common framework used in mobile development, or it could be some other factor.
 
 #### Grid
 
@@ -1414,15 +1414,15 @@ The pattern observed in past years is that Grid shorthand properties (`grid-temp
 
 ### CSS mistakes
 
-Sometimes, one can learn as much from a mistake as from a success.  We took the opportunity to look for not just common errors, but things that looked like they should be correct, but weren’t.
+Sometimes, one can learn as much from a mistake as from a success.  We took the opportunity to look for not just common errors, but things that looked like they should be correct, but weren't.
 
 #### Unrecoverable syntax errors
 
-This year’s parsing run, which as in 2020 uses the [Rework](https://github.com/reworkcss/css) CSS parser, yielded more heartening numbers.  Just 0.94% of desktop pages and 0.55% of mobile pages contained an unrecoverable error — that is, an error so bad, it made parsing the entirety of the stylesheet with Rework impossible.  There certainly may have been a much greater number of pages with small, recoverable CSS errors, but the unrecoverable-error figures this year are a great deal lower than last year.  This may easily indicate a change in Rework, as opposed to a sudden outbreak of syntax cleanup in the wild.
+This year's parsing run, which as in 2020 uses the <a hreflang="en" href="https://github.com/reworkcss/css">Rework</a> CSS parser, yielded more heartening numbers.  Just 0.94% of desktop pages and 0.55% of mobile pages contained an unrecoverable error — that is, an error so bad, it made parsing the entirety of the stylesheet with Rework impossible.  There certainly may have been a much greater number of pages with small, recoverable CSS errors, but the unrecoverable-error figures this year are a great deal lower than last year.  This may easily indicate a change in Rework, as opposed to a sudden outbreak of syntax cleanup in the wild.
 
 #### Nonexistent properties
 
-One of the things we like to check for is the existence of declarations that are syntactically valid, but use properties that don’t actually exist.  This doesn’t count vendor-prefixed properties, but does include malformed vendor-prefixed properties.  Indeed, the most widespread non-existent property we found was `webkit-transition` (which lacks the `-` at the beginning needed for a proper vendor prefix), appearing on 14% of all pages that contained a nonexistent property.  Essentially tied with that was `font-smoothing`, an unprefixed version of `-webkit-font-smoothing` that does not actually exist, [nor is it likely to](https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth) any time soon.
+One of the things we like to check for is the existence of declarations that are syntactically valid, but use properties that don't actually exist.  This doesn't count vendor-prefixed properties, but does include malformed vendor-prefixed properties.  Indeed, the most widespread non-existent property we found was `webkit-transition` (which lacks the `-` at the beginning needed for a proper vendor prefix), appearing on 14% of all pages that contained a nonexistent property.  Essentially tied with that was `font-smoothing`, an unprefixed version of `-webkit-font-smoothing` that does not actually exist, [nor is it likely to](https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth) any time soon.
 
 {{ figure_markup(
   image="most-popular-unknown-properties.png",
@@ -1453,7 +1453,7 @@ Doing things the other way around, putting a shorthand _after_ a longhand, is a 
 
 ## Sass
 
-One of the great advantages of CSS preprocessors is that they can reveal what’s missing in CSS itself, and can thus be a guide to how CSS should be extended in the future.  This has already happened before, with variables being so popular in preprocessors that CSS eventually added [custom properties](https://www.w3.org/TR/css-variables-1/) to its repertoire.  Other features of preprocessors, like color modifications and nested selectors, are also finding their way into the base language.
+One of the great advantages of CSS preprocessors is that they can reveal what's missing in CSS itself, and can thus be a guide to how CSS should be extended in the future.  This has already happened before, with variables being so popular in preprocessors that CSS eventually added <a hreflang="en" href="https://www.w3.org/TR/css-variables-1/">custom properties</a> to its repertoire.  Other features of preprocessors, like color modifications and nested selectors, are also finding their way into the base language.
 
 This is why we devote a section of this chapter to seeing how developers are using Sass, one of the most popular preprocessors on the web today.  The Sass functions we found in use largely mirrored those found in the 2020 Web Almanac, albeit with some changes in the specific percentages.  When classified by type, we found that 28% of all Sass functions were those that modify colors (e.g., `darken`, `mix`) and a further 6% were used to read color components (e.g., `alpha`, `blue`).
 
@@ -1469,7 +1469,7 @@ This is why we devote a section of this chapter to seeing how developers are usi
 
 The desire for conditional behavior can be seen in the fact that the `if()` function placed third on the list, at 15% of all Sass functions.
 
-This same desire can be seen even more clearly in the use of Sass’s flow control structures, like `@if`.  Literally two-thirds of all Sass stylesheets use `@if`, and more than half use `@for` or `@each` (or both).  This popular capability was [recently added to CSS](https://drafts.csswg.org/css-conditional-4/#when-rule). By contrast, only 2% use the `@while` structure.
+This same desire can be seen even more clearly in the use of Sass's flow control structures, like `@if`.  Literally two-thirds of all Sass stylesheets use `@if`, and more than half use `@for` or `@each` (or both).  This popular capability was <a hreflang="en" href="https://drafts.csswg.org/css-conditional-4/#when-rule">recently added to CSS</a>. By contrast, only 2% use the `@while` structure.
 
 {{ figure_markup(
   image="usage-of-control-flow-statements-in-scss.png",
@@ -1480,7 +1480,7 @@ This same desire can be seen even more clearly in the use of Sass’s flow contr
   sql_file="sass_control_flow_statements.sql"
 ) }}
 
-Another of Sass’s major draws is the ability to nest rules inside other rules and thus avoid having to write repetitive selector patterns.  This capability is [under development for native CSS](https://www.w3.org/TR/css-nesting-1/), and our analysis shows why: 87% of all Sass stylesheets use a detectable form of rule nesting.  Implicit nesting, which does not require special characters, was not measured.
+Another of Sass's major draws is the ability to nest rules inside other rules and thus avoid having to write repetitive selector patterns.  This capability is <a hreflang="en" href="https://www.w3.org/TR/css-nesting-1/">under development for native CSS</a>, and our analysis shows why: 87% of all Sass stylesheets use a detectable form of rule nesting.  Implicit nesting, which does not require special characters, was not measured.
 
 {{ figure_markup(
   image="usage-of-explicit-nesting-in-scss.png",
@@ -1495,8 +1495,8 @@ Another of Sass’s major draws is the ability to nest rules inside other rules 
 
 ## Conclusion
 
-In the end, the 2021 Web Almanac tells the story of a technology that’s stable but still evolving.  We saw very few instances of major shifts between last year’s Almanac and this year’s — some practices and web features are clearly growing, while others are beginning to fade, but overall, there was a very strong sense of continuity.
+In the end, the 2021 Web Almanac tells the story of a technology that's stable but still evolving.  We saw very few instances of major shifts between last year's Almanac and this year's — some practices and web features are clearly growing, while others are beginning to fade, but overall, there was a very strong sense of continuity.
 
-Does this mean CSS has become stagnant?  Hardly: new layout methods are gaining ground, and major new capabilities are being developed, many of them based on practices worked out in the realm of preprocessors.  We would not think to claim that CSS is “solved” or that the best possible practices have already been worked out.  As practitioners gain ever more experience, changes will come to both CSS the language and CSS the practice.  These changes may be gradual rather than sudden, steady rather than disruptive, but this is what we expect in any mature technology.
+Does this mean CSS has become stagnant?  Hardly: new layout methods are gaining ground, and major new capabilities are being developed, many of them based on practices worked out in the realm of preprocessors.  We would not think to claim that CSS is "solved" or that the best possible practices have already been worked out.  As practitioners gain ever more experience, changes will come to both CSS the language and CSS the practice.  These changes may be gradual rather than sudden, steady rather than disruptive, but this is what we expect in any mature technology.
 
 We look forward to seeing how CSS will grow over the years to come.
