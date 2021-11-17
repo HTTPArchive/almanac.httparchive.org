@@ -592,6 +592,14 @@
       "github": "hemanth",
       "twitter": "gnumanth"
     },
+    "wrttnwrd": {
+      "name": "Ian Lurie",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/382649?v=4&s=200",
+      "github": "wrttnwrd"
+    },
     "RReverser": {
       "name": "Ingvar Stepanyan",
       "teams": [
@@ -606,7 +614,8 @@
     "fellowhuman1101": {
       "name": "Jamie Indigo",
       "teams": [
-        "authors"
+        "authors",
+        "reviewers"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/52051775?v=4&s=200",
       "website": "https://not-a-robot.com/",
@@ -691,6 +700,15 @@
       "website": "https://www.jonoalderson.com",
       "github": "jonoalderson",
       "twitter": "jonoalderson"
+    },
+    "jroakes": {
+      "name": "JR Oakes",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/10191545?v=4&s=200",
+      "github": "jroakes",
+      "twitter": "jroakes"
     },
     "jzyang": {
       "name": "Julia Yang",
@@ -998,6 +1016,15 @@
       "github": "rviscomi",
       "twitter": "rick_viscomi"
     },
+    "SeoRobt": {
+      "name": "Rob Teitelman",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/83400777?v=4&s=200",
+      "github": "SeoRobt",
+      "twitter": "teitelmanrob"
+    },
     "rmarx": {
       "name": "Robin Marx",
       "teams": [
@@ -1134,6 +1161,14 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/4355579?v=4&s=200",
       "github": "tomvangoethem",
       "twitter": "tomvangoethem"
+    },
+    "Tomek3c": {
+      "name": "Tomek Rudzki",
+      "teams": [
+        "authors"
+      ],
+      "github": "Tomek3c",
+      "twitter": "TomekRudzki"
     },
     "tosinarasi": {
       "name": "Tosin Arasi",
