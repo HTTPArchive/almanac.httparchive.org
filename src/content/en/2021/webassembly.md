@@ -39,13 +39,15 @@ Those tradeoffs are most consistent with analysis done in other chapters, but if
 
 We got 3854 confirmed WebAssembly requests on desktop and 3173 on mobile. Those Wasm modules are used across 2724 domains on desktop and 2300 domains on mobile, which represents 0.06% and 0.04% of all domains on desktop and mobile correspondingly.
 
-Interestingly, when we look at the most popular resulting content-types, we can see that while `Content-Type: application/wasm` is by far most popular, it doesn't cover all the Wasm responses:
+Interestingly, when we look at the most popular resulting mime-types, we can see that while `Content-Type: application/wasm` is by far the most popular, it doesn't cover all the Wasm responses.
 
 ![image](insert_image_url_here)
 
-Some of those used `application/octet-stream` - a generic content-type for arbitrary binary data, some didn't have any content-type header, and others incorrectly used text types (plain text, HTML and JSON) or even invalid types like `binary/octet-stream`.
+Some of those used `application/octet-stream` - a generic type for arbitrary binary data, some didn't have any `Content-Type` header, and others incorrectly used text types like plain or HTML or even invalid ones like `binary/octet-stream`.
 
-In the case of WebAssembly, providing correct `Content-Type` is important not only for security reasons, but also because it enables a faster streaming compilation and instantiation via [`WebAssembly.compileStreaming](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/compileStreaming)` and [`WebAssembly.instantiateStreaming](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiateStreaming)`.
+In case of WebAssembly, providing correct `Content-Type` header is important not only for security reasons, but also because it enables a faster streaming compilation and instantiation via [`WebAssembly.compileStreaming](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/compileStreaming)` and [`WebAssembly.instantiateStreaming](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiateStreaming)`.
+
+## How often do we reuse Wasm libraries?
 
 While downloading those responses, we've also deduplicated them by hashing their contents and using that hash as a filename on disk. After that we were left with 656 unique WebAssembly files on desktop and 534 on mobile.
 
@@ -55,9 +57,9 @@ The stark difference between the numbers of unique files and total responses alr
 
 ![image](insert_image_url_here)
 
-Let's dive deeper into that and figure out what those reused libraries are. First, we've tried to deduplicate libraries by content hash alone, but it became quickly apparent that many of those are still duplicates that differ only by library version.
+Let's dive deeper and figure out what those reused libraries are. First, we've tried to deduplicate libraries by content hash alone, but it became quickly apparent that many of those left are still duplicates that differ only by library version.
 
-Instead, we decided to extract library names from URLs. While it's more problematic in theory due to potential name clashes, it turned out to be a more reliable option in practice. We extracted filenames from URLs, removed suffixes that looked like versions or content hashes, sorted the results by number of repetitions and extracted the top 10 modules for each client. For those left, we did manual lookups to understand which libraries those modules are coming from.
+Instead, we decided to extract library names from URLs. While it's more problematic in theory due to potential name clashes, it turned out to be a more reliable option for top libraries in practice. We extracted filenames from URLs, removed extensions, minor versions and suffixes that looked like content hashes, sorted the results by number of repetitions and extracted the top 10 modules for each client. For those left, we did manual lookups to understand which libraries those modules are coming from.
 
 ![image](insert_image_url_here)
 
@@ -65,7 +67,7 @@ Almost 1/3 of WebAssembly usages on both desktop and mobile belong to the [Amazo
 
 The next up is [Hyphenopoly](https://github.com/mnater/Hyphenopoly) - a library for hyphenating text in various languages - that accounts for 13% and 19% of Wasm requests on desktop and mobile correspondingly. It's built with JavaScript and [AssemblyScript](https://www.assemblyscript.org/).
 
-Other libraries from both top 10 desktop and mobile lists account for up to 5% of WebAssembly requests each. Here's a complete list of libraries from the graph above, with toolchains and links to the corresponding homepages:
+Other libraries from both top 10 desktop and mobile lists account for up to 5% of WebAssembly requests each. Here's a complete list of libraries shown above, with inferred toolchains and links to corresponding homepages with more information:
 
 - [Amazon IVS](https://aws.amazon.com/ivs/) (Emscripten)
 - [Hyphenopoly](https://mnater.github.io/Hyphenopoly/) (AssemblyScript)
@@ -79,6 +81,11 @@ Other libraries from both top 10 desktop and mobile lists account for up to 5% o
 - [Tencent Video](https://intl.cloud.tencent.com/products/vod) (Emscripten)
 - [Nimiq](https://www.npmjs.com/package/@nimiq/core-web) (Emscripten)
 - [Scandit](https://www.scandit.com/developers/) (Emscripten)
+
+Few more caveats about the methodology and results here:
+
+1. Hyphenopoly loads dictionaries for various languages as tiny WebAssembly files, too, but since those are technically not separate libraries nor are they unique usages of Hyphenopoly itself, we've excluded them from the graph above.
+1. WebAssembly file from Playa Games seems to be used by the same game hosted across similarly-looking domains. We count those as individual usages in our query, but, unlike other items in the list, it's not clear if it should be counted as a reusable library.
 
 ## How much do we ship?
 
@@ -100,64 +107,113 @@ Even with compression, those numbers are still pretty extreme, considering that 
 
 ### How is Wasm compressed in the wild?
 
-First, let's take a look at compression methods used in these raw responses:
+First, let's take a look at compression methods used in these raw responses. I'll show the mobile dataset here because on mobile bandwidth is even more important, but desktop numbers are pretty similar:
 
 ![image](insert_image_url_here)
 
-Unfortunately, ~38% of those WebAssembly responses are shipped without any compression.
+Unfortunately, it shows that ~40% of WebAssembly responses on mobile are shipped without any compression.
 
-38%
-_Percent of uncompressed WebAssembly responses_
+40.2%
+_Percent of uncompressed WebAssembly responses on mobile_
 
-Another ~45% use gzip, which has been a de-facto standard method on the web for a long time, and still provides a decent compression ratio, but not the best one today. Finally, only ~17% use Brotli - a modern compression format with an even better ratio that is supported [in all modern browsers](https://caniuse.com/brotli). In fact, Brotli is supported in every browser that has WebAssembly support too, so there's no reason not to use them together.
+Another ~46% use gzip, which has been a de-facto standard method on the web for a long time, and still provides a decent compression ratio, but it's not the best algorithm today. Finally, only ~14% use Brotli - a modern compression format that provides an even better ratio and is supported [in all modern browsers](https://caniuse.com/brotli). In fact, Brotli is supported in every browser that has WebAssembly support too, so there's no reason not to use them together.
 
 ### Can we improve compression?
 
-Would it have made a difference? We've decided to recompress all those WebAssembly files with Brotli (compression level 9) to figure it out. The command used on each file:
+Would it have made a difference? We've decided to recompress all those WebAssembly files with Brotli (compression level 9) to figure it out. The command used on each file was:
 
 ```bash
 brotli -k9f some.wasm -o some.wasm.br
 ```
 
-Resulting sizes:
+Here are the resulting sizes:
 
 ![image](insert_image_url_here)
 
-The median drops from 300 KiB to 250 KiB, which is already a pretty good sign. The top 10% go down from 2.6 MiB / 1.4 MiB to 2.3 MiB / 0.8 MiB. We can see significant improvements across all other percentiles, too.
+The median drops from almost 300 KiB to 250 KiB, which is already a pretty good sign. The top 10% go down from 2.6 MiB / 1.4 MiB to 2.3 MiB / 0.8 MiB. We can see significant improvements across all other percentiles, too.
 
-Due to their nature, percentiles don't necessarily fall onto the same files between datasets, so it might be hard to compare numbers directly between graphs and to understand the distribution of savings. Instead, from now on, let me show the savings themselves provided by each optimization, step by step:
+Due to their nature, percentiles don't necessarily fall onto the same files between datasets, so it might be hard to compare numbers directly between graphs and to understand the size savings. Instead, from now on, let me show the savings themselves provided by each optimization, step by step:
 
 ![image](insert_image_url_here)
 
 Median savings are around 40 KiB. The top 10% save over 600 KiB on desktop and 335 KiB on mobile, and the largest savings produced reach as much as 36 MiB / 22 MiB. Those differences speak in favor of enabling Brotli compression whenever possible, at least for WebAssembly content.
 
-What happened at the worst end - how is it possible that Brotli recompression has made things worse for some modules? As mentioned above, in this article we've used Brotli with compression level 9, but it also has levels 10 and 11. They produce even better results in exchange for a steep performance drop-off, as seen, for example, in [Squash benchmarks](https://quixdb.github.io/squash-benchmark/#results-table). This trade-off can make them worse candidates for the common on-the-fly compression, which is why we didn't use them in this article and went for a more moderate level 9. However, website authors can choose to compress their static resources ahead of time or cache the compression results, and save even more bandwidth without sacrificing CPU time. Cases like these show up as regressions in the graph above.
+You might be curious - what happened at the worst end - how is it possible that Brotli recompression has made things worse for some modules? As mentioned above, in this article we've used Brotli with compression level 9, but it also has levels 10 and 11. Those levels produce even better results in exchange for a steep performance drop-off, as seen, for example, in [Squash benchmarks](https://quixdb.github.io/squash-benchmark/#results-table). Such trade-off can make them worse candidates for the common on-the-fly compression, which is why we didn't use them in this article and went for a more moderate level 9. However, website authors can choose to compress their static resources ahead of time or cache the compression results, and save even more bandwidth without sacrificing CPU time. Cases like these show up as regressions in the graph above, meaning some resources were already optimized even better than we did in this article.
 
 ### Which sections take up most of the space?
 
-Compression aside, we can also look at the high-level structure of WebAssembly binaries. What are the largest sections? I'll ignore the desktop/mobile split as it's less interesting here, and just sum up uncompressed section sizes from all requests together:
+Compression aside, we could also look for optimization opportunities by analyzing the high-level structure of WebAssembly binaries. Which sections are taking up most of the space? To find out, we've summed up section sizes from all the Wasm modules and divided them by the total binary size. Once again, I'll use numbers from the mobile dataset here, but desktop numbers aren't too far off:
 
 ![image](insert_image_url_here)
 
-Unsurprisingly, most - 77% - of the total size comes from the compiled code itself, followed by 18% for embedded static data. Things like function types, import/export descriptors and such comprise a negligible part - 0.3% - of the total size. However, one section type stands out - it's custom sections, which account for ~4.5% of total binary size in the dataset.
+Unsurprisingly, most - ~74% - of the total binary size comes from the compiled code itself, followed by ~19% for embedded static data. Function types, import/export descriptors and such comprise a negligible part of the total size. However, one section type stands out - it's custom sections, which account for ~6.5% of total size in the mobile dataset.
 
-4.5%
-_Percent of total Wasm size in the dataset that belongs to custom sections_
+6.5%
+_Portion of custom sections in the total binary size of mobile dataset_
 
 Custom sections are mainly used in WebAssembly for 3rd-party tooling - they might contain information for type binding systems, linkers, DevTools and such. While all of those are legitimate use-cases, they are rarely necessary in production code, so such a large percentage is suspicious. Let's take a look at what they are in top 10 files with largest custom sections:
 
-| url                                                                                                               | custom_sections_size | custom_sections           |
-|-------------------------------------------------------------------------------------------------------------------|----------------------|---------------------------|
-| https://gallery.platform.uno/package_85a43e09d7152711f12894936a8986e20694304a/dotnet.wasm                         |             15053733 | name                      |
-| https://cdn.decentraland.org/@dcl/unity-renderer/1.0.12536-20210902152600.commit-86fe4be/unity.wasm.br?v=1.0.8874 |              9705643 | name                      |
-| https://nanoleq.com/nanoleq-HTML5-Shipping.wasmgz                                                                 |              8531376 | name                      |
-| https://convertmodel.com/export.wasm                                                                              |              7306371 | name                      |
-| https://webasset-akm.imvu.com/asset/c0c43115a4de5de0/build/northstar/js/northstar_api.wasm                        |              6470360 | name, external_debug_info |
-| https://webasset-akm.imvu.com/asset/9982942a9e080158/build/northstar/js/northstar_api.wasm                        |              6435469 | name, external_debug_info |
-| https://superctf.com/ReactGodot.wasm                                                                              |              4672588 | name                      |
-| https://ui.perfetto.dev/v18.0-591dd9336/trace_processor.wasm                                                      |              2079991 | name                      |
-| https://ui.perfetto.dev/v18.0-615704773/trace_processor.wasm                                                      |              2079991 | name                      |
-| https://unpkg.com/canvaskit-wasm@0.25.1/bin/profiling/canvaskit.wasm                                              |              1491602 | name                      |
+<table>
+<thead>
+<tr>
+<th>url</th>
+<th>custom_sections_size</th>
+<th>custom_sections</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://gallery.platform.uno/package_85a43e09d7152711f12894936a8986e20694304a/dotnet.wasm">https://gallery.platform.uno/package_85a43e09d7152711f12894936a8986e20694304a/dotnet.wasm</a></td>
+<td>15053733</td>
+<td>name</td>
+</tr>
+<tr>
+<td><a href="https://cdn.decentraland.org/@dcl/unity-renderer/1.0.12536-20210902152600.commit-86fe4be/unity.wasm.br?v=1.0.8874">https://cdn.decentraland.org/@dcl/unity-renderer/1.0.12536-20210902152600.commit-86fe4be/unity.wasm.br?v=1.0.8874</a></td>
+<td>9705643</td>
+<td>name</td>
+</tr>
+<tr>
+<td><a href="https://nanoleq.com/nanoleq-HTML5-Shipping.wasmgz">https://nanoleq.com/nanoleq-HTML5-Shipping.wasmgz</a></td>
+<td>8531376</td>
+<td>name</td>
+</tr>
+<tr>
+<td><a href="https://convertmodel.com/export.wasm">https://convertmodel.com/export.wasm</a></td>
+<td>7306371</td>
+<td>name</td>
+</tr>
+<tr>
+<td><a href="https://webasset-akm.imvu.com/asset/c0c43115a4de5de0/build/northstar/js/northstar_api.wasm">https://webasset-akm.imvu.com/asset/c0c43115a4de5de0/build/northstar/js/northstar_api.wasm</a></td>
+<td>6470360</td>
+<td>name, external_debug_info</td>
+</tr>
+<tr>
+<td><a href="https://webasset-akm.imvu.com/asset/9982942a9e080158/build/northstar/js/northstar_api.wasm">https://webasset-akm.imvu.com/asset/9982942a9e080158/build/northstar/js/northstar_api.wasm</a></td>
+<td>6435469</td>
+<td>name, external_debug_info</td>
+</tr>
+<tr>
+<td><a href="https://superctf.com/ReactGodot.wasm">https://superctf.com/ReactGodot.wasm</a></td>
+<td>4672588</td>
+<td>name</td>
+</tr>
+<tr>
+<td><a href="https://ui.perfetto.dev/v18.0-591dd9336/trace_processor.wasm">https://ui.perfetto.dev/v18.0-591dd9336/trace_processor.wasm</a></td>
+<td>2079991</td>
+<td>name</td>
+</tr>
+<tr>
+<td><a href="https://ui.perfetto.dev/v18.0-615704773/trace_processor.wasm">https://ui.perfetto.dev/v18.0-615704773/trace_processor.wasm</a></td>
+<td>2079991</td>
+<td>name</td>
+</tr>
+<tr>
+<td><a href="https://unpkg.com/canvaskit-wasm@0.25.1/bin/profiling/canvaskit.wasm">https://unpkg.com/canvaskit-wasm@0.25.1/bin/profiling/canvaskit.wasm</a></td>
+<td>1491602</td>
+<td>name</td>
+</tr>
+</tbody>
+</table>
 
 All of those are almost exclusively the `name` section which contains function names for basic debugging. In fact, if we keep looking through the dataset, we can see that almost all of those custom sections contain just the debug information.
 
@@ -216,17 +272,17 @@ Smaller WebAssembly binaries tend to mean faster compilation in the VM, less mem
 
 We've already glimpsed at the contents of Wasm when sliced by section kinds above. Let's take a deeper look at the contents of the code section - the largest and the most important part of a WebAssembly module.
 
-First, we've split instructions into various categories and counted them across all desktop and mobile Wasm modules together:
+We've split instructions into various categories and counted them across all the modules together:
 
 ![image](insert_image_url_here)
 
-One surprising takeaway from this distribution is that local var operations - that is, `local.get`, local.set` and `local.tee` - comprise the largest category - 35.6%, far ahead from the next few categories - inlined constants (15.8%), load/store operations (15.2%) and all the math/logic operations (14.4%). Those operations are usually generated by compilers as a result of optimization passes in compilers. They downgrade expensive memory access operations to local variables where possible, so that engines can subsequently put those local variables into CPU registers, which makes them much cheaper to access.
+One surprising takeaway from this distribution is that local var operations - that is, `local.get`, local.set` and `local.tee` - comprise the largest category - 36%, far ahead from the next few categories - inline constants (15.2%), load/store operations (14.7%) and all the math and logical operations (14.3%). Local var operations are usually generated by compilers as a result of optimization passes in compilers. They downgrade expensive memory access operations to local variables where possible, so that engines can subsequently put those local variables into CPU registers, which makes them much cheaper to access.
 
 It's not actionable information for developers compiling to Wasm, but something that might be interesting to engine and tooling developers as a potential area for further size optimizations.
 
 ## What's the usage of post-MVP extensions?
 
-Another interesting metric to look at is post-MVP Wasm extensions. While WebAssembly 1.0 was released several years ago, it's still actively developed and grows new features over time - some improve code size by moving common operations to the engines, some provide more powerful performance primitives, and others improve developer experience and integration with the web. On the official [feature roadmap](https://webassembly.org/roadmap/) we track support for those proposals across latest versions of every popular engine.
+Another interesting metric to look at is post-MVP Wasm extensions. While WebAssembly 1.0 was released several years ago, it's still actively developed and grows with new features over time. Some of those improve code size by moving common operations to the engines, some provide more powerful performance primitives, and others improve developer experience and integration with the web. On the official [feature roadmap](https://webassembly.org/roadmap/) we track support for those proposals across latest versions of every popular engine.
 
 Let's take a look at their adoption in the Almanac dataset too:
 
@@ -236,9 +292,9 @@ One feature stands out - it's the [sign-extension operators proposal](https://gi
 
 For example, [non-trapping float-to-int conversions](https://github.com/WebAssembly/nontrapping-float-to-int-conversions/blob/master/proposals/nontrapping-float-to-int-conversion/Overview.md) is very similar in spirit to sign-extension operators - it also provides built-in conversions for numeric types to save some code size - but it became uniformly supported only recently with the release of Safari 15. That's why this feature is not yet enabled by default, and most developers don't want the complexity of building & shipping different versions of their WebAssembly module to different browsers without a very compelling reason. As a result, none of the Wasm modules in the dataset used those conversions.
 
-Other features with zero detected usages - multi-value, reference types and tail calls - are in a similar situation and they could also be useful for most WebAssembly modules, but they additionally suffer from either incomplete compiler or browser support.
+Other features with zero detected usages - multi-value, reference types and tail calls - are in a similar situation: they could also benefit most WebAssembly use-cases, but they suffer from incomplete compiler and/or engine support.
 
-Among the remaining, used, features, two that are particularly interesting are SIMD and atomics. Both provide instructions for parallelising and speeding up execution at different levels: [SIMD](https://v8.dev/features/simd) allows to perform math operations on several values at once, and atomics provide a basis for [multithreading in Wasm](https://web.dev/webassembly-threads/). They are not enabled by default, require specific use-cases, and multithreading in particular requires using special libraries in the source code as well as additional configuration to make the website [cross-origin isolated](https://web.dev/coop-coep/) before it can be used on the web. As a result, a relatively low usage level is expected, although we expect them to grow over time.
+Among the remaining, used, features, two that are particularly interesting are SIMD and atomics. Both provide instructions for parallelising and speeding up execution at different levels: [SIMD](https://v8.dev/features/simd) allows to perform math operations on several values at once, and atomics provide a basis for [multithreading in Wasm](https://web.dev/webassembly-threads/). Those features are not enabled by default, require specific use-cases, and multithreading in particular requires using special APIs in the source code as well as additional configuration to make the website [cross-origin isolated](https://web.dev/coop-coep/) before it can be used on the web. As a result, a relatively low usage level is unsurprising, although we expect them to grow over time.
 
 ## Conclusion
 
