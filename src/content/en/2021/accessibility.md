@@ -141,9 +141,9 @@ The most commonly expected landmarks that the majority of web pages should have 
   <table>
     <thead>
       <tr>
-        <th>HTML 5 element</th>
-        <th>Pages with element</th>
+        <th>HTML5 element</th>
         <th>ARIA role equivalent</th>
+        <th>Pages with element</th>
         <th>Page with role</th>
         <th>Page with element or role</th>
       </tr>
@@ -151,29 +151,29 @@ The most commonly expected landmarks that the majority of web pages should have 
     <tbody>
       <tr>
         <td>`<main>`</td>
-        <td class="numeric">28%</td>
         <td>`role="main"`</td>
+        <td class="numeric">28%</td>
         <td class="numeric">17%</td>
         <td class="numeric">45%</td>
       </tr>
       <tr>
         <td>`<header>`</td>
-        <td class="numeric">62%</td>
         <td>`role="banner"`</td>
+        <td class="numeric">62%</td>
         <td class="numeric">14%</td>
         <td class="numeric">76%</td>
       </tr>
       <tr>
         <td>`<nav>`</td>
-        <td class="numeric">62%</td>
         <td>`role="navigation"`</td>
+        <td class="numeric">62%</td>
         <td class="numeric">4%</td>
         <td class="numeric">66%</td>
       </tr>
       <tr>
         <td>`<footer>`</td>
-        <td class="numeric">63%</td>
         <td>`role="contentinfo"`</td>
+        <td class="numeric">63%</td>
         <td class="numeric">12%</td>
         <td class="numeric">76%</td>
       </tr>
