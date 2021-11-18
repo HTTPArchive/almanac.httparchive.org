@@ -41,7 +41,15 @@ We got 3854 confirmed WebAssembly requests on desktop and 3173 on mobile. Those 
 
 Interestingly, when we look at the most popular resulting mime-types, we can see that while `Content-Type: application/wasm` is by far the most popular, it doesn't cover all the Wasm responses.
 
-<!-- ![image](insert_image_url_here) -->
+{{ figure_markup(
+  image="todo.png",
+  caption="TODO",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1635040165&format=interactive",
+  sheets_gid="298942353",
+  sql_file="todo.sql"
+  )
+}}
 
 Some of those used `application/octet-stream` - a generic type for arbitrary binary data, some didn't have any `Content-Type` header, and others incorrectly used text types like plain or HTML or even invalid ones like `binary/octet-stream`.
 
@@ -51,17 +59,41 @@ In case of WebAssembly, providing correct `Content-Type` header is important not
 
 While downloading those responses, we've also deduplicated them by hashing their contents and using that hash as a filename on disk. After that we were left with 656 unique WebAssembly files on desktop and 534 on mobile.
 
-<!-- ![image](insert_image_url_here) -->
+{{ figure_markup(
+  image="todo.png",
+  caption="TODO",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=341129382&format=interactive",
+  sheets_gid="1692581795",
+  sql_file="todo.sql"
+  )
+}}
 
 The stark difference between the numbers of unique files and total responses already suggests high reuse of WebAssembly libraries across various websites. It's further confirmed if we look at the distribution of cross-origin / same-origin WebAssembly requests:
 
-<!-- ![image](insert_image_url_here) -->
+{{ figure_markup(
+  image="todo.png",
+  caption="TODO",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1239068211&format=interactive",
+  sheets_gid="49966611",
+  sql_file="todo.sql"
+  )
+}}
 
 Let's dive deeper and figure out what those reused libraries are. First, we've tried to deduplicate libraries by content hash alone, but it became quickly apparent that many of those left are still duplicates that differ only by library version.
 
 Instead, we decided to extract library names from URLs. While it's more problematic in theory due to potential name clashes, it turned out to be a more reliable option for top libraries in practice. We extracted filenames from URLs, removed extensions, minor versions and suffixes that looked like content hashes, sorted the results by number of repetitions and extracted the top 10 modules for each client. For those left, we did manual lookups to understand which libraries those modules are coming from.
 
-<!-- ![image](insert_image_url_here) -->
+{{ figure_markup(
+  image="todo.png",
+  caption="TODO",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1627913370&format=interactive",
+  sheets_gid="370507165",
+  sql_file="todo.sql"
+  )
+}}
 
 Almost 1/3 of WebAssembly usages on both desktop and mobile belong to the [Amazon Interactive Video Service](https://aws.amazon.com/ivs/) player library. While it's not open-source, the inspection of the associated JavaScript glue code suggests that it was built with [Emscripten](https://emscripten.org/).
 
@@ -85,13 +117,21 @@ Other libraries from both top 10 desktop and mobile lists account for up to 5% o
 Few more caveats about the methodology and results here:
 
 1. Hyphenopoly loads dictionaries for various languages as tiny WebAssembly files, too, but since those are technically not separate libraries nor are they unique usages of Hyphenopoly itself, we've excluded them from the graph above.
-1. WebAssembly file from Playa Games seems to be used by the same game hosted across similarly-looking domains. We count those as individual usages in our query, but, unlike other items in the list, it's not clear if it should be counted as a reusable library.
+2. WebAssembly file from Playa Games seems to be used by the same game hosted across similarly-looking domains. We count those as individual usages in our query, but, unlike other items in the list, it's not clear if it should be counted as a reusable library.
 
 ## How much do we ship?
 
 Languages compiled to WebAssembly usually have their own standard library. Since APIs and value types are so different across languages, they can't reuse the JavaScript built-ins. Instead, they have to compile not only their own code, but also APIs from said standard library and ship it all together to the user in a single binary. What does it mean for the resulting file sizes? Let's take a look:
 
-<!-- ![image](insert_image_url_here) -->
+{{ figure_markup(
+  image="todo.png",
+  caption="TODO",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=528882928&format=interactive",
+  sheets_gid="1401232418",
+  sql_file="todo.sql"
+  )
+}}
 
 The sizes vary a lot, which indicates a decent coverage of various types of content - from simple helper libraries to full applications compiled to WebAssembly.
 
@@ -99,7 +139,15 @@ Sizes of up to 84 MiB look pretty concerning, but keep in mind those are uncompr
 
 Let's check sizes of raw response bodies as sent by servers instead:
 
-<!-- ![image](insert_image_url_here) -->
+{{ figure_markup(
+  image="todo.png",
+  caption="TODO",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1094358341&format=interactive",
+  sheets_gid="1401232418",
+  sql_file="todo.sql"
+  )
+}}
 
 The median is at around 300 KiB, meaning that half of usages download below 300 KiB, and half are larger. 90% of all Wasm responses stay below 2.6 MiB on desktop and 1.4 MiB on mobile. At the same time, the largest response in the HTTP Archive downloads about 46 MiB of Wasm on desktop and 29 MiB on mobile.
 
@@ -109,7 +157,15 @@ Even with compression, those numbers are still pretty extreme, considering that 
 
 First, let's take a look at compression methods used in these raw responses. I'll show the mobile dataset here because on mobile bandwidth is even more important, but desktop numbers are pretty similar:
 
-<!-- ![image](insert_image_url_here) -->
+{{ figure_markup(
+  image="todo.png",
+  caption="TODO",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1660946444&format=interactive",
+  sheets_gid="189654676",
+  sql_file="todo.sql"
+  )
+}}
 
 Unfortunately, it shows that ~40% of WebAssembly responses on mobile are shipped without any compression.
 
@@ -128,13 +184,29 @@ brotli -k9f some.wasm -o some.wasm.br
 
 Here are the resulting sizes:
 
-<!-- ![image](insert_image_url_here) -->
+{{ figure_markup(
+  image="todo.png",
+  caption="TODO",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=2085720303&format=interactive",
+  sheets_gid="1401232418",
+  sql_file="todo.sql"
+  )
+}}
 
 The median drops from almost 300 KiB to 250 KiB, which is already a pretty good sign. The top 10% go down from 2.6 MiB / 1.4 MiB to 2.3 MiB / 0.8 MiB. We can see significant improvements across all other percentiles, too.
 
 Due to their nature, percentiles don't necessarily fall onto the same files between datasets, so it might be hard to compare numbers directly between graphs and to understand the size savings. Instead, from now on, let me show the savings themselves provided by each optimization, step by step:
 
-<!-- ![image](insert_image_url_here) -->
+{{ figure_markup(
+  image="todo.png",
+  caption="TODO",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1741617577&format=interactive",
+  sheets_gid="1401232418",
+  sql_file="todo.sql"
+  )
+}}
 
 Median savings are around 40 KiB. The top 10% save over 600 KiB on desktop and 335 KiB on mobile, and the largest savings produced reach as much as 36 MiB / 22 MiB. Those differences speak in favor of enabling Brotli compression whenever possible, at least for WebAssembly content.
 
@@ -144,7 +216,15 @@ You might be curious - what happened at the worst end - how is it possible that 
 
 Compression aside, we could also look for optimization opportunities by analyzing the high-level structure of WebAssembly binaries. Which sections are taking up most of the space? To find out, we've summed up section sizes from all the Wasm modules and divided them by the total binary size. Once again, I'll use numbers from the mobile dataset here, but desktop numbers aren't too far off:
 
-<!-- ![image](insert_image_url_here) -->
+{{ figure_markup(
+  image="todo.png",
+  caption="TODO",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=683121338&format=interactive",
+  sheets_gid="1082802229",
+  sql_file="todo.sql"
+  )
+}}
 
 Unsurprisingly, most - ~74% - of the total binary size comes from the compiled code itself, followed by ~19% for embedded static data. Function types, import/export descriptors and such comprise a negligible part of the total size. However, one section type stands out - it's custom sections, which account for ~6.5% of total size in the mobile dataset.
 
@@ -174,7 +254,15 @@ While debug information is useful for local development, those sections can be h
 
 Let's check how much stripping this debug information would save us in combination with Brotli, vs. just Brotli from the previous step:
 
-<!-- ![image](insert_image_url_here) -->
+{{ figure_markup(
+  image="todo.png",
+  caption="TODO",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1943000224&format=interactive",
+  sheets_gid="1401232418",
+  sql_file="todo.sql"
+  )
+}}
 
 Most files in the archive already didn't have custom sections. In those that did, we could save up to 2.4 MiB / 1.3 MB for the largest Wasm binaries on desktop and mobile, which is a pretty noticeable improvement, especially on slow connections.
 
@@ -188,9 +276,25 @@ There are a few outliers where the process of removing custom sections with `llv
 
 It provides significant size savings on both uncompressed and compressed real-world benchmarks:
 
-<!-- ![image](insert_image_url_here) -->
+{{ figure_markup(
+  image="todo.png",
+  caption="TODO",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=724059342&format=interactive",
+  sheets_gid="1763590037",
+  sql_file="todo.sql"
+  )
+}}
 
-<!-- ![image](insert_image_url_here) -->
+{{ figure_markup(
+  image="todo.png",
+  caption="TODO",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=2047888306&format=interactive",
+  sheets_gid="1763590037",
+  sql_file="todo.sql"
+  )
+}}
 
 We've decided to check the performance of wasm-opt on the collected HTTP Archive dataset as well, but there's a catch.
 
@@ -204,20 +308,36 @@ Then, we compressed the results to Brotli and compared to the previous step, as 
 
 While the resulting data is not representative of real-world usage and not relevant to regular consumers who should use `wasm-opt` as they normally do, it might be useful to consumers like CDNs that want to run optimizations at scale, as well as to the Binaryen team itself:
 
-<!-- ![image](insert_image_url_here) -->
+{{ figure_markup(
+  image="todo.png",
+  caption="TODO",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=541095203&format=interactive",
+  sheets_gid="1401232418",
+  sql_file="todo.sql"
+  )
+}}
 
 There are significant savings in a small percentage of files that were not optimized before publishing on the web. But why are the other results so mixed?
 
 If we look at the uncompressed savings, it becomes more clear that, even on our dataset, wasm-opt consistently keeps files either roughly the same size or still improves size slightly further in majority of cases, and produces significant savings for the unoptimized files.
 
-<!-- ![image](insert_image_url_here) -->
+{{ figure_markup(
+  image="todo.png",
+  caption="TODO",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=270629181&format=interactive",
+  sheets_gid="1401232418",
+  sql_file="todo.sql"
+  )
+}}
 
 This suggests several reasons for the surprising distribution in the post-compression graph:
 
 1. As mentioned above, our dataset does not resemble real-world wasm-opt usage as the majority of the files have been already pre-optimized by wasm-opt. Further instruction reordering that improves uncompressed size a bit further, is bound to make certain patterns either more or less compressible than others, which, in turn, produces statistical noise.
-1. Also as mentioned earlier, the network (compressed) size is not everything.
+2. Also as mentioned earlier, the network (compressed) size is not everything.
    Smaller WebAssembly binaries tend to mean faster compilation in the VM, less memory consumption while compiling, and less memory to hold the compiled code. wasm-opt has to strike a balance here, which might also mean that the compressed size might sometimes regress in favor of better raw sizes.
-1. Finally, some regressions at the extreme end of the graph look like potentially valuable examples to study and improve that balance. We've [reported them back](https://github.com/WebAssembly/binaryen/issues/4322) to the Binaryen team so that they could look deeper into potential optimizations.
+3. Finally, some regressions at the extreme end of the graph look like potentially valuable examples to study and improve that balance. We've [reported them back](https://github.com/WebAssembly/binaryen/issues/4322) to the Binaryen team so that they could look deeper into potential optimizations.
 
 ## What are the most popular instructions?
 
@@ -225,7 +345,15 @@ We've already glimpsed at the contents of Wasm when sliced by section kinds abov
 
 We've split instructions into various categories and counted them across all the modules together:
 
-<!-- ![image](insert_image_url_here) -->
+{{ figure_markup(
+  image="todo.png",
+  caption="TODO",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1316275499&format=interactive",
+  sheets_gid="1402848319",
+  sql_file="todo.sql"
+  )
+}}
 
 One surprising takeaway from this distribution is that local var operations - that is, `local.get`, local.set`and`local.tee` - comprise the largest category - 36%, far ahead from the next few categories - inline constants (15.2%), load/store operations (14.7%) and all the math and logical operations (14.3%). Local var operations are usually generated by compilers as a result of optimization passes in compilers. They downgrade expensive memory access operations to local variables where possible, so that engines can subsequently put those local variables into CPU registers, which makes them much cheaper to access.
 
@@ -237,7 +365,15 @@ Another interesting metric to look at is post-MVP Wasm extensions. While WebAsse
 
 Let's take a look at their adoption in the Almanac dataset too:
 
-<!-- ![image](insert_image_url_here) -->
+{{ figure_markup(
+  image="todo.png",
+  caption="TODO",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=706910122&format=interactive",
+  sheets_gid="1918192673",
+  sql_file="todo.sql"
+  )
+}}
 
 One feature stands out - it's the [sign-extension operators proposal](https://github.com/WebAssembly/sign-extension-ops/blob/master/proposals/sign-extension-ops/Overview.md). It was shipped in all browsers not too long after the MVP, and enabled in LLVM (a compiler backend used by Clang / Emscripten and Rust) by default, which explains its high adoption rate. All other features currently have to be enabled explicitly by the developer at compilation time.
 
