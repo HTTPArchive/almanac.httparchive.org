@@ -1,6 +1,5 @@
 SELECT
   client,
-  COUNTIF(has_start) AS has_start,
   COUNTIF(instr.proposals.atomics > 0) AS atomics,
   COUNTIF(instr.proposals.bigint_externals > 0) AS bigint_externals,
   COUNTIF(instr.proposals.bulk > 0) AS bulk,
