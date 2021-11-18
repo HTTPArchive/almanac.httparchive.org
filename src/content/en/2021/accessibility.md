@@ -10,7 +10,7 @@ translators: []
 results: https://docs.google.com/spreadsheets/d/1WjAM5ZnHjMQt-rKyHvj2eVhU_WdzzFTjpoYWMr_I0Cw/
 alextait1_bio: Alex Tait is an accessibility specialist whose passion lies in the intersection of accessibility and modern JavaScript within interface architecture and design systems. As a developer, she believes that inclusion driven development practices with accessibility at the forefront lead to better products for everyone. As a consultant and strategist, she believes that less is more, and that new feature scope creep cannot be prioritized over core feature parity for disabled users. As an educator, she believes in removing barriers to information so that tech can become a more diverse, equitable and inclusive industry.
 scottdavis99_bio:
-oluoluoxenfree_bio: Olu Niyi-Awosusi is a JavaScript engineer at Oddbird who loves lists, learning new things, Bee and Puppycat, <a hreflang="en" href="https://alistapart.com/article/building-the-woke-web/">social justice, accessibility</a> and trying harder every day. 
+oluoluoxenfree_bio: Olu Niyi-Awosusi is a JavaScript engineer at Oddbird who loves lists, learning new things, Bee and Puppycat, <a hreflang="en" href="https://alistapart.com/article/building-the-woke-web/">social justice, accessibility</a> and trying harder every day.
 gwilhelm_bio: Gary Wilhelm is the Digital Solutions Manager for the Division of Finance and Operations at UNC-Chapel Hill, which is a fancy way of saying that he works on websites and develops web applications. He started working to make his websites accessible in 2013 by studying specifications and has been interested in accessibility ever since, including spending large amounts of time learning about PDF accessibility through remediating several thousand PDF documents. In his spare time, he likes to travel, do yard work, run, watch sports, pester his wife and two teenagers, and help his dog look for squirrels and rabbits.
 kachiden_bio:
 featured_quote: TODO
@@ -116,7 +116,7 @@ Visible focus styles are helpful for everyone, but are necessary for sighted key
 
 Often times, default focus indication is removed from interactive content such as buttons, form controls, and links using the CSS property `:focus { outline: none; }` or  `:focus { outline: 0; }`, sometimes in conjunction with `:focus-within` and/or `:focus-visible`. We found that 91% of desktop pages have `:focus { outline: 0; }` declared. In some cases, it is removed so that a more effective custom style can be applied. Unfortunately, in many cases it is simply removed and never replaced, which can render a page unusable for keyboard users.
 
-For more information about how to achieve accessible focus indication including some limitations of browser default focus styles, we recommend Sara Soueidan's article, <a hreflang="en" href="https://www.sarasoueidan.com/blog/focus-indicators/">"A guide to designing accessible, WCAG-compliant focus indicators"<a>.
+For more information about how to achieve accessible focus indication including some limitations of browser default focus styles, we recommend Sara Soueidan's article, <a hreflang="en" href="https://www.sarasoueidan.com/blog/focus-indicators/">"A guide to designing accessible, WCAG-compliant focus indicators"</a>.
 
 ### Prefers-color-scheme and high contrast support
 
@@ -138,12 +138,12 @@ Navigating through web content is one of the fundamental ways we engage online a
 
 ### Landmarks and page structure
 
-Landmarks are designated HTML elements or ARIA roles we can apply to other HTML elements that enable assistive technology users to quickly understand overall page structure and navigation. For example a <a hreflang="en" href="https://webaim.org/articles/voiceover/mobile#rotor">rotor menu</a> can be used to navigate to different landmarks of the page, and or a skip link can be used to target the `<main>` landmark. 
-  
+Landmarks are designated HTML elements or ARIA roles we can apply to other HTML elements that enable assistive technology users to quickly understand overall page structure and navigation. For example a <a hreflang="en" href="https://webaim.org/articles/voiceover/mobile#rotor">rotor menu</a> can be used to navigate to different landmarks of the page, and or a skip link can be used to target the `<main>` landmark.
+
  {# TODO (Authors) - Add link to skip links #}
 
 Before the introduction of HTML5, ARIA landmark roles were needed to accomplish this. However, we now have native HTML elements available to accomplish the majority of landmark page structure. Leveraging the native HTML landmark elements is preferable to applying ARIA roles, <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">per the first rule of ARIA</a>.; For more information, see the ARIA Roles section of this chapter.
-  
+
    {# TODO (Authors) - link to ARIA roles sectiojn #}
 
 The most commonly expected landmarks that the majority of web pages should have are  `<main>`, `<header>`, `<nav>` and `<footer>`. We found that only 28% of desktop pages have a native HTML `<main>` element, and 17% of desktop pages have an element with a `role="main"`.
@@ -236,11 +236,11 @@ While there are valid declarations for the `tabindex` attribute, incorrectly rea
 Skip links help people who rely on keyboards to navigate. They enable a user to skip through sections of content that repeat across multiple pages or navigation sections and go to another destination, typically the `<main>` element of the page. Skip links are typically the first element on a page, and can be persistent in the UI or visibly hidden until they have keyboard focus. For example, a lot of interactive content (such as a robust navigation system full of links), can be incredibly cumbersome to tab through before reaching the main content of the screen, especially as these tend to be repeated across multiple pages.
 
 Some websites that are very information dense have several skip links to allow users to jump to the commonly trafficked areas of the site. For example, <a hreflang="en" href="https://www.canada.ca/">the government of Canada's website</a> has "skip to main content", "skip to about government" and "switch to basic HTML version".
-  
+
   {# TODO (Authors) - I think this is a good spot to put an image example both for the ebook and if the site ever changes #}
 
 Skip links are considered a <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html">bypass for a block</a>. There is no way for us to query for all possible skip link implementations, however we found that close to 20% of desktop and mobile sites likely have a skip link. We determined this by looking for the presence of an `href="#main"` attribute on one of the first three links on the page, which is a common implementation for a skip link.
-  
+
 ### Heading hierarchy
 Headings make it easier for screen readers to properly navigate a page by supplying a hierarchy that can be jumped through like a table of contents.
 
@@ -260,7 +260,7 @@ Headings make it easier for screen readers to properly navigate a page by supply
 Tables are an efficient way to display data with two axes of relationships, making them useful for comparisons. Users of assistive technology rely on specific table markup that provides a machine-readable structure so the user can effectively navigate, understand and interact with them.
 
 Tables should have a well-formatted structure with the appropriate elements and defined relationships, including a caption, appropriate headers and footers, and a corresponding header cell for every data cell. Screen reader users rely on such well-defined relationships through what is announced, so an incomplete or an incorrectly declared structure can lead to misleading or missing information.
-  
+
   {# TODO (Authors) - Insert table here with accessibility data for tables #}
 
 ### Table captions
@@ -318,7 +318,7 @@ One of the most important ways of making HTML forms accessible is using the `<la
 When a web developer fails to associate a `<label>` element with an input, they are missing out on a number of key features that they would otherwise get for free. For example, when a `<label>` is properly associated with an `<input>` field, tapping or clicking on the `<label>` automatically puts focus in the `<input>` field. This is not only a major usability win—it is also expected behavior on the web.
 
 The `<label>` element was introduced with HTML 4 in 1999. Despite being available in all modern browsers for the past 20+ years, only 27% of all `<input>` elements get their accessible name from a programmatically associated label and 32% of these inputs have no accessible name.
-  
+
   {# TODO (Authors) - link to accessible names #}
 
 Most importantly, without proper accessible names, screen readers and voice to text users may not be able to target or identify the purpose of a form field. `<label>` elements associated with an input are the most robust and expected way to do this.
@@ -474,7 +474,7 @@ When assistive technology encounters an element, the element's role communicates
 HTML5 introduced many new native elements, all which have <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#implicit_semantics">implicit semantics</a>, including roles. For example, the `<nav>` element has an implicit `role="navigation"` and does not need to have this role added explicitly via ARIA in order to convey its purpose information to assistive technology.
 
 ARIA can be used to explicitly add roles to content that does not have a fitting native HTML role. For example, when creating a tablist widget, a `tablist` role can be assigned to the container element since there is no native HTML equivalent. Currently 69% (up from 65% in 2020) of desktop pages have at least one instance of an ARIA `role` attribute. The median site has 3 instances (up from 2 in 2020) of the `role` attribute.
-  
+
   {# TODO link to tabs section#}
 
 ### Just use a button!
@@ -511,7 +511,7 @@ Parallel to the DOM there is a similar browser structure called the accessibilit
 The accessibility tree has a computation system that assigns the accessible name (if there is one) to a control, widget, group, or landmark such that it can be announced or targeted by assistive technology.
 
 The accessible name can be derived from an element's content (such as button text), an attribute (such as an image `alt` text value), or an associated element (such as a programmatically associated `label` for a form control). There is a specificity ranking that happens to determine which value is assigned to the accessible name if there are multiple potential sources.
-  
+
   {# TODO (Authors) - link to form labels section #}
 
 For more information about accessible names visit Léonie Watson's article, <a hreflang="en" href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/">What is an accessible name?</a>
