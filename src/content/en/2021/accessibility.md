@@ -62,7 +62,25 @@ Users with low vision may rely on zooming and scaling the page using system sett
 
 Adrian Roselli wrote a comprehensive article about the various harms caused when zooming is not enabled for users. Many browsers now prevent developers from overriding zoom controls, but it must be avoided at the code-level, as we cannot count on every browser overriding this behaviour when we consider the wide range of browser and OS usage on a global scale.
 
+{{ figure_markup(
+  image="pages-zooming-scaling-disabled.png",
+  caption="Pages with zooming and scaling disabled.",
+  description="A bar chart chart showing... {# TODO detailed description #}",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=2099068658&format=interactive",
+  sheets_gid="744885125",
+  sql_file="viewport_zoom_scale.sql"
+) }}
+
 We found that 24% of desktop homepages and 29% of mobile homepages attempt to disable scaling by setting either maximum-scale to a value less than or equal to 1, or user-scalable 0 or none.
+
+{{ figure_markup(
+  image="pages-zooming-scaling-disabled-by-rank.png",
+  caption="Pages with zooming and scaling disabled by rank.",
+  description="A bar chart chart showing... {# TODO detailed description #}",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1312122950&format=interactive",
+  sheets_gid="645664156",
+  sql_file="{# TODO #}"
+) }}
 
 When we consider the most popular sites in particular, the numbers for mobile are especially concerning. Of the top 1,000 most trafficked sites, 22% of desktop sites and 45% of mobile sites have code that attempts to disable user scaling. This may be a trend that comes from the proliferation of web applications. People need to be able to customize their web browsing experience (such as zooming and scaling) regardless of whether the content is a website or web application.
 
@@ -73,7 +91,7 @@ Language identification
   content="8%",
   classes="big-number",
   sheets_gid="1325555803",
-  sql_file="???"
+  sql_file="{# TODO #}"
 )
 }}
 
@@ -350,11 +368,50 @@ Images need to be described appropriately, in some cases short descriptions are 
 
 The 2021 Lighthouse audit data shows that 57% of sites pass the test for images with alt text, a small increase from 54% the year before. This test looks for the presence of at least one of the alt, aria-label or aria-labelledby attributes on img elements. In most cases using the alt attribute is the best choice.
 
+{{ figure_markup(
+  image="pages-containing-alt-with-file-extension.png",
+  caption="Pages containing an alt attribute with a file extension.",
+  description="A bar chart chart showing... {# TODO detailed description #}",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=403540154&format=interactive",
+  sheets_gid="747755748",
+  sql_file="alt_ending_in_image_extension.sql"
+) }}
+
 Automated checks for the presence of alternative text do not assess the quality of this text. One unhelpful pattern is describing the image with the file extension name. We found that 7% of desktop sites (with at least one instance of the alt attribute) had a file extension in the value of at least one img element's alt attribute, compared to 7% the previous year.
+
+
+{{ figure_markup(
+  image="common-file-extensions-in-alt-text.png",
+  caption="Most common file extensions in alt text.",
+  description="A bar chart chart showing... {# TODO detailed description #}",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1350890749&format=interactive",
+  sheets_gid="747755748",
+  sql_file="alt_ending_in_image_extension.sql",
+  width=600,
+  height=764
+) }}
 
 The top 5 file extensions explicitly included in the alt text value (for sites with images that have non-empty alt values) are jpg, png, ico, gif, and jpeg. This likely comes from a CMS or another auto-generated alternative text mechanism. It is imperative that these `alt` attribute values be meaningful, regardless of how they are implemented.
 
+{{ figure_markup(
+  image="all-attribute-lengths.png",
+  caption="Alt attribute lengths.",
+  description="A bar chart chart showing... {# TODO detailed description #}",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=159159336&format=interactive",
+  sheets_gid="384780873",
+  sql_file="common_alt_text_length.sql"
+) }}
+
 We found that 27% of `alt` text attributes were empty. In an ideal world this would indicate that the associated images are decorative, and should not be described by assistive technologies. However, the majority of images add value to an interface and as such, should be described. We found that 15% have 10 or fewer characters, which would be a strangely short description for most images, indicating that information parity has not been achieved.
+
+{{ figure_markup(
+  image="all-lengths-by-percentile.png",
+  caption="Alt length by percentile.",
+  description="A bar chart chart showing... {# TODO detailed description #}",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=649379633&format=interactive",
+  sheets_gid="355162993",
+  sql_file="alt_text_length.sql"
+) }}
 
 ### Audio
 
@@ -545,6 +602,38 @@ There is no quick fix—the onus is on organizations and digital practitioners t
 * There's no such thing as fully automated web accessibility
 * Why Automated Tools Alone Can't Make Your Website Accessible and Legally Compliant
 * Should I Use an Accessibility Overlay?
+
+{# TODO Can we interspace these charts in amongst the text better? #}
+
+{{ figure_markup(
+  image="pages-using-a11y-apps.png",
+  caption="Pages using A11Y apps.",
+  description="A bar chart chart showing... {# TODO detailed description #}",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=618692173&format=interactive",
+  sheets_gid="150155313",
+  sql_file="a11y_technology_usage.sql"
+) }}
+
+{{ figure_markup(
+  image="a11y-app-usage-by-rank.png",
+  caption="A11Y app usage by rank.",
+  description="A bar chart chart showing... {# TODO detailed description #}",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=473077851&format=interactive",
+  sheets_gid="2077755325",
+  sql_file="a11y_overall_tech_usage_by_domain_rank.sql"
+) }}
+
+
+{{ figure_markup(
+  image="pages-using-a11y-apps-by-rank.png",
+  caption="Pages using A11Y apps by rank.",
+  description="A bar chart chart showing... {# TODO detailed description #}",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=851935325&format=interactive",
+  sheets_gid="827309922",
+  sql_file="a11y_technology_usage_by_domain_rank.sql"
+) }}
+
+
 
 ## Conclusion
 
