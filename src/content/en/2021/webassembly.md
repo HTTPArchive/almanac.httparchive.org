@@ -169,8 +169,12 @@ First, let's take a look at compression methods used in these raw responses. I'l
 
 Unfortunately, it shows that ~40% of WebAssembly responses on mobile are shipped without any compression.
 
-40.2%
-_Percent of uncompressed WebAssembly responses on mobile_
+{{ figure_markup(
+  content="40.2%",
+  caption="Percent of uncompressed WebAssembly responses on mobile.",
+  classes="big-number"
+  )
+}}
 
 Another ~46% use gzip, which has been a de-facto standard method on the web for a long time, and still provides a decent compression ratio, but it's not the best algorithm today. Finally, only ~14% use Brotli - a modern compression format that provides an even better ratio and is supported [in all modern browsers](https://caniuse.com/brotli). In fact, Brotli is supported in every browser that has WebAssembly support too, so there's no reason not to use them together.
 
@@ -228,8 +232,12 @@ Compression aside, we could also look for optimization opportunities by analyzin
 
 Unsurprisingly, most - ~74% - of the total binary size comes from the compiled code itself, followed by ~19% for embedded static data. Function types, import/export descriptors and such comprise a negligible part of the total size. However, one section type stands out - it's custom sections, which account for ~6.5% of total size in the mobile dataset.
 
-6.5%
-_Portion of custom sections in the total binary size of mobile dataset_
+{{ figure_markup(
+  content="6.5%",
+  caption="Portion of custom sections in the total binary size of mobile dataset.",
+  classes="big-number"
+  )
+}}
 
 Custom sections are mainly used in WebAssembly for 3rd-party tooling - they might contain information for type binding systems, linkers, DevTools and such. While all of those are legitimate use-cases, they are rarely necessary in production code, so such a large percentage is suspicious. Let's take a look at what they are in top 10 files with largest custom sections:
 
