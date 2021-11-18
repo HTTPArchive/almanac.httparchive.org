@@ -8,9 +8,9 @@ analysts: [rvth, obto]
 editors: [shantsis]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1mdma245ja_THTBApaJTeS4vmLY_Fn8VC6Kd8qx7wp-o/
-fellowhuman1101_bio: Jamie Indigo isn’t a robot, but speaks bot.  As a technical SEO consultant at <a href="https://www.deepcrawl.com">Deepcrawl</a>, they study how search engines crawl, render, and index the web.  They love to tame wild JavaScript frameworks and optimize rendering strategies. When not working, Jamie likes horror movies, graphic novels, and Dungeons & Dragons.
+fellowhuman1101_bio: Jamie Indigo isn’t a robot, but speaks bot.  As a technical SEO consultant at <a href="https://www.deepcrawl.com">Deepcrawl</a>, they study how search engines crawl, render, and index the web. They love to tame wild JavaScript frameworks and optimize rendering strategies. When not working, Jamie likes horror movies, graphic novels, and Dungeons & Dragons.
 dwsmart_bio: Dave Smart is a developer and technical search engine consultant at <a href="https://tamthebots.com">Tame the Bots</a>. They love building tools and experimenting with the modern web, and can often be found at the front in a gig or two.
-ashleyish_bio:
+ashleyish_bio: Ashley Berman Hale is a technical SEO and VP of professional services at <a href="https://www.deepcrawl.com">DeepCrawl</a>.  She is a mom to plants, animals, and tiny humans. Ashley plays in her local roller derby league and mentors upcoming SEOs.
 featured_quote: In 2021, the perception of a distinct "mobile web" is outdated. Across multiple data sources, it seems that the mobile is one of many ways a user can interact with digital content.
 featured_stat_1: 18.4%
 featured_stat_label_1: Mobile page loads using native lazy-loading
@@ -86,14 +86,13 @@ New this year, the CrUX dataset allows us to query the most popular sites (<a hr
 {{ figure_markup(
   image="mobile-web-more-mobile-than-desktop-traffic.png",
   caption="Percentage of Sites with more Mobile than Desktop Traffic",
-  description="Bar chart showing the breakdown of sites that have more mobile traffic than desktop as grouped by rank magnitude, an Crux experimental metric which groups sites by the popularity of origin requests ",
+  description="Bar chart showing the breakdown of sites that have more mobile traffic than desktop as grouped by rank magnitude, an Crux experimental metric which groups sites by the popularity of origin requests. For sites in the top 1K origins, 84.9% have more mobile traffic.  The second grouping, 10K origins, saw a higher rate of mobile traffic at 85.1%.  82.6% of 100K origins and 80.1% of top 1M origins received more traffic from mobile than desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=787161132&format=interactive",
   sheets_gid="601797488",
   sql_file="mobile_greater_than_desktop.sql"
   )
 }}
-
-{# TODO (Authors/Editors) - description is not specific enough #}
+{# TODO (Editor) - Updated! #}
 
 When grouped by CrUX ranking, (the top 1000, 10,000 and so on origins by traffic in the dataset) the more traffic a site receives,  there is a slight increase of the percentage of traffic it gets from mobile, all except the top 1000, which get slightly less (84.90% vs. 85.08%) mobile vs. desktop.
 
@@ -151,7 +150,7 @@ Weekend days show a greater proportion of mobile traffic, climbing somewhere aro
 
 ##### Not all times are equal
 
-On weekdays, mobile usage decreases and desktop usage increases as an overall percentage of traffic around 5 AM UTC and starts climbing again at 7 PM UTC (with a small bump around 10 / 11 AM). This aligns with working hours.
+On weekdays, mobile usage decreases and desktop usage increases as an overall percentage of traffic.  This indicates that internet users are switching between mobile and desktop devices. Around 5 AM UTC and starts climbing again at 7 PM UTC (with a small bump around 10 / 11 AM). This aligns with working hours.
 
 {# TODO (Authors) - I dont get what "mobile usage dips vs. desktop usage" is trying to say. One decreases while another increases? #}
 
@@ -160,7 +159,7 @@ On weekdays, mobile usage decreases and desktop usage increases as an overall pe
 {{ figure_markup(
    image="mobile-web-akimai-device-distribution-by-hour-weekdays.png",
    caption="Device type distribution by hour on weekend - mPulse July 2021",
-   description="Mobile vs. Desktop traffic distribution, by the hour of the day on weekdays, in UTC, from Akimai's mPulse in July 2021",
+   description="A line chart of Mobile vs. Desktop traffic distribution, by the hour of the day on weekdays, in UTC, from Akimai's mPulse in July 2021. The patterns show that an inverse variation between mobile and desktop traffic. As traffic for one device type increases, the other decreases.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=12081105&format=interactive",
    sheets_gid="300179855",
    width="600",
@@ -170,6 +169,7 @@ On weekdays, mobile usage decreases and desktop usage increases as an overall pe
 
 
 {# TODO (Authors/Editors) - description is not descriptive enough of the data #}
+{# TODO (Editor) - Updated! #}
 
 On weekends the split between mobile and desktop traffic remains more stable.
 {{ figure_markup(
