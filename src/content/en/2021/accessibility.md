@@ -42,20 +42,21 @@ We've split up our most interesting insights into six categories:
 
 We hope that this chapter, full of sobering metrics and demonstrable accessibility negligence on the Web, will inspire readers to prioritize this work and change their practices, shifting towards a more inclusive internet.
 
-## Ease of Reading
+## Ease of reading
 
 Making content as simple and clear to read as possible is an important aspect of web accessibility. When people are unable to read the content of a page, not only are they unable to access its information, they are also prevented from being able to complete tasks such as registering for an account or making a purchase.
 
 There are many aspects of a web page that make it easier or harder to read, including color contrast, zooming and scaling of pages, and language identification.
 
 ### Color contrast
+
 Color contrast refers to how easily text and other page artifacts stand out against the surrounding background. The higher the contrast, the easier it is for people to distinguish the content. The Web Content Accessibility Guidelines (WCAG) has minimum contrast requirements for text and non-text content.
 
 People who may have difficulties viewing low contrast content include those with color vision deficiency, people with mild to moderate vision loss, and those with situational difficulties viewing the content, such as glare on screens in bright light.
 
 This year we found that only 22% of sites have passing color contrast scores in Lighthouse. It is worth noting that these scans are only able to catch text-based contrast issues, as non-text content is so variable. This score has stayed about the same year over year; it was 21% in 2020 and 22% in 2019. This metric is somewhat disheartening, as catching text-based contrast issues is possible with a variety of common automated tools.
 
-### Zooming and Scaling
+### Zooming and scaling
 
 Users with low vision may rely on zooming and scaling the page using system settings or screen magnifying software in order to view its content, especially text. The Web Content Accessibility Guidelines require that text in particular can be resized up to at least 200%.
 
@@ -104,7 +105,7 @@ The CSS Media Queries Level 5 specification, published in 2020, introduced a col
 
 While "dark mode" is recognized by many developers and designers as an accessibility affordance, it is important to note that "dark mode" may, in fact, reduce accessibility for certain users. Some people with dyslexia or astigmatism might find light text on a dark background harder to read, and might find that it exacerbates the halo effect. The important takeaway here is to let your user choose what works best for them. We found that 7% of websites use the `prefers-color-scheme` media query.
 
-## Ease of Page Navigation
+## Ease of page navigation
 
 Navigating through web content is one of the fundamental ways we engage online and there are many ways this is accomplished. For some people, this could mean visually scanning a page while scrolling with a mouse. For others it might start by navigating through the headings on a page with their screen reader. Websites need to be easy to navigate so users are not left feeling lost or unable to find the content they are seeking.
 
@@ -114,7 +115,7 @@ Landmarks are designated HTML elements or ARIA roles we can apply to other HTML 
 
 Before the introduction of HTML5, ARIA landmark roles were needed to accomplish this. However, we now have native HTML elements available to accomplish the majority of landmark page structure. Leveraging the native HTML landmark elements is preferable to applying ARIA roles, per the first rule of ARIA.; For more information, see the ARIA Roles section of this chapter [TODO add link to ARIA roles section].
 
-The most commonly expected landmarks that the majority of web pages should have are  `<main>`, `<header>`, <nav>` and `<footer>`. We found that only 28% of desktop pages have a native HTML `<main>` element, and 17% of desktop pages have an element with a `role="main"`.
+The most commonly expected landmarks that the majority of web pages should have are  `<main>`, `<header>`, `<nav>` and `<footer>`. We found that only 28% of desktop pages have a native HTML `<main>` element, and 17% of desktop pages have an element with a `role="main"`.
 
 [TODO format table]
 HTML 5 element
@@ -210,7 +211,7 @@ Table captions act as a heading for the full table to provide a summary of its i
 
 Heading elements for the full table are frequently unnecessary when a `<caption>` element has been properly implemented, and the `<caption>` element can be styled and visually positioned in a way that resembles a heading. Only 5% of desktop and mobile sites with table elements present used a `<caption>`, which is a slight increase from 2020.
 
-### Tables for Layout
+### Tables for layout
 The introduction of CSS methodologies such as Flexbox and Grid provided the capability for web developers to easily create fluid responsive layouts. Prior to this development, developers frequently used tables for layout instead of presenting data. Unfortunately, due to a combination of legacy websites and legacy development techniques, websites still exist where tables are used for layout. It is difficult to determine how widely this legacy development technique is still used.
 
 If there is an absolute need to reach for this technique, the role of `presentation` should be applied to the table such that assistive technology will ignore the table semantics. We found that 1% of desktop and mobile pages contain a table with a role of presentation. It's hard to know if this is good or bad. It could indicate that there are not many tables used for presentational purposes, but it is very likely that tables used for layout are just lacking this needed role.
@@ -294,7 +295,7 @@ We found that 21% of desktop websites had form elements that have either an aste
 
 [TODO: Add chart]
 
-## Media on the Web
+## Media on the web
 
 Accessibility plays an increasingly important role in all media consumption on the web. For people who are deaf or hard of hearing, captions provide access to video. For people who are blind or have vision impairments, audio descriptions can describe a scene. Without removing the barriers to access to media content, we are excluding people from the majority of what gets visited on the web.
 
@@ -346,7 +347,9 @@ Much like the `<audio>` element, this figure may not account for video content l
 
 [TODO Add Graphic for Desktop/Mobile track percentages]
 
-## Supporting Assistive Technology with ARIA
+## Supporting assistive technology with ARIA
+
+{# TODO Can we add some intro text here? We don't liked so-called "stacked headings" where we have two headings in a row #}
 
 ### What is ARIA?
 
@@ -382,7 +385,7 @@ This act of adding ARIA roles, or a "role-up", is usually less ideal than using 
 
 [TODO: Add big figure percentage]
 
-### Using Presentation Role
+### Using presentation role
 
 When an element has `role="presentation"` declared on it, its semantics are stripped away, as well as any of its child elements. For example, declaring `role="presentation"` on a parent table or list element will cascade the role to any child elements. This will also strip the semantics.
 
@@ -390,6 +393,8 @@ Removing an element's semantics means that it is no longer that element in terms
 
 
 ### Labelling and describing elements with ARIA
+
+{# TODO Can we add some intro text here? We don't liked so-called "stacked headings" where we have two headings in a row #}
 
 #### Accessible names and the accessibility tree
 
@@ -443,7 +448,9 @@ The presence of new or updated content in the DOM sometimes needs to be communic
 ARIA live regions allow us to listen for changes in the DOM, such that the updated content can be announced by a screen reader. We found that 21% of desktop pages (up from 17% in 2020) and 20% of mobile pages (up from 16% in 2020) have live regions. For more information about live region variants and usage check out the MDN live region documentation or play with this live demo by Deque.
 
 
-## Accessibility Overlays
+## Accessibility overlays
+
+{# TODO Can we add some intro text here? We don't liked so-called "stacked headings" where we have two headings in a row #}
 
 ### What are overlays?
 
@@ -457,7 +464,7 @@ Unfortunately, web accessibility is simply not possible to achieve with an out o
 
 We found that 0.96% of desktop websites and 0.8% of mobile websites use one of these accessibility overlays. It is worth noting that we have queried for a list of well known products in this space. However, this list is not exhaustive so this metric is likely lower than reality.
 
-### The Consequences of Overlays
+### The consequences of overlays
 
 These tools often interfere with assistive technologies and actually make websites less accessible for many, as is explored by a Vice article aptly titled "People with Disabilities Say This AI Tool is Making the Web Worse for Them". There is even an open source extension called accessiByeBye that was specifically developed to block overlays so that assistive technology users are not disrupted in their use of websites use a third party overlay product.
 
@@ -468,7 +475,7 @@ There have been tensions between some of these overlay companies and the disable
 "It seems that accessiBe fails to acknowledge that blind experts and regular screen reader users know what is accessible and what is not. The nation's blind will not be placated, bullied, or bought off."
  - National Federation for the Blind
 
-### Privacy Concerns
+### Privacy concerns
 
 Some of these tools have techniques for detecting the use of assistive technologies. This means that personal data is potentially collected about a person's disabilities without their consent.
 
@@ -483,7 +490,7 @@ These widgets have been named as part of many accessibility lawsuits against com
 
 For more information about the legal implications of using these overlays please refer to Lainey Feingold's article Honour the ADA: Avoid Web Accessibility Quick-Fix Overlays and Adrian Roselli's article #accessiBe Will Get You Sued.
 
-### Why do some companies use Overlays?
+### Why do some companies use overlays?
 
 Fundamentally, and fuelled by ableism, overlays position themselves as solving a problem that most organizations struggle with. The data is clear throughout this chapter—the internet is largely inaccessible.
 
@@ -493,7 +500,8 @@ Organizations can be swayed by the deceptive marketing of some of these overlay 
 
 There is no quick fix—the onus is on organizations and digital practitioners to prioritize actually fixing the accessibility problems in their web content. A common saying amongst the disabled community is, "nothing about us without us". Overlays have been created without much involvement from the disabled community, and some of these companies have further alienated people with disabilities who have spoken out about this. These products cannot achieve equal access to the web for people with disabilities.
 
-### Additional Resources about Overlays:
+### Additional resources about overlays:
+
 * Connor Scott-Gardener's experience using an overlay
 * Case study of an ADA lawsuit involving an overlay
 * The A11y Project - Should I Use an Accessibility Overlay?
@@ -502,6 +510,7 @@ There is no quick fix—the onus is on organizations and digital practitioners t
 * Should I Use an Accessibility Overlay?
 
 ## Conclusion
+
 As accessibility advocate Billy Gregory once said, "when UX doesn't consider ALL users, shouldn't it be known as SOME User Experience, or SUX". Too often accessibility work is seen as an addition, an edge case, or even comparable to technical debt and not core to the success of a website or product as it should be.
 The entire product team and organization have to prioritize accessibility as part of their accountabilities in order to succeed, all the way up to the c-suite. Accessibility work needs to shift left in the product cycle, meaning it needs to be baked into the research, ideation and design stages before it is developed. And most importantly, people with disabilities need to be included in this process.
 
