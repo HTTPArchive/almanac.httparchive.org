@@ -830,7 +830,7 @@ The most prevalent ARIA role in 2021 was `button` which appeared on 29% of sites
 
 {{ figure_markup(
    image="mobile-web-most-common-mobile-aria-roles.png",
-   caption='Top 10 most common ARIA roles on mobile web. Data from the [Accessibility Chapter](/en/2021/accessibility)',
+   caption='Bar chart showing adoption of ARIA roles on mobile web. Button is used on 29.0% of mobile page loads. Adoption rates for subsequent roles drops quickly with the 10th most used, Tablist' appearing on just 7.4% of sites.  Data from the [Accessibility Chapter](/en/2021/accessibility)',
    description="Bar chart showing the most defined ARIA role on mobile page loads.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=23131628&format=interactive",
    sheets_gid="1584971419",
@@ -839,6 +839,7 @@ The most prevalent ARIA role in 2021 was `button` which appeared on 29% of sites
 }}
 
 {# TODO (Authors/Editors) figure description does not describe the data #}
+{# TODO (Editor) updated #}
 
 While over 71% of mobile sites have interactive-controls for web based forms, the most commonly adopted ARIA attribute, aria-label, only appeared on 11.23% of tested sites. This accessibility-focused attribute is used to label input with a text string.
 
@@ -852,7 +853,7 @@ Despite the potential for increased conversion, 77.8% of sites failed lighthouse
 {{ figure_markup(
   image="mobile-web-sufficient-color-contrast.png",
   caption='Mobile Sites with sufficient color contrast. Data from the [Accessibility Chapter](/en/2021/accessibility)',
-  description="Bar chart showing percent of mobile page loads with a sufficient colour contrast.",
+  description="Bar chart showing percent of mobile page loads with a sufficient colour contrast. 2019 saw 22.0% of sites pass the audit.  In 2020, this dropped to 21.1%.  2021 saw an increase to 22.2%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1440359640&format=interactive",
   sheets_gid="1628455121",
   sql_file="../accessibility/color_contrast.sql"
@@ -860,7 +861,7 @@ Despite the potential for increased conversion, 77.8% of sites failed lighthouse
 }}
 
 {# TODO (Authors/Editors) figure description does not describe the data #}
-
+{# TODO (Editor) updated #}
 
 #### Tap targets
 
@@ -884,7 +885,7 @@ Things look even worse when looking at the usage by domain ranking.
 {{ figure_markup(
    image="mobile-web-zoom-blocking-viewport-tags.png",
    caption="Disabled Zooming and Scaling by Domain Rank",
-   description="Bar chart showing the percentage of mobile page loads, by rank, has a viewport that prevents zooming",
+   description="Bar chart showing the percentage of mobile pages loads were zooming and scaling was disabled, grouped by the origin popularity.  At 45.03% the top 1K origins saw the most page loads were zooming and scaling were disabled.  The percentage drops incrementally by each group with the 30.35% of top 1M sites disabling the feature. This indicates that the most popular sites (as measure by Crux metric ranking magnitude) were most likely to disable the accessibility feature",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=86675708&format=interactive",
    sheets_gid="1840321233",
   sql_file="viewport_zoom_scale_by_domain_rank.sql"
@@ -892,6 +893,7 @@ Things look even worse when looking at the usage by domain ranking.
 }}
 
 {# TODO (Authors/Editors) figure description does not describe the data #}
+{# TODO (Editor) updated #}
 
 The more popular sites are more likely to fail this, meaning that overall, more users are reaching mobile sites that are not compliant.
 
@@ -970,7 +972,7 @@ A LCP of 2.5 seconds or less is considered a good score.
 {{ figure_markup(
   image="mobile-web-largest-contentful-paint.png",
   caption='LCP performance by device. data from the [Performance Chapter](../en/2021/performance)',
-  description="Chart showing mobile and desktop page loads reaching the LCP thresholds.",
+  description="Stacked bar charts comparing LCP threshold groupings for mobile and desktop. 60% of desktop sites scored as Good compared to 45% of mobile. 27% of desktop scored as Needs Improvement vs 35% for mobile.  12% of desktop sites and 19% of mobile scored as Poor LCP.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=875306231&format=interactive",
   sheets_gid="1682201087",
   sql_file="../performance/web_vitals_by_device.sql"
@@ -978,6 +980,7 @@ A LCP of 2.5 seconds or less is considered a good score.
 }}
 
 {# TODO (Authors/Editors) figure description does not describe the data #}
+{# TODO (Editors) Updated #}
 
 The data shows that just 45% of mobile page loads recorded in the CrUX dataset are meeting the 2.5 second or under target, far lower than the 60% desktop achieves.
 
@@ -1014,7 +1017,7 @@ Images can be <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multi
 {{ figure_markup(
    image="mobile-web-responsive-images.png",
    caption="Use of Picture and scrset to serve responsive images",
-   description="Bar chart showing the percentage of mobile and desktop pages using &lt;picture> element and / or srcset attributes to load images responsively.",
+   description="Bar chart showing that 6.15% of mobile sites used picture elements and 31.97% used srcset attributes to load images responsively.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1030195048&format=interactive",
    sheets_gid="1802999215",
   sql_file="picture_source_srcset_usage.sql"
@@ -1022,6 +1025,7 @@ Images can be <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multi
 }}
 
 {# TODO (Authors/Editors) figure description does not describe the data #}
+{# TODO (Editors) Updated #}
 
 Just **6.2%** of mobile page loads that included images used the `<picture>` element, slightly lower than desktop.
 
@@ -1050,14 +1054,14 @@ Looking at the HTTP Archive's <a hreflang="en" href="https://httparchive.org/rep
 {{ figure_markup(
    image="mobile-web-native-lazy-loading-over-time.png",
    caption="Usage of Lazy Loading Attribute Overtime",
-   description="Chart from http archive data showing the percentage of mobile and desktop pages using the loading='lazy' attribute over time",
+   description="Line chart from http archive data showing the percentage of mobile and desktop pages using the loading='lazy' attribute over time. The lines follow the upward trajectory, starting with 1.4% in July 2020 and climbing in tandem to 19.4% in October 2021",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=62374244&format=interactive",
    sheets_gid="1889147690"
    )
 }}
 
 {# TODO (Authors/Editors) figure description does not describe the data #}
-
+{# TODO (Editors) Updated #}
 #### Image conclusions
 
 It's disappointing to see that more mobile page loads this year had images that were not correctly sized. `<picture>` uptake remains low too, perhaps based on the complexity compared to the `<img>` element.
