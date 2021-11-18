@@ -140,7 +140,7 @@ Total percentage of desktop homepages with element or role
 66%
 `<footer>`
 63%
-`role="contentinfo"
+`role="contentinfo"`
 12%
 76%
 
@@ -163,7 +163,7 @@ Another approach to providing a secondary navigation method is to implement a si
 `tabindex` is an attribute that can be added to elements to control whether it can be focused. Depending on its value, the element can also be in the keyboard focus, or "tab" order.
 
 A tabindex value of "0" allows for an element to be programmatically focusable and in the keyboard focus order. Interactive content such as buttons, links, and form controls have the equivalent of a tabindex value of 0, meaning they are in the keyboard focus order natively.
-Custom elements and widgets that are intended to be interactive and in the keyboard focus order need an explicitly assigned tabindex="0", or they will not be usable by keyboard.
+Custom elements and widgets that are intended to be interactive and in the keyboard focus order need an explicitly assigned `tabindex="0"`, or they will not be usable by keyboard.
 
 If an element should be focusable but not in the keyboard focus order a tabindex value of -1  (or any negative integer) can be used as a hook to enable programmatically setting focus on the element with JavaScript without adding it to the keyboard focus order. This can be helpful for cases where you'd like to assign focus, such as focusing a heading when navigating to new page within a single page application. Placing non-interactive elements in keyboard focus order creates a confusing experience for blind and low vision users and should be avoided.
 
@@ -220,7 +220,7 @@ If there is an absolute need to reach for this technique, the role of `presentat
 
 Tabs are a very common interface widget, but making them accessible presents a challenge for many developers. A common pattern for accessible implementation comes from the WAI-ARIA Authoring Practices Design Patterns. Please note that the ARIA Authoring Practices document is not a specification and is meant to demonstrate idealized use of ARIA for common widgets. They should not be used in production without testing with your users.
 
-The Authoring Practice guidelines suggest always using the 'tabpanel' role in conjunction with role='tab'. We found that 8% of desktop pages have at least one element with a role="tablist", 7% of pages have elements with a role="tab" and 6% of pages have elements with a role="tabpanel".
+The Authoring Practice guidelines suggest always using the `tabpanel` role in conjunction with `role="tab"`. We found that 8% of desktop pages have at least one element with a `role="tablist"`, 7% of pages have elements with a `role="tab"` and 6% of pages have elements with a `role="tabpanel"`.
 
 
 ### Captchas
@@ -251,7 +251,12 @@ The 2019 Click-Away Pound survey in the UK was designed "to explore the online s
 
 ### The `<label>` element
 
-One of the most important ways of making HTML forms accessible is using the `<label>` element to programmatically link the short descriptive text that describes the form control. This is typically done by matching the `for` attribute on the `<label>` element with the `id` attribute on the form control element. For example: `<label for="first-name">First Name</label> <input type="text" id="first-name">`.
+One of the most important ways of making HTML forms accessible is using the `<label>` element to programmatically link the short descriptive text that describes the form control. This is typically done by matching the `for` attribute on the `<label>` element with the `id` attribute on the form control element. For example:
+
+```html
+<label for="first-name">First Name</label>
+<input type="text" id="first-name">
+```
 
 When a web developer fails to associate a `<label>` element with an input, they are missing out on a number of key features that they would otherwise get for free. For example, when a `<label>` is properly associated with an `<input>` field, tapping or clicking on the `<label>` automatically puts focus in the `<input>` field. This is not only a major usability win—it is also expected behavior on the web.
 
@@ -279,7 +284,7 @@ It goes on to say:
 
 "Use of the placeholder attribute as a replacement for a label can reduce the accessibility and usability of the control for a range of users including older users and users with cognitive, mobility, fine motor skill or vision impairments."
 
-The W3C's Placeholder Research lists 26 different articles that advise against the flawed design approach of using a placeholder instead of the semantically correct <label> element.
+The W3C's Placeholder Research lists 26 different articles that advise against the flawed design approach of using a placeholder instead of the semantically correct `<label>` element.
 
 [TODO: Add chart]
 
@@ -304,13 +309,13 @@ Overview of text alternatives
 
 Every HTML media element allows you to provide text alternatives, but not every author takes advantage of this accessibility capability.
 
-The <img> element for displaying pictures was introduced in the HTML 2.0 specification in 1995. The alt attribute—introduced at the same time—provides a clear mechanism for the web developer to provide a text alternative for the image.
+The `<img>` element for displaying pictures was introduced in the HTML 2.0 specification in 1995. The alt attribute—introduced at the same time—provides a clear mechanism for the web developer to provide a text alternative for the image.
 
 This alternative description of the image is used by screen readers to describe the image for someone who can't see the image. It is also used to describe the image to everyone if the image cannot be downloaded or displayed. One type of "user" who can't see the image is a search engine—good alt text plays an important role in Search Engine Optimization (SEO), so that web pages that show the image can be discovered by text searches.
 
-The HTML5 specification introduced the <video> and <audio> elements in 2014 to provide a standards-based way to incorporate rich media in your website that didn't require a third-party browser plugin. Both the <video> and <audio> elements allow a <track> element to be included, so that closed captions, subtitles, and audio descriptions can provide alternate, text-based ways to enjoy the rich media.
+The HTML5 specification introduced the `<video>` and `<audio>` elements in 2014 to provide a standards-based way to incorporate rich media in your website that didn't require a third-party browser plugin. Both the `<video>` and `<audio>` elements allow a `<track>` element to be included, so that closed captions, subtitles, and audio descriptions can provide alternate, text-based ways to enjoy the rich media.
 
-These tracks provide the same SEO benefits as alt-text does for images, although in 2021, less than 1% of the websites surveyed provided <track> elements.
+These tracks provide the same SEO benefits as alt-text does for images, although in 2021, less than 1% of the websites surveyed provided `<track>` elements.
 
 ### Images
 
@@ -373,7 +378,7 @@ ARIA can be used to explicitly add roles to content that does not have a fitting
 
 One of the most common misuses of ARIA roles is adding a button role to non-interactive elements such as `<div>`s and `<span>`s, or to `<a>` elements. A native HTML `<button>` element comes with an implicit button role and the expected keyboard operability and behavior and should be the first approach before reaching for ARIA.
 
-We found that 29% (up from  25% in 2020) of desktop sites and 29% of mobile sites (up from 25% in 2020) had homepages with at least one element with an explicitly assigned role="button"`. This suggests that close to a third of websites are using the `button` role on elements in order to change their semantics, with the exception of buttons that have been explicitly assigned the button role, which is redundant.
+We found that 29% (up from  25% in 2020) of desktop sites and 29% of mobile sites (up from 25% in 2020) had homepages with at least one element with an explicitly assigned `role="button"`. This suggests that close to a third of websites are using the `button` role on elements in order to change their semantics, with the exception of buttons that have been explicitly assigned the button role, which is redundant.
 
 If non-interactive elements such as `<div>`s and `<span>`s have been assigned a button role, there is a significant chance that the expected keyboard focus order and operability will not be applied, which would result in WCAG 2.1.1 Keyboard and 2.4.3 Focus order problems. In addition, Windows High Contrast Mode will not honor ARIA, so elements that are not native HTML button elements may not appear to be interactable in this mode. We found that 11% of desktop and mobile sites have either a `<div>` or a `<span>` with an explicit button role.
 
@@ -426,7 +431,7 @@ We found that 57% of buttons on desktop sites and 57% of buttons on mobile sites
 
 ### Hiding content
 
-There are several ways to ensure that assistive technology will not discover content. We can leverage CSS `display: none;to omit the elements from the accessibility tree. If an author wishes to hide content from screen readers specifically, they can use `aria-hidden="true"`. Note that unlike `display: none;` a declaration of `aria-hidden="true" will not visibly remove an element and its children.
+There are several ways to ensure that assistive technology will not discover content. We can leverage CSS `display: none;`to omit the elements from the accessibility tree. If an author wishes to hide content from screen readers specifically, they can use `aria-hidden="true"`. Note that unlike `display: none;` a declaration of `aria-hidden="true"` will not visibly remove an element and its children.
 
 We found that 54% of desktop pages (up from 48% in 2020) and 53% of mobile pages (up from 49% in 2020) had at least one instance of an element with the `aria-hidden` attribute.
 
