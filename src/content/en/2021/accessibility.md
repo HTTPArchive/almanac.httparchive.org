@@ -572,7 +572,7 @@ For example, <a hreflang="en" href="https://en.wikipedia.org/wiki/AccessiBe">acc
 
 Unfortunately, web accessibility is simply not possible to achieve with an out of the box solution like this. If it were, we would likely not see the sobering statistics throughout this chapter.
 
-We found that 0.96% of desktop websites and 0.8% of mobile websites use one of these accessibility overlays. It is worth noting that we have queried for a list of well known products in this space. However, this list is not exhaustive so this metric is likely lower than reality.
+We found that 0.96% — or well over 60,000 desktop websites use one of these accessibility overlays. It is worth noting that we have queried for a list of well known products in this space. However, this list is not exhaustive so this metric is likely higher in reality.
 
 ### The consequences of overlays
 
