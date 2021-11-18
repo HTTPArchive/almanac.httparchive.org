@@ -92,7 +92,9 @@ Visible focus styles are helpful for everyone, but are necessary for sighted key
 Often times, default focus indication is removed from interactive content such as buttons, form controls, and links using the CSS property `:focus { outline: none; }` or  `:focus { outline: 0; }`, sometimes in conjunction with `:focus-within` and/or `:focus-visible`. We found that 91% of desktop pages have `:focus { outline: 0; }` declared. In some cases, it is removed so that a more effective custom style can be applied. Unfortunately, in many cases it is simply removed and never replaced, which can render a page unusable for keyboard users.
 
 For more information about how to achieve accessible focus indication including some limitations of browser default focus styles, we recommend Sara Soueidan's article, "A guide to designing accessible, WCAG-compliant focus indicators".
-Prefers-color-scheme and high contrast support
+
+### Prefers-color-scheme and high contrast support
+
 The CSS Media Queries Level 5 specification, published in 2020, introduced a collection of User Preference Media Queries that allow a website to detect Accessibility features that a user may have configured outside of the website itself. These features are typically configured through operating system or platform preferences.
 
 `prefers-reduced-motion` is used by web authors to replace animations or other sources of motion on the web page with a more static experience, typically by removing or replacing the content. This can help a range of people that may be distracted or otherwise triggered by rapid movement on the screen. We found that 32% of websites use the `prefers-reduced-motion` media query.
@@ -477,8 +479,11 @@ As civil rights lawyer Haben Girma explains in this video about accessibility ov
 
 There have been tensions between some of these overlay companies and the disabled communities they purport to serve. For example, The National Federation of the Blind banned accessiBe from their national convention and released a this statement about the harm caused by the company.
 
-"It seems that accessiBe fails to acknowledge that blind experts and regular screen reader users know what is accessible and what is not. The nation's blind will not be placated, bullied, or bought off."
- - National Federation for the Blind
+ <figure>
+<blockquote>It seems that accessiBe fails to acknowledge that blind experts and regular screen reader users know what is accessible and what is not. The nation's blind will not be placated, bullied, or bought off.</blockquote>
+<figcaption>— <cite><a hreflang="en" href="https://nfb.org/about-us/press-room/national-convention-sponsorship-statement-regarding-accessibe">National Federation for the Blind</a></cite></figcaption>
+</figure>
+
 
 ### Privacy concerns
 
@@ -486,10 +491,14 @@ Some of these tools have techniques for detecting the use of assistive technolog
 
 From the Overlay Fact Sheet:
 
-"Some overlays have been found to persist users' settings across sites which use the same overlay. This is done by setting a cookie on the user's computer. When the user enables a setting for an overlay feature on one site, the overlay will automatically turn on that feature on other sites... the big privacy problem is that the user never opted in to be tracked and there's also no ability to opt-out. Due to this lack of an opt-out (other than explicitly turning off that setting) this creates General Data Protection Regulation (GDPR) and California Consumer Privacy Act (CCPA) risk for the overlay customer."
+ <figure>
+<blockquote>Some overlays have been found to persist users' settings across sites which use the same overlay. This is done by setting a cookie on the user's computer. When the user enables a setting for an overlay feature on one site, the overlay will automatically turn on that feature on other sites... the big privacy problem is that the user never opted in to be tracked and there's also no ability to opt-out. Due to this lack of an opt-out (other than explicitly turning off that setting) this creates General Data Protection Regulation (GDPR) and California Consumer Privacy Act (CCPA) risk for the overlay customer.</blockquote>
+<figcaption>— <cite><a hreflang="en" href="https://overlayfactsheet.com/">Overlay Fact Sheet</a></cite></figcaption>
+</figure>
 
 This article by Léonie Wattson explores the privacy concerns of this type of data tracking in accessibility overlays.
-Overlays and lawsuits
+
+### Overlays and lawsuits
 
 These widgets have been named as part of many accessibility lawsuits against companies who use them. According to the UsableNet's 2020 report on Digital Accessibility Lawsuits, "Over 250 companies sued had invested in accessibility widgets or overlays". Accessibility expert Sherri Byrne-Haber cites, "Ten percent of accessibility lawsuits filed at the end of 2020 were against companies who have installed plugins, overlays, or widgets, thinking they would make them bulletproof to ADA litigation". It's worth noting that accessibility laws are not limited to the Americans with Disabilities Act, there are countries all over the world with laws pointing to the WCAG.
 
