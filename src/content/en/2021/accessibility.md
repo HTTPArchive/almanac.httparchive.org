@@ -413,6 +413,8 @@ We found that 27% of `alt` text attributes were empty. In an ideal world this wo
   sql_file="alt_text_length.sql"
 ) }}
 
+{# TODO Anything to say about this chart? It's just hanging out at the end, so would be good to write a sentence or two #}
+
 ### Audio
 
 `<track>` provides a way for a text equivalent to be provided for audio in `<audio>` and `<video>` elements. This allows people with permanent or temporary hearing loss to be able to understand audio content.
