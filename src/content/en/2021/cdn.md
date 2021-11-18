@@ -96,10 +96,15 @@ With the evolution of CDN technology an expressway was set up on the internet fo
 
 
 
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image1.png "image_tooltip")
+{{ figure_markup(
+  image="CDN Usage vs Hosted Resources.png",
+  caption="CDN Usage vs Hosted Resources.",
+  description="Bar chart showing the CDN Usage for domains serving HTML, sub-domains serving static assets, third party domains",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=2109227821&format=image",
+  sheets_gid="1173657471",
+  sql_file="top_cdns.sql"
+  )
+}}
 
 
 The impact of this can be seen in the above chart when we compare this against the same data in [Web Almanac 2019 - CDN Chapter](https://almanac.httparchive.org/en/2019/cdn) (there was no CDN Chapter in Web Almanac 2020). It's good to see the trend of HTMLs using CDN has improved by 7% between 2019 and 2021.  This shows that more of the industry is leveraging CDNs to take benefit of consistent content delivery times and minimize the impact of congestion on Internet
@@ -122,18 +127,25 @@ While we observed CDN adoption across different types of content, we will not lo
 
 
 
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{{ figure_markup(
+  image="CDN Usage by Site Popularity - Desktop.png",
+  caption="CDN Usage by Site Popularity - Desktop.",
+  description="Bar chart showing the CDN Usage for top 1,000 popular sites in Desktop followed by same stats for top 10,000, top 100,000, top 1 million and top 10 million popular sites",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=956770395&format=image",
+  sheets_gid="414030881",
+  sql_file="CDN Usage by Site Popularity.sql"
+  )
+}}
+{{ figure_markup(
+  image="CDN Usage by Site Popularity - Mobile.png",
+  caption="CDN Usage by Site Popularity - Mobile.",
+  description="Bar chart showing the CDN Usage for top 1,000 popular sites in Mobile followed by same stats for top 10,000, top 100,000, top 1 million and top 10 million popular sites",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1707360768&format=image",
+  sheets_gid="414030881",
+  sql_file="CDN Usage by Site Popularity.sql"
+  )
+}}
 
-
-![alt_text](images/image2.png "image_tooltip")
-
-
-
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image3.png "image_tooltip")
 
 
 Ranking the domains based on their popularity (at the time of this writing sourced from Google CRUX data) in the web and then checking for their CDN usage, the top 1000 websites contribute to the highest usage of CDN. The top websites include domains owned by names like Google, Amazon who contribute to much of the internet traffic we see today and it’s no surprise that these names make it to the list of “Top CDN Providers” in the next section. This also backs the fact about the benefits CDN’s bring to the table when operating at scale and having the ability to scale further if needed.
@@ -167,10 +179,15 @@ This appeals to a  larger set of industries and is reflected in the data.  Gener
 
 
 
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image4.png "image_tooltip")
+{{ figure_markup(
+  image="Top CDNs for HTML Requests.png",
+  caption="Top CDNs for HTML Requests.",
+  description="Box plot showing the top CDN providers serving HTML requests. The bigger the size of the box, more the HTML requests were served by that CDN",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1907738479&format=image",
+  sheets_gid="1173657471",
+  sql_file="top_cdns.sql"
+  )
+}}
 
 
 CDN providers like: 
@@ -195,13 +212,31 @@ They appear in this list since they offer bundled CDN offerings along with their
 
 
 
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image5.png "image_tooltip")
+{{ figure_markup(
+  image="Top CDNs for Sub-Domain Requests.png",
+  caption="Top CDNs for Sub-Domain Requests.",
+  description="Box plot showing the top CDN providers serving Sub-Domain requests. The bigger the size of the box, more the Sub-Domain requests were served by that CDN",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1727439047&format=image",
+  sheets_gid="1173657471",
+  sql_file="top_cdns.sql"
+  )
+}}
 
 
 Looking at third party domains below, you see a different trend in top CDN Providers.  We see Google top the list followed by generic CDN providers. The list also brings Facebook into prominence. This is backed by the fact that a lot of third-party domain owners require CDNs more than other industries. This necessitates them to invest in building a purpose-built CDN. A purpose-built CDN is one which is optimized for a particular content delivery workflow.
+
+
+
+{{ figure_markup(
+  image="Top CDNs for Third-Party Requests.png",
+  caption="Top CDNs for Third-Party Requests.",
+  description="Box plot showing the top CDN providers serving Third-Party requests. The bigger the size of the box, more the Third-Party requests are served by that CDN",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1676004971&format=image",
+  sheets_gid="1173657471",
+  sql_file="top_cdns.sql"
+  )
+}}
+
 
 For example, a CDN built specifically to deliver advertisements will be optimized for:
 
@@ -213,13 +248,6 @@ For example, a CDN built specifically to deliver advertisements will be optimize
 
 This means, purpose-built CDNs meet the exact requirements of a particular market segment as opposed to a generic CDN solution.  Generic solutions can meet a broader set of requirements, but it is not optimized for any particular industry or market.
 
- 
-
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image6.png "image_tooltip")
-
 
 **TLS Adoption Impact**
 
@@ -227,18 +255,26 @@ With CDNs set up in the request-response workflows, the end user’s TLS connect
 
 
 
-<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{{ figure_markup(
+  image="Distribution of TLS Version - Desktop HTML.png",
+  caption="Distribution of TLS Version - Desktop HTML.",
+  description="Bar chart showing the usage of different TLS versions in Desktop by requests served from CDN and requests served from Origin",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1914791224&format=image",
+  sheets_gid="1492712705",
+  sql_file="distribution_of_tls_versions_cdn_vs_origin.sql"
+  )
+}}
 
+{{ figure_markup(
+  image="Distribution of TLS Version - Mobile HTML.png",
+  caption="Distribution of TLS Version - Mobile HTML.",
+  description="Bar chart showing the usage of different TLS versions in Mobile by requests served from CDN and requests served from Origin",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=586006642&format=image",
+  sheets_gid="1492712705",
+  sql_file="distribution_of_tls_versions_cdn_vs_origin.sql"
+  )
+}}
 
-![alt_text](images/image7.png "image_tooltip")
-
-
-
-
-<p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image8.png "image_tooltip")
 
 
 We see in the data above that 83% of the web properties on CDNs use TLS 1.3 compared to 33-35% on the origin. That's a huge benefit of using a CDN.  These protocol upgrades also come with minimal to no-effort for web owners. The trend is identical for Mobile and Desktop HTMLs.
@@ -247,18 +283,25 @@ Similar trend is observed for the third party domains below. These web services 
 
 
 
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{{ figure_markup(
+  image="Distribution of TLS Version - Desktop Third Party.png",
+  caption="Distribution of TLS Version - Desktop Third Party.",
+  description="Bar chart showing the usage of different TLS versions in Desktop by third Party requests served from CDN and third party requests served from Origin",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1414975613&format=image",
+  sheets_gid="1492712705",
+  sql_file="distribution_of_tls_versions_cdn_vs_origin.sql"
+  )
+}}
 
-
-![alt_text](images/image9.png "image_tooltip")
-
-
-
-
-<p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image10.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image10.png "image_tooltip")
+{{ figure_markup(
+  image="Distribution of TLS Version - Mobile Third Party.png",
+  caption="Distribution of TLS Version - Mobile Third Party.",
+  description="Bar chart showing the usage of different TLS versions in Mobile by third Party requests served from CDN and third party requests served from Origin",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=647850030&format=image",
+  sheets_gid="1492712705",
+  sql_file="distribution_of_tls_versions_cdn_vs_origin.sql"
+  )
+}}
 
 
 It is important for third party domains to be on the latest TLS version for security reasons. With the increase in web attacks, web owners are aware of loopholes that can be exploited with unsecure connections to third party domains. They will expect equally secure TLS connections which meet the security and performance requirements of their web sites. These expectations enhance the benefits CDNs bring to the table.
@@ -269,10 +312,15 @@ Common logic dictates that the fewer hops it takes for a HTTPS request-response 
 
 
 
-<p id="gdcalert11" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image11.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert12">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image11.png "image_tooltip")
+{{ figure_markup(
+  image="HTML TLS Negotiation - CDN vs Origin.png",
+  caption="HTML TLS Negotiation - CDN vs Origin.",
+  description="Bar chart showing the TLS connection setup time (in milliseconds) at 10th, 25th, 50th, 75th and 90th Percentile for requests served from CDN v/s requests served from Origin",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1928148559&format=image",
+  sheets_gid="603895236",
+  sql_file="distribution_of_tls_time_cdn_vs_origin.sql"
+  )
+}}
 
 
 CDNs have helped slash the TLS connection times.  This is due to their proximity to the end user and adoption of newer TLS protocols that optimize the TLS negotiation. CDNs hold the edge over Origin at all percentiles here. At P10 and P25, CDNs are nearly 1.5x to 2x faster than Origin in TLS set up time.  The gap increases even more once we hit the median and above, where CDNs are nearly 3x faster. A user at P90 using a CDN will have better performance than a user at P50 of Origin.
@@ -293,36 +341,50 @@ The trend cannot be clearer than what the graph shows below. There is high HTTP/
 
 
 
-<p id="gdcalert12" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image12.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert13">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{{ figure_markup(
+  image="Distribution of HTTP Versions - Desktop HTML.png",
+  caption="Distribution of HTTP Versions - Desktop HTML.",
+  description="Bar chart showing the HTTP versions used in Desktop HTML requests served from CDN and Origin.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=707070598&format=image",
+  sheets_gid="1197207175",
+  sql_file="distribution_of_http_versions_cdn_vs_origin.sql"
+  )
+}}
 
-
-![alt_text](images/image12.png "image_tooltip")
-
-
-
-
-<p id="gdcalert13" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image13.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert14">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image13.png "image_tooltip")
+{{ figure_markup(
+  image="Distribution of HTTP Versions - Mobile HTML.png",
+  caption="Distribution of HTTP Versions - Mobile HTML.",
+  description="Bar chart showing the HTTP versions used in Mobile HTML requests served from CDN and Origin.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=825211868&format=image",
+  sheets_gid="1197207175",
+  sql_file="distribution_of_http_versions_cdn_vs_origin.sql"
+  )
+}}
 
 
 Back in 2019, the Origin domains had 27% adoption of HTTP/2 compared to 71% adoption on CDN. While we see in Desktop HTMLs that there is about a 14% increase in origins supporting HTTP/2+ in 2021, domains on CDNs have maintained that lead with a 15% increase. This gap is a bit less when we look at Mobile HTMLs, where domains using a CDN have a slightly lower HTTP/2+ adoption compared to Desktop HTML’s.
 
 
 
-<p id="gdcalert14" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image14.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert15">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{{ figure_markup(
+  image="Distribution of HTTP Versions - Desktop Third Party.png",
+  caption="Distribution of HTTP Versions - Desktop Third Party.",
+  description="Bar chart showing the HTTP versions used in Desktop Third Party requests served from CDN and Origin.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=315993105&format=image",
+  sheets_gid="1197207175",
+  sql_file="distribution_of_http_versions_cdn_vs_origin.sql"
+  )
+}}
 
-
-![alt_text](images/image14.png "image_tooltip")
-
-
-
-
-<p id="gdcalert15" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image15.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert16">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image15.png "image_tooltip")
+{{ figure_markup(
+  image="Distribution of HTTP Versions - Mobile Third Party.png",
+  caption="Distribution of HTTP Versions - Mobile Third Party.",
+  description="Bar chart showing the HTTP versions used in Mobile Third Party requests served from CDN and Origin.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=351977017&format=image",
+  sheets_gid="1197207175",
+  sql_file="distribution_of_http_versions_cdn_vs_origin.sql"
+  )
+}}
 
 
 Looking at third party domains supporting newer protocols, we see an interesting trend of higher adoption of HTTP/2+protocols compared to first party domains. This makes sense, considering the fact that most of the top third party domains use purpose-built CDNs and thus have more control on the content development and content delivery. Additionally, third party domains need to have consistent performance across all network conditions and this is where HTTP/2+ adds value by mixing in other protocols like UDP along with TCP connections. Back in 2019, Uber did an experiment to understand how UDP along with TCP (aka QUIC, the precursor to HTTP/3) can help deliver content with consistent performance and overcome packet loss in highly congested mobile networks. The results of this experiment documented in [this blog post](https://eng.uber.com/employing-quic-protocol/) throws valuable insights into the demographic where HTTP/3 can help. Over time, this trend will trickle down and we should see web owners adopting HTTP/3, especially with mobile network traffic having a higher contribution to the total internet traffic.
@@ -337,18 +399,25 @@ The impact of this is observed when we compare websites which are using CDN agai
 
 
 
-<p id="gdcalert16" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image16.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert17">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{{ figure_markup(
+  image="Distribution of Compression Types - Desktop.png",
+  caption="Distribution of Compression Types - Desktop.",
+  description="Bar chart showing the Brotli and Gzip compression usage in Desktop requests served from CDN and Origin.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=914242768&format=image",
+  sheets_gid="1196940164",
+  sql_file="distribution_of_compression_types_cdn_vs_origin.sql"
+  )
+}}
 
-
-![alt_text](images/image16.png "image_tooltip")
-
-
-
-
-<p id="gdcalert17" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image17.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert18">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image17.png "image_tooltip")
+{{ figure_markup(
+  image="Distribution of Compression Types - Mobile.png",
+  caption="Distribution of Compression Types - Mobile.",
+  description="Bar chart showing the Brotli and Gzip compression usage in Mobile requests served from CDN and Origin.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1852382089&format=image",
+  sheets_gid="1196940164",
+  sql_file="distribution_of_compression_types_cdn_vs_origin.sql"
+  )
+}}
 
 
 On both Desktop and Mobile platforms, we see that CDNs are delivering twice as many text assets in Brotli, unlike domains delivered from origin.  From the “CDN Adoption” section covered earlier, 73% of the domains serving HTMLs are on CDNs and these all  benefit from the Brotli compression. By offloading the computational load of compressing a text asset in the Brotli format to CDNs, website owners need not invest resources for hosting infrastructure.
