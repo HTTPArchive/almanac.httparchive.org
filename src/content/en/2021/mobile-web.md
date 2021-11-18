@@ -184,6 +184,7 @@ On weekends the split between mobile and desktop traffic remains more stable.
    }}
 
  {# TODO (Authors/Editors) - description is not descriptive enough of the data #}
+ {# TODO (Editor) - Updated! #}
 
 This all suggests that people who have the choice between different devices are more likely to use mobile ones in their personal time.
 
@@ -226,21 +227,21 @@ These hints can be roughly assigned into three groups:
 
 
 * **Device client hints**
-Details of the capabilities and features of the device accessing the site.
+: Details of the capabilities and features of the device accessing the site.
 * **Network client hints**
-Details of the network connection between the device and the server.
+: Details of the network connection between the device and the server.
 * **User Agent Hints**
-Details about the agent accessing the site.
+: Details about the agent accessing the site.
 
 {# TODO - this looks like a formatting error but i'm not sure what's wrong with it #}
-
+ {# TODO (Editor) - Updated! #}
 
 #### Device client hints
 
 {{ figure_markup(
    image="mobile-web-usage-of-device-client-hints.png",
    caption="Usage of Device Client Hint Directives",
-   description="Bar chart showing the usage of device client hint directives detected on mobile and desktop page loads",
+   description="Bar chart comparing the usage of device client hint directives detected on mobile and desktop page loads.  Desktop sites were less likely than mobile to use Device-Memory, DRP, or Viewport-Width client hints.  Usage of the Width was equal between device types at 0.01%",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=663083561&format=interactive",
    sheets_gid="1041308066",
   sql_file="client_hints.sql"
@@ -248,7 +249,7 @@ Details about the agent accessing the site.
 }}
 
 {# TODO (Authors/Editors) figure description does not describe the data #}
-
+{# TODO (Editor) - Updated! #}
 Uptake here is low, with <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/DPR">DPR</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Viewport-Width">Viewport-Width</a> leading with **0.15%** of mobile sites requesting this, <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Device-Memory">Device-Memory</a> a little behind at **0.14%** and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Width">Width</a> at just **0.01%**, but this is now deprecated, the proposed replacement being Sec-CH-Width, we detected no sites requesting this.
 
 Currently, only Chrome, (and Chromium based browsers like Microsoft's Edge) and Opera support these headers, with <a hreflang="en" href="https://caniuse.com/client-hints-dpr-width-viewport">Safari and Firefox not yet onboard</a>.
@@ -291,7 +292,7 @@ The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Network_Informatio
 {{ figure_markup(
    image="mobile-web-usage-of-networkinformation-effectivetype.png",
    caption="Usage of NetworkInformation.effectiveType",
-   description="Bar chart showing the usage of NetworkInformation.effectiveType API, detected on mobile and desktop page loads",
+   description="Bar chart comparing the usage of Network Client Hint Directives between desktop and mobile devices.  Mobile sites were more likely to use Downlink, ETC, RTT, and Save-Data directives.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=844974484&format=interactive",
    sheets_gid="277973945",
   sql_file="network_info_effective_type_usage.sql"
@@ -299,7 +300,7 @@ The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Network_Informatio
 }}
 
 {# TODO (Authors/Editors) - figure description does not describe the data #}
-
+{# TODO (Editor) - Updated! #}
 We focused of mobile vs. desktop page loads making use of <a href="https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/effectiveType">NetworkInformation.effectiveType</a>, which returns a string based on the effective connection type, 'slow-2g', '2g', '3g', or '4g'. 4g is the top tier, so could really be seen as 4g or faster, including 5g and broadband, fixed connections.
 
 **18.19%** of mobile requests had page loads utilising NetworkInformation.effectiveType, but surprisingly, a very slightly higher **18.41%** of desktop requests detected use of this API.
@@ -310,7 +311,7 @@ We focused of mobile vs. desktop page loads making use of <a href="https://devel
 {{ figure_markup(
    image="mobile-web-usage-of-navigator-devicememory.png",
    caption="Usage of Navigator.deviceMemory",
-   description="Bar chart showing the usage of Navigator.deviceMemoryAPI, detected on mobile and desktop page loads",
+   description="Bar chart comparing the usage of Navigator.deviceMemoryAPI on mobile and desktop. 10.19% of desktop sites used the Device Memory API compared to 10.88% of mobile page loads.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=634683822&format=interactive",
    sheets_gid="1309485612",
   sql_file="navigator_device_memory_usage.sql"
@@ -318,6 +319,7 @@ We focused of mobile vs. desktop page loads making use of <a href="https://devel
 }}
 
 {# TODO (Authors/Editors) - figure description does not describe the data #}
+{# TODO (Editor) - Updated! #}
 
 This API returns an approximate amount of device memory, useful to judge what the client might be capable of handling and adapt accordingly.
 
