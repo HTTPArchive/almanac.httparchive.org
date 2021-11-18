@@ -108,7 +108,7 @@ Incredibly, this year's record for the largest number of external stylesheets be
   sql_file="stylesheet_count.sql"
 ) }}
 
-Number of style sheets is one thing, but what about the number of actual style rules?  Compared to last year, the lower percentiles rose a bit, while the highest barely budged.  What is different in 2021 versus 2020 is that across nearly all percentiles, desktop pages have more rules on average than mobile pages do.
+Number of stylesheets is one thing, but what about the number of actual style rules? Compared to last year, the lower percentiles rose a bit, while the highest barely budged. What _is_ different in 2021 versus 2020 is that across nearly all percentiles, desktop pages have more rules on average than do mobile pages.
 
 {{ figure_markup(
   image="rules-per-page.png",
