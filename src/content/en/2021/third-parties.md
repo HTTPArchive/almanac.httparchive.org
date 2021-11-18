@@ -453,7 +453,7 @@ Looking at the usage over the last three Web Almanac years, usage has dropped co
 
 ## Security and Privacy
 
-Measuring the security and privacy impact of using third parties is more difficult. Undoubtedly, giving access to third parties increases risks on both security and privacy, and then giving access to run scripts—which we've shown to be the most prevalent type—effectively gives full access to the website. However, the entire intent of third-party resources is to allow them to be used on the sites, meaning restricting this will limit the very functionality they are being used for. Additionally, security issues through the use of third parties are often only discovered after the fact, rather than something we can actively analyze.
+Measuring the security and privacy impact of using third parties is more difficult. Undoubtedly, giving access to third parties increases risks on both security and privacy, and then giving access to run scripts—which we've shown to be the most prevalent type—effectively gives full access to the website. However, the entire intent of third-party resources is to allow them to be seemlessly used on the sites, meaning restricting this will limit the very functionality they are being used for.
 
 ### Security
 
