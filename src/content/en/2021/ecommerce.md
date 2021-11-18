@@ -130,7 +130,7 @@ Another way to look at the results is to consider the most popular platforms wit
 {{ figure_markup(
   image="top-ecommerce-platforms-top-1m-sites.png",
   caption="Top ecommerce platforms by share of top 1m sites",
-  description="A bar chart showing in descending order the usage of ecommerce platforms within the top 1 million sites on mobile. 3.49% are WooCommerce, 2.76% are Shopify, 1.48% are Magento, 1.17% are PrestaShop, 0.23% are Shopware, 0.22% are BigCommerce and 0.15% are Salesforce Commerce Cloud, ",
+  description="A bar chart showing in descending order the usage of ecommerce platforms within the top 1 million sites on mobile. 3.49% are WooCommerce, 2.76% are Shopify, 1.48% are Magento, 1.17% are PrestaShop, 0.23% are Shopware, 0.22% are BigCommerce and 0.15% are Salesforce Commerce Cloud",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=86873602&format=interactive",
   sheets_gid="1491793974",
   sql_file="top_vendors_crux_rank.sql"
@@ -174,7 +174,7 @@ As we continue down the leaderboard, there are few surprises in this space. Quit
 
 It is hard to compare the total number of ecommerce sites found across years. As described earlier, this is because the ability to detect whether a site is ecommerce has been improved substantially. In part through the use of secondary signals such as Google Analytics Enhanced Ecommerce integration.
 
-So instead, [last year's report](./../2020/ecommerce#covid-19-impact-on-ecommerce) focussed on a small number of platforms to see how their use had changed. The early signs in the first half of 2020 were that there were measurable and notable increases in Shopify and WooCommerce use. The growth was in the region of 20% between January 2020 and July 2020 while other platforms like Magento did not see the same growth. These platforms are known for their low entry costs and ease of use, while Magento is not.
+So instead, [last year's report](./../2020/ecommerce#covid-19-impact-on-ecommerce) focused on a small number of platforms to see how their use had changed. The early signs in the first half of 2020 were that there were measurable and notable increases in Shopify and WooCommerce use. The growth was in the region of 20% between January 2020 and July 2020 while other platforms like Magento did not see the same growth. These platforms are known for their low entry costs and ease of use, while Magento is not.
 
 Fast-forward to 2021, people and businesses around the world have continued to adapt. Ecommerce in the US in 2020 saw revenue growth of 32.4% <a hreflang="en" href="https://www.digitalcommerce360.com/article/coronavirus-impact-online-retail/">according to a report</a> by the Commerce Department. In the UK, the <a hreflang="en" href="https://internetretailing.net/industry/industry/ecommerce-grew-by-46-in-2020---its-strongest-growth-for-more-than-a-decade--but-overall-retail-sales-fell-by-a-record-19-ons-22603">Office of National Statistics reported</a> a 46% growth.
 
@@ -199,7 +199,7 @@ In the author's point of view, there was a rapid initial response by small busin
 
 However, the vast majority of the increased online revenues reported is expected to have benefited those businesses that were already ecommerce-enabled.
 
-## Ecommerce User Experience {#ecommerce-user-experience}
+## Ecommerce user experience {#ecommerce-user-experience}
 
 The objective of an ecommerce site is to generate revenue. A company will adopt multiple strategies to fulfill this objective. At a high level, this might be to offer a feature-rich experience that considers a breadth of buying journeys. They will also want the website to be as fast as possible. It's clear how both of these strategies work towards the objective but they can also work against each other at the same time.
 
@@ -390,7 +390,7 @@ Comparing these ecommerce sites metrics to the wider web, we see that the top ec
 
 When it comes to understanding the reasons behind a site's performance, some of the first things that you will look into are the page weight (the number of kilobytes that need to be downloaded), and the number of requests required to load the page.
 
-### Page Requests {#page-requests}
+### Page requests {#page-requests}
 
 {{ figure_markup(
   image="ecommerce-page-requests-distribution.png",
@@ -414,7 +414,7 @@ The 50th percentile of all ecommerce sites had 101 requests on the homepage on m
 
 Breaking these requests down by type and we can see that JavaScript is the most popular resource to be requested with 37 requests on an average ecommerce mobile homepage. This is a 23% increase from last year where there were 30 JavaScript requests per page. Previously images were the most requested resource with 34 requests per page on mobile but this is down slightly to 29 requests.
 
-### Page Weight {#page-weight}
+### Page weight {#page-weight}
 
 The page weight of a site includes all HTML, CSS, JavaScript, JSON, XML, images, audio, and video.
 
@@ -458,7 +458,7 @@ We saw that the sites with the heaviest pages (17 MB on mobile) were much heavie
 The largest contributors to page weight at the 90th percentile continue to be video with 9 MB and images (5.6 MB). It isn't altogether surprising that the heaviest ecommerce homepages are those that use a large amount of video and images. This page is often content-heavy and these resource types are the most effective way of communicating the brand. While video and images continue to be an important part of the buying experience, in the author's point of view, other page types are unlikely to see these extremes quite as much.
 
 
-### HTML Payload Size {#html-payload-size}
+### HTML Payload size {#html-payload-size}
 
 The HTML Payload is the size of the document response. In addition to HTML, this may include inline JavaScript and CSS.
 
@@ -491,6 +491,8 @@ Images are the second most requested resource type as well as the second-largest
 We see the median number of images requested on a mobile homepage is 28, while it is 31 on desktop. 10% of sites load 76 images on mobile, however, this is down from a high of 91 images last year.
 
 Overall, there is a 10-20% reduction in the number of images requested. It is hard to provide a definitive answer, but it may be due to the increased adoption of the <a hreflang="en" href="https://web.dev/browser-level-image-lazy-loading/">lazy loading attribute</a>. As no scrolling or interaction with the site is performed during testing, any assets that are lazy-loaded will not be factored into measurements. Analysis by the JavaScript chapter did find that 17% of sites are using this attribute which gives some weight to this theory.
+
+{# TODO (Authors) - you mention the javascript chapter finding a result - looks like a good opportunity to cross link #}
 
 {{ figure_markup(
   image="distribution-of-image-bytes-for-ecommerce.png",
@@ -553,7 +555,7 @@ The weight of third-party content is also very similar to last year's analysis. 
 
 ## Tools {#tools}
 
-### JavaScript Frameworks & Libraries {#javascript-frameworks-&-libraries}
+### JavaScript frameworks & libraries {#javascript-frameworks-&-libraries}
 
 Using JavaScript is a popular method of customizing the commerce experience, particularly on SaaS platforms where the core product is a black box.
 
@@ -564,7 +566,7 @@ Unfortunately, we are unable to make statements about the proliferation of headl
 {{ figure_markup(
   image="top-javascript-frameworks-ecommerce.png",
   caption="Top JavaScript frameworks on ecommerce sites",
-  description="A bar chart showing the most popular JavaScript frameworks on ecommerce sites in descending order of popularity. GSAP has 15% share of mobile ecommerce sites, Require JS 7%, Handlebars has 6%, styled-components has 4%, Vue.js and Prototype have 3%, Stimulus, Backbone JS and Moustache all ahve 2% and Angular JS has 1%",
+  description="A bar chart showing the most popular JavaScript frameworks on ecommerce sites in descending order of popularity. GSAP has 15% share of mobile ecommerce sites, Require JS 7%, Handlebars has 6%, styled-components has 4%, Vue.js and Prototype have 3%, Stimulus, Backbone JS and Moustache all have 2% and Angular JS has 1%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=532064877&format=interactive",
   sheets_gid="1754008320",
   sql_file="top_jsframework_providers_by_device.sql"
@@ -594,7 +596,7 @@ One of the beauties of ecommerce is that you can measure how well you're doing b
 {{ figure_markup(
   image="top-analytics-ecommerce.png",
   caption="Top analytics solutions on ecommerce sites",
-  description="A bar chart showing the most popular analytics solutions libraries on ecommerce sites in descending order of popularity. Google Analytics has 74% share of mobile ecommerce sites, Google Analytics Enhanced Ecommerce has 13%, HotJar and Yandex.Metrika have 6%, New Relic has 3%, Matomo Analytics and Site Kit have 2%, and Moat has 1%",
+  description="A bar chart showing the most popular analytics solutions libraries on ecommerce sites in descending order of popularity. Google Analytics has 74% share of mobile ecommerce sites, Google Analytics Enhanced Ecommerce has 13%, HotJar and Yandex. Metrika have 6%, New Relic has 3%, Matomo Analytics and Site Kit have 2%, and Moat has 1%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=1380267770&format=interactive",
   sheets_gid="1942109850",
   sql_file="top_analytics_providers_bydevice_wapp.sql"
@@ -635,7 +637,7 @@ In a similar vein to analytics, implementing an A/B testing solution enables hyp
 
 The obvious yet disappointing conclusion is the majority of ecommerce sites were not running A/B tests at the time of the survey.
 
-### Web Push Notifications {#web-push-notifications}
+### Web push notifications {#web-push-notifications}
 
 Once a visitor gives their permission, the [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) enables ecommerce sites to send push notifications even when the website is not open.
 
@@ -691,6 +693,8 @@ In our research, we found that less than 1% of websites had third-party accessib
 
 Further information on such tools can be found in the [Accessibility](./accessibility) chapter.
 
+{# TODO (Authors) - can we link specifically into the captcha section once the link is available? #}
+
 ### AMP {#amp}
 
 {{ figure_markup(
@@ -729,9 +733,9 @@ On initial reading, we were surprised to find that 25% of requests on desktop an
 
 A key growth strategy of successful ecommerce businesses is moving into new countries. To do this well, you would want to provide localized language versions of your site.
 
-In this year's analysis, we looked for "hreflang" headers and link tags to see how many sites were using them. These tags are not available out of the box on the most popular platforms (e.g. WooCommerce, Shopify, Magento), the existence of any suggests there would be more than one.
+In this year's analysis, we looked for `hreflang` headers and link tags to see how many sites were using them. These tags are not available out of the box on the most popular platforms (e.g. WooCommerce, Shopify, Magento), the existence of any suggests there would be more than one.
 
-A hreflang attribute is used to communicate the language that the page is targeting. Optionally it can also narrow this recommendation to a particular country, e.g. "en-gb" for English targeting Great Britain, as opposed to "en-us" for English targeting the United States.
+A `hreflang` attribute is used to communicate the language that the page is targeting. Optionally it can also narrow this recommendation to a particular country, e.g. `en-gb` for English targeting Great Britain, as opposed to `en-us` for English targeting the United States.
 
 {{ figure_markup(
   image="hreflang-links-ecommerce.png",
@@ -746,9 +750,9 @@ The results identified 8.81% of requests on desktop to specify an English hrefla
 
 It is hard to draw too many conclusions from this data without further research. However, we can say that it is still uncommon for ecommerce businesses to provide language-specific site variations. Of those that do, they are most likely to declare support for one or more languages used by Western European countries. In the author's experience, the geographic proximity of each of the UK, France, Germany, Spain, and Italy makes internationalization an attractive growth strategy.
 
-Further research could be performed here to better understand the internationalization capabilities of ecommerce websites. For example, looking into the average number of hreflang attributes declared may help determine the breadth of multi-region support.
+Further research could be performed here to better understand the internationalization capabilities of ecommerce websites. For example, looking into the average number of `hreflang` attributes declared may help determine the breadth of multi-region support.
 
-Cross-referencing hreflang use with ranking data available from the CRUX metrics could uncover trends of when businesses invest in multi-region support.
+Cross-referencing `hreflang` use with ranking data available from the CRUX metrics could uncover trends of when businesses invest in multi-region support.
 
 ## Conclusion {#conclusion}
 
@@ -760,7 +764,7 @@ For the first time, our analysis benefited from website popularity ranking data.
 
 Finally, in terms of site performance, Core Web Vitals has been a prominent industry discussion over the last year because it is now a Google search engine ranking factor. We have seen 10-20% more sites achieve a good CWV on mobile across most of the top 5 platforms. Shopify sites had the highest percentage of good CWV experiences at 33% on average. Despite this improvement since last year, ecommerce sites still perform very poorly across all platforms for Core Web Vitals.
 
-## Future Analysis Opportunities {#future-analysis-opportunities}
+## Future analysis opportunities {#future-analysis-opportunities}
 
 One of the methodology limitations is that only the homepage is tested. On an ecommerce site, there will likely be some technologies that are not detectable site-wide, e.g. payments and shipping providers will likely only be visible during the checkout process. This is likely to be impractical to achieve given the necessary steps to get to this stage of the checkout process.
 
