@@ -287,7 +287,7 @@ To try to understand the performance impact of third parties, we will look at so
 
 #### Popular third parties and their impact on render
 
-To understand third parties' impact on rendering, we've analyzed how sites perform on Lighthouse's render-blocking resources audit, and identified them as third-parties by cross-referencing them with the [third-party-web](methodology#third-party-web) dataset.
+To understand third parties' impact on rendering, we've analyzed how sites resources perform on Lighthouse's render-blocking resources audit, and identified which are third-parties by cross-referencing them with the [third-party-web](methodology#third-party-web) dataset.
 
 {{ figure_markup(
   image="third-parties-most-popular-third-parties-impact-on-render.png",
