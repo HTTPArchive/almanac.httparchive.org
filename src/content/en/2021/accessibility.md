@@ -134,28 +134,28 @@ The most commonly expected landmarks that the majority of web pages should have 
       <tr>
         <td>`<main>`</td>
         <td class="numeric">28%</td>
-        <td><code>role="main"</code></td>
+        <td>`role="main"`</td>
         <td class="numeric">17%</td>
         <td class="numeric">45%</td>
       </tr>
       <tr>
         <td>`<header>`</td>
         <td class="numeric">62%</td>
-        <td><code>role="banner"</code></td>
+        <td>`role="banner"`</td>
         <td class="numeric">14%</td>
         <td class="numeric">76%</td>
       </tr>
       <tr>
         <td>`<nav>`</td>
         <td class="numeric">62%</td>
-        <td><code>role="navigation"</code></td>
+        <td>`role="navigation"`</td>
         <td class="numeric">4%</td>
         <td class="numeric">66%</td>
       </tr>
       <tr>
         <td>`<footer>`</td>
         <td class="numeric">63%</td>
-        <td><code>role="contentinfo"</code></td>
+        <td>`role="contentinfo"`</td>
         <td class="numeric">12%</td>
         <td class="numeric">76%</td>
       </tr>
@@ -537,7 +537,7 @@ Organizations can be swayed by the deceptive marketing of some of these overlay 
 
 There is no quick fix—the onus is on organizations and digital practitioners to prioritize actually fixing the accessibility problems in their web content. A common saying amongst the disabled community is, "nothing about us without us". Overlays have been created without much involvement from the disabled community, and some of these companies have further alienated people with disabilities who have spoken out about this. These products cannot achieve equal access to the web for people with disabilities.
 
-### Additional resources about overlays:
+### Additional resources about overlays
 
 * Connor Scott-Gardener's experience using an overlay
 * Case study of an ADA lawsuit involving an overlay
