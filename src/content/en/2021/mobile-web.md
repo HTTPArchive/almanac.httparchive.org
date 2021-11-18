@@ -1088,31 +1088,33 @@ A CLS score of **0.1** or under is considered good, under 0.25 considered indeed
 
 Smaller screen sizes are susceptible to greater shifts, at 360 x 640px, this example block causes a CLS score of **0.22**
 
-
 {{ figure_markup(
-  image="mobile-cls-example.gif",
+  gif="mobile-cls-example.gif",
+  image="mobile-cls-example-static.png",
   alt="GIF animation showing a mock ad block appearing on mobile",
-  caption="Screen capture GIF of a mock-up showing an ad causing CLS on a mobile sized screen",
-  description="The Ad insert causes a relatively large amount of content to be shifted on screen at mobile viewport sizes.",
-  width=197,
-  height=350
+  caption="Screen capture GIF of a mock-up showing an ad causing CLS on a mobile sized screen.",
+  description="The ad insert causes a relatively large amount of content to be shifted on screen at mobile viewport sizes.",
+  width=600,
+  height=371,
+  gif_width=197,
+  gif_height=350
   )
 }}
 
 At desktop screen sizes, the same element appearing leads to a CLS score of just **0.07**.
 
-
 {{ figure_markup(
-  image="desktop-cls-example.gif",
+  gif="desktop-cls-example.gif",
+  image="desktop-cls-example-static.png",
   alt="GIF animation showing a mock ad block appearing on desktop",
-  caption="Screen capture GIF of a mock-up showing an ad causing CLS on a desktop sized screen",
-  description="The Aad insert causes a relatively small amount of content to be shifted on screen at desktop viewport sizes.",
+  caption="Screen capture GIF of a mock-up showing an ad causing CLS on a desktop sized screen.",
+  description="The ad insert causes a relatively small amount of content to be shifted on screen at desktop viewport sizes.",
   width=600,
-  height=341
+  height=371,
+  gif_width=600,
+  gif_height=341
   )
 }}
-
-
 
 The CrUX dataset shows that 62% of mobile page loads had a CLS of **0.1** or under
 
