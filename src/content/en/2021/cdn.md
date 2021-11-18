@@ -113,7 +113,7 @@ The probable reasons for this may include:
 
 
 * The HTTP/2 protocol requires web owners to consolidate the domains instead of using multiple domains for optimal performance.
-* Contribution of third party content to total page weight has also increased over the years (refer to the (Third Parties)[./third-parties] chapter for more details) leading to increased page load time concerns for web owners.
+* Contribution of third party content to total page weight has also increased over the years (refer to the [Third Parties](./third-parties) chapter for more details) leading to increased page load time concerns for web owners.
 * Customization/personalization of third party scripts to suit the requirements of web owners.
 
 These changes have led to the SaaS vendors offering “self-hosting” options to web owners. This leads to more content being delivered over the first party domain instead of the vendor’s domain. When this happens, it’s up to the web owner to either deliver the content over a CDN or directly from their hosting infrastructure.
@@ -329,7 +329,7 @@ Looking at third party domains supporting newer protocols, we see an interesting
 
 **Brotli Adoption**
 
-Content delivered over the internet employs compression to reduce the payload size. A smaller payload means it’s faster to deliver the content from server to end user. This makes websites load faster and provide a better end user experience. For images, this compression is handled by image file formats like JPEG, WEBP, AVIF, etc. (refer to (Media)[./media] chapter for more on this). For textual web assets (like HTML, Javascripts, stylesheets, etc.) compression is handled by a file format called “[GZIP](https://en.wikipedia.org/wiki/Gzip)”. GZIP has been in existence since 1992.  It did a good job of making text asset payloads smaller,but it is time for a new text asset compression to do better than GZIP:[Brotli](https://en.wikipedia.org/wiki/Brotli) (refer to (Compression)[./compression] chapter for more on this). 
+Content delivered over the internet employs compression to reduce the payload size. A smaller payload means it’s faster to deliver the content from server to end user. This makes websites load faster and provide a better end user experience. For images, this compression is handled by image file formats like JPEG, WEBP, AVIF, etc. (refer to [Media](./media) chapter for more on this). For textual web assets (like HTML, Javascripts, stylesheets, etc.) compression is handled by a file format called “[GZIP](https://en.wikipedia.org/wiki/Gzip)”. GZIP has been in existence since 1992.  It did a good job of making text asset payloads smaller,but it is time for a new text asset compression to do better than GZIP:[Brotli](https://en.wikipedia.org/wiki/Brotli) (refer to the [Compression](./compression) chapter for more on this). 
 
 Similar to TLS and HTTP/2 adoption, Brotli went through a phase of gradual adoption across web platforms. At the time of this writing, Brotli is supported by 95% of the web platforms globally. However, not all websites compress text assets in Brotli format. This is because of the longer time required to compress a text asset in Brotli format compared to GZIP compression. Also, the hosting infrastructure needs to have backward compatibility to serve GZIP compressed assets for older platforms which do not support the Brotli format.
 
