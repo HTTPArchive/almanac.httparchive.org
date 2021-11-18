@@ -119,37 +119,60 @@ Before the introduction of HTML5, ARIA landmark roles were needed to accomplish 
 
 The most commonly expected landmarks that the majority of web pages should have are  `<main>`, `<header>`, `<nav>` and `<footer>`. We found that only 28% of desktop pages have a native HTML `<main>` element, and 17% of desktop pages have an element with a `role="main"`.
 
-[TODO format table]
-HTML 5 element
-Percentage of desktop homepages with this element
-ARIA role equivalent
-Percentage of desktop homepages with this role
-Total percentage of desktop homepages with element or role
-`<main>`
-28%
-`role="main"`
-17%
-45%
-`<header>`
-62%
-`role="banner"`
-14%
-76%
-`<nav>`
-62%
-`role="navigation"
-4%
-66%
-`<footer>`
-63%
-`role="contentinfo"`
-12%
-76%
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>HTML 5 element</th>
+        <th>Pages with element</th>
+        <th>ARIA role equivalent</th>
+        <th>Page with role</th>
+        <th>Page with element or role</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>`<main>`</td>
+        <td class="numeric">28%</td>
+        <td><code>role="main"</code></td>
+        <td class="numeric">17%</td>
+        <td class="numeric">45%</td>
+      </tr>
+      <tr>
+        <td>`<header>`</td>
+        <td class="numeric">62%</td>
+        <td><code>role="banner"</code></td>
+        <td class="numeric">14%</td>
+        <td class="numeric">76%</td>
+      </tr>
+      <tr>
+        <td>`<nav>`</td>
+        <td class="numeric">62%</td>
+        <td><code>role="navigation"</code></td>
+        <td class="numeric">4%</td>
+        <td class="numeric">66%</td>
+      </tr>
+      <tr>
+        <td>`<footer>`</td>
+        <td class="numeric">63%</td>
+        <td><code>role="contentinfo"</code></td>
+        <td class="numeric">12%</td>
+        <td class="numeric">76%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(
+    caption="Landmark elment and role usage (desktop).",
+    sheets_gid="{# TODO what is the Sheet gid for these stats? #}",
+    sql_file="{# TODO what is the sql filename for these stats? Can normally find out once have sheet id) #}"
+  ) }}</figcaption>
+</figure>
 
 
 When a page has multiple instances of the same landmark, for example, a primary site navigation and a breadcrumb secondary navigation, it is important that they each have a unique accessible name. This will help an assistive technology user to better understand which navigation landmark they have encountered. Techniques for accomplishing this are covered in Scott O'Hara's comprehensive article about the  various landmarks and how different screen readers navigate them.
 
 ### Document titles
+
 Descriptive page titles are helpful for context when moving between pages, tabs, and windows with assistive technology because the change in context will be announced.
 
 Our data shows 98% of web pages have a title. However, only 68% of those pages have a title containing four or more words, meaning that it is likely that a significant percentage of web pages do not have a unique, meaningful title that provides enough information about the content of the page.
