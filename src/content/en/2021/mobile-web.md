@@ -142,16 +142,20 @@ Fortunately there are a few other sources. Paul Calvano ran some analysis on the
 
 
 
-Weekend days show a greater proportion of mobile traffic, with 66.06% on Saturdays, **66.54%** on Sundays, and a slight increase to **59.06%**. Globally, not every country has Monday to Friday work weeks -  Sunday to Thursday is also <a hreflang="en" href="https://en.wikipedia.org/wiki/Workweek_and_weekend">another common pattern</a>.
+Weekend days show a greater proportion of mobile traffic, climbing somewhere around 10% from around 55 - 56% to 65 - 67%. Globally, not every country has Monday to Friday work weeks -  Sunday to Thursday is also <a hreflang="en" href="https://en.wikipedia.org/wiki/Workweek_and_weekend">another common pattern</a>, something that can be seen with a slight ramp up on Fridays, leading to a bigger jump in mobile usage on Saturdays and Sundays.
 
 {# TODO (Authors) - I dont get the use of bold here, and i'm confused what "a slight increase to" is referring to. A slight increase from? Is something missing? #}
+
+{# TODO (Editor) - So sorry, bad copy and paste from earlier version, re-written now! #}
 
 
 ##### Not all times are equal
 
-On weekdays, mobile usage dips vs. desktop usage around 5 AM UTC and starts climbing again at 7 PM UTC (with a small bump around 10 / 11 AM). This aligns with working hours.
+On weekdays, mobile usage decreases and desktop usage increases as an overall percentage of traffic around 5 AM UTC and starts climbing again at 7 PM UTC (with a small bump around 10 / 11 AM). This aligns with working hours.
 
 {# TODO (Authors) - I dont get what "mobile usage dips vs. desktop usage" is trying to say. One decreases while another increases? #}
+
+{# TODO (Editor) - Updated! #}
 
 {{ figure_markup(
    image="mobile-web-akimai-device-distribution-by-hour-weekdays.png",
@@ -415,9 +419,11 @@ Of the top five mobile web technologies, adoption rates for three were higher on
 <figcaption>{{ figure_link(caption="Technologies - Mobile Vs. Desktop Uptake.", sheets_gid="1172584192", sql_file="most_used_tech_by_domain_rank.sql") }}</figcaption>
 </figure>
 
-JavaScript library JQuery is the dominant library of the mobile web, present in 84.38%.  Google is the dominant provider, holding three of the top five spots.  The most
+JavaScript library JQuery is the dominant library of the mobile web, present in 84.38% of mobile page loads.  Google is the dominant provider, holding three of the top five spots.
 
 {# TODO (Authors) - Unsure if this is a typo or there's a thought missing here #}
+
+{# TODO (Editor) - Was a typo, removed #}
 
 
 #### Programming languages
@@ -474,8 +480,8 @@ Content management systems allow site owners to publish, update, and control con
   <thead>
     <tr>
       <th scope="col">CMS</th>
-      <th scope="col">Percentage of Mobile Page Loads</th>
-      <th scope="col">Percentage of Desktop Page Loads</th>
+      <th scope="col">% of Mobile Page Loads</th>
+      <th scope="col">% of Desktop Page Loads</th>
     </tr>
   </thead>
   <tbody>
@@ -525,9 +531,10 @@ Technology adoption rates for the mobile web moved in step with desktop.  The mo
   <thead>
     <tr>
       <th scope="col">Category</th>
-      <th scope="col">Percentage of Desktop Page Loads</th>
-      <th scope="col">Percentage of Mobile Page Loads</th>
-      <th scope="col">% higher Desktop Adoption Rate</th>
+      <th scope="col">Technology</th>
+      <th scope="col">% of Desktop Page Loads</th>
+      <th scope="col">% of Mobile Page Loads</th>
+      <th scope="col">% Higher Desktop Adoption Rate</th>
     </tr>
   </thead>
   <tbody>
@@ -573,6 +580,7 @@ Technology adoption rates for the mobile web moved in step with desktop.  The mo
 </figure>
 
 {# TODO (Authors) - Column alignment looks really off on this chart, its hard to read the last 3 columns #}
+{# TODO (Editor) - Missing header, fixed #}
 
 Given the changes to performance measurement and prioritization, it's reasonable to consider the absence of these JavaScript-heavy third party assets as part of an intentional effort to improve mobile page experience. The Facebook Pixel analytics script was found on -1.70% fewer mobile sites than desktop.
 
@@ -583,9 +591,10 @@ Mobile sites were more likely to adopt certain technologies, but with a smaller 
   <thead>
     <tr>
       <th scope="col">Category</th>
-      <th scope="col">Percentage of Desktop Page Loads</th>
-      <th scope="col">Percentage of Mobile Page Loads</th>
-      <th scope="col">% higher Mobile Adoption Rate</th>
+      <th scope="col">Technology</th>
+      <th scope="col">% of Desktop Page Loads</th>
+      <th scope="col">% of Mobile Page Loads</th>
+      <th scope="col">% Higher Mobile Adoption Rate</th>
     </tr>
   </thead>
   <tbody>
@@ -623,6 +632,7 @@ Mobile sites were more likely to adopt certain technologies, but with a smaller 
 </figure>
 
 {# TODO (Authors) - Column alignment looks really off on this chart, its hard to read the last 3 columns #}
+{# TODO (Editor) - Missing header, fixed #}
 
 #### Drawing Conclusions on Mobile Web App Usage
 
@@ -642,11 +652,12 @@ Attention to mobile design and friendliness are critical to reducing friction in
 
 ### Alternative Protocol Links
 
-The web is built on links.  On the mobile web, Unique Resource Identifier schemes beyond http/s, can allow users to complete tasks like dialing a phone number or starting an email with minimal friction.
+The web is built on links.  On the mobile web, Unique Resource Identifier schemes beyond http/s, can allow users to complete tasks like [dialing a phone number using tel:](https://developers.google.com/web/fundamentals/native-hardware/click-to-call) or starting an email with minimal friction.
 
 The most prevalent URI schemes were https, found on 93.15% of sites, and it's non-secure equivalent, http, appearing on 56.65%.  The high use of non-secure link protocols is noteworthy as 2020 saw major announcements from browsers to protect users' safety by alerting them when content is not secure.
 
 {# TODO (Authors) - I think this is a good spot to put an external link to read more on it, even if there's one example #}
+{# TODO (Editor) - I linked the dialing a phone number, does that help? #}
 
 After webpage links, the next five most used protocols in anchor href values on the mobile web are as follows:
 
