@@ -65,6 +65,7 @@ GROUP BY
   client,
   image_type_extension
 ORDER BY
+  pct DESC,
   client,
   freq DESC
 LIMIT 1000

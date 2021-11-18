@@ -540,7 +540,22 @@ We can also see lots of structures related to breadcrumb navigation, such as:
 
 Beyond these most popular structures, we see an extremely long-tail of relationships, describing all manner of entities, content types and concepts; as niche as `ApartmentComplex > amenityFeature > LocationFeatureSpecification` (0.1% of relationships) and `AutoDealer > department > AutoRepair` (0.04% of relationships) and `MusicEvent > performer > PerformingGroup` (0.01% of relationships).
 
-We should re-iterate that these types of structures and relationships are likely to be much more common than our data set represents, as we're limited to analyzing the homepages of websites. That means that, for example, a website which lists many thousands of individual apartment complexes, but does so on inner pages, wouldn't be reflected in this data.
+We should reiterate that these types of structures and relationships are likely to be much more common than our data set represents, as we're limited to analyzing the homepages of websites. That means that, for example, a website which lists many thousands of individual apartment complexes, but does so on inner pages, wouldn't be reflected in this data.
+
+{{ figure_markup(
+  image="structured-data-json-ld-entities-relationships.svg",
+  caption="JSON-LD entity relationship as a Sankey diagram.",
+  description='Sankey diagram showing a complex interweaving of relationships of the form: "From" -> "Relationship" -> "To". `WebPage` is the largest "From" item branching off to multiple "Relationship" types and "To" results (for example `WebPage` -> `PotentialAction` -> `SearchAction`). This is followed by `WebSite`, then `Organization`, `Product`, `BreadCrumblist`, `BlogPosting` and then a decreasingly used list of other items. Of the middle "Relationships" column `PotentialAction` is used most, followed by `ItemListElement`, `IsPartOf`, `Publisher`, `image` and then a similar long tail of ever-decreasing usage. The "To" column has `ImageObject` as the most used at the top, following by `Organization`, `SearchAction`, `ListItem`, `WebSite`, `WebPage` and then again a longer tail of every decreasing usage. The general sense created by the graph is a lot of different relaationships with much cross-usage between the three columns.',
+  width=1200,
+  height=1200
+  )
+}}
+
+The diagram shows the correlation between JSON-LD entities on mobile pages and represent them as flows, visually linking entities and relationships. Each class represents a unique value in the cluster and the height is proportional to its frequency.
+
+We're limiting in the chart the analysis to the top 200 most frequent chains.
+
+From the chart we also get first overview of the sectors behind these graphs from general publishing to e-commerce from local business to events,  automotive, music and so on.
 
 ##### Relationship depth
 

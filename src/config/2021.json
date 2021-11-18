@@ -730,12 +730,13 @@
       "twitter": "jyzg"
     },
     "Schweinepriester": {
-      "name": "Kai Schweinepriester",
+      "name": "Kai Hollberg",
       "teams": [
         "reviewers"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/2644614?v=4&s=200",
-      "github": "Schweinepriester"
+      "github": "Schweinepriester",
+      "twitter": "schweinepriestr"
     },
     "kevinfarrugia": {
       "name": "Kevin Farrugia",
@@ -755,6 +756,7 @@
         "authors"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/54685625?v=4&s=200",
+      "website": "https://www.flowerstorm.tech/",
       "github": "kachiden"
     },
     "vdwijngaert": {
@@ -987,7 +989,7 @@
       "github": "fischbacher"
     },
     "RMHolmlund": {
-      "name": "RMHolmlund",
+      "name": "Rebecca Holmlund",
       "teams": [
         "editors"
       ],

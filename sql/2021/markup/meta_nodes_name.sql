@@ -8,14 +8,14 @@ try {
   var $ = JSON.parse(payload);
   var almanac = JSON.parse($._almanac);
   return almanac['meta-nodes'].nodes.map(n => n.name || n.property);
-} catch (e) {  
+} catch (e) {
   return [];
 }
 ''' ;
 
 SELECT
   _TABLE_SUFFIX AS client,
-  name,
+  IF(IFNULL(TRIM(name), '') = '', '(not set)', name) AS name,
   COUNT(0) AS freq,
   COUNT(0) / SUM(COUNT(0)) OVER () AS pct
 FROM
@@ -27,6 +27,7 @@ GROUP BY
 HAVING
   freq > 1
 ORDER BY
+  pct DESC,
   client,
-  freq DESC
-LIMIT 100
+  name
+LIMIT 200
