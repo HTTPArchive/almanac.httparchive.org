@@ -47,7 +47,7 @@ Interestingly, when we look at the most popular resulting mime-types, we can see
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1635040165&format=interactive",
   sheets_gid="298942353",
-  sql_file="todo.sql"
+  sql_file="mime_types.sql"
   )
 }}
 
@@ -65,7 +65,7 @@ While downloading those responses, we've also deduplicated them by hashing their
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=341129382&format=interactive",
   sheets_gid="1692581795",
-  sql_file="todo.sql"
+  sql_file="counts.sql"
   )
 }}
 
@@ -77,7 +77,7 @@ The stark difference between the numbers of unique files and total responses alr
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1239068211&format=interactive",
   sheets_gid="49966611",
-  sql_file="todo.sql"
+  sql_file="cross_domain.sql"
   )
 }}
 
@@ -91,7 +91,7 @@ Instead, we decided to extract library names from URLs. While it's more problema
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1627913370&format=interactive",
   sheets_gid="370507165",
-  sql_file="todo.sql"
+  sql_file="popular_by_name.sql"
   )
 }}
 
@@ -129,7 +129,7 @@ Languages compiled to WebAssembly usually have their own standard library. Since
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=528882928&format=interactive",
   sheets_gid="1401232418",
-  sql_file="todo.sql"
+  sql_file="sizes_and_savings.sql"
   )
 }}
 
@@ -145,7 +145,7 @@ Let's check sizes of raw response bodies as sent by servers instead:
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1094358341&format=interactive",
   sheets_gid="1401232418",
-  sql_file="todo.sql"
+  sql_file="sizes_and_savings.sql"
   )
 }}
 
@@ -163,7 +163,7 @@ First, let's take a look at compression methods used in these raw responses. I'l
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1660946444&format=interactive",
   sheets_gid="189654676",
-  sql_file="todo.sql"
+  sql_file="compression_methods.sql"
   )
 }}
 
@@ -190,7 +190,7 @@ Here are the resulting sizes:
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=2085720303&format=interactive",
   sheets_gid="1401232418",
-  sql_file="todo.sql"
+  sql_file="sizes_and_savings.sql"
   )
 }}
 
@@ -204,7 +204,7 @@ Due to their nature, percentiles don't necessarily fall onto the same files betw
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1741617577&format=interactive",
   sheets_gid="1401232418",
-  sql_file="todo.sql"
+  sql_file="sizes_and_savings.sql"
   )
 }}
 
@@ -222,7 +222,7 @@ Compression aside, we could also look for optimization opportunities by analyzin
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=683121338&format=interactive",
   sheets_gid="1082802229",
-  sql_file="todo.sql"
+  sql_file="section_sizes.sql"
   )
 }}
 
@@ -260,7 +260,7 @@ Let's check how much stripping this debug information would save us in combinati
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1943000224&format=interactive",
   sheets_gid="1401232418",
-  sql_file="todo.sql"
+  sql_file="sizes_and_savings.sql"
   )
 }}
 
@@ -281,8 +281,7 @@ It provides significant size savings on both uncompressed and compressed real-wo
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=724059342&format=interactive",
-  sheets_gid="1763590037",
-  sql_file="todo.sql"
+  sheets_gid="1763590037"
   )
 }}
 
@@ -291,8 +290,7 @@ It provides significant size savings on both uncompressed and compressed real-wo
   caption="TODO",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=2047888306&format=interactive",
-  sheets_gid="1763590037",
-  sql_file="todo.sql"
+  sheets_gid="1763590037"
   )
 }}
 
@@ -314,7 +312,7 @@ While the resulting data is not representative of real-world usage and not relev
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=541095203&format=interactive",
   sheets_gid="1401232418",
-  sql_file="todo.sql"
+  sql_file="sizes_and_savings.sql"
   )
 }}
 
@@ -328,7 +326,7 @@ If we look at the uncompressed savings, it becomes more clear that, even on our 
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=270629181&format=interactive",
   sheets_gid="1401232418",
-  sql_file="todo.sql"
+  sql_file="sizes_and_savings.sql"
   )
 }}
 
@@ -351,7 +349,7 @@ We've split instructions into various categories and counted them across all the
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1316275499&format=interactive",
   sheets_gid="1402848319",
-  sql_file="todo.sql"
+  sql_file="instruction_kinds.sql"
   )
 }}
 
@@ -371,7 +369,7 @@ Let's take a look at their adoption in the Almanac dataset too:
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=706910122&format=interactive",
   sheets_gid="1918192673",
-  sql_file="todo.sql"
+  sql_file="proposals.sql"
   )
 }}
 
