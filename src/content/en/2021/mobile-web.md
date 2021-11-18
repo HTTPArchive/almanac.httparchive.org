@@ -86,7 +86,7 @@ New this year, the CrUX dataset allows us to query the most popular sites (<a hr
 {{ figure_markup(
   image="mobile-web-more-mobile-than-desktop-traffic.png",
   caption="Percentage of Sites with more Mobile than Desktop Traffic",
-  description="Bar chart showing the breakdown of sites that have more mobile traffic than desktop, grouped by CrUX magnitude",
+  description="Bar chart showing the breakdown of sites that have more mobile traffic than desktop as grouped by rank magnitude, an Crux experimental metric which groups sites by the popularity of origin requests ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=787161132&format=interactive",
   sheets_gid="601797488",
   sql_file="mobile_greater_than_desktop.sql"
@@ -167,8 +167,8 @@ On weekdays, mobile usage decreases and desktop usage increases as an overall pe
    height="480"
    )
    }}
-   
-   
+
+
 {# TODO (Authors/Editors) - description is not descriptive enough of the data #}
 
 On weekends the split between mobile and desktop traffic remains more stable.
@@ -182,7 +182,7 @@ On weekends the split between mobile and desktop traffic remains more stable.
    height="480"
    )
    }}
-   
+
  {# TODO (Authors/Editors) - description is not descriptive enough of the data #}
 
 This all suggests that people who have the choice between different devices are more likely to use mobile ones in their personal time.
