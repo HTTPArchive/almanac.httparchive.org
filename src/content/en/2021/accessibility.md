@@ -141,11 +141,11 @@ The most commonly expected landmarks that the majority of web pages should have 
   <table>
     <thead>
       <tr>
-        <th>HTML5 element</th>
-        <th>ARIA role equivalent</th>
-        <th>Pages with element</th>
-        <th>Page with role</th>
-        <th>Page with element or role</th>
+        <th>HTML5<br />element</th>
+        <th>ARIA role<br />equivalent</th>
+        <th>Pages with<br />element</th>
+        <th>Pages with<br />role</th>
+        <th>Pages with<br />element or role</th>
       </tr>
     </thead>
     <tbody>
