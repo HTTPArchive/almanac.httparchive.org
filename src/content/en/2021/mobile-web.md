@@ -1120,7 +1120,7 @@ The CrUX dataset shows that 62% of mobile page loads had a CLS of **0.1** or und
 {{ figure_markup(
   image="mobile-web-cumulative-layout-shift.png",
   caption='CLS performance by device. data from the [Performance Chapter](/en/2021/performance)',
-  description="Chart showing mobile and desktop page loads reaching the CLS thresholds.",
+   description="Stacked bar charts comparing CLS threshold groupings for mobile and desktop. 62% of both desktop and mobile sites scored as Good. 23% of desktop scored as Needs Improvement vs 31% for mobile.  15% of desktop sites and 17% of mobile scored as Poor CLS.", description="Chart showing mobile and desktop page loads reaching the CLS thresholds.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=776500715&format=interactive",
   sheets_gid="1682201087",
   sql_file="../performance/web_vitals_by_device.sql"
@@ -1128,7 +1128,7 @@ The CrUX dataset shows that 62% of mobile page loads had a CLS of **0.1** or und
 }}
 
 {# TODO (Authors/Editors) figure description does not describe the data #}
-
+{#TODO (Editor) Updated #}
 
 This is a big step over the 43% achieved last year, but direct comparison is hard, as the metric changed on the <a hreflang="en" href="https://web.dev/evolving-cls/">1st of June 2021</a>to better capture the experience on long-lived pages, so some of this jump could be attributable to this.
 
@@ -1149,7 +1149,7 @@ A good FID score is  **100 ms** or under, a poor FID score is over **300 ms**.
 {{ figure_markup(
   image="mobile-web-first-input-delay.png",
   caption='FID performance by device. data from the [Performance Chapter](/en/2021/performance)',
-  description="Chart showing mobile and desktop page loads reaching the FID thresholds.",
+  description="Stacked bar charts comparing FID threshold groupings for mobile and desktop. 100% of desktop sites scored as Good compared to 90% of mobile. 10% of mobile scored as Needs Improvement.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1158252805&format=interactive",
   sheets_gid="1682201087",
   sql_file="../performance/web_vitals_by_device.sql"
@@ -1157,7 +1157,7 @@ A good FID score is  **100 ms** or under, a poor FID score is over **300 ms**.
 }}
 
 {# TODO (Authors/Editors) figure description does not describe the data #}
-
+{# TODO (Editor) Updated #}
 Encouragingly, **90%** of mobile page loads in the CrUX dataset had a good FID score, up from **80%** from 2020.
 
 Efforts are being made to better capture responsiveness, with the Chrome Speed Metrics team <a hreflang="en" href="https://web.dev/responsiveness/">sharing some plans and inviting feedback]</a> on a new responsiveness metric.
