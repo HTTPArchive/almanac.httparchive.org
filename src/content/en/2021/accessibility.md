@@ -324,8 +324,16 @@ The `<label>` element was introduced with HTML 4 in 1999. Despite being availabl
 Most importantly, without proper accessible names, screen readers and voice to text users may not be able to target or identify the purpose of a form field. `<label>` elements associated with an input are the most robust and expected way to do this.
 
 This is not only important when the end user is filling in the form for the first time—it is equally important if form validation finds an error with a specific field that the user must correct before they can submit the form. For example, if a user forgot to provide the expiration date for their credit card, they cannot complete their purchase. And they cannot complete their purchase if they cannot find the errant field with the missing value and understand both the purpose of the input and the steps needed to fix the error.
+ 
+ {{ figure_markup(
+  image="{# TODO image needs to be generated from where inputs get their a11y name from #}",
+  caption="Where inputs get their accessible names ",
+  description="A bar chart chart showing... {# TODO detailed description #}",
+  chart_url="{# TODO #}",
+  sheets_gid="{# TODO #}",
+  sql_file="{# TODO #}"
+) }}
 
- {# TODO (Authors) - add charts #}
 
 ### The improper use of the placeholder attribute for labeling inputs
 
@@ -336,6 +344,15 @@ The improper use of a placeholder as a replacement for the  `<label>` element is
 There are <a hreflang="en" href="https://www.smashingmagazine.com/2018/06/placeholder-attribute/">many accessibility issues that placeholder text can present</a>. For example, because it disappears when the user begins to type, people with cognitive disabilities can be disoriented and lose context for the purpose of the form element.
 
  {# TODO (Authors) - insert chart #}
+  {{ figure_markup(
+  image="{# TODO image needs to be generated from form controls with placeholder but no label #}",
+  caption="Form controls using the placeholder attribute that have no associated label",
+  description="A bar chart chart showing... {# TODO detailed description #}",
+  chart_url="{# TODO #}",
+  sheets_gid="{# TODO #}",
+  sql_file="{# TODO #}"
+) }}
+
 
 <a hreflang="en" href="https://html.spec.whatwg.org/">The HTML5 specification</a> clearly states, "The placeholder attribute should not be used as a replacement for a label."
 
@@ -345,7 +362,6 @@ It goes on to say:
 
 <a hreflang="en" href="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Placeholder_Research">The W3C's Placeholder Research</a> lists 26 different articles that advise against the flawed design approach of using a placeholder instead of the semantically correct `<label>` element.
 
- {# TODO (Authors) - insert chart #}
 
 ### Requiring information
 
@@ -357,7 +373,14 @@ There are two attributes that can be used to communicate the required state of a
 
 We found that 21% of desktop websites had form elements that have either an asterisks (*) in their label, the `required` attribute or the `aria-required` attribute or some combination of these techniques. Two-thirds of these form elements used the `required` attribute. About a third of all required inputs used the `aria-required` attribute.  Roughly 22% had an asterisk in their label.
 
- {# TODO (Authors) - add chart #}
+ {{ figure_markup(
+  image="{# TODO #}",
+  caption="How required inputs are specified",
+  description="A bar chart chart showing... {# TODO detailed description #}",
+  chart_url="{# TODO #}",
+  sheets_gid="{# TODO #}",
+  sql_file="{# TODO #}"
+) }}
 
 ## Media on the web
 
@@ -419,17 +442,6 @@ The top 5 file extensions explicitly included in the `alt` text value (for sites
 ) }}
 
 We found that 27% of `alt` text attributes were empty. In an ideal world this would indicate that the associated <a hreflang="en" href="https://www.w3.org/WAI/tutorials/images/decorative/#:~:text=For%20example%2C%20the%20information%20provided,technologies%2C%20such%20as%20screen%20readers.">images are decorative</a>, and should not be described by assistive technologies. However, the majority of images add value to an interface and as such, should be described. We found that 15% have 10 or fewer characters, which would be a strangely short description for most images, indicating that information parity has not been achieved.
-
-{{ figure_markup(
-  image="all-lengths-by-percentile.png",
-  caption="Alt length by percentile.",
-  description="A bar chart chart showing... {# TODO detailed description #}",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=649379633&format=interactive",
-  sheets_gid="355162993",
-  sql_file="alt_text_length.sql"
-) }}
-
-{# TODO Anything to say about this chart? It's just hanging out at the end, so would be good to write a sentence or two #}
 
 ### Audio
 
