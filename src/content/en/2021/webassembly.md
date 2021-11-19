@@ -61,7 +61,7 @@ While downloading those responses, we've also deduplicated them by hashing their
 
 {{ figure_markup(
   caption="Number of Wasm responses.",
-  description="TODO",
+  description="Bar chart showing numbers of total Wasm responses on desktop and mobile datasets as well as number of unique files. Number of unique files is much lower - only 656 out of 3854 total responses on desktop and 534 out of 3173 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=341129382&format=interactive",
   sheets_gid="1692581795",
   sql_file="counts.sql",
