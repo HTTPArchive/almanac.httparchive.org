@@ -1,3 +1,5 @@
+# standardSQL
+# usage of async XMLHttpRequest using blink features from usage counters
 SELECT
     client,
     pct_urls

@@ -1,3 +1,5 @@
+# standardSQL
+# breadkdown of asynchronous JavaScript and XML requests per page
 SELECT
   client,
   percentile,
