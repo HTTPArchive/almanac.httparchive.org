@@ -39,11 +39,11 @@ Those tradeoffs are most consistent with analysis done in other chapters, but if
 
 We got 3854 confirmed WebAssembly requests on desktop and 3173 on mobile. Those Wasm modules are used across 2724 domains on desktop and 2300 domains on mobile, which represents 0.06% and 0.04% of all domains on desktop and mobile correspondingly.
 
-Interestingly, when we look at the most popular resulting mime-types, we can see that while `Content-Type: application/wasm` is by far the most popular, it doesn't cover all the Wasm responses.
+Interestingly, when we look at the most popular resulting mime-types, we can see that while `Content-Type: application/wasm` is by far the most popular, it doesn't cover all the Wasm responses - good thing we included other URLs with `.wasm` extension too.
 
 {{ figure_markup(
   caption="Top mime types.",
-  description="TODO",
+  description="Bar chart showing the distribution of most popular mime types. application/wasm accounts for 72.8% and 69.6% of WebAssembly requests on desktop and mobile correspondingly, application/octet-stream accounts for 13.1% and 14.2%, absent mime-type accounts for 10.5% and 12.7, text/plain accounts for 1.7% and 2% and the rest account for less than 1% each.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1635040165&format=interactive",
   sheets_gid="298942353",
   sql_file="mime_types.sql",
@@ -73,7 +73,7 @@ The stark difference between the numbers of unique files and total responses alr
 
 {{ figure_markup(
   caption="Cross-origin WebAssembly usage.",
-  description="TODO",
+  description="Bar chart showing that 55.2% of WebAssembly usages on desktop and 45.5% on mobile load modules from 3rd-party domains.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1239068211&format=interactive",
   sheets_gid="49966611",
   sql_file="cross_domain.sql",
@@ -87,9 +87,9 @@ Instead, we decided to extract library names from URLs. While it's more problema
 
 {{ figure_markup(
   caption="Popular libraries.",
-  description="TODO",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1627913370&format=interactive",
-  sheets_gid="370507165",
+  description="Bar chart showing top 10 libraries in desktop and mobile datasets, merged into one graph. Each library is shown along with percentage of Wasm requests that could be attributed to it. The list is as follows: Amazon IVS (30.3% on desktop and 28.7% on mobile), Hyphenopoly (13.2% and 18.9%), Blazor (3.5% and 5.0%), ArcGIS (3.7% and 3.6%), Draco (2.9% and 2.4%), CanvasKit (3.6% and 1%), Playa Games (3.3% on desktop only), Tableau (1.3% on desktop and 1.9% on mobile), Xat (1.5% and 1.4%), Tencent Video (2% on desktop only), Nimiq (0.5% and 1%), and Scandit (0.2% and 1.2%).",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1871029886&format=interactive",
+  sheets_gid="1520429605",
   sql_file="popular_by_name.sql",
   image="popular_by_name.png"
   )
@@ -125,7 +125,7 @@ Languages compiled to WebAssembly usually have their own standard library. Since
 
 {{ figure_markup(
   caption="Uncompressed response sizes.",
-  description="TODO",
+  description="Bar chart showing distribution of uncompressed response sizes on desktop and mobile at percentiles 0, 10, 25, 50, 75, 90 and 100. Most notably, minimum falls at 93 bytes in both desktop and mobile datasets, 10% at 1.3 KB, median at about 830 KB, 90% at 6.8 MB on desktop and 2.8 MB on mobile, and the maximum falls at 84 MB for both datasets.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=528882928&format=interactive",
   sheets_gid="1401232418",
   sql_file="sizes_and_savings.sql",
@@ -141,7 +141,7 @@ Let's check sizes of raw response bodies as sent by servers instead:
 
 {{ figure_markup(
   caption="Raw response sizes.",
-  description="TODO",
+  description="Bar chart similar to the one above, but showing distribution of raw response sizes as received from the server. 0% is still at 93 bytes for both, 10% is at 1.3 KB on desktop and 1 KB on mobile, median is around 300 KB, 90% is at 2.6 MB on desktop and 1.4 MB on mobile, and maximum is at 46 MB on desktop and 29 MB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1094358341&format=interactive",
   sheets_gid="1401232418",
   sql_file="sizes_and_savings.sql",
@@ -155,11 +155,11 @@ Even with compression, those numbers are still pretty extreme, considering that 
 
 ### How is Wasm compressed in the wild?
 
-First, let's take a look at compression methods used in these raw responses. I'll show the mobile dataset here because on mobile bandwidth is even more important, but desktop numbers are pretty similar:
+First, let's take a look at compression methods used in these raw responses, based on `Content-Encoding` header. I'll show the mobile dataset here because on mobile bandwidth is even more important, but desktop numbers are pretty similar:
 
 {{ figure_markup(
   caption="Compression methods.",
-  description="TODO",
+  description="Pie chart showing the distribution of compression methods on mobile. It shows that 45.6% of responses were shipped with gzip, 40.2% were uncompressed, 14.2% used Brotli, and insignificantly few used deflate.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1660946444&format=interactive",
   sheets_gid="189654676",
   sql_file="compression_methods.sql",
@@ -190,7 +190,7 @@ Here are the resulting sizes:
 
 {{ figure_markup(
   caption="Sizes after Brotli compression.",
-  description="TODO",
+  description="Bar chart showing the distribution of sizes after manual Brotli recompression along various percentiles. Most notably, minimum falls at 74 bytes for both datasets, 10% at 784 bytes, median at about 250 KB, 90% at 2.3 MB on desktop and 870 KB on mobile, and maximum at 11.6 MB on both clients.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=2085720303&format=interactive",
   sheets_gid="1401232418",
   sql_file="sizes_and_savings.sql",
@@ -204,7 +204,7 @@ Due to their nature, percentiles don't necessarily fall onto the same files betw
 
 {{ figure_markup(
   caption="Brotli response savings.",
-  description="TODO",
+  description="Similar bar chart to the one above, but adjusted to show savings. 0% shows a 1.4 MB regression, 10% shows 253 bytes improvement on desktop and 19 bytes improvement on mobile, median shows 47 KB and 40 KB improvements on desktop and mobile, 90% at 610 KB on desktop and 335 KB on mobile, and maximum improvement at 36.4 MB / 22.4 MB on desktop and mobile correspondingly.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1741617577&format=interactive",
   sheets_gid="1401232418",
   sql_file="sizes_and_savings.sql",
@@ -222,7 +222,7 @@ Compression aside, we could also look for optimization opportunities by analyzin
 
 {{ figure_markup(
   caption="Section size distribution.",
-  description="TODO",
+  description="Pie chart showing the distribution of total binary size between various section kinds on mobile. Code accounts for 73.7%, data for 19.3%, custom sections for 6.5% and the rest take up insignificant portions.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=683121338&format=interactive",
   sheets_gid="1082802229",
   sql_file="section_sizes.sql",
@@ -264,7 +264,7 @@ Let's check how much stripping this debug information would save us in combinati
 
 {{ figure_markup(
   caption="strip-debug + Brotli savings.",
-  description="TODO",
+  description="Bar chart showing distribution of savings achieved by transformation described above. 0 percentile shows a tiny regression of 501 bytes, most others show no size change, 90% shows tiny improvements under 90 bytes on both desktop and mobile, but maximum achieved savings are at 2.4 MB on desktop and 1.3 MB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1943000224&format=interactive",
   sheets_gid="1401232418",
   sql_file="sizes_and_savings.sql",
@@ -286,7 +286,7 @@ It provides significant size savings on both uncompressed and compressed real-wo
 
 {{ figure_markup(
   caption="wasm-opt uncompressed size benchmarks.",
-  description="TODO",
+  description="Bar chart showing wasm-opt size benchmarks across a wide variety of real-world modules such as base64, box2d, lua, sqlite, zlib, etc. The resulting sizes vary from 78% to, worst-case, 93% of the original. Median is at 89%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=724059342&format=interactive",
   sheets_gid="1763590037",
   image="wasm_opt_bench.png"
@@ -295,7 +295,7 @@ It provides significant size savings on both uncompressed and compressed real-wo
 
 {{ figure_markup(
   caption="wasm-opt + Brotli size benchmarks.",
-  description="TODO",
+  description="Another bar chart showing same wasm-opt size benchmarks, but with Brotli compression applied to both original and resulting WebAssembly modules. Results vary from 83% to 99% with median at 91%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=2047888306&format=interactive",
   sheets_gid="1763590037",
   image="wasm_opt_br_bench.png"
@@ -316,7 +316,7 @@ While the resulting data is not representative of real-world usage and not relev
 
 {{ figure_markup(
   caption="wasm-opt + Brotli savings.",
-  description="TODO",
+  description="Bar chart showing the distribution of absolute size changes when wasm-opt + Brotli are executed against our modified datasets. The results are mixed - 0 percentile shows a 260 KB regression on desktop and 180 KB on mobile, 10% shows 27 KB and 6 KB regressions, median is at 3.6 KB / 0.6 KB regressions, 90% shows 513 bytes improvement on desktop and 77 bytes improvement on mobile, and maximum savings end up at 1 MB on desktop and almost 250 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=541095203&format=interactive",
   sheets_gid="1401232418",
   sql_file="sizes_and_savings.sql",
@@ -330,7 +330,7 @@ If we look at the uncompressed savings, it becomes more clear that, even on our 
 
 {{ figure_markup(
   caption="Uncompressed wasm-opt savings.",
-  description="TODO",
+  description="Bar chart showing savings from running wasm-opt on the same datasets, but this time without Brotli. 0 percentile shows an insignificant regression of 3 bytes, 10% shows an insignificant improvement of 8 bytes on desktop and no change on mobile, median shows an improvement of 12 KB on both, 90% shows improvements of almost 100 KB on desktop and 47 KB on mobile, and maximum improvement achieved is at 3 MB on desktop and 1.2 MB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=270629181&format=interactive",
   sheets_gid="1401232418",
   sql_file="sizes_and_savings.sql",
@@ -353,7 +353,7 @@ We've split instructions into various categories and counted them across all the
 
 {{ figure_markup(
   caption="Instruction kinds.",
-  description="TODO",
+  description="Pie chart showing distribution of instruction kinds as collected by the wasm-stats tool. Local variable operations account for 36% of instructions on mobile, constants for 15.2%, load/store operations for 14.7%, math, logic and other operations for 14.3%, control flow for 13.3%, direct calls for 4.6% and the rest are much smaller.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1316275499&format=interactive",
   sheets_gid="1402848319",
   sql_file="instruction_kinds.sql",
@@ -373,7 +373,7 @@ Let's take a look at their adoption in the Almanac dataset too:
 
 {{ figure_markup(
   caption="Post-MVP extensions usage.",
-  description="TODO",
+  description="Bar chart showing total module counts along with numbers of modules using various post-MVP extensions. Total numbers, as mentioned in the beginning of the article, are at 3854 and 3173 on desktop and mobile correspondingly. Sign extension ops stand out and were found in a large number of those - 2938 on desktop and 2137 on mobile. The rest are so much lower that the graph had to use a logarithmic scale. Each of atomics, BigInt imports/exports, bulk memory, SIMD and mutable imports/exports proposals were found only in up to 30 modules on desktop and up to 21 modules on mobile. Proposals like multi-value, non-trapping float-to-int conversions, reference types and tail calls weren't found in any modules in either dataset.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=706910122&format=interactive",
   sheets_gid="1918192673",
   sql_file="proposals.sql",
