@@ -12,7 +12,7 @@ alextait1_bio: Alex Tait is an accessibility specialist whose passion lies in th
 scottdavis99_bio:
 oluoluoxenfree_bio: Olu Niyi-Awosusi is a JavaScript engineer at Oddbird who loves lists, learning new things, Bee and Puppycat, <a hreflang="en" href="https://alistapart.com/article/building-the-woke-web/">social justice, accessibility</a> and trying harder every day.
 gwilhelm_bio: Gary Wilhelm is the Digital Solutions Manager for the Division of Finance and Operations at UNC-Chapel Hill, which is a fancy way of saying that he works on websites and develops web applications. He started working to make his websites accessible in 2013 by studying specifications and has been interested in accessibility ever since, including spending large amounts of time learning about PDF accessibility through remediating several thousand PDF documents. In his spare time, he likes to travel, do yard work, run, watch sports, pester his wife and two teenagers, and help his dog look for squirrels and rabbits.
-kachiden_bio:
+kachiden_bio:Kit Paige is an accessibility engineer and cat enthusiast who's long and winding path through tech has included QA, UX, frontend development, a love hate relationship with CSS, and immeasurable coffee.
 featured_quote: TODO
 featured_stat_1: TODO
 featured_stat_label_1: TODO
@@ -144,7 +144,7 @@ Landmarks are designated HTML elements or ARIA roles we can apply to other HTML 
 
 Before the introduction of HTML5, ARIA landmark roles were needed to accomplish this. However, we now have native HTML elements available to accomplish the majority of landmark page structure. Leveraging the native HTML landmark elements is preferable to applying ARIA roles, <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">per the first rule of ARIA</a>.; For more information, see the ARIA Roles section of this chapter.
 
-   {# TODO (Authors) - link to ARIA roles sectiojn #}
+   {# TODO (Authors) - link to ARIA roles section #}
 
 The most commonly expected landmarks that the majority of web pages should have are  `<main>`, `<header>`, `<nav>` and `<footer>`. We found that only 28% of desktop pages have a native HTML `<main>` element, and 17% of desktop pages have an element with a `role="main"`.
 
@@ -237,8 +237,6 @@ Skip links help people who rely on keyboards to navigate. They enable a user to 
 
 Some websites that are very information dense have several skip links to allow users to jump to the commonly trafficked areas of the site. For example, <a hreflang="en" href="https://www.canada.ca/">the government of Canada's website</a> has "skip to main content", "skip to about government" and "switch to basic HTML version".
 
-  {# TODO (Authors) - I think this is a good spot to put an image example both for the ebook and if the site ever changes #}
-
 Skip links are considered a <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html">bypass for a block</a>. There is no way for us to query for all possible skip link implementations, however we found that close to 20% of desktop and mobile sites likely have a skip link. We determined this by looking for the presence of an `href="#main"` attribute on one of the first three links on the page, which is a common implementation for a skip link.
 
 ### Heading hierarchy
@@ -260,8 +258,6 @@ Headings make it easier for screen readers to properly navigate a page by supply
 Tables are an efficient way to display data with two axes of relationships, making them useful for comparisons. Users of assistive technology rely on specific table markup that provides a machine-readable structure so the user can effectively navigate, understand and interact with them.
 
 Tables should have a well-formatted structure with the appropriate elements and defined relationships, including a caption, appropriate headers and footers, and a corresponding header cell for every data cell. Screen reader users rely on such well-defined relationships through what is announced, so an incomplete or an incorrectly declared structure can lead to misleading or missing information.
-
-  {# TODO (Authors) - Insert table here with accessibility data for tables #}
 
 ### Table captions
 Table captions act as a heading for the full table to provide a summary of its information. When labelling a table, the `<caption>` element is the correct semantic choice to provide the most context to a screen reader user.
@@ -292,7 +288,7 @@ We found CAPTCHAs on roughly 10% of the websites visited, across both desktop an
 
 CAPTCHAs present a host of potential accessibility barriers. For example, one of the most common forms of a CAPTCHA presents an image of wavy, distorted text and asks the user to decipher the text and type it in. This type of test can be difficult to solve for everyone, but would likely be more difficult for people with low vision and other vision or reading related disabilities. <a hreflang="en" href="https://baymard.com/blog/captchas-in-checkout">One usability survey found that roughly 1 out of 3 users failed to successfully decipher a CAPTCHA on the first try</a>.
 
-If  CAPTCHAs include alt text[TODO link to alt text section], the test would be trivial to pass by a computer since the answer is provided as plain text. However, by not including alt text, CAPCHAs are excluding screen readers and the blind or low vision users who use them.
+If  CAPTCHAs include alt text {# TODO link to alt text section #}, the test would be trivial to pass by a computer since the answer is provided as plain text. However, by not including alt text, CAPCHAs are excluding screen readers and the blind or low vision users who use them.
 
 For more information on the accessibility barriers that CAPTCHAs present, we recommend  the W3C paper: <a hreflang="en" href="https://www.w3.org/TR/turingtest/">"Inaccessibility of CAPTCHA: Alternatives to Visual Turing Tests on the Web"</a>.
 
@@ -449,7 +445,14 @@ We found that 27% of `alt` text attributes were empty. In an ideal world this wo
 
 `<track>` loads one or more WebVTT files, which allows text content to be synchronized with the audio it is describing. We found 0.02% of all pages on desktop and 0.05% of all pages on mobile with a detectable `<audio>` element had at least one accompanying `<track>` element.
 
-{# TODO (Authors) - add big figure percentage #}
+{{ figure_markup(
+  caption=“Desktop websites with an `<audio>` element have at least one accompanying `<track>` element“,
+  content=“0.02%“,
+  classes=“big-number”,
+  sheets_gid=“{# TODO #}",
+  sql_file=“{# TODO #}”
+)
+}}
 
 These data points do not include audio embedded via an `<iframe>` element, which is common for content like podcasts that use a third party service to host and list recordings.
 
@@ -460,24 +463,24 @@ The `<video>` element was only present on roughly 5% of the websites included in
 
 Similar to the results of the `<audio>` survey, the `<track>` element was included with a corresponding `<video>` element less than 1% of the time—0.5% for desktop sites, and 0.6% for mobile sites. In actual numbers, only 2,836 desktop sites out of 6.3 million included a `<track>` element where a `<video>` element was present. Only 2,502 mobile sites out of 7.5 million made their videos accessible by including a corresponding `<track>` element with content loaded via the `<video>` element.
 
+{{ figure_markup(
+  caption=“Desktop websites with an `<video>` element have at least one accompanying `<track>` element“,
+  content=“0.5%“,
+  classes=“big-number”,
+  sheets_gid=“{# TODO #}",
+  sql_file=“{# TODO #}”
+)
+}}
+
 Much like the `<audio>` element, this figure may not account for video content loaded by a third party `<iframe>`, such as an embedded YouTube video. It should also be noted that most popular third party audio and video embedding services include the ability to add synchronized text equivalents.
 
-{# TODO (Authors) - Add Graphic for Desktop/Mobile track percentages #}
-
-
 ## Supporting assistive technology with ARIA
-
-{# TODO Can we add some intro text here? We don't liked so-called "stacked headings" where we have two headings in a row #}
-
-### What is ARIA?
 
 Accessible Rich Internet Applications—or ARIA—is a suite of web standards that was first published by the Web Accessibility Initiative in 2014. ARIA provides a set of attributes we can add to HTML markup to enhance the experience for users of assistive technology.
 
 There are many nuances and complexities to the use of ARIA, as well as varying degrees of assistive technology support. As a general rule, it should be used sparingly, and never in instances when there is an equivalent native HTML solution that could be leveraged. While ARIA can provide helpful information to assistive technology, it comes with no associated behaviour such as keyboard operability.
 
 The <a hreflang="en" href="https://www.w3.org/TR/using-aria/">5 rules of ARIA</a> describe some helpful guiding principles for ARIA usage. In September of 2021, a W3 working group published <a hreflang="en" href="https://www.w3.org/TR/2021/PR-html-aria-20210930/#priv-sec">ARIA in HTML</a>, a proposed specification with very detailed information about how and when ARIA can be used.
-
-{# TODO insert top 10 most used ARIA attributes graphic #}
 
 ### ARIA roles
 
@@ -486,6 +489,15 @@ When assistive technology encounters an element, the element's role communicates
 HTML5 introduced many new native elements, all which have <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#implicit_semantics">implicit semantics</a>, including roles. For example, the `<nav>` element has an implicit `role="navigation"` and does not need to have this role added explicitly via ARIA in order to convey its purpose information to assistive technology.
 
 ARIA can be used to explicitly add roles to content that does not have a fitting native HTML role. For example, when creating a tablist widget, a `tablist` role can be assigned to the container element since there is no native HTML equivalent. Currently 69% (up from 65% in 2020) of desktop pages have at least one instance of an ARIA `role` attribute. The median site has 3 instances (up from 2 in 2020) of the `role` attribute.
+
+{{ figure_markup(
+  image="",
+  caption="Top 10 most common ARIA roles",
+  description="A bar chart chart showing... {# TODO detailed description #}",
+  chart_url="{# TODO #}",
+  sheets_gid="{# TODO #}",
+  sql_file="{# TODO #}"
+) }}
 
   {# TODO link to tabs section#}
 
@@ -501,9 +513,17 @@ When a button role is applied to an `<a>` element, it overrides the implicit lin
 
 We found that 19% of desktop pages (up from 16% in 2020) and 18% (up from 15% in 2020) of mobile pages contained at least one anchor element with `role="button"`. A native `<button>` element would be a better choice, <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">per the first rule of ARIA</a>.
 
-  This act of adding ARIA roles, or a <a hreflang="en" href="https://adrianroselli.com/2020/02/role-up.html">"role-up"</a>, is usually less ideal than using the correct native HTML element. Again, in the vast majority of these cases a better pattern than explicitly defining `role="button"` on the element in question would be to leverage the native HTML `<button>` element, as it comes with the expected semantics and behavior.
+  
+{{ figure_markup(
+  caption=“Desktop websites have at least one link with a button role“,
+  content=“19%“,
+  classes=“big-number”,
+  sheets_gid=“{# TODO #}",
+  sql_file=“{# TODO #}”
+)
+}}
 
-{# TODO: Add big figure percentage #}
+  This act of adding ARIA roles, or a <a hreflang="en" href="https://adrianroselli.com/2020/02/role-up.html">"role-up"</a>, is usually less ideal than using the correct native HTML element. Again, in the vast majority of these cases a better pattern than explicitly defining `role="button"` on the element in question would be to leverage the native HTML `<button>` element, as it comes with the expected semantics and behavior.
 
 ### Using presentation role
 
@@ -514,11 +534,7 @@ Removing an element's semantics means that it is no longer that element in terms
 
 ### Labelling and describing elements with ARIA
 
-{# TODO Can we add some intro text here? We don't liked so-called "stacked headings" where we have two headings in a row #}
-
-#### Accessible names and the accessibility tree
-
-Parallel to the DOM there is a similar browser structure called the accessibility tree. It contains information about HTML elements including accessible names, descriptions, roles and states. This information is conveyed to assistive technology through accessibility APIs.
+Parallel to the DOM there is a similar browser structure called the <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Glossary/Accessibility_tree">accessibility tree</a>. It contains information about HTML elements including accessible names, descriptions, roles and states. This information is conveyed to assistive technology through accessibility APIs.
 
 The accessibility tree has a computation system that assigns the accessible name (if there is one) to a control, widget, group, or landmark such that it can be announced or targeted by assistive technology.
 
@@ -552,6 +568,16 @@ There are several ways to ensure that assistive technology will not discover con
 
 We found that 54% of desktop pages (up from 48% in 2020) and 53% of mobile pages (up from 49% in 2020) had at least one instance of an element with the `aria-hidden` attribute.
 
+  
+{{ figure_markup(
+  caption=“Desktop websites have at least one instance of the `aria-hidden` attribute“,
+  content=“54%“,
+  classes=“big-number”,
+  sheets_gid=“{# TODO #}",
+  sql_file=“{# TODO #}”
+)
+}}
+
 These techniques are most helpful when something in the visual interface is redundant or unhelpful to assistive technology users. Hiding content from assistive technology should never be used to skip over content that is challenging to make accessible.
 
 Hiding and showing content is a prevalent pattern in modern interfaces, and it can be helpful to declutter hidden UI for everyone.
@@ -572,10 +598,6 @@ ARIA live regions allow us to listen for changes in the DOM, such that the updat
 
 ## Accessibility overlays
 
-{# TODO Can we add some intro text here? We don't liked so-called "stacked headings" where we have two headings in a row #}
-
-### What are overlays?
-
 Accessibility overlays, sometimes referred to as accessibility plugins or overlay widgets, are digital products that are marketed as tools to easily solve a website's accessibility issues. The <a hreflang="en" href="https://overlayfactsheet.com/#what-is-a-web-accessibility-overlay">Overlay Fact Sheet</a> defines them as "a broad term for technologies that aim to improve the accessibility of a website. They apply third-party source code (typically JavaScript) to automate improvements to the front-end code of the website."
 
 Many of these products have deceptive marketing materials suggesting that one line of code can make websites accessible, or at least legally compliant from an accessibility standpoint.
@@ -585,6 +607,16 @@ For example, <a hreflang="en" href="https://en.wikipedia.org/wiki/AccessiBe">acc
 Unfortunately, web accessibility is simply not possible to achieve with an out of the box solution like this. If it were, we would likely not see the sobering statistics throughout this chapter.
 
 We found that 0.96% — or well over 60,000 desktop websites use one of these accessibility overlays. It is worth noting that we have queried for a list of well known products in this space. However, this list is not exhaustive so this metric is likely higher in reality.
+
+{{ figure_markup(
+  image="pages-using-a11y-apps.png",
+  caption="Pages using A11Y apps.",
+  description="A bar chart chart showing... {# TODO detailed description #}",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=618692173&format=interactive",
+  sheets_gid="150155313",
+  sql_file="a11y_technology_usage.sql"
+) }}
+
 
 ### The consequences of overlays
 
@@ -619,6 +651,25 @@ These widgets have been named as part of many accessibility lawsuits against com
 
 For more information about the legal implications of using these overlays please refer to Lainey Feingold's article <a hreflang="en" href="https://www.lflegal.com/2020/08/quick-fix/">Honour the ADA: Avoid Web Accessibility Quick-Fix Overlays</a> and Adrian Roselli's article <a hreflang="en" href="https://adrianroselli.com/2020/06/accessibe-will-get-you-sued.html">#accessiBe Will Get You Sued</a>.
 
+{{ figure_markup(
+  image="a11y-app-usage-by-rank.png",
+  caption="A11Y app usage by rank.",
+  description="A bar chart chart showing... {# TODO detailed description #}",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=473077851&format=interactive",
+  sheets_gid="2077755325",
+  sql_file="a11y_overall_tech_usage_by_domain_rank.sql"
+) }}
+
+{{ figure_markup(
+  image="pages-using-a11y-apps-by-rank.png",
+  caption="Pages using A11Y apps by rank.",
+  description="A bar chart chart showing... {# TODO detailed description #}",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=851935325&format=interactive",
+  sheets_gid="827309922",
+  sql_file="a11y_technology_usage_by_domain_rank.sql"
+) }}
+
+
 ### Why do some companies use overlays?
 
 Fundamentally, and fuelled by <a hreflang="en" href="https://www.forbes.com/sites/andrewpulrang/2020/10/25/words-matter-and-its-time-to-explore-the-meaning-of-ableism/?sh=7ab349837162">ableism</a>, overlays position themselves as solving a problem that most organizations struggle with. The data is clear throughout this chapter—the internet is largely inaccessible.
@@ -637,37 +688,6 @@ There is no quick fix—the onus is on organizations and digital practitioners t
 * <a hreflang="en" href="https://uxdesign.cc/theres-no-such-thing-as-fully-automated-web-accessibility-260d6f4632a8">There's no such thing as fully automated web accessibility</a>
 * <a hreflang="en" href="https://www.forbes.com/sites/gusalexiou/2021/10/28/why-automated-tools-alone-cant-make-your-website-accessible-and-legally-compliant/?sh=2e538b62364e">Why Automated Tools Alone Can't Make Your Website Accessible and Legally Compliant</a>
 * <a hreflang="en" href="https://shouldiuseanaccessibilityoverlay.com/">Should I Use an Accessibility Overlay?</a>
-
-{# TODO Can we interspace these charts in amongst the text better? #}
-
-{{ figure_markup(
-  image="pages-using-a11y-apps.png",
-  caption="Pages using A11Y apps.",
-  description="A bar chart chart showing... {# TODO detailed description #}",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=618692173&format=interactive",
-  sheets_gid="150155313",
-  sql_file="a11y_technology_usage.sql"
-) }}
-
-{{ figure_markup(
-  image="a11y-app-usage-by-rank.png",
-  caption="A11Y app usage by rank.",
-  description="A bar chart chart showing... {# TODO detailed description #}",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=473077851&format=interactive",
-  sheets_gid="2077755325",
-  sql_file="a11y_overall_tech_usage_by_domain_rank.sql"
-) }}
-
-
-{{ figure_markup(
-  image="pages-using-a11y-apps-by-rank.png",
-  caption="Pages using A11Y apps by rank.",
-  description="A bar chart chart showing... {# TODO detailed description #}",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=851935325&format=interactive",
-  sheets_gid="827309922",
-  sql_file="a11y_technology_usage_by_domain_rank.sql"
-) }}
-
 
 
 ## Conclusion
