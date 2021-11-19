@@ -42,7 +42,7 @@ We got 3854 confirmed WebAssembly requests on desktop and 3173 on mobile. Those 
 Interestingly, when we look at the most popular resulting mime-types, we can see that while `Content-Type: application/wasm` is by far the most popular, it doesn't cover all the Wasm responses.
 
 {{ figure_markup(
-  caption="TODO",
+  caption="Top mime types.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1635040165&format=interactive",
   sheets_gid="298942353",
@@ -60,7 +60,7 @@ In case of WebAssembly, providing correct `Content-Type` header is important not
 While downloading those responses, we've also deduplicated them by hashing their contents and using that hash as a filename on disk. After that we were left with 656 unique WebAssembly files on desktop and 534 on mobile.
 
 {{ figure_markup(
-  caption="TODO",
+  caption="Number of Wasm responses.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=341129382&format=interactive",
   sheets_gid="1692581795",
@@ -72,7 +72,7 @@ While downloading those responses, we've also deduplicated them by hashing their
 The stark difference between the numbers of unique files and total responses already suggests high reuse of WebAssembly libraries across various websites. It's further confirmed if we look at the distribution of cross-origin / same-origin WebAssembly requests:
 
 {{ figure_markup(
-  caption="TODO",
+  caption="Cross-origin WebAssembly usage.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1239068211&format=interactive",
   sheets_gid="49966611",
@@ -86,7 +86,7 @@ Let's dive deeper and figure out what those reused libraries are. First, we've t
 Instead, we decided to extract library names from URLs. While it's more problematic in theory due to potential name clashes, it turned out to be a more reliable option for top libraries in practice. We extracted filenames from URLs, removed extensions, minor versions and suffixes that looked like content hashes, sorted the results by number of repetitions and extracted the top 10 modules for each client. For those left, we did manual lookups to understand which libraries those modules are coming from.
 
 {{ figure_markup(
-  caption="TODO",
+  caption="Popular libraries.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1627913370&format=interactive",
   sheets_gid="370507165",
@@ -124,7 +124,7 @@ Few more caveats about the methodology and results here:
 Languages compiled to WebAssembly usually have their own standard library. Since APIs and value types are so different across languages, they can't reuse the JavaScript built-ins. Instead, they have to compile not only their own code, but also APIs from said standard library and ship it all together to the user in a single binary. What does it mean for the resulting file sizes? Let's take a look:
 
 {{ figure_markup(
-  caption="TODO",
+  caption="Uncompressed response sizes.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=528882928&format=interactive",
   sheets_gid="1401232418",
@@ -140,7 +140,7 @@ Sizes of up to 84 MiB look pretty concerning, but keep in mind those are uncompr
 Let's check sizes of raw response bodies as sent by servers instead:
 
 {{ figure_markup(
-  caption="TODO",
+  caption="Raw response sizes.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1094358341&format=interactive",
   sheets_gid="1401232418",
@@ -158,7 +158,7 @@ Even with compression, those numbers are still pretty extreme, considering that 
 First, let's take a look at compression methods used in these raw responses. I'll show the mobile dataset here because on mobile bandwidth is even more important, but desktop numbers are pretty similar:
 
 {{ figure_markup(
-  caption="TODO",
+  caption="Compression methods.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1660946444&format=interactive",
   sheets_gid="189654676",
@@ -189,7 +189,7 @@ brotli -k9f some.wasm -o some.wasm.br
 Here are the resulting sizes:
 
 {{ figure_markup(
-  caption="TODO",
+  caption="Sizes after Brotli compression.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=2085720303&format=interactive",
   sheets_gid="1401232418",
@@ -203,7 +203,7 @@ The median drops from almost 300 KiB to 250 KiB, which is already a pretty good 
 Due to their nature, percentiles don't necessarily fall onto the same files between datasets, so it might be hard to compare numbers directly between graphs and to understand the size savings. Instead, from now on, let me show the savings themselves provided by each optimization, step by step:
 
 {{ figure_markup(
-  caption="TODO",
+  caption="Brotli response savings.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1741617577&format=interactive",
   sheets_gid="1401232418",
@@ -221,7 +221,7 @@ You might be curious - what happened at the worst end - how is it possible that 
 Compression aside, we could also look for optimization opportunities by analyzing the high-level structure of WebAssembly binaries. Which sections are taking up most of the space? To find out, we've summed up section sizes from all the Wasm modules and divided them by the total binary size. Once again, I'll use numbers from the mobile dataset here, but desktop numbers aren't too far off:
 
 {{ figure_markup(
-  caption="TODO",
+  caption="Section size distribution.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=683121338&format=interactive",
   sheets_gid="1082802229",
@@ -263,7 +263,7 @@ While debug information is useful for local development, those sections can be h
 Let's check how much stripping this debug information would save us in combination with Brotli, vs. just Brotli from the previous step:
 
 {{ figure_markup(
-  caption="TODO",
+  caption="strip-debug + Brotli savings.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1943000224&format=interactive",
   sheets_gid="1401232418",
@@ -285,7 +285,7 @@ There are a few outliers where the process of removing custom sections with `llv
 It provides significant size savings on both uncompressed and compressed real-world benchmarks:
 
 {{ figure_markup(
-  caption="TODO",
+  caption="wasm-opt uncompressed size benchmarks.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=724059342&format=interactive",
   sheets_gid="1763590037",
@@ -294,7 +294,7 @@ It provides significant size savings on both uncompressed and compressed real-wo
 }}
 
 {{ figure_markup(
-  caption="TODO",
+  caption="wasm-opt + Brotli size benchmarks.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=2047888306&format=interactive",
   sheets_gid="1763590037",
@@ -315,7 +315,7 @@ Then, we compressed the results to Brotli and compared to the previous step, as 
 While the resulting data is not representative of real-world usage and not relevant to regular consumers who should use `wasm-opt` as they normally do, it might be useful to consumers like CDNs that want to run optimizations at scale, as well as to the Binaryen team itself:
 
 {{ figure_markup(
-  caption="TODO",
+  caption="wasm-opt + Brotli savings.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=541095203&format=interactive",
   sheets_gid="1401232418",
@@ -329,7 +329,7 @@ There are significant savings in a small percentage of files that were not optim
 If we look at the uncompressed savings, it becomes more clear that, even on our dataset, wasm-opt consistently keeps files either roughly the same size or still improves size slightly further in majority of cases, and produces significant savings for the unoptimized files.
 
 {{ figure_markup(
-  caption="TODO",
+  caption="Uncompressed wasm-opt savings.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=270629181&format=interactive",
   sheets_gid="1401232418",
@@ -352,7 +352,7 @@ We've already glimpsed at the contents of Wasm when sliced by section kinds abov
 We've split instructions into various categories and counted them across all the modules together:
 
 {{ figure_markup(
-  caption="TODO",
+  caption="Instruction kinds.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1316275499&format=interactive",
   sheets_gid="1402848319",
@@ -372,7 +372,7 @@ Another interesting metric to look at is post-MVP Wasm extensions. While WebAsse
 Let's take a look at their adoption in the Almanac dataset too:
 
 {{ figure_markup(
-  caption="TODO",
+  caption="Post-MVP extensions usage.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=706910122&format=interactive",
   sheets_gid="1918192673",
