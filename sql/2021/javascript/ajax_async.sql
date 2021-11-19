@@ -1,14 +1,14 @@
 # standardSQL
 # usage of async XMLHttpRequest using blink features from usage counters
 SELECT
-    client,
-    pct_urls
+  client,
+  pct_urls
 FROM
-    `httparchive.blink_features.usage` WHERE
-    feature = 'XMLHttpRequestAsynchronous' and yyyymmdd = '20210701'
+  `httparchive.blink_features.usage` WHERE
+  feature = 'XMLHttpRequestAsynchronous' AND yyyymmdd = '20210701'
 GROUP BY
-    pct_urls,
-    client
+  pct_urls,
+  client
 ORDER BY
-    pct_urls,
-    client
+  pct_urls,
+  client
