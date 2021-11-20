@@ -81,8 +81,6 @@ The deviation between our analysis and W3Techs' analysis can be explained by a d
 
 W3Techs definition is the following: "_Content Management Systems are applications for creating and managing the content of a website. We include all such systems in this category, also systems that are often classified as wikis, blog engines, discussion boards, static site generators, website editors or any type of software that provides website content_."
 
-{# TODO You don't explain whats different? I guess it's implied that Wappalyzer has a stricter definition excluding Shopify and the like, but should be be more explicit on this rather than assuming the readers will follow? #}
-
 You can read more about ours on the [Methodology](./methodology) page.
 
 ### CMS adoption by geography
@@ -158,9 +156,7 @@ Drilling into the adoption by CMS across all websites, out of 218 different CMS 
 
 WordPress, the most commonly used platform, is used by 33.6% of these websites, up from 31.4% in 2020, a 7% increase in total adoption.
 
-In percentage terms, Joomla and Drupal adoption is dropping–Joomla sites accounted for 1.9% of websites, down from 2.1% last year (9.5% decrease), and Drupal dropped from 2% to 1.8% (10% decrease). Absolute adoption did increase, but as a percentage of both overall CMS usage and of our (ever increasing!) data set, it is smaller.
-
-{# TODO Added a comment about absolute figures as think it's interesting. Feel free to remove if you disagree. #}
+In percentage terms, Joomla and Drupal adoption is dropping–Joomla sites accounted for 1.9% of websites, down from 2.1% last year (9.5% decrease), and Drupal dropped from 2% to 1.8% (10% decrease). Absolute adoption did increase in terms of numebr of sites measured, but as a percentage of both overall CMS usage and of our (ever increasing!) data set, it is smaller.
 
 Wix adoption grew from 1.2% to 1.6% (33% increase) and Squarespace grew from 0.9% to 1% (11% increase).
 
