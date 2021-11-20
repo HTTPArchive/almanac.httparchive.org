@@ -517,7 +517,7 @@ Overall, there is a 10-20% reduction in the number of images requested. It is ha
 
 If we consider images by weight rather than count, we see a median page weight contribution of 1.2 MB (mobile). At the 90th percentile, this rises to 5.4 MB.
 
-Overall the weight of images on ecommerce homepages is very similar when compared to 2020's analysis.
+Overall, the weight of images on ecommerce homepages is very similar when compared to 2020's analysis.
 
 Given we have seen that the number of image requests is slightly down, the average weight of each image must have slightly increased.
 
@@ -587,7 +587,6 @@ Unfortunately, we are unable to make statements about the proliferation of headl
   height=500
 ) }}
 
-
 {{ figure_markup(
   image="top-javascript-libraries-ecommerce.png",
   caption="Top JavaScript libraries on ecommerce sites",
@@ -619,7 +618,6 @@ One of the beauties of ecommerce is that you can measure how well you're doing b
   width=600,
   height=500
 ) }}
-
 
 <a hreflang="en" href="https://marketingplatform.google.com/about/analytics/">Google Analytics</a> is the most popular analytics tool, found on 74.19% of websites (mobile). Bemusedly, only 13.38% of mobile requests and 13.99% of desktop requests noted the use of <a hreflang="en" href="https://support.google.com/analytics/answer/6014872?hl=en#zippy=%2Cin-this-article">enhanced ecommerce</a>. However, as the main enhanced ecommerce features are for tracking the ecommerce journey through product listing page, product detail page, cart, and checkout, perhaps the reason that we do not see a greater percentage is due to a limitation of the survey being restricted to home pages.
 
