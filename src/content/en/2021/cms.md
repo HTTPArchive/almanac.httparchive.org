@@ -16,7 +16,6 @@ featured_stat_2: 2MB
 featured_stat_label_2: Median CMS page weight among the top CMSs
 featured_stat_3: 5.7%
 featured_stat_label_3: WebP usage in WordPress websites
-unedited: true
 ---
 
 ## Introduction
@@ -31,7 +30,7 @@ It is important to take some of these comparisons with a grain of salt, consider
 
 In some of the sections, we focus only on the top CMSs in terms of adoption, due to the large number of CMS platforms.
 
-We discover that almost half of all the sites in the world are created using a CMS. While the top 10 most popular CMS list remains relatively stable year-over-year, there are some interesting changes in market share. The performance of CMS-built sites has improved dramatically since the last time we checked.
+**TLDR;** We discover that almost half of all the sites in the world are created using a CMS. While the top 10 most popular CMS list remains relatively stable year-over-year, there are some interesting changes in market share. The performance of CMS-built sites has improved dramatically since the last time we checked.
 
 Let's dive into our analysis.
 
@@ -211,7 +210,7 @@ In July, for mobile devices, TYPO3 CMS (used mostly in European countries) had t
 
 Desktop device experience was slightly better, with 1C-Bitrix (used mostly in Russia) having the largest percentage of 56% sites passing CWVs. WordPress had the lowest ratio of passing sites, with only 26%.
 
-<p class="note>Duda deserves an honorable mention, with 47% sites passing in August and overall great progress since last year. They were not included in this report due to broken data collection in July, related to a wrong detection in <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/pull/4189">Wappalyzer</a>, incorrectly inflating their origins, and reducing their CWV percentage.</p>
+<p class="note">Duda deserves an honorable mention, with 47% sites passing in August and overall great progress since last year. They were not included in this report due to broken data collection in July, related to a wrong detection in <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/pull/4189">Wappalyzer</a>, incorrectly inflating their origins, and reducing their CWV percentage.</p>
 
 We can also evaluate the progress of these CMS platforms compared to last year's data, focusing on mobile views:
 
@@ -346,7 +345,7 @@ We can analyze this data to provide another perspective on CMS performance, usin
 
 #### Performance score
 
-The Lighthouse <a hreflang="en" href="https://web.dev/performance-scoring/'>performance score</a> is a weighted average of several metric scores.
+The Lighthouse <a hreflang="en" href="https://web.dev/performance-scoring/">performance score</a> is a weighted average of several metric scores.
 
 {{ figure_markup(
   image="lighthouse-performance.png",
