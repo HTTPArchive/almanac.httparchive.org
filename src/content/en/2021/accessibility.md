@@ -290,8 +290,8 @@ Tables should have a well-formatted structure with the appropriate elements and 
     <thead>
       <tr>
         <td></td>
-        <th scope=colgroup" colspan="2">Table sites</th>
-        <th scope=colgroup" colspan="2">All sites</th>
+        <th scope="colgroup" colspan="2">Table sites</th>
+        <th scope="colgroup" colspan="2">All sites</th>
       </tr>
       <tr>
         <td></td>
