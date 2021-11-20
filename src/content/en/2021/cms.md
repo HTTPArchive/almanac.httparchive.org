@@ -495,7 +495,7 @@ With the <a hreflang="en" href="https://caniuse.com/webp">growing support of Web
   sql_file="resource_weights.sql"
 ) }}
 
-The largest five CMSs all deliver pages that rely on Javascript, with Drupal delivering the least amount of Javascript bytes - 372 KB on mobile, while Wix delivers the most Javascript bytes, over 1.1 MB.
+The largest five CMSs all deliver pages that rely on JavaScript, with Drupal delivering the least amount of JavaScript bytes - 372 KB on mobile, while Wix delivers the most JavaScript bytes, over 1.1 MB.
 
 #### HTML document
 
