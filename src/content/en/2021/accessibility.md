@@ -119,13 +119,15 @@ For more information about how to achieve accessible focus indication including 
 
 ### Prefers-color-scheme and high contrast support
 
+{# TODO authors - can we think of a better name for this section? It covers more that just what's in there now #}
+
 The <a hreflang="en" href="https://www.w3.org/TR/mediaqueries-5">CSS Media Queries Level 5 specification</a>, published in 2020, introduced a collection of User Preference Media Queries that allow a website to detect Accessibility features that a user may have configured outside of the website itself. These features are typically configured through operating system or platform preferences.
 
 `prefers-reduced-motion` is used by web authors to replace animations or other sources of motion on the web page with a more static experience, typically by removing or replacing the content. This can help a range of people that may be distracted or otherwise triggered by rapid movement on the screen. We found that 32% of websites use the `prefers-reduced-motion` media query.
 
 `prefers-reduced-transparency` indicates that the end user has asked the operating system to minimize or eliminate translucency and transparency effects. This affordance might be turned on by end users to help with reading comprehension or to avoid common "halo effects" that can negatively affect users with visual impairments. We do not have data on the usage of this relatively new media query.
 
-`prefers-contrast (high or low)` suggests that the end user would prefer a high-contrast or low-contrast contrast theme.[TODO link to contrast section]. This can help with reading comprehension and eye strain. We do not have data on the usage of this relatively new media query though we found that 25% of websites use <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/-ms-high-contrast">`ms-high-contrast`</a> which is a Windows-specific approach to handling contrast preferences.
+`prefers-contrast (high or low)` suggests that the end user would prefer a [high-contrast or low-contrast](#color-contrast) contrast theme. This can help with reading comprehension and eye strain. We do not have data on the usage of this relatively new media query though we found that 25% of websites use <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/-ms-high-contrast">`ms-high-contrast`</a> which is a Windows-specific approach to handling contrast preferences.
 
 `prefers-color-scheme` (light or dark) allows a user to request light color on a dark background experience, or vice-versa. This was the earliest of the User Preference Media Queries to be introduced. This capability, commonly known as "dark mode" support, rose to prominence in 2019 after <a hreflang="en" href="https://en.wikipedia.org/wiki/Light-on-dark_color_scheme#History">Apple standardized it</a> in iOS 13 and iPadOS, though it had been a common accessibility feature for many years prior to that.
 
@@ -137,13 +139,9 @@ Navigating through web content is one of the fundamental ways we engage online a
 
 ### Landmarks and page structure
 
-Landmarks are designated HTML elements or ARIA roles we can apply to other HTML elements that enable assistive technology users to quickly understand overall page structure and navigation. For example a <a hreflang="en" href="https://webaim.org/articles/voiceover/mobile#rotor">rotor menu</a> can be used to navigate to different landmarks of the page, and or a skip link can be used to target the `<main>` landmark.
+Landmarks are designated HTML elements or ARIA roles we can apply to other HTML elements that enable assistive technology users to quickly understand overall page structure and navigation. For example a <a hreflang="en" href="https://webaim.org/articles/voiceover/mobile#rotor">rotor menu</a> can be used to navigate to different landmarks of the page, and or a [skip link](#skip-links) can be used to target the `<main>` landmark.
 
- {# TODO (Authors) - Add link to skip links #}
-
-Before the introduction of HTML5, ARIA landmark roles were needed to accomplish this. However, we now have native HTML elements available to accomplish the majority of landmark page structure. Leveraging the native HTML landmark elements is preferable to applying ARIA roles, <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">per the first rule of ARIA</a>.; For more information, see the ARIA Roles section of this chapter.
-
-   {# TODO (Authors) - link to ARIA roles section #}
+Before the introduction of HTML5, ARIA landmark roles were needed to accomplish this. However, we now have native HTML elements available to accomplish the majority of landmark page structure. Leveraging the native HTML landmark elements is preferable to applying ARIA roles, <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">per the first rule of ARIA</a>.; For more information, see the [ARIA roles](#aria-roles) section of this chapter.
 
 The most commonly expected landmarks that the majority of web pages should have are  `<main>`, `<header>`, `<nav>` and `<footer>`. We found that only 28% of desktop pages have a native HTML `<main>` element, and 17% of desktop pages have an element with a `role="main"`.
 
@@ -285,7 +283,7 @@ We found CAPTCHAs on roughly 10% of the websites visited, across both desktop an
 
 CAPTCHAs present a host of potential accessibility barriers. For example, one of the most common forms of a CAPTCHA presents an image of wavy, distorted text and asks the user to decipher the text and type it in. This type of test can be difficult to solve for everyone, but would likely be more difficult for people with low vision and other vision or reading related disabilities. <a hreflang="en" href="https://baymard.com/blog/captchas-in-checkout">One usability survey found that roughly 1 out of 3 users failed to successfully decipher a CAPTCHA on the first try</a>.
 
-If  CAPTCHAs include alt text {# TODO link to alt text section #}, the test would be trivial to pass by a computer since the answer is provided as plain text. However, by not including alt text, CAPCHAs are excluding screen readers and the blind or low vision users who use them.
+If CAPTCHAs include alt text {# TODO link to alt text section #}, the test would be trivial to pass by a computer since the answer is provided as plain text. However, by not including alt text, CAPCHAs are excluding screen readers and the blind or low vision users who use them.
 
 For more information on the accessibility barriers that CAPTCHAs present, we recommend  the W3C paper: <a hreflang="en" href="https://www.w3.org/TR/turingtest/">"Inaccessibility of CAPTCHA: Alternatives to Visual Turing Tests on the Web"</a>.
 
@@ -310,9 +308,7 @@ One of the most important ways of making HTML forms accessible is using the `<la
 
 When a web developer fails to associate a `<label>` element with an input, they are missing out on a number of key features that they would otherwise get for free. For example, when a `<label>` is properly associated with an `<input>` field, tapping or clicking on the `<label>` automatically puts focus in the `<input>` field. This is not only a major usability win—it is also expected behavior on the web.
 
-The `<label>` element was introduced with HTML 4 in 1999. Despite being available in all modern browsers for the past 20+ years, only 27% of all `<input>` elements get their accessible name from a programmatically associated label and 32% of these inputs have no accessible name.
-
-  {# TODO (Authors) - link to accessible names #}
+The `<label>` element was introduced with HTML 4 in 1999. Despite being available in all modern browsers for the past 20+ years, only 27% of all `<input>` elements get their accessible name from a programmatically associated label and 32% of these inputs have no [accessible name](#labelling-and-describing-elements-with-aria).
 
 Most importantly, without proper accessible names, screen readers and voice to text users may not be able to target or identify the purpose of a form field. `<label>` elements associated with an input are the most robust and expected way to do this.
 
@@ -365,7 +361,7 @@ There are two attributes that can be used to communicate the required state of a
 We found that 21% of desktop websites had form elements that have either an asterisks (*) in their label, the `required` attribute or the `aria-required` attribute or some combination of these techniques. Two-thirds of these form elements used the `required` attribute. About a third of all required inputs used the `aria-required` attribute.  Roughly 22% had an asterisk in their label.
 
  {{ figure_markup(
-  image="{# TODO #}",
+  image="form-required-controls.png",
   caption="How required inputs are specified",
   description="A bar chart showing the `required` attribute is used on 64.3% of desktop sites and 65.7% of mobile sites, `aria-required` is used by 32.3% and 31.6%, asterick is used by 21.9% and 22.3%, `required` and `aria-required` is used by 7.4% and 7.7%, asterick and `aria-required` is used by 7.3% and 8.2%, asterick and `required` us used by 7.1% and 6.3%, and all thress are used by 0.8% of sites on both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1608381516&format=interactive",
@@ -483,7 +479,7 @@ When assistive technology encounters an element, the element's role communicates
 
 HTML5 introduced many new native elements, all which have <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#implicit_semantics">implicit semantics</a>, including roles. For example, the `<nav>` element has an implicit `role="navigation"` and does not need to have this role added explicitly via ARIA in order to convey its purpose information to assistive technology.
 
-ARIA can be used to explicitly add roles to content that does not have a fitting native HTML role. For example, when creating a tablist widget, a `tablist` role can be assigned to the container element since there is no native HTML equivalent. Currently 69% (up from 65% in 2020) of desktop pages have at least one instance of an ARIA `role` attribute. The median site has 3 instances (up from 2 in 2020) of the `role` attribute.
+ARIA can be used to explicitly add roles to content that does not have a fitting native HTML role. For example, when creating a [tablist](#tabindex) widget, a `tablist` role can be assigned to the container element since there is no native HTML equivalent.
 
 {{ figure_markup(
   image="top-10-aria-roles.png",
@@ -496,7 +492,7 @@ ARIA can be used to explicitly add roles to content that does not have a fitting
   height=540
 ) }}
 
-  {# TODO link to tabs section#}
+Currently 69% (up from 65% in 2020) of desktop pages have at least one instance of an ARIA `role` attribute. The median site has 3 instances (up from 2 in 2020) of the `role` attribute.
 
 ### Just use a button!
 
@@ -533,9 +529,7 @@ Parallel to the DOM there is a similar browser structure called the <a hreflang=
 
 The accessibility tree has a computation system that assigns the accessible name (if there is one) to a control, widget, group, or landmark such that it can be announced or targeted by assistive technology.
 
-The accessible name can be derived from an element's content (such as button text), an attribute (such as an image `alt` text value), or an associated element (such as a programmatically associated `label` for a form control). There is a specificity ranking that happens to determine which value is assigned to the accessible name if there are multiple potential sources.
-
-  {# TODO (Authors) - link to form labels section #}
+The accessible name can be derived from an element's content (such as button text), an attribute (such as an image `alt` text value), or an associated element (such as a programmatically associated [`label` for a form control](#the-label-element)). There is a specificity ranking that happens to determine which value is assigned to the accessible name if there are multiple potential sources.
 
 For more information about accessible names visit Léonie Watson's article, <a hreflang="en" href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/">What is an accessible name?</a>
 
