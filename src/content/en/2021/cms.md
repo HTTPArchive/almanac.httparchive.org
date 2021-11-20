@@ -56,7 +56,7 @@ Ecommerce platforms make a substantial part of non-CMS sites and are covered in 
 
 Our research identified over 200 individual CMSs, with these ranging from a single install to millions on a single CMS.
 
-Some of them are open source (e.g., example, WordPress and Joomla) and some of them are proprietary (e.g., Wix and Squarespace). Some CMS platforms can be used on "free" hosted or self-hosted plans, and there are also options for using these platforms on higher-tiered plans even at the enterprise level.
+Some of them are open source (e.g., WordPress and Joomla) and some of them are proprietary (e.g., Wix and Squarespace). Some CMS platforms can be used on "free" hosted or self-hosted plans, and there are also options for using these platforms on higher-tiered plans even at the enterprise level.
 
 The CMS space as a whole is a complex, federated universe of CMS ecosystems, all separated and at the same time intertwined.
 
@@ -80,6 +80,8 @@ It is interesting to compare these numbers with another commonly used dataset, s
 The deviation between our analysis and W3Techs' analysis can be explained by a difference in research methodologies, and the definition of what is a CMS.
 
 W3Techs definition is the following: "_Content Management Systems are applications for creating and managing the content of a website. We include all such systems in this category, also systems that are often classified as wikis, blog engines, discussion boards, static site generators, website editors or any type of software that provides website content_."
+
+As mentioned previously, Wappalyzer has a stricter definition of a CMS, which excludes some major CMSs which appear in W3Techs reports.
 
 You can read more about ours on the [Methodology](./methodology) page.
 
@@ -175,7 +177,7 @@ Examining the adoption of these sites built on CMS platforms by their <a hreflan
 
 ## CMS user experience
 
-{# TODO Headings should always have at least one sentence. Can we add an introduction saying what this section is covering and whu? #}
+An important aspect of CMSs is the user experience they provide, for users visiting sites built on these platforms. We attempt to examine these experiences through Real User Measurements (RUM), provided by the <a hreflang="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome User Experience Report</a> (CrUX), and synthetic testing using [Lighthouse](./methodology#lighthouse).
 
 ### Core Web Vitals
 
