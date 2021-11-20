@@ -13,6 +13,7 @@ scottdavis99_bio:
 oluoluoxenfree_bio: Olu Niyi-Awosusi is a JavaScript engineer at Oddbird who loves lists, learning new things, Bee and Puppycat, <a hreflang="en" href="https://alistapart.com/article/building-the-woke-web/">social justice, accessibility</a> and trying harder every day.
 gwilhelm_bio: Gary Wilhelm is the Digital Solutions Manager for the Division of Finance and Operations at UNC-Chapel Hill, which is a fancy way of saying that he works on websites and develops web applications. He started working to make his websites accessible in 2013 by studying specifications and has been interested in accessibility ever since, including spending large amounts of time learning about PDF accessibility through remediating several thousand PDF documents. In his spare time, he likes to travel, do yard work, run, watch sports, pester his wife and two teenagers, and help his dog look for squirrels and rabbits.
 kachiden_bio:Kit Paige is an accessibility engineer and cat enthusiast who's long and winding path through tech has included QA, UX, frontend development, a love hate relationship with CSS, and immeasurable coffee.
+kachiden_bio:
 featured_quote: TODO
 featured_stat_1: TODO
 featured_stat_label_1: TODO
@@ -461,6 +462,8 @@ It goes on to say:
   <blockquote>Use of the placeholder attribute as a replacement for a label can reduce the accessibility and usability of the control for a range of users including older users and users with cognitive, mobility, fine motor skill or vision impairments.</blockquote>
   <figcaption>— <cite><a hreflang="en" href="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Placeholder_Research">The W3C's Placeholder Research</a></cite></figcaption>
 </figure>
+
+{# TODO (Authors) It looks like this quote is no longer in the HTML Living Standard spec so moved it to see it was in the W3C's Placeholder Research. Are we still happy to include this given they say it's in the HTML5 spec but it's not in the Living Standard spec? #}
 
 ### Requiring information
 
