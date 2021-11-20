@@ -47,13 +47,13 @@ There is great variability in the type and scope of the support CMSs provide for
 
 When we think about CMSs, we need to account for all the components that play a role in the viability of such a system for providing a platform for publishing content on the web. All of these components form an ecosystem surrounding the CMS platform, and they include hosting providers, extension developers, development agencies, site builders, etc. Thus, when we talk about a CMS, we usually refer to both the platform itself and its surrounding ecosystem.
 
-Our definition of a CMS in this chapter uses Wappalyzer's [definition](../2021/methodology#wappalyzer) of a CMS.
+Our definition of a CMS in this chapter uses Wappalyzer's [definition](./methodology#wappalyzer) of a CMS.
 
 Shopify, Magento, Webflow, and some other platforms do not appear in this chapter's analysis, because they are not marked as a CMS in <a hreflang="en" href="https://www.wappalyzer.com/technologies/cms">Wappalyzer</a>.
 
 We encourage CMSs to contribute to this open-source <a hreflang="en" href="https://github.com/AliasIO/wappalyzer">project</a> to improve detection and classification in the future.
 
-Ecommerce platforms make a substantial part of non-CMS sites and are covered in the [Ecommerce chapter](../2021/ecommerce). For example, Shopify grew substantially in the past year and accounted for 3.7% of websites in July according to <a hreflang="en" href="https://w3techs.com/technologies/history_overview/content_management/all/q">W3Techs</a>.
+Ecommerce platforms make a substantial part of non-CMS sites and are covered in the [Ecommerce chapter](./ecommerce). For example, Shopify grew substantially in the past year and accounted for 3.7% of websites in July according to <a hreflang="en" href="https://w3techs.com/technologies/history_overview/content_management/all/q">W3Techs</a>.
 
 Our research identified over 200 individual CMSs, with these ranging from a single install to millions on a single CMS.
 
@@ -82,7 +82,7 @@ The deviation between our analysis and W3Techs' analysis can be explained by a d
 
 W3Techs definition is the following: "_Content management systems are applications for creating and managing the content of a website. We include all such systems in this category, also systems that are often classified as wikis, blog engines, discussion boards, static site generators, website editors or any type of software that provides website content_."
 
-You can read more about ours on the [Methodology](../2021/methodology) page.
+You can read more about ours on the [Methodology](./methodology) page.
 
 ### CMS adoption by geography
 
@@ -182,13 +182,13 @@ Examining the adoption of these sites built on CMS platforms by their <a hreflan
 
 The <a hreflang="en" href="https://httparchive.org/reports/cwv-tech">Core Web Vitals Technology Report</a> can be used to drill into this data, and view the progress of each technology updated on a monthly basis.
 
-In this section we focused on data from July 2021 to provide a consistent timeframe for data presented across the Web Almanac, and examined three important factors provided by the [Chrome User Experience Report](../2021/methodology#chrome-ux-report), which can shed light on our understanding of how users are experiencing CMS-powered web pages in the wild:
+In this section we focused on data from July 2021 to provide a consistent timeframe for data presented across the Web Almanac, and examined three important factors provided by the [Chrome User Experience Report](./methodology#chrome-ux-report), which can shed light on our understanding of how users are experiencing CMS-powered web pages in the wild:
 
 * Largest Contentful Paint (LCP)
 * First Input Delay (FID)
 * Cumulative Layout Shift (CLS)
 
-These metrics aim to cover the core elements which are indicative of a great web user experience. The [Performance](../2021/performance) chapter covers these in more detail, but here we are interested in looking at these metrics specifically in terms of CMSs.
+These metrics aim to cover the core elements which are indicative of a great web user experience. The [Performance](./performance) chapter covers these in more detail, but here we are interested in looking at these metrics specifically in terms of CMSs.
 
 Initially, let's review the 10 CMS platforms with the highest number of origins, and examine what percentage of sites on each platform have a **passing** grade, meaning that the 75th percentile of each of the above metrics must be in the "good" (green) range for each site.
 
@@ -340,7 +340,7 @@ Comparing yearly data, we can see that most CMSs made some progress, or benefite
 
 <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> is an open-source, automated tool for improving the quality of web pages. One key aspect of the tool is that it provides a set of audits to assess the status of a website in terms of performance, accessibility, SEO, best practices, and more. Lighthouse reports provide lab data, a way developers can get suggestions on how to improve website performance, but the Lighthouse score has no direct implications on the actual field data collected by <a hreflang="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">CrUX</a>. You can read more on Lighthouse and the correlation between its <a hreflang="en" href="https://web.dev/lab-and-field-data-differences/">lab scores and field data</a>.
 
-HTTP Archive runs Lighthouse on all its mobile web pages (unfortunately, no desktop results), which are also <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/docs/throttling.md">throttled</a> to emulate a slow 4G connection with a CPU slowdown, as detailed in our [methodology](../2021/methodology#lighthouse).
+HTTP Archive runs Lighthouse on all its mobile web pages (unfortunately, no desktop results), which are also <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/docs/throttling.md">throttled</a> to emulate a slow 4G connection with a CPU slowdown, as detailed in our [Methodology](./methodology#lighthouse).
 
 We can analyze this data to provide another perspective on CMS performance, using the results of these synthetic tests, which also include metrics that are not tracked in CrUX.
 
@@ -363,7 +363,7 @@ We can see that the median performance scores for all the top platforms on mobil
 
 #### SEO score
 
-Search Engine Optimization (or SEO) is the practice of improving a website to make it more easily found in search engines. This is covered more in-depth in our [SEO](../2020/seo) chapter, but one part involves ensuring the site is coded in such a way to serve as much information to search engine crawlers to make it as easy as possible for them to show a site appropriately in search engine results. Compared to a custom-created website, one might expect a CMS to provide good SEO capabilities, and the Lighthouse scores in this category are appropriately high.
+Search Engine Optimization (or SEO) is the practice of improving a website to make it more easily found in search engines. This is covered more in-depth in our [SEO](./seo) chapter, but one part involves ensuring the site is coded in such a way to serve as much information to search engine crawlers to make it as easy as possible for them to show a site appropriately in search engine results. Compared to a custom-created website, one might expect a CMS to provide good SEO capabilities, and the Lighthouse scores in this category are appropriately high.
 
 {{ figure_markup(
   image="lighthouse-seo.png",
@@ -380,7 +380,7 @@ The median SEO score in all of the top 10 platforms is over 84, with Drupal scor
 
 #### Accessibility Score
 
-An accessible website is a site designed and developed so that people with disabilities can use them. Web accessibility also benefits people without disabilities, such as those on slow internet connections. Read more in our [Accessibility](../2021/accessibility) chapter.
+An accessible website is a site designed and developed so that people with disabilities can use them. Web accessibility also benefits people without disabilities, such as those on slow internet connections. Read more in our [Accessibility](./accessibility) chapter.
 
 Lighthouse provides a set of accessibility audits and it returns a weighted average of all of them (see <a hreflang="en" href="https://web.dev/accessibility-scoring/">Scoring Details</a> for a full list of how each audit is weighted).
 
