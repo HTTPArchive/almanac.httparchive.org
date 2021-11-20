@@ -421,9 +421,9 @@ Automated checks for the presence of alternative text do not assess the quality 
 The top 5 file extensions explicitly included in the `alt` text value (for sites with images that have non-empty `alt` values) are `jpg`, `png`, `ico`, `gif`, and `jpeg`. This likely comes from a CMS or another auto-generated alternative text mechanism. It is imperative that these `alt` attribute values be meaningful, regardless of how they are implemented.
 
 {{ figure_markup(
-  image="all-attribute-lengths.png",
+  image="alt-attribute-lengths.png",
   caption="Alt attribute lengths.",
-  description="A bar chart chart showing no alt is set on 19.1% of desktop images and 19.0% of mobile images, it is set to empty on 26.9% and 27.0% respectively, it is 10 characters or less on 15.9% and 15.3%, 20 characters or less" on 13.9% and 14.0%, 30 characters or less" on 8.2% and 8.4%,100 characters or less" on 14.8% and 15.1%, and it is greater than 100 characters on 1.1% and 1.1%.",
+  description="A bar chart chart showing no alt is set on 19.1% of desktop images and 19.0% of mobile images, it is set to empty on 26.9% and 27.0% respectively, it is 10 characters or less on 15.9% and 15.3%, 20 characters or less on 13.9% and 14.0%, 30 characters or less on 8.2% and 8.4%,100 characters or less on 14.8% and 15.1%, and it is greater than 100 characters on 1.1% and 1.1%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=159159336&format=interactive",
   sheets_gid="384780873",
   sql_file="common_alt_text_length.sql"
