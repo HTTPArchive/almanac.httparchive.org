@@ -4,8 +4,10 @@ SELECT
   client,
   pct_urls
 FROM
-  `httparchive.blink_features.usage` WHERE
-  feature = 'XMLHttpRequestSynchronous' AND yyyymmdd = '20210701'
+  `httparchive.blink_features.usage`
+WHERE
+  yyyymmdd = '20210701' AND
+  feature = 'XMLHttpRequestSynchronous'
 GROUP BY
   pct_urls,
   client
