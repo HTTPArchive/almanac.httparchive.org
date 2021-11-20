@@ -2,10 +2,10 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CDN
 description: TODO
-authors: []
-reviewers: []
-analysts: []
-editors: []
+authors: [Navaneeth-akam]
+reviewers: [jzyang, boosef]
+analysts: [paulcalvano]
+editors: [jzyang]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1DL7Pn1vbBwYmQZ5JPAjD69oCOvUidbuoNvdrw--j00U/
 featured_quote: TODO

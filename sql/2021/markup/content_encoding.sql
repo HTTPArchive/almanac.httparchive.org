@@ -18,5 +18,6 @@ GROUP BY
   mimeType,
   content_encoding
 ORDER BY
+  pct DESC,
   client,
   freq DESC

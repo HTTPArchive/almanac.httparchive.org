@@ -3,7 +3,7 @@
 title: PWA
 description: Service Worker（登録、インストール可能性、イベント、およびファイルサイズ）、Webアプリマニフェストプロパティ、およびWorkboxを対象とする2019 Web AlmanacのPWAの章。
 authors: [tomayac, jeffposnick]
-reviewers: [hyperpress, ahmadawais]
+reviewers: [logicalphase, ahmadawais]
 analysts: [jrharalson]
 editors: [tunetheweb]
 translators: [ksakae]

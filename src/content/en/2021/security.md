@@ -2,10 +2,10 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Security
 description: TODO
-authors: []
-reviewers: []
-analysts: []
-editors: []
+authors: [saptaks, tomvangoethem, nrllh]
+reviewers: [cqueern, edmondwwchan]
+analysts: [gjfr]
+editors: [tunetheweb]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1kwjKoa8tV87XzlF6eetf2sfcMDFqVVaT25w_gm_SRwA/
 featured_quote: TODO

@@ -1,0 +1,11 @@
+{% extends "base/contributors.html" %}
+
+{% block title %}{{ year }} 贡献者 | Web Almanac 源于 HTTP Archive{% endblock %}
+
+{% block description %}The {{ config.contributors.items() | length }} 为 {{ year }} Web Almanac 贡献的人员，包括分析者, 作者, 设计者, 开发者, 编辑者, 领导者，审稿者和翻译者。{% endblock %}
+
+{% block filter_by_team %}按组过滤: <span id="filtered-contributors">{{ self.contributors() }}</span><span id="contributors-total-text" class="hidden"> of <span id="contributors-total">{{ config.contributors.items() | length }}</span></span> contributors.{% endblock %}
+{% block filter_by %}过滤{% endblock %}
+
+{% block join_the_team_title%}加入 Web Almanac 团队{% endblock %}
+{% block join_the_team_text%}加入团队!{% endblock %}

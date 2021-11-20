@@ -33,7 +33,7 @@
       {% if authordata -%}
     {
         "@type": "Person",
-          "sameas": [
+          "sameAs": [
             "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"
             {% if authordata.twitter %},"https://twitter.com/{{ authordata.twitter }}"{% endif %}
             {% if authordata.github %},"https://github.com/{{ authordata.github }}"{% endif %}
@@ -52,9 +52,11 @@
 {% endblock %}
 
 {% block scripts %}
+{% if metadata.get('discuss') %}
 <script nonce="{{ csp_nonce() }}">
 window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json";
 </script>
+{% endif %}
 {{ super() }}
 {% endblock %}
 
@@ -65,35 +67,37 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
       {{ self.explore_the_results() }}
     </a>
   </h2>
+  {% if metadata.get('discuss') %}
   <a class="alt btn" hreflang="en" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
     <svg width="18" height="18" role="img" aria-labelledby="discuss-this-chapter">
       <title id="discuss-this-chapter">{{ self.discuss_this_chapter() }}:</title>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment-logo"></use>
     </svg>
-    <span class="num_comments">{{ self.comments_fallback() }}</span> <span data-translation class="comment-singular">{{ self.comment() }}</span>
+    <span class="num-comments">{{ self.comments_fallback() }}</span> <span data-translation class="comment-singular">{{ self.comment() }}</span>
     <span data-translation class="comment-plural">{{ self.comments() }}</span>
   </a>
+  {% endif %}
   <a class="alt btn" hreflang="en" href="{{ metadata.get('results') }}">
     <svg width="18" height="18" role="img" aria-hidden="true">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bar-chart"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bar-chart-logo"></use>
     </svg>
     {{ self.results() }}
   </a>
   <a class="alt btn" hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}/{{ metadata.get('chapter')  }}/">
     <svg width="18" height="18" role="img" aria-hidden="true">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sql"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sql-logo"></use>
     </svg>
     {{ self.queries() }}
   </a>
   <a class="alt btn" hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/new?assignees=&labels=bug%2C+writing&template=2020-content-issue.md&title=Issue+with+the+2020+%5BCHAPTER%5D+chapter">
     <svg width="18" height="18" role="img" aria-hidden="true">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
     </svg>
     {{ self.suggest_edit() }}
   </a>
   <a class="alt btn" hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/923/">
     <svg width="18" height="18" role="img" aria-hidden="true">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe-logo"></use>
     </svg>
     {{ self.help_translate() }}
   </a>
@@ -172,7 +176,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                   <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="author-{{ author }}-twitter">
                     <svg width="22" height="22" role="img">
                       <title id="author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>
                     </svg>
                     @{{ authordata.twitter }}
                   </a>
@@ -181,7 +185,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                   <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="author-{{ author }}-github">
                     <svg width="22" height="22">
                       <title id="author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
                     </svg>
                     {{ authordata.github }}
                   </a>
@@ -190,7 +194,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                   <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="author-{{ author }}-linkedin">
                     <svg width="22" height="22">
                       <title id="author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin-logo"></use>
                     </svg>
                     {{ authordata.linkedin }}
                   </a>
@@ -199,7 +203,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                   <a class="website" href="{{ authordata.website }}" aria-labelledby="author-{{ author }}-website">
                     <svg width="22" height="22">
                       <title id="author-{{ author }}-website">{{ website(authordata.name) }}</title>
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe-logo"></use>
                     </svg>
                     {{ authordata.website }}
                   </a>
@@ -323,22 +327,24 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
             {{ render_byline() }}
             {{ self.main_content() }}
         </article>
-        <div class="chapter_links">
+        <div class="chapter-links">
           {{ render_actions() }}
         </div>
         <section class="authors">
             {{ render_authors() }}
         </section>
+        {% if metadata.get('discuss') %}
         <div id="cta-container">
           <a class="alt btn chapter-cta comment-cta" hreflang="en" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
             <svg width="22" height="22" role="img" aria-labelledby="discuss-this-chapter-cta">
               <title id="discuss-this-chapter-cta">{{ self.discuss_this_chapter() }}:</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment"></use>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment-logo"></use>
             </svg>
-            <span class="num_comments"><span class="not-mobile">{{ self.comments_fallback() }}</span></span> <span data-translation class="comment-singular visually-hidden-mobile">{{ self.comment() }}</span>
+            <span class="num-comments"><span class="not-mobile">{{ self.comments_fallback() }}</span></span> <span data-translation class="comment-singular visually-hidden-mobile">{{ self.comment() }}</span>
             <span data-translation class="comment-plural visually-hidden-mobile">{{ self.comments() }}</span>
           </a>
         </div>
+        {% endif %}
         <nav aria-label="{{ self.prev_next_title() }}" id="chapter-navigation">
             {{ render_prevnext() }}
         </nav>

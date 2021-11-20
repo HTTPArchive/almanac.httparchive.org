@@ -5,6 +5,7 @@ const prettier = require('prettier');
 
 const { convertSimpleMarkdown, find_markdown_files, get_yearly_configs, size_of, parse_array } = require('./shared');
 const { generate_table_of_contents } = require('./generate_table_of_contents');
+const { generate_extra_markdown_conversions } = require('./generate_extra_markdown_conversions');
 const { generate_header_links } = require('./generate_header_links');
 const { generate_figure_ids } = require('./generate_figure_ids');
 const { generate_typographic_punctuation_body, generate_typographic_punctuation_metadata } = require('./generate_typographic_punctuation');
@@ -91,7 +92,7 @@ const generate_chapters = async (chapter_match) => {
       const { metadata, body, toc } = await parse_file(markdown,chapter);
 
       // Only included "done" chapters in featured quotes, sitemaps...etc.
-      if (!chapter_config[year][chapter].todo) {
+      if (chapter_config[year][chapter] && !chapter_config[year][chapter].todo) {
         const chapter_featured_quote = generate_chapter_featured_quote(metadata);
         if (Object.keys(chapter_featured_quote).length > 0) {
           if (!(language in featured_quotes)) {
@@ -106,6 +107,8 @@ const generate_chapters = async (chapter_match) => {
           sitemap.push({ language, year, chapter });
         }
         ebook_chapters.push({ language, year, chapter, metadata, body, toc });
+
+        await write_template(language, year, chapter, metadata, body, toc);
       }
 
       const {authors, reviewers, analysts, editors} = metadata;
@@ -117,8 +120,6 @@ const generate_chapters = async (chapter_match) => {
         analysts.forEach(analyst=>contributors[year]["analysts"].add(analyst));
       if(editors && editors.length > 0)
         editors.forEach(editor=>contributors[year]["editors"].add(editor));
-
-      await write_template(language, year, chapter, metadata, body, toc);
     } catch (error) {
       console.error(error);
       console.error('  Failed to generate chapter, moving onto the next one. ');
@@ -144,6 +145,7 @@ const parse_file = async (markdown,chapter) => {
   let body = html;
 
   let m = converter.getMetadata();
+  body = generate_extra_markdown_conversions(body);
   body = generate_syntax_highlighting(body);
   body = generate_header_links(body);
   body = generate_figure_ids(body);

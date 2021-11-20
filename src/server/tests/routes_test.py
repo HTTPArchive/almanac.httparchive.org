@@ -45,7 +45,7 @@ def test_render_en_no_slash_home(client):
 
 
 def test_render_invalid_lang_home(client):
-    assert_route(client, '/random/', 302, '/random/' + DEFAULT_YEAR + '/')
+    assert_route(client, '/random/', 404)
 
 
 def test_render_invalid_lang_year_home(client):

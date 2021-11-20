@@ -32,4 +32,3 @@ FROM (
 )
 GROUP BY
   client
-

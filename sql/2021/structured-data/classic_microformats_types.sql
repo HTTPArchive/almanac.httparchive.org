@@ -14,29 +14,42 @@ LANGUAGE js AS """
 WITH
 rendered_data AS (
   SELECT
-    getClassicMicroformatsTypes(rendered) AS classic_microformats_types,
-    client
-  FROM (
-    SELECT
-      JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
-            '$._structured-data')),
-        '$.structured_data.rendered') AS rendered,
-      _TABLE_SUFFIX AS client
-    FROM
-      `httparchive.pages.2021_07_01_*`)
+    _TABLE_SUFFIX AS client,
+    url,
+    getClassicMicroformatsTypes(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')), '$.structured_data.rendered')) AS classic_microformats_types
+  FROM
+    `httparchive.pages.2021_07_01_*`
+),
+
+page_totals AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(0) AS total_pages
+  FROM
+    `httparchive.pages.2021_07_01_*`
+  GROUP BY
+    _TABLE_SUFFIX
 )
 
 SELECT
+  client,
   classic_microformats_type.name AS classic_microformats_type,
-  SUM(classic_microformats_type.count) AS count,
-  SUM(SUM(classic_microformats_type.count)) OVER (PARTITION BY client) AS total,
-  SUM(classic_microformats_type.count) / SUM(SUM(classic_microformats_type.count)) OVER (PARTITION BY client) AS pct,
-  client
+  SUM(classic_microformats_type.count) AS freq_microformat,
+  SUM(SUM(classic_microformats_type.count)) OVER (PARTITION BY client) AS total_microformat,
+  SUM(classic_microformats_type.count) / SUM(SUM(classic_microformats_type.count)) OVER (PARTITION BY client) AS pct_microformat,
+  COUNT(DISTINCT url) AS freq_pages,
+  total_pages,
+  COUNT(DISTINCT url) / total_pages AS pct_pages
 FROM
   rendered_data,
   UNNEST(classic_microformats_types) AS classic_microformats_type
+JOIN
+  page_totals
+USING (client)
 GROUP BY
+  client,
   classic_microformats_type,
-  client
+  total_pages
 ORDER BY
-  count DESC
+  freq_microformat DESC,
+  client

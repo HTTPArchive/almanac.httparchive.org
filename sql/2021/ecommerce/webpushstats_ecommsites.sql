@@ -47,4 +47,3 @@
  ORDER BY
   date,
   client
-
