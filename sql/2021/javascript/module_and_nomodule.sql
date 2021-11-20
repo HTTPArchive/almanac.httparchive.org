@@ -19,7 +19,7 @@ FROM (
   LEFT JOIN
     UNNEST(REGEXP_EXTRACT_ALL(body, r'(?i)(<script[^>]*>)')) AS script
   WHERE
-    date = '2020-08-01' AND
+    date = '2021-07-01' AND
     firstHtml)
 GROUP BY
   client
