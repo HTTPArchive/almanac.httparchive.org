@@ -29,12 +29,12 @@ Over the past decade ...
 Talk about CDN adoptions, 14% of desktop pages use a Cloudflare CDN.
 
 {{ figure_markup(
-  image="to-do.png",
-  caption="Top CDNs adoption",
+  image="top-cdns.png",
+  caption="Adoption of the top CDNs.",
   description="TODO",
-  chart_url="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=2035524639&format=interactive",
   sheets_gid="58739923",
-  sql_file="todo.sql"
+  sql_file="top_cdns.sql"
 ) }}
 
 ## Service Worker adoption
@@ -42,12 +42,12 @@ Talk about CDN adoptions, 14% of desktop pages use a Cloudflare CDN.
 Talk about Service Worker adoptions, 1.2% of desktop pages registered a Service Worker, but 9% of mobile pages in the top 1000 registered a SW.
 
 {{ figure_markup(
-  image="to-do.png",
-  caption="Service Worker adoption,
+  image="sw-adoption.png",
+  caption="Service Worker adoption.",
   description="TODO",
-  chart_url="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=688062455&format=interactive",
   sheets_gid="802609299",
-  sql_file="todo.sql"
+  sql_file="service_worker_rank.sql"
 ) }}
 
 ## Headers adoption
