@@ -89,7 +89,6 @@ We found that 24% of desktop homepages and 29% of mobile homepages attempt to di
 
 When we consider the most popular sites in particular, the numbers for mobile are especially concerning. Of the top 1,000 most trafficked sites, 22% of desktop sites and 45% of mobile sites have code that attempts to disable user scaling. This may be a trend that comes from the proliferation of web applications. People need to be able to customize their web browsing experience (such as zooming and scaling) regardless of whether the content is a website or web application.
 
-
 Language identification
 {{ figure_markup(
   caption="Desktop sites have a valid `lang` attribute.",
@@ -197,7 +196,6 @@ The most commonly expected landmarks that the majority of web pages should have 
   ) }}</figcaption>
 </figure>
 
-
 When a page has multiple instances of the same landmark, for example, a primary site navigation and a breadcrumb secondary navigation, it is important that they each have a unique accessible name. This will help an assistive technology user to better understand which navigation landmark they have encountered. Techniques for accomplishing this are covered in Scott O'Hara's comprehensive article about the <a hreflang="en" href="https://www.scottohara.me/blog/2018/03/03/landmarks.html">various landmarks and how different screen readers navigate them</a>.
 
 ### Document titles
@@ -275,7 +273,6 @@ Tabs are a very common interface widget, but making them accessible presents a c
 
 The Authoring Practice guidelines suggest always using the `tabpanel` role in conjunction with `role="tab"`. We found that 8% of desktop pages have at least one element with a `role="tablist"`, 7% of pages have elements with a `role="tab"` and 6% of pages have elements with a `role="tabpanel"`.
 
-
 ### Captchas
 
 Public websites regularly have two different types of visitors—humans and computers that crawl the web. To attract human visitors, websites hope to be featured prominently by search engines. Search engines, in turn, send out automated programs called web crawlers to visit websites, look around, and report their findings back to the search engine to classify and organize their content.
@@ -320,7 +317,7 @@ The `<label>` element was introduced with HTML 4 in 1999. Despite being availabl
 Most importantly, without proper accessible names, screen readers and voice to text users may not be able to target or identify the purpose of a form field. `<label>` elements associated with an input are the most robust and expected way to do this.
 
 This is not only important when the end user is filling in the form for the first time—it is equally important if form validation finds an error with a specific field that the user must correct before they can submit the form. For example, if a user forgot to provide the expiration date for their credit card, they cannot complete their purchase. And they cannot complete their purchase if they cannot find the errant field with the missing value and understand both the purpose of the input and the steps needed to fix the error.
- 
+
  {{ figure_markup(
   image="{# TODO image needs to be generated from where inputs get their a11y name from #}",
   caption="Where inputs get their accessible names ",
@@ -329,7 +326,6 @@ This is not only important when the end user is filling in the form for the firs
   sheets_gid="{# TODO #}",
   sql_file="{# TODO #}"
 ) }}
-
 
 ### The improper use of the placeholder attribute for labeling inputs
 
@@ -349,7 +345,6 @@ There are <a hreflang="en" href="https://www.smashingmagazine.com/2018/06/placeh
   sql_file="{# TODO #}"
 ) }}
 
-
 <a hreflang="en" href="https://html.spec.whatwg.org/">The HTML5 specification</a> clearly states, "The placeholder attribute should not be used as a replacement for a label."
 
 It goes on to say:
@@ -357,7 +352,6 @@ It goes on to say:
 "Use of the placeholder attribute as a replacement for a label can reduce the accessibility and usability of the control for a range of users including older users and users with cognitive, mobility, fine motor skill or vision impairments."
 
 <a hreflang="en" href="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Placeholder_Research">The W3C's Placeholder Research</a> lists 26 different articles that advise against the flawed design approach of using a placeholder instead of the semantically correct `<label>` element.
-
 
 ### Requiring information
 
@@ -414,7 +408,6 @@ The 2021 Lighthouse audit data shows that 57% of sites pass the <a hreflang="en"
 
 Automated checks for the presence of alternative text do not assess the quality of this text. One unhelpful pattern is describing the image with the file extension name. We found that 7% of desktop sites (with at least one instance of the `alt` attribute) had a file extension in the value of at least one `img` element's `alt` attribute, compared to 7% the previous year.
 
-
 {{ figure_markup(
   image="common-file-extensions-in-alt-text.png",
   caption="Most common file extensions in alt text.",
@@ -446,16 +439,15 @@ We found that 27% of `alt` text attributes were empty. In an ideal world this wo
 `<track>` loads one or more WebVTT files, which allows text content to be synchronized with the audio it is describing. We found 0.02% of all pages on desktop and 0.05% of all pages on mobile with a detectable `<audio>` element had at least one accompanying `<track>` element.
 
 {{ figure_markup(
-  caption=“Desktop websites with an `<audio>` element have at least one accompanying `<track>` element“,
-  content=“0.02%“,
-  classes=“big-number”,
-  sheets_gid=“{# TODO #}",
-  sql_file=“{# TODO #}”
+  caption="Desktop websites with an `<audio>` element have at least one accompanying `<track>` element",
+  content="0.02%",
+  classes="big-number",
+  sheets_gid="{# TODO #}",
+  sql_file="{# TODO #}"
 )
 }}
 
 These data points do not include audio embedded via an `<iframe>` element, which is common for content like podcasts that use a third party service to host and list recordings.
-
 
 ### Video
 
@@ -464,11 +456,11 @@ The `<video>` element was only present on roughly 5% of the websites included in
 Similar to the results of the `<audio>` survey, the `<track>` element was included with a corresponding `<video>` element less than 1% of the time—0.5% for desktop sites, and 0.6% for mobile sites. In actual numbers, only 2,836 desktop sites out of 6.3 million included a `<track>` element where a `<video>` element was present. Only 2,502 mobile sites out of 7.5 million made their videos accessible by including a corresponding `<track>` element with content loaded via the `<video>` element.
 
 {{ figure_markup(
-  caption=“Desktop websites with an `<video>` element have at least one accompanying `<track>` element“,
-  content=“0.5%“,
-  classes=“big-number”,
-  sheets_gid=“{# TODO #}",
-  sql_file=“{# TODO #}”
+  caption="Desktop websites with an `<video>` element have at least one accompanying `<track>` element",
+  content="0.5%",
+  classes="big-number",
+  sheets_gid="{# TODO #}",
+  sql_file="{# TODO #}"
 )
 }}
 
@@ -513,24 +505,22 @@ When a button role is applied to an `<a>` element, it overrides the implicit lin
 
 We found that 19% of desktop pages (up from 16% in 2020) and 18% (up from 15% in 2020) of mobile pages contained at least one anchor element with `role="button"`. A native `<button>` element would be a better choice, <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">per the first rule of ARIA</a>.
 
-  
 {{ figure_markup(
-  caption=“Desktop websites have at least one link with a button role“,
-  content=“19%“,
-  classes=“big-number”,
-  sheets_gid=“{# TODO #}",
-  sql_file=“{# TODO #}”
+  caption="Desktop websites have at least one link with a button role",
+  content="19%",
+  classes="big-number",
+  sheets_gid="{# TODO #}",
+  sql_file="{# TODO #}"
 )
 }}
 
-  This act of adding ARIA roles, or a <a hreflang="en" href="https://adrianroselli.com/2020/02/role-up.html">"role-up"</a>, is usually less ideal than using the correct native HTML element. Again, in the vast majority of these cases a better pattern than explicitly defining `role="button"` on the element in question would be to leverage the native HTML `<button>` element, as it comes with the expected semantics and behavior.
+This act of adding ARIA roles, or a <a hreflang="en" href="https://adrianroselli.com/2020/02/role-up.html">"role-up"</a>, is usually less ideal than using the correct native HTML element. Again, in the vast majority of these cases a better pattern than explicitly defining `role="button"` on the element in question would be to leverage the native HTML `<button>` element, as it comes with the expected semantics and behavior.
 
 ### Using presentation role
 
 When an element has `role="presentation"` declared on it, its semantics are stripped away, as well as any of its child elements. For example, declaring `role="presentation"` on a parent table or list element will cascade the role to any child elements. This will also strip the semantics.
 
 Removing an element's semantics means that it is no longer that element in terms of its behavior or how it is understood by assistive technology, leaving only its visual appearance. For example, a list with a `role="presentation"` will no longer communicate any information to a screen reader about the list structure. We found that 22% of desktop pages and 21% of mobile pages have at least one element with `role="presentation"`. There are very few use cases where this is particularly helpful for assistive technology users, so use this role sparingly and thoughtfully.
-
 
 ### Labelling and describing elements with ARIA
 
@@ -568,13 +558,12 @@ There are several ways to ensure that assistive technology will not discover con
 
 We found that 54% of desktop pages (up from 48% in 2020) and 53% of mobile pages (up from 49% in 2020) had at least one instance of an element with the `aria-hidden` attribute.
 
-  
 {{ figure_markup(
-  caption=“Desktop websites have at least one instance of the `aria-hidden` attribute“,
-  content=“54%“,
-  classes=“big-number”,
-  sheets_gid=“{# TODO #}",
-  sql_file=“{# TODO #}”
+  caption="Desktop websites have at least one instance of the `aria-hidden` attribute",
+  content="54%",
+  classes="big-number",
+  sheets_gid="{# TODO #}",
+  sql_file="{# TODO #}"
 )
 }}
 
@@ -594,7 +583,6 @@ The most common CSS class names for this <a hreflang="en" href="https://css-tric
 The presence of new or updated content in the DOM sometimes needs to be communicated to screen readers. Some thought needs to be put into which updates need to be conveyed to avoid frustration. For example, form validation errors need to be conveyed whereas a lazy-loaded image may not. Updates to the DOM also need to be done in a way that is not disruptive.
 
 ARIA live regions allow us to listen for changes in the DOM, such that the updated content can be announced by a screen reader. We found that 21% of desktop pages (up from 17% in 2020) and 20% of mobile pages (up from 16% in 2020) have live regions. For more information about live region variants and usage check out the <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">MDN live region documentation</a> or play with this <a hreflang="en" href="https://dequeuniversity.com/library/aria/liveregion-playground">live demo by Deque</a>.
-
 
 ## Accessibility overlays
 
@@ -617,7 +605,6 @@ We found that 0.96% — or well over 60,000 desktop websites use one of these ac
   sql_file="a11y_technology_usage.sql"
 ) }}
 
-
 ### The consequences of overlays
 
 These tools often interfere with assistive technologies and actually make websites less accessible for many, as is explored by a <a hreflang="en" href="https://www.vice.com/en/article/m7az74/people-with-disabilities-say-this-ai-tool-is-making-the-web-worse-for-them">Vice article aptly titled "People with Disabilities Say This AI Tool is Making the Web Worse for Them"</a>. There is even an open source extension called <a hreflang="en" href="https://www.accessibyebye.org/">accessiByeBye</a> that was specifically developed to block overlays so that assistive technology users are not disrupted in their use of websites use a third party overlay product.
@@ -627,10 +614,9 @@ As civil rights lawyer Haben Girma explains in <a hreflang="en" href="https://ww
 There have been tensions between some of these overlay companies and the disabled communities they purport to serve. For example, The National Federation of the Blind <a hreflang="en" href="https://www.forbes.com/sites/gusalexiou/2021/06/26/largest-us-blind-advocacy-group-bans-web-accessibility-overlay-giant-accessibe/?sh=16621ec55a15">banned accessiBe from their national convention</a> and released a <a hreflang="en" href="https://nfb.org/about-us/press-room/national-convention-sponsorship-statement-regarding-accessibe">this statement about the harm caused by the company</a>.
 
  <figure>
-<blockquote>It seems that accessiBe fails to acknowledge that blind experts and regular screen reader users know what is accessible and what is not. The nation's blind will not be placated, bullied, or bought off.</blockquote>
-<figcaption>— <cite><a hreflang="en" href="https://nfb.org/about-us/press-room/national-convention-sponsorship-statement-regarding-accessibe">National Federation for the Blind</a></cite></figcaption>
+  <blockquote>It seems that accessiBe fails to acknowledge that blind experts and regular screen reader users know what is accessible and what is not. The nation's blind will not be placated, bullied, or bought off.</blockquote>
+  <figcaption>— <cite><a hreflang="en" href="https://nfb.org/about-us/press-room/national-convention-sponsorship-statement-regarding-accessibe">National Federation for the Blind</a></cite></figcaption>
 </figure>
-
 
 ### Privacy concerns
 
@@ -669,7 +655,6 @@ For more information about the legal implications of using these overlays please
   sql_file="a11y_technology_usage_by_domain_rank.sql"
 ) }}
 
-
 ### Why do some companies use overlays?
 
 Fundamentally, and fuelled by <a hreflang="en" href="https://www.forbes.com/sites/andrewpulrang/2020/10/25/words-matter-and-its-time-to-explore-the-meaning-of-ableism/?sh=7ab349837162">ableism</a>, overlays position themselves as solving a problem that most organizations struggle with. The data is clear throughout this chapter—the internet is largely inaccessible.
@@ -688,7 +673,6 @@ There is no quick fix—the onus is on organizations and digital practitioners t
 * <a hreflang="en" href="https://uxdesign.cc/theres-no-such-thing-as-fully-automated-web-accessibility-260d6f4632a8">There's no such thing as fully automated web accessibility</a>
 * <a hreflang="en" href="https://www.forbes.com/sites/gusalexiou/2021/10/28/why-automated-tools-alone-cant-make-your-website-accessible-and-legally-compliant/?sh=2e538b62364e">Why Automated Tools Alone Can't Make Your Website Accessible and Legally Compliant</a>
 * <a hreflang="en" href="https://shouldiuseanaccessibilityoverlay.com/">Should I Use an Accessibility Overlay?</a>
-
 
 ## Conclusion
 
