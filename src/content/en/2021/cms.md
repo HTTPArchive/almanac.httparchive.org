@@ -81,7 +81,7 @@ The deviation between our analysis and W3Techs' analysis can be explained by a d
 
 W3Techs definition is the following: "_Content Management Systems are applications for creating and managing the content of a website. We include all such systems in this category, also systems that are often classified as wikis, blog engines, discussion boards, static site generators, website editors or any type of software that provides website content_."
 
-{# TODO You don't explain whats different? I guess it's implied that Wappalyzer has a stricter definition excluding Shopify and the like, but should be be more explicit on this rather than assuming the readers will follow? #}
+Wappalyzer has a stricter definition of a <a hreflang="en" href="https://www.wappalyzer.com/technologies/cms">CMS</a>, which excludes some major CMSs which appear in W3Techs reports.
 
 You can read more about ours on the [Methodology](./methodology) page.
 
@@ -179,7 +179,7 @@ Examining the adoption of these sites built on CMS platforms by their <a hreflan
 
 ## CMS user experience
 
-{# TODO Headings should always have at least one sentence. Can we add an introduction saying what this section is covering and whu? #}
+An important aspect of CMSs is the user experience they provide, for users visiting sites built on these platforms. We attempt to examine these experiences through Real User Measurements (RUM), provided by the <a hreflang="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome User Experience Report</a> (CrUX), and synthetic testing using [Lighthouse](./methodology#lighthouse).
 
 ### Core Web Vitals
 
