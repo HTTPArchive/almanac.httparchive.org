@@ -35,6 +35,7 @@ Web accessibility is about giving complete access to all aspects of an interface
 Sadly, year over year, we and other teams conducting analysis such as the <a hreflang="en" href="https://webaim.org/projects/million/">WebAIM Million</a> are finding very little improvement in these metrics. The WebAIM study found that 97.4% of homepages had automatically detected accessibility failures, which is less than 1% lower than the 2020 audit.
 
 The median overall site score for all <a hreflang="en" href="https://web.dev/lighthouse-accessibility/">Lighthouse Accessibility</a> audit data rose from 80% in 2020 to 82% in 2021. We hope that this 2% increase represents a shift in the right direction. However, these are automated checks and this could also potentially mean that developers are doing a better job of subverting the rule engine.
+
 Because our analysis is based on automated metrics only, it is important to remember that automated testing captures only a fraction of the accessibility barriers that can be present in an interface. Qualitative analysis, including manual testing and usability testing with people with disabilities, is needed in order to achieve an accessible website or application.
 
 We've split up our most interesting insights into six categories:
@@ -58,6 +59,15 @@ There are many aspects of a web page that make it easier or harder to read, incl
 <a hreflang="en" href="https://www.a11yproject.com/posts/2015-01-05-what-is-color-contrast/">Color contrast</a> refers to how easily text and other page artifacts stand out against the surrounding background. The higher the contrast, the easier it is for people to distinguish the content. The <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility Guidelines</a> (WCAG) has minimum contrast requirements for text and non-text content.
 
 People who may have difficulties viewing low contrast content include those with color vision deficiency, people with mild to moderate vision loss, and those with situational difficulties viewing the content, such as glare on screens in bright light.
+
+{{ figure_markup(
+  image="color-contrast-2019-2020-2021.png",
+  caption="Mobile sites with sufficient color contrast.",
+  description="A bar chart chart showing 22.0% of sites had sufficient colour contrast in 2019, dipping slightly to 21.1% in 2020 and increasing slightly to 22.2% for 2020",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1642421167&format=interactive",
+  sheets_gid="51084807",
+  sql_file="color_contrast.sql"
+) }}
 
 This year we found that only 22% of sites have passing color contrast scores in Lighthouse. It is worth noting that these scans are only able to catch text-based contrast issues, as non-text content is so variable. This score has stayed about the same year over year; it was 21% in 2020 and 22% in 2019. This metric is somewhat disheartening, as catching text-based contrast issues is possible with a variety of common automated tools.
 
@@ -149,8 +159,6 @@ Landmarks are designated HTML elements or ARIA roles we can apply to other HTML 
 
 Before the introduction of HTML5, ARIA landmark roles were needed to accomplish this. However, we now have native HTML elements available to accomplish the majority of landmark page structure. Leveraging the native HTML landmark elements is preferable to applying ARIA roles, <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">per the first rule of ARIA</a>.; For more information, see the [ARIA roles](#aria-roles) section of this chapter.
 
-The most commonly expected landmarks that the majority of web pages should have are `<main>`, `<header>`, `<nav>` and `<footer>`. We found that only 28% of desktop pages have a native HTML `<main>` element, and 17% of desktop pages have an element with a `role="main"`.
-
 <figure>
   <table>
     <thead>
@@ -200,6 +208,8 @@ The most commonly expected landmarks that the majority of web pages should have 
   ) }}</figcaption>
 </figure>
 
+The most commonly expected landmarks that the majority of web pages should have are `<main>`, `<header>`, `<nav>` and `<footer>`. We found that only 28% of desktop pages have a native HTML `<main>` element, and 17% of desktop pages have an element with a `role="main"`.
+
 When a page has multiple instances of the same landmark, for example, a primary site navigation and a breadcrumb secondary navigation, it is important that they each have a unique accessible name. This will help an assistive technology user to better understand which navigation landmark they have encountered. Techniques for accomplishing this are covered in Scott O'Hara's comprehensive article about the <a hreflang="en" href="https://www.scottohara.me/blog/2018/03/03/landmarks.html">various landmarks and how different screen readers navigate them</a>.
 
 ### Document titles
@@ -228,6 +238,7 @@ Another approach to providing a secondary navigation method is to implement a si
 `tabindex` is an attribute that can be added to elements to control whether it can be focused. Depending on its value, the element can also be in the keyboard focus, or "tab" order.
 
 A tabindex value of `0` allows for an element to be programmatically focusable and in the keyboard focus order. Interactive content such as buttons, links, and form controls have the equivalent of a `tabindex` value of `0`, meaning they are in the keyboard focus order natively.
+
 Custom elements and widgets that are intended to be interactive and in the keyboard focus order need an explicitly assigned `tabindex="0"`, or they will not be usable by keyboard.
 
 If an element should be focusable but not in the keyboard focus order a tabindex value of `-1` (or any negative integer) can be used as a hook to enable programmatically setting focus on the element with JavaScript without adding it to the keyboard focus order. This can be helpful for cases where you'd like to assign focus, such as <a hreflang="en" href="https://www.gatsbyjs.com/blog/2019-07-11-user-testing-accessible-client-routing/">focusing a heading when navigating to new page within a single page application</a>. Placing non-interactive elements in keyboard focus order creates a confusing experience for blind and low vision users and should be avoided.
@@ -276,7 +287,7 @@ Headings make it easier for screen readers to properly navigate a page by supply
 )
 }}
 
-  Our audits revealed that 58% of the sites checked pass the <a hreflang="en" href="https://web.dev/heading-order/">test for properly ordered headings</a> that do not skip levels. Over 85% of <a hreflang="en" href="https://webaim.org/projects/screenreadersurvey9/#heading">screen reader users surveyed in 2021 by WebAIM</a> reported they find headings useful in navigating the web. Having headings in the correct order–ascending without skipping levels–means that assistive technology users will have the best experience.
+Our audits revealed that 58% of the sites checked pass the <a hreflang="en" href="https://web.dev/heading-order/">test for properly ordered headings</a> that do not skip levels. Over 85% of <a hreflang="en" href="https://webaim.org/projects/screenreadersurvey9/#heading">screen reader users surveyed in 2021 by WebAIM</a> reported they find headings useful in navigating the web. Having headings in the correct order–ascending without skipping levels–means that assistive technology users will have the best experience.
 
 ### Tables
 
@@ -341,7 +352,7 @@ If there is an absolute need to reach for this technique, the role of `presentat
 
 Tabs are a very common interface widget, but making them accessible presents a challenge for many developers. A common pattern for accessible implementation comes from the <a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel">WAI-ARIA Authoring Practices Design Patterns</a>. Please note that the ARIA Authoring Practices document is not a specification and is meant to demonstrate idealized use of ARIA for common widgets. They should not be used in production without testing with your users.
 
-The Authoring Practice guidelines suggest always using the `tabpanel` role in conjunction with `role="tab"`. We found that 8% of desktop pages have at least one element with a `role="tablist"`, 7% of pages have elements with a `role="tab"` and 6% of pages have elements with a `role="tabpanel"`.
+The Authoring Practice guidelines suggest always using the `tabpanel` role in conjunction with `role="tab"`. We found that 8% of desktop pages have at least one element with a `role="tablist"`, 7% of pages have elements with a `role="tab"` and 6% of pages have elements with a `role="tabpanel"`. For more information see the [Aria roles](#aria-roles) section below.
 
 ### Captchas
 
@@ -350,6 +361,15 @@ Public websites regularly have two different types of visitors—humans and comp
 For example, The Web Almanac is created each year by sending out a similar kind of web crawler to gather information about roughly 15 million different websites. Authors then summarize the results for your reading pleasure.
 
 For cases where websites want to verify that the visitor is a human, one technique web authors sometimes use is putting up a test that a human can theoretically pass and a computer cannot. These types of "human-only" tests are called a CAPTCHA—"Completely Automated Public Turing Test, to Tell Computers and Humans Apart".
+
+{{ figure_markup(
+  caption="Desktop sites using a CAPTCHA",
+  content="10.2%",
+  classes="big-number",
+  sheets_gid="1059643233",
+  sql_file="captcha_usage.sql"
+)
+}}
 
 We found CAPTCHAs on roughly 10% of the websites visited, across both desktop and mobile sites.
 
@@ -380,12 +400,6 @@ One of the most important ways of making HTML forms accessible is using the `<la
 
 When a web developer fails to associate a `<label>` element with an input, they are missing out on a number of key features that they would otherwise get for free. For example, when a `<label>` is properly associated with an `<input>` field, tapping or clicking on the `<label>` automatically puts focus in the `<input>` field. This is not only a major usability win—it is also expected behavior on the web.
 
-The `<label>` element was introduced with HTML 4 in 1999. Despite being available in all modern browsers for the past 20+ years, only 27% of all `<input>` elements get their accessible name from a programmatically associated label and 32% of these inputs have no [accessible name](#labelling-and-describing-elements-with-aria).
-
-Most importantly, without proper accessible names, screen readers and voice to text users may not be able to target or identify the purpose of a form field. `<label>` elements associated with an input are the most robust and expected way to do this.
-
-This is not only important when the end user is filling in the form for the first time—it is equally important if form validation finds an error with a specific field that the user must correct before they can submit the form. For example, if a user forgot to provide the expiration date for their credit card, they cannot complete their purchase. And they cannot complete their purchase if they cannot find the errant field with the missing value and understand both the purpose of the input and the steps needed to fix the error.
-
  {{ figure_markup(
   image="form-input-name-sources.png",
   caption="Where inputs get their accessible names from.",
@@ -397,13 +411,15 @@ This is not only important when the end user is filling in the form for the firs
   height=537
 ) }}
 
+The `<label>` element was introduced with HTML 4 in 1999. Despite being available in all modern browsers for the past 20+ years, only 27% of all `<input>` elements get their accessible name from a programmatically associated label and 32% of these inputs have no [accessible name](#labelling-and-describing-elements-with-aria).
+
+Most importantly, without proper accessible names, screen readers and voice to text users may not be able to target or identify the purpose of a form field. `<label>` elements associated with an input are the most robust and expected way to do this.
+
+This is not only important when the end user is filling in the form for the first time—it is equally important if form validation finds an error with a specific field that the user must correct before they can submit the form. For example, if a user forgot to provide the expiration date for their credit card, they cannot complete their purchase. And they cannot complete their purchase if they cannot find the errant field with the missing value and understand both the purpose of the input and the steps needed to fix the error.
+
 ### The improper use of the placeholder attribute for labeling inputs
 
 The `placeholder` attribute was introduced in HTML5 in 2014. Its intended use is to provide an example of the data that is expected to be provided by the user. For example, `<input type="text" id="credit-card" placeholder="1234-5678-9999-0000">` will display the placeholder as faint text in the input field that will disappear the moment the user begins typing in the field.
-
-The improper use of a placeholder as a replacement for the `<label>` element is surprisingly prevalent. Roughly 58% of desktop and mobile websites in this year's survey used the placeholder attribute. Of those sites, nearly 3 out of 4 of them included the placeholder attribute and failed to include an programmatically associated `<label>` element.
-
-There are <a hreflang="en" href="https://www.smashingmagazine.com/2018/06/placeholder-attribute/">many accessibility issues that placeholder text can present</a>. For example, because it disappears when the user begins to type, people with cognitive disabilities can be disoriented and lose context for the purpose of the form element.
 
 {{ figure_markup(
   image="placeholder-but-no-label.png",
@@ -414,23 +430,28 @@ There are <a hreflang="en" href="https://www.smashingmagazine.com/2018/06/placeh
   sql_file="placeholder_but_no_label.sql"
 ) }}
 
-<a hreflang="en" href="https://html.spec.whatwg.org/">The HTML5 specification</a> clearly states, "The placeholder attribute should not be used as a replacement for a label."
+The improper use of a placeholder as a replacement for the `<label>` element is surprisingly prevalent. Roughly 58% of desktop and mobile websites in this year's survey used the placeholder attribute. Of those sites, nearly 3 out of 4 of them included the placeholder attribute and failed to include an programmatically associated `<label>` element.
+
+There are <a hreflang="en" href="https://www.smashingmagazine.com/2018/06/placeholder-attribute/">many accessibility issues that placeholder text can present</a>. For example, because it disappears when the user begins to type, people with cognitive disabilities can be disoriented and lose context for the purpose of the form element.
+
+<a hreflang="en" href="https://html.spec.whatwg.org/#the-placeholder-attribute">The HTML5 specification</a> clearly states, "The placeholder attribute should not be used as a alternative to a label."
+
+<a hreflang="en" href="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Placeholder_Research">The W3C's Placeholder Research</a> lists 26 different articles that advise against the flawed design approach of using a placeholder instead of the semantically correct `<label>` element.
 
 It goes on to say:
 
-"Use of the placeholder attribute as a replacement for a label can reduce the accessibility and usability of the control for a range of users including older users and users with cognitive, mobility, fine motor skill or vision impairments."
-
-<a hreflang="en" href="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Placeholder_Research">The W3C's Placeholder Research</a> lists 26 different articles that advise against the flawed design approach of using a placeholder instead of the semantically correct `<label>` element.
+ <figure>
+  <blockquote>Use of the placeholder attribute as a replacement for a label can reduce the accessibility and usability of the control for a range of users including older users and users with cognitive, mobility, fine motor skill or vision impairments.</blockquote>
+  <figcaption>— <cite><a hreflang="en" href="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Placeholder_Research">The W3C's Placeholder Research</a></cite></figcaption>
+</figure>
 
 ### Requiring information
 
 When web developers gather input from their end users, they need a clear way to indicate what information is optional (the default), and what information is required to proceed. For example, a shipping address is optional if the end user is buying something online that they can download. However, the method of payment is most likely required in order to complete the sale.
 
-Before HTML 5 introduced the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required">`required` attribute</a> for `<input>` fields in 2014, web developers were forced to solve this problem on an ad hoc, case-by-case basis. A common convention is to put an asterisk (*) in the label for required input fields. This is purely a visual, stylistic convention—labels with asterisks don't enforce any kind of field validation. Additionally screen readers typically announce this character as "star" unless it is explicitly hidden from assistive technology, which can be confusing.
+Before HTML 5 introduced the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required">`required` attribute</a> for `<input>` fields in 2014, web developers were forced to solve this problem on an ad hoc, case-by-case basis. A common convention is to put an asterisk (`*`) in the label for required input fields. This is purely a visual, stylistic convention—labels with asterisks don't enforce any kind of field validation. Additionally screen readers typically announce this character as "star" unless it is explicitly hidden from assistive technology, which can be confusing.
 
 There are two attributes that can be used to communicate the required state of a form field to assistive technology. The `required` attribute will be announced by most screen readers and actually prevents form submission when a required field has not been properly filled out. The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute">`aria-required`</a> attribute can be used to indicate required fields to assistive technology, but does not come with any associated behaviour that would interfere with form submission.
-
-We found that 21% of desktop websites had form elements that have either an asterisks (*) in their label, the `required` attribute or the `aria-required` attribute or some combination of these techniques. Two-thirds of these form elements used the `required` attribute. About a third of all required inputs used the `aria-required` attribute. Roughly 22% had an asterisk in their label.
 
  {{ figure_markup(
   image="form-required-controls.png",
@@ -443,12 +464,15 @@ We found that 21% of desktop websites had form elements that have either an aste
   height=505
 ) }}
 
+We found that 21% of desktop websites had form elements that have either an asterisks (`*`) in their label, the `required` attribute or the `aria-required` attribute or some combination of these techniques. Two-thirds of these form elements used the `required` attribute. About a third of all required inputs used the `aria-required` attribute. Roughly 22% had an asterisk in their label.
+
 ## Media on the web
 
 Accessibility plays an increasingly important role in all media consumption on the web. For people who are deaf or hard of hearing, captions provide access to video. For people who are blind or have vision impairments, audio descriptions can describe a scene. Without removing the barriers to access to media content, we are excluding people from the majority of what gets visited on the web.
 
 According to <a hreflang="en" href="https://www.streamingmedia.com/Articles/ReadArticle.aspx?ArticleID=144177">this Streaming Media study</a>, "by 2022, video viewing will account for 82% of all internet traffic" Whenever you use media in your web content—images, audio, or video—you must ensure it is accessible to all.
-Overview of text alternatives
+
+### Overview of text alternatives
 
 Every HTML media element allows you to provide text alternatives, but not every author takes advantage of this accessibility capability.
 
@@ -460,7 +484,7 @@ The HTML5 specification introduced the `<video>` and `<audio>` elements in 2014 
 
 These tracks provide the same SEO benefits as alt-text does for images, although in 2021, less than 1% of the websites surveyed provided `<track>` elements.
 
-### Images
+#### Images
 
 The alt attribute allows web authors to provide a text alternative for the visual information communicated in an image. A screen reader can convey its visual meaning through audio by announcing the image's alternative text. Additionally, if images are unable to load, the alternative text for a description will be displayed.
 
@@ -503,11 +527,9 @@ The top 5 file extensions explicitly included in the `alt` text value (for sites
 
 We found that 27% of `alt` text attributes were empty. In an ideal world this would indicate that the associated <a hreflang="en" href="https://www.w3.org/WAI/tutorials/images/decorative/#:~:text=For%20example%2C%20the%20information%20provided,technologies%2C%20such%20as%20screen%20readers.">images are decorative</a>, and should not be described by assistive technologies. However, the majority of images add value to an interface and as such, should be described. We found that 15% have 10 or fewer characters, which would be a strangely short description for most images, indicating that information parity has not been achieved.
 
-### Audio
+#### Audio
 
 <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track">`<track>`</a> provides a way for a text equivalent to be provided for audio in `<audio>` and `<video>` elements. This allows people with permanent or temporary hearing loss to be able to understand audio content.
-
-`<track>` loads one or more WebVTT files, which allows text content to be synchronized with the audio it is describing. We found 0.02% of all pages on desktop and 0.05% of all pages on mobile with a detectable `<audio>` element had at least one accompanying `<track>` element.
 
 {{ figure_markup(
   caption="Desktop websites with an `<audio>` element have at least one accompanying `<track>` element",
@@ -518,13 +540,13 @@ We found that 27% of `alt` text attributes were empty. In an ideal world this wo
 )
 }}
 
+`<track>` loads one or more WebVTT files, which allows text content to be synchronized with the audio it is describing. We found 0.02% of all pages on desktop and 0.05% of all pages on mobile with a detectable `<audio>` element had at least one accompanying `<track>` element.
+
 These data points do not include audio embedded via an `<iframe>` element, which is common for content like podcasts that use a third party service to host and list recordings.
 
-### Video
+#### Video
 
 The `<video>` element was only present on roughly 5% of the websites included in the 2021 Web Almanac.
-
-Similar to the results of the `<audio>` survey, the `<track>` element was included with a corresponding `<video>` element less than 1% of the time—0.5% for desktop sites, and 0.6% for mobile sites. In actual numbers, only 2,836 desktop sites out of 6.3 million included a `<track>` element where a `<video>` element was present. Only 2,502 mobile sites out of 7.5 million made their videos accessible by including a corresponding `<track>` element with content loaded via the `<video>` element.
 
 {{ figure_markup(
   caption="Desktop websites with an `<video>` element have at least one accompanying `<track>` element",
@@ -534,6 +556,8 @@ Similar to the results of the `<audio>` survey, the `<track>` element was includ
   sql_file="audio_track_usage.sql"
 )
 }}
+
+Similar to the results of the `<audio>` survey, the `<track>` element was included with a corresponding `<video>` element less than 1% of the time—0.5% for desktop sites, and 0.6% for mobile sites. In actual numbers, only 2,836 desktop sites out of 6.3 million included a `<track>` element where a `<video>` element was present. Only 2,502 mobile sites out of 7.5 million made their videos accessible by including a corresponding `<track>` element with content loaded via the `<video>` element.
 
 Much like the `<audio>` element, this figure may not account for video content loaded by a third party `<iframe>`, such as an embedded YouTube video. It should also be noted that most popular third party audio and video embedding services include the ability to add synchronized text equivalents.
 
@@ -554,6 +578,17 @@ HTML5 introduced many new native elements, all which have <a hreflang="en" href=
 ARIA can be used to explicitly add roles to content that does not have a fitting native HTML role. For example, when creating a [tablist](#tabindex) widget, a `tablist` role can be assigned to the container element since there is no native HTML equivalent.
 
 {{ figure_markup(
+  image="sites-using-role.png",
+  caption="Number of ARIA roles used by percentile.",
+  description="Bar chart showing the number of ARIA roles used by percentile. At the 10th and 25th percentile 0 roles are used for both desktop and mobile, at the 50th percentile 3 roles are used for both, at the 75th percentile 12 roles are used on desktop and 11 on mobile, and at the 90th percentile 34 roles are used on desktop and 31 on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1547371971&format=interactive",
+  sheets_gid="1612528407",
+  sql_file="sites_using_role.sql"
+) }}
+
+Currently 69% (up from 65% in 2020) of desktop pages have at least one instance of an ARIA `role` attribute. The median site has 3 instances (up from 2 in 2020) of the `role` attribute.
+
+{{ figure_markup(
   image="top-10-aria-roles.png",
   caption="Top 10 most common ARIA roles.",
   description="Bar chart showing `button` is used by 29.4% of desktop sites and 29.0% of mobile sites, `navigation` by 22.8% and 22.5% respectively, `presentation` by 22.2% and 21.1%, `dialog` by 20.8% and 20.1%, `search` by 19.3% and 18.8%, `main` by 16.9% and 16.8%, `banner` by 14.3% and 14.3%, `contentinfo` by 12.2% and 12.1%, `img` by 11.4% and 10.9%, and finally `tablist` by 7.7% and 7.4%.",
@@ -563,8 +598,6 @@ ARIA can be used to explicitly add roles to content that does not have a fitting
   width=600,
   height=540
 ) }}
-
-Currently 69% (up from 65% in 2020) of desktop pages have at least one instance of an ARIA `role` attribute. The median site has 3 instances (up from 2 in 2020) of the `role` attribute.
 
 ### Just use a button!
 
@@ -607,6 +640,15 @@ For more information about accessible names visit Léonie Watson's article, <a h
 
 We can also use ARIA to provide accessible names for elements. There are two ARIA attributes that accomplish this, <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA14.html">`aria-label`</a> and <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA16.html">`aria-labelledby`</a>. Either of these attributes will "win" the accessible name computation and override the natively derived accessible name. It is important to use these two attributes with caution, and be sure to test with a screen reader or look at the accessibility tree to confirm that the accessible name is what your users will expect. When using ARIA to name an element, it is important to ensure that the <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html">WCAG 2.5.3, Label in Name</a> criterion has not been violated, which expects visible labels to be at least a part of its accessible name.
 
+{{ figure_markup(
+  image="top10-aria-attributes.png",
+  caption="Top 10 ARIA attributes.",
+  description="A bar chart chart showing `aria-hidden` is used by 53.8 of desktop sites and 53.0% of mobile sites, `aria-label` by 53.1 and 51.8% respectively, `aria-expanded` by 25.5 and 25.1%, `aria-labelledby` by 21.3 and 19.9%, `aria-controls` by 20.9 and 20.2%, `aria-live` by 20.8 and 19.7%,  `aria-haspopup` by 18.3 and 17.1%, `aria-current` by 16.1 and 16.9%, `aria-describedby` by 12.7 and 12.1%, and finally `aria-atomic` by 8.2 and 7.7%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1828569038&format=interactive",
+  sheets_gid="1763660541",
+  sql_file="common_element_attributes.sql"
+) }}
+
 The `aria-label` attribute allows a developer to provide a string value and this will be used for the accessible name for the element. It is worth noting that voice to text users may have difficulty targeting controls that are named without visible text as a reference. People with cognitive disabilities often benefit from visible text as well. An invisible accessible name is better than no accessible name, however, in most cases, a visible label should either supply the accessible name or at a minimum be contained within an element's accessible name.
 
 We found that 53% of desktop pages (up from 40% in 2020) and 52% of mobile home pages (up from 39% in 2020) had at least one element with the `aria-label` attribute, making it the most popular ARIA attribute for providing accessible names, with a very large increase in usage in 1 year. This could be a positive indication that more elements that previously were lacking an accessible name now have one. However, it could also signify an increase in elements having no visible label, which could negatively impact people with cognitive disabilities and voice to text users.
@@ -614,6 +656,7 @@ We found that 53% of desktop pages (up from 40% in 2020) and 52% of mobile home 
 The `aria-labelledby` attribute accepts an `id` reference as its value, which associates it with another element in the interface to provide its accessible name. The element becomes "labelled by" this other element which supplies its accessible name. We found that 21% of desktop pages (up from 18% in 2020) and 20% of mobile pages (up from 16% in 2020) had at least one element with the `aria-labelledby` attribute.
 
 The `aria-describedby` attribute can be used in cases where a more robust description is needed for an element. It also accepts an id reference as its value to connect with descriptive text that exists elsewhere in the interface. It does not supply the accessible name; it should be used in conjunction with an accessible name as a supplement, not a replacement. We found that 13% of desktop pages and 12% of mobile pages had at least one element with the `aria-describedby` attribute.
+
 Fun fact! We found 1,886 websites with the attribute `aria-lavel`, which is a misspelling of the `aria-label` attribute! Be sure to run those automated checks to pick up these easily avoidable errors.
 
 #### Where do buttons get their accessible names from?
@@ -621,6 +664,17 @@ Fun fact! We found 1,886 websites with the attribute `aria-lavel`, which is a mi
 Buttons typically get their accessible names from their content or an ARIA attribute. Per the <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">first rule of ARIA</a>, if an element can derive its accessible name without the use of ARIA, this is preferable. Therefore a `<button>` should get its accessible name from its text content rather than an ARIA attribute if possible.
 
 There is a common implementation where text content is not used to supply the accessible name because the button is a graphical control using an image or icon. This can be problematic for voice to text users who need to target the control without visible text and should not be used if visible text is an option.
+
+
+{{ figure_markup(
+  image="button-name-sources.png",
+  caption="Button accessible name source.",
+  description="A bar chart chart showing the contents are used for 49.9% of desktop buttons and 47.3% of mobile buttons, `aria-label` attribute is used for 20.7% and 22.2% respectively, there is no accessible name for 17.5% and 19.9%, the `value` attribute is used for 9.2% and 8.1%, `title` attribute is used for 2.6% and 2.5%, an `aria-labelledby` related element is used for 0.1% and 0.1%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=2097166988&format=interactive",
+  sheets_gid="1467280228",
+  sql_file="button_name_sources.sql"
+) }}
+
 We found that 57% of buttons on desktop sites and 57% of buttons on mobile sites get their accessible name from content. We also found that 29% of buttons on desktop sites and 27% of buttons on mobile sites get their accessible names from the `aria-label` attribute.
 
 ### Hiding content
@@ -640,12 +694,20 @@ We found that 54% of desktop pages (up from 48% in 2020) and 53% of mobile pages
 
 These techniques are most helpful when something in the visual interface is redundant or unhelpful to assistive technology users. Hiding content from assistive technology should never be used to skip over content that is challenging to make accessible.
 
-Hiding and showing content is a prevalent pattern in modern interfaces, and it can be helpful to declutter hidden UI for everyone.
-Hide/show widgets should be making use of the `aria-expanded` attribute to indicate to assistive technology that something can be revealed when the control is activated and hidden when activated again. We found that 26% of desktop pages (up from 21% in 2020) and 25% of mobile pages (up from 21% in 2020) had at least one element with the`aria-expanded` attribute.
+Hiding and showing content is a prevalent pattern in modern interfaces, and it can be helpful to declutter hidden UI for everyone. Hide/show widgets should be making use of the `aria-expanded` attribute to indicate to assistive technology that something can be revealed when the control is activated and hidden when activated again. We found that 26% of desktop pages (up from 21% in 2020) and 25% of mobile pages (up from 21% in 2020) had at least one element with the`aria-expanded` attribute.
 
 ### Screen reader-only text
 
 A common technique that developers employ to supply additional information for screen reader users is to use CSS to visually hide a passage of text, but make it discoverable by a screen reader. Since `display: none;` prevents content from being present in the accessibility tree, there is a common pattern involving a specific set of declarations of CSS code.
+
+{{ figure_markup(
+  caption="Desktop websites with a `sr-only` or `visually-hidden` class",
+  content="14.3%",
+  classes="big-number",
+  sheets_gid="960991314",
+  sql_file="sr_only_classes.sql"
+)
+}}
 
 The most common CSS class names for this <a hreflang="en" href="https://css-tricks.com/inclusively-hidden/">code snippet</a> (both by convention and throughout libraries like Bootstrap) are `sr-only` and `visually-hidden`. We found that 14% of desktop pages and 13% of mobile pages had one or both of these CSS class names. It is worth noting that there are screen reader users who have some vision, therefore over-reliance on visually hidden text could be confusing for some.
 
@@ -674,7 +736,7 @@ Unfortunately, web accessibility is simply not possible to achieve with an out o
   sql_file="a11y_technology_usage.sql"
 ) }}
 
-We found that 0.96%—or well over 60,000—desktop websites use one of these accessibility overlays. It is worth noting that we have queried for a list of well known products in this space. However, this list is not exhaustive so this metric is likely higher in reality.
+We found that 0.96% of desktop websites—or well over 60,000—use one of these accessibility overlays. It is worth noting that we have queried for a list of well known products in this space. However, this list is not exhaustive so this metric is likely higher in reality.
 
 ### The consequences of overlays
 
@@ -719,12 +781,14 @@ For more information about the legal implications of using these overlays please
 
 {{ figure_markup(
   image="pages-using-a11y-apps-by-rank.png",
-  caption="Pages using A11Y apps by rank.",
+  caption="Pages using accessibility apps by rank.",
   description="A bar chart chart showing that for the top 1,000 sites, 0.1% on desktop and 0.1% on mobile use and accessibility app, for the top 10,000 it's 0.6% and 0.5% respectivdely, for the top 100,000 it's 0.8% and 0.7%, for the top million it's 0.9% and 0.8%, and finally for all sites 1.0% it's 0.8%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=851935325&format=interactive",
   sheets_gid="827309922",
   sql_file="a11y_technology_usage_by_domain_rank.sql"
 ) }}
+
+{# TODO (Authors) can we talk about the stats more? At the moment they feel just wedged in at the end, with no connection to the surrounding text. To me it would help make this section stronger by grounding it in facts. #}
 
 ### Why do some companies use overlays?
 
@@ -748,6 +812,7 @@ There is no quick fix—the onus is on organizations and digital practitioners t
 ## Conclusion
 
 As accessibility advocate <a href="https://twitter.com/thebillygregory/status/552466012713783297?s=20">Billy Gregory once said</a>, "when UX doesn't consider ALL users, shouldn't it be known as SOME User Experience, or SUX". Too often accessibility work is seen as an addition, an edge case, or even comparable to technical debt and not core to the success of a website or product as it should be.
+
 The entire product team and organization have to prioritize accessibility as part of their accountabilities in order to succeed, all the way up to the c-suite. Accessibility work needs to <a hreflang="en" href="https://feather.ca/shift-left/">shift left in the product cycle</a>, meaning it needs to be baked into the research, ideation and design stages before it is developed. And most importantly, people with disabilities need to be included in this process.
 
 The tech industry needs to move towards inclusion-driven development. Although this requires some up-front investment, it is much easier and likely less expensive over time to build accessibility into the entire cycle such that it can be baked into the product rather than trying to retrofit sites and apps that were constructed without it in mind.
