@@ -319,12 +319,14 @@ Most importantly, without proper accessible names, screen readers and voice to t
 This is not only important when the end user is filling in the form for the first time—it is equally important if form validation finds an error with a specific field that the user must correct before they can submit the form. For example, if a user forgot to provide the expiration date for their credit card, they cannot complete their purchase. And they cannot complete their purchase if they cannot find the errant field with the missing value and understand both the purpose of the input and the steps needed to fix the error.
 
  {{ figure_markup(
-  image="{# TODO image needs to be generated from where inputs get their a11y name from #}",
-  caption="Where inputs get their accessible names ",
-  description="A bar chart chart showing... {# TODO detailed description #}",
-  chart_url="{# TODO #}",
-  sheets_gid="{# TODO #}",
-  sql_file="{# TODO #}"
+  image="form-input-name-sources.png",
+  caption="Where inputs get their accessible names from.",
+  description="33.0% of desktop inpute elements and 32.7% of mobile input elements have no accessible name. `relatedElement: label` is the source for 27.2% of desktop pages and 27.4% of mobile pages. For `placeholder` it's 24.9% and 25.3% respectively, for `attribute: aria-label` it's 6.7% and 6.9%, for `attribute: value` it's 3.9% for both, for `attribute: title` it's 1.9% and 1.8%, for `attribute: alt` it's 1.0% and 0.8%, for `relatedElement: aria-labelledby` it's 0.7% and 0.8%, for `attribute: type` it's 0.6% and 0.5%, for `contents` and `relatedElement: aria-labeledby` they are too small and so show as 0.0%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1447032816&format=interactive",
+  sheets_gid="1517205301",
+  sql_file="form_input_name_sources.sql",
+  width=600,
+  height=537
 ) }}
 
 ### The improper use of the placeholder attribute for labeling inputs
@@ -335,14 +337,13 @@ The improper use of a placeholder as a replacement for the  `<label>` element is
 
 There are <a hreflang="en" href="https://www.smashingmagazine.com/2018/06/placeholder-attribute/">many accessibility issues that placeholder text can present</a>. For example, because it disappears when the user begins to type, people with cognitive disabilities can be disoriented and lose context for the purpose of the form element.
 
- {# TODO (Authors) - insert chart #}
-  {{ figure_markup(
-  image="{# TODO image needs to be generated from form controls with placeholder but no label #}",
-  caption="Form controls using the placeholder attribute that have no associated label",
-  description="A bar chart chart showing... {# TODO detailed description #}",
-  chart_url="{# TODO #}",
-  sheets_gid="{# TODO #}",
-  sql_file="{# TODO #}"
+{{ figure_markup(
+  image="placeholder-but-no-label.png",
+  caption="Use of placeholders on inputs.",
+  description="57.8% of desktop sites and 55.7% of mobile sites use placeholders. 69.2% of desktop sites and 69.7% of mobile sites have inputs with no label. 63.4% of desktop sites and 64.8% of mobile sites have placeholders and also inputs with no labels.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1871025491&format=interactive",
+  sheets_gid="743455437",
+  sql_file="placeholder_but_no_label.sql"
 ) }}
 
 <a hreflang="en" href="https://html.spec.whatwg.org/">The HTML5 specification</a> clearly states, "The placeholder attribute should not be used as a replacement for a label."
@@ -366,10 +367,12 @@ We found that 21% of desktop websites had form elements that have either an aste
  {{ figure_markup(
   image="{# TODO #}",
   caption="How required inputs are specified",
-  description="A bar chart chart showing... {# TODO detailed description #}",
-  chart_url="{# TODO #}",
-  sheets_gid="{# TODO #}",
-  sql_file="{# TODO #}"
+  description="`required` attribute is used on 64.3% of desktop sites and 65.7% of mobile sites, `aria-required` is used by 32.3% and 31.6%, asterick is used by 21.9% and 22.3%, `required` and `aria-required` is used by 7.4% and 7.7%, asterick and `aria-required` is used by 7.3% and 8.2%, asterick and `required` us used by 7.1% and 6.3%, and all thress are used by 0.8% of sites on both.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1608381516&format=interactive",
+  sheets_gid="2064792791",
+  sql_file="form_required_controls.sql",
+  width=600,
+  height=505
 ) }}
 
 ## Media on the web
@@ -483,12 +486,14 @@ HTML5 introduced many new native elements, all which have <a hreflang="en" href=
 ARIA can be used to explicitly add roles to content that does not have a fitting native HTML role. For example, when creating a tablist widget, a `tablist` role can be assigned to the container element since there is no native HTML equivalent. Currently 69% (up from 65% in 2020) of desktop pages have at least one instance of an ARIA `role` attribute. The median site has 3 instances (up from 2 in 2020) of the `role` attribute.
 
 {{ figure_markup(
-  image="",
-  caption="Top 10 most common ARIA roles",
-  description="A bar chart chart showing... {# TODO detailed description #}",
-  chart_url="{# TODO #}",
-  sheets_gid="{# TODO #}",
-  sql_file="{# TODO #}"
+  image="top-10-aria-roles.png",
+  caption="Top 10 most common ARIA roles.",
+  description="`button` is used by 29.4% of desktop sites and 29.0% of mobile sites, `navigation` by 22.8% and 22.5% respectively, `presentation` by 22.2% and 21.1%, `dialog` by 20.8% and 20.1%, `search` by 19.3% and 18.8%, `main` by 16.9% and 16.8%, `banner` by 14.3% and 14.3%, `contentinfo` by 12.2% and 12.1%, `img` by 11.4% and 10.9%, and finally `tablist` by 7.7% and 7.4%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1136878573&format=interactive",
+  sheets_gid="2046624948",
+  sql_file="common_aria_role.sql",
+  width=600,
+  height=540
 ) }}
 
   {# TODO link to tabs section#}
