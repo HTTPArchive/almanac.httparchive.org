@@ -56,7 +56,7 @@ Ecommerce platforms make a substantial part of non-CMS sites and are covered in 
 
 Our research identified over 200 individual CMSs, with these ranging from a single install to millions on a single CMS.
 
-Some of them are open source (e.g. WordPress and Joomla) and some of them are proprietary (e.g. Wix and Squarespace). Some CMS platforms can be used on "free" hosted or self-hosted plans, and there are also options for using these platforms on higher-tiered plans even at the enterprise level.
+Some of them are open source (e.g., example, WordPress and Joomla) and some of them are proprietary (e.g., Wix and Squarespace). Some CMS platforms can be used on "free" hosted or self-hosted plans, and there are also options for using these platforms on higher-tiered plans even at the enterprise level.
 
 The CMS space as a whole is a complex, federated universe of CMS ecosystems, all separated and at the same time intertwined.
 
@@ -92,7 +92,7 @@ CMS platforms are extensively used around the world, with some variance by count
 {{ figure_markup(
   image="cms-adoption-geo.png",
   caption="CMS adoption by country.",
-  description="Bar chart showcasing the adoption of CMSs by geography, in the 10 countries with the largest amount of websites. In the US, 47% of mobile websites are built using a CMS, and 46% of desktop websites.",
+  description="Bar chart showcasing the adoption of CMSs by geography, in the 10 countries with the largest number of websites. In the US, 47% of mobile websites are built using a CMS, and 46% of desktop websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=2092976179&format=interactive",
   sheets_gid="1226921580",
   sql_file="cms_adoption_by_geo.sql",
@@ -158,7 +158,7 @@ Drilling into the adoption by CMS across all websites, out of 218 different CMS 
 
 WordPress, the most commonly used platform, is used by 33.6% of these websites, up from 31.4% in 2020, a 7% increase in total adoption.
 
-In percentage terms, Joomla and Drupal adoption is dropping–Joomla sites accounted for 1.9% of websites, down from 2.1% last year (9.5% decrease), and Drupal dropped from 2% to 1.8% (10% decrease). Absolute adoption did increase, but as a percentage of both overal CMS usage and of our (ever increasing!) data set, it is smaller.
+In percentage terms, Joomla and Drupal adoption is dropping–Joomla sites accounted for 1.9% of websites, down from 2.1% last year (9.5% decrease), and Drupal dropped from 2% to 1.8% (10% decrease). Absolute adoption did increase, but as a percentage of both overall CMS usage and of our (ever increasing!) data set, it is smaller.
 
 {# TODO Added a comment about absolute figures as think it's interesting. Feel free to remove if you disagree. #}
 
@@ -185,7 +185,7 @@ Examining the adoption of these sites built on CMS platforms by their <a hreflan
 
 2021 was a great year for web performance, with a growing focus on <a hreflang="en" href="https://web.dev/vitals/#core-web-vitals">Core Web Vitals</a>, which helped nudge many platforms in the right direction to focus on improving their user experience and loading times. More importantly, it provides users with the right tools and guidance to monitor and improve their website performance. As a result, we saw large performance improvements from many platforms, which continue to evolve, gradually making user experience better across the web, which is a big win for all of us.
 
-The <a hreflang="en" href="https://httparchive.org/reports/cwv-tech">Core Web Vitals Technology Report</a> can be used to drill into this data, and view the progress of each technology updated on a monthly basis.
+The <a hreflang="en" href="https://httparchive.org/reports/cwv-tech">Core Web Vitals Technology Report</a> can be used to drill into this data and view the progress of each technology updated on a monthly basis.
 
 In this section we focused on data from July 2021 to provide a consistent timeframe for data presented across the Web Almanac, and examined three important factors provided by the [Chrome User Experience Report](./methodology#chrome-ux-report), which can shed light on our understanding of how users are experiencing CMS-powered web pages in the wild:
 
@@ -271,7 +271,7 @@ We can see that all CMSs improved their LCP in the past year, but most of them h
 
 #### First Input Delay (FID)
 
-First Input Delay (FID) measures the time from when a user first interacts with the page (i.e. when they click a link, tap on a button, or use a custom, JavaScript-powered control) to the time when the browser is able to process that interaction. A "fast" FID from a user's perspective would be almost immediate feedback from their actions on a site rather than a stalled experience.
+First Input Delay (FID) measures the time from when a user first interacts with the page (i.e., when they click a link, tap on a button, or use a custom, JavaScript-powered control) to the time when the browser is able to process that interaction. A "fast" FID from a user's perspective would be almost immediate feedback from their actions on a site rather than a stalled experience.
 
 Any delay is a pain point and could correlate with interference from other aspects of the site loading when the user tries to interact with the site.
 
@@ -356,7 +356,7 @@ The Lighthouse <a hreflang="en" href="https://web.dev/performance-scoring/">perf
 {{ figure_markup(
   image="lighthouse-performance.png",
   caption="Top 10 CMSs median Lighthouse performance score.",
-  description="Bar chart showcasing the median Lighthouse mobile performance score for each of the top 10 most adopted CMSs. In general all platforms score poorly here, with TYPO3 CMS scoring the highest at 33.",
+  description="Bar chart showcasing the median Lighthouse mobile performance score for each of the top 10 most adopted CMSs. In general, all platforms score poorly here, with TYPO3 CMS scoring the highest at 33.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1164945994&format=interactive",
   width=600,
   height=559,
@@ -387,7 +387,7 @@ The median SEO score in all of the top 10 platforms is over 84, with Drupal scor
 
 An accessible website is a site designed and developed so that people with disabilities can use them. Web accessibility also benefits people without disabilities, such as those on slow internet connections. Read more in our [Accessibility](./accessibility) chapter.
 
-Lighthouse provides a set of accessibility audits and it returns a weighted average of all of them (see <a hreflang="en" href="https://web.dev/accessibility-scoring/">Scoring Details</a> for a full list of how each audit is weighted).
+Lighthouse provides a set of accessibility audits, and it returns a weighted average of all of them (see <a hreflang="en" href="https://web.dev/accessibility-scoring/">Scoring Details</a> for a full list of how each audit is weighted).
 
 Each accessibility audit is either a pass or a fail, but unlike other Lighthouse audits, a page doesn't get points for partially passing an accessibility audit. For example, if some elements have screen reader-friendly names, but others don't, that page gets a 0 for the screen reader-friendly-names audit.
 
@@ -445,7 +445,7 @@ Most of the top 5 CMSs deliver a median page weight of around ~2 MB, except Squa
   sql_file="page_weight_distribution.sql"
 ) }}
 
-The distribution of page weight in each platform's percentiles is substantial, probably related to the difference in user content across different web pages, the amount of images used, plugins, etc. The smallest pages delivered per platform come from Drupal, which only sends 595 KB for their 10th percentile of visits. The largest pages come from Squarespace, with ~9.6 MB delivered for their 90th percentile of visits.
+The distribution of page weight in each platform's percentiles is substantial, probably related to the difference in user content across different web pages, the number of images used, plugins, etc. The smallest pages delivered per platform come from Drupal, which only sends 595 KB for their 10th percentile of visits. The largest pages come from Squarespace, with ~9.6 MB delivered for their 90th percentile of visits.
 
 
 ### Page Weight Breakdown
@@ -492,7 +492,7 @@ With the <a hreflang="en" href="https://caniuse.com/webp">growing support of Web
 {{ figure_markup(
   image="resource-weights-javascript.png",
   caption="Top 5 CMSs median JavaScript weight.",
-  description="Column chart showing the median weight of JavaScript resources downloaded in each of the top 5 most adopted CMSs, for each device. The median WordPress site uses 469 KB of Javascript on mobile, and 494 KB on desktop.",
+  description="Column chart showing the median weight of JavaScript resources downloaded in each of the top 5 most adopted CMSs, for each device. The median WordPress site uses 469 KB of JavaScript on mobile, and 494 KB on desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=289342580&format=interactive",
   sheets_gid="740406389",
   sql_file="resource_weights.sql"
@@ -545,7 +545,7 @@ To display text, web developers often choose to use a variety of fonts. Joomla d
 
 WordPress is the most commonly used CMS today–almost 3 out of 4 sites built with a CMS are using WordPress, thus deserving further discussion.
 
-WordPress is an open source project, which has been around since 2003. Many sites built on WordPress use various themes and plugins, sometimes through page builders such as Elementor or Divi.
+WordPress is an open-source project, which has been around since 2003. Many sites built on WordPress use various themes and plugins, sometimes through page builders such as Elementor or Divi.
 
 The WordPress community maintains the CMS and services requirements for additional functionality through custom services and products (themes and plugins). This community has an outsized impact, with a relatively small number of people maintaining both the CMS itself and providing the additional functionality which makes WordPress sufficiently powerful and flexible that it can service most types of websites. This flexibility is important when explaining the market share, but also complicates the discussion around WordPress based site performance.
 
@@ -590,7 +590,7 @@ WordPress, with a very large adoption around the world, including countries with
 
 ### Plugins
 
-We explored how WordPress sites use external resources, and separated them between resources that are included in plugins, themes, and shipped in WordPress core (wp-includes).
+We explored how WordPress sites use external resources and separated them between resources that are included in plugins, themes, and shipped in WordPress core (wp-includes).
 
 {{ figure_markup(
   image="wordpress-resources-loaded.png",
@@ -611,10 +611,10 @@ CMS platforms continue to grow and are becoming more ubiquitous year-over-year. 
 
 The introduction of Core Web Vitals, along with the advancements in performance data visibility, has generated a focus on web performance across the web, and we hope these insights will help us all get a better understanding of the current state of the web, ultimately making the web a better place.
 
-CMSs are doing great work, and have a huge opportunity to further improve user experiences on the web at scale, by striving to enhance their infrastructure, experiment and integrate with new standards as they evolve, and follow best practices.
+CMSs are doing great work and have a huge opportunity to further improve user experiences on the web at scale, by striving to enhance their infrastructure, experiment and integrate with new standards as they evolve, and follow best practices.
 
 On the other hand, Core Web Vitals still have some progress and evolving to do.
 
-We mentioned the thoughts towards a <a hreflang="en" href="https://web.dev/responsiveness/">better responsiveness metric</a> above. In addition, navigations between pages in a site should be better tracked, and take into account the difference between <a hreflang="en" href="https://web.dev/vitals-spa-faq">Single-Page Applications (SPAs) and Multi-Page Applications (MPAs)</a> architectures.
+We mentioned the thoughts towards a <a hreflang="en" href="https://web.dev/responsiveness/">better responsiveness metric</a> above. In addition, navigations between pages in a site should be better tracked and take into account the difference between <a hreflang="en" href="https://web.dev/vitals-spa-faq">Single-Page Applications (SPAs) and Multi-Page Applications (MPAs)</a> architectures.
 
 Let's continue pushing forward.
