@@ -113,21 +113,33 @@ Setting an HTML `lang` attribute allows easy translation of a page and better sc
 
 ### Font size and line height
 
-There is no specific requirement from the WCAG with respect to minimum font size or line height, however there is a general consensus that a <a hreflang="en" href="https://accessibility.digital.gov/visual-design/typography/">base font size of 16px</a> or higher will help everyone with readability, especially those who have low vision. There is, however, a requirement that text can be zoomed in and resized up to 200%. Users can also set their own minimum font size at the browser level and these customized settings need to be supported.
+There is no specific requirement from the WCAG with respect to minimum font size or line height, however there is a general consensus that a <a hreflang="en" href="https://accessibility.digital.gov/visual-design/typography/">base font size of 16px</a> or higher will help everyone with readability, especially those who have low vision. There is, however, a requirement that [text can be zoomed in and resized up to 200%](#zooming-and-scaling). Users can also set their own minimum font size at the browser level and these customized settings need to be supported.
 
-{# TODO (Authors) - link to zoom section #}
+{{ figure_markup(
+  image="pages-overriding-focus-styles.png",
+  caption="Font unit usage.",
+  description="A bar chart showing `px` is used for font sizes on 68.4% of desktop pages and 69.0% of mobiles pages, `em` on 16.7% and 16.4% respectively, `%` on 5.0% and 5.4%, `rem` on 5.5% and 5.2%, `<number>` on 2.3% and 2.1%, and finally `pt` on 1.8% and 1.6%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1495101594&format=interactive",
+  sheets_gid="1740727138",
+  sql_file="../css/units_properties.sql"
+) }}
 
 When fonts are declared in `px` units, they are static sizes. The best way to ensure that fonts scale appropriately when the browser is zoomed is to use <a hreflang="en" href="https://www.24a11y.com/2019/pixels-vs-relative-units-in-css-why-its-still-a-big-deal/">relative units such as `em` and `rem`</a>. We found that 68% of desktop font size declarations are set in `px`, 17% are set in `em` and 5% are set with `rem` units.
-
-{# TODO (Authors) - where are these stats from? Should we add a figure #}
 
 ### Focus Styles
 
 Visible focus styles are helpful for everyone, but are necessary for sighted keyboard users who rely on their presence to navigate. The WCAG requires a <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-visible.html">visible focus indicator</a> for all interactive content.
 
-Often times, default focus indication is removed from interactive content such as buttons, form controls, and links using the CSS property `:focus { outline: none; }` or `:focus { outline: 0; }`, sometimes in conjunction with `:focus-within` and/or `:focus-visible`. We found that 91% of desktop pages have `:focus { outline: 0; }` declared. In some cases, it is removed so that a more effective custom style can be applied. Unfortunately, in many cases it is simply removed and never replaced, which can render a page unusable for keyboard users.
+{{ figure_markup(
+  image="pages-overriding-focus-styles.png",
+  caption="Pages overriding focus styles.",
+  description="A bar chart showing 92.6% of desktop sites and 94.1% of mobile sites use a `:focus` pseudo class, and 90.0% of desktop sites and 91.0% of mobile sites use that `:focus` pseudo class to set the outline to 0 or none. 0.6% of desktop sites and 0.6% of mobile sites use the `:focus-visible` pseudo class.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1277337070&format=interactive",
+  sheets_gid="1027210289",
+  sql_file="../css/focus_outline_0.sql"
+) }}
 
-{# TODO (Authors) - where are these stats from? Should we add a figure #}
+Often times, default focus indication is removed from interactive content such as buttons, form controls, and links using the CSS property `:focus { outline: none; }` or `:focus { outline: 0; }`, sometimes in conjunction with `:focus-within` and/or `:focus-visible`. We found that 91% of desktop pages have `:focus { outline: 0; }` declared. In some cases, it is removed so that a more effective custom style can be applied. Unfortunately, in many cases it is simply removed and never replaced, which can render a page unusable for keyboard users.
 
 For more information about how to achieve accessible focus indication including some limitations of browser default focus styles, we recommend Sara Soueidan's article, <a hreflang="en" href="https://www.sarasoueidan.com/blog/focus-indicators/">"A guide to designing accessible, WCAG-compliant focus indicators"</a>.
 
@@ -137,7 +149,14 @@ For more information about how to achieve accessible focus indication including 
 
 The <a hreflang="en" href="https://www.w3.org/TR/mediaqueries-5">CSS Media Queries Level 5 specification</a>, published in 2020, introduced a collection of User Preference Media Queries that allow a website to detect Accessibility features that a user may have configured outside of the website itself. These features are typically configured through operating system or platform preferences.
 
-{# TODO (Authors) - where are these stats from? Should we add a figure #}
+{{ figure_markup(
+  image="userpreference-media-queries.png",
+  caption="User preference media queries.",
+  description="A bar chart chart showing that 31.6% of desktop and mobile sites use the `prefers-reduced-motion` media query, 5.7% of desktop sites and 7.1% of mobile sites use `prefers-color-scheme`, and usage of `prefers-contrast` is so small on both it looks like 0.0%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=168171508&format=interactive",
+  sheets_gid="1027210289",
+  sql_file="../css/media_query_features.sql"
+) }}
 
 `prefers-reduced-motion` is used by web authors to replace animations or other sources of motion on the web page with a more static experience, typically by removing or replacing the content. This can help a range of people that may be distracted or otherwise triggered by rapid movement on the screen. We found that 32% of websites use the `prefers-reduced-motion` media query.
 
@@ -262,8 +281,6 @@ When we look at desktop pages that have at least one instance of the `tabindex` 
 * 68% use a negative integer, meaning elements are explicitly removed from the keyboard focus order
 * 9% have a positive integer value, meaning the web author is trying to control the focus order rather than allowing the DOM structure to do so
 
-{# TODO (Authors)#}
-
 While there are valid declarations for the `tabindex` attribute, incorrectly reaching for these techniques leads to common accessibility barriers for many keyboard and assistive technology users. For more information about the pitfalls of using a positive integer for `tabindex` we recommend this article, <a hreflang="en" href="https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad?utm_content=153549513&utm_medium=social&utm_source=twitter&hss_channel=tw-2309265523">"Why using `tabindex` values greater than "0" is bad"</a>.
 
 ### Skip links
@@ -375,7 +392,7 @@ We found CAPTCHAs on roughly 10% of the websites visited, across both desktop an
 
 CAPTCHAs present a host of potential accessibility barriers. For example, one of the most common forms of a CAPTCHA presents an image of wavy, distorted text and asks the user to decipher the text and type it in. This type of test can be difficult to solve for everyone, but would likely be more difficult for people with low vision and other vision or reading related disabilities. <a hreflang="en" href="https://baymard.com/blog/captchas-in-checkout">One usability survey found that roughly 1 out of 3 users failed to successfully decipher a CAPTCHA on the first try</a>.
 
-If CAPTCHAs include alt text {# TODO link to alt text section #}, the test would be trivial to pass by a computer since the answer is provided as plain text. However, by not including alt text, CAPCHAs are excluding screen readers and the blind or low vision users who use them.
+If CAPTCHAs include [alt text](#overview-of-text-alternatives), the test would be trivial to pass by a computer since the answer is provided as plain text. However, by not including alt text, CAPCHAs are excluding screen readers and the blind or low vision users who use them.
 
 For more information on the accessibility barriers that CAPTCHAs present, we recommend the W3C paper: <a hreflang="en" href="https://www.w3.org/TR/turingtest/">"Inaccessibility of CAPTCHA: Alternatives to Visual Turing Tests on the Web"</a>.
 
