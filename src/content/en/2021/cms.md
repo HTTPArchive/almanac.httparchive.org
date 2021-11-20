@@ -81,7 +81,7 @@ The deviation between our analysis and W3Techs' analysis can be explained by a d
 
 W3Techs definition is the following: "_Content Management Systems are applications for creating and managing the content of a website. We include all such systems in this category, also systems that are often classified as wikis, blog engines, discussion boards, static site generators, website editors or any type of software that provides website content_."
 
-Wappalyzer has a stricter definition of a <a hreflang="en" href="https://www.wappalyzer.com/technologies/cms">CMS</a>, which excludes some major CMSs which appear in W3Techs reports.
+As mentioned previously, Wappalyzer has a stricter definition of a CMS, which excludes some major CMSs which appear in W3Techs reports.
 
 You can read more about ours on the [Methodology](./methodology) page.
 
