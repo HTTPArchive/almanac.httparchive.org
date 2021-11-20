@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Accessibility
-description: TODO
+description: Accessibility chapter of the 2021 Web Almanac covering ease of reading, media, ease of navigation, and compatibility with assistive technologies.
 authors: [alextait1, scottdavis99, oluoluoxenfree, gwilhelm, kachiden]
 reviewers: [ericwbailey, clottman, shantsis, estelle, GigiRajani, cdixon83]
 analysts: [obto]
@@ -70,7 +70,7 @@ Adrian Roselli wrote a <a hreflang="en" href="https://adrianroselli.com/2015/10/
 {{ figure_markup(
   image="pages-zooming-scaling-disabled.png",
   caption="Pages with zooming and scaling disabled.",
-  description="A bar chart chart showing... {# TODO detailed description #}",
+  description="A bar chart chart showing that 16.1% of desktop sites and 19.3% of mobile sites disable scaling, 20.8% and 25.7% respectively set a max scale of 1 and 24.1% and 29.4% use either.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=2099068658&format=interactive",
   sheets_gid="744885125",
   sql_file="viewport_zoom_scale.sql"
@@ -81,7 +81,7 @@ We found that 24% of desktop homepages and 29% of mobile homepages attempt to di
 {{ figure_markup(
   image="pages-zooming-scaling-disabled-by-rank.png",
   caption="Pages with zooming and scaling disabled by rank.",
-  description="A bar chart chart showing... {# TODO detailed description #}",
+  description="A bar chart chart showing that for the top 1,000 sites zooming and scaling is disabled by 22.4% of desktop sites and 45.0% of mobile sites, for the top 10,000 it's 27.0% and 40.5% respectively, for the top 100,000 it's 26.2% and 34.1%, for the top million it's 25.2% and 30.4% and finally for all sites it's 24.1% and 29.4%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1312122950&format=interactive",
   sheets_gid="645664156",
   sql_file="{# TODO #}"
@@ -95,7 +95,7 @@ Language identification
   content="8%",
   classes="big-number",
   sheets_gid="1325555803",
-  sql_file="{# TODO #}"
+  sql_file="common_html_lang_attrib.sql"
 )
 }}
 
@@ -321,7 +321,7 @@ This is not only important when the end user is filling in the form for the firs
  {{ figure_markup(
   image="form-input-name-sources.png",
   caption="Where inputs get their accessible names from.",
-  description="33.0% of desktop inpute elements and 32.7% of mobile input elements have no accessible name. `relatedElement: label` is the source for 27.2% of desktop pages and 27.4% of mobile pages. For `placeholder` it's 24.9% and 25.3% respectively, for `attribute: aria-label` it's 6.7% and 6.9%, for `attribute: value` it's 3.9% for both, for `attribute: title` it's 1.9% and 1.8%, for `attribute: alt` it's 1.0% and 0.8%, for `relatedElement: aria-labelledby` it's 0.7% and 0.8%, for `attribute: type` it's 0.6% and 0.5%, for `contents` and `relatedElement: aria-labeledby` they are too small and so show as 0.0%.",
+  description="A bar chart showing 33.0% of desktop inpute elements and 32.7% of mobile input elements have no accessible name. `relatedElement: label` is the source for 27.2% of desktop pages and 27.4% of mobile pages. For `placeholder` it's 24.9% and 25.3% respectively, for `attribute: aria-label` it's 6.7% and 6.9%, for `attribute: value` it's 3.9% for both, for `attribute: title` it's 1.9% and 1.8%, for `attribute: alt` it's 1.0% and 0.8%, for `relatedElement: aria-labelledby` it's 0.7% and 0.8%, for `attribute: type` it's 0.6% and 0.5%, for `contents` and `relatedElement: aria-labeledby` they are too small and so show as 0.0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1447032816&format=interactive",
   sheets_gid="1517205301",
   sql_file="form_input_name_sources.sql",
@@ -340,7 +340,7 @@ There are <a hreflang="en" href="https://www.smashingmagazine.com/2018/06/placeh
 {{ figure_markup(
   image="placeholder-but-no-label.png",
   caption="Use of placeholders on inputs.",
-  description="57.8% of desktop sites and 55.7% of mobile sites use placeholders. 69.2% of desktop sites and 69.7% of mobile sites have inputs with no label. 63.4% of desktop sites and 64.8% of mobile sites have placeholders and also inputs with no labels.",
+  description="A bar chart showing 57.8% of desktop sites and 55.7% of mobile sites use placeholders. 69.2% of desktop sites and 69.7% of mobile sites have inputs with no label. 63.4% of desktop sites and 64.8% of mobile sites have placeholders and also inputs with no labels.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1871025491&format=interactive",
   sheets_gid="743455437",
   sql_file="placeholder_but_no_label.sql"
@@ -367,7 +367,7 @@ We found that 21% of desktop websites had form elements that have either an aste
  {{ figure_markup(
   image="{# TODO #}",
   caption="How required inputs are specified",
-  description="`required` attribute is used on 64.3% of desktop sites and 65.7% of mobile sites, `aria-required` is used by 32.3% and 31.6%, asterick is used by 21.9% and 22.3%, `required` and `aria-required` is used by 7.4% and 7.7%, asterick and `aria-required` is used by 7.3% and 8.2%, asterick and `required` us used by 7.1% and 6.3%, and all thress are used by 0.8% of sites on both.",
+  description="A bar chart showing the `required` attribute is used on 64.3% of desktop sites and 65.7% of mobile sites, `aria-required` is used by 32.3% and 31.6%, asterick is used by 21.9% and 22.3%, `required` and `aria-required` is used by 7.4% and 7.7%, asterick and `aria-required` is used by 7.3% and 8.2%, asterick and `required` us used by 7.1% and 6.3%, and all thress are used by 0.8% of sites on both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1608381516&format=interactive",
   sheets_gid="2064792791",
   sql_file="form_required_controls.sql",
@@ -403,7 +403,7 @@ The 2021 Lighthouse audit data shows that 57% of sites pass the <a hreflang="en"
 {{ figure_markup(
   image="pages-containing-alt-with-file-extension.png",
   caption="Pages containing an alt attribute with a file extension.",
-  description="A bar chart chart showing... {# TODO detailed description #}",
+  description="A bar chart chart showing in 2020 6.8% of desktop sites and 6.4% of mobile sites used and extension in the alt attribute. This increased to 7.3% of desktop sites and 7.1% of mobile sites in 2021.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=403540154&format=interactive",
   sheets_gid="747755748",
   sql_file="alt_ending_in_image_extension.sql"
@@ -414,7 +414,7 @@ Automated checks for the presence of alternative text do not assess the quality 
 {{ figure_markup(
   image="common-file-extensions-in-alt-text.png",
   caption="Most common file extensions in alt text.",
-  description="A bar chart chart showing... {# TODO detailed description #}",
+  description="A bar chart chart showing of all extensions used in all `jpg` is used 55.1% of the time on desktop sites and 54.44% for mobile, `png` is 32.8% and 33.11% and respectively, `ico` is 5.2% and 5.36%, `jpeg` is 2.8% and 3.00%, `gif` is 2.0% and 1.92%, `svg` is 1.5% and 1.36%, `tif` is 0.3% and 0.38%, `webp` is 0.2% and 0.21%, `jpe` is 0.0% and 0.05%, and finally `cur` is 0.0% and 0.03%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1350890749&format=interactive",
   sheets_gid="747755748",
   sql_file="alt_ending_in_image_extension.sql",
@@ -427,7 +427,7 @@ The top 5 file extensions explicitly included in the `alt` text value (for sites
 {{ figure_markup(
   image="all-attribute-lengths.png",
   caption="Alt attribute lengths.",
-  description="A bar chart chart showing... {# TODO detailed description #}",
+  description="A bar chart chart showing no alt is set on 19.1% of desktop images and 19.0% of mobile images, it is set to empty on 26.9% and 27.0% respectively, it is 10 characters or less on 15.9% and 15.3%, 20 characters or less" on 13.9% and 14.0%, 30 characters or less" on 8.2% and 8.4%,100 characters or less" on 14.8% and 15.1%, and it is  greater than 100 characters on 1.1% and 1.1%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=159159336&format=interactive",
   sheets_gid="384780873",
   sql_file="common_alt_text_length.sql"
@@ -445,8 +445,8 @@ We found that 27% of `alt` text attributes were empty. In an ideal world this wo
   caption="Desktop websites with an `<audio>` element have at least one accompanying `<track>` element",
   content="0.02%",
   classes="big-number",
-  sheets_gid="{# TODO #}",
-  sql_file="{# TODO #}"
+  sheets_gid="1198212185",
+  sql_file="audio_track_usage.sql"
 )
 }}
 
@@ -462,8 +462,8 @@ Similar to the results of the `<audio>` survey, the `<track>` element was includ
   caption="Desktop websites with an `<video>` element have at least one accompanying `<track>` element",
   content="0.5%",
   classes="big-number",
-  sheets_gid="{# TODO #}",
-  sql_file="{# TODO #}"
+  sheets_gid="1198212185",
+  sql_file="audio_track_usage.sql"
 )
 }}
 
@@ -488,7 +488,7 @@ ARIA can be used to explicitly add roles to content that does not have a fitting
 {{ figure_markup(
   image="top-10-aria-roles.png",
   caption="Top 10 most common ARIA roles.",
-  description="`button` is used by 29.4% of desktop sites and 29.0% of mobile sites, `navigation` by 22.8% and 22.5% respectively, `presentation` by 22.2% and 21.1%, `dialog` by 20.8% and 20.1%, `search` by 19.3% and 18.8%, `main` by 16.9% and 16.8%, `banner` by 14.3% and 14.3%, `contentinfo` by 12.2% and 12.1%, `img` by 11.4% and 10.9%, and finally `tablist` by 7.7% and 7.4%.",
+  description="Bar chart showing `button` is used by 29.4% of desktop sites and 29.0% of mobile sites, `navigation` by 22.8% and 22.5% respectively, `presentation` by 22.2% and 21.1%, `dialog` by 20.8% and 20.1%, `search` by 19.3% and 18.8%, `main` by 16.9% and 16.8%, `banner` by 14.3% and 14.3%, `contentinfo` by 12.2% and 12.1%, `img` by 11.4% and 10.9%, and finally `tablist` by 7.7% and 7.4%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1136878573&format=interactive",
   sheets_gid="2046624948",
   sql_file="common_aria_role.sql",
@@ -508,16 +508,16 @@ If non-interactive elements such as `<div>`s and `<span>`s have been assigned a 
 
 When a button role is applied to an `<a>` element, it overrides the implicit link role that anchor elements come with. This can lead to a confusing user experience because the expected behavior for a button would be to trigger an in-page action, whereas a link would typically navigate somewhere. There would also be a violation <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html">WCAG 2.1.1, Keyboard</a> if the correct keyboard behavior has not been implemented (links are not activated with the space key, whereas buttons are). Additionally, when a button role is announced by a screen reader without the expected corresponding behavior, it can create a confusing and disorienting experience for an assistive technology user.
 
-We found that 19% of desktop pages (up from 16% in 2020) and 18% (up from 15% in 2020) of mobile pages contained at least one anchor element with `role="button"`. A native `<button>` element would be a better choice, <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">per the first rule of ARIA</a>.
-
 {{ figure_markup(
   caption="Desktop websites have at least one link with a button role",
-  content="19%",
+  content="17.5%",
   classes="big-number",
-  sheets_gid="{# TODO #}",
-  sql_file="{# TODO #}"
+  sheets_gid="1014817325",
+  sql_file="anchors_with_role_button.sql"
 )
 }}
+
+We found that 18% of desktop pages (up from 16% in 2020) and 19% (up from 15% in 2020) of mobile pages contained at least one anchor element with `role="button"`. A native `<button>` element would be a better choice, <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">per the first rule of ARIA</a>.
 
 This act of adding ARIA roles, or a <a hreflang="en" href="https://adrianroselli.com/2020/02/role-up.html">"role-up"</a>, is usually less ideal than using the correct native HTML element. Again, in the vast majority of these cases a better pattern than explicitly defining `role="button"` on the element in question would be to leverage the native HTML `<button>` element, as it comes with the expected semantics and behavior.
 
@@ -561,16 +561,16 @@ We found that 57% of buttons on desktop sites and 57% of buttons on mobile sites
 
 There are several ways to ensure that assistive technology will not discover content. We can leverage CSS `display: none;`to omit the elements from the accessibility tree. If an author wishes to hide content from screen readers specifically, they can use `aria-hidden="true"`. Note that unlike `display: none;` a declaration of `aria-hidden="true"` will not visibly remove an element and its children.
 
-We found that 54% of desktop pages (up from 48% in 2020) and 53% of mobile pages (up from 49% in 2020) had at least one instance of an element with the `aria-hidden` attribute.
-
 {{ figure_markup(
   caption="Desktop websites have at least one instance of the `aria-hidden` attribute",
-  content="54%",
+  content="53.8%",
   classes="big-number",
-  sheets_gid="{# TODO #}",
-  sql_file="{# TODO #}"
+  sheets_gid="1763660541",
+  sql_file="common_element_attributes.sql"
 )
 }}
+
+We found that 54% of desktop pages (up from 48% in 2020) and 53% of mobile pages (up from 49% in 2020) had at least one instance of an element with the `aria-hidden` attribute.
 
 These techniques are most helpful when something in the visual interface is redundant or unhelpful to assistive technology users. Hiding content from assistive technology should never be used to skip over content that is challenging to make accessible.
 
@@ -599,16 +599,16 @@ For example, <a hreflang="en" href="https://en.wikipedia.org/wiki/AccessiBe">acc
 
 Unfortunately, web accessibility is simply not possible to achieve with an out of the box solution like this. If it were, we would likely not see the sobering statistics throughout this chapter.
 
-We found that 0.96% — or well over 60,000 desktop websites use one of these accessibility overlays. It is worth noting that we have queried for a list of well known products in this space. However, this list is not exhaustive so this metric is likely higher in reality.
-
 {{ figure_markup(
   image="pages-using-a11y-apps.png",
-  caption="Pages using A11Y apps.",
-  description="A bar chart chart showing... {# TODO detailed description #}",
+  caption="Pages using accessibility apps.",
+  description="A bar chart chart showing 0.96% of desktop sites and 0.80% of mobile sites use an accessibility app.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=618692173&format=interactive",
   sheets_gid="150155313",
   sql_file="a11y_technology_usage.sql"
 ) }}
+
+We found that 0.96%—or well over 60,000—desktop websites use one of these accessibility overlays. It is worth noting that we have queried for a list of well known products in this space. However, this list is not exhaustive so this metric is likely higher in reality.
 
 ### The consequences of overlays
 
@@ -644,8 +644,8 @@ For more information about the legal implications of using these overlays please
 
 {{ figure_markup(
   image="a11y-app-usage-by-rank.png",
-  caption="A11Y app usage by rank.",
-  description="A bar chart chart showing... {# TODO detailed description #}",
+  caption="Accessibility app usage by rank.",
+  description="A bar chart chart showing usage of the most popular accessibility apps by domain rank on desktop sites. AccessiBe is not used on the top 1,000 sites, but is used by 0.15% of the top 10,000 sites, by 0.39% of the top 100,000 sites, ny 0.37% of the top million sites and by 0.27% of all sites. AudioEye is used by 0.13%, 0.20%, 0.13%, 0.16%, and 0.24% respectivelt. EqualWeb is not used on the top 1,000 or top 10,000 site but is used by 0.02% of the top 100,000, 0.03% of the top million, and 0.02% of all sites. Texthelp similarly is not used on the top 1,000 or top 10,000 sites but is used by 0.02% of the top 100,000, 0.04% of the top million, and 0.02% of all sites. Finally, UserWay is not used on the top 1,000 sites but is used by 0.04% of the top 10,000 sites, by 0.09% of the top 100,000 sites, by 0.24% of the top million and by 0.39% of all sites. Only AudioEye is used by the top 1,000 sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=473077851&format=interactive",
   sheets_gid="2077755325",
   sql_file="a11y_overall_tech_usage_by_domain_rank.sql"
@@ -654,7 +654,7 @@ For more information about the legal implications of using these overlays please
 {{ figure_markup(
   image="pages-using-a11y-apps-by-rank.png",
   caption="Pages using A11Y apps by rank.",
-  description="A bar chart chart showing... {# TODO detailed description #}",
+  description="A bar chart chart showing that for the top 1,000 sites, 0.1% on desktop and 0.1% on mobile use and accessibility app, for the top 10,000 it's 0.6% and 0.5% respectivdely, for the top 100,000 it's 0.8% and 0.7%, for the top million it's 0.9% and 0.8%, and finally for all sites 1.0% it's 0.8%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=851935325&format=interactive",
   sheets_gid="827309922",
   sql_file="a11y_technology_usage_by_domain_rank.sql"
