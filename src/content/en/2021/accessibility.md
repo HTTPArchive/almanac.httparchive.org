@@ -99,7 +99,7 @@ Language identification
 )
 }}
 
-Setting an HTML `lang` attribute allows easy translation of a page and better screen reader support, allowing some screen readers to apply the appropriate accent and inflection to the text being read. The percentage of sites with a `lang` attribute increased this year to 81% (up from 78% in 2020), and of the sites that have the attribute present,  99%  had a _valid_ `lang` attribute.
+Setting an HTML `lang` attribute allows easy translation of a page and better screen reader support, allowing some screen readers to apply the appropriate accent and inflection to the text being read. The percentage of sites with a `lang` attribute increased this year to 81% (up from 78% in 2020), and of the sites that have the attribute present, 99% had a _valid_ `lang` attribute.
 
 ### Font size and line height
 
@@ -113,7 +113,7 @@ When fonts are declared in `px` units, they are static sizes. The best way to en
 
 Visible focus styles are helpful for everyone, but are necessary for sighted keyboard users who rely on their presence to navigate. The WCAG requires a <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-visible.html">visible focus indicator</a> for all interactive content.
 
-Often times, default focus indication is removed from interactive content such as buttons, form controls, and links using the CSS property `:focus { outline: none; }` or  `:focus { outline: 0; }`, sometimes in conjunction with `:focus-within` and/or `:focus-visible`. We found that 91% of desktop pages have `:focus { outline: 0; }` declared. In some cases, it is removed so that a more effective custom style can be applied. Unfortunately, in many cases it is simply removed and never replaced, which can render a page unusable for keyboard users.
+Often times, default focus indication is removed from interactive content such as buttons, form controls, and links using the CSS property `:focus { outline: none; }` or `:focus { outline: 0; }`, sometimes in conjunction with `:focus-within` and/or `:focus-visible`. We found that 91% of desktop pages have `:focus { outline: 0; }` declared. In some cases, it is removed so that a more effective custom style can be applied. Unfortunately, in many cases it is simply removed and never replaced, which can render a page unusable for keyboard users.
 
 For more information about how to achieve accessible focus indication including some limitations of browser default focus styles, we recommend Sara Soueidan's article, <a hreflang="en" href="https://www.sarasoueidan.com/blog/focus-indicators/">"A guide to designing accessible, WCAG-compliant focus indicators"</a>.
 
@@ -143,7 +143,7 @@ Landmarks are designated HTML elements or ARIA roles we can apply to other HTML 
 
 Before the introduction of HTML5, ARIA landmark roles were needed to accomplish this. However, we now have native HTML elements available to accomplish the majority of landmark page structure. Leveraging the native HTML landmark elements is preferable to applying ARIA roles, <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">per the first rule of ARIA</a>.; For more information, see the [ARIA roles](#aria-roles) section of this chapter.
 
-The most commonly expected landmarks that the majority of web pages should have are  `<main>`, `<header>`, `<nav>` and `<footer>`. We found that only 28% of desktop pages have a native HTML `<main>` element, and 17% of desktop pages have an element with a `role="main"`.
+The most commonly expected landmarks that the majority of web pages should have are `<main>`, `<header>`, `<nav>` and `<footer>`. We found that only 28% of desktop pages have a native HTML `<main>` element, and 17% of desktop pages have an element with a `role="main"`.
 
 <figure>
   <table>
@@ -204,7 +204,7 @@ Our data shows 98% of web pages have a title. However, only 68% of those pages h
 
 ### Secondary Navigation
 
-Many users benefit from a secondary navigation method to help them find the content they are looking for on a website. The <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-mult-loc.html">WCAG has a requirement that complex websites have a secondary navigation method</a>. One of the most common and helpful secondary navigation methods is a search mechanism. We found that  24% of all sites used a search input.
+Many users benefit from a secondary navigation method to help them find the content they are looking for on a website. The <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-mult-loc.html">WCAG has a requirement that complex websites have a secondary navigation method</a>. One of the most common and helpful secondary navigation methods is a search mechanism. We found that 24% of all sites used a search input.
 
 Another approach to providing a secondary navigation method is to implement a site map, which is a collection of all of the links available on a website clearly organized collection. Although we do not have any data about the presence of site maps, this <a hreflang="en" href="https://www.w3.org/TR/WCAG20-TECHS/G63.html">technique guide from the W3C</a> explains what they are in detail and how to implement one effectively.
 
@@ -215,7 +215,7 @@ Another approach to providing a secondary navigation method is to implement a si
 A tabindex value of `0` allows for an element to be programmatically focusable and in the keyboard focus order. Interactive content such as buttons, links, and form controls have the equivalent of a `tabindex` value of `0`, meaning they are in the keyboard focus order natively.
 Custom elements and widgets that are intended to be interactive and in the keyboard focus order need an explicitly assigned `tabindex="0"`, or they will not be usable by keyboard.
 
-If an element should be focusable but not in the keyboard focus order a tabindex value of `-1`  (or any negative integer) can be used as a hook to enable programmatically setting focus on the element with JavaScript without adding it to the keyboard focus order. This can be helpful for cases where you'd like to assign focus, such as <a hreflang="en" href="https://www.gatsbyjs.com/blog/2019-07-11-user-testing-accessible-client-routing/">focusing a heading when navigating to new page within a single page application</a>. Placing non-interactive elements in keyboard focus order creates a confusing experience for blind and low vision users and should be avoided.
+If an element should be focusable but not in the keyboard focus order a tabindex value of `-1` (or any negative integer) can be used as a hook to enable programmatically setting focus on the element with JavaScript without adding it to the keyboard focus order. This can be helpful for cases where you'd like to assign focus, such as <a hreflang="en" href="https://www.gatsbyjs.com/blog/2019-07-11-user-testing-accessible-client-routing/">focusing a heading when navigating to new page within a single page application</a>. Placing non-interactive elements in keyboard focus order creates a confusing experience for blind and low vision users and should be avoided.
 
 The focus order of the page should always be determined by the document flow meaning the order of the HTML elements in the document. Setting the `tabindex` to a positive integer value overrides the natural order of the page, often leading to failures of <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-order.html">WCAG 2.4.3 - Focus Order</a>. Respecting the natural focus order of a page generally leads to a more accessible experience than overengineering the keyboard focus order.
 
@@ -261,7 +261,7 @@ Table captions act as a heading for the full table to provide a summary of its i
 Heading elements for the full table are frequently unnecessary when a `<caption>` element has been properly implemented, and the `<caption>` element can be styled and visually positioned in a way that resembles a heading. Only 5% of desktop and mobile sites with table elements present used a `<caption>`, which is a slight increase from 2020.
 
 ### Tables for layout
-  The introduction of CSS methodologies such as <a hreflang="en" href="https://www.w3schools.com/css/css3_flexbox.asp">Flexbox</a> and <a hreflang="en" href="https://www.w3schools.com/css/css_grid.asp">Grid</a> provided the capability for web developers to easily create fluid responsive layouts. Prior to this development, developers frequently used tables for layout instead of presenting data. Unfortunately, due to a combination of legacy websites and legacy development techniques, websites still exist where tables are used for layout. It is difficult to determine how widely this legacy development technique is still used.
+The introduction of CSS methodologies such as <a hreflang="en" href="https://www.w3schools.com/css/css3_flexbox.asp">Flexbox</a> and <a hreflang="en" href="https://www.w3schools.com/css/css_grid.asp">Grid</a> provided the capability for web developers to easily create fluid responsive layouts. Prior to this development, developers frequently used tables for layout instead of presenting data. Unfortunately, due to a combination of legacy websites and legacy development techniques, websites still exist where tables are used for layout. It is difficult to determine how widely this legacy development technique is still used.
 
 If there is an absolute need to reach for this technique, the role of `presentation` should be applied to the table such that assistive technology will ignore the table semantics. We found that 1% of desktop and mobile pages contain a table with a role of presentation. It's hard to know if this is good or bad. It could indicate that there are not many tables used for presentational purposes, but it is very likely that tables used for layout are just lacking this needed role.
 
@@ -285,7 +285,7 @@ CAPTCHAs present a host of potential accessibility barriers. For example, one of
 
 If CAPTCHAs include alt text {# TODO link to alt text section #}, the test would be trivial to pass by a computer since the answer is provided as plain text. However, by not including alt text, CAPCHAs are excluding screen readers and the blind or low vision users who use them.
 
-For more information on the accessibility barriers that CAPTCHAs present, we recommend  the W3C paper: <a hreflang="en" href="https://www.w3.org/TR/turingtest/">"Inaccessibility of CAPTCHA: Alternatives to Visual Turing Tests on the Web"</a>.
+For more information on the accessibility barriers that CAPTCHAs present, we recommend the W3C paper: <a hreflang="en" href="https://www.w3.org/TR/turingtest/">"Inaccessibility of CAPTCHA: Alternatives to Visual Turing Tests on the Web"</a>.
 
 From the paper: "It is important to acknowledge that using a CAPTCHA as a security solution is becoming increasingly ineffective… Alternative security methods, such as two-step or multi-device verification, along with emerging protocols for identifying human users with high reliability should also be carefully considered in preference to traditional image-based CAPTCHA methods for both security and accessibility reasons."
 
@@ -329,7 +329,7 @@ This is not only important when the end user is filling in the form for the firs
 
 The `placeholder` attribute was introduced in HTML5 in 2014. Its intended use is to provide an example of the data that is expected to be provided by the user. For example, `<input type="text" id="credit-card" placeholder="1234-5678-9999-0000">` will display the placeholder as faint text in the input field that will disappear the moment the user begins typing in the field.
 
-The improper use of a placeholder as a replacement for the  `<label>` element is surprisingly prevalent. Roughly 58% of desktop and mobile websites in this year's survey used the placeholder attribute. Of those sites, nearly 3 out of 4 of them included the placeholder attribute and failed to include an programmatically associated `<label>` element.
+The improper use of a placeholder as a replacement for the `<label>` element is surprisingly prevalent. Roughly 58% of desktop and mobile websites in this year's survey used the placeholder attribute. Of those sites, nearly 3 out of 4 of them included the placeholder attribute and failed to include an programmatically associated `<label>` element.
 
 There are <a hreflang="en" href="https://www.smashingmagazine.com/2018/06/placeholder-attribute/">many accessibility issues that placeholder text can present</a>. For example, because it disappears when the user begins to type, people with cognitive disabilities can be disoriented and lose context for the purpose of the form element.
 
@@ -358,7 +358,7 @@ Before HTML 5 introduced the <a href="https://developer.mozilla.org/en-US/docs/W
 
 There are two attributes that can be used to communicate the required state of a form field to assistive technology. The `required` attribute will be announced by most screen readers and actually prevents form submission when a required field has not been properly filled out. The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute">`aria-required`</a> attribute can be used to indicate required fields to assistive technology, but does not come with any associated behaviour that would interfere with form submission.
 
-We found that 21% of desktop websites had form elements that have either an asterisks (*) in their label, the `required` attribute or the `aria-required` attribute or some combination of these techniques. Two-thirds of these form elements used the `required` attribute. About a third of all required inputs used the `aria-required` attribute.  Roughly 22% had an asterisk in their label.
+We found that 21% of desktop websites had form elements that have either an asterisks (*) in their label, the `required` attribute or the `aria-required` attribute or some combination of these techniques. Two-thirds of these form elements used the `required` attribute. About a third of all required inputs used the `aria-required` attribute. Roughly 22% had an asterisk in their label.
 
  {{ figure_markup(
   image="form-required-controls.png",
@@ -423,7 +423,7 @@ The top 5 file extensions explicitly included in the `alt` text value (for sites
 {{ figure_markup(
   image="all-attribute-lengths.png",
   caption="Alt attribute lengths.",
-  description="A bar chart chart showing no alt is set on 19.1% of desktop images and 19.0% of mobile images, it is set to empty on 26.9% and 27.0% respectively, it is 10 characters or less on 15.9% and 15.3%, 20 characters or less" on 13.9% and 14.0%, 30 characters or less" on 8.2% and 8.4%,100 characters or less" on 14.8% and 15.1%, and it is  greater than 100 characters on 1.1% and 1.1%.",
+  description="A bar chart chart showing no alt is set on 19.1% of desktop images and 19.0% of mobile images, it is set to empty on 26.9% and 27.0% respectively, it is 10 characters or less on 15.9% and 15.3%, 20 characters or less" on 13.9% and 14.0%, 30 characters or less" on 8.2% and 8.4%,100 characters or less" on 14.8% and 15.1%, and it is greater than 100 characters on 1.1% and 1.1%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=159159336&format=interactive",
   sheets_gid="384780873",
   sql_file="common_alt_text_length.sql"
@@ -498,7 +498,7 @@ Currently 69% (up from 65% in 2020) of desktop pages have at least one instance 
 
 One of the most common misuses of ARIA roles is adding a button role to non-interactive elements such as `<div>`s and `<span>`s, or to `<a>` elements. A native HTML `<button>` element comes with an implicit button role and the expected keyboard operability and behavior and should be the first approach before reaching for ARIA.
 
-We found that 29% (up from  25% in 2020) of desktop sites and 29% of mobile sites (up from 25% in 2020) had homepages with at least one element with an explicitly assigned `role="button"`. This suggests that close to a third of websites are using the `button` role on elements in order to change their semantics, with the exception of buttons that have been explicitly assigned the button role, which is redundant.
+We found that 29% (up from 25% in 2020) of desktop sites and 29% of mobile sites (up from 25% in 2020) had homepages with at least one element with an explicitly assigned `role="button"`. This suggests that close to a third of websites are using the `button` role on elements in order to change their semantics, with the exception of buttons that have been explicitly assigned the button role, which is redundant.
 
 If non-interactive elements such as `<div>`s and `<span>`s have been assigned a button role, there is a significant chance that the expected keyboard focus order and operability will not be applied, which would result in <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html">WCAG 2.1.1 Keyboard</a> and <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-order.html">2.4.3 Focus order problems</a>. In addition, <a hreflang="en" href="https://ericwbailey.design/writing/truths-about-digital-accessibility/#windows-high-contrast-mode-ignores-aria">Windows High Contrast Mode will not honor ARIA</a>, so elements that are not native HTML button elements may not appear to be interactable in this mode. We found that 11% of desktop and mobile sites have either a `<div>` or a `<span>` with an explicit `button` role.
 
@@ -539,14 +539,14 @@ The `aria-label` attribute allows a developer to provide a string value and this
 
 We found that 53% of desktop pages (up from 40% in 2020) and 52% of mobile home pages (up from 39% in 2020) had at least one element with the `aria-label` attribute, making it the most popular ARIA attribute for providing accessible names, with a very large increase in usage in 1 year. This could be a positive indication that more elements that previously were lacking an accessible name now have one. However, it could also signify an increase in elements having no visible label, which could negatively impact people with cognitive disabilities and voice to text users.
 
-The `aria-labelledby` attribute accepts an `id` reference as its value, which associates it with another element in the interface to provide its accessible name. The element becomes "labelled by" this other element which supplies its accessible name. We found that 21% of desktop pages (up from 18%  in 2020) and 20% of mobile pages (up from 16% in 2020) had at least one element with the `aria-labelledby` attribute.
+The `aria-labelledby` attribute accepts an `id` reference as its value, which associates it with another element in the interface to provide its accessible name. The element becomes "labelled by" this other element which supplies its accessible name. We found that 21% of desktop pages (up from 18% in 2020) and 20% of mobile pages (up from 16% in 2020) had at least one element with the `aria-labelledby` attribute.
 
 The `aria-describedby` attribute can be used in cases where a more robust description is needed for an element. It also accepts an id reference as its value to connect with descriptive text that exists elsewhere in the interface. It does not supply the accessible name; it should be used in conjunction with an accessible name as a supplement, not a replacement. We found that 13% of desktop pages and 12% of mobile pages had at least one element with the `aria-describedby` attribute.
 Fun fact! We found 1,886 websites with the attribute `aria-lavel`, which is a misspelling of the `aria-label` attribute! Be sure to run those automated checks to pick up these easily avoidable errors.
 
 #### Where do buttons get their accessible names from?
 
-Buttons typically get their accessible names from their content or an ARIA attribute. Per the <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">first rule of ARIA</a>, if an element can derive its accessible name without the use of ARIA, this is preferable. Therefore a  `<button>` should get its accessible name from its text content rather than an ARIA attribute if possible.
+Buttons typically get their accessible names from their content or an ARIA attribute. Per the <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">first rule of ARIA</a>, if an element can derive its accessible name without the use of ARIA, this is preferable. Therefore a `<button>` should get its accessible name from its text content rather than an ARIA attribute if possible.
 
 There is a common implementation where text content is not used to supply the accessible name because the button is a graphical control using an image or icon. This can be problematic for voice to text users who need to target the control without visible text and should not be used if visible text is an option.
 We found that 57% of buttons on desktop sites and 57% of buttons on mobile sites get their accessible name from content. We also found that 29% of buttons on desktop sites and 27% of buttons on mobile sites get their accessible names from the `aria-label` attribute.
@@ -569,7 +569,7 @@ We found that 54% of desktop pages (up from 48% in 2020) and 53% of mobile pages
 These techniques are most helpful when something in the visual interface is redundant or unhelpful to assistive technology users. Hiding content from assistive technology should never be used to skip over content that is challenging to make accessible.
 
 Hiding and showing content is a prevalent pattern in modern interfaces, and it can be helpful to declutter hidden UI for everyone.
-Hide/show widgets should be making use of the `aria-expanded` attribute to indicate to assistive technology that something can be revealed when the control is activated and hidden when activated again. We found that 26% of desktop pages (up from 21%  in 2020) and 25% of mobile pages (up from 21% in 2020) had at least one element with the`aria-expanded` attribute.
+Hide/show widgets should be making use of the `aria-expanded` attribute to indicate to assistive technology that something can be revealed when the control is activated and hidden when activated again. We found that 26% of desktop pages (up from 21% in 2020) and 25% of mobile pages (up from 21% in 2020) had at least one element with the`aria-expanded` attribute.
 
 ### Screen reader-only text
 
