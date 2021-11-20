@@ -56,7 +56,7 @@ Ecommerce platforms make a substantial part of non-CMS sites and are covered in 
 
 Our research identified over 200 individual CMSs, with these ranging from a single install to millions on a single CMS.
 
-Some of them are open source (e.g., example, WordPress and Joomla) and some of them are proprietary (e.g., Wix and Squarespace). Some CMS platforms can be used on "free" hosted or self-hosted plans, and there are also options for using these platforms on higher-tiered plans even at the enterprise level.
+Some of them are open source (e.g., WordPress and Joomla) and some of them are proprietary (e.g., Wix and Squarespace). Some CMS platforms can be used on "free" hosted or self-hosted plans, and there are also options for using these platforms on higher-tiered plans even at the enterprise level.
 
 The CMS space as a whole is a complex, federated universe of CMS ecosystems, all separated and at the same time intertwined.
 
