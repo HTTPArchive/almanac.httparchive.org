@@ -38,7 +38,7 @@ For this analysis, we considered any of the following to indicate that a website
 * Use of a known ecommerce platform (see limitations)
 * Use of a technology that implies an online store, e.g. <a hreflang="en" href="https://developers.google.com/tag-manager/enhanced-ecommerce">Google Analytics Enhanced Ecommerce</a>
 
-You can learn more about the [methodology](./methodology).
+You can learn more about the [Methodology](./methodology).
 
 ### Limitations
 
@@ -59,7 +59,7 @@ Next, the accuracy of metrics or commentary may also be affected by the followin
 
 ## Ecommerce platforms
 
-Our analysis considered mobile and desktop websites. These sites are those that are actively visited by Chrome users, [see the methodology](./methodology) for more information. Most of the websites visited are in both result sets but some are only in one. We will often share statistics for mobile and desktop. When there is little variation, we may choose to only show one. In this case, unless otherwise noted, only the mobile metrics will be shown.
+Our analysis considered mobile and desktop websites. These sites are those that are actively visited by Chrome users, see the [Methodology](./methodology) for more information. Most of the websites visited are in both result sets but some are only in one. We will often share statistics for mobile and desktop. When there is little variation, we may choose to only show one. In this case, unless otherwise noted, only the mobile metrics will be shown.
 
 The mobile analysis received responses from 7.5 million sites and found that 1.5 million (19.5%) of them had some form of ecommerce functionality. Similarly, the desktop analysis received responses from 6.3 million sites and found that 1.3 million (20.2%) were ecommerce.
 
@@ -270,7 +270,7 @@ Improvements may come from platforms increasing the accessibility of their stand
 
 Platforms can also encourage the wider app and theme communities to provide a high standard of technical quality. <a hreflang="en" href="https://www.shopify.com/partners/blog/theme-store-accessibility-requirements">Shopify announced</a> a minimum Lighthouse accessibility score requirement for any new marketplace themes.
 
-For more detailed research on accessibility scores across the web, read the [Accessibility chapter](./accessibility).
+For more detailed research on accessibility scores across the web, read the [Accessibility](./accessibility) chapter.
 
 #### PWA
 
@@ -366,7 +366,7 @@ Sites on all of the top ecommerce platforms performed well on this metric. On de
 
 Wix eCommerce is a platform that we've typically seen perform well but FID is one area it falls down on with only 92% of its websites having a good FID experience.
 
-That being said, all six perform better than non-ecommerce sites. [The Performance chapter](./performance) found that 90% of all sites on mobile achieved a good First Input Delay experience.
+That being said, all six perform better than non-ecommerce sites. [The Performance](./performance) chapter found that 90% of all sites on mobile achieved a good First Input Delay experience.
 
 #### Cumulative Layout Shift (CLS))
 
@@ -636,7 +636,7 @@ The obvious yet disappointing conclusion is the majority of ecommerce sites were
 
 ### Web push notifications
 
-Once a visitor gives their permission, the [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) enables ecommerce sites to send push notifications even when the website is not open.
+Once a visitor gives their permission, the [_Push API_](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) enables ecommerce sites to send push notifications even when the website is not open.
 
 We tried to look at the adoption of web push notifications by ecommerce sites using the Chrome User Experience report. As this is generated from real user data, we can also see the approval rates for push permission requests. Please refer to <a hreflang="en" href="https://developers.google.com/web/updates/2020/02/notification-permission-data-in-crux">this Google article</a> for more details on how this data is captured and what metrics are available.
 
