@@ -65,7 +65,7 @@ This year we found that only 22% of sites have passing color contrast scores in 
 
 Users with low vision may rely on zooming and scaling the page using system settings or screen magnifying software in order to view its content, especially text. The Web Content Accessibility Guidelines require that text in particular can be <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html">resized up to at least 200%</a>.
 
-Adrian Roselli wrote a <a hreflang="en" href="https://adrianroselli.com/2015/10/dont-disable-zoom.html">comprehensive article about the various harms caused when zooming is not enabled for users</a>. Many browsers now prevent developers from overriding zoom controls, but it must be avoided at the code-level, as we cannot count on every browser overriding this behaviour when we consider the wide range of browser and OS usage on a global scale.
+[Adrian Roselli](https://twitter.com/aardrian) wrote a <a hreflang="en" href="https://adrianroselli.com/2015/10/dont-disable-zoom.html">comprehensive article about the various harms caused when zooming is not enabled for users</a>. Many browsers now prevent developers from overriding zoom controls, but it must be avoided at the code-level, as we cannot count on every browser overriding this behaviour when we consider the wide range of browser and OS usage on a global scale.
 
 {{ figure_markup(
   image="pages-zooming-scaling-disabled.png",
@@ -92,14 +92,14 @@ When we consider the most popular sites in particular, the numbers for mobile ar
 Language identification
 {{ figure_markup(
   caption="Desktop sites have a valid `lang` attribute.",
-  content="8%",
+  content="80.5%",
   classes="big-number",
-  sheets_gid="1325555803",
+  sheets_gid="2009310389",
   sql_file="common_html_lang_attrib.sql"
 )
 }}
 
-Setting an HTML `lang` attribute allows easy translation of a page and better screen reader support, allowing some screen readers to apply the appropriate accent and inflection to the text being read. The percentage of sites with a `lang` attribute increased this year to 81% (up from 78% in 2020), and of the sites that have the attribute present, 99% had a _valid_ `lang` attribute.
+Setting an HTML `lang` attribute allows easy translation of a page and better screen reader support, allowing some screen readers to apply the appropriate accent and inflection to the text being read. The percentage of sites with a `lang` attribute increased this year to 81% (up from 78% in 2020), and of the sites that have the attribute present, 99.7% had a _valid_ `lang` attribute.
 
 ### Font size and line height
 
@@ -109,11 +109,15 @@ There is no specific requirement from the WCAG with respect to minimum font size
 
 When fonts are declared in `px` units, they are static sizes. The best way to ensure that fonts scale appropriately when the browser is zoomed is to use <a hreflang="en" href="https://www.24a11y.com/2019/pixels-vs-relative-units-in-css-why-its-still-a-big-deal/">relative units such as `em` and `rem`</a>. We found that 68% of desktop font size declarations are set in `px`, 17% are set in `em` and 5% are set with `rem` units.
 
+{# TODO (Authors) - where are these stats from? Should we add a figure #}
+
 ### Focus Styles
 
 Visible focus styles are helpful for everyone, but are necessary for sighted keyboard users who rely on their presence to navigate. The WCAG requires a <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-visible.html">visible focus indicator</a> for all interactive content.
 
 Often times, default focus indication is removed from interactive content such as buttons, form controls, and links using the CSS property `:focus { outline: none; }` or `:focus { outline: 0; }`, sometimes in conjunction with `:focus-within` and/or `:focus-visible`. We found that 91% of desktop pages have `:focus { outline: 0; }` declared. In some cases, it is removed so that a more effective custom style can be applied. Unfortunately, in many cases it is simply removed and never replaced, which can render a page unusable for keyboard users.
+
+{# TODO (Authors) - where are these stats from? Should we add a figure #}
 
 For more information about how to achieve accessible focus indication including some limitations of browser default focus styles, we recommend Sara Soueidan's article, <a hreflang="en" href="https://www.sarasoueidan.com/blog/focus-indicators/">"A guide to designing accessible, WCAG-compliant focus indicators"</a>.
 
@@ -122,6 +126,8 @@ For more information about how to achieve accessible focus indication including 
 {# TODO authors - can we think of a better name for this section? It covers more that just what's in there now #}
 
 The <a hreflang="en" href="https://www.w3.org/TR/mediaqueries-5">CSS Media Queries Level 5 specification</a>, published in 2020, introduced a collection of User Preference Media Queries that allow a website to detect Accessibility features that a user may have configured outside of the website itself. These features are typically configured through operating system or platform preferences.
+
+{# TODO (Authors) - where are these stats from? Should we add a figure #}
 
 `prefers-reduced-motion` is used by web authors to replace animations or other sources of motion on the web page with a more static experience, typically by removing or replacing the content. This can help a range of people that may be distracted or otherwise triggered by rapid movement on the screen. We found that 32% of websites use the `prefers-reduced-motion` media query.
 
@@ -200,6 +206,15 @@ When a page has multiple instances of the same landmark, for example, a primary 
 
 Descriptive page titles are helpful for context when moving between pages, tabs, and windows with assistive technology because the change in context will be announced.
 
+ {{ figure_markup(
+  image="page_title-information.png",
+  caption="Title element statistics",
+  description="A bar chart showing 98.2% of desktop sites and 98.1% of mobile sites use the `<title>` element, 68.5% and 69.3% of thoise titles have four or more words, and 4.1% on both desktop and mobile are changed on render.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=467029485&format=interactive",
+  sheets_gid="1437437016",
+  sql_file="page_title.sql"
+) }}
+
 Our data shows 98% of web pages have a title. However, only 68% of those pages have a title containing four or more words, meaning that it is likely that a significant percentage of web pages do not have a unique, meaningful title that provides enough information about the content of the page.
 
 ### Secondary Navigation
@@ -219,11 +234,24 @@ If an element should be focusable but not in the keyboard focus order a tabindex
 
 The focus order of the page should always be determined by the document flow meaning the order of the HTML elements in the document. Setting the `tabindex` to a positive integer value overrides the natural order of the page, often leading to failures of <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-order.html">WCAG 2.4.3 - Focus Order</a>. Respecting the natural focus order of a page generally leads to a more accessible experience than overengineering the keyboard focus order.
 
-We found that 58% of desktop sites and 56% of mobile sites have some usage of the `tabindex` attribute. When we look at desktop pages that have at least one instance of the `tabindex` attribute:
+We found that 58% of desktop sites and 56% of mobile sites have some usage of the `tabindex` attribute.
+
+ {{ figure_markup(
+  image="tabindex-usage-and-values.png",
+  caption="Tabindex usage",
+  description="Bar chart showing that of pages that use `tabindex`, a negative or zero tab index is used on 96.9% of those pages for desktop and 97.4% of those pages for mobile, a tabindex of 0 is used on 68.2% and 68.3% respectively, a negative `tabindex` is used on 74.2% and 73.3%, and finally a positive `tabindex` is used on 8,7% and 7.7%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=632373616&format=interactive",
+  sheets_gid="1330777562",
+  sql_file="tabindex_usage_and_values.sql"
+) }}
+
+When we look at desktop pages that have at least one instance of the `tabindex` attribute:
 
 * 74% use a value of `0`, meaning elements are focusable and being added to the keyboard focus order
 * 68% use a negative integer, meaning elements are explicitly removed from the keyboard focus order
 * 9% have a positive integer value, meaning the web author is trying to control the focus order rather than allowing the DOM structure to do so
+
+{# TODO (Authors)#}
 
 While there are valid declarations for the `tabindex` attribute, incorrectly reaching for these techniques leads to common accessibility barriers for many keyboard and assistive technology users. For more information about the pitfalls of using a positive integer for `tabindex` we recommend this article, <a hreflang="en" href="https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad?utm_content=153549513&utm_medium=social&utm_source=twitter&hss_channel=tw-2309265523">"Why using `tabindex` values greater than "0" is bad"</a>.
 
@@ -233,9 +261,10 @@ Skip links help people who rely on keyboards to navigate. They enable a user to 
 
 Some websites that are very information dense have several skip links to allow users to jump to the commonly trafficked areas of the site. For example, <a hreflang="en" href="https://www.canada.ca/">the government of Canada's website</a> has "skip to main content", "skip to about government" and "switch to basic HTML version".
 
-Skip links are considered a <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html">bypass for a block</a>. There is no way for us to query for all possible skip link implementations, however we found that close to 20% of desktop and mobile sites likely have a skip link. We determined this by looking for the presence of an `href="#main"` attribute on one of the first three links on the page, which is a common implementation for a skip link.
+Skip links are considered a <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html">bypass for a block</a>. There is no way for us to query for all possible skip link implementations, however we found that close to 20% of desktop and mobile sites _likely_ have a skip link. We determined this by looking for the presence of an `href="#main"` attribute on one of the first three links on the page, which is a common implementation for a skip link.
 
 ### Heading hierarchy
+
 Headings make it easier for screen readers to properly navigate a page by supplying a hierarchy that can be jumped through like a table of contents.
 
 {{ figure_markup(
@@ -255,12 +284,55 @@ Tables are an efficient way to display data with two axes of relationships, maki
 
 Tables should have a well-formatted structure with the appropriate elements and defined relationships, including a caption, appropriate headers and footers, and a corresponding header cell for every data cell. Screen reader users rely on such well-defined relationships through what is announced, so an incomplete or an incorrectly declared structure can lead to misleading or missing information.
 
+
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+        <th scope=colgroup" colspan="2">Table sites</th>
+        <th scope=colgroup" colspan="2">All sites</th>
+      </tr>
+      <tr>
+        <td></td>
+        <th scope="col">Desktop</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Desktop</th>
+        <th scope="col">Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Captioned tables</td>
+        <td class="numeric">5.4%</td>
+        <td class="numeric">4.6%</td>
+        <td class="numeric">1.2%</td>
+        <td class="numeric">1.0%</td>
+      </tr>
+      <tr>
+        <td>Presentational table</td>
+        <td class="numeric">1.2%</td>
+        <td class="numeric">0.9%</td>
+        <td class="numeric">0.5%</td>
+        <td class="numeric">0.4%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(
+    caption="Accessible table usage.",
+    sheets_gid="1802381033",
+    sql_file="table_stats.sql"
+  ) }}</figcaption>
+</figure>
+
 ### Table captions
+
 Table captions act as a heading for the full table to provide a summary of its information. When labelling a table, the `<caption>` element is the correct semantic choice to provide the most context to a screen reader user.
 
 Heading elements for the full table are frequently unnecessary when a `<caption>` element has been properly implemented, and the `<caption>` element can be styled and visually positioned in a way that resembles a heading. Only 5% of desktop and mobile sites with table elements present used a `<caption>`, which is a slight increase from 2020.
 
 ### Tables for layout
+
 The introduction of CSS methodologies such as <a hreflang="en" href="https://www.w3schools.com/css/css3_flexbox.asp">Flexbox</a> and <a hreflang="en" href="https://www.w3schools.com/css/css_grid.asp">Grid</a> provided the capability for web developers to easily create fluid responsive layouts. Prior to this development, developers frequently used tables for layout instead of presenting data. Unfortunately, due to a combination of legacy websites and legacy development techniques, websites still exist where tables are used for layout. It is difficult to determine how widely this legacy development technique is still used.
 
 If there is an absolute need to reach for this technique, the role of `presentation` should be applied to the table such that assistive technology will ignore the table semantics. We found that 1% of desktop and mobile pages contain a table with a role of presentation. It's hard to know if this is good or bad. It could indicate that there are not many tables used for presentational purposes, but it is very likely that tables used for layout are just lacking this needed role.
