@@ -34,7 +34,7 @@ In some of the sections, we focus only on the top CMSs in terms of adoption, due
 
 Let's dive into our analysis.
 
-_**Disclaimer:** Alon works at Wix where he leads the web performance efforts, but opinions are his own._
+<p class="note">**Disclaimer:** Alon works at Wix where he leads the web performance efforts, but opinions are his own.</a>
 
 ## What is a CMS?
 
@@ -46,11 +46,11 @@ There is great variability in the type and scope of the support CMSs provide for
 
 When we think about CMSs, we need to account for all the components that play a role in the viability of such a system for providing a platform for publishing content on the web. All of these components form an ecosystem surrounding the CMS platform, and they include hosting providers, extension developers, development agencies, site builders, etc. Thus, when we talk about a CMS, we usually refer to both the platform itself and its surrounding ecosystem.
 
-Our definition of a CMS in this chapter uses Wappalyzer's [definition](./methodology#wappalyzer) of a CMS.
+Our definition of a CMS in this chapter uses <a hreflang="en" href="https://www.wappalyzer.com/technologies/cms">Wappalyzer's definition</a> of a CMS.
 
-Shopify, Magento, Webflow, and some other platforms do not appear in this chapter's analysis, because they are not marked as a CMS in <a hreflang="en" href="https://www.wappalyzer.com/technologies/cms">Wappalyzer</a>.
+We encourage CMSs to contribute to this <a hreflang="en" href="https://github.com/AliasIO/wappalyzer">open-source project</a> to improve detection and classification in the future.
 
-We encourage CMSs to contribute to this open-source <a hreflang="en" href="https://github.com/AliasIO/wappalyzer">project</a> to improve detection and classification in the future.
+Shopify, Magento, Webflow, and some other platforms do not appear in this chapter's analysis, because they are not marked as a CMS in Wappalyzer.
 
 Ecommerce platforms make a substantial part of non-CMS sites and are covered in the [Ecommerce chapter](./ecommerce). For example, Shopify grew substantially in the past year and accounted for 3.7% of websites in July according to <a hreflang="en" href="https://w3techs.com/technologies/history_overview/content_management/all/q">W3Techs</a>.
 
@@ -73,13 +73,15 @@ Our analysis throughout this work looks at desktop and mobile websites. The vast
   sql_file="cms_adoption.sql"
 ) }}
 
-As of July 2021, over 45% of public websites are powered by a CMS platform, indicating growth of over 7% from 2020. This breaks down to 45% on desktop, up from 42% in 2019, and 46% on mobile, up from 42% in 2020.
+As of July 2021, over 45% of public websites are powered by a CMS platform, indicating growth of over 7% [from 2020](../2020/cms#cms-adoption). This breaks down to 45% on desktop, up from 42% in 2019, and 46% on mobile, up from 42% in 2020.
 
 It is interesting to compare these numbers with another commonly used dataset, such as <a hreflang="en" href="https://w3techs.com/technologies/history_overview/content_management/all/q">W3Techs</a>, which reported that as of July 2021, 64.6% of websites are created using a CMS, up from 59.2% in July 2020, which is an increase of over 9%.
 
 The deviation between our analysis and W3Techs' analysis can be explained by a difference in research methodologies, and the definition of what is a CMS.
 
-W3Techs definition is the following: "_Content management systems are applications for creating and managing the content of a website. We include all such systems in this category, also systems that are often classified as wikis, blog engines, discussion boards, static site generators, website editors or any type of software that provides website content_."
+W3Techs definition is the following: "_Content Management Systems are applications for creating and managing the content of a website. We include all such systems in this category, also systems that are often classified as wikis, blog engines, discussion boards, static site generators, website editors or any type of software that provides website content_."
+
+{# TODO You don't explain whats different? I guess it's implied that Wappalyzer has a stricter definition excluding Shopify and the like, but should be be more explicit on this rather than assuming the readers will follow? #}
 
 You can read more about ours on the [Methodology](./methodology) page.
 
@@ -89,16 +91,16 @@ CMS platforms are extensively used around the world, with some variance by count
 
 {{ figure_markup(
   image="cms-adoption-geo.png",
-  caption="CMS adoption by geography.",
+  caption="CMS adoption by country.",
   description="Bar chart showcasing the adoption of CMSs by geography, in the 10 countries with the largest amount of websites. In the US, 47% of mobile websites are built using a CMS, and 46% of desktop websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=2092976179&format=interactive",
-  width=600,
-  height=538,
   sheets_gid="1226921580",
-  sql_file="cms_adoption_by_geo.sql"
+  sql_file="cms_adoption_by_geo.sql",
+  width=600,
+  height=538
 ) }}
 
-Among the geographies with the highest number of websites, CMS adoption percentage is the highest in the US, Italy, and Spain, where 46% - 47% of mobile sites visited by users are built with a CMS. India and Brazil have the lowest adoption with only 35% and 37%.
+Among the geographies with the highest number of websites, CMS adoption percentage is the highest in the US, Italy, and Spain, where 46%–47% of mobile sites visited by users are built with a CMS. India and Brazil have the lowest adoption with only 35% and 37%.
 
 We can also split this data into <a hreflang="en" href="https://github.com/GoogleChrome/CrUX/blob/main/utils/countries.json">subregions</a> around the globe, sorted by the most popular regions, to better identify macro-trends:
 
@@ -107,10 +109,10 @@ We can also split this data into <a hreflang="en" href="https://github.com/Googl
   caption="CMS adoption by subregion.",
   description="Bar chart showcasing the adoption of CMSs by sub-regions around the world. Southern Europe has the highest CMS adoption of 50% on mobile sites, while Eastern Asia, Northern Africa and Middle Africa have the lowest adoption of 33%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=1483728038&format=interactive",
-  width=600,
-  height=701,
   sheets_gid="180022563",
-  sql_file="cms_adoption_by_region.sql"
+  sql_file="cms_adoption_by_region.sql",
+  width=600,
+  height=701
 ) }}
 
 Adoption is highest in Southern Europe where half of the sites are using a CMS, and lowest in Eastern Asia where only a third of sites in our dataset use a CMS.
@@ -128,7 +130,7 @@ We also examined CMS adoption by the estimated rank of the sites.
   sql_file="cms_adoption_by_rank.sql"
 ) }}
 
-CMSs account for only 7% of the top 1000 mobile websites, compared to 42% of the top 10M websites. This can be explained by the fact that smaller businesses and websites tend to use a CMS due to the ease of use, and the higher ranked websites tend to be built with proprietary solutions by professional web developers. With the continuing growth in usage of CMS platforms, it would be interesting to see if CMS platforms will also be able to increase adoption rates among the higher-ranking sites in the coming years.
+CMSs account for only 7% of the top 1,000 mobile websites, compared to 42% of the complete dataset of all sites in our analysis. This can be explained by the fact that smaller businesses and websites tend to use a CMS due to the ease of use, and the higher ranked websites tend to be built with proprietary solutions by professional web developers. With the continuing growth in usage of CMS platforms, it would be interesting to see if CMS platforms will also be able to increase adoption rates among the higher-ranking sites in the coming years.
 
 ## Top CMSs
 
@@ -156,7 +158,9 @@ Drilling into the adoption by CMS across all websites, out of 218 different CMS 
 
 WordPress, the most commonly used platform, is used by 33.6% of these websites, up from 31.4% in 2020, a 7% increase in total adoption.
 
-Joomla and Drupal adoption is dropping - Joomla sites accounted for 1.9% of websites, down from 2.1% last year (9.5% decrease), and Drupal dropped from 2% to 1.8% (10% decrease).
+In percentage terms, Joomla and Drupal adoption is dropping–Joomla sites accounted for 1.9% of websites, down from 2.1% last year (9.5% decrease), and Drupal dropped from 2% to 1.8% (10% decrease). Absolute adoption did increase, but as a percentage of both overal CMS usage and of our (ever increasing!) data set, it is smaller.
+
+{# TODO Added a comment about absolute figures as think it's interesting. Feel free to remove if you disagree. #}
 
 Wix adoption grew from 1.2% to 1.6% (33% increase) and Squarespace grew from 0.9% to 1% (11% increase).
 
@@ -171,9 +175,11 @@ Examining the adoption of these sites built on CMS platforms by their <a hreflan
   sql_file="top_cms_by_rank.sql"
 ) }}
 
-3.1% of mobile sites in the top 1K are built with WordPress, and 33.6% of the top 10M. Drupal maintains a higher adoption rate within the mid-ranged rankings (10K - 1M), while most of Wix and Squarespace sites are ranked outside the top 1M sites.
+3.1% of mobile sites in the top 1K are built with WordPress, and 33.6% of all sites. Drupal maintains a higher adoption rate within the mid-ranged rankings (10K–1M), while most of Wix and Squarespace sites are ranked outside the top 1M sites.
 
 ## CMS user experience
+
+{# TODO Headings should always have at least one sentence. Can we add an introduction saying what this section is covering and whu? #}
 
 ### Core Web Vitals
 
@@ -189,7 +195,7 @@ In this section we focused on data from July 2021 to provide a consistent timefr
 
 These metrics aim to cover the core elements which are indicative of a great web user experience. The [Performance](./performance) chapter covers these in more detail, but here we are interested in looking at these metrics specifically in terms of CMSs.
 
-Initially, let's review the 10 CMS platforms with the highest number of origins, and examine what percentage of sites on each platform have a **passing** grade, meaning that the 75th percentile of each of the above metrics must be in the "good" (green) range for each site.
+Initially, let's review the 10 CMS platforms with the highest number of origins, and examine what percentage of sites on each platform have a _passing_ grade, meaning that the 75th percentile of each of the above metrics must be in the "good" (green) range for each site.
 
 {{ figure_markup(
   image="core-web-vitals.png",
@@ -229,7 +235,7 @@ All of these CMSs showed an improvement in the percentage of origins with good C
 
 Let's drill into the three Core Web Vitals, to see where each platform has room to improve, and which metrics improved the most since last year:
 
-#### Largest Contentful Paint
+#### Largest Contentful Paint (LCP)
 
 Largest Contentful Paint (LCP) measures the point in time when the page's main content has likely loaded and thus the page is useful to the user. It does this by measuring the render time of the largest image or text block visible within the viewport.
 
@@ -305,7 +311,7 @@ Cumulative Layout Shift (CLS) measures the visual stability of content on a web 
 
 A layout shift occurs any time a visible element changes its position from one rendered frame to the next.
 
-The CLS metric has <a hreflang="en" href="https://web.dev/evolving-cls/">evolved</a> in the past year, mainly introducing the concept of Session Windows, to be fairer to long-lived pages and Single Page Apps (SPAs).
+The <a hreflang="en" href="https://web.dev/evolving-cls/">CLS metric has evolved</a> in the past year, mainly introducing the concept of Session Windows, to be fairer to long-lived pages and Single Page Apps (SPAs).
 
 A score of 0.1 or below is measured as "good", over 0.25 as "poor", and anything in between as "needs improvement".
 
@@ -320,7 +326,7 @@ A score of 0.1 or below is measured as "good", over 0.25 as "poor", and anything
   sql_file="core_web_vitals.sql"
 ) }}
 
-Wix had the best CLS score, with 81% of mobile origins having a "good" CLS. Adobe Experience Manager had the lowest CLS scores, with only 44% of mobile origins having a good CLS. Because layout shifts can usually be avoided, regardless of connection speeds - all platforms should strive to improve these numbers by <a hreflang="en" href="https://web.dev/optimize-cls/">reducing layout shifts</a> to the bare minimum.
+Wix had the best CLS score, with 81% of mobile origins having a "good" CLS. Adobe Experience Manager had the lowest CLS scores, with only 44% of mobile origins having a good CLS. Because layout shifts can usually be avoided, regardless of connection speeds–all platforms should strive to improve these numbers by <a hreflang="en" href="https://web.dev/optimize-cls/">reducing layout shifts</a> to the bare minimum.
 
 {{ figure_markup(
   image="core-web-vitals-cls-yoy.png",
@@ -339,7 +345,7 @@ Comparing yearly data, we can see that most CMSs made some progress, or benefite
 
 <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> is an open-source, automated tool for improving the quality of web pages. One key aspect of the tool is that it provides a set of audits to assess the status of a website in terms of performance, accessibility, SEO, best practices, and more. Lighthouse reports provide lab data, a way developers can get suggestions on how to improve website performance, but the Lighthouse score has no direct implications on the actual field data collected by <a hreflang="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">CrUX</a>. You can read more on Lighthouse and the correlation between its <a hreflang="en" href="https://web.dev/lab-and-field-data-differences/">lab scores and field data</a>.
 
-HTTP Archive runs Lighthouse on all its mobile web pages (unfortunately, no desktop results), which are also <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/docs/throttling.md">throttled</a> to emulate a slow 4G connection with a CPU slowdown, as detailed in our [Methodology](./methodology#lighthouse).
+HTTP Archive runs Lighthouse on all its mobile web pages (unfortunately, no desktop results), which are also [throttled to emulate a slow 4G connection with a CPU slowdown](./methodology#lighthouse).
 
 We can analyze this data to provide another perspective on CMS performance, using the results of these synthetic tests, which also include metrics that are not tracked in CrUX.
 
@@ -377,7 +383,7 @@ Search Engine Optimization (or SEO) is the practice of improving a website to ma
 
 The median SEO score in all of the top 10 platforms is over 84, with Drupal scoring the lowest and Wix scoring the highest with a median score of 95.
 
-#### Accessibility Score
+#### Accessibility score
 
 An accessible website is a site designed and developed so that people with disabilities can use them. Web accessibility also benefits people without disabilities, such as those on slow internet connections. Read more in our [Accessibility](./accessibility) chapter.
 
@@ -477,7 +483,7 @@ We can examine the usage of the different image formats across the top CMSs:
   sql_file="resource_weights.sql"
 ) }}
 
-GoDaddy Website Builder and Wix make the most use of WebP, with ~58% and 33% adoption respectively, while WordPress, Joomla, and Drupal barely serve WebP - only ~5.7% of images served by WordPress sites are WebP. AVIF is barely used by these platforms, with less than ~0.1% on all platforms.
+GoDaddy Website Builder and Wix make the most use of WebP, with ~58% and 33% adoption respectively, while WordPress, Joomla, and Drupal barely serve WebP–only ~5.7% of images served by WordPress sites are WebP. AVIF is barely used by these platforms, with less than ~0.1% on all platforms.
 
 With the <a hreflang="en" href="https://caniuse.com/webp">growing support of WebP</a>, it seems all platforms have work to do to reduce the usage of the older JPEG and PNG formats, where it is applicable without compromising on image quality.
 
@@ -492,7 +498,7 @@ With the <a hreflang="en" href="https://caniuse.com/webp">growing support of Web
   sql_file="resource_weights.sql"
 ) }}
 
-The largest five CMSs all deliver pages that rely on JavaScript, with Drupal delivering the least amount of JavaScript bytes - 372 KB on mobile, while Wix delivers the most JavaScript bytes, over 1.1 MB.
+The largest five CMSs all deliver pages that rely on JavaScript, with Drupal delivering the least amount of JavaScript bytes–372 KB on mobile, while Wix delivers the most JavaScript bytes, over 1.1 MB.
 
 #### HTML document
 
@@ -505,7 +511,7 @@ The largest five CMSs all deliver pages that rely on JavaScript, with Drupal del
   sql_file="resource_weights.sql"
 ) }}
 
-Examining the HTML document sizes, we can see that most of the top CMSs deliver a median HTML size of ~22 KB - 34 KB, except Wix which delivers substantially more HTML of ~123 KB. This can suggest extensive use of inlined resources and shows an area that can be further improved.
+Examining the HTML document sizes, we can see that most of the top CMSs deliver a median HTML size of ~22 KB–34 KB, except Wix which delivers substantially more HTML of ~123 KB. This can suggest extensive use of inlined resources and shows an area that can be further improved.
 
 
 #### CSS
@@ -537,7 +543,7 @@ To display text, web developers often choose to use a variety of fonts. Joomla d
 
 ## WordPress specific
 
-WordPress is the most commonly used CMS today - almost 3 out of 4 sites built with a CMS are using WordPress, thus deserving further discussion.
+WordPress is the most commonly used CMS today–almost 3 out of 4 sites built with a CMS are using WordPress, thus deserving further discussion.
 
 WordPress is an open source project, which has been around since 2003. Many sites built on WordPress use various themes and plugins, sometimes through page builders such as Elementor or Divi.
 
@@ -551,7 +557,7 @@ First, we examined WordPress adoption by geography, across all sites in our data
 
 {{ figure_markup(
   image="wordpress-adoption-geo.png",
-  caption="WordPress adoption by geography.",
+  caption="WordPress adoption by country.",
   description="Bar chart depicting the adoption of WordPress in each of the 10 geographies with the most websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzYkQYaBTpD5FKloDXsdb32Y2pjdxFZq_LoekECgTy53F-dRATm9wFFJ3dDVDS8_cGn0h2mKDBjgdM/pubchart?oid=625154641&format=interactive",
   width=600,
@@ -595,7 +601,7 @@ We explored how WordPress sites use external resources, and separated them betwe
   sql_file="wordpress_resources.sql"
 ) }}
 
-The median mobile WordPress page loads 24 resources under the /plugins/ path, 18 resources under the /themes/ path, and 12 resources under the /wp-includes/ path. In the 90th percentile, we see a huge amount of resource requests, with 78 plugin resources, 56 themes, and 24 wp-includes!
+The median mobile WordPress page loads 24 resources under the `/plugins/` path, 18 resources under the `/themes/` path, and 12 resources under the `/wp-includes/` path. In the 90th percentile, we see a huge amount of resource requests, with 78 plugin resources, 56 themes, and 24 wp-includes!
 
 WordPress's extension ecosystem provides extraordinary flexibility and may be a major contributor to its high adoption rate. On balance it also appears detrimental to performance in many cases, due to the number of plugins available and the many resources they depend on.
 
