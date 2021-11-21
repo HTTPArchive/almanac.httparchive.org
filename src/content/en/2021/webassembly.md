@@ -7,6 +7,7 @@ reviewers: [jsoverson, carlopi, kripken]
 analysts: [RReverser]
 editors: []
 translators: []
+RReverser_bio:
 results: https://docs.google.com/spreadsheets/d/1IMa2SbdQgshb4pGWF1KOh9s4zMtLbRymWZGYjdaatXY/
 featured_quote: TODO
 featured_stat_1: TODO
@@ -15,6 +16,7 @@ featured_stat_2: TODO
 featured_stat_label_2: TODO
 featured_stat_3: TODO
 featured_stat_label_3: TODO
+unedited: true
 ---
 
 ## Introduction
