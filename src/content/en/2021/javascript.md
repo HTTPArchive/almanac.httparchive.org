@@ -422,7 +422,7 @@ As it turns out, 2.6% of requests use this antipattern with both `async` and `de
 
 ### first party vs third party
 
-The median number of JavaScript resources requested on desktop pages, as observed earlier, is 21. Let us now look into which ones of these are first party or third party requests. 
+The median number of JavaScript resources requested on desktop pages, as [observed earlier](#how-much-javascript-do-we-load), is 21. Let us now look into which ones of these are first-party or third-party requests. 
 
 
 {{ figure_markup(
@@ -445,7 +445,7 @@ The median number of JavaScript resources requested on desktop pages, as observe
   )
 }}
 
-A median of desktop pages request 11 third-party resources whereas 10 first-party requests. This difference increases as we move up to the 90th percentile as 33 requests on mobile pages are first party but the number goes up to 34 for third-party requests for the mobile pages.  Clearly, the number of third party resources requested is always one step ahead of the first-party resources. Irrespective of the performance and reliability [risks that requesting third-party resources brings](https://css-tricks.com/potential-dangers-of-third-party-javascript/), the usage seems to favour third-party scripts, which could be due to the [useful interactivity features](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript) that it gives to the web. 
+A median of desktop pages request 11 third-party resources whereas 10 first-party requests. This difference increases as we move up to the 90th percentile as 33 requests on mobile pages are first party but the number goes up to 34 for third-party requests for the mobile pages.  Clearly, the number of third-party resources requested is always one step ahead of the first-party ones. Irrespective of the performance and reliability [risks that requesting third-party resources brings](https://css-tricks.com/potential-dangers-of-third-party-javascript/), the usage seems to favour third-party scripts, which could be due to the [useful interactivity features](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript) that it gives to the web. 
 
 This is where one has to put their ‘performance-nerd’ cap on, and ensure that using third-party script, he [doesn’t lose control over the performance of the page or let the main thread get bloated](https://csswizardry.com/2017/07/performance-and-resilience-stress-testing-third-parties/) with too much JavaScript being transferred by [loading these scripts better](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript).
 
@@ -1038,7 +1038,7 @@ It would instead be interesting to look at how the popular frameworks and librar
 <figcaption>{{ figure_link(caption="Javascript frameworks usage with JavaScript libraries.", sheets_gid="1934429143", sql_file="frameworks_libraries_combos.sql") }}</figcaption>
 </figure>
 
-As can be observed, jQuery tops in usage with libraries and frameworks, which could also be a result of using a third party library that involves it. This, as a result, leads to more processing time for the code that the framework or library uses with the other included libraries.
+As can be observed, jQuery tops in usage with libraries and frameworks, which could also be a result of using a third-party library that involves it. This, as a result, leads to more processing time for the code that the framework or library uses with the other included libraries.
 
 22% of known versions of jQuery are found to be version 3.5.1. This is a big jump compared to last year’s (1.12.4), which could be attributed to Wordpress which constitutes most of the participation of jQuery. 
 
@@ -1265,7 +1265,7 @@ With such comparable data, let us actually check if the percentage difference is
   )
 }}
 
-59% of third-party scripts are gzipped and 30% are brotli compressed. Looking at first party scripts, these are 52% with gzip compression but only 32% with brotli. There are still 11% of third-party scripts that do not have any compression method defined for the resources.
+59% of third-party scripts are gzipped and 30% are brotli compressed. Looking at first-party scripts, these are 52% with gzip compression but only 32% with brotli. There are still 11% of third-party scripts that do not have any compression method defined for the resources.
 
 {{ figure_markup(
   image="uncompressed-first-third-party.png",
@@ -1278,7 +1278,7 @@ With such comparable data, let us actually check if the percentage difference is
 }}
 
 
-The way preloading all our requests negates the impact of the attribute, a similar problem occurs when we try to optimise and compress some resource that doesn’t need compression and is already small. It is observed that 90% of uncompressed third party JS resources are &lt; 5 KB, and uncompressed first party resources less than 10kb are only 8%. 
+The way preloading all our requests negates the impact of the attribute, a similar problem occurs when we try to optimise and compress some resource that doesn’t need compression and is already small. It is observed that 90% of uncompressed third party JS resources are &lt; 5 KB, and uncompressed first-party resources less than 10kb are only 8%. 
 
 
 ### Minification
@@ -1315,7 +1315,7 @@ To dive deeper into understanding how many bytes per page are unminified.
 
 And it is found that 57% of mobile pages have 0 KB of unminified JS whereas 18% of those have 0-10 kilobytes of unminified JS.
 
-The first-party vs. third party analysis in this case shows that 82% of the average mobile page's unminified JS bytes actually come from first party scripts.
+The first party vs. third party analysis in this case shows that 82% of the average mobile page's unminified JS bytes actually come from first-party scripts.
 
 {{ figure_markup(
   image="average-unminified-js-bytes.png",
@@ -1342,7 +1342,7 @@ Source maps are files sent along with the JavaScript resource files to let the b
 
 It is found that ~98% of mobile pages do not use the SourceMap response header on script resources whereas only 0.09% use it on resources. One reason for this extremely small percentage could be that not many sites choose to put their source code in production through the source map.
 
-An analysis of how many sites actually send the source map header on their first party or third party scripts shows:
+An analysis of how many sites actually send the source map header on their first-party or third-party scripts shows:
 
 {{ figure_markup(
   image="sourcemap-first-third-party.png",
@@ -1354,11 +1354,11 @@ An analysis of how many sites actually send the source map header on their first
   )
 }}
 
-98% of the JS requests that include a SourceMap header on mobile are for first party scripts.
+98% of the JS requests that include a SourceMap header on mobile are for first-party scripts.
 
 ### Security vulnerabilities
 
-Using third party libraries comes with its own benefits and drawbacks. When using third-party libraries, one extra step for developers is to ensure the security that the library brings. Lighthouse runs this security audit for the third-party libraries used using the package name and its version. These packages can then be checked if there is any vulnerability that has been identified related to those. This is done using the [Snyk’s open source vulnerability database](https://snyk.io/vuln?type=npm).
+Using third-party libraries comes with its own benefits and drawbacks. When using third-party libraries, one extra step for developers is to ensure the security that the library brings. Lighthouse runs this security audit for the third-party libraries used using the package name and its version. These packages can then be checked if there is any vulnerability that has been identified related to those. This is done using the [Snyk’s open source vulnerability database](https://snyk.io/vuln?type=npm).
 
 {{ figure_markup(
   content="63.9%",
