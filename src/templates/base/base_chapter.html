@@ -58,6 +58,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 </script>
 {% endif %}
 {{ super() }}
+<script async src="{{ get_versioned_filename('/static/js/webmentions.js') }}" nonce="{{ csp_nonce() }}"></script>
 {% endblock %}
 
 {# Calls to action for readers who want to engage more with this chapter. #}
@@ -147,6 +148,49 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
   {% endfor %}{{ self.translated_by_after() }}
   </div>
   {% endif %}
+{% endmacro %}
+
+{% macro render_webmentions() %}
+  <h2 id="reactions">
+    <a href="#reactions" class="anchor-link">{{ self.reactions() }}</a>
+    <div class="reactions">
+      <div class="reaction-tabs" role="tablist" aria-label="Reaction Tabs">
+        <button
+          role="tab"
+          aria-selected="true"
+          aria-controls="likes-panel"
+          id="likes-tab"
+          tabindex="0"
+        >
+          <span id="likes-count">0</span> {{ self.likes() }}
+        </button>
+        <button
+          role="tab"
+          aria-selected="false"
+          aria-controls="reposts-panel"
+          id="reposts-tab"
+          tabindex="-1"
+        >
+          <span id="reposts-count">0</span> {{ self.reposts() }}
+        </button>
+        <button
+          role="tab"
+          aria-selected="false"
+          aria-controls="replies-panel"
+          id="replies-tab"
+          tabindex="-1"
+        >
+          <span id="replies-count">0</span> {{ self.replies() }}
+        </button>
+      </div>
+      <div id="likes-panel" role="tabpanel" tabindex="0" aria-labelledby="likes-tab">
+      </div>
+      <div id="reposts-panel" role="tabpanel" tabindex="0" aria-labelledby="reposts-tab" hidden>
+      </div>
+      <div id="replies-panel" role="tabpanel" tabindex="0" aria-labelledby="replies-tab" hidden>
+      </div>
+    </div>
+  </h2>
 {% endmacro %}
 
 {% macro render_authors() %}
@@ -330,6 +374,9 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
         <div class="chapter-links">
           {{ render_actions() }}
         </div>
+        <section class="webmentions">
+          {{ render_webmentions() }}
+        </section>
         <section class="authors">
             {{ render_authors() }}
         </section>
