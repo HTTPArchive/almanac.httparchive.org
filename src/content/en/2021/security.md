@@ -30,26 +30,25 @@ We crawl the analyzed pages in both desktop and mobile mode, but for a lot of th
 
 Following the recent trend, we see a  continuous growth in the number of websites adapting HTTPS this year as well. Transport layer security is important to allow secure browsing of websites by ensuring that the resources being served to you and the data sent to the website are untampered in the transit. Almost all major browsers now come with settings to set it to HTTPS-only mode and also increasing warnings shown to users when HTTP instead of HTTPS is used by a website, thus pushing forward for a broader adoption.
 
-**91.6%**
-
-
-_The percentage of requests that use HTTPS on mobile_
-
-
-_(Source:[ HTTP Archive](https://httparchive.org/reports/state-of-the-web#pctHttps)) _
+{{ figure_markup(
+  caption='The percentage of requests that use HTTPS on mobile.<br>(Source: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#pctHttps">HTTP Archive</a>)',
+  content="91.6%",
+  classes="big-number",
+  sheets_gid="8055510"
+)
+}}
 
 Currently, we see that 93.0% of total requests for websites on desktop and 91.6% of total requests for websites on mobile are being served using HTTPS. We see an [increasing number of certificates](https://letsencrypt.org/stats/#daily-issuance) being issued every day thanks to non-profit certificate authorities like Let's Encrypt.
 
-
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image2.png "image_tooltip")
-
-
-
-_HTTPS usage for sites_
+{{ figure_markup(
+  image="security-https-usage-by-site.png",
+  caption="HTTPS usage for sites",
+  description="Bar chart showing 84.29% of desktop sites are using HTTPS, with the remaining 15.71% using HTTP, while 81.17% of mobile sites are using HTTPS and the remaining 18.83% using HTTP.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=111383569&format=interactive",
+  sheets_gid="8055510",
+  sql_file="home_page_https_usage.sql"
+  )
+}}
 
 We still see that a lot of websites are  lacking HTTPS requests compared to the total percentage, based on requests. This is because a lot of the impressive percentage of HTTPS requests are often dominated by [third party](./third-parties) services like fonts, analytics, CDNs, and not the webpage itself. We do see a continuous improvement (approximately 7% increase since[ last year](https://almanac.httparchive.org/en/2020/security#fig-3)) in this number as well, but soon a lot of unmaintained websites might start seeing warnings once [browsers start adopting HTTPS-only mode by default](https://blog.mozilla.org/security/2021/08/10/firefox-91-introduces-https-by-default-in-private-browsing/). Currently, 84.29% of website homepages in desktop and 81.17% of website homepages in mobile are served over HTTPS.
 
@@ -60,16 +59,15 @@ TLS (Transport Layer Security) is the protocol that helps make HTTP requests sec
 
 As part of this effort to improve security and reliability by adopting modern versions, TLS 1.0 and 1.1 have been [deprecated by the Internet Engineering Task Force (IETF)](https://datatracker.ietf.org/doc/rfc8996/) as of March 25, 2021. All upstream browsers have also either completely removed support  or deprecated TLS 1.0 and 1.1. For example, Firefox has deprecated (or discourages using) TLS 1.0 and 1.1, but has [not completely removed](https://www.ghacks.net/2020/03/21/mozilla-re-enables-tls-1-0-and-1-1-because-of-coronavirus-and-google/) it because during the pandemic, users might need to access government websites which often still run on TLS 1.0. The user may still decide to change `security.tls.version.min` in browser config to decide the lowest TLS version they want the browser to allow.
 
-
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image3.png "image_tooltip")
-
-
-
-_TLS versions usage for sites_
+{{ figure_markup(
+  image="security-tls-version-by-site.png",
+  caption="TLS versions usage for sites",
+  description="Bar chart showing that on desktop 60.36% of sites use TLSv1.3, while 39.59% use TLSv1.2. On mobile the figures are 62.14% and 37.80% respectively. TLSv1.0, TLSv1.1 barely register though there is a very small amount of QUIC usage (0.05% on desktop and 0.06% on mobile).",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1868638312&format=interactive",
+  sheets_gid="1012588329",
+  sql_file="tls_versions_pages.sql"
+  )
+}}
 
 60.36% pages in desktop and 62.14% pages in mobile are now using TLSv1.3, making it the majority protocol version right now instead of TLSv1.2. The number of pages using TLSv1.3 has increased approximately 20% since [last year](http://../2020/security#protocol-versions), when we saw 43.23% and 45.37% respectively.
 
@@ -78,23 +76,26 @@ _TLS versions usage for sites_
 
 Cipher suites are a set of algorithms that are used with TLS to help make secure connections. Modern [Galois/Counter Mode](https://en.wikipedia.org/wiki/Galois/Counter_Mode) (GCM) cipher modes are considered to be much more secure compared to the older [Cipher Block Chaining Mode](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_block_chaining_(CBC)) (CBC) ciphers which have shown to be [vulnerable to padding attacks](https://blog.qualys.com/product-tech/2019/04/22/zombie-poodle-and-goldendoodle-vulnerabilities). While TLSv1.2 did support use of both newer and older cipher suites, [TLSv1.3 doesn't support any of the older cipher suites](https://datatracker.ietf.org/doc/html/rfc8446#page-133) anymore. This makes upgrading to TLSv1.3 even more important for a secure connection.
 
-**96.83%**
-
-
-_The percentage of requests that use forward secrecy on mobile_
+{{ figure_markup(
+  caption="Mobile sites using forward secrecy.",
+  content="96.83%",
+  classes="big-number",
+  sheets_gid="993983713",
+  sql_file="tls_forward_secrecy.sql"
+)
+}}
 
 Almost all modern cipher suites support [forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy) key exchange, meaning in the unlikely case that the server’s keys are compromised, old traffic that used those keys cannot be decrypted. 96.58% in desktop and 96.83% in mobile use forward secrecy. TLSv1.3 has made forward secrecy compulsory though it is optional in TLSv1.2 So the other consideration apart from the cipher mode is the key size of the [Authenticated Encryption and Authenticated Decryption](https://datatracker.ietf.org/doc/html/rfc5116#section-2) algorithm. A larger key size will take a lot longer to compromise and the intensive computations for encryption and decryption of the connection imposing little to no perceptible impact to site performance
 
-
-
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image4.png "image_tooltip")
-
-
-
-_Distribution of cipher suites_
+{{ figure_markup(
+  image="security-distribution-of-cipher-suites.png",
+  caption="Distribution of cipher suites",
+  description="Bar chart showing the cipher suites used by device, with AES_128_GCM being the most common and used by 79.43% of desktop and 78.92% of mobile sites, AES_256_GCM is used by 18.58% of desktop and 18.95% of mobile sites, AES_256_CBC used by 1.10% of desktop sites and 1.21% of mobile sites, CHACHA20_POLY1305 is used by 0.63% and 0.69% of sites respectively, AES_128_CBC is used by 0.26% and 0.24% respectively, and 3DES_EDE_CBC is used approximately by 0.0% of desktop and mobile sites.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=47980777&format=interactive",
+  sheets_gid="172961549",
+  sql_file="tls_cipher_suite.sql"
+  )
+}}
 
 AES_128_GCM is still the most widely used cipher suite, by a long way, with 79.43% in desktop and 78.92% in mobile usage. AES_128_GCM indicates that it uses GCM cipher mode with Advanced Encryption Standard (AES) of key size 128-bit for encryption and decryption. 128-bit key size is still pretty secure, but 256-bit size is slowly becoming the industry standard to better resist brute force attacks for a longer time.
 
@@ -103,163 +104,93 @@ AES_128_GCM is still the most widely used cipher suite, by a long way, with 79.4
 
 A certificate authority is a company or organization that issues digital certificates which helps validate the ownership and identity of entities on the Web, like websites. A certificate authority is hence needed to issue a TLS certificate so that the website can be served over HTTPS. Like the previous year, we will again look into the CAs used by websites themselves rather than third-party services and resources.
 
-
-<table>
-  <tr>
-   <td><em>issuer</em>
-   </td>
-   <td> Algorithm
-   </td>
-   <td>desktop
-   </td>
-   <td>mobile
-   </td>
-  </tr>
-  <tr>
-   <td><a href="https://letsencrypt.org/certificates/">R3</a>
-   </td>
-   <td>RSA
-   </td>
-   <td><p style="text-align: right">
-46.92%</p>
-
-   </td>
-   <td><p style="text-align: right">
-49.19%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Cloudflare Inc ECC CA-3
-   </td>
-   <td>ECDSA
-   </td>
-   <td><p style="text-align: right">
-11.66%</p>
-
-   </td>
-   <td><p style="text-align: right">
-11.49%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="https://sectigo.com/knowledge-base/detail/Sectigo-Intermediate-Certificates/kA01N000000rfBO">Sectigo RSA Domain Validation Secure Server CA</a>
-   </td>
-   <td>RSA
-   </td>
-   <td><p style="text-align: right">
-8.30%</p>
-
-   </td>
-   <td><p style="text-align: right">
-8.24%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>cPanel, Inc. Certification Authority
-   </td>
-   <td>RSA
-   </td>
-   <td><p style="text-align: right">
-5.00%</p>
-
-   </td>
-   <td><p style="text-align: right">
-5.52%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="https://certs.godaddy.com/repository">Go Daddy Secure Certificate Authority - G2</a>
-   </td>
-   <td>RSA
-   </td>
-   <td><p style="text-align: right">
-3.59%</p>
-
-   </td>
-   <td><p style="text-align: right">
-3.00%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="https://www.amazontrust.com/repository/">Amazon</a>
-   </td>
-   <td>RSA
-   </td>
-   <td><p style="text-align: right">
-3.36%</p>
-
-   </td>
-   <td><p style="text-align: right">
-2.98%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="https://www.digicert.com/kb/digicert-root-certificates.htm">Encryption Everywhere DV TLS CA - G1</a>
-   </td>
-   <td>RSA
-   </td>
-   <td><p style="text-align: right">
-1.28%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.59%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="https://support.globalsign.com/ca-certificates/intermediate-certificates/alphassl-intermediate-certificates">AlphaSSL CA - SHA256 - G2</a>
-   </td>
-   <td>RSA
-   </td>
-   <td><p style="text-align: right">
-1.23%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.16%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="https://www.digicert.com/kb/digicert-root-certificates.htm">RapidSSL TLS DV RSA Mixed SHA256 2020 CA-1</a>
-   </td>
-   <td>RSA
-   </td>
-   <td><p style="text-align: right">
-1.17%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.12%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="https://www.digicert.com/kb/digicert-root-certificates.htm">DigiCert SHA2 Secure Server CA</a>
-   </td>
-   <td>RSA
-   </td>
-   <td><p style="text-align: right">
-1.14%</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.88%</p>
-
-   </td>
-  </tr>
-</table>
-
-
-
-_Top 10 certificate issuers for websites._
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Issuer</th>
+        <th>Algorithm</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="https://letsencrypt.org/certificates/">R3</a></td>
+        <td>RSA</td>
+        <td class="number">46.92%</td>
+        <td class="number">49.19%</td>
+      </tr>
+      <tr>
+        <td>Cloudflare Inc ECC CA-3</td>
+        <td>ECDSA</td>
+        <td class="number">11.66%</td>
+        <td class="number">11.49%<</td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://sectigo.com/knowledge-base/detail/Sectigo-Intermediate-Certificates/kA01N000000rfBO">
+            Sectigo RSA Domain Validation Secure Server CA
+          </a>
+        </td>
+        <td>RSA</td>
+        <td class="number">8.30%</td>
+        <td class="number">8.24%</td>
+      </tr>
+      <tr>
+        <td>cPanel, Inc. Certification Authority</td>
+        <td>RSA</td>
+        <td class="number">5.00%</td>
+        <td class="number">5.52%</td>
+      </tr>
+      <tr>
+        <td><a href="https://certs.godaddy.com/repository">Go Daddy Secure Certificate Authority - G2</a></td>
+        <td>RSA</td>
+        <td class="number">3.59%</td>
+        <td class="number">3.00%</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.amazontrust.com/repository/">Amazon</a></td>
+        <td>RSA</td>
+        <td class="number">3.36%</td>
+        <td class="number">2.98%</td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://www.digicert.com/kb/digicert-root-certificates.htm">Encryption Everywhere DV TLS CA - G1</a>
+        </td>
+        <td>RSA</td>
+        <td class="number">1.28%</td>
+        <td class="number">1.59%</td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://support.globalsign.com/ca-certificates/intermediate-certificates/alphassl-intermediate-certificates">AlphaSSL CA - SHA256 - G2</a>
+        </td>
+        <td>RSA</td>
+        <td class="number">1.23%</td>
+        <td class="number">1.16%</td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://www.digicert.com/kb/digicert-root-certificates.htm">
+            RapidSSL TLS DV RSA Mixed SHA256 2020 CA-1
+          </a>
+        </td>
+        <td>RSA</td>
+        <td class="number">1.17%</td>
+        <td class="number">1.12%</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.digicert.com/kb/digicert-root-certificates.htm">DigiCert SHA2 Secure Server CA</a></td>
+        <td>RSA</td>
+        <td class="number">1.14%</td>
+        <td class="number">0.88%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Top 10 certificate issuers for websites.", sheets_gid="1291345416", sql_file="tls_ca_issuers_pages.sql") }}</figcaption>
+</figure>
 
 Let's Encrypt has [changed their subject common name](https://letsencrypt.org/2020/09/17/new-root-and-intermediates.html#why-we-issued-an-ecdsa-root-and-intermediates) from “Let’s Encrypt Authority X3” to just “R3” to save bytes in new certificates. So any SSL certificates signed by R3 are issued by [Let's Encrypt](https://letsencrypt.org/certificates/). Thus, like previous years, we see Let's Encrypt continue to lead the charts with 46.92% of desktop websites, and 49.19% of mobile sites using certificates issued by them. Its free, automated certificate generation has played a game-changing role in making it easier for everyone to serve their websites over HTTPS.
 
@@ -270,103 +201,58 @@ Cloudflare continues to be in second position with its similarly free certificat
 
 [HTTP Strict Transport Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) (HSTS) is a response header which tells the browser that it should always use secure HTTPS connections to communicate with the website. 
 
-**22.23%**
-
-
-_The percentage of requests that have HSTS header on mobile_
+{{ figure_markup(
+  caption="The percentage of requests that have HSTS header on mobile",
+  content="22.23%",
+  classes="big-number",
+  sheets_gid="1612539726"
+)
+}}
 
 The `Strict-Transport-Security` header helps convert a `http://` URL to a `https://` URL before a request is made for that site. 22.23% of the mobile responses and 23.92% of desktop reponses have a HSTS header.
 
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>HSTS Directive</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Valid max-age</td>
+        <td class="number">92.73%</td>
+        <td class="number">93.43%</td>
+      </tr>
+      <tr>
+        <td>includeSubdomains</td>
+        <td class="number">34.53%</td>
+        <td class="number">33.26%</td>
+      </tr>
+      <tr>
+        <td>preload</td>
+        <td class="number">17.60%</td>
+        <td class="number">17.95%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Usage of HSTS directives.", sheets_gid="1612539726", sql_file="hsts_attributes.sql") }}</figcaption>
+</figure>
 
-<table>
-  <tr>
-   <td>HSTS Directive
-   </td>
-   <td>Desktop
-   </td>
-   <td>Mobile
-   </td>
-  </tr>
-  <tr>
-   <td>Zero max-age
-   </td>
-   <td><p style="text-align: right">
-7.15%</p>
+Out of the sites with HSTS header, 92.73% in desktop and 93.43% in mobile have valid max-age (that is the value is non-zero and non-empty) which determines how many seconds the browser should only visit the website over HTTPS.
 
-   </td>
-   <td><p style="text-align: right">
-6.46%</p>
+The number of responses out of these having `includeSubdomain` set is 33.26% responses for mobile, and 34.52% for desktop, in HSTS settings.  The number of responses with the `preload` directive is lower because it is [not part of the HSTS specification](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security#preloading_strict_transport_security) and needs a minimum `max-age` of 31536000 seconds and also the `includeSubdomain` directive to be present..
 
-   </td>
-  </tr>
-  <tr>
-   <td>Valid max-age
-   </td>
-   <td><p style="text-align: right">
-92.73%</p>
-
-   </td>
-   <td><p style="text-align: right">
-93.43%</p>
-
-   </td>
-  </tr>
-</table>
-
-
-Out of this, 92.73% sites in desktop and 93.43% sites in mobile have valid max-age (that is the value is non-zero and non-empty) which determines how many seconds the browser should _only_ visit the website over HTTPS.
-
-
-<table>
-  <tr>
-   <td>HSTS Directive
-   </td>
-   <td>Desktop
-   </td>
-   <td>Mobile
-   </td>
-  </tr>
-  <tr>
-   <td>includeSubdomains
-   </td>
-   <td><p style="text-align: right">
-34.53%</p>
-
-   </td>
-   <td><p style="text-align: right">
-33.26%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>preload
-   </td>
-   <td><p style="text-align: right">
-17.60%</p>
-
-   </td>
-   <td><p style="text-align: right">
-17.95%</p>
-
-   </td>
-  </tr>
-</table>
-
-
-_Usage of HSTS directives_
-
-The number of responses out of this having `includeSubdomain` set is 33.26% responses for mobile, and 34.52% for desktop, in HSTS settings.  The number of responses with the `preload` directive is lower because it is [not part of the HSTS specification](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security#preloading_strict_transport_security) and needs a minimum `max-age` of 31536000 seconds and also the `includeSubdomain` directive to be present..
-
-
-
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image5.png "image_tooltip")
-
-
-
-_HSTS max-age values for all requests (in days)_
+{{ figure_markup(
+  image="security-hsts-max-age-values-in-days.png",
+  caption="HSTS `max-age` values for all requests (in days).",
+  description="Bar chart of percentiles of values in the `max-age` attribute, converted to days. In the 10th percentile both desktop and mobile are 30 days, in the 25th percentile both are 182 days, in the 50th percentile both are 365 days, the 75th percentile is the same at 365 days for both and the 90th percentile has 730 days for both.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1583549091&format=interactive",
+  sheets_gid="1297999193",
+  sql_file="hsts_max_age_percentiles.sql"
+) }}
 
 The median value for `max-age` attribute in HSTS headers over all requests is 365 days in both mobile and desktop. [https://hstspreload.org/](https://hstspreload.org/) recommends a `max-age` of 2 years once the HSTS header is set up properly and verified to not cause any issues.
 
@@ -377,20 +263,19 @@ An HTTP cookie is a small piece of information about the user accessing the webs
 
 You can ensure that cookies are sent securely and aren't accessed by unintended parties or scripts by adding certain attributes or prefixes.
 
-
-
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image6.png "image_tooltip")
-
-
-_Cookie attributes in desktop_
+{{ figure_markup(
+  image="security-httponly-secure-samesite-cookie-usage.png",
+  caption="Cookie attributes in desktop.",
+  description="Bar chart of cookie attributes in desktop divided by first and third-party cookies. For first-party `HttpOnly` is used by 32.7%, `Secure` by 30.95%, and `SameSite` by 34.05%, while for third-party `HttpOnly` is used by 20.02%, `Secure` by 66.98%, and `SameSite` by 64.87%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=546317907&format=interactive",
+  sheets_gid="1757682198",
+  sql_file="cookie_attributes.sql"
+) }}
 
 
 ### `Secure`
 
-Cookies that have the `Secure` attribute set will only be sent over a secure HTTPS connection, preventing them from being stolen in a [manipulator-in-the-middle](https://owasp.org/www-community/attacks/Manipulator-in-the-middle_attack) attack. Similar to HSTS, this also helps enhance the security provided by TLS protocols. For first-party cookies, only approximately 30% of the cookies in both desktop and mobile have the `Secure` attribute set. However, we do see a significant increase in the percentage of third-party cookies in desktop having `Secure` attribute from 35.2% [last year](https://almanac.httparchive.org/en/2020/security#fig-11) to 66.98% this year. This increase is likely due to the [`Secure` attribute being a requirement](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite#none) for `SameSite=none` cookies.
+Cookies that have the `Secure` attribute set will only be sent over a secure HTTPS connection, preventing them from being stolen in a [manipulator-in-the-middle](https://owasp.org/www-community/attacks/Manipulator-in-the-middle_attack) attack. Similar to HSTS, this also helps enhance the security provided by TLS protocols. For first-party cookies, only approximately 30% of the cookies in both desktop and mobile have the `Secure` attribute set. However, we do see a significant increase in the percentage of third-party cookies in desktop having `Secure` attribute from 35.2% [last year](https://almanac.httparchive.org/en/2020/security#cookies) to 66.98% this year. This increase is likely due to the [`Secure` attribute being a requirement](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite#none) for `SameSite=none` cookies.
 
 
 ### `HttpOnly`
@@ -402,78 +287,63 @@ A cookie which has the `HttpOnly` attribute set cannot be accessed through the `
 
 The `SameSite` attribute in cookies allows the websites to inform the browser when and whether to send a cookie with cross-site requests. This is very helpful in preventing cross-site request forgery attacks. `SameSite=Strict`allows the cookie to be sent only to the site where it originated. With `SameSite=Lax`, cookies are not sent to cross-site requests unless a user is navigating to the origin site by following a link. `SameSite=None` means cookies are sent in both originating and cross-site requests.
 
-​    
+{{ figure_markup(
+  image="security-samesite-cookie-attributes.png",
+  caption="Same site cookie attributes.",
+  description="Bar chart of SameSite cookie attributes divided by first and third-party. For first-party `SameSite=lax` is used by 58.53%, `SameSite=strict` by 2.52%, and `SameSite=none` by 39.07%, while for third-party `SameSite=lax` is used by 1.54%, `SameSite=strict` by 0.12%, and `SameSite=none` by 98.34%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=672211543&format=interactive",
+  sheets_gid="1757682198",
+  sql_file="cookie_attributes.sql"
+) }}
 
-<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image7.png "image_tooltip")
-
-
-_Same site cookie attributes_
-
-We see that 58.5% of all first-party cookies with a `SameSite` attribute have the attribute set to `Lax` while there is still a pretty daunting 39% cookies where `SameSite` attribute is set to `none` although the number is steadily decreasing. Almost all current browsers now default to `SameSite=Lax` if no `SameSite` attribute is set. 85% of overall first-party cookies have no `SameSite` attribute.
+We see that 58.5% of all first-party cookies with a `SameSite` attribute have the attribute set to `Lax` while there is still a pretty daunting 39% cookies where `SameSite` attribute is set to `none` although the number is steadily decreasing. Almost all current browsers now default to `SameSite=Lax` if no `SameSite` attribute is set. Approximately 65% of overall first-party cookies have no `SameSite` attribute.
 
 
 ### Prefixes
 
 Cookie prefixes `__Host-` and `__Secure-` help mitigate attacks to override the session cookie information for a [session fixation attack](https://owasp.org/www-community/attacks/Session_fixation). `__Host-` helps in domain locking a cookie by requiring the cookie to also have `Secure` attribute, `Path` attribute set to `/`, not have `Domain` attribute and is sent from a secure origin. `__Secure-` on the other hand requires the cookie to only have `Secure` attribute and to be sent from a secure origin.
 
-​    
+​<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Type of Desktop cookies</th>
+        <th>__Secure</th>
+        <th>__Host</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>First-party</td>
+        <td class="number">0.03%</td>
+        <td class="number">0.01%</td>
+      </tr>
+      <tr>
+        <td>Third-party</td>
+        <td class="number">0.00%</td>
+        <td class="number">0.05%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Usage of `__Secure` and `__Host` cookie prefixes in mobile.", sheets_gid="1757682198", sql_file="cookie_attributes.sql") }}</figcaption>
+</figure>
 
-
-<table>
-  <tr>
-   <td>Desktop
-   </td>
-   <td>__Secure
-   </td>
-   <td>__Host
-   </td>
-  </tr>
-  <tr>
-   <td>First-party
-   </td>
-   <td><p style="text-align: right">
-0.03%</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.01%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>Third-party
-   </td>
-   <td><p style="text-align: right">
-0.00%</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.05%</p>
-
-   </td>
-  </tr>
-</table>
-
-
-Though both the prefixes are used in a significantly lower percentage of cookies, `__Secure-` is more commonly found due to its lower prerequisites.
+Though both the prefixes are used in a significantly lower percentage of cookies, `__Secure-` is more commonly found in first-party cookies due to its lower prerequisites.
 
 
 ### Cookie Age
 
 Permanent cookies are deleted at a date specified by the `Expires` attribute, or after a period of time specified by the `Max-Age` attribute. If both `Expires` and `Max-Age` are set, `Max-Age` has precedence.
 
-​    
-
-<p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image8.png "image_tooltip")
-
-
-_Cookie age usage in mobile_
+{{ figure_markup(
+  image="cookie-age-usage-by-site-in-mobile-in-days.png",
+  caption="Cookie age usage in mobile (in days).",
+  description="Bar chart showing 77.44% of desktop sites are using HTTPS, with the remaining 22.56% using HTTP, while 73.22% of mobile sites are using HTTPS while the remaining 26.78% using HTTP.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1433212880&format=interactive",
+  sheets_gid="237010912",
+  sql_file="cookie_age_percentiles.sql"
+  )
+}}
 
 We see that the median Max-Age is 365 days, as we see about 20.51% of the cookies with `Max-Age` have the value 31536000. However, 64.17% of the first party cookies have `Expires` and 23.34% have `Max-Age`. Since `Expires` is much more dominant among cookies, the median for real maximum age is the same as `Expires` (180 days) instead of `Max-Age`.
 
@@ -487,13 +357,15 @@ Most current websites have quite a lot of JavaScript, media, and libraries that 
 
 [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) is one of the predominant methods used to mitigate attacks like cross-site scripting attacks and data injection attacks by restricting the origins allowed to load various contents, using scripts and media. There are numerous directives which can be used by the website to specify sources for different kinds of content. For instance, `script-src` is used to specify origins or domains from which scripts can be loaded. It also has few other values to define if inline scripts and eval scripts are allowed.
 
-
-
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image9.png "image_tooltip")
-
+{{ figure_markup(
+  image="csp-directives-usage.png",
+  caption="Most common directives used in CSP.",
+  description="Bar chart showing usage of most common CSP directives. `upgrade-insecure-requests` is the most common with 57.55% in desktop and 57.11% in mobile, followed by `frame-ancestors` which is 54.38% in desktop and 55.77% in mobile. `block-all-mixed-content` is 29.85% in desktop and 30.69% in mobile, `default-src` is 18.37% in desktop and 16.84% in mobile, `script-src` is 17.21% in desktop and 16.68% in mobile, `style-src` is 13.82% in desktop and 11.97% in mobile, `img-src` is 11.81% in desktop and 10.40% in mobile, `font-src` is 9.75% in desktop and 8.24% in desktop, `object-src` is 8.34% in desktop and 8.85% in mobile, `connect-src` is 8.47% in desktop and 7.23% in mobile",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1763321291&format=interactive",
+  sheets_gid="50437608",
+  sql_file="csp_directives_usage.sql"
+  )
+}}
 
 We see more and more websites starting to use CSP with 9.28% of websites on mobile using CSP now compared to 7.23% last year. `upgrade-insecure-requests` continues to be the most frequent CSP directive used. The high adoption rate for this directive is likely because of the same reasons mentioned [last year](https://almanac.httparchive.org/en/2020/security#content-security-policy). It is an easy, non-breaking directive, it helps in upgrading all HTTP requests to HTTPS, which also helps with the blocking of mixed-content by browser. `frame-ancestors` is a close second, which helps one define valid parents that may embed a page.
 
@@ -503,196 +375,103 @@ To allow web developers to evaluate the correctness of their CSP policy, there i
 
 One can also use the `report-uri` directive to report any CSP violations to a particular link able to parse the CSP errors. These can help after a CSP directive has been added to check if any valid content is accidentally  being blocked by the new directive.   The drawback of this powerful feedback mechanism is that CSP reporting can be noisy due to browser extensions and other technology outside of the website owner's control.
 
+{{ figure_markup(
+  image="security-csp-header-length.png",
+  caption="CSP header length.",
+  description="Bar chart showing percentiles of the length of the CSP header in bytes. At 10th percentile both desktop and mobile is 23 bytes, at 25th percentile both are 25 bytes, at 50th percentile both are 75 bytes, at 75th percentile also both are 75 bytes and at 90th percentile desktop is 389 bytes and mobile is 305 bytes.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1605401039&format=interactive",
+  sheets_gid="1485136639",
+  sql_file="csp_number_of_allowed_hosts.sql"
+) }}
 
 
-<p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image10.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+The median length of CSP headers continue to be pretty low: 75 bytes. Most websites still use single directives for specific purposes, instead of long strict CSPs. For instance, 24.16% of websites only have `upgrade-insecure-requests` directives.
 
-
-![alt_text](images/image10.png "image_tooltip")
-
-
-The median length of CSP headers continue to be pretty low: 75 bytes. Most websites still use single directives for specific purposes, instead of long strict CSPs. For instance, 24.16% of websites only have `upgrade-insecure-requests` directives. 
-
-**43,488**
-
-
-_Bytes in the longest CSP observed._
+{{ figure_markup(
+  caption="Bytes in the longest CSP observed.",
+  content="43,488",
+  classes="big-number",
+  sheets_gid="150007358",
+  sql_file="csp_number_of_allowed_hosts.sql"
+)
+}}
 
 On the other side of the spectrum, the longest CSP header is almost twice as long as last year’s longest CSP header: 43,488 bytes.
 
-
-<table>
-  <tr>
-   <td><em>csp_allowed_host</em>
-   </td>
-   <td>desktop
-   </td>
-   <td>mobile
-   </td>
-   <td>Grand Total
-   </td>
-  </tr>
-  <tr>
-   <td><a href="https://www.google-analytics.com">https://www.google-analytics.com</a>
-   </td>
-   <td><p style="text-align: right">
-1.37%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.30%</p>
-
-   </td>
-   <td><p style="text-align: right">
-2.66%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="https://www.googletagmanager.com">https://www.googletagmanager.com</a>
-   </td>
-   <td><p style="text-align: right">
-1.24%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.19%</p>
-
-   </td>
-   <td><p style="text-align: right">
-2.43%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="https://fonts.googleapis.com">https://fonts.googleapis.com</a>
-   </td>
-   <td><p style="text-align: right">
-1.01%</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.95%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.96%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="https://fonts.gstatic.com">https://fonts.gstatic.com</a>
-   </td>
-   <td><p style="text-align: right">
-0.91%</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.90%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.81%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="https://www.google.com">https://www.google.com</a>
-   </td>
-   <td><p style="text-align: right">
-0.88%</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.86%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.73%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="https://www.youtube.com">https://www.youtube.com</a>
-   </td>
-   <td><p style="text-align: right">
-0.91%</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.80%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.72%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="https://connect.facebook.net">https://connect.facebook.net</a>
-   </td>
-   <td><p style="text-align: right">
-0.73%</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.68%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.41%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="https://stats.g.doubleclick.net">https://stats.g.doubleclick.net</a>
-   </td>
-   <td><p style="text-align: right">
-0.69%</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.67%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.36%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="https://www.gstatic.com">https://www.gstatic.com</a>
-   </td>
-   <td><p style="text-align: right">
-0.65%</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.63%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.28%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="https://cdnjs.cloudflare.com">https://cdnjs.cloudflare.com</a>
-   </td>
-   <td><p style="text-align: right">
-0.57%</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.59%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.16%</p>
-
-   </td>
-  </tr>
-</table>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Origin</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>https://www.google-analytics.com</td>
+        <td class="numeric">1.37%</td>
+        <td class="numeric">1.30%</td>
+        <td class="numeric">2.66%</td>
+      </tr>
+      <tr>
+        <td>https://www.googletagmanager.com</td>
+        <td class="numeric">1.24%</td>
+        <td class="numeric">1.19%</td>
+        <td class="numeric">2.43%</td>
+      </tr>
+      <tr>
+        <td>https://fonts.googleapis.com</td>
+        <td class="numeric">1.01%</td>
+        <td class="numeric">0.95%</td>
+        <td class="numeric">1.96%</td>
+      </tr>
+      <tr>
+        <td>https://fonts.gstatic.com</td>
+        <td class="numeric">0.91%</td>
+        <td class="numeric">0.90%</td>
+        <td class="numeric">1.81%</td>
+      </tr>
+      <tr>
+        <td>https://www.google.com</td>
+        <td class="numeric">0.88%</td>
+        <td class="numeric">0.86%</td>
+        <td class="numeric">1.73%</td>
+      </tr>
+      <tr>
+        <td>https://www.youtube.com</td>
+        <td class="numeric">0.91%</td>
+        <td class="numeric">0.80%</td>
+        <td class="numeric">1.72%</td>
+      </tr>
+      <tr>
+        <td>https://connect.facebook.net</td>
+        <td class="numeric">0.73%</td>
+        <td class="numeric">0.68%</td>
+        <td class="numeric">1.41%</td>
+      </tr>
+      <tr>
+        <td>https://stats.g.doubleclick.net</td>
+        <td class="numeric">0.69%</td>
+        <td class="numeric">0.67%</td>
+        <td class="numeric">1.36%</td>
+      </tr>
+      <tr>
+        <td>https://www.gstatic.com</td>
+        <td class="numeric">0.65%</td>
+        <td class="numeric">0.63%</td>
+        <td class="numeric">1.28%</td>
+      </tr>
+      <tr>
+        <td>https://cdnjs.cloudflare.com</td>
+        <td class="numeric">0.57%</td>
+        <td class="numeric">0.59%</td>
+        <td class="numeric">1.16%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Most frequently allowed hosts in CSP policies.", sheets_gid="1000160612", sql_file="csp_allowed_host_frequency.sql") }}</figcaption>
+</figure>
 
 
 The most common origins used in `*-src` directives continue to be heavily dominated by Google (fonts, ads, analytics). We also see cloudflare CDN showing up in the 10th position this year.
@@ -702,12 +481,15 @@ The most common origins used in `*-src` directives continue to be heavily domina
 
 In a lot of websites, the code for JavaScript libraries and CSS libraries are loaded from external CDNs. This can have certain security implications if the CDN is compromised, or an attacker finds some other way to replace the frequently used libraries. Subresource integrity (SRI) helps in avoiding such consequences, though it introduces other risks in that the website may not function without that resource. Self-hosting instead of loading from a third party is usually a safer option where possible.
 
-**66.22%**
+{{ figure_markup(
+  caption="Usage of SHA384 hash function for SRI in mobile.",
+  content="66.22%",
+  classes="big-number",
+  sheets_gid="1707924242"
+)
+}}
 
-
-_Usage of SHA384 hash function for SRI in mobile_
-
-Web developers can add `integrity` attribute to `&lt;script>` and `&lt;link>` tags which are used to include JavaScripts and CSS codes to the website. The integrity attribute consists of a hash of the expected content of the resource. The browser can then compare the hash of the fetched content and hash mentioned in the `integrity` attribute to check its validity and only render the resource if they match.
+Web developers can add `integrity` attribute to `<script>` and `<link>` tags which are used to include JavaScripts and CSS codes to the website. The integrity attribute consists of a hash of the expected content of the resource. The browser can then compare the hash of the fetched content and hash mentioned in the `integrity` attribute to check its validity and only render the resource if they match.
 
 ```html
 
@@ -717,144 +499,76 @@ Web developers can add `integrity` attribute to `&lt;script>` and `&lt;link>` ta
 
 The hash can be computed with three different algorithms: SHA256, SHA384, and SHA512. SHA384 (66.22% in mobile) is currently the most used followed by SHA256 (31.08% in mobile). Currently, all three hashing algorithms are considered safe to use.
 
-**82.62%**
+{{ figure_markup(
+  caption="Percentage of SRI in `<script>` elements for mobile.",
+  content="82.62%",
+  classes="big-number",
+  sheets_gid="1477693041"
+)
+}}
 
+There has been some increase in the usage of SRIs over the past couple of years with 17.49% elements in desktop and 16.12% elements in mobile containing the integrity attribute. 82.62% of those were in the `<script>` element for mobile.
 
-_Percentage of SRI in &lt;script> elements for mobile._
-
-There has been some increase in the usage of SRIs over the past couple of years with 17.49% elements in desktop and 16.12% elements in mobile containing the integrity attribute. 82.62% of those were in the `&lt;script>` element for mobile.
-
-
-
-<p id="gdcalert11" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image11.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert12">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image11.png "image_tooltip")
-
-
-_Subresource integrity: coverage per page._
+{{ figure_markup(
+  image="security-subresource-integrity-coverage-per-page.png",
+  caption="Subresource integrity: coverage per page.",
+  description="Bar chart showing percentiles of what percentage of scripts on a page are protected with SRI. At 10th percentile it is 1.4% for both desktop and mobile, at the 25th percentile it is 2.1% for desktop and 2.2% for mobile, at the 50th percentile it is 3.3% for both, at the 75th percentile it is 5.6% for both, and at the 90th percentile it is 10.0% for both.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1691901696&format=interactive",
+  sheets_gid="247865608",
+  sql_file="sri_coverage_per_page.sql"
+) }}
 
 However, when we look closely, most of the websites still lack the coverage of SRIs in the `&lt;script>` elements. The median percentage of `&lt;script>` elements in websites having an `integrity` attribute is 3.3%.
 
-
-<table>
-  <tr>
-   <td><em>host</em>
-   </td>
-   <td>desktop
-   </td>
-   <td>mobile
-   </td>
-  </tr>
-  <tr>
-   <td><a href="http://www.gstatic.com">www.gstatic.com</a>
-   </td>
-   <td><p style="text-align: right">
-44.34%</p>
-
-   </td>
-   <td><p style="text-align: right">
-44.13%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="http://cdn.shopify.com">cdn.shopify.com</a>
-   </td>
-   <td><p style="text-align: right">
-23.41%</p>
-
-   </td>
-   <td><p style="text-align: right">
-23.91%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="http://code.jquery.com">code.jquery.com</a>
-   </td>
-   <td><p style="text-align: right">
-7.54%</p>
-
-   </td>
-   <td><p style="text-align: right">
-7.49%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="http://cdnjs.cloudflare.com">cdnjs.cloudflare.com</a>
-   </td>
-   <td><p style="text-align: right">
-7.17%</p>
-
-   </td>
-   <td><p style="text-align: right">
-6.87%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="http://stackpath.bootstrapcdn.com">stackpath.bootstrapcdn.com</a>
-   </td>
-   <td><p style="text-align: right">
-2.70%</p>
-
-   </td>
-   <td><p style="text-align: right">
-2.74%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="http://maxcdn.bootstrapcdn.com">maxcdn.bootstrapcdn.com</a>
-   </td>
-   <td><p style="text-align: right">
-2.23%</p>
-
-   </td>
-   <td><p style="text-align: right">
-2.26%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="http://cdn.jsdelivr.net">cdn.jsdelivr.net</a>
-   </td>
-   <td><p style="text-align: right">
-2.13%</p>
-
-   </td>
-   <td><p style="text-align: right">
-2.06%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>null
-   </td>
-   <td><p style="text-align: right">
-1.71%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.42%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><a href="http://d3e54v103j8qbb.cloudfront.net">d3e54v103j8qbb.cloudfront.net</a>
-   </td>
-   <td><p style="text-align: right">
-1.30%</p>
-
-   </td>
-   <td><p style="text-align: right">
-1.08%</p>
-
-   </td>
-  </tr>
-</table>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Host</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>www.gstatic.com</td>
+        <td class="numeric">44.34%</td>
+        <td class="numeric">44.13%</td>
+      </tr>
+      <tr>
+        <td>cdn.shopify.com</td>
+        <td class="numeric">23.41%</td>
+        <td class="numeric">23.91%</td>
+      </tr>
+      <tr>
+        <td>code.jquery.com</td>
+        <td class="numeric">7.54%</td>
+        <td class="numeric">7.49%</td>
+      </tr>
+      <tr>
+        <td>cdnjs.cloudflare.com</td>
+        <td class="numeric">7.17%</td>
+        <td class="numeric">6.87%</td>
+      </tr>
+      <tr>
+        <td>stackpath.bootstrapcdn.com</td>
+        <td class="numeric">2.70%</td>
+        <td class="numeric">2.74%</td>
+      </tr>
+      <tr>
+        <td>maxcdn.bootstrapcdn.com</td>
+        <td class="numeric">2.23%</td>
+        <td class="numeric">2.26%</td>
+      </tr>
+      <tr>
+        <td>cdn.jsdelivr.net</td>
+        <td class="numeric">2.13%</td>
+        <td class="numeric">2.06%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Most common hosts from which SRI-protected scripts are included.", sheets_gid="303199583", sql_file="sri_popular_hosts.sql") }}</figcaption>
+</figure>
 
 
 We see that gstatic.com currently leads the chart. This is probably because Google serves all its static content (fonts, analytics, etc.) from gstatic.com. Usually when developers embed google fonts, the code they copy has the `integrity` attribute included, which leads to high adoption.
@@ -868,137 +582,70 @@ All browsers these days provide countless APIs and functionalities, a lot of whi
 
 This API specification was previously known as Feature Policy. Since then, there have been many updates. Though the `Feature-Policy` response header is still in use, it is still pretty low with only 0.55% of websites in mobile using it. The new specification expects `Permissions-Policy` response headers which contains an allowlist for different APIs. For example, `Permissions-Policy: geolocation=(self "https://example.com")` means that the website disallows the use of Geolocation API except for its own origin and those whose origin is "`https://example.com`". One can disable use of an API entirely in a website by specifying an empty list, e.g. `Permissions-Policy: geolocation=()`. We see 1.25% of websites on the mobile using the `Permissions-Policy` already. A probable reason for this could be some  website admins choosing to opt-out of Federated Learning of Cohorts or [FLoC](https://privacysandbox.com/proposals/floc) (which was experimentally implemented in some browsers) to protect user’s privacy. The [privacy chapter](./privacy) has a detailed analysis on this.
 
-
-<table>
-  <tr>
-   <td><em>directive</em>
-   </td>
-   <td>desktop
-   </td>
-   <td>mobile
-   </td>
-  </tr>
-  <tr>
-   <td>encrypted-media
-   </td>
-   <td><p style="text-align: right">
-46.81%</p>
-
-   </td>
-   <td><p style="text-align: right">
-44.97%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>conversion-measurement
-   </td>
-   <td><p style="text-align: right">
-39.48%</p>
-
-   </td>
-   <td><p style="text-align: right">
-36.13%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>autoplay
-   </td>
-   <td><p style="text-align: right">
-30.46%</p>
-
-   </td>
-   <td><p style="text-align: right">
-30.07%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>picture-in-picture
-   </td>
-   <td><p style="text-align: right">
-17.77%</p>
-
-   </td>
-   <td><p style="text-align: right">
-17.20%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>accelerometer
-   </td>
-   <td><p style="text-align: right">
-16.40%</p>
-
-   </td>
-   <td><p style="text-align: right">
-15.96%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>gyroscope
-   </td>
-   <td><p style="text-align: right">
-16.39%</p>
-
-   </td>
-   <td><p style="text-align: right">
-15.96%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>clipboard-write
-   </td>
-   <td><p style="text-align: right">
-11.21%</p>
-
-   </td>
-   <td><p style="text-align: right">
-10.85%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>microphone
-   </td>
-   <td><p style="text-align: right">
-4.27%</p>
-
-   </td>
-   <td><p style="text-align: right">
-4.46%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>camera
-   </td>
-   <td><p style="text-align: right">
-4.21%</p>
-
-   </td>
-   <td><p style="text-align: right">
-4.41%</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>geolocation
-   </td>
-   <td><p style="text-align: right">
-3.95%</p>
-
-   </td>
-   <td><p style="text-align: right">
-4.27%</p>
-
-   </td>
-  </tr>
-</table>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Directive</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>encrypted-media</td>
+        <td class="numeric">46.81%</td>
+        <td class="numeric">44.97%</td>
+      </tr>
+      <tr>
+        <td>conversion-measurement</td>
+        <td class="numeric">39.48%</td>
+        <td class="numeric">36.13%</td>
+      </tr>
+      <tr>
+        <td>autoplay</td>
+        <td class="numeric">30.46%</td>
+        <td class="numeric">30.07%</td>
+      </tr>
+      <tr>
+        <td>picture-in-picture</td>
+        <td class="numeric">17.77%</td>
+        <td class="numeric">17.20%</td>
+      </tr>
+      <tr>
+        <td>accelerometer</td>
+        <td class="numeric">16.40%</td>
+        <td class="numeric">15.96%</td>
+      </tr>
+      <tr>
+        <td>gyroscope</td>
+        <td class="numeric">16.39%</td>
+        <td class="numeric">15.96%</td>
+      </tr>
+      <tr>
+        <td>clipboard-write</td>
+        <td class="numeric">11.21%</td>
+        <td class="numeric">10.85%</td>
+      </tr>
+      <tr>
+        <td>microphone</td>
+        <td class="numeric">4.27%</td>
+        <td class="numeric">4.46%</td>
+      </tr>
+      <tr>
+        <td>camera</td>
+        <td class="numeric">4.21%</td>
+        <td class="numeric">4.41%</td>
+      </tr>
+      <tr>
+        <td>geolocation</td>
+        <td class="numeric">3.95%</td>
+        <td class="numeric">4.27%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Prevalence of Feature Policy directives on frames.", sheets_gid="623004240", sql_file="iframe_allow_directives.sql") }}</figcaption>
+</figure>
 
 
 One can also use the `allow` attribute in `&lt;iframe>` elements to enable or disable features allowed to be used in the embedded frame. 28.39% of 10.8 million frames in mobile contained the `allow` attribute to enabled permission or feature policies.
@@ -1012,13 +659,15 @@ An untrusted third-party in an iframe can try to launch a number of attacks on t
 
 The `sandbox` attribute on iframes applies restrictions to the content, and therefore also the opportunities for launching attacks, of the embedded web page. The value of the attribute can either be empty to apply all restrictions (the embedded page cannot execute any JavaScript code, no forms can be submitted and no popups can be created, to name a few restrictions), or space-separated tokens to lift particular restrictions. As embedding third-party content such as advertisements or videos is common practice on the web, it is not surprising that many of these are restricted via the `sandbox` attribute: 32.57% of the iframes on desktop pages have a `sandbox` attribute while on mobile pages this is 32.6%.
 
-
-
-<p id="gdcalert12" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image12.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert13">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image12.png "image_tooltip")
-
+{{ figure_markup(
+  image="prevalence-of-sandbox-directives-on-frames.png",
+  caption="Prevalence of sandbox directives on frames.",
+  description="Bar chart showing prevalence of sandbox directives in frames. `allow-scrips` and `allow-same-origin` are the most used directive with almost 100% of iframes having `sandbox` attribues using these directives. `allow-popups` is found in 83% frames in desktop and 87% frames in mobile, `allow-forms` is found in 81% frames in desktop and 85% frames in mobile, `allow-popups-to-escape-sandbox` is found in 80% frames in desktop and 84% frames in mobile, `allow-top-navigation-by-user-activation` is found in 57% frames in desktop and 62% frames in mobile, `allow-top-navigation` is found in 22% frames in desktop and 20% frames in mobile, and `allow-modals` is found in 21% frames in desktop and 20% frames in mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1054574782&format=interactive",
+  sheets_gid="1104685300",
+  sql_file="iframe_sandbox_directives.sql"
+  )
+}}
 
 The most commonly used directive, `allow-scripts`, which is present in 99.98% of all sandbox policies on desktop pages, allows the embedded page to execute JavaScript code. The other directive that is present on virtually all sandbox policies, `allow-same-origin`, allows the embedded page to retain its origin, and, for example, access cookies that were set on that origin.
 
@@ -1162,122 +811,82 @@ Security has become one of the central issues in web development. Since 2017, we
   <tr>
    <td>CryptoGetRandomValues
    </td>
-   <td><p style="text-align: right">
-70.41%</p>
-
-   </td>
-   <td><p style="text-align: right">
-67.42%</p>
-
-   </td>
+   <td class="numeric">
+70.41%</td>
+   <td class="numeric">
+67.42%</td>
   </tr>
   <tr>
    <td>SubtleCryptoDigest
    </td>
-   <td><p style="text-align: right">
-0.40%</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.45%</p>
-
-   </td>
+   <td class="numeric">
+0.40%</td>
+   <td class="numeric">
+0.45%</td>
   </tr>
   <tr>
    <td>SubtleCryptoEncrypt
    </td>
-   <td><p style="text-align: right">
-0.38%</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.26%</p>
-
-   </td>
+   <td class="numeric">
+0.38%</td>
+   <td class="numeric">
+0.26%</td>
   </tr>
   <tr>
    <td>CryptoAlgorithmSha256
    </td>
-   <td><p style="text-align: right">
-0.30%</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.30%</p>
-
-   </td>
+   <td class="numeric">
+0.30%</td>
+   <td class="numeric">
+0.30%</td>
   </tr>
   <tr>
    <td>SubtleCryptoGenerateKey
    </td>
-   <td><p style="text-align: right">
-0.28%</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.23%</p>
-
-   </td>
+   <td class="numeric">
+0.28%</td>
+   <td class="numeric">
+0.23%</td>
   </tr>
   <tr>
    <td>CryptoAlgorithmAesGcm
    </td>
-   <td><p style="text-align: right">
-0.23%</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.19%</p>
-
-   </td>
+   <td class="numeric">
+0.23%</td>
+   <td class="numeric">
+0.19%</td>
   </tr>
   <tr>
    <td>SubtleCryptoImportKey
    </td>
-   <td><p style="text-align: right">
-0.20%</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.16%</p>
-
-   </td>
+   <td class="numeric">
+0.20%</td>
+   <td class="numeric">
+0.16%</td>
   </tr>
   <tr>
    <td>CryptoAlgorithmAesCtr
    </td>
-   <td><p style="text-align: right">
-0.10%</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.03%</p>
-
-   </td>
+   <td class="numeric">
+0.10%</td>
+   <td class="numeric">
+0.03%</td>
   </tr>
   <tr>
    <td>CryptoAlgorithmSha1
    </td>
-   <td><p style="text-align: right">
-0.08%</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.06%</p>
-
-   </td>
+   <td class="numeric">
+0.08%</td>
+   <td class="numeric">
+0.06%</td>
   </tr>
   <tr>
    <td>CryptoAlgorithmSha384
    </td>
-   <td><p style="text-align: right">
-0.08%</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.18%</p>
-
-   </td>
+   <td class="numeric">
+0.08%</td>
+   <td class="numeric">
+0.18%</td>
   </tr>
 </table>
 
@@ -1304,158 +913,106 @@ Many cyberattacks are based on automated bot attacks. Interest in it seems to ha
   <tr>
    <td>reCAPTCHA
    </td>
-   <td><p style="text-align: right">
-10.2</p>
-
-   </td>
-   <td><p style="text-align: right">
-9.4</p>
-
-   </td>
+   <td class="numeric">
+10.2</td>
+   <td class="numeric">
+9.4</td>
   </tr>
   <tr>
    <td>Imperva
    </td>
-   <td><p style="text-align: right">
-0.34</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.27</p>
-
-   </td>
+   <td class="numeric">
+0.34</td>
+   <td class="numeric">
+0.27</td>
   </tr>
   <tr>
    <td>Sift
    </td>
-   <td><p style="text-align: right">
-0.05</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.08</p>
-
-   </td>
+   <td class="numeric">
+0.05</td>
+   <td class="numeric">
+0.08</td>
   </tr>
   <tr>
    <td>Signifyd
    </td>
-   <td><p style="text-align: right">
-0.03</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.03</p>
-
-   </td>
+   <td class="numeric">
+0.03</td>
+   <td class="numeric">
+0.03</td>
   </tr>
   <tr>
    <td>hCaptcha
    </td>
-   <td><p style="text-align: right">
-0.03</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.02</p>
-
-   </td>
+   <td class="numeric">
+0.03</td>
+   <td class="numeric">
+0.02</td>
   </tr>
   <tr>
    <td>Forter
    </td>
-   <td><p style="text-align: right">
-0.03</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.03</p>
-
-   </td>
+   <td class="numeric">
+0.03</td>
+   <td class="numeric">
+0.03</td>
   </tr>
   <tr>
    <td>TruValidate
    </td>
-   <td><p style="text-align: right">
-0.03</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.02</p>
-
-   </td>
+   <td class="numeric">
+0.03</td>
+   <td class="numeric">
+0.02</td>
   </tr>
   <tr>
    <td>Akamai Web Application Protector
    </td>
-   <td><p style="text-align: right">
-0.02</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.02</p>
-
-   </td>
+   <td class="numeric">
+0.02</td>
+   <td class="numeric">
+0.02</td>
   </tr>
   <tr>
    <td>Kount
    </td>
-   <td><p style="text-align: right">
-0.02</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.02</p>
-
-   </td>
+   <td class="numeric">
+0.02</td>
+   <td class="numeric">
+0.02</td>
   </tr>
   <tr>
    <td>Konduto
    </td>
-   <td><p style="text-align: right">
-0.02</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.02</p>
-
-   </td>
+   <td class="numeric">
+0.02</td>
+   <td class="numeric">
+0.02</td>
   </tr>
   <tr>
    <td>PerimeterX
    </td>
-   <td><p style="text-align: right">
-0.02</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.01</p>
-
-   </td>
+   <td class="numeric">
+0.02</td>
+   <td class="numeric">
+0.01</td>
   </tr>
   <tr>
    <td>Tencent Waterproof Wall
    </td>
-   <td><p style="text-align: right">
-0.01</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.01</p>
-
-   </td>
+   <td class="numeric">
+0.01</td>
+   <td class="numeric">
+0.01</td>
   </tr>
   <tr>
    <td>Others
    </td>
-   <td><p style="text-align: right">
-0.03</p>
-
-   </td>
-   <td><p style="text-align: right">
-0.04</p>
-
-   </td>
+   <td class="numeric">
+0.03</td>
+   <td class="numeric">
+0.04</td>
   </tr>
 </table>
 
