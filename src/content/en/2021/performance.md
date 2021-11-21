@@ -62,7 +62,7 @@ This section focuses on websites that reached the "good" threshold on all three 
   caption="Good Core Web Vitals by Device from 2020 to 2021",
   description="Bar chart showing the percent of origins with good Core Web Vitals in 2020 and 2021. In 2020, 34% of desktop websites were good and 24% of mobile websites. In 2021, 41% of desktop websites were good, and 29% of mobile ones.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=116267418&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="2140629699",
   sql_file="web_vitals_by_device.sql"
   )
 }}
@@ -82,7 +82,7 @@ The data by connection type in CrUX can be difficult to understand. It is not ba
   caption="Good CWV performance by effective connection type",
   description="Bar chart showing the percent of origins in a connection type with good Core Web Vitals. The offline category had 44% of websites with good CWV, 0% for slow 2G and 2G, 5% for 3G, and 36% for 4G.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=150765595&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="1361919728",
   sql_file="web_vitals_by_eff_connection_type.sql"
   )
 }}
@@ -96,7 +96,7 @@ The top takeaway is that 3G and lower speeds correlated with significant perform
   caption="Change in effective connection type 2020-2021 ",
   description="Bar chart showing the percent of total origins within each connection type for 2020 and 2021. The offline category went from 0% to 0% of origins (2020 to 2021), 1% to 0% for slow 2G and 2G, 27% to 25% for 3G, and 72% to 75% for 4G.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=658987455&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="1361919728",
   sql_file="web_vitals_by_eff_connection_type.sql"
   )
 }}
@@ -114,7 +114,7 @@ Performance by connection type would be easier to understand if we could start t
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=162241310&format=interactive",
   width=645,
   height=792,
-  sheets_gid="730149797",
+  sheets_gid="2016679282",
   sql_file="web_vitals_by_country.sql"
   )
 }}
@@ -128,7 +128,7 @@ Regions in parts of Asia and Europe continued to have higher performance. This m
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=200409532&format=interactive",
   width=600,
   height=792,
-  sheets_gid="730149797",
+  sheets_gid="215056532",
   sql_file="web_vitals_by_country.sql"
   )
 }}
@@ -142,7 +142,7 @@ Similarly, here are the top 10 regions by population and their corresponding sha
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1955368947&format=interactive",
   width=600,
   height=792,
-  sheets_gid="730149797",
+  sheets_gid="215056532",
   sql_file="web_vitals_by_country.sql"
   )
 }}
@@ -160,7 +160,7 @@ This year for the first time, we have ranking data! ​​CrUX determines rankin
   caption="Good CWV performance by rank",
   description="Bar chart showing percent of websites in each ranking group with good CWV. 37% of the top 1,000 websites had good CWV, 31% of the top 10,000, 29% of the top 100,000, 30% of the top 1,000,000, and 32% of all origins in CrUX.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=444585880&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="1988323604",
   sql_file="web_vitals_by_rank.sql"
   )
 }}
@@ -182,7 +182,7 @@ In this section, we dive into each metric. For those who are less familiar, we'v
   caption="TTFB performance by device",
   description="Stacked bar chart showing TTFB performance for desktop and mobile devices. For desktop devices, 26% of websites had good (< 0.5s), 55% needs improvement, and 19% poor (>= 1.5s) TTFB performance. For mobile, 15% were good, 59% needs improvement, and 26% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=594735556&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="2140629699",
   sql_file="web_vitals_by_device.sql"
   )
 }}
@@ -194,7 +194,7 @@ TTFB was faster on desktop than mobile, presumably because of faster network spe
   caption="TTFB performance by connection type",
   description="Stacked bar chart showing TTFB performance for effective connection type. For offline websites, 43% had good, 39% needs improvement, and 18% poor performance. For slow 2G, 1% were good, 2% needs improvement, and 98% poor. For 2G, 0% were good, 2% needs improvement, and 97% poor. For 3G, 1% were good, 27% needs improvement, and 72% poor. For 4G, 19% were good, 58% needs improvement, and 23% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1059484029&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="1361919728",
   sql_file="web_vitals_by_eff_connection_type.sql"
   )
 }}
@@ -208,7 +208,7 @@ You may be asking yourself how TTFB can even occur with offline connections. Pre
   caption="TTFB performance by rank",
   description="Stacked bar chart showing TTFB performance for each ranking group. For the top 1,000 websites, 32% had good, 63% needs improvement, and 5% poor performance. For the top 10,000, 27% were good, 66% needs improvement, and 7% poor. For the top 100,000, 22% were good, 65% needs improvement, and 13% poor. For the top 1,000,000, 18% were good, 62% needs improvement, and 20% poor. For all, 18% were good, 58% needs improvement, and 24% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=829561432&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="1988323604",
   sql_file="web_vitals_by_rank.sql"
   )
 }}
@@ -262,7 +262,7 @@ Only 5% of origins on WordPress experienced good TTFB in July 2021. Considering 
   caption="FCP performance by device",
   description="Stacked bar chart showing FCP performance for desktop and mobile devices. For desktop devices, 60% of websites had good (< 1.8s), 27% needs improvement, and 13% poor (>= 3.0s) FCP performance. For mobile, 38% were good, 38% needs improvement, and 24% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1509111466&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="2140629699",
   sql_file="web_vitals_by_device.sql"
   )
 }}
@@ -276,7 +276,7 @@ FCP was faster on desktop than mobile, likely due to both faster average network
   caption="FCP performance by connection type",
   description="Stacked bar chart showing FCP performance for effective connection type. For offline websites, 38% had good, 26% needs improvement, and 36% poor performance. For slow 2G, 100% were poor. For 2G, 1% were needs improvement, and 99% poor. For 3G, 4% were good, 21% needs improvement, and 75% poor. For 4G, 46% were good, 35% needs improvement, and 19% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=679577784&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="1361919728",
   sql_file="web_vitals_by_eff_connection_type.sql"
   )
 }}
@@ -290,7 +290,7 @@ Offline connections were closer in performance to 4G though not quite as good. S
   caption="FCP performance by rank",
   description="Stacked bar chart showing FCP performance for each ranking group. For the top 1,000 websites, 67% had good, 28% needs improvement. For the top 10,000, 62% were good, 31% needs improvement, and 7% poor. For the top 100,000, 54% were good, 35% needs improvement, and 12% poor. For the top 1,000,000, 49% were good, 35% needs improvement, and 16% poor. For all, 45% were good, 35% needs improvement, and 20% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=965739974&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="1988323604",
   sql_file="web_vitals_by_rank.sql"
   )
 }}
@@ -308,7 +308,7 @@ Common culprits for poor FCP are render-blocking resources, server response time
   caption="LCP performance by device",
   description="Stacked bar chart showing LCP performance for desktop and mobile devices. For desktop devices, 60% of websites had good (< 2.5s), 27% needs improvement, and 12% poor (>= 4s) LCP performance. For mobile, 45% were good, 35% needs improvement, and 19% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=556816803&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="2140629699",
   sql_file="web_vitals_by_device.sql"
   )
 }}
@@ -320,7 +320,7 @@ LCP was faster on desktop than mobile. TTFB affects LCP like FCP.  Comparisons b
   caption="LCP performance by connection type",
   description="Stacked bar chart showing LCP performance for effective connection type. For offline websites, 49% had good, 17% needs improvement, and 34% poor performance. For slow 2G, 1%  were needs improvement and 99% poor. For 2G, 4% were needs improvement and 96% poor. For 3G, 8% were good, 28% needs improvement, and 65% poor. For 4G, 51% were good, 33% needs improvement, and 16% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=583947675&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="1361919728",
   sql_file="web_vitals_by_eff_connection_type.sql"
   )
 }}
@@ -332,7 +332,7 @@ Offline origins with good LCP more closely matched 4G experiences, though poor L
   caption="LCP performance by rank",
   description="Stacked bar chart showing LCP performance for each ranking group. For the top 1,000 websites, 64% had good, 25% needs improvement, and 11% poor performance. For the top 10,000, 59% were good, 30% needs improvement, and 11% poor. For the top 100,000, 55% were good, 32% needs improvement, and 13% poor. For the top 1,000,000, 53% were good, 33% needs improvement, and 14% poor. For all, 50% were good, 33% needs improvement, and 17% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1080361066&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="1988323604",
   sql_file="web_vitals_by_rank.sql"
   )
 }}
@@ -350,7 +350,7 @@ Let's take a deeper dive into the LCP element.
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1549429021&format=interactive",
   width=600,
   height=909,
-  sheets_gid="730149797",
+  sheets_gid="1423728540",
   sql_file="lcp_element_data.sql"
   )
 }}
@@ -362,7 +362,7 @@ IMG, DIV, P, and H1 made up 83% of all LCP nodes (on mobile). This doesn't tell 
   caption="LCP elements with images, by device",
   description="Bar chart showing 79% of desktop pages have an LCP element with an image and 71% of mobile pages",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=992354142&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="1423728540",
   sql_file="lcp_element_data.sql"
   )
 }}
@@ -376,7 +376,7 @@ In both cases, images comprised the majority of LCP elements. This warrants a de
   caption="LCP elements with potential performance anti-patterns",
   description="Bar chart showing 9.3% of pages on mobile use native lazy load on the LCP element, 16.5% probably lazy load, and 0.4% use async decode.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=130632749&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="1423728540",
   sql_file="lcp_element_data.sql"
   )
 }}
@@ -407,7 +407,7 @@ Interestingly, 354 origins on desktop attempted to use native lazy-loading on HT
   caption="CLS performance by device",
   description="Stacked bar chart showing CLS performance for desktop and mobile devices. For desktop devices, 62% of websites had good (< 0.1), 23% needs improvement, and 15% poor (>= 0.25) CLS performance. For mobile, 62% were good, 21% needs improvement, and 17% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=160840238&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="2140629699",
   sql_file="web_vitals_by_device.sql"
   )
 }}
@@ -419,7 +419,7 @@ Interestingly, 354 origins on desktop attempted to use native lazy-loading on HT
   caption="CLS performance by connection type",
   description="Stacked bar chart showing CLS performance for effective connection type. For offline websites, 87% had good and 4% poor performance. For slow 2G and 2G, 53-52% were good, 15% needs improvement, and 32-33% poor. For 3G, 58% were good, 16% needs improvement, and 26% poor. For 4G, 69% were good, 13% needs improvement, and 18% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1650043738&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="1361919728",
   sql_file="web_vitals_by_eff_connection_type.sql"
   )
 }}
@@ -433,7 +433,7 @@ Offline websites had the highest CLS performance of all connection types. For si
   caption="CLS performance by rank",
   description="Stacked bar chart showing CLS performance for each ranking group. For the top 1,000 websites, 53% had good, 25% needs improvement, and 21% poor performance. For the top 10,000, 46% were good, 27% needs improvement, and 27% poor. For the top 100,000, 48% were good, 26% needs improvement, and 26% poor. For the top 1,000,000, 54% were good, 25% needs improvement, and 21% poor. For all, 61% were good, 23% needs improvement, and 16% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1468770181&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="1988323604",
   sql_file="web_vitals_by_rank.sql"
   )
 }}
@@ -451,7 +451,7 @@ Common culprits for poor CLS include not reserving space for images, text shifts
   caption="FID performance by device",
   description="Stacked bar chart showing FID performance for desktop and mobile devices. For desktop devices, 100% of websites had good (< 100ms). For mobile, 90% were good, 10% needs improvement, and 0% poor (>= 300ms).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=230841623&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="2140629699",
   sql_file="web_vitals_by_device.sql"
   )
 }}
@@ -463,7 +463,7 @@ FID performance was better on desktop than on mobile devices likely due to devic
   caption="FID performance by connection type",
   description="Stacked bar chart showing FID performance for effective connection type. For offline websites, 78% had good, 17% needs improvement, and 5% poor performance. For slow 2G and 2G, 81-82% were good, 18% needs improvement, and 0-1% poor. For 3G, 90% were good and 10% needs improvement. For 4G, 93% were good, 7% needs improvement, and 0% poor.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1135701788&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="1361919728",
   sql_file="web_vitals_by_eff_connection_type.sql"
   )
 }}
@@ -477,7 +477,7 @@ Unlike the other metrics, FID was worse for offline websites than any other conn
   caption="FID performance by rank",
   description="Stacked bar chart showing FID performance for each ranking group. For all categories, 93-94% had good, 5-7% needs improvement, and 0% poor performance.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1539782601&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="1988323604",
   sql_file="web_vitals_by_rank.sql"
   )
 }}
@@ -504,7 +504,7 @@ Unfortunately, TBT is not measured in the Chrome User Experience Report. But, we
   caption="Lighthouse TBT scores",
   description="Bar chart showing 31% of mobile pages with good TBT (<= 200ms), 11% with needs improvement, and 58% with poor (> 600ms) TBT.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=2135422883&format=interactive",
-  sheets_gid="730149797",
+  sheets_gid="46896816",
   sql_file="tbt.sql"
   )
 }}

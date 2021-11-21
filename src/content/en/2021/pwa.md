@@ -39,7 +39,7 @@ Despite that, it's still difficult to draw a clear line between what is a PWA or
 In this year's PWA chapter, we'll focus on all the measurable aspects of a PWA: usage of service workers and its related APIs, web app manifests, and the most popular libraries and tools to build PWAs. A PWA can use all or some of these functionalities. We'll look at the level of adoption of each component and API to get an idea of the level of penetration of these technologies in the web ecosystem.
 
 
-<p class="note">Note: This chapter will focus mostly on service worker related APIs in common use. For more cutting-edge APIs, make sure to check out the <a href="./capabilities">Capabilities</a> chapter.</p>
+<p class="note">**Note:** This chapter will focus mostly on service worker related APIs in common use. For more cutting-edge APIs, make sure to check out the <a href="./capabilities">Capabilities</a> chapter.</p>
 
 ## Service workers
 
@@ -150,7 +150,7 @@ As seen, background sync techniques don't have wide adoption yet compared to the
 
 Despite that, there are some important reasons for using background sync in modern web apps: one of them being offline analytics (<a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-google-analytics">Workbox Analytics uses Background Sync for this</a>), or retrying failed queries due to lack of connectivity (as <a hreflang="en" href="https://web.dev/google-search-sw/">some search engines do</a>).
 
-<p class="note">Note: Unlike previous years, we have decided not to include the <code>fetch</code> and <code>message</code> events in this analysis, as those can also appear outside service workers, which could lead to a high number of false positives. So, the above analysis is for service worker-specific events. <a hreflang="en" href="../2020/pwa#service-worker-events">According to 2020 data, <code>fetch</code> was used almost as much as <code>install</code>.</a></p>
+<p class="note">**Note:** Unlike previous years, we have decided not to include the `fetch` and `message` events in this analysis, as those can also appear outside service workers, which could lead to a high number of false positives. So, the above analysis is for service worker-specific events. <a hreflang="en" href="../2020/pwa#service-worker-events">According to 2020 data, `fetch` was used almost as much as `install`.</a></p>
 
 #### Other popular service worker features
 
@@ -310,7 +310,7 @@ Finally, we'll analyze `prefer_related_applications`. If the value of this prope
 
 Despite the fact that the vast majority of PWA developers prefer promoting their PWA experiences to native applications, some well-known PWAs (like Twitter), still prefer recommending the native app over the PWA experience. This might be due to a preference of the teams building these experiences, or some specific business needs (lack of some API in the web).
 
-<p class="note">Note: Instead of making this decision statically at configuration, developers can also <a hreflang="en" href="https://web.dev/define-install-strategy/">create more dynamic heuristics</a> to promote an experience, for example, based on the user's behavior or other characteristics (device, connection, location, etc.).</p>
+<p class="note">**Note:** Instead of making this decision statically at configuration, developers can also <a hreflang="en" href="https://web.dev/define-install-strategy/">create more dynamic heuristics</a> to promote an experience, for example, based on the user's behavior or other characteristics (device, connection, location, etc.).</p>
 
 ### Top manifest categories
 
@@ -395,7 +395,7 @@ Workbox is still the most popular library, being used by 15.43% of desktop and 1
 
 It's also important to note that the Workbox predecessor `sw_toolbox`, which had <a hreflang="en" href="../2020/pwa#popular-import-scripts">13.92% of usage in desktop and 12.84% in mobile last year</a> dropped to 0.51% and 0.36% respectively this year. This is in part due to the fact that `sw_toolbox` was <a hreflang="en" href="https://github.com/GoogleChromeLabs/sw-toolbox/pull/288">deprecated in 2019</a>. It might have taken some time for some popular frameworks and build tools to remove this package, so we are seeing the drop in adoption more clearly this year. Also, our measurement has changed compared to 2020, by adding more sites, which made this metric decrease even more, making it difficult to do a direct year on year comparison.
 
-<p class="note">Note: Take into account that <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts">importScripts()</a></code> is an API of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope">WorkerGlobalScope</a></code> that can be used in other types of worker context like <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Web Workers</a></code>. <a hreflang="en" href="https://www.google.com/recaptcha/about/">reCaptcha</a>, for example, appears as the second most widely used library, as it uses a web worker that contains an <code>importScripts()</code> call to retrieve the reCaptcha JavaScript code. For that reason, we should consider <a hreflang="en" href="https://firebase.google.com/docs/web/setup">Firebase</a> instead as the second most widely used library in service worker contexts.
+<p class="note">**Note:** Take into account that [`importScripts()`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts) is an API of [`WorkerGlobalScope`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope) that can be used in other types of worker context like [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers). <a hreflang="en" href="https://www.google.com/recaptcha/about/">reCaptcha</a>, for example, appears as the second most widely used library, as it uses a web worker that contains an `importScripts()` call to retrieve the reCaptcha JavaScript code. For that reason, we should consider <a hreflang="en" href="https://firebase.google.com/docs/web/setup">Firebase</a> instead as the second most widely used library in service worker contexts.
 </p>
 
 ### Workbox usage
@@ -496,7 +496,7 @@ Also as shown in [Figure 4](#fig-4) related to service worker events,  the `push
 
 The service worker interface also allows listening to some events to handle user interactions on notifications. [Figure 4](#fig-4) shows that `notificationclick` (which captures clicks on notifications) is used by 45.64% of desktop and 46.62% of mobile PWAs. `notificationclose` is used less frequently: 5.98% of desktop and 6.34% of mobile PWAs. This is expected as there are fewer use cases where it makes sense to listen for the notification "close" event, than for notification "clicks".
 
-<p class="note">Note: It's interesting to see that service worker notification events (e.g., <code>push</code>, <code>notificationclick</code>) have even more usage the <code>pushManager</code> property, which is used, for example, to request permission for web push notifications (via <code>pushManager.subscribe</code>). One of the reasons for this might be that some sites have implemented web push and decided to roll them back at some point, by eliminating the code to request permission for them, but leaving the service worker code unchanged.</p>
+<p class="note">**Note:** It's interesting to see that service worker notification events (e.g., `push`, `notificationclick`) have even more usage the `pushManager` property, which is used, for example, to request permission for web push notifications (via `pushManager.subscribe`). One of the reasons for this might be that some sites have implemented web push and decided to roll them back at some point, by eliminating the code to request permission for them, but leaving the service worker code unchanged.</p>
 
 ### Web Push notification acceptance rates
 

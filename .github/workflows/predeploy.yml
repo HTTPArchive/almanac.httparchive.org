@@ -22,7 +22,7 @@ on:
         type: boolean
         description: "Regenerate Ebooks?"
         required: true
-        default: true
+        default: "true"
 
 jobs:
   build:
@@ -36,11 +36,11 @@ jobs:
       with:
         node-version: '15'
     - name: Set up Python 3.8
-      uses: actions/setup-python@v2.2.2
+      uses: actions/setup-python@v2.3.0
       with:
         python-version: '3.8'
     - name: Install Asian Fonts
-      if: github.event.inputs.ebooks
+      if: ${{ github.event.inputs.ebooks == 'true' }}
       run: |
         # Install Japanese san-serif font
         sudo apt-get install -y fonts-ipafont-gothic
@@ -49,17 +49,17 @@ jobs:
         # Install Korean san-serif font
         sudo apt-get install -y fonts-unfonts-core
     - name: Install PrinceXML
-      if: github.event.inputs.ebooks != 'N' && github.event.inputs.ebooks != 'n'
+      if: ${{ github.event.inputs.ebooks == 'true' }}
       run: |
         wget https://www.princexml.com/download/${{ env.PRINCE_PACKAGE }} --directory-prefix=/tmp
         DEBIAN_FRONTEND=noninteractive sudo apt install -y /tmp/${{ env.PRINCE_PACKAGE }}
     - name: Install pdftk
-      if: github.event.inputs.ebooks != 'N' && github.event.inputs.ebooks != 'n'
+      if: ${{ github.event.inputs.ebooks == 'true' }}
       run: sudo apt install pdftk
     - name: Run the website
       run: ./src/tools/scripts/run_and_test_website.sh
     - name: Generating Ebooks
-      if: github.event.inputs.ebooks != 'N' && github.event.inputs.ebooks != 'n'
+      if: ${{ github.event.inputs.ebooks == 'true' }}
       run: |
         cd src
         npm run ebooks

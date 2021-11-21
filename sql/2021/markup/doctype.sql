@@ -12,6 +12,7 @@ GROUP BY
   client,
   doctype
 ORDER BY
+  pct DESC,
   client,
   freq DESC
 LIMIT 100

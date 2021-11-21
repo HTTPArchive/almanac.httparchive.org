@@ -30,6 +30,7 @@ GROUP BY
   client,
   almanac_attribute_info.name
 ORDER BY
+  pct_ratio DESC,
   client,
   freq DESC
 LIMIT 1000
