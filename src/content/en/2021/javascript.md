@@ -1,13 +1,14 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: JavaScript
-description: JavaScript chapter of the 2020 Web Almanac covering the usage of JavaScript on the web, libraries and frameworks, compression, web components, and source maps.
+description: JavaScript chapter of the 2021 Web Almanac covering the usage of JavaScript on the web, libraries and frameworks, compression, web components, and source maps.
 authors: [NishuGoel]
 reviewers: [soulcorrosion, mgechev, rviscomi, pankajparkar, tunetheweb]
 analysts: [pankajparkar, max-ostapenko, rviscomi]
 editors: [rviscomi, pankajparkar]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1zU9rHpI3nC6jTz3xgN6w13afW7x34xAKBh2IPH-lVxk/
+NishuGoel_bio: Nishu Goel is an engineer at <a hreflang="en" href="http://webdataworks.io/">Web DataWorks</a>. She is a Google Developer Expert for Web Technologies and Angular, Microsoft MVP for Developer Technologies, and the author of Step by Step Guide Angular Routing (BPB, 2019) and A Hands-on Guide to Angular (Educative, 2021). Find her writings at <a hreflang="en" href="https://unravelweb.dev/">unravelweb.dev</a>.
 featured_quote: Features provided for improving the rendering time and resource loading time could be leveraged better to see the overall impact and get an even better experience with respect to the performance.
 featured_stat_1: 4
 featured_stat_label_1: Median asynchronous requests made per mobile page.
@@ -261,14 +262,14 @@ The trend is gradually increasing in the number of JavaScript resources loaded o
 
 This is where the recent advances in the HTTP protocol come in and the idea of reducing the number of JavaScript requests for better performance gets inaccurate.  With the introduction of HTTP/2 and HTTP/3 the overhead of HTTP requests has significantly reduced so requesting the same resources over more requests is not necessarily a bad thing anymore.
 
-Read more about the state of the protocols in the [HTTP](http://./http) chapter.
+Read more about the state of the protocols in the [HTTP](./http) chapter.
 
 
-### [module and nomodule](https://docs.microsoft.com/en-us/lifecycle/announcements/internet-explorer-11-support-end-dates)
+### module and nomodule
 
 When loading a website, the browser renders the HTML and requests the appropriate resources. It consumes the polyfills referenced in the code for the effective rendering and functioning of the page. The modern browsers that support newer syntax like arrow functions, async functions, etc. do not need loads of polyfills to make things work and therefore, should not have to.
 
-This is when differential loading takes care of things. Specifying the `type=”module”`  attribute would serve the modern browsers the bundle with modern syntax with fewer  polyfills, if any. Similarly, older browsers that lack support for modules will be served the bundle with required polyfills and transpiled code syntax with attribute `type=”nomodule”`.
+This is when differential loading takes care of things. Specifying the `type=”module”` attribute would serve the modern browsers the bundle with modern syntax with fewer  polyfills, if any. Similarly, older browsers that lack support for modules will be served the bundle with required polyfills and transpiled code syntax with attribute `type=”nomodule”`. Read more about the usage of modue/nomodule [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#applying_the_module_to_your_html)
 
 Let's look at the data to understand the adoption of these attributes. \
 4.6% of desktop pages use the attribute `type=”module”` whereas only 3.9% of mobile pages use `type=”nomodule”`. This could be due to the fact that the mobile dataset being  much larger contains more “long-tail” websites that might not be using the latest features.
