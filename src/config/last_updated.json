@@ -474,8 +474,8 @@
   },
   "en/2021/chapters/performance.html": {
     "date_published": "2021-05-02T00:00:00.000Z",
-    "date_modified": "2021-11-17T00:00:00.000Z",
-    "hash": "ea1fac8fa2350e68c32923e3ee33120d"
+    "date_modified": "2021-11-18T00:00:00.000Z",
+    "hash": "6569ac27555097033e1f3cff7449dd1b"
   },
   "en/2021/chapters/privacy.html": {
     "date_published": "2021-05-02T00:00:00.000Z",
@@ -484,8 +484,8 @@
   },
   "en/2021/chapters/pwa.html": {
     "date_published": "2021-05-02T00:00:00.000Z",
-    "date_modified": "2021-11-17T00:00:00.000Z",
-    "hash": "50a4ff89fefab0f6db757d4d012cf91d"
+    "date_modified": "2021-11-18T00:00:00.000Z",
+    "hash": "36f84082ea199d471fe0f78fdff82eab"
   },
   "en/2021/chapters/resource-hints.html": {
     "date_published": "2021-05-02T00:00:00.000Z",
@@ -504,13 +504,13 @@
   },
   "en/2021/chapters/structured-data.html": {
     "date_published": "2021-06-04T00:00:00.000Z",
-    "date_modified": "2021-11-17T00:00:00.000Z",
-    "hash": "4f751af2e73693fc806c686a7cf226f9"
+    "date_modified": "2021-11-18T00:00:00.000Z",
+    "hash": "34f3268599a80268d2005ed6e0bc1d38"
   },
   "en/2021/chapters/third-parties.html": {
     "date_published": "2021-05-02T00:00:00.000Z",
-    "date_modified": "2021-11-17T00:00:00.000Z",
-    "hash": "4201cc7a5367426f81f0874ba6006aba"
+    "date_modified": "2021-11-18T00:00:00.000Z",
+    "hash": "aaeda5b93f7ffdb0efc5f62354c55bfc"
   },
   "en/2021/chapters/webassembly.html": {
     "date_published": "2021-06-04T00:00:00.000Z",
@@ -1199,8 +1199,8 @@
   },
   "ja/accessibility_statement.html": {
     "date_published": "2020-02-03T00:00:00.000Z",
-    "date_modified": "2021-11-17T00:00:00.000Z",
-    "hash": "20a2c2f6453aec8cc59395b1e88f0da9"
+    "date_modified": "2021-11-18T00:00:00.000Z",
+    "hash": "b4e97805bb6d3d0af0ef94a035f80f9e"
   },
   "nl/2019/chapters/accessibility.html": {
     "date_published": "2020-12-19T00:00:00.000Z",
@@ -1499,8 +1499,8 @@
   },
   "ru/2021/chapters/pwa.html": {
     "date_published": "2021-11-17T00:00:00.000Z",
-    "date_modified": "2021-11-17T00:00:00.000Z",
-    "hash": "2f6bc3b8446896786f92b306c712792a"
+    "date_modified": "2021-11-18T00:00:00.000Z",
+    "hash": "ee0424e08d6eb24e411adc2f3bebece6"
   },
   "ru/2021/contributors.html": {
     "date_published": "2021-11-17T00:00:00.000Z",
