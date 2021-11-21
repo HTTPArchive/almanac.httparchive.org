@@ -254,52 +254,52 @@ Custom sections are mainly used in WebAssembly for 3rd-party tooling—they migh
     </thead>
     <tbody>
       <tr>
-        <td><a hreflang="en" href="https://gallery.platform.uno/package_85a43e09d7152711f12894936a8986e20694304a/dotnet.wasm">…/dotnet.wasm</a></td>
+        <td><a href="https://gallery.platform.uno/package_85a43e09d7152711f12894936a8986e20694304a/dotnet.wasm">…/dotnet.wasm</a></td>
         <td class="numeric">15,053,733</td>
         <td>`name`</td>
       </tr>
       <tr>
-        <td><a hreflang="en" href="https://cdn.decentraland.org/@dcl/unity-renderer/1.0.12536-20210902152600.commit-86fe4be/unity.wasm.br?v=1.0.8874">…/unity.wasm.br?v=1.0.8874</a></td>
+        <td><a href="https://cdn.decentraland.org/@dcl/unity-renderer/1.0.12536-20210902152600.commit-86fe4be/unity.wasm.br?v=1.0.8874">…/unity.wasm.br?v=1.0.8874</a></td>
         <td class="numeric">9,705,643</td>
         <td>`name`</td>
       </tr>
       <tr>
-        <td><a hreflang="en" href="https://nanoleq.com/nanoleq-HTML5-Shipping.wasmgz">…/nanoleq-HTML5-Shipping.wasmgz</a></td>
+        <td><a href="https://nanoleq.com/nanoleq-HTML5-Shipping.wasmgz">…/nanoleq-HTML5-Shipping.wasmgz</a></td>
         <td class="numeric">8,531,376</td>
         <td>`name`</td>
       </tr>
       <tr>
-        <td><a hreflang="en" href="https://convertmodel.com/export.wasm">…/export.wasm</a></td>
+        <td><a href="https://convertmodel.com/export.wasm">…/export.wasm</a></td>
         <td class="numeric">7,306,371</td>
         <td>`name`</td>
       </tr>
       <tr>
-        <td><a hreflang="en" href="https://webasset-akm.imvu.com/asset/c0c43115a4de5de0/build/northstar/js/northstar_api.wasm">…/c0c43115a4de5de0/…/northstar_api.wasm</a></td>
+        <td><a href="https://webasset-akm.imvu.com/asset/c0c43115a4de5de0/build/northstar/js/northstar_api.wasm">…/c0c43115a4de5de0/…/northstar_api.wasm</a></td>
         <td class="numeric">6,470,360</td>
         <td>`name`, `external_debug_info`</td>
       </tr>
       <tr>
-        <td><a hreflang="en" href="https://webasset-akm.imvu.com/asset/9982942a9e080158/build/northstar/js/northstar_api.wasm">…/9982942a9e080158/…/northstar_api.wasm</a></td>
+        <td><a href="https://webasset-akm.imvu.com/asset/9982942a9e080158/build/northstar/js/northstar_api.wasm">…/9982942a9e080158/…/northstar_api.wasm</a></td>
         <td class="numeric">6,435,469</td>
         <td>`name`, `external_debug_info`</td>
       </tr>
       <tr>
-        <td><a hreflang="en" href="https://superctf.com/ReactGodot.wasm">…/ReactGodot.wasm</a></td>
+        <td><a href="https://superctf.com/ReactGodot.wasm">…/ReactGodot.wasm</a></td>
         <td class="numeric">4,672,588</td>
         <td>`name`</td>
       </tr>
       <tr>
-        <td><a hreflang="en" href="https://ui.perfetto.dev/v18.0-591dd9336/trace_processor.wasm">…/v18.0-591dd9336/trace_processor.wasm</a></td>
+        <td><a href="https://ui.perfetto.dev/v18.0-591dd9336/trace_processor.wasm">…/v18.0-591dd9336/trace_processor.wasm</a></td>
         <td class="numeric">2,079,991</td>
         <td>`name`</td>
       </tr>
       <tr>
-        <td><a hreflang="en" href="https://ui.perfetto.dev/v18.0-615704773/trace_processor.wasm">…/v18.0-615704773/trace_processor.wasm</a></td>
+        <td><a href="https://ui.perfetto.dev/v18.0-615704773/trace_processor.wasm">…/v18.0-615704773/trace_processor.wasm</a></td>
         <td class="numeric">2,079,991</td>
         <td>`name`</td>
       </tr>
       <tr>
-        <td><a hreflang="en" href="https://unpkg.com/canvaskit-wasm@0.25.1/bin/profiling/canvaskit.wasm">…/canvaskit.wasm</a></td>
+        <td><a href="https://unpkg.com/canvaskit-wasm@0.25.1/bin/profiling/canvaskit.wasm">…/canvaskit.wasm</a></td>
         <td class="numeric">1,491,602</td>
         <td>`name`</td>
       </tr>
