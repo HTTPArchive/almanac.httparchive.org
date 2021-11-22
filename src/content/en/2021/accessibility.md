@@ -281,7 +281,7 @@ When we look at desktop pages that have at least one instance of the `tabindex` 
 * 68% use a negative integer, meaning elements are explicitly removed from the keyboard focus order
 * 9% have a positive integer value, meaning the web author is trying to control the focus order rather than allowing the DOM structure to do so
 
-While there are valid declarations for the `tabindex` attribute, incorrectly reaching for these techniques leads to common accessibility barriers for many keyboard and assistive technology users. For more information about the pitfalls of using a positive integer for `tabindex` we recommend [Karl Grove](https://twitter.com/karlgroves)'s article, <a hreflang="en" href="https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad?utm_content=153549513&utm_medium=social&utm_source=twitter&hss_channel=tw-2309265523">"Why using `tabindex` values greater than "0" is bad"</a>.
+While there are valid declarations for the `tabindex` attribute, incorrectly reaching for these techniques leads to common accessibility barriers for many keyboard and assistive technology users. For more information about the pitfalls of using a positive integer for `tabindex` we recommend [Karl Grove](https://twitter.com/karlgroves)'s article, <a hreflang="en" href="https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad">"Why using `tabindex` values greater than "0" is bad"</a>.
 
 ### Skip links
 
