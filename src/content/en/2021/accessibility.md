@@ -16,11 +16,11 @@ kachiden_bio:Kit Paige is an accessibility engineer and cat enthusiast who's lon
 kachiden_bio: Kit Paige is an accessibility engineer and cat enthusiast who's long and winding path through tech has included QA, UX, frontend development, a love hate relationship with CSS, and immeasurable coffee.
 featured_quote: Web accessibility is about giving complete access to all aspects of an interface to people with disabilities by achieving feature and information parity. A digital product or website is simply not complete if it is not usable by everyone. If a digital product excludes certain disabled populations, this is discrimination and potentially grounds for fines and/or lawsuits.
 featured_stat_1: 0.96%
-featured_stat_label_1: well over 60,000 desktop websites use an accessibility overlay
+featured_stat_label_1: Well over 60,000 desktop websites use an accessibility overlay
 featured_stat_2: 22%
-featured_stat_label_2: websites have passing color contrast scores in Lighthouse
+featured_stat_label_2: Websites that pass color contrast audit in Lighthouse
 featured_stat_3: 57%
-featured_stat_label_3: buttons on desktop sites and 57% of buttons on mobile sites get their accessible name from content
+featured_stat_label_3: Buttons on sites that get their accessible name from content
 ---
 
 ## Introduction
