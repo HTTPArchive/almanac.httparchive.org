@@ -566,7 +566,7 @@ The weight of third-party content is also very similar to last year's analysis. 
 
 ## Tools
 
-{# TODO We don't use stacked headers. Can you add an intro sentence as to what this section is about? #}
+In addition to site performance and quality analysis, our [Methodology](./methodology) enables us to review other technologies used on ecommerce sites. This provides us with insight into the ecommerce strategies adopted (e.g., internationalization), as well as typical development techniques (e.g., JavaScript libraries used).
 
 ### JavaScript frameworks & libraries
 
