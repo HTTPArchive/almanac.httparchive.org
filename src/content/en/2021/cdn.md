@@ -99,7 +99,7 @@ With the evolution of CDN technology an expressway was set up on the internet fo
 {{ figure_markup(
   image="CDN Usage vs Hosted Resources.png",
   caption="CDN Usage vs Hosted Resources.",
-  description="Bar chart showing the CDN Usage for domains serving HTML, sub-domains serving static assets, third party domains",
+  description="Bar chart of CDN usage versus hosted resource split by origin and CDN. For HTML content, 73% of requests are from the origin and 27% from CDNs. For sub-domain content, 62% origin and 38% CDN. And for third-party content, 37% origin and 63% CDN.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=2109227821&format=image",
   sheets_gid="1173657471",
   sql_file="top_cdns.sql"
