@@ -158,8 +158,7 @@ Pages continue to use IDs, and at about the same rate as seen in 2020.  Even the
   sql_file="top_selector_ids.sql"
 ) }}
 
-We were unhappy to see so many IDs starting with `rc-`.  These are part of the reCAPTCHA system, which is inaccessible to the members of the deafblind community.
-{# TODO: (Authors) it would be a great to add a reference here to learn more, or to link to the a11y chapter's captcha section #}
+The IDs starting with `rc-` are part of Google’s reCAPTCHA system, most versions of which [are inaccessible in various ways](https://www.w3.org/TR/turingtest/#the-google-recaptcha).
 
 ### Attribute selectors
 
@@ -909,12 +908,10 @@ We also saw a dramatic reduction at the top end of gradient complexity.  Last ye
   image="most-color-stops.png",
   classes="height-16vw-122px",
   caption="The linear gradient with the most color stops.",
-  description="A screenshot of the gradient with the most color stops, which is a series of intricate multicolor stripes of varying hues.",
+  description="A screenshot of the gradient with the most color stops, which is a series of intricate multicolor stripes of varying hues, shading from a dirty goldenrod to greenish-blue to salmon to burnt orange.",
   width=600,
   height=100
 ) }}
-
-{# TODO: (Authors) I think the figure caption can be expanded to say it goes from ugly yellow to blue to pink to orange... #}
 
 ## Layout
 
