@@ -72,10 +72,10 @@ base AS (
     element_type,
     role_type,
     COUNTIF(e.element_type IS NOT NULL) AS element_usage,
-    COUNTIF(r.role_type  IS NOT NULL) AS role_usage
+    COUNTIF(r.role_type IS NOT NULL) AS role_usage
   FROM
     `httparchive.pages.2021_07_01_*`
-  INNER JOIN mappings ON (true)
+  INNER JOIN mappings ON (TRUE)
   LEFT OUTER JOIN
     elements e
   USING (_TABLE_SUFFIX, url, element_type)
