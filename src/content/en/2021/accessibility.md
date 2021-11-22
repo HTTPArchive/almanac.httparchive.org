@@ -9,18 +9,18 @@ editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1WjAM5ZnHjMQt-rKyHvj2eVhU_WdzzFTjpoYWMr_I0Cw/
 alextait1_bio: Alex Tait is an accessibility specialist whose passion lies in the intersection of accessibility and modern JavaScript within interface architecture and design systems. As a developer, she believes that inclusion driven development practices with accessibility at the forefront lead to better products for everyone. As a consultant and strategist, she believes that less is more, and that new feature scope creep cannot be prioritized over core feature parity for disabled users. As an educator, she believes in removing barriers to information so that tech can become a more diverse, equitable and inclusive industry.
-scottdavis99_bio:
+scottdavis99_bio: Scott Davis is an author and Digital Accessibility Advocate with Thoughtworks, where he focuses on leading-edge / innovative / emerging / non-traditional aspects of web development. “Digital Accessibility is so much more than a compliance checkbox; Accessibility is a springboard for innovation."
 oluoluoxenfree_bio: Olu Niyi-Awosusi is a JavaScript engineer at Oddbird who loves lists, learning new things, Bee and Puppycat, <a hreflang="en" href="https://alistapart.com/article/building-the-woke-web/">social justice, accessibility</a> and trying harder every day.
 gwilhelm_bio: Gary Wilhelm is the Digital Solutions Manager for the Division of Finance and Operations at UNC-Chapel Hill, which is a fancy way of saying that he works on websites and develops web applications. He started working to make his websites accessible in 2013 by studying specifications and has been interested in accessibility ever since, including spending large amounts of time learning about PDF accessibility through remediating several thousand PDF documents. In his spare time, he likes to travel, do yard work, run, watch sports, pester his wife and two teenagers, and help his dog look for squirrels and rabbits.
 kachiden_bio:Kit Paige is an accessibility engineer and cat enthusiast who's long and winding path through tech has included QA, UX, frontend development, a love hate relationship with CSS, and immeasurable coffee.
-kachiden_bio:
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+kachiden_bio: Kit Paige is an accessibility engineer and cat enthusiast who's long and winding path through tech has included QA, UX, frontend development, a love hate relationship with CSS, and immeasurable coffee.
+featured_quote: Web accessibility is about giving complete access to all aspects of an interface to people with disabilities by achieving feature and information parity. A digital product or website is simply not complete if it is not usable by everyone. If a digital product excludes certain disabled populations, this is discrimination and potentially grounds for fines and/or lawsuits.
+featured_stat_1: 0.96%
+featured_stat_label_1: well over 60,000 desktop websites use an accessibility overlay
+featured_stat_2: 22%
+featured_stat_label_2: websites have passing color contrast scores in Lighthouse
+featured_stat_3: 57%
+featured_stat_label_3: buttons on desktop sites and 57% of buttons on mobile sites get their accessible name from content
 ---
 
 ## Introduction
@@ -144,9 +144,7 @@ Often times, default focus indication is removed from interactive content such a
 
 For more information about how to achieve accessible focus indication including some limitations of browser default focus styles, we recommend Sara Soueidan's article, <a hreflang="en" href="https://www.sarasoueidan.com/blog/focus-indicators/">"A guide to designing accessible, WCAG-compliant focus indicators"</a>.
 
-### Prefers-color-scheme and high contrast support
-
-{# TODO authors - can we think of a better name for this section? It covers more that just what's in there now #}
+### User preference media queries and high contrast support
 
 The <a hreflang="en" href="https://www.w3.org/TR/mediaqueries-5">CSS Media Queries Level 5 specification</a>, published in 2020, introduced a collection of User Preference Media Queries that allow a website to detect Accessibility features that a user may have configured outside of the website itself. These features are typically configured through operating system or platform preferences.
 
@@ -756,7 +754,27 @@ Unfortunately, web accessibility is simply not possible to achieve with an out o
   sql_file="a11y_technology_usage.sql"
 ) }}
 
-We found that 0.96% of desktop websites—or well over 60,000—use one of these accessibility overlays. It is worth noting that we have queried for a list of well known products in this space. However, this list is not exhaustive so this metric is likely higher in reality.
+We found that 0.96% of desktop websites—or well over 60,000—use one of these accessibility overlays. It is worth noting that we have queried for a list of well known products in this space. However, this list is not exhaustive so this metric is likely higher in reality. 
+
+{{ figure_markup(
+  image="a11y-app-usage-by-rank.png",
+  caption="Accessibility app usage by rank.",
+  description="A bar chart chart showing usage of the most popular accessibility apps by domain rank on desktop sites. AccessiBe is not used on the top 1,000 sites, but is used by 0.15% of the top 10,000 sites, by 0.39% of the top 100,000 sites, ny 0.37% of the top million sites and by 0.27% of all sites. AudioEye is used by 0.13%, 0.20%, 0.13%, 0.16%, and 0.24% respectivelt. EqualWeb is not used on the top 1,000 or top 10,000 site but is used by 0.02% of the top 100,000, 0.03% of the top million, and 0.02% of all sites. Texthelp similarly is not used on the top 1,000 or top 10,000 sites but is used by 0.02% of the top 100,000, 0.04% of the top million, and 0.02% of all sites. Finally, UserWay is not used on the top 1,000 sites but is used by 0.04% of the top 10,000 sites, by 0.09% of the top 100,000 sites, by 0.24% of the top million and by 0.39% of all sites. Only AudioEye is used by the top 1,000 sites.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=473077851&format=interactive",
+  sheets_gid="2077755325",
+  sql_file="a11y_overall_tech_usage_by_domain_rank.sql"
+) }}
+
+When considering domain rank, the top 1,000 websites have a lower percentage —0.1%— of overlay usage. However, considering the reach of these top ranking sites, the potential impact of even one website with this much trafic using an overlay is very substantial.
+
+{{ figure_markup(
+  image="pages-using-a11y-apps-by-rank.png",
+  caption="Pages using accessibility apps by rank.",
+  description="A bar chart chart showing that for the top 1,000 sites, 0.1% on desktop and 0.1% on mobile use and accessibility app, for the top 10,000 it's 0.6% and 0.5% respectivdely, for the top 100,000 it's 0.8% and 0.7%, for the top million it's 0.9% and 0.8%, and finally for all sites 1.0% it's 0.8%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=851935325&format=interactive",
+  sheets_gid="827309922",
+  sql_file="a11y_technology_usage_by_domain_rank.sql"
+) }}
 
 ### The consequences of overlays
 
@@ -790,25 +808,6 @@ These widgets have been named as part of many accessibility lawsuits against com
 
 For more information about the legal implications of using these overlays please refer to Lainey Feingold's article <a hreflang="en" href="https://www.lflegal.com/2020/08/quick-fix/">Honour the ADA: Avoid Web Accessibility Quick-Fix Overlays</a> and Adrian Roselli's article <a hreflang="en" href="https://adrianroselli.com/2020/06/accessibe-will-get-you-sued.html">#accessiBe Will Get You Sued</a>.
 
-{{ figure_markup(
-  image="a11y-app-usage-by-rank.png",
-  caption="Accessibility app usage by rank.",
-  description="A bar chart chart showing usage of the most popular accessibility apps by domain rank on desktop sites. AccessiBe is not used on the top 1,000 sites, but is used by 0.15% of the top 10,000 sites, by 0.39% of the top 100,000 sites, ny 0.37% of the top million sites and by 0.27% of all sites. AudioEye is used by 0.13%, 0.20%, 0.13%, 0.16%, and 0.24% respectivelt. EqualWeb is not used on the top 1,000 or top 10,000 site but is used by 0.02% of the top 100,000, 0.03% of the top million, and 0.02% of all sites. Texthelp similarly is not used on the top 1,000 or top 10,000 sites but is used by 0.02% of the top 100,000, 0.04% of the top million, and 0.02% of all sites. Finally, UserWay is not used on the top 1,000 sites but is used by 0.04% of the top 10,000 sites, by 0.09% of the top 100,000 sites, by 0.24% of the top million and by 0.39% of all sites. Only AudioEye is used by the top 1,000 sites.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=473077851&format=interactive",
-  sheets_gid="2077755325",
-  sql_file="a11y_overall_tech_usage_by_domain_rank.sql"
-) }}
-
-{{ figure_markup(
-  image="pages-using-a11y-apps-by-rank.png",
-  caption="Pages using accessibility apps by rank.",
-  description="A bar chart chart showing that for the top 1,000 sites, 0.1% on desktop and 0.1% on mobile use and accessibility app, for the top 10,000 it's 0.6% and 0.5% respectivdely, for the top 100,000 it's 0.8% and 0.7%, for the top million it's 0.9% and 0.8%, and finally for all sites 1.0% it's 0.8%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=851935325&format=interactive",
-  sheets_gid="827309922",
-  sql_file="a11y_technology_usage_by_domain_rank.sql"
-) }}
-
-{# TODO (Authors) can we talk about the stats more? At the moment they feel just wedged in at the end, with no connection to the surrounding text. To me it would help make this section stronger by grounding it in facts. #}
 
 ### Why do some companies use overlays?
 
