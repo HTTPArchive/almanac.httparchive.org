@@ -95,7 +95,7 @@ We found that 24% of desktop homepages and 29% of mobile homepages attempt to di
   description="A bar chart chart showing that for the top 1,000 sites zooming and scaling is disabled by 22.4% of desktop sites and 45.0% of mobile sites, for the top 10,000 it's 27.0% and 40.5% respectively, for the top 100,000 it's 26.2% and 34.1%, for the top million it's 25.2% and 30.4% and finally for all sites it's 24.1% and 29.4%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1312122950&format=interactive",
   sheets_gid="645664156",
-  sql_file="{# TODO #}"
+  sql_file="../mobile-web/viewport_zoom_scale_by_domain_rank.sql"
 ) }}
 
 When we consider the most popular sites in particular, the numbers for mobile are especially concerning. Of the top 1,000 most trafficked sites, 22% of desktop sites and 45% of mobile sites have code that attempts to disable user scaling. This may be a trend that comes from the proliferation of web applications. People need to be able to customize their web browsing experience (such as zooming and scaling) regardless of whether the content is a website or web application.
@@ -185,43 +185,48 @@ Before the introduction of HTML5, ARIA landmark roles were needed to accomplish 
         <th>ARIA role<br />equivalent</th>
         <th>Pages with<br />element</th>
         <th>Pages with<br />role</th>
+        <th>Pages with<br />element or role</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>`<main>`</td>
         <td>`role="main"`</td>
-        <td class="numeric">28%</td>
-        <td class="numeric">17%</td>
+        <td class="numeric">27.68%</td>
+        <td class="numeric">16.90%</td>
+        <td class="numeric">35.00%</td>
       </tr>
       <tr>
         <td>`<header>`</td>
         <td>`role="banner"`</td>
-        <td class="numeric">62%</td>
-        <td class="numeric">14%</td>
+        <td class="numeric">62.13%</td>
+        <td class="numeric">14.34%</td>
+        <td class="numeric">63.49%</td>
       </tr>
       <tr>
         <td>`<nav>`</td>
         <td>`role="navigation"`</td>
-        <td class="numeric">62%</td>
-        <td class="numeric">4%</td>
+        <td class="numeric">61.69%</td>
+        <td class="numeric">22.79%</td>
+        <td class="numeric">65.53%</td>
       </tr>
       <tr>
         <td>`<footer>`</td>
         <td>`role="contentinfo"`</td>
-        <td class="numeric">63%</td>
-        <td class="numeric">12%</td>
+        <td class="numeric">63.35%</td>
+        <td class="numeric">12.21%</td>
+        <td class="numeric">64.52%</td>
       </tr>
     </tbody>
   </table>
   <figcaption>{{ figure_link(
     caption="Landmark elment and role usage (desktop).",
-    sheets_gid="{# TODO what is the Sheet gid for these stats? #}",
-    sql_file="{# TODO what is the sql filename for these stats? Can normally find out once have sheet id) #}"
+    sheets_gid="1736231238",
+    sql_file="landmark_elements_and_roles.sql"
   ) }}</figcaption>
 </figure>
 
-The most commonly expected landmarks that the majority of web pages should have are `<main>`, `<header>`, `<nav>` and `<footer>`. We found that only 28% of desktop pages have a native HTML `<main>` element, and 17% of desktop pages have an element with a `role="main"`.
+The most commonly expected landmarks that the majority of web pages should have are `<main>`, `<header>`, `<nav>` and `<footer>`. We found that only 28% of desktop pages have a native HTML `<main>` element, and 17% of desktop pages have an element with a `role="main"`, and 35% of pages have either.
 
 When a page has multiple instances of the same landmark, for example, a primary site navigation and a breadcrumb secondary navigation, it is important that they each have a unique accessible name. This will help an assistive technology user to better understand which navigation landmark they have encountered. Techniques for accomplishing this are covered in Scott O'Hara's comprehensive article about the <a hreflang="en" href="https://www.scottohara.me/blog/2018/03/03/landmarks.html">various landmarks and how different screen readers navigate them</a>.
 
@@ -455,8 +460,6 @@ It goes on to say:
   <blockquote>Use of the placeholder attribute as a replacement for a label can reduce the accessibility and usability of the control for a range of users including older users and users with cognitive, mobility, fine motor skill or vision impairments.</blockquote>
   <figcaption>— <cite><a hreflang="en" href="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Placeholder_Research">The W3C's Placeholder Research</a></cite></figcaption>
 </figure>
-
-{# TODO (Authors) It looks like this quote is no longer in the HTML Living Standard spec so moved it to see it was in the W3C's Placeholder Research. Are we still happy to include this given they say it's in the HTML5 spec but it's not in the Living Standard spec? #}
 
 ### Requiring information
 
@@ -749,7 +752,7 @@ Unfortunately, web accessibility is simply not possible to achieve with an out o
   sql_file="a11y_technology_usage.sql"
 ) }}
 
-We found that 0.96% of desktop websites—or well over 60,000—use one of these accessibility overlays. It is worth noting that we have queried for a list of well known products in this space. However, this list is not exhaustive so this metric is likely higher in reality. 
+We found that 0.96% of desktop websites—or well over 60,000—use one of these accessibility overlays. It is worth noting that we have queried for a list of well known products in this space. However, this list is not exhaustive so this metric is likely higher in reality.
 
 {{ figure_markup(
   image="a11y-app-usage-by-rank.png",
