@@ -130,7 +130,7 @@ While we observed CDN adoption across different types of content, we will not lo
 {{ figure_markup(
   image="CDN Usage by Site Popularity - Desktop.png",
   caption="CDN Usage by Site Popularity - Desktop.",
-  description="Bar chart showing the CDN Usage for top 1,000 popular sites in Desktop followed by same stats for top 10,000, top 100,000, top 1 million and top 10 million popular sites",
+  description="This Bar chart provides a view of CDN Usage for Desktop sites broken up for top 1,000, 10,000, 100,000, 1 million and 10 million popular sites as per Google CRUX data. Top 1000 popular sites has about 62.33% CDN adoption followed by top 10,000 sites at 56.16%, top 100,000 sites at 44.38%, top 1 million sites at 31.42% and top 10 million sites at 26.09%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=956770395&format=image",
   sheets_gid="414030881",
   sql_file="CDN Usage by Site Popularity.sql"
@@ -139,7 +139,7 @@ While we observed CDN adoption across different types of content, we will not lo
 {{ figure_markup(
   image="CDN Usage by Site Popularity - Mobile.png",
   caption="CDN Usage by Site Popularity - Mobile.",
-  description="Bar chart showing the CDN Usage for top 1,000 popular sites in Mobile followed by same stats for top 10,000, top 100,000, top 1 million and top 10 million popular sites",
+  description="This Bar chart provides a view of CDN Usage for Desktop sites broken up for top 1,000, 10,000, 100,000, 1 million and 10 million popular sites as per Google CRUX data. Top 1000 popular sites has about 61.12% CDN adoption followed by top 10,000 sites at 56.61%, top 100,000 sites at 45.1%, top 1 million sites at 32.35% and top 10 million sites at 25.88%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1707360768&format=image",
   sheets_gid="414030881",
   sql_file="CDN Usage by Site Popularity.sql"
@@ -182,8 +182,8 @@ This appeals to a  larger set of industries and is reflected in the data.  Gener
 {{ figure_markup(
   image="Top CDNs for HTML Requests.png",
   caption="Top CDNs for HTML Requests.",
-  description="Box plot showing the top CDN providers serving HTML requests. The bigger the size of the box, more the HTML requests were served by that CDN",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1907738479&format=image",
+  description="Box plot showing the top CDN providers serving HTML requests. Cloudflare tops the list by serving 50.11% of the HTML requests followed by Google at 24.8%, Fastly at 8.53%, Cloudfront at 5.85% and Akamai at 3.13%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1907738479&format=interactive",
   sheets_gid="1173657471",
   sql_file="top_cdns.sql"
   )
@@ -215,8 +215,8 @@ They appear in this list since they offer bundled CDN offerings along with their
 {{ figure_markup(
   image="Top CDNs for Sub-Domain Requests.png",
   caption="Top CDNs for Sub-Domain Requests.",
-  description="Box plot showing the top CDN providers serving Sub-Domain requests. The bigger the size of the box, more the Sub-Domain requests were served by that CDN",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1727439047&format=image",
+  description="Box plot showing the top CDN providers serving Sub-Domain requests. Cloudflare tops the list by serving 42.91% of the sub-domain requests followed by Cloudfront at 19.43%, Automattic at 8.68%, Akamai at 6.39% and Google at 4.31%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1727439047&format=interactive",
   sheets_gid="1173657471",
   sql_file="top_cdns.sql"
   )
@@ -230,8 +230,8 @@ Looking at third party domains below, you see a different trend in top CDN Provi
 {{ figure_markup(
   image="Top CDNs for Third-Party Requests.png",
   caption="Top CDNs for Third-Party Requests.",
-  description="Box plot showing the top CDN providers serving Third-Party requests. The bigger the size of the box, more the Third-Party requests are served by that CDN",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1676004971&format=image",
+  description="Box plot showing the top CDN providers serving third party requests. Google tops the list by serving 48.02% of the third party requests followed by Cloudfront at 11.24%, Cloudflare at 10.07%, Fastly at 7.82% and Facebook at 7.06%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1676004971&format=interactive",
   sheets_gid="1173657471",
   sql_file="top_cdns.sql"
   )
@@ -258,7 +258,7 @@ With CDNs set up in the request-response workflows, the end user’s TLS connect
 {{ figure_markup(
   image="Distribution of TLS Version - Desktop HTML.png",
   caption="Distribution of TLS Version - Desktop HTML.",
-  description="Bar chart showing the usage of different TLS versions in Desktop by requests served from CDN and requests served from Origin",
+  description="Bar chart of TLS version usage in Desktop requests served by CDN and Origin. CDN's have served 82.29% of the requests using TLS 1.3 and 17.71% of the requests in TLS 1.2. Origin on the other served 33.29% of the requests over TLS 1.3 and 66.34% of the requests on TLS 1.2.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1914791224&format=image",
   sheets_gid="1492712705",
   sql_file="distribution_of_tls_versions_cdn_vs_origin.sql"
@@ -268,7 +268,7 @@ With CDNs set up in the request-response workflows, the end user’s TLS connect
 {{ figure_markup(
   image="Distribution of TLS Version - Mobile HTML.png",
   caption="Distribution of TLS Version - Mobile HTML.",
-  description="Bar chart showing the usage of different TLS versions in Mobile by requests served from CDN and requests served from Origin",
+  description="Bar chart of TLS version usage in Mobile requests served by CDN and Origin. CDN's have served 83.8% of the requests using TLS 1.3 and 16.2% of the requests in TLS 1.2. Origin on the other served 35.99% of the requests over TLS 1.3 and 63.7% of the requests on TLS 1.2.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=586006642&format=image",
   sheets_gid="1492712705",
   sql_file="distribution_of_tls_versions_cdn_vs_origin.sql"
@@ -286,7 +286,7 @@ Similar trend is observed for the third party domains below. These web services 
 {{ figure_markup(
   image="Distribution of TLS Version - Desktop Third Party.png",
   caption="Distribution of TLS Version - Desktop Third Party.",
-  description="Bar chart showing the usage of different TLS versions in Desktop by third Party requests served from CDN and third party requests served from Origin",
+  description="Bar chart of TLS version usage in third party requests on Desktop, served by CDN and Origin. CDN's have served 88.12% of the third party requests using TLS 1.3 and 11.88% of the requests in TLS 1.2. Origin on the other served 40.28% of the requests over TLS 1.3 and 59.51% of the requests on TLS 1.2.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1414975613&format=image",
   sheets_gid="1492712705",
   sql_file="distribution_of_tls_versions_cdn_vs_origin.sql"
@@ -296,7 +296,7 @@ Similar trend is observed for the third party domains below. These web services 
 {{ figure_markup(
   image="Distribution of TLS Version - Mobile Third Party.png",
   caption="Distribution of TLS Version - Mobile Third Party.",
-  description="Bar chart showing the usage of different TLS versions in Mobile by third Party requests served from CDN and third party requests served from Origin",
+  description="Bar chart of TLS version usage in third party requests on Mobile, served by CDN and Origin. CDN's have served 88.47% of the third party requests using TLS 1.3 and 11.53% of the requests in TLS 1.2. Origin on the other served 39.41% of the requests over TLS 1.3 and 60.4% of the requests on TLS 1.2.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=647850030&format=image",
   sheets_gid="1492712705",
   sql_file="distribution_of_tls_versions_cdn_vs_origin.sql"
@@ -315,7 +315,7 @@ Common logic dictates that the fewer hops it takes for a HTTPS request-response 
 {{ figure_markup(
   image="HTML TLS Negotiation - CDN vs Origin.png",
   caption="HTML TLS Negotiation - CDN vs Origin.",
-  description="Bar chart showing the TLS connection setup time (in milliseconds) at 10th, 25th, 50th, 75th and 90th Percentile for requests served from CDN v/s requests served from Origin",
+  description="This bar chart provides insight into TLS connection time (in milliseconds) across 10th, 25th, 50th, 75th and 90th percentile for CDN and Origin. With CDN, TLS connection times are 54ms, 58ms, 63ms, 76ms and 142ms respectively, while Origin TLS connection times are 83ms, 125ms, 183ms, 237ms and 370ms respectively at these percentiles.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1928148559&format=image",
   sheets_gid="603895236",
   sql_file="distribution_of_tls_time_cdn_vs_origin.sql"
@@ -344,7 +344,7 @@ The trend cannot be clearer than what the graph shows below. There is high HTTP/
 {{ figure_markup(
   image="Distribution of HTTP Versions - Desktop HTML.png",
   caption="Distribution of HTTP Versions - Desktop HTML.",
-  description="Bar chart showing the HTTP versions used in Desktop HTML requests served from CDN and Origin.",
+  description="This bar chart shows the HTTP version adoption across CDN and Origin in Desktop HTML requests. For Desktop HTML requests served from CDN, 86.1% were served on HTTP/2 or better protocol while requests served from Origin had 39.18% requests served on HTTP/2 or better protocol.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=707070598&format=image",
   sheets_gid="1197207175",
   sql_file="distribution_of_http_versions_cdn_vs_origin.sql"
@@ -354,7 +354,7 @@ The trend cannot be clearer than what the graph shows below. There is high HTTP/
 {{ figure_markup(
   image="Distribution of HTTP Versions - Mobile HTML.png",
   caption="Distribution of HTTP Versions - Mobile HTML.",
-  description="Bar chart showing the HTTP versions used in Mobile HTML requests served from CDN and Origin.",
+  description="This bar chart shows the HTTP version adoption across CDN and Origin in Mobile HTML requests. For Mobile HTML requests served from CDN, 81.69% were served on HTTP/2 or better protocol while requests served from Origin had 39.79% requests served on HTTP/2 or better protocol.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=825211868&format=image",
   sheets_gid="1197207175",
   sql_file="distribution_of_http_versions_cdn_vs_origin.sql"
@@ -369,7 +369,7 @@ Back in 2019, the Origin domains had 27% adoption of HTTP/2 compared to 71% adop
 {{ figure_markup(
   image="Distribution of HTTP Versions - Desktop Third Party.png",
   caption="Distribution of HTTP Versions - Desktop Third Party.",
-  description="Bar chart showing the HTTP versions used in Desktop Third Party requests served from CDN and Origin.",
+  description="This bar chart shows the HTTP version adoption across CDN and Origin for third party requests on Desktop. For these third party requests served from CDN, 89.99% were served on HTTP/2 or better protocol while requests served from Origin had 48.46% requests served on HTTP/2 or better protocol.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=315993105&format=image",
   sheets_gid="1197207175",
   sql_file="distribution_of_http_versions_cdn_vs_origin.sql"
@@ -379,7 +379,7 @@ Back in 2019, the Origin domains had 27% adoption of HTTP/2 compared to 71% adop
 {{ figure_markup(
   image="Distribution of HTTP Versions - Mobile Third Party.png",
   caption="Distribution of HTTP Versions - Mobile Third Party.",
-  description="Bar chart showing the HTTP versions used in Mobile Third Party requests served from CDN and Origin.",
+  description="This bar chart shows the HTTP version adoption across CDN and Origin for third party requests on Mobile. For these third party requests served from CDN, 90.36% were served on HTTP/2 or better protocol while requests served from Origin had 43.71% requests served on HTTP/2 or better protocol.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=351977017&format=image",
   sheets_gid="1197207175",
   sql_file="distribution_of_http_versions_cdn_vs_origin.sql"
@@ -402,7 +402,7 @@ The impact of this is observed when we compare websites which are using CDN agai
 {{ figure_markup(
   image="Distribution of Compression Types - Desktop.png",
   caption="Distribution of Compression Types - Desktop.",
-  description="Bar chart showing the Brotli and Gzip compression usage in Desktop requests served from CDN and Origin.",
+  description="This bar chart shows the Brotli adoption across CDN and Origin on Desktop requests. CDN's served 42.45% of requests in Brotli compressed format and 57.52% of requests in gzip compressed format. Origin on the other hand served 20.69% of requests in Brotli compressed format and 79.32% of requests in gzip compressed format.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=914242768&format=image",
   sheets_gid="1196940164",
   sql_file="distribution_of_compression_types_cdn_vs_origin.sql"
@@ -412,7 +412,7 @@ The impact of this is observed when we compare websites which are using CDN agai
 {{ figure_markup(
   image="Distribution of Compression Types - Mobile.png",
   caption="Distribution of Compression Types - Mobile.",
-  description="Bar chart showing the Brotli and Gzip compression usage in Mobile requests served from CDN and Origin.",
+  description="This bar chart shows the Brotli adoption across CDN and Origin on Mobile requests. CDN's served 42.64% of requests in Brotli compressed format and 57.33% of requests in gzip compressed format. Origin on the other hand served 21.18% of requests in Brotli compressed format and 78.74% of requests in gzip compressed format.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1852382089&format=image",
   sheets_gid="1196940164",
   sql_file="distribution_of_compression_types_cdn_vs_origin.sql"
