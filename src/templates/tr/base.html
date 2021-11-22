@@ -88,6 +88,22 @@ Misyonumuz, HTTP Archive&#8217;ın ham istatistiklerini ve eğilimlerini web top
 {% block author %}Yazar{% endblock %}
 {% block authors %}Yazarlar{% endblock %}
 
+{% block reactions %}Reactions{% endblock %}
+
+{% block like %}Like{% endblock %}
+{% block repost %}Repost{% endblock %}
+{% block reply %}Reply{% endblock %}
+{% block mention %}Mention{% endblock %}
+{% block likes %}Likes{% endblock %}
+{% block reposts %}Reposts{% endblock %}
+{% block replies %}Replies{% endblock %}
+{% block mentions %}Mentions{% endblock %}
+
+{% block like_reaction_text %}liked this chapter{% endblock %}
+{% block repost_reaction_text %}reposted this chapter{% endblock %}
+{% block reply_reaction_text %}View source of reply by{% endblock %}
+{% block mention_reaction_text %}View source of mention by{% endblock %}
+
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}}Twitter üzerinde{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}}GitHub üzerinde {% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} LinkedIn üzerinde {% endmacro %}

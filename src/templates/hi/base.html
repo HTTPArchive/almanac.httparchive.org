@@ -88,6 +88,22 @@
 {% block author %}लेखक{% endblock %}
 {% block authors %}लेखकों{% endblock %}
 
+{% block reactions %}Reactions{% endblock %}
+
+{% block like %}Like{% endblock %}
+{% block repost %}Repost{% endblock %}
+{% block reply %}Reply{% endblock %}
+{% block mention %}Mention{% endblock %}
+{% block likes %}Likes{% endblock %}
+{% block reposts %}Reposts{% endblock %}
+{% block replies %}Replies{% endblock %}
+{% block mentions %}Mentions{% endblock %}
+
+{% block like_reaction_text %}liked this chapter{% endblock %}
+{% block repost_reaction_text %}reposted this chapter{% endblock %}
+{% block reply_reaction_text %}View source of reply by{% endblock %}
+{% block mention_reaction_text %}View source of mention by{% endblock %}
+
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} Twitter पर{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} GitHub पर{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} LinkedIn पर{% endmacro %}

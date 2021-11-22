@@ -39,6 +39,18 @@ function parseMentions(webmentions, mentionType) {
 function renderLikes(likes) {
   // Add the likes count to the likes-tab
   document.querySelector('#likes-count').textContent = likes.length;
+  if (likes.length === 1) {
+    document.querySelectorAll('.like-singular').forEach(el => {
+      el.removeAttribute('data-translation');
+    });
+  } else {
+    document.querySelectorAll('.like-plural').forEach(el => {
+      el.removeAttribute('data-translation');
+    });
+  }
+
+  const likePanel = document.querySelector("#likes-panel");
+  const likeAriaText = likePanel.getAttribute("data-like-text");
   const webmentionLikesList = document.createElement("ul");
   webmentionLikesList.setAttribute("class", "webmention-likes");
   likes.forEach(function(like) {
@@ -48,7 +60,7 @@ function renderLikes(likes) {
           class="webmention-author"
           href="${like["url"]}"
           title="${like["author"]["name"]}"
-          aria-label="${like["author"]["name"]} liked this chapter"
+          aria-label="${like["author"]["name"]} ${likeAriaText}"
         >
           <img
             class="webmention-author-avatar"
@@ -61,13 +73,25 @@ function renderLikes(likes) {
 	  const likeHtmlObject = parser.parseFromString(likeHtml, 'text/html');
     webmentionLikesList.appendChild(likeHtmlObject.body.childNodes[0]);
   });
-  document.querySelector("#likes-panel").appendChild(webmentionLikesList);
+  likePanel.appendChild(webmentionLikesList);
 }
 
 // Renders webmention reposts
 function renderReposts(reposts) {
   // Add the reposts count to the reposts-tab
   document.querySelector('#reposts-count').textContent = reposts.length;
+  if (reposts.length === 1) {
+    document.querySelectorAll('.repost-singular').forEach(el => {
+      el.removeAttribute('data-translation');
+    });
+  } else {
+    document.querySelectorAll('.repost-plural').forEach(el => {
+      el.removeAttribute('data-translation');
+    });
+  }
+
+  const repostPanel = document.querySelector("#reposts-panel");
+  const repostAriaText = repostPanel.getAttribute("data-repost-text");
   const webmentionRepostsList = document.createElement("ul");
   webmentionRepostsList.setAttribute("class", "webmention-reposts");
   reposts.forEach(function(repost) {
@@ -77,7 +101,7 @@ function renderReposts(reposts) {
           class="webmention-author"
           href="${repost["url"]}"
           title="${repost["author"]["name"]}"
-          aria-label="${repost["author"]["name"]} reposted this chapter"
+          aria-label="${repost["author"]["name"]} ${repostAriaText}"
         >
           <img
             class="webmention-author-avatar"
@@ -90,13 +114,25 @@ function renderReposts(reposts) {
 	  const repostHtmlObject = parser.parseFromString(repostHtml, 'text/html');
     webmentionRepostsList.appendChild(repostHtmlObject.body.childNodes[0]);
   });
-  document.querySelector("#reposts-panel").appendChild(webmentionRepostsList);
+  repostPanel.appendChild(webmentionRepostsList);
 }
 
 // Renders webmention replies
 function renderReplies(replies) {
   // Add the replies count to the replies-tab
   document.querySelector('#replies-count').textContent = replies.length;
+  if (replies.length === 1) {
+    document.querySelectorAll('.reply-singular').forEach(el => {
+      el.removeAttribute('data-translation');
+    });
+  } else {
+    document.querySelectorAll('.reply-plural').forEach(el => {
+      el.removeAttribute('data-translation');
+    });
+  }
+
+  const replyPanel = document.querySelector("#replies-panel");
+  const replyAriaText = replyPanel.getAttribute("data-reply-text");
   const webmentionRepliesList = document.createElement("ul");
   webmentionRepliesList.setAttribute("class", "webmention-replies");
   replies.forEach(function(reply) {
@@ -123,7 +159,7 @@ function renderReplies(replies) {
           <a
             class="webmention-source"
             href="${reply["url"]}"
-            aria-label="View source of reply by ${reply["author"]["name"]}"
+            aria-label="${replyAriaText} ${reply["author"]["name"]}"
           >View Source</a>
         </div>
       </li>
@@ -132,13 +168,25 @@ function renderReplies(replies) {
 	  const replyHtmlObject = parser.parseFromString(replyHtml, 'text/html');
     webmentionRepliesList.appendChild(replyHtmlObject.body.childNodes[0]);
   });
-  document.querySelector("#replies-panel").appendChild(webmentionRepliesList);
+  replyPanel.appendChild(webmentionRepliesList);
 }
 
 // Renders webmention mentions
 function renderMentions(mentions) {
   // Add the mentions count to the mentions-tab
   document.querySelector('#mentions-count').textContent = mentions.length;
+  if (mentions.length === 1) {
+    document.querySelectorAll('.mention-singular').forEach(el => {
+      el.removeAttribute('data-translation');
+    });
+  } else {
+    document.querySelectorAll('.mention-plural').forEach(el => {
+      el.removeAttribute('data-translation');
+    });
+  }
+
+  const mentionPanel = document.querySelector("#mentions-panel");
+  const mentionAriaText = mentionPanel.getAttribute("data-mention-text");
   const webmentionMentionsList = document.createElement("ul");
   webmentionMentionsList.setAttribute("class", "webmention-mentions");
   mentions.forEach(function(mention) {
@@ -168,7 +216,7 @@ function renderMentions(mentions) {
           <a
             class="webmention-source"
             href="${mention["url"]}"
-            aria-label="View source of mention by ${mention["author"]["name"]}"
+            aria-label="${mentionAriaText} ${mention["author"]["name"]}"
           >View Source</a>
         </div>
       </li>
@@ -177,7 +225,7 @@ function renderMentions(mentions) {
 	  const mentionHtmlObject = parser.parseFromString(mentionHtml, 'text/html');
     webmentionMentionsList.appendChild(mentionHtmlObject.body.childNodes[0]);
   });
-  document.querySelector("#mentions-panel").appendChild(webmentionMentionsList);
+  mentionPanel.appendChild(webmentionMentionsList);
 }
 
 // Parses and renders mentions into likes, reposts, replies and mentions

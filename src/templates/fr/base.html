@@ -88,6 +88,22 @@ Notre mission est de combiner les statistiques brutes et les tendances de HTTP A
 {% block author %}Auteur·ice{% endblock %}
 {% block authors %}Auteur·ice·s{% endblock %}
 
+{% block reactions %}Reactions{% endblock %}
+
+{% block like %}Like{% endblock %}
+{% block repost %}Repost{% endblock %}
+{% block reply %}Reply{% endblock %}
+{% block mention %}Mention{% endblock %}
+{% block likes %}Likes{% endblock %}
+{% block reposts %}Reposts{% endblock %}
+{% block replies %}Replies{% endblock %}
+{% block mentions %}Mentions{% endblock %}
+
+{% block like_reaction_text %}liked this chapter{% endblock %}
+{% block repost_reaction_text %}reposted this chapter{% endblock %}
+{% block reply_reaction_text %}View source of reply by{% endblock %}
+{% block mention_reaction_text %}View source of mention by{% endblock %}
+
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} sur Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} sur GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} sur LinkedIn{% endmacro %}
