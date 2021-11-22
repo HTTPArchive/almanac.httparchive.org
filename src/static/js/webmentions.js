@@ -18,6 +18,12 @@ async function getWebmentions(targetURL) {
   return mentions;
 }
 
+// Format published date into human readable form
+function formatDate(dateString){
+  const options = { year: "numeric", month: "long", day: "numeric" }
+  return new Date(dateString).toLocaleDateString(undefined, options)
+}
+
 // Parse webmentions for individual category
 function parseMentions(webmentions, mentionType) {
   let filteredMentions = []
@@ -37,8 +43,16 @@ function renderLikes(likes) {
   likes.forEach(function(like) {
     const likeHtml = `
       <li class="webmention-likes-item">
-        <a class="webmention-author" href="${like["url"]}" aria-label="${like["author"]["name"]} liked this chapter">
-          <img class="webmention-author-avatar" src="${like["author"]["photo"]}" />
+        <a
+          class="webmention-author"
+          href="${like["url"]}"
+          title="${like["author"]["name"]}"
+          aria-label="${like["author"]["name"]} liked this chapter"
+        >
+          <img
+            class="webmention-author-avatar"
+            src="${like["author"]["photo"]}"
+            loading="lazy" width="60" height="60"/>
         </a>
       </li>
     `;
@@ -59,8 +73,16 @@ function renderReposts(reposts) {
   reposts.forEach(function(repost) {
     const repostHtml = `
       <li class="webmention-repost-item">
-        <a class="webmention-author" href="${repost["url"]}" aria-label="${repost["author"]["name"]} liked this chapter">
-          <img class="webmention-author-avatar" src="${repost["author"]["photo"]}" />
+        <a
+          class="webmention-author"
+          href="${repost["url"]}"
+          title="${repost["author"]["name"]}"
+          aria-label="${repost["author"]["name"]} reposted this chapter"
+        >
+          <img
+            class="webmention-author-avatar"
+            src="${repost["author"]["photo"]}"
+            loading="lazy" width="60" height="60"/>
         </a>
       </li>
     `;
@@ -75,12 +97,95 @@ function renderReposts(reposts) {
 
 // Renders webmention replies
 function renderReplies(replies) {
+  // Add the replies count to the replies-tab
+  document.querySelector('#replies-count').innerHTML = replies.length;
+  let repliesHtmlElements = [];
+  replies.forEach(function(reply) {
+    const replyHtml = `
+      <li class="webmention-reply-item">
+        <a class="webmention-author" href="${reply["author"]["url"]}">
+          <img
+            class="webmention-author-avatar"
+            src="${reply["author"]["photo"]}"
+            loading="lazy" width="60" height="60"/>
+          <strong class="webmention-author-name">${reply["author"]["name"]}</strong>
+        </a>
+        <div class="webmention-content">
+          ${reply["content"]["html"]}
+        </div>
+        <div class="webmention-meta">
+          <time
+            class="webmention-pub-date"
+            datetime="${reply["published"]}"
+          >
+            ${formatDate(reply["published"])}
+          </time>
+          <span class="webmention-divider" aria-hidden="true">⋅</span>
+          <a
+            class="webmention-source"
+            href="${reply["url"]}"
+            aria-label="View source of reply by ${reply["author"]["name"]}"
+          >View Source</a>
+        </div>
+      </li>
+    `;
+    repliesHtmlElements.push(replyHtml);
+  })
+  document.querySelector("#replies-panel").innerHTML = `
+    <ul class="webmention-replies">
+      ${repliesHtmlElements.join("\n")}
+    </ul>
+  `;
+}
 
+// Renders webmention mentions
+function renderMentions(mentions) {
+  // Add the replies count to the replies-tab
+  document.querySelector('#mentions-count').innerHTML = mentions.length;
+  let mentionsHtmlElements = [];
+  mentions.forEach(function(mention) {
+    const mentionContent = mention["content"] ? mention["content"]["html"] : (
+      `Source: <a href="${mention["wm-source"]}">${mention["wm-source"]}</a>`
+    );
+    const mentionHtml = `
+      <li class="webmention-mention-item">
+        <a class="webmention-author" href="${mention["author"]["url"]}">
+          <img
+            class="webmention-author-avatar"
+            src="${mention["author"]["photo"]}"
+            loading="lazy" width="60" height="60"/>
+          <strong class="webmention-author-name">${mention["author"]["name"]}</strong>
+        </a>
+        <div class="webmention-content">
+          ${mentionContent}
+        </div>
+        <div class="webmention-meta">
+          <time
+            class="webmention-pub-date"
+            datetime="${mention["published"]}"
+          >
+            ${formatDate(mention["published"])}
+          </time>
+          <span class="webmention-divider" aria-hidden="true">⋅</span>
+          <a
+            class="webmention-source"
+            href="${mention["url"]}"
+            aria-label="View source of mention by ${mention["author"]["name"]}"
+          >View Source</a>
+        </div>
+      </li>
+    `;
+    mentionsHtmlElements.push(mentionHtml);
+  })
+  document.querySelector("#mentions-panel").innerHTML = `
+    <ul class="webmention-mentions">
+      ${mentionsHtmlElements.join("\n")}
+    </ul>
+  `;
 }
 
 // Parses and renders mentions into likes, reposts, replies and mentions
-async function renderWebmentions(targetURL) {
-  const webmentions = await getWebmentions(targetURL);
+function renderWebmentions(webmentions) {
   if (!webmentions.length) {
     return;
   }
@@ -88,6 +193,7 @@ async function renderWebmentions(targetURL) {
   const likes = parseMentions(webmentions, "like-of");
   const reposts = parseMentions(webmentions, "repost-of");
   const replies = parseMentions(webmentions, "in-reply-to");
+  const mentions = parseMentions(webmentions, "mention-of");
 
   if (likes.length) {
     renderLikes(likes);
@@ -100,6 +206,17 @@ async function renderWebmentions(targetURL) {
   if (replies.length) {
     renderReplies(replies);
   }
+
+  if (mentions.length) {
+    renderMentions(mentions);
+  }
+}
+
+// Process webmention promise
+function processWebmentions(targetURL) {
+  getWebmentions(targetURL)
+    .then(webmentions => renderWebmentions(webmentions))
+    .catch(e => console.log(e))
 }
 
 // Change tabs for webmentions UI
@@ -166,5 +283,5 @@ function addTabListeners() {
 
 window.addEventListener("DOMContentLoaded", () => {
   addTabListeners();
-  renderWebmentions("https://almanac.httparchive.org/ru/2020/css");
+  processWebmentions(window.location.href);
 });

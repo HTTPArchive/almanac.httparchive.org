@@ -882,6 +882,7 @@ pre {
 .webmention-likes,
 .webmention-reposts {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .webmentions .reactions ul {
@@ -889,17 +890,51 @@ pre {
 }
 
 .webmentions .reactions ul > li {
-  margin-right: 1.5rem;
+  margin-right: 1rem;
 }
 
 .webmentions .reactions ul > li::before {
   display: none;
 }
 
+.webmentions a.webmention-author {
+  text-decoration: none;
+}
+
+.webmentions a.webmention-author:hover {
+  text-decoration: underline;
+}
+
 .webmention-author .webmention-author-avatar {
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
+  object-fit: cover;
+  background: grey;
+}
+
+.webmention-meta {
+  font-size: 0.875rem;
+  color: #515660;
+}
+
+.webmention-meta a.webmention-source {
+  color: #515660;
+}
+
+.webmention-reply-item,
+.webmention-mention-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 1rem 0 1rem 60px;
+}
+
+.webmention-reply-item .webmention-author .webmention-author-avatar,
+.webmention-mention-item .webmention-author .webmention-author-avatar {
+  position: absolute;
+  top: 1rem;
+  left: 0;
 }
 
 /* Needed for Safari to hide the index properly */
