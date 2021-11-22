@@ -88,14 +88,14 @@ Let's dive deeper and figure out what those reused libraries are. First, we've t
 Instead, we decided to extract library names from URLs. While it's more problematic in theory due to potential name clashes, it turned out to be a more reliable option for top libraries in practice. We extracted filenames from URLs, removed extensions, minor versions and suffixes that looked like content hashes, sorted the results by number of repetitions and extracted the top 10 modules for each client. For those left, we did manual lookups to understand which libraries those modules are coming from.
 
 {{ figure_markup(
-  caption="Popular libraries.",
+  caption="Popular WebAssembly libraries.",
   description="Bar chart showing top 10 libraries in desktop and mobile datasets, merged into one graph. Each library is shown along with percentage of Wasm requests that could be attributed to it. The list is as follows: Amazon IVS (30.3% on desktop and 28.7% on mobile), Hyphenopoly (13.2% and 18.9%), Blazor (3.5% and 5.0%), ArcGIS (3.7% and 3.6%), Draco (2.9% and 2.4%), CanvasKit (3.6% and 1%), Playa Games (3.3% on desktop only), Tableau (1.3% on desktop and 1.9% on mobile), Xat (1.5% and 1.4%), Tencent Video (2% on desktop only), Nimiq (0.5% and 1%), and Scandit (0.2% and 1.2%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=384910968&format=interactive",
   sheets_gid="1520429605",
   sql_file="popular_by_name.sql",
   image="popular_by_name.png",
   width=600,
-  height=556
+  height=650
   )
 }}
 
