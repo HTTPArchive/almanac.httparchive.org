@@ -250,7 +250,8 @@
 }
 
 .authors h2,
-.chapter-links h2 {
+.chapter-links h2,
+.webmentions h2 {
   padding: 16px 0;
   padding: 1rem 0;
 }
@@ -258,7 +259,9 @@
 .authors,
 .authors h2,
 .chapter-links,
-.chapter-links h2 {
+.chapter-links h2,
+.webmentions,
+.webmentions h2 {
   border-bottom: 1px solid #1a2b490a;
   font-size: 17px;
   font-size: 1.0625rem;
@@ -856,6 +859,47 @@ pre {
 
 .code-block code {
   width: 100%;
+}
+
+/* Webmention code */
+.reaction-tabs [role="tab"][aria-selected="true"] {
+  z-index: 3;
+  font-weight: bold;
+  border-bottom: 0.5rem solid #a8caba;
+}
+.reaction-tabs [role="tab"] {
+  position: relative;
+  z-index: 1;
+  background: white;
+  border: 0;
+  padding: 0rem 0.75rem 0.25rem;
+}
+
+.reactions [role="tabpanel"] {
+  margin-top: 1.5rem;
+}
+
+.webmention-likes,
+.webmention-reposts {
+  display: flex;
+}
+
+.webmentions .reactions ul {
+  padding: 0;
+}
+
+.webmentions .reactions ul > li {
+  margin-right: 1.5rem;
+}
+
+.webmentions .reactions ul > li::before {
+  display: none;
+}
+
+.webmention-author .webmention-author-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
 }
 
 /* Needed for Safari to hide the index properly */
