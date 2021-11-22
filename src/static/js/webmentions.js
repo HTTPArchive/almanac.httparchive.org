@@ -7,7 +7,7 @@ async function getWebmentions(targetURL) {
   try {
     const response = await window.fetch(apiURL);
     if (response.status >= 200 && response.status < 300) {
-      json = await response.json();
+      const json = await response.json();
       mentions = json.children;
     } else {
       console.error("Could not parse response", response.statusText);
@@ -38,8 +38,9 @@ function parseMentions(webmentions, mentionType) {
 // Renders webmention likes
 function renderLikes(likes) {
   // Add the likes count to the likes-tab
-  document.querySelector('#likes-count').innerHTML = likes.length;
-  let likeHtmlElements = [];
+  document.querySelector('#likes-count').textContent = likes.length;
+  const webmentionLikesList = document.createElement("ul");
+  webmentionLikesList.setAttribute("class", "webmention-likes");
   likes.forEach(function(like) {
     const likeHtml = `
       <li class="webmention-likes-item">
@@ -56,20 +57,19 @@ function renderLikes(likes) {
         </a>
       </li>
     `;
-    likeHtmlElements.push(likeHtml);
-  })
-  document.querySelector("#likes-panel").innerHTML = `
-    <ul class="webmention-likes">
-      ${likeHtmlElements.join("\n")}
-    </ul>
-  `;
+    const parser = new DOMParser();
+	  const likeHtmlObject = parser.parseFromString(likeHtml, 'text/html');
+    webmentionLikesList.appendChild(likeHtmlObject.body.childNodes[0]);
+  });
+  document.querySelector("#likes-panel").appendChild(webmentionLikesList);
 }
 
 // Renders webmention reposts
 function renderReposts(reposts) {
   // Add the reposts count to the reposts-tab
-  document.querySelector('#reposts-count').innerHTML = reposts.length;
-  let repostHtmlElements = [];
+  document.querySelector('#reposts-count').textContent = reposts.length;
+  const webmentionRepostsList = document.createElement("ul");
+  webmentionRepostsList.setAttribute("class", "webmention-reposts");
   reposts.forEach(function(repost) {
     const repostHtml = `
       <li class="webmention-repost-item">
@@ -86,20 +86,19 @@ function renderReposts(reposts) {
         </a>
       </li>
     `;
-    repostHtmlElements.push(repostHtml);
-  })
-  document.querySelector("#reposts-panel").innerHTML = `
-    <ul class="webmention-reposts">
-      ${repostHtmlElements.join("\n")}
-    </ul>
-  `;
+    const parser = new DOMParser();
+	  const repostHtmlObject = parser.parseFromString(repostHtml, 'text/html');
+    webmentionRepostsList.appendChild(repostHtmlObject.body.childNodes[0]);
+  });
+  document.querySelector("#reposts-panel").appendChild(webmentionRepostsList);
 }
 
 // Renders webmention replies
 function renderReplies(replies) {
   // Add the replies count to the replies-tab
-  document.querySelector('#replies-count').innerHTML = replies.length;
-  let repliesHtmlElements = [];
+  document.querySelector('#replies-count').textContent = replies.length;
+  const webmentionRepliesList = document.createElement("ul");
+  webmentionRepliesList.setAttribute("class", "webmention-replies");
   replies.forEach(function(reply) {
     const replyHtml = `
       <li class="webmention-reply-item">
@@ -129,20 +128,19 @@ function renderReplies(replies) {
         </div>
       </li>
     `;
-    repliesHtmlElements.push(replyHtml);
-  })
-  document.querySelector("#replies-panel").innerHTML = `
-    <ul class="webmention-replies">
-      ${repliesHtmlElements.join("\n")}
-    </ul>
-  `;
+    const parser = new DOMParser();
+	  const replyHtmlObject = parser.parseFromString(replyHtml, 'text/html');
+    webmentionRepliesList.appendChild(replyHtmlObject.body.childNodes[0]);
+  });
+  document.querySelector("#replies-panel").appendChild(webmentionRepliesList);
 }
 
 // Renders webmention mentions
 function renderMentions(mentions) {
-  // Add the replies count to the replies-tab
-  document.querySelector('#mentions-count').innerHTML = mentions.length;
-  let mentionsHtmlElements = [];
+  // Add the mentions count to the mentions-tab
+  document.querySelector('#mentions-count').textContent = mentions.length;
+  const webmentionMentionsList = document.createElement("ul");
+  webmentionMentionsList.setAttribute("class", "webmention-mentions");
   mentions.forEach(function(mention) {
     const mentionContent = mention["content"] ? mention["content"]["html"] : (
       `Source: <a href="${mention["wm-source"]}">${mention["wm-source"]}</a>`
@@ -175,13 +173,11 @@ function renderMentions(mentions) {
         </div>
       </li>
     `;
-    mentionsHtmlElements.push(mentionHtml);
-  })
-  document.querySelector("#mentions-panel").innerHTML = `
-    <ul class="webmention-mentions">
-      ${mentionsHtmlElements.join("\n")}
-    </ul>
-  `;
+    const parser = new DOMParser();
+	  const mentionHtmlObject = parser.parseFromString(mentionHtml, 'text/html');
+    webmentionMentionsList.appendChild(mentionHtmlObject.body.childNodes[0]);
+  });
+  document.querySelector("#mentions-panel").appendChild(webmentionMentionsList);
 }
 
 // Parses and renders mentions into likes, reposts, replies and mentions
@@ -257,17 +253,17 @@ function addTabListeners() {
   let tabFocus = 0;
 
   tabList.addEventListener("keydown", e => {
-    if (e.keyCode === 39 || e.keyCode === 37) {
+    if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
       tabs[tabFocus].setAttribute("tabindex", -1);
       // Move right
-      if (e.keyCode === 39) {
+      if (e.key === "ArrowRight") {
         tabFocus++;
         // If we're at the end, go to the start
         if (tabFocus >= tabs.length) {
           tabFocus = 0;
         }
         // Move left
-      } else if (e.keyCode === 37) {
+      } else if (e.key === "ArrowLeft") {
         tabFocus--;
         // If we're at the start, move to the end
         if (tabFocus < 0) {
@@ -281,8 +277,7 @@ function addTabListeners() {
   });
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  addTabListeners();
-  const BASE_URL = "https://almanac.httparchive.org"
-  processWebmentions(BASE_URL + window.location.pathname);
-});
+
+addTabListeners();
+const BASE_URL = "https://almanac.httparchive.org";
+processWebmentions(BASE_URL + window.location.pathname);
