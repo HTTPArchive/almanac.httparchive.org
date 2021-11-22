@@ -11,8 +11,8 @@ results: https://docs.google.com/spreadsheets/d/1kwjKoa8tV87XzlF6eetf2sfcMDFqVVa
 featured_quote: TODO
 featured_stat_1: 91.6%
 featured_stat_label_1: Requests that use HTTPS on mobile.
-featured_stat_2: 50.70%
-featured_stat_label_2: Top-1000 sites that use HSTS.
+featured_stat_2: 22.21%
+featured_stat_label_2: Top-1000 sites that use CSP.
 featured_stat_3: TODO
 featured_stat_label_3: TODO
 ---
@@ -32,13 +32,13 @@ Following the recent trend, we see a  continuous growth in the number of website
 
 {{ figure_markup(
   caption='The percentage of requests that use HTTPS on mobile.<br>(Source: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#pctHttps">HTTP Archive</a>)',
-  content="91.6%",
+  content="91.3%",
   classes="big-number",
   sheets_gid="8055510"
 )
 }}
 
-Currently, we see that 93.0% of total requests for websites on desktop and 91.6% of total requests for websites on mobile are being served using HTTPS. We see an [increasing number of certificates](https://letsencrypt.org/stats/#daily-issuance) being issued every day thanks to non-profit certificate authorities like Let's Encrypt.
+Currently, we see that 92.3% of total requests for websites on desktop and 91.3% of total requests for websites on mobile are being served using HTTPS. We see an [increasing number of certificates](https://letsencrypt.org/stats/#daily-issuance) being issued every day thanks to non-profit certificate authorities like Let's Encrypt.
 
 {{ figure_markup(
   image="security-https-usage-by-site.png",
@@ -131,8 +131,7 @@ A certificate authority is a company or organization that issues digital certifi
         <td>
           <a href="https://sectigo.com/knowledge-base/detail/Sectigo-Intermediate-Certificates/kA01N000000rfBO">
             Sectigo RSA Domain Validation Secure Server CA
-          </a>
-        </td>
+          </a></td>
         <td>RSA</td>
         <td class="number">8.30%</td>
         <td class="number">8.24%</td>
@@ -157,16 +156,14 @@ A certificate authority is a company or organization that issues digital certifi
       </tr>
       <tr>
         <td>
-          <a href="https://www.digicert.com/kb/digicert-root-certificates.htm">Encryption Everywhere DV TLS CA - G1</a>
-        </td>
+          <a href="https://www.digicert.com/kb/digicert-root-certificates.htm">Encryption Everywhere DV TLS CA - G1</a></td>
         <td>RSA</td>
         <td class="number">1.28%</td>
         <td class="number">1.59%</td>
       </tr>
       <tr>
         <td>
-          <a href="https://support.globalsign.com/ca-certificates/intermediate-certificates/alphassl-intermediate-certificates">AlphaSSL CA - SHA256 - G2</a>
-        </td>
+          <a href="https://support.globalsign.com/ca-certificates/intermediate-certificates/alphassl-intermediate-certificates">AlphaSSL CA - SHA256 - G2</a></td>
         <td>RSA</td>
         <td class="number">1.23%</td>
         <td class="number">1.16%</td>
@@ -175,8 +172,7 @@ A certificate authority is a company or organization that issues digital certifi
         <td>
           <a href="https://www.digicert.com/kb/digicert-root-certificates.htm">
             RapidSSL TLS DV RSA Mixed SHA256 2020 CA-1
-          </a>
-        </td>
+          </a></td>
         <td>RSA</td>
         <td class="number">1.17%</td>
         <td class="number">1.12%</td>
@@ -681,13 +677,14 @@ Web applications are pestered by numerous vulnerabilities. Fortunately, there ex
 
 ### Security feature adoption
 
-
-
-<p id="gdcalert13" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image13.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert14">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image13.png "image_tooltip")
-
+{{ figure_markup(
+  image="security-adoption-of-security-headers.png",
+  caption="Adoption of security headers for mobile pages",
+  description="Bar chart showing the prevalence of different security headers, for mobile pages in 2021 and 2020. `X-Content-Type-Options` was 30% in 2020 and is 37% in 2021, `X-Frame-Options` was 27% in 2020 and is 29% in 2021, `Strict-Transport-Security` was 17% in 2020 and is 23% in 2021, `X-XSS-Protection` was 18% in 2020 and is 20% in 2021, `Expect-CT` and `Content-Security-Policy` were 11% in 2020 and are 13% in 2021, `Report-To` was 3% in 2020 and is 12% in 2021, `Referrer-Policy` was 7% in 2020 and is 10% in 2021, `Feature-Policy` was 0.5% in 2020 and is 0.6% in 2021.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1380470049&format=interactive",
+  sheets_gid="285299680",
+  sql_file="security_headers_prevalence.sql"
+) }}
 
 Perhaps the most promising and uplifting finding of this chapter is that the general adoption of security mechanisms continues to grow. Not only does this mean that attackers will have a more difficult time to exploit certain websites, it is also indicative that more and more developers value the security of the web products they build. Overall, we can see a relative increase in the adoption of security features of 10-30% compared to last year. The security-related mechanism with the most uptake is the `Report-To` header of [the Reporting API](https://developers.google.com/web/updates/2018/09/reportingapi), with almost a 4x increased adoption rate, from 2.60% to 12.15%.
 
@@ -696,89 +693,60 @@ Although this continued increase in adoption rate of security mechanisms is cert
 Another interesting evolution is that of the [`X-XSS-Protection`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection) header. The feature is used to control the XSS filter of legacy browsers: [Edge](https://blogs.windows.com/windows-insider/2018/07/25/announcing-windows-10-insider-preview-build-17723-and-build-18204/) and [Chrome](https://www.chromium.org/developers/design-documents/xss-auditor) retired their XSS filter in July 2018 and August 2019 respectively as it could introduce new unintended vulnerabilities. Yet, we found that the `X-XSS-Protection` header was 8.52% more prevalent than last year.
 
 
-### Features enabled in `&lt;meta>` tag
+### Features enabled in `<meta>` tag
 
-In addition to sending a response header, some security features can be enabled in the HTML response body by including a `&lt;meta>` tag with the `name` attribute set to `http-equiv`. For security purposes, only a limited number of policies can be enabled this way. More precisely, only a Content Security Policy and Referrer Policy can be set via the `&lt;meta>` tag. Respectively we found that 0.37% and 2.55% of the mobile sites enabled the mechanism this way.
+In addition to sending a response header, some security features can be enabled in the HTML response body by including a `<meta>` tag with the `name` attribute set to `http-equiv`. For security purposes, only a limited number of policies can be enabled this way. More precisely, only a Content Security Policy and Referrer Policy can be set via the `<meta>` tag. Respectively we found that 0.37% and 2.55% of the mobile sites enabled the mechanism this way.
 
-**3410**
+{{ figure_markup(
+  caption="Number of sites with `X-Frame-Options` in the `<meta>` tag, which is actually ignored by the browser.",
+  content="3410",
+  classes="big-number",
+  sheets_gid="1578698638"
+)
+}}
 
-
-_Number of sites with `X-Frame-Options` in the `&lt;meta>` tag, which is not allowed._
-
-When any of the other security mechanisms are set via the `&lt;meta>` tag, the browser will actually ignore this. Interestingly, we found 3,410 sites that tried to enable `X-Frame-Options` via a `&lt;meta>` tag, and thus were wrongly under the impression that they were protected from clickjacking attacks. Similarly, several hundred websites failed to deploy a security feature by placing it in a `&lt;meta>` tag instead of a response header (`X-Content-Type-Options`: 357, `X-XSS-Protection`: 331, `Strict-Transport-Security`: 183).
+When any of the other security mechanisms are set via the `<meta>` tag, the browser will actually ignore this. Interestingly, we found 3,410 sites that tried to enable `X-Frame-Options` via a `<meta>` tag, and thus were wrongly under the impression that they were protected from clickjacking attacks. Similarly, several hundred websites failed to deploy a security feature by placing it in a `<meta>` tag instead of a response header (`X-Content-Type-Options`: 357, `X-XSS-Protection`: 331, `Strict-Transport-Security`: 183).
 
 
 ### Stopping XSS attacks via CSP
 
 CSP can be used to protect against a multitude of things: clickjacking attacks, preventing mixed-content inclusion and determining the trusted sources from which content may be included (as discussed [above](#content-security-policy)). Additionally, it is an essential mechanism to defend against XSS attacks. For instance, by setting a restrictive `script-src` directive, a web developer can ensure that only the application's JavaScript code is executed (and not the attacker's). Moreover, to defend against DOM-based cross-site scripting, it is possible to use Trusted Types, which can be enabled by using CSP's `require-trusted-types-for` directive.
 
-&lt;figure>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Keyword</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>strict-dynamic</code></td>
+        <td class="numeric">5.22%</td>
+        <td class="numeric">4.45%</td>
+      </tr>
+      <tr>
+        <td><code>nonce-</code></td>
+        <td class="numeric">12.10%</td>
+        <td class="numeric">17.61%</td>
+      </tr>
+      <tr>
+        <td><code>unsafe-inline</code></td>
+        <td class="numeric">96.23%</td>
+        <td class="numeric">96.52%</td>
+      </tr>
+      <tr>
+        <td><code>unsafe-eval</code></td>
+        <td class="numeric">82.89%</td>
+        <td class="numeric">77.23%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Prevalence of CSP keywords based on policies that define a default-src or script-src directive.", sheets_gid="948114503", sql_file="csp_script_source_list_keywords.sql") }}</figcaption>
+</figure>
 
-  &lt;table>
-
-    &lt;thead>
-
-      &lt;tr>
-
-        &lt;th>Keyword&lt;/th>
-
-        &lt;th>Desktop&lt;/th>
-
-        &lt;th>Mobile&lt;/th>
-
-      &lt;/tr>
-
-    &lt;/thead>
-
-    &lt;tbody>
-
-      &lt;tr>
-
-        &lt;td>&lt;code>strict-dynamic&lt;/code>&lt;/td>
-
-        &lt;td class="numeric">5.22%&lt;/td>
-
-        &lt;td class="numeric">4.45%&lt;/td>
-
-      &lt;/tr>
-
-      &lt;tr>
-
-        &lt;td>&lt;code>nonce-&lt;/code>&lt;/td>
-
-        &lt;td class="numeric">12.10%&lt;/td>
-
-        &lt;td class="numeric">17.61%&lt;/td>
-
-      &lt;/tr>
-
-      &lt;tr>
-
-        &lt;td>&lt;code>unsafe-inline&lt;/code>&lt;/td>
-
-        &lt;td class="numeric">96.23%&lt;/td>
-
-        &lt;td class="numeric">96.52%&lt;/td>
-
-      &lt;/tr>
-
-      &lt;tr>
-
-        &lt;td>&lt;code>unsafe-eval&lt;/code>&lt;/td>
-
-        &lt;td class="numeric">82.89%&lt;/td>
-
-        &lt;td class="numeric">77.23%&lt;/td>
-
-      &lt;/tr>
-
-    &lt;/tbody>
-
-  &lt;/table>
-
-&lt;figcaption>{{ figure_link(caption="Prevalence of CSP keywords based on policies that define a default-src or script-src directive.", sheets_gid="948114503", sql_file="csp_script_source_list_keywords.sql") }}&lt;/figcaption>
-
-&lt;/figure>
 
 Although we saw an overall moderate increase (17%) in the adoption of CSP, what is perhaps even more exciting is that the usage of the `strict-dynamic` and nonces is either keeping the same trend, or is slightly increasing. For instance, for desktop sites the use of `strict-dynamic` grew from 2.40% [last year](../../2020/security#preventing-xss-attacks-through-csp), to 5.22% this year. Similarly, the use of nonces grew from 8.72% to 12.10%. On the other hand, we find that the usage of the troubling directives `unsafe-inline` and `unsafe-eval` is still fairly high. However, it should be noted that if these are used in conjunction with `strict-dynamic`, the browser will effectively ignore these values.
 
@@ -798,97 +766,70 @@ Finally, another anti-XS-Leak header, [`Cross-Origin-Opener-Policy`](https://dev
 
 Security has become one of the central issues in web development. Since 2017, we have the [Web Cryptography API](https://www.w3.org/TR/WebCryptoAPI/) W3C recommendation to perform basic cryptographic operations (e.g., hashing, signature generation and verification, and encryption and decryption) on the client-side - without any third-party library. In the following, we analyze the usage of this JavaScript API.
 
-
-<table>
-  <tr>
-   <td><strong><em>Cryptography API</em></strong>
-   </td>
-   <td><strong>desktop</strong>
-   </td>
-   <td><strong>mobile</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>CryptoGetRandomValues
-   </td>
-   <td class="numeric">
-70.41%</td>
-   <td class="numeric">
-67.42%</td>
-  </tr>
-  <tr>
-   <td>SubtleCryptoDigest
-   </td>
-   <td class="numeric">
-0.40%</td>
-   <td class="numeric">
-0.45%</td>
-  </tr>
-  <tr>
-   <td>SubtleCryptoEncrypt
-   </td>
-   <td class="numeric">
-0.38%</td>
-   <td class="numeric">
-0.26%</td>
-  </tr>
-  <tr>
-   <td>CryptoAlgorithmSha256
-   </td>
-   <td class="numeric">
-0.30%</td>
-   <td class="numeric">
-0.30%</td>
-  </tr>
-  <tr>
-   <td>SubtleCryptoGenerateKey
-   </td>
-   <td class="numeric">
-0.28%</td>
-   <td class="numeric">
-0.23%</td>
-  </tr>
-  <tr>
-   <td>CryptoAlgorithmAesGcm
-   </td>
-   <td class="numeric">
-0.23%</td>
-   <td class="numeric">
-0.19%</td>
-  </tr>
-  <tr>
-   <td>SubtleCryptoImportKey
-   </td>
-   <td class="numeric">
-0.20%</td>
-   <td class="numeric">
-0.16%</td>
-  </tr>
-  <tr>
-   <td>CryptoAlgorithmAesCtr
-   </td>
-   <td class="numeric">
-0.10%</td>
-   <td class="numeric">
-0.03%</td>
-  </tr>
-  <tr>
-   <td>CryptoAlgorithmSha1
-   </td>
-   <td class="numeric">
-0.08%</td>
-   <td class="numeric">
-0.06%</td>
-  </tr>
-  <tr>
-   <td>CryptoAlgorithmSha384
-   </td>
-   <td class="numeric">
-0.08%</td>
-   <td class="numeric">
-0.18%</td>
-  </tr>
-</table>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Cryptography API</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>CryptoGetRandomValues</td>
+        <td class="numeric">70.41%</td>
+        <td class="numeric">67.42%</td>
+      </tr>
+      <tr>
+        <td>SubtleCryptoDigest</td>
+        <td class="numeric">0.40%</td>
+        <td class="numeric">0.45%</td>
+      </tr>
+      <tr>
+        <td>SubtleCryptoEncrypt</td>
+        <td class="numeric">0.38%</td>
+        <td class="numeric">0.26%</td>
+      </tr>
+      <tr>
+        <td>CryptoAlgorithmSha256</td>
+        <td class="numeric">0.30%</td>
+        <td class="numeric">0.30%</td>
+      </tr>
+      <tr>
+        <td>SubtleCryptoGenerateKey</td>
+        <td class="numeric">0.28%</td>
+        <td class="numeric">0.23%</td>
+      </tr>
+      <tr>
+        <td>CryptoAlgorithmAesGcm</td>
+        <td class="numeric">0.23%</td>
+        <td class="numeric">0.19%</td>
+      </tr>
+      <tr>
+        <td>SubtleCryptoImportKey</td>
+        <td class="numeric">0.20%</td>
+        <td class="numeric">0.16%</td>
+      </tr>
+      <tr>
+        <td>CryptoAlgorithmAesCtr</td>
+        <td class="numeric">0.10%</td>
+        <td class="numeric">0.03%</td>
+      </tr>
+      <tr>
+        <td>CryptoAlgorithmSha1</td>
+        <td class="numeric">0.08%</td>
+        <td class="numeric">0.06%</td>
+      </tr>
+      <tr>
+        <td>CryptoAlgorithmSha384</td>
+        <td class="numeric">0.08%</td>
+        <td class="numeric">0.18%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Top used cryptography APIs", sheets_gid="749853824", sql_file="web_cryptography_api.sql") }}</figcaption>
+</figure>
 
 
 The popularity of the functions remains almost the same as the previous year: we record only a slight increase of 1% (from 71.80% to 72.46). Again this year `Cypto.getRandomValues` is the most popular cryptography API that allows developers to generate strong pseudo-random numbers. We still believe that Google Analytics has a major effect on its popularity since the Google Analytics script utilizes this function.
@@ -900,122 +841,85 @@ It should be noted that since we perform passive crawling, our results in this s
 
 Many cyberattacks are based on automated bot attacks. Interest in it seems to have increased. According to the [Bad Bot Report 2021](https://www.imperva.com/blog/bad-bot-report-2021-the-pandemic-of-the-internet/) by Imperva, the number of bad bots has increased this year by 25.6%. Note that the increase from 2019 to 2020 was 24.1% - according to [the previous report](https://www.imperva.com/blog/bad-bot-report-2020-bad-bots-strike-back/). In the following table, we present our results on using measures by websites to protect themselves from malicious bots.
 
-
-<table>
-  <tr>
-   <td>Service provider
-   </td>
-   <td>Desktop
-   </td>
-   <td>Mobile
-   </td>
-  </tr>
-  <tr>
-   <td>reCAPTCHA
-   </td>
-   <td class="numeric">
-10.2</td>
-   <td class="numeric">
-9.4</td>
-  </tr>
-  <tr>
-   <td>Imperva
-   </td>
-   <td class="numeric">
-0.34</td>
-   <td class="numeric">
-0.27</td>
-  </tr>
-  <tr>
-   <td>Sift
-   </td>
-   <td class="numeric">
-0.05</td>
-   <td class="numeric">
-0.08</td>
-  </tr>
-  <tr>
-   <td>Signifyd
-   </td>
-   <td class="numeric">
-0.03</td>
-   <td class="numeric">
-0.03</td>
-  </tr>
-  <tr>
-   <td>hCaptcha
-   </td>
-   <td class="numeric">
-0.03</td>
-   <td class="numeric">
-0.02</td>
-  </tr>
-  <tr>
-   <td>Forter
-   </td>
-   <td class="numeric">
-0.03</td>
-   <td class="numeric">
-0.03</td>
-  </tr>
-  <tr>
-   <td>TruValidate
-   </td>
-   <td class="numeric">
-0.03</td>
-   <td class="numeric">
-0.02</td>
-  </tr>
-  <tr>
-   <td>Akamai Web Application Protector
-   </td>
-   <td class="numeric">
-0.02</td>
-   <td class="numeric">
-0.02</td>
-  </tr>
-  <tr>
-   <td>Kount
-   </td>
-   <td class="numeric">
-0.02</td>
-   <td class="numeric">
-0.02</td>
-  </tr>
-  <tr>
-   <td>Konduto
-   </td>
-   <td class="numeric">
-0.02</td>
-   <td class="numeric">
-0.02</td>
-  </tr>
-  <tr>
-   <td>PerimeterX
-   </td>
-   <td class="numeric">
-0.02</td>
-   <td class="numeric">
-0.01</td>
-  </tr>
-  <tr>
-   <td>Tencent Waterproof Wall
-   </td>
-   <td class="numeric">
-0.01</td>
-   <td class="numeric">
-0.01</td>
-  </tr>
-  <tr>
-   <td>Others
-   </td>
-   <td class="numeric">
-0.03</td>
-   <td class="numeric">
-0.04</td>
-  </tr>
-</table>
-
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Service provider</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>reCAPTCHA</td>
+        <td class="numeric">10.2</td>
+        <td class="numeric">9.4</td>
+      </tr>
+      <tr>
+        <td>Imperva</td>
+        <td class="numeric">0.34</td>
+        <td class="numeric">0.27</td>
+      </tr>
+      <tr>
+        <td>Sift</td>
+        <td class="numeric">0.05</td>
+        <td class="numeric">0.08</td>
+      </tr>
+      <tr>
+        <td>Signifyd</td>
+        <td class="numeric">0.03</td>
+        <td class="numeric">0.03</td>
+      </tr>
+      <tr>
+        <td>hCaptcha</td>
+        <td class="numeric">0.03</td>
+        <td class="numeric">0.02</td>
+      </tr>
+      <tr>
+        <td>Forter</td>
+        <td class="numeric">0.03</td>
+        <td class="numeric">0.03</td>
+      </tr>
+      <tr>
+        <td>TruValidate</td>
+        <td class="numeric">0.03</td>
+        <td class="numeric">0.02</td>
+      </tr>
+      <tr>
+        <td>Akamai Web Application Protector</td>
+        <td class="numeric">0.02</td>
+        <td class="numeric">0.02</td>
+      </tr>
+      <tr>
+        <td>Kount</td>
+        <td class="numeric">0.02</td>
+        <td class="numeric">0.02</td>
+      </tr>
+      <tr>
+        <td>Konduto</td>
+        <td class="numeric">0.02</td>
+        <td class="numeric">0.02</td>
+      </tr>
+      <tr>
+        <td>PerimeterX</td>
+        <td class="numeric">0.02</td>
+        <td class="numeric">0.01</td>
+      </tr>
+      <tr>
+        <td>Tencent Waterproof Wall</td>
+        <td class="numeric">0.01</td>
+        <td class="numeric">0.01</td>
+      </tr>
+      <tr>
+        <td>Others</td>
+        <td class="numeric">0.03</td>
+        <td class="numeric">0.04</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Usage of bot protection services by provider", sheets_gid="798151334", sql_file="bot_detection.sql") }}</figcaption>
+</figure>
 
 Our analysis shows that around 11% of websites use a mechanism to fight malicious bots. Last year that number was 10%, so we record an increase of 10% compared to the previous year. This year, too, we identified more bot protection mechanisms for desktop versions than mobile versions (11% vs. 10%)
 
@@ -1029,156 +933,173 @@ There are many different influences that might cause a website to invest more in
 
 ### Factor: country of a website’s visitors
 
-
-
-<p id="gdcalert14" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image14.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert15">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image14.png "image_tooltip")
-
+{{ figure_markup(
+  image="security-adoption-of-https-per-country.png",
+  caption="Adoption of HTTPS per country",
+  description="Bar chart showing percentage of sites with HTTPS enabled, for sites related to different countries. Switzerland, New Zealand, Ireland, Australia, Netherlands, Austria, Belgium, United Kingdom, South Africa and Sweden are the top top in order at 97% to 94%. At the other end Malaysia, Turkey, Iran, Brazil, Indonesia, Vietnam, Thailand, Taiwan, South Korea and Japan are at 76% to 72%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1261041561&format=interactive",
+  sheets_gid="269550966",
+  sql_file="feature_adoption_by_country.sql"
+) }}
 
 Although we can see that the adoption of HTTPS-by-default is generally increasing, there is still a discrepancy in adoption rate between sites depending on the country most of the visitors originate from. We find that [compared to last year](../../2020/security#country-of-a-websites-visitors), the Netherlands has now made it into the top-5, which means that the Dutch are relatively more protected against transport layer attacks: 95.14% of the sites frequently visited by people in the Netherlands has HTTPS enabled (compared to 92.99% last year). In fact, not only the Netherlands improved in the adoption of HTTPS; we find that virtually every country improved in that regard. It is also very encouraging to see that several of the countries that performed worst last year, made a big leap. For instance, 13.35% more sites visited by people from Iran (the strongest riser with regards to HTTPS adoption) are now HTTPS-enabled compared to last year (from 74.33% to 84.26%). Although the gap between the best-performing and least-performing countries is becoming smaller, there are still significant efforts to be made.
 
-
-
-<p id="gdcalert15" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image15.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert16">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image15.png "image_tooltip")
-
+{{ figure_markup(
+  image="security-adoption-of-csp-and-xfo-per-country.png",
+  caption="Adoption of CSP and XFO per country.",
+  description="Bar chart showing New Zealand has 21% of sites using CSP and 40% using XFO, Australia has 21% for CSP and 38% for XFO, Ireland has 19% for CSP and 40% for XFO, Canada has 19% for CSP and 34% for XFO, and USA has 17% for CSP and 30% for XFO. At the bottom end Kazakhstan has 6% for CSP and 21% for XFO, Belarus has 6% for CSP and 21% for XFO, Ukraine has 5% for CSP and 18% for XFO, Russia has 5% for CSP and 20% for XFO, and Japan has 4% for CSP and 17% for XFO.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=2039992568&format=interactive",
+  sheets_gid="269550966",
+  sql_file="feature_adoption_by_country.sql"
+) }}
 
 When looking at the adoption of certain security features such as CSP and `X-Frame-Options`, we can see an even more pronounced difference between the different countries, where the sites from top-scoring countries are 2-4 times more likely to adopt these security features compared to the least-performing countries. We also find that countries that perform well on HTTPS adoption tend to also perform well on the adoption of other security mechanisms. This is indicative that security is often thought of holistically, where all different angles need to be covered. And rightfully so: an attacker just needs to find a single exploitable vulnerability whereas developers need to ensure that every aspect is tightly protected.
 
 
 ### Factor: technology stack
 
-
-<table>
-  <tr>
-   <td><strong>Technology</strong>
-   </td>
-   <td><strong>Security features enabled by default</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Automattic (PaaS)
-   </td>
-   <td>Strict-Transport-Security (97.80%)
-   </td>
-  </tr>
-  <tr>
-   <td>Blogger (Blogs)
-   </td>
-   <td>X-Content-Type-Options (99.60%)
-<p>
-X-XSS-Protection (99.60%)
-   </td>
-  </tr>
-  <tr>
-   <td>Cloudflare (CDN)
-   </td>
-   <td>Expect-CT (93.11%), Report-To (84.10%)
-   </td>
-  </tr>
-  <tr>
-   <td>Drupal (CMS)
-   </td>
-   <td>X-Content-Type-Options (77.93%)
-<p>
-X-Frame-Options (86.91%)
-   </td>
-  </tr>
-  <tr>
-   <td>Magento (E-commerce)
-   </td>
-   <td>X-Frame-Options (85.36%)
-   </td>
-  </tr>
-  <tr>
-   <td>Shopify (E-commerce)
-   </td>
-   <td>Content-Security-Policy (96.42%)
-<p>
-Expect-CT (95.52%)
-<p>
-Report-To (95.46%)
-<p>
-Strict-Transport-Security (98.24%)
-<p>
-X-Content-Type-Options (98.31%)
-<p>
-X-Frame-Options (95.19%)
-<p>
-X-XSS-Protection (98.22%)
-   </td>
-  </tr>
-  <tr>
-   <td>Squarespace (CMS)
-   </td>
-   <td>Strict-Transport-Security (87.89%)
-<p>
-X-Content-Type-Options (98.66%)
-   </td>
-  </tr>
-  <tr>
-   <td>Sucuri (CDN)
-   </td>
-   <td>Content-Security-Policy (83.99%)
-<p>
-X-Content-Type-Options (88.82%) X-Frame-Options (88.82%) X-XSS-Protection (88.71%)
-   </td>
-  </tr>
-  <tr>
-   <td>Wix (Blogs)
-   </td>
-   <td>Strict-Transport-Security (98.81%)
-<p>
-X-Content-Type-Options (99.44%)
-   </td>
-  </tr>
-</table>
-
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <td>Technology</td>
+        <td>Security features enabled by default</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Automattic (PaaS)</td>
+        <td>Strict-Transport-Security (97.80%)</td>
+      </tr>
+      <tr>
+        <td>Blogger (Blogs)</td>
+        <td>
+          X-Content-Type-Options (99.60%),
+          <br/>
+          X-XSS-Protection (99.60%)
+        </td>
+      </tr>
+      <tr>
+        <td>Cloudflare (CDN)</td>
+        <td>Expect-CT (93.11%), Report-To (84.10%)</td>
+      </tr>
+      <tr>
+        <td>Drupal (CMS)</td>
+        <td>
+          X-Content-Type-Options (77.93%),
+          <br />
+          X-Frame-Options (83.14%)
+        </td>
+      </tr>
+      <tr>
+        <td>Magento (E-commerce)</td>
+        <td>X-Frame-Options (85.36%)</td>
+      </tr>
+      <tr>
+        <td>Shopify (E-commerce)</td>
+        <td>
+          Content-Security-Policy (96.42%),
+          <br/>
+          Expect-CT (95.52%),
+          <br/>
+          Report-To (95.46%),
+          <br/>
+          Strict-Transport-Security (98.24%),
+          <br/>
+          X-Content-Type-Options (98.31%),
+          <br/>
+          X-Frame-Options (95.19%),
+          <br/>
+          X-XSS-Protection (98.22%)
+        </td>
+      </tr>
+      <tr>
+        <td>Squarespace (CMS)</td>
+        <td>
+          Strict-Transport-Security (87.89%),
+          <br/>
+          X-Content-Type-Options (98.66%)
+        </td>
+      </tr>
+      <tr>
+        <td>Sucuri (CDN)</td>
+        <td>
+          Content-Security-Policy (83.99%),
+          <br/>
+          X-Content-Type-Options (88.82%),
+          <br/>
+          X-Frame-Options (88.82%),
+          <br/>
+          X-XSS-Protection (88.71%)
+        </td>
+      </tr>
+      <tr>
+        <td>Wix (Blogs)</td>
+        <td>
+          Strict-Transport-Security (98.81%),
+          <br/>
+          X-Content-Type-Options (99.44%)
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Security features adoption by various technology.", sheets_gid="1386880960", sql_file="feature_adoption_by_technology.sql") }}</figcaption>
+</figure>
 
 Another factor that can strongly influence the adoption of certain security mechanisms is the technology stack that's being used to build a website. In some cases, security features may be enabled by default, or for some blogging systems the control over the response headers may be out of the hands of the website owner and a platform-wide security setting may be in place. Alternatively, CDNs may add additional security features, especially when these concern the transport security. In the above table, we've listed the nine technologies that are used by at least 25,000 sites, and that have a significantly higher adoption rate of specific security mechanisms. For instance, we can see that sites that are built with the Shopify e-commerce system have a very high (over 95%) adoption rate for seven security-relevant features: Content-Security-Policy, Expect-CT, Report-To, Strict-Transport-Security, X-Content-Type-Options, X-Frame-Options, and X-XSS-Protection.
 
-**7**
+{{ figure_markup(
+  caption="The number of security features with over 95% adoption rate on Shopify sites.",
+  content="7",
+  classes="big-number",
+  sheets_gid="1386880960"
+)
+}}
 
+It is great to see that despite the variability in these websites' content, it is still possible to uniformly adopt these security mechanisms. Another interesting entry in this list is Drupal, whose websites have an adoption rate of 83.14% for the `X-Frame-Options` header (a slight improvement compared to last year's 81.81%). As this header is [enabled by default](https://www.drupal.org/node/2735873), it is clear that the majority of Drupal sites stick with it, protecting them from clickjacking attacks.  (While it makes sense to keep the `X-Frame-Options` header for compatibility with older browsers in the near term, site owners should consider transitioning to the recommended `Content-Security-Policy` header directive `frame ancestors` for the same functionality.)
 
-_The number of security features with over 95% adoption rate on Shopify sites_
-
-It is great to see that despite the variability in these websites' content, it is still possible to uniformly adopt these security mechanisms. Another interesting entry in this list is Drupal, whose websites have an adoption rate of 86.91% for the `X-Frame-Options` header (a slight improvement compared to last year's 81.81%). As this header is [enabled by default](https://www.drupal.org/node/2735873), it is clear that the majority of Drupal sites stick with it, protecting them from clickjacking attacks.  (While it makes sense to keep the `X-Frame-Options` header for compatibility with older browsers in the near term, site owners should consider transitioning to the recommended `Content-Security-Policy` header directive `frame ancestors` for the same functionality.)
-
-**86.91%**
-
-
-_The percentage of Drupal sites that keep the default XFO header_
+{{ figure_markup(
+  caption="The percentage of Drupal sites that keep the default XFO header.",
+  content="83.14",
+  classes="big-number",
+  sheets_gid="1386880960"
+)
+}}
 
 An important aspect to explore in the context of the adoption of security features, is the diversity. For instance, as Cloudflare is the largest CDN provider, powering millions of websites (see the [CDN chapter](./cdn)). Any feature that Cloudflare enables by default will result in a large overall adoption rate. In fact, 98.17% of the sites that employ the `Expect-CT` feature are powered by Cloudflare, indicating a fairly limited distribution in the adoption of this mechanism. However, overall, we find that this phenomenon of a single actor like a Drupal or Cloudflare being a  top technological driver (CDN, CMS, Paas, ...) of a security feature’s adoption is an outlier and appears less common over time. This means that an increasingly diverse set of websites is adopting security mechanisms, and that more and more web developers are becoming aware of their benefits. For example, last year 44.31% of the sites that set a Content Security Policy were powered by Shopify, whereas this year, Shopify alone is only responsible for 32.92% of all sites that enable CSP. Combined with the generally growing adoption rate, this is great news!
 
 
 ### Factor: website popularity
 
-
-
-<p id="gdcalert16" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image16.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert17">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image16.png "image_tooltip")
-
+{{ figure_markup(
+  image="security-https-usage-by-site.png",
+  caption="Prevalence of security headers set in a first-party context by rank",
+  description="Bar chart showing in top 1,000 sites, 55% have XFO, 51% have HSTS and 22% have CSP headers. In top 10,000, 48% have XFO, 41% have HSTS and 18% have CSP headers. In top 100,000, 44% have XFO, 35% have HSTS and 14% have CSP headers. In top 1.000,000, 39% have XFO, 28% have HSTS and 13% have CSP headers. Among all sites, 29% have XFO, 23% have HSTS and 13% have CSP.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1353621848&format=interactive",
+  sheets_gid="1156119511",
+  sql_file="security_headers_prevalence.sql"
+  )
+}}
 
 Websites that have many visitors may be more prone to targeted attacks given that there are more users with potentially sensitive data to attract attackers. Therefore, it can be expected that widely visited websites invest more in security in order to safeguard their users. To evaluate whether this hypothesis is valid, we used the ranking provided by the [Chrome User Experience Report](./methodology#chrome-ux-report), which uses real-world user data to determine which websites are visited the most (ranked by top 1k, 10k, 100k, 1M and all sites in our dataset).
 
-**50.70%**
-
-
-_Percentage of top-1000 sites that use HSTS_
+{{ figure_markup(
+  caption="Percentage of top-1000 sites that use HSTS.",
+  content="50.70%",
+  classes="big-number",
+  sheets_gid="1156119511"
+)
+}}
 
 We can see that the adoption of certain security features, X-Frame-Options (XFO), Content Security Policy (CSP), and Strict Transport Security (HSTS), is highly related to the ranking of sites. For instance, the 1000 top visited sites are almost twice as likely to adopt a certain security header compared to the overall adoption. We can also see that the adoption rate for each feature is higher for higher-ranked websites.
 
-**22.21%**
-
-
-_Percentage of top-1000 sites that use CSP_
+{{ figure_markup(
+  caption="Percentage of top-1000 sites that use CSP.",
+  content="22.21%",
+  classes="big-number",
+  sheets_gid="1156119511"
+)
+}}
 
 We can draw two conclusions from this: on the one hand, having better "security hygiene" on sites that attract more visitors benefits a larger fraction of users (who might be more inclined to share their personal data with well-known trusted sites). On the other hand, the lower adoption rate of security features on less-visited sites could be indicative that it still requires a substantial investment to (correctly) implement these features. This investment may not always be feasible for smaller websites. Hopefully we will see a further increase in security features that are enabled by default in certain technology stacks, which could further enhance the security of many sites without requiring too much effort from web developers.
 
@@ -1189,23 +1110,27 @@ Cryptocurrencies have become an increasingly familiar  part of our modern commun
 
 We now show our findings in the following figure regarding cryptominer usage on the web.
 
-
-
-<p id="gdcalert17" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image17.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert18">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image17.png "image_tooltip")
-
+{{ figure_markup(
+  image="security-cryptominer-usage.png",
+  caption="Cryptominer usage.",
+  description="Time series chart showing the evolution of the number of sites with cryptojacking scripts from January 2020 until August 2021. There is a upward trend from 500 desktop sites and 606 mobile sites at the beginning to 827 sites on desktop and 983 sites on mobile at the end, with a dip around February 2021 to May 2021 when it goes lowest to 76 site on desktop and 124 sites on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1998879220&format=interactive",
+  sheets_gid="1719897363",
+  sql_file="cryptominer_usage.sql"
+) }}
 
 According to our dataset, until recently, we found a very stable decrease in the number of websites with Cryptominer. However, we are now seeing that the number of such websites has increased more than tenfold in the past two months. Such picks are very typical, for example, when widespread cryptojacking attacks take place or when a popular JS library has been infected.
 
 We now turn to cryptominer market share in the following figure. 
 
-<p id="gdcalert18" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image18.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert19">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image18.png "image_tooltip")
-
+{{ figure_markup(
+  image="security-cryptominer-market-share.png",
+  caption="Cryptominer market share (mobile).",
+  description="Pie chart showing Coinimp has 84.9% of market share, CoinHive has 9.0%, JSEcoin has 3.1%, Minero.cc has 1.5% and others have 1.5%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1688060716&format=interactive",
+  sheets_gid="1998142066",
+  sql_file="cryptominer_share.sql"
+) }}
 
 We see that [CoinHive](https://de.wikipedia.org/wiki/Coinhive) community have switched to CoinImp. Therefore, CoinImp has clearly become the market leader (90% share). Even though Coinhive has been discontinued, we still see some websites that use CoinHive scripts (Desktop: 5.7%, mobile: 9%).
 
@@ -1223,23 +1148,27 @@ Please also note that our results may not show the actual state of the websites 
 
 [security.txt](https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt-12) is a well-known file format for websites to provide a standard for vulnerability reporting. Website providers can provide contact details, PGP key, policy, and other information in this file. White hat hackers can then use this information to conduct security analyses on these websites or report a vulnerability. The following figure shows that 5% of the websites already use this standard - although it is a very young standard.
 
-
-
-<p id="gdcalert19" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image19.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert20">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image19.png "image_tooltip")
-
+{{ figure_markup(
+  image="security-https-usage-by-site.png",
+  caption="Use of security.txt endpoint",
+  description="Bar chart showing 4.93% of websites in desktop and 4.89% of websites in mobile have security.txt endpoint.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1958147881&format=interactive",
+  sheets_gid="399976976",
+  sql_file="well-known_security.sql"
+  )
+}}
 
 And the following figure shows that the policy is the most used property of utilized `security.txt` files.
 
-
-
-<p id="gdcalert20" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image20.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert21">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image20.png "image_tooltip")
-
+{{ figure_markup(
+  image="security-https-usage-by-site.png",
+  caption="Use of security.txt properties",
+  description="Bar chart showing use of different properties in security.txt. `signed` is 0.37% in desktop and 0.28% in mobile, Canonical is 2.75% in desktop and 2.72% in mobile, Encryption is 2.55% in desktop and 2.13% in mobile, Expires is 0.93% in desktop and 0.70% in mobile, Policy is 6.54$ in desktop and 6.39% in mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=644563241&format=interactive",
+  sheets_gid="399976976",
+  sql_file="well-known_security.sql"
+  )
+}}
 
 
 ## Conclusion
