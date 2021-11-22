@@ -366,7 +366,7 @@ If there is an absolute need to reach for this technique, the role of `presentat
 
 ### Tabs
 
-Tabs are a very common interface widget but making them accessible presents a challenge for many developers. A common pattern for accessible implementation comes from the <a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel">WAI-ARIA Authoring Practices Design Patterns</a>. Please note that the ARIA Authoring Practices document is not a specification and is meant to demonstrate idealized use of ARIA for common widgets. They should not be used in production without testing with your users.
+Tabs are a very common interface widget but making them accessible presents a challenge for many developers. A common pattern for accessible implementation comes from the <a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel">WAI-ARIA Authoring Practices Design Patterns</a>. Note that the ARIA Authoring Practices document is not a specification and is meant to demonstrate idealized use of ARIA for common widgets. They should not be used in production without testing with your users.
 
 The Authoring Practice guidelines suggest always using the `tabpanel` role in conjunction with `role="tab"`. We found that 8% of desktop pages have at least one element with a `role="tablist"`, 7% of pages have elements with a `role="tab"` and 6% of pages have elements with a `role="tabpanel"`. For more information see the [Aria roles](#aria-roles) section below.
 
@@ -803,7 +803,7 @@ This <a hreflang="en" href="https://tink.uk/accessibe-and-data-protection/">arti
 
 These widgets have been named as part of many accessibility lawsuits against companies who use them. According to the <a hreflang="en" href="https://info.usablenet.com/2020-report-on-digital-accessibility-lawsuits">UsableNet's 2020 report on Digital Accessibility Lawsuits</a>, "Over 250 companies sued had invested in accessibility widgets or overlays". <a hreflang="en" href="https://sheribyrnehaber.com/technology-doesnt-make-accessibility-hard-people-who-dont-care-do/">Accessibility expert Sherri Byrne-Haber cites</a>, "Ten percent of accessibility lawsuits filed at the end of 2020 were against companies who have installed plugins, overlays, or widgets, thinking they would make them bulletproof to ADA litigation". It's worth noting that accessibility laws are not limited to the Americans with Disabilities Act, there are <a hreflang="en" href="https://www.3playmedia.com/blog/countries-that-have-adopted-wcag-standards-map/">countries all over the world with laws pointing to the WCAG</a>.
 
-For more information about the legal implications of using these overlays please refer to [Lainey Feingold](https://twitter.com/LFLegal)'s article <a hreflang="en" href="https://www.lflegal.com/2020/08/quick-fix/">Honor the ADA: Avoid Web Accessibility Quick-Fix Overlays</a> and Adrian Roselli's article <a hreflang="en" href="https://adrianroselli.com/2020/06/accessibe-will-get-you-sued.html">#accessiBe Will Get You Sued</a>.
+For more information about the legal implications of using these overlays, refer to [Lainey Feingold](https://twitter.com/LFLegal)'s article <a hreflang="en" href="https://www.lflegal.com/2020/08/quick-fix/">Honor the ADA: Avoid Web Accessibility Quick-Fix Overlays</a> and Adrian Roselli's article <a hreflang="en" href="https://adrianroselli.com/2020/06/accessibe-will-get-you-sued.html">#accessiBe Will Get You Sued</a>.
 
 ### Why do some companies use overlays?
 
