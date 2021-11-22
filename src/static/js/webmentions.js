@@ -216,7 +216,7 @@ function renderWebmentions(webmentions) {
 function processWebmentions(targetURL) {
   getWebmentions(targetURL)
     .then(webmentions => renderWebmentions(webmentions))
-    .catch(e => console.log(e))
+    .catch(e => console.error(e))
 }
 
 // Change tabs for webmentions UI
@@ -283,5 +283,6 @@ function addTabListeners() {
 
 window.addEventListener("DOMContentLoaded", () => {
   addTabListeners();
-  processWebmentions(window.location.href);
+  const BASE_URL = "https://almanac.httparchive.org"
+  processWebmentions(BASE_URL + window.location.pathname);
 });
