@@ -332,7 +332,7 @@ Though both the prefixes are used in a significantly lower percentage of cookies
 Permanent cookies are deleted at a date specified by the `Expires` attribute, or after a period of time specified by the `Max-Age` attribute. If both `Expires` and `Max-Age` are set, `Max-Age` has precedence.
 
 {{ figure_markup(
-  image="cookie-age-usage-by-site-in-mobile-in-days.png",
+  image="security-cookie-age-usage-by-site-in-mobile-in-days.png",
   caption="Cookie age usage in mobile (in days).",
   description="Bar chart showing 77.44% of desktop sites are using HTTPS, with the remaining 22.56% using HTTP, while 73.22% of mobile sites are using HTTPS while the remaining 26.78% using HTTP.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1433212880&format=interactive",
@@ -354,7 +354,7 @@ Most current websites have quite a lot of JavaScript, media, and libraries that 
 [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) is one of the predominant methods used to mitigate attacks like cross-site scripting attacks and data injection attacks by restricting the origins allowed to load various contents, using scripts and media. There are numerous directives which can be used by the website to specify sources for different kinds of content. For instance, `script-src` is used to specify origins or domains from which scripts can be loaded. It also has few other values to define if inline scripts and eval scripts are allowed.
 
 {{ figure_markup(
-  image="csp-directives-usage.png",
+  image="security-csp-directives-usage.png",
   caption="Most common directives used in CSP.",
   description="Bar chart showing usage of most common CSP directives. `upgrade-insecure-requests` is the most common with 57.55% in desktop and 57.11% in mobile, followed by `frame-ancestors` which is 54.38% in desktop and 55.77% in mobile. `block-all-mixed-content` is 29.85% in desktop and 30.69% in mobile, `default-src` is 18.37% in desktop and 16.84% in mobile, `script-src` is 17.21% in desktop and 16.68% in mobile, `style-src` is 13.82% in desktop and 11.97% in mobile, `img-src` is 11.81% in desktop and 10.40% in mobile, `font-src` is 9.75% in desktop and 8.24% in desktop, `object-src` is 8.34% in desktop and 8.85% in mobile, `connect-src` is 8.47% in desktop and 7.23% in mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1763321291&format=interactive",
@@ -656,7 +656,7 @@ An untrusted third-party in an iframe can try to launch a number of attacks on t
 The `sandbox` attribute on iframes applies restrictions to the content, and therefore also the opportunities for launching attacks, of the embedded web page. The value of the attribute can either be empty to apply all restrictions (the embedded page cannot execute any JavaScript code, no forms can be submitted and no popups can be created, to name a few restrictions), or space-separated tokens to lift particular restrictions. As embedding third-party content such as advertisements or videos is common practice on the web, it is not surprising that many of these are restricted via the `sandbox` attribute: 32.57% of the iframes on desktop pages have a `sandbox` attribute while on mobile pages this is 32.6%.
 
 {{ figure_markup(
-  image="prevalence-of-sandbox-directives-on-frames.png",
+  image="security-prevalence-of-sandbox-directives-on-frames.png",
   caption="Prevalence of sandbox directives on frames.",
   description="Bar chart showing prevalence of sandbox directives in frames. `allow-scrips` and `allow-same-origin` are the most used directive with almost 100% of iframes having `sandbox` attribues using these directives. `allow-popups` is found in 83% frames in desktop and 87% frames in mobile, `allow-forms` is found in 81% frames in desktop and 85% frames in mobile, `allow-popups-to-escape-sandbox` is found in 80% frames in desktop and 84% frames in mobile, `allow-top-navigation-by-user-activation` is found in 57% frames in desktop and 62% frames in mobile, `allow-top-navigation` is found in 22% frames in desktop and 20% frames in mobile, and `allow-modals` is found in 21% frames in desktop and 20% frames in mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1054574782&format=interactive",
@@ -1072,7 +1072,7 @@ An important aspect to explore in the context of the adoption of security featur
 ### Factor: website popularity
 
 {{ figure_markup(
-  image="security-https-usage-by-site.png",
+  image="security-prevalence-of-headers-in-sites-by-rank.png",
   caption="Prevalence of security headers set in a first-party context by rank",
   description="Bar chart showing in top 1,000 sites, 55% have XFO, 51% have HSTS and 22% have CSP headers. In top 10,000, 48% have XFO, 41% have HSTS and 18% have CSP headers. In top 100,000, 44% have XFO, 35% have HSTS and 14% have CSP headers. In top 1.000,000, 39% have XFO, 28% have HSTS and 13% have CSP headers. Among all sites, 29% have XFO, 23% have HSTS and 13% have CSP.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1353621848&format=interactive",
@@ -1149,7 +1149,7 @@ Please also note that our results may not show the actual state of the websites 
 [security.txt](https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt-12) is a well-known file format for websites to provide a standard for vulnerability reporting. Website providers can provide contact details, PGP key, policy, and other information in this file. White hat hackers can then use this information to conduct security analyses on these websites or report a vulnerability. The following figure shows that 5% of the websites already use this standard - although it is a very young standard.
 
 {{ figure_markup(
-  image="security-https-usage-by-site.png",
+  image="security-usage-of-well-known-security.png",
   caption="Use of security.txt endpoint",
   description="Bar chart showing 4.93% of websites in desktop and 4.89% of websites in mobile have security.txt endpoint.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1958147881&format=interactive",
@@ -1161,7 +1161,7 @@ Please also note that our results may not show the actual state of the websites 
 And the following figure shows that the policy is the most used property of utilized `security.txt` files.
 
 {{ figure_markup(
-  image="security-https-usage-by-site.png",
+  image="security-usage-of-properties-in-well-known-security.png",
   caption="Use of security.txt properties",
   description="Bar chart showing use of different properties in security.txt. `signed` is 0.37% in desktop and 0.28% in mobile, Canonical is 2.75% in desktop and 2.72% in mobile, Encryption is 2.55% in desktop and 2.13% in mobile, Expires is 0.93% in desktop and 0.70% in mobile, Policy is 6.54$ in desktop and 6.39% in mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=644563241&format=interactive",
