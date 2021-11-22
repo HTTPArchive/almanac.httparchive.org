@@ -867,6 +867,7 @@ pre {
   font-weight: bold;
   border-bottom: 0.5rem solid #a8caba;
 }
+
 .reaction-tabs [role="tab"] {
   position: relative;
   z-index: 1;
