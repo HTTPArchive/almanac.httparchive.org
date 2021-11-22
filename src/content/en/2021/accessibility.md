@@ -185,7 +185,6 @@ Before the introduction of HTML5, ARIA landmark roles were needed to accomplish 
         <th>ARIA role<br />equivalent</th>
         <th>Pages with<br />element</th>
         <th>Pages with<br />role</th>
-        <th>Pages with<br />element or role</th>
       </tr>
     </thead>
     <tbody>
@@ -194,28 +193,24 @@ Before the introduction of HTML5, ARIA landmark roles were needed to accomplish 
         <td>`role="main"`</td>
         <td class="numeric">28%</td>
         <td class="numeric">17%</td>
-        <td class="numeric">45%</td>
       </tr>
       <tr>
         <td>`<header>`</td>
         <td>`role="banner"`</td>
         <td class="numeric">62%</td>
         <td class="numeric">14%</td>
-        <td class="numeric">76%</td>
       </tr>
       <tr>
         <td>`<nav>`</td>
         <td>`role="navigation"`</td>
         <td class="numeric">62%</td>
         <td class="numeric">4%</td>
-        <td class="numeric">66%</td>
       </tr>
       <tr>
         <td>`<footer>`</td>
         <td>`role="contentinfo"`</td>
         <td class="numeric">63%</td>
         <td class="numeric">12%</td>
-        <td class="numeric">76%</td>
       </tr>
     </tbody>
   </table>
