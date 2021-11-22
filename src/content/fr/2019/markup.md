@@ -12,11 +12,11 @@ results: https://docs.google.com/spreadsheets/d/1WnDKLar_0Btlt9UgT53Giy2229bpV4I
 bkardell_bio: Brian Kardell est <i lang="en">Developer Advocate</i> chez <a hreflang="en" href="https://igalia.com">Igalia</a>, contributeur des standards du web, <a hreflang="en" href="https://bkardell.com">blogueur</a>, et est actuellement le représentant du comité consultatif du W3C pour la <a hreflang="en" lang="en" href="https://openjsf.org/">Open JS Foundation</a>. Il a fondé <i lang="en">l’Extensible Web Community Group</i> et est co-auteur du <a hreflang="en" lang="en" href="https://extensiblewebmanifesto.org">The Extensible Web Manifesto</a>.
 featured_quote: À partir de juillet 2019, HTTP Archive a commencé à collecter tous les noms de *éléments* utilisés dans le DOM, environ 4,4 millions de pages d’accueil pour ordinateurs de bureau et environ 5,3 millions de pages d’accueil sur mobiles que nous pouvons maintenant commencer à analyser et à disséquer. Lors de cette collecte, nous avons découvert *plus de 5 000 noms d’éléments non standard distincts* dans les pages. Nous avons donc limité le nombre total d’éléments distincts que nous comptons aux 5 048 "premiers".
 featured_stat_1: 11
-featured_stat_label_1: éléments sont utilisés sur plus de 90 % des pages.
+featured_stat_label_1: éléments sont utilisés sur plus de 90 % des pages
 featured_stat_2: 15 %
-featured_stat_label_2: des pages contiennent des éléments dépréciés.
+featured_stat_label_2: des pages contiennent des éléments dépréciés
 featured_stat_3: 65
-featured_stat_label_3: variantes de carrousels trouvées.
+featured_stat_label_3: variantes de carrousels trouvées
 ---
 
 ## Introduction
