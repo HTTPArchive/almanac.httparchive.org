@@ -130,7 +130,7 @@ While we observed CDN adoption across different types of content, we will not lo
 {{ figure_markup(
   image="cdn-usage-ranking-desktop.png",
   caption="CDN Usage by Site Popularity - Desktop.",
-  description="This Bar chart provides a view of CDN Usage for Desktop sites broken up for top 1,000, 10,000, 100,000, 1 million and 10 million popular sites as per Google CRUX data. Top 1000 popular sites has about 62.33% CDN adoption followed by top 10,000 sites at 56.16%, top 100,000 sites at 44.38%, top 1 million sites at 31.42% and top 10 million sites at 26.09%.",
+  description="This Bar chart provides a view of CDN Usage for Desktop sites broken up for top 1,000, 10,000, 100,000, 1 million and 10 million popular sites as per Google CRUX data. Top 1000 popular sites has about 62% CDN adoption followed by top 10,000 sites at 57%, top 100,000 sites at 46%, top 1 million sites at 33% and top 10 million sites at 27%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=956770395&format=interactive",
   sheets_gid="414030881",
   sql_file="CDN Usage by Site Popularity.sql"
@@ -139,7 +139,7 @@ While we observed CDN adoption across different types of content, we will not lo
 {{ figure_markup(
   image="cdn-usage-ranking-mobile.png",
   caption="CDN Usage by Site Popularity - Mobile.",
-  description="This Bar chart provides a view of CDN Usage for Desktop sites broken up for top 1,000, 10,000, 100,000, 1 million and 10 million popular sites as per Google CRUX data. Top 1000 popular sites has about 61.12% CDN adoption followed by top 10,000 sites at 56.61%, top 100,000 sites at 45.1%, top 1 million sites at 32.35% and top 10 million sites at 25.88%.",
+  description="This Bar chart provides a view of CDN Usage for Desktop sites broken up for top 1,000, 10,000, 100,000, 1 million and 10 million popular sites as per Google CRUX data. Top 1000 popular sites has about 61% CDN adoption followed by top 10,000 sites at 57%, top 100,000 sites at 46%, top 1 million sites at 34% and top 10 million sites at 27%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1707360768&format=interactive",
   sheets_gid="414030881",
   sql_file="CDN Usage by Site Popularity.sql"
@@ -150,9 +150,9 @@ While we observed CDN adoption across different types of content, we will not lo
 
 Ranking the domains based on their popularity (at the time of this writing sourced from Google CRUX data) in the web and then checking for their CDN usage, the top 1000 websites contribute to the highest usage of CDN. The top websites include domains owned by names like Google, Amazon who contribute to much of the internet traffic we see today and it’s no surprise that these names make it to the list of “Top CDN Providers” in the next section. This also backs the fact about the benefits CDN’s bring to the table when operating at scale and having the ability to scale further if needed.
 
-The CDN adoption rate falls below 50% when we look at the top 100,000 websites but the rate of reduction slows down beyond this. At the top 10 million website mark (which is 100x more websites than at top 100,000), 25.88% of these websites use CDN. When you translate that percentage into real number, that’s 
+The CDN adoption rate falls below 50% when we look at the top 100,000 websites but the rate of reduction slows down beyond this. At the top 10 million website mark (which is 100x more websites than at top 100,000), 27% of these websites use CDN. When you translate that percentage into real number, that’s 
 
-2.588 million websites using CDN! That is not a small number when you look at it this way.
+2.7 million websites using CDN! That is not a small number when you look at it this way.
 
 But the decreasing percentage of CDN adoption in the low popularity website end does make sense considering the benefits of CDN (like caching, TCP connection offload etc.,) increases with increased end users on the web property. Below a certain scale of end user traffic on a web property, the cost-to-benefit math of a CDN may not work in web property owner’s favor and they might be better off delivering the web content directly from origin.
 
