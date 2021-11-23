@@ -4,7 +4,7 @@ nocolor = False
 dialect = bigquery
 templater = jinja
 rules = None
-exclude_rules = L011,L014,L016,L020,L026,L027,L028,L029,L030,L031,L032,L034,L035,L036,L037,L042,L043
+exclude_rules = L011,L014,L016,L020,L026,L027,L028,L029,L030,L031,L032,L034,L035,L036,L037,L042,L043,L051
 # L011 - We don't always alias tables with AS ("FROM table1 AS tb1" instead of "FROM table1 tb1"). Do for columns but not for tables.
 # L014 - Unquoted identifiers (e.g. column names) will be mixed case so don't enforce case
 # L016 - We allow longer lines as some of our queries are complex. Maybe should limit in future?
