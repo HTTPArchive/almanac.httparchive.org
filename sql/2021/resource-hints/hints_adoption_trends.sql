@@ -23,7 +23,7 @@ try {
     return results;
   }, {});
 }
-''' ;
+''';
 
 WITH pages AS (
   SELECT

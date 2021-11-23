@@ -4,11 +4,11 @@
 # returns true/false if the page has an iframe with `loading="lazy"` or null if the page has no iframes
 CREATE TEMPORARY FUNCTION hasLazyLoadedIframe(almanac_string STRING)
 RETURNS BOOL
-LANGUAGE js AS ''' 
+LANGUAGE js AS '''
 try {
     var almanac = JSON.parse(almanac_string)
     if (Array.isArray(almanac) || typeof almanac != 'object') return null;
-    
+
     var iframes = almanac["iframes"]["iframes"]["nodes"]
 
     if (iframes.length) {
@@ -20,7 +20,7 @@ try {
 catch {
     return null
 }
-''' ;
+''';
 
 SELECT
   client,
