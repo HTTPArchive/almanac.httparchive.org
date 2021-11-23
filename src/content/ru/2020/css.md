@@ -14,9 +14,9 @@ discuss: 2037
 results: https://docs.google.com/spreadsheets/d/1sMWXWjMujqfAREYxNbG_t1fOJKYCA6ASLwtz4pBQVTw/
 featured_quote: Веб больше не подросток — ему уже 30 лет и ведёт он себя соответствующе. Он всё больше отдаёт предпочтение стабильности, а не новизне, и удобству чтения, а не сложности, оставляя в стороне случайные удовольствия.
 featured_stat_1: 72.58%
-featured_stat_label_1: Процент значений `<length>`, которые используют единицу измерения `px`.
+featured_stat_label_1: Процент значений `<length>`, которые используют единицу измерения `px`
 featured_stat_2: 91.05%
-featured_stat_label_2: Процент мобильных страниц, использующих фичи с вендорным префиксом.
+featured_stat_label_2: Процент мобильных страниц, использующих фичи с вендорным префиксом
 featured_stat_3: `darken()`
 featured_stat_label_3: Самая популярная функция в SCSS
 ---
