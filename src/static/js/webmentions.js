@@ -36,7 +36,19 @@ function parseMentions(webmentions, mentionType) {
 }
 
 // Renders webmention into different sections, based on the type
-function renderReactions(reactions, reactionType) {
+function renderReactions(webmentions, reactionType) {
+  // Process webmentions
+  const reactionMap = {
+    likes: "like-of",
+    reposts: "repost-of",
+    replies: "in-reply-to",
+    mentions: "mention-of"
+  }
+  const reactions = parseMentions(webmentions, reactionMap[reactionType]);
+  if (!reactions.length) {
+    return;
+  }
+
   // Add the count to the reaction tab
   document.querySelector(`#${reactionType}-count`).textContent = reactions.length;
   const reactionLabel = document.querySelector(`#${reactionType}-label`);
@@ -117,26 +129,11 @@ function renderWebmentions(webmentions) {
     return;
   }
 
-  const likes = parseMentions(webmentions, "like-of");
-  const reposts = parseMentions(webmentions, "repost-of");
-  const replies = parseMentions(webmentions, "in-reply-to");
-  const mentions = parseMentions(webmentions, "mention-of");
+  renderReactions(webmentions, "likes");
+  renderReactions(webmentions, "reposts");
+  renderReactions(webmentions, "replies");
+  renderReactions(webmentions, "mentions");
 
-  if (likes.length) {
-    renderReactions(likes, "likes");
-  }
-
-  if (reposts.length) {
-    renderReactions(reposts, "reposts");
-  }
-
-  if (replies.length) {
-    renderReactions(replies, "replies");
-  }
-
-  if (mentions.length) {
-    renderReactions(mentions, "mentions");
-  }
 }
 
 // Process webmention promise
