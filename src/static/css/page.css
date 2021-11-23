@@ -880,6 +880,10 @@ pre {
   margin-top: 1.5rem;
 }
 
+.reaction-tabs > button > span {
+  pointer-events: none;
+}
+
 .webmention-likes,
 .webmention-reposts {
   display: flex;
@@ -923,16 +927,16 @@ pre {
   color: #515660;
 }
 
-.webmention-reply-item,
-.webmention-mention-item {
+.webmention-replies-item,
+.webmention-mentions-item {
   display: flex;
   flex-direction: column;
   position: relative;
   padding: 1rem 0 1rem 60px;
 }
 
-.webmention-reply-item .webmention-author .webmention-author-avatar,
-.webmention-mention-item .webmention-author .webmention-author-avatar {
+.webmention-replies-item .webmention-author .webmention-author-avatar,
+.webmention-mentions-item .webmention-author .webmention-author-avatar {
   position: absolute;
   top: 1rem;
   left: 0;

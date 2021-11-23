@@ -10,10 +10,10 @@ async function getWebmentions(targetURL) {
       const json = await response.json();
       mentions = json.children;
     } else {
-      console.error("Could not parse response", response.statusText);
+      gtag('event', 'error', { 'event_category': 'webmentions.js', 'event_label': response.statusText, 'value': 1 });
     }
   } catch(error) {
-    console.error("Request failed", error);
+    gtag('event', 'error', { 'event_category': 'webmentions.js', 'event_label': error, 'value': 1 });
   }
   return mentions;
 }
@@ -35,197 +35,80 @@ function parseMentions(webmentions, mentionType) {
   return filteredMentions;
 }
 
-// Renders webmention likes
-function renderLikes(likes) {
-  // Add the likes count to the likes-tab
-  document.querySelector('#likes-count').textContent = likes.length;
-  if (likes.length === 1) {
-    document.querySelectorAll('.like-singular').forEach(el => {
-      el.removeAttribute('data-translation');
-    });
-  } else {
-    document.querySelectorAll('.like-plural').forEach(el => {
-      el.removeAttribute('data-translation');
-    });
+// Renders webmention into different sections, based on the type
+function renderReactions(reactions, reactionType) {
+  // Add the count to the reaction tab
+  document.querySelector(`#${reactionType}-count`).textContent = reactions.length;
+  const reactionLabel = document.querySelector(`#${reactionType}-label`);
+  if (reactions && reactions.length ===1) {
+    reactionLabel.textContent = reactionLabel.getAttribute("data-singular");
   }
 
-  const likePanel = document.querySelector("#likes-panel");
-  const likeAriaText = likePanel.getAttribute("data-like-text");
-  const webmentionLikesList = document.createElement("ul");
-  webmentionLikesList.setAttribute("class", "webmention-likes");
-  likes.forEach(function(like) {
-    const likeHtml = `
-      <li class="webmention-likes-item">
-        <a
-          class="webmention-author"
-          href="${like["url"]}"
-          title="${like["author"]["name"]}"
-          aria-label="${like["author"]["name"]} ${likeAriaText}"
-        >
-          <img
-            class="webmention-author-avatar"
-            src="${like["author"]["photo"]}"
-            loading="lazy" width="60" height="60"/>
-        </a>
-      </li>
-    `;
-    const parser = new DOMParser();
-	  const likeHtmlObject = parser.parseFromString(likeHtml, 'text/html');
-    webmentionLikesList.appendChild(likeHtmlObject.body.childNodes[0]);
+  // Render logic for the reaction types
+  const webmentionReactionsList = document.createElement("ul");
+  webmentionReactionsList.setAttribute("class", `webmention-${reactionType}`);
+  reactions.forEach(function(reaction) {
+    const reactionLI = document.createElement("li");
+    reactionLI.setAttribute("class", `webmention-${reactionType}-item`);
+
+    const reactionA = document.createElement("a");
+    reactionA.setAttribute("class", "webmention-author");
+    reactionA.setAttribute("href", reaction["url"]);
+    reactionA.setAttribute("title", reaction["author"]["name"]);
+    reactionA.setAttribute("aria-label", reaction["author"]["name"]);
+
+    const reactionIMG = document.createElement("img");
+    reactionIMG.setAttribute("class", "webmention-author-avatar");
+    reactionIMG.setAttribute("src", reaction["author"]["photo"]);
+    reactionIMG.setAttribute("alt", reaction["author"]["name"]);
+    reactionIMG.setAttribute("loading", "lazy");
+    reactionIMG.setAttribute("width", "60");
+    reactionIMG.setAttribute("height", "60");
+
+    reactionA.appendChild(reactionIMG);
+
+    // Replies and mentions have some extra HTML
+    const reactionDIVContent = document.createElement("div");
+    const reactionDIVMeta = document.createElement("div");
+    if (reactionType === "replies" || reactionType === "mentions") {
+      const reactionSTRONG = document.createElement("strong");
+      reactionSTRONG.setAttribute("class", "webmention-author-name");
+      reactionSTRONG.textContent = reaction["author"]["name"];
+      reactionA.appendChild(reactionSTRONG);
+
+      reactionDIVContent.setAttribute("class", "webmention-content");
+      reactionDIVContent.textContent = reaction["content"]["text"];
+
+      reactionDIVMeta.setAttribute("class", "webmention-meta");
+
+      const reactionTIME = document.createElement("time");
+      reactionTIME.setAttribute("class", "webmention-pub-date");
+      reactionTIME.setAttribute("datetime", reaction["published"]);
+      reactionTIME.textContent = formatDate(reaction["published"]);
+
+      const reactionSPAN = document.createElement("span");
+      reactionSPAN.setAttribute("class", "webmention-divider");
+      reactionSPAN.setAttribute("aria-hidden", "true");
+      reactionSPAN.textContent = " ⋅ ";
+
+      const reactionASource = document.createElement("a");
+      reactionASource.setAttribute("class", "webmention-source");
+      reactionASource.setAttribute("href", reaction["url"]);
+      reactionASource.textContent = document.querySelector(".reactions").getAttribute("data-source");
+
+      reactionDIVMeta.appendChild(reactionTIME);
+      reactionDIVMeta.appendChild(reactionSPAN);
+      reactionDIVMeta.appendChild(reactionASource);
+    }
+
+    reactionLI.appendChild(reactionA);
+    if (reactionType === "replies" || reactionType === "mentions") {
+      reactionLI.appendChild(reactionDIVContent);
+      reactionLI.appendChild(reactionDIVMeta);
+    }
+    webmentionReactionsList.appendChild(reactionLI);
   });
-  likePanel.appendChild(webmentionLikesList);
-}
-
-// Renders webmention reposts
-function renderReposts(reposts) {
-  // Add the reposts count to the reposts-tab
-  document.querySelector('#reposts-count').textContent = reposts.length;
-  if (reposts.length === 1) {
-    document.querySelectorAll('.repost-singular').forEach(el => {
-      el.removeAttribute('data-translation');
-    });
-  } else {
-    document.querySelectorAll('.repost-plural').forEach(el => {
-      el.removeAttribute('data-translation');
-    });
-  }
-
-  const repostPanel = document.querySelector("#reposts-panel");
-  const repostAriaText = repostPanel.getAttribute("data-repost-text");
-  const webmentionRepostsList = document.createElement("ul");
-  webmentionRepostsList.setAttribute("class", "webmention-reposts");
-  reposts.forEach(function(repost) {
-    const repostHtml = `
-      <li class="webmention-repost-item">
-        <a
-          class="webmention-author"
-          href="${repost["url"]}"
-          title="${repost["author"]["name"]}"
-          aria-label="${repost["author"]["name"]} ${repostAriaText}"
-        >
-          <img
-            class="webmention-author-avatar"
-            src="${repost["author"]["photo"]}"
-            loading="lazy" width="60" height="60"/>
-        </a>
-      </li>
-    `;
-    const parser = new DOMParser();
-	  const repostHtmlObject = parser.parseFromString(repostHtml, 'text/html');
-    webmentionRepostsList.appendChild(repostHtmlObject.body.childNodes[0]);
-  });
-  repostPanel.appendChild(webmentionRepostsList);
-}
-
-// Renders webmention replies
-function renderReplies(replies) {
-  // Add the replies count to the replies-tab
-  document.querySelector('#replies-count').textContent = replies.length;
-  if (replies.length === 1) {
-    document.querySelectorAll('.reply-singular').forEach(el => {
-      el.removeAttribute('data-translation');
-    });
-  } else {
-    document.querySelectorAll('.reply-plural').forEach(el => {
-      el.removeAttribute('data-translation');
-    });
-  }
-
-  const replyPanel = document.querySelector("#replies-panel");
-  const replyAriaText = replyPanel.getAttribute("data-reply-text");
-  const webmentionRepliesList = document.createElement("ul");
-  webmentionRepliesList.setAttribute("class", "webmention-replies");
-  replies.forEach(function(reply) {
-    const replyHtml = `
-      <li class="webmention-reply-item">
-        <a class="webmention-author" href="${reply["author"]["url"]}">
-          <img
-            class="webmention-author-avatar"
-            src="${reply["author"]["photo"]}"
-            loading="lazy" width="60" height="60"/>
-          <strong class="webmention-author-name">${reply["author"]["name"]}</strong>
-        </a>
-        <div class="webmention-content">
-          ${reply["content"]["html"]}
-        </div>
-        <div class="webmention-meta">
-          <time
-            class="webmention-pub-date"
-            datetime="${reply["published"]}"
-          >
-            ${formatDate(reply["published"])}
-          </time>
-          <span class="webmention-divider" aria-hidden="true">⋅</span>
-          <a
-            class="webmention-source"
-            href="${reply["url"]}"
-            aria-label="${replyAriaText} ${reply["author"]["name"]}"
-          >View Source</a>
-        </div>
-      </li>
-    `;
-    const parser = new DOMParser();
-	  const replyHtmlObject = parser.parseFromString(replyHtml, 'text/html');
-    webmentionRepliesList.appendChild(replyHtmlObject.body.childNodes[0]);
-  });
-  replyPanel.appendChild(webmentionRepliesList);
-}
-
-// Renders webmention mentions
-function renderMentions(mentions) {
-  // Add the mentions count to the mentions-tab
-  document.querySelector('#mentions-count').textContent = mentions.length;
-  if (mentions.length === 1) {
-    document.querySelectorAll('.mention-singular').forEach(el => {
-      el.removeAttribute('data-translation');
-    });
-  } else {
-    document.querySelectorAll('.mention-plural').forEach(el => {
-      el.removeAttribute('data-translation');
-    });
-  }
-
-  const mentionPanel = document.querySelector("#mentions-panel");
-  const mentionAriaText = mentionPanel.getAttribute("data-mention-text");
-  const webmentionMentionsList = document.createElement("ul");
-  webmentionMentionsList.setAttribute("class", "webmention-mentions");
-  mentions.forEach(function(mention) {
-    const mentionContent = mention["content"] ? mention["content"]["html"] : (
-      `Source: <a href="${mention["wm-source"]}">${mention["wm-source"]}</a>`
-    );
-    const mentionHtml = `
-      <li class="webmention-mention-item">
-        <a class="webmention-author" href="${mention["author"]["url"]}">
-          <img
-            class="webmention-author-avatar"
-            src="${mention["author"]["photo"]}"
-            loading="lazy" width="60" height="60"/>
-          <strong class="webmention-author-name">${mention["author"]["name"]}</strong>
-        </a>
-        <div class="webmention-content">
-          ${mentionContent}
-        </div>
-        <div class="webmention-meta">
-          <time
-            class="webmention-pub-date"
-            datetime="${mention["published"]}"
-          >
-            ${formatDate(mention["published"])}
-          </time>
-          <span class="webmention-divider" aria-hidden="true">⋅</span>
-          <a
-            class="webmention-source"
-            href="${mention["url"]}"
-            aria-label="${mentionAriaText} ${mention["author"]["name"]}"
-          >View Source</a>
-        </div>
-      </li>
-    `;
-    const parser = new DOMParser();
-	  const mentionHtmlObject = parser.parseFromString(mentionHtml, 'text/html');
-    webmentionMentionsList.appendChild(mentionHtmlObject.body.childNodes[0]);
-  });
-  mentionPanel.appendChild(webmentionMentionsList);
+  document.querySelector(`#${reactionType}-panel`).appendChild(webmentionReactionsList);
 }
 
 // Parses and renders mentions into likes, reposts, replies and mentions
@@ -240,19 +123,19 @@ function renderWebmentions(webmentions) {
   const mentions = parseMentions(webmentions, "mention-of");
 
   if (likes.length) {
-    renderLikes(likes);
+    renderReactions(likes, "likes");
   }
 
   if (reposts.length) {
-    renderReposts(reposts);
+    renderReactions(reposts, "reposts");
   }
 
   if (replies.length) {
-    renderReplies(replies);
+    renderReactions(replies, "replies");
   }
 
   if (mentions.length) {
-    renderMentions(mentions);
+    renderReactions(mentions, "mentions");
   }
 }
 
@@ -260,7 +143,7 @@ function renderWebmentions(webmentions) {
 function processWebmentions(targetURL) {
   getWebmentions(targetURL)
     .then(webmentions => renderWebmentions(webmentions))
-    .catch(e => console.error(e))
+    .catch(e => gtag('event', 'error', { 'event_category': 'webmentions.js', 'event_label': e, 'value': 1 }))
 }
 
 // Change tabs for webmentions UI

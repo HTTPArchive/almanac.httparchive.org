@@ -154,7 +154,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
   <h2 id="reactions">
     <a href="#reactions" class="anchor-link">{{ self.reactions() }}</a>
   </h2>
-  <div class="reactions">
+  <div class="reactions" data-source="{{ self.source() }}">
     <div class="reaction-tabs" role="tablist" aria-label="Reaction Tabs">
       <button
         role="tab"
@@ -163,8 +163,8 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
         id="likes-tab"
         tabindex="0"
       >
-        <span id="likes-count">0</span> <span data-translation class="like-singular">{{ self.like() }}</span>
-        <span data-translation class="like-plural">{{ self.likes() }}</span>
+        <span id="likes-count">0</span>
+        <span id="likes-label" data-plural="{{ self.like() }}" data-singular="{{ self.likes() }}">{{ self.likes() }}</span>
       </button>
       <button
         role="tab"
@@ -173,8 +173,8 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
         id="reposts-tab"
         tabindex="-1"
       >
-        <span id="reposts-count">0</span> <span data-translation class="repost-singular">{{ self.repost() }}</span>
-        <span data-translation class="repost-plural">{{ self.reposts() }}</span>
+        <span id="reposts-count">0</span>
+        <span id="reposts-label" data-plural="{{ self.repost() }}" data-singular="{{ self.reposts() }}">{{ self.reposts() }}</span>
       </button>
       <button
         role="tab"
@@ -183,8 +183,8 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
         id="replies-tab"
         tabindex="-1"
       >
-        <span id="replies-count">0</span> <span data-translation class="reply-singular">{{ self.reply() }}</span>
-        <span data-translation class="reply-plural">{{ self.replies() }}</span>
+        <span id="replies-count">0</span>
+        <span id="replies-label" data-plural="{{ self.reply() }}" data-singular="{{ self.replies() }}">{{ self.replies() }}</span>
       </button>
       <button
         role="tab"
@@ -193,8 +193,8 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
         id="mentions-tab"
         tabindex="-1"
       >
-        <span id="mentions-count">0</span> <span data-translation class="mention-singular">{{ self.mention() }}</span>
-        <span data-translation class="mention-plural">{{ self.mentions() }}</span>
+        <span id="mentions-count">0</span>
+        <span id="mentions-label" data-plural="{{ self.mention() }}" data-singular="{{ self.mentions() }}">{{ self.mentions() }}</span>
       </button>
     </div>
     <div id="likes-panel" role="tabpanel" tabindex="0" aria-labelledby="likes-tab" data-like-text="{{ self.like_reaction_text() }}">
