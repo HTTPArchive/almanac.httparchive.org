@@ -49,6 +49,8 @@ We've split up our most interesting insights into six categories:
 
 We hope that this chapter, full of sobering metrics and demonstrable accessibility negligence on the Web, will inspire readers to prioritize this work and change their practices, shifting towards a more inclusive internet.
 
+<p class="note">We chose to use the person-first term "people with disabilities" throughout this chapter. We acknowledge that the identity-first term "disabled people" is preferred for many. Our choice in terminology is in no way prescriptive of which term is appropriate.</p>
+
 ## Ease of reading
 
 Making content as simple and clear to read as possible is an important aspect of web accessibility. When people are unable to read the content of a page, not only are they unable to access its information, they are also prevented from being able to complete tasks such as registering for an account or making a purchase.
