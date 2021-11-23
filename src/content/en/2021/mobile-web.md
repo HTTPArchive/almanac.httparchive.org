@@ -170,7 +170,11 @@ Whilst it can be hard to predict if your mobile traffic percentage is expected, 
 
 ## Mobile methodology & tech stacks
 
+While mobile web is highly used, these experience typically have less processing power and slower internet interconnectivity.  Many technologies have emerged to mitigate these limitations.  These include Client Hints and APIs that identify the connection type and serve assets best suited for the connection.
+
+In this section we will also look at overall app usage for the mobile web and how the programming languages, content management systems, and web servers compare to desktop experiences.
 {# TODO Can we add an intro here. We don't like so-called "stacked" headings #}
+{# TODO (Editor) Intro added #}
 
 ### Client Hints
 
@@ -330,7 +334,9 @@ According to <a hreflang="en" href="https://www.wappalyzer.com/">Wappalyzer</a> 
   <figcaption>{{ figure_link(caption="Popular Technology Usage.", sheets_gid="1172584192", sql_file="most_used_tech_by_domain_rank.sql") }}</figcaption>
 </figure>
 
-Of the top five mobile web technologies, adoption rates for three were higher on desktop sites.
+Of the top five mobile web technologies, adoption rates for three were higher on desktop sites.  It is reasonable to attribute lower mobile adoption rates of these apps to mobile performance initiatives as these apps are frequently flagged by Lighthouse, the open-source auditing tool recommended by Google to diagnose performance issues.
+
+In 2021, Google added the <a href="https://developers.google.com/search/docs/advanced/experience/page-experience">Page Experience Ranking Signal</a> to its algorithm.  This ranking signal is specific to search engine results pages served on mobile devices and uses aggregated data from real user page loads to measurement performance.
 
 {# TODO Does this tell us anything? Why do we think GA is higher on desktop? Or is it just noise? #}
 
