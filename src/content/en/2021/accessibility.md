@@ -5,7 +5,7 @@ description: Accessibility chapter of the 2021 Web Almanac covering ease of read
 authors: [alextait1, scottdavis99, oluoluoxenfree, gwilhelm, kachiden]
 reviewers: [ericwbailey, clottman, shantsis, estelle, GigiRajani, cdixon83]
 analysts: [obto]
-editors: []
+editors: [tunetheweb]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1WjAM5ZnHjMQt-rKyHvj2eVhU_WdzzFTjpoYWMr_I0Cw/
 alextait1_bio: Alex Tait is an accessibility specialist whose passion lies in the intersection of accessibility and modern JavaScript within interface architecture and design systems. As a developer, she believes that inclusion driven development practices with accessibility at the forefront lead to better products for everyone. As a consultant and strategist, she believes that less is more, and that new feature scope creep cannot be prioritized over core feature parity for disabled users. As an educator, she believes in removing barriers to information so that tech can become a more diverse, equitable and inclusive industry.
@@ -227,7 +227,7 @@ Before the introduction of HTML5, ARIA landmark roles were needed to accomplish 
   ) }}</figcaption>
 </figure>
 
-The most commonly expected landmarks that the majority of web pages should have, are `<main>`, `<header>`, `<nav>` and `<footer>`. We found that only 28% of desktop pages have a native HTML `<main>` element, and 17% of desktop pages have an element with a `role="main"`, and 35% of pages have either.
+The most commonly expected landmarks that the majority of web pages should have, are `<main>`, `<header>`, `<nav>` and `<footer>`. We found that only 28% of desktop pages have a native HTML `<main>` element, 17% of desktop pages have an element with a `role="main"`, and 35% of pages have either.
 
 When a page has multiple instances of the same landmark, for example, a primary site navigation and a breadcrumb secondary navigation, it is important that they each have a unique accessible name. This will help an assistive technology user to better understand which navigation landmark they have encountered. Techniques for accomplishing this are covered in [Scott O'Hara](https://twitter.com/scottohara)'s comprehensive article about the <a hreflang="en" href="https://www.scottohara.me/blog/2018/03/03/landmarks.html">various landmarks and how different screen readers navigate them</a>.
 
@@ -260,7 +260,7 @@ A `tabindex` value of `0` allows for an element to be programmatically focusable
 
 Custom elements and widgets that are intended to be interactive and in the keyboard focus order need an explicitly assigned `tabindex="0"`, or they will not be usable by keyboard.
 
-If an element should be focusable but not in the keyboard focus order a `tabindex` value of `-1` (or any negative integer) can be used as a hook to enable programmatically setting focus on the element with JavaScript without adding it to the keyboard focus order. This can be helpful for cases where you'd like to assign focus, such as <a hreflang="en" href="https://www.gatsbyjs.com/blog/2019-07-11-user-testing-accessible-client-routing/">focusing a heading when navigating to new page within a single page application</a>. Placing non-interactive elements in keyboard focus order creates a confusing experience for blind and low vision users and should be avoided.
+If an element should be focusable but not in the keyboard focus order a `tabindex` value of `-1` (or any negative integer) can be used as a hook to enable programmatically setting focus on the element with JavaScript without adding it to the keyboard focus order. This can be helpful for cases where you'd like to assign focus, such as focusing a heading when navigating to new page within a single page application as covered by [Marcy Sutton](https://twitter.com/marcysutton) in her <a hreflang="en" href="https://www.gatsbyjs.com/blog/2019-07-11-user-testing-accessible-client-routing/">post on accessible client-side routing techniques</a>. Placing non-interactive elements in keyboard focus order creates a confusing experience for blind and low vision users and should be avoided.
 
 The focus order of the page should always be determined by the document flow meaning the order of the HTML elements in the document. Setting the `tabindex` to a positive integer value overrides the natural order of the page, often leading to failures of <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-order.html">WCAG 2.4.3 - Focus Order</a>. Respecting the natural focus order of a page generally leads to a more accessible experience than overengineering the keyboard focus order.
 
@@ -281,7 +281,7 @@ When we look at desktop pages that have at least one instance of the `tabindex` 
 * 68% use a negative integer, meaning elements are explicitly removed from the keyboard focus order
 * 9% have a positive integer value, meaning the web author is trying to control the focus order rather than allowing the DOM structure to do so
 
-While there are valid declarations for the `tabindex` attribute, incorrectly reaching for these techniques leads to common accessibility barriers for many keyboard and assistive technology users. For more information about the pitfalls of using a positive integer for `tabindex` we recommend [Karl Grove](https://twitter.com/karlgroves)'s article, <a hreflang="en" href="https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad">"Why using `tabindex` values greater than "0" is bad"</a>.
+While there are valid declarations for the `tabindex` attribute, incorrectly reaching for these techniques leads to common accessibility barriers for many keyboard and assistive technology users. For more information about the pitfalls of using a positive integer for `tabindex` we recommend [Karl Groves](https://twitter.com/karlgroves)' article, <a hreflang="en" href="https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad">"Why using `tabindex` values greater than "0" is bad"</a>.
 
 ### Skip links
 
