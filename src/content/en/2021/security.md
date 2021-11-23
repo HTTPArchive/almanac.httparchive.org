@@ -3,7 +3,7 @@
 title: Security
 description: Security chapter of the 2021 Web Almanac covering transport layer security, content inclusion (CSP, feature policy, SRI), web defense mechanisms (tackling XSS, XS-Leaks), and drivers of security mechanism adoptions.
 authors: [saptaks, tomvangoethem, nrllh]
-reviewers: [cqueern, edmondwwchan]
+reviewers: [cqueern, edmondwwchan, awareseven]
 analysts: [gjfr]
 editors: [tunetheweb]
 translators: []
