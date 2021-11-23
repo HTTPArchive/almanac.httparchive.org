@@ -53,15 +53,15 @@ As with any observational study, there are limits to the scope and impact that c
 
 These are the limits to our testing [methodology](./methodology):
 
-**Simulated network latency:** We use a dedicated network connection that [synthetically shapes traffic](./methodology#webpagetest).
+**Simulated network latency:** We use a dedicated network connection that synthetically shapes traffic.
 
-**Single geographic location:** Tests are run from a [single datacenter](https://httparchive.org/faq#how-is-the-data-gathered) and cannot test the geographic distribution of many CDN vendors.
+**Single geographic location:** Tests are run from a single datacenter and cannot test the geographic distribution of many CDN vendors.
 
 **Cache effectiveness:** Each CDN uses proprietary technology and many, for security reasons, do not expose cache performance.
 
 **Localization and internationalization:** Just like geographic distribution, the effects of language and geo-specific domains are also opaque to these tests.
 
-**CDN detection:** This is primarily done through DNS resolution and HTTP headers. Most CDNs use a DNS CNAME to map a user to an optimal datacenter. However, some CDNs use AnyCast IPs or direct A+AAAA responses from a delegated domain which hide the DNS chain. In other cases, websites use multiple CDNs to balance between vendors, which is hidden from the single-request pass of [WebPageTest](./methodology#webpagetest).
+**CDN detection:** This is primarily done through DNS resolution and HTTP headers. Most CDNs use a DNS CNAME to map a user to an optimal datacenter. However, some CDNs use AnyCast IPs or direct A+AAAA responses from a delegated domain which hide the DNS chain. In other cases, websites use multiple CDNs to balance between vendors, which is hidden from the single-request pass of our crawler.
 
 All of this limits the effectiveness in the measurements.
 
@@ -78,9 +78,9 @@ With this in mind, here are a few statistics that were intentionally not measure
 
 The contents in a web page can be divided into 3 parts, namely:
 
-1. Base HTML Page (Ex: [www.example.com](www.example.com))
-2. Embedded First Party Content (Ex: images.example.com, css.example.com etc.,)
-3. 3rd Party Content (Ex: Google Analytics, Advertisements etc.,)
+1. Base HTML page (e.g., `www.example.com`)
+2. Embedded first-party content (e.g., `images.example.com`, `css.example.com` etc.,)
+3. Third-party content (e.g., Google Analytics, Advertisements etc.,)
 
 From their inception, CDNs have been the go-to solution for delivering embedded content like: images, stylesheets, javascripts, fonts, etc.  This kind of  content doesn't change frequently, making it a good candidate for caching on a CDN's proxy servers.
 
@@ -333,13 +333,13 @@ Back in 2019, the Origin domains had 27% adoption of HTTP/2 compared to 71% adop
   )
 }}
 
-Looking at third party domains supporting newer protocols, we see an interesting trend of higher adoption of HTTP/2+protocols compared to first party domains. This makes sense, considering the fact that most of the top third party domains use purpose-built CDNs and thus have more control on the content development and content delivery. Additionally, third party domains need to have consistent performance across all network conditions and this is where HTTP/2+ adds value by mixing in other protocols like UDP along with TCP connections. Back in 2019, Uber did an experiment to understand how UDP along with TCP (aka QUIC, the precursor to HTTP/3) can help deliver content with consistent performance and overcome packet loss in highly congested mobile networks. The results of this experiment documented in [this blog post](https://eng.uber.com/employing-quic-protocol/) throws valuable insights into the demographic where HTTP/3 can help. Over time, this trend will trickle down and we should see web owners adopting HTTP/3, especially with mobile network traffic having a higher contribution to the total internet traffic.
+Looking at third party domains supporting newer protocols, we see an interesting trend of higher adoption of HTTP/2+protocols compared to first party domains. This makes sense, considering the fact that most of the top third party domains use purpose-built CDNs and thus have more control on the content development and content delivery. Additionally, third party domains need to have consistent performance across all network conditions and this is where HTTP/2+ adds value by mixing in other protocols like UDP along with TCP connections. Back in 2019, Uber did an experiment to understand how UDP along with TCP (aka QUIC, the precursor to HTTP/3) can help deliver content with consistent performance and overcome packet loss in highly congested mobile networks. The results of this experiment documented in <a href="https://eng.uber.com/employing-quic-protocol/">this blog post</a> throws valuable insights into the demographic where HTTP/3 can help. Over time, this trend will trickle down and we should see web owners adopting HTTP/3, especially with mobile network traffic having a higher contribution to the total internet traffic.
 
 ## Brotli adoption
 
 Content delivered over the internet employs compression to reduce the payload size. A smaller payload means it's faster to deliver the content from server to end user. This makes websites load faster and provide a better end user experience. For images, this compression is handled by image file formats like JPEG, WEBP, AVIF, etc. (refer to [Media](./media) chapter for more on this). For textual web assets (like HTML, Javascripts, stylesheets, etc.) compression is handled by a file format called "[GZIP](https://en.wikipedia.org/wiki/Gzip)". GZIP has been in existence since 1992.  It did a good job of making text asset payloads smaller, but it is time for a new text asset compression to do better than GZIP:[Brotli](https://en.wikipedia.org/wiki/Brotli) (refer to the [Compression](./compression) chapter for more on this).
 
-Similar to TLS and HTTP/2 adoption, Brotli went through a phase of gradual adoption across web platforms. At the time of this writing, Brotli is [supported by 96%](https://caniuse.com/brotli) of the web platforms globally. However, not all websites compress text assets in Brotli format. This is because of the longer time required to compress a text asset in Brotli format compared to GZIP compression. Also, the hosting infrastructure needs to have backward compatibility to serve GZIP compressed assets for older platforms which do not support the Brotli format.
+Similar to TLS and HTTP/2 adoption, Brotli went through a phase of gradual adoption across web platforms. At the time of this writing, Brotli is <a hreflang="en" href="https://caniuse.com/brotli">supported by 96%</a> of the web platforms globally. However, not all websites compress text assets in Brotli format. This is because of the longer time required to compress a text asset in Brotli format compared to GZIP compression. Also, the hosting infrastructure needs to have backward compatibility to serve GZIP compressed assets for older platforms which do not support the Brotli format.
 
 The impact of this is observed when we compare websites which are using CDN against the ones not using CDN.
 
