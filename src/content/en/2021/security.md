@@ -16,8 +16,8 @@ featured_stat_1: 91.6%
 featured_stat_label_1: Requests that use HTTPS on mobile.
 featured_stat_2: 22.21%
 featured_stat_label_2: Top-1000 sites that use CSP.
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_stat_3: 11%
+featured_stat_label_3: Websites on desktop that use a mechanism to fight malicious bots
 ---
 
 ## Introduction
@@ -53,7 +53,7 @@ Currently, we see that 92.3% of total requests for websites on desktop and 91.3%
   )
 }}
 
-We still see that a lot of websites are  lacking HTTPS requests compared to the total percentage based on requests. This is because a lot of the impressive percentage of HTTPS requests are often dominated by [third-party](./third-parties) services like fonts, analytics, CDNs, and not the webpage itself. We do see a continuous improvement (approximately 7% increase since[ last year](https://almanac.httparchive.org/en/2020/security#fig-3)) in this number as well, but soon a lot of unmaintained websites might start seeing warnings once [browsers start adopting HTTPS-only mode by default](https://blog.mozilla.org/security/2021/08/10/firefox-91-introduces-https-by-default-in-private-browsing/). Currently, 84.29% of website homepages in desktop and 81.17% of website homepages in mobile are served over HTTPS.
+We still see that a lot of websites are  lacking HTTPS requests compared to the total percentage based on requests. This is because a lot of the impressive percentage of HTTPS requests are often dominated by [third-party](./third-parties) services like fonts, analytics, CDNs, and not the webpage itself. We do see a continuous improvement (approximately 7% increase since [last year](https://almanac.httparchive.org/en/2020/security#fig-3)) in this number as well, but soon a lot of unmaintained websites might start seeing warnings once [browsers start adopting HTTPS-only mode by default](https://blog.mozilla.org/security/2021/08/10/firefox-91-introduces-https-by-default-in-private-browsing/). Currently, 84.29% of website homepages in desktop and 81.17% of website homepages in mobile are served over HTTPS.
 
 
 ### Protocol Versions
@@ -580,7 +580,7 @@ After gstatic.com and shopify.com, the rest of the top 5 hosts from which SRI-pr
 
 All browsers these days provide countless APIs and functionalities, a lot of which can be used for tracking and malicious purposes, thus proving detrimental to the privacy of the users. [Permissions Policy](https://www.w3.org/TR/permissions-policy-1/) is a web platform API that gives a website the ability to allow or block the use of browser features in its own frame or in iframes that it embeds. The `Permissions-Policy` response header allows websites to decide which features they want to use and also which powerful features they want to disallow in the website to limit misuse. The Permissions Policy can be used to control APIs like Geolocation, User media, Video autoplay, Encrypted-media decoding and many more. Some of these APIs require browser permission from the user, i.e., a malicious script can’t turn on the microphone without the user getting a permission pop up, but it’s still good practice to use Permission Policy to restrict usage of certain features completely.
 
-This API specification was previously known as Feature Policy. Since then, there have been many updates. Though the `Feature-Policy` response header is still in use, it is still pretty low with only 0.55% of websites in mobile using it. The new specification expects `Permissions-Policy` response headers which contain an allowlist for different APIs. For example, `Permissions-Policy: geolocation=(self "https://example.com")` means that the website disallows the use of Geolocation API except for its own origin and those whose origin is "`https://example.com`". One can disable the use of an API entirely in a website by specifying an empty list, e.g. `Permissions-Policy: geolocation=()`. We see 1.25% of websites on the mobile using the `Permissions-Policy` already. A probable reason for this could be some  website admins choosing to opt-out of Federated Learning of Cohorts or [FLoC](https://privacysandbox.com/proposals/floc) (which was experimentally implemented in some browsers) to protect user’s privacy. The [privacy chapter](./privacy) has a detailed analysis of this.
+This API specification was previously known as Feature Policy. Since then, there have been many updates. Though the `Feature-Policy` response header is still in use, it is still pretty low with only 0.55% of websites in mobile using it. The new specification expects `Permissions-Policy` response headers which contain an allowlist for different APIs. For example, `Permissions-Policy: geolocation=(self "https://example.com")` means that the website disallows the use of Geolocation API except for its own origin and those whose origin is "`https://example.com`". One can disable the use of an API entirely in a website by specifying an empty list, e.g. `Permissions-Policy: geolocation=()`. We see 1.25% of websites on the mobile using the `Permissions-Policy` already. A probable reason for this could be some  website admins choosing to opt-out of Federated Learning of Cohorts or [FLoC](https://privacysandbox.com/proposals/floc) (which was experimentally implemented in some browsers) to protect user’s privacy. The [privacy chapter](./privacy#floc) has a detailed analysis of this.
 
 <figure>
   <table>
@@ -673,8 +673,6 @@ The most commonly used directive, `allow-scripts`, which is present in 99.98% of
 
 
 ## Thwarting attacks
-
-	
 
 Web applications are pestered by numerous vulnerabilities. Fortunately, there exist several mechanisms that can either completely mitigate vulnerabilities (e.g., framing protection through `X-Frame-Options` or CSP's `frame-ancestors` directive is necessary to [combat clickjacking attacks](https://pragmaticwebsecurity.com/articles/securitypolicies/preventing-framing-with-policies.html)), or limit the consequences of an attack. As most of these protections are opt-in, they still need to be enabled (typically by setting the correct response header) by the web developers. At large scale, the presence of the headers can tell us something about the security hygiene of websites and the incentives of the developers to protect their users.
 
