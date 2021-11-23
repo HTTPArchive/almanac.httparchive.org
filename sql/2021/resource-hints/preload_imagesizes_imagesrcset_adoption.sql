@@ -28,7 +28,7 @@ try {
 } catch (e) {
   return [];
 }
-''' ;
+''';
 
 SELECT
   _TABLE_SUFFIX AS client,

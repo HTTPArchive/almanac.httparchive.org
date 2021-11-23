@@ -10,7 +10,7 @@ try {
 } catch (e) {
   return false;
 }
-''' ;
+''';
 
 WITH pages AS (
   SELECT

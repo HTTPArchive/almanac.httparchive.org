@@ -14,9 +14,9 @@ discuss: 2047
 results: https://docs.google.com/spreadsheets/d/1T7sxPP5BV3uwv-sXhBEZraVk-obd0tDfFrLiD49nZC0/
 featured_quote: In dit hoofdstuk verkennen we de huidige stand van zaken voor beveiliging op het web. Door de acceptatie van verschillende beveiligingsfuncties diepgaand en op grote schaal te analyseren, verzamelen we inzichten over de verschillende manieren waarop website-eigenaren deze beveiligingsmechanismen toepassen, gedreven door de prikkel om hun gebruikers te beschermen.
 featured_stat_1: 86,90%
-featured_stat_label_1: Verzoeken die HTTPS gebruiken op mobiele apparaten.
+featured_stat_label_1: Verzoeken die HTTPS gebruiken op mobiele apparaten
 featured_stat_2: 22.333
-featured_stat_label_2: Bytes in de langst waargenomen CSP.
+featured_stat_label_2: Bytes in de langst waargenomen CSP
 featured_stat_3: 9,03%
 featured_stat_label_3: Gebruik van reCAPTCHA
 ---
