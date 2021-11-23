@@ -1,7 +1,9 @@
 #standardSQL
 # distribution_of_tls_versions: Percentage of HTTPS responses by TLS Version and CDN
 SELECT
-  a.client, cdn, firstHtml,
+  a.client,
+  cdn,
+  firstHtml,
   COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.0') AS tls10,
   COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.1') AS tls11,
   COUNTIF(IFNULL(a.tlsVersion, b.tlsVersion) = 'TLS 1.2') AS tls12,
@@ -14,9 +16,12 @@ SELECT
 FROM
   (
     SELECT
-      client, page, url, firstHtml,
+      client,
+      page,
+      url,
+      firstHtml,
       # WPT is inconsistent with protocol population.
-      upper(IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(concat("TLS ", JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'TLS ')))) AS protocol,
+      UPPER(IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(CONCAT("TLS ", JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'TLS ')))) AS protocol,
       JSON_EXTRACT_SCALAR(payload, '$._tls_version') AS tlsVersion,
 
       # WPT joins CDN detection but we bias to the DNS detection which is the first entry
@@ -25,7 +30,7 @@ FROM
 
       # isSecure reports what the browser thought it was going to use, but it can get upgraded with STS OR UpgradeInsecure: 1
       IF(STARTS_WITH(url, 'https') OR JSON_EXTRACT_SCALAR(payload, '$._tls_version') IS NOT NULL OR CAST(JSON_EXTRACT(payload, '$._is_secure') AS INT64) = 1, TRUE, FALSE) AS isSecure,
-      CAST(jSON_EXTRACT(payload, "$._socket") AS INT64) AS socket
+      CAST(JSON_EXTRACT(payload, "$._socket") AS INT64) AS socket
     FROM
       `httparchive.almanac.requests`
     WHERE
@@ -36,18 +41,23 @@ FROM
 LEFT JOIN (
   SELECT
     client, page,
-    CAST(jSON_EXTRACT(payload, "$._socket") AS INT64) AS socket,
-    ANY_VALUE(upper(IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(concat("TLS ", JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'TLS '))))) AS protocol,
+    CAST(JSON_EXTRACT(payload, "$._socket") AS INT64) AS socket,
+    ANY_VALUE(UPPER(IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(CONCAT("TLS ", JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'TLS '))))) AS protocol,
     ANY_VALUE(JSON_EXTRACT_SCALAR(payload, '$._tls_version')) AS tlsVersion
   FROM `httparchive.almanac.requests`
   WHERE
     JSON_EXTRACT_SCALAR(payload, '$._tls_version') IS NOT NULL AND
-    IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(concat("TLS ", JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'TLS '))) IS NOT NULL AND
-    jSON_EXTRACT(payload, "$._socket") IS NOT NULL AND
+    IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(CONCAT("TLS ", JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'TLS '))) IS NOT NULL AND
+    JSON_EXTRACT(payload, "$._socket") IS NOT NULL AND
     date = '2021-07-01'
-  GROUP BY client, page, socket
+  GROUP BY
+    client,
+    page,
+    socket
 ) b ON (a.client = b.client AND a.page = b.page AND a.socket = b.socket)
-WHERE a.tlsVersion IS NOT NULL OR b.tlsVersion IS NOT NULL
+WHERE
+  a.tlsVersion IS NOT NULL OR
+  b.tlsVersion IS NOT NULL
 GROUP BY
   a.client,
   cdn,

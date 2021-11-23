@@ -1,7 +1,10 @@
 #standardSQL
   # distribution_of_compression_types_by_cdn.sql : What compression formats are being used (gzip, brotli, etc) for compressed resources served by CDNs
 
-SELECT client, cdn, compression_type,
+SELECT
+  client,
+  cdn,
+  compression_type,
   COUNT(0) AS num_requests,
   SUM(COUNT(0)) OVER (PARTITION BY client, cdn) AS total_compressed,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client, cdn) AS pct

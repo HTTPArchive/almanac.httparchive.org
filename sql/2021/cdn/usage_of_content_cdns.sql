@@ -3,7 +3,7 @@
 
 SELECT
   *,
-  ROUND(100 * pageUseCount / totalPagesCount, 2) AS Pct
+  pageUseCount / totalPagesCount AS pct
 FROM
   (
     SELECT
@@ -20,8 +20,10 @@ FROM
           'fonts.googleapis.com'), NET.HOST(url), 'OTHER') AS jsCDN,
       COUNT(DISTINCT page) AS pageUseCount,
       SUM(COUNTIF(firstHtml)) OVER (PARTITION BY client) AS totalPagesCount
-    FROM `httparchive.almanac.requests`
-    WHERE date = '2021-07-01'
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
+      date = '2021-07-01'
     GROUP BY
       client,
       jsCDN
