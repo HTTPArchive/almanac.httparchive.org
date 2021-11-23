@@ -8,7 +8,7 @@ analysts: [paulcalvano]
 editors: [jzyang]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1DL7Pn1vbBwYmQZ5JPAjD69oCOvUidbuoNvdrw--j00U
-Navaneeth-akam_bio: . Navaneeth Krishna is a Web Performance Architect at a leading CDN provider. With over a decade of experience in the CDN industry, he believes the CDN will be an integral part to the growth of internet in the years to come and it will be a space to watch out. You can find him tweeting <a href="https://twitter.com/Navanee55755217">@Navanee55755217</a>.
+Navaneeth-akam_bio: Navaneeth Krishna is a Web Performance Architect at a leading CDN provider. With over a decade of experience in the CDN industry, he believes the CDN will be an integral part to the growth of internet in the years to come and it will be a space to watch out. You can find him tweeting <a href="https://twitter.com/Navanee55755217">@Navanee55755217</a>.
 featured_quote: CDNs have been in existence for over two decades. With the exponential rise in internet traffic, contributed by online video consumption, online shopping, and increased video conferencing due to COVID-19, CDNs are required more than ever before.
 featured_stat_1: 62.33%
 featured_stat_label_1: Of Top 1000 popular sites use CDN
@@ -19,9 +19,7 @@ featured_stat_label_3: Domains using Brotli on CDN
 unedited: true
 ---
 
-## Introduction
-
-**What is a CDN?**
+## What is a CDN?
 
 A CDN or Content Delivery Network is a geographically distributed network of proxy servers in data-centers. The goal of a CDN is to provide high availability and performance for web content.  It does this by distributing content closer to the end users.
 
@@ -53,7 +51,7 @@ There are benefits to web owners such as pushing web application logic and workf
 
 This reduction in requests reduces the load on the internet backbone ([read Middle-Mile of the Internet](https://en.wikipedia.org/wiki/Middle_mile)).  It also helps manage more of the internet load within the last mile of the internet.  Thus, a CDN plays a multifaceted role in the Internet landscape as it allows web owners to improve the performance, reliability and scalability of content delivery.
 
-**Caveats and Disclaimers**
+### Caveats and Disclaimers
 
 As with any observational study, there are limits to the scope and impact that can be measured. The statistics gathered on CDN usage for the Web Almanac are focused more on applicable technologies in use and not intended to measure performance or effectiveness of a specific CDN vendor. While this ensures that we are not biased towards any CDN vendor, it also means that these are more generalized results.
 
@@ -82,7 +80,7 @@ With this in mind, here are a few statistics that were intentionally not measure
 3. Core Web Vitals
 4. Cache Hit v/s Cache Miss performance etc.,
 
-**CDN Adoption**
+## CDN Adoption
 
 The contents in a web page can be divided into 3 parts, namely:
 
@@ -158,7 +156,7 @@ The CDN adoption rate falls below 50% when we look at the top 100,000 websites b
 
 But the decreasing percentage of CDN adoption in the low popularity website end does make sense considering the benefits of CDN (like caching, TCP connection offload etc.,) increases with increased end users on the web property. Below a certain scale of end user traffic on a web property, the cost-to-benefit math of a CDN may not work in web property owner’s favor and they might be better off delivering the web content directly from origin.
 
-**Top CDN Providers**
+## Top CDN Providers
 
 CDN providers can be broadly classified into 2 segments:
 
@@ -251,7 +249,7 @@ For example, a CDN built specifically to deliver advertisements will be optimize
 This means, purpose-built CDNs meet the exact requirements of a particular market segment as opposed to a generic CDN solution.  Generic solutions can meet a broader set of requirements, but it is not optimized for any particular industry or market.
 
 
-**TLS Adoption Impact**
+## TLS Adoption Impact
 
 With CDNs set up in the request-response workflows, the end user’s TLS connection terminates at the CDN. In turn, the CDN sets up a second independent TLS connection and this connection goes from the CDN to the origin host. This break in the CDN workflow allows the CDN to define the end user's TLS parameters. CDNs tend to also provide automatic updates to internet protocols.  This allows web owners to receive these benefits without making changes to their origin.
 
@@ -308,7 +306,7 @@ Similar trend is observed for the third party domains below. These web services 
 
 It is important for third party domains to be on the latest TLS version for security reasons. With the increase in web attacks, web owners are aware of loopholes that can be exploited with unsecure connections to third party domains. They will expect equally secure TLS connections which meet the security and performance requirements of their web sites. These expectations enhance the benefits CDNs bring to the table.
 
-**TLS Performance Impact**
+## TLS Performance Impact
 
 Common logic dictates that the fewer hops it takes for a HTTPS request-response to traverse, the faster the round trip would be. So exactly how much quicker can it be if the TLS connection terminates closer to the end user?  The answer: As much as 3x faster!
 
@@ -329,7 +327,7 @@ CDNs have helped slash the TLS connection times.  This is due to their proximity
 
 This is quite important when you look at the fact that all sites will have to be on TLS these days.  Optimal performance at this layer is essential for other steps that follow TLS connection. In this regard, CDNs are able to move more users to lower percentile brackets compared to Origin.
 
-**HTTP/2+ (HTTP/2 or better) Adoption**
+## HTTP/2+ (HTTP/2 or better) Adoption
 
 HTTP/2 was introduced with a lot of hype and expectation. This was because the application layer protocol has not been updated since HTTP 1.1 in 1997. Since then, the web traffic trend, content-type, content size, website design, platforms, mobile apps etc., have evolved significantly. Thus, there was a need to have a protocol which can meet the requirements of the modern day web traffic and that protocol was going to be HTTP/2.
 
@@ -391,7 +389,7 @@ Back in 2019, the Origin domains had 27% adoption of HTTP/2 compared to 71% adop
 
 Looking at third party domains supporting newer protocols, we see an interesting trend of higher adoption of HTTP/2+protocols compared to first party domains. This makes sense, considering the fact that most of the top third party domains use purpose-built CDNs and thus have more control on the content development and content delivery. Additionally, third party domains need to have consistent performance across all network conditions and this is where HTTP/2+ adds value by mixing in other protocols like UDP along with TCP connections. Back in 2019, Uber did an experiment to understand how UDP along with TCP (aka QUIC, the precursor to HTTP/3) can help deliver content with consistent performance and overcome packet loss in highly congested mobile networks. The results of this experiment documented in [this blog post](https://eng.uber.com/employing-quic-protocol/) throws valuable insights into the demographic where HTTP/3 can help. Over time, this trend will trickle down and we should see web owners adopting HTTP/3, especially with mobile network traffic having a higher contribution to the total internet traffic.
 
-**Brotli Adoption**
+## Brotli Adoption
 
 Content delivered over the internet employs compression to reduce the payload size. A smaller payload means it’s faster to deliver the content from server to end user. This makes websites load faster and provide a better end user experience. For images, this compression is handled by image file formats like JPEG, WEBP, AVIF, etc. (refer to [Media](./media) chapter for more on this). For textual web assets (like HTML, Javascripts, stylesheets, etc.) compression is handled by a file format called “[GZIP](https://en.wikipedia.org/wiki/Gzip)”. GZIP has been in existence since 1992.  It did a good job of making text asset payloads smaller, but it is time for a new text asset compression to do better than GZIP:[Brotli](https://en.wikipedia.org/wiki/Brotli) (refer to the [Compression](./compression) chapter for more on this). 
 
@@ -426,7 +424,7 @@ On both Desktop and Mobile platforms, we see that CDNs are delivering twice as m
 
 However, it is at the web property owner’s discretion whether to use Brotli compression on their CDNs or not. Compared to 95% of the web platforms globally which support Brotli compression, even with CDNs in place, less than half of all the text assets are delivered in Brotli format. Thus there is space for this adoption to improve. 
 
-**Conclusion**
+## Conclusion
 
 There are limitations to the insights we can deduce about CDNs since it is hard to know the secret sauce powering them behind the scenes. However, we have crawled the domains and  compared the ones on CDNs against those who are not.   We can see that CDNs have been an enabler for websites to adopt new web protocols, from the network layer to the application layer.
 
