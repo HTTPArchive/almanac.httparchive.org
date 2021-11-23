@@ -12,11 +12,11 @@ results: https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAII
 khempenius_bio: Katie Hempenius est ingénieur dans l’équipe Chrome où elle travaille à rendre le web plus rapide.
 featured_quote: Les indices de ressources fournissent des "suggestions" au navigateur sur les ressources qui seront rapidement nécessaires. L’action que le navigateur entreprend à la suite de cet indice varie selon le type d’indice ; différents indices déclenchent différentes actions. Lorsqu’ils sont utilisés correctement, ils peuvent améliorer les performances de la page en donnant une longueur d'avance aux actions importantes, par anticipation.
 featured_stat_1: 29 %
-featured_stat_label_1: des sites utilisent `dns-prefetch`.
+featured_stat_label_1: des sites utilisent `dns-prefetch`
 featured_stat_2: 88 %
-featured_stat_label_2: des indices de ressources utilisent l’attribut `as`.
+featured_stat_label_2: des indices de ressources utilisent l’attribut `as`
 featured_stat_3: 0.04 %
-featured_stat_label_3: des pages utilisent des indices de priorité.
+featured_stat_label_3: des pages utilisent des indices de priorité
 ---
 
 ## Introduction

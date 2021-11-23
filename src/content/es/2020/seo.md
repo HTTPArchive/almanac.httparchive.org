@@ -18,7 +18,7 @@ featured_stat_label_1: Páginas para móviles no incluyen la meta etiqueta viewp
 featured_stat_2: 19.96%
 featured_stat_label_2: Sitios web móviles consiguieron una puntuación 'Buena' en los Core Web Vitals
 featured_stat_3: 11.5%
-featured_stat_label_3: Más palabras son mostradas en el HTML renderizado que en el HTML puro de la media de sitios web móviles.
+featured_stat_label_3: Más palabras son mostradas en el HTML renderizado que en el HTML puro de la media de sitios web móviles
 ---
 
 ## Introducción
