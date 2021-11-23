@@ -115,7 +115,7 @@ While we observed CDN adoption across different types of content, we will not lo
 {{ figure_markup(
   image="cdn-usage-ranking-desktop.png",
   caption="CDN usage by site popularity (desktop).",
-  description="This bar chart provides a view of CDN usage for desktop sites broken up for top 1,000, 10,000, 100,000, 1 million and 10 million popular sites as per Google CRUX data. Top 1000 popular sites has about 62% CDN adoption followed by top 10,000 sites at 57%, top 100,000 sites at 46%, top 1 million sites at 33% and top 10 million sites at 27%.",
+  description="This bar chart provides a view of CDN usage for desktop sites broken up for top 1,000, 10,000, 100,000, 1 million and LL popular sites as per Google CRUX data. Top 1000 popular sites has about 62% CDN adoption followed by top 10,000 sites at 57%, top 100,000 sites at 46%, top 1 million sites at 33% and all sites at 27%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=956770395&format=interactive",
   sheets_gid="414030881",
   sql_file="CDN Usage by Site Popularity.sql"
@@ -125,7 +125,7 @@ While we observed CDN adoption across different types of content, we will not lo
 {{ figure_markup(
   image="cdn-usage-ranking-mobile.png",
   caption="CDN usage by site popularity (mobile).",
-  description="This Bar chart provides a view of CDN usage for mobile sites broken up for top 1,000, 10,000, 100,000, 1 million and 10 million popular sites as per Google CRUX data. Top 1000 popular sites has about 61% CDN adoption followed by top 10,000 sites at 57%, top 100,000 sites at 46%, top 1 million sites at 34% and top 10 million sites at 27%.",
+  description="This bar chart provides a view of CDN usage for mobile sites broken up for top 1,000, 10,000, 100,000, 1 million and all popular sites as per Google CRUX data. Top 1000 popular sites has about 61% CDN adoption followed by top 10,000 sites at 57%, top 100,000 sites at 46%, top 1 million sites at 34% and top all sites at 27%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1707360768&format=interactive",
   sheets_gid="414030881",
   sql_file="CDN Usage by Site Popularity.sql"
@@ -134,7 +134,7 @@ While we observed CDN adoption across different types of content, we will not lo
 
 Ranking the domains based on their popularity (at the time of this writing sourced from Google CRUX data) in the web and then checking for their CDN usage, the top 1000 websites contribute to the highest usage of CDN. The top websites include domains owned by names like Google, Amazon who contribute to much of the internet traffic we see today and it's no surprise that these names make it to the list of "Top CDN Providers" in the next section. This also backs the fact about the benefits CDN's bring to the table when operating at scale and having the ability to scale further if needed.
 
-The CDN adoption rate falls below 50% when we look at the top 100,000 websites but the rate of reduction slows down beyond this. At the top 10 million website mark (which is 100x more websites than at top 100,000), 27% of these websites use CDN. When you translate that percentage into real number, that's
+The CDN adoption rate falls below 50% when we look at the top 100,000 websites but the rate of reduction slows down beyond this. For the full data set (which is 6.2 million sites on desktop and 7.5 million on mobile), 27% of these websites use CDN. When you translate that percentage into real number, that's
 
 2.7 million websites using CDN! That is not a small number when you look at it this way.
 
