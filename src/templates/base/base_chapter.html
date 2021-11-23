@@ -389,7 +389,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
         <div class="chapter-links">
           {{ render_actions() }}
         </div>
-        {% if year >= 2021 %}
+        {% if year | int >= 2021 %}
         <section class="webmentions js-enable hidden">
           {{ render_webmentions() }}
         </section>

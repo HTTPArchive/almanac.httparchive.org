@@ -147,8 +147,7 @@ function processWebmentions(targetURL) {
 }
 
 // Change tabs for webmentions UI
-function changeTabs(e) {
-  const target = e.target;
+function changeTabs(target) {
   const parent = target.parentNode;
   const grandparent = parent.parentNode;
 
@@ -177,7 +176,7 @@ function addTabListeners() {
 
   // Add a click event handler to each tab
   tabs.forEach(tab => {
-    tab.addEventListener("click", changeTabs);
+    tab.addEventListener("click", function(e){changeTabs(e.target)});
   });
 
   // Enable arrow navigation between tabs in the tab list
@@ -204,6 +203,7 @@ function addTabListeners() {
 
       tabs[tabFocus].setAttribute("tabindex", 0);
       tabs[tabFocus].focus();
+      changeTabs(tabs[tabFocus]);
     }
   });
 }
