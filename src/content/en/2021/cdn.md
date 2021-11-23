@@ -14,7 +14,7 @@ featured_stat_1: 62.33%
 featured_stat_label_1: Of Top 1000 popular sites use CDN
 featured_stat_2: 3x
 featured_stat_label_2: Faster TLS negotiation with CDN at P90
-featured_stat_3: 42%
+featured_stat_3: 42.45%
 featured_stat_label_3: Domains using Brotli on CDN
 unedited: true
 ---
