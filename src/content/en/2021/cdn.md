@@ -374,6 +374,3 @@ There are limitations to the insights we can deduce about CDNs since it is hard 
 This impact is universal, with similar adoption rates across mobile and desktop: from using the latest TLS versions to upgrading to the newest HTTP versions (like HTTP/2, HTTP/3) to using the Brotli compression. What stands out is the depth of this impact and the sizable lead the CDN domains have built relative to non-CDN domains.
 
 This role of CDNs is highly valuable and this will continue to be the case. CDN providers are a part of the Internet Task Force, where they help shape the future of the internet. They will continue to play a key role aiding the Internet-enabled industries to operate smoothly, reliably and quickly.
-
-
-
