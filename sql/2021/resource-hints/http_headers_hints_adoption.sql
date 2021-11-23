@@ -19,7 +19,7 @@ try {
     return results;
   }, {});
 }
-''' ;
+''';
 
 SELECT
   client,

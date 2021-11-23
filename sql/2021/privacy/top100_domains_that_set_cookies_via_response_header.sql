@@ -15,7 +15,7 @@ try {
 } catch (e) {
   return null;
 }
-''' ;
+''';
 
 WITH whotracksme AS (
   SELECT

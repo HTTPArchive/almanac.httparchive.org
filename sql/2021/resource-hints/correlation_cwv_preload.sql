@@ -17,7 +17,7 @@ try {
     return results;
   }, {});
 }
-''' ;
+''';
 
 CREATE TEMPORARY FUNCTION getGoodCwv(payload STRING)
 RETURNS STRUCT<cumulative_layout_shift BOOLEAN, first_contentful_paint BOOLEAN, first_input_delay BOOLEAN, largest_contentful_paint BOOLEAN>
@@ -31,13 +31,13 @@ try {
       ...acc,
       [n]: crux.metrics[n].histogram[0].density > 0.75
     }), {})
-  }  
-  
+  }
+
   return null;
 } catch (e) {
   return null;
 }
-''' ;
+''';
 
 SELECT
   device,

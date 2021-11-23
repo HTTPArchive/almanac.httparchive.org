@@ -144,7 +144,7 @@ AS """
   };
 
   return origin_trial_metadata;
-""" ;
+""";
 
 WITH pages_origin_trials AS (
   SELECT
