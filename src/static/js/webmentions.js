@@ -10,9 +10,11 @@ async function getWebmentions(targetURL) {
       const json = await response.json();
       mentions = json.children;
     } else {
+      console.error("Could not parse response", response.statusText);
       gtag('event', 'error', { 'event_category': 'webmentions.js', 'event_label': response.statusText, 'value': 1 });
     }
   } catch(error) {
+    console.error("Request failed", error);
     gtag('event', 'error', { 'event_category': 'webmentions.js', 'event_label': error, 'value': 1 });
   }
   return mentions;
@@ -36,15 +38,9 @@ function parseMentions(webmentions, mentionType) {
 }
 
 // Renders webmention into different sections, based on the type
-function renderReactions(webmentions, reactionType) {
+function renderReactions(webmentions, reactionType, wmProperty) {
   // Process webmentions
-  const reactionMap = {
-    likes: "like-of",
-    reposts: "repost-of",
-    replies: "in-reply-to",
-    mentions: "mention-of"
-  }
-  const reactions = parseMentions(webmentions, reactionMap[reactionType]);
+  const reactions = parseMentions(webmentions, wmProperty);
   if (!reactions.length) {
     return;
   }
@@ -129,18 +125,20 @@ function renderWebmentions(webmentions) {
     return;
   }
 
-  renderReactions(webmentions, "likes");
-  renderReactions(webmentions, "reposts");
-  renderReactions(webmentions, "replies");
-  renderReactions(webmentions, "mentions");
-
+  renderReactions(webmentions, "likes", "like-of");
+  renderReactions(webmentions, "reposts", "repost-of");
+  renderReactions(webmentions, "replies", "in-reply-to");
+  renderReactions(webmentions, "mentions", "mention-of");
 }
 
 // Process webmention promise
 function processWebmentions(targetURL) {
   getWebmentions(targetURL)
     .then(webmentions => renderWebmentions(webmentions))
-    .catch(e => gtag('event', 'error', { 'event_category': 'webmentions.js', 'event_label': e, 'value': 1 }))
+    .catch(e => {
+      console.error(e)
+      gtag('event', 'error', { 'event_category': 'webmentions.js', 'event_label': e, 'value': 1 })
+    })
 }
 
 // Change tabs for webmentions UI
