@@ -99,11 +99,6 @@ La nostra missione è combinare le statistiche grezze e le tendenze del HTTP Arc
 {% block replies %}Replies{% endblock %}
 {% block mentions %}Mentions{% endblock %}
 
-{% block like_reaction_text %}liked this chapter{% endblock %}
-{% block repost_reaction_text %}reposted this chapter{% endblock %}
-{% block reply_reaction_text %}View source of reply by{% endblock %}
-{% block mention_reaction_text %}View source of mention by{% endblock %}
-
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} su Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} su GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} su LinkedIn{% endmacro %}

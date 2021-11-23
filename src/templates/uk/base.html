@@ -99,11 +99,6 @@
 {% block replies %}Replies{% endblock %}
 {% block mentions %}Mentions{% endblock %}
 
-{% block like_reaction_text %}liked this chapter{% endblock %}
-{% block repost_reaction_text %}reposted this chapter{% endblock %}
-{% block reply_reaction_text %}View source of reply by{% endblock %}
-{% block mention_reaction_text %}View source of mention by{% endblock %}
-
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} у Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} на GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} у LinkedIn{% endmacro %}
