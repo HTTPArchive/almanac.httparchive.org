@@ -11,7 +11,7 @@ saptaks_bio: Saptak S is a human rights centered web developer, focusing on usab
 tomvangoethem_bio: Tom Van Goethem is a researcher at the <a hreflang="en" href="https://distrinet.cs.kuleuven.be/">DistriNet group</a> of the university of Leuven, Belgium. His research is focused on discovering new side-channel attacks on the web that lead to security or privacy issues and figuring out how to patch the leaks that cause them.
 nrllh_bio: Nurullah Demir is a security researcher and PhD Student at <a hreflang="en" href="https://www.internet-sicherheit.de/en/">Institute for Internet Security</a>. His research focuses on robust web security mechanisms and adversarial machine learning.
 results: https://docs.google.com/spreadsheets/d/1kwjKoa8tV87XzlF6eetf2sfcMDFqVVaT25w_gm_SRwA/
-featured_quote: TODO
+featured_quote: Our analysis clearly shows that the situation of web security concerning the provider side has improved compared to previous years. However, our observation also indicates that the web community should do more to ensure better security.
 featured_stat_1: 91.6%
 featured_stat_label_1: Requests that use HTTPS on mobile.
 featured_stat_2: 22.21%
