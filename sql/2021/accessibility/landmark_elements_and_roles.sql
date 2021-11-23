@@ -1,4 +1,3 @@
-
 #standardSQL
 # percentage/count of pages that contain common elements and roles
 
