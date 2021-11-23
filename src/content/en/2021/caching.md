@@ -59,11 +59,12 @@ Talk about headers trends, Cache-Control vs ETag vs Expires vs Last-Modified.
 Talk about Cache Control adoptions, 74% of responses on mobile pages include the Cache-Control header
 
 {{ figure_markup(
-  caption="The percent of pages that use the Cache-Control header.",
-  content="74%",
-  classes="big-number",
+  image="cache-control-adoption.png",
+  caption="The percent of requests that use the Cache-Control response header.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=885292598&format=interactive",
   sheets_gid="2102749619",
-  sql_file="todo.sql"
+  sql_file="header_trends.sql"
 ) }}
 
 Cache Control directives, 61% of mobile requests include a Cache-Control response header with a `max-age` directive.
