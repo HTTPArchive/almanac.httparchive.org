@@ -56,7 +56,7 @@ FROM
     CAST(JSON_EXTRACT_SCALAR(json_extract_scalar(payload, '$._Resolution'), '$.absolute.height') AS Float64) AS viewportHeight,
     CAST(JSON_EXTRACT_SCALAR(json_extract_scalar(payload, '$._Resolution'), '$.absolute.width') AS Float64) AS viewportWidth
   FROM
-    `httparchive.pages.2021_08_01_*`
+    `httparchive.pages.2021_07_01_*`
 )
 WHERE
   # it appears the _Images array is populated only from <img> tag requests and not CSS or favicon
@@ -64,8 +64,8 @@ WHERE
   # Meaning images between 10KB and 100KB won't show up in the count
   # https://github.com/WPO-Foundation/webpagetest/blob/master/www/breakdown.inc#L95
   cssPixels > 0 AND
-  naturalPixels > 0 AND
-  (smallImageCount > 0 OR bigImageCount > 0)
+  naturalPixels > 0 # AND
+#  (smallImageCount > 0 OR bigImageCount > 0)
 GROUP BY
   client
 ORDER BY
