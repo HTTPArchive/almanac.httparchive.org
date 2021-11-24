@@ -12,36 +12,36 @@ tomvangoethem_bio: Tom Van Goethem is a researcher at the <a hreflang="en" href=
 nrllh_bio: Nurullah Demir is a security researcher and PhD Student at <a hreflang="en" href="https://www.internet-sicherheit.de/en/">Institute for Internet Security</a>. His research focuses on robust web security mechanisms and adversarial machine learning.
 results: https://docs.google.com/spreadsheets/d/1kwjKoa8tV87XzlF6eetf2sfcMDFqVVaT25w_gm_SRwA/
 featured_quote: Our analysis clearly shows that the situation of web security concerning the provider side has improved compared to previous years. However, our observation also indicates that the web community should do more to ensure better security.
-featured_stat_1: 91.6%
+featured_stat_1: 91.89%
 featured_stat_label_1: Requests that use HTTPS on mobile
 featured_stat_2: 22.21%
 featured_stat_label_2: Percentage of top 1000 sites that use CSP
 featured_stat_3: 11%
 featured_stat_label_3: Websites on desktop that use a mechanism to fight malicious bots
-unedited: true
 ---
 
 ## Introduction
 
-We are becoming more and more digital today. We are not only digitizing our business but also our private life. We contact people online, send messages, share moments with friends, do our business, and organize our daily routine. At the same time, this shift means that more and more critical data are being digitized and processed privately and commercially. In this context, cybersecurity is also becoming more and more important as its goal is to safeguard users by offering availability, integrity and confidentiality of user data. When we look at today's technology, we see that web resources are increasingly used to provide digitally delivered solutions. It also means that there is a strong link between our modern life and the security of web applications due to their widespread use.
+We are becoming more and more digital today. We are not only digitizing our business but also our private life. We contact people online, send messages, share moments with friends, do our business, and organize our daily routine. At the same time, this shift means that more and more critical data is being digitized and processed privately and commercially. In this context, cybersecurity is also becoming more and more important as its goal is to safeguard users by offering availability, integrity and confidentiality of user data. When we look at today's technology, we see that web resources are increasingly used to provide digitally delivered solutions. It also means that there is a strong link between our modern life and the security of web applications due to their widespread use.
 
-This chapter analyzes the current state of security on the Web and gives an overview of methods that the Web community uses (and misses) to protect their environment. More specifically, in this report, we analyze different metrics on [Transport Layer Security](#transport-security) (HTTPS), such as general implementation, protocol versions, and cipher suites. We also give an overview of the techniques used to protect [cookies](#cookies). You will then find a comprehensive analysis on the topic of [content inclusion](#content-inclusion) and methods for [thwarting attacks](#thwarting-attacks) (e.g., use of specific security headers). We also look at how the [security mechanisms](#drivers-of-security-meachnism-adoption) are adopted (e.g., by country or specific technology). Finally, we discuss [malpractices on the web](#malpractices-on-the-web), such as Cryptojacking and usage of [`security.txt` URLs](#securitytxt).
+This chapter analyzes the current state of security on the web and gives an overview of methods that the web community uses (and misses) to protect their environment. More specifically, in this report, we analyze different metrics on [Transport Layer Security](#transport-security) (HTTPS), such as general implementation, protocol versions, and cipher suites. We also give an overview of the techniques used to protect [cookies](#cookies). You will then find a comprehensive analysis on the topic of [content inclusion](#content-inclusion) and methods for [thwarting attacks](#thwarting-attacks) (e.g., use of specific security headers). We also look at how the [security mechanisms](#drivers-of-security-meachnism-adoption) are adopted (e.g., by country or specific technology). We also discuss [malpractices on the web](#malpractices-on-the-web), such as Cryptojacking and, finally we look at usage of [`security.txt` URLs](#securitytxt).
 
-We crawl the analyzed pages in both desktop and mobile mode, but for a lot of the data they give similar results, so unless otherwise noted, stats presented in this chapter refer to the set of mobile pages. For more information on how the data has been collected, please refer to the [Methodology](./methodology).
+We crawl the analyzed pages in both desktop and mobile mode, but for a lot of the data they give similar results, so unless otherwise noted, stats presented in this chapter refer to the set of mobile pages. For more information on how the data has been collected, refer to the [Methodology](./methodology) page.
 
 ## Transport security
 
-Following the recent trend, we see continuous growth in the number of websites adopting HTTPS this year as well. Transport Layer Security is important to allow secure browsing of websites by ensuring that the resources being served to you and the data sent to the website are untampered in the transit. Almost all major browsers now come with settings to set it to HTTPS-only mode and also increasing warnings shown to users when HTTP instead of HTTPS is used by a website, thus pushing forward for broader adoption.
+Following the recent trend, we see continuous growth in the number of websites adopting HTTPS this year as well. Transport Layer Security is important to allow secure browsing of websites by ensuring that the resources being served to you and the data sent to the website are untampered in the transit. Almost all major browsers now come with a HTTPS-only setting and increasing warnings are shown to users when HTTP is used by a website instead of HTTPS, thus pushing broader adoption forward.
 
 {{ figure_markup(
-  caption='The percentage of requests that use HTTPS on mobile.<br>(Source: <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#pctHttps">HTTP Archive</a>)',
-  content="91.3%",
+  caption="The percentage of requests that use HTTPS on mobile.",
+  content="91.89%",
   classes="big-number",
-  sheets_gid="8055510"
+  sheets_gid="547694791",
+  sql_file="https_request_over_time.sql"
 )
 }}
 
-Currently, we see that 92.3% of total requests for websites on desktop and 91.3% of total requests for websites on mobile are being served using HTTPS. We see an <a hreflang="en" href="https://letsencrypt.org/stats/#daily-issuance">increasing number of certificates</a> being issued everyday thanks to non-profit certificate authorities like Let's Encrypt.
+Currently, we see that 91.89% of total requests for websites on desktop and 91.06% for mobile mobile are being served using HTTPS. We see an <a hreflang="en" href="https://letsencrypt.org/stats/#daily-issuance">increasing number of certificates</a> being issued every day thanks to non-profit certificate authorities like Let's Encrypt.
 
 {{ figure_markup(
   image="security-https-usage-by-site.png",
@@ -91,7 +91,7 @@ Almost all modern cipher suites support [forward secrecy](https://en.wikipedia.o
 {{ figure_markup(
   image="security-distribution-of-cipher-suites.png",
   caption="Distribution of cipher suites.",
-  description="Bar chart showing the cipher suites used by device, with AES_128_GCM being the most common and used by 79.43% of desktop and 78.92% of mobile sites, AES_256_GCM is used by 18.58% of desktop and 18.95% of mobile sites, AES_256_CBC used by 1.10% of desktop sites and 1.21% of mobile sites, CHACHA20_POLY1305 is used by 0.63% and 0.69% of sites respectively, AES_128_CBC is used by 0.26% and 0.24% respectively, and 3DES_EDE_CBC is used approximately by 0.0% of desktop and mobile sites.",
+  description="Bar chart showing the cipher suites used by device, with AES_128_GCM being the most common and used by 79.43% of desktop and 78.92% of mobile sites, AES_256_GCM is used by 18.58% of desktop and 18.95% of mobile sites, AES_256_CBC used by 1.10% of desktop sites and 1.21% of mobile sites, CHACHA20_POLY1305 is used by 0.63% and 0.69% of sites respectively, AES_128_CBC is used by 0.26% and 0.24% respectively, and 3DES_EDE_CBC is used by so few sites it appears as 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=47980777&format=interactive",
   sheets_gid="172961549",
   sql_file="tls_cipher_suite.sql"
@@ -102,7 +102,7 @@ AES_128_GCM is still the most widely used cipher suite, by a long way, with 79.4
 
 ### Certificate Authorities
 
-A certificate authority is a company or organization that issues digital certificates which helps validate the ownership and identity of entities on the Web, like websites. A certificate authority is hence needed to issue a TLS certificate so that the website can be served over HTTPS. Like the previous year, we will again look into the CAs used by websites themselves rather than third-party services and resources.
+A certificate authority is a company or organization that issues digital certificates which helps validate the ownership and identity of entities on the web, like websites. A certificate authority is hence needed to issue a TLS certificate so that the website can be served over HTTPS. Like the previous year, we will again look into the CAs used by websites themselves rather than third-party services and resources.
 
 <figure>
   <table>
@@ -260,8 +260,8 @@ You can ensure that cookies are sent securely and aren't accessed by unintended 
 
 {{ figure_markup(
   image="security-httponly-secure-samesite-cookie-usage.png",
-  caption="Cookie attributes in desktop.",
-  description="Bar chart of cookie attributes in desktop divided by first and third-party cookies. For first-party `HttpOnly` is used by 32.7%, `Secure` by 30.95%, and `SameSite` by 34.05%, while for third-party `HttpOnly` is used by 20.02%, `Secure` by 66.98%, and `SameSite` by 64.87%.",
+  caption="Cookie attributes (mobile).",
+  description="Bar chart of cookie attributes used on mobile sites divided by first and third-party cookies. For first-party `HttpOnly` is used by 32.70%, `Secure` by 30.95%, and `SameSite` by 34.05%, while for third-party `HttpOnly` is used by 20.02%, `Secure` by 66.98%, and `SameSite` by 64.87%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=546317907&format=interactive",
   sheets_gid="1757682198",
   sql_file="cookie_attributes.sql"
@@ -288,7 +288,7 @@ The `SameSite` attribute in cookies allows the websites to inform the browser wh
   sql_file="cookie_attributes.sql"
 ) }}
 
-We see that 58.5% of all first-party cookies with a `SameSite` attribute have the attribute set to `Lax` while there is still a pretty daunting 39% cookies where `SameSite` attribute is set to `none` although the number is steadily decreasing. Almost all current browsers now default to `SameSite=Lax` if no `SameSite` attribute is set. Approximately 65% of overall first-party cookies have no `SameSite` attribute.
+We see that 58.53% of all first-party cookies with a `SameSite` attribute have the attribute set to `Lax` while there is still a pretty daunting 39.07% cookies where `SameSite` attribute is set to `none` although the number is steadily decreasing. Almost all current browsers now default to `SameSite=Lax` if no `SameSite` attribute is set. Approximately 65% of overall first-party cookies have no `SameSite` attribute.
 
 ### Prefixes
 
@@ -351,7 +351,9 @@ Most current websites have quite a lot of JavaScript, media, and libraries that 
   description="Bar chart showing usage of most common CSP directives. `upgrade-insecure-requests` is the most common with 57.55% in desktop and 57.11% in mobile, followed by `frame-ancestors` which is 54.38% in desktop and 55.77% in mobile. `block-all-mixed-content` is 29.85% in desktop and 30.69% in mobile, `default-src` is 18.37% in desktop and 16.84% in mobile, `script-src` is 17.21% in desktop and 16.68% in mobile, `style-src` is 13.82% in desktop and 11.97% in mobile, `img-src` is 11.81% in desktop and 10.40% in mobile, `font-src` is 9.75% in desktop and 8.24% in desktop, `object-src` is 8.34% in desktop and 8.85% in mobile, `connect-src` is 8.47% in desktop and 7.23% in mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1763321291&format=interactive",
   sheets_gid="50437608",
-  sql_file="csp_directives_usage.sql"
+  sql_file="csp_directives_usage.sql",
+  width=600,
+  height=425
   )
 }}
 
@@ -399,61 +401,51 @@ On the other side of the spectrum, the longest CSP header is almost twice as lon
         <td>https://www.google-analytics.com</td>
         <td class="numeric">1.37%</td>
         <td class="numeric">1.30%</td>
-        <td class="numeric">2.66%</td>
       </tr>
       <tr>
         <td>https://www.googletagmanager.com</td>
         <td class="numeric">1.24%</td>
         <td class="numeric">1.19%</td>
-        <td class="numeric">2.43%</td>
       </tr>
       <tr>
         <td>https://fonts.googleapis.com</td>
         <td class="numeric">1.01%</td>
         <td class="numeric">0.95%</td>
-        <td class="numeric">1.96%</td>
       </tr>
       <tr>
         <td>https://fonts.gstatic.com</td>
         <td class="numeric">0.91%</td>
         <td class="numeric">0.90%</td>
-        <td class="numeric">1.81%</td>
       </tr>
       <tr>
         <td>https://www.google.com</td>
         <td class="numeric">0.88%</td>
         <td class="numeric">0.86%</td>
-        <td class="numeric">1.73%</td>
       </tr>
       <tr>
         <td>https://www.youtube.com</td>
         <td class="numeric">0.91%</td>
         <td class="numeric">0.80%</td>
-        <td class="numeric">1.72%</td>
       </tr>
       <tr>
         <td>https://connect.facebook.net</td>
         <td class="numeric">0.73%</td>
         <td class="numeric">0.68%</td>
-        <td class="numeric">1.41%</td>
       </tr>
       <tr>
         <td>https://stats.g.doubleclick.net</td>
         <td class="numeric">0.69%</td>
         <td class="numeric">0.67%</td>
-        <td class="numeric">1.36%</td>
       </tr>
       <tr>
         <td>https://www.gstatic.com</td>
         <td class="numeric">0.65%</td>
         <td class="numeric">0.63%</td>
-        <td class="numeric">1.28%</td>
       </tr>
       <tr>
         <td>https://cdnjs.cloudflare.com</td>
         <td class="numeric">0.57%</td>
         <td class="numeric">0.59%</td>
-        <td class="numeric">1.16%</td>
       </tr>
     </tbody>
   </table>
@@ -470,7 +462,8 @@ In a lot of websites, the code for JavaScript libraries and CSS libraries are lo
   caption="Usage of SHA384 hash function for SRI in mobile.",
   content="66.22%",
   classes="big-number",
-  sheets_gid="1707924242"
+  sheets_gid="1707924242",
+  sql_file="sri_hash_functions.sql"
 )
 }}
 
@@ -490,7 +483,8 @@ The hash can be computed with three different algorithms: SHA256, SHA384, and SH
   caption="Percentage of SRI in `<script>` elements for mobile.",
   content="82.62%",
   classes="big-number",
-  sheets_gid="1477693041"
+  sheets_gid="1477693041",
+  sql_file="sri_usage.sql"
 )
 }}
 
@@ -499,13 +493,13 @@ There has been some increase in the usage of SRIs over the past couple of years,
 {{ figure_markup(
   image="security-subresource-integrity-coverage-per-page.png",
   caption="Subresource integrity: coverage per page.",
-  description="Bar chart showing percentiles of what percentage of scripts on a page are protected with SRI. At 10th percentile it is 1.4% for both desktop and mobile, at the 25th percentile it is 2.1% for desktop and 2.2% for mobile, at the 50th percentile it is 3.3% for both, at the 75th percentile it is 5.6% for both, and at the 90th percentile it is 10.0% for both.",
+  description="Bar chart showing percentiles of what percentage of scripts on a page are protected with SRI. At 10th percentile it is 1.39% for desktop and 1.43% for mobile, at the 25th percentile it is 2.08 and 2.17% respectively, at the 50th percentile it is 3.33% for both, at the 75th percentile it is 5.56% for both, and at the 90th percentile it is 10.00% for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1691901696&format=interactive",
   sheets_gid="247865608",
   sql_file="sri_coverage_per_page.sql"
 ) }}
 
-However, when we look closely, most of the websites still lack the coverage of SRIs in the `<script>` elements. The median percentage of `<script>` elements in websites having an `integrity` attribute is 3.3%.
+However, when we look closely, most of the websites still lack the coverage of SRIs in the `<script>` elements. The median percentage of `<script>` elements in websites having an `integrity` attribute is 3.33%.
 
 <figure>
   <table>
@@ -640,7 +634,7 @@ As in previous years, the most used directives in Feature Policy on iframes are 
 
 An untrusted third-party in an iframe can try to launch a number of attacks on the page. For instance, it could navigate the top page to a phishing page, launch popups with fake anti-virus advertisements and other cross-frame scripting attacks.
 
-The `sandbox` attribute on iframes applies restrictions to the content, and therefore also the opportunities for launching attacks of the embedded web page. The value of the attribute can either be empty to apply all restrictions (the embedded page cannot execute any JavaScript code, no forms can be submitted, and no popups can be created, to name a few restrictions), or space-separated tokens to lift particular restrictions. As embedding third-party content such as advertisements or videos is common practice on the web, it is not surprising that many of these are restricted via the `sandbox` attribute: 32.57% of the iframes on desktop pages have a `sandbox` attribute while on mobile pages this is 32.6%.
+The `sandbox` attribute on iframes applies restrictions to the content, and therefore also the opportunities for launching attacks of the embedded web page. The value of the attribute can either be empty to apply all restrictions (the embedded page cannot execute any JavaScript code, no forms can be submitted, and no popups can be created, to name a few restrictions), or space-separated tokens to lift particular restrictions. As embedding third-party content such as advertisements or videos is common practice on the web, it is not surprising that many of these are restricted via the `sandbox` attribute: 32.58% of the iframes on desktop pages have a `sandbox` attribute while on mobile pages this is 32.60%.
 
 {{ figure_markup(
   image="security-prevalence-of-sandbox-directives-on-frames.png",
@@ -648,7 +642,9 @@ The `sandbox` attribute on iframes applies restrictions to the content, and ther
   description="Bar chart showing prevalence of sandbox directives in frames. `allow-scrips` and `allow-same-origin` are the most used directive with almost 100% of iframes having `sandbox` attributes using these directives. `allow-popups` is found in 83% frames in desktop and 87% frames in mobile, `allow-forms` is found in 81% frames in desktop and 85% frames in mobile, `allow-popups-to-escape-sandbox` is found in 80% frames in desktop and 84% frames in mobile, `allow-top-navigation-by-user-activation` is found in 57% frames in desktop and 62% frames in mobile, `allow-top-navigation` is found in 22% frames in desktop and 20% frames in mobile, and `allow-modals` is found in 21% frames in desktop and 20% frames in mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1054574782&format=interactive",
   sheets_gid="1104685300",
-  sql_file="iframe_sandbox_directives.sql"
+  sql_file="iframe_sandbox_directives.sql",
+  width=600,
+  height=425
   )
 }}
 
@@ -663,7 +659,7 @@ Web applications are pestered by numerous vulnerabilities. Fortunately, there ex
 {{ figure_markup(
   image="security-adoption-of-security-headers.png",
   caption="Adoption of security headers for mobile pages.",
-  description="Bar chart showing the prevalence of different security headers, for mobile pages in 2021 and 2020. `X-Content-Type-Options` was 30% in 2020 and is 37% in 2021, `X-Frame-Options` was 27% in 2020 and is 29% in 2021, `Strict-Transport-Security` was 17% in 2020 and is 23% in 2021, `X-XSS-Protection` was 18% in 2020 and is 20% in 2021, `Expect-CT` and `Content-Security-Policy` were 11% in 2020 and are 13% in 2021, `Report-To` was 3% in 2020 and is 12% in 2021, `Referrer-Policy` was 7% in 2020 and is 10% in 2021, `Feature-Policy` was 0.5% in 2020 and is 0.6% in 2021.",
+  description="Bar chart showing the prevalence of different security headers, for mobile pages in 2021 and 2020. `X-Content-Type-Options` was 29.98% in 2020 and is 36.63% in 2021, `X-Frame-Options` was 27.01% in 2020 and is 29.36% in 2021, `Strict-Transport-Security` was 17.39% in 2020 and is 22.91% in 2021, `X-XSS-Protection` was 18.39% in 2020 and is 19.95% in 2021, `Expect-CT` was 11.12% in 2020 and are 13.40% in 2021, `Content-Security-Policy` was 10.93% in 2020 and 12.79% in 2021, `Report-To` was 2.52% in 2020 and is 11.94% in 2021, `Referrer-Policy` was 7.34% in 2020 and is 10.04% in 2021, `Feature-Policy` was 0.51% in 2020 and is 0.62% in 2021.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1380470049&format=interactive",
   sheets_gid="285299680",
   sql_file="security_headers_prevalence.sql",
@@ -685,7 +681,8 @@ In addition to sending a response header, some security features can be enabled 
   caption="Number of sites with `X-Frame-Options` in the `<meta>` tag, which is actually ignored by the browser.",
   content="3,410",
   classes="big-number",
-  sheets_gid="1578698638"
+  sheets_gid="1578698638",
+  sql_file="meta_policies_allowed_vs_disallowed.sql"
 )
 }}
 
@@ -831,77 +828,77 @@ Many cyberattacks are based on automated bot attacks. Interest in it seems to ha
     <tbody>
       <tr>
         <td>reCAPTCHA</td>
-        <td class="numeric">10.2</td>
-        <td class="numeric">9.4</td>
+        <td class="numeric">10.20%</td>
+        <td class="numeric">9.40%</td>
       </tr>
       <tr>
         <td>Imperva</td>
-        <td class="numeric">0.34</td>
-        <td class="numeric">0.27</td>
+        <td class="numeric">0.34%</td>
+        <td class="numeric">0.27%</td>
       </tr>
       <tr>
         <td>Sift</td>
-        <td class="numeric">0.05</td>
-        <td class="numeric">0.08</td>
+        <td class="numeric">0.05%</td>
+        <td class="numeric">0.08%</td>
       </tr>
       <tr>
         <td>Signifyd</td>
-        <td class="numeric">0.03</td>
-        <td class="numeric">0.03</td>
+        <td class="numeric">0.03%</td>
+        <td class="numeric">0.03%</td>
       </tr>
       <tr>
         <td>hCaptcha</td>
-        <td class="numeric">0.03</td>
-        <td class="numeric">0.02</td>
+        <td class="numeric">0.03%</td>
+        <td class="numeric">0.02%</td>
       </tr>
       <tr>
         <td>Forter</td>
-        <td class="numeric">0.03</td>
-        <td class="numeric">0.03</td>
+        <td class="numeric">0.03%</td>
+        <td class="numeric">0.03%</td>
       </tr>
       <tr>
         <td>TruValidate</td>
-        <td class="numeric">0.03</td>
-        <td class="numeric">0.02</td>
+        <td class="numeric">0.03%</td>
+        <td class="numeric">0.02%</td>
       </tr>
       <tr>
         <td>Akamai Web Application Protector</td>
-        <td class="numeric">0.02</td>
-        <td class="numeric">0.02</td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">0.02%</td>
       </tr>
       <tr>
         <td>Kount</td>
-        <td class="numeric">0.02</td>
-        <td class="numeric">0.02</td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">0.02%</td>
       </tr>
       <tr>
         <td>Konduto</td>
-        <td class="numeric">0.02</td>
-        <td class="numeric">0.02</td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">0.02%</td>
       </tr>
       <tr>
         <td>PerimeterX</td>
-        <td class="numeric">0.02</td>
-        <td class="numeric">0.01</td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">0.01%</td>
       </tr>
       <tr>
         <td>Tencent Waterproof Wall</td>
-        <td class="numeric">0.01</td>
-        <td class="numeric">0.01</td>
+        <td class="numeric">0.01%</td>
+        <td class="numeric">0.01%</td>
       </tr>
       <tr>
         <td>Others</td>
-        <td class="numeric">0.03</td>
-        <td class="numeric">0.04</td>
+        <td class="numeric">0.03%</td>
+        <td class="numeric">0.04%</td>
       </tr>
     </tbody>
   </table>
   <figcaption>{{ figure_link(caption="Usage of bot protection services by provider.", sheets_gid="798151334", sql_file="bot_detection.sql") }}</figcaption>
 </figure>
 
-Our analysis shows that around 11% of websites use a mechanism to fight malicious bots. Last year that number was 10%, so we record an increase of 10% compared to the previous year. This year, too, we identified more bot protection mechanisms for desktop versions than mobile versions (11% vs. 10%)
+Our analysis shows that under 10.72% of desktop websites, and 9.85% of mobile websites use a mechanism to fight malicious bots. Last year those numbers were 8.34% and 7.27%, so this is approximately a 30% increase compared to the previous year. This year, too, we identified more bot protection mechanisms for desktop versions than mobile versions (10.82% vs. 9.94%)
 
-We also see new popular players as bot protection providers in our dataset (e.g., hCaptcha). This is where the Web community needs more attention, since the use of protective mechanisms is twice as little as the increase in malicious bots (25.6% vs. 10%).
+We also see new popular players as bot protection providers in our dataset (e.g., hCaptcha).
 
 ## Drivers of security mechanism adoption
 
@@ -915,7 +912,9 @@ There are many different influences that might cause a website to invest more in
   description="Bar chart showing percentage of sites with HTTPS enabled, for sites related to different countries. Switzerland, New Zealand, Ireland, Australia, Netherlands, Austria, Belgium, United Kingdom, South Africa and Sweden are the top in order at 97% to 94%. At the other end Malaysia, Turkey, Iran, Brazil, Indonesia, Vietnam, Thailand, Taiwan, South Korea and Japan are at 76% to 72%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1261041561&format=interactive",
   sheets_gid="269550966",
-  sql_file="feature_adoption_by_country.sql"
+  sql_file="feature_adoption_by_country.sql",
+  width="600",
+  height="617"
 ) }}
 
 Although we can see that the adoption of HTTPS-by-default is generally increasing, there is still a discrepancy in adoption rate between sites depending on the country most of the visitors originate from. We find that [compared to last year](../2020/security#country-of-a-websites-visitors), the Netherlands has now made it into the top-5, which means that the Dutch are relatively more protected against transport layer attacks: 95.14% of the sites frequently visited by people in the Netherlands has HTTPS enabled (compared to 92.99% last year). In fact, not only the Netherlands improved in the adoption of HTTPS; we find that virtually every country improved in that regard. It is also very encouraging to see that several of the countries that performed worst last year, made a big leap. For instance, 13.35% more sites visited by people from Iran (the strongest riser with regards to HTTPS adoption) are now HTTPS-enabled compared to last year (from 74.33% to 84.26%). Although the gap between the best-performing and least-performing countries is becoming smaller, there are still significant efforts to be made.
@@ -926,7 +925,9 @@ Although we can see that the adoption of HTTPS-by-default is generally increasin
   description="Bar chart showing New Zealand has 21% of sites using CSP and 40% using XFO, Australia has 21% for CSP and 38% for XFO, Ireland has 19% for CSP and 40% for XFO, Canada has 19% for CSP and 34% for XFO, and USA has 17% for CSP and 30% for XFO. At the bottom end Kazakhstan has 6% for CSP and 21% for XFO, Belarus has 6% for CSP and 21% for XFO, Ukraine has 5% for CSP and 18% for XFO, Russia has 5% for CSP and 20% for XFO, and Japan has 4% for CSP and 17% for XFO.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=2039992568&format=interactive",
   sheets_gid="269550966",
-  sql_file="feature_adoption_by_country.sql"
+  sql_file="feature_adoption_by_country.sql",
+  width=600,
+  height=598
 ) }}
 
 When looking at the adoption of certain security features such as CSP and `X-Frame-Options`, we can see an even more pronounced difference between the different countries, where the sites from top-scoring countries are 2-4 times more likely to adopt these security features compared to the least-performing countries. We also find that countries that perform well on HTTPS adoption tend to also perform well on the adoption of other security mechanisms. This is indicative that security is often thought of holistically, where all different angles need to be covered. And rightfully so: an attacker just needs to find a single exploitable vulnerability whereas developers need to ensure that every aspect is tightly protected.
@@ -1027,7 +1028,8 @@ Another factor that can strongly influence the adoption of certain security mech
   caption="The number of security features with over 95% adoption rate on Shopify sites.",
   content="7",
   classes="big-number",
-  sheets_gid="1386880960"
+  sheets_gid="1386880960",
+  sql_file="feature_adoption_by_technology.sql"
 )
 }}
 
@@ -1037,7 +1039,8 @@ It is great to see that despite the variability in these websites' content, it i
   caption="The percentage of Drupal sites that keep the default XFO header.",
   content="83.14",
   classes="big-number",
-  sheets_gid="1386880960"
+  sheets_gid="1386880960",
+  sql_file="feature_adoption_by_technology.sql"
 )
 }}
 
@@ -1058,20 +1061,22 @@ An important aspect to explore in the context of the adoption of security featur
 Websites that have many visitors may be more prone to targeted attacks given that there are more users with potentially sensitive data to attract attackers. Therefore, it can be expected that widely visited websites invest more in security in order to safeguard their users. To evaluate whether this hypothesis is valid, we used the ranking provided by the [Chrome User Experience Report](./methodology#chrome-ux-report), which uses real-world user data to determine which websites are visited the most (ranked by top 1k, 10k, 100k, 1M and all sites in our dataset).
 
 {{ figure_markup(
-  caption="Percentage of top 1000 sites that use HSTS.",
+  caption="Percentage of top 1,000 sites that use HSTS.",
   content="50.70%",
   classes="big-number",
-  sheets_gid="1156119511"
+  sheets_gid="1156119511",
+  sql_file="security_adoption_by_rank.sql"
 )
 }}
 
 We can see that the adoption of certain security features, X-Frame-Options (XFO), Content Security Policy (CSP), and Strict Transport Security (HSTS), is highly related to the ranking of sites. For instance, the 1000 top visited sites are almost twice as likely to adopt a certain security header compared to the overall adoption. We can also see that the adoption rate for each feature is higher for higher-ranked websites.
 
 {{ figure_markup(
-  caption="Percentage of top 1000 sites that use CSP.",
+  caption="Percentage of top 1,000 sites that use CSP.",
   content="22.21%",
   classes="big-number",
-  sheets_gid="1156119511"
+  sheets_gid="1156119511",
+  sql_file="security_adoption_by_rank.sql"
 )
 }}
 
@@ -1099,13 +1104,13 @@ We now turn to cryptominer market share in the following figure.
 {{ figure_markup(
   image="security-cryptominer-market-share.png",
   caption="Cryptominer market share (mobile).",
-  description="Pie chart showing Coinimp has 84.9% of market share, CoinHive has 9.0%, JSEcoin has 3.1%, Minero.cc has 1.5% and others have 1.5%.",
+  description="Pie chart showing CoinImp has 84.94% of market share, CoinHive has 9.01%, JSEcoin has 3.09%, Minero.cc has 1.54% and others have approximately 1.5%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1688060716&format=interactive",
   sheets_gid="1998142066",
   sql_file="cryptominer_share.sql"
 ) }}
 
-We see that [CoinHive](https://en.wikipedia.org/wiki/Coinhive) community has switched to CoinImp. Therefore, CoinImp has clearly become the market leader (90% share). Even though Coinhive has been discontinued, we still see some websites that use CoinHive scripts (Desktop: 5.7%, mobile: 9%).
+We see that [CoinHive](https://en.wikipedia.org/wiki/Coinhive) community has switched to CoinImp. Therefore, CoinImp has clearly become the market leader (95% share). Even though Coinhive has been discontinued, we still see some websites that use CoinHive scripts (Desktop: 5.67%, mobile: 9.01%).
 
 Our results suggest that cryptojacking is still a serious attack vector, and necessary measures should be used for it.
 
@@ -1143,10 +1148,10 @@ And the following figure shows that the policy is the most used property of util
 
 Our analysis shows very clearly that the situation of web security concerning the provider side is improving compared to previous years. For example, we see that the use of HTTPS has increased by almost 10% in the last 12 months. We also find an increase in the protection of cookie objects or the use of security headers.
 
-These increases indicate a safer web environment, but they do not mean our web is secure enough today. We still have to improve our situation. For example, we believe that the Web community should value security headers more. These are very effective extensions to protect web environments and web users from possible attacks. The bot protection mechanisms can also be adopted more to protect the platforms from malicious bots. Furthermore, our analysis from [last year](../2020/security#software-update-practices) and another study on HTTPArchive about the <a hreflang="en" href="https://www.researchgate.net/publication/349027860_Our_inSecure_Web_Understanding_Update_Behavior_of_Websites_and_Its_Impact_on_Security">update behavior of websites</a> showed that the website components are not diligently maintained, which increases the attack surface on web environments quite a bit.
+These increases indicate a safer web environment, but they do not mean our web is secure enough today. We still have to improve our situation. For example, we believe that the web community should value security headers more. These are very effective extensions to protect web environments and web users from possible attacks. The bot protection mechanisms can also be adopted more to protect the platforms from malicious bots. Furthermore, our analysis from [last year](../2020/security#software-update-practices) and another study on HTTPArchive about the <a hreflang="en" href="https://www.researchgate.net/publication/349027860_Our_inSecure_Web_Understanding_Update_Behavior_of_Websites_and_Its_Impact_on_Security">update behavior of websites</a> showed that the website components are not diligently maintained, which increases the attack surface on web environments quite a bit.
 
 We should not forget that attackers are also working diligently to develop new techniques to bypass the security mechanisms we adopt.
 
-With our analysis, we have tried to crystallize an overview of the security of our web. As extensive as our investigation is, our [Methodology](./methodology) only allows us to see a subset of all aspects of modern web security. For example, we do not know what additional measures a site may employ to mitigate or prevent attacks such as Cross-Site-Request-Forgery (CSRF) or certain types of Cross-Site-Scripting (XSS). As such, the picture portrayed in this chapter is incomplete yet a solid directional signal of the status of web security today.
+With our analysis, we have tried to crystallize an overview of the security of our web. As extensive as our investigation is, our [methodology](./methodology) only allows us to see a subset of all aspects of modern web security. For example, we do not know what additional measures a site may employ to mitigate or prevent attacks such as Cross-Site-Request-Forgery (CSRF) or certain types of Cross-Site-Scripting (XSS). As such, the picture portrayed in this chapter is incomplete yet a solid directional signal of the status of web security today.
 
-The takeaway from our analysis  is that we, the Web community, must  continue to invest more interest and resources in making our web environments much safer—in the hope of better and safer tomorrows for all.
+The takeaway from our analysis  is that we, the web community, must  continue to invest more interest and resources in making our web environments much safer—in the hope of better and safer tomorrows for all.
