@@ -15,7 +15,7 @@ featured_quote: Our analysis clearly shows that the situation of web security co
 featured_stat_1: 91.6%
 featured_stat_label_1: Requests that use HTTPS on mobile
 featured_stat_2: 22.21%
-featured_stat_label_2: Percentage of top-1000 sites that use CSP
+featured_stat_label_2: Percentage of top 1000 sites that use CSP
 featured_stat_3: 11%
 featured_stat_label_3: Websites on desktop that use a mechanism to fight malicious bots
 unedited: true
@@ -744,7 +744,7 @@ Finally, another anti-XS-Leak header, [`Cross-Origin-Opener-Policy`](https://dev
 
 ### Web Cryptography API
 
-Security has become one of the central issues in web development. Since 2017, we have the <a hreflang="en" href="https://www.w3.org/TR/WebCryptoAPI/">Web Cryptography API</a> W3C recommendation to perform basic cryptographic operations (e.g., hashing, signature generation and verification, and encryption and decryption) on the client-side - without any third-party library. In the following, we analyze the usage of this JavaScript API.
+Security has become one of the central issues in web development. Since 2017, we have the <a hreflang="en" href="https://www.w3.org/TR/WebCryptoAPI/">Web Cryptography API</a> W3C recommendation to perform basic cryptographic operations (e.g., hashing, signature generation and verification, and encryption and decryption) on the client-side—without any third-party library. In the following, we analyze the usage of this JavaScript API.
 
 <figure>
   <table>
@@ -817,7 +817,7 @@ It should be noted that since we perform passive crawling, our results in this s
 
 ### Utilizing bot protection services
 
-Many cyberattacks are based on automated bot attacks. Interest in it seems to have increased. According to the <a hreflang="en" href="https://www.imperva.com/blog/bad-bot-report-2021-the-pandemic-of-the-internet/">Bad Bot Report 2021</a> by Imperva, the number of bad bots has increased this year by 25.6%. Note that the increase from 2019 to 2020 was 24.1% - according to <a hreflang="en" href="https://www.imperva.com/blog/bad-bot-report-2020-bad-bots-strike-back/">the previous report</a>. In the following table, we present our results on using measures by websites to protect themselves from malicious bots.
+Many cyberattacks are based on automated bot attacks. Interest in it seems to have increased. According to the <a hreflang="en" href="https://www.imperva.com/blog/bad-bot-report-2021-the-pandemic-of-the-internet/">Bad Bot Report 2021</a> by Imperva, the number of bad bots has increased this year by 25.6%. Note that the increase from 2019 to 2020 was 24.1%—according to <a hreflang="en" href="https://www.imperva.com/blog/bad-bot-report-2020-bad-bots-strike-back/">the previous report</a>. In the following table, we present our results on using measures by websites to protect themselves from malicious bots.
 
 <figure>
   <table>
@@ -1058,7 +1058,7 @@ An important aspect to explore in the context of the adoption of security featur
 Websites that have many visitors may be more prone to targeted attacks given that there are more users with potentially sensitive data to attract attackers. Therefore, it can be expected that widely visited websites invest more in security in order to safeguard their users. To evaluate whether this hypothesis is valid, we used the ranking provided by the [Chrome User Experience Report](./methodology#chrome-ux-report), which uses real-world user data to determine which websites are visited the most (ranked by top 1k, 10k, 100k, 1M and all sites in our dataset).
 
 {{ figure_markup(
-  caption="Percentage of top-1000 sites that use HSTS.",
+  caption="Percentage of top 1000 sites that use HSTS.",
   content="50.70%",
   classes="big-number",
   sheets_gid="1156119511"
@@ -1068,7 +1068,7 @@ Websites that have many visitors may be more prone to targeted attacks given tha
 We can see that the adoption of certain security features, X-Frame-Options (XFO), Content Security Policy (CSP), and Strict Transport Security (HSTS), is highly related to the ranking of sites. For instance, the 1000 top visited sites are almost twice as likely to adopt a certain security header compared to the overall adoption. We can also see that the adoption rate for each feature is higher for higher-ranked websites.
 
 {{ figure_markup(
-  caption="Percentage of top-1000 sites that use CSP.",
+  caption="Percentage of top 1000 sites that use CSP.",
   content="22.21%",
   classes="big-number",
   sheets_gid="1156119511"
@@ -1115,7 +1115,7 @@ Please also note that our results may not show the actual state of the websites 
 
 ## `security.txt`
 
-<a hreflang="en" href="https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt-12">`security.txt`</a> is a well-known file format for websites to provide a standard for vulnerability reporting. Website providers can provide contact details, PGP key, policy, and other information in this file. White hat hackers can then use this information to conduct security analyses on these websites or report a vulnerability. The following figure shows that 5% of the websites already use this standard - although it is a very young standard.
+<a hreflang="en" href="https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt-12">`security.txt`</a> is a well-known file format for websites to provide a standard for vulnerability reporting. Website providers can provide contact details, PGP key, policy, and other information in this file. White hat hackers can then use this information to conduct security analyses on these websites or report a vulnerability. The following figure shows that 5% of the websites already use this standard—although it is a very young standard.
 
 {{ figure_markup(
   image="security-usage-of-well-known-security.png",
@@ -1149,4 +1149,4 @@ We should not forget that attackers are also working diligently to develop new t
 
 With our analysis, we have tried to crystallize an overview of the security of our web. As extensive as our investigation is, our [Methodology](./methodology) only allows us to see a subset of all aspects of modern web security. For example, we do not know what additional measures a site may employ to mitigate or prevent attacks such as Cross-Site-Request-Forgery (CSRF) or certain types of Cross-Site-Scripting (XSS). As such, the picture portrayed in this chapter is incomplete yet a solid directional signal of the status of web security today.
 
-The takeaway from our analysis  is that we, the Web community, must  continue to invest more interest and resources in making our web environments much safer - in the hope of better and safer tomorrows for all.
+The takeaway from our analysis  is that we, the Web community, must  continue to invest more interest and resources in making our web environments much safer—in the hope of better and safer tomorrows for all.
