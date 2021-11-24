@@ -140,7 +140,7 @@ Ranking the domains based on their popularity (at the time of this writing sourc
   content="27%",
   classes="big-number",
   sheets_gid="414030881",
-  sql_file="CDN Usage by Site Popularity.sql"
+  sql_file="cdn_usage_by_site_rank.sql"
 )
 }}
 
