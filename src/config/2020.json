@@ -278,7 +278,7 @@
         "authors"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/24625637?v=4&s=200",
-      "website": "https://togethertech.ca/",
+      "website": "https://atfreshsolutions.com",
       "github": "alextait1",
       "twitter": "at_fresh_dev"
     },
@@ -327,7 +327,7 @@
       "teams": [
         "translators"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/5269414?s=460",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5269414?v=4&s=200",
       "github": "andy0130tw"
     },
     "antoineeripret": {
@@ -490,7 +490,7 @@
       "teams": [
         "translators"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/6782666?s=460",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6782666?v=4&s=200",
       "github": "CYBAI",
       "twitter": "_cybai"
     },
@@ -552,7 +552,7 @@
       "teams": [
         "developers"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/5795823?s=200&v=4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5795823?v=4&s=200",
       "github": "dsadhanala",
       "twitter": "dsadhanala"
     },
@@ -561,7 +561,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/7061425?s=200&v=4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7061425?v=4&s=200",
       "website": "https://dustinmontgomery.com/",
       "github": "en3r0",
       "twitter": "DustinMontSEO"
@@ -571,7 +571,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/68361682?s=200&v=4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/68361682?v=4&s=200",
       "website": "https://edmondwwchan.github.io/",
       "github": "edmondwwchan"
     },
@@ -631,7 +631,7 @@
       "teams": [
         "translators"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/10557131?v=4s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10557131?v=4&s=200",
       "website": "https://fatmabadri.github.io/",
       "github": "fatmabadri",
       "linkedin": "fatmabadri"
@@ -696,7 +696,7 @@
       "teams": [
         "translators"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/286856?s=460",
+      "avatar_url": "https://avatars.githubusercontent.com/u/286856?v=4&s=200",
       "github": "ArvinH"
     },
     "aszx87410": {
@@ -704,7 +704,7 @@
       "teams": [
         "translators"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/2755720?s=460",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2755720?v=4&s=200",
       "github": "aszx87410"
     },
     "iandevlin": {
@@ -856,7 +856,7 @@
       "teams": [
         "translators"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/26022943?s=460&u=64b286deddd79f94a2dc8dee0e7610e0dd2a7b34&v=4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26022943?v=4&s=200&u=64b286deddd79f94a2dc8dee0e7610e0dd2a7b34&v=4",
       "website": "https://chefleo.dev/",
       "github": "chefleo",
       "twitter": "simdigiorgio"
@@ -1024,7 +1024,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/69532755?s=200&v=4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/69532755?v=4&s=200",
       "website": "http://www.nparthas.com/",
       "github": "Navaneeth-akam",
       "twitter": "Navanee55755217"
@@ -1223,7 +1223,7 @@
       "teams": [
         "authors"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/2240689?s=460&v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2240689?v=4&v=4&s=200&s=200",
       "github": "rmarx",
       "twitter": "programmingart"
     },
@@ -1437,7 +1437,7 @@
       "teams": [
         "translators"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/17976139?v=4&s=460",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17976139?v=4&s=200",
       "github": "Zuckjet",
       "twitter": "Zuckjet"
     },
@@ -1448,7 +1448,8 @@
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/1439919?v=4&s=200",
       "website": "https://mefody.dev/",
-      "github": "MeFoDy"
+      "github": "MeFoDy",
+      "twitter": "dark_mefody"
     }
   }
 }

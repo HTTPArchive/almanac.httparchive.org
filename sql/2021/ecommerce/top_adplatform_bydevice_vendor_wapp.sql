@@ -32,4 +32,3 @@ ORDER BY
   total DESC,
   Vendor,
   AdPlatfromFreq DESC
-

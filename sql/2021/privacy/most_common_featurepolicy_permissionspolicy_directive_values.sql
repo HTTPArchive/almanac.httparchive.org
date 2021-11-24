@@ -165,6 +165,7 @@ GROUP BY
   origin,
   total_websites
 ORDER BY
+  pct_websites_with_directive DESC,
   rank_grouping,
   client,
   number_of_websites_with_directive DESC,

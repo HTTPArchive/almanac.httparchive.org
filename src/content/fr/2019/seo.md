@@ -14,11 +14,11 @@ rachellcostello_bio: Rachel Costello est technical SEO & Content Manager chez <a
 AVGP_bio: Martin Splitt est un DevRel au sein de l’équipe Écosystème Web chez Google, où il travaille à garder le Web découvrable.
 featured_quote: L’optimisation pour les moteurs de recherche (SEO) n'est pas seulement un passe-temps ou un projet parallèle pour les spécialistes du marketing digital, ce métier est crucial pour le succès d'un site web. Le but principal du référencement naturel est de s'assurer qu’un site internet est optimisé pour les robots des moteurs de recherche qui ont besoin d’explorer et d'indexer ses pages, ainsi que pour les utilisateurs qui naviguent et consomment des contenus. Le référencement a un impact sur tous ceux qui travaillent sur un site web, du développeur qui le construit au marketeur digital qui en fait la promotion auprès de nouveaux clients potentiels.
 featured_stat_1: 346
-featured_stat_label_1: mots par page, en médiane.
+featured_stat_label_1: mots par page, en médiane
 featured_stat_2: 11 %
-featured_stat_label_2: des pages n’ont pas de titres HTML (Hn).
+featured_stat_label_2: des pages n’ont pas de titres HTML (Hn)
 featured_stat_3: 15 %
-featured_stat_label_3: des sites sont éligibles aux résultats enrichis.
+featured_stat_label_3: des sites sont éligibles aux résultats enrichis
 ---
 
 ## Introduction

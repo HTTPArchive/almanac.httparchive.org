@@ -33,30 +33,43 @@ LANGUAGE js AS """
 WITH
 rendered_data AS (
   SELECT
-    getJSONLDRelationships(rendered) AS jsonld_relationships,
-    client
-  FROM (
-    SELECT
-      JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload,
-            '$._structured-data')),
-        '$.structured_data.rendered') AS rendered,
-      _TABLE_SUFFIX AS client
-    FROM
-      `httparchive.pages.2021_07_01_*`)
+    _TABLE_SUFFIX AS client,
+    url,
+    getJSONLDRelationships(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')), '$.structured_data.rendered')) AS jsonld_relationships
+  FROM
+    `httparchive.pages.2021_07_01_*`
+),
+
+page_totals AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(0) AS total_pages
+  FROM
+    `httparchive.pages.2021_07_01_*`
+  GROUP BY
+    _TABLE_SUFFIX
 )
 
 SELECT
+  client,
   jsonld_relationship,
-  COUNT(jsonld_relationship) AS count,
-  SUM(COUNT(jsonld_relationship)) OVER (PARTITION BY client) AS total,
-  COUNT(jsonld_relationship) / SUM(COUNT(jsonld_relationship)) OVER (PARTITION BY client) AS pct,
-  client
+  COUNT(jsonld_relationship) AS freq_relationship,
+  SUM(COUNT(jsonld_relationship)) OVER (PARTITION BY client) AS total_relationship,
+  COUNT(jsonld_relationship) / SUM(COUNT(jsonld_relationship)) OVER (PARTITION BY client) AS pct_relationship,
+  COUNT(DISTINCT url) AS freq_pages,
+  total_pages,
+  COUNT(DISTINCT url) / total_pages AS pct_pages
 FROM
   rendered_data,
   UNNEST(jsonld_relationships) AS jsonld_relationship
+JOIN
+  page_totals
+USING (client)
 GROUP BY
+  client,
   jsonld_relationship,
-  client
+  total_pages
 ORDER BY
-  count DESC
-LIMIT 10000
+  pct_relationship DESC,
+  client
+LIMIT 1000

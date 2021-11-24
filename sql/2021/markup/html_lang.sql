@@ -6,7 +6,7 @@
 CREATE TEMPORARY FUNCTION get_almanac_html_lang(almanac_string STRING)
 RETURNS STRING LANGUAGE js AS '''
 try {
-    var almanac = JSON.parse(almanac_string); 
+    var almanac = JSON.parse(almanac_string);
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return '';
 
@@ -20,8 +20,14 @@ return '';
 
 SELECT
   client,
+  IF(IFNULL(TRIM(almanac_html_lang), '') = '', '(not set)', almanac_html_lang) AS html_lang_country,
+  IF(
+    IFNULL(TRIM(SUBSTR(almanac_html_lang, 0, LENGTH(almanac_html_lang) - STRPOS(almanac_html_lang, '-'))), '') = '',
+    '(not set)',
+    SUBSTR(almanac_html_lang, 0, LENGTH(almanac_html_lang) - STRPOS(almanac_html_lang, '-'))
+  ) AS html_lang,
   COUNT(0) AS freq,
-  almanac_html_lang AS html_lang,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
   (
@@ -33,7 +39,8 @@ FROM
   )
 GROUP BY
   client,
-  html_lang
+  almanac_html_lang
 ORDER BY
+  pct DESC,
   client,
   freq DESC

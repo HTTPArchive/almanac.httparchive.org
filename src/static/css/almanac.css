@@ -581,6 +581,7 @@ header .cta {
 
 .search-button svg {
   fill: #000;
+  color: #000;
 }
 
 .table-of-contents-switcher:hover,
@@ -723,8 +724,13 @@ blockquote::before {
   left: -7rem;
   opacity: 0.05;
   font-size: 20rem;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Courier New', 'Courier', monospace;
   line-height: 1;
+  pointer-events: none;
+}
+
+blockquote em {
+  font-style: normal;
 }
 
 /* Footer */
@@ -1183,7 +1189,7 @@ p.copyright a {
     color: #f7f779;
   }
 
-  .menu-btn__bar {
+  .menu-btn-bar {
     display: block;
     width: 27px;
     height: 2px;
@@ -1192,30 +1198,30 @@ p.copyright a {
     transition: 0.15s cubic-bezier(0.75, -0.55, 0.25, 1.55);
   }
 
-  .menu-btn__bar + .menu-btn__bar {
+  .menu-btn-bar + .menu-btn-bar {
     margin-top: 7px;
   }
 
-  .menu-btn__bar:nth-child(2) {
+  .menu-btn-bar:nth-child(2) {
     width: 20px;
     margin-left: auto;
   }
 
-  .menu-btn--active .menu-btn__bar {
+  .menu-btn-active .menu-btn-bar {
     margin: 0;
     position: absolute;
   }
 
-  .menu-btn--active .menu-btn__bar:nth-child(1) {
+  .menu-btn-active .menu-btn-bar:nth-child(1) {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
   }
 
-  .menu-btn--active .menu-btn__bar:nth-child(2) {
+  .menu-btn-active .menu-btn-bar:nth-child(2) {
     opacity: 0;
   }
 
-  .menu-btn--active .menu-btn__bar:nth-child(3) {
+  .menu-btn-active .menu-btn-bar:nth-child(3) {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
   }
@@ -1493,7 +1499,7 @@ pre .comment {
 }
 
 pre .support {
-  color: #0086b3;
+  color: #006080;
 }
 
 pre .tag,
@@ -1565,8 +1571,11 @@ html:not([lang="en"]) main a[href*="/en-US/"]::after,
 html:not([lang="en"]) main a[href*="/en/"]::after,
 html:not([lang="en"]) main a[href^="https://en."]::after {
   content: '(en)';
-  vertical-align: super;
+  /* vertical-align: super; */
   font-size: 0.6em;
+  vertical-align: baseline;
+  position: relative;
+  top: -1em;
 }
 
 /*
@@ -1574,8 +1583,11 @@ html:not([lang="en"]) main a[href^="https://en."]::after {
  */
 main a[hreflang]::after {
   content: '(' attr(hreflang) ')';
-  vertical-align: super;
+  /* vertical-align: super; */
   font-size: 0.6em;
+  vertical-align: baseline;
+  position: relative;
+  top: -1em;
 }
 
 /*
@@ -1583,7 +1595,7 @@ main a[hreflang]::after {
  * (allows us to add this to base content to make it easier for translators)
  */
 html[lang="en"] main a[hreflang="en"]::after {
-  content: '';
+  content: initial;
 }
 
 @media print {

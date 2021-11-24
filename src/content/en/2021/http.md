@@ -2,9 +2,9 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: HTTP
 description: TODO
-authors: []
-reviewers: []
-analysts: []
+authors: [dominiclovell]
+reviewers: [tunetheweb, rmarx]
+analysts: [tunetheweb]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1pCdpndXTXexSIZLmVc-aUbp5PcHhZ83hbEEfmDyfD0U/

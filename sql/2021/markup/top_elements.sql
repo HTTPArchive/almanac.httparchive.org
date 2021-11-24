@@ -29,6 +29,7 @@ GROUP BY
   client,
   element_type_info.name
 ORDER BY
+  pct DESC,
   client,
   freq DESC
 LIMIT 1000
