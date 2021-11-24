@@ -41,7 +41,7 @@ Following the recent trend, we see continuous growth in the number of websites a
 )
 }}
 
-Currently, we see that 92.3% of total requests for websites on desktop and 91.3% of total requests for websites on mobile are being served using HTTPS. We see an [increasing number of certificates](https://letsencrypt.org/stats/#daily-issuance) being issued every day thanks to non-profit certificate authorities like Let's Encrypt.
+Currently, we see that 92.3% of total requests for websites on desktop and 91.3% of total requests for websites on mobile are being served using HTTPS. We see an <a hreflang="en" href="https://letsencrypt.org/stats/#daily-issuance">increasing number of certificates</a> being issued every day thanks to non-profit certificate authorities like Let's Encrypt.
 
 {{ figure_markup(
   image="security-https-usage-by-site.png",
@@ -53,14 +53,14 @@ Currently, we see that 92.3% of total requests for websites on desktop and 91.3%
   )
 }}
 
-We still see that a lot of websites are  lacking HTTPS requests compared to the total percentage based on requests. This is because a lot of the impressive percentage of HTTPS requests are often dominated by [third-party](./third-parties) services like fonts, analytics, CDNs, and not the webpage itself. We do see a continuous improvement (approximately 7% increase since [last year](https://almanac.httparchive.org/en/2020/security#fig-3)) in this number as well, but soon a lot of unmaintained websites might start seeing warnings once [browsers start adopting HTTPS-only mode by default](https://blog.mozilla.org/security/2021/08/10/firefox-91-introduces-https-by-default-in-private-browsing/). Currently, 84.29% of website homepages in desktop and 81.17% of website homepages in mobile are served over HTTPS.
+We still see that a lot of websites are  lacking HTTPS requests compared to the total percentage based on requests. This is because a lot of the impressive percentage of HTTPS requests are often dominated by [third-party](./third-parties) services like fonts, analytics, CDNs, and not the webpage itself. We do see a continuous improvement (approximately 7% increase since [last year](../2020/security#fig-3)) in this number as well, but soon a lot of unmaintained websites might start seeing warnings once <a hreflang="en" href="https://blog.mozilla.org/security/2021/08/10/firefox-91-introduces-https-by-default-in-private-browsing/">browsers start adopting HTTPS-only mode by default</a>. Currently, 84.29% of website homepages in desktop and 81.17% of website homepages in mobile are served over HTTPS.
 
 
 ### Protocol versions
 
 TLS (Transport Layer Security) is the protocol that helps make HTTP requests secure and private. With time, new vulnerabilities are discovered and fixed in TLS as well. Hence, it's not just important to serve a website over HTTPS but also to ensure that modern, up-to-date TLS is being used to avoid such vulnerabilities.
 
-As part of this effort to improve security and reliability by adopting modern versions, TLS 1.0 and 1.1 have been [deprecated by the Internet Engineering Task Force (IETF)](https://datatracker.ietf.org/doc/rfc8996/) as of March 25, 2021. All upstream browsers have also either completely removed support  or deprecated TLS 1.0 and 1.1. For example, Firefox has deprecated (or discourages using) TLS 1.0 and 1.1 but has [not completely removed](https://www.ghacks.net/2020/03/21/mozilla-re-enables-tls-1-0-and-1-1-because-of-coronavirus-and-google/) it because during the pandemic, users might need to access government websites that often still run on TLS 1.0. The user may still decide to change `security.tls.version.min` in browser config to decide the lowest TLS version they want the browser to allow.
+As part of this effort to improve security and reliability by adopting modern versions, TLS 1.0 and 1.1 have been <a hreflang="en" href="https://datatracker.ietf.org/doc/rfc8996/">deprecated by the Internet Engineering Task Force (IETF)</a> as of March 25, 2021. All upstream browsers have also either completely removed support  or deprecated TLS 1.0 and 1.1. For example, Firefox has deprecated (or discourages using) TLS 1.0 and 1.1 but has <a hreflang="en" href="https://www.ghacks.net/2020/03/21/mozilla-re-enables-tls-1-0-and-1-1-because-of-coronavirus-and-google/">not completely removed</a> it because during the pandemic, users might need to access government websites that often still run on TLS 1.0. The user may still decide to change `security.tls.version.min` in browser config to decide the lowest TLS version they want the browser to allow.
 
 {{ figure_markup(
   image="security-tls-version-by-site.png",
@@ -77,7 +77,7 @@ As part of this effort to improve security and reliability by adopting modern ve
 
 ### Cipher suites
 
-Cipher suites are a set of algorithms that are used with TLS to help make secure connections. Modern [Galois/Counter Mode](https://en.wikipedia.org/wiki/Galois/Counter_Mode) (GCM) cipher modes are considered to be much more secure compared to the older [Cipher Block Chaining Mode](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_block_chaining_(CBC)) (CBC) ciphers which have shown to be [vulnerable to padding attacks](https://blog.qualys.com/product-tech/2019/04/22/zombie-poodle-and-goldendoodle-vulnerabilities). While TLSv1.2 did support use of both newer and older cipher suites, [TLSv1.3 doesn't support any of the older cipher suites](https://datatracker.ietf.org/doc/html/rfc8446#page-133) anymore. This makes upgrading to TLSv1.3 even more important for a secure connection.
+Cipher suites are a set of algorithms that are used with TLS to help make secure connections. Modern [Galois/Counter Mode](https://en.wikipedia.org/wiki/Galois/Counter_Mode) (GCM) cipher modes are considered to be much more secure compared to the older [Cipher Block Chaining Mode](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_block_chaining_(CBC)) (CBC) ciphers which have shown to be <a hreflang="en" href="https://blog.qualys.com/product-tech/2019/04/22/zombie-poodle-and-goldendoodle-vulnerabilities">vulnerable to padding attacks</a>. While TLSv1.2 did support use of both newer and older cipher suites, <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc8446#page-133">TLSv1.3 doesn't support any of the older cipher suites</a> anymore. This makes upgrading to TLSv1.3 even more important for a secure connection.
 
 {{ figure_markup(
   caption="Mobile sites using forward secrecy.",
@@ -88,7 +88,7 @@ Cipher suites are a set of algorithms that are used with TLS to help make secure
 )
 }}
 
-Almost all modern cipher suites support [forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy) key exchange, meaning in the unlikely case that the server’s keys are compromised, old traffic that used those keys cannot be decrypted. 96.58% in desktop and 96.83% in mobile use forward secrecy. TLSv1.3 has made forward secrecy compulsory though it is optional in TLSv1.2. So the other consideration apart from the cipher mode is the key size of the [Authenticated Encryption and Authenticated Decryption](https://datatracker.ietf.org/doc/html/rfc5116#section-2) algorithm. A larger key size will take a lot longer to compromise and the intensive computations for encryption and decryption of the connection impose little to no perceptible impact to site performance
+Almost all modern cipher suites support [forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy) key exchange, meaning in the unlikely case that the server’s keys are compromised, old traffic that used those keys cannot be decrypted. 96.58% in desktop and 96.83% in mobile use forward secrecy. TLSv1.3 has made forward secrecy compulsory though it is optional in TLSv1.2. So the other consideration apart from the cipher mode is the key size of the <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc5116#section-2">Authenticated Encryption and Authenticated Decryption</a> algorithm. A larger key size will take a lot longer to compromise and the intensive computations for encryption and decryption of the connection impose little to no perceptible impact to site performance
 
 {{ figure_markup(
   image="security-distribution-of-cipher-suites.png",
@@ -119,7 +119,7 @@ A certificate authority is a company or organization that issues digital certifi
     </thead>
     <tbody>
       <tr>
-        <td><a href="https://letsencrypt.org/certificates/">R3</a></td>
+        <td><a hreflang="en" href="https://letsencrypt.org/certificates/">R3</a></td>
         <td>RSA</td>
         <td class="number">46.92%</td>
         <td class="number">49.19%</td>
@@ -132,7 +132,7 @@ A certificate authority is a company or organization that issues digital certifi
       </tr>
       <tr>
         <td>
-          <a href="https://sectigo.com/knowledge-base/detail/Sectigo-Intermediate-Certificates/kA01N000000rfBO">
+          <a hreflang="en" href="https://sectigo.com/knowledge-base/detail/Sectigo-Intermediate-Certificates/kA01N000000rfBO">
             Sectigo RSA Domain Validation Secure Server CA
           </a>
         </td>
@@ -147,34 +147,34 @@ A certificate authority is a company or organization that issues digital certifi
         <td class="number">5.52%</td>
       </tr>
       <tr>
-        <td><a href="https://certs.godaddy.com/repository">Go Daddy Secure Certificate Authority - G2</a></td>
+        <td><a hreflang="en" href="https://certs.godaddy.com/repository">Go Daddy Secure Certificate Authority - G2</a></td>
         <td>RSA</td>
         <td class="number">3.59%</td>
         <td class="number">3.00%</td>
       </tr>
       <tr>
-        <td><a href="https://www.amazontrust.com/repository/">Amazon</a></td>
+        <td><a hreflang="en" href="https://www.amazontrust.com/repository/">Amazon</a></td>
         <td>RSA</td>
         <td class="number">3.36%</td>
         <td class="number">2.98%</td>
       </tr>
       <tr>
         <td>
-          <a href="https://www.digicert.com/kb/digicert-root-certificates.htm">Encryption Everywhere DV TLS CA - G1</a></td>
+          <a hreflang="en" href="https://www.digicert.com/kb/digicert-root-certificates.htm">Encryption Everywhere DV TLS CA - G1</a></td>
         <td>RSA</td>
         <td class="number">1.28%</td>
         <td class="number">1.59%</td>
       </tr>
       <tr>
         <td>
-          <a href="https://support.globalsign.com/ca-certificates/intermediate-certificates/alphassl-intermediate-certificates">AlphaSSL CA - SHA256 - G2</a></td>
+          <a hreflang="en" href="https://support.globalsign.com/ca-certificates/intermediate-certificates/alphassl-intermediate-certificates">AlphaSSL CA - SHA256 - G2</a></td>
         <td>RSA</td>
         <td class="number">1.23%</td>
         <td class="number">1.16%</td>
       </tr>
       <tr>
         <td>
-          <a href="https://www.digicert.com/kb/digicert-root-certificates.htm">
+          <a hreflang="en" href="https://www.digicert.com/kb/digicert-root-certificates.htm">
             RapidSSL TLS DV RSA Mixed SHA256 2020 CA-1
           </a></td>
         <td>RSA</td>
@@ -182,7 +182,7 @@ A certificate authority is a company or organization that issues digital certifi
         <td class="number">1.12%</td>
       </tr>
       <tr>
-        <td><a href="https://www.digicert.com/kb/digicert-root-certificates.htm">DigiCert SHA2 Secure Server CA</a></td>
+        <td><a hreflang="en" href="https://www.digicert.com/kb/digicert-root-certificates.htm">DigiCert SHA2 Secure Server CA</a></td>
         <td>RSA</td>
         <td class="number">1.14%</td>
         <td class="number">0.88%</td>
@@ -192,9 +192,9 @@ A certificate authority is a company or organization that issues digital certifi
   <figcaption>{{ figure_link(caption="Top 10 certificate issuers for websites.", sheets_gid="1291345416", sql_file="tls_ca_issuers_pages.sql") }}</figcaption>
 </figure>
 
-Let's Encrypt has [changed their subject common name](https://letsencrypt.org/2020/09/17/new-root-and-intermediates.html#why-we-issued-an-ecdsa-root-and-intermediates) from “Let’s Encrypt Authority X3” to just “R3” to save bytes in new certificates. So any SSL certificates signed by R3 are issued by [Let's Encrypt](https://letsencrypt.org/certificates/). Thus, like previous years, we see Let's Encrypt continue to lead the charts with 46.92% of desktop websites and 49.19% of mobile sites using certificates issued by them. Its free, automated certificate generation has played a game-changing role in making it easier for everyone to serve their websites over HTTPS.
+Let's Encrypt has <a hreflang="en" href="https://letsencrypt.org/2020/09/17/new-root-and-intermediates.html#why-we-issued-an-ecdsa-root-and-intermediates">changed their subject common name</a> from “Let’s Encrypt Authority X3” to just “R3” to save bytes in new certificates. So any SSL certificates signed by R3 are issued by <a hreflang="en" href="https://letsencrypt.org/certificates/">Let's Encrypt</a>. Thus, like previous years, we see Let's Encrypt continue to lead the charts with 46.92% of desktop websites and 49.19% of mobile sites using certificates issued by them. Its free, automated certificate generation has played a game-changing role in making it easier for everyone to serve their websites over HTTPS.
 
-Cloudflare continues to be in second position with its similarly free certificates for its customers. Also, Cloudflare CDNs increase the usage of [Elliptic Curve Cryptography](https://www.digicert.com/faq/ecc.htm) (ECC) certificates which are smaller and more efficient than RSA certificates but are often difficult to deploy, due to the need to also continue to serve non-ECC certificates to older clients. Using a CDN like Cloudflare takes care of that complexity for you. Most [latest browsers](https://developers.cloudflare.com/ssl/ssl-tls/browser-compatibility) are compatible with ECC certificates, though some browsers like Chrome depend on the OS. So if someone uses Chrome in an old OS like Windows XP, then they need to fall back to non-ECC certificates.
+Cloudflare continues to be in second position with its similarly free certificates for its customers. Also, Cloudflare CDNs increase the usage of <a hreflang="en" href="https://www.digicert.com/faq/ecc.htm">Elliptic Curve Cryptography</a> (ECC) certificates which are smaller and more efficient than RSA certificates but are often difficult to deploy, due to the need to also continue to serve non-ECC certificates to older clients. Using a CDN like Cloudflare takes care of that complexity for you. Most <a hreflang="en" href="https://developers.cloudflare.com/ssl/ssl-tls/browser-compatibility">latest browsers</a> are compatible with ECC certificates, though some browsers like Chrome depend on the OS. So if someone uses Chrome in an old OS like Windows XP, then they need to fall back to non-ECC certificates.
 
 
 ### HTTP Strict Transport Security
@@ -254,12 +254,12 @@ The number of responses out of these having `includeSubdomain` set is 33.26% res
   sql_file="hsts_max_age_percentiles.sql"
 ) }}
 
-The median value for `max-age` attribute in HSTS headers over all requests is 365 days in both mobile and desktop. [https://hstspreload.org/](https://hstspreload.org/) recommends a `max-age` of 2 years once the HSTS header is set up properly and verified to not cause any issues.
+The median value for `max-age` attribute in HSTS headers over all requests is 365 days in both mobile and desktop. <a hreflang="en" href="https://hstspreload.org/">https://hstspreload.org/</a> recommends a `max-age` of 2 years once the HSTS header is set up properly and verified to not cause any issues.
 
 
 ## Cookies
 
-An HTTP cookie is a small piece of information about the user accessing the website that the server sends to the web browser. Browsers store this information and send it back with subsequent requests to the server. Cookies do help in session management and state information of the user, such as if the user is currently logged in. Without properly securing cookies, an attacker can hijack a session and send unwanted changes to the server impersonating the user. It can also lead to [Cross-Site Request Forgery](https://owasp.org/www-community/attacks/csrf) attacks. Several other types of attacks rely on the inclusion of cookies in cross-site requests, such as [Cross-Site Script Inclusion](https://www.usenix.org/system/files/conference/usenixsecurity15/sec15-paper-lekies.pdf) (XSSI) and various techniques in the [XS-Leaks](https://xsleaks.dev/) vulnerability class.
+An HTTP cookie is a small piece of information about the user accessing the website that the server sends to the web browser. Browsers store this information and send it back with subsequent requests to the server. Cookies do help in session management and state information of the user, such as if the user is currently logged in. Without properly securing cookies, an attacker can hijack a session and send unwanted changes to the server impersonating the user. It can also lead to <a hreflang="en" href="https://owasp.org/www-community/attacks/csrf">Cross-Site Request Forgery</a> attacks. Several other types of attacks rely on the inclusion of cookies in cross-site requests, such as <a hreflang="en" href="https://www.usenix.org/system/files/conference/usenixsecurity15/sec15-paper-lekies.pdf">Cross-Site Script Inclusion</a> (XSSI) and various techniques in the <a hreflang="en" href="https://xsleaks.dev/">XS-Leaks</a> vulnerability class.
 
 You can ensure that cookies are sent securely and aren't accessed by unintended parties or scripts by adding certain attributes or prefixes.
 
@@ -275,7 +275,7 @@ You can ensure that cookies are sent securely and aren't accessed by unintended 
 
 ### `Secure`
 
-Cookies that have the `Secure` attribute set will only be sent over a secure HTTPS connection, preventing them from being stolen in a [manipulator-in-the-middle](https://owasp.org/www-community/attacks/Manipulator-in-the-middle_attack) attack. Similar to HSTS, this also helps enhance the security provided by TLS protocols. For first-party cookies, only approximately 30% of the cookies in both desktop and mobile have the `Secure` attribute set. However, we do see a significant increase in the percentage of third-party cookies in desktop having `Secure` attribute from 35.2% [last year](https://almanac.httparchive.org/en/2020/security#cookies) to 66.98% this year. This increase is likely due to the [`Secure` attribute being a requirement](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite#none) for `SameSite=none` cookies.
+Cookies that have the `Secure` attribute set will only be sent over a secure HTTPS connection, preventing them from being stolen in a <a hreflang="en" href="https://owasp.org/www-community/attacks/Manipulator-in-the-middle_attack">manipulator-in-the-middle</a> attack. Similar to HSTS, this also helps enhance the security provided by TLS protocols. For first-party cookies, only approximately 30% of the cookies in both desktop and mobile have the `Secure` attribute set. However, we do see a significant increase in the percentage of third-party cookies in desktop having `Secure` attribute from 35.2% [last year](../2020/security#cookies) to 66.98% this year. This increase is likely due to the [`Secure` attribute being a requirement](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite#none) for `SameSite=none` cookies.
 
 
 ### `HttpOnly`
@@ -301,7 +301,7 @@ We see that 58.5% of all first-party cookies with a `SameSite` attribute have th
 
 ### Prefixes
 
-Cookie prefixes `__Host-` and `__Secure-` help mitigate attacks to override the session cookie information for a [session fixation attack](https://owasp.org/www-community/attacks/Session_fixation). `__Host-` helps in domain locking a cookie by requiring the cookie to also have `Secure` attribute, `Path` attribute set to `/`, not have `Domain` attribute and is sent from a secure origin. `__Secure-` on the other hand requires the cookie to only have `Secure` attribute and to be sent from a secure origin.
+Cookie prefixes `__Host-` and `__Secure-` help mitigate attacks to override the session cookie information for a <a hreflang="en" href="https://owasp.org/www-community/attacks/Session_fixation">session fixation attack</a>. `__Host-` helps in domain locking a cookie by requiring the cookie to also have `Secure` attribute, `Path` attribute set to `/`, not have `Domain` attribute and is sent from a secure origin. `__Secure-` on the other hand requires the cookie to only have `Secure` attribute and to be sent from a secure origin.
 
 ​<figure>
   <table>
@@ -367,9 +367,9 @@ Most current websites have quite a lot of JavaScript, media, and libraries that 
   )
 }}
 
-We see more and more websites starting to use CSP with 9.28% of websites on mobile using CSP now compared to 7.23% last year. `upgrade-insecure-requests` continues to be the most frequent CSP directive used. The high adoption rate for this directive is likely because of the same reasons mentioned [last year](https://almanac.httparchive.org/en/2020/security#content-security-policy). It is an easy, non-breaking directive, it helps in upgrading all HTTP requests to HTTPS, which also helps with the blocking of mixed-content by browser. `frame-ancestors` is a close second, which helps one define valid parents that may embed a page.
+We see more and more websites starting to use CSP with 9.28% of websites on mobile using CSP now compared to 7.23% last year. `upgrade-insecure-requests` continues to be the most frequent CSP directive used. The high adoption rate for this directive is likely because of the same reasons mentioned [last year](../2020/security#content-security-policy). It is an easy, non-breaking directive, it helps in upgrading all HTTP requests to HTTPS, which also helps with the blocking of mixed-content by browser. `frame-ancestors` is a close second, which helps one define valid parents that may embed a page.
 
-The adoption of directives defining the sources from which content can be loaded continues to be low. Most of these directives are strict, causing breaking changes and often needs efforts to define `nonce`, hash or domains for allowing external content. A strict directive is great in thwarting attacks, but they often lead to undesirable effects and prevent valid content from loading, if the directive is not properly defined. Different libraries and APIs using their own scripts makes it even more difficult. [Lighthouse](https://web.dev/csp-xss/) recently started emitting high severity warnings when such directives are missing from CSP, encouraging people to adopt a stricter CSP to prevent XSS attacks. Read more about how CSP helps in stopping XSS attacks in the [thwarting attacks](./thwarting-attacks) section of this chapter.
+The adoption of directives defining the sources from which content can be loaded continues to be low. Most of these directives are strict, causing breaking changes and often needs efforts to define `nonce`, hash or domains for allowing external content. A strict directive is great in thwarting attacks, but they often lead to undesirable effects and prevent valid content from loading, if the directive is not properly defined. Different libraries and APIs using their own scripts makes it even more difficult. <a hreflang="en" href="https://web.dev/csp-xss/">Lighthouse</a> recently started emitting high severity warnings when such directives are missing from CSP, encouraging people to adopt a stricter CSP to prevent XSS attacks. Read more about how CSP helps in stopping XSS attacks in the [thwarting attacks](#stopping-xss-attacks-via-csp) section of this chapter.
 
 To allow web developers to evaluate the correctness of their CSP policy, there is also a non-enforcing alternative, which can be enabled by defining the policy in the `Content-Security-Policy-Report-Only` response header. The prevalence of this header is still fairly small: 0.92% in mobile. However, most of the time this header is added in the testing phase, and may later be changed to an enforcing CSP. 
 
@@ -575,14 +575,14 @@ However, when we look closely, most of the websites still lack the coverage of S
 
 We see that gstatic.com currently leads the chart. This is probably because Google serves all its static content (fonts, analytics, etc.) from gstatic.com. Usually when developers embed google fonts, the code they copy has the `integrity` attribute included, which leads to high adoption.
 
-After gstatic.com and shopify.com, the rest of the top 5 hosts from which SRI-protected scripts are included are made up of three CDNs: [jQuery](https://code.jquery.com/), [cdnjs](https://cdnjs.com/), and [Bootstrap](https://www.bootstrapcdn.com/). It is probably not coincidental that all three of these CDNs have the integrity attribute in the example HTML code.
+After gstatic.com and shopify.com, the rest of the top 5 hosts from which SRI-protected scripts are included are made up of three CDNs: <a hreflang="en" href="https://code.jquery.com/">jQuery</a>, <a hreflang="en" href="https://cdnjs.com/">cdnjs</a>, and <a hreflang="en" href="https://www.bootstrapcdn.com/">Bootstrap</a>. It is probably not coincidental that all three of these CDNs have the integrity attribute in the example HTML code.
 
 
 ### Permissions Policy
 
-All browsers these days provide countless APIs and functionalities, a lot of which can be used for tracking and malicious purposes, thus proving detrimental to the privacy of the users. [Permissions Policy](https://www.w3.org/TR/permissions-policy-1/) is a web platform API that gives a website the ability to allow or block the use of browser features in its own frame or in iframes that it embeds. The `Permissions-Policy` response header allows websites to decide which features they want to use and also which powerful features they want to disallow in the website to limit misuse. The Permissions Policy can be used to control APIs like Geolocation, User media, Video autoplay, Encrypted-media decoding and many more. Some of these APIs require browser permission from the user, i.e., a malicious script can’t turn on the microphone without the user getting a permission pop up, but it’s still good practice to use Permission Policy to restrict usage of certain features completely.
+All browsers these days provide countless APIs and functionalities, a lot of which can be used for tracking and malicious purposes, thus proving detrimental to the privacy of the users. <a hreflang="en" href="https://www.w3.org/TR/permissions-policy-1/">Permissions Policy</a> is a web platform API that gives a website the ability to allow or block the use of browser features in its own frame or in iframes that it embeds. The `Permissions-Policy` response header allows websites to decide which features they want to use and also which powerful features they want to disallow in the website to limit misuse. The Permissions Policy can be used to control APIs like Geolocation, User media, Video autoplay, Encrypted-media decoding and many more. Some of these APIs require browser permission from the user, i.e., a malicious script can’t turn on the microphone without the user getting a permission pop up, but it’s still good practice to use Permission Policy to restrict usage of certain features completely.
 
-This API specification was previously known as Feature Policy. Since then, there have been many updates. Though the `Feature-Policy` response header is still in use, it is still pretty low with only 0.55% of websites in mobile using it. The new specification expects `Permissions-Policy` response headers which contain an allowlist for different APIs. For example, `Permissions-Policy: geolocation=(self "https://example.com")` means that the website disallows the use of Geolocation API except for its own origin and those whose origin is "`https://example.com`". One can disable the use of an API entirely in a website by specifying an empty list, e.g. `Permissions-Policy: geolocation=()`. We see 1.25% of websites on the mobile using the `Permissions-Policy` already. A probable reason for this could be some  website admins choosing to opt-out of Federated Learning of Cohorts or [FLoC](https://privacysandbox.com/proposals/floc) (which was experimentally implemented in some browsers) to protect user’s privacy. The [privacy chapter](./privacy#floc) has a detailed analysis of this.
+This API specification was previously known as Feature Policy. Since then, there have been many updates. Though the `Feature-Policy` response header is still in use, it is still pretty low with only 0.55% of websites in mobile using it. The new specification expects `Permissions-Policy` response headers which contain an allowlist for different APIs. For example, `Permissions-Policy: geolocation=(self "https://example.com")` means that the website disallows the use of Geolocation API except for its own origin and those whose origin is "`https://example.com`". One can disable the use of an API entirely in a website by specifying an empty list, e.g. `Permissions-Policy: geolocation=()`. We see 1.25% of websites on the mobile using the `Permissions-Policy` already. A probable reason for this could be some  website admins choosing to opt-out of Federated Learning of Cohorts or <a hreflang="en" href="https://privacysandbox.com/proposals/floc">FLoC</a> (which was experimentally implemented in some browsers) to protect user’s privacy. The [privacy chapter](./privacy#floc) has a detailed analysis of this.
 
 <figure>
   <table>
@@ -676,7 +676,7 @@ The most commonly used directive, `allow-scripts`, which is present in 99.98% of
 
 ## Thwarting attacks
 
-Web applications are pestered by numerous vulnerabilities. Fortunately, there exist several mechanisms that can either completely mitigate vulnerabilities (e.g., framing protection through `X-Frame-Options` or CSP's `frame-ancestors` directive is necessary to [combat clickjacking attacks](https://pragmaticwebsecurity.com/articles/securitypolicies/preventing-framing-with-policies.html)), or limit the consequences of an attack. As most of these protections are opt-in, they still need to be enabled (typically by setting the correct response header) by the web developers. At large scale, the presence of the headers can tell us something about the security hygiene of websites and the incentives of the developers to protect their users.
+Web applications are pestered by numerous vulnerabilities. Fortunately, there exist several mechanisms that can either completely mitigate vulnerabilities (e.g., framing protection through `X-Frame-Options` or CSP's `frame-ancestors` directive is necessary to <a hreflang="en" href="https://pragmaticwebsecurity.com/articles/securitypolicies/preventing-framing-with-policies.html">combat clickjacking attacks</a>), or limit the consequences of an attack. As most of these protections are opt-in, they still need to be enabled (typically by setting the correct response header) by the web developers. At large scale, the presence of the headers can tell us something about the security hygiene of websites and the incentives of the developers to protect their users.
 
 
 ### Security feature adoption
@@ -692,11 +692,11 @@ Web applications are pestered by numerous vulnerabilities. Fortunately, there ex
   height=497
 ) }}
 
-Perhaps the most promising and uplifting finding of this chapter is that the general adoption of security mechanisms continues to grow. Not only does this mean that attackers will have a more difficult time exploiting certain websites, but it is also indicative that more and more developers value the security of the web products they build. Overall, we can see a relative increase in the adoption of security features of 10-30% compared to last year. The security-related mechanism with the most uptake is the `Report-To` header of [the Reporting API](https://developers.google.com/web/updates/2018/09/reportingapi), with almost a 4x increased adoption rate, from 2.60% to 12.15%.
+Perhaps the most promising and uplifting finding of this chapter is that the general adoption of security mechanisms continues to grow. Not only does this mean that attackers will have a more difficult time exploiting certain websites, but it is also indicative that more and more developers value the security of the web products they build. Overall, we can see a relative increase in the adoption of security features of 10-30% compared to last year. The security-related mechanism with the most uptake is the `Report-To` header of <a hreflang="en" href="https://developers.google.com/web/updates/2018/09/reportingapi">the Reporting API</a>, with almost a 4x increased adoption rate, from 2.60% to 12.15%.
 
 Although this continued increase in the adoption rate of security mechanisms is certainly outstanding, there still remains quite some room for improvement. The most widely used security mechanism is still the `X-Content-Type-Options` header, which is used on 37% of the websites to protect against MIME-sniffing attacks. This header is followed by the `X-Frame-Options` header, which is enabled on 29% of all sites. Interestingly, only 5.63% of websites use the more flexible `frame-ancestors` directive of CSP.
 
-Another interesting evolution is that of the [`X-XSS-Protection`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection) header. The feature is used to control the XSS filter of legacy browsers: [Edge](https://blogs.windows.com/windows-insider/2018/07/25/announcing-windows-10-insider-preview-build-17723-and-build-18204/) and [Chrome](https://www.chromium.org/developers/design-documents/xss-auditor) retired their XSS filter in July 2018 and August 2019 respectively as it could introduce new unintended vulnerabilities. Yet, we found that the `X-XSS-Protection` header was 8.52% more prevalent than last year.
+Another interesting evolution is that of the [`X-XSS-Protection`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection) header. The feature is used to control the XSS filter of legacy browsers: <a hreflang="en" href="https://blogs.windows.com/windows-insider/2018/07/25/announcing-windows-10-insider-preview-build-17723-and-build-18204/">Edge</a> and <a hreflang="en" href="https://www.chromium.org/developers/design-documents/xss-auditor">Chrome</a> retired their XSS filter in July 2018 and August 2019 respectively as it could introduce new unintended vulnerabilities. Yet, we found that the `X-XSS-Protection` header was 8.52% more prevalent than last year.
 
 
 ### Features enabled in `<meta>` tag
@@ -754,14 +754,14 @@ CSP can be used to protect against a multitude of things: clickjacking attacks, 
 </figure>
 
 
-Although we saw an overall moderate increase (17%) in the adoption of CSP, what is perhaps even more exciting is that the usage of the `strict-dynamic` and nonces is either keeping the same trend, or is slightly increasing. For instance, for desktop sites the use of `strict-dynamic` grew from 2.40% [last year](../../2020/security#preventing-xss-attacks-through-csp), to 5.22% this year. Similarly, the use of nonces grew from 8.72% to 12.10%. On the other hand, we find that the usage of the troubling directives `unsafe-inline` and `unsafe-eval` is still fairly high. However, it should be noted that if these are used in conjunction with `strict-dynamic`, the browser will effectively ignore these values.
+Although we saw an overall moderate increase (17%) in the adoption of CSP, what is perhaps even more exciting is that the usage of the `strict-dynamic` and nonces is either keeping the same trend, or is slightly increasing. For instance, for desktop sites the use of `strict-dynamic` grew from 2.40% [last year](../2020/security#preventing-xss-attacks-through-csp), to 5.22% this year. Similarly, the use of nonces grew from 8.72% to 12.10%. On the other hand, we find that the usage of the troubling directives `unsafe-inline` and `unsafe-eval` is still fairly high. However, it should be noted that if these are used in conjunction with `strict-dynamic`, the browser will effectively ignore these values.
 
 
 ### Defending against XS-Leaks
 
-Various new security features have been introduced to allow web developers to defend their websites against micro-architectural attacks, such as Spectre, and various other attacks that are typically referred to as [XS-Leaks](https://xsleaks.dev). Given that many of these attacks were only discovered in the last few years, the mechanisms used to tackle them obviously are very recent as well, which might explain the relatively low adoption rate. Nevertheless, compared to [last year](../../2020/security#defending-against-xs-leaks-with-cross-origin-policies), the cross-origin policies have significantly increased in adoption.
+Various new security features have been introduced to allow web developers to defend their websites against micro-architectural attacks, such as Spectre, and various other attacks that are typically referred to as <a hreflang="en" href="https://xsleaks.dev">XS-Leaks</a>. Given that many of these attacks were only discovered in the last few years, the mechanisms used to tackle them obviously are very recent as well, which might explain the relatively low adoption rate. Nevertheless, compared to [last year](../2020/security#defending-against-xs-leaks-with-cross-origin-policies), the cross-origin policies have significantly increased in adoption.
 
-The [`Cross-Origin-Resource-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP)), which is used to indicate to the browser how a resource should be included (cross-origin, same-site or same-origin), is now present on 106,443 (1.45%) sites, up from 1,712 sites [last year](../../2020/security#defending-against-xs-leaks-with-cross-origin-policies). The most likely explanation for this is that in order to achieve [cross-origin isolation](https://web.dev/cross-origin-isolation-guide/), a requirement for using features such as SharedArrayBuffer and high-resolution timers, the site's [`Cross-Origin-Embedder-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) should be set to `require-corp`. In essence, this requires all loaded subresources to set the `Cross-Origin-Resource-Policy` response header. Consequently, [several](https://github.com/cdnjs/cdnjs/issues/13782) [CDNs](https://github.com/jsdelivr/bootstrapcdn/issues/1495) now set the header with a value of `cross-origin` (as CDN resources are typically meant to be included in a cross-site context). We can see that this is indeed the case, as 96.75% of sites set the CORP header value to `cross-origin`, compared to 2.91% that set it to `same-site` and 0.32% that use the more restrictive `same-origin`.
+The [`Cross-Origin-Resource-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP)), which is used to indicate to the browser how a resource should be included (cross-origin, same-site or same-origin), is now present on 106,443 (1.45%) sites, up from 1,712 sites [last year](../2020/security#defending-against-xs-leaks-with-cross-origin-policies). The most likely explanation for this is that in order to achieve <a hreflang="en" href="https://web.dev/cross-origin-isolation-guide/">cross-origin isolation</a>, a requirement for using features such as SharedArrayBuffer and high-resolution timers, the site's [`Cross-Origin-Embedder-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) should be set to `require-corp`. In essence, this requires all loaded subresources to set the `Cross-Origin-Resource-Policy` response header. Consequently, <a hreflang="en" href="https://github.com/cdnjs/cdnjs/issues/13782">several</a> <a hreflang="en" href="https://github.com/jsdelivr/bootstrapcdn/issues/1495">CDNs</a> now set the header with a value of `cross-origin` (as CDN resources are typically meant to be included in a cross-site context). We can see that this is indeed the case, as 96.75% of sites set the CORP header value to `cross-origin`, compared to 2.91% that set it to `same-site` and 0.32% that use the more restrictive `same-origin`.
 
 With this change, it is no surprise that the adoption of `Cross-Origin-Embedder-Policy` is also steadily increasing: in 2021, 911 sites enabled this header; significantly more than the 6 sites of last year. It will be interesting to see how this will further develop next year!
 
@@ -770,7 +770,7 @@ Finally, another anti-XS-Leak header, [`Cross-Origin-Opener-Policy`](https://dev
 
 ### Web Cryptography API
 
-Security has become one of the central issues in web development. Since 2017, we have the [Web Cryptography API](https://www.w3.org/TR/WebCryptoAPI/) W3C recommendation to perform basic cryptographic operations (e.g., hashing, signature generation and verification, and encryption and decryption) on the client-side - without any third-party library. In the following, we analyze the usage of this JavaScript API.
+Security has become one of the central issues in web development. Since 2017, we have the <a hreflang="en" href="https://www.w3.org/TR/WebCryptoAPI/">Web Cryptography API</a> W3C recommendation to perform basic cryptographic operations (e.g., hashing, signature generation and verification, and encryption and decryption) on the client-side - without any third-party library. In the following, we analyze the usage of this JavaScript API.
 
 <figure>
   <table>
@@ -845,7 +845,7 @@ It should be noted that since we perform passive crawling, our results in this s
 
 ### Utilizing bot protection services
 
-Many cyberattacks are based on automated bot attacks. Interest in it seems to have increased. According to the [Bad Bot Report 2021](https://www.imperva.com/blog/bad-bot-report-2021-the-pandemic-of-the-internet/) by Imperva, the number of bad bots has increased this year by 25.6%. Note that the increase from 2019 to 2020 was 24.1% - according to [the previous report](https://www.imperva.com/blog/bad-bot-report-2020-bad-bots-strike-back/). In the following table, we present our results on using measures by websites to protect themselves from malicious bots.
+Many cyberattacks are based on automated bot attacks. Interest in it seems to have increased. According to the <a hreflang="en" href="https://www.imperva.com/blog/bad-bot-report-2021-the-pandemic-of-the-internet/">Bad Bot Report 2021</a> by Imperva, the number of bad bots has increased this year by 25.6%. Note that the increase from 2019 to 2020 was 24.1% - according to <a hreflang="en" href="https://www.imperva.com/blog/bad-bot-report-2020-bad-bots-strike-back/">the previous report</a>. In the following table, we present our results on using measures by websites to protect themselves from malicious bots.
 
 <figure>
   <table>
@@ -1062,7 +1062,7 @@ Another factor that can strongly influence the adoption of certain security mech
 )
 }}
 
-It is great to see that despite the variability in these websites' content, it is still possible to uniformly adopt these security mechanisms. Another interesting entry in this list is Drupal, whose websites have an adoption rate of 83.14% for the `X-Frame-Options` header (a slight improvement compared to last year's 81.81%). As this header is [enabled by default](https://www.drupal.org/node/2735873), it is clear that the majority of Drupal sites stick with it, protecting them from clickjacking attacks.  (While it makes sense to keep the `X-Frame-Options` header for compatibility with older browsers in the near term, site owners should consider transitioning to the recommended `Content-Security-Policy` header directive `frame ancestors` for the same functionality.)
+It is great to see that despite the variability in these websites' content, it is still possible to uniformly adopt these security mechanisms. Another interesting entry in this list is Drupal, whose websites have an adoption rate of 83.14% for the `X-Frame-Options` header (a slight improvement compared to last year's 81.81%). As this header is <a hreflang="en" href="https://www.drupal.org/node/2735873">enabled by default</a>, it is clear that the majority of Drupal sites stick with it, protecting them from clickjacking attacks.  (While it makes sense to keep the `X-Frame-Options` header for compatibility with older browsers in the near term, site owners should consider transitioning to the recommended `Content-Security-Policy` header directive `frame ancestors` for the same functionality.)
 
 {{ figure_markup(
   caption="The percentage of Drupal sites that keep the default XFO header.",
@@ -1112,7 +1112,7 @@ We can draw two conclusions from this: on the one hand, having better "security 
 
 ## Malpractices on the web
 
-Cryptocurrencies have become an increasingly familiar  part of our modern community. Global cryptocurrency adoption has been [skyrocketing](https://blog.chainalysis.com/reports/2021-global-crypto-adoption-index) since the beginning of the pandemic. Due to its economic efficiency, cybercriminals have also become more interested in cryptocurrencies. That has led to the creation of a new attack vector [cryptojacking] (https://en.wikipedia.org/wiki/Cryptojacking). Attackers have discovered the power of WebAssembly and exploited it to mine cryptocurrencies while website visitors surf on a website.
+Cryptocurrencies have become an increasingly familiar  part of our modern community. Global cryptocurrency adoption has been <a hreflang="en" href="https://blog.chainalysis.com/reports/2021-global-crypto-adoption-index">skyrocketing</a> since the beginning of the pandemic. Due to its economic efficiency, cybercriminals have also become more interested in cryptocurrencies. That has led to the creation of a new attack vector [cryptojacking] (https://en.wikipedia.org/wiki/Cryptojacking). Attackers have discovered the power of WebAssembly and exploited it to mine cryptocurrencies while website visitors surf on a website.
 
 We now show our findings in the following figure regarding cryptominer usage on the web.
 
@@ -1152,11 +1152,11 @@ Please also note that our results may not show the actual state of the websites 
 
 ### `security.txt`
 
-[`security.txt`](https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt-12) is a well-known file format for websites to provide a standard for vulnerability reporting. Website providers can provide contact details, PGP key, policy, and other information in this file. White hat hackers can then use this information to conduct security analyses on these websites or report a vulnerability. The following figure shows that 5% of the websites already use this standard - although it is a very young standard.
+<a hreflang="en" href="https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt-12">`security.txt`</a> is a well-known file format for websites to provide a standard for vulnerability reporting. Website providers can provide contact details, PGP key, policy, and other information in this file. White hat hackers can then use this information to conduct security analyses on these websites or report a vulnerability. The following figure shows that 5% of the websites already use this standard - although it is a very young standard.
 
 {{ figure_markup(
   image="security-usage-of-well-known-security.png",
-  caption="Use of `security.txt` endpoint.",
+  caption="Use of `security.txt`.",
   description="Bar chart showing 4.93% of websites in desktop and 4.89% of websites in mobile have security.txt endpoint.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1958147881&format=interactive",
   sheets_gid="399976976",
@@ -1181,7 +1181,7 @@ And the following figure shows that the policy is the most used property of util
 
 Our analysis shows very clearly that the situation of web security concerning the provider side is improving compared to previous years. For example, we see that the use of HTTPS has increased by almost 10% in the last 12 months. We also find an increase in the protection of cookie objects or the use of security headers.
 
-These increases indicate a safer web environment, but they do not mean our web is secure enough today. We still have to improve our situation. For example, we believe that the Web community should value security headers more. These are very effective extensions to protect web environments and web users from possible attacks. The bot protection mechanisms can also be adopted more to protect the platforms from malicious bots. Furthermore, our analysis from [last year](../2020/security#software-update-practices) and another study on HTTPArchive about the [update behavior of websites](https://www.researchgate.net/publication/349027860_Our_inSecure_Web_Understanding_Update_Behavior_of_Websites_and_Its_Impact_on_Security) showed that the website components are not diligently maintained, which increases the attack surface on web environments quite a bit.
+These increases indicate a safer web environment, but they do not mean our web is secure enough today. We still have to improve our situation. For example, we believe that the Web community should value security headers more. These are very effective extensions to protect web environments and web users from possible attacks. The bot protection mechanisms can also be adopted more to protect the platforms from malicious bots. Furthermore, our analysis from [last year](../2020/security#software-update-practices) and another study on HTTPArchive about the <a hreflang="en" href="https://www.researchgate.net/publication/349027860_Our_inSecure_Web_Understanding_Update_Behavior_of_Websites_and_Its_Impact_on_Security">update behavior of websites</a> showed that the website components are not diligently maintained, which increases the attack surface on web environments quite a bit.
 
 We should not forget that attackers are also working diligently to develop new techniques to bypass the security mechanisms we adopt.
 
