@@ -111,9 +111,7 @@ The probable reasons for this may include:
 
 These changes have led to the SaaS vendors offering "self-hosting" options to web owners. This leads to more content being delivered over the first party domain instead of the vendor's domain. When this happens, it's up to the web owner to either deliver the content over a CDN or directly from their hosting infrastructure.
 
-While we observed CDN adoption across different types of content, we will not look at this data a bit different below.
-
-{# TODO: I don't get what - "we will not look at this data a bit different below" means exactly #}
+While we observed CDN adoption across different types of content, we will look at this data a bit different below.
 
 {{ figure_markup(
   image="cdn-usage-ranking-desktop.png",
@@ -137,11 +135,9 @@ While we observed CDN adoption across different types of content, we will not lo
 
 Ranking the domains based on their popularity (at the time of this writing sourced from Google CRUX data) in the web and then checking for their CDN usage, the top 1000 websites contribute to the highest usage of CDN. The top websites include domains owned by names like Google and Amazon who contribute to much of the internet traffic we see today, so it's no surprise that these names make it to the list of "Top CDN Providers" in the [next section](#top-CDN-providers). This also backs the fact about the benefits CDNs bring to the table when operating at scale and having the ability to scale further if needed.
 
-The CDN adoption rate falls below 50% when we look at the top 100,000 websites but the rate of reduction slows down beyond this. For the full data set (which is 6.2 million sites on desktop and 7.5 million on mobile), 27% of these websites use CDN. When you translate that percentage into real number, that's
+The CDN adoption rate falls below 50% when we look at the top 100,000 websites but the rate of reduction slows down beyond this. For the full data set (which is 6.2 million sites on desktop and 7.5 million on mobile), 27% of these websites use CDN. When you translate that percentage into real number, that's 2.7 million websites using CDN! That is not a small number when you look at it this way.
 
-2.7 million websites using CDN! That is not a small number when you look at it this way.
-
-{# TODO: this sentence being broken off seems like a typo. I can merge it back to the previous paragraph but this might also be a good spot to put a big number figure if you want to highlight that number #}
+{# TODO: this might be a good spot to put a big number figure if you want to highlight that number #}
 
 But the decreasing percentage of CDN adoption in the low popularity website end does make sense considering the benefits of CDN (such as caching and TCP connection offload) increases with increased end users on the web property. Below a certain scale of end user traffic on a web property, the cost-to-benefit math of a CDN may not work in web property owner's favor and they might be better off delivering the web content directly from origin.
 
@@ -172,19 +168,7 @@ This appeals to a larger set of industries and is reflected in the data.  Generi
   )
 }}
 
-CDN providers like:
-* Cloudflare
-* Fastly
-* Akamai
-* Limelight
-
-They appear in this list of Generic CDN providers.
-
-We also see providers like:
-* Google,
-* AWS
-
-{# TODO: these lists feel disruptive when reading. Maybe they can be combined into a sentence or 2? #}
+CDN providers such as Cloudflare, Fastly, Akamai and Limelight appear in this list of Generic CDN providers. We also see providers such as Google and AWS.
 
 They appear in this list since they offer bundled CDN offerings along with their Cloud hosting services.  These bundles help reduce load on the hosting infrastructure and also improves web performance.
 
