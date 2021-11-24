@@ -255,7 +255,7 @@
         "authors"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/24625637?v=4&s=200",
-      "website": "https://togethertech.ca/",
+      "website": "https://atfreshsolutions.com",
       "github": "alextait1",
       "twitter": "at_fresh_dev"
     },
@@ -391,7 +391,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/4480480?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4480480?v=4&s=200",
       "website": "https://cassey.dev/",
       "github": "clottman"
     },
@@ -729,12 +729,13 @@
       "twitter": "jyzg"
     },
     "Schweinepriester": {
-      "name": "Kai Schweinepriester",
+      "name": "Kai Hollberg",
       "teams": [
         "reviewers"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/2644614?v=4&s=200",
-      "github": "Schweinepriester"
+      "github": "Schweinepriester",
+      "twitter": "schweinepriestr"
     },
     "kevinfarrugia": {
       "name": "Kevin Farrugia",
@@ -754,6 +755,7 @@
         "authors"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/54685625?v=4&s=200",
+      "website": "https://www.flowerstorm.tech/",
       "github": "kachiden"
     },
     "vdwijngaert": {
@@ -806,7 +808,18 @@
         "reviewers"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/7148510?v=4&s=200",
-      "github": "soulcorrosion"
+      "website": "https://farfetchtechblog.com/en/blog/authors/manuel-garcia/",
+      "github": "soulcorrosion",
+      "linkedin": "manuel-garcia-12b6928",
+      "twitter": "corrosion_pt"
+    },
+    "awareseven": {
+      "name": "Matteo Große-Kampmann",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/53170037?v=4&s=200",
+      "github": "awareseven"
     },
     "maudnals": {
       "name": "Maud Nalpas",
@@ -860,12 +873,13 @@
       "github": "mo271"
     },
     "Navaneeth-akam": {
-      "name": "Navaneeth",
+      "name": "Navaneeth Krishna",
       "teams": [
         "authors"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/69532755?v=4&s=200",
-      "github": "Navaneeth-akam"
+      "github": "Navaneeth-akam",
+      "twitter": "Navanee55755217"
     },
     "MeFoDy": {
       "name": "Nikita Dubko",
@@ -882,7 +896,7 @@
       "teams": [
         "authors"
       ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/26349046?v=4s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26349046?v=4&s=200",
       "website": "http://unravelweb.dev/",
       "github": "NishuGoel",
       "twitter": "TheNishuGoel"
@@ -986,7 +1000,7 @@
       "github": "fischbacher"
     },
     "RMHolmlund": {
-      "name": "RMHolmlund",
+      "name": "Rebecca Holmlund",
       "teams": [
         "editors"
       ],
@@ -1073,7 +1087,7 @@
       "teams": [
         "authors"
       ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/15577?v=4&s=200",
+      "avatar_url": "https://avatars.githubusercontent.com/u/15577?v=4&s=200",
       "github": "scottdavis99"
     },
     "shantsis": {

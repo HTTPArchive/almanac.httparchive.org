@@ -62,7 +62,7 @@ try {
 } catch (error) {
   return [];
 }
-''' ;
+''';
 
 SELECT
   client,

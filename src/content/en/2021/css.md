@@ -12,9 +12,9 @@ GeekBoySupreme_bio:
 results: https://docs.google.com/spreadsheets/d/12vQIA0xsC5Jr3J9Sh03AcAvgFjMAmP1xSS6Tjai9LF0/
 featured_quote: The 2021 Web Almanac offers deeper insight into how the use of CSS differs in the realm of what we all think we need versus what we actually see in production.
 featured_stat_1: 71%
-featured_stat_label_1: The percentage of pages using Flexbox for some form of layout.
+featured_stat_label_1: The percentage of pages using Flexbox for some form of layout
 featured_stat_2: 3
-featured_stat_label_2: The average number of images loaded via CSS.
+featured_stat_label_2: The average number of images loaded via CSS
 featured_stat_3: 28.6%
 featured_stat_label_3: The percentage of pages using custom properties.
 ---

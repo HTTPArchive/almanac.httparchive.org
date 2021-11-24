@@ -4,7 +4,7 @@ SELECT
   percentile,
   client,
   APPROX_QUANTILES(requests, 1000)[OFFSET(percentile * 10)] AS requests,
-  APPROX_QUANTILES(bytes, 1000)[OFFSET(percentile * 10)] / 1024 / 1024 AS mbytes
+  APPROX_QUANTILES(bytes, 1000)[OFFSET(percentile * 10)] / 1024 AS kbytes
 FROM (
   SELECT
     client,
