@@ -43,7 +43,7 @@ counts_per_client AS (
     COUNTIF(isPortrait) AS portraits,
     COUNTIF(isLandscape) AS landscapes,
     COUNTIF(isSquare) AS squares,
-    COUNT(0) AS numberOfImagesPerClient,
+    COUNT(0) AS numberOfImagesPerClient
   FROM
     imgs
   GROUP BY

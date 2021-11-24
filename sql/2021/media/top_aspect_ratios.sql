@@ -33,7 +33,7 @@ WITH imgs AS (
 counts_per_client AS (
   SELECT
     client,
-    COUNT(0) AS numberOfImagesPerClient,
+    COUNT(0) AS numberOfImagesPerClient
   FROM
     imgs
   GROUP BY

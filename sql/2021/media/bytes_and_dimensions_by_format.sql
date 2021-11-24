@@ -128,10 +128,13 @@ WITH imgs AS (
     ( approximateResourceWidth * approximateResourceHeight ) / 1000000 AS megapixels,
     ( approximateResourceWidth / approximateResourceHeight ) AS aspectRatio,
     resourceFormat
-  FROM `httparchive.pages.2021_07_01_*`,
-  UNNEST(getSrcsetInfo(JSON_QUERY(JSON_VALUE(payload, '$._responsive_images' ), '$.responsive-images')))
-), percentiles AS (
-SELECT
+  FROM
+    `httparchive.pages.2021_07_01_*`,
+    UNNEST(getSrcsetInfo(JSON_QUERY(JSON_VALUE(payload, '$._responsive_images'), '$.responsive-images')))
+),
+
+percentiles AS (
+  SELECT
     client,
     resourceFormat,
     APPROX_QUANTILES(approximateResourceWidth, 1000) AS resourceWidthPercentiles,
@@ -141,9 +144,14 @@ SELECT
     APPROX_QUANTILES(byteSize, 1000) AS byteSizePercentiles,
     APPROX_QUANTILES(bitsPerPixel, 1000) AS bitsPerPixelPercentiles,
     COUNT(0) AS imgCount
-FROM imgs
-WHERE approximateResourceWidth > 1 AND approximateResourceHeight > 1
-GROUP BY client, resourceFormat
+  FROM
+    imgs
+  WHERE
+    approximateResourceWidth > 1 AND
+    approximateResourceHeight > 1
+  GROUP BY
+    client,
+    resourceFormat
 )
 
 SELECT

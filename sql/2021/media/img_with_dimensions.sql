@@ -35,7 +35,7 @@ SELECT
   SAFE_DIVIDE(COUNTIF(hasHeight = 1), COUNT(0)) AS percHasHeight,
   SAFE_DIVIDE(COUNTIF(hasAlt = 1), COUNT(0)) AS percHasAlt,
   SAFE_DIVIDE(COUNTIF(hasReservedLayoutDimension = 1), COUNT(0)) AS percHasDimensions
-FROM  (
+FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     hasWidth,
