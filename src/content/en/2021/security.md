@@ -29,7 +29,7 @@ This chapter analyzes the current state of security on the Web and gives an over
 We crawl the analyzed pages in both desktop and mobile mode, but for a lot of the data they give similar results, so unless otherwise noted, stats presented in this chapter refer to the set of mobile pages. For more information on how the data has been collected, please refer to the [Methodology](./methodology).
 
 
-## Transport Security
+## Transport security
 
 Following the recent trend, we see continuous growth in the number of websites adopting HTTPS this year as well. Transport layer security is important to allow secure browsing of websites by ensuring that the resources being served to you and the data sent to the website are untampered in the transit. Almost all major browsers now come with settings to set it to HTTPS-only mode and also increasing warnings shown to users when HTTP instead of HTTPS is used by a website, thus pushing forward for broader adoption.
 
@@ -56,7 +56,7 @@ Currently, we see that 92.3% of total requests for websites on desktop and 91.3%
 We still see that a lot of websites are  lacking HTTPS requests compared to the total percentage based on requests. This is because a lot of the impressive percentage of HTTPS requests are often dominated by [third-party](./third-parties) services like fonts, analytics, CDNs, and not the webpage itself. We do see a continuous improvement (approximately 7% increase since [last year](https://almanac.httparchive.org/en/2020/security#fig-3)) in this number as well, but soon a lot of unmaintained websites might start seeing warnings once [browsers start adopting HTTPS-only mode by default](https://blog.mozilla.org/security/2021/08/10/firefox-91-introduces-https-by-default-in-private-browsing/). Currently, 84.29% of website homepages in desktop and 81.17% of website homepages in mobile are served over HTTPS.
 
 
-### Protocol Versions
+### Protocol versions
 
 TLS (Transport Layer Security) is the protocol that helps make HTTP requests secure and private. With time, new vulnerabilities are discovered and fixed in TLS as well. Hence, it's not just important to serve a website over HTTPS but also to ensure that modern, up-to-date TLS is being used to avoid such vulnerabilities.
 
@@ -75,7 +75,7 @@ As part of this effort to improve security and reliability by adopting modern ve
 60.36% of pages in desktop and 62.14% of pages in mobile are now using TLSv1.3, making it the majority protocol version right now instead of TLSv1.2. The number of pages using TLSv1.3 has increased approximately 20% since [last year](http://../2020/security#protocol-versions) when we saw 43.23% and 45.37% respectively.
 
 
-### Cipher Suites
+### Cipher suites
 
 Cipher suites are a set of algorithms that are used with TLS to help make secure connections. Modern [Galois/Counter Mode](https://en.wikipedia.org/wiki/Galois/Counter_Mode) (GCM) cipher modes are considered to be much more secure compared to the older [Cipher Block Chaining Mode](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_block_chaining_(CBC)) (CBC) ciphers which have shown to be [vulnerable to padding attacks](https://blog.qualys.com/product-tech/2019/04/22/zombie-poodle-and-goldendoodle-vulnerabilities). While TLSv1.2 did support use of both newer and older cipher suites, [TLSv1.3 doesn't support any of the older cipher suites](https://datatracker.ietf.org/doc/html/rfc8446#page-133) anymore. This makes upgrading to TLSv1.3 even more important for a secure connection.
 
@@ -331,7 +331,7 @@ Cookie prefixes `__Host-` and `__Secure-` help mitigate attacks to override the 
 Though both the prefixes are used in a significantly lower percentage of cookies, `__Secure-` is more commonly found in first-party cookies due to its lower prerequisites.
 
 
-### Cookie Age
+### Cookie age
 
 Permanent cookies are deleted at a date specified by the `Expires` attribute, or after a period of time specified by the `Max-Age` attribute. If both `Expires` and `Max-Age` are set, `Max-Age` has precedence.
 
