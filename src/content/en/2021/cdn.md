@@ -133,7 +133,7 @@ While we observed CDN adoption across different types of content, we will look a
   )
 }}
 
-Ranking the domains based on their popularity (at the time of this writing sourced from Google CRUX data) in the web and then checking for their CDN usage, the top 1000 websites contribute to the highest usage of CDN. The top websites include domains owned by names like Google and Amazon who contribute to much of the internet traffic we see today, so it's no surprise that these names make it to the list of "Top CDN Providers" in the [next section](#top-CDN-providers). This also backs the fact about the benefits CDNs bring to the table when operating at scale and having the ability to scale further if needed.
+Ranking the websites based on their popularity (sourced from Google's [Chrome UX Report](./methodology#chrome-ux-report)) in the web and then checking for their CDN usage, the top 1,000 contribute to the highest usage of CDN. The top websites are owned by companies like Google and Amazon, who contribute to much of the internet traffic we see today, so it's no surprise that these names make it to the list of [top CDN providers](#top-CDN-providers) in the next section. This also backs the fact about the benefits CDNs bring to the table when operating at scale and having the ability to scale further if needed.
 
 {{ figure_markup(
   caption="Percent of top 1000 websites using a CDN.",
