@@ -7,7 +7,7 @@ reviewers: [jsoverson, carlopi, kripken]
 analysts: [RReverser]
 editors: []
 translators: []
-RReverser_bio:
+RReverser_bio: Ingvar is a passionate D2D (developer-to-developer) programmer who's always working on improving developer experience through better tools, specs and documentation. He currently works as a WebAssembly Developer Advocate on the Google Chrome team.
 results: https://docs.google.com/spreadsheets/d/1IMa2SbdQgshb4pGWF1KOh9s4zMtLbRymWZGYjdaatXY/
 featured_quote: TODO
 featured_stat_1: TODO
