@@ -15,7 +15,7 @@ featured_quote: Our analysis clearly shows that the situation of web security co
 featured_stat_1: 91.6%
 featured_stat_label_1: Requests that use HTTPS on mobile.
 featured_stat_2: 22.21%
-featured_stat_label_2: Top-1000 sites that use CSP.
+featured_stat_label_2: Percentage of top-1000 sites that use CSP.
 featured_stat_3: 11%
 featured_stat_label_3: Websites on desktop that use a mechanism to fight malicious bots
 ---
@@ -72,7 +72,7 @@ As part of this effort to improve security and reliability by adopting modern ve
   )
 }}
 
-60.36% of pages in desktop and 62.14% of pages in mobile are now using TLSv1.3, making it the majority protocol version right now instead of TLSv1.2. The number of pages using TLSv1.3 has increased approximately 20% since [last year](http://../2020/security#protocol-versions) when we saw 43.23% and 45.37% respectively.
+60.36% of pages in desktop and 62.14% of pages in mobile are now using TLSv1.3, making it the majority protocol version right now instead of TLSv1.2. The number of pages using TLSv1.3 has increased approximately 20% since [last year](../2020/security#protocol-versions) when we saw 43.23% and 45.37% respectively.
 
 
 ### Cipher suites
@@ -493,7 +493,9 @@ Web developers can add `integrity` attribute to `<script>` and `<link>` tags whi
 
 ```html
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
 
 ```
 
@@ -593,52 +595,52 @@ This API specification was previously known as Feature Policy. Since then, there
     </thead>
     <tbody>
       <tr>
-        <td>encrypted-media</td>
+        <td>`encrypted-media`</td>
         <td class="numeric">46.81%</td>
         <td class="numeric">44.97%</td>
       </tr>
       <tr>
-        <td>conversion-measurement</td>
+        <td>`conversion-measurement`</td>
         <td class="numeric">39.48%</td>
         <td class="numeric">36.13%</td>
       </tr>
       <tr>
-        <td>autoplay</td>
+        <td>`autoplay`</td>
         <td class="numeric">30.46%</td>
         <td class="numeric">30.07%</td>
       </tr>
       <tr>
-        <td>picture-in-picture</td>
+        <td>`picture-in-picture`</td>
         <td class="numeric">17.77%</td>
         <td class="numeric">17.20%</td>
       </tr>
       <tr>
-        <td>accelerometer</td>
+        <td>`accelerometer`</td>
         <td class="numeric">16.40%</td>
         <td class="numeric">15.96%</td>
       </tr>
       <tr>
-        <td>gyroscope</td>
+        <td>`gyroscope`</td>
         <td class="numeric">16.39%</td>
         <td class="numeric">15.96%</td>
       </tr>
       <tr>
-        <td>clipboard-write</td>
+        <td>`clipboard-write`</td>
         <td class="numeric">11.21%</td>
         <td class="numeric">10.85%</td>
       </tr>
       <tr>
-        <td>microphone</td>
+        <td>`microphone`</td>
         <td class="numeric">4.27%</td>
         <td class="numeric">4.46%</td>
       </tr>
       <tr>
-        <td>camera</td>
+        <td>`camera`</td>
         <td class="numeric">4.21%</td>
         <td class="numeric">4.41%</td>
       </tr>
       <tr>
-        <td>geolocation</td>
+        <td>`geolocation`</td>
         <td class="numeric">3.95%</td>
         <td class="numeric">4.27%</td>
       </tr>
@@ -701,7 +703,7 @@ In addition to sending a response header, some security features can be enabled 
 
 {{ figure_markup(
   caption="Number of sites with `X-Frame-Options` in the `<meta>` tag, which is actually ignored by the browser.",
-  content="3410",
+  content="3,410",
   classes="big-number",
   sheets_gid="1578698638"
 )
@@ -779,52 +781,52 @@ Security has become one of the central issues in web development. Since 2017, we
     </thead>
     <tbody>
       <tr>
-        <td>CryptoGetRandomValues</td>
+        <td>`CryptoGetRandomValues`</td>
         <td class="numeric">70.41%</td>
         <td class="numeric">67.42%</td>
       </tr>
       <tr>
-        <td>SubtleCryptoDigest</td>
+        <td>`SubtleCryptoDigest`</td>
         <td class="numeric">0.40%</td>
         <td class="numeric">0.45%</td>
       </tr>
       <tr>
-        <td>SubtleCryptoEncrypt</td>
+        <td>`SubtleCryptoEncrypt`</td>
         <td class="numeric">0.38%</td>
         <td class="numeric">0.26%</td>
       </tr>
       <tr>
-        <td>CryptoAlgorithmSha256</td>
+        <td>`CryptoAlgorithmSha256`</td>
         <td class="numeric">0.30%</td>
         <td class="numeric">0.30%</td>
       </tr>
       <tr>
-        <td>SubtleCryptoGenerateKey</td>
+        <td>`SubtleCryptoGenerateKey`</td>
         <td class="numeric">0.28%</td>
         <td class="numeric">0.23%</td>
       </tr>
       <tr>
-        <td>CryptoAlgorithmAesGcm</td>
+        <td>`CryptoAlgorithmAesGcm`</td>
         <td class="numeric">0.23%</td>
         <td class="numeric">0.19%</td>
       </tr>
       <tr>
-        <td>SubtleCryptoImportKey</td>
+        <td>`SubtleCryptoImportKey`</td>
         <td class="numeric">0.20%</td>
         <td class="numeric">0.16%</td>
       </tr>
       <tr>
-        <td>CryptoAlgorithmAesCtr</td>
+        <td>`CryptoAlgorithmAesCtr`</td>
         <td class="numeric">0.10%</td>
         <td class="numeric">0.03%</td>
       </tr>
       <tr>
-        <td>CryptoAlgorithmSha1</td>
+        <td>`CryptoAlgorithmSha1`</td>
         <td class="numeric">0.08%</td>
         <td class="numeric">0.06%</td>
       </tr>
       <tr>
-        <td>CryptoAlgorithmSha384</td>
+        <td>`CryptoAlgorithmSha384`</td>
         <td class="numeric">0.08%</td>
         <td class="numeric">0.18%</td>
       </tr>
@@ -944,7 +946,7 @@ There are many different influences that might cause a website to invest more in
   sql_file="feature_adoption_by_country.sql"
 ) }}
 
-Although we can see that the adoption of HTTPS-by-default is generally increasing, there is still a discrepancy in adoption rate between sites depending on the country most of the visitors originate from. We find that [compared to last year](../../2020/security#country-of-a-websites-visitors), the Netherlands has now made it into the top-5, which means that the Dutch are relatively more protected against transport layer attacks: 95.14% of the sites frequently visited by people in the Netherlands has HTTPS enabled (compared to 92.99% last year). In fact, not only the Netherlands improved in the adoption of HTTPS; we find that virtually every country improved in that regard. It is also very encouraging to see that several of the countries that performed worst last year, made a big leap. For instance, 13.35% more sites visited by people from Iran (the strongest riser with regards to HTTPS adoption) are now HTTPS-enabled compared to last year (from 74.33% to 84.26%). Although the gap between the best-performing and least-performing countries is becoming smaller, there are still significant efforts to be made.
+Although we can see that the adoption of HTTPS-by-default is generally increasing, there is still a discrepancy in adoption rate between sites depending on the country most of the visitors originate from. We find that [compared to last year](../2020/security#country-of-a-websites-visitors), the Netherlands has now made it into the top-5, which means that the Dutch are relatively more protected against transport layer attacks: 95.14% of the sites frequently visited by people in the Netherlands has HTTPS enabled (compared to 92.99% last year). In fact, not only the Netherlands improved in the adoption of HTTPS; we find that virtually every country improved in that regard. It is also very encouraging to see that several of the countries that performed worst last year, made a big leap. For instance, 13.35% more sites visited by people from Iran (the strongest riser with regards to HTTPS adoption) are now HTTPS-enabled compared to last year (from 74.33% to 84.26%). Although the gap between the best-performing and least-performing countries is becoming smaller, there are still significant efforts to be made.
 
 {{ figure_markup(
   image="security-adoption-of-csp-and-xfo-per-country.png",
@@ -1134,7 +1136,7 @@ We now turn to cryptominer market share in the following figure.
   sql_file="cryptominer_share.sql"
 ) }}
 
-We see that [CoinHive](https://de.wikipedia.org/wiki/Coinhive) community has switched to CoinImp. Therefore, CoinImp has clearly become the market leader (90% share). Even though Coinhive has been discontinued, we still see some websites that use CoinHive scripts (Desktop: 5.7%, mobile: 9%).
+We see that [CoinHive](https://en.wikipedia.org/wiki/Coinhive) community has switched to CoinImp. Therefore, CoinImp has clearly become the market leader (90% share). Even though Coinhive has been discontinued, we still see some websites that use CoinHive scripts (Desktop: 5.7%, mobile: 9%).
 
 Our results suggest that cryptojacking is still a serious attack vector, and necessary measures should be used for it.
 
@@ -1143,16 +1145,16 @@ Note that not all of these websites are infected. Website operators may also dep
 Please also note that our results may not show the actual state of the websites infected with cryptojacking. Since we run our crawler once a month, not all websites that run cryptominer can be discovered. This is the case, for example, if a website remains infected for only X days and not on the day our crawler ran.
 
 
-## .well-known URLs 
+## `.well-known` URLs 
 
 
-### security.txt
+### `security.txt`
 
-[security.txt](https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt-12) is a well-known file format for websites to provide a standard for vulnerability reporting. Website providers can provide contact details, PGP key, policy, and other information in this file. White hat hackers can then use this information to conduct security analyses on these websites or report a vulnerability. The following figure shows that 5% of the websites already use this standard - although it is a very young standard.
+[`security.txt`](https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt-12) is a well-known file format for websites to provide a standard for vulnerability reporting. Website providers can provide contact details, PGP key, policy, and other information in this file. White hat hackers can then use this information to conduct security analyses on these websites or report a vulnerability. The following figure shows that 5% of the websites already use this standard - although it is a very young standard.
 
 {{ figure_markup(
   image="security-usage-of-well-known-security.png",
-  caption="Use of security.txt endpoint.",
+  caption="Use of `security.txt` endpoint.",
   description="Bar chart showing 4.93% of websites in desktop and 4.89% of websites in mobile have security.txt endpoint.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1958147881&format=interactive",
   sheets_gid="399976976",
@@ -1177,10 +1179,10 @@ And the following figure shows that the policy is the most used property of util
 
 Our analysis shows very clearly that the situation of web security concerning the provider side is improving compared to previous years. For example, we see that the use of HTTPS has increased by almost 10% in the last 12 months. We also find an increase in the protection of cookie objects or the use of security headers.
 
-These increases indicate a safer web environment, but they do not mean our web is secure enough today. We still have to improve our situation. For example, we believe that the Web community should value security headers more. These are very effective extensions to protect web environments and web users from possible attacks. The bot protection mechanisms can also be adopted more to protect the platforms from malicious bots. Furthermore, our analysis from [last year](https://almanac.httparchive.org/en/2020/security#software-update-practices) and another study on HTTPArchive about the [update behavior of websites](https://www.researchgate.net/publication/349027860_Our_inSecure_Web_Understanding_Update_Behavior_of_Websites_and_Its_Impact_on_Security) showed that the website components are not diligently maintained, which increases the attack surface on web environments quite a bit.
+These increases indicate a safer web environment, but they do not mean our web is secure enough today. We still have to improve our situation. For example, we believe that the Web community should value security headers more. These are very effective extensions to protect web environments and web users from possible attacks. The bot protection mechanisms can also be adopted more to protect the platforms from malicious bots. Furthermore, our analysis from [last year](../2020/security#software-update-practices) and another study on HTTPArchive about the [update behavior of websites](https://www.researchgate.net/publication/349027860_Our_inSecure_Web_Understanding_Update_Behavior_of_Websites_and_Its_Impact_on_Security) showed that the website components are not diligently maintained, which increases the attack surface on web environments quite a bit.
 
 We should not forget that attackers are also working diligently to develop new techniques to bypass the security mechanisms we adopt.
 
-With our analysis, we have tried to crystallize an overview of the security of our web. As extensive as our investigation is, our [Methodology](http://./methodology) only allows us to see a subset of all aspects of modern web security. For example, we do not know what additional measures a site may employ to mitigate or prevent attacks such as Cross-Site-Request-Forgery (CSRF) or certain types of Cross-Site-Scripting (XSS). As such, the picture portrayed in this chapter is incomplete yet a solid directional signal of the status of web security today.
+With our analysis, we have tried to crystallize an overview of the security of our web. As extensive as our investigation is, our [Methodology](./methodology) only allows us to see a subset of all aspects of modern web security. For example, we do not know what additional measures a site may employ to mitigate or prevent attacks such as Cross-Site-Request-Forgery (CSRF) or certain types of Cross-Site-Scripting (XSS). As such, the picture portrayed in this chapter is incomplete yet a solid directional signal of the status of web security today.
 
 The takeaway from our analysis  is that we, the Web community, must  continue to invest more interest and resources in making our web environments much safer - in the hope of better and safer tomorrows for all.
