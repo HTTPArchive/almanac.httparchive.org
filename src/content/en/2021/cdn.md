@@ -145,7 +145,7 @@ Ranking the domains based on their popularity (at the time of this writing sourc
 }}
 
 
-The CDN adoption rate falls below 50% when we look at the top 100,000 websites but the rate of reduction slows down beyond this. For the full data set (which is 6.2 million sites on desktop and 7.5 million on mobile), 27% of these websites use CDN. When you translate that percentage into real number, that's 2.7 million websites using CDN! That is not a small number when you look at it this way.
+The CDN adoption rate falls below 50% when we look at the top 100,000 websites but the rate of reduction slows down beyond this. For the full data set (which is 6.2 million sites on desktop and 7.5 million on mobile), 27% of these websites use CDN. When you translate that percentage into real number, that's 2.0 million mobile websites using CDN! It's not such a small number when you look at it this way.
 
 {# TODO: this might be a good spot to put a big number figure if you want to highlight that number #}
 
