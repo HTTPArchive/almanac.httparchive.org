@@ -131,7 +131,9 @@ WITH imgs AS (
   FROM
     `httparchive.pages.2021_07_01_*`,
     UNNEST(getSrcsetInfo(JSON_QUERY(JSON_VALUE(payload, '$._responsive_images' ), '$.responsive-images')))
-), percentiles AS (
+),
+
+percentiles AS (
   SELECT
     client,
     APPROX_QUANTILES(approximateResourceWidth, 1000) AS resourceWidthPercentiles,
