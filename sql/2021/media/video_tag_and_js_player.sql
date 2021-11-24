@@ -23,7 +23,7 @@ SELECT
   client,
   COUNTIF(video_nodes) / COUNT(0) AS video_tag_pct,
   COUNTIF(player IS NOT NULL) / COUNT(0) AS js_video_player_pct,
-  COUNTIF(video_nodes AND player IS NOT NULL) / COUNT(0) both_video_tag_js_player_pct
+  COUNTIF(video_nodes AND player IS NOT NULL) / COUNT(0) AS both_video_tag_js_player_pct
 FROM (
   SELECT
     client,

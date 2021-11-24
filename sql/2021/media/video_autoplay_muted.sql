@@ -37,8 +37,8 @@ SELECT
   SAFE_DIVIDE(COUNTIF(media_info.num_video_nodes > 0), COUNT(0)) AS pages_with_video_nodes_pct,
   SAFE_DIVIDE(COUNTIF('autoplay' IN UNNEST(media_info.video_nodes_attributes)), COUNTIF(media_info.num_video_nodes > 0)) AS pages_with_video_autoplay_pct,
   SAFE_DIVIDE(COUNTIF('muted' IN UNNEST(media_info.video_nodes_attributes)), COUNTIF(media_info.num_video_nodes > 0)) AS pages_with_video_muted_pct,
-  SAFE_DIVIDE(COUNTIF('autoplay' IN UNNEST(media_info.video_nodes_attributes)
-      AND 'muted' IN UNNEST(media_info.video_nodes_attributes)), COUNTIF(media_info.num_video_nodes > 0)) AS pages_with_video_autoplay_muted_pct
+  SAFE_DIVIDE(COUNTIF('autoplay' IN UNNEST(media_info.video_nodes_attributes) AND
+      'muted' IN UNNEST(media_info.video_nodes_attributes)), COUNTIF(media_info.num_video_nodes > 0)) AS pages_with_video_autoplay_muted_pct
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
