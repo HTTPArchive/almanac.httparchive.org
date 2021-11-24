@@ -45,7 +45,7 @@ Currently, we see that 92.3% of total requests for websites on desktop and 91.3%
 
 {{ figure_markup(
   image="security-https-usage-by-site.png",
-  caption="HTTPS usage for sites",
+  caption="HTTPS usage for sites.",
   description="Bar chart showing 84.29% of desktop sites are using HTTPS, with the remaining 15.71% using HTTP, while 81.17% of mobile sites are using HTTPS and the remaining 18.83% using HTTP.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=111383569&format=interactive",
   sheets_gid="8055510",
@@ -64,7 +64,7 @@ As part of this effort to improve security and reliability by adopting modern ve
 
 {{ figure_markup(
   image="security-tls-version-by-site.png",
-  caption="TLS versions usage for sites",
+  caption="TLS versions usage for sites.",
   description="Bar chart showing that on desktop 60.36% of sites use TLSv1.3, while 39.59% use TLSv1.2. On mobile the figures are 62.14% and 37.80% respectively. TLSv1.0, TLSv1.1 barely register though there is a very small amount of QUIC usage (0.05% on desktop and 0.06% on mobile).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1868638312&format=interactive",
   sheets_gid="1012588329",
@@ -92,7 +92,7 @@ Almost all modern cipher suites support [forward secrecy](https://en.wikipedia.o
 
 {{ figure_markup(
   image="security-distribution-of-cipher-suites.png",
-  caption="Distribution of cipher suites",
+  caption="Distribution of cipher suites.",
   description="Bar chart showing the cipher suites used by device, with AES_128_GCM being the most common and used by 79.43% of desktop and 78.92% of mobile sites, AES_256_GCM is used by 18.58% of desktop and 18.95% of mobile sites, AES_256_CBC used by 1.10% of desktop sites and 1.21% of mobile sites, CHACHA20_POLY1305 is used by 0.63% and 0.69% of sites respectively, AES_128_CBC is used by 0.26% and 0.24% respectively, and 3DES_EDE_CBC is used approximately by 0.0% of desktop and mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=47980777&format=interactive",
   sheets_gid="172961549",
@@ -202,7 +202,7 @@ Cloudflare continues to be in second position with its similarly free certificat
 [HTTP Strict Transport Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) (HSTS) is a response header that tells the browser that it should always use secure HTTPS connections to communicate with the website. 
 
 {{ figure_markup(
-  caption="The percentage of requests that have HSTS header on mobile",
+  caption="The percentage of requests that have HSTS header on mobile.",
   content="22.23%",
   classes="big-number",
   sheets_gid="1612539726"
@@ -308,8 +308,8 @@ Cookie prefixes `__Host-` and `__Secure-` help mitigate attacks to override the 
     <thead>
       <tr>
         <th>Type of Desktop cookies</th>
-        <th>__Secure</th>
-        <th>__Host</th>
+        <th>`__Secure`</th>
+        <th>`__Host`</th>
       </tr>
     </thead>
     <tbody>
@@ -681,7 +681,7 @@ Web applications are pestered by numerous vulnerabilities. Fortunately, there ex
 
 {{ figure_markup(
   image="security-adoption-of-security-headers.png",
-  caption="Adoption of security headers for mobile pages",
+  caption="Adoption of security headers for mobile pages.",
   description="Bar chart showing the prevalence of different security headers, for mobile pages in 2021 and 2020. `X-Content-Type-Options` was 30% in 2020 and is 37% in 2021, `X-Frame-Options` was 27% in 2020 and is 29% in 2021, `Strict-Transport-Security` was 17% in 2020 and is 23% in 2021, `X-XSS-Protection` was 18% in 2020 and is 20% in 2021, `Expect-CT` and `Content-Security-Policy` were 11% in 2020 and are 13% in 2021, `Report-To` was 3% in 2020 and is 12% in 2021, `Referrer-Policy` was 7% in 2020 and is 10% in 2021, `Feature-Policy` was 0.5% in 2020 and is 0.6% in 2021.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1380470049&format=interactive",
   sheets_gid="285299680",
@@ -830,7 +830,7 @@ Security has become one of the central issues in web development. Since 2017, we
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Top used cryptography APIs", sheets_gid="749853824", sql_file="web_cryptography_api.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Top used cryptography APIs.", sheets_gid="749853824", sql_file="web_cryptography_api.sql") }}</figcaption>
 </figure>
 
 
@@ -920,7 +920,7 @@ Many cyberattacks are based on automated bot attacks. Interest in it seems to ha
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Usage of bot protection services by provider", sheets_gid="798151334", sql_file="bot_detection.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Usage of bot protection services by provider.", sheets_gid="798151334", sql_file="bot_detection.sql") }}</figcaption>
 </figure>
 
 Our analysis shows that around 11% of websites use a mechanism to fight malicious bots. Last year that number was 10%, so we record an increase of 10% compared to the previous year. This year, too, we identified more bot protection mechanisms for desktop versions than mobile versions (11% vs. 10%)
@@ -937,7 +937,7 @@ There are many different influences that might cause a website to invest more in
 
 {{ figure_markup(
   image="security-adoption-of-https-per-country.png",
-  caption="Adoption of HTTPS per country",
+  caption="Adoption of HTTPS per country.",
   description="Bar chart showing percentage of sites with HTTPS enabled, for sites related to different countries. Switzerland, New Zealand, Ireland, Australia, Netherlands, Austria, Belgium, United Kingdom, South Africa and Sweden are the top top in order at 97% to 94%. At the other end Malaysia, Turkey, Iran, Brazil, Indonesia, Vietnam, Thailand, Taiwan, South Korea and Japan are at 76% to 72%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1261041561&format=interactive",
   sheets_gid="269550966",
@@ -1075,7 +1075,7 @@ An important aspect to explore in the context of the adoption of security featur
 
 {{ figure_markup(
   image="security-prevalence-of-headers-in-sites-by-rank.png",
-  caption="Prevalence of security headers set in a first-party context by rank",
+  caption="Prevalence of security headers set in a first-party context by rank.",
   description="Bar chart showing in top 1,000 sites, 55% have XFO, 51% have HSTS and 22% have CSP headers. In top 10,000, 48% have XFO, 41% have HSTS and 18% have CSP headers. In top 100,000, 44% have XFO, 35% have HSTS and 14% have CSP headers. In top 1.000,000, 39% have XFO, 28% have HSTS and 13% have CSP headers. Among all sites, 29% have XFO, 23% have HSTS and 13% have CSP.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1353621848&format=interactive",
   sheets_gid="1156119511",
@@ -1152,7 +1152,7 @@ Please also note that our results may not show the actual state of the websites 
 
 {{ figure_markup(
   image="security-usage-of-well-known-security.png",
-  caption="Use of security.txt endpoint",
+  caption="Use of security.txt endpoint.",
   description="Bar chart showing 4.93% of websites in desktop and 4.89% of websites in mobile have security.txt endpoint.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1958147881&format=interactive",
   sheets_gid="399976976",
@@ -1164,7 +1164,7 @@ And the following figure shows that the policy is the most used property of util
 
 {{ figure_markup(
   image="security-usage-of-properties-in-well-known-security.png",
-  caption="Use of security.txt properties",
+  caption="Use of security.txt properties.",
   description="Bar chart showing use of different properties in security.txt. `signed` is 0.37% in desktop and 0.28% in mobile, Canonical is 2.75% in desktop and 2.72% in mobile, Encryption is 2.55% in desktop and 2.13% in mobile, Expires is 0.93% in desktop and 0.70% in mobile, Policy is 6.54$ in desktop and 6.39% in mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=644563241&format=interactive",
   sheets_gid="399976976",
