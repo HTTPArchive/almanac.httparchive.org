@@ -8,7 +8,7 @@ analysts: [paulcalvano]
 editors: [jzyang, shantsis]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1DL7Pn1vbBwYmQZ5JPAjD69oCOvUidbuoNvdrw%2D%2Dj00U/
-Navaneeth-akam_bio: Navaneeth Krishna is a Web Performance Architect at a leading CDN provider. With over a decade of experience in the CDN industry, he believes the CDN will be an integral part to the growth of internet in the years to come and it will be a space to watch out. You can find him tweeting <a href="https://twitter.com/Navanee55755217">@Navanee55755217</a>.
+Navaneeth-akam_bio: Navaneeth Krishna is a Web Performance Architect at a leading CDN provider. With over a decade of experience in the CDN industry, he believes the CDN will be an integral part to the growth of internet in the years to come and it will be a space to watch out for. You can find him tweeting <a href="https://twitter.com/Navanee55755217">@Navanee55755217</a>.
 featured_quote: CDNs have been in existence for over two decades. With the exponential rise in internet traffic, contributed by online video consumption, online shopping, and increased video conferencing due to COVID-19, CDNs are required more than ever before.
 featured_stat_1: 62.33%
 featured_stat_label_1: Of Top 1000 popular sites use CDN
@@ -134,6 +134,16 @@ While we observed CDN adoption across different types of content, we will look a
 }}
 
 Ranking the domains based on their popularity (at the time of this writing sourced from Google CRUX data) in the web and then checking for their CDN usage, the top 1000 websites contribute to the highest usage of CDN. The top websites include domains owned by names like Google and Amazon who contribute to much of the internet traffic we see today, so it's no surprise that these names make it to the list of "Top CDN Providers" in the [next section](#top-CDN-providers). This also backs the fact about the benefits CDNs bring to the table when operating at scale and having the ability to scale further if needed.
+
+{{ figure_markup(
+  caption="Sites using CDN in top 10 million sites",
+  content="2.7 Million",
+  classes="big-number",
+  sheets_gid="414030881",
+  sql_file="CDN Usage by Site Popularity.sql"
+)
+}}
+
 
 The CDN adoption rate falls below 50% when we look at the top 100,000 websites but the rate of reduction slows down beyond this. For the full data set (which is 6.2 million sites on desktop and 7.5 million on mobile), 27% of these websites use CDN. When you translate that percentage into real number, that's 2.7 million websites using CDN! That is not a small number when you look at it this way.
 
