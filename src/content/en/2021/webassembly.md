@@ -10,12 +10,12 @@ translators: []
 RReverser_bio: Ingvar is a passionate D2D (developer-to-developer) programmer who's always working on improving developer experience through better tools, specs and documentation. He currently works as a WebAssembly Developer Advocate on the Google Chrome team.
 results: https://docs.google.com/spreadsheets/d/1IMa2SbdQgshb4pGWF1KOh9s4zMtLbRymWZGYjdaatXY/
 featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_stat_1: 44 MB
+featured_stat_label_1: Download size of the largest WebAssembly response in the dataset.
+featured_stat_2: 40.2%
+featured_stat_label_2: Percent of uncompressed WebAssembly responses on mobile.
+featured_stat_3: 55.2%
+featured_stat_label_3: Percent of WebAssembly files loaded from a 3rd-party origin on desktop.
 unedited: true
 ---
 
@@ -156,7 +156,7 @@ Let's check sizes of raw response bodies as sent by servers instead:
 The median is at around 290 KB, meaning that half of usages download below 290 KB, and half are larger. 90% of all Wasm responses stay below 2.6 MB on desktop and 1.4 MB on mobile.
 
 {{ figure_markup(
-  caption="Largest WASM response downloaded over desktop.",
+  caption="Largest Wasm response downloaded on desktop.",
   content="44 MB",
   classes="big-number",
   sheets_gid="1401232418",
