@@ -173,8 +173,6 @@ Whilst it can be hard to predict if your mobile traffic percentage is expected, 
 While mobile web is highly used, these experience typically have less processing power and slower internet interconnectivity.  Many technologies have emerged to mitigate these limitations.  These include Client Hints and APIs that identify the connection type and serve assets best suited for the connection.
 
 In this section we will also look at overall app usage for the mobile web and how the programming languages, content management systems, and web servers compare to desktop experiences.
-{# TODO Can we add an intro here. We don't like so-called "stacked" headings #}
-{# TODO (Editor) Intro added #}
 
 ### Client Hints
 
@@ -338,55 +336,7 @@ Of the top five mobile web technologies, adoption rates for three were higher on
 
 In 2021, Google added the <a href="https://developers.google.com/search/docs/advanced/experience/page-experience">Page Experience Ranking Signal</a> to its algorithm.  This ranking signal is specific to search engine results pages served on mobile devices and uses aggregated data from real user page loads to measurement performance.
 
-{# TODO Does this tell us anything? Why do we think GA is higher on desktop? Or is it just noise? #}
-
 JavaScript library JQuery is the dominant library of the mobile web, present in 84.38% of mobile page loads. Google is the dominant provider, holding three of the top five spots.
-
-#### Programming languages
-
-{# TODO I'm not sure about this section. Should it be called "Server-side programming language"? Also is it worth adding a caveat as to how difficult it could be to detect this. I think thse stats are prone to error. Also not much detail about mobile web in here anyway. Should we just drop it? #}
-
-The most prominent programming language on the mobile web is PHP with 50.46% of tested sites using the language. There is a large gap between PHP and the next most prevalent, Java, which appeared on 3.95% of sites.
-
-<figure>
-  <table>
-    <thead>
-      <tr>
-        <th scope="col">Language</th>
-        <th scope="col">Percentage of Mobile Page Loads</th>
-        <th scope="col">Percentage of Desktop Page Loads</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>PHP</td>
-        <td class="numeric">50.46%</td>
-        <td class="numeric">50.08%</td>
-      </tr>
-      <tr>
-        <td>Java</td>
-        <td class="numeric">3.95%</td>
-        <td class="numeric">2.75%</td>
-      </tr>
-      <tr>
-        <td>Python</td>
-        <td class="numeric">3.57%</td>
-        <td class="numeric">2.18%</td>
-      </tr>
-      <tr>
-        <td>Node.js</td>
-        <td class="numeric">1.68%</td>
-        <td class="numeric">1.87%</td>
-      </tr>
-      <tr>
-        <td>Ruby</td>
-        <td class="numeric">1.12%</td>
-        <td class="numeric">1.53%</td>
-      </tr>
-    </tbody>
-  </table>
-  <figcaption>{{ figure_link(caption="Prominent Mobile vs. Desktop Programming Languages.", sheets_gid="1172584192", sql_file="most_used_tech_by_domain_rank.sql") }}</figcaption>
-</figure>
 
 #### Content Management Systems
 
@@ -433,12 +383,6 @@ Content management systems allow site owners to publish, update, and control con
 </figure>
 
 WordPress, an open-source CMS written in PHP, was the dominant CMS in 2021. The technology appeared on 33.57% of sites.
-
-#### Web servers
-
-The most prevalent web servers powering the mobile web in 2021 were Apache at 30.53% and Nginx at 29.66%.
-
-{# TODO I really struggle to understand the relevance here. Does this matter in terms of the mobile web? #}
 
 #### Comparing desktop technology adoption rates
 
@@ -687,9 +631,7 @@ Email collection is often a key micro conversion in the user journey so capturin
 
 ##### Search input
 
-Site search is a powerful tool in navigating users to their desired content. Search inputs are text fields functionally identical to text. The main difference between search and text input fields is how they are handled by the browser and accessibility tools.
-
-{# TODO Might be worth dropping the "accessibility tools" bit as some in the a11y community think this is a bit pointless. Post from well-regarded member of this community: https://adrianroselli.com/2019/07/ignore-typesearch.html #}
+Site search is a powerful tool in navigating users to their desired content. Search inputs are text fields functionally identical to text. The main difference between search and text input fields is how they are handled by the browser.
 
 Use of the search input type can trigger a cross icon which allows users to quickly clear existing query text. Many modern browsers also store search queries across domains. When the search type is denoted, stored queries can be used to autocomplete the field.
 
@@ -938,7 +880,9 @@ Looking at the HTTP Archive's <a hreflang="en" href="https://httparchive.org/rep
   )
 }}
 
-{# TODO Rick discovered why btw. Consider quoting that?: https://twitter.com/rick_viscomi/status/1344380340153016321?s=20 However it's not all upside with this attribute: https://web.dev/lcp-lazy-loading/ #}
+A driving factor in this growth can be attributed to the prevalence of WordPress (source: <a hreflang="en" href="https://twitter.com/rick_viscomi/status/1344380340153016321?s=20">Rick Viscomi on Twitter</a>). WordPress added <a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">support for native lazy-loading in version 5.5</a> which rolled out to the public on August 11th, 2020. 
+
+It's also worth mentioning that incorrectly used, <a hreflang="https://web.dev/lcp-lazy-loading/">Lazy Loading LCP Candidates</a> can harm performance. Making sure to apply `loading="lazy"` only to images below the fold is best practice.
 
 #### Image conclusions
 
