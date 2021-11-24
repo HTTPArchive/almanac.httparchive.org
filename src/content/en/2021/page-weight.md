@@ -29,7 +29,7 @@ All seems well, if you're fortunate enough to own a high end smartphone, desktop
 
 While there is debate as to how much energy is used to power data centers and the devices they serve, there is a general consensus that we can help reduce overall energy demands by keeping our file payloads smaller as part of keeping payload transmission faster and more efficient. To illustrate the point, as part of a larger effort emphasizing user experience on mobile devices, Google recently implemented it's Core Web Vitals program that penalize web site's search rankings for those that fail to achieve best practices will. And one of their metrics for assessing success or failure is page weight. If you are interested, you can test your site using Google [PageSpeed](https://developers.google.com/speed/pagespeed/insights/) and Google [Measure](https://web.dev/measure/). Both provide valuable insights into how to solve performance and user experience problems caused by heavy web pages.
 
-In order to understand and find opportunities to keep web pages lighter and faster loading, it's instructive to examine what page weight actually is. So let's delve deeper.
+To understand and find opportunities to keep web pages lighter and faster, it's instructive to examine what page weight actually is. So let's delve deeper.
 
 ## What is page weight?
 
