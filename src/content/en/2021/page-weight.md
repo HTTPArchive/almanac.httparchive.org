@@ -21,7 +21,7 @@ unedited: true
 
 ## Introduction
 
-Unless you're a web performance junkie like me the weight of a web page is about as exciting as licking stamps. But, I'm going to try my best to convince you as to why page weight is not only important but arguably **the** most important factor effecting creators, hosting providers, and consumers. To that end, we'll use real data to show how the weight of a page influences the performance of the website or web application, how page weight can impact user experience, and some ways we can reduce the weight of our web pages.
+Unless you're a web performance junkie like me, the weight of a web page is about as exciting as licking stamps. But, I'm going to try my best to convince you as to why page weight is not only important but arguably **the** most important factor affecting creators, hosting providers, and consumers. To that end, we'll use real data to show how the weight of a page influences the performance of the website or web application, how page weight can impact user experience, and some ways we can reduce the weight of our web pages.
 
 In just the past decade, [average web page weight](https://httparchive.org/reports/page-weight) has grown a whopping 356 percent, from an average of about 484 kilobytes to 2,205 kilobytes. That increase can be explained as a function of supply and demand. Faster computer processors, data transmission, and how data is stored and made available have all advanced to keep up with increased use of images, video, audio, fonts, data collection and processing, and connected services like analytics, monitoring, and alerting functionality for web sites and web applications.
 
