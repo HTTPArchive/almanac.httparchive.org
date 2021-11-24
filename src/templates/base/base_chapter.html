@@ -155,7 +155,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
     <a href="#reactions" class="anchor-link">{{ self.reactions() }}</a>
   </h2>
   <div class="reactions" data-source="{{ self.source() }}">
-    <div class="reaction-tabs" role="tablist" aria-label="Reaction Tabs">
+    <div class="reaction-tabs" role="tablist" aria-label="{{ self.reactions() }}">
       <button
         role="tab"
         aria-selected="true"
@@ -412,7 +412,6 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
         <div id="cta-container">
           <a class="alt btn chapter-cta comment-cta" href="#reactions">
             <svg width="22" height="22" role="img" aria-hidden="true">
-              <title id="discuss-this-chapter-cta">{{ self.discuss_this_chapter() }}:</title>
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment-logo"></use>
             </svg>
             {{ self.reactions() }}

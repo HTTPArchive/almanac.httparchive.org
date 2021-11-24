@@ -2,8 +2,8 @@
 
 // Gets the webmentions json data from current URL
 async function getWebmentions(targetURL) {
-  const apiURL = `https://webmention.io/api/mentions.jf2?perPage=500&target=${targetURL}`;
-  let mentions = []
+  const apiURL = `https://webmention.io/api/mentions.jf2?perPage=500&target=${targetURL}&sort-dir=up`;
+  let mentions = [];
   try {
     const response = await window.fetch(apiURL);
     if (response.status >= 200 && response.status < 300) {
@@ -23,7 +23,7 @@ async function getWebmentions(targetURL) {
 // Format published date into human readable form
 function formatDate(dateString){
   const options = { year: "numeric", month: "long", day: "numeric" }
-  return new Date(dateString).toLocaleDateString(undefined, options)
+  return new Date(dateString).toLocaleTimeString(undefined, options)
 }
 
 // Parse webmentions for individual category
@@ -169,6 +169,9 @@ function addTabListeners() {
   const tabs = document.querySelectorAll('.reactions [role="tab"]');
   const tabList = document.querySelector('.reactions [role="tablist"]');
 
+  if (!tabs || !tabList) {
+    return;
+  }
   // Add a click event handler to each tab
   tabs.forEach(tab => {
     tab.addEventListener("click", function(e){changeTabs(e.target)});

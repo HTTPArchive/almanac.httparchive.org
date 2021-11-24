@@ -873,7 +873,7 @@ pre {
   z-index: 1;
   background: white;
   border: 0;
-  padding: 0rem 0.75rem 0.25rem;
+  padding: 0.6rem 0.75rem 0.6rem;
 }
 
 .reactions [role="tabpanel"] {
