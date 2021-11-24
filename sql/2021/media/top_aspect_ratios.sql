@@ -24,7 +24,7 @@ WITH imgs AS (
     aspectRatio
   FROM
     `httparchive.pages.2021_07_01_*`,
-    UNNEST(getSrcsetInfo(JSON_QUERY(JSON_VALUE( payload, '$._responsive_images' ), '$.responsive-images')))
+    UNNEST(getSrcsetInfo(JSON_QUERY(JSON_VALUE(payload, '$._responsive_images'), '$.responsive-images')))
   WHERE
     approximateResourceWidth > 1 AND
     approximateResourceHeight > 1
