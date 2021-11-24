@@ -129,7 +129,7 @@ Languages compiled to WebAssembly usually have their own standard library. Since
 
 {{ figure_markup(
   caption="Uncompressed response sizes.",
-  description="Bar chart showing distribution of uncompressed response sizes on desktop and mobile at percentiles 25, 50, 75, 90. Most notably, at 10% there is 1.3 KB, median at about 830 KB, 90% at 6.8 MB on desktop and 2.8 MB on mobile.",
+  description="Bar chart showing distribution of uncompressed response sizes on desktop and mobile at percentiles 25, 50, 75, 90. Most notably, at 10% there is 1 KB, median at about 810 KB, and 90% at 6.5 MB on desktop and 2.7 MB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=528882928&format=interactive",
   sheets_gid="1401232418",
   sql_file="sizes_and_savings.sql",
@@ -139,13 +139,13 @@ Languages compiled to WebAssembly usually have their own standard library. Since
 
 The sizes vary a lot, which indicates a decent coverage of various types of content—from simple helper libraries to full applications compiled to WebAssembly.
 
-We saw sizes of up to 84 MiB at the most which may sound pretty concerning, but keep in mind those are uncompressed responses. While they're also important for RAM footprint and start-up performance, one of the benefits of Wasm bytecode is that it's highly compressible, and size over the wire is what matters for download speed and billing reasons.
+We saw sizes of up to 81 MB at the most which may sound pretty concerning, but keep in mind those are uncompressed responses. While they're also important for RAM footprint and start-up performance, one of the benefits of Wasm bytecode is that it's highly compressible, and size over the wire is what matters for download speed and billing reasons.
 
 Let's check sizes of raw response bodies as sent by servers instead:
 
 {{ figure_markup(
   caption="Raw response sizes.",
-  description="Bar chart similar to the one above, but showing distribution of raw response sizes as received from the server. 10% is at 1.3 KB on desktop and 1 KB on mobile, median is around 300 KB, and 90% is at 2.6 MB on desktop and 1.4 MB on mobile.",
+  description="Bar chart similar to the one above, but showing distribution of raw response sizes as received from the server. 10% is at about 1 KB, median is around 290 KB, and 90% is at 2.5 MB on desktop and 1.4 MB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1094358341&format=interactive",
   sheets_gid="1401232418",
   sql_file="sizes_and_savings.sql",
@@ -153,18 +153,18 @@ Let's check sizes of raw response bodies as sent by servers instead:
   )
 }}
 
-The median is at around 300 KiB, meaning that half of usages download below 300 KiB, and half are larger. 90% of all Wasm responses stay below 2.6 MiB on desktop and 1.4 MiB on mobile.
+The median is at around 290 KB, meaning that half of usages download below 290 KB, and half are larger. 90% of all Wasm responses stay below 2.6 MB on desktop and 1.4 MB on mobile.
 
 {{ figure_markup(
   caption="Largest WASM response downloaded over desktop.",
-  content="46 MB",
+  content="44 MB",
   classes="big-number",
   sheets_gid="1401232418",
   sql_file="sizes_and_savings.sql"
 )
 }}
 
-The largest response in the HTTP Archive downloads about 46 MiB of Wasm on desktop and 29 MiB on mobile.
+The largest response in the HTTP Archive downloads about 44 MB of Wasm on desktop and 28 MB on mobile.
 
 Even with compression, those numbers are still pretty extreme, considering that many parts of the world still don't have a high-speed internet connection. Aside from reducing the scope of applications and libraries themselves, is there anything websites could do to improve those stats?
 
@@ -205,7 +205,7 @@ Here are the resulting sizes:
 
 {{ figure_markup(
   caption="Sizes after Brotli compression.",
-  description="Bar chart showing the distribution of sizes after manual Brotli recompression along various percentiles. Most notably, 10% at 1 KB, median at about 250 KB, and 90% at 2.3 MB on desktop and 846 KB on mobile.",
+  description="Bar chart showing the distribution of sizes after manual Brotli recompression along various percentiles. Most notably, 10% at 1 KB, median at about 243 KB, and 90% at 2.2 MB on desktop and 846 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=2085720303&format=interactive",
   sheets_gid="1401232418",
   sql_file="sizes_and_savings.sql",
@@ -213,13 +213,13 @@ Here are the resulting sizes:
   )
 }}
 
-The median drops from almost 300 KiB to 250 KiB, which is already a pretty good sign. The top 10% go down from 2.6 MiB / 1.4 MiB to 2.3 MiB / 0.8 MiB. We can see significant improvements across all other percentiles, too.
+The median drops from almost 290 KB to almost 240 KB, which is already a pretty good sign. The top 10% go down from 2.5 MB / 1.4 MB to 2.2 MB / 0.8 MB. We can see significant improvements across all other percentiles, too.
 
 Due to their nature, percentiles don't necessarily fall onto the same files between datasets, so it might be hard to compare numbers directly between graphs and to understand the size savings. Instead, from now on, let me show the savings themselves provided by each optimization, step by step:
 
 {{ figure_markup(
   caption="Brotli response savings.",
-  description="Similar bar chart to the one above, but adjusted to show savings. 10% shows 0 kilobytes improvement, median shows 46 KB and 39 KB improvements on desktop and mobile, 90% at 596 KB on desktop and 328 KB on mobile.",
+  description="Similar bar chart to the one above, but adjusted to show savings. 10% doesn't show any difference, median shows improvements of 46 KB on desktop and 39 KB on mobile, and 90% shows improvements of 596 KB on desktop and 328 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1741617577&format=interactive",
   sheets_gid="1401232418",
   sql_file="sizes_and_savings.sql",
@@ -227,9 +227,9 @@ Due to their nature, percentiles don't necessarily fall onto the same files betw
   )
 }}
 
-Median savings are around 40 KiB. The top 10% save just under 600 KiB on desktop and 328 KiB on mobile. The largest savings produced reach as much as 36 MiB / 22 MiB. Those differences speak in favor of enabling Brotli compression whenever possible, at least for WebAssembly content.
+Median savings are around 40 KB. The top 10% save just under 600 KB on desktop and 330 KB on mobile. The largest savings produced reach as much as 35 MB / 21 MB. Those differences speak in favor of enabling Brotli compression whenever possible, at least for WebAssembly content.
 
-What's also interesting, at the other end of the graph—where we were supposed to see the worst savings—we found regressions of up to 1.4 MiB. What happened there? How is it possible that Brotli recompression has made things worse for some modules?
+What's also interesting, at the other end of the graph—where we were supposed to see the worst savings—we found regressions of up to 1.4 MB. What happened there? How is it possible that Brotli recompression has made things worse for some modules?
 
 As mentioned above, in this article we've used Brotli with compression level 9, but—and I'll admit, I completely forgot about this until this article—it also has levels 10 and 11. Those levels produce even better results in exchange for a steep performance drop-off, as seen, for example, in <a hreflang="en" href="https://quixdb.github.io/squash-benchmark/#results-table">Squash benchmarks</a>. Such trade-off makes them worse candidates for the common on-the-fly compression, which is why we didn't use them in this article and went for a more moderate level 9. However, website authors can choose to compress their static resources ahead of time or cache the compression results, and save even more bandwidth without sacrificing CPU time. Cases like these show up as regressions in our analysis, meaning resources can be and, in some cases, already were optimized even better than we did in this article.
 
@@ -331,21 +331,33 @@ All of those are almost exclusively the `name` section which contains function n
 
 ### How much can we save by stripping debug info?
 
-While debug information is useful for local development, those sections can be hefty—they take up to 15 MiB before compression in the table above. If you want to be able to debug production issues users are experiencing, a better approach might be to strip the debug information out of the binary using `llvm-strip`, `wasm-strip` or `wasm-opt --strip-debug` before shipping, collect raw stacktraces and match them back to source locations locally, using the original binary.
+While debug information is useful for local development, those sections can be hefty—they take over 14 MB before compression in the table above. If you want to be able to debug production issues users are experiencing, a better approach might be to strip the debug information out of the binary using `llvm-strip`, `wasm-strip` or `wasm-opt --strip-debug` before shipping, collect raw stacktraces and match them back to source locations locally, using the original binary.
 
-Let's check how much stripping this debug information would save us in combination with Brotli, vs. just Brotli from the previous step:
+It would be interesting to see how much much stripping this debug information would save us in combination with Brotli, vs. just Brotli from the previous step. However, most modules in the dataset don't have custom sections so any percentiles below 90 would be useless:
 
 {{ figure_markup(
   caption="strip-debug + Brotli savings.",
-  description="Bar chart showing distribution of savings achieved by transformation described above. 0 percentile shows a tiny regression of 501 bytes, most others show no size change, 90% shows tiny improvements under 90 bytes on both desktop and mobile, but maximum achieved savings are at 2.4 MB on desktop and 1.3 MB on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1943000224&format=interactive",
-  sheets_gid="1401232418",
+  description="Scatter plot showing showing distribution of savings achieved by transformation described above. Most of the graph shows no size change, 0 percentile shows a tiny regression, and only the top 10% have visible scattered improvements.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=852876683&format=interactive",
+  sheets_gid="50034228",
+  sql_file="sizes_and_savings_100.sql",
+  image="strip_br_savings_100.png"
+  )
+}}
+
+Instead, let's take a look at the distribution of savings only over files that do have custom sections:
+
+{{ figure_markup(
+  caption="strip-debug + Brotli savings.",
+  description="Bar chart showing the distribution of size improvements from the same transformation, but only over the files that had custom sections. Notably, 10 and 25 percentiles show negligible improvements of up to 1 KB, median is at 54 KB, and 90% shows improvements of 247 KB on desktop and 118 KB on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1291981446&format=interactive",
+  sheets_gid="440746911",
   sql_file="sizes_and_savings.sql",
   image="strip_br_savings.png"
   )
 }}
 
-Most files in the archive already didn't have custom sections. In those that did, we could save up to 2.4 MiB / 1.3 MB for the largest Wasm binaries on desktop and mobile, which is a pretty noticeable improvement, especially on slow connections.
+As can be seen from the graph, some file's custom sections are negligibly small, but the median is at 54 KB and the 90 percentile is at 247 KB on desktop and 118 KB on mobile. The largest savings we could get were at 2.4 MB / 1.3 MB for the largest Wasm binaries on desktop and mobile, which is a pretty noticeable improvement, especially on slow connections.
 
 You might have noticed that the difference is a lot smaller than raw sizes of custom sections from the table above. The reason is that the `name` section, as its name suggests, consists mostly of function names, which are ASCII strings with lots of repetitions, and, as such, are highly compressible.
 
@@ -393,7 +405,7 @@ While the resulting data is not representative of real-world usage and not relev
 
 {{ figure_markup(
   caption="`wasm-opt` + Brotli savings.",
-  description="Bar chart showing the distribution of absolute size changes when `wasm-opt` + Brotli are executed against our modified datasets. The results are mixed—0 percentile shows a 260 KB regression on desktop and 180 KB on mobile, 10% shows 27 KB and 6 KB regressions, median is at 3.6 KB / 0.6 KB regressions, 90% shows 513 bytes improvement on desktop and 77 bytes improvement on mobile, and maximum savings end up at 1 MB on desktop and almost 250 KB on mobile.",
+  description="Bar chart showing the distribution of absolute size changes when `wasm-opt` + Brotli are executed against our modified datasets.  The results are mixed but leaning downwards—10% shows 26 KB and 6 KB regressions on desktop and mobile correspondingly, median shows 4 KB and 1 KB regressions, and 90% shows small improvements under 1 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=541095203&format=interactive",
   sheets_gid="1401232418",
   sql_file="sizes_and_savings.sql",
@@ -401,7 +413,9 @@ While the resulting data is not representative of real-world usage and not relev
   )
 }}
 
-There are significant savings in a small percentage of files that were not optimized before publishing on the web. But why are the other results so mixed?
+The results in the graph are mixed, but all changes are relatively small, up to 26 KB. If we included outliers (0 and 100 percentiles), we'd see more significant improvements of up to 1 MB on desktop and 240 KB on mobile on the best end, and regressions of 255 KB on desktop and 175 KB on mobile on the worst end.
+
+The significant savings in a small percentage of files mean they were likely not optimized before publishing on the web. But why are the other results so mixed?
 
 If we look at the uncompressed savings, it becomes more clear that, even on our dataset, `wasm-opt` consistently keeps files either roughly the same size or still improves size slightly further in majority of cases, and produces significant savings for the unoptimized files.
 
@@ -418,8 +432,9 @@ If we look at the uncompressed savings, it becomes more clear that, even on our 
 This suggests several reasons for the surprising distribution in the post-compression graph:
 
 1. As mentioned above, our dataset does not resemble real-world `wasm-opt` usage as the majority of the files have been already pre-optimized by `wasm-opt`. Further instruction reordering that improves uncompressed size a bit further, is bound to make certain patterns either more or less compressible than others, which, in turn, produces statistical noise.
-2. Also as mentioned earlier, the network (compressed) size is not everything. Smaller WebAssembly binaries tend to mean faster compilation in the VM, less memory consumption while compiling, and less memory to hold the compiled code. `wasm-opt` has to strike a balance here, which might also mean that the compressed size might sometimes regress in favor of better raw sizes.
-3. Finally, some regressions at the extreme end of the graph look like potentially valuable examples to study and improve that balance. We've <a hreflang="en" href="https://github.com/WebAssembly/binaryen/issues/4322">reported them back</a> to the Binaryen team so that they could look deeper into potential optimizations.
+2. We use default `wasm-opt` parameters, whereas some users might have tweaked `wasm-opt` flags in a way that produces even better savings for their particular modules.
+3. As mentioned earlier, the network (compressed) size is not everything. Smaller WebAssembly binaries tend to mean faster compilation in the VM, less memory consumption while compiling, and less memory to hold the compiled code. `wasm-opt` has to strike a balance here, which might also mean that the compressed size might sometimes regress in favor of better raw sizes.
+4. Finally, some of the regressions look like potentially valuable examples to study and improve that balance. We've <a hreflang="en" href="https://github.com/WebAssembly/binaryen/issues/4322">reported them back</a> to the Binaryen team so that they could look deeper into potential optimizations.
 
 ## What are the most popular instructions?
 
