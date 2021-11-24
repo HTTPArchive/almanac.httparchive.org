@@ -1,30 +1,26 @@
 #standardSQL
-# usage of alt text in images
-
-# returns all the data we need from _markup
 CREATE TEMPORARY FUNCTION get_decode_info(images_string STRING)
 RETURNS STRUCT<
   total INT64,
   decode_async INT64
 > LANGUAGE js AS '''
-
 let result = {};
-let images = JSON.parse(images_string);
-if (!Array.isArray(images)) {
-    return {};
-}
+try {
+  let images = JSON.parse(images_string);
+  if (!Array.isArray(images)) {
+      return {};
+  }
 
-result.total = images.length;
-result.decode_async = 0;
+  result.total = images.length;
+  result.decode_async = 0;
 
-for(let img of images) {
-    if(img.decoding === 'async'){
-        result.decode_async += 1
-    }
-}
-
+  for(let img of images) {
+      if(img.decoding === 'async'){
+          result.decode_async += 1
+      }
+  }
+} catch (e) {}
 return result;
-
 ''';
 
 SELECT

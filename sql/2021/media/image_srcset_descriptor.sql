@@ -1,7 +1,5 @@
 #standardSQL
 # images with srcset descriptor_x descriptor_w
-
-# returns all the data we need from _media
 CREATE TEMPORARY FUNCTION get_media_info(media_string STRING)
 RETURNS STRUCT<
   num_srcset_all INT64, 
@@ -34,7 +32,7 @@ FROM (
     _TABLE_SUFFIX AS client,
     get_media_info(JSON_EXTRACT_SCALAR(payload, '$._media')) AS media_info
   FROM
-    `httparchive.pages.2021_08_01_*`)
+    `httparchive.pages.2021_07_01_*`)
 GROUP BY
   client
 ORDER BY

@@ -1,7 +1,5 @@
 #standardSQL
 # usage of alt text in images
-
-# returns all the data we need from _markup
 CREATE TEMPORARY FUNCTION get_markup_info(markup_string STRING)
 RETURNS STRUCT<
   total INT64,
@@ -9,7 +7,6 @@ RETURNS STRUCT<
   alt_blank INT64,
   alt_present INT64,
   decode_lazy INT64
-
 > LANGUAGE js AS '''
 var result = {};
 try {
@@ -43,7 +40,7 @@ FROM (
     url,
     get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
   FROM
-    `httparchive.pages.2021_08_01_*`)
+    `httparchive.pages.2021_07_01_*`)
 GROUP BY
   client
 ORDER BY

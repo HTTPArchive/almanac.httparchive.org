@@ -1,18 +1,16 @@
 #standardSQL
 # Cross domain image requests 
-
-# returns all the data we need from _markup
 CREATE TEMPORARY FUNCTION get_images(images_string STRING)
 RETURNS ARRAY<STRUCT<url STRING>>
 LANGUAGE js AS '''
 var result = [];
 try {
-    var images = JSON.parse(images_string);
-    for(img of images){            
-      result.push({ 
-          url: img.url          
-      })
-    }         
+  var images = JSON.parse(images_string);
+  for (img of images){
+    result.push({
+      url: img.url
+    });
+  }
 } catch (e) {}
 return result;
 ''';
@@ -24,13 +22,12 @@ SELECT
   SAFE_DIVIDE(COUNTIF(pageDomain != imageDomain), COUNT(0)) AS img_samedomain_pct
 FROM (
   SELECT
-  _TABLE_SUFFIX AS client,
+    _TABLE_SUFFIX AS client,
     a.url AS pageUrl,
-    FORMAT("%T", NET.REG_DOMAIN(a.url)) as pageDomain,  
-    FORMAT("%T", NET.REG_DOMAIN(imageurl.url)) as imageDomain    
+    FORMAT("%T", NET.REG_DOMAIN(a.url)) AS pageDomain,
+    FORMAT("%T", NET.REG_DOMAIN(imageurl.url)) AS imageDomain
   FROM
     `httparchive.pages.2021_07_01_*` a,
-    UNNEST(get_images(JSON_EXTRACT_SCALAR(payload, '$._Images'))) AS imageurl    
-    )
+    UNNEST(get_images(JSON_EXTRACT_SCALAR(payload, '$._Images'))) AS imageurl)
 GROUP BY
   client

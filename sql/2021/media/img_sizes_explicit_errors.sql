@@ -20,21 +20,20 @@ return result;
 ''';
 SELECT
   client,
-  count(0) AS images_with_sizes,
+  COUNT(0) AS images_with_sizes,
   SAFE_DIVIDE(COUNTIF(respimg.sizesWasImplicit = true), COUNT(0)) AS implicit_pct,
   SAFE_DIVIDE(COUNTIF(respimg.sizesWasImplicit = false), COUNT(0)) AS explicit_pct,
   SAFE_DIVIDE(COUNTIF(respimg.sizesParseError = true), COUNT(0)) AS parseError_pct,
-  SAFE_DIVIDE(COUNTIF(respimg.srcsetHasWDescriptors = true), COUNT(0)) as wDescriptor_pct
+  SAFE_DIVIDE(COUNTIF(respimg.srcsetHasWDescriptors = true), COUNT(0)) AS wDescriptor_pct
 FROM (
   SELECT
   _TABLE_SUFFIX AS client,
     a.url AS pageUrl,
     respimg
   FROM
-    `httparchive.pages.2021_07_01_*` a,
+    `httparchive.pages.2021_07_01_*` AS a,
     UNNEST(get_responsive_settings(JSON_EXTRACT_SCALAR(payload, '$._responsive_images'))) AS respimg
   WHERE
-    respimg.srcsetHasWDescriptors = true
-)
+    respimg.srcsetHasWDescriptors)
 GROUP BY
   client

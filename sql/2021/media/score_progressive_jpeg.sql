@@ -12,9 +12,9 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    CAST(JSON_EXTRACT(payload, '$._score_progressive_jpeg') AS NUMERIC) AS score
+    CAST(JSON_EXTRACT(payload, '$._score_progressive_jpeg') AS INT64) AS score
   FROM
-    `httparchive.pages.2021_08_01_*`)
+    `httparchive.pages.2021_07_01_*`)
 GROUP BY
   client
 ORDER BY

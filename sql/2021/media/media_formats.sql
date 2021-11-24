@@ -1,7 +1,6 @@
 CREATE TEMPORARY FUNCTION fixFormat(format STRING, mimeType STRING)
 RETURNS STRING
 LANGUAGE js AS '''
-
 if (mimeType === "image/avif") {
   return "avif";
 } else if (mimeType === "image/webp" || format==="webp") {
@@ -9,23 +8,30 @@ if (mimeType === "image/avif") {
 } else {
   return format;
 }
-
 ''';
 
-SELECT 
-  trueFormat, 
-  COUNT(*) freq, 
-  COUNT(DISTINCT NET.HOST(url)) as Hosts, 
-  COUNT(DISTINCT pageid) as Pages
+SELECT
+  client,
+  trueFormat,
+  COUNT(DISTINCT NET.HOST(url)) AS hosts,
+  COUNT(DISTINCT page) AS pages,
+  COUNT(0) AS freqImages,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS totalImages,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pctImages
 FROM (
-  SELECT 
-    url, 
-    pageid, 
-    mimeType, 
-    format, 
-    fixFormat(format,mimeType) as trueFormat
-  FROM `httparchive.sample_data.summary_requests_*`
-  WHERE type="image" and respSize >0 
-) 
-GROUP BY trueFormat
-ORDER BY freq DESC
+  SELECT
+    client,
+    page,
+    url,
+    fixFormat(format,mimeType) AS trueFormat
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    date = '2021-07-01' AND
+    type = 'image' AND
+    respSize > 0)
+GROUP BY
+  client,
+  trueFormat
+ORDER BY
+  pctImages DESC

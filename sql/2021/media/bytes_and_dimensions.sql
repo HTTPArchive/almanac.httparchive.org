@@ -116,63 +116,53 @@ function pithyType( { contentType, url } ) {
 
 WITH imgs AS (
   SELECT
-    _TABLE_SUFFIX as client, url as pageURL, imgURL, approximateResourceWidth, approximateResourceHeight, byteSize, bitsPerPixel, isPixel, isDataURL,
+    _TABLE_SUFFIX AS client,
+    url AS pageURL,
+    imgURL,
+    approximateResourceWidth,
+    approximateResourceHeight,
+    byteSize,
+    bitsPerPixel,
+    isPixel,
+    isDataURL,
     ( approximateResourceWidth * approximateResourceHeight ) / 1000000 AS megapixels,
-    ( approximateResourceWidth / approximateResourceHeight ) as aspectRatio,
+    ( approximateResourceWidth / approximateResourceHeight ) AS aspectRatio,
     resourceFormat
-  FROM `httparchive.pages.2021_07_01_*`, UNNEST(getSrcsetInfo( JSON_QUERY( JSON_VALUE( payload, '$._responsive_images' ), '$.responsive-images' ) ) )
+  FROM
+    `httparchive.pages.2021_07_01_*`,
+    UNNEST(getSrcsetInfo(JSON_QUERY(JSON_VALUE(payload, '$._responsive_images' ), '$.responsive-images')))
 ), percentiles AS (
-SELECT
+  SELECT
     client,
-    APPROX_QUANTILES(approximateResourceWidth, 100) as resourceWidthPercentiles,
-    APPROX_QUANTILES(approximateResourceHeight, 100) AS resourceHeightPercentiles,
-    APPROX_QUANTILES(aspectRatio, 100) AS aspectRatioPercentiles,
-    APPROX_QUANTILES(megapixels, 100) AS megapixelsPercentiles,
-    APPROX_QUANTILES(byteSize, 100) AS byteSizePercentiles,
-    APPROX_QUANTILES(bitsPerPixel, 100) AS bitsPerPixelPercentiles,
-    COUNT(0) as imgCount
-FROM imgs
-WHERE approximateResourceWidth > 1 AND approximateResourceHeight > 1
-GROUP BY client
+    APPROX_QUANTILES(approximateResourceWidth, 1000) AS resourceWidthPercentiles,
+    APPROX_QUANTILES(approximateResourceHeight, 1000) AS resourceHeightPercentiles,
+    APPROX_QUANTILES(aspectRatio, 1000) AS aspectRatioPercentiles,
+    APPROX_QUANTILES(megapixels, 1000) AS megapixelsPercentiles,
+    APPROX_QUANTILES(byteSize, 1000) AS byteSizePercentiles,
+    APPROX_QUANTILES(bitsPerPixel, 1000) AS bitsPerPixelPercentiles,
+    COUNT(0) AS imgCount
+  FROM
+    imgs
+  WHERE
+    approximateResourceWidth > 1 AND
+    approximateResourceHeight > 1
+  GROUP BY
+    client
 )
+
 SELECT
-    client,
-    imgCount,
-    resourceWidthPercentiles[OFFSET(0)] as resourceWidth_p0,
-    resourceWidthPercentiles[OFFSET(25)] as resourceWidth_p25,
-    resourceWidthPercentiles[OFFSET(50)] as resourceWidth_p50,
-    resourceWidthPercentiles[OFFSET(75)] as resourceWidth_p75,
-    resourceWidthPercentiles[OFFSET(90)] as resourceWidth_p90,
-    resourceWidthPercentiles[OFFSET(100)] as resourceWidth_p100,
-    resourceHeightPercentiles[OFFSET(0)] as resourceHeight_p0,
-    resourceHeightPercentiles[OFFSET(25)] as resourceHeight_p25,
-    resourceHeightPercentiles[OFFSET(50)] as resourceHeight_p50,
-    resourceHeightPercentiles[OFFSET(75)] as resourceHeight_p75,
-    resourceHeightPercentiles[OFFSET(90)] as resourceHeight_p90,
-    resourceHeightPercentiles[OFFSET(100)] as resourceHeight_p100,
-    aspectRatioPercentiles[OFFSET(0)] as aspectRatio_p0,
-    aspectRatioPercentiles[OFFSET(25)] as aspectRatio_p25,
-    aspectRatioPercentiles[OFFSET(50)] as aspectRatio_p50,
-    aspectRatioPercentiles[OFFSET(75)] as aspectRatio_p75,
-    aspectRatioPercentiles[OFFSET(90)] as aspectRatio_p90,
-    aspectRatioPercentiles[OFFSET(100)] as aspectRatio_p100,
-    megapixelsPercentiles[OFFSET(0)] as megapixels_p0,
-    megapixelsPercentiles[OFFSET(25)] as megapixels_p25,
-    megapixelsPercentiles[OFFSET(50)] as megapixels_p50,
-    megapixelsPercentiles[OFFSET(75)] as megapixels_p75,
-    megapixelsPercentiles[OFFSET(90)] as megapixels_p90,
-    megapixelsPercentiles[OFFSET(100)] as megapixels_p100,
-    byteSizePercentiles[OFFSET(0)] as byteSize_p0,
-    byteSizePercentiles[OFFSET(25)] as byteSize_p25,
-    byteSizePercentiles[OFFSET(50)] as byteSize_p50,
-    byteSizePercentiles[OFFSET(75)] as byteSize_p75,
-    byteSizePercentiles[OFFSET(90)] as byteSize_p90,
-    byteSizePercentiles[OFFSET(100)] as byteSize_p100,
-    bitsPerPixelPercentiles[OFFSET(0)] as bitsPerPixel_p0,
-    bitsPerPixelPercentiles[OFFSET(25)] as bitsPerPixel_p25,
-    bitsPerPixelPercentiles[OFFSET(50)] as bitsPerPixel_p50,
-    bitsPerPixelPercentiles[OFFSET(75)] as bitsPerPixel_p75,
-    bitsPerPixelPercentiles[OFFSET(90)] as bitsPerPixel_p90,
-    bitsPerPixelPercentiles[OFFSET(100)] as bitsPerPixel_p100
-FROM percentiles
-ORDER BY imgCount DESC
+  percentile,
+  client,
+  imgCount,
+  resourceWidthPercentiles[OFFSET(percentile * 10)] AS resourceWidth,
+  resourceHeightPercentiles[OFFSET(percentile * 10)] AS resourceHeight,
+  aspectRatioPercentiles[OFFSET(percentile * 10)] AS aspectRatio,
+  megapixelsPercentiles[OFFSET(percentile * 10)] AS megapixels,
+  byteSizePercentiles[OFFSET(percentile * 10)] AS byteSize,
+  bitsPerPixelPercentiles[OFFSET(percentile * 10)] AS bitsPerPixel
+FROM
+  percentiles,
+  UNNEST([0, 10, 25, 50, 75, 90, 100]) AS percentile
+ORDER BY
+  imgCount DESC,
+  percentile
