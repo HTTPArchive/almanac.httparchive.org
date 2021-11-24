@@ -687,7 +687,9 @@ Web applications are pestered by numerous vulnerabilities. Fortunately, there ex
   description="Bar chart showing the prevalence of different security headers, for mobile pages in 2021 and 2020. `X-Content-Type-Options` was 30% in 2020 and is 37% in 2021, `X-Frame-Options` was 27% in 2020 and is 29% in 2021, `Strict-Transport-Security` was 17% in 2020 and is 23% in 2021, `X-XSS-Protection` was 18% in 2020 and is 20% in 2021, `Expect-CT` and `Content-Security-Policy` were 11% in 2020 and are 13% in 2021, `Report-To` was 3% in 2020 and is 12% in 2021, `Referrer-Policy` was 7% in 2020 and is 10% in 2021, `Feature-Policy` was 0.5% in 2020 and is 0.6% in 2021.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1380470049&format=interactive",
   sheets_gid="285299680",
-  sql_file="security_headers_prevalence.sql"
+  sql_file="security_headers_prevalence.sql",
+  width=600,
+  height=497
 ) }}
 
 Perhaps the most promising and uplifting finding of this chapter is that the general adoption of security mechanisms continues to grow. Not only does this mean that attackers will have a more difficult time exploiting certain websites, but it is also indicative that more and more developers value the security of the web products they build. Overall, we can see a relative increase in the adoption of security features of 10-30% compared to last year. The security-related mechanism with the most uptake is the `Report-To` header of [the Reporting API](https://developers.google.com/web/updates/2018/09/reportingapi), with almost a 4x increased adoption rate, from 2.60% to 12.15%.
