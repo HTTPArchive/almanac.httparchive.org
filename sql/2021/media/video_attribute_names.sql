@@ -12,7 +12,9 @@ WITH videonotes AS (
     (JSON_QUERY_ARRAY(JSON_VALUE(payload, "$._media"), "$.video_source_format_type")) AS video_source_format_type
   FROM
     `httparchive.pages.2021_07_01_*`
-), video_attributes AS (
+),
+
+video_attributes AS (
   SELECT
     client,
     pageURL,

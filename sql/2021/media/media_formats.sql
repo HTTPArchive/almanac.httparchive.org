@@ -23,7 +23,7 @@ FROM (
     client,
     page,
     url,
-    fixFormat(format,mimeType) AS trueFormat
+    fixFormat(format, mimeType) AS trueFormat
   FROM
     `httparchive.almanac.requests`
   WHERE

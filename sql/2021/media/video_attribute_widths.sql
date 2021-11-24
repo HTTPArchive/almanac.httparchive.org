@@ -1,6 +1,10 @@
 #standardSQL
-CREATE TEMP FUNCTION parseInt(n STRING) RETURNS INT64 LANGUAGE js AS '''
-return parseInt(n, 10);
+CREATE TEMP FUNCTION parseInt(n STRING) RETURNS STRING LANGUAGE js AS '''
+try {
+  return parseInt(n, 10);
+} catch (e) {
+  return null;
+}
 ''';
 
 
@@ -18,6 +22,7 @@ WITH videonotes AS (
   FROM
     `httparchive.pages.2021_07_01_*`
 ),
+
 video_attributes AS (
   SELECT
     client,
@@ -34,7 +39,7 @@ video_attributes AS (
 
 SELECT
   client,
-  FLOOR(parseInt(value) / 100) * 100 AS width,
+  FLOOR(SAFE_CAST(parseInt(value) AS INT64) / 100) * 100 AS width,
   SUM(cnt) AS freq,
   SUM(SUM(cnt)) OVER (PARTITION BY client) AS total,
   SUM(cnt) / SUM(SUM(cnt)) OVER (PARTITION BY client) AS pct
@@ -45,5 +50,7 @@ WHERE
 GROUP BY
   client,
   width
+HAVING
+  width >= 0
 ORDER BY
   width

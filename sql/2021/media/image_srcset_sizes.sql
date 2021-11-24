@@ -2,7 +2,7 @@
 # images with srcset w/wo sizes
 CREATE TEMPORARY FUNCTION get_media_info(media_string STRING)
 RETURNS STRUCT<
-  num_srcset_all INT64, 
+  num_srcset_all INT64,
   num_srcset_sizes INT64
 > LANGUAGE js AS '''
 var result = {};

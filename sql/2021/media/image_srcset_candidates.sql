@@ -2,7 +2,7 @@
 # images srcset candidates average
 CREATE TEMPORARY FUNCTION get_media_info(media_string STRING)
 RETURNS STRUCT<
-  num_srcset_all INT64, 
+  num_srcset_all INT64,
   num_srcset_candidates_avg INT64
 > LANGUAGE js AS '''
 var result = {};
@@ -22,7 +22,7 @@ return result;
 SELECT
   client,
   SAFE_DIVIDE(COUNTIF(media_info.num_srcset_all > 0), COUNT(0)) AS pages_with_srcset_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg >= 1 AND media_info.num_srcset_candidates_avg <=3), COUNTIF(media_info.num_srcset_all > 0)) AS pages_with_srcset_candidates_1_3_pct,
+  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg >= 1 AND media_info.num_srcset_candidates_avg <= 3), COUNTIF(media_info.num_srcset_all > 0)) AS pages_with_srcset_candidates_1_3_pct,
   SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg >= 1 AND media_info.num_srcset_candidates_avg <= 5), COUNTIF(media_info.num_srcset_all > 0)) AS pages_with_srcset_candidates_1_5_pct,
   SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg > 5 AND media_info.num_srcset_candidates_avg <= 10), COUNTIF(media_info.num_srcset_all > 0)) AS pages_with_srcset_candidates_5_10_pct,
   SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg > 10 AND media_info.num_srcset_candidates_avg <= 15), COUNTIF(media_info.num_srcset_all > 0)) AS pages_with_srcset_candidates_10_15_pct,

@@ -2,7 +2,7 @@
 # images with srcset descriptor_x descriptor_w
 CREATE TEMPORARY FUNCTION get_media_info(media_string STRING)
 RETURNS STRUCT<
-  num_srcset_all INT64, 
+  num_srcset_all INT64,
   num_srcset_descriptor_x INT64,
   num_srcset_descriptor_w INT64
 > LANGUAGE js AS '''

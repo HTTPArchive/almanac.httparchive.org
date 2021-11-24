@@ -23,17 +23,18 @@ try {
   return [];
 }
 ''';
-SELECT 
+
+SELECT
   client,
   COUNT(0) AS images,
   COUNTIF(hasWidth = 1) AS hasWidth,
-  COUNTIF(hasHeight=1) AS hasHeight,
-  COUNTIF(hasAlt=1) AS hasAlt,
-  COUNTIF(hasReservedLayoutDimension=1) AS hasDimensions,
+  COUNTIF(hasHeight = 1) AS hasHeight,
+  COUNTIF(hasAlt = 1) AS hasAlt,
+  COUNTIF(hasReservedLayoutDimension = 1) AS hasDimensions,
   SAFE_DIVIDE(COUNTIF(hasWidth = 1), COUNT(0)) AS percHasWidth,
   SAFE_DIVIDE(COUNTIF(hasHeight = 1), COUNT(0)) AS percHasHeight,
   SAFE_DIVIDE(COUNTIF(hasAlt = 1), COUNT(0)) AS percHasAlt,
-  SAFE_DIVIDE(COUNTIF(hasReservedLayoutDimension=1), COUNT(0)) AS percHasDimensions
+  SAFE_DIVIDE(COUNTIF(hasReservedLayoutDimension = 1), COUNT(0)) AS percHasDimensions
 FROM  (
   SELECT
     _TABLE_SUFFIX AS client,

@@ -28,24 +28,28 @@ WITH imgs AS (
   WHERE
     approximateResourceWidth > 1 AND
     approximateResourceHeight > 1
-), counts_per_client AS (
-SELECT
-  client,
-  COUNT(0) AS numberOfImagesPerClient,
-FROM
-  imgs
-GROUP BY
-  client
-), counts_per_client_and_aspect_ratio AS (
-SELECT
-  client,
-  aspectRatio,
-  COUNT(0) AS numberOfImagesPerClientAndAspectRatio
-FROM
-  imgs
-GROUP BY
-  client,
-  aspectRatio
+),
+
+counts_per_client AS (
+  SELECT
+    client,
+    COUNT(0) AS numberOfImagesPerClient,
+  FROM
+    imgs
+  GROUP BY
+    client
+),
+
+counts_per_client_and_aspect_ratio AS (
+  SELECT
+    client,
+    aspectRatio,
+    COUNT(0) AS numberOfImagesPerClientAndAspectRatio
+  FROM
+    imgs
+  GROUP BY
+    client,
+    aspectRatio
 )
 
 SELECT
