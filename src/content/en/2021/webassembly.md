@@ -9,7 +9,7 @@ editors: []
 translators: []
 RReverser_bio: Ingvar is a passionate D2D (developer-to-developer) programmer who's always working on improving developer experience through better tools, specs and documentation. He currently works as a WebAssembly Developer Advocate on the Google Chrome team.
 results: https://docs.google.com/spreadsheets/d/1IMa2SbdQgshb4pGWF1KOh9s4zMtLbRymWZGYjdaatXY/
-featured_quote: TODO
+featured_quote: WebAssembly [...] integrates so well into the web ecosystem, that many website owners might not even know they already use WebAssembly—to them it looks like any other 3rd-party JavaScript dependency.
 featured_stat_1: 44 MB
 featured_stat_label_1: Download size of the largest WebAssembly response in the dataset.
 featured_stat_2: 40.2%
