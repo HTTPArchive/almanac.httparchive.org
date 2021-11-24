@@ -1,8 +1,5 @@
 CREATE TEMPORARY FUNCTION getSrcsetDensities(payload STRING)
-RETURNS ARRAY<STRUCT<
-  currentSrcDensity INT64,
-  srcsetCandidateDensities ARRAY<FLOAT64>
->>
+RETURNS ARRAY<STRUCT<currentSrcDensity INT64, srcsetCandidateDensities ARRAY<FLOAT64>>>
 LANGUAGE js AS '''
 try {
   var $ = JSON.parse(payload);

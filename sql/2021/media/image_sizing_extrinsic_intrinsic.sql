@@ -1,8 +1,5 @@
 CREATE TEMPORARY FUNCTION getImageSizing(payload STRING)
-RETURNS ARRAY<STRUCT<
-  property STRING,
-  value STRING
->>
+RETURNS ARRAY<STRUCT<property STRING, value STRING>>
 LANGUAGE js AS '''
 try {
   var $ = JSON.parse(payload);

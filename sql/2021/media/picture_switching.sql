@@ -1,8 +1,5 @@
 CREATE TEMPORARY FUNCTION getPictureSwitching(payload STRING)
-RETURNS ARRAY<STRUCT<
-  pictureMediaSwitching BOOLEAN,
-  pictureTypeSwitching BOOLEAN
->>
+RETURNS ARRAY<STRUCT<pictureMediaSwitching BOOLEAN, pictureTypeSwitching BOOLEAN>>
 LANGUAGE js AS '''
 try {
   var $ = JSON.parse(payload);

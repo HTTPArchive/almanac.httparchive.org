@@ -1,8 +1,5 @@
 CREATE TEMPORARY FUNCTION getSizesAccuracy(payload STRING)
-RETURNS ARRAY<STRUCT<
-  sizesAbsoluteError INT64,
-  sizesRelativeError FLOAT64
->>
+RETURNS ARRAY<STRUCT<sizesAbsoluteError INT64, sizesRelativeError FLOAT64>>
 LANGUAGE js AS '''
 try {
   var $ = JSON.parse(payload);
@@ -26,7 +23,7 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-     image
+    image
   FROM
     `httparchive.pages.2021_07_01_*`,
     UNNEST(getSizesAccuracy(payload)) AS image),

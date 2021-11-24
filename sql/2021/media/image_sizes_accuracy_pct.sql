@@ -1,8 +1,5 @@
 CREATE TEMPORARY FUNCTION getSizesAccuracy(payload STRING)
-RETURNS ARRAY<STRUCT<
-  sizesAbsoluteError INT64,
-  sizesRelativeError FLOAT64
->>
+RETURNS ARRAY<STRUCT<sizesAbsoluteError INT64, sizesRelativeError FLOAT64>>
 LANGUAGE js AS '''
 try {
   var $ = JSON.parse(payload);
