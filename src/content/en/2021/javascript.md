@@ -36,7 +36,7 @@ The 50th percentile (median) desktop page loads 463 kilobytes of JavaScript, whe
 {{ figure_markup(
   image="javascript-bytes-per-page.png",
   caption="Distribution of the amount of JavaScript kilobytes loaded per page.",
-  description="",
+  description="Bar chart showing the distribution of JavaScript bytes per page. The median desktop page loads 463 kilobytes of JavaScript. The 10th, 25th, 50th, 75th, and 90th percentiles for desktop are: 94 KB, 220 KB, 463 KB, 852 KB, and 1,354 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=329775434&format=interactive",
   sheets_gid="18398250",
   sql_file="bytes_2021.sql"
@@ -50,8 +50,8 @@ Let's have a look at how much JavaScript is actually required to be loaded on th
 
 {{ figure_markup(
   image="unused-javascript-bytes-per-page.png",
-  caption="Distribution of the amount of wasted JavaScript bytes on mobile.",
-  description="",
+  caption="Distribution of the amount of unused JavaScript bytes on mobile.",
+  description="Bar chart showing the distribution of unused JavaScript bytes per page. The median mobile loads 155 KBs of JavaScript that is unused. The 10th, 25th, 50th, 75th, and 90th percentiles for mobile are: 20KB, 64KB, 155KB, 329KB, 598KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=656542402&format=interactive",
   sheets_gid="1704839581",
   sql_file="unused_js_bytes_distribution.sql"
@@ -63,7 +63,7 @@ The median page loads 155 kilobytes of unused JavaScript and at the 90th percent
 {{ figure_markup(
   image="unused-vs-total-javascript.png",
   caption="Percent of JavaScript loaded vs. JavaScript unused on mobile page.",
-  description="",
+  description="Bar chart showing the difference in the loaded JavaScript and the unused JavaScript from the total loaded. Out of 427KB of loaded JavaScript on a median mobile page, 155KB is unused. 36.2% of the total loaded JavaScript goes unused adding to the CPU cost.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=890651092&format=interactive",
   sheets_gid="1521645399",
   sql_file="unused_js_bytes_distribution.sql"
@@ -94,7 +94,7 @@ One of the contributing factors towards slow rendering of the web page could be 
 {{ figure_markup(
   image="js-requests-per-page.png",
   caption="Distribution of JavaScript requests on desktop and mobile pages.",
-  description="",
+  description="Bar chart showing the distribution of JavaScript requests on desktop and mobile pages. The median mobile page loads 20 JavaScript resources as compared to 21 JavaScript resources on desktop. The 10th, 25th, 50th, 75th, and 90th percentiles for requests made on mobile are: 4, 10, 20, 35, 56",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1487796178&format=interactive",
   sheets_gid="159538568",
   sql_file="requests_2021.sql"
@@ -209,7 +209,7 @@ As compared to the [last year’s results](https://almanac.httparchive.org/en/20
 {{ figure_markup(
   image="js-resources-over-years.png",
   caption="Distribution of JavaScript resources loaded over desktop and mobile devices by year.",
-  description="",
+  description="Bar chart showing the distribution of JavaScript resources loaded over desktop and mobile devices by year. In 2020, the median JS requests made on a page were 39 and this has increased to 41 in 2021.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=882068136&format=interactive",
   sheets_gid="1068898615",
   sql_file="requests_2020.sql"
@@ -427,7 +427,7 @@ The median number of JavaScript resources requested on desktop pages, as [observ
 {{ figure_markup(
   image="js-requests-mobile-host.png",
   caption="Distribution of the number of JavaScript requests per mobile page by host",
-  description="",
+  description="Bar chart showing distribution of JavaScript requests per mobile page by host. A median mobile page makes 9 first-party requests and 10 third-party ones.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=395424439&format=interactive",
   sheets_gid="1354767842",
   sql_file="requests_by_3p.sql"
@@ -439,7 +439,7 @@ A median of mobile pages request 10 third-party resources whereas 9 first-party 
 {{ figure_markup(
   image="js-requests-desktop-host.png",
   caption="Distribution of the number of JavaScript requests per desktop page by host.",
-  description="",
+  description="Bar chart showing distribution of JavaScript requests per desktop page by host. A median mobile page makes 10 first-party requests and 11 third-party ones. The 10th, 25th, 50th, 75th, and 90th percentiles for requests made on desktop for first-party are: 2, 4, 10, 19, 33.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1584404981&format=interactive",
   sheets_gid="1354767842",
   sql_file="requests_by_3p.sql"
@@ -462,7 +462,7 @@ A median of 4 asynchronous requests are made per page on both mobile and desktop
 {{ figure_markup(
   image="async-requests-per-page.png",
   caption="The number of asynchronous requests made per page.",
-  description="",
+  description="Bar chart showing the number of asynchronous requests made per page. On a desktop page, the 10th, 25th, 50th, 75th, and 90th percentiles for asynchronous requests made are: 2, 3, 4, 8, 15.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=709009883&format=interactive",
   sheets_gid="183546956",
   sql_file="ajax_request_per_page.sql"
@@ -609,7 +609,7 @@ However, this practice is [discouraged](https://developer.mozilla.org/en-US/docs
 {{ figure_markup(
   image="usage-sync-async.png",
   caption="Usage of synchronous and asynchronous AJAX requests on mobile pages",
-  description="",
+  description="Bar chart showing the usage of synchronous and asynchronous AJAX requests on mobile pages. The percent of synchronous requests made on mobile page are 2.5% and that of asynchronous requests are 77.6%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=189627938&format=interactive",
   sheets_gid="1113974683",
   sql_file="ajax_async.sql"
@@ -622,14 +622,14 @@ Let's look at the trend by comparing the results with the last two years.
 {{ figure_markup(
   image="usage-sync-async-over-years.png",
   caption="Usage of synchronous and asynchronous AJAX requests over years.",
-  description="",
+  description="Bar chart showing the usage of synchronous and asynchronous AJAX requests over the past years. In 2019, the percentage of asynchronous requests made on mobile was 54.9% increasing to 61.8% in 2020, 77.6% in 2021.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=126336838&format=interactive",
   sheets_gid="1113974683",
   sql_file="ajax_async.sql"
   )
 }}
 
- We see there is a clear increase in the usage of asynchronous AJAX requests. However, no significant decline in the usage of synchronous AJAX requests can be seen over the years.
+We see there is a clear increase in the usage of asynchronous AJAX requests. However, no significant decline in the usage of synchronous AJAX requests can be seen over the years.
 
 An AJAX request works with different formats of data that can be sent and received. When a resource is requested, there is significant information that is sent to the server to make the results specific and clear. One such requirement is sending the relevant content types. The request sent from the browser requests a content type that gets back the data in the requested format.
 
@@ -740,7 +740,7 @@ We can broadly classify these AJAX requests into three different APIs and dig in
 {{ figure_markup(
   image="ajax_xhr.png",
   caption="Usage of XMLHttpRequest",
-  description="",
+  description="Bar chart showing the usage of XMLHttpRequest per page on both desktop and mobile pages. The median mobile page makes 2 XHR requests, but at 90th percentile, makes 6 XHR requests. The 10th, 25th, 50th, 75th, and 90th percentiles for usage of XMLHttpRequest on desktop are: 0, 1, 2, 3, 6.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1164635195&format=interactive",
   sheets_gid="1012977216",
   sql_file="percentage_usage_of_different_ajax_apis.sql"
@@ -752,7 +752,7 @@ The median mobile page makes 2 XHR requests, but at 90th percentile, makes 6 XHR
 {{ figure_markup(
   image="ajax_fetch.png",
   caption="Usage of Fetch",
-  description="",
+  description="Bar chart showing the usage of Fetch per page on both desktop and mobile pages. The median mobile page makes 2 Fetch requests, but at 90th percentile, makes 3 Fetch requests. The 10th, 25th, 50th, 75th, and 90th percentiles for usage of Fetch on mobile are: 0, 2, 2, 2, 3.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=147712640&format=interactive",
   sheets_gid="1012977216",
   sql_file="percentage_usage_of_different_ajax_apis.sql"
@@ -764,7 +764,7 @@ In the case of the usage of the Fetch API, a median mobile page makes 2 requests
 {{ figure_markup(
   image="ajax_beacon.png",
   caption="Usage of Beacon",
-  description="",
+  description="Bar chart showing the usage of Beacon per page on both desktop and mobile pages. The median mobile page makes no Beacon requests, but at 90th percentile, makes 1 Beacon request.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1483701430&format=interactive",
   sheets_gid="1012977216",
   sql_file="percentage_usage_of_different_ajax_apis.sql"
@@ -777,7 +777,7 @@ It would be interesting to also compare the adoption of XHR and Fetch over time.
 {{ figure_markup(
   image="ajax-apis-per-year.png",
   caption="Adoption of AJAX APIs by year.",
-  description="",
+  description="Bar chart showing the adoption of XHR and Fetch requests per page on mobile pages. The percent usage of XHR has increased from 58% in 2019 to 62% in 2020 to 78% in 2021.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1254898632&format=interactive",
   sheets_gid="417043080",
   sql_file="percentage_usage_of_different_ajax_apis.sql"
@@ -847,7 +847,7 @@ To understand the usage of libraries and frameworks, HTTP Archive uses [Wappalyz
 {{ figure_markup(
   image="js-libs-frameworks.png",
   caption="Usage of Javascript libraries and frameworks.",
-  description="",
+  description="Bar chart showing the usage of Javascript libraries and frameworks. jQuery remains on top with 84% of mobile pages using it.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=584103777&format=interactive",
   sheets_gid="1851485826",
   sql_file="frameworks_libraries.sql"
@@ -1104,7 +1104,7 @@ It would also be ideal to see how many preload and prefetch hints are used per p
 {{ figure_markup(
   image="prefetch-hints-per-page.png",
   caption="Distribution of prefetch hints per page.",
-  description="",
+  description="Bar chart showing the distribution of prefetch hints per page. A median desktop page loads 2 JavaScript resources with the prefetch hint.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1265752379&format=interactive",
   sheets_gid="1107832831",
   sql_file="resource-hints-prefetch-preload-percentage.sql"
@@ -1114,7 +1114,7 @@ It would also be ideal to see how many preload and prefetch hints are used per p
 {{ figure_markup(
   image="preload-hints-per-page.png",
   caption="Distribution of preload hints per page.",
-  description="",
+  description="Bar chart showing the distribution of prefetch hints per page. A median desktop page loads 1 JavaScript resource with the preload hint.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1180601651&format=interactive",
   sheets_gid="1107832831",
   sql_file="resource-hints-prefetch-preload-percentage.sql"
@@ -1230,7 +1230,7 @@ Most of the compressed resources use either gzip compression, or brotli (br) com
 {{ figure_markup(
   image="compression-requests.png",
   caption="Compression methods usage percentage by request.",
-  description="",
+  description="Bar chart showing the percent of the usage of compression methods. 55% of JS requests apply the gzip compression on mobile, 31% apply br compression, and 14% do not apply any compression method.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1306457429&format=interactive",
   sheets_gid="1182320606",
   sql_file="compression_method.sql"
@@ -1257,7 +1257,7 @@ With such comparable data, let us actually check if the percentage difference is
 {{ figure_markup(
   image="compression-first-third-party.png",
   caption="Compression methods for first party vs third party.",
-  description="",
+  description="Bar chart showing the percent of the usage of compression methods for first-party and third-party. 59% of third-party JS requests apply the gzip compression on mobile, 30% third-party requests apply br compression, and 11% third-party scripts do not apply any compression method.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1269923134&format=interactive",
   sheets_gid="821396474",
   sql_file="compression_method_by_3p.sql"
@@ -1269,7 +1269,7 @@ With such comparable data, let us actually check if the percentage difference is
 {{ figure_markup(
   image="uncompressed-first-third-party.png",
   caption="Uncompressed resources for first party vs third party.",
-  description="",
+  description="Bar chart showing the percent of the uncompressed resources for first party vs third party. 90% of uncompressed third party JS resources are < 5 KB, and uncompressed first-party resources less than 10kb are only 8%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1043138204&format=interactive",
   sheets_gid="1942216454",
   sql_file="compression_none_by_bytes.sql"
@@ -1289,7 +1289,7 @@ The lighthouse report also [highlights the unminified JS being used](https://web
 {{ figure_markup(
   image="unminified-js-audit-scores.png",
   caption="Percentage distribution of unminified JS audit scores.",
-  description="",
+  description="Bar chart showing the percentage distribution of unminified JS audit scores. 67% of mobile pages have an “unminified JS” score between 0.9 and 1.0",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1572896641&format=interactive",
   sheets_gid="1539653841",
   sql_file="lighthouse_unminified_js.sql"
@@ -1305,7 +1305,7 @@ To dive deeper into understanding how many bytes per page are unminified.
 {{ figure_markup(
   image="unminified-js-bytes.png",
   caption="Percentage distribution of unminified JS bytes per page.",
-  description="",
+  description="Bar chart showing the percentage distribution of unminified JS bytes per page. 57% of mobile pages have 0 KB of unminified JS whereas 18% of those have 0-10 kilobytes of unminified JS.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1069289665&format=interactive",
   sheets_gid="1511556407",
   sql_file="lighthouse_unminified_js_bytes.sql"
@@ -1319,7 +1319,7 @@ The first party vs. third party analysis in this case shows that 82% of the aver
 {{ figure_markup(
   image="average-unminified-js-bytes.png",
   caption="Average distribution of unminified JS Bytes.",
-  description="",
+  description="Pie chart showing the average distribution of unminified JS bytes. 82% of the average mobile page's unminified JS bytes actually come from first-party scripts.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1119550643&format=interactive",
   sheets_gid="127709080",
   sql_file="lighthouse_unminified_js_by_3p.sql"
@@ -1346,7 +1346,7 @@ An analysis of how many sites actually send the source map header on their first
 {{ figure_markup(
   image="sourcemap-first-third-party.png",
   caption="Usage of sourcemap headers in first party vs third party.",
-  description="",
+  description="Bar chart showing the usage of sourcemap headers in first party vs third party. 98% of the JS requests that include a SourceMap header on mobile are for first-party scripts and only 2% for third party",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1762186682&format=interactive",
   sheets_gid="2057978707",
   sql_file="sourcemap_header_by_3p.sql"
