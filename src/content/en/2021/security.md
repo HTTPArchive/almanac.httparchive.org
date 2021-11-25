@@ -563,11 +563,7 @@ However, it still is a minority option for `<script>` elements. The median perce
   <figcaption>{{ figure_link(caption="Most common hosts from which SRI-protected scripts are included.", sheets_gid="303199583", sql_file="sri_popular_hosts.sql") }}</figcaption>
 </figure>
 
-{# TODO Authors - I do not agree with below. Google fonts does not include SRI. Neither does Google Analytics. Will we just remove this?
-
-We see that `gstatic.com` currently leads the chart. This is probably because Google serves all of its static content (fonts, analytics, etc.) from gstatic.com. Usually when developers embed google fonts, the code they copy has the `integrity` attribute included, which leads to high adoption.#}
-
-After `gstatic.com` and `shopify.com`, the rest of the top 5 hosts from which SRI-protected scripts are included are made up of three CDNs: <a hreflang="en" href="https://code.jquery.com/">jQuery</a>, <a hreflang="en" href="https://cdnjs.com/">cdnjs</a>, and <a hreflang="en" href="https://www.bootstrapcdn.com/">Bootstrap</a>. It is probably not coincidental that all three of these CDNs have the integrity attribute in their example HTML code.
+Among the common hosts from which SRI-protected scripts are included, we see most of them are made up of CDNs. We see that there are three very common CDNs that are used by multiple websites when using different libraries: <a hreflang="en" href="https://code.jquery.com/">jQuery</a>, <a hreflang="en" href="https://cdnjs.com/">cdnjs</a>, and <a hreflang="en" href="https://www.bootstrapcdn.com/">Bootstrap</a>. It is probably not coincidental that all three of these CDNs have the integrity attribute in their example HTML code, so when developers use the examples to embed these libraries, they are ensuring that SRI-protected scripts are being loaded.
 
 ### Permissions Policy
 
@@ -1136,9 +1132,7 @@ Please also note that our results may not show the actual state of the websites 
   )
 }}
 
-We see that just under 5% of the websites already use this standard—although it is still a very young standard.
-
-And the following figure shows that the policy is the most used property of utilized `security.txt` files:
+We see that just under 5% of the websites already use this standard—although it is still a very young standard. We hope to see this number increase in future, since having a `security.txt` shows that the website administrators care about security and are willing to work with white hat hackers to improve security of their website.
 
 {{ figure_markup(
   image="security-usage-of-properties-in-well-known-security.png",
@@ -1150,7 +1144,7 @@ And the following figure shows that the policy is the most used property of util
   )
 }}
 
-{# TODO Anything to say about this graph? #}
+We see that `Policy` is the most used property in the `security.txt` files. This property includes a link to the vulnerability disclosure policy for the website that helps researchers understand the reporting practices they need to follow. The other most used properties include `Canonical` and `Encryption`. `Canonical` is used to indicate where the `security.txt` file is located. If the URI used to retrieve the `security.txt` file doesn't match the list URIs in the `Canonical` fields, then the contents of the file should not be trusted. `Encryption` provides the security researchers with an encryption key that they can use for encrypted communication.
 
 ## Conclusion
 
