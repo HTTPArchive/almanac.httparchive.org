@@ -15,23 +15,20 @@
           "part": "I",
           "chapter_number": "1",
           "title": "CSS",
-          "slug": "css",
-          "todo": "true"
+          "slug": "css"
         },
         {
           "part": "I",
           "chapter_number": "2",
           "title": "JavaScript",
-          "slug": "javascript",
-          "todo": "true"
+          "slug": "javascript"
         },
         {
           "part": "I",
           "chapter_number": "3",
           "title": "Markup",
           "slug": "markup",
-          "hero_dir": "2021",
-          "todo": "true"
+          "hero_dir": "2021"
         },
         {
           "part": "I",
@@ -45,7 +42,6 @@
           "chapter_number": "5",
           "title": "WebAssembly",
           "slug": "webassembly",
-          "todo": "true",
           "hero_dir": "2021"
         },
         {
@@ -64,15 +60,13 @@
           "part": "II",
           "chapter_number": "7",
           "title": "SEO",
-          "slug": "seo",
-          "todo": "true"
+          "slug": "seo"
         },
         {
           "part": "II",
           "chapter_number": "8",
           "title": "Accessibility",
-          "slug": "accessibility",
-          "todo": "true"
+          "slug": "accessibility"
         },
         {
           "part": "II",
@@ -91,15 +85,13 @@
           "part": "II",
           "chapter_number": "11",
           "title": "Security",
-          "slug": "security",
-          "todo": "true"
+          "slug": "security"
         },
         {
           "part": "II",
           "chapter_number": "12",
           "title": "Mobile Web",
-          "slug": "mobile-web",
-          "todo": "true"
+          "slug": "mobile-web"
         },
         {
           "part": "II",
@@ -124,15 +116,13 @@
           "part": "III",
           "chapter_number": "15",
           "title": "CMS",
-          "slug": "cms",
-          "todo": "true"
+          "slug": "cms"
         },
         {
           "part": "III",
           "chapter_number": "16",
           "title": "Ecommerce",
-          "slug": "ecommerce",
-          "todo": "true"
+          "slug": "ecommerce"
         }
       ]
     },
@@ -144,22 +134,19 @@
           "part": "IV",
           "chapter_number": "17",
           "title": "Compression",
-          "slug": "compression",
-          "todo": "true"
+          "slug": "compression"
         },
         {
           "part": "IV",
           "chapter_number": "18",
           "title": "CDN",
-          "slug": "cdn",
-          "todo": "true"
+          "slug": "cdn"
         },
         {
           "part": "IV",
           "chapter_number": "19",
           "title": "Page Weight",
-          "slug": "page-weight",
-          "todo": "true"
+          "slug": "page-weight"
         },
         {
           "part": "IV",
@@ -171,8 +158,7 @@
           "part": "IV",
           "chapter_number": "21",
           "title": "HTTP",
-          "slug": "http",
-          "todo": "true"
+          "slug": "http"
         }
       ]
     }

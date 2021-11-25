@@ -565,8 +565,7 @@ However, it still is a minority option for `<script>` elements. The median perce
 
 {# TODO Authors - I do not agree with below. Google fonts does not include SRI. Neither does Google Analytics. Will we just remove this?
 
-We see that `gstatic.com` currently leads the chart. This is probably because Google serves all of its static content (fonts, analytics, etc.) from gstatic.com. Usually when developers embed google fonts, the code they copy has the `integrity` attribute included, which leads to high adoption.
-#}
+We see that `gstatic.com` currently leads the chart. This is probably because Google serves all of its static content (fonts, analytics, etc.) from gstatic.com. Usually when developers embed google fonts, the code they copy has the `integrity` attribute included, which leads to high adoption.#}
 
 After `gstatic.com` and `shopify.com`, the rest of the top 5 hosts from which SRI-protected scripts are included are made up of three CDNs: <a hreflang="en" href="https://code.jquery.com/">jQuery</a>, <a hreflang="en" href="https://cdnjs.com/">cdnjs</a>, and <a hreflang="en" href="https://www.bootstrapcdn.com/">Bootstrap</a>. It is probably not coincidental that all three of these CDNs have the integrity attribute in their example HTML code.
 
