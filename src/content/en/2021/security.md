@@ -1132,7 +1132,7 @@ Please also note that our results may not show the actual state of the websites 
   )
 }}
 
-We see that just under 5% of the websites already use this standard—although it is still a very young standard. We hope to see this number increase in future, since having a `security.txt` shows that the website administrators care about security and are willing to work with white hat hackers to improve security of their website.
+We see that just under 5% of the websites already use this standard—even though it is still a very young standard. We hope to see this number increase in future, since having a `security.txt` is an indication that the website administrators care about security and are willing to work with vulnerability reporters to improve security of their website.
 
 {{ figure_markup(
   image="security-usage-of-properties-in-well-known-security.png",
