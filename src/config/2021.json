@@ -98,7 +98,8 @@
           "part": "II",
           "chapter_number": "12",
           "title": "Mobile Web",
-          "slug": "mobile-web"
+          "slug": "mobile-web",
+          "todo": "true"
         },
         {
           "part": "II",

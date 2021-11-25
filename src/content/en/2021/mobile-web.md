@@ -76,7 +76,7 @@ New this year, the CrUX dataset allows us to query the most popular sites <a hre
 {{ figure_markup(
    image="mobile-web-more-mobile-than-desktop-traffic.png",
    caption="Percentage of Sites with more mobile than desktop traffic.",
-   description="Bar chart showing the breakdown of sites that have more mobile traffic than desktop as grouped by rank magnitude, an Crux experimental metric which groups sites by the popularity of origin requests. For sites in the top 1K origins, 84.9% have more mobile traffic. The second grouping, 10K origins, saw a higher rate of mobile traffic at 85.1%. 82.6% of 100K origins and 80.1% of top 1M origins received more traffic from mobile than desktop.",
+   description="Bar chart showing the breakdown of sites that have more mobile traffic than desktop as grouped by rank magnitude. For sites in the top 1K origins, 84.9% have more mobile traffic. The second grouping, 10K origins, saw a higher rate of mobile traffic at 85.1%. 82.6% of 100K origins and 80.1% of top 1M origins received more traffic from mobile than desktop.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=787161132&format=interactive",
    sheets_gid="601797488",
    sql_file="mobile_greater_than_desktop.sql"
@@ -111,9 +111,9 @@ Fortunately, there are a few other sources. Paul Calvano ran some analysis on th
 ##### Not all days are equal
 
 {{ figure_markup(
-   image="mobile-web-akimai-device-distribution-by-day.png",
+   image="mobile-web-akamai-device-distribution-by-day.png",
    caption="Device type distribution by day - mPulse July 2021.",
-   description="Mobile vs. Desktop traffic distribution, by the day of the week, from Akimai's mPulse in July 2021 showing a noticable 10% increase in mobile traffic at every weekend, with a similar offsetting dip in desktop traffic.",
+   description="Mobile vs. Desktop traffic distribution, by the day of the week, from Akamai's mPulse in July 2021 showing a noticeable 10% increase in mobile traffic at every weekend, with a similar offsetting dip in desktop traffic.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1981057164&format=interactive",
    sheets_gid="634917379"
    )
@@ -123,12 +123,12 @@ Weekend days show a greater proportion of mobile traffic, climbing somewhere aro
 
 ##### Not all times are equal
 
-On weekdays, mobile usage decreases and desktop usage increases as an overall percentage of traffic. This indicates that internet users are switching between mobile and desktop devices. Around 5 AM UTC and starts climbing again at 7 PM UTC (with a small bump around 10 / 11 AM). This aligns with working hours.
+On weekdays, mobile usage decreases, and desktop usage increases as an overall percentage of traffic. This indicates that internet users are switching between mobile and desktop devices. Around 5 AM UTC and starts climbing again at 7 PM UTC (with a small bump around 10 / 11 AM). This aligns with working hours.
 
 {{ figure_markup(
-   image="mobile-web-akimai-device-distribution-by-hour-weekdays.png",
+   image="mobile-web-akamai-device-distribution-by-hour-weekdays.png",
    caption="Device type distribution by hour on weekend - mPulse July 2021.",
-   description="A line chart of Mobile vs. Desktop traffic distribution, by the hour of the day on weekdays, in UTC, from Akimai's mPulse in July 2021. The patterns show that an inverse variation between mobile and desktop traffic. As traffic for one device type increases, the other decreases. Desktop usage is at its highest through what could be thought of as traditional working hours (7am - 6pm), though mobile usage is larger at all time raning from 52% to 65%.",
+   description="A line chart of Mobile vs. Desktop traffic distribution, by the hour of the day on weekdays, in UTC, from Akamai's mPulse in July 2021. The patterns show that an inverse variation between mobile and desktop traffic. As traffic for one device type increases, the other decreases. Desktop usage is at its highest through what could be thought of as traditional working hours (7am - 6pm), though mobile usage is larger at all times ranging from 52% to 65%.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=12081105&format=interactive",
    sheets_gid="300179855",
    width="600",
@@ -139,7 +139,7 @@ On weekdays, mobile usage decreases and desktop usage increases as an overall pe
 On weekends the split between mobile and desktop traffic remains more stable.
 
 {{ figure_markup(
-   image="mobile-web-akimai-device-distribution-by-hour-weekends.png",
+   image="mobile-web-akamai-device-distribution-by-hour-weekends.png",
    caption="Device type distribution by hour on weekend - mPulse July 2021.",
    description="Mobile vs. Desktop traffic distribution, by the hour of the day on Saturdays and Sundays, in UTC, from Akimai's mPulse in July 2021. This is a much flatter graph than the previous one showing little variation per hour.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1776273851&format=interactive",
@@ -170,7 +170,7 @@ Whilst it can be hard to predict if your mobile traffic percentage is expected, 
 
 ## Mobile methodology & tech stacks
 
-While mobile web is highly used, these experience typically have less processing power and slower internet interconnectivity.  Many technologies have emerged to mitigate these limitations.  These include Client Hints and APIs that identify the connection type and serve assets best suited for the connection.
+While mobile web is highly used, these experiences typically have less processing power and slower internet interconnectivity.  Many technologies have emerged to mitigate these limitations.  These include Client Hints and APIs that identify the connection type and serve assets best suited for the connection.
 
 In this section we will also look at overall app usage for the mobile web and how the programming languages, content management systems, and web servers compare to desktop experiences.
 
@@ -197,7 +197,7 @@ These hints can be roughly assigned into three groups:
 {{ figure_markup(
    image="mobile-web-usage-of-device-client-hints.png",
    caption="Usage of Device Client Hint directives.",
-   description="Bar chart comparing the usage of device Client Hint directives detected on mobile and desktop page loads. Desktop sites were less likely than mobile to use `device-memory`, `dpr`, or `viewport-width` Client Hints (approximately 0.10% compard to 0.15%). Usage of the `width` was equal between device types at 0.01%.",
+   description="Bar chart comparing the usage of device Client Hint directives detected on mobile and desktop page loads. Desktop sites were less likely than mobile to use `device-memory`, `dpr`, or `viewport-width` Client Hints (approximately 0.10% compared to 0.15%). Usage of the `width` was equal between device types at 0.01%.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=663083561&format=interactive",
    sheets_gid="1041308066",
    sql_file="client_hints.sql"
@@ -206,14 +206,14 @@ These hints can be roughly assigned into three groups:
 
 Uptake here is low, with [`DPR`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/DPR) and [`Viewport-Width`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Viewport-Width) leading with 0.15% of mobile sites requesting this, [`Device-Memory`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Device-Memory) a little behind at 0.14% and [`Width`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Width) at just 0.0%, but this is now deprecated, the proposed replacement being Sec-CH-Width, we detected no sites requesting this.
 
-Currently, only Chrome, (and Chromium based browsers like Microsoft's Edge) and Opera support these headers, with <a hreflang="en" href="https://caniuse.com/client-hints-dpr-width-viewport">Safari and Firefox not yet onboard</a>.
+Currently, only Chrome, (and Chromium based browsers like Microsoft's Edge), and Opera support these headers, with <a hreflang="en" href="https://caniuse.com/client-hints-dpr-width-viewport">Safari and Firefox not yet onboard</a>.
 
 #### Network Client Hints
 
 {{ figure_markup(
    image="mobile-web-usage-of-network-client-hints.png",
    caption="Usage of Network Client Hint directives.",
-   description="Bar chart showing the usage of network Client Hint directives detected on mobile and desktop page loads. Again mobile seems higher (0.09% for desktop versus 0.15% for mobile) for most with `save-data` being used less by both at 0.04% and 0.08% respectively.",
+   description="Bar chart showing the usage of network Client Hint directives detected on mobile and desktop page loads. Again, mobile seems higher (0.09% for desktop versus 0.15% for mobile) for most with `save-data` being used less by both at 0.04% and 0.08% respectively.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=172140786&format=interactive",
    sheets_gid="1041308066",
    sql_file="client_hints.sql"
@@ -696,7 +696,7 @@ A lack of color contrast impacts users with color blindness as well as low color
 {{ figure_markup(
    image="mobile-web-sufficient-color-contrast.png",
    caption='Mobile Sites with sufficient color contrast.',
-   description="Bar chart showing percent of mobile page loads with a sufficient colour contrast. 2019 saw 22.0% of sites pass the audit. In 2020, this dropped to 21.1%. 2021 saw an increase to 22.2%.",
+   description="Bar chart showing percent of mobile page loads with a sufficient color contrast. 2019 saw 22.0% of sites pass the audit. In 2020, this dropped to 21.1%. 2021 saw an increase to 22.2%.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1440359640&format=interactive",
    sheets_gid="1628455121",
    sql_file="../accessibility/color_contrast.sql"
