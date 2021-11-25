@@ -369,7 +369,7 @@ We see more and more websites starting to use CSP with 9.3% of websites on mobil
 
 The adoption of policies defining the sources from which content can be loaded continues to be low. Most of these policies are more difficult to implement, as they can cause breakages. They require effort to implement to define `nonce`, hashes or domains for allowing external content.
 
-A strict policy is great in thwarting attacks, but they can lead to undesirable effects and prevent valid content from loading, if the policy is incorrectly defined. Different libraries and APIs using their own scripts makes it even more difficult.
+While a strict CSP is a strong defense against attacks, they can lead to undesirable effects and prevent valid content from loading, if the policy is incorrectly defined. Different libraries and APIs loading further content makes this even more difficult.
 
 <a hreflang="en" href="https://web.dev/csp-xss/">Lighthouse</a> recently started flagging severity warnings when such directives are missing from CSP, encouraging people to adopt a stricter CSP to prevent XSS attacks. We will discuss more about how CSP helps in stopping XSS attacks in the [thwarting attacks](#stopping-xss-attacks-via-csp) section of this chapter.
 
