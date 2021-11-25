@@ -1137,7 +1137,7 @@ We see that just under 5% of the websites already use this standard—even thoug
 {{ figure_markup(
   image="security-usage-of-properties-in-well-known-security.png",
   caption="Use of security.txt properties.",
-  description="Bar chart showing use of different properties in security.txt. `signed` is 0.4% in desktop and 0.3% in mobile, Canonical is 2.8% in desktop and 2.7% in mobile, Encryption is 2.6% in desktop and 2.1% in mobile, Expires is 0.9% in desktop and 0.7% in mobile, Policy is 6.5% in desktop and 6.4% in mobile.",
+  description="Bar chart showing use of different properties in `security.txt`.  0.4% of desktop and 0.3% of mobile `security.txt` files are signed, `Canonical` is used in for 2.8% in desktop and 2.7% in mobile, `Encryption` is 2.6% in desktop and 2.1% in mobile, `Expires` is 0.9% in desktop and 0.7% in mobile, `Policy` is 6.5% in desktop and 6.4% in mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=644563241&format=interactive",
   sheets_gid="399976976",
   sql_file="well-known_security.sql"
