@@ -269,7 +269,7 @@ You can ensure that cookies are sent securely and aren't accessed by unintended 
 {{ figure_markup(
   image="security-httponly-secure-samesite-cookie-usage.png",
   caption="Cookie attributes (mobile).",
-  description="Bar chart of cookie attributes used on mobile sites divided by first and third-party cookies. For first-party `HttpOnly` is used by 32.7%, `Secure` by 31.0%, and `SameSite` by 34.1%, while for third-party `HttpOnly` is used by 20.0%, `Secure` by 67.0%, and `SameSite` by 64.9%.",
+  description="Bar chart of cookie attributes used on desktop sites divided by first and third-party cookies. For first-party `HttpOnly` is used by 32.7%, `Secure` by 31.0%, and `SameSite` by 34.1%, while for third-party `HttpOnly` is used by 20.0%, `Secure` by 67.0%, and `SameSite` by 64.9%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=546317907&format=interactive",
   sheets_gid="1757682198",
   sql_file="cookie_attributes.sql"
@@ -1069,7 +1069,7 @@ An important aspect to explore in the context of the adoption of security featur
 
 However, overall, we find that this phenomenon of a single actor like a Drupal or Cloudflare being a top technological driver of a security feature's adoption is an outlier and appears less common over time. This means that an increasingly diverse set of websites is adopting security mechanisms, and that more and more web developers are becoming aware of their benefits. For example, last year 44.3% of the sites that set a Content Security Policy were powered by Shopify, whereas this year, Shopify is only responsible for 32.9% of all sites that enable CSP. Combined with the generally growing adoption rate, this is great news!
 
-###  Website popularity
+### Website popularity
 
 Websites that have many visitors may be more prone to targeted attacks given that there are more users with potentially sensitive data to attract attackers. Therefore, it can be expected that widely visited websites invest more in security in order to safeguard their users. To evaluate whether this hypothesis is valid, we used the ranking provided by the [Chrome User Experience Report](./methodology#chrome-ux-report), which uses real-world user data to determine which websites are visited the most (ranked by top 1k, 10k, 100k, 1M and all sites in our dataset).
 
