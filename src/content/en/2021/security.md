@@ -268,7 +268,7 @@ You can ensure that cookies are sent securely and aren't accessed by unintended 
 
 {{ figure_markup(
   image="security-httponly-secure-samesite-cookie-usage.png",
-  caption="Cookie attributes (mobile).",
+  caption="Cookie attributes (desktop).",
   description="Bar chart of cookie attributes used on desktop sites divided by first and third-party cookies. For first-party `HttpOnly` is used by 32.7%, `Secure` by 31.0%, and `SameSite` by 34.1%, while for third-party `HttpOnly` is used by 20.0%, `Secure` by 67.0%, and `SameSite` by 64.9%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=546317907&format=interactive",
   sheets_gid="1757682198",
