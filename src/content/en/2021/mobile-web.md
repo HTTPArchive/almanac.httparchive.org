@@ -16,7 +16,7 @@ featured_stat_1: 18.4%
 featured_stat_label_1: Mobile page loads using native lazy-loading
 featured_stat_2: 43.4%
 featured_stat_label_2: Mobile page loads contain inappropriately sized images
-featured_stat_3: 45.03%
+featured_stat_3: 45.0%
 featured_stat_label_3: Of the top 1000 mobile page loads prevent zooming
 ---
 
@@ -24,7 +24,7 @@ featured_stat_label_3: Of the top 1000 mobile page loads prevent zooming
 
 In January 2021, 59.5% of the global population was on the internet. Of the global 4.66 billion active internet users, <a hreflang="en" href="https://www.statista.com/statistics/617136/digital-population-worldwide/">92.6% accessed the internet on a mobile device</a>.
 
-With the ubiquity of mobile web tucked in our pockets, <a hreflang="en" href="https://www.statista.com/statistics/330695/number-of-smartphone-users-worldwide/">Statista</a> reports that 80.76% of the global population owns a smartphone. This is a relatively minor growth of 0.03% year over year. In comparison, 49.40% of the population in 2016 owned a smartphone.
+With the ubiquity of mobile web tucked in our pockets, <a hreflang="en" href="https://www.statista.com/statistics/330695/number-of-smartphone-users-worldwide/">Statista</a> reports that 80.8% of the global population owns a smartphone. This is a relatively minor growth of 0.0% year over year. In comparison, 49.4% of the population in 2016 owned a smartphone.
 
 In this chapter, we looked at recent trends on the mobile web including worldwide connectivity, technology adoption, and mobile-friendly feature usage.
 
@@ -64,7 +64,7 @@ What percentage of traffic comes from mobile devices vs. desktop? Predicting thi
 
 {{ figure_markup(
    caption="Percent of the 817,4923 origins in the July 2021 data received more mobile traffic than desktop traffic.",
-   content="77.35%",
+   content="77.4%",
    classes="big-number",
    sheets_gid="601797488",
    sql_file="mobile_greater_than_desktop.sql"
@@ -83,21 +83,21 @@ New this year, the CrUX dataset allows us to query the most popular sites <a hre
   )
 }}
 
-When grouped by CrUX ranking (the top 1,000, 10,000 and so on origins by traffic in the dataset), the more traffic a site receives, there is a slight increase of the percentage of traffic it gets from mobile, all except the top 1,000, which get slightly less (84.90% vs. 85.08%) mobile vs. desktop.
+When grouped by CrUX ranking (the top 1,000, 10,000 and so on origins by traffic in the dataset), the more traffic a site receives, there is a slight increase of the percentage of traffic it gets from mobile, all except the top 1,000, which get slightly less (84.9% vs. 85.1%) mobile vs. desktop.
 
 #### Traffic distribution
 
 {{ figure_markup(
    image="mobile-web-mobile-traffic-distribution.png",
    caption="Distribution of mobile vs other traffic",
-   description="Chart showing how mobile is the majority of traffic for most websites. 50% of websites analyzed receive 79.44% or more of their traffic from mobile devices, an increase from 77.61% in 2020.",
+   description="Chart showing how mobile is the majority of traffic for most websites. 50% of websites analyzed receive 79.4% or more of their traffic from mobile devices, an increase from 77.6% in 2020.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=2123612862&format=interactive",
    sheets_gid="1909852444",
    sql_file="mobile_traffic_distribution.sql"
    )
 }}
 
-The distribution shows a similar, mobile heavy trend. At the 50th percentile, 79.44% of traffic comes from mobile devices, an increase over 77.61% in 2020, and catching up with the 79.93% percentage in 2019.
+The distribution shows a similar, mobile heavy trend. At the 50th percentile, 79.4% of traffic comes from mobile devices, an increase over 77.6% in 2020, and catching up with the 79.9% percentage in 2019.
 
 #### Beyond CrUX data
 
@@ -182,7 +182,7 @@ This gives the ability to make decisions and serve code, content and experience 
 
 For the mobile web, poor network conditions and lower powered devices are much more common, and sites that are proactively requesting this information are likely to be thinking beyond merely squeezing down their desktop pages to fit on a mobile screen.
 
-HTTP Client Hints are a relatively new, and somewhat experimental feature, with the <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc8942#section-3.1">RFC only published in February this year</a>. It's therefore fairly encouraging that we found 1.41% of sites are requesting at least one of these Client Hints from mobile users, compared with just 0.95% for desktop users.
+HTTP Client Hints are a relatively new, and somewhat experimental feature, with the <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc8942#section-3.1">RFC only published in February this year</a>. It's therefore fairly encouraging that we found 1.4% of sites are requesting at least one of these Client Hints from mobile users, compared with just 1.0% for desktop users.
 
 Whilst we are not able to tell what the sites might do with that information, and exactly how they use these hints to tailor the experience to mobile users, asking is a good first sign.
 
@@ -197,14 +197,14 @@ These hints can be roughly assigned into three groups:
 {{ figure_markup(
    image="mobile-web-usage-of-device-client-hints.png",
    caption="Usage of Device Client Hint directives",
-   description="Bar chart comparing the usage of device Client Hint directives detected on mobile and desktop page loads. Desktop sites were less likely than mobile to use `device-memory`, `dpr`, or `viewport-width` Client Hints. Usage of the `width` was equal between device types at 0.01%",
+   description="Bar chart comparing the usage of device Client Hint directives detected on mobile and desktop page loads. Desktop sites were less likely than mobile to use `device-memory`, `dpr`, or `viewport-width` Client Hints. Usage of the `width` was equal between device types at 0.0%",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=663083561&format=interactive",
    sheets_gid="1041308066",
    sql_file="client_hints.sql"
    )
 }}
 
-Uptake here is low, with [`DPR`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/DPR) and [`Viewport-Width`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Viewport-Width) leading with 0.15% of mobile sites requesting this, [`Device-Memory`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Device-Memory) a little behind at 0.14% and [`Width`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Width) at just 0.01%, but this is now deprecated, the proposed replacement being Sec-CH-Width, we detected no sites requesting this.
+Uptake here is low, with [`DPR`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/DPR) and [`Viewport-Width`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Viewport-Width) leading with 0.2% of mobile sites requesting this, [`Device-Memory`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Device-Memory) a little behind at 0.1% and [`Width`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Width) at just 0.0%, but this is now deprecated, the proposed replacement being Sec-CH-Width, we detected no sites requesting this.
 
 Currently, only Chrome, (and Chromium based browsers like Microsoft's Edge) and Opera support these headers, with <a hreflang="en" href="https://caniuse.com/client-hints-dpr-width-viewport">Safari and Firefox not yet onboard</a>.
 
@@ -220,9 +220,9 @@ Currently, only Chrome, (and Chromium based browsers like Microsoft's Edge) and 
    )
 }}
 
-Network Client Hints show a similar uptake to Device Client Hints, with [Downlink](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Downlink) and [ECT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ECT) (effective connection type) being requested by 0.15% of loads on mobile, and [RTT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/RTT) (round trip time) on 0.14% of loads on mobile.
+Network Client Hints show a similar uptake to Device Client Hints, with [Downlink](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Downlink) and [ECT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ECT) (effective connection type) being requested by 0.2% of loads on mobile, and [RTT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/RTT) (round trip time) on 0.1% of loads on mobile.
 
-Save-Data is surprisingly present less, at just 0.08% of mobile requests, seemingly a missed opportunity, given the user benefits possible, as detailed in the Google Web Fundamentals article, <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data/">Delivering Fast and Light Applications with Save-Data</a>.
+Save-Data is surprisingly present less, at just 0.1% of mobile requests, seemingly a missed opportunity, given the user benefits possible, as detailed in the Google Web Fundamentals article, <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data/">Delivering Fast and Light Applications with Save-Data</a>.
 
 #### User-Agent Client Hints
 
@@ -250,14 +250,14 @@ The [_Network Information API_](https://developer.mozilla.org/en-US/docs/Web/API
 
 We focused of mobile vs. desktop page loads making use of [`NetworkInformation.effectiveType`](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/effectiveType), which returns a string based on the effective connection type, `slow-2g`, `2g`, `3g`, or `4g`. The top tier is `4g`, so could really be seen as "4g or faster", including 5g and broadband, fixed connections.
 
-18.19% of mobile requests had page loads utilising `NetworkInformation.effectiveType`, but surprisingly, a very slightly higher 18.41% of desktop requests detected use of this API.
+18.2% of mobile requests had page loads utilising `NetworkInformation.effectiveType`, but surprisingly, a very slightly higher 18.4% of desktop requests detected use of this API.
 
 #### Device Memory API
 
 {{ figure_markup(
    image="mobile-web-usage-of-navigator-devicememory.png",
    caption="Usage of `Navigator.deviceMemory`",
-   description="Bar chart comparing the usage of `Navigator.deviceMemoryAPI` on mobile and desktop. 10.19% of desktop sites used the Device Memory API compared to 10.88% of mobile page loads.",
+   description="Bar chart comparing the usage of `Navigator.deviceMemoryAPI` on mobile and desktop. 10.2% of desktop sites used the Device Memory API compared to 10.9% of mobile page loads.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=634683822&format=interactive",
    sheets_gid="1309485612",
    sql_file="navigator_device_memory_usage.sql"
@@ -266,7 +266,7 @@ We focused of mobile vs. desktop page loads making use of [`NetworkInformation.e
 
 This API returns an approximate amount of device memory, useful to judge what the client might be capable of handling and adapt accordingly.
 
-10.88% of mobile page loads utilised this API, slightly higher than 10.19% for desktop loads.
+10.9% of mobile page loads utilised this API, slightly higher than 10.2% for desktop loads.
 
 Much like Client Hints, these APIs are still experimental, and also do not have universal support across browsers (source: <a hreflang="en" href="https://caniuse.com/netinfo">Network Information API</a> & <a hreflang="en" href="https://caniuse.com/mdn-api_navigator_devicememory">`Navigator.deviceMemory`</a> but have much wider adoption.
 
@@ -284,7 +284,7 @@ The most commonly used libraries and technologies found on the mobile web impact
 
 {# TODO Not sure why this whole section talks about "the mobile web", when it seems to be very similar to both mobile and desktop? I'm also not sure what to take away from this section (if anything?) #}
 
-According to <a hreflang="en" href="https://www.wappalyzer.com/">Wappalyzer</a> data, JavaScript library JQuery is the dominant library of the mobile web, present in 84.38% of tested sites. Google is the dominant provider, holding three of the top five spots.
+According to <a hreflang="en" href="https://www.wappalyzer.com/">Wappalyzer</a> data, JavaScript library JQuery is the dominant library of the mobile web, present in 84.4% of tested sites. Google is the dominant provider, holding three of the top five spots.
 
 <figure>
   <table>
@@ -299,33 +299,33 @@ According to <a hreflang="en" href="https://www.wappalyzer.com/">Wappalyzer</a> 
     <tbody>
       <tr>
         <td>jQuery</td>
-        <td class="numeric">84.38%</td>
-        <td class="numeric">84.38%</td>
-        <td class="numeric">1.02%</td>
+        <td class="numeric">84.4%</td>
+        <td class="numeric">84.4%</td>
+        <td class="numeric">1.0%</td>
       </tr>
       <tr>
         <td>Google Analytics</td>
-        <td class="numeric">65.40%</td>
-        <td class="numeric">68.64%</td>
-        <td class="numeric">3.24%</td>
+        <td class="numeric">65.4%</td>
+        <td class="numeric">68.6%</td>
+        <td class="numeric">3.2%</td>
       </tr>
       <tr>
         <td>PHP</td>
-        <td class="numeric">50.46%</td>
-        <td class="numeric">50.46%</td>
-        <td class="numeric">-0.38%</td>
+        <td class="numeric">50.5%</td>
+        <td class="numeric">50.5%</td>
+        <td class="numeric">-0.4%</td>
       </tr>
       <tr>
         <td>Google Font API</td>
-        <td class="numeric">47.56%</td>
-        <td class="numeric">47.56%</td>
-        <td class="numeric">-0.13%</td>
+        <td class="numeric">47.6%</td>
+        <td class="numeric">47.6%</td>
+        <td class="numeric">-0.1%</td>
       </tr>
       <tr>
         <td>Google Tag Manager</td>
-        <td class="numeric">43.37%</td>
-        <td class="numeric">43.37%</td>
-        <td class="numeric">2.60%</td>
+        <td class="numeric">43.4%</td>
+        <td class="numeric">43.4%</td>
+        <td class="numeric">2.6%</td>
       </tr>
     </tbody>
   </table>
@@ -336,7 +336,7 @@ Of the top five mobile web technologies, adoption rates for three were higher on
 
 In 2021, Google added the <a href="https://developers.google.com/search/docs/advanced/experience/page-experience">Page Experience Ranking Signal</a> to its algorithm.  This ranking signal is specific to search engine results pages served on mobile devices and uses aggregated data from real user page loads to measurement performance.
 
-JavaScript library JQuery is the dominant library of the mobile web, present in 84.38% of mobile page loads. Google is the dominant provider, holding three of the top five spots.
+JavaScript library JQuery is the dominant library of the mobile web, present in 84.4% of mobile page loads. Google is the dominant provider, holding three of the top five spots.
 
 #### Content Management Systems
 
@@ -354,39 +354,39 @@ Content management systems allow site owners to publish, update, and control con
     <tbody>
       <tr>
         <td>WordPress</td>
-        <td class="numeric">33.57%</td>
-        <td class="numeric">32.94%</td>
+        <td class="numeric">33.6%</td>
+        <td class="numeric">32.9%</td>
       </tr>
       <tr>
         <td>Joomla</td>
-        <td class="numeric">1.95%</td>
-        <td class="numeric">1.74%</td>
+        <td class="numeric">2.0%</td>
+        <td class="numeric">1.7%</td>
       </tr>
       <tr>
         <td>Drupal</td>
-        <td class="numeric">1.76%</td>
-        <td class="numeric">2.12%</td>
+        <td class="numeric">1.8%</td>
+        <td class="numeric">2.1%</td>
       </tr>
       <tr>
         <td>Wix</td>
-        <td class="numeric">1.64%</td>
-        <td class="numeric">1.22%</td>
+        <td class="numeric">1.6%</td>
+        <td class="numeric">1.2%</td>
       </tr>
       <tr>
         <td>Squarespace</td>
-        <td class="numeric">1.01%</td>
-        <td class="numeric">1.24%</td>
+        <td class="numeric">1.0%</td>
+        <td class="numeric">1.2%</td>
       </tr>
     </tbody>
   </table>
   <figcaption>{{ figure_link(caption="Prominent Mobile vs. Desktop CMS.", sheets_gid="1172584192", sql_file="most_used_tech_by_domain_rank.sql") }}</figcaption>
 </figure>
 
-WordPress, an open-source CMS written in PHP, was the dominant CMS in 2021. The technology appeared on 33.57% of sites.
+WordPress, an open-source CMS written in PHP, was the dominant CMS in 2021. The technology appeared on 33.6% of sites.
 
 #### Comparing desktop technology adoption rates
 
-Technology adoption rates for the mobile web moved in step with desktop. The most notable difference came in the form of third-party pixel use. 68.64% of desktop sites used Google Analytics compared to 65.40% of mobile sites.
+Technology adoption rates for the mobile web moved in step with desktop. The most notable difference came in the form of third-party pixel use. 68.6% of desktop sites used Google Analytics compared to 65.4% of mobile sites.
 
 <figure>
   <table>
@@ -403,46 +403,46 @@ Technology adoption rates for the mobile web moved in step with desktop. The mos
       <tr>
         <td>Analytics</td>
         <td>Google Analytics</td>
-        <td class="numeric">68.64%</td>
-        <td class="numeric">65.40%</td>
-        <td class="numeric">3.24%</td>
+        <td class="numeric">68.6%</td>
+        <td class="numeric">65.4%</td>
+        <td class="numeric">3.2%</td>
       </tr>
       <tr>
         <td>Tag managers</td>
         <td>Google Tag Manager</td>
-        <td class="numeric">45.97%</td>
-        <td class="numeric">43.37%</td>
-        <td class="numeric">2.60%</td>
+        <td class="numeric">46.0%</td>
+        <td class="numeric">43.4%</td>
+        <td class="numeric">2.6%</td>
       </tr>
       <tr>
         <td>Analytics</td>
         <td>Facebook Pixel</td>
-        <td class="numeric">20.56%</td>
-        <td class="numeric">18.86%</td>
-        <td class="numeric">1.70%</td>
+        <td class="numeric">20.6%</td>
+        <td class="numeric">18.9%</td>
+        <td class="numeric">1.7%</td>
       </tr>
       <tr>
         <td>Widgets</td>
         <td>Facebook</td>
-        <td class="numeric">27.95%</td>
-        <td class="numeric">26.32%</td>
-        <td class="numeric">1.63%</td>
+        <td class="numeric">28.0%</td>
+        <td class="numeric">26.3%</td>
+        <td class="numeric">1.6%</td>
       </tr>
       <tr>
         <td>JavaScript libraries</td>
         <td>jQuery UI</td>
-        <td class="numeric">23.77%</td>
-        <td class="numeric">22.24%</td>
-        <td class="numeric">1.53%</td>
+        <td class="numeric">23.8%</td>
+        <td class="numeric">22.2%</td>
+        <td class="numeric">1.5%</td>
       </tr>
     </tbody>
   </table>
   <figcaption>{{ figure_link(caption="Technology with higher desktop adoption rates.", sheets_gid="1172584192", sql_file="most_used_tech_by_domain_rank.sql") }}</figcaption>
 </figure>
 
-Given the changes to performance measurement and prioritization, it's reasonable to consider the absence of these JavaScript-heavy, third-party, assets as part of an intentional effort to improve mobile page experience. The Facebook Pixel analytics script was found on -1.70% fewer mobile sites than desktop.
+Given the changes to performance measurement and prioritization, it's reasonable to consider the absence of these JavaScript-heavy, third-party, assets as part of an intentional effort to improve mobile page experience. The Facebook Pixel analytics script was found on -1.7% fewer mobile sites than desktop.
 
-Mobile sites were more likely to adopt certain technologies, but with a smaller margin. Blogger was found on 3.13% of mobile sites and 1.67% of desktop sites
+Mobile sites were more likely to adopt certain technologies, but with a smaller margin. Blogger was found on 3.1% of mobile sites and 1.7% of desktop sites
 
 <figure>
   <table>
@@ -459,30 +459,30 @@ Mobile sites were more likely to adopt certain technologies, but with a smaller 
       <tr>
         <td>Blogs</td>
         <td>Blogger</td>
-        <td class="numeric">1.67%</td>
-        <td class="numeric">3.13%</td>
-        <td class="numeric">1.46%</td>
+        <td class="numeric">1.7%</td>
+        <td class="numeric">3.1%</td>
+        <td class="numeric">1.5%</td>
       </tr>
       <tr>
         <td>Web servers</td>
         <td>OpenGSE</td>
-        <td class="numeric">1.71%</td>
-        <td class="numeric">3.16%</td>
-        <td class="numeric">1.45%</td>
+        <td class="numeric">1.7%</td>
+        <td class="numeric">3.2%</td>
+        <td class="numeric">1.5%</td>
       </tr>
       <tr>
         <td>Programming languages</td>
         <td>Python</td>
-        <td class="numeric">2.18%</td>
-        <td class="numeric">3.57%</td>
-        <td class="numeric">1.39%</td>
+        <td class="numeric">2.2%</td>
+        <td class="numeric">3.6%</td>
+        <td class="numeric">1.4%</td>
       </tr>
       <tr>
         <td>Programming languages</td>
         <td>Java</td>
-        <td class="numeric">2.75%</td>
-        <td class="numeric">3.95%</td>
-        <td class="numeric">1.19%</td>
+        <td class="numeric">2.8%</td>
+        <td class="numeric">4.0%</td>
+        <td class="numeric">1.2%</td>
       </tr>
     </tbody>
   </table>
@@ -507,7 +507,7 @@ Attention to mobile design and friendliness are critical to reducing friction in
 
 The web is built on links. On the mobile web, [Unique Resource Identifier](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) schemes beyond http/s, can allow users to complete tasks like <a hreflang="en" href="https://developers.google.com/web/fundamentals/native-hardware/click-to-call">dialing a phone number using `tel:`</a> or starting an email with minimal friction.
 
-The most prevalent URI schemes were `https:`, found on 93.15% of sites, and it's non-secure equivalent, `http:`, appearing on 56.65%. The high use of non-secure link protocols is noteworthy as 2020 saw major announcements from browsers to protect users' safety by alerting them when content is not secure.
+The most prevalent URI schemes were `https:`, found on 93.2% of sites, and it's non-secure equivalent, `http:`, appearing on 56.7%. The high use of non-secure link protocols is noteworthy as 2020 saw major announcements from browsers to protect users' safety by alerting them when content is not secure.
 
 After webpage links, the next five most used protocols in anchor href values on the mobile web are as follows:
 
@@ -520,23 +520,23 @@ After webpage links, the next five most used protocols in anchor href values on 
     <tbody>
       <tr>
         <td>`mailto:`</td>
-        <td class="numeric">28.25%</td>
+        <td class="numeric">28.3%</td>
       </tr>
       <tr>
         <td>`tel:`</td>
-        <td class="numeric">24.21%</td>
+        <td class="numeric">24.2%</td>
       </tr>
       <tr>
         <td>`whatsapp:`</td>
-        <td class="numeric">0.61%</td>
+        <td class="numeric">0.6%</td>
       </tr>
       <tr>
         <td>`viber:`</td>
-        <td class="numeric">0.46%</td>
+        <td class="numeric">0.5%</td>
       </tr>
       <tr>
         <td>`skype:`</td>
-        <td class="numeric">0.30%</td>
+        <td class="numeric">0.3%</td>
       </tr>
     </tbody>
   </table>
@@ -579,7 +579,7 @@ Would open the phone app, ready to dial that number. This saves copy / paste and
 </a>
 ```
 
-When clicked would prefill a message with the right number, you can also prefill the message body. This fell out of the top 5, with just 0.27% of mobile site loads utilizing this.
+When clicked would prefill a message with the right number, you can also prefill the message body. This fell out of the top 5, with just 0.3% of mobile site loads utilizing this.
 
 #### Other messaging apps
 
@@ -601,17 +601,17 @@ While URI schemes allow users to take actions from a website, input fields allow
 
 Input elements are one of the most powerful and complex features in HTML. Input elements are used to create interactive controls for web based forms. Web users experience these elements such as buttons, checkboxes, calendars, search, and other elements which allow control of a page's content based on user input.
 
-71.48% of mobile pages tested contained inputs. This is slightly higher than the 71.14% of desktop.
+71.5% of mobile pages tested contained inputs. This is slightly higher than the 71.1% of desktop.
 
 #### Type declarations
 
-We can track occurrences of interactive controls created by input by looking for the `type` attribute. The `type` attribute is the most important because it controls how the input element works. The `type` input value was declared on 70.92% of tested sites.
+We can track occurrences of interactive controls created by input by looking for the `type` attribute. The `type` attribute is the most important because it controls how the input element works. The `type` input value was declared on 70.9% of tested sites.
 
-If the `type` attribute is not present the input defaults to `text`, a single line text field. In analysis of pages using input elements, 27.06% of those pages did not declare an input type and used the default `text` string value.
+If the `type` attribute is not present the input defaults to `text`, a single line text field. In analysis of pages using input elements, 27.1% of those pages did not declare an input type and used the default `text` string value.
 
-Out of all pages using inputs, 72.59% contained at least one `text` input type. This was the most used.
+Out of all pages using inputs, 72.6% contained at least one `text` input type. This was the most used.
 
-The declared `text` value combined with the fallback value indicates that 99.65% of sites using input elements capture a text value.
+The declared `text` value combined with the fallback value indicates that 99.7% of sites using input elements capture a text value.
 
 #### Advanced input types
 
@@ -619,13 +619,13 @@ Of pages with at least one input, 44.8% of them use one or more "advanced input 
 
 ##### Telephone
 
-5.40% of pages asked users for their telephone number. For mobile users, navigating from the alpha to numeric keyboard is a high friction point. 62.60% of pages soliciting a telephone number used an input field missing the `type=tel` value.
+5.4% of pages asked users for their telephone number. For mobile users, navigating from the alpha to numeric keyboard is a high friction point. 62.6% of pages soliciting a telephone number used an input field missing the `type=tel` value.
 
 ##### Email
 
 The `email` input type requires the user to submit a valid email address. A non-email value entered in the form prompts an error to display when the form is submitted.
 
-25.08% of pages contained at least one field asking users for their email.
+25.1% of pages contained at least one field asking users for their email.
 
 Email collection is often a key micro conversion in the user journey so capturing it with minimal friction benefits the site with a higher conversion rate. Even with this clear business value, 42% of pages which ask for user emails do not use the type=email input type on at least one instance.
 
@@ -635,11 +635,11 @@ Site search is a powerful tool in navigating users to their desired content. Sea
 
 Use of the search input type can trigger a cross icon which allows users to quickly clear existing query text. Many modern browsers also store search queries across domains. When the search type is denoted, stored queries can be used to autocomplete the field.
 
-23.88% of tested pages contained a search input field. It is worth noting that these fields may be present though using a text or undeclared input type. This is a slight increase over 2020 which saw 17% of sites using search input.
+23.9% of tested pages contained a search input field. It is worth noting that these fields may be present though using a text or undeclared input type. This is a slight increase over 2020 which saw 17% of sites using search input.
 
 Business value appears to impact input type adoption. Ecommerce sites have a vested interest in swiftly moving users to a desired product in order to meet the business goal of a transaction.
 
-43.31% of tested ecommerce sites use search input on their mobile experience. Interestingly, this is higher than 42.63% of sites using the input type for desktop clients.
+43.3% of tested ecommerce sites use search input on their mobile experience. Interestingly, this is higher than 42.6% of sites using the input type for desktop clients.
 
 #### Autocomplete
 
@@ -681,7 +681,7 @@ When a site is accessed using assistive technology, an element's ARIA role commu
 
 The most prevalent ARIA role in 2021 was `button` which appeared on 29% of sites. The `button` role indicates a clickable element that triggers a response when activated by users.
 
-While over 71% of mobile sites have interactive-controls for web based forms, the most commonly adopted ARIA attribute, aria-label, only appeared on 11.23% of tested sites. This accessibility-focused attribute is used to label input with a text string.
+While over 71% of mobile sites have interactive-controls for web based forms, the most commonly adopted ARIA attribute, aria-label, only appeared on 11.2% of tested sites. This accessibility-focused attribute is used to label input with a text string.
 
 #### Color contrast
 
@@ -714,7 +714,7 @@ In order for effective user interactions, tap targets need to be both appropriat
 )
 }}
 
-Overall, 39.3% of sites tested used sufficiently-sized mobile tap targets. Tap target adoption was consistent across domain rank groupings. This is a slight increase from 2020, which saw 36.31% of tap targets properly sized.
+Overall, 39.3% of sites tested used sufficiently-sized mobile tap targets. Tap target adoption was consistent across domain rank groupings. This is a slight increase from 2020, which saw 36.3% of tap targets properly sized.
 
 #### Zoom and scaling
 
@@ -729,7 +729,7 @@ Things look even worse when looking at the usage by domain ranking.
 {{ figure_markup(
    image="mobile-web-zoom-blocking-viewport-tags.png",
    caption="Disabled zooming and scaling by domain rank",
-   description="Bar chart showing the percentage of mobile pages loads were zooming and scaling was disabled, grouped by the origin popularity. At 45.03% the top 1K origins saw the most page loads were zooming and scaling were disabled. The percentage drops incrementally by each group with the 30.35% of top 1M sites disabling the feature. This indicates that the most popular sites (as measure by Crux metric ranking magnitude) were most likely to disable the accessibility feature",
+   description="Bar chart showing the percentage of mobile pages loads were zooming and scaling was disabled, grouped by the origin popularity. At 45.0% the top 1K origins saw the most page loads were zooming and scaling were disabled. The percentage drops incrementally by each group with the 30.4% of top 1M sites disabling the feature. This indicates that the most popular sites (as measure by Crux metric ranking magnitude) were most likely to disable the accessibility feature",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=86675708&format=interactive",
    sheets_gid="1840321233",
    sql_file="viewport_zoom_scale_by_domain_rank.sql"
@@ -843,7 +843,7 @@ Images can be [served responsively](https://developer.mozilla.org/en-US/docs/Lea
 {{ figure_markup(
    image="mobile-web-responsive-images.png",
    caption="Use of `<picture>` and `scrset` to serve responsive images",
-   description="Bar chart showing that 6.15% of mobile sites used `<picture>` elements and 31.97% used `srcset` attributes to load images responsively.",
+   description="Bar chart showing that 6.2% of mobile sites used `<picture>` elements and 32.0% used `srcset` attributes to load images responsively.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1030195048&format=interactive",
    sheets_gid="1802999215",
    sql_file="picture_source_srcset_usage.sql"
@@ -880,7 +880,7 @@ Looking at the HTTP Archive's <a hreflang="en" href="https://httparchive.org/rep
   )
 }}
 
-A driving factor in this growth can be attributed to the prevalence of WordPress (source: <a hreflang="en" href="https://twitter.com/rick_viscomi/status/1344380340153016321?s=20">Rick Viscomi on Twitter</a>). WordPress added <a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">support for native lazy-loading in version 5.5</a> which rolled out to the public on August 11th, 2020. 
+A driving factor in this growth can be attributed to the prevalence of WordPress (source: <a hreflang="en" href="https://twitter.com/rick_viscomi/status/1344380340153016321?s=20">Rick Viscomi on Twitter</a>). WordPress added <a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">support for native lazy-loading in version 5.5</a> which rolled out to the public on August 11th, 2020.
 
 It's also worth mentioning that incorrectly used, <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">Lazy Loading LCP Candidates</a> can harm performance. Making sure to apply `loading="lazy"` only to images below the fold is best practice.
 
@@ -982,7 +982,7 @@ If you are looking to learn more about Core Web Vitals in general, the [Performa
 
 [Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) while not only applying to mobile devices do become uniquely useful in their ability to add offline capabilities, and better control of loading from caches to web apps, both features which are often more relevant to mobile users, who are more likely to encounter poor or total loss of connectivity.
 
-14.8% of sites register a service worker, a sizeable uptake since 2020's 0.87%
+14.8% of sites register a service worker, a sizeable uptake since 2020's 0.9%
 
 To learn more about service workers and PWA (progressive web apps), vist the [PWA](./pwa) chapter.
 
