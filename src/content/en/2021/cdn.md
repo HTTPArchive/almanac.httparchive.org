@@ -288,9 +288,7 @@ However, the implementation challenges of HTTP/2 features discouraged adoption. 
 
 This was where the CDNs became an intermediary in bridging the challenge of HTTP/2 implementation for web owners. Similar to TLS, an HTTP/2 connection terminates at the CDN level and this provides web owners the ability to deliver their website and subdomains over HTTP/2 without the need to upgrade their infrastructure to support it.
 
-CDNs acted as the proxy to bridge the gap by providing a layer to consolidate hostnames and route traffic to relevant endpoints with minimal change to their hosting infrastructure. Features like prioritizing content in the queue, server push could be managed from the CDN's side and a few CDN's even provided hands-off automated solutions to run these features without any inputs from website owners, thus providing a push to HTTP/2 adoption (no pun intended ;)).
-
-{# TODO: are emojis against our editors guide? leaving a note here to follow up #}
+CDNs acted as the proxy to bridge the gap by providing a layer to consolidate hostnames and route traffic to relevant endpoints with minimal change to their hosting infrastructure. Features like prioritizing content in the queue, server push could be managed from the CDN's side and a few CDN's even provided hands-off automated solutions to run these features without any inputs from website owners, thus providing a push to HTTP/2 adoption.
 
 The trend cannot be clearer than what the graph shows below. There is high HTTP/2+ adoption by domains on CDNs compared to the ones not using a CDN.
 
