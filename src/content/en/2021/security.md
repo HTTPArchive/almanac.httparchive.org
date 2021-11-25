@@ -73,7 +73,7 @@ As part of this effort to improve security and reliability by adopting modern ve
   )
 }}
 
-60.4% of pages in desktop and 62.1% of pages in mobile are now using TLSv1.3, making it the majority protocol version over of TLSv1.2. The number of pages using TLSv1.3 has increased approximately 20% since [last year](../2020/security#protocol-versions) when we saw 43.2% and 45.4% respectively.
+60.4% of pages in desktop and 62.1% of pages in mobile are now using TLSv1.3, making it the majority protocol version over TLSv1.2. The number of pages using TLSv1.3 has increased approximately 20% since [last year](../2020/security#protocol-versions) when we saw 43.2% and 45.4% respectively.
 
 ### Cipher suites
 
