@@ -1104,7 +1104,7 @@ We now turn to cryptominer market share in the following figure.
 {{ figure_markup(
   image="security-cryptominer-market-share.png",
   caption="Cryptominer market share (mobile).",
-  description="Pie chart showing CoinImp has 84.9% of market share, CoinHive has 9.0%, JSEcoin has 3.1%, Minero.cc has 1.5% and others have approximately 1.5%.",
+  description="Pie chart showing CoinImp has 84.9% of market share, Coinhive has 9.0%, JSEcoin has 3.1%, Minero.cc has 1.5% and others have approximately 1.5%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1688060716&format=interactive",
   sheets_gid="1998142066",
   sql_file="cryptominer_share.sql"
