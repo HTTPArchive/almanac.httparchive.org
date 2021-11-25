@@ -17,7 +17,7 @@ featured_stat_label_1: Mobile page loads using native lazy-loading
 featured_stat_2: 43.4%
 featured_stat_label_2: Mobile page loads contain inappropriately sized images
 featured_stat_3: 45.0%
-featured_stat_label_3: Of the top 1000 mobile page loads prevent zooming
+featured_stat_label_3: Of the top 1,000 mobile page loads prevent zooming
 ---
 
 ## Introduction
@@ -42,7 +42,7 @@ We've used a few different data sources in this chapter:
 * Wappalyzer
 * <a hreflang="en" href="https://twitter.com/paulcalvano/status/1454866401781587969">Akamai</a>
 
-It is worth noting that HTTP Archive and Lighthouse data is limited to the data identified from websites' home pages only, and not site-wide. Learn more about our [Methodology](./methodology).
+It is worth noting that HTTP Archive and Lighthouse data is limited to the data identified from websites' home pages only, and not site-wide. Learn more in our [Methodology](./methodology) page.
 
 ## Worldwide connectivity
 
@@ -75,7 +75,7 @@ New this year, the CrUX dataset allows us to query the most popular sites <a hre
 
 {{ figure_markup(
    image="mobile-web-more-mobile-than-desktop-traffic.png",
-   caption="Percentage of Sites with more mobile than desktop traffic",
+   caption="Percentage of Sites with more mobile than desktop traffic.",
    description="Bar chart showing the breakdown of sites that have more mobile traffic than desktop as grouped by rank magnitude, an Crux experimental metric which groups sites by the popularity of origin requests. For sites in the top 1K origins, 84.9% have more mobile traffic. The second grouping, 10K origins, saw a higher rate of mobile traffic at 85.1%. 82.6% of 100K origins and 80.1% of top 1M origins received more traffic from mobile than desktop.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=787161132&format=interactive",
    sheets_gid="601797488",
@@ -89,7 +89,7 @@ When grouped by CrUX ranking (the top 1,000, 10,000 and so on origins by traffic
 
 {{ figure_markup(
    image="mobile-web-mobile-traffic-distribution.png",
-   caption="Distribution of mobile vs other traffic",
+   caption="Distribution of mobile vs other traffic.",
    description="Chart showing how mobile is the majority of traffic for most websites. 50% of websites analyzed receive 79.4% or more of their traffic from mobile devices, an increase from 77.6% in 2020.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=2123612862&format=interactive",
    sheets_gid="1909852444",
@@ -112,8 +112,8 @@ Fortunately there are a few other sources. Paul Calvano ran some analysis on the
 
 {{ figure_markup(
    image="mobile-web-akimai-device-distribution-by-day.png",
-   caption="Device type distribution by day - mPulse July 2021",
-   description="Mobile vs. Desktop traffic distribution, by the day of the week, from Akimai's mPulse in July 2021",
+   caption="Device type distribution by day - mPulse July 2021.",
+   description="Mobile vs. Desktop traffic distribution, by the day of the week, from Akimai's mPulse in July 2021 showing a noticable 10% increase in mobile traffic at every weekend, with a similar offsetting dip in desktop traffic.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1981057164&format=interactive",
    sheets_gid="634917379"
    )
@@ -127,8 +127,8 @@ On weekdays, mobile usage decreases and desktop usage increases as an overall pe
 
 {{ figure_markup(
    image="mobile-web-akimai-device-distribution-by-hour-weekdays.png",
-   caption="Device type distribution by hour on weekend - mPulse July 2021",
-   description="A line chart of Mobile vs. Desktop traffic distribution, by the hour of the day on weekdays, in UTC, from Akimai's mPulse in July 2021. The patterns show that an inverse variation between mobile and desktop traffic. As traffic for one device type increases, the other decreases.",
+   caption="Device type distribution by hour on weekend - mPulse July 2021.",
+   description="A line chart of Mobile vs. Desktop traffic distribution, by the hour of the day on weekdays, in UTC, from Akimai's mPulse in July 2021. The patterns show that an inverse variation between mobile and desktop traffic. As traffic for one device type increases, the other decreases. Desktop usage is at it's highest through what could be thought of as traditional working hours (7am - 6pm), though mobile usage is larger at all time raning from 52% to 65%.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=12081105&format=interactive",
    sheets_gid="300179855",
    width="600",
@@ -140,8 +140,8 @@ On weekends the split between mobile and desktop traffic remains more stable.
 
 {{ figure_markup(
    image="mobile-web-akimai-device-distribution-by-hour-weekends.png",
-   caption="Device type distribution by hour on weekend - mPulse July 2021",
-   description="Mobile vs. Desktop traffic distribution, by the hour of the day on Saturdays and Sundays, in UTC, from Akimai's mPulse in July 2021",
+   caption="Device type distribution by hour on weekend - mPulse July 2021.",
+   description="Mobile vs. Desktop traffic distribution, by the hour of the day on Saturdays and Sundays, in UTC, from Akimai's mPulse in July 2021. This is a much flatter graph than the previous one showing little variation per hour.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1776273851&format=interactive",
    sheets_gid="300179855",
    width="600",
@@ -196,15 +196,15 @@ These hints can be roughly assigned into three groups:
 
 {{ figure_markup(
    image="mobile-web-usage-of-device-client-hints.png",
-   caption="Usage of Device Client Hint directives",
-   description="Bar chart comparing the usage of device Client Hint directives detected on mobile and desktop page loads. Desktop sites were less likely than mobile to use `device-memory`, `dpr`, or `viewport-width` Client Hints. Usage of the `width` was equal between device types at 0.0%",
+   caption="Usage of Device Client Hint directives.",
+   description="Bar chart comparing the usage of device Client Hint directives detected on mobile and desktop page loads. Desktop sites were less likely than mobile to use `device-memory`, `dpr`, or `viewport-width` Client Hints (approximately 0.10% compard to 0.15%). Usage of the `width` was equal between device types at 0.01%.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=663083561&format=interactive",
    sheets_gid="1041308066",
    sql_file="client_hints.sql"
    )
 }}
 
-Uptake here is low, with [`DPR`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/DPR) and [`Viewport-Width`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Viewport-Width) leading with 0.2% of mobile sites requesting this, [`Device-Memory`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Device-Memory) a little behind at 0.1% and [`Width`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Width) at just 0.0%, but this is now deprecated, the proposed replacement being Sec-CH-Width, we detected no sites requesting this.
+Uptake here is low, with [`DPR`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/DPR) and [`Viewport-Width`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Viewport-Width) leading with 0.15% of mobile sites requesting this, [`Device-Memory`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Device-Memory) a little behind at 0.14% and [`Width`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Width) at just 0.0%, but this is now deprecated, the proposed replacement being Sec-CH-Width, we detected no sites requesting this.
 
 Currently, only Chrome, (and Chromium based browsers like Microsoft's Edge) and Opera support these headers, with <a hreflang="en" href="https://caniuse.com/client-hints-dpr-width-viewport">Safari and Firefox not yet onboard</a>.
 
@@ -212,8 +212,8 @@ Currently, only Chrome, (and Chromium based browsers like Microsoft's Edge) and 
 
 {{ figure_markup(
    image="mobile-web-usage-of-network-client-hints.png",
-   caption="Usage of Network Client Hint directives",
-   description="Bar chart showing the usage of network Client Hint directives detected on mobile and desktop page loads",
+   caption="Usage of Network Client Hint directives.",
+   description="Bar chart showing the usage of network Client Hint directives detected on mobile and desktop page loads. Again mobile seems higher (0.09% for desktop versus 0.15% for mobile) for most with `save-data` being used less by both at 0.04% and 0.08% respectively.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=172140786&format=interactive",
    sheets_gid="1041308066",
    sql_file="client_hints.sql"
@@ -240,8 +240,8 @@ The [_Network Information API_](https://developer.mozilla.org/en-US/docs/Web/API
 
 {{ figure_markup(
    image="mobile-web-usage-of-networkinformation-effectivetype.png",
-   caption="Usage of `NetworkInformation.effectiveType`",
-   description="Bar chart comparing the usage of Network Client Hint Directives between desktop and mobile devices. Mobile sites were more likely to use Downlink, ETC, RTT, and Save-Data directives.",
+   caption="Usage of `NetworkInformation.effectiveType`.",
+   description="Bar chart comparing the usage of Network Client Hint Directives between desktop and mobile devices. 18.4% of desktop devices use this API compared to 18.2% of mobile devices.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=844974484&format=interactive",
    sheets_gid="277973945",
    sql_file="network_info_effective_type_usage.sql"
@@ -256,7 +256,7 @@ We focused of mobile vs. desktop page loads making use of [`NetworkInformation.e
 
 {{ figure_markup(
    image="mobile-web-usage-of-navigator-devicememory.png",
-   caption="Usage of `Navigator.deviceMemory`",
+   caption="Usage of `Navigator.deviceMemory`.",
    description="Bar chart comparing the usage of `Navigator.deviceMemoryAPI` on mobile and desktop. 10.2% of desktop sites used the Device Memory API compared to 10.9% of mobile page loads.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=634683822&format=interactive",
    sheets_gid="1309485612",
@@ -511,37 +511,15 @@ The most prevalent URI schemes were `https:`, found on 93.2% of sites, and it's 
 
 After webpage links, the next five most used protocols in anchor href values on the mobile web are as follows:
 
-<figure>
-  <table>
-    <thead>
-      <th scope="col">URI Protocol</th>
-      <th scope="col">Percent of Mobile Page Loads</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td>`mailto:`</td>
-        <td class="numeric">28.3%</td>
-      </tr>
-      <tr>
-        <td>`tel:`</td>
-        <td class="numeric">24.2%</td>
-      </tr>
-      <tr>
-        <td>`whatsapp:`</td>
-        <td class="numeric">0.6%</td>
-      </tr>
-      <tr>
-        <td>`viber:`</td>
-        <td class="numeric">0.5%</td>
-      </tr>
-      <tr>
-        <td>`skype:`</td>
-        <td class="numeric">0.3%</td>
-      </tr>
-    </tbody>
-  </table>
-  <figcaption>{{ figure_link(caption="Popular alternative protocol links.", sheets_gid="115658247", sql_file="popular_link_protocols.sql") }}</figcaption>
-</figure>
+{{ figure_markup(
+   image="mobile-web-popular-link-protocols.png",
+   caption="Popular alternative protocol links.",
+   description="Bar chart showing the use of popular alternative protocol links on desktop and mobile. `mailto` is used slightly more on desktop (28.9% compared to 28.3%), `tel` more on mobile (20.7% versus 24.2%), `whatsapp`, `viber`, and `skype` are used less but more so on mobile (0.4%, 0.4%, and 0.3% on desktop compared to 0.6%, 0.5%, and 0.3% respectively on mobile).",
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=859715983&format=interactive",
+   sheets_gid="115658247",
+   sql_file="popular_link_protocols.sql"
+   )
+}}
 
 Mobile devices whilst limited in some aspects do tend to be better connected, they are a phone, have SMS and other messaging services where desktop clients may not. Usage of other link protocols past the standard `http:` / `https:` can help unlock some of these capabilities. Providing a tapable link to call or send a message without having to copy and paste makes for a smoother, more integrated user interaction.
 
@@ -671,9 +649,9 @@ When a site is accessed using assistive technology, an element's ARIA role commu
 
 {{ figure_markup(
    image="mobile-web-most-common-mobile-aria-roles.png",
-   caption='Bar chart showing adoption of ARIA roles on mobile web. `button` is used on 29.0% of mobile page loads. Adoption rates for subsequent roles drops quickly with the 10th most used, `tablist` appearing on just 7.4% of sites. Data from the [Accessibility](./accessibility) chapter.',
-   description="Bar chart showing the most defined ARIA role on mobile page loads.",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=23131628&format=interactive",
+   caption="Top 10 most common ARIA roles.",
+   description="Bar chart showing adoption of ARIA roles on mobile web compared to desktop. `button` is used on 29.0% of mobile page loads, followed by `navigation` (22.5%), `presentaiton` (21.1%), `dialog` (20.1%), `search` (18.8%), `main` (16.8%), `banner` (14.3%), `contentinfo` (12.1%), `img` (10.9%), and finally `tablist` (7.4%). Desktop usage looks similar.",
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1644250399&format=interactive",
    sheets_gid="1584971419",
    sql_file="../accessibility/common_aria_role.sql"
    )
@@ -689,8 +667,8 @@ A lack of color contrast impacts users with color blindness as well as low color
 
 {{ figure_markup(
    image="mobile-web-sufficient-color-contrast.png",
-   caption='Mobile Sites with sufficient color contrast. Data from the [Accessibility](./accessibility) chapter',
-   description="Bar chart showing percent of mobile page loads with a sufficient colour contrast. 2019 saw 22.0% of sites pass the audit. In 2020, this dropped to 21.1%. 2021 saw an increase to 22.2%",
+   caption='Mobile Sites with sufficient color contrast.',
+   description="Bar chart showing percent of mobile page loads with a sufficient colour contrast. 2019 saw 22.0% of sites pass the audit. In 2020, this dropped to 21.1%. 2021 saw an increase to 22.2%.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1440359640&format=interactive",
    sheets_gid="1628455121",
    sql_file="../accessibility/color_contrast.sql"
@@ -728,8 +706,8 @@ Things look even worse when looking at the usage by domain ranking.
 
 {{ figure_markup(
    image="mobile-web-zoom-blocking-viewport-tags.png",
-   caption="Disabled zooming and scaling by domain rank",
-   description="Bar chart showing the percentage of mobile pages loads were zooming and scaling was disabled, grouped by the origin popularity. At 45.0% the top 1K origins saw the most page loads were zooming and scaling were disabled. The percentage drops incrementally by each group with the 30.4% of top 1M sites disabling the feature. This indicates that the most popular sites (as measure by Crux metric ranking magnitude) were most likely to disable the accessibility feature",
+   caption="Disabled zooming and scaling by domain rank.",
+   description="Bar chart showing the percentage of mobile pages loads were zooming and scaling was disabled, grouped by the origin popularity. At 45.0% the top 1K origins saw the most page loads were zooming and scaling were disabled. The percentage drops incrementally by each group with the 30.4% of top 1M sites disabling the feature, and 29.4% of all sites disabling this. This indicates that the most popular sites (as measure by Crux metric ranking magnitude) were most likely to disable the accessibility feature. For desktop there is a lower disabling for all ranks of 22.4% to 27%.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=86675708&format=interactive",
    sheets_gid="1840321233",
    sql_file="viewport_zoom_scale_by_domain_rank.sql"
@@ -804,7 +782,7 @@ A LCP of 2.5 seconds or less is considered a good score.
 {{ figure_markup(
    image="mobile-web-largest-contentful-paint.png",
    caption='LCP performance by device. Data from the [Performance](./performance) chapter.',
-   description="Stacked bar charts comparing LCP threshold groupings for mobile and desktop. 60% of desktop sites scored as Good compared to 45% of mobile. 27% of desktop scored as Needs Improvement vs 35% for mobile. 12% of desktop sites and 19% of mobile scored as Poor LCP.",
+   description="Stacked bar charts comparing LCP threshold groupings for mobile and desktop. 60.3% of desktop sites scored as Good compared to 45.3% of mobile. 27.5% of desktop scored as Needs Improvement vs 35.2% for mobile. 12.2% of desktop sites and 19.5% of mobile scored as Poor LCP.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=875306231&format=interactive",
    sheets_gid="1682201087",
    sql_file="../performance/web_vitals_by_device.sql"
@@ -842,8 +820,8 @@ Images can be [served responsively](https://developer.mozilla.org/en-US/docs/Lea
 
 {{ figure_markup(
    image="mobile-web-responsive-images.png",
-   caption="Use of `<picture>` and `scrset` to serve responsive images",
-   description="Bar chart showing that 6.2% of mobile sites used `<picture>` elements and 32.0% used `srcset` attributes to load images responsively.",
+   caption="Use of `<picture>` and `scrset` to serve responsive images.",
+   description="Bar chart showing that 6.2% of mobile sites used `<picture>` elements (compared to 6.3% of desktop sites) and 32.0% used `srcset` attributes (compared to 31.7% of desktop sites) to load images responsively.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1030195048&format=interactive",
    sheets_gid="1802999215",
    sql_file="picture_source_srcset_usage.sql"
@@ -873,8 +851,8 @@ Looking at the HTTP Archive's <a hreflang="en" href="https://httparchive.org/rep
 
 {{ figure_markup(
    image="mobile-web-native-lazy-loading-over-time.png",
-   caption="Usage of Lazy Loading Attribute Overtime",
-   description="Line chart from http archive data showing the percentage of mobile and desktop pages using the loading='lazy' attribute over time. The lines follow the upward trajectory, starting with 1.4% in July 2020 and climbing in tandem to 19.4% in October 2021",
+   caption="Usage of Lazy Loading attribute over time.",
+   description="Line chart from http archive data showing the percentage of mobile and desktop pages using the `loading='lazy'` attribute over time. The lines follow the upward trajectory, starting with 1.4% in July 2020 and climbing in tandem to 19.4% in October 2021.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=62374244&format=interactive",
    sheets_gid="1889147690"
   )
@@ -911,7 +889,6 @@ Smaller screen sizes are susceptible to greater shifts, at 360 x 640px, this exa
 {{ figure_markup(
    gif="mobile-cls-example.gif",
    image="mobile-cls-example-static.png",
-   alt="GIF animation showing a mock ad block appearing on mobile",
    caption="Screen capture mock-up showing an ad causing CLS on a mobile sized screen.",
    description="The ad insert causes a relatively large amount of content to be shifted on screen at mobile viewport sizes.",
    width=600,
@@ -926,7 +903,6 @@ At desktop screen sizes, the same element appearing leads to a CLS score of just
 {{ figure_markup(
    gif="desktop-cls-example.gif",
    image="desktop-cls-example-static.png",
-   alt="GIF animation showing a mock ad block appearing on desktop",
    caption="Screen capture mock-up showing an ad causing CLS on a desktop sized screen.",
    description="The ad insert causes a relatively small amount of content to be shifted on screen at desktop viewport sizes.",
    width=600,
@@ -940,8 +916,8 @@ The CrUX dataset shows that 62% of mobile page loads had a CLS of 0.1 or under:
 
 {{ figure_markup(
    image="mobile-web-cumulative-layout-shift.png",
-   caption='CLS performance by device. data from the [Performance](./performance) chapter.',
-   description="Stacked bar charts comparing CLS threshold groupings for mobile and desktop. 62% of both desktop and mobile sites scored as Good. 23% of desktop scored as Needs Improvement vs 31% for mobile. 15% of desktop sites and 17% of mobile scored as Poor CLS.",
+   caption='CLS performance by device.',
+   description="Stacked bar charts comparing CLS threshold groupings for mobile and desktop. 62.2% desktop and 61.6% of mobile sites scored as Good. 22.7% of desktop scored as Needs Improvement vs 21.1% for mobile. 15.0% of desktop sites and 17.3% of mobile scored as Poor CLS.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=776500715&format=interactive",
    sheets_gid="1682201087",
    sql_file="../performance/web_vitals_by_device.sql"
@@ -964,8 +940,8 @@ A good FID score is 100 ms or under, a poor FID score is over 300 ms.
 
 {{ figure_markup(
    image="mobile-web-first-input-delay.png",
-   caption='FID performance by device. data from the [Performance](./performance) chapter.',
-   description="Stacked bar charts comparing FID threshold groupings for mobile and desktop. 100% of desktop sites scored as Good compared to 90% of mobile. 10% of mobile scored as Needs Improvement.",
+   caption='FID performance by device.',
+   description="Stacked bar charts comparing FID threshold groupings for mobile and desktop. 99.0% of desktop sites scored as Good compared to 90.0% of mobile. 9.8% of mobile scored as Needs Improvement.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1158252805&format=interactive",
    sheets_gid="1682201087",
    sql_file="../performance/web_vitals_by_device.sql"
