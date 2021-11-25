@@ -1076,7 +1076,8 @@
     "saptaks": {
       "name": "Saptak Sengupta",
       "teams": [
-        "authors"
+        "authors",
+        "developers"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/9530293?v=4&s=200",
       "website": "https://saptaks.website/",
