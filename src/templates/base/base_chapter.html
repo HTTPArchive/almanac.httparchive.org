@@ -156,43 +156,19 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
   </h2>
   <div class="reactions" data-source="{{ self.source() }}">
     <div class="reaction-tabs" role="tablist" aria-label="{{ self.reactions() }}">
-      <button
-        role="tab"
-        aria-selected="true"
-        aria-controls="likes-panel"
-        id="likes-tab"
-        tabindex="0"
-      >
+      <button id="likes-tab" role="tab" aria-selected="true" aria-controls="likes-panel" tabindex="0">
         <span id="likes-count">0</span>
         <span id="likes-label" data-plural="{{ self.like() }}" data-singular="{{ self.likes() }}">{{ self.likes() }}</span>
       </button>
-      <button
-        role="tab"
-        aria-selected="false"
-        aria-controls="reposts-panel"
-        id="reposts-tab"
-        tabindex="-1"
-      >
+      <button id="reposts-tab" role="tab" aria-selected="false" aria-controls="reposts-panel" tabindex="-1">
         <span id="reposts-count">0</span>
         <span id="reposts-label" data-plural="{{ self.repost() }}" data-singular="{{ self.reposts() }}">{{ self.reposts() }}</span>
       </button>
-      <button
-        role="tab"
-        aria-selected="false"
-        aria-controls="replies-panel"
-        id="replies-tab"
-        tabindex="-1"
-      >
+      <button id="replies-tab" role="tab" aria-selected="false" aria-controls="replies-panel" tabindex="-1">
         <span id="replies-count">0</span>
         <span id="replies-label" data-plural="{{ self.reply() }}" data-singular="{{ self.replies() }}">{{ self.replies() }}</span>
       </button>
-      <button
-        role="tab"
-        aria-selected="false"
-        aria-controls="mentions-panel"
-        id="mentions-tab"
-        tabindex="-1"
-      >
+      <button id="mentions-tab" role="tab" aria-selected="false" aria-controls="mentions-panel" tabindex="-1">
         <span id="mentions-count">0</span>
         <span id="mentions-label" data-plural="{{ self.mention() }}" data-singular="{{ self.mentions() }}">{{ self.mentions() }}</span>
       </button>

@@ -56,8 +56,8 @@ function renderReactions(webmentions, reactionType, wmProperty) {
   const webmentionReactionsList = document.createElement("ul");
   webmentionReactionsList.setAttribute("class", `webmention-${reactionType}`);
   reactions.forEach(function(reaction) {
-    const reactionLI = document.createElement("li");
-    reactionLI.setAttribute("class", `webmention-${reactionType}-item`);
+    const reactionLi = document.createElement("li");
+    reactionLi.setAttribute("class", `webmention-${reactionType}-item`);
 
     const reactionA = document.createElement("a");
     reactionA.setAttribute("class", "webmention-author");
@@ -76,45 +76,45 @@ function renderReactions(webmentions, reactionType, wmProperty) {
     reactionA.appendChild(reactionIMG);
 
     // Replies and mentions have some extra HTML
-    const reactionDIVContent = document.createElement("div");
-    const reactionDIVMeta = document.createElement("div");
+    const reactionDivContent = document.createElement("div");
+    const reactionDivMeta = document.createElement("div");
     if (reactionType === "replies" || reactionType === "mentions") {
       const reactionSTRONG = document.createElement("strong");
       reactionSTRONG.setAttribute("class", "webmention-author-name");
       reactionSTRONG.textContent = reaction["author"]["name"];
       reactionA.appendChild(reactionSTRONG);
 
-      reactionDIVContent.setAttribute("class", "webmention-content");
-      reactionDIVContent.textContent = reaction["content"]["text"];
+      reactionDivContent.setAttribute("class", "webmention-content");
+      reactionDivContent.textContent = reaction["content"]["text"];
 
-      reactionDIVMeta.setAttribute("class", "webmention-meta");
+      reactionDivMeta.setAttribute("class", "webmention-meta");
 
-      const reactionTIME = document.createElement("time");
-      reactionTIME.setAttribute("class", "webmention-pub-date");
-      reactionTIME.setAttribute("datetime", reaction["published"]);
-      reactionTIME.textContent = formatDate(reaction["published"]);
+      const reactionTime = document.createElement("time");
+      reactionTime.setAttribute("class", "webmention-pub-date");
+      reactionTime.setAttribute("datetime", reaction["published"]);
+      reactionTime.textContent = formatDate(reaction["published"]);
 
-      const reactionSPAN = document.createElement("span");
-      reactionSPAN.setAttribute("class", "webmention-divider");
-      reactionSPAN.setAttribute("aria-hidden", "true");
-      reactionSPAN.textContent = " ⋅ ";
+      const reactionSpan = document.createElement("span");
+      reactionSpan.setAttribute("class", "webmention-divider");
+      reactionSpan.setAttribute("aria-hidden", "true");
+      reactionSpan.textContent = " ⋅ ";
 
       const reactionASource = document.createElement("a");
       reactionASource.setAttribute("class", "webmention-source");
       reactionASource.setAttribute("href", reaction["url"]);
       reactionASource.textContent = document.querySelector(".reactions").getAttribute("data-source");
 
-      reactionDIVMeta.appendChild(reactionTIME);
-      reactionDIVMeta.appendChild(reactionSPAN);
-      reactionDIVMeta.appendChild(reactionASource);
+      reactionDivMeta.appendChild(reactionTime);
+      reactionDivMeta.appendChild(reactionSpan);
+      reactionDivMeta.appendChild(reactionASource);
     }
 
-    reactionLI.appendChild(reactionA);
+    reactionLi.appendChild(reactionA);
     if (reactionType === "replies" || reactionType === "mentions") {
-      reactionLI.appendChild(reactionDIVContent);
-      reactionLI.appendChild(reactionDIVMeta);
+      reactionLi.appendChild(reactionDivContent);
+      reactionLi.appendChild(reactionDivMeta);
     }
-    webmentionReactionsList.appendChild(reactionLI);
+    webmentionReactionsList.appendChild(reactionLi);
   });
   document.querySelector(`#${reactionType}-panel`).appendChild(webmentionReactionsList);
 }
