@@ -15,20 +15,23 @@
           "part": "I",
           "chapter_number": "1",
           "title": "CSS",
-          "slug": "css"
+          "slug": "css",
+          "todo": "true"
         },
         {
           "part": "I",
           "chapter_number": "2",
           "title": "JavaScript",
-          "slug": "javascript"
+          "slug": "javascript",
+          "todo": "true"
         },
         {
           "part": "I",
           "chapter_number": "3",
           "title": "Markup",
           "slug": "markup",
-          "hero_dir": "2021"
+          "hero_dir": "2021",
+          "todo": "true"
         },
         {
           "part": "I",
@@ -42,6 +45,7 @@
           "chapter_number": "5",
           "title": "WebAssembly",
           "slug": "webassembly",
+          "todo": "true",
           "hero_dir": "2021"
         },
         {
@@ -60,13 +64,15 @@
           "part": "II",
           "chapter_number": "7",
           "title": "SEO",
-          "slug": "seo"
+          "slug": "seo",
+          "todo": "true"
         },
         {
           "part": "II",
           "chapter_number": "8",
           "title": "Accessibility",
-          "slug": "accessibility"
+          "slug": "accessibility",
+          "todo": "true"
         },
         {
           "part": "II",
@@ -85,13 +91,15 @@
           "part": "II",
           "chapter_number": "11",
           "title": "Security",
-          "slug": "security"
+          "slug": "security",
+          "todo": "true"
         },
         {
           "part": "II",
           "chapter_number": "12",
           "title": "Mobile Web",
-          "slug": "mobile-web"
+          "slug": "mobile-web",
+          "todo": "true"
         },
         {
           "part": "II",
@@ -116,13 +124,15 @@
           "part": "III",
           "chapter_number": "15",
           "title": "CMS",
-          "slug": "cms"
+          "slug": "cms",
+          "todo": "true"
         },
         {
           "part": "III",
           "chapter_number": "16",
           "title": "Ecommerce",
-          "slug": "ecommerce"
+          "slug": "ecommerce",
+          "todo": "true"
         }
       ]
     },
@@ -134,19 +144,22 @@
           "part": "IV",
           "chapter_number": "17",
           "title": "Compression",
-          "slug": "compression"
+          "slug": "compression",
+          "todo": "true"
         },
         {
           "part": "IV",
           "chapter_number": "18",
           "title": "CDN",
-          "slug": "cdn"
+          "slug": "cdn",
+          "todo": "true"
         },
         {
           "part": "IV",
           "chapter_number": "19",
           "title": "Page Weight",
-          "slug": "page-weight"
+          "slug": "page-weight",
+          "todo": "true"
         },
         {
           "part": "IV",
@@ -158,7 +171,8 @@
           "part": "IV",
           "chapter_number": "21",
           "title": "HTTP",
-          "slug": "http"
+          "slug": "http",
+          "todo": "true"
         }
       ]
     }
@@ -799,14 +813,6 @@
       "github": "soulcorrosion",
       "linkedin": "manuel-garcia-12b6928",
       "twitter": "corrosion_pt"
-    },
-    "awareseven": {
-      "name": "Matteo Große-Kampmann",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https://avatars.githubusercontent.com/u/53170037?v=4&s=200",
-      "github": "awareseven"
     },
     "maudnals": {
       "name": "Maud Nalpas",
