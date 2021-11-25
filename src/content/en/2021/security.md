@@ -12,7 +12,7 @@ tomvangoethem_bio: Tom Van Goethem is a researcher at the <a hreflang="en" href=
 nrllh_bio: Nurullah Demir is a security researcher and PhD Student at <a hreflang="en" href="https://www.internet-sicherheit.de/en/">Institute for Internet Security</a>. His research focuses on robust web security mechanisms and adversarial machine learning.
 results: https://docs.google.com/spreadsheets/d/1kwjKoa8tV87XzlF6eetf2sfcMDFqVVaT25w_gm_SRwA/
 featured_quote: Our analysis clearly shows that the situation of web security concerning the provider side has improved compared to previous years. However, our observation also indicates that the web community should do more to ensure better security.
-featured_stat_1: 91.9%
+featured_stat_1: 91.1%
 featured_stat_label_1: Requests that use HTTPS on mobile
 featured_stat_2: 22.2%
 featured_stat_label_2: Percentage of top 1000 sites that use CSP
@@ -34,7 +34,7 @@ Following the recent trend, we see continuous growth in the number of websites a
 
 {{ figure_markup(
   caption="The percentage of requests that use HTTPS on mobile.",
-  content="91.9%",
+  content="91.1%",
   classes="big-number",
   sheets_gid="547694791",
   sql_file="https_request_over_time.sql"
