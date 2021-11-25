@@ -813,6 +813,14 @@
       "linkedin": "manuel-garcia-12b6928",
       "twitter": "corrosion_pt"
     },
+    "awareseven": {
+      "name": "Matteo Große-Kampmann",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/53170037?v=4&s=200",
+      "github": "awareseven"
+    },
     "maudnals": {
       "name": "Maud Nalpas",
       "teams": [
@@ -865,12 +873,13 @@
       "github": "mo271"
     },
     "Navaneeth-akam": {
-      "name": "Navaneeth",
+      "name": "Navaneeth Krishna",
       "teams": [
         "authors"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/69532755?v=4&s=200",
-      "github": "Navaneeth-akam"
+      "github": "Navaneeth-akam",
+      "twitter": "Navanee55755217"
     },
     "MeFoDy": {
       "name": "Nikita Dubko",
