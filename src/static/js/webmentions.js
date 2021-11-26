@@ -45,10 +45,6 @@ function renderReactions(webmentions, reactionType, wmProperty) {
     return;
   }
 
-  if (!document.querySelector(`#${reactionType}-count`) || !document.querySelector(`#${reactionType}-label`)) {
-    return;
-  }
-
   // Add the count to the reaction tab
   document.querySelector(`#${reactionType}-count`).textContent = reactions.length;
   const reactionLabel = document.querySelector(`#${reactionType}-label`);
