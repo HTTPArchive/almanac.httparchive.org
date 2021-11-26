@@ -19,13 +19,11 @@ featured_stat_label_3: Percent of desktop pages using custom elements.
 unedited: true
 ---
 
-
 ### Introduction
 
 The speed and consistency that the JavaScript language has evolved with over the past years is tremendous. While in the past it was used primarily for client-side, it has taken a very important and respected place in the world of building services and server-side tools. JavaScript has evolved to a point where it is not only possible to create faster applications but also to [run servers within browsers](https://blog.stackblitz.com/posts/introducing-webcontainers/).
 
 There is a lot that happens in the browser when rendering the application, from downloading JavaScript to parsing, compiling and executing it. Let’s start with that first step and try to understand how much JavaScript is actually requested by pages.
-
 
 ### How much JavaScript do we load?
 
@@ -43,10 +41,8 @@ The 50th percentile (median) desktop page loads 463 kilobytes of JavaScript, whe
   )
 }}
 
-
 Compared to [2019’s results](https://almanac.httparchive.org/en/2019/javascript#fig-2), this shows an increase of 18.4% in the usage of JavaScript for desktop devices and an increase of 18.9% on mobile devices. As we see the trend is towards using more JavaScript over the years, this could slow down the rendering of an application given the additional CPU work. It's worth to note that these statistics represent the transferred bytes which could be compressed responses and thus, the actual cost to the CPU could be significantly higher.
 Let's have a look at how much JavaScript is actually required to be loaded on the page.
-
 
 {{ figure_markup(
   image="unused-javascript-bytes-per-page.png",
@@ -70,7 +66,6 @@ The median page loads 155 kilobytes of unused JavaScript and at the 90th percent
   )
 }}
 
-
 This contributes to 36.2% of unused JavaScript on a page.
 
 {{ figure_markup(
@@ -81,7 +76,6 @@ This contributes to 36.2% of unused JavaScript on a page.
   sql_file="unused_js_bytes_distribution.sql"
   )
 }}
-
 
 This is such a significant figure to be using the CPU with other important resources and to just go to waste, given the impact it can have on the [Largest Contentful Paint](https://web.dev/optimize-lcp/) (LCP) of the page, especially for the mobile users with limited data plans. This could be a result of a lot of boilerplate code that is shipped when using large frameworks or libraries.
 
@@ -100,7 +94,6 @@ One of the contributing factors towards slow rendering of the web page could be 
   sql_file="requests_2021.sql"
   )
 }}
-
 
 The median desktop page loads 21 JavaScript resources(`.js` and `.mjs` files), going up to 59 resources at the 90th percentile.
 
@@ -151,7 +144,6 @@ The median desktop page loads 21 JavaScript resources(`.js` and `.mjs` files), g
 
 As compared to the [last year’s results](https://almanac.httparchive.org/en/2020/javascript#request-count), there has been a marginal increase in the number of JavaScript resources requested in 2021, with the median number of JavaScript resources loaded being 20 for desktop pages and 19 for mobile.
 
-
 {{ figure_markup(
   image="js-resources-over-years.png",
   caption="Distribution of JavaScript resources loaded over desktop and mobile devices by year.",
@@ -200,7 +192,6 @@ This is where the recent advances in the HTTP protocol come in and the idea of r
 
 Read more about the state of the protocols in the [HTTP](./http) chapter.
 
-
 ### module and nomodule
 
 When loading a website, the browser renders the HTML and requests the appropriate resources. It consumes the polyfills referenced in the code for the effective rendering and functioning of the page. The modern browsers that support newer syntax like [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [async functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function), etc. do not need loads of polyfills to make things work and therefore, should not have to.
@@ -214,21 +205,21 @@ Let's look at the data to understand the adoption of these attributes.
   <table>
     <thead>
       <tr>
-      <td>Client</td>
-      <td>`module`</td>
-      <td>`nomodule`</td>
+        <td>Client</td>
+        <td>`module`</td>
+        <td>`nomodule`</td>
       </tr>
     </thead>
     <tbody>
       <tr>
-      <td>Desktop</td>
-      <td>4.6%</td>
-      <td>3.9%</td>
+        <td>Desktop</td>
+        <td>4.6%</td>
+        <td>3.9%</td>
       </tr>
       <tr>
-      <td>Mobile</td>
-      <td>4.3%</td>
-      <td>3.9%</td>
+        <td>Mobile</td>
+        <td>4.3%</td>
+        <td>3.9%</td>
       </tr>
     </tbody>
   </table>
@@ -247,25 +238,26 @@ However, loading the JavaScript asynchronously or deferring it helps in some way
 
 <figure>
   <table>
+    <thead>
       <tr>
-      <th>Client</th>
-      <th>`async`</th>
-      <th>`defer`</th>
-      <th>neither</th>
+        <th>Client</th>
+        <th>`async`</th>
+        <th>`defer`</th>
+        <th>neither</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-      <td>Desktop</td>
-      <td class="numeric">89.26%</td>
-      <td class="numeric">48.09%</td>
-      <td class="numeric">10.27%</td>
+        <td>Desktop</td>
+        <td class="numeric">89.26%</td>
+        <td class="numeric">48.09%</td>
+        <td class="numeric">10.27%</td>
       </tr>
       <tr>
-      <td>Mobile</td>
-      <td class="numeric">89.12%</td>
-      <td class="numeric">47.78%</td>
-      <td class="numeric">10.40%</td>
+        <td>Mobile</td>
+        <td class="numeric">89.12%</td>
+        <td class="numeric">47.78%</td>
+        <td class="numeric">10.40%</td>
       </tr>
     </tbody>
   </table>
@@ -322,7 +314,6 @@ As it turns out, 2.6% of requests use this anti-pattern with both `async` and `d
 
 The median number of JavaScript resources requested on desktop pages, as [observed earlier](#how-much-javascript-do-we-load), is 21. Let us now look into which ones of these are first-party or third-party requests.
 
-
 {{ figure_markup(
   image="js-requests-mobile-host.png",
   caption="Distribution of the number of JavaScript requests per mobile page by host",
@@ -349,7 +340,6 @@ A median of desktop pages request 11 third-party resources whereas 10 first-part
 
 This is where one has to put their ‘performance-nerd’ cap on, and ensure that using third-party scripts [doesn’t result in losing control over the performance of the page or the main thread getting bloated](https://csswizardry.com/2017/07/performance-and-resilience-stress-testing-third-parties/) with too much JavaScript being transferred by [loading these scripts better](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript).
 
-
 ### AJAX
 
 A lot of JavaScript that we write is used to communicate with servers through asynchronous requests to receive information in various formats. AJAX, or asynchronous JavaScript and XML, is typically used to send and receive data in JSON, XML, HTML, text formats.
@@ -368,10 +358,9 @@ A median of 4 asynchronous requests are made per page on both mobile and desktop
   )
 }}
 
-
 If we look at the long tail and check the number of async requests for the 100th percentile, the difference in the devices is quite remarkable.
 
-<figure markdown>
+<figure>
   <table>
     <thead>
       <tr>
@@ -476,7 +465,6 @@ Out of the vast list of content types that can be requested, let's look at the m
 
 The most requested content types on mobile and desktop pages are images at 45% of requests. Images are a broad category inclusive of all the content types related to images, for example, `image/x-icon`, `image/svg+xml`, `image/webp`, `image/jpeg`, etc.
 
-
 {{ figure_markup(
   content="45.6%",
   caption="Percent of AJAX requests for images.",
@@ -490,36 +478,36 @@ The most requested content types on mobile and desktop pages are images at 45% o
   <table>
     <thead>
       <tr>
-      <th>Content-Type categories</th>
-      <th>Desktop</th>
-      <th>Mobile</th>
+        <th>Category</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-      <td>json</td>
-      <td class="numeric">3.8%</td>
-      <td class="numeric">3.9%</td>
+        <td>json</td>
+        <td class="numeric">3.8%</td>
+        <td class="numeric">3.9%</td>
       </tr>
       <tr>
-      <td>fonts</td>
-      <td class="numeric">5.7%</td>
-      <td class="numeric">5.0%</td>
+        <td>fonts</td>
+        <td class="numeric">5.7%</td>
+        <td class="numeric">5.0%</td>
       </tr>
       <tr>
-      <td>css</td>
-      <td class="numeric">12.6%</td>
-      <td class="numeric">13.2%</td>
+        <td>css</td>
+        <td class="numeric">12.6%</td>
+        <td class="numeric">13.2%</td>
       </tr>
       <tr>
-      <td>javascript</td>
-      <td class="numeric">32.3%</td>
-      <td class="numeric">33.3%</td>
+        <td>javascript</td>
+        <td class="numeric">32.3%</td>
+        <td class="numeric">33.3%</td>
       </tr>
       <tr>
-      <td>images</td>
-      <td class="numeric">45.6%</td>
-      <td class="numeric">44.6%</td>
+        <td>images</td>
+        <td class="numeric">45.6%</td>
+        <td class="numeric">44.6%</td>
       </tr>
     </tbody>
   </table>
@@ -620,7 +608,6 @@ For both Fetch and XHR, the usage has tremendously increased over the years.
 
 Fetch has seen an increase of 38% on desktop pages and 48% for XHR. With a gradual increase for fetch, the focus seems to be towards cleaner requests and handling responses better.
 
-
 ### UI Libraries and frameworks
 
 Over the past years, the usage of JavaScript has increased tremendously with the adoption of many libraries and frameworks. In an effort to fasten and ease building the web, many frameworks have been introduced with each bringing features that make the app more performant. This was so prevalent that the term _framework fatigue_ came into existence.
@@ -651,90 +638,90 @@ It would instead be interesting to look at how the popular frameworks and librar
   <table>
     <thead>
       <tr>
-      <th>Frameworks/Libraries</th>
-      <th>Percentage</th>
+        <th>Frameworks/Libraries</th>
+        <th>Percentage</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-      <td>jQuery</td>
-      <td class="numeric">17%</td>
+        <td>jQuery</td>
+        <td class="numeric">17%</td>
       </tr>
       <tr>
-      <td>jQuery, jQuery Migrate</td>
-      <td class="numeric">9%</td>
+        <td>jQuery, jQuery Migrate</td>
+        <td class="numeric">9%</td>
       </tr>
       <tr>
-      <td>jQuery, jQuery UI</td>
-      <td class="numeric">4%</td>
+        <td>jQuery, jQuery UI</td>
+        <td class="numeric">4%</td>
       </tr>
       <tr>
-      <td>jQuery, jQuery Migrate, jQuery UI</td>
-      <td class="numeric">3%</td>
+        <td>jQuery, jQuery Migrate, jQuery UI</td>
+        <td class="numeric">3%</td>
       </tr>
       <tr>
-      <td>Modernizr, jQuery</td>
-      <td class="numeric">2%</td>
+        <td>Modernizr, jQuery</td>
+        <td class="numeric">2%</td>
       </tr>
       <tr>
-      <td>Slick, jQuery, jQuery Migrate</td>
-      <td class="numeric">1%</td>
+        <td>Slick, jQuery, jQuery Migrate</td>
+        <td class="numeric">1%</td>
       </tr>
       <tr>
-      <td>Slick, jQuery</td>
-      <td class="numeric">1%</td>
+        <td>Slick, jQuery</td>
+        <td class="numeric">1%</td>
       </tr>
       <tr>
-      <td>React, jQuery, jQuery Migrate</td>
-      <td class="numeric">1%</td>
+        <td>React, jQuery, jQuery Migrate</td>
+        <td class="numeric">1%</td>
       </tr>
       <tr>
-      <td>React</td>
-      <td class="numeric">1%</td>
+        <td>React</td>
+        <td class="numeric">1%</td>
       </tr>
       <tr>
-      <td>Modernizr, jQuery, jQuery UI</td>
-      <td class="numeric">1%</td>
+        <td>Modernizr, jQuery, jQuery UI</td>
+        <td class="numeric">1%</td>
       </tr>
       <tr>
-      <td>Modernizr, jQuery, jQuery Migrate, jQuery UI</td>
-      <td class="numeric">1%</td>
+        <td>Modernizr, jQuery, jQuery Migrate, jQuery UI</td>
+        <td class="numeric">1%</td>
       </tr>
       <tr>
-      <td>Modernizr, jQuery, jQuery Migrate</td>
-      <td class="numeric">1%</td>
+        <td>Modernizr, jQuery, jQuery Migrate</td>
+        <td class="numeric">1%</td>
       </tr>
       <tr>
-      <td>Lodash, jQuery</td>
-      <td class="numeric">1%</td>
+        <td>Lodash, jQuery</td>
+        <td class="numeric">1%</td>
       </tr>
       <tr>
-      <td>Lightbox, jQuery, jQuery Migrate</td>
-      <td class="numeric">1%</td>
+        <td>Lightbox, jQuery, jQuery Migrate</td>
+        <td class="numeric">1%</td>
       </tr>
       <tr>
-      <td>Lightbox, jQuery</td>
-      <td class="numeric">1%</td>
+        <td>Lightbox, jQuery</td>
+        <td class="numeric">1%</td>
       </tr>
       <tr>
-      <td>Isotope, jQuery, jQuery Migrate</td>
-      <td class="numeric">1%</td>
+        <td>Isotope, jQuery, jQuery Migrate</td>
+        <td class="numeric">1%</td>
       </tr>
       <tr>
-      <td>GSAP, Lodash, Polyfill, React, RequireJS, jQuery</td>
-      <td class="numeric">1%</td>
+        <td>GSAP, Lodash, Polyfill, React, RequireJS, jQuery</td>
+        <td class="numeric">1%</td>
       </tr>
       <tr>
-      <td>GSAP, Lodash, Polyfill, React, jQuery</td>
-      <td class="numeric">1%</td>
+        <td>GSAP, Lodash, Polyfill, React, jQuery</td>
+        <td class="numeric">1%</td>
       </tr>
       <tr>
-      <td>FancyBox, jQuery, jQuery UI</td>
-      <td class="numeric">1%</td>
+        <td>FancyBox, jQuery, jQuery UI</td>
+        <td class="numeric">1%</td>
       </tr>
       <tr>
-      <td>FancyBox, jQuery</td>
-      <td class="numeric">1%</td>
+        <td>FancyBox, jQuery</td>
+        <td class="numeric">1%</td>
       </tr>
     </tbody>
   </table>
@@ -781,7 +768,6 @@ A [&lt;template>](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Us
 
 Templates work well when dealing with web components, as the content that is not yet referenced by JavaScript is then appended to a shadow root using the shadow DOM.
 
-
 {{ figure_markup(
   content="<0.1%",
   caption="Percent of pages using templates.",
@@ -792,7 +778,6 @@ Templates work well when dealing with web components, as the content that is not
 }}
 
 Less than 0.1% of web pages have adopted the use of templates. Although templates are well [supported](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots#:~:text=Templates%20are%20well%2Dsupported%20in%20browsers%3B%20the%20Shadow%20DOM%20API%20is%20supported%20by%20default%20in%20Firefox%20(version%2063%20onwards)%2C%20Chrome%2C%20Opera%2C%20Safari%2C%20and%C2%A0Edge) in browsers, there is still a very low percentage of pages using them.
-
 
 ### Preload and Prefetch
 
@@ -827,25 +812,25 @@ It would also be ideal to see how many preload and prefetch hints are used per p
 
 A median desktop page loads 1 JavaScript resource with the preload hint whereas 2 JavaScript resources with the prefetch hint.
 
-<figure markdown>
+<figure>
   <table>
     <thead>
       <tr>
-      <th>Client</th>
-      <th>2020</th>
-      <th>2021</th>
+        <th>Client</th>
+        <th>2020</th>
+        <th>2021</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-      <td>Desktop</td>
-      <td class="numeric">5</td>
-      <td class="numeric">4</td>
+        <td>Desktop</td>
+        <td class="numeric">5</td>
+        <td class="numeric">4</td>
       </tr>
       <tr>
-      <td>Mobile</td>
-      <td class="numeric">7</td>
-      <td class="numeric">4</td>
+        <td>Mobile</td>
+        <td class="numeric">7</td>
+        <td class="numeric">4</td>
       </tr>
     </tbody>
   </table>
@@ -856,21 +841,21 @@ A median desktop page loads 1 JavaScript resource with the preload hint whereas 
   <table>
     <thead>
       <tr>
-      <th>Client</th>
-      <th>2020</th>
-      <th>2021</th>
+        <th>Client</th>
+        <th>2020</th>
+        <th>2021</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-      <td>Desktop</td>
-      <td class="numeric">14</td>
-      <td class="numeric">13</td>
+        <td>Desktop</td>
+        <td class="numeric">14</td>
+        <td class="numeric">13</td>
       </tr>
       <tr>
-      <td>Mobile</td>
-      <td class="numeric">12</td>
-      <td class="numeric">11</td>
+        <td>Mobile</td>
+        <td class="numeric">12</td>
+        <td class="numeric">11</td>
       </tr>
     </tbody>
   </table>
@@ -879,13 +864,11 @@ A median desktop page loads 1 JavaScript resource with the preload hint whereas 
 
 Looking at the trend of the usage of preload and prefetch hints over the past years, it can be noted that the trend favors a decrease in the usage of more preload and prefetch hints per page.
 
-
 ### Compression
 
 When sending resources over the network, it becomes important to look at an efficient way of doing it, and compressing these resources using different techniques either statically or dynamically boosts the performance and makes the process faster.
 
 Most of the compressed resources use either gzip compression, or brotli (br) compression, or the compression technique is just not set.
-
 
 {{ figure_markup(
   image="compression-requests.png",
@@ -908,9 +891,7 @@ It is noted that 56% of JS requests apply the gzip compression method, whereas 3
   )
 }}
 
-
 An interesting observation here is the trend of the usage of these compression methods as [compared to the previous year](https://almanac.httparchive.org/en/2019/javascript#fig-10). The usage of gzip has gone down by almost 10% and brotli has increased by 11%. The trend definitely indicates the focus on smaller size files with more levels of compression that Brotli provides as compared to gzip.
-
 
 With such comparable data, let us actually check if the percentage difference is somehow impacted by the resources being first-party or third-party.
 
@@ -936,9 +917,7 @@ With such comparable data, let us actually check if the percentage difference is
   )
 }}
 
-
 The way preloading all our requests negates the impact of the resource hint, a similar problem occurs when we try to optimize and compress a resource that doesn’t need compression and is already small. It is observed that 90% of uncompressed third party JS resources are &lt; 5 KB, and uncompressed first-party resources less than 10kb are only 8%.
-
 
 ### Minification
 
@@ -1036,8 +1015,8 @@ It would be a great idea to now see what libraries were worked upon and have eit
   <table>
     <thead>
       <tr>
-      <th>Library</th>
-      <th>Percentage</th>
+        <th>Library</th>
+        <th>Percentage</th>
       </tr>
     </thead>
     <tbody>
@@ -1119,7 +1098,6 @@ It would be a great idea to now see what libraries were worked upon and have eit
 </figure>
 
 The results show that jQuery is the dominant factor in the decrease of vulnerability with at least 23.26% of improvement here and some improvement in jQueryUI too. However, there is little to no difference in other libraries’ security vulnerabilities, except for a few.
-
 
 ### Conclusion
 
