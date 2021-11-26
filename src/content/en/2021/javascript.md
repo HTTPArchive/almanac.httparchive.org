@@ -192,7 +192,7 @@ This is where the recent advances in the HTTP protocol come in and the idea of r
 
 Read more about the state of the protocols in the [HTTP](./http) chapter.
 
-### module and nomodule
+### `module` and `nomodule`
 
 When loading a website, the browser renders the HTML and requests the appropriate resources. It consumes the polyfills referenced in the code for the effective rendering and functioning of the page. The modern browsers that support newer syntax like [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [async functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function), etc. do not need loads of polyfills to make things work and therefore, should not have to.
 
@@ -205,9 +205,9 @@ Let's look at the data to understand the adoption of these attributes.
   <table>
     <thead>
       <tr>
-        <td>Client</td>
-        <td>`module`</td>
-        <td>`nomodule`</td>
+        <th>Client</th>
+        <th>`module`</th>
+        <th>`nomodule`</th>
       </tr>
     </thead>
     <tbody>
@@ -228,7 +228,7 @@ Let's look at the data to understand the adoption of these attributes.
 
 It is important to note that with the [end of support for IE11 browser](https://docs.microsoft.com/en-us/lifecycle/announcements/internet-explorer-11-support-end-dates), differential loading is less applicable because evergreen browsers support modern JavaScript syntax. One of the JavaScript frameworks, Angular, for example, [removed support for the legacy browsers with Angular v13](https://github.com/angular/angular/issues/41840) released November 2021.
 
-### async and defer
+### `async` and `defer`
 
 JavaScript loading could be render blocking unless it is specified as deferred or async.
 
