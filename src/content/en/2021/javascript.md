@@ -19,13 +19,13 @@ featured_stat_label_3: Percent of desktop pages using custom elements.
 unedited: true
 ---
 
-### Introduction
+## Introduction
 
 The speed and consistency that the JavaScript language has evolved with over the past years is tremendous. While in the past it was used primarily for client-side, it has taken a very important and respected place in the world of building services and server-side tools. JavaScript has evolved to a point where it is not only possible to create faster applications but also to <a hreflang="en" href="https://blog.stackblitz.com/posts/introducing-webcontainers/">run servers within browsers</a>.
 
 There is a lot that happens in the browser when rendering the application, from downloading JavaScript to parsing, compiling and executing it. Let's start with that first step and try to understand how much JavaScript is actually requested by pages.
 
-### How much JavaScript do we load?
+## How much JavaScript do we load?
 
 To measure is the key towards improvement, they say. To improve the usage of JavaScript in our applications, we need to measure how much JavaScript being shipped is actually required. Let's dig in to understand the distribution of JavaScript bytes per page, considering what a major role it plays in the web setup.
 
@@ -146,6 +146,8 @@ The trend is gradually increasing in the number of JavaScript resources loaded o
 This is where the recent advances in the HTTP protocol come in and the idea of reducing the number of JavaScript requests for better performance gets inaccurate. With the introduction of HTTP/2 and HTTP/3 the overhead of HTTP requests has significantly reduced so requesting the same resources over more requests is not necessarily a bad thing anymore.
 
 Read more about the state of the protocols in the [HTTP](./http) chapter.
+
+## How the JavaScript is requested
 
 ### `module` and `nomodule`
 
@@ -445,154 +447,12 @@ It would be interesting to also compare the adoption of XHR and Fetch over time.
 
 For both Fetch and XHR, the usage has tremendously increased over the years. Fetch has seen an increase of 38% on desktop pages and 48% for XHR. With a gradual increase for fetch, the focus seems to be towards cleaner requests and handling responses better.
 
-### UI Libraries and frameworks
-
-Over the past years, the usage of JavaScript has increased tremendously with the adoption of many libraries and frameworks. In an effort to fasten and ease building the web, many frameworks have been introduced with each bringing features that make the app more performant. This was so prevalent that the term _framework fatigue_ came into existence.
-
-To understand the usage of libraries and frameworks, HTTP Archive uses [Wappalyzer](./methodology#wappalyzer), which detects many technologies used by the web pages.
-
-{{ figure_markup(
-  image="js-libs-frameworks.png",
-  caption="Usage of Javascript libraries and frameworks.",
-  description="Bar chart showing the usage of Javascript libraries and frameworks. jQuery remains on top with 84% of mobile pages using it.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=584103777&format=interactive",
-  sheets_gid="1851485826",
-  sql_file="frameworks_libraries.sql"
-  )
-}}
-
-jQuery remains on top with 84% of mobile pages containing jQuery, however React usage has jumped from 4% to 8% since last year, which is a significant increase. Also worth noticing is the usage of Isotope (uses jQuery) to 7% leading to RequireJS falling out of the picture with 2% usage.
-
-One might wonder why jQuery is so dominant and hasn't disappeared over time. There are two main reasons for this. First, as [highlighted over the previous years](../2019/javascript#open-source-libraries-and-frameworks), is that most of the <a hreflang="en" href="https://wordpress.org/">WordPress</a> sites use jQuery, which contributes to a major participation of jQuery. Second, even if the wide usage of jQuery is ignored for a moment, several of the other top-used JavaScript libraries still rely on jQuery in some way under the hood.
-
-**UI Frameworks**
-
-The adoption of JavaScript frameworks doesn't see a substantial change compared to the previous years. With the way the adoption is measured, there is a <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/issues/2450">detection limitation</a> which doesn't let Wappalyzer capture the percentage precisely. Additionally, the detection is only run on home pages which doesn't capture accurately the overall framework adoption.
-
-It would instead be interesting to look at how the popular frameworks and libraries approach the usage of other libraries. This means how many frameworks or libraries actually rely on other libraries in production.
-
-<figure>
-  <table>
-    <thead>
-      <tr>
-        <th>Frameworks/Libraries</th>
-        <th>Desktop</th>
-        <th>Mobile</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>jQuery</td>
-        <td class="numeric">16.8%</td>
-        <td class="numeric">17.4%</td>
-      </tr>
-      <tr>
-        <td>jQuery, jQuery Migrate</td>
-        <td class="numeric">8.4%</td>
-        <td class="numeric">8.7%</td>
-      </tr>
-      <tr>
-        <td>jQuery, jQuery UI</td>
-        <td class="numeric">4.0%</td>
-        <td class="numeric">3.7%</td>
-      </tr>
-      <tr>
-        <td>jQuery, jQuery Migrate, jQuery UI</td>
-        <td class="numeric">2.6%</td>
-        <td class="numeric">2.5%</td>
-      </tr>
-      <tr>
-        <td>Modernizr, jQuery</td>
-        <td class="numeric">1.6%</td>
-        <td class="numeric">1.6%</td>
-      </tr>
-      <tr>
-        <td>FancyBox, jQuery</td>
-        <td class="numeric">1.1%</td>
-        <td class="numeric">1.1%</td>
-      </tr>
-      <tr>
-        <td>Slick, jQuery</td>
-        <td class="numeric">1.2%</td>
-        <td class="numeric">1.1%</td>
-      </tr>
-      <tr>
-        <td>Lightbox, jQuery</td>
-        <td class="numeric">1.1%</td>
-        <td class="numeric">0.8%</td>
-      </tr>
-      <tr>
-        <td>React, jQuery, jQuery Migrate</td>
-        <td class="numeric">0.9%</td>
-        <td class="numeric">0.9%</td>
-      </tr>
-      <tr>
-        <td>Modernizr, jQuery, jQuery Migrate</td>
-        <td class="numeric">0.8%</td>
-        <td class="numeric">0.9%</td>
-      </tr>
-    </tbody>
-  </table>
-  <figcaption>{{ figure_link(caption="Javascript frameworks usage with JavaScript libraries.", sheets_gid="1934429143", sql_file="frameworks_libraries_combos.sql") }}</figcaption>
-</figure>
-
-As can be observed, jQuery tops in usage with libraries and frameworks, which could also be a result of using a third-party library that includes it. This, as a result, leads to more processing time for the code that the framework or library uses with the other included libraries.
-
-22% of known versions of jQuery are found to be version 3.5.1. This is a big jump compared to last year's (1.12.4), which could be attributed to Wordpress which constitutes most of the participation of jQuery.
-
-**Web components and shadow DOM**
-
-With the web becoming componentized, a developer building a single page application may think about a user view as a set of components. This is not only for the sake of developers building dedicated components for each feature, but also to maximize component reusability. It could be in the same app on a different view or in a completely different application. Such use cases lead to the usage of custom elements and web components in web applications.
-
-It would be justified to say that with many JavaScript frameworks gaining popularity, the idea of reusability and building dedicated feature-based components has been adopted more widely. This feeds our curiosity to look into the adoption of custom elements, shadow DOM, template elements.
-
-<a hreflang="en" href="https://developers.google.com/web/fundamentals/web-components/customelements">Custom Elements</a> are customized elements built on top of the [`HTMLElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement) class. The browser provides a `customElements` API that allows developers to define an element and register it with the browser as a custom element.
-
-It is noted that 2.7% of desktop pages use custom elements for one or more parts of the web page.
-
-{{ figure_markup(
-  content="2.7%",
-  caption="Percent of desktop pages using custom elements.",
-  classes="big-number",
-  sheets_gid="1991863136",
-  sql_file="web_components_specs.sql"
-  )
-}}
-
-<a hreflang="en" href="https://developers.google.com/web/fundamentals/web-components/shadowdom">Shadow DOM</a> allows you to create a dedicated subtree in the DOM for the custom element introduced to the browser. It ensures the styles and nodes inside the element are not accessible outside the element.
-
-0.4% of pages use Shadow DOM specification of web components to ensure a scoped subtree for the element.
-
-{{ figure_markup(
-  content="0.4%",
-  caption="Percent of pages using Shadow DOM.",
-  classes="big-number",
-  sheets_gid="1991863136",
-  sql_file="web_components_specs.sql"
-  )
-}}
-
-A [`<template>`](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots#the_truth_about_templates) element is very useful when there is a pattern in the markup which could be reused. The contents of _template_ elements render only when referenced by JavaScript.
-
-Templates work well when dealing with web components, as the content that is not yet referenced by JavaScript is then appended to a shadow root using the shadow DOM.
-
-{{ figure_markup(
-  content="<0.1%",
-  caption="Percent of pages using templates.",
-  classes="big-number",
-  sheets_gid="1991863136",
-  sql_file="web_components_specs.sql"
-  )
-}}
-
-Less than 0.1% of web pages have adopted the use of templates. Although templates are well <a hreflang="en" href="https://caniuse.com/template">supported</a> in browsers, there is still a very low percentage of pages using them.
-
 ### Preload and Prefetch
 
 At the render of a page, the browser downloads the given resources and to prioritise the download of some resources over others the browser uses [resource hints](../resource-hints). The resource hints, preload and prefetch, are basically to tell the browser to either download some resource right away or to download it whenever it can to be able to present the resource when required.
 
-The **_preload_** hint tells the browser to download the resource with a higher priority as it will be required on the current page.
-The **_prefetch_** hint, however, tells the browser that the resource could be required after some time (useful for future navigation) and it'd better to fetch it when the browser has the capacity to do so and make it available as soon as it is required.
+The `preload` hint tells the browser to download the resource with a higher priority as it will be required on the current page.
+The `prefetch` hint, however, tells the browser that the resource could be required after some time (useful for future navigation) and it'd better to fetch it when the browser has the capacity to do so and make it available as soon as it is required.
 
 The preload hints are used by almost 15% of mobile pages to load JavaScript, whereas only 1% of mobile pages use the prefetch hint. Overall, 16.1% of desktop pages use one of these resource hints to load the JavaScript resources.
 
@@ -672,9 +532,11 @@ A median desktop page loads 1 JavaScript resource with the preload hint whereas 
 
 Looking at the trend of the usage of preload and prefetch hints over the past years, it can be noted that the trend favors a decrease in the usage of more preload and prefetch hints per page.
 
-### Compression
+## How the JavaScript is delivered
 
 When sending resources over the network, it becomes important to look at an efficient way of doing it, and compressing these resources using different techniques either statically or dynamically boosts the performance and makes the process faster.
+
+### Compression
 
 Most of the compressed resources use either gzip compression, or brotli (br) compression, or the compression technique is just not set.
 
@@ -802,7 +664,151 @@ An analysis of how many sites actually send the source map header on their first
 
 98% of the JS requests that include a SourceMap header on mobile are for first-party scripts.
 
-### Security vulnerabilities
+## Libraries and frameworks
+
+Over the past years, the usage of JavaScript has increased tremendously with the adoption of many libraries and frameworks. In an effort to fasten and ease building the web, many frameworks have been introduced with each bringing features that make the app more performant. This was so prevalent that the term _framework fatigue_ came into existence.
+
+### Libraries
+
+To understand the usage of libraries and frameworks, HTTP Archive uses [Wappalyzer](./methodology#wappalyzer), which detects many technologies used by the web pages.
+
+{{ figure_markup(
+  image="js-libs-frameworks.png",
+  caption="Usage of Javascript libraries and frameworks.",
+  description="Bar chart showing the usage of Javascript libraries and frameworks. jQuery remains on top with 84% of mobile pages using it.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=584103777&format=interactive",
+  sheets_gid="1851485826",
+  sql_file="frameworks_libraries.sql"
+  )
+}}
+
+jQuery remains on top with 84% of mobile pages containing jQuery, however React usage has jumped from 4% to 8% since last year, which is a significant increase. Also worth noticing is the usage of Isotope (uses jQuery) to 7% leading to RequireJS falling out of the picture with 2% usage.
+
+One might wonder why jQuery is so dominant and hasn't disappeared over time. There are two main reasons for this. First, as [highlighted over the previous years](../2019/javascript#open-source-libraries-and-frameworks), is that most of the <a hreflang="en" href="https://wordpress.org/">WordPress</a> sites use jQuery, which contributes to a major participation of jQuery. Second, even if the wide usage of jQuery is ignored for a moment, several of the other top-used JavaScript libraries still rely on jQuery in some way under the hood.
+
+### Frameworks
+
+The adoption of JavaScript frameworks doesn't see a substantial change compared to the previous years. With the way the adoption is measured, there is a <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/issues/2450">detection limitation</a> which doesn't let Wappalyzer capture the percentage precisely. Additionally, the detection is only run on home pages which doesn't capture accurately the overall framework adoption.
+
+It would instead be interesting to look at how the popular frameworks and libraries approach the usage of other libraries. This means how many frameworks or libraries actually rely on other libraries in production.
+
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Frameworks/Libraries</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>jQuery</td>
+        <td class="numeric">16.8%</td>
+        <td class="numeric">17.4%</td>
+      </tr>
+      <tr>
+        <td>jQuery, jQuery Migrate</td>
+        <td class="numeric">8.4%</td>
+        <td class="numeric">8.7%</td>
+      </tr>
+      <tr>
+        <td>jQuery, jQuery UI</td>
+        <td class="numeric">4.0%</td>
+        <td class="numeric">3.7%</td>
+      </tr>
+      <tr>
+        <td>jQuery, jQuery Migrate, jQuery UI</td>
+        <td class="numeric">2.6%</td>
+        <td class="numeric">2.5%</td>
+      </tr>
+      <tr>
+        <td>Modernizr, jQuery</td>
+        <td class="numeric">1.6%</td>
+        <td class="numeric">1.6%</td>
+      </tr>
+      <tr>
+        <td>FancyBox, jQuery</td>
+        <td class="numeric">1.1%</td>
+        <td class="numeric">1.1%</td>
+      </tr>
+      <tr>
+        <td>Slick, jQuery</td>
+        <td class="numeric">1.2%</td>
+        <td class="numeric">1.1%</td>
+      </tr>
+      <tr>
+        <td>Lightbox, jQuery</td>
+        <td class="numeric">1.1%</td>
+        <td class="numeric">0.8%</td>
+      </tr>
+      <tr>
+        <td>React, jQuery, jQuery Migrate</td>
+        <td class="numeric">0.9%</td>
+        <td class="numeric">0.9%</td>
+      </tr>
+      <tr>
+        <td>Modernizr, jQuery, jQuery Migrate</td>
+        <td class="numeric">0.8%</td>
+        <td class="numeric">0.9%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Javascript frameworks usage with JavaScript libraries.", sheets_gid="1934429143", sql_file="frameworks_libraries_combos.sql") }}</figcaption>
+</figure>
+
+As can be observed, jQuery tops in usage with libraries and frameworks, which could also be a result of using a third-party library that includes it. This, as a result, leads to more processing time for the code that the framework or library uses with the other included libraries.
+
+22% of known versions of jQuery are found to be version 3.5.1. This is a big jump compared to last year's (1.12.4), which could be attributed to Wordpress which constitutes most of the participation of jQuery.
+
+## Web components and shadow DOM
+
+With the web becoming componentized, a developer building a single page application may think about a user view as a set of components. This is not only for the sake of developers building dedicated components for each feature, but also to maximize component reusability. It could be in the same app on a different view or in a completely different application. Such use cases lead to the usage of custom elements and web components in web applications.
+
+It would be justified to say that with many JavaScript frameworks gaining popularity, the idea of reusability and building dedicated feature-based components has been adopted more widely. This feeds our curiosity to look into the adoption of custom elements, shadow DOM, template elements.
+
+<a hreflang="en" href="https://developers.google.com/web/fundamentals/web-components/customelements">Custom Elements</a> are customized elements built on top of the [`HTMLElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement) class. The browser provides a `customElements` API that allows developers to define an element and register it with the browser as a custom element.
+
+It is noted that 2.7% of desktop pages use custom elements for one or more parts of the web page.
+
+{{ figure_markup(
+  content="2.7%",
+  caption="Percent of desktop pages using custom elements.",
+  classes="big-number",
+  sheets_gid="1991863136",
+  sql_file="web_components_specs.sql"
+  )
+}}
+
+<a hreflang="en" href="https://developers.google.com/web/fundamentals/web-components/shadowdom">Shadow DOM</a> allows you to create a dedicated subtree in the DOM for the custom element introduced to the browser. It ensures the styles and nodes inside the element are not accessible outside the element.
+
+0.4% of pages use Shadow DOM specification of web components to ensure a scoped subtree for the element.
+
+{{ figure_markup(
+  content="0.4%",
+  caption="Percent of pages using Shadow DOM.",
+  classes="big-number",
+  sheets_gid="1991863136",
+  sql_file="web_components_specs.sql"
+  )
+}}
+
+A [`<template>`](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots#the_truth_about_templates) element is very useful when there is a pattern in the markup which could be reused. The contents of _template_ elements render only when referenced by JavaScript.
+
+Templates work well when dealing with web components, as the content that is not yet referenced by JavaScript is then appended to a shadow root using the shadow DOM.
+
+{{ figure_markup(
+  content="<0.1%",
+  caption="Percent of pages using templates.",
+  classes="big-number",
+  sheets_gid="1991863136",
+  sql_file="web_components_specs.sql"
+  )
+}}
+
+Less than 0.1% of web pages have adopted the use of templates. Although templates are well <a hreflang="en" href="https://caniuse.com/template">supported</a> in browsers, there is still a very low percentage of pages using them.
+
+## Security vulnerabilities
 
 Using third-party libraries comes with its own benefits and drawbacks. When using third-party libraries, one extra step for developers is to ensure the security that the library brings. Lighthouse runs this security audit for the third-party libraries used using the package name and its version. These packages can then be checked if there is any vulnerability that has been identified related to those. This is done using the <a hreflang="en" href="https://snyk.io/vuln?type=npm">Snyk's open source vulnerability database</a>.
 
@@ -907,7 +913,7 @@ It would be a great idea to now see what libraries were worked upon and have eit
 
 The results show that jQuery is the dominant factor in the decrease of vulnerability with at least 23.26% of improvement here and some improvement in jQueryUI too. However, there is little to no difference in other libraries' security vulnerabilities, except for a few.
 
-### Conclusion
+## Conclusion
 
 The numbers that we have seen throughout the chapter have brought us to an understanding of how vast the Javascript usage is and how it's evolving over time. The JavaScript ecosystem has been growing with the focus towards making the web the most performant and fastest experience, with newer features and APIs that make the developer experience easy and productive.
 
