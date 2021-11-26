@@ -1110,7 +1110,7 @@ We now turn to cryptominer market share in the following figure.
   sql_file="cryptominer_share.sql"
 ) }}
 
-We see that [CoinHive](https://en.wikipedia.org/wiki/Coinhive) community has switched to CoinImp. Therefore, CoinImp has clearly become the market leader (84.9% share). Even though Coinhive has been discontinued, we still see some websites that use CoinHive scripts (Desktop: 5.7%, mobile: 9.0%).
+We see that [Coinhive](https://en.wikipedia.org/wiki/Monero#Mining_malware) has been surpassed by CoinImp as the dominant cryptomining service. One of the main reasons for this <a hreflang="en" href="https://www.zdnet.com/article/coinhive-cryptojacking-service-to-shut-down-in-march-2019/">was that Coinhive was shutdown in March 2019</a>. Interestingly, the domain is now <a hreflang="en" href="https://www.troyhunt.com/i-now-own-the-coinhive-domain-heres-how-im-fighting-cryptojacking-and-doing-good-things-with-content-security-policies/">owned by Troy Hunt</a> who is now displaying aggressive banners on the website in an effort to make those sites still hosting the Coinhive script (Desktop: 5.7%, mobile: 9.0%) aware that they are—often without their knowledge. This reflects both the prevalence of Coinhive scripts even over two years after ceasing to operate, and the risks of hosting third-party resources that can be taken over should that third party cease to operate. With Coinhive's demise, CoinImp has clearly become the market leader (84.9% share).
 
 Our results suggest that cryptojacking is still a serious attack vector, and necessary measures should be used for it.
 
