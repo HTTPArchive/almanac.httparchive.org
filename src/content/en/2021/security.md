@@ -1132,7 +1132,7 @@ Please also note that our results may not show the actual state of the websites 
   )
 }}
 
-We see that just under 5% of the websites already use this standard—even though it is still a very young standard. We hope to see this number increase in future, since having a `security.txt` is an indication that the website administrators care about security and are willing to work with vulnerability reporters to improve security of their website.
+We see that just under 5% of the websites return a response when asking for the `/.well-known/securityt.txt` URL. However investigating many of these show they are basically 404 pages that are incorrectly returning a 200 status code so usage is likely much lower.
 
 {{ figure_markup(
   image="security-usage-of-properties-in-well-known-security.png",
@@ -1144,7 +1144,11 @@ We see that just under 5% of the websites already use this standard—even thoug
   )
 }}
 
-We see that `Policy` is the most used property in the `security.txt` files. This property includes a link to the vulnerability disclosure policy for the website that helps researchers understand the reporting practices they need to follow. The other most used properties include `Canonical` and `Encryption`. `Canonical` is used to indicate where the `security.txt` file is located. If the URI used to retrieve the `security.txt` file doesn't match the list URIs in the `Canonical` fields, then the contents of the file should not be trusted. `Encryption` provides the security researchers with an encryption key that they can use for encrypted communication.
+We see that `Policy` is the most used property in the `security.txt` files, but even then it's only used in 6.4% of sites with a `security.txt` URL. This property includes a link to the vulnerability disclosure policy for the website that helps researchers understand the reporting practices they need to follow. This is therefore likely a better indicator of the real usage of `security.txt` since most file are expected to have a `Policy` value, meaning likely closer to 0.3% of all sites have a "real" `security.txt` file, rather than the 5% measured above.
+
+Another interesting point is that when we look at just this subset of "real" security.txt URLs, Tumblr makes up 63%-65% of the usage. It looks like this is set by default for these domains to the Tumblr contact details. This is great on one hand to show how a single platform can drive adoption of these new security features, but on the other hand indicates a further reduction in actual site usage.
+
+The other most used properties include `Canonical` and `Encryption`. `Canonical` is used to indicate where the `security.txt` file is located. If the URI used to retrieve the `security.txt` file doesn't match the list URIs in the `Canonical` fields, then the contents of the file should not be trusted. `Encryption` provides the security researchers with an encryption key that they can use for encrypted communication.
 
 ## Conclusion
 
