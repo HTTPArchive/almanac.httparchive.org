@@ -179,15 +179,15 @@ However, loading the JavaScript asynchronously or deferring it helps in some way
     <tbody>
       <tr>
         <td>Desktop</td>
-        <td class="numeric">89.26%</td>
-        <td class="numeric">48.09%</td>
-        <td class="numeric">10.27%</td>
+        <td class="numeric">89.3%</td>
+        <td class="numeric">48.1%</td>
+        <td class="numeric">10.3%</td>
       </tr>
       <tr>
         <td>Mobile</td>
-        <td class="numeric">89.12%</td>
-        <td class="numeric">47.78%</td>
-        <td class="numeric">10.40%</td>
+        <td class="numeric">89.1%</td>
+        <td class="numeric">47.8%</td>
+        <td class="numeric">10.4%</td>
       </tr>
     </tbody>
   </table>
@@ -463,7 +463,7 @@ The first-party vs. third-party analysis in this case shows that 82% of the aver
 Source maps are files sent along with the JavaScript resource files to let the browser map the minified or compressed file to their original version of that file. This is how source maps help us in debugging in the production environment.
 
 {{ figure_markup(
-  content="0.09%",
+  content="0.1%",
   caption="Mobile pages using the sourcemap header.",
   classes="big-number",
   sheets_gid="1186092564",
@@ -471,7 +471,7 @@ Source maps are files sent along with the JavaScript resource files to let the b
   )
 }}
 
-It is found that ~98% of mobile pages do not use the SourceMap response header on script resources whereas only 0.09% use it on resources. One reason for this extremely small percentage could be that not many sites choose to put their original source code in production through the source map.
+It is found that ~98% of mobile pages do not use the SourceMap response header on script resources whereas only 0.1% use it on resources. One reason for this extremely small percentage could be that not many sites choose to put their original source code in production through the source map.
 
 An analysis of how many sites actually send the source map header on their first-party or third-party scripts shows:
 
@@ -687,7 +687,7 @@ It would be a great idea to now see what libraries were worked upon and have eit
   <figcaption>{{ figure_link(caption="List of security vulnerable libraries with their vulnerability percentage.", sheets_gid="551476210", sql_file="lighthouse_vulnerable_libraries.sql") }}</figcaption>
 </figure>
 
-The results show that jQuery is the dominant factor in the decrease of vulnerability with at least 23.26% of improvement here and some improvement in jQueryUI too. However, there is little to no difference in other libraries' security vulnerabilities, except for a few.
+The results show that jQuery is the dominant factor in the decrease of vulnerability with at least 23.3% of improvement here and some improvement in jQueryUI too. However, there is little to no difference in other libraries' security vulnerabilities, except for a few.
 
 ## How do we use JavaScript?
 
@@ -727,7 +727,7 @@ However, [this practice is discouraged](https://developer.mozilla.org/en-US/docs
   )
 }}
 
-As we see, there are still more than 2% of desktop and mobile pages that use the deprecated synchronous AJAX requests.
+As we see, there are still more than 2.5% of desktop and mobile pages that use the deprecated synchronous AJAX requests.
 Let's look at the trend by comparing the results with the last two years.
 
 {{ figure_markup(
@@ -745,8 +745,6 @@ We see there is a clear increase in the usage of asynchronous AJAX requests. How
 An AJAX request works with different formats of data that can be sent and received. When a resource is requested, there is significant information that is sent to the server to make the results specific and clear. One such requirement is sending the relevant content types. The request sent from the browser requests a content type that gets back the data in the requested format.
 
 Out of the vast list of content types that can be requested, let's look at the most commonly requested content types.
-
-The most requested content types on mobile and desktop pages are images at 45% of requests. Images are a broad category inclusive of all the content types related to images, for example, `image/x-icon`, `image/svg+xml`, `image/webp`, `image/jpeg`, etc.
 
 <figure>
   <table>
@@ -787,6 +785,8 @@ The most requested content types on mobile and desktop pages are images at 45% o
   </table>
   <figcaption>{{ figure_link(caption="The most requested content types in AJAX.", sheets_gid="538991873", sql_file="most_requested_content_type.sql") }}</figcaption>
 </figure>
+
+The most requested content types on mobile and desktop pages are images at 45% of requests. Images are a broad category inclusive of all the content types related to images, for example, `image/x-icon`, `image/svg+xml`, `image/webp`, `image/jpeg`, etc.
 
 JavaScript is the second most requested content type in AJAX requests, with 33.3% of requests on mobile pages having this content type. This represents content-types like `application/javascript`, `text/javascript`, etc.
 
