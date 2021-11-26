@@ -14,8 +14,8 @@ featured_quote: The 2021 Web Almanac offers deeper insight into how the use of C
 featured_stat_1: 71%
 featured_stat_label_1: The percentage of pages using Flexbox for some form of layout
 featured_stat_2: 3
-featured_stat_label_2: The average number of images loaded via CSS
-featured_stat_3: 28.6%
+featured_stat_label_2: The median number of images loaded via CSS
+featured_stat_3: 29%
 featured_stat_label_3: The percentage of pages using custom properties.
 ---
 
@@ -232,7 +232,7 @@ As for what `!important` gets applied to, as with last year, it's `display`, wit
 
 ### Selector specificity
 
-Many CSS methodologies recommend that authors restrict themselves to single classes in order to squash all selectors specificity into a single layer that is more easily managed.  The [BEM methodology](https://en.bem.info/methodology/css/), for example, was found on 34% of all pages.  The 10th percentile of median selector specificity shows further evidence of this type of thinking, where both desktop and mobile specificity averages at (0,1,0).  This is in line with last year's findings, as are nearly all the medians — with the exception of mobile's 25th percentile, which rose a little bit.
+Many CSS methodologies recommend that authors restrict themselves to single classes in order to squash all selectors' specificity into a single layer that is more easily managed.  The [BEM methodology](https://en.bem.info/methodology/css/), for example, was found on 34% of all pages.  The 10th percentile of median selector specificity shows further evidence of this type of thinking, where both desktop and mobile specificity averages at (0,1,0).  This is in line with last year's findings, as are nearly all the medians — with the exception of mobile's 25th percentile, which rose a little bit.
 
 <figure>
   <table>
