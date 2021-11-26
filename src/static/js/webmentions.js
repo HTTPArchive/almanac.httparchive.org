@@ -41,7 +41,7 @@ function parseMentions(webmentions, mentionType) {
 function renderReactions(webmentions, reactionType, wmProperty) {
   // Process webmentions
   const reactions = parseMentions(webmentions, wmProperty);
-  if (!reactions.length) {
+  if (!reactions.length || !document.querySelector(`#${reactionType}-count`) || !document.querySelector(`#${reactionType}-label`)) {
     return;
   }
 
