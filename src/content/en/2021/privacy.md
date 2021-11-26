@@ -114,7 +114,7 @@ Google's subsidiary DoubleClick takes the top spot by setting cookies on 31.4% o
 
 Looking at the specific cookies that these websites set, the most common cookie from a tracker is the `test_cookie` from doubleclick.net. The next most common cookies are advertising-related and remain on a user's device much longer: Facebook's `fr` cookie persists for <a hreflang="en" href="https://www.facebook.com/policy/cookies/">90 days</a>, while DoubleClick's `IDE` cookie stays for <a hreflang="en" href="https://business.safety.google/adscookies/">13 months in Europe and 2 years elsewhere</a>.
 
-With `Lax` becoming the default value of the <a hreflang="en" href="https://web.dev/samesite-cookies-explained/">`SameSite` cookie attribute</a>, sites that want to continue sharing third-party cookies across websites must explicitly set this attribute to `None`. For third parties, 85% have done this so far on mobile and 64% on desktop, potentially for tracking purposes. You can read more about the `SameSite` cookie attribute over at the [Security](./security){# TODO - add id link after security publishes #} chapter.
+With `Lax` becoming the default value of the <a hreflang="en" href="https://web.dev/samesite-cookies-explained/">`SameSite` cookie attribute</a>, sites that want to continue sharing third-party cookies across websites must explicitly set this attribute to `None`. For third parties, 85% have done this so far on mobile and 64% on desktop, potentially for tracking purposes. You can read more about the `SameSite` cookie attribute over at the [Security](./security#samesite) chapter.
 
 ### Fingerprinting
 
@@ -287,7 +287,7 @@ Every data breach tracked by HaveIBeenPwned leaks email addresses, since this is
 
 ## How websites protect your sensitive data
 
-While you're browsing the web, there is certain data that you might want to keep private: the web pages that you visit, any sensitive data that you enter into forms, your location, and so on. Over at the [Security](./security){# TODO - add id link after security publishes #} chapter, you can learn how 92.5% of desktop sites have enabled HTTPS to protect your data from snooping while it traverses the Internet. Here, we'll focus on how websites can further instruct browsers to ensure privacy for sensitive resources.
+While you're browsing the web, there is certain data that you might want to keep private: the web pages that you visit, any sensitive data that you enter into forms, your location, and so on. Over at the [Security](./security#transport-security) chapter, you can learn how 91.1% of mobile sites have enabled HTTPS to protect your data from snooping while it traverses the Internet. Here, we'll focus on how websites can further instruct browsers to ensure privacy for sensitive resources.
 
 ### Permissions Policy / Feature Policy
 
