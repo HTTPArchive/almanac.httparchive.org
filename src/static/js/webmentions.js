@@ -37,19 +37,49 @@ function parseMentions(webmentions, mentionType) {
   return filteredMentions;
 }
 
+// Parse webmentions for individual category
+function setReactionsLabel(length, reactionLabel) {
+
+  // Slavic plurals
+  if (reactionLabel.getAttribute("data-plural-alt") !== "") {
+
+    // Ends in 1 except 11
+    if (length.toString().endsWith("1") && length != 11) {
+      reactionLabel.textContent = reactionLabel.getAttribute("data-singular");
+      return;
+    }
+
+    // Ends in 2,3 or 4 (except 12, 13, 14)
+    const final_digit = length.toString().slice(-1);
+    if (["2","3","4"].includes(final_digit) && length != 12 && length != 13 && length != 14) {
+      reactionLabel.textContent = reactionLabel.getAttribute("data-plural-alt");
+        return;
+    }
+
+    // Everything else Sticks with the default plural
+    return;
+  }
+
+  // Non-slavic are simpler
+  if (length === 1) {
+    reactionLabel.textContent = reactionLabel.getAttribute("data-singular");
+  }
+}
+
 // Renders webmention into different sections, based on the type
 function renderReactions(webmentions, reactionType, wmProperty) {
   // Process webmentions
   const reactions = parseMentions(webmentions, wmProperty);
-  if (!reactions.length) {
+  if (!reactions.length || !document.querySelector(`#${reactionType}-count`) || !document.querySelector(`#${reactionType}-label`)) {
     return;
   }
 
   // Add the count to the reaction tab
   document.querySelector(`#${reactionType}-count`).textContent = reactions.length;
   const reactionLabel = document.querySelector(`#${reactionType}-label`);
-  if (reactions && reactions.length ===1) {
-    reactionLabel.textContent = reactionLabel.getAttribute("data-singular");
+
+  if (reactions && reactions.length) {
+    setReactionsLabel(reactions.length, reactionLabel);
   }
 
   // Render logic for the reaction types
