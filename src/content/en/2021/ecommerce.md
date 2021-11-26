@@ -129,8 +129,8 @@ Another way to look at the results is to consider the most popular platforms wit
 
 {{ figure_markup(
   image="top-ecommerce-platforms-top-1m-sites.png",
-  caption="Top ecommerce platforms of top 1m sites",
-  description="A bar chart showing in descending order the usage of ecommerce platforms within the top 1 million sites. 3.49% on mobile are WooCommerce, 2.76% are Shopify, 1.48% are Magento, 1.17% are PrestaShop, 0.25% are Imnisend, 0.23% are Shopware, 0.22% are BigCommerce, 0.19% are Look, 0.15% are Salesforce Commerce Cloud, and 0.14% are VTEX. Desktop usage looks very similar.",
+  caption="Top ecommerce platforms of 1 million sites",
+  description="A bar chart showing in descending order the usage of ecommerce platforms within the top 1 million sites. 3.49% on mobile are WooCommerce, 2.76% are Shopify, 1.48% are Magento, 1.17% are PrestaShop, 0.23% are Shopware, 0.22% are BigCommerce, 0.15% are Salesforce Commerce Cloud, 0.14% are VTEX, 0.10 are Shoper, and finally 0.10% are Tray. Desktop usage looks very similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=86873602&format=interactive",
   sheets_gid="1491793974",
   sql_file="top_vendors_crux_rank.sql",
@@ -147,7 +147,7 @@ We also see Magento take the third spot over PrestaShop. Wix eCommerce and Squar
 {{ figure_markup(
   image="top-ecommerce-platforms-top-100k-sites.png",
   caption="Top ecommerce platforms of top 100,000 sites",
-  description="A bar chart showing in descending order the usage of ecommerce platforms within the top 100,000 sites. On mobile 1.21% are Magento, 0.88% are Shopify, 0.63% are Salesforce Commerce Cloud, 0.56% are WooCommerce, 0.33% are PrestaShop, 0.30% are SAP Commerce Cloud, 0.28% are VTEX, 0.10% are Klevu, 0.10% are HCL Commerce, and finally 0.08% are Imnisend. Desktop usage looks very similar.",
+  description="A bar chart showing in descending order the usage of ecommerce platforms within the top 100,000 sites. On mobile 1.21% are Magento, 0.88% are Shopify, 0.63% are Salesforce Commerce Cloud, 0.56% are WooCommerce, 0.33% are PrestaShop, 0.30% are SAP Commerce Cloud, 0.28% are VTEX, 0.10% are HCL Commerce, 0.08% are Shopware, and finally 0.06% are Amazon Webstore. Desktop usage looks very similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT70VMNXb1X6Mnh69JGhQILb5ImqBkg6MtMpPiZnrNfYXQ7nngGWHO_kj87tAG5FkIyOvpNNYJmkLVY/pubchart?oid=942112971&format=interactive",
   sheets_gid="1491793974",
   sql_file="top_vendors_crux_rank.sql",
