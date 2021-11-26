@@ -97,51 +97,6 @@ One of the contributing factors towards slow rendering of the web page could be 
 
 The median desktop page loads 21 JavaScript resources(`.js` and `.mjs` files), going up to 59 resources at the 90th percentile.
 
-<figure>
-  <table>
-    <thead>
-      <tr>
-        <th>Percentile</th>
-        <th>Desktop</th>
-        <th>Mobile</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="numeric">10</td>
-        <td class="numeric">5</td>
-        <td class="numeric">4</td>
-      </tr>
-      <tr>
-        <td class="numeric">25</td>
-        <td class="numeric">11</td>
-        <td class="numeric">10</td>
-      </tr>
-      <tr>
-        <td class="numeric">50</td>
-        <td class="numeric">21</td>
-        <td class="numeric">20</td>
-      </tr>
-      <tr>
-        <td class="numeric">75</td>
-        <td class="numeric">37</td>
-        <td class="numeric">35</td>
-      </tr>
-      <tr>
-        <td class="numeric">90</td>
-        <td class="numeric">59</td>
-        <td class="numeric">56</td>
-      </tr>
-      <tr>
-        <td class="numeric">100</td>
-        <td class="numeric">3509</td>
-        <td class="numeric">2485</td>
-      </tr>
-    </tbody>
-  </table>
-  <figcaption>{{ figure_link(caption="Distribution of the number of JavaScript resources loaded over desktop and mobile devices (2021).", sheets_gid="159538568", sql_file="requests_2021.sql") }}</figcaption>
-</figure>
-
 As compared to the [last year's results](https://almanac.httparchive.org/en/2020/javascript#request-count), there has been a marginal increase in the number of JavaScript resources requested in 2021, with the median number of JavaScript resources loaded being 20 for desktop pages and 19 for mobile.
 
 {{ figure_markup(
@@ -213,13 +168,13 @@ Let's look at the data to understand the adoption of these attributes.
     <tbody>
       <tr>
         <td>Desktop</td>
-        <td>4.6%</td>
-        <td>3.9%</td>
+        <td class="numeric">4.6%</td>
+        <td class="numeric">3.9%</td>
       </tr>
       <tr>
         <td>Mobile</td>
-        <td>4.3%</td>
-        <td>3.9%</td>
+        <td class="numeric">4.3%</td>
+        <td class="numeric">3.9%</td>
       </tr>
     </tbody>
   </table>
@@ -243,7 +198,7 @@ However, loading the JavaScript asynchronously or deferring it helps in some way
         <th>Client</th>
         <th>`async`</th>
         <th>`defer`</th>
-        <th>neither</th>
+        <th>Neither</th>
       </tr>
     </thead>
     <tbody>
@@ -295,7 +250,7 @@ When we looked in the view-source of an [example website](https://www.tntsuperce
 ```
 
 According to [Wikipedia](https://en.wikipedia.org/wiki/Matomo_(software)), Piwik (now known as Matomo):
-<blockquote>is a free and open source web analytics application developed by a team of international developers, that runs on a PHP/MySQL webserver. It tracks online visits to one or more websites and displays reports on these visits for analysis. As of June 2018, Matomo was used by over 1,455,000 websites, or 1.3% of all websites with known traffic analysis tools... </blockquote>
+<blockquote>is a free and open source web analytics application developed by a team of international developers, that runs on a PHP/MySQL webserver. It tracks online visits to one or more websites and displays reports on these visits for analysis. As of June 2018, Matomo was used by over 1,455,000 websites, or 1.3% of all websites with known traffic analysis tools...</blockquote>
 
 This strongly suggests that marketing and analytics providers are a common source of these async/defer scripts being dynamically injected into the page.
 
@@ -310,7 +265,7 @@ This strongly suggests that marketing and analytics providers are a common sourc
 
 As it turns out, 2.6% of requests use this anti-pattern with both `async` and `defer` on the same script element.
 
-### first party vs third party
+### First-party vs third-party
 
 The median number of JavaScript resources requested on desktop pages, as [observed earlier](#how-much-javascript-do-we-load), is 21. Let us now look into which ones of these are first-party or third-party requests.
 
@@ -358,81 +313,11 @@ A median of 4 asynchronous requests are made per page on both mobile and desktop
   )
 }}
 
-If we look at the long tail and check the number of async requests for the 100th percentile, the difference in the devices is quite remarkable.
-
-<figure>
-  <table>
-    <thead>
-      <tr>
-        <th>Percentile</th>
-        <th>Desktop</th>
-        <th>Mobile</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="numeric">10</td>
-        <td class="numeric">2</td>
-        <td class="numeric">2</td>
-      </tr>
-      <tr>
-        <td class="numeric">25</td>
-        <td class="numeric">3</td>
-        <td class="numeric">3</td>
-      </tr>
-      <tr>
-        <td class="numeric">50</td>
-        <td class="numeric">4</td>
-        <td class="numeric">4</td>
-      </tr>
-      <tr>
-        <td class="numeric">75</td>
-        <td class="numeric">8</td>
-        <td class="numeric">8</td>
-      </tr>
-      <tr>
-        <td class="numeric">90</td>
-        <td class="numeric">15</td>
-        <td class="numeric">16</td>
-      </tr>
-      <tr>
-        <td class="numeric">100</td>
-        <td class="numeric">623</td>
-        <td class="numeric">867</td>
-      </tr>
-    </tbody>
-  </table>
-  <figcaption>{{ figure_link(caption="Distribution of the number of asynchronous requests made per page.", sheets_gid="183546956", sql_file="ajax_request_per_page.sql") }}</figcaption>
-</figure>
-
-The most asynchronous requests made by a desktop page is 623, which is eclipsed by the biggest mobile page, which makes 867 asynchronous requests!
+If we look at the long tail and check the number of async requests for the 100th percentile, the difference in the devices is quite remarkable. The most asynchronous requests made by a desktop page is 623, which is eclipsed by the biggest mobile page, which makes 867 asynchronous requests!
 
 An alternative to the asynchronous AJAX requests are the synchronous. Rather than passing a request to a callback, they block the main thread until the request completes.
 
 However, this practice is [discouraged](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests#:~:text=Note%3A%20Starting%20with%20Gecko%2030.0%20(Firefox%2030.0%20/%20Thunderbird%2030.0%20/%20SeaMonkey%202.27)%2C%20Blink%2039.0%2C%20and%20Edge%2013%2C%20synchronous%20requests%20on%20the%20main%20thread%20have%20been%20deprecated%20due%20to%20their%20negative%20impact%20on%20the%20user%20experience) due to the potential for poor performance and user experiences, and many browsers already warn about the usage. It would be intriguing to see how many pages still use synchronous AJAX requests.
-
-<figure>
-  <table>
-    <thead>
-      <tr>
-        <th>Client</th>
-        <th>Synchronous AJAX (2021)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Mobile</td>
-        <td class="numeric">2.53%</td>
-      </tr>
-      <tr>
-        <td>Desktop</td>
-        <td class="numeric">2.63%</td>
-      </tr>
-    </tbody>
-</table>
-
-<figcaption>{{ figure_link(caption="Percent of pages that use the deprecated synchronous AJAX requests.", sheets_gid="1964938285", sql_file="ajax_sync.sql") }}</figcaption>
-</figure>
 
 {{ figure_markup(
   image="usage-sync-async.png",
@@ -464,15 +349,6 @@ An AJAX request works with different formats of data that can be sent and receiv
 Out of the vast list of content types that can be requested, let's look at the most commonly requested content types.
 
 The most requested content types on mobile and desktop pages are images at 45% of requests. Images are a broad category inclusive of all the content types related to images, for example, `image/x-icon`, `image/svg+xml`, `image/webp`, `image/jpeg`, etc.
-
-{{ figure_markup(
-  content="45.6%",
-  caption="Percent of AJAX requests for images.",
-  classes="big-number",
-  sheets_gid="538991873",
-  sql_file="most_requested_content_type.sql"
-  )
-}}
 
 <figure>
   <table>
@@ -515,15 +391,6 @@ The most requested content types on mobile and desktop pages are images at 45% o
 </figure>
 
 JavaScript is the second most requested content type in AJAX requests, with 33.3% of requests on mobile pages having this content type. This represents content-types like `application/javascript`, `text/javascript`, etc.
-
-{{ figure_markup(
-  content="32.3%",
-  caption="Percent of AJAX requests for JavaScript.",
-  classes="big-number",
-  sheets_gid="538991873",
-  sql_file="most_requested_content_type.sql"
-  )
-}}
 
 Knowing the number of AJAX requests per page now, we'd also be interested in knowing the most commonly used APIs to request the data from the server.
 
@@ -576,37 +443,7 @@ It would be interesting to also compare the adoption of XHR and Fetch over time.
   )
 }}
 
-For both Fetch and XHR, the usage has tremendously increased over the years.
-
-<figure>
-  <table>
-    <thead>
-      <tr>
-        <th>API</th>
-        <th>2019</th>
-        <th>2020</th>
-        <th>2021</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Fetch</td>
-        <td class="numeric">20%</td>
-        <td class="numeric">21%</td>
-        <td class="numeric">24%</td>
-      </tr>
-      <tr>
-        <td>XHR</td>
-        <td class="numeric">58%</td>
-        <td class="numeric">62%</td>
-        <td class="numeric">78%</td>
-      </tr>
-    </tbody>
-  </table>
-  <figcaption>{{ figure_link(caption="Adoption of Fetch and XHR by year.", sheets_gid="417043080", sql_file="percentage_usage_of_different_ajax_apis.sql") }}</figcaption>
-</figure>
-
-Fetch has seen an increase of 38% on desktop pages and 48% for XHR. With a gradual increase for fetch, the focus seems to be towards cleaner requests and handling responses better.
+For both Fetch and XHR, the usage has tremendously increased over the years. Fetch has seen an increase of 38% on desktop pages and 48% for XHR. With a gradual increase for fetch, the focus seems to be towards cleaner requests and handling responses better.
 
 ### UI Libraries and frameworks
 
@@ -639,89 +476,60 @@ It would instead be interesting to look at how the popular frameworks and librar
     <thead>
       <tr>
         <th>Frameworks/Libraries</th>
-        <th>Percentage</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>jQuery</td>
-        <td class="numeric">17%</td>
+        <td class="numeric">16.8%</td>
+        <td class="numeric">17.4%</td>
       </tr>
       <tr>
         <td>jQuery, jQuery Migrate</td>
-        <td class="numeric">9%</td>
+        <td class="numeric">8.4%</td>
+        <td class="numeric">8.7%</td>
       </tr>
       <tr>
         <td>jQuery, jQuery UI</td>
-        <td class="numeric">4%</td>
+        <td class="numeric">4.0%</td>
+        <td class="numeric">3.7%</td>
       </tr>
       <tr>
         <td>jQuery, jQuery Migrate, jQuery UI</td>
-        <td class="numeric">3%</td>
+        <td class="numeric">2.6%</td>
+        <td class="numeric">2.5%</td>
       </tr>
       <tr>
         <td>Modernizr, jQuery</td>
-        <td class="numeric">2%</td>
-      </tr>
-      <tr>
-        <td>Slick, jQuery, jQuery Migrate</td>
-        <td class="numeric">1%</td>
-      </tr>
-      <tr>
-        <td>Slick, jQuery</td>
-        <td class="numeric">1%</td>
-      </tr>
-      <tr>
-        <td>React, jQuery, jQuery Migrate</td>
-        <td class="numeric">1%</td>
-      </tr>
-      <tr>
-        <td>React</td>
-        <td class="numeric">1%</td>
-      </tr>
-      <tr>
-        <td>Modernizr, jQuery, jQuery UI</td>
-        <td class="numeric">1%</td>
-      </tr>
-      <tr>
-        <td>Modernizr, jQuery, jQuery Migrate, jQuery UI</td>
-        <td class="numeric">1%</td>
-      </tr>
-      <tr>
-        <td>Modernizr, jQuery, jQuery Migrate</td>
-        <td class="numeric">1%</td>
-      </tr>
-      <tr>
-        <td>Lodash, jQuery</td>
-        <td class="numeric">1%</td>
-      </tr>
-      <tr>
-        <td>Lightbox, jQuery, jQuery Migrate</td>
-        <td class="numeric">1%</td>
-      </tr>
-      <tr>
-        <td>Lightbox, jQuery</td>
-        <td class="numeric">1%</td>
-      </tr>
-      <tr>
-        <td>Isotope, jQuery, jQuery Migrate</td>
-        <td class="numeric">1%</td>
-      </tr>
-      <tr>
-        <td>GSAP, Lodash, Polyfill, React, RequireJS, jQuery</td>
-        <td class="numeric">1%</td>
-      </tr>
-      <tr>
-        <td>GSAP, Lodash, Polyfill, React, jQuery</td>
-        <td class="numeric">1%</td>
-      </tr>
-      <tr>
-        <td>FancyBox, jQuery, jQuery UI</td>
-        <td class="numeric">1%</td>
+        <td class="numeric">1.6%</td>
+        <td class="numeric">1.6%</td>
       </tr>
       <tr>
         <td>FancyBox, jQuery</td>
-        <td class="numeric">1%</td>
+        <td class="numeric">1.1%</td>
+        <td class="numeric">1.1%</td>
+      </tr>
+      <tr>
+        <td>Slick, jQuery</td>
+        <td class="numeric">1.2%</td>
+        <td class="numeric">1.1%</td>
+      </tr>
+      <tr>
+        <td>Lightbox, jQuery</td>
+        <td class="numeric">1.1%</td>
+        <td class="numeric">0.8%</td>
+      </tr>
+      <tr>
+        <td>React, jQuery, jQuery Migrate</td>
+        <td class="numeric">0.9%</td>
+        <td class="numeric">0.9%</td>
+      </tr>
+      <tr>
+        <td>Modernizr, jQuery, jQuery Migrate</td>
+        <td class="numeric">0.8%</td>
+        <td class="numeric">0.9%</td>
       </tr>
     </tbody>
   </table>
@@ -883,7 +691,7 @@ Most of the compressed resources use either gzip compression, or brotli (br) com
 It is noted that 56% of JS requests apply the gzip compression method, whereas 31% of requests from mobile devices have the brotli compression applied.
 
 {{ figure_markup(
-  content="30%",
+  content="30.4%",
   caption="Desktop requests apply brotli compression.",
   classes="big-number",
   sheets_gid="1182320606",
@@ -928,7 +736,7 @@ The lighthouse report also [highlights the unminified JS being used](https://web
 {{ figure_markup(
   image="unminified-js-audit-scores.png",
   caption="Percentage distribution of unminified JS audit scores.",
-  description="Bar chart showing the percentage distribution of unminified JS audit scores. 67% of mobile pages have an "unminified JS" score between 0.9 and 1.0",
+  description='Bar chart showing the percentage distribution of unminified JS audit scores. 67% of mobile pages have an "unminified JS" score between 0.9 and 1.0',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1572896641&format=interactive",
   sheets_gid="1539653841",
   sql_file="lighthouse_unminified_js.sql"
@@ -1026,7 +834,7 @@ It would be a great idea to now see what libraries were worked upon and have eit
      </tr>
         <tr>
         <td>AngularJS</td>
-        <td class="numeric">1%</td>
+        <td class="numeric">1.0%</td>
       </tr>
       <tr>
         <td>Bootstrap</td>
