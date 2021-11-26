@@ -43,14 +43,15 @@ function setReactionsLabel(length, reactionLabel) {
   // Slavic plurals
   if (reactionLabel.getAttribute("data-plural-alt") !== "") {
 
+    const final_digit = length.toString().slice(-1);
+
     // Ends in 1 except 11
-    if (length.toString().endsWith("1") && length != 11) {
+    if (final_digit === "1" && length != 11) {
       reactionLabel.textContent = reactionLabel.getAttribute("data-singular");
       return;
     }
 
     // Ends in 2,3 or 4 (except 12, 13, 14)
-    const final_digit = length.toString().slice(-1);
     if (["2","3","4"].includes(final_digit) && length != 12 && length != 13 && length != 14) {
       reactionLabel.textContent = reactionLabel.getAttribute("data-plural-alt");
         return;
