@@ -21,7 +21,7 @@ unedited: true
 
 ### Introduction
 
-The speed and consistency that the JavaScript language has evolved with over the past years is tremendous. While in the past it was used primarily for client-side, it has taken a very important and respected place in the world of building services and server-side tools. JavaScript has evolved to a point where it is not only possible to create faster applications but also to [run servers within browsers](https://blog.stackblitz.com/posts/introducing-webcontainers/).
+The speed and consistency that the JavaScript language has evolved with over the past years is tremendous. While in the past it was used primarily for client-side, it has taken a very important and respected place in the world of building services and server-side tools. JavaScript has evolved to a point where it is not only possible to create faster applications but also to <a hreflang="en" href="https://blog.stackblitz.com/posts/introducing-webcontainers/">run servers within browsers</a>.
 
 There is a lot that happens in the browser when rendering the application, from downloading JavaScript to parsing, compiling and executing it. Let's start with that first step and try to understand how much JavaScript is actually requested by pages.
 
@@ -41,7 +41,7 @@ The 50th percentile (median) desktop page loads 463 kilobytes of JavaScript, whe
   )
 }}
 
-Compared to [2019's results](https://almanac.httparchive.org/en/2019/javascript#fig-2), this shows an increase of 18.4% in the usage of JavaScript for desktop devices and an increase of 18.9% on mobile devices. As we see the trend is towards using more JavaScript over the years, this could slow down the rendering of an application given the additional CPU work. It's worth to note that these statistics represent the transferred bytes which could be compressed responses and thus, the actual cost to the CPU could be significantly higher.
+Compared to [2019's results](../2019/javascript#fig-2), this shows an increase of 18.4% in the usage of JavaScript for desktop devices and an increase of 18.9% on mobile devices. As we see the trend is towards using more JavaScript over the years, this could slow down the rendering of an application given the additional CPU work. It's worth to note that these statistics represent the transferred bytes which could be compressed responses and thus, the actual cost to the CPU could be significantly higher.
 Let's have a look at how much JavaScript is actually required to be loaded on the page.
 
 {{ figure_markup(
@@ -77,9 +77,9 @@ This contributes to 36.2% of unused JavaScript on a page.
   )
 }}
 
-This is such a significant figure to be using the CPU with other important resources and to just go to waste, given the impact it can have on the [Largest Contentful Paint](https://web.dev/optimize-lcp/) (LCP) of the page, especially for the mobile users with limited data plans. This could be a result of a lot of boilerplate code that is shipped when using large frameworks or libraries.
+This is such a significant figure to be using the CPU with other important resources and to just go to waste, given the impact it can have on the <a hreflang="en" href="https://web.dev/optimize-lcp/">Largest Contentful Paint</a> (LCP) of the page, especially for the mobile users with limited data plans. This could be a result of a lot of boilerplate code that is shipped when using large frameworks or libraries.
 
-One step towards improving the percentage is to look at the [percentage of unused JavaScript](https://web.dev/unused-javascript/) when checking the lighthouse report for the page and [finding opportunities to get rid of the unnecessary JavaScript.](https://web.dev/remove-unused-code/)
+One step towards improving the percentage is to look at the <a hreflang="en" href="https://web.dev/unused-javascript/">percentage of unused JavaScript</a> when checking the lighthouse report for the page and <a hreflang="en" href="https://web.dev/remove-unused-code/">finding opportunities to get rid of the unnecessary JavaScript.</a>
 
 ### JS requests per page
 
@@ -97,7 +97,7 @@ One of the contributing factors towards slow rendering of the web page could be 
 
 The median desktop page loads 21 JavaScript resources(`.js` and `.mjs` files), going up to 59 resources at the 90th percentile.
 
-As compared to the [last year's results](https://almanac.httparchive.org/en/2020/javascript#request-count), there has been a marginal increase in the number of JavaScript resources requested in 2021, with the median number of JavaScript resources loaded being 20 for desktop pages and 19 for mobile.
+As compared to the [last year's results](../2020/javascript#request-count), there has been a marginal increase in the number of JavaScript resources requested in 2021, with the median number of JavaScript resources loaded being 20 for desktop pages and 19 for mobile.
 
 {{ figure_markup(
   image="js-resources-over-years.png",
@@ -151,7 +151,7 @@ Read more about the state of the protocols in the [HTTP](./http) chapter.
 
 When loading a website, the browser renders the HTML and requests the appropriate resources. It consumes the polyfills referenced in the code for the effective rendering and functioning of the page. The modern browsers that support newer syntax like [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [async functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function), etc. do not need loads of polyfills to make things work and therefore, should not have to.
 
-This is when differential loading takes care of things. Specifying the `type="module"` attribute would serve the modern browsers the bundle with modern syntax and fewer polyfills, if any. Similarly, older browsers that lack support for modules will be served the bundle with required polyfills and transpiled code syntax with attribute `type="nomodule"`. Read more about the usage of modue/nomodule [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#applying_the_module_to_your_html)
+This is when differential loading takes care of things. Specifying the `type="module"` attribute would serve the modern browsers the bundle with modern syntax and fewer polyfills, if any. Similarly, older browsers that lack support for modules will be served the bundle with required polyfills and transpiled code syntax with attribute `type="nomodule"`. Read more about [the usage of module/nomodule here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#applying_the_module_to_your_html)
 
 Let's look at the data to understand the adoption of these attributes.
 4.6% of desktop pages use the attribute `type="module"` whereas only 3.9% of mobile pages use `type="nomodule"`. This could be due to the fact that the mobile dataset being much larger contains more "long-tail" websites that might not be using the latest features.
@@ -181,7 +181,7 @@ Let's look at the data to understand the adoption of these attributes.
   <figcaption>{{ figure_link(caption="Distribution of differential loading usage on desktop and mobile clients.", sheets_gid="1261294750", sql_file="module_and_nomodule.sql") }}</figcaption>
 </figure>
 
-It is important to note that with the [end of support for IE11 browser](https://docs.microsoft.com/en-us/lifecycle/announcements/internet-explorer-11-support-end-dates), differential loading is less applicable because evergreen browsers support modern JavaScript syntax. One of the JavaScript frameworks, Angular, for example, [removed support for the legacy browsers with Angular v13](https://github.com/angular/angular/issues/41840) released November 2021.
+It is important to note that with the <a hreflang="en" href="https://docs.microsoft.com/en-us/lifecycle/announcements/internet-explorer-11-support-end-dates">end of support for IE11 browser</a>, differential loading is less applicable because evergreen browsers support modern JavaScript syntax. One of the JavaScript frameworks, Angular, for example, <a hreflang="en" href="https://github.com/angular/angular/issues/41840">removed support for the legacy browsers with Angular v13</a> released November 2021.
 
 ### `async` and `defer`
 
@@ -221,7 +221,7 @@ However, loading the JavaScript asynchronously or deferring it helps in some way
 
 There was an anti-pattern observed in the last year's results that some websites use both `async` and `defer` attribute resulting in fallback to `async` if the browser supports it.
 
-The usage was so frequent that [11.4%](https://almanac.httparchive.org/en/2020/javascript#how-do-we-load-our-javascript) of requests made on the mobile pages were seen with at least one script with `async` and `defer` attributes used together. The [root causes](https://twitter.com/rick_viscomi/status/1331735748060524551?s=20) were found and an action item was also taken down to [remove such usage going forward](https://twitter.com/Kraft/status/1336772912414601224?s=20). It'd be very interesting this year to look at where this stands.
+The usage was so frequent that [11.4%](../2020/javascript#how-do-we-load-our-javascript) of requests made on the mobile pages were seen with at least one script with `async` and `defer` attributes used together. The [root causes](https://twitter.com/rick_viscomi/status/1331735748060524551?s=20) were found and an action item was also taken down to [remove such usage going forward](https://twitter.com/Kraft/status/1336772912414601224?s=20). It'd be very interesting this year to look at where this stands.
 
 {{ figure_markup(
   content="35.6%",
@@ -232,11 +232,11 @@ The usage was so frequent that [11.4%](https://almanac.httparchive.org/en/2020/j
   )
 }}
 
-It is found that 35.6% of mobile pages use the async and defer attributes together. This was counted using a [custom metric](https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/javascript.js) that measures the usage of these attributes on the rendered DOM.
+It is found that 35.6% of mobile pages use the async and defer attributes together. This was counted using a <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/javascript.js">custom metric</a> that measures the usage of these attributes on the rendered DOM.
 
 This year, we improved our measures of calculating these figures by looking at the rendered DOM, as opposed to the initial HTML. Based on the custom metric run on the rendered DOM for pages using these attributes, the variation is a lot as compared to the previous year. When we dived deeper to understand this gap, it was found that a lot of pages update these attributes dynamically after the pages has already been loaded. This is one reason why more results are found using the results from the custom metric.
 
-When we looked in the view-source of an [example website](https://www.tntsupercenter.com/), we found the below script:
+When we looked in the view-source of an <a hreflang="en" href="https://www.tntsupercenter.com/">example website</a>, we found the below script:
 
 ```js
 <!-- Piwik -->
@@ -291,9 +291,9 @@ A median of mobile pages request 10 third-party resources whereas 9 first-party 
   )
 }}
 
-A median of desktop pages request 11 third-party resources whereas 10 first-party requests. This difference increases as we move up to the 90th percentile as 33 requests on mobile pages are first party but the number goes up to 34 for third-party requests for the mobile pages. Clearly, the number of third-party resources requested is always one step ahead of the first-party ones. Irrespective of the performance and reliability [risks that requesting third-party resources brings](https://css-tricks.com/potential-dangers-of-third-party-javascript/), the usage seems to favor third-party scripts, which could be due to the [useful interactivity features](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript) that it gives to the web.
+A median of desktop pages request 11 third-party resources whereas 10 first-party requests. This difference increases as we move up to the 90th percentile as 33 requests on mobile pages are first party but the number goes up to 34 for third-party requests for the mobile pages. Clearly, the number of third-party resources requested is always one step ahead of the first-party ones. Irrespective of the performance and reliability <a hreflang="en" href="https://css-tricks.com/potential-dangers-of-third-party-javascript/">risks that requesting third-party resources brings</a>, the usage seems to favor third-party scripts, which could be due to the <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript">useful interactivity features</a> that it gives to the web.
 
-This is where one has to put their 'performance-nerd' cap on, and ensure that using third-party scripts [doesn't result in losing control over the performance of the page or the main thread getting bloated](https://csswizardry.com/2017/07/performance-and-resilience-stress-testing-third-parties/) with too much JavaScript being transferred by [loading these scripts better](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript).
+This is where one has to put their 'performance-nerd' cap on, and ensure that using third-party scripts <a hreflang="en" href="https://csswizardry.com/2017/07/performance-and-resilience-stress-testing-third-parties/">doesn't result in losing control over the performance of the page or the main thread getting bloated</a> with too much JavaScript being transferred by <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">loading these scripts better</a>.
 
 ### AJAX
 
@@ -317,7 +317,7 @@ If we look at the long tail and check the number of async requests for the 100th
 
 An alternative to the asynchronous AJAX requests are the synchronous. Rather than passing a request to a callback, they block the main thread until the request completes.
 
-However, this practice is [discouraged](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests#:~:text=Note%3A%20Starting%20with%20Gecko%2030.0%20(Firefox%2030.0%20/%20Thunderbird%2030.0%20/%20SeaMonkey%202.27)%2C%20Blink%2039.0%2C%20and%20Edge%2013%2C%20synchronous%20requests%20on%20the%20main%20thread%20have%20been%20deprecated%20due%20to%20their%20negative%20impact%20on%20the%20user%20experience) due to the potential for poor performance and user experiences, and many browsers already warn about the usage. It would be intriguing to see how many pages still use synchronous AJAX requests.
+However, [this practice is discouraged](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests#synchronous_request) due to the potential for poor performance and user experiences, and many browsers already warn about the usage. It would be intriguing to see how many pages still use synchronous AJAX requests.
 
 {{ figure_markup(
   image="usage-sync-async.png",
@@ -394,7 +394,7 @@ JavaScript is the second most requested content type in AJAX requests, with 33.3
 
 Knowing the number of AJAX requests per page now, we'd also be interested in knowing the most commonly used APIs to request the data from the server.
 
-We can broadly classify these AJAX requests into three different APIs and dig in to see the usage of each of these. The core APIs [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) (XHR), [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch), and [Beacon](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API) are used commonly across websites with XHR being used primarily, however Fetch is gaining popularity and growing rapidly while Beacon has minimum usage.
+We can broadly classify these AJAX requests into three different APIs and dig in to see the usage of each of these. The core APIs [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) (XHR), [`Fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch), and [`Beacon`](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API) are used commonly across websites with XHR being used primarily, however Fetch is gaining popularity and growing rapidly while Beacon has minimum usage.
 
 {{ figure_markup(
   image="ajax_xhr.png",
@@ -463,11 +463,11 @@ To understand the usage of libraries and frameworks, HTTP Archive uses [Wappalyz
 
 jQuery remains on top with 84% of mobile pages containing jQuery, however React usage has jumped from 4% to 8% since last year, which is a significant increase. Also worth noticing is the usage of Isotope (uses jQuery) to 7% leading to RequireJS falling out of the picture with 2% usage.
 
-One might wonder why jQuery is so dominant and hasn't disappeared over time. There are two main reasons for this. First, as [highlighted over the previous years](https://almanac.httparchive.org/en/2019/javascript#:~:text=There%20are%20a,client-side%20libraries.), is that most of the [WordPress](https://wordpress.org/) sites use jQuery, which contributes to a major participation of jQuery. Second, even if the wide usage of jQuery is ignored for a moment, several of the other top-used JavaScript libraries still rely on jQuery in some way under the hood.
+One might wonder why jQuery is so dominant and hasn't disappeared over time. There are two main reasons for this. First, as [highlighted over the previous years](../2019/javascript#open-source-libraries-and-frameworks), is that most of the <a hreflang="en" href="https://wordpress.org/">WordPress</a> sites use jQuery, which contributes to a major participation of jQuery. Second, even if the wide usage of jQuery is ignored for a moment, several of the other top-used JavaScript libraries still rely on jQuery in some way under the hood.
 
 **UI Frameworks**
 
-The adoption of JavaScript frameworks doesn't see a substantial change compared to the previous years. With the way the adoption is measured, there is a [detection limitation](https://github.com/AliasIO/wappalyzer/issues/2450) which doesn't let Wappalyzer capture the percentage precisely. Additionally, the detection is only run on home pages which doesn't capture accurately the overall framework adoption.
+The adoption of JavaScript frameworks doesn't see a substantial change compared to the previous years. With the way the adoption is measured, there is a <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/issues/2450">detection limitation</a> which doesn't let Wappalyzer capture the percentage precisely. Additionally, the detection is only run on home pages which doesn't capture accurately the overall framework adoption.
 
 It would instead be interesting to look at how the popular frameworks and libraries approach the usage of other libraries. This means how many frameworks or libraries actually rely on other libraries in production.
 
@@ -546,7 +546,7 @@ With the web becoming componentized, a developer building a single page applicat
 
 It would be justified to say that with many JavaScript frameworks gaining popularity, the idea of reusability and building dedicated feature-based components has been adopted more widely. This feeds our curiosity to look into the adoption of custom elements, shadow DOM, template elements.
 
-[Custom Elements](https://developers.google.com/web/fundamentals/web-components/customelements) are customized elements built on top of the [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement) class. The browser provides a `customElements` API that allows developers to define an element and register it with the browser as a custom element.
+<a hreflang="en" href="https://developers.google.com/web/fundamentals/web-components/customelements">Custom Elements</a> are customized elements built on top of the [`HTMLElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement) class. The browser provides a `customElements` API that allows developers to define an element and register it with the browser as a custom element.
 
 It is noted that 2.7% of desktop pages use custom elements for one or more parts of the web page.
 
@@ -559,7 +559,7 @@ It is noted that 2.7% of desktop pages use custom elements for one or more parts
   )
 }}
 
-[Shadow DOM](https://developers.google.com/web/fundamentals/web-components/shadowdom) allows you to create a dedicated subtree in the DOM for the custom element introduced to the browser. It ensures the styles and nodes inside the element are not accessible outside the element.
+<a hreflang="en" href="https://developers.google.com/web/fundamentals/web-components/shadowdom">Shadow DOM</a> allows you to create a dedicated subtree in the DOM for the custom element introduced to the browser. It ensures the styles and nodes inside the element are not accessible outside the element.
 
 0.4% of pages use Shadow DOM specification of web components to ensure a scoped subtree for the element.
 
@@ -572,7 +572,7 @@ It is noted that 2.7% of desktop pages use custom elements for one or more parts
   )
 }}
 
-A [&lt;template>](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots#the_truth_about_templates) element is very useful when there is a pattern in the markup which could be reused. The contents of _template_ elements render only when referenced by JavaScript.
+A [`<template>`](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots#the_truth_about_templates) element is very useful when there is a pattern in the markup which could be reused. The contents of _template_ elements render only when referenced by JavaScript.
 
 Templates work well when dealing with web components, as the content that is not yet referenced by JavaScript is then appended to a shadow root using the shadow DOM.
 
@@ -585,11 +585,11 @@ Templates work well when dealing with web components, as the content that is not
   )
 }}
 
-Less than 0.1% of web pages have adopted the use of templates. Although templates are well [supported](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots#:~:text=Templates%20are%20well%2Dsupported%20in%20browsers%3B%20the%20Shadow%20DOM%20API%20is%20supported%20by%20default%20in%20Firefox%20(version%2063%20onwards)%2C%20Chrome%2C%20Opera%2C%20Safari%2C%20and%C2%A0Edge) in browsers, there is still a very low percentage of pages using them.
+Less than 0.1% of web pages have adopted the use of templates. Although templates are well <a hreflang="en" href="https://caniuse.com/template">supported</a> in browsers, there is still a very low percentage of pages using them.
 
 ### Preload and Prefetch
 
-At the render of a page, the browser downloads the given resources and to prioritise the download of some resources over others the browser uses [resource hints](https://almanac.httparchive.org/en/2021/resource-hints). The resource hints, preload and prefetch, are basically to tell the browser to either download some resource right away or to download it whenever it can to be able to present the resource when required.
+At the render of a page, the browser downloads the given resources and to prioritise the download of some resources over others the browser uses [resource hints](../resource-hints). The resource hints, preload and prefetch, are basically to tell the browser to either download some resource right away or to download it whenever it can to be able to present the resource when required.
 
 The **_preload_** hint tells the browser to download the resource with a higher priority as it will be required on the current page.
 The **_prefetch_** hint, however, tells the browser that the resource could be required after some time (useful for future navigation) and it'd better to fetch it when the browser has the capacity to do so and make it available as soon as it is required.
@@ -699,7 +699,7 @@ It is noted that 56% of JS requests apply the gzip compression method, whereas 3
   )
 }}
 
-An interesting observation here is the trend of the usage of these compression methods as [compared to the previous year](https://almanac.httparchive.org/en/2019/javascript#fig-10). The usage of gzip has gone down by almost 10% and brotli has increased by 11%. The trend definitely indicates the focus on smaller size files with more levels of compression that Brotli provides as compared to gzip.
+An interesting observation here is the trend of the usage of these compression methods as [compared to the previous year](../2019/javascript#fig-10). The usage of gzip has gone down by almost 10% and brotli has increased by 11%. The trend definitely indicates the focus on smaller size files with more levels of compression that Brotli provides as compared to gzip.
 
 With such comparable data, let us actually check if the percentage difference is somehow impacted by the resources being first-party or third-party.
 
@@ -731,7 +731,7 @@ The way preloading all our requests negates the impact of the resource hint, a s
 
 When working towards reducing the script parsing time, we tend to focus on all the opportunities to make our code smaller and more efficient. One such idea is to minify the files and bring down the bytes usage.
 
-The lighthouse report also [highlights the unminified JS being used](https://web.dev/unminified-javascript/) and lists these unminified files and the opportunities to save.
+The lighthouse report also <a hreflang="en" href="https://web.dev/unminified-javascript/">highlights the unminified JS being used</a> and lists these unminified files and the opportunities to save.
 
 {{ figure_markup(
   image="unminified-js-audit-scores.png",
@@ -804,7 +804,7 @@ An analysis of how many sites actually send the source map header on their first
 
 ### Security vulnerabilities
 
-Using third-party libraries comes with its own benefits and drawbacks. When using third-party libraries, one extra step for developers is to ensure the security that the library brings. Lighthouse runs this security audit for the third-party libraries used using the package name and its version. These packages can then be checked if there is any vulnerability that has been identified related to those. This is done using the [Snyk's open source vulnerability database](https://snyk.io/vuln?type=npm).
+Using third-party libraries comes with its own benefits and drawbacks. When using third-party libraries, one extra step for developers is to ensure the security that the library brings. Lighthouse runs this security audit for the third-party libraries used using the package name and its version. These packages can then be checked if there is any vulnerability that has been identified related to those. This is done using the <a hreflang="en" href="https://snyk.io/vuln?type=npm">Snyk's open source vulnerability database</a>.
 
 {{ figure_markup(
   content="63.9%",
