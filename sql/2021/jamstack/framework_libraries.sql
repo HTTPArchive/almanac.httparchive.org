@@ -10,6 +10,7 @@ WITH totals AS (
   GROUP BY
     _TABLE_SUFFIX
 ),
+
 ssg AS (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -22,6 +23,7 @@ ssg AS (
     app = "Next.js" OR
     app = "Nuxt.js"
 ),
+
 js AS (
   SELECT
     _TABLE_SUFFIX AS client,
