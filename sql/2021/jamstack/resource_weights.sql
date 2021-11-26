@@ -20,7 +20,8 @@ FROM (
   WHERE
     LOWER(category) = "static site generator" OR
     app = "Next.js" OR
-    app = "Nuxt.js")
+    app = "Nuxt.js"
+)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -32,7 +33,8 @@ JOIN (
     bytesImg / 1024 AS img_kb,
     bytesFont / 1024 AS font_kb
   FROM
-    `httparchive.summary_pages.2021_07_01_*`)
+    `httparchive.summary_pages.2021_07_01_*`
+)
 USING
   (client, url)
 GROUP BY
