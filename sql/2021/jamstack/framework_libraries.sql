@@ -15,7 +15,7 @@ ssg AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    app as ssg_app
+    app AS ssg_app
   FROM
     `httparchive.technologies.2021_07_01_*`
   WHERE
@@ -28,7 +28,7 @@ js AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    app as js_app
+    app AS js_app
   FROM
     `httparchive.technologies.2021_07_01_*`
   WHERE
