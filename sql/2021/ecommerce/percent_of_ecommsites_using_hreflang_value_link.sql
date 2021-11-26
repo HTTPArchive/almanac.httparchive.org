@@ -23,7 +23,7 @@ try {
     }
 } catch (e) {}
 return result;
-''' ;
+''';
 SELECT
   client,
   NORMALIZE_AND_CASEFOLD(hreflang) AS hreflang,

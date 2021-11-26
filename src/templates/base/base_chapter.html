@@ -58,6 +58,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 </script>
 {% endif %}
 {{ super() }}
+<script defer src="{{ get_versioned_filename('/static/js/webmentions.js') }}" nonce="{{ csp_nonce() }}"></script>
 {% endblock %}
 
 {# Calls to action for readers who want to engage more with this chapter. #}
@@ -147,6 +148,40 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
   {% endfor %}{{ self.translated_by_after() }}
   </div>
   {% endif %}
+{% endmacro %}
+
+{% macro render_webmentions() %}
+  <h2 id="reactions">
+    <a href="#reactions" class="anchor-link">{{ self.reactions() }}</a>
+  </h2>
+  <div class="reactions" data-source="{{ self.source() }}">
+    <div class="reaction-tabs" role="tablist" aria-label="{{ self.reactions() }}">
+      <button id="likes-tab" role="tab" aria-selected="true" aria-controls="likes-panel" tabindex="0">
+        <span id="likes-count">0</span>
+        <span id="likes-label" data-plural="{{ self.like() }}" data-singular="{{ self.likes() }}">{{ self.likes() }}</span>
+      </button>
+      <button id="reposts-tab" role="tab" aria-selected="false" aria-controls="reposts-panel" tabindex="-1">
+        <span id="reposts-count">0</span>
+        <span id="reposts-label" data-plural="{{ self.repost() }}" data-singular="{{ self.reposts() }}">{{ self.reposts() }}</span>
+      </button>
+      <button id="replies-tab" role="tab" aria-selected="false" aria-controls="replies-panel" tabindex="-1">
+        <span id="replies-count">0</span>
+        <span id="replies-label" data-plural="{{ self.reply() }}" data-singular="{{ self.replies() }}">{{ self.replies() }}</span>
+      </button>
+      <button id="mentions-tab" role="tab" aria-selected="false" aria-controls="mentions-panel" tabindex="-1">
+        <span id="mentions-count">0</span>
+        <span id="mentions-label" data-plural="{{ self.mention() }}" data-singular="{{ self.mentions() }}">{{ self.mentions() }}</span>
+      </button>
+    </div>
+    <div id="likes-panel" role="tabpanel" tabindex="0" aria-labelledby="likes-tab">
+    </div>
+    <div id="reposts-panel" role="tabpanel" tabindex="0" aria-labelledby="reposts-tab" hidden>
+    </div>
+    <div id="replies-panel" role="tabpanel" tabindex="0" aria-labelledby="replies-tab" hidden>
+    </div>
+    <div id="mentions-panel" role="tabpanel" tabindex="0" aria-labelledby="mentions-tab" hidden>
+    </div>
+  </div>
 {% endmacro %}
 
 {% macro render_authors() %}
@@ -330,6 +365,11 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
         <div class="chapter-links">
           {{ render_actions() }}
         </div>
+        {% if year | int >= 2021 %}
+        <section class="webmentions js-enable hidden">
+          {{ render_webmentions() }}
+        </section>
+        {% endif %}
         <section class="authors">
             {{ render_authors() }}
         </section>
@@ -342,6 +382,15 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
             </svg>
             <span class="num-comments"><span class="not-mobile">{{ self.comments_fallback() }}</span></span> <span data-translation class="comment-singular visually-hidden-mobile">{{ self.comment() }}</span>
             <span data-translation class="comment-plural visually-hidden-mobile">{{ self.comments() }}</span>
+          </a>
+        </div>
+        {% elif year | int >= 2021 %}
+        <div id="cta-container">
+          <a class="alt btn chapter-cta comment-cta" href="#reactions">
+            <svg width="22" height="22" role="img" aria-hidden="true">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment-logo"></use>
+            </svg>
+            {{ self.reactions() }}
           </a>
         </div>
         {% endif %}

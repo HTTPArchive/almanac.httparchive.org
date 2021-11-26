@@ -11,11 +11,11 @@ demianrenzulli_bio: Demian is a member of Google's Web Ecosystems Consulting tea
 results: https://docs.google.com/spreadsheets/d/16AkIdDBBkCR5Kgb7kyfYvnNLQBu23Vsh7MUSFHW9RtA
 featured_quote: The most popular sites are more prone to use features like service workers and advanced capabilities.
 featured_stat_1: 8.62%
-featured_stat_label_1: Percentage of top 1,000 sites using service workers.
+featured_stat_label_1: Percentage of top 1,000 sites using service workers
 featured_stat_2: 57.88%
-featured_stat_label_2: Percentage of PWAs using the service worker cache.
+featured_stat_label_2: Percentage of PWAs using the service worker cache
 featured_stat_3: 32.19%
-featured_stat_label_3: Percentage of mobile sites with service workers that use the Workbox library.
+featured_stat_label_3: Percentage of mobile sites with service workers that use the Workbox library
 ---
 
 ## Introduction
