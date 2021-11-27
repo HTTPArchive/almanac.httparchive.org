@@ -9,7 +9,7 @@ try {
 } catch (e) {
   return false;
 }
-''' ;
+''';
 
 SELECT
   _TABLE_SUFFIX AS client,

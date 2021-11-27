@@ -393,127 +393,122 @@
     "hash": "21329bd976566f8d3771f03c27afff60"
   },
   "en/2021/chapters/accessibility.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-12-01T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "ce138eeb1ef2f9f1069f8ef7c0a07028"
   },
   "en/2021/chapters/caching.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-12-01T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "fe591afcb4a69bf20627da5f175682f1"
   },
   "en/2021/chapters/capabilities.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-11-17T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "6eb382d3e542f751a56d88a0691cfe03"
   },
   "en/2021/chapters/cdn.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-12-01T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "6765505168889c614989507e00f9dd7a"
   },
   "en/2021/chapters/cms.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-12-01T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "1adca4d7c699e66fdff1f2860c8360c1"
   },
   "en/2021/chapters/compression.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-12-01T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "c01cf15ea56ca2cc1883fcea285718b5"
   },
   "en/2021/chapters/css.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-12-01T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "7fe89434e83f57551e05bf39ea4eab2c"
   },
   "en/2021/chapters/ecommerce.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-12-01T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "d381b207763500709d1c7ba3be3f88a8"
   },
-  "en/2021/chapters/fonts.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
-    "date_modified": "2021-05-02T00:00:00.000Z",
-    "hash": "1e553a8bac65d6a6e4c043cd18901fd1"
-  },
   "en/2021/chapters/http.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-12-01T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "ac1513ae5c301d54ff50b10f6ae6a14d"
   },
   "en/2021/chapters/jamstack.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-12-01T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "7dc57e9cd739a1e17367b311648497fa"
   },
   "en/2021/chapters/javascript.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-12-01T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "a1e3ac2a17c90c7685c317bfb419e354"
   },
   "en/2021/chapters/markup.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-12-01T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "9d7b2418ca737e2bc8913c1fe66c9922"
   },
   "en/2021/chapters/media.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-12-01T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "550e7dcfe846e977171e15c18d26e245"
   },
   "en/2021/chapters/mobile-web.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-12-01T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "c5d55af7ee97fb576d375c23edca7541"
   },
   "en/2021/chapters/page-weight.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-12-01T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "b3691427d7105544c34ee057dc482bd9"
   },
   "en/2021/chapters/performance.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-11-17T00:00:00.000Z",
     "date_modified": "2021-11-18T00:00:00.000Z",
     "hash": "6569ac27555097033e1f3cff7449dd1b"
   },
   "en/2021/chapters/privacy.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-11-17T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "5d54cff74d70b2b2ea6064a15a2b2ee9"
   },
   "en/2021/chapters/pwa.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-11-17T00:00:00.000Z",
     "date_modified": "2021-11-18T00:00:00.000Z",
     "hash": "36f84082ea199d471fe0f78fdff82eab"
   },
   "en/2021/chapters/resource-hints.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-11-17T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "9218bee075f78ae18aa7ef432d08f4fe"
   },
   "en/2021/chapters/security.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-12-01T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "103efa580682c33e63d92bd730398c3e"
   },
   "en/2021/chapters/seo.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-12-01T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "4a152c290455592bccf65a9fc29a3f59"
   },
   "en/2021/chapters/structured-data.html": {
-    "date_published": "2021-06-04T00:00:00.000Z",
+    "date_published": "2021-11-17T00:00:00.000Z",
     "date_modified": "2021-11-18T00:00:00.000Z",
     "hash": "34f3268599a80268d2005ed6e0bc1d38"
   },
   "en/2021/chapters/third-parties.html": {
-    "date_published": "2021-05-02T00:00:00.000Z",
+    "date_published": "2021-11-17T00:00:00.000Z",
     "date_modified": "2021-11-18T00:00:00.000Z",
     "hash": "aaeda5b93f7ffdb0efc5f62354c55bfc"
   },
   "en/2021/chapters/webassembly.html": {
-    "date_published": "2021-06-04T00:00:00.000Z",
+    "date_published": "2021-12-01T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "c479fba1b3587f7bf7a83c7194815130"
   },

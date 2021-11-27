@@ -14,9 +14,9 @@ discuss: 2047
 results: https://docs.google.com/spreadsheets/d/1T7sxPP5BV3uwv-sXhBEZraVk-obd0tDfFrLiD49nZC0/
 featured_quote: In this chapter, we explore the current state-of-practice for security on the Web. By analyzing the adoption of various security features in depth and at a large scale we gather insights on the different ways that website owners apply these security mechanisms, driven by the incentive to protect their users.
 featured_stat_1: 86.90%
-featured_stat_label_1: Requests that use HTTPS on mobile.
+featured_stat_label_1: Requests that use HTTPS on mobile
 featured_stat_2: 22,333
-featured_stat_label_2: Bytes in the longest CSP observed.
+featured_stat_label_2: Bytes in the longest CSP observed
 featured_stat_3: 9.03%
 featured_stat_label_3: Usage of reCAPTCHA
 ---

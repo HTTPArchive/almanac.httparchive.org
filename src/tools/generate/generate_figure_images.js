@@ -61,6 +61,24 @@ const generate_images = async (chapter_match) => {
     const figure_regexp = /{{[\s]*figure_markup\([^}]*(image|chart_url)=["']([^'"]*)["'][^}]*(image|chart_url)=["']([^'"]*)["'][^}]*\)[^}]*}}/g;
 
     const matches = markdown.matchAll(figure_regexp);
+
+    const path_separator = (process.platform != 'win32') ? '/' : '\\';
+
+    // Check if the year directory exists and, if not, create it
+    let folder_path = `static${path_separator}images${path_separator}${year}`;
+    if (!fs.existsSync(folder_path)) {
+      console.log(`  Creating directory: ${folder_path}`);
+      fs.mkdirSync(folder_path);
+    }
+
+    // Check if the chapter directory exists and, if not, create it
+    folder_path = `${folder_path}${path_separator}${chapter}`;
+    if (!fs.existsSync(folder_path)) {
+      console.log(`  Creating directory: ${folder_path}`);
+      fs.mkdirSync(folder_path);
+      tested_folder_exists = true;
+    }
+
     for (const match of matches) {
 
       const image_file = (match[1] === 'image') ? match[2] : match[4];
@@ -78,10 +96,8 @@ const generate_images = async (chapter_match) => {
         continue;
       }
 
-      const file_path = (process.platform != 'win32')
-          ? `static/images/${year}/${chapter}/${image_file}`
-          : `static\\images\\${year}\\${chapter}\\${image_file}`;
-
+      // Check if the image already exists
+      const file_path = `${folder_path}${path_separator}${image_file}`;
       if (fs.existsSync(file_path)) {
         console.log(`  Skipping: ${image_file} as image already exists`);
         continue;

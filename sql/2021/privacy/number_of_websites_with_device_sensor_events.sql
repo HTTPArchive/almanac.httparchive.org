@@ -11,7 +11,7 @@ LANGUAGE js AS """
   } catch (error) {
     return []
   }
-""" ;
+""";
 
 WITH pages_events AS (
   SELECT
