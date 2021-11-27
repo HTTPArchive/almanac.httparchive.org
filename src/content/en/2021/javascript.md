@@ -189,11 +189,9 @@ However, loading the JavaScript asynchronously or deferring it helps in some way
   <figcaption>{{ figure_link(caption="Percent of pages using `async`, `defer`, or neither.", sheets_gid="2038121216", sql_file="breakdown_of_pages_using_async_defer.sql") }}</figcaption>
 </figure>
 
-There was an anti-pattern observed in the last year's results that some websites use both `async` and `defer` attribute resulting in fallback to `async` if the browser supports it. {# TODO Why is it an anti-pattern? It is because async takes precendence - we should explain this. Also I presume it is still the case? #}
+There was an anti-pattern observed in the last year's results that some websites use both `async` and `defer` attribute resulting in fallback to `async` if the browser supports it and using `defer` for IE8 and IE9 browsers. This is, however, unnecessary now for most of the sites since `async` takes the precedence on all suppoting browsers and this pattern in turn, interrupts the HTML parsing, instead of deferring until the page has loaded. The usage was so frequent that [11.4%](../2020/javascript#how-do-we-load-our-javascript) of mobile pages were seen with at least one script with `async` and `defer` attributes used together. The [root causes](https://twitter.com/rick_viscomi/status/1331735748060524551?s=20) were found and an action item was also taken down to [remove such usage going forward](https://twitter.com/Kraft/status/1336772912414601224?s=20).
 
-The usage was so frequent that [11.4%](../2020/javascript#how-do-we-load-our-javascript) of requests made on the mobile pages were seen with at least one script with `async` and `defer` attributes used together. The [root causes](https://twitter.com/rick_viscomi/status/1331735748060524551?s=20) were found and an action item was also taken down to [remove such usage going forward](https://twitter.com/Kraft/status/1336772912414601224?s=20).
-
-This year, we improved our measures of calculating these figures by looking at the rendered DOM, as opposed to the initial HTML. Based on the custom metric run on the rendered DOM for pages using these attributes, the variation is a lot as compared to the previous year. When we dived deeper to understand this gap, it was found that a lot of pages update these attributes dynamically after the pages has already been loaded. This is one reason why more results are found using the results from the custom metric.
+This year, we improved our measures of calculating these figures by looking at the rendered DOM, as opposed to the initial HTML.
 
 {{ figure_markup(
   content="35.6%",
@@ -204,7 +202,7 @@ This year, we improved our measures of calculating these figures by looking at t
   )
 }}
 
-It is found that 35.6% of mobile pages use the `async` and `defer` attributes together. This was counted using a <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/javascript.js">custom metric</a> that measures the usage of these attributes on the rendered DOM.
+It is found that 35.6% of mobile pages use the `async` and `defer` attributes together. This was counted using a <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/javascript.js">custom metric</a> that measures the usage of these attributes on the rendered DOM. Based on the custom metric, the variation is a lot as compared to the previous year. When we dived deeper to understand this gap, it was found that a lot of pages update these attributes dynamically after the pages have already been loaded. This is one reason why more results are found using the results from the custom metric (rendered DOM as opposed to initial DOM).
 
 A typical <a hreflang="en" href="https://www.tntsupercenter.com/">example website</a>, loads the below script:
 
@@ -222,9 +220,7 @@ A typical <a hreflang="en" href="https://www.tntsupercenter.com/">example websit
 According to [Wikipedia](https://en.wikipedia.org/wiki/Matomo_(software)), Piwik (now known as Matomo):
 <blockquote>is a free and open source web analytics application developed by a team of international developers, that runs on a PHP/MySQL webserver. It tracks online visits to one or more websites and displays reports on these visits for analysis. As of June 2018, Matomo was used by over 1,455,000 websites, or 1.3% of all websites with known traffic analysis tools...</blockquote>
 
-This strongly suggests that marketing and analytics providers are a common source of these async/defer scripts being dynamically injected into the page.
-
-{# TODO Why does this strongly suggest this? Is it the fact that they are obviously dynamically inserted? Is it only marketing and analytics providers that prodominately using dynamically inserted script tags like this? #}
+This information strongly suggests that a lot of the increase is due to these marketing and analytics providers that dynamically inject these async/defer scripts into the page.
 
 {{ figure_markup(
   content="2.6%",
@@ -322,20 +318,18 @@ A median desktop page loads 1 JavaScript resource with the preload hint whereas 
     <tbody>
       <tr>
         <td>Desktop</td>
-        <td class="numeric">5</td>
-        <td class="numeric">4</td>
+        <td class="numeric">1</td>
+        <td class="numeric">1</td>
       </tr>
       <tr>
         <td>Mobile</td>
-        <td class="numeric">7</td>
-        <td class="numeric">4</td>
+        <td class="numeric">1</td>
+        <td class="numeric">1</td>
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Year over year comparison of the usage of preload hints per page at the 90th percentile.", sheets_gid="1107832831", sql_file="resource-hints-prefetch-preload-percentage.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Year over year comparison of the usage of preload hints per page at the median.", sheets_gid="1107832831", sql_file="resource-hints-prefetch-preload-percentage.sql") }}</figcaption>
 </figure>
-
-{# TODO why the 90th percentile? Would normally advise to look at the median #}
 
 <figure>
   <table>
@@ -349,24 +343,22 @@ A median desktop page loads 1 JavaScript resource with the preload hint whereas 
     <tbody>
       <tr>
         <td>Desktop</td>
-        <td class="numeric">14</td>
-        <td class="numeric">13</td>
+        <td class="numeric">3</td>
+        <td class="numeric">2</td>
       </tr>
       <tr>
         <td>Mobile</td>
-        <td class="numeric">12</td>
-        <td class="numeric">11</td>
+        <td class="numeric">3</td>
+        <td class="numeric">2</td>
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Year over year comparison of the usage of prefetch hints per page at the 90th percentile.", sheets_gid="1107832831", sql_file="resource-hints-prefetch-preload-percentage.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Year over year comparison of the usage of prefetch hints per page at the median.", sheets_gid="1107832831", sql_file="resource-hints-prefetch-preload-percentage.sql") }}</figcaption>
 </figure>
-
-{# TODO same questions #}
 
 Looking at the trend of the usage of preload and prefetch hints over the past years, it can be noted that the trend favors a decrease in the usage of more preload and prefetch hints per page.
 
-## How the JavaScript is delivered
+## How is JavaScript delivered
 
 When sending resources over the network, it becomes important to look at an efficient way of doing it, and compressing these resources using different techniques either statically or dynamically boosts the performance and makes the process faster.
 
@@ -430,13 +422,10 @@ The Lighthouse report also <a hreflang="en" href="https://web.dev/unminified-jav
   )
 }}
 
-It is noted that 67.1% of mobile pages have an "unminified JS" score between 0.9 and 1.0, meaning that they have a few unminified JS resources.
+Here, 0.00 represents the worst score whereas 1.00 represents the best score. It is noted that 67.1% of mobile pages have an audit score between 0.9 and 1.0, meaning that there are still more than 30% of mobile pages with a unminified JS score of less than 0.9 with less or no minification.
+This, as compared to the results from the last year(2020), shows a regression of 10% in mobile pages with "unminified JS" score between 0.9 and 1.0. 
 
- This is an improvement of 10% as compared to the results from the last year (2020).
-
- {# TODO Isn't this a regression of 10%? #}
-
-To dive deeper into understanding how many bytes per page are unminified.
+To understand the reason for the less score this year, let's dive deeper to look at how many bytes per page are unminified.
 
 {{ figure_markup(
   image="unminified-js-bytes.png",
@@ -448,11 +437,9 @@ To dive deeper into understanding how many bytes per page are unminified.
   )
 }}
 
-And it is found that 57.4% of mobile pages have 0 KB of unminified JS whereas 17.9% of those have 0-10 kilobytes of unminified JS.
+And it is found that 57.4% of mobile pages have 0 KB of unminified JavaScript. This indicates that more than 50% of mobile pages have 100% minification with 0KBs of unminified JavaScript found. On the other hand, less than 20% of mobile pages have 0-10 kilobytes of unminified JavaScript with scope for better minification score. The rest have less to no minification and these are the pages that fall in category of bad "unminified JS" audit score that we saw in the previous chart.
 
-{# TODO I don't really understand what this graph is showing me. Especially compared to last graph. These sound small so is this good? Or bad? #}
-
-The first-party vs. third-party analysis in this case shows that 82% of the average mobile page's unminified JS bytes actually come from first-party scripts.
+The first-party vs. third-party analysis in this case shows that 82% of the average mobile pages' unminified JS bytes actually come from first-party scripts. This indicates that the third-party scripts are definitely doing better than the first-party ones in the case of minification.
 
 {{ figure_markup(
   image="average-unminified-js-bytes.png",
@@ -477,23 +464,11 @@ Source maps are files sent along with the JavaScript resource files to let the b
   )
 }}
 
-It is found that only 0.1% of mobile pages do not use the SourceMap response header on script resources. One reason for this extremely small percentage could be that not many sites choose to put their original source code in production through the source map.
+It is found that only 0.1% of mobile pages use the SourceMap response header on script resources. One reason for this extremely small percentage could be that not many sites choose to put their original source code in production through the source map.
 
-An analysis of how many sites actually send the source map header on their first-party or third-party scripts shows:
+An analysis of how many sites actually send the source map header on their first-party or third-party scripts shows that 0.1% of the JS requests that include a SourceMap header on mobile are for first-party scripts.
 
-{{ figure_markup(
-  image="sourcemap-first-third-party.png",
-  caption="Usage of sourcemap headers in first party vs third party.",
-  description="Bar chart showing the usage of sourcemap headers in first party vs third party. 98% of the JS requests that include a SourceMap header on mobile are for first-party scripts and only 2% for third party",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1762186682&format=interactive",
-  sheets_gid="2057978707",
-  sql_file="sourcemap_header_by_3p.sql"
-  )
-}}
-
-98% of the JS requests that include a SourceMap header on mobile are for first-party scripts.
-
-{# TODO That seems surprising to me. I would have though it was more common to be from third-parties since the likes of query and Bootstrap include source map files. Any thoughts on why this is the reverse? Or am I just wrong about this expectation? #}
+{# TODO That seems surprising to me. I would have though it was more common to be from third-parties since the likes of query and Bootstrap include source map files. Any thoughts on why this is the reverse? Or am I just wrong about this expectation? Nishu - These results are confusing to me. I reran the query and didn't find 98% anywhere, so I have removed the figure but simply put 0.1% as first-party results for mobile. If you'd like to have a look - here's the data - https://docs.google.com/spreadsheets/d/1zU9rHpI3nC6jTz3xgN6w13afW7x34xAKBh2IPH-lVxk/edit#gid=2057978707 #}
 
 ## Libraries and frameworks
 
@@ -695,9 +670,7 @@ It would be a great idea to now see what libraries were worked upon and have eit
   <figcaption>{{ figure_link(caption="List of security vulnerable libraries with their vulnerability percentage.", sheets_gid="551476210", sql_file="lighthouse_vulnerable_libraries.sql") }}</figcaption>
 </figure>
 
-The results show that jQuery is the dominant factor in the decrease of vulnerability with at least 23.3% of improvement here and some improvement in jQueryUI too. However, there is little to no difference in other libraries' security vulnerabilities, except for a few.
-
-{# TODO which few? Or should we just remove that "except for a few" part? Or should we update the table to include the improvement? #}
+The results show that jQuery is the dominant factor in the decrease of vulnerability with at least 23.3% of improvement here and some improvement in jQueryUI too. However, there is little to no difference in other libraries' security vulnerabilities.
 
 ## How do we use JavaScript?
 
