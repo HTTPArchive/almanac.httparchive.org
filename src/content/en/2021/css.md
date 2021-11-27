@@ -7,7 +7,7 @@ reviewers: [svgeesus, j9t, estelle, bkardell, argyleink, LeaVerou]
 analysts: [rviscomi]
 editors: [shantsis]
 translators: []
-meyerweb_bio:
+meyerweb_bio: <a href="http://meyerweb.com/">Eric A. Meyer</a> (<span class="citation" data-cites="meyerweb">[@meyerweb]</span>(http://twitter.com/meyerweb)) has been a burger flipper, a hardward jockey, a college webmaster, an early blogger, one of the original <a href="https://archive.webstandards.org/css/members.html">CSS Samurai</a>, a member of the <a href="https://en.wikipedia.org/wiki/CSS_Working_group">CSS Working Group</a>, a consultant and trainer, and a Standards Evangelist for <a href="https://en.wikipedia.org/wiki/Netscape">Netscape</a>. Currently, he is a Developer Advocate at <a href="http://igalia.com/">Igalia</a> and co-founder of <a href="https://aneventapart.com/">An Event Apart</a> with <a href="http://zeldman.com/">Jeffrey Zeldman</a>. Among other things, Eric co-wrote <cite><a href="https://abookapart.com/products/design-for-real-life">Design For Real Life</a></cite> with <a href="https://sarawb.com">Sara Wachter-Boettcher</a> for <a href="https://abookapart.com/">A Book Apart</a> and <cite><a href="http://meyerweb.com/eric/books/css-tdg/">CSS: The Definitive Guide</a></cite> with <a href="http://standardista.com/">Estelle Weyl</a> for <a href="https://oreilly.com/">O’Reilly</a>, created the first official <a href="http://w3.org/">W3C</a> test suite, and assisted in the creation of <a href="http://microformats.org/">microformats</a>.
 GeekBoySupreme_bio:
 results: https://docs.google.com/spreadsheets/d/12vQIA0xsC5Jr3J9Sh03AcAvgFjMAmP1xSS6Tjai9LF0/
 featured_quote: The 2021 Web Almanac offers deeper insight into how the use of CSS differs in the realm of what we all think we need versus what we actually see in production.
@@ -1520,11 +1520,3 @@ In the end, the 2021 Web Almanac tells the story of a technology that's stable b
 Does this mean CSS has become stagnant?  Hardly: new layout methods are gaining ground, and major new capabilities are being developed, many of them based on practices worked out in the realm of preprocessors.  We would not think to claim that CSS is "solved" or that the best possible practices have already been worked out.  As practitioners gain ever more experience, changes will come to both CSS the language and CSS the practice.  These changes may be gradual rather than sudden, steady rather than disruptive, but this is what we expect in any mature technology.
 
 We look forward to seeing how CSS will grow over the years to come.
-
-
-## Authors
-
-
-### Eric A. Meyer
-
-[Eric A. Meyer](http://meyerweb.com/) ([@meyerweb](http://twitter.com/meyerweb)) has been a burger flipper, a hardward jockey, a college webmaster, an early blogger, one of the original [CSS Samurai](https://archive.webstandards.org/css/members.html), a member of the [CSS Working Group](https://en.wikipedia.org/wiki/CSS_Working_group), a consultant and trainer, and a Standards Evangelist for [Netscape](https://en.wikipedia.org/wiki/Netscape).  Currently, he is a Developer Advocate at [Igalia](http://igalia.com/) and co-founder of [An Event Apart](https://aneventapart.com/) with [Jeffrey Zeldman](http://zeldman.com/).  Among other things, Eric co-wrote <cite>[Design For Real Life](https://abookapart.com/products/design-for-real-life)</cite> with [Sara Wachter-Boettcher](https://sarawb.com) for [A Book Apart](https://abookapart.com/) and <cite>[CSS: The Definitive Guide](http://meyerweb.com/eric/books/css-tdg/)</cite> with [Estelle Weyl](http://standardista.com/) for [O’Reilly](https://oreilly.com/), created the first official [W3C](http://w3.org/) test suite, and assisted in the creation of [microformats](http://microformats.org/).
