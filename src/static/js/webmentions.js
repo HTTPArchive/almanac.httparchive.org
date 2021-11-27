@@ -40,7 +40,7 @@ function parseMentions(webmentions, mentionType) {
 // Parse webmentions for individual category
 function setReactionsLabel(length, reactionLabel) {
 
-  lang = document.querySelector("html").getAttribute("lang");
+  const lang = document.querySelector("html").getAttribute("lang");
 
   let plural_rules;
   try {
