@@ -73,7 +73,7 @@ With this in mind, here are a few statistics that were intentionally not measure
 3. Core Web Vitals
 4. Cache Hit versus Cache Miss performance etc.
 
-While some of these could be measured with our crawl, and others by using the CrUX dataset, the limitations of our crawl and the use of multiple CDNs by some sites, will be difficult to measure and so could be incorrectly reported against the CDN used in out crawl. For these reasons, we have decided not to measure these statistics in this chapter.
+While some of these could be measured with HTTP Archive dataset, and others by using the CrUX dataset, the limitations of our methodology and the use of multiple CDNs by some sites, will be difficult to measure and so could be incorrectly attributed. For these reasons, we have decided not to measure these statistics in this chapter.
 
 ## CDN adoption
 
