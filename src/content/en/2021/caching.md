@@ -39,7 +39,7 @@ Talk about CDN adoptions, 14% of desktop pages use a Cloudflare CDN.
 
 ## Service Worker adoption
 
-Talk about Service Worker adoptions, 1.2% of desktop pages registered a Service Worker, but 9% of mobile pages in the top 1000 registered a SW.
+Adoption of Service Workers has seen a significant increase from 2020. While 1.2% of Desktop pages registered a service worker, 9% of Mobile pages in the top 1,000 registered a Service Worker.
 
 {{ figure_markup(
   image="sw-adoption.png",
