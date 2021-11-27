@@ -364,7 +364,7 @@ The impact of this is observed when we compare websites which are using CDN agai
   )
 }}
 
-On both desktop and Mmbile platforms, we see that CDNs are delivering twice as many text assets in Brotli, unlike domains delivered from origin.  From the [CDN Adoption](#cdn-adoption) section covered earlier, 73% of the domains serving HTMLs are on CDNs and these all  benefit from the Brotli compression. By offloading the computational load of compressing a text asset in the Brotli format to CDNs, website owners need not invest resources for hosting infrastructure.
+On both desktop and mobile platforms, we see that CDNs are delivering twice as many text assets in Brotli, unlike domains delivered from origin.  From the [CDN Adoption](#cdn-adoption) section covered earlier, 73% of the domains serving HTMLs are on CDNs and these all  benefit from the Brotli compression. By offloading the computational load of compressing a text asset in the Brotli format to CDNs, website owners need not invest resources for hosting infrastructure.
 
 However, it is at the web property owner's discretion whether to use Brotli compression on their CDNs or not. Compared to 95% of the web platforms globally which support Brotli compression, even with CDNs in place, less than half of all the text assets are delivered in Brotli format. Thus there is space for this adoption to improve.
 
