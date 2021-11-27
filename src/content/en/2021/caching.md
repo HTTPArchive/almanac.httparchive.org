@@ -52,7 +52,7 @@ Adoption of Service Workers has seen a significant increase from 2020. While 1.2
 
 ## Headers adoption
 
-When using the Cache-Control header, usage increased by 1% for Desktop and remained the same for Mobile. However, usage of the Last-Modified header decreased by 1% across both interfaces.
+Usage of the Cache-Control header has increased steadily since 2019. 74% of responses on Mobile pages included the Cache-Control header, while 75% of responses on Desktop pages utilized the header. From 2020, the usage of this specific header increased by 0.71% for Mobile and by 1.13% for Desktop.
 
 Cache-Control: DT 75%, Mobile 74%
 Expires: DT 55%, Mobile 56%
@@ -74,7 +74,7 @@ When using the Cache-Control header, usage increased by 1% for Desktop and remai
 
 Cache Control directives, 61% of mobile requests include a Cache-Control response header with a `max-age` directive.
 
-The most common invalid Cache Control directives are: `set-cookie`, `max-stale`, `false`, `max-age:`, `maxage` and `public;`.
+The most misused Cache Control directive is `set-cookie`, used for 0.07% of total directives for Desktop and 0.08% for Mobile.
 
 Fun fact the the largest max-age value is 1625540701883604800000 seconds or 51545557517871.8 years (51 trillion).
 
