@@ -52,11 +52,16 @@ Adoption of Service Workers has seen a significant increase from 2020. While 1.2
 
 ## Headers adoption
 
-Talk about headers trends, Cache-Control vs ETag vs Expires vs Last-Modified.
+When using the Cache-Control header, usage increased by 1% for Desktop and remained the same for Mobile. However, usage of the Last-Modified header decreased by 1% across both interfaces.
+
+Cache-Control: DT 75%, Mobile 74%
+Expires: DT 55%, Mobile 56%
+ETag: DT 48%, Mobile 47%
+Last-Modified: DT 73%, Mobile 71%
 
 ### Cache Control
 
-Talk about Cache Control adoptions, 74% of responses on mobile pages include the Cache-Control header
+When using the Cache-Control header, usage increased by 1% for Desktop and remained the same for Mobile. However, usage of the Last-Modified header decreased by 1% across both interfaces.
 
 {{ figure_markup(
   image="cache-control-adoption.png",
