@@ -205,7 +205,6 @@ For example, a CDN built specifically to deliver advertisements will be optimize
 - Effective management of [long tail](https://en.wikipedia.org/wiki/Long_tail) content
 - Geographical closeness to businesses requiring their services
 
-
 This means purpose-built CDNs meet the exact requirements of a particular market segment as opposed to a generic CDN solution. Generic solutions can meet a broader set of requirements but are not optimized for any particular industry or market.
 
 ## TLS adoption impact
