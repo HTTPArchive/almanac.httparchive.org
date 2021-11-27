@@ -21,7 +21,7 @@ featured_stat_label_3: TODO
 
 ## Introduction
 
-Over the past decade ...
+Caching is a technique that enables the reuse of previously downloaded content. Over the past decade...
 
 
 ## CDN Cache adoption
