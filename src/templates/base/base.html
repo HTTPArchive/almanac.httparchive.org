@@ -731,6 +731,7 @@
   image="",
   link="",
   video="",
+  gif="",
   object="",
   caption="",
   alt=caption,
@@ -742,6 +743,8 @@
   height=371,
   video_width=width,
   video_height=height,
+  gif_width=width,
+  gif_height=height,
   data_width=width,
   data_height=height,
   content="",
@@ -754,8 +757,13 @@
 
 {# Add the chapter path to image and set the link #}
 {% if image and not image.startswith("/") and not image.startswith("https") %}{% set image="/static/images/%s/%s/%s" % (year, metadata.get('chapter'), image) %}{% endif %}
+
+{% if gif and not gif.startswith("/") and not gif.startswith("https") %}{% set gif="/static/images/%s/%s/%s" % (year, metadata.get('chapter'), gif) %}{% endif %}
+
 {# Set the link as appropriate if not provided #}
 {% if not link and video %}{% set link=video %}{% elif not link %}{% set link=image %}{% endif %}
+
+{% set print=request.args.get('print') != None %}
 
 {# Ebook needs a unique fig id. 2019 is already out there so reluctant to change that, so "if" statemnt it is! #}
 {% if ebook %}
@@ -768,10 +776,16 @@
 <figure id="{{ anchor }}">
   {%- if image != "" %}
   <div class="figure-wrapper">
-    {%- if video != "" %}
+    {%- if not print and video != "" %}
     <iframe class="fig-mobile fig-desktop video-embed" src="{{ video }}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="{{ video_width }}" height="{{ video_height }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description"></iframe>
     {%- endif %}
-    {% if video %}{% set anchor_class="video-fallback-image"%}{% endif %}
+    {%- if not ebook and not print and gif != "" %}
+    <picture class="fig-mobile fig-desktop video-embed">
+      <source media="(prefers-reduced-motion: no-preference)" type="image/gif" srcset="{{ gif }}" width="{{ gif_width }}" height="{{ gif_height }}" >
+      <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" loading="lazy" />
+    </picture>
+    {%- endif %}
+    {% if not ebook and not print and (video or gif) %}{% set anchor_class="video-fallback-image"%}{% endif %}
     <a href="{{ link }}"  class="{{ anchor_class }}">
       {%- if chart_url != "" %}
       <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" data-width="{{ data_width }}" data-height="{{ data_height }}" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="{{ chart_url|safe }}" loading="lazy" />
