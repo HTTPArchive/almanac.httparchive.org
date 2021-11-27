@@ -116,10 +116,10 @@
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
-{% macro read_chapter(chapter) %}Lea el Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% macro read_chapter(chapter) %}Lea el capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}Lea el {{ year|int -1 }} Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}Lea el {{ year|int -1 }} capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
