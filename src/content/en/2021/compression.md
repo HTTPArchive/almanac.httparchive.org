@@ -103,7 +103,7 @@ overall the use of HTTP compression is growing on desktop and on mobile.
 {{ figure_markup(
   image="compression-format-trend-desktop.png",
   caption="Compression method trend for desktop.",
-  description="This breaks down the usage of Brotli, Gzip or No text compression on desktop for 2019, 2020 and 2021. For 2019, it shows 7.36% Brotli, 29.50% Gzip, 63.11% No text compression. For 2020, it shows 9.10% Brotli, 30.82% Gzip, 60.05% No text compression. For 2021, it shows 13.99% Brotli, 28.21% Gzip, 58.77% No text compression.",
+  description="This breaks down the usage of Brotli, Gzip or No text compression on desktop for 2019, 2020 and 2021. For 2019, it shows 7.4% Brotli, 29.5% Gzip, 63.1% No text compression. For 2020, it shows 9.1% Brotli, 30.8% Gzip, 60.1% No text compression. For 2021, it shows 14.0% Brotli, 28.2% Gzip, 58.8% No text compression.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQtfyTM9VEweN_Hli3IuxxqU1CRap4V5Q28baEs7aEBResoPRgk9Dwp1m_vdS9lzNlfO8J4hZN7GPT7/pubchart?oid=1962012452&format=interactive",
   sheets_gid="703407907",
   sql_file="compression_format_trend.sql"
@@ -113,7 +113,7 @@ overall the use of HTTP compression is growing on desktop and on mobile.
 {{ figure_markup(
   image="compression-format-trend-mobile.png",
   caption="Compression method trend for mobile.",
-  description="This breaks down the usage of Brotli, Gzip or No text compression on mobile for 2019, 2020 and 2021. For 2019, it shows 7.51% Brotli, 30.84% Gzip, 61.62% No text compression. For 2020, it shows 9.11% Brotli, 31.56% Gzip, 59.30% No text compression. For 2021, it shows 14.30% Brotli, 28.59% Gzip, 57.08% No text compression.",
+  description="This breaks down the usage of Brotli, Gzip or No text compression on mobile for 2019, 2020 and 2021. For 2019, it shows 7.5% Brotli, 30.8% Gzip, 61.6% No text compression. For 2020, it shows 9.1% Brotli, 31.6% Gzip, 59.3% No text compression. For 2021, it shows 14.3% Brotli, 28.6% Gzip, 57.1% No text compression.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQtfyTM9VEweN_Hli3IuxxqU1CRap4V5Q28baEs7aEBResoPRgk9Dwp1m_vdS9lzNlfO8J4hZN7GPT7/pubchart?oid=646268399&format=interactive",
   sheets_gid="703407907",
   sql_file="compression_format_trend.sql"
@@ -125,7 +125,7 @@ Of the resources that are served compressed, the majority are using either Gzip 
 {{ figure_markup(
   image="compression-algorithms-for-http-responses.png",
   caption="Compression algorithm for HTTP responses.",
-  description="A bar chart showing the usage rates of different compression algorithms for HTTP responses. 66.71% of HTTP responses that use compression employ the Gzip algorithm, 33.24% use Brotli, and 0.06% use some other method.",
+  description="A bar chart showing the usage rates of different compression algorithms for HTTP responses. 66.7% of HTTP responses that use compression employ the Gzip algorithm, 33.2% use Brotli, and 0.1% use some other method.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQtfyTM9VEweN_Hli3IuxxqU1CRap4V5Q28baEs7aEBResoPRgk9Dwp1m_vdS9lzNlfO8J4hZN7GPT7/pubchart?oid=676651936&format=interactive",
   sheets_gid="1289551244",
   sql_file="compression_formats.sql"
@@ -146,48 +146,48 @@ In the [Third Parties](./third-parties) chapter, we learn about third parties an
         <th scope="colgroup" colspan="2">Mobile</th>
       </tr>
       <tr>
-        <th scope="col">Content Encoding</th>
-        <th scope="col">First-Party</th>
-        <th scope="col">Third-Party</th>
-        <th scope="col">First-Party</th>
-        <th scope="col">Third-Party</th>
+        <th scope="col">Content-encoding</th>
+        <th scope="col">First-party</th>
+        <th scope="col">Third-party</th>
+        <th scope="col">First-party</th>
+        <th scope="col">Third-party</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><em>No Text Compression</em></td>
-        <td class="numeric">57.99%</td>
-        <td class="numeric">57.52%</td>
-        <td class="numeric">56.05%</td>
-        <td class="numeric">58.27%</td>
+        <td><em>No text compression</em></td>
+        <td class="numeric">58.0%</td>
+        <td class="numeric">57.5%</td>
+        <td class="numeric">56.1%</td>
+        <td class="numeric">58.3%</td>
       </tr>
       <tr>
         <td>Gzip</td>
-        <td class="numeric">28.05%</td>
-        <td class="numeric">28.41%</td>
-        <td class="numeric">29.06%</td>
-        <td class="numeric">28.05%</td>
+        <td class="numeric">28.1%</td>
+        <td class="numeric">28.4%</td>
+        <td class="numeric">29.1%</td>
+        <td class="numeric">28.1%</td>
       </tr>
       <tr>
         <td>Brotli</td>
-        <td class="numeric">13.93%</td>
-        <td class="numeric">14.05%</td>
-        <td class="numeric">14.87%</td>
-        <td class="numeric">13.66%</td>
+        <td class="numeric">13.9%</td>
+        <td class="numeric">14.1%</td>
+        <td class="numeric">14.9%</td>
+        <td class="numeric">13.7%</td>
       </tr>
       <tr>
         <td>Deflate</td>
-        <td class="numeric">0.01%</td>
-        <td class="numeric">0.00%</td>
-        <td class="numeric">0.01%</td>
-        <td class="numeric">0.00%</td>
+        <td class="numeric">0.0%</td>
+        <td class="numeric">0.0%</td>
+        <td class="numeric">0.0%</td>
+        <td class="numeric">0.0%</td>
       </tr>
       <tr>
         <td><em>Other / Invalid</em></td>
-        <td class="numeric">0.01%</td>
-        <td class="numeric">0.02%</td>
-        <td class="numeric">0.01%</td>
-        <td class="numeric">0.02%</td>
+        <td class="numeric">0.0%</td>
+        <td class="numeric">0.0%</td>
+        <td class="numeric">0.0%</td>
+        <td class="numeric">0.0%</td>
       </tr>
     </tbody>
   </table>
@@ -202,7 +202,7 @@ and they use compression in comparable ways. Usage of compression and
 especially Brotli has grown in both categories. Brotli compression has
 doubled in percentage for first party content compared to a year ago.
 
-## Compression Levels
+## Compression levels
 
 Compression level is a parameter given to the encoder adjusting the
 amount of effort the encoder is applying to find redundancy in the
@@ -253,7 +253,7 @@ You can use [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/T
 
 
 {{ figure_markup(
-  image="content-encoding.png",
+  image="../../2020/compression/content-encoding.png",
   caption='Use DevTools to check if content encoding is used on your site',
   description="Image showing how to use DevTools to see if content encoding is used.",
   width=591,
