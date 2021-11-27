@@ -136,7 +136,7 @@ While we observed CDN adoption across different types of content, we will look a
 Ranking the websites based on their popularity (sourced from Google's [Chrome UX Report](./methodology#chrome-ux-report)) in the web and then checking for their CDN usage, the top 1,000 contribute to the highest usage of CDN. The top websites are owned by companies like Google and Amazon, who contribute to much of the internet traffic we see today, so it's no surprise that these names make it to the list of [top CDN providers](#top-CDN-providers) in the next section. This also backs the fact about the benefits CDNs bring to the table when operating at scale and having the ability to scale further if needed.
 
 {{ figure_markup(
-  caption="Percent of top 1000 websites using a CDN.",
+  caption="Percent of top 1,000 websites using a CDN.",
   content="61%",
   classes="big-number",
   sheets_gid="414030881",
