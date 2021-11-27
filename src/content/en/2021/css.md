@@ -1520,3 +1520,11 @@ In the end, the 2021 Web Almanac tells the story of a technology that's stable b
 Does this mean CSS has become stagnant?  Hardly: new layout methods are gaining ground, and major new capabilities are being developed, many of them based on practices worked out in the realm of preprocessors.  We would not think to claim that CSS is "solved" or that the best possible practices have already been worked out.  As practitioners gain ever more experience, changes will come to both CSS the language and CSS the practice.  These changes may be gradual rather than sudden, steady rather than disruptive, but this is what we expect in any mature technology.
 
 We look forward to seeing how CSS will grow over the years to come.
+
+
+## Authors
+
+
+### Eric A. Meyer
+
+[Eric A. Meyer](http://meyerweb.com/) ([@meyerweb](http://twitter.com/meyerweb)) has been a burger flipper, a hardward jockey, a college webmaster, an early blogger, one of the original [CSS Samurai](https://archive.webstandards.org/css/members.html), a member of the [CSS Working Group](https://en.wikipedia.org/wiki/CSS_Working_group), a consultant and trainer, and a Standards Evangelist for [Netscape](https://en.wikipedia.org/wiki/Netscape).  Currently, he is a Developer Advocate at [Igalia](http://igalia.com/) and co-founder of [An Event Apart](https://aneventapart.com/) with [Jeffrey Zeldman](http://zeldman.com/).  Among other things, Eric co-wrote <cite>[Design For Real Life](https://abookapart.com/products/design-for-real-life)</cite> with [Sara Wachter-Boettcher](https://sarawb.com) for [A Book Apart](https://abookapart.com/) and <cite>[CSS: The Definitive Guide](http://meyerweb.com/eric/books/css-tdg/)</cite> with [Estelle Weyl](http://standardista.com/) for [O’Reilly](https://oreilly.com/), created the first official [W3C](http://w3.org/) test suite, and assisted in the creation of [microformats](http://microformats.org/).
