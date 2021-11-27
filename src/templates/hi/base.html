@@ -88,6 +88,18 @@
 {% block author %}लेखक{% endblock %}
 {% block authors %}लेखकों{% endblock %}
 
+{% block reactions %}प्रतिक्रियाओं{% endblock %}
+{% block source %}प्रतिक्रियाओं{% endblock %}
+
+{% block like %}पसंद{% endblock %}
+{% block repost %}पोस्ट{% endblock %}
+{% block reply %}जवाब{% endblock %}
+{% block mention %}उल्लेख{% endblock %}
+{% block likes %}को यह पसंद है{% endblock %}
+{% block reposts %}रेपोस्ट{% endblock %}
+{% block replies %}जवाब{% endblock %}
+{% block mentions %}का उल्लेख है{% endblock %}
+
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} Twitter पर{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} GitHub पर{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} LinkedIn पर{% endmacro %}
