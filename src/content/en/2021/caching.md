@@ -177,8 +177,17 @@ Below is a table showing the most common `Cache-Control` directives:
      <td>Indicates that the cached entry will never change during its TTL and that revalidation is not necessary.</td>
     </tr>
   </table>
-  <figcaption>{{ figure_link(caption="<code>Cache-Control</code> directives.", sheets_gid="1944529311", sql_file="TODO") }}</figcaption>
+  <figcaption>TODO: Caption the table above</figcaption>
 </figure>
+
+{{ figure_markup(
+  image="cache-control-directives.png",
+  caption="Usage of `Cache-Control` directives.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=1359015817&format=interactive",
+  sheets_gid="1944529311",
+  sql_file="cache_control_directives.sql"
+) }}
 
 The `max-age` directive is the most commonly found since it directly defines the TTL the same way that the `Expires` header does.
 Here is an example of a valid Cache-Control header with multiple directives:
