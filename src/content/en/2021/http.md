@@ -251,7 +251,7 @@ The HTTP Archive data suggests that the use of the `Upgrade` header is often mis
 
 &lt;Stat figure>
 
-There were also almost 200,000 requests found on HTTP,  while still reporting an `Upgrade `header. A better practice would be to issue a redirect from HTTP to HTTPS, and leverage HTTP/2 on the secure connection directly. 22,000 and 26,000 web pages on desktop and mobile respectively were also found to be on HTTPS but not support HTTP/2. Similarly, hundreds of web pages were incorrectly signaling to upgrade to HTTP/2 despite the connection already on HTTP/2 itself.
+There were also almost 200,000 requests found on HTTP,  while still reporting an `Upgrade` header. A better practice would be to issue a redirect from HTTP to HTTPS, and leverage HTTP/2 on the secure connection directly. 22,000 and 26,000 web pages on desktop and mobile respectively were also found to be on HTTPS but not support HTTP/2. Similarly, hundreds of web pages were incorrectly signaling to upgrade to HTTP/2 despite the connection already on HTTP/2 itself.
 
 ## Adoption of HTTP/2
 
@@ -394,7 +394,7 @@ This inconsistency also exists at the client level, with different browser vendo
   )
 }}
 
-Since HTTP/2 there has been an updated proposal to priorizations, with the [Extensible Prioritization Scheme for HTTP](https://www.ietf.org/id/draft-ietf-httpbis-priority-07.html) proposal. This includes adding a `priority` header in the response, as well as a new `PRIORITY_UPDATE` frame for HTTP/2. This `PRIORITY_UPDATE `frame is also proposed for HTTP/3. This has yet to be adopted across the web in full, but has received focus from [Cloudflare](https://blog.cloudflare.com/better-http-2-prioritization-for-a-faster-web/) in an effort to improve the underlying behaviour of [prioritization](https://blog.cloudflare.com/adopting-a-new-approach-to-http-prioritization/).
+Since HTTP/2 there has been an updated proposal to priorizations, with the [Extensible Prioritization Scheme for HTTP](https://www.ietf.org/id/draft-ietf-httpbis-priority-07.html) proposal. This includes adding a `priority` header in the response, as well as a new `PRIORITY_UPDATE` frame for HTTP/2. This `PRIORITY_UPDATE` frame is also proposed for HTTP/3. This has yet to be adopted across the web in full, but has received focus from [Cloudflare](https://blog.cloudflare.com/better-http-2-prioritization-for-a-faster-web/) in an effort to improve the underlying behaviour of [prioritization](https://blog.cloudflare.com/adopting-a-new-approach-to-http-prioritization/).
 
 
 ## The death of HTTP/2 Push?
