@@ -52,6 +52,40 @@ Adoption of Service Workers has seen a significant increase from 2020. While 1.2
 
 ## Headers adoption
 
+Talk about what are the Headers we have available...
+
+### `Cache-Control`
+
+<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control">`Cache-Control`</a> helps ....
+
+```
+Cache-Control: public, max-age=604800
+```
+
+### `Expires`
+
+<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires">`Expires`</a> helps ....
+
+```
+Expires: Mon, 29 Nob 2021 07:28:00 GMT
+```
+
+### `ETag`
+
+<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag">`ETag`</a> helps ....
+
+```
+ETag: "34a64df551429fcc55e4d42a148795d9f25f89d8"
+```
+
+### `Last-Modified`
+
+<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Last-Modified">`Last-Modified`</a> helps ....
+
+```
+Last-Modified: Mon, 29 Nov 2021 07:28:00 GMT
+```
+
 Usage of the Cache-Control header has increased steadily since 2019. 74% of responses on Mobile pages included the Cache-Control header, while 75% of responses on Desktop pages utilized the header. From 2020, the usage of this specific header increased by 0.71% for Mobile and by 1.13% for Desktop.
 
 Cache-Control: DT 75%, Mobile 74%
@@ -90,6 +124,18 @@ Talk about `immutable` directive, 12% of desktop requests containing Cache-Contr
 
 Talk about invalid date, last modified and expires, (0.11% of dates in desktop requests are invalid).
 
+Desktop - Valid date strings:
+99.18% using date, 72.57% using last-modified, 55.48% using expires
+
+Mobile - Valid date strings:
+99.07% using date, 70.55% using last-modified, 55.57% using expires
+
+Although 99% of both Desktop and Mobile pages use valid date strings, only 55% of Desktop and 56% of Mobile pages use 'expires'. Last-modified is used at a higher percentage, at 73% for Desktop and 71% for Mobile. While the amount of invalid 'date' and 'last-modified' directives is less than 1%, 2.75% of Mobile and 3.20% of Desktop 'expires' are being used incorrectly.
+
+What is or would be the impact from using expires more effectively?
+
+Could we possibly see big wins from getting more consistent here?
+
 ### Vary
 
 Talk about Vary adoption, 42% of requests on mobile set Vary: accept-encoding.
@@ -104,7 +150,12 @@ The median HTML resource on mobile has a TTL of 14 days
 
 ## Cookie Cache adoption
 
-Talk about cookies.
+35.63% of Cacheable Desktop pages with set-cookie
+Mobile pages with set-cookie: 35.99%
+
+Another area of opportunity we discovered was with cacheable pages that are not using `set-cookie`. About 35% of Desktop and Mobile pages use `set-cookie` while over 64% of them do not.
+
+Large area of opportunity for pages that are actually cacheable, but are just missing this directive?
 
 Fun fact `test_cookie` is the most popular desktop and mobile cookie name at 4% of all cookies.
 
@@ -116,7 +167,9 @@ Fun fact `test_cookie` is the most popular desktop and mobile cookie name at 4% 
   sql_file="todo.sql"
 ) }}
 
-Top cookies attributes, SameSite is on 68% of cookies set in mobile responses.
+The top cookies attributes used on Desktop and Mobile are SameSite and Secure. SameSite is on 53% of cookies set in Desktop responses and a whopping 68% on Mobile responses.
+
+Why is it a big deal that SameSite is at 68% on mobile?
 
 ## What type of content are we caching?
 
@@ -146,10 +199,14 @@ The median difference between resource TTL and resource age is -6 days, meaning 
 
 ## Identifying caching opportunities
 
-Talk about ~100% of fonts on mobile are cacheable!
+Can we get a graph of the % of cacheable strategies vs. non-cacheable strategies for Desktop and Mobile, based on data from 'Non-cacheable strategies'?
+
+Shows the majority of resources are highly cacheable
 
 ### Lighthouse TTL score
-Talk about 12% of mobile pages score 0.9 or higher on the long TTL audit
+Talk about 12% of mobile pages score 0.9 or higher on the long Time To Live (TTL) audit
+
+Explain what TTL score significance
 
 ### Lighthouse waysted bytes
 Talk about 59% of mobile pages could save 0 - 1 MB with caching
@@ -157,6 +214,8 @@ Talk about 59% of mobile pages could save 0 - 1 MB with caching
 ## Future
 
 TODO ...
+
+From [Fonts](https://almanac.httparchive.org/en/2020/fonts#conclusion) chapter: [Partitioning the cache](https://developers.google.com/web/updates/2020/10/http-cache-partitioning)
 
 
 ## Conclusion
