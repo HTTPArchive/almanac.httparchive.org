@@ -96,7 +96,7 @@ To validate the content, we have:
 - `Last-Modified` indicates when the object was last changed. Its value is a date timestamp.
 - `ETag` (Entity Tag) provides a unique identifier for the content as a quoted string. It can take any format the server chooses; it is typically a hash of the file contents, but it could be a timestamp or a simple string.
 
-In case both are specified, `ETag` takes precedence.
+When both are specified, `ETag` takes precedence.
 
 {{ figure_markup(
   image="last-modified-etag.png",
