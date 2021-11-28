@@ -81,8 +81,14 @@ In case both are specified, `Cache-Control` takes precedence.
 
 The usage of the Cache-Control header has increased steadily since 2019. 74% of responses on Mobile pages included the Cache-Control header, while 75% of responses on Desktop pages utilized the header. From 2020, the usage of this specific header increased by 0.71% for Mobile and by 1.13% for Desktop.
 
-Cache-Control: DT 75%, Mobile 74%
-Expires: DT 55%, Mobile 56%
+{{ figure_markup(
+  image="cache-control-expires.png",
+  caption="Percent of responses that set `Cache-Control` and `Expires` headers.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=816405026&format=interactive",
+  sheets_gid="2102749619",
+  sql_file="header_trends.sql"
+) }}
 
 To validate the content, we have:
 - `Last-Modified` indicates when the object was last changed. Its value is a date timestamp.
@@ -90,8 +96,14 @@ To validate the content, we have:
 
 In case both are specified, `ETag` takes precedence.
 
-ETag: DT 48%, Mobile 47%
-Last-Modified: DT 73%, Mobile 71%
+{{ figure_markup(
+  image="last-modified-etag.png",
+  caption="Percent of responses that set `Last-Modified` and `ETag` headers.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=1490687174&format=interactive",
+  sheets_gid="2102749619",
+  sql_file="header_trends.sql"
+) }}
 
 ### Cachebility and freshness
 The `Expires` header, as stated above, it indicates the exact date/time after which the response is considered stale. Therefore, its value is a date and time, such as:
