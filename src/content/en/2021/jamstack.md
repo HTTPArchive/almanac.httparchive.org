@@ -7,19 +7,20 @@ reviewers: [Dawntraoz, thomkrupa, tunetheweb]
 analysts: [denar90, tunetheweb, rviscomi]
 editors: []
 translators: []
+denar90_bio: Artem Denysov is Software Engineer, Open-Source contributor, proud Mozillians member, speaker, and writer. Makes developers and users live easier helping them with webperf & tools. Works at <a href="https://twitter.com/denar90_/">Stackbit</a> to empower developers build Jamstack websites easily. You can find him on <a href="https://twitter.com/denar90_/">Twitter</a> and <a href="https://www.linkedin.com/in/denar90/">Linkedin</a>.
 results: https://docs.google.com/spreadsheets/d/1anlgeaBH2Yui2kFWuRGxHU2QdMiCKOgDrn4WyXkt5ro/
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: Jamstack young and fast growing technology to build modern websites. That what people say and that's proved by numbers.
+featured_stat_1: 1.1%
+featured_stat_label_1: Jamstack websites adoption among web
+featured_stat_2: 19%
+featured_stat_label_2: Median value of JQuery usage among Jamstack sites
+featured_stat_3: 1.7MB
+featured_stat_label_3: Median value of resource wights among Jamstack sites
 ---
 
 ## Introduction
 
-Jamstack has revolutionized the way we think about building for the web by providing a simpler developer experience, better performance, lower cost and greater scalability - [more](https://jamstack.wtf/). Jamstack stands on JavaScript, API and Markup architecture. These 3 foundations are decoupled and the Jamstack site can be built purely using markup. Using pure HTML - is “kinda” Jamstack, but it’s really hard to scale. Lucky for us, there's a huge ecosystem of Static Site Generators (SSGs).
+Jamstack has revolutionized the way we think about building for the web by providing a simpler developer experience, better performance, lower cost and greater scalability - [more](https://jamstack.wtf/). Jamstack stands on JavaScript, API, and Markup architecture. These 3 foundations are decoupled and the Jamstack site can be built purely using markup. Using pure HTML - is “kinda” Jamstack, but it’s really hard to scale. Lucky for us, there's a huge ecosystem of Static Site Generators (SSGs).
 
 JavaScript based:
 * Next.js
@@ -75,7 +76,7 @@ Next.js remains a popular SSG for top 10K. In the top 100K Next.js and Nuxt.js r
   image="rank-adoption.png",
   caption="SSG adoption by ranked sites",
   description="Bar chart represents adoption share between SSGs for different ranked sites. ext.js shows great results when exploring data of popular sites. 13% of the top 1000 sites are Next.js. Nuxt.js has 5% and Gatsby - 0.2%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=2020451260&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=1137882647&format=interactive",
   sheets_gid="1005292860",
   sql_file="adoption.sql"
 ) }}
@@ -183,9 +184,9 @@ Note: GitHub as CDN provider might be questioned, but GitHub offers a feature ca
   sql_file="core_web_vitals_distribution.sql"
 ) }}
 
-Next.js, as most popular by data we have, mostly served by Cloudflare, Vercel and AWS. Most of Gatsby's sites use Netlify, AWS and Cloudflare.
+Next.js, as most popular by data we have, mostly served by Cloudflare, Vercel, and AWS. Most of Gatsby's sites use Netlify, AWS, and Cloudflare.
 
-Nuxt.js sites preferred to be served by Cloudflare, AWS and Netlify.
+Nuxt.js sites preferred to be served by Cloudflare, AWS, and Netlify.
 
 Hugo mostly uses Netlify, and Jekyll as no surprise mostly on GitHub.
 
@@ -362,7 +363,7 @@ All CDNs deliver Jamstack sites with 90% good FID, except Cloudflare.
 
 [Cumulative Layout Shift](https://web.dev/cls/) (CLF) - is a measure of the largest burst of _layout shift scores_ for every unexpected layout shift that occurs during the entire lifespan of a page.
 
-Again, Jekyll shows great performance here. 88% are good results. Then Hugo - 85%, Gatsby - 82%, Next.js - 75% and Nuxt.js 75%.
+Again, Jekyll shows great performance here. 88% are good results. Then Hugo - 85%, Gatsby - 82%, Next.js - 75%, and Nuxt.js 75%.
 
 {{ figure_markup(
   image="CLS-distribution-SSG.png",
@@ -428,7 +429,7 @@ Big chunk of resources use JavaScript. Again, for JavaScript based SSGs it's a h
 
 We analysed which third party libraries were used among SSGs. We excluded React and Vue to have a clear picture of other libraries and frameworks represented among SSGs.
 
-Surprise for us was JQuery.  It wasn’t a surprise that it’s used for Hugo and Jekyll based sites, but that it’s used inside React and Vue based sites!!! Next.js, Nuxt,js and Gatsby based sites use JQuery, for Nuxt.js sites it’s 25% among other third party libraries.
+Surprise for us was JQuery.  It wasn’t a surprise that it’s used for Hugo and Jekyll based sites, but that it’s used inside React and Vue based sites!!! Next.js, Nuxt,js, and Gatsby based sites use JQuery, for Nuxt.js sites it’s 25% among other third party libraries.
 
 Styled-components used for Next.js and Gatsby sites and takes ~40% of all third party libraries. Amotion tries to fight styled-components.
 
