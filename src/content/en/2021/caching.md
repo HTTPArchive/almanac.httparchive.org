@@ -52,7 +52,7 @@ While Cloudflare is used twice as much as Google, a large variety of solutions r
 
 ## Service Worker adoption
 
-A service worker is a script that the browser allows to run in the background independently from a web page. It supports features that don't need direct user or web page interaction and offer rich offline experiences.
+A Service Worker is a script that the browser allows to run in the background independently from a web page. It supports features that don't need direct user or web page interaction and offer rich offline experiences.
 
 The adoption of Service Workers has continued to steadily increase. While 1% of Mobile pages registered a service worker in 2020, 9% of Mobile pages ranked in the top 1,000 registered one in 2021.
 
@@ -65,7 +65,7 @@ The adoption of Service Workers has continued to steadily increase. While 1% of 
   sql_file="service_worker_rank.sql"
 ) }}
 
-The primary way to cache resources within a Service Worker, it's by using the CacheStorage API. This allows a developer to create a custom cache strategy for any requests passing through the worker; some famous ones are Stale-While-Revalidate, Cache Falling Back to Network, Network Falling Back to Cache, Cache Only. In recent years become even easier to adopt those strategies by increasing the popularity of [Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-strategies), which decides what cache you want to plug and play.
+The primary way to cache resources within a Service Worker is by using the *CacheStorage API*. This allows a developer to create a custom cache strategy for any requests passing through the worker; some well-known ones are Stale-While-Revalidate, Cache Falling Back to Network, Network Falling Back to Cache, and Cache Only. In recent years it has become even easier to adopt those strategies by increasing the popularity of [Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-strategies), which decides what cache you want to plug and play with.
 
 ## Headers adoption
 
