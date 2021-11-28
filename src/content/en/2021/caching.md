@@ -69,17 +69,17 @@ The primary way to cache resources within a Service Worker is by using the *Cach
 
 ## Headers adoption
 
-With both CDN and Browser, the HTTP Headers are the leading toolkit each developer needs to master to properly cache resources. Headers are simply instructions known as "directives", read during the HTTP Request or Response to control the cache strategy.
+With both a CDN and the Browser, HTTP Headers are the primary toolkit a developer needs to master to properly cache resources. Headers are simply instructions known as "*directives*", read during the HTTP Request or Response to control the cache strategy.
 
 The caching-related headers, or the absence of them, tell the browser or CDN three essential pieces of information:
 - **Cacheability**: Is this content cacheable?
-- **Freshness**: If it is cacheable, how long can it be cached for? `Cache-Control` and `Expires` 
+- **Freshness**: If it is cacheable, how long can it be cached for?
 - **Validation**: If it is cacheable, how do I ensure that my cached version is still fresh?
 
-Headers are meant to be used either alone or together. To tell if the content is cachable and fresh, we have:
+Headers are meant to be used either alone or together. To tell if the content is cacheable and fresh, we have:
 - `Expires` specifies an explicit expiration date and time (i.e., when precisely the content expires)
 - `Cache-Control` specifies a cache duration (i.e., how long the content can be cached in the browser relative to when it was requested)
-In case both are specified, `Cache-Control` takes precedence.
+When both are specified, `Cache-Control` takes precedence.
 
 The usage of the Cache-Control header has increased steadily since 2019. 74% of responses on Mobile pages included the Cache-Control header, while 75% of responses on Desktop pages utilized the header. From 2020, the usage of this specific header increased by 0.71% for Mobile and by 1.13% for Desktop.
 
