@@ -238,7 +238,15 @@ The median difference between resource TTL and resource age is -6 days, meaning 
 Can we get a graph of the % of cacheable strategies vs. non-cacheable strategies for Desktop and Mobile, based on data from 'Non-cacheable strategies'?
 
 Shows the majority of resources are highly cacheable
-
+{{ figure_markup(
+  image="caching-by-resource-type.png",
+  caption="The percent of requests that use caching strategies by resource type.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=2036781114&format=interactive",
+  height=436,
+  sheets_gid="1202769738",
+  sql_file="non_cacheable_by_resource_type.sql"
+) }}
 ### Lighthouse TTL score
 Talk about 12% of mobile pages score 0.9 or higher on the long Time To Live (TTL) audit
 
