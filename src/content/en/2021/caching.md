@@ -36,7 +36,7 @@ The three main pillars of how we cache web resources are:
 
 ## CDN Cache adoption
 
-Talk about CDN adoptions, 14% of desktop pages use a Cloudflare CDN.
+A Content Delivery Network (CDN) is a group of servers spread out over several locations that store copies of data. This allows servers to fulfill requests based on the server closest to the end-user. (Remember we want to cache as close to end-users as possible.) In 2021 across the web, the most popular CDN for Desktop was Cloudflare with 14% of pages, followed by Google at 6% adoption. While Cloudflare is used twice as much as Google, a large variety of solutions remains available, including Fastly, Amazon CloudFront, Akamai, and many others.
 
 {{ figure_markup(
   image="top-cdns.png",
