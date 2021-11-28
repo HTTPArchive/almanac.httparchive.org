@@ -51,7 +51,7 @@ A Content Delivery Network (CDN) is a group of servers spread out over several l
 
 A service worker is a script that the browser allows to run in the background independently from a web page. It supports features that don't need direct user or web page interaction and offer rich offline experiences.
 
-The adoption of Service Workers has continued to steadily increase. While 1% of Mobile pages registered a service worker in 2020, 9% of Mobile pages ranked in the top 1,000 registered ones in 2021.
+The adoption of Service Workers has continued to steadily increase. While 1% of Mobile pages registered a service worker in 2020, 9% of Mobile pages ranked in the top 1,000 registered one in 2021.
 
 {{ figure_markup(
   image="sw-adoption.png",
@@ -62,13 +62,18 @@ The adoption of Service Workers has continued to steadily increase. While 1% of 
   sql_file="service_worker_rank.sql"
 ) }}
 
-To cache resources within the Service Worker, you can use the CacheStorage API, which allows ...
+The primary way to cache resources within a Service Worker, it's by using the CacheStorage API. This allows a developer to create a custom cache strategy for any requests passing through the worker; some famous ones are Stale-While-Revalidate, Cache Falling Back to Network, Network Falling Back to Cache, Cache Only. In recent years become even easier to adopt those strategies by increasing the popularity of [Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-strategies), which decides what cache you want to plug and play.
 
 ## Headers adoption
 
-Talk about what are the Headers we have available...
+With both CDN and Browser, the HTTP Headers are the leading toolkit each developer needs to master to properly cache resources. Headers are simply instructions known as "directives", read during the HTTP Request or Response to control the cache strategy.
 
-What are Headers and what are they used for? What's the difference between them? Can they be used together?
+The caching-related headers, or the absence of them, tell the browser or CDN three essential pieces of information:
+Cacheability: Is this content cacheable?
+Freshness: If it is cacheable, how long can it be cached for? `Cache-Control` and `Expires` 
+Validation: If it is cacheable, how do I ensure that my cached version is still fresh?
+
+Headers are meant to be used either alone or together. The main options are `Cache-Control` and `Expires` to tell if the content is cachable and fresh, where `ETag` and `Last-Modified` drive the re-validation steps.
 
 ### `Cache-Control`
 The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control">`Cache-Control`</a> header holds directives that control caching in browsers and shared caches. Usage of this header has increased or remained consistent across web pages. 74% of Mobile and 75% of Desktop pages use Cache-Control.
@@ -223,7 +228,7 @@ Shows the majority of resources are highly cacheable
 ### Lighthouse TTL score
 Talk about 12% of mobile pages score 0.9 or higher on the long Time To Live (TTL) audit
 
-Explain what TTL score significance
+The TTL of a cached object defines how long it can be stored in a cache, typically measured in seconds.
 
 ### Lighthouse waysted bytes
 Talk about 59% of mobile pages could save 0 - 1 MB with caching
