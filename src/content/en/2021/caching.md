@@ -136,11 +136,57 @@ The simple example above shows a request and response for a JavaScript file. Fir
 Worth to mention if no caching headers are present in a response, then the browser is allowed to *heuristically* cache the response. Some may cache the response indefinitely, and some may not cache it at all. Because of this variation between browsers, it is essential to explicitly set specific caching rules to ensure that you control the cacheability of your content.
 
 ### `Cache-Control` directives
-The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control">`Cache-Control`</a> header holds directives that control caching in browsers and shared caches. Usage of this header has increased or remained consistent across web pages. 74% of Mobile and 75% of Desktop pages use Cache-Control.
+When using the `Cache-Control` header, you specify one or more *directives*—predefined values that indicate specific caching functionality. Multiple directives are separated by commas and can be set in any order, although some clash with one another (e.g., `public` and `private`). In addition, some directives take a value, such as `max-age`.
+
+Below is a table showing the most common `Cache-Control` directives:
+
+<figure>
+  <table>
+    <tr>
+     <th>Directive</th>
+     <th>Description</th>
+    </tr>
+    <tr>
+     <td><code class="no-wrap">max-age</code></td>
+     <td>Indicates the number of seconds that a resource can be cached for relative to the current time. For example <code>max-age=86400</code>.</td>
+    </tr>
+    <tr>
+     <td><code class="no-wrap">public</code></td>
+     <td>Indicates that any cache can store the response, including the Browser and the CDN. This is assumed by default.</td>
+    </tr>
+    <tr>
+     <td><code class="no-wrap">no-cache</code></td>
+     <td>A cached resource must be revalidated before its use, via a conditional request, even if it is not marked as stale.</td>
+    </tr>
+    <tr>
+     <td><code class="no-wrap">must-revalidate</code></td>
+     <td>A stale cached entry must be revalidated before its use, via a conditional request.</td>
+    </tr>
+    <tr>
+     <td><code class="no-wrap">no-store</code></td>
+     <td>Indicates that the response must not be cached.</td>
+    </tr>
+    <tr>
+     <td><code class="no-wrap">private</code></td>
+     <td>The response is intended for a specific user and should not be stored by shared caches such as CDNs.</td>
+    </tr>
+    <tr>
+     <td><code class="no-wrap">immutable</code></td>
+     <td>Indicates that the cached entry will never change during its TTL and that revalidation is not necessary.</td>
+    </tr>
+  </table>
+  <figcaption>{{ figure_link(caption="<code>Cache-Control</code> directives.", sheets_gid="1944529311", sql_file="TODO") }}</figcaption>
+</figure>
+
+The `max-age` directive is the most commonly found since it directly defines the TTL the same way that the `Expires` header does.
+Here is an example of a valid Cache-Control header with multiple directives:
+
 
 ```
-Cache-Control: public, max-age=604800
+Cache-Control: public, max-age=86400, must-revalidate
 ```
+
+Usage of this header has increased or remained consistent across web pages. 74% of Mobile and 75% of Desktop pages use Cache-Control.
 
 When using the Cache-Control header, usage increased by 1% for Desktop and remained the same for Mobile. However, usage of the Last-Modified header decreased by 1% across both interfaces.
 
