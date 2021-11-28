@@ -40,7 +40,7 @@ Page weight describes the total number of bytes of a particular web page. A web 
  - [Images and other media (video, audio, etc)](./media) embedded into the page.
  - [Cascading Style Sheets (CSS)](./css) used for styling the page.
  - [JavaScript](./javascript) to provide interactivity
- - [Third Party](./third-parties) resource containing one or more of the above.
+ - [Third-Party](./third-parties) resource containing one or more of the above.
 
 Each of those resources exact a cost in weight (byte size), and computational resources to transmit, process and render in a web browser. While they have similar cost in some regards (storage and transmission), the CPU cost of some resource types may be more costly in those regards than others.
 
@@ -90,15 +90,15 @@ Nine times out of ten when a site stalls, it is a blocking JavaScript that is ca
 
 ### Third-party services
 
-Page weight can also be effected by external services called by web page. Some of those services include CDN's, analytics, chat bots, forms, and other data collection and processing methods. I find this to be one of the fastest growing problem areas that result in bloated page weight. Many of these third party services use outdated, poorly-written JavaScript and querying techniques that take much longer to execute than they should, and the site owner has little control over how that third party impacts the loading of a page. Suffice it to say that inquiring about how a service will affect your page loading performance is very important. So is testing their impact.
+Page weight can also be affected by external services called by web page. Some of those services include CDN's, analytics, chat bots, forms, and other data collection and processing methods. I find this to be one of the fastest growing problem areas that result in bloated page weight. Many of these third-party services use outdated, poorly-written JavaScript and querying techniques that take much longer to execute than they should, and the site owner has little control over how that third party impacts the loading of a page. Suffice it to say that inquiring about how a service will affect your page loading performance is very important. So is testing their impact.
 
 ### Caching
 
-[Caches](./caching), are allow resources to be served quickly, thus avoiding the cost of the download again. Caches exist on the users browser, but also on servers. Caching of optimized assets dramatically lowers page weight and page loading time because the asset is immediately available, removing the need to execute and entire request process. While not reducing the overall page weight, they can help reduce the impact.
+[Caches](./caching), are allow resources to be served quickly, thus avoiding the cost of the download again. Caches exist on both users' browser, but also on servers. Caching of optimized assets dramatically lowers page weight and page loading time because the asset is immediately available, removing the need to execute and entire request process. While not reducing the overall page weight, they can help reduce the impact.
 
 ## Page weight by the numbers
 
-Looking at the page weight on both desktop and mobile devices, the difference is generally small between them despite the often different capabilities of these devices:
+Looking at the page weight on both desktop and mobile devices, the difference is generally small between them despite the often-different capabilities of these devices:
 
 {{ figure_markup(
   image="bytes-distribution.png",
@@ -150,7 +150,7 @@ As previously explained in this chapter, as well as the size of resource, the nu
 
 The request distribution shows that the difference between desktop and mobile is not significant, with desktop leading the way.
 
-The difference between current results for this year and last actually shows a tiny decrease in the average number of GET requests across most of the percentils. Let's hope that trend continues downward.
+The difference between current results for this year and last actually shows a tiny decrease in the average number of GET requests across most of the percentiles. Let's hope that trend continues downward.
 
 Something else worth noting: the median request on desktop at this time is the same [as last year](../2020/page-weight#page-requests) (74), yet the page weight has ticked up (141 kb).
 
@@ -195,4 +195,4 @@ Looking at total image bytes shows us that this metric has remained [virtually u
 
 How important is it to keep web pages light? Overall page weight affects page loading speed, and page loading speed affects user experience. Google's Web Vitals program focuses on user experience, especially for mobile users, with a direct impact on Google Search rankings. So, there is a real incentive and a real consequence to keep web pages as light as possible.
 
-But will impact on search rankings translate into direct pressure to lighten page loads? What about web titans, like Amazon? Is there incentive for hugely popular web sites to worry about page weight? Perhaps. The Amazon's may want to take advantage of reducing the size of page assets and services to reduce the spend required to serve those pages, or maybe theywant to move into newly emerging markets where users may not be able to buy super fast smartphones or have access to 5G data networks or high speed cable providers. Time will tell.
+But will impact on search rankings translate into direct pressure to lighten page loads? What about web titans, like Amazon? Is there incentive for hugely popular web sites to worry about page weight? Perhaps. The Amazon's may want to take advantage of reducing the size of page assets and services to reduce the spend required to serve those pages, or maybe they want to move into newly emerging markets where users may not be able to buy super-fast smartphones or have access to 5G data networks or high-speed cable providers. Time will tell.
