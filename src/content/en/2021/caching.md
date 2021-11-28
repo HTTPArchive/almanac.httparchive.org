@@ -71,8 +71,7 @@ Talk about what are the Headers we have available...
 What are Headers and what are they used for? What's the difference between them? Can they be used together?
 
 ### `Cache-Control`
-
-<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control">`Cache-Control`</a> helps ....
+The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control">`Cache-Control`</a> header holds directives that control caching in browsers and shared caches. Usage of this header has increased or remained consistent across web pages. 74% of Mobile and 75% of Desktop pages use Cache-Control.
 
 ```
 Cache-Control: public, max-age=604800
@@ -191,7 +190,7 @@ Why is it a big deal that SameSite is at 68% on mobile?
 
 Talk about what kind of resources are we caching, (resource age groups: party, type).
 
-Talk about resource age, the median HTML resource on mobile is 9 weeks old.
+The median age of HTML resources cached for mobile is 9 weeks, while for text the median age is 1220 weeks (23.4 years).
 
 Talk about, total number of requests with comparable Last-Modified and expiration times, not necessarily all requests.
 
@@ -208,6 +207,8 @@ Talk about 54% of mobile resources are older than their TTL.
 Total number of requests with comparable Last-Modified and expiration times, not necessarily all requests.
 
 Talk about, 60% of 1P mobile resources are older than their TTL, which is more common than 3P resources (45%).
+
+Explain why this is significant- 60% of 1st Party mobile resources are older than their TTL- is this because 1P are more important or crucial? Because 3P are being deprecated?
 
 ## How do cache TTLs compare to resource age?
 
@@ -236,4 +237,4 @@ From [Fonts](https://almanac.httparchive.org/en/2020/fonts#conclusion) chapter: 
 
 ## Conclusion
 
-TODO ...
+Is there a danger or downside to caching too much? Is it possible to do it too much?
