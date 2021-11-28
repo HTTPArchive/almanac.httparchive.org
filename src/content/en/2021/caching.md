@@ -65,7 +65,7 @@ The adoption of Service Workers has continued to steadily increase. While 1% of 
   sql_file="service_worker_rank.sql"
 ) }}
 
-The primary way to cache resources within a Service Worker is by using the *CacheStorage API*. This allows a developer to create a custom cache strategy for any requests passing through the worker; some well-known ones are Stale-While-Revalidate, Cache Falling Back to Network, Network Falling Back to Cache, and Cache Only. In recent years it has become even easier to adopt those strategies by increasing the popularity of [Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-strategies), which decides what cache you want to plug and play with.
+The primary way to cache resources within a Service Worker is by using the *CacheStorage API*. This allows a developer to create a custom cache strategy for any requests passing through the worker; some well-known ones are Stale-While-Revalidate, Cache Falling Back to Network, Network Falling Back to Cache, and Cache Only. In recent years it has become even easier to adopt those strategies through the increased popularity of [Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-strategies), which helps you decide what cache you want to plug and play.
 
 ## Headers adoption
 
@@ -98,6 +98,8 @@ To validate the content, we have:
 
 When both are specified, `ETag` takes precedence.
 
+When compared 2020 with 2021 usage of the Last-Modified header decreased by 1% across both interfaces.
+
 {{ figure_markup(
   image="last-modified-etag.png",
   caption="Percent of responses that set `Last-Modified` and `ETag` headers.",
@@ -108,6 +110,18 @@ When both are specified, `ETag` takes precedence.
 ) }}
 
 ### `Cache-Control` directives
+When using the Cache-Control header, usage increased by 1% for Desktop and remained the same for Mobile.
+
+{{ figure_markup(
+  image="cache-control-adoption.png",
+  caption="The percent of requests that use the Cache-Control response header.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=885292598&format=interactive",
+  sheets_gid="2102749619",
+  sql_file="header_trends.sql"
+) }}
+
+
 When using the `Cache-Control` header, you specify one or more *directives*—predefined values that indicate specific caching functionality. Multiple directives are separated by commas and can be set in any order, although some clash with one another (e.g., `public` and `private`). In addition, some directives take a value, such as `max-age`.
 
 Below is a table showing the most common `Cache-Control` directives:
@@ -150,6 +164,8 @@ Below is a table showing the most common `Cache-Control` directives:
   <figcaption>TODO: Caption the table above</figcaption>
 </figure>
 
+The `max-age` directive is the most commonly found since it directly defines the TTL the same way that the `Expires` header does.
+
 {{ figure_markup(
   image="cache-control-directives.png",
   caption="Usage of `Cache-Control` directives.",
@@ -157,27 +173,6 @@ Below is a table showing the most common `Cache-Control` directives:
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=1359015817&format=interactive",
   sheets_gid="1944529311",
   sql_file="cache_control_directives.sql"
-) }}
-
-The `max-age` directive is the most commonly found since it directly defines the TTL the same way that the `Expires` header does.
-Here is an example of a valid Cache-Control header with multiple directives:
-
-
-```
-Cache-Control: public, max-age=86400, must-revalidate
-```
-
-Usage of this header has increased or remained consistent across web pages. 74% of Mobile and 75% of Desktop pages use Cache-Control.
-
-When using the Cache-Control header, usage increased by 1% for Desktop and remained the same for Mobile. However, usage of the Last-Modified header decreased by 1% across both interfaces.
-
-{{ figure_markup(
-  image="cache-control-adoption.png",
-  caption="The percent of requests that use the Cache-Control response header.",
-  description="TODO",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=885292598&format=interactive",
-  sheets_gid="2102749619",
-  sql_file="header_trends.sql"
 ) }}
 
 Cache Control directives, 61% of mobile requests include a Cache-Control response header with a `max-age` directive.
@@ -196,6 +191,10 @@ Fun fact the the largest max-age value is 1625540701883604800000 seconds or 5154
 
 Talk about `immutable` directive, 12% of desktop requests containing Cache-Control: immutable are on the "static.parastorage.com" host.
 
+### `304` Not Modified status
+
+### Validity of date strings
+
 Talk about invalid date, last modified and expires, (0.11% of dates in desktop requests are invalid).
 
 Desktop - Valid date strings:
@@ -210,27 +209,11 @@ What is or would be the impact from using expires more effectively?
 
 Could we possibly see big wins from getting more consistent here?
 
-### Conditional requests and revalidation
-
-### `ETag`
-
-<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag">`ETag`</a> helps ....
-
-```
-ETag: "34a64df551429fcc55e4d42a148795d9f25f89d8"
-```
-
-### `Last-Modified`
-
-<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Last-Modified">`Last-Modified`</a> helps ....
-
-```
-Last-Modified: Mon, 29 Nov 2021 07:28:00 GMT
-```
-
 ### Vary
 
 Talk about Vary adoption, 42% of requests on mobile set Vary: accept-encoding.
+
+In addition, 83% of mobile Vary: accept-encoding requests also use cache-control. This is another case of the more you know about caching, the more consistently you can make use of all the resources available to you.
 
 The most common Vary headers are: `accept-encoding`, `user-agent`, `origin`, `accept`.
 
