@@ -15,7 +15,8 @@
           "part": "I",
           "chapter_number": "1",
           "title": "CSS",
-          "slug": "css"
+          "slug": "css",
+          "todo": "true"
         },
         {
           "part": "I",
