@@ -69,11 +69,30 @@ The primary way to cache resources within a Service Worker, it's by using the Ca
 With both CDN and Browser, the HTTP Headers are the leading toolkit each developer needs to master to properly cache resources. Headers are simply instructions known as "directives", read during the HTTP Request or Response to control the cache strategy.
 
 The caching-related headers, or the absence of them, tell the browser or CDN three essential pieces of information:
-Cacheability: Is this content cacheable?
-Freshness: If it is cacheable, how long can it be cached for? `Cache-Control` and `Expires` 
-Validation: If it is cacheable, how do I ensure that my cached version is still fresh?
+- **Cacheability**: Is this content cacheable?
+- **Freshness**: If it is cacheable, how long can it be cached for? `Cache-Control` and `Expires` 
+- **Validation**: If it is cacheable, how do I ensure that my cached version is still fresh?
 
-Headers are meant to be used either alone or together. The main options are `Cache-Control` and `Expires` to tell if the content is cachable and fresh, where `ETag` and `Last-Modified` drive the re-validation steps.
+Headers are meant to be used either alone or together. To tell if the content is cachable and fresh, we have:
+- `Expires` specifies an explicit expiration date and time (i.e., when precisely the content expires)
+- `Cache-Control` specifies a cache duration (i.e., how long the content can be cached in the browser relative to when it was requested)
+In case both are specified, `Cache-Control` takes precedence.
+
+The usage of the Cache-Control header has increased steadily since 2019. 74% of responses on Mobile pages included the Cache-Control header, while 75% of responses on Desktop pages utilized the header. From 2020, the usage of this specific header increased by 0.71% for Mobile and by 1.13% for Desktop.
+
+Cache-Control: DT 75%, Mobile 74%
+Expires: DT 55%, Mobile 56%
+
+To validate the content, we have:
+- `Last-Modified` indicates when the object was last changed. Its value is a date timestamp.
+- `ETag` (Entity Tag) provides a unique identifier for the content as a quoted string. It can take any format the server chooses; it is typically a hash of the file contents, but it could be a timestamp or a simple string.
+
+In case both are specified, `ETag` takes precedence.
+
+ETag: DT 48%, Mobile 47%
+Last-Modified: DT 73%, Mobile 71%
+
+## Cachebility and freshness
 
 ### `Cache-Control`
 The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control">`Cache-Control`</a> header holds directives that control caching in browsers and shared caches. Usage of this header has increased or remained consistent across web pages. 74% of Mobile and 75% of Desktop pages use Cache-Control.
@@ -89,29 +108,6 @@ Cache-Control: public, max-age=604800
 ```
 Expires: Mon, 29 Nob 2021 07:28:00 GMT
 ```
-
-### `ETag`
-
-<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag">`ETag`</a> helps ....
-
-```
-ETag: "34a64df551429fcc55e4d42a148795d9f25f89d8"
-```
-
-### `Last-Modified`
-
-<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Last-Modified">`Last-Modified`</a> helps ....
-
-```
-Last-Modified: Mon, 29 Nov 2021 07:28:00 GMT
-```
-
-Usage of the Cache-Control header has increased steadily since 2019. 74% of responses on Mobile pages included the Cache-Control header, while 75% of responses on Desktop pages utilized the header. From 2020, the usage of this specific header increased by 0.71% for Mobile and by 1.13% for Desktop.
-
-Cache-Control: DT 75%, Mobile 74%
-Expires: DT 55%, Mobile 56%
-ETag: DT 48%, Mobile 47%
-Last-Modified: DT 73%, Mobile 71%
 
 ### Cache Control
 
@@ -155,6 +151,24 @@ Although 99% of both Desktop and Mobile pages use valid date strings, only 55% o
 What is or would be the impact from using expires more effectively?
 
 Could we possibly see big wins from getting more consistent here?
+
+## Conditional requests and revalidation
+
+### `ETag`
+
+<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag">`ETag`</a> helps ....
+
+```
+ETag: "34a64df551429fcc55e4d42a148795d9f25f89d8"
+```
+
+### `Last-Modified`
+
+<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Last-Modified">`Last-Modified`</a> helps ....
+
+```
+Last-Modified: Mon, 29 Nov 2021 07:28:00 GMT
+```
 
 ### Vary
 
