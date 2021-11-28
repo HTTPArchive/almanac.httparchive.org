@@ -11,7 +11,8 @@ results: https://docs.google.com/spreadsheets/d/11hw7zg4dpIY8XbQR5bNp5LvwbaQF0Tj
 patrickstox_bio: Patrick is Product Advisor, Technical SEO, and Brand Ambassador at <a href="https://ahrefs.com/">Ahrefs</a>. He's an organizer for the <a href="https://www.meetup.com/RaleighSEO/">Raleigh SEO Meetup</a> (the most successful SEO Meetup in the US), the <a href="https://www.meetup.com/beerandseo/">Beer and SEO Meetup</a>, and the <a href="https://raleighseomeetup.org/conference/">Raleigh SEO Conference</a>. He also runs a Technical SEO Slack group and is a moderator for <a href="https://www.reddit.com/r/TechSEO">/r/TechSEO on Reddit</a>. Patrick also likes to share random SEO knowledge in Twitter threads he calls Uncommon SEO Knowledge.
 
 He's a well known conference speaker, industry blogger (mostly on the <a href="https://ahrefs.com/blog/">Ahref's blog</a> these days), judge of search awards, and he helped define the role of Search Marketing Strategist for the US Department of Labor.
-Tomek3c_bio:
+Tomek3c_bio: Tomek is the Head of Research and Development at <a href="http://onely.com/">Onely</a>. He's also building <a href="https://www.ziptie.dev/">ZipTie</a>, a product aiming to help website owners get more content indexed by Google.
+In his spare time, he enjoys hiking and playing poker.
 wrttnwrd_bio: Ian founded Portent, a digital marketing agency, in 1995, and sold it to Clearlink in 2017. He’s now on his own, consulting for brands he loves and speaking at conferences that provide Diet Coke. He’s also trying to become a professional Dungeons & Dragons player, but it hasn’t panned out.
 You can find him pedaling his bike up Seattle’s ridiculous hills.
 featured_quote: SEO is more popular than ever and has seen huge growth over the last couple years as companies sought new ways to reach customers. SEO’s popularity has far outpaced other digital channels.
