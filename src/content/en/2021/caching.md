@@ -107,36 +107,6 @@ When both are specified, `ETag` takes precedence.
   sql_file="header_trends.sql"
 ) }}
 
-### Cachebility and freshness
-The `Expires` header, as stated above, it indicates the exact date/time after which the response is considered stale. Therefore, its value is a date and time, such as:
-
-```
-Expires: Mon, 29 Nov 2021 16:00:00 GMT
-```
-
-This was perfect for the early days of HTTP/1.0, and helped Browser understand how long they can cache a resource.
-
-HTTP/1.1 took a step further by introducing the Cache-Control header, supported by all commonly used browsers for a long time. The Cache-Control header provides much more extensibility and flexibility than Expires via caching directives, several of which can be specified together, making it a better fit in many cases.
-
-Request:
-```
-> GET /static/js/main.js HTTP/2
-> Host: www.example.org
-> Accept: */*
-```
-
-Response:
-```
-< HTTP/2 200
-< Date: Mon, 29 Nov 2021 08:04:17 GMT
-< Expires: Mon, 29 Nov 2021 08:34:17 GMT
-< Cache-Control: public, max-age=1200
-```
-
-The simple example above shows a request and response for a JavaScript file. First, the `Date` header indicates the current date (precisely, the content was served). Next, the `Expires` header indicates that it can be cached for 30 minutes (the difference between the `Expires` and `Date` headers). Finally, the `Cache-Control` header specifies the `max-age` directive, which indicates that the resource can be cached for 600 seconds (10 minutes). Since `Cache-Control` takes precedence over `Expires`, the browser will cache the response for 10 minutes, after which it will be marked as stale.
-
-Worth to mention if no caching headers are present in a response, then the browser is allowed to *heuristically* cache the response. Some may cache the response indefinitely, and some may not cache it at all. Because of this variation between browsers, it is essential to explicitly set specific caching rules to ensure that you control the cacheability of your content.
-
 ### `Cache-Control` directives
 When using the `Cache-Control` header, you specify one or more *directives*—predefined values that indicate specific caching functionality. Multiple directives are separated by commas and can be set in any order, although some clash with one another (e.g., `public` and `private`). In addition, some directives take a value, such as `max-age`.
 
