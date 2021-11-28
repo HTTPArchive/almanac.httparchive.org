@@ -21,6 +21,8 @@ featured_stat_label_3: TODO
 
 ## Introduction
 
+In the last two decades, the way we experience web applications has changed, having richer and more interactive content. But, unfortunately, this content has a cost in both data storage and bandwidth. Most of the time, this makes it harder for many of us to fully experience a web product when the network we use is degraded, or our device has not enough space. Caching is both a solution to and the cause of some of these problems. Learning how to navigate the multiverse of those choices will lead you to build not just for the HighEnd devices but also for the next Billion of users accessing your product from LowEnd devices.
+
 Caching is a technique that enables the reuse of previously downloaded content. Over the past decade...
 
 Why do we cache? What's the benefit?
