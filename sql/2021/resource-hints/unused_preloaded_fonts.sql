@@ -2,13 +2,13 @@
 
 
 # returns the number of unused font files (assuming they are the same font based on the filename) that were preloaded
-# Ex: The below HTML will return 1: 
+# Ex: The below HTML will return 1:
 #
 # <link rel="preload" href="./roboto.woff2" as="font" />
 # <link rel="preload" href="./roboto.woff" as="font" />
 # <link rel="preload" href="./montserrat.woff2" as="font" />
 CREATE TEMPORARY FUNCTION getUnusedFontDownloadsCount(almanac_string STRING)
-RETURNS INT64 LANGUAGE js AS ''' 
+RETURNS INT64 LANGUAGE js AS '''
 try {
   const almanac = JSON.parse(almanac_string);
   if (Array.isArray(almanac) || typeof almanac != "object") return null;
@@ -57,7 +57,7 @@ try {
 } catch {
   return null;
 }
-''' ;
+''';
 
 SELECT
   client,

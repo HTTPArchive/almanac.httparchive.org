@@ -29,7 +29,7 @@ Recent legislative efforts such as the <a hreflang="en" href="https://ec.europa.
 
 These new laws have given users a much larger say in how comfortable they are with sharing personal data. You probably already have clicked through quite a few cookie consent banners that enable this choice. Furthermore, web browsers are implementing <a hreflang="en" href="https://privacysandbox.com/">technological solutions</a> to improve user privacy, from blocking third-party cookies over hiding sensitive data to innovative ways to balance legitimate use cases on personal attributes with individual user privacy.
 
-In this chapter, we give an overview of the current state of privacy on the web. We first consider how user privacy can be harmed: we discuss how websites profile you through [online tracking](#how-websites-profile-you-online-online-tracking), and how they [access your sensitive data](#how-websites-handle-your-sensitive-data). We then look at the impact of tools that empower users to protect their privacy. Next, we dive into ways websites [protect sensitive data](#how-websites-protect-your-sensitive-data) and give you a choice through [privacy preference signals](#how-websites-give-you-a-privacy-choice-privacy-preference-signals). We close with an [outlook on the efforts that browsers are making to safeguard your privacy in the future](#how-browsers-are-evolving-their-privacy-approaches).
+In this chapter, we give an overview of the current state of privacy on the web. We first consider how user privacy can be harmed: we discuss how websites profile you through [online tracking](#how-websites-profile-you-online-online-tracking), and how they [access your sensitive data](#how-websites-handle-your-sensitive-data). Next, we dive into ways websites [protect sensitive data](#how-websites-protect-your-sensitive-data) and give you a choice through [privacy preference signals](#how-websites-give-you-a-privacy-choice-privacy-preference-signals). We close with an [outlook on the efforts that browsers are making to safeguard your privacy in the future](#how-browsers-are-evolving-their-privacy-approaches).
 
 
 ## How websites profile you: online tracking
@@ -114,7 +114,7 @@ Google's subsidiary DoubleClick takes the top spot by setting cookies on 31.4% o
 
 Looking at the specific cookies that these websites set, the most common cookie from a tracker is the `test_cookie` from doubleclick.net. The next most common cookies are advertising-related and remain on a user's device much longer: Facebook's `fr` cookie persists for <a hreflang="en" href="https://www.facebook.com/policy/cookies/">90 days</a>, while DoubleClick's `IDE` cookie stays for <a hreflang="en" href="https://business.safety.google/adscookies/">13 months in Europe and 2 years elsewhere</a>.
 
-With `Lax` becoming the default value of the <a hreflang="en" href="https://web.dev/samesite-cookies-explained/">`SameSite` cookie attribute</a>, sites that want to continue sharing third-party cookies across websites must explicitly set this attribute to `None`. For third parties, 85% have done this so far on mobile and 64% on desktop, potentially for tracking purposes. You can read more about the `SameSite` cookie attribute over at the [Security](./security){# TODO - add id link after security publishes #} chapter.
+With `Lax` becoming the default value of the <a hreflang="en" href="https://web.dev/samesite-cookies-explained/">`SameSite` cookie attribute</a>, sites that want to continue sharing third-party cookies across websites must explicitly set this attribute to `None`. For third parties, 85% have done this so far on mobile and 64% on desktop, potentially for tracking purposes. You can read more about the `SameSite` cookie attribute over at the [Security](./security#samesite) chapter.
 
 ### Fingerprinting
 
@@ -287,7 +287,7 @@ Every data breach tracked by HaveIBeenPwned leaks email addresses, since this is
 
 ## How websites protect your sensitive data
 
-While you're browsing the web, there is certain data that you might want to keep private: the web pages that you visit, any sensitive data that you enter into forms, your location, and so on. Over at the [Security](./security){# TODO - add id link after security publishes #} chapter, you can learn how 92.5% of desktop sites have enabled HTTPS to protect your data from snooping while it traverses the Internet. Here, we'll focus on how websites can further instruct browsers to ensure privacy for sensitive resources.
+While you're browsing the web, there is certain data that you might want to keep private: the web pages that you visit, any sensitive data that you enter into forms, your location, and so on. Over at the [Security](./security#transport-security) chapter, you can learn how 91.1% of mobile sites have enabled HTTPS to protect your data from snooping while it traverses the Internet. Here, we'll focus on how websites can further instruct browsers to ensure privacy for sensitive resources.
 
 ### Permissions Policy / Feature Policy
 

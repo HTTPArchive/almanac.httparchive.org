@@ -14,7 +14,7 @@ discuss: 2037
 results: https://docs.google.com/spreadsheets/d/1sMWXWjMujqfAREYxNbG_t1fOJKYCA6ASLwtz4pBQVTw/
 featured_quote: A web não é mais uma adolescente - agora tem 30 anos e age como tal. Ela tende a favorecer a estabilidade em vez de um novo brilho e a legibilidade em vez da complexidade, deixando de lado os prazeres ocasionais.
 featured_stat_1: 72.58%
-featured_stat_label_1: Porcentagem do `<length>` dos valores que usam a unidade `px`.
+featured_stat_label_1: Porcentagem do `<length>` dos valores que usam a unidade `px`
 featured_stat_2: 91.05%
 featured_stat_label_2: Porcentagem de páginas em dispositivos móveis usando qualquer funcionalidade com vendor prefix
 featured_stat_3: `darken()`
