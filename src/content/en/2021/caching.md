@@ -93,24 +93,42 @@ In case both are specified, `ETag` takes precedence.
 ETag: DT 48%, Mobile 47%
 Last-Modified: DT 73%, Mobile 71%
 
-## Cachebility and freshness
+### Cachebility and freshness
+The `Expires` header, as stated above, it indicates the exact date/time after which the response is considered stale. Therefore, its value is a date and time, such as:
 
-### `Cache-Control`
+```
+Expires: Mon, 29 Nov 2021 16:00:00 GMT
+```
+
+This was perfect for the early days of HTTP/1.0, and helped Browser understand how long they can cache a resource.
+
+HTTP/1.1 took a step further by introducing the Cache-Control header, supported by all commonly used browsers for a long time. The Cache-Control header provides much more extensibility and flexibility than Expires via caching directives, several of which can be specified together, making it a better fit in many cases.
+
+Request:
+```
+> GET /static/js/main.js HTTP/2
+> Host: www.example.org
+> Accept: */*
+```
+
+Response:
+```
+< HTTP/2 200
+< Date: Mon, 29 Nov 2021 08:04:17 GMT
+< Expires: Mon, 29 Nov 2021 08:34:17 GMT
+< Cache-Control: public, max-age=1200
+```
+
+The simple example above shows a request and response for a JavaScript file. First, the `Date` header indicates the current date (precisely, the content was served). Next, the `Expires` header indicates that it can be cached for 30 minutes (the difference between the `Expires` and `Date` headers). Finally, the `Cache-Control` header specifies the `max-age` directive, which indicates that the resource can be cached for 600 seconds (10 minutes). Since `Cache-Control` takes precedence over `Expires`, the browser will cache the response for 10 minutes, after which it will be marked as stale.
+
+Worth to mention if no caching headers are present in a response, then the browser is allowed to *heuristically* cache the response. Some may cache the response indefinitely, and some may not cache it at all. Because of this variation between browsers, it is essential to explicitly set specific caching rules to ensure that you control the cacheability of your content.
+
+### `Cache-Control` directives
 The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control">`Cache-Control`</a> header holds directives that control caching in browsers and shared caches. Usage of this header has increased or remained consistent across web pages. 74% of Mobile and 75% of Desktop pages use Cache-Control.
 
 ```
 Cache-Control: public, max-age=604800
 ```
-
-### `Expires`
-
-<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires">`Expires`</a> helps ....
-
-```
-Expires: Mon, 29 Nob 2021 07:28:00 GMT
-```
-
-### Cache Control
 
 When using the Cache-Control header, usage increased by 1% for Desktop and remained the same for Mobile. However, usage of the Last-Modified header decreased by 1% across both interfaces.
 
@@ -153,7 +171,7 @@ What is or would be the impact from using expires more effectively?
 
 Could we possibly see big wins from getting more consistent here?
 
-## Conditional requests and revalidation
+### Conditional requests and revalidation
 
 ### `ETag`
 
@@ -239,6 +257,7 @@ The median difference between resource TTL and resource age is -6 days, meaning 
 Can we get a graph of the % of cacheable strategies vs. non-cacheable strategies for Desktop and Mobile, based on data from 'Non-cacheable strategies'?
 
 Shows the majority of resources are highly cacheable
+
 {{ figure_markup(
   image="caching-by-resource-type.png",
   caption="The percent of requests that use caching strategies by resource type.",
@@ -248,6 +267,7 @@ Shows the majority of resources are highly cacheable
   sheets_gid="1202769738",
   sql_file="non_cacheable_by_resource_type.sql"
 ) }}
+
 ### Lighthouse TTL score
 Talk about 12% of mobile pages score 0.9 or higher on the long Time To Live (TTL) audit
 
