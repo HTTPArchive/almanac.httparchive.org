@@ -23,15 +23,16 @@ featured_stat_label_3: TODO
 
 In the last two decades, the way we experience web applications has changed, having richer and more interactive content. But, unfortunately, this content has a cost in both data storage and bandwidth. Most of the time, this makes it harder for many of us to fully experience a web product when the network we use is degraded, or our device has not enough space. Caching is both a solution to and the cause of some of these problems. Learning how to navigate the multiverse of those choices will lead you to build not just for the HighEnd devices but also for the next Billion of users accessing your product from LowEnd devices.
 
-Caching is a technique that enables the reuse of previously downloaded content. Over the past decade...
+Caching is a technique that enables the reuse of previously downloaded content, from simple static assets like a Javascript or CSS file to a more complex JSON API response or just a simple string value.
 
-Why do we cache? What's the benefit?
+At its core, Caching will avoid making the exact HTTP requests and allow the application to feel more responsive and reliable to the user. Each request is usually cached in two main places:
+CDN: is usually a third-party company like Cloudflare with the primary goal to replicate your data as close as possible where the user is accessing the application. Most of the CDNs have some default behavior, but mainly you can instruct them on how to cache by using HTTP Headers.
+Browser: It will usually either learn how to cache your resources internally or respect the HTTP Headers you defined to optimize the experience. On top of it, you will have access to several more manual caching strategies either by storing simple strings in Cookies, complex API responses in IndexdDB, or entire JS or HTML resources in the CacheStorage with the Service Worker.
 
-The three main pillars of caching web content are:
+The three main pillars of how we cache web resources are:
 - Cache as much as you can
 - Cache for as long as you can
 - Cache as close to end users as you can
-
 
 ## CDN Cache adoption
 
