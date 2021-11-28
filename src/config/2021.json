@@ -22,7 +22,8 @@
           "part": "I",
           "chapter_number": "2",
           "title": "JavaScript",
-          "slug": "javascript"
+          "slug": "javascript",
+          "todo": "true"
         },
         {
           "part": "I",
@@ -157,7 +158,8 @@
           "part": "IV",
           "chapter_number": "19",
           "title": "Page Weight",
-          "slug": "page-weight"
+          "slug": "page-weight",
+          "todo": "true"
         },
         {
           "part": "IV",
