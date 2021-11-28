@@ -343,4 +343,11 @@ From [Fonts](https://almanac.httparchive.org/en/2020/fonts#conclusion) chapter: 
 
 ## Conclusion
 
-Is there a danger or downside to caching too much? Is it possible to do it too much?
+Many people must have heard this quote by Phil Karlton "There are only two hard things in Computer Science: cache invalidation and naming thing.". And I always wondered why caching is so hard? My take is that to do caching well, you need two key ingredients: keep it simple and understand all potential edge cases. Unfortunately, when we try to make the cache too clever, sometimes we end up catching the wrong things or, worst, caching too much. On a similar note, understanding all edge cases take a ton of research, testing, and slow incremental improvements; and even with that, you have to hope that an old browser will not throw you under the bus. And the reason we still chase great caching strategies is that the ultimate reward is very high, with a significant reduction of round-trip requests, high savings for your server, fewer data required from your users, and ultimately a better user experience.
+
+In any case, make sure to have a playbook for how to best use caching:
+- Prioritizing caching work at an early stage of the development cycle and after a product is shipped
+- Write end-to-end tests to recreate any major edge case
+- Regularly auditing the site and updating any cache rule that might be outdated or missing.
+
+As a final note, caching is less complex if we help our peers by mentoring them and writing simple and good documentation on how to use it. So that is not to be something mastered only by a few, but a common knowledge across your entire company, so it is easier to focus on building easy and frictionless experiences.
