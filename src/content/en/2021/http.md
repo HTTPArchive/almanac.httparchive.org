@@ -500,9 +500,9 @@ At the time of this writing the most recent version of the [HTTP/3 spec](https:/
 Most `alt-svc` reported a max-age of only 24 hours, which is the default if not specified. The longest max-age reported for `alt-svc` was 30 days or 2592000 seconds.
 
 {{ figure_markup(
-  image="webpagetest-`alt-svc`=example.png",
+  image="webpagetest-alt-svc-example.png",
   caption="WebPageTest `alt-svc` example.",
-  description="Bar chart showing...",,
+  description="Bar chart showing...",
   width=1032,
   height=552
   )
