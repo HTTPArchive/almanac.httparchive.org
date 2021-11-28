@@ -81,8 +81,14 @@ In case both are specified, `Cache-Control` takes precedence.
 
 The usage of the Cache-Control header has increased steadily since 2019. 74% of responses on Mobile pages included the Cache-Control header, while 75% of responses on Desktop pages utilized the header. From 2020, the usage of this specific header increased by 0.71% for Mobile and by 1.13% for Desktop.
 
-Cache-Control: DT 75%, Mobile 74%
-Expires: DT 55%, Mobile 56%
+{{ figure_markup(
+  image="cache-control-expires.png",
+  caption="Percent of responses that set `Cache-Control` and `Expires` headers.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=816405026&format=interactive",
+  sheets_gid="2102749619",
+  sql_file="header_trends.sql"
+) }}
 
 To validate the content, we have:
 - `Last-Modified` indicates when the object was last changed. Its value is a date timestamp.
