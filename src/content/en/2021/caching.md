@@ -49,7 +49,9 @@ A Content Delivery Network (CDN) is a group of servers spread out over several l
 
 ## Service Worker adoption
 
-Adoption of Service Workers has seen a significant increase from 2020. While 1.2% of Desktop pages registered a service worker, 9% of Mobile pages in the top 1,000 registered a Service Worker.
+A service worker is a script that the browser allows to run in the background independently from a web page. It supports features that don't need direct user or web page interaction and offer rich offline experiences.
+
+The adoption of Service Workers has continued to steadily increase. While 1% of Mobile pages registered a service worker in 2020, 9% of Mobile pages ranked in the top 1,000 registered ones in 2021.
 
 {{ figure_markup(
   image="sw-adoption.png",
@@ -59,6 +61,8 @@ Adoption of Service Workers has seen a significant increase from 2020. While 1.2
   sheets_gid="802609299",
   sql_file="service_worker_rank.sql"
 ) }}
+
+To cache resources within the Service Worker, you can use the CacheStorage API, which allows ...
 
 ## Headers adoption
 
