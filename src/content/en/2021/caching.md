@@ -96,8 +96,15 @@ To validate the content, we have:
 
 In case both are specified, `ETag` takes precedence.
 
-ETag: DT 48%, Mobile 47%
-Last-Modified: DT 73%, Mobile 71%
+```suggestion
+{{ figure_markup(
+  image="last-modified-etag.png",
+  caption="Percent of responses that set `Last-Modified` and `ETag` headers.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=1490687174&format=interactive",
+  sheets_gid="2102749619",
+  sql_file="header_trends.sql"
+) }}
 
 ## Cachebility and freshness
 
