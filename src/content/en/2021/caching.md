@@ -23,6 +23,13 @@ featured_stat_label_3: TODO
 
 Caching is a technique that enables the reuse of previously downloaded content. Over the past decade...
 
+Why do we cache? What's the benefit?
+
+The three main pillars of caching web content are:
+- Cache as much as you can
+- Cache for as long as you can
+- Cache as close to end users as you can
+
 
 ## CDN Cache adoption
 
@@ -53,6 +60,8 @@ Adoption of Service Workers has seen a significant increase from 2020. While 1.2
 ## Headers adoption
 
 Talk about what are the Headers we have available...
+
+What are Headers and what are they used for? What's the difference between them? Can they be used together?
 
 ### `Cache-Control`
 
