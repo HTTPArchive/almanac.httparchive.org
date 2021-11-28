@@ -150,29 +150,32 @@
         {
           "part": "IV",
           "chapter_number": "18",
-          "title": "CDN",
-          "slug": "cdn",
-          "todo": "true"
+          "title": "Caching",
+          "slug": "caching"
         },
         {
           "part": "IV",
           "chapter_number": "19",
-          "title": "Page Weight",
-          "slug": "page-weight",
-          "todo": "true"
+          "title": "CDN",
+          "slug": "cdn"
         },
         {
           "part": "IV",
           "chapter_number": "20",
+          "title": "Page Weight",
+          "slug": "page-weight"
+        },
+        {
+          "part": "IV",
+          "chapter_number": "21",
           "title": "Resource Hints",
           "slug": "resource-hints"
         },
         {
           "part": "IV",
-          "chapter_number": "21",
+          "chapter_number": "22",
           "title": "HTTP",
-          "slug": "http",
-          "todo": "true"
+          "slug": "http"
         }
       ]
     }
@@ -668,6 +671,16 @@
       "website": "https://meiert.com/en/",
       "github": "j9t",
       "twitter": "j9t"
+    },
+    "jessnicolet": {
+      "name": "Jessica Nicolet",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/59629525?v=4&s=200",
+      "website": "https://www.jessicanicolet.com/",
+      "github": "jessnicolet",
+      "twitter": "jessica_nicolet"
     },
     "jessthebp": {
       "name": "Jess Peck",
