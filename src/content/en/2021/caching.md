@@ -43,6 +43,7 @@ A Content Delivery Network (CDN) is a group of servers spread out over several l
   caption="Adoption of the top CDNs.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=2035524639&format=interactive",
+  height=501,
   sheets_gid="58739923",
   sql_file="top_cdns.sql"
 ) }}
