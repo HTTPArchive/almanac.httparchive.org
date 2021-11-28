@@ -23,13 +23,13 @@ unedited: true
 
 ## Introduction
 
-Using HTTP compression makes a website load faster and therefore guarantees a better user experience. Running no compression on HTTP makes for a worse user experience, may affect the growth rate of the related web service, and can affect search rankings. Effective use of compression is an important part of [search engine optimization](./seo), because it can reduce [page weight](./page-weight) and improves [web performance](./performance).
+HTTP compression makes websites load faster and improves user experience. When used effectively, it can reduce [page weight](./page-weight), improve [web performance](./performance) and boost search rankings, so it's an important part of [search engine optimization](./seo). On the other hand, not using compression, or using it with a suboptimal configuration, can result in longer wait times for the user and can negatively affect the growth of a web service.
 
-While lossy compression works well for many images, audio and video, text as well as text-based data formats such as SVG require lossless compression, since we need to be able to recover the exact text after decompression.
+This chapter discusses lossless text compression. Lossy and lossless compression used in media formats such as images, audio and video is equally if not more important for increasing page speed, but is not the topic of this chapter.
 
 ## What type of content should we compress?
 
-For most text-based assets, such as [HTML](./markup), [CSS](./css), [JavaScript](./javascript), JSON, or SVG, as well as certain non-text formats such as woff, ttf, ico, using compression is recommended.
+HTTP compression is recommended for most text-based content, such as [HTML](./markup), [CSS](./css), [JavaScript](./javascript), JSON, or SVG. It's also recommended for certain non-text formats such as woff, ttf, ico because they still benefit from lossless compression. On the other hand, for media files such as images that are already compressed it doesn't provide a benefit because compressing already-compressed files doesn't reduce their size much and may even make them slightly larger.
 
 {{ figure_markup(
   image="compession-methods-by-content-type.png",
@@ -204,21 +204,24 @@ Gzip compression is applied largely around compression level 6, extending to lev
 
 ## How to analyze compression on your sites
 
-You can use [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools) or <a hreflang="en" href="https://developers.google.com/web/tools/chrome-devtools">Chrome DevTools</a> to quickly figure out what content a website already compresses. To do this, go to the Network tab, right click and activate "Content Encoding" under Response Headers. Hovering over the size of individual files you will see "transferred over network" and "resource size". Aggregated for the entire site one can see size/transferred size for Firefox and "transferred" and "resources" for Chrome on the bottom left hand side of the Network tab.
+You can check which content of your website is already using HTTP compression in the [Firefox Developer Tools](https://developer.mozilla.org/en-US/docs/Tools) or the <a hreflang="en" href="https://developers.google.com/web/tools/chrome-devtools">Chrome DevTools</a>. In the developer tools, open the Network tab and reload your site. A list of responses such as HTML, CSS, JavaScript, fonts and images should appear. To see which ones are compressed, you can check the content encoding in their response header. You can enable a column to easily see this for all responses at once. To do this, right click on the column titles, and in the menu navigate to Response Headers and enable Content-Encoding.
 
+Responses that are Gzip compressed will show "gzip", while those compressed with Brotli will show "br". If the value is blank, no HTTP compression is used. For images this is normal, since these resources are already compressed on their own.
+
+If you hover the mouse over the values in the Size column, you can also see the "transferred over network" and "resource size" to compare the compressed and actual sizes. This data can also be seen for the entire site: this is indicated as "size" / "transferred size" in Firefox and "transferred" and "resources" in Chrome on the bottom left hand side of the Network tab.
 
 {{ figure_markup(
-  image="../../2020/compression/content-encoding.png",
-  caption='Use DevTools to check if content encoding is used on your site',
-  description="Image showing how to use DevTools to see if content encoding is used.",
+  image="content-encoding.png",
+  caption='Chrome DevTools checking the content-encoding of responses',
+  description="Image showing how to use Chrome DevTools to see if content encoding is used.",
   width=591,
   height=939
   )
 }}
 
-Another tool to better understand compression on your site is Google's <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> tool, which enables you to run a series of audits against web pages. The <a hreflang="en" href="https://web.dev/uses-text-compression/">text compression audit</a> evaluates whether a site can benefit from additional text-based compression. It does this by attempting to compress resources and evaluate whether an object's size can be reduced by at least 10% and 1,400 bytes. Depending on the score, you may see a compression recommendation in the results, with a list of specific resources that could be compressed.
+ A different tool that can analyze compression on your site is Google's <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> tool. It runs a series of audits, including the <a hreflang="en" href="https://web.dev/uses-text-compression/">"Enable text compression" audit</a>. This audit attemps to compress resources to check if they reduced by at least 10% and 1,400 bytes. Depending on the score, it can show a compression recommendation in the results, with a list of the resources that can be compressed to benefit your website.
 
-Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for each mobile page, we can aggregate the scores across all sites to learn how much opportunity there is to compress more content. Overall, 72% of websites are passing this audit, while almost 16% of websites have scored 10 or less. This has dropped 2% compared to [last year's](../2020/compression#identifying-compression-opportunities) 74% of passing scores.
+The HTTP Archive [runs Lighthouse audits](./methodology#lighthouse) for each mobile page, and from this data we can see that 72% of websites pass this audit. This is 2% less than [last year's](../2020/compression#identifying-compression-opportunities) 74% which is, despite more usage of text compression overall compared to last year, a slight drop.
 
 {{ figure_markup(
   image="text-compression-lighthouse-scores.png",
@@ -269,8 +272,9 @@ Improving the default settings on web server software would provide significant 
 
 ## Conclusion
 
-Compared with the [previous year's Almanac](../2020/compression), the trend towards using more text compression still continues, and especially Brotli has grown significantly compared to last year. The number of responses using text compression went up a little more than 2%, while at the same time the use of Brotli has increased by over 4%. The Lighthouse scores, on the other hand, have dropped slightly due to unknown causes. The highest score category has dropped 2% from 2020, but is still 10% above the 2019 reading.
+Usage of HTTP compression is still growing, and especially Brotli has grow significantly compared to the [previous year's Almanac](../2020/compression). The number of HTTP responses using any text compression increased 2%, while Brotli increased over 4%. The Lighthouse scores, on the other hand, have dropped slightly due to unknown causes. The highest score category has dropped 2% compared to 2020, but is still 10% above the 2019 reading.
 
-The analysis on compression levels reveals that about 6% of content in Gzip format is compressed using more advanced compressors such as Zopfli, while a similar \'optimal parsing\' approach is used for 17% of content compressed with Brotli. This indicates that when much slower but slightly more efficient methods are available, a significant amount of users will deploy these methods for their static content such as JavaScript.
+The analysis on compression levels reveals that about 6% of Gzip-compressed content uses more advanced compressors such as Zopfli, while a similar \'optimal parsing\' approach is used for 17% of Brotli-compressed content. This indicates that when much slower but slightly more efficient methods are available, a significant amount of users will deploy these methods for their static content such as JavaScript.
 
-Text compression is widely used for the relevant formats, although there is still a significant percentage of HTTP responses that could benefit from additional compression. You can profit from taking a close look at the configuration of your server and set compression methods and levels to your need. A great impact for a more positive user experience could be made by carefully choosing defaults for the most popular HTTP servers.
+While compression usage has increased, there is still a significant percentage of HTTP responses that can be made faster by using compression or by improving the compression settings. You can benefit from taking a closer look at your own website's responses and your server configuration for the compression methods and their level. Tuning the default compression settings for the most popular HTTP servers could have a great impact for users.
+
