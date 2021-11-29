@@ -20,6 +20,7 @@ featured_stat_2: 41.5%
 featured_stat_label_2: Mobile pages without a canonical tag
 featured_stat_3: 67%
 featured_stat_label_3: Mobile websites failing Core Web Vitals checks
+unedited: true
 ---
 
 ## Introduction
