@@ -203,8 +203,8 @@ If you hover the mouse over the values in the Size column, you can also see "tra
   image="content-encoding.png",
   caption='Chrome DevTools checking the content-encoding of responses',
   description="Image showing how to use Chrome DevTools to see if content encoding is used.",
-  width=591,
-  height=939
+  width=575,
+  height=828
   )
 }}
 
