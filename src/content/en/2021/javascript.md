@@ -876,8 +876,6 @@ The numbers that we have seen throughout the chapter have brought us to an under
 
 It is observed that so many features provided for improving the rendering time and resource loading time could be leveraged better to see the overall impact and get an even better experience with respect to the performance.
 
-Start by adopting the new features provided by the JavaScript and web community. However, make sure to use them wisely and ensure that they improve performance and don't instead increase the load, as some APIs can cause harm through overuse. For example, lazy loading should be applied selectively and not bluntly set on all resources on a page. Making appropriate use of the powerful APIs we now have access to, is what it will take to see these numbers improve further in the coming years.
-
-{# TODO - this sentence is long but not sure how to break it down #}
+Start by adopting the new features provided by JavaScript and the web community. However, make sure to use them wisely and ensure that they improve performance and don't instead increase the load, as some APIs can cause harm through overuse. For example, we saw that using async as well as defer is very common and actually is an anti-pattern that slows the site down since the defer is effectively ignored. Making appropriate use of the powerful APIs we now have access to, is what it will take to see these numbers improve further in the coming years.
 
 Let's continue to do so.
