@@ -27,7 +27,7 @@ ssg AS (
 total_ssg AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    COUNT(0) as ssg_total
+    COUNT(0) AS ssg_total
   FROM
     `httparchive.technologies.2021_07_01_*`
   WHERE
@@ -42,7 +42,7 @@ total_ssg_app AS (
   SELECT
     _TABLE_SUFFIX AS client,
     app AS ssg_app,
-    COUNT(0) as ssg_app_total
+    COUNT(0) AS ssg_app_total
   FROM
     `httparchive.technologies.2021_07_01_*`
   WHERE
