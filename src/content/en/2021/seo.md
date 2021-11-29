@@ -67,7 +67,7 @@ Using robots.txt allows website owners to control search engine robots. However,
 {{ figure_markup(
    image="robots-txt-status-codes.png",
    caption="Breakdown of robots.txt status codes.",
-   description="Bar chart showing ...",
+   description="Bar chart showing percent of pages with a valid robots.txt file. Status code 200 was present on 81.9% of mobile sites, status code 404 was present on 16.5% of mobile sites. The other status codes are barely used and desktop numbers are almost identical to mobile.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2062029998&format=interactive",
    sheets_gid="91318795",
    sql_file="robots-txt-status-codes.sql"
