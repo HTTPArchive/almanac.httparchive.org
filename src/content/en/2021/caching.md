@@ -279,18 +279,73 @@ When we compare the mobile data from 2020 and 2021, we notice a 5.1% increase in
 
 When we take a look at the Median TTL across all resource types, we see that even if we are caching comparable amounts there is a much lengthier cache for mobile, particularly for HTML, audio and video.
 
-Median TTL (days)	client	
-response_type	desktop	mobile
-text	0.25	0.25
-xml	1.00	1.00
-other	1.05	1.22
-video	4.14	8.00
-html	3.00	14.00
-audio	0.25	30.00
-css	30.00	30.00
-image	30.00	30.00
-script	30.00	30.00
-font	365.00	365.00
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="6" scope="col">Median TTL (in days)</th>
+      </tr>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Desktop</th>
+        <th scope="col">Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Text</td>
+        <td class="numeric">0.2</td>
+        <td class="numeric">0.2</td>
+      </tr>
+      <tr>
+        <td>XML</td>
+        <td class="numeric">1</td>
+        <td class="numeric">1</td>
+      </tr>
+      <tr>
+        <td>Other</td>
+        <td class="numeric">1</td>
+        <td class="numeric">1</td>
+      </tr>
+      <tr>
+        <td>Video</td>
+        <td class="numeric">4</td>
+        <td class="numeric">8</td>
+      </tr>
+      <tr>
+        <td>HTML</td>
+        <td class="numeric">3</td>
+        <td class="numeric">14</td>
+      </tr>
+      <tr>
+        <td>Audio</td>
+        <td class="numeric">0.2</td>
+        <td class="numeric">30</td>
+      </tr>
+      <tr>
+        <td>CSS</td>
+        <td class="numeric">30</td>
+        <td class="numeric">30</td>
+      </tr>
+      <tr>
+        <td>Image</td>
+        <td class="numeric">30</td>
+        <td class="numeric">30</td>
+      </tr>
+      <tr>
+        <td>Script</td>
+        <td class="numeric">30</td>
+        <td class="numeric">30</td>
+      </tr>
+      <tr>
+        <td>Font</td>
+        <td class="numeric">365</td>
+        <td class="numeric">365</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>TODO: Caption the table above</figcaption>
+</figure>
 
 
 When we look at the entirety of cacheable and non-cacheable resources,
