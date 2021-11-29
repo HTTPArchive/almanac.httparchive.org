@@ -13,7 +13,7 @@ featured_quote: Jamstack young and fast growing technology to build modern websi
 featured_stat_1: 1.1%
 featured_stat_label_1: Jamstack websites adoption among web
 featured_stat_2: 19%
-featured_stat_label_2: Median value of JQuery usage among Jamstack sites
+featured_stat_label_2: Median value of jQuery usage among Jamstack sites
 featured_stat_3: 1.7MB
 featured_stat_label_3: Median value of resource wights among Jamstack sites
 ---
@@ -441,13 +441,14 @@ Big chunk of resources use JavaScript. Again, for JavaScript based SSGs it's a h
 
 We analysed which third party libraries were used among SSGs. We excluded React and Vue to have a clear picture of other libraries and frameworks represented among SSGs.
 
-Surprise for us was JQuery.  It wasn’t a surprise that it’s used for Hugo and Jekyll based sites, but that it’s used inside React and Vue based sites!!! Next.js, Nuxt,js, and Gatsby based sites use JQuery, for Nuxt.js sites it’s 25% among other third party libraries.
+Surprise for us was jQuery.  It wasn’t a surprise that it’s used for Hugo and Jekyll based sites, but that it’s used inside React and Vue based sites!!! Next.js, Nuxt,js, and Gatsby based sites use jQuery, for Nuxt.js sites it’s 25% among other third party libraries.
 
 Styled-components used for Next.js and Gatsby sites and takes ~40% of all third party libraries. Amotion tries to fight styled-components.
 
-Lodash is also one of a kind. Like JQuery. Developers like and use it as well.
+Lodash is also one of a kind. Like jQuery. Developers like and use it as well.
+Nuxt.js - 34%, Next.js - 21%, Gatsby - 12%.
 
-Nuxt.js  34%, Next.js 21%, Gatsby - 12%.
+ Note that this data aggregates all of the pages for different sites, hence e.g. 25% of jQuery usage among other 3rd parties can happen for some Nuxt.js sites and might not happen for other of sites at all.
 
 {{ figure_markup(
   image="js-3rd-parties-distirbution-over-ssg.png",
