@@ -296,7 +296,11 @@ Talk about 12% of mobile pages score 0.9 or higher on the long Time To Live (TTL
 The TTL of a cached object defines how long it can be stored in a cache, typically measured in seconds.
 
 ### Lighthouse wasted bytes
-Talk about 59% of mobile pages could save 0 - 1 MB with caching
+From 2020 to 2021 there was a 3.28% improvement in wasted bytes across all audited pages. This lowered the percentage of pages that waste 1 MB from 42.8% to 39.5%, showing a considerable trend from the community in building products that are less costly for international users with paid internet data plans.
+
+[TODO Add figure for Distribution of potential byte savings from the Lighthouse caching audit]
+
+Something we're looking forward to seeing in the coming years is an increase in the percentage of pages that have 0 wasted bytes, which at the moment is only at 1.34%.
 
 ## Future
 
