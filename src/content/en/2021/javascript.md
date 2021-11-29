@@ -26,9 +26,7 @@ There is a lot that happens in the browser when rendering the application, from 
 
 ## How much JavaScript do we load?
 
-To measure is the key towards improvement, they say. To improve the usage of JavaScript in our applications, we need to measure how much of the JavaScript being shipped is actually required. Let's dig in to understand the distribution of JavaScript bytes per page, considering what a major role it plays in the web setup.
-
-{# TODO - "To measure is the key towards improvement, they say." - is this a quotation or a reference to something? the phrasing implies it #}
+They say that "to measure is the key towards improvement". To improve the usage of JavaScript in our applications, we need to measure how much of the JavaScript being shipped is actually required. Let's dig in to understand the distribution of JavaScript bytes per page, considering what a major role it plays in the web setup.
 
 {{ figure_markup(
   image="javascript-bytes-per-page.png",
@@ -85,9 +83,7 @@ One step towards improving the percentage is to look at the <a hreflang="en" hre
 
 ### JavaScript requests per page
 
-One of the contributing factors towards slow rendering of the web page could be the requests made on the page, especially when they are blocking. It's therefore of interest to look at the number of JavaScript requests made per page on both desktop and mobile devices.
-
-{# TODO - blocking something or just blocking? that's a lack of domain knowledge question :) #}
+One of the contributing factors towards slow rendering of the web page could be the requests made on the page, especially when they are blocking requests. It's therefore of interest to look at the number of JavaScript requests made per page on both desktop and mobile devices.
 
 {{ figure_markup(
   image="js-requests-per-page.png",
@@ -162,9 +158,7 @@ It is important to note that with the <a hreflang="en" href="https://docs.micros
 
 JavaScript loading could be render blocking unless it is specified as deferred or async. This is one of the contributing factors to the slow website loading as often times JavaScript (or at least some of it) is needed for the initial render.
 
-However, loading the JavaScript asynchronously or deferring it helps in some ways to improve this experience. The `async` and `defer` attribute load the scripts asynchronously. The scripts with `async` attribute are executed irrespective of the order in which they are defined, however, `defer` executes the scripts only after the document is completely parsed and ensures their execution will take place in the specified order. We will see the statistics for how many pages actually specify these attributes for the JavaScript requested in the browser.
-
-{# TODO - not sure how to rephrase "We will see the statistics" to say the stats are right below this paragraph #}
+However, loading the JavaScript asynchronously or deferring it helps in some ways to improve this experience. The `async` and `defer` attribute load the scripts asynchronously. The scripts with `async` attribute are executed irrespective of the order in which they are defined, however, `defer` executes the scripts only after the document is completely parsed and ensures their execution will take place in the specified order. Let's look at the statistics for how many pages actually specify these attributes for the JavaScript requested in the browser.
 
 <figure>
   <table>
@@ -266,9 +260,7 @@ A median of mobile pages request 10 third-party resources whereas 9 first-party 
 
 A median of desktop pages request 11 third-party resources compared to 10 first-party requests. This difference increases as we move up to the 90th percentile as 33 requests on mobile pages are first-party but the number goes up to 34 for third-party requests for the mobile pages. Clearly, the number of third-party resources requested is always one step ahead of the first-party ones. Irrespective of the performance and reliability <a hreflang="en" href="https://css-tricks.com/potential-dangers-of-third-party-javascript/">risks that requesting third-party resources brings</a>, the usage seems to favor third-party scripts, which could be due to the <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript">useful interactivity features</a> that it gives to the web.
 
-This is where one has to put their 'performance-nerd' cap on, and ensure that using third-party scripts <a hreflang="en" href="https://csswizardry.com/2017/07/performance-and-resilience-stress-testing-third-parties/">doesn't result in losing control over the performance of the page,  or the main thread getting bloated</a> with too much JavaScript being transferred by <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">loading these scripts better</a>.
-
-{# TODO - 'performance-nerd' the quotes are rendering weirdly in the staged link #}
+This is where one has to put their "performance-nerd" cap on, and ensure that using third-party scripts <a hreflang="en" href="https://csswizardry.com/2017/07/performance-and-resilience-stress-testing-third-parties/">doesn't result in losing control over the performance of the page,  or the main thread getting bloated</a> with too much JavaScript being transferred by <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">loading these scripts better</a>.
 
 ### Preload and Prefetch
 
@@ -371,7 +363,7 @@ When sending resources over the network, it becomes important to look at an effi
 
 ### Compression
 
-Most of the compressed resources use either gzip compression, brotli (br) compression, or a compression technique that is not set.
+Most of the compressed resources use either <a hreflang="en" href="https://www.gnu.org/software/gzip/manual/gzip.html">gzip</a> compression, <a hreflang="en" href="https://github.com/google/brotli">brotli</a> (br) compression, or a compression technique that is not set.
 
 {# TODO - should we have links for gzip and brotli? i think other chapters do #}
 
@@ -476,8 +468,6 @@ Source maps are files sent along with the JavaScript resource files to let the b
 It is found that only 0.1% of mobile pages use the SourceMap response header on script resources. One reason for this extremely small percentage could be that not many sites choose to put their original source code in production through the source map.
 
 An analysis of how many sites actually send the source map header on their first-party or third-party scripts shows that 0.1% of the JavaScript requests that include a SourceMap header on mobile are for first-party scripts.
-
-{# TODO That seems surprising to me. I would have though it was more common to be from third-parties since the likes of query and Bootstrap include source map files. Any thoughts on why this is the reverse? Or am I just wrong about this expectation? Nishu - These results are confusing to me. I reran the query and didn't find 98% anywhere, so I have removed the figure but simply put 0.1% as first-party results for mobile. If you'd like to have a look - here's the data - https://docs.google.com/spreadsheets/d/1zU9rHpI3nC6jTz3xgN6w13afW7x34xAKBh2IPH-lVxk/edit#gid=2057978707 #}
 
 ## Libraries and frameworks
 
@@ -890,7 +880,7 @@ The numbers that we have seen throughout the chapter have brought us to an under
 
 It is observed that so many features provided for improving the rendering time and resource loading time could be leveraged better to see the overall impact and get an even better experience with respect to the performance.
 
-Starting from adopting the features provided by the JavaScript and web community, making sure to use them wisely and ensuring that a tweak only improves the performance and doesn't instead increase the overload (for example, lazy loading all resources on a page is definitely not a good idea), is what it will take us to see these numbers even better in the coming years.
+Start by adopting the new features provided by the JavaScript and web community. However, make sure to use them wisely and ensure that they improve performance and don't instead increase the load, as some APIs can cause harm through overuse. For example, lazy loading should be applied selectively and not bluntly set on all resources on a page. Making appropriate use of the powerful APIs we now have access to, is what it will take to see these numbers improve further in the coming years.
 
 {# TODO - this sentence is long but not sure how to break it down #}
 
