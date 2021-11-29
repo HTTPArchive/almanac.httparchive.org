@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: WebAssembly
-description: WebAssembly chapter of the 2021 Web Almanac covering Wasm compression, custom sections, most popular instructions, and post-MVP Wasm extensions
+description: WebAssembly chapter of the 2021 Web Almanac covering Wasm compression, section sizes, most popular instructions, and post-MVP proposals
 authors: [RReverser]
 reviewers: [jsoverson, carlopi, kripken]
 analysts: [RReverser]
