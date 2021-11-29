@@ -59,6 +59,7 @@ Most of the data is represented for mobile and desktop websites. There's a fully
 
 ## Adoption of SSGs
 
+We will take a look what's the adoption rate of SSGs among web.
 ### Ranking
 
 Let’s start with ranking and understand which SSG is most popular.
@@ -103,6 +104,8 @@ That underlines the trend of that technology. For example, this year a company l
 In 2020 the amount of desktop websites increased 2.76 times, while mobile just 1.5 times. In 2021 mobile availability for SSGs built sites became way better than in 2020, and this year there are ~1.9 times more sites than 2020.
 
 ## Geographic adoption
+
+In this section we will go over geographic adoption for Jamstack. Explore distribution over countries and regions.
 
 ### Adoption by Country
 
@@ -210,11 +213,14 @@ On following graph it’s more clear which SSGs mostly delivered by which CDN.
   sql_file="core_web_vitals_distribution.sql"
 ) }}
 
-## Performance
+## User experiance and performance
+
+In our research we want to explore what's real user experaince for 1.1% adopetd Jamstack technology sites. We will take a look at Lighthouse and Core Web Vitals results.
+
 ### Lighthouse
 
 All Lighthouse scores are median values for mobile devices. Hence, these are results from all around the world. There might be influence of using mobile data providers or devices with simpler hardware then top edge devices of 2021.
-#### Performance
+#### Performance score
 
 Median performance score for all SSGs across mobile varies. Top 3 SSGs with data can’t even pass 40 breier. Since they are pretty much popular in top ranking sites, and distributed all around the world, as we saw on data before, we can make the assumption that they are used from different devices and different networks. Nevertheless, we expect more out-of-the-box improvements like [Next.js image component](https://nextjs.org/docs/basic-features/image-optimization) which improves performance.
 
@@ -229,7 +235,7 @@ Jekyll is one of a kind, making almost 70 which is great results for such a mast
   sql_file="median_lighthouse_score.sql"
 ) }}
 
-#### Accessibility
+#### Accessibility score
 
 Due to specific [Lighthouse measurements of accessibility](https://web.dev/lighthouse-accessibility/) we can make an assumption that these are pretty much good results.
 
@@ -241,7 +247,7 @@ Due to specific [Lighthouse measurements of accessibility](https://web.dev/light
   sheets_gid="745310638",
   sql_file="median_lighthouse_score.sql"
 ) }}
-#### SEO
+#### SEO score
 
 All Jamstack sites provide great SEO scores. From 90 to 92.
 
@@ -254,7 +260,7 @@ All Jamstack sites provide great SEO scores. From 90 to 92.
   sql_file="median_lighthouse_score.sql"
 ) }}
 
-#### Best Practices
+#### Best Practices score
 
 [Lighthouse Best Practices](https://web.dev/lighthouse-best-practices/) category makes sure that site avoids using unhealthy common patterns which dramatically changes User Experience. One of the examples - “document.write()”, etc. All sites results mostly 87, and 93 for for some of them.
 
