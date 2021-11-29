@@ -148,6 +148,7 @@ Oceania and Africa have way lower overall numbers, but they have way greater Jam
   sheets_gid="1779595527",
   sql_file="adoption_by_region.sql"
 ) }}
+
 ### Adoption by subregion
 
 Subregions give us good enough granularity and some exciting data. Not a surprise that first in a list stands for Northern America and USA location and driver of technologies. Most companies who invented SSGs are in the USA. But surprisingly, Western Europe is in second place. It has 10K mobile sites versus Northern America -  17K, but almost the same adoption level, 1.1%. Hence, Western Europe together with Northern Europe have more than 20K sites with 1.4% of Jamstack adoption, which is more than the territory it’s invented.
