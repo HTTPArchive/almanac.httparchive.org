@@ -30,10 +30,7 @@ At its core, Caching avoids making specific HTTP requests and allows an applicat
 - **Content Delivery Network (CDN)**: Usually a third-party company like Cloudflare with the primary goal of replicating your data as closely as possible to where the user is accessing the application. Most CDNs have some default behavior, but mainly you can instruct them on how to cache by using HTTP Headers.
 - **Browser**: Usually will either learn how to cache your resources internally or respect the HTTP Headers you defined to optimize the experience. On top of that, you will have access to additional manual caching strategies including storing simple strings in *Cookies*, complex API responses in *IndexedDB*, or entire JS or HTML resources in the *CacheStorage* with the *Service Worker*.
 
-The three main pillars of how we cache web resources are:
-- Cache as much as you can
-- Cache for as long as you can
-- Cache as close to end users as you can
+In this chapter, we will focus more on the HTTP Headers used between the Browser and the CDN and briefly mention the Service Worker caching strategies.
 
 ## CDN Cache adoption
 
@@ -229,28 +226,13 @@ In addition, 83% of mobile Vary: accept-encoding requests also use cache-control
 
 The most common Vary headers are: `accept-encoding`, `user-agent`, `origin`, `accept`.
 
-## Cookie Cache adoption
+## Setting cookies on cacheable responses
 
-35.63% of Cacheable Desktop pages with set-cookie
-Mobile pages with set-cookie: 35.99%
+In the 2020 Caching chapter, we were reminded to be aware of using `set-cookie` with cacheable responses because only 4.9% of responses used the `private` directive, putting a user's private data at risk of accidentally being accidentally served to a different user via a CDN.
 
-Another area of opportunity we discovered was with cacheable pages that are not using `set-cookie`. About 35% of Desktop and Mobile pages use `set-cookie` while over 64% of them do not.
+[TODO Add figure showing Set-Cooike usage on cacheable responses, similar to https://20211128t100318-dot-webalmanac.uk.r.appspot.com/static/images/2020/caching/set-cookie-usage-on-cacheable-responses.png, and data from https://docs.google.com/spreadsheets/d/1-v3yR0LZIC3t4zWtqTgR3jJsKjjRMP-HATU2caP8e2c/edit#gid=104392613 Potentiall we mighe want to show 2020 vs 2021]
 
-Large area of opportunity for pages that are actually cacheable, but are just missing this directive?
-
-Fun fact `test_cookie` is the most popular desktop and mobile cookie name at 4% of all cookies.
-
-{{ figure_markup(
-  caption="TODO",
-  content="4%",
-  classes="big-number",
-  sheets_gid="455647224",
-  sql_file="todo.sql"
-) }}
-
-The top cookies attributes used on Desktop and Mobile are SameSite and Secure. SameSite is on 53% of cookies set in Desktop responses and a whopping 68% on Mobile responses.
-
-Why is it a big deal that SameSite is at 68% on mobile?
+In 2021, we see an increase in awareness regarding set-cookie and caching coexisting. While still only 5% of web pages are using the private directive with Set-Cookie, the total number of cacheable set-cookie responses decreased by 4.41%.
 
 ## What type of content are we caching?
 
