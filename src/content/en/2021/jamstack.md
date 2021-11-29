@@ -40,7 +40,7 @@ Old-fashioned:
 * Hexo
 * etc
 
-And many [more](https://jamstack.org/generators/).
+And [there are many more SSGs beyond these](https://jamstack.org/generators/).
 
 They allow building sites converted to “pure” HTML and JavaScript goodness if needed.
 
