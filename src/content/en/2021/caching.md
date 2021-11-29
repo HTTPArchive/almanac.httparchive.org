@@ -175,6 +175,7 @@ The `max-age` directive is the most commonly found since it directly defines the
   sql_file="cache_control_directives.sql"
 ) }}
 
+[TODO Leo complete the part around Cache-Control directives]
 Cache Control directives, 61% of mobile requests include a Cache-Control response header with a `max-age` directive.
 
 The most misused Cache Control directive is `set-cookie`, used for 0.07% of total directives for Desktop and 0.08% for Mobile.
@@ -189,9 +190,18 @@ Fun fact the the largest max-age value is 1625540701883604800000 seconds or 5154
   sql_file="todo.sql"
 ) }}
 
+[TODO Leo talk about `immutable`]
 Talk about `immutable` directive, 12% of desktop requests containing Cache-Control: immutable are on the "static.parastorage.com" host.
 
+### `Last-Modified` & `ETag` adoption
+
+[TODO Leo]
+
 ### `304` Not Modified status
+
+304 responses are usually much smaller than 200 responses, so we can see an improvement in page performance when we use conditional requests correctly. Revalidation on conditional requests can only be done by using either an `Etag` or `Last-Modified` header. 
+
+The distribution of 304 responses increased by 7.7% for `If-Modified-Since` in 2021, compared to 2020.
 
 {{ figure_markup(
   image="http-304-by-caching-strategy.png",
@@ -201,6 +211,8 @@ Talk about `immutable` directive, 12% of desktop requests containing Cache-Contr
   sheets_gid="1136058277",
   sql_file="valid_if_none_match_returns_304.sql"
 ) }}
+
+[TODO Leo: Better explore this part!!!]
 
 ### Validity of date strings
 
