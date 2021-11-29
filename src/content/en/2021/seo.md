@@ -8,7 +8,7 @@ analysts: [jroakes, rvth]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/11hw7zg4dpIY8XbQR5bNp5LvwbaQF0TjV0X5cK0ng8Bg/
-patrickstox_bio: Patrick is Product Advisor, Technical SEO, and Brand Ambassador at <a hreflang="en" href="https://ahrefs.com/">Ahrefs</a>. He's an organizer for the <a hreflang="en" href="https://www.meetup.com/RaleighSEO/">Raleigh SEO Meetup</a> (the most successful SEO Meetup in the US), the <a hreflang="en" href="https://www.meetup.com/beerandseo/">Beer and SEO Meetup</a>, and the <a hreflang="en" href="https://raleighseomeetup.org/conference/">Raleigh SEO Conference</a>. He also runs a Technical SEO Slack group and is a moderator for <a hreflang="en" href="https://www.reddit.com/r/TechSEO">/r/TechSEO on Reddit</a>. Patrick also likes to share random SEO knowledge in Twitter threads he calls Uncommon SEO Knowledge.<br>He's a well known conference speaker, industry blogger (mostly on the <a hreflang="en" href="https://ahrefs.com/blog/">Ahref's blog</a> these days), judge of search awards, and he helped define the role of Search Marketing Strategist for the US Department of Labor.
+patrickstox_bio: Patrick is Product Advisor, Technical SEO, and Brand Ambassador at <a hreflang="en" href="https://ahrefs.com/">Ahrefs</a>. He's an organizer for the <a hreflang="en" href="https://www.meetup.com/RaleighSEO/">Raleigh SEO Meetup</a> (the most successful SEO Meetup in the US), the <a hreflang="en" href="https://www.meetup.com/beerandseo/">Beer and SEO Meetup</a>, and the <a hreflang="en" href="https://raleighseomeetup.org/conference/">Raleigh SEO Conference</a>. He also runs a Technical SEO Slack group and is a moderator for <a hreflang="en" href="https://www.reddit.com/r/TechSEO">/r/TechSEO on Reddit</a>. Patrick also likes to share random SEO knowledge in Twitter threads he calls Uncommon SEO Knowledge. He's a well known conference speaker, industry blogger (mostly on the <a hreflang="en" href="https://ahrefs.com/blog/">Ahref's blog</a> these days), judge of search awards, and he helped define the role of Search Marketing Strategist for the US Department of Labor.
 Tomek3c_bio: Tomek is the Head of Research and Development at <a hreflang="en" href="http://onely.com/">Onely</a>. He's also building <a hreflang="en" href="https://www.ziptie.dev/">ZipTie</a>, a product aiming to help website owners get more content indexed by Google.
 In his spare time, he enjoys hiking and playing poker.
 wrttnwrd_bio: Ian founded Portent, a digital marketing agency, in 1995, and sold it to Clearlink in 2017. He's now on his own, consulting for brands he loves and speaking at conferences that provide Diet Coke. He's also trying to become a professional Dungeons & Dragons player, but it hasn't panned out.
@@ -64,12 +64,12 @@ Having a robots.txt is not a requirement. If it's returning 404 not found, Googl
 Using robots.txt allows website owners to control search engine robots. However, the data showed that as much as 16.51% of websites have no robots.txt file (mobile version check).
 
 {{ figure_markup(
-   image="image.png",
+   image="robots-txt-status-codes.png",
    caption="Breakdown of robots.txt status codes.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2062029998&format=interactive",
+   sheets_gid="91318795",
+   sql_file="robots-txt-status-codes.sql"
    )
 }}
 
@@ -101,69 +101,28 @@ Two things may cause the discrepancy between the HTTP Archive and Google data:
 Most robots.txt files are fairly small, weighing between 0-100 kb. However, we did find over 3,000 domains that have a robots.txt file size over 500 kb which is beyond Google's max limit. Rules after this size limit will be ignored.
 
 {{ figure_markup(
-   image="image.png",
+   image="robots-txt-size-distribution.png",
    caption="`robots.txt` size distribution.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1491943936&format=interactive",
+   sheets_gid="1066408164",
+   sql_file="robots-text-size.sql"
    )
 }}
 
-You can declare a rule for all robots or specify a rule for specific robots. Bots usually try to follow the most specific rule for their user-agents. "Disallow: Googlebot" will refer to Googlebot only, while "Disallow: \*" will refer to all bots that don't have a more specific rule.
+You can declare a rule for all robots or specify a rule for specific robots. Bots usually try to follow the most specific rule for their user-agents. "Disallow: Googlebot" will refer to Googlebot only, while `Disallow: *` will refer to all bots that don't have a more specific rule.
 
 We saw two popular SEO related robots: mj12bot (Majestic) and ahrefsbot (Ahrefs) in the top 5 most specified user agents.
 
-__
-
-| User-agent | Mobile | Desktop |
-| --- | -- | -- |
-| `*` | 75.22% | 74.00% |
-| adsbot-google | 6.33% | 6.27% |
-| mj12bot | 5.61% | 5.59% |
-| ahrefsbot | 4.99% | 4.96% |
-| mediapartners-google | 4.87% | 3.66% |
-
-<figure>
-  <table>
-    <thead>
-      <tr>
-        <th>User-agent</th>
-        <th>Mobile</th>
-        <th>Desktop</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>`*`</td>
-        <td>75.2%</td>
-        <td>74.0%</td>
-      </tr>
-      <tr>
-        <td>`adsbot-google`</td>
-        <td>6.3%</td>
-        <td>6.3%</td>
-      </tr>
-      <tr>
-        <td>`mj12bot`</td>
-        <td>5.6%</td>
-        <td>5.6%</td>
-      </tr>
-      <tr>
-        <td>`ahrefsbot`</td>
-        <td>5.0%</td>
-        <td>5.0%</td>
-      </tr>
-      <tr>
-        <td>`mediapartners-google`</td>
-        <td>4.9%</td>
-        <td>3.7%</td>
-      </tr>
-    </tbody>
-  </table>
-  <figcaption>{{ figure_link(caption="% of robots.txt.", sheets_gid="??", sql_file="??.sql") }}</figcaption>
-</figure>
-
+{{ figure_markup(
+   image="robots-txt-user-agent.png",
+   caption="`robots.txt` user-agent usage.",
+   description="Bar chart showing ...",
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1206728832&format=interactive",
+   sheets_gid="964313002",
+   sql_file="robots-txt-user-agent-usage.sql"
+   )
+}}
 
 ### `robots.txt` search engine breakdown
 
@@ -176,32 +135,35 @@ Robots rules related to other search engines, such as Bing, Baidu, and Yandex, a
     <thead>
       <tr>
         <th><strong>User-agent</strong></th>
-        <th><strong>Percentage of affected websites</strong></th>
+        <th><strong>Desktop</strong></th>
+        <th><strong>Mobile</strong></th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Googlebot</td>
-        <td class="numeric">3.27%</td>
+        <td class="numeric">3.3%</td>
+        <td class="numeric">3.4%</td>
       </tr>
       <tr>
         <td>Bingbot</td>
-        <td class="numeric">2.49%</td>
+        <td class="numeric">2.5%</td>
+        <td class="numeric">3.4%</td>
       </tr>
       <tr>
         <td>Baiduspider</td>
-        <td class="numeric">1.91%</td>
+        <td class="numeric">1.9%</td>
+        <td class="numeric">1.9%</td>
       </tr>
       <tr>
         <td>Yandexbot</td>
-        <td class="numeric">0.51%</td>
+        <td class="numeric">0.5%</td>
+        <td class="numeric">0.5%</td>
       </tr>
     </tbody>
   </table>
   <figcaption>{{ figure_link(caption="`robots.txt` search engine breakdown.", sheets_gid="964313002", sql_file="robots-txt-user-agent-usage.sql") }}</figcaption>
 </figure>
-
-{# TODO Checked these stats as don't match pivot table #}
 
 
 ### Canonical tags
@@ -211,12 +173,12 @@ The World Wide Web is a massive set of documents, some of which are duplicates. 
 The data shows increased adoption of canonical tags over the years. For example, 2019's edition shows that 48.34% of mobile pages were using a canonical tag. In 2020's edition, the percentage grew to 53.61%, and in 2021 we see 58.5%.
 
 {{ figure_markup(
-   image="image.png",
+   image="canonical-tag-usage.png",
    caption="Canonical tag usage.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=118545040&format=interactive",
+   sheets_gid="1066408164",
+   sql_file="pages-canonical-stats.sql"
    )
 }}
 
@@ -234,12 +196,12 @@ When implementing canonicals, there are two methods to specify canonical tags:
 2. In the HTTP headers (this method is also called: "X-robots-tag")
 
 {{ figure_markup(
-   image="image.png",
-   caption="Canonical tag usage statistics.",
+   image="canonical-raw-rendered-usage.png",
+   caption="Canonical raw versus rendered usage.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1288519273&format=interactive",
+   sheets_gid="1066408164",
+   sql_file="pages-canonical-stats.sql"
    )
 }}
 
@@ -266,12 +228,12 @@ As the Web Almanac data relies on homepages, there may be additional problems wi
 Adoption of HTTPS is still increasing. HTTPS was the default on 81.17% of mobile pages and 84.29% of desktop pages. That's up nearly 8% on mobile websites and 7% on Desktop websites year over year.
 
 {{ figure_markup(
-   image="image.png",
+   image="usage-of-https.png",
    caption="Percentage of Desktop and Mobile pages served with HTTPS..",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1826599611&format=interactive",
+   sheets_gid="1347655296",
+   sql_file="seo-stats.sql"
    )
 }}
 
@@ -284,12 +246,12 @@ Responsive design sends the same code and adjusts how the website is displayed b
  91.06% of mobile pages include the viewport meta tag, up from 89.16% in 2020. 86.44% of desktop pages also included the viewport meta tag, up from 83.82% in 2020.
 
 {{ figure_markup(
-   image="image.png",
+   image="vary-usage-agent-header-usage.png",
    caption="`Vary: User-Agent` header usage.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1985736287&format=interactive",
+   sheets_gid="478009067",
+   sql_file="html-response-vary-header-used.sql"
    )
 }}
 
@@ -306,14 +268,16 @@ The data comes from the Chrome User Experience Report (CrUX), which records real
 33% of mobile websites are now passing Core Web Vitals thresholds, up from 20% last year. Most websites are passing FID but website owners seem to be struggling to improve CLS and LCP.
 
 {{ figure_markup(
-   image="image.png",
+   image="core-web-vitals-2021.png",
    caption="Core web vitals metrics for 2021.",
-   description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
+   description="Line chart showing ...",
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1693723951&format=interactive",
+   sheets_gid="460991760",
    sql_file="sql.sql"
    )
 }}
+
+{# TODO SQL file location #}
 
 See the [Performance](./performance) chapter for more on this topic.
 
@@ -328,12 +292,12 @@ Metadata includes `<title>` elements and `<meta name="description">` tags. Metad
 In 2021, 98.77% of desktop and mobile pages had `<title>` elements. 71.1% of desktop and mobile pages had `<meta name="description">` tags.
 
 {{ figure_markup(
-   image="image.png",
+   image="title-meta-description-usage.png",
    caption="Breakdown of title and meta description usage.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=541272297&format=interactive",
+   sheets_gid="1347655296",
+   sql_file="seo-stats.sql"
    )
 }}
 
@@ -351,22 +315,22 @@ In 2021:
 Most of these stats are relatively unchanged since last year.
 
 {{ figure_markup(
-   image="image.png",
+   image="title-word-counts.png",
    caption="Number of words used in title elements.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2017837375&format=interactive",
+   sheets_gid="455169599",
+   sql_file="seo-stats.sql"
    )
 }}
 
 {{ figure_markup(
-   image="image.png",
+   image="title-character-counts.png",
    caption="Number of characters used in title elements.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1099454676&format=interactive",
+   sheets_gid="455169599",
+   sql_file="seo-stats.sql"
    )
 }}
 
@@ -384,22 +348,22 @@ In 2021:
 These numbers are relatively unchanged from last year.
 
 {{ figure_markup(
-   image="image.png",
+   image="meta-word-counts.png",
    caption="Number of words used in meta descriptions.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2013621429&format=interactive",
+   sheets_gid="455169599",
+   sql_file="seo-stats.sql"
    )
 }}
 
 {{ figure_markup(
-   image="image.png",
+   image="meta-character-counts.png",
    caption="Number of characters used in meta descriptions.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=971210715&format=interactive",
+   sheets_gid="455169599",
+   sql_file="seo-stats.sql"
    )
 }}
 
@@ -414,12 +378,12 @@ Images can directly and indirectly impact SEO as they impact image search rankin
 These numbers have changed very little since 2020.
 
 {{ figure_markup(
-   image="image.png",
+   image="number-of-images-per-page.png",
    caption="Number of images on each page.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1314615789&format=interactive",
+   sheets_gid="1483073708",
+   sql_file="image-alt-stats.sql"
    )
 }}
 
@@ -433,32 +397,32 @@ Note that missing ALT attributes may not indicate a problem. Pages may include e
 - On the median desktop and mobile pages there are zero or close to zero `<img>` tags missing ALT attributes. This is an improvement over 2020, when 2-3% of `<img>` tags on median pages were missing ALT attributes.
 
 {{ figure_markup(
-   image="image.png",
+   image="images-with-alt-attribute.png",
    caption="Percentage of images that contain `alt` attributes.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1862003290&format=interactive",
+   sheets_gid="412947118",
+   sql_file="image-alt-stats.sql"
    )
 }}
 
 {{ figure_markup(
-   image="image.png",
+   image="images-with-blank-alt-attribute.png",
    caption="Percentage of `alt` attributes that were blank.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=198831003&format=interactive",
+   sheets_gid="412947118",
+   sql_file="image-alt-stats.sql"
    )
 }}
 
 {{ figure_markup(
-   image="image.png",
+   image="images-with-missing-alt-attribute.png",
    caption="Percentage of images missing alt attributes.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=819909313&format=interactive",
+   sheets_gid="412947118",
+   sql_file="image-alt-stats.sql"
    )
 }}
 
@@ -471,12 +435,12 @@ The image loading property affects how user agents prioritize rendering and disp
 - 1% of pages use loading="auto" which uses the default browser loading method.
 
 {{ figure_markup(
-   image="image.png",
+   image="image-loading-property-usage.png",
    caption="Image loading property usage.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1305654777&format=interactive",
+   sheets_gid="55531578",
+   sql_file="image-loading-property-usage.sql"
    )
 }}
 
@@ -491,12 +455,12 @@ First, rendered page content: "Rendered" is the content of the page after the br
 - Rendered mobile pages contain 13.6% fewer words than rendered desktop pages. Note that Google is a mobile-only index. Content not on the mobile version may not get indexed.
 
 {{ figure_markup(
-   image="image.png",
-   caption="Breakdown of words per page of rendered content.",
+   image="visible-rendered-words-percentile.png",
+   caption="Visible words rendered by percentile.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=833732027&format=interactive",
+   sheets_gid="455169599",
+   sql_file="seo-stats-by-percentile.sql"
    )
 }}
 
@@ -507,12 +471,12 @@ Second, raw page content: "Raw" is the content of the page before the browser ha
 - Raw mobile pages contain 13.1% fewer words than rendered desktop pages. Note that Google is a mobile-only index. Content not on the mobile desktop may not get indexed.
 
 {{ figure_markup(
-   image="image.png",
-   caption="Breakdown of words per page of raw content.",
+   image="visible-raw-words-percentile.png",
+   caption="Visible words raw by percentile.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=58186900&format=interactive",
+   sheets_gid="455169599",
+   sql_file="seo-stats-by-percentile.sql"
    )
 }}
 
@@ -531,12 +495,12 @@ Like words on the page, structured data can be modified with JavaScript.
 On 1.73% of mobile pages and 1.42% of desktop pages structured data is added by JavaScript where it didn't exist in the initial HTML response.
 
 {{ figure_markup(
-   image="image.png",
+   image="structured-data-usage.png",
    caption="Structure data usage.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1924313131&format=interactive",
+   sheets_gid="1347655296",
+   sql_file="seo-stats.sql"
    )
 }}
 
@@ -547,12 +511,12 @@ There are several ways to include structured data on a page: JSON-LD, microdata,
 Among websites implementing structured data, over 36% of desktop and mobile pages use microdata and less than 3% of pages use RDFa or microformats2.
 
 {{ figure_markup(
-   image="image.png",
+   image="structured-data-formats.png",
    caption="Breakdown of structured data formats.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1433352391&format=interactive",
+   sheets_gid="1113852331",
+   sql_file="structured-data-formats.sql"
    )
 }}
 
@@ -563,12 +527,14 @@ Structured data adoption is up a bit since last year. It's used on 33.17% of pag
 The most popular schema types found on homepages are WebSite, SearchAction, WebPage. SearchAction is what powers the Sitelinks Search Box.
 
 {{ figure_markup(
-   image="image.png",
+   image="most-popular-schema-types.png",
    caption="Most popular schema types.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=242663990&format=interactive",
+   sheets_gid="1580260783",
+   sql_file="structured-data-schema-types.sql",
+   width=600,
+   height=532
    )
 }}
 
@@ -583,24 +549,24 @@ For main headings, more pages (71.9%) have H2s than have H1s (65.4%). There's no
 There was very little difference between desktop and mobile heading usage, nor was there a major change versus 2020.
 
 {{ figure_markup(
-   image="image.png",
-   caption="Heading tag usage.",
+   image="heading-element-usage.png",
+   caption="Heading element usage.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1197492338&format=interactive",
+   sheets_gid="1347655296",
+   sql_file="seo-stats.sql"
    )
 }}
 
 However, a lower percentage of pages include _non-empty_`<h>` elements, particularly H1s. Websites often wrap logo-images in `<H1>` elements on homepages, and this may explain the discrepancy.
 
 {{ figure_markup(
-   image="image.png",
-   caption="Non-empty heading tag usage.",
+   image="non-empty-heading-element-usage.png",
+   caption="Non-empty heading element usage.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2102902536&format=interactive",
+   sheets_gid="1347655296",
+   sql_file="seo-stats.sql"
    )
 }}
 
@@ -617,12 +583,12 @@ Internal links are links to other pages on the same site. Pages had less links o
 The data shows that the median number of internal links on desktop is 16% higher mobile, 64 vs 55 respectively. It's likely this is because developers tend to minimize the navigation menu on mobile to make it easier to use.
 
 {{ figure_markup(
-   image="image.png",
+   image="outgoing-internal-link.png",
    caption="Internal links from homepages.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1929473622&format=interactive",
+   sheets_gid="455169599",
+   sql_file="seo-stats-by-percentile.sql"
    )
 }}
 
@@ -631,12 +597,12 @@ The most popular websites (top 1000 according to CrUX data) have more outgoing i
 External links are links from one website to a different site. The data shows less external links on the mobile versions of the pages.
 
 {{ figure_markup(
-   image="image.png",
+   image="outgoing-external-links.png",
    caption="External links from homepages.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=876769621&format=interactive",
+   sheets_gid="455169599",
+   sql_file="seo-stats-by-percentile.sql"
    )
 }}
 
@@ -647,22 +613,22 @@ The numbers are nearly identical to 2020. Despite Google rolling out mobile firs
 While a significant portion of links on the web are text based, a portion also link images to other pages. 9.2% of links on desktop pages and 8.7% of links on mobile pages are image links. With image links, the alt attributes set for the image act as anchor text to provide additional context on what the pages are about.
 
 {{ figure_markup(
-   image="image.png",
+   image="text-links.png",
    caption="Text links from homepages.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1700739999&format=interactive",
+   sheets_gid="455169599",
+   sql_file="seo-stats-by-percentile.sql"
    )
 }}
 
 {{ figure_markup(
-   image="image.png",
+   image="image-links.png",
    caption="Image links from homepages.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1217720785&format=interactive",
+   sheets_gid="455169599",
+   sql_file="seo-stats-by-percentile.sql"
    )
 }}
 
@@ -677,12 +643,12 @@ Rel=follow and rel=dofollow appear on more pages than rel=ugc and rel=sponsored.
 Rel=nofollow was found on 30.65% of mobile pages, similar to last year. With the attribute used so much, it's no surprise that Google has changed nofollow to a hint which means they can choose whether or not they respect it.
 
 {{ figure_markup(
-   image="image.png",
+   image="rel-attibute-usage.png",
    caption="Rel attribute usage.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1672151299&format=interactive",
+   sheets_gid="1936997045",
+   sql_file="anchor-rel-attribute-usage.sql"
    )
 }}
 
@@ -693,12 +659,12 @@ Rel=nofollow was found on 30.65% of mobile pages, similar to last year. With the
 However, AMP adoption continued to increase in 2021. 0.09% of desktop pages now include the AMP attribute vs 0.22% for mobile pages. This is up from 0.06% on desktop pages and 0.15% on mobile pages in 2020.
 
 {{ figure_markup(
-   image="image.png",
+   image="amp-markup-types.png",
    caption="AMP attribute usage.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1787667985&format=interactive",
+   sheets_gid="718210755",
+   sql_file="markup-stats.sql"
    )
 }}
 
@@ -717,12 +683,14 @@ The most popular hreflang attribute is "en" (English version). 4.75% of mobile h
 X-default (also called the fallback version) is used in 2.56% of cases (mobile). Other popular languages addressed by hreflang attributes are French and Spanish.
 
 {{ figure_markup(
-   image="image.png",
+   image="hreflang-usage.png",
    caption="Top hreflang tag attributes chart.",
    description="Bar chart showing ...",
-   chart_url="sheet_url",
-   sheets_gid="gid",
-   sql_file="sql.sql"
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1149395895&format=interactive",
+   sheets_gid="866829014",
+   sql_file="hreflang-link-tag-usage.sql",
+   width=600,
+   height=546
    )
 }}
 
@@ -737,7 +705,17 @@ Using an HTTP server response is the most popular way of implementing "content-l
 
 Using the HTML tag is less popular, with content-language appearing on just 3.27% of mobile websites.
 
-{# TODO (Editor) Content Language usage (HTML tag + HTTP headers combined) chart #}
+{{ figure_markup(
+   image="language-usage-html-http.png",
+   caption="Language usage (HTML and HTTP header).",
+   description="Bar chart showing ...",
+   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2048466165&format=interactive",
+   sheets_gid="933228304",
+   sql_file="content-language-usage.sql",
+   width=600,
+   height=529
+   )
+}}
 
 ## Conclusion
 
