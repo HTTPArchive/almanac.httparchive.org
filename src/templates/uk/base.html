@@ -91,14 +91,18 @@
 {% block reactions %}Реакції{% endblock %}
 {% block source %}Переглянути джерело{% endblock %}
 
-{% block like %}Подобається{% endblock %}
+{% block like %}лайк{% endblock %}
 {% block repost %}репост{% endblock %}
 {% block reply %}відповідь{% endblock %}
 {% block mention %}згадка{% endblock %}
-{% block likes %}Лайки{% endblock %}
-{% block reposts %}репости{% endblock %}
-{% block replies %}відповідає{% endblock %}
-{% block mentions %}згадує{% endblock %}
+{% block likes %}лайків{% endblock %}
+{% block reposts %}репостів{% endblock %}
+{% block replies %}відповідей{% endblock %}
+{% block mentions %}згадок{% endblock %}
+{% block likesAlt %}лайки{% endblock %}
+{% block repostsAlt %}репости{% endblock %}
+{% block repliesAlt %}відповіді{% endblock %}
+{% block mentionsAlt %}згадки{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} у Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} на GitHub{% endmacro %}
