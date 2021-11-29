@@ -295,7 +295,7 @@ Talk about 12% of mobile pages score 0.9 or higher on the long Time To Live (TTL
 
 The TTL of a cached object defines how long it can be stored in a cache, typically measured in seconds.
 
-### Lighthouse waysted bytes
+### Lighthouse wasted bytes
 Talk about 59% of mobile pages could save 0 - 1 MB with caching
 
 ## Future
