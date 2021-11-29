@@ -250,9 +250,7 @@ Why is it a big deal that SameSite is at 68% on mobile?
 
 ## What type of content are we caching?
 
-Talk about what kind of resources are we caching, (resource age groups: party, type).
-
-Shows the majority of resources are highly cacheable
+We talk about the majority of resources are highly cacheable
 
 {{ figure_markup(
   image="caching-by-resource-type.png",
@@ -264,25 +262,11 @@ Shows the majority of resources are highly cacheable
   sql_file="non_cacheable_by_resource_type.sql"
 ) }}
 
-The median age of HTML resources cached for mobile is 9 weeks, while for text the median age is 1220 weeks (23.4 years).
+- Cacheable vs non-cacheable response
+- Distribution of TTL in cacheable response
+- Cache TTL percentiles by resource type
+- Distribution of cacheability by content type
 
-Talk about, total number of requests with comparable Last-Modified and expiration times, not necessarily all requests.
-
-Talk about 54% of mobile resources are older than their TTL.
-
-{{ figure_markup(
-  caption="TODO",
-  content="54%",
-  classes="big-number",
-  sheets_gid="768623684",
-  sql_file="todo.sql"
-) }}
-
-Total number of requests with comparable Last-Modified and expiration times, not necessarily all requests.
-
-Talk about, 60% of 1P mobile resources are older than their TTL, which is more common than 3P resources (45%).
-
-Explain why this is significant- 60% of 1st Party mobile resources are older than their TTL- is this because 1P are more important or crucial? Because 3P are being deprecated?
 
 ## How do cache TTLs compare to resource age?
 Between 1st and 3rd party resources:  
@@ -306,6 +290,14 @@ Considerations after reviewing this data:
 This data shows how 1st parties have prioritized refreshing HTML content which usually holds the link to JS and CSS files, while 3rd party providers that are mostly CSS and script-driven, like browser extensions, have prioritized keeping their CSS up-to-date.
 
 Mobile resources with a cache TTL that was considered too short compared to its content age have seen an improvement since 2020. 60.2% in 2020 but now 54% in 2021.
+
+{{ figure_markup(
+  caption="TODO",
+  content="54%",
+  classes="big-number",
+  sheets_gid="768623684",
+  sql_file="todo.sql"
+) }}
 
 Developers are getting better at setting the cache duration more accurately to the content age, resulting in more responsible caching.
 
