@@ -291,12 +291,16 @@ Shows the majority of resources are highly cacheable
 ) }}
 
 ### Lighthouse TTL score
-Talk about 12% of mobile pages score 0.9 or higher on the long Time To Live (TTL) audit
+Based on the Lighthouse caching TTL score, we have seen an improvement in pages ranked with a perfect 100 score increase from 3.3% in 2020 to 4.4% in 2021.
 
-The TTL of a cached object defines how long it can be stored in a cache, typically measured in seconds.
+The score reflects whether the pages can benefit from additional caching policy improvements. Even though we are excited to see 31% of pages scoring above the 50 percentile score, we still see a large potential in 52% of pages that have a below-25 percentile score.
+
+[TODO Add MAYBE a figure for Distribution of Lighthouse caching TTL score OR maybe just of the numbers]
+
+This makes us consider that even though web pages have some level of caching, the way the policies are used is outdated and not optimized to the latest state of their products.
 
 ### Lighthouse wasted bytes
-From 2020 to 2021 there was a 3.28% improvement in wasted bytes across all audited pages. This lowered the percentage of pages that waste 1 MB from 42.8% to 39.5%, showing a considerable trend from the community in building products that are less costly for international users with paid internet data plans.
+From 2020 to 2021 on repeated views there was a 3.28% improvement in wasted bytes across all audited pages. This lowered the percentage of pages that waste 1 MB from 42.8% to 39.5%, showing a considerable trend from the community in building products that are less costly for international users with paid internet data plans.
 
 [TODO Add figure for Distribution of potential byte savings from the Lighthouse caching audit]
 
