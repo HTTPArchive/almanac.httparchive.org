@@ -20,7 +20,12 @@ featured_stat_label_3: Median value of resource wights among Jamstack sites
 
 ## Introduction
 
-Jamstack has revolutionized the way we think about building for the web by providing a simpler developer experience, better performance, lower cost and greater scalability - [more](https://jamstack.wtf/). Jamstack stands on JavaScript, API, and Markup architecture. These 3 foundations are decoupled and the Jamstack site can be built purely using markup. Using pure HTML - is “kinda” Jamstack, but it’s really hard to scale. Lucky for us, there's a huge ecosystem of Static Site Generators (SSGs).
+ <figure>
+  <blockquote>Jamstack has revolutionized the way we think about building for the web by providing a simpler developer experience, better performance, lower cost and greater scalability.</blockquote>
+  <figcaption>— <cite><a hreflang="en" href="https://jamstack.wtf/">Jamstack.wtf</a></cite></figcaption>
+</figure>
+
+Jamstack stands on JavaScript, API, and Markup architecture. These 3 foundations are decoupled and the Jamstack site can be built purely using markup. Using pure HTML - is “kinda” Jamstack, but it’s really hard to scale. Lucky for us, there's a huge ecosystem of Static Site Generators (SSGs).
 
 JavaScript based:
 * Next.js
