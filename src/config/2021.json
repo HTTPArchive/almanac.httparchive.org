@@ -132,6 +132,13 @@
           "title": "Ecommerce",
           "slug": "ecommerce",
           "todo": "true"
+        },
+        {
+          "part": "III",
+          "chapter_number": "17",
+          "title": "Jamstack",
+          "slug": "jamstack",
+          "hero_dir": "2020"
         }
       ]
     },
