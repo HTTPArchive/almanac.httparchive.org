@@ -37,6 +37,35 @@ function parseMentions(webmentions, mentionType) {
   return filteredMentions;
 }
 
+// Parse webmentions for individual category
+function setReactionsLabel(length, reactionLabel) {
+
+  const lang = document.querySelector("html").getAttribute("lang");
+
+  let plural_rules;
+  try {
+    plural_rules = new Intl.PluralRules(lang);
+  } catch {
+    return;
+  }
+
+  // Singular
+  if (plural_rules.select(length) === "one") {
+    reactionLabel.textContent = reactionLabel.getAttribute("data-singular");
+    return;
+  }
+
+  // Few - alternative plural (Used by "ru" and "uk")
+  if (reactionLabel.getAttribute("data-plural-alt") !== "" && plural_rules.select(length) === "few") {
+    reactionLabel.textContent = reactionLabel.getAttribute("data-plural-alt");
+      return;
+  }
+
+  // Everything else sticks with the default plural
+  return;
+
+}
+
 // Renders webmention into different sections, based on the type
 function renderReactions(webmentions, reactionType, wmProperty) {
   // Process webmentions
@@ -49,8 +78,9 @@ function renderReactions(webmentions, reactionType, wmProperty) {
   // Add the count to the reaction tab
   document.querySelector(`#${reactionType}-count`).textContent = reactions.length;
   const reactionLabel = document.querySelector(`#${reactionType}-label`);
-  if (reactions && reactions.length ===1) {
-    reactionLabel.textContent = reactionLabel.getAttribute("data-singular");
+
+  if (reactions && reactions.length) {
+    setReactionsLabel(reactions.length, reactionLabel);
   }
 
   // Render logic for the reaction types

@@ -158,19 +158,19 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
     <div class="reaction-tabs" role="tablist" aria-label="{{ self.reactions() }}">
       <button id="likes-tab" role="tab" aria-selected="true" aria-controls="likes-panel" tabindex="0">
         <span id="likes-count">0</span>
-        <span id="likes-label" data-plural="{{ self.like() }}" data-singular="{{ self.likes() }}">{{ self.likes() }}</span>
+        <span id="likes-label" data-singular="{{ self.like() }}" data-plural="{{ self.likes() }}" data-plural-alt="{{ self.likesAlt() }}">{{ self.likes() }}</span>
       </button>
       <button id="reposts-tab" role="tab" aria-selected="false" aria-controls="reposts-panel" tabindex="-1">
         <span id="reposts-count">0</span>
-        <span id="reposts-label" data-plural="{{ self.repost() }}" data-singular="{{ self.reposts() }}">{{ self.reposts() }}</span>
+        <span id="reposts-label" data-singular="{{ self.repost() }}" data-plural="{{ self.reposts() }}" data-plural-alt="{{ self.repostsAlt() }}">{{ self.reposts() }}</span>
       </button>
       <button id="replies-tab" role="tab" aria-selected="false" aria-controls="replies-panel" tabindex="-1">
         <span id="replies-count">0</span>
-        <span id="replies-label" data-plural="{{ self.reply() }}" data-singular="{{ self.replies() }}">{{ self.replies() }}</span>
+        <span id="replies-label" data-singular="{{ self.reply() }}" data-plural="{{ self.replies() }}" data-plural-alt="{{ self.repliesAlt() }}">{{ self.replies() }}</span>
       </button>
       <button id="mentions-tab" role="tab" aria-selected="false" aria-controls="mentions-panel" tabindex="-1">
         <span id="mentions-count">0</span>
-        <span id="mentions-label" data-plural="{{ self.mention() }}" data-singular="{{ self.mentions() }}">{{ self.mentions() }}</span>
+        <span id="mentions-label" data-singular="{{ self.mention() }}" data-plural="{{ self.mentions() }}" data-plural-alt="{{ self.mentionsAlt() }}">{{ self.mentions() }}</span>
       </button>
     </div>
     <div id="likes-panel" role="tabpanel" tabindex="0" aria-labelledby="likes-tab">
