@@ -469,7 +469,7 @@ Second, raw page content: "Raw" is the content of the page before the browser ha
 
 - The median _raw_ desktop page contains 369 words, versus 360 words in 2020.
 - The median _raw_ mobile page contains 321 words, versus 312 words in 2020.
-- Raw mobile pages contain 13.1% fewer words than rendered desktop pages. Note that Google is a mobile-only index. Content not on the mobile desktop may not get indexed.
+- Raw mobile pages contain 13.1% fewer words than rendered desktop pages. Note that Google is a mobile-only index. Content not on the mobile HTML version may not get indexed.
 
 {{ figure_markup(
    image="visible-raw-words-percentile.png",
