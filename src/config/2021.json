@@ -1000,13 +1000,6 @@
       ],
       "github": "fischbacher"
     },
-    "RMHolmlund": {
-      "name": "Rebecca Holmlund",
-      "teams": [
-        "editors"
-      ],
-      "github": "RMHolmlund"
-    },
     "rrajiv": {
       "name": "Rajiv Ramnath",
       "teams": [
@@ -1014,6 +1007,14 @@
       ],
       "github": "rrajiv",
       "linkedin": "rajivramnath"
+    },
+    "RMHolmlund": {
+      "name": "Rebecca Holmlund",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/61608378?v=4&s=200",
+      "github": "RMHolmlund"
     },
     "rviscomi": {
       "name": "Rick Viscomi",
