@@ -365,8 +365,6 @@ When sending resources over the network, it becomes important to look at an effi
 
 Most of the compressed resources use either <a hreflang="en" href="https://www.gnu.org/software/gzip/manual/gzip.html">gzip</a> compression, <a hreflang="en" href="https://github.com/google/brotli">brotli</a> (br) compression, or a compression technique that is not set.
 
-{# TODO - should we have links for gzip and brotli? i think other chapters do #}
-
 {{ figure_markup(
   image="compression-requests.png",
   caption="Compression methods usage percentage by request.",
@@ -677,9 +675,7 @@ Now that we've looked at how we get the JavaScript, what are we using it for?
 
 ### AJAX
 
-A lot of JavaScript that is written is used to communicate with servers through asynchronous requests to receive information in various formats. AJAX, or asynchronous JavaScript and XML, is typically used to send and receive data in JSON, XML, HTML, text formats.
-
-{# TODO - "AJAX, or asynchronous JavaScript and XML," is this a list of 3 or grouped together? #}
+A lot of JavaScript that is written is used to communicate with servers through asynchronous requests to receive information in various formats. _Asynchronous JavaScript and XML_ (AJAX), is typically used to send and receive data in JSON, XML, HTML, text formats.
 
 With multiple ways to send and receive data on the web, let's look into how many async requests are sent per page.
 
