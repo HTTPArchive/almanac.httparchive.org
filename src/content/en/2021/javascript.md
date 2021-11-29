@@ -26,7 +26,7 @@ There is a lot that happens in the browser when rendering the application, from 
 
 ## How much JavaScript do we load?
 
-They say that "to measure is the key towards improvement". To improve the usage of JavaScript in our applications, we need to measure how much of the JavaScript being shipped is actually required. Let's dig in to understand the distribution of JavaScript bytes per page, considering what a major role it plays in the web setup.
+They say, "to measure is the key towards improvement". To improve the usage of JavaScript in our applications, we need to measure how much of the JavaScript being shipped is actually required. Let's dig in to understand the distribution of JavaScript bytes per page, considering what a major role it plays in the web setup.
 
 {{ figure_markup(
   image="javascript-bytes-per-page.png",
