@@ -204,19 +204,11 @@ Talk about `immutable` directive, 12% of desktop requests containing Cache-Contr
 
 ### Validity of date strings
 
-Talk about invalid date, last modified and expires, (0.11% of dates in desktop requests are invalid).
+The three main HTTP headers used to represent timestamps, `Date`,`Last-Modified` and `Expires` all use a date formatted string. The `Date` HTTP response header is almost always generated automatically by the web server, meaning that invalid values are extremely rare. Still, in the rare event that the date is set incorrectly it can affect cacheability on the response on which it is served. 
 
-Desktop - Valid date strings:
-99.18% using date, 72.57% using last-modified, 55.48% using expires
+[TODO Add figure showing on Mobile Invalid date strings between pct_using_invalid_date, pct_using_invalid_last_modified and  pct_using_invalid_expires, data from 2020 https://docs.google.com/spreadsheets/d/1fYmpSN3diOiFrscS75NsjfsrKXzxxhUMNcYSqXnQJQU/edit#gid=1338572274 and 2021 https://docs.google.com/spreadsheets/d/1-v3yR0LZIC3t4zWtqTgR3jJsKjjRMP-HATU2caP8e2c/edit#gid=1680471251 Potentiall we mighe want to show 2020 vs 2021]
 
-Mobile - Valid date strings:
-99.07% using date, 70.55% using last-modified, 55.57% using expires
-
-Although 99% of both Desktop and Mobile pages use valid date strings, only 55% of Desktop and 56% of Mobile pages use 'expires'. Last-modified is used at a higher percentage, at 73% for Desktop and 71% for Mobile. While the amount of invalid 'date' and 'last-modified' directives is less than 1%, 2.75% of Mobile and 3.20% of Desktop 'expires' are being used incorrectly.
-
-What is or would be the impact from using expires more effectively?
-
-Could we possibly see big wins from getting more consistent here?
+Between 2020 and 2021, the percent using invalid date improved by a .5% but got worse for last-modified and expires showing that it was related to how the date was set on caching.
 
 ### Vary
 
