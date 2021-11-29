@@ -355,7 +355,14 @@ This makes us consider that even though web pages have some level of caching, th
 
 Based on **Lighthouse wasted bytes** from 2020 to 2021 on repeated views there was a 3.28% improvement in wasted bytes across all audited pages. This lowered the percentage of pages that waste 1 MB from 42.8% to 39.5%, showing a considerable trend from the community in building products that are less costly for international users with paid internet data plans.
 
-[TODO Add figure for Distribution of potential byte savings from the Lighthouse caching audit]
+{{ figure_markup(
+  image="lighthouse-caching-byte-savings.png",
+  caption="Distribution of potential byte savings from caching.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=1045307868&format=interactive",
+  sheets_gid="469776025",
+  sql_file="cache_wastedbytes_lighthouse.sql"
+) }}
 
 Something we're looking forward to seeing in the coming years is an increase in the percentage of pages that have 0 wasted bytes, which at the moment is only at 1.34%.
 
