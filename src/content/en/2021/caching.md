@@ -192,7 +192,14 @@ Fun fact the the largest max-age value is 1625540701883604800000 seconds or 5154
 Talk about `immutable` directive, 12% of desktop requests containing Cache-Control: immutable are on the "static.parastorage.com" host.
 
 ### `304` Not Modified status
-
+{{ figure_markup(
+  image="http-304-by-caching-strategy.png",
+  caption="HTTP 304 response rate by caching strategy.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=1965033294&format=interactive",
+  sheets_gid="1136058277",
+  sql_file="valid_if_none_match_returns_304.sql"
+) }}
 ### Validity of date strings
 
 Talk about invalid date, last modified and expires, (0.11% of dates in desktop requests are invalid).
