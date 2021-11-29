@@ -5,7 +5,7 @@ description: JavaScript chapter of the 2021 Web Almanac covering the usage of Ja
 authors: [NishuGoel]
 reviewers: [soulcorrosion, mgechev, rviscomi, pankajparkar, tunetheweb]
 analysts: [pankajparkar, max-ostapenko, rviscomi]
-editors: [rviscomi, pankajparkar]
+editors: [rviscomi, pankajparkar, shantsis]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1zU9rHpI3nC6jTz3xgN6w13afW7x34xAKBh2IPH-lVxk/
 NishuGoel_bio: Nishu Goel is an engineer at <a hreflang="en" href="http://webdataworks.io/">Web DataWorks</a>. She is a Google Developer Expert for Web Technologies and Angular, Microsoft MVP for Developer Technologies, and the author of Step by Step Guide Angular Routing (BPB, 2019) and A Hands-on Guide to Angular (Educative, 2021). Find her writings at <a hreflang="en" href="https://unravelweb.dev/">unravelweb.dev</a>.
@@ -16,18 +16,19 @@ featured_stat_2: 45.6%
 featured_stat_label_2: Images are the most requested content type on pages loaded by JavaScript.
 featured_stat_3: 2.7%
 featured_stat_label_3: Percent of desktop pages using custom elements.
-unedited: true
 ---
 
 ## Introduction
 
-The speed and consistency that the JavaScript language has evolved with over the past years is tremendous. While in the past it was used primarily for client-side, it has taken a very important and respected place in the world of building services and server-side tools. JavaScript has evolved to a point where it is not only possible to create faster applications but also to <a hreflang="en" href="https://blog.stackblitz.com/posts/introducing-webcontainers/">run servers within browsers</a>.
+The speed and consistency in which the JavaScript language has evolved with over the past years is tremendous. While in the past it was used primarily for client-side, it has taken a very important and respected place in the world of building services and server-side tools. JavaScript has evolved to a point where it is not only possible to create faster applications but also to <a hreflang="en" href="https://blog.stackblitz.com/posts/introducing-webcontainers/">run servers within browsers</a>.
 
 There is a lot that happens in the browser when rendering the application, from downloading JavaScript to parsing, compiling and executing it. Let's start with that first step and try to understand how much JavaScript is actually requested by pages.
 
 ## How much JavaScript do we load?
 
-To measure is the key towards improvement, they say. To improve the usage of JavaScript in our applications, we need to measure how much JavaScript being shipped is actually required. Let's dig in to understand the distribution of JavaScript bytes per page, considering what a major role it plays in the web setup.
+To measure is the key towards improvement, they say. To improve the usage of JavaScript in our applications, we need to measure how much of the JavaScript being shipped is actually required. Let's dig in to understand the distribution of JavaScript bytes per page, considering what a major role it plays in the web setup.
+
+{# TODO - "To measure is the key towards improvement, they say." - is this a quotation or a reference to something? the phrasing implies it #}
 
 {{ figure_markup(
   image="javascript-bytes-per-page.png",
@@ -39,28 +40,28 @@ To measure is the key towards improvement, they say. To improve the usage of Jav
   )
 }}
 
-The 50th percentile (median) desktop page loads 463 kilobytes of JavaScript, whereas a median page load on a mobile device sends 427 kilobytes.
+The 50th percentile (median) desktop page loads 463 KB of JavaScript, whereas a median page load on a mobile device sends 427 KB.
 
-Compared to [2019's results](../2019/javascript#fig-2), this shows an increase of 18.4% in the usage of JavaScript for desktop devices and an increase of 18.9% on mobile devices. As we see the trend is towards using more JavaScript over the years, this could slow down the rendering of an application given the additional CPU work. It's worth to note that these statistics represent the transferred bytes which could be compressed responses and thus, the actual cost to the CPU could be significantly higher.
+Compared to [2019's results](../2019/javascript#fig-2), this shows an increase of 18.4% in the usage of JavaScript for desktop devices and an increase of 18.9% on mobile devices. As we see the trend is moving towards using more JavaScript over the years, this could slow down the rendering of an application given the additional CPU work. It's worth noting that these statistics represent the transferred bytes which could be compressed responses and thus, the actual cost to the CPU could be significantly higher.
 
 Let's have a look at how much JavaScript is actually required to be loaded on the page.
 
 {{ figure_markup(
   image="unused-javascript-bytes-per-page.png",
   caption="Distribution of the amount of unused JavaScript bytes on mobile.",
-  description="Bar chart showing the distribution of unused JavaScript bytes per page. The median mobile loads 155 KBs of JavaScript that is unused. The 10th, 25th, 50th, 75th, and 90th percentiles for mobile are: 20KB, 64KB, 155KB, 329KB, 598KB.",
+  description="Bar chart showing the distribution of unused JavaScript bytes per page. The median mobile loads 155 KB of JavaScript that is unused. The 10th, 25th, 50th, 75th, and 90th percentiles for mobile are: 20 KB, 64 KB, 155 KB, 329 KB, 598 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=656542402&format=interactive",
   sheets_gid="1704839581",
   sql_file="unused_js_bytes_distribution.sql"
   )
 }}
 
-The median page loads 155 kilobytes of unused JavaScript and at the 90th percentile, 598 kilobytes of JavaScript are unused.
+The median page loads 155 KB of unused JavaScript and at the 90th percentile, 598 KB of JavaScript are unused.
 
 {{ figure_markup(
   image="unused-vs-total-javascript.png",
   caption="Percent of JavaScript loaded vs. JavaScript unused on mobile page.",
-  description="Bar chart showing the difference in the loaded JavaScript and the unused JavaScript from the total loaded. Out of 427KB of loaded JavaScript on a median mobile page, 155KB is unused. 36.2% of the total loaded JavaScript goes unused adding to the CPU cost.",
+  description="Bar chart showing the difference in the loaded JavaScript and the unused JavaScript from the total loaded. Out of 427 KB of loaded JavaScript on a median mobile page, 155 KB is unused. 36.2% of the total loaded JavaScript goes unused adding to the CPU cost.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=890651092&format=interactive",
   sheets_gid="1521645399",
   sql_file="unused_js_bytes_distribution.sql"
@@ -84,7 +85,9 @@ One step towards improving the percentage is to look at the <a hreflang="en" hre
 
 ### JavaScript requests per page
 
-One of the contributing factors towards slow rendering of the web page could be the requests made on the page, especially when they are blocking. It would be interesting to look at the number of JavaScript requests made per page on both desktop and mobile devices.
+One of the contributing factors towards slow rendering of the web page could be the requests made on the page, especially when they are blocking. It's therefore of interest to look at the number of JavaScript requests made per page on both desktop and mobile devices.
+
+{# TODO - blocking something or just blocking? that's a lack of domain knowledge question :) #}
 
 {{ figure_markup(
   image="js-requests-per-page.png",
@@ -98,7 +101,7 @@ One of the contributing factors towards slow rendering of the web page could be 
 
 The median desktop page loads 21 JavaScript resources (`.js` and `.mjs` requests), going up to 59 resources at the 90th percentile.
 
-As compared to the [last year's results](../2020/javascript#request-count), there has been a marginal increase in the number of JavaScript resources requested in 2021, with the median number of JavaScript resources loaded being 20 for desktop pages and 19 for mobile.
+As compared with [last year's results](../2020/javascript#request-count), there has been a marginal increase in the number of JavaScript resources requested in 2021, with the median number of JavaScript resources loaded being 20 for desktop pages and 19 for mobile.
 
 {{ figure_markup(
   image="js-resources-over-years.png",
@@ -112,7 +115,7 @@ As compared to the [last year's results](../2020/javascript#request-count), ther
 
 The trend is gradually increasing in the number of JavaScript resources loaded on a page. This would make one wonder if the number should actually increase or decrease considering that fewer JavaScript requests might lead to better performance in some cases but not in others.
 
-This is where the recent advances in the HTTP protocol come in and the idea of reducing the number of JavaScript requests for better performance gets inaccurate. With the introduction of HTTP/2 and HTTP/3 the overhead of HTTP requests has significantly reduced so requesting the same resources over more requests is not necessarily a bad thing anymore. Read more about these protocols in the [HTTP](./http) chapter.
+This is where the recent advances in the HTTP protocol come in and the idea of reducing the number of JavaScript requests for better performance gets inaccurate. With the introduction of HTTP/2 and HTTP/3 the overhead of HTTP requests has significantly reduced, so requesting the same resources over more requests is not necessarily a bad thing anymore. To learn more about these protocols, see the [HTTP chapter](./http).
 
 ## How is JavaScript requested?
 
@@ -122,7 +125,7 @@ JavaScript can be loaded into a page in a number of different ways, and how it i
 
 When loading a website, the browser renders the HTML and requests the appropriate resources. It consumes the polyfills referenced in the code for the effective rendering and functioning of the page. The modern browsers that support newer syntax like [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [async functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function), etc. do not need loads of polyfills to make things work and therefore, should not have to.
 
-This is when differential loading takes care of things. Specifying the `type="module"` attribute would serve the modern browsers the bundle with modern syntax and fewer polyfills, if any. Similarly, older browsers that lack support for modules will be served the bundle with required polyfills and transpiled code syntax with attribute `type="nomodule"`. Read more about [the usage of module/nomodule here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#applying_the_module_to_your_html)
+This is when differential loading takes care of things. Specifying the `type="module"` attribute would serve the modern browsers the bundle with modern syntax and fewer polyfills, if any. Similarly, older browsers that lack support for modules will be served the bundle with required polyfills and transpiled code syntax with attribute `type="nomodule"`. Read more about [the usage of module/nomodule here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#applying_the_module_to_your_html).
 
 Let's look at the data to understand the adoption of these attributes.
 
@@ -157,9 +160,11 @@ It is important to note that with the <a hreflang="en" href="https://docs.micros
 
 ### `async` and `defer`
 
-JavaScript loading could be render blocking unless it is specified as deferred or async. This is one of the contributing factors to the slow website loading as often JavaScript (or at least not all the JavaScript) is needed for the initial render.
+JavaScript loading could be render blocking unless it is specified as deferred or async. This is one of the contributing factors to the slow website loading as often times JavaScript (or at least some of it) is needed for the initial render.
 
 However, loading the JavaScript asynchronously or deferring it helps in some ways to improve this experience. The `async` and `defer` attribute load the scripts asynchronously. The scripts with `async` attribute are executed irrespective of the order in which they are defined, however, `defer` executes the scripts only after the document is completely parsed and ensures their execution will take place in the specified order. We will see the statistics for how many pages actually specify these attributes for the JavaScript requested in the browser.
+
+{# TODO - not sure how to rephrase "We will see the statistics" to say the stats are right below this paragraph #}
 
 <figure>
   <table>
@@ -202,7 +207,7 @@ This year, we improved our measures of calculating these figures by looking at t
   )
 }}
 
-It is found that 35.6% of mobile pages use the `async` and `defer` attributes together. This was counted using a <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/javascript.js">custom metric</a> that measures the usage of these attributes on the rendered DOM. Based on the custom metric, the variation is a lot as compared to the previous year. When we dived deeper to understand this gap, it was found that a lot of pages update these attributes dynamically after the pages have already been loaded. This is one reason why more results are found using the results from the custom metric (rendered DOM as opposed to initial DOM).
+We found that 35.6% of mobile pages use the `async` and `defer` attributes together. This was counted using a <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/javascript.js">custom metric</a> that measures the usage of these attributes on the rendered DOM. Based on the custom metric, the variation is a lot as compared to the previous year. When we dived deeper to understand this gap, it was found that a lot of pages update these attributes dynamically after the pages have already been loaded. This is one reason why more results are found using the results from the custom metric (rendered DOM as opposed to initial DOM).
 
 A typical <a hreflang="en" href="https://www.tntsupercenter.com/">example website</a>, loads the below script:
 
@@ -220,7 +225,7 @@ A typical <a hreflang="en" href="https://www.tntsupercenter.com/">example websit
 According to [Wikipedia](https://en.wikipedia.org/wiki/Matomo_(software)), Piwik (now known as Matomo):
 <blockquote>is a free and open source web analytics application developed by a team of international developers, that runs on a PHP/MySQL webserver. It tracks online visits to one or more websites and displays reports on these visits for analysis. As of June 2018, Matomo was used by over 1,455,000 websites, or 1.3% of all websites with known traffic analysis tools...</blockquote>
 
-This information strongly suggests that a lot of the increase is due to these marketing and analytics providers that dynamically inject these async/defer scripts into the page.
+This information strongly suggests that a lot of the increase is due to these marketing and analytics providers that dynamically inject these `async`/`defer` scripts into the page.
 
 {{ figure_markup(
   content="2.6%",
@@ -235,7 +240,7 @@ Even though a large percentage of pages use this anti-pattern, it turns out only
 
 ### First-party vs third-party
 
-The median number of JavaScript resources requested on mobile pages, as [observed earlier](#how-much-javascript-do-we-load), is 20. Let us now look into which ones of these are first-party or third-party requests.
+The median number of JavaScript resources requested on mobile pages, as [observed earlier](#how-much-javascript-do-we-load), is 20. We'll now look at which ones of these are first-party or third-party requests.
 
 {{ figure_markup(
   image="js-requests-mobile-host.png",
@@ -259,16 +264,18 @@ A median of mobile pages request 10 third-party resources whereas 9 first-party 
   )
 }}
 
-A median of desktop pages request 11 third-party resources whereas 10 first-party requests. This difference increases as we move up to the 90th percentile as 33 requests on mobile pages are first party but the number goes up to 34 for third-party requests for the mobile pages. Clearly, the number of third-party resources requested is always one step ahead of the first-party ones. Irrespective of the performance and reliability <a hreflang="en" href="https://css-tricks.com/potential-dangers-of-third-party-javascript/">risks that requesting third-party resources brings</a>, the usage seems to favor third-party scripts, which could be due to the <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript">useful interactivity features</a> that it gives to the web.
+A median of desktop pages request 11 third-party resources compared to 10 first-party requests. This difference increases as we move up to the 90th percentile as 33 requests on mobile pages are first-party but the number goes up to 34 for third-party requests for the mobile pages. Clearly, the number of third-party resources requested is always one step ahead of the first-party ones. Irrespective of the performance and reliability <a hreflang="en" href="https://css-tricks.com/potential-dangers-of-third-party-javascript/">risks that requesting third-party resources brings</a>, the usage seems to favor third-party scripts, which could be due to the <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript">useful interactivity features</a> that it gives to the web.
 
-This is where one has to put their 'performance-nerd' cap on, and ensure that using third-party scripts <a hreflang="en" href="https://csswizardry.com/2017/07/performance-and-resilience-stress-testing-third-parties/">doesn't result in losing control over the performance of the page or the main thread getting bloated</a> with too much JavaScript being transferred by <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">loading these scripts better</a>.
+This is where one has to put their 'performance-nerd' cap on, and ensure that using third-party scripts <a hreflang="en" href="https://csswizardry.com/2017/07/performance-and-resilience-stress-testing-third-parties/">doesn't result in losing control over the performance of the page,  or the main thread getting bloated</a> with too much JavaScript being transferred by <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">loading these scripts better</a>.
+
+{# TODO - 'performance-nerd' the quotes are rendering weirdly in the staged link #}
 
 ### Preload and Prefetch
 
-At the render of a page, the browser downloads the given resources and to prioritise the download of some resources over others the browser uses [resource hints](../resource-hints). The resource hints, preload and prefetch, are basically to tell the browser to either download some resource right away or to download it whenever it can to be able to present the resource when required.
+At the render of a page, the browser downloads the given resources and prioritizes the download of some resources the browser uses over others using [resource hints](../resource-hints). The resource hints, `preload` and `prefetch` tell the browser to either download some resource right away or download it whenever it can to present the resource when required.
 
 The `preload` hint tells the browser to download the resource with a higher priority as it will be required on the current page.
-The `prefetch` hint, however, tells the browser that the resource could be required after some time (useful for future navigation) and it'd better to fetch it when the browser has the capacity to do so and make it available as soon as it is required.
+The `prefetch` hint however, tells the browser that the resource could be required after some time (useful for future navigation) and it'd better to fetch it when the browser has the capacity to do so and make it available as soon as it is required.
 
 {{ figure_markup(
   image="javascript-resource-hint-usage.png",
@@ -282,7 +289,7 @@ The `prefetch` hint, however, tells the browser that the resource could be requi
 
 The preload hints are used by 15.4% of mobile pages to load JavaScript, whereas only 1.0% of mobile pages use the prefetch hint. Overall, 15.8% and 1.1% repectively of desktop pages use these resource hints to load the JavaScript resources.
 
-It would also be ideal to see how many preload and prefetch hints are used per page as that affects the impact of these hints. For example, there are 5 resources to be loaded on the render and all five use the preload hint, the preload hint would try to prioritize all the resources and this would then work as it would have without the preload hint.
+It would also be ideal to see how many preload and prefetch hints are used per page as that affects the impact of these hints. For example, if there are 5 resources to be loaded on the render and all 5 use the preload hint, the preload hint would try to prioritize all the resources and this would then work as it would have without the preload hint used.
 
 {{ figure_markup(
   image="prefetch-hints-per-page.png",
@@ -364,23 +371,25 @@ When sending resources over the network, it becomes important to look at an effi
 
 ### Compression
 
-Most of the compressed resources use either gzip compression, or brotli (br) compression, or the compression technique is just not set.
+Most of the compressed resources use either gzip compression, brotli (br) compression, or a compression technique that is not set.
+
+{# TODO - should we have links for gzip and brotli? i think other chapters do #}
 
 {{ figure_markup(
   image="compression-requests.png",
   caption="Compression methods usage percentage by request.",
-  description="Bar chart showing the percent of the usage of compression methods. 55% of JS requests apply the gzip compression on mobile, 31% apply br compression, and 14% do not apply any compression method.",
+  description="Bar chart showing the percent of the usage of compression methods. 55% of JavaScript requests apply the gzip compression on mobile, 31% apply br compression, and 14% do not apply any compression method.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1306457429&format=interactive",
   sheets_gid="1182320606",
   sql_file="compression_method.sql"
   )
 }}
 
-It is noted that 55.4% of mobile JS requests apply the gzip compression method, whereas 30.8% of requests from mobile devices have the brotli compression applied.
+It is noted that 55.4% of mobile JavaScript requests apply the gzip compression method, whereas 30.8% of requests from mobile devices have the brotli compression applied.
 
-An interesting observation here is the trend of the usage of these compression methods as [compared to the previous year](../2019/javascript#fig-10). The usage of gzip has gone down by almost 10% and brotli has increased by 11%. The trend definitely indicates the focus on smaller size files with more levels of compression that Brotli provides as compared to gzip.
+An interesting observation here is the trend of the usage of these compression methods [compared to the previous year](../2019/javascript#fig-10). The usage of gzip has gone down by almost 10% and brotli has increased by 11%. The trend definitely indicates the focus on smaller size files with more levels of compression that Brotli provides as compared to gzip.
 
-With such comparable data, let us actually check if the percentage difference is somehow impacted by the resources being first-party or third-party.
+With such comparable data, we checked if the percentage difference is somehow impacted by the resources being first-party or third-party.
 
 {{ figure_markup(
   image="compression-first-third-party.png",
@@ -397,32 +406,32 @@ With such comparable data, let us actually check if the percentage difference is
 {{ figure_markup(
   image="uncompressed-first-third-party.png",
   caption="Uncompressed resources for first party vs third party.",
-  description="Bar chart showing the percent of the uncompressed resources for first party vs third party. 90% of uncompressed third party JS resources are < 5 KB, and uncompressed first-party resources less than 10kb are only 8%.",
+  description="Bar chart showing the percent of the uncompressed resources for first party vs third party. 90% of uncompressed third party JavaScript resources are < 5 KB, and uncompressed first-party resources less than 10kb are only 8%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1043138204&format=interactive",
   sheets_gid="1942216454",
   sql_file="compression_none_by_bytes.sql"
   )
 }}
 
-The way preloading all our requests negates the impact of the resource hint, a similar problem occurs when we try to optimize and compress a resource that doesn't need compression and is already small. It is observed that 90% of uncompressed third party JS resources are less than 5 KB, though first-party requests trail a bit.
+The way preloading all our requests negates the impact of the resource hint, a similar problem occurs when we try to optimize and compress a resource that doesn't need compression and is already small. It is observed that 90% of uncompressed third party JavaScript resources are less than 5 KB, though first-party requests trail a bit.
 
 ### Minification
 
 When working towards reducing the script parsing time, we tend to focus on all the opportunities to make our code smaller and more efficient. One such idea is to minify the files and bring down the bytes usage.
 
-The Lighthouse report also <a hreflang="en" href="https://web.dev/unminified-javascript/">highlights the unminified JS being used</a> and lists these unminified files and the opportunities to save.
+The Lighthouse report also <a hreflang="en" href="https://web.dev/unminified-javascript/">highlights the unminified JavaScript being used</a> and lists these unminified files and the opportunities to save.
 
 {{ figure_markup(
   image="unminified-js-audit-scores.png",
   caption="Percentage distribution of unminified JS audit scores.",
-  description='Bar chart showing the percentage distribution of unminified JS audit scores. 67% of mobile pages have an "unminified JS" score between 0.9 and 1.0',
+  description='Bar chart showing the percentage distribution of unminified JS audit scores. 67% of mobile pages have an "unminified JavaScript" score between 0.9 and 1.0',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1572896641&format=interactive",
   sheets_gid="1539653841",
   sql_file="lighthouse_unminified_js.sql"
   )
 }}
 
-Here, 0.00 represents the worst score whereas 1.00 represents the best score. It is noted that 67.1% of mobile pages have an audit score between 0.9 and 1.0, meaning that there are still more than 30% of mobile pages with a unminified JS score of less than 0.9 with less or no minification.
+Here, 0.00 represents the worst score whereas 1.00 represents the best score. It is noted that 67.1% of mobile pages have an audit score between 0.9 and 1.0, meaning that there are still more than 30% of mobile pages with a unminified JavaScript score of less than 0.9 with less or no minification.
 This, as compared to the results from the last year(2020), shows a regression of 10% in mobile pages with "unminified JS" score between 0.9 and 1.0. 
 
 To understand the reason for the less score this year, let's dive deeper to look at how many bytes per page are unminified.
@@ -437,14 +446,14 @@ To understand the reason for the less score this year, let's dive deeper to look
   )
 }}
 
-And it is found that 57.4% of mobile pages have 0 KB of unminified JavaScript. This indicates that more than 50% of mobile pages have 100% minification with 0KBs of unminified JavaScript found. On the other hand, less than 20% of mobile pages have 0-10 kilobytes of unminified JavaScript with scope for better minification score. The rest have less to no minification and these are the pages that fall in category of bad "unminified JS" audit score that we saw in the previous chart.
+It is found that 57.4% of mobile pages have 0 KB of unminified JavaScript. This indicates that more than 50% of mobile pages have 100% minification with 0 KBs of unminified JavaScript found. On the other hand, less than 20% of mobile pages have 0-10 KB of unminified JavaScript with scope for better minification score. The rest have less to no minification and these are the pages that fall in category of bad "unminified JavaScript" audit score that we saw in the previous chart.
 
-The first-party vs. third-party analysis in this case shows that 82% of the average mobile pages' unminified JS bytes actually come from first-party scripts. This indicates that the third-party scripts are definitely doing better than the first-party ones in the case of minification.
+The first-party vs. third-party analysis in this case shows that 82% of the average mobile pages' unminified JavaScript bytes actually come from first-party scripts. This indicates that the third-party scripts are definitely doing better than the first-party ones in the case of minification.
 
 {{ figure_markup(
   image="average-unminified-js-bytes.png",
-  caption="Average distribution of unminified JS Bytes.",
-  description="Pie chart showing the average distribution of unminified JS bytes. 82% of the average mobile page's unminified JS bytes actually come from first-party scripts.",
+  caption="Average distribution of unminified JavaScript Bytes.",
+  description="Pie chart showing the average distribution of unminified JavaScript bytes. 82% of the average mobile page's unminified JavaScript bytes actually come from first-party scripts.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1119550643&format=interactive",
   sheets_gid="127709080",
   sql_file="lighthouse_unminified_js_by_3p.sql"
@@ -466,7 +475,7 @@ Source maps are files sent along with the JavaScript resource files to let the b
 
 It is found that only 0.1% of mobile pages use the SourceMap response header on script resources. One reason for this extremely small percentage could be that not many sites choose to put their original source code in production through the source map.
 
-An analysis of how many sites actually send the source map header on their first-party or third-party scripts shows that 0.1% of the JS requests that include a SourceMap header on mobile are for first-party scripts.
+An analysis of how many sites actually send the source map header on their first-party or third-party scripts shows that 0.1% of the JavaScript requests that include a SourceMap header on mobile are for first-party scripts.
 
 {# TODO That seems surprising to me. I would have though it was more common to be from third-parties since the likes of query and Bootstrap include source map files. Any thoughts on why this is the reverse? Or am I just wrong about this expectation? Nishu - These results are confusing to me. I reran the query and didn't find 98% anywhere, so I have removed the figure but simply put 0.1% as first-party results for mobile. If you'd like to have a look - here's the data - https://docs.google.com/spreadsheets/d/1zU9rHpI3nC6jTz3xgN6w13afW7x34xAKBh2IPH-lVxk/edit#gid=2057978707 #}
 
@@ -563,7 +572,7 @@ It would instead be interesting to look at how the popular frameworks and librar
   <figcaption>{{ figure_link(caption="Javascript frameworks usage with JavaScript libraries.", sheets_gid="1934429143", sql_file="frameworks_libraries_combos.sql") }}</figcaption>
 </figure>
 
-As can be observed, jQuery tops in usage with libraries and frameworks, which could also be a result of using a third-party library that includes it. This, as a result, leads to more processing time for the code that the framework or library uses with the other included libraries.
+jQuery tops in usage with libraries and frameworks, which could also be a result of using a third-party library that includes it. This, as a result, leads to more processing time for the code that the framework or library uses with the other included libraries.
 
 22% of known versions of jQuery are found to be version 3.5.1. This is a big jump compared to last year's (1.12.4), which could be attributed to Wordpress which constitutes most of the participation of jQuery.
 
@@ -582,7 +591,7 @@ Using third-party libraries comes with its own benefits and drawbacks. When usin
 
 As per the analysis, 63.9% of mobile pages use a JS library or framework with some security vulnerability. The number has come down from 83.5% (the previous year) and that is quite an improvement.
 
-It would be a great idea to now see what libraries were worked upon and have either the security vulnerability removed or the library itself is used less.
+We decided to look at what libraries were worked upon and have either the security vulnerability removed, or the library itself is used less.
 
 <figure>
   <table>
@@ -674,11 +683,13 @@ The results show that jQuery is the dominant factor in the decrease of vulnerabi
 
 ## How do we use JavaScript?
 
-Now we've looked at how we get the JavaScript, what are we using it for?
+Now that we've looked at how we get the JavaScript, what are we using it for?
 
 ### AJAX
 
-A lot of JavaScript that we write is used to communicate with servers through asynchronous requests to receive information in various formats. AJAX, or asynchronous JavaScript and XML, is typically used to send and receive data in JSON, XML, HTML, text formats.
+A lot of JavaScript that is written is used to communicate with servers through asynchronous requests to receive information in various formats. AJAX, or asynchronous JavaScript and XML, is typically used to send and receive data in JSON, XML, HTML, text formats.
+
+{# TODO - "AJAX, or asynchronous JavaScript and XML," is this a list of 3 or grouped together? #}
 
 With multiple ways to send and receive data on the web, let's look into how many async requests are sent per page.
 
@@ -696,7 +707,7 @@ A median of 4 asynchronous requests are made per page on both mobile and desktop
 
 If we look at the long tail and check the number of async requests for the 100th percentile, the difference in the devices is quite remarkable. The most asynchronous requests made by a desktop page is 623, which is eclipsed by the biggest mobile page, which makes 867 asynchronous requests!
 
-An alternative to the asynchronous AJAX requests are the synchronous. Rather than passing a request to a callback, they block the main thread until the request completes.
+An alternative to the asynchronous AJAX requests are that they are synchronous. Rather than passing a request to a callback, they block the main thread until the request completes.
 
 However, [this practice is discouraged](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests#synchronous_request) due to the potential for poor performance and user experiences, and many browsers already warn about the usage. It would be intriguing to see how many pages still use synchronous AJAX requests.
 
@@ -727,7 +738,7 @@ We see there is a clear increase in the usage of asynchronous AJAX requests. How
 
 An AJAX request works with different formats of data that can be sent and received. When a resource is requested, there is significant information that is sent to the server to make the results specific and clear. One such requirement is sending the relevant content types. The request sent from the browser requests a content type that gets back the data in the requested format.
 
-Out of the vast list of content types that can be requested, let's look at the most commonly requested content types.
+Out of the vast list of content types that can be requested, we looked at the most commonly requested content types.
 
 <figure>
   <table>
@@ -775,7 +786,7 @@ JavaScript is the second most requested content type in AJAX requests, with 33.3
 
 Knowing the number of AJAX requests per page now, we'd also be interested in knowing the most commonly used APIs to request the data from the server.
 
-We can broadly classify these AJAX requests into three different APIs and dig in to see the usage of each of these. The core APIs [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) (XHR), [`Fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch), and [`Beacon`](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API) are used commonly across websites with XHR being used primarily, however Fetch is gaining popularity and growing rapidly while Beacon has minimum usage.
+We can broadly classify these AJAX requests into three different APIs and dig in to see the usage of each of these. The core APIs [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) (XHR), [`Fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch), and [`Beacon`](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API) are used commonly across websites with XHR being used primarily, however `Fetch` is gaining popularity and growing rapidly while `Beacon` has minimum usage.
 
 {{ figure_markup(
   image="ajax_xhr.png",
@@ -810,9 +821,9 @@ In the case of the usage of the Fetch API, a median mobile page makes 2 requests
   sql_file="percentage_usage_of_different_ajax_apis.sql"
   )
 }}
-One major reason for the lower usage of Beacon could be that it is typically used for sending analytics data, especially where one wants to ensure that the request is sent even if the page might unload soon. This is, however, not guaranteed when using XHR. A good experiment for the future would be to see if some statistics could be collected around any pages using XHR for analytics data, session data, etc.
+One major reason for the lower usage of `Beacon` could be that it is typically used for sending analytics data, especially where one wants to ensure that the request is sent even if the page might unload soon. This is, however, not guaranteed when using XHR. A good experiment for the future would be to see if some statistics could be collected around any pages using XHR for analytics data, session data, etc.
 
-It would be interesting to also compare the adoption of XHR and Fetch over time.
+It would be interesting to also compare the adoption of XHR and `Fetch` over time.
 
 {{ figure_markup(
   image="ajax-apis-per-year.png",
@@ -824,9 +835,9 @@ It would be interesting to also compare the adoption of XHR and Fetch over time.
   )
 }}
 
-For both Fetch and XHR, the usage has tremendously increased over the years. Fetch has seen an increase of 38% on desktop pages and 48% for XHR. With a gradual increase for fetch, the focus seems to be towards cleaner requests and handling responses better.
+For both `Fetch` and XHR, the usage has tremendously increased over the years. `Fetch` has seen an increase of 38% on desktop pages and 48% for XHR. With a gradual increase for `Fetch`, the focus seems to be towards cleaner requests and handling responses better.
 
-### Web Components and the Shadow DOM
+### Web Components and the shadow DOM
 
 With the web becoming componentized, a developer building a single page application may think about a user view as a set of components. This is not only for the sake of developers building dedicated components for each feature, but also to maximize component reusability. It could be in the same app on a different view or in a completely different application. Such use cases lead to the usage of custom elements and web components in web applications.
 
@@ -847,7 +858,7 @@ It is noted that 2.7% of desktop pages use custom elements for one or more parts
 
 <a hreflang="en" href="https://developers.google.com/web/fundamentals/web-components/shadowdom">_Shadow DOM_</a> allows you to create a dedicated subtree in the DOM for the custom element introduced to the browser. It ensures the styles and nodes inside the element are not accessible outside the element.
 
-0.4% of pages use Shadow DOM specification of web components to ensure a scoped subtree for the element.
+0.4% of pages use shadow DOM specification of web components to ensure a scoped subtree for the element.
 
 {{ figure_markup(
   content="0.4%",
@@ -879,6 +890,8 @@ The numbers that we have seen throughout the chapter have brought us to an under
 
 It is observed that so many features provided for improving the rendering time and resource loading time could be leveraged better to see the overall impact and get an even better experience with respect to the performance.
 
-Starting from adopting the features provided by the JavaScript/Web community to using them wisely and ensuring that a tweak only improves the performance and doesn't instead increase the overload (for example, lazy loading all resources on a page is definitely not a good idea), is what it will take us to see these numbers even better in the coming years.
+Starting from adopting the features provided by the JavaScript and web community, making sure to use them wisely and ensuring that a tweak only improves the performance and doesn't instead increase the overload (for example, lazy loading all resources on a page is definitely not a good idea), is what it will take us to see these numbers even better in the coming years.
+
+{# TODO - this sentence is long but not sure how to break it down #}
 
 Let's continue to do so.
