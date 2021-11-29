@@ -223,6 +223,8 @@ Talk about 28% of mobile requests use neither Cache-Control nor Expires headers.
 
 The median HTML resource on mobile has a TTL of 14 days
 
+The median difference between resource TTL and resource age is -6 days, meaning the age is 6 days older than the TTL.
+
 ## Cookie Cache adoption
 
 35.63% of Cacheable Desktop pages with set-cookie
@@ -283,8 +285,25 @@ Talk about, 60% of 1P mobile resources are older than their TTL, which is more c
 Explain why this is significant- 60% of 1st Party mobile resources are older than their TTL- is this because 1P are more important or crucial? Because 3P are being deprecated?
 
 ## How do cache TTLs compare to resource age?
+Between 1st and 3rd party resources:  
+- Images have the same resource age of 2 years. 
+- The majority of Video resources is also between 8-52 weeks
 
-The median difference between resource TTL and resource age is -6 days, meaning the age is 6 days older than the TTL.
+Fonts for 3rd party are cached the most between 8-52 weeks at 72.4%, but interestingly for 1st party, the largest resource age grouping is evenly split between 8-52 weeks and over 2 years.
+
+[TODO Add MAYBE a figure for show the Resource age by content-tyep (first-party and or third-party)]
+
+We see a similar approach for audio and scripts where the majority of 1st party are between 8-52 weeks and the majority of 3rd party are between 1-7 weeks. The most highly cached resources across first and third parties were audio. However, the resource age varied greatly between first party (averaging 8-52 weeks) and third party, at only 1-7 weeks. Audio resources in first party situations are clearly updated less frequently, so third parties may be capitalizing on a caching opportunity by offering fresher resources.
+
+For CSS, 1st party the larger group is 8-52 weeks while the larger group for 3rd party with 51.8% is with less than a week.
+
+Finally, HTML has the largest 1st party group served with less than a week with 42.7% and third party's largest group is between 1-7 weeks with 43.1%. 
+
+Considerations after reviewing this data: 
+- The freshest content for 1st party is HTML while for 3rd party it is CSS. 
+- The most stale content for both 1st and 3rd party is images.
+
+This data shows how 1st parties have prioritized refreshing HTML content which usually holds the link to JS and CSS files, while 3rd party providers that are mostly CSS and script-driven, like browser extensions, have prioritized keeping their CSS up-to-date.
 
 Mobile resources with a cache TTL that was considered too short compared to its content age have seen an improvement since 2020. 60.2% in 2020 but now 54% in 2021.
 
