@@ -269,8 +269,8 @@ The data comes from the Chrome User Experience Report (CrUX), which records real
 33% of mobile websites are now passing Core Web Vitals thresholds, up from 20% last year. Most websites are passing FID but website owners seem to be struggling to improve CLS and LCP.
 
 {{ figure_markup(
-   image="core-web-vitals-2021.png",
-   caption="Core web vitals metrics for 2021.",
+   image="core-web-vitals-trend.png",
+   caption="Core web vitals metrics trend.",
    description="Line chart showing ...",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1693723951&format=interactive",
    sheets_gid="460991760",
