@@ -99,7 +99,7 @@ Two things may cause the discrepancy between the HTTP Archive and Google data:
 
 ### `robots.txt` size
 
-Most robots.txt files are fairly small, weighing between 0-100 kb. However, we did find over 3,000 domains that have a robots.txt file size over 500 kb which is beyond Google's max limit. Rules after this size limit will be ignored.
+Most robots.txt files are fairly small, weighing between 0-100 kb. However, we did find over 3,000 domains that have a robots.txt file size over 500 KiB which is beyond Google's max limit. Rules after this size limit will be ignored.
 
 {{ figure_markup(
    image="robots-txt-size-distribution.png",
