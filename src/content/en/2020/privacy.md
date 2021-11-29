@@ -12,11 +12,11 @@ discuss: 2046
 results: https://docs.google.com/spreadsheets/d/16bE70rv4qbmKIqbZS1zUiTRpk5eOlgxBXEabL1qiduI/
 featured_quote: Privacy has been increasing in popularity recently and has raised awareness on the users' side. The need for guidelines has been met with various regulations (such as GDPR in Europe, LGPD in Brazil, CCPA in California to name but a few). These aim to increase the accountability of data processors and their transparency towards users. In this chapter, we discuss the prevalence of online tracking with different techniques and the adoption rate of cookie consent banners and privacy policies by websites.
 featured_stat_1: 93%
-featured_stat_label_1: Websites that load at least one tracker.
+featured_stat_label_1: Websites that load at least one tracker
 featured_stat_2: Nine out of ten
-featured_stat_label_2: Top cookie-setting domains owned by Google.
+featured_stat_label_2: Top cookie-setting domains owned by Google
 featured_stat_3: 44.8%
-featured_stat_label_3: Websites that have a privacy policy.
+featured_stat_label_3: Websites that have a privacy policy
 ---
 
 ## Introduction

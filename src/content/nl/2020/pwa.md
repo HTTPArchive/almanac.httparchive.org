@@ -12,11 +12,11 @@ discuss: 2050
 results: https://docs.google.com/spreadsheets/d/1AOqCkb5EggnE8BngpxvxGj_fCfssT9sZ0ElCQKp4pOw/
 featured_quote: Webapplicatie die evolueert naar een native-achtige applicatie kan worden beschouwd als een PWA.
 featured_stat_1: 16,6%
-featured_stat_label_1: Percentage pagina dat wordt geladen met behulp van een service worker.
+featured_stat_label_1: Percentage pagina dat wordt geladen met behulp van een service worker
 featured_stat_2: 27,97%
-featured_stat_label_2: Webapps die snel genoeg laden voor een PWA.
+featured_stat_label_2: Webapps die snel genoeg laden voor een PWA
 featured_stat_3: 25%
-featured_stat_label_3: Percentage mobiele PWA-sites dat importScripts gebruikt.
+featured_stat_label_3: Percentage mobiele PWA-sites dat importScripts gebruikt
 ---
 
 ## Inleiding
