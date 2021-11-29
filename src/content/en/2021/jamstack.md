@@ -155,7 +155,7 @@ The tail also shows great results. Subregions with lower number of sites in gene
   sql_file="adoption_by_subregion.sql"
 ) }}
 
-### Summary of adoption by regions.
+### Summary of adoption by regions
 
 SSG technology is adopted not only by places where it’s invented and popularized, but also all around the world. Moreover, in places where the next generation of the web will be built, it grows even faster, mostly 2 times and sometimes 4 times, compared to others.
 
