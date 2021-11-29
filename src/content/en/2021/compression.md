@@ -23,11 +23,11 @@ unedited: true
 
 ## Introduction
 
-HTTP compression makes websites load faster and improves user experience. When used effectively, it can reduce [page weight](./page-weight), improve [web performance](./performance) and boost search rankings, so it's an important part of [search engine optimization](./seo). On the other hand, not using compression, or using it with a suboptimal configuration, can result in longer wait times for the user and can negatively affect the growth of a web service.
+When loading websites it is important to make the best use of the available bandwidth. HTTP allows to compress the content that it delivers and this decreases the time needed to transfer the content. Even when taking the time to compress and decompress the content into account, this often leads to significant improvement in the user experience, it can reduce [page weight](./page-weight), improve [web performance](./performance) and boost search rankings, so it's an important part of [search engine optimization](./seo). On the other hand, not using compression, or using it with a suboptimal configuration, can result in longer wait times for the user and can negatively affect the growth of a web service.
 
-This chapter discusses lossless text compression. Lossy and lossless compression used in media formats such as images, audio and video is equally if not more important for increasing page speed, but is not the topic of this chapter.
+This chapter discusses lossless text compression. Lossy and lossless compression used in [media](../2020/media) formats such as images, audio and video is equally if not more important for increasing page speed, but this is not the topic of this chapter.
 
-## What type of content should we compress?
+## HTTP compression is useful for many types of content
 
 HTTP compression is recommended for most text-based content, such as [HTML](./markup), [CSS](./css), [JavaScript](./javascript), JSON, or SVG. It's also recommended for certain non-text formats such as woff, ttf, ico because they still benefit from lossless compression. On the other hand, for media files such as images that are already compressed it doesn't provide a benefit because compressing already-compressed files doesn't reduce their size much and may even make them slightly larger.
 
@@ -41,38 +41,27 @@ HTTP compression is recommended for most text-based content, such as [HTML](./ma
   )
 }}
 
-The figure shows the percent of responses of a certain content type using either Brotli, Gzip or no text compression. It is surprising that while all those content types would profit from compression, the range of percentages varies widely over the different content types: only 44% use compression for `text/html` against 93% for `application/x-javascript`.
+Compared to the other content type, `text/plain` and `text/html` uses the least amount of compression, with merely 12% and 14% using compression at all. This might be because `text/html` is more often dynamically generated than static content such as JavaScript and CSS.
 
-For image-based assets and other media, text-based compression is less useful and not widely employed. The data shows that the percentage of image responses that employ either Brotli or Gzip is very low, less than 4%. It is possible that these are the result of a misconfiguration of web servers. For more info on non text-based assets, check out the [Media](./media) chapter.
-
-{{ figure_markup(
-  image="http-compression-methods-for-image-types.png",
-  caption="Compression methods for image types on desktop.",
-  description="This breaks down what compression methods, if any, are used for all the content types which are images. For all three image types, i.e. jpeg, png and gif, around 96% use no compression is used.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQtfyTM9VEweN_Hli3IuxxqU1CRap4V5Q28baEs7aEBResoPRgk9Dwp1m_vdS9lzNlfO8J4hZN7GPT7/pubchart?oid=157331869&format=interactive",
-  sheets_gid="234112121",
-  sql_file="compression_by_content_type.sql"
-  )
-}}
-
-## How to use HTTP compression?
-
-To reduce the size of the files that we plan to serve one could first use some minimizers, e.g. <a hreflang="en" href="https://github.com/kangax/html-minifier">HTMLMinifier</a>, <a hreflang="en" href="https://github.com/ben-eb/cssnano">CSSNano</a>, or <a hreflang="en" href="https://github.com/mishoo/UglifyJS2">UglifyJS</a>. However bigger gains are expected from using compression.
+## Server settings for HTTP compression
 
 For HTTP content encoding, the HTTP standard defines the [Accept-Encoding](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding) request header, with which a HTTP client can announce the content encodings it can handle to the server. The server\'s response can then contain a [Content-Encoding](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding) header field that specifies which of the encodings was chosen to transform the data in the response body.
 
-There are two types of resources that can be compressed on the server side:
+Both brotli and gzip are supported by virtually all browsers. On the server side, most popular servers like NginX and Apache can be configured to use brotli and/or gzip. We want to give some pointers on how to best configure text compression on your server. There are two types of compression settings:
 
-- Precompressed, also known as static content: can be compressed and stored ahead of time
-- Dynamically Compressed: can only be compressed on-the-fly after a request is made
+ - for precompressed (static) content: this content is already compressed beforehand, ideally with the highest level possible, and the web server should be set up to find the appropriate compressed files based on the filename extension, for example.
+ - for dynamic content, which is compressed on the fly for each request by the web server (or a plugin) itself, for dynamically generated text content
 
-Many [popular servers](https://en.wikipedia.org/wiki/HTTP_compression#Servers_that_support_HTTP_compression) support dynamically and/or pre-compressed HTTP and many of them support [Brotli](https://en.wikipedia.org/wiki/Brotli).
+When compressing text with brotli or gzip it is possible to select different compression levels. Higher compression levels will result in smaller compressed files, but take a longer time to compress. During decompression CPU usage tends not to be higher for more heavily compressed files, rather files that are compressed with a higher compression level are slightly faster to decode.
 
-Practically all text compression is done by one of two HTTP content encodings: <a hreflang="en" href="https://tools.ietf.org/html/rfc1952">Gzip</a> and <a hreflang="en" href="https://github.com/google/brotli">Brotli</a>. Both are widely supported by browsers: <a hreflang="en" href="https://caniuse.com/?search=brotli">can I use Brotli</a> / <a hreflang="en" href="https://caniuse.com/?search=gzip">can I use Gzip</a>. On the server side, most popular servers can be configured to use Brotli and/or Gzip.
+
+Many support dynamically and/or precompressed HTTP and many of them support [Brotli](https://en.wikipedia.org/wiki/Brotli).
+
+Practically all text compression is done by one of two HTTP content encodings: <a hreflang="en" href="https://tools.ietf.org/html/rfc1952">Gzip</a> and <a hreflang="en" href="https://github.com/google/brotli">Brotli</a>. Both are widely supported by browsers: <a hreflang="en" href="https://caniuse.com/?search=brotli">can I use Brotli</a> / <a hreflang="en" href="https://caniuse.com/?search=gzip">can I use Gzip</a>. On the server side, most [popular servers](https://en.wikipedia.org/wiki/HTTP_compression#Servers_that_support_HTTP_compression)  can be configured to use [Brotli](https://en.wikipedia.org/wiki/Brotli) and/or [Gzip](https://en.wikipedia.org/wiki/Gzip).
 
 Depending on the web server software you use, compression needs to be enabled, and the configuration may be separate for precompressed and dynamically compressed content. Here are a few pointers for two of the most popular web servers. For <a hreflang="en" href="https://httpd.apache.org/">Apache</a>, Brotli can be enabled with <a hreflang="en" href="https://httpd.apache.org/docs/2.4/mod/mod_brotli.html">mod\_brotli</a>, and Gzip with <a hreflang="en" href="https://httpd.apache.org/docs/2.4/mod/mod_deflate.html">mod\_deflate</a>. For <a hreflang="en" href="https://nginx.org/">NginX</a> instructions for <a hreflang="en" href="https://github.com/google/ngx_brotli">enabling Brotli</a> and for <a hreflang="en" href="https://nginx.org/en/docs/http/ngx_http_gzip_module.html">enabling Gzip</a> are available as well.
 
-## Current state of HTTP compression
+## Trends in HTTP compression
 
 The graph below shows the usage share trend of lossless compression from the HTTPArchive metrics over the last 3 years. The usage of Brotli has doubled since 2019, while the usage of Gzip has slightly decreased, and overall the use of HTTP compression is growing on desktop and on mobile.
 
@@ -96,7 +85,7 @@ The graph below shows the usage share trend of lossless compression from the HTT
   )
 }}
 
-Of the resources that are served compressed, the majority are using either Gzip (66%) or Brotli (33%). The other compression algorithms are used infrequently.
+Of the resources that are served compressed, the majority are using either Gzip (66%) or Brotli (33%). The other compression algorithms are used infrequently. This split is virtually the same of desktop and mobile.
 
 {{ figure_markup(
   image="compression-algorithms-for-http-responses.png",
@@ -111,7 +100,7 @@ Of the resources that are served compressed, the majority are using either Gzip 
 
 ## First-party vs third-party compression
 
-In the [Third Parties](./third-parties) chapter, we learn about third parties and their impact on performance. Using third parties can also have an impact on compression.
+[Third Parties](./third-parties) have an impact on the user experience of a website. Historically the amount of compression used by first parties compared with third parties was significantly different. Let's see what it looks like in the year 2021:
 
 <figure>
   <table>
@@ -208,7 +197,7 @@ You can check which content of your website is already using HTTP compression in
 
 Responses that are Gzip compressed will show "gzip", while those compressed with Brotli will show "br". If the value is blank, no HTTP compression is used. For images this is normal, since these resources are already compressed on their own.
 
-If you hover the mouse over the values in the Size column, you can also see the "transferred over network" and "resource size" to compare the compressed and actual sizes. This data can also be seen for the entire site: this is indicated as "size" / "transferred size" in Firefox and "transferred" and "resources" in Chrome on the bottom left hand side of the Network tab.
+If you hover the mouse over the values in the Size column, you can also see "transferred over network" and "resource size" to compare the compressed and actual sizes. This data can also be seen for the entire site: this is indicated as "size" / "transferred size" in Firefox and "transferred" and "resources" in Chrome on the bottom left hand side of the Network tab.
 
 {{ figure_markup(
   image="content-encoding.png",
@@ -235,7 +224,9 @@ The HTTP Archive [runs Lighthouse audits](./methodology#lighthouse) for each mob
 
 ## How to improve on compression
 
-To improve compression of your site, a first step is to ensure compression is enabled. You can verify it is enabled as highlighted in the previous section, and configure your web server if needed.
+Before thinking about how to compress content, it is often wise to reduce the content to transmit to start with. One way of achieving this is to use so-called "minimizers", e.g. <a hreflang="en" href="https://github.com/kangax/html-minifier">HTMLMinifier</a>, <a hreflang="en" href="https://github.com/ben-eb/cssnano">CSSNano</a>, or <a hreflang="en" href="https://github.com/mishoo/UglifyJS2">UglifyJS</a>.
+
+After having the minimal form of the content you want to transmit, the next step is to ensure compression is enabled. You can verify it is enabled as highlighted in the previous section, and configure your web server if needed.
 
 When using only Gzip compression (also known as Deflate or Zlib), you can add support for Brotli. Brotli compresses to <a hreflang="en" href="https://quixdb.github.io/squash-benchmark/">smaller files at the same speed</a>, decompresses at the same speed, and is widely supported: <a hreflang="en" href="https://caniuse.com/?search=brotli">can I use Brotli</a>.
 
@@ -272,9 +263,9 @@ Improving the default settings on web server software would provide significant 
 
 ## Conclusion
 
-Usage of HTTP compression is still growing, and especially Brotli has grow significantly compared to the [previous year's Almanac](../2020/compression). The number of HTTP responses using any text compression increased 2%, while Brotli increased over 4%. The Lighthouse scores, on the other hand, have dropped slightly due to unknown causes. The highest score category has dropped 2% compared to 2020, but is still 10% above the 2019 reading.
-
 The analysis on compression levels reveals that about 6% of Gzip-compressed content uses more advanced compressors such as Zopfli, while a similar \'optimal parsing\' approach is used for 17% of Brotli-compressed content. This indicates that when much slower but slightly more efficient methods are available, a significant amount of users will deploy these methods for their static content such as JavaScript.
 
-While compression usage has increased, there is still a significant percentage of HTTP responses that can be made faster by using compression or by improving the compression settings. You can benefit from taking a closer look at your own website's responses and your server configuration for the compression methods and their level. Tuning the default compression settings for the most popular HTTP servers could have a great impact for users.
+Usage of HTTP compression continous to grow, and especially Brotli has increased significantly compared to the [previous year's Almanac](../2020/compression). The number of HTTP responses using any text compression increased 2%, while Brotli increased over 4%. Despite the increase, we still see opportunities to use more HTTP compression by tweaking compression settings of servers. You can benefit from taking a closer look at your own website's responses and your server configuration for the compression methods and their level. Tuning the default compression settings for the most popular HTTP servers could have a great impact for users.
+
+
 
