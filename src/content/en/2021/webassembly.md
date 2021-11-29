@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: WebAssembly
-description: TODO
+description: WebAssembly chapter of the 2021 Web Almanac covering Wasm compression, custom sections, most popular instructions, and post-MVP Wasm extensions
 authors: [RReverser]
 reviewers: [jsoverson, carlopi, kripken]
 analysts: [RReverser]
@@ -84,9 +84,7 @@ The stark difference between the numbers of unique files and total responses alr
 
 Let's dive deeper and figure out what those reused libraries are. First, we've tried to deduplicate libraries by content hash alone, but it became quickly apparent that many of those left are still duplicates that differ only by library version.
 
-Then we decided to extract library names from URLs. While it's more problematic in theory due to potential name clashes, it turned out to be a more reliable option for top libraries in practice. We extracted filenames from URLs, removed extensions, minor versions and suffixes that looked like content hashes, sorted the results by number of repetitions and extracted the top 10 modules for each client. For those left, we did manual lookups to understand which libraries those modules are coming from.
-
-{# TODO - " minor versions and suffixes that looked like content hashes, " - does this mean they were removed, or something else? not clear #}
+Then we decided to extract library names from URLs. While it's more problematic in theory due to potential name clashes, it turned out to be a more reliable option for top libraries in practice. We extracted filenames from URLs, removed extensions, minor versions, and suffixes that looked like content hashes, sorted the results by number of repetitions and extracted the top 10 modules for each client. For those left, we did manual lookups to understand which libraries those modules are coming from.
 
 {{ figure_markup(
   caption="Popular WebAssembly libraries.",
@@ -248,7 +246,7 @@ Compression aside, we could also look for optimization opportunities by analyzin
   )
 }}
 
-Unsurprisingly, ~74% of the total binary size comes from the compiled code itself, followed by ~19% for embedded static data. Function types, import/export descriptors and such comprise a negligible part of the total size. However, one section type stands out—it's custom sections, which account for ~6.5% of total size in the mobile dataset.
+Unsurprisingly, most of the total binary size (~74%) comes from the compiled code itself, followed by ~19% for embedded static data. Function types, import/export descriptors and such comprise a negligible part of the total size. However, one section type stands out—it's custom sections, which account for ~6.5% of total size in the mobile dataset.
 
 {{ figure_markup(
   content="6.5%",
