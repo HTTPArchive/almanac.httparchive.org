@@ -250,6 +250,18 @@ Why is it a big deal that SameSite is at 68% on mobile?
 
 Talk about what kind of resources are we caching, (resource age groups: party, type).
 
+Shows the majority of resources are highly cacheable
+
+{{ figure_markup(
+  image="caching-by-resource-type.png",
+  caption="The percent of requests that use caching strategies by resource type.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=2036781114&format=interactive",
+  height=436,
+  sheets_gid="1202769738",
+  sql_file="non_cacheable_by_resource_type.sql"
+) }}
+
 The median age of HTML resources cached for mobile is 9 weeks, while for text the median age is 1220 weeks (23.4 years).
 
 Talk about, total number of requests with comparable Last-Modified and expiration times, not necessarily all requests.
@@ -274,24 +286,41 @@ Explain why this is significant- 60% of 1st Party mobile resources are older tha
 
 The median difference between resource TTL and resource age is -6 days, meaning the age is 6 days older than the TTL.
 
+Mobile resources with a cache TTL that was considered too short compared to its content age have seen an improvement since 2020. 60.2% in 2020 but now 54% in 2021.
+
+Developers are getting better at setting the cache duration more accurately to the content age, resulting in more responsible caching.
+
+<figure>
+  <table>
+    <tr>
+     <th>Client</th>
+     <th>1st party</th>
+     <th>3rd party</th>
+     <th>Overall</th>
+    </tr>
+    <tr>
+     <td>desktop</td>
+     <td class="numeric">59.3%</td>
+     <td class="numeric">46.2%</td>
+     <td class="numeric">54.3%</td>
+    </tr>
+    <tr>
+     <td>mobile</td>
+     <td class="numeric">60.1%</td>
+     <td class="numeric">44.7%</td>
+     <td class="numeric">54.3%</td>
+    </tr>
+  </table>
+  <figcaption>TODO: Caption the table above</figcaption>
+</figure>
+
+When we split the data between first party and third party providers, the largest improvements come from third party where we have a 13.2% improvement. It is highly encouraging to see how companies around the world are building products for developers that are highly optimized on caching. However, the challenge remains for how first parties can effectively improve over the coming years.
+
+The community's increased attention on improving performance has encouraged and even incentivized third parties to optimize their caching strategies.
+
 ## Identifying caching opportunities
 
-Can we get a graph of the % of cacheable strategies vs. non-cacheable strategies for Desktop and Mobile, based on data from 'Non-cacheable strategies'?
-
-Shows the majority of resources are highly cacheable
-
-{{ figure_markup(
-  image="caching-by-resource-type.png",
-  caption="The percent of requests that use caching strategies by resource type.",
-  description="TODO",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=2036781114&format=interactive",
-  height=436,
-  sheets_gid="1202769738",
-  sql_file="non_cacheable_by_resource_type.sql"
-) }}
-
-### Lighthouse TTL score
-Based on the Lighthouse caching TTL score, we have seen an improvement in pages ranked with a perfect 100 score increase from 3.3% in 2020 to 4.4% in 2021.
+Based on the **Lighthouse caching TTL* score, we have seen an improvement in pages ranked with a perfect 100 score increase from 3.3% in 2020 to 4.4% in 2021.
 
 The score reflects whether the pages can benefit from additional caching policy improvements. Even though we are excited to see 31% of pages scoring above the 50 percentile score, we still see a large potential in 52% of pages that have a below-25 percentile score.
 
@@ -299,8 +328,7 @@ The score reflects whether the pages can benefit from additional caching policy 
 
 This makes us consider that even though web pages have some level of caching, the way the policies are used is outdated and not optimized to the latest state of their products.
 
-### Lighthouse wasted bytes
-From 2020 to 2021 on repeated views there was a 3.28% improvement in wasted bytes across all audited pages. This lowered the percentage of pages that waste 1 MB from 42.8% to 39.5%, showing a considerable trend from the community in building products that are less costly for international users with paid internet data plans.
+Based on **Lighthouse wasted bytes** from 2020 to 2021 on repeated views there was a 3.28% improvement in wasted bytes across all audited pages. This lowered the percentage of pages that waste 1 MB from 42.8% to 39.5%, showing a considerable trend from the community in building products that are less costly for international users with paid internet data plans.
 
 [TODO Add figure for Distribution of potential byte savings from the Lighthouse caching audit]
 
