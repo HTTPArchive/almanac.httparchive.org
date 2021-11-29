@@ -28,7 +28,7 @@ WITH totals AS (
     COUNT(0) AS rank_page_count
   FROM
     `httparchive.summary_pages.2021_07_01_*`,
-     UNNEST([1000,10000,100000,1000000,10000000]) AS rank_grouping
+    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
     rank <= rank_grouping
   GROUP BY
@@ -40,7 +40,7 @@ robots AS (
   SELECT
     _TABLE_SUFFIX,
     url,
-    getRobotsTxtUserAgents(JSON_EXTRACT_SCALAR(payload,'$._robots_txt')) AS robots_txt_user_agent_info
+    getRobotsTxtUserAgents(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_user_agent_info
   FROM
     `httparchive.pages.2021_07_01_*`
 ),
@@ -72,7 +72,7 @@ SELECT
   SAFE_DIVIDE(COUNT(DISTINCT page), rank_page_count) AS pct
 FROM
   base,
-  UNNEST([1000,10000,100000,1000000,10000000]) AS rank_grouping
+  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
 JOIN
   totals
 USING (client, rank_grouping)
