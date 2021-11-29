@@ -220,11 +220,15 @@ Could we possibly see big wins from getting more consistent here?
 
 ### Vary
 
-Talk about Vary adoption, 42% of requests on mobile set Vary: accept-encoding.
+An essential step in caching a resource is understanding if it was already previously cached. The browser usually uses the url as the cache key. At the same time, requests with similar urls but different `accept-encoding` could be cached incorrectly. That's why we use the Vary header to instruct the browser to add a value of one or more headers to the cache key.
 
-In addition, 83% of mobile Vary: accept-encoding requests also use cache-control. This is another case of the more you know about caching, the more consistently you can make use of all the resources available to you.
+The most popular Vary header is `accept-encoding` with 90.3% usage, followed by `user-agent` with 10.9%, `origin` with 10.1%, and `accept` with 4.8%. 
 
-The most common Vary headers are: `accept-encoding`, `user-agent`, `origin`, `accept`.
+[TODO Add figure showing Vary header adoption across all requests (pct_using_vary) and cache-control (pct_of_vary_with_cache_control), data from https://docs.google.com/spreadsheets/d/1-v3yR0LZIC3t4zWtqTgR3jJsKjjRMP-HATU2caP8e2c/edit#gid=1033782866 and https://docs.google.com/spreadsheets/d/1fYmpSN3diOiFrscS75NsjfsrKXzxxhUMNcYSqXnQJQU/edit#gid=1115686547 Potentiall we mighe want to show 2020 vs 2021]
+
+It's important to point out that only 46.25% of total requests audited use the Vary header. Of these requests, only 83.4% also have the cache-control. 
+
+Compared to 2020, we see an overall increase of 2.85% in use of the Vary header.
 
 ## Setting cookies on cacheable responses
 
