@@ -346,7 +346,14 @@ Taking a look at the Median TTL across all resource types, we see that even if w
 
 When we look at the entirety of cacheable and non-cacheable resources,
 
-[TODO add a figure that shows Cacheable vs non-cacheable response similar to https://20211128t100318-dot-webalmanac.uk.r.appspot.com/static/images/2020/caching/cacheable-and-non-cacheable.png]
+{{ figure_markup(
+  image="cacheable-responses.png",
+  caption="Percent of cacheable vs non-cacheable responses.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=674929574&format=interactive",
+  sheets_gid="812850996",
+  sql_file="ttl.sql"
+) }}
 
 ## How do cache TTLs compare to resource age?
 Between 1st and 3rd party resources:  
