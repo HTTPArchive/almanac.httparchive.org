@@ -57,7 +57,21 @@ Most of the data is represented for mobile and desktop websites. There's a fully
 
 ## Adoption of SSGs
 
-We will take a look what's the adoption rate of SSGs among web sites.
+SSG adoption year over year in general is growing 2x times. In 2019 it was just 0.4% mobile and 0.3% desktop sites. In 2020 the number almost doubled, to 0.6% on mobile and 0.7% on desktop sites. In 2021 they have grown again: 1.1% of mobile and 0.9% of desktop sites.
+That underlines the trend of that technology. For example, this year a company like Vercel raised a $104M series C round and $150M in round D of investment to build a better web with modern technologies like Next.js. Also Jamstack oriented CDN provider Netlify raised $105M in their series D of investment. Hence, it's expected that numbers of Jamstack adoption will grow even higher next year.
+
+{{ figure_markup(
+  image="year-over-year-adoption.png",
+  caption="SSG adoption year over year",
+  description="Bar chart represents adoption year over year. Adoption year over year in general is growing 2x times.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=1588757197&format=interactive",
+  sheets_gid="874607830",
+  sql_file="ssg_compared_to_2020.sql"
+) }}
+
+In 2020 the amount of desktop websites increased 2.76 times, while mobile just 1.5 times. In 2021 mobile availability for SSGs built sites became way better than in 2020, and this year there are ~1.9 times more sites than 2020.
+
+## Which SSGs are the most popular
 
 {{ figure_markup(
   image="adoption-share.png",
@@ -72,18 +86,9 @@ Let's start with understanding which SSG is most popular. Nuxt.js covers 52.6% o
 
 {# TODO - add something more, rather than just repeat the description #}
 
+We will take a look what's the adoption rate of SSGs among web sites.
+
 ### Adoption by rank
-
-{{ figure_markup(
-  image="ssg-adoption-by-rank.png",
-  caption="SSG adoption by rank",
-  description="Bar chart represents adoption share between SSGs for different ranked sites.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=2036128314&format=interactive",
-  sheets_gid="1005292860",
-  sql_file="adoption.sql"
-) }}
-
-{# TODO add some text to above #}
 
 {{ figure_markup(
   image="rank-adoption.png",
@@ -97,21 +102,6 @@ Let's start with understanding which SSG is most popular. Nuxt.js covers 52.6% o
 
 Next.js remains a popular SSG for top 10K. In the top 100K Next.js and Nuxt.js remain equal. Really interesting that Gatsby keeps all numbers pretty equal across all sites categories.
 
-### Adoption year over year
-
-SSG adoption year over year in general is growing 2x times. In 2019 it was just 0.4% mobile and 0.3% desktop sites. In 2020 the number almost doubled, to 0.6% on mobile and 0.7% on desktop sites. In 2021 they have grown again: 1.1% of mobile and 0.9% of desktop sites.
-That underlines the trend of that technology. For example, this year a company like Vercel raised a $104M series C round and $150M in round D of investment to build a better web with modern technologies like Next.js. Also Jamstack oriented CDN provider Netlify raised $105M in their series D of investment. Hence, it's expected that numbers of Jamstack adoption will grow even higher next year.
-
-{{ figure_markup(
-  image="year-over-year-adoption.png",
-  caption="SSG adoption year over year",
-  description="Bar chart represents adoption year over year. Adoption year over year in general is growing 2x times.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=1588757197&format=interactive",
-  sheets_gid="874607830",
-  sql_file="ssg_compared_to_2020.sql"
-) }}
-
-In 2020 the amount of desktop websites increased 2.76 times, while mobile just 1.5 times. In 2021 mobile availability for SSGs built sites became way better than in 2020, and this year there are ~1.9 times more sites than 2020.
 
 ## Geographic adoption
 
@@ -201,8 +191,6 @@ There's 7 most popular CDN providers for SSGs
 * Akamai
 * GitHub
 
-GitHub as CDN provider might be questioned, but GitHub offers a feature called <a hreflang="en" href="https://pages.github.com/">GitHub Pages</a> which allows users to deploy sites on github.io with subdomain using built in Jekyll SSG.
-
 {{ figure_markup(
   image="ssg-distribution-over-cdn.png",
   caption="SSG distribution over CDN",
@@ -217,11 +205,9 @@ Next.js, as most popular by data we have, mostly served by Cloudflare, Vercel, a
 
 It's fair to say that in real world, Cloudflare is used not only for pure serving as CDN but as protection service, DNS balancing etc. So, keep in mind that Cloudflare results can be false positives.
 
-{# TODO Isn't this the same for Akamai? I don\' understand why that's a false positive? #}
+{# TODO Isn't this the same for Akamai? I don'y understand why that's a false positive? #}
 
-Putting Cloudflare aside for a while, we can see interesting data about Next.js. Next.js is mostly served by Vercel (company invented Next.js), and also Next.js heavily served by AWS. Together with Nuxt.js and Gatsby, we can define that AWS as a Jamstack oriented service has made great progress on serving Jamstack sites together with Jamstack oriented services like Netlify and Vercel.
-
-On following graph it's more clear which SSGs are mostly delivered by which CDN.
+On the following graph we show the relative split of CDNs used for popular CDNs:
 
 {{ figure_markup(
   image="ssg-distribution-over-cdn-stacked.png",
@@ -231,6 +217,10 @@ On following graph it's more clear which SSGs are mostly delivered by which CDN.
   sheets_gid="1565107748",
   sql_file="core_web_vitals_distribution.sql"
 ) }}
+
+Next.js is mostly served by Vercel (the company that invented Next.js). We can see that more generalised CDNs like AWS are not serving significant percentages of Jamstack sites, as opposed to more Jamstack-focussed services like Netlify and Vercel.
+
+GitHub as CDN provider might seem unusual, but <a hreflang="en" href="https://pages.github.com/">_GitHub Pages_</a> allow users to deploy sites on github.io subdomains built in Jekyll SSG.
 
 ## User experiance and performance
 
@@ -370,8 +360,6 @@ Netlify as Jamstack oriented goes next with 64% and Vercel with 62%. AWS and Clo
 
 <a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID) measures the time from when a user first interacts with a page (i.e. when they click a link, tap on a button, or use a custom, JavaScript-powered control) to the time when the browser is actually able to begin processing event handlers in response to that interaction.
 
-All SSGs are from 96% to 99%. Great experience!
-
 {{ figure_markup(
   image="FID-distribution-SSG.png",
   caption="FID distribution for SSGs",
@@ -380,6 +368,8 @@ All SSGs are from 96% to 99%. Great experience!
   sheets_gid="1024061881",
   sql_file="core_web_vitals_distribution.sql"
 ) }}
+
+All SSGs are from 96% to 99%. Great experience!
 
 On real user experience, FID shows great results too across different SSGs.
 
@@ -444,11 +434,9 @@ In general CWV results reflect Lighthouse results. Huge and Jekyll have better r
 
 ## Resources
 
-Let's dive into resource weights between top 5 SSGs to understand its influence on performance. The results represent median values.
+Let's dive into resource weights between top fives SSGs to understand their influence on performance. The results represent median values.
 
 ### Resources weight
-
-JavaScript based SSGs have almost 2x larger amount of resources then Hugo and Jekyll. Top one is ~2MB for Nuxt.js, then goes Next.js and Gatsby with almost 1.8MB and 1.7MB.
 
 {{ figure_markup(
   image="median-page-weight.png",
@@ -459,9 +447,11 @@ JavaScript based SSGs have almost 2x larger amount of resources then Hugo and Je
   sql_file="resource_weights.sql"
 ) }}
 
-### JavaScript
+JavaScript based SSGs have almost 2x larger amount of resources then Hugo and Jekyll. Top one is ~2MB for Nuxt.js, followed by Next.js and Gatsby with almost 1.8MB and 1.7MB.
 
-Big chunk of resources use JavaScript. Again, for JavaScript based SSGs it's a huge number compared to others. From 746KB to 645KB. Next.js based sites use more JavaScript than others.
+{# TODO again, just reporting the facts, but any opinions as to what this means and what readers should take away from this? #}
+
+### JavaScript
 
 {{ figure_markup(
   image="median-js-weight.png",
@@ -472,16 +462,9 @@ Big chunk of resources use JavaScript. Again, for JavaScript based SSGs it's a h
   sql_file="resource_weights.sql"
 ) }}
 
+A big chunk of resources are for JavaScript. Again, for JavaScript-based SSGs it's a much bigger compared to others - around 700 KB compared to around 150 KB for non-JavaScript based SSGs. While this is not surprisingly, it's interesting to see the actual differences laid out in this way. Next.js based sites use more JavaScript than others.
+
 We analysed which third party libraries were used among SSGs. We excluded React and Vue to have a clear picture of other libraries and frameworks represented among SSGs.
-
-A big surprise for us was jQuery. It wasn't a surprise that it's used for Hugo and Jekyll based sites (more than 60%), but that it's used inside React and Vue based sites!!! Next.js, Nuxt,js, and Gatsby based sites use jQuery too. Nuxt.js - 3.8%, Next.js - 5.6%, Gatsby - 9.5%.
-
-Styled-components used for Next.js - 20% and Gatsby takes 34%% from all of third party libraries. Nuxt.js sites almost don't use it.
-
-Lodash is also one of a kind. It represented among all CMSs up to 10%.
-Nuxt.js - 4.8%, Next.js - 9.6%, Gatsby - 10.3%, Jekyll - 1%, and Hugo - 4%.
-
-Note that this data aggregates all of the pages for different sites, hence e.g. 9.5% of jQuery usage among other 3rd parties can be used for some Gatsby sites and might not be used for other of sites at all.
 
 {{ figure_markup(
   image="3rd-party-libs-distribution-over-ssgs.png",
@@ -492,9 +475,18 @@ Note that this data aggregates all of the pages for different sites, hence e.g. 
   sql_file="framework_libraries.sql"
 ) }}
 
-### CSS
+A big surprise for us was jQuery. It wasn't a surprise that it's used for Hugo and Jekyll based sites (more than 60%), but that it's used inside React and Vue based sites wasn't expected! Next.js, Many Nuxt,js, and Gatsby sites use jQuery too.
 
-On the other hand, CSS is heavier than Hugo and Jekyll. 29Kb and 23Kb.
+Styled-components was used for Next.js - 20% and Gatsby takes 34%% from all of third party libraries. Nuxt.js sites almost don't use it.
+
+Lodash is heavily used and was present among all SSGs up to 10% for Gatsby.
+
+Note that this data aggregates all of the pages for different sites, hence e.g. 9.5% of jQuery usage among other third parties can be used for some Gatsby sites and might not be used for other of sites at all.
+
+{# TODO I don't understand this sentence? #}
+
+
+### CSS
 
 {{ figure_markup(
   image="median-css-weight.png",
@@ -505,11 +497,13 @@ On the other hand, CSS is heavier than Hugo and Jekyll. 29Kb and 23Kb.
   sql_file="resource_weights.sql"
 ) }}
 
+On the other hand, CSS is slightly heavier than Hugo and Jekyll.
+
+{# TODO Is this because the other sites have the CSS embeded in the JS? #}
+
 ### Images
 
 Images weights distributed differently. There's no correlation between SSG groups.
-
-Nuxt.js has the highest value at 645Kb. Then Hugo, 522Kb. Next.js and Gatsby almost the same, 465Kb and 545Kb. Jekyll has the lowest value at 295Kb.
 
 {{ figure_markup(
   image="median-image-weight.png",
@@ -520,17 +514,11 @@ Nuxt.js has the highest value at 645Kb. Then Hugo, 522Kb. Next.js and Gatsby alm
   sql_file="resource_weights.sql"
 ) }}
 
+Nuxt.js has the highest value at 645Kb. Then Hugo, 522Kb. Next.js and Gatsby almost the same, 465Kb and 545Kb. Jekyll has the lowest value at 295Kb.
+
 #### Images format adoption
 
-Images, one of the bottlenecks of good User Experience (UX). If they are huge sizes the user waits a long time for the image to be delivered. It leads to content jumps and other different problems.
-
-As one of the newer generation of image formats, <a hreflang="en" href="https://developers.google.com/speed/webp/">WebP</a> has 17% of usage among Jamstack sites.
-
-Still, the most used is JPEG at 29% and GIF at 27%. SVG is used on 19% of webpages.
-
-{# TODO That seems really high for GIF! Is it accurate? Any thoughts why? #}
-
-Compared to [last year's results](../2020/jamstack#image-formats), when WebP had only 3%, we can say it's a great improvement over one year.
+Images are one of the bottlenecks of good User Experience (UX). If they are large, then the user has to wait for a long time for the image to be delivered. It can lead to layout shifts and other problems.
 
 {{ figure_markup(
   image="image-adoption.png",
@@ -541,14 +529,26 @@ Compared to [last year's results](../2020/jamstack#image-formats), when WebP had
   sql_file="adoption_of_image_formats_in_ssgs.sql"
 ) }}
 
-Data of resource weights confirms that performance of Next.js, Nuxt.js and gatsby is struggling because of huge resources. 2MB of page weight and ~700Kb of JavaScript among it can definitely impact performance scores and results, especially for average mobile devices and slow networks. Also, heavy usage of styled-components for Next.js and Gatsby sites might be the cause (there are several researches in areas of performance downgrades). Good signal is that Image adoption of next gen image formats is growing. It will improve UX for end users in the long run.
+As one of the newer generation of image formats, <a hreflang="en" href="https://developers.google.com/speed/webp/">WebP</a> has 17% of usage among Jamstack sites. Compared to [last year's results](../2020/jamstack#image-formats), when WebP had only 3%, we can say it's a great improvement over one year.
+
+Still, the most used is JPEG at 29% and GIF at 27%. SVG is used on 19% of webpages.
+
+{# TODO That seems really high for GIF! Is it accurate? Any thoughts why? #}
+
+### What the resources tells us
+
+This analysis of resource weights confirms that performance of Next.js, Nuxt.js and Gatsby are likely struggling because of huge resources. 2MB of page weight and ~700Kb of JavaScript amongst that will definitely have an impact on performance scores, especially for average mobile devices and slower networks. Heavy usage of styled-components for Next.js and Gatsby sites might be another cause (there has been research in areas of performance downgrades on this). A good signal is that image adoption of next gen image formats is growing, this should improve UX for end users in the long run.
+
+{# TODO can we link to the research? #}
 
 ## Conclusion
 
-Despite missing data like headless CMSs, or some SSGs (Eleventy or Next.js detection mode) we were able to analyze a lot of information. Jamstack trend is growing year over year. Now more than 1% of all websites are Jamstack based.
+Despite limitations on not being able to include headless CMSs, and for some well-known SSGs (Eleventy or Next.js detection mode), we still have a lot of data to analyze here to draw some interesting conclusions. The Jamstack trend is growing year over year: now more than 1% of all websites are Jamstack based.
 
-We know that Next.js covers more than the half of Jamstack sites. It's not only trending, but also used in 13% of the top 1000 sites. Other popular SSGs are Nuxt.js and Gatsby. These are new players, just several years in the area but solidified their place by good usage among top ranked sites as well.
+We know that Next.js covers more than the half of measurable Jamstack sites. It's not only trending, but also used in 3.8% of the top 1,000 sites followed by the other popular SSGs such as Nuxt.js and Gatsby. These are all relatively new players, just few years in the space but they have solidified their place by good usage among top ranked sites as well.
 
-All SSGs are greatly used around the world, for example Western Europe together with Northern Europe have more than 20K sites with 1.4% of Jamstack adoption which is more than the territory it's invented. Also, fast-growing regions adopt Jamstack technology even faster and covering up to 4% of their sites.
+{# I calculate 3.8% not 13% #}
 
-Performance of Jamstack sites require knowledge of best practices and experienced developer level to achieve good results, but SSGs work on solutions out of the box will improve that area. Hope you enjoyed the data and give it a try using Jamstack.
+SSGs are used all around the world, and are not confined to those countries with the founding companies of this model are based. In fact it seems that some of the fastest-growing adoptors of Jamstack technology, with up to 5% of sites, are those regions furthest away from the tech hubs of Silicon valley.
+
+Like all websites, maintaining good performance of Jamstack sites requires knowledge of best practices and experienced developer level to achieve good results, but SSGs can improve this by working on out-of-the-box solutions to improve in that area. Hope you enjoyed the data and give it a try using Jamstack.
