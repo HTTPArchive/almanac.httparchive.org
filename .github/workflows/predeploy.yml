@@ -32,11 +32,11 @@ jobs:
     - name: Checkout branch
       uses: actions/checkout@v2.4.0
     - name: Setup Node.js for use with actions
-      uses: actions/setup-node@v2.4.1
+      uses: actions/setup-node@v2.5.0
       with:
         node-version: '15'
     - name: Set up Python 3.8
-      uses: actions/setup-python@v2.3.0
+      uses: actions/setup-python@v2.3.1
       with:
         python-version: '3.8'
     - name: Install Asian Fonts
