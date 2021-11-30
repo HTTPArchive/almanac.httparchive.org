@@ -25,7 +25,7 @@ featured_stat_label_3: Median value of resource wights among Jamstack sites
   <figcaption>— <cite><a hreflang="en" href="https://jamstack.wtf/">Jamstack.wtf</a></cite></figcaption>
 </figure>
 
-Jamstack stands on JavaScript, API, and Markup architecture. These 3 foundations are decoupled and the Jamstack site can be built purely using markup. Using pure HTML - is "kinda" Jamstack, but it's really hard to scale. Lucky for us, there's a huge ecosystem of Static Site Generators (SSGs).
+Jamstack stands on JavaScript, API, and Markup architecture. These 3 foundations are decoupled and the Jamstack site can be built purely using markup. Using pure HTML is "kinda" Jamstack, but it's really hard to scale. Lucky for us, there's a huge ecosystem of Static Site Generators (SSGs).
 
 JavaScript based:
 * Next.js
@@ -74,14 +74,14 @@ Let's start with ranking and understand which SSG is most popular. Nuxt.js cover
   sql_file="adoption.sql"
 ) }}
 
-Next.js shows great results when exploring data of popular sites. 13% of the top 1000 sites are Next.js. Nuxt.js has 5% and Gatsby - 0.2%.
+Next.js shows great results when exploring data of popular sites. 13% of the top 1,000 sites are Next.js. Nuxt.js has 5% and Gatsby 0.2%.
 
 Next.js remains a popular SSG for top 10K. In the top 100K Next.js and Nuxt.js remain equal. Really interesting that Gatsby keeps all numbers pretty equal across all sites categories.
 
 {{ figure_markup(
   image="rank-adoption.png",
   caption="SSG adoption by ranked sites",
-  description="Bar chart represents adoption share between SSGs for different ranked sites. ext.js shows great results when exploring data of popular sites. 13% of the top 1000 sites are Next.js. Nuxt.js has 5% and Gatsby - 0.2%.",
+  description="Bar chart represents adoption share between SSGs for different ranked sites. ext.js shows great results when exploring data of popular sites. 13% of the top 1000 sites are Next.js. Nuxt.js has 5% and Gatsby 0.2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=1137882647&format=interactive",
   sheets_gid="1005292860",
   sql_file="adoption.sql"
@@ -89,8 +89,8 @@ Next.js remains a popular SSG for top 10K. In the top 100K Next.js and Nuxt.js r
 
 ### Adoption year over year
 
-SSG adoption year over year in general is growing 2x times. In 2019 it was just 0.4% mobile and 0.3% desktop sites. In 2020 the number almost doubled, 0.6% - mobile and 0.7% - desktop sites. In 2021 they goring as well. 1.1% - mobile and 0.9% - desktop sites.
-That underlines the trend of that technology. For example, this year a company like Vercel raised a $104M series C round and $150M in round D of investment to build a better web with modern technologies like Next.js. Also Jamstack oriented CDN provider - Netlify raised $105M in their series D of investment. Hence, it's expected that numbers of Jamstack adoption will grow even higher next year.
+SSG adoption year over year in general is growing 2x times. In 2019 it was just 0.4% mobile and 0.3% desktop sites. In 2020 the number almost doubled, to 0.6% on mobile and 0.7% on desktop sites. In 2021 they have grown again: 1.1% of mobile and 0.9% of desktop sites.
+That underlines the trend of that technology. For example, this year a company like Vercel raised a $104M series C round and $150M in round D of investment to build a better web with modern technologies like Next.js. Also Jamstack oriented CDN provider Netlify raised $105M in their series D of investment. Hence, it's expected that numbers of Jamstack adoption will grow even higher next year.
 
 {{ figure_markup(
   image="year-over-year-adoption.png",
@@ -151,7 +151,7 @@ Oceania and Africa have way lower overall numbers, but they have way greater Jam
 
 ### Adoption by subregion
 
-Subregions give us good enough granularity and some exciting data. Not a surprise that first in a list stands for Northern America and USA location and driver of technologies. Most companies who invented SSGs are in the USA. But surprisingly, Western Europe is in second place. It has 10K mobile sites versus Northern America -  17K, but almost the same adoption level, 1.1%. Hence, Western Europe together with Northern Europe have more than 20K sites with 1.4% of Jamstack adoption, which is more than the territory it's invented.
+Subregions give us good enough granularity and some exciting data. Not a surprise that first in a list stands for Northern America and USA location and driver of technologies. Most companies who invented SSGs are in the USA. But surprisingly, Western Europe is in second place and has 10K SSG mobile sites versus 17k for Northern America, but almost the same adoption level, 1.1%. Hence, Western Europe together with Northern Europe have more than 20K sites or 1.4% of Jamstack adoption—which is more than the territory that largely invented a lot of these technologies.
 
 The tail also shows great results. Subregions with lower number of sites in general adopt technology even broader, like 4.8% of Micronesia sites.
 
@@ -260,7 +260,7 @@ All Jamstack sites provide great SEO scores. From 90 to 92.
 
 #### Best Practices score
 
-<a hreflang="en" href="https://web.dev/lighthouse-best-practices/">Lighthouse Best Practices</a> category makes sure that site avoids using unhealthy common patterns which dramatically changes User Experience. One of the examples - "document.write()", etc. All sites results mostly 87, and 93 for for some of them.
+<a hreflang="en" href="https://web.dev/lighthouse-best-practices/">Lighthouse Best Practices</a> category makes sure that site avoids using unhealthy common patterns which dramatically changes User Experience, for example use of the outdated `document.write()`. All sites results mostly 87, and 93 for for some of them.
 
 {{ figure_markup(
   image="median-lighthouse-best-practices-score.png",
@@ -275,7 +275,7 @@ The bottomline here is that Lighthouse results in general are good, but performa
 
 ## Core Web Vitals
 
-<a hreflang="en" href="https://web.dev/learn-web-vitals/">Core Web Vitals</a> (CWV) - an initiative to provide unified guidance for quality signals that are essential to delivering a great user experience on the web. CWV itself uses 3 performance metrics:
+<a hreflang="en" href="https://web.dev/learn-web-vitals/">Core Web Vitals</a> (CWV), an initiative to provide unified guidance for quality signals that are essential to delivering a great user experience on the web. CWV itself uses 3 performance metrics:
 
 We gathered  data for SSGs and also for CDNs which deliver Jamstack sites.
 
@@ -296,9 +296,9 @@ Gatsby is third with 21%, but it's the first from JavaScript based SSGs. Another
 
 ### Largest Contentful Paint of SSGs
 
-<a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> (LCP) - The Largest Contentful Paint (LCP) metric reports the render time of the largest image or text block visible within the viewport, relative to when the page first started loading.
+The <a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> (LCP) metric reports the render time of the largest image or text block visible within the viewport, relative to when the page first started loading.
 
-In average user experience, the best results show Hugo and Jekyll. 88% and 90% are under 2.5s. Gatsby - 78%. Next.js has almost 72% and Nuxt.js - 69%.
+In average user experience, the best results show Hugo and Jekyll. 88% and 90% are under 2.5s. Gatsby is just behind with 78%. Next.js has almost 72% and Nuxt.js 69%.
 
 {{ figure_markup(
   image="LCP-distribution-SSG.png",
@@ -334,7 +334,7 @@ Jamstack sites delivered by GitHub have 80% of good LCP. Netlify as Jamstack ori
 
 ### First Input Delay
 
-<a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID) - FID measures the time from when a user first interacts with a page (i.e. when they click a link, tap on a button, or use a custom, JavaScript-powered control) to the time when the browser is actually able to begin processing event handlers in response to that interaction.
+<a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID) measures the time from when a user first interacts with a page (i.e. when they click a link, tap on a button, or use a custom, JavaScript-powered control) to the time when the browser is actually able to begin processing event handlers in response to that interaction.
 
 All SSGs are from 96% to 99%. Great experience!
 
@@ -371,9 +371,9 @@ All CDNs deliver Jamstack sites with 90% good FID, except Cloudflare.
 
 ### Cumulative Layout Shift
 
-<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLF) - is a measure of the largest burst of _layout shift scores_ for every unexpected layout shift that occurs during the entire lifespan of a page.
+<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLF) is a measure of the largest burst of _layout shift scores_ for every unexpected layout shift that occurs during the entire lifespan of a page.
 
-Again, Jekyll shows great performance here. 88% are good results. Then Hugo - 85%, Gatsby - 82%, Next.js - 75%, and Nuxt.js 75%.
+Again, Jekyll shows great performance here. 88% are good results. Followed by Hugo at 85%, Gatsby at 82%, Next.js at 75%, and Nuxt.js 75%.
 
 {{ figure_markup(
   image="CLS-distribution-SSG.png",
@@ -444,8 +444,7 @@ Surprise for us was jQuery.  It wasn't a surprise that it's used for Hugo and Je
 
 Styled-components used for Next.js and Gatsby sites and takes ~40% of all third party libraries. Amotion tries to fight styled-components.
 
-Lodash is also one of a kind. Like jQuery. Developers like and use it as well.
-Nuxt.js - 34%, Next.js - 21%, Gatsby - 12%.
+Lodash is also one of a kind. Like jQuery. Developers like and use it as well. Nuxt.js sites used it 34% of the time, Next.js 21% of the time, and 12% of Gatsby sites used it.
 
  Note that this data aggregates all of the pages for different sites, hence e.g. 25% of jQuery usage among other 3rd parties can happen for some Nuxt.js sites and might not happen for other of sites at all.
 
@@ -475,7 +474,7 @@ On the other hand, CSS is heavier than Hugo and Jekyll. 29Kb and 23Kb.
 
 Images weights distributed differently. There's no correlation between SSG groups.
 
-Nuxt.js has the highest value - 645Kb. Then Hugo, 522Kb. Next.js and Gatsby almost the same, 465Kb and 545Kb. Jekyll has the lowest value - 295Kb.
+Nuxt.js has the highest value at 645Kb. Then Hugo, 522Kb. Next.js and Gatsby almost the same, 465Kb and 545Kb. Jekyll has the lowest value at 295Kb.
 
 {{ figure_markup(
   image="median-image-weight.png",
@@ -488,11 +487,13 @@ Nuxt.js has the highest value - 645Kb. Then Hugo, 522Kb. Next.js and Gatsby almo
 
 #### Images format adoption
 
-Images, one of the bottlenecks of good User Experience (UX). If they are huge sizes - the user waits a long time for the image to be delivered. It leads to content jumps and other different problems.
+Images, one of the bottlenecks of good User Experience (UX). If they are huge sizes the user waits a long time for the image to be delivered. It leads to content jumps and other different problems.
 
-Next generation of image formats - <a hreflang="en" href="https://developers.google.com/speed/webp/">WebP</a> has 17% of usage among Jamstack sites.
+As one of the newer generation of image formats, <a hreflang="en" href="https://developers.google.com/speed/webp/">WebP</a> has 17% of usage among Jamstack sites.
 
-Still, most used is JPEG - 29% and GIF - 27%. SVG is used on 19% of webpages.
+Still, the most used is JPEG at 29% and GIF at 27%. SVG is used on 19% of webpages.
+
+{# TODO That seems really high for GIF! Is it accurate? Any thoughts why? #}
 
 Compared to [last year's results](../2020/jamstack#image-formats), when WebP had only 3%, we can say it's a great improvement over one year.
 
