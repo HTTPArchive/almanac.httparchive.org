@@ -2,13 +2,13 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Caching
 description: Caching chapter of the 2021 Web Almanac covering Cache-control, Expires, TTLs, validity, Vary, Set-cookies, Service Workers and opportunities.
-authors: [Zizzamia, jessnicolet]
+authors: [zizzamia, jessnicolet]
 reviewers: []
 analysts: [rviscomi]
 editors: []
 translators: []
 zizzamia_bio: Leonardo is a Staff Software Engineer at <a hreflang="en" href="https://www.coinbase.com/">Coinbase</a>, leading initiatives that enable product engineers to ship the highest quality applications in the world at scale. He curates the <a hreflang="en" href="https://ngrome.io">NGRome Conference</a>. Leo also maintains the <a hreflang="en" href="https://github.com/Zizzamia/perfume.js">Perfume.js</a> library, which helps companies prioritize roadmaps and make better business decisions through performance analytics.
-jessnicolet_bio: Jessica is an opera singer ...
+jessnicolet_bio: Jessica began her career as an opera singer and has been in the classical music industry for the past 10 years. In early 2020 and due to the pandemic, she decided to start a new career in Tech, specifically Web Development. She has always enjoyed writing and telling stories both onstage and off and published a [series of three articles](https://jessicanicolet.medium.com/) on Medium documenting her experience transitioning to this new field. She is currently looking for a full-time position in Technical Writing. 
 results: https://docs.google.com/spreadsheets/d/1-v3yR0LZIC3t4zWtqTgR3jJsKjjRMP-HATU2caP8e2c/
 featured_quote: During the past year caching ...
 featured_quote: TODO
@@ -398,7 +398,9 @@ Considerations after reviewing this data:
 
 This data shows us that 1st parties have prioritized refreshing HTML content, which usually holds the link to JS and CSS files, while 3rd party providers that are mostly CSS and script-driven, like browser extensions, have prioritized keeping their CSS up-to-date. When we consider the origins behind 1st parties vs. 3rd parties, it follows that the _way_ content is delivered may be more important to 3rd parties than the actual content, thus making their presentation and optimization of it, all the more important. 
 
-Mobile resources with a cache TTL that was considered too short compared to its content age have seen an improvement since 2020. This data is exciting because it hints at the community's growing understanding of appropriate caching. While a cache TTL that is too long is unhelpful, it is also less useful if it is too short. The correlation between cache TTL and content age is slowly closing the gap, moving from 60.2% in 2020 to 54% in 2021. The more we can pay attention to content's age, the more accurately we can set cache limits.
+Mobile resources with a cache TTL that was considered too short compared to its content age have seen an improvement since 2020. This data is exciting because it hints at the community's growing understanding of appropriately relative caching. 
+
+While a cache TTL that is too long may serve stale content, there is no benefit for the end user if it is too short. The connection between cache TTL and content age is slowly closing this gap, moving from 60.2% in 2020 to 54% in 2021. The more attentive we can be towards to content age (i.e: how often we revamp a page's HTML, CSS etc), the more accurately we can set cache limits.
 
 {{ figure_markup(
   caption="TODO",
@@ -438,15 +440,15 @@ Developers are getting better at setting the cache duration more accurately to t
   ) }}</figcaption>
 </figure>
 
-When we split the data between first and third party providers, the largest improvements come from third parties where we have a 13.2% improvement. It is very encouraging to see companies around the world building products for developers that are highly optimized on caching. It's possible that the developer community's increased attention towards improving performance has encouraged and even incentivized third parties to optimize their caching strategies.
+When we split the data between 1st and 3rd party providers, the largest improvements come from 3rd parties where we have a 13.2% improvement. It is highly encouraging to see companies around the world building products for developers that are optimizing caching. It's possible that the developer community's increased attention towards improving performance has encouraged and even incentivized 3rd parties to optimize their caching strategies.
 
-However, the challenge remains for how first parties can effectively improve over the coming years.
+However, the challenge remains for how 1st parties can effectively improve over the coming years.
 
 ## Identifying caching opportunities
 
 Based on the **Lighthouse caching TTL** score, we have seen an improvement in pages ranked with a perfect score of 100 increase from 3.3% in 2020 to 4.4% in 2021.
 
-The score reflects whether the pages can benefit from additional caching policy improvements. Even though we are excited to see 31% of pages scoring above the 50 percentile score, a large potential exists for the 52% of pages that are ranking below the 25 percentile.
+The score reflects whether the pages can benefit from additional caching policy improvements. Even though we are excited to see 31% of pages scoring above the 50 percentile score, a large potential for improvement exists for the 52% of pages that are ranking below the 25 percentile.
 
 {{ figure_markup(
   image="lighthouse-caching-ttl-scores.png",
@@ -474,11 +476,14 @@ The current percentage of pages audited that have 0 wasted bytes is still relati
 
 ## Conclusion
 
-Many people may recognize this quote by Phil Karlton, "*There are only two hard things in Computer Science: cache invalidation and naming things.*" And I have always wondered why caching is so hard. My take is that to do caching well, you need two key ingredients: to keep it simple and to understand all potential edge cases. Unfortunately, when we try to make the cache too clever, we can end up caching the wrong things or, worse, caching too much. On a similar note, understanding all the edge cases requires a ton of research, testing, and slow incremental improvements. Even with that, you have to hope that an old browser will not throw you under the bus. But the reason we still chase great caching strategies is that the ultimate reward is very high, with a significant reduction in round-trip requests, high savings for your server, less data required from your users, and ultimately a better user experience.
+You may recognize this quote by Phil Karlton, "*There are only two hard things in Computer Science: cache invalidation and naming things.*" And in all honesty I have always wondered why caching is so hard. 
+My take is that to do caching well, you need two key ingredients: to keep it simple and to understand all potential edge cases.
+
+Unfortunately, when we try to make the cache too clever, we can end up caching the wrong things or, worse, caching too much. On a similar note, understanding all the edge cases requires extensive research, testing, and slow incremental improvements. Even with that, you have to hope that an old browser will not throw you under the bus. But the reason we still chase great caching strategies is that the ultimate reward is very high, with a significant reduction in round-trip requests, high savings for your server, less data required from your users, and ultimately a better user experience.
 
 No matter the case, make sure to have a playbook for how to best use caching:
 - Prioritize caching work at an early stage of the development cycle, _and_ after a product is shipped
 - Write end-to-end tests to recreate major edge cases
 - Regularly audit the site and update cache rules that might be outdated or missing
 
-As a final note, caching can be made less complex if we help our peers by mentoring them and writing simple and good documentation regarding how to use it. Ultimately, caching is not something to be mastered by only a few. It should become common knowledge across an entire company, making it is easier to focus on building easy and frictionless experiences.
+Ultimately, caching can be made less complex if we spread the knowledge by mentoring our peers and writing good documentation that is simple to understand. Caching is not something that should only be mastered by a few. Our goal is to move towards it being common knowledge across an entire company. Because at the end of the day, what we really want to focus on is building easy and frictionless experiences for our users.
