@@ -88,6 +88,22 @@ Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archi
 {% block author %}Autor(a){% endblock %}
 {% block authors %}Autores{% endblock %}
 
+{% block reactions %}Reações{% endblock %}
+{% block source %}Ver fonte{% endblock %}
+
+{% block like %}curtir{% endblock %}
+{% block repost %}repostagem{% endblock %}
+{% block reply %}resposta{% endblock %}
+{% block mention %}menção{% endblock %}
+{% block likes %}curtidas{% endblock %}
+{% block reposts %}repostagens{% endblock %}
+{% block replies %}respostas{% endblock %}
+{% block mentions %}menções{% endblock %}
+{% block likesAlt %}{% endblock %}
+{% block repostsAlt %}{% endblock %}
+{% block repliesAlt %}{% endblock %}
+{% block mentionsAlt %}{% endblock %}
+
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} no Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} no GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} no LinkedIn{% endmacro %}
@@ -104,10 +120,10 @@ Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archi
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
-{% macro read_chapter(chapter) %}Leia o Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% macro read_chapter(chapter) %}Leia o capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}Leia o {{ year|int -1 }} Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}Leia o {{ year|int -1 }} capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
@@ -188,5 +204,18 @@ Salvo indicação em contrário, as métricas em todos os {{ supported_chapters 
   "leads": "Lider",
   "reviewers": "Revisores",
   "translators": "Tradutores",
+  }
+%}
+
+{% set localizedTeamRole = {
+  "analysts": "Analista",
+  "authors": "Autor",
+  "brainstormers": "Pensador",
+  "designers": "Designer",
+  "developers": "Desenvolvedor",
+  "editors": "Editor",
+  "leads": "Lider",
+  "reviewers": "Revisor",
+  "translators": "Tradutor",
   }
 %}

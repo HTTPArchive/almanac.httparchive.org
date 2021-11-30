@@ -88,6 +88,22 @@
 {% block author %}Автор{% endblock %}
 {% block authors %}Автори{% endblock %}
 
+{% block reactions %}Реакції{% endblock %}
+{% block source %}Переглянути джерело{% endblock %}
+
+{% block like %}лайк{% endblock %}
+{% block repost %}репост{% endblock %}
+{% block reply %}відповідь{% endblock %}
+{% block mention %}згадка{% endblock %}
+{% block likes %}лайків{% endblock %}
+{% block reposts %}репостів{% endblock %}
+{% block replies %}відповідей{% endblock %}
+{% block mentions %}згадок{% endblock %}
+{% block likesAlt %}лайки{% endblock %}
+{% block repostsAlt %}репости{% endblock %}
+{% block repliesAlt %}відповіді{% endblock %}
+{% block mentionsAlt %}згадки{% endblock %}
+
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} у Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} на GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} у LinkedIn{% endmacro %}
@@ -185,8 +201,21 @@
   "designers": "Дизайнери",
   "developers": "Розробники",
   "editors": "Редактори",
-  "leads": "Керівники проектів",
+  "leads": "Керівники проєкту",
   "reviewers": "Рецензенти",
   "translators": "Перекладачі"
+  }
+%}
+
+{% set localizedTeamRole = {
+  "analysts": "Аналітик",
+  "authors": "Автор",
+  "brainstormers": "Творча група",
+  "designers": "Дизайнер",
+  "developers": "Розробник",
+  "editors": "Редактор",
+  "leads": "Керівник проєкту",
+  "reviewers": "Рецензент",
+  "translators": "Перекладач"
   }
 %}
