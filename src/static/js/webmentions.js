@@ -127,7 +127,7 @@ function renderReactions(webmentions, reactionType, wmProperty) {
 
       const reactionTime = document.createElement("time");
       reactionTime.setAttribute("class", "webmention-pub-date");
-      const pubDate = reaction["published"] ? reaction["published"] : reaction["wm-received"]
+      const pubDate = reaction["published"] ? reaction["published"] : reaction["wm-received"];
       if (pubDate) {
         reactionTime.setAttribute("datetime", pubDate);
         reactionTime.textContent = formatDate(pubDate);
