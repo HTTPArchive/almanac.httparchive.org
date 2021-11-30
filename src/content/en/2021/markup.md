@@ -5,7 +5,7 @@ description: Markup chapter of the 2021 Web Almanac covering the use of elements
 authors: [AlexLakatos]
 reviewers: [j9t, bkardell, shantsis, tunetheweb, rviscomi]
 analysts: [kevinfarrugia]
-editors: [rviscomi]
+editors: []
 AlexLakatos_bio: Alex Lakatos has spent the past decade working on the Open Web within Browser, Communications, and FinTech organizations. With a background in web technologies and developer advocacy, he's helping the <a hreflang="en" href="https://interledger.org/">Interledger Foundation</a> build developer-friendly products while engaging with the developer community at large. You can <a hreflang="en" href="https://twitter.com/avolakatos">reach out to him on Twitter</a>.
 translators: []
 results: https://docs.google.com/spreadsheets/d/1Ta5Ck7y3W6LCn2CeGtW7dAdLF6Lh5wV2UBQJZTz3W5Q/
@@ -16,19 +16,10 @@ featured_stat_2: 98%
 featured_stat_label_2: Pages have at least one <script> element in HTML
 featured_stat_3: 4,256
 featured_stat_label_3: The most <form> elements found on a single page.
+unedited: true
 ---
 
-
-
-## Content team
-
-**_Authors: Alex Lakatos ([alex.lakatos.qa@gmail.com](mailto:alex.lakatos.qa@gmail.com))_**
-
-**_Reviewers: Jens Oliver Meiert ([jens@meiert.com](mailto:jens@meiert.com)), Brian Kardell ([bkardell@gmail.com](mailto:bkardell@gmail.com)), Shaina Hantsis, Barry Pollard…_**
-
-**_Analysts: Kevin Farrugia (hello@imkev.dev)_**
-
-### Introduction {#introduction}
+## Introduction
 
 Have you ever wondered what happens when you try to visit a web site? After you enter the URL in the address bar of your browser, one of the first things that happens is that a HTML file is downloaded and parsed. You could say that markup is the foundation of the Web. We’ve dedicated this chapter to looking at some of the bricks that make the web stand today.
 
@@ -38,10 +29,10 @@ We’ve drawn on the data analyzed for the past three years to try to come up wi
 _In the Markup chapter, we focus on HTML. While we briefly touch on other markup languages (like SVG or MathML) or other topics in the Almanac, those are covered in more detail in their own dedicated chapters. Because the markup is the gateway into the web, it was extremely hard not to dedicate a whole chapter to it._
 
 
-### General {#general}
+## General
 
 
-#### Doctypes {#doctypes}
+### Doctypes
 
 Ever wondered why all pages start with `&lt;!DOCTYPE html>` or something similar, even in 2021? Doctypes are required because they tell the browsers not to switch into “[quirks mode](https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode)” when rendering a page, and instead, they should make a best-effort attempt to follow the HTML spec. 
 
@@ -105,7 +96,7 @@ In terms of popularity, HTML5, better known as `&lt;!DOCTYPE html>` is still the
 The surprising part is that, [almost 20 years later](https://en.wikipedia.org/wiki/XHTML), XHTML is still a considerable part of the web, with 8% of pages still using it on desktop and a little under 7% on mobile .
 
 
-#### Document size {#document-size}
+### Document size
 
 In a mobile world, where every byte of data has a cost associated with it, document sizes for mobile websites are becoming increasingly more important. It is also increasingly bigger, by the looks of it. This year, the median mobile page had 27 KB of HTML, up 2 KB from last year. On the desktop side, the median page had 29 KB of HTML.
 
@@ -125,7 +116,7 @@ The interesting points were:
 * The biggest HTML documents for both desktop and mobile have shed a whopping 20 MB each this year, with the biggest ones being 45 MB on desktop and 21 MB on mobile.
 
 
-#### Compression {#compression}
+### Compression
 
 With document sizes increasing, we also looked at compression this year. We felt the document size relates closely to the level of compression used when transferring it over the wire.
 
@@ -142,7 +133,7 @@ Out of the 6 million desktop pages scanned, an overwhelming 84.42% were compress
 While the slight variation in percentages for mobile and desktop is not surprising, what is surprising is that almost 1 percentage point more pages are compressed for mobile only. In a [mobile world, where every byte of data has a cost associated with it](https://almanac.httparchive.org/en/2021/mobile-web), seeing that mobile pages are not only optimized, but smaller than the desktop counterparts is great. Learn more about the state of content encoding in the [Compression](./compression) chapter.
 
 
-#### Document language {#document-language}
+### Document language
 
 We’ve encountered 3,598 unique instances for the `lang` attribute on the `html` element. Because there are [7,139 spoken languages](https://www.ethnologue.com/guides/how-many-languages) at the time of writing this chapter, it made us think not all of them were represented. When we factored in the [script and region subtags](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang#language_tag_syntax), even fewer remained.
 
@@ -176,7 +167,7 @@ While we looked at the top 10 normalized languages in the set, some interesting 
 * There is an inverse correlation between the difference in empty attributes for desktop and mobile and English.
 
 
-#### Comments {#comments}
+### Comments
 
 **88%**
 
@@ -196,19 +187,19 @@ While comments are generally encouraged in code, a particular type of comments, 
 Microsoft dropped support for conditional comments in IE10. Still, 41% of the pages had at least a conditional comment present. Aside from the possibility that these are very old websites, we could only assume they are using some sort of variation of polyfilling framework for older browsers.
 
 
-#### SVG use {#svg-use}
+### SVG use
 
 This year, we wanted to take a look at SVG usage. With popular icon libraries using more and more SVG, favicon support improving and SVG images being on the rise in animations, it’s no surprise 46% of web pages had some sort of SVG on them. 37% had a SVG element, 20.04% on desktop and 18.44% on mobile were using SVG images, and a negligible amount had either SVG embeds, objects or iframes in them.
 
 SVGs have more use cases when compared to the style element, but in terms of popularity, the numbers are comparable. SVG sits just outside the top 20 in terms of element popularity on a page.
 
 
-### Elements {#elements}
+## Elements
 
 Elements are the DNA of a HTML document. We wanted to analyze the cells that make up the living organism that is a web page. What are the most popular, the most likely to be present, and the obsolete elements on most pages?
 
 
-#### Element diversity {#element-diversity}
+### Element diversity
 
 There are [112 elements](https://html.spec.whatwg.org/multipage/indices.html#elements-3) currently defined and in use (excepting SVG and MathML), with another [28 being deprecated](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#obsolete_and_deprecated_elements) or obsolete. We wanted to see how many of them were actually used on a page, and how likely a web of `div`s was. 
 
@@ -233,7 +224,7 @@ No need to panic, the web isn’t all made up of divs. The median page uses 31 d
 
 
 
-#### Top elements {#top-elements}
+### Top elements
 
 Every year since 2019, the Markup chapter of the Web Almanac has featured the most frequently used elements in reference to[ Ian Hickson’s work in 2005](https://web.archive.org/web/20060203031713/http://code.google.com/webstats/2005-12/elements.html). This author couldn’t break with tradition, so we had a look at the data again.
 
@@ -378,7 +369,7 @@ The top six elements haven’t changed in the past three years, and it looks lik
 It’s interesting to see that `i` and `option` have both fallen out of favor. The first probably because libraries that misuse the `i` element for icons have fallen out of popularity in favor of libraries using SVGs for icons. The `meta` element is making a strong push into the top 10 this year, perhaps because social markup is also on the rise. We’ll look at social markup in a later section of this chapter. The rise of styled `select` elements accounts for the `ul` (unordered list) element gaining popularity over the option element.
 
 
-##### main
+#### main
 
 With the [creation of content spiking in 2021](https://wordpress.com/activity/posting/) (most likely because the world was stuck in a pandemic), we wanted to see if that correlates to an adoption of content elements as well. We thought `main` is a good indicator, it being an informative element that doesn’t affect the DOMs concept of the structure of a page.
 
@@ -389,7 +380,7 @@ Pages with at least one &lt;main> element in HTML
 27.68% of desktop pages and 27.88% of mobile pages had a `main` element. In terms of popularity, it made it well in the top 50 elements, with a respectable 34. Before you start thinking that there are only 114 elements, we’ve actually had more than a thousand elements come back from the queries we ran, most of which were custom.
 
 
-##### base
+#### base
 
 Another curiosity was how much were developers paying attention to the stricter rules of the HTML spec. For example, the spec says there must be [no more than one `base` element](https://html.spec.whatwg.org/multipage/semantics.html#the-base-element) in a document, because the `base` element defines how user agents should resolve relative URLs. Having more than one `base` element introduces ambiguity, so the spec requires that all `base` elements after the first be ignored, rendering them useless.
 
@@ -397,17 +388,17 @@ From looking at the desktop pages, `base` is a popular element, with 10.39% of p
 
 
 
-##### dialog
+#### dialog
 
 Throughout the chapter we wanted to also look at the adoption of some of the more controversial or new elements. `dialog` is one of them, with not all major browsers supporting it out of the box yet. Only 7,617 pages on desktop and 7,819 pages on mobile are using a dialog element. When we consider that’s only around  0.1% of the pages analyzed, it doesn’t look like the adoption is there yet.
 
 
-##### canvas
+#### canvas
 
 The `canvas` element can be used with either the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) or [WebGL API](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) to draw graphics and animations. It’s one of the main elements used for games or mixed reality on the web. It’s no surprise 3.07% of the desktop pages and 2.61% of the mobile pages use it. The higher usage on desktop makes sense when you consider the graphic capabilities of the different devices, and the use cases skewed towards games and virtual reality.
 
 
-#### Probability of element use {#probability-of-element-use}
+### Probability of element use
 
 While the `html`, `head`, `body`, `title`, and `meta` elements are all optional, they’re the most common elements this year, all present on more than 99% of the pages.
 
@@ -457,7 +448,7 @@ While the percentages are slightly different when compared with last year, the o
 It’s interesting to see that `tt`, a deprecated element for [Teletype Text](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tt), is 100% more popular than `ruby` and `rt`, which are the [Ruby Annotation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ruby) and [Text](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rt) elements still used for showing the pronunciation of East Asian characters.
 
 
-#### Script
+### Script
 
 **98%**
 
@@ -472,14 +463,14 @@ Pages with at least one &lt;noscript> element in HTML
 51% of pages also contain a `noscript` element, which is generally used to display a message for browsers that have disabled JavaScript. Another popular use for the `noscript` element is the Google Tag Manager (GTM) snippet. 18.84% of pages on desktop and 16.92% of pages on mobile are using the noscript element as part of the GTM snippet. It’s interesting to note that GTM is more popular on desktop than mobile.
 
 
-#### Template
+### Template
 
 One of the [least recognized, but most powerful features](https://css-tricks.com/crafting-reusable-html-templates/) of the Web Components specification is the &lt;template> element. Despite the fact that the [`template` element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots) is well supported on modern browsers since 2013, only 0.5% of the pages were using it in 2021. In terms of popularity, it didn’t even make it into the top 50 elements. We thought this speaks volumes about the adoption curve of the modern HTML specification for web developers.
 
 In case you don’t really know what template does, here is a refresher from the specification: “the template element is used to declare fragments of HTML that can be cloned and inserted in the document by script”. If you’re a web developer and think that sounds familiar, you’re right. Most of the popular frameworks today have a similar non-native mechanism to do the same: Angular has [&lt;ng-content>](https://angular.io/guide/content-projection), React has [portals](https://reactjs.org/docs/portals.html) and Vue has [&lt;slot>](https://v3.vuejs.org/guide/component-slots.html#slots). We would have thought those frameworks would use the native template element or Web Components instead of re-creating the functionality within the frameworks.
 
 
-#### Style
+### Style
 
 **83%**
 
@@ -490,7 +481,7 @@ When creating a web page, three things come together. One is HTML, and we’re l
 In terms of sheer popularity on a page, it barely made it into the top 20, with 0.7%. That leaves us to believe that while multiple script elements are popular on a page, most have five times less style elements on them. And that makes sense. Because script elements can be used for both inline and external scripts, but CSS uses a separate element, the link element, for loading external style sheets. The link element is present on slightly more pages than the script element, while being slightly less popular in terms of numbers of occurrences.
 
 
-#### Custom elements {#custom-elements}
+### Custom elements
 
 We’ve also looked at elements that didn’t show up on the HTML or SVG  spec, be it current or obsolete, to determine what custom elements were out there in the wild.
 
@@ -569,7 +560,7 @@ By far, the most popular one is [Slider Revolution](https://www.sliderrevolution
 We would have thought that popular frameworks like [Angular](https://angular.io/), [Next.js](https://nextjs.org/) or the former [Angular.js ](https://angularjs.org/)would account for more custom components, but `router-outlet` and `ng-component` make up a small part of the custom component base. 
 
 
-#### Obsolete elements {#obsolete-elements}
+### Obsolete elements
 
 There are currently [28 obsolete and deprecated elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#obsolete_and_deprecated_elements) described in the HTML reference. We wanted to see how many of those were still in use today. By far, the most used ones are `center` and `font`, and we’re glad to see their usage has slightly declined when compared with last year.
 
@@ -596,7 +587,7 @@ While the percentage of obsolete elements for mobile pages is slightly different
 Google still uses a `center` element on their homepage in 2021, but we’re not going to judge.
 
 
-#### Proprietary and non-standard elements
+### Proprietary and non-standard elements
 
 While custom elements all have a hyphen in them, we’ve also encountered elements that are made up, don’t have a hyphen and don’t show up on the [HTML standard](https://html.spec.whatwg.org/#toc-semantics).
 
@@ -672,7 +663,7 @@ All of them were present last year as well, and can be attributed to popular fra
 
 
 
-#### Embedded content {#embedded-content}
+### Embedded content
 
 Content can be embedded through multiple elements in a page. The most popular is an `iframe`, followed at a considerable distance by `source` and `picture`.
 
@@ -740,7 +731,7 @@ The actual `embed` element is the least popular out of all the present elements 
 
 
 
-#### Forms {#forms}
+### Forms
 
 Forms, or ways of getting input from your visitors,  are part of the fabric of the web. It’s no surprise that 71.28% of pages on desktop and 67.49% of pages on mobile had at least one `form` on them. The most common occurrence was one (33.02% on desktop and 31.55% on mobile) or two (17.86% on desktop and 16.81% on mobile) `form` elements on a page. 
 
@@ -753,12 +744,12 @@ The most `form` elements found on a single page.
 There are also extreme cases with one page having 4,018 `form` elements on desktop and 4,256 `form` elements on mobile. We can’t help but wonder what kind of input is so valuable, that you’d have to break it up in 4,000 pieces.
 
 
-### Attributes {#attributes}
+## Attributes
 
 Element behaviors are heavily influenced by attributes, so we thought it was only fair we took a look at the attributes used on a page, explore `data-*` patterns, and some popular social attributes for meta elements.
 
 
-#### Top attributes {#top-attributes}
+### Top attributes
 
 
 
@@ -782,7 +773,7 @@ The second most popular attribute is `href`, with 10.11% of occurrences. With li
 
 
 
-##### Meta flavors
+#### Meta flavors
 
 `meta` elements are gaining some of their lost popularity this year, so we wanted to take a closer look at them. They provide a way to add machine-readable information to your pages, as well as perform some nifty HTTP equivalents. For example, setting a content security policy for a page:
 
@@ -810,8 +801,7 @@ The most popular is viewport information, with the most popular `viewport` value
 The second most popular combination are `og:*` meta elements, also known as [Open Graph](https://ogp.me/) meta elements. We’ll talk about those in the next section.
 
 
-##### Social markup {#social-markup}
-
+#### Social markup
 Providing information and assets for social platforms to use when previewing links to your page  is a popular use case for the `meta` element.
 
 
@@ -825,7 +815,7 @@ Providing information and assets for social platforms to use when previewing lin
 The most common by far are the Open Graph `meta` elements, used across multiple networks, with Twitter specific elements lagging behind. `og:title`, `og:type`, `og:image` and `og:url` are all required for every page, so it’s interesting there is a variation in their usage numbers.
 
 
-#### data- attributes {#data-attributes}
+### `data-` attributes
 
 The [HTML specification allows](https://html.spec.whatwg.org/#embedding-custom-non-visible-data-with-the-data-*-attributes) for custom attributes, prefixed by `data-*`. They are intended to store custom data, state, annotations, and similar, private to the page or application, for which there are no more appropriate attributes or elements.
 
@@ -842,12 +832,12 @@ The most common ones, `data-id`, `data-src` and `data-type` are non-specific, wi
 [Slick, “the last carousel you’ll ever need”](https://github.com/kenwheeler/slick), is responsible for `data-slick-index`. Popular frameworks like Bootstrap are responsible for `data-toggle`, while [testing-library](https://testing-library.com/docs/queries/bytestid/) is responsible for `data-testid`.
 
 
-### Miscellaneous {#miscellaneous}
+## Miscellaneous
 
 We’ve covered a good chunk of the most common HTML use cases. We’ve set aside this section at the end to look into some of the more esoteric use cases, as well as adoption of new standards on the web.
 
 
-#### `viewport` specifications {#`viewport`-specifications}
+### `viewport` specifications
 
 The `viewport` meta element is used to control layout on mobile devices. Or at least that was the idea when it came out. Today, [some browsers](https://www.quirksmode.org/blog/archives/2020/12/userscalableno.html) have started to ignore some of the `viewport` options to allow for zooming a page [up to 500%](https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large).
 
@@ -939,7 +929,7 @@ The `viewport` meta element is used to control layout on mobile devices. Or at l
 The most common `viewport` content option is `initial-scale=1,width=device-width`, which is not surprising when it’s the recommended option on the [MDN guide](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) explaining viewports. 46.56% of the pages analyzed are using it, almost 3% more than [last year](https://almanac.httparchive.org/en/2020/markup#viewport-specifications). 12.84% of pages had an empty `content` attribute, slightly more than last year as well. That correlates with a decrease in usage for improper combinations of viewport options.
 
 
-#### Favicons {#favicons}
+### Favicons
 
 Favicons are one of the most resilient pieces of the web. They work even without markup and accept multiple image formats. There are also literally dozens of sizes you need to use to be thorough.
 
@@ -960,7 +950,7 @@ There were a couple of surprises when we looked at the data:
 * With SVG support for favicons finally improving, SVG has overtaken WebP [this year](https://almanac.httparchive.org/en/2020/markup#favicons) in terms of popularity.
 
 
-#### Button and input types {#button-and-input-types}
+### Button and input types
 
 **66%**
 
@@ -979,7 +969,7 @@ Buttons are “controversial”. There are a lot of opinions of what does and wh
 When we compared the data to [last year](https://almanac.httparchive.org/en/2020/markup#favicons), we noticed a lot more pages had a `button` element on it. This year we didn’t run a query for `input`-typed buttons, but we’ve seen a definite decrease in usage for the number of `button` elements on pages. The [Accessibility chapter](https://almanac.httparchive.org/en/2021/accessibility) also has a whole section on buttons, you should read that as well!
 
 
-#### Links {#links}
+### Links
 
 Links are the glue that ties the web together. Normally, we wanted to look at the instances where they are proving problematic. Using `target=”_blank”` without `noopener` and `noreferrer` was a security vulnerability for the longest time, but 71.09% of desktop pages and 68.89% of mobile pages still use it today. 
 
@@ -1057,7 +1047,7 @@ That’s what probably prompted a [spec change](https://github.com/whatwg/html/i
  
 
 
-#### Web Monetization {#web-monetization}
+### Web Monetization
 
 [Web Monetization](https://discourse.wicg.io/t/proposal-web-monetization-a-new-revenue-model-for-the-web/3785) is being proposed as a W3C standard at the Web Platform Incubator Community Group (WICG). It’s a young standard that provides an open, native, efficient, and automatic way to compensate creators, pay for API calls, and support crucial web infrastructure. While it is in its early days, and it is not implemented by any of the major browsers, it is supported via forks and extensions, and has been instrumented in Chromium and the HTTP Archive data for over a year.  We wanted to take a look at adoption so far. 
 
@@ -1125,7 +1115,7 @@ We know there are currently two [Interledger](https://interledger.org/)-enabled 
 Uphold and Gatehub are the current wallets, and it looks like Uphold is the dominant wallet by far. What is curious, a wallet that was deprecated this year, Stronghold, was more popular than an active wallet provider, Gatehub. We thought that speaks towards the rate at which web developers update their web sites.
 
 
-### Conclusion {#conclusion}
+## Conclusion
 
 We’ve pointed out interesting, surprising and concerning bits of data throughout the chapter. Let us reflect once more on the state of markup in 2021.
 
