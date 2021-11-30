@@ -60,7 +60,8 @@ Most of the data is represented for mobile and desktop websites. There's a fully
 ## Adoption of SSGs
 
 We will take a look what's the adoption rate of SSGs among web.
-### Ranking
+
+### Adoption by rank
 
 Let's start with ranking and understand which SSG is most popular.
 Nuxt.js covers 51% of Jamstack sites. Next.js is in second place with 35.1%, third one is Gatsby with 7.3%.
@@ -107,7 +108,7 @@ In 2020 the amount of desktop websites increased 2.76 times, while mobile just 1
 
 In this section we will go over geographic adoption for Jamstack. Explore distribution over countries and regions.
 
-### Adoption by Country
+### Adoption by country
 
 SSGs are heavily used around the world, here're 10 countries with the highest number of sites. In the USA 1% of all sites pages, which is about 22K pages for desktop and 16K for mobile, are created with SSG. India has a lower number of pages, just 6K for desktop and 7K for mobile, but 1.7% of all pages is covered by Jamstack technologies. Third is United Kingdom, which also has 1.7% of pages.
 
