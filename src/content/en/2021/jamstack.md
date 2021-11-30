@@ -324,17 +324,6 @@ Looking at mobile results, Jekyll and Hugo have the best results over SSGs—33%
 The <a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> (LCP) metric reports the render time of the largest image or text block visible within the viewport, relative to when the page first started loading.
 
 {{ figure_markup(
-  image="LCP-distribution-SSG.png",
-  caption="LCP distribution for SSGs",
-  description="Stacked Bar chart represents LCP distribution for SSGs",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=782586905&format=interactive",
-  sheets_gid="1024061881",
-  sql_file="core_web_vitals_distribution.sql"
-) }}
-
-In average user experience, the best results show Hugo and Jekyll. 88% and 90% are under 2.5s. Gatsby is just behind with 78%. Next.js has almost 72% and Nuxt.js 69%.
-
-{{ figure_markup(
   image="cwv-lcp.png",
   caption="Real-user Core Web Vitals LCP",
   description="Bar chart represents real-user Core Web Vitals LCP",
@@ -343,10 +332,7 @@ In average user experience, the best results show Hugo and Jekyll. 88% and 90% a
   sql_file="core_web_vitals_passing.sql"
 ) }}
 
-Above we see the same results are approved by percent of sites with good LCP experience.
-
-{# I don't understand any of these CWV charts. What's the difference in them? Is it just the top is desktop only and the bottom is split out by device? Do 71.7% of Next.JS desktop sites have good LCP or 49%? Why are they different numbers? #}
-
+Above we see the same results are approved by percent of sites with good LCP experience. The best results show Jekyll and Hugo with 79.5% and 72.5% of mobile sites having a "good" LCP of under 2.5s. The JavaScript based SSGs (Gatsby, Next.js, and Nuxt.js) fair worse.
 
 {{ figure_markup(
   image="LCP-distribution-CDN.png",
@@ -364,17 +350,6 @@ GitHub tops the stats when measuring on CDN level, likely reflecting the simpler
 <a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID) measures the time from when a user first interacts with a page (i.e. when they click a link, tap on a button, or use a custom, JavaScript-powered control) to the time when the browser is actually able to begin processing event handlers in response to that interaction.
 
 {{ figure_markup(
-  image="FID-distribution-SSG.png",
-  caption="FID distribution for SSGs",
-  description="Stacked Bar chart represents FID distribution for SSGs",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=1025201906&format=interactive",
-  sheets_gid="1024061881",
-  sql_file="core_web_vitals_distribution.sql"
-) }}
-
-All SSGs are from 96% to 99%. Great experience!
-
-{{ figure_markup(
   image="cwv-fid.png",
   caption="Real-user Core Web Vitals FID",
   description="Bar chart represents real-user Core Web Vitals FID.",
@@ -383,9 +358,7 @@ All SSGs are from 96% to 99%. Great experience!
   sql_file="core_web_vitals_passing.sql"
 ) }}
 
-{# TODO same question on this chart #}
-
-On real user experience, FID shows great results too across different SSGs.
+On real user experience, All SSG show gret FID results too across different SSGs.
 
 {{ figure_markup(
   image="FID-distribution-CDN.png",
@@ -396,24 +369,11 @@ On real user experience, FID shows great results too across different SSGs.
   sql_file="core_web_vitals_distribution.sql"
 ) }}
 
-All CDNs deliver Jamstack sites with 90% good FID, except Cloudflare.
+All CDNs deliver Jamstack sites with 90% good FID, though intersting that the CloudFalre and AWS sites fare slightly worse than the Jamstack-orientated CDNs.
 
 ### Cumulative Layout Shift
 
 <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLF) is a measure of the largest burst of _layout shift scores_ for every unexpected layout shift that occurs during the entire lifespan of a page.
-
-Again, Jekyll shows great performance here. 88% are good results. Followed by Hugo at 85%, Gatsby at 82%, Next.js at 75%, and Nuxt.js 75%.
-
-{{ figure_markup(
-  image="CLS-distribution-SSG.png",
-  caption="CLS distribution for SSGs",
-  description="Stacked Bar chart represents CLS distribution for SSGs",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=1429663268&format=interactive",
-  sheets_gid="1024061881",
-  sql_file="core_web_vitals_distribution.sql"
-) }}
-
-As well as other CLS for real websites has the same trend.
 
 {{ figure_markup(
   image="cwv-cls.png",
@@ -424,9 +384,9 @@ As well as other CLS for real websites has the same trend.
   sql_file="core_web_vitals_passing.sql"
 ) }}
 
-{# TODO same question on the difference between these charts #}
+Again, Jekyll shows great performance here. 81.6% of mobile are good results. Followed by Hugo at 73.4%, Gatsby at 66.7%, Next.js at 55.1%, and Nuxt.js trailing the pack at 46.4%%.
 
-Here's the same results as with LCP for CDNs. Github, Netlify, Vercel.
+Here's the same results as with previously for CDNs. Github, Netlify, Vercel.
 
 {{ figure_markup(
   image="CLS-distribution-CDN.png",
