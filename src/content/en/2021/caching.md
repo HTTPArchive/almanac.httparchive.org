@@ -111,17 +111,6 @@ When both are specified, `ETag` takes precedence.
 Comparing 2020 with 2021, we notice a similar trend from past years where the `ETag` is becoming slightly more popular, and `Last-Modified` is being used 1.5% less. But what we should probably keep an eye on next year is this new trend in 1.4% more pages using neither `ETag` nor `Last-Modified` headers, as this could imply a challenge in the community understanding the value of these headers.
 
 ### `Cache-Control` directives
-When using the Cache-Control header, usage increased by 1% for Desktop and remained the same for Mobile.
-
-{{ figure_markup(
-  image="cache-control-adoption.png",
-  caption="The percent of requests that use the Cache-Control response header.",
-  description="TODO",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=885292598&format=interactive",
-  sheets_gid="2102749619",
-  sql_file="header_trends.sql"
-) }}
-
 When using the `Cache-Control` header, you specify one or more *directives*—predefined values that indicate specific caching functionality. Multiple directives are separated by commas and can be set in any order, although some clash with one another (e.g., `public` and `private`). In addition, some directives take a value, such as `max-age`.
 
 Below is a table showing the most common `Cache-Control` directives:
