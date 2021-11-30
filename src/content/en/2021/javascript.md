@@ -770,7 +770,7 @@ In the case of the usage of the `Fetch` API, the median mobile page makes 2 requ
   )
 }}
 
-`Beacon` usage is almost non-existant, with 0 requests per page until the 90th percentile, at which there's only one request per page. One possible explanation for this low adoption could be that `Beacon` is typically used for sending analytics data, especially when one wants to ensure that the request is sent even if the page might unload soon. This is, however, not guaranteed when using XHR. A good experiment for the future would be to see if some statistics could be collected around any pages using XHR for analytics data, session data, etc.
+`Beacon` usage is almost non-existent, with 0 requests per page until the 90th percentile, at which there's only one request per page. One possible explanation for this low adoption could be that `Beacon` is typically used for sending analytics data, especially when one wants to ensure that the request is sent even if the page might unload soon. This is, however, not guaranteed when using XHR. A good experiment for the future would be to see if some statistics could be collected around any pages using XHR for analytics data, session data, etc.
 
 It would be interesting to also compare the adoption of XHR and `Fetch` over time.
 
