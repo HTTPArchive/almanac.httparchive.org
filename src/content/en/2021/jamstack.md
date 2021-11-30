@@ -63,8 +63,7 @@ We will take a look what's the adoption rate of SSGs among web.
 
 ### Adoption by rank
 
-Let's start with ranking and understand which SSG is most popular.
-Nuxt.js covers 51% of Jamstack sites. Next.js is in second place with 35.1%, third one is Gatsby with 7.3%.
+Let's start with ranking and understand which SSG is most popular. Nuxt.js covers 51% of Jamstack sites. Next.js is in second place with 35.1%, third one is Gatsby with 7.3%.
 
 {{ figure_markup(
   image="adoption-share.png",
@@ -195,10 +194,7 @@ Note: GitHub as CDN provider might be questioned, but GitHub offers a feature ca
 ) }}
 
 Next.js, as most popular by data we have, mostly served by Cloudflare, Vercel, and AWS. Most of Gatsby's sites use Netlify, AWS, and Cloudflare.
-
-Nuxt.js sites preferred to be served by Cloudflare, AWS, and Netlify.
-
-Hugo mostly uses Netlify, and Jekyll as no surprise mostly on GitHub.
+ Nuxt.js sites preferred to be served by Cloudflare, AWS, and Netlify. Hugo mostly uses Netlify, and Jekyll as no surprise mostly on GitHub.
 
 Fair to say that in real world, Cloudflare is used not only for pure serving as CDN but as protection service, DNS balancing etc. So, keep in mind that Cloudflare results can be false positives.
 
@@ -276,6 +272,7 @@ All Jamstack sites provide great SEO scores. From 90 to 92.
 ) }}
 
 The bottomline here is that Lighthouse results in general are good, but performance and PWA should be the main target for SSGs, these categories need some work to improve developer experience out of the box, hence the end result of sites performance will be improved.
+
 ## Core Web Vitals
 
 <a hreflang="en" href="https://web.dev/learn-web-vitals/">Core Web Vitals</a> (CWV) - an initiative to provide unified guidance for quality signals that are essential to delivering a great user experience on the web. CWV itself uses 3 performance metrics:
@@ -414,6 +411,7 @@ In general CWV results reflect Lighthouse results. Huge and Jekyll have better r
 ## Resources
 
 Let's dive into resource weights between top 5 SSGs to understand its influence on performance. The results represent median values.
+
 ### Resources weight
 
 JavaScript based SSGs have almost 2x larger amount of resources then Hugo and Jekyll. Top one is ~2MB for Nuxt.js, then goes Next.js and Gatsby with almost 1.8MB and 1.7MB.
