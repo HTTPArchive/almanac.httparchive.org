@@ -91,7 +91,7 @@ Usage of the `Cache-Control` header has increased steadily since 2019. 74% of re
   sql_file="header_trends.sql"
 ) }}
 
-From 2020, the usage of this specific header increased by 0.71% for Mobile and by 1.13% for Desktop. But on mobile, we still have 25.1% of requests that use neither `Cache-Control` nor `Expires` headers. This leads us to believe there has been an increase in awareness in the community around proper usage of `Cache-Control`, but we still have a long way to go to full adoption of these headers.
+From 2020, the usage of this specific header increased by 0.71% for Mobile and by 1.13% for Desktop. But on Mobile, we still have 25.1% of requests that use neither `Cache-Control` nor `Expires` headers. This leads us to believe there has been an increase in awareness in the community around proper usage of `Cache-Control`, but we still have a long way to go to full adoption of these headers.
 
 To **validate** the content, we have:
 - `Last-Modified` indicates when the object was last changed. Its value is a date timestamp.
@@ -153,7 +153,7 @@ Below is a table showing the most common `Cache-Control` directives:
   <figcaption>TODO: Caption the table above</figcaption>
 </figure>
 
-The `max-age` directive is the most commonly found since it directly defines the TTL the same way that the `Expires` header does.
+The `max-age` directive is the most commonly found with 62.2% of Desktop requests include a `Cache-Control` response header with this directive.
 
 {{ figure_markup(
   image="cache-control-directives.png",
@@ -164,12 +164,15 @@ The `max-age` directive is the most commonly found since it directly defines the
   sql_file="cache_control_directives.sql"
 ) }}
 
-[TODO Leo complete the part around Cache-Control directives]
-Cache Control directives, 61% of mobile requests include a `Cache-Control` response header with a `max-age` directive.
+Compared to 2020, `max-age` adoption increased by 2% on Desktop and most of the top seven directives in the above chart.
 
-The most misused Cache Control directive is `set-cookie`, used for 0.07% of total directives for Desktop and 0.08% for Mobile.
+The `immutable` directive is relatively new and can significantly improve cacheability for certain types of requests. However, it is still only supported by a few browsers, and we see most requests from Host Networks like *Wix* with 16.4%, *Facebook* with 8.6%, *Tawk* at 2.8%, and *Shopify* at 2.4%.
 
-Fun fact the the largest max-age value is 1625540701883604800000 seconds or 51545557517871.8 (51 trillion) years.
+The most misused `Cache-Control` directive continues to be `set-cookie`, used for 0.07% of total *directives* for Desktop and 0.08% for Mobile. Although we are seeing a meaningful 0.16% reduction of usage from 2020.
+
+When we take a look when `no-cache`, `max-age=0` and `no-store` are used together, we also see a growing trend year after year, which where `no-store` is specified with either/both of `no-cache` and `max-age=0`, the `no-store` directive takes precedence, and the other directives are ignored. Therefore, driving more awareness on larger conferences using these *directives* can help avoid accidentally wasted bytes.
+
+Fun fact the most common `max-age` value is 30 days, and the largest value is 51 trillion years.
 
 {{ figure_markup(
   caption="TODO",
@@ -178,9 +181,6 @@ Fun fact the the largest max-age value is 1625540701883604800000 seconds or 5154
   sheets_gid="529870849",
   sql_file="todo.sql"
 ) }}
-
-[TODO Leo talk about `immutable`]
-Talk about `immutable` directive, 12% of desktop requests containing `Cache-Control`: immutable are on the "static.parastorage.com" host.
 
 ### `Last-Modified` & `ETag` adoption
 
@@ -224,13 +224,13 @@ This shows us that automation of the `Date` header could benefit from further at
 
 An essential step in caching a resource is understanding if it was previously cached. The browser typically uses the url as the cache key. At the same time, requests with similar urls but different `Accept-Encoding` could be cached incorrectly. That's why we use the `Vary` header to instruct the browser to add a value of one or more headers to the cache key.
 
-The most popular Vary header is `Accept-Encoding` with 90.3% usage, followed by `User-Agent` with 10.9%, `Origin` with 10.1%, and `Accept` with 4.8%. 
+The most popular `Vary` header is `Accept-Encoding` with 90.3% usage, followed by `User-Agent` with 10.9%, `Origin` with 10.1%, and `Accept` with 4.8%. 
 
 This shows a 1.5% decrease in use of `Accept-Encoding` from 2020.
 
 [TODO Add figure showing Vary header adoption across all requests (pct_using_vary) and cache-control (pct_of_vary_with_cache_control), data from https://docs.google.com/spreadsheets/d/1-v3yR0LZIC3t4zWtqTgR3jJsKjjRMP-HATU2caP8e2c/edit#gid=1033782866 and https://docs.google.com/spreadsheets/d/1fYmpSN3diOiFrscS75NsjfsrKXzxxhUMNcYSqXnQJQU/edit#gid=1115686547 Potentiall we mighe want to show 2020 vs 2021]
 
-It's important to point out that only 46.25% of total requests audited use the Vary header, but when compared to 2020, we see an overall increase by 2.85%.
+It's important to point out that only 46.25% of total requests audited use the `Vary` header, but when compared to 2020, we see an overall increase by 2.85%.
 
 Of these requests using the `Vary` header, 83.4% also have the `Cache-control`. This shows us a 2.1% improvement from 2020.
 
@@ -396,13 +396,13 @@ Developers are getting better at setting the cache duration more accurately to t
      <th>Overall</th>
     </tr>
     <tr>
-     <td>desktop</td>
+     <td>Desktop</td>
      <td class="numeric">59.3%</td>
      <td class="numeric">46.2%</td>
      <td class="numeric">54.3%</td>
     </tr>
     <tr>
-     <td>mobile</td>
+     <td>Mobile</td>
      <td class="numeric">60.1%</td>
      <td class="numeric">44.7%</td>
      <td class="numeric">54.3%</td>
