@@ -40,7 +40,7 @@ SEO is more popular than ever and has seen huge growth over the last couple year
 
 The purpose of the SEO chapter of the Web Almanac is to analyze various elements related to optimizing a website. In this chapter, we'll check if websites are providing a great experience for users and search engines.
 
-Many sources of data were used for our analysis including [Lighthouse](https://developers.google.com/web/tools/lighthouse/), the [Chrome User Experience Report (CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report), as well as raw and rendered HTML elements from the [HTTP Archive](https://httparchive.org/) on mobile and desktop. In the case of the HTTP Archive and Lighthouse, it is limited to the data identified from websites' homepages only, not site-wide crawls. Keep that in mind when drawing conclusions from our results. You can learn more about the analysis on our [Methodology](https://almanac.httparchive.org/en/2020/methodology) page.
+Many sources of data were used for our analysis including <a hreflang="en" href="https://almanac.httparchive.org/en/2020/methodology">Lighthouse](https://developers.google.com/web/tools/lighthouse/), the [Chrome User Experience Report (CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report), as well as raw and rendered HTML elements from the [HTTP Archive](https://httparchive.org/) on mobile and desktop. In the case of the HTTP Archive and Lighthouse, it is limited to the data identified from websites' homepages only, not site-wide crawls. Keep that in mind when drawing conclusions from our results. You can learn more about the analysis on our [Methodology</a> page.
 
 Read on to find out more about the current state of the web and its search engine friendliness.
 
@@ -58,11 +58,9 @@ Let's look at some issues that may impact crawlability and indexability.
 
 `robots.txt` is a file located in the root folder of each subdomain on a website that tells robots such as search engine crawlers where they can and can't go.
 
-81.89% of websites make use of the robots.txt file (mobile). Compared with previous years (72.16% in 2019 and 80.46% in 2020), that's a slight improvement.
+81.9% of websites make use of the robots.txt file (mobile). Compared with previous years (72.2% in 2019 and 80.5% in 2020), that's a slight improvement.
 
-Having a robots.txt is not a requirement. If it's returning 404 not found, Google assumes that every page on a website can be crawled. Other search engines may treat this differently.
-
-Using robots.txt allows website owners to control search engine robots. However, the data showed that as much as 16.51% of websites have no robots.txt file (mobile version check).
+Having a `robots.txt` is not a requirement. If it's returning a 404 not found, Google assumes that every page on a website can be crawled. Other search engines may treat this differently.
 
 {{ figure_markup(
    image="robots-txt-status-codes.png",
@@ -74,13 +72,15 @@ Using robots.txt allows website owners to control search engine robots. However,
    )
 }}
 
-Websites may have misconfigured robots.txt files. For example, some popular websites were mistakenly blocking search engines. Google may keep these websites indexed for a period of time, but eventually their visibility in search results will be lessened.
+Using `robots.txt` allows website owners to control search engine robots. However, the data showed that as many as 16.5% of websites have no `robots.txt` file.
 
-Another category of errors related to robots.txt is accessibility and/or network errors, meaning the robots.txt exists but cannot be accessed. If Google requests a robots.txt file and gets such an error, the bot may stop requesting pages for a while. The logic behind this is that search engines are unsure if a given page can or can not be crawled, so it waits until robots.txt becomes accessible.
+Websites may have misconfigured `robots.txt` files. For example, some popular websites were (presumably mistakenly) blocking search engines. Google may keep these websites indexed for a period of time, but eventually their visibility in search results will be lessened.
 
-~0.3% of websites in our dataset returned either 403 Forbidden or 5xx. Different bots may see different errors or restrictions, so we don't know exactly what Googlebot may have seen.
+Another category of errors related to `robots.txt` is accessibility and/or network errors, meaning the `robots.txt` exists but cannot be accessed. If Google requests a `robots.txt` file and gets such an error, the bot may stop requesting pages for a while. The logic behind this is that search engines are unsure if a given page can or can not be crawled, so it waits until `robots.txt` becomes accessible.
 
-The latest information available from Google is from 2019. [According to Google's data](https://www.youtube.com/watch?v=JvYh1oe5Zx0&amp;t=315s), as much as 5% of websites were temporarily returning 5xx on robots.txt, while as much as 26% were unreachable.
+~0.3% of websites in our dataset returned either 403 Forbidden or 5xx. Different bots may handle these errors differently, so we don't know exactly what Googlebot may have seen.
+
+The latest information available <a hreflang="en" href="https://www.youtube.com/watch?v=JvYh1oe5Zx0&amp;t=315s">from Google, from 2019</a> is that as many as 5% of websites were temporarily returning 5xx on robots.txt, while as many as 26% were unreachable.
 
 {{ figure_markup(
    image="robots-usage-presentation.png",
@@ -169,7 +169,7 @@ Robots rules related to other search engines, such as Bing, Baidu, and Yandex, a
 
 ### Canonical tags
 
-The World Wide Web is a massive set of documents, some of which are duplicates. To prevent duplicate content issues, webmasters can use canonical tags to tell search engines which version they prefer to be indexed. Canonicals also help to [consolidate signals such as links to the ranking page](https://www.example.com/dresses/green/greendress.html).
+The World Wide Web is a massive set of documents, some of which are duplicates. To prevent duplicate content issues, webmasters can use canonical tags to tell search engines which version they prefer to be indexed. Canonicals also help to <a hreflang="en" href="https://www.example.com/dresses/green/greendress.html">consolidate signals such as links to the ranking page</a>.
 
 The data shows increased adoption of canonical tags over the years. For example, 2019's edition shows that 48.34% of mobile pages were using a canonical tag. In 2020's edition, the percentage grew to 53.61%, and in 2021 we see 58.5%.
 
@@ -185,7 +185,7 @@ The data shows increased adoption of canonical tags over the years. For example,
 
 More mobile pages have canonicals set than their desktop counterparts. In addition, 8.3% of mobile pages and 4.3% of desktop pages are canonicalized to another page so that they provide a clear hint to Google and other search engines that the page indicated in the canonical tag is the one that should be indexed.
 
-A higher number of canonicalized pages on mobile seems to be related to websites using [separate mobile URLs](https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls). In these cases, Google recommends placing a rel="canonical" tag pointing to the corresponding desktop URLs.
+A higher number of canonicalized pages on mobile seems to be related to websites using <a hreflang="en" href="https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls">separate mobile URLs</a>. In these cases, Google recommends placing a rel="canonical" tag pointing to the corresponding desktop URLs.
 
 Our dataset and analysis is limited to homepages of websites; the data is likely to be different when considering all URLs on the tested websites.
 
@@ -210,7 +210,7 @@ Implementing canonical tags in the `<head>` of a HTML page is much more popular 
 
 #### Conflicting canonical tags
 
-Sometimes pages contain more than one canonical tag. When there are conflicting signals like this, search engines will have to figure it out. One of Google's Search Advocates, [Martin Splitt, once said it causes undefined behavior](https://www.youtube.com/watch?v=bAE3L1E1Fmk&amp;t=772s) on Google's end.
+Sometimes pages contain more than one canonical tag. When there are conflicting signals like this, search engines will have to figure it out. One of Google's Search Advocates, <a hreflang="en" href="https://www.youtube.com/watch?v=bAE3L1E1Fmk&amp;t=772s">Martin Splitt, once said it causes undefined behavior</a> on Google's end.
 
 As much as 1.3% of mobile pages have different canonical tags in the initial HTML and the rendered version.
 
@@ -304,7 +304,7 @@ In 2021, 98.77% of desktop and mobile pages had `<title>` elements. 71.1% of des
 
 ### `<title>` Element
 
-The `<title>` element is an on-page ranking factor that provides a strong hint regarding page relevance and may appear on the SERP. In August 2021 [Google started re-writing more titles in their search results](https://developers.google.com/search/blog/2021/08/update-to-generating-page-titles).
+The `<title>` element is an on-page ranking factor that provides a strong hint regarding page relevance and may appear on the SERP. In August 2021 <a hreflang="en" href="https://developers.google.com/search/blog/2021/08/update-to-generating-page-titles">Google started re-writing more titles in their search results</a>.
 
 In 2021:
 
@@ -388,7 +388,7 @@ These numbers have changed very little since 2020.
    )
 }}
 
-The `<img>` ALT attribute helps explain image content and impacts [accessibility](https://almanac.httparchive.org/en/2021/accessibility).
+The `<img>` ALT attribute helps explain image content and impacts <a hreflang="en" href="https://almanac.httparchive.org/en/2021/accessibility">accessibility</a>.
 
 Note that missing ALT attributes may not indicate a problem. Pages may include extremely small or blank images which don't require an ALT attribute.
 
@@ -487,7 +487,7 @@ Overall, 15% of written content on desktop devices is generated by JavaScript an
 
 Historically, search engines have worked with unstructured data: the piles of words, paragraphs and other content that comprise the text on a page.
 
-Schema markup and other types of structured data provide search engines another way to parse and organize content. Structured data powers many of [Google's search features](https://developers.google.com/search/docs/advanced/structured-data/search-gallery).
+Schema markup and other types of structured data provide search engines another way to parse and organize content. Structured data powers many of <a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/search-gallery">Google's search features</a>.
 
 Like words on the page, structured data can be modified with JavaScript.
 
@@ -635,7 +635,7 @@ While a significant portion of links on the web are text based, a portion also l
 
 ### Link attributes
 
-In September of 2019, Google [introduced attributes](https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html) that allow publishers to classify links as being sponsored or user generated content. These attributes are in addition to rel=nofollow which was previously [introduced in 2005](https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html). The new attributes, rel=ugc and rel=sponsored, add additional information to the links.
+In September of 2019, Google <a hreflang="en" href="https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html">introduced attributes](https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html) that allow publishers to classify links as being sponsored or user generated content. These attributes are in addition to rel=nofollow which was previously [introduced in 2005</a>. The new attributes, rel=ugc and rel=sponsored, add additional information to the links.
 
 The new attributes are still fairly rare, at least on homepages, with rel=ugc appearing on 0.42% of mobile pages and rel=sponsored appearing on 0.32% of mobile pages. It's likely these attributes are seeing more adoption on pages that aren't homepages.
 
@@ -671,11 +671,11 @@ However, AMP adoption continued to increase in 2021. 0.09% of desktop pages now 
 
 ## Internationalization
 
-[As Google states in their documentation](https://developers.google.com/search/docs/advanced/crawling/localized-versions), "If you have multiple versions of a page for different languages or regions, tell Google about these different variations. Doing so will help Google Search point users to the most appropriate version of your page by language or region."
+<a hreflang="en" href="https://developers.google.com/search/docs/advanced/crawling/localized-versions">As Google states in their documentation</a>, "If you have multiple versions of a page for different languages or regions, tell Google about these different variations. Doing so will help Google Search point users to the most appropriate version of your page by language or region."
 
-To let search engines know about localized versions of your pages, use hreflang tags. Hreflang attributes are also used by [Yandex](https://yandex.com/support/webmaster/yandex-indexing/locale-pages.html) and Bing ([to some extent](https://twitter.com/facan/status/1304120691172601856)).
+To let search engines know about localized versions of your pages, use hreflang tags. Hreflang attributes are also used by <a hreflang="en" href="https://yandex.com/support/webmaster/yandex-indexing/locale-pages.html">Yandex</a> and Bing ([to some extent](https://twitter.com/facan/status/1304120691172601856)).
 
-9% of desktop pages and 8.41% of mobile pages use the hreflang attribute.
+9.0% of desktop pages and 8.4% of mobile pages use the hreflang attribute.
 
 There are three ways of implementing hreflang tags (HTML head, X-robots, and XML sitemaps). This data does not include data for XML sitemaps.
 
@@ -695,9 +695,9 @@ X-default (also called the fallback version) is used in 2.56% of cases (mobile).
    )
 }}
 
-[For Bing, hreflang is a "far weaker signal" than the content-language header.](https://twitter.com/facan/status/1304120691172601856)
+For Bing, [hreflang is a "far weaker signal" than the `content-language` header](https://twitter.com/facan/status/1304120691172601856").
 
-As with many other SEO parameters, [content-language](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language) has multiple implementation methods including:
+As with many other SEO parameters, [`content-language`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language) has multiple implementation methods including:
 
 1. HTTP server response
 2. HTML tag
