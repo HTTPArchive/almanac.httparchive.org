@@ -290,7 +290,7 @@ Search engines look at your page's content to determine whether it's a relevant 
 
 Metadata includes `<title>` elements and `<meta name="description">` tags. Metadata can directly and/or indirectly affect SEO performance. See the next sections for specifics about each tag.
 
-In 2021, 98.77% of desktop and mobile pages had `<title>` elements. 71.1% of desktop and mobile pages had `<meta name="description">` tags.
+In 2021, 98.77% of desktop and mobile pages had `<title>` elements. 71.1% of desktop and mobile homepages had `<meta name="description">` tags.
 
 {{ figure_markup(
    image="title-meta-description-usage.png",
