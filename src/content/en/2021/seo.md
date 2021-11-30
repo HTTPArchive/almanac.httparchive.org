@@ -176,7 +176,7 @@ The data shows increased adoption of canonical tags over the years. For example,
 {{ figure_markup(
    image="canonical-tag-usage.png",
    caption="Canonical tag usage.",
-   description="Bar chart showing ...",
+   description="Bar chart showing canonical tag usage. We found most web pages used canonical tags (58.5% of mobile pages and 56.6% of desktop pages). The percentage of canonicalized web pages was higher on mobile (8.3%) compared to desktop (4.3%).",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=118545040&format=interactive",
    sheets_gid="1066408164",
    sql_file="pages-canonical-stats.sql"
