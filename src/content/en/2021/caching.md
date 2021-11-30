@@ -74,7 +74,7 @@ The caching-related headers, or the absence of them, tell the browser or CDN thr
 - **Freshness**: If it is cacheable, how long can it be cached for?
 - **Validation**: If it is cacheable, how do I ensure that my cached version is still fresh?
 
-Headers are meant to be used either alone or together. To determine if the content is cacheable and fresh, we have:
+Headers are meant to be used either alone or together. To determine if the content is **cacheable** and **fresh**, we have:
 - `Expires` specifies an explicit expiration date and time (i.e., when precisely the content expires).
 - `Cache-Control` specifies a cache duration (i.e., how long the content can be cached in the browser relative to when it was requested).
 
@@ -93,13 +93,11 @@ Usage of the `Cache-Control` header has increased steadily since 2019. 74% of re
 
 From 2020, the usage of this specific header increased by 0.71% for Mobile and by 1.13% for Desktop. But on mobile, we still have 25.1% of requests that use neither `Cache-Control` nor `Expires` headers. This leads us to believe there has been an increase in awareness in the community around proper usage of `Cache-Control`, but we still have a long way to go to full adoption of these headers.
 
-To validate the content, we have:
+To **validate** the content, we have:
 - `Last-Modified` indicates when the object was last changed. Its value is a date timestamp.
 - `ETag` (Entity Tag) provides a unique identifier for the content as a quoted string. It can take any format the server chooses; it is typically a hash of the file contents, but it could be a timestamp or a simple string.
 
 When both are specified, `ETag` takes precedence.
-
-When compared 2020 with 2021 usage of the Last-Modified header decreased by 1% across both interfaces.
 
 {{ figure_markup(
   image="last-modified-etag.png",
@@ -109,6 +107,8 @@ When compared 2020 with 2021 usage of the Last-Modified header decreased by 1% a
   sheets_gid="2102749619",
   sql_file="header_trends.sql"
 ) }}
+
+Comparing 2020 with 2021, we notice a similar trend from past years where the `ETag` is becoming slightly more popular, and `Last-Modified` is being used 1.5% less. But what we should probably keep an eye on next year is this new trend in 1.4% more pages using neither `ETag` nor `Last-Modified` headers, as this could imply a challenge in the community understanding the value of these headers.
 
 ### `Cache-Control` directives
 When using the Cache-Control header, usage increased by 1% for Desktop and remained the same for Mobile.
@@ -428,9 +428,9 @@ However, the challenge remains for how first parties can effectively improve ove
 
 ## Identifying caching opportunities
 
-Based on the **Lighthouse caching TTL* score, we have seen an improvement in pages ranked with a perfect 100 score increase from 3.3% in 2020 to 4.4% in 2021.
+Based on the **Lighthouse caching TTL* score, we have seen an improvement in pages ranked with a perfect score of 100 increase from 3.3% in 2020 to 4.4% in 2021.
 
-The score reflects whether the pages can benefit from additional caching policy improvements. Even though we are excited to see 31% of pages scoring above the 50 percentile score, we still see a large potential in 52% of pages that have a below-25 percentile score.
+The score reflects whether the pages can benefit from additional caching policy improvements. Even though we are excited to see 31% of pages scoring above the 50 percentile score, a large potential exists for the 52% of pages that are ranking below the 25 percentile.
 
 {{ figure_markup(
   image="lighthouse-caching-ttl-scores.png",
@@ -443,7 +443,7 @@ The score reflects whether the pages can benefit from additional caching policy 
 
 This makes us consider that even though web pages have some level of caching, the way the policies are used is outdated and not optimized to the latest state of their products.
 
-Based on **Lighthouse wasted bytes** from 2020 to 2021 on repeated views there was a 3.28% improvement in wasted bytes across all audited pages. This lowered the percentage of pages that waste 1 MB from 42.8% to 39.5%, showing a considerable trend from the community in building products that are less costly for international users with paid internet data plans.
+Based on **Lighthouse wasted bytes** from 2020 to 2021, there was a 3.28% improvement in wasted bytes across all audited pages on repeated views. This lowers the percentage of pages that waste 1 MB from 42.8% to 39.5%, showing a considerable trend from the community towards building products that are less costly for international users with paid internet data plans.
 
 {{ figure_markup(
   image="lighthouse-caching-byte-savings.png",
@@ -454,7 +454,7 @@ Based on **Lighthouse wasted bytes** from 2020 to 2021 on repeated views there w
   sql_file="cache_wastedbytes_lighthouse.sql"
 ) }}
 
-Something we're looking forward to seeing in the coming years is an increase in the percentage of pages that have 0 wasted bytes, which at the moment is only at 1.34%.
+The current percentage of pages audited that have 0 wasted bytes is still relatively low at 1.34%. In the coming years, we're looking forward to seeing an increase in that percentage as the community continues to focus on optimizing web performance.
 
 ## Future
 
