@@ -5,7 +5,7 @@ description: Compression chapter of the 2021 Web Almanac covering HTTP compressi
 authors: [lvandeve, mo271, jyrkialakuijala]
 reviewers: [fischbacher, eustas, iulia-m-comsa]
 analysts: [paulcalvano]
-editors: []
+editors: [shantsis]
 translators: []
 jyrkialakuijala_bio: Jyrki Alakuijala is an active member of the open source software community, and a data compression researcher. Jyrki works at Google as a Technical Lead/Manager, and his recent published work has been with Zopfli, Butteraugli, Guetzli, Gipfeli, WebP lossless, Brotli, and JPEG XL compression formats and algorithms, and two hashing algorithms, CityHash, and HighwayHash. Before his Google employment he developed software for neurosurgery and radiation therapy treatment planning.
 mo271_bio: Moritz Firsching is software engineer at Google Switzerland, where he works on progressive image formats and font compression. Before that Moritz did research as a mathematician studying polytopes.
