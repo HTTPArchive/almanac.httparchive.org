@@ -40,8 +40,7 @@ Helaas berust het verkrijgen van deze informatie momenteel vaak op online tracki
 
 ### Tracking door derden
 
-Online tracking wordt vaak gedaan via bibliotheken van derden. Deze bibliotheken voorzien gewoonlijk een (nuttige) dienst, maar sommigen genereren daarbij ook een uniek identificatienummer voor elke gebruiker, dat dan gebruikt kan worden om gebruikers over websites heen te volgen en profileren.
-Het <a hreflang="en" href="https://whotracks.me/">WhoTracksMe</a>-project is toegewijd aan het ontdekken van de meest wijdverspreide online trackers. We gebruiken WhoTracksMe's classificatie van trackers maar beperken ons tot vier <a hreflang="en" href="https://whotracks.me/blog/tracker_categories.html">categorieën</a>, omdat deze het meest waarschijnlijk diensten omvatten waar tracking deel uitmaakt van hun voornaamste doel: _advertenties_, _pornoadvertenties_, _siteanalytics_ en _sociale media_.
+Online tracking wordt vaak gedaan via bibliotheken van derden. Deze bibliotheken voorzien gewoonlijk een (nuttige) dienst, maar sommigen genereren daarbij ook een uniek identificatienummer voor elke gebruiker, dat dan gebruikt kan worden om gebruikers over websites heen te volgen en profileren. Het <a hreflang="en" href="https://whotracks.me/">WhoTracksMe</a>-project is toegewijd aan het ontdekken van de meest wijdverspreide online trackers. We gebruiken WhoTracksMe's classificatie van trackers maar beperken ons tot vier <a hreflang="en" href="https://whotracks.me/blog/tracker_categories.html">categorieën</a>, omdat deze het meest waarschijnlijk diensten omvatten waar tracking deel uitmaakt van hun voornaamste doel: _advertenties_, _pornoadvertenties_, _siteanalytics_ en _sociale media_.
 
 {{ figure_markup(
   image="most_common_trackers.png",
@@ -154,8 +153,7 @@ Verdergaand met technieken die blokkades op tracking door derden omzeilen, is <a
   )
 }}
 
-Het populairste bedrijf dat CNAME-gebaseerde tracking uitvoert is Adobe, dat aanwezig is op 0,59% van desktopwebsites en 0,41% van mobiele websites.
-Ook opmerkelijk qua grootte is <a hreflang="en" href="https://www.pardot.com/">Pardot</a>, met respectievelijk 0,41% en 0,26%.
+Het populairste bedrijf dat CNAME-gebaseerde tracking uitvoert is Adobe, dat aanwezig is op 0,59% van desktopwebsites en 0,41% van mobiele websites. Ook opmerkelijk qua grootte is <a hreflang="en" href="https://www.pardot.com/">Pardot</a>, met respectievelijk 0,41% en 0,26%.
 
 Deze getallen mogen kleine percentages lijken, maar die mening verandert wanneer we de gegevens opdelen op basis van websitepopulariteit.
 
