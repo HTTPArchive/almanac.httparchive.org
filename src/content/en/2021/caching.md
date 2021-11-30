@@ -50,9 +50,9 @@ While Cloudflare is used twice as much as Google, a large variety of solutions r
 
 ## Service Worker adoption
 
-A Service Worker is a script that the browser allows to run in the background independently from a web page. It supports features that don't need direct user or web page interaction and offer rich offline experiences.
-
 The adoption of Service Workers has continued to steadily increase. While 1% of Mobile pages registered a service worker in 2020, 9% of Mobile pages ranked in the top 1,000 registered one in 2021.
+
+This incremental increase in adoption of Service Workers could be related to the world-wide trend towards remote-first and by association, mobile-friendly. As our reliance on working and living in one place throughout the entire year shifts, we need our devices to work even harder and smarter to keep up with us. Service Workers are a tool that can improve performance in those growing offline experiences.
 
 {{ figure_markup(
   image="sw-adoption.png",
@@ -67,19 +67,20 @@ The primary way to cache resources within a Service Worker is by using the *Cach
 
 ## Headers adoption
 
-With both a CDN and the Browser, HTTP Headers are the primary toolkit a developer needs to master to properly cache resources. Headers are simply instructions known as "*directives*", read during the HTTP Request or Response to control the cache strategy.
+With both a CDN and the Browser, HTTP Headers are the primary toolkit a developer must master to properly cache resources. Headers are simply instructions known as "*directives*", read during the HTTP Request or Response to control the cache strategy.
 
 The caching-related headers, or the absence of them, tell the browser or CDN three essential pieces of information:
 - **Cacheability**: Is this content cacheable?
 - **Freshness**: If it is cacheable, how long can it be cached for?
 - **Validation**: If it is cacheable, how do I ensure that my cached version is still fresh?
 
-Headers are meant to be used either alone or together. To tell if the content is cacheable and fresh, we have:
-- `Expires` specifies an explicit expiration date and time (i.e., when precisely the content expires)
-- `Cache-Control` specifies a cache duration (i.e., how long the content can be cached in the browser relative to when it was requested)
+Headers are meant to be used either alone or together. To determine if the content is cacheable and fresh, we have:
+- `Expires` specifies an explicit expiration date and time (i.e., when precisely the content expires).
+- `Cache-Control` specifies a cache duration (i.e., how long the content can be cached in the browser relative to when it was requested).
+
 When both are specified, `Cache-Control` takes precedence.
 
-The usage of the Cache-Control header has increased steadily since 2019. 74% of responses on Mobile pages included the Cache-Control header, while 75% of responses on Desktop pages utilized the header. From 2020, the usage of this specific header increased by 0.71% for Mobile and by 1.13% for Desktop.
+Usage of the Cache-Control header has increased steadily since 2019. 74% of responses on Mobile pages included the Cache-Control header, while 75% of responses on Desktop pages utilized the header. From 2020, the usage of this specific header increased by 0.71% for Mobile and by 1.13% for Desktop. This leads us to believe there has been an increase in awareness in the community around proper usage of Cache-Control, notably for Desktop.
 
 {{ figure_markup(
   image="cache-control-expires.png",
@@ -180,7 +181,7 @@ Cache Control directives, 61% of mobile requests include a Cache-Control respons
 
 The most misused Cache Control directive is `set-cookie`, used for 0.07% of total directives for Desktop and 0.08% for Mobile.
 
-Fun fact the the largest max-age value is 1625540701883604800000 seconds or 51545557517871.8 years (51 trillion).
+Fun fact the the largest max-age value is 1625540701883604800000 seconds or 51545557517871.8 (51 trillion) years.
 
 {{ figure_markup(
   caption="TODO",
