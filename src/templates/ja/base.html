@@ -88,6 +88,22 @@
 {% block author %}著者{% endblock %}
 {% block authors %}著者{% endblock %}
 
+{% block reactions %}反応{% endblock %}
+{% block source %}ソースを見る{% endblock %}
+
+{% block like %}いいね{% endblock %}
+{% block repost %}再投稿{% endblock %}
+{% block reply %}返信{% endblock %}
+{% block mention %}言及{% endblock %}
+{% block likes %}いいね{% endblock %}
+{% block reposts %}再投稿{% endblock %}
+{% block replies %}返信{% endblock %}
+{% block mentions %}言及{% endblock %}
+{% block likesAlt %}{% endblock %}
+{% block repostsAlt %}{% endblock %}
+{% block repliesAlt %}{% endblock %}
+{% block mentionsAlt %}{% endblock %}
+
 {% macro onTwitter(twitterHandle) %}Twitterの@{{twitterHandle}}{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}GitHubの{{gitHubHandle}}{% endmacro %}
 {% macro onLinkedIn(authorName) %}LinkedInの{{authorName}}{% endmacro %}
@@ -179,6 +195,19 @@ Web Almanacは、ウェブ・コミュニティの努力によって実現して
 {% endif %}
 
 {% set localizedTeamNames = {
+  "analysts": "分析者",
+  "authors": "著作者",
+  "brainstormers": "ブレインストーマー",
+  "designers": "デザイナー",
+  "developers": "開発者",
+  "editors": "編集者",
+  "leads": "リーダー",
+  "reviewers": "レビュワー",
+  "translators": "翻訳者",
+  }
+%}
+
+{% set localizedTeamRole = {
   "analysts": "分析者",
   "authors": "著作者",
   "brainstormers": "ブレインストーマー",

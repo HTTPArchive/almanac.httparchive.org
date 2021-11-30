@@ -31,7 +31,7 @@
 {% block page_navigation %}Paginanavigatie{% endblock %}
 
 {% block help_translate %}Helpen vertalen{% endblock %}
-{% block translation_not_available %}Engels - niet beschikbaar in het nederlands{% endblock %}
+{% block translation_not_available %}Engels - niet beschikbaar in het Nederlands{% endblock %}
 {% block in_english %} (Engels){% endblock %}
 {% block language_switcher %}Taalwisselaar{% endblock %}
 {% block year_switcher %}Jaarwisselaar{% endblock %}
@@ -69,11 +69,11 @@
 {% macro hide_description(metadata, chapter_config, id) %}Verberg beschrijving van Figuur {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
 
 {% block written_by_before %}Geschreven door{% endblock %}
-{% block reviewed_by_before %}Beoordeeld door{% endblock %}
+{% block reviewed_by_before %}Nagelezen door{% endblock %}
 {% block translated_by_before %}Vertaald door{% endblock %}
 {% block analysis_by_before %}Geanalyseerd door{% endblock %}
 {% block edited_by_before %}Bewerkt door{% endblock %}
-{% block reviewed_and_analyzed_by_before %}Beoordeeld en geanalyseerd door{% endblock %}
+{% block reviewed_and_analyzed_by_before %}Nagelezen en geanalyseerd door{% endblock %}
 {% block analysis_and_editing_by_before %}Geanalyseerd en bewerkt door{% endblock %}
 {% block written_by_after %}{% endblock %}
 {% block reviewed_by_after %}{% endblock %}
@@ -87,6 +87,22 @@
 
 {% block author %}Auteur{% endblock %}
 {% block authors %}Auteurs{% endblock %}
+
+{% block reactions %}Reacties{% endblock %}
+{% block source %}Bron bekijken{% endblock %}
+
+{% block like %}vind-ik-leuk{% endblock %}
+{% block repost %}herpublicatie{% endblock %}
+{% block reply %}antwoord{% endblock %}
+{% block mention %}vermelding{% endblock %}
+{% block likes %}vind-ik-leuks{% endblock %}
+{% block reposts %}herpublicaties{% endblock %}
+{% block replies %}antwoorden{% endblock %}
+{% block mentions %}vermeldingen{% endblock %}
+{% block likesAlt %}{% endblock %}
+{% block repostsAlt %}{% endblock %}
+{% block repliesAlt %}{% endblock %}
+{% block mentionsAlt %}{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} op Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} op GitHub{% endmacro %}
@@ -104,10 +120,10 @@
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
-{% macro read_chapter(chapter) %}Lees het <span class="featured-chapter-name">{{ chapter }}</span> Hoofdstuk{% endmacro %}
+{% macro read_chapter(chapter) %}Lees het <span class="featured-chapter-name">{{ chapter }}</span> hoofdstuk{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}Lees het {{ year|int-1 }} <span class="featured-chapter-name">{{ chapter }}</span> Hoofdstuk{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}Lees het {{ year|int-1 }} <span class="featured-chapter-name">{{ chapter }}</span> hoofdstuk{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
@@ -131,17 +147,17 @@ Tenzij anders vermeld, zijn de statistieken in alle {{ supported_chapters | leng
 {% block appendix %}Bijlage{% endblock %}
 {% block appendices %}Bijlagen{% endblock %}
 
-{% block ebook_title %}Ebook{% endblock %}
-{% block ebook_download_short %}Ebook PDF ({{ ebook_size_in_mb }}MB){% endblock %}
+{% block ebook_title %}E-book{% endblock %}
+{% block ebook_download_short %}E-book PDF ({{ ebook_size_in_mb }}MB){% endblock %}
 {% block ebook_download %}Download de volledige {{ year }} Web Almanac in PDF-formaat ({{ ebook_size_in_mb }}MB){% endblock %}
-{% block ebook_download_note %}(generated with <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
+{% block ebook_download_note %}(gegenereerd met <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
 
 {%
   set localizedPartTitles = {
-    "I. Page Content": "I. Pagina Inhoud",
+    "I. Page Content": "I. Pagina-inhoud",
     "II. User Experience": "II. Gebruikerservaring",
-    "III. Content Publishing": "III. Content Publiceren",
-    "IV. Content Distribution": "IV. Contentdistributie"
+    "III. Content Publishing": "III. Inhoudspublicatie",
+    "IV. Content Distribution": "IV. Inhoudsdistributie"
   }
 %}
 
@@ -184,9 +200,22 @@ Tenzij anders vermeld, zijn de statistieken in alle {{ supported_chapters | leng
   "brainstormers": "Brainstormers",
   "designers": "Ontwerpers",
   "developers": "Ontwikkelaars",
-  "editors": "Editors",
+  "editors": "Redacteurs",
   "leads": "Projectleiders",
-  "reviewers": "Recensenten",
+  "reviewers": "Nalezers",
   "translators": "Vertalers",
+  }
+%}
+
+{% set localizedTeamRole = {
+  "analysts": "Analist",
+  "authors": "Auteur",
+  "brainstormers": "Brainstormer",
+  "designers": "Ontwerper",
+  "developers": "Ontwikkelaar",
+  "editors": "Redacteur",
+  "leads": "Projectleider",
+  "reviewers": "Nalezer",
+  "translators": "Vertaler",
   }
 %}

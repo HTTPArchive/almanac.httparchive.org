@@ -15,7 +15,6 @@
         "installable-manifest": "off",
         "interactive": "off",
         "is-crawlable": "off",
-        "is-on-https:": "off",
         "largest-contentful-paint": "off",
         "mainthread-work-breakdown": "off",
         "maskable-icon": "off",
