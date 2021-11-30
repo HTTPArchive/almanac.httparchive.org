@@ -183,6 +183,11 @@ However, loading the JavaScript asynchronously or deferred helps in some ways to
         <td class="numeric">47.8%</td>
       </tr>
       <tr>
+        <td>Both</td>
+        <td class="numeric">35.7%</td>
+        <td class="numeric">35.6%</td>
+      </tr>
+      <tr>
         <td>Neither</td>
         <td class="numeric">10.3%</td>
         <td class="numeric">10.4%</td>
@@ -190,7 +195,7 @@ However, loading the JavaScript asynchronously or deferred helps in some ways to
     </tbody>
   </table>
   <figcaption>{{ figure_link(
-    caption="Percent of pages using `async`, `defer`, or neither.",
+    caption="Percent of pages using `async` and `defer`.",
     sheets_gid="2038121216",
     sql_file="breakdown_of_pages_using_async_defer.sql"
   ) }}</figcaption>
@@ -683,13 +688,13 @@ Now that we've looked at how we get the JavaScript, what are we using it for?
 
 ### AJAX
 
-A lot of JavaScript that is written is used to communicate with servers through asynchronous requests to receive information in various formats. _Asynchronous JavaScript and XML_ (AJAX), is typically used to send and receive data in JSON, XML, HTML, text formats.
+One way that JavaScript is used is to communicate with servers to asynchronously receive information in various formats. [_Asynchronous JavaScript and XML_](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started) (AJAX) is typically used to send and receive data, and it supports more than just XML, including JSON, HTML, and text formats.
 
-With multiple ways to send and receive data on the web, let's look into how many async requests are sent per page.
+With multiple ways to send and receive data on the web, let's look at how many asynchronous requests are sent per page.
 
 {{ figure_markup(
   image="async-requests-per-page.png",
-  caption="The number of asynchronous requests made per page.",
+  caption="Distribution of the number of asynchronous requests made per page.",
   description="Bar chart showing the number of asynchronous requests made per page. On a desktop page, the 10th, 25th, 50th, 75th, and 90th percentiles for asynchronous requests made are: 2, 3, 4, 8, 15.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=709009883&format=interactive",
   sheets_gid="183546956",
@@ -697,26 +702,23 @@ With multiple ways to send and receive data on the web, let's look into how many
   )
 }}
 
-A median of 4 asynchronous requests are made per page on both mobile and desktop devices. This applies to the 50th percentile, i.e., the median desktop and mobile pages.
+The median mobile page makes 4 asynchronous requests. If we look at the long tail, the largest number of asynchronous requests on desktop pages is 623, which is eclipsed by the biggest mobile page, which makes 867 asynchronous requests!
 
-If we look at the long tail and check the number of async requests for the 100th percentile, the difference in the devices is quite remarkable. The most asynchronous requests made by a desktop page is 623, which is eclipsed by the biggest mobile page, which makes 867 asynchronous requests!
+An alternative to the asynchronous AJAX requests are the synchronous requests. Rather than passing a request to a callback, they block the main thread until the request completes.
 
-An alternative to the asynchronous AJAX requests are that they are synchronous. Rather than passing a request to a callback, they block the main thread until the request completes.
-
-However, [this practice is discouraged](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests#synchronous_request) due to the potential for poor performance and user experiences, and many browsers already warn about the usage. It would be intriguing to see how many pages still use synchronous AJAX requests.
+However, [this practice is discouraged](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests#synchronous_request) due to the potential for poor performance and user experiences, and many browsers already warn about such usage. It would be intriguing to see how many pages still use synchronous AJAX requests.
 
 {{ figure_markup(
   image="usage-sync-async.png",
   caption="Usage of synchronous and asynchronous AJAX requests on mobile pages",
   description="Bar chart showing the usage of synchronous and asynchronous AJAX requests on mobile pages. The percent of synchronous requests made on mobile page are 2.5% and that of asynchronous requests are 77.6%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=189627938&format=interactive",
-  sheets_gid="1113974683",
-  sql_file="ajax_async.sql"
+  sheets_gid="183546956",
+  sql_file="ajax_request_per_page.sql"
   )
 }}
 
-As we see, there are still more than 2.5% of desktop and mobile pages that use the deprecated synchronous AJAX requests.
-Let's look at the trend by comparing the results with the last two years.
+2.5% of mobile pages use the deprecated synchronous AJAX requests. To put this into perspective, let's look at the trend by comparing the results with the last two years.
 
 {{ figure_markup(
   image="usage-sync-async-over-years.png",
@@ -728,63 +730,15 @@ Let's look at the trend by comparing the results with the last two years.
   )
 }}
 
-We see there is a clear increase in the usage of asynchronous AJAX requests. However, no significant decline in the usage of synchronous AJAX requests can be seen over the years.
-
-An AJAX request works with different formats of data that can be sent and received. When a resource is requested, there is significant information that is sent to the server to make the results specific and clear. One such requirement is sending the relevant content types. The request sent from the browser requests a content type that gets back the data in the requested format.
-
-Out of the vast list of content types that can be requested, we looked at the most commonly requested content types.
-
-<figure>
-  <table>
-    <thead>
-      <tr>
-        <th>Category</th>
-        <th>Desktop</th>
-        <th>Mobile</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Images</td>
-        <td class="numeric">45.6%</td>
-        <td class="numeric">44.6%</td>
-      </tr>
-      <tr>
-        <td>JavaScript</td>
-        <td class="numeric">32.3%</td>
-        <td class="numeric">33.3%</td>
-      </tr>
-      <tr>
-        <td>CSS</td>
-        <td class="numeric">12.6%</td>
-        <td class="numeric">13.2%</td>
-      </tr>
-      <tr>
-        <td>Fonts</td>
-        <td class="numeric">5.7%</td>
-        <td class="numeric">5.0%</td>
-      </tr>
-      <tr>
-        <td>JSON</td>
-        <td class="numeric">3.8%</td>
-        <td class="numeric">3.9%</td>
-      </tr>
-    </tbody>
-  </table>
-  <figcaption>{{ figure_link(caption="The most requested content types in AJAX.", sheets_gid="538991873", sql_file="most_requested_content_type.sql") }}</figcaption>
-</figure>
-
-The most requested content types on mobile and desktop pages are images at 45% of requests. Images are a broad category inclusive of all the content types related to images, for example, `image/x-icon`, `image/svg+xml`, `image/webp`, `image/jpeg`, etc.
-
-JavaScript is the second most requested content type in AJAX requests, with 33.3% of requests on mobile pages having this content type. This represents content-types like `application/javascript`, `text/javascript`, etc.
+We see that there is a clear increase in the usage of asynchronous AJAX requests. However, there isn't a significant decline in the usage of synchronous AJAX requests.
 
 Knowing the number of AJAX requests per page now, we'd also be interested in knowing the most commonly used APIs to request the data from the server.
 
-We can broadly classify these AJAX requests into three different APIs and dig in to see the usage of each of these. The core APIs [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) (XHR), [`Fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch), and [`Beacon`](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API) are used commonly across websites with XHR being used primarily, however `Fetch` is gaining popularity and growing rapidly while `Beacon` has minimum usage.
+We can broadly classify these AJAX requests into three different APIs and dig in to see how they're used. The core APIs [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) (XHR), [`Fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch), and [`Beacon`](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API) are used commonly across websites with XHR being used primarily, however `Fetch` is gaining popularity and growing rapidly while `Beacon` has low usage.
 
 {{ figure_markup(
   image="ajax_xhr.png",
-  caption="Usage of XMLHttpRequest",
+  caption="Distribution of the number of XMLHttpRequest requests per page.",
   description="Bar chart showing the usage of XMLHttpRequest per page on both desktop and mobile pages. The median mobile page makes 2 XHR requests, but at 90th percentile, makes 6 XHR requests. The 10th, 25th, 50th, 75th, and 90th percentiles for usage of XMLHttpRequest on desktop are: 0, 1, 2, 3, 6.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1164635195&format=interactive",
   sheets_gid="1012977216",
@@ -796,7 +750,7 @@ The median mobile page makes 2 XHR requests, but at 90th percentile, makes 6 XHR
 
 {{ figure_markup(
   image="ajax_fetch.png",
-  caption="Usage of Fetch",
+  caption="Distribution of the number of `Fetch` requests per page.",
   description="Bar chart showing the usage of Fetch per page on both desktop and mobile pages. The median mobile page makes 2 Fetch requests, but at 90th percentile, makes 3 Fetch requests. The 10th, 25th, 50th, 75th, and 90th percentiles for usage of Fetch on mobile are: 0, 2, 2, 2, 3.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=147712640&format=interactive",
   sheets_gid="1012977216",
@@ -804,18 +758,19 @@ The median mobile page makes 2 XHR requests, but at 90th percentile, makes 6 XHR
   )
 }}
 
-In the case of the usage of the Fetch API, a median mobile page makes 2 requests per page and in the long tail, reaches 3 requests. This is reaching towards the standard XHR way of making requests and in turn, with a much cleaner approach and less boilerplate code, the overall load time will improve too.
+In the case of the usage of the `Fetch` API, the median mobile page makes 2 requests, and in the long tail, reaches 3 requests. This API is becoming the standard XHR way of making requests, due in part to its cleaner approach and less boilerplate code. There may also be <a hreflang="en" href="https://gomakethings.com/the-fetch-api-performance-vs.-xhr-in-vanilla-js/">performance benefits</a> to `Fetch` over the traditional XHR approach, due to the way browsers can decode large JSON payloads off the main thread.
 
 {{ figure_markup(
   image="ajax_beacon.png",
-  caption="Usage of Beacon",
+  caption="Distribution of the number of `Beacon` requests per page.",
   description="Bar chart showing the usage of Beacon per page on both desktop and mobile pages. The median mobile page makes no Beacon requests, but at 90th percentile, makes 1 Beacon request.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1483701430&format=interactive",
   sheets_gid="1012977216",
   sql_file="percentage_usage_of_different_ajax_apis.sql"
   )
 }}
-One major reason for the lower usage of `Beacon` could be that it is typically used for sending analytics data, especially where one wants to ensure that the request is sent even if the page might unload soon. This is, however, not guaranteed when using XHR. A good experiment for the future would be to see if some statistics could be collected around any pages using XHR for analytics data, session data, etc.
+
+`Beacon` usage is almost non-existant, with 0 requests per page until the 90th percentile, at which there's only one request per page. One possible explanation for this low adoption could be that `Beacon` is typically used for sending analytics data, especially when one wants to ensure that the request is sent even if the page might unload soon. This is, however, not guaranteed when using XHR. A good experiment for the future would be to see if some statistics could be collected around any pages using XHR for analytics data, session data, etc.
 
 It would be interesting to also compare the adoption of XHR and `Fetch` over time.
 
@@ -829,61 +784,59 @@ It would be interesting to also compare the adoption of XHR and `Fetch` over tim
   )
 }}
 
-For both `Fetch` and XHR, the usage has tremendously increased over the years. `Fetch` has seen an increase of 38% on desktop pages and 48% for XHR. With a gradual increase for `Fetch`, the focus seems to be towards cleaner requests and handling responses better.
+For both `Fetch` and XHR, the usage has increased significantly over the years. `Fetch` usage on mobile pages is up 4 points and XHR is up 19 points. The gradual increase of `Fetch` adoption seems to point towards a trend of cleaner requests and better response handling.
 
 ### Web Components and the shadow DOM
 
-With the web becoming componentized, a developer building a single page application may think about a user view as a set of components. This is not only for the sake of developers building dedicated components for each feature, but also to maximize component reusability. It could be in the same app on a different view or in a completely different application. Such use cases lead to the usage of custom elements and web components in web applications.
+With the web becoming [componentized](https://developer.mozilla.org/en-US/docs/Web/Web_Components), a developer building a single page application may think about a user view as a set of components. This is not only for the sake of developers building dedicated components for each feature, but also to maximize component reusability. It could be in the same app on a different view or in a completely different application. Such use cases lead to the usage of custom elements and web components in applications.
 
 It would be justified to say that with many JavaScript frameworks gaining popularity, the idea of reusability and building dedicated feature-based components has been adopted more widely. This feeds our curiosity to look into the adoption of custom elements, shadow DOM, template elements.
 
-<a hreflang="en" href="https://developers.google.com/web/fundamentals/web-components/customelements">Custom Elements</a> are customized elements built on top of the [`HTMLElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement) class. The browser provides a `customElements` API that allows developers to define an element and register it with the browser as a custom element.
-
-It is noted that 2.7% of desktop pages use custom elements for one or more parts of the web page.
+<a hreflang="en" href="https://developers.google.com/web/fundamentals/web-components/customelements">Custom Elements</a> are customized elements built on top of the [`HTMLElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement) API. Browsers provide a `customElements` API that allows developers to define an element and register it with the browser as a custom element.
 
 {{ figure_markup(
-  content="2.7%",
+  content="3.0%",
   caption="Percent of desktop pages using custom elements.",
   classes="big-number",
   sheets_gid="1991863136",
-  sql_file="web_components_specs.sql"
+  sql_file="web_components_pct.sql"
   )
 }}
 
-<a hreflang="en" href="https://developers.google.com/web/fundamentals/web-components/shadowdom">_Shadow DOM_</a> allows you to create a dedicated subtree in the DOM for the custom element introduced to the browser. It ensures the styles and nodes inside the element are not accessible outside the element.
-
-0.4% of pages use shadow DOM specification of web components to ensure a scoped subtree for the element.
+3.0% of mobile pages use custom elements for one or more parts of the web page.
 
 {{ figure_markup(
   content="0.4%",
   caption="Percent of pages using Shadow DOM.",
   classes="big-number",
   sheets_gid="1991863136",
-  sql_file="web_components_specs.sql"
+  sql_file="web_components_pct.sql"
   )
 }}
 
-A [`<template>`](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots#the_truth_about_templates) element is very useful when there is a pattern in the markup which could be reused. The contents of _template_ elements render only when referenced by JavaScript.
+<a hreflang="en" href="https://developers.google.com/web/fundamentals/web-components/shadowdom">_Shadow DOM_</a> allows you to create a dedicated subtree in the DOM for the custom element introduced to the browser. It ensures the styles and nodes inside the element are not accessible outside the element.
 
-Templates work well when dealing with web components, as the content that is not yet referenced by JavaScript is then appended to a shadow root using the shadow DOM.
+0.4% of mobile pages use shadow DOM specification of web components to ensure a scoped subtree for the element.
 
 {{ figure_markup(
   content="<0.1%",
-  caption="Percent of pages using templates.",
+  caption="Percent of pages using `template` elements.",
   classes="big-number",
   sheets_gid="1991863136",
-  sql_file="web_components_specs.sql"
+  sql_file="web_components_pct.sql"
   )
 }}
 
-Less than 0.1% of web pages have adopted the use of templates. Although templates are well <a hreflang="en" href="https://caniuse.com/template">supported</a> in browsers, there is still a very low percentage of pages using them.
+A [`template`](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots#the_truth_about_templates) element is very useful when there is a pattern in the markup which could be reused. The contents of `template` elements render only when referenced by JavaScript.
+
+Templates work well when dealing with web components, as the content that is not yet referenced by JavaScript is then appended to a shadow root using the shadow DOM.
+
+Fewer than 0.1% of web pages have adopted the use of templates. Although templates are <a hreflang="en" href="https://caniuse.com/template">well supported</a> in browsers, there is still a very low percentage of pages using them.
 
 ## Conclusion
 
-The numbers that we have seen throughout the chapter have brought us to an understanding of how vast the Javascript usage is and how it's evolving over time. The JavaScript ecosystem has been growing with the focus towards making the web the most performant and fastest experience, with newer features and APIs that make the developer experience easy and productive.
+The numbers that we have seen throughout the chapter have brought us to an understanding of how vast the Javascript usage is and how it's evolving over time. The JavaScript ecosystem has been growing with the focus towards making the web more performant and secure for users, with newer features and APIs that make the developer experience easier and more productive.
 
-It is observed that so many features provided for improving the rendering time and resource loading time could be leveraged better to see the overall impact and get an even better experience with respect to the performance.
+We saw how so many features that improve rendering and resource loading performance could be more widely utilized to provide users with faster experiences. As a developer, you can start by adopting these new web platform features. However, make sure to use them wisely and ensure that they actually improve performance, as some APIs can cause harm through misuse, as we saw with `async` and `defer` attributes on the same script.
 
-Start by adopting the new features provided by JavaScript and the web community. However, make sure to use them wisely and ensure that they improve performance and don't instead increase the load, as some APIs can cause harm through overuse. For example, we saw that using async as well as defer is very common and actually is an anti-pattern that slows the site down since the defer is effectively ignored. Making appropriate use of the powerful APIs we now have access to, is what it will take to see these numbers improve further in the coming years.
-
-Let's continue to do so.
+Making appropriate use of the powerful APIs that we now have access to is what it will take to see these numbers improve further in the coming years. Let's continue to do so.
