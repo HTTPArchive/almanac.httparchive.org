@@ -182,10 +182,6 @@ Fun fact the most common `max-age` value is 30 days, and the largest value is 51
   sql_file="todo.sql"
 ) }}
 
-### `Last-Modified` & `ETag` adoption
-
-[TODO Leo]
-
 ### `304` Not Modified status
 
 When it comes to size, `304 Not Modified` responses are usually much smaller than `200 OK` responses, so it follows that page performance can be sped up/improved?? by only delivering the necessary size of data. This is where correctly using conditional requests comes in because revalidation (and data savings?) can only be done by using either an `Etag` or `Last-Modified` header.
