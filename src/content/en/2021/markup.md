@@ -1,20 +1,21 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Markup
-description: TODO
+description: Markup chapter of the 2021 Web Almanac covering the use of elements, attributes, document trends, as well as adoption rates of new standards.
 authors: [AlexLakatos]
-reviewers: []
+reviewers: [j9t, bkardell, shantsis, tunetheweb, rviscomi]
 analysts: [kevinfarrugia]
-editors: []
+editors: [rviscomi]
+AlexLakatos_bio: Alex Lakatos has spent the past decade working on the Open Web within Browser, Communications, and FinTech organizations. With a background in web technologies and developer advocacy, he's helping the <a hreflang="en" href="https://interledger.org/">Interledger Foundation</a> build developer-friendly products while engaging with the developer community at large. You can <a hreflang="en" href="https://twitter.com/avolakatos">reach out to him on Twitter</a>.
 translators: []
 results: https://docs.google.com/spreadsheets/d/1Ta5Ck7y3W6LCn2CeGtW7dAdLF6Lh5wV2UBQJZTz3W5Q/
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: Be part of the people who increase adoption of new standards every year. Start with something new you’ve learned today, one of the many standards we’ve covered not only in this chapter but in this whole Almanac.
+featured_stat_1: 35.3%
+featured_stat_label_1: ICO was finally dethroned as the most popular favicon format by PNG
+featured_stat_2: 98%
+featured_stat_label_2: Pages have at least one <script> element in HTML
+featured_stat_3: 4,256
+featured_stat_label_3: The most <form> elements found on a single page.
 ---
 
 
