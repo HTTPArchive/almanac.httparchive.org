@@ -276,7 +276,7 @@ For the `Vary: User-Agent` header, the numbers were pretty much unchanged with 1
 )
 }}
 
-One of the biggest reasons for failing mobile-friendliness was that 13.5% of pages did not use a legible font size. Meaning https://web.dev/font-size/60% or more of the text had <a hreflang="en" href="https://web.dev/font-size/">a font size smaller than 12px which can be hard to read on mobile.
+One of the biggest reasons for failing mobile-friendliness was that 13.5% of pages did not use a legible font size. Meaning <a hreflang="en" href="https://web.dev/font-size/">60% or more of the text had a font size smaller than 12px</a> which can be hard to read on mobile.
 
 ### Core Web Vitals
 
