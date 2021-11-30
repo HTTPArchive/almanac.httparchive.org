@@ -245,7 +245,14 @@ Compared to 2020, we see an overall increase of 2.85% in use of the Vary header.
 
 In the 2020 Caching chapter, we were reminded to be aware of using `set-cookie` with cacheable responses because only 4.9% of responses used the `private` directive, putting a user's private data at risk of accidentally being accidentally served to a different user via a CDN.
 
-[TODO Add figure showing Set-Cooike usage on cacheable responses, similar to https://20211128t100318-dot-webalmanac.uk.r.appspot.com/static/images/2020/caching/set-cookie-usage-on-cacheable-responses.png, and data from https://docs.google.com/spreadsheets/d/1-v3yR0LZIC3t4zWtqTgR3jJsKjjRMP-HATU2caP8e2c/edit#gid=104392613 Potentiall we mighe want to show 2020 vs 2021]
+{{ figure_markup(
+  image="cacheable-set-cookie.png",
+  caption="Percent of cacheable responses that use `Set-Cookie`.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=261881101&format=interactive",
+  sheets_gid="104392613",
+  sql_file="set_cookie.sql"
+) }}
 
 In 2021, we see an increase in awareness regarding set-cookie and caching coexisting. While still only 5% of web pages are using the private directive with Set-Cookie, the total number of cacheable set-cookie responses decreased by 4.41%.
 
