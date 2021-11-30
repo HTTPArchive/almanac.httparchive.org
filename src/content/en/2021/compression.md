@@ -3,7 +3,7 @@
 title: Compression
 description: Compression chapter of the 2021 Web Almanac covering HTTP compression, algorithms, compression levels, content types, 1st party and 3rd party compression and opportunities.
 authors: [lvandeve, mo271, jyrkialakuijala]
-reviewers: [fischbacher, eustas]
+reviewers: [fischbacher, eustas, iulia-m-comsa]
 analysts: [paulcalvano]
 editors: []
 translators: []
