@@ -342,17 +342,17 @@ The median desktop page loads one JavaScript resource with the `preload` hint an
 
 While the median number of `preload` hints per mobile page has stayed the same, the number of `prefetch` hints has decreased from three to two per page. Note that at the median, these resuts are identical for both mobile and desktop pages.
 
-## How is JavaScript delivered
+## How is JavaScript delivered?
 
-When sending resources over the network, it becomes important to look at an efficient way of doing it, and compressing these resources using different techniques either statically or dynamically boosts the performance and makes the process faster.
+JavaScript resources can be loaded more efficiently over the network with compression and minification. In this section, we'll explore the usage of both techniques to better understand the extent to which they're being utilized effectively.
 
 ### Compression
 
-Most of the compressed resources use either <a hreflang="en" href="https://www.gnu.org/software/gzip/manual/gzip.html">gzip</a> compression, <a hreflang="en" href="https://github.com/google/brotli">brotli</a> (br) compression, or a compression technique that is not set.
+Compression is the process of reducing the file size of a resource as it gets transferred over the network. This can be an effective way to improve the download times of JavaScript resources, which are highly compressible. For example, the `almanac.js` script loaded on this page is 28 KB, but only 9 KB over the wire thanks to compression.
 
 {{ figure_markup(
   image="compression-requests.png",
-  caption="Compression methods usage percentage by request.",
+  caption="Adoption of the methods for compressing JavaScript resources.",
   description="Bar chart showing the percent of the usage of compression methods. 55% of JavaScript requests apply the gzip compression on mobile, 31% apply br compression, and 14% do not apply any compression method.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1306457429&format=interactive",
   sheets_gid="1182320606",
@@ -360,15 +360,15 @@ Most of the compressed resources use either <a hreflang="en" href="https://www.g
   )
 }}
 
-It is noted that 55.4% of mobile JavaScript requests apply the gzip compression method, whereas 30.8% of requests from mobile devices have the brotli compression applied.
+Most JavaScript resources are either compressed using <a hreflang="en" href="https://www.gnu.org/software/gzip/manual/gzip.html">Gzip</a>, <a hreflang="en" href="https://github.com/google/brotli">Brotli</a> (br), or not compressed at all (not set). 55.4% of mobile JavaScript resources use Gzip, whereas 30.8% of resources are compressed with Brotli.
 
-An interesting observation here is the trend of the usage of these compression methods [compared to the previous year](../2019/javascript#fig-10). The usage of gzip has gone down by almost 10% and brotli has increased by 11%. The trend definitely indicates the focus on smaller size files with more levels of compression that Brotli provides as compared to gzip.
+Interestingly, compared to [the state of JavaScript compression in 2019](../2019/javascript#fig-10), Gzip has gone down by almost 10 percentage points and Brotli has increased by 16 percentage points. The trend illustrates the shift to focus on smaller size files with higher levels of compression that Brotli provides as compared to Gzip.
 
-With such comparable data, we checked if the percentage difference is somehow impacted by the resources being first-party or third-party.
+To help explain this change, we analyzed the compression methods of first and third-party resources.
 
 {{ figure_markup(
   image="compression-first-third-party.png",
-  caption="Compression methods for first party vs third party.",
+  caption="Adoption of the methods for compressing first and third-party JavaScript resources on mobile pages.",
   description="Bar chart showing the percent of the usage of compression methods for first-party and third-party. 59% of third-party JS requests apply the gzip compression on mobile, 30% third-party requests apply br compression, and 11% third-party scripts do not apply any compression method.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1269923134&format=interactive",
   sheets_gid="821396474",
@@ -376,7 +376,7 @@ With such comparable data, we checked if the percentage difference is somehow im
   )
 }}
 
-59.1% of third-party scripts are gzipped and 29.6% are brotli compressed. Looking at first-party scripts, these are 51.7% with gzip compression but only 32.0% with brotli. There are still 11% of third-party scripts that do not have any compression method defined for the resources.
+59.1% of third-party scripts on mobile pages are gzipped and 29.6% are compressed with Brotli. Looking at first-party scripts, these are 51.7% with Gzip compression but only 32.0% with Brotli. There are still 11.3% of third-party scripts that do not have any compression method defined.
 
 {{ figure_markup(
   image="uncompressed-first-third-party.png",
@@ -388,17 +388,17 @@ With such comparable data, we checked if the percentage difference is somehow im
   )
 }}
 
-The way preloading all our requests negates the impact of the resource hint, a similar problem occurs when we try to optimize and compress a resource that doesn't need compression and is already small. It is observed that 90% of uncompressed third party JavaScript resources are less than 5 KB, though first-party requests trail a bit.
+90% of uncompressed third-party JavaScript resources are less than 5 KB, though first-party requests trail a bit. This may help explain why so many JavaScript resources go uncompressed. Due to the diminishing returns of compressing small resources, a small script may cost more in terms of the resource consumption of server-side compression and client-side decompression than the performance benefits of saving of a few bytes over the network.
 
 ### Minification
 
-When working towards reducing the script parsing time, we tend to focus on all the opportunities to make our code smaller and more efficient. One such idea is to minify the files and bring down the bytes usage.
+While compression only changes the transfer size of JavaScript resources over the network, minification actually makes the code itself smaller and more efficient. This not only helps to reduce the load time of the script but also the amount of time the client spends parsing the script.
 
-The Lighthouse report also <a hreflang="en" href="https://web.dev/unminified-javascript/">highlights the unminified JavaScript being used</a> and lists these unminified files and the opportunities to save.
+The <a hreflang="en" href="https://web.dev/unminified-javascript/">unminified JavaScript</a> Lighthouse audit highlights the opportunities of minification.
 
 {{ figure_markup(
   image="unminified-js-audit-scores.png",
-  caption="Percentage distribution of unminified JS audit scores.",
+  caption="Distribution of unminified JavaScript audit scores.",
   description='Bar chart showing the percentage distribution of unminified JS audit scores. 67% of mobile pages have an "unminified JavaScript" score between 0.9 and 1.0',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1572896641&format=interactive",
   sheets_gid="1539653841",
@@ -406,14 +406,15 @@ The Lighthouse report also <a hreflang="en" href="https://web.dev/unminified-jav
   )
 }}
 
-Here, 0.00 represents the worst score whereas 1.00 represents the best score. It is noted that 67.1% of mobile pages have an audit score between 0.9 and 1.0, meaning that there are still more than 30% of mobile pages with a unminified JavaScript score of less than 0.9 with less or no minification.
-This, as compared to the results from the last year(2020), shows a regression of 10% in mobile pages with "unminified JS" score between 0.9 and 1.0. 
+Here, 0.00 represents the worst score whereas 1.00 represents the best score. 67.1% of mobile pages have an audit score between 0.9 and 1.0. That means there are still more than 30% of pages that have an unminified JavaScript score worse than 0.9 and could make better use of code minification. Compared to the results from the [2020 edition](../2020/javascript#fig-16), the percent of mobile pages with an "unminified JS" score between 0.9 and 1.0 fell by 10 points.
 
-To understand the reason for the less score this year, let's dive deeper to look at how many bytes per page are unminified.
+{# TODO: Rick is checking with the Lighthouse team to see if there were any major scoring algorithm changes to this audit in the past year. That would be a benign explanation for the 10 point drop in good scores. This change is really surprising, good find! #}
+
+To understand the reason for the worse scores this year, let's dive deeper to look at how many bytes per page are unminified.
 
 {{ figure_markup(
   image="unminified-js-bytes.png",
-  caption="Percentage distribution of unminified JS bytes per page.",
+  caption="Distribution of the amount of unminified JavaScript per page, in KB.",
   description="Bar chart showing the percentage distribution of unminified JS bytes per page. 57% of mobile pages have 0 KB of unminified JS whereas 18% of those have 0-10 kilobytes of unminified JS.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1069289665&format=interactive",
   sheets_gid="1511556407",
@@ -421,13 +422,11 @@ To understand the reason for the less score this year, let's dive deeper to look
   )
 }}
 
-It is found that 57.4% of mobile pages have 0 KB of unminified JavaScript. This indicates that more than 50% of mobile pages have 100% minification with 0 KBs of unminified JavaScript found. On the other hand, less than 20% of mobile pages have 0-10 KB of unminified JavaScript with scope for better minification score. The rest have less to no minification and these are the pages that fall in category of bad "unminified JavaScript" audit score that we saw in the previous chart.
-
-The first-party vs. third-party analysis in this case shows that 82% of the average mobile pages' unminified JavaScript bytes actually come from first-party scripts. This indicates that the third-party scripts are definitely doing better than the first-party ones in the case of minification.
+57.4% of mobile pages have 0 KB of unminified JavaScript as reported by the Lighthouse audit. 17.9% of mobile pages have between 0 and 10 KB of unminified JavaScript. The rest of the pages have an increasing number of unminified JavaScript bytes and correspond to those having poor "unminified JavaScript" audit scores in the previous chart.
 
 {{ figure_markup(
   image="average-unminified-js-bytes.png",
-  caption="Average distribution of unminified JavaScript Bytes.",
+  caption="Average distribution of unminified JavaScript bytes.",
   description="Pie chart showing the average distribution of unminified JavaScript bytes. 82% of the average mobile page's unminified JavaScript bytes actually come from first-party scripts.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1119550643&format=interactive",
   sheets_gid="127709080",
@@ -435,22 +434,33 @@ The first-party vs. third-party analysis in this case shows that 82% of the aver
   )
 }}
 
+When we segmented the unminified JavaScript resources by host, we found that 82.0% of the average mobile page's unminified JavaScript bytes actually come from first-party scripts.
+
 ### Source maps
 
-Source maps are files sent along with the JavaScript resource files to let the browser map the minified or compressed file to their original version of that file. This is how source maps help us in debugging in the production environment.
+[Source maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map) are hints sent along with JavaScript resources that allow the browser to map the minified resource back to their source code. This is especially helpful to web developers for debugging in a production environment.
 
 {{ figure_markup(
   content="0.1%",
-  caption="Mobile pages using the sourcemap header.",
+  caption="Percent of mobile pages that use the `SourceMap` header.",
   classes="big-number",
   sheets_gid="1186092564",
   sql_file="sourcemap_header.sql"
   )
 }}
 
-It is found that only 0.1% of mobile pages use the SourceMap response header on script resources. One reason for this extremely small percentage could be that not many sites choose to put their original source code in production through the source map.
+Only 0.1% of mobile pages use the [`SourceMap`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/SourceMap) response header on script resources. One reason for this extremely small percentage could be that not many sites choose to put their original source code in production through the source map.
 
-An analysis of how many sites actually send the source map header on their first-party or third-party scripts shows that 0.1% of the JavaScript requests that include a SourceMap header on mobile are for first-party scripts.
+{{ figure_markup(
+  content="98.0%",
+  caption="Percent of JavaScript resources on mobile pages using the `SourceMap` header that are first-party resources.",
+  classes="big-number",
+  sheets_gid="2057978707",
+  sql_file="sourcemap_header.sql"
+  )
+}}
+
+Interestingly, at 98.0%, nearly all of the `SourceMap` usage on mobile JavaScript resources can be attributed to first-parties. Only 2.0% of scripts with the header on mobile pages are third-party resources.
 
 ## Libraries and frameworks
 
