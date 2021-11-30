@@ -117,9 +117,9 @@ JavaScript can be loaded into a page in a number of different ways, and how it i
 
 ### `module` and `nomodule`
 
-When loading a website, the browser renders the HTML and requests the appropriate resources. It consumes the polyfills referenced in the code for the effective rendering and functioning of the page. The modern browsers that support newer syntax like [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [async functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function), etc. do not need loads of polyfills to make things work and therefore, should not have to.
+When loading a website, the browser renders the HTML and requests the appropriate resources. It consumes the polyfills referenced in the code for the effective rendering and functioning of the page. Modern browsers that support newer syntax like [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) and [async functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) do not need loads of polyfills to make things work and therefore, should not have to.
 
-This is when differential loading takes care of things. Specifying the `type="module"` attribute would serve the modern browsers the bundle with modern syntax and fewer polyfills, if any. Similarly, older browsers that lack support for modules will be served the bundle with required polyfills and transpiled code syntax with attribute `type="nomodule"`. Read more about [the usage of module/nomodule here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#applying_the_module_to_your_html).
+This is when differential loading takes care of things. Specifying the `type="module"` attribute would serve the modern browsers the bundle with modern syntax and fewer polyfills, if any. Similarly, older browsers that lack support for modules will be served the bundle with required polyfills and transpiled code syntax with the `type="nomodule"` attribute. Read more about [the usage of module/nomodule](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#applying_the_module_to_your_html).
 
 Let's look at the data to understand the adoption of these attributes.
 
@@ -127,81 +127,88 @@ Let's look at the data to understand the adoption of these attributes.
   <table>
     <thead>
       <tr>
-        <th>Client</th>
-        <th>`module`</th>
-        <th>`nomodule`</th>
+        <th>Attribute</th>
+        <th>desktop</th>
+        <th>mobile</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Desktop</td>
+        <td>`module`</td>
         <td class="numeric">4.6%</td>
-        <td class="numeric">3.9%</td>
+        <td class="numeric">4.3%</td>
       </tr>
       <tr>
-        <td>Mobile</td>
-        <td class="numeric">4.3%</td>
+        <td>`nomodule`</td>
+        <td class="numeric">3.9%</td>
         <td class="numeric">3.9%</td>
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Distribution of differential loading usage on desktop and mobile clients.", sheets_gid="1261294750", sql_file="module_and_nomodule.sql") }}</figcaption>
+  <figcaption>{{ figure_link(
+    caption="Distribution of differential loading usage on desktop and mobile clients.",
+    sheets_gid="1261294750",
+    sql_file="module_and_nomodule.sql"
+  ) }}</figcaption>
 </figure>
 
-4.6% of desktop pages use the attribute `type="module"` whereas only 3.9% of mobile pages use `type="nomodule"`. This could be due to the fact that the mobile dataset being much larger contains more "long-tail" websites that might not be using the latest features.
+4.6% of desktop pages use the `type="module"` attribute, whereas only 3.9% of mobile pages use `type="nomodule"`. This could be due to the fact that the mobile dataset being [much larger](./methodology#websites) contains more "long-tail" websites that might not be using the latest features.
 
-It is important to note that with the <a hreflang="en" href="https://docs.microsoft.com/en-us/lifecycle/announcements/internet-explorer-11-support-end-dates">end of support for IE11 browser</a>, differential loading is less applicable because evergreen browsers support modern JavaScript syntax. One of the JavaScript frameworks, Angular, for example, <a hreflang="en" href="https://github.com/angular/angular/issues/41840">removed support for the legacy browsers with Angular v13</a> released November 2021.
+It is important to note that with the <a hreflang="en" href="https://docs.microsoft.com/en-us/lifecycle/announcements/internet-explorer-11-support-end-dates">end of support for IE 11 browser</a>, differential loading is less applicable because evergreen browsers support modern JavaScript syntax. The Angular framework, for example, <a hreflang="en" href="https://github.com/angular/angular/issues/41840">removed support for legacy browsers in Angular v13</a>, which was released November 2021.
 
 ### `async` and `defer`
 
-JavaScript loading could be render blocking unless it is specified as deferred or async. This is one of the contributing factors to the slow website loading as often times JavaScript (or at least some of it) is needed for the initial render.
+JavaScript loading could be render-blocking unless it is specified as asynchronous or deferred. This is one of the contributing factors to slow performance, as often times JavaScript (or at least some of it) is needed for the initial render.
 
-However, loading the JavaScript asynchronously or deferring it helps in some ways to improve this experience. The `async` and `defer` attribute load the scripts asynchronously. The scripts with `async` attribute are executed irrespective of the order in which they are defined, however, `defer` executes the scripts only after the document is completely parsed and ensures their execution will take place in the specified order. Let's look at the statistics for how many pages actually specify these attributes for the JavaScript requested in the browser.
+However, loading the JavaScript asynchronously or deferred helps in some ways to improve this experience. Both the `async` and `defer` attributes load the scripts asynchronously. The scripts with the `async` attribute are executed irrespective of the order in which they are defined, however, `defer` executes the scripts only after the document is completely parsed, ensuring that their execution will take place in the specified order. Let's look at how many pages actually specify these attributes for the JavaScript requested in the browser.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Client</th>
-        <th>`async`</th>
-        <th>`defer`</th>
-        <th>Neither</th>
+        <th>Attribute</th>
+        <th>desktop</th>
+        <th>mobile</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Desktop</td>
+        <td>`async`</td>
         <td class="numeric">89.3%</td>
-        <td class="numeric">48.1%</td>
-        <td class="numeric">10.3%</td>
+        <td class="numeric">89.1%</td>
       </tr>
       <tr>
-        <td>Mobile</td>
-        <td class="numeric">89.1%</td>
+        <td>`defer`</td>
+        <td class="numeric">48.1%</td>
         <td class="numeric">47.8%</td>
+      </tr>
+      <tr>
+        <td>Neither</td>
+        <td class="numeric">10.3%</td>
         <td class="numeric">10.4%</td>
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Percent of pages using `async`, `defer`, or neither.", sheets_gid="2038121216", sql_file="breakdown_of_pages_using_async_defer.sql") }}</figcaption>
+  <figcaption>{{ figure_link(
+    caption="Percent of pages using `async`, `defer`, or neither.",
+    sheets_gid="2038121216",
+    sql_file="breakdown_of_pages_using_async_defer.sql"
+  ) }}</figcaption>
 </figure>
 
-There was an anti-pattern observed in the last year's results that some websites use both `async` and `defer` attribute resulting in fallback to `async` if the browser supports it and using `defer` for IE8 and IE9 browsers. This is, however, unnecessary now for most of the sites since `async` takes the precedence on all suppoting browsers and this pattern in turn, interrupts the HTML parsing, instead of deferring until the page has loaded. The usage was so frequent that [11.4%](../2020/javascript#how-do-we-load-our-javascript) of mobile pages were seen with at least one script with `async` and `defer` attributes used together. The [root causes](https://twitter.com/rick_viscomi/status/1331735748060524551?s=20) were found and an action item was also taken down to [remove such usage going forward](https://twitter.com/Kraft/status/1336772912414601224?s=20).
+There was an anti-pattern observed in last year's results that some websites use both `async` and `defer` attributes on the same script, which falls back to `async` if the browser supports it and using `defer` for IE 8 and IE 9 browsers. This is, however, unnecessary now for most of the sites since `async` takes precedence on all supported browsers and. In turn, this pattern interrupts HTML parsing instead of deferring until the page has loaded. The usage was so frequent that [11.4%](../2020/javascript#how-do-we-load-our-javascript) of mobile pages were seen with at least one script with `async` and `defer` attributes used together. The [root causes](https://twitter.com/rick_viscomi/status/1331735748060524551?s=20) were found and an action item was also taken down to [remove such usage going forward](https://twitter.com/Kraft/status/1336772912414601224?s=20).
 
-This year, we improved our measures of calculating these figures by looking at the rendered DOM, as opposed to the initial HTML.
 
 {{ figure_markup(
   content="35.6%",
-  caption="Percent of pages using the `async` and `defer` attribute together.",
+  caption="Percent of mobile pages on which the `async` and `defer` attributes are set on the same script.",
   classes="big-number",
   sheets_gid="2038121216",
   sql_file="breakdown_of_pages_using_async_defer.sql"
   )
 }}
 
-We found that 35.6% of mobile pages use the `async` and `defer` attributes together. This was counted using a <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/javascript.js">custom metric</a> that measures the usage of these attributes on the rendered DOM. Based on the custom metric, the variation is a lot as compared to the previous year. When we dived deeper to understand this gap, it was found that a lot of pages update these attributes dynamically after the pages have already been loaded. This is one reason why more results are found using the results from the custom metric (rendered DOM as opposed to initial DOM).
-
-A typical <a hreflang="en" href="https://www.tntsupercenter.com/">example website</a>, loads the below script:
+This year, we found that 35.6% of mobile pages use the `async` and `defer` attributes together. The large discrepancy from last year is due to a methodological improvement to measure attribute usage at runtime, rather than parsing the static contents of the initial HTML. This difference shows that many pages update these attributes dynamically after the document has already been loaded. For example, one website was found to include the following script:
 
 ```js
 <!-- Piwik -->
@@ -214,25 +221,29 @@ A typical <a hreflang="en" href="https://www.tntsupercenter.com/">example websit
 <!-- End Piwik Code -->
 ```
 
-According to [Wikipedia](https://en.wikipedia.org/wiki/Matomo_(software)), Piwik (now known as Matomo):
-<blockquote>is a free and open source web analytics application developed by a team of international developers, that runs on a PHP/MySQL webserver. It tracks online visits to one or more websites and displays reports on these visits for analysis. As of June 2018, Matomo was used by over 1,455,000 websites, or 1.3% of all websites with known traffic analysis tools...</blockquote>
+So, what is Piwik? According to its Wikipedia entry:
 
-This information strongly suggests that a lot of the increase is due to these marketing and analytics providers that dynamically inject these `async`/`defer` scripts into the page.
+<figure>
+<blockquote>Matomo, formerly Piwik, is a free and open source web analytics application developed by a team of international developers, that runs on a PHP/MySQL webserver. It tracks online visits to one or more websites and displays reports on these visits for analysis. As of June 2018, Matomo was used by over 1,455,000 websites, or 1.3% of all websites with known traffic analysis tools&hellip;</blockquote>
+<figcaption>— <cite><a href="https://en.wikipedia.org/wiki/Matomo_(software)">Matomo (software) on Wikipedia</a></cite></figcaption>
+</figure>
+
+This information strongly suggests that much of the increase we observed may be due to similar marketing and analytics providers that dynamically inject these `async` and `defer` scripts into the page later than had been previously detected.
 
 {{ figure_markup(
   content="2.6%",
-  caption="Percent of requests using the `async` and `defer` attribute together.",
+  caption="Percent of scripts using the `async` and `defer` attribute together.",
   classes="big-number",
   sheets_gid="655357075",
   sql_file="breakdown_of_scripts_using_async_defer_module_nomodule.sql"
   )
 }}
 
-Even though a large percentage of pages use this anti-pattern, it turns out only 2.6% of requests use both `async` and `defer` on the same script element.
+Even though a large percentage of pages use this anti-pattern, it turns out that only 2.6% of all scripts use both `async` and `defer` on the same script element.
 
 ### First-party vs third-party
 
-The median number of JavaScript resources requested on mobile pages, as [observed earlier](#how-much-javascript-do-we-load), is 20. We'll now look at which ones of these are first-party or third-party requests.
+Recall from the [How much JavaScript do we load](#how-much-javascript-do-we-load) section that the median number of JavaScript requests on mobile pages is 20. In this section, we'll take a look at the breakdown of first and third-party JavaScript requests.
 
 {{ figure_markup(
   image="js-requests-mobile-host.png",
@@ -244,7 +255,7 @@ The median number of JavaScript resources requested on mobile pages, as [observe
   )
 }}
 
-A median of mobile pages request 10 third-party resources whereas 9 first-party requests. let's look at how the results vary for the desktop client.
+The median mobile page requests 10 third-party resources and 9 first-party requests. This difference increases as we move up to the 90th percentile as 33 requests on mobile pages are first-party but the number goes up to 34 for third-party requests for the mobile pages. Clearly, the number of third-party resources requested is always one step ahead of the first-party ones.
 
 {{ figure_markup(
   image="js-requests-desktop-host.png",
@@ -256,16 +267,13 @@ A median of mobile pages request 10 third-party resources whereas 9 first-party 
   )
 }}
 
-A median of desktop pages request 11 third-party resources compared to 10 first-party requests. This difference increases as we move up to the 90th percentile as 33 requests on mobile pages are first-party but the number goes up to 34 for third-party requests for the mobile pages. Clearly, the number of third-party resources requested is always one step ahead of the first-party ones. Irrespective of the performance and reliability <a hreflang="en" href="https://css-tricks.com/potential-dangers-of-third-party-javascript/">risks that requesting third-party resources brings</a>, the usage seems to favor third-party scripts, which could be due to the <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript">useful interactivity features</a> that it gives to the web.
+The median desktop pages requests 11 third-party resources, compared to 10 first-party requests. Irrespective of the <a hreflang="en" href="https://css-tricks.com/potential-dangers-of-third-party-javascript/">performance and reliability risks</a> that third-party resources may bring, both desktop and mobile pages consistently seem to favor third-party scripts. This effect could be due to the <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript">useful interactivity features</a> that third-party scripts give to the web.
 
-This is where one has to put their "performance-nerd" cap on, and ensure that using third-party scripts <a hreflang="en" href="https://csswizardry.com/2017/07/performance-and-resilience-stress-testing-third-parties/">doesn't result in losing control over the performance of the page,  or the main thread getting bloated</a> with too much JavaScript being transferred by <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">loading these scripts better</a>.
+Nevertheless, site owners must ensure that their third-party scripts are <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">loaded performantly</a>. <a href="https://twitter.com/csswizardry">Harry Roberts</a> advocates for going a step further and <a hreflang="en" href="https://csswizardry.com/2017/07/performance-and-resilience-stress-testing-third-parties/">stress testing third-parties</a> for performance and resilience.
 
-### Preload and Prefetch
+### `preload` and `prefetch`
 
-At the render of a page, the browser downloads the given resources and prioritizes the download of some resources the browser uses over others using [resource hints](../resource-hints). The resource hints, `preload` and `prefetch` tell the browser to either download some resource right away or download it whenever it can to present the resource when required.
-
-The `preload` hint tells the browser to download the resource with a higher priority as it will be required on the current page.
-The `prefetch` hint however, tells the browser that the resource could be required after some time (useful for future navigation) and it'd better to fetch it when the browser has the capacity to do so and make it available as soon as it is required.
+As a page is rendered, the browser downloads the given resources and prioritizes the download of some resources the browser uses over others using resource hints. The `preload` hint tells the browser to download the resource with a higher priority as it will be required on the current page. The `prefetch` hint, however, tells the browser that the resource could be required after some time (useful for future navigation) and it'd better to fetch it when the browser has the capacity to do so and make it available as soon as it is required. Learn more about how these features are used in the [Resource Hints](./resource-hints) chapter.
 
 {{ figure_markup(
   image="javascript-resource-hint-usage.png",
@@ -277,23 +285,13 @@ The `prefetch` hint however, tells the browser that the resource could be requir
   )
 }}
 
-The preload hints are used by 15.4% of mobile pages to load JavaScript, whereas only 1.0% of mobile pages use the prefetch hint. Overall, 15.8% and 1.1% repectively of desktop pages use these resource hints to load the JavaScript resources.
+`preload` hints are used to load JavaScript on 15.4% of mobile pages, whereas only 1.0% of mobile pages use the `prefetch` hint. 15.8% and 1.1% of desktop pages use these resource hints to load JavaScript resources, respectively.
 
-It would also be ideal to see how many preload and prefetch hints are used per page as that affects the impact of these hints. For example, if there are 5 resources to be loaded on the render and all 5 use the preload hint, the preload hint would try to prioritize all the resources and this would then work as it would have without the preload hint used.
-
-{{ figure_markup(
-  image="prefetch-hints-per-page.png",
-  caption="Distribution of prefetch hints per page.",
-  description="Bar chart showing the distribution of prefetch hints per page. A median desktop page loads 2 JavaScript resources with the prefetch hint.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1265752379&format=interactive",
-  sheets_gid="1107832831",
-  sql_file="resource-hints-prefetch-preload-percentage.sql"
-  )
-}}
+It would also be useful to see how many `preload` and `prefetch` hints are used per page, as that affects the impact of these hints. For example, if there are five resources to be loaded on the render and all five use the `preload` hint, the browser would try to prioritize every resource, which would effectively work as if no `preload` hint was used at all.
 
 {{ figure_markup(
   image="preload-hints-per-page.png",
-  caption="Distribution of preload hints per page.",
+  caption="Distribution of preload hints for JavaScript resources per page.",
   description="Bar chart showing the distribution of prefetch hints per page. A median desktop page loads 1 JavaScript resource with the preload hint.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1180601651&format=interactive",
   sheets_gid="1107832831",
@@ -301,59 +299,48 @@ It would also be ideal to see how many preload and prefetch hints are used per p
   )
 }}
 
-A median desktop page loads 1 JavaScript resource with the preload hint whereas 2 JavaScript resources with the prefetch hint.
+{{ figure_markup(
+  image="prefetch-hints-per-page.png",
+  caption="Distribution of prefetch hints for JavaScript resources per page.",
+  description="Bar chart showing the distribution of prefetch hints per page. A median desktop page loads 2 JavaScript resources with the prefetch hint.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1265752379&format=interactive",
+  sheets_gid="1107832831",
+  sql_file="resource-hints-prefetch-preload-percentage.sql"
+  )
+}}
+
+The median desktop page loads one JavaScript resource with the `preload` hint and two JavaScript resources with the `prefetch` hint.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Client</th>
+        <th>Hint</th>
         <th>2020</th>
         <th>2021</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Desktop</td>
+        <td>`preload`</td>
         <td class="numeric">1</td>
         <td class="numeric">1</td>
       </tr>
       <tr>
-        <td>Mobile</td>
-        <td class="numeric">1</td>
-        <td class="numeric">1</td>
-      </tr>
-    </tbody>
-  </table>
-  <figcaption>{{ figure_link(caption="Year over year comparison of the usage of preload hints per page at the median.", sheets_gid="1107832831", sql_file="resource-hints-prefetch-preload-percentage.sql") }}</figcaption>
-</figure>
-
-<figure>
-  <table>
-    <thead>
-      <tr>
-        <th>Client</th>
-        <th>2020</th>
-        <th>2021</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Desktop</td>
-        <td class="numeric">3</td>
-        <td class="numeric">2</td>
-      </tr>
-      <tr>
-        <td>Mobile</td>
+        <td>`prefetch`</td>
         <td class="numeric">3</td>
         <td class="numeric">2</td>
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Year over year comparison of the usage of prefetch hints per page at the median.", sheets_gid="1107832831", sql_file="resource-hints-prefetch-preload-percentage.sql") }}</figcaption>
+  <figcaption>{{ figure_link(
+    caption="Year-over-year comparison of the median number of `preload` and `prefetch` hints for JavaScript resources per mobile page.",
+    sheets_gid="1107832831",
+    sql_file="resource-hints-prefetch-preload-percentage.sql"
+  ) }}</figcaption>
 </figure>
 
-Looking at the trend of the usage of preload and prefetch hints over the past years, it can be noted that the trend favors a decrease in the usage of more preload and prefetch hints per page.
+While the median number of `preload` hints per mobile page has stayed the same, the number of `prefetch` hints has decreased from three to two per page. Note that at the median, these resuts are identical for both mobile and desktop pages.
 
 ## How is JavaScript delivered
 
