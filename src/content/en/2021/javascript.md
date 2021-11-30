@@ -75,7 +75,7 @@ According to [Lighthouse](./methodology#lighthouse), the median mobile page load
   )
 }}
 
-To put it another way, 36.2% of JavaScript bytes on the median mobile page go unused. Given the impact JavaScript can have on the <a hreflang="en" href="https://web.dev/optimize-lcp/">Largest Contentful Paint</a> (LCP) of the page, especially for mobile users with limited device capabilities and data plans, this is such a significant figure to be consuming CPU cycles with other important resources just go to waste. Such wastefulness could be the result of a lot of unused boilerplate code that gets shipped with large frameworks or libraries.
+To put it another way, 36.2% of JavaScript bytes on the median mobile page go unused. Given the impact JavaScript can have on the <a hreflang="en" href="https://web.dev/optimize-lcp/">Largest Contentful Paint</a> (LCP) of the page, especially for mobile users with limited device capabilities and data plans, this is such a significant figure to be consuming CPU cycles with other important resources just to go to waste. Such wastefulness could be the result of a lot of unused boilerplate code that gets shipped with large frameworks or libraries.
 
 Site owners could reduce the percentage of wasted JavaScript bytes by using Lighthouse to check for <a hreflang="en" href="https://web.dev/unused-javascript/">unused JavaScript</a> and follow best practices to <a hreflang="en" href="https://web.dev/remove-unused-code/">remove unused code</a>.
 
@@ -85,7 +85,7 @@ One of the contributing factors towards slow rendering of the web page could be 
 
 {{ figure_markup(
   image="js-requests-per-page.png",
-  caption="Distribution of JavaScript requests on desktop and mobile pages.",
+  caption="Distribution of the number of JavaScript requests per page.",
   description="Bar chart showing the distribution of JavaScript requests on desktop and mobile pages. The median mobile page loads 20 JavaScript resources as compared to 21 JavaScript resources on desktop. The 10th, 25th, 50th, 75th, and 90th percentiles for requests made on mobile are: 4, 10, 20, 35, 56",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=1487796178&format=interactive",
   sheets_gid="159538568",
@@ -95,21 +95,21 @@ One of the contributing factors towards slow rendering of the web page could be 
 
 The median desktop page loads 21 JavaScript resources (`.js` and `.mjs` requests), going up to 59 resources at the 90th percentile.
 
-As compared with [last year's results](../2020/javascript#request-count), there has been a marginal increase in the number of JavaScript resources requested in 2021, with the median number of JavaScript resources loaded being 20 for desktop pages and 19 for mobile.
-
 {{ figure_markup(
   image="js-resources-over-years.png",
-  caption="Distribution of JavaScript resources loaded over desktop and mobile devices by year.",
-  description="Bar chart showing the distribution of JavaScript resources loaded over desktop and mobile devices by year. In 2020, the median JS requests made on a page were 39 and this has increased to 41 in 2021.",
+  caption="Distribution of the number of JavaScript requests per page by year.",
+  description="Bar chart showing the distribution of JavaScript resources loaded over desktop and mobile devices by year. In 2020, the median JS requests made on a page were 19 and this has increased to 20 in 2021.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=882068136&format=interactive",
   sheets_gid="1068898615",
   sql_file="requests_2020.sql"
   )
 }}
 
+As compared with [last year's results](../2020/javascript#request-count), there has been a marginal increase in the number of JavaScript resources requested in 2021, with the median number of JavaScript resources loaded being 20 for desktop pages and 19 for mobile.
+
 The trend is gradually increasing in the number of JavaScript resources loaded on a page. This would make one wonder if the number should actually increase or decrease considering that fewer JavaScript requests might lead to better performance in some cases but not in others.
 
-This is where the recent advances in the HTTP protocol come in and the idea of reducing the number of JavaScript requests for better performance gets inaccurate. With the introduction of HTTP/2 and HTTP/3 the overhead of HTTP requests has significantly reduced, so requesting the same resources over more requests is not necessarily a bad thing anymore. To learn more about these protocols, see the [HTTP chapter](./http).
+This is where the recent advances in the HTTP protocol come in and the idea of reducing the number of JavaScript requests for better performance gets inaccurate. With the introduction of HTTP/2 and HTTP/3, the overhead of HTTP requests has been significantly reduced, so requesting the same resources over more requests is not necessarily a bad thing anymore. To learn more about these protocols, see the [HTTP chapter](./http).
 
 ## How is JavaScript requested?
 
