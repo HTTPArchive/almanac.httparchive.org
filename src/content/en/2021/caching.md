@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Caching
-description: Caching chapter of the 2021 Web Almanac covering cache-control, expires, TTLs, validity, vary, set-cookies, Service Workers and opportunities.
+description: Caching chapter of the 2021 Web Almanac covering Cache-control, Expires, TTLs, validity, Vary, Set-cookies, Service Workers and opportunities.
 authors: [Zizzamia, jessnicolet]
 reviewers: []
 analysts: [rviscomi]
@@ -22,7 +22,7 @@ featured_stat_label_3: TODO
 
 ## Introduction
 
-Over the last two decades, the way we experience web applications has changed, giving us richer and more interactive content. But, unfortunately, this content comes with a cost in both data storage and bandwidth. Most of the time, this makes it harder for many of us to fully experience a web product when the network we use is degraded, or our device doesn't have enough space. Caching is both a solution to and the cause of some of these problems. Learning to navigate the multiverse of choices will enable you to build not only for HighEnd devices but also for the next Billion users that access your product from LowEnd devices.
+Over the last two decades, the way we experience web applications has changed, giving us richer and more interactive content. But, unfortunately, this content comes with a cost in both data storage and bandwidth. Most of the time, this makes it harder for many of us to fully experience a web product when the network we use is degraded, or our device doesn't have enough space. Caching is both a solution to and the cause of some of these problems. Learning to navigate the multiverse of choices will enable you to build not only for *HighEnd* devices but also for the next Billion users that access your product from *LowEnd* devices.
 
 Caching is a technique that enables the reuse of previously downloaded content, from simple static assets like Javascript, CSS files or basic string values to more complex JSON API responses.
 
@@ -34,7 +34,7 @@ In this chapter, we will focus more on the HTTP Headers used between the Browser
 
 ## CDN Cache adoption
 
-A Content Delivery Network (CDN) is a group of servers spread out over several locations that store copies of data. This allows servers to fulfill requests based on the server closest to the end-user. (Remember we want to cache as close to end-users as possible.) In 2021 across the web, the most popular CDN for Desktop was Cloudflare with 14% of pages, followed by Google at 6% adoption.
+A Content Delivery Network (CDN) is a group of servers spread out over several locations that store copies of data. This allows servers to fulfill requests based on the server closest to the end-user. In 2021 across the web, the most popular CDN for Desktop was Cloudflare with 14% of pages, followed by Google at 6% adoption.
 
 {{ figure_markup(
   image="top-cdns.png",
@@ -50,9 +50,9 @@ While Cloudflare is used twice as much as Google, a large variety of solutions r
 
 ## Service Worker adoption
 
-The adoption of Service Workers has continued to steadily increase. While 1% of Mobile pages registered a service worker in 2020, 9% of Mobile pages ranked in the top 1,000 registered one in 2021.
+The adoption of Service Workers has continued to steadily increase. While 1% of Mobile pages registered a service worker in 2021, 9% of Mobile pages ranked in the top 1,000 registered one.
 
-This incremental increase in adoption of Service Workers could be related to the world-wide trend towards remote-first and by association, mobile-friendly. As our reliance on working and living in one place throughout the entire year shifts, we need our devices to work even harder and smarter to keep up with us. Service Workers are a tool that can improve performance in those growing offline experiences.
+This higher adoption of Service Workers from the top 1k pages, could be related to the world-wide trend towards remote-first and by association, mobile-friendly. As our reliance on working and living in one place throughout the entire year shifts, we need our devices to work even harder and smarter to keep up with us. Service Workers are a tool that can improve performance when the user is with unreliable network or LowEnd devices.
 
 {{ figure_markup(
   image="sw-adoption.png",
@@ -67,7 +67,7 @@ The primary way to cache resources within a Service Worker is by using the *Cach
 
 ## Headers adoption
 
-With both a CDN and the Browser, HTTP Headers are the primary toolkit a developer must master to properly cache resources. Headers are simply instructions known as "*directives*", read during the HTTP Request or Response to control the cache strategy.
+With both a CDN and the Browser, HTTP Headers are the primary toolkit a developer must master to properly cache resources. Headers are simply instructions read during the HTTP Request or Response, and a few of them help control the cache strategy used.
 
 The caching-related headers, or the absence of them, tell the browser or CDN three essential pieces of information:
 - **Cacheability**: Is this content cacheable?
@@ -80,7 +80,7 @@ Headers are meant to be used either alone or together. To determine if the conte
 
 When both are specified, `Cache-Control` takes precedence.
 
-Usage of the Cache-Control header has increased steadily since 2019. 74% of responses on Mobile pages included the Cache-Control header, while 75% of responses on Desktop pages utilized the header. From 2020, the usage of this specific header increased by 0.71% for Mobile and by 1.13% for Desktop. This leads us to believe there has been an increase in awareness in the community around proper usage of Cache-Control, notably for Desktop.
+Usage of the `Cache-Control` header has increased steadily since 2019. 74% of responses on Mobile pages included the `Cache-Control` header, while 75% of responses on Desktop pages utilized the header. From 2020, the usage of this specific header increased by 0.71% for Mobile and by 1.13% for Desktop. This leads us to believe there has been an increase in awareness in the community around proper usage of `Cache-Control`, notably for Desktop.
 
 {{ figure_markup(
   image="cache-control-expires.png",
@@ -91,7 +91,7 @@ Usage of the Cache-Control header has increased steadily since 2019. 74% of resp
   sql_file="header_trends.sql"
 ) }}
 
-Talk about 28% of mobile requests use neither Cache-Control nor Expires headers.
+Talk about 28% of mobile requests use neither `Cache-Control` nor `Expires` headers.
 
 To validate the content, we have:
 - `Last-Modified` indicates when the object was last changed. Its value is a date timestamp.
@@ -176,7 +176,7 @@ The `max-age` directive is the most commonly found since it directly defines the
 ) }}
 
 [TODO Leo complete the part around Cache-Control directives]
-Cache Control directives, 61% of mobile requests include a Cache-Control response header with a `max-age` directive.
+Cache Control directives, 61% of mobile requests include a `Cache-Control` response header with a `max-age` directive.
 
 The most misused Cache Control directive is `set-cookie`, used for 0.07% of total directives for Desktop and 0.08% for Mobile.
 
@@ -191,7 +191,7 @@ Fun fact the the largest max-age value is 1625540701883604800000 seconds or 5154
 ) }}
 
 [TODO Leo talk about `immutable`]
-Talk about `immutable` directive, 12% of desktop requests containing Cache-Control: immutable are on the "static.parastorage.com" host.
+Talk about `immutable` directive, 12% of desktop requests containing `Cache-Control`: immutable are on the "static.parastorage.com" host.
 
 ### `Last-Modified` & `ETag` adoption
 
@@ -243,7 +243,7 @@ This shows a 1.5% decrease in use of `Accept-Encoding` from 2020.
 
 It's important to point out that only 46.25% of total requests audited use the Vary header, but when compared to 2020, we see an overall increase by 2.85%.
 
-Of these requests using the `Vary` header, 83.4% also have the `cache-control`. This shows us a 2.1% improvement from 2020.
+Of these requests using the `Vary` header, 83.4% also have the `Cache-control`. This shows us a 2.1% improvement from 2020.
 
 ## Setting cookies on cacheable responses
 
