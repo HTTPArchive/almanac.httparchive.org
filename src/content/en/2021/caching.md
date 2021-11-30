@@ -22,19 +22,19 @@ featured_stat_label_3: TODO
 
 ## Introduction
 
-Over the last two decades, the way we experience web applications has changed, giving us richer and more interactive content. But, unfortunately, this content comes with a cost in both data storage and bandwidth. Most of the time, this makes it harder for many of us to fully experience a web product when the network we use is degraded, or our device doesn't have enough space. Caching is both a solution to and the cause of some of these problems. Learning to navigate the multiverse of choices will enable you to build not only for *HighEnd* devices but also for the next Billion users that access your product from *LowEnd* devices.
+Over the last two decades, the way we experience web applications has changed, giving us richer and more interactive content. But, unfortunately, this content comes with a cost in both data storage and bandwidth. Most of the time, this makes it harder for many of us to fully experience a web product when the network we use is degraded, or our device doesn't have enough space. Caching is both a solution to and the cause of some of these problems. Learning to navigate the multiverse of choices will enable you to build not only for *HighEnd* devices but also for the next billion users that access your product from *LowEnd* devices.
 
 Caching is a technique that enables the reuse of previously downloaded content, from simple static assets like Javascript, CSS files or basic string values to more complex JSON API responses.
 
 At its core, Caching avoids making specific HTTP requests and allows an application to feel more responsive and reliable to the user. Each request is usually cached in two main places:
-- **Content Delivery Network (CDN)**: Usually a third-party company like Cloudflare with the primary goal of replicating your data as closely as possible to where the user is accessing the application. Most CDNs have some default behavior, but mainly you can instruct them on how to cache by using HTTP Headers.
-- **Browser**: Usually will either learn how to cache your resources internally or respect the HTTP Headers you defined to optimize the experience. On top of that, you will have access to additional manual caching strategies including storing simple strings in *Cookies*, complex API responses in *IndexedDB*, or entire JS or HTML resources in the *CacheStorage* with the *Service Worker*.
+- **Content Delivery Network (CDN)**: Usually a third-party company like Cloudflare with the primary goal of replicating your data as closely as possible to where the user is accessing the application. Most CDNs have some default behavior, but mainly you can give them instructions them on how to cache by using HTTP Headers.
+- **Browser**: Usually will either learn how to cache your resources internally or respect the HTTP Headers you defined to optimize the experience. On top of that, you will have access to additional manual caching strategies including storing simple strings in *Cookies*, complex API responses in *IndexedDB*, or entire JS or HTML resources in the *CacheStorage* with a *Service Worker*.
 
-In this chapter, we will focus more on the HTTP Headers used between the Browser and the CDN and briefly mention the Service Worker caching strategies.
+In this chapter, we will mostly focus on the HTTP Headers used between the Browser and the CDN, briefly mentioning Service Worker caching strategies.
 
 ## CDN Cache adoption
 
-A Content Delivery Network (CDN) is a group of servers spread out over several locations that store copies of data. This allows servers to fulfill requests based on the server closest to the end-user. In 2021 across the web, the most popular CDN for Desktop was Cloudflare with 14% of pages, followed by Google at 6% adoption.
+A Content Delivery Network (CDN) is a group of servers spread out over several locations that store copies of data. This allows servers to fulfill requests based on the server closest to the end-user. Across the web in 2021, the most popular CDN used for Desktop was Cloudflare with 14% of total pages, followed by Google with 6%.
 
 {{ figure_markup(
   image="top-cdns.png",
@@ -50,9 +50,9 @@ While Cloudflare is used twice as much as Google, a large variety of solutions r
 
 ## Service Worker adoption
 
-The adoption of Service Workers has continued to steadily increase. While 1% of Mobile pages registered a service worker in 2021, 9% of Mobile pages ranked in the top 1,000 registered one.
+The adoption of Service Workers has continued to steadily increase. While 1% of Desktop pages registered a service worker in 2021, 9% of Mobile pages ranked in the top 1k registered one.
 
-This higher adoption of Service Workers from the top 1k pages, could be related to the world-wide trend towards remote-first and by association, mobile-friendly. As our reliance on working and living in one place throughout the entire year shifts, we need our devices to work even harder and smarter to keep up with us. Service Workers are a tool that can improve performance when the user is with unreliable network or LowEnd devices.
+This higher adoption of Service Workers from the top 1k pages, could be related to the world-wide trend towards remote-first and by association, mobile-friendly. As our reliance on working and living in one place throughout the entire year shifts, we need our devices to work even harder and smarter to keep up with us. Service Workers are a tool that can improve performance when the user is dealing with unreliable networks or LowEnd devices.
 
 {{ figure_markup(
   image="sw-adoption.png",
@@ -63,11 +63,11 @@ This higher adoption of Service Workers from the top 1k pages, could be related 
   sql_file="service_worker_rank.sql"
 ) }}
 
-The primary way to cache resources within a Service Worker is by using the *CacheStorage API*. This allows a developer to create a custom cache strategy for any requests passing through the worker; some well-known ones are Stale-While-Revalidate, Cache Falling Back to Network, Network Falling Back to Cache, and Cache Only. In recent years it has become even easier to adopt those strategies through the increased popularity of [Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-strategies), which helps you decide what cache you want to plug and play.
+The primary way to cache resources within a Service Worker is by using the *CacheStorage API*. This allows a developer to create a custom cache strategy for any requests passing through the worker; some well-known ones are *stale-while-revalidate*, *Cache Falling Back to Network*, *Network Falling Back to Cache*, and *Cache Only*. In recent years it has become even easier to adopt those strategies thanks to the increased popularity of [Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-strategies), which helps you decide what cache you want to plug and play.
 
 ## Headers adoption
 
-With both a CDN and the Browser, HTTP Headers are the primary toolkit a developer must master to properly cache resources. Headers are simply instructions read during the HTTP Request or Response, and a few of them help control the cache strategy used.
+With both a CDN and the Browser, HTTP Headers are the primary toolkit a developer must master to properly cache resources. Headers are simply instructions read during the HTTP Request or Response, and some of them help control the cache strategy used.
 
 The caching-related headers, or the absence of them, tell the browser or CDN three essential pieces of information:
 - **Cacheability**: Is this content cacheable?
