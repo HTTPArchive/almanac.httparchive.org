@@ -174,7 +174,7 @@ Fun fact the the largest max-age value is 1625540701883604800000 seconds or 5154
 {{ figure_markup(
   caption="TODO",
   content="51 trillion years",
-  classes="big-number",
+  classes="medium-number",
   sheets_gid="529870849",
   sql_file="todo.sql"
 ) }}
@@ -417,7 +417,7 @@ However, the challenge remains for how first parties can effectively improve ove
 
 ## Identifying caching opportunities
 
-Based on the **Lighthouse caching TTL* score, we have seen an improvement in pages ranked with a perfect score of 100 increase from 3.3% in 2020 to 4.4% in 2021.
+Based on the **Lighthouse caching TTL** score, we have seen an improvement in pages ranked with a perfect score of 100 increase from 3.3% in 2020 to 4.4% in 2021.
 
 The score reflects whether the pages can benefit from additional caching policy improvements. Even though we are excited to see 31% of pages scoring above the 50 percentile score, a large potential exists for the 52% of pages that are ranking below the 25 percentile.
 
@@ -444,12 +444,6 @@ Based on **Lighthouse wasted bytes** from 2020 to 2021, there was a 3.28% improv
 ) }}
 
 The current percentage of pages audited that have 0 wasted bytes is still relatively low at 1.34%. In the coming years, we're looking forward to seeing an increase in that percentage as the community continues to focus on optimizing web performance.
-
-## Future
-
-TODO ...
-
-From [Fonts](https://almanac.httparchive.org/en/2020/fonts#conclusion) chapter: [Partitioning the cache](https://developers.google.com/web/updates/2020/10/http-cache-partitioning)
 
 
 ## Conclusion
