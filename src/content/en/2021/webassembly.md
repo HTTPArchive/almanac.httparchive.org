@@ -1,11 +1,11 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: WebAssembly
-description: TODO
+description: WebAssembly chapter of the 2021 Web Almanac covering Wasm compression, section sizes, most popular instructions, and post-MVP proposals
 authors: [RReverser]
 reviewers: [jsoverson, carlopi, kripken]
 analysts: [RReverser]
-editors: []
+editors: [shantsis]
 translators: []
 RReverser_bio: Ingvar is a passionate D2D (developer-to-developer) programmer who's always working on improving developer experience through better tools, specs and documentation. He currently works as a WebAssembly Developer Advocate on the Google Chrome team.
 results: https://docs.google.com/spreadsheets/d/1IMa2SbdQgshb4pGWF1KOh9s4zMtLbRymWZGYjdaatXY/
@@ -16,24 +16,23 @@ featured_stat_2: 40.2%
 featured_stat_label_2: Percent of uncompressed WebAssembly responses on mobile.
 featured_stat_3: 55.2%
 featured_stat_label_3: Percent of WebAssembly files loaded from a 3rd-party origin on desktop.
-unedited: true
 ---
 
 ## Introduction
 
-<a hreflang="en" href="https://webassembly.org/">WebAssembly</a> is a binary instruction format that allows developers to compile code written in languages other than JavaScript and bring it to the web in an efficient, portable package. The existing use-cases range from reusable libraries and codecs to full GUI applications. It's been available in all browsers since 2017—for 4 years now—and has been gaining adoption since, and this year we've decided it's about time to start tracking its usage in the Web Almanac.
+<a hreflang="en" href="https://webassembly.org/">WebAssembly</a> is a binary instruction format that allows developers to compile code written in languages other than JavaScript and bring it to the web in an efficient, portable package. The existing use-cases range from reusable libraries and codecs to full GUI applications. It's been available in all browsers since 2017—for 4 years now—and has been gaining adoption since, and this year we've decided it's a good time to start tracking its usage in the Web Almanac.
 
 ## Methodology
 
-For our analysis we've selected all WebAssembly responses from the HTTP Archive crawl on 2021-09-01 that matched either `Content-Type` (`application/wasm`) or a file extension (`.wasm`). Then, we downloaded <a hreflang="en" href="https://github.com/RReverser/wasm-stats/blob/master/downloader/wasms.csv">all of those</a> with a <a hreflang="en" href="https://github.com/RReverser/wasm-stats/blob/master/downloader/index.mjs">script</a> that additionally stored the URL, response size, uncompressed size and content hash in a <a hreflang="en" href="https://github.com/RReverser/wasm-stats/blob/master/downloader/results.csv">CSV file</a> in the process. We excluded the requests where we repeatedly couldn't get a response due to server errors, as well as those where the content did not in fact look like WebAssembly. For example, some <a hreflang="en" href="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor">Blazor</a> websites served <a hreflang="en" href="https://docs.microsoft.com/en-us/troubleshoot/windows-client/deployment/dynamic-link-library#the-net-framework-assembly">.NET DLLs</a> with `Content-Type: application/wasm`, even though those are actually DLLs parsed by the framework core, and not WebAssembly modules.
+For our analysis we've selected all WebAssembly responses from the HTTP Archive crawl on 2021-09-01 that matched either `Content-Type` (`application/wasm`) or a file extension (`.wasm`). Then we downloaded <a hreflang="en" href="https://github.com/RReverser/wasm-stats/blob/master/downloader/wasms.csv">all of those</a> with a <a hreflang="en" href="https://github.com/RReverser/wasm-stats/blob/master/downloader/index.mjs">script</a> that additionally stored the URL, response size, uncompressed size and content hash in a <a hreflang="en" href="https://github.com/RReverser/wasm-stats/blob/master/downloader/results.csv">CSV file</a> in the process. We excluded the requests where we repeatedly couldn't get a response due to server errors, as well as those where the content did not in fact look like WebAssembly. For example, some <a hreflang="en" href="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor">Blazor</a> websites served <a hreflang="en" href="https://docs.microsoft.com/en-us/troubleshoot/windows-client/deployment/dynamic-link-library#the-net-framework-assembly">.NET DLLs</a> with `Content-Type: application/wasm`, even though those are actually DLLs parsed by the framework core, and not WebAssembly modules.
 
 For WebAssembly content analysis, we couldn't use BigQuery directly. Instead, we created a <a hreflang="en" href="https://github.com/RReverser/wasm-stats">tool</a> that parses all the WebAssembly modules in the given directory and collects numbers of instructions per category, section sizes, numbers of imports/exports and so on, and stores all the stats in a `stats.json` file. After executing it on the directory with downloads from the previous step, the resulting JSON file was <a hreflang="en" href="https://cloud.google.com/bigquery/docs/batch-loading-data">imported into BigQuery</a> and <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/util/wasm_stats.sql">joined with the corresponding `summary_requests` and `summary_pages` tables</a> into `httparchive.almanac.wasm_stats` so that each record is self-contained and includes all the necessary information about the WebAssembly request, response and module contents. This final table was then used for all further analysis in this chapter.
 
-Using crawler requests as a source for analysis has its own tradeoffs you need to be aware of when looking at the numbers in this article:
+Using crawler requests as a source for analysis has its own tradeoffs to be aware of when looking at the numbers in this article:
 
-- First, we don't have information about requests that can be triggered by user interaction. We include only resources collected during the page load.
-- Second, some websites are more popular than others, but we don't have precise visitor data and don't take it into account—instead, each detected Wasm usage is treated as equal.
-- Finally, in graphs like sizes we count the same WebAssembly module used across multiple websites as unique usages, instead of comparing only unique files. This is because we are most interested in the global picture of WebAssembly usage across the web pages rather than comparing libraries to each other.
+- First, we didn't have information about requests that can be triggered by user interaction. We included only resources collected during the page load.
+- Second, some websites are more popular than others, but we didn't have precise visitor data and didn't take it into account—instead, each detected Wasm usage is treated as equal.
+- Finally, in graphs like sizes we counted the same WebAssembly module used across multiple websites as unique usages, instead of comparing only unique files. This is because we are most interested in the global picture of WebAssembly usage across the web pages rather than comparing libraries to each other.
 
 Those tradeoffs are most consistent with analysis done in other chapters, but if you're interested in gathering other statistics, you're welcome to run your own queries against the table `httparchive.almanac.wasm_stats`.
 
@@ -85,7 +84,7 @@ The stark difference between the numbers of unique files and total responses alr
 
 Let's dive deeper and figure out what those reused libraries are. First, we've tried to deduplicate libraries by content hash alone, but it became quickly apparent that many of those left are still duplicates that differ only by library version.
 
-Instead, we decided to extract library names from URLs. While it's more problematic in theory due to potential name clashes, it turned out to be a more reliable option for top libraries in practice. We extracted filenames from URLs, removed extensions, minor versions and suffixes that looked like content hashes, sorted the results by number of repetitions and extracted the top 10 modules for each client. For those left, we did manual lookups to understand which libraries those modules are coming from.
+Then we decided to extract library names from URLs. While it's more problematic in theory due to potential name clashes, it turned out to be a more reliable option for top libraries in practice. We extracted filenames from URLs, removed extensions, minor versions, and suffixes that looked like content hashes, sorted the results by number of repetitions and extracted the top 10 modules for each client. For those left, we did manual lookups to understand which libraries those modules are coming from.
 
 {{ figure_markup(
   caption="Popular WebAssembly libraries.",
@@ -99,7 +98,7 @@ Instead, we decided to extract library names from URLs. While it's more problema
   )
 }}
 
-Almost 1/3 of WebAssembly usages on both desktop and mobile belong to the <a hreflang="en" href="https://aws.amazon.com/ivs/">Amazon Interactive Video Service</a> player library. While it's not open-source, the inspection of the associated JavaScript glue code suggests that it was built with <a hreflang="en" href="https://emscripten.org/">Emscripten</a>.
+Almost a third of WebAssembly usages on both desktop and mobile belong to the <a hreflang="en" href="https://aws.amazon.com/ivs/">Amazon Interactive Video Service</a> player library. While it's not open-source, the inspection of the associated JavaScript glue code suggests that it was built with <a hreflang="en" href="https://emscripten.org/">Emscripten</a>.
 
 The next up is <a hreflang="en" href="https://github.com/mnater/Hyphenopoly">Hyphenopoly</a>—a library for hyphenating text in various languages—that accounts for 13% and 19% of Wasm requests on desktop and mobile correspondingly. It's built with JavaScript and <a hreflang="en" href="https://www.assemblyscript.org/">AssemblyScript</a>.
 
@@ -215,7 +214,7 @@ Here are the resulting sizes:
 
 The median drops from almost 290 KB to almost 240 KB, which is already a pretty good sign. The top 10% go down from 2.5 MB / 1.4 MB to 2.2 MB / 0.8 MB. We can see significant improvements across all other percentiles, too.
 
-Due to their nature, percentiles don't necessarily fall onto the same files between datasets, so it might be hard to compare numbers directly between graphs and to understand the size savings. Instead, from now on, let me show the savings themselves provided by each optimization, step by step:
+Due to their nature, percentiles don't necessarily fall onto the same files between datasets, so it might be hard to compare numbers directly between graphs and to understand the size savings. Instead, from now on, let's see the savings themselves provided by each optimization, step by step:
 
 {{ figure_markup(
   caption="Brotli response savings.",
@@ -231,11 +230,11 @@ Median savings are around 40 KB. The top 10% save just under 600 KB on desktop a
 
 What's also interesting, at the other end of the graph—where we were supposed to see the worst savings—we found regressions of up to 1.4 MB. What happened there? How is it possible that Brotli recompression has made things worse for some modules?
 
-As mentioned above, in this article we've used Brotli with compression level 9, but—and I'll admit, I completely forgot about this until this article—it also has levels 10 and 11. Those levels produce even better results in exchange for a steep performance drop-off, as seen, for example, in <a hreflang="en" href="https://quixdb.github.io/squash-benchmark/#results-table">Squash benchmarks</a>. Such trade-off makes them worse candidates for the common on-the-fly compression, which is why we didn't use them in this article and went for a more moderate level 9. However, website authors can choose to compress their static resources ahead of time or cache the compression results, and save even more bandwidth without sacrificing CPU time. Cases like these show up as regressions in our analysis, meaning resources can be and, in some cases, already were optimized even better than we did in this article.
+As mentioned above, in this article we've used Brotli with compression level 9, but—and we'll admit, we completely forgot about this until this article—it also has levels 10 and 11. Those levels produce even better results in exchange for a steep performance drop-off, as seen, for example, in <a hreflang="en" href="https://quixdb.github.io/squash-benchmark/#results-table">Squash benchmarks</a>. Such trade-off makes them worse candidates for the common on-the-fly compression, which is why we didn't use them in this article and went for a more moderate level 9. However, website authors can choose to compress their static resources ahead of time or cache the compression results, and save even more bandwidth without sacrificing CPU time. Cases like these show up as regressions in our analysis, meaning resources can be and, in some cases, already were optimized even better than we did in this article.
 
 ### Which sections take up most of the space?
 
-Compression aside, we could also look for optimization opportunities by analyzing the high-level structure of WebAssembly binaries. Which sections are taking up most of the space? To find out, we've summed up section sizes from all the Wasm modules and divided them by the total binary size. Once again, I'll use numbers from the mobile dataset here, but desktop numbers aren't too far off:
+Compression aside, we could also look for optimization opportunities by analyzing the high-level structure of WebAssembly binaries. Which sections are taking up most of the space? To find out, we've summed up section sizes from all the Wasm modules and divided them by the total binary size. Once again, we used numbers from the mobile dataset here, but desktop numbers aren't too far off:
 
 {{ figure_markup(
   caption="Section size distribution.",
@@ -247,7 +246,7 @@ Compression aside, we could also look for optimization opportunities by analyzin
   )
 }}
 
-Unsurprisingly, most—~74%—of the total binary size comes from the compiled code itself, followed by ~19% for embedded static data. Function types, import/export descriptors and such comprise a negligible part of the total size. However, one section type stands out—it's custom sections, which account for ~6.5% of total size in the mobile dataset.
+Unsurprisingly, most of the total binary size (~74%) comes from the compiled code itself, followed by ~19% for embedded static data. Function types, import/export descriptors and such comprise a negligible part of the total size. However, one section type stands out—it's custom sections, which account for ~6.5% of total size in the mobile dataset.
 
 {{ figure_markup(
   content="6.5%",
@@ -263,8 +262,8 @@ Custom sections are mainly used in WebAssembly for 3rd-party tooling—they migh
     <thead>
       <tr>
         <th>URL</th>
-        <th>Size of custom sections</th>
-        <th>Custom sections</th>
+        <th>Size of Custom Sections</th>
+        <th>Custom Sections</th>
       </tr>
     </thead>
     <tbody>
@@ -382,7 +381,7 @@ It provides significant size savings on both uncompressed and compressed real-wo
 
 {{ figure_markup(
   caption="`wasm-opt` + Brotli size benchmarks.",
-  description="Another bar chart showing same `wasm-opt` size benchmarks, but with Brotli compression applied to both original and resulting WebAssembly modules. Results vary from 83% to 99% with median at 91%.",
+  description="Bar chart showing same `wasm-opt` size benchmarks, but with Brotli compression applied to both original and resulting WebAssembly modules. Results vary from 83% to 99% with median at 91%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=2047888306&format=interactive",
   sheets_gid="1763590037",
   image="wasm_opt_br_bench.png",
@@ -476,7 +475,7 @@ Let's take a look at their adoption in the Almanac dataset too:
 
 One feature stands out—it's the <a hreflang="en" href="https://github.com/WebAssembly/sign-extension-ops/blob/master/proposals/sign-extension-ops/Overview.md">sign-extension operators proposal</a>. It was shipped in all browsers not too long after the MVP, and enabled in LLVM (a compiler backend used by Clang / Emscripten and Rust) by default, which explains its high adoption rate. All other features currently have to be enabled explicitly by the developer at compilation time.
 
-For example, <a hreflang="en" href="https://github.com/WebAssembly/nontrapping-float-to-int-conversions/blob/master/proposals/nontrapping-float-to-int-conversion/Overview.md">non-trapping float-to-int conversions</a> is very similar in spirit to sign-extension operators—it also provides built-in conversions for numeric types to save some code size—but it became uniformly supported only recently with the release of Safari 15. That's why this feature is not yet enabled by default, and most developers don't want the complexity of building & shipping different versions of their WebAssembly module to different browsers without a very compelling reason. As a result, none of the Wasm modules in the dataset used those conversions.
+For example, <a hreflang="en" href="https://github.com/WebAssembly/nontrapping-float-to-int-conversions/blob/master/proposals/nontrapping-float-to-int-conversion/Overview.md">non-trapping float-to-int conversions</a> is very similar in spirit to sign-extension operators—it also provides built-in conversions for numeric types to save some code size—but it became uniformly supported only recently with the release of Safari 15. That's why this feature is not yet enabled by default, and most developers don't want the complexity of building and shipping different versions of their WebAssembly module to different browsers without a very compelling reason. As a result, none of the Wasm modules in the dataset used those conversions.
 
 Other features with zero detected usages—multi-value, reference types and tail calls—are in a similar situation: they could also benefit most WebAssembly use-cases, but they suffer from incomplete compiler and/or engine support.
 
@@ -490,4 +489,4 @@ In fact, we could see that it integrates so well into the web ecosystem, that ma
 
 We found some room for improvement in shipped sizes which, through further analysis, appears to be achievable via changes to compiler or server configuration. We've also found some interesting stats and examples that might help engine, tooling and CDN developers to understand and optimize WebAssembly usage at scale.
 
-We'll be tracking those stats over time and return with updates in the next Web Almanac.
+We'll be tracking those stats over time and return with updates in the next edition of the Web Almanac.
