@@ -266,7 +266,7 @@ Core Web Vitals are the new speed metrics that are part of Google's Page Experie
 
 The data comes from the Chrome User Experience Report (CrUX), which records real-world data from opted-in Chrome users.
 
-33% of mobile websites are now passing Core Web Vitals thresholds, up from 20% last year. Most websites are passing FID but website owners seem to be struggling to improve CLS and LCP.
+29% of mobile websites are now passing Core Web Vitals thresholds, up from 20% last year. Most websites are passing FID but website owners seem to be struggling to improve CLS and LCP.
 
 {{ figure_markup(
    image="core-web-vitals-trend.png",
@@ -313,7 +313,7 @@ In 2021:
 - 10% of pages had `<title>` elements containing 12 words.
 - 10% of desktop and mobile pages had `<title>` elements containing 74 and 75 characters, respectively.
 
-Most of these stats are relatively unchanged since last year.
+Most of these stats are relatively unchanged since last year. Reminder that these are titles on homepages, that tend to be shorter than those used on deeper pages.
 
 {{ figure_markup(
    image="title-word-counts.png",
@@ -541,7 +541,7 @@ The most popular schema types found on homepages are WebSite, SearchAction, WebP
 
 ### `<H>` Elements (Headings)
 
-Heading elements - `<h1>`, `<h2>`, etc. - are an important structural element. While they don't strongly impact rankings, Google's comments regarding "[centerpiece annotation](https://youtu.be/BG56C6XI0YM?t=1730)" imply that the "hint" headings provide clarity about the content.
+Heading elements - `<h1>`, `<h2>`, etc. - are an important structural element. While they don't strongly impact rankings, they do help Google to better understand the content on the page.
 
 For main headings, more pages (71.9%) have H2s than have H1s (65.4%). There's no obvious explanation for the discrepancy.
 
@@ -581,7 +581,7 @@ On top of PageRank, the text used as a link anchor helps search engines to under
 
 Internal links are links to other pages on the same site. Pages had less links on the mobile versions compared to the desktop versions.
 
-The data shows that the median number of internal links on desktop is 16% higher mobile, 64 vs 55 respectively. It's likely this is because developers tend to minimize the navigation menu on mobile to make it easier to use.
+The data shows that the median number of internal links on desktop is 16% higher than mobile, 64 vs 55 respectively. It's likely this is because developers tend to minimize the navigation menu on mobile to make it easier to use.
 
 {{ figure_markup(
    image="outgoing-internal-link.png",
