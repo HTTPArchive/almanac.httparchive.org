@@ -128,8 +128,8 @@ Let's look at the data to understand the adoption of these attributes.
     <thead>
       <tr>
         <th>Attribute</th>
-        <th>desktop</th>
-        <th>mobile</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
       </tr>
     </thead>
     <tbody>
@@ -167,8 +167,8 @@ However, loading the JavaScript asynchronously or deferred helps in some ways to
     <thead>
       <tr>
         <th>Attribute</th>
-        <th>desktop</th>
-        <th>mobile</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
       </tr>
     </thead>
     <tbody>
@@ -348,7 +348,7 @@ JavaScript resources can be loaded more efficiently over the network with compre
 
 ### Compression
 
-Compression is the process of reducing the file size of a resource as it gets transferred over the network. This can be an effective way to improve the download times of JavaScript resources, which are highly compressible. For example, the `almanac.js` script loaded on this page is 28 KB, but only 9 KB over the wire thanks to compression.
+Compression is the process of reducing the file size of a resource as it gets transferred over the network. This can be an effective way to improve the download times of JavaScript resources, which are highly compressible. For example, the `almanac.js` script loaded on this page is 28 KB, but only 9 KB over the wire thanks to compression. You can learn more about the ways resources are compressed across the web in the [Compression](./compression) chapter.
 
 {{ figure_markup(
   image="compression-requests.png",
@@ -460,19 +460,19 @@ Only 0.1% of mobile pages use the [`SourceMap`](https://developer.mozilla.org/en
   )
 }}
 
-Interestingly, at 98.0%, nearly all of the `SourceMap` usage on mobile JavaScript resources can be attributed to first-parties. Only 2.0% of scripts with the header on mobile pages are third-party resources.
+98.0% of the `SourceMap` usage on JavaScript resources can be attributed to first-parties. Only 2.0% of scripts with the header on mobile pages are third-party resources.
 
 ## Libraries and frameworks
 
-Over the past years, the usage of JavaScript has increased tremendously with the adoption of many libraries and frameworks. In an effort to fasten and ease building the web, many frameworks have been introduced with each bringing features that make the app more performant. This was so prevalent that the term _framework fatigue_ came into existence.
+The usage of JavaScript seems to have increased tremendously over the years, with the adoption of many new libraries and frameworks all promising their own unique improvements to the developer and user experiences. They have become so prevalent that the term <a hreflang="en" href="https://allenpike.com/2015/javascript-framework-fatigue"><em>framework fatigue</em></a> was coined to describe developers' struggle just to keep up. In this section, we'll look at the popularity of the JavaScript libraries and frameworks in use on the web today.
 
 ### Libraries usage
 
-To understand the usage of libraries and frameworks, HTTP Archive uses [Wappalyzer](./methodology#wappalyzer), which detects many technologies used by the web pages.
+To understand the usage of libraries and frameworks, HTTP Archive uses [Wappalyzer](./methodology#wappalyzer) to detect the technologies used on a page.
 
 {{ figure_markup(
   image="js-libs-frameworks.png",
-  caption="Usage of Javascript libraries and frameworks.",
+  caption="Usage of JavaScript libraries and frameworks.",
   description="Bar chart showing the usage of Javascript libraries and frameworks. jQuery remains on top with 84% of mobile pages using it.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=584103777&format=interactive",
   sheets_gid="1851485826",
@@ -480,21 +480,31 @@ To understand the usage of libraries and frameworks, HTTP Archive uses [Wappalyz
   )
 }}
 
-jQuery remains on top with 84% of mobile pages containing jQuery, however React usage has jumped from 4% to 8% since last year, which is a significant increase. Also worth noticing is the usage of Isotope (uses jQuery) to 7% leading to RequireJS falling out of the picture with 2% usage.
+jQuery remains the most popular library, used by a staggering 84% of mobile pages. React usage has jumped from 4% to 8% since last year, which is a significant increase. React's increase may be partially due to recent <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/issues/2450">detection improvements</a> to Wappalyzer, and may not necessarily reflect the actual change in adoption. It's also worth noting that Isotope, which uses jQuery, is found on 7% of pages, leading to RequireJS falling out of the top spots on just 2% of pages.
 
-One might wonder why jQuery is so dominant and hasn't disappeared over time. There are two main reasons for this. First, as [highlighted over the previous years](../2019/javascript#open-source-libraries-and-frameworks), is that most of the <a hreflang="en" href="https://wordpress.org/">WordPress</a> sites use jQuery, which contributes to a major participation of jQuery. Second, even if the wide usage of jQuery is ignored for a moment, several of the other top-used JavaScript libraries still rely on jQuery in some way under the hood.
+You might wonder why jQuery is still so dominant in 2021. There are two main reasons for this. First, as [highlighted over the previous years](../2019/javascript#open-source-libraries-and-frameworks), most <a hreflang="en" href="https://wordpress.org/">WordPress</a> sites use jQuery. Given that WordPress is used on nearly a third of all websites, according to the [CMS](./cms) chapter, this accounts for a huge proportion of jQuery adoption. Second, several of the other top-used JavaScript libraries still rely on jQuery in some way under the hood, contributing to indirect adoption of the library.
+
+
+{{ figure_markup(
+  content="3.5.1",
+  caption="The most popular version of jQuery.",
+  classes="big-number",
+  sheets_gid="1097559251",
+  sql_file="frameworks_libraries_by_version.sql"
+  )
+}}
+
+The most popular version of jQuery is 3.5.1, which is used by 21.3% of mobile pages. The next most popular version of jQuery is 1.12.4, at 14.4% of mobile pages. The leap to version 3.0 can be explained by a <a hreflang="en" href="https://wptavern.com/major-jquery-changes-on-the-way-for-wordpress-5-5-and-beyond">change to WordPress core</a> in 2020, which upgraded the default version of jQuery from 1.12.4 to 3.5.1.
 
 ### Libraries used together
 
-The adoption of JavaScript frameworks doesn't see a substantial change compared to the previous years. With the way the adoption is measured, there is a <a hreflang="en" href="https://github.com/AliasIO/wappalyzer/issues/2450">detection limitation</a> which doesn't let Wappalyzer capture the percentage precisely. Additionally, the detection is only run on home pages which doesn't capture accurately the overall framework adoption.
-
-It would instead be interesting to look at how the popular frameworks and libraries approach the usage of other libraries. This means how many frameworks or libraries actually rely on other libraries in production.
+Now let's look at how the popular frameworks and libraries are used together on the same page.
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Frameworks/Libraries</th>
+        <th>Frameworks and libraries</th>
         <th>Desktop</th>
         <th>Mobile</th>
       </tr>
@@ -552,16 +562,18 @@ It would instead be interesting to look at how the popular frameworks and librar
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Javascript frameworks usage with JavaScript libraries.", sheets_gid="1934429143", sql_file="frameworks_libraries_combos.sql") }}</figcaption>
+  <figcaption>{{ figure_link(
+    caption="Top combinations of JavaScript frameworks and libraries used together.",
+    sheets_gid="1934429143",
+    sql_file="frameworks_libraries_combos.sql"
+  ) }}</figcaption>
 </figure>
 
-jQuery tops in usage with libraries and frameworks, which could also be a result of using a third-party library that includes it. This, as a result, leads to more processing time for the code that the framework or library uses with the other included libraries.
-
-22% of known versions of jQuery are found to be version 3.5.1. This is a big jump compared to last year's (1.12.4), which could be attributed to Wordpress which constitutes most of the participation of jQuery.
+The most widely-used combination of JavaScript libraries and frameworks doesn't actually consist of multiple libraries at all! When used by itself, jQuery is found on 17.4% of mobile pages. The next most popular combination is jQuery and jQuery Migrate, which is used on 8.7% of mobile pages. In fact, all of the top 10 library and framework combinations include jQuery.
 
 ### Security vulnerabilities
 
-Using third-party libraries comes with its own benefits and drawbacks. When using third-party libraries, one extra step for developers is to ensure the security that the library brings. Lighthouse runs this security audit for the third-party libraries used using the package name and its version. These packages can then be checked if there is any vulnerability that has been identified related to those. This is done using the <a hreflang="en" href="https://snyk.io/vuln?type=npm">Snyk's open source vulnerability database</a>.
+Using JavaScript libraries can come with its own benefits and drawbacks. When using these libraries, one drawback is that older versions may include security risks like <a hreflang="en" href="https://owasp.org/www-community/attacks/xss/">Cross Site Scripting</a> (XSS). [Lighthouse](./methodology#lighthouse) detects the JavaScript libraries used on a page and fails the audit if their version has any known vulnerabilities in the open-source <a hreflang="en" href="https://snyk.io/vuln?type=npm">Snyk vulnerability database</a>.
 
 {{ figure_markup(
   content="63.9%",
@@ -572,34 +584,40 @@ Using third-party libraries comes with its own benefits and drawbacks. When usin
   )
 }}
 
-As per the analysis, 63.9% of mobile pages use a JS library or framework with some security vulnerability. The number has come down from 83.5% (the previous year) and that is quite an improvement.
-
-We decided to look at what libraries were worked upon and have either the security vulnerability removed, or the library itself is used less.
+63.9% of mobile pages use a JavaScript library or framework with a known security vulnerability. For context, this number has come down from [83.5% since last year](../2020/javascript#fig-30).
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Library</th>
-        <th>Percentage</th>
+        <th>Library or framework</th>
+        <th>Percent of pages</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Angular</td>
-        <td class="numeric">0.4%</td>
-     </tr>
-        <tr>
-        <td>AngularJS</td>
-        <td class="numeric">1.0%</td>
+        <td>jQuery</td>
+        <td class="numeric">57.6%</td>
       </tr>
       <tr>
         <td>Bootstrap</td>
-        <td class="numeric">12.1%</td>
+        <td class="numeric">12.2%</td>
       </tr>
       <tr>
-        <td>Dojo</td>
-        <td class="numeric">0.5%</td>
+        <td>jQuery UI</td>
+        <td class="numeric">10.5%</td>
+      </tr>
+      <tr>
+        <td>Underscore</td>
+        <td class="numeric">6.4%</td>
+      </tr>
+      <tr>
+        <td>Lo-Dash</td>
+        <td class="numeric">3.1%</td>
+      </tr>
+      <tr>
+        <td>Moment.js</td>
+        <td class="numeric">2.3%</td>
       </tr>
       <tr>
         <td>GreenSock JS</td>
@@ -610,59 +628,54 @@ We decided to look at what libraries were worked upon and have either the securi
         <td class="numeric">1.3%</td>
       </tr>
       <tr>
-        <td>Highcharts</td>
-        <td class="numeric">0.1%</td>
-      </tr>
-      <tr>
-        <td>jQuery</td>
-        <td class="numeric">57.6%</td>
-      </tr>
-      <tr>
-        <td>jQuery Mobile</td>
-        <td class="numeric">0.5%</td>
-        </tr>
-        <tr>
-        <td>jQuery UI</td>
-        <td class="numeric">10.5%</td>
-      </tr>
-      <tr>
-        <td>Knockout</td>
-        <td class="numeric">0.2%</td>
-      </tr>
-      <tr>
-        <td>Lo-Dash</td>
-        <td class="numeric">3.1%</td>
-      </tr>
-      <tr>
-        <td>Moment.js</td>
-        <td class="numeric">2.2%</td>
+        <td>AngularJS</td>
+        <td class="numeric">1.0%</td>
       </tr>
       <tr>
         <td>Mustache</td>
         <td class="numeric">0.7%</td>
       </tr>
       <tr>
-        <td>Underscore</td>
-        <td class="numeric">6.4%</td>
+        <td>jQuery Mobile</td>
+        <td class="numeric">0.5%</td>
       </tr>
       <tr>
+        <td>Dojo</td>
+        <td class="numeric">0.5%</td>
+      </tr>
+      <tr>
+        <td>Angular</td>
+        <td class="numeric">0.4%</td>
+      </tr>
         <td>Vue</td>
         <td class="numeric">0.2%</td>
       </tr>
       <tr>
-        <td>Vue (Fast path)</td>
+        <td>Knockout</td>
         <td class="numeric">0.2%</td>
       </tr>
       <tr>
+        <td>Highcharts</td>
+        <td class="numeric">0.1%</td>
+      </tr>
+      <tr>
+        <td>Next.js</td>
+        <td class="numeric">0.0%</td>
+      </tr>
+      <tr>
         <td>React</td>
-        <td class="numeric">0%</td>
+        <td class="numeric">0.0%</td>
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="List of security vulnerable libraries with their vulnerability percentage.", sheets_gid="551476210", sql_file="lighthouse_vulnerable_libraries.sql") }}</figcaption>
+  <figcaption>{{ figure_link(
+    caption="The percent of mobile pages found to contain a vulnerable version of a JavaScript library or framework.",
+    sheets_gid="551476210",
+    sql_file="lighthouse_vulnerable_libraries.sql"
+  ) }}</figcaption>
 </figure>
 
-The results show that jQuery is the dominant factor in the decrease of vulnerability with at least 23.3% of improvement here and some improvement in jQueryUI too. However, there is little to no difference in other libraries' security vulnerabilities.
+When we segment the percent of mobile pages by library and framework, we can see that jQuery is largely responsible for the decrease vulnerabilities. This year JavaScript vulnerabilities were found on 57.6% of pages with jQuery, compared to [80.9% last year](../2020/javascript#fig-31). As [predicted](../2020/javascript#fig-31) by [Tim Kadlec](../2020/contributors#tkadlec) in the 2020 edition of this chapter, <em>"if we can get folks to migrate away from those outdated, vulnerable versions of jQuery, we would see the number of sites with known vulnerabilities plummet"</em>. And that's exactly what happened; WordPress migrated from jQuery version 1.12.4 to the more secure version 3.5.1, contributing to a 20 point drop in the percent of pages with known JavaScript vulnerabilities.
 
 ## How do we use JavaScript?
 
