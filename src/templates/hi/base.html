@@ -99,6 +99,10 @@
 {% block reposts %}रेपोस्ट{% endblock %}
 {% block replies %}जवाब{% endblock %}
 {% block mentions %}का उल्लेख है{% endblock %}
+{% block likesAlt %}{% endblock %}
+{% block repostsAlt %}{% endblock %}
+{% block repliesAlt %}{% endblock %}
+{% block mentionsAlt %}{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} Twitter पर{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} GitHub पर{% endmacro %}
@@ -191,6 +195,19 @@ Web Almanac वेब समुदाय की मेहनत से संभ
 {% endif %}
 
 {% set localizedTeamNames = {
+  "analysts": "विश्लेषक",
+  "authors": "लेखक",
+  "brainstormers": "ब्रैनस्टोमर ",
+  "designers": "डिजाइनर",
+  "developers": "डेवलपर",
+  "editors": "संपादक",
+  "leads": "प्रोजेक्ट लीड्स",
+  "reviewers": "समीक्षक",
+  "translators": "अनुवादक",
+  }
+%}
+
+{% set localizedTeamRole = {
   "analysts": "विश्लेषक",
   "authors": "लेखक",
   "brainstormers": "ब्रैनस्टोमर ",

@@ -99,6 +99,10 @@ Our mission is to combine the raw stats and trends of the HTTP Archive with the 
 {% block reposts %}reposts{% endblock %}
 {% block replies %}replies{% endblock %}
 {% block mentions %}mentions{% endblock %}
+{% block likesAlt %}{% endblock %}
+{% block repostsAlt %}{% endblock %}
+{% block repliesAlt %}{% endblock %}
+{% block mentionsAlt %}{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} on Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} on GitHub{% endmacro %}
@@ -200,5 +204,18 @@ Unless otherwise noted, the metrics in all of the {{ supported_chapters | length
   "leads": "Project Leads",
   "reviewers": "Reviewers",
   "translators": "Translators",
+  }
+%}
+
+{% set localizedTeamRole = {
+  "analysts": "Analyst",
+  "authors": "Author",
+  "brainstormers": "Brainstormer",
+  "designers": "Designer",
+  "developers": "Developer",
+  "editors": "Editor",
+  "leads": "Project Lead",
+  "reviewers": "Reviewer",
+  "translators": "Translator",
   }
 %}

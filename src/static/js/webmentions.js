@@ -37,43 +37,77 @@ function parseMentions(webmentions, mentionType) {
   return filteredMentions;
 }
 
+// Parse webmentions for individual category
+function setReactionsLabel(length, reactionLabel) {
+
+  const lang = document.querySelector("html").getAttribute("lang");
+
+  let plural_rules;
+  try {
+    plural_rules = new Intl.PluralRules(lang);
+  } catch {
+    return;
+  }
+
+  // Singular
+  if (plural_rules.select(length) === "one") {
+    reactionLabel.textContent = reactionLabel.getAttribute("data-singular");
+    return;
+  }
+
+  // Few - alternative plural (Used by "ru" and "uk")
+  if (reactionLabel.getAttribute("data-plural-alt") !== "" && plural_rules.select(length) === "few") {
+    reactionLabel.textContent = reactionLabel.getAttribute("data-plural-alt");
+      return;
+  }
+
+  // Everything else sticks with the default plural
+  return;
+
+}
+
 // Renders webmention into different sections, based on the type
 function renderReactions(webmentions, reactionType, wmProperty) {
   // Process webmentions
   const reactions = parseMentions(webmentions, wmProperty);
-  if (!reactions.length || !document.querySelector(`#${reactionType}-count`) || !document.querySelector(`#${reactionType}-label`)) {
+
+  if (!reactions || !reactions.length || !document.querySelector(`#${reactionType}-count`) || !document.querySelector(`#${reactionType}-label`)) {
     return;
   }
 
   // Add the count to the reaction tab
   document.querySelector(`#${reactionType}-count`).textContent = reactions.length;
   const reactionLabel = document.querySelector(`#${reactionType}-label`);
-  if (reactions && reactions.length ===1) {
-    reactionLabel.textContent = reactionLabel.getAttribute("data-singular");
+
+  if (reactions && reactions.length) {
+    setReactionsLabel(reactions.length, reactionLabel);
   }
 
   // Render logic for the reaction types
   const webmentionReactionsList = document.createElement("ul");
   webmentionReactionsList.setAttribute("class", `webmention-${reactionType}`);
   reactions.forEach(function(reaction) {
+
     const reactionLi = document.createElement("li");
     reactionLi.setAttribute("class", `webmention-${reactionType}-item`);
 
     const reactionA = document.createElement("a");
     reactionA.setAttribute("class", "webmention-author");
     reactionA.setAttribute("href", reaction["url"]);
-    reactionA.setAttribute("title", reaction["author"]["name"]);
-    reactionA.setAttribute("aria-label", reaction["author"]["name"]);
+    const authorName = reaction["author"]["name"] ? reaction["author"]["name"] : reactionA.hostname;
+    reactionA.setAttribute("title", authorName);
+    reactionA.setAttribute("aria-label", authorName);
 
-    const reactionIMG = document.createElement("img");
-    reactionIMG.setAttribute("class", "webmention-author-avatar");
-    reactionIMG.setAttribute("src", reaction["author"]["photo"]);
-    reactionIMG.setAttribute("alt", reaction["author"]["name"]);
-    reactionIMG.setAttribute("loading", "lazy");
-    reactionIMG.setAttribute("width", "60");
-    reactionIMG.setAttribute("height", "60");
-
-    reactionA.appendChild(reactionIMG);
+    if (reaction["author"] && reaction["author"]["photo"]) {
+      const reactionIMG = document.createElement("img");
+      reactionIMG.setAttribute("class", "webmention-author-avatar");
+      reactionIMG.setAttribute("src", reaction["author"]["photo"]);
+      reactionIMG.setAttribute("alt", authorName);
+      reactionIMG.setAttribute("loading", "lazy");
+      reactionIMG.setAttribute("width", "60");
+      reactionIMG.setAttribute("height", "60");
+      reactionA.appendChild(reactionIMG);
+    }
 
     // Replies and mentions have some extra HTML
     const reactionDivContent = document.createElement("div");
@@ -81,18 +115,23 @@ function renderReactions(webmentions, reactionType, wmProperty) {
     if (reactionType === "replies" || reactionType === "mentions") {
       const reactionSTRONG = document.createElement("strong");
       reactionSTRONG.setAttribute("class", "webmention-author-name");
-      reactionSTRONG.textContent = reaction["author"]["name"];
+      reactionSTRONG.textContent = authorName;
       reactionA.appendChild(reactionSTRONG);
 
       reactionDivContent.setAttribute("class", "webmention-content");
-      reactionDivContent.textContent = reaction["content"]["text"];
+      if (reaction["content"]) {
+        reactionDivContent.textContent = reaction["content"]["text"];
+      }
 
       reactionDivMeta.setAttribute("class", "webmention-meta");
 
       const reactionTime = document.createElement("time");
       reactionTime.setAttribute("class", "webmention-pub-date");
-      reactionTime.setAttribute("datetime", reaction["published"]);
-      reactionTime.textContent = formatDate(reaction["published"]);
+      const pubDate = reaction["published"] ? reaction["published"] : reaction["wm-received"];
+      if (pubDate) {
+        reactionTime.setAttribute("datetime", pubDate);
+        reactionTime.textContent = formatDate(pubDate);
+      }
 
       const reactionSpan = document.createElement("span");
       reactionSpan.setAttribute("class", "webmention-divider");
