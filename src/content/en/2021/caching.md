@@ -157,6 +157,7 @@ The `max-age` directive is the most commonly found with 62.2% of Desktop request
   caption="Usage of `Cache-Control` directives.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=1359015817&format=interactive",
+  height=436,
   sheets_gid="1944529311",
   sql_file="cache_control_directives.sql"
 ) }}
@@ -217,13 +218,37 @@ This shows us that automation of the `Date` header could benefit from further at
 
 An essential step in caching a resource is understanding if it was previously cached. The browser typically uses the url as the cache key. At the same time, requests with similar urls but different `Accept-Encoding` could be cached incorrectly. That's why we use the `Vary` header to instruct the browser to add a value of one or more headers to the cache key.
 
+{{ figure_markup(
+  image="vary-directives.png",
+  caption="Usage of `Vary` directives.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=1279247484&format=interactive",
+  height=436,
+  sheets_gid="1033782866",
+  sql_file="vary_directives.sql"
+) }}
+
 The most popular `Vary` header is `Accept-Encoding` with 90.3% usage, followed by `User-Agent` with 10.9%, `Origin` with 10.1%, and `Accept` with 4.8%. 
 
 This shows a 1.5% decrease in use of `Accept-Encoding` from 2020.
 
-[TODO Add figure showing Vary header adoption across all requests (pct_using_vary) and cache-control (pct_of_vary_with_cache_control), data from https://docs.google.com/spreadsheets/d/1-v3yR0LZIC3t4zWtqTgR3jJsKjjRMP-HATU2caP8e2c/edit#gid=1033782866 and https://docs.google.com/spreadsheets/d/1fYmpSN3diOiFrscS75NsjfsrKXzxxhUMNcYSqXnQJQU/edit#gid=1115686547 Potentiall we mighe want to show 2020 vs 2021]
+{{ figure_markup(
+  caption="Percent of mobile responses that set the `Vary` header.",
+  content="46.3%",
+  classes="big-number",
+  sheets_gid="1033782866",
+  sql_file="vary_directives.sql"
+) }}
 
 It's important to point out that only 46.25% of total requests audited use the `Vary` header, but when compared to 2020, we see an overall increase by 2.85%.
+
+{{ figure_markup(
+  caption="Percent of mobile responses with the `Vary` header that also set `Cache-Control`.",
+  content="83.4%",
+  classes="big-number",
+  sheets_gid="1033782866",
+  sql_file="vary_directives.sql"
+) }}
 
 Of the requests using the `Vary` header, 83.4% also have the `Cache-control`. This shows us a 2.1% improvement from 2020.
 
