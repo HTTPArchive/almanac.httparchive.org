@@ -362,7 +362,14 @@ Between 1st and 3rd party resources:
 
 Fonts for 3rd party are cached the most between 8-52 weeks at 72.4%, but interestingly for 1st party, the largest resource age grouping is evenly split between 8-52 weeks and over 2 years.
 
-[TODO Add MAYBE a figure for show the Resource age by content-tyep (first-party and or third-party)]
+{{ figure_markup(
+  image="first-party-resource-age-by-content-type.png",
+  caption="Distribution of first-party resource age by content type (mobile only).",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=597168369&format=interactive",
+  sheets_gid="856268091",
+  sql_file="resource_age_party_and_type_wise_groups.sql"
+) }}
 
 We see a similar approach for audio and scripts where the majority of 1st party are between 8-52 weeks and the majority of 3rd party are between 1-7 weeks. The most highly cached resources across first and third parties were audio. However, the resource age varied greatly between first party (averaging 8-52 weeks) and third party, at only 1-7 weeks. Audio resources in first party situations are clearly updated less frequently, so third parties may be capitalizing on a caching opportunity by offering fresher resources.
 
