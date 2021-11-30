@@ -218,7 +218,14 @@ The distribution of 304 responses increased by 7.7% for `If-Modified-Since` in 2
 
 The three main HTTP headers used to represent timestamps, `Date`,`Last-Modified` and `Expires` all use a date formatted string. The `Date` HTTP response header is almost always generated automatically by the web server, meaning that invalid values are extremely rare. Still, in the rare event that the date is set incorrectly it can affect cacheability on the response on which it is served. 
 
-[TODO Add figure showing on Mobile Invalid date strings between pct_using_invalid_date, pct_using_invalid_last_modified and  pct_using_invalid_expires, data from 2020 https://docs.google.com/spreadsheets/d/1fYmpSN3diOiFrscS75NsjfsrKXzxxhUMNcYSqXnQJQU/edit#gid=1338572274 and 2021 https://docs.google.com/spreadsheets/d/1-v3yR0LZIC3t4zWtqTgR3jJsKjjRMP-HATU2caP8e2c/edit#gid=1680471251 Potentiall we mighe want to show 2020 vs 2021]
+{{ figure_markup(
+  image="invalid-date-formats.png",
+  caption="Percent of responses with invalid date formats.",
+  description="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=383751268&format=interactive",
+  sheets_gid="1680471251",
+  sql_file="invalid_last_modified_and_expires_and_date.sql"
+) }}
 
 Between 2020 and 2021, the percent using invalid date improved by a .5% but got worse for last-modified and expires showing that it was related to how the date was set on caching.
 
