@@ -343,9 +343,10 @@ In average user experience, the best results show Hugo and Jekyll. 88% and 90% a
   sql_file="core_web_vitals_passing.sql"
 ) }}
 
-Above we ssame results are approved by percent of sites with good LCP experience.
+Above we see the same results are approved by percent of sites with good LCP experience.
 
-Netlify as Jamstack oriented goes next with 64% and Vercel with 62%. AWS and Cloudflare have 57% and 51%.
+{# I don't understand any of these CWV charts. What's the difference in them? Is it just the top is desktop only and the bottom is split out by device? Do 71.7% of Next.JS desktop sites have good LCP or 49%? Why are they different numbers? #}
+
 
 {{ figure_markup(
   image="LCP-distribution-CDN.png",
@@ -355,6 +356,8 @@ Netlify as Jamstack oriented goes next with 64% and Vercel with 62%. AWS and Clo
   sheets_gid="1024061881",
   sql_file="core_web_vitals_distribution.sql"
 ) }}
+
+GitHub tops the stats when measuring on CDN level, likely reflecting the simpler sites hosted here. Netlify, a Jamstack-oriented CDN, comes next with 64% of sites having a good LCP and Vercel with 62% followed by AWS and Cloudflare at 57% and 51%.
 
 ### First Input Delay
 
@@ -371,8 +374,6 @@ Netlify as Jamstack oriented goes next with 64% and Vercel with 62%. AWS and Clo
 
 All SSGs are from 96% to 99%. Great experience!
 
-On real user experience, FID shows great results too across different SSGs.
-
 {{ figure_markup(
   image="cwv-fid.png",
   caption="Real-user Core Web Vitals FID",
@@ -382,7 +383,9 @@ On real user experience, FID shows great results too across different SSGs.
   sql_file="core_web_vitals_passing.sql"
 ) }}
 
-All CDNs deliver Jamstack sites with 90% good FID, except Cloudflare.
+{# TODO same question on this chart #}
+
+On real user experience, FID shows great results too across different SSGs.
 
 {{ figure_markup(
   image="FID-distribution-CDN.png",
@@ -392,6 +395,8 @@ All CDNs deliver Jamstack sites with 90% good FID, except Cloudflare.
   sheets_gid="1024061881",
   sql_file="core_web_vitals_distribution.sql"
 ) }}
+
+All CDNs deliver Jamstack sites with 90% good FID, except Cloudflare.
 
 ### Cumulative Layout Shift
 
@@ -418,6 +423,8 @@ As well as other CLS for real websites has the same trend.
   sheets_gid="1340534640",
   sql_file="core_web_vitals_passing.sql"
 ) }}
+
+{# TODO same question on the difference between these charts #}
 
 Here's the same results as with LCP for CDNs. Github, Netlify, Vercel.
 
