@@ -192,7 +192,7 @@ There's 7 most popular CDN providers for SSGs
 * Akamai
 * GitHub
 
-Jamstack CDN services are not just for network delivery. They provide a lot of functionality to allow developers to easy deploy and manage Jamstack sites. For example, Netlify provide easy to use functionality to deploy sites in scope of their service so developers can just update the code and the continuous deployment process is managed for them. <a hreflang="en" href="https://bejamas.io/compare/netlify-vs-vercel/">Jamstack CDNs provide many other features<a> such as _serverless functions_, _A/B testing_ etc.
+Jamstack CDN services are not just for network delivery. They provide a lot of functionality to allow developers to easy deploy and manage Jamstack sites. For example, Netlify provide easy to use functionality to deploy sites in scope of their service so developers can just update the code and the continuous deployment process is managed for them. <a hreflang="en" href="https://bejamas.io/compare/netlify-vs-vercel/">Jamstack CDNs provide many other features</a> such as _serverless functions_, _A/B testing_ etc.
   
 On the other hand, Cloudflare, Akamai, AWS are used not only for pure serving as CDN either, but can also provide protection service, DNS balancing etc. However, since we can't detect how exectly Cloudflare, Akamai, AWS are used, results could be false positives if we look at them as Jamstack enablers, since the "Jamstack" part could be handled on origin servers and so not actually on these services.
 
