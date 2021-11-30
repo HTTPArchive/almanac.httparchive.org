@@ -115,43 +115,40 @@ When using the `Cache-Control` header, you specify one or more *directives*—pr
 
 Below is a table showing the most common `Cache-Control` directives:
 
-<figure>
-  <table>
-    <tr>
-     <th>Directive</th>
-     <th>Description</th>
-    </tr>
-    <tr>
-     <td><code class="no-wrap">max-age</code></td>
-     <td>Indicates the number of seconds that a resource can be cached for relative to the current time. For example <code>max-age=86400</code>.</td>
-    </tr>
-    <tr>
-     <td><code class="no-wrap">public</code></td>
-     <td>Indicates that any cache can store the response, including the Browser and the CDN. This is assumed by default.</td>
-    </tr>
-    <tr>
-     <td><code class="no-wrap">no-cache</code></td>
-     <td>A cached resource must be revalidated before its use, via a conditional request, even if it is not marked as stale.</td>
-    </tr>
-    <tr>
-     <td><code class="no-wrap">must-revalidate</code></td>
-     <td>A stale cached entry must be revalidated before its use, via a conditional request.</td>
-    </tr>
-    <tr>
-     <td><code class="no-wrap">no-store</code></td>
-     <td>Indicates that the response must not be cached.</td>
-    </tr>
-    <tr>
-     <td><code class="no-wrap">private</code></td>
-     <td>The response is intended for a specific user and should not be stored by shared caches such as CDNs.</td>
-    </tr>
-    <tr>
-     <td><code class="no-wrap">immutable</code></td>
-     <td>Indicates that the cached entry will never change during its TTL and that revalidation is not necessary.</td>
-    </tr>
-  </table>
-  <figcaption>TODO: Caption the table above</figcaption>
-</figure>
+<table>
+  <tr>
+   <th>Directive</th>
+   <th>Description</th>
+  </tr>
+  <tr>
+   <td><code class="no-wrap">max-age</code></td>
+   <td>Indicates the number of seconds that a resource can be cached for relative to the current time. For example <code>max-age=86400</code>.</td>
+  </tr>
+  <tr>
+   <td><code class="no-wrap">public</code></td>
+   <td>Indicates that any cache can store the response, including the Browser and the CDN. This is assumed by default.</td>
+  </tr>
+  <tr>
+   <td><code class="no-wrap">no-cache</code></td>
+   <td>A cached resource must be revalidated before its use, via a conditional request, even if it is not marked as stale.</td>
+  </tr>
+  <tr>
+   <td><code class="no-wrap">must-revalidate</code></td>
+   <td>A stale cached entry must be revalidated before its use, via a conditional request.</td>
+  </tr>
+  <tr>
+   <td><code class="no-wrap">no-store</code></td>
+   <td>Indicates that the response must not be cached.</td>
+  </tr>
+  <tr>
+   <td><code class="no-wrap">private</code></td>
+   <td>The response is intended for a specific user and should not be stored by shared caches such as CDNs.</td>
+  </tr>
+  <tr>
+   <td><code class="no-wrap">immutable</code></td>
+   <td>Indicates that the cached entry will never change during its TTL and that revalidation is not necessary.</td>
+  </tr>
+</table>
 
 The `max-age` directive is the most commonly found with 62.2% of Desktop requests include a `Cache-Control` response header with this directive.
 
@@ -330,7 +327,11 @@ Taking a look at the Median TTL across all resource types, we see that even if w
       </tr>
     </tbody>
   </table>
-  <figcaption>TODO: Caption the table above</figcaption>
+  <figcaption>{{ figure_link(
+    caption="TODO",
+    sheets_gid="1792973510",
+    sql_file="ttl_by_resource.sql"
+  ) }}</figcaption>
 </figure>
 
 When we look at the entirety of cacheable and non-cacheable resources,
@@ -345,6 +346,7 @@ When we look at the entirety of cacheable and non-cacheable resources,
 ) }}
 
 ## How do cache TTLs compare to resource age?
+
 We see that Images and Videos maintained the same average age whether from 1st or 3rd party resources. Images consistently had a resource age of 2 years, while most Video resources were between 8-52 weeks old.
 
 Breaking down the other types of content, we discovered Fonts for 3rd parties are cached the most between 8-52 weeks at 72.4%. However, for 1st party the largest resource age groups is evenly split between 8-52 weeks and over 2 years- quite a large variance.
@@ -393,7 +395,7 @@ Developers are getting better at setting the cache duration more accurately to t
     </tr>
     <tr>
      <td>Desktop</td>
-     <td class="numeric">59.3%</td>
+     <td class="numeric">59.5%</td>
      <td class="numeric">46.2%</td>
      <td class="numeric">54.3%</td>
     </tr>
@@ -404,7 +406,11 @@ Developers are getting better at setting the cache duration more accurately to t
      <td class="numeric">54.3%</td>
     </tr>
   </table>
-  <figcaption>TODO: Caption the table above</figcaption>
+  <figcaption>{{ figure_link(
+    caption="TODO",
+    sheets_gid="1069912023",
+    sql_file="content_age_older_than_ttl_by_party.sql"
+  ) }}</figcaption>
 </figure>
 
 When we split the data between first and third party providers, the largest improvements come from third parties where we have a 13.2% improvement. It is very encouraging to see companies around the world building products for developers that are highly optimized on caching. It's possible that the developer community's increased attention towards improving performance has encouraged and even incentivized third parties to optimize their caching strategies.
@@ -440,7 +446,6 @@ Based on **Lighthouse wasted bytes** from 2020 to 2021, there was a 3.28% improv
 ) }}
 
 The current percentage of pages audited that have 0 wasted bytes is still relatively low at 1.34%. In the coming years, we're looking forward to seeing an increase in that percentage as the community continues to focus on optimizing web performance.
-
 
 ## Conclusion
 
