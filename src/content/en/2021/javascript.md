@@ -20,9 +20,9 @@ featured_stat_label_3: Percent of desktop pages using custom elements.
 
 ## Introduction
 
-The speed and consistency in which the JavaScript language has evolved with over the past years is tremendous. While in the past it was used primarily for client-side, it has taken a very important and respected place in the world of building services and server-side tools. JavaScript has evolved to a point where it is not only possible to create faster applications but also to <a hreflang="en" href="https://blog.stackblitz.com/posts/introducing-webcontainers/">run servers within browsers</a>.
+The speed and consistency at which the JavaScript language has evolved over the past years is tremendous. While in the past it was used primarily on the client side, it has taken a very important and respected place in the world of building services and server-side tools. JavaScript has evolved to a point where it is not only possible to create faster applications but also to <a hreflang="en" href="https://blog.stackblitz.com/posts/introducing-webcontainers/">run servers within browsers</a>.
 
-There is a lot that happens in the browser when rendering the application, from downloading JavaScript to parsing, compiling and executing it. Let's start with that first step and try to understand how much JavaScript is actually requested by pages.
+There is a lot that happens in the browser when rendering the application, from downloading JavaScript to parsing, compiling, and executing it. Let's start with that first step and try to understand how much JavaScript is actually requested by pages.
 
 ## How much JavaScript do we load?
 
@@ -30,7 +30,7 @@ They say, "to measure is the key towards improvement". To improve the usage of J
 
 {{ figure_markup(
   image="javascript-bytes-per-page.png",
-  caption="Distribution of the amount of JavaScript kilobytes loaded per page.",
+  caption="Distribution of the amount of JavaScript loaded per page.",
   description="Bar chart showing the distribution of JavaScript bytes per page. The median desktop page loads 463 kilobytes of JavaScript. The 10th, 25th, 50th, 75th, and 90th percentiles for desktop are: 94 KB, 220 KB, 463 KB, 852 KB, and 1,354 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=329775434&format=interactive",
   sheets_gid="18398250",
@@ -38,9 +38,9 @@ They say, "to measure is the key towards improvement". To improve the usage of J
   )
 }}
 
-The 50th percentile (median) desktop page loads 463 KB of JavaScript, whereas a median page load on a mobile device sends 427 KB.
+The 50th percentile (median) mobile page loads 427 KB of JavaScript, whereas the median page loaded on a desktop device sends 463 KB.
 
-Compared to [2019's results](../2019/javascript#fig-2), this shows an increase of 18.4% in the usage of JavaScript for desktop devices and an increase of 18.9% on mobile devices. As we see the trend is moving towards using more JavaScript over the years, this could slow down the rendering of an application given the additional CPU work. It's worth noting that these statistics represent the transferred bytes which could be compressed responses and thus, the actual cost to the CPU could be significantly higher.
+Compared to [2019's results](../2019/javascript#fig-2), this shows an increase of 18.4% in the usage of JavaScript for desktop devices and an increase of 18.9% on mobile devices. The trend over time is moving towards using more JavaScript, which could slow down the rendering of an application given the additional CPU work. It's worth noting that these statistics represent the transferred bytes which could be compressed responses and thus, the actual cost to the CPU could be significantly higher.
 
 Let's have a look at how much JavaScript is actually required to be loaded on the page.
 
@@ -54,19 +54,17 @@ Let's have a look at how much JavaScript is actually required to be loaded on th
   )
 }}
 
-The median page loads 155 KB of unused JavaScript and at the 90th percentile, 598 KB of JavaScript are unused.
+According to [Lighthouse](./methodology#lighthouse), the median mobile page loads 155 KB of unused JavaScript. And at the 90th percentile, 598 KB of JavaScript are unused.
 
 {{ figure_markup(
   image="unused-vs-total-javascript.png",
-  caption="Percent of JavaScript loaded vs. JavaScript unused on mobile page.",
+  caption="Distribution of unused and total JavaScript bytes on mobile pages.",
   description="Bar chart showing the difference in the loaded JavaScript and the unused JavaScript from the total loaded. Out of 427 KB of loaded JavaScript on a median mobile page, 155 KB is unused. 36.2% of the total loaded JavaScript goes unused adding to the CPU cost.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=890651092&format=interactive",
   sheets_gid="1521645399",
   sql_file="unused_js_bytes_distribution.sql"
   )
 }}
-
-This contributes to 36.2% of unused JavaScript on a page.
 
 {{ figure_markup(
   content="36.2%",
@@ -77,9 +75,9 @@ This contributes to 36.2% of unused JavaScript on a page.
   )
 }}
 
-This is such a significant figure to be using the CPU with other important resources and to just go to waste, given the impact it can have on the <a hreflang="en" href="https://web.dev/optimize-lcp/">Largest Contentful Paint</a> (LCP) of the page, especially for the mobile users with limited data plans. This could be a result of a lot of boilerplate code that is shipped when using large frameworks or libraries.
+To put it another way, 36.2% of JavaScript bytes on the median mobile page go unused. Given the impact JavaScript can have on the <a hreflang="en" href="https://web.dev/optimize-lcp/">Largest Contentful Paint</a> (LCP) of the page, especially for mobile users with limited device capabilities and data plans, this is such a significant figure to be consuming CPU cycles with other important resources just go to waste. Such wastefulness could be the result of a lot of unused boilerplate code that gets shipped with large frameworks or libraries.
 
-One step towards improving the percentage is to look at the <a hreflang="en" href="https://web.dev/unused-javascript/">percentage of unused JavaScript</a> when checking the lighthouse report for the page and <a hreflang="en" href="https://web.dev/remove-unused-code/">finding opportunities to get rid of the unnecessary JavaScript.</a>
+Site owners could reduce the percentage of wasted JavaScript bytes by using Lighthouse to check for <a hreflang="en" href="https://web.dev/unused-javascript/">unused JavaScript</a> and follow best practices to <a hreflang="en" href="https://web.dev/remove-unused-code/">remove unused code</a>.
 
 ### JavaScript requests per page
 
