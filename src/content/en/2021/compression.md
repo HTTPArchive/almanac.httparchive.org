@@ -18,7 +18,6 @@ featured_stat_2: 66%
 featured_stat_label_2: Compressed responses which use Gzip
 featured_stat_3: 72%
 featured_stat_label_3: Websites that pass the Lighthouse audit with maximum score on text compression
-unedited: true
 ---
 
 ## Introduction
