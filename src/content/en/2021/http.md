@@ -8,6 +8,7 @@ analysts: [tunetheweb]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1pCdpndXTXexSIZLmVc-aUbp5PcHhZ83hbEEfmDyfD0U/
+dominiclovell_bio:
 featured_quote: TODO
 featured_stat_1: TODO
 featured_stat_label_1: TODO
