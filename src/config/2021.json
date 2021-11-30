@@ -598,6 +598,15 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/382649?v=4&s=200",
       "github": "wrttnwrd"
     },
+    "iulia-m-comsa": {
+      "name": "Iulia Comșa",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/14878188?v=4&s=200",
+      "website": "https://sites.google.com/view/iuliacomsa/",
+      "github": "iulia-m-comsa"
+    },
     "RReverser": {
       "name": "Ingvar Stepanyan",
       "teams": [
@@ -1076,7 +1085,8 @@
     "saptaks": {
       "name": "Saptak Sengupta",
       "teams": [
-        "authors"
+        "authors",
+        "developers"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/9530293?v=4&s=200",
       "website": "https://saptaks.website/",
@@ -1192,7 +1202,8 @@
       "name": "Victor Le Pochat",
       "teams": [
         "analysts",
-        "authors"
+        "authors",
+        "translators"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/6874341?v=4&s=200",
       "github": "VictorLeP",

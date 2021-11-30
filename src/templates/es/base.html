@@ -91,14 +91,18 @@
 {% block reactions %}reacciones{% endblock %}
 {% block source %}ver fuente{% endblock %}
 
-{% block like %}gusta{% endblock %}
+{% block like %}like{% endblock %}
 {% block repost %}repost{% endblock %}
 {% block reply %}respuesta{% endblock %}
-{% block mention %}mencionar{% endblock %}
-{% block likes %}gustos{% endblock %}
+{% block mention %}mención{% endblock %}
+{% block likes %}likes{% endblock %}
 {% block reposts %}reposts{% endblock %}
 {% block replies %}respuestas{% endblock %}
 {% block mentions %}menciones{% endblock %}
+{% block likesAlt %}{% endblock %}
+{% block repostsAlt %}{% endblock %}
+{% block repliesAlt %}{% endblock %}
+{% block mentionsAlt %}{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} en Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} en GitHub{% endmacro %}
@@ -201,4 +205,17 @@ A menos que se indique lo contrario, las métricas en los {{ supported_chapters 
     "reviewers": "Revisores",
     "translators": "Traductores",
     }
-  %}
+%}
+
+{% set localizedTeamRole = {
+    "analysts": "Analista",
+    "authors": "Autor",
+    "brainstormers": "Pensador",
+    "designers": "Diseñador",
+    "developers": "Desarrollador",
+    "editors": "Editor",
+    "leads": "Lider",
+    "reviewers": "Revisor",
+    "translators": "Traductor",
+    }
+%}
