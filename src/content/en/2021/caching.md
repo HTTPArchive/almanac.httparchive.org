@@ -80,7 +80,7 @@ Headers are meant to be used either alone or together. To determine if the conte
 
 When both are specified, `Cache-Control` takes precedence.
 
-Usage of the `Cache-Control` header has increased steadily since 2019. 74% of responses on Mobile pages included the `Cache-Control` header, while 75% of responses on Desktop pages utilized the header. From 2020, the usage of this specific header increased by 0.71% for Mobile and by 1.13% for Desktop. This leads us to believe there has been an increase in awareness in the community around proper usage of `Cache-Control`, notably for Desktop.
+Usage of the `Cache-Control` header has increased steadily since 2019. 74% of responses on Mobile pages included the `Cache-Control` header, while 75% of responses on Desktop pages utilized the header.
 
 {{ figure_markup(
   image="cache-control-expires.png",
@@ -91,7 +91,7 @@ Usage of the `Cache-Control` header has increased steadily since 2019. 74% of re
   sql_file="header_trends.sql"
 ) }}
 
-Talk about 28% of mobile requests use neither `Cache-Control` nor `Expires` headers.
+From 2020, the usage of this specific header increased by 0.71% for Mobile and by 1.13% for Desktop. But on mobile, we still have 25.1% of requests that use neither `Cache-Control` nor `Expires` headers. This leads us to believe there has been an increase in awareness in the community around proper usage of `Cache-Control`, but we still have a long way to go to full adoption of these headers.
 
 To validate the content, we have:
 - `Last-Modified` indicates when the object was last changed. Its value is a date timestamp.
@@ -422,9 +422,9 @@ Developers are getting better at setting the cache duration more accurately to t
   <figcaption>TODO: Caption the table above</figcaption>
 </figure>
 
-When we split the data between first party and third party providers, the largest improvements come from third party where we have a 13.2% improvement. It is highly encouraging to see how companies around the world are building products for developers that are highly optimized on caching. However, the challenge remains for how first parties can effectively improve over the coming years.
+When we split the data between first and third party providers, the largest improvements come from third parties where we have a 13.2% improvement. It is very encouraging to see companies around the world building products for developers that are highly optimized on caching. It's possible that the developer community's increased attention towards improving performance has encouraged and even incentivized third parties to optimize their caching strategies.
 
-The community's increased attention on improving performance has encouraged and even incentivized third parties to optimize their caching strategies.
+However, the challenge remains for how first parties can effectively improve over the coming years.
 
 ## Identifying caching opportunities
 
