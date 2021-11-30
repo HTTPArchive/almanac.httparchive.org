@@ -133,6 +133,13 @@
           "title": "Ecommerce",
           "slug": "ecommerce",
           "todo": "true"
+        },
+        {
+          "part": "III",
+          "chapter_number": "17",
+          "title": "Jamstack",
+          "slug": "jamstack",
+          "hero_dir": "2020"
         }
       ]
     },
@@ -242,6 +249,16 @@
       "website": "https://alankent.me",
       "github": "alankent",
       "twitter": "akent99"
+    },
+    "Dawntraoz": {
+      "name": "Alba Silvente Fuentes",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/36744484?v=4&s=200",
+      "website": "https://www.dawntraoz.com/",
+      "github": "Dawntraoz",
+      "twitter": "dawntraoz"
     },
     "AlexLakatos": {
       "name": "Alex Lakatos",
@@ -1166,6 +1183,16 @@
       "website": "https://simonhearne.com",
       "github": "simonhearne",
       "twitter": "simonhearne"
+    },
+    "thomkrupa": {
+      "name": "Thom Krupa",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/8614811?v=4&s=200",
+      "website": "https://www.thomkrupa.com/",
+      "github": "thomkrupa",
+      "twitter": "thomkrupa"
     },
     "tomayac": {
       "name": "Thomas Steiner",
