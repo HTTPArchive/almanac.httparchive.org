@@ -11,7 +11,7 @@ results: https://docs.google.com/spreadsheets/d/11hw7zg4dpIY8XbQR5bNp5LvwbaQF0Tj
 patrickstox_bio: Patrick is Product Advisor, Technical SEO, and Brand Ambassador at <a hreflang="en" href="https://ahrefs.com/">Ahrefs</a>. He's an organizer for the <a hreflang="en" href="https://www.meetup.com/RaleighSEO/">Raleigh SEO Meetup</a> (the most successful SEO Meetup in the US), the <a hreflang="en" href="https://www.meetup.com/beerandseo/">Beer and SEO Meetup</a>, and the <a hreflang="en" href="https://raleighseomeetup.org/conference/">Raleigh SEO Conference</a>. He also runs a Technical SEO Slack group and is a moderator for <a hreflang="en" href="https://www.reddit.com/r/TechSEO">/r/TechSEO on Reddit</a>. Patrick also likes to share random SEO knowledge in Twitter threads he calls Uncommon SEO Knowledge. He's a well known conference speaker, industry blogger (mostly on the <a hreflang="en" href="https://ahrefs.com/blog/">Ahref's blog</a> these days), judge of search awards, and he helped define the role of Search Marketing Strategist for the US Department of Labor.
 Tomek3c_bio: Tomek is the Head of Research and Development at <a hreflang="en" href="http://onely.com/">Onely</a>. He's also building <a hreflang="en" href="https://www.ziptie.dev/">ZipTie</a>, a product aiming to help website owners get more content indexed by Google.
 In his spare time, he enjoys hiking and playing poker.
-wrttnwrd_bio: Ian founded Portent, a digital marketing agency, in 1995, and sold it to Clearlink in 2017. He's now on his own, consulting for brands he loves and speaking at conferences that provide Diet Coke. He's also trying to become a professional Dungeons & Dragons player, but it hasn't panned out.
+wrttnwrd_bio: Ian is a marketing consultant, SEO, speaker, and recovering agency founder. He founded Portent, a digital marketing agency, in 1995, and sold it to Clearlink in 2017. He’s now on his own, <a href="https://www.ianlurie.com/digital-marketing-consulting/">consulting for brands</a> he loves and <a href="https://www.ianlurie.com/speaking/">speaking at conferences</a> that provide Diet Coke. He’s also trying to become a professional Dungeons & Dragons player, but it hasn’t panned out.
 You can find him pedaling his bike up Seattle's ridiculous hills.
 featured_quote: SEO is more popular than ever and has seen huge growth over the last couple years as companies sought new ways to reach customers. SEO's popularity has far outpaced other digital channels.
 featured_stat_1: 16.5%
@@ -32,7 +32,7 @@ SEO is more popular than ever and has seen huge growth over the last couple year
 {{ figure_markup(
    image="seo-term-trends.png",
    caption="Google Trends comparison of SEO versus pay-per-click, social media marketing, and email marketing.",
-   description="Screenshot showing...",
+   description="Screenshot showing the interest over time in Google Trends comparing four digital marketing channels; search engine optimization, pay-per-click, social media marketing, and email marketing. SEO remained the most popular digital marketing channel, with interest far outpacing the other channels in recent years. SEO continued to be an evolving field with a growing community around the world.",
    width=1155,
    height=605
    )
@@ -67,7 +67,7 @@ Using robots.txt allows website owners to control search engine robots. However,
 {{ figure_markup(
    image="robots-txt-status-codes.png",
    caption="Breakdown of robots.txt status codes.",
-   description="Bar chart showing ...",
+   description="Bar chart showing percent of pages with a valid robots.txt file. Status code 200 was present on 81.9% of mobile sites, status code 404 was present on 16.5% of mobile sites. The other status codes are barely used and desktop numbers are almost identical to mobile.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2062029998&format=interactive",
    sheets_gid="91318795",
    sql_file="robots-txt-status-codes.sql"
@@ -85,7 +85,7 @@ The latest information available from Google is from 2019. [According to Google'
 {{ figure_markup(
    image="robots-usage-presentation.png",
    caption="Breakdown of robots.txt status codes Googlebot encountered.",
-   description="Screenshot showing...",
+   description="Screenshot showing the percentage of robots.txt status codes encountered by Googlebot. Taken from 2019 data, 69% of sites were Good and utilized status code 200 or returned 404 for open access. As much as 5% were Temporarily OK returning 5xx on robots.txt. As much as 26% of sites were Unreachable.",
    width=609,
    height=313
    )
@@ -104,7 +104,7 @@ Most robots.txt files are fairly small, weighing between 0-100 kb. However, we d
 {{ figure_markup(
    image="robots-txt-size-distribution.png",
    caption="`robots.txt` size distribution.",
-   description="Bar chart showing ...",
+   description="Bar chart showing robots.txt size distribution. Nearly all robots.txt files are small and weighed between 0-100 kb. We found that 96.72% of robots.txt files on mobile pages weighed between 0-100 kb (similar results for desktop). Virtually no web pages (desktop or mobile) had robots.txt files greater than 100 kb, and 1.58% were missing.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1491943936&format=interactive",
    sheets_gid="1066408164",
    sql_file="robots-text-size.sql"
@@ -118,7 +118,7 @@ We saw two popular SEO related robots: mj12bot (Majestic) and ahrefsbot (Ahrefs)
 {{ figure_markup(
    image="robots-txt-user-agent.png",
    caption="`robots.txt` user-agent usage.",
-   description="Bar chart showing ...",
+   description="Bar chart showing the ten most common robots.txt user-agent usage. Results were nearly identical for desktop and mobile, with 75.2% of domains not indicating a specific user-agent. We found 6.3% for adsbot-google, 5.6% for mj12bot, 5.0% for ahrefsbot, 4.9% for mediapartners-google, 3.4% for googlebot, 3.3% for nutch, 3.1% for yandex, 2.9% for pinterest, 2.7% for ahrefssiteaudit.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1206728832&format=interactive",
    sheets_gid="964313002",
    sql_file="robots-txt-user-agent-usage.sql"
@@ -231,7 +231,7 @@ Adoption of HTTPS is still increasing. HTTPS was the default on 81.17% of mobile
 {{ figure_markup(
    image="usage-of-https.png",
    caption="Percentage of Desktop and Mobile pages served with HTTPS..",
-   description="Bar chart showing ...",
+   description="Bar chart showing the percentage of HTTPS. We found that that 81.2% of mobile pages were HTTPS and 84.3% of desktop pages were HTTPS.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1826599611&format=interactive",
    sheets_gid="1347655296",
    sql_file="seo-stats.sql"
@@ -249,7 +249,7 @@ Responsive design sends the same code and adjusts how the website is displayed b
 {{ figure_markup(
    image="vary-usage-agent-header-usage.png",
    caption="`Vary: User-Agent` header usage.",
-   description="Bar chart showing ...",
+   description="Bar chart showing the vary header used to identify mobile-friendless. We found that most web pages utilized a response design (87.4% for desktop and 86.6% for mobile), compared to pages that used dynamic serving (12.6% for desktop and 13.4% for mobile).",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1985736287&format=interactive",
    sheets_gid="478009067",
    sql_file="html-response-vary-header-used.sql"
@@ -266,12 +266,12 @@ Core Web Vitals are the new speed metrics that are part of Google's Page Experie
 
 The data comes from the Chrome User Experience Report (CrUX), which records real-world data from opted-in Chrome users.
 
-33% of mobile websites are now passing Core Web Vitals thresholds, up from 20% last year. Most websites are passing FID but website owners seem to be struggling to improve CLS and LCP.
+29% of mobile websites are now passing Core Web Vitals thresholds, up from 20% last year. Most websites are passing FID but website owners seem to be struggling to improve CLS and LCP.
 
 {{ figure_markup(
    image="core-web-vitals-trend.png",
    caption="Core web vitals metrics trend.",
-   description="Line chart showing ...",
+   description="Line chart showing the percentage of good CWV experiences on mobile. In 2021, Good LCP increased from 42% to 45%, Good FID increased from 81% to 90%, Good CLS increased from 55% to 62%, and Good CWV increased from 23% to 29%. Our findings suggest that percentage of mobile websites that offer good CWV experiences will continue to increase each year.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1693723951&format=interactive",
    sheets_gid="460991760",
    sql_file="sql.sql"
@@ -290,12 +290,12 @@ Search engines look at your page's content to determine whether it's a relevant 
 
 Metadata includes `<title>` elements and `<meta name="description">` tags. Metadata can directly and/or indirectly affect SEO performance. See the next sections for specifics about each tag.
 
-In 2021, 98.77% of desktop and mobile pages had `<title>` elements. 71.1% of desktop and mobile pages had `<meta name="description">` tags.
+In 2021, 98.77% of desktop and mobile pages had `<title>` elements. 71.1% of desktop and mobile homepages had `<meta name="description">` tags.
 
 {{ figure_markup(
    image="title-meta-description-usage.png",
    caption="Breakdown of title and meta description usage.",
-   description="Bar chart showing ...",
+   description="Bar chart showing the percentage of pages that have metadata. We found that 98.77% of mobile and desktop pages had a title tag and 71.1% of mobile and desktop pages had a meta description.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=541272297&format=interactive",
    sheets_gid="1347655296",
    sql_file="seo-stats.sql"
@@ -313,12 +313,12 @@ In 2021:
 - 10% of pages had `<title>` elements containing 12 words.
 - 10% of desktop and mobile pages had `<title>` elements containing 74 and 75 characters, respectively.
 
-Most of these stats are relatively unchanged since last year.
+Most of these stats are relatively unchanged since last year. Reminder that these are titles on homepages, that tend to be shorter than those used on deeper pages.
 
 {{ figure_markup(
    image="title-word-counts.png",
    caption="Number of words used in title elements.",
-   description="Bar chart showing ...",
+   description="Bar chart showing the length of title words by percentile. Findings were identical for both desktop and mobile pages. The median title contained 6 words, and 50% of all titles contained between 3-9 words. At most, 10% of titles had more than 12 words.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2017837375&format=interactive",
    sheets_gid="455169599",
    sql_file="seo-stats.sql"
@@ -328,7 +328,7 @@ Most of these stats are relatively unchanged since last year.
 {{ figure_markup(
    image="title-character-counts.png",
    caption="Number of characters used in title elements.",
-   description="Bar chart showing ...",
+   description="Bar chart showing the length of title characters by percentile. Findings were nearly identical for desktop and mobile pages. The median title character length was 39 for desktop and 40 for mobile, and 50% of all titles had between 21 - 59 characters. At most, 10% of title characters were longer than 74 for desktop and 75 for mobile.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1099454676&format=interactive",
    sheets_gid="455169599",
    sql_file="seo-stats.sql"
@@ -351,7 +351,7 @@ These numbers are relatively unchanged from last year.
 {{ figure_markup(
    image="meta-word-counts.png",
    caption="Number of words used in meta descriptions.",
-   description="Bar chart showing ...",
+   description="Bar chart showing the number of meta description words by percentile. Findings were nearly identical for desktop and mobile pages. The median meta description length was 20 words for desktop and 19 for mobile, and 50% of meta descriptions contained between 9 - 25 words.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2013621429&format=interactive",
    sheets_gid="455169599",
    sql_file="seo-stats.sql"
@@ -361,7 +361,7 @@ These numbers are relatively unchanged from last year.
 {{ figure_markup(
    image="meta-character-counts.png",
    caption="Number of characters used in meta descriptions.",
-   description="Bar chart showing ...",
+   description="Bar chart showing the length of meta description characters by percentile. Findings were nearly identical for desktop and mobile pages. The median meta description character length was 138 for desktop and 137 for mobile, and 50% of all meta descriptions had between 79 to 161 characters on desktop, and 78 to 160 on mobile. At most, 10% of title characters were longer than 232 characters for desktop and 231 characters for mobile.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=971210715&format=interactive",
    sheets_gid="455169599",
    sql_file="seo-stats.sql"
@@ -469,7 +469,7 @@ Second, raw page content: "Raw" is the content of the page before the browser ha
 
 - The median _raw_ desktop page contains 369 words, versus 360 words in 2020.
 - The median _raw_ mobile page contains 321 words, versus 312 words in 2020.
-- Raw mobile pages contain 13.1% fewer words than rendered desktop pages. Note that Google is a mobile-only index. Content not on the mobile desktop may not get indexed.
+- Raw mobile pages contain 13.1% fewer words than rendered desktop pages. Note that Google is a mobile-only index. Content not on the mobile HTML version may not get indexed.
 
 {{ figure_markup(
    image="visible-raw-words-percentile.png",
@@ -541,7 +541,7 @@ The most popular schema types found on homepages are WebSite, SearchAction, WebP
 
 ### `<H>` Elements (Headings)
 
-Heading elements - `<h1>`, `<h2>`, etc. - are an important structural element. While they don't strongly impact rankings, Google's comments regarding "[centerpiece annotation](https://youtu.be/BG56C6XI0YM?t=1730)" imply that the "hint" headings provide clarity about the content.
+Heading elements - `<h1>`, `<h2>`, etc. - are an important structural element. While they don't strongly impact rankings, they do help Google to better understand the content on the page.
 
 For main headings, more pages (71.9%) have H2s than have H1s (65.4%). There's no obvious explanation for the discrepancy.
 
@@ -581,7 +581,7 @@ On top of PageRank, the text used as a link anchor helps search engines to under
 
 Internal links are links to other pages on the same site. Pages had less links on the mobile versions compared to the desktop versions.
 
-The data shows that the median number of internal links on desktop is 16% higher mobile, 64 vs 55 respectively. It's likely this is because developers tend to minimize the navigation menu on mobile to make it easier to use.
+The data shows that the median number of internal links on desktop is 16% higher than mobile, 64 vs 55 respectively. It's likely this is because developers tend to minimize the navigation menu on mobile to make it easier to use.
 
 {{ figure_markup(
    image="outgoing-internal-link.png",
