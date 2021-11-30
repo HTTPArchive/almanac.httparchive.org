@@ -12,7 +12,7 @@ results: https://docs.google.com/spreadsheets/d/1anlgeaBH2Yui2kFWuRGxHU2QdMiCKOg
 featured_quote: Jamstack young and fast growing technology to build modern websites. That what people say and that's proved by numbers.
 featured_stat_1: 1.1%
 featured_stat_label_1: Jamstack websites adoption among web
-featured_stat_2: 19%
+featured_stat_2: 9.5%
 featured_stat_label_2: Median value of jQuery usage among Jamstack sites
 featured_stat_3: 1.7MB
 featured_stat_label_3: Median value of resource wights among Jamstack sites
@@ -440,19 +440,21 @@ Big chunk of resources use JavaScript. Again, for JavaScript based SSGs it's a h
 
 We analysed which third party libraries were used among SSGs. We excluded React and Vue to have a clear picture of other libraries and frameworks represented among SSGs.
 
-Surprise for us was jQuery.  It wasn't a surprise that it's used for Hugo and Jekyll based sites, but that it's used inside React and Vue based sites!!! Next.js, Nuxt,js, and Gatsby based sites use jQuery, for Nuxt.js sites it's 25% among other third party libraries.
+SSurprise for us was jQuery. It wasn’t a surprise that it’s used for Hugo and Jekyll based sites (more than 60%), but that it’s used inside React and Vue based sites!!! Next.js, Nuxt,js, and Gatsby based sites use jQuery too.
+Nuxt.js - 3.8%, Next.js - 5.6%, Gatsby - 9.5%.
 
-Styled-components used for Next.js and Gatsby sites and takes ~40% of all third party libraries. Amotion tries to fight styled-components.
+Styled-components used for Next.js - 20% and Gatsby takes 34%% from all of third party libraries. Nuxt.js sites almost don't use it.
 
-Lodash is also one of a kind. Like jQuery. Developers like and use it as well. Nuxt.js sites used it 34% of the time, Next.js 21% of the time, and 12% of Gatsby sites used it.
+Lodash is also one of a kind. It represented among all CMSs up to 10%.
+Nuxt.js - 4.8%, Next.js - 9.6%, Gatsby - 10.3%, Jekyll - 1%, and Hugo - 4%.
 
- Note that this data aggregates all of the pages for different sites, hence e.g. 25% of jQuery usage among other 3rd parties can happen for some Nuxt.js sites and might not happen for other of sites at all.
+Note that this data aggregates all of the pages for different sites, hence e.g. 9.5% of jQuery usage among other 3rd parties can be used for some Gatsby sites and might not be used for other of sites at all.
 
 {{ figure_markup(
-  image="js-3rd-parties-distirbution-over-ssg.png",
+  image="3rd-party-libs-distribution-over-ssgs.png",
   caption="JavaScript 3rd parties distribution over SSGs",
   description="Stacked Bar chart represents JavaScript 3rd parties distribution over SSGs",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=955715721&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=972731684&format=interactive",
   sheets_gid="434923317",
   sql_file="framework_libraries.sql"
 ) }}
