@@ -95,7 +95,7 @@ From 2020, the usage of this specific header increased by 0.71% for Mobile and b
 
 To **validate** the content, we have:
 - `Last-Modified` indicates when the object was last changed. Its value is a date timestamp.
-- `ETag` (Entity Tag) provides a unique identifier for the content as a quoted string. It can take any format the server chooses; it is typically a hash of the file contents, but it could be a timestamp or a simple string.
+- `ETag` (Entity Tag) provides a unique identifier for the content as a quoted string. It can take any format the server chooses; it is typically a hash of the file contents, but it can be a timestamp or a simple string.
 
 When both are specified, `ETag` takes precedence.
 
@@ -108,7 +108,7 @@ When both are specified, `ETag` takes precedence.
   sql_file="header_trends.sql"
 ) }}
 
-Comparing 2020 with 2021, we notice a similar trend from past years where the `ETag` is becoming slightly more popular, and `Last-Modified` is being used 1.5% less. But what we should probably keep an eye on next year is this new trend in 1.4% more pages using neither `ETag` nor `Last-Modified` headers, as this could imply a challenge in the community understanding the value of these headers.
+Comparing 2020 and 2021, we notice a recurring trend from past years with the `ETag` becoming slightly more popular, and `Last-Modified` being used 1.5% less. What we should probably keep an eye on next year is a new trend of 1.4% more pages using neither `ETag` nor `Last-Modified` headers, as this could imply a challenge in the community understanding the value of these headers.
 
 ### `Cache-Control` directives
 When using the `Cache-Control` header, you specify one or more *directives*—predefined values that indicate specific caching functionality. Multiple directives are separated by commas and can be set in any order, although some clash with one another (e.g., `public` and `private`). In addition, some directives take a value, such as `max-age`.
@@ -164,15 +164,15 @@ The `max-age` directive is the most commonly found with 62.2% of Desktop request
   sql_file="cache_control_directives.sql"
 ) }}
 
-Compared to 2020, `max-age` adoption increased by 2% on Desktop and most of the top seven directives in the above chart.
+Compared to 2020, `max-age` adoption increased by 2% on Desktop, along with most of the top seven directives in the above chart.
 
-The `immutable` directive is relatively new and can significantly improve cacheability for certain types of requests. However, it is still only supported by a few browsers, and we see most requests from Host Networks like *Wix* with 16.4%, *Facebook* with 8.6%, *Tawk* at 2.8%, and *Shopify* at 2.4%.
+The `immutable` directive is relatively new and can significantly improve cacheability for certain types of requests. However, it is still only supported by a few browsers, and we see most requests coming from from Host Networks like *Wix* with 16.4%, *Facebook* with 8.6%, *Tawk* with 2.8%, and *Shopify* with 2.4%.
 
-The most misused `Cache-Control` directive continues to be `set-cookie`, used for 0.07% of total *directives* for Desktop and 0.08% for Mobile. Although we are seeing a meaningful 0.16% reduction of usage from 2020.
+The most misused `Cache-Control` directive continues to be `set-cookie`, used for 0.07% of total *directives* for Desktop and 0.08% for Mobile. However, we are pleased to see a meaningful 0.16% reduction of usage from 2020.
 
-When we take a look when `no-cache`, `max-age=0` and `no-store` are used together, we also see a growing trend year after year, which where `no-store` is specified with either/both of `no-cache` and `max-age=0`, the `no-store` directive takes precedence, and the other directives are ignored. Therefore, driving more awareness on larger conferences using these *directives* can help avoid accidentally wasted bytes.
+When we take a look when `no-cache`, `max-age=0` and `no-store` are used together, we also see a growing trend year after year, in which `no-store` is specified with either/both of `no-cache` and `max-age=0`, the `no-store` directive takes precedence, and the other directives are ignored. Driving more awareness around using these *directives* during larger conferences could help avoid accidentally wasted bytes.
 
-Fun fact the most common `max-age` value is 30 days, and the largest value is 51 trillion years.
+Fun fact: The most common `max-age` value is 30 days, and the largest value is 51 trillion years.
 
 {{ figure_markup(
   caption="TODO",
@@ -184,7 +184,7 @@ Fun fact the most common `max-age` value is 30 days, and the largest value is 51
 
 ### `304` Not Modified status
 
-When it comes to size, `304 Not Modified` responses are usually much smaller than `200 OK` responses, so it follows that page performance can be sped up/improved?? by only delivering the necessary size of data. This is where correctly using conditional requests comes in because revalidation (and data savings?) can only be done by using either an `Etag` or `Last-Modified` header.
+When it comes to size, `304 Not Modified` responses are much smaller than `200 OK` responses, so it follows that page performance can be sped up by only delivering the necessary size of data. This is where correctly using conditional requests comes in because revalidation, and data savings can be done by using either an `Etag` or `Last-Modified` header.
 
 The `Last-Modified` response header works in conjunction with the `If-Modified-Since` request header to let the browser know if any changes have been made to the requested file.
 
@@ -228,11 +228,11 @@ This shows a 1.5% decrease in use of `Accept-Encoding` from 2020.
 
 It's important to point out that only 46.25% of total requests audited use the `Vary` header, but when compared to 2020, we see an overall increase by 2.85%.
 
-Of these requests using the `Vary` header, 83.4% also have the `Cache-control`. This shows us a 2.1% improvement from 2020.
+Of the requests using the `Vary` header, 83.4% also have the `Cache-control`. This shows us a 2.1% improvement from 2020.
 
 ## Setting cookies on cacheable responses
 
-In the 2020 Caching chapter, we were reminded to be aware of using `set-cookie` with cacheable responses because only 4.9% of responses used the `private` directive, putting a user's private data at risk of accidentally being accidentally served to a different user via a CDN.
+In the 2020 Caching chapter, we were reminded to be aware of using `set-cookie` with cacheable responses because only 4.9% of responses used the `private` directive, putting a user's private data at risk of being accidentally served to a different user via a CDN.
 
 {{ figure_markup(
   image="cacheable-set-cookie.png",
@@ -243,11 +243,11 @@ In the 2020 Caching chapter, we were reminded to be aware of using `set-cookie` 
   sql_file="set_cookie.sql"
 ) }}
 
-In 2021, we see an increase in awareness regarding set-cookie and caching coexisting. While still only 5% of web pages are using the private directive with Set-Cookie, the total number of cacheable set-cookie responses decreased by 4.41%.
+In 2021, we see an increase in awareness regarding `set-cookie` and caching coexisting. While still only 5% of web pages are using the private directive with `set-cookie`, the total number of cacheable `set-cookie` responses decreased by 4.41%.
 
 ## What type of content are we caching?
 
-We see that Font, CSS, and Audio files are over 99% cacheable, with almost 100% of pages currently caching fonts. This could be in part due to their static nature, making them prime choices for caching because 
+Font, CSS, and Audio files are over 99% cacheable, with almost 100% of pages currently caching fonts. This could be in part due to their static nature, making them prime choices for caching.
 
 {{ figure_markup(
   image="caching-by-resource-type.png",
@@ -259,7 +259,7 @@ We see that Font, CSS, and Audio files are over 99% cacheable, with almost 100% 
   sql_file="non_cacheable_by_resource_type.sql"
 ) }}
 
-However, some of our go-to resources are non-cacheable, likely due to their dynamic nature. Notably, HTML saw the highest percentage of non-cacheable resources at 23.4%, followed closely by Images with 10.1%. 
+However, some of our most commonly used resources are non-cacheable, likely due to their dynamic nature. Notably, HTML saw the highest percentage of non-cacheable resources at 23.4%, followed closely by Images with 10.1%. 
 
 When we compare the mobile data from 2020 to 2021, we notice a 5.1% increase in cacheable HTML. This tells us we may be moving towards better usage of our CDNs to cache HTML pages, like those rendered by an SSR that tend to change less frequently. Pages are typically generated by Server-Side Rendered (SSR) applications if the content of a particular web page doesn't change frequently. The url can potentially serve the same HTML for weeks or even months, making that content highly cacheable.
 
