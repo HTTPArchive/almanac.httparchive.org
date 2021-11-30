@@ -122,7 +122,6 @@ When using the Cache-Control header, usage increased by 1% for Desktop and remai
   sql_file="header_trends.sql"
 ) }}
 
-
 When using the `Cache-Control` header, you specify one or more *directives*—predefined values that indicate specific caching functionality. Multiple directives are separated by commas and can be set in any order, although some clash with one another (e.g., `public` and `private`). In addition, some directives take a value, such as `max-age`.
 
 Below is a table showing the most common `Cache-Control` directives:
@@ -200,9 +199,9 @@ Talk about `immutable` directive, 12% of desktop requests containing Cache-Contr
 
 ### `304` Not Modified status
 
-304 responses are usually much smaller than 200 responses, so we can see an improvement in page performance when we use conditional requests correctly. Revalidation on conditional requests can only be done by using either an `Etag` or `Last-Modified` header. 
+When it comes to size, `304 Not Modified` responses are usually much smaller than `200 OK` responses, so it follows that page performance can be sped up/improved?? by only delivering the necessary size of data. This is where correctly using conditional requests comes in because revalidation (and data savings?) can only be done by using either an `Etag` or `Last-Modified` header.
 
-The distribution of 304 responses increased by 7.7% for `If-Modified-Since` in 2021, compared to 2020.
+The `Last-Modified` response header works in conjunction with the `If-Modified-Since` request header to let the browser know if any changes have been made to the requested file.
 
 {{ figure_markup(
   image="http-304-by-caching-strategy.png",
@@ -213,11 +212,11 @@ The distribution of 304 responses increased by 7.7% for `If-Modified-Since` in 2
   sql_file="valid_if_none_match_returns_304.sql"
 ) }}
 
-[TODO Leo: Better explore this part!!!]
+We saw the distribution of 304 responses increase by 7.7% for `If-Modified-Since` between 2020 and 2021. This shows that the community is capitalizing on these data savings.
 
 ### Validity of date strings
 
-The three main HTTP headers used to represent timestamps, `Date`,`Last-Modified` and `Expires` all use a date formatted string. The `Date` HTTP response header is almost always generated automatically by the web server, meaning that invalid values are extremely rare. Still, in the rare event that the date is set incorrectly it can affect cacheability on the response on which it is served. 
+The three main HTTP headers used to represent timestamps, `Date`,`Last-Modified` and `Expires` all use a date formatted string. The `Date` HTTP response header is almost always generated automatically by the web server, meaning that invalid values are extremely rare. Still, in the event that the date is set incorrectly it can affect cacheability on the response on which it is served. 
 
 {{ figure_markup(
   image="invalid-date-formats.png",
@@ -228,7 +227,9 @@ The three main HTTP headers used to represent timestamps, `Date`,`Last-Modified`
   sql_file="invalid_last_modified_and_expires_and_date.sql"
 ) }}
 
-Between 2020 and 2021, the percent using invalid date improved by a .5% but got worse for last-modified and expires showing that it was related to how the date was set on caching.
+Between 2020 and 2021, the percent using invalid `Date` improved by 0.5% but worsened for `Last-Modified` and `Expires` showing that it was related to how the date was set on caching. 
+
+This shows us that automation of the `Date` header could benefit from further attention...?
 
 ### Vary
 
