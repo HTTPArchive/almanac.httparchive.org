@@ -478,7 +478,7 @@ To understand the usage of libraries and frameworks, HTTP Archive uses [Wappalyz
 {{ figure_markup(
   image="js-libs-frameworks.png",
   caption="Usage of JavaScript libraries and frameworks.",
-  description="Bar chart showing the usage of Javascript libraries and frameworks. jQuery remains on top with 84% of mobile pages using it.",
+  description="Bar chart showing the usage of JavaScript libraries and frameworks. jQuery remains on top with 84% of mobile pages using it.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=584103777&format=interactive",
   sheets_gid="1851485826",
   sql_file="frameworks_libraries.sql"
@@ -835,7 +835,7 @@ Fewer than 0.1% of web pages have adopted the use of templates. Although templat
 
 ## Conclusion
 
-The numbers that we have seen throughout the chapter have brought us to an understanding of how vast the Javascript usage is and how it's evolving over time. The JavaScript ecosystem has been growing with the focus towards making the web more performant and secure for users, with newer features and APIs that make the developer experience easier and more productive.
+The numbers that we have seen throughout the chapter have brought us to an understanding of how vast the JavaScript usage is and how it's evolving over time. The JavaScript ecosystem has been growing with the focus towards making the web more performant and secure for users, with newer features and APIs that make the developer experience easier and more productive.
 
 We saw how so many features that improve rendering and resource loading performance could be more widely utilized to provide users with faster experiences. As a developer, you can start by adopting these new web platform features. However, make sure to use them wisely and ensure that they actually improve performance, as some APIs can cause harm through misuse, as we saw with `async` and `defer` attributes on the same script.
 
