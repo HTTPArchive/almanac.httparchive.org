@@ -370,7 +370,7 @@ The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Ele
   )
 }}
 
-Interestingly, 354 origins on desktop attempted to use native lazy-loading on HTML elements that do not support the loading attribute (e.g., `<div>`). The loading attribute is only supported on `<img>` and, in some browsers, `<iframe>` elements (see <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">caniuse</a>).
+Interestingly, 354 origins on desktop attempted to use native lazy-loading on HTML elements that do not support the loading attribute (e.g., `<div>`). The loading attribute is only supported on `<img>` and, in some browsers, `<iframe>` elements (see <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">Can I use</a>).
 
 ### Cumulative Layout Shift (CLS)
 
