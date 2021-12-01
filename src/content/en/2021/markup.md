@@ -213,7 +213,7 @@ No need to panic, the web isn't all made up of divs. The median page uses 31 dif
 
 ### Top elements
 
-Every year since 2019, the Markup chapter of the Web Almanac has featured the most frequently used elements in reference to[ Ian Hickson's work in 2005](https://web.archive.org/web/20060203031713/http://code.google.com/webstats/2005-12/elements.html). This author couldn't break with tradition, so we had a look at the data again.
+Every year since 2019, the Markup chapter of the Web Almanac has featured the most frequently used elements in reference to [Ian Hickson's work in 2005](https://web.archive.org/web/20060203031713/http://code.google.com/webstats/2005-12/elements.html). This author couldn't break with tradition, so we had a look at the data again.
 
 <figure>
   <table>
@@ -413,9 +413,9 @@ A little over 98% of the pages scanned contain at least one `script` element. It
 
 ### Template
 
-One of the [least recognized, but most powerful features](https://css-tricks.com/crafting-reusable-html-templates/) of the Web Components specification is the &lt;template> element. Despite the fact that the [`template` element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots) is well supported on modern browsers since 2013, only 0.5% of the pages were using it in 2021. In terms of popularity, it didn't even make it into the top 50 elements. We thought this speaks volumes about the adoption curve of the modern HTML specification for web developers.
+One of the [least recognized, but most powerful features](https://css-tricks.com/crafting-reusable-html-templates/) of the Web Components specification is the `<template>` element. Despite the fact that the [`template` element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots) is well supported on modern browsers since 2013, only 0.5% of the pages were using it in 2021. In terms of popularity, it didn't even make it into the top 50 elements. We thought this speaks volumes about the adoption curve of the modern HTML specification for web developers.
 
-In case you don't really know what template does, here is a refresher from the specification: "the template element is used to declare fragments of HTML that can be cloned and inserted in the document by script". If you're a web developer and think that sounds familiar, you're right. Most of the popular frameworks today have a similar non-native mechanism to do the same: Angular has [&lt;ng-content>](https://angular.io/guide/content-projection), React has [portals](https://reactjs.org/docs/portals.html) and Vue has [&lt;slot>](https://v3.vuejs.org/guide/component-slots.html#slots). We would have thought those frameworks would use the native template element or Web Components instead of re-creating the functionality within the frameworks.
+In case you don't really know what template does, here is a refresher from the specification: "the template element is used to declare fragments of HTML that can be cloned and inserted in the document by script". If you're a web developer and think that sounds familiar, you're right. Most of the popular frameworks today have a similar non-native mechanism to do the same: Angular has [`<ng-content>`](https://angular.io/guide/content-projection), React has [portals](https://reactjs.org/docs/portals.html) and Vue has [`<slot>`](https://v3.vuejs.org/guide/component-slots.html#slots). We would have thought those frameworks would use the native template element or Web Components instead of re-creating the functionality within the frameworks.
 
 ### Style
 
@@ -491,7 +491,7 @@ We've also looked at elements that didn't show up on the HTML or SVG  spec, be i
 
 By far, the most popular one is [Slider Revolution](https://www.sliderrevolution.com/faq/developer-guide-output-class-tag-changes/), with a majority of elements attributed to the framework. It more than tripled in popularity over the past year, which leads us to believe it might be a part of a popular template or site builder. A close second is [Wix](https://www.wix.com/), the popular free site builder. We couldn't identify pages-css, but we'd love to hear any ideas for why the `pages-css` element is so popular, so let us know by [suggesting an edit]([https://almanac.httparchive.org/en/2020/markup#explore-results](https://almanac.httparchive.org/en/2020/markup#explore-results)) on GitHub.
 
-We would have thought that popular frameworks like [Angular](https://angular.io/), [Next.js](https://nextjs.org/) or the former [Angular.js ](https://angularjs.org/)would account for more custom components, but `router-outlet` and `ng-component` make up a small part of the custom component base.
+We would have thought that popular frameworks like [Angular](https://angular.io/), [Next.js](https://nextjs.org/) or the former [Angular.js](https://angularjs.org/) would account for more custom components, but `router-outlet` and `ng-component` make up a small part of the custom component base.
 
 ### Obsolete elements
 
@@ -941,7 +941,7 @@ Web Monetization popularly uses a `meta` element on the page, specifying the wal
 
 While it still seems a vanishingly small number by percentages, it has shown growth—more on desktop than mobile. It's important to keep in mind how big the HTTP Archive dataset is and how slowly it takes to gain numbers, even for a feature that is widely and natively supported. It will be interesting to continue to track these numbers and developments over more time. This author might be biased, as an editor for the Web Monetization standard, but you're encouraged to [give it a try](https://webmonetization.org/docs/getting-started), it's free.
 
-There has been an [issue open for some time](https://github.com/WICG/webmonetization/issues/19), and the new version of the specification will [use a `&lt;link>` instead.](https://github.com/WICG/webmonetization/pull/193) Only 36 pages in our desktop set and 37 in our mobile set used the `&lt;link>` version, and all of those _also_ included the `&lt; meta>` version as well.
+There has been an [issue open for some time](https://github.com/WICG/webmonetization/issues/19), and the new version of the specification will [use a `<link>` instead.](https://github.com/WICG/webmonetization/pull/193) Only 36 pages in our desktop set and 37 in our mobile set used the `<link>` version, and all of those _also_ included the `<meta>` version as well.
 
 We know there are currently two [Interledger](https://interledger.org/)-enabled wallet providers in the ecosystem, we wanted to see the distribution and adoption of those wallets.
 
@@ -964,11 +964,11 @@ The most surprising for us was that, [almost 20 years later](https://en.wikipedi
 
 The median page sizes in 2020 were shrinking when compared to 2019, but this year it looks like the trend has regressed, surpassing the median sizes for 2019 as well. The web is getting heavier. Again.
 
-Almost 1 percentage point more pages are compressed for mobile only. In a mobile world, where every byte of data has a cost associated with it, seeing that mobile pages are not only optimized, but smaller than the desktop counterparts is great. 
+Almost 1 percentage point more pages are compressed for mobile only. In a mobile world, where every byte of data has a cost associated with it, seeing that mobile pages are not only optimized, but smaller than the desktop counterparts is great.
 
 English is relatively less popular on mobile pages. We're not sure why, and this author would like to encourage you to explore the possibilities of why this is the case.
 
-It was interesting to see that libraries adopting better practices correlated directly with elements falling out of favor.  Both `i` and `option` are less-used this year because icon libraries have switched over to using SVG. 
+It was interesting to see that libraries adopting better practices correlated directly with elements falling out of favor.  Both `i` and `option` are less-used this year because icon libraries have switched over to using SVG.
 
 It was both great to see ICO finally being dethroned as the most popular favicon format in favour of PNG. Similarly, seeing SVG more than doubling in usage for favicons in the past year made us think we're 10 years away from dethroning PNG.
 
