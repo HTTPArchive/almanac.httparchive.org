@@ -2,9 +2,9 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Caching
 description: TODO
-authors: [Zizzamia]
+authors: [Zizzamia, jessnicolet]
 reviewers: []
-analysts: []
+analysts: [rviscomi]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1-v3yR0LZIC3t4zWtqTgR3jJsKjjRMP-HATU2caP8e2c/
