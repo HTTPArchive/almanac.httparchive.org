@@ -101,7 +101,7 @@ When both are specified, `ETag` takes precedence.
 {{ figure_markup(
   image="last-modified-etag.png",
   caption="Percent of responses that set `Last-Modified` and `ETag` headers.",
-  description="TODO",
+  description="A bar chart showing usage of `Last-Modified` and `ETag` headers. For desktop and mobile, 70.5% use `Last-Modified`, 46.5% us `ETag`, 41.6% use both, and 24.5% use neither.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=1490687174&format=interactive",
   sheets_gid="2102749619",
   sql_file="header_trends.sql"
