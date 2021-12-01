@@ -874,7 +874,7 @@ The share of pages using CSS gradients was roughly the same as last year: 77% of
 {{ figure_markup(
   image="most-popular-unprefixed-gradient-functions.png",
   caption="The most popular types of gradient image values.",
-  description="A paired-column chart where values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts. The list is as follows: `linear-gradient` 74.3%, `radial-gradient` 14.5%, `repeating-linear-gradient` 3.7%, r`epeating-radial-gradient` 0.1%, `conic-gradient` 0%, `repeating-conic-gradient` 0%.",
+  description="A paired-column chart where values are only given for mobile, but the desktop bars are all within a percent or two of their mobile counterparts. The list is as follows: `linear-gradient` 74.3%, `radial-gradient` 14.5%, `repeating-linear-gradient` 3.7%, `repeating-radial-gradient` 0.1%, `conic-gradient` 0%, `repeating-conic-gradient` 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=2004838082&format=interactive",
   sheets_gid="1135532290",
   sql_file="gradient_functions.sql"
