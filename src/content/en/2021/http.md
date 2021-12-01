@@ -367,7 +367,7 @@ Patrick Meehan breaks down some of the problems <a hreflang="en" href="https://b
 #### Pushed assets
 
 {{ figure_markup(
-  image="http2-push-size",
+  image="http2-push-size.png",
   caption="HTTP/2 pushed kilobytes.",
   description="Bar chart showing the number of kilobytes pushed on mobile and desktop at various percentiles. At the 10th percentile 0 bytes are pushed for both desktop and mobile, at the 25th percentile 19 bytes are pushed on desktop and 0 on mobile, at the 50 it's 146 and 48 respectively, at the 75 it's 295 and 222, and finally at the 90th percentile 373 bytes are pushed for desktop and 323 for mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR8JQZybG-hShF-c20MeEPyPBeMbdjcYNWzm4juwcsvtubVk3kKT8KH26D1eEuFpvHbvRXEHZorS0ee/pubchart?oid=971663204&format=interactive",
@@ -381,7 +381,7 @@ In cases where items were pushed, the median size of the bytes that were pushed 
 While these numbers at the 90th percentile appear fine, it's when you start to review the number of pushes, it highlights the misuse of the push feature:
 
 {{ figure_markup(
-  image="http2-push-number",
+  image="http2-push-number.png",
   caption="HTTP/2 pushed kilobytes.",
   description="Bar chart showing the number of assets pushed on mobile and desktop at various percentiles. At the 10th percentile 1 resource is pushed for both desktop and mobile, at the 25th percentile it's 2 and 1 respectively, at the 50th percentile it's 4 and 3 at the 75th percentile it's 8 and 8 at the 90th percentile it's 21 and 16.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR8JQZybG-hShF-c20MeEPyPBeMbdjcYNWzm4juwcsvtubVk3kKT8KH26D1eEuFpvHbvRXEHZorS0ee/pubchart?oid=1039731009&format=interactive",
@@ -393,7 +393,7 @@ While these numbers at the 90th percentile appear fine, it's when you start to r
 The median number of pushes is 4 and 3 across desktop and mobile respectively. This moves to 8 at the 75% percentile and jumps to 21 and 16 at the 90th percentile. The 100% percentile sees an amazing 517 and 630 pushes being done by some sites, which highlights the dangers of the feature, particularly when considering push was originally designed to advertise a small number of critical assets early in the request.
 
 {{ figure_markup(
-  image="http2-push-counts",
+  image="http2-push-counts.png",
   caption="HTTP/2 pushed counts.",
   description="Bar chart showing the number of assets pushed on mobile and desktop at various percentiles. At the 10th percentile 1 resource is pushed for both desktop and mobile, at the 25th percentile it's 2 and 1 respectively, at the 50th percentile it's 4 and 3 at the 75th percentile it's 8 and 8 at the 90th percentile it's 21 and 16.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR8JQZybG-hShF-c20MeEPyPBeMbdjcYNWzm4juwcsvtubVk3kKT8KH26D1eEuFpvHbvRXEHZorS0ee/pubchart?oid=1039731009&format=interactive",
