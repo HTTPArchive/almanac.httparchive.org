@@ -89,7 +89,7 @@ With 560,359 (8.91%) desktop and 618,062 (8.25%) mobile sites, the Async Clipboa
 The high usage of this API is probably related to a script that is included with embedded YouTube videos. The `writeText()` method is called when the user clicks the "copy link" button in the video player.
 
 {{ figure_markup(
-image="async-clipboard-api.png",
+image="async-clipboard-api.jpg",
 caption='Clipping Magic uses artificial intelligence to remove the background of images pasted via the Async Clipboard API.',
 description='Screenshot of the Clipping Magic application with an image on the left, and the same image without a background on the right',
 width=699,
@@ -163,7 +163,7 @@ sql_file="fugu.sql"
 Out of all 6,286,373 desktop and 7,491,840 mobile websites in the HTTP Archive, the File System Access API is used on 29 desktop and 23 mobile sites. Examples for those sites are the image editor <a hreflang="en" href="https://excalidraw.com/">Excalidraw</a>, which allows you to sketch diagrams in a hand-drawn look and save them to the disk. Another example is <a hreflang="en" href="https://coreldraw.app/">CorelDRAW.app</a>, a web version of the image editing software CorelDRAW.
 
 {{ figure_markup(
-image="file-system-access-api.png",
+image="file-system-access-api.jpg",
 caption='The Excalidraw PWA uses the File System Access API to save images to the local file system via the built-in save dialog.',
 description='Screenshot showing the Excalidraw drawing application with an open file save dialog.',
 width=656,
@@ -302,7 +302,7 @@ sql_file="fugu.sql"
 The API has been generally available on Chromium-based browsers since version 61 (<a hreflang="en" href="https://caniuse.com/web-usb">current browser support for the Web USB API</a>). 182 desktop and 155 mobile sites use this API, for example, the PWA <a hreflang="en" href="https://app.vysor.io/#/">Vysor</a> that allows you to mirror the screen of an Android or iOS device—all without installing any additional software on your computer.
 
 {{ figure_markup(
-image="web-usb.png",
+image="web-usb.jpg",
 caption='The Vysor PWA uses Web USB to connect to USB devices and project their screen contents onto the desktop.',
 description='Screenshot of the Vysor web application with a modal dialog open listing the connected USB devices.',
 width=699,
@@ -335,7 +335,7 @@ sql_file="fugu.sql"
 The API is generally available on Chromium-based browsers on Chrome OS, Android, macOS, and Windows starting from version 56 (<a hreflang="en" href="https://caniuse.com/web-bluetooth">current browser support for the Web Bluetooth API</a>). On Linux, the API is provided behind a flag. 71 desktop and 45 mobile sites make use of this capability. For instance, the <a hreflang="en" href="https://web.brewfather.app/">Brewfather</a> PWA targeted at home brewers allows them to send a beer recipe wirelessly over to a Bluetooth-enabled brewing system. Again, all without installing any third-party software.
 
 {{ figure_markup(
-image="web-bluetooth.png",
+image="web-bluetooth.jpg",
 caption='The Brewfather app uses Web Bluetooth to send recipes to a brew controller.',
 description='Screenshot showing the Brewfather web application that displays a beer recipe, and the ability to start brewing.',
 width=699,
@@ -415,7 +415,7 @@ height=822
 The analysis also identified the websites using the most capabilities from the HTTP Archive data set. The detection script is capable of identifying 30 Fugu APIs in total. So, let's give an award to the websites that use the most Fugu APIs. The excitement is building!
 
 {{ figure_markup(
-image="fugu-podium.png",
+image="fugu-podium.jpg",
 caption='The three websites that use the most Fugu APIs.',
 description="The image shows a winner's podium with screenshots of the three websites that use the most Fugu APIs.",
 width=1050,
