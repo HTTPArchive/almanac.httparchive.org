@@ -44,6 +44,11 @@
     "date_modified": "2021-10-19T00:00:00.000Z",
     "hash": "fde8c167f5f8c045bd8bac49403097e4"
   },
+  "/static/js/webmentions.js": {
+    "date_published": "2021-12-01T00:00:00.000Z",
+    "date_modified": "2021-12-01T00:00:00.000Z",
+    "hash": "ae71637d852c61b623e04d1ad356edb1"
+  },
   "/static/pdfs/web_almanac_2019_en.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
@@ -111,6 +116,23 @@
     "date_modified": "2021-11-17T00:00:00.000Z",
     "hash": "e0e686eb0ecd0be1c821b77639f6b21f",
     "size": 24
+  },
+  "/static/pdfs/web_almanac_2021_en.pdf": {
+    "date_published": "2021-12-01T00:00:00.000Z",
+    "date_modified": "2021-12-01T00:00:00.000Z",
+    "hash": "498420da5941ab1c44da7875da6fb772",
+    "size": 20
+  },
+  "/static/pdfs/web_almanac_2021_en_cover_A5.pdf": {
+    "date_published": "2021-12-01T00:00:00.000Z",
+    "date_modified": "2021-12-01T00:00:00.000Z",
+    "hash": "56a98386dba04bf29b7c053818297f3a"
+  },
+  "/static/pdfs/web_almanac_2021_en_print_A5.pdf": {
+    "date_published": "2021-12-01T00:00:00.000Z",
+    "date_modified": "2021-12-01T00:00:00.000Z",
+    "hash": "33feb3a1df124cfee1f4c9fb439ad5b8",
+    "size": 20
   },
   "en/2019/chapters/accessibility.html": {
     "date_published": "2019-11-11T00:00:00.000Z",
