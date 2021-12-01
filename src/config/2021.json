@@ -61,8 +61,7 @@
           "part": "II",
           "chapter_number": "7",
           "title": "SEO",
-          "slug": "seo",
-          "todo": "true"
+          "slug": "seo"
         },
         {
           "part": "II",
@@ -1213,8 +1212,10 @@
       "teams": [
         "authors"
       ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/37291453?v=4&s=200",
       "github": "Tomek3c",
-      "twitter": "TomekRudzki"
+      "twitter": "TomekRudzki",
+      "website": "https://tomekseo.com/"
     },
     "tosinarasi": {
       "name": "Tosin Arasi",

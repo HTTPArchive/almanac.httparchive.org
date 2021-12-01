@@ -1,4 +1,4 @@
-#standardSQL 
+#standardSQL
 # Robots txt user agent usage BY rank
 
 # returns all the data we need from _robots_txt
@@ -21,51 +21,61 @@ try {
 return result;
 ''';
 
+WITH totals AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    rank_grouping,
+    COUNT(0) AS rank_page_count
+  FROM
+    `httparchive.summary_pages.2021_07_01_*`,
+    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+  WHERE
+    rank <= rank_grouping
+  GROUP BY
+    client,
+    rank_grouping
+),
+
+robots AS (
+  SELECT
+    _TABLE_SUFFIX,
+    url,
+    getRobotsTxtUserAgents(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_user_agent_info
+  FROM
+    `httparchive.pages.2021_07_01_*`
+),
+
+base AS (
+  SELECT DISTINCT
+    _TABLE_SUFFIX AS client,
+    user_agent,
+    rank,
+    url AS page
+  FROM
+    robots,
+    UNNEST(robots_txt_user_agent_info.user_agents) AS user_agent
+  JOIN
+    `httparchive.summary_pages.2021_07_01_*`
+  USING (_TABLE_SUFFIX, url)
+)
 
 SELECT
   client,
   user_agent,
   rank_grouping,
+  CASE
+    WHEN rank_grouping = 10000000 THEN 'all'
+    ELSE FORMAT("%'d", rank_grouping)
+  END AS ranking,
   rank_page_count,
   COUNT(DISTINCT page) AS pages,
-  SAFE_DIVIDE(COUNT(DISTINCT page),
-    rank_page_count) AS pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    rank_page_count,
-    url AS page,
-    rank
-  FROM
-    `httparchive.summary_pages.2021_07_01_*`
-  LEFT JOIN (
-    SELECT
-      rank,
-      COUNT(DISTINCT(url)) AS rank_page_count
-    FROM
-      `httparchive.summary_pages.2021_07_01_*`
-    GROUP BY
-      rank )
-  USING
-    (rank))
-LEFT JOIN (
-  SELECT DISTINCT
-    _TABLE_SUFFIX AS client,
-    user_agent,
-    url AS page
-  FROM (
-    SELECT
-      _TABLE_SUFFIX,
-      url,
-      getRobotsTxtUserAgents(JSON_EXTRACT_SCALAR(payload,
-          '$._robots_txt')) AS robots_txt_user_agent_info
-    FROM
-      `httparchive.pages.2021_07_01_*`),
-    UNNEST(robots_txt_user_agent_info.user_agents) AS user_agent )
-USING
-  (client,
-    page),
-  UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_grouping
+  SAFE_DIVIDE(COUNT(DISTINCT page), rank_page_count) AS pct
+FROM
+  base,
+  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+JOIN
+  totals
+USING (client, rank_grouping)
 WHERE
   rank <= rank_grouping
 GROUP BY
@@ -74,7 +84,7 @@ GROUP BY
   rank_grouping,
   rank_page_count
 HAVING
-  pages > 50
+  pages > 500
 ORDER BY
   rank_grouping,
   pct DESC
