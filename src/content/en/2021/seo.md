@@ -755,7 +755,6 @@ Using an HTTP server response is the most popular way of implementing `content-l
 
 Using the HTML tag is less popular, with content-language appearing on just 3.3% of mobile websites.
 
-
 ## Conclusion
 
 Websites are slowly improving from an SEO perspective. Likely due to a combination of websites improving their SEO and the platforms hosting websites also improving. The web is a big and messy place so there's still a lot to do, but it's nice to see consistent progress.
