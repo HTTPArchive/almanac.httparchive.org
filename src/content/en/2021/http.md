@@ -35,11 +35,7 @@ These data points provide a snapshot for 2021 on the HTTP usage across the web a
 
 ### Evolution of HTTP
 
-It's been six years since the IETF introduced us to HTTP/2, and it's worth understanding how we got to HTTP/2 in the first place. Thirty years ago (in 1991) we were first introduced to HTTP 0.9. HTTP has come a long way since 0.9, which was limited in capabilities. 0.9 was used for one-line protocol transfers, which only supported the GET method, and had no support for headers nor status codes. Responses were only provided in hypertext. Five years later, this was enhanced with HTTP/1.0. The 1.0 version contains most of the protocol we know now, including response headers, status codes, and the GET, HEAD and POST methods.
-
-
-{# TODO - as someone not knowledgable in this topic, I'd find a link to IETF helpful. Or a definition in what that acroynm is #}
-{# TODO - should GET/HEAD/POST be in inline code tags? (`GET`) #}
+It's been six years since the <a hreflang="en" href="https://www.ietf.org/">Internet Engineering Task Force (IETF)</a> introduced us to <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc7540">HTTP/2</a>, and it's worth understanding how we got to HTTP/2 in the first place. Thirty years ago (in 1991) we were first introduced to HTTP 0.9. HTTP has come a long way since 0.9, which was limited in capabilities. 0.9 was used for one-line protocol transfers, which only supported the GET method, and had no support for headers nor status codes. Responses were only provided in hypertext. Five years later, this was enhanced with HTTP/1.0. The 1.0 version contains most of the protocol we know now, including response headers, status codes, and the `GET`, `HEAD` and `POST` methods.
 
 A problem not addressed in 1.0 was that the connection was terminated immediately after the response was received. This meant each request was required to open a new connection, perform TCP handshakes, and close the connection after the data was received. This major inefficiency saw HTTP/1.1 introduced only a year later in 1997, which allowed for persistent connections to be made, which can be reused once opened. This version served its purpose for 18 years, without any changes introduced until 2015. During this time Google experimented with <a hreflang="en" href="https://en.wikipedia.org/wiki/SPDY">SPDY</a>—a complete reimagining of how HTTP messages were sent. This was eventually formalized into HTTP/2.
 
@@ -120,9 +116,7 @@ HTTP/2 adoption by third-party content is so heavily skewed, that beyond the 40t
 
 According to <a hreflang="en" href="https://caniuse.com/http2">caniuse.com</a>, 97% of browsers support HTTP/2 globally. HTTPS is required by browsers for HTTP/2 support, which may have been a blocker in the past. However, <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#pctHttps">93% of sites on desktop and 91% on mobile</a> all support HTTPS. This is up 5% from last year in 2020 and was up 6% in the year prior between 2019 and 2020. Implementation of HTTPS is no longer a blocker.
 
-It's important to understand that with such a high adoption across browsers, and high HTTPS adoption, the limiting factor in even greater adoption of HTTP/2 is still largely dictated by the server implementation as, despite the rapid increase in HTTP/2 usage, split out by web server the adoption figures show a much more fragmented story.
-
-{# TODO - any way to split the above sentence into 2? its a bit of a run on #}
+It's important to understand that with such a high adoption across browsers, and high HTTPS adoption, the limiting factor in even greater adoption of HTTP/2 is still largely dictated by the server implementation. Despite the rapid increase in HTTP/2 usage, when you split it out by web server, the adoption figures show a much more fragmented story.
 
 {{ figure_markup(
   image="server-http2-or-above-usage.png",
@@ -286,9 +280,7 @@ Another feature put forward in HTTP/2 was header compression. HTTP/1.1 proved th
 
 In terms of the most common response headers received, the top five most common headers are: `date`, `content-type`, `server`, `cache-control` and `content-length` respectively. The most common non-standard header is Cloudflare's `cf-ray`, followed by Amazon's` x-amz-cf-pop `and `X-amz-cf-id`. Outside of content information (`length`, `type`, `encoding`), caching policies (`expires`, `etag`, `last-modified`) and origin policies (STS, [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin)), [`expect-ct`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expect-CT) reporting certificate transparency and the CSP [`report-to`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-to) headers are some of the most commonly used headers.
 
-While some of these headers (e.g., `date` or `content-length`) may change with every request, the vast majority will send the send, or a limited number of variations for every request and this is where HTTP/2 header compression can provide benefit. Similarly request headers often send the same data (such as the long `user-agent` header) over and over for every request. Therefore, to consider the impact we must look at the number of requests pages are making.
-
-{# TODO - is "send the send" right? #}
+While some of these headers (e.g., `date` or `content-length`) may change with every request, the vast majority will send the same, or a limited number of variations for every request and this is where HTTP/2 header compression can provide benefit. Similarly request headers often send the same data (such as the long `user-agent` header) over and over for every request. Therefore, to consider the impact we must look at the number of requests pages are making.
 
 {{ figure_markup(
   image="number-of-http-requests-by-percentile.png",
