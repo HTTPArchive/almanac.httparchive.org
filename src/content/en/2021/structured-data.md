@@ -100,7 +100,7 @@ Before we explore specific usage across the various structured data types, we sh
 
 Many of the pages we've evaluated are from websites which use a [Content Management System](./cms) (CMS), such as <a hreflang="en" href="https://wordpress.org/">WordPress</a> or <a hreflang="en" href="https://www.drupal.org/">Drupal</a>. These systems—or the themes/plugins/modules which enhance their functionality—are often responsible for generating the [HTML markup](./markup) which contains the structured data which we're analyzing.
 
-That means that our findings are unavoidably skewed to aligning with the behaviors and output of the most prevalent CMS'. For example, many websites using Drupal automatically output structured data in the form of RDFa, and WordPress (which powers [a significant percentage of websites](./cms{# TODO - add deeplink #})) often includes microformats markup in template code. This contributes significantly to the shape of our findings.
+That means that our findings are unavoidably skewed to aligning with the behaviors and output of the most prevalent CMS'. For example, many websites using Drupal automatically output structured data in the form of RDFa, and WordPress (which powers [a significant percentage of websites](./cms#top-cmss)) often includes microformats markup in template code. This contributes significantly to the shape of our findings.
 
 #### 2. The limitations of homepage-only data
 
