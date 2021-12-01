@@ -5,7 +5,7 @@ description: The HTTP chapter of the 2021 Web Almanac covers data on historical 
 authors: [dominiclovell]
 reviewers: [tunetheweb, rmarx]
 analysts: [tunetheweb]
-editors: []
+editors: [shantsis]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1pCdpndXTXexSIZLmVc-aUbp5PcHhZ83hbEEfmDyfD0U/
 dominiclovell_bio: Dominic Lovell is currently a Solutions Engineering Manager at Akamai Technologies, and has been working for a number of years to make sites more performant and safer across the web. You can find him tweeting [@dominiclovell](https://twitter.com/dominiclovell), or you can connect with him on <a hreflang="en" href="https://www.linkedin.com/in/dominiclovell/">LinkedIn</a>.
@@ -21,7 +21,7 @@ unedited: true
 
 ## Introduction
 
-The HTTP protocol is one of key parts of the web. HTTP itself was unchanged for nearly two decades after HTTP/1.1 was introduced in 1997 and it wasn't until 2015, with the introduction of HTTP/2, that saw a major design change to the way HTTP was implemented. HTTP/2 was designed to introduce changes primarily at the transport level of the protocol. These protocol changes, while significant in how they worked, still allowed for backward compatibility between versions.
+The HTTP protocol is one of key parts of the web. HTTP itself was unchanged for nearly two decades after HTTP/1.1 was introduced in 1997. It wasn't until 2015 with the introduction of HTTP/2, that saw a major design change to the way HTTP was implemented. HTTP/2 was designed to introduce changes primarily at the transport level of the protocol. These protocol changes, while significant in how they worked, still allowed for backward compatibility between versions.
 
 This year we again take a closer look at HTTP/2, discussing some of its major features. We then look at some of the benefits of HTTP/2, and why it has been adopted heavily across the web performance community. While HTTP/2 aimed at solving many problems with HTTP, including connection limits, better header compression, and binary support which allowed for better payload encapsulation, not all features put forward were successful in their design.
 
@@ -31,11 +31,11 @@ Increased support for HTTP/3 over the past year has allowed for introspection on
 
 Some of the data points the Web Almanac aims to answer across the HTTP chapter include the adoption across HTTP versions, support from the key software vendors and CDN companies, and how this distribution between first and third parties influences adoption. We also take a look at usage across the top ranked sites across the web, including metrics on HTTP attributes such as connections, server push and response data size.
 
-These data points provide a snapshot for 2021 on the HTTP usage across the web and how the protocol is evolving across its major versions, to then provide insight into the adoption of major features in the coming years.
+These data points provide a snapshot for 2021 on the HTTP usage across the web and how the protocol is evolving across its major versions. They then provide insight into the adoption of major features in the coming years.
 
 ### Evolution of HTTP
 
-It's been six years since the IETF introduced us to HTTP/2 and it's worth understanding how we got to HTTP/2 in the first place. It was thirty years ago, in 1991 that we were first introduced to HTTP 0.9. HTTP has come a long way since 0.9, which was limited in capabilities. 0.9 was used for one-line protocol transfers, which only supported the GET method, and had no support for headers nor status codes. Responses were only provided in hypertext. Five years later, this was enhanced with HTTP/1.0. The 1.0 version contains most of the protocol we know now, including response headers, status codes, and the GET, HEAD and POST methods.
+It's been six years since the <a hreflang="en" href="https://www.ietf.org/">Internet Engineering Task Force (IETF)</a> introduced us to <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc7540">HTTP/2</a>, and it's worth understanding how we got to HTTP/2 in the first place. Thirty years ago (in 1991) we were first introduced to HTTP 0.9. HTTP has come a long way since 0.9, which was limited in capabilities. 0.9 was used for one-line protocol transfers, which only supported the GET method, and had no support for headers nor status codes. Responses were only provided in hypertext. Five years later, this was enhanced with HTTP/1.0. The 1.0 version contains most of the protocol we know now, including response headers, status codes, and the `GET`, `HEAD` and `POST` methods.
 
 A problem not addressed in 1.0 was that the connection was terminated immediately after the response was received. This meant each request was required to open a new connection, perform TCP handshakes, and close the connection after the data was received. This major inefficiency saw HTTP/1.1 introduced only a year later in 1997, which allowed for persistent connections to be made, which can be reused once opened. This version served its purpose for 18 years, without any changes introduced until 2015. During this time Google experimented with <a hreflang="en" href="https://en.wikipedia.org/wiki/SPDY">SPDY</a>—a complete reimagining of how HTTP messages were sent. This was eventually formalized into HTTP/2.
 
@@ -53,13 +53,13 @@ HTTP/2 aimed to address many of the problems web developers were facing when try
   )
 }}
 
-In the thirty years since HTTP version 0.9, there has been a shift in the protocol's adoption. With over 6 million web pages analyzed, the HTTP archive found only a single instance of HTTP 0.9 being used for the initial page request, only a couple of thousand pages still using 1.0, almost 40% of pages were still using version 1.1 however, with the remaining 60% using HTTP/2 or above. HTTP/2 adoption is thus up 10% since the same analysis was performed in 2020.
+In the thirty years since HTTP version 0.9, there has been a shift in the protocol's adoption. With over 6 million web pages analyzed, the HTTP Archive found only a single instance of HTTP 0.9 being used for the initial page request, only a couple of thousand pages still using 1.0. Almost 40% of pages were still using version 1.1 however, with the remaining 60% using HTTP/2 or above. HTTP/2 adoption is thus up 10% since the same analysis was performed in 2020.
 
 <p class="note">Note: Due to the way HTTP/3 works, as we will discuss below, and how our crawl works with a fresh instance each time, HTTP/3 is unlikely to be used for the initial page request, or even subsequent requests. Therefore, we report some statistics in this chapter as "HTTP/2+" to indicate HTTP/2 or HTTP/3 might be used in the real world. We will investigate how much HTTP/3 is actually supported (even if not used in our crawl) later in the chapter.</p>
 
 ### Adoption by request
 
-The initial page request is supplemented by many other requests, often served by third parties, which may have different, often better, protocol support. Due to this we have seen in the past years, that when looking at request level, rather than just for the initial page, usage is much higher, and this is again the case this year:
+The initial page request is supplemented by many other requests, often served by third parties, which may have different, often better, protocol support. Due to this we have seen in the past years that when looking at request level, rather than just for the initial page, usage is much higher, and this is again the case this year.
 
 {{ figure_markup(
   image="http-version-requests.png",
@@ -114,9 +114,9 @@ HTTP/2 adoption by third-party content is so heavily skewed, that beyond the 40t
 
 ### Adoption by servers
 
-According to <a hreflang="en" href="https://caniuse.com/http2">caniuse.com</a>, 97% of browsers support HTTP/2 globally. HTTPS is required by browsers for HTTP/2 support, which may have been a blocker in the past, however, <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#pctHttps">93% of sites on desktop and 91% on mobile</a> all support HTTPS. This is up 5% from last year in 2020 and was up 6% in the year prior between 2019 and 2020. Implementation of HTTPS is no longer a blocker.
+According to <a hreflang="en" href="https://caniuse.com/http2">caniuse.com</a>, 97% of browsers support HTTP/2 globally. HTTPS is required by browsers for HTTP/2 support, which may have been a blocker in the past. However, <a hreflang="en" href="https://httparchive.org/reports/state-of-the-web#pctHttps">93% of sites on desktop and 91% on mobile</a> all support HTTPS. This is up 5% from last year in 2020 and was up 6% in the year prior between 2019 and 2020. Implementation of HTTPS is no longer a blocker.
 
-It's important to understand that with such a high adoption across browsers, and high HTTPS adoption, the limiting factor in even greater adoption of HTTP/2 is still largely dictated by the server implementation as, despite the rapid increase in HTTP/2 usage, split out by web server the adoption figures show a much more fragmented story.
+It's important to understand that with such a high adoption across browsers, and high HTTPS adoption, the limiting factor in even greater adoption of HTTP/2 is still largely dictated by the server implementation. Despite the rapid increase in HTTP/2 usage, when you split it out by web server, the adoption figures show a much more fragmented story.
 
 {{ figure_markup(
   image="server-http2-or-above-usage.png",
@@ -142,11 +142,11 @@ If a site uses the Apache HTTP server, it is unlikely to have upgraded to HTTP/2
   )
 }}
 
-In fact, of all servers reporting a HTTP/1.1 response, the server with the largest majority at 20%, are Apache servers. As Apache is one of the most popular web servers on the web, it suggests that older installations of Apache may be holding up the web's ability to move forward and adopt the new protocol in full.
+In fact, of all servers reporting a HTTP/1.1 response, the server with the largest majority are Apache servers at 20%. As Apache is one of the most popular web servers on the web, it suggests that older installations of Apache may be holding up the web's ability to move forward and adopt the new protocol in full.
 
 ### Adoption by CDNs
 
-CDNs are often pivotal to drive adoption of new protocols like HTTP/2, and looking at the stats proves this:
+CDNs are often pivotal to drive adoption of new protocols like HTTP/2, and looking at the stats proves this.
 
 {{ figure_markup(
   image="top-cdns-and-http2-or-above-usage.png",
@@ -176,7 +176,7 @@ The high adopters are typically services around ad networks, analytics, content 
   )
 }}
 
-There is also a direct correlation between a site's page rank in the HTTP archive and its support for HTTP/2. 82% of sites listed in the top 1,000 have HTTP/2 enabled. Over 76% in the top 10k websites, followed by 66% of sites in the top 100k, and at least 60% of sites in the top 1 million will have HTTP/2 enabled. This suggests that higher ranking sites have enabled HTTP/2 for the security and performance benefits offered. The higher ranking a site, the more likely it is to have HTTP/2 enabled.
+There is also a direct correlation between a site's page rank in the HTTP Archive and its support for HTTP/2. 82% of sites listed in the top 1,000 have HTTP/2 enabled. Over 76% in the top 10k websites, followed by 66% of sites in the top 100k, and at least 60% of sites in the top 1 million will have HTTP/2 enabled. This suggests that higher ranking sites have enabled HTTP/2 for the security and performance benefits offered. The higher ranking a site, the more likely it is to have HTTP/2 enabled.
 
 
 ## Digging a little deeper into HTTP/2
@@ -185,7 +185,7 @@ One of main benefits of HTTP/2 is that it is binary instead of a text-based prot
 
 By chunking messages into frames, and interleaving those frames on the wire, a single TCP connection can be used to send and receive multiple messages in one connection. This helps eliminate the need for domain hacks and other HTTP/1.1 performance workarounds.
 
-However, this completely new way of sending HTTP traffic, means that HTTP/2 is not compatible with previous versions and so clients and servers must each know they are talking HTTP/2. HTTPS has been adopted as the de facto standard in HTTP/2. While HTTP/2 can be implemented without HTTPS, all major browser vendors ensure HTTP/2 is used over HTTPS. HTTP/2 also uses <a hreflang="en" href="https://en.wikipedia.org/wiki/Application-Layer_Protocol_Negotiation">ALPN</a>, which allows for faster-encrypted connections as the protocol can be determined during the initial connection.
+However, this completely new way of sending HTTP traffic means that HTTP/2 is not compatible with previous versions, and so clients and servers must each know they are talking HTTP/2. HTTPS has been adopted as the de facto standard in HTTP/2. While HTTP/2 can be implemented without HTTPS, all major browser vendors ensure HTTP/2 is used over HTTPS. HTTP/2 also uses <a hreflang="en" href="https://en.wikipedia.org/wiki/Application-Layer_Protocol_Negotiation">ALPN</a>, which allows for faster-encrypted connections as the protocol can be determined during the initial connection.
 
 ### Switching between protocols
 
@@ -264,7 +264,7 @@ The HTTP Archive data suggests that 34% of desktop pages are using TLS 1.2, whil
 
 ### Reduce headers
 
-Another feature put forward in HTTP/2 was header compression. HTTP/1.1 proved that there were many duplicate or repeating HTTP headers being sent over the wire. These headers can be particularly large when dealing with cookies. To reduce this overhead, HTTP/2 leverages the HPACK compression format to reduce the size of headers sent and received. Both client and server maintain an index of often used and previously transferred headers in a lookup table and can refer to the index of those values in the table, rather than sending the individual values back and forth. This saves in the number of bytes sent over the wire.
+Another feature put forward in HTTP/2 was header compression. HTTP/1.1 proved that there were many duplicate or repeating HTTP headers being sent over the wire. These headers can be particularly large when dealing with cookies. To reduce this overhead, HTTP/2 leverages the <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc7541">HPACK compression format</a> to reduce the size of headers sent and received. Both client and server maintain an index of often used and previously transferred headers in a lookup table and can refer to the index of those values in the table, rather than sending the individual values back and forth. This saves in the number of bytes sent over the wire.
 
 {{ figure_markup(
   image="most-popular-http-response-headers.png",
@@ -280,7 +280,7 @@ Another feature put forward in HTTP/2 was header compression. HTTP/1.1 proved th
 
 In terms of the most common response headers received, the top five most common headers are: `date`, `content-type`, `server`, `cache-control` and `content-length` respectively. The most common non-standard header is Cloudflare's `cf-ray`, followed by Amazon's` x-amz-cf-pop `and `X-amz-cf-id`. Outside of content information (`length`, `type`, `encoding`), caching policies (`expires`, `etag`, `last-modified`) and origin policies (STS, [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin)), [`expect-ct`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expect-CT) reporting certificate transparency and the CSP [`report-to`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-to) headers are some of the most commonly used headers.
 
-While some of these headers (e.g., `date` or `content-length`) may change with every request, the vast majority will send the send, or a limited number of variations for every request and this is where HTTP/2 header compression can provide benefit. Similarly request headers often send the same data (such as the long `user-agent` header) over and over for every request. Therefore, to consider the impact we must look at the number of requests pages are making.
+While some of these headers (e.g., `date` or `content-length`) may change with every request, the vast majority will send the same, or a limited number of variations for every request and this is where HTTP/2 header compression can provide benefit. Similarly request headers often send the same data (such as the long `user-agent` header) over and over for every request. Therefore, to consider the impact we must look at the number of requests pages are making.
 
 {{ figure_markup(
   image="number-of-http-requests-by-percentile.png",
@@ -306,7 +306,7 @@ Why our analysis is currently unable to measure the exact impact of Header compr
   )
 }}
 
-The median webpage returns 34 KB worth of headers for desktop and 31 KB for mobile. At the 90th percentile this increases to 98 KB and 94 KB for desktop and mobile respectively. However, the largest instance of response header was over 5.38MB. Many sites were discovered having over 1MB in response headers. Typically, these large response headers are due to overweight `CSP` or `P3P` headers, suggesting the complexities or mismanagement of these headers across websites. In other extreme examples, overweight headers were due to misconfigurations or errors in the application that duplicate multiple `Set-Cookies` or `Cache-Control` settings.
+The median webpage returns 34 KB worth of headers for desktop and 31 KB for mobile. At the 90th percentile this increases to 98 KB and 94 KB for desktop and mobile respectively. However, the largest instance of response header was over 5.38 MB. Many sites were discovered having over 1 MB in response headers. Typically, these large response headers are due to overweight `CSP` or `P3P` headers, suggesting the complexities or mismanagement of these headers across websites. In other extreme examples, overweight headers were due to misconfigurations or errors in the application that duplicate multiple `Set-Cookies` or `Cache-Control` settings.
 
 ### Prioritization
 
@@ -331,7 +331,7 @@ Since HTTP/2 there has been an updated proposal to prioritizations, with the <a 
 
 ### The death of HTTP/2 Push?
 
-Another major feature was the introduction of the server push mechanism. HTTP/2 server push allows the server to send multiple resources in response to a client request. Thus, the server informs the client about assets it may need before the client becomes aware they exist. The common use case is to push critical assets such as JavaScript & CSS to the client before the browser has parsed the base HTML and identified those critical assets and subsequently requested them itself. The client also has the option to decline the push message.
+Another major feature was the introduction of the server push mechanism. HTTP/2 server push allows the server to send multiple resources in response to a client request. Thus, the server informs the client about assets it may need before the client becomes aware they exist. The common use case is to push critical assets such as JavaScript and CSS to the client before the browser has parsed the base HTML and identified those critical assets and subsequently requested them itself. The client also has the option to decline the push message.
 
 Despite the promises of zero round trips, pre-emptive critical assets and the potential for performance upsides, HTTP/2 push has not lived up to the hype.
 
@@ -344,7 +344,7 @@ Despite the promises of zero round trips, pre-emptive critical assets and the po
 )
 }}
 
-When analyzed in 2019 HTTP/2 had little adoption, averaging around 0.5%. The following year in 2020, there was an increase to 0.85% adoption across desktop and 1.06% adoption on mobile. This year in 2021 numbers have slightly increased at 1.03% on desktop, and 1.25% on mobile. Relatively, mobile has seen a significant increase year on year, however at 1.25% overall adoption of HTTP/2 it is still negligible. At the page level, this sits at 64k and 93k requests for desktop and mobile respectively.
+When analyzed in 2019 HTTP/2 had little adoption, averaging around 0.5%. The following year in 2020, there was an increase to 0.85% adoption across desktop and 1.06% adoption on mobile. This year in 2021 the numbers have slightly increased at 1.03% on desktop, and 1.25% on mobile. Relatively, mobile has seen a significant increase year on year, however at 1.25% overall adoption of HTTP/2 it is still negligible. At the page level, this sits at 64k and 93k requests for desktop and mobile respectively.
 
 {{ figure_markup(
   image="preload-link-nopush-header-usage.png",
@@ -367,7 +367,7 @@ Patrick Meehan breaks down some of the problems <a hreflang="en" href="https://b
 #### Pushed assets
 
 {{ figure_markup(
-  image="http2-push-size",
+  image="http2-push-size.png",
   caption="HTTP/2 pushed kilobytes.",
   description="Bar chart showing the number of kilobytes pushed on mobile and desktop at various percentiles. At the 10th percentile 0 bytes are pushed for both desktop and mobile, at the 25th percentile 19 bytes are pushed on desktop and 0 on mobile, at the 50 it's 146 and 48 respectively, at the 75 it's 295 and 222, and finally at the 90th percentile 373 bytes are pushed for desktop and 323 for mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR8JQZybG-hShF-c20MeEPyPBeMbdjcYNWzm4juwcsvtubVk3kKT8KH26D1eEuFpvHbvRXEHZorS0ee/pubchart?oid=971663204&format=interactive",
@@ -381,7 +381,7 @@ In cases where items were pushed, the median size of the bytes that were pushed 
 While these numbers at the 90th percentile appear fine, it's when you start to review the number of pushes, it highlights the misuse of the push feature:
 
 {{ figure_markup(
-  image="http2-push-number",
+  image="http2-push-number.png",
   caption="HTTP/2 pushed kilobytes.",
   description="Bar chart showing the number of assets pushed on mobile and desktop at various percentiles. At the 10th percentile 1 resource is pushed for both desktop and mobile, at the 25th percentile it's 2 and 1 respectively, at the 50th percentile it's 4 and 3 at the 75th percentile it's 8 and 8 at the 90th percentile it's 21 and 16.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR8JQZybG-hShF-c20MeEPyPBeMbdjcYNWzm4juwcsvtubVk3kKT8KH26D1eEuFpvHbvRXEHZorS0ee/pubchart?oid=1039731009&format=interactive",
@@ -390,10 +390,10 @@ While these numbers at the 90th percentile appear fine, it's when you start to r
   )
 }}
 
-The median number of pushes is 4 and 3 across desktop and mobile. This moves to 8 at the 75% percentile and jumps to 21 and 16 at the 90th percentile. The 100% percentile sees an amazing 517 and 630 pushes being done by some sites, which highlights the dangers of the feature, particularly when considering push was originally designed to advertise a small number of critical assets early in the request.
+The median number of pushes is 4 and 3 across desktop and mobile respectively. This moves to 8 at the 75% percentile and jumps to 21 and 16 at the 90th percentile. The 100% percentile sees an amazing 517 and 630 pushes being done by some sites, which highlights the dangers of the feature, particularly when considering push was originally designed to advertise a small number of critical assets early in the request.
 
 {{ figure_markup(
-  image="http2-push-counts",
+  image="http2-push-counts.png",
   caption="HTTP/2 pushed counts.",
   description="Bar chart showing the number of assets pushed on mobile and desktop at various percentiles. At the 10th percentile 1 resource is pushed for both desktop and mobile, at the 25th percentile it's 2 and 1 respectively, at the 50th percentile it's 4 and 3 at the 75th percentile it's 8 and 8 at the 90th percentile it's 21 and 16.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR8JQZybG-hShF-c20MeEPyPBeMbdjcYNWzm4juwcsvtubVk3kKT8KH26D1eEuFpvHbvRXEHZorS0ee/pubchart?oid=1039731009&format=interactive",
@@ -423,7 +423,7 @@ Despite incremental adoption for HTTP/2 push year on year, it is likely that Goo
 
 ## HTTP/3
 
-HTTP/3 is the next advancement of HTTP/2 and builds upon its foundation with even more changes down throughout the protocol. The biggest change is the move away from TCP to a UDP-based transport protocol called QUIC. This allows quicker advancements in HTTP, without waiting for TCP implementations that are ingrained all across the internet to support them. For example, HTTP/2 introduced the concept of independent streams but, at a TCP level these were still part of one TCP stream, and so not truly independent. Changing TCP to support this, would take considerable time before it would be so widely support as to be safe to use. Therefore HTTP/3 switches to an alternative transport protocol. QUIC is similar to TCP in many ways, and basically re-builds all the many useful features of TCP, but with the addition of new features. QUIC is encrypted and delivered over the well-support, lightweight UDP transport protocol.
+HTTP/3 is the next advancement of HTTP/2 and builds upon its foundation with even more changes down throughout the protocol. The biggest change is the move away from TCP to a UDP-based transport protocol called QUIC. This allows quicker advancements in HTTP, without waiting for TCP implementations that are ingrained all across the internet to support them. For example, HTTP/2 introduced the concept of independent streams but, at a TCP level these were still part of one TCP stream, and so not truly independent. Changing TCP to support this would take considerable time before it would be so widely support as to be safe to use. Therefore HTTP/3 switches to an alternative transport protocol. QUIC is similar to TCP in many ways, and basically re-builds all the many useful features of TCP, but with the addition of new features. QUIC is encrypted and delivered over the well-support, lightweight UDP transport protocol.
 
 ### HTTP/3 Adoption
 
@@ -505,7 +505,7 @@ The HTTP Archive data suggests that this year saw a major uptake in adoption of 
 
 Despite the uptake on HTTP/2, the push features of HTTP/2 remain underutilized, due to the complexities of implementation, and we suggest that push may be in fact dead on arrival. At the same time, we have seen ongoing concerns with resource prioritization, and incorrect implementations outside the major CDN vendors. Complexities with prioritization remain so prevalent that it has been removed from the HTTP/3 specification.
 
-2021 also allowed us to take a closer inspection on the adoption of HTTP/3. Major players such as Google and Facebook have been rolling out their own support for HTTP/3 for a number of years. Wider adoption of HTTP/3 has been influenced by Akamai, Cloudflare, Fastly who have publicly been working to support HTTP/3 for other parts of the web.
+2021 also allowed us to take a closer inspection on the adoption of HTTP/3. Major players such as Google and Facebook have been rolling out their own support for HTTP/3 for a number of years. Wider adoption of HTTP/3 has been influenced by Akamai, Cloudflare, and Fastly who have publicly been working to support HTTP/3 for other parts of the web.
 
 HTTP/3 aims to build upon the improvements of HTTP/2, including the head-of-line blocking imposed by TCP, while also ensuring more parts of the protocol stack are secure with QUIC's tighter encapsulation of TLS 1.3. However, it is still early days for HTTP/3. We look forward to measuring the adoption of HTTP/3 in 2022, and believe it is likely to gain further traction as support for HTTP/2 becomes mainstream and people look to gain further improvements over current deployments.
 
