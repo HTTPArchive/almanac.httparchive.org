@@ -927,8 +927,8 @@ pre {
   color: #515660;
 }
 
-.webmention-replies-item,
-.webmention-mentions-item {
+.webmentions .reactions .webmention-replies-item,
+.webmentions .reactions .webmention-mentions-item {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -937,16 +937,9 @@ pre {
 
 .webmention-replies-item .webmention-author .webmention-author-avatar,
 .webmention-mentions-item .webmention-author .webmention-author-avatar {
-  position: absolute;
+  position: absolute; */
   top: 1rem;
   left: 0;
-}
-
-@media (max-width: 56.25em) {
-  .webmention-replies-item .webmention-author .webmention-author-avatar,
-  .webmention-mentions-item .webmention-author .webmention-author-avatar {
-    position: static;
-  }
 }
 
 /* Needed for Safari to hide the index properly */
