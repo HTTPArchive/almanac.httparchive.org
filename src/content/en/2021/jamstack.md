@@ -33,7 +33,7 @@ JavaScript based SSGs:
 * Nuxt.js
 * etc
 
-Old-fashioned SSGs:
+Traditional:
 * Eleventy
 * Hugo
 * Jekyll
@@ -53,16 +53,11 @@ It's worth mentioning some data disclaimers to consider when reading this chaper
 2. In our analysis, we can't get any info related to headless CMSs, hence we will not cover this either.
 3. We visualize SSG data using top 5 used SSGs based on number of sites built with these SSGs.
 
-Most of the data is represented for mobile and desktop websites. More information can be found in the [methodology selection](./methodology).
-
-{# TODO - what do you mean most? isn't it all desktop or mobile? #}
+More information can be found in the [methodology selection](./methodology).
 
 ## Adoption of SSGs
 
-SSG adoption is growing in general by 2x in year over year. In 2019 it was just 0.4% mobile and 0.3% desktop sites. In 2020 the number almost doubled, to 0.6% on mobile and 0.7% on desktop sites. In 2021 they have grown again: 1.1% of mobile and 0.9% of desktop sites.
-That underlines the trend of that technology. For example, this year a company like Vercel raised a $104M series C round and $150M in round D of investment to build a better web with modern technologies like Next.js. Jamstack oriented CDN provider Netlify raised $105M in their series D of investment. Hence, it's expected that numbers of Jamstack adoption will grow even higher next year.
-
-{# TODO - i think you need a link to source your examples #}
+SSG adoption is growing in general by 2x in year over year. In 2019 it was just 0.4% mobile and 0.3% desktop sites. In 2020 the number almost doubled, to 0.6% on mobile and 0.7% on desktop sites. In 2021 they have grown again: 1.1% of mobile and 0.9% of desktop sites. That underlines the trend of that technology. For example, this year <a hreflang="en" href="https://vercel.com/blog/series-c-102m-continue-building-the-next-web">Vercel raised a $102M in series C round</a> and a further <a hreflang="en" href="https://vercel.com/blog/vercel-funding-series-d-and-valuation">$150M in round D</a> of investment to build a better web with modern technologies like Next.js. Jamstack oriented CDN provider <a hreflang="en" href="https://www.netlify.com/press/netlify-raises-usd105-million-to-transform-development-for-the-modern-web">Netlify raised $105M in their series D</a> of investment. Hence, it's expected that numbers of Jamstack adoption will grow even higher next year.
 
 {{ figure_markup(
   image="year-over-year-adoption.png",
@@ -177,9 +172,7 @@ We can further break down by subregions to observe additional trends.
   height=794
 ) }}
 
-It's no surprise that first in the list is Northern America and USA location and driver of technologies. Most companies who invented SSGs are in the USA. But surprisingly, Western Europe is in second place and has 10k SSG mobile sites versus 17k for Northern America, but almost the same adoption level at 1.1%.
-
-{# TODO - first sentence confuses me #}
+The list is ordered by the total number of SSG sites, but shows those as a percentage of all sites in that region. It's no surprise that top of the list is Northern America as most companies who invented SSGs are in the USA. However, as a percentage of all sites they are a a lower regions with only 1.1% of sites having adopted Jamstack. But surprisingly, Western Europe is in second place and has a similar low percentage adoption compared to some of the sub regions further down the list.
 
 The tail also shows great results. Subregions with lower number of sites in general adopt technology even broader, like 4.8% of Micronesia sites.
 
@@ -205,9 +198,7 @@ The 7 most popular CDN providers for SSGs are:
 
 Jamstack CDN services are not just for network delivery. They provide a lot of functionality to allow developers to easy deploy and manage Jamstack sites. For example, Netlify provide easy to use functionality to deploy sites in scope of their service so developers can just update the code and the continuous deployment process is managed for them. <a hreflang="en" href="https://bejamas.io/compare/netlify-vs-vercel/">Jamstack CDNs provide many other features</a> such as _serverless functions_, _A/B testing_ etc.
   
-On the other hand, Cloudflare, Akamai, AWS are not only used for pure serving as CDN either, but can also provide protection service, DNS balancing and more. However, since we can't detect how exactly Cloudflare, Akamai, and AWS are used, results could be false positives if we look at them as Jamstack enablers, since the "Jamstack" part could be handled on origin servers and so not actually on these services.
-
-{# TODO - can we divide that last sentence into 2 so it's not a run on? #}
+On the other hand, Cloudflare, Akamai, AWS are not only used purely for content deliver either, but can also provide protection service, DNS balancing and more. However, since we can't detect how exactly Cloudflare, Akamai, and AWS are used, results could be false positives if we look at them as Jamstack enablers. The "Jamstack" part could be handled on origin servers and so not actually on these services.
 
 {{ figure_markup(
   image="ssg-distribution-over-cdn.png",
@@ -220,10 +211,7 @@ On the other hand, Cloudflare, Akamai, AWS are not only used for pure serving as
 
 {# TODO - this figure description should be described more #}
 
-Next.js, is the most popular, mostly served by Cloudflare, Vercel, and AWS. Most of Gatsby's sites use Netlify, AWS, and Cloudflare.
-Nuxt.js sites preferred to be served by Cloudflare, AWS, and Netlify. Hugo mostly uses Netlify, and Jekyll as no surprise mostly on GitHub.
-
-{# TODO - I did not understand the last sentence, is the comma used correctly? #}
+Next.js, is the most popular, mostly served by Cloudflare, Vercel, and AWS. Most of Gatsby's sites use Netlify, AWS, and Cloudflare. Nuxt.js sites preferred to be served by Cloudflare, AWS, and Netlify. Hugo mostly uses Netlify, and it's no surprised that Jekyll is used mostly on GitHub.
 
 On the following graph we show the relative split of CDNs used for popular CDNs:
 
@@ -263,9 +251,7 @@ All Lighthouse scores are simulated testing data from our crawl. Hence, real-use
 
 {# TODO - this figure description should be described more #}
 
-Median performance score for all SSGs across mobile varies. The top 3 SSGs with data can't even pass 40 score. Since they are pretty much popular in top ranking sites, and distributed all around the world, as we saw on data before, we can assumed that they are used across many different devices and networks. We can expect more out-of-the-box improvements like <a hreflang="en" href="https://nextjs.org/docs/basic-features/image-optimization">Next.js image component</a> to help performance.
-
-{# TODO - there needs to be some grammar fix in the paragraph above but I didn't understand it #}
+The median performance score for all SSGs across mobile varies. The top 3 SSGs with by popularity can't even surpass a score of 40. Since they are used in top ranking sites and since users a likely distributed all around the world, we can assumed that they are used across many different devices and networks. We can expect more out-of-the-box improvements like <a hreflang="en" href="https://nextjs.org/docs/basic-features/image-optimization">Next.js image component</a> to help performance.
 
 Jekyll is a stand out, achieving a score of almost 70 which is a great result for such a mastodon in the SSG area. Learn more about <a hreflang="en" href="https://web.dev/lighthouse-performance/">Lighthouse performance audit</a> to understand exactly what measures are included in this score.
 
@@ -490,9 +476,7 @@ Lodash is heavily used and was present among all SSGs up to 10% for Gatsby.
 {# TODO - this figure description should be described more #}
 
 On the other hand, CSS is slightly heavier than Hugo and Jekyll.
-Since of the benefits of styled-components is clean none duplicated CSS, it can be a good explaining why CSS size for these JavaScript SSGs are lower. One more hypothesis, old fashined SSGs use old fashion way for handling interactions and animations using CSS. JavaScript based use more JavaScript in ganaral, hence it might be used to replace functionlity that can be implemented with CSS.
-
-{# TODO - "none duplicated"? not "non"? #}
+Since of the benefits of styled-components is clean, non-repetitive CSS, this could explain why CSS size for these JavaScript SSGs are lower. One more hypothesis is that old fashioned SSGs use old fashion methods for handling interactions and animations using CSS. JavaScript-based SSGs use more JavaScript in general, hence they might more often be used to replace functionality that could be implemented with CSS.
 
 ### Images
 
