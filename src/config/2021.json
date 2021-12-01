@@ -3,7 +3,7 @@
     {
       "is_live": true,
       "supported_languages": ["en","es","fr","hi","it","ja","nl","pt","ru","tr","uk","zh-CN","zh-TW"],
-      "ebook_languages": []
+      "ebook_languages": ["en"]
     }
   ],
   "outline": [
@@ -40,13 +40,19 @@
         {
           "part": "I",
           "chapter_number": "5",
+          "title": "Media",
+          "slug": "media"
+        },
+        {
+          "part": "I",
+          "chapter_number": "6",
           "title": "WebAssembly",
           "slug": "webassembly",
           "hero_dir": "2021"
         },
         {
           "part": "I",
-          "chapter_number": "6",
+          "chapter_number": "7",
           "title": "Third Parties",
           "slug": "third-parties"
         }
@@ -58,51 +64,51 @@
       "chapters": [
         {
           "part": "II",
-          "chapter_number": "7",
+          "chapter_number": "8",
           "title": "SEO",
           "slug": "seo"
         },
         {
           "part": "II",
-          "chapter_number": "8",
+          "chapter_number": "9",
           "title": "Accessibility",
           "slug": "accessibility"
         },
         {
           "part": "II",
-          "chapter_number": "9",
+          "chapter_number": "10",
           "title": "Performance",
           "slug": "performance"
         },
         {
           "part": "II",
-          "chapter_number": "10",
+          "chapter_number": "11",
           "title": "Privacy",
           "slug": "privacy",
           "hero_dir": "2020"
         },
         {
           "part": "II",
-          "chapter_number": "11",
+          "chapter_number": "12",
           "title": "Security",
           "slug": "security"
         },
         {
           "part": "II",
-          "chapter_number": "12",
+          "chapter_number": "13",
           "title": "Mobile Web",
           "slug": "mobile-web"
         },
         {
           "part": "II",
-          "chapter_number": "13",
+          "chapter_number": "14",
           "title": "Capabilities",
           "slug": "capabilities",
           "hero_dir": "2020"
         },
         {
           "part": "II",
-          "chapter_number": "14",
+          "chapter_number": "15",
           "title": "PWA",
           "slug": "pwa"
         }
@@ -114,19 +120,19 @@
       "chapters": [
         {
           "part": "III",
-          "chapter_number": "15",
+          "chapter_number": "16",
           "title": "CMS",
           "slug": "cms"
         },
         {
           "part": "III",
-          "chapter_number": "16",
+          "chapter_number": "17",
           "title": "Ecommerce",
           "slug": "ecommerce"
         },
         {
           "part": "III",
-          "chapter_number": "17",
+          "chapter_number": "18",
           "title": "Jamstack",
           "slug": "jamstack",
           "hero_dir": "2020"
@@ -139,37 +145,37 @@
       "chapters": [
         {
           "part": "IV",
-          "chapter_number": "18",
+          "chapter_number": "19",
           "title": "Page Weight",
           "slug": "page-weight"
         },
         {
           "part": "IV",
-          "chapter_number": "19",
+          "chapter_number": "20",
           "title": "Resource Hints",
           "slug": "resource-hints"
         },
         {
           "part": "IV",
-          "chapter_number": "20",
+          "chapter_number": "21",
           "title": "CDN",
           "slug": "cdn"
         },
         {
           "part": "IV",
-          "chapter_number": "21",
+          "chapter_number": "22",
           "title": "Compression",
           "slug": "compression"
         },
         {
           "part": "IV",
-          "chapter_number": "22",
+          "chapter_number": "23",
           "title": "Caching",
           "slug": "caching"
         },
         {
           "part": "IV",
-          "chapter_number": "23",
+          "chapter_number": "24",
           "title": "HTTP",
           "slug": "http"
         }
@@ -238,6 +244,16 @@
       "website": "https://alankent.me",
       "github": "alankent",
       "twitter": "akent99"
+    },
+    "Dawntraoz": {
+      "name": "Alba Silvente Fuentes",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/36744484?v=4&s=200",
+      "website": "https://www.dawntraoz.com/",
+      "github": "Dawntraoz",
+      "twitter": "dawntraoz"
     },
     "AlexLakatos": {
       "name": "Alex Lakatos",
@@ -460,7 +476,8 @@
         "authors"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/131131?v=4&s=200",
-      "github": "dominiclovell"
+      "twitter": "dominiclovell",
+      "linkedin": "dominiclovell"
     },
     "dougsillars": {
       "name": "Doug Sillars",
@@ -597,6 +614,15 @@
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/382649?v=4&s=200",
       "github": "wrttnwrd"
+    },
+    "iulia-m-comsa": {
+      "name": "Iulia Comșa",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/14878188?v=4&s=200",
+      "website": "https://sites.google.com/view/iuliacomsa/",
+      "github": "iulia-m-comsa"
     },
     "RReverser": {
       "name": "Ingvar Stepanyan",
@@ -1143,6 +1169,16 @@
       "website": "https://simonhearne.com",
       "github": "simonhearne",
       "twitter": "simonhearne"
+    },
+    "thomkrupa": {
+      "name": "Thom Krupa",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/8614811?v=4&s=200",
+      "website": "https://www.thomkrupa.com/",
+      "github": "thomkrupa",
+      "twitter": "thomkrupa"
     },
     "tomayac": {
       "name": "Thomas Steiner",
