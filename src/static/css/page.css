@@ -927,8 +927,8 @@ pre {
   color: #515660;
 }
 
-.webmention-replies-item,
-.webmention-mentions-item {
+.webmentions .reactions .webmention-replies-item,
+.webmentions .reactions .webmention-mentions-item {
   display: flex;
   flex-direction: column;
   position: relative;
