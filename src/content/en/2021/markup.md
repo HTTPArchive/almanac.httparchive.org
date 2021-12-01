@@ -6,17 +6,16 @@ authors: [AlexLakatos]
 reviewers: [j9t, bkardell, shantsis, tunetheweb, rviscomi]
 analysts: [kevinfarrugia]
 editors: []
-AlexLakatos_bio: Alex Lakatos has spent the past decade working on the Open Web within Browser, Communications, and FinTech organizations. With a background in web technologies and developer advocacy, he's helping the <a hreflang="en" href="https://interledger.org/">Interledger Foundation</a> build developer-friendly products while engaging with the developer community at large. You can <a hreflang="en" href="https://twitter.com/avolakatos">reach out to him on Twitter</a>.
+AlexLakatos_bio: Alex Lakatos has spent the past decade working on the Open Web within Browser, Communications, and FinTech organizations. With a background in web technologies and developer advocacy, he's helping the <a hreflang="en" href="https://interledger.org/">Interledger Foundation</a> build developer-friendly products while engaging with the developer community at large. You can [reach out to him on Twitter](https://twitter.com/avolakatos).
 translators: []
 results: https://docs.google.com/spreadsheets/d/1Ta5Ck7y3W6LCn2CeGtW7dAdLF6Lh5wV2UBQJZTz3W5Q/
-featured_quote: Be part of the people who increase adoption of new standards every year. Start with something new you've learned today, one of the many standards we've covered not only in this chapter but in this whole Almanac.
+featured_quote: Be part of the people who increase adoption of new standards every year. Start with something new you've learned today, one of the many standards we've covered not only in this chapter but in the whole Web Almanac.
 featured_stat_1: 35.3%
 featured_stat_label_1: ICO was finally dethroned as the most popular favicon format by PNG
 featured_stat_2: 98%
-featured_stat_label_2: Pages have at least one <script> element in HTML
+featured_stat_label_2: Pages have at least one `<script>` element in HTML
 featured_stat_3: 4,256
-featured_stat_label_3: The most <form> elements found on a single page.
-unedited: true
+featured_stat_label_3: The most `<form>` elements found on a single page.
 ---
 
 ## Introduction
@@ -24,7 +23,7 @@ unedited: true
 Have you ever wondered what happens when you try to visit a web site? After you enter the URL in the address bar of your browser, one of the first things that happens is that a HTML file is downloaded and parsed. You could say that markup is the foundation of the Web. We've dedicated this chapter to looking at some of the bricks that make the web stand today.
 
 
-We've drawn on the data analyzed for the past three years to try to come up with a few questions around the future of markup, the trends emerging over the years, and the adoption rate of new standards. We've also shared the data in the hopes that you'll dig deeper into it, and interpret it in a way that we haven't.
+We've drawn on the data analyzed for the past three years to try to come up with a few questions around the future of markup, the trends emerging over the years, and the adoption rate of new standards. We've also shared the data in the hopes that you'll dig deeper into it and interpret it in a way that we haven't.
 
 _In the Markup chapter, we focus on HTML. While we briefly touch on other markup languages (like SVG or MathML) or other topics in the Almanac, those are covered in more detail in their own dedicated chapters. Because the markup is the gateway into the web, it was extremely hard not to dedicate a whole chapter to it._
 
@@ -85,7 +84,7 @@ In terms of popularity, HTML5, better known as `<!DOCTYPE html>` is still the mo
   ) }}</figcaption>
 </figure>
 
-The surprising part is that, [almost 20 years later](https://en.wikipedia.org/wiki/XHTML), XHTML is still a considerable part of the web, with 8% of pages still using it on desktop and a little under 7% on mobile .
+The surprising part is that, <a hreflang="en" href="https://en.wikipedia.org/wiki/XHTML">almost 20 years later</a>, XHTML is still a considerable part of the web, with 8% of pages still using it on desktop and a little under 7% on mobile.
 
 ### Document size
 
@@ -120,12 +119,12 @@ With document sizes increasing, we also looked at compression this year. We felt
 
 Out of the 6 million desktop pages scanned, an overwhelming 84.42% were compressed with either gzip (62.68%) or Brotli (21.74%) compression. For mobile pages, the numbers are very similar, 85.60% were compressed with either gzip (63.67%) or Brotli (21.93%) compression.
 
-While the slight variation in percentages for mobile and desktop is not surprising, what is surprising is that almost 1 percentage point more pages are compressed for mobile only. In a [mobile world, where every byte of data has a cost associated with it](https://almanac.httparchive.org/en/2021/mobile-web), seeing that mobile pages are not only optimized, but smaller than the desktop counterparts is great. Learn more about the state of content encoding in the [Compression](./compression) chapter.
+While the slight variation in percentages for mobile and desktop is not surprising, what is surprising is that almost 1 percentage point more pages are compressed for mobile only. In a [mobile world, where every byte of data has a cost associated with it](./mobile-web), seeing that mobile pages are not only optimized, but smaller than the desktop counterparts is great. Learn more about the state of content encoding in the [Compression](./compression) chapter.
 
 
 ### Document language
 
-We've encountered 3,598 unique instances for the `lang` attribute on the `html` element. Because there are [7,139 spoken languages](https://www.ethnologue.com/guides/how-many-languages) at the time of writing this chapter, it made us think not all of them were represented. When we factored in the [script and region subtags](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang#language_tag_syntax), even fewer remained.
+We've encountered 3,598 unique instances for the `lang` attribute on the `html` element. Because there are <a hreflang="en" href="https://www.ethnologue.com/guides/how-many-languages">7,139 spoken languages</a> at the time of writing this chapter, it made us think not all of them were represented. When we factored in the [script and region subtags](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang#language_tag_syntax), even fewer remained.
 
 {{ figure_markup(
   image="lang-region.png",
@@ -136,7 +135,7 @@ We've encountered 3,598 unique instances for the `lang` attribute on the `html` 
   sql_file="html_lang.sql"
 ) }}
 
-Out of the pages scanned, 19.6% on desktop, and 18.6% on mobile, [specified no lang attribute](https://almanac.httparchive.org/en/2021/accessibility), even though the Web Content Accessibility Guidelines ([WCAG](https://www.w3.org/TR/UNDERSTANDING-WCAG20/meaning-doc-lang-id.html)) requires that a page language is defined, and ‘programmatically accessible'. Language can be specified in different ways, including an `xml:lang` element, which we didn't check for, so there might still be hope for some of the pages scanned.
+Out of the pages scanned, 19.6% on desktop, and 18.6% on mobile, [specified no lang attribute](./accessibility), even though the Web Content Accessibility Guidelines (<a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/meaning-doc-lang-id.html">WCAG</a>) requires that a page language is defined, and 'programmatically accessible'. Language can be specified in different ways, including an `xml:lang` element, which we didn't check for, so there might still be hope for some of the pages scanned.
 
 {{ figure_markup(
   image="lang.png",
@@ -189,7 +188,7 @@ Elements are the DNA of a HTML document. We wanted to analyze the cells that mak
 
 ### Element diversity
 
-There are [112 elements](https://html.spec.whatwg.org/multipage/indices.html#elements-3) currently defined and in use (excepting SVG and MathML), with another [28 being deprecated](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#obsolete_and_deprecated_elements) or obsolete. We wanted to see how many of them were actually used on a page, and how likely a web of `div`s was.
+There are <a hreflang="en" href="https://html.spec.whatwg.org/multipage/indices.html#elements-3">112 elements</a> currently defined and in use (excepting SVG and MathML), with another [28 being deprecated](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#obsolete_and_deprecated_elements) or obsolete. We wanted to see how many of them were actually used on a page, and how likely a web of `div`s was.
 
 {{ figure_markup(
   image="element-diversity.png",
@@ -200,7 +199,7 @@ There are [112 elements](https://html.spec.whatwg.org/multipage/indices.html#ele
   sql_file="element_count_distribution.sql"
 ) }}
 
-No need to panic, the web isn't all made up of divs. The median page uses 31 different elements, and has a total of 666 elements.
+No need to panic, the web isn't all made up of divs. The median page uses 31 different elements and has a total of 666 elements.
 
 {{ figure_markup(
   image="element-count.png",
@@ -213,7 +212,7 @@ No need to panic, the web isn't all made up of divs. The median page uses 31 dif
 
 ### Top elements
 
-Every year since 2019, the Markup chapter of the Web Almanac has featured the most frequently used elements in reference to[ Ian Hickson's work in 2005](https://web.archive.org/web/20060203031713/http://code.google.com/webstats/2005-12/elements.html). This author couldn't break with tradition, so we had a look at the data again.
+Every year since 2019, the Markup chapter of the Web Almanac has featured the most frequently used elements in reference to <a hreflang="en" href="https://web.archive.org/web/20060203031713/http://code.google.com/webstats/2005-12/elements.html">Ian Hickson's work in 2005</a>. This author couldn't break with tradition, so we had a look at the data again.
 
 <figure>
   <table>
@@ -227,76 +226,76 @@ Every year since 2019, the Markup chapter of the Web Almanac has featured the mo
     </thead>
       <tbody>
       <tr>
-        <td>title</td>
-        <td>div</td>
-        <td>div</td>
-        <td>div</td>
+        <td>`title`</td>
+        <td>`div`</td>
+        <td>`div`</td>
+        <td>`div`</td>
       </tr>
       <tr>
-        <td>a</td>
-        <td>a</td>
-        <td>a</td>
-        <td>a</td>
+        <td>`a`</td>
+        <td>`a`</td>
+        <td>`a`</td>
+        <td>`a`</td>
       </tr>
       <tr>
-        <td>img</td>
-        <td>span</td>
-        <td>span</td>
-        <td>span</td>
+        <td>`img`</td>
+        <td>`span`</td>
+        <td>`span`</td>
+        <td>`span`</td>
       </tr>
       <tr>
-        <td>meta</td>
-        <td>li</td>
-        <td>li</td>
-        <td>li</td>
+        <td>`meta`</td>
+        <td>`li`</td>
+        <td>`li`</td>
+        <td>`li`</td>
       </tr>
       <tr>
-        <td>br</td>
-        <td>img</td>
-        <td>img</td>
-        <td>img</td>
+        <td>`br`</td>
+        <td>`img`</td>
+        <td>`img`</td>
+        <td>`img`</td>
       </tr>
       <tr>
-        <td>table</td>
-        <td>script</td>
-        <td>script</td>
-        <td>script</td>
+        <td>`table`</td>
+        <td>`script`</td>
+        <td>`script`</td>
+        <td>`script`</td>
       </tr>
       <tr>
-        <td>td</td>
-        <td>p</td>
-        <td>p</td>
-        <td>p</td>
+        <td>`td`</td>
+        <td>`p`</td>
+        <td>`p`</td>
+        <td>`p`</td>
       </tr>
       <tr>
-        <td>tr</td>
-        <td>option</td>
-        <td>link</td>
-        <td>link</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>i</td>
-        <td>meta</td>
+        <td>`tr`</td>
+        <td>`option`</td>
+        <td>`link`</td>
+        <td>`link`</td>
       </tr>
       <tr>
         <td></td>
         <td></td>
-        <td>option</td>
-        <td>i</td>
+        <td>`i`</td>
+        <td>`meta`</td>
       </tr>
       <tr>
         <td></td>
         <td></td>
-        <td></td>
-        <td>ul</td>
+        <td>`option`</td>
+        <td>`i`</td>
       </tr>
       <tr>
         <td></td>
         <td></td>
         <td></td>
-        <td>option</td>
+        <td>`ul`</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>`option`</td>
       </tr>
     </tbody>
   </table>
@@ -313,7 +312,7 @@ It's interesting to see that `i` and `option` have both fallen out of favor. The
 
 #### main
 
-With the [creation of content spiking in 2021](https://wordpress.com/activity/posting/) (most likely because the world was stuck in a pandemic), we wanted to see if that correlates to an adoption of content elements as well. We thought `main` is a good indicator, it being an informative element that doesn't affect the DOMs concept of the structure of a page.
+With the <a hreflang="en" href="https://wordpress.com/activity/posting/">creation of content spiking in 2021</a> (most likely because the world was stuck in a pandemic), we wanted to see if that correlates to an adoption of content elements as well. We thought `main` is a good indicator, it being an informative element that doesn't affect the DOMs concept of the structure of a page.
 
 {{ figure_markup(
   caption="Percent of mobile pages with at least one `main` element.",
@@ -327,9 +326,9 @@ With the [creation of content spiking in 2021](https://wordpress.com/activity/po
 
 #### base
 
-Another curiosity was how much were developers paying attention to the stricter rules of the HTML spec. For example, the spec says there must be [no more than one `base` element](https://html.spec.whatwg.org/multipage/semantics.html#the-base-element) in a document, because the `base` element defines how user agents should resolve relative URLs. Having more than one `base` element introduces ambiguity, so the spec requires that all `base` elements after the first be ignored, rendering them useless.
+Another curiosity was how much were developers paying attention to the stricter rules of the HTML spec. For example, the spec says there must be <a hreflang="en" href="https://html.spec.whatwg.org/multipage/semantics.html#the-base-element">no more than one `base` element</a> in a document, because the `base` element defines how user agents should resolve relative URLs. Having more than one `base` element introduces ambiguity, so the spec requires that all `base` elements after the first be ignored, rendering them useless.
 
-From looking at the desktop pages, `base` is a popular element, with 10.39% of pages having one. But do they have only one? There are 5,908 more `base` elements than pages, we can only conclude at least some pages have more than one `base` element. Who said developers were great at following directions? We would also recommend people validate their HTML using the W3C-provided [Markup Validation Service](https://validator.w3.org/).
+From looking at the desktop pages, `base` is a popular element, with 10.39% of pages having one. But do they have only one? There are 5,908 more `base` elements than pages, we can only conclude at least some pages have more than one `base` element. Who said developers were great at following directions? We would also recommend people validate their HTML using the W3C-provided <a hreflang="en" href="https://validator.w3.org/">Markup Validation Service</a>.
 
 #### dialog
 
@@ -381,7 +380,7 @@ While the percentages are slightly different when compared with last year, the o
     </tbody>
   </table>
   <figcaption>{{ figure_link(
-    caption="Adoption of `tt`, `ruby`, and `rt` elememts on mobile pages.",
+    caption="Adoption of `tt`, `ruby`, and `rt` elements on mobile pages.",
     sheets_gid="1883388700",
     sql_file="element_popularity.sql"
   ) }}</figcaption>
@@ -409,13 +408,13 @@ A little over 98% of the pages scanned contain at least one `script` element. It
   sql_file="element_popularity.sql"
 ) }}
 
-51.4% of pages also contain a `noscript` element, which is generally used to display a message for browsers that have disabled JavaScript. Another popular use for the `noscript` element is the Google Tag Manager (GTM) snippet. 18.8% of pages on desktop and 16.9% of pages on mobile are using the noscript element as part of the GTM snippet. It's interesting to note that GTM is more popular on desktop than mobile.
+51.4% of pages also contain a `noscript` element, which is generally used to display a message for browsers that have disabled JavaScript. Another popular use for the `noscript` element is the Google Tag Manager (GTM) snippet. 18.8% of pages on desktop and 16.9% of pages on mobile are using the `noscript` element as part of the GTM snippet. It's interesting to note that GTM is more popular on desktop than mobile.
 
 ### Template
 
-One of the [least recognized, but most powerful features](https://css-tricks.com/crafting-reusable-html-templates/) of the Web Components specification is the &lt;template> element. Despite the fact that the [`template` element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots) is well supported on modern browsers since 2013, only 0.5% of the pages were using it in 2021. In terms of popularity, it didn't even make it into the top 50 elements. We thought this speaks volumes about the adoption curve of the modern HTML specification for web developers.
+One of the <a hreflang="en" href="https://css-tricks.com/crafting-reusable-html-templates/">least recognized, but most powerful features</a> of the Web Components specification is the `<template>` element. Despite the fact that the [`template` element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots) is well supported on modern browsers since 2013, only 0.5% of the pages were using it in 2021. In terms of popularity, it didn't even make it into the top 50 elements. We thought this speaks volumes about the adoption curve of the modern HTML specification for web developers.
 
-In case you don't really know what template does, here is a refresher from the specification: "the template element is used to declare fragments of HTML that can be cloned and inserted in the document by script". If you're a web developer and think that sounds familiar, you're right. Most of the popular frameworks today have a similar non-native mechanism to do the same: Angular has [&lt;ng-content>](https://angular.io/guide/content-projection), React has [portals](https://reactjs.org/docs/portals.html) and Vue has [&lt;slot>](https://v3.vuejs.org/guide/component-slots.html#slots). We would have thought those frameworks would use the native template element or Web Components instead of re-creating the functionality within the frameworks.
+In case you don't really know what template does, here is a refresher from the specification: "the template element is used to declare fragments of HTML that can be cloned and inserted in the document by script". If you're a web developer and think that sounds familiar, you're right. Most of the popular frameworks today have a similar non-native mechanism to do the same: Angular has <a hreflang="en" href="https://angular.io/guide/content-projection">`<ng-content>`</a>, React has <a hreflang="en" href="https://reactjs.org/docs/portals.html">portals</a> and Vue has <a hreflang="en" href="https://v3.vuejs.org/guide/component-slots.html#slots">`<slot>`</a>. We would have thought those frameworks would use the native template element or Web Components instead of re-creating the functionality within the frameworks.
 
 ### Style
 
@@ -489,9 +488,9 @@ We've also looked at elements that didn't show up on the HTML or SVG  spec, be i
   ) }}</figcaption>
 </figure>
 
-By far, the most popular one is [Slider Revolution](https://www.sliderrevolution.com/faq/developer-guide-output-class-tag-changes/), with a majority of elements attributed to the framework. It more than tripled in popularity over the past year, which leads us to believe it might be a part of a popular template or site builder. A close second is [Wix](https://www.wix.com/), the popular free site builder. We couldn't identify pages-css, but we'd love to hear any ideas for why the `pages-css` element is so popular, so let us know by [suggesting an edit]([https://almanac.httparchive.org/en/2020/markup#explore-results](https://almanac.httparchive.org/en/2020/markup#explore-results)) on GitHub.
+By far, the most popular one is <a hreflang="en" href="https://www.sliderrevolution.com/faq/developer-guide-output-class-tag-changes/">Slider Revolution</a>, with a majority of elements attributed to the framework. It more than tripled in popularity over the past year, which leads us to believe it might be a part of a popular template or site builder. A close second is <a hreflang="en" href="https://www.wix.com/">Wix</a>, the popular free site builder. We couldn't identify `pages-css`, but we'd love to hear any ideas for why the `pages-css` element is so popular, so let us know by [suggesting an edit](#explore-results) on GitHub.
 
-We would have thought that popular frameworks like [Angular](https://angular.io/), [Next.js](https://nextjs.org/) or the former [Angular.js ](https://angularjs.org/)would account for more custom components, but `router-outlet` and `ng-component` make up a small part of the custom component base.
+We would have thought that popular frameworks like <a hreflang="en" href="https://angular.io/">Angular</a>, <a hreflang="en" href="https://nextjs.org/">Next.js</a> or the former <a hreflang="en" href="https://angularjs.org/">Angular.js</a> would account for more custom components, but `router-outlet` and `ng-component` make up a small part of the custom component base.
 
 ### Obsolete elements
 
@@ -523,9 +522,9 @@ Google still uses a `center` element on their homepage in 2021, but we're not go
 
 ### Proprietary and non-standard elements
 
-While custom elements all have a hyphen in them, we've also encountered elements that are made up, don't have a hyphen and don't show up on the [HTML standard](https://html.spec.whatwg.org/#toc-semantics).
+While custom elements all have a hyphen in them, we've also encountered elements that are made up, don't have a hyphen and don't show up on the <a hreflang="en" href="https://html.spec.whatwg.org/#toc-semantics">HTML standard</a>.
 
-All of them were present last year as well, and can be attributed to popular frameworks or products like JivoChat, Yandex, MediaElement.js and Yandex Maps. And because some people get carried away, or six is just not enough headers, h7 to h9.
+All of them were present last year as well and can be attributed to popular frameworks or products like JivoChat, Yandex, MediaElement.js and Yandex Maps. And because some people get carried away, or six is just not enough headers, h7 to h9.
 
 <figure>
   <table>
@@ -676,9 +675,7 @@ The second most popular attribute is `href`, with 9.9% of occurrences. With link
 `meta` elements are gaining some of their lost popularity this year, so we wanted to take a closer look at them. They provide a way to add machine-readable information to your pages, as well as perform some nifty HTTP equivalents. For example, setting a content security policy for a page:
 
 ```html
-
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*;">
-
 ```
 
 From the available attributes, `name`, paired with `content` was the most popular. 14.19% of the `meta` elements did not have a `name` attribute. In conjunction with the `content` attribute, they are used as a key-value pair for passing in information. What information, you ask?
@@ -703,7 +700,7 @@ From the available attributes, `name`, paired with `content` was the most popula
 
 The most popular is viewport information, with the most popular `viewport` value being `initial-scale=1,width=device-width`. 45.0% of mobile pages scanned used that value.
 
-The second most popular combination are `og:*` meta elements, also known as [Open Graph](https://ogp.me/) meta elements. We'll talk about those in the next section.
+The second most popular combination are `og:*` meta elements, also known as <a hreflang="en" href="https://ogp.me/">Open Graph</a> meta elements. We'll talk about those in the next section.
 
 #### Social markup
 Providing information and assets for social platforms to use when previewing links to your page  is a popular use case for the `meta` element.
@@ -722,7 +719,7 @@ The most common by far are the Open Graph `meta` elements, used across multiple 
 
 ### `data-` attributes
 
-The [HTML specification allows](https://html.spec.whatwg.org/#embedding-custom-non-visible-data-with-the-data-*-attributes) for custom attributes, prefixed by `data-*`. They are intended to store custom data, state, annotations, and similar, private to the page or application, for which there are no more appropriate attributes or elements.
+The <a hreflang="en" href="https://html.spec.whatwg.org/#embedding-custom-non-visible-data-with-the-data-*-attributes">HTML specification allows</a> for custom attributes, prefixed by `data-*`. They are intended to store custom data, state, annotations, and similar, private to the page or application, for which there are no more appropriate attributes or elements.
 
 {{ figure_markup(
   image="data-attributes.png",
@@ -734,9 +731,9 @@ The [HTML specification allows](https://html.spec.whatwg.org/#embedding-custom-n
   sql_file="data_attributes.sql"
 ) }}
 
-The most common ones, `data-id`, `data-src` and `data-type` are non-specific, with `data-src`,  `data-srcset` and `data-sizes` being very popular with image lazy loading libraries. `data-element_type` and  `data-widget_type` are coming from a popular website builder, [Elementor](https://code.elementor.com/).
+The most common ones, `data-id`, `data-src` and `data-type` are non-specific, with `data-src`,  `data-srcset` and `data-sizes` being very popular with image lazy loading libraries. `data-element_type` and  `data-widget_type` are coming from a popular website builder, <a hreflang="en" href="https://code.elementor.com/">Elementor</a>.
 
-[Slick, "the last carousel you'll ever need"](https://github.com/kenwheeler/slick), is responsible for `data-slick-index`. Popular frameworks like Bootstrap are responsible for `data-toggle`, while [testing-library](https://testing-library.com/docs/queries/bytestid/) is responsible for `data-testid`.
+<a hreflang="en" href="https://github.com/kenwheeler/slick">Slick, "the last carousel you'll ever need"</a>, is responsible for `data-slick-index`. Popular frameworks like Bootstrap are responsible for `data-toggle`, while <a hreflang="en" href="https://testing-library.com/docs/queries/bytestid/">testing-library</a> is responsible for `data-testid`.
 
 ## Miscellaneous
 
@@ -744,7 +741,7 @@ We've covered a good chunk of the most common HTML use cases. We've set aside th
 
 ### `viewport` specifications
 
-The `viewport` meta element is used to control layout on mobile devices. Or at least that was the idea when it came out. Today, [some browsers](https://www.quirksmode.org/blog/archives/2020/12/userscalableno.html) have started to ignore some of the `viewport` options to allow for zooming a page [up to 500%](https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large).
+The `viewport` meta element is used to control layout on mobile devices. Or at least that was the idea when it came out. Today, <a hreflang="en" href="https://www.quirksmode.org/blog/archives/2020/12/userscalableno.html">some browsers</a> have started to ignore some of the `viewport` options to allow for zooming a page <a hreflang="en" href="https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large">up to 500%</a>.
 
 <figure>
 <table>
@@ -810,7 +807,7 @@ The `viewport` meta element is used to control layout on mobile devices. Or at l
   ) }}</figcaption>
 </figure>
 
-The most common `viewport` content option is `initial-scale=1,width=device-width`, which is not surprising when it's the recommended option on the [MDN guide](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) explaining viewports. 45.0% of the pages analyzed are using it, almost 3% more than [last year](https://almanac.httparchive.org/en/2020/markup#viewport-specifications). 8.2% of pages had an empty `content` attribute, slightly more than last year as well. That correlates with a decrease in usage for improper combinations of viewport options.
+The most common `viewport` content option is `initial-scale=1,width=device-width`, which is not surprising when it's the recommended option on the [MDN guide](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) explaining viewports. 45.0% of the pages analyzed are using it, almost 3% more than [last year](../2020/markup#viewport-specifications). 8.2% of pages had an empty `content` attribute, slightly more than last year as well. That correlates with a decrease in usage for improper combinations of viewport options.
 
 ### Favicons
 
@@ -828,9 +825,9 @@ Favicons are one of the most resilient pieces of the web. They work even without
 
 There were a couple of surprises when we looked at the data:
 
-* ICO was finally dethroned as the most popular format by PNG;
-* JPG is still used, even though it's not the best option when compared with some of the other unpopular options;
-* With SVG support for favicons finally improving, SVG has overtaken WebP [this year](https://almanac.httparchive.org/en/2020/markup#favicons) in terms of popularity.
+* ICO was finally dethroned as the most popular format by PNG.
+* JPG is still used, even though it's not the best option when compared with some of the other unpopular options.
+* With SVG support for favicons finally improving, SVG has overtaken WebP [this year](../2020/markup#favicons) in terms of popularity.
 
 ### Button and input types
 
@@ -853,7 +850,7 @@ Buttons are "controversial". There are a lot of opinions of what does and what d
   sql_file="buttons.sql"
 ) }}
 
-When we compared the data to [last year](https://almanac.httparchive.org/en/2020/markup#favicons), we noticed a lot more pages had a `button` element on it. This year we didn't run a query for `input`-typed buttons, but we've seen a definite decrease in usage for the number of `button` elements on pages. The [Accessibility chapter](https://almanac.httparchive.org/en/2021/accessibility) also has a whole section on buttons, you should read that as well!
+When we compared the data to [last year](../2020/markup#favicons), we noticed a lot more pages had a `button` element on it. This year we didn't run a query for `input`-typed buttons, but we've seen a definite decrease in usage for the number of `button` elements on pages. The [Accessibility chapter](./accessibility) also has a whole section on buttons, you should read that as well!
 
 ### Links
 
@@ -913,11 +910,11 @@ Links are the glue that ties the web together. Normally, we wanted to look at th
   ) }}</figcaption>
 </figure>
 
-That's what probably prompted a [spec change](https://github.com/whatwg/html/issues/4078) this year, so now browsers set `rel="noopener"` by default on all `target="_blank"` links.
+That's what probably prompted a <a hreflang="en" href="https://github.com/whatwg/html/issues/4078">spec change</a> this year, so now browsers set `rel="noopener"` by default on all `target="_blank"` links.
 
 ### Web Monetization
 
-[Web Monetization](https://discourse.wicg.io/t/proposal-web-monetization-a-new-revenue-model-for-the-web/3785) is being proposed as a W3C standard at the Web Platform Incubator Community Group (WICG). It's a young standard that provides an open, native, efficient, and automatic way to compensate creators, pay for API calls, and support crucial web infrastructure. While it is in its early days, and it is not implemented by any of the major browsers, it is supported via forks and extensions, and has been instrumented in Chromium and the HTTP Archive data for over a year.  We wanted to take a look at adoption so far.
+<a hreflang="en" href="https://discourse.wicg.io/t/proposal-web-monetization-a-new-revenue-model-for-the-web/3785">Web Monetization</a> is being proposed as a W3C standard at the Web Platform Incubator Community Group (WICG). It's a young standard that provides an open, native, efficient, and automatic way to compensate creators, pay for API calls, and support crucial web infrastructure. While it is in its early days, and it is not implemented by any of the major browsers, it is supported via forks and extensions, and has been instrumented in Chromium and the HTTP Archive data for over a year.  We wanted to take a look at adoption so far.
 
 {{ figure_markup(
   caption="Number of mobile pages that use Web Monetization.",
@@ -927,8 +924,11 @@ That's what probably prompted a [spec change](https://github.com/whatwg/html/iss
   sql_file="monetization.sql"
 ) }}
 
-Web Monetization popularly uses a `meta` element on the page, specifying the wallet address for the money to be paid into. It looks a little bit like
-`<meta name="monetization" content="$wallet.example.com/alice">`.
+Web Monetization popularly uses a `meta` element on the page, specifying the wallet address for the money to be paid into. It looks a little bit like:
+
+```html
+<meta name="monetization" content="$wallet.example.com/alice">
+```
 
 {{ figure_markup(
   link="https://www.chromestatus.com/metrics/feature/timeline/popularity/3119",
@@ -939,11 +939,11 @@ Web Monetization popularly uses a `meta` element on the page, specifying the wal
   height=278
 ) }}
 
-While it still seems a vanishingly small number by percentages, it has shown growth—more on desktop than mobile. It's important to keep in mind how big the HTTP Archive dataset is and how slowly it takes to gain numbers, even for a feature that is widely and natively supported. It will be interesting to continue to track these numbers and developments over more time. This author might be biased, as an editor for the Web Monetization standard, but you're encouraged to [give it a try](https://webmonetization.org/docs/getting-started), it's free.
+While it still seems a vanishingly small number by percentages, it has shown growth—more on desktop than mobile. It's important to keep in mind how big the HTTP Archive dataset is and how slowly it takes to gain numbers, even for a feature that is widely and natively supported. It will be interesting to continue to track these numbers and developments over more time. This author might be biased, as an editor for the Web Monetization standard, but you're encouraged to <a hreflang="en" href="https://webmonetization.org/docs/getting-started">give it a try</a>, it's free.
 
-There has been an [issue open for some time](https://github.com/WICG/webmonetization/issues/19), and the new version of the specification will [use a `&lt;link>` instead.](https://github.com/WICG/webmonetization/pull/193) Only 36 pages in our desktop set and 37 in our mobile set used the `&lt;link>` version, and all of those _also_ included the `&lt; meta>` version as well.
+There has been an <a hreflang="en" href="https://github.com/WICG/webmonetization/issues/19">issue open for some time</a>, and the new version of the specification will <a hreflang="en" href="https://github.com/WICG/webmonetization/pull/193">use a `<link>` instead.</a> Only 36 pages in our desktop set and 37 in our mobile set used the `<link>` version, and all of those _also_ included the `<meta>` version as well.
 
-We know there are currently two [Interledger](https://interledger.org/)-enabled wallet providers in the ecosystem, we wanted to see the distribution and adoption of those wallets.
+We know there are currently two <a hreflang="en" href="https://interledger.org/">Interledger</a>-enabled wallet providers in the ecosystem, we wanted to see the distribution and adoption of those wallets.
 
 {{ figure_markup(
   image="monetization-by-host.png",
@@ -960,20 +960,20 @@ Uphold and Gatehub are the current wallets, and it looks like Uphold is the domi
 
 We've pointed out interesting, surprising and concerning bits of data throughout the chapter. Let us reflect once more on the state of markup in 2021.
 
-The most surprising for us was that, [almost 20 years later](https://en.wikipedia.org/wiki/XHTML), XHTML was still used on a considerable part of the web, with a little over 7% of pages using it in 2021.
+The most surprising for us was that, <a hreflang="en" href="https://en.wikipedia.org/wiki/XHTML">almost 20 years later</a>, XHTML was still used on a considerable part of the web, with a little over 7% of pages using it in 2021.
 
 The median page sizes in 2020 were shrinking when compared to 2019, but this year it looks like the trend has regressed, surpassing the median sizes for 2019 as well. The web is getting heavier. Again.
 
-Almost 1 percentage point more pages are compressed for mobile only. In a mobile world, where every byte of data has a cost associated with it, seeing that mobile pages are not only optimized, but smaller than the desktop counterparts is great. 
+Almost 1 percentage point more pages are compressed for mobile only. In a mobile world, where every byte of data has a cost associated with it, seeing that mobile pages are not only optimized, but smaller than the desktop counterparts is great.
 
 English is relatively less popular on mobile pages. We're not sure why, and this author would like to encourage you to explore the possibilities of why this is the case.
 
-It was interesting to see that libraries adopting better practices correlated directly with elements falling out of favor.  Both `i` and `option` are less-used this year because icon libraries have switched over to using SVG. 
+It was interesting to see that libraries adopting better practices correlated directly with elements falling out of favor.  Both `i` and `option` are less-used this year because icon libraries have switched over to using SVG.
 
-It was both great to see ICO finally being dethroned as the most popular favicon format in favour of PNG. Similarly, seeing SVG more than doubling in usage for favicons in the past year made us think we're 10 years away from dethroning PNG.
+It was both great to see ICO finally being dethroned as the most popular favicon format in favor of PNG. Similarly, seeing SVG more than doubling in usage for favicons in the past year made us think we're 10 years away from dethroning PNG.
 
 The doctype percentage has increased steadily by half a percentage point every year. At this rate, we'll live in an ideal world where every page has a doctype by 2027.
 
-It was concerning for this author to see that the adoption of  some of the newer standards is slow, sometimes on a 10 year cycle, and that web pages don't get updated as often as we'd like.
+It was concerning for this author to see that the adoption of  some of the newer standards is slow, sometimes on a 10-year cycle, and that web pages don't get updated as often as we'd like.
 
 _With that in mind, I'll leave you to reflect on the state of the web in 2021. I'd also encourage you to be part of the people who increase adoption of new standards every year. Start with something new you've learned today, one of the many standards we've covered not only in this chapter but in this whole Almanac._
