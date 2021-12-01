@@ -937,7 +937,7 @@ pre {
 
 .webmention-replies-item .webmention-author .webmention-author-avatar,
 .webmention-mentions-item .webmention-author .webmention-author-avatar {
-  position: absolute; */
+  position: absolute;
   top: 1rem;
   left: 0;
 }
