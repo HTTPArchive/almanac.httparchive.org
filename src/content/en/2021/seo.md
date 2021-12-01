@@ -192,7 +192,7 @@ Our dataset and analysis are limited to homepages of websites; the data is likel
 When implementing canonicals, there are two methods to specify canonical tags:
 
 1. In the HTML's `<head>` section of a page
-2. In the HTTP headers (this method is also called: `X-robots-tag`)
+2. In the HTTP headers (via the `Link` HTTP header)
 
 {{ figure_markup(
    image="canonical-raw-rendered-usage.png",
@@ -204,7 +204,7 @@ When implementing canonicals, there are two methods to specify canonical tags:
    )
 }}
 
-Implementing canonical tags in the `<head>` of a HTML page is much more popular than using the X-robots tag method. Implementing the tag in the head section is generally considered easier, which is why that usage so much higher.
+Implementing canonical tags in the `<head>` of a HTML page is much more popular than using the `Link` header method. Implementing the tag in the head section is generally considered easier, which is why that usage so much higher.
 
 We also saw a slight change (< 1%) in canonical between the raw HTML delivered, and the rendered HTML after JavaScript has been applied.
 
