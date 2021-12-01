@@ -38,7 +38,7 @@ A Content Delivery Network (CDN) is a group of servers spread out over several l
 {{ figure_markup(
   image="top-cdns.png",
   caption="Adoption of the top CDNs.",
-  description="TODO",
+  description="A bar chart of the adoption rate of the most popular CDN's by percent of pages. Adoption for mobile and desktop for Cloudflare is 14%, Google is 7%, Fastly is 2%, Amazon CloudFront is 2%, Akamai is 1%, and Automattic is 1%. Remaining CDN's including Sucuri Firewall, Incapsula, and Netlify have an average of 0% adoption.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=2035524639&format=interactive",
   height=501,
   sheets_gid="58739923",
@@ -56,7 +56,7 @@ This higher adoption of Service Workers from the top 1k pages, could be related 
 {{ figure_markup(
   image="sw-adoption.png",
   caption="Service Worker adoption.",
-  description="TODO",
+  description="A bar chart of Service Worker adoption by site ranking and percent of pages. The adoption rate for sites ranked 1,000 had 9% adoption, sites ranked 10,000 had 8%, 100,000 had 5%, 1,000,000 had 2%, and remaining sites had 1%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=688062455&format=interactive",
   sheets_gid="802609299",
   sql_file="service_worker_rank.sql"
@@ -84,7 +84,7 @@ Usage of the `Cache-Control` header has increased steadily since 2019. 74% of re
 {{ figure_markup(
   image="cache-control-expires.png",
   caption="Percent of responses that set `Cache-Control` and `Expires` headers.",
-  description="TODO",
+  description="A bar chart showing usage of Cache-Control and Expires headers. For desktop and mobile, 74.2% use Cache-Control, 55.6% use Expires, 54.9% use both, and 25.1% use neither.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=816405026&format=interactive",
   sheets_gid="2102749619",
   sql_file="header_trends.sql"
