@@ -201,7 +201,7 @@ Responses that are Gzip compressed will show "gzip", while those compressed with
   )
 }}
 
- A different tool that can analyze compression on a site is Google's <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> tool. It runs a series of audits, including the <a hreflang="en" href="https://web.dev/uses-text-compression/">"Enable text compression" audit</a>. This audit attemps to compress resources to check if they reduced by at least 10% and 1,400 bytes. Depending on the score, it can show a compression recommendation in the results, with a list of the resources that can be compressed to benefit a website.
+ A different tool that can analyze compression on a site is Google's <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> tool. It runs a series of audits, including the <a hreflang="en" href="https://web.dev/uses-text-compression/">"Enable text compression" audit</a>. This audit attempts to compress resources to check if they reduced by at least 10% and 1,400 bytes. Depending on the score, it can show a compression recommendation in the results, with a list of the resources that can be compressed to benefit a website.
 
 The HTTP Archive [runs Lighthouse audits](./methodology#lighthouse) for every mobile page, and from this data we observed that 72% of websites pass this audit. This is 2% less than [last year's](../2020/compression#identifying-compression-opportunities) 74%, which is despite more usage of text compression overall compared to last year, a slight drop.
 
@@ -217,7 +217,7 @@ The HTTP Archive [runs Lighthouse audits](./methodology#lighthouse) for every mo
 
 ## How to improve on compression
 
-Before thinking about how to compress content, it is often wise to reduce the content transmited to begin with. One way of achieving this is to use so-called "minimizers", such as <a hreflang="en" href="https://github.com/kangax/html-minifier">HTMLMinifier</a>, <a hreflang="en" href="https://github.com/ben-eb/cssnano">CSSNano</a>, or <a hreflang="en" href="https://github.com/mishoo/UglifyJS2">UglifyJS</a>.
+Before thinking about how to compress content, it is often wise to reduce the content transmitted to begin with. One way of achieving this is to use so-called "minimizers", such as <a hreflang="en" href="https://github.com/kangax/html-minifier">HTMLMinifier</a>, <a hreflang="en" href="https://github.com/ben-eb/cssnano">CSSNano</a>, or <a hreflang="en" href="https://github.com/mishoo/UglifyJS2">UglifyJS</a>.
 
 After having the minimal form of the content to transmit, the next step is to ensure compression is enabled. You can verify it is enabled as highlighted in the previous section, and configure your web server if needed.
 
