@@ -2,13 +2,13 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Caching
 description: Caching chapter of the 2021 Web Almanac covering Cache-control, Expires, TTLs, validity, Vary, Set-cookies, Service Workers and opportunities.
-authors: [zizzamia, jessnicolet]
+authors: [Zizzamia, jessnicolet]
 reviewers: []
 analysts: [rviscomi]
 editors: []
 translators: []
 zizzamia_bio: Leonardo is a Staff Software Engineer at <a hreflang="en" href="https://www.coinbase.com/">Coinbase</a>, leading initiatives that enable product engineers to ship the highest quality applications in the world at scale. He curates the <a hreflang="en" href="https://ngrome.io">NGRome Conference</a>. Leo also maintains the <a hreflang="en" href="https://github.com/Zizzamia/perfume.js">Perfume.js</a> library, which helps companies prioritize roadmaps and make better business decisions through performance analytics.
-jessnicolet_bio: Jessica began her career as an opera singer and has been in the classical music industry for the past 10 years. In early 2020 and due to the pandemic, she decided to start a new career in Tech, specifically Web Development. She has always enjoyed writing and telling stories both onstage and off and published a [series of three articles](https://jessicanicolet.medium.com/) on Medium documenting her experience transitioning to this new field. She is currently looking for a full-time position in Technical Writing. 
+jessnicolet_bio: Jessica began her career as an opera singer and has been in the classical music industry for the past 10 years. In early 2020 and due to the pandemic, she decided to start a new career in Tech, specifically Web Development. She has always enjoyed writing and telling stories both onstage and off and published a [series of three articles](https://jessicanicolet.medium.com/) on Medium documenting her experience transitioning to this new field. She is currently looking for a full-time position in Technical Writing.
 results: https://docs.google.com/spreadsheets/d/1-v3yR0LZIC3t4zWtqTgR3jJsKjjRMP-HATU2caP8e2c/
 featured_quote: Adoption of cache headers continues to steadily grow as we learn to navigate the multiverse of caching choices. Optimize pages not only for HighEnd devices but also for the next billion users that access your product from LowEnd devices.
 featured_stat_1: 99.8%
@@ -198,7 +198,7 @@ We saw the distribution of 304 responses increase by 7.7% for `If-Modified-Since
 
 ### Validity of date strings
 
-The three main HTTP headers used to represent timestamps, `Date`,`Last-Modified` and `Expires` all use a date formatted string. The `Date` HTTP response header is almost always generated automatically by the web server, meaning that invalid values are extremely rare. Still, in the event that the date is set incorrectly it can affect cacheability on the response on which it is served. 
+The three main HTTP headers used to represent timestamps, `Date`,`Last-Modified` and `Expires` all use a date formatted string. The `Date` HTTP response header is almost always generated automatically by the web server, meaning that invalid values are extremely rare. Still, in the event that the date is set incorrectly it can affect cacheability on the response on which it is served.
 
 {{ figure_markup(
   image="invalid-date-formats.png",
@@ -209,7 +209,7 @@ The three main HTTP headers used to represent timestamps, `Date`,`Last-Modified`
   sql_file="invalid_last_modified_and_expires_and_date.sql"
 ) }}
 
-Between 2020 and 2021, the percent using invalid `Date` improved by 0.5% but worsened for `Last-Modified` and `Expires` showing that it was related to how the date was set on caching. 
+Between 2020 and 2021, the percent using invalid `Date` improved by 0.5% but worsened for `Last-Modified` and `Expires` showing that it was related to how the date was set on caching.
 
 This shows us that automation of the `Date` header could benefit from further attention...?
 
@@ -227,7 +227,7 @@ An essential step in caching a resource is understanding if it was previously ca
   sql_file="vary_directives.sql"
 ) }}
 
-The most popular `Vary` header is `Accept-Encoding` with 90.3% usage, followed by `User-Agent` with 10.9%, `Origin` with 10.1%, and `Accept` with 4.8%. 
+The most popular `Vary` header is `Accept-Encoding` with 90.3% usage, followed by `User-Agent` with 10.9%, `Origin` with 10.1%, and `Accept` with 4.8%.
 
 This shows a 1.5% decrease in use of `Accept-Encoding` from 2020.
 
@@ -280,7 +280,7 @@ Font, CSS, and Audio files are over 99% cacheable, with almost 100% of pages cur
   sql_file="non_cacheable_by_resource_type.sql"
 ) }}
 
-However, some of our most commonly used resources are non-cacheable, likely due to their dynamic nature. Notably, HTML saw the highest percentage of non-cacheable resources at 23.4%, followed closely by Images with 10.1%. 
+However, some of our most commonly used resources are non-cacheable, likely due to their dynamic nature. Notably, HTML saw the highest percentage of non-cacheable resources at 23.4%, followed closely by Images with 10.1%.
 
 When we compare the mobile data between 2020 and 2021, we notice a 5.1% increase in cacheable HTML. This tells us we may be moving towards better usage of our CDNs to cache HTML pages, like those rendered by an SSR that tend to change less frequently. Pages are typically generated by Server-Side Rendered (SSR) applications if the content of a particular web page doesn't change frequently. The url can potentially serve the same HTML for weeks or even months, making that content highly cacheable.
 
@@ -374,7 +374,7 @@ When we look at the entirety of cacheable and non-cacheable resources,
 We see that Images and Videos maintained the same average age whether from 1st or 3rd party resources. Images consistently had a resource age of 2 years, while most Video resources were between 8-52 weeks old.
 
 Breaking down the other types of content, we discovered Fonts for 3rd parties are cached the most between 8-52 weeks at 72.4%. However, for 1st party the largest resource age groups is evenly split between 8-52 weeks and over 2 years- quite a large variance.
-We see similar results for Audio and Scripts where the majority of 1st party are between 8-52 weeks old while for 3rd party they are between 1-7 weeks. 
+We see similar results for Audio and Scripts where the majority of 1st party are between 8-52 weeks old while for 3rd party they are between 1-7 weeks.
 
 Audio was the most highly cached resource across both 1st and 3rd parties. However, the resource age varied greatly between first party (averaging 8-52 weeks) and third party, at only 1-7 weeks. Audio resources in 1st party situations tend to be updated less frequently (why?), so 3rd parties may be capitalizing on a caching opportunity by offering fresher resources.
 
@@ -391,13 +391,13 @@ The largest group of cached 1st party CSS (32.2%) tended to be 8-52 weeks old, w
 
 Finally, HTML has the largest 1st party group served with less than a week with 42.7% and 3rd party's largest group is between 1-7 weeks with 43.1%.
 
-Considerations after reviewing this data: 
-- The freshest content for 1st party is HTML while for 3rd party it is CSS. 
+Considerations after reviewing this data:
+- The freshest content for 1st party is HTML while for 3rd party it is CSS.
 - The most stale content for both 1st and 3rd party is Images.
 
-This data shows us that 1st parties have prioritized refreshing HTML content, which usually holds the link to JS and CSS files, while 3rd party providers that are mostly CSS and script-driven, like browser extensions, have prioritized keeping their CSS up-to-date. When we consider the origins behind 1st parties vs. 3rd parties, it follows that the _way_ content is delivered may be more important to 3rd parties than the actual content, thus making their presentation and optimization of it, all the more important. 
+This data shows us that 1st parties have prioritized refreshing HTML content, which usually holds the link to JS and CSS files, while 3rd party providers that are mostly CSS and script-driven, like browser extensions, have prioritized keeping their CSS up-to-date. When we consider the origins behind 1st parties vs. 3rd parties, it follows that the _way_ content is delivered may be more important to 3rd parties than the actual content, thus making their presentation and optimization of it, all the more important.
 
-Mobile resources with a cache TTL that was considered too short compared to its content age have seen an improvement since 2020. This data is exciting because it hints at the community's growing understanding of appropriately relative caching. 
+Mobile resources with a cache TTL that was considered too short compared to its content age have seen an improvement since 2020. This data is exciting because it hints at the community's growing understanding of appropriately relative caching.
 
 While a cache TTL that is too long may serve stale content, there is no benefit for the end user if it is too short. The connection between cache TTL and content age is slowly closing this gap, moving from 60.2% in 2020 to 54% in 2021. The more attentive we can be towards to content age (i.e: how often we revamp a page's HTML, CSS etc), the more accurately we can set cache limits.
 
@@ -475,7 +475,7 @@ The current percentage of pages audited that have 0 wasted bytes is still relati
 
 ## Conclusion
 
-You may recognize this quote by Phil Karlton, "*There are only two hard things in Computer Science: cache invalidation and naming things.*" And in all honesty I have always wondered why caching is so hard. 
+You may recognize this quote by Phil Karlton, "*There are only two hard things in Computer Science: cache invalidation and naming things.*" And in all honesty I have always wondered why caching is so hard.
 My take is that to do caching well, you need two key ingredients: to keep it simple and to understand all potential edge cases.
 
 Unfortunately, when we try to make the cache too clever, we can end up caching the wrong things or, worse, caching too much. On a similar note, understanding all the edge cases requires extensive research, testing, and slow incremental improvements. Even with that, you have to hope that an old browser will not throw you under the bus. But the reason we still chase great caching strategies is that the ultimate reward is very high, with a significant reduction in round-trip requests, high savings for your server, less data required from your users, and ultimately a better user experience.
