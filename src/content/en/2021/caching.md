@@ -10,14 +10,13 @@ translators: []
 zizzamia_bio: Leonardo is a Staff Software Engineer at <a hreflang="en" href="https://www.coinbase.com/">Coinbase</a>, leading initiatives that enable product engineers to ship the highest quality applications in the world at scale. He curates the <a hreflang="en" href="https://ngrome.io">NGRome Conference</a>. Leo also maintains the <a hreflang="en" href="https://github.com/Zizzamia/perfume.js">Perfume.js</a> library, which helps companies prioritize roadmaps and make better business decisions through performance analytics.
 jessnicolet_bio: Jessica began her career as an opera singer and has been in the classical music industry for the past 10 years. In early 2020 and due to the pandemic, she decided to start a new career in Tech, specifically Web Development. She has always enjoyed writing and telling stories both onstage and off and published a [series of three articles](https://jessicanicolet.medium.com/) on Medium documenting her experience transitioning to this new field. She is currently looking for a full-time position in Technical Writing. 
 results: https://docs.google.com/spreadsheets/d/1-v3yR0LZIC3t4zWtqTgR3jJsKjjRMP-HATU2caP8e2c/
-featured_quote: During the past year caching ...
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: Adoption of cache headers continues to steadily grow....
+featured_stat_1: 99.8%
+featured_stat_label_1: Pages caching fonts
+featured_stat_2: 51 trillion year
+featured_stat_label_2: Largest `max-age` value recorded
+featured_stat_3: 59.1%
+featured_stat_label_3: Mobile pages could save up to 1 MB with caching
 ---
 
 ## Introduction
@@ -150,7 +149,7 @@ Below is a table showing the most common `Cache-Control` directives:
   </tr>
 </table>
 
-The `max-age` directive is the most commonly found with 62.2% of Desktop requests include a `Cache-Control` response header with this directive.
+The `max-age` directive is the most commonly found with 62.2% of Desktop requests including a `Cache-Control` response header with this directive.
 
 {{ figure_markup(
   image="cache-control-directives.png",
