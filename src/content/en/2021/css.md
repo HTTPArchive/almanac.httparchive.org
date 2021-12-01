@@ -525,9 +525,9 @@ In color formats where the value has historically used commas inside a functiona
    <thead>
     <tr>
       <td></td>
-      <th>Keyword</th>
-      <th>Desktop</th>
-      <th>Mobile</th>
+      <th scope="col">Keyword</th>
+      <th scope="col">Desktop</th>
+      <th scope="col">Mobile</th>
     </tr>
    </thead>
    <tbody>
