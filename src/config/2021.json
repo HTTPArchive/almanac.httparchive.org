@@ -22,16 +22,13 @@
           "part": "I",
           "chapter_number": "2",
           "title": "JavaScript",
-          "slug": "javascript",
-          "todo": "true"
+          "slug": "javascript"
         },
         {
           "part": "I",
           "chapter_number": "3",
           "title": "Markup",
-          "slug": "markup",
-          "hero_dir": "2021",
-          "todo": "true"
+          "slug": "markup"
         },
         {
           "part": "I",
@@ -132,6 +129,13 @@
           "title": "Ecommerce",
           "slug": "ecommerce",
           "todo": "true"
+        },
+        {
+          "part": "III",
+          "chapter_number": "17",
+          "title": "Jamstack",
+          "slug": "jamstack",
+          "hero_dir": "2020"
         }
       ]
     },
@@ -170,8 +174,7 @@
           "part": "IV",
           "chapter_number": "21",
           "title": "HTTP",
-          "slug": "http",
-          "todo": "true"
+          "slug": "http"
         }
       ]
     }
@@ -238,6 +241,16 @@
       "website": "https://alankent.me",
       "github": "alankent",
       "twitter": "akent99"
+    },
+    "Dawntraoz": {
+      "name": "Alba Silvente Fuentes",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/36744484?v=4&s=200",
+      "website": "https://www.dawntraoz.com/",
+      "github": "Dawntraoz",
+      "twitter": "dawntraoz"
     },
     "AlexLakatos": {
       "name": "Alex Lakatos",
@@ -460,7 +473,8 @@
         "authors"
       ],
       "avatar_url": "https://avatars.githubusercontent.com/u/131131?v=4&s=200",
-      "github": "dominiclovell"
+      "twitter": "dominiclovell",
+      "linkedin": "dominiclovell"
     },
     "dougsillars": {
       "name": "Doug Sillars",
@@ -1152,6 +1166,16 @@
       "website": "https://simonhearne.com",
       "github": "simonhearne",
       "twitter": "simonhearne"
+    },
+    "thomkrupa": {
+      "name": "Thom Krupa",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars.githubusercontent.com/u/8614811?v=4&s=200",
+      "website": "https://www.thomkrupa.com/",
+      "github": "thomkrupa",
+      "twitter": "thomkrupa"
     },
     "tomayac": {
       "name": "Thomas Steiner",
