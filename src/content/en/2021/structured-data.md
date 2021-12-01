@@ -131,7 +131,8 @@ We can see that there's a broad range of different types of structured data acro
   caption="Structured data usage",
   description="Bar chart showing the popularity of different structured data types across the web. Of all mobile pages in our data: RDFa is on 60.61%, Open Graph tags are on 57.45%, Twitter tags are on 37.48%, Microdata is on 24.91%, Facebook tags are on 8.15%, Dublin Core tags are on 1.22%, Microformats are used on 0.68%, and microformats2 are used on 0.11%. Desktop usage is similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3kZ1Ys-9tId-WBa_8muMzrTAu1Ad5TXYgkopXMmBVc1xmd2N_4PZIpEZEOqRL7baymle0kHzaC6KY/pubchart?oid=501587417&format=interactive",
-  sheets_gid="1876349096"
+  sheets_gid="1876349096",
+  sql_file="present_types.sql"
   )
 }}
 
