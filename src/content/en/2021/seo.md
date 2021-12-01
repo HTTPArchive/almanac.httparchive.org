@@ -84,7 +84,7 @@ The latest information available <a hreflang="en" href="https://www.youtube.com/
 {{ figure_markup(
    image="robots-usage-presentation.png",
    caption="Breakdown of robots.txt status codes Googlebot encountered.",
-   description="Screenshot showing the percentage of robots.txt status codes encountered by Googlebot. Taken from 2019 data, 69% of sites were Good and utilized status code 200 or returned 404 for open access. As much as 5% were Temporarily OK returning 5xx on robots.txt. As much as 26% of sites were Unreachable.",
+   description="Screenshot showing the percentage of robots.txt status codes encountered by Googlebot. Taken from 2019 data, 69% of sites were Good and utilized status code 200 or returned 404 for open access. As many as 5% were Temporarily OK returning 5xx on `robots.txt`. As much as 26% of sites were Unreachable.",
    width=609,
    height=313
    )
@@ -258,7 +258,7 @@ Responsive design sends the same code and adjusts how the website is displayed b
 {{ figure_markup(
    image="vary-usage-agent-header-usage.png",
    caption="`Vary: User-Agent` header usage.",
-   description="Bar chart showing the vary header used to identify mobile-friendless. We found that most web pages utilized a response design (87.4% for desktop and 86.6% for mobile), compared to pages that used dynamic serving (12.6% for desktop and 13.4% for mobile).",
+   description="Bar chart showing the `vary` header used to identify mobile-friendless. We found that most web pages utilized a response design (87.4% for desktop and 86.6% for mobile), compared to pages that used dynamic serving (12.6% for desktop and 13.4% for mobile).",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1985736287&format=interactive",
    sheets_gid="478009067",
    sql_file="html-response-vary-header-used.sql"
@@ -307,7 +307,7 @@ Metadata includes `<title>` elements and `<meta name="description">` tags. Metad
 {{ figure_markup(
    image="title-meta-description-usage.png",
    caption="Breakdown of title and meta description usage.",
-   description="Bar chart showing the percentage of pages that have metadata. We found that 98.8% of mobile and desktop pages had a title tag and 71.1% of mobile and desktop pages had a meta description.",
+   description="Bar chart showing the percentage of pages that have metadata. We found that 98.8% of mobile and desktop pages had a `title` element and 71.1% of mobile and desktop pages had a meta description.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=541272297&format=interactive",
    sheets_gid="1347655296",
    sql_file="seo-stats.sql"
@@ -411,7 +411,7 @@ Note that missing `alt` attributes may not indicate a problem. Pages may include
 {{ figure_markup(
    image="images-with-alt-attribute.png",
    caption="Percentage of images that contain `alt` attributes.",
-   description="Bar chart showing the number of images with `alt` attributes present per percentile (10, 25, 50, 75, and 90). Our data found the median web page contained 54.6% of images with an `alt` attribute on mobile pages and 56.5% on desktop pages. ",
+   description="Bar chart showing the number of images with `alt` attributes present per percentile (10, 25, 50, 75, and 90). Our data found the median web page contained 54.6% of images with an `alt` attribute on mobile pages and 56.5% on desktop pages.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1862003290&format=interactive",
    sheets_gid="412947118",
    sql_file="image-alt-stats.sql"
@@ -421,7 +421,7 @@ Note that missing `alt` attributes may not indicate a problem. Pages may include
 {{ figure_markup(
    image="images-with-blank-alt-attribute.png",
    caption="Percentage of `alt` attributes that were blank.",
-   description="Bar chart showing the percent of featured alt blank attributes per percentile (25, 50, 75, and 90). The median web page featured 10.5% blank `alt` attributes on desktop and 11.8% blank ALT attributes on mobile.",
+   description="Bar chart showing the percent of featured alt blank attributes per percentile (25, 50, 75, and 90). The median web page featured 10.5% blank `alt` attributes on desktop and 11.8% blank `alt` attributes on mobile.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=198831003&format=interactive",
    sheets_gid="412947118",
    sql_file="image-alt-stats.sql"
@@ -431,7 +431,7 @@ Note that missing `alt` attributes may not indicate a problem. Pages may include
 {{ figure_markup(
    image="images-with-missing-alt-attribute.png",
    caption="Percentage of images missing alt attributes.",
-   description="Bar chart showing the percent of images with ALT attributes missing per percentile (10, 25, 50, 75, and 90). The median web page had 1.4% of images with ALT tags missing on desktop on zero ALT tags missing on mobile.",
+   description="Bar chart showing the percent of images with `alt` attributes missing per percentile (10, 25, 50, 75, and 90). The median web page had 1.4% of images with `alt` attributes missing on desktop on zero `alt` attributes missing on mobile.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=819909313&format=interactive",
    sheets_gid="412947118",
    sql_file="image-alt-stats.sql"
@@ -452,7 +452,7 @@ The `loading` attribute on `<img>` elements affects how user agents prioritize r
 {{ figure_markup(
    image="image-loading-property-usage.png",
    caption="Image loading property usage.",
-   description="Bar chart showing percent of pages and image loading property usage (missing, lazy, eager, invalid, auto, and blank). Our data found that 83.3% of desktop and 83.5% of mobile pages were missing an image loading property. We found that 15.6% of desktop and mobile pages use loading="lazy" while only .8% of desktop and mobile pages use loading="eager". Other image loading properties such as loading="invalid", loading="auto", and loading="blank" were used on less than 1% of desktop or mobile pages.",
+   description='Bar chart showing percent of pages and image loading property usage (missing, lazy, eager, invalid, auto, and blank). Our data found that 83.3% of desktop and 83.5% of mobile pages were missing an image loading property. We found that 15.6% of desktop and mobile pages use `loading="lazy"` while only .8% of desktop and mobile pages use `loading="eager"`. Other image loading properties such as `loading="invalid"`, `loading="auto"`, and `loading="blank"` were used on less than 1% of desktop or mobile pages.',
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1305654777&format=interactive",
    sheets_gid="55531578",
    sql_file="image-loading-property-usage.sql"
@@ -573,7 +573,7 @@ Heading elements (`<h1>`, `<h2>`, etc.) are an important structural element. Whi
 {{ figure_markup(
    image="heading-element-usage.png",
    caption="Heading element usage.",
-   description="Bar chart showing the percent of pages with the presence of H elements by heading tag (level 1, 2, 3, 4). There was little to no difference between desktop and mobile results. H1 headings were found on 65.4% of pages, H2s were found the most frequently on 71.9% of pages, H3s were found on 61.8% of pages and H4 headings were found on 37.6% of pages.",
+   description="Bar chart showing the percent of pages with the presence of H elements by heading tag (level 1, 2, 3, 4). There was little to no difference between desktop and mobile results. `h1` headings were found on 65.4% of pages, `h2`s were found the most frequently on 71.9% of pages, `h3`3s were found on 61.8% of pages and `h4` headings were found on 37.6% of pages.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1197492338&format=interactive",
    sheets_gid="1347655296",
    sql_file="seo-stats.sql"
@@ -587,7 +587,7 @@ There was very little difference between desktop and mobile heading usage, nor w
 {{ figure_markup(
    image="non-empty-heading-element-usage.png",
    caption="Non-empty heading element usage.",
-   description="Bar chart showing the percent of pages with the presence of non-empty H elements by heading tag (level 1, 2, 3, 4). There was little to no difference between desktop and mobile results. H1 headings were found on 58.1% of pages, H2s were found the most frequently on 70.5% of pages, H3s on 60.3% of pages and H4 headings were found on 36.5% of pages.",
+   description="Bar chart showing the percent of pages with the presence of non-empty `<h>` elements by heading tag (level 1, 2, 3, 4). There was little to no difference between desktop and mobile results. `h1` headings were found on 58.1% of pages, `h2`s were found the most frequently on 70.5% of pages, `h3`s on 60.3% of pages and `h4` headings were found on 36.5% of pages.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2102902536&format=interactive",
    sheets_gid="1347655296",
    sql_file="seo-stats.sql"
@@ -632,7 +632,7 @@ The most popular websites (the top 1,000 according to CrUX data) have more outgo
 {{ figure_markup(
    image="outgoing-external-links.png",
    caption="External links from homepages.",
-   description="Bar chart showing the number of external links on homepages by percentile (10, 25, 50, 75, 90). The median desktop homepage had 7 external links compared to 6 external links on mobile. There were more external links on desktop homepages at every percentile",
+   description="Bar chart showing the number of external links on homepages by percentile (10, 25, 50, 75, 90). The median desktop homepage had 7 external links compared to 6 external links on mobile. There were more external links on desktop homepages at every percentile.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=876769621&format=interactive",
    sheets_gid="455169599",
    sql_file="seo-stats-by-percentile.sql"
@@ -715,7 +715,7 @@ To let search engines know about localized versions of your pages, use `hreflang
 {{ figure_markup(
    image="hreflang-usage.png",
    caption="Top hreflang tag attributes chart.",
-   description="Horizontal bar chart showing hreflang usage. The most popular hreflang attribute was 'en' (English version) and hreflang attributes (across all languages) were implemented on less than 5% of desktop and mobile pages.",
+   description="Horizontal bar chart showing hreflang usage. The most popular hreflang attribute was `en` (English version) and hreflang attributes (across all languages) were implemented on less than 5% of desktop and mobile pages.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1149395895&format=interactive",
    sheets_gid="866829014",
    sql_file="hreflang-link-tag-usage.sql",
