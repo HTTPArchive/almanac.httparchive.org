@@ -264,7 +264,7 @@ The HTTP Archive data suggests that 34% of desktop pages are using TLS 1.2, whil
 
 ### Reduce headers
 
-Another feature put forward in HTTP/2 was header compression. HTTP/1.1 proved that there were many duplicate or repeating HTTP headers being sent over the wire. These headers can be particularly large when dealing with cookies. To reduce this overhead, HTTP/2 leverages the HPACK compression format to reduce the size of headers sent and received. Both client and server maintain an index of often used and previously transferred headers in a lookup table and can refer to the index of those values in the table, rather than sending the individual values back and forth. This saves in the number of bytes sent over the wire.
+Another feature put forward in HTTP/2 was header compression. HTTP/1.1 proved that there were many duplicate or repeating HTTP headers being sent over the wire. These headers can be particularly large when dealing with cookies. To reduce this overhead, HTTP/2 leverages the <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc7541">HPACK compression format</a> to reduce the size of headers sent and received. Both client and server maintain an index of often used and previously transferred headers in a lookup table and can refer to the index of those values in the table, rather than sending the individual values back and forth. This saves in the number of bytes sent over the wire.
 
 {{ figure_markup(
   image="most-popular-http-response-headers.png",
