@@ -200,7 +200,11 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
       <li>
           <div aria-hidden="true">
             <a href="{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}" tabindex="-1">
+              {% if authordata.avatar_url|int != 0 %}
+              <img class="avatar" alt="{{ authordata.name }} avatar" src="https://avatars.githubusercontent.com/u/{{ authordata.avatar_url }}?v=4&s=200" height="200" width="200" loading="lazy" />
+              {% else %}
               <img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" loading="lazy" />
+              {% endif %}
             </a>
           </div>
           <div class="info">
