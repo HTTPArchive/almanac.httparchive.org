@@ -6,16 +6,16 @@ authors: [AlexLakatos]
 reviewers: [j9t, bkardell, shantsis, tunetheweb, rviscomi]
 analysts: [kevinfarrugia]
 editors: []
-AlexLakatos_bio: Alex Lakatos has spent the past decade working on the Open Web within Browser, Communications, and FinTech organizations. With a background in web technologies and developer advocacy, he's helping the <a hreflang="en" href="https://interledger.org/">Interledger Foundation</a> build developer-friendly products while engaging with the developer community at large. You can <a hreflang="en" href="https://twitter.com/avolakatos">reach out to him on Twitter</a>.
+AlexLakatos_bio: Alex Lakatos has spent the past decade working on the Open Web within Browser, Communications, and FinTech organizations. With a background in web technologies and developer advocacy, he's helping the <a hreflang="en" href="https://interledger.org/">Interledger Foundation</a> build developer-friendly products while engaging with the developer community at large. You can [reach out to him on Twitter](https://twitter.com/avolakatos).
 translators: []
 results: https://docs.google.com/spreadsheets/d/1Ta5Ck7y3W6LCn2CeGtW7dAdLF6Lh5wV2UBQJZTz3W5Q/
-featured_quote: Be part of the people who increase adoption of new standards every year. Start with something new you've learned today, one of the many standards we've covered not only in this chapter but in this whole Almanac.
+featured_quote: Be part of the people who increase adoption of new standards every year. Start with something new you've learned today, one of the many standards we've covered not only in this chapter but in the whole Web Almanac.
 featured_stat_1: 35.3%
 featured_stat_label_1: ICO was finally dethroned as the most popular favicon format by PNG
 featured_stat_2: 98%
-featured_stat_label_2: Pages have at least one <script> element in HTML
+featured_stat_label_2: Pages have at least one `<script>` element in HTML
 featured_stat_3: 4,256
-featured_stat_label_3: The most <form> elements found on a single page.
+featured_stat_label_3: The most `<form>` elements found on a single page.
 ---
 
 ## Introduction
@@ -82,7 +82,7 @@ In terms of popularity, HTML5, better known as `<!DOCTYPE html>` is still the mo
   ) }}</figcaption>
 </figure>
 
-The surprising part is that, [almost 20 years later](https://en.wikipedia.org/wiki/XHTML), XHTML is still a considerable part of the web, with 8% of pages still using it on desktop and a little under 7% on mobile .
+The surprising part is that, <a hreflang="en" href="https://en.wikipedia.org/wiki/XHTML">almost 20 years later</a>, XHTML is still a considerable part of the web, with 8% of pages still using it on desktop and a little under 7% on mobile.
 
 ### Document size
 
@@ -198,7 +198,7 @@ There are <a hreflang="en" href="https://html.spec.whatwg.org/multipage/indices.
   sql_file="element_count_distribution.sql"
 ) }}
 
-No need to panic, the web isn't all made up of divs. The median page uses 31 different elements, and has a total of 666 elements.
+No need to panic, the web isn't all made up of divs. The median page uses 31 different elements and has a total of 666 elements.
 
 {{ figure_markup(
   image="element-count.png",
@@ -227,76 +227,76 @@ Every year since 2019, the Markup chapter of the Web Almanac has featured the mo
     </thead>
       <tbody>
       <tr>
-        <td>title</td>
-        <td>div</td>
-        <td>div</td>
-        <td>div</td>
+        <td>`title`</td>
+        <td>`div`</td>
+        <td>`div`</td>
+        <td>`div`</td>
       </tr>
       <tr>
-        <td>a</td>
-        <td>a</td>
-        <td>a</td>
-        <td>a</td>
+        <td>`a`</td>
+        <td>`a`</td>
+        <td>`a`</td>
+        <td>`a`</td>
       </tr>
       <tr>
-        <td>img</td>
-        <td>span</td>
-        <td>span</td>
-        <td>span</td>
+        <td>`img`</td>
+        <td>`span`</td>
+        <td>`span`</td>
+        <td>`span`</td>
       </tr>
       <tr>
-        <td>meta</td>
-        <td>li</td>
-        <td>li</td>
-        <td>li</td>
+        <td>`meta`</td>
+        <td>`li`</td>
+        <td>`li`</td>
+        <td>`li`</td>
       </tr>
       <tr>
-        <td>br</td>
-        <td>img</td>
-        <td>img</td>
-        <td>img</td>
+        <td>`br`</td>
+        <td>`img`</td>
+        <td>`img`</td>
+        <td>`img`</td>
       </tr>
       <tr>
-        <td>table</td>
-        <td>script</td>
-        <td>script</td>
-        <td>script</td>
+        <td>`table`</td>
+        <td>`script`</td>
+        <td>`script`</td>
+        <td>`script`</td>
       </tr>
       <tr>
-        <td>td</td>
-        <td>p</td>
-        <td>p</td>
-        <td>p</td>
+        <td>`td`</td>
+        <td>`p`</td>
+        <td>`p`</td>
+        <td>`p`</td>
       </tr>
       <tr>
-        <td>tr</td>
-        <td>option</td>
-        <td>link</td>
-        <td>link</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>i</td>
-        <td>meta</td>
+        <td>`tr`</td>
+        <td>`option`</td>
+        <td>`link`</td>
+        <td>`link`</td>
       </tr>
       <tr>
         <td></td>
         <td></td>
-        <td>option</td>
-        <td>i</td>
+        <td>`i`</td>
+        <td>`meta`</td>
       </tr>
       <tr>
         <td></td>
         <td></td>
-        <td></td>
-        <td>ul</td>
+        <td>`option`</td>
+        <td>`i`</td>
       </tr>
       <tr>
         <td></td>
         <td></td>
         <td></td>
-        <td>option</td>
+        <td>`ul`</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>`option`</td>
       </tr>
     </tbody>
   </table>
@@ -409,7 +409,7 @@ A little over 98% of the pages scanned contain at least one `script` element. It
   sql_file="element_popularity.sql"
 ) }}
 
-51.4% of pages also contain a `noscript` element, which is generally used to display a message for browsers that have disabled JavaScript. Another popular use for the `noscript` element is the Google Tag Manager (GTM) snippet. 18.8% of pages on desktop and 16.9% of pages on mobile are using the noscript element as part of the GTM snippet. It's interesting to note that GTM is more popular on desktop than mobile.
+51.4% of pages also contain a `noscript` element, which is generally used to display a message for browsers that have disabled JavaScript. Another popular use for the `noscript` element is the Google Tag Manager (GTM) snippet. 18.8% of pages on desktop and 16.9% of pages on mobile are using the `noscript` element as part of the GTM snippet. It's interesting to note that GTM is more popular on desktop than mobile.
 
 ### Template
 
@@ -676,9 +676,7 @@ The second most popular attribute is `href`, with 9.9% of occurrences. With link
 `meta` elements are gaining some of their lost popularity this year, so we wanted to take a closer look at them. They provide a way to add machine-readable information to your pages, as well as perform some nifty HTTP equivalents. For example, setting a content security policy for a page:
 
 ```html
-
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*;">
-
 ```
 
 From the available attributes, `name` (paired with `content`) was the most popular. 14.2% of the `meta` elements did not have a `name` attribute. In conjunction with the `content` attribute, they are used as a key-value pair for passing in information. What information, you ask?
@@ -826,10 +824,10 @@ Favicons are one of the most resilient pieces of the web. They work even without
   sql_file="favicons.sql"
 ) }}
 
-There were a couple of surprises when we looked at the data:
+There were a few surprises when we looked at the data:
 
-* ICO was finally dethroned as the most popular format by PNG;
-* JPG is still used, even though it's not the best option when compared with some of the other unpopular options;
+* ICO was finally dethroned as the most popular format by PNG.
+* JPG is still used, even though it's not the best option when compared with some of the other unpopular options.
 * With SVG support for favicons finally improving, SVG has overtaken WebP [this year](#favicons) in terms of popularity.
 
 ### Button and input types
@@ -927,8 +925,11 @@ That's what probably prompted a <a hreflang="en" href="https://github.com/whatwg
   sql_file="monetization.sql"
 ) }}
 
-Web Monetization popularly uses a `meta` element on the page, specifying the wallet address for the money to be paid into. It looks a little bit like
-`<meta name="monetization" content="$wallet.example.com/alice">`.
+Web Monetization popularly uses a `meta` element on the page, specifying the wallet address for the money to be paid into. It looks a little bit like:
+
+```html
+<meta name="monetization" content="$wallet.example.com/alice">
+```
 
 {{ figure_markup(
   link="https://www.chromestatus.com/metrics/feature/timeline/popularity/3119",
@@ -960,7 +961,7 @@ Uphold and Gatehub are the current wallets, and it looks like Uphold is the domi
 
 We've pointed out interesting, surprising, and concerning bits of data throughout the chapter. Let us reflect once more on the state of markup in 2021.
 
-The most surprising for us was that, [almost 20 years later](https://en.wikipedia.org/wiki/XHTML), XHTML was still used on a considerable part of the web, with a little over 7% of pages using it in 2021.
+The most surprising for us was that, <a hreflang="en" href="https://en.wikipedia.org/wiki/XHTML">almost 20 years later</a>, XHTML was still used on a considerable part of the web, with a little over 7% of pages using it in 2021.
 
 The median page sizes in 2020 were shrinking when compared to 2019, but this year it looks like the trend has regressed, surpassing the median sizes for 2019 as well. The web is getting heavier. Again.
 
@@ -968,12 +969,12 @@ Almost one percentage point more pages are compressed for mobile only. In a mobi
 
 English is relatively less popular on mobile pages. We're not sure why, and this author would like to encourage you to explore the possibilities of why this is the case.
 
-It was interesting to see that libraries adopting better practices correlated directly with elements falling out of favor.  Both `i` and `option` are less-used this year because icon libraries have switched over to using SVG. 
+It was interesting to see that libraries adopting better practices correlated directly with elements falling out of favor.  Both `i` and `option` are less-used this year because icon libraries have switched over to using SVG.
 
 It was great to see ICO finally being dethroned as the most popular favicon format in favor of PNG. Similarly, seeing SVG more than doubling in usage for favicons in the past year made us think we're 10 years away from dethroning PNG.
 
 The doctype percentage has increased steadily by half a percentage point every year. At this rate, we'll live in an ideal world where every page has a doctype by 2027.
 
-It was concerning for this author to see that the adoption of  some of the newer standards is slow, sometimes on a 10 year cycle, and that web pages don't get updated as often as we'd like.
+It was concerning for this author to see that the adoption of  some of the newer standards is slow, sometimes on a 10-year cycle, and that web pages don't get updated as often as we'd like.
 
 _With that in mind, I'll leave you to reflect on the state of the web in 2021. I'd also encourage you to be part of the people who increase adoption of new standards every year. Start with something new you've learned today, one of the many standards we've covered not only in this chapter but in this whole Web Almanac publication._
