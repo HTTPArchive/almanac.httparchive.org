@@ -16,7 +16,6 @@ featured_stat_2: 98%
 featured_stat_label_2: Pages have at least one `<script>` element in HTML
 featured_stat_3: 4,256
 featured_stat_label_3: The most `<form>` elements found on a single page.
-unedited: true
 ---
 
 ## Introduction
@@ -24,7 +23,7 @@ unedited: true
 Have you ever wondered what happens when you try to visit a web site? After you enter the URL in the address bar of your browser, one of the first things that happens is that a HTML file is downloaded and parsed. You could say that markup is the foundation of the Web. We've dedicated this chapter to looking at some of the bricks that make the web stand today.
 
 
-We've drawn on the data analyzed for the past three years to try to come up with a few questions around the future of markup, the trends emerging over the years, and the adoption rate of new standards. We've also shared the data in the hopes that you'll dig deeper into it, and interpret it in a way that we haven't.
+We've drawn on the data analyzed for the past three years to try to come up with a few questions around the future of markup, the trends emerging over the years, and the adoption rate of new standards. We've also shared the data in the hopes that you'll dig deeper into it and interpret it in a way that we haven't.
 
 _In the Markup chapter, we focus on HTML. While we briefly touch on other markup languages (like SVG or MathML) or other topics in the Almanac, those are covered in more detail in their own dedicated chapters. Because the markup is the gateway into the web, it was extremely hard not to dedicate a whole chapter to it._
 
@@ -85,7 +84,7 @@ In terms of popularity, HTML5, better known as `<!DOCTYPE html>` is still the mo
   ) }}</figcaption>
 </figure>
 
-The surprising part is that, <a hreflang="en" href="https://en.wikipedia.org/wiki/XHTML">almost 20 years later</a>, XHTML is still a considerable part of the web, with 8% of pages still using it on desktop and a little under 7% on mobile .
+The surprising part is that, <a hreflang="en" href="https://en.wikipedia.org/wiki/XHTML">almost 20 years later</a>, XHTML is still a considerable part of the web, with 8% of pages still using it on desktop and a little under 7% on mobile.
 
 ### Document size
 
@@ -200,7 +199,7 @@ There are <a hreflang="en" href="https://html.spec.whatwg.org/multipage/indices.
   sql_file="element_count_distribution.sql"
 ) }}
 
-No need to panic, the web isn't all made up of divs. The median page uses 31 different elements, and has a total of 666 elements.
+No need to panic, the web isn't all made up of divs. The median page uses 31 different elements and has a total of 666 elements.
 
 {{ figure_markup(
   image="element-count.png",
@@ -227,76 +226,76 @@ Every year since 2019, the Markup chapter of the Web Almanac has featured the mo
     </thead>
       <tbody>
       <tr>
-        <td>title</td>
-        <td>div</td>
-        <td>div</td>
-        <td>div</td>
+        <td>`title`</td>
+        <td>`div`</td>
+        <td>`div`</td>
+        <td>`div`</td>
       </tr>
       <tr>
-        <td>a</td>
-        <td>a</td>
-        <td>a</td>
-        <td>a</td>
+        <td>`a`</td>
+        <td>`a`</td>
+        <td>`a`</td>
+        <td>`a`</td>
       </tr>
       <tr>
-        <td>img</td>
-        <td>span</td>
-        <td>span</td>
-        <td>span</td>
+        <td>`img`</td>
+        <td>`span`</td>
+        <td>`span`</td>
+        <td>`span`</td>
       </tr>
       <tr>
-        <td>meta</td>
-        <td>li</td>
-        <td>li</td>
-        <td>li</td>
+        <td>`meta`</td>
+        <td>`li`</td>
+        <td>`li`</td>
+        <td>`li`</td>
       </tr>
       <tr>
-        <td>br</td>
-        <td>img</td>
-        <td>img</td>
-        <td>img</td>
+        <td>`br`</td>
+        <td>`img`</td>
+        <td>`img`</td>
+        <td>`img`</td>
       </tr>
       <tr>
-        <td>table</td>
-        <td>script</td>
-        <td>script</td>
-        <td>script</td>
+        <td>`table`</td>
+        <td>`script`</td>
+        <td>`script`</td>
+        <td>`script`</td>
       </tr>
       <tr>
-        <td>td</td>
-        <td>p</td>
-        <td>p</td>
-        <td>p</td>
+        <td>`td`</td>
+        <td>`p`</td>
+        <td>`p`</td>
+        <td>`p`</td>
       </tr>
       <tr>
-        <td>tr</td>
-        <td>option</td>
-        <td>link</td>
-        <td>link</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>i</td>
-        <td>meta</td>
+        <td>`tr`</td>
+        <td>`option`</td>
+        <td>`link`</td>
+        <td>`link`</td>
       </tr>
       <tr>
         <td></td>
         <td></td>
-        <td>option</td>
-        <td>i</td>
+        <td>`i`</td>
+        <td>`meta`</td>
       </tr>
       <tr>
         <td></td>
         <td></td>
-        <td></td>
-        <td>ul</td>
+        <td>`option`</td>
+        <td>`i`</td>
       </tr>
       <tr>
         <td></td>
         <td></td>
         <td></td>
-        <td>option</td>
+        <td>`ul`</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>`option`</td>
       </tr>
     </tbody>
   </table>
@@ -381,7 +380,7 @@ While the percentages are slightly different when compared with last year, the o
     </tbody>
   </table>
   <figcaption>{{ figure_link(
-    caption="Adoption of `tt`, `ruby`, and `rt` elememts on mobile pages.",
+    caption="Adoption of `tt`, `ruby`, and `rt` elements on mobile pages.",
     sheets_gid="1883388700",
     sql_file="element_popularity.sql"
   ) }}</figcaption>
@@ -409,7 +408,7 @@ A little over 98% of the pages scanned contain at least one `script` element. It
   sql_file="element_popularity.sql"
 ) }}
 
-51.4% of pages also contain a `noscript` element, which is generally used to display a message for browsers that have disabled JavaScript. Another popular use for the `noscript` element is the Google Tag Manager (GTM) snippet. 18.8% of pages on desktop and 16.9% of pages on mobile are using the noscript element as part of the GTM snippet. It's interesting to note that GTM is more popular on desktop than mobile.
+51.4% of pages also contain a `noscript` element, which is generally used to display a message for browsers that have disabled JavaScript. Another popular use for the `noscript` element is the Google Tag Manager (GTM) snippet. 18.8% of pages on desktop and 16.9% of pages on mobile are using the `noscript` element as part of the GTM snippet. It's interesting to note that GTM is more popular on desktop than mobile.
 
 ### Template
 
@@ -489,7 +488,7 @@ We've also looked at elements that didn't show up on the HTML or SVG  spec, be i
   ) }}</figcaption>
 </figure>
 
-By far, the most popular one is <a hreflang="en" href="https://www.sliderrevolution.com/faq/developer-guide-output-class-tag-changes/">Slider Revolution</a>, with a majority of elements attributed to the framework. It more than tripled in popularity over the past year, which leads us to believe it might be a part of a popular template or site builder. A close second is <a hreflang="en" href="https://www.wix.com/">Wix</a>, the popular free site builder. We couldn't identify pages-css, but we'd love to hear any ideas for why the `pages-css` element is so popular, so let us know by [suggesting an edit](#explore-results) on GitHub.
+By far, the most popular one is <a hreflang="en" href="https://www.sliderrevolution.com/faq/developer-guide-output-class-tag-changes/">Slider Revolution</a>, with a majority of elements attributed to the framework. It more than tripled in popularity over the past year, which leads us to believe it might be a part of a popular template or site builder. A close second is <a hreflang="en" href="https://www.wix.com/">Wix</a>, the popular free site builder. We couldn't identify `pages-css`, but we'd love to hear any ideas for why the `pages-css` element is so popular, so let us know by [suggesting an edit](#explore-results) on GitHub.
 
 We would have thought that popular frameworks like <a hreflang="en" href="https://angular.io/">Angular</a>, <a hreflang="en" href="https://nextjs.org/">Next.js</a> or the former <a hreflang="en" href="https://angularjs.org/">Angular.js</a> would account for more custom components, but `router-outlet` and `ng-component` make up a small part of the custom component base.
 
@@ -525,7 +524,7 @@ Google still uses a `center` element on their homepage in 2021, but we're not go
 
 While custom elements all have a hyphen in them, we've also encountered elements that are made up, don't have a hyphen and don't show up on the <a hreflang="en" href="https://html.spec.whatwg.org/#toc-semantics">HTML standard</a>.
 
-All of them were present last year as well, and can be attributed to popular frameworks or products like JivoChat, Yandex, MediaElement.js and Yandex Maps. And because some people get carried away, or six is just not enough headers, h7 to h9.
+All of them were present last year as well and can be attributed to popular frameworks or products like JivoChat, Yandex, MediaElement.js and Yandex Maps. And because some people get carried away, or six is just not enough headers, h7 to h9.
 
 <figure>
   <table>
@@ -826,8 +825,8 @@ Favicons are one of the most resilient pieces of the web. They work even without
 
 There were a couple of surprises when we looked at the data:
 
-* ICO was finally dethroned as the most popular format by PNG;
-* JPG is still used, even though it's not the best option when compared with some of the other unpopular options;
+* ICO was finally dethroned as the most popular format by PNG.
+* JPG is still used, even though it's not the best option when compared with some of the other unpopular options.
 * With SVG support for favicons finally improving, SVG has overtaken WebP [this year](../2020/markup#favicons) in terms of popularity.
 
 ### Button and input types
@@ -925,8 +924,11 @@ That's what probably prompted a <a hreflang="en" href="https://github.com/whatwg
   sql_file="monetization.sql"
 ) }}
 
-Web Monetization popularly uses a `meta` element on the page, specifying the wallet address for the money to be paid into. It looks a little bit like
-`<meta name="monetization" content="$wallet.example.com/alice">`.
+Web Monetization popularly uses a `meta` element on the page, specifying the wallet address for the money to be paid into. It looks a little bit like:
+
+```html
+<meta name="monetization" content="$wallet.example.com/alice">
+```
 
 {{ figure_markup(
   link="https://www.chromestatus.com/metrics/feature/timeline/popularity/3119",
@@ -968,10 +970,10 @@ English is relatively less popular on mobile pages. We're not sure why, and this
 
 It was interesting to see that libraries adopting better practices correlated directly with elements falling out of favor.  Both `i` and `option` are less-used this year because icon libraries have switched over to using SVG.
 
-It was both great to see ICO finally being dethroned as the most popular favicon format in favour of PNG. Similarly, seeing SVG more than doubling in usage for favicons in the past year made us think we're 10 years away from dethroning PNG.
+It was both great to see ICO finally being dethroned as the most popular favicon format in favor of PNG. Similarly, seeing SVG more than doubling in usage for favicons in the past year made us think we're 10 years away from dethroning PNG.
 
 The doctype percentage has increased steadily by half a percentage point every year. At this rate, we'll live in an ideal world where every page has a doctype by 2027.
 
-It was concerning for this author to see that the adoption of  some of the newer standards is slow, sometimes on a 10 year cycle, and that web pages don't get updated as often as we'd like.
+It was concerning for this author to see that the adoption of  some of the newer standards is slow, sometimes on a 10-year cycle, and that web pages don't get updated as often as we'd like.
 
 _With that in mind, I'll leave you to reflect on the state of the web in 2021. I'd also encourage you to be part of the people who increase adoption of new standards every year. Start with something new you've learned today, one of the many standards we've covered not only in this chapter but in this whole Almanac._
