@@ -41,7 +41,7 @@
           "chapter_number": "5",
           "title": "Media",
           "slug": "media",
-          "todo": "true"
+          "todo": true
         },
         {
           "part": "I",
@@ -172,7 +172,7 @@
           "chapter_number": "23",
           "title": "Caching",
           "slug": "caching",
-          "todo": "true"
+          "todo": true
         },
         {
           "part": "IV",
