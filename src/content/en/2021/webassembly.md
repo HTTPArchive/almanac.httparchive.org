@@ -3,7 +3,7 @@
 title: WebAssembly
 description: WebAssembly chapter of the 2021 Web Almanac covering Wasm compression, section sizes, most popular instructions, and post-MVP proposals
 authors: [RReverser]
-reviewers: [jsoverson, carlopi, kripken]
+reviewers: [jsoverson, carlopi, kripken, rviscomi, tunetheweb]
 analysts: [RReverser]
 editors: [shantsis]
 translators: []
