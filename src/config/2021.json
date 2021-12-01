@@ -3,7 +3,7 @@
     {
       "is_live": true,
       "supported_languages": ["en","es","fr","hi","it","ja","nl","pt","ru","tr","uk","zh-CN","zh-TW"],
-      "ebook_languages": []
+      "ebook_languages": ["en"]
     }
   ],
   "outline": [
@@ -15,8 +15,7 @@
           "part": "I",
           "chapter_number": "1",
           "title": "CSS",
-          "slug": "css",
-          "todo": "true"
+          "slug": "css"
         },
         {
           "part": "I",
@@ -40,14 +39,20 @@
         {
           "part": "I",
           "chapter_number": "5",
-          "title": "WebAssembly",
-          "slug": "webassembly",
-          "hero_dir": "2021",
-          "todo": "true"
+          "title": "Media",
+          "slug": "media",
+          "todo": true
         },
         {
           "part": "I",
           "chapter_number": "6",
+          "title": "WebAssembly",
+          "slug": "webassembly",
+          "hero_dir": "2021"
+        },
+        {
+          "part": "I",
+          "chapter_number": "7",
           "title": "Third Parties",
           "slug": "third-parties"
         }
@@ -59,54 +64,51 @@
       "chapters": [
         {
           "part": "II",
-          "chapter_number": "7",
+          "chapter_number": "8",
           "title": "SEO",
           "slug": "seo"
         },
         {
           "part": "II",
-          "chapter_number": "8",
+          "chapter_number": "9",
           "title": "Accessibility",
-          "slug": "accessibility",
-          "todo": "true"
+          "slug": "accessibility"
         },
         {
           "part": "II",
-          "chapter_number": "9",
+          "chapter_number": "10",
           "title": "Performance",
           "slug": "performance"
         },
         {
           "part": "II",
-          "chapter_number": "10",
+          "chapter_number": "11",
           "title": "Privacy",
           "slug": "privacy",
           "hero_dir": "2020"
         },
         {
           "part": "II",
-          "chapter_number": "11",
-          "title": "Security",
-          "slug": "security",
-          "todo": "true"
-        },
-        {
-          "part": "II",
           "chapter_number": "12",
-          "title": "Mobile Web",
-          "slug": "mobile-web",
-          "todo": "true"
+          "title": "Security",
+          "slug": "security"
         },
         {
           "part": "II",
           "chapter_number": "13",
+          "title": "Mobile Web",
+          "slug": "mobile-web"
+        },
+        {
+          "part": "II",
+          "chapter_number": "14",
           "title": "Capabilities",
           "slug": "capabilities",
           "hero_dir": "2020"
         },
         {
           "part": "II",
-          "chapter_number": "14",
+          "chapter_number": "15",
           "title": "PWA",
           "slug": "pwa"
         }
@@ -118,21 +120,19 @@
       "chapters": [
         {
           "part": "III",
-          "chapter_number": "15",
-          "title": "CMS",
-          "slug": "cms",
-          "todo": "true"
-        },
-        {
-          "part": "III",
           "chapter_number": "16",
-          "title": "Ecommerce",
-          "slug": "ecommerce",
-          "todo": "true"
+          "title": "CMS",
+          "slug": "cms"
         },
         {
           "part": "III",
           "chapter_number": "17",
+          "title": "Ecommerce",
+          "slug": "ecommerce"
+        },
+        {
+          "part": "III",
+          "chapter_number": "18",
           "title": "Jamstack",
           "slug": "jamstack",
           "hero_dir": "2020"
@@ -145,38 +145,38 @@
       "chapters": [
         {
           "part": "IV",
-          "chapter_number": "17",
-          "title": "Compression",
-          "slug": "compression",
-          "todo": "true"
-        },
-        {
-          "part": "IV",
-          "chapter_number": "18",
-          "title": "Caching",
-          "slug": "caching"
-        },
-        {
-          "part": "IV",
           "chapter_number": "19",
-          "title": "CDN",
-          "slug": "cdn"
-        },
-        {
-          "part": "IV",
-          "chapter_number": "20",
           "title": "Page Weight",
           "slug": "page-weight"
         },
         {
           "part": "IV",
-          "chapter_number": "21",
+          "chapter_number": "20",
           "title": "Resource Hints",
           "slug": "resource-hints"
         },
         {
           "part": "IV",
+          "chapter_number": "21",
+          "title": "CDN",
+          "slug": "cdn"
+        },
+        {
+          "part": "IV",
           "chapter_number": "22",
+          "title": "Compression",
+          "slug": "compression"
+        },
+        {
+          "part": "IV",
+          "chapter_number": "23",
+          "title": "Caching",
+          "slug": "caching",
+          "todo": true
+        },
+        {
+          "part": "IV",
+          "chapter_number": "24",
           "title": "HTTP",
           "slug": "http"
         }
