@@ -86,7 +86,11 @@
             {% endif %}
                 {% set authordata = config.contributors[author] if author in config.contributors else None %}
                 <li>
+                    {% if authordata.avatar_url|int != 0 %}
+                    <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="https://avatars.githubusercontent.com/u/{{ authordata.avatar_url }}?v=4&s=200" height="200" width="200" /></a>
+                    {% else %}
                     <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+                    {% endif %}
                     <div class="info">
                         <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
                         {% if authordata.twitter or authordata.github or authordata.linkedin or authordata.website %}

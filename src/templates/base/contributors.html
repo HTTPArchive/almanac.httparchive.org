@@ -309,7 +309,13 @@
       </li>
     {% for id, contributor in config.contributors.items() %}
       <li class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}" tabindex="-1">
+
+        {% if contributor.avatar_url|int != 0 %}
+        <img class="contributor-avatar" src="https://avatars.githubusercontent.com/u/{{ contributor.avatar_url }}?v=4&s=200" height="100" width="100" alt="{{ contributor.name }} avatar" loading="lazy" />
+        {% else %}
         <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" loading="lazy" />
+        {% endif %}
+
         <div class="contributor-name">{{ contributor.name }}</div>
 
         <div class="contributor-social">
