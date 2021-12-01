@@ -158,7 +158,7 @@ It is important to note that with the <a hreflang="en" href="https://docs.micros
 
 ### `async` and `defer`
 
-JavaScript loading could be render-blocking unless it is specified as asynchronous or deferred. This is one of the contributing factors to slow performance, as often times JavaScript (or at least some of it) is needed for the initial render.
+JavaScript loading could be render-blocking unless it is specified as asynchronous or deferred. This is one of the contributing factors to slow performance, as oftentimes JavaScript (or at least some of it) is needed for the initial render.
 
 However, loading the JavaScript asynchronously or deferred helps in some ways to improve this experience. Both the `async` and `defer` attributes load the scripts asynchronously. The scripts with the `async` attribute are executed irrespective of the order in which they are defined, however, `defer` executes the scripts only after the document is completely parsed, ensuring that their execution will take place in the specified order. Let's look at how many pages actually specify these attributes for the JavaScript requested in the browser.
 
@@ -229,7 +229,7 @@ This year, we found that 35.6% of mobile pages use the `async` and `defer` attri
 So, what is Piwik? According to its Wikipedia entry:
 
 <figure>
-<blockquote>Matomo, formerly Piwik, is a free and open source web analytics application developed by a team of international developers, that runs on a PHP/MySQL webserver. It tracks online visits to one or more websites and displays reports on these visits for analysis. As of June 2018, Matomo was used by over 1,455,000 websites, or 1.3% of all websites with known traffic analysis tools&hellip;</blockquote>
+<blockquote>Matomo, formerly Piwik, is a free and open source web analytics application developed by a team of international developers, that runs on a PHP/MySQL web server. It tracks online visits to one or more websites and displays reports on these visits for analysis. As of June 2018, Matomo was used by over 1,455,000 websites, or 1.3% of all websites with known traffic analysis tools&hellip;</blockquote>
 <figcaption>— <cite><a href="https://en.wikipedia.org/wiki/Matomo_(software)">Matomo (software) on Wikipedia</a></cite></figcaption>
 </figure>
 
@@ -272,7 +272,7 @@ The median mobile page requests 10 third-party resources and 9 first-party reque
   )
 }}
 
-The median desktop pages requests 11 third-party resources, compared to 10 first-party requests. Irrespective of the <a hreflang="en" href="https://css-tricks.com/potential-dangers-of-third-party-javascript/">performance and reliability risks</a> that third-party resources may bring, both desktop and mobile pages consistently seem to favor third-party scripts. This effect could be due to the <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript">useful interactivity features</a> that third-party scripts give to the web.
+The median desktop page requests 11 third-party resources, compared to 10 first-party requests. Irrespective of the <a hreflang="en" href="https://css-tricks.com/potential-dangers-of-third-party-javascript/">performance and reliability risks</a> that third-party resources may bring, both desktop and mobile pages consistently seem to favor third-party scripts. This effect could be due to the <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript">useful interactivity features</a> that third-party scripts give to the web.
 
 Nevertheless, site owners must ensure that their third-party scripts are <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">loaded performantly</a>. <a href="https://twitter.com/csswizardry">Harry Roberts</a> advocates for going a step further and <a hreflang="en" href="https://csswizardry.com/2017/07/performance-and-resilience-stress-testing-third-parties/">stress testing third-parties</a> for performance and resilience.
 
@@ -345,7 +345,7 @@ The median desktop page loads one JavaScript resource with the `preload` hint an
   ) }}</figcaption>
 </figure>
 
-While the median number of `preload` hints per mobile page has stayed the same, the number of `prefetch` hints has decreased from three to two per page. Note that at the median, these resuts are identical for both mobile and desktop pages.
+While the median number of `preload` hints per mobile page has stayed the same, the number of `prefetch` hints has decreased from three to two per page. Note that at the median, these results are identical for both mobile and desktop pages.
 
 ## How is JavaScript delivered?
 
@@ -393,7 +393,7 @@ To help explain this change, we analyzed the compression methods of first and th
   )
 }}
 
-90% of uncompressed third-party JavaScript resources are less than 5 KB, though first-party requests trail a bit. This may help explain why so many JavaScript resources go uncompressed. Due to the diminishing returns of compressing small resources, a small script may cost more in terms of the resource consumption of server-side compression and client-side decompression than the performance benefits of saving of a few bytes over the network.
+90% of uncompressed third-party JavaScript resources are less than 5 KB, though first-party requests trail a bit. This may help explain why so many JavaScript resources go uncompressed. Due to the diminishing returns of compressing small resources, a small script may cost more in terms of the resource consumption of server-side compression and client-side decompression than the performance benefits of saving a few bytes over the network.
 
 ### Minification
 
@@ -680,7 +680,7 @@ Using JavaScript libraries can come with its own benefits and drawbacks. When us
   ) }}</figcaption>
 </figure>
 
-When we segment the percent of mobile pages by library and framework, we can see that jQuery is largely responsible for the decrease vulnerabilities. This year JavaScript vulnerabilities were found on 57.6% of pages with jQuery, compared to [80.9% last year](../2020/javascript#fig-31). As [predicted](../2020/javascript#fig-31) by [Tim Kadlec](../2020/contributors#tkadlec) in the 2020 edition of this chapter, <em>"if we can get folks to migrate away from those outdated, vulnerable versions of jQuery, we would see the number of sites with known vulnerabilities plummet"</em>. And that's exactly what happened; WordPress migrated from jQuery version 1.12.4 to the more secure version 3.5.1, contributing to a 20 point drop in the percent of pages with known JavaScript vulnerabilities.
+When we segment the percent of mobile pages by library and framework, we can see that jQuery is largely responsible for the decrease in vulnerabilities. This year JavaScript vulnerabilities were found on 57.6% of pages with jQuery, compared to [80.9% last year](../2020/javascript#fig-31). As [predicted](../2020/javascript#fig-31) by [Tim Kadlec](../2020/contributors#tkadlec) in the 2020 edition of this chapter, <em>"if we can get folks to migrate away from those outdated, vulnerable versions of jQuery, we would see the number of sites with known vulnerabilities plummet"</em>. And that's exactly what happened; WordPress migrated from jQuery version 1.12.4 to the more secure version 3.5.1, contributing to a 20 point drop in the percent of pages with known JavaScript vulnerabilities.
 
 ## How do we use JavaScript?
 
