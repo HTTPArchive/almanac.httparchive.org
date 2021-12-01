@@ -136,7 +136,7 @@ We've encountered 3,598 unique instances for the `lang` attribute on the `html` 
   sql_file="html_lang.sql"
 ) }}
 
-Out of the pages scanned, 19.6% on desktop, and 18.6% on mobile, [specified no lang attribute](./accessibility), even though the Web Content Accessibility Guidelines (<a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/meaning-doc-lang-id.html">WCAG</a>) requires that a page language is defined, and ‘programmatically accessible'. Language can be specified in different ways, including an `xml:lang` element, which we didn't check for, so there might still be hope for some of the pages scanned.
+Out of the pages scanned, 19.6% on desktop, and 18.6% on mobile, [specified no lang attribute](./accessibility), even though the Web Content Accessibility Guidelines (<a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/meaning-doc-lang-id.html">WCAG</a>) requires that a page language is defined, and 'programmatically accessible'. Language can be specified in different ways, including an `xml:lang` element, which we didn't check for, so there might still be hope for some of the pages scanned.
 
 {{ figure_markup(
   image="lang.png",
@@ -676,9 +676,7 @@ The second most popular attribute is `href`, with 9.9% of occurrences. With link
 `meta` elements are gaining some of their lost popularity this year, so we wanted to take a closer look at them. They provide a way to add machine-readable information to your pages, as well as perform some nifty HTTP equivalents. For example, setting a content security policy for a page:
 
 ```html
-
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*;">
-
 ```
 
 From the available attributes, `name`, paired with `content` was the most popular. 14.19% of the `meta` elements did not have a `name` attribute. In conjunction with the `content` attribute, they are used as a key-value pair for passing in information. What information, you ask?
