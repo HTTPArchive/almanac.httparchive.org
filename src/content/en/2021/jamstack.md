@@ -62,13 +62,11 @@ SSG adoption is growing in general by 2x in year over year. In 2019 it was just 
 {{ figure_markup(
   image="year-over-year-adoption.png",
   caption="SSG adoption year over year",
-  description="Bar chart represents adoption year over year. Adoption year over year in general is growing 2x times.",
+  description="Bar chart represents SSG adoption year over year. Desktop usage has increased from 0.3% in 2019, to 0.7% in 2020 to 0.9% in 2021. Mobile adoption has similarly increase from 0.4% to 0.6% to 1.1%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=1588757197&format=interactive",
   sheets_gid="874607830",
   sql_file="ssg_compared_to_2020.sql"
 ) }}
-
-{# TODO - I think the data should be described in this chart #}
 
 In 2020 the amount of desktop websites increased 2.76 times, while mobile just 1.5 times. In 2021 mobile availability for SSGs built sites became way better than in 2020, and this year there are ~1.9 times more sites than 2020.
 
@@ -115,7 +113,7 @@ SSGs are heavily used around the world. The figure belows shows the top 10 count
 {{ figure_markup(
   image="ssg-adoption-by-country.png",
   caption="SSG adoption by country",
-  description="Bar chart represents SSG adoption by country. SSG adoption year over year in general is growing 2x times.",
+  description="Bar chart represents SSG adoption by country. For United States of America it's 1.4% on desktop and 1.2% on mobile, for India it's 2.4% and 1.7% respectivdly, for United Kingdom it's 2.1% and 1.7 %, for Brazil it's 1.6% and 1.4%, for Germany it's 2.2% and 1.3%, for France it's 1.9% and 1.5%, for Russian Federation it's 1.7% and 1.3 %, for Canada it's 2.1% and 1.9%, for Japan it's 1.5% and 0.8%, and finally for Indonesia it's 2.7% and 1.7%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=778184046&format=interactive",
   sheets_gid="1956913376",
   sql_file="adoption_by_geo.sql",
@@ -123,11 +121,8 @@ SSGs are heavily used around the world. The figure belows shows the top 10 count
   height=540
 ) }}
 
-{# TODO - wrong description in this figure #}
 
-In the USA, 1% of all sites pages (which is about 22k pages for desktop and 16k for mobile), are created with SSG. India has a lower number of pages, with just 6k for desktop and 7k for mobile, but 1.7% of all pages is covered by Jamstack technologies. In third place is the United Kingdom, which also has 1.7% of pages.
-
-{# TODO - the chart shows USA as 1.2-1.4% not 1%. Isn't india and UK tied then if it's the same, not 2nd and 3rd? #}
+In the USA, between 1.2 and 1.4%% of all sites pages (which is about 22k pages for desktop and 16k for mobile), are created with SSG. India has a lower number of pages, with just 6k for desktop and 7k for mobile, but 1.7% of all pages is covered by Jamstack technologies. In third place is the United Kingdom, which also has 1.7% of pages.
 
 {{ figure_markup(
   image="ssg-distribution-by-country.png",
@@ -155,8 +150,6 @@ We also looked at the adoption levels by regions.
 
 The number of sites in Europe for desktop is 23k versus mobile 26k, which is 1.1% of all web sites in that region. In the Americas, there are 26k desktop sites and 24k mobiles sites (1.2% of sites). Asia has almost the same numbers with 21k desktop and 22k mobile as the leading region with greater Jamstack adoption at 1.45%. Oceania and Africa have way lower overall numbers, but they have way greater Jamstack adoption. Oceania 2.19% and Africa 2%. Overall site adoption is at 1.1%.
 
-{# TODO - do you need to list the numbers for each, or should percentages be enough? or numbers for just the first as a baseline #}
-
 ### Adoption by subregion
 
 We can further break down by subregions to observe additional trends.
@@ -174,13 +167,7 @@ We can further break down by subregions to observe additional trends.
 
 The list is ordered by the total number of SSG sites, but shows those as a percentage of all sites in that region. It's no surprise that top of the list is Northern America as most companies who invented SSGs are in the USA. However, as a percentage of all sites they are a a lower regions with only 1.1% of sites having adopted Jamstack. But surprisingly, Western Europe is in second place and has a similar low percentage adoption compared to some of the sub regions further down the list.
 
-The tail also shows great results. Subregions with lower number of sites in general adopt technology even broader, like 4.8% of Micronesia sites.
-
-### Summary of adoption by regions
-
-SSG technology is adopted not only by places where it's invented and popularized, but also all around the world. Moreover, in places where the next generation of the web will be built, it grows even faster, mostly 2 times and sometimes 4 times, compared to others.
-
-{# TODO - does this need a source? ^ #}
+The tail also shows great results. Subregions with lower number of sites in general adopt technology at a broader based, for example, 4.8% of Micronesia sites.
 
 ## SSGs distribution among CDN providers
 
@@ -197,19 +184,17 @@ The 7 most popular CDN providers for SSGs are:
 * GitHub
 
 Jamstack CDN services are not just for network delivery. They provide a lot of functionality to allow developers to easy deploy and manage Jamstack sites. For example, Netlify provide easy to use functionality to deploy sites in scope of their service so developers can just update the code and the continuous deployment process is managed for them. <a hreflang="en" href="https://bejamas.io/compare/netlify-vs-vercel/">Jamstack CDNs provide many other features</a> such as _serverless functions_, _A/B testing_ etc.
-  
+
 On the other hand, Cloudflare, Akamai, AWS are not only used purely for content deliver either, but can also provide protection service, DNS balancing and more. However, since we can't detect how exactly Cloudflare, Akamai, and AWS are used, results could be false positives if we look at them as Jamstack enablers. The "Jamstack" part could be handled on origin servers and so not actually on these services.
 
 {{ figure_markup(
   image="ssg-distribution-over-cdn.png",
   caption="SSG distribution over CDN",
-  description="Bar chart represents SSG distribution over CDN.",
+  description="Bar chart represents SSG distribution over CDN. Next.js looks is the must used and is used mostly over Cloudflare, AWS, and Vercel approximately evenly, with smaller usage over Netlify and Akamai and almost no usage over GitHub and Azure. Gatsby is predominately Netlify, followed in decending over by AWS, Cloudflare and then little usage of the rest. Nuxt.js is mostly Cloudflare, followed by AWS, and then Netlify with little usage of the rest, Hugo has much smally usage mostly on Netlify, and Jekyll similarly has small usage nearly all on GitHub.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=1366870673&format=interactive",
   sheets_gid="1565107748",
   sql_file="core_web_vitals_distribution.sql"
 ) }}
-
-{# TODO - this figure description should be described more #}
 
 Next.js, is the most popular, mostly served by Cloudflare, Vercel, and AWS. Most of Gatsby's sites use Netlify, AWS, and Cloudflare. Nuxt.js sites preferred to be served by Cloudflare, AWS, and Netlify. Hugo mostly uses Netlify, and it's no surprised that Jekyll is used mostly on GitHub.
 
@@ -218,13 +203,11 @@ On the following graph we show the relative split of CDNs used for popular CDNs:
 {{ figure_markup(
   image="ssg-distribution-over-cdn-stacked.png",
   caption="SSG distribution over CDN",
-  description="Stacked Bar chart represents SSG distribution over CDN.",
+  description="Stacked Bar chart represents SSG distribution over CDN. Next.js is used mostly over Cloudflare, AWS, and Vercel approximately evenly, with smaller usage over Netlify and Akamai and almost no usage over GitHub and Azure. Gatsby is predominately Netlify, followed in decending over by AWS, Cloudflare and then little usage of the rest. Nuxt.js is mostly Cloudflare, followed by AWS, and then Netlify with little usage of the rest, Hugo is mostly on Netlify, and Jekyll usage is nearly all on GitHub.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=180251589&format=interactive",
   sheets_gid="1565107748",
   sql_file="core_web_vitals_distribution.sql"
 ) }}
-
-{# TODO - this figure description should be described more #}
 
 Next.js is mostly served by Vercel (the company that invented Next.js). We can see that more generalized CDNs like AWS are not serving significant percentages of Jamstack sites, as opposed to more Jamstack-focussed services like Netlify and Vercel.
 
@@ -243,13 +226,13 @@ All Lighthouse scores are simulated testing data from our crawl. Hence, real-use
 {{ figure_markup(
   image="median-lighthouse-performance-score.png",
   caption="Median Lighthouse performance score",
-  description="Bar chart represents median Lighthouse performance score.",
+  description="Bar chart represents median Lighthouse performance score. Next.js is 27, Nuxt.js is 24, Gatsby is 37, Hugo is 59 and Jekyll is 69.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=1829586779&format=interactive",
   sheets_gid="745310638",
-  sql_file="median_lighthouse_score.sql"
+  sql_file="median_lighthouse_score.sql",
+  width=600,
+  height=559
 ) }}
-
-{# TODO - this figure description should be described more #}
 
 The median performance score for all SSGs across mobile varies. The top 3 SSGs with by popularity can't even surpass a score of 40. Since they are used in top ranking sites and since users a likely distributed all around the world, we can assumed that they are used across many different devices and networks. We can expect more out-of-the-box improvements like <a hreflang="en" href="https://nextjs.org/docs/basic-features/image-optimization">Next.js image component</a> to help performance.
 
@@ -262,13 +245,13 @@ Lighthouse also runs <a hreflang="en" href="https://web.dev/lighthouse-accessibi
 {{ figure_markup(
   image="median-lighthouse-accessibility-score.png",
   caption="Median Lighthouse accessibility score",
-  description="Bar chart represents median Lighthouse accessibility score.",
+  description="Bar chart represents median Lighthouse accessibility score. Next.js is 85, Nuxt.js is 82, Gatsby is 89, Hugo is 85 and Jekyll is 89.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=1270511864&format=interactive",
   sheets_gid="745310638",
-  sql_file="median_lighthouse_score.sql"
+  sql_file="median_lighthouse_score.sql",
+  width=600,
+  height=559
 ) }}
-
-{# TODO - this figure description should be described more #}
 
 There are limits to what can be checked in an automated accessibility check, but this is still a positive sign. Read the [Accessibility](./accessibility) chapter for more on this subject.
 
@@ -277,10 +260,12 @@ There are limits to what can be checked in an automated accessibility check, but
 {{ figure_markup(
   image="median-lighthouse-seo-score.png",
   caption="Median Lighthouse SEO score",
-  description="Bar chart represents median Lighthouse SEO score. All Jamstack sites provide great SEO scores. From 90 to 92.",
+  description="Bar chart represents median Lighthouse SEO score. All Jamstack sites provide great SEO scores with most at 92, except Hugo with a slightly lower score of 90.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=813819935&format=interactive",
   sheets_gid="745310638",
-  sql_file="median_lighthouse_score.sql"
+  sql_file="median_lighthouse_score.sql",
+  width=600,
+  height=559
 ) }}
 
 Similarly, all Jamstack sites provide great SEO scores from 90 to 92. Using static content always was SEO-friendly technique by default. Moreover, SSGs allow additional out of the box functionality to optimize sites for search engines.
@@ -304,13 +289,11 @@ In the overall assessment for SSGs we can understand the basic performance level
 {{ figure_markup(
   image="cwv-compliance.png",
   caption="Real-user Core Web Vitals compliance",
-  description="Bar chart represents real-user Core Web Vitals compliance",
+  description="Bar chart represents real-user Core Web Vitals compliance. Next.js% has 28.6% of origins passing Core Web Vitals on desktop and 15.8% on mobile, Gatsby% has 37.4% and 21.6% respectively, Nuxt.js% has 22.3% and 11.1%, Hugo% has 52.1% and 32.6%, and finally Jekyll% has 57.8% and 33.6%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=93861885&format=interactive",
   sheets_gid="1340534640",
   sql_file="core_web_vitals_passing.sql"
 ) }}
-
-{# TODO - this figure description should be described more #}
 
 Looking at mobile results, Jekyll and Hugo have the best results over SSGs—33% and 32% of all sites scored good. Gatsby is third with 21%, but it's the first of the JavaScript-based SSGs. Next.js with 15% of good performance pagesm and Nuxt.js has 11%.
 
@@ -449,12 +432,11 @@ We analyzed which third party libraries were used among SSGs. We excluded React 
   caption="JavaScript 3rd parties distribution over SSGs",
   description="Stacked Bar chart represents JavaScript 3rd parties distribution over SSGs",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=972731684&format=interactive",
-  sheets_gid="434923317",
+  sheets_gid="1291311330",
   sql_file="framework_libraries.sql"
 ) }}
 
 {# TODO - this figure description should be described more #}
-{# TODO - the legend looks tight here, it's touching the axis #}
 
 A big surprise for us was jQuery. It wasn't a surprise that it's used for Hugo and Jekyll based sites (more than 60%), but that it's used inside React and Vue based sites wasn't expected! Next.js, Many Nuxt,js, and Gatsby sites use jQuery too.
 
