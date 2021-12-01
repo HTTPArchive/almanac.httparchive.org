@@ -100,7 +100,7 @@ Before we explore specific usage across the various structured data types, we sh
 
 Many of the pages we've evaluated are from websites which use a [Content Management System](./cms) (CMS), such as <a hreflang="en" href="https://wordpress.org/">WordPress</a> or <a hreflang="en" href="https://www.drupal.org/">Drupal</a>. These systems—or the themes/plugins/modules which enhance their functionality—are often responsible for generating the [HTML markup](./markup) which contains the structured data which we're analyzing.
 
-That means that our findings are unavoidably skewed to aligning with the behaviors and output of the most prevalent CMS'. For example, many websites using Drupal automatically output structured data in the form of RDFa, and WordPress (which powers [a significant percentage of websites](./cms{# TODO - add deeplink #})) often includes microformats markup in template code. This contributes significantly to the shape of our findings.
+That means that our findings are unavoidably skewed to aligning with the behaviors and output of the most prevalent CMS'. For example, many websites using Drupal automatically output structured data in the form of RDFa, and WordPress (which powers [a significant percentage of websites](./cms#top-cmss)) often includes microformats markup in template code. This contributes significantly to the shape of our findings.
 
 #### 2. The limitations of homepage-only data
 
@@ -131,7 +131,8 @@ We can see that there's a broad range of different types of structured data acro
   caption="Structured data usage",
   description="Bar chart showing the popularity of different structured data types across the web. Of all mobile pages in our data: RDFa is on 60.61%, Open Graph tags are on 57.45%, Twitter tags are on 37.48%, Microdata is on 24.91%, Facebook tags are on 8.15%, Dublin Core tags are on 1.22%, Microformats are used on 0.68%, and microformats2 are used on 0.11%. Desktop usage is similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3kZ1Ys-9tId-WBa_8muMzrTAu1Ad5TXYgkopXMmBVc1xmd2N_4PZIpEZEOqRL7baymle0kHzaC6KY/pubchart?oid=501587417&format=interactive",
-  sheets_gid="1876349096"
+  sheets_gid="1876349096",
+  sql_file="present_types.sql"
   )
 }}
 
@@ -545,7 +546,7 @@ We should reiterate that these types of structures and relationships are likely 
 {{ figure_markup(
   image="structured-data-json-ld-entities-relationships.svg",
   caption="JSON-LD entity relationship as a Sankey diagram.",
-  description='Sankey diagram showing a complex interweaving of relationships of the form: "From" -> "Relationship" -> "To". `WebPage` is the largest "From" item branching off to multiple "Relationship" types and "To" results (for example `WebPage` -> `PotentialAction` -> `SearchAction`). This is followed by `WebSite`, then `Organization`, `Product`, `BreadCrumblist`, `BlogPosting` and then a decreasingly used list of other items. Of the middle "Relationships" column `PotentialAction` is used most, followed by `ItemListElement`, `IsPartOf`, `Publisher`, `image` and then a similar long tail of ever-decreasing usage. The "To" column has `ImageObject` as the most used at the top, following by `Organization`, `SearchAction`, `ListItem`, `WebSite`, `WebPage` and then again a longer tail of every decreasing usage. The general sense created by the graph is a lot of different relaationships with much cross-usage between the three columns.',
+  description='Sankey diagram showing a complex interweaving of relationships of the form: "From" -> "Relationship" -> "To". `WebPage` is the largest "From" item branching off to multiple "Relationship" types and "To" results (for example `WebPage` -> `PotentialAction` -> `SearchAction`). This is followed by `WebSite`, then `Organization`, `Product`, `BreadCrumblist`, `BlogPosting` and then a decreasingly used list of other items. Of the middle "Relationships" column `PotentialAction` is used most, followed by `ItemListElement`, `IsPartOf`, `Publisher`, `image` and then a similar long tail of ever-decreasing usage. The "To" column has `ImageObject` as the most used at the top, following by `Organization`, `SearchAction`, `ListItem`, `WebSite`, `WebPage` and then again a longer tail of every decreasing usage. The general sense created by the graph is a lot of different relationships with much cross-usage between the three columns.',
   width=1200,
   height=1200
   )

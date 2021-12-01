@@ -88,6 +88,22 @@
 {% block author %}Автор{% endblock %}
 {% block authors %}Авторы{% endblock %}
 
+{% block reactions %}Реакции{% endblock %}
+{% block source %}Посмотреть источник{% endblock %}
+
+{% block like %}лайк{% endblock %}
+{% block repost %}репост{% endblock %}
+{% block reply %}ответ{% endblock %}
+{% block mention %}упоминание{% endblock %}
+{% block likes %}лайков{% endblock %}
+{% block reposts %}репостов{% endblock %}
+{% block replies %}ответов{% endblock %}
+{% block mentions %}упоминаний{% endblock %}
+{% block likesAlt %}лайка{% endblock %}
+{% block repostsAlt %}репоста{% endblock %}
+{% block repliesAlt %}ответа{% endblock %}
+{% block mentionsAlt %}упоминания{% endblock %}
+
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} на Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} на GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} на LinkedIn{% endmacro %}
@@ -188,5 +204,18 @@
   "leads": "Руководители проекта",
   "reviewers": "Проверяющие",
   "translators": "Переводчики",
+  }
+%}
+
+{% set localizedTeamRole = {
+  "analysts": "Аналитик",
+  "authors": "Автор",
+  "brainstormers": "Участники мозгового штурма",
+  "designers": "Дизайнер",
+  "developers": "Разработчик",
+  "editors": "Pедактор",
+  "leads": "Руководители проекта",
+  "reviewers": "Проверяющие",
+  "translators": "Переводчик",
   }
 %}

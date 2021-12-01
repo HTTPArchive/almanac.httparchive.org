@@ -9,10 +9,10 @@ try {
   var $ = JSON.parse(payload);
   var almanac = JSON.parse($._almanac);
   return almanac['link-nodes'].nodes.filter(link => link.rel.toLowerCase() == hint).map(n => n.href);
-} catch (e) {  
+} catch (e) {
   return [];
 }
-''' ;
+''';
 
 SELECT
   client,

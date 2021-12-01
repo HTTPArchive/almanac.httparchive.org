@@ -88,6 +88,22 @@ La nostra missione è combinare le statistiche grezze e le tendenze del HTTP Arc
 {% block author %}Autore{% endblock %}
 {% block authors %}Autori{% endblock %}
 
+{% block reactions %}Reazioni{% endblock %}
+{% block source %}Vedi la fonte{% endblock %}
+
+{% block like %}piace{% endblock %}
+{% block repost %}ripubblicare{% endblock %}
+{% block reply %}rispondere{% endblock %}
+{% block mention %}menzionare{% endblock %}
+{% block likes %}piace{% endblock %}
+{% block reposts %}ripubblica{% endblock %}
+{% block replies %}risposte{% endblock %}
+{% block mentions %}menzioni{% endblock %}
+{% block likesAlt %}{% endblock %}
+{% block repostsAlt %}{% endblock %}
+{% block repliesAlt %}{% endblock %}
+{% block mentionsAlt %}{% endblock %}
+
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} su Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} su GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} su LinkedIn{% endmacro %}
@@ -188,5 +204,18 @@ Se non diversamente specificato, le metriche in tutti i {{ supported_chapters | 
   "leads": "Responsabili del progetto",
   "reviewers": "Revisori",
   "translators": "Traduttori",
+  }
+%}
+
+{% set localizedTeamRole = {
+  "analysts": "Analista",
+  "authors": "Autore",
+  "brainstormers": "Brainstormer",
+  "designers": "Designer",
+  "developers": "Sviluppatore",
+  "editors": "Editor",
+  "leads": "Responsabili del progetto",
+  "reviewers": "Revisore",
+  "translators": "Traduttore",
   }
 %}

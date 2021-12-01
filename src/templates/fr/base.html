@@ -88,6 +88,22 @@ Notre mission est de combiner les statistiques brutes et les tendances de HTTP A
 {% block author %}Auteur·ice{% endblock %}
 {% block authors %}Auteur·ice·s{% endblock %}
 
+{% block reactions %}Réactions{% endblock %}
+{% block source %}Voir la source{% endblock %}
+
+{% block like %}j’aime{% endblock %}
+{% block repost %}républication{% endblock %}
+{% block reply %}réponse{% endblock %}
+{% block mention %}mention{% endblock %}
+{% block likes %}j’aimes{% endblock %}
+{% block reposts %}républications{% endblock %}
+{% block replies %}réponses{% endblock %}
+{% block mentions %}mentions{% endblock %}
+{% block likesAlt %}{% endblock %}
+{% block repostsAlt %}{% endblock %}
+{% block repliesAlt %}{% endblock %}
+{% block mentionsAlt %}{% endblock %}
+
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} sur Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} sur GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} sur LinkedIn{% endmacro %}
@@ -179,6 +195,19 @@ Sauf indication contraire, les statistiques des {{ supported_chapters | length }
 {% endif %}
 
 {% set localizedTeamNames = {
+  "analysts": "Analyse",
+  "authors": "Rédaction",
+  "brainstormers": "Réflexion",
+  "designers": "Design",
+  "developers": "Développement",
+  "editors": "Édition",
+  "leads": "Gestion de projet",
+  "reviewers": "Relecture",
+  "translators": "Traduction",
+  }
+%}
+
+{% set localizedTeamRole = {
   "analysts": "Analyse",
   "authors": "Rédaction",
   "brainstormers": "Réflexion",

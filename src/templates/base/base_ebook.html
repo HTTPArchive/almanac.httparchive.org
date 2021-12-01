@@ -351,7 +351,11 @@
     <ul class="contributors">
     {% for id, contributor in config.contributors.items() %}
       <li class="contributor" id="contributors-{{ id }}">
-        <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" />
+        {% if contributor.avatar_url|int != 0 %}
+        <img class="contributor-avatar" src="https://avatars.githubusercontent.com/u/{{ contributor.avatar_url }}?v=4&s=100" height="100" width="100" alt="{{ contributor.name }} avatar" />
+        {% else %}
+        <img class="contributor-avatar" src="{{ contributor.avatar_url }}" height="100" width="100" alt="{{ contributor.name }} avatar" />
+        {% endif %}
         <div>
           <div class="contributor-name">{{ contributor.name }}</div>
           {% if contributor.twitter %}
@@ -400,7 +404,7 @@
           {% endif %}
           <div class="contributor-teams">
             {% for id in contributor.teams | sort() %}
-              <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{% if loop.length > 2 %}{{ self.comma() if loop.index < loop.length - 1 }}{{ self.oxford_comma() if loop.index == loop.length - 1 }}{% endif %}
+              <span class="contributor-team team-{{ id }}">{{ localizedTeamRole[id] if localizedTeamRole[id]|length else team.name }}</span>{% if loop.length > 2 %}{{ self.comma() if loop.index < loop.length - 1 }}{{ self.oxford_comma() if loop.index == loop.length - 1 }}{% endif %}
               {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
             {% endfor %}
           </div>

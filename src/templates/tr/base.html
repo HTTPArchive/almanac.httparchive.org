@@ -88,6 +88,22 @@ Misyonumuz, HTTP Archive&#8217;ın ham istatistiklerini ve eğilimlerini web top
 {% block author %}Yazar{% endblock %}
 {% block authors %}Yazarlar{% endblock %}
 
+{% block reactions %}Reaksiyonlar{% endblock %}
+{% block source %}Kaynağı görüntüle{% endblock %}
+
+{% block like %}beğenisi{% endblock %}
+{% block repost %}yayınlamak{% endblock %}
+{% block reply %}yanıtı{% endblock %}
+{% block mention %}anma{% endblock %}
+{% block likes %}beğenileri{% endblock %}
+{% block reposts %}gönderileri{% endblock %}
+{% block replies %}yanıtları{% endblock %}
+{% block mentions %}bahseder{% endblock %}
+{% block likesAlt %}{% endblock %}
+{% block repostsAlt %}{% endblock %}
+{% block repliesAlt %}{% endblock %}
+{% block mentionsAlt %}{% endblock %}
+
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}}Twitter üzerinde{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}}GitHub üzerinde {% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} LinkedIn üzerinde {% endmacro %}
@@ -188,5 +204,18 @@ Aksi belirtilmedikçe, {{ year }} Web Almanac&#8217;ın tüm {{ supported_chapte
   "leads": "Proje Liderleri",
   "reviewers": "Gözden Geçirenler",
   "translators": "Çevirmenler",
+  }
+%}
+
+{% set localizedTeamRole = {
+  "analysts": "Analist",
+  "authors": "Yazar",
+  "brainstormers": "Fikir Üreten",
+  "designers": "Tasarımcı",
+  "developers": "Geliştirici",
+  "editors": "Editor",
+  "leads": "Proje Lider",
+  "reviewers": "Gözden Geçiren",
+  "translators": "Çevirmen",
   }
 %}

@@ -38,6 +38,7 @@ node_modules/
 node_modules/*
 static/html
 static/html/*
+static/pdfs/*print*
 .DS_Store
 **/.DS_Store
 Dockerfile

@@ -15,6 +15,7 @@ csp = {
     ],
     'connect-src': [
         '\'self\'',
+        'webmention.io',
         'discuss.httparchive.org',
         'www.google-analytics.com',
         'www.googletagmanager.com'

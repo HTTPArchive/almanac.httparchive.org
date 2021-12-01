@@ -600,7 +600,7 @@ HTTPレスポンスの43.4％がVaryヘッダーを使用しており、その�
 キャッシュ可能なモバイルレスポンスのうち、40.4％が`Set-Cookie`ヘッダーを含んでいます。これらのレスポンスのうち、`private`ディレクティブを使用しているのは4.9％。残りの95.1％（1億9,860万のHTTPレスポンス）は、少なくとも1つの`Set-Cookie`レスポンスヘッダーを含んでおり、CDNなどのパブリックキャッシュサーバでキャッシュできます。これは、キャッシュ機能とCookieがどのように共存しているのか、理解されていないことを示しているのかもしれません。
 
 {{ figure_markup(
-  image="set-Cookie-usage-on-private-and-non-private-cacheable-responses.png",
+  image="set-cookie-usage-on-private-and-non-private-cacheable-responses.png",
   caption="`private`および非プライベートのキャッシュ可能なレスポンスにおける`Set-Cookie`。",
   description="キャッシュ可能な`private`と非プライベートのレスポンスにおける`Set-Cookie`の使用率を示す棒グラフです。`Set-Cookie`ヘッダーを含むデスクトップレスポンスのうち、4.6％が`private`ディレクティブを使用しています。95.4％のレスポンスが、プライベートとパブリックの両方のキャッシュサーバでキャッシュ可能です。`Set-Cookie`ヘッダーを含むモバイルのレスポンスのうち、4.9％が`private`ディレクティブを利用しています。95.1％のレスポンスが、プライベートとパブリックの両方のキャッシュサーバでキャッシュされます。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=97044455&format=interactive",

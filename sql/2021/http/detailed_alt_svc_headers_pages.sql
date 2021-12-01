@@ -19,7 +19,7 @@ SELECT
   protocol,
   IF(url LIKE 'https://%', 'https', 'http') AS http_or_https,
   NORMALIZE_AND_CASEFOLD(extractHTTPHeader(response_headers, "alt-svc")) AS altsvc,
-  COUNT(0) AS num_requests,
+  COUNT(0) AS num_pages,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
@@ -33,6 +33,6 @@ GROUP BY
   http_or_https,
   altsvc
 QUALIFY -- Use QUALIFY rather than HAVING to allow total column to work
-  num_requests >= 100
+  num_pages >= 100
 ORDER BY
-  num_requests DESC
+  num_pages DESC

@@ -8,7 +8,7 @@ LANGUAGE js AS '''
   const parsed_headers = JSON.parse(headers);
   const matching_headers = parsed_headers.filter(h => h.name.toLowerCase() == headername.toLowerCase());
   return matching_headers.length > 0;
-''' ;
+''';
 SELECT
   client,
   headername,

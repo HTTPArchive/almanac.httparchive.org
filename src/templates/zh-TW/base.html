@@ -83,10 +83,26 @@
 {% block reviewed_and_analyzed_by_after %}{% endblock %}
 {% block analysis_and_editing_by_after %}{% endblock %}
 
-{% block unedited %}[Unedited]{% endblock %}
+{% block unedited %}[尚未編輯]{% endblock %}
 
 {% block author %}作者{% endblock %}
 {% block authors %}作者{% endblock %}
+
+{% block reactions %}反應{% endblock %}
+{% block source %}查看原始碼{% endblock %}
+
+{% block like %}則回覆{% endblock %}
+{% block repost %}提及{% endblock %}
+{% block reply %}個喜歡{% endblock %}
+{% block mention %}提及{% endblock %}
+{% block likes %}個贊{% endblock %}
+{% block reposts %}轉發{% endblock %}
+{% block replies %}回覆{% endblock %}
+{% block mentions %}提及{% endblock %}
+{% block likesAlt %}{% endblock %}
+{% block repostsAlt %}{% endblock %}
+{% block repliesAlt %}{% endblock %}
+{% block mentionsAlt %}{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} GitHub{% endmacro %}
@@ -179,6 +195,19 @@ Web Almanac 網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.co
 {% endif %}
 
 {% set localizedTeamNames = {
+  "analysts": "分析者",
+  "authors": "作者",
+  "brainstormers": "腦力激盪者",
+  "designers": "設計者",
+  "developers": "開發者",
+  "editors": "審稿者",
+  "leads": "專案主導者",
+  "reviewers": "審稿者",
+  "translators": "翻譯者",
+  }
+%}
+
+{% set localizedTeamRole = {
   "analysts": "分析者",
   "authors": "作者",
   "brainstormers": "腦力激盪者",

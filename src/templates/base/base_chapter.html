@@ -58,6 +58,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 </script>
 {% endif %}
 {{ super() }}
+<script defer src="{{ get_versioned_filename('/static/js/webmentions.js') }}" nonce="{{ csp_nonce() }}"></script>
 {% endblock %}
 
 {# Calls to action for readers who want to engage more with this chapter. #}
@@ -89,7 +90,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
     </svg>
     {{ self.queries() }}
   </a>
-  <a class="alt btn" hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/new?assignees=&labels=bug%2C+writing&template=2020-content-issue.md&title=Issue+with+the+2020+%5BCHAPTER%5D+chapter">
+  <a class="alt btn" hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/new?assignees=&labels=bug%2C+writing&title=Issue+with+the+{{ year }}+{{ metadata.get('chapter') }}+chapter">
     <svg width="18" height="18" role="img" aria-hidden="true">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
     </svg>
@@ -149,6 +150,40 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
   {% endif %}
 {% endmacro %}
 
+{% macro render_webmentions() %}
+  <h2 id="reactions">
+    <a href="#reactions" class="anchor-link">{{ self.reactions() }}</a>
+  </h2>
+  <div class="reactions" data-source="{{ self.source() }}">
+    <div class="reaction-tabs" role="tablist" aria-label="{{ self.reactions() }}">
+      <button id="likes-tab" role="tab" aria-selected="true" aria-controls="likes-panel" tabindex="0">
+        <span id="likes-count">0</span>
+        <span id="likes-label" data-singular="{{ self.like() }}" data-plural="{{ self.likes() }}" data-plural-alt="{{ self.likesAlt() }}">{{ self.likes() }}</span>
+      </button>
+      <button id="reposts-tab" role="tab" aria-selected="false" aria-controls="reposts-panel" tabindex="-1">
+        <span id="reposts-count">0</span>
+        <span id="reposts-label" data-singular="{{ self.repost() }}" data-plural="{{ self.reposts() }}" data-plural-alt="{{ self.repostsAlt() }}">{{ self.reposts() }}</span>
+      </button>
+      <button id="replies-tab" role="tab" aria-selected="false" aria-controls="replies-panel" tabindex="-1">
+        <span id="replies-count">0</span>
+        <span id="replies-label" data-singular="{{ self.reply() }}" data-plural="{{ self.replies() }}" data-plural-alt="{{ self.repliesAlt() }}">{{ self.replies() }}</span>
+      </button>
+      <button id="mentions-tab" role="tab" aria-selected="false" aria-controls="mentions-panel" tabindex="-1">
+        <span id="mentions-count">0</span>
+        <span id="mentions-label" data-singular="{{ self.mention() }}" data-plural="{{ self.mentions() }}" data-plural-alt="{{ self.mentionsAlt() }}">{{ self.mentions() }}</span>
+      </button>
+    </div>
+    <div id="likes-panel" role="tabpanel" tabindex="0" aria-labelledby="likes-tab">
+    </div>
+    <div id="reposts-panel" role="tabpanel" tabindex="0" aria-labelledby="reposts-tab" hidden>
+    </div>
+    <div id="replies-panel" role="tabpanel" tabindex="0" aria-labelledby="replies-tab" hidden>
+    </div>
+    <div id="mentions-panel" role="tabpanel" tabindex="0" aria-labelledby="mentions-tab" hidden>
+    </div>
+  </div>
+{% endmacro %}
+
 {% macro render_authors() %}
   {% for author in metadata.get('authors') %}
     {% if loop.index == 1 %}
@@ -165,7 +200,11 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
       <li>
           <div aria-hidden="true">
             <a href="{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}" tabindex="-1">
+              {% if authordata.avatar_url|int != 0 %}
+              <img class="avatar" alt="{{ authordata.name }} avatar" src="https://avatars.githubusercontent.com/u/{{ authordata.avatar_url }}?v=4&s=200" height="200" width="200" loading="lazy" />
+              {% else %}
               <img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" loading="lazy" />
+              {% endif %}
             </a>
           </div>
           <div class="info">
@@ -330,6 +369,11 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
         <div class="chapter-links">
           {{ render_actions() }}
         </div>
+        {% if year | int >= 2021 %}
+        <section class="webmentions js-enable hidden">
+          {{ render_webmentions() }}
+        </section>
+        {% endif %}
         <section class="authors">
             {{ render_authors() }}
         </section>
@@ -342,6 +386,15 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
             </svg>
             <span class="num-comments"><span class="not-mobile">{{ self.comments_fallback() }}</span></span> <span data-translation class="comment-singular visually-hidden-mobile">{{ self.comment() }}</span>
             <span data-translation class="comment-plural visually-hidden-mobile">{{ self.comments() }}</span>
+          </a>
+        </div>
+        {% elif year | int >= 2021 %}
+        <div id="cta-container">
+          <a class="alt btn chapter-cta comment-cta" href="#reactions">
+            <svg width="22" height="22" role="img" aria-hidden="true">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comment-logo"></use>
+            </svg>
+            {{ self.reactions() }}
           </a>
         </div>
         {% endif %}

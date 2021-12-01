@@ -88,6 +88,22 @@
 {% block author %}Autor(a){% endblock %}
 {% block authors %}Autores{% endblock %}
 
+{% block reactions %}reacciones{% endblock %}
+{% block source %}ver fuente{% endblock %}
+
+{% block like %}like{% endblock %}
+{% block repost %}repost{% endblock %}
+{% block reply %}respuesta{% endblock %}
+{% block mention %}mención{% endblock %}
+{% block likes %}likes{% endblock %}
+{% block reposts %}reposts{% endblock %}
+{% block replies %}respuestas{% endblock %}
+{% block mentions %}menciones{% endblock %}
+{% block likesAlt %}{% endblock %}
+{% block repostsAlt %}{% endblock %}
+{% block repliesAlt %}{% endblock %}
+{% block mentionsAlt %}{% endblock %}
+
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} en Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} en GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} en LinkedIn{% endmacro %}
@@ -104,10 +120,10 @@
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
-{% macro read_chapter(chapter) %}Lea el Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% macro read_chapter(chapter) %}Lea el capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}Lea el {{ year|int -1 }} Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}Lea el {{ year|int -1 }} capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
@@ -189,4 +205,17 @@ A menos que se indique lo contrario, las métricas en los {{ supported_chapters 
     "reviewers": "Revisores",
     "translators": "Traductores",
     }
-  %}
+%}
+
+{% set localizedTeamRole = {
+    "analysts": "Analista",
+    "authors": "Autor",
+    "brainstormers": "Pensador",
+    "designers": "Diseñador",
+    "developers": "Desarrollador",
+    "editors": "Editor",
+    "leads": "Lider",
+    "reviewers": "Revisor",
+    "translators": "Traductor",
+    }
+%}

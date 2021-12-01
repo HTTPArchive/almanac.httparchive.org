@@ -28,7 +28,7 @@ try {
 } catch {
   return {};
 }
-''' ;
+''';
 
 SELECT
   client,

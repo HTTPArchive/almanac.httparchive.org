@@ -1,5 +1,6 @@
 #standardSQL
 SELECT
+  _TABLE_SUFFIX AS client,
   rank_grouping,
   total_in_rank,
   category,
@@ -8,6 +9,7 @@ SELECT
   COUNT(0) / total_in_rank AS pct_pages_with_app
 FROM (
   SELECT
+    _TABLE_SUFFIX,
     app,
     category,
     url
@@ -20,6 +22,7 @@ FROM (
 )
 LEFT OUTER JOIN (
   SELECT
+    _TABLE_SUFFIX,
     url,
     rank_grouping
   FROM
@@ -27,9 +30,10 @@ LEFT OUTER JOIN (
     UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
     rank <= rank_grouping
-) USING (url)
+) USING (_TABLE_SUFFIX, url)
 JOIN (
   SELECT
+    _TABLE_SUFFIX,
     rank_grouping,
     COUNT(0) AS total_in_rank
   FROM
@@ -38,13 +42,16 @@ JOIN (
   WHERE
     rank <= rank_grouping
   GROUP BY
+    _TABLE_SUFFIX,
     rank_grouping
-) USING (rank_grouping)
+) USING (_TABLE_SUFFIX, rank_grouping)
 GROUP BY
+  client,
   rank_grouping,
   total_in_rank,
   category,
   app
 ORDER BY
+  pct_pages_with_app DESC,
   app,
   rank_grouping

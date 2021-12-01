@@ -88,6 +88,22 @@
 {% block author %}作者{% endblock %}
 {% block authors %}作者{% endblock %}
 
+{% block reactions %}反应{% endblock %}
+{% block source %}查看源代码{% endblock %}
+
+{% block like %}喜欢{% endblock %}
+{% block repost %}次转发{% endblock %}
+{% block reply %}条回复{% endblock %}
+{% block mention %}提及{% endblock %}
+{% block likes %}个赞{% endblock %}
+{% block reposts %}转帖{% endblock %}
+{% block replies %}回复{% endblock %}
+{% block mentions %}提及{% endblock %}
+{% block likesAlt %}{% endblock %}
+{% block repostsAlt %}{% endblock %}
+{% block repliesAlt %}{% endblock %}
+{% block mentionsAlt %}{% endblock %}
+
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} 在 Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} 在 GitHub{% endmacro %}
 {% macro onLinkedIn(authorName) %}{{authorName}} 在 LinkedIn{% endmacro %}
@@ -179,6 +195,19 @@
 {% endif %}
 
 {% set localizedTeamNames = {
+  "analysts": "分析者",
+  "authors": "作者",
+  "brainstormers": "头脑风暴者",
+  "designers": "设计者",
+  "developers": "开发者",
+  "editors": "编辑",
+  "leads": "领导者",
+  "reviewers": "审稿者",
+  "translators": "翻译者",
+  }
+%}
+
+{% set localizedTeamRole = {
   "analysts": "分析者",
   "authors": "作者",
   "brainstormers": "头脑风暴者",

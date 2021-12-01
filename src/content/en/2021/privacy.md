@@ -29,7 +29,7 @@ Recent legislative efforts such as the <a hreflang="en" href="https://ec.europa.
 
 These new laws have given users a much larger say in how comfortable they are with sharing personal data. You probably already have clicked through quite a few cookie consent banners that enable this choice. Furthermore, web browsers are implementing <a hreflang="en" href="https://privacysandbox.com/">technological solutions</a> to improve user privacy, from blocking third-party cookies over hiding sensitive data to innovative ways to balance legitimate use cases on personal attributes with individual user privacy.
 
-In this chapter, we give an overview of the current state of privacy on the web. We first consider how user privacy can be harmed: we discuss how websites profile you through [online tracking](#how-websites-profile-you-online-online-tracking), and how they [access your sensitive data](#how-websites-handle-your-sensitive-data). We then look at the impact of tools that empower users to protect their privacy. Next, we dive into ways websites [protect sensitive data](#how-websites-protect-your-sensitive-data) and give you a choice through [privacy preference signals](#how-websites-give-you-a-privacy-choice-privacy-preference-signals). We close with an [outlook on the efforts that browsers are making to safeguard your privacy in the future](#how-browsers-are-evolving-their-privacy-approaches).
+In this chapter, we give an overview of the current state of privacy on the web. We first consider how user privacy can be harmed: we discuss how websites profile you through [online tracking](#how-websites-profile-you-online-online-tracking), and how they [access your sensitive data](#how-websites-handle-your-sensitive-data). Next, we dive into ways websites [protect sensitive data](#how-websites-protect-your-sensitive-data) and give you a choice through [privacy preference signals](#how-websites-give-you-a-privacy-choice-privacy-preference-signals). We close with an [outlook on the efforts that browsers are making to safeguard your privacy in the future](#how-browsers-are-evolving-their-privacy-approaches).
 
 
 ## How websites profile you: online tracking
@@ -59,7 +59,7 @@ We see that Google-owned domains are prevalent in the online tracking market. Go
 {{ figure_markup(
   image="most_common_tracker_categories.png",
   caption="Most common tracker categories.",
-  description="Bar chart showing the most popular tracker categories and the number of websites embedding a tracker from that category. 83.33% of desktop sites and 82.08% of mobile sites us a tracker. `site_analytics` is used on 73.53% and 70.46% respectively, `advertising` on 68.83% and 67.99%, `social_media` on 12.89% and 11.66%, and finally `pornvertising` on 0.56% and 0.60%.",
+  description="Bar chart showing the most popular tracker categories and the number of websites embedding a tracker from that category. 83.33% of desktop sites and 82.08% of mobile sites use a tracker. `site_analytics` is used on 73.53% and 70.46% respectively, `advertising` on 68.83% and 67.99%, `social_media` on 12.89% and 11.66%, and finally `pornvertising` on 0.56% and 0.60%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1126546581&format=interactive",
   sheets_gid="2084631443",
   sql_file="most_common_tracker_categories.sql",
@@ -114,7 +114,7 @@ Google's subsidiary DoubleClick takes the top spot by setting cookies on 31.4% o
 
 Looking at the specific cookies that these websites set, the most common cookie from a tracker is the `test_cookie` from doubleclick.net. The next most common cookies are advertising-related and remain on a user's device much longer: Facebook's `fr` cookie persists for <a hreflang="en" href="https://www.facebook.com/policy/cookies/">90 days</a>, while DoubleClick's `IDE` cookie stays for <a hreflang="en" href="https://business.safety.google/adscookies/">13 months in Europe and 2 years elsewhere</a>.
 
-With `Lax` becoming the default value of the <a hreflang="en" href="https://web.dev/samesite-cookies-explained/">`SameSite` cookie attribute</a>, sites that want to continue sharing third-party cookies across websites must explicitly set this attribute to `None`. For third parties, 85% have done this so far on mobile and 64% on desktop, potentially for tracking purposes. You can read more about the `SameSite` cookie attribute over at the [Security](./security){# TODO - add id link after security publishes #} chapter.
+With `Lax` becoming the default value of the <a hreflang="en" href="https://web.dev/samesite-cookies-explained/">`SameSite` cookie attribute</a>, sites that want to continue sharing third-party cookies across websites must explicitly set this attribute to `None`. For third parties, 85% have done this so far on mobile and 64% on desktop, potentially for tracking purposes. You can read more about the `SameSite` cookie attribute over at the [Security](./security#samesite) chapter.
 
 ### Fingerprinting
 
@@ -160,7 +160,7 @@ Those numbers may seem a small percentage, but that opinion changes when segrega
 {{ figure_markup(
   image="nb_sites_with_cname_tracking_per_rank.png",
   caption="Websites that use CNAME tracking by rank.",
-  description="Chart showing the number of websites that use CNAME-based tracking split by their popularity rank. Of the top 1,000 sites, 5.91% of desktop sites, and 5.53% of mobile sites use CNAME-based tracking, for the top 10,000 it's 5.67% and 5.35%, for top 100,0000 it's 2.95% and 2.78%, for the top million it's 1.31% and 1.21%, and finally for all sites it's 0.79 and 0.52%.",
+  description="Chart showing the number of websites that use CNAME-based tracking split by their popularity rank. Of the top 1,000 sites, 5.91% of desktop sites, and 5.53% of mobile sites use CNAME-based tracking, for the top 10,000 it's 5.67% and 5.35%, for top 100,000 it's 2.95% and 2.78%, for the top million it's 1.31% and 1.21%, and finally for all sites it's 0.79 and 0.52%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2129255642&format=interactive",
   sheets_gid="518784663",
   sql_file="nb_sites_with_cname_tracking_per_rank.sql"
@@ -172,7 +172,7 @@ When we look at the rank of the websites that use CNAME-based tracking, we see t
 {{ figure_markup(
   image="nb_sites_with_cname_tracking_per_public_suffix.png",
   caption="Public suffix of sites with CNAME-based tracking.",
-  description="Chart showing the number of websites that use CNAME-based tracking on a desktop client, according to the public suffix of the website. 0.64% of desktop websites and 0.42% of mobile websites with a `com` suffix use CNAME track, for `edu` it's 0.18% and 0.10% respectively, for `jp` it's 0.03% and 0.04%, for `org` 0.04% and 0.03%, for `co.jp` 0.03% and 0.02%, for `ca` 0.02% and 0.01%, for `de` 0.02% and 0.02%, for `ru` 0.01% and 0.01%, for `com.au` 0.02% and 0.01%, and finally for `edu.au` 0.02% and 0.01%.",
+  description="Chart showing the number of websites that use CNAME-based tracking on a desktop client, according to the public suffix of the website. 0.64% of desktop websites and 0.42% of mobile websites with a `com` suffix use CNAME tracking, for `edu` it's 0.18% and 0.10% respectively, for `jp` it's 0.03% and 0.04%, for `org` 0.04% and 0.03%, for `co.jp` 0.03% and 0.02%, for `ca` 0.02% and 0.01%, for `de` 0.02% and 0.02%, for `ru` 0.01% and 0.01%, for `com.au` 0.02% and 0.01%, and finally for `edu.au` 0.02% and 0.01%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1816699194&format=interactive",
   sheets_gid="1155429637",
   sql_file="nb_sites_with_cname_tracking_per_public_suffix.sql",
@@ -183,7 +183,7 @@ When we look at the rank of the websites that use CNAME-based tracking, we see t
 
 Apart from the `.com` suffix, a large number of the websites using CNAME-based tracking have a `.edu` domain. Also, a notable amount of CNAME trackers are prevalent on `.jp` and `.org` websites.
 
-CNAME-based tracking can be a counter measure to when the user might have enabled tracking protection against third-party tracking. Since few tracker-blocking tools and <a hreflang="en" href="https://www.cookiestatus.com/">browsers</a> have already implemented a defense against CNAME tracking, it is prevalent on a number of websites up to date.
+CNAME-based tracking can be a countermeasure to when the user might have enabled tracking protection against third-party tracking. Since few tracker-blocking tools and <a hreflang="en" href="https://www.cookiestatus.com/">browsers</a> have already implemented a defense against CNAME tracking, it is prevalent on a number of websites up to date.
 
 ### (Re)targeting
 
@@ -287,7 +287,7 @@ Every data breach tracked by HaveIBeenPwned leaks email addresses, since this is
 
 ## How websites protect your sensitive data
 
-While you're browsing the web, there is certain data that you might want to keep private: the web pages that you visit, any sensitive data that you enter into forms, your location, and so on. Over at the [Security](./security){# TODO - add id link after security publishes #} chapter, you can learn how 92.5% of desktop sites have enabled HTTPS to protect your data from snooping while it traverses the Internet. Here, we'll focus on how websites can further instruct browsers to ensure privacy for sensitive resources.
+While you're browsing the web, there is certain data that you might want to keep private: the web pages that you visit, any sensitive data that you enter into forms, your location, and so on. Over at the [Security](./security#transport-security) chapter, you can learn how 91.1% of mobile sites have enabled HTTPS to protect your data from snooping while it traverses the Internet. Here, we'll focus on how websites can further instruct browsers to ensure privacy for sensitive resources.
 
 ### Permissions Policy / Feature Policy
 
@@ -373,7 +373,7 @@ Servers can indicate their support for these Client Hints by specifying the `Acc
 {{ figure_markup(
   image="nb_websites_with_user_agent_client_hints.png",
   caption="Percentage of pages that use User-Agent Client Hints.",
-  description="Bar chart showing the percentage of pages that use User-Agent Client Hints according to the rank of the website. For the top 1,000 websites it's 3.67% on desktop and 3.56% on mobile, for the top 10,000 it's 1.35% and 1.44% respectively, for the top 100,000 it's 0.40% and 0.42%, for the top 1,000,000 it's 0.14% and 0.15%, and finally for the all sites it's 0.15% and 0.20%.",
+  description="Bar chart showing the percentage of pages that use User-Agent Client Hints according to the rank of the website. For the top 1,000 websites it's 3.67% on desktop and 3.56% on mobile, for the top 10,000 it's 1.35% and 1.44% respectively, for the top 100,000 it's 0.40% and 0.42%, for the top 1,000,000 it's 0.14% and 0.15%, and finally for all sites it's 0.15% and 0.20%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2107002085&format=interactive",
   sheets_gid="190615661",
   sql_file="nb_websites_with_user_agent_client_hints.sql"
@@ -421,7 +421,7 @@ The most popular libraries are <a hreflang="en" href="https://www.cookieyes.com/
 
 The <a hreflang="en" href="https://iabeurope.eu/transparency-consent-framework/">Transparency and Consent Framework</a> (TCF) is an initiative of the Interactive Advertising Bureau Europe (IAB) for providing an industry standard for communicating user consent to advertisers. The framework consists of a <a hreflang="en" href="https://iabeurope.eu/vendor-list/">Global Vendor List</a>, in which vendors can specify the legitimate purpose of the processed data, and a list of CMPs who act as an intermediary between the vendors and the publishers. Each CMP is responsible for communicating the legal basis and storing the consent option provided by the user in the browser. We refer to the stored cookie as the _consent string_.
 
-TCF is meant as a GDPR-compliant mechanism in Europe, although [a recent decision by the Belgian Data Protection Authority](https://iabeurope.eu/all-news/update-on-the-belgian-data-protection-authoritys-investigation-of-iab-europe/) found that this system is still infringing. When the CCPA came into play in California, IAB Tech Lab US developed the <a hreflang="en" href="https://iabtechlab.com/standards/ccpa/">U.S. Privacy</a> (USP) technical specifications, using the same concepts.
+TCF is meant as a GDPR-compliant mechanism in Europe, although <a hreflang="en" href="https://iabeurope.eu/all-news/update-on-the-belgian-data-protection-authoritys-investigation-of-iab-europe/">a recent decision by the Belgian Data Protection Authority</a> found that this system is still infringing. When the CCPA came into play in California, IAB Tech Lab US developed the <a hreflang="en" href="https://iabtechlab.com/standards/ccpa/">U.S. Privacy</a> (USP) technical specifications, using the same concepts.
 
 {{ figure_markup(
   image="nb_websites_with_iab.png",
@@ -476,7 +476,7 @@ Nowadays, most websites have a privacy policy, where users can learn about the t
 )
 }}
 
-By looking for keywords such as "privacy policy", "cookie policy", and more, in a <a hreflang="en" href="https://github.com/RUB-SysSec/we-value-your-privacy/blob/master/privacy_wording.json">number of languages</a>, we see that almost 39.70% of mobile websites, and 43.02% of desktop sites refer to some sort of privacy policy. While some websites are not required to have such a policy, many websites handle personal data and should therefore have a privacy policy to be fully transparent towards their users.
+By looking for keywords such as "privacy policy", "cookie policy", and more, in a <a hreflang="en" href="https://github.com/RUB-SysSec/we-value-your-privacy/blob/master/privacy_wording.json">number of languages</a>, we see that 39.70% of mobile websites, and 43.02% of desktop sites refer to some sort of privacy policy. While some websites are not required to have such a policy, many websites handle personal data and should therefore have a privacy policy to be fully transparent towards their users.
 
 ### Do Not Track - Global Privacy Control
 
@@ -485,7 +485,7 @@ The <a hreflang="en" href="https://www.eff.org/issues/do-not-track">Do Not Track
 {{ figure_markup(
   image="nb_websites_with_dnt_blink_usage.png",
   caption="Percentage of websites using Do Not Track (DNT).",
-  description="Bar chart showing the percentage of websites that access the value of DNT by using the `NavigatorDoNotTrack` feature. 17.37% of desktop sites and 17.39% of mobile sites access this. ",
+  description="Bar chart showing the percentage of websites that access the value of DNT by using the `NavigatorDoNotTrack` feature. 17.37% of desktop sites and 17.39% of mobile sites access this.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1302428398&format=interactive",
   sheets_gid="485103492",
   sql_file="nb_websites_with_dnt_blink_usage.sql"
@@ -553,7 +553,7 @@ The <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/att
 {{ figure_markup(
   image="same_party_cookie_attribute.png",
   caption="Percentage of cookies with the SameParty cookie attribute.",
-  description="Bar chart showing the percentage of cookies with the SameParty cookie attribute according to the request context. For first-party cookies `SameParty` is used on 38 desktop sites and 73 mobile sites for third-party cookies it's 2,527 for desktop sites and 1,805 mobile sites.",
+  description="Bar chart showing the percentage of cookies with the SameParty cookie attribute according to the request context. For first-party cookies `SameParty` is used on 38 desktop sites and 73 mobile sites, for third-party cookies it's used on 2,527 desktop sites and 1,805 mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=935824621&format=interactive",
   sheets_gid="858972835",
   sql_file="../security/cookie_attributes.sql"

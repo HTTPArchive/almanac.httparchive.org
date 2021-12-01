@@ -119,37 +119,9 @@ Performance by connection type would be easier to understand if we could start t
   )
 }}
 
-Regions in parts of Asia and Europe continued to have higher performance. This may be due to higher network speeds, wealthier populations with faster devices, and closer edge-caching locations.  We should inspect the dataset before drawing too many conclusions. Here are the top 10 regions by the number of websites in CrUX versus their relative population sizes:
+Regions in parts of Asia and Europe continued to have higher performance. This may be due to higher network speeds, wealthier populations with faster devices, and closer edge-caching locations. We should understand the dataset better before drawing too many conclusions.
 
-{{ figure_markup(
-  image="performance-5-country-top-origins-vs-pop.png",
-  caption='Top 10 regions by CrUX origins vs population. Source: <a hreflang="en" href="https://datacommons.org/">datacommons.org</a>. Population data is for 2020. Original data comes from the World Bank, the US Census, INSEE, and WikiData.',
-  description="Bar chart showing for each country, the percent of total origins versus the percent of total population. Data listed as country, percent of origins, percent of population: United States 12.3% 4.3%, Japan 5.0% 1.6%, Brazil 4.3% 2.7%, Germany 3.9% 1.1%, India 3.8% 17.8%, United Kingdom 3.6% 0.9%, Russian Federation 3.0% 1.9%, Italy 2.8% 0.8%, Spain 2.8% 0.6%, France 2.7% 0.9%",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=200409532&format=interactive",
-  width=600,
-  height=792,
-  sheets_gid="215056532",
-  sql_file="web_vitals_by_country.sql"
-  )
-}}
-
-Similarly, here are the top 10 regions by population and their corresponding share of websites in CrUX:
-
-{{ figure_markup(
-  image="performance-6-country-top-pop-vs-origins.png",
-  caption='Top 10 regions by population vs CrUX origins. Source: <a hreflang="en" href="https://www.census.gov/popclock/print.php?component=counter">U.S. Census Bureau Current Population</a> (population clock) at Nov 02, 2021 18:31 UTC (+4). Population data is for 2021',
-  description="Bar chart showing for each country, the percent of total population versus the percent of total origins. Data listed as country, percent of population, percent of origins: 1. China 17.9% 0.3%, 1a. Taiwan 0.3% 1.2%, 2. India 17.2% 3.8%, 3. United States 4.3% 12.3%, 4. Indonesia 3.5% 2.1%, 5. Pakistan 3.1% 0.6%, 6. Nigeria 2.8% 0.3%, 7. Brazil 2.7% 4.3%, 8. Bangladesh 2.1% 0.5%, 9. Russia 1.8% 3.0%, 10. Mexico 1.7% 1.9%",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj6-t49BNV_5W-w83AABkUoo6klfyUyIz13yKShLAzK8qGs5lJ9TKcggIEp6JgxikVF-UJBAHpsrNl/pubchart?oid=1955368947&format=interactive",
-  width=600,
-  height=792,
-  sheets_gid="215056532",
-  sql_file="web_vitals_by_country.sql"
-  )
-}}
-
-The US, Japan, Brazil, and Western Europe are over-represented in the CrUX dataset origins. Many large countries like China, India, Nigeria, and Pakistan are underrepresented.
-
-Remember that CrUX data is only gathered in Chrome. The percent of origins by country does not align with relative population sizes. Reasons may include differences in browser share, device share, level of access, and level of use. Also, the origins accessed in that country may not mirror the global top origins included in the dataset. Keep these caveats in mind when evaluating regional-level differences and context for all CrUX analyses.
+CrUX data is only gathered in Chrome. The percent of origins by country does not align with relative population sizes. Reasons may include differences in browser share, in-app browsing, device share, level of access, and level of use. Keep these caveats in mind when evaluating regional-level differences and context for all CrUX analyses.
 
 ### By Rank
 
@@ -398,7 +370,7 @@ The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Ele
   )
 }}
 
-Interestingly, 354 origins on desktop attempted to use native lazy-loading on HTML elements that do not support the loading attribute (e.g., `<div>`). The loading attribute is only supported on `<img>` and, in some browsers, `<iframe>` elements (see <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">caniuse</a>).
+Interestingly, 354 origins on desktop attempted to use native lazy-loading on HTML elements that do not support the loading attribute (e.g., `<div>`). The loading attribute is only supported on `<img>` and, in some browsers, `<iframe>` elements (see <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">Can I use</a>).
 
 ### Cumulative Layout Shift (CLS)
 
