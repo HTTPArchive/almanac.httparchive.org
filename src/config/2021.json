@@ -27,8 +27,7 @@
           "part": "I",
           "chapter_number": "3",
           "title": "Markup",
-          "slug": "markup",
-          "todo": "true"
+          "slug": "markup"
         },
         {
           "part": "I",
@@ -41,7 +40,8 @@
           "part": "I",
           "chapter_number": "5",
           "title": "Media",
-          "slug": "media"
+          "slug": "media",
+          "todo": "true"
         },
         {
           "part": "I",
@@ -171,7 +171,8 @@
           "part": "IV",
           "chapter_number": "23",
           "title": "Caching",
-          "slug": "caching"
+          "slug": "caching",
+          "todo": "true"
         },
         {
           "part": "IV",
