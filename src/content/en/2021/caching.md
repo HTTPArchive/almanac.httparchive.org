@@ -90,7 +90,7 @@ Usage of the `Cache-Control` header has increased steadily since 2019. 74% of re
   sql_file="header_trends.sql"
 ) }}
 
-From 2020, the usage of this specific header increased by 0.71% for Mobile and by 1.13% for Desktop. But on Mobile, we still have 25.1% of requests that use neither `Cache-Control` nor `Expires` headers. This leads us to believe there has been an increase in awareness in the community around proper usage of `Cache-Control`, but we still have a long way to go to full adoption of these headers.
+Since 2020, the usage of this specific header increased by 0.71% for Mobile and by 1.13% for Desktop. But on Mobile, we still have 25.1% of requests using neither `Cache-Control` nor `Expires` headers. This leads us to believe there has been an increase in awareness in the community around proper usage of `Cache-Control`, but we still have a long way to go to full adoption of these headers.
 
 To **validate** the content, we have:
 - `Last-Modified` indicates when the object was last changed. Its value is a date timestamp.
