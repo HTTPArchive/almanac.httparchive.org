@@ -26,7 +26,7 @@ Over the last two decades, the way we experience web applications has changed, g
 Caching is a technique that enables the reuse of previously downloaded content, from simple static assets like Javascript, CSS files or basic string values to more complex JSON API responses.
 
 At its core, Caching avoids making specific HTTP requests and allows an application to feel more responsive and reliable to the user. Each request is usually cached in two main places:
-- **Content Delivery Network (CDN)**: Usually a third-party company like Cloudflare with the primary goal of replicating your data as closely as possible to where the user is accessing the application. Most CDNs have some default behavior, but mainly you can give them instructions them on how to cache by using HTTP Headers.
+- **Content Delivery Network (CDN)**: Usually a third-party company like Cloudflare with the primary goal of replicating your data as closely as possible to where the user is accessing the application. Most CDNs have some default behavior, but mainly you can give them instructions on how to cache by using HTTP Headers.
 - **Browser**: Usually will either learn how to cache your resources internally or respect the HTTP Headers you defined to optimize the experience. On top of that, you will have access to additional manual caching strategies including storing simple strings in *Cookies*, complex API responses in *IndexedDB*, or entire JS or HTML resources in the *CacheStorage* with a *Service Worker*.
 
 In this chapter, we will mostly focus on the HTTP Headers used between the Browser and the CDN, briefly mentioning Service Worker caching strategies.
@@ -49,7 +49,7 @@ While Cloudflare is used twice as much as Google, a large variety of solutions r
 
 ## Service Worker adoption
 
-The adoption of Service Workers has continued to steadily increase. While 1% of Desktop pages registered a service worker in 2021, 9% of Mobile pages ranked in the top 1k registered one.
+The adoption of Service Workers has continued to steadily increase. While 1% of Desktop pages registered a Service Worker in 2021, 9% of Mobile pages ranked in the top 1k registered one.
 
 This higher adoption of Service Workers from the top 1k pages, could be related to the world-wide trend towards remote-first and by association, mobile-friendly. As our reliance on working and living in one place throughout the entire year shifts, we need our devices to work even harder and smarter to keep up with us. Service Workers are a tool that can improve performance when the user is dealing with unreliable networks or LowEnd devices.
 
