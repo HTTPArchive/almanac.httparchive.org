@@ -31,7 +31,7 @@ _In the Markup chapter, we focus on HTML. While we briefly touch on other markup
 
 ## General
 
-{# TODO: Add a sentence introducing the General section. #}
+We'll start with some of the more general aspects of a markup document. Things like document types, document sizes, document language and compression.
 
 ### Doctypes
 
@@ -94,7 +94,7 @@ In a mobile world, where every byte of data has a cost associated with it, docum
 {{ figure_markup(
   image="page-size-by-year.png",
   caption="The median page size year-over-year.",
-  description="TODO",
+  description="Bar chart showing the evolution of median page sizes for mobile and desktop pages for the years 2019, 2020 and 2021. 2020 saw a slight decrease in size, and 2021 surpassed 2019 in size. The sizes gravitate around 27 Kilobytes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSaFU4lh2yyjudn8fcy0l65EbP9MdCbB39wQbT0c5cfcJzfl2p1nGOByDdgg8P3dMeZMa0eWkkG685n/pubchart?oid=618740225&format=interactive",
   sheets_gid="742176410",
   sql_file="document_trends.sql"
@@ -112,7 +112,7 @@ With document sizes increasing, we also looked at compression this year. We felt
 {{ figure_markup(
   image="content-encoding.png",
   caption="Adoption of content encoding schemes.",
-  description="TODO",
+  description="Bar chart showing the content encoding schemes used by mobile and desktop pages. 63.8% of pages use gzip, 21.9% use Brotli and 14.1% were uncompressed.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSaFU4lh2yyjudn8fcy0l65EbP9MdCbB39wQbT0c5cfcJzfl2p1nGOByDdgg8P3dMeZMa0eWkkG685n/pubchart?oid=1960175313&format=interactive",
   sheets_gid="75721024",
   sql_file="content_encoding.sql"
@@ -130,7 +130,7 @@ We've encountered 3,598 unique instances for the `lang` attribute on the `html` 
 {{ figure_markup(
   image="lang-region.png",
   caption="Adoption of the most popular HTML language codes, including region.",
-  description="TODO",
+  description="Bar chart showing the language usage, including region, for the top ten languages in our data set. 19% use english, 18.6% are not set, 13.5% use american english, with japanese, spanish, brazilian portuguese, british english, russian, german and french having various minor percentages of usage, from 5.3 to 1.5.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSaFU4lh2yyjudn8fcy0l65EbP9MdCbB39wQbT0c5cfcJzfl2p1nGOByDdgg8P3dMeZMa0eWkkG685n/pubchart?oid=742535028&format=interactive",
   sheets_gid="298704786",
   sql_file="html_lang.sql"
@@ -141,7 +141,7 @@ Out of the pages scanned, 19.6% on desktop, and 18.6% on mobile, [specified no l
 {{ figure_markup(
   image="lang.png",
   caption="Adoption of the most popular HTML language codes, not including region.",
-  description="TODO",
+  description="Bar chart showing the language usage, for the top ten languages in our data set. 35.5% use english, 18.7% are not set, with spanish, japanese, portuguese, russian, german, french, italian and polish having various minor percentages of usage, from 6.3 to 1.9.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSaFU4lh2yyjudn8fcy0l65EbP9MdCbB39wQbT0c5cfcJzfl2p1nGOByDdgg8P3dMeZMa0eWkkG685n/pubchart?oid=733528618&format=interactive",
   sheets_gid="298704786",
   sql_file="html_lang.sql"
@@ -194,7 +194,7 @@ There are [112 elements](https://html.spec.whatwg.org/multipage/indices.html#ele
 {{ figure_markup(
   image="element-diversity.png",
   caption="Distribution of the number of distinct types of elements per page.",
-  description="TODO",
+  description="Element types per percentile, with 90% of pages using at least 42 different elements.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSaFU4lh2yyjudn8fcy0l65EbP9MdCbB39wQbT0c5cfcJzfl2p1nGOByDdgg8P3dMeZMa0eWkkG685n/pubchart?oid=1081218177&format=interactive",
   sheets_gid="920875734",
   sql_file="element_count_distribution.sql"
@@ -205,7 +205,7 @@ No need to panic, the web isn't all made up of divs. The median page uses 31 dif
 {{ figure_markup(
   image="element-count.png",
   caption="Distribution of the number elements per page.",
-  description="TODO",
+  description="Elements per percentile, showing how 10% of all pages employ more than 1,727 elements.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSaFU4lh2yyjudn8fcy0l65EbP9MdCbB39wQbT0c5cfcJzfl2p1nGOByDdgg8P3dMeZMa0eWkkG685n/pubchart?oid=957921827&format=interactive",
   sheets_gid="920875734",
   sql_file="element_count_distribution.sql"
@@ -348,7 +348,7 @@ While the `html`, `head`, `body`, `title`, and `meta` elements are all optional,
 {{ figure_markup(
   image="element-popularity.png",
   caption="Adoption of the top HTML elements.",
-  description="TODO",
+  description="Bar chart showing the adoption of HTML elements. html, head, body, title and meta all show up on over 99% of websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSaFU4lh2yyjudn8fcy0l65EbP9MdCbB39wQbT0c5cfcJzfl2p1nGOByDdgg8P3dMeZMa0eWkkG685n/pubchart?oid=231602731&format=interactive",
   height=656,
   sheets_gid="1883388700",
@@ -502,7 +502,7 @@ There are currently [28 obsolete and deprecated elements](https://developer.mozi
 {{ figure_markup(
   image="obsolete-elements.png",
   caption="Adoption of the top obsolete HTML elements.",
-  description="TODO",
+  description="Bar chart showing the usage of obsolete HTML elements. center and font are the most popular, with 6.6% and 5.9% of pages using them. marquee, nobr and big have negligible usage, under 1%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSaFU4lh2yyjudn8fcy0l65EbP9MdCbB39wQbT0c5cfcJzfl2p1nGOByDdgg8P3dMeZMa0eWkkG685n/pubchart?oid=369760501&format=interactive",
   sheets_gid="1958462994",
   sql_file="top_obsolete_elements.sql"
@@ -513,7 +513,7 @@ While the percentage of obsolete elements for mobile pages is slightly different
 {{ figure_markup(
   image="relative-obsolete-elements.png",
   caption="Relative adoption of the top obsolete HTML elements.",
-  description="TODO",
+  description="Pie chart showing the relative usage of obsolete HTML elements. center and font are the most popular, with 43.2% and 38.2% of the pie.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSaFU4lh2yyjudn8fcy0l65EbP9MdCbB39wQbT0c5cfcJzfl2p1nGOByDdgg8P3dMeZMa0eWkkG685n/pubchart?oid=237093362&format=interactive",
   sheets_gid="1958462994",
   sql_file="top_obsolete_elements.sql"
@@ -658,9 +658,9 @@ Element behaviors are heavily influenced by attributes, so we thought it was onl
 ### Top attributes
 
 {{ figure_markup(
-  image="relative-obsolete-elements.png",
+  image="attribute-popularity.png",
   caption="The most popular HTML attributes.",
-  description="TODO",
+  description="Bar chart showing top 10 attributes by frequency of use. class is the most popular by far, at 34.3%, followed by href at 9.9%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSaFU4lh2yyjudn8fcy0l65EbP9MdCbB39wQbT0c5cfcJzfl2p1nGOByDdgg8P3dMeZMa0eWkkG685n/pubchart?oid=1580508221&format=interactive",
   height=558,
   sheets_gid="1328339120",
@@ -686,7 +686,7 @@ From the available attributes, `name`, paired with `content` was the most popula
 {{ figure_markup(
   image="meta-names.png",
   caption="The most popular `meta` node names.",
-  description="TODO",
+  description="Bar chart showing top 10 most popular name attributes for meta elements by frequency of use. 16.3% meta elements don't have a name, and viewport is the only one above 3%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSaFU4lh2yyjudn8fcy0l65EbP9MdCbB39wQbT0c5cfcJzfl2p1nGOByDdgg8P3dMeZMa0eWkkG685n/pubchart?oid=1705395065&format=interactive",
   height=604,
   sheets_gid="1907270745",
@@ -711,7 +711,7 @@ Providing information and assets for social platforms to use when previewing lin
 {{ figure_markup(
   image="social-meta-names.png",
   caption="The most popular social `meta` node names.",
-  description="TODO",
+  description="Bar chart showing top 10 most popular name attributes for social media related meta elements by frequency of use. Open Graph meta elements are more popular than Twitter meta elements.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSaFU4lh2yyjudn8fcy0l65EbP9MdCbB39wQbT0c5cfcJzfl2p1nGOByDdgg8P3dMeZMa0eWkkG685n/pubchart?oid=1723706431&format=interactive",
   height=604,
   sheets_gid="1907270745",
@@ -727,7 +727,7 @@ The [HTML specification allows](https://html.spec.whatwg.org/#embedding-custom-n
 {{ figure_markup(
   image="data-attributes.png",
   caption="The most popular `data-` attributes.",
-  description="TODO",
+  description="Bar chart showing top 10 most popular data attributes for elements by frequency of use. The generic data-id and data-src are the most popular ones.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSaFU4lh2yyjudn8fcy0l65EbP9MdCbB39wQbT0c5cfcJzfl2p1nGOByDdgg8P3dMeZMa0eWkkG685n/pubchart?oid=1104552143&format=interactive",
   height=599,
   sheets_gid="319139425",
@@ -819,7 +819,7 @@ Favicons are one of the most resilient pieces of the web. They work even without
 {{ figure_markup(
   image="favicons.png",
   caption="The most popular favicon formats.",
-  description="TODO",
+  description="Bar chart showing top 10 most popular formats for favicons by frequency of use. The PNG format has surpassed the ICO format for the first time, with favicons without a format specified being a close third.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSaFU4lh2yyjudn8fcy0l65EbP9MdCbB39wQbT0c5cfcJzfl2p1nGOByDdgg8P3dMeZMa0eWkkG685n/pubchart?oid=1768688487&format=interactive",
   height=583,
   sheets_gid="29842244",
@@ -847,7 +847,7 @@ Buttons are "controversial". There are a lot of opinions of what does and what d
 {{ figure_markup(
   image="buttons.png",
   caption="The most popular button types.",
-  description="TODO",
+  description="Bar chart showing top 5 most popular button types by frequency of use. The most popular ones are type button, no type and type submit.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSaFU4lh2yyjudn8fcy0l65EbP9MdCbB39wQbT0c5cfcJzfl2p1nGOByDdgg8P3dMeZMa0eWkkG685n/pubchart?oid=351242151&format=interactive",
   sheets_gid="1847095902",
   sql_file="buttons.sql"
@@ -948,7 +948,7 @@ We know there are currently two [Interledger](https://interledger.org/)-enabled 
 {{ figure_markup(
   image="monetization-by-host.png",
   caption="The most popular Web Monetization hosts.",
-  description="TODO",
+  description="Bar chart showing top 5 most popular wallet providers for payment pointers on web monetized pages. Uphold is by far the most popular one, with 86.3% of hosts.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSaFU4lh2yyjudn8fcy0l65EbP9MdCbB39wQbT0c5cfcJzfl2p1nGOByDdgg8P3dMeZMa0eWkkG685n/pubchart?oid=659719076&format=interactive",
   sheets_gid="688333206",
   sql_file="monetization_by_host.sql"
