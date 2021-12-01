@@ -351,7 +351,11 @@
     <ul class="contributors">
     {% for id, contributor in config.contributors.items() %}
       <li class="contributor" id="contributors-{{ id }}">
-        <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" />
+        {% if contributor.avatar_url|int != 0 %}
+        <img class="contributor-avatar" src="https://avatars.githubusercontent.com/u/{{ contributor.avatar_url }}?v=4&s=100" height="100" width="100" alt="{{ contributor.name }} avatar" />
+        {% else %}
+        <img class="contributor-avatar" src="{{ contributor.avatar_url }}" height="100" width="100" alt="{{ contributor.name }} avatar" />
+        {% endif %}
         <div>
           <div class="contributor-name">{{ contributor.name }}</div>
           {% if contributor.twitter %}
