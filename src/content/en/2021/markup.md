@@ -175,9 +175,15 @@ Microsoft dropped support for conditional comments in IE 10. Still, 41% of the p
 
 ### SVG use
 
-This year, we wanted to take a look at SVG usage. With popular icon libraries using more and more SVG, favicon support improving, and SVG images being on the rise in animations, it's no surprise that 46.4% of web pages had some sort of SVG on them. 37.2% had a SVG element, 20.0% on desktop and 18.4% on mobile were using SVG images, and a negligible amount had either SVG embeds, objects, or iframes in them.
+{{ figure_markup(
+  caption="Pages with at least one SVG element in HTML.",
+  content="46.4%",
+  classes="big-number",
+  sheets_gid="1117632433",
+  sql_file="markup.sql"
+) }}
 
-{# TODO: One or more of the stats above could use a big number figure. #}
+This year, we wanted to take a look at SVG usage. With popular icon libraries using more and more SVG, favicon support improving, and SVG images being on the rise in animations, it's no surprise that 46.4% of web pages had some sort of SVG on them. 37.2% had a SVG element, 20.0% on desktop and 18.4% on mobile were using SVG images, and a negligible amount had either SVG embeds, objects, or iframes in them.
 
 SVGs have more use cases when compared to the style element, but in terms of popularity, the numbers are comparable. SVG sits just outside the top 20 in terms of element popularity on a page.
 
@@ -209,7 +215,7 @@ No need to panic, the web isn't all made up of divs. The median page uses 31 dif
   sql_file="element_count_distribution.sql"
 ) }}
 
-{# TODO: This figure isn't discussed. #}
+While the median page had 666 elements on desktop, and 616 on mobile, the top 10% of all pages had closer to triple that number, 1,727 for mobile and 1,902 for desktop.
 
 ### Top elements
 
