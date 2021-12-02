@@ -145,6 +145,18 @@ def test_render_favicon(client):
     assert_route(client, '/favicon.ico', 200)
 
 
+def test_apple_icon_redirect(client):
+    assert_route(client, '/apple-touch-icon.png', 301, '/static/images/apple-touch-icon.png')
+
+
+def test_apple_icon_redirect_with_slash(client):
+    assert_route(client, '/apple-touch-icon.png/', 301, '/static/images/apple-touch-icon.png')
+
+
+def test_chapter_favicon_redirect(client):
+    assert_route(client, '/static/images/2021/css/favicon.ico', 301, '/static/images/favicon.ico')
+
+
 def test_render_en_2019_ebook(client):
     assert_route(client, '/en/2019/ebook', 200)
 
@@ -161,10 +173,6 @@ def test_render_old_hero_image_dir_redirect(client):
     assert_route(client, '/static/images/2019/jamstack/random.png', 301, '/static/images/2020/jamstack/random.png')
 
 
-def test_rold_css_redirect(client):
-    assert_route(client, '/static/css/2019.css?v=2', 301, '/static/css/almanac.css?v=2')
-
-
 def test_render_en_2020_story(client):
     response = client.get('/en/2020/stories/page-content')
     assert response.status_code == 200 and \
@@ -176,15 +184,3 @@ def test_render_efonts_cache_control(client):
     response = client.get('/static/fonts/Poppins-Bold.woff2')
     assert response.status_code == 200 and \
         'max-age=3153600' in response.headers.get('Cache-Control')
-
-
-def test_apple_icon_redirect(client):
-    assert_route(client, '/apple-touch-icon.png', 301, '/static/images/apple-touch-icon.png')
-
-
-def test_apple_icon_redirect_with_slash(client):
-    assert_route(client, '/apple-touch-icon.png/', 301, '/static/images/apple-touch-icon.png')
-
-
-def test_chapter_favicon_redirect(client):
-    assert_route(client, '/static/images/2021/css/favicon.ico', 301, '/static/images/favicon.ico')
