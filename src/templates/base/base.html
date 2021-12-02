@@ -130,7 +130,7 @@
   {% else %}
   <a class="nav-dropdown-btn js-hide" href="{{ url_for('search', lang=lang) }}">{{ self.search_title() }}</a>
   <div class="nav-dropdown {{switcher_name}} search-nav js-enable hidden">
-    <button type="button" class="nav-dropdown-btn" aria-expanded="false">
+    <button type="button" class="nav-dropdown-btn search-button" aria-expanded="false">
       {{ self.search_title() }}
     </button>
     <ul class="nav-dropdown-list align-right hidden {{switcher_name}}-search">
