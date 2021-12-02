@@ -173,6 +173,8 @@ def redirect_old_css():
 
 
 # Redirect root level apple icons
+# Dunno the this happens as not mandatory to be in root but let's redirect anyway
+# https://stackoverflow.com/questions/25041622/does-the-apple-touch-icon-have-to-be-in-the-root-folder/25041921
 @app.route('/apple-touch<string:appleicon>')
 def redirect_apple_icons(appleicon):
     return redirect("/static/images/apple-touch-icon.png"), 301
@@ -185,6 +187,7 @@ def redirect_apple_icons_slash(appleicon):
 
 
 # Redirect chapter favicon requests
+# Dunno why this happens but see some of these in logs
 @app.route('/static/images/<year>/<chapter>/favicon.ico')
 def redirect_chapter_favicons(year, chapter):
     return redirect("/static/images/favicon.ico"), 301

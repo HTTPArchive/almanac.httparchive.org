@@ -178,8 +178,6 @@ def test_render_efonts_cache_control(client):
         'max-age=3153600' in response.headers.get('Cache-Control')
 
 
-# Dunno the this happens as not mandatory to be in root but let's redirect anyway
-# https://stackoverflow.com/questions/25041622/does-the-apple-touch-icon-have-to-be-in-the-root-folder/25041921
 def test_apple_icon_redirect(client):
     assert_route(client, '/apple-touch-icon.png', 301, '/static/images/apple-touch-icon.png')
 
@@ -188,6 +186,5 @@ def test_apple_icon_redirect_with_slash(client):
     assert_route(client, '/apple-touch-icon.png/', 301, '/static/images/apple-touch-icon.png')
 
 
-#Dunno why this happens but see some of these in logs
 def test_chapter_favicon_redirect(client):
     assert_route(client, '/static/images/2021/css/favicon.ico', 301, '/static/images/favicon.ico')
