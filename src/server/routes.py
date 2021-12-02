@@ -169,7 +169,7 @@ def redirect_old_hero_images(folder, image):
 # Redirect requests for the old css file to the renamed file
 @app.route('/static/css/2019.css')
 def redirect_old_css():
-    return redirect("/static/css/almanac.css?%s" % request.query_string.decode()), 301
+    return redirect("/static/css/almanac.css"), 301
 
 
 # Redirect root level apple icons
