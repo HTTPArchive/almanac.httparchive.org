@@ -1,10 +1,4 @@
 # 2021 Capabilities queries
 
-<!--
-  This directory contains all of the 2021 Capabilities chapter queries.
-
-  Each query should have a corresponding `metric_name.sql` file.
-  Note that readers are linked to this directory, so try to make the SQL file names descriptive for easy browsing.
-
-  Analysts: if helpful, you can use this README to give additional info about the queries.
--->
+These queries are based on a WebPageTest
+[custom metrics script](https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/fugu-apis.js).
