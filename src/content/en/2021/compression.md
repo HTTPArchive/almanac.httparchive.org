@@ -22,9 +22,9 @@ featured_stat_label_3: Websites that pass the Lighthouse audit with maximum scor
 
 ## Introduction
 
-A user's time is valuable, so they shouldn't have to wait a long time for a web page to load. The HTTP protocol allows to compress responses and this decreases the time needed to transfer the content. Compression often leads to significant improvement in the user experience. It can reduce [page weight](./page-weight), improve [web performance](./performance) and boost search rankings. As such it's an important part of [Search Engine Optimization](./seo).
+A user's time is valuable, so they shouldn't have to wait a long time for a web page to load. The HTTP protocol allows the responses to be compressed, which decreases the time needed to transfer the content. Compression often leads to significant improvement in the user experience. It can reduce [page weight](./page-weight), improve [web performance](./performance) and boost search rankings. As such, it's an important part of [Search Engine Optimization](./seo).
 
-This chapter discusses lossless compression applied on a HTTP response. Lossy and lossless compression used in [media](../2020/media) formats such as images, audio and video are equally if not more important for increasing page speed. However these are not in the scope of this chapter as they usually are part of the file format itself.
+This chapter discusses lossless compression applied on a HTTP response. Lossy and lossless compression used in [media](../2020/media) formats such as images, audio and video are equally (if not more) important for increasing the page loading speed. However, these are not in the scope of this chapter, as they usually are part of the file format itself.
 
 ## Content types using HTTP compression
 
@@ -40,7 +40,7 @@ HTTP compression is recommended for text-based content, such as [HTML](./markup)
   )
 }}
 
-Compared to the other content types, `text/plain` and `text/html` use the least amount of compression, with merely 12% and 14% using compression at all. This might be because `text/html` is more often dynamically generated than static content such as JavaScript and CSS, even though compressing dynamically generated content also has a positive impact. More analysis about the compression of JavaScript content is available in the [JavaScript][./javascript] chapter.
+Compared to the other content types, `text/plain` and `text/html` use the least amount of compression, with merely 12% and 14% using compression at all. This might be because `text/html` is more often dynamically generated than static content such as JavaScript and CSS, even though compressing dynamically generated content also has a positive impact. More analysis about the compression of JavaScript content is available in the [JavaScript](./javascript) chapter.
 
 ## Server settings for HTTP compression
 
