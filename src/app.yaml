@@ -28,6 +28,11 @@ handlers:
   script: auto
   secure: always
 
+# Allow python redirects for chapter favicon requests
+- url: /static/images/.*/[0-2][0-9].*/.*$
+  script: auto
+  secure: always
+
 # Set the UTF-8 charset for CSS and JS files.
 # Makes the assumption that only CSS and JS files existing in the relevant dirs
 # but avoids complex regexes
