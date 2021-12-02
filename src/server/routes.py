@@ -170,3 +170,21 @@ def redirect_old_hero_images(folder, image):
 @app.route('/static/css/2019.css')
 def redirect_old_css():
     return redirect("/static/css/almanac.css?%s" % request.query_string.decode()), 301
+
+
+# Redirect root level apple icons
+@app.route('/apple-touch<string:appleicon>')
+def redirect_apple_icons(appleicon):
+    return redirect("/static/images/apple-touch-icon.png"), 301
+
+
+# Redirect root level apple icons with slash
+@app.route('/apple-touch<string:appleicon>/')
+def redirect_apple_icons_slash(appleicon):
+    return redirect("/static/images/apple-touch-icon.png"), 301
+
+
+# Redirect chapter favicon requests
+@app.route('/static/images/<year>/<chapter>/favicon.ico')
+def redirect_chapter_favicons(year, chapter):
+    return redirect("/static/images/favicon.ico"), 301

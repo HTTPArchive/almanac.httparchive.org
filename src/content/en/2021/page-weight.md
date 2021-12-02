@@ -72,7 +72,7 @@ Large payloads can also overwhelm the amount of client-side resources available 
 
 ## Assets
 
-As explained in [last years chapter](2020/page-weight#assets), we have not really changed what types of assets are used on web pages over the years, but there are some notable exceptions.
+As explained in [last years chapter](../2020/page-weight#assets), we have not really changed what types of assets are used on web pages over the years, but there are some notable exceptions.
 
 ### Images
 
