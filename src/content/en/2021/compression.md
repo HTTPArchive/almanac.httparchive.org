@@ -40,7 +40,7 @@ HTTP compression is recommended for text-based content, such as [HTML](./markup)
   )
 }}
 
-Compared to the other content types, `text/plain` and `text/html` use the least amount of compression, with merely 12% and 14% using compression at all. This might be because `text/html` is more often dynamically generated than static content such as JavaScript and CSS, even though compressing dynamically generated content also has a positive impact. More analysis about the compression of JavaScript content is available in the [JavaScript][./javascript] chapter.
+Compared to the other content types, `text/plain` and `text/html` use the least amount of compression, with merely 12% and 14% using compression at all. This might be because `text/html` is more often dynamically generated than static content such as JavaScript and CSS, even though compressing dynamically generated content also has a positive impact. More analysis about the compression of JavaScript content is available in the [JavaScript](./javascript) chapter.
 
 ## Server settings for HTTP compression
 
