@@ -714,12 +714,12 @@ Providing information and assets for social platforms to use when previewing lin
 
 {{ figure_markup(
   image="social-meta-names.png",
-  caption="The most popular social `meta` node names.",
+  caption="Social `meta` nodes usage by page.",
   description="Bar chart showing top 10 most popular name attributes for social media related meta elements by frequency of use. Open Graph meta elements are more popular than Twitter meta elements.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSaFU4lh2yyjudn8fcy0l65EbP9MdCbB39wQbT0c5cfcJzfl2p1nGOByDdgg8P3dMeZMa0eWkkG685n/pubchart?oid=978349014&format=interactive",
   height=604,
-  sheets_gid="1907270745",
-  sql_file="meta_nodes_name.sql"
+  sheets_gid="1239591174",
+  sql_file="social_markup.sql"
 ) }}
 
 The most common by far are the Open Graph `meta` elements, used across multiple networks, with Twitter-specific elements lagging behind. `og:title`, `og:type`, `og:image`, and `og:url` are all required for every page, so it's interesting that there is a variation in their usage numbers.
