@@ -273,7 +273,7 @@ Font, CSS, and Audio files are over 99% cacheable, with almost 100% of pages cur
 {{ figure_markup(
   image="caching-by-resource-type.png",
   caption="The percent of requests that use caching strategies by resource type.",
-  description="TODO",
+  description="A bar chart showing distribution of cacheable resource types. In desktop responses, 99.8% of font, 99.3% of CSS, 99.3% of audio, 98.8% of video, 95.3% of scripts, 91.3% of images, 80.2% of xml, 72.6% of html, 65.0% of other types, and 29.8% of text is cacheable. In mobile responses, 99.8% of font, 99.1% of CSS, 99.0% of audio, 98.8% of video, 95.1% of scripts, 89.9% of images, 81.0% of xml, 76.6% of html, 65.4% of other types, and 29.5% of text is cacheable.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=2036781114&format=interactive",
   height=436,
   sheets_gid="1202769738",
@@ -352,7 +352,7 @@ Taking a look at the Median TTL across all resource types, we see that even if w
     </tbody>
   </table>
   <figcaption>{{ figure_link(
-    caption="TODO",
+    caption="Median TTL (in days)",
     sheets_gid="1792973510",
     sql_file="ttl_by_resource.sql"
   ) }}</figcaption>
