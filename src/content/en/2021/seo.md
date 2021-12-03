@@ -461,11 +461,11 @@ The `loading` attribute on `<img>` elements affects how user agents prioritize r
 
 We saw that:
 
-- 5% of pages don't use any image `loading` property.
-- 6% of pages use `loading="lazy"` which delays loading an image until it is close to being in the viewport.
-- 8% of pages use `loading="eager"` which loads the image as soon as the browser loads the code.
-- 1% of pages use invalid loading properties.
-- 1% of pages use `loading="auto"` which uses the default browser loading method.
+- 85.5% of pages don't use any image `loading` property.
+- 15.6% of pages use `loading="lazy"` which delays loading an image until it is close to being in the viewport.
+- 0.8% of pages use `loading="eager"` which loads the image as soon as the browser loads the code.
+- 0.1% of pages use invalid loading properties.
+- 0.1% of pages use `loading="auto"` which uses the default browser loading method.
 
 
 ### Word count
