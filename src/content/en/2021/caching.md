@@ -433,7 +433,7 @@ Developers are getting better at setting the cache duration more accurately to t
     </tr>
   </table>
   <figcaption>{{ figure_link(
-    caption="TODO",
+    caption="Percent of requests with short TTLs.",
     sheets_gid="1069912023",
     sql_file="content_age_older_than_ttl_by_party.sql"
   ) }}</figcaption>
@@ -452,7 +452,7 @@ The score reflects whether the pages can benefit from additional caching policy 
 {{ figure_markup(
   image="lighthouse-caching-ttl-scores.png",
   caption="Distribution of Lighthouse caching TTL scores.",
-  description="TODO",
+  description="A bar chart showing the distribution of Lighthouse audit scores for the `uses-long-cache-ttl` for mobile web pages. 36.2% of the responses have a score less than 0.10, 25.6% have a score between 0.10-0.39, 20.3% have a score between 0.40-0.79, and 12.1% have a score between 0.80-0.99. 4.4% have a score of 1 and 1.3% have no score.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=1825783189&format=interactive",
   sheets_gid="2098771743",
   sql_file="cache_ttl_lighthouse_score.sql"
@@ -465,7 +465,7 @@ Based on **Lighthouse wasted bytes** from 2020 to 2021, there was a 3.28% improv
 {{ figure_markup(
   image="lighthouse-caching-byte-savings.png",
   caption="Distribution of potential byte savings from caching.",
-  description="TODO",
+  description="A bar chart showing the distribution of potential byte savings from the Lighthouse caching audit for mobile web pages. 59.1% of the responses have a size saving less than 1 MB, 19.8% have a saving between 1-2 MB, 7.1% have a saving between 2-3 MB, and 3.9% have a saving between 3-4 MB. 8.7% have a saving of 4 MB or more.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=1045307868&format=interactive",
   sheets_gid="469776025",
   sql_file="cache_wastedbytes_lighthouse.sql"
