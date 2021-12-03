@@ -5,7 +5,7 @@ description: Markup chapter of the 2021 Web Almanac covering the use of elements
 authors: [AlexLakatos]
 reviewers: [j9t, bkardell, shantsis, tunetheweb, rviscomi]
 analysts: [kevinfarrugia]
-editors: []
+editors: [rviscomi]
 AlexLakatos_bio: Alex Lakatos has spent the past decade working on the Open Web within Browser, Communications, and FinTech organizations. With a background in web technologies and developer advocacy, he's helping the <a hreflang="en" href="https://interledger.org/">Interledger Foundation</a> build developer-friendly products while engaging with the developer community at large. You can [reach out to him on Twitter](https://twitter.com/avolakatos).
 translators: []
 results: https://docs.google.com/spreadsheets/d/1Ta5Ck7y3W6LCn2CeGtW7dAdLF6Lh5wV2UBQJZTz3W5Q/
@@ -204,7 +204,7 @@ There are <a hreflang="en" href="https://html.spec.whatwg.org/multipage/indices.
   sql_file="element_count_distribution.sql"
 ) }}
 
-No need to panic, the web isn't all made up of divs. The median page uses 31 different elements and has a total of 666 elements.
+No need to panic, the web isn't all made up of `div`s. The median mobile page uses 31 different elements and has a total of 616 elements.
 
 {{ figure_markup(
   image="element-count.png",
@@ -317,7 +317,7 @@ The top six elements haven't changed in the past three years, and it looks like 
 
 It's interesting to see that `i` and `option` have both fallen out of favor. The first probably because libraries that misuse the `i` element for icons have fallen out of popularity in favor of libraries using SVGs for icons. The `meta` element is making a strong push into the top 10 this year, perhaps because social markup is also on the rise. We'll look at [social markup](#social-markup) in a later section of this chapter. The rise of styled `select` elements accounts for the `ul` (unordered list) element gaining popularity over the option element.
 
-#### main
+#### `main`
 
 With the <a hreflang="en" href="https://wordpress.com/activity/posting/">creation of content spiking in 2021</a> (most likely because the world was stuck in a pandemic), we wanted to see if that correlates to an adoption of content elements as well. We thought `main` is a good indicator, it being an informative element that doesn't affect the DOM's concept of the structure of a page.
 
@@ -331,17 +331,17 @@ With the <a hreflang="en" href="https://wordpress.com/activity/posting/">creatio
 
 27.7% of desktop pages and 27.9% of mobile pages had a `main` element. In terms of popularity, it made it well in the top 50 elements, at a respectable 34th place. Before you start thinking that there are only 114 elements, we've actually had more than a thousand elements come back from the queries we ran, most of which were custom.
 
-#### base
+#### `base`
 
 Another curiosity was how much developers were paying attention to the stricter rules of the HTML spec. For example, the spec says there must be <a hreflang="en" href="https://html.spec.whatwg.org/multipage/semantics.html#the-base-element">no more than one `base` element</a> in a document, because the `base` element defines how user agents should resolve relative URLs. Having more than one `base` element introduces ambiguity, so the spec requires that all `base` elements after the first be ignored, rendering them useless.
 
 From looking at the desktop pages, `base` is a popular element, with 10.4% of pages having one. But do they have only one? There are 5,908 more `base` elements than pages, so we can only conclude at least some pages have more than one `base` element. Who said developers were great at following directions? We would also recommend people validate their HTML using the W3C-provided <a hreflang="en" href="https://validator.w3.org/">Markup Validation Service</a>.
 
-#### dialog
+#### `dialog`
 
 Throughout the chapter we wanted to also look at the adoption of some of the more controversial or new elements. `dialog` is one of them, with not all major browsers supporting it out of the box yet. Only 7,617 pages on desktop and 7,819 pages on mobile are using a dialog element. When we consider that's only around  0.1% of the pages analyzed, it doesn't look like the adoption is there yet.
 
-#### canvas
+#### `canvas`
 
 The `canvas` element can be used with either the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) or [WebGL API](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API) to draw graphics and animations. It's one of the main elements used for games or mixed reality on the web. It's no surprise 3.1% of the desktop pages and 2.6% of the mobile pages use it. The higher usage on desktop makes sense when you consider the graphic capabilities of the different devices, and the use cases skewed towards games and virtual reality.
 
@@ -714,7 +714,7 @@ Providing information and assets for social platforms to use when previewing lin
 
 {{ figure_markup(
   image="social-meta-names.png",
-  caption="The most popular social `meta` node names.",
+  caption="Social `meta` nodes usage by page.",
   description="Bar chart showing top 10 most popular name attributes for social media related meta elements by frequency of use. Open Graph meta elements are more popular than Twitter meta elements.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSaFU4lh2yyjudn8fcy0l65EbP9MdCbB39wQbT0c5cfcJzfl2p1nGOByDdgg8P3dMeZMa0eWkkG685n/pubchart?oid=1723706431&format=interactive",
   height=604,
