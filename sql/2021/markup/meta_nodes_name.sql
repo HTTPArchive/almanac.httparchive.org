@@ -28,7 +28,7 @@ SELECT
   IF(IFNULL(TRIM(name), '') = '', '(not set)', name) AS name,
   COUNT(0) AS freq,
   COUNT(0) / SUM(COUNT(0)) OVER () AS pct_nodes,
-  COUNT(DISTINCT url) as num_urls,
+  COUNT(DISTINCT url) AS num_urls,
   COUNT(DISTINCT url) / total_pages AS pct_pages
 FROM
   `httparchive.pages.2021_07_01_*`,
