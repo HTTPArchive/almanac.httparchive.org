@@ -279,7 +279,7 @@ We found that 58% of desktop sites and 56% of mobile sites have some usage of th
 
 When we look at desktop pages that have at least one instance of the `tabindex` attribute:
 
-* 97.4% use a value of `0`, meaning elements are focusable and being added to the keyboard focus order
+* 96.9% use a value of `0`, meaning elements are focusable and being added to the keyboard focus order
 * 68.2% use a negative integer, meaning elements are explicitly removed from the keyboard focus order
 * 8.7% have a positive integer value, meaning the web author is trying to control the focus order rather than allowing the DOM structure to do so
 
