@@ -49,7 +49,7 @@ While Cloudflare is used twice as much as Google, a large variety of solutions r
 
 ## Service Worker adoption
 
-The adoption of Service Workers has continued to steadily increase. While 1% of Desktop pages registered a Service Worker in 2021, 9% of Mobile pages ranked in the top 1k registered one.
+The adoption of [Service Workers](https://developers.google.com/web/fundamentals/primers/service-workers) has continued to steadily increase. While 1% of Desktop pages registered a Service Worker in 2021, 9% of Mobile pages ranked in the top 1k registered one.
 
 This higher adoption of Service Workers from the top 1k pages, could be related to the world-wide trend towards remote-first and by association, mobile-friendly. As our reliance on working and living in one place throughout the entire year shifts, we need our devices to work even harder and smarter to keep up with us. Service Workers are a tool that can improve performance when the user is dealing with unreliable networks or LowEnd devices.
 
@@ -172,7 +172,7 @@ When we take a look when `no-cache`, `max-age=0` and `no-store` are used togethe
 Fun fact: The most common `max-age` value is 30 days, and the largest value is 51 trillion years.
 
 {{ figure_markup(
-  caption="TODO",
+  caption="Largest recorded value for `max-age`",
   content="51 trillion years",
   classes="medium-number",
   sheets_gid="529870849",
@@ -188,7 +188,7 @@ The `Last-Modified` response header works in conjunction with the `If-Modified-S
 {{ figure_markup(
   image="http-304-by-caching-strategy.png",
   caption="HTTP 304 response rate by caching strategy.",
-  description="TODO",
+  description="A bar chart of HTTP 304 response rate by caching strategy. The usage for desktop ranges from 18% for Expected with `If-Modified-Since`, 94% for Actual with `If-Modified-Since`, 84% for Expected with `ETag`, and 88% for Actual with `ETag`. Usage for mobile ranges from 13% for Expected with `If-Modified-Since`, 86% for Actual with `If-Modified-Since`, 91% for Expected with `ETag`, and 88% for Actual with `ETag` ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=1965033294&format=interactive",
   sheets_gid="1136058277",
   sql_file="valid_if_none_match_returns_304.sql"
@@ -203,7 +203,7 @@ The three main HTTP headers used to represent timestamps, `Date`,`Last-Modified`
 {{ figure_markup(
   image="invalid-date-formats.png",
   caption="Percent of responses with invalid date formats.",
-  description="TODO",
+  description="A bar graph showing percentage of response headers with invalid date formats broken down by header. The percent of responses for desktop range from 2.8% for `Expires', 0.7% for `Last-Modified`, and 0.1% for `Date`. The percent of responses for mobile range from 3.2% for `Expires', 0.9% for `Last-Modified`, and 0.0% for `Date`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=383751268&format=interactive",
   sheets_gid="1680471251",
   sql_file="invalid_last_modified_and_expires_and_date.sql"
@@ -220,7 +220,7 @@ An essential step in caching a resource is understanding if it was previously ca
 {{ figure_markup(
   image="vary-directives.png",
   caption="Usage of `Vary` directives.",
-  description="TODO",
+  description="A bar chart showing the distribution of `Vary` header. 90.4% of desktop responses use `Accept-Encoding`, much smaller values for the rest with 10.2% for `User-Agent`, approximately 10.5% for `Origin`, and 5.0% for `Accept`. 90.3% of mobile responses use of `Accept-Encoding`, much smaller values for the rest with 10.9% for `User-Agent`, approximately 10.1% for `Origin`, and 4.8% for `Accept`."
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=1279247484&format=interactive",
   height=436,
   sheets_gid="1033782866",
