@@ -81,25 +81,25 @@
         </p>
 
         <p class="note">
-          Please note that some of these queries are quite large and can be <a hreflang="en" href="https://cloud.google.com/bigquery/pricing">expensive</a> to run yourself, as BigQuery is billed by the terabyte. For help controlling your spending, refer to Tim Kadlec&#8217;s post <a hreflang="en" href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Using BigQuery Without Breaking the Bank</a>.
+          Please note that some of these queries are quite large and can be <a hreflang="en" href="https://cloud.google.com/bigquery/pricing">expensive</a> to run yourself. For help controlling your spending, refer to Tim Kadlec&#8217;s post <a hreflang="en" href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Using BigQuery Without Breaking the Bank</a>.
         </p>
 
         <p>
-          For example, to understand the median number of bytes of JavaScript per desktop and mobile page, see <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2019/javascript/01_01b.sql">01_01b.sql</a>:
+          For example, to understand the median number of bytes of JavaScript per desktop and mobile page, see <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2021/javascript/bytes_2021.sql">bytes_2021.sql</a>:
         </p>
 
         <div class="code-block floating-card">
           {# To generate this markup temporarily add a ```sql code block to a chapter and generate that chapter and you&#8217;ll get the HTML #}
           {# Note extra attributes on pre tag to allow keyboard scroll so add them back in #}
-          <pre role="region" aria-label="01_01b.sql" tabindex="0"><code class="sql language-sql"><span class="comment">#standardSQL</span>
-<span class="comment"># 01_01b: Distribution of JS bytes by client</span>
+          <pre role="region" aria-label="bytes_2021.sql" tabindex="0"><code class="sql language-sql"><span class="comment">#standardSQL</span>
+<span class="comment"># Sum of JS request bytes per page (2020)</span>
 <span class="keyword">SELECT</span>
   percentile,
   _TABLE_SUFFIX <span class="keyword">AS</span> client,
-  <span class="function call">APPROX_QUANTILES</span>(<span class="function call">ROUND</span>(bytesJs / <span class="constant numeric">1024</span>, <span class="constant numeric">2</span>), <span class="constant numeric">1000</span>)[<span class="function call">OFFSET</span>(percentile <span class="keyword operator">*</span> <span class="constant numeric">10</span>)] <span class="keyword">AS</span> js_kbytes
+  <span class="function call">APPROX_QUANTILES</span>(bytesJs / <span class="constant numeric">1024</span>, <span class="constant numeric">1000</span>)[<span class="function call">OFFSET</span>(percentile <span class="keyword operator">*</span> <span class="constant numeric">10</span>)] <span class="keyword">AS</span> js_kilobytes
 <span class="keyword">FROM</span>
-  <span class="string">`httparchive.summary_pages.2019_07_01_*`</span>,
-  <span class="function call">UNNEST</span>([<span class="constant numeric">10</span>, <span class="constant numeric">25</span>, <span class="constant numeric">50</span>, <span class="constant numeric">75</span>, <span class="constant numeric">90</span>]) <span class="keyword">AS</span> percentile
+  <span class="string">`httparchive.summary_pages.2021_07_01_*`</span>,
+  <span class="function call">UNNEST</span>([<span class="constant numeric">10</span>, <span class="constant numeric">25</span>, <span class="constant numeric">50</span>, <span class="constant numeric">75</span>, <span class="constant numeric">90</span>, <span class="constant numeric">100</span>]) <span class="keyword">AS</span> percentile
 <span class="keyword">GROUP</span> <span class="keyword">BY</span>
   percentile,
   client
@@ -109,7 +109,7 @@
         </div>
 
         <p>
-          Results for each metric are publicly viewable in chapter-specific spreadsheets, for example <a href="https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/edit?usp=sharing">JavaScript results</a>. Links to the raw results and queries are available at the bottom of each chapter. Metric-specific results and queries are also linked directly from each figure.
+          Results for each metric are publicly viewable in chapter-specific spreadsheets, for example <a href="https://docs.google.com/spreadsheets/d/1zU9rHpI3nC6jTz3xgN6w13afW7x34xAKBh2IPH-lVxk/edit#gid=18398250">JavaScript results</a>. Links to the raw results and queries are available at the bottom of each chapter. Metric-specific results and queries are also linked directly from each figure.
         </p>
     </section>
 

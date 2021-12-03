@@ -12,6 +12,17 @@
       <link rel="preload" href="/static/fonts/Poppins-Bold.woff2" as="font" type="font/woff2" crossorigin>
       <link rel="preload" href="/static/fonts/Lato-Black.woff2" as="font" type="font/woff2" crossorigin>
       <link rel="preload" href="/static/fonts/Lato-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+      <script nonce="{{ csp_nonce() }}">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-22381566-3', {
+          'link_attribution': true
+        });
+      </script>
     {% endblock %}
     <link rel="shortcut icon" href="/static/images/favicon.ico">
     <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">
@@ -78,16 +89,6 @@
     {% block bodyend %}
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-22381566-3" nonce="{{ csp_nonce() }}"></script>
     <link rel="preconnect" href="https://www.google-analytics.com">
-    <script nonce="{{ csp_nonce() }}">
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-22381566-3', {
-          'link_attribution': true
-        });
-    </script>
     <script defer src="{{ get_versioned_filename('/static/js/web-vitals.js') }}" nonce="{{ csp_nonce() }}"></script>
     <script defer src="{{ get_versioned_filename('/static/js/send-web-vitals.js') }}" nonce="{{ csp_nonce() }}"></script>
     {% endblock %}

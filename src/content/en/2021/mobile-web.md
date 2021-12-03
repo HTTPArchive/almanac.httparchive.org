@@ -282,8 +282,6 @@ If you have a network or device capability limited web app, and you have a signi
 
 The most commonly used libraries and technologies found on the mobile web impact performance and inform us on technology adoption.
 
-{# TODO Not sure why this whole section talks about "the mobile web", when it seems to be very similar to both mobile and desktop? I'm also not sure what to take away from this section (if anything?) #}
-
 According to <a hreflang="en" href="https://www.wappalyzer.com/">Wappalyzer</a> data, JavaScript library JQuery is the dominant library of the mobile web, present in 84.4% of tested sites. Google is the dominant provider, holding three of the top five spots.
 
 <figure>

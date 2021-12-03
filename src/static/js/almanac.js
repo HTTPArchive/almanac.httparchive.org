@@ -93,6 +93,11 @@ function handleNavMenu() {
       firstFocusableElementInList = navItems[0];
       lastFocusableElementInList = navItems[navItems.length - 1];
       list.addEventListener('keydown', trapFocusInList);
+
+      if (e.currentTarget.classList.contains('search-button')) {
+        e.currentTarget.parentNode.querySelector('input').focus();
+      }
+
     } else {
       list.removeEventListener('keydown', trapFocusInList);
       document.body.removeEventListener('click', closeAnyOtherOpenDropdown, true);

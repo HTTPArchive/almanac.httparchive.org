@@ -139,6 +139,27 @@ def default_favicon():
     return send_from_directory(app.static_folder, 'images/favicon.ico')
 
 
+# Redirect chapter favicon requests
+# Dunno why this happens but see some of these in logs
+@app.route('/static/images/<year>/<chapter>/favicon.ico')
+def redirect_chapter_favicons(year, chapter):
+    return redirect("/static/images/favicon.ico"), 301
+
+
+# Redirect root level apple icons
+# Dunno the this happens as not mandatory to be in root but let's redirect anyway
+# https://stackoverflow.com/questions/25041622/does-the-apple-touch-icon-have-to-be-in-the-root-folder/25041921
+@app.route('/apple-touch<string:appleicon>')
+def redirect_apple_icons(appleicon):
+    return redirect("/static/images/apple-touch-icon.png"), 301
+
+
+# Redirect root level apple icons with slash
+@app.route('/apple-touch<string:appleicon>/')
+def redirect_apple_icons_slash(appleicon):
+    return redirect("/static/images/apple-touch-icon.png"), 301
+
+
 @app.route('/<lang>/<year>/ebook')
 @validate
 def ebook(lang, year):
@@ -164,9 +185,3 @@ def redirect_old_images(folder, image):
 @app.route('/static/images/2019/<regex("(privacy|jamstack|capabilities)"):folder>/<image>')
 def redirect_old_hero_images(folder, image):
     return redirect("/static/images/2020/%s/%s" % (folder, image)), 301
-
-
-# Redirect requests for the old css file to the renamed file
-@app.route('/static/css/2019.css')
-def redirect_old_css():
-    return redirect("/static/css/almanac.css?%s" % request.query_string.decode()), 301

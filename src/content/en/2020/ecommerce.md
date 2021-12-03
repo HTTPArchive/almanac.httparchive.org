@@ -70,7 +70,7 @@ In total, 21.72% of mobile websites and 21.27% of desktop websites used an ecomm
 {{ figure_markup(
   image="top-ecommerce-platforms.png",
   caption="Top ecommerce platforms.",
-  description="A bar chart showing in descending order the usage of ecommerce platforms with WooCommerce at 5.12% on desktop and 5.19% on mobile, followed by Shopify (2.55% and 2.48% respectively), Wix (1.05% and 1.24%), Magneto (1.03% and 0.96%), PrestaShop (0.91%, 0.94%), 1C-Bitrix (0.64% and 0.65%), Bigcommerce (0.24% and 0.21%), Cafe24 (0.21% and 0.12%), Shopware (0.14% for both), and Loja Integrade at 0.08% and 0.09% respectively.",
+  description="A bar chart showing in descending order the usage of ecommerce platforms with WooCommerce at 5.12% on desktop and 5.19% on mobile, followed by Shopify (2.55% and 2.48% respectively), Wix (1.05% and 1.24%), Magento (1.03% and 0.96%), PrestaShop (0.91%, 0.94%), 1C-Bitrix (0.64% and 0.65%), Bigcommerce (0.24% and 0.21%), Cafe24 (0.21% and 0.12%), Shopware (0.14% for both), and Loja Integrade at 0.08% and 0.09% respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=795567278&format=interactive",
   sheets_gid="872326386",
   sql_file="top_vendors.sql"
@@ -126,7 +126,7 @@ COVID-19 has had a huge impact on the world and necessitated an even bigger move
 {{ figure_markup(
   image="ecommerce-vendor-growth-covid-19-impact.png",
   caption="Ecommerce platform growth Covid-19 impact",
-  description="A line chart showing the growth of five popular ecommerce platforms: WooCommerce, Shopify, Wix, Magneto, and PrestaShop. WooCommerce shows a steady growth with a noticeable bump in February 2020 and again in June and July. Shopify shows similar but for a smaller percentage and the other three show less of such an impact.",
+  description="A line chart showing the growth of five popular ecommerce platforms: WooCommerce, Shopify, Wix, Magento, and PrestaShop. WooCommerce shows a steady growth with a noticeable bump in February 2020 and again in June and July. Shopify shows similar but for a smaller percentage and the other three show less of such an impact.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1475961371&format=interactive",
   sheets_gid="535254570",
   sql_file="ecomm_vendors_covid_growth.sql"
@@ -301,7 +301,7 @@ In the context of ecommerce, this metric provides very good indication of most u
 {{ figure_markup(
   image="ecommerce-real-user-largest-contentful-paint-experiences.png",
   caption="Real-user Largest Contentful Paint experiences",
-  description="A bar chart showing the number of sites with a good LCP score for the top 5 most popular ecommerce platforms. WooCommerce has 21.73% for desktop and 14.27% for mobile, Shopify has 64% and 47.47% respectively, Magneto has 39.45% and 28.17%, Wix has 7.46% and 7.40%, and PrestaShop has 53.03% on desktop and 38.08% on mobile.",
+  description="A bar chart showing the number of sites with a good LCP score for the top 5 most popular ecommerce platforms. WooCommerce has 21.73% for desktop and 14.27% for mobile, Shopify has 64% and 47.47% respectively, Magento has 39.45% and 28.17%, Wix has 7.46% and 7.40%, and PrestaShop has 53.03% on desktop and 38.08% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1881724605&format=interactive",
   sheets_gid="768760354",
   sql_file="core_web_vitals_passingmetrics_byvendor_bydevice.sql"
@@ -316,7 +316,7 @@ First Input Delay (FID) attempts to measure interactivity, or more importantly a
 {{ figure_markup(
   image="ecommerce-real-user-first-input-delay-experiences.png",
   caption="Real-user First Input Delay experiences",
-  description="A bar chart showing the number of sites with a good LCP score for the top 5 most popular ecommerce platforms. WooCommerce has 99.95% for desktop and 92.36% for mobile, Shopify has 99.96% and 96.49% respectively, Magneto has 99.99% and 89.02%, Wix has 88.30% and 37.95%, and PrestaShop has 99.93% on desktop and 92.96% on mobile.",
+  description="A bar chart showing the number of sites with a good LCP score for the top 5 most popular ecommerce platforms. WooCommerce has 99.95% for desktop and 92.36% for mobile, Shopify has 99.96% and 96.49% respectively, Magento has 99.99% and 89.02%, Wix has 88.30% and 37.95%, and PrestaShop has 99.93% on desktop and 92.96% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=490091603&format=interactive",
   sheets_gid="768760354",
   sql_file="core_web_vitals_passingmetrics_byvendor_bydevice.sql"
@@ -331,7 +331,7 @@ Cumulative Layout Shift (CLS) measures how much the page "jumps about" as new co
 {{ figure_markup(
   image="ecommerce-real-user-cumulative-layout-shift-experiences.png",
   caption="Real-user Cumulative Layout Shift experiences",
-  description="A bar chart showing the number of sites with a good LCP score for the top 5 most popular ecommerce platforms. WooCommerce has 37.98% for desktop and 51.40% for mobile, Shopify has 40.72% and 40.55% respectively, Magneto has 38.11% and 38.28%, Wix has 58.15% and 57.47%, and PrestaShop has 51.56% on desktop and 49.83% on mobile.",
+  description="A bar chart showing the number of sites with a good LCP score for the top 5 most popular ecommerce platforms. WooCommerce has 37.98% for desktop and 51.40% for mobile, Shopify has 40.72% and 40.55% respectively, Magento has 38.11% and 38.28%, Wix has 58.15% and 57.47%, and PrestaShop has 51.56% on desktop and 49.83% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=1137826141&format=interactive",
   sheets_gid="768760354",
   sql_file="core_web_vitals_passingmetrics_byvendor_bydevice.sql"
@@ -346,7 +346,7 @@ Looking at Core Web Vitals overall, for which sites pass all three core metrics 
 {{ figure_markup(
   image="ecommerce-real-user-core-web-vitals-exeriences.png",
   caption="Real-user Core Web Vitals experiences",
-  description="A bar chart showing the number of sites with a good LCP score for the top 5 most popular ecommerce platforms. WooCommerce has 10.72% for desktop and 8.63% for mobile, Shopify has 28.78% and 21.24% respectively, Magneto has 18.33% and 11.14%, Wix has 5.23% and 3.30%, and PrestaShop has 30.43% on desktop and 19.10% on mobile.",
+  description="A bar chart showing the number of sites with a good LCP score for the top 5 most popular ecommerce platforms. WooCommerce has 10.72% for desktop and 8.63% for mobile, Shopify has 28.78% and 21.24% respectively, Magento has 18.33% and 11.14%, Wix has 5.23% and 3.30%, and PrestaShop has 30.43% on desktop and 19.10% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ65OxpVGpTJVuFhG6EIO55Z_itqFtGnoYLm7W7SEBaRL-YGDUJsBMVrlDjLa-fNdeyNdqXxJt4a-xc/pubchart?oid=733851599&format=interactive",
   sheets_gid="768760354",
   sql_file="core_web_vitals_passingmetrics_byvendor_bydevice.sql"

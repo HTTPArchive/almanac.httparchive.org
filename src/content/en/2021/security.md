@@ -1132,7 +1132,7 @@ Please also note that our results may not show the actual state of the websites 
   )
 }}
 
-We see that just under 5% of the websites return a response when asking for the `/.well-known/securityt.txt` URL. However investigating many of these show they are basically 404 pages that are incorrectly returning a 200 status code so usage is likely much lower.
+We see that just under 5% of the websites return a response when asking for the `/.well-known/security.txt` URL. However investigating many of these show they are basically 404 pages that are incorrectly returning a 200 status code so usage is likely much lower.
 
 {{ figure_markup(
   image="security-usage-of-properties-in-well-known-security.png",

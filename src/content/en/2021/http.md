@@ -16,7 +16,6 @@ featured_stat_2: 82%
 featured_stat_label_2: Top 1,000 sites that have HTTP/2 enabled
 featured_stat_3: 1.25%
 featured_stat_label_3:  Sites using HTTP/2 push
-unedited: true
 ---
 
 ## Introduction

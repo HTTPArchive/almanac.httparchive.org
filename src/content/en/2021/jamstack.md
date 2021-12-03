@@ -7,7 +7,7 @@ reviewers: [Dawntraoz, thomkrupa, tunetheweb]
 analysts: [denar90, tunetheweb, rviscomi]
 editors: [tunetheweb, shantsis]
 translators: []
-denar90_bio: Artem Denysov is Software Engineer, Open-Source contributor, proud Mozillians member, speaker, and writer. Makes developers and users live easier helping them with webperf & tools. Works at [Stackbit](https://twitter.com/stackbit) to empower developers build Jamstack websites easily. You can find him on [Twitter](https://twitter.com/denar90_) and <a hreflang="en" href="https://www.linkedin.com/in/denar90/">Linkedin</a>.
+denar90_bio: Artem Denysov is Software Engineer, Open-Source contributor, proud Mozillians member, speaker, and writer. Makes developers and users live easier helping them with webperf & tools. Works at [Stackbit](https://stackbit.com) to empower developers build Jamstack websites easily. You can find him on [Twitter](https://twitter.com/denar90_) and <a hreflang="en" href="https://www.linkedin.com/in/denar90/">Linkedin</a>.
 results: https://docs.google.com/spreadsheets/d/1anlgeaBH2Yui2kFWuRGxHU2QdMiCKOgDrn4WyXkt5ro/
 featured_quote: Jamstack young and fast growing technology to build modern websites. That what people say and that's proved by numbers.
 featured_stat_1: 1.1%
