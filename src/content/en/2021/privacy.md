@@ -275,7 +275,7 @@ Poor security management within a company can have a significant impact on its c
 
 {{ figure_markup(
   image="data_breaches_pwned_accounts_per_class.png",
-  caption="Number of impacted accounts in breaches per data class.",
+  caption='Number of impacted accounts in breaches per data class. (Source: <a hreflang="en" href="https://haveibeenpwned.com/">Have I Been Pwned</a>)',
   description="Bar chart showing the number of user accounts involved in data breaches, according to the data class that leaked in the breach. 641 million Email addresses were included in breaches, 428 million Passwords, 369 million Names, 173 million Geographic locations, 149 million Phone numbers, 149 million Genders, 134 million Social media profiles, 127 million Education levels, 126 million Job titles, and finally 110 million Physical addresses.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1612339126&format=interactive",
   sheets_gid="1158689200",
@@ -283,7 +283,7 @@ Poor security management within a company can have a significant impact on its c
   )
 }}
 
-Every data breach tracked by HaveIBeenPwned leaks email addresses, since this is how users query whether their data was breached. Leaked email addresses are already a huge privacy risk, since many users employ their full name or credentials to set up their email address. Furthermore, a lot of other highly sensitive information is leaked in some breaches, such as users' genders, bank account numbers and even full physical addresses.
+Every data breach tracked by <a hreflang="en" href="https://haveibeenpwned.com/">Have I Been Pwned</a> leaks email addresses, since this is how users query whether their data was breached. Leaked email addresses are already a huge privacy risk, since many users employ their full name or credentials to set up their email address. Furthermore, a lot of other highly sensitive information is leaked in some breaches, such as users' genders, bank account numbers and even full physical addresses.
 
 ## How websites protect your sensitive data
 
