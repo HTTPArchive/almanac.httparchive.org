@@ -363,7 +363,7 @@ When we look at the entirety of cacheable and non-cacheable resources,
 {{ figure_markup(
   image="cacheable-responses.png",
   caption="Percent of cacheable vs non-cacheable responses.",
-  description="TODO",
+  description="A bar chart showing proportion of cacheable responses. 90.4% of desktop and 89.7% of mobile responses are cacheable.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=674929574&format=interactive",
   sheets_gid="812850996",
   sql_file="ttl.sql"
@@ -381,7 +381,7 @@ Audio was the most highly cached resource across both 1st and 3rd parties. Howev
 {{ figure_markup(
   image="first-party-resource-age-by-content-type.png",
   caption="Distribution of first-party resource age by content type (mobile only).",
-  description="TODO",
+  description="A stack bar chart showing the age of first-party content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The value 0 is used most particularly for first-party HTML, xml and text. There is a mix using 0-52 weeks and then considerable usage for over two years.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=597168369&format=interactive",
   sheets_gid="856268091",
   sql_file="resource_age_party_and_type_wise_groups.sql"
@@ -402,7 +402,7 @@ Mobile resources with a cache TTL that was considered too short compared to its 
 While a cache TTL that is too long may serve stale content, there is no benefit for the end user if it is too short. The connection between cache TTL and content age is slowly closing this gap, moving from 60.2% in 2020 to 54% in 2021. The more attentive we can be towards to content age (i.e: how often we revamp a page's HTML, CSS etc), the more accurately we can set cache limits.
 
 {{ figure_markup(
-  caption="TODO",
+  caption="54% of mobile resources are older than their TTL",
   content="54%",
   classes="big-number",
   sheets_gid="768623684",
