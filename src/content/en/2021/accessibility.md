@@ -271,7 +271,7 @@ We found that 58% of desktop sites and 56% of mobile sites have some usage of th
  {{ figure_markup(
   image="tabindex-usage-and-values.png",
   caption="`tabindex` usage",
-  description="Bar chart showing that of pages that use `tabindex`, a negative or zero `tabindex` is used on 96.9% of those pages for desktop and 97.4% of those pages for mobile, a `tabindex` of 0 is used on 68.2% and 68.3% respectively, a negative `tabindex` is used on 74.2% and 73.3%, and finally a positive `tabindex` is used on 8,7% and 7.7%.",
+  description="Bar chart showing that of pages that use `tabindex`, a negative or zero `tabindex` is used on 96.9% of those pages for desktop and 97.4% of those pages for mobile, a `tabindex` of 0 is used on 68.2% and 68.3% respectively, a negative `tabindex` is used on 74.2% and 73.3%, and finally a positive `tabindex` is used on 8.7% and 7.7%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=632373616&format=interactive",
   sheets_gid="1330777562",
   sql_file="tabindex_usage_and_values.sql"
@@ -279,9 +279,9 @@ We found that 58% of desktop sites and 56% of mobile sites have some usage of th
 
 When we look at desktop pages that have at least one instance of the `tabindex` attribute:
 
-* 74% use a value of `0`, meaning elements are focusable and being added to the keyboard focus order
-* 68% use a negative integer, meaning elements are explicitly removed from the keyboard focus order
-* 9% have a positive integer value, meaning the web author is trying to control the focus order rather than allowing the DOM structure to do so
+* 96.9% use a value of `0`, meaning elements are focusable and being added to the keyboard focus order
+* 68.2% use a negative integer, meaning elements are explicitly removed from the keyboard focus order
+* 8.7% have a positive integer value, meaning the web author is trying to control the focus order rather than allowing the DOM structure to do so
 
 While there are valid declarations for the `tabindex` attribute, incorrectly reaching for these techniques leads to common accessibility barriers for many keyboard and assistive technology users. For more information about the pitfalls of using a positive integer for `tabindex` we recommend [Karl Groves](https://twitter.com/karlgroves)' article, <a hreflang="en" href="https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad">"Why using `tabindex` values greater than "0" is bad"</a>.
 
