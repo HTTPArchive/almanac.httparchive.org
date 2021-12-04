@@ -7,7 +7,7 @@ SELECT
   client,
   app,
   CDN,
-  COUNT(DISTINCT url) AS origins,
+  COUNT(DISTINCT url) AS origins
 FROM (
   SELECT
     CASE

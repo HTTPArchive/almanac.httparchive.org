@@ -56,7 +56,7 @@ USING
 JOIN (
   SELECT DISTINCT
     _TABLE_SUFFIX AS client,
-    app,
+    app
   FROM
     `httparchive.technologies.2021_07_01_*`
   WHERE

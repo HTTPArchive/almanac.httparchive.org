@@ -25,7 +25,7 @@ ssg AS (
 ),
 
 total_ssg AS (
-  SELECT DISTINCT
+  SELECT
     _TABLE_SUFFIX AS client,
     COUNT(0) AS ssg_total
   FROM
@@ -39,7 +39,7 @@ total_ssg AS (
 ),
 
 total_ssg_app AS (
-  SELECT DISTINCT
+  SELECT
     _TABLE_SUFFIX AS client,
     app AS ssg_app,
     COUNT(0) AS ssg_app_total
