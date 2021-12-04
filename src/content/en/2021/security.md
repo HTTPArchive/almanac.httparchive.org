@@ -365,7 +365,7 @@ Most websites have quite a lot of media and CSS or JavaScript libraries that mor
   )
 }}
 
-We see more and more websites starting to use CSP with 9.3% of websites on mobile using CSP now compared to 7.2% last year. `upgrade-insecure-requests` continues to be the most frequent CSP used. The high adoption rate for this policy is likely because of the same reasons mentioned [last year](../2020/security#content-security-policy); it is an easy, low-risk, policy that helps in upgrading all HTTP requests to HTTPS and also helps with to block mixed content being used on the page. `frame-ancestors` is a close second, which helps one define valid parents that may embed a page.
+We see more and more websites starting to use CSP with 9.3% homepages on mobile using CSP now compared to 7.2% last year. `upgrade-insecure-requests` continues to be the most frequent CSP used. The high adoption rate for this policy is likely because of the same reasons mentioned [last year](../2020/security#content-security-policy); it is an easy, low-risk, policy that helps in upgrading all HTTP requests to HTTPS and also helps with to block mixed content being used on the page. `frame-ancestors` is a close second, which helps one define valid parents that may embed a page.
 
 The adoption of policies defining the sources from which content can be loaded continues to be low. Most of these policies are more difficult to implement, as they can cause breakages. They require effort to implement to define `nonce`, hashes or domains for allowing external content.
 
@@ -672,8 +672,8 @@ Web applications can be vulnerable to multiple attacks. Fortunately, there exist
 
 {{ figure_markup(
   image="security-adoption-of-security-headers.png",
-  caption="Adoption of security headers for mobile pages.",
-  description="Bar chart showing the prevalence of different security headers, for mobile pages in 2021 and 2020. `X-Content-Type-Options` was 30.0% in 2020 and is 36.6% in 2021, `X-Frame-Options` was 27.0% in 2020 and is 29.4% in 2021, `Strict-Transport-Security` was 17.4% in 2020 and is 22.9% in 2021, `X-XSS-Protection` was 18.4% in 2020 and is 20.0% in 2021, `Expect-CT` was 11.1% in 2020 and are 13.4% in 2021, `Content-Security-Policy` was 10.9% in 2020 and 12.8% in 2021, `Report-To` was 2.5% in 2020 and is 11.9% in 2021, `Referrer-Policy` was 7.3% in 2020 and is 10.0% in 2021, `Feature-Policy` was 0.5% in 2020 and is 0.6% in 2021.",
+  caption="Adoption of security headers for site requests in mobile pages.",
+  description="Bar chart showing the prevalence of different security headers, for any requests under the same domain in mobile pages in 2021 and 2020. `X-Content-Type-Options` was 30.0% in 2020 and is 36.6% in 2021, `X-Frame-Options` was 27.0% in 2020 and is 29.4% in 2021, `Strict-Transport-Security` was 17.4% in 2020 and is 22.9% in 2021, `X-XSS-Protection` was 18.4% in 2020 and is 20.0% in 2021, `Expect-CT` was 11.1% in 2020 and are 13.4% in 2021, `Content-Security-Policy` was 10.9% in 2020 and 12.8% in 2021, `Report-To` was 2.5% in 2020 and is 11.9% in 2021, `Referrer-Policy` was 7.3% in 2020 and is 10.0% in 2021, `Feature-Policy` was 0.5% in 2020 and is 0.6% in 2021.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR38ZfiZXxdGuzG4ywCEPKIU1Wl6E2bZwcQPyALavGq5q948gmWb8sT-Xo5T6K5z8smKPg6EKxV0JUI/pubchart?oid=1380470049&format=interactive",
   sheets_gid="285299680",
   sql_file="security_headers_prevalence.sql",
