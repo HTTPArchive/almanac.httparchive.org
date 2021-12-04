@@ -74,7 +74,7 @@ JOIN (
 USING
   (client, url)
 JOIN (
-  SELECT
+  SELECT DISTINCT
     _TABLE_SUFFIX AS client,
     app,
     url

@@ -1,6 +1,6 @@
 #standardSQL
 # SSG adoptions and top SSGs YoY
-SELECT
+SELECT DISTINCT
   _TABLE_SUFFIX AS client,
   2021 AS year,
   app AS ssg,
@@ -28,7 +28,7 @@ GROUP BY
   total,
   ssg
 UNION ALL
-SELECT
+SELECT DISTINCT
   _TABLE_SUFFIX AS client,
   2020 AS year,
   app AS ssg,

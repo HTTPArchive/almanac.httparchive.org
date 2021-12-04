@@ -1,6 +1,6 @@
 #standardSQL
 # SSG adoption over time
-SELECT
+SELECT DISTINCT
   _TABLE_SUFFIX AS client,
   2021 AS year,
   COUNT(DISTINCT url) AS freq,
