@@ -269,13 +269,13 @@ Geolocation data can also be accessed by websites through a [web browser API](ht
 
 ### Data breaches
 
-Poor security management within a company can have a significant impact on its customers' private data. <a hreflang="en" href="https://haveibeenpwned.com/">HaveIBeenPwned</a> allows users to check whether their email address or phone number was leaked in a data breach. At the time of this writing, HaveIBeenPwned has tracked 562 breaches, leaking 640 million records. In 2020 alone, 40 services were breached and personal data about millions of users leaked. Three of these breaches were marked as _sensitive_, referring to the possibility of a negative impact on the user if someone were to find that user's data in the breach. One example of a sensitive breach is "[Carding Mafia](https://www.vice.com/en/article/v7m9jx/credit-card-hacking-forum-gets-hacked-exposing-300000-hackers-accounts)", a platform where stolen credit cards are traded.
+Poor security management within a company can have a significant impact on its customers' private data. <a hreflang="en" href="https://haveibeenpwned.com/">Have I Been Pwned</a> allows users to check whether their email address or phone number was leaked in a data breach. At the time of this writing, Have I Been Pwned has tracked 562 breaches, leaking 640 million records. In 2020 alone, 40 services were breached and personal data about millions of users leaked. Three of these breaches were marked as _sensitive_, referring to the possibility of a negative impact on the user if someone were to find that user's data in the breach. One example of a sensitive breach is "[Carding Mafia](https://www.vice.com/en/article/v7m9jx/credit-card-hacking-forum-gets-hacked-exposing-300000-hackers-accounts)", a platform where stolen credit cards are traded.
 
 <p class="note">Note that 40 breaches in the previous year is a lower bound, since many breaches are only discovered, or made public, several months after they have occurred.</p>
 
 {{ figure_markup(
   image="data_breaches_pwned_accounts_per_class.png",
-  caption="Number of impacted accounts in breaches per data class.",
+  caption='Number of impacted accounts in breaches per data class. (Source: <a hreflang="en" href="https://haveibeenpwned.com/">Have I Been Pwned</a>)',
   description="Bar chart showing the number of user accounts involved in data breaches, according to the data class that leaked in the breach. 641 million Email addresses were included in breaches, 428 million Passwords, 369 million Names, 173 million Geographic locations, 149 million Phone numbers, 149 million Genders, 134 million Social media profiles, 127 million Education levels, 126 million Job titles, and finally 110 million Physical addresses.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1612339126&format=interactive",
   sheets_gid="1158689200",
@@ -283,7 +283,7 @@ Poor security management within a company can have a significant impact on its c
   )
 }}
 
-Every data breach tracked by HaveIBeenPwned leaks email addresses, since this is how users query whether their data was breached. Leaked email addresses are already a huge privacy risk, since many users employ their full name or credentials to set up their email address. Furthermore, a lot of other highly sensitive information is leaked in some breaches, such as users' genders, bank account numbers and even full physical addresses.
+Every data breach tracked by <a hreflang="en" href="https://haveibeenpwned.com/">Have I Been Pwned</a> leaks email addresses, since this is how users query whether their data was breached. Leaked email addresses are already a huge privacy risk, since many users employ their full name or credentials to set up their email address. Furthermore, a lot of other highly sensitive information is leaked in some breaches, such as users' genders, bank account numbers and even full physical addresses.
 
 ## How websites protect your sensitive data
 
