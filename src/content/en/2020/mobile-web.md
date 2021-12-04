@@ -75,10 +75,10 @@ Some takeaways:
   * The top 30 origins constitute 25% of aggregate traffic on mobile.
   * The top 200 origins constitute 33% of aggregate traffic on mobile.
 * The web has a **broad torso**.
- * The top 10k origins constitute roughly two-thirds of traffic: 64% of traffic on mobile.
+  * The top 10k origins constitute roughly two-thirds of traffic: 64% of traffic on mobile.
 * The web has a **long tail**.
- * 3M origins in top 98% on Android versus 1.8M on Windows.
- * The tail is about twice as long on Android as Windows. This is most likely attributable to the larger number of mobile devices and users, compared to desktop.
+  * 3M origins in top 98% on Android versus 1.8M on Windows.
+  * The tail is about twice as long on Android as Windows. This is most likely attributable to the larger number of mobile devices and users, compared to desktop.
 
 #### Traffic to a site from mobile versus desktop (CrUX)
 

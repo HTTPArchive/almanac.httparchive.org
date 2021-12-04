@@ -32,6 +32,7 @@ Notre mission est de combiner les statistiques brutes et les tendances de HTTP A
 
 {% block help_translate %}Aidez à traduire{% endblock %}
 {% block translation_not_available %}en anglais - non disponible en français{% endblock %}
+{% block in_english %} (en anglais){% endblock %}
 {% block language_switcher %}Sélecteur de langue{% endblock %}
 {% block year_switcher %}Sélecteur d’année{% endblock %}
 {% block table_of_contents_switcher %}Sélecteur de table des matières{% endblock %}
@@ -40,6 +41,7 @@ Notre mission est de combiner les statistiques brutes et les tendances de HTTP A
 {% block table_of_contents_title %}Table des matières{% endblock %}
 {% block contributors_title %}Contributeurs et contributrices{% endblock %}
 {% block methodology_title %}Méthodologie{% endblock %}
+{% block search_title %}Rechercher{% endblock %}
 
 {% block part %}Partie{% endblock %}
 {% block chapter %}Chapitre{% endblock %}
@@ -85,6 +87,22 @@ Notre mission est de combiner les statistiques brutes et les tendances de HTTP A
 
 {% block author %}Auteur·ice{% endblock %}
 {% block authors %}Auteur·ice·s{% endblock %}
+
+{% block reactions %}Réactions{% endblock %}
+{% block source %}Voir la source{% endblock %}
+
+{% block like %}j’aime{% endblock %}
+{% block repost %}républication{% endblock %}
+{% block reply %}réponse{% endblock %}
+{% block mention %}mention{% endblock %}
+{% block likes %}j’aimes{% endblock %}
+{% block reposts %}républications{% endblock %}
+{% block replies %}réponses{% endblock %}
+{% block mentions %}mentions{% endblock %}
+{% block likesAlt %}{% endblock %}
+{% block repostsAlt %}{% endblock %}
+{% block repliesAlt %}{% endblock %}
+{% block mentionsAlt %}{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} sur Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} sur GitHub{% endmacro %}
@@ -142,6 +160,7 @@ Sauf indication contraire, les statistiques des {{ supported_chapters | length }
     "IV. Content Distribution": "IV. Diffusion du contenu"
   }
 %}
+
 {%
   set localizedChapterTitles = {
     "javascript": "JavaScript",
@@ -163,14 +182,32 @@ Sauf indication contraire, les statistiques des {{ supported_chapters | length }
     "cdn": "CDN",
     "page-weight": "Poids des pages",
     "resource-hints": "Indices de Ressources",
-    "http2": "HTTP/2",
+    "http": "HTTP",
     "privacy": "Vie Privée",
     "capabilities": "Capacités",
-    "jamstack": "Jamstack"
+    "jamstack": "Jamstack",
+    "webassembly": "WebAssembly",
+    "structured-data": "Données structurées"
+  }
+%}
+{% if (year == "2019" or year == "2020") %}
+{% set _dummy = localizedChapterTitles.__setitem__("http", "HTTP/2") %}
+{% endif %}
+
+{% set localizedTeamNames = {
+  "analysts": "Analyse",
+  "authors": "Rédaction",
+  "brainstormers": "Réflexion",
+  "designers": "Design",
+  "developers": "Développement",
+  "editors": "Édition",
+  "leads": "Gestion de projet",
+  "reviewers": "Relecture",
+  "translators": "Traduction",
   }
 %}
 
-{% set localizedTeamNames = {
+{% set localizedTeamRole = {
   "analysts": "Analyse",
   "authors": "Rédaction",
   "brainstormers": "Réflexion",

@@ -3,7 +3,7 @@
 title: Polices d'écriture
 description: Chapitre Polices d'écriture du web Almanac 2019 couvrant l'endroit d'où les polices sont chargées, les formats de police, la performance de leur chargement, les polices variables et les polices de couleur.
 authors: [zachleat]
-reviewers: [hyperpress, AymenLoukil]
+reviewers: [logicalphase, AymenLoukil]
 analysts: [tjmonsi, rviscomi]
 editors: [tunetheweb]
 translators: [arigaud-ca]
@@ -33,7 +33,7 @@ L'utilisation de polices web hébergées permet une mise en œuvre et une mainte
 
 ### Les polices sont-elles hébergées sur le même serveur ou par un serveur différent&nbsp;?
 
-La distinction entre l'auto-hébergement et l'hébergement tiers est de plus en plus pertinente dans un monde [HTTP/2](./http2), où l'écart de performance entre un même hôte et une connexion vers un hôte différent peut être plus important. Les requêtes vers un même hôte présentent l'énorme avantage d'un meilleur potentiel de priorisation par rapport aux autres requêtes vers ce même hôte dans la cascade.
+La distinction entre l'auto-hébergement et l'hébergement tiers est de plus en plus pertinente dans un monde [HTTP/2](./http), où l'écart de performance entre un même hôte et une connexion vers un hôte différent peut être plus important. Les requêtes vers un même hôte présentent l'énorme avantage d'un meilleur potentiel de priorisation par rapport aux autres requêtes vers ce même hôte dans la cascade.
 
 Les recommandations pour réduire les coûts de performance du chargement des polices web à partir d'un autre hôte comprennent l'utilisation des fonctions `preconnect`, `dns-prefetch` et `preload` [resource hints](./resource-hints), mais les polices web hautement prioritaires devraient être fournies par le même hôte afin de minimiser leur impact sur les performances. Ceci est particulièrement important pour les polices utilisées par des contenus à prééminence visuelle ou pour des corps de texte occupant la majorité d'une page.
 
@@ -595,7 +595,7 @@ Après avoir plongé dans le code, toutes ces 718 requêtes vont à Google Fonts
 
 Il est ironique qu'un plugin d'optimisation des performances puisse rendre vos performances bien pires&nbsp;!
 
-## Une correspondance plus précise avec `unicode-range`.
+## Une correspondance plus précise avec `unicode-range`
 
 {{ figure_markup(
   caption="Pourcentage des pages mobiles qui déclarent une police web avec la propriété <code>unicode-range</code>.",

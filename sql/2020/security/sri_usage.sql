@@ -13,7 +13,7 @@ SELECT
   COUNT(DISTINCT IF(JSON_EXTRACT_SCALAR(sri, '$.tagname') = 'script', url, NULL)) AS freq_script_urls,
   COUNT(DISTINCT IF(JSON_EXTRACT_SCALAR(sri, '$.tagname') = 'script', url, NULL)) / COUNT(DISTINCT url) AS pct_script_urls,
   COUNT(DISTINCT IF(JSON_EXTRACT_SCALAR(sri, '$.tagname') = 'link', url, NULL)) AS freq_link_urls,
-  COUNT(DISTINCT IF(JSON_EXTRACT_SCALAR(sri, '$.tagname') = 'link', url, NULL)) / COUNT(DISTINCT url) AS pct_link_urls,
+  COUNT(DISTINCT IF(JSON_EXTRACT_SCALAR(sri, '$.tagname') = 'link', url, NULL)) / COUNT(DISTINCT url) AS pct_link_urls
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

@@ -1,5 +1,9 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION hasGridNamedLines(css STRING) RETURNS BOOLEAN LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION hasGridNamedLines(css STRING)
+RETURNS BOOLEAN
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
   const ast = JSON.parse(css);
   let props = countDeclarationsByProperty(ast.stylesheet.rules, {properties: /^grid($|\\-)/, values: /\\[([\\w-]+)\\]/});
@@ -7,8 +11,7 @@ try {
 } catch (e) {
   return false;
 }
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   client,
@@ -16,7 +19,7 @@ SELECT
   total,
   COUNTIF(grid_named_lines) / total AS pct
 FROM (
-  SELECT DISTINCT
+  SELECT
     client,
     page,
     COUNTIF(hasGridNamedLines(css)) > 0 AS grid_named_lines

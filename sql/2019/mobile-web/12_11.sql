@@ -17,7 +17,7 @@ RETURNS BOOL LANGUAGE js AS '''
 ''';
 
 SELECT
-    COUNT(url) AS total,
-    ROUND(COUNTIF(hasButtonIconSet(payload)) * 100 / COUNT(0), 2) AS pct_has_icon_button
+  COUNT(url) AS total,
+  ROUND(COUNTIF(hasButtonIconSet(payload)) * 100 / COUNT(0), 2) AS pct_has_icon_button
 FROM
-    `httparchive.pages.2019_07_01_mobile`
+  `httparchive.pages.2019_07_01_mobile`

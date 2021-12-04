@@ -448,7 +448,7 @@ Standaardelementen zijn elementen die deel uitmaken van de HTML-specificatie. We
   <figcaption>{{ figure_link(caption="Lage kansen om een bepaald element op pagina's van de steekproef te vinden.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
-We nemen deze elementen op om een idee te geven welke elementen mogelijk uit de gratie zijn geraakt. Maar hoewel `dir` en` basefont` voor het laatst werden gespecificeerd in XHTML 1.0 (2000) en niet langer deel uitmaken van HTML, het zeldzame gebruik van `rp`, <a hreflang="en" href="https://www.w3.org/TR/1998/WD-rubya2-4">dat al in 1998 werd genoemd</a> en dat <a hreflang="en" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element">nog steeds deel uitmaakt van HTML</a>, suggereert misschien dat <a hreflang="en" href="https://www.w3.org/TR/ruby/">ruby-opmaak</a> niet erg populair is.
+We nemen deze elementen op om een idee te geven welke elementen mogelijk uit de gratie zijn geraakt. Maar hoewel `dir` en `basefont` voor het laatst werden gespecificeerd in XHTML 1.0 (2000) en niet langer deel uitmaken van HTML, het zeldzame gebruik van `rp`, <a hreflang="en" href="https://www.w3.org/TR/1998/WD-rubya2-4">dat al in 1998 werd genoemd</a> en dat <a hreflang="en" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element">nog steeds deel uitmaakt van HTML</a>, suggereert misschien dat <a hreflang="en" href="https://www.w3.org/TR/ruby/">ruby-opmaak</a> niet erg populair is.
 
 ### Aangepaste elementen
 

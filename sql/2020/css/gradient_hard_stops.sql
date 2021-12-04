@@ -1,5 +1,9 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getGradientHardStops(css STRING) RETURNS INT64 LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getGradientHardStops(css STRING)
+RETURNS INT64
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
   function compute(ast) {
     let ret = {
@@ -152,8 +156,7 @@ try {
 } catch (e) {
   return 0;
 }
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   client,

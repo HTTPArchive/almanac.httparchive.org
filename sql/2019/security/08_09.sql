@@ -8,7 +8,7 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX), 2) AS pct
 FROM
-   `httparchive.requests.2019_07_01_*`
+  `httparchive.requests.2019_07_01_*`
 GROUP BY
   client,
   cipher

@@ -4,7 +4,7 @@ SELECT
   app,
   COUNTIF(crawlable = '1') AS passing,
   COUNT(0) AS total,
-  ROUND(COUNTIF(crawlable = '1') * 100 / COUNT(0) , 2) AS pct
+  ROUND(COUNTIF(crawlable = '1') * 100 / COUNT(0), 2) AS pct
 FROM
   `httparchive.technologies.2019_07_01_mobile`
 JOIN (

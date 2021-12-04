@@ -17,7 +17,7 @@ featured_stat_label_1: Pages powered by a CMS
 featured_stat_2: 74%
 featured_stat_label_2: CMS sites that use WordPress
 featured_stat_3: 1,232 KB
-featured_stat_label_3: Median image KB loaded per desktop CMS page.
+featured_stat_label_3: Median image KB loaded per desktop CMS page
 ---
 
 ## Introduction

@@ -1,6 +1,9 @@
 #standardSQL
 CREATE TEMPORARY FUNCTION getMediaQueryFeatures(css STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS ARRAY<STRING>
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
   function compute(ast) {
     let ret = {};
@@ -12,7 +15,7 @@ try {
 
       if (features) {
         features = features.map(s => s.slice(1));
-        
+
         for (let feature of features) {
           incrementByKey(ret, feature);
         }
@@ -28,8 +31,7 @@ try {
 } catch (e) {
   return [];
 }
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   client,

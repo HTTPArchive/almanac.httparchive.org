@@ -48,8 +48,8 @@ FROM (
       getSelectorType(css) AS type
     FROM
       `httparchive.almanac.parsed_css`
-  WHERE
-    date = '2019-07-01')
+    WHERE
+      date = '2019-07-01')
   GROUP BY
     client,
     page)

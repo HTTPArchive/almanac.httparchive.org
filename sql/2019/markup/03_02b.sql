@@ -27,5 +27,4 @@ GROUP BY
 ORDER BY
   freq / total DESC,
   client
-LIMIT
-  10000
+LIMIT 10000

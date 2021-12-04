@@ -20,7 +20,7 @@ SELECT
 FROM (
   SELECT
     client,
-    IF (STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party,
+    IF(STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party,
     TRIM(resp_date) != "" AS uses_date,
     TRIM(resp_last_modified) != "" AS uses_last_modified,
 

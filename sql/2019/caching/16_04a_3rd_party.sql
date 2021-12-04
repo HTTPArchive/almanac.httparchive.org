@@ -20,7 +20,7 @@ FROM
   (
     SELECT
       client,
-      IF (STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party,
+      IF(STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party,
       expAge - (startedDateTime - toTimestamp(resp_last_modified)) AS diff
     FROM
       `httparchive.almanac.requests`

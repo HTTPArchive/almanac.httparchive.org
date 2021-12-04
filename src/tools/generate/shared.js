@@ -18,6 +18,9 @@ const static_pages_lang = [
 
 const simpleConverter = new showdown.Converter();
 simpleConverter.setFlavor('github');
+simpleConverter.setOption('simpleLineBreaks', false);
+simpleConverter.setOption('tablesHeaderId', false);
+simpleConverter.setOption('ghMentions', false);
 
 const convertSimpleMarkdown = (text) => {
   // Showdown replaces & with &amp; so convert those back to avoid escape issues

@@ -17,14 +17,14 @@ SELECT
   COUNT(DISTINCT page) / total AS pct
 FROM (
   SELECT
-    m.client,
-    m.page,
+    client,
+    page,
     getManifestProps(m.body) AS properties,
     COUNT(DISTINCT m.page) OVER (PARTITION BY client) AS total
   FROM
-    `httparchive.almanac.manifests` m
+    `httparchive.almanac.manifests`
   JOIN
-    `httparchive.almanac.service_workers` sw
+    `httparchive.almanac.service_workers`
   USING
     (date, client, page)
   WHERE

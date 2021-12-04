@@ -6,7 +6,7 @@ SELECT
   COUNTIF(uses_cache_control) AS total_using_cache_control,
   COUNTIF(uses_max_age) AS total_using_max_age,
   COUNTIF(uses_expires) AS total_using_expires,
-  COUNTIF(uses_max_age AND uses_expires) AS total_using_max_age_and_expires,  
+  COUNTIF(uses_max_age AND uses_expires) AS total_using_max_age_and_expires,
   COUNTIF(uses_cache_control AND uses_expires) AS total_using_both,
   COUNTIF(NOT uses_cache_control AND NOT uses_expires) AS total_using_neither,
   COUNTIF(uses_cache_control AND NOT uses_expires) AS total_using_only_cache_control,

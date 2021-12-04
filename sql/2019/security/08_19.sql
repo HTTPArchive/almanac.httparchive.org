@@ -17,8 +17,8 @@ FROM (
     COUNT(0) AS total,
     COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), 'content-security-policy =')) AS csp_count,
     COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), 'content-security-policy =') AND REGEXP_CONTAINS(LOWER(respOtherHeaders), 'strict-dynamic')) AS strict_dynamic_count,
-  COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), 'content-security-policy =') AND REGEXP_CONTAINS(LOWER(REGEXP_EXTRACT(respOtherHeaders, r'(?i)\W?script-src?([^,|;]+)')), 'strict-dynamic')) AS scriptsrc_strict_dynamic_count,
-  COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), 'content-security-policy =') AND REGEXP_CONTAINS(LOWER(REGEXP_EXTRACT(respOtherHeaders, r'(?i)\W?default-src?([^,|;]+)')), 'strict-dynamic')) AS defaultsrc_strict_dynamic_count
+    COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), 'content-security-policy =') AND REGEXP_CONTAINS(LOWER(REGEXP_EXTRACT(respOtherHeaders, r'(?i)\W?script-src?([^,|;]+)')), 'strict-dynamic')) AS scriptsrc_strict_dynamic_count,
+    COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), 'content-security-policy =') AND REGEXP_CONTAINS(LOWER(REGEXP_EXTRACT(respOtherHeaders, r'(?i)\W?default-src?([^,|;]+)')), 'strict-dynamic')) AS defaultsrc_strict_dynamic_count
   FROM
     `httparchive.almanac.requests`
   WHERE

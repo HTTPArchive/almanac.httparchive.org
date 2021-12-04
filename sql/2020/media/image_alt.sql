@@ -5,7 +5,7 @@
 CREATE TEMPORARY FUNCTION get_markup_info(markup_string STRING)
 RETURNS STRUCT<
   total INT64,
-  alt_missing INT64, 
+  alt_missing INT64,
   alt_blank INT64,
   alt_present INT64
 > LANGUAGE js AS '''
@@ -14,7 +14,7 @@ try {
     var markup = JSON.parse(markup_string);
 
     if (Array.isArray(markup) || typeof markup != 'object') return result;
-	
+
     result.total = markup.images.img.total;
     result.alt_missing = markup.images.img.alt.missing;
     result.alt_blank = markup.images.img.alt.blank;

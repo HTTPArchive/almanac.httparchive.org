@@ -7,7 +7,10 @@ RETURNS STRUCT<
   root_descendant NUMERIC,
   html_descendant NUMERIC,
   not_id_descendant NUMERIC
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
 
 function compute() {
@@ -82,8 +85,7 @@ return ret;
 } catch (e) {
   return null;
 }
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   percentile,

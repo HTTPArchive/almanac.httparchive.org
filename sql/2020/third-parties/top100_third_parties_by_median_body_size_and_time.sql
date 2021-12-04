@@ -10,6 +10,7 @@ WITH requests AS (
   FROM
     `httparchive.summary_requests.2020_08_01_*`
 ),
+
 third_party AS (
   SELECT
     domain,
@@ -20,13 +21,14 @@ third_party AS (
   WHERE
     date = '2020-08-01'
 ),
+
 base AS (
   SELECT
     client,
     category,
     canonicalDomain,
     APPROX_QUANTILES(body_size, 1000)[OFFSET(500)] / 1024 AS median_body_size_kb,
-    APPROX_QUANTILES(time, 1000)[OFFSET(500)] /1000 AS median_time_s
+    APPROX_QUANTILES(time, 1000)[OFFSET(500)] / 1000 AS median_time_s
   FROM
     requests
   INNER JOIN
@@ -53,7 +55,7 @@ FROM (
     category,
     canonicalDomain,
     median_body_size_kb AS metric,
-    DENSE_RANK() OVER(PARTITION BY client ORDER BY median_body_size_kb DESC) AS rank
+    DENSE_RANK() OVER (PARTITION BY client ORDER BY median_body_size_kb DESC) AS rank
   FROM base
   UNION ALL (
     SELECT
@@ -62,12 +64,12 @@ FROM (
       category,
       canonicalDomain,
       median_time_s AS metric,
-      DENSE_RANK() OVER(PARTITION BY client ORDER BY median_time_s DESC) AS rank
+      DENSE_RANK() OVER (PARTITION BY client ORDER BY median_time_s DESC) AS rank
     FROM base
   )
 )
 WHERE
-  rank<=100
+  rank <= 100
 ORDER BY
   ranking,
   client,

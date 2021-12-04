@@ -50,6 +50,9 @@ npm run generate
 echo "Diff the two folders"
 #Don't fail if there are differences so turn that check off that temporarily
 set +e
+echo "Files that are different:"
+diff -r templates "${TEMP_TEMPLATES_DIRECTORY}"
+echo "Line differences:"
 diff -r templates "${TEMP_TEMPLATES_DIRECTORY}" > "${DIFF_FILENAME}"
 set -e
 

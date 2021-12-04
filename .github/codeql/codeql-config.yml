@@ -1,0 +1,4 @@
+# Ignore template files as CodeQL gets comfused with Jinja
+# and tries ot analysis it as though it's inline JavaScript
+paths-ignore:
+  - src/templates

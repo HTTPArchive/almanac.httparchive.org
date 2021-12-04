@@ -24,7 +24,7 @@ SELECT
   COUNTIF(freq > 0) / total AS pct_all_pages
 FROM (
   SELECT
-    _TABLE_SUFFIX AS client,=
+    _TABLE_SUFFIX AS client,
     var.usage,
     var.freq
   FROM

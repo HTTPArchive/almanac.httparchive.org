@@ -1,10 +1,9 @@
 #standardSQL
 # Percentile breakdown page-relative percentage of total script execution time that is from third party requests broken down by third party category.
-CREATE TEMPORARY FUNCTION
-  getExecutionTimes(report STRING)
-  RETURNS ARRAY<STRUCT<url STRING,
-  execution_time FLOAT64>>
-  LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getExecutionTimes(report STRING)
+RETURNS ARRAY<STRUCT<url STRING, execution_time FLOAT64>>
+LANGUAGE js
+AS '''
 try {
   var $ = JSON.parse(report);
   return $.audits['bootup-time'].details.items.map(item => ({

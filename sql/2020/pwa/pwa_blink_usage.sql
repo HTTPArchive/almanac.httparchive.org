@@ -17,4 +17,4 @@ WHERE
 ORDER BY
   client,
   num_urls,
-  feature,
+  feature

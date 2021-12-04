@@ -15,8 +15,8 @@ FROM (
     link_name_score IS NOT NULL AS uses_links,
     button_name_score IS NOT NULL OR link_name_score IS NOT NULL AS uses_either,
 
-    IFNULL(CAST(button_name_score as NUMERIC), 1) = 1 AS good_or_na_buttons,
-    IFNULL(CAST(link_name_score as NUMERIC), 1) = 1 AS good_or_na_links
+    IFNULL(CAST(button_name_score AS NUMERIC), 1) = 1 AS good_or_na_buttons,
+    IFNULL(CAST(link_name_score AS NUMERIC), 1) = 1 AS good_or_na_links
   FROM (
     SELECT
       JSON_EXTRACT_SCALAR(report, '$.audits.button-name.score') AS button_name_score,

@@ -32,6 +32,7 @@
 
 {% block help_translate %}幫助翻譯{% endblock %}
 {% block translation_not_available %}英文 - 中文不能使用{% endblock %}
+{% block in_english %} (英文){% endblock %}
 {% block language_switcher %}選擇語言{% endblock %}
 {% block year_switcher %}選擇年度{% endblock %}
 {% block table_of_contents_switcher %}選擇目錄{% endblock %}
@@ -40,6 +41,7 @@
 {% block table_of_contents_title %}目錄{% endblock %}
 {% block contributors_title %}貢獻者{% endblock %}
 {% block methodology_title %}統計方法{% endblock %}
+{% block search_title %}搜索{% endblock %}
 
 {% block part %}部分{% endblock %}
 {% block chapter %}章{% endblock %}
@@ -81,10 +83,26 @@
 {% block reviewed_and_analyzed_by_after %}{% endblock %}
 {% block analysis_and_editing_by_after %}{% endblock %}
 
-{% block unedited %}[Unedited]{% endblock %}
+{% block unedited %}[尚未編輯]{% endblock %}
 
 {% block author %}作者{% endblock %}
 {% block authors %}作者{% endblock %}
+
+{% block reactions %}反應{% endblock %}
+{% block source %}查看原始碼{% endblock %}
+
+{% block like %}則回覆{% endblock %}
+{% block repost %}提及{% endblock %}
+{% block reply %}個喜歡{% endblock %}
+{% block mention %}提及{% endblock %}
+{% block likes %}個贊{% endblock %}
+{% block reposts %}轉發{% endblock %}
+{% block replies %}回覆{% endblock %}
+{% block mentions %}提及{% endblock %}
+{% block likesAlt %}{% endblock %}
+{% block repostsAlt %}{% endblock %}
+{% block repliesAlt %}{% endblock %}
+{% block mentionsAlt %}{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} GitHub{% endmacro %}
@@ -142,6 +160,7 @@ Web Almanac 網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.co
     "IV. Content Distribution": "IV. 內容傳遞"
   }
 %}
+
 {%
   set localizedChapterTitles = {
     "javascript": "JavaScript",
@@ -163,14 +182,32 @@ Web Almanac 網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.co
     "cdn": "內容傳遞網路",
     "page-weight": "網頁大小",
     "resource-hints": "資源提示",
-    "http2": "超文字傳輸協定/第2版",
+    "http": "HTTP",
     "privacy": "隱私",
     "capabilities": "功能",
-    "jamstack": "Jamstack"
+    "jamstack": "Jamstack",
+    "webassembly": "WebAssembly",
+    "structured-data": "结构化数据"
+  }
+%}
+{% if (year == "2019" or year == "2020") %}
+{% set _dummy = localizedChapterTitles.__setitem__("http", "HTTP/2") %}
+{% endif %}
+
+{% set localizedTeamNames = {
+  "analysts": "分析者",
+  "authors": "作者",
+  "brainstormers": "腦力激盪者",
+  "designers": "設計者",
+  "developers": "開發者",
+  "editors": "審稿者",
+  "leads": "專案主導者",
+  "reviewers": "審稿者",
+  "translators": "翻譯者",
   }
 %}
 
-{% set localizedTeamNames = {
+{% set localizedTeamRole = {
   "analysts": "分析者",
   "authors": "作者",
   "brainstormers": "腦力激盪者",

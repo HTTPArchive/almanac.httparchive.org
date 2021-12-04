@@ -61,7 +61,7 @@ Apenas 3% do uso de dicas de recursos usaram [HTTP headers](https://developer.mo
 Link: <https://example.com/shopping-cart.js>; rel=prefetch
 ```
 
-Como o uso de dicas de recursos em cabeçalhos HTTP é muito baixo, o restante deste capítulo se concentrará exclusivamente na análise do uso de dicas de recursos em conjunto com a tag `<link>`. No entanto, é importante notar que, nos próximos anos, o uso de dicas de recursos em cabeçalhos HTTP pode aumentar à medida que o [HTTP/2 Push](./http2#http2-push) for adotado. Isso se deve ao fato de que o HTTP/2 Push redirecionou o `Link` cabeçalho de pré-carregamento HTTP como um sinal para enviar recursos.
+Como o uso de dicas de recursos em cabeçalhos HTTP é muito baixo, o restante deste capítulo se concentrará exclusivamente na análise do uso de dicas de recursos em conjunto com a tag `<link>`. No entanto, é importante notar que, nos próximos anos, o uso de dicas de recursos em cabeçalhos HTTP pode aumentar à medida que o [HTTP/2 Push](./http#http2-push) for adotado. Isso se deve ao fato de que o HTTP/2 Push redirecionou o `Link` cabeçalho de pré-carregamento HTTP como um sinal para enviar recursos.
 
 ## Dicas de recursos
 
@@ -238,9 +238,9 @@ No momento, não há propostas para expandir o conjunto atual de dicas de recurs
 
 <a hreflang="en" href="https://wicg.github.io/priority-hints/">Sugestões prioritárias</a> são uma API para expressar a prioridade de busca de um recurso: `high`, `low`, ou `auto`. Eles podem ser usados ​​com uma ampla variedade de tags HTML: especificamente `<image>`, `<link`>, `<script>`, e `<iframe>`.
 
-<figure>
+<figure class="figure-block">
 <div class="code-block floating-card">
-  <pre><code>&lt;carousel>
+  <pre role="region" aria-label="Code 0" tabindex="0"><code>&lt;carousel>
   &lt;img src="cat1.jpg" importance="high">
   &lt;img src="cat2.jpg" importance="low">
   &lt;img src="cat3.jpg" importance="low">

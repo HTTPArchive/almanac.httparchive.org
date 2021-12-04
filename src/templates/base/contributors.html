@@ -98,7 +98,7 @@
   align-items: center;
   border-radius: 15px;
   box-shadow: 0 0 16px 0 rgba(78, 85, 100, 0.2);
-  padding: 24px 34px;
+  padding: 24px 24px;
   width: 230px;
   margin: 10px;
 }
@@ -296,7 +296,7 @@
 
     <ul class="contributor-grid">
       <li class="contributor-join">
-        <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/README.md" aria-labelledby="jointheteam">
+        <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/CONTRIBUTING.md" aria-labelledby="jointheteam">
           <svg xmlns="http://www.w3.org/2000/svg" role="img" width="174" height="100" viewBox="0 0 173 96">
             <title id="jointheteam">{{ self.join_the_team_title() }}</title>
             <path d="M0,0l8.4,75.1l88.7,0.8L93.3,96l24.9-19.1l50.6-1.8l3.7-67.5L0,0z"/>
@@ -309,43 +309,54 @@
       </li>
     {% for id, contributor in config.contributors.items() %}
       <li class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}" tabindex="-1">
+
+        {% if contributor.avatar_url|int != 0 %}
+        <img class="contributor-avatar" src="https://avatars.githubusercontent.com/u/{{ contributor.avatar_url }}?v=4&s=200" height="100" width="100" alt="{{ contributor.name }} avatar" loading="lazy" />
+        {% else %}
         <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" loading="lazy" />
+        {% endif %}
+
         <div class="contributor-name">{{ contributor.name }}</div>
 
         <div class="contributor-social">
           {% if contributor.twitter %}
           <a href="https://twitter.com/{{ contributor.twitter }}" aria-label="{{ onTwitter(contributor.twitter) }}">
             <svg width="22" height="22" role="img">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>
             </svg>
           </a>
           {% endif %}
           {% if contributor.github %}
           <a href="https://github.com/{{ contributor.github }}" aria-label="{{ onGitHub(contributor.github) }}">
             <svg width="22" height="22" role="img">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
             </svg>
           </a>
           {% endif %}
           {% if contributor.linkedin %}
           <a href="https://www.linkedin.com/in/{{ contributor.linkedin }}/" aria-label="{{ onLinkedIn(contributor.name) }}">
             <svg width="22" height="22" role="img">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin-logo"></use>
             </svg>
           </a>
           {% endif %}
           {% if contributor.website %}
           <a href="{{ contributor.website }}" aria-label="{{ website(contributor.name) }}">
             <svg width="22" height="22" role="img">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe-logo"></use>
             </svg>
           </a>
           {% endif %}
+          <a href="/{{ lang }}/search?q={{ contributor.name | urlencode }}" aria-label="{{ self.search_title() }} {{ contributor.name }}">
+            <svg width="22" height="22" role="img">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search-logo"></use>
+            </svg>
+          </a>
         </div>
 
         <div class="contributor-teams">
           {% for id in contributor.teams | sort() %}
-          <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{% if loop.length > 2 %}{{ self.comma() if loop.index < loop.length - 1 }}{{ self.oxford_comma() if loop.index == loop.length - 1 }}{% endif %}
+          <span class="contributor-team team-{{ id }}">{{ localizedTeamRole[id] if localizedTeamRole[id]|length else team.name }}</span>{% if loop.length > 2 %}{{ self.comma() if loop.index < loop.length - 1 }}{{ self.oxford_comma() if loop.index == loop.length - 1 }}{% endif %}
           {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
           {% endfor %}
         </div>

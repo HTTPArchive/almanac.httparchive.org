@@ -12,7 +12,7 @@ FROM (
     SUM(LENGTH(svg)) AS svg_length
   FROM
     `httparchive.almanac.summary_response_bodies`,
-    UNNEST(REGEXP_EXTRACT_ALL(body,r'(?i)(<svg.*?/svg>)')) AS svg
+    UNNEST(REGEXP_EXTRACT_ALL(body, r'(?i)(<svg.*?/svg>)')) AS svg
   WHERE
     date = '2019-07-01' AND
     firstHtml

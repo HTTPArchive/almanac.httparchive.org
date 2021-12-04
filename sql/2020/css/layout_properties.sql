@@ -1,7 +1,10 @@
 #standardSQL
 # Float styles
 CREATE TEMPORARY FUNCTION getLayoutUsage(css STRING)
-RETURNS ARRAY<STRUCT<name STRING, value INT64>> LANGUAGE js AS '''
+RETURNS ARRAY<STRUCT<name STRING, value INT64>>
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
   const ast = JSON.parse(css);
   let ret = {};
@@ -37,8 +40,7 @@ try {
 } catch (e) {
   return [];
 }
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   *,
@@ -50,7 +52,7 @@ FROM (
     SUM(value) AS freq,
     SUM(SUM(value)) OVER (PARTITION BY client) AS total,
     SUM(value) / SUM(SUM(value)) OVER (PARTITION BY client) AS pct,
-    COUNT(DISTINCT page) AS pages,
+    COUNT(DISTINCT page) AS pages
   FROM (
     SELECT
       client,

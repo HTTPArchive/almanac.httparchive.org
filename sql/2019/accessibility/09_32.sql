@@ -15,8 +15,8 @@ FROM (
     input_image_alt_score IS NOT NULL AS uses_input_img_elements,
     image_alt_score IS NOT NULL OR input_image_alt_score IS NOT NULL AS uses_any_images,
 
-    IFNULL(CAST(image_alt_score as NUMERIC), 1) = 1 AS good_or_na_image_alts,
-    IFNULL(CAST(input_image_alt_score as NUMERIC), 1) = 1 AS good_or_na_input_img_alts
+    IFNULL(CAST(image_alt_score AS NUMERIC), 1) = 1 AS good_or_na_image_alts,
+    IFNULL(CAST(input_image_alt_score AS NUMERIC), 1) = 1 AS good_or_na_input_img_alts
   FROM (
     SELECT
       JSON_EXTRACT_SCALAR(report, '$.audits.image-alt.score') AS image_alt_score,

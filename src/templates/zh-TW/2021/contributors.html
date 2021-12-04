@@ -1,0 +1,11 @@
+{% extends "base/contributors.html" %}
+
+{% block title %}{{ year }} 貢獻者 | Web Almanac 精粹自 HTTP Archive{% endblock %}
+
+{% block description %}{{ config.contributors.items() | length }} 位團隊成員貢獻 {{ year }} Web Almanac 有分析者、作者、腦力激盪者、設計者、開發者、編輯者、審稿者和翻譯者。{% endblock %}
+
+{% block filter_by_team %}按類組篩選： <span id="filtered-contributors">{{ self.contributors() }}</span><span id="contributors-total-text" class="hidden"> 的 <span id="contributors-total">{{ config.contributors.items() | length }}</span></span> 貢獻者。{% endblock %}
+{% block filter_by %}篩選{% endblock %}
+
+{% block join_the_team_title%}加入 Web Almanac 團隊{% endblock %}
+{% block join_the_team_text%}加入團隊!{% endblock %}

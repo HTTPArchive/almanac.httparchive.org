@@ -16,8 +16,8 @@ JOIN
 USING
   (url)
 WHERE
-  category = 'Ecommerce' AND 
-  (app != 'Cart Functionality' AND 
+  category = 'Ecommerce' AND
+  (app != 'Cart Functionality' AND
    app != 'Google Analytics Enhanced eCommerce')
 GROUP BY
   ecommVendor

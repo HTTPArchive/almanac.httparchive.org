@@ -32,6 +32,7 @@
 
 {% block help_translate %}अनुवाद में मदद करें{% endblock %}
 {% block translation_not_available %}अंग्रेजी - हिन्दी में उपलब्ध नहीं है{% endblock %}
+{% block in_english %} (अंग्रेजी){% endblock %}
 {% block language_switcher %}भाषा परिवर्तन करें{% endblock %}
 {% block year_switcher %}वर्ष परिवर्तन करें{% endblock %}
 {% block table_of_contents_switcher %}विषय सूची परिवर्तन करें{% endblock %}
@@ -40,6 +41,7 @@
 {% block table_of_contents_title %}विषय सूची{% endblock %}
 {% block contributors_title %}योगदानकर्ता{% endblock %}
 {% block methodology_title %}कार्यप्रणाली{% endblock %}
+{% block search_title %}खोज{% endblock %}
 
 {% block part %}भाग{% endblock %}
 {% block chapter %}अध्याय{% endblock %}
@@ -85,6 +87,22 @@
 
 {% block author %}लेखक{% endblock %}
 {% block authors %}लेखकों{% endblock %}
+
+{% block reactions %}प्रतिक्रियाओं{% endblock %}
+{% block source %}प्रतिक्रियाओं{% endblock %}
+
+{% block like %}पसंद{% endblock %}
+{% block repost %}पोस्ट{% endblock %}
+{% block reply %}जवाब{% endblock %}
+{% block mention %}उल्लेख{% endblock %}
+{% block likes %}को यह पसंद है{% endblock %}
+{% block reposts %}रेपोस्ट{% endblock %}
+{% block replies %}जवाब{% endblock %}
+{% block mentions %}का उल्लेख है{% endblock %}
+{% block likesAlt %}{% endblock %}
+{% block repostsAlt %}{% endblock %}
+{% block repliesAlt %}{% endblock %}
+{% block mentionsAlt %}{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} Twitter पर{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} GitHub पर{% endmacro %}
@@ -142,6 +160,7 @@ Web Almanac वेब समुदाय की मेहनत से संभ
     "IV. Content Distribution": "IV. सामग्री वितरण"
   }
 %}
+
 {%
   set localizedChapterTitles = {
     "javascript": "JavaScript",
@@ -163,14 +182,32 @@ Web Almanac वेब समुदाय की मेहनत से संभ
     "cdn": "CDN",
     "page-weight": "पेज वेट",
     "resource-hints": "संसाधन संकेत",
-    "http2": "HTTP/2",
+    "http": "HTTP",
     "privacy": "गोपनीयता",
     "capabilities": "क्षमता",
-    "jamstack": "Jamstack"
+    "jamstack": "Jamstack",
+    "webassembly": "WebAssembly",
+    "structured-data": "संरचित डेटा"
+  }
+%}
+{% if (year == "2019" or year == "2020") %}
+{% set _dummy = localizedChapterTitles.__setitem__("http", "HTTP/2") %}
+{% endif %}
+
+{% set localizedTeamNames = {
+  "analysts": "विश्लेषक",
+  "authors": "लेखक",
+  "brainstormers": "ब्रैनस्टोमर ",
+  "designers": "डिजाइनर",
+  "developers": "डेवलपर",
+  "editors": "संपादक",
+  "leads": "प्रोजेक्ट लीड्स",
+  "reviewers": "समीक्षक",
+  "translators": "अनुवादक",
   }
 %}
 
-{% set localizedTeamNames = {
+{% set localizedTeamRole = {
   "analysts": "विश्लेषक",
   "authors": "लेखक",
   "brainstormers": "ब्रैनस्टोमर ",

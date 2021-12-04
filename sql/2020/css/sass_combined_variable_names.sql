@@ -28,5 +28,4 @@ GROUP BY
   name
 ORDER BY
   pct DESC
-LIMIT
-  100
+LIMIT 100

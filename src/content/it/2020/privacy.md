@@ -12,11 +12,11 @@ discuss: 2046
 results: https://docs.google.com/spreadsheets/d/16bE70rv4qbmKIqbZS1zUiTRpk5eOlgxBXEabL1qiduI/
 featured_quote: La privacy è aumentata di recente in popolarità e ha aumentato la consapevolezza da parte degli utenti. La necessità di linee guida è stata soddisfatta con varie normative (come GDPR in Europa, LGPD in Brasile, CCPA in California per citarne solo alcune). Questi mirano ad aumentare la responsabilità dei responsabili del trattamento dei dati e la loro trasparenza nei confronti degli utenti. In questo capitolo si discute della prevalenza del tracciamento online con diverse tecniche e del tasso di adozione dei banner di consenso sui cookie e delle politiche sulla privacy da parte dei siti web.
 featured_stat_1: 93%
-featured_stat_label_1: Siti web che caricano almeno un tracker.
+featured_stat_label_1: Siti web che caricano almeno un tracker
 featured_stat_2: Nove su dieci
-featured_stat_label_2: Principali domini di impostazione dei cookie di proprietà di Google.
+featured_stat_label_2: Principali domini di impostazione dei cookie di proprietà di Google
 featured_stat_3: 44.8%
-featured_stat_label_3: Siti Web che dispongono di una politica sulla privacy.
+featured_stat_label_3: Siti Web che dispongono di una politica sulla privacy
 ---
 
 ## Introduzione

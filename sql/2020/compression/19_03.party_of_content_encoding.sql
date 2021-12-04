@@ -18,7 +18,7 @@ SELECT
 FROM
   `httparchive.almanac.requests`
 WHERE
-  date='2020-08-01'
+  date = '2020-08-01'
 GROUP BY
   client,
   party,

@@ -13,7 +13,7 @@ SELECT
 FROM (
   SELECT
     client,
-    IF (STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party,
+    IF(STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party,
     TRIM(resp_cache_control) != "" AS uses_cache_control,
     REGEXP_CONTAINS(resp_cache_control, r'(?i)(^\s*|,\s*)must-revalidate(\s*,|\s*$)') AS uses_revalidate
   FROM

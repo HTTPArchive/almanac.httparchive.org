@@ -1,5 +1,9 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION hasGridlikeFlexbox(css STRING) RETURNS BOOLEAN LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION hasGridlikeFlexbox(css STRING)
+RETURNS BOOLEAN
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
   const ast = JSON.parse(css);
   return walkRules(ast, rule => {
@@ -14,8 +18,7 @@ try {
 } catch (e) {
   return false;
 }
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   client,
@@ -23,7 +26,7 @@ SELECT
   total,
   COUNTIF(gridlike_flexbox) / total AS pct
 FROM (
-  SELECT DISTINCT
+  SELECT
     client,
     page,
     COUNTIF(hasGridlikeFlexbox(css)) > 0 AS gridlike_flexbox

@@ -15,17 +15,14 @@ csp = {
     ],
     'connect-src': [
         '\'self\'',
+        'webmention.io',
         'discuss.httparchive.org',
         'www.google-analytics.com',
         'www.googletagmanager.com'
     ],
     'img-src': [
         '\'self\'',
-        'www.google-analytics.com',
-        'www.googletagmanager.com',
-        '*.githubusercontent.com',
-        '*.google.com',
-        'ssl.gstatic.com',
+        'https:',
         'data:'
     ],
     'frame-src': [
@@ -38,5 +35,11 @@ csp = {
     ],
     'base-uri': [
         '\'none\''
+    ],
+    'report-uri': [
+        'https://httparchive.report-uri.com/r/d/csp/enforce'
+    ],
+    'report-to': [
+        'https://httparchive.report-uri.com/r/d/csp/enforce'
     ]
 }

@@ -4,7 +4,7 @@
 # returns all the data we need from _media
 CREATE TEMPORARY FUNCTION get_media_info(media_string STRING)
 RETURNS STRUCT<
-  num_srcset_all INT64, 
+  num_srcset_all INT64,
   num_srcset_descriptor_x INT64,
   num_srcset_descriptor_w INT64
 > LANGUAGE js AS '''
@@ -13,7 +13,7 @@ try {
     var media = JSON.parse(media_string);
 
     if (Array.isArray(media) || typeof media != 'object') return result;
-	
+
     result.num_srcset_all = media.num_srcset_all;
     result.num_srcset_descriptor_x = media.num_srcset_descriptor_x;
 	result.num_srcset_descriptor_w = media.num_srcset_descriptor_w;

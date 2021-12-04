@@ -43,5 +43,4 @@ GROUP BY
   total_sass
 ORDER BY
   pct DESC
-LIMIT
-  1000
+LIMIT 1000

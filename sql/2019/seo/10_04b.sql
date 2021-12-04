@@ -16,5 +16,4 @@ GROUP BY
   hreflang
 ORDER BY
   freq / total DESC
-LIMIT
-  10000
+LIMIT 10000

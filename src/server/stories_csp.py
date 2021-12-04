@@ -24,11 +24,7 @@ csp = {
     ],
     'img-src': [
         '\'self\'',
-        'www.google-analytics.com',
-        'www.googletagmanager.com',
-        '*.githubusercontent.com',
-        '*.google.com',
-        'ssl.gstatic.com',
+        'https:',
         'data:'
     ],
     'frame-src': [
@@ -38,5 +34,17 @@ csp = {
     ],
     'frame-ancestors': [
         '*'
+    ],
+    'object-src': [
+        '\'none\''
+    ],
+    'base-uri': [
+        '\'none\''
+    ],
+    'report-uri': [
+        'https://httparchive.report-uri.com/r/d/csp/enforce'
+    ],
+    'report-to': [
+        'https://httparchive.report-uri.com/r/d/csp/enforce'
     ]
 }

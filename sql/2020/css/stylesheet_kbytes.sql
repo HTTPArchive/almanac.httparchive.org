@@ -7,7 +7,7 @@ WITH summary_pages AS (
     bytesCSS
   FROM
     `httparchive.summary_pages.2019_07_01_*`
-UNION ALL
+  UNION ALL
   SELECT
     2020 AS year,
     _TABLE_SUFFIX AS client,

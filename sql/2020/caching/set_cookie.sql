@@ -6,12 +6,12 @@ SELECT
   COUNTIF(NOT uses_no_store) AS total_cacheable,
   COUNTIF(NOT uses_no_store AND uses_cookies) AS total_cacheable_set_cookie,
   COUNTIF(NOT uses_no_store AND NOT uses_cookies) AS total_cacheable_without_set_cookie,
-  COUNTIF(NOT uses_no_store AND uses_cookies AND uses_private) AS total_pvt_cacheable_set_cookie, 
-  COUNTIF(NOT uses_no_store AND uses_cookies AND NOT uses_private) AS total_pvt_public_cacheable_set_cookie, 
+  COUNTIF(NOT uses_no_store AND uses_cookies AND uses_private) AS total_pvt_cacheable_set_cookie,
+  COUNTIF(NOT uses_no_store AND uses_cookies AND NOT uses_private) AS total_pvt_public_cacheable_set_cookie,
   COUNTIF(NOT uses_no_store AND uses_cookies) / COUNTIF(NOT uses_no_store) AS pct_cacheable_set_cookie,
   COUNTIF(NOT uses_no_store AND NOT uses_cookies) / COUNTIF(NOT uses_no_store) AS pct_cacheable_without_set_cookie,
   COUNTIF(NOT uses_no_store AND uses_cookies AND uses_private) / COUNTIF(NOT uses_no_store AND uses_cookies) AS pct_pvt_cacheable_set_cookie,
-  COUNTIF(NOT uses_no_store AND uses_cookies AND NOT uses_private) / COUNTIF(NOT uses_no_store AND uses_cookies) AS pct_pvt_public_cacheable_set_cookie 
+  COUNTIF(NOT uses_no_store AND uses_cookies AND NOT uses_private) / COUNTIF(NOT uses_no_store AND uses_cookies) AS pct_pvt_public_cacheable_set_cookie
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

@@ -3,7 +3,7 @@
 SELECT
   client,
   csp_count,
-  csp_upgrade_insecure_requests_count
+  csp_upgrade_insecure_requests_count,
   total,
   ROUND(csp_count * 100 / total, 2) AS pct_csp,
   ROUND(csp_upgrade_insecure_requests_count * 100 / total, 2) AS pct_csp_upgrade_insecure_requests

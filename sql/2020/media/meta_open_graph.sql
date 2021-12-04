@@ -27,9 +27,9 @@ return result;
 
 SELECT
   client,
-  COUNTIF(almanac_info.meta_og_image) / COUNT(0) as meta_og_image_pct,
-  COUNTIF(almanac_info.meta_og_video) / COUNT(0) as meta_og_video_pct,
-  COUNTIF(almanac_info.meta_og_image AND almanac_info.meta_og_video) / COUNT(0) as meta_og_image_video_pct,
+  COUNTIF(almanac_info.meta_og_image) / COUNT(0) AS meta_og_image_pct,
+  COUNTIF(almanac_info.meta_og_video) / COUNT(0) AS meta_og_video_pct,
+  COUNTIF(almanac_info.meta_og_image AND almanac_info.meta_og_video) / COUNT(0) AS meta_og_image_video_pct
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

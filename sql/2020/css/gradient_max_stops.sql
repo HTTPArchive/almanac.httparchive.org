@@ -1,5 +1,9 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getMaxColorStops(css STRING) RETURNS STRING LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getMaxColorStops(css STRING)
+RETURNS STRING
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
   function compute(ast) {
     let ret = {
@@ -152,8 +156,7 @@ try {
 } catch (e) {
   return null;
 }
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 # https://www.stevenmoseley.com/blog/tech/high-performance-sql-correlated-scalar-aggregate-reduction-queries
 CREATE TEMPORARY FUNCTION getGradient(value STRING) RETURNS STRING AS (

@@ -8,14 +8,14 @@ SELECT
   ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', header, ' ='))) * 100 / total, 2) AS pct
 FROM
   `httparchive.summary_requests.2019_07_01_*`,
-UNNEST(['nel', 'report-to', 'referrer-policy',
-  'feature-policy', 'x-content-type-options',
-  'x-xss-protection', 'x-frame-options',
-  'cross-origin-resource-policy',
-  'cross-origin-opener-policy',
-  'sec-fetch-(dest|mode|site|user)',
-  'strict-transport-security',
-  'content-security-policy']) AS header
+  UNNEST(['nel', 'report-to', 'referrer-policy',
+    'feature-policy', 'x-content-type-options',
+    'x-xss-protection', 'x-frame-options',
+    'cross-origin-resource-policy',
+    'cross-origin-opener-policy',
+    'sec-fetch-(dest|mode|site|user)',
+    'strict-transport-security',
+    'content-security-policy'])
 JOIN (
   SELECT _TABLE_SUFFIX, COUNT(0) AS total
   FROM `httparchive.summary_pages.2019_07_01_*`

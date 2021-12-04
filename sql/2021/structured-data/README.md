@@ -1,10 +1,6 @@
 # 2021 Structured Data queries
 
-<!--
-  This directory contains all of the 2021 Structured Data chapter queries.
+Related materials:
 
-  Each query should have a corresponding `metric_name.sql` file.
-  Note that readers are linked to this directory, so try to make the SQL file names descriptive for easy browsing.
-
-  Analysts: if helpful, you can use this README to give additional info about the queries.
--->
+- [Planning doc](https://docs.google.com/document/d/19KDSv4olAXUHUV6hq4X4Cb-lNziqvVesgXXxVktrw4c/edit)
+- [Results spreadsheet](https://docs.google.com/spreadsheets/d/1uEA217YjpX1xdRVBnIz9ekjpjIrpGIh5GwUxvnzJNig/edit)

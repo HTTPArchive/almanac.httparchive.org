@@ -4,7 +4,10 @@ RETURNS STRUCT<
   ruleCount NUMERIC,
   selectorCount NUMERIC,
   distribution ARRAY<STRUCT<specificity STRING, specificity_cmp STRING, freq INT64>>
-> LANGUAGE js AS '''
+>
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
   function extractSpecificity(ast) {
     let ret = {
@@ -74,8 +77,7 @@ try {
 } catch (e) {
   return null;
 }
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   percentile,

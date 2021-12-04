@@ -121,7 +121,7 @@ Il supporto per `module` e `nomodule` si sta espandendo, ma ancora relativamente
 
 ### Conteggio richieste
 
-Un altro modo per vedere quanto JavaScript utilizziamo è esplorare quante richieste JavaScript vengono effettuate su ogni pagina. Sebbene la riduzione del numero di richieste fosse fondamentale per mantenere buone prestazioni con HTTP/1.1, con HTTP/2 è il caso opposto: suddividere JavaScript in <a hreflang="en" href="https://web.dev/granular-chunking-nextjs/">file singoli più piccoli</a> è [in genere migliore per le prestazioni](../2019/http2#impact-of-http2).
+Un altro modo per vedere quanto JavaScript utilizziamo è esplorare quante richieste JavaScript vengono effettuate su ogni pagina. Sebbene la riduzione del numero di richieste fosse fondamentale per mantenere buone prestazioni con HTTP/1.1, con HTTP/2 è il caso opposto: suddividere JavaScript in <a hreflang="en" href="https://web.dev/granular-chunking-nextjs/">file singoli più piccoli</a> è [in genere migliore per le prestazioni](../2019/http#impact-of-http2).
 
 {{ figure_markup(
   image="requests-2020.png",

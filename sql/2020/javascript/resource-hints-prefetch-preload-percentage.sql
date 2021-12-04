@@ -34,7 +34,7 @@ SELECT
   COUNT(DISTINCT page) AS total,
   COUNT(DISTINCT IF(prefetch_hint, page, NULL)) / COUNT(DISTINCT page) AS prefetch_pct,
   COUNT(DISTINCT IF(preload_hint, page, NULL)) AS preload_pages,
-  COUNT(DISTINCT IF(preload_hint, page, NULL)) / COUNT(DISTINCT page) AS preload_pct,
+  COUNT(DISTINCT IF(preload_hint, page, NULL)) / COUNT(DISTINCT page) AS preload_pct
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

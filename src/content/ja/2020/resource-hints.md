@@ -264,7 +264,7 @@ Lighthouseの「<a hreflang="en" href="https://web.dev/offscreen-images/">Defer 
 
 ## HTTP/2プッシュ
 
-[HTTP/2](./http2)には「サーバープッシュ」と呼ばれる機能があり、製品のラウンドトリップタイム（https://developer.mozilla.org/ja/docs/Glossary/Round_Trip_Time_(RTT)）やサーバーの処理が長い場合に、ページのパフォーマンスを改善できる可能性があります。簡単に説明すると、クライアントがリクエストを送信するのを待つのではなく、クライアントがすぐにリクエストするだろうと予測したリソースをサーバーが先取りしてプッシュするのです。
+[HTTP/2](./http)には「サーバープッシュ」と呼ばれる機能があり、製品のラウンドトリップタイム（https://developer.mozilla.org/ja/docs/Glossary/Round_Trip_Time_(RTT)）やサーバーの処理が長い場合に、ページのパフォーマンスを改善できる可能性があります。簡単に説明すると、クライアントがリクエストを送信するのを待つのではなく、クライアントがすぐにリクエストするだろうと予測したリソースをサーバーが先取りしてプッシュするのです。
 
 {{ figure_markup(
   caption="`preload`/`nopush`を使用したHTTP/2 Pushページの割合です。",

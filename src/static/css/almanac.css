@@ -499,13 +499,19 @@ footer nav ul {
   align-items: center;
   margin: 0;
   padding-inline-start: 0;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 header nav li,
 footer nav li {
   display: flex;
   line-height: 1.4em;
+  text-align: center;
+}
+
+header nav li li,
+footer nav li li {
+  text-align: left;
 }
 
 header nav .menu li .year-switcher,
@@ -521,7 +527,7 @@ header nav {
 }
 
 header nav > ul > li > * {
-  margin-right: 2vw;
+  margin-right: 1.5em;
 }
 
 header nav > ul > li:last-child > * {
@@ -548,6 +554,34 @@ header .cta {
   position: relative;
   font-size: 14px;
   font-size: 0.875rem;
+}
+
+.search-nav input {
+  min-width: 400px;
+  text-indent: 5px;
+}
+
+.header-search,
+.footer-search {
+  padding: 5px;
+}
+
+.search-input {
+  line-height: 1.65;
+}
+
+.search-button {
+  border-color: #000;
+  background-color: #f7f779;
+  padding: 6px 27px;
+  width: auto;
+  border: 1px solid #666;
+  border-radius: 2px;
+}
+
+.search-button svg {
+  fill: #000;
+  color: #000;
 }
 
 .table-of-contents-switcher:hover,
@@ -690,8 +724,13 @@ blockquote::before {
   left: -7rem;
   opacity: 0.05;
   font-size: 20rem;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Courier New', 'Courier', monospace;
   line-height: 1;
+  pointer-events: none;
+}
+
+blockquote em {
+  font-style: normal;
 }
 
 /* Footer */
@@ -799,7 +838,7 @@ p.copyright a {
   color: currentColor;
 }
 
-@media (max-width: 56.25em) and (min-width: 37.51em) {
+@media (max-width: 72em) and (min-width: 37.51em) {
   /* Header */
   .top-header,
   footer {
@@ -818,12 +857,17 @@ p.copyright a {
     margin: 0;
   }
 
-  header nav > ul > li > a {
+  header nav > ul > li > a,
+  header nav > ul > li > .search-nav {
     margin-bottom: 50px;
     margin-bottom: 3.125rem;
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.4em;
+  }
+
+  .search-nav input {
+    min-width: 400px;
   }
 
   header nav > ul > li:last-child {
@@ -994,11 +1038,16 @@ p.copyright a {
     margin: 0;
   }
 
-  header nav > ul > li > a {
+  header nav > ul > li > a,
+  header nav > ul > li > .search-nav {
     margin-bottom: 50px;
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.4em;
+  }
+
+  .search-nav input {
+    min-width: 200px;
   }
 
   header nav > ul > li:last-child {
@@ -1105,7 +1154,7 @@ p.copyright a {
   }
 }
 
-@media (max-width: 56.25em) {
+@media (max-width: 72em) {
   #menu,
   #mobile-footer-nav-items {
     display: block;
@@ -1140,7 +1189,7 @@ p.copyright a {
     color: #f7f779;
   }
 
-  .menu-btn__bar {
+  .menu-btn-bar {
     display: block;
     width: 27px;
     height: 2px;
@@ -1149,30 +1198,30 @@ p.copyright a {
     transition: 0.15s cubic-bezier(0.75, -0.55, 0.25, 1.55);
   }
 
-  .menu-btn__bar + .menu-btn__bar {
+  .menu-btn-bar + .menu-btn-bar {
     margin-top: 7px;
   }
 
-  .menu-btn__bar:nth-child(2) {
+  .menu-btn-bar:nth-child(2) {
     width: 20px;
     margin-left: auto;
   }
 
-  .menu-btn--active .menu-btn__bar {
+  .menu-btn-active .menu-btn-bar {
     margin: 0;
     position: absolute;
   }
 
-  .menu-btn--active .menu-btn__bar:nth-child(1) {
+  .menu-btn-active .menu-btn-bar:nth-child(1) {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
   }
 
-  .menu-btn--active .menu-btn__bar:nth-child(2) {
+  .menu-btn-active .menu-btn-bar:nth-child(2) {
     opacity: 0;
   }
 
-  .menu-btn--active .menu-btn__bar:nth-child(3) {
+  .menu-btn-active .menu-btn-bar:nth-child(3) {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
   }
@@ -1264,6 +1313,7 @@ p.copyright a {
   margin-top: -9px;
 }
 
+.search-nav .nav-dropdown-btn.dropdown-open::after,
 .table-of-contents .nav-dropdown-btn.dropdown-open::after {
   height: 7px;
   width: 7px;
@@ -1295,7 +1345,7 @@ p.copyright a {
 }
 
 .footer .nav-dropdown-list {
-  bottom: 60px;
+  bottom: 56px;
   border-radius: 29px 29px 29px 0;
   flex-direction: column-reverse;
 }
@@ -1332,6 +1382,11 @@ p.copyright a {
   padding: 16px 8px 8px 16px;
   font-weight: bold;
   font-size: 1.25rem;
+}
+
+.header-search .nav-dropdown-list-part,
+.footer .footer-search .nav-dropdown-list-part {
+  padding: 16px;
 }
 
 .nav-dropdown-list-part a {
@@ -1444,7 +1499,7 @@ pre .comment {
 }
 
 pre .support {
-  color: #0086b3;
+  color: #006080;
 }
 
 pre .tag,
@@ -1516,8 +1571,11 @@ html:not([lang="en"]) main a[href*="/en-US/"]::after,
 html:not([lang="en"]) main a[href*="/en/"]::after,
 html:not([lang="en"]) main a[href^="https://en."]::after {
   content: '(en)';
-  vertical-align: super;
+  /* vertical-align: super; */
   font-size: 0.6em;
+  vertical-align: baseline;
+  position: relative;
+  top: -1em;
 }
 
 /*
@@ -1525,8 +1583,11 @@ html:not([lang="en"]) main a[href^="https://en."]::after {
  */
 main a[hreflang]::after {
   content: '(' attr(hreflang) ')';
-  vertical-align: super;
+  /* vertical-align: super; */
   font-size: 0.6em;
+  vertical-align: baseline;
+  position: relative;
+  top: -1em;
 }
 
 /*
@@ -1534,7 +1595,7 @@ main a[hreflang]::after {
  * (allows us to add this to base content to make it easier for translators)
  */
 html[lang="en"] main a[hreflang="en"]::after {
-  content: '';
+  content: initial;
 }
 
 @media print {

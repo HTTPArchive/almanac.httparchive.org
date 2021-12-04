@@ -4,21 +4,21 @@ SELECT
   client,
   chHTML,
   chHeader,
-  count(0) hits
+  COUNT(0) AS hits
 FROM
-(
-  SELECT
-    client,
-    page,
-    replace(regexp_extract(regexp_extract(body, r'(?is)<meta[^><]*Accept-CH\b[^><]*'), r'(?im).*content=[&quot;#32"\']*([^\'"><]*)'), "#32;", '') chHTML,
-    regexp_extract(regexp_extract(respOtherHeaders, r'(?is)Accept-CH = (.*)'), r'(?im)^([^=]*?)(?:, [a-z-]+ = .*)') chHeader
-  FROM `httparchive.almanac.summary_response_bodies`
-  WHERE
-    date = '2019-07-01' AND
-    firstHtml AND
-    ( regexp_contains(body, r'(?is)<meta[^><]*Accept-CH\b') OR
-      regexp_contains(respOtherHeaders, r'(?is)Accept-CH = ') )
-)
+  (
+    SELECT
+      client,
+      page,
+      replace(regexp_extract(regexp_extract(body, r'(?is)<meta[^><]*Accept-CH\b[^><]*'), r'(?im).*content=[&quot;#32"\']*([^\'"><]*)'), "#32;", '') AS chHTML,
+      regexp_extract(regexp_extract(respOtherHeaders, r'(?is)Accept-CH = (.*)'), r'(?im)^([^=]*?)(?:, [a-z-]+ = .*)') AS chHeader
+    FROM `httparchive.almanac.summary_response_bodies`
+    WHERE
+      date = '2019-07-01' AND
+      firstHtml AND
+      ( REGEXP_CONTAINS(body, r'(?is)<meta[^><]*Accept-CH\b') OR
+        REGEXP_CONTAINS(respOtherHeaders, r'(?is)Accept-CH = ') )
+  )
 GROUP BY
   client,
   chHTML,

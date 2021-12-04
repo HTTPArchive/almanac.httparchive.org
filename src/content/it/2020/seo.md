@@ -177,7 +177,7 @@ Le direttive utilizzate più di frequente si concentrano sui motori di ricerca e
   </figcaption>
 </figure>
 
-Analizzando l'utilizzo dell'istruzione `Disallow` in `robots.txt` utilizzando i dati di oltre 6 milioni di siti basati su Lighthouse, si è riscontrato che il 97.84% di essi era completamente sottoponibile a scansione, con solo l'1.05% che utilizzava un'istruzione `Disallow` .
+Analizzando l'utilizzo dell'istruzione `Disallow` in `robots.txt` utilizzando i dati di oltre 6 milioni di siti basati su Lighthouse, si è riscontrato che il 97.84% di essi era completamente sottoponibile a scansione, con solo l'1.05% che utilizzava un'istruzione `Disallow`.
 
 È stata eseguita anche un'analisi dell'utilizzo dell'istruzione `robots.txt` `Disallow` lungo le direttive <a hreflang="en" href="https://developers.google.com/search/reference/robots_meta_tag">meta robots</a> _indexability_, trovando l'1.02% dei siti tra cui un'istruzione `Disallow` lungo le pagine indicizzabili con una direttiva meta robots `index`, con solo lo 0.03% dei siti che utilizza l'istruzione `Disallow` in `robots.txt` lungo le pagine _noindexed_ tramite la direttiva meta robots `noindex`.
 
@@ -492,7 +492,7 @@ La lunghezza mediana della meta description è di 19 parole. L'unica disparità 
 
 Il conteggio mediano dei caratteri per la meta description è di 138 caratteri sulle pagine desktop e 136 caratteri sulle pagine mobile. A parte il 75° percentile, c'è una piccola disparità tra le lunghezze delle meta description per dispositivi mobile e desktop distribuite nel set di dati. Le migliori pratiche SEO suggeriscono di limitare la meta description a un massimo di 160 caratteri, ma Google, in modo incoerente, può visualizzare fino a 300 caratteri nei suoi frammenti.
 
-Con le meta description che continuano ad alimentare altri snippet come social e news feed, e dato che Google le riscrive continuamente e non le considera un fattore di ranking diretto, è ragionevole aspettarsi che le meta description continueranno a crescere oltre il limite di 160 caratteri .
+Con le meta description che continuano ad alimentare altri snippet come social e news feed, e dato che Google le riscrive continuamente e non le considera un fattore di ranking diretto, è ragionevole aspettarsi che le meta description continueranno a crescere oltre il limite di 160 caratteri.
 
 #### Le immagini
 
@@ -1135,7 +1135,7 @@ Google pone uno specifico interesse sulla sicurezza sotto tutti gli aspetti. Il 
 
 #### Utilizzo di HTTPS
 
-Abbiamo rilevato che il 77.44% delle pagine desktop e il 73.22% delle pagine mobile hanno adottato HTTPS. Questo è il 10.38% rispetto allo scorso anno. È importante notare che i browser sono diventati più aggressivi nello spingere HTTPS segnalando che le pagine non sono sicure quando le visiti senza HTTPS. Inoltre, HTTPS è attualmente un requisito per capitalizzare su protocolli ad alte prestazioni come HTTP/2 e HTTP/3 (noto anche come HTTP su QUIC). Puoi saperne di più sullo stato di questi protocolli nel capitolo [HTTP/2](./http2).
+Abbiamo rilevato che il 77.44% delle pagine desktop e il 73.22% delle pagine mobile hanno adottato HTTPS. Questo è il 10.38% rispetto allo scorso anno. È importante notare che i browser sono diventati più aggressivi nello spingere HTTPS segnalando che le pagine non sono sicure quando le visiti senza HTTPS. Inoltre, HTTPS è attualmente un requisito per capitalizzare su protocolli ad alte prestazioni come HTTP/2 e HTTP/3 (noto anche come HTTP su QUIC). Puoi saperne di più sullo stato di questi protocolli nel capitolo [HTTP/2](./http).
 
 Tutte queste cose hanno probabilmente contribuito al tasso di adozione più elevato anno dopo anno.
 

@@ -229,18 +229,18 @@
   margin-left: 1em;
 }
 
-.chapter_links .btn {
+.chapter-links .btn {
   display: inline-block;
   margin: 10px;
 }
 
-.chapter_links svg {
+.chapter-links svg {
   margin-right: 10px;
   margin-right: 0.625rem;
   vertical-align: middle;
 }
 
-#num_comments {
+#num-comments {
   line-height: 24px;
   line-height: 1.5rem;
 }
@@ -250,15 +250,18 @@
 }
 
 .authors h2,
-.chapter_links h2 {
+.chapter-links h2,
+.webmentions h2 {
   padding: 16px 0;
   padding: 1rem 0;
 }
 
 .authors,
 .authors h2,
-.chapter_links,
-.chapter_links h2 {
+.chapter-links,
+.chapter-links h2,
+.webmentions,
+.webmentions h2 {
   border-bottom: 1px solid #1a2b490a;
   font-size: 17px;
   font-size: 1.0625rem;
@@ -408,6 +411,11 @@ aside,
   font-style: italic;
 }
 
+aside em,
+.note em {
+  font-style: normal;
+}
+
 table,
 figure {
   max-width: 100%;
@@ -498,6 +506,10 @@ figure img {
 figure iframe {
   display: block;
   margin: 0 auto;
+}
+
+.figure-block {
+  display: block;
 }
 
 figure .code-block {
@@ -608,23 +620,32 @@ td.numeric {
   text-align: right;
 }
 
+td .numeric-good {
+  color: #38761d;
+}
+
+td .numeric-bad {
+  color: #b60000;
+}
+
 tbody tr:nth-child(even) {
   background-color: #f2f2f280;
 }
 
 figure .big-number {
   text-align: center;
-  font: bold 128px/1em Poppins, sans-serif;
-  font: bold 8rem/1em Poppins, sans-serif;
+  font: bold 128px/1em 'Poppins', sans-serif;
+  font: bold 8rem/1em 'Poppins', sans-serif;
   color: #62718b;
   word-break: break-word;
   overflow-wrap: break-word;
+  margin: 0.1em 0;
 }
 
 figure .medium-number {
   text-align: center;
-  font: bold 48px/1em Poppins, sans-serif;
-  font: bold 3rem/1em Poppins, sans-serif;
+  font: bold 48px/1em 'Poppins', sans-serif;
+  font: bold 3rem/1em 'Poppins', sans-serif;
   color: #62718b;
   word-break: break-word;
   overflow-wrap: break-word;
@@ -632,8 +653,8 @@ figure .medium-number {
 
 figure .really-big-number {
   text-align: center;
-  font: bold 24px/1em Poppins, sans-serif;
-  font: bold 1.5rem/1em Poppins, sans-serif;
+  font: bold 24px/1em 'Poppins', sans-serif;
+  font: bold 1.5rem/1em 'Poppins', sans-serif;
   color: #62718b;
   word-break: break-word;
   overflow-wrap: break-word;
@@ -838,4 +859,97 @@ pre {
 
 .code-block code {
   width: 100%;
+}
+
+/* Webmention code */
+.reaction-tabs [role="tab"][aria-selected="true"] {
+  z-index: 3;
+  font-weight: bold;
+  border-bottom: 0.5rem solid #a8caba;
+}
+
+.reaction-tabs [role="tab"] {
+  position: relative;
+  z-index: 1;
+  background: white;
+  border: 0;
+  padding: 0.6rem 0.75rem 0.6rem;
+}
+
+.reactions [role="tabpanel"] {
+  margin-top: 1.5rem;
+}
+
+.reaction-tabs > button > span {
+  pointer-events: none;
+}
+
+.webmention-likes,
+.webmention-reposts {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.webmentions .reactions ul {
+  padding: 0;
+}
+
+.webmentions .reactions ul > li {
+  margin-right: 1rem;
+}
+
+.webmentions .reactions ul > li::before {
+  display: none;
+}
+
+.webmentions a.webmention-author {
+  text-decoration: none;
+}
+
+.webmentions a.webmention-author:hover {
+  text-decoration: underline;
+}
+
+.webmention-author .webmention-author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: grey;
+}
+
+.webmention-meta {
+  font-size: 0.875rem;
+  color: #515660;
+}
+
+.webmention-meta a.webmention-source {
+  color: #515660;
+}
+
+.webmentions .reactions .webmention-replies-item,
+.webmentions .reactions .webmention-mentions-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 1rem 0 1rem 60px;
+}
+
+.webmention-replies-item .webmention-author .webmention-author-avatar,
+.webmention-mentions-item .webmention-author .webmention-author-avatar {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+}
+
+/* Needed for Safari to hide the index properly */
+@media print {
+  .main {
+    grid-template-areas: 'content';
+    grid-template-columns: auto;
+  }
+
+  .figure-dropdown {
+    display: none;
+  }
 }

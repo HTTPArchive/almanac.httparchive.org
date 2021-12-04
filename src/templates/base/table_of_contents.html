@@ -98,10 +98,12 @@
 <main id="maincontent" class="main">
   <h1 class="title title-lg">{{ self.table_of_contents_title() }}</h1>
 
+  {% if self.foreword() | trim | length > 0 %}
   <section>
     <h2 id="foreword"><a href="#foreword" class="anchor-link">{{ self.foreword_title() }}</a></h2>
     {{ self.foreword() }}
   </section>
+  {% endif %}
 
   <div class="contents-wrapper">
     <div class="parts">

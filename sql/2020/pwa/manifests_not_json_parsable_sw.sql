@@ -18,17 +18,17 @@ SELECT
   COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct
 FROM
   (SELECT DISTINCT
-    m.client,
-    m.page,
-    m.body
-  FROM
-    `httparchive.almanac.manifests` m
-  JOIN
-    `httparchive.almanac.service_workers` sw
-  USING
-    (date, client, page)
-  WHERE
-    date = '2020-08-01')
+    client,
+    page,
+    body
+    FROM
+      `httparchive.almanac.manifests`
+    JOIN
+      `httparchive.almanac.service_workers`
+    USING
+      (date, client, page)
+    WHERE
+      date = '2020-08-01')
 GROUP BY
   client,
   can_parse

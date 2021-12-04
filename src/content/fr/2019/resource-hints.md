@@ -12,11 +12,11 @@ results: https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAII
 khempenius_bio: Katie Hempenius est ingénieur dans l’équipe Chrome où elle travaille à rendre le web plus rapide.
 featured_quote: Les indices de ressources fournissent des "suggestions" au navigateur sur les ressources qui seront rapidement nécessaires. L’action que le navigateur entreprend à la suite de cet indice varie selon le type d’indice ; différents indices déclenchent différentes actions. Lorsqu’ils sont utilisés correctement, ils peuvent améliorer les performances de la page en donnant une longueur d'avance aux actions importantes, par anticipation.
 featured_stat_1: 29 %
-featured_stat_label_1: des sites utilisent `dns-prefetch`.
+featured_stat_label_1: des sites utilisent `dns-prefetch`
 featured_stat_2: 88 %
-featured_stat_label_2: des indices de ressources utilisent l’attribut `as`.
+featured_stat_label_2: des indices de ressources utilisent l’attribut `as`
 featured_stat_3: 0.04 %
-featured_stat_label_3: des pages utilisent des indices de priorité.
+featured_stat_label_3: des pages utilisent des indices de priorité
 ---
 
 ## Introduction
@@ -61,7 +61,7 @@ Seuls 3&nbsp;% des indices de ressources proviennent [d'en-têtes HTTP](https://
 Link: <https://example.com/shopping-cart.js>; rel=prefetch
 ```
 
-Comme l'utilisation des indices de ressources dans les en-têtes HTTP est très faible, le reste de ce chapitre se concentrera uniquement sur l'analyse de l'utilisation des indices de ressources passant par la balise `<link>`. Cependant, il convient de noter que dans les années à venir, l'utilisation des indices de ressources dans les en-têtes HTTP pourrait augmenter avec l'adoption de [HTTP/2 Push](./http2#http2-push). En effet, HTTP/2 Push réutilise l'en-tête HTTP de préchargement `Link` comme un signal permettant de pousser des ressources.
+Comme l'utilisation des indices de ressources dans les en-têtes HTTP est très faible, le reste de ce chapitre se concentrera uniquement sur l'analyse de l'utilisation des indices de ressources passant par la balise `<link>`. Cependant, il convient de noter que dans les années à venir, l'utilisation des indices de ressources dans les en-têtes HTTP pourrait augmenter avec l'adoption de [HTTP/2 Push](./http#http2-push). En effet, HTTP/2 Push réutilise l'en-tête HTTP de préchargement `Link` comme un signal permettant de pousser des ressources.
 
 ## Les indices de ressources
 
@@ -238,9 +238,9 @@ Pour le moment, il n'y a pas de propositions visant à élargir le jeu actuel d'
 
 Les <a hreflang="en" href="https://wicg.github.io/priority-hints/">indices de priorités</a> sont une API permettant d'exprimer des priorités dans la récupération de certaines ressources&nbsp;: `high` (haute), `low` (basse), ou `auto`. Ils peuvent être utilisés avec un large éventail de balises HTML&nbsp;: spécifiquement `<image>`, `<link`>, `<script>` et `<iframe>`.
 
-<figure>
+<figure class="figure-block">
 <div class="code-block floating-card">
-  <pre><code>&lt;carousel>
+  <pre role="region" aria-label="Code 0" tabindex="0"><code>&lt;carousel>
   &lt;img src="cat1.jpg" importance="high">
   &lt;img src="cat2.jpg" importance="low">
   &lt;img src="cat3.jpg" importance="low">

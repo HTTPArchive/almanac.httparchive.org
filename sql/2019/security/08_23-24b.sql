@@ -11,10 +11,10 @@ JOIN
   (SELECT _TABLE_SUFFIX, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
 USING (_TABLE_SUFFIX)
 WHERE
-   hsts IS NOT NULL AND
-   CAST(REGEXP_EXTRACT(hsts, r'(?i)max-age= *(-?\d+)') AS INT64) >= 31536000 AND
-   REGEXP_CONTAINS(hsts, 'includeSubdomains') AND
-   REGEXP_CONTAINS(hsts, 'preload')
+  hsts IS NOT NULL AND
+  CAST(REGEXP_EXTRACT(hsts, r'(?i)max-age= *(-?\d+)') AS INT64) >= 31536000 AND
+  REGEXP_CONTAINS(hsts, 'includeSubdomains') AND
+  REGEXP_CONTAINS(hsts, 'preload')
 GROUP BY
   client,
   total

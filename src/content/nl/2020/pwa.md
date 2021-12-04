@@ -12,11 +12,11 @@ discuss: 2050
 results: https://docs.google.com/spreadsheets/d/1AOqCkb5EggnE8BngpxvxGj_fCfssT9sZ0ElCQKp4pOw/
 featured_quote: Webapplicatie die evolueert naar een native-achtige applicatie kan worden beschouwd als een PWA.
 featured_stat_1: 16,6%
-featured_stat_label_1: Percentage pagina dat wordt geladen met behulp van een service worker.
+featured_stat_label_1: Percentage pagina dat wordt geladen met behulp van een service worker
 featured_stat_2: 27,97%
-featured_stat_label_2: Webapps die snel genoeg laden voor een PWA.
+featured_stat_label_2: Webapps die snel genoeg laden voor een PWA
 featured_stat_3: 25%
-featured_stat_label_3: Percentage mobiele PWA-sites dat importScripts gebruikt.
+featured_stat_label_3: Percentage mobiele PWA-sites dat importScripts gebruikt
 ---
 
 ## Inleiding
@@ -148,7 +148,7 @@ Als u een progressieve web-app bouwt, overweeg dan om een service worker te gebr
 
 Browsers kunnen gebruikers proactief vragen om uw app aan hun startscherm toe te voegen, wat kan leiden tot een grotere betrokkenheid. 2,21% van de pagina's had een <a hreflang="en" href="https://web.dev/installable-manifest/">installeerbaar manifest</a>. Manifest speelt een belangrijke rol bij het starten van de applicatie, het uiterlijk en gevoel van het icoon op het startscherm en als direct impact op de betrokkenheidspercentage.
 
-Alle sites moeten worden beschermd met HTTPS, zelfs sites die geen gevoelige gegevens verwerken. Dit omvat het vermijden van <a hreflang="en" href="https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content">gemengde inhoud</a>, waar sommige bronnen via HTTP worden geladen ondanks dat het eerste verzoek via HTTPS wordt bediend. HTTPS voorkomt dat indringers knoeien met of passief luisteren naar de communicatie tussen uw app en uw gebruikers en is een vereiste voor service workers en veel nieuwe webplatformfuncties en API's zoals [HTTP/2](./http2). De <a hreflang="en" href="https://web.dev/is-on-https/">is-on-https-check</a> laat zien dat 67,27% van de sites op HTTPS was zonder gemengde inhoud en het is verrassend dat we nog niet hoger zijn gekomen. Het hoofdstuk [Beveiliging](./security#transportbeveiliging) laat zien dat 86,91% van de sites HTTPS gebruikt, wat suggereert dat gemengde inhoud nu het grootste probleem kan zijn. Dit aantal wordt beter naarmate browsers de applicaties verplichten op HTTPS te staan ​​en die welke niet op HTTPS staan, meer nauwkeurig te bekijken.
+Alle sites moeten worden beschermd met HTTPS, zelfs sites die geen gevoelige gegevens verwerken. Dit omvat het vermijden van <a hreflang="en" href="https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content">gemengde inhoud</a>, waar sommige bronnen via HTTP worden geladen ondanks dat het eerste verzoek via HTTPS wordt bediend. HTTPS voorkomt dat indringers knoeien met of passief luisteren naar de communicatie tussen uw app en uw gebruikers en is een vereiste voor service workers en veel nieuwe webplatformfuncties en API's zoals [HTTP/2](./http). De <a hreflang="en" href="https://web.dev/is-on-https/">is-on-https-check</a> laat zien dat 67,27% van de sites op HTTPS was zonder gemengde inhoud en het is verrassend dat we nog niet hoger zijn gekomen. Het hoofdstuk [Beveiliging](./security#transportbeveiliging) laat zien dat 86,91% van de sites HTTPS gebruikt, wat suggereert dat gemengde inhoud nu het grootste probleem kan zijn. Dit aantal wordt beter naarmate browsers de applicaties verplichten op HTTPS te staan ​​en die welke niet op HTTPS staan, meer nauwkeurig te bekijken.
 
 Als u HTTPS al hebt ingesteld, zorg er dan voor dat u <a hreflang="en" href="https://web.dev/redirects-http/">al het HTTP-verkeer omleidt naar HTTPS</a> om een veilige verbinding met de gebruikers mogelijk te maken zonder de URL te wijzigen: alleen 69,92 % van de sites slaagt voor deze audit. Het omleiden van alle HTTP naar HTTPS in uw applicatie zou eenvoudige stappen moeten zijn in de richting van robuustheid, hoewel de HTTP-omleiding naar HTTPS een behoorlijk aantal passerende sites heeft, kan het beter presteren.
 
@@ -174,14 +174,14 @@ Uw app zou wat inhoud moeten weergeven wanneer JavaScript is uitgeschakeld, ook 
 
 Bij een service worker kan naar een aantal gebeurtenissen worden geluisterd:
 
-1.  `install`, wat gebeurt bij de installatie van een service worker.
-2.  `activate`, wat gebeurt bij activering van de service worker.
-3.  `fetch`, wat gebeurt wanneer een bron wordt opgehaald.
-4.  `push`, wat gebeurt wanneer een push-melding binnenkomt.
-5.  `notificationclick`, wat gebeurt wanneer er op een melding wordt geklikt.
-6.  `notificationclose`, wat gebeurt wanneer een melding wordt gesloten.
-7.  `message`, wat gebeurt wanneer een bericht verzonden via postMessage() binnenkomt.
-8.  `sync`, wat gebeurt wanneer een achtergrondsynchronisatiegebeurtenis plaatsvindt.
+1. `install`, wat gebeurt bij de installatie van een service worker.
+2. `activate`, wat gebeurt bij activering van de service worker.
+3. `fetch`, wat gebeurt wanneer een bron wordt opgehaald.
+4. `push`, wat gebeurt wanneer een push-melding binnenkomt.
+5. `notificationclick`, wat gebeurt wanneer er op een melding wordt geklikt.
+6. `notificationclose`, wat gebeurt wanneer een melding wordt gesloten.
+7. `message`, wat gebeurt wanneer een bericht verzonden via postMessage() binnenkomt.
+8. `sync`, wat gebeurt wanneer een achtergrondsynchronisatiegebeurtenis plaatsvindt.
 
 We hebben onderzocht naar welke van deze gebeurtenissen wordt geluisterd door service workers in onze dataset.
 

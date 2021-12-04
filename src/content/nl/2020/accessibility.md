@@ -241,7 +241,7 @@ De <span lang="en">Web Content Accessibility Guidelines</span> hebben een criter
 {{ figure_markup(
   image="common-video-attributes.png",
   caption="De meest voorkomende `<video>`-attributen.",
-  description="Staafdiagram met de top 5 attributen op het `<video>` element op desktop met `loop` op 58,43% van de video's, `autoplay` op 56,98%, `muted` op 56,13%,` class` op 51,79% en `preload` op 45,21% van de video's.",
+  description="Staafdiagram met de top 5 attributen op het `<video>` element op desktop met `loop` op 58,43% van de video's, `autoplay` op 56,98%, `muted` op 56,13%, `class` op 51,79% en `preload` op 45,21% van de video's.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSjkB_XAYiwkYrMuoXp44mdqMGJVDUkTr_48ELozY72Mdv3OlxeWV9ysbDY9bs6hA7LnJTrHar9aZlM/pubchart?oid=1226671706&format=interactive",
   sheets_gid="713294916",
   sql_file="common_video_attributes.sql"
@@ -396,7 +396,7 @@ We ontdekten dat 8,27% van de desktoppagina's en 8,28% van de mobiele pagina's t
 
 We ontdekten dat 15,50% van de desktoppagina's en 14,62% van de mobiele pagina's ten minste één ankerelement bevatten met `role="button"`. Als een rol is toegepast op een element waarvan de impliciete rol moet worden gerespecteerd, zoals het geven van een `role="button"` aan een link (die een impliciete `role="link"` heeft), zou dit de tweede regel van ARIA breken. Het zou ook in strijd zijn met <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html">WCAG 2.1.1, Keyboard</a> als het juiste toetsenbordgedrag niet is geïmplementeerd (links worden niet geactiveerd met de spatiebalk, terwijl knoppen dat wel zijn).
 
-Nogmaals, in de overgrote meerderheid van deze gevallen zou een beter patroon dan het expliciet definiëren van `role="button"` voor het element in kwestie zijn om gebruik te maken van het native HTML `<button>`-element, aangezien dit wordt geleverd met de verwachte semantiek en gedrag. .
+Nogmaals, in de overgrote meerderheid van deze gevallen zou een beter patroon dan het expliciet definiëren van `role="button"` voor het element in kwestie zijn om gebruik te maken van het native HTML `<button>`-element, aangezien dit wordt geleverd met de verwachte semantiek en gedrag.
 
 #### Navigatie
 
@@ -572,7 +572,7 @@ Deze lijst is niet uitputtend en is bedoeld om aan te moedigen na te denken over
   - Werknemers bandbreedte geven om te leren en hun vaardigheden op het gebied van toegankelijkheid te vergroten en vakmensen aan te nemen met expertise en geleefde ervaringen.
   - Toegankelijkheid als kern beschouwen voor de productresultaten en excellentie op het gebied van toegankelijkheid beschouwen als werk dat gepromoot kan worden.
 
-De technische industrie moet evolueren naar inclusiegedreven ontwikkeling. Hoewel dit enige investering vooraf vereist, is het in de loop van de tijd veel gemakkelijker en waarschijnlijk goedkoper om toegankelijkheid in de hele cyclus in te bouwen, zodat het in het product kan worden ingebakken, in plaats van sites en apps die zonder het in gedachten zijn gemaakt, achteraf aan te passen. .
+De technische industrie moet evolueren naar inclusiegedreven ontwikkeling. Hoewel dit enige investering vooraf vereist, is het in de loop van de tijd veel gemakkelijker en waarschijnlijk goedkoper om toegankelijkheid in de hele cyclus in te bouwen, zodat het in het product kan worden ingebakken, in plaats van sites en apps die zonder het in gedachten zijn gemaakt, achteraf aan te passen.
 
 De grootste investering zou moeten komen in de vorm van onderwijs en procesverbeteringen. Zodra een UI-ontwerper de nuances van kleurcontrastvereisten begrijpt, zou het selecteren van een toegankelijk kleurenpalet dezelfde inspanning moeten zijn als een ontoegankelijk palet. Zodra een ontwikkelaar native HTML en ARIA goed begrijpt en wanneer hij bepaalde technieken en hulpmiddelen moet gebruiken, moet de hoeveelheid code die hij schrijft vergelijkbaar zijn.
 

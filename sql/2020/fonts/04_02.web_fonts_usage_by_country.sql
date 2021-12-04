@@ -6,20 +6,20 @@ SELECT
   COUNT(0) AS freq_url,
   APPROX_QUANTILES(bytesFont, 1000)[OFFSET(500)] / 1024 AS median_font_kbytes
 FROM (
-  SELECT DISTINCT 
+  SELECT DISTINCT
     origin,
     device,
     `chrome-ux-report`.experimental.GET_COUNTRY(country_code) AS country
-  FROM 
+  FROM
     `chrome-ux-report.materialized.country_summary`
-  WHERE 
+  WHERE
     yyyymm = 202008)
-JOIN 
+JOIN
   `httparchive.summary_pages.2020_08_01_*`
-ON 
+ON
   CONCAT(origin, '/') = url AND
   IF(device = 'desktop', 'desktop', 'mobile') = _TABLE_SUFFIX
-WHERE 
+WHERE
   bytesFont IS NOT NULL
 GROUP BY
   client,

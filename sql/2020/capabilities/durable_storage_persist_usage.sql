@@ -8,8 +8,7 @@ SELECT
 FROM
   `httparchive.blink_features.usage`
 WHERE
-  id = "1369"
-  OR feature = "DurableStoragePersist"
+  id = "1369" OR feature = "DurableStoragePersist"
 GROUP BY
   date,
   timestamp,

@@ -18,7 +18,7 @@ FROM
   (
     SELECT
       client,
-      ROUND((expAge - (startedDateTime - toTimestamp(resp_last_modified))) / 86400, 2)  AS diff_in_days
+      ROUND((expAge - (startedDateTime - toTimestamp(resp_last_modified))) / 86400, 2) AS diff_in_days
     FROM
       `httparchive.almanac.requests`
     WHERE

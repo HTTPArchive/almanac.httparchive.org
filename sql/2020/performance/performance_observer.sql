@@ -1,6 +1,6 @@
 #standardSQL
 # Percent of pages using Performance observer
-  
+
 SELECT
   client,
   num_urls AS pages_with_performance_observer,

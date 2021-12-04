@@ -8,6 +8,7 @@ WITH requests AS (
   FROM
     `httparchive.summary_requests.2020_08_01_mobile`
 ),
+
 third_party AS (
   SELECT
     domain,
@@ -17,6 +18,7 @@ third_party AS (
   WHERE
     date = '2020-08-01'
 ),
+
 base AS (
   SELECT
     canonicalDomain,
@@ -44,7 +46,7 @@ FROM (
     canonicalDomain,
     total_pages,
     pct_pages,
-    DENSE_RANK() OVER(PARTITION BY client ORDER BY total_pages DESC) AS rank
+    DENSE_RANK() OVER (PARTITION BY client ORDER BY total_pages DESC) AS rank
   FROM
     base
 )

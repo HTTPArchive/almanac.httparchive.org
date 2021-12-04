@@ -5,7 +5,7 @@ CREATE TEMP FUNCTION getNumSecurityHeaders(headers STRING) AS (
   (
     SELECT
       COUNTIF(REGEXP_CONTAINS(headers, CONCAT('(?i)', headername, ' ')))
-    FROM 
+    FROM
       UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy', 'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'Report-To', 'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection']) AS headername
   )
 );
@@ -26,7 +26,7 @@ SELECT
   AVG(getNumSecurityHeaders(respOtherHeaders)) AS avg_security_headers,
   APPROX_QUANTILES(getNumSecurityHeaders(respOtherHeaders), 1000)[OFFSET(500)] AS median_security_headers
 FROM (
-  SELECT 
+  SELECT
     r._TABLE_SUFFIX AS client,
     `chrome-ux-report.experimental`.GET_COUNTRY(country_code) AS country,
     respOtherHeaders,
@@ -34,7 +34,7 @@ FROM (
     firstHtml
   FROM
     `httparchive.summary_requests.2020_08_01_*` AS r
-  INNER JOIN 
+  INNER JOIN
     `chrome-ux-report.experimental.country` AS c
   ON r.urlShort = CONCAT(c.origin, '/')
   WHERE

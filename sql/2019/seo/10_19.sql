@@ -2,8 +2,8 @@
 # 10_19: Zero count of type of link
 SELECT
   client,
-  ROUND(COUNTIF(internal  = 0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS internal_link_zero,
-  ROUND(COUNTIF(external  = 0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS external_link_zero,
+  ROUND(COUNTIF(internal = 0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS internal_link_zero,
+  ROUND(COUNTIF(external = 0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS external_link_zero,
   ROUND(COUNTIF(_hash = 0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS _hash_link_zero
 FROM (
   SELECT

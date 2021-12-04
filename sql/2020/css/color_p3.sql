@@ -1,6 +1,9 @@
 #standardSQL
 CREATE TEMPORARY FUNCTION getP3Usage(css STRING)
-RETURNS ARRAY<STRUCT<name STRING, value INT64>> LANGUAGE js AS '''
+RETURNS ARRAY<STRUCT<name STRING, value INT64>>
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
   function compute(ast) {
     let usage = {
@@ -154,8 +157,7 @@ try {
 } catch (e) {
   return [];
 }
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   client,

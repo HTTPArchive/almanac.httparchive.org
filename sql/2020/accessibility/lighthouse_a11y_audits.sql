@@ -1,4 +1,3 @@
-
 #standardSQL
 # Get summary of all lighthouse scores for a category
 # Note scores, weightings, groups and descriptions may be off in mixed months when new versions of Lighthouse roles out

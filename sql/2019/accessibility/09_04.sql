@@ -21,7 +21,7 @@ SELECT
 FROM
   (SELECT _TABLE_SUFFIX AS client, url AS page, getMainCount(payload) AS main_elements FROM `httparchive.pages.2019_07_01_*`)
 JOIN
-  (SELECT client, page, ARRAY_LENGTH(REGEXP_EXTRACT_ALL(body, '(?i)role=[\'"]?main')) AS main_roles FROM `httparchive.almanac.summary_response_bodies` WHERE date='2019-07-01' AND firstHtml)
+  (SELECT client, page, ARRAY_LENGTH(REGEXP_EXTRACT_ALL(body, '(?i)role=[\'"]?main')) AS main_roles FROM `httparchive.almanac.summary_response_bodies` WHERE date = '2019-07-01' AND firstHtml)
 USING
   (client, page)
 JOIN

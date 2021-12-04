@@ -12,11 +12,11 @@ discuss: 2046
 results: https://docs.google.com/spreadsheets/d/16bE70rv4qbmKIqbZS1zUiTRpk5eOlgxBXEabL1qiduI/
 featured_quote: Privacy is de laatste tijd steeds populairder geworden en heeft de bewustwording bij de gebruikers vergroot. Aan de behoefte aan richtlijnen is voldaan met verschillende regelgeving (zoals GDPR in Europa, LGPD in Brazilië, CCPA in Californië om er maar een paar te noemen). Deze zijn bedoeld om de verantwoordingsplicht van gegevensverwerkers en hun transparantie naar gebruikers te vergroten. In dit hoofdstuk bespreken we de prevalentie van online tracking met verschillende technieken en de acceptatiegraad van cookietoestemmingbanners en het privacybeleid door websites.
 featured_stat_1: 93%
-featured_stat_label_1: Websites die minstens één tracker laden.
-featured_stat_2: Negen van de tien
-featured_stat_label_2: Top domeinen voor het instellen van cookies die eigendom zijn van Google.
+featured_stat_label_1: Websites die minstens één tracker laden
+featured_stat_2: 9 van de 10
+featured_stat_label_2: Top domeinen voor het instellen van cookies die eigendom zijn van Google
 featured_stat_3: 44,8%
-featured_stat_label_3: Websites met een privacybeleid.
+featured_stat_label_3: Websites met een privacybeleid
 ---
 
 ## Inleiding

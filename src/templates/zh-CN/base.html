@@ -32,6 +32,7 @@
 
 {% block help_translate %}帮助翻译{% endblock %}
 {% block translation_not_available %}英语-中文不能使用{% endblock %}
+{% block in_english %} (英语){% endblock %}
 {% block language_switcher %}语言切换{% endblock %}
 {% block year_switcher %}年份切换{% endblock %}
 {% block table_of_contents_switcher %}目录切换{% endblock %}
@@ -40,6 +41,7 @@
 {% block table_of_contents_title %}目录{% endblock %}
 {% block contributors_title %}贡献者{% endblock %}
 {% block methodology_title %}方法论{% endblock %}
+{% block search_title %}搜索{% endblock %}
 
 {% block part %}部分{% endblock %}
 {% block chapter %}章{% endblock %}
@@ -85,6 +87,22 @@
 
 {% block author %}作者{% endblock %}
 {% block authors %}作者{% endblock %}
+
+{% block reactions %}反应{% endblock %}
+{% block source %}查看源代码{% endblock %}
+
+{% block like %}喜欢{% endblock %}
+{% block repost %}次转发{% endblock %}
+{% block reply %}条回复{% endblock %}
+{% block mention %}提及{% endblock %}
+{% block likes %}个赞{% endblock %}
+{% block reposts %}转帖{% endblock %}
+{% block replies %}回复{% endblock %}
+{% block mentions %}提及{% endblock %}
+{% block likesAlt %}{% endblock %}
+{% block repostsAlt %}{% endblock %}
+{% block repliesAlt %}{% endblock %}
+{% block mentionsAlt %}{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} 在 Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} 在 GitHub{% endmacro %}
@@ -142,6 +160,7 @@
     "IV. Content Distribution": "IV. 内容分发"
   }
 %}
+
 {%
   set localizedChapterTitles = {
     "javascript": "JavaScript",
@@ -163,14 +182,32 @@
     "cdn": "CDN",
     "page-weight": "页面重量",
     "resource-hints": "资源提示",
-    "http2": "HTTP/2",
+    "http": "HTTP",
     "privacy": "隐私",
     "capabilities": "能力",
-    "jamstack": "Jamstack"
+    "jamstack": "Jamstack",
+    "webassembly": "WebAssembly",
+    "structured-data": "結構化資料"
+  }
+%}
+{% if (year == "2019" or year == "2020") %}
+{% set _dummy = localizedChapterTitles.__setitem__("http", "HTTP/2") %}
+{% endif %}
+
+{% set localizedTeamNames = {
+  "analysts": "分析者",
+  "authors": "作者",
+  "brainstormers": "头脑风暴者",
+  "designers": "设计者",
+  "developers": "开发者",
+  "editors": "编辑",
+  "leads": "领导者",
+  "reviewers": "审稿者",
+  "translators": "翻译者",
   }
 %}
 
-{% set localizedTeamNames = {
+{% set localizedTeamRole = {
   "analysts": "分析者",
   "authors": "作者",
   "brainstormers": "头脑风暴者",

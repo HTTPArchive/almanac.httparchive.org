@@ -1,7 +1,7 @@
 #standardSQL
 # 18_01c: Average size of each of the resource types.
 SELECT
-  _TABLE_SUFFIX as client,
+  _TABLE_SUFFIX AS client,
   AVG(bytesTotal) / 1024 AS total_kbytes,
   AVG(bytesHtml) / 1024 AS html_kbytes,
   AVG(bytesJS) / 1024 AS js_kbytes,

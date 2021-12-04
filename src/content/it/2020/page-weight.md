@@ -23,9 +23,11 @@ featured_stat_label_3: Il numero mediano di richieste di pagine per dispositivi 
 
 Il peso della pagina è una delle metriche più semplici disponibili. Proprio come salire su una bilancia per avere un'idea del tuo peso personale, caricare una pagina fornirà un senso del numero e della dimensione delle risorse raccolte e richieste. Ma con la maturazione e la crescita del Web e delle pagine Web, anche le metriche associate, come il peso della pagina. Può influire sulle prestazioni di una pagina proprio come il peso personale (massa) può fare lo stesso. Questo capitolo farà un'immersione più approfondita e sbloccherà gli strati delle pagine web e vedrà cosa costituisce il peso di una pagina a possibile discapito dell'utente finale: tu, io, noi.
 
+<!-- markdownlint-disable MD018 -->
 ## #PageWeightStillMatters
 
 #PageWeightStillMatters significherebbe quasi che non ha importanza o che non ha avuto importanza. Potrebbe non aver avuto importanza quando è stato lanciato Craigslist basato su testo. Ma 25 anni fa, quando è stata fondata, anche Mosaic 1.0 è stata lanciata lo stesso anno e Waterfalls di TLC è stato un grande successo. Il web è maturato così come le risorse. Erano passati solo pochi anni da quando il twitterverse era stato messo a punto discutendo di come la dimensione media delle pagine web ora fosse uguale alla dimensione del <a hreflang="en" href="https://www.wired.com/2016/04/average-webpage-now-size-original-doom/">originale doom</a>. Molti di noi hanno riflettuto su quale sarebbe stata la dimensione della pagina nel tempo, incluso il <a hreflang="en" href="https://speedcurve.com/blog/web-performance-page-bloat/">il nostro Tammy Everts</a>, ma la realtà è sorprendente. Una pagina si trova @ ~ 4 MB e 3.7 MB, desktop/mobile rispettivamente, al 75° percentile e uno scioccante 7.4 MB e 6.7 MB al 90° percentile. Ci sono moltitudini di implicazioni nell'avere pagine così pesanti, come la probabilità di una scarsa esperienza utente a causa di reti inaffidabili. Oggi, nonostante le lezioni <a hreflang="en" href="https://blog.chriszacharias.com/page-weight-matters">apprese un decennio fa</a>, stiamo sperimentando variazioni delle stesse sfide: nonostante abbiamo reti leggermente migliori, stiamo lavorando con risorse molto più grandi.
+<!-- markdownlint-enable MD018 -->
 
 ### Larghezza di banda
 
@@ -33,7 +35,7 @@ Nel 2016, quando mi è stato chiesto di spiegare perché un turista australiano 
 
 Il punto era semplice: sebbene si possa trarre vantaggio da una maggiore larghezza di banda, le leggi della fisica continuano a prevalere. Un australiano non è in grado di sfuggire alle leggi sulla latenza. Nella migliore delle ipotesi, a casa a Sydney, questo australiano stava vivendo una latenza sufficiente che a volte la sua connessione Internet era percepita come non rispondente.
 
-Ora, immagina che lo stesso australiano, sapendo che al 75° percentile, la sua pagina stia facendo circa 108 richieste (ne parleremo più avanti), e non abbiamo ancora idea del protocollo di rete, delle risorse richieste, del livello di compressione o ottimizzazione. È possibile seguire i capitoli [HTTP/2](./http2) e [Compressione](./compression) per ulteriori informazioni sulla durata di una richiesta moderna.
+Ora, immagina che lo stesso australiano, sapendo che al 75° percentile, la sua pagina stia facendo circa 108 richieste (ne parleremo più avanti), e non abbiamo ancora idea del protocollo di rete, delle risorse richieste, del livello di compressione o ottimizzazione. È possibile seguire i capitoli [HTTP/2](./http) e [Compressione](./compression) per ulteriori informazioni sulla durata di una richiesta moderna.
 
 ### Gli Assets
 

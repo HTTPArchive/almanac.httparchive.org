@@ -23,7 +23,7 @@ FROM
   `httparchive.almanac.requests`,
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 WHERE
-    date = '2019-07-01' AND
+  date = '2019-07-01' AND
   type = 'image'
 GROUP BY
   percentile,

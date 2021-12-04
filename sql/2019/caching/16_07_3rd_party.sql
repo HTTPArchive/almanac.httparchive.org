@@ -21,7 +21,7 @@ FROM (
     pageid,
     requestid,
     type,
-    IF (STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party
+    IF(STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party
   FROM
     `httparchive.almanac.summary_requests`
 )

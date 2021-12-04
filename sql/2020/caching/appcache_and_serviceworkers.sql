@@ -7,11 +7,11 @@ SELECT
   COUNT(0) AS occurrences,
   SUM(COUNT(0)) OVER () AS total,
   COUNT(0) / SUM(COUNT(0)) OVER () AS pct
-FROM 
-  `httparchive.lighthouse.2020_08_01_mobile` 
-GROUP BY 
-  http_type, 
-  using_appcache, 
+FROM
+  `httparchive.lighthouse.2020_08_01_mobile`
+GROUP BY
+  http_type,
+  using_appcache,
   using_serviceworkers
 ORDER BY
   pct DESC

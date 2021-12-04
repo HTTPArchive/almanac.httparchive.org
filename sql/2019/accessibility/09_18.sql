@@ -16,11 +16,11 @@ try {
 
 SELECT
   client,
-  COUNTIF('caption' in UNNEST(table_elements)) AS caption_pages,
-  COUNTIF('thead' in UNNEST(table_elements)) AS thead_pages,
+  COUNTIF('caption' IN UNNEST(table_elements)) AS caption_pages,
+  COUNTIF('thead' IN UNNEST(table_elements)) AS thead_pages,
   COUNT(0) AS table_pages,
-  ROUND(COUNTIF('caption' in UNNEST(table_elements)) * 100 / COUNT(0), 2) AS pct_caption,
-  ROUND(COUNTIF('thead' in UNNEST(table_elements)) * 100 / COUNT(0), 2) AS pct_thead
+  ROUND(COUNTIF('caption' IN UNNEST(table_elements)) * 100 / COUNT(0), 2) AS pct_caption,
+  ROUND(COUNTIF('thead' IN UNNEST(table_elements)) * 100 / COUNT(0), 2) AS pct_thead
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

@@ -23,9 +23,11 @@ featured_stat_label_3: The median number of mobile page requests
 
 Page weight is one of the simpler metrics available. Much like stepping on a human scale to get a sense of your personal weight (well, mass really, but you get it), loading a page will provide a sense of the number and size of resources collected and requested. But as the web and web pages have matured and grown, so have associated metrics — such as page weight. It can affect a page's performance much like personal weight (mass) can do the same. This chapter will take a deeper dive and peel back the layers of web pages and see what it is that constitutes a page's weight at the possible detriment of the end user: you, I, us.
 
+<!-- markdownlint-disable MD018 -->
 ## #PageWeightStillMatters
 
 #PageWeightStillMatters would almost imply that it didn't or ever mattered. It might not have mattered when text based Craigslist launched. But 25 years ago when it was founded, Mosaic 1.0 also launched the same year, and Waterfalls by TLC was a top hit. The web matured as did resources. It was just a few years back when the twitterverse was tied up discussing how the average size of web pages now equaled the size of the <a hreflang="en" href="https://www.wired.com/2016/04/average-webpage-now-size-original-doom/">original doom</a>. Many of us mused about what the size the page could become in time, including <a hreflang="en" href="https://speedcurve.com/blog/web-performance-page-bloat/">our very own Tammy Everts</a>, but the reality is startling. A page sits @  ~4 MB and 3.7 MB, desktop/mobile respectively, at the 75th percentile, and a shocking 7.4 MB and 6.7 MB at the 90th percentile. There are multitudes of implications in having such heavy pages, like the likelihood of poor user experience due to unreliable networks. Today, despite lessons <a hreflang="en" href="https://blog.chriszacharias.com/page-weight-matters">learned a decade ago</a>, we are experiencing variations of the same challenges: despite having slightly better networks, we are working with much larger resources.
+<!-- markdownlint-enable MD018 -->
 
 ### Bandwidth
 
@@ -33,7 +35,7 @@ In 2016, when asked to explain why an Australian tourist I'd talked to was delig
 
 The point was simple: though you might benefit from increased bandwidth, the laws of physics still prevail. An Australian is unable to escape laws of latency. In the best case scenario, at home in Sydney, this Australian was experiencing enough latency that his internet was at times perceived as unresponsive.
 
-Now, imagine that the same Australian, knowing that at the 75th percentile, his page is making about 108 requests (more on that later), and we still have no idea of the network protocol, the resources being requested, the level of compression or optimization. You can pursue the [HTTP/2](./http2) and [Compression](./compression) chapters for more information on the life of a modern request.
+Now, imagine that the same Australian, knowing that at the 75th percentile, his page is making about 108 requests (more on that later), and we still have no idea of the network protocol, the resources being requested, the level of compression or optimization. You can pursue the [HTTP/2](./http) and [Compression](./compression) chapters for more information on the life of a modern request.
 
 ### Assets
 

@@ -15,5 +15,3 @@ HAVING
   freq >= 100
 ORDER BY
   pct_of_pages DESC
-
-

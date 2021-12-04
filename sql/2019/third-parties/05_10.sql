@@ -1,10 +1,8 @@
 #standardSQL
 # Top 100 third party requests by total script execution time.
-CREATE TEMPORARY FUNCTION
-  getExecutionTimes(report STRING)
-  RETURNS ARRAY<STRUCT<url STRING,
-  execution_time FLOAT64>>
-  LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getExecutionTimes(report STRING)
+RETURNS ARRAY<STRUCT<url STRING, execution_time FLOAT64>>
+LANGUAGE js AS '''
 try {
   var $ = JSON.parse(report);
   return $.audits['bootup-time'].details.items.map(item => ({
@@ -29,15 +27,14 @@ FROM (
     `httparchive.lighthouse.2019_07_01_mobile`,
     UNNEST(getExecutionTimes(report)) AS item) t1,
   (
-  SELECT
-    SUM(item.execution_time) AS totalExecutionTime
-  FROM
-    `httparchive.lighthouse.2019_07_01_mobile`,
-    UNNEST(getExecutionTimes(report)) AS item ) t2
+    SELECT
+      SUM(item.execution_time) AS totalExecutionTime
+    FROM
+      `httparchive.lighthouse.2019_07_01_mobile`,
+      UNNEST(getExecutionTimes(report)) AS item ) t2
 WHERE requestUrl != 'Other'
 GROUP BY
   requestUrl
 ORDER BY
   totalExecutionTime DESC
-LIMIT
-  100
+LIMIT 100

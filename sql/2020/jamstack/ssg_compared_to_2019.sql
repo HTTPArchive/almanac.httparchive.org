@@ -3,7 +3,7 @@
 SELECT
   _TABLE_SUFFIX AS client,
   2020 AS year,
-	app AS ssg,
+  app AS ssg,
   COUNT(0) AS freq,
   total,
   COUNT(0) / total AS pct
@@ -32,7 +32,7 @@ UNION ALL
 SELECT
   _TABLE_SUFFIX AS client,
   2019 AS year,
-	app AS ssg,
+  app AS ssg,
   COUNT(0) AS freq,
   total,
   COUNT(0) / total AS pct
@@ -56,7 +56,7 @@ WHERE
 GROUP BY
   client,
   total,
-	ssg
+  ssg
 ORDER BY
   year DESC,
   pct DESC

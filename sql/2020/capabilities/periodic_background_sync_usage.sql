@@ -8,8 +8,7 @@ SELECT
 FROM
   `httparchive.blink_features.usage`
 WHERE
-  id = "2930"
-  OR feature = "PeriodicBackgroundSync"
+  id = "2930" OR feature = "PeriodicBackgroundSync"
 GROUP BY
   date,
   timestamp,

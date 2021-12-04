@@ -16,7 +16,7 @@ FROM (
   SELECT
     client,
     type,
-    IF (STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party,
+    IF(STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party,
     REGEXP_CONTAINS(resp_cache_control, r'(?i)(no-cache|no-store)') AS not_cacheable,
     expAge > 0 AS uses_cache
   FROM

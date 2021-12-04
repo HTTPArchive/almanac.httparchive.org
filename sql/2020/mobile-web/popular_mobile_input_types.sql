@@ -32,7 +32,7 @@ FROM
     WHERE
       SAFE_CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.input_elements.total') AS INT64) > 0
   ),
-  UNNEST(getInputTypes(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) as input_type
+  UNNEST(getInputTypes(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS input_type
 GROUP BY
   input_type,
   total_pages_with_inputs

@@ -31,7 +31,8 @@ La nostra missione è combinare le statistiche grezze e le tendenze del HTTP Arc
 {% block page_navigation %}Navigazione tra le pagine{% endblock %}
 
 {% block help_translate %}Ayuda a traducir{% endblock %}
-{% block translation_not_available %}Inglese - non disponibile in inglese{% endblock %}
+{% block translation_not_available %}Inglese - non disponibile in italiano{% endblock %}
+{% block in_english %} (Inglese){% endblock %}
 {% block language_switcher %}Seleziona la lingua{% endblock %}
 {% block year_switcher %}Seleziona l'anno{% endblock %}
 {% block table_of_contents_switcher %}Seleziona sommario{% endblock %}
@@ -40,6 +41,7 @@ La nostra missione è combinare le statistiche grezze e le tendenze del HTTP Arc
 {% block table_of_contents_title %}Sommario{% endblock %}
 {% block contributors_title %} Collaboratori{% endblock %}
 {% block methodology_title %}Metodologia{% endblock %}
+{% block search_title %}Ricerca{% endblock %}
 
 {% block part %}Parte{% endblock %}
 {% block chapter %}Capitolo{% endblock %}
@@ -85,6 +87,22 @@ La nostra missione è combinare le statistiche grezze e le tendenze del HTTP Arc
 
 {% block author %}Autore{% endblock %}
 {% block authors %}Autori{% endblock %}
+
+{% block reactions %}Reazioni{% endblock %}
+{% block source %}Vedi la fonte{% endblock %}
+
+{% block like %}piace{% endblock %}
+{% block repost %}ripubblicare{% endblock %}
+{% block reply %}rispondere{% endblock %}
+{% block mention %}menzionare{% endblock %}
+{% block likes %}piace{% endblock %}
+{% block reposts %}ripubblica{% endblock %}
+{% block replies %}risposte{% endblock %}
+{% block mentions %}menzioni{% endblock %}
+{% block likesAlt %}{% endblock %}
+{% block repostsAlt %}{% endblock %}
+{% block repliesAlt %}{% endblock %}
+{% block mentionsAlt %}{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} su Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} su GitHub{% endmacro %}
@@ -142,6 +160,7 @@ Se non diversamente specificato, le metriche in tutti i {{ supported_chapters | 
     "IV. Content Distribution": "IV. Distribuzione dei Contenuti"
   }
 %}
+
 {%
   set localizedChapterTitles = {
     "javascript": "JavaScript",
@@ -163,12 +182,17 @@ Se non diversamente specificato, le metriche in tutti i {{ supported_chapters | 
     "cdn": "CDN",
     "page-weight": "Peso della pagina",
     "resource-hints": "Resource Hints",
-    "http2": "HTTP/2",
+    "http": "HTTP",
     "privacy": "Privacy",
     "capabilities": "Capacità",
-    "jamstack": "Jamstack"
+    "jamstack": "Jamstack",
+    "webassembly": "WebAssembly",
+    "structured-data": "Dati strutturati"
   }
 %}
+{% if (year == "2019" or year == "2020") %}
+{% set _dummy = localizedChapterTitles.__setitem__("http", "HTTP/2") %}
+{% endif %}
 
 {% set localizedTeamNames = {
   "analysts": "Analisti",
@@ -180,5 +204,18 @@ Se non diversamente specificato, le metriche in tutti i {{ supported_chapters | 
   "leads": "Responsabili del progetto",
   "reviewers": "Revisori",
   "translators": "Traduttori",
+  }
+%}
+
+{% set localizedTeamRole = {
+  "analysts": "Analista",
+  "authors": "Autore",
+  "brainstormers": "Brainstormer",
+  "designers": "Designer",
+  "developers": "Sviluppatore",
+  "editors": "Editor",
+  "leads": "Responsabili del progetto",
+  "reviewers": "Revisore",
+  "translators": "Traduttore",
   }
 %}

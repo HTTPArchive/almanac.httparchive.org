@@ -8,8 +8,7 @@ SELECT
 FROM
   `httparchive.blink_features.usage`
 WHERE
-  id = "3005"
-  OR feature = "WakeLockAcquireScreenLock"
+  id = "3005" OR feature = "WakeLockAcquireScreenLock"
 GROUP BY
   date,
   timestamp,

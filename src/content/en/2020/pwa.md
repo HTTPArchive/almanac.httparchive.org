@@ -12,11 +12,11 @@ discuss: 2050
 results: https://docs.google.com/spreadsheets/d/1AOqCkb5EggnE8BngpxvxGj_fCfssT9sZ0ElCQKp4pOw/
 featured_quote: Web application which progresses into a native-like application can be considered as a PWA.
 featured_stat_1: 16.6%
-featured_stat_label_1: Percentage of page loads using a service worker.
+featured_stat_label_1: Percentage of page loads using a service worker
 featured_stat_2: 27.97%
-featured_stat_label_2: Web apps that load fast enough for a PWA.
+featured_stat_label_2: Web apps that load fast enough for a PWA
 featured_stat_3: 25%
-featured_stat_label_3: Percentage of mobile PWA sites using importScripts.
+featured_stat_label_3: Percentage of mobile PWA sites using importScripts
 ---
 
 ## Introduction
@@ -148,7 +148,7 @@ If you're building a Progressive Web App, consider using a service worker so tha
 
 Browsers can proactively prompt users to add your app to their home screen, which can lead to higher engagement. 2.21% of pages had an <a hreflang="en" href="https://web.dev/installable-manifest/">installable manifest</a>. Manifest plays an important role in how the application starts, the looks and feel of the icon on the home screen and as an impact on the engagement rate directly.
 
-All sites should be protected with HTTPS, even ones that don't handle sensitive data. This includes avoiding <a hreflang="en" href="https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content">mixed content</a>, where some resources are loaded over HTTP despite the initial request being served over HTTPS. HTTPS prevents intruders from tampering with or passively listening in on the communications between your app and your users and is a prerequisite for service workers and many new web platform features and APIs like [HTTP/2](./http2). The <a hreflang="en" href="https://web.dev/is-on-https/">is-on-https check</a> shows that 67.27% of sites were on HTTPS without mixed content and it is surprising that we haven't reached higher yet. The [Security](./security#transport-security) chapter shows that 86.91% of sites are using HTTPS, suggesting that mixed content may be the bigger issue now. This number will get better as browsers mandate the applications to be on HTTPS and scrutinize those which are not on HTTPS more.
+All sites should be protected with HTTPS, even ones that don't handle sensitive data. This includes avoiding <a hreflang="en" href="https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content">mixed content</a>, where some resources are loaded over HTTP despite the initial request being served over HTTPS. HTTPS prevents intruders from tampering with or passively listening in on the communications between your app and your users and is a prerequisite for service workers and many new web platform features and APIs like [HTTP/2](./http). The <a hreflang="en" href="https://web.dev/is-on-https/">is-on-https check</a> shows that 67.27% of sites were on HTTPS without mixed content and it is surprising that we haven't reached higher yet. The [Security](./security#transport-security) chapter shows that 86.91% of sites are using HTTPS, suggesting that mixed content may be the bigger issue now. This number will get better as browsers mandate the applications to be on HTTPS and scrutinize those which are not on HTTPS more.
 
 If you've already set up HTTPS, make sure that you <a hreflang="en" href="https://web.dev/redirects-http/">redirect all HTTP traffic to HTTPS</a> in order to enable secure connection the users without changing the URL: only 69.92% of the sites pass this audit. Redirecting all the HTTP to HTTPS on your application should be simple steps towards robustness, though the HTTP redirection to HTTPS has a decent number of sites passing, it can do better.
 
@@ -174,14 +174,14 @@ Your app should display some content when JavaScript is disabled, even if it is 
 
 In a service worker one can listen for a number of events:
 
-1.  `install`, which occurs upon service worker installation.
-2.  `activate`, which occurs upon service worker activation.
-3.  `fetch`, which occurs whenever a resource is fetched.
-4.  `push`, which occurs when a push notification arrives.
-5.  `notificationclick`, which occurs when a notification is being clicked.
-6.  `notificationclose`, which occurs when a notification is being closed.
-7.  `message`, which occurs when a message sent via postMessage() arrives.
-8.  `sync`, which occurs when a background sync event occurs.
+1. `install`, which occurs upon service worker installation.
+2. `activate`, which occurs upon service worker activation.
+3. `fetch`, which occurs whenever a resource is fetched.
+4. `push`, which occurs when a push notification arrives.
+5. `notificationclick`, which occurs when a notification is being clicked.
+6. `notificationclose`, which occurs when a notification is being closed.
+7. `message`, which occurs when a message sent via postMessage() arrives.
+8. `sync`, which occurs when a background sync event occurs.
 
 We have examined which of these events are being listened to by service workers in our dataset.
 

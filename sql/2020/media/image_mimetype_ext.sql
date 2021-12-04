@@ -12,7 +12,7 @@ SELECT
 FROM
   `httparchive.almanac.requests`
 WHERE
-  date = '2020-08-01' and
+  date = '2020-08-01' AND
   type = 'image'
 GROUP BY
   client,

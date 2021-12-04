@@ -1,5 +1,9 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getProperties(css STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getProperties(css STRING)
+RETURNS ARRAY<STRING>
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
 	function compute() {
 		let ret = {};
@@ -27,8 +31,7 @@ try {
 catch (e) {
 	return [];
 }
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   *

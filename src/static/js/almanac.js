@@ -27,13 +27,25 @@ function handleSelectSwitchers() {
   }
 }
 
-// Language, Year and ToC menus (desktop)
+// Search, Language, Year and ToC menus (desktop)
 function handleNavMenu() {
 
   function closeAnyOtherOpenDropdown(e) {
+
+    // If the click was in a menu that's already open then ignore as just been opened.
     if (e.target.classList.contains('dropdown-open')) {
       return
     };
+
+    // If the click was in search nav, then ignore as don't want to close search menu.
+    var searchNavs = document.querySelectorAll('.search-nav ul:not(hidden)');
+    for (var i = 0; i < searchNavs.length; i++) {
+      if (searchNavs[i].contains(e.target)) {
+          return
+      }
+    }
+
+    // Else a click elsewhere so close all the menus
     var openDropdownBtn = document.querySelector('.nav-dropdown-btn.dropdown-open');
     openDropdownBtn && openDropdownBtn.click();
   }
@@ -81,6 +93,11 @@ function handleNavMenu() {
       firstFocusableElementInList = navItems[0];
       lastFocusableElementInList = navItems[navItems.length - 1];
       list.addEventListener('keydown', trapFocusInList);
+
+      if (e.currentTarget.classList.contains('search-button')) {
+        e.currentTarget.parentNode.querySelector('input').focus();
+      }
+
     } else {
       list.removeEventListener('keydown', trapFocusInList);
       document.body.removeEventListener('click', closeAnyOtherOpenDropdown, true);
@@ -141,7 +158,7 @@ function handleMobileMenu() {
 
   function toggleNavMenu() {
     var menuOpen = document.body.classList.toggle('menu-open');
-    menuBtn.classList.toggle("menu-btn--active");
+    menuBtn.classList.toggle("menu-btn-active");
     menuBtn.setAttribute('aria-expanded', menuOpen);
     var ariaLabel = menuOpen ? menuBtn.getAttribute('data-close-text') : menuBtn.getAttribute('data-open-text');
     menuBtn.setAttribute('aria-label', ariaLabel);
@@ -452,7 +469,7 @@ function setDiscussionCount() {
           if (isNaN(comments)) {
             return;
           }
-          document.querySelectorAll('.num_comments').forEach(el => {
+          document.querySelectorAll('.num-comments').forEach(el => {
             el.innerText = comments;
           });
 

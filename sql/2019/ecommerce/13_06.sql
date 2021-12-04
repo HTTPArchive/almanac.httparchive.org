@@ -10,7 +10,7 @@ FROM
 JOIN
   `httparchive.technologies.2019_07_01_*`
 USING (_TABLE_SUFFIX, url),
-UNNEST([10, 25, 50, 75, 90]) AS percentile
+  UNNEST([10, 25, 50, 75, 90]) AS percentile
 WHERE
   category = 'Ecommerce'
 GROUP BY

@@ -32,7 +32,7 @@ SELECT
   MAX(audits.description) AS description
 FROM
   `httparchive.lighthouse.2020_08_01_mobile` l,
-  `httparchive.almanac.service_workers` sw,
+  `httparchive.almanac.service_workers`,
   UNNEST(getAudits(report, "pwa")) AS audits
 WHERE
   date = '2020-08-01' AND

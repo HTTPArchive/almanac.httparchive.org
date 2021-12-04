@@ -32,6 +32,7 @@
 
 {% block help_translate %}翻訳ヘルプ{% endblock %}
 {% block translation_not_available %}英語-日本語では使用できません{% endblock %}
+{% block in_english %}(英語){% endblock %}
 {% block language_switcher %}言語ピッカー{% endblock %}
 {% block year_switcher %}年ピッカー{% endblock %}
 {% block table_of_contents_switcher %}年ピッカー{% endblock %}
@@ -40,6 +41,7 @@
 {% block table_of_contents_title %}目次{% endblock %}
 {% block contributors_title %}貢献者{% endblock %}
 {% block methodology_title %}方法論{% endblock %}
+{% block search_title %}検索{% endblock %}
 
 {% block part %}部{% endblock %}
 {% block chapter %}章{% endblock %}
@@ -86,6 +88,22 @@
 {% block author %}著者{% endblock %}
 {% block authors %}著者{% endblock %}
 
+{% block reactions %}反応{% endblock %}
+{% block source %}ソースを見る{% endblock %}
+
+{% block like %}いいね{% endblock %}
+{% block repost %}再投稿{% endblock %}
+{% block reply %}返信{% endblock %}
+{% block mention %}言及{% endblock %}
+{% block likes %}いいね{% endblock %}
+{% block reposts %}再投稿{% endblock %}
+{% block replies %}返信{% endblock %}
+{% block mentions %}言及{% endblock %}
+{% block likesAlt %}{% endblock %}
+{% block repostsAlt %}{% endblock %}
+{% block repliesAlt %}{% endblock %}
+{% block mentionsAlt %}{% endblock %}
+
 {% macro onTwitter(twitterHandle) %}Twitterの@{{twitterHandle}}{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}GitHubの{{gitHubHandle}}{% endmacro %}
 {% macro onLinkedIn(authorName) %}LinkedInの{{authorName}}{% endmacro %}
@@ -130,9 +148,9 @@ Web Almanacは、ウェブ・コミュニティの努力によって実現して
 {% block appendices %}付属資料{% endblock %}
 
 {% block ebook_title %}電子ブック{% endblock %}
-{% block ebook_download_short %}電子ブックPDF ({{ ebook_size_in_mb }}MB){% endblock %}
-{% block ebook_download %} {{ year }} Web AlmanacのPDFファイルをダウンロードする ({{ ebook_size_in_mb }}MB){% endblock %}
-{% block ebook_download_note %}(generated with <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
+{% block ebook_download_short %}電子ブックPDF（{{ ebook_size_in_mb }}MB）{% endblock %}
+{% block ebook_download %} {{ year }} Web AlmanacのPDFファイルをダウンロードする（{{ ebook_size_in_mb }}MB）{% endblock %}
+{% block ebook_download_note %}（<a href="https://www.princexml.com/">www.princexml.com</a>で生成）{% endblock %}
 
 {%
   set localizedPartTitles = {
@@ -142,6 +160,7 @@ Web Almanacは、ウェブ・コミュニティの努力によって実現して
     "IV. Content Distribution": "IV. コンテンツ配信"
   }
 %}
+
 {%
   set localizedChapterTitles = {
     "javascript": "JavaScript",
@@ -163,14 +182,32 @@ Web Almanacは、ウェブ・コミュニティの努力によって実現して
     "cdn": "CDN",
     "page-weight": "Page Weight",
     "resource-hints": "リソースのヒント",
-    "http2": "HTTP/2",
+    "http": "HTTP",
     "privacy": "プライバシー",
     "capabilities": "能力",
-    "jamstack": "Jamstack"
+    "jamstack": "Jamstack",
+    "webassembly": "WebAssembly",
+    "structured-data": "構造化データ"
+  }
+%}
+{% if (year == "2019" or year == "2020") %}
+{% set _dummy = localizedChapterTitles.__setitem__("http", "HTTP/2") %}
+{% endif %}
+
+{% set localizedTeamNames = {
+  "analysts": "分析者",
+  "authors": "著作者",
+  "brainstormers": "ブレインストーマー",
+  "designers": "デザイナー",
+  "developers": "開発者",
+  "editors": "編集者",
+  "leads": "リーダー",
+  "reviewers": "レビュワー",
+  "translators": "翻訳者",
   }
 %}
 
-{% set localizedTeamNames = {
+{% set localizedTeamRole = {
   "analysts": "分析者",
   "authors": "著作者",
   "brainstormers": "ブレインストーマー",

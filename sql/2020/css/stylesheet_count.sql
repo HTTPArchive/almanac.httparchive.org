@@ -15,7 +15,7 @@ SELECT
   _TABLE_SUFFIX AS client,
   COUNTIF(stylesheets.remote = 1) / COUNT(0) AS pct_1_remote,
   APPROX_QUANTILES(stylesheets.inline, 1000)[OFFSET(percentile * 10)] AS num_inline_stylesheets,
-  APPROX_QUANTILES(stylesheets.remote, 1000)[OFFSET(percentile * 10)] AS num_remote_stylesheets,
+  APPROX_QUANTILES(stylesheets.remote, 1000)[OFFSET(percentile * 10)] AS num_remote_stylesheets
 FROM (
   SELECT
     _TABLE_SUFFIX,

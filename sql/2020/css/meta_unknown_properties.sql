@@ -1,6 +1,9 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getUnknownProperties(css STRING) RETURNS
-ARRAY<STRUCT<property STRING, freq INT64>> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getUnknownProperties(css STRING)
+RETURNS ARRAY<STRUCT<property STRING, freq INT64>>
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
   var ast = JSON.parse(css);
   const properties = [
@@ -30,8 +33,7 @@ try {
 } catch (e) {
   return [];
 }
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   *

@@ -30,7 +30,7 @@ FROM
   UNNEST(getFontVariationSettings(css)) AS value,
   UNNEST(SPLIT(value, ',')) AS setting
 WHERE
-  date = '2019-07-01' AND
+  date = '2019-07-01'
 GROUP BY
   client,
   setting

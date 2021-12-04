@@ -1,6 +1,9 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION getCalcParenComplexity(css STRING) RETURNS
-ARRAY<STRUCT<num INT64, freq INT64>> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getCalcParenComplexity(css STRING)
+RETURNS ARRAY<STRUCT<num INT64, freq INT64>>
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
   function compute(ast) {
     let ret = {
@@ -59,8 +62,7 @@ try {
 } catch (e) {
   return [];
 }
-'''
-OPTIONS (library="gs://httparchive/lib/css-utils.js");
+''';
 
 SELECT
   client,

@@ -21,4 +21,4 @@ FROM (
 GROUP BY
   client
 ORDER BY
-  client   
+  client
