@@ -184,11 +184,11 @@ Before the introduction of HTML5, ARIA landmark roles were needed to accomplish 
   <table>
     <thead>
       <tr>
-        <th>HTML5<br />element</th>
-        <th>ARIA role<br />equivalent</th>
-        <th>Pages with<br />element</th>
-        <th>Pages with<br />role</th>
-        <th>Pages with<br />element or role</th>
+        <th>HTML5 <br />element</th>
+        <th>ARIA role <br />equivalent</th>
+        <th>Pages with <br />element</th>
+        <th>Pages with <br />role</th>
+        <th>Pages with <br />element or role</th>
       </tr>
     </thead>
     <tbody>
@@ -264,7 +264,7 @@ Custom elements and widgets that are intended to be interactive and in the keybo
 
 If an element should be focusable but not in the keyboard focus order a `tabindex` value of `-1` (or any negative integer) can be used as a hook to enable programmatically setting focus on the element with JavaScript without adding it to the keyboard focus order. This can be helpful for cases where you'd like to assign focus, such as focusing a heading when navigating to new page within a single page application as covered by [Marcy Sutton](https://twitter.com/marcysutton) in her <a hreflang="en" href="https://www.gatsbyjs.com/blog/2019-07-11-user-testing-accessible-client-routing/">post on accessible client-side routing techniques</a>. Placing non-interactive elements in keyboard focus order creates a confusing experience for blind and low vision users and should be avoided.
 
-The focus order of the page should always be determined by the document flow meaning the order of the HTML elements in the document. Setting the `tabindex` to a positive integer value overrides the natural order of the page, often leading to failures of <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-order.html">WCAG 2.4.3 - Focus Order</a>. Respecting the natural focus order of a page generally leads to a more accessible experience than overengineering the keyboard focus order.
+The focus order of the page should always be determined by the document flow meaning the order of the HTML elements in the document. Setting the `tabindex` to a positive integer value overrides the natural order of the page, often leading to failures of <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-order.html">WCAG 2.4.3 - Focus Order</a>. Respecting the natural focus order of a page generally leads to a more accessible experience than over-engineering the keyboard focus order.
 
 We found that 58% of desktop sites and 56% of mobile sites have some usage of the `tabindex` attribute.
 

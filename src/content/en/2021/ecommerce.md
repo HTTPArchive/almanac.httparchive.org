@@ -600,7 +600,7 @@ Unfortunately, we are unable to make statements about the proliferation of headl
 
 We see that <a hreflang="en" href="https://jquery.com/">jQuery</a> is still the most popular library. Reports of its demise are greatly exaggerated. 93.66% of ecommerce websites profiled were still using it. Many of the popular ecommerce vendors provide jQuery as part of the default frontend. On top of that platforms also live and die by the app and plugin ecosystems where additional functionality can be bought off of the shelf. These solutions also regularly use jQuery to provide functionality cost-effectively.
 
-Noticeably <a hreflang="en" href="https://greensock.com/gsap/">GSAP</a> (GreenSock Animation Platform) is included on 15% of ecommerce websites requested on mobile. That's more common than <a hreflang="en" href="https://fancyapps.com/docs/ui/fancybox/">Fancybox</a> (12.48%), a popular lightbox library, and <a hreflang="en" href="http://kenwheeler.github.io/slick/">Slick</a> (9.90%) a library used for creating carousels.
+Noticeably <a hreflang="en" href="https://greensock.com/gsap/">GSAP</a> (GreenSock Animation Platform) is included on 15% of ecommerce websites requested on mobile. That's more common than <a hreflang="en" href="https://fancyapps.com/docs/ui/fancybox/">Fancybox</a> (12.48%), a popular Lightbox library, and <a hreflang="en" href="http://kenwheeler.github.io/slick/">Slick</a> (9.90%) a library used for creating carousels.
 
 We recognized in the limitation section that the results are going to be skewed because all requests are made to the homepage. This means that the analysis won't find any libraries used for the product detail page media gallery where Slick may have proven even more popular.
 

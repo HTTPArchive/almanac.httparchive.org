@@ -6,7 +6,7 @@ authors: [khempenius]
 reviewers: [andydavies, tunetheweb, yoavweiss]
 analysts: [rviscomi]
 editors: [rviscomi]
-translators: [ksakae]
+translators: [ksakae1216]
 discuss: 1774
 results: https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/
 khempenius_bio: Katie HempeniusはChromeチームのエンジニアで、ウェブの高速化に取り組んでいます。

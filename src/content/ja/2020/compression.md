@@ -6,7 +6,7 @@ authors: [mo271, veluca93, sboukortt, jyrkialakuijala]
 reviewers: [paulcalvano]
 analysts: [AbbyTsai]
 editors: [exterkamp]
-translators: [ksakae]
+translators: [ksakae1216]
 jyrkialakuijala_bio: Jyrki Alakuijalaは、オープンソースソフトウェアコミュニティの活発なメンバーであり、データ圧縮の研究者でもあります。最近の研究テーマは、Zopfli、Butteraugli、Guetzli、Gipfeli、WebP lossless、Brotli、JPEG XLなどの圧縮フォーマットとアルゴリズム、およびCityHashとHighwayHashという2つのハッシュアルゴリズムです。Googleに入社する前は、神経外科や放射線治療の治療計画用ソフトウェアを開発していました。
 sboukortt_bio: Samiは、工学数学の研究を終えてGoogleに入社しました。圧縮に遠隔で興味を持って数年後、最終的には2018年にフルタイムの仕事になりました。
 mo271_bio: Moritz Firschingは、Google Switzerlandのソフトウェアエンジニアで、プログレッシブ画像フォーマットとフォント圧縮に取り組んでいます。それ以前は、数学者としてポリトープの研究をしていました。

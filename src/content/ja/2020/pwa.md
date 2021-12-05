@@ -6,7 +6,7 @@ authors: [hemanth]
 reviewers: [thepassle, jadjoubran, pearlbea, gokulkrishh]
 analysts: [tunetheweb]
 editors: [tunetheweb]
-translators: [ksakae]
+translators: [ksakae1216]
 hemanth_bio: <a hreflang="en" href="https://h3manth.com">Hemanth HM</a>は、コンピュータポリグロット、FOSS哲学者、Webと決済ドメインのためのGDE、DuckDuckGoコミュニティメンバー、TC39代表者、Google Launchpad Acceleratorメンター。WEB & CLIが大好き。<a hreflang="en" href="https://TC39er.us">TC39er.us</a>ポッドキャストを主催。
 discuss: 2050
 results: https://docs.google.com/spreadsheets/d/1AOqCkb5EggnE8BngpxvxGj_fCfssT9sZ0ElCQKp4pOw/
