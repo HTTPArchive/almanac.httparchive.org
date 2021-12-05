@@ -75,7 +75,7 @@ In 2020 the amount of desktop websites increased 2.76 times, while mobile just 1
 {{ figure_markup(
   image="adoption-share.png",
   caption="SSG adoption share",
-  description="Pie chart represents adoption share between SSGs. Next.js covers 43.6% of Jamstack sites. Nuxt.js is in second place with 31.1%, third is Gatsby with 16.0%, followed by Hugo at 6.0%.",
+  description="Pie chart represents adoption share between SSGs. Nuxt.js covers 52.6% of Jamstack sites. Next.js is in second place with 36.8%, third is Gatsby with 6.7%, followed by Hugo at 2.5%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=2020451260&format=interactive",
   sheets_gid="1005292860",
   sql_file="adoption.sql"
@@ -83,7 +83,7 @@ In 2020 the amount of desktop websites increased 2.76 times, while mobile just 1
 
 Let's begin with understanding which SSG is most popular. Nuxt.js covers 43.6% of Jamstack sites. Next.js is in second place with 31.1%, third is Gatsby with 16.0%, followed by Hugo at 6.0%.
 
-<p class="note">Please note the original publication of this chapter had different figures due to incorrect over-counting of Nuxt and Next sites. This has been corrected in above figures and, to a lesser degree, in other figures in this chapter.</p>
+<p class="note">Please note the original publication of this chapter had different figures due to incorrect duplication of Nuxt and Next sites. This has been corrected in above figures and, to a lesser degree, in other figures in this chapter.</p>
 
 All top 3 SSGs are JavaScript based: Next.js and Gatsby use <a hreflang="en" href="https://reactjs.org/">React.js</a> at it's core and supplements this by adding their own functionality on top of it. Nuxt.js is based on <a hreflang="en" href="https://vuejs.org">Vue.js</a>. Having these popular front-end frameworks with huge ecosystems out of the box makes development way easier. <a hreflang="en" href="https://nodejs.org/en/">Node.js</a> allows JavaScript to run on the server as well as the browser where it has traditionally been used, enabling developers stick to one language. That makes adopting these SSGs easier from a server perspective, comparing to Hugo which is based on the <a hreflang="en" href="https://go.dev/">Go programming language</a>, and Jekyll based on <a hreflang="en" href="https://go.dev/">Ruby</a>.
 
@@ -94,13 +94,15 @@ We will take a look what's the adoption rate of SSGs among web sites.
 {{ figure_markup(
   image="rank-adoption.png",
   caption="SSG adoption share by rank",
-  description="Bar chart represents adoption share between SSGs for different ranked sites. Next.js shows great results when exploring data of popular sites. 3.83% of the top 1,000 sites are Next.js (70% of all SSG sites in that category). Nuxt.js has 0.53% (9.7% share) and Gatsby 0.11% (1.9% share).The other ranks show varying degrees if these numbers with Next.js share shrinking and Nuxt.js and Gatsby growing over the ranks.",
+  description="Bar chart represents adoption share between SSGs for different ranked sites. ext.js shows great results when exploring data of popular sites. 3.83% of the top 1000 sites are Next.js. Nuxt.js has 0.53% and Gatsby 0.11%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=1137882647&format=interactive",
   sheets_gid="1005292860",
   sql_file="adoption.sql"
 ) }}
 
+
 Next.js remains a popular SSG across all ranks, but for the top 10k in particular.
+
 
 ## Geographic adoption
 
@@ -120,6 +122,7 @@ SSGs are heavily used around the world. The figure belows shows the top 10 count
   width=600,
   height=540
 ) }}
+
 
 In the USA, between 1.2 and 1.4%% of all sites pages (which is about 22k pages for desktop and 16k for mobile), are created with SSG. India has a lower number of pages, with just 6k for desktop and 7k for mobile, but 1.7% of all pages is covered by Jamstack technologies. In third place is the United Kingdom, which also has 1.7% of pages.
 
