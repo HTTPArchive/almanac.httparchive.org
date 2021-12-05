@@ -32,7 +32,7 @@ FROM (
   FROM
     `httparchive.summary_pages.2021_07_01_*`
   JOIN (
-    SELECT
+    SELECT DISTINCT
       _TABLE_SUFFIX,
       url
     FROM
