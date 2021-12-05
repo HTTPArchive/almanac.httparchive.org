@@ -1031,13 +1031,6 @@
       "github": "philbarker",
       "twitter": "philbarker"
     },
-    "fischbacher": {
-      "name": "Thomas Fischbacher",
-      "teams": [
-        "reviewers"
-      ],
-      "github": "fischbacher"
-    },
     "rrajiv": {
       "name": "Rajiv Ramnath",
       "teams": [
@@ -1103,6 +1096,16 @@
       "website": "https://rvth.blog/",
       "github": "rvth",
       "twitter": "rvtheverett"
+    },
+    "ksakae1216": {
+      "name": "Sakae Kotaro",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "1982567",
+      "website": "https://www.ksakae1216.com/archive",
+      "github": "ksakae1216",
+      "twitter": "beltway7"
     },
     "samarpanda": {
       "name": "Samar Panda",
@@ -1192,6 +1195,13 @@
       "website": "https://www.thomkrupa.com/",
       "github": "thomkrupa",
       "twitter": "thomkrupa"
+    },
+    "fischbacher": {
+      "name": "Thomas Fischbacher",
+      "teams": [
+        "reviewers"
+      ],
+      "github": "fischbacher"
     },
     "tomayac": {
       "name": "Thomas Steiner",

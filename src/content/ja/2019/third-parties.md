@@ -6,7 +6,7 @@ authors: [patrickhulce]
 reviewers: [zcorpan, obto, jasti]
 analysts: [patrickhulce]
 editors: [tunetheweb]
-translators: [ksakae]
+translators: [ksakae1216]
 discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/
 patrickhulce_bio: Patrick Hulceは元Chromeのエンジニアであり、<a hreflang="en" href="https://eris.ventures/">Eris Ventures</a>の創設者であり、<a hreflang="en" href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a>のコアチームメンバーであり、<a hreflang="en" href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, <a hreflang="en" href="https://www.meetup.com/DallasJS/">DallasJS</a> meetup の共同主催者、<a hreflang="en" href="https://github.com/patrickhulce/third-party-web">third-party-web</a> プロジェクトの執筆者。

@@ -6,7 +6,7 @@ authors: [ernee, amedina]
 reviewers: [sirjonathan]
 analysts: [rviscomi]
 editors: [rviscomi]
-translators: [ksakae]
+translators: [ksakae1216]
 discuss: 1769
 results: https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/
 ernee_bio: Renee Johnsonは、ウェブと製品のコンサルタントであり、WordPressの愛好家であり、WordCampの主催者でありボランティアでもあります。現在は、GoogleのContent Man agement System Developer Relationsチームでプロダクトサポートスペシャリストとして働いています。

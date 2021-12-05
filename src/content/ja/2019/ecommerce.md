@@ -6,7 +6,7 @@ authors: [samdutton, alankent]
 reviewers: [voltek62]
 analysts: [rviscomi]
 editors: [tunetheweb]
-translators: [ksakae]
+translators: [ksakae1216]
 discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
 samdutton_bio: Sam Duttonは2011年からDeveloper AdvocateとしてGoogle Chromeチームで働いています。数々のイベントを企画して発表し、いくつかのウェブ開発コースを作成して教え、PWA、パフォーマンス、メディア、イメージ、「Next Billion Users」イニシアティブをカバーする様々なビデオ、コードラボ、文書化されたガイダンスに取り組んできました。彼は<a hreflang="en" href="https://simpl.info">simpl.info</a>を管理しており、HTML、CSS、JavaScriptの最もシンプルな例を提供しています。南オーストラリアで育ち、シドニーの大学に進学し、1986年からロンドンに住んでいます。

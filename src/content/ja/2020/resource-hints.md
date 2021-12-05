@@ -6,7 +6,7 @@ authors: [Zizzamia]
 reviewers: [jessnicolet, pmeenan, giopunt, mgechev, notwillk]
 analysts: [khempenius]
 editors: [exterkamp]
-translators: [ksakae]
+translators: [ksakae1216]
 Zizzamia_bio: Leonardoは、<a hreflang="en" href="https://www.coinbase.com/">Coinbase</a>のスタッフソフトウェアエンジニアとして、ウェブパフォーマンスと成長イニシアチブを担当しています。また、<a hreflang="en" href="https://ngrome.io">NGRome Conference</a>を主催しています。Leonardoはまた、パフォーマンス分析を通じて企業がロードマップに優先順位をつけ、より良いビジネス上の意思決定を行えるよう支援する<a hreflang="en" href="https://github.com/Zizzamia/perfume.js">Perfume.js</a>ライブラリを管理しています。
 discuss: 2057
 results: https://docs.google.com/spreadsheets/d/1lXjd8ogB7kYfG09eUdGYXUlrMjs4mq1Z7nNldQnvkVA/

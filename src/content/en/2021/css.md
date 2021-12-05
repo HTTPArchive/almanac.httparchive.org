@@ -981,7 +981,7 @@ Animations continue to be widely used, with the `animation` property appearing o
   sql_file="transition_properties.sql"
 ) }}
 
-Among those transitions, the most common application is to all [animatable properties]([https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties) using the `all` keyword (whether explicitly or by default), which occurred in 46% of the analyzed pages. Just behind that is `opacity`, at 42% of all pages containing transitions.
+Among those transitions, the most common application is to all [animatable properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties) using the `all` keyword (whether explicitly or by default), which occurred in 46% of the analyzed pages. Just behind that is `opacity`, at 42% of all pages containing transitions.
 
 {{ figure_markup(
   image="distribution-of-transition-durations.png",

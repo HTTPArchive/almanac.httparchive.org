@@ -6,7 +6,7 @@ authors: [andydavies, colinbendell]
 reviewers: [yoavweiss, paulcalvano, pmeenan, enygren]
 analysts: [raghuramakrishnan71, rviscomi]
 editors: [rviscomi]
-translators: [ksakae]
+translators: [ksakae1216]
 discuss: 1772
 results: https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/
 andydavies_bio: Andy Daviesはフリーランスのウェブパフォーマンスコンサルタントであり、英国の大手小売業者、新聞社、金融サービス会社のサイトの高速化を支援してきました。彼は『ウェブパフォーマンスのポケットガイド』を執筆し、『Using WebPageTest』の共著者であり、ロンドンのウェブパフォーマンス・ミートアップの主催者でもあります。アンディは Twitter で <a href="https://twitter.com/andydavies">@AndyDavies</a> として活動しており、<a hreflang="en" href="https://andydavies.me">https://andydavies.me</a> で時々ブログを更新しています。

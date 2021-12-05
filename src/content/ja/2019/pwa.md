@@ -6,7 +6,7 @@ authors: [tomayac, jeffposnick]
 reviewers: [logicalphase, ahmadawais]
 analysts: [jrharalson]
 editors: [tunetheweb]
-translators: [ksakae]
+translators: [ksakae1216]
 discuss: 1766
 results: https://docs.google.com/spreadsheets/d/19BI3RQc_vR9bUPPZfVsF_4gpFWLNT6P0pLcAdL-A56c/
 tomayac_bio: Thomas SteinerはGoogle HamburgのWeb Developer Advocateで、標準化、ベストプラクティスの作成と共有、研究を通じた Web のより良い場所づくりに焦点を当てています。彼は <a hreflang="en" href="https://blog.tomayac.com/">blog.tomayac.com</a> でブログを書いており、<a href="https://twitter.com/tomayac">@tomayac</a> としてツイートしています。

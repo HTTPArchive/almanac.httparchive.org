@@ -6,7 +6,7 @@ authors: [christianliebel]
 reviewers: [tomayac]
 analysts: [tomayac]
 editors: [tunetheweb]
-translators: [ksakae]
+translators: [ksakae1216]
 discuss: 2049
 results: https://docs.google.com/spreadsheets/d/1N6j1qKv7vc51p1W9z_RrbJX9Se3Pmb-Uersfz4gWqqs/
 christianliebel_bio: Christian Liebelは、<a hreflang="en" href="https://thinktecture.com">Thinktecture</a>のコンサルタントであり、ファーストクラスのWebアプリケーションの実装において、様々なビジネス分野のクライアントをサポートしています。Microsoft MVP for Developer Technologies、Google GDE for Web/Capabilities、Angularを担当し、W3C Web Applications Working Groupに参加しています。

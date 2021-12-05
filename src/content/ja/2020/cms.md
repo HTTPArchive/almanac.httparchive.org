@@ -6,7 +6,7 @@ authors: [alexdenning]
 reviewers: [sirjonathan, ernee, amedina]
 analysts: [GregBrimble, rviscomi]
 editors: [tunetheweb]
-translators: [ksakae]
+translators: [ksakae1216]
 alexdenning_bio: Alex Denningは、WordPressビジネス向けのマーケティングエージェンシーである <a hreflang="en" href="https://getellipsis.com/">Ellipsis Marketing</a> の創設者です。アレックスはWordPressのコア・コントリビューターであり、<a hreflang="en" href="https://london.wordcamp.org/">WordCamp London</a>の開催にも協力しています。
 discuss: 2051
 results: https://docs.google.com/spreadsheets/d/1vTf459CcCbBuYeGvgo-RSidppR62SfM-VTkW-dfS3K4/

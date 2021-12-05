@@ -6,7 +6,7 @@ authors: [henrihelvetica]
 reviewers: [paulcalvano]
 analysts: [paulcalvano]
 editors: [tunetheweb]
-translators: [ksakae]
+translators: [ksakae1216]
 henrihelvetica_bio: Henriはフリーランスの開発者であり、興味をパフォーマンスエンジニアリングとユーザーエクスペリエンスを組み合わせたポプリに変えています。日々の研究ドキュメントやケーススタディの洪水を読んだり、開発ツールのサイトを無差別に監査したりしていないときは、コミュニティに貢献したり、<a href="https://twitter.com/towebperf">Toronto Web Performance Group</a>を含む共同プログラミングのミートアップに参加したり、様々なブートキャンプでランチをしたり学んだりするために自分の時間をボランティアで提供したりしています。それ以外の時は、音楽制作ソフトを使ってツーリングをしたり、ほぼ確実にトレーニングをして、可能な限り最速で5kmを走ることに集中しています。
 discuss: 2054
 results: https://docs.google.com/spreadsheets/d/1wG4u0LV5PT9aN-XB1hixSFtI8KIDARTOCX0sp7ZT3h0/
