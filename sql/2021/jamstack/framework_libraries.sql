@@ -12,7 +12,7 @@ WITH totals AS (
 ),
 
 ssg AS (
-  SELECT
+  SELECT DISTINCT
     _TABLE_SUFFIX AS client,
     url,
     app AS ssg_app
@@ -55,7 +55,7 @@ total_ssg_app AS (
 ),
 
 js AS (
-  SELECT
+  SELECT DISTINCT
     _TABLE_SUFFIX AS client,
     url,
     app AS js_app

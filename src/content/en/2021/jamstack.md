@@ -81,7 +81,9 @@ In 2020 the amount of desktop websites increased 2.76 times, while mobile just 1
   sql_file="adoption.sql"
 ) }}
 
-Let's begin with understanding which SSG is most popular. Nuxt.js covers 52.6% of Jamstack sites. Next.js is in second place with 36.8%, third is Gatsby with 6.7%, followed by Hugo at 2.5%.
+Let's begin with understanding which SSG is most popular. Nuxt.js covers 43.6% of Jamstack sites. Next.js is in second place with 31.1%, third is Gatsby with 16.0%, followed by Hugo at 6.0%.
+
+<p class="note">Please note the original publication of this chapter had different figures due to incorrect duplication of Nuxt and Next sites. This has been corrected in above figures and, to a lesser degree, in other figures in this chapter.</p>
 
 All top 3 SSGs are JavaScript based: Next.js and Gatsby use <a hreflang="en" href="https://reactjs.org/">React.js</a> at it's core and supplements this by adding their own functionality on top of it. Nuxt.js is based on <a hreflang="en" href="https://vuejs.org">Vue.js</a>. Having these popular front-end frameworks with huge ecosystems out of the box makes development way easier. <a hreflang="en" href="https://nodejs.org/en/">Node.js</a> allows JavaScript to run on the server as well as the browser where it has traditionally been used, enabling developers stick to one language. That makes adopting these SSGs easier from a server perspective, comparing to Hugo which is based on the <a hreflang="en" href="https://go.dev/">Go programming language</a>, and Jekyll based on <a hreflang="en" href="https://go.dev/">Ruby</a>.
 
@@ -92,14 +94,14 @@ We will take a look what's the adoption rate of SSGs among web sites.
 {{ figure_markup(
   image="rank-adoption.png",
   caption="SSG adoption share by rank",
-  description="Bar chart represents adoption share between SSGs for different ranked sites. ext.js shows great results when exploring data of popular sites. 13% of the top 1000 sites are Next.js. Nuxt.js has 5% and Gatsby 0.2%.",
+  description="Bar chart represents adoption share between SSGs for different ranked sites. ext.js shows great results when exploring data of popular sites. 3.83% of the top 1000 sites are Next.js. Nuxt.js has 0.53% and Gatsby 0.11%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=1137882647&format=interactive",
   sheets_gid="1005292860",
   sql_file="adoption.sql"
 ) }}
 
 
-Next.js remains a popular SSG for top 10k. In the top 100k Next.js and Nuxt.js remain equal. It's really interesting that Gatsby keeps all numbers pretty equal across all sites categories.
+Next.js remains a popular SSG across all ranks, but for the top 10k in particular.
 
 
 ## Geographic adoption
@@ -295,7 +297,7 @@ In the overall assessment for SSGs we can understand the basic performance level
   sql_file="core_web_vitals_passing.sql"
 ) }}
 
-Looking at mobile results, Jekyll and Hugo have the best results over SSGs—33% and 32% of all sites scored good. Gatsby is third with 21%, but it's the first of the JavaScript-based SSGs. Next.js with 15% of good performance pages and Nuxt.js has 11%.
+Looking at mobile results, Jekyll and Hugo have the best results over SSGs—34.3% and 31.8% of all sites scored good. Gatsby is third with 21.9%, but it's the first of the JavaScript-based SSGs. Next.js with 13.6% of good performance pages and Nuxt.js has 11.0%.
 
 ### Largest Contentful Paint
 
@@ -312,7 +314,7 @@ The <a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> (L
 
 {# TODO - this figure description should be described more #}
 
-Above we see the same results are approved by percent of sites with good LCP experience. The best results show Jekyll and Hugo with 79.5% and 72.5% of mobile sites having a "good" LCP of under 2.5s. The JavaScript based SSGs (Gatsby, Next.js, and Nuxt.js) fair worse.
+Above we see the same results are approved by percent of sites with good LCP experience. The best results show Jekyll and Hugo with 76.4% and 70.3% of mobile sites having a "good" LCP of under 2.5s. The JavaScript based SSGs (Gatsby, Next.js, and Nuxt.js) fair worse.
 
 {{ figure_markup(
   image="LCP-distribution-CDN.png",
@@ -325,7 +327,7 @@ Above we see the same results are approved by percent of sites with good LCP exp
 
 {# TODO - this figure description should be described more #}
 
-GitHub tops the stats when measuring on CDN level, likely reflecting the simpler sites hosted here. Netlify, a Jamstack-oriented CDN, comes next with 64% of sites having a good LCP and Vercel with 62% followed by AWS and Cloudflare at 57% and 51%.
+GitHub tops the stats when measuring on CDN level, likely reflecting the simpler sites hosted here. Netlify, a Jamstack-oriented CDN, comes next with 66.8% of sites having a good LCP followed by Vercel with 63.4% followed by AWS  with 59.2% and Cloudflare at 54.2%.
 
 ### First Input Delay
 
@@ -355,7 +357,7 @@ On a real user experience, All SSG show great FID results across different SSGs.
 
 {# TODO - this figure description should be described more #}
 
-All CDNs deliver Jamstack sites with 90% good FID, though interesting that the Cloudflare and AWS sites fare slightly worse than the Jamstack-orientated CDNs.
+All CDNs deliver Jamstack sites with 88% good FID or above, though interesting that the Cloudflare and AWS sites fare slightly worse than the Jamstack-orientated CDNs.
 
 ### Cumulative Layout Shift
 
@@ -372,7 +374,7 @@ All CDNs deliver Jamstack sites with 90% good FID, though interesting that the C
 
 {# TODO - this figure description should be described more #}
 
-Again, Jekyll shows great performance here. 81.6% of mobile are good results. Followed by Hugo at 73.4%, Gatsby at 66.7%, Next.js at 55.1%, and Nuxt.js trailing the pack at 46.4%%.
+Again, Jekyll shows great performance here. 81.1% of mobile are good results. Followed by Hugo at 74.2%, Gatsby at 65.7%, Next.js at 50.0%, and Nuxt.js trailing the pack at 48.7%.
 
 Here's the same results as with previously for CDNs. GitHub, Netlify, Vercel.
 
@@ -492,9 +494,9 @@ Images are one of the bottlenecks of good User Experience (UX). If they are larg
 
 {# TODO - this figure description should be described more #}
 
-As one of the newer generation of image formats, <a hreflang="en" href="https://developers.google.com/speed/webp/">WebP</a> has 17% of usage among Jamstack sites. Compared to [last year's results](../2020/jamstack#image-formats), when WebP had only 3%, we can say it's a great improvement over one year.
+As one of the newer generation of image formats, <a hreflang="en" href="https://developers.google.com/speed/webp/">WebP</a> has 18.0% of usage among Jamstack sites. Compared to [last year's results](../2020/jamstack#image-formats), when WebP had only 3%, we can say it's a great improvement over one year.
 
-Still, the most used is JPEG at 29% and GIF at 27%. SVG is used on 19% of webpages.
+Still, the most used is JPEG at 29.0% and GIF at 26.2%. SVG is used on 19.5% of webpages.
 
 ### What the resources tells us
 
