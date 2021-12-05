@@ -302,27 +302,23 @@ The <a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> (L
 
 {{ figure_markup(
   image="cwv-lcp.png",
-  caption="Real-user Core Web Vitals LCP",
-  description="Bar chart represents real-user Core Web Vitals LCP",
+  caption="Real-user Core Web Vitals LCP.",
+  description="Bar chart represents real-user Core Web Vitals LCP for the five top measure SSGs. Next.js is 49% for desktop and 25.8% for mobile, Nuxt.js is 44% and 21.7% respectively, Gatsby is 61% and 41.2%, Hugo is 89% and 70.3%, and finally Jekyll is 91% and 76.4%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=950243115&format=interactive",
   sheets_gid="1340534640",
   sql_file="core_web_vitals_passing.sql"
 ) }}
-
-{# TODO - this figure description should be described more #}
 
 Above we see the same results are approved by percent of sites with good LCP experience. The best results show Jekyll and Hugo with 76.4% and 70.3% of mobile sites having a "good" LCP of under 2.5s. The JavaScript based SSGs (Gatsby, Next.js, and Nuxt.js) fair worse.
 
 {{ figure_markup(
   image="LCP-distribution-CDN.png",
   caption="LCP distribution for CDNs",
-  description="Stacked Bar chart represents LCP distribution for CDNs",
+  description="Stacked Bar chart represents LCP distribution for CDNs. Cloudflare is 44.3% for desktop and 23.6% for mobile, AWS is 51.8% and 31.5% respectively, Netlify is 65.0% and 45.3%, Vercel is 60.9% and 39.7%, GitHub is 90.5% and 82.5%, Akamai is 36.4% and 22.0%, Azure is 58.0% and 36.7%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=1326237133&format=interactive",
   sheets_gid="1024061881",
   sql_file="core_web_vitals_distribution.sql"
 ) }}
-
-{# TODO - this figure description should be described more #}
 
 GitHub tops the stats when measuring on CDN level, likely reflecting the simpler sites hosted here. Netlify, a Jamstack-oriented CDN, comes next with 66.8% of sites having a good LCP followed by Vercel with 63.4% followed by AWS  with 59.2% and Cloudflare at 54.2%.
 
@@ -333,26 +329,22 @@ GitHub tops the stats when measuring on CDN level, likely reflecting the simpler
 {{ figure_markup(
   image="cwv-fid.png",
   caption="Real-user Core Web Vitals FID",
-  description="Bar chart represents real-user Core Web Vitals FID.",
+  description="Bar chart represents real-user Core Web Vitals FID for the five top measure SSGs. Next.js is 99.6% for desktop and 88.6% for mobile, Nuxt.js is 99.8% and 92.8% respectively, Gatsby is 99.9% and 96.3%, Hugo is 100.0% and 96.1%, and finally Jekyll is 99.9% and 94.8%..",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=1366681808&format=interactive",
   sheets_gid="1340534640",
   sql_file="core_web_vitals_passing.sql"
 ) }}
 
-{# TODO - this figure description should be described more #}
-
 On a real user experience, All SSG show great FID results across different SSGs.
 
 {{ figure_markup(
   image="FID-distribution-CDN.png",
-  caption="FID distribution for CDNs",
-  description="Stacked Bar chart represents FID distribution for CDNs",
+  caption="FID distribution for CDNs.",
+  description="Stacked Bar chart represents FID distribution for CDNs. Cloudflare is 99.8% for desktop and 91.7% for mobile, AWS is 99.9% and 95.8% respectively, Netlify is 99.9% and 97.6%, Vercel is 99.7% and 96.6%, GitHub is 100.0% and 96.3%, Akamai is 99.4% and 84.3%, and finally Azure is 100.0% and 95.6%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=1242431240&format=interactive",
   sheets_gid="1024061881",
   sql_file="core_web_vitals_distribution.sql"
 ) }}
-
-{# TODO - this figure description should be described more #}
 
 All CDNs deliver Jamstack sites with 88% good FID or above, though interesting that the Cloudflare and AWS sites fare slightly worse than the Jamstack-orientated CDNs.
 
@@ -362,14 +354,12 @@ All CDNs deliver Jamstack sites with 88% good FID or above, though interesting t
 
 {{ figure_markup(
   image="cwv-cls.png",
-  caption="Real-user Core Web Vitals CLS",
-  description="Bar chart represents real-user Core Web Vitals CLS.",
+  caption="Real-user Core Web Vitals CLS.",
+  description="Bar chart represents real-user Core Web Vitals CLS for the five top measure SSGs. Next.js is 55.8% for desktop and 50.0% for mobile, Nuxt.js is 53.5% and 48.7% respectively, Gatsby is 71.1% and 65.7%, Hugo is 77.7% and 74.2%, and finally Jekyll is 83.7% and 81.1%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=440775226&format=interactive",
   sheets_gid="1340534640",
   sql_file="core_web_vitals_passing.sql"
 ) }}
-
-{# TODO - this figure description should be described more #}
 
 Again, Jekyll shows great performance here. 81.1% of mobile are good results. Followed by Hugo at 74.2%, Gatsby at 65.7%, Next.js at 50.0%, and Nuxt.js trailing the pack at 48.7%.
 
@@ -378,13 +368,11 @@ Here's the same results as with previously for CDNs. GitHub, Netlify, Vercel.
 {{ figure_markup(
   image="CLS-distribution-CDN.png",
   caption="CLS distribution for CDNs",
-  description="Stacked Bar chart represents CLS distribution for CDNs",
+  description="Stacked Bar chart represents CLS distribution for CDNs. Cloudflare is 52.6% and 46.8% for mobile, AWS is 62.6% for desktop and 59.2%, Netlify is 74.1% and 68.3% respectively, Vercel is 65.9% and 62.4%, GitHub is 84.0% and 82.7%, Akamai is 49.6% and 44.8%, and finally  Azure is 62.6% and 59.7%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=692647280&format=interactive",
   sheets_gid="1024061881",
   sql_file="core_web_vitals_distribution.sql"
 ) }}
-
-{# TODO - this figure description should be described more #}
 
 In general CWV results reflect Lighthouse results. Huge and Jekyll have better real user performance data. We can't detect how complicated sites were built with these SSGs. We can bet that with modern SSGs like Next.js, Nuxt.js, Gatsby there are a lot of JavaScript delivered, more data to render including images. Hence, it affects performance results. Nevertheless, an interesting correlation between GitHub and Jekyll, which in tandem shows great results.
 
@@ -396,14 +384,12 @@ Let's dive into resource weights between top fives SSGs to understand their infl
 
 {{ figure_markup(
   image="median-page-weight.png",
-  caption="Median page weight",
-  description="Bar chart represents median page weights",
+  caption="Median page weight.",
+  description="Bar chart represents median page weights for the top 5 measured SSGs. Next.js is 2,161 for desktop and 1,838 KB for mobile, Nuxt.js is 2,481 and 2,000 respectively, Gatsby is 1,824 and 1,739, Hugo is 855 and 1,025, and finally Jekyll is 612 and 753.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=632409641&format=interactive",
   sheets_gid="984097158",
   sql_file="resource_weights.sql"
 ) }}
-
-{# TODO - this figure description should be described more #}
 
 JavaScript based SSGs have almost 2 times larger amount of resources than Hugo and Jekyll. The top one is ~2 MB for Nuxt.js, followed by Next.js and Gatsby with almost 1.8 MB and 1.7 MB.
 
@@ -413,14 +399,12 @@ As we mentioned above, JavaScript-based SSGs include JavaScript frameworks out o
 
 {{ figure_markup(
   image="median-js-weight.png",
-  caption="Median JavaScript weight",
-  description="Bar chart represents median JavaScript weights",
+  caption="Median JavaScript weight.",
+  description="Bar chart represents median JavaScript weights for the top 5 measured SSGs. Next.js is 75 for desktop and 746 for mobile, Nuxt.js is 70 and 713 respectively, Gatsby is 67 and 645, Hugo is 15 and 177, and finally Jekyll is 10 and 129.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=727314511&format=interactive",
   sheets_gid="984097158",
   sql_file="resource_weights.sql"
 ) }}
-
-{# TODO - this figure description should be described more #}
 
 A big chunk of resources are for JavaScript. Again, for JavaScript-based SSGs it's a much bigger compared to others - around 700 KB compared to around 150 KB for non-JavaScript based SSGs. While this is not surprising, it's interesting to see the actual differences laid out in this way. Next.js based sites use more JavaScript than others. Hugo and Jekyll developers on other hand seem to be using JavaScript more responsibly and keeping their bundles tight. Another reason for that might be site complexity. Hugo and Jekyll sites are not represented as much in top ranking sites, so they might have simpler use cases than, for example, Next.js sites which do appear more often in the top ranking sites.
 
@@ -429,13 +413,11 @@ We analyzed which third party libraries were used among SSGs. We excluded React 
 {{ figure_markup(
   image="3rd-party-libs-distribution-over-ssgs.png",
   caption="JavaScript 3rd parties distribution over SSGs",
-  description="Stacked Bar chart represents JavaScript 3rd parties distribution over SSGs",
+  description="Stacked Bar chart represents JavaScript 3rd parties distribution over SSGs. Gatsby uses styled-components most (9.5% jQuery, 33.8%  style-compents, 10.3% Lodash, 7.0% Polyfill, 1.8% MobX), Hugo uses jQuery predominantly (63.0%, 1.4%, 4.2%, 1.2%, 2.6% respectively), Jekyll is the same (61.2%, 0.8%, 1.0%, 0.8%, 1.5%), Next.js uses style-components most (5.6%, 20.4%, 9.6%, 2.7%, 2.2%), and finally Nuxt.js doesn't use external libraries much (3.8%, 0.3%, 4.8%, 2.0%, 0.1%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=972731684&format=interactive",
   sheets_gid="1291311330",
   sql_file="framework_libraries.sql"
 ) }}
-
-{# TODO - this figure description should be described more #}
 
 A big surprise for us was jQuery. It wasn't a surprise that it's used for Hugo and Jekyll based sites (more than 60%), but that it's used inside React and Vue based sites wasn't expected! Next.js, Many Nuxt,js, and Gatsby sites use jQuery too.
 
@@ -447,14 +429,12 @@ Lodash is heavily used and was present among all SSGs up to 10% for Gatsby.
 
 {{ figure_markup(
   image="median-css-weight.png",
-  caption="Median CSS weight",
-  description="Bar chart represents median CSS weights",
+  caption="Median CSS weight.",
+  description="Bar chart represents median CSS weights for the top 5 measured SSGs. Next.js is 2 for desktop and 14 for mobile, Nuxt.js is 1 and 17 respectively, Gatsby is  and 1, Hugo is 2 and 29, and finally Jekyll is 1 and 23.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=1274478265&format=interactive",
   sheets_gid="984097158",
   sql_file="resource_weights.sql"
 ) }}
-
-{# TODO - this figure description should be described more #}
 
 On the other hand, CSS is slightly heavier than Hugo and Jekyll.
 Since of the benefits of styled-components is clean, non-repetitive CSS, this could explain why CSS size for these JavaScript SSGs are lower. One more hypothesis is that old fashioned SSGs use old fashion methods for handling interactions and animations using CSS. JavaScript-based SSGs use more JavaScript in general, hence they might more often be used to replace functionality that could be implemented with CSS.
@@ -465,14 +445,12 @@ Images weights distributed differently. There's no correlation between SSG group
 
 {{ figure_markup(
   image="median-image-weight.png",
-  caption="Median image weight",
-  description="Bar chart represents median image weights",
+  caption="Median image weight.",
+  description="Bar chart represents median image weights for the top 5 measured SSGs. Next.js is 62 for desktop and 465 for mobile, Nuxt.js is 89 and 645 respectively, Gatsby is 45 and 454, Hugo is 30 and 522, and finally Jekyll is 17 and 295.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=707866311&format=interactive",
   sheets_gid="984097158",
   sql_file="resource_weights.sql"
 ) }}
-
-{# TODO - this figure description should be described more #}
 
 Nuxt.js has the highest value at 645 KB. Hugo is next with 522 KN. Next.js and Gatsby are almost the same at 465 KB and 545 KB respectively. Jekyll has the lowest value at 295 KB.
 
@@ -483,17 +461,15 @@ Images are one of the bottlenecks of good User Experience (UX). If they are larg
 {{ figure_markup(
   image="image-adoption.png",
   caption="Adoption of image format",
-  description="Bar chart represents adoption of image format",
+  description="Bar chart represents adoption of image format usage for SSG pages. `png` is 32.7% on desktop and 29.0% on mobile, `jpg` is 27.7% and 26.2% respectivelty, `gif` is 16.2% and 19.5%, `svg` is 15.3% and 18.0%, `webp` is 5.8% and 5.1%, and finally `ico` is 2.1% and 2.0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=470820948&format=interactive",
   sheets_gid="626634977",
   sql_file="adoption_of_image_formats_in_ssgs.sql"
 ) }}
 
-{# TODO - this figure description should be described more #}
-
 As one of the newer generation of image formats, <a hreflang="en" href="https://developers.google.com/speed/webp/">WebP</a> has 18.0% of usage among Jamstack sites. Compared to [last year's results](../2020/jamstack#image-formats), when WebP had only 3%, we can say it's a great improvement over one year.
 
-Still, the most used is JPEG at 29.0% and GIF at 26.2%. SVG is used on 19.5% of webpages.
+Still, the most used is PNG at 29.0% and JPEG at 26.2%, GIF at 19.5%, and SVG is used on 18.0% of webpages.
 
 ### What the resources tells us
 
