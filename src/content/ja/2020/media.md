@@ -6,7 +6,7 @@ authors: [tpiros, bseymour, eeeps]
 reviewers: [nhoizey, colinbendell, dougsillars, Navaneeth-akam]
 analysts: [smatei]
 editors: [tunetheweb]
-translators: [ksakae]
+translators: [ksakae1216]
 tpiros_bio: Tamas Pirosは、<a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>のDeveloper Experience Engineerであり、Google Developer Expertであり、<a hreflang="en" href="https://fullstacktraining.com">Full Stack Training</a>を運営するテクニカルインストラクターです。
 bseymour_bio: Ben Seymourは、<a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>のDynamic Media & Content Specialistであり、<a hreflang="en" href="http://responsiveimag.es/">Practical Responsive Images</a>の著者であり、<a hreflang="en" href="https://storyus.life/">Storyus</a>と<a hreflang="en" href="https://haktive.com/">Haktive</a>の共同設立者です。
 eeeps_bio: Eric Portisは、<a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>のWeb Platform Advocateです。

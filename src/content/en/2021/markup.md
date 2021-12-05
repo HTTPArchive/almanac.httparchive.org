@@ -126,7 +126,7 @@ We've encountered 3,598 unique instances of the `lang` attribute on the `html` e
 {{ figure_markup(
   image="lang-region.png",
   caption="Adoption of the most popular HTML language codes, including region.",
-  description="Bar chart showing the language usage, including region, for the top ten languages in our data set. 19% use english, 18.6% are not set, 13.5% use american english, with japanese, spanish, brazilian portuguese, british english, russian, german and french having various minor percentages of usage, from 5.3 to 1.5.",
+  description="Bar chart showing the language usage, including region, for the top ten languages in our data set. 19% use English, 18.6% are not set, 13.5% use American English, with Japanese, Spanish, Brazilian Portuguese, British English, Russian, German and French having various minor percentages of usage, from 5.3 to 1.5.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSaFU4lh2yyjudn8fcy0l65EbP9MdCbB39wQbT0c5cfcJzfl2p1nGOByDdgg8P3dMeZMa0eWkkG685n/pubchart?oid=742535028&format=interactive",
   sheets_gid="298704786",
   sql_file="html_lang.sql"
@@ -137,7 +137,7 @@ Out of the pages scanned, 19.6% on desktop, and 18.6% on mobile, [specified no `
 {{ figure_markup(
   image="lang.png",
   caption="Adoption of the most popular HTML language codes, not including region.",
-  description="Bar chart showing the language usage, for the top ten languages in our data set. 35.5% use english, 18.7% are not set, with spanish, japanese, portuguese, russian, german, french, italian and polish having various minor percentages of usage, from 6.3 to 1.9.",
+  description="Bar chart showing the language usage, for the top ten languages in our data set. 35.5% use English, 18.7% are not set, with Spanish, Japanese, Portuguese, Russian, German, French, Italian and Polish having various minor percentages of usage, from 6.3 to 1.9.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSaFU4lh2yyjudn8fcy0l65EbP9MdCbB39wQbT0c5cfcJzfl2p1nGOByDdgg8P3dMeZMa0eWkkG685n/pubchart?oid=733528618&format=interactive",
   sheets_gid="298704786",
   sql_file="html_lang.sql"

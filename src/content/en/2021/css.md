@@ -182,7 +182,7 @@ The ranking and distribution of both pseudo-classes and pseudo-elements was not 
   sql_file="top_selector_pseudo_classes.sql"
 ) }}
 
-Just as in 2020, the user-action pseudo-classes `:hover`, `:focus`, and `:active` took the top three spots, with all of them appearing in a minimum of two-thirds of all pages. Structural pseudo-classes put in a number of appearances, but one of the most interesting changes was `:not()`, the negation pseudoclass, becoming more popular than `:visited` and achieving a 50% share of pages.
+Just as in 2020, the user-action pseudo-classes `:hover`, `:focus`, and `:active` took the top three spots, with all of them appearing in a minimum of two-thirds of all pages. Structural pseudo-classes put in a number of appearances, but one of the most interesting changes was `:not()`, the negation pseudo-class, becoming more popular than `:visited` and achieving a 50% share of pages.
 
 One thing we did check specifically this year was the use of [`:focus-visible`, a way to style elements in focus in a way that better matches user expectations](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible). This capability landed in Chromium in 2020, Firefox in January 2021, and (as of publication) is available in Safari 15 behind an experimental flag. Likely reflecting its recent implementation status, it appeared in less than 1% of the pages analyzed. It will be interesting to see if that number changes over the next few years.
 
@@ -702,7 +702,7 @@ Please also note that this analysis only covers the images loaded by CSS: we did
 {{ figure_markup(
   image="number-of-images-loaded.png",
   caption="Distribution of the number of external images loaded via CSS.",
-  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the number of images loaded via CSS. The results are as follows. 10th and 25th percentiles, 1 on both desktop and mobile. 50th percentile, 3 on both dekstop and mobile. 75th percentile, 6 on desktop and 5 on mobile. 90th percentile, 11 on desktop and 10 on mobile.",
+  description="A paired-column chart showing the 10th, 25th, 50th, 75th, and 90th percentile median values for the number of images loaded via CSS. The results are as follows. 10th and 25th percentiles, 1 on both desktop and mobile. 50th percentile, 3 on both desktop and mobile. 75th percentile, 6 on desktop and 5 on mobile. 90th percentile, 11 on desktop and 10 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1206209320&format=interactive",
   sheets_gid="361647805",
   sql_file="image_weights.sql"
@@ -981,7 +981,7 @@ Animations continue to be widely used, with the `animation` property appearing o
   sql_file="transition_properties.sql"
 ) }}
 
-Among those transitions, the most common application is to all [animatable properties]([https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties) using the `all` keyword (whether explicitly or by default), which occurred in 46% of the analyzed pages. Just behind that is `opacity`, at 42% of all pages containing transitions.
+Among those transitions, the most common application is to all [animatable properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties) using the `all` keyword (whether explicitly or by default), which occurred in 46% of the analyzed pages. Just behind that is `opacity`, at 42% of all pages containing transitions.
 
 {{ figure_markup(
   image="distribution-of-transition-durations.png",

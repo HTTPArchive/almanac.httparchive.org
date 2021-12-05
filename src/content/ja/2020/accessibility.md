@@ -6,7 +6,7 @@ authors: [oluoluoxenfree, alextait1]
 reviewers: [aardrian, ericwbailey, obto]
 analysts: [obto]
 editors: [tunetheweb]
-translators: [ksakae]
+translators: [ksakae1216]
 oluoluoxenfree_bio: Olu Niyi-AwosusiはFTのソフトウェアエンジニアで、リスト、新しいことを学ぶこと、Bee and Puppycat、<a hreflang="en" href="https://alistapart.com/article/building-the-woke-web/">社会正義、アクセシビリティ</a>、そして日々努力することを愛しています。
 alextait1_bio: Alex Taitは、開発者、コンサルタント、教育者であり、その情熱は、モダンJavaScript内のインターフェイスアーキテクチャとデザインシステム、アクセシビリティにあります。 開発者として、アクセシビリティを前面に出した包括主導の開発手法は、すべての人にとってより良い製品につながると信じています。 コンサルタントであり戦略家でもある彼女は、「少ないことは豊かである」を信条としており、新しい機能の要件変更は、障害のあるユーザーにとってコア機能の等価性よりも優先されるべきものではないと考えています。教育者として、技術がより多様で公平で包括的な産業になるように、情報の障壁を取り除くことを信条としています。
 discuss: 2044

@@ -21,7 +21,7 @@ FROM (
     WHERE
       date = '2021-07-01')
   JOIN (
-    SELECT
+    SELECT DISTINCT
       _TABLE_SUFFIX AS client,
       url AS page
     FROM

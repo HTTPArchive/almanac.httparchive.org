@@ -150,7 +150,7 @@ CDNs are often pivotal to drive adoption of new protocols like HTTP/2, and looki
 {{ figure_markup(
   image="top-cdns-and-http2-or-above-usage.png",
   caption="Top CDNs and % of pages served over HTTP/2+.",
-  description="Bar chart showing adoption of HTTP/2+ and HTTP/1.1 by CDNs. Without a CDN, only 49% of sites are likely to use HTTP/2+. for the CDNs there is mix adopttion but all are above the No CDN value: Cloudflare (94.7%), Google (68.7%), Fastly (97.1%), Amazon CloudFront (91.6%), Akamai (81.4%), Automattic (100.0%), Sucuri Firewall (95.5%), Incapsula (59.6%), Netlify (99.7%), CDN (97.1%), Highwinds (89.8%), Vercel (86.4%), OVH CDN (88.8%), Microsoft Azure (96.6%).",
+  description="Bar chart showing adoption of HTTP/2+ and HTTP/1.1 by CDNs. Without a CDN, only 49% of sites are likely to use HTTP/2+. for the CDNs there is mix adoption but all are above the No CDN value: Cloudflare (94.7%), Google (68.7%), Fastly (97.1%), Amazon CloudFront (91.6%), Akamai (81.4%), Automattic (100.0%), Sucuri Firewall (95.5%), Incapsula (59.6%), Netlify (99.7%), CDN (97.1%), Highwinds (89.8%), Vercel (86.4%), OVH CDN (88.8%), Microsoft Azure (96.6%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR8JQZybG-hShF-c20MeEPyPBeMbdjcYNWzm4juwcsvtubVk3kKT8KH26D1eEuFpvHbvRXEHZorS0ee/pubchart?oid=1877391271&format=interactive",
   sheets_gid="1902992488",
   sql_file="http2_3_support_by_cdn_per_page_and_request.sql",
@@ -238,7 +238,7 @@ At the time of this writing, desktop connections are down 44% over 12 months to 
 {{ figure_markup(
   image="tcp-connections-per-http-version-by-percentile.png",
   caption="TCP connections per HTTP version by percentile.",
-  description="Bar chart showing TCP connections per HTTP version by percentile. At the 10th percentil it's 6 for HTTP/1.1 and 4 for HTTP/2+, for the 25th it's 10 and 7, at the 50th it's 16 and 12, and the 7th it's 24 and 20, and at the 90th percentile it's 40 and 33.",
+  description="Bar chart showing TCP connections per HTTP version by percentile. At the 10th percentile it's 6 for HTTP/1.1 and 4 for HTTP/2+, for the 25th it's 10 and 7, at the 50th it's 16 and 12, and the 7th it's 24 and 20, and at the 90th percentile it's 40 and 33.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vR8JQZybG-hShF-c20MeEPyPBeMbdjcYNWzm4juwcsvtubVk3kKT8KH26D1eEuFpvHbvRXEHZorS0ee/pubchart?oid=993526405&format=interactive",
   sheets_gid="1213076952",
   sql_file="measure_number_of_tcp_connections_per_site.sql"

@@ -52,7 +52,7 @@ Page resources need to be stored ready for retrieval when requested. Image, vide
 
 Many people don't understand, or pay little attention to, the negative impact those types of unoptimized assets have on page loading performance. When reviewing today's websites, I routinely discover images that exceed four megabytes in size, and embedded video files that are many times that value.
 
-Fortunately, there are also options and optimizations that can be applied that can significantly lower the size of files stored at rest from [compression](./compression), to using the appropiate [file format for media](./media) to offloading content to a dedicated [CDN](./cdn) who can handle this for your to lighten the weight of a web page, often at little to no cost.
+Fortunately, there are also options and optimizations that can be applied that can significantly lower the size of files stored at rest from [compression](./compression), to using the appropriate [file format for media](./media) to offloading content to a dedicated [CDN](./cdn) who can handle this for your to lighten the weight of a web page, often at little to no cost.
 
 ### Transmission
 

@@ -6,7 +6,7 @@ authors: [tomvangoethem, nrllh, tunetheweb]
 reviewers: [cqueern, edmondwwchan]
 analysts: [tomvangoethem, nrllh]
 editors: [tunetheweb]
-translators: [ksakae]
+translators: [ksakae1216]
 tomvangoethem_bio: Tom Van Goethemは、ベルギーのルーベン大学の<a hreflang="en" href="https://distrinet.cs.kuleuven.be/">DistriNetグループ</a> の研究者です。彼の研究は、セキュリティやプライバシーの問題につながるウェブ上の新たなサイドチャネル攻撃を発見し、その原因となる漏洩をパッチで修正する方法を見出すことに重点を置いています。
 nrllh_bio: Nurulullah Demirは、<a hreflang="en" href="https://www.internet-sicherheit.de/en/">Institute for Internet Security</a>のセキュリティ研究者であり、博士課程の学生です。彼の研究は、屈強なWebセキュリティメカニズムと敵対的な機械学習に焦点を当てています。
 tunetheweb_bio: Barry Pollardはソフトウェア開発者であり、Manningの本<a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a> の著者でもあります。彼はウェブは素晴らしいと思っていますが、それをもっと良くしたいと思っています。<a href="https://twitter.com/tunetheweb">@tunetheweb</a> でつぶやき、<a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a> でブログを書いています。
