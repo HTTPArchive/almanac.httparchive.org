@@ -203,7 +203,7 @@ The three main HTTP headers used to represent timestamps, `Date`,`Last-Modified`
 {{ figure_markup(
   image="invalid-date-formats.png",
   caption="Percent of responses with invalid date formats.",
-  description="A bar graph showing percentage of response headers with invalid date formats broken down by header. The percent of responses for desktop range from 2.8% for `Expires', 0.7% for `Last-Modified`, and 0.1% for `Date`. The percent of responses for mobile range from 3.2% for `Expires', 0.9% for `Last-Modified`, and 0.0% for `Date`.",
+  description="A bar graph showing percentage of response headers with invalid date formats broken down by header. The percent of responses for desktop range from 2.8% for `Expires`, 0.7% for `Last-Modified`, and 0.1% for `Date`. The percent of responses for mobile range from 3.2% for `Expires', 0.9% for `Last-Modified`, and 0.0% for `Date`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=383751268&format=interactive",
   sheets_gid="1680471251",
   sql_file="invalid_last_modified_and_expires_and_date.sql"
