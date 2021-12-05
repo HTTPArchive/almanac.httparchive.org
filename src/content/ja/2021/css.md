@@ -981,7 +981,7 @@ W3Cのオリジナルボックスモデルの原則は、引き続き否定さ�
   sql_file="transition_properties.sql"
 ) }}
 
-これらのトランジションの中で、もっとも一般的なアプリケーションは、`all`キーワードを使ったすべての[animatable property]([https://developer.mozilla.org/ja/docs/Web/CSS/CSS_animated_properties])への適用であり、分析されたページの46％で発生しています（明示的であれデフォルトであれ）。これに続くのは`opacity`で、トランジションを含むすべてのページの42％です。
+これらのトランジションの中で、もっとも一般的なアプリケーションは、`all`キーワードを使ったすべての[animatable property](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_animated_properties)への適用であり、分析されたページの46％で発生しています（明示的であれデフォルトであれ）。これに続くのは`opacity`で、トランジションを含むすべてのページの42％です。
 
 {{ figure_markup(
   image="distribution-of-transition-durations.png",
@@ -1226,7 +1226,7 @@ CSSは、方向性や論理的な機能に加えて、CSS Rubyによる国際化
   description="モバイルでの分布を示す円グラフ。結果は以下の通りです。Styled Components 57.7％、Emotion 24.4％、Glamor 7.5％、Aphrodite 6.6％、Styled Jsx 2％ となりました。表示されていない小さなスライスがいくつかあります。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1003466201&format=interactive",
   sheets_gid="1851845193",
-  sql_file="css_in.js .sql"
+  sql_file="css_in_js.sql"
 ) }}
 
 『CSS in JS」の話題は、少なくともTwitterでの炎上騒ぎの1つや2つにはもってこいですが、自然界での使用は非常に少ない状態が続いています。今年の調査では、ページの約3％が何らかの形でCSS-in-JSを使用していることがわかりましたが、これは2020年の2％から増加しています。さらに、そのほぼすべてがこの目的のために構築されたライブラリによるものであり、その半分以上がStyled Componentsライブラリによるものです。
