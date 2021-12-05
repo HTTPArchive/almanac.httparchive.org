@@ -9,7 +9,7 @@ iandevlin_bio: Ian Devlinは、優れたセマンティックHTMLやアクセシ
 reviewers: [zcorpan, matuzo, bkardell]
 analysts: [Tiggerito]
 editors: [rviscomi]
-translators: [ksakae]
+translators: [ksakae1216]
 discuss: 2039
 results: https://docs.google.com/spreadsheets/d/1Ta7amoUeaL4pILhWzH-SCzMX9PsZeb1x_mwrX2C4eY8/
 featured_quote: 私たちは、生きたHTMLをほぼ完全に採用しようとしており、流行のページはすぐに削除し、フレームワークの採用や廃止も迅速に行っています。しかし、HTMLが与えてくれる選択肢を使い切った形跡はありません。

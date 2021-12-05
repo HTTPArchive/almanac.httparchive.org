@@ -6,7 +6,7 @@ authors: [ScottHelme, arturjanc]
 reviewers: [tunetheweb, ghedo, paulcalvano]
 analysts: [dotjs, jrharalson]
 editors: [tunetheweb]
-translators: [ksakae]
+translators: [ksakae1216]
 discuss: 1763
 results: https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/
 ScottHelme_bio: Scott Helmeはセキュリティ研究者であり、<a hreflang="en" href="https://report-uri.com">report-uri.com</a> と <a hreflang="en" href="https://securityheaders.com">securityheaders.com</a> の創設者でもあります。Twitterでは、<a href="https://twitter.com/Scott_Helme">@Scott_Helme</a>でセキュリティの話をしたり、<a hreflang="en" href="https://scotthelme.co.uk">scotthelme.co.uk</a>でブログを書いたりしています。

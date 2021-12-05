@@ -6,7 +6,7 @@ authors: [simonhearne]
 reviewers: [jzyang, exterkamp]
 analysts: [max-ostapenko, paulcalvano]
 editors: [tunetheweb]
-translators: [ksakae]
+translators: [ksakae1216]
 simonhearne_bio: Simonはウェブパフォーマンスアーキテクトです。彼は、より速く、よりアクセスしやすいウェブを提供することに情熱を注いでいます。<a href="https://twitter.com/simonhearne">@SimonHearne</a>でツイートしたり、<a hreflang="en" href="https://simonhearne.com">simonhearne.com</a>でブログを書いています。
 discuss: 2042
 results: https://docs.google.com/spreadsheets/d/1uW4SMkC45b4EbC4JV1xKAUhwGN2K8j0qFy_jSIYnHhI/

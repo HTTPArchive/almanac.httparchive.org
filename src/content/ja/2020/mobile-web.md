@@ -6,7 +6,7 @@ authors: [spanicker, mdiblasio]
 reviewers: [obto]
 analysts: [obto]
 editors: [exterkamp]
-translators: [ksakae]
+translators: [ksakae1216]
 spanicker_bio: Shubhie Panickerは、Chromeのウェブフレームワークエコシステムへの取り組みを担当するエンジニアリングリーダーで、オープンソースツール、フレームワーク、コミュニティとのコラボレーションを行っています。Chromeのウェブプラットフォームチームのメンバーとして、ウェブ標準や、いくつかのウェブパフォーマンスAPIに対するchromiumの実装に取り組んできました。Chrome以前は、検索やGoogle PhotosなどのGoogle製品のインフラやウェブフレームワークに携わっていました。
 mdiblasio_bio: Michael DiBlasioは、Googleのウェブエコシステムコンサルタントです。マイケル・ディブラジオは、ウェブエコシステムの健全性を高め、クリエイターやパートナーにとってウェブが商業的に成り立つようにするための支援に注力しています。彼は、戦略的な小売業者と密接に協力して、新しい最新のウェブ技術を採用し、既存のウェブ体験の質を向上させています。Google以前は、IBMのコンサルタントを務めていました。
 discuss: 2048

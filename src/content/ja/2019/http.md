@@ -6,7 +6,7 @@ authors: [tunetheweb]
 reviewers: [bagder, rmarx, dotjs]
 analysts: [paulcalvano]
 editors: [rachellcostello]
-translators: [ksakae]
+translators: [ksakae1216]
 discuss: 1775
 results: https://docs.google.com/spreadsheets/d/1z1gdS3YVpe8J9K3g2UdrtdSPhRywVQRBz5kgBeqCnbw/
 tunetheweb_bio: Barry Pollardはソフトウェア開発者であり、Manningの本 <a hreflang="en" href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a> の著者でもあります。彼はウェブは素晴らしいと思っていますが、それをさらに良くしたいと思っています。<a href="https://twitter.com/tunetheweb">@tunetheweb</a> でツイートしたり、<a hreflang="en" href="https://www.tunetheweb.com">www.tunetheweb.com</a> でブログを書いたりしています。

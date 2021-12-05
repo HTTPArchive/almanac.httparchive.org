@@ -6,7 +6,7 @@ authors: [rockeynebhwani, jrharalson]
 reviewers: [alankent]
 analysts: [jrharalson, rockeynebhwani]
 editors: [tunetheweb]
-translators: [ksakae]
+translators: [ksakae1216]
 rockeynebhwani_bio: Rockey Nebhwaniは、2001年から小売・Eコマース業界で働いている独立系コンサルタントで、アメリカやイギリスのAmazon、Wal-Mart、Tesco、M&S、Safewayなどの小売業者との仕事で幅広い経験を持っています。ロッキーは、Eコマースのイベントで時折講演を行うほか、<a href="https://twitter.com/rnebhwani">@rnebhwani</a>でツイートしています。
 #jrharalson_bio: TODO
 discuss: 2052
