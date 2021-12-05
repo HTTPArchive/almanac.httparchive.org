@@ -6,7 +6,7 @@ authors: [tammyeverts, khempenius]
 reviewers: [paulcalvano]
 analysts: [khempenius]
 editors: [obto]
-translators: [ksakae]
+translators: [ksakae1216]
 discuss: 1773
 results: https://docs.google.com/spreadsheets/d/1nWOo8efqDgzmA0wt1ipplziKhlReAxnVCW1HkjuFAxU/
 tammyeverts_bio: Tammy Evertsは、20年以上にわたってユーザビリティとUXを研究してきました。過去10年間、彼女はウェブパフォーマンスとビジネスのUX交差に焦点を当ててきました。彼女は、<a hreflang="en" href="https://speedcurve.com/">SpeedCurve</a>のCXOであり、<a hreflang="en" href="https://perfnow.nl/">performance.now()カンファレンス</a>の共同議長であり、O'Reillyの本の著者<em><a hreflang="en" href="http://shop.oreilly.com/product/0636920041450.do">時は金なり。パフォーマンスのビジネス価値。</a></em>.

@@ -6,7 +6,7 @@ authors: [ahmadawais]
 reviewers: [MaedahBatool, phacks]
 analysts: [denar90, remotesynth]
 editors: [tunetheweb]
-translators: [ksakae]
+translators: [ksakae1216]
 ahmadawais_bio: Ahmad Awaisは、受賞歴のあるオープンソースエンジニアで、Google Developers Expert Dev Advocate、Node.js Community Committee Outreach Lead、WordPress Core Dev、WGAのエンジニアリングDevRelのVPです。彼は世界中の何百万人もの開発者に利用されている様々なオープンソースのソフトウェアツールを執筆しています。彼の<a hreflang="en" href="https://shadesofpurple.pro/more">Shades of Purple</a>のコードテーマや<a hreflang="en" href=" https://github.com/AhmadAwais/corona-cli">corona-cli</a>のようなプロジェクトのように。Awaisは教えることが大好きです。2万人以上の開発者が彼の<a hreflang="en" href="https://AhmadAwais.com/courses/">コース</a>、つまり<a hreflang="en" href="https://nodecli.com/">Node CLI</a>、<a hreflang="en" href="https://vscode.pro/">VSCode.pro</a>、<a hreflang="en" href="https://nextjsbeginner.com/">Next.js Beginner</a>から学んでいます。Awaisは、<a hreflang="en" href="https://ahmadawais.com/github-stars/">12人のGitHub Stars</a>としてFOSSコミュニティのリーダーシップを評価されました。彼はSmashing Magazine Experts Panelのメンバーであり、CSS-Tricks, Tuts+, Scotch.io, SitePointで特集＆出版された著者です。<a hreflang="en" href="https://awais.dev/odmt">#OneDevMinute</a> 開発者のヒントをツイートしています。
 discuss: 2053
 results: https://docs.google.com/spreadsheets/d/1BCC5Q4tePpTl8TiaGmSxBc9Lh2to7xBfVPMULFOBwvk/
