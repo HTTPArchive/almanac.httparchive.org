@@ -1374,7 +1374,7 @@ CSSでは、非常に具体的なプロパティの集合体が、単一の宣�
    </tbody>
   </table>
   <figcaption>{{ figure_link(
-   caption="font-variant`プロパティを使用しているページ数です。",
+   caption="`font-variant`プロパティを使用しているページ数です。",
    sheets_gid="886194727",
    sql_file="all_properties.sql"
   ) }}</figcaption>
