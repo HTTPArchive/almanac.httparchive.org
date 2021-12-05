@@ -6,7 +6,7 @@ authors: [thefoxis]
 reviewers: [borisschapira, rviscomi, obto, noamr, Zizzamia, exterkamp]
 analysts: [max-ostapenko, dooman87]
 editors: [tunetheweb]
-translators: [ksakae]
+translators: [ksakae1216]
 thefoxis_bio: Karolinaは、<a hreflang="en" href="https://calibreapp.com/">Calibre</a>のプロダクトデザインリーダーとして、最も包括的なスピードモニタリングプラットフォームの開発に取り組んでいます。また、パフォーマンスに関するニュースやリソースをお届けする<a hreflang="en" href="https://perf.email/">Performance Newsletter</a>の編集も担当しています。また、パフォーマンスがユーザー体験に与える影響について、<a hreflang="en" href="https://calibreapp.com/blog/category/web-platform">頻繁に記事を書いています</a>。
 discuss: 2045
 results: https://docs.google.com/spreadsheets/d/164FVuCQ7gPhTWUXJl1av5_hBxjncNi0TK8RnNseNPJQ/
