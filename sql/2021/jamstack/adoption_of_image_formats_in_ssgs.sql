@@ -17,7 +17,7 @@ FROM (
     date = '2021-07-01' AND
     type = 'image')
 JOIN (
-  SELECT
+  SELECT DISTINCT
     _TABLE_SUFFIX AS client,
     url AS page
   FROM

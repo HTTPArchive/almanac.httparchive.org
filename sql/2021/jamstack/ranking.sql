@@ -8,7 +8,7 @@ SELECT
   COUNT(0) AS pages_with_app,
   COUNT(0) / total_in_rank AS pct_pages_with_app
 FROM (
-  SELECT
+  SELECT DISTINCT
     _TABLE_SUFFIX,
     app,
     category,
