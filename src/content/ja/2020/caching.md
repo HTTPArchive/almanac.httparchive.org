@@ -588,7 +588,7 @@ HTTPレスポンスの43.4％がVaryヘッダーを使用しており、その�
 たとえば、ログインCookieやセッションCookieがCDNのキャッシュされたオブジェクトに存在する場合、そのCookieは他のクライアントによって再利用される可能性があります。これを避けるための主な方法は、サーバーが`Cache-Control: private`ディレクティブを送信することです。
 
 {{ figure_markup(
-  image="set-Cookie-usage-on-cacheable-responses.png",
+  image="set-cookie-usage-on-cacheable-responses.png",
   caption="キャッシュ可能なレスポンスの`Set-Cookie`。",
   description="キャッシュ可能なレスポンスにおける`Set-Cookie`の使用状況を示す棒グラフ。キャッシュ可能なデスクトップ向けレスポンスの41.4％、モバイル向けレスポンスの40.4％が`Set-Cookie`ヘッダーを含んでいます。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvridledKYJT8mHVVa5-x_TllkwbPsOaDg66iMWafxJq-KSLLfSHUaA6VoMyLnp9FFJ48vePGpiWQ5/pubchart?oid=1106475158&format=interactive",
