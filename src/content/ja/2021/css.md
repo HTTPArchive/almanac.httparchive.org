@@ -23,9 +23,9 @@ featured_stat_label_3: カスタムプロパティを使用しているページ
 
 CSS（Cascading Style Sheets）は、ウェブ上のページを構築するための3本柱のひとつで、構造を定義するためのHTML、動作やインタラクションを指定するためのJavaScriptと合わせて、三位一体となっています。
 
-2021年版のWeb Almanacでは、前回と比較して、CSSの使い方が「必要だと思うもの」、「実際に制作現場で目にするもの」の領域でどのように異なるかをより深く理解できます。CSSの機能をより強固にすることや、CSSで`<div>`を中央に配置することへの挑戦がブログやカンファレンスでの発言、Twitterでの発言などで話題になっていましたが、ウェブ上のページでは、まったく相反する結果が示されていました。これはCSSが十分な年齢になったことで、奇抜なおもちゃに、夢中になるのではなく、安定した状態を維持することに重きを置くようになったという事実を裏付けています。
+2021年版のWeb Almanacでは、前回と比較して、CSSの使い方が「必要だと思うもの」「実際に制作現場で目にするもの」の領域でどのように異なるかをより深く理解できます。CSSの機能をより強固にすることや、CSSで`<div>`を中央に配置することへの挑戦がブログやカンファレンスでの発言、Twitterでの発言などで話題になっていましたが、ウェブ上のページでは、まったく相反する結果が示されていました。これはCSSが十分な年齢になったことで、奇抜なおもちゃに、夢中になるのではなく、安定した状態を維持することに重きを置くようになったという事実を裏付けています。
 
-CSS-in-JSの採用は、クロールされた全ページの3％（昨年比1％増）にまで増加しましたが、最先端のHoudiniの機能は、まだほとんどがチュートリアルやサンプルギャラリーに限られています。レスポンシブ対応は、引き続きもっとも関心の高い優先事項の1つであり、`max-width`と`min-width`はトップのメディアクエリであり、「calc()」は幅を決定するためにもっともよく使用されるCSS関数である。
+CSS-in-JSの採用は、クロールされた全ページの3％（昨年比1％増）にまで増加しましたが、最先端のHoudiniの機能は、まだほとんどがチュートリアルやサンプルギャラリーに限られています。レスポンシブ対応は、引き続きもっとも関心の高い優先事項の1つであり、`max-width`と`min-width`はトップのメディアクエリであり、「calc()」は幅を決定するためにもっともよく使用されるCSS関数です。
 
 ユーザーがウェブに集まり続ける中、第二の故郷、ワークスペース、ガレージ、ウサギの穴のような場所であるインターネットを、私たちがどのように描いてきたのかを知るためのデータに飛び込んでみましょう。
 
@@ -34,13 +34,13 @@ CSS-in-JSの採用は、クロールされた全ページの3％（昨年比1％
 {{ figure_markup(
   image="stylesheet-transfer-size.png",
   caption="ページごとのスタイルシート転送サイズの分布",
-  description="1ページのスタイルシートの総重量の10、25、50、75、90パーセンタイルの中央値を示したペアの列挙図。数値は以下の通りです。10パーセンタイルは、デスクトップで9キロバイト、モバイルで6キロバイト。25パーセンタイルでは、デスクトップが31KB、モバイルが27KB。50パーセンタイル、デスクトップが71KB、モバイルが66KB。75パーセンタイル、デスクトップ142キロバイト、モバイル135キロバイト。90パーセンタイル、デスクトップ257キロバイト、モバイル250キロバイト。",
+  description="1ページのスタイルシートの総重量の10、25、50、75、90パーセンタイルの中央値を示したペアの列挙図。数値は以下の通りです。10パーセンタイルは、デスクトップでKB、モバイルで6KB。25パーセンタイルでは、デスクトップが31KB、モバイルが27KB。50パーセンタイル、デスクトップが71KB、モバイルが66KB。75パーセンタイル、デスクトップ142KB、モバイル135KB。90パーセンタイル、デスクトップ257KB、モバイル250KB。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=900703452&format=interactive",
   sheets_gid="350963758",
   sql_file="stylesheet_kbytes.sql"
 ) }}
 
-CSSはほとんどのページでもっとも重いコンポーネントではありませんが、ウェブの他の部分と同様に、年々そのサイズは増加し続けています。ウェブページの中央値では約70キロバイトのCSSがロードされ、上限値では平均4分の1メガバイト強となっています。2020年と比較すると、CSSの総重量の中央値は約7.9%増加し、90パーセンタイルは7%弱増加していますが、すべてのパーセンタイルでモバイルCSSがデスクトップCSSよりも少し小さいという昨年のパターンは維持されています。
+CSSはほとんどのページでもっとも重いコンポーネントではありませんが、ウェブの他の部分と同様に、年々そのサイズは増加し続けています。ウェブページの中央値では約7KBのCSSがロードされ、上限値では平均4分のMB強となっています。2020年と比較すると、CSSの総重量の中央値は約7.9％増加し、90パーセンタイルは7％弱増加していますが、すべてのパーセンタイルでモバイルCSSがデスクトップCSSよりも少し小さいという昨年のパターンは維持されています。
 
 すべてのページがこのような制約を受けたわけではありません。最大のCSSウエイトを持つページでは、64,628KBの負荷がかかりました。それに比べて、モバイル用の最大のCSSウェイトはわずか17,823KBと、非常にスリムな印象を受けます。
 
@@ -114,7 +114,7 @@ CSSはほとんどのページでもっとも重いコンポーネントでは�
   sql_file="selectors.sql"
 ) }}
 
-スタイルシートの数は重要ですが、実際のスタイルルールの数はどうでしょうか？昨年と比較すると、下位のパーセンタイルは少し増加していますが、上位のパーセンタイルはほとんど変化していません。2021年と2020年で異なるのは、ほぼすべてのパーセンタイルにおいて、デスクトップページの方がモバイルページよりも平均してルール数が多いということです。
+スタイルシートの数は重要ですが、実際のスタイルルールの数はどうでしょうか？　昨年と比較すると、下位のパーセンタイルは少し増加していますが、上位のパーセンタイルはほとんど変化していません。2021年と2020年で異なるのは、ほぼすべてのパーセンタイルにおいて、デスクトップページの方がモバイルページよりも平均してルール数が多いということです。
 
 ## セレクターとカスケード
 
@@ -127,7 +127,7 @@ CSSには、クラス、ID、そしてスタイルの重複を避けるために
 {{ figure_markup(
   image="most-popular-class-names.png",
   caption="もっとも人気のあるクラス名。",
-  description="もっとも人気があるクラス名を示したグラフで、モバイルでのシェア率を示しています。デスクトップ用のバーは、すべてモバイル用のバーから1～2パーセント以内に収まっています。リストは以下の通りで、値は与えられたクラス名を含む全ページの割合を示しています。`active` 42%; `fa` 32%; `fa-*` 32%, `pull-right` 29%, `pull-left` 28%, `disabled` 24%, `selected` 22%, `button` 22%, `container` 20%, `wp-*` 20%, `sr-only` 20%, `title` 20%, `btn` 19%, `sr-only-focusable` 19%, `clearfix` 17%, `current` 16%, `right` 16%, `rtl` 15%, `widget` 15%, `row` 15%。",
+  description="もっとも人気があるクラス名を示したグラフで、モバイルでのシェア率を示しています。デスクトップ用のバーは、すべてモバイル用のバーから1～2パーセント以内に収まっています。リストは以下の通りで、値は与えられたクラス名を含む全ページの割合を示しています。`active` 42％; `fa` 32％; `fa-*` 32％、`pull-right` 29％、`pull-left` 28％、`disabled` 24％、`selected` 22％、`button` 22％、`container` 20％、`wp-*` 20％、`sr-only` 20％、`title` 20％、`btn` 19％、`sr-only-focusable` 19％、`clearfix` 17％、`current` 16％、`right` 16％、`rtl` 15％、`widget` 15％、`row` 15％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1533988979&format=interactive",
   width=600,
   height=691,
@@ -144,7 +144,7 @@ CSSには、クラス、ID、そしてスタイルの重複を避けるために
 {{ figure_markup(
   image="most-popular-id-names.png",
   caption="もっとも人気のあるID名。",
-  description="もっとも人気があるID名を示したグラフで、モバイルでのシェア率を示しています。デスクトップ用のバーは、すべてモバイル用のバーから1～2パーセント以内に収まっています。リストは以下の通りで、値は指定されたID名を含む全ページの割合を示しています: `content` 14%, `footer` 11%, `header` 10%, `logo` 7%, `rc-imageselect` 7%, `comments` 7%, `main` 7%, `rc-anchor-alert` 7%, `rc-anchor-over-quota` 7%, `rc-anchor-invisible-over` 7%。",
+  description="もっとも人気があるID名を示したグラフで、モバイルでのシェア率を示しています。デスクトップ用のバーは、すべてモバイル用のバーから1～2パーセント以内に収まっています。リストは以下の通りで、値は指定されたID名を含む全ページの割合を示しています: `content` 14％、`footer` 11％、`header` 10％、`logo` 7％、`rc-imageselect` 7％、`comments` 7％、`main` 7％、`rc-anchor-alert` 7％、`rc-anchor-over-quota` 7％、`rc-anchor-invisible-over` 7％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=609865919&format=interactive",
   width=600,
   height=497,
@@ -152,7 +152,7 @@ CSSには、クラス、ID、そしてスタイルの重複を避けるために
   sql_file="top_selector_ids.sql"
 ) }}
 
-ページは引き続きIDを使用しており、その割合は2020年に見られたものとほぼ同じです。人気のあるID名のリストも一貫しています。"content"が約14%でトップに立ち、"footer"と "header"がそれに続きます。後者の2つのIDは、昨年に比べて約1％減少していますが、これだけで決定的なことは言えず、開発者は可能な限り対応するHTML要素の`<header>`と`<footer>`に置き換えるべきでしょう。
+ページは引き続きIDを使用しており、その割合は2020年に見られたものとほぼ同じです。人気のあるID名のリストも一貫しています。"content"が約14％でトップに立ち、"footer"と "header"がそれに続きます。後者の2つのIDは、昨年に比べて約1％減少していますが、これだけで決定的なことは言えず、開発者は可能な限り対応するHTML要素の`<header>`と`<footer>`に置き換えるべきでしょう。
 
 `rc-`で始まるIDは、GoogleのreCAPTCHAシステムの一部であり、そのほとんどのバージョンは、<a hreflang="en" href="https://www.w3.org/TR/turingtest/#the-google-recaptcha">さまざまな方法でアクセスできません</a>。
 
@@ -161,7 +161,7 @@ CSSには、クラス、ID、そしてスタイルの重複を避けるために
 {{ figure_markup(
   image="most-popular-attribute-selectors.png",
   caption="もっともポピュラーな属性セレクターです。",
-  description="属性セレクターで選択されるもっとも人気のある属性を、使用率48%から使用率3%までの人気の高い順に並べたチャート。リストは以下の通りです。`type`, `class`, `disabled`, `dir`, `title`, `hidden`, `aria-disabled`, `role`, `href`, `controls`, `src`, `style`, `data-type`, `lang`, `xmlns`, `id`, `data-align`, `poster`, `name`, `readonly`.",
+  description="属性セレクターで選択されるもっとも人気のある属性を、使用率48％から使用率3％までの人気の高い順に並べたチャート。リストは以下の通りです。`type`, `class`, `disabled`, `dir`, `title`, `hidden`, `aria-disabled`, `role`, `href`, `controls`, `src`, `style`, `data-type`, `lang`, `xmlns`, `id`, `data-align`, `poster`, `name`, `readonly`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1836678858&format=interactive",
   sheets_gid="942534767",
   sql_file="top_selector_attributes.sql"
@@ -171,18 +171,18 @@ CSSには、クラス、ID、そしてスタイルの重複を避けるために
 
 ### 擬似的なクラスと要素
 
-擬似クラス、擬似エレメントともに、順位や分布は2020年のWeb Almanacから大きく変わっていませんでした。いくつかの順位は変わりましたが、全体的にはほとんど変化がないようです。これが常識の定着を示しているのか、デザイナーの関心事のスナップショットを示しているのか、あるいは単に分析の性質を示しているのかは議論の余地があります。
+擬似クラス、擬似要素ともに、順位や分布は2020年のWeb Almanacから大きく変わっていませんでした。いくつかの順位は変わりましたが、全体的にはほとんど変化がないようです。これが常識の定着を示しているのか、デザイナーの関心事のスナップショットを示しているのか、あるいは単に分析の性質を示しているのかは議論の余地があります。
 
 {{ figure_markup(
   image="most-popular-pseudo-classes.png",
   caption="もっともポピュラーな疑似クラスです。",
-  description="もっとも人気のある疑似クラスを、使用率85%から使用率12%までの人気の高い順に並べたチャート。リストは以下の通りです。`hover`, `focus`, `active`, `first-child`, `last-child`, `not`, `visited`, `root`, `nth-child`, `link`, `disabled`, `empty`, `checked`, `-ms-input`, `last-of-type`。",
+  description="もっとも人気のある疑似クラスを、使用率85％から使用率12％までの人気の高い順に並べたチャート。リストは以下の通りです。`hover`, `focus`, `active`, `first-child`, `last-child`, `not`, `visited`, `root`, `nth-child`, `link`, `disabled`, `empty`, `checked`, `-ms-input`, `last-of-type`。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1619223389&format=interactive",
   sheets_gid="843054585",
   sql_file="top_selector_pseudo_classes.sql"
 ) }}
 
-2020年と同様に、ユーザーアクション擬似クラスの `:hover`, `:focus`, `:active` がトップ3を占め、いずれも全ページの3分の2以上に登場しています。構造的な擬似クラスも数多く登場しましたが、もっとも興味深い変化は、否定の擬似クラスである `:not()` が `:visited` よりも人気を博し、ページの50%のシェアを獲得したことです。
+2020年と同様に、ユーザーアクション擬似クラスの `:hover`, `:focus`, `:active` がトップ3を占め、いずれも全ページの3分の2以上に登場しています。構造的な擬似クラスも数多く登場しましたが、もっとも興味深い変化は、否定の擬似クラスである `:not()` は `:visited` よりも人気を博し、ページの50％のシェアを獲得したことです。
 
 今年、とくにチェックしたのは、[`:focus-visible`という、フォーカスされた要素をユーザーの期待に合うようにスタイルする方法](https://developer.mozilla.org/ja/docs/Web/CSS/:focus-visible)の使用です。この機能は、2020年にChromiumへ搭載され、2021年1月にはFirefoxに搭載され、（発表時点では）Safari 15で実験的なフラグを立てて利用できるようになっています。最近の導入状況を反映してか、分析したページの1％未満にしか登場しませんでした。この数字が今後数年間で変化するかどうかが注目されます。
 
@@ -196,14 +196,14 @@ CSSには、クラス、ID、そしてスタイルの重複を避けるために
   sql_file="top_selector_pseudo_elements.sql"
 ) }}
 
-現在使用されている擬似要素のほとんどは、特定のインターフェイスコンポーネント、chromeの一部、またはハイライトされたテキストなどを選択するためのブラウザ固有の方法です。これらを除外すると、`::first-letter`が使用されているページは非常に少ないことがわかりますが、それでも`::first-line`よりは多くのページで使用されていることがわかります。`::marker` は、箇条書きやカウンターのようなリストアイテムのマーカーを順序付きリストとして選択する方法で、ページシェアは1%にも満たないが、それでもリストに入っています。ここで注意すべきなのは、`::marker`のクロスブラウザサポートは、<a hreflang="en" href="https://caniuse.com/css-marker-pseudo">比較的新しい</a>ということです（2020年10月）。今後数年間で利用者が増えるかどうかが注目されます。
+現在使用されている擬似要素のほとんどは、特定のインタフェースコンポーネント、chromeの一部、またはハイライトされたテキストなどを選択するためのブラウザ固有の方法です。これらを除外すると、`::first-letter`が使用されているページは非常に少ないことがわかりますが、それでも`::first-line`よりは多くのページで使用されていることがわかります。`::marker` は、箇条書きやカウンターのようなリストアイテムのマーカーを順序付きリストとして選択する方法で、ページシェアは1％にも満たないが、リストに入っています。ここで注意すべきなのは、`::marker`のクロスブラウザサポートは、<a hreflang="en" href="https://caniuse.com/css-marker-pseudo">比較的新しい</a>ということです（2020年10月）。今後数年間で利用者が増えるかどうかが注目されます。
 
 ### `!important`
 
 {{ figure_markup(
   image="important-properties-per-page.png",
   caption="`!important`を使ったページルールの割合の分布。",
-  description="`!important`キーワードで重要とされたプロパティの割合の10、25、50、75、90パーセンタイルの中央値を示したペアの列挙図。その結果は以下の通りです。10パーセンタイルは、デスクトップ、モバイルともに0％。25パーセンタイル、デスクトップとモバイルの両方で1%。50パーセンタイル、デスクトップとモバイルの両方で2%。75パーセンタイル、デスクトップとモバイルの両方で4％。90パーセンタイル、デスクトップとモバイルの両方で8％。",
+  description="`!important`キーワードで重要とされたプロパティの割合の10、25、50、75、90パーセンタイルの中央値を示したペアの列挙図。その結果は以下の通りです。10パーセンタイルは、デスクトップ、モバイルともに0％。25パーセンタイル、デスクトップとモバイルの両方で1％。50パーセンタイル、デスクトップとモバイルの両方で2％。75パーセンタイル、デスクトップとモバイルの両方で4％。90パーセンタイル、デスクトップとモバイルの両方で8％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1184051032&format=interactive",
   sheets_gid="1176732383",
   sql_file="meta_important_adoption.sql"
@@ -218,7 +218,7 @@ CSSには、クラス、ID、そしてスタイルの重複を避けるために
 {{ figure_markup(
   image="top-important-properties.png",
   caption="`!important`の対象となるもっとも人気のあるプロパティです。",
-  description="`!important`キーワードで重要とされる可能性の高いプロパティを、そのようにマークされたプロパティを含むすべてのページのパーセンテージで表したグラフです。値はモバイル用のみですが、デスクトップ用のバーはすべてモバイル用のバーから1～2パーセント以内に収まっています。そのリストは以下の通りです。`display` 81% of pages, `color` 74% of pages, `width` 72%, `height` 70%, `background` 69%, `padding` 69%, `margin` 67%, `border` 66%, `background-color` 65%, `position` 61%.",
+  description="`!important`キーワードで重要とされる可能性の高いプロパティを、そのようにマークされたプロパティを含むすべてのページのパーセンテージで表したグラフです。値はモバイル用のみですが、デスクトップ用のバーはすべてモバイル用のバーから1～2パーセント以内に収まっています。そのリストは以下の通りです。`display` 81％ of pages, `color` 74％ of pages, `width` 72％、`height` 70％、`background` 69％、`padding` 69％、`margin` 67％、`border` 66％、`background-color` 65％、`position` 61％.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=905910904&format=interactive",
   sheets_gid="1381789151",
   sql_file="meta_important_properties.sql"
@@ -270,7 +270,7 @@ CSSには、クラス、ID、そしてスタイルの重複を避けるために
   ) }}</figcaption>
 </figure>
 
-多くのCSSメソドロジーでは、作者が単一のクラスに限定することを推奨しています。これは、すべてのセレクターの特異性を、より管理しやすい単一のレイヤーに押し込めるためです。たとえば、<a hreflang="en" href="https://en.bem.info/methodology/css/">BEMの手法</a>は、全ページの34%に見られました。セレクターの特異性の中央値の10パーセンタイルは、デスクトップとモバイルの両方の特異性の平均値が（0,1,0）であることから、この種の考え方のさらなる証拠を示しています。これは昨年の調査結果と同様で、ほぼすべての中央値が一致しています。ただし、モバイルの25パーセンタイルは若干上昇しています。
+多くのCSSメソドロジーでは、作者が単一のクラスに限定することを推奨しています。これは、すべてのセレクターの特異性を、より管理しやすい単一のレイヤーに押し込めるためです。たとえば、<a hreflang="en" href="https://en.bem.info/methodology/css/">BEMの手法</a>は、全ページの34％に見られました。セレクターの特異性の中央値の10パーセンタイルは、デスクトップとモバイルの両方の特異性の平均値が（0,1,0）であることから、この種の考え方のさらなる証拠を示しています。これは昨年の調査結果と同様で、ほぼすべての中央値が一致しています。ただし、モバイルの25パーセンタイルは若干上昇しています。
 
 ## 値と単位
 
@@ -281,7 +281,7 @@ CSSには、値や単位を指定する方法が複数用意されており、�
 {{ figure_markup(
   image="most-popular-length-units.png",
   caption="もっともポピュラーな長さの単位です。",
-  description="長さの値に使われるもっとも一般的な単位を示したペアの列のチャートです。その結果は以下の通りです。`px`（ピクセル）デスクトップ、モバイルともに71％。`%`（パーセンテージ）デスクトップで17％、モバイルで18％。`em`（m単位）デスクトップ、モバイルともに9％。`rem` (root-relative `em`) デスクトップとモバイルの両方で2%。",
+  description="長さの値に使われるもっとも一般的な単位を示したペアの列のチャートです。その結果は以下の通りです。`px`（ピクセル）デスクトップ、モバイルともに71％。`%`（パーセンテージ）デスクトップで17％、モバイルで18％。`em`（m単位）デスクトップ、モバイルともに9％。`rem` (root-relative `em`) デスクトップとモバイルの両方で2％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1920968690&format=interactive",
   sheets_gid="529909801",
   sql_file="units_frequency.sql"
@@ -438,7 +438,7 @@ CSSには、値や単位を指定する方法が複数用意されており、�
 {{ figure_markup(
   image="zero-lengths-by-unit.png",
   caption="ゼロ長の値に使用される単位（またはその欠如）。",
-  description="次のような結果の円グラフです。単位のないゼロ値87.8%、`0px`（ピクセル）11.6%、その他0.6%。",
+  description="次のような結果の円グラフです。単位のないゼロ値87.8％、`0px`（ピクセル）11.6％、その他0.6％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=758334535&format=interactive",
   sheets_gid="2139699206",
   sql_file="units_zero.sql"
@@ -451,7 +451,7 @@ CSSには、値や単位を指定する方法が複数用意されており、�
 {{ figure_markup(
   image="most-popular-properties-using-calc.png",
   caption="`calc()`関数を使った代表的なプロパティです。",
-  description="対になっている列のチャートで、値はモバイル用にしか示されていませんが、デスクトップ用のバーはすべてモバイル用のバーから1～2パーセント以内に収まっています。リストは以下の通りです。`width` 39%, `left` 18%, `top` 7%, `height` 5%, `max-width` 5%, `min-height` 3%, `margin-left` 3%, `margin-right` 3%, `max-height` 2%, `right` 2%, `padding-bottom` 1%, `flex-basis` 1%, `padding-left` 1%, `font-size` 1%, `margin-top` 1%。",
+  description="対になっている列のチャートで、値はモバイル用にしか示されていませんが、デスクトップ用のバーはすべてモバイル用のバーから1～2パーセント以内に収まっています。リストは以下の通りです。`width` 39％、`left` 18％、`top` 7％、`height` 5％、`max-width` 5％、`min-height` 3％、`margin-left` 3％、`margin-right` 3％、`max-height` 2％、`right` 2％、`padding-bottom` 1％、`flex-basis` 1％、`padding-left` 1％、`font-size` 1％、`margin-top` 1％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=907378413&format=interactive",
   sheets_gid="212269204",
   sql_file="calc_properties.sql"
@@ -473,7 +473,7 @@ CSSには、値や単位を指定する方法が複数用意されており、�
 {{ figure_markup(
   image="most-popular-operators-using-calc.png",
   caption="関数`calc()`で使われる代表的な演算子です。",
-  description="対になっている列のチャートで、値はモバイル用にしか示されていませんが、デスクトップ用のバーはすべてモバイル用のバーから1～2パーセント以内に収まっています。リストは以下の通りです。`-` 61%. `+` 18%, `/`（除算）14%, `*`（乗算）7%.",
+  description="対になっている列のチャートで、値はモバイル用にしか示されていませんが、デスクトップ用のバーはすべてモバイル用のバーから1～2パーセント以内に収まっています。リストは以下の通りです。`-` 61％. `+` 18％、`/`（除算）14％、`*`（乗算）7％.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1708226150&format=interactive",
   sheets_gid="464539022",
   sql_file="calc_operators.sql"
@@ -484,13 +484,13 @@ CSSには、値や単位を指定する方法が複数用意されており、�
 {{ figure_markup(
   image="units-per-calc-occurence.png",
   caption="関数`calc()`で使用されるユニークなユニットの数です。",
-  description="対になっている列のチャートで、値はモバイル用にしか示されていませんが、デスクトップ用のバーはすべてモバイル用のバーから1～2パーセント以内に収まっています。リストは以下の通りです。ユニットタイプ1つ、16%。2種類のユニットタイプ、82%。3種類以上のユニットタイプ、1%。",
+  description="対になっている列のチャートで、値はモバイル用にしか示されていませんが、デスクトップ用のバーはすべてモバイル用のバーから1～2パーセント以内に収まっています。リストは以下の通りです。ユニットタイプ1つ、16％。2種類のユニットタイプ、82％。3種類以上のユニットタイプ、1％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=276182784&format=interactive",
   sheets_gid="856430777",
   sql_file="calc_complexity_units.sql"
 ) }}
 
-`calc()`の値は比較的シンプルで、パーセント値の計算結果からピクセルを引くなど、2つの異なる単位を使った計算が圧倒的に多いです。全`calc()`式の99%は、1種類または2種類の単位を使用しています。
+`calc()`の値は比較的シンプルで、パーセント値の計算結果からピクセルを引くなど、2つの異なる単位を使った計算が圧倒的に多いです。全`calc()`式の99％は、1種類または2種類の単位を使用しています。
 
 ### グローバルキーワード
 
@@ -510,7 +510,7 @@ CSSには、値や単位を指定する方法が複数用意されており、�
 {{ figure_markup(
   image="most-popular-color-formats.png",
   caption="もっとも一般的なカラーバリューのフォーマットです。",
-  description="使用されているカラーシンタックスフォーマットを、カラー値の全出現回数に対する割合で示した対になった列のチャートです。数値はモバイル用のみですが、デスクトップ用のバーはすべてモバイル用のバーよりも1～2パーセント以内に収まっています。リストは以下の通りです。`#rrggbb` 50%、`#rgb` 25%、`rgba()` 14%、`transparent` 8%、`namedColor` 1% です。その先の残りの値は0％で表示され、以下の順番で表示されます。`rgb()`, `hsla()`, `#rrggbbaa`, `currentColor`, `system`, `hsl()`, `#rgba`, `color()` の順になります。",
+  description="使用されているカラーシンタックスフォーマットを、カラー値の全出現回数に対する割合で示した対になった列のチャートです。数値はモバイル用のみですが、デスクトップ用のバーはすべてモバイル用のバーよりも1～2パーセント以内に収まっています。リストは以下の通りです。`#rrggbb` 50％、`#rgb` 25％、`rgba()` 14％、`transparent` 8％、`namedColor` 1％ です。その先の残りの値は0％で表示され、以下の順番で表示されます。`rgb()`, `hsla()`, `#rrggbbaa`, `currentColor`, `system`, `hsl()`, `#rgba`, `color()` の順になります。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=936970618&format=interactive",
   sheets_gid="2108707108",
   sql_file="color_formats.sql"
@@ -518,7 +518,7 @@ CSSには、値や単位を指定する方法が複数用意されており、�
 
 さまざまな色の値の種類があるにもかかわらず、Netscape 1.1の時代から使われている`#RRGGBB`という構文が、色の宣言の半分に使われています。2位はCSSの革新的な`#RGB`略記法で、カラーバリューの4分の1を占めています。言い換えれば、すべての色の値の75％は、16進数のRGB構文で表現されているということです。第3位の`rgba()`というフォーマットは、作者が古典的な16進法のフォーマットを超える理由を示しています：アルファ値にアクセスするためです。(実際、どちらのシェアも小さいですが、`hsla()`は`hsl()`よりも人気があり、`rgba()`が普通の`rgb()`よりもはるかに一般的であるのと同じです。)
 
-たとえば、`rgba(0, 0, 0, 1)`のように、これまで機能的な構文の中で値にカンマが使われていたカラーフォーマットでは、著者はカンマを削除し、スラッシュでカラーとアルファを分けることができるようになりました（例：`rgb(0 0 / 1)`）。2020年以降、このカンマなしの構文の使用率は倍増し、機能的な色の構文全体の0.12%から0.25%になりました。
+たとえば`rgba(0, 0, 0, 1)`のように、これまで機能的な構文の中で値にカンマが使われていたカラーフォーマットでは、著者はカンマを削除し、スラッシュでカラーとアルファを分けることができるようになりました（例：`rgb(0 0 / 1)`）。2020年以降、このカンマなしの構文の使用率は倍増し、機能的な色の構文全体の0.12％から0.25％になりました。
 
 <figure>
   <table>
@@ -660,13 +660,13 @@ CSSには、値や単位を指定する方法が複数用意されており、�
   ) }}</figcaption>
 </figure>
 
-色の名前領域では、依然として`transparent`が圧倒的な人気を誇っており、色の名前キーワード全体の約82%を占めています。おなじみの`white`、`black`、`red`は約12％で、`currentColor`は2020年と比べて0.5％の増加で5位となっています。
+色の名前領域では、依然として`transparent`が圧倒的な人気を誇っており、色の名前キーワード全体の約82％を占めています。おなじみの`white`、`black`、`red`は約12％で、`currentColor`は2020年と比べて0.5％の増加で5位となっています。
 
-昨年のWeb Almanacでは、「`Canvas` や `ThreeDDarkShadow` など、かつては非推奨であったが、現在は部分的に非推奨ではなくなったシステムカラー」が、かろうじて使用されているという記述がありました。これは今でも正しいのですが、奇妙なことに、トップ20にはこのような値が1つ（`Highlight`）ではなく2つあります。とはいえ、どちらもごくわずかなページ数の領域での出来事なので、このような変化は目立たないでしょう。
+昨年のWeb Almanacでは「`Canvas` や `ThreeDDarkShadow` など、かつては非推奨であったが、現在は部分的に非推奨ではなくなったシステムカラー」が、かろうじて使用されているという記述がありました。これは今でも正しいのですが、奇妙なことに、トップ20にはこのような値が1つ（`Highlight`）ではなく2つあります。とはいえ、どちらもごくわずかなページ数の領域での出来事なので、このような変化は目立たないでしょう。
 
 {{ figure_markup(
   caption="display-p3の色のうち、sRGB空間外にある色の割合。",
-  content="79%",
+  content="79％",
   classes="big-number",
   sheets_gid="721597121",
   sql_file="color_p3.sql"
@@ -676,7 +676,7 @@ display-p3色空間の使用率は、2020年に発見された時と同様に、
 
 ## イメージ
 
-「百聞は一見にしかず」と言いますが、バイト換算すると一桁も二桁も高いことが、多いのが画像です。JavaScriptで画像を埋め込んだり、HTMLで画像を埋め込んだりと、さまざまなアプローチがありますが、ここではCSSで読み込んだ画像がどのように使われているかを見てみました。
+「百聞は一見にしかず」と言いますが、バイト換算すると一桁も、二桁も高いことが、多いのが画像です。JavaScriptで画像を埋め込んだり、HTMLで画像を埋め込んだりと、さまざまなアプローチがありますが、ここではCSSで読み込んだ画像がどのように使われているかを見てみました。
 
 ### CSSにおける画像のフォーマット
 
@@ -685,13 +685,13 @@ display-p3色空間の使用率は、2020年に発見された時と同様に、
 {{ figure_markup(
   image="css-initiated-image-formats.png",
   caption="CSSで読み込んだ外部画像のフォーマット分布。",
-  description="次のような結果の円グラフです。PNG 44.1%、GIF 18.3%、SVG 17.2%、JPG 16.4%、WEBP 3.7%。",
+  description="次のような結果の円グラフです。PNG 44.1％、GIF 18.3％、SVG 17.2％、JPG 16.4％、WebP 3.7％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=868556131&format=interactive",
   sheets_gid="1133067574",
   sql_file="image_formats.sql"
 ) }}
 
-PNGが圧倒的な人気を誇り、GIF、SVG、JPGが驚くほど僅差で続いています。かなり新しいWEBPフォーマットは、CSSで読み込まれる画像の3.7%しか占めておらず、一番上の小さなスライスは、認識されない値とICOフォーマットに対応しています。
+PNGが圧倒的な人気を誇り、GIF、SVG、JPGが驚くほど僅差で続いています。かなり新しいWebPフォーマットは、CSSで読み込まれる画像の3.7％しか占めておらず、一番上の小さなスライスは、認識されない値とICOフォーマットに対応しています。
 
 また、アニメーションの有無については確認していません。
 
@@ -734,7 +734,7 @@ PNGが圧倒的な人気を誇り、GIF、SVG、JPGが驚くほど僅差で続�
   sql_file="image_weights.sql"
 ) }}
 
-中央のページのCSSによる画像の読み込みは、合計16KBほどでした。また、CSSによるモバイルの画像読み込み量は、デスクトップに比べて全体的に一貫してやや少なめで、CSS開発者がモバイルのコンテクストの制限を多少なりとも念頭に置いていることがうかがえます。
+中央のページのCSSによる画像の読み込みは、合計16KBほどでした。また、CSSによるモバイルの画像読み込み量は、デスクトップに比べて全体的に一貫してやや少なめで、CSS開発者がモバイルのコンテキストの制限を多少なりとも念頭に置いていることがうかがえます。
 
 {{ figure_markup(
   caption="CSSで読み込まれたイメージのもっとも重い総量をKBで表しています。",
@@ -744,7 +744,7 @@ PNGが圧倒的な人気を誇り、GIF、SVG、JPGが驚くほど僅差で続�
   sql_file="image_weights.sql"
 ) }}
 
-たまにはね。CSSで読み込まれた画像の総重量が314,386.1KBと、1ギガバイトの3分の1という膨大な量になっているページがありました。
+たまにはね。CSSで読み込まれた画像の総重量が314,386.1KBと、GBの3分の1という膨大な量になっているページがありました。
 
 <figure>
   <table>
@@ -874,7 +874,7 @@ CSSグラデーションを使用しているページの割合は、昨年と�
 {{ figure_markup(
   image="most-popular-unprefixed-gradient-functions.png",
   caption="グラデーション画像の値の中でももっともポピュラーなタイプです。",
-  description="対になっている列のチャートで、値はモバイル用にしか示されていませんが、デスクトップ用のバーはすべてモバイル用のバーから1～2パーセント以内に収まっています。リストは以下の通りです。`linear-gradient` 74.3%、`radial-gradient` 14.5%、`repeating-linear-gradient` 3.7%、`repeating-radial-gradient` 0.1%、`conic-gradient` 0%、`repeating-conic-gradient` 0%。",
+  description="対になっている列のチャートで、値はモバイル用にしか示されていませんが、デスクトップ用のバーはすべてモバイル用のバーから1～2パーセント以内に収まっています。リストは以下の通りです。`linear-gradient` 74.3％、`radial-gradient` 14.5％、`repeating-linear-gradient` 3.7％、`repeating-radial-gradient` 0.1％、`conic-gradient` 0％、`repeating-conic-gradient` 0％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=2004838082&format=interactive",
   sheets_gid="1135532290",
   sql_file="gradient_functions.sql"
@@ -908,16 +908,16 @@ CSSグラデーションを使用しているページの割合は、昨年と�
 {{ figure_markup(
   image="top-layout-methods.png",
   caption="もっとも一般的に宣言されているレイアウトタイプです。",
-  description="対になっている列のチャートで、値はモバイル用にしか示されていませんが、デスクトップ用のバーはすべてモバイル用のバーから1～2パーセント以内に収まっています。リストは以下の通りです。`absolute` 93%, `block` 93%, `inline-block` 91%, `floats` 91%, `inline` 82%, `fixed` 82%, `css-tables` 81%, `flex` 74%, `box` 50%, `inline-flex` 39%, `grid` 36%, `list-item` 29%, `inline-table` 23%, `inline-box` 22%, `stick` 17%, `inline-grid` 12%, `none` 8%, `flexbox` 8%, `inline-stack` 5%, `contents` 5%, `auto` 2%。",
+  description="対になっている列のチャートで、値はモバイル用にしか示されていませんが、デスクトップ用のバーはすべてモバイル用のバーから1～2パーセント以内に収まっています。リストは以下の通りです。`absolute` 93％、`block` 93％、`inline-block` 91％、`floats` 91％、`inline` 82％、`fixed` 82％、`css-tables` 81％、`flex` 74％、`box` 50％、`inline-flex` 39％、`grid` 36％、`list-item` 29％、`inline-table` 23％、`inline-box` 22％、`stick` 17％、`inline-grid` 12％、`none` 8％、`flexbox` 8％、`inline-stack` 5％、`contents` 5％、`auto` 2％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1090750625&format=interactive",
   height=756,
   sheets_gid="1349743417",
   sql_file="layout_properties.sql"
 ) }}
 
-分析したページの93%が絶対配置を使ってレイアウトされていると主張しているわけではありません。分析したページの93%が絶対配置でレイアウトされていると主張しているわけではありません！むしろ、このチャートが示しているのは、分析したページの93%のスタイルに`position: absolute`が登場しているということです。同様に、`display: grid`が36%のページのスタイルに登場しているかもしれませんが、それは全ページの37%がGridページであることを意味するものではなく、単にスタイルシートのどこかにこの組み合わせが登場しているということです。
+分析したページの93％が絶対配置を使ってレイアウトされていると主張しているわけではありません。分析したページの93％が絶対配置でレイアウトされていると主張しているわけではありません！　むしろ、このチャートが示しているのは、分析したページの93％のスタイルに`position: absolute`が登場しているということです。同様に、`display: grid`が36％のページのスタイルに登場しているかもしれませんが、それは全ページの37％がGridページであることを意味するものではなく、単にスタイルシートのどこかにこの組み合わせが登場しているということです。
 
-このセクションでは、プロパティ値の組み合わせだけでなく、ページでの実際の使用状況の証拠を見て、より詳細な分析を行っています。
+このセクションでは、プロパティ値の組み合わせだけでなく、ページでの実際の使用状況の証拠を見て、より詳細な分析をしています。
 
 ### フレックスボックスとグリッドの採用
 
@@ -936,7 +936,7 @@ Flexboxとグリッドの採用が進み続けています。2019年のFlexbox�
 
 さまざまなグリッドのプロパティを調べてみると、いくつかの興味深いパターンが見つかりました。
 
-* 全グリッドページの約15%が、グリッドの名前付きエリアを定義するために `grid-template-areas` を使用しています。
+* 全グリッドページの約15％が、グリッドの名前付きエリアを定義するために `grid-template-areas` を使用しています。
 * グリッドのテンプレートにある角括弧は、名前付きのグリッド線があることを示していますが、約700万ページの分析のうち、1万ページ弱しか見つかりませんでした。
 
 また、Flexboxのレイアウトを分析し、フレックスの成長値と縮小値をゼロに設定し、すべてのフレックスアイテムの幅をパーセンテージやピクセル幅などの静的なものに設定したレイアウトを確認しました。これらは「グリッドライクのFlexbox」と呼ばれ、Flexboxレイアウトの4分の1強がこの条件を満たしていることがわかりました。分析が複雑であるため、多くのケースを見逃している可能性があります。しかし、デザイナーがグリッドスタイルのレイアウトに強い関心を持っていることは明らかであり、今後数年間でグリッドへの移行は進む可能性があります。
@@ -945,7 +945,7 @@ Flexboxとグリッドの採用が進み続けています。2019年のFlexbox�
 
 {{ figure_markup(
   caption="マルチカラムレイアウトを使用しているページの割合。",
-  content="20%",
+  content="20％",
   classes="big-number",
   sheets_gid="1371521792",
   sql_file="multicol.sql"
@@ -970,18 +970,18 @@ W3Cのオリジナルボックスモデルの原則は、引き続き否定さ�
 
 ## トランジションとアニメーション
 
-アニメーションは、引き続き広く使用されており、`animation`プロパティは、分析対象となった全モバイルページの77％、全デスクトップページの73％で使用されています。 さらに人気の高い`transition`は、モバイルページの85％、デスクトップページの90％で使用されています。
+アニメーションは引き続き広く使用されており、`animation`プロパティは、分析対象となった全モバイルページの77％、全デスクトップページの73％で使用されています。 さらに人気の高い`transition`は、モバイルページの85％、デスクトップページの90％で使用されています。
 
 {{ figure_markup(
   image="most-popular-transition-properties.png",
   caption="トランジション効果が与えられたもっとも人気のあるプロパティです。",
-  description="デスクトップとモバイルの両方でもっともよく使われるアニメーションのプロパティをリストアップしたチャートで、値はモバイル用に示されています（デスクトップは常にモバイルの1～2パーセント以内です）。結果は以下の通りです。`all` 46%, `opacity` 42%, `transform` 30%, `none` 20%, `height` 18%, `color` 18%, `background-color` 13%, `background` 12%, `left` 8%, `width` 8%, `box-shadow` 8%, `-webkit-transform` 7%, top 7%, `border-color` 6%, `visibility` 6%。",
+  description="デスクトップとモバイルの両方でもっともよく使われるアニメーションのプロパティをリストアップしたチャートで、値はモバイル用に示されています（デスクトップは常にモバイルの1～2パーセント以内です）。結果は以下の通りです。`all` 46％、`opacity` 42％、`transform` 30％、`none` 20％、`height` 18％、`color` 18％、`background-color` 13％、`background` 12％、`left` 8％、`width` 8％、`box-shadow` 8％、`-webkit-transform` 7％、top 7％、`border-color` 6％、`visibility` 6％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1505834154&format=interactive",
   sheets_gid="1623088261",
   sql_file="transition_properties.sql"
 ) }}
 
-これらのトランジションの中で、もっとも一般的なアプリケーションは、`all`キーワードを使ったすべての[animatable property]([https://developer.mozilla.org/ja/docs/Web/CSS/CSS_animated_properties])への適用であり、分析されたページの46%で発生しています（明示的であれ、デフォルトであれ）。これに続くのは`opacity`で、トランジションを含むすべてのページの42%です。
+これらのトランジションの中で、もっとも一般的なアプリケーションは、`all`キーワードを使ったすべての[animatable property]([https://developer.mozilla.org/ja/docs/Web/CSS/CSS_animated_properties])への適用であり、分析されたページの46％で発生しています（明示的であれデフォルトであれ）。これに続くのは`opacity`で、トランジションを含むすべてのページの42％です。
 
 {{ figure_markup(
   image="distribution-of-transition-durations.png",
@@ -1018,12 +1018,12 @@ W3Cのオリジナルボックスモデルの原則は、引き続き否定さ�
 
 トランジションの際に使用されるタイミング関数については、デフォルト値である`ease`が断トツのトップ。2位は`ease-in-out`と`linear`の事実上の同点でしたが、意外だったのは4位の`cubic-bezier`でした。これはライブラリやある種のツールから来ている可能性が高いと思われます。なぜなら、三次ベジエ曲線の作成方法を手で学ぶことは可能ですが、わざわざそうする人はほとんどいないからです（そうする理由もあまりありませんが）。
 
-なるほど、でも、どんなアニメーションが行われているのでしょうか？そのために、さまざまなアニメーションラベルを、実行されているアニメーションの種類によって分類しました。たとえば、`fa-spin`、`spin`、`spinner-spin`などと表示されているアニメーションは「回転」アニメーションに分類され、もっとも人気がありました。
+なるほど、でも、どんなアニメーションが行われているのでしょうか？　そのために、さまざまなアニメーションラベルを、実行されているアニメーションの種類によって分類しました。たとえば、`fa-spin`、`spin`、`spinner-spin`などと表示されているアニメーションは「回転」アニメーションに分類され、もっとも人気がありました。
 
 {{ figure_markup(
   image="animation-name-categories.png",
   caption="もっともポピュラーなアニメーションの種類です。",
-  description="もっとも人気のあるアニメーションの種類を示したグラフで、モバイルでの値を示しています（デスクトップは常にモバイルの1～2パーセント以内）。その結果は以下の通りです。`rotate` 18%, unknown or other 14%, `fade` 9%, `wobble` 7%, `bounce` 7%, `scale` 6%, `slide` 5%, `pulse` 2%, `visibility` 2%, `flip` 1%, `move` 0%。",
+  description="もっとも人気のあるアニメーションの種類を示したグラフで、モバイルでの値を示しています（デスクトップは常にモバイルの1～2パーセント以内）。その結果は以下の通りです。`rotate` 18％、unknown or other 14％、`fade` 9％、`wobble` 7％、`bounce` 7％、`scale` 6％、`slide` 5％、`pulse` 2％、`visibility` 2％、`flip` 1％、`move` 0％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=676429696&format=interactive",
   sheets_gid="721830186",
   sql_file="transition_animation_names.sql"
@@ -1044,7 +1044,7 @@ FlexboxやGridなどの組み込みツールの登場により、ウェブを閲
 {{ figure_markup(
   image="media-query-features.png",
   caption="メディアクエリとして使用されるもっとも一般的な機能です。",
-  description="もっとも一般的に使用されているメディアクエリの一覧表で、モバイル用の値が記載されています（デスクトップは常にモバイルの1～2％以内）。その結果は以下の通りです。`max-width` 81%, `min-width` 78%, `webkit-min-device-pixel-ratio` 42%, `orientation` 34%, `prefers-reduced-motion` 32%, `max-device-width` 28%, `min-resolution` 23%, `-ms-high-contrast` 23%, `max-height` 22%, `webkit-transform-3d` 14%, `max-height` 22%, `-webkit-transform-3d` 14%, `min-device-pixel-ratio` 14%, `min--moz-device-pixel-ratio` 12%, `min-height` 11%, `-o-min-device-pixel-ratio` 9%, `min-device-width` 8%, `prefers-color-scheme` 7%, `forced-colors` 7%, `hover` 4%。",
+  description="もっとも一般的に使用されているメディアクエリの一覧表で、モバイル用の値が記載されています（デスクトップは常にモバイルの1～2％以内）。その結果は以下の通りです。`max-width` 81％、`min-width` 78％、`webkit-min-device-pixel-ratio` 42％、`orientation` 34％、`prefers-reduced-motion` 32％、`max-device-width` 28％、`min-resolution` 23％、`-ms-high-contrast` 23％、`max-height` 22％、`webkit-transform-3d` 14％、`max-height` 22％、`-webkit-transform-3d` 14％、`min-device-pixel-ratio` 14％、`min--moz-device-pixel-ratio` 12％、`min-height` 11％、`-o-min-device-pixel-ratio` 9％、`min-device-width` 8％、`prefers-color-scheme` 7％、`forced-colors` 7％、`hover` 4％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1275783028&format=interactive",
   height=671,
   sheets_gid="1192142763",
@@ -1061,12 +1061,12 @@ FlexboxやGridなどの組み込みツールの登場により、ウェブを閲
 
 ### 一般的なブレークポイント
 
-2020年と同様、もっともよく使われたブレークポイントは767ピクセルと768ピクセルで、これはiPadのポートレートモードの解像度と疑わしいほどよく一致しています。`767px`は最大幅のブレイクポイントとして使われることが圧倒的に多く、最小幅の値として使われることはほとんどありませんでした。一方、`786px`は最小値、最大値としてもよく使われていました。
+2020年と同様、もっともよく使われたブレークポイントは767ピクセルと768ピクセルで、これはiPadのポートレートモードの解像度と疑わしいほどよく一致しています。`767px`は最大幅のブレークポイントとして使われることが圧倒的に多く、最小幅の値として使われることはほとんどありませんでした。一方、`786px`は最小値、最大値としてもよく使われていました。
 
 {{ figure_markup(
   image="most-popular-breakpoints.png",
-  caption="もっともポピュラーなメディアクエリのブレイクポイントです。",
-  description="もっとも人気のあるメディアクエリのブレークポイントを列挙した積み上げ式のチャートです。結果は以下の通りです。480ピクセルは、24% `min-width`と36% `max-width`。 600ピクセルは、31% `min-width`と38% `max-width`。767ピクセルは、9%の`min-width`と52%の`max-width`です。768ピクセルは、`min-width` 57%、`max-width` 38%。782ピクセルは、`min-width` 25%、`max-width` 10%。800ピクセルは、8% `min-width` 26% `max-width`です。991ピクセルは、`min-width` 3%、`max-width` 30%です。992ピクセルは、`min-width` 40%、`max-width` 13%です。1024ピクセルは、`min-width` 16%、`max-width` 27%。1200ピクセルは、`min-width` -44%、`max-width` -18%です。",
+  caption="もっともポピュラーなメディアクエリのブレークポイントです。",
+  description="もっとも人気のあるメディアクエリのブレークポイントを列挙した積み上げ式のチャートです。結果は以下の通りです。480ピクセルは、24％ `min-width`と36％ `max-width`。 600ピクセルは、31％ `min-width`と38％ `max-width`。767ピクセルは、9％の`min-width`と52％の`max-width`です。768ピクセルは、`min-width` 57％、`max-width` 38％。782ピクセルは、`min-width` 25％、`max-width` 10％。800ピクセルは、8％ `min-width` 26％ `max-width`です。991ピクセルは、`min-width` 3％、`max-width` 30％です。992ピクセルは、`min-width` 40％、`max-width` 13％です。1024ピクセルは、`min-width` 16％、`max-width` 27％。1200ピクセルは、`min-width` -44％、`max-width` -18％です。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=990843085&format=interactive",
   sheets_gid="1275086846",
   sql_file="media_query_values.sql"
@@ -1074,16 +1074,16 @@ FlexboxやGridなどの組み込みツールの登場により、ウェブを閲
 
 767-768の範囲を超えて、次に人気があったのは600ピクセルと1,200ピクセルで、その次が480ピクセルでした。
 
-ブレイクポイントのクエリをすべてピクセルに変換したのかと思われるかもしれませんが、残念ながら変換していません。今回分析したすべてのブレイクポイントのうち、ピクセル以外の値として最初に挙げられたのは`48em`で、ランキングでは76位、デスクトップでは1％、モバイルでは2％のスタイルに現れています。次のemベースの値である`40em`は、85位に見られます。
+ブレークポイントのクエリをすべてピクセルに変換したのかと思われるかもしれませんが、残念ながら変換していません。今回分析したすべてのブレークポイントのうち、ピクセル以外の値として最初に挙げられたのは`48em`で、ランキングでは76位、デスクトップでは1％、モバイルでは2％のスタイルに現れています。次のemベースの値である`40em`は、85位に見られます。
 
 ### メディアクエリ内のプロパティ
 
-では、これらのメディアクエリブロックの中で、作者は実際に何をスタイリングするのでしょうか？もっともよく設定されるプロパティは `display` で、次いで `color`、`width`、`height` となります。
+では、これらのメディアクエリブロックの中で、作者は実際に何をスタイリングするのでしょうか？　もっともよく設定されるプロパティは `display` で、次いで `color`、`width`、`height` となります。
 
 {{ figure_markup(
   image="most-popular-properties-used-in-media-queries.png",
   caption="メディアクエリで変更するのがもっともポピュラーなプロパティです。",
-  description="モバイル用に与えられた値を使ったチャートです（デスクトップは常にモバイルの1～2％以内）。その結果は以下の通りです。`display` 81%, `color` 74%, `width` 72%, `height` 70%, `background` 69%, `padding` 69%, `margin` 67%, `border` 66%, `background-color` 65%, `position` 61%。",
+  description="モバイル用に与えられた値を使ったチャートです（デスクトップは常にモバイルの1～2％以内）。その結果は以下の通りです。`display` 81％、`color` 74％、`width` 72％、`height` 70％、`background` 69％、`padding` 69％、`margin` 67％、`border` 66％、`background-color` 65％、`position` 61％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=285981171&format=interactive",
   sheets_gid="1782726219",
   sql_file="media_query_properties.sql"
@@ -1097,18 +1097,18 @@ FlexboxやGridなどの組み込みツールの登場により、ウェブを閲
 
 クエリ機能（`@supports`）の使用率は伸び続けています。2019年には30％のページが使用していることが判明し、昨年は39％でした。2021年には、ほぼ48％のページが、どのコンテキストでどのCSSを適用するかを決めるために、クエリ機能を使用しています。
 
-では、作者は何を条件にCSSを使うのでしょうか？もっとも多かったのは「スティッキーポジショニング」で、全体の半数以上を占めています。
+では、作者は何を条件にCSSを使うのでしょうか？　もっとも多かったのは「スティッキーポジショニング」で、全体の半数以上を占めています。
 
 {{ figure_markup(
   image="most-popular-features-queried.png",
   caption="CSSの代表的な機能を`@supports`で照会できます。",
-  description="モバイル用に与えられた値を使ったチャートです（デスクトップは常にモバイルの1～2％以内）。その結果は以下の通りです。`sticky` 53%, `mask-image` 15%, `me-aligh` 7%, `overflow-scrolling` 6%, `touch-callout` 5%, `grid` 3%, `appearance` 1%, カスタムプロパティ1%, `max()` 1%, `transform-style` 1%.",
+  description="モバイル用に与えられた値を使ったチャートです（デスクトップは常にモバイルの1～2％以内）。その結果は以下の通りです。`sticky` 53％、`mask-image` 15％、`me-aligh` 7％、`overflow-scrolling` 6％、`touch-callout` 5％、`grid` 3％、`appearance` 1％、カスタムプロパティ1％、`max()` 1％、`transform-style` 1％.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1806919245&format=interactive",
   sheets_gid="349568482",
   sql_file="supports_criteria.sql"
 ) }}
 
-グリッドをサポートしているかどうかを確認したクエリ機能はわずか3%で、グリッドをサポートしているかどうかを確認したページは261,406ページになります。グリッドレイアウトが使用されていたのは、モバイルページで270万ページ、デスクトップページで230万ページであったことを考えると、この数字が正確であれば、グリッドレイアウトの大部分はフォールバックなしで導入されていると考えられます。
+グリッドをサポートしているかどうかを確認したクエリ機能はわずか3％で、グリッドをサポートしているかどうかを確認したページは261,406ページになります。グリッドレイアウトが使用されていたのは、モバイルページで270万ページ、デスクトップページで230万ページであったことを考えると、この数字が正確であれば、グリッドレイアウトの大部分はフォールバックなしで導入されていると考えられます。
 
 ## Custom properties
 
@@ -1121,20 +1121,20 @@ FlexboxやGridなどの組み込みツールの登場により、ウェブを閲
   sql_file="custom_property_adoption.sql"
 ) }}
 
-Web Almanacの3年間で、カスタムプロパティ（CSS変数とも呼ばれる）の使用率がもっとも高まったものの1つです。2019年の使用率は全サイトの5％程度でしたが、昨年はモバイルが20％近く、デスクトップが15％と急増していました。今年は、全モバイルページの28.6％、デスクトップページの28.3％でカスタムプロパティが定義されていることがわかりました。さらに、モバイルページの35.2%、デスクトップページの35.6%に、少なくとも1つの `var()` 関数値が含まれていることがわかりました。
+Web Almanacの3年間で、カスタムプロパティ（CSS変数とも呼ばれる）の使用率がもっとも高まったものの1つです。2019年の使用率は全サイトの5％程度でしたが、昨年はモバイルが20％近く、デスクトップが15％と急増していました。今年は、全モバイルページの28.6％、デスクトップページの28.3％でカスタムプロパティが定義されていることがわかりました。さらに、モバイルページの35.2％、デスクトップページの35.6％に、少なくとも1つの `var()` 関数値が含まれていることがわかりました。
 
 ### ネーミング
 
 {{ figure_markup(
   image="custom-property-names.png",
   caption="もっともポピュラーなカスタムプロパティ名です。",
-  description="もっとも人気のあるカスタムプロパティ名の一覧表です。デスクトップは常に1～2％以内であるため、モバイルの結果を示しています。結果は以下の通りです。`--wp-style--color--link`, 18.1%。`wp-admin-theme-color`, 7.5%。`red`、`--blue`、`--green`はすべて7.2%です。`--dark` と `--white` はともに7.1%です。`--primary`と`--secondary`は6.9%です。`--gray-dark` 6.8％。",
+  description="もっとも人気のあるカスタムプロパティ名の一覧表です。デスクトップは常に1～2％以内であるため、モバイルの結果を示しています。結果は以下の通りです。`--wp-style--color--link`, 18.1％。`wp-admin-theme-color`, 7.5％。`red`、`--blue`、`--green`はすべて7.2％です。`--dark` と `--white` はともに7.1％です。`--primary`と`--secondary`は6.9％です。`--gray-dark` 6.8％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=205956063&format=interactive",
   sheets_gid="725813203",
   sql_file="custom_property_names.sql"
 ) }}
 
-最初に確認したこと、"開発者は自分のカスタムプロパティを何と呼んでいるのか？"ということでした。結論から言うと、ここではWordPressの普及率が出ていて、WPコアで定義されたリンクカラーリングのカスタムプロパティがトップエントリーになっています。
+最初に確認したこと、"開発者は自分のカスタムプロパティを何と呼んでいるのか？　"ということでした。結論から言うと、ここではWordPressの普及率が出ていて、WPコアで定義されたリンクカラーリングのカスタムプロパティがトップエントリーになっています。
 
 その後、たくさんの色名が見つかりました。名前のついた色 `blue` がすぐそこにあり、`--blue` へカスタム値を定義する必要があるとは奇妙に思えるかもしれませんが、実際には、開発者は基本的な色名にカスタムシェードを割り当てています。そのため、`--blue: blue`ではなく、`--blue: #3030EA`です。
 
@@ -1143,7 +1143,7 @@ Web Almanacの3年間で、カスタムプロパティ（CSS変数とも呼ば�
 {{ figure_markup(
   image="custom-property-properties.png",
   caption="custom-propertyの値を与えられるもっとも人気のあるプロパティ。",
-  description="モバイル用に与えられた値を使ったチャートです（デスクトップは常にモバイルの1～2％以内）。結果は以下の通りです。`color` 31%, `background-color` 17%, `background` 15%, `border-color` 13%, `height` 12%, `width` 12%, `border` 11%, `box-shadow` 11%, `margin-top` 10%, `font-size` 9%。",
+  description="モバイル用に与えられた値を使ったチャートです（デスクトップは常にモバイルの1～2％以内）。結果は以下の通りです。`color` 31％、`background-color` 17％、`background` 15％、`border-color` 13％、`height` 12％、`width` 12％、`border` 11％、`box-shadow` 11％、`margin-top` 10％、`font-size` 9％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=951347176&format=interactive",
   sheets_gid="1369726995",
   sql_file="custom_property_properties.sql"
@@ -1187,7 +1187,7 @@ Web Almanacの3年間で、カスタムプロパティ（CSS変数とも呼ば�
 
 意外かもしれませんが、カスタムプロパティの値の深さは0のものが圧倒的に多く、他のカスタムプロパティの値を自分の値に含めていません。3分の1近くは値の深さが1段階で、2段階以上の値を持つカスタムプロパティはほとんどありません。
 
-2020年と同様に、カスタムプロパティの値が使用されているセレクターも確認しました。約60%がルート要素（`:root`または`html`セレクターを使用）に設定されており、約5%が`<body>`要素に適用されていました。残りは、ルート要素の子孫である `<body>` 以外の要素に適用されています。つまり、全カスタムプロパティの約3分の2が、実質的にグローバルな定数として使用されていることになります。これは、昨年の結果と同じです。
+2020年と同様に、カスタムプロパティの値が使用されているセレクターも確認しました。約60％がルート要素（`:root`または`html`セレクターを使用）に設定されており、約5％が`<body>`要素に適用されていました。残りは、ルート要素の子孫である `<body>` 以外の要素に適用されています。つまり、全カスタムプロパティの約3分の2が、実質的にグローバルな定数として使用されていることになります。これは、昨年の結果と同じです。
 
 ## 国際化
 
@@ -1195,7 +1195,7 @@ Web Almanacの3年間で、カスタムプロパティ（CSS変数とも呼ば�
 
 ### 方向性
 
-テキストの方向は、CSSプロパティの`direction`を使って、明示的に強制できます。このプロパティは、全ページの11％の `<html>` 要素で使用されており、3％の `<body>` 要素で使用されていることがわかりました。（重複した結果をチェックしていないので、重複している可能性があることに注意してください）。
+テキストの方向は、CSSプロパティの`direction`を使って、明示的に強制できます。このプロパティは、全ページの11％の `<html>` 要素で使用されており、3％の `<body>` 要素で使用されていることがわかりました（重複した結果をチェックしていないので、重複している可能性があることに注意してください）。
 
 CSSで方向性を設定しているページのうち、`<html>`要素の92％、`<body>`要素の82％が`ltr`（左から右）に設定されていました。全体的に見ると、CSSで方向性を設定しているページのうち、`rtl`（右から左）が使われているのは9％だけでした。これは、ほとんどの言語が右から左ではないことを考えると、大体予想できることです。
 
@@ -1206,34 +1206,34 @@ CSSで方向性を設定しているページのうち、`<html>`要素の92％�
 {{ figure_markup(
   image="logical-property-and-value-usage.png",
   caption="論理的なプロパティのプロパティタイプの分布",
-  description="モバイルでの分布を示す円グラフ。結果は以下の通り。`text-align` 34%, `margin` 26.4%, `padding` 21.6%, `border` 11.8%, `size` 2.2%, `min-size` 2%。",
+  description="モバイルでの分布を示す円グラフ。結果は以下の通り。`text-align` 34％、`margin` 26.4％、`padding` 21.6％、`border` 11.8％、`size` 2.2％、`min-size` 2％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=190768531&format=interactive",
   sheets_gid="1595217858",
   sql_file="i18n_logical_properties.sql"
 ) }}
 
-2021年半ばの時点で、何らかの論理的プロパティを使用しているページは、わずか4%でした。使っているページのうち、約33%が`text-align`を`start`や`end`へ設定するために使っていました。また、46％ほど（合計）が論理的なマージンやパディングを設定していました。繰り返しになりますが、これらの数字は重複してる可能性があります。
+2021年半ばの時点で、何らかの論理的プロパティを使用しているページは、わずか4％でした。使っているページのうち、約33％が`text-align`を`start`や`end`へ設定するために使っていました。また、46％ほど（合計）が論理的なマージンやパディングを設定していました。繰り返しになりますが、これらの数字は重複してる可能性があります。
 
 ### Ruby
 
-CSSは、方向性や論理的な機能に加えて、CSS Rubyによる国際化にも対応しています。これは、インターリニアアノテーション（原文の横に短い文章を並べたもの）のレイアウトに影響を与えるプロパティの集まりです。CSS Rubyの使用率は非常に低く、デスクトップでは8,157ページ、モバイルでは9,119ページと、分析した全ページの0.1%にも満たないことが分かりました。
+CSSは、方向性や論理的な機能に加えて、CSS Rubyによる国際化にも対応しています。これは、インターリニアアノテーション（原文の横に短い文章を並べたもの）のレイアウトに影響を与えるプロパティの集まりです。CSS Rubyの使用率は非常に低く、デスクトップでは8,157ページ、モバイルでは9,119ページと、分析した全ページの0.1％にも満たないことが分かりました。
 
 ## CSSとJS
 
 {{ figure_markup(
   image="css-in-js-libraries.png",
   caption="CSS-in-JSライブラリの分布。",
-  description="モバイルでの分布を示す円グラフ。結果は以下の通りです。Styled Components 57.7%, Emotion 24.4%, Glamor 7.5%, Aphrodite 6.6%, Styled Jsx 2% となりました。表示されていない小さなスライスがいくつかあります。",
+  description="モバイルでの分布を示す円グラフ。結果は以下の通りです。Styled Components 57.7％、Emotion 24.4％、Glamor 7.5％、Aphrodite 6.6％、Styled Jsx 2％ となりました。表示されていない小さなスライスがいくつかあります。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1003466201&format=interactive",
   sheets_gid="1851845193",
-  sql_file="css_in_js.sql"
+  sql_file="css_in.js .sql"
 ) }}
 
-『CSS in JS」の話題は、少なくともTwitterでの炎上騒ぎの1つや2つにはもってこいですが、自然界での使用は非常に少ない状態が続いています。今年の調査では、ページの約3%が何らかの形でCSS-in-JSを使用していることがわかりましたが、これは2020年の2%から増加しています。さらに、そのほぼすべてがこの目的のために構築されたライブラリによるものであり、その半分以上がStyled Componentsライブラリによるものです。
+『CSS in JS」の話題は、少なくともTwitterでの炎上騒ぎの1つや2つにはもってこいですが、自然界での使用は非常に少ない状態が続いています。今年の調査では、ページの約3％が何らかの形でCSS-in-JSを使用していることがわかりましたが、これは2020年の2％から増加しています。さらに、そのほぼすべてがこの目的のために構築されたライブラリによるものであり、その半分以上がStyled Componentsライブラリによるものです。
 
 ### Houdini
 
-CSS Houdiniは、ある意味ではCSS-in-JSの逆を行くもので、作者がCSSに少しだけJSを混ぜることを可能にします。おそらく、仕様の中核部分の<a hreflang="en" href="https://ishoudinireadyyet.com/">遅い実装</a>（Blinkベースではないブラウザで）が原因で、Houdiniはその地位を確立するのに苦労しています。 We find that it's effectively not used on the open web in 2021: only 1,030 desktop pages and 1,175 mobile pages show evidence of animated custom properties, a feature of Houdini. This is a threefold increase over the 2020 findings, but it looks like it will still be some time before Houdini finds an audience.
+CSS Houdiniは、ある意味ではCSS-in-JSの逆を行くもので、作者がCSSに少しだけJSを混ぜることを可能にします。おそらく、仕様の中核部分の<a hreflang="en" href="https://ishoudinireadyyet.com/">遅い実装</a>（Blinkベースではないブラウザで）が原因で、Houdiniはその地位を確立するのに苦労しています。 We find that it's effectively not used on the open web in 2021: only 1,030 desktop pages and 1,175 mobile pages show evidence of animated custom properties, a feature of Houdini. This is a threefold increase over the 2020 findings, but it looks like it will still be some time before Houdini finds an audience。
 
 ## Meta
 
@@ -1248,7 +1248,7 @@ CSS Houdiniは、ある意味ではCSS-in-JSの逆を行くもので、作者が
 {{ figure_markup(
   image="declaration-repetition.png",
   caption="ページごとの宣言文の繰り返しの分布。",
-  description="繰り返し申告される物件の割合の10、25、50、75、90パーセンタイルの中央値を示したペアの列挙図。各パーセンタイルには、デスクトップ用とモバイル用の2つの列がありますが、モバイル用の値のみが表示されています（デスクトップ用の常に1～2パーセント以内です）。その数字は以下の通りです。10パーセンタイル、30％。25パーセンタイル、36％。50パーセンタイル、44％。75パーセンタイル、53%. 90パーセンタイル、62％。",
+  description="繰り返し申告される物件の割合の10、25、50、75、90パーセンタイルの中央値を示したペアの列挙図。各パーセンタイルには、デスクトップ用とモバイル用の2つの列がありますが、モバイル用の値のみが表示されています（デスクトップ用の常に1～2パーセント以内です）。その数字は以下の通りです。10パーセンタイル、30％。25パーセンタイル、36％。50パーセンタイル、44％。75パーセンタイル、53％. 90パーセンタイル、62％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1849063734&format=interactive",
   sheets_gid="560362648",
   sql_file="repetition.sql"
@@ -1267,7 +1267,7 @@ CSSでは、非常に具体的なプロパティの集合体が、単一の宣�
 {{ figure_markup(
   image="most-popular-longhand-properties-after-shorthands.png",
   caption="対応する短縮形プロパティの後に表示される、もっとも一般的なロングハンドプロパティです。",
-  description="すべての値がモバイル用に与えられたチャート一覧です（デスクトップの常に1～2パーセント以内）。結果は以下の通りです。`background-size`, 15%。`background-image`, 7%。`margin-bottom`, `margin-top`, `border-bottom-color`, `font size`, 5%。`border-top-color`, 4%。 `margin-left`, `line-height`, `background-color`, 3%。",
+  description="すべての値がモバイル用に与えられたチャート一覧です（デスクトップの常に1～2パーセント以内）。結果は以下の通りです。`background-size`, 15％。`background-image`, 7％。`margin-bottom`, `margin-top`, `border-bottom-color`, `font size`, 5％。`border-top-color`, 4％。 `margin-left`, `line-height`, `background-color`, 3％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1051485878&format=interactive",
   sheets_gid="1761101514",
   sql_file="meta_shorthand_first_properties.sql",
@@ -1284,7 +1284,7 @@ CSSでは、非常に具体的なプロパティの集合体が、単一の宣�
 {{ figure_markup(
   image="usage-of-background-shorthand-vs-longhands.png",
   caption="もっともよく使われるバックグラウンドのプロパティです。",
-  description="すべての値がモバイル用に与えられたチャートです（デスクトップはほぼ1～2パーセント以内）。その結果以下の通りです。`background` 96%, `background-color` 95%, `background-position` 91%, `background-image` 90%, `background-repeat` 85%, `background-size` 82%, `background-clip` 47% (デスクトップは56%), `background-attachment` 37%, `background-origin` 5%（デスクトップほぼ0%）。",
+  description="すべての値がモバイル用に与えられたチャートです（デスクトップはほぼ1～2パーセント以内）。その結果以下の通りです。`background` 96％、`background-color` 95％、`background-position` 91％、`background-image` 90％、`background-repeat` 85％、`background-size` 82％、`background-clip` 47％ (デスクトップは56％), `background-attachment` 37％、`background-origin` 5％（デスクトップほぼ0％）。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=668445598&format=interactive",
   sheets_gid="886194727",
   sql_file="all_properties.sql",
@@ -1292,16 +1292,16 @@ CSSでは、非常に具体的なプロパティの集合体が、単一の宣�
   height=429
 ) }}
 
-むしろ、これらを設定していないページがあったことに小さな驚きを感じました。圧倒的に96%のページが`background`というショートハンドを使用していますが、これは1996年のCSS1に遡ります。同年代のロングハンドプロパティも同様で、85％以上のページで適用されていることがわかりました。
+むしろ、これらを設定していないページがあったことに小さな驚きを感じました。圧倒的に96％のページが`background`というショートハンドを使用していますが、これは1996年のCSS1に遡ります。同年代のロングハンドプロパティも同様で、85％以上のページで適用されていることがわかりました。
 
-しかし、最近の `background-size` は急速に普及しており、82% のページで採用されていることから、作者にとっての有用性の高さがわかります。一方、`background-origin`は、昨年の12％から今年はわずか5％にまで落ち込んでいます。
+しかし、最近の `background-size` は急速に普及しており、82％ のページで採用されていることから、作者にとっての有用性の高さがわかります。一方、`background-origin`は、昨年の12％から今年はわずか5％にまで落ち込んでいます。
 
 #### marginとpadding
 
 {{ figure_markup(
   image="usage-of-margin-padding-shorthands-vs-longhands.png",
   caption="もっともよく使われるmarginとpaddingのプロパティです。",
-  description="すべての値がモバイル用に与えられたチャートです（デスクトップのほぼ1～2パーセント以内）。結果は以下の通りです。`margin-left` 96%, `margin` 9%, `margin-top`, `padding` 93%。`padding-bottom`、`margin-bottom`、`margin-right`、92%。`padding-left` 91%, `padding-right` 90%。`padding-top` 73% (デスクトップでは90%)。",
+  description="すべての値がモバイル用に与えられたチャートです（デスクトップのほぼ1～2パーセント以内）。結果は以下の通りです。`margin-left` 96％、`margin` 9％、`margin-top`, `padding` 93％。`padding-bottom`、`margin-bottom`、`margin-right`、92％。`padding-left` 91％、`padding-right` 90％。`padding-top` 73％ (デスクトップでは90％)。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=918848418&format=interactive",
   sheets_gid="886194727",
   sql_file="all_properties.sql"
@@ -1314,17 +1314,17 @@ CSSでは、非常に具体的なプロパティの集合体が、単一の宣�
 {{ figure_markup(
   image="usage-of-font-shorthand-vs-longhands.png",
   caption="よく使われるフォントのプロパティ",
-  description="すべての値がモバイル用に与えられたチャートです（デスクトップのほぼ1～2パーセント以内）。その結果は以下の通りです。`font-size` 95%, `font-family` 94%, `font-weight` 92%, `font-style` 86%, `font` 82% でデスクトップ57%, `font-variant` 23% でデスクトップ12%, `font-stretch` 5%。",
+  description="すべての値がモバイル用に与えられたチャートです（デスクトップのほぼ1～2パーセント以内）。その結果は以下の通りです。`font-size` 95％、`font-family` 94％、`font-weight` 92％、`font-style` 86％、`font` 82％ でデスクトップ57％、`font-variant` 23％ でデスクトップ12％、`font-stretch` 5％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=1034544520&format=interactive",
   sheets_gid="886194727",
   sql_file="all_properties.sql"
 ) }}
 
-2020年と同様に、短縮形の`font`は、一般的なロングハンドの`font-weight`と比較して、`font-size`がリードし、昨年の`font-weight`から首位を奪いました。
+2020年と同様に、短縮形の`font`は一般的なロングハンドの`font-weight`と比較して、`font-size`がリードし、昨年の`font-weight`から首位を奪いました。
 
-ここでは、`font-variant`と`font-stretch`という2つの異なったストーリーがあります。`font-variant`は、CSS1の頃から存在していましたが、デザイナーにはあまり浸透しませんでした。おそらく、長い間、`small-caps`を設定することしかできなかったからでしょう。現在では、それとダウンロード可能なフォントを使って多くのことができるようになりましたが、著者はこの能力を活用していないようです。その使用率は今年大きく低下し、2020年の43％から2021年には23％に低下しました。
+ここでは、`font-variant`と`font-stretch`という2つの異なったストーリーがあります。`font-variant`は、CSS1の頃から存在していましたが、デザイナーにはあまり浸透しませんでした。おそらく、長い間、`small-caps`を設定できなかったからでしょう。現在では、それとダウンロード可能なフォントを使って多くのことができるようになりましたが、著者はこの能力を活用していないようです。その使用率は今年大きく低下し、2020年の43％から2021年には23％に低下しました。
 
-`font-variant`をもう少し詳しく見てみましょう。モバイルページの23%で使用されていますが、現在省略されているロングハンドのプロパティはほとんど使用されていません。以下は、`font-variant`だけでなく、それに対応するロングハンドをそれぞれ使用しているページの実際の数です。
+`font-variant`をもう少し詳しく見てみましょう。モバイルページの23％で使用されていますが、現在省略されているロングハンドのプロパティはほとんど使用されていません。以下は、`font-variant`だけでなく、それに対応するロングハンドをそれぞれ使用しているページの実際の数です。
 
 <figure>
   <table>
@@ -1382,20 +1382,20 @@ CSSでは、非常に具体的なプロパティの集合体が、単一の宣�
 
 これは、著者がショートハンドのみを使用し、ロングハンドを無視しているということでしょうか。しかし、昨年から `font-variant` の使用が急減していることから、一般的なフレームワークやツールがデフォルトスタイルから `font-variant` を削除したのではないかと考えています。いずれにしても、広くサポートされている多くのフォント機能を、作者は見逃しているのかもしれません。
 
-もうひとつの低得点プロパティである`font-stretch`は、フォントファミリーがワイドまたはナローフェースを利用できるかどうか、そして作者がそれらを利用することを選択するかどうか（または知っているかどうか）に大きく依存しているため、そのシェアが5％（昨年の8％から減少）となったことはあまり驚きではありません。
+もうひとつの低得点プロパティである`font-stretch`は、フォントファミリーがワイドまたはナローフェースを利用できるか、そして作者がそれらを利用することを選択するか（または知っているか）に大きく依存しているため、そのシェアが5％（昨年の8％から減少）となったことはあまり驚きではありません。
 
 #### Flexbox
 
 {{ figure_markup(
   image="usage-of-flex-shorthands-vs-longhands.png",
   caption="もっともよく使われるFlexbox関連のプロパティです。",
-  description="ペアの列のチャートです。結果は以下の通りです。`flex-basis`では、デスクトップ35%、モバイル82%でした。`flex-direction`、デスクトップ90％、モバイル75％。`flex`, デスクトップ89%、モバイル68%。`flex-grow`、デスクトップ43％、モバイル66％。`flex-wrap`、デスクトップ70%、モバイル66%。`flex-flow`, デスクトップの23%とモバイルの35%。`flex-shrink`、デスクトップとモバイルの両方で32%。",
+  description="ペアの列のチャートです。結果は以下の通りです。`flex-basis`では、デスクトップ35％、モバイル82％でした。`flex-direction`、デスクトップ90％、モバイル75％。`flex`, デスクトップ89％、モバイル68％。`flex-grow`、デスクトップ43％、モバイル66％。`flex-wrap`、デスクトップ70％、モバイル66％。`flex-flow`, デスクトップの23％とモバイルの35％。`flex-shrink`、デスクトップとモバイルの両方で32％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=772069330&format=interactive",
   sheets_gid="886194727",
   sql_file="all_properties.sql"
 ) }}
 
-Flexboxのロングハンドとショートハンドのプロパティの中には、激動の歴史を持つものもあります。たとえば、CSS Flexboxの仕様自体、<a hreflang="en" href="https://drafts.csswg.org/css-flexbox-1/#flex-grow-property">作者が `flex-grow`、`flex-shrink`、`flex-basis` の使用を避け</a>、代わりに `flex` ショートハンドを使用することを推奨しています。これにより、設定されていないプロパティが適切な値を持つようになります。残念ながら、実際にはこれはうまくいっていないようで、モバイルページでは `flex-basis` が `flex` よりも多く使用されており、その差は10%以上にもなります。
+Flexboxのロングハンドとショートハンドのプロパティの中には、激動の歴史を持つものもあります。たとえば、CSS Flexboxの仕様自体、<a hreflang="en" href="https://drafts.csswg.org/css-flexbox-1/#flex-grow-property">作者が `flex-grow`、`flex-shrink`、`flex-basis` の使用を避け</a>、代わりに `flex` ショートハンドを使用することを推奨しています。これにより、設定されていないプロパティが適切な値を持つようになります。残念ながら、実際にはこれはうまくいっていないようで、モバイルページでは `flex-basis` が `flex` よりも多く使用されており、その差は10％以上にもなります。
 
 この数字には、モバイルでは`flex-basis`の使用率が2倍になる一方、デスクトップではあまり変化がないなど、昨年と比較して大きな変動があることに留意する必要があります。これは、モバイル開発で使用される共通のフレームワークが変更されたことによるものかもしれませんし、その他の要因によるものかもしれません。
 
@@ -1404,14 +1404,14 @@ Flexboxのロングハンドとショートハンドのプロパティの中に�
 {{ figure_markup(
   image="usage-of-grid-properties.png",
   caption="もっともよく使われるグリッド関連のプロパティです。",
-  description="すべての値がモバイル用に与えられたチャート。結果は以下の通りです。`grid-template-columns` 71%, `grid-template-rows` 34%, `grid-row-start` 33%, `grid-row` 32%, `grid-column-start` 27%, `grid-column-end` 26%, `grid-template-areas` 25%, `grid-gap` 24%, `grid-column` 23%, `grid-row-end` 10%, `grid-area` 9%, `grid-column-gap` 9%, `grid-auto-flow` 3%, `grid-row-gap` 2%, `grid-auto-rows` 1%. 以下はすべて0％です。`grid-auto-column`, `grid-template`, `grid`, `grid-column-span`, `grid-columns`, `grid-rows`。",
+  description="すべての値がモバイル用に与えられたチャート。結果は以下の通りです。`grid-template-columns` 71％、`grid-template-rows` 34％、`grid-row-start` 33％、`grid-row` 32％、`grid-column-start` 27％、`grid-column-end` 26％、`grid-template-areas` 25％、`grid-gap` 24％、`grid-column` 23％、`grid-row-end` 10％、`grid-area` 9％、`grid-column-gap` 9％、`grid-auto-flow` 3％、`grid-row-gap` 2％、`grid-auto-rows` 1％. 以下はすべて0％です。`grid-auto-column`, `grid-template`, `grid`, `grid-column-span`, `grid-columns`, `grid-rows`。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=2100289470&format=interactive",
   height=575,
   sheets_gid="886194727",
   sql_file="all_properties.sql"
 ) }}
 
-ここ数年の傾向として、グリッドのショートハンドプロパティ（`grid-template`、`grid`など）は、それらが包含するロングハンドプロパティよりもはるかに少ない頻度で使用されていることがわかっています。 実際には、両方とも0％という驚異的な数字で、ランキングでは隣り合っています。残りの略語はすべてこの2つに集約されており、`grid-template-rows`や`grid-column`などのロングハンドのプロパティは広く使用されています。実際、注目すべき使用率の高いロングハンドプロパティは`grid-gap`だけで、モバイルのグリッドページでは24%の使用率となっています。今後、より新しい、そして一般的な`gap`が`grid-gap`を追い越すかどうか、興味深いところです。
+ここ数年の傾向として、グリッドのショートハンドプロパティ（`grid-template`、`grid`など）は、それらが包含するロングハンドプロパティよりもはるかに少ない頻度で使用されていることがわかっています。 実際には、両方とも0％という驚異的な数字で、ランキングでは隣り合っています。残りの略語はすべてこの2つに集約されており、`grid-template-rows`や`grid-column`などのロングハンドのプロパティは広く使用されています。実際、注目すべき使用率の高いロングハンドプロパティは`grid-gap`だけで、モバイルのグリッドページでは24％の使用率となっています。今後、より新しい、そして一般的な`gap`が`grid-gap`を追い越すかどうか、興味深いところです。
 
 ### CSSの間違い
 
@@ -1419,14 +1419,14 @@ Flexboxのロングハンドとショートハンドのプロパティの中に�
 
 #### 回復不能なシンタックスエラー
 
-今年の解析作業では、2020年と同様に<a hreflang="en" href="https://github.com/reworkcss/css">Rework</a>というCSSパーサーを使用しましたが、より心強い数字が得られました。デスクトップページのわずか0.94％、モバイルページの0.55％に回復不能なエラーが含まれていました。つまり、Reworkでスタイルシート全体を解析することが不可能なほどひどいエラーです。確かに、回復可能な小さなCSSエラーが発生したページの数は格段に多かったかもしれませんが、今年の回復不可能なエラーの数は、昨年に比べて大幅に減少しています。これは、シンタックスクリーンアップが突然発生したのではなく、Reworkが変更されたことを示していると考えられます。
+今年の解析作業では、2020年と同様に<a hreflang="en" href="https://github.com/reworkcss/css">Rework</a>というCSSパーサーを使用しましたが、より心強い数字が得られました。デスクトップページのわずか0.94％、モバイルページの0.55％に回復不能なエラーが含まれていました。つまり、Reworkでスタイルシート全体を解析不可能なほどひどいエラーです。確かに、回復可能な小さなCSSエラーが発生したページの数は格段に多かったかもしれませんが、今年の回復不可能なエラーの数は、昨年に比べて大幅に減少しています。これは、シンタックスクリーンアップが突然発生したのではなく、Reworkが変更されたことを示していると考えられます。
 
 #### 存在しないプロパティ
 
 {{ figure_markup(
   image="most-popular-unknown-properties.png",
   caption="もっとも一般的な未知のプロパティです。",
-  description="モバイル用の結果を一覧にしたグラフです。結果は以下の通りです。`webkit-transition` 14%, `font-smoothing` 14%, `tap-highlight-color` 9%, `behavior` 8%, `box-orient` 5%, `-archetype` 4%. `webkit-box-orient`, `box-flex`, `box-align`, `box-pack` はすべて3% です。`ms-transform` と `margin-center` はともに2% です。`font-rendering`, `user-drag`, `text-fill-color` ではすべて0%を超えています。",
+  description="モバイル用の結果を一覧にしたグラフです。結果は以下の通りです。`webkit-transition` 14％、`font-smoothing` 14％、`tap-highlight-color` 9％、`behavior` 8%`box-orient` 5％、`-archetype` 4％. `webkit-box-orient`, `box-flex`, `box-align`, `box-pack` はすべて3％ です。`ms-transform` と `margin-center` はともに2％ です。`font-rendering`, `user-drag`, `text-fill-color` ではすべて0％を超えています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=946019101&format=interactive",
   height=401,
   sheets_gid="1993096589",
@@ -1442,7 +1442,7 @@ Flexboxのロングハンドとショートハンドのプロパティの中に�
 {{ figure_markup(
   image="most-common-shorthands-after-longhands.png",
   caption="対応するロングハンド・プロパティの後に（不適切に）表示されるもっとも一般的なショートハンド・プロパティです。",
-  description="モバイル用の値を使ったペアカラムのチャートです（デスクトップの常に1～2％以内）。結果は次のとおりです。`background` 53%, `margin` 12%, `font` 12%, `padding` 8%, `animation` 4%, `border-radius` 3%, `list-style` 2%, `flex` 1%, `overflow` 1%, `transition` 1%, その他3%。",
+  description="モバイル用の値を使ったペアカラムのチャートです（デスクトップの常に1～2％以内）。結果は:次のとおりです。`background` 53％、`margin` 12％、`font` 12％、`padding` 8％、`animation` 4％、`border-radius` 3％、`list-style` 2％、`flex` 1％、`overflow` 1％、`transition` 1％、その他3％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=288419798&format=interactive",
   height=388,
   sheets_gid="1352208996",
@@ -1453,24 +1453,24 @@ Flexboxのロングハンドとショートハンドのプロパティの中に�
 
 ## Sass
 
-CSSプリプロセッサの大きな利点の1つは、CSS自体に欠けているものを明らかにすることができるため、将来的にCSSをどのように拡張していくべきかの指針となることです。これは以前にもあったことで、変数はプリプロセッサで非常に人気があったため、CSSは最終的に<a hreflang="en" href="https://www.w3.org/TR/css-variables-1/">カスタムプロパティ</a>をそのレパートリーに加えました。色の変更やネストされたセレクターなど、プリプロセッサの他の機能も基本言語に組み込まれています。そこで本章では、現在ウェブ上でもっとも人気のあるプリプロセッサの1つであるSassを、開発者がどのように使っているかを紹介します。
+CSSプリプロセッサの大きな利点の1つは、CSS自体に欠けているものを明らかにできるため、将来的にCSSをどのように拡張していくべきかの指針となることです。これは以前にもあったことで、変数はプリプロセッサで非常に人気があったため、CSSは最終的に<a hreflang="en" href="https://www.w3.org/TR/css-variables-1/">カスタムプロパティ</a>をそのレパートリーに加えました。色の変更やネストされたセレクターなど、プリプロセッサの他の機能も基本言語に組み込まれています。そこで本章では、現在ウェブ上でもっとも人気のあるプリプロセッサの1つであるSassを、開発者がどのように使っているかを紹介します。
 
 {{ figure_markup(
   image="most-popular-sass-function-calls.png",
   caption="もっとも一般的に使用されるSassの関数呼び出しです。",
-  description="モバイル用の値を使ったペアカラムのチャートです（デスクトップは常に1～2％以内）。その結果（その他）18%, `darken` 16%, `if` 15%, `map-get` 10%, `map-keys` 9%, `percentage` 7%, `nth` 5%, `lighten` 5%, `mix` 4%, (alpha adjustment) 3%, `length` 3%, `type-of` 3%, `unit` 2%。",
+  description="モバイル用の値を使ったペアカラムのチャートです（デスクトップは常に1～2％以内）。その結果（その他）18％、`darken` 16％、`if` 15％、`map-get` 10％、`map-keys` 9％、`percentage` 7％、`nth` 5％、`lighten` 5％、`mix` 4％、(alpha adjustment) 3％、`length` 3％、`type-of` 3％、`unit` 2％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=714529985&format=interactive",
   height=552,
   sheets_gid="400373190",
   sql_file="sass_function_calls.sql"
 ) }}
 
-使用されているSass関数は、比率に若干の変更はあるものの、2020年版Web Almanacで見つかったものとほぼ同じでした。タイプ別に分類すると、全Sass関数の28%が色を変更するもの（例：`darken`、`mix`）で、さらに6%が色成分を読み取るために使用されていることがわかりました（例：`alpha`、`blue`）。
+使用されているSass関数は、比率に若干の変更はあるものの、2020年版Web Almanacで見つかったものとほぼ同じでした。タイプ別に分類すると、全Sass関数の28％が色を変更するもの（例：`darken`、`mix`）で、さらに6％が色成分を読み取るために使用されていることがわかりました（例：`alpha`、`blue`）。
 
 {{ figure_markup(
   image="usage-of-control-flow-statements-in-scss.png",
   caption="もっとも一般的に使用されるSassのフロー制御構造です。",
-  description="モバイル用の値を使ったペアカラムのチャートです（デスクトップは常に1～2％以内）。その結果、`@if`66%、`@for`58%、`@each`58%、`@while`2%となっています。",
+  description="モバイル用の値を使ったペアカラムのチャートです（デスクトップは常に1～2％以内）。その結果、`@if`66％、`@for`58％、`@each`58％、`@while`2％となっています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=438915471&format=interactive",
   sheets_gid="920758691",
   sql_file="sass_control_flow_statements.sql"
@@ -1478,24 +1478,24 @@ CSSプリプロセッサの大きな利点の1つは、CSS自体に欠けてい�
 
 条件付きで動作させたいという要望は、`if()`関数がSass関数全体の15％で3位になったことからもわかります。
 
-この同じ欲求は、`@if`のようなSassのフロー制御構造の使用でより明確に見ることができます。文字通り、すべてのSassスタイルシートの3分の2が `@if` を使用しており、半分以上が `@for` または `@each`（またはその両方）を使用しています。この人気の機能は、<a hreflang="en" href="https://drafts.csswg.org/css-conditional-4/#when-rule">最近CSSに追加されました</a>。対照的に、`@while`構造を使用しているのはわずか2%です。
+この同じ欲求は、`@if`のようなSassのフロー制御構造の使用でより明確に見ることができます。文字通り、すべてのSassスタイルシートの3分の2が `@if` を使用しており、半分以上が `@for` または `@each`（またはその両方）を使用しています。この人気の機能は、<a hreflang="en" href="https://drafts.csswg.org/css-conditional-4/#when-rule">最近CSSに追加されました</a>。対照的に、`@while`構造を使用しているのはわずか2％です。
 
 {{ figure_markup(
   image="usage-of-explicit-nesting-in-scss.png",
   caption="Sassでのルールネストの普及について。",
-  description="モバイル用の値を使ったペアカラムのチャートです（デスクトップの常に1～2％以内）。結果は以下の通りです。合計87%, `@:pseudo-class` 85%, `&.class` 81%, `&::pseudo-element` 70%, `&`（単体）64%, `$[attr]` 59%, `& >` 27%, `& +` 26%, `& descendant` 18%, `&#id` 7%, `& -` 5%。",
+  description="モバイル用の値を使ったペアカラムのチャートです（デスクトップの常に1～2％以内）。結果は以下の通りです。合計87％、`@:pseudo-class` 85％、`&.class` 81％、`&::pseudo-element` 70％、`&`（単体）64％、`$[attr]` 59％、`& >` 27％、`& +` 26％、`& descendant` 18％、`&#id` 7％、`& -` 5％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=61926709&format=interactive",
   height=455,
   sheets_gid="1859409315",
   sql_file="sass_nesting.sql"
 ) }}
 
-Sassのもう1つの大きな魅力は、他のルールの中にルールを入れ子にすることができるので、繰り返しのセレクタパターンを書く必要がないことです。この機能は、<a hreflang="en" href="https://www.w3.org/TR/css-nesting-1/">ネイティブのCSSで開発中</a>であり、その理由を我々の分析が示しています。すべてのSassスタイルシートの87%が、検出可能な形式のルールの入れ子を使用しています。特殊文字を必要としない暗黙的なネスティングは測定されませんでした。
+Sassのもう1つの大きな魅力は、他のルールの中にルールを入れ子にできるので、繰り返しのセレクタパターンを書く必要がないことです。この機能は、<a hreflang="en" href="https://www.w3.org/TR/css-nesting-1/">ネイティブのCSSで開発中</a>であり、その理由を我々の分析が示しています。すべてのSassスタイルシートの87％が、検出可能な形式のルールの入れ子を使用しています。特殊文字を必要としない暗黙的なネスティングは測定されませんでした。
 
 ## 結論
 
 最後に、2021年版Web Almanacは、安定しつつも進化し続けるテクノロジーを物語っています。昨年のAlmanacと今年のAlmanacの間に大きな変化はほとんど見られず、明らかに成長しているプラクティスやウェブ機能もあれば、衰退し始めているものもありますが、全体的には継続性が非常に強く感じられました。
 
-これはCSSが停滞しているということでしょうか？そうではなくて、新しいレイアウト手法が増えたり、大きな新機能が開発されたりしていますが、その多くはプリプロセッサの領域で培われた手法に基づいています。私たちは、CSSが「解決済み」であるとか、「最善の方法がすでに確立されている」などとは考えていません。実務者が経験を積むことで、CSSという言語とCSSという実務の両方に変化が訪れるでしょう。その変化は、急激なものではなく徐々に、破壊的なものではなく着実なものになるかもしれませんが、これは成熟した技術に期待されることでもあります。
+これはCSSが停滞しているということでしょうか？　そうではなくて、新しいレイアウト手法が増えたり、大きな新機能が開発されたりしていますが、その多くはプリプロセッサの領域で培われた手法に基づいています。私たちは、CSSが「解決済み」であるとか、「最善の方法がすでに確立されている」などとは考えていません。実務者が経験を積むことで、CSSという言語とCSSという実務の両方に変化が訪れるでしょう。その変化は、急激なものではなく徐々に、破壊的なものではなく着実なものになるかもしれませんが、これは成熟した技術に期待されることでもあります。
 
 今後、CSSがどのように成長していくのか、楽しみにしています。
