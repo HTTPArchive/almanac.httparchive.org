@@ -420,7 +420,7 @@ If we look at the uncompressed savings, it becomes more clear that, even on our 
 
 {{ figure_markup(
   caption="Uncompressed `wasm-opt` savings.",
-  description="Bar chart showing savings from running `wasm-opt` on the same datasets, but this time without Brotli. 10% and 25% shows an insignificant or no improvement of 0 kilbytes on desktop and mobile, median shows an improvement of 12 KB on both, 90% shows improvements of almost 100 KB on desktop and 45 KB on mobile.",
+  description="Bar chart showing savings from running `wasm-opt` on the same datasets, but this time without Brotli. 10% and 25% shows an insignificant or no improvement of 0 kilobytes on desktop and mobile, median shows an improvement of 12 KB on both, 90% shows improvements of almost 100 KB on desktop and 45 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=270629181&format=interactive",
   sheets_gid="1401232418",
   sql_file="sizes_and_savings.sql",
@@ -479,7 +479,7 @@ For example, <a hreflang="en" href="https://github.com/WebAssembly/nontrapping-f
 
 Other features with zero detected usages—multi-value, reference types and tail calls—are in a similar situation: they could also benefit most WebAssembly use-cases, but they suffer from incomplete compiler and/or engine support.
 
-Among the remaining, used, features, two that are particularly interesting are SIMD and atomics. Both provide instructions for parallelising and speeding up execution at different levels: <a hreflang="en" href="https://v8.dev/features/simd">SIMD</a> allows to perform math operations on several values at once, and atomics provide a basis for <a hreflang="en" href="https://web.dev/webassembly-threads/">multithreading in Wasm</a>. Those features are not enabled by default, require specific use-cases, and multithreading in particular requires using special APIs in the source code as well as additional configuration to make the website <a hreflang="en" href="https://web.dev/coop-coep/">cross-origin isolated</a> before it can be used on the web. As a result, a relatively low usage level is unsurprising, although we expect them to grow over time.
+Among the remaining, used, features, two that are particularly interesting are SIMD and atomics. Both provide instructions for parallelizing and speeding up execution at different levels: <a hreflang="en" href="https://v8.dev/features/simd">SIMD</a> allows to perform math operations on several values at once, and atomics provide a basis for <a hreflang="en" href="https://web.dev/webassembly-threads/">multithreading in Wasm</a>. Those features are not enabled by default, require specific use-cases, and multithreading in particular requires using special APIs in the source code as well as additional configuration to make the website <a hreflang="en" href="https://web.dev/coop-coep/">cross-origin isolated</a> before it can be used on the web. As a result, a relatively low usage level is unsurprising, although we expect them to grow over time.
 
 ## Conclusion
 

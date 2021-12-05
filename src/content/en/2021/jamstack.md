@@ -496,7 +496,7 @@ Images are one of the bottlenecks of good User Experience (UX). If they are larg
 
 As one of the newer generation of image formats, <a hreflang="en" href="https://developers.google.com/speed/webp/">WebP</a> has 18.0% of usage among Jamstack sites. Compared to [last year's results](../2020/jamstack#image-formats), when WebP had only 3%, we can say it's a great improvement over one year.
 
-Still, the most used is JPEG at 29.0% and GIF at 26.2%. SVG is used on 19.5% of webpages.
+Still, the most used is JPEG at 29.0% and GIF at 26.2%. SVG is used on 19.5% of web pages.
 
 ### What the resources tells us
 
@@ -508,6 +508,6 @@ Despite limitations on not being able to include headless CMSs, and for some wel
 
 We know that Next.js covers more than the half of measurable Jamstack sites. It's not only trending, but also used in 3.8% of the top 1,000 sites followed by the other popular SSGs such as Nuxt.js and Gatsby. These are all relatively new players just a few years in the space but they have solidified their place by good usage among top ranked sites as well.
 
-SSGs are used all around the world, and are not confined to those countries with the founding companies of this model are based. In fact it seems that some of the fastest-growing adoptors of Jamstack technology, with up to 5% of sites, are those regions furthest away from the tech hubs of Silicon valley.
+SSGs are used all around the world, and are not confined to those countries with the founding companies of this model are based. In fact it seems that some of the fastest-growing adopters of Jamstack technology, with up to 5% of sites, are those regions furthest away from the tech hubs of Silicon valley.
 
 Like all websites, maintaining good performance of Jamstack sites requires knowledge of best practices and experienced developer level to achieve good results, but SSGs can improve this by working on out-of-the-box solutions to improve in that area. Hope you enjoyed the data and give Jamstack a try.
