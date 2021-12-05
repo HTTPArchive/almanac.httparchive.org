@@ -676,7 +676,7 @@ When a site is accessed using assistive technology, an element's ARIA role commu
 {{ figure_markup(
    image="mobile-web-most-common-mobile-aria-roles.png",
    caption="Top 10 most common ARIA roles.",
-   description="Bar chart showing adoption of ARIA roles on mobile web compared to desktop. `button` is used on 29.0% of mobile page loads, followed by `navigation` (22.5%), `presentaiton` (21.1%), `dialog` (20.1%), `search` (18.8%), `main` (16.8%), `banner` (14.3%), `contentinfo` (12.1%), `img` (10.9%), and finally `tablist` (7.4%). Desktop usage looks similar.",
+   description="Bar chart showing adoption of ARIA roles on mobile web compared to desktop. `button` is used on 29.0% of mobile page loads, followed by `navigation` (22.5%), `presentation` (21.1%), `dialog` (20.1%), `search` (18.8%), `main` (16.8%), `banner` (14.3%), `contentinfo` (12.1%), `img` (10.9%), and finally `tablist` (7.4%). Desktop usage looks similar.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1644250399&format=interactive",
    sheets_gid="1584971419",
    sql_file="../accessibility/common_aria_role.sql"
@@ -846,7 +846,7 @@ Images can be [served responsively](https://developer.mozilla.org/en-US/docs/Lea
 
 {{ figure_markup(
    image="mobile-web-responsive-images.png",
-   caption="Use of `<picture>` and `scrset` to serve responsive images.",
+   caption="Use of `<picture>` and `srcset` to serve responsive images.",
    description="Bar chart showing that 6.2% of mobile sites used `<picture>` elements (compared to 6.3% of desktop sites) and 32.0% used `srcset` attributes (compared to 31.7% of desktop sites) to load images responsively.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1030195048&format=interactive",
    sheets_gid="1802999215",
