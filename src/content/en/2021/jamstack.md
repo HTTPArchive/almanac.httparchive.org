@@ -81,7 +81,7 @@ In 2020 the amount of desktop websites increased 2.76 times, while mobile just 1
   sql_file="adoption.sql"
 ) }}
 
-Let's begin with understanding which SSG is most popular. Nuxt.js covers 43.6% of Jamstack sites. Next.js is in second place with 31.1%, third is Gatsby with 16.0%, followed by Hugo at 6.0%.
+Let's begin with understanding which SSG is most popular. Next.js covers 43.6% of Jamstack sites. Nuxt.js is in second place with 31.1%, third is Gatsby with 16.0%, followed by Hugo at 6.0%.
 
 <p class="note">Please note the original publication of this chapter had different figures due to incorrect duplication of Nuxt and Next sites. This has been corrected in above figures and, to a lesser degree, in other figures in this chapter.</p>
 
