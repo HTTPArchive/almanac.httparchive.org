@@ -158,7 +158,7 @@ Drilling into the adoption by CMS across all websites, out of 218 different CMS 
 
 WordPress, the most commonly used platform, is used by 33.6% of these websites, up from 31.4% in 2020, a 7% increase in total adoption.
 
-In percentage terms, Joomla and Drupal adoption is dropping–Joomla sites accounted for 1.9% of websites, down from 2.1% last year (9.5% decrease), and Drupal dropped from 2% to 1.8% (10% decrease). Absolute adoption did increase in terms of numebr of sites measured, but as a percentage of both overall CMS usage and of our (ever increasing!) data set, it is smaller.
+In percentage terms, Joomla and Drupal adoption is dropping–Joomla sites accounted for 1.9% of websites, down from 2.1% last year (9.5% decrease), and Drupal dropped from 2% to 1.8% (10% decrease). Absolute adoption did increase in terms of number of sites measured, but as a percentage of both overall CMS usage and of our (ever increasing!) data set, it is smaller.
 
 Wix adoption grew from 1.2% to 1.6% (33% increase) and Squarespace grew from 0.9% to 1% (11% increase).
 

@@ -356,7 +356,7 @@ The `<meta name="description>` tag does not directly impact rankings. However, i
 {{ figure_markup(
    image="meta-word-counts.png",
    caption="Number of words used in meta descriptions.",
-   description="Bar chart showing the number of words in the meta description per percentile (10, 25, 50, 75, and 90). The median page contatined a meta description with 20 words for desktop and 19 words for mobile. There was little different in the character count between desktop and mobile in our dataset.",
+   description="Bar chart showing the number of words in the meta description per percentile (10, 25, 50, 75, and 90). The median page contained a meta description with 20 words for desktop and 19 words for mobile. There was little different in the character count between desktop and mobile in our dataset.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2013621429&format=interactive",
    sheets_gid="455169599",
    sql_file="seo-stats.sql"
@@ -537,7 +537,7 @@ On 1.7% of mobile pages and 1.4% of desktop pages structured data is added by Ja
 {{ figure_markup(
    image="structured-data-formats.png",
    caption="Breakdown of structured data formats.",
-   description="Bar chart showing the number of pages with structured data formats (jsonld, microdata, rdfa, microformats 2). The jsonld structured data format was implemented on 62.4% of desktop and 60.5% of mobile sites. The microdata format was implemented on 34.6% of desktop and 36.9% of mobile sites. The rdfa format was implemented on 2.9% of desktop and 2.4% of mobile sites. The microformats2 format was used on only .2% of desktop and mobile sites in our dataset.",
+   description="Bar chart showing the number of pages with structured data formats (JSON-LD, microdata, RDFa, microformats2). The JSON-LD structured data format was implemented on 62.4% of desktop and 60.5% of mobile sites. The microdata format was implemented on 34.6% of desktop and 36.9% of mobile sites. The RDFa format was implemented on 2.9% of desktop and 2.4% of mobile sites. The microformats2 format was used on only .2% of desktop and mobile sites in our dataset.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1433352391&format=interactive",
    sheets_gid="1113852331",
    sql_file="structured-data-formats.sql"

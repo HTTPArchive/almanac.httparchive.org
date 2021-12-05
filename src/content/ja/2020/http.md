@@ -6,7 +6,7 @@ authors: [dotjs, rmarx, MikeBishop]
 reviewers: [LPardue, tunetheweb, ibnesayeed]
 analysts: [gregorywolf]
 editors: [rviscomi]
-translators: [ksakae]
+translators: [ksakae1216]
 dotjs_bio: Andrewは<a hreflang="en" href="https://www.cloudflare.com/">Cloudflare</a>で働き、ウェブの高速化と安全性の向上に貢献しています。彼は、エンドユーザーのウェブサイトのパフォーマンスを向上させるために、新しいプロトコルやアセット配信の展開、測定、改善に時間を費やしています。
 rmarx_bio: Robinは<a hreflang="en" href="https://www.uhasselt.be/edm">ベルギーのハッセルト大学</a> のウェブプロトコルとパフォーマンスの研究者です。彼は、<a hreflang="en" href="https://github.com/quiclog">qlogやqvis</a>のようなツールを作成することで、QUICやHTTP/3を使えるようにすることに取り組んでいます。
 MikeBishop_bio: <a hreflang="en" href="https://quicwg.org/">QUIC Working Group</a>のHTTP/3のエディタ。<a hreflang="en" href="https://www.akamai.com/">Akamai</a>のファウンドリグループのアーキテクト。

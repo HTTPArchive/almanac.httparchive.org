@@ -6,7 +6,7 @@ authors: [ydimova]
 reviewers: [ldevernay]
 analysts: [ydimova, max-ostapenko]
 editors: [tunetheweb]
-translators: [ksakae]
+translators: [ksakae1216]
 ydimova_bio:  Yana Dimovaは、ベルギーのKUルーヴェン大学の博士課程に在籍し、プライバシーとウェブセキュリティの研究を行っています。
 discuss: 2046
 results: https://docs.google.com/spreadsheets/d/16bE70rv4qbmKIqbZS1zUiTRpk5eOlgxBXEabL1qiduI/

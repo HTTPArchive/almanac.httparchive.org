@@ -6,7 +6,7 @@ authors: [zachleat]
 reviewers: [logicalphase, AymenLoukil]
 analysts: [tjmonsi, rviscomi]
 editors: [tunetheweb]
-translators: [ksakae]
+translators: [ksakae1216]
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
 zachleat_bio: Zachは<a hreflang="en" href="https://www.filamentgroup.com/">Filament Group</a>のWeb開発者だ。彼は現在、<a hreflang="en" href="https://www.zachleat.com/web/fonts/">web fonts</a>と<a hreflang="en" href="https://www.zachleat.com/web/introducing-eleventy/">static site generators</a>に夢中だ。彼の<a hreflang="en" href="https://www.zachleat.com/web/speaking/">講演履歴</a>には、JAMstack_conf、Beyond Tellerrand、Smashing Conference、CSSConf、そして<a hreflang="en" href="https://www.zachleat.com/web/whitehouse/">The White House</a>のようなイベントでの8カ国での講演が含まれています。また、<a hreflang="en" href="http://nejsconf.com/">NEJS CONF</a>や<a hreflang="en" href="http://nebraskajs.com">NebraskaJS</a>のミートアップも手伝っている。

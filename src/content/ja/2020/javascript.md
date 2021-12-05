@@ -6,7 +6,7 @@ authors: [tkadlec]
 reviewers: [ibnesayeed, denar90]
 analysts: [rviscomi, paulcalvano]
 editors: [rviscomi]
-translators: [ksakae]
+translators: [ksakae1216]
 tkadlec_bio: Timは、誰もが使えるWebを構築することに焦点を当てたWebパフォーマンスコンサルタントであり、トレーナーです。著書に『High Performance Images』（O'Reilly, 2016）、『Implementing Responsive Design』（New Riders, 2012）があります。彼は<a hreflang="en" href="https://timkadlec.com/">timkadlec.com</a>でウェブ全般について書いています。<a href="https://twitter.com/tkadlec">@tkadlec</a>で、彼の考えを簡潔にまとめてTwitterで紹介しています。
 discuss: 2038
 results: https://docs.google.com/spreadsheets/d/1cgXJrFH02SHPKDGD0AelaXAdB3UI7PIb5dlS0dxVtfY/

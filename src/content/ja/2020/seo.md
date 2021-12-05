@@ -6,7 +6,7 @@ authors: [aleyda, ipullrank, fellowhuman1101]
 reviewers: [natedame, catalinred, dsottimano, dwsmart, en3r0, ibnesayeed, tunetheweb]
 analysts: [Tiggerito, antoineeripret]
 editors: [rviscomi]
-translators: [ksakae]
+translators: [ksakae1216]
 aleyda_bio: SEOコンサルタント、作家、講演者、起業家。<a hreflang="en" href="https://www.orainti.com/">Orainti</a>（SaaSからマーケットプレイスまで、トップレベルのウェブプロパティやブランドを扱うブティック型SEOコンサルタント）の創設者であり、<a hreflang="en" href="https://remoters.net/">Remoters.net</a>（リモートワークを促進するためのリモートジョブ、ツール、イベント、ガイドなどを提供する、無料のリモートワークハブ）の共同創設者でもあります。また、<a hreflang="en" href="https://www.aleydasolis.com/en/blog/">ブログ</a>、<a hreflang="en" href="https://www.aleydasolis.com/en/seo-tips/">#SEOFOMO ニュースレター</a>、<a hreflang="en" href="https://www.aleydasolis.com/en/crawling-mondays-videos/">Crawling Mondays</a> ビデオとポッドキャストシリーズ、<a href="https://twitter.com/aleyda">Twitter</a>などを通じて、SEOについての情報を発信しています。
 ipullrank_bio: アーティストであり、テクノロジストでもあるマイケル・キングは、企業向けデジタルマーケティングエージェンシーである<a hreflang="en" href="https://ipullrank.com">iPullRank</a>の創設者であり、自然言語生成アプリ<a hreflang="en" href="https://www.copyscience.io">CopyScience</a>の創設者でもあります。独立系のヒップホップミュージシャンとしての経歴を活かし、魅力的なコンテンツを作成し、受賞歴のあるダイナミックな講演者として、世界中のテクノロジーやマーケティングに関するカンファレンスやブログで活躍しています。また、<a href="https://twitter.com/ipullrank">Twitter</a>では、マイクがゴミの話をしているところを見ることができます。
 fellowhuman1101_bio: 100%人間であり、完全にロボットではないJamie Indigoは、人間が有益な情報にアクセスし、企業が価値あるデジタル体験を提供できるよう、テクノロジーを解きほぐします。彼女は<a hreflang="en" href="https://not-a-robot.com">Not a Robot</a>を設立し、技術的なSEOの人間的な側面に焦点を当て、技術や検索業界における倫理やインクルージョンを含めたコンサルティングを行っています。 彼女は、<a href="https://twitter.com/Jammer_Volts">Twitter</a>で公の場で学んでいるのを見つけることができます。
