@@ -1426,7 +1426,7 @@ Flexboxのロングハンドとショートハンドのプロパティの中に�
 {{ figure_markup(
   image="most-popular-unknown-properties.png",
   caption="もっとも一般的な未知のプロパティです。",
-  description="モバイル用の結果を一覧にしたグラフです。結果は以下の通りです。`webkit-transition` 14%, `font-smoothing` 14%, `tap-highlight-color` 9%, `behavior` 8%, `box-orient` 5%, `-archetype` 4%. webkit-box-orient`, `box-flex`, `box-align`, `box-pack` はすべて 3% です。ms-transform` と `margin-center` はともに2% です。`font-rendering`, `user-drag`, `text-fill-color` ではすべて0%を超えています。",
+  description="モバイル用の結果を一覧にしたグラフです。結果は以下の通りです。`webkit-transition` 14%, `font-smoothing` 14%, `tap-highlight-color` 9%, `behavior` 8%, `box-orient` 5%, `-archetype` 4%. `webkit-box-orient`, `box-flex`, `box-align`, `box-pack` はすべて3% です。`ms-transform` と `margin-center` はともに2% です。`font-rendering`, `user-drag`, `text-fill-color` ではすべて0%を超えています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXMwdR5iy0KEMBzUWuZqDfWsj8HDDJcd5lFfjJpBmJr8gI1TE3xz2BzbNB9SEzSrxDtxfqvDvnvbQ3/pubchart?oid=946019101&format=interactive",
   height=401,
   sheets_gid="1993096589",
