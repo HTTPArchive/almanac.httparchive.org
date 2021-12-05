@@ -269,13 +269,13 @@ Geolocatiegegevens kunnen ook opgevraagd worden door websites via een [webbrowse
 
 ### Gegevenslekken
 
-Slecht beveiligingsbeheer binnen een bedrijf kan een {significante impact hebben op de privégegevens van hun klanten. <a hreflang="en" href="https://haveibeenpwned.com/">HaveIBeenPwned</a> laat aan gebruikers toe om te controleren of hun e-mailadres of telefoonnummer gelekt werd in een gegevenslek. Op het moment van schrijven heeft HaveIBeenPwned 562 gegevenslekken bijgehouden, waarin 640 miljoen gegevens gelekt werden. Alleen al in 2020 werden 40 diensten gekraakt en de persoonlijke gegevens van miljoenen gebruikers gelekt. Drie van deze lekken werden gemarkeerd als _gevoelig_, wat verwijst naar de mogelijkheid om een negatieve impact te hebben op de gebruiker als iemand de gegevens van die gebruikers in het gegevenslek zou vinden. Een voorbeeld van een gevoelig gegevenslek is "[Carding Mafia](https://www.vice.com/en/article/v7m9jx/credit-card-hacking-forum-gets-hacked-exposing-300000-hackers-accounts)", een platform waar gestolen kredietkaarten worden verhandeld.
+Slecht beveiligingsbeheer binnen een bedrijf kan een {significante impact hebben op de privégegevens van hun klanten. <a hreflang="en" href="https://haveibeenpwned.com/">Have I Been Pwned</a> laat aan gebruikers toe om te controleren of hun e-mailadres of telefoonnummer gelekt werd in een gegevenslek. Op het moment van schrijven heeft Have I Been Pwned 562 gegevenslekken bijgehouden, waarin 640 miljoen gegevens gelekt werden. Alleen al in 2020 werden 40 diensten gekraakt en de persoonlijke gegevens van miljoenen gebruikers gelekt. Drie van deze lekken werden gemarkeerd als _gevoelig_, wat verwijst naar de mogelijkheid om een negatieve impact te hebben op de gebruiker als iemand de gegevens van die gebruikers in het gegevenslek zou vinden. Een voorbeeld van een gevoelig gegevenslek is "[Carding Mafia](https://www.vice.com/en/article/v7m9jx/credit-card-hacking-forum-gets-hacked-exposing-300000-hackers-accounts)", een platform waar gestolen kredietkaarten worden verhandeld.
 
 <p class="note">Merk op dat 40 gegevenslekken in het voorbije jaar een ondergrens is, aangezien veel gegevenslekken pas ontdekt of publiek gemaakt worden verschillende maanden nadat ze hebben plaatsgevonden.</p>
 
 {{ figure_markup(
   image="data_breaches_pwned_accounts_per_class.png",
-  caption="Het aantal betroffen accounts in gegevenslekken per gegevensklasse.",
+  caption='Het aantal betroffen accounts in gegevenslekken per gegevensklasse. (Bron: <a hreflang="en" href="https://haveibeenpwned.com/">Have I Been Pwned</a>)',
   description="Staafdiagram dat het aantal gebruikersaccounts toont dat betrokken is in gegevenslekken, op basis van de gegevensklasse die gelekt werd in het gegevenslek. 641 miljoen e-mailadressen waren aanwezig in gegevenslekken, 428 miljoen wachtwoorden, 369 miljoen namen, 173 miljoen geografische locaties, 149 miljoen telefoonnummers, 149 miljoen genders, 134 miljoen socialemediaprofielen, 127 miljoen onderwijsniveaus, 126 miljoen jobtitels, en ten slotte 110 miljoen fysieke adressen.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1612339126&format=interactive",
   sheets_gid="1158689200",
@@ -283,7 +283,7 @@ Slecht beveiligingsbeheer binnen een bedrijf kan een {significante impact hebben
   )
 }}
 
-Elk gegevenslek dat HaveIBeenPwned bijhoudt lekt e-mailadressen, aangezien gebruikers zo opvragen of hun gegevens gelekt zijn. Gelekte e-mailadressen zijn reeds een enorm privacyrisico, aangezien veel gebruikers hun volledige naam of gegevens gebruiken om hun e-mailadres aan te maken. Daarenboven wordt veel andere zeer gevoelige informatie gelekt in sommige gegevenslekken, zoals de genders van gebruikers, bankrekeningnummers of zelfs volledige fysieke adressen.
+Elk gegevenslek dat Have I Been Pwned bijhoudt lekt e-mailadressen, aangezien gebruikers zo opvragen of hun gegevens gelekt zijn. Gelekte e-mailadressen zijn reeds een enorm privacyrisico, aangezien veel gebruikers hun volledige naam of gegevens gebruiken om hun e-mailadres aan te maken. Daarenboven wordt veel andere zeer gevoelige informatie gelekt in sommige gegevenslekken, zoals de genders van gebruikers, bankrekeningnummers of zelfs volledige fysieke adressen.
 
 ## Hoe websites jouw gevoelige gegevens beschermen
 
