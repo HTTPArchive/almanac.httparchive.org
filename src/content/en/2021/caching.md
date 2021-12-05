@@ -3,7 +3,7 @@
 title: Caching
 description: Caching chapter of the 2021 Web Almanac covering Cache-control, Expires, TTLs, validity, Vary, Set-cookies, Service Workers and opportunities.
 authors: [Zizzamia, jessnicolet]
-reviewers: [roryhewitt, WilhelmWillie]
+reviewers: [WilhelmWillie]
 analysts: [rviscomi]
 editors: []
 translators: []
@@ -27,7 +27,7 @@ Caching is a technique that enables the reuse of previously downloaded content, 
 
 At its core, Caching avoids making specific HTTP requests and allows an application to feel more responsive and reliable to the user. Each request is usually cached in two main places:
 - **Content Delivery Network (CDN)**: Usually a third-party company like Cloudflare with the primary goal of replicating your data as closely as possible to where the user is accessing the application. Most CDNs have some default behavior, but mainly you can give them instructions on how to cache by using HTTP Headers.
-- **Browser**: Usually will either learn how to cache your resources internally or respect the HTTP Headers you defined to optimize the experience. On top of that, you will have access to additional manual caching strategies including storing simple strings in *Cookies*, complex API responses in *IndexedDB*, or entire JS or HTML resources in the *CacheStorage* with a *Service Worker*.
+**Browser**: Usually will either learn how to cache your resources internally or respect the HTTP Headers you defined to optimize the experience. On top of that, you will have access to additional manual caching strategies including storing simple strings in *Cookies*, complex API responses in [*IndexedDB*](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), or entire JS or HTML resources in the *CacheStorage* with a *Service Worker*.
 
 In this chapter, we will mostly focus on the HTTP Headers used between the Browser and the CDN, briefly mentioning Service Worker caching strategies.
 
@@ -154,7 +154,7 @@ The `max-age` directive is the most commonly found with 62.2% of Desktop request
 {{ figure_markup(
   image="cache-control-directives.png",
   caption="Usage of `Cache-Control` directives.",
-  description="TODO",
+  description="A bar chart showing the distribution of 12 `Cache-Control` directives. The usage for desktop ranges from 62.2% for `max-age`, 29.7% for `public`, 16.5% for `no-cache`, 12.2% for `must-revalidate`, 9.6% for `no-store`, 9.5% for `private`, 3.5% for `immutable`, 1.8% for `no-transform`, 2.3% for `stale-while-revalidate`, 1.6% for `s-maxage`, 0.9% for `proxy-revalidate` , and 0.2% for `stale-if-error`. Usage for mobile ranges from 60.7% for `max-age`, 29.7% for `public`, 15.6% for `no-cache`, 13.2% for `must-revalidate`, 10.3% for `no-store`, 10.1% for `private`, 3.9% for `immutable`, 1.6% for `no-transform`, 2.4% for `stale-while-revalidate`, 1.4% for `s-maxage`, 1.0% for `proxy-revalidate` , and 0.2% for `stale-if-error`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=1359015817&format=interactive",
   height=436,
   sheets_gid="1944529311",
