@@ -452,7 +452,7 @@ Images weights distributed differently. There's no correlation between SSG group
   sql_file="resource_weights.sql"
 ) }}
 
-Nuxt.js has the highest value at 645 KB. Hugo is next with 522 KN. Next.js and Gatsby are almost the same at 465 KB and 545 KB respectively. Jekyll has the lowest value at 295 KB.
+Nuxt.js has the highest value at 645 KB. Hugo is next with 522 KB. Next.js and Gatsby are almost the same at 465 KB and 545 KB respectively. Jekyll has the lowest value at 295 KB.
 
 #### Images format adoption
 
@@ -467,7 +467,7 @@ Images are one of the bottlenecks of good User Experience (UX). If they are larg
   sql_file="adoption_of_image_formats_in_ssgs.sql"
 ) }}
 
-As one of the newer generation of image formats, <a hreflang="en" href="https://developers.google.com/speed/webp/">WebP</a> has 18.0% of usage among Jamstack sites. Compared to [last year's results](../2020/jamstack#image-formats), when WebP had only 3%, we can say it's a great improvement over one year.
+As one of the newer generation of image formats, <a hreflang="en" href="https://developers.google.com/speed/webp/">WebP</a> has 5.1% of usage among Jamstack sites. Compared to [last year's results](../2020/jamstack#image-formats), when WebP had only 3%, we can say it's a good improvement over one year.
 
 Still, the most used is PNG at 29.0% and JPEG at 26.2%, GIF at 19.5%, and SVG is used on 18.0% of web pages.
 
@@ -479,7 +479,7 @@ This analysis of resource weights confirms that performance of Next.js, Nuxt.js 
 
 Despite limitations on not being able to include headless CMSs, and for some well-known SSGs (Eleventy or Next.js detection mode), we still have a lot of data to analyze here to draw some interesting conclusions. The Jamstack trend is growing year over year: now more than 1% of all websites are Jamstack based.
 
-We know that Next.js covers more than the half of measurable Jamstack sites. It's not only trending, but also used in 3.8% of the top 1,000 sites followed by the other popular SSGs such as Nuxt.js and Gatsby. These are all relatively new players just a few years in the space but they have solidified their place by good usage among top ranked sites as well.
+We know that Next.js covers around 40% of measurable Jamstack sites. It's not only trending, but also used in 3.8% of the top 1,000 sites followed by the other popular SSGs such as Nuxt.js and Gatsby. These are all relatively new players just a few years in the space but they have solidified their place by good usage among top ranked sites as well.
 
 SSGs are used all around the world, and are not confined to those countries with the founding companies of this model are based. In fact it seems that some of the fastest-growing adopters of Jamstack technology, with up to 5% of sites, are those regions furthest away from the tech hubs of Silicon valley.
 
