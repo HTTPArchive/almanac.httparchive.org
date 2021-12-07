@@ -12,7 +12,7 @@ let file_dates = {};
 
 const generate_rss = async (configs, rss_chapters, rss_languages) => {
 
-  rss_languages_only = new Set();
+  const rss_languages_only = new Set();
 
   for (const year in rss_languages) {
     for (const languages in rss_languages[year]) {
@@ -31,7 +31,7 @@ const generate_rss = async (configs, rss_chapters, rss_languages) => {
     const updatedate = get_update_date(`${language}/${year}/chapters/${chapter}.html`);
     const url = convert_file_name(`${language}/${year}/${chapter}`);
     title = `${title} (${year})`;
-    authors = authors.map(author => configs[year].contributors[author].name.replace(/"/g, '\\"'));
+    authors = authors.map(author => configs[year].contributors[author].name.replace(/\\/g, '\\\\').replace(/"/g, '\\"'));
     authors = '"' + authors.join('","') + '"';
 
     urls.push({ language, url, pubdate, updatedate, title, description, authors });
@@ -41,7 +41,7 @@ const generate_rss = async (configs, rss_chapters, rss_languages) => {
 
   for (let language of rss_languages_only) {
     let rss = await ejs.renderFile(rss_template, { urls, language });
-    rss_filename = `templates/${language}/${rss_file}`;
+    const rss_filename = `templates/${language}/${rss_file}`;
 
     console.log(`Generating ${language}/${rss_file}`);
     await fs.outputFile(rss_filename, rss, 'utf8');
@@ -66,8 +66,7 @@ const get_static_pages = async (configs, rss_languages) => {
         const url = ebook_pdf;
         const title = `{{ self.ebook_title() }} (${year})`;
         const description = "{{ self.ebook_title() }}";
-        let authors = configs[year].contributors;
-        authors = Object.values(configs[year].contributors).filter(contributor => contributor.teams.includes("authors")).map(contributor => contributor.name.replace(/"/g, '\\"'));
+        let authors = Object.values(configs[year].contributors).filter(contributor => contributor.teams.includes("authors")).map(contributor => contributor.name.replace(/\\/g, '\\\\').replace(/"/g, '\\"'));
         authors = '"' + authors.join('","') + '"';
         urls.push({ language, url, pubdate, updatedate, title, description, authors });
       }
