@@ -33,17 +33,13 @@ Put simply, almost every page contains image content and effectively all pages s
 
 The impact that all of these images have is hard to overstate. [As the Page Weight chapter highlights](https://almanac.httparchive.org/en/2021/page-weight), images are still responsible for more bytes per page than any other resource type. However, year-over-year, image transfer size has decreased.
 
-{{ figure_markup( image="mobile-image-transfer-size-by-year.png", caption="Mobile image transfer size by year", description="Bar chart showing the distribution of total image transfer sizes, per page, and how it‘s changed between 2020 and 2021. At the 25th percentile, transfer sizes have reduced from 277 kB to 257 kB. At the 50th, they've shrunk from 916 kB to 877 kB. And at the 75th percentile, they've gone down from 2,352 kB to 2,324 kB.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=478222195&format=interactive", sheets_gid="381418851", sql_file="bytes_per_type_2021.sql" ) }}
+{{ figure_markup( image="mobile-image-transfer-size-by-year.png", caption="Mobile image transfer size by year", description="Bar chart showing the distribution of total image transfer sizes, per page, and how it has changed between 2020 and 2021. At the 25th percentile, transfer sizes have reduced from 277 kB to 257 kB. At the 50th, they've shrunk from 916 kB to 877 kB. And at the 75th percentile, they've gone down from 2,352 kB to 2,324 kB.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=478222195&format=interactive", sheets_gid="381418851", sql_file="bytes_per_type_2021.sql" ) }}
 
 This is surprising; for the last decade, the [Image Bytes](https://httparchive.org/reports/state-of-images#bytesImg) chart on the HTTP Archive’s monthly [State of Images report](https://httparchive.org/reports/state-of-images) has seemingly only ever gone one direction: up. What reversed this trend in 2021? I think it may have something to do with native lazy-loading’s rapid adoption; more on that later in the chapter.
 
 In any case, by quantity, images continue to make up an awful lot of the _stuff_ of the web. But tallying the sheer number of elements, requests, and bytes doesn’t tell us how crucial images are to users’ experiences. To get a sense of that, we can look at the [Largest Contentful Paint](https://web.dev/lcp/) metric, which tries to identify the most important piece of above-the-fold content on any given page. [As you can see in the Performance chapter](https://almanac.httparchive.org/en/2021/performance#fig-19), the LCP element has an image on around three quarters of pages.
 
-71%
-
-Mobile pages whose LCP element has an image. On the desktop it’s 79%!
-
-[query link TODO]
+{{ figure_markup( content="71%", caption="Mobile pages whose LCP element has an image. On the desktop it’s 79%!", classes="big-number", sheets_gid="1423728540", sql_file="lcp_element_data.sql" ) }}
 
 Images are crucial to user’s experiences of the web! Let’s dive in, taking a closer look at how they’re encoded, embedded, laid out, and delivered.
 
