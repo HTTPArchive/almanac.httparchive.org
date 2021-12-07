@@ -1,22 +1,20 @@
 ---
-part_number: IV
-chapter_number: 16
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Caching
 description: Caching chapter of the 2019 Web Almanac covering cache-control, expires, TTLs, validitaty, vary, set-cookies, AppCache, Service Workers and opportunities.
 authors: [paulcalvano]
 reviewers: [obto, bkardell]
 analysts: [paulcalvano, obto]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/
-queries: 16_Caching
-paulcalvano_bio: Paul Calvano is a Web Performance Architect at <a href="https://www.akamai.com/">Akamai</a>, where he helps businesses improve the performance of their websites. He's also a co-maintainer of the HTTP Archive project. You can find him tweeting at <a href="https://twitter.com/paulcalvano">@paulcalvano</a>, blogging at <a href="https://paulcalvano.com">http://paulcalvano.com</a> and sharing HTTP Archive research at <a href="https://discuss.httparchive.org">https://discuss.httparchive.org</a>.
-featured_quote: Caching is a technique that enables the reuse of previously downloaded content. It provides a significant performance benefit by avoiding costly network requests and it also helps scale an application by reducing the traffic to a website's origin infrastructure. There's an old saying, &quot;the fastest request is the one that you don't have to make,&quot; and caching is one of the key ways to avoid having to make requests.
+paulcalvano_bio: Paul Calvano is a Web Performance Architect at <a hreflang="en" href="https://www.akamai.com/">Akamai</a>, where he helps businesses improve the performance of their websites. He's also a co-maintainer of the HTTP Archive project. You can find him tweeting at <a href="https://twitter.com/paulcalvano">@paulcalvano</a>, blogging at <a hreflang="en" href="https://paulcalvano.com">http://paulcalvano.com</a> and sharing HTTP Archive research at <a hreflang="en" href="https://discuss.httparchive.org">https://discuss.httparchive.org</a>.
+featured_quote: Caching is a technique that enables the reuse of previously downloaded content. It provides a significant performance benefit by avoiding costly network requests and it also helps scale an application by reducing the traffic to a website's origin infrastructure. There's an old saying, "the fastest request is the one that you don't have to make" and caching is one of the key ways to avoid having to make requests.
 featured_stat_1: 27%
 featured_stat_label_1: Responses not using any caching headers
 featured_stat_2: 39%
-featured_stat_label_2: Responses using the <code>Vary</code> header
+featured_stat_label_2: Responses using the `Vary` header
 featured_stat_3: 82%
 featured_stat_label_3: Sites that could save 1 MB by optimizing caching better
 ---
@@ -33,7 +31,7 @@ There are three guiding principles to caching web content: cache as much as you 
 
 **Cache as close to end users as you can.** Caching content close to the end user reduces download times by removing latency. For example, if a resource is cached on an end user's browser, then the request never goes out to the network and the download time is as fast as the machine's I/O. For first time visitors, or visitors that don't have entries in their cache, a CDN would typically be the next place a cached resource is returned from. In most cases, it will be faster to fetch a resource from a local cache or a CDN compared to an origin server.
 
-Web architectures typically involve [multiple tiers of caching](https://blog.yoav.ws/tale-of-four-caches/). For example, an HTTP request may have the opportunity to be cached in:
+Web architectures typically involve <a hreflang="en" href="https://blog.yoav.ws/tale-of-four-caches/">multiple tiers of caching</a>. For example, an HTTP request may have the opportunity to be cached in:
 
 * An end user's browser
 * A service worker cache in the user's browser
@@ -51,7 +49,7 @@ For an HTTP client to cache a resource, it needs to understand two pieces of inf
 * "How long am I allowed to cache this for?"
 * "How do I validate that the content is still fresh?"
 
-When a web browser sends a response to a client, it typically includes headers that indicate whether the resource is cacheable, how long to cache it for, and how old the resource is. RFC 7234 covers this in more detail in section [4.2 (Freshness)](https://tools.ietf.org/html/rfc7234#section-4.2) and [4.3 (Validation)](https://tools.ietf.org/html/rfc7234#section-4.3).
+When a web browser sends a response to a client, it typically includes headers that indicate whether the resource is cacheable, how long to cache it for, and how old the resource is. RFC 7234 covers this in more detail in section <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-4.2">4.2 (Freshness)</a> and <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-4.3">4.3 (Validation)</a>.
 
 The HTTP response headers typically used for conveying freshness lifetime are:
 
@@ -87,11 +85,10 @@ The example below contains an excerpt of a request/response header from HTTP Arc
 < ETag: "1566748830.0-3052-3932359948"
 ```
 
-The tool [RedBot.org](https://redbot.org/) allows you to input a URL and see a detailed explanation of how the response would be cached based on these headers. For example, [a test for the URL above](https://redbot.org/?uri=https%3A%2F%2Fhttparchive.org%2Fstatic%2Fjs%2Fmain.js) would output the following:
+The tool <a hreflang="en" href="https://redbot.org/">RedBot.org</a> allows you to input a URL and see a detailed explanation of how the response would be cached based on these headers. For example, <a hreflang="en" href="https://redbot.org/?uri=https%3A%2F%2Fhttparchive.org%2Fstatic%2Fjs%2Fmain.js">a test for the URL above</a> would output the following:
 
 {{ figure_markup(
   image="ch16_fig1_redbot_example.jpg",
-  alt="Cache-Control information from RedBot.",
   caption="<code>Cache-Control</code> information from RedBot.",
   description="Redbot example response showing detailed information about when the resource was changed, whether caches can store it, how long it can be considered fresh for and warnings.",
   width=600,
@@ -99,13 +96,12 @@ The tool [RedBot.org](https://redbot.org/) allows you to input a URL and see a d
   )
 }}
 
-If no caching headers are present in a response, then the [client is permitted to heuristically cache the response](https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/). Most clients implement a variation of the RFC's suggested heuristic, which is 10% of the time since `Last-Modified`. However, some may cache the response indefinitely. So, it is important to set specific caching rules to ensure that you are in control of the cacheability.
+If no caching headers are present in a response, then the <a hreflang="en" href="https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/">client is permitted to heuristically cache the response</a>. Most clients implement a variation of the RFC's suggested heuristic, which is 10% of the time since `Last-Modified`. However, some may cache the response indefinitely. So, it is important to set specific caching rules to ensure that you are in control of the cacheability.
 
 72% of responses are served with a `Cache-Control` header, and 56% of responses are served with an `Expires` header. However, 27% of responses did not use either header, and therefore are subject to heuristic caching. This is consistent across both desktop and mobile sites.
 
 {{ figure_markup(
   image="fig2.png",
-  alt="Presence of HTTP Cache-Control and Expires headers.",
   caption="Presence of HTTP <code>Cache-Control</code> and <code>Expires</code> headers.",
   description="Two identical bar charts for mobile and desktop showing 72% of requests use Cache-Control headers, 56% use Expires and the 27% use neither.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1611664016&format=interactive"
@@ -256,7 +252,6 @@ The same data for mobile is shown below. As can be seen, the cacheability of con
   )
 }}
 
-
 ## `Cache-Control` vs `Expires`
 
 In HTTP/1.0, the `Expires` header was used to indicate the date/time after which the response is considered stale. Its value is a date timestamp, such as:
@@ -274,7 +269,6 @@ HTTP/1.1 introduced the `Cache-Control` header, and most modern clients support 
 
 {{ figure_markup(
   image="fig7.png",
-  alt="Usage of Cache-Control versus Expires headers.",
   caption="Usage of <code>Cache-Control</code> versus <code>Expires</code> headers.",
   description="A bar chart showing 53% of responses have a `Cache-Control: max-age`, 54%-55% use `Expires`, 41%-42% use both, and 34% use neither. The figures are given for both desktop and mobile but the figures are near identical with mobile having a percentage point higher in use of expires.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1909701542&format=interactive"
@@ -283,7 +277,7 @@ HTTP/1.1 introduced the `Cache-Control` header, and most modern clients support 
 
 ## `Cache-Control` directives
 
-The HTTP/1.1 [specification](https://tools.ietf.org/html/rfc7234#section-5.2.1) includes multiple directives that can be used in the `Cache-Control` response header and are detailed below. Note that multiple can be used in a single response.
+The HTTP/1.1 <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-5.2.1">specification</a> includes multiple directives that can be used in the `Cache-Control` response header and are detailed below. Note that multiple can be used in a single response.
 
 <figure>
   <table>
@@ -347,7 +341,6 @@ For example, `cache-control: public, max-age=43200` indicates that a cached entr
 
 {{ figure_markup(
   image="fig9.png",
-  alt="Usage of Cache-Control directives on mobile.",
   caption="Usage of <code>Cache-Control</code> directives on mobile.",
   description="A bar chart of 15 cache control directives and their usage ranging from 74.8% for max-age, 37.8% for public, 27.8% for no-cache, 18% for no-store, 14.3% for private, 3.4% for immutable, 3.3% for no-transform, 2.4% for stale-while-revalidate, 2.2% for pre-check, 2.2% for post-check, 1.9% for s-maxage, 1.6% for proxy-revalidate, 0.3% for set-cookie and 0.2% for stale-if-error. The stats are near identical for desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1054108345&format=interactive",
@@ -362,9 +355,9 @@ Figure 16.9 above illustrates the top 15 `Cache-Control` directives in use on mo
 
 * `max-age` is used by almost 75% of `Cache-Control` headers, and `no-store` is used by 18%.
 * `public` is rarely necessary since cached entries are assumed `public` unless `private` is specified. Approximately 38% of responses include `public`.
-* The `immutable` directive is relatively new, [introduced in 2017](https://code.facebook.com/posts/557147474482256/this-browser-tweak-saved-60-of-requests-to-facebook) and is [supported on Firefox and Safari](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Browser_compatibility). Its usage has grown to 3.4%, and it is widely used in [Facebook and Google third-party responses](https://discuss.httparchive.org/t/cache-control-immutable-a-year-later/1195).
+* The `immutable` directive is relatively new, <a hreflang="en" href="https://code.facebook.com/posts/557147474482256/this-browser-tweak-saved-60-of-requests-to-facebook">introduced in 2017</a> and is [supported on Firefox and Safari](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Browser_compatibility). Its usage has grown to 3.4%, and it is widely used in <a hreflang="en" href="https://discuss.httparchive.org/t/cache-control-immutable-a-year-later/1195">Facebook and Google third-party responses</a>.
 
-Another interesting set of directives to show up in this list are `pre-check` and `post-check`, which are used in 2.2% of `Cache-Control` response headers (approximately 7.8 million responses). This pair of headers was [introduced in Internet Explorer 5 to provide a background validation](https://blogs.msdn.microsoft.com/ieinternals/2009/07/20/internet-explorers-cache-control-extensions/) and was rarely implemented correctly by websites. 99.2% of responses using these headers had used the combination of `pre-check=0` and `post-check=0`. When both of these directives are set to 0, then both directives are ignored. So, it seems these directives were never used correctly!
+Another interesting set of directives to show up in this list are `pre-check` and `post-check`, which are used in 2.2% of `Cache-Control` response headers (approximately 7.8 million responses). This pair of headers was <a hreflang="en" href="https://blogs.msdn.microsoft.com/ieinternals/2009/07/20/internet-explorers-cache-control-extensions/">introduced in Internet Explorer 5 to provide a background validation</a> and was rarely implemented correctly by websites. 99.2% of responses using these headers had used the combination of `pre-check=0` and `post-check=0`. When both of these directives are set to 0, then both directives are ignored. So, it seems these directives were never used correctly!
 
 In the long tail, there are more than 1,500 erroneous directives in use across 0.28% of responses. These are ignored by clients, and include misspellings such as "nocache", "s-max-age", "smax-age", and "maxage". There are also numerous non-existent directives such as "max-stale", "proxy-public", "surrogate-control", etc.
 
@@ -391,7 +384,7 @@ So far we've talked about how web servers tell a client what is cacheable, and h
 
 When you are selecting a cache TTL, ask yourself: "how often are you updating these assets?" and "what is their content sensitivity?". For example, if a hero image is going to be modified infrequently, then cache it with a very long TTL. If you expect a JavaScript resource to change frequently, then version it and cache it with a long TTL or cache it with a shorter TTL.
 
-The graph below illustrates the relative age of resources by content type, and you can read a [more detailed analysis here](https://discuss.httparchive.org/t/analyzing-resource-age-by-content-type/1659). HTML tends to be the content type with the shortest age, and a very large % of traditionally cacheable resources ([scripts](./javascript), [CSS](./css), and [fonts](./fonts)) are older than one year!
+The graph below illustrates the relative age of resources by content type, and you can read a <a hreflang="en" href="https://discuss.httparchive.org/t/analyzing-resource-age-by-content-type/1659">more detailed analysis here</a>. HTML tends to be the content type with the shortest age, and a very large % of traditionally cacheable resources ([scripts](./javascript), [CSS](./css), and [fonts](./fonts)) are older than one year!
 
 {{ figure_markup(
   image="ch16_fig8_resource_age.jpg",
@@ -488,7 +481,6 @@ Overall, 65% of responses are served with a `Last-Modified` header, 42% are serv
 
 {{ figure_markup(
   image="fig12.png",
-  alt="Adoption of validating freshness via Last-Modified and ETag headers for desktop websites.",
   caption="Adoption of validating freshness via <code>Last-Modified</code> and <code>ETag</code> headers for desktop websites.",
   description="A bar chart showing 64.4% of desktop requests have a last modified, 42.8% have an ETag, 37.9% have both and 30.7% have neither. The stats for mobile are almost identical at 65.3% for Last Modified, 42.8% for ETag, 38.0% for both and 29.9% for neither.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=20297100&format=interactive"
@@ -582,7 +574,7 @@ When a response is cached, its entire headers are swapped into the cache as well
   )
 }}
 
-But what happens if you have a `Set-Cookie` on a response? According to [RFC 7234 Section 8](https://tools.ietf.org/html/rfc7234#section-8), the presence of a `Set-Cookie` response header does not inhibit caching. This means that a cached entry might contain a `Set-Cookie` if it was cached with one. The RFC goes on to recommend that you should configure appropriate `Cache-Control` headers to control how responses are cached.
+But what happens if you have a `Set-Cookie` on a response? According to <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-8">RFC 7234 Section 8</a>, the presence of a `Set-Cookie` response header does not inhibit caching. This means that a cached entry might contain a `Set-Cookie` if it was cached with one. The RFC goes on to recommend that you should configure appropriate `Cache-Control` headers to control how responses are cached.
 
 One of the risks of caching responses with `Set-Cookie` is that the cookie values can be stored and served to subsequent requests. Depending on the cookie's purpose, this could have worrying results. For example, if a login cookie or a session cookie is present in a shared cache, then that cookie might be reused by another client. One way to avoid this is to use the `Cache-Control` `private` directive, which only permits the response to be cached by the client browser.
 
@@ -590,7 +582,6 @@ One of the risks of caching responses with `Set-Cookie` is that the cookie value
 
 {{ figure_markup(
   image="ch16_fig16_cacheable_responses_set_cookie.jpg",
-  alt="Cacheable responses of Set-Cookie responses.",
   caption="Cacheable responses of <code>Set-Cookie</code> responses.",
   description="A bar chart showing 97% of responses do not use Set-Cookie, and 3% do. This 3% is zoomed into for another bar chart showing the split of 15.3% private, 84.7% public for desktop and similar for mobile at 18.4% public and 81.6% private.",
   width=600,
@@ -600,14 +591,13 @@ One of the risks of caching responses with `Set-Cookie` is that the cookie value
 
 ## AppCache and service workers
 
-The Application Cache or AppCache is a feature of HTML5 that allows developers to specify resources the browser should cache and make available to offline users. This feature was [deprecated and removed from web standards](https://html.spec.whatwg.org/multipage/offline.html#offline), and browser support has been diminishing. In fact, when its use is detected, [Firefox v44+ recommends that developers should use service workers instead](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers). [Chrome 70 restricts the Application Cache to secure context only](https://www.chromestatus.com/feature/5714236168732672). The industry has moved more towards implementing this type of functionality with service workers - and [browser support](https://caniuse.com/#feat=serviceworkers) has been rapidly growing for it.
+The Application Cache or AppCache is a feature of HTML5 that allows developers to specify resources the browser should cache and make available to offline users. This feature was <a hreflang="en" href="https://html.spec.whatwg.org/multipage/offline.html#offline">deprecated and removed from web standards</a>, and browser support has been diminishing. In fact, when its use is detected, [Firefox v44+ recommends that developers should use service workers instead](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers). <a hreflang="en" href="https://www.chromestatus.com/feature/5714236168732672">Chrome 70 restricts the Application Cache to secure context only</a>. The industry has moved more towards implementing this type of functionality with service workers - and <a hreflang="en" href="https://caniuse.com/#feat=serviceworkers">browser support</a> has been rapidly growing for it.
 
-In fact, one of the [HTTP Archive trend reports shows the adoption of service workers](https://httparchive.org/reports/progressive-web-apps#swControlledPages) shown below:
+In fact, one of the <a hreflang="en" href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive trend reports shows the adoption of service workers</a> shown below:
 
 {{ figure_markup(
   image="ch16_fig14_service_worker_adoption.jpg",
-  alt="Timeseries of service worker controlled pages.",
-  caption='Timeseries of service worker controlled pages. (Source: <a href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive</a>)',
+  caption='Timeseries of service worker controlled pages. (Source: <a hreflang="en" href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive</a>)',
   description="A time series chart showing service worker controlled site usage from October 2016 until July 2019. Usage has been steadily growing throughout the years for both mobile and desktop but is still less than 0.6% for both.",
   width=600,
   height=311
@@ -694,7 +684,7 @@ If we break this out by HTTP vs HTTPS, then this gets even more interesting. 581
 
 ## Identifying caching opportunities
 
-Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool enables users to run a series of audits against web pages, and [the cache policy audit](https://developers.google.com/web/tools/lighthouse/audits/cache-policy) evaluates whether a site can benefit from additional caching. It does this by comparing the content age (via the `Last-Modified` header) to the cache TTL and estimating the probability that the resource would be served from cache. Depending on the score, you may see a caching recommendation in the results, with a list of specific resources that could be cached.
+Google's <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> tool enables users to run a series of audits against web pages, and <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/cache-policy">the cache policy audit</a> evaluates whether a site can benefit from additional caching. It does this by comparing the content age (via the `Last-Modified` header) to the cache TTL and estimating the probability that the resource would be served from cache. Depending on the score, you may see a caching recommendation in the results, with a list of specific resources that could be cached.
 
 {{ figure_markup(
   image="ch16_fig15_lighthouse_example.jpg",
@@ -705,11 +695,11 @@ Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool e
   )
 }}
 
-Lighthouse computes a score for each audit, ranging from 0% to 100%, and those scores are then factored into the overall scores. The [caching score](https://developers.google.com/web/tools/lighthouse/audits/cache-policy) is based on potential byte savings. When we examine the Lighthouse results, we can get a perspective of how many sites are doing well with their cache policies.
+Lighthouse computes a score for each audit, ranging from 0% to 100%, and those scores are then factored into the overall scores. The <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/cache-policy">caching score</a> is based on potential byte savings. When we examine the Lighthouse results, we can get a perspective of how many sites are doing well with their cache policies.
 
 {{ figure_markup(
   image="fig21.png",
-  caption="Distribution of Lighthouse scores for the \"Uses Long Cache TTL\" audit for mobile web pages.",
+  caption='Distribution of Lighthouse scores for the "Uses Long Cache TTL" audit for mobile web pages.',
   description="A stacked bar chart 38.2% of websites get a score of < 10%, 29.0% of websites get a score between 10% and 39%, 18.7% of websites get a score of 40%-79%, 10.7% of websites get a score of 80% - 99%, and 3.4% of websites get a score of 100%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=827424070&format=interactive"
   )
@@ -731,4 +721,4 @@ Lighthouse also indicates how many bytes could be saved on repeat views by enabl
 
 Caching is an incredibly powerful feature that allows browsers, proxies and other intermediaries (such as CDNs) to store web content and serve it to end users. The performance benefits of this are significant, since it reduces round trip times and minimizes costly network requests.
 
-Caching is also a very complex topic. There are numerous HTTP response headers that can convey freshness as well as validate cached entries, and `Cache-Control` directives provide a tremendous amount of flexibility and control. However, developers should be cautious about the additional opportunities for mistakes that it comes with. Regularly auditing your site to ensure that cacheable resources are cached appropriately is recommended, and tools like [Lighthouse](https://developers.google.com/web/tools/lighthouse) and [REDbot](https://redbot.org/) do an excellent job of helping to simplify the analysis.
+Caching is also a very complex topic. There are numerous HTTP response headers that can convey freshness as well as validate cached entries, and `Cache-Control` directives provide a tremendous amount of flexibility and control. However, developers should be cautious about the additional opportunities for mistakes that it comes with. Regularly auditing your site to ensure that cacheable resources are cached appropriately is recommended, and tools like <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> and <a hreflang="en" href="https://redbot.org/">REDbot</a> do an excellent job of helping to simplify the analysis.

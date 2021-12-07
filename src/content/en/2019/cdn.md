@@ -1,6 +1,5 @@
 ---
-part_number: IV
-chapter_number: 17
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CDN
 description: CDN chapter of the 2019 Web Almanac covering CDN adoption and usage, RTT & TLS management, HTTP/2 adoption, caching and common library and content CDNs.
 authors: [andydavies, colinbendell]
@@ -10,10 +9,9 @@ editors: [rviscomi]
 translators: []
 discuss: 1772
 results: https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/
-queries: 17_CDN
-andydavies_bio: Andy Davies is a Freelance Web Performance Consultant and has helped some of the UK's leading retailers, newspapers and financial services companies to make their sites faster. He wrote The Pocket Guide to Web Performance, is co-author of Using WebPageTest and also an organizer of the London Web Performance meetup. You can find Andy on Twitter as <a href="https://twitter.com/andydavies">@AndyDavies</a>, and he occasionally blogs at <a href="https://andydavies.me">https://andydavies.me</a>
-colinbendell_bio: Colin is part of the CTO Office at <a href="https://cloudinary.com/">Cloudinary</a> and co-author of the O'Reilly book <a href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/">High Performance Images</a>. He spends much of his time at the intersection of high volume data, media, browsers and standards. You can find him on tweeting <a href="https://twitter.com/colinbendell">@colinbendell</a> and at blogging at <a href="https://bendell.ca/">https://bendell.ca</a>.
-featured_quote: &quot;Use a Content Delivery Network&quot; was one of Steve Souders original recommendations for making web sites load faster. It's advice that remains valid today, and in this chapter of the Web Almanac we're going to explore how widely Steve's recommendation has been adopted, how sites are using Content Delivery Networks (CDNs), and some of the features they're using.
+andydavies_bio: Andy Davies is a Freelance Web Performance Consultant and has helped some of the UK's leading retailers, newspapers and financial services companies to make their sites faster. He wrote The Pocket Guide to Web Performance, is co-author of Using WebPageTest and also an organizer of the London Web Performance meetup. You can find Andy on Twitter as <a href="https://twitter.com/andydavies">@AndyDavies</a>, and he occasionally blogs at <a hreflang="en" href="https://andydavies.me">https://andydavies.me</a>
+colinbendell_bio: Colin is part of the CTO Office at <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a> and co-author of the O'Reilly book <a hreflang="en" href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/">High Performance Images</a>. He spends much of his time at the intersection of high volume data, media, browsers and standards. You can find him on tweeting <a href="https://twitter.com/colinbendell">@colinbendell</a> and at blogging at <a hreflang="en" href="https://bendell.ca/">https://bendell.ca</a>.
+featured_quote: "Use a Content Delivery Network" was one of Steve Souders original recommendations for making web sites load faster. It's advice that remains valid today, and in this chapter of the Web Almanac we're going to explore how widely Steve's recommendation has been adopted, how sites are using Content Delivery Networks (CDNs), and some of the features they're using.
 featured_stat_1: 20%
 featured_stat_label_1: Home pages served by CDN
 featured_stat_2: 9.61%
@@ -41,24 +39,24 @@ Although CDNs are often thought of as just caches that store and serve static co
 * From a [security](./security) perspective, malicious traffic and bots can be filtered out by a CDN before the requests even reach the origin, and their wide customer base means CDNs can often see and react to new threats sooner.
 * The rise of [edge computing](https://en.wikipedia.org/wiki/Edge_computing) allows sites to run their own code close to their visitors, both improving performance and reducing the load on the origin.
 
-Finally, CDNs also help sites to adopt new technologies without requiring changes at the origin, for example [HTTP/2](./http2), TLS 1.3, and/or IPv6 can be enabled from the edge to the browser, even if the origin servers don't support it yet.
+Finally, CDNs also help sites to adopt new technologies without requiring changes at the origin, for example [HTTP/2](./http), TLS 1.3, and/or IPv6 can be enabled from the edge to the browser, even if the origin servers don't support it yet.
 
 ### Caveats and disclaimers
 
-As with any observational study, there are limits to the scope and impact that can be measured. The statistics gathered on CDN usage for the the Web Almanac does not imply performance nor effectiveness of a specific CDN vendor.
+As with any observational study, there are limits to the scope and impact that can be measured. The statistics gathered on CDN usage for the Web Almanac does not imply performance nor effectiveness of a specific CDN vendor.
 
 There are many limits to the testing [methodology](./methodology) used for the Web Almanac. These include:
 
 * **Simulated network latency**: The Web Almanac uses a dedicated network connection that [synthetically shapes traffic](./methodology#webpagetest).
-* **Single geographic location**: Tests are run from [a single datacenter](https://httparchive.org/faq#how-is-the-data-gathered) and cannot test the geographic distribution of many CDN vendors.
+* **Single geographic location**: Tests are run from <a hreflang="en" href="https://httparchive.org/faq#how-is-the-data-gathered">a single datacenter</a> and cannot test the geographic distribution of many CDN vendors.
 * **Cache effectiveness**: Each CDN uses proprietary technology and many, for security reasons, do not expose cache performance.
 * **Localization and internationalization**: Just like geographic distribution, the effects of language and geo-specific domains are also opaque to the testing.
-* [CDN detection](https://github.com/WPO-Foundation/wptagent/blob/master/internal/optimization_checks.py#L51) is primarily done through DNS resolution and HTTP headers. Most CDNs use a DNS CNAME to map a user to an optimal datacenter. However, some CDNs use AnyCast IPs or direct A+AAAA responses from a delegated domain which hide the DNS chain. In other cases, websites use multiple CDNs to balance between vendors which is hidden from the single-request pass of [WebPageTest](./methodology#webpagetest). All of this limits the effectiveness in the measurements.
+* <a hreflang="en" href="https://github.com/WPO-Foundation/wptagent/blob/master/internal/optimization_checks.py#L51">CDN detection</a> is primarily done through DNS resolution and HTTP headers. Most CDNs use a DNS CNAME to map a user to an optimal datacenter. However, some CDNs use AnyCast IPs or direct A+AAAA responses from a delegated domain which hide the DNS chain. In other cases, websites use multiple CDNs to balance between vendors which is hidden from the single-request pass of [WebPageTest](./methodology#webpagetest). All of this limits the effectiveness in the measurements.
 
 Most importantly, these results reflect a potential utilization but do not reflect actual impact. YouTube is more popular than "ShoesByColin" yet both will appear as equal value when comparing utilization.
 
 With this in mind, there are a few intentional statistics that were not measured with the context of a CDN:
-* **TTFB**: Measuring the Time to first byte _by CDN_ would be intellectually dishonest without proper knowledge about cacheability and cache effectiveness. If one site uses a CDN for **round trip time** (RTT) management but not for caching, this would create a disadvantage when comparing another site that uses a different CDN vendor but does also caches the content.  _(Note: this does not apply to the TTFB analysis in the [Performance](./performance#time-to-first-byte-ttfb) chapter because it does not draw conclusions about the performance of individual CDNs.)_
+* **TTFB**: Measuring the Time to first byte _by CDN_ would be intellectually dishonest without proper knowledge about cacheability and cache effectiveness. If one site uses a CDN for **round trip time** (RTT) management but not for caching, this would create a disadvantage when comparing another site that uses a different CDN vendor but does also caches the content.  _(Note: this does not apply to the TTFB analysis in the [Performance](./performance#time-to-first-byte) chapter because it does not draw conclusions about the performance of individual CDNs.)_
 * **Cache Hit vs. Cache Miss performance**: As mentioned previously, this is opaque to the testing apparatus and therefore repeat tests to test page performance with a cold cache vs. a hot cache are unreliable.
 
 ### Further stats
@@ -463,7 +461,7 @@ The composition of top CDN providers dramatically shifts for third-party resourc
 
 ## RTT and TLS management
 
-CDNs can offer more than simple caching for website performance. Many CDNs also support a pass-through mode for dynamic or personalized content when an organization has a legal or other business requirement prohibiting the content from being cached. Utilizing a CDN's physical distribution enables increased performance for TCP RTT for end users. As [others have noted](https://www.igvita.com/2012/07/19/latency-the-new-web-performance-bottleneck/), [reducing RTT is the most effective means to improve web page performance](https://hpbn.co/primer-on-latency-and-bandwidth/) compared to increasing bandwidth.
+CDNs can offer more than simple caching for website performance. Many CDNs also support a pass-through mode for dynamic or personalized content when an organization has a legal or other business requirement prohibiting the content from being cached. Utilizing a CDN's physical distribution enables increased performance for TCP RTT for end users. As <a hreflang="en" href="https://www.igvita.com/2012/07/19/latency-the-new-web-performance-bottleneck/">others have noted</a>, <a hreflang="en" href="https://hpbn.co/primer-on-latency-and-bandwidth/">reducing RTT is the most effective means to improve web page performance</a> compared to increasing bandwidth.
 
 Using a CDN in this way can improve page performance in two ways:
 
@@ -659,12 +657,11 @@ For resource requests (including same-domain and third-party), the TLS negotiati
   )
 }}
 
-
 TLS handshake performance is impacted by a number of factors. These include RTT, TLS record size, and TLS certificate size. While RTT has the biggest impact on the TLS handshake, the second largest driver for TLS performance is the TLS certificate size.
 
-During the first round trip of the [TLS handshake](https://hpbn.co/transport-layer-security-tls/#tls-handshake), the server attaches its certificate. This certificate is then verified by the client before proceeding. In this certificate exchange, the server might include the certificate chain by which it can be verified. After this certificate exchange, additional keys are established to encrypt the communication. However, the length and size of the certificate can negatively impact the TLS negotiation performance, and in some cases, crash client libraries.
+During the first round trip of the <a hreflang="en" href="https://hpbn.co/transport-layer-security-tls/#tls-handshake">TLS handshake</a>, the server attaches its certificate. This certificate is then verified by the client before proceeding. In this certificate exchange, the server might include the certificate chain by which it can be verified. After this certificate exchange, additional keys are established to encrypt the communication. However, the length and size of the certificate can negatively impact the TLS negotiation performance, and in some cases, crash client libraries.
 
-The certificate exchange is at the foundation of the TLS handshake and is usually handled by isolated code paths so as to minimize the attack surface for exploits. Because of its low level nature, buffers are usually not dynamically allocated, but fixed. In this way, we cannot simply assume that the client can handle an unlimited-sized certificate. For example, OpenSSL CLI tools and Safari can successfully negotiate against [`https://10000-sans.badssl.com`](https://10000-sans.badssl.com). Yet, Chrome and Firefox fail because of the size of the certificate.
+The certificate exchange is at the foundation of the TLS handshake and is usually handled by isolated code paths so as to minimize the attack surface for exploits. Because of its low level nature, buffers are usually not dynamically allocated, but fixed. In this way, we cannot simply assume that the client can handle an unlimited-sized certificate. For example, OpenSSL CLI tools and Safari can successfully negotiate against <a hreflang="en" href="https://10000-sans.badssl.com">`https://10000-sans.badssl.com`</a>. Yet, Chrome and Firefox fail because of the size of the certificate.
 
 While extreme sizes of certificates can cause failures, even sending moderately large certificates has a performance impact. A certificate can be valid for one or more hostnames which are are listed in the `Subject-Alternative-Name` (SAN). The more SANs, the larger the certificate. It is the processing of these SANs during verification that causes performance to degrade. To be clear, performance of certificate size is not about TCP overhead, rather it is about processing performance of the client.
 
@@ -672,9 +669,9 @@ Technically, TCP slow start can impact this negotiation but it is very improbabl
 
 Many CDNs, however, depend on shared TLS certificates and will list many customers in the SAN of a certificate. This is often necessary because of the scarcity of IPv4 addresses. Prior to the adoption of `Server-Name-Indicator` (SNI) by end users, the client would connect to a server, and only after inspecting the certificate, would the client hint which hostname the user user was looking for (using the `Host` header in HTTP). This results in a 1:1 association of an IP address and a certificate. If you are a CDN with many physical locations, each location may require a dedicated IP, further aggravating the exhaustion of IPv4 addresses. Therefore, the simplest and most efficient way for CDNs to offer TLS certificates for websites that still have users that don't support SNI is to offer a shared certificate.
 
-According to Akamai, the adoption of SNI is [still not 100% globally](https://datatracker.ietf.org/meeting/101/materials/slides-101-maprg-update-on-tls-sni-and-ipv6-client-adoption-00). Fortunately there has been a rapid shift in recent years. The biggest culprits are no longer Windows XP and Vista, but now Android apps, bots, and corporate applications. Even at 99% adoption, the remaining 1% of 3.5 billion users on the internet can create a very compelling motivation for website owners to require a non-SNI certificate. Put another way, a pure play website can enjoy a virtually 100% SNI adoption among standard web browsers. Yet, if the website is also used to support APIs or WebViews in apps, particularly Android apps, this distribution can drop rapidly.
+According to Akamai, the adoption of SNI is <a hreflang="en" href="https://datatracker.ietf.org/meeting/101/materials/slides-101-maprg-update-on-tls-sni-and-ipv6-client-adoption-00">still not 100% globally</a>. Fortunately there has been a rapid shift in recent years. The biggest culprits are no longer Windows XP and Vista, but now Android apps, bots, and corporate applications. Even at 99% adoption, the remaining 1% of 3.5 billion users on the internet can create a very compelling motivation for website owners to require a non-SNI certificate. Put another way, a pure play website can enjoy a virtually 100% SNI adoption among standard web browsers. Yet, if the website is also used to support APIs or WebViews in apps, particularly Android apps, this distribution can drop rapidly.
 
-Most CDNs balance the need for shared certificates and performance. Most cap the number of SANs between 100 and 150. This limit often derives from the certificate providers. For example, [LetsEncrypt](https://letsencrypt.org/docs/rate-limits/), [DigiCert](https://www.websecurity.digicert.com/security-topics/san-ssl-certificates), and [GoDaddy](https://www.godaddy.com/web-security/multi-domain-san-ssl-certificate) all limit SAN certificates to 100 hostnames while [Comodo](https://comodosslstore.com/comodo-mdc-ssl.aspx)'s limit is 2,000. This, in turn, allows some CDNs to push this limit, cresting over 800 SANs on a single certificate. There is a strong negative correlation of TLS performance and the number of SANs on a certificate.
+Most CDNs balance the need for shared certificates and performance. Most cap the number of SANs between 100 and 150. This limit often derives from the certificate providers. For example, <a hreflang="en" href="https://letsencrypt.org/docs/rate-limits/">LetsEncrypt</a>, <a hreflang="en" href="https://www.websecurity.digicert.com/security-topics/san-ssl-certificates">DigiCert</a>, and <a hreflang="en" href="https://www.godaddy.com/web-security/multi-domain-san-ssl-certificate">GoDaddy</a> all limit SAN certificates to 100 hostnames while <a hreflang="en" href="https://comodosslstore.com/comodo-mdc-ssl.aspx">Comodo</a>'s limit is 2,000. This, in turn, allows some CDNs to push this limit, cresting over 800 SANs on a single certificate. There is a strong negative correlation of TLS performance and the number of SANs on a certificate.
 
 {{ figure_markup(
   image="fig11.png",
@@ -1068,13 +1065,13 @@ In general, the use of a CDN is highly correlated with a more rapid adoption of 
   )
 }}
 
-More discussion of TLS versions and ciphers can be found in the [Security](./security) and [HTTP/2](./http2) chapters.
+More discussion of TLS versions and ciphers can be found in the [Security](./security) and [HTTP/2](./http) chapters.
 
 ## HTTP/2 adoption
 
 Along with RTT management and improving TLS performance, CDNs also enable new standards like HTTP/2 and IPv6. While most CDNs offer support for HTTP/2 and many have signaled early support of the still-under-standards-development HTTP/3, adoption still depends on website owners to enable these new features. Despite the change-management overhead, the majority of the HTML served from CDNs has HTTP/2 enabled.
 
-CDNs have over 70% adoption of HTTP/2, compared to the nearly 27% of origin pages. Similarly, sub-domain and third-party resources on CDNs see an even higher adoption of HTTP/2 at 90% or higher while third-party resources served from origin infrastructure only has 31% adoption. The performance gains and other features of HTTP/2 are further covered in the [HTTP/2](./http2) chapter.
+CDNs have over 70% adoption of HTTP/2, compared to the nearly 27% of origin pages. Similarly, sub-domain and third-party resources on CDNs see an even higher adoption of HTTP/2 at 90% or higher while third-party resources served from origin infrastructure only has 31% adoption. The performance gains and other features of HTTP/2 are further covered in the [HTTP/2](./http) chapter.
 
 <p class="note">Note: All requests were made with the latest version of Chrome which supports HTTP/2. When only HTTP/1.1 is reported, this would indicate either unencrypted (non-TLS) servers or servers that don't support HTTP/2.</p>
 
@@ -1496,7 +1493,6 @@ Another useful tool is the use of the `Vary` HTTP header. This header instructs 
 
 {{ figure_markup(
   image="use_of_vary_on_cdn.png",
-  alt="Usage of Vary for HTML served from CDNs.",
   caption="Usage of <code>Vary</code> for HTML served from CDNs.",
   description="Treemap graph showing accept-encoding dominates vary usage with 73% of the chart taken up with that. Cookie (13%) and user-agent (8%) having some usage, then a complete mixed of other headers.",
   width=600,
@@ -1512,7 +1508,6 @@ In a similar way, `Vary: Cookie` usually indicates that content that will change
 
 {{ figure_markup(
   image="use_of_vary.png",
-  alt="Comparison of Vary usage for HTML and resources served from origin and CDN.",
   caption="Comparison of <code>Vary</code> usage for HTML and resources served from origin and CDN.",
   description="Set of four treemap graphs showing that for CDNs serving home pages the biggest use of Vary is for Cookie, followed by User-agent. For CDNs serving other resources it's origin, followed by accept, user-agent, x-origin and referrer. For Origins and home pages it's user-agent, followed by cookie. Finally for Origins and other resources it's primarily user-agent followed by origin, accept, then range and host."
   )
@@ -1536,7 +1531,6 @@ The `s-maxage` directive informs proxies for how long they may cache a response.
 
 {{ figure_markup(
   image="fig26.png",
-  alt="Adoption of s-maxage across CDN responses.",
   caption="Adoption of <code>s-maxage</code> across CDN responses.",
   description="Bar chart showing 82% of jsDelivr serves responses with s-maxage, 14% of Level 3, 6.3% of Amazon CloudFront, 3.3% of Akamai, 3.1% of Fastly, 3% of Highwinds, 2% of Cloudflare, 0.91% of ORIGIN, 0.75% of Edgecast, 0.07% of Google.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1215102767&format=interactive"

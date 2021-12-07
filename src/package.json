@@ -16,6 +16,7 @@
   "scripts": {
     "test": "node ./tools/test",
     "generate": "node ./tools/generate",
+    "figure-images": "node ./tools/generate/generate_figure_images",
     "watch": "node ./tools/generate/chapter_watcher",
     "ebooks": "node ./tools/generate/generate_ebook_pdfs",
     "deploy": "./tools/scripts/deploy.sh",
@@ -33,17 +34,19 @@
     "timestamps": "node ./tools/generate/generate_timestamps"
   },
   "devDependencies": {
-    "ejs": "3.1.5",
-    "fs-extra": "9.0.1",
-    "jsdom": "16.4.0",
-    "prettier": "2.2.1",
+    "ejs": "3.1.6",
+    "fs-extra": "10.0.0",
+    "jsdom": "19.0.0",
+    "node-fetch": "3.1.0",
+    "node-watch": "0.7.2",
+    "prettier": "2.5.1",
+    "puppeteer": "12.0.1",
+    "rainbow-code": "2.1.7",
     "recursive-readdir": "2.2.2",
+    "run-script-os": "1.1.6",
     "showdown": "1.9.1",
-    "web-vitals": "1.0.1",
-    "node-fetch": "2.6.1",
-    "xml-js": "1.6.11",
-    "run-script-os": "1.1.4",
-    "node-watch": "0.7.1",
-    "rainbow-code": "2.1.7"
+    "smartypants": "0.1.6",
+    "web-vitals": "2.1.2",
+    "xml-js": "1.6.11"
   }
 }

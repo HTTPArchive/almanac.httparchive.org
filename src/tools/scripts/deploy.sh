@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script is used to deploy the Web Alamanc to Google Cloud Platform (GCP).
+# This script is used to deploy the Web Almanac to Google Cloud Platform (GCP).
 # Users must have push permissions on the production branch and also release
 # permissions for the Web Almanac on GCP
 
@@ -10,20 +10,21 @@ set -e
 # Usage info
 show_help() {
 cat << EOF
-Usage: ${0##*/} [-hv] [-f OUTFILE] [FILE]...
+Usage: ${0##*/} [-hv] [-u URL]...
 Release the Web Alamanac to Google Cloud Platform
 Requires Permissions on Google Cloud Platform for the Web Amanac account
 
     -h   display this help and exit
     -f   force mode (no interactive prompts for each step)
     -n   no-promote - release a test version
+    -s   stage version to use (e.g. 20211111t105151)
 EOF
 }
 
 OPTIND=1 #Reseting is good practive
 force=0
 no_promote=0
-while getopts "h?fn" opt; do
+while getopts ":h?fns:" opt; do
     case "$opt" in
     h|\?)
         show_help
@@ -32,6 +33,8 @@ while getopts "h?fn" opt; do
     f)  force=1
         ;;
     n)  no_promote=1
+        ;;
+    s)  STAGE_VERSION=${OPTARG}
         ;;
     esac
 done
@@ -68,13 +71,17 @@ fi
 
 if [ "${no_promote}" == "1" ]; then
   echo "Deploying to GCP (no promote)"
-  echo "Y" | gcloud app deploy --project webalmanac --no-promote
+  if [[ -z "${STAGE_VERSION}" ]]; then
+    echo "Y" | gcloud app deploy --project webalmanac --no-promote
+  else
+    echo "Y" | gcloud app deploy --project webalmanac --no-promote --version="${STAGE_VERSION}"
+  fi
   echo "Done"
   exit 0
 fi
 
 # Check branch is clean first
-if [ -n "$(git status --porcelain)" ]; then 
+if [ -n "$(git status --porcelain)" ]; then
   check_continue "Your branch is not clean. Do you still want to continue deploying?"
 fi
 
@@ -103,7 +110,7 @@ echo "Please test the site locally"
 
 check_continue "Are you ready to deploy?"
 
-LAST_TAGGED_VERSION=$(git tag -l "v*" | tail -1)
+LAST_TAGGED_VERSION=$(git tag -l "v[0-9]*" | sort -V | tail -1)
 echo "Last tagged version: ${LAST_TAGGED_VERSION}"
 if [[ "${LAST_TAGGED_VERSION}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
   #Split LAST_TAGGED_VERSION on dots (.) into SEMVER
@@ -151,6 +158,11 @@ git status
 
 echo "Checking out main branch"
 git checkout main
+
+if [ "$(pgrep -f 'python main.py')" ]; then
+  echo "Killing server so backgrounded version isn't left there"
+  pkill -9 -f "python main.py"
+fi
 
 echo
 echo -e "${GREEN}Successfully deployed!${RESET_COLOR}"

@@ -1,26 +1,17 @@
 const fs = require('fs-extra');
 const ejs = require('ejs');
+const { get_static_lang_year_files } = require('./shared');
+const { get_static_lang_files } = require('./shared');
 
 const min_publish_date = '2019-11-11';
 const sitemap_template = `templates/sitemap.ejs.xml`;
 const sitemap_path = `templates/sitemap.xml`;
-const static_pages = [
-  'index.html',
-  'table_of_contents.html',
-  'methodology.html',
-  'contributors.html',
-  'accessibility_statement.html',
-  'stories/page_content.html',
-  'stories/user_experience.html',
-  'stories/content_publishing.html',
-  'stories/content_distribution.html'
-];
 const ebook_path = "static/pdfs/web_almanac_";
 
 const last_updated_json = "config/last_updated.json";
 let file_dates = {};
 
-const generate_sitemap = async (sitemap_chapters,sitemap_languages) => {
+const generate_sitemap = async (sitemap_chapters, sitemap_languages) => {
 
   file_dates = JSON.parse(await fs.readFile(last_updated_json, 'utf8'));
 
@@ -47,23 +38,25 @@ const generate_sitemap = async (sitemap_chapters,sitemap_languages) => {
 
 const get_static_pages = async (sitemap_languages) => {
 
-  var languages_and_years = [];
+  let urls = [];
 
-  for (const year in sitemap_languages) {
-    for (const languages in sitemap_languages[year]) {
-      languages_and_years.push(`${sitemap_languages[year][languages]}/${year}`);
+  // Get all of the static pages for each combination of language and year
+  const files = get_static_lang_year_files(sitemap_languages);
+
+  // Get the sitemap entries for those pages
+  for (const loc of await files) {
+    if (fs.existsSync(`templates/${loc}`)) {
+      const lastmod = get_lastmod_date(loc);
+      const url = convert_file_name(loc);
+
+      urls.push({ url, lastmod });
     }
   }
 
-  // Get all of the static pages for each combination
-  const files = languages_and_years
-    .map((x) => static_pages.map((p) => `${x}/${p}`))
-    .reduce((x, y) => [...x, ...y], []);
+  // Get all of the static pages with no year for each language
+  const files_no_year = get_static_lang_files(sitemap_languages);
 
-  // Get the sitemap entries for those pages
-  let urls = [];
-
-  for (const loc of await files) {
+  for (const loc of await files_no_year) {
     if (fs.existsSync(`templates/${loc}`)) {
       const lastmod = get_lastmod_date(loc);
       const url = convert_file_name(loc);
@@ -100,14 +93,7 @@ const convert_file_name = (url) => {
     return url.substr(0, url.length - 10);
   };
   if ( url.endsWith(".html")) {
-    if ( url.endsWith("accessibility_statement.html")) {
-      // Strip year from Accessibility Statement
-      // TODO must fix this properly to avoid clashes
-      // once we know how we'll handle this in future years
-      return url.substr(0, url.length - 5).replace(/_/g,'-').replace(/\/[0-9]{4}/,'');
-    } else {
-      return url.substr(0, url.length - 5).replace(/_/g,'-');
-    }
+    return url.substr(0, url.length - 5).replace(/_/g,'-');
   };
   return url.replace(/_/g,'-');
 };

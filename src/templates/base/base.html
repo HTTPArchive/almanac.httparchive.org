@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
 {% block styles %}
-  <link rel="stylesheet" href="{{ get_versioned_filename('/static/css/2019.css') }}">
+  <link rel="stylesheet" href="{{ get_versioned_filename('/static/css/almanac.css') }}">
+  <link rel="preload" href="{{ get_versioned_filename('/static/css/almanac.css') }}" as="style" />
 {% endblock %}
 
 {% block page_url %}https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}{% endblock %}
@@ -12,7 +13,7 @@
 {% block author_structured_data %}
 {
   "@type": "Person",
-  "sameas": [
+  "sameAs": [
     "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}",
     "https://twitter.com/rick_viscomi",
     "https://github.com/rviscomi"
@@ -39,6 +40,10 @@
 <meta name="twitter:image:alt" content="{{ self.twitter_image_alt() }}" />
 <meta name="twitter:description" content="{{ self.description() }}">
 
+<link rel="webmention" href="https://webmention.io/almanac.httparchive.org/webmention" />
+<link rel="pingback" href="https://webmention.io/almanac.httparchive.org/xmlrpc" />
+<link rel="me" href="mailto:team@httparchive.org" />
+
 {% block structured_data %}
 <script type="application/ld+json">
 	{
@@ -63,7 +68,12 @@
 	  	      "url": "https://almanac.httparchive.org/static/images/ha.png",
 	  	      "height": 160,
 	  	      "width": 320
-	  	  }
+	  	  },
+        "sameAs": [
+          "https://httparchive.org",
+          "https://twitter.com/HTTPArchive",
+          "https://github.com/HTTPArchive"
+          ]
       },
     "author":
       {{ self.author_structured_data() }},
@@ -99,16 +109,56 @@
 {% block contributors %}{{ config.contributors.keys() | length }}{% endblock %}
 
 {% block non_chapter_nav_links %}
+{% if year <= DEFAULT_YEAR %}
 <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
 <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
+{% endif %}
 {% endblock %}
 
+{% macro nav_search(switcher_name) %}
+  {% if switcher_name == "mobile" or switcher_name == "mobile-footer" %}
+  <form class="search-nav" action="/{{ lang}}/search">
+    <label for="{{ switcher_name }}-search-box" class="visually-hidden">{{ self.search_title() }}</label>
+    <input id="{{ switcher_name }}-search-box" class="search-input" type="search" name="q" placeholder="{{ self.search_title() }}" title="{{ self.search_title() }}" aria-label="{{ self.search_title() }}">
+    <button class="search-button" type="submit">
+      <svg width="13" height="13" role="img" aria-labelledby="{{ switcher_name }}-search-icon">
+        <title id="{{ switcher_name }}-search-icon">{{ self.search_title() }}</title>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search-logo"></use>
+      </svg>
+    </button>
+  </form>
+  {% else %}
+  <a class="nav-dropdown-btn js-hide" href="{{ url_for('search', lang=lang) }}">{{ self.search_title() }}</a>
+  <div class="nav-dropdown {{switcher_name}} search-nav js-enable hidden">
+    <button type="button" class="nav-dropdown-btn search-button" aria-expanded="false">
+      {{ self.search_title() }}
+    </button>
+    <ul class="nav-dropdown-list align-right hidden {{switcher_name}}-search">
+      <li class="nav-dropdown-list-part">
+        <form action="/{{ lang}}/search">
+          <label for="{{ switcher_name }}-search-box" class="visually-hidden">{{ self.search_title() }}</label>
+          <input id="{{ switcher_name }}-search-box" class="search-input" type="search" name="q" placeholder="{{ self.search_title() }}" title="{{ self.search_title() }}" aria-label="{{ self.search_title() }}">
+          <button class="search-button" type="submit">
+            <svg width="13" height="13" role="img" aria-labelledby="{{ switcher_name }}-search-icon">
+              <title id="{{ switcher_name }}-search-icon">{{ self.search_title() }}</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search-logo"></use>
+            </svg>
+          </button>
+        </form>
+      </li>
+    </ul>
+  </div>
+  {% endif %}
+{% endmacro %}
+
 {% macro nav_table_of_contents(switcher_name) %}
+{% if year <= DEFAULT_YEAR %}
   {% if switcher_name == "mobile" or switcher_name == "mobile-footer" %}
     {{ native_table_of_contents_dropdown(switcher_name) }}
   {% else %}
     {{ styled_table_of_contents_dropdown(switcher_name) }}
   {% endif %}
+{% endif %}
 {% endmacro %}
 
 {% macro native_table_of_contents_dropdown(switcher_name) %}
@@ -119,39 +169,45 @@
     {{ self.table_of_contents_switcher() }}
   </label>
   <select id="table-of-contents-switcher-{{switcher_name}}" data-label="toc-menu-mobile">
+    {% if request.path.endswith("/" + year + "/") %}
+      <option selected disabled value="{{ url_for('home', year=year, lang=lang) }}">{{ self.home() }}</option>
+    {% else %}
+      <option value="{{ url_for('home', year=year, lang=lang) }}">{{ self.home() }}</option>
+    {% endif %}
     {% if request.path.endswith("table-of-contents") %}
       <option selected disabled value="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</option>
-      <option disabled value="{{ url_for('table_of_contents', year=year, lang=lang) }}#foreword">{{ self.foreword_title() }}</option>
     {% else %}
       <option value="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</option>
-      <option value="{{ url_for('table_of_contents', year=year, lang=lang) }}#foreword">{{ self.foreword_title() }}</option>
+    {% endif %}
+    {% if self.foreword() | trim | length > 0 %}
+    <option value="{{ url_for('table_of_contents', year=year, lang=lang, _anchor='foreword') }}">{{ self.foreword_title() }}</option>
     {% endif %}
     {% for part_config in config.outline %}
     {% for chapter_config in part_config.chapters %}
       {% set title = localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title %}
       {% if chapter_config.todo %}
         <option disabled>
-          {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+          {{ self.chapter() }} {{ chapter_config.chapter_number }}: {{title}}
         </option>
       {% else %}
         {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
           {% if current_title == title %}
             <option disabled selected value="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
-              {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+              {{ self.chapter() }} {{ chapter_config.chapter_number }}: {{title}}
             </option>
           {% else %}
             <option value="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
-              {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+              {{ self.chapter() }} {{ chapter_config.chapter_number }}: {{title}}
             </option>
           {% endif %}
         {% else %}
         {% if current_title == title %}
           <option disabled selected value="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
-            {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+            {{ self.chapter() }} {{ chapter_config.chapter_number }}: {{title}}
           </option>
         {% else %}
           <option value="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
-            {{ self.chapter() }} {{ chapter_config.chapter }}: {{title}}
+            {{ self.chapter() }} {{ chapter_config.chapter_number }}: {{title}}
           </option>
         {% endif %}
         {% endif %}
@@ -178,6 +234,16 @@
     </option>
     {% endif %}
 
+    {% if request.path.endswith("search") %}
+    <option selected disabled value="{{ url_for('search', lang=lang) }}">
+      {{ self.search_title() }}
+    </option>
+    {% else %}
+    <option value="{{ url_for('search', lang=lang) }}">
+      {{ self.search_title() }}
+    </option>
+    {% endif %}
+
     {% if ebook_size_in_mb and ebook_size_in_mb > 0 %}
     <option value="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf" data-event="ebook-click">
       {{ self.ebook_download_short() }}
@@ -191,39 +257,54 @@
 {% set current_title = metadata.get('title') if metadata else None %}
 <a class="nav-dropdown-btn js-hide" href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a>
 <div class="nav-dropdown {{switcher_name}} table-of-contents js-enable hidden">
-  <button class="nav-dropdown-btn" aria-expanded="false" aria-label="{{ self.table_of_contents_title() }}" >
+  <button type="button" class="nav-dropdown-btn" aria-expanded="false" aria-label="{{ self.table_of_contents_title() }}" >
     {{ self.table_of_contents_title() }}
   </button>
   <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
 
-    {% if request.path.endswith('table-of-contents') %}
-    <li class="nav-dropdown-list-part foreword nav-dropdown-list-current">
-      <span>{{ self.foreword_title() }}</span>
+    {% if request.path.endswith("/" + year + "/") %}
+    <li class="nav-dropdown-list-part nav-dropdown-list-current">
+      <span>{{ self.home() }}</span>
     </li>
     {% else %}
-    <li class="nav-dropdown-list-part foreword">
-      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.foreword_title() }}</a>
+    <li class="nav-dropdown-list-part">
+      <a href="{{ url_for('home', year=year, lang=lang) }}">{{ self.home() }}</a>
+    </li>
+    {% endif %}
+
+    {% if request.path.endswith('table-of-contents') %}
+    <li class="nav-dropdown-list-part nav-dropdown-list-current">
+      <span>{{ self.table_of_contents_title() }}</span>
+    </li>
+    {% else %}
+    <li class="nav-dropdown-list-part">
+      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a>
+    </li>
+    {% endif %}
+    {% if self.foreword() | trim | length > 0 %}
+    <li class="nav-dropdown-list-chapter foreword">
+      <a href="{{ url_for('table_of_contents', year=year, lang=lang, _anchor='foreword') }}">{{ self.foreword_title() }}</a>
     </li>
     {% endif %}
 
     {% for part_config in config.outline %}
     <li class="nav-dropdown-list-part">
-      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}#part-{{ part_config.part_number }}">{{ self.part() }} {{ localizedPartTitles[part_config.part] if localizedPartTitles[part_config.part]|length else chapter_config.title }}</a>
+      <a href="{{ url_for('table_of_contents', year=year, lang=lang, _anchor='part-' + part_config.part_number) }}">{{ self.part() }} {{ localizedPartTitles[part_config.part] if localizedPartTitles[part_config.part]|length else chapter_config.title }}</a>
     </li>
     {% for chapter_config in part_config.chapters %}
     {% set title = localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title %}
     {% if current_title == title %}
     <li class="nav-dropdown-list-chapter nav-dropdown-list-current">
       {% if chapter_config.todo %}
-      <span class="nav-dropdown-list-todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}</span>
+      <span class="nav-dropdown-list-todo">{{ self.chapter() }} {{ chapter_config.chapter_number }}: {{ title }}</span>
       {% else %}
           {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
           <span>
-            {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}
+            {{ self.chapter() }} {{ chapter_config.chapter_number }}: {{ title }}
           </span>
           {% else %}
           <span>
-            {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
+            {{ self.chapter() }} {{ chapter_config.chapter_number }}: {{ title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
           </span>
           {% endif %}
       {% endif %}
@@ -231,15 +312,15 @@
     {% else %}
     <li class="nav-dropdown-list-chapter">
       {% if chapter_config.todo %}
-      <span class="nav-dropdown-list-todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}</span>
+      <span class="nav-dropdown-list-todo">{{ self.chapter() }} {{ chapter_config.chapter_number }}: {{ title }}</span>
       {% else %}
         {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
         <a href="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
-          {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }}
+          {{ self.chapter() }} {{ chapter_config.chapter_number }}: {{ title }}
         </a>
         {% else %}
         <a href="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
-          {{ self.chapter() }} {{ chapter_config.chapter }}: {{ title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
+          {{ self.chapter() }} {{ chapter_config.chapter_number }}: {{ title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
         </a>
         {% endif %}
       {% endif %}
@@ -249,7 +330,7 @@
     {% endfor %}
 
     <li class="nav-dropdown-list-part">
-      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}#appendices">{{ self.appendices() }}</a>
+      <a href="{{ url_for('table_of_contents', year=year, lang=lang, _anchor='appendices') }}">{{ self.appendices() }}</a>
     </li>
     {% if request.path.endswith("methodology") %}
     <li class="nav-dropdown-list-chapter nav-dropdown-list-current">
@@ -270,9 +351,19 @@
     </li>
     {% endif %}
 
+    {% if request.path.endswith("search") %}
+    <li class="nav-dropdown-list-part nav-dropdown-list-current">
+      <span>{{ self.search_title() }}</span>
+    </li>
+    {% else %}
+    <li class="nav-dropdown-list-part">
+      <a href="{{ url_for('search', lang=lang) }}">{{ self.search_title() }}</a>
+    </li>
+    {% endif %}
+
     {% if ebook_size_in_mb and ebook_size_in_mb > 0 %}
     <li class="nav-dropdown-list-part">
-      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}#ebook">{{ self.ebook_title() }}</a>
+      <a href="{{ url_for('table_of_contents', year=year, lang=lang, _anchor='ebook') }}">{{ self.ebook_title() }}</a>
     </li>
     <li class="nav-dropdown-list-chapter ebook">
       <a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf" data-event="ebook-click" data-label="toc-menu">{{ self.ebook_download_short() }}</a>
@@ -295,6 +386,9 @@
           <ul>
             {{ self.non_chapter_nav_links() }}
             <li>
+              {{ nav_search('header') }}
+            </li>
+            <li>
               {{ nav_table_of_contents('header') }}
             </li>
             <li>
@@ -307,17 +401,20 @@
         </nav>
         <nav id="menu" aria-labelledby="menu-btn">
           <a href="#footer" class="menu-btn js-hide" aria-label="{{ self.menu_title() }}">
-            <span class="menu-btn__bar"></span>
-            <span class="menu-btn__bar"></span>
-            <span class="menu-btn__bar"></span>
+            <span class="menu-btn-bar"></span>
+            <span class="menu-btn-bar"></span>
+            <span class="menu-btn-bar"></span>
           </a>
           <button type="button" class="menu-btn js-enable hidden" disabled id="menu-btn" aria-label="{{ self.open_the_menu() }}" aria-expanded="false" data-open-text="{{ self.open_the_menu() }}" data-close-text="{{ self.close_the_menu() }}">
-            <span class="menu-btn__bar"></span>
-            <span class="menu-btn__bar"></span>
-            <span class="menu-btn__bar"></span>
+            <span class="menu-btn-bar"></span>
+            <span class="menu-btn-bar"></span>
+            <span class="menu-btn-bar"></span>
           </button>
           <ul class="menu">
             {{ self.non_chapter_nav_links() }}
+            <li>
+              {{ nav_search('mobile') }}
+            </li>
             <li>
               {{ nav_table_of_contents('mobile') }}
             </li>
@@ -333,7 +430,7 @@
                   <a href="https://httparchive.org/" aria-labelledby="ha-logo-mobile">
                     <svg width="70" height="35" role="img">
                       <title id="ha-logo-mobile">{{ self.http_archive_link() }}</title>
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha-logo"></use>
                     </svg>
                   </a>
                 </li>
@@ -343,7 +440,7 @@
                       <a href="https://twitter.com/HTTPArchive" aria-labelledby="twitter-logo-mobile">
                         <svg width="20" height="20" role="img">
                           <title id="twitter-logo-mobile">Twitter</title>
-                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>
                         </svg>
                       </a>
                     </li>
@@ -351,7 +448,7 @@
                       <a href="https://github.com/HTTPArchive/almanac.httparchive.org" aria-labelledby="github-logo-mobile">
                         <svg width="20" height="20" role="img">
                           <title id="github-logo-mobile">GitHub</title>
-                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
                         </svg>
                       </a>
                     </li>
@@ -364,6 +461,21 @@
       </div>
     </div>
   </header>
+  <script nonce="{{ csp_nonce() }}">
+    // If JS is enabled then enable menus ASAP to avoid CLS as menu items change from links to buttons
+    (function() {
+      document.querySelectorAll('.js-hide').forEach(element => {
+        // Don't just hide it - delete it completely to avoid any specifity issues
+        element.parentNode.removeChild(element);
+      });
+      document.querySelectorAll('.js-enable').forEach(element => {
+        element.classList.remove('js-enable');
+        element.classList.remove('hidden');
+        element.disabled = false;
+        element.hidden = false;
+      });
+    })();
+  </script>
   {% endblock %}
 
   {% block container %}
@@ -385,6 +497,9 @@
           <ul>
             {{ self.non_chapter_nav_links() }}
             <li>
+              {{ nav_search('footer') }}
+            </li>
+            <li>
               {{ nav_table_of_contents('footer') }}
             </li>
             <li>
@@ -398,6 +513,9 @@
         <nav id="mobile-footer-nav-items" aria-label="{{ self.footer_title() }}" class="nav-items">
           <ul>
             {{ self.non_chapter_nav_links() }}
+            <li>
+              {{ nav_search('mobile-footer') }}
+            </li>
             <li>
               {{ nav_table_of_contents('mobile-footer') }}
             </li>
@@ -413,7 +531,7 @@
           <a class="ha-logo" href="https://httparchive.org/" aria-labelledby="httparchive-logo-footer-mobile">
             <svg width="70" height="35" role="img">
               <title id="httparchive-logo-footer-mobile">{{ self.http_archive_link() }}</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha-logo"></use>
             </svg>
           </a>
           <ul class="social-media">
@@ -421,15 +539,15 @@
               <a href="https://twitter.com/HTTPArchive" aria-labelledby="twitter-logo-footer-mobile">
                 <svg width="20" height="20" role="img">
                   <title id="twitter-logo-footer-mobile">Twitter</title>
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>
                 </svg>
               </a>
             </li>
             <li>
-              <a href="https://github.com/HTTPArchive/almanac.httparchive.org" aria-labelledby="github-logo-footer-mobile">
+              <a href="https://github.com/HTTPArchive/almanac.httparchive.org" rel="me" aria-labelledby="github-logo-footer-mobile">
                 <svg width="20" height="20" role="img">
                   <title id="github-logo-footer-mobile">GitHub</title>
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
                 </svg>
               </a>
             </li>
@@ -444,7 +562,7 @@
         <a class="ha-logo not-mobile" href="https://httparchive.org/" aria-labelledby="ha-logo-footer">
           <svg width="70" height="35" role="img">
             <title id="ha-logo-footer">{{ self.http_archive_link() }}</title>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha-logo"></use>
           </svg>
         </a>
         <ul class="social-media not-mobile">
@@ -452,15 +570,15 @@
             <a href="https://twitter.com/HTTPArchive" aria-labelledby="twitter-logo-footer">
               <svg width="20" height="20" role="img">
                 <title id="twitter-logo-footer">Twitter</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter-logo"></use>
               </svg>
             </a>
           </li>
           <li>
-            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" aria-labelledby="github-logo-footer">
+            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" rel="me" aria-labelledby="github-logo-footer">
               <svg width="20" height="20" role="img">
                 <title id="github-logo-footer">GitHub</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use>
               </svg>
             </a>
           </li>
@@ -469,179 +587,14 @@
     </footer>
   {% endblock %}
   {% block scripts %}
-    <script nonce="{{ csp_nonce() }}">
-      (function() {
-        document.querySelectorAll('.js-hide').forEach(element => {
-          // Don't just hide it - delete it completely to avoid any specifity issues
-          element.parentNode.removeChild(element);
-        });
-        document.querySelectorAll('.js-enable').forEach(element => {
-          element.classList.remove('js-enable');
-          element.classList.remove('hidden');
-          element.disabled = false;
-          element.hidden = false;
-        });
-
-        // Language, Year and ToC switching
-        var languageYearSwitchers = document.querySelectorAll('.language-switcher select, .year-switcher select, .table-of-contents-switcher select');
-        for (var i = 0; i < languageYearSwitchers.length; i++) {
-          languageYearSwitchers[i].addEventListener('change', function(e) {
-
-            var selectedOption = this.options[this.selectedIndex];
-
-            if (e.target.dataset.label && selectedOption.dataset.event) {
-              gtag('event', selectedOption.dataset.event, {
-                'event_category': 'clicks',
-                'event_label': e.target.dataset.label,
-                'transport_type': 'beacon',
-                'value': 1 })
-            }
-
-            //Reset the selector back in case user uses Back button
-            var selectedValue = e.target.value;
-            if (selectedValue && selectedValue !== window.location.pathname) {
-              e.target.value = window.location.pathname;
-              window.location = selectedValue;
-            }
-          });
-        }
-
-        function closeAnyOtherOpenDropdown(e) {
-          if (e.target.classList.contains('dropdown-open')) {
-            return
-          };
-          var openDropdownBtn = document.querySelector('.nav-dropdown-btn.dropdown-open');
-          openDropdownBtn && openDropdownBtn.click();
-        }
-        function trapFocusInList(e) {
-          var list = e.currentTarget;
-          var isInFooter = list.classList.contains('footer-list');
-          if(e.key === "ArrowDown") {
-            var siblingElem = isInFooter ? e.target.parentElement.previousElementSibling : e.target.parentElement.nextElementSibling;
-            var focusableElem = siblingElem ? siblingElem.querySelector('a') : (isInFooter ? lastFocusableElementInList : firstFocusableElementInList);
-            e.preventDefault();
-            focusableElem.focus();
-          } else if (e.key === "ArrowUp") {
-            var siblingElem = isInFooter ? e.target.parentElement.nextElementSibling : e.target.parentElement.previousElementSibling;
-            var focusableElem = siblingElem ? siblingElem.querySelector('a') : (isInFooter ? firstFocusableElementInList : lastFocusableElementInList);
-            e.preventDefault();
-            focusableElem.focus();
-          } else if (e.key === "Escape") {
-            var navDropDown = e.currentTarget.closest('.nav-dropdown');
-            var navDropDownBtn = navDropDown.querySelector('.nav-dropdown-btn');
-            navDropDownBtn.click();
-            navDropDownBtn.focus();
-          }
-        }
-        var firstFocusableElementInList, lastFocusableElementInList;
-        function toggleDropdownVisibility(e) {
-          var dropdownBtn = e.currentTarget;
-          var dropdown = dropdownBtn.closest('.nav-dropdown');
-          var list = dropdown.querySelector('.nav-dropdown-list');
-          var isListVisible =  !list.classList.toggle('hidden');
-          var dropdownOpen = dropdownBtn.classList.toggle('dropdown-open');
-          dropdownBtn.setAttribute('aria-expanded', dropdownOpen);
-
-          if (isListVisible) {
-            var btnBoundingRect = dropdownBtn.getBoundingClientRect();
-            var listBoundingRect = list.getBoundingClientRect();
-            if (listBoundingRect.width <= btnBoundingRect.width) {
-              list.classList.add("align-center");
-            } else if (btnBoundingRect.left + listBoundingRect.width > window.innerWidth) {
-              list.classList.add("align-right");
-            }
-            document.body.addEventListener('click', closeAnyOtherOpenDropdown, true);
-            var navItems = list.querySelectorAll('a');
-            firstFocusableElementInList = navItems[0];
-            lastFocusableElementInList = navItems[navItems.length - 1];
-            list.addEventListener('keydown', trapFocusInList);
-          } else {
-            list.removeEventListener('keydown', trapFocusInList);
-            document.body.removeEventListener('click', closeAnyOtherOpenDropdown, true);
-          }
-        }
-
-        function navBtnKeyDownHandler(e) {
-          var dropdownList = e.currentTarget.nextElementSibling;
-          var isDropdownOpen = e.currentTarget.classList.contains('dropdown-open');
-          var isInFooter = dropdownList.classList.contains('footer-list');
-          if(e.key === "Escape") {
-            e.currentTarget.click();
-          } else if (e.key === "ArrowDown") {
-            e.preventDefault();
-            !isDropdownOpen && e.currentTarget.click();
-            (isInFooter ? dropdownList.lastElementChild : dropdownList.firstElementChild).querySelector('a').focus();
-          } else if (isInFooter && e.key === "ArrowUp") {
-            e.preventDefault();
-            !isDropdownOpen && e.currentTarget.click();
-            dropdownList.firstElementChild.querySelector('a').focus();
-          }
-        }
-
-        var navDropdownButtons = document.querySelectorAll('.nav-dropdown-btn');
-        for (var i = 0; i < navDropdownButtons.length; i++) {
-          navDropdownButtons[i].addEventListener('click', toggleDropdownVisibility);
-          navDropdownButtons[i].addEventListener('keydown', navBtnKeyDownHandler);
-        }
-
-        // Mobile menu
-        var menuBtn = document.querySelector('.menu-btn');
-        var menuNav = document.querySelector('#menu');
-
-        function toggleNavMenu() {
-          var menuOpen = document.body.classList.toggle('menu-open');
-          menuBtn.classList.toggle("menu-btn--active");
-          menuBtn.setAttribute('aria-expanded', menuOpen);
-          var ariaLabel = menuOpen ?  menuBtn.getAttribute('data-close-text') : menuBtn.getAttribute('data-open-text');
-          menuBtn.setAttribute('aria-label', ariaLabel);
-
-          /* When you open the menu, add an event listener to close it when clicking outside the menu area */
-          /* Remove it on closing the menu */
-          if (menuBtn.getAttribute('aria-expanded') === 'true') {
-            document.body.addEventListener('click', toggleNavMenu, false);
-          } else {
-            document.body.removeEventListener('click', toggleNavMenu, false);
-          }
-        }
-
-        menuBtn.addEventListener('click', function() {
-          toggleNavMenu();
-          event.stopPropagation();
-        });
-
-        /* Add a click listener to menu so when it's open it swallows click to avoid above click closing it */
-        menuNav.addEventListener('click', function () {
-          event.stopPropagation();
-        });
-
-        menuNav.addEventListener('keydown', function (event) {
-          if (event.key === 'Escape') {
-            if (menuBtn.getAttribute('aria-expanded') === 'true') {
-              toggleNavMenu();
-              menuBtn.focus();
-            }
-          }
-        });
-
-        document.querySelectorAll('[data-event]').forEach(trackableElement => {
-          trackableElement.addEventListener('click', function (event) {
-            gtag('event', event.target.dataset.event, {
-              'event_category': 'clicks',
-              'event_label': event.target.dataset.label,
-              'transport_type': 'beacon',
-              'value': 1 })
-          });
-        });
-
-      })();
-    </script>
+  <script async src="{{ get_versioned_filename('/static/js/almanac.js') }}" nonce="{{ csp_nonce() }}"></script>
   {% endblock %}
 {% endblock %}
 
-{% macro figure_dropdown(metadata, id, sheets_gid="", sql_file="", image="", caption="") %}
+{% macro figure_dropdown(metadata, chapter_config, id, sheets_gid="", sql_file="", image="", caption="") %}
   {% if sheets_gid != "" or  sql_file != "" or image != "" %}
   <div class="figure-dropdown nav-dropdown">
-    <button class="nav-dropdown-btn js-enable hidden" disabled aria-expanded="false" title="{{ self.explore_the_results() }}">
+    <button type="button" class="nav-dropdown-btn js-enable hidden" disabled aria-expanded="false" title="{{ self.explore_the_results() }}">
       <span class="visually-hidden">{{ self.explore_the_results() }}</span>
       <svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
@@ -650,14 +603,20 @@
     <ul class="figure-dropdown-list nav-dropdown-list floating-card hidden">
       {% if sheets_gid != "" %}
       <li>
+        {% if sheets_gid.startswith("https") %}
+        <a href="{{ sheets_gid }}">
+          {{ self.figure_data() }}
+        </a>
+        {% else %}
         <a href="{{ metadata.get('results') }}#gid={{ sheets_gid }}">
           {{ self.figure_data() }}
         </a>
+        {% endif %}
       </li>
       {% endif %}
       {% if sql_file != "" %}
       <li>
-        <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}/{{ metadata.get('queries')  }}/{{ sql_file }}">
+        <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}/{{ metadata.get('chapter')  }}/{{ sql_file }}">
           {{ self.figure_sql() }}
         </a>
       </li>
@@ -710,7 +669,7 @@
 
 {% macro styled_lang_dropdown(switcher_name) %}
   <div class="nav-dropdown {{switcher_name}}">
-    <button class="nav-dropdown-btn js-enable" disabled aria-expanded="false" aria-label="{{ self.language_switcher() }}" >{{ language }}</button>
+    <button type="button" class="nav-dropdown-btn js-enable" disabled aria-expanded="false" aria-label="{{ self.language_switcher() }}" >{{ language }}</button>
     <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
       {% for l in supported_languages | sort(attribute='_local_name') %}
         {% if l != language %}
@@ -747,10 +706,11 @@
   {% endmacro %}
 {% endif %}
 
-{% macro figure_id(metadata, id) %}{{ metadata.chapter_number }}.{{ id }}{% endmacro %}
+{% macro figure_id(metadata, chapter_config, id) %}{{ chapter_config.chapter_number }}.{{ id }}{% endmacro %}
 
 {% macro figure_link(
   metadata,
+  chapter_config,
   id,
   caption,
   sheets_gid="",
@@ -760,9 +720,9 @@
   )
 %}
 {% if ebook %}
-<a href="#fig-{{ metadata.chapter_number }}-{{ id }}" class="anchor-link">{{ figure_text(metadata, id) }}</a> {{ caption|safe }}
+<a href="#fig-{{ chapter_config.chapter_number }}-{{ id }}" class="anchor-link">{{ figure_text(metadata, chapter_config, id) }}</a> {{ caption|safe }}
 {% else %}
-<a href="#fig-{{ id }}" class="anchor-link">{{ figure_text(metadata, id) }}</a> {{ caption|safe }}
+<a href="#fig-{{ id }}" class="anchor-link">{{ figure_text(metadata, chapter_config, id) }}</a> {{ caption|safe }}
 {% endif %}
 {% endmacro %}
 
@@ -771,6 +731,7 @@
   image="",
   link="",
   video="",
+  gif="",
   object="",
   caption="",
   alt=caption,
@@ -782,140 +743,149 @@
   height=371,
   video_width=width,
   video_height=height,
+  gif_width=width,
+  gif_height=height,
   data_width=width,
   data_height=height,
   content="",
   classes="",
   metadata="",
-  ebook=false
+  ebook=false,
+  chapter_config=""
   )
 %}
 
 {# Add the chapter path to image and set the link #}
 {% if image and not image.startswith("/") and not image.startswith("https") %}{% set image="/static/images/%s/%s/%s" % (year, metadata.get('chapter'), image) %}{% endif %}
+
+{% if gif and not gif.startswith("/") and not gif.startswith("https") %}{% set gif="/static/images/%s/%s/%s" % (year, metadata.get('chapter'), gif) %}{% endif %}
+
 {# Set the link as appropriate if not provided #}
 {% if not link and video %}{% set link=video %}{% elif not link %}{% set link=image %}{% endif %}
 
+{% set print=request.args.get('print') != None %}
+
 {# Ebook needs a unique fig id. 2019 is already out there so reluctant to change that, so "if" statemnt it is! #}
 {% if ebook %}
-{% set anchor="fig-%s-%s" % (metadata.chapter_number, id) %}
+{% set anchor="fig-%s-%s" % (chapter_config.chapter_number, id) %}
 {% if link.startswith("/") %}{% set link="https://almanac.httparchive.org%s" % link %}{% endif %}
 {% else %}
 {% set anchor="fig-%s" % (id) %}
 {% endif %}
 
 <figure id="{{ anchor }}">
-  {%- if video != "" %}
-  <iframe class="fig-mobile fig-desktop video-embed" src="{{ video }}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="{{ video_width }}" height="{{ video_height }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description"></iframe>
-  {%- endif %}
   {%- if image != "" %}
   <div class="figure-wrapper">
-    {% if video %}{% set anchor_class="video-fallback-image"%}{% endif %}
+    {%- if not print and video != "" %}
+    <iframe class="fig-mobile fig-desktop video-embed" src="{{ video }}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="{{ video_width }}" height="{{ video_height }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description"></iframe>
+    {%- endif %}
+    {%- if not ebook and not print and gif != "" %}
+    <picture class="fig-mobile fig-desktop video-embed">
+      <source media="(prefers-reduced-motion: no-preference)" type="image/gif" srcset="{{ gif }}" width="{{ gif_width }}" height="{{ gif_height }}" >
+      <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" loading="lazy" />
+    </picture>
+    {%- endif %}
+    {% if not ebook and not print and (video or gif) %}{% set anchor_class="video-fallback-image"%}{% endif %}
     <a href="{{ link }}"  class="{{ anchor_class }}">
       {%- if chart_url != "" %}
       <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" data-width="{{ data_width }}" data-height="{{ data_height }}" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="{{ chart_url|safe }}" loading="lazy" />
       {%- elif not ebook and object != "" %}
-      <object type="image/svg+xml" width="{{ width }}" height="{{ height }}" data="{{ image }}">
+      <object type="image/svg+xml" width="{{ width }}" height="{{ height }}" data="{{ image }}" role="img" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description">
         {{ caption }}
       </object>
       {% else %}
-      <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" loading="lazy" />
+      <img src="{{ image }}" class="{{ classes }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" loading="lazy" />
       {%- endif %}
     </a>
-    {% if not ebook %}{{ figure_dropdown(metadata, id, sheets_gid, sql_file, image) }}{% endif %}
+    {% if not ebook %}{{ figure_dropdown(metadata, chapter_config, id, sheets_gid, sql_file, image) }}{% endif %}
   </div>
-  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="{{ anchor }}-description" data-show-text="{{ show_description(metadata,id) }}" data-hide-text="{{ hide_description(metadata,id) }}">{{ show_description(metadata,id) }}</button>
+  <button type="button" hidden="" class="fig-description-button" aria-expanded="false" aria-controls="{{ anchor }}-description" data-show-text="{{ show_description(metadata,chapter_config,id) }}" data-hide-text="{{ hide_description(metadata,chapter_config,id) }}">{{ show_description(metadata,chapter_config,id) }}</button>
   <div id="{{ anchor }}-description" class="visually-hidden">{{ description|safe }}</div>
   {%- elif content != "" %}
   <div class="figure-wrapper">
     <div class="{{ classes }}">{{ content|safe }}</div>
-    {% if not ebook %}{{ figure_dropdown(metadata, id, sheets_gid, sql_file, image, ebook) }}{% endif %}
+    {% if not ebook %}{{ figure_dropdown(metadata, chapter_config, id, sheets_gid, sql_file, image, ebook) }}{% endif %}
   </div>
   {%- endif %}
-  <figcaption id="{{ anchor }}-caption">{{ figure_link(metadata, id, caption, ebook=ebook, sheets_gid=sheets_gid, sql_file=sql_file, image=image) }}</figcaption>
+  <figcaption id="{{ anchor }}-caption">{{ figure_link(metadata, chapter_config, id, caption, ebook=ebook, sheets_gid=sheets_gid, sql_file=sql_file, image=image) }}</figcaption>
 </figure>
 {%- endmacro %}
 
+{# The year drop down is a bit complicated because we want to handle a few cases: #}
+{# - When chapter is not translated for a year (show link to English)             #}
+{# - When chapter is not available in English for a year (show link to home page) #}
+{# - When chapter is for a future year (show link to home page)                   #}
 {% macro native_year_dropdown(switcher_name)%}
   <div class="year-switcher js-show">
     <label for="year-switcher-{{switcher_name}}" class="visually-hidden">{{ self.year_switcher() }}</label>
     <select id="year-switcher-{{switcher_name}}">
-      {% for y in supported_years | sort %}
-        {% if y == year %}
-          <option selected="selected" value="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">
-            {{ y }}
-          </option>
-        {% else %}
-          <option value="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">
-            {{ y }}
-          </option>
-        {% endif %}
-      {% endfor %}
-      {# If the current page doesn't support a year, then show a home link for that year #}
-      {% if supported_years|length < all_supported_years|length %}
-        <option disabled="disabled" aria-hidden="true">
-          ────
-        </option>
-        {% for y in all_supported_years | sort %}
-          {% if y not in supported_years %}
-            <option value="{{ url_for('home', lang=lang,year=y) }}">
+      {% for y in all_supported_years | sort(reverse=true)%}
+        {% if y in supported_years %}
+          {% if y == year %}
+            <option selected="selected" value="{{ url_for(request.endpoint, **get_view_args(lang=lang, year=y)) }}">
+              {{ y }}
+            </option>
+          {% elif y <= DEFAULT_YEAR or request.path.endswith("/" + year + "/") %}
+            <option value="{{ url_for(request.endpoint, **get_view_args(lang=lang, year=y)) }}">
+              {{ y }}
+            </option>
+          {% elif y > DEFAULT_YEAR %}
+            <option value="{{ url_for('home', lang=lang, year=y) }}">
               {{ y }} {{ self.home() }}
             </option>
           {% endif %}
-        {% endfor %}
-      {% endif %}
+        {% else %}
+          {% if y in en_supported_years and y <= DEFAULT_YEAR %}
+          <option value="{{ url_for(request.endpoint, **get_view_args(lang='en', year=y)) }}">
+            {{ y }} {{ self.in_english() }}
+          </option>
+          {% else %}
+          <option value="{{ url_for('home', lang=lang, year=y) }}">
+            {{ y }} {{ self.home() }}
+          </option>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
     </select>
   </div>
 {% endmacro %}
 
+{# The year drop down is a bit complicated because we want to handle a few cases: #}
+{# - When chapter is not translated for a year (show link to English)             #}
+{# - When chapter is not available in English for a year (show link to home page) #}
+{# - When chapter is for a future year (show link to home page)                   #}
 {% macro styled_year_dropdown(switcher_name)%}
   <div class="nav-dropdown {{switcher_name}}">
-    <button class="nav-dropdown-btn js-enable" disabled aria-expanded="false" aria-label="{{ self.year_switcher() }}">{{ year }}</button>
+    <button type="button" class="nav-dropdown-btn js-enable" disabled aria-expanded="false" aria-label="{{ self.year_switcher() }}">{{ year }}</button>
     <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
-      {% for y in supported_years | sort %}
-        {% if y != year %}
-          <li>
-            <a href="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">{{y}}</a>
-          </li>
-        {% endif %}
-      {% endfor %}
-      {# If the current page doesn't support a year, then show a home link for that year #}
-      {% if supported_years|length < all_supported_years|length %}
-        {% for y in all_supported_years | sort %}
-          {% if y not in supported_years %}
-            <li class="unsupported-year">
+      {% for y in all_supported_years | sort(reverse=true) %}
+        {% if y in supported_years %}
+          {% if y != year %}
+            {% if y <= DEFAULT_YEAR or request.path.endswith("/" + year + "/") %}
+            <li>
+              <a href="{{ url_for(request.endpoint, **get_view_args(lang=lang, year=y)) }}">{{ y }}</a>
+            </li>
+          {% else %}
+            <li>
               <a href="{{ url_for('home', lang=lang,year=y) }}">{{ y }} {{ self.home() }}</a>
             </li>
+            {% endif %}
           {% endif %}
-        {% endfor %}
-      {% endif %}
+        {% else %}
+          {% if y in en_supported_years and y <= DEFAULT_YEAR %}
+          <li class="unsupported-year">
+            <a href="{{ url_for(request.endpoint, **get_view_args(lang='en', year=y)) }}">{{ y }} {{ self.translation_not_available() }}</a>
+          </li>
+          {% else %}
+          <li class="unsupported-year">
+            <a href="{{ url_for('home', lang=lang,year=y) }}">{{ y }} {{ self.home() }}</a>
+          </li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
     </ul>
   </div>
 {% endmacro %}
-
-{% block index_menu_script %}
-<script nonce="{{ csp_nonce() }}">
-
-  var indexBox = document.querySelector('.index-box');
-  var indexBoxTitle = document.querySelector('.index .index-btn');
-
-  indexBoxTitle.addEventListener('click', function(e) {
-    var indexOpen = indexBox.classList.toggle('show');
-    indexBoxTitle.setAttribute('aria-expanded',indexOpen);
-    var ariaLabel = indexOpen ?  "{{ self.close_the_index() }}" : "{{ self.open_the_index() }}";
-    indexBoxTitle.setAttribute('aria-label',ariaLabel);
-  });
-
-  indexBox.addEventListener("keydown", function onPress(event) {
-    if (event.key === 'Escape') {
-      if (indexBoxTitle.getAttribute('aria-expanded') === 'true') {
-        indexBoxTitle.click();
-        indexBoxTitle.focus();
-      }
-    }
-  });
-</script>
-{% endblock %}
 
 {% macro swatch(color) %}
 <svg width="10" height="15" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" >
@@ -923,3 +893,12 @@
   <rect x="0" y="0" width="10" height="15" stroke="black" fill="{{ color }}" stroke-width="1" />
 </svg>
 {% endmacro %}
+
+{% block bodyend %}
+{{ super() }}
+{% if request.path.endswith("/" + year + "/") or request.path.endswith("table-of-contents") or request.path.endswith("contributors") %}
+<!-- Let's assume you're going to visit one of the chapters and prefetch the page.css stylesheet -->
+<!-- A small optimisation but hey, every little helps! -->
+<link rel="prefetch" href="{{ get_versioned_filename('/static/css/page.css') }}" as="style" />
+{% endif %}
+{% endblock %}

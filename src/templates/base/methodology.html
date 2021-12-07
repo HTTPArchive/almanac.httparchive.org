@@ -7,14 +7,15 @@
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet" href="{{ get_versioned_filename('/static/css/page.css') }}">
+<link rel="preload" href="{{ get_versioned_filename('/static/css/page.css') }}" as="style" />
 {% endblock %}
 
 {% block main %}
 <main id="methodology" class="main">
-  <nav class="index">
+  <nav aria-label="{{ self.index_nav_title() }}" class="index">
     <div class="index-box floating-card">
       <h2 class="header">
-        <button class="index-btn">{{ self.index_title() }}</button>
+        <button type="button" class="index-btn" aria-expanded="false" aria-label="{{ self.open_the_index() }}" data-close-text="{{ self.close_the_index() }}" data-open-text="{{ self.open_the_index() }}">{{ self.index_title() }}</button>
         <span class="no-button">{{ self.index_title() }}</span>
       </h2>
       {{ self.index() }}
@@ -26,10 +27,4 @@
     {{ self.main_content() }}
   </article>
 </main>
-{% endblock %}
-
-{% block scripts %}
-{{ super() }}
-{{ self.index_menu_script() }}
-<script src="{{ get_versioned_filename('/static/js/chapter.js') }}" defer></script>
 {% endblock %}

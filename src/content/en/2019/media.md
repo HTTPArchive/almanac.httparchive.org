@@ -1,31 +1,29 @@
 ---
-part_number: I
-chapter_number: 4
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Media
 description: Media chapter of the 2019 Web Almanac covering image file sizes and formats, responsive images, client hints, lazy loading, accessibility and video.
 authors: [colinbendell, dougsillars]
 reviewers: [ahmadawais, eeeps]
 analysts: [dougsillars, rviscomi]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
-queries: 04_Media
-colinbendell_bio: Colin is part of the CTO Office at <a href="https://cloudinary.com/">Cloudinary</a> and co-author of the O'Reilly book <a href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/">High Performance Images</a>. He spends much of his time at the intersection of high volume data, media, browsers and standards. You can find him on tweeting <a href="https://twitter.com/colinbendell">@colinbendell</a> and at blogging at <a href="https://bendell.ca/">https://bendell.ca</a>.
-dougsillars_bio: Doug Sillars is a freelance digital nomad working on the intersection of performance and media. He tweets <a href="https://twitter.com/dougsillars">@dougsillars</a>, and blogs regularly at <a href="https://dougsillars.com">dougsillars.com</a>.
+colinbendell_bio: Colin is part of the CTO Office at <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a> and co-author of the O'Reilly book <a hreflang="en" href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/">High Performance Images</a>. He spends much of his time at the intersection of high volume data, media, browsers and standards. You can find him on tweeting <a href="https://twitter.com/colinbendell">@colinbendell</a> and at blogging at <a hreflang="en" href="https://bendell.ca/">https://bendell.ca</a>.
+dougsillars_bio: Doug Sillars is a freelance digital nomad working on the intersection of performance and media. He tweets <a href="https://twitter.com/dougsillars">@dougsillars</a>, and blogs regularly at <a hreflang="en" href="https://dougsillars.com">dougsillars.com</a>.
 featured_quote: Images, animations, and videos are an important part of the web experience. They are important for many reasons&colon; they help tell stories, engage audiences, and provide artistic expression in ways that often cannot be easily produced with other web technologies. The importance of these media resources can be demonstrated in two ways&colon; by the sheer volume of bytes required to download for a page, and also the volume of pixels painted with media.
 featured_stat_1: 1 MB
 featured_stat_label_1: Median size of home pages
 featured_stat_2: 60%
 featured_stat_label_2: JPEG use amongst images
 featured_stat_3: 2%
-featured_stat_label_3: Use of <code>&lt;picture&gt;</code> element
+featured_stat_label_3: Use of `<picture>` element
 ---
 
 ## Introduction
 Images, animations, and videos are an important part of the web experience. They are important for many reasons: they help tell stories, engage audiences, and provide artistic expression in ways that often cannot be easily produced with other web technologies. The importance of these media resources can be demonstrated in two ways: by the sheer volume of bytes required to download for a page, and also the volume of pixels painted with media.
 
-From a pure bytes perspective, HTTP Archive has [historically reported](https://legacy.httparchive.org/interesting.php#bytesperpage) an average of two-thirds of resource bytes associated from media. From a distribution perspective, we can see that virtually every web page depends on images and videos. Even at the tenth percentile, we see that 44% of the bytes are from media and can rise to 91% of the total bytes at the 90th percentile of pages.
+From a pure bytes perspective, HTTP Archive has <a hreflang="en" href="https://legacy.httparchive.org/interesting.php#bytesperpage">historically reported</a> an average of two-thirds of resource bytes associated from media. From a distribution perspective, we can see that virtually every web page depends on images and videos. Even at the tenth percentile, we see that 44% of the bytes are from media and can rise to 91% of the total bytes at the 90th percentile of pages.
 
 {{ figure_markup(
   image="fig1_bytes_images_and_video_versus_other.png",
@@ -41,7 +39,7 @@ First, the network overhead required to download these bytes can be large and in
 
 The second impact is on the financial cost to the user. This is often an ignored aspect since it is not a burden on the website owner but a burden to the end-user. Anecdotally, it has been shared that some markets, [like Japan](https://twitter.com/yoavweiss/status/1195036487538003968?s=20), see a drop in purchases by students near the end of the month when data caps are reached, and users cannot see the visual content.
 
-Further, the financial cost of visiting these websites in different parts of the world is disproportionate. At the median and 90th percentile, the volume of image bytes is 1 MB and 1.9 MB respectively. Using [WhatDoesMySiteCost.com](https://whatdoesmysitecost.com/#gniCost) we can see that the gross national income (GNI) per capita cost to a user in Madagascar a single web page load at the 90th percentile would cost 2.6% of the daily gross income. By contrast, in Germany this would be 0.3% of the daily gross income.
+Further, the financial cost of visiting these websites in different parts of the world is disproportionate. At the median and 90th percentile, the volume of image bytes is 1 MB and 1.9 MB respectively. Using <a hreflang="en" href="https://whatdoesmysitecost.com/#gniCost">WhatDoesMySiteCost.com</a> we can see that the gross national income (GNI) per capita cost to a user in Madagascar a single web page load at the 90th percentile would cost 2.6% of the daily gross income. By contrast, in Germany this would be 0.3% of the daily gross income.
 
 {{ figure_markup(
   image="fig2_total_image_bytes_per_web_page_mobile.png",
@@ -150,7 +148,7 @@ Each format has its own merits and has ideal uses for the web. A very simplified
       </tr>
       <tr>
         <td>WebP</td>
-        <td><ul><li>A newer file format that can produce lossless images like PNG and lossy images like JPEG</li><li>It <a href="https://developers.google.com/speed/webp/faq">boasts a 30% average file reduction compared</a> to JPEG, while other data suggests that median file reduction is <a href="https://cloudinary.com/state-of-visual-media-report/">between 10-28% based on pixel volume</a>.</li></ul></td>
+        <td><ul><li>A newer file format that can produce lossless images like PNG and lossy images like JPEG</li><li>It <a hreflang="en" href="https://developers.google.com/speed/webp/faq">boasts a 30% average file reduction compared</a> to JPEG, while other data suggests that median file reduction is <a hreflang="en" href="https://cloudinary.com/state-of-visual-media-report/">between 10-28% based on pixel volume</a>.</li></ul></td>
         <td><ul><li>Unlike JPEG, it is limited to chroma-subsampling which will make some images appear blurry.</li><li>Not universally supported. Only Chrome, Firefox and Android ecosystems.</li><li>Fragmented feature support depending on browser versions</li></ul></td>
       </tr>
     </tbody>
@@ -242,7 +240,6 @@ The savings in this AB Lighthouse test is not just about potential byte savings,
 
  {{ figure_markup(
   image="fig13_project_perf_improvements_image_optimization.png",
-  alt="Projected page performance improvements from image optimization from Lighthouse.",
   caption="Projected page performance improvements from image optimization from Lighthouse.",
   description="Bar chart showing in the 10th percentile 0 ms could be sized, same in 25th percentile, in the 50th percentile 150 ms could be saved, in the 75th percentile 1,460 ms could be saved and in the 90th percentile 5,720 ms could be saved.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779"
@@ -280,15 +277,43 @@ The utility of `srcset` is usually dependent on the precision of the `sizes` med
 * **`<img sizes="(max-width: 300px) 100vw, 300px">`** - this is the second most popular design pattern. It is the one auto generated by WordPress and likely a few other platforms. It appears auto generated based on the original image size (in this case 300px).
 * **`<img sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, ...">`** - this pattern is the custom built design pattern that is aligned with the CSS responsive layout. Each breakpoint has a different calculation for sizes to use.
 
-<figure markdown>
-`<img sizes>` | Frequency (millions) | %
--- | -- | --
-(max-width: 300px) 100vw, 300px | 1.47 | 5%
-(max-width: 150px) 100vw, 150px | 0.63 | 2%
-(max-width: 100px) 100vw, 100px | 0.37 | 1%
-(max-width: 400px) 100vw, 400px | 0.32 | 1%
-(max-width: 80px) 100vw, 80px | 0.28 | 1%
-
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th><code>&lt;img sizes&gt;</code></th>
+        <th>Frequency (millions)</th>
+        <th>%</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>(max-width: 300px) 100vw, 300px</code></td>
+        <td class="numeric">1.47</td>
+        <td class="numeric">5%</td>
+      </tr>
+      <tr>
+        <td><code>(max-width: 150px) 100vw, 150px</code></td>
+        <td class="numeric">0.63</td>
+        <td class="numeric">2%</td>
+      </tr>
+      <tr>
+        <td><code>(max-width: 100px) 100vw, 100px</code></td>
+        <td class="numeric">0.37</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td><code>(max-width: 400px) 100vw, 400px</code></td>
+        <td class="numeric">0.32</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td><code>(max-width: 80px) 100vw, 80px</code></td>
+        <td class="numeric">0.28</td>
+        <td class="numeric">1%</td>
+      </tr>
+    </tbody>
+  </table>
   <figcaption>{{ figure_link(caption="Percent of pages using the most popular <code>sizes</code> patterns.") }}</figcaption>
 </figure>
 
@@ -296,22 +321,20 @@ The utility of `srcset` is usually dependent on the precision of the `sizes` med
 
  {{ figure_markup(
   image="fig16_top_patterns_of_img_sizes.png",
-  alt="Top patterns of img sizes.",
   caption="Top patterns of <code><img sizes></code>.",
-  description="Bar chart showing 11.3 million images use 'img sizes=\"(max-width: 300px) 100vw, 300px\"', 1.60 million use 'auto', 1.00 million use 'img sizes=\"(max-width: 767px) 89vw...etc.\"', 0.23 million use '100vw' and 0.13 million use '300px'",
+  description="Bar chart showing 11.3 million images use 'img sizes=`(max-width: 300px) 100vw, 300px`', 1.60 million use 'auto', 1.00 million use 'img sizes=`(max-width: 767px) 89vw...etc.`', 0.23 million use '100vw' and 0.13 million use '300px'",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"
   )
 }}
 
 ### Client Hints
 
-[Client Hints](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints) allow content creators to move the resizing of images to HTTP content negotiation. In this way, the HTML does not need additional `<img srcset>` to clutter the markup, and instead can depend on a server or [image CDN to select an optimal image](https://cloudinary.com/blog/client_hints_and_responsive_images_what_changed_in_chrome_67) for the context. This allows simplifying of HTML and enables origin servers to adapt overtime and disconnect the content and presentation layers.
+<a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints">Client Hints</a> allow content creators to move the resizing of images to HTTP content negotiation. In this way, the HTML does not need additional `<img srcset>` to clutter the markup, and instead can depend on a server or <a hreflang="en" href="https://cloudinary.com/blog/client_hints_and_responsive_images_what_changed_in_chrome_67">image CDN to select an optimal image</a> for the context. This allows simplifying of HTML and enables origin servers to adapt overtime and disconnect the content and presentation layers.
 
 To enable Client Hints, the web page must signal to the browser using either an extra HTTP header `Accept-CH: DPR, Width, Viewport-Width` _or_ by adding the HTML `<meta http-equiv="Accept-CH" content="DPR, Width, Viewport-Width">`. The convenience of one or the other technique depends on the team implementing and both are offered for convenience.
 
 {{ figure_markup(
   image="fig17_usage_of_accept-ch_http_v_html.png",
-  alt="Usage of the Accept-CH header versus the equivalent meta tag.",
   caption="Usage of the <code>Accept-CH</code> header versus the equivalent <code><meta></code> tag.",
   description="Bar chart showing 71% use the 'meta http-equiv', 30% use the 'Accept-CH' HTTP header and 1% use both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive"
@@ -336,11 +359,10 @@ The network-related Client Hints, `downlink`, `rtt`, and `ect`, are only availab
 
 Improving web page performance can be partially characterized as a game of illusions; moving slow things out of band and out of site of the user. In this way, lazy loading images is one of these illusions where the image and media content is only loaded when the user scrolls on the page. This improves perceived performance, even on slow networks, and saves the user from downloading bytes that are not otherwise viewed.
 
-Earlier, in [Figure 4.5](#fig-5), we showed that the volume of image content at the 75th percentile is far more than could theoretically be shown in a single desktop or mobile viewport. The [offscreen images](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images) Lighthouse audit confirms this suspicion. The median web page has 27% of image content significantly below the fold. This grows to 84% at the 90th percentile.
+Earlier, in [Figure 4.5](#fig-5), we showed that the volume of image content at the 75th percentile is far more than could theoretically be shown in a single desktop or mobile viewport. The <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/offscreen-images">offscreen images</a> Lighthouse audit confirms this suspicion. The median web page has 27% of image content significantly below the fold. This grows to 84% at the 90th percentile.
 
 {{ figure_markup(
   image="fig19_lighthouse_audit_offscreen.png",
-  alt="Lighthouse audit: Offscreen.",
   caption="Lighthouse audit: Offscreen.",
   description="A bar chart showing in the 10th percentile 0% of images are offscreen, in the 25th percentile 2% are offscreen, in the 50th percentile, 27% are offscreen, in the 75th percentile 64% are offscreen, and in the 90th percentile 84% of images are offscreen.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive"
@@ -349,7 +371,7 @@ Earlier, in [Figure 4.5](#fig-5), we showed that the volume of image content at 
 
 The Lighthouse audit provides us a smell as there are a number of situations that can provide tricky to detect such as the use of quality placeholders.
 
-Lazy loading [can be implemented](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video) in many different ways including using a combination of Intersection Observers, Resize Observers, or using JavaScript libraries like [lazySizes](https://github.com/aFarkas/lazysizes), [lozad](https://github.com/ApoorvSaxena/lozad.js), and a host of others.
+Lazy loading <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video">can be implemented</a> in many different ways including using a combination of Intersection Observers, Resize Observers, or using JavaScript libraries like <a hreflang="en" href="https://github.com/aFarkas/lazysizes">lazySizes</a>, <a hreflang="en" href="https://github.com/ApoorvSaxena/lozad.js">lozad</a>, and a host of others.
 
 In August 2019, Chrome 76 launched with the support for markup-based lazy loading using `<img loading="lazy">`. While the snapshot of websites used for the 2019 Web Almanac used July 2019 data, over 2,509 websites already utilized this feature.
 

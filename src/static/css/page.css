@@ -4,7 +4,7 @@
   grid-template-areas: 'index content';
   -ms-grid-columns: 300px calc(100% - 300px);
   grid-template-columns: 300px auto;
-  grid-template-columns: 18.75rem calc(100% - 18.75rem); /* auto sometimes not set correctly on font zoom */
+  grid-template-columns: min(18.75rem, 20vw) calc(100% - min(18.75rem, 25vw)); /* auto sometimes not set correctly on font zoom */
 }
 
 .table-wrap-container,
@@ -164,9 +164,6 @@
   grid-area: content;
   -ms-grid-column: 2;
   margin-left: 40px;
-  margin-left: 2.5rem;
-  min-width: 320px;
-  min-width: 20rem;
 }
 
 .content > section,
@@ -209,23 +206,41 @@
   font-weight: normal;
 }
 
-.byline a {
-  white-space: nowrap;
+.btn.chapter-cta > svg {
+  margin: -6px 3px;
 }
 
-.chapter_links .btn {
+#cta-container {
+  display: flex;
+  height: 0;
+  flex-direction: row;
+  align-items: flex-end;
+  position: sticky;
+  bottom: 1.25rem;
+  z-index: 1;
+  justify-content: flex-end;
+}
+
+.chapter-cta {
+  border: none;
+  box-shadow: 0 0 1rem 0 rgba(78, 85, 100, 0.2);
+  padding: 10px 12px;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+.chapter-links .btn {
   display: inline-block;
   margin: 10px;
-  margin: 0.625rem;
 }
 
-.chapter_links svg {
+.chapter-links svg {
   margin-right: 10px;
   margin-right: 0.625rem;
   vertical-align: middle;
 }
 
-#num_comments {
+#num-comments {
   line-height: 24px;
   line-height: 1.5rem;
 }
@@ -235,18 +250,26 @@
 }
 
 .authors h2,
-.chapter_links h2 {
+.chapter-links h2,
+.webmentions h2 {
   padding: 16px 0;
   padding: 1rem 0;
 }
 
 .authors,
 .authors h2,
-.chapter_links,
-.chapter_links h2 {
+.chapter-links,
+.chapter-links h2,
+.webmentions,
+.webmentions h2 {
   border-bottom: 1px solid #1a2b490a;
   font-size: 17px;
   font-size: 1.0625rem;
+}
+
+.content .authors {
+  margin-bottom: 64px;
+  margin-bottom: 4rem;
 }
 
 .content .authors ul {
@@ -267,7 +290,7 @@
   padding: 0;
   margin-top: 32px;
   margin-top: 2rem;
-  overflow: visible;
+  overflow: auto;
   display: grid;
   grid-template-areas: 'avatar info';
   grid-template-columns: 76px auto;
@@ -302,7 +325,7 @@
 
 .authors .social a {
   margin: 0.25rem 1rem 0.25rem 0;
-  white-space: nowrap;
+  overflow-wrap: break-word;
   display: inline-flex;
   align-items: center;
   text-decoration: none;
@@ -325,8 +348,8 @@
 }
 
 #chapter-navigation {
-  padding: 50px 36px;
-  padding: 3.125rem 2.25rem;
+  padding: 16px 36px 50px 36px;
+  padding: 1rem 2.25rem 3.125rem 2.25rem;
   border: 1px solid #1a2b490a;
   margin: 20px 0;
   margin: 1.25rem 0;
@@ -388,6 +411,11 @@ aside,
   font-style: italic;
 }
 
+aside em,
+.note em {
+  font-style: normal;
+}
+
 table,
 figure {
   max-width: 100%;
@@ -447,8 +475,8 @@ figure {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 15px -8px;
-  margin: 0.9375rem -0.5rem;
+  margin: 22.4px;
+  margin: 1.4rem;
   padding: 8px;
   padding: 0.5rem;
   font-style: italic;
@@ -469,9 +497,19 @@ figure img {
   border: 1px solid #e5e5e5;
 }
 
+.height-16vw-122px {
+  max-height: 122px;
+  height: 122px;
+  height: 16vw;
+}
+
 figure iframe {
   display: block;
   margin: 0 auto;
+}
+
+.figure-block {
+  display: block;
 }
 
 figure .code-block {
@@ -483,6 +521,7 @@ figcaption {
   margin: 8px auto 0;
   margin: 0.5rem auto 0;
   text-align: center;
+  max-width: 100%;
 }
 
 .figure-wrapper {
@@ -506,7 +545,7 @@ figcaption {
 .figure-dropdown button {
   opacity: 0.5;
   border: none;
-  padding: 1em;
+  padding: 0.5rem;
   color: #0b1423;
 }
 
@@ -581,23 +620,32 @@ td.numeric {
   text-align: right;
 }
 
+td .numeric-good {
+  color: #38761d;
+}
+
+td .numeric-bad {
+  color: #b60000;
+}
+
 tbody tr:nth-child(even) {
   background-color: #f2f2f280;
 }
 
 figure .big-number {
   text-align: center;
-  font: bold 128px/1em Poppins, sans-serif;
-  font: bold 8rem/1em Poppins, sans-serif;
+  font: bold 128px/1em 'Poppins', sans-serif;
+  font: bold 8rem/1em 'Poppins', sans-serif;
   color: #62718b;
   word-break: break-word;
   overflow-wrap: break-word;
+  margin: 0.1em 0;
 }
 
 figure .medium-number {
   text-align: center;
-  font: bold 48px/1em Poppins, sans-serif;
-  font: bold 3rem/1em Poppins, sans-serif;
+  font: bold 48px/1em 'Poppins', sans-serif;
+  font: bold 3rem/1em 'Poppins', sans-serif;
   color: #62718b;
   word-break: break-word;
   overflow-wrap: break-word;
@@ -605,8 +653,8 @@ figure .medium-number {
 
 figure .really-big-number {
   text-align: center;
-  font: bold 24px/1em Poppins, sans-serif;
-  font: bold 1.5rem/1em Poppins, sans-serif;
+  font: bold 24px/1em 'Poppins', sans-serif;
+  font: bold 1.5rem/1em 'Poppins', sans-serif;
   color: #62718b;
   word-break: break-word;
   overflow-wrap: break-word;
@@ -638,7 +686,7 @@ figure .fig-desktop {
   margin-top: 0.625rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 56.25em) {
   .main {
     -ms-grid-columns: 1fr;
     grid-template-areas:
@@ -715,13 +763,14 @@ figure .fig-desktop {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 56.25em) {
   figure {
     margin: 0 15px;
+    margin: 0 0.9375rem;
   }
 
   .figure-dropdown {
-    right: -40px;
+    right: -2rem;
   }
 
   figure .big-number {
@@ -754,6 +803,16 @@ figure .fig-desktop {
 
   .index .index-box {
     max-height: 100%;
+  }
+
+  .content .authors li {
+    grid-template-areas:
+      'avatar avatar'
+      'info info';
+  }
+
+  .content .authors li .info {
+    grid-area: info;
   }
 
   .anchor-link {
@@ -800,4 +859,97 @@ pre {
 
 .code-block code {
   width: 100%;
+}
+
+/* Webmention code */
+.reaction-tabs [role="tab"][aria-selected="true"] {
+  z-index: 3;
+  font-weight: bold;
+  border-bottom: 0.5rem solid #a8caba;
+}
+
+.reaction-tabs [role="tab"] {
+  position: relative;
+  z-index: 1;
+  background: white;
+  border: 0;
+  padding: 0.6rem 0.75rem 0.6rem;
+}
+
+.reactions [role="tabpanel"] {
+  margin-top: 1.5rem;
+}
+
+.reaction-tabs > button > span {
+  pointer-events: none;
+}
+
+.webmention-likes,
+.webmention-reposts {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.webmentions .reactions ul {
+  padding: 0;
+}
+
+.webmentions .reactions ul > li {
+  margin-right: 1rem;
+}
+
+.webmentions .reactions ul > li::before {
+  display: none;
+}
+
+.webmentions a.webmention-author {
+  text-decoration: none;
+}
+
+.webmentions a.webmention-author:hover {
+  text-decoration: underline;
+}
+
+.webmention-author .webmention-author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: grey;
+}
+
+.webmention-meta {
+  font-size: 0.875rem;
+  color: #515660;
+}
+
+.webmention-meta a.webmention-source {
+  color: #515660;
+}
+
+.webmentions .reactions .webmention-replies-item,
+.webmentions .reactions .webmention-mentions-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 1rem 0 1rem 60px;
+}
+
+.webmention-replies-item .webmention-author .webmention-author-avatar,
+.webmention-mentions-item .webmention-author .webmention-author-avatar {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+}
+
+/* Needed for Safari to hide the index properly */
+@media print {
+  .main {
+    grid-template-areas: 'content';
+    grid-template-columns: auto;
+  }
+
+  .figure-dropdown {
+    display: none;
+  }
 }

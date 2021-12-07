@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 7
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Rendimiento
 description: Capítulo sobre rendimiento del Web Almanac de 2019 que explica First Contentful Paint (FCP), Time to First Byte (TTFB) y First Input Delay (FID)
 authors: [rviscomi]
@@ -10,8 +9,7 @@ editors: [rachellcostello]
 translators: [JMPerez]
 discuss: 1762
 results: https://docs.google.com/spreadsheets/d/1zWzFSQ_ygb-gGr1H1BsJCfB7Z89zSIf7GX0UayVEte4/
-queries: 07_Performance
-rviscomi_bio: <i lang="en">Rick Viscomi is a Senior Developer Programs Engineer at Google, working on web transparency projects like the HTTP Archive and Chrome UX Report, and studying the intersection of how websites are built and experienced. Rick is the host of <a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a> in which experts discuss how the web is trending. Rick is the coauthor of <a href="https://usingwpt.com">Using WebPageTest</a>, a guide for testing web performance, and writes frequently about the web on <a href="https://dev.to/rick_viscomi">dev.to</a> and on Twitter at <a href="https://twitter.com/rick_viscomi">@rick_viscomi</a>.</i>
+rviscomi_bio: <i lang="en">Rick Viscomi is a Senior Developer Programs Engineer at Google, working on web transparency projects like the HTTP Archive and Chrome UX Report, and studying the intersection of how websites are built and experienced. Rick is the host of <a hreflang="en" href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a> in which experts discuss how the web is trending. Rick is the coauthor of <a hreflang="en" href="https://usingwpt.com">Using WebPageTest</a>, a guide for testing web performance, and writes frequently about the web on <a hreflang="en" href="https://dev.to/rick_viscomi">dev.to</a> and on Twitter at <a href="https://twitter.com/rick_viscomi">@rick_viscomi</a>.</i>
 featured_quote: El rendimiento es una parte esencial de la experiencia del usuario. En muchos sitios web, una mejora en la experiencia del usuario al acelerar el tiempo de carga de la página se corresponde con una mejora en las tasas de conversión. Por el contrario, cuando el rendimiento es deficiente, los usuarios no realizan conversiones con tanta frecuencia e incluso se ha observado que realizan ráfagas de clicks en la página como muestra de frustración.
 featured_stat_1: 13%
 featured_stat_label_1: Sitios con FCP rápido
@@ -23,7 +21,7 @@ featured_stat_label_3: Sitios con FID rápido
 
 ## Introducción
 
-El rendimiento es una parte esencial de la experiencia del usuario. En [muchos sitios web](https://wpostats.com/), una mejora en la experiencia del usuario al acelerar el tiempo de carga de la página se corresponde con una mejora en las tasas de conversión. Por el contrario, cuando el rendimiento es deficiente, los usuarios no realizan conversiones con tanta frecuencia e incluso se ha observado que realizan [ráfagas de clicks](https://blog.fullstory.com/rage-clicks-turn-analytics-into-actionable-insights/) en la página como muestra de frustración.
+El rendimiento es una parte esencial de la experiencia del usuario. En <a hreflang="en" href="https://wpostats.com/">muchos sitios web</a>, una mejora en la experiencia del usuario al acelerar el tiempo de carga de la página se corresponde con una mejora en las tasas de conversión. Por el contrario, cuando el rendimiento es deficiente, los usuarios no realizan conversiones con tanta frecuencia e incluso se ha observado que realizan <a hreflang="en" href="https://blog.fullstory.com/rage-clicks-turn-analytics-into-actionable-insights/">ráfagas de clicks</a> en la página como muestra de frustración.
 
 Hay muchas formas de cuantificar el rendimiento web. Lo más importante es medir lo que realmente importa a los usuarios. Eventos como `onload` o `DOMContentLoaded` pueden no reflejar necesariamente lo que los usuarios experimentan visualmente. Por ejemplo, al cargar un cliente de correo electrónico, puede mostrar una barra de progreso mientras el contenido de la bandeja de entrada se carga de forma asincróna. El problema es que el evento `onload` no espera a que la bandeja de entrada se cargue asincrónamente. En este ejemplo, la métrica de carga que más le importa a los usuarios es el "tiempo para la bandeja de entrada", y centrarse en el evento `onload` puede ser engañoso. Por esa razón, este capítulo analizará métricas de pintado, carga e interactividad más modernas y de aplicación universal para tratar de capturar cómo los usuarios realmente están experimentando la página.
 
@@ -31,7 +29,7 @@ Hay dos tipos de datos de rendimiento: laboratorio y campo. También se les deno
 
 ## El estado de rendimiento
 
-Casi todos los otros capítulos en el Almanaque Web se basan en datos de [HTTP Archive](https://httparchive.org/). Sin embargo, para capturar cómo los usuarios reales experimentan la web, necesitamos un conjunto de datos diferente. En esta sección estamos utilizando el [Informe de Chrome UX](http://bit.ly/chrome-ux-report) (CrUX), un conjunto de datos público de Google que consta de los mismos sitios web que HTTP Archive, y agrega cómo los usuarios de Chrome realmente los experimentan. Las experiencias se clasifican por:
+Casi todos los otros capítulos en el Almanaque Web se basan en datos de <a hreflang="en" href="https://httparchive.org/">HTTP Archive</a>. Sin embargo, para capturar cómo los usuarios reales experimentan la web, necesitamos un conjunto de datos diferente. En esta sección estamos utilizando el [Informe de Chrome UX](http://bit.ly/chrome-ux-report) (CrUX), un conjunto de datos público de Google que consta de los mismos sitios web que HTTP Archive, y agrega cómo los usuarios de Chrome realmente los experimentan. Las experiencias se clasifican por:
 
 - El factor de forma de los dispositivos de los usuarios.
   - Escritorio
@@ -45,7 +43,7 @@ Casi todos los otros capítulos en el Almanaque Web se basan en datos de [HTTP A
   - 4G
 - Ubicaciones geográficas de los usuarios
 
-Las experiencias se miden mensualmente, incluidas las métricas de pintado, carga e interactividad. La primera métrica que veremos es [First Contentful Paint](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint) (FCP). Este es el tiempo que los usuarios pasan esperando que la página muestre algo útil en la pantalla, como una imagen o texto. Luego, veremos una métrica de carga, [Time to First Byte](https://developer.mozilla.org/docs/Glossary/time_to_first_byte) (TTFB). Ésta es una medida del tiempo que tarda la página web desde el momento de la navegación del usuario hasta que recibe el primer byte de la respuesta. Y, finalmente, la última métrica de campo que veremos es [First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay) (FID). Ésta es una métrica relativamente nueva y representa partes de la experiencia de usuario que no sean el rendimiento de carga. Mide el tiempo desde la primera interacción de un usuario con la interfaz de usuario de una página hasta el momento en que el hilo principal del navegador está listo para procesar el evento.
+Las experiencias se miden mensualmente, incluidas las métricas de pintado, carga e interactividad. La primera métrica que veremos es <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint">First Contentful Paint</a> (FCP). Este es el tiempo que los usuarios pasan esperando que la página muestre algo útil en la pantalla, como una imagen o texto. Luego, veremos una métrica de carga, [Time to First Byte](https://developer.mozilla.org/docs/Glossary/time_to_first_byte) (TTFB). Ésta es una medida del tiempo que tarda la página web desde el momento de la navegación del usuario hasta que recibe el primer byte de la respuesta. Y, finalmente, la última métrica de campo que veremos es <a hreflang="en" href="https://developers.google.com/web/updates/2018/05/first-input-delay">First Input Delay</a> (FID). Ésta es una métrica relativamente nueva y representa partes de la experiencia de usuario que no sean el rendimiento de carga. Mide el tiempo desde la primera interacción de un usuario con la interfaz de usuario de una página hasta el momento en que el hilo principal del navegador está listo para procesar el evento.
 
 Así que vamos a profundizar y ver qué resultados podemos encontrar.
 
@@ -63,7 +61,7 @@ En la Figura 7.1 anterior, se puede ver cómo se distribuyen las experiencias de
 
 <p class="note">Nota: cuando un usuario experimenta un rendimiento lento es difícil decir cuál podría ser el motivo. Podría ser que el sitio web en sí mismo se construyó de manera deficiente e ineficiente. O podría haber otros factores ambientales como la conexión lenta del usuario, la caché vacía, etc. Por lo tanto, cuando miramos estos datos de campo, preferimos decir que las experiencias del usuario son lentas y no necesariamente los sitios web.</p>
 
-Para clasificar si un sitio web es lo suficientemente **rápido** utilizaremos la nueva metodología [PageSpeed Insights](https://developers.google.com/speed/docs/insights/v5/about#categories) (PSI), donde al menos el 75% de las experiencias de FCP del sitio web deben ser más rápidas que 1 segundo. Del mismo modo, un sitio web lo suficientemente **lento** tiene un 25% o más de experiencias FCP más lentas que 3 segundos. Decimos que un sitio web tiene un rendimiento **moderado** cuando no cumple con ninguna de estas condiciones.
+Para clasificar si un sitio web es lo suficientemente **rápido** utilizaremos la nueva metodología <a hreflang="en" href="https://developers.google.com/speed/docs/insights/v5/about#categories">PageSpeed Insights</a> (PSI), donde al menos el 75% de las experiencias de FCP del sitio web deben ser más rápidas que 1 segundo. Del mismo modo, un sitio web lo suficientemente **lento** tiene un 25% o más de experiencias FCP más lentas que 3 segundos. Decimos que un sitio web tiene un rendimiento **moderado** cuando no cumple con ninguna de estas condiciones.
 
 {{ figure_markup(
   image="fig2.png",
@@ -81,7 +79,6 @@ Para ayudarnos a comprender cómo los usuarios experimentan FCP en diferentes di
 
 {{ figure_markup(
   image="fig3.png",
-  alt="Distribución del rendimiento en sitios de escritorio según su FCP, entre rápidos, moderados y lentos.",
   caption="Distribución del rendimiento en sitios <em>de escritorio</em> según su FCP, entre rápidos, moderados y lentos.",
   description="Distribution of 1,000 desktop websites' fast, moderate, and slow FCP. The distribution of fast FCP appears to be linear from 100% to 0% with a slight bulge in the middle.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1231764008&format=interactive"
@@ -90,7 +87,6 @@ Para ayudarnos a comprender cómo los usuarios experimentan FCP en diferentes di
 
 {{ figure_markup(
   image="fig4.png",
-  alt="Distribución del rendimiento en sitios móviles según su FCP, entre rápidos, moderados y lentos.",
   caption="Distribución del rendimiento en sitios <em>móviles</em> según su FCP, entre rápidos, moderados y lentos.",
   description="Distribution of 1,000 mobile websites' fast, moderate, and slow FCP. The distribution of fast FCP appears to be linear from 100% to 0% without the same middle bulge seen for desktop websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=167423587&format=interactive"
@@ -115,7 +111,6 @@ Según la clasificación de PSI, el 17% de los sitios web tienen experiencias r�
 
 {{ figure_markup(
   image="fig6.png",
-  alt='Distribución de sitios web etiquetados como que tienen FCP rápido, moderado o lento, desglosados por ECT (effective connection type).',
   caption='Distribución de sitios web etiquetados como que tienen FCP rápido, moderado o lento, desglosados por <abbr title="effective connection type">ECT</abbr>.',
   description="Bar chart of FCP distributions per effective connection type. 4G fast, moderate, slow: 14%, 67%, and 19% respectively. 3G: 1%, 38%, and 61%. 2G: 0%, 9%, 90%. Slow 2G: 0%, 1%, 99%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1987967547&format=interactive"
@@ -144,7 +139,7 @@ Otros geos de APAC cuentan una historia diferente. Tailandia, Vietnam, Indonesia
 
 ### Time to First Byte (TTFB)
 
-[Time to First Byte](https://web.dev/time-to-first-byte) (TTFB) es una medida de cuánto tiempo tarda la página web desde el momento de la navegación del usuario hasta que recibe el primer byte de la respuesta.
+<a hreflang="en" href="https://web.dev/time-to-first-byte">Time to First Byte</a> (TTFB) es una medida de cuánto tiempo tarda la página web desde el momento de la navegación del usuario hasta que recibe el primer byte de la respuesta.
 
 {{ figure_markup(
   image="nav-timing.png",
@@ -165,7 +160,7 @@ Para ayudar a explicar TTFB y los muchos factores que lo afectan, tomemos presta
   )
 }}
 
-De forma similar a la tabla de FCP en la Figura 7.1, ésta es una vista de 1.000 muestras representativas ordenadas por TTFB rápido. Un [TTFB rápido](https://developers.google.com/speed/docs/insights/Server#recommendations) es el que ocurre en menos de 0,2 segundos (200 ms), un TTFB lento ocurre en 1 segundo o más, y todo en medio es moderado.
+De forma similar a la tabla de FCP en la Figura 7.1, ésta es una vista de 1.000 muestras representativas ordenadas por TTFB rápido. Un <a hreflang="en" href="https://developers.google.com/speed/docs/insights/Server#recommendations">TTFB rápido</a> es el que ocurre en menos de 0,2 segundos (200 ms), un TTFB lento ocurre en 1 segundo o más, y todo en medio es moderado.
 
 Mirando la curva de las proporciones rápidas, la forma es bastante diferente de la del FCP. Hay muy pocos sitios web que tienen un TTFB rápido superior al 75%, mientras que más de la mitad están por debajo del 25%.
 
@@ -199,7 +194,7 @@ Ahora echemos un vistazo al porcentaje de sitios web que sirven TTFB rápido a u
 
 ### First Input Delay
 
-La última métrica de campo que veremos es [First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay) (FID). Esta métrica representa el tiempo desde la primera interacción de un usuario con la interfaz de usuario de una página hasta el momento en que el hilo principal del navegador está listo para procesar el evento. Tenga en cuenta que esto no incluye el tiempo que las aplicaciones pasan realmente manejando el evento de entrada. En el peor de los casos, un FID lento da como resultado una página que parece no responder y una experiencia de usuario frustrante.
+La última métrica de campo que veremos es <a hreflang="en" href="https://developers.google.com/web/updates/2018/05/first-input-delay">First Input Delay</a> (FID). Esta métrica representa el tiempo desde la primera interacción de un usuario con la interfaz de usuario de una página hasta el momento en que el hilo principal del navegador está listo para procesar el evento. Tenga en cuenta que esto no incluye el tiempo que las aplicaciones pasan realmente manejando el evento de entrada. En el peor de los casos, un FID lento da como resultado una página que parece no responder y una experiencia de usuario frustrante.
 
 Comencemos definiendo algunos umbrales. De acuerdo con la nueva metodología PSI, un FID **rápido** es uno que ocurre en menos de 100 ms. Esto le da a la aplicación suficiente tiempo para manejar el evento de entrada y proporcionar feedback al usuario en un momento que se siente instantáneo. Un FID **lento** es uno que ocurre en 300 ms o más. Todo entre medias es **moderado**.
 
@@ -229,7 +224,6 @@ En comparación con las métricas anteriores, la distribución del rendimiento a
 
 {{ figure_markup(
   image="fig14.png",
-  alt="Distribución de sitios web de escritorio según si su rendimiento de FID es rápido, moderado o lento.",
   caption="Distribución de sitios web de <em>escritorio</em> según si su rendimiento de FID es rápido, moderado o lento.",
   description="Distribution of 1,000 desktop websites' fast, moderate, and slow FID. The distribution of fast FID decreases very slowly from 100% to 90% for the fastest three quarters of websites. After that, fast FID decreases slightly to 75%. Nearly all desktop websites have more than 75% fast FID experiences.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=16379508&format=interactive"
@@ -238,7 +232,6 @@ En comparación con las métricas anteriores, la distribución del rendimiento a
 
 {{ figure_markup(
   image="fig15.png",
-  alt="Distribución de sitios web móviles según si su rendimiento de FID es rápido, moderado o lento.",
   caption="Distribución de sitios web <em>móviles</em> según si su rendimiento de FID es rápido, moderado o lento.",
   description="Distribution of 1,000 mobile websites' fast, moderate, and slow FID. The distribution of fast FID declines steadily but much more quickly than desktop. It reaches 75% fast for at three quarters of websites then quickly drops to 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=519511409&format=interactive"
@@ -261,7 +254,6 @@ Cuando aplicamos el etiquetado PSI a las experiencias de escritorio y móvil, la
 
 {{ figure_markup(
   image="fig17.png",
-  alt='Distribución de sitios web etiquetados como que tienen un FID rápido, moderado o lento, desglosados por ECT (effective connection type).',
   caption='Distribución de sitios web etiquetados como que tienen un FID rápido, moderado o lento, desglosados por <abbr title="effective connection type">ECT</abbr>.',
   description="Bar chart of FID distributions per effective connection type. 4G fast, moderate, slow: 41%, 45%, and 15% respectively. 3G: 22%, 52%, and 26%. 2G: 19%, 58%, 23%. Slow 2G: 15%, 58%, 27%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1173039776&format=interactive"
@@ -296,6 +288,6 @@ Cuantificar cómo de rápido carga una página web es una ciencia imperfecta que
 
 Los datos presentados en este capítulo mostraron que todavía hay mucho trabajo por hacer para cumplir los objetivos establecidos para los sitios web rápidos. Ciertos factores de forma, tipos de conexión efectivos y geos se correlacionan con mejores experiencias de usuario, pero no podemos olvidarnos de las combinaciones de datos demográficos con bajo rendimiento. En muchos casos la plataforma web se utiliza para negocios; ganar más dinero mejorando las tasas de conversión puede ser un gran motivador para acelerar un sitio web. En última instancia, para todos los sitios web, el rendimiento consiste en brindar experiencias positivas a los usuarios de una manera que no los impida, los frustre o los enfurezca.
 
-A medida que la web envejece un año más y nuestra capacidad de medir cómo los usuarios la experimentan mejora gradualmente, espero que los desarrolladores tengan acceso a métricas que capturan más la experiencia holística del usuario. FCP ocurre muy pronto en la línea de tiempo de mostrar contenido útil a los usuarios, y están surgiendo métricas más nuevas como [Largest Contentful Paint](https://web.dev/largest-contentful-paint) (LCP) para mejorar nuestra visibilidad sobre cómo la carga de la página es percibida. La [API de Layout Instability](https://web.dev/layout-instability-api) también nos ha dado una nueva visión de la frustración que experimentan los usuarios más allá de la carga de la página.
+A medida que la web envejece un año más y nuestra capacidad de medir cómo los usuarios la experimentan mejora gradualmente, espero que los desarrolladores tengan acceso a métricas que capturan más la experiencia holística del usuario. FCP ocurre muy pronto en la línea de tiempo de mostrar contenido útil a los usuarios, y están surgiendo métricas más nuevas como <a hreflang="en" href="https://web.dev/largest-contentful-paint">Largest Contentful Paint</a> (LCP) para mejorar nuestra visibilidad sobre cómo la carga de la página es percibida. La <a hreflang="en" href="https://web.dev/layout-instability-api">API de Layout Instability</a> también nos ha dado una nueva visión de la frustración que experimentan los usuarios más allá de la carga de la página.
 
 Equipados con estas nuevas métricas, la web en 2020 se volverá aún más transparente, mejor entendida y brindará a los desarrolladores una ventaja para lograr un progreso más significativo para mejorar el rendimiento y contribuir a experiencias de usuario positivas.

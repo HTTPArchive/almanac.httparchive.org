@@ -1,5 +1,5 @@
-SELECT
-  DISTINCT date,
+SELECT DISTINCT
+  date,
   client,
   page,
   url,
@@ -10,7 +10,7 @@ FROM (
   FROM
     `httparchive.almanac.summary_response_bodies`
   WHERE
-    date = '2020-08-01') AS bodies
+    date = '2020-08-01')
 JOIN (
   SELECT
     date,
@@ -25,7 +25,7 @@ JOIN (
     date,
     client,
     page,
-    url) AS pwa
+    url)
 USING (
   date,
   client,

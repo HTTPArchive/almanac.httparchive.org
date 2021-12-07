@@ -2,20 +2,9 @@ const fs = require('fs-extra');
 const { find_markdown_files } = require('./shared');
 const { find_asset_files } = require('./shared');
 const { get_yearly_configs } = require('./shared');
+const { get_static_lang_year_files } = require('./shared');
+const { get_static_lang_files } = require('./shared');
 const crypto = require('crypto');
-
-const static_pages = [
-  'index.html',
-  'table_of_contents.html',
-  'methodology.html',
-  'contributors.html',
-  'accessibility_statement.html',
-  'ebook.html',
-  'stories/page_content.html',
-  'stories/user_experience.html',
-  'stories/content_publishing.html',
-  'stories/content_distribution.html'
-];
 
 const path = "config/last_updated.json";
 
@@ -93,23 +82,24 @@ const get_asset_file_dates = async () => {
 
 const get_template_pages_dates = async (supported_languages) => {
 
-  var languages_and_years = [];
-
-  for (const year in supported_languages) {
-    for (const languages in supported_languages[year]) {
-      languages_and_years.push(`${supported_languages[year][languages]}/${year}`);
-    }
-  }
-
-  // Get all of the static pages for each combination
-  const files = languages_and_years
-    .map((x) => static_pages.map((p) => `${x}/${p}`))
-    .reduce((x, y) => [...x, ...y], []);
+  // Get all of the static pages for each combination of language and year
+  const files = get_static_lang_year_files(supported_languages);
 
   // Get the sitemap entries for those pages
   let static_pages_dates = [];
 
   for (const file of await files) {
+    if (fs.existsSync(`templates/${file}`)) {
+      let content = await fs.readFile(`templates/${file}`, 'utf-8');
+      let hash = crypto.createHash('md5').update(content).digest("hex");
+      check_and_update_date(file, hash, null);
+    }
+  }
+
+  // Get all of the static pages with no year for each language
+  const files_no_year = get_static_lang_files(supported_languages);
+
+  for (const file of await files_no_year) {
     if (fs.existsSync(`templates/${file}`)) {
       let content = await fs.readFile(`templates/${file}`, 'utf-8');
       let hash = crypto.createHash('md5').update(content).digest("hex");

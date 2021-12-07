@@ -1,0 +1,24 @@
+{% extends "base/error.html" %}
+
+{% block unknown_error %}Невідома помилка{% endblock %}
+
+{%
+  set localizedStatusCode = {
+    400: "Невірний запит",
+    404: "Сторінка не знайдена",
+    500: "Внутрішня помилка сервера",
+    502: "Тимчасова помилка сервера"
+  }
+%}
+{% macro expandedTitle(errorTitle) %}Помилка: {{ errorTitle }}{% endmacro %}
+{%
+  set localizedErrorMessage = {
+    "Unsupported year requested": "Вказаний рік відсутній",
+    "Unsupported chapter requested": "Вказаний розділ відсутній",
+    "Unsupported language requested": "Вказана мова відсутня",
+    "Not Found": "Вказаний URL відсутній на сервері. Якщо ви вводили URL самі, перевірте правильність написання і спробуйте ще раз."
+  }
+%}
+{% macro expandedErrorMessage(errorCode, errorDescription, errorMessage) %}
+{{ errorCode }} <i lang="en">{{ errorDescription }}</i>: {{ errorMessage }}
+{% endmacro %}

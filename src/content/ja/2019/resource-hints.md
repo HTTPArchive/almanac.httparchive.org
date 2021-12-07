@@ -1,31 +1,29 @@
 ---
-part_number: IV
-chapter_number: 19
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: リソースヒント
 description: 2019年のWeb Almanacのリソースヒントの章では、dns-prefetch、preconnect、preload、prefetch、priority hints、ネイティブの遅延ローディングの使用法をカバーしています。
 authors: [khempenius]
-reviewers: [andydavies, bazzadp, yoavweiss]
+reviewers: [andydavies, tunetheweb, yoavweiss]
 analysts: [rviscomi]
 editors: [rviscomi]
-translators: [ksakae]
+translators: [ksakae1216]
 discuss: 1774
 results: https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/
-queries: 19_Resource_Hints
 khempenius_bio: Katie HempeniusはChromeチームのエンジニアで、ウェブの高速化に取り組んでいます。
 featured_quote: リソースヒントは、どのようなリソースがすぐに必要になるかについてブラウザに<em>ヒント</em>を提供します。このヒントを受け取った結果としてブラウザが取るアクションは、リソースヒントのタイプによって異なります。リソースヒントが正しく使用されていれば、重要なアクションを先取りすることでページのパフォーマンスを向上させることができます。
 featured_stat_1: 29%
-featured_stat_label_1: <code>dns-prefetch</code>を使用しているサイト
+featured_stat_label_1: `dns-prefetch`を使用しているサイト
 featured_stat_2: 88%
-featured_stat_label_2: <code>as</code>属性を使用したリソースヒント。
+featured_stat_label_2: `as`属性を使用したリソースヒント。
 featured_stat_3: 0.04%
 featured_stat_label_3: 優先順位のヒントの使い方
 ---
 
 ## 序章
 
-[リソースヒント](https://www.w3.org/TR/resource-hints/) は、どのようなリソースがすぐに必要になるかについての「ヒント」をブラウザに提供します。このヒントを受け取った結果としてブラウザが取るアクションは、リソースヒントの種類によって異なります。リソースヒントは正しく使用されると、重要なアクションを先取りすることでページのパフォーマンスを向上させることができます。
+<a hreflang="en" href="https://www.w3.org/TR/resource-hints/">リソースヒント</a> は、どのようなリソースがすぐに必要になるかについての「ヒント」をブラウザに提供します。このヒントを受け取った結果としてブラウザが取るアクションは、リソースヒントの種類によって異なります。リソースヒントは正しく使用されると、重要なアクションを先取りすることでページのパフォーマンスを向上させることができます。
 
-[例](https://youtu.be/YJGCZCaIZkQ?t=1956)は、リソースヒントの結果としてパフォーマンスが向上しています。
+<a hreflang="en" href="https://youtu.be/YJGCZCaIZkQ?t=1956">例</a>は、リソースヒントの結果としてパフォーマンスが向上しています。
 
 * Jabongは、重要なスクリプトをプリロードすることで、対話までの時間を1.5秒短縮しました。
 * Barefoot Wineは、目に見えるリンクを先読みすることで、将来のページの対話までの時間を2.7秒短縮しました。
@@ -39,15 +37,15 @@ featured_stat_label_3: 優先順位のヒントの使い方
 
 ### `preconnect`
 
-[`preconnect`](https://web.dev/uses-rel-preconnect)は、DNSルックアップ、TCPハンドシェイク、TLSネゴシエーションを含む早期接続を開始します。このヒントはサードパーティとの接続を設定する際に有用である。`preconnect`の用途は`dns-prefetch`の用途と非常によく似ているが、`preconnect`はブラウザのサポートが少ない。しかし、IE 11のサポートを必要としないのであれば、preconnectの方が良い選択であろう。
+<a hreflang="en" href="https://web.dev/uses-rel-preconnect">`preconnect`</a>は、DNSルックアップ、TCPハンドシェイク、TLSネゴシエーションを含む早期接続を開始します。このヒントはサードパーティとの接続を設定する際に有用である。`preconnect`の用途は`dns-prefetch`の用途と非常によく似ているが、`preconnect`はブラウザのサポートが少ない。しかし、IE 11のサポートを必要としないのであれば、preconnectの方が良い選択であろう。
 
 ### `preload`
 
-[`preload`](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)ヒントは、早期のリクエストを開始します。これは、パーサによって発見されるのが遅れてしまうような重要なリソースをロードするのに便利です。たとえば、ブラウザがスタイルシートを受信し解析したあとでしか重要な画像を発見できない場合、画像をプリロードすることは意味があるかもしれません。
+<a hreflang="en" href="https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf">`preload`</a>ヒントは、早期のリクエストを開始します。これは、パーサによって発見されるのが遅れてしまうような重要なリソースをロードするのに便利です。たとえば、ブラウザがスタイルシートを受信し解析したあとでしか重要な画像を発見できない場合、画像をプリロードすることは意味があるかもしれません。
 
 ### `prefetch`
 
-[`prefetch`](https://calendar.perfplanet.com/2018/all-about-prefetching/)は優先度の低いリクエストを開始します。これは、次の（現在のページではなく）ページの読み込みで使われるであろうリソースを読み込むのに便利です。プリフェッチの一般的な使い方は、アプリケーションが次のページロードで使われると「予測」したリソースをロードすることです。これらの予測は、ユーザーのマウスの動きや、一般的なユーザーの流れ/旅のようなシグナルに基づいているかもしれません。
+<a hreflang="en" href="https://calendar.perfplanet.com/2018/all-about-prefetching/">`prefetch`</a>は優先度の低いリクエストを開始します。これは、次の（現在のページではなく）ページの読み込みで使われるであろうリソースを読み込むのに便利です。プリフェッチの一般的な使い方は、アプリケーションが次のページロードで使われると「予測」したリソースをロードすることです。これらの予測は、ユーザーのマウスの動きや、一般的なユーザーの流れ/旅のようなシグナルに基づいているかもしれません。
 
 ## 文法
 
@@ -63,7 +61,7 @@ featured_stat_label_3: 優先順位のヒントの使い方
 Link: <https://example.com/shopping-cart.js>; rel=prefetch
 ```
 
-HTTPヘッダー内のリソースヒントの使用量が非常に少ないため、本章の残りの部分では、`<link>`タグと組み合わせたリソースヒントの使用量の分析のみに焦点を当てています。しかし、今後、[HTTP/2 Push](./http2#http2プッシュ)が採用されるようになると、HTTPヘッダーでのリソースヒントの使用量が増える可能性のあることは注目に値します。これは、HTTP/2 Pushがリソースをプッシュするためのシグナルとして、HTTPのプリロード `Link` ヘッダーを再利用していることに起因しています。
+HTTPヘッダー内のリソースヒントの使用量が非常に少ないため、本章の残りの部分では、`<link>`タグと組み合わせたリソースヒントの使用量の分析のみに焦点を当てています。しかし、今後、[HTTP/2 Push](./http#http2プッシュ)が採用されるようになると、HTTPヘッダーでのリソースヒントの使用量が増える可能性のあることは注目に値します。これは、HTTP/2 Pushがリソースをプッシュするためのシグナルとして、HTTPのプリロード `Link` ヘッダーを再利用していることに起因しています。
 
 ## リソースヒント
 
@@ -109,9 +107,9 @@ HTTPヘッダー内のリソースヒントの使用量が非常に少ないた�
   <figcaption>{{ figure_link(caption="リソースヒントの採用。") }}</figcaption>
 </figure>
 
-`dns-prefetch`の相対的な人気は驚くに値しません。これはよく知られたAPIであり（[2009](https://caniuse.com/#feat=link-rel-dns-prefetch)ではじめて登場しました）、すべての主要なブラウザでサポートされており、すべてのリソースヒントの中でもっとも「安価」なものです。`dns-prefetch`はDNSの検索を行うだけなので、データの消費量が非常に少なく、使用する上でのデメリットはほとんどありません。`dns-prefetch`はレイテンシの高い状況でもっとも有用である。
+`dns-prefetch`の相対的な人気は驚くに値しません。これはよく知られたAPIであり（<a hreflang="en" href="https://caniuse.com/#feat=link-rel-dns-prefetch">2009</a>ではじめて登場しました）、すべての主要なブラウザでサポートされており、すべてのリソースヒントの中でもっとも「安価」なものです。`dns-prefetch`はDNSの検索を行うだけなので、データの消費量が非常に少なく、使用する上でのデメリットはほとんどありません。`dns-prefetch`はレイテンシの高い状況でもっとも有用である。
 
-つまり、IE11以下をサポートする必要がないサイトであれば、`dns-prefetch`から`preconnect`に切り替えるのが良いでしょう。HTTPSがユビキタスな時代には、`preconnect`は安価でありながら、より大きな[パフォーマンス](./performance)の向上をもたらします。`dns-prefetch`とは異なり、`preconnect`はDNSの検索だけでなく、TCPハンドシェイクとTLSネゴシエーションも開始することに注意してください。[証明書チェーン](https://knowledge.digicert.com/solution/SO16297.html)はTLSネゴシエーション中にダウンロードされるが、これには通常数キロバイトのコストがかかります。
+つまり、IE11以下をサポートする必要がないサイトであれば、`dns-prefetch`から`preconnect`に切り替えるのが良いでしょう。HTTPSがユビキタスな時代には、`preconnect`は安価でありながら、より大きな[パフォーマンス](./performance)の向上をもたらします。`dns-prefetch`とは異なり、`preconnect`はDNSの検索だけでなく、TCPハンドシェイクとTLSネゴシエーションも開始することに注意してください。<a hreflang="en" href="https://knowledge.digicert.com/solution/SO16297.html">証明書チェーン</a>はTLSネゴシエーション中にダウンロードされるが、これには通常数キロバイトのコストがかかります。
 
 `prefetch`は3%のサイトで利用されており、もっとも広く利用されていないリソースヒントである。この使用率の低さは、`prefetch`が現在のページの読み込みよりも後続のページの読み込みを改善するのに有用であるという事実によって説明できるかもしれません。したがって、ランディングページの改善や最初に閲覧されたページのパフォーマンスを向上させることだけに焦点を当てているサイトでは、これは見過ごされてしまうだろう。
 
@@ -221,7 +219,7 @@ HTTPヘッダー内のリソースヒントの使用量が非常に少ないた�
 
 ## `as`属性
 
-`as`は`preload`リソースヒントと一緒に使用されるべき属性で、要求されたリソースの種類（画像、スクリプト、スタイルなど）をブラウザに知らせるため使用されます。これにより、ブラウザがリクエストに正しく優先順位をつけ、正しいコンテンツセキュリティポリシー([CSP](https://developers.google.com/web/fundamentals/security/csp))を適用するのに役立ちます。CSPはHTTPヘッダーで表現される[セキュリティ](./security)メカニズムです、信頼できるソースのセーフリストを宣言することで、XSSやその他の悪意のある攻撃の影響を緩和するのに役立ちます。
+`as`は`preload`リソースヒントと一緒に使用されるべき属性で、要求されたリソースの種類（画像、スクリプト、スタイルなど）をブラウザに知らせるため使用されます。これにより、ブラウザがリクエストに正しく優先順位をつけ、正しいコンテンツセキュリティポリシー(<a hreflang="en" href="https://developers.google.com/web/fundamentals/security/csp">CSP</a>)を適用するのに役立ちます。CSPはHTTPヘッダーで表現される[セキュリティ](./security)メカニズムです、信頼できるソースのセーフリストを宣言することで、XSSやその他の悪意のある攻撃の影響を緩和するのに役立ちます。
 
 {{ figure_markup(
   caption="<code>as</code> 属性を使用したリソースヒントインスタンスの割合。",
@@ -238,11 +236,11 @@ HTTPヘッダー内のリソースヒントの使用量が非常に少ないた�
 
 ### 優先順位のヒント
 
-[優先度ヒント](https://wicg.github.io/priority-hints/)は、リソースのフェッチの優先度を`high`,`low`,`auto`のいずれかで表現するためのAPIです。これらは幅広いHTMLタグで利用できます。とくに`<image>`,`<link`>,`<script>`,`<iframe>`などです。
+<a hreflang="en" href="https://wicg.github.io/priority-hints/">優先度ヒント</a>は、リソースのフェッチの優先度を`high`,`low`,`auto`のいずれかで表現するためのAPIです。これらは幅広いHTMLタグで利用できます。とくに`<image>`,`<link`>,`<script>`,`<iframe>`などです。
 
-<figure>
+<figure class="figure-block">
 <div class="code-block floating-card">
-  <pre><code>&lt;carousel>
+  <pre role="region" aria-label="Code 0" tabindex="0"><code>&lt;carousel>
   &lt;img src="cat1.jpg" importance="high">
   &lt;img src="cat2.jpg" importance="low">
   &lt;img src="cat3.jpg" importance="low">
@@ -259,13 +257,13 @@ HTTPヘッダー内のリソースヒントの使用量が非常に少ないた�
 )
 }}
 
-優先度ヒントは[実装](https://www.chromestatus.com/feature/5273474901737472)されており、Chromiumブラウザのバージョン70以降では機能フラグを使ってテストできます。まだ実験的な技術であることを考えると、0.04%のサイトでしか使用されていないのは当然のことです。
+優先度ヒントは<a hreflang="en" href="https://www.chromestatus.com/feature/5273474901737472">実装</a>されており、Chromiumブラウザのバージョン70以降では機能フラグを使ってテストできます。まだ実験的な技術であることを考えると、0.04%のサイトでしか使用されていないのは当然のことです。
 
 優先度ヒントの85%は`<img>`タグを使用しています。優先度ヒントはほとんどがリソースの優先順位を下げるために使われます。使用率の72%は`importance="low"`で、28%は`importance="high"`です。
 
 ### ネイティブの遅延ローディング
 
-[ネイティブの遅延ローディング](https://web.dev/native-lazy-loading)は、画面外の画像やiframeの読み込みを遅延させるためのネイティブAPIです。これにより、最初のページ読み込み時にリソースを解放し、使用されないアセットの読み込みを回避できます。以前は、この技術はサードパーティの[JavaScript](./javascript)ライブラリでしか実現できませんでした。
+<a hreflang="en" href="https://web.dev/native-lazy-loading">ネイティブの遅延ローディング</a>は、画面外の画像やiframeの読み込みを遅延させるためのネイティブAPIです。これにより、最初のページ読み込み時にリソースを解放し、使用されないアセットの読み込みを回避できます。以前は、この技術はサードパーティの[JavaScript](./javascript)ライブラリでしか実現できませんでした。
 
 ネイティブな遅延読み込みのためのAPIはこのようになります。`<img src="cat.jpg" loading="lazy">`.
 

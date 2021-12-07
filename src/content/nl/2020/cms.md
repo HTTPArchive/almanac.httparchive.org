@@ -1,17 +1,15 @@
 ---
-part_number: III
-chapter_number: 15
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CMS
 description: CMS-hoofdstuk van de Web Almanac van 2020 over CMS-acceptatie, hoe CMS-suites worden gebouwd, gebruikerservaring van CMS-aangedreven websites en CMS-innovatie.
 authors: [alexdenning]
 reviewers: [sirjonathan, ernee, amedina]
 analysts: [GregBrimble, rviscomi]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [noah-vdv]
 alexdenning_bio: Alex Denning is de oprichter van <a hreflang="en" href="https://getellipsis.com/">Ellipsis Marketing</a>, een marketingbureau voor WordPress-bedrijven. Alex is een WordPress Core-bijdrager en heeft geholpen bij het organiseren van <a hreflang="en" href="https://london.wordcamp.org/">WordCamp London</a>.
 discuss: 2051
 results: https://docs.google.com/spreadsheets/d/1vTf459CcCbBuYeGvgo-RSidppR62SfM-VTkW-dfS3K4/
-queries: 15_CMS
 featured_quote: De term Contentmanagement Systeem (CMS) verwijst naar systemen waarmee individuen en organisaties inhoud kunnen creëren, beheren en publiceren. Een CMS voor webcontent is met name een systeem dat is gericht op het creëren, beheren en publiceren van content die via internet kan worden geconsumeerd en ervaren.
 featured_stat_1: 42%
 featured_stat_label_1: Webpagina's worden aangedreven door een CMS
@@ -21,7 +19,7 @@ featured_stat_3: 74%
 featured_stat_label_3: CMS met WordPress (hetzelfde als vorig jaar!)
 ---
 
-## Introductie
+## Inleiding
 
 De term Content Management System (CMS) verwijst naar systemen waarmee individuen en organisaties inhoud kunnen creëren, beheren en publiceren. Een CMS voor webcontent is met name een systeem dat is gericht op het creëren, beheren en publiceren van inhoud die via internet kan worden geconsumeerd en ervaren.
 
@@ -123,7 +121,7 @@ Deze cijfers zijn in grote lijnen consistent wanneer ze worden verdeeld over des
 
 {{ figure_markup(
   image="cms-top-5-cms-by-client.png",
-  caption="Top 5 CMS'en per klant.",
+  caption="Top 5 CMS'en per cliënt.",
   description="Staafdiagram dat laat zien dat WordPress domineert met een aandeel van 31,37% op desktop en 31,39% op mobiel vergeleken met minder dan 2,5% voor de andere CMS'en: Drupal heeft 2,32% op desktop en 1,99% op mobiel, Joomla heeft 1,96% op desktop en 2,12% op mobiel, Squarespace heeft 1,08% op desktop en 0,85% op mobiel, en Wiz heeft 1,05% op desktop en 1,24% op mobiel.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=2098327336&format=interactive",
   sheets_gid="908727245",
@@ -301,7 +299,7 @@ Als we kijken naar het aandeel van CMS-adoptie ten opzichte van andere CMS'en (d
 
 WordPress domineert deze ruimte en verdient daarom verdere discussie.
 
-[WordPress is een open source project](https://nl.wordpress.org/about/) met als missie "publiceren democratiseren". Het CMS is gratis. Hoewel dit waarschijnlijk een belangrijke factor is in het adoptiegedeelte, zijn de twee op één na populairste CMS'en - Joomla en Drupal - ook gratis. De WordPress-gemeenschap, bijdragers en het zakelijke ecosysteem zijn waarschijnlijk de belangrijkste onderscheidende factoren.
+<a href="https://nl.wordpress.org/about/">WordPress is een open source project</a> met als missie "publiceren democratiseren". Het CMS is gratis. Hoewel dit waarschijnlijk een belangrijke factor is in het adoptiegedeelte, zijn de twee op één na populairste CMS'en - Joomla en Drupal - ook gratis. De WordPress-gemeenschap, bijdragers en het zakelijke ecosysteem zijn waarschijnlijk de belangrijkste onderscheidende factoren.
 
 Een "kern" WordPress-gemeenschap handhaaft de CMS- en servicevereisten voor aanvullende functionaliteit door middel van aangepaste services en producten (thema's en plug-ins). Deze gemeenschap heeft een grote impact, met een relatief klein aantal mensen die zowel het CMS zelf onderhouden als de extra functionaliteit bieden die WordPress krachtig en flexibel genoeg maakt om de meeste soorten websites te kunnen bedienen. Deze flexibiliteit is belangrijk bij het uitleggen van het marktaandeel.
 
@@ -352,7 +350,7 @@ Een "goed" LCP wordt beschouwd als minder dan 2,5 seconden. De gemiddelde websit
 {{ figure_markup(
   image="cms-real-user-largest-contentful-paint-experiences.png",
   caption="Largest Contentful Paint-ervaringen door echte gebruikers.",
-  description="Staafdiagram met de top 5 CMS'en en of ze een \"goede\" Largest Contentful Paint-ervaring hebben. WordPress is middelmatig met 33% op desktop en 25% op mobiel, Drupal is de beste met 61% op desktop en 47% op mobiel, Joomla is de tweede beste met 48% op desktop en 28% op mobiel, Squarespace heeft 37% op desktop maar slechts 12% op mobiel en Wix is het laagste met 9% op desktop en 9% op mobiel.",
+  description="Staafdiagram met de top 5 CMS'en en of ze een “goede” Largest Contentful Paint-ervaring hebben. WordPress is middelmatig met 33% op desktop en 25% op mobiel, Drupal is de beste met 61% op desktop en 47% op mobiel, Joomla is de tweede beste met 48% op desktop en 28% op mobiel, Squarespace heeft 37% op desktop maar slechts 12% op mobiel en Wix is het laagste met 9% op desktop en 9% op mobiel.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=188727692&format=interactive",
   sheets_gid="465267881",
   sql_file="core_web_vitals_distribution.sql"
@@ -370,7 +368,7 @@ FID is erg snel voor de gemiddelde CMS-website op desktop - alleen Wix scoort la
 {{ figure_markup(
   image="cms-real-user-first-input-delay-experiences.png",
   caption="First Input Delay-ervaringen door echte gebruikers.",
-  description="Staafdiagram met de top 5 CMS'en en of ze een \"goede\" ervaring met de eerste invoervertraging hebben. Ze hebben allemaal een ervaringsscore van 100% op desktop, behalve Wix met 87%. Voor mobiel heeft WordPress 88%, Drupal 76%, Joomla 71%, Squarespace 91% en Wix 46%.",
+  description="Staafdiagram met de top 5 CMS'en en of ze een “goede” ervaring met de eerste invoervertraging hebben. Ze hebben allemaal een ervaringsscore van 100% op desktop, behalve Wix met 87%. Voor mobiel heeft WordPress 88%, Drupal 76%, Joomla 71%, Squarespace 91% en Wix 46%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=893606466&format=interactive",
   sheets_gid="465267881",
   sql_file="core_web_vitals_distribution.sql"
@@ -390,7 +388,7 @@ Een score van 0,1 of lager wordt gemeten als "goed", meer dan 0,25 is "slecht" e
 {{ figure_markup(
   image="cms-real-user-cumulative-layout-shift-experiences.png",
   caption="Cumulatieve Layout Shift-ervaringen door echte gebruikers.",
-  description="Staafdiagram met de top 5 CMS'en en of ze een \"goede\" ervaring hebben met Cumulative Layout Shift. WordPress heeft 47% van de desktopsites met een \"goede ervaring\" en 57% van de mobiele sites. Drupal heeft 58% voor desktop en 70% voor mobiel, Joomla heeft 51% voor desktop en 63% voor mobiel, Squarespace heeft 35% voor desktop en 44% voor mobiel, en Wix heeft 58% voor desktop en 59% voor mobiel.",
+  description="Staafdiagram met de top 5 CMS'en en of ze een “goede” ervaring hebben met Cumulative Layout Shift. WordPress heeft 47% van de desktopsites met een “goede ervaring” en 57% van de mobiele sites. Drupal heeft 58% voor desktop en 70% voor mobiel, Joomla heeft 51% voor desktop en 63% voor mobiel, Squarespace heeft 35% voor desktop en 44% voor mobiel, en Wix heeft 58% voor desktop en 59% voor mobiel.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkUxfuK-FCn3_IYDJiEsKDmdmyKb0TSEhG8dFc0XBIXej1NO2uUOmd-9NCbWuh-MZ3xzMhK_kNT-4u/pubchart?oid=1265001868&format=interactive",
   sheets_gid="465267881",
   sql_file="core_web_vitals_distribution.sql"
@@ -405,7 +403,7 @@ De top 5 CMS'en zouden hier kunnen verbeteren. Slechts 50% van de webpagina's di
 
 #### SEO
 
-Zoekmachineoptimalisatie (of SEO) is het optimaliseren van websites om ervoor te zorgen dat de inhoud van uw website gemakkelijker vindbaar is in zoekmachines. Dit wordt dieper behandeld in ons hoofdstuk [SEO](./seo), maar een deel betreft het verzekeren dat de site zo is gecodeerd dat de crawlers van zoekmachines zoveel mogelijk informatie kunnen verstrekken om het hen zo gemakkelijk mogelijk te maken om uw site op de juiste manier weer te geven in de resultaten van zoekmachines. In vergelijking met een op maat gemaakte website, zou je verwachten dat een CMS goede SEO-mogelijkheden biedt, en de Lighthouse-scores in deze categorie laten hoge cijfers zien:
+Zoekmachineoptimalisatie (of SEO) is het optimaliseren van websites om ervoor te zorgen dat de inhoud van uw website gemakkelijker vindbaar is in zoekmachines. Dit wordt dieper behandeld in ons hoofdstuk [SEO](./seo), maar een deel betreft het verzekeren dat de site zo is gecodeerd dat de crawlers van zoekmachines zoveel mogelijk informatie kunnen verstrekken om het hen zo gemakkelijk mogelijk te maken om uw site op de juiste manier weer te geven in de resultaten van zoekmachines. In vergelijking met een op maat gemaakte website, zou u verwachten dat een CMS goede SEO-mogelijkheden biedt, en de Lighthouse-scores in deze categorie laten hoge cijfers zien:
 
 {{ figure_markup(
   image="cms-seo-lighthouse-score.png",
@@ -519,7 +517,7 @@ Afbeeldingsformaten zijn een mechanisme om afbeeldingen efficiënter te maken. A
 
 We kunnen de vraag naar de impact van CMS'en op het milieu niet volledig beantwoorden, maar we dragen bij aan een antwoord. CMS'en hebben de verantwoordelijkheid om de impact op het milieu serieus te nemen en het verlagen van het gemiddelde paginagewicht is belangrijk werk.
 
-## Conclusie
+## Gevolgtrekking
 
 CMS'en zijn het afgelopen jaar alleen maar belangrijker geworden. Ze zijn essentieel voor de manier waarop inhoud op internet wordt gemaakt en geconsumeerd, en er zijn geen tekenen dat dit in de nabije toekomst zal veranderen. CMS'en zullen elk jaar belangrijker worden.
 

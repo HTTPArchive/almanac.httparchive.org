@@ -1,17 +1,15 @@
 ---
-part_number: I
-chapter_number: 6
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Fonts
 description: Fonts chapter of the 2019 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.
 authors: [zachleat]
-reviewers: [hyperpress, AymenLoukil]
+reviewers: [logicalphase, AymenLoukil]
 analysts: [tjmonsi, rviscomi]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
-queries: 06_Fonts
-zachleat_bio: Zach is a Web Developer with <a href="https://www.filamentgroup.com/">Filament Group</a>. He’s currently fixated on <a href="https://www.zachleat.com/web/fonts/">web fonts</a> and <a href="https://www.zachleat.com/web/introducing-eleventy/">static site generators</a>. His <a href="https://www.zachleat.com/web/speaking/">public speaking résumé</a> includes talks in eight different countries at events like JAMstack_conf, Beyond Tellerrand, Smashing Conference, CSSConf, and <a href="https://www.zachleat.com/web/whitehouse/">The White House</a>. He also helps herd <a href="http://nejsconf.com/">NEJS CONF</a> and the <a href="http://nebraskajs.com">NebraskaJS</a> meetup.
+zachleat_bio: Zach is a Web Developer with <a hreflang="en" href="https://www.filamentgroup.com/">Filament Group</a>. He's currently fixated on <a hreflang="en" href="https://www.zachleat.com/web/fonts/">web fonts</a> and <a hreflang="en" href="https://www.zachleat.com/web/introducing-eleventy/">static site generators</a>. His <a hreflang="en" href="https://www.zachleat.com/web/speaking/">public speaking résumé</a> includes talks in eight different countries at events like JAMstack_conf, Beyond Tellerrand, Smashing Conference, CSSConf, and <a hreflang="en" href="https://www.zachleat.com/web/whitehouse/">The White House</a>. He also helps herd <a hreflang="en" href="http://nejsconf.com/">NEJS CONF</a> and the <a hreflang="en" href="http://nebraskajs.com">NebraskaJS</a> meetup.
 featured_quote: Web fonts enable beautiful and functional typography on the web. Using web fonts not only empowers design, but it democratizes a subset of design, as it allows easier access to those who might not have particularly strong design skills. However, for all the good they can do, web fonts can also do great harm to your site's performance if they are not loaded properly.
 featured_stat_1: 74.9%
 featured_stat_label_1: 3P Font Requests that use Google Fonts
@@ -31,11 +29,11 @@ Are they a net positive for the web? Do they provide more benefit than harm? Are
 
 The first and most prominent question: performance. There is a whole chapter dedicated to [performance](./performance) but we will delve a little into font-specific performance issues here.
 
-Using hosted web fonts enables ease of implementation and maintenance, but self-hosting offers the best performance. Given that web fonts by default make text invisible while the web font is loading (also known as the [Flash of Invisible Text](https://css-tricks.com/fout-foit-foft/), or FOIT), the performance of web fonts can be more critical than non-blocking assets like images.
+Using hosted web fonts enables ease of implementation and maintenance, but self-hosting offers the best performance. Given that web fonts by default make text invisible while the web font is loading (also known as the <a hreflang="en" href="https://css-tricks.com/fout-foit-foft/">Flash of Invisible Text</a>, or FOIT), the performance of web fonts can be more critical than non-blocking assets like images.
 
 ### Are fonts being hosted on the same host or by a different host?
 
-Differentiating self-hosting against third-party hosting is increasingly relevant in an [HTTP/2](./http2) world, where the performance gap between a same-host and different-host connection can be wider. Same-host requests have the huge benefit of a better potential for prioritization against other same-host requests in the waterfall.
+Differentiating self-hosting against third-party hosting is increasingly relevant in an [HTTP/2](./http) world, where the performance gap between a same-host and different-host connection can be wider. Same-host requests have the huge benefit of a better potential for prioritization against other same-host requests in the waterfall.
 
 Recommendations to mitigate the performance costs of loading web fonts from another host include using the `preconnect`, `dns-prefetch`, and `preload` [resource hints](./resource-hints), but high priority web fonts should be same-host requests to minimize the performance impact of web fonts. This is especially important for fonts used by very visually prominent content or body copy occupying the majority of a page.
 
@@ -51,7 +49,7 @@ The fact that three quarters are hosted is perhaps unsurprising given Google Fon
 
 Google serves fonts using third-party CSS files hosted on `https://fonts.googleapis.com`. Developers add requests to these stylesheets using `<link>` tags in their markup. While these stylesheets are render blocking, they are very small. However, the font files are hosted on yet another domain, `https://fonts.gstatic.com`. The model of requiring two separate hops to two different domains makes `preconnect` a great option here for the second request that will not be discovered until the CSS is downloaded.
 
-Note that while `preload` would be a nice addition to load the font files higher in the request waterfall (remember that `preconnect` sets up the connection, it doesn’t request the file content), `preload` is not yet available with Google Fonts. Google Fonts generates unique URLs for their font files [which are subject to change](https://github.com/google/fonts/issues/1067).
+Note that while `preload` would be a nice addition to load the font files higher in the request waterfall (remember that `preconnect` sets up the connection, it doesn't request the file content), `preload` is not yet available with Google Fonts. Google Fonts generates unique URLs for their font files <a hreflang="en" href="https://github.com/google/fonts/issues/1067">which are subject to change</a>.
 
 ### What are the most popular third-party hosts?
 
@@ -207,7 +205,7 @@ As mentioned above, a super easy way to speed up web font requests to a third-pa
 )
 }}
 
-Wow! Less than 2% of pages are using [`preconnect`](https://web.dev/uses-rel-preconnect)! Given that Google Fonts is at 75%, this should be higher! Developers: if you use Google Fonts, use `preconnect`! Google Fonts: proselytize `preconnect` more!
+Wow! Less than 2% of pages are using <a hreflang="en" href="https://web.dev/uses-rel-preconnect">`preconnect`</a>! Given that Google Fonts is at 75%, this should be higher! Developers: if you use Google Fonts, use `preconnect`! Google Fonts: proselytize `preconnect` more!
 
 In fact, if you're using Google Fonts go ahead and add this to your `<head>` if it's not there already:
 
@@ -217,7 +215,7 @@ In fact, if you're using Google Fonts go ahead and add this to your `<head>` if 
 
 ### Most popular typefaces
 
-<figure markdown>
+<figure>
   <table>
       <thead>
         <tr>
@@ -353,11 +351,11 @@ In fact, if you're using Google Fonts go ahead and add this to your `<head>` if 
   <figcaption>{{ figure_link(caption="Top 20 font families as a percent of all font declarations.") }}</figcaption>
 </figure>
 
-It is unsurprising that the top entries here seem to match up very similarly to [Google Fonts' list of fonts sorted by popularity](https://fonts.google.com/?sort=popularity).
+It is unsurprising that the top entries here seem to match up very similarly to <a hreflang="en" href="https://fonts.google.com/?sort=popularity">Google Fonts' list of fonts sorted by popularity</a>.
 
 ## What font formats are being used?
 
-[WOFF2 is pretty well supported](https://caniuse.com/#feat=woff2) in web browsers today. Google Fonts serves WOFF2, a format that offers improved compression over its predecessor WOFF, which was itself already an improvement over other existing font formats.
+<a hreflang="en" href="https://caniuse.com/#feat=woff2">WOFF2 is pretty well supported</a> in web browsers today. Google Fonts serves WOFF2, a format that offers improved compression over its predecessor WOFF, which was itself already an improvement over other existing font formats.
 
 {{ figure_markup(
   image="fig7.png",
@@ -381,7 +379,7 @@ Let's dig a bit deeper and look at the `format()` values used in the `src:` prop
   )
 }}
 
-I was hoping to see [SVG fonts](https://caniuse.com/#feat=svg-fonts) on the decline. They're buggy and implementations have been removed from every browser except Safari. Time to drop these, y'all.
+I was hoping to see <a hreflang="en" href="https://caniuse.com/#feat=svg-fonts">SVG fonts</a> on the decline. They're buggy and implementations have been removed from every browser except Safari. Time to drop these, y'all.
 
 The SVG data point here also makes me wonder what MIME type y'all are serving these SVG fonts with. I don't see `image/svg+xml` anywhere in Figure 6.7. Anyway, don't worry about fixing that, just get rid of them!
 
@@ -531,7 +529,7 @@ Importantly, this particular data doesn't really support or detract from the cas
 
 The number one tool we have to fight the default web font loading behavior of "invisible while loading" (also known as FOIT), is `font-display`. Adding `font-display: swap` to your `@font-face` block is an easy way to tell the browser to show fallback text while the web font is loading.
 
-[Browser support](https://caniuse.com/#feat=mdn-css_at-rules_font-face_font-display) is great too. Internet Explorer and pre-Chromium Edge don't have support but they also render fallback text by default when a web font loads (no FOITs allowed here). For our Chrome tests, how commonly is `font-display` used?
+<a hreflang="en" href="https://caniuse.com/#feat=mdn-css_at-rules_font-face_font-display">Browser support</a> is great too. Internet Explorer and pre-Chromium Edge don't have support but they also render fallback text by default when a web font loads (no FOITs allowed here). For our Chrome tests, how commonly is `font-display` used?
 
 {{ figure_markup(
   caption="Percent of mobile pages that utilize the <code>font-display</code> style.",
@@ -540,7 +538,7 @@ The number one tool we have to fight the default web font loading behavior of "i
 )
 }}
 
-I assume this will be creeping up over time, especially now that [Google Fonts is adding `font-display` to all new code snippets](https://www.zachleat.com/web/google-fonts-display/) copied from their site.
+I assume this will be creeping up over time, especially now that <a hreflang="en" href="https://www.zachleat.com/web/google-fonts-display/">Google Fonts is adding `font-display` to all new code snippets</a> copied from their site.
 
 If you're using Google Fonts, update your snippets! If you're not using Google Fonts, use `font-display`! Read more about `font-display` on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display).
 
@@ -548,9 +546,8 @@ Let's have a look at what `font-display` values are popular:
 
 {{ figure_markup(
   image="fig11.png",
-  alt="Usage of font-display values.",
   caption="Usage of <code>font-display</code> values.",
-  description="Bar chart showing the usage of the font-display style. 2.6% of mobile pages set this style to \"swap\", 1.5% to \"auto\", 0.7% to \"block\", 0.4% to \"fallback\", 0.2% to optional, and 0.1% to \"swap\" enclosed in quotes, which is invalid. The desktop distribution is similar except \"swap\" usage is lower by 0.4 percentage points and \"auto\" usage is higher by 0.1 percentage points.",
+  description="Bar chart showing the usage of the font-display style. 2.6% of mobile pages set this style to `swap`, 1.5% to `auto`, 0.7% to `block`, 0.4% to `fallback`, 0.2% to optional, and 0.1% to `swap` enclosed in quotes, which is invalid. The desktop distribution is similar except `swap` usage is lower by 0.4 percentage points and `auto` usage is higher by 0.1 percentage points.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1988783738&format=interactive"
   )
 }}
@@ -579,7 +576,7 @@ The median web page makes three web font requests. At the 90th percentile, reque
   )
 }}
 
-It does seem quite interesting that web font requests seem to be pretty steady across desktop and mobile. I'm glad to see the [recommendation to hide `@font-face` blocks inside of a `@media` queries](https://css-tricks.com/snippets/css/using-font-face/#article-header-id-6) didn't catch on (don't get any ideas).
+It does seem quite interesting that web font requests seem to be pretty steady across desktop and mobile. I'm glad to see the <a hreflang="en" href="https://css-tricks.com/snippets/css/using-font-face/#article-header-id-6">recommendation to hide `@font-face` blocks inside of a `@media` queries</a> didn't catch on (don't get any ideas).
 
 That said there are marginally more requests for fonts made on mobile devices. My hunch here is that fewer typefaces are available on mobile devices, which in turn means fewer `local()` hits in Google Fonts CSS, falling back to network requests for these.
 
@@ -622,7 +619,7 @@ This is another metric that I expect was skewed by Google Fonts usage, as Google
 
 `local()` is a nice way to reference a system font in your `@font-face` `src`. If the `local()` font exists, it doesn't need to make a request for a web font at all. This is used both extensively and controversially by Google Fonts, so it is likely another example of skewed data if we're trying to glean patterns from user land.
 
-It should also be noted here that it has been said by smarter people than I (Bram Stein of TypeKit) that [using `local()` can be unpredictable as installed versions of fonts can be outdated and unreliable](https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html).
+It should also be noted here that it has been said by smarter people than I (Bram Stein of TypeKit) that <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html">using `local()` can be unpredictable as installed versions of fonts can be outdated and unreliable</a>.
 
 ## Condensed fonts and `font-stretch`
 
@@ -633,7 +630,7 @@ It should also be noted here that it has been said by smarter people than I (Bra
 )
 }}
 
-Historically, `font-stretch` has suffered from poor browser support and was not a well-known `@font-face` property. Read more about [`font-stretch` on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch). But [browser support](https://caniuse.com/#feat=css-font-stretch) has broadened.
+Historically, `font-stretch` has suffered from poor browser support and was not a well-known `@font-face` property. Read more about [`font-stretch` on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch). But <a hreflang="en" href="https://caniuse.com/#feat=css-font-stretch">browser support</a> has broadened.
 
 It has been suggested that using condensed fonts on smaller viewports allows more text to be viewable, but this approach isn't commonly used. That being said, that this property is used half a percentage point more on desktop than mobile is unexpected, and 7% seems much higher than I would have predicted.
 
@@ -648,13 +645,12 @@ It has been suggested that using condensed fonts on smaller viewports allows mor
 )
 }}
 
-Even at 1.8% this was higher than expected, although I am excited to see this take off. [Google Fonts v2](https://developers.google.com/fonts/docs/css2) does include some support for variable fonts.
+Even at 1.8% this was higher than expected, although I am excited to see this take off. <a hreflang="en" href="https://developers.google.com/fonts/docs/css2">Google Fonts v2</a> does include some support for variable fonts.
 
 {{ figure_markup(
   image="fig19.png",
-  alt="Usage of font-variation-settings axes.",
   caption="Usage of <code>font-variation-settings</code> axes.",
-  description="Bar chart showing the usage of the font-variation-settings property. 42% of properties on desktop pages are set to the \"opsz\" value, 32% to \"wght\", 16% to \"wdth\", 2% or fewer to \"roun\", \"crsb\", \"slnt\", \"inln\", and more. The most notable differences between desktop and mobile pages are 26% usage of \"opsz\", 38% of \"wght\", and 23% of \"wdth\".",
+  description="Bar chart showing the usage of the font-variation-settings property. 42% of properties on desktop pages are set to the `opsz` value, 32% to `wght`, 16% to `wdth`, 2% or fewer to `roun`, `crsb`, `slnt`, `inln`, and more. The most notable differences between desktop and mobile pages are 26% usage of `opsz`, 38% of `wght`, and 23% of `wdth`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&format=interactive"
   )
 }}
@@ -670,7 +666,7 @@ Through the lens of this large data set, these are very low sample sizes-take th
 )
 }}
 
-Usage here of these is basically nonexistent but you can check out the excellent resource [Color Fonts! WTF?](https://www.colorfonts.wtf/) for more information. Similar (but not at all) to the SVG format for fonts (which is bad and going away), this allows you to embed SVG inside of OpenType files, which is awesome and cool.
+Usage here of these is basically nonexistent but you can check out the excellent resource <a hreflang="en" href="https://www.colorfonts.wtf/">Color Fonts! WTF?</a> for more information. Similar (but not at all) to the SVG format for fonts (which is bad and going away), this allows you to embed SVG inside of OpenType files, which is awesome and cool.
 
 ## Conclusion
 

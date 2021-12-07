@@ -1,24 +1,22 @@
 ---
-part_number: II
-chapter_number: 5
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Tierces Parties
 description: Le chapitre sur les ressources tierces du Web Almanac 2019, qui aborde les tierces parties utilisées, pourquoi elles le sont et les répercussions de leur usage sur le rendu et la confidentialité.
 authors: [patrickhulce]
 reviewers: [zcorpan, obto, jasti]
 analysts: [patrickhulce]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: [borisschapira]
 discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/
-queries: 05_Third_Parties
-patrickhulce_bio: Patrick Hulce est un ancien ingénieur de Chrome, fondateur de <a href="https://eris.ventures/">Eris Ventures</a>, membre de l’équipe principale de <a href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a> et de <a href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, co-organisateur de la rencontre <a href="https://www.meetup.com/DallasJS/">DallasJS</a> et auteur du projet <a href="https://github.com/patrickhulce/third-party-web">third-party-web</a>.
-featured_quote: Le Web ouvert a été conçu pour être vaste, interconnectable et interopérable. La possibilité d’accéder à de puissantes librairies tierces et de les utiliser sur votre site avec des éléments <code>&lt;link&gt;</code> ou <code>&lt;script&gt;</code> a décuplé la productivité des développeurs et permis de nouvelles et incroyables expériences web ; par contre, l’immense popularité de quelques fournisseurs tiers (3P) pose d’importants problèmes en termes de performances et de confidentialité. Ce chapitre examine la prévalence et l’impact du code tiers sur le Web en 2019, les modèles d’utilisation du Web qui mènent à la popularité des solutions tierces et les répercussions potentielles sur l’avenir des performances Web et de la confidentialité.
+patrickhulce_bio: Patrick Hulce est un ancien ingénieur de Chrome, fondateur de <a hreflang="en" href="https://eris.ventures/">Eris Ventures</a>, membre de l’équipe principale de <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a> et de <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, co-organisateur de la rencontre <a hreflang="en" href="https://www.meetup.com/DallasJS/">DallasJS</a> et auteur du projet <a hreflang="en" href="https://github.com/patrickhulce/third-party-web">third-party-web</a>.
+featured_quote: Le Web ouvert a été conçu pour être vaste, interconnectable et interopérable. La possibilité d’accéder à de puissantes librairies tierces et de les utiliser sur votre site avec des éléments `<link>` ou `<script>` a décuplé la productivité des développeurs et permis de nouvelles et incroyables expériences web ; par contre, l’immense popularité de quelques fournisseurs tiers (3P) pose d’importants problèmes en termes de performances et de confidentialité. Ce chapitre examine la prévalence et l’impact du code tiers sur le Web en 2019, les modèles d’utilisation du Web qui mènent à la popularité des solutions tierces et les répercussions potentielles sur l’avenir des performances Web et de la confidentialité.
 featured_stat_1: 93 %
-featured_stat_label_1: pages avec 3P.
+featured_stat_label_1: pages avec 3P
 featured_stat_2: 49 %
-featured_stat_label_2: des requêtes.
+featured_stat_label_2: des requêtes
 featured_stat_3: 28 %
-featured_stat_label_3: des octets.
+featured_stat_label_3: des octets
 ---
 
 ## Introduction
@@ -43,7 +41,7 @@ Notez qu’en utilisant ces définitions, le contenu de tiers servi à partir d�
 
 ### Catégories de fournisseurs
 
-Le présent chapitre classe les fournisseurs tiers dans l’une de ces grandes catégories. Une brève description est incluse ci-dessous et la correspondance entre chaque domaine et sa catégorie peut être trouvée dans le [dépôt third-party-web](https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5).
+Le présent chapitre classe les fournisseurs tiers dans l’une de ces grandes catégories. Une brève description est incluse ci-dessous et la correspondance entre chaque domaine et sa catégorie peut être trouvée dans le <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5">dépôt third-party-web</a>.
 
 - **Publicité (Ad)** - affichage et mesures relatives aux annonces
 - **Télémétrie (Analytics)** - suivi du comportement des visiteurs du site
@@ -95,40 +93,136 @@ Alors que la publicité pourrait être l’exemple le plus visible de contenus t
 
 Un nombre relativement restreint de fournisseurs dominent le paysage des services tiers : les 100 premiers domaines représentent 30 % des requêtes réseau sur le web. Des moteurs comme Google, Facebook et YouTube sont en tête avec des pourcentages entiers de parts de marché chacun, mais des entités plus petites comme Wix et Shopify représentent aussi une partie substantielle de la popularité des tiers.
 
-Bien que l’on puisse dire beaucoup de choses sur la popularité et l’impact de chaque fournisseur sur la performance, nous laissons au lecteur et à d’autres outils conçus à cet effet, tels que [third-party-web](https://thirdpartyweb.today), le soin de faire faire une analyse plus objective de ces questions.
+Bien que l’on puisse dire beaucoup de choses sur la popularité et l’impact de chaque fournisseur sur la performance, nous laissons au lecteur et à d’autres outils conçus à cet effet, tels que <a hreflang="en" href="https://thirdpartyweb.today">third-party-web</a>, le soin de faire faire une analyse plus objective de ces questions.
 
-<figure markdown>
-Rang | Domaines tiers | Pourcentage des requêtes
--- | -- | --
-1 | `fonts.gstatic.com` | 2,53 %
-2 | `www.facebook.com` | 2,38 %
-3 | `www.google-analytics.com` | 1,71 %
-4 | `www.google.com` | 1,17 %
-5 | `fonts.googleapis.com` | 1,05 %
-6 | `www.youtube.com` | 0,99 %
-7 | `connect.facebook.net` | 0,97 %
-8 | `googleads.g.doubleclick.net` | 0,93 %
-9 | `cdn.shopify.com` | 0,76 %
-10 | `maps.googleapis.com` | 0,75 %
-
-<figcaption>{{ figure_link(caption="Top 10 des domaines tiers les plus populaires.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Rang</th>
+        <th>Domaines tiers</th>
+        <th>Pourcentage des requêtes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><code>fonts.gstatic.com</code></td>
+        <td class="numeric">2,53 %</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><code>www.facebook.com</code></td>
+        <td class="numeric">2,38 %</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><code>www.google-analytics.com</code></td>
+        <td class="numeric">1,71 %</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><code>www.google.com</code></td>
+        <td class="numeric">1,17 %</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><code>fonts.googleapis.com</code></td>
+        <td class="numeric">1,05 %</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><code>www.youtube.com</code></td>
+        <td class="numeric">0,99 %</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><code>connect.facebook.net</code></td>
+        <td class="numeric">0,97 %</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><code>googleads.g.doubleclick.net</code></td>
+        <td class="numeric">0,93 %</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><code>cdn.shopify.com</code></td>
+        <td class="numeric">0,76 %</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><code>maps.googleapis.com</code></td>
+        <td class="numeric">0,75 %</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Top 10 des domaines tiers les plus populaires.") }}</figcaption>
 </figure>
 
-<figure markdown>
-Rang | URL de ressource tierce | Pourcentage des requêtes
--- | -- | --
-1 | `https://www.google-analytics.com/analytics.js` | 0,64 %
-2 | `https://connect.facebook.net/en_US/fbevents.js` | 0,20 %
-3 | `https://connect.facebook.net/signals/plugins/inferredEvents.js ?v=2.8.51` | 0,19 %
-4 | `https://staticxx.facebook.com/connect/xd_arbiter.php ?version=44` | 0,16 %
-5 | `https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFVZ0b.woff2` | 0,13 %
-6 | `https://www.googletagservices.com/activeview/js/current/osd.js ?cb=%2Fr20100101` | 0,12 %
-7 | `https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2` | 0,11 %
-8 | `https://googleads.g.doubleclick.net/pagead/id` | 0,11 %
-9 | `https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2` | 0,10 %
-10 | `https://www.googleadservices.com/pagead/conversion_async.js` | 0,10 %
-
-<figcaption>{{ figure_link(caption="Top 10 des requêtes les plus populaires.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Rang</th>
+        <th>URL de ressource tierce</th>
+        <th>Pourcentage des requêtes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><code>https://www.google-analytics.com/analytics.js</code></td>
+        <td class="numeric">0.64 %</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><code>https://connect.facebook.net/en_US/fbevents.js</code></td>
+        <td class="numeric">0.20 %</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><code>https://connect.facebook.net/signals/plugins/inferredEvents.js?v=2.8.51</code></td>
+        <td class="numeric">0.19 %</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><code>https://staticxx.facebook.com/connect/xd_arbiter.php?version=44</code></td>
+        <td class="numeric">0.16 %</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><code>https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFVZ0b.woff2</code></td>
+        <td class="numeric">0.13 %</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><code>https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101</code></td>
+        <td class="numeric">0.12 %</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><code>https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2</code></td>
+        <td class="numeric">0.11 %</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><code>https://googleads.g.doubleclick.net/pagead/id</code></td>
+        <td class="numeric">0.11 %</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><code>https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2</code></td>
+        <td class="numeric">0.10 %</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><code>https://www.googleadservices.com/pagead/conversion_async.js</code></td>
+        <td class="numeric">0.10 %</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Top 10 des requêtes les plus populaires.") }}</figcaption>
 </figure>
 
 ### Types de ressources
@@ -154,7 +248,6 @@ Ces données regorgent d’autres faits amusants. Les pixels de suivi (requêtes
 49 % de toutes les requêtes pointent vers des tiers. Avec 51 %, le domaine principal conserve garde donc la tête, puisqu’il héberge la moitié des ressources web. Mais les sites qui utilisent des ressources tierces doivent le faire de manière importante car même si un peu moins de la moitié de toutes les requêtes proviennent de tiers, un petit nombre de pages n’en référencent pas du tout. En détails : aux 75e, 90e et 99e percentiles, la quasi-totalité de la page est constituée de contenu de tiers. En fait, pour certains sites s’appuyant fortement sur des plates-formes WYSIWYG distribuées comme Wix et SquareSpace, le document racine est parfois la seule requête sur le domaine principal !
 
 <!-- insert graphic of metric 05_11 -->
-<!-- {{ figure_markup() }} -->
 
 Le nombre de demandes émises par chaque fournisseur tiers varie aussi considérablement selon la catégorie. Bien que les services de télémétrie soient la catégorie de tiers la plus répandue sur les sites web, ils ne représentent que 7 % de toutes les requêtes réseau vers des tiers. Les publicités, en revanche, se trouvent sur environ 20 % de sites en moins, mais elles représentent 25 % de toutes les requêtes réseau vers des tiers. L’impact disproportionné de leurs ressources par rapport à leur popularité sera un thème que nous ne manquerons pas d’approfondir dans les données restantes.
 
@@ -167,7 +260,7 @@ Bien qu’ils servent 57 % des scripts, les tiers représentent 64 % des octet
 {{ figure_markup(
   image="fig7.png",
   caption="Répartition des octets de ressource par catégorie de tiers.",
-  description="Graphique montrant la répartition des octets pour chaque type de contenu par catégorie de tiers. Les images et les scripts sont répartis de manière relativement égale entre les catégories. 80 % des polices proviennent de CDN. La vidéo provient de tiers spécialisés en \"Contenus\".",
+  description="Graphique montrant la répartition des octets pour chaque type de contenu par catégorie de tiers. Les images et les scripts sont répartis de manière relativement égale entre les catégories. 80 % des polices proviennent de CDN. La vidéo provient de tiers spécialisés en “Contenus”.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&format=interactive",
   width=600,
   height=387,
@@ -176,10 +269,7 @@ Bien qu’ils servent 57 % des scripts, les tiers représentent 64 % des octet
   )
 }}
 
-<!--
-
-```<insert graphic of metric 05_12>```
--->
+<!--```<insert graphic of metric 05_12>```-->
 
 En ce qui concerne les fournisseurs tiers spécifiques, on trouve les mêmes poids-lourds en tête du classement du nombre de requêtes, qu’en tête du classement des poids en octets. Les seuls à ne pas respecter cette tendance sont les fournisseurs très médiatiques que sont YouTube, Shopify et Twitter, qui se hissent en tête des tableaux d’impact en poids.
 
@@ -199,7 +289,7 @@ La répartition par catégorie de l’exécution des scripts suit largement cell
 
 <!--```<insert table of metric 05_10>```-->
 
-Bien que l’on puisse dire beaucoup de choses sur la popularité et l’impact sur le rendement de chaque fournisseur, cette analyse plus subjective est laissée à la discrétion du lecteur et d’autres outils conçus à cette fin, comme le [third-party-web](https://thirdpartyweb.today).
+Bien que l’on puisse dire beaucoup de choses sur la popularité et l’impact sur le rendement de chaque fournisseur, cette analyse plus subjective est laissée à la discrétion du lecteur et d’autres outils conçus à cette fin, comme le <a hreflang="en" href="https://thirdpartyweb.today">third-party-web</a>.
 
 ## Types d’utilisation
 
@@ -213,7 +303,7 @@ Mais il y a aussi un revers à la médaille pour les données des utilisateurs 
 
 ### Monétiser le trafic web
 
-Le modèle ouvert du web ne sert pas toujours les intérêts financiers des personnes créatrices de contenu aussi bien qu’elles le souhaiteraient et de nombreux propriétaires de sites ont recours à la publicité pour monétiser leurs sites. Comme l’établissement de relations directes avec les annonceurs et la négociation de contrats de prix est un processus relativement difficile et long, cette responsabilité est en grande partie assumée par des fournisseurs tiers qui se chargent de la publicité ciblée et des appels d’offres en temps réel. L’opinion publique globalement négative, la popularité de la technologie de blocage des publicités et les mesures réglementaires prises sur les principaux marchés mondiaux tels que l’Europe constituent la plus grande menace à la poursuite du recours à des fournisseurs tiers pour la monétisation. Bien qu’il soit peu probable que les propriétaires de sites concluent soudainement leurs propres contrats publicitaires ou construisent des réseaux publicitaires sur mesure, d’autres modèles de monétisation comme les <span lang="en">paywalls</span> et des expériences comme le [<span lang="en">Basic Attention Token</span>](https://basicattentiontoken.org/) du navigateur Brave ont une réelle chance de secouer, à l’avenir, le paysage de la publicité de tiers.
+Le modèle ouvert du web ne sert pas toujours les intérêts financiers des personnes créatrices de contenu aussi bien qu’elles le souhaiteraient et de nombreux propriétaires de sites ont recours à la publicité pour monétiser leurs sites. Comme l’établissement de relations directes avec les annonceurs et la négociation de contrats de prix est un processus relativement difficile et long, cette responsabilité est en grande partie assumée par des fournisseurs tiers qui se chargent de la publicité ciblée et des appels d’offres en temps réel. L’opinion publique globalement négative, la popularité de la technologie de blocage des publicités et les mesures réglementaires prises sur les principaux marchés mondiaux tels que l’Europe constituent la plus grande menace à la poursuite du recours à des fournisseurs tiers pour la monétisation. Bien qu’il soit peu probable que les propriétaires de sites concluent soudainement leurs propres contrats publicitaires ou construisent des réseaux publicitaires sur mesure, d’autres modèles de monétisation comme les <span lang="en">paywalls</span> et des expériences comme le <a hreflang="en" href="https://basicattentiontoken.org/"><span lang="en">Basic Attention Token</span></a> du navigateur Brave ont une réelle chance de secouer, à l’avenir, le paysage de la publicité de tiers.
 
 ### Simplifier le développement
 
@@ -249,9 +339,9 @@ La forte concentration de l’exécution des scripts est excellente au regard de
 
 ### Sécurité
 
-Bien que le sujet de la sécurité soit traité plus en profondeur dans le chapitre [Sécurité](./security), les conséquences de l’introduction de dépendances externes sur votre site en matière de sécurité sont indissociables de la protection de la vie privée. Permettre à des tiers d’exécuter des JavaScript arbitraires leur donne un contrôle total sur votre page. Quand un script peut contrôler le DOM et `window`, il peut tout faire. Même si le code n’a pas de problèmes de sécurité, il peut introduire un point unique de défaillance, [ce qui a été reconnu comme un problème potentiel depuis un certain temps maintenant](https://www.stevesouders.com/blog/2010/06/01/frontend-spof/).
+Bien que le sujet de la sécurité soit traité plus en profondeur dans le chapitre [Sécurité](./security), les conséquences de l’introduction de dépendances externes sur votre site en matière de sécurité sont indissociables de la protection de la vie privée. Permettre à des tiers d’exécuter des JavaScript arbitraires leur donne un contrôle total sur votre page. Quand un script peut contrôler le DOM et `window`, il peut tout faire. Même si le code n’a pas de problèmes de sécurité, il peut introduire un point unique de défaillance, <a hreflang="en" href="https://www.stevesouders.com/blog/2010/06/01/frontend-spof/">ce qui a été reconnu comme un problème potentiel depuis un certain temps maintenant</a>.
 
-[Auto-héberger du contenu de tierces parties](https://csswizardry.com/2019/05/self-host-your-static-assets/) répond à certaines des préoccupations mentionnées ici – et à d’autres. De plus, comme les navigateurs [partitionnement de plus en plus les caches HTTP](https://chromestatus.com/feature/5730772021411840), les avantages du chargement direct à partir de la tierce partie semblent plus que jamais incertains. Cette méthode est peut-être meilleure pour de nombreux cas d’utilisation, même si elle rend la mesure de son impact plus difficile.
+<a hreflang="en" href="https://csswizardry.com/2019/05/self-host-your-static-assets/">Auto-héberger du contenu de tierces parties</a> répond à certaines des préoccupations mentionnées ici – et à d’autres. De plus, comme les navigateurs <a hreflang="en" href="https://chromestatus.com/feature/5730772021411840">partitionnement de plus en plus les caches HTTP</a>, les avantages du chargement direct à partir de la tierce partie semblent plus que jamais incertains. Cette méthode est peut-être meilleure pour de nombreux cas d’utilisation, même si elle rend la mesure de son impact plus difficile.
 
 ## Conclusion
 

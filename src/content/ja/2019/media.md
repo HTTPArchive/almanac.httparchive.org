@@ -1,31 +1,29 @@
 ---
-part_number: I
-chapter_number: 4
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: メディア
 description: 2019年版Web Almanacのメディアの章では、画像ファイルのサイズとフォーマット、レスポンシブ画像、クライアントのヒント、遅延読み込み、アクセシビリティ、動画を取り上げています。
 authors: [colinbendell, dougsillars]
 reviewers: [ahmadawais, eeeps]
 analysts: [dougsillars, rviscomi]
-editors: [bazzadp]
-translators: [ksakae]
+editors: [tunetheweb]
+translators: [ksakae1216]
 discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
-queries: 04_Media
-colinbendell_bio: Colinは、<a href="https://cloudinary.com/">Cloudinary</a>のCTOオフィスの一員であり、オライリーの本<a href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/">High Performance Images</a>の共著者でもあります。彼は、大容量データ、メディア、ブラウザ、標準の交差点で多くの時間を過ごしています。<a href="https://twitter.com/colinbendell">@colinbendell</a> や <a href="https://bendell.ca/">https://bendell.ca</a> のブログで彼を見つけることができます。
-dougsillars_bio: Doug Sillarsはフリーランスのデジタルノマドで、パフォーマンスとメディアの交差点で活動しています。彼は<a href="https://twitter.com/dougsillars">@dougsillars</a>をツイートし、<a href="https://dougsillars.com">dougsillars.com</a>で定期的にブログを更新しています。
+colinbendell_bio: Colinは、<a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>のCTOオフィスの一員であり、オライリーの本<a hreflang="en" href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/">High Performance Images</a>の共著者でもあります。彼は、大容量データ、メディア、ブラウザ、標準の交差点で多くの時間を過ごしています。<a href="https://twitter.com/colinbendell">@colinbendell</a> や <a hreflang="en" href="https://bendell.ca/">https://bendell.ca</a> のブログで彼を見つけることができます。
+dougsillars_bio: Doug Sillarsはフリーランスのデジタルノマドで、パフォーマンスとメディアの交差点で活動しています。彼は<a href="https://twitter.com/dougsillars">@dougsillars</a>をツイートし、<a hreflang="en" href="https://dougsillars.com">dougsillars.com</a>で定期的にブログを更新しています。
 featured_quote: 画像、アニメーション、動画はウェブ体験の重要な一部です。それらが重要な理由はたくさんあります。ストーリーを伝えたり、視聴者の関心を引きつけたり、他のウェブ技術では簡単には作れないような芸術的な表現を提供したりするのに役立ちます。これらのメディアリソースの重要性は、2つの方法で示すことができます。1つは、1ページのダウンロードに必要なバイト数の多さ、もう1つは、メディアで描かれたピクセル数の多さです。
 featured_stat_1: 1 MB
 featured_stat_label_1: ホームページのサイズの中央値
 featured_stat_2: 60%
 featured_stat_label_2: 画像間でのJPEG利用
 featured_stat_3: 2%
-featured_stat_label_3: <code>&lt;picture&gt;</code>要素の使用
+featured_stat_label_3: `<picture>`要素の使用
 ---
 
 ## 序章
 画像、アニメーション、動画はウェブ体験の重要な一部です。それらが重要な理由はたくさんあります。ストーリーを伝えたり、視聴者の関心を引きつけたり、他のウェブ技術では簡単には作れないような芸術的な表現を提供したりするのに役立ちます。これらのメディアリソースの重要性は、2つの方法で示すことができます。1つは、1ページのダウンロードに必要なバイト数の多さ、もう1つはメディアで描かれたピクセル数の多さです。
 
-純粋なバイトの観点から見ると、HTTP Archiveは[歴史的に報告されている](https://legacy.httparchive.org/interesting.php#bytesperpage)メディアから関連付けられたリソースバイトの平均3分の2を持っています。分布の観点から見ると、事実上すべてのウェブページが画像や動画に依存していることがわかります。10パーセンタイルでさえ、我々はバイトの44％がメディアからであり、ページの90パーセンタイルで総バイトの91％に上昇できることを参照してください。
+純粋なバイトの観点から見ると、HTTP Archiveは<a hreflang="en" href="https://legacy.httparchive.org/interesting.php#bytesperpage">歴史的に報告されている</a>メディアから関連付けられたリソースバイトの平均3分の2を持っています。分布の観点から見ると、事実上すべてのウェブページが画像や動画に依存していることがわかります。10パーセンタイルでさえ、我々はバイトの44％がメディアからであり、ページの90パーセンタイルで総バイトの91％に上昇できることを参照してください。
 
 {{ figure_markup(
   image="fig1_bytes_images_and_video_versus_other.png",
@@ -41,7 +39,7 @@ featured_stat_label_3: <code>&lt;picture&gt;</code>要素の使用
 
 2つ目の影響は、ユーザーへの金銭的なコストです。これはウェブサイトの所有者の負担ではなく、エンドユーザーの負担となるため、しばしば無視されがちな側面です。逸話として、[日本のような](https://twitter.com/yoavweiss/status/1195036487538003968?s=20)という市場では、データの上限に達した月末近くは学生の購買意欲が低下し、ユーザーはビジュアルコンテンツを見ることができなくなるということが伝えられています。
 
-さらに、世界のさまざまな地域でこれらのウェブサイトを訪問するための金銭的コストは不釣り合いです。中央値と90パーセンタイルでは、画像のバイト数はそれぞれ1MBと1.9MBです。[WhatDoesMySiteCost.com](https://whatdoesmysitecost.com/#gniCost)を使用すると、マダガスカルのユーザーの一人当たりの国民総所得（GNI）コストは90パーセンタイルでウェブページを1回読み込んだだけで、一日の総所得の2.6％になることがわかります。対照的に、ドイツでは、これは1日の総所得の0.3％になります。
+さらに、世界のさまざまな地域でこれらのウェブサイトを訪問するための金銭的コストは不釣り合いです。中央値と90パーセンタイルでは、画像のバイト数はそれぞれ1MBと1.9MBです。<a hreflang="en" href="https://whatdoesmysitecost.com/#gniCost">WhatDoesMySiteCost.com</a>を使用すると、マダガスカルのユーザーの一人当たりの国民総所得（GNI）コストは90パーセンタイルでウェブページを1回読み込んだだけで、一日の総所得の2.6％になることがわかります。対照的に、ドイツでは、これは1日の総所得の0.3％になります。
 
 {{ figure_markup(
   image="fig2_total_image_bytes_per_web_page_mobile.png",
@@ -150,12 +148,11 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 </tr>
 <tr>
 <td>WebP</td>
-<td><ul><li>PNGのようなロスレス画像とJPEGのようなロスレス画像を生成することができる新しいファイル形式です</li><li><a href="https://developers.google.com/speed/webp/faq">JPEGと比較して平均30%のファイル削減率を誇っています</a>が、他のデータでは、ファイル削減率の中央値は<a href="https://cloudinary.com/state-of-visual-media-report/">ピクセル量に基づいて10-28%の間であることが示唆されています</a></li></ul></td>
+<td><ul><li>PNGのようなロスレス画像とJPEGのようなロスレス画像を生成することができる新しいファイル形式です</li><li><a hreflang="en" href="https://developers.google.com/speed/webp/faq">JPEGと比較して平均30%のファイル削減率を誇っています</a>が、他のデータでは、ファイル削減率の中央値は<a hreflang="en" href="https://cloudinary.com/state-of-visual-media-report/">ピクセル量に基づいて10-28%の間であることが示唆されています</a></li></ul></td>
 <td><ul><li>JPEGとは異なり、一部の画像がぼやけて見えるクロマサブサンプリングに限定されます</li><li>普遍的にサポートされているわけではありません。Chrome、Firefox、Androidのエコシステムのみ</li><li>ブラウザのバージョンに応じて断片化された機能のサポート</li></ul></td>
  </tr>
  </tbody>
  </table>
-
  <figcaption>{{ figure_link(caption="主流のファイル形式の説明。") }}</figcaption>
 </figure>
 
@@ -243,7 +240,6 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 
  {{ figure_markup(
   image="fig13_project_perf_improvements_image_optimization.png",
-  alt="Lighthouseからの画像最適化によるページパフォーマンスの向上を予測。",
   caption="Lighthouseからの画像最適化によるページパフォーマンスの向上を予測。",
   description="10パーセンタイルでは0ms、25パーセンタイルでも同じ、50パーセンタイルでは150ms、75パーセンタイルでは1,460ms、90パーセンタイルでは5,720msの保存が可能であることを示す棒グラフです。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779"
@@ -281,15 +277,43 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 * **`<img sizes="(max-width: 300px) 100vw, 300px">`** - これは2番目に人気のあるデザインパターンです。これはWordPressとおそらく他のいくつかのプラットフォームで自動生成されるものです。元の画像サイズ（この場合は300px）に基づいて自動生成されているように見えます。
 * **`<img sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, ...">`** - このパターンは、CSSレスポンシブレイアウトに合わせてカスタムビルドしたデザインパターンです。ブレークポイントごとに使用するサイズの計算が異なります。
 
-<figure markdown>
-`<img sizes>` | 頻度 (百万) | %
--- | -- | --
-(max-width: 300px) 100vw, 300px | 1.47 | 5%
-(max-width: 150px) 100vw, 150px | 0.63 | 2%
-(max-width: 100px) 100vw, 100px | 0.37 | 1%
-(max-width: 400px) 100vw, 400px | 0.32 | 1%
-(max-width: 80px) 100vw, 80px | 0.28 | 1%
-
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th><code>&lt;img sizes&gt;</code></th>
+        <th>頻度 (百万)</th>
+        <th>%</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>(max-width: 300px) 100vw, 300px</code></td>
+        <td class="numeric">1.47</td>
+        <td class="numeric">5%</td>
+      </tr>
+      <tr>
+        <td><code>(max-width: 150px) 100vw, 150px</code></td>
+        <td class="numeric">0.63</td>
+        <td class="numeric">2%</td>
+      </tr>
+      <tr>
+        <td><code>(max-width: 100px) 100vw, 100px</code></td>
+        <td class="numeric">0.37</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td><code>(max-width: 400px) 100vw, 400px</code></td>
+        <td class="numeric">0.32</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td><code>(max-width: 80px) 100vw, 80px</code></td>
+        <td class="numeric">0.28</td>
+        <td class="numeric">1%</td>
+      </tr>
+    </tbody>
+  </table>
   <figcaption>{{ figure_link(caption="最も人気のある <code>sizes</code> パターンを使用しているページの割合。") }}</figcaption>
 </figure>
 
@@ -298,14 +322,14 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
  {{ figure_markup(
   image="fig16_top_patterns_of_img_sizes.png",
   caption="<code><img sizes></code> のトップパターン。",
-  description="1,130万枚の画像が「img sizes=\"(max-width: 300px) 100vw, 300px\"」を使用しており、「auto」が160万枚、「img sizes=\"(max-width: 767px) 89vwなどなど\"」が100万枚、「100vw」が23万枚、「300px」が13万枚であることを棒グラフで示しています。",
+  description="1,130万枚の画像が「img sizes=`(max-width: 300px) 100vw, 300px`」を使用しており、「auto」が160万枚、「img sizes=`(max-width: 767px) 89vwなどなど`」が100万枚、「100vw」が23万枚、「300px」が13万枚であることを棒グラフで示しています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"
   )
 }}
 
 ### クライアントヒント
 
-[クライアントヒント](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints) は、コンテンツ制作者が画像のリサイズをHTTPコンテンツネゴシエーションに移すことを可能にします。この方法では、HTMLはマークアップを乱雑にするための追加の `<img srcset>` を必要とせず、代わりにサーバや [最適な画像を選択するための画像CDN](https://cloudinary.com/blog/client_hints_and_responsive_images_what_changed_in_chrome_67) に依存できます。これによりHTMLの簡素化が可能になり、オリジンサーバが時間の経過とともに適応し、コンテンツ層とプレゼンテーション層を切り離すことが可能になります。
+<a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints">クライアントヒント</a> は、コンテンツ制作者が画像のリサイズをHTTPコンテンツネゴシエーションに移すことを可能にします。この方法では、HTMLはマークアップを乱雑にするための追加の `<img srcset>` を必要とせず、代わりにサーバや <a hreflang="en" href="https://cloudinary.com/blog/client_hints_and_responsive_images_what_changed_in_chrome_67">最適な画像を選択するための画像CDN</a> に依存できます。これによりHTMLの簡素化が可能になり、オリジンサーバが時間の経過とともに適応し、コンテンツ層とプレゼンテーション層を切り離すことが可能になります。
 
 クライアントヒントを有効にするには、ウェブページでブラウザに追加のHTTPヘッダー`Accept-CH: DPR, Width, Viewport-Width`を使ってシグナルを送る必要があります。 _または_ HTML`<meta http-equiv="Accept-CH" content="DPR, Width, Viewport-Width">`を追加します。どちらか一方の手法の利便性は実装するチームに依存し、どちらも利便性のために提供されています。
 
@@ -335,11 +359,10 @@ HTMLでクライアントヒントを呼び出すために`<meta>`タグを使�
 
 ウェブページのパフォーマンスを改善することは、部分的にはイリュージョンのゲームとして特徴付けることができます。このように遅延読み込み画像は、ユーザーがページをスクロールしたときにのみ画像やメディアコンテンツが読み込まれる、これらのイリュージョンの1つです。これにより、遅いネットワークでも知覚パフォーマンスが向上し、ユーザーが他の方法で表示されていないバイトをダウンロードする手間が省けます。
 
-以前、[図4.5](#fig-5)で、75パーセンタイルの画像コンテンツの量が、理論的には単一のデスクトップやモバイルのビューポートで表示できる量をはるかに超えていることを示しました。[オフスクリーン画像](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images)Lighthouseの監査は、この疑念を裏付けています。ウェブページの中央値では、折り目の下に27％の画像コンテンツがあります。これは、90パーセンタイルの割合で84％に増加しています。
+以前、[図4.5](#fig-5)で、75パーセンタイルの画像コンテンツの量が、理論的には単一のデスクトップやモバイルのビューポートで表示できる量をはるかに超えていることを示しました。<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/offscreen-images">オフスクリーン画像</a>Lighthouseの監査は、この疑念を裏付けています。ウェブページの中央値では、折り目の下に27％の画像コンテンツがあります。これは、90パーセンタイルの割合で84％に増加しています。
 
 {{ figure_markup(
   image="fig19_lighthouse_audit_offscreen.png",
-  alt="Lighthouse監査：オフスクリーン。",
   caption="Lighthouse監査：オフスクリーン。",
   description="10パーセンタイルでは画像の0%が画面外、25パーセンタイルでは2%が画面外、50パーセンタイルでは27%が画面外、75パーセンタイルでは64%が画面外、90パーセンタイルでは 84%が画面外であることを示す棒グラフです。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive"
@@ -348,7 +371,7 @@ HTMLでクライアントヒントを呼び出すために`<meta>`タグを使�
 
 Lighthouseの監査では、質の高いプレースホルダーを使用するなど、油断できない状況がいくつもあるため、臭いを嗅ぎ分けてくれます。
 
-遅延ローディングはIntersection Observers、Resize Observersの組み合わせを含め[実装可能](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video) です、または[lazySizes](https://github.com/aFarkas/lazysizes)、[lozad](https://github.com/ApoorvSaxena/lozad.js)などのJavaScriptライブラリの使用などさまざまな方法で実装できます。
+遅延ローディングはIntersection Observers、Resize Observersの組み合わせを含め<a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video">実装可能</a> です、または<a hreflang="en" href="https://github.com/aFarkas/lazysizes">lazySizes</a>、<a hreflang="en" href="https://github.com/ApoorvSaxena/lozad.js">lozad</a>などのJavaScriptライブラリの使用などさまざまな方法で実装できます。
 
 2019年8月、Chrome76では`<img loading="lazy">`を使用したマークアップベースの遅延ローディングのサポートが開始されました。2019年のWeb Almanacに使用されたウェブサイトのスナップショットは2019年7月のデータを使用していますが、2,509以上のウェブサイトがすでにこの機能を利用していました。
 

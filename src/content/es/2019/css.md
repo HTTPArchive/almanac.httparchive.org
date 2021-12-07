@@ -1,6 +1,5 @@
 ---
-part_number: I
-chapter_number: 2
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CSS
 description: Capítulo CSS del 2019 Web Almanac que cubre el color, las unidades, los selectores, el diseño, la tipografía y las fuentes, el espaciado, la decoración, la animación y las consultas de medios.
 authors: [una, argyleink]
@@ -10,9 +9,8 @@ editors: [rachellcostello]
 translators: [c-torres]
 discuss: 1757
 results: https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/
-queries: 02_CSS
-una_bio: <i lang="en">Una Kravets is a Brooklyn-based international public speaker, technical writer, and Developer Advocate for Material Design at Google. Una hosts the <a href="https://www.youtube.com/watch?v=YK8GZBx3hpg">Designing the Browser</a> web series and the <a href="https://spec.fm/podcasts/toolsday">Toolsday</a> developer podcast. Follow her on <a href="https://twitter.com/una">Twitter</a> to find her musings on creative CSS, user experiences, and web development best practices.</i>
-argyleink_bio: <i lang="en">Adam Argyle is a Google Chrome developer relations member focused on CSS; He's a web addict with an insatiable lust for great UX & UI; Find him on the web <a href="https://twitter.com/argyleink">@argyleink</a> or checkout his website <a href="https://nerdy.dev">https://nerdy.dev</a>.</i>
+una_bio: <i lang="en">Una Kravets is a Brooklyn-based international public speaker, technical writer, and Developer Advocate for Material Design at Google. Una hosts the <a hreflang="en" href="https://www.youtube.com/watch?v=YK8GZBx3hpg">Designing the Browser</a> web series and the <a hreflang="en" href="https://spec.fm/podcasts/toolsday">Toolsday</a> developer podcast. Follow her on <a href="https://twitter.com/una">Twitter</a> to find her musings on creative CSS, user experiences, and web development best practices.</i>
+argyleink_bio: <i lang="en">Adam Argyle is a Google Chrome developer relations member focused on CSS; He's a web addict with an insatiable lust for great UX & UI; Find him on the web <a href="https://twitter.com/argyleink">@argyleink</a> or checkout his website <a hreflang="en" href="https://nerdy.dev">https://nerdy.dev</a>.</i>
 featured_quote: Las Hojas de Estilo en Cascada (CSS por sus siglas en inglés) se utilizan para pintar, formatear y diseñar páginas web. Sus capacidades abarcan conceptos tan simples como el color del texto hasta perspectiva 3D. También tiene ganchos para permitir a los desarrolladores manejar diferentes tamaños de pantalla, contextos de visualización e impresión. CSS ayuda a los desarrolladores a lidiar con el contenido y a asegurarse de que se adapte correctamente al usuario.
 featured_stat_1: 5%
 featured_stat_label_1: Páginas que utilizan custom properties
@@ -50,7 +48,7 @@ Hex es la forma más popular de describir el color por mucho, con un 93% de uso,
 
 ### Selección de color
 
-Existen [148 colores de CSS nombrados](https://www.w3.org/TR/css-color-4/#named-colors), sin incluir los valores especiales `transparent` y `currentcolor`. Puede usarlos por su nombre en cadena de texto para un estilo más legible. Los colores con nombre más populares son `black` y `white`, sin sorprender, seguidos por `red` y `blue`.
+Existen <a hreflang="en" href="https://www.w3.org/TR/css-color-4/#named-colors">148 colores de CSS nombrados</a>, sin incluir los valores especiales `transparent` y `currentcolor`. Puede usarlos por su nombre en cadena de texto para un estilo más legible. Los colores con nombre más populares son `black` y `white`, sin sorprender, seguidos por `red` y `blue`.
 
 {{ figure_markup(
   image="fig2.png",
@@ -64,7 +62,7 @@ Existen [148 colores de CSS nombrados](https://www.w3.org/TR/css-color-4/#named-
   )
 }}
 
-El idioma también se infiere de manera interesante a través del color. Hay más instancias del "gray" de estilo americano que del "grey" de estilo británico. Casi cada instancia de [colores grises](https://www.rapidtables.com/web/color/gray-color.html) (`gray`, `lightgray`, `darkgray`, `slategray`, etc.) tenía casi el doble de uso cuando se deletreaba con una "a" en lugar de una "e". Si la combinación gr[a/e]ys se tomara en cuenta, tendrían un rango más alto que el azul, solidificándose en el puesto #4. ¡Esta podría ser la razón por la cual `plata` ocupa un lugar más alto que `grey` con una "e" en las listas!
+El idioma también se infiere de manera interesante a través del color. Hay más instancias del "gray" de estilo americano que del "grey" de estilo británico. Casi cada instancia de <a hreflang="en" href="https://www.rapidtables.com/web/color/gray-color.html">colores grises</a> (`gray`, `lightgray`, `darkgray`, `slategray`, etc.) tenía casi el doble de uso cuando se deletreaba con una "a" en lugar de una "e". Si la combinación gr[a/e]ys se tomara en cuenta, tendrían un rango más alto que el azul, solidificándose en el puesto #4. ¡Esta podría ser la razón por la cual `plata` ocupa un lugar más alto que `grey` con una "e" en las listas!
 
 ### Conteo de color
 
@@ -108,7 +106,7 @@ Como era de esperar, en la Figura 2.5, `px` es el tipo de unidad más utilizado,
 
 Cuando se trata de unidades basadas en el espacio físico, la unidad `cm` (or centímetros) es la más popular por mucho, seguida por `in` (pulgadas), y luego por  `Q`.Sabemos que este tipo de unidades son específicamente útiles para imprimir hojas de estilo, ¡pero ni siquiera sabíamos que la unidad `Q` existía hasta esta encuesta! ¿Sabías?
 
-<p class="note">Una versión anterior de este capítulo discutia la inesperada popularidad de la unidad<code>Q</code>. Gracias a la <a href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">discusión de la comunidad</a> alrededor de este capítulo, hemos identificado que esto fue un error en nuestro análisis y hemos actualizado la Figura 2.5 en consecuencia.</p>
+<p class="note">Una versión anterior de este capítulo discutia la inesperada popularidad de la unidad<code>Q</code>. Gracias a la <a hreflang="en" href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">discusión de la comunidad</a> alrededor de este capítulo, hemos identificado que esto fue un error en nuestro análisis y hemos actualizado la Figura 2.5 en consecuencia.</p>
 
 ### Unidades basadas en el viewport
 
@@ -344,7 +342,7 @@ Los filtros son una forma divertida y excelente de modificar los píxeles que el
 
 ¡Nos entusiasmó ver que el 78% de las hojas de estilo contienen la propiedad `filter`! Ese número también era tan alto que parecía un poco sospechoso, así que buscamos y explicamos el número alto. Porque seamos honestos, los filtros son limpios, pero no se incluyen en todas nuestras aplicaciones y proyectos. ¡A no ser que!
 
-Tras una investigación más profunda, descubrimos que las hojas de estilo de [FontAwesome](https://fontawesome.com) viene con cierto uso de `filter`, de igual manera el contenido empotrado de [YouTube](https://youtube.com). Por lo tanto, nosotros creemos  `filter` se coló en la puerta de atrás al ser utilizada en un par de hojas de estilo muy populares. También creemos que la presencia de  `-ms-filter` podría haberse incluido también, contribuyendo al alto porcentaje de uso.
+Tras una investigación más profunda, descubrimos que las hojas de estilo de <a hreflang="en" href="https://fontawesome.com">FontAwesome</a> viene con cierto uso de `filter`, de igual manera el contenido empotrado de <a hreflang="en" href="https://youtube.com">YouTube</a>. Por lo tanto, nosotros creemos  `filter` se coló en la puerta de atrás al ser utilizada en un par de hojas de estilo muy populares. También creemos que la presencia de  `-ms-filter` podría haberse incluido también, contribuyendo al alto porcentaje de uso.
 
 ### Modos de mezcla
 
@@ -464,7 +462,7 @@ Los sitios web se sienten como papel digital, ¿verdad? Como usuarios, generalme
 {{ figure_markup(
   image="fig32.png",
   caption="Adopción de las media queries para todos, impresión, pantalla y voz.",
-  description="Gráfico de barras que muestra el 35% de las páginas de escritorio con el tipo de media query \"todos\", el 46% con impresión, el 72% con pantalla y el 0% con voz. La adopción es inferior en aproximadamente 5 puntos porcentuales para el escritorio en comparación con el móvil.",
+  description='Gráfico de barras que muestra el 35% de las páginas de escritorio con el tipo de media query "todos", el 46% con impresión, el 72% con pantalla y el 0% con voz. La adopción es inferior en aproximadamente 5 puntos porcentuales para el escritorio en comparación con el móvil.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=939890574&format=interactive"
   )
 }}
@@ -697,7 +695,7 @@ Es común, popular, conveniente y poderoso llegar a una biblioteca CSS para inic
   <figcaption>{{ figure_link(caption="Porcentaje de páginas que incluyen una biblioteca CSS determinada.") }}</figcaption>
 </figure>
 
-Este cuadro sugiere que [Bootstrap](https://getbootstrap.com/) es una biblioteca valiosa que debe saber para ayudar a conseguir un trabajo. ¡Mira toda la oportunidad que hay para ayudar! También vale la pena señalar que este es solo un gráfico de señales positivas: las matemáticas no suman 100% porque no todos los sitios están usando un framework CSS. Un poco más de la mitad de todos los sitios _no utilizan_ un framework CSS conocido. Muy interesante, ¿no?
+Este cuadro sugiere que <a hreflang="en" href="https://getbootstrap.com/">Bootstrap</a> es una biblioteca valiosa que debe saber para ayudar a conseguir un trabajo. ¡Mira toda la oportunidad que hay para ayudar! También vale la pena señalar que este es solo un gráfico de señales positivas: las matemáticas no suman 100% porque no todos los sitios están usando un framework CSS. Un poco más de la mitad de todos los sitios _no utilizan_ un framework CSS conocido. Muy interesante, ¿no?
 
 ### Utilidades de restablecimiento
 
@@ -713,7 +711,7 @@ Las utilidades de restablecimiento de CSS tienen la intención de normalizar o c
   )
 }}
 
-Resulta que aproximadamente un tercio de la web está usando [`normalize.css`](https://necolas.github.io/normalize.css), que podría considerarse un enfoque más suave para la tarea que un reinicio. Miramos un poco más profundo, y resulta que Bootstrap incluye `normalize.css`, lo que probablemente representa una gran cantidad de su uso. Vale la pena señalar también que `normalize.css` tiene más adopción que Bootstrap, por lo que hay muchas personas que lo usan solo.
+Resulta que aproximadamente un tercio de la web está usando <a hreflang="en" href="https://necolas.github.io/normalize.css">`normalize.css`</a>, que podría considerarse un enfoque más suave para la tarea que un reinicio. Miramos un poco más profundo, y resulta que Bootstrap incluye `normalize.css`, lo que probablemente representa una gran cantidad de su uso. Vale la pena señalar también que `normalize.css` tiene más adopción que Bootstrap, por lo que hay muchas personas que lo usan solo.
 
 ### `@supports` y `@import`
 
@@ -722,7 +720,7 @@ CSS `@supports` es una forma para que el navegador verifique si una combinación
 {{ figure_markup(
   image="fig38.png",
   caption="Popularidad de las reglas CSS 'arroba'.",
-  description="Gráfico de barras que muestra la popularidad de las reglas @import y @supports \"arroba\". En el escritorio, @import se usa en el 28% de las páginas y @supports se usa en el 31%. Para dispositivos móviles, @import se usa en el 26% de las páginas y @supports se usa en el 29%.",
+  description='Gráfico de barras que muestra la popularidad de las reglas @import y @supports "arroba". En el escritorio, @import se usa en el 28% de las páginas y @supports se usa en el 31%. Para dispositivos móviles, @import se usa en el 26% de las páginas y @supports se usa en el 29%.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1739611283&format=interactive"
   )
 }}

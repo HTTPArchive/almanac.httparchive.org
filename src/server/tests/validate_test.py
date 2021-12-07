@@ -108,13 +108,21 @@ def test_valid_chapter():
     assert_validate_chapter('javascript', '2019', 'javascript')
 
 
+def test_valid_chapter_future_year():
+    assert_validate_chapter('javascript', '2999', '')
+
+
 def test_invalid_chapter():
     with pytest.raises(NotFound):
         assert_validate_chapter('random', '2019', 'javascript')
 
 
 def test_typo_chapter():
-    assert_validate_chapter('http-2', '2019', 'http2')
+    assert_validate_chapter('http-2', '2019', 'http')
+
+
+def test_typo_chapter2():
+    assert_validate_chapter('http2', '2020', 'http')
 
 
 def test_uppercase_chapter():

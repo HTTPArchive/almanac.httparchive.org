@@ -79,6 +79,15 @@ npm run pytest
 echo "Testing website"
 npm run test
 
+# If being run in GitHub actions then generating the website should not
+# change any Git-tracked files. If it does then it suggests something's
+# wrong. Exit
+if [ "${GITHUB_ACTIONS}" ] && [ -n "$(git status --porcelain)" ]; then
+  echo "Generating the website produced a different file than is in the branch"
+  git status
+  exit 1
+fi
+
 echo "Website started successfully"
 
 # If in debug more then restart server in debug mode so it picks up new files

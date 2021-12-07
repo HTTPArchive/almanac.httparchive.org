@@ -20,7 +20,7 @@
 
 {% block mission %}
 <p>
-Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archive com a experiência da comunidade da web. O Web Almanac é um relatório abrangente sobre o estado da Web, apoiado por dados reais e especialistas confiáveis da Web. É composto por {{ supported_chapters | length }} capítulos que abrangem aspectos do conteúdo da página, experiência do usuário, publicação e distribuição.
+Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archive com a experiência da comunidade web. O Web Almanac é um relatório abrangente sobre o estado da Web, apoiado por dados reais e especialistas confiáveis da Web. A edição de {{ year }} é composta por {{ supported_chapters | length }} capítulos que abrangem aspectos do conteúdo da página, experiência do usuário, publicação e distribuição.
 </p>
 {% endblock %}
 
@@ -30,8 +30,9 @@ Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archi
 
 {% block page_navigation %}Navegação de página{% endblock %}
 
-{% block help_translate %}Ajudar Traduzir{% endblock %}
+{% block help_translate %}Ajudar traduzir{% endblock %}
 {% block translation_not_available %}Inglês - não disponível em Português{% endblock %}
+{% block in_english %} (Inglês){% endblock %}
 {% block language_switcher %}Selecione o Idioma{% endblock %}
 {% block year_switcher %}Selecione o Ano{% endblock %}
 {% block table_of_contents_switcher %}Selecione o Tabela de Conteúdos{% endblock %}
@@ -40,6 +41,7 @@ Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archi
 {% block table_of_contents_title %}Tabela de Conteúdos{% endblock %}
 {% block contributors_title %}Contribuintes{% endblock %}
 {% block methodology_title %}Metodologia{% endblock %}
+{% block search_title %}Pesquisa{% endblock %}
 
 {% block part %}Parte{% endblock %}
 {% block chapter %}Capítulo{% endblock %}
@@ -62,25 +64,45 @@ Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archi
 {% block open %}Abrir{% endblock %}
 {% block close %}Fechar{% endblock %}
 
-{% macro figure_text(metadata, id) %}Figura {{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}Mostrar descrição da figura {{ figure_id(metadata, id) }}{% endmacro %}
-{% macro hide_description(metadata, id) %}Ocultar descrição da figura {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro figure_text(metadata, chapter_config, id) %}Figura {{ figure_id(metadata, chapter_config, id) }}.{% endmacro %}
+{% macro show_description(metadata, chapter_config, id) %}Mostrar descrição da figura {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
+{% macro hide_description(metadata, chapter_config, id) %}Ocultar descrição da figura {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
 
 {% block written_by_before %}Escrito por{% endblock %}
 {% block reviewed_by_before %}Revisado por{% endblock %}
 {% block translated_by_before %}Traduzido por{% endblock %}
 {% block analysis_by_before %}Análise por{% endblock %}
 {% block edited_by_before %}Editado por{% endblock %}
+{% block reviewed_and_analyzed_by_before %}Revisado e análise por{% endblock %}
+{% block analysis_and_editing_by_before %}Análise e Editado por{% endblock %}
 {% block written_by_after %}{% endblock %}
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
 {% block analysis_by_after %}{% endblock %}
 {% block edited_by_after %}{% endblock %}
+{% block reviewed_and_analyzed_by_after %}{% endblock %}
+{% block analysis_and_editing_by_after %}{% endblock %}
 
 {% block unedited %}[Não editado]{% endblock %}
 
 {% block author %}Autor(a){% endblock %}
 {% block authors %}Autores{% endblock %}
+
+{% block reactions %}Reações{% endblock %}
+{% block source %}Ver fonte{% endblock %}
+
+{% block like %}curtir{% endblock %}
+{% block repost %}repostagem{% endblock %}
+{% block reply %}resposta{% endblock %}
+{% block mention %}menção{% endblock %}
+{% block likes %}curtidas{% endblock %}
+{% block reposts %}repostagens{% endblock %}
+{% block replies %}respostas{% endblock %}
+{% block mentions %}menções{% endblock %}
+{% block likesAlt %}{% endblock %}
+{% block repostsAlt %}{% endblock %}
+{% block repliesAlt %}{% endblock %}
+{% block mentionsAlt %}{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} no Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} no GitHub{% endmacro %}
@@ -90,7 +112,7 @@ Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archi
 {% macro edition(year) %}{{ year }} Edição{% endmacro %}
 
 {% block footer_title %}Navegação no rodapé{% endblock %}
-{% block copyright %}© Web Almanac. Licenciado sob <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
+{% block copyright %}© Web Almanac. Licenciado sob <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
 {% block accessibility_statement %}Declaração de acessibilidade{% endblock %}
 
 {% block featured_chapter %}Capítulo em Destaque{% endblock %}
@@ -98,20 +120,23 @@ Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archi
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
-{% macro read_chapter(chapter) %}Leia o Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% macro read_chapter(chapter) %}Leia o capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 {% if not read_last_years_chapter %}
-{% macro read_last_years_chapter(chapter) %}Leia o {{ year|int -1 }} Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% macro read_last_years_chapter(chapter) %}Leia o {{ year|int -1 }} capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 {% endif %}
 
 {% block contributors_description %}
-O Web Almanac Isso foi possível graças ao trabalho árduo da comunidade da web. {{ self.contributors() }} as pessoas ofereceram inúmeras horas nas fases de planejamento, pesquisa, redação e produção.
+O Web Almanac só foi possível graças ao trabalho árduo da comunidade web. {{ self.contributors() }} pessoas ofereceram inúmeras horas nas fases de planejamento, pesquisa, redação e produção do Web Almanac {{ year }}.
 {% endblock %}
 {% block contributors_link %}Veja os colaboradores{% endblock %}
 
 {% block methodology_stat_1_title %}Sites testados{% endblock %}
 {% block methodology_stat_2_title %}Dados processados{% endblock %}
 {% block methodology_link %}Conheça nossa Metodologia{% endblock %}
+{% block methodology_description %}
+Salvo indicação em contrário, as métricas em todos os {{ supported_chapters | length }} capítulos do Web Almanac {{ year }} são originárias do conjunto de dados do HTTP Archive. O HTTP Archive é um projeto administrado pela comunidade que acompanha como a Web é criada desde 2010. Usando o WebPageTest e o Lighthouse, os metadados de {{ self.total_websites() }} de sites são testados mensalmente e incluídos em um banco de dados público do BigQuery para análise. O conjunto de dados de {{ self.dataset() }} foi usado como base para as métricas do Web Almanac {{ year }}. Para mais informações, consulte a página Metodologia.
+{% endblock %}
 
 {% block introduction %}Introdução{% endblock %}
 
@@ -135,6 +160,7 @@ O Web Almanac Isso foi possível graças ao trabalho árduo da comunidade da web
     "IV. Content Distribution": "IV. Distribuição de Conteúdo"
   }
 %}
+
 {%
   set localizedChapterTitles = {
     "javascript": "JavaScript",
@@ -151,17 +177,22 @@ O Web Almanac Isso foi possível graças ao trabalho árduo da comunidade da web
     "mobile-web": "Web móvel",
     "ecommerce": "Comércio eletrônico",
     "cms": "CMS",
-    "compression": "Comércio eletrônico",
+    "compression": "Compressão",
     "caching": "Armazenamento em Cache",
     "cdn": "CDN",
     "page-weight": "Peso da página",
     "resource-hints": "Dicas de Recursos",
-    "http2": "HTTP/2",
+    "http": "HTTP",
     "privacy": "Privacidade",
     "capabilities": "Capacidades",
-    "jamstack": "Jamstack"
+    "jamstack": "Jamstack",
+    "webassembly": "WebAssembly",
+    "structured-data": "Dados Estruturados"
   }
 %}
+{% if (year == "2019" or year == "2020") %}
+{% set _dummy = localizedChapterTitles.__setitem__("http", "HTTP/2") %}
+{% endif %}
 
 {% set localizedTeamNames = {
   "analysts": "Analistas",
@@ -173,5 +204,18 @@ O Web Almanac Isso foi possível graças ao trabalho árduo da comunidade da web
   "leads": "Lider",
   "reviewers": "Revisores",
   "translators": "Tradutores",
+  }
+%}
+
+{% set localizedTeamRole = {
+  "analysts": "Analista",
+  "authors": "Autor",
+  "brainstormers": "Pensador",
+  "designers": "Designer",
+  "developers": "Desenvolvedor",
+  "editors": "Editor",
+  "leads": "Lider",
+  "reviewers": "Revisor",
+  "translators": "Tradutor",
   }
 %}

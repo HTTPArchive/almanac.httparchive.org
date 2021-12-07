@@ -34,6 +34,7 @@ const generate_syntax_highlighting = (body) => {
   body = generate_syntax_highlighting_for_language(dom, body, "html");
   body = generate_syntax_highlighting_for_language(dom, body, "css" );
   body = generate_syntax_highlighting_for_language(dom, body, "javascript", "js");
+  body = generate_syntax_highlighting_for_language(dom, body, "json");
   body = generate_syntax_highlighting_for_language(dom, body, "sql");
   return body;
 };

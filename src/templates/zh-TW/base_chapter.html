@@ -1,6 +1,8 @@
 {% extends "base/base_chapter.html" %}
 
 {% block title %}{{ metadata.get('title') }} | {{ year }} | Web Almanac 精粹自 HTTP Archive{% endblock %}
+{% block citation_title %}{{ year }} Web Almanac: {{ metadata.get('title') }}{% endblock %}
+{% block citation_journal_title %}{{ year }} Web Almanac{% endblock %}
 
 {% block description %}{{ metadata.get('description',metadata.get('title') + ' 章節 ' + year + ' Web Almanac 探索使用狀況 ' + metadata.get('description',metadata.get('title')) + ' 在網路中。') }}{% endblock %}
 
@@ -15,6 +17,7 @@
 {% block comments_fallback %}評論{% endblock %}
 {% block queries %}查看查詢{% endblock %}
 {% block results %}查看結果{% endblock %}
+{% block suggest_edit %}建議編輯{% endblock %}
 {% block figure_sql %}查看查詢{% endblock %}
 {% block figure_data %}查看資料{% endblock %}
 {% block figure_image %}看圖片{% endblock %}

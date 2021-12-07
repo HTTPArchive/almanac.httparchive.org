@@ -1,18 +1,16 @@
 ---
-part_number: II
-chapter_number: 5
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Third Parties
 description: Third Parties chapter of the 2019 Web Almanac covering data of what third parties are used, what they are used for, performance impacts and privacy impacts.
 authors: [patrickhulce]
 reviewers: [zcorpan, obto, jasti]
 analysts: [patrickhulce]
-editors: [bazzadp]
+editors: [tunetheweb]
 translators: []
 discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/
-queries: 05_Third_Parties
-patrickhulce_bio: Patrick Hulce is an ex-Chrome engineer, founder of <a href="https://eris.ventures/">Eris Ventures</a>, core team member of <a href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a> and <a href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, co-organizer of the <a href="https://www.meetup.com/DallasJS/">DallasJS</a> meetup, and author of the <a href="https://github.com/patrickhulce/third-party-web">third-party-web</a> project.
-featured_quote: The open web is vast, linkable, and interoperable by design. The ability to grab someone else’s complex library and use it on your site with a single <code>&lt;link&gt;</code> or <code>&lt;script&gt;</code> element has supercharged developers’ productivity and enabled awesome new web experiences; on the flip side, the immense popularity of a select few third-party providers raises important performance and privacy concerns. This chapter examines the prevalence and impact of third-party code on the web in 2019, the web usage patterns that lead to the popularity of third-party solutions, and potential repercussions for the future of web performance and privacy.
+patrickhulce_bio: Patrick Hulce is an ex-Chrome engineer, founder of <a hreflang="en" href="https://eris.ventures/">Eris Ventures</a>, core team member of <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a> and <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, co-organizer of the <a hreflang="en" href="https://www.meetup.com/DallasJS/">DallasJS</a> meetup, and author of the <a hreflang="en" href="https://github.com/patrickhulce/third-party-web">third-party-web</a> project.
+featured_quote: The open web is vast, linkable, and interoperable by design. The ability to grab someone else's complex library and use it on your site with a single `<link>` or `<script>` element has supercharged developers' productivity and enabled awesome new web experiences; on the flip side, the immense popularity of a select few third-party providers raises important performance and privacy concerns. This chapter examines the prevalence and impact of third-party code on the web in 2019, the web usage patterns that lead to the popularity of third-party solutions, and potential repercussions for the future of web performance and privacy.
 featured_stat_1: 93%
 featured_stat_label_1: Pages with 3P
 featured_stat_2: 49%
@@ -43,7 +41,7 @@ Note that using these definitions, third-party content served from a first-party
 
 ### Provider categories
 
-This chapter divides third-party providers into one of these broad categories. A brief description is included below and the mapping of domain to category can be found in the [third-party-web repository](https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5).
+This chapter divides third-party providers into one of these broad categories. A brief description is included below and the mapping of domain to category can be found in the <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5">third-party-web repository</a>.
 
 - **Ad** - display and measurement of advertisements
 - **Analytics** - tracking site visitor behavior
@@ -95,40 +93,136 @@ While advertising might be the most user-visible example of third-party presence
 
 A relatively small set of providers dominate the third-party landscape: the top 100 domains account for 30% of network requests across the web. Powerhouses like Google, Facebook, and YouTube make the headlines here with full percentage points of share each, but smaller entities like Wix and Shopify command a substantial portion of third-party popularity as well.
 
-While much could be said about every individual provider's popularity and performance impact, this more opinionated analysis is left as an exercise for the reader and other purpose-built tools such as [third-party-web](https://thirdpartyweb.today).
+While much could be said about every individual provider's popularity and performance impact, this more opinionated analysis is left as an exercise for the reader and other purpose-built tools such as <a hreflang="en" href="https://thirdpartyweb.today">third-party-web</a>.
 
-<figure markdown>
-Rank | Third party domain | Percent of requests
--- | -- | --
-1 | `fonts.gstatic.com` | 2.53%
-2 | `www.facebook.com` | 2.38%
-3 | `www.google-analytics.com` | 1.71%
-4 | `www.google.com` | 1.17%
-5 | `fonts.googleapis.com` | 1.05%
-6 | `www.youtube.com` | 0.99%
-7 | `connect.facebook.net` | 0.97%
-8 | `googleads.g.doubleclick.net` | 0.93%
-9 | `cdn.shopify.com` | 0.76%
-10 | `maps.googleapis.com` | 0.75%
-
-<figcaption>{{ figure_link(caption="Top 10 most popular third-party domains.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Third party domain</th>
+        <th>Percent of requests</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><code>fonts.gstatic.com</code></td>
+        <td class="numeric">2.53%</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><code>www.facebook.com</code></td>
+        <td class="numeric">2.38%</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><code>www.google-analytics.com</code></td>
+        <td class="numeric">1.71%</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><code>www.google.com</code></td>
+        <td class="numeric">1.17%</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><code>fonts.googleapis.com</code></td>
+        <td class="numeric">1.05%</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><code>www.youtube.com</code></td>
+        <td class="numeric">0.99%</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><code>connect.facebook.net</code></td>
+        <td class="numeric">0.97%</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><code>googleads.g.doubleclick.net</code></td>
+        <td class="numeric">0.93%</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><code>cdn.shopify.com</code></td>
+        <td class="numeric">0.76%</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><code>maps.googleapis.com</code></td>
+        <td class="numeric">0.75%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Top 10 most popular third-party domains.") }}</figcaption>
 </figure>
 
-<figure markdown>
-Rank | Third party URL | Percent of requests
--- | -- | --
-1 | `https://www.google-analytics.com/analytics.js` | 0.64%
-2 | `https://connect.facebook.net/en_US/fbevents.js` | 0.20%
-3 | `https://connect.facebook.net/signals/plugins/inferredEvents.js?v=2.8.51` | 0.19%
-4 | `https://staticxx.facebook.com/connect/xd_arbiter.php?version=44` | 0.16%
-5 | `https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFVZ0b.woff2` | 0.13%
-6 | `https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101` | 0.12%
-7 | `https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2` | 0.11%
-8 | `https://googleads.g.doubleclick.net/pagead/id` | 0.11%
-9 | `https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2` | 0.10%
-10 | `https://www.googleadservices.com/pagead/conversion_async.js` | 0.10%
-
-<figcaption>{{ figure_link(caption="Top 10 most popular third-party requests.") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Third party URL</th>
+        <th>Percent of requests</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><code>https://www.google-analytics.com/analytics.js</code></td>
+        <td class="numeric">0.64%</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><code>https://connect.facebook.net/en_US/fbevents.js</code></td>
+        <td class="numeric">0.20%</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><code>https://connect.facebook.net/signals/plugins/inferredEvents.js?v=2.8.51</code></td>
+        <td class="numeric">0.19%</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><code>https://staticxx.facebook.com/connect/xd_arbiter.php?version=44</code></td>
+        <td class="numeric">0.16%</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><code>https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFVZ0b.woff2</code></td>
+        <td class="numeric">0.13%</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><code>https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101</code></td>
+        <td class="numeric">0.12%</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><code>https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2</code></td>
+        <td class="numeric">0.11%</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><code>https://googleads.g.doubleclick.net/pagead/id</code></td>
+        <td class="numeric">0.11%</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><code>https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2</code></td>
+        <td class="numeric">0.10%</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><code>https://www.googleadservices.com/pagead/conversion_async.js</code></td>
+        <td class="numeric">0.10%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Top 10 most popular third-party requests.") }}</figcaption>
 </figure>
 
 ### Resource types
@@ -154,7 +248,6 @@ Several other amusing factoids jump out from this data. Tracking pixels (image r
 49% of all requests are third-party. At 51%, first-party can still narrowly hold on to the crown in 2019 of comprising the majority of the web resources. Given that just under half of all the requests are third-party yet a small set of pages do not include any at all, the most active third-party users must be doing quite a bit more than their fair share. Indeed, at the 75th, 90th, and 99th percentiles we see nearly all of the page being comprised of third-party content. In fact, for some sites heavily relying on distributed WYSIWYG platforms like Wix and SquareSpace, the root document might be the sole first-party request!
 
 <!-- insert graphic of metric 05_11 -->
-<!-- {{ figure_markup() }} -->
 
 The number of requests issued by each third-party provider also varies considerably by category. While analytics are the most widespread third-party category across websites, they account for only 7% of all third-party network requests. Ads, on the other hand, are found on nearly 20% fewer sites yet make up 25% of all third-party network requests. Their outsized resource impact compared to their popularity will be a theme we continue to uncover in the remaining data.
 
@@ -176,10 +269,7 @@ Despite serving 57% of scripts, third parties comprise 64% of script bytes. mean
   )
 }}
 
-<!--
-
-```<insert graphic of metric 05_12>```
--->
+<!--```<insert graphic of metric 05_12>```-->
 
 As for specific third-party providers, the same juggernauts topping the request count leaderboards make their appearance in byte weight as well. The only few notable movements are the large, media-heavy providers such as YouTube, Shopify, and Twitter which climb to the top of the byte impact charts.
 
@@ -199,7 +289,7 @@ The category breakdowns among script execution largely follow that of resource c
 
 <!--```<insert table of metric 05_10>```-->
 
-While much could be said about every individual provider's popularity and performance impact, this more opinionated analysis is left as an exercise for the reader and other purpose-built tools such as the previously mentioned [third-party-web](https://thirdpartyweb.today).
+While much could be said about every individual provider's popularity and performance impact, this more opinionated analysis is left as an exercise for the reader and other purpose-built tools such as the previously mentioned <a hreflang="en" href="https://thirdpartyweb.today">third-party-web</a>.
 
 ## Usage patterns
 
@@ -213,7 +303,7 @@ There's also a flip side to user data though: consumption. While analytics is ab
 
 ### Monetize web traffic
 
-The open model of the web does not always serve the financial interests of content creators to their liking and many site owners resort to monetizing their sites with advertising. Because building direct relationships with advertisers and negotiating pricing contracts is a relatively difficult and time-consuming process, this concern is largely handled by third-party providers performing targeted advertising and real-time bidding. Widespread negative public opinion, the popularity of ad blocking technology, and regulatory action in major global markets such as Europe pose the largest threat to the continued use of third-party providers for monetization. While it's unlikely that site owners suddenly strike their own advertising deals or build bespoke ad networks, alternative monetization models like paywalls and experiments like Brave's [Basic Attention Token](https://basicattentiontoken.org/) have a real chance of shaking up the third-party ad landscape of the future.
+The open model of the web does not always serve the financial interests of content creators to their liking and many site owners resort to monetizing their sites with advertising. Because building direct relationships with advertisers and negotiating pricing contracts is a relatively difficult and time-consuming process, this concern is largely handled by third-party providers performing targeted advertising and real-time bidding. Widespread negative public opinion, the popularity of ad blocking technology, and regulatory action in major global markets such as Europe pose the largest threat to the continued use of third-party providers for monetization. While it's unlikely that site owners suddenly strike their own advertising deals or build bespoke ad networks, alternative monetization models like paywalls and experiments like Brave's <a hreflang="en" href="https://basicattentiontoken.org/">Basic Attention Token</a> have a real chance of shaking up the third-party ad landscape of the future.
 
 ### Simplify development
 
@@ -249,9 +339,9 @@ The top-heavy concentration of script execution is great for the potential impac
 
 ### Security
 
-While the topic of security is covered more in-depth in the [Security](./security) chapter, the security implications of introducing external dependencies to your site go hand-in-hand with privacy concerns. Allowing third parties to execute arbitrary JavaScript effectively provides them with complete control over your page. When a script can control the DOM and `window`, it can do everything. Even if code has no security concerns, it can introduce a single point of failure, [which has been recognized as a potential problem for some time now](https://www.stevesouders.com/blog/2010/06/01/frontend-spof/).
+While the topic of security is covered more in-depth in the [Security](./security) chapter, the security implications of introducing external dependencies to your site go hand-in-hand with privacy concerns. Allowing third parties to execute arbitrary JavaScript effectively provides them with complete control over your page. When a script can control the DOM and `window`, it can do everything. Even if code has no security concerns, it can introduce a single point of failure, <a hreflang="en" href="https://www.stevesouders.com/blog/2010/06/01/frontend-spof/">which has been recognized as a potential problem for some time now</a>.
 
-[Self-hosting third-party content](https://csswizardry.com/2019/05/self-host-your-static-assets/) addresses some of the concerns mentioned here - and others. Additionally with browsers increasingly [partitioning HTTP caches](https://chromestatus.com/feature/5730772021411840) the benefits of loading directly from the third-party are increasingly questionable. Perhaps this is a better way to consume third-party content for many use cases, even if it makes measuring its impact more difficult.
+<a hreflang="en" href="https://csswizardry.com/2019/05/self-host-your-static-assets/">Self-hosting third-party content</a> addresses some of the concerns mentioned here - and others. Additionally with browsers increasingly <a hreflang="en" href="https://chromestatus.com/feature/5730772021411840">partitioning HTTP caches</a> the benefits of loading directly from the third-party are increasingly questionable. Perhaps this is a better way to consume third-party content for many use cases, even if it makes measuring its impact more difficult.
 
 ## Conclusion
 

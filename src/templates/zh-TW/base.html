@@ -20,7 +20,7 @@
 
 {% block mission %}
 <p>
-我們的任務是結合網路社群的專業知識共同精萃HTTP Archive的原始數據與趨勢。Web Almanac 網路年鑑是網路狀態的綜合報告，由真實的數據和具信譽的網路專家支持。報告共有{{ supported_chapters | length }}個章節橫跨網頁內容、使用者體驗、網頁發佈、網頁傳遞的各個方面。
+我們的任務是結合網路社群的專業知識共同精萃HTTP Archive的原始數據與趨勢。Web Almanac 網路年鑑是網路狀態的綜合報告，由真實的數據和具信譽的網路專家支持。{{ year }}年版包括{{ supported_chapters | length }}個章節橫跨網頁內容、使用者體驗、網頁發佈、網頁傳遞的各個方面。
 </p>
 {% endblock %}
 
@@ -32,6 +32,7 @@
 
 {% block help_translate %}幫助翻譯{% endblock %}
 {% block translation_not_available %}英文 - 中文不能使用{% endblock %}
+{% block in_english %} (英文){% endblock %}
 {% block language_switcher %}選擇語言{% endblock %}
 {% block year_switcher %}選擇年度{% endblock %}
 {% block table_of_contents_switcher %}選擇目錄{% endblock %}
@@ -40,6 +41,7 @@
 {% block table_of_contents_title %}目錄{% endblock %}
 {% block contributors_title %}貢獻者{% endblock %}
 {% block methodology_title %}統計方法{% endblock %}
+{% block search_title %}搜索{% endblock %}
 
 {% block part %}部分{% endblock %}
 {% block chapter %}章{% endblock %}
@@ -62,25 +64,45 @@
 {% block open %}開啟{% endblock %}
 {% block close %}關閉{% endblock %}
 
-{% macro figure_text(metadata, id) %}圖表 {{ figure_id(metadata, id) }}.{% endmacro %}
-{% macro show_description(metadata, id) %}顯示圖表說明 {{ figure_id(metadata, id) }}{% endmacro %}
-{% macro hide_description(metadata, id) %}隱藏圖表說明 {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro figure_text(metadata, chapter_config, id) %}圖表 {{ figure_id(metadata, chapter_config, id) }}.{% endmacro %}
+{% macro show_description(metadata, chapter_config, id) %}顯示圖表說明 {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
+{% macro hide_description(metadata, chapter_config, id) %}隱藏圖表說明 {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
 
 {% block written_by_before %}作者：{% endblock %}
 {% block reviewed_by_before %}審稿者：{% endblock %}
 {% block translated_by_before %}翻譯者：{% endblock %}
 {% block analysis_by_before %}分析者：{% endblock %}
 {% block edited_by_before %}編輯：{% endblock %}
+{% block reviewed_and_analyzed_by_before %}審稿者和分析者：{% endblock %}
+{% block analysis_and_editing_by_before %}分析者和編輯：{% endblock %}
 {% block written_by_after %}{% endblock %}
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
 {% block analysis_by_after %}{% endblock %}
 {% block edited_by_after %}{% endblock %}
+{% block reviewed_and_analyzed_by_after %}{% endblock %}
+{% block analysis_and_editing_by_after %}{% endblock %}
 
-{% block unedited %}[Unedited]{% endblock %}
+{% block unedited %}[尚未編輯]{% endblock %}
 
 {% block author %}作者{% endblock %}
 {% block authors %}作者{% endblock %}
+
+{% block reactions %}反應{% endblock %}
+{% block source %}查看原始碼{% endblock %}
+
+{% block like %}則回覆{% endblock %}
+{% block repost %}提及{% endblock %}
+{% block reply %}個喜歡{% endblock %}
+{% block mention %}提及{% endblock %}
+{% block likes %}個贊{% endblock %}
+{% block reposts %}轉發{% endblock %}
+{% block replies %}回覆{% endblock %}
+{% block mentions %}提及{% endblock %}
+{% block likesAlt %}{% endblock %}
+{% block repostsAlt %}{% endblock %}
+{% block repliesAlt %}{% endblock %}
+{% block mentionsAlt %}{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} GitHub{% endmacro %}
@@ -90,7 +112,7 @@
 {% macro edition(year) %}{{ year }} 版{% endmacro %}
 
 {% block footer_title %}註腳導覽{% endblock %}
-{% block copyright %}© Web Almanac. 版權聲明 <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
+{% block copyright %}© Web Almanac. 版權聲明 <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
 {% block accessibility_statement %}無障礙網頁聲明{% endblock %}
 
 {% block featured_chapter %}章節精選{% endblock %}
@@ -105,13 +127,16 @@
 {% endif %}
 
 {% block contributors_description %}
-Web Almanac 網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.contributors() }} 位團隊成員志願挹注難以計數的泉源在規劃、研究、撰寫、發佈的各個階段。
+Web Almanac 網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.contributors() }} 位團隊成員志願挹注難以計數的泉源在規劃、研究、撰寫、發佈 {{ year }} Web Almanac 的各個階段。
 {% endblock %}
 {% block contributors_link %}認識貢獻者{% endblock %}
 
 {% block methodology_stat_1_title %}網站測試數{% endblock %}
 {% block methodology_stat_2_title %}數據處理數{% endblock %}
 {% block methodology_link %}瞭解統計方法{% endblock %}
+{% block methodology_description %}
+除另有備註外，{{ year }} Web Almanac 網路年鑑{{ supported_chapters | length }}個章節的統計指標皆萃取自HTTP Archive數據集。HTTP Archive是社群推動的專案，自2010年開始持續追蹤網路如何建置，每月透過WebPageTest和Lighthouse測試將{{ self.total_websites() }}個網站並將資料集公開置於BigQuery供眾分析。{{ year }} Web Almanac網路年鑑的統計指標採用{{ self.dataset() }}月的數據集為基準，更多的資訊請參閱統計方法頁面。
+{% endblock %}
 
 {% block introduction %}介紹{% endblock %}
 
@@ -135,6 +160,7 @@ Web Almanac 網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.co
     "IV. Content Distribution": "IV. 內容傳遞"
   }
 %}
+
 {%
   set localizedChapterTitles = {
     "javascript": "JavaScript",
@@ -156,14 +182,32 @@ Web Almanac 網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.co
     "cdn": "內容傳遞網路",
     "page-weight": "網頁大小",
     "resource-hints": "資源提示",
-    "http2": "超文字傳輸協定/第2版",
+    "http": "HTTP",
     "privacy": "隱私",
     "capabilities": "功能",
-    "jamstack": "Jamstack"
+    "jamstack": "Jamstack",
+    "webassembly": "WebAssembly",
+    "structured-data": "结构化数据"
+  }
+%}
+{% if (year == "2019" or year == "2020") %}
+{% set _dummy = localizedChapterTitles.__setitem__("http", "HTTP/2") %}
+{% endif %}
+
+{% set localizedTeamNames = {
+  "analysts": "分析者",
+  "authors": "作者",
+  "brainstormers": "腦力激盪者",
+  "designers": "設計者",
+  "developers": "開發者",
+  "editors": "審稿者",
+  "leads": "專案主導者",
+  "reviewers": "審稿者",
+  "translators": "翻譯者",
   }
 %}
 
-{% set localizedTeamNames = {
+{% set localizedTeamRole = {
   "analysts": "分析者",
   "authors": "作者",
   "brainstormers": "腦力激盪者",

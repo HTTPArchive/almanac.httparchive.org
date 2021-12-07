@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 7
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: パフォーマンス
 description: コンテンツの初回ペイント（FCP）、最初のバイトまでの時間（TTFB）、初回入力遅延（FID）を取り扱う2019 Web Almanac パフォーマンスの章。
 authors: [rviscomi]
@@ -10,8 +9,7 @@ editors: [rachellcostello]
 translators: [MSakamaki]
 discuss: 1762
 results: https://docs.google.com/spreadsheets/d/1zWzFSQ_ygb-gGr1H1BsJCfB7Z89zSIf7GX0UayVEte4/
-queries: 07_Performance
-rviscomi_bio: Rick ViscomiはGoogle のシニア開発プログラムエンジニアで、HTTP ArchiveやChrome UX Reportなどのウェブ透過性プロジェクトに携わり、ウェブサイトの構築方法と体験の交差点を研究しています。Rickは、<a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a>のホストを務めており、専門家がウェブのトレンドについて議論しています。Rickは、ウェブのパフォーマンスをテストするためのガイドである <a href="https://usingwpt.com">Using WebPageTest</a> の共著者であり、<a href="https://dev.to/rick_viscomi">dev.to</a> でウェブについて頻繁に執筆していますし、<a href="https://twitter.com/rick_viscomi">@rick_viscomi </a> の Twitter でもウェブについて書いています。
+rviscomi_bio: Rick ViscomiはGoogle のシニア開発プログラムエンジニアで、HTTP ArchiveやChrome UX Reportなどのウェブ透過性プロジェクトに携わり、ウェブサイトの構築方法と体験の交差点を研究しています。Rickは、<a hreflang="en" href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a>のホストを務めており、専門家がウェブのトレンドについて議論しています。Rickは、ウェブのパフォーマンスをテストするためのガイドである <a hreflang="en" href="https://usingwpt.com">Using WebPageTest</a> の共著者であり、<a hreflang="en" href="https://dev.to/rick_viscomi">dev.to</a> でウェブについて頻繁に執筆していますし、<a href="https://twitter.com/rick_viscomi">@rick_viscomi </a> の Twitter でもウェブについて書いています。
 featured_quote: パフォーマンスはユーザー体験の内臓的な部分です。多くのウェブサイトでは、ページの読み込み時間を高速化してユーザー体験を向上させることは、コンバージョン率の向上につながります。逆に、パフォーマンスが悪いと、ユーザーは頻繁にコンバージョンしないし、不満でページを激怒してクリックしてしまうことさえ観察されています。
 featured_stat_1: 13%
 featured_stat_label_1: FCPが速いサイト
@@ -31,7 +29,7 @@ Webのパフォーマンスを定量化する方法は色々とあります。�
 
 ## パフォーマンスの状態
 
-Web Almanacにある他のほとんどの章は、[HTTP Archive](https://httparchive.org/)のデータに基づいています。ただ、実際のユーザーがWebをどのように体験するかを取得するには、違うデータセットが必要になります。このセクションでは、[Chrome UXレポート](http://bit.ly/chrome-ux-report)（CrUX）を使用しています。この情報はHTTP Archiveとすべて同じウェブサイトで構成されるGoogleの公開データセットとなっており、Chromeを使うユーザーの実際の体験を集約しています。そして体験は次のように分類されます。
+Web Almanacにある他のほとんどの章は、<a hreflang="en" href="https://httparchive.org/">HTTP Archive</a>のデータに基づいています。ただ、実際のユーザーがWebをどのように体験するかを取得するには、違うデータセットが必要になります。このセクションでは、[Chrome UXレポート](http://bit.ly/chrome-ux-report)（CrUX）を使用しています。この情報はHTTP Archiveとすべて同じウェブサイトで構成されるGoogleの公開データセットとなっており、Chromeを使うユーザーの実際の体験を集約しています。そして体験は次のように分類されます。
 
 - ユーザーデバイスのフォームファクタ
   - デスクトップ
@@ -45,7 +43,7 @@ Web Almanacにある他のほとんどの章は、[HTTP Archive](https://httparc
   - 4G
 - ユーザーの地理的な位置
 
-体験は描画、読み込み、そして対話性の定量化を含めて毎月測定されます。最初に私達が見るべき指標は[コンテンツの初回ペイント(First Contentful Paint)](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint)(FCP)です。これはページや画像やテキストなど、ユーザーが画面として見るために必要なものが表示されるのを待つ時間です。次は、読み込み時間の指標である[最初のバイトまでの時間(Time to First Byte)](https://developer.mozilla.org/en-US/docs/Glossary/time_to_first_byte) (TTFB)です。これはユーザーがナビゲーションを行ってから、Webページのレスポンスの最初のバイトを受信するまでにかかった時間を計測したものです。そして最後に確認するフィールドの指標は[初回入力遅延(First Input Delay)](https://developers.google.com/web/updates/2018/05/first-input-delay) (FID)です。これは比較的新しい指標で、読み込み以外のパフォーマンスUXの一部を表すものです。ユーザーがページのUIを操作できるようになるまでの時間、つまり、ブラウザのメインスレッドがイベント処理の準備が整うまでの時間を測定したものです。
+体験は描画、読み込み、そして対話性の定量化を含めて毎月測定されます。最初に私達が見るべき指標は<a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint">コンテンツの初回ペイント(First Contentful Paint)</a>(FCP)です。これはページや画像やテキストなど、ユーザーが画面として見るために必要なものが表示されるのを待つ時間です。次は、読み込み時間の指標である[最初のバイトまでの時間(Time to First Byte)](https://developer.mozilla.org/en-US/docs/Glossary/time_to_first_byte) (TTFB)です。これはユーザーがナビゲーションを行ってから、Webページのレスポンスの最初のバイトを受信するまでにかかった時間を計測したものです。そして最後に確認するフィールドの指標は<a hreflang="en" href="https://developers.google.com/web/updates/2018/05/first-input-delay">初回入力遅延(First Input Delay)</a> (FID)です。これは比較的新しい指標で、読み込み以外のパフォーマンスUXの一部を表すものです。ユーザーがページのUIを操作できるようになるまでの時間、つまり、ブラウザのメインスレッドがイベント処理の準備が整うまでの時間を測定したものです。
 
 では、それによってどのような洞察ができるのかを見てきましょう。
 
@@ -81,7 +79,6 @@ Webサイトが十分に**高速**かどうかを分類するために、新し�
 
 {{ figure_markup(
   image="fig3.png",
-  alt="デスクトップWebサイトの高速、適度、低速のFCPパフォーマンスの分布。",
   caption="<em>デスクトップ</em> Webサイトの高速、適度、低速のFCPパフォーマンスの分布。",
   description="1,000個のデスクトップWebサイトの高速、適度、低速のFCP分布、高速なFCPの分布は100%から0%までが線形となっており、中央で少し膨らんでいます。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1231764008&format=interactive"
@@ -90,7 +87,6 @@ Webサイトが十分に**高速**かどうかを分類するために、新し�
 
 {{ figure_markup(
   image="fig4.png",
-  alt="携帯電話向け Webサイトの高速、適度、低速のFCPパフォーマンスの分布。",
   caption="<em>携帯電話向け</em> Webサイトの高速、適度、低速のFCPパフォーマンスの分布。",
   description="1,000個の携帯電話向けWebサイトの高速、適度、低速のFCP分布、高速なFCPの分布は100%から0%までに膨らみが無く、線形に見えます。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=167423587&format=interactive"
@@ -115,7 +111,6 @@ Webサイトでデスクトップユーザーが高確率で携帯電話のユ�
 
 {{ figure_markup(
   image="fig6.png",
-  alt="高速、適度、低速のFCPでラベル付けされたWebサイトの分布。ECT (effective connection type) で分類されています。",
   caption='高速、適度、低速のFCPでラベル付けされたWebサイトの分布。<abbr title="effective connection type">ECT</abbr> で分類されています。',
   description="有効な接続タイプ毎のFCP分布棒グラフ。4Gの高速、適度、低速：14％、67％、19％。 3G：1％、38％、61％。 2G：0％、9％、90％。 低速な2G：0％、1％、99％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1987967547&format=interactive"
@@ -144,7 +139,7 @@ Webサイトでデスクトップユーザーが高確率で携帯電話のユ�
 
 ### 最初のバイトまでの時間(Time to First Byte) (TTFB)
 
-[最初のバイトまでの時間](https://web.dev/time-to-first-byte)は、ユーザーがWebページにナビゲーションしてからレスポンスの最初のバイトを受信するまでにかかった時間の測定値です。
+<a hreflang="en" href="https://web.dev/time-to-first-byte">最初のバイトまでの時間</a>は、ユーザーがWebページにナビゲーションしてからレスポンスの最初のバイトを受信するまでにかかった時間の測定値です。
 
 {{ figure_markup(
   image="nav-timing.png",
@@ -165,7 +160,7 @@ TTFBとそれに影響する多くの要因を説明するために、[Navigatio
   )
 }}
 
-図7.1のFCPチャートと同様に、これは高速TTFB毎に並べられた代表的な1,000個の値のサンプルのビューです。 [高速TTFB](https://developers.google.com/speed/docs/insights/Server#recommendations)は0.2秒（200ミリ秒）未満、低速TTFBは1秒以上、その間はすべて適度です。
+図7.1のFCPチャートと同様に、これは高速TTFB毎に並べられた代表的な1,000個の値のサンプルのビューです。 <a hreflang="en" href="https://developers.google.com/speed/docs/insights/Server#recommendations">高速TTFB</a>は0.2秒（200ミリ秒）未満、低速TTFBは1秒以上、その間はすべて適度です。
 
 高速の割合の曲がり方を見ると、形はFCPとかなり異なります。75％を超える高速なTTFBを持つWebサイトは非常に少なく、25％を下回るWebサイトが半分以上となっています。
 
@@ -199,7 +194,7 @@ Webサイトの42%で低速のTTFB体験となっています。TTFBは他のす
 
 ### 初回入力遅延（First Input Delay）
 
-最後に確認するフィールド値は[初回入力遅延(First Input Delay)](https://developers.google.com/web/updates/2018/05/first-input-delay)(FID)です。この値は、ユーザーがページのUIを最初に操作してから、ブラウザのメインスレッドでイベントの処理が可能になるまでの時間です。この時間には、アプリケーションへの実際の入力処理の時間は含まれないことに注意してください。最悪の場合は、FIDが遅いとページが応答しなくなり、ユーザー体験は苛立たしいものとなってしまいます。
+最後に確認するフィールド値は<a hreflang="en" href="https://developers.google.com/web/updates/2018/05/first-input-delay">初回入力遅延(First Input Delay)</a>(FID)です。この値は、ユーザーがページのUIを最初に操作してから、ブラウザのメインスレッドでイベントの処理が可能になるまでの時間です。この時間には、アプリケーションへの実際の入力処理の時間は含まれないことに注意してください。最悪の場合は、FIDが遅いとページが応答しなくなり、ユーザー体験は苛立たしいものとなってしまいます。
 
 いくつかのしきい値を定義することから始めましょう。新しいPSI手法によると、**高速**なFIDは100ミリ秒未満です。これによりアプリケーションは、入力イベントを処理しユーザーへの応答の結果が瞬時に感じるのに十分な時間を与えることができます。**低速**なFIDは300ミリ秒以上となっており、その間はすべて**適度**にあたります。
 
@@ -229,7 +224,6 @@ Webサイトの42%で低速のTTFB体験となっています。TTFBは他のす
 
 {{ figure_markup(
   image="fig14.png",
-  alt="デスクトップWebサイトのFIDパフォーマンスの高速、適度、低速の分布。",
   caption="<em>デスクトップ</em> WebサイトのFIDパフォーマンスの高速、適度、低速の分布。",
   description="デスクトップWebサイト1,000個の高速、適度、低速FIDの配布。 Webサイトの最速の4分の3で、高速FIDの分布は100％から90％にかけて非常にゆっくりと減少して、その後高速FIDは75％まで減少します。 ほぼすべてのデスクトップWebサイトは、75％以上の高速なFID体験を備えています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=16379508&format=interactive"
@@ -238,7 +232,6 @@ Webサイトの42%で低速のTTFB体験となっています。TTFBは他のす
 
 {{ figure_markup(
   image="fig15.png",
-  alt="携帯電話向けWebサイトのFIDパフォーマンスの高速、適度、低速の分布。",
   caption="<em>携帯電話向け</em> WebサイトのFIDパフォーマンスの高速、適度、低速の分布。",
   description="モバイルWebサイト1,000個の高速、適度、低速FIDの配布。 高速なFIDの分布は着実に減少していますが、デスクトップよりもはるかに速く減っています。 ウェブサイトの4分の3までが75％となる高速に達していますが、その後すぐに0％に低下します。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=519511409&format=interactive"
@@ -261,7 +254,6 @@ PSIラベルをデスクトップと携帯電話の体験に適用してみる�
 
 {{ figure_markup(
   image="fig17.png",
-  alt="ECT (effective connection type)によって分類された高速、適度、低速FIDとしてラベル付けされたWebサイトの分布",
   caption='<abbr title="effective connection type">ECT</abbr>によって分類された高速、適度、低速FIDとしてラベル付けされたWebサイトの分布',
   description="有効な接続タイプ毎のFID分布の棒グラフ。4G高速、適度、低速がそれぞれ41％、45％、15％。3G：22％、52％、26％。 2G：19％、58％、23％。 低速な2G：15％、58％、27％。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1173039776&format=interactive"
@@ -296,6 +288,6 @@ Webページの読み込み速度を定量化することは、単一の計測�
 
 この章で表されたデータから、高速なWebサイトとにするためには多くの設定されるべき目標と作業があることを示しています。確かなフォームファクター、効果的な接続の種類、そして地理にはユーザー体験の向上と相関しますが、低いパフォーマンスとなる人口の統計も組み合わせる必要があることを忘れてはいけません。殆どの場合、Webプラットフォームはビジネスで使われています。コンバージョン率を改善してより多くのお金を稼ぐことは、Webサイトを高速化する大きな動機になるでしょう。最終的に、すべてのWebサイトのパフォーマンスとは、ユーザーの邪魔をしたり、イラつかせたり、怒らせたりしない方法で、ユーザーにより良い体験を提供することです。
 
-Webがまた一つ古くなり、ユーザー体験を測定する能力が徐々に向上するにつれて、開発者がより総合的なユーザー体験を捉えて計測された値を身近に思えるようになることを楽しみにしています。FCPは有用なコンテンツをユーザーに表示するタイムラインのほぼ最初部分であり、それ以外にも[Large Contentful Paint](https://web.dev/largest-contentful-paint)（LCP）と呼ばれる新しい計測値が出現して、ページの読み込みがどのように認識されるかの可視性が向上しています。[Layout Instability API](https://web.dev/layout-instability-api)は、ページの読み込み以降でユーザーが不満を持つ体験がある事を新たに垣間見せてくれました。
+Webがまた一つ古くなり、ユーザー体験を測定する能力が徐々に向上するにつれて、開発者がより総合的なユーザー体験を捉えて計測された値を身近に思えるようになることを楽しみにしています。FCPは有用なコンテンツをユーザーに表示するタイムラインのほぼ最初部分であり、それ以外にも<a hreflang="en" href="https://web.dev/largest-contentful-paint">Large Contentful Paint</a>（LCP）と呼ばれる新しい計測値が出現して、ページの読み込みがどのように認識されるかの可視性が向上しています。<a hreflang="en" href="https://web.dev/layout-instability-api">Layout Instability API</a>は、ページの読み込み以降でユーザーが不満を持つ体験がある事を新たに垣間見せてくれました。
 
 こういった新しい計測が出来るようになった2020年のWebは、さらに透明性が高まって理解が深まり、開発者がパフォーマンスを改善するための有意義な進歩を遂げることで、より良いユーザー体験を提供できるでしょう。

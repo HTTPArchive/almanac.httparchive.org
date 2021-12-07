@@ -1,18 +1,16 @@
 ---
-part_number: II
-chapter_number: 5
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: サードパーティ
 description: 2019 Web Almanacのサードパーティの章。サードパーティの使用目的、パフォーマンスへの影響、プライバシーへの影響について説明しています。
 authors: [patrickhulce]
 reviewers: [zcorpan, obto, jasti]
 analysts: [patrickhulce]
-editors: [bazzadp]
-translators: [ksakae]
+editors: [tunetheweb]
+translators: [ksakae1216]
 discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/
-queries: 05_Third_Parties
-patrickhulce_bio: Patrick Hulceは元Chromeのエンジニアであり、<a href="https://eris.ventures/">Eris Ventures</a>の創設者であり、<a href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a>のコアチームメンバーであり、<a href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, <a href="https://www.meetup.com/DallasJS/">DallasJS</a> meetup の共同主催者、<a href="https://github.com/patrickhulce/third-party-web">third-party-web</a> プロジェクトの執筆者。
-featured_quote: オープンウェブは広大で、リンク可能で、相互運用可能な設計になっています。他の誰かの複雑なライブラリを取得し、単一の <code>&lt;link&gt;</code> または <code>&lt;script&gt;</code> 要素を使用して自分のサイトで使用する能力は、開発者の生産性を高め、素晴らしい新しいウェブ体験を可能にしました。本章では、2019年のWebにおけるサードパーティコードの普及と影響、サードパーティソリューションの人気につながるWebの利用パターン、Webのパフォーマンスとプライバシーの将来に対する潜在的な影響を検証します。
+patrickhulce_bio: Patrick Hulceは元Chromeのエンジニアであり、<a hreflang="en" href="https://eris.ventures/">Eris Ventures</a>の創設者であり、<a hreflang="en" href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a>のコアチームメンバーであり、<a hreflang="en" href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, <a hreflang="en" href="https://www.meetup.com/DallasJS/">DallasJS</a> meetup の共同主催者、<a hreflang="en" href="https://github.com/patrickhulce/third-party-web">third-party-web</a> プロジェクトの執筆者。
+featured_quote: オープンウェブは広大で、リンク可能で、相互運用可能な設計になっています。他の誰かの複雑なライブラリを取得し、単一の `&<link>` または `<script>` 要素を使用して自分のサイトで使用する能力は、開発者の生産性を高め、素晴らしい新しいウェブ体験を可能にしました。本章では、2019年のWebにおけるサードパーティコードの普及と影響、サードパーティソリューションの人気につながるWebの利用パターン、Webのパフォーマンスとプライバシーの将来に対する潜在的な影響を検証します。
 featured_stat_1: 93%
 featured_stat_label_1: サードパーティを含むページ
 featured_stat_2: 49%
@@ -43,7 +41,7 @@ featured_stat_label_3: サードパーティのバイト数
 
 ### プロバイダーカテゴリー
 
-この章では、サードパーティプロバイダをこれらの大まかなカテゴリのいずれかに分類しています。以下に簡単な説明を記載し、ドメインとカテゴリのマッピングについては、[サードパーティ・ウェブ・リポジトリ](https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5)を参照してください。
+この章では、サードパーティプロバイダをこれらの大まかなカテゴリのいずれかに分類しています。以下に簡単な説明を記載し、ドメインとカテゴリのマッピングについては、<a hreflang="en" href="https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5">サードパーティ・ウェブ・リポジトリ</a>を参照してください。
 
 - **Ad** - 広告の表示と測定
 - **Analytics** - トラッキングサイト訪問者の行動
@@ -95,40 +93,136 @@ featured_stat_label_3: サードパーティのバイト数
 
 プロバイダーの比較的小さなセットがサードパーティの状況を支配しています：トップ100ドメインは、ウェブ全体のネットワーク要求の30％を占めています。Google、Facebook、YouTubeのような大企業は、それぞれのシェアの完全なパーセンテージポイントでここの見出しを作るが、WixやShopifyのような小さな事業体は同様にサードパーティの人気のかなりの部分を指揮します。
 
-個々のプロバイダの人気とパフォーマンスへの影響については、多くのことが言えるかもしれませんが、このより意見の多い分析は読者や[サードパーティ製Web](https://thirdpartyweb.today)のような他の目的のために構築されたツールの練習として残されています。
+個々のプロバイダの人気とパフォーマンスへの影響については、多くのことが言えるかもしれませんが、このより意見の多い分析は読者や<a hreflang="en" href="https://thirdpartyweb.today">サードパーティ製Web</a>のような他の目的のために構築されたツールの練習として残されています。
 
-<figure markdown>
-ランク | サードパーティドメイン | リクエストの割合
--- | -- | --
-1 | `fonts.gstatic.com` | 2.53%
-2 | `www.facebook.com` | 2.38%
-3 | `www.google-analytics.com` | 1.71%
-4 | `www.google.com` | 1.17%
-5 | `fonts.googleapis.com` | 1.05%
-6 | `www.youtube.com` | 0.99%
-7 | `connect.facebook.net` | 0.97%
-8 | `googleads.g.doubleclick.net` | 0.93%
-9 | `cdn.shopify.com` | 0.76%
-10 | `maps.googleapis.com` | 0.75%
-
-<figcaption>{{ figure_link(caption=" サードパーティドメインの人気トップ10") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>ランク</th>
+        <th>サードパーティドメイン</th>
+        <th>リクエストの割合</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><code>fonts.gstatic.com</code></td>
+        <td class="numeric">2.53%</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><code>www.facebook.com</code></td>
+        <td class="numeric">2.38%</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><code>www.google-analytics.com</code></td>
+        <td class="numeric">1.71%</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><code>www.google.com</code></td>
+        <td class="numeric">1.17%</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><code>fonts.googleapis.com</code></td>
+        <td class="numeric">1.05%</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><code>www.youtube.com</code></td>
+        <td class="numeric">0.99%</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><code>connect.facebook.net</code></td>
+        <td class="numeric">0.97%</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><code>googleads.g.doubleclick.net</code></td>
+        <td class="numeric">0.93%</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><code>cdn.shopify.com</code></td>
+        <td class="numeric">0.76%</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><code>maps.googleapis.com</code></td>
+        <td class="numeric">0.75%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption=" サードパーティドメインの人気トップ10") }}</figcaption>
 </figure>
 
-<figure markdown>
-ランク | サードパーティURL | リクエストの割合
--- | -- | --
-1 | `https://www.google-analytics.com/analytics.js` | 0.64%
-2 | `https://connect.facebook.net/en_US/fbevents.js` | 0.20%
-3 | `https://connect.facebook.net/signals/plugins/inferredEvents.js?v=2.8.51` | 0.19%
-4 | `https://staticxx.facebook.com/connect/xd_arbiter.php?version=44` | 0.16%
-5 | `https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFVZ0b.woff2` | 0.13%
-6 | `https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101` | 0.12%
-7 | `https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2` | 0.11%
-8 | `https://googleads.g.doubleclick.net/pagead/id` | 0.11%
-9 | `https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2` | 0.10%
-10 | `https://www.googleadservices.com/pagead/conversion_async.js` | 0.10%
-
-<figcaption>{{ figure_link(caption=" サードパーティからのリクエストが多いトップ10") }}</figcaption>
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>ランク</th>
+        <th>サードパーティURL</th>
+        <th>リクエストの割合</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><code>https://www.google-analytics.com/analytics.js</code></td>
+        <td class="numeric">0.64%</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><code>https://connect.facebook.net/en_US/fbevents.js</code></td>
+        <td class="numeric">0.20%</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><code>https://connect.facebook.net/signals/plugins/inferredEvents.js?v=2.8.51</code></td>
+        <td class="numeric">0.19%</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><code>https://staticxx.facebook.com/connect/xd_arbiter.php?version=44</code></td>
+        <td class="numeric">0.16%</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><code>https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFVZ0b.woff2</code></td>
+        <td class="numeric">0.13%</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><code>https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101</code></td>
+        <td class="numeric">0.12%</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><code>https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2</code></td>
+        <td class="numeric">0.11%</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><code>https://googleads.g.doubleclick.net/pagead/id</code></td>
+        <td class="numeric">0.11%</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><code>https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2</code></td>
+        <td class="numeric">0.10%</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><code>https://www.googleadservices.com/pagead/conversion_async.js</code></td>
+        <td class="numeric">0.10%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption=" サードパーティからのリクエストが多いトップ10") }}</figcaption>
 </figure>
 
 ### リソースの種類
@@ -154,7 +248,6 @@ featured_stat_label_3: サードパーティのバイト数
 全リクエストの49％がサードパーティです。ファーストパーティは2019年にも、51％と、ウェブリソースの大部分を占めるという王座にあと一歩まで迫ることができます。全リクエストの半分弱がサードパーティ製であるにもかかわらず、まったく含まれていないページが少数であることを考えると最もアクティブなサードパーティ製ユーザーは、自分の公平なシェアよりもかなり多くのことをしているに違いありません。実際、75％、90％、99％の割合で、ほぼすべてのページがサードパーティのコンテンツで構成されていることがわかります。実際、WixやSquareSpaceのような分散型WYSIWYGプラットフォームに大きく依存しているサイトでは、ルートドキュメントが唯一のファーストパーティのリクエストになっているかもしれません。
 
 <!-- insert graphic of metric 05_11 -->
-<!-- {{ figure_markup() }} -->
 
 各サードパーティプロバイダーが発行するリクエストの数も、カテゴリーによって大きく異なります。アナリティクスはウェブサイトで最も普及しているサードパーティのカテゴリーですが、サードパーティのネットワークリクエスト全体のわずか7％にすぎません。一方、広告は、サイト数が20％近く少ないにもかかわらず、サードパーティのネットワークリクエスト全体の25％を占めています。彼らの人気に比べてリソースへの影響が桁違いに大きいことは、残りのデータからも明らかにしていくテーマになるでしょう。
 
@@ -176,10 +269,7 @@ featured_stat_label_3: サードパーティのバイト数
   )
 }}
 
-<!--
-
-```<insert graphic of metric 05_12>```
--->
+<!--```<insert graphic of metric 05_12>```-->
 
 具体的なサードパーティプロバイダについては、リクエスト数リーダーボードの上位にいる大手プロバイダがバイト数でも登場しています。注目すべき動きは、YouTube、Shopify、Twitterのようなメディアを中心とした大手プロバイダがバイトインパクトチャートの上位にランクインしていることくらいです。
 
@@ -199,7 +289,7 @@ featured_stat_label_3: サードパーティのバイト数
 
 <!--```<insert table of metric 05_10>```-->
 
-個々のプロバイダの人気とパフォーマンスの影響については、多くのことが言えるかもしれませんが、より意見の多い分析は読者のための演習として残されていますし先に述べた [サードパーティウェブ](https://thirdpartyweb.today) のような他の目的のために構築されたツールもあります。
+個々のプロバイダの人気とパフォーマンスの影響については、多くのことが言えるかもしれませんが、より意見の多い分析は読者のための演習として残されていますし先に述べた <a hreflang="en" href="https://thirdpartyweb.today">サードパーティウェブ</a> のような他の目的のために構築されたツールもあります。
 
 ## 使用パターン
 
@@ -213,7 +303,7 @@ featured_stat_label_3: サードパーティのバイト数
 
 ### ウェブトラフィックの収益化
 
-ウェブのオープンモデルは、コンテンツ制作者の金銭的利益を必ずしも満足させるものではなく、多くのサイト所有者は広告でサイトを収益化することに頼っています。広告主との直接の関係を構築し、価格契約を交渉するのは比較的難しく時間のかかるプロセスであるため、この懸念はターゲット広告とリアルタイム入札を行うサードパーティのプロバイダーによって主に処理されています。否定的な世論の広がり、広告ブロッキング技術の普及、ヨーロッパなどの主要な世界市場での規制措置は、収益化のためにサードパーティのプロバイダを継続的に使用する最大の脅威となっています。サイト所有者が突然独自の広告契約を結んだり特注の広告ネットワークを構築したりすることは考えにくいですが、ペイウォールやBraveの[Basic Attention Token](https://basicattentiontoken.org/)のような実験のような代替的なマネタイズモデルは、将来のサードパーティの広告業界を揺るがす可能性を秘めています。
+ウェブのオープンモデルは、コンテンツ制作者の金銭的利益を必ずしも満足させるものではなく、多くのサイト所有者は広告でサイトを収益化することに頼っています。広告主との直接の関係を構築し、価格契約を交渉するのは比較的難しく時間のかかるプロセスであるため、この懸念はターゲット広告とリアルタイム入札を行うサードパーティのプロバイダーによって主に処理されています。否定的な世論の広がり、広告ブロッキング技術の普及、ヨーロッパなどの主要な世界市場での規制措置は、収益化のためにサードパーティのプロバイダを継続的に使用する最大の脅威となっています。サイト所有者が突然独自の広告契約を結んだり特注の広告ネットワークを構築したりすることは考えにくいですが、ペイウォールやBraveの<a hreflang="en" href="https://basicattentiontoken.org/">Basic Attention Token</a>のような実験のような代替的なマネタイズモデルは、将来のサードパーティの広告業界を揺るがす可能性を秘めています。
 
 ### 開発の簡素化
 
@@ -249,9 +339,9 @@ featured_stat_label_3: サードパーティのバイト数
 
 ### セキュリティ
 
-セキュリティのトピックについては [セキュリティ](./security) の章で詳しく説明していますが、サイトに外部の依存関係を導入することによるセキュリティへの影響は、プライバシーへの懸念と密接に関連しています。第三者が任意のJavaScriptを実行できるようにすることは、あなたのページを完全に制御できます。スクリプトがDOMと`window`を制御できれば、すべてのことができるようになります。たとえコードにセキュリティ上の懸念がなくても、単一の障害点を導入できます[これは以前から潜在的な問題として認識されていました](https://www.stevesouders.com/blog/2010/06/01/frontend-spof/)。
+セキュリティのトピックについては [セキュリティ](./security) の章で詳しく説明していますが、サイトに外部の依存関係を導入することによるセキュリティへの影響は、プライバシーへの懸念と密接に関連しています。第三者が任意のJavaScriptを実行できるようにすることは、あなたのページを完全に制御できます。スクリプトがDOMと`window`を制御できれば、すべてのことができるようになります。たとえコードにセキュリティ上の懸念がなくても、単一の障害点を導入できます<a hreflang="en" href="https://www.stevesouders.com/blog/2010/06/01/frontend-spof/">これは以前から潜在的な問題として認識されていました</a>。
 
-[サードパーティのコンテンツをセルフホスティングする](https://csswizardry.com/2019/05/self-host-your-static-assets/) は、ここで述べた懸念事項のいくつかとその他の懸念事項に対応しています。さらに、ブラウザが [HTTPキャッシュのパーティショニング](https://chromestatus.com/feature/5730772021411840) を増やしていることから、サードパーティから直接読み込むことのメリットはますます疑問視されています。おそらく多くのユースケースでサードパーティのコンテンツを利用するには、その影響を測定することが難しくなってもこの方法の方が良いでしょう。
+<a hreflang="en" href="https://csswizardry.com/2019/05/self-host-your-static-assets/">サードパーティのコンテンツをセルフホスティングする</a> は、ここで述べた懸念事項のいくつかとその他の懸念事項に対応しています。さらに、ブラウザが <a hreflang="en" href="https://chromestatus.com/feature/5730772021411840">HTTPキャッシュのパーティショニング</a> を増やしていることから、サードパーティから直接読み込むことのメリットはますます疑問視されています。おそらく多くのユースケースでサードパーティのコンテンツを利用するには、その影響を測定することが難しくなってもこの方法の方が良いでしょう。
 
 ## 結論
 

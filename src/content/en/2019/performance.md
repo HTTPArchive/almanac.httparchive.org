@@ -1,6 +1,5 @@
 ---
-part_number: II
-chapter_number: 7
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Performance
 description: Performance chapter of the 2019 Web Almanac covering First Contentful Paint (FCP), Time to First Byte (TTFB), and First Input Delay (FID).
 authors: [rviscomi]
@@ -10,8 +9,7 @@ editors: [rachellcostello]
 translators: []
 discuss: 1762
 results: https://docs.google.com/spreadsheets/d/1zWzFSQ_ygb-gGr1H1BsJCfB7Z89zSIf7GX0UayVEte4/
-queries: 07_Performance
-rviscomi_bio: Rick Viscomi is a Senior Developer Programs Engineer at Google, working on web transparency projects like the HTTP Archive and Chrome UX Report, and studying the intersection of how websites are built and experienced. Rick is the host of <a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a> in which experts discuss how the web is trending. Rick is the coauthor of <a href="https://usingwpt.com">Using WebPageTest</a>, a guide for testing web performance, and writes frequently about the web on <a href="https://dev.to/rick_viscomi">dev.to</a> and on Twitter at <a href="https://twitter.com/rick_viscomi">@rick_viscomi</a>.
+rviscomi_bio: Rick Viscomi is a Senior Developer Programs Engineer at Google, working on web transparency projects like the HTTP Archive and Chrome UX Report, and studying the intersection of how websites are built and experienced. Rick is the host of <a hreflang="en" href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a> in which experts discuss how the web is trending. Rick is the coauthor of <a hreflang="en" href="https://usingwpt.com">Using WebPageTest</a>, a guide for testing web performance, and writes frequently about the web on <a hreflang="en" href="https://dev.to/rick_viscomi">dev.to</a> and on Twitter at <a href="https://twitter.com/rick_viscomi">@rick_viscomi</a>.
 featured_quote: Performance is a visceral part of the user experience. For many websites, an improvement to the user experience by speeding up the page load time aligns with an improvement to conversion rates. Conversely, when performance is poor, users don't convert as often and have even been observed to be rage clicking on the page in frustration.
 featured_stat_1: 13%
 featured_stat_label_1: Sites with fast FCP
@@ -23,7 +21,7 @@ featured_stat_label_3: Sites with fast FID
 
 ## Introduction
 
-Performance is a visceral part of the user experience. For [many websites](https://wpostats.com/), an improvement to the user experience by speeding up the page load time aligns with an improvement to conversion rates. Conversely, when performance is poor, users don't convert as often and have even been observed to be [rage clicking](https://blog.fullstory.com/rage-clicks-turn-analytics-into-actionable-insights/) on the page in frustration.
+Performance is a visceral part of the user experience. For <a hreflang="en" href="https://wpostats.com/">many websites</a>, an improvement to the user experience by speeding up the page load time aligns with an improvement to conversion rates. Conversely, when performance is poor, users don't convert as often and have even been observed to be <a hreflang="en" href="https://blog.fullstory.com/rage-clicks-turn-analytics-into-actionable-insights/">rage clicking</a> on the page in frustration.
 
 There are many ways to quantify web performance. The most important thing is to measure what actually matters to users. However, events like `onload` or `DOMContentLoaded` may not necessarily reflect what users experience visually. For example, when loading an email client, it might show an interstitial progress bar while the inbox contents load asynchronously. The problem is that the `onload` event doesn't wait for the inbox to asynchronously load. In this example, the loading metric that matters most to users is the "time to inbox", and focusing on the `onload` event may be misleading. For that reason, this chapter will look at more modern and universally applicable paint, load, and interactivity metrics to try to capture how users are actually experiencing the page.
 
@@ -31,7 +29,7 @@ There are two kinds of performance data: lab and field. You may have heard these
 
 ## The state of performance
 
-Almost all of the other chapters in the Web Almanac are based on data from the [HTTP Archive](https://httparchive.org/). However, in order to capture how real users experience the web, we need a different dataset. In this section, we're using the [Chrome UX Report](http://bit.ly/chrome-ux-report) (CrUX), a public dataset from Google that consists of all the same websites as the HTTP Archive, and aggregates how Chrome users actually experience them. Experiences are categorized by:
+Almost all of the other chapters in the Web Almanac are based on data from the <a hreflang="en" href="https://httparchive.org/">HTTP Archive</a>. However, in order to capture how real users experience the web, we need a different dataset. In this section, we're using the [Chrome UX Report](http://bit.ly/chrome-ux-report) (CrUX), a public dataset from Google that consists of all the same websites as the HTTP Archive, and aggregates how Chrome users actually experience them. Experiences are categorized by:
 
 - The form factor of the users' devices
   - Desktop
@@ -45,7 +43,7 @@ Almost all of the other chapters in the Web Almanac are based on data from the [
   - 4G
 - Users' geographic locations
 
-Experiences are measured monthly, including paint, load, and interactivity metrics. The first metric we'll look at is [First Contentful Paint](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint) (FCP). This is the time users spend waiting for the page to display something useful to the screen, like an image or text. Then, we'll look at look at a loading metric, [Time to First Byte](https://developer.mozilla.org/en-US/docs/Glossary/time_to_first_byte) (TTFB). This is a measure of how long the web page took from the time of the user's navigation until they received the first byte of the response. And, finally, the last field metric we'll look at is [First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay) (FID). This is a relatively new metric and one that represents parts of the UX other than loading performance. It measures the time from a user's first interaction with a page's UI until the time the browser's main thread is ready to process the event.
+Experiences are measured monthly, including paint, load, and interactivity metrics. The first metric we'll look at is <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint">First Contentful Paint</a> (FCP). This is the time users spend waiting for the page to display something useful to the screen, like an image or text. Then, we'll look at look at a loading metric, [Time to First Byte](https://developer.mozilla.org/en-US/docs/Glossary/time_to_first_byte) (TTFB). This is a measure of how long the web page took from the time of the user's navigation until they received the first byte of the response. And, finally, the last field metric we'll look at is <a hreflang="en" href="https://developers.google.com/web/updates/2018/05/first-input-delay">First Input Delay</a> (FID). This is a relatively new metric and one that represents parts of the UX other than loading performance. It measures the time from a user's first interaction with a page's UI until the time the browser's main thread is ready to process the event.
 
 So let's dive in and see what insights we can find.
 
@@ -63,7 +61,7 @@ In Figure 7.1 above, you can see how FCP experiences are distributed across the 
 
 <p class="note">Note: When a user experiences slow performance, it's hard to say what the reason might be. It could be that the website itself was built poorly and inefficiently. Or there could be other environmental factors like the user's slow connection, empty cache, etc. So, when looking at this field data we prefer to say that the user experiences themselves are slow, and not necessarily the websites.</p>
 
-In order to categorize whether a website is sufficiently **fast** we will use the new [PageSpeed Insights](https://developers.google.com/speed/docs/insights/v5/about#categories) (PSI) methodology, where at least 75% of the website's FCP experiences must be faster than 1 second. Similarly, a sufficiently **slow** website has 25% or more FCP experiences slower than 3 seconds. We say a website has **moderate** performance when it doesn't meet either of these conditions.
+In order to categorize whether a website is sufficiently **fast** we will use the new <a hreflang="en" href="https://developers.google.com/speed/docs/insights/v5/about#categories">PageSpeed Insights</a> (PSI) methodology, where at least 75% of the website's FCP experiences must be faster than 1 second. Similarly, a sufficiently **slow** website has 25% or more FCP experiences slower than 3 seconds. We say a website has **moderate** performance when it doesn't meet either of these conditions.
 
 {{ figure_markup(
   image="fig2.png",
@@ -81,7 +79,6 @@ To help us understand how users experience FCP across different devices, let's s
 
 {{ figure_markup(
   image="fig3.png",
-  alt="Distribution of desktop websites' fast, moderate, and slow FCP performance.",
   caption="Distribution of <em>desktop</em> websites' fast, moderate, and slow FCP performance.",
   description="Distribution of 1,000 desktop websites' fast, moderate, and slow FCP. The distribution of fast FCP appears to be linear from 100% to 0% with a slight bulge in the middle.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1231764008&format=interactive"
@@ -90,7 +87,6 @@ To help us understand how users experience FCP across different devices, let's s
 
 {{ figure_markup(
   image="fig4.png",
-  alt="Distribution of phone websites' fast, moderate, and slow FCP performance.",
   caption="Distribution of <em>phone</em> websites' fast, moderate, and slow FCP performance.",
   description="Distribution of 1,000 mobile websites' fast, moderate, and slow FCP. The distribution of fast FCP appears to be linear from 100% to 0% without the same middle bulge seen for desktop websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=167423587&format=interactive"
@@ -115,7 +111,6 @@ Why might desktop users experience fast FCP on a higher proportion of websites t
 
 {{ figure_markup(
   image="fig6.png",
-  alt="Distribution of websites labeled as having fast, moderate, or slow FCP, broken down by ECT (Effective Connection Type).",
   caption='Distribution of websites labeled as having fast, moderate, or slow FCP, broken down by <abbr title="effective connection type">ECT</abbr>.',
   description="Bar chart of FCP distributions per effective connection type. 4G fast, moderate, slow: 14%, 67%, and 19% respectively. 3G: 1%, 38%, and 61%. 2G: 0%, 9%, 90%. Slow 2G: 0%, 1%, 99%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1987967547&format=interactive"
@@ -144,7 +139,7 @@ Other APAC geos tell a different story. Thailand, Vietnam, Indonesia, and India 
 
 ### Time to First Byte (TTFB)
 
-[Time to First Byte](https://web.dev/time-to-first-byte) (TTFB) is a measure of how long the web page took from the time of the user's navigation until they received the first byte of the response.
+<a hreflang="en" href="https://web.dev/time-to-first-byte">Time to First Byte</a> (TTFB) is a measure of how long the web page took from the time of the user's navigation until they received the first byte of the response.
 
 {{ figure_markup(
   image="nav-timing.png",
@@ -165,7 +160,7 @@ To help explain TTFB and the many factors that affect it, let's borrow a diagram
   )
 }}
 
-Similar to the FCP chart in Figure 7.1, this is a view of 1,000 representative samples ordered by fast TTFB. A [fast TTFB](https://developers.google.com/speed/docs/insights/Server#recommendations) is one that happens in under 0.2 seconds (200 ms), a slow TTFB happens in 1 second or more, and everything in between is moderate.
+Similar to the FCP chart in Figure 7.1, this is a view of 1,000 representative samples ordered by fast TTFB. A <a hreflang="en" href="https://developers.google.com/speed/docs/insights/Server#recommendations">fast TTFB</a> is one that happens in under 0.2 seconds (200 ms), a slow TTFB happens in 1 second or more, and everything in between is moderate.
 
 Looking at the curve of the fast proportions, the shape is quite different from that of FCP. There are very few websites that have a fast TTFB greater than 75%, while more than half are below 25%.
 
@@ -199,7 +194,7 @@ Now let's look at the percent of websites serving fast TTFB to users in differen
 
 ### First Input Delay
 
-The last field metric we'll look at is [First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay) (FID). This metric represents the time from a user's first interaction with a page's UI until the time the browser's main thread is ready to process the event. Note that this doesn't include the time applications spend actually handling the input. At worst, slow FID results in a page that appears unresponsive and a frustrating user experience.
+The last field metric we'll look at is <a hreflang="en" href="https://developers.google.com/web/updates/2018/05/first-input-delay">First Input Delay</a> (FID). This metric represents the time from a user's first interaction with a page's UI until the time the browser's main thread is ready to process the event. Note that this doesn't include the time applications spend actually handling the input. At worst, slow FID results in a page that appears unresponsive and a frustrating user experience.
 
 Let's start by defining some thresholds. According to the new PSI methodology, a **fast** FID is one that happens in less than 100 ms. This gives the application enough time to handle the input event and provide feedback to the user in a time that feels instantaneous. A **slow** FID is one that happens in 300 ms or more. Everything in between is **moderate**.
 
@@ -229,7 +224,6 @@ Compared to the previous metrics, the distribution of aggregate FID performance 
 
 {{ figure_markup(
   image="fig14.png",
-  alt="Distribution of desktop websites' fast, moderate, and slow FID performance.",
   caption="Distribution of <em>desktop</em> websites' fast, moderate, and slow FID performance.",
   description="Distribution of 1,000 desktop websites' fast, moderate, and slow FID. The distribution of fast FID decreases very slowly from 100% to 90% for the fastest three quarters of websites. After that, fast FID decreases slightly to 75%. Nearly all desktop websites have more than 75% fast FID experiences.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=16379508&format=interactive"
@@ -238,7 +232,6 @@ Compared to the previous metrics, the distribution of aggregate FID performance 
 
 {{ figure_markup(
   image="fig15.png",
-  alt="Distribution of phone websites' fast, moderate, and slow FID performance.",
   caption="Distribution of <em>phone</em> websites' fast, moderate, and slow FID performance.",
   description="Distribution of 1,000 mobile websites' fast, moderate, and slow FID. The distribution of fast FID declines steadily but much more quickly than desktop. It reaches 75% fast for at three quarters of websites then quickly drops to 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=519511409&format=interactive"
@@ -261,8 +254,7 @@ When we apply the PSI labeling to desktop and phone experiences, the distinction
 
 {{ figure_markup(
   image="fig17.png",
-  alt='Distribution of websites labeled as having fast, moderate, or slow FID, broken down by ECT.",
-  caption="Distribution of websites labeled as having fast, moderate, or slow FID, broken down by <abbr title="effective connection type">ECT</abbr>.',
+  caption='Distribution of websites labeled as having fast, moderate, or slow FID, broken down by <abbr title="effective connection type">ECT</abbr>.',
   description="Bar chart of FID distributions per effective connection type. 4G fast, moderate, slow: 41%, 45%, and 15% respectively. 3G: 22%, 52%, and 26%. 2G: 19%, 58%, 23%. Slow 2G: 15%, 58%, 27%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1173039776&format=interactive"
   )
@@ -296,6 +288,6 @@ Quantifying how fast a web page loads is an imperfect science that can't be repr
 
 The data presented in this chapter showed that there is still a lot of work to do to meet the goals set for fast websites. Certain form factors, effective connection types, and geos do correlate with better user experiences, but we can't forget about the combinations of demographics with poor performance. In many cases, the web platform is used for business; making more money from improving conversion rates can be a huge motivator for speeding up a website. Ultimately, for all websites, performance is about delivering positive experiences to users in a way that doesn't impede, frustrate, or enrage them.
 
-As the web gets another year older and our ability to measure how users experience it improves incrementally, I'm looking forward to developers having access to metrics that capture more of the holistic user experience. FCP is very early on the timeline of showing useful content to users, and newer metrics like [Largest Contentful Paint](https://web.dev/largest-contentful-paint) (LCP) are emerging to improve our visibility into how page loads are perceived. The [Layout Instability API](https://web.dev/layout-instability-api) has also given us a novel glimpse into the frustration users experience beyond page load.
+As the web gets another year older and our ability to measure how users experience it improves incrementally, I'm looking forward to developers having access to metrics that capture more of the holistic user experience. FCP is very early on the timeline of showing useful content to users, and newer metrics like <a hreflang="en" href="https://web.dev/largest-contentful-paint">Largest Contentful Paint</a> (LCP) are emerging to improve our visibility into how page loads are perceived. The <a hreflang="en" href="https://web.dev/layout-instability-api">Layout Instability API</a> has also given us a novel glimpse into the frustration users experience beyond page load.
 
 Equipped with these new metrics, the web in 2020 will become even more transparent, better understood, and give developers an advantage to make more meaningful progress to improve performance and contribute to positive user experiences.

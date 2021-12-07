@@ -1,0 +1,26 @@
+{% extends "%s/base.html" % lang %}
+
+{% block methodology_stat_1 %}7.5M{% endblock %}
+{% block methodology_stat_2 %}31.3 TB{% endblock %}
+{% block total_websites %}7.5 milyonun üzerinde{% endblock %}
+{% block dataset %}Ağustos 2020{% endblock %}
+
+{% block foreword %}
+  <p>
+    2020, çoğumuzun unutmak istediği bir yıl oldu. Bizimki kadar küreselleşmiş bir topluluğun, COVID-19 salgını ve ırkçı adaletsizliğe karşı protestolar kadar geniş kapsamlı olaylardan etkilenmesi nadirdir. Bu olaylar, neredeyse bizi bu yıl projeyi yeniden başlatmaktan alıkoydu—pek çok kişi fiziksel ve duygusal olarak tükendi, bırakın bunun için zaman ve enerjiye sahip olmayı, herhangi birinin katkıda bulunmasını <em>istemeyi</em> nasıl bekleyebilirdik? Hâlâ topluluğun ilgisinin olduğunu umarak temkinli hareket ettik.
+  </p>
+
+  <p>
+    Web Almanac&#8217;ın bu basımnının amacı 2020&#8217;yi unutmamak, ama onu anmaktır. Daha iyi ya da daha kötü, bu bizim tarihimizde bir bölümdür. Bu yılın tüm dışsal baskılarına rağmen, web topluluğundan <em>100&#8217;ün üzerinde<a href="./contributors">katkıda bulunanlar</a></em> kaydoldu, 2020&#8217;yi ve web&#8217;in durumunu hatırlamaya adanmış bir proje için zamanlarının sayısız saatlerini gönüllü olarak çalıştılar. Şaşırtıcı bir şekilde, üç yeni bölüm ekleyerek ve yalnızca bir bölüm çıkartarak, bu yılki basımın kapsamını <em>genişletmeyi</em> başardık.
+  </p>
+
+  <p>
+    Katkıda bulunanlara proje hakkında en çok neyden neşe duyduklarını sorduğumda, cevap neredeyse her zaman insanlar hakkındadır. Biz takım olarak birlikte çalışırız, biz birbirimizi destekleriz, ve sadece beş ay içinde 600 sayfalık bir kitabın eşdeğerini oluşturabildik! Bu çok büyük bir zorluktu, ve dünyanın sorunlarını çözmemiş olsak da, insanlar birlikte çalışmayı seçtiklerinde neyin mümkün olduğunu gösterdik.
+  </p>
+
+  <p>
+    Lütfen 2020 Web Almanac&#8217;ın keyfini çıkarın, web için duyduğumuz sevgi emeğimizin doruk noktası. Eğer takıma katılmak isterseniz, <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/CONTRIBUTING.md">bu linke ulaştığınızdan</a> emin olun.
+  </p>
+
+  <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Web Almanac Genel Yayın Sorumlusu</em></p>
+{% endblock %}

@@ -1,17 +1,15 @@
 ---
-part_number: IV
-chapter_number: 15
+#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 圧縮
 description: HTTP圧縮、アルゴリズム、コンテンツタイプ、ファーストパーティとサードパーティの圧縮および機会をカバーする2019 Web Almanacの圧縮の章。
 authors: [paulcalvano]
 reviewers: [obto, yoavweiss]
 analysts: [paulcalvano]
-editors: [bazzadp]
-translators: [ksakae]
+editors: [tunetheweb]
+translators: [ksakae1216]
 discuss: 1770
 results: https://docs.google.com/spreadsheets/d/1IK9kaScQr_sJUwZnWMiJcmHEYJV292C9DwCfXH6a50o/
-queries: 15_Compression
-paulcalvano_bio: Paul Calvanoは、<a href="https://www.akamai.com/">アカマイ</a> のウェブパフォーマンス・アーキテクトで、ウェブサイトのパフォーマンス向上を支援しています。また、HTTP Archiveプロジェクトの共同管理者でもあります。<a href="https://twitter.com/paulcalvano">@paulcalvano</a> でツイートしたり、<a href="https://paulcalvano.com">http://paulcalvano.com</a> でブログを書いたり、<a href="https://discuss.httparchive.org">https://discuss.httparchive.org</a> でHTTP Archiveの研究を共有したりしています。
+paulcalvano_bio: Paul Calvanoは、<a hreflang="en" href="https://www.akamai.com/">アカマイ</a> のウェブパフォーマンス・アーキテクトで、ウェブサイトのパフォーマンス向上を支援しています。また、HTTP Archiveプロジェクトの共同管理者でもあります。<a href="https://twitter.com/paulcalvano">@paulcalvano</a> でツイートしたり、<a hreflang="en" href="https://paulcalvano.com">http://paulcalvano.com</a> でブログを書いたり、<a hreflang="en" href="https://discuss.httparchive.org">https://discuss.httparchive.org</a> でHTTP Archiveの研究を共有したりしています。
 featured_quote: HTTP圧縮とは、元の表現よりも少ないビット数で情報をエンコードすることを可能にする技術です。ウェブコンテンツの配信に使用すると、ウェブサーバーがクライアントに送信するデータ量を減らすことができます。これにより、クライアントの利用可能な帯域幅の効率が向上し、ページの重さが軽減され、ウェブパフォーマンスが向上します。
 featured_stat_1: 38%
 featured_stat_label_1: テキストベースの圧縮を使用したHTTPレスポンス
@@ -32,13 +30,11 @@ HTTP圧縮は、元の表現よりも少ないビットを使用して情報を�
 
 この章では、テキストベースのコンテンツがWeb上でどのように圧縮されるかを検討します。非テキストベースのコンテンツの分析は、[メディア](./media)の章の一部を形成します。
 
-
 ## HTTP圧縮の仕組み
 
 クライアントがHTTPリクエストを作成する場合、多くの場合、デコード可能な圧縮アルゴリズムを示す[`Accept-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding)ヘッダーが含まれます。サーバーは、示されたエンコードのいずれかを選択してサポートし、圧縮されたレスポンスを提供できます。圧縮されたレスポンスには[`Content-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding)ヘッダーが含まれるため、クライアントはどの圧縮が使用されたかを認識できます。また、提供されるリソースの[MIME](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)タイプを示すために、[`Content-Type`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type)ヘッダーがよく使用されます。
 
 以下の例では、クライアントはGzip、Brotli、およびDeflate圧縮のサポートを示してます。サーバーは、`text/html`ドキュメントを含むGzip圧縮された応答を返すことにしました。
-
 
 ```
     > GET / HTTP/1.1
@@ -50,17 +46,15 @@ HTTP圧縮は、元の表現よりも少ないビットを使用して情報を�
     < Content-encoding: gzip
 ```
 
-
 HTTP Archiveには、530万のWebサイトの測定値が含まれており、各サイトには少なくとも1つの圧縮テキストリソースがホームページにロードされています。さらに、リソースはWebサイトの81％のプライマリドメインで圧縮されました。
-
 
 ## 圧縮アルゴリズム
 
-IANAは、`Accept-Encoding`および`Content-Encoding`ヘッダーで使用できる有効な[HTTPコンテンツエンコーディングのリスト](https://www.iana.org/assignments/http-parameters/http-parameters.xml#content-coding)を保持しています。これらには、`gzip`、`deflate`、`br`（Brotli）などが含まれます。これらのアルゴリズムの簡単な説明を以下に示します。
+IANAは、`Accept-Encoding`および`Content-Encoding`ヘッダーで使用できる有効な<a hreflang="en" href="https://www.iana.org/assignments/http-parameters/http-parameters.xml#content-coding">HTTPコンテンツエンコーディングのリスト</a>を保持しています。これらには、`gzip`、`deflate`、`br`（Brotli）などが含まれます。これらのアルゴリズムの簡単な説明を以下に示します。
 
-* [Gzip](https://tools.ietf.org/html/rfc1952)は、[LZ77](https://ja.wikipedia.org/wiki/LZ77)および[ハフマンコーディング](https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%95%E3%83%9E%E3%83%B3%E7%AC%A6%E5%8F%B7)圧縮技術を使用しており、Web自体よりも古い。もともと1992年にUNIX `gzip`プログラム用として開発されました。HTTP/ 1.1以降、Web配信の実装が存在し、ほとんどのブラウザーとクライアントがそれをサポートしています。
-* [Deflate](https://tools.ietf.org/html/rfc1951)はGzipと同じアルゴリズムを使用しますが、コンテナは異なります。一部のサーバーおよびブラウザとの互換性の問題のため、Webでの使用は広く採用されていません。
-* [Brotli](https://tools.ietf.org/html/rfc7932)は、[Googleが発明](https://github.com/google/brotli)した新しい圧縮アルゴリズムです。 LZ77アルゴリズムの最新のバリアント、ハフマンコーディング、および2次コンテキストモデリングの組み合わせを使用します。 Brotliを介した圧縮はGzipと比較して計算コストが高くなりますが、アルゴリズムはGzip圧縮よりもファイルを[15〜25％](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf)削減できます。 Brotliは2015年にWebコンテンツの圧縮に初めて使用され、[すべての最新のWebブラウザーでサポートされています](https://caniuse.com/#feat=brotli)。
+* <a hreflang="en" href="https://tools.ietf.org/html/rfc1952">Gzip</a>は、[LZ77](https://ja.wikipedia.org/wiki/LZ77)および[ハフマンコーディング](https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%95%E3%83%9E%E3%83%B3%E7%AC%A6%E5%8F%B7)圧縮技術を使用しており、Web自体よりも古い。もともと1992年にUNIX `gzip`プログラム用として開発されました。HTTP/ 1.1以降、Web配信の実装が存在し、ほとんどのブラウザーとクライアントがそれをサポートしています。
+* <a hreflang="en" href="https://tools.ietf.org/html/rfc1951">Deflate</a>はGzipと同じアルゴリズムを使用しますが、コンテナは異なります。一部のサーバーおよびブラウザとの互換性の問題のため、Webでの使用は広く採用されていません。
+* <a hreflang="en" href="https://tools.ietf.org/html/rfc7932">Brotli</a>は、<a hreflang="en" href="https://github.com/google/brotli">Googleが発明</a>した新しい圧縮アルゴリズムです。 LZ77アルゴリズムの最新のバリアント、ハフマンコーディング、および2次コンテキストモデリングの組み合わせを使用します。 Brotliを介した圧縮はGzipと比較して計算コストが高くなりますが、アルゴリズムはGzip圧縮よりもファイルを<a hreflang="en" href="https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf">15〜25％</a>削減できます。 Brotliは2015年にWebコンテンツの圧縮に初めて使用され、<a hreflang="en" href="https://caniuse.com/#feat=brotli">すべての最新のWebブラウザーでサポートされています</a>。
 
 HTTPレスポンスの約38％はテキストベースの圧縮で配信されます。これは驚くべき統計のように思えるかもしれませんが、データセット内のすべてのHTTP要求に基づいていることに留意してください。画像などの一部のコンテンツは、これらの圧縮アルゴリズムの恩恵を受けません。次の表は、各コンテンツエンコーディングで処理されるリクエストの割合をまとめたものです。
 
@@ -163,10 +157,9 @@ HTTPレスポンスの約38％はテキストベースの圧縮で配信され�
 
 HTTP Archiveによって収集された診断から圧縮レベルを判断することはできませんが、コンテンツを圧縮するためのベストプラクティスは次のとおりです。
 
-* 少なくとも、テキストベースのアセットに対してGzip圧縮レベル6を有効にします。これは、計算コストと圧縮率の間の公平なトレードオフを提供し、[多くのWebサーバーのデフォルト](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/)にもかかわらず、[Nginxは依然として低すぎることが多いレベル1のままです](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level)。
+* 少なくとも、テキストベースのアセットに対してGzip圧縮レベル6を有効にします。これは、計算コストと圧縮率の間の公平なトレードオフを提供し、<a hreflang="en" href="https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/">多くのWebサーバーのデフォルト</a>にもかかわらず、[Nginxは依然として低すぎることが多いレベル1のままです](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level)。
 * Brotliおよびprecompressリソースをサポートできる場合は、Brotliレベル11に圧縮します。これはGzipよりも計算コストが高くなります。したがって、遅延を避けるためには、事前圧縮が絶対に必要です。
 * Brotliをサポートでき、事前圧縮できない場合は、Brotliレベル5に圧縮します。このレベルでは、Gzipと比較してペイロードが小さくなり、同様の計算オーバーヘッドが発生します。
-
 
 ## どの種類のコンテンツを圧縮していますか？
 
@@ -323,7 +316,7 @@ HTTP Archiveによって収集された診断から圧縮レベルを判断す�
 
 ## 圧縮の機会を見分ける
 
-Googleの[Lighthouse](https://developers.google.com/web/tools/lighthouse)ツールを使用すると、ユーザーはWebページに対して一連の監査を実行できます。[テキスト圧縮監査](https://developers.google.com/web/tools/lighthouse/audits/text-compression)は、サイトが追加のテキストベースの圧縮の恩恵を受けることができるかどうかを評価します。これは、リソースを圧縮し、オブジェクトのサイズを少なくとも10％と1,400バイト削減できるかどうかを評価することでこれを行います。スコアに応じて、圧縮可能な特定のリソースのリストとともに、結果に圧縮の推奨事項を表示する場合があります。
+Googleの<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a>ツールを使用すると、ユーザーはWebページに対して一連の監査を実行できます。<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/text-compression">テキスト圧縮監査</a>は、サイトが追加のテキストベースの圧縮の恩恵を受けることができるかどうかを評価します。これは、リソースを圧縮し、オブジェクトのサイズを少なくとも10％と1,400バイト削減できるかどうかを評価することでこれを行います。スコアに応じて、圧縮可能な特定のリソースのリストとともに、結果に圧縮の推奨事項を表示する場合があります。
 
 {{ figure_markup(
   image="ch15_fig8_lighthouse.jpg",
