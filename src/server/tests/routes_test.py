@@ -125,6 +125,14 @@ def test_render_sitemap(client):
     assert_route(client, '/sitemap.xml', 200)
 
 
+def test_render_en_rss(client):
+    assert_route(client, '/en/rss.xml', 200)
+
+
+def test_render_base_rss(client):
+    assert_route(client, '/base/rss.xml', 404)
+
+
 def test_render_en_2019_good_chapter(client):
     assert_route(client, '/en/2019/css', 200)
 

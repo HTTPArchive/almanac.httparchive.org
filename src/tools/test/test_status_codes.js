@@ -75,6 +75,19 @@ const test_sitemap_pages = async () => {
   }
 }
 
+const test_rss = async () => {
+  const rss_languages_only = new Set();
+  for (const year in languages) {
+    for (const language in languages[year]) {
+      rss_languages_only.add(languages[year][language]);
+    }
+  }
+
+  for (let language of rss_languages_only.keys()) {
+    await test_status_code(`/${language}/rss.xml`, 200);
+  }
+}
+
 const test_ebooks = async () => {
   for (const year in ebooks) {
     for (const language in ebooks[year]) {
@@ -117,6 +130,7 @@ const test_status_codes = async () => {
 
   // Test success pages
   await test_sitemap_pages();
+  await test_rss();
   await test_ebooks();
   await test_search();
   await test_status_code('/sitemap.xml', 200);
