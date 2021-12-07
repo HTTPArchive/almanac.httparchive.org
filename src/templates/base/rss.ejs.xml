@@ -1,0 +1,27 @@
+{% extends "%s/%s/base.html" % (lang, year) -%}
+{% block html -%}
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>{{ self.organization() }}</title>
+    <link rel="alternate" type="text/html" href="https://almanac.httparchive.org/{{ lang }}/" />
+    <updated><%= (new Date()).toISOString(); %></updated>
+    <link href="https://almanac.httparchive.org/{{ lang }}/rss.xml" rel="self" type="application/rss+xml"/>
+    <id>https://almanac.httparchive.org/{{ lang }}/rss.xml</id>
+<% for (let url of urls ) { -%>
+<% if (url.language == language) { -%>
+    <entry>
+        <title><%= url.title %></title>
+        <link href="https://almanac.httparchive.org/<%= url.url %>" />
+        <summary><%= url.description %></summary>
+        <id>https://almanac.httparchive.org/<%= url.url %></id>
+        <% if (url.pubdate) { %><published><%= url.pubdate %></published><% } %>
+        <% if (url.updatedate) { %><updated><%= url.pubdate %></updated><% } %>
+        {%- for author in [<%- url.authors %>] %}
+        <author>
+            <name>{{ author }}</name>
+        </author>
+        {%- endfor %}
+    </entry>
+<% } -%><% } -%>
+</feed>
+{%- endblock %}

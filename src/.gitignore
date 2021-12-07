@@ -4,6 +4,7 @@ node_modules/
 templates/*/*/chapters/
 templates/*/*/featured_chapters.html
 templates/*/*/ebook.html
+templates/*/rss.xml
 templates/sitemap.xml
 static/html/
 deployed.zip

@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CDN
-description: CDN chapter of the 2019 Web Almanac covering CDN adoption and usage, RTT & TLS management, HTTP/2 adoption, caching and common library and content CDNs.
+description: CDN chapter of the 2019 Web Almanac covering CDN adoption and usage, RTT and TLS management, HTTP/2 adoption, caching and common library and content CDNs.
 authors: [andydavies, colinbendell]
 reviewers: [yoavweiss, paulcalvano, pmeenan, enygren]
 analysts: [raghuramakrishnan71, rviscomi]

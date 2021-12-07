@@ -708,7 +708,7 @@ Making your website accessible should not be an afterthought. However, there is 
 
 In our research, we found that less than 1% of websites had third-party accessibility tools on their homepage.
 
-Further information on such tools can be found in the [Accessibility](./accessibility#captchas) chapter.
+Further information on such tools can be found in the [Accessibility](./accessibility#accessibility-overlays) chapter.
 
 ### AMP
 
