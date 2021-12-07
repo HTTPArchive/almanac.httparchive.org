@@ -113,7 +113,7 @@ Note that throughout the rest of this analysis, we have excluded single-pixel `<
 
 When `<img>`s contain more than one pixel–how many pixels do they contain?
 
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image2.png "image_tooltip")
 
@@ -121,7 +121,7 @@ When `<img>`s contain more than one pixel–how many pixels do they contain?
 
 The median `<img>` loads ~40,000 pixels on both desktop and mobile. I found this number surprisingly small. Just under half of crawled`<img>`s (excluding the ones that loaded single-pixel images, or nothing at all) contain fewer pixels than a 200x200 image. When you consider the number of `<img>` elements per page, though, this statistic is less surprising. Most pages contain more than 15 images, so while images with more than half-a-megapixel might only account for one in ten `<img>` elements, they are not at all uncommon, as we navigate across pages.
 
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image3.png "image_tooltip")
 
@@ -131,7 +131,7 @@ I was also surprised that there was almost no difference between desktop and mob
 
 Images on the web are mostly landscape-oriented, and portrait-oriented images are relatively rare.
 
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image4.png "image_tooltip")
 
@@ -212,7 +212,7 @@ Images' aspect ratios were clustered around "standard" values, such as 4:3, 16:9
 
 Let us turn our attention to file sizes.
 
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image5.png "image_tooltip")
 
@@ -228,7 +228,7 @@ In general, bitmaps on the web decode to eight bits of information per channel, 
 
 So, with all of that context, here's how the web's images stack up:
 
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image6.png "image_tooltip")
 
@@ -238,7 +238,7 @@ The median `<img>` on mobile hits that 10:1 compression ratio target on the nose
 
 ##### Bits per pixel, by format
 
-<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image7.png "image_tooltip")
 
@@ -264,7 +264,7 @@ One thing that is absolutely clear in both lab data and in our results is that b
 
 ##### Format adoption
 
-<p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image8.png "image_tooltip")
 
@@ -280,7 +280,7 @@ For an in-depth analysis of how (and educated guesses as to why!) WebP and AVIF 
 
 If there is one breakout story this year as far as images on the web, it is [native lazy-loading](https://web.dev/browser-level-image-lazy-loading/) adoption. Look at this chart:
 
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image9.png "image_tooltip")
 
@@ -361,7 +361,7 @@ How are developers populating their `srcset`s with resources?
 
 Let's first take a look at the number of candidate resources developers are including:
 
-<p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image10.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image10.png "image_tooltip")
 
@@ -373,7 +373,7 @@ A large majority of `srcset`s  are populated with five-or-fewer resources.
 
 Are developers giving the browser an appropriately wide range of choices? To figure this out, we can calculate each resource's [density](https://html.spec.whatwg.org/multipage/images.html#current-pixel-density): a measure of how many image pixels the `<img>` will paint in each CSS `px`, if left to its intrinsic dimensions. If the range of resource densities covers a reasonable range of real-world device DPRs, the `srcset` has a wide-enough range.
 
-<p id="gdcalert11" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image11.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert12">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image11.png "image_tooltip")
 [[Data [https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=1410495845](https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=1410495845)
@@ -386,7 +386,7 @@ The mobile crawler here saw higher densities than the desktop crawler, which is 
 
 Responsive images can be tricky. Authoring reasonably-accurate `sizes` attributes–and keeping them up to date with evolving page layouts and content–might be the hardest part about getting responsive images right. How many authors  get `sizes` wrong? And how wrong do they get it?
 
-<p id="gdcalert12" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image12.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert13">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image12.png "image_tooltip")
 
@@ -488,7 +488,7 @@ https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi
 
 `<picture>` is used much less frequently than `srcset`, reflecting its somewhat-niche pair of use-cases. Here's how usage breaks down between those two use cases:
 
-<p id="gdcalert13" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image13.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert14">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image13.png "image_tooltip")
 
@@ -506,7 +506,7 @@ As [replaced elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced
 
 How many images are extrinsically vs extrinsically sized?
 
-<p id="gdcalert14" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image14.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert15">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image14.png "image_tooltip")
 
@@ -545,7 +545,7 @@ Finally, let's take a look at how images are delivered over the network.
 
 How many images are being hosted by the same origin that they're being embedded on? The slimmest of minorities:
 
-<p id="gdcalert15" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image15.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert16">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image15.png "image_tooltip")
 
@@ -557,7 +557,7 @@ And with that, it is time to turn our attention to...
 
 As the world has dramatically changed over the last year, we have seen a huge growth in video usage on the web. In the 2020 media report, it was estimated that 1-2% of websites had a `<video>` tag. In 2021, that number has jumped drastically, with over 5% of desktop sites and 4% of mobile sites incorporating a `<video>` tag.
 
-<p id="gdcalert16" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image16.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert17">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image16.png "image_tooltip")
 
@@ -565,7 +565,7 @@ This huge growth in video usage on the web indicates that as devices/networks im
 
 When it comes to interaction with video, it is interesting to see how long the videos are when posted on a webpage. We were able to query this value for 440k desktop videos, and 382k mobile videos, and broke down the duration into buckets of varying duration (in seconds):
 
-<p id="gdcalert17" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image17.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert18">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image17.png "image_tooltip")
 
@@ -577,7 +577,7 @@ What types of files are being delivered as video?  We queried all files with "vi
 
 The chart below shows all video extensions with over 1% market share:
 
-<p id="gdcalert18" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image18.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert19">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image18.png "image_tooltip")
 
@@ -591,7 +591,7 @@ To begin, let's look at how the video will appear on the page by looking at the 
 
 The  `display: none` declaration hides the video from the viewer. One in five videos on the web is hidden behind this display value. From a data usage perspective, this is less than optimal, as the video is still downloaded by the browser.
 
-<p id="gdcalert19" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image19.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert20">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image19.png "image_tooltip")
 
@@ -601,7 +601,7 @@ The video HTML5 tag has a number of attributes that can be used to define how th
 
 Let's look at the most common attributes and how they are used inside the `<video>` tag:
 
-<p id="gdcalert20" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image20.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert21">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image20.png "image_tooltip")
 
@@ -609,7 +609,7 @@ Let's look at the most common attributes and how they are used inside the `<vide
 
 The most commonly used attribute is preload. The preload attribute gives the browser a hint on the best way to handle the video download. There are four possible options: `auto`, `metadata`, `none`, and an empty response = `auto`.
 
-<p id="gdcalert21" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image21.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert22">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image21.png "image_tooltip")
 
@@ -630,7 +630,7 @@ The width can be presented as a percentage, or a width in pixels.
 * When a percentage width is defined, the value "100%" is used in 99% of cases.
 * When a width in pixels is defined, we see very similar numbers of videos at lower widths, but a large dropoff in the 1800 and 1920 widths:
 
-<p id="gdcalert22" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image22.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert23">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image22.png "image_tooltip")
 
@@ -644,7 +644,7 @@ One of the key ideas behind the `<source>` element is that the developer can sup
 
 When we look at `<source>` usage, we see that about 40% of videos have no `<source>` element—implying that they use the `src` attribute. This is similar to the ratio found in 2020 (35%).
 
-<p id="gdcalert23" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image23.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert24">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{# TODO - insert figure #}
 
 ![alt_text](images/image23.png "image_tooltip")
 
