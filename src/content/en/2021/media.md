@@ -49,7 +49,7 @@ The impact that all of these images have is hard to overstate. [As the Page Weig
 
 {{ figure_markup(
   image="mobile-image-transfer-size-by-year.png",
-  caption="Mobile image transfer size by year".,
+  caption="Mobile image transfer size by year.",
   description="Bar chart showing the distribution of total image transfer sizes, per page, and how it has changed between 2020 and 2021. At the 25th percentile, transfer sizes have reduced from 277 kB to 257 kB. At the 50th, they've shrunk from 916 kB to 877 kB. And at the 75th percentile, they've gone down from 2,352 kB to 2,324 kB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=478222195&format=interactive",
   sheets_gid="381418851",
