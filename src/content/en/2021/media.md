@@ -137,7 +137,7 @@ Images on the web are mostly landscape-oriented, and portrait-oriented images ar
 
 [TODO query link]
 
-This feels like a missed opportunity on mobile. The success of the [ "stories" UI pattern](https://uxdesign.cc/the-powerful-interaction-design-of-instagram-stories-47cdeb30e5b6) shows that there's value in imagery tailored to fill portrait-oriented mobile screens.
+This feels like a missed opportunity on mobile. The success of the ["stories" UI pattern](https://uxdesign.cc/the-powerful-interaction-design-of-instagram-stories-47cdeb30e5b6) shows that there's value in imagery tailored to fill portrait-oriented mobile screens.
 
 Images' aspect ratios were clustered around "standard" values, such as 4:3, 16:9, and especially 1:1 (square). The top 10 aspect ratios accounted for nearly half of all `<img>`s:
 
