@@ -1,3 +1,4 @@
+{% block html %}
 <!doctype html>
 <html lang="{% block lang %}{{ language.lang_attribute }}{% endblock %}" {% block dir_attribute %}{% endblock %}>
   <head>
@@ -34,6 +35,7 @@
       <meta property="og:image" content="/static/images/ha.png">
     {% endblock %}
     <link rel="canonical" href="https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}" />
+    <link rel="alternate" type="application/rss+xml" title="{{ self.organization() }} RSS ({{lang }})" href="/{{ lang }}/rss.xml" />
     {% if supported_languages | length > 1%}
     {% for l in supported_languages %}
     <link rel="alternate" href="https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}" hreflang="{{ l.lang_code}}" />
@@ -94,3 +96,4 @@
     {% endblock %}
   </body>
 </html>
+{% endblock %}
