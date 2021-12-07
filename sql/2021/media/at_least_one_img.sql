@@ -12,6 +12,7 @@ SELECT
     numberOfImages( JSON_QUERY( JSON_VALUE( payload, '$._responsive_images' ), '$.responsive-images' ) ) as numberOfImages
 FROM `httparchive.pages.2021_07_01_*`
 )
+
 SELECT
     client,
     COUNTIF( numberOfImages > 0 ) as atLeastOneCount,

@@ -11,13 +11,16 @@ SELECT
     _TABLE_SUFFIX as client,
     numberOfImages( JSON_QUERY( JSON_VALUE( payload, '$._responsive_images' ), '$.responsive-images' ) ) as numberOfImages
 FROM `httparchive.pages.2021_07_01_*`
-), percentiles AS (
+),
+
+percentiles AS (
 SELECT
     client,
     APPROX_QUANTILES(numberOfImages, 1000) as numberOfImagesPercentiles
 FROM numImgs
 GROUP BY client
 )
+
 SELECT
     client,
     percentile,
