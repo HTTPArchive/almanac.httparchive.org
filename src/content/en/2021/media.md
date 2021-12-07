@@ -25,9 +25,23 @@ Almost three decades ago [the `<img>` tag dropped](https://thehistoryoftheweb.co
 
 Images are ubiquitous on the web.
 
-{{ figure_markup( content="96%", caption="Percentage of pages that contained at least one contentful `<img>`", classes="big-number", sheets_gid="1756671383", sql_file="at_least_one_img.sql" ) }}
+{{ figure_markup(
+  content="96%",
+  caption="Percentage of pages that contained at least one contentful `<img>`",
+  classes="big-number",
+  sheets_gid="1756671383",
+  sql_file="at_least_one_img.sql"
+)
+}}
 
-{{ figure_markup( content="99.93%", caption="Percentage of pages that generated at least one request for an image resource", classes="big-number", sheets_gid="1062090109", sql_file="at_least_one_image_request.sql" ) }}
+{{ figure_markup(
+  content="99.93%",
+  caption="Percentage of pages that generated at least one request for an image resource",
+  classes="big-number",
+  sheets_gid="1062090109",
+  sql_file="at_least_one_image_request.sql"
+)
+}}
 
 Put simply, almost every page contains image content and effectively all pages serve up _some_ sort of imagery (even if it's just a background or favicon).
 
@@ -39,7 +53,14 @@ This is surprising; for the last decade, the [Image Bytes](https://httparchive.o
 
 In any case, by quantity, images continue to make up an awful lot of the _stuff_ of the web. But tallying the sheer number of elements, requests, and bytes doesn't tell us how crucial images are to users' experiences. To get a sense of that, we can look at the [Largest Contentful Paint](https://web.dev/lcp/) metric, which tries to identify the most important piece of above-the-fold content on any given page. [As you can see in the Performance chapter](https://almanac.httparchive.org/en/2021/performance#fig-19), the LCP element has an image on around three quarters of pages.
 
-{{ figure_markup( content="71%", caption="Mobile pages whose LCP element has an image. On the desktop it's 79%!", classes="big-number", sheets_gid="1423728540", sql_file="lcp_element_data.sql" ) }}
+{{ figure_markup(
+  content="71%",
+  caption="Mobile pages whose LCP element has an image. On the desktop it's 79%!",
+  classes="big-number",
+  sheets_gid="1423728540",
+  sql_file="lcp_element_data.sql"
+)
+}}
 
 Images are crucial to user's experiences of the web! Let's dive in, taking a closer look at how they're encoded, embedded, laid out, and delivered.
 
@@ -113,17 +134,27 @@ Note that throughout the rest of this analysis, we have excluded single-pixel `<
 
 When `<img>`s contain more than one pixel–how many pixels do they contain?
 
-{# TODO - insert figure #}
-
-![alt_text](images/image2.png "image_tooltip")
-
-[todo query link]
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 
 The median `<img>` loads ~40,000 pixels on both desktop and mobile. I found this number surprisingly small. Just under half of crawled`<img>`s (excluding the ones that loaded single-pixel images, or nothing at all) contain fewer pixels than a 200x200 image. When you consider the number of `<img>` elements per page, though, this statistic is less surprising. Most pages contain more than 15 images, so while images with more than half-a-megapixel might only account for one in ten `<img>` elements, they are not at all uncommon, as we navigate across pages.
 
-{# TODO - insert figure #}
-
-![alt_text](images/image3.png "image_tooltip")
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 
 I was also surprised that there was almost no difference between desktop and mobile top end of the pixel count distribution. Initially, this seemed to indicate a lack of effective adoption of responsive image features, but when you consider that the mobile crawler has a 360 × 512px @3x viewport, while the desktop viewport is 1,376 × 768px @1x, it isn't actually surprising: the crawlers' viewports had similar widths, in physical pixels (1,080 vs 1,376). A bigger difference in physical pixel resolution between the crawlers would be more revealing.
 
@@ -131,11 +162,15 @@ I was also surprised that there was almost no difference between desktop and mob
 
 Images on the web are mostly landscape-oriented, and portrait-oriented images are relatively rare.
 
-{# TODO - insert figure #}
-
-![alt_text](images/image4.png "image_tooltip")
-
-[TODO query link]
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 
 This feels like a missed opportunity on mobile. The success of the ["stories" UI pattern](https://uxdesign.cc/the-powerful-interaction-design-of-instagram-stories-47cdeb30e5b6) shows that there's value in imagery tailored to fill portrait-oriented mobile screens.
 
@@ -212,11 +247,15 @@ Images' aspect ratios were clustered around "standard" values, such as 4:3, 16:9
 
 Let us turn our attention to file sizes.
 
-{# TODO - insert figure #}
-
-![alt_text](images/image5.png "image_tooltip")
-
-[TODO query link]
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 
 The median contentful `<img>` weighs in at just over 10kB. But, again, the median page contains 15-17 `<img>`s, so, when looking at _pages_, the ninetieth percentile here–images that push past 100kB–aren't rare at all.
 
@@ -228,21 +267,29 @@ In general, bitmaps on the web decode to eight bits of information per channel, 
 
 So, with all of that context, here's how the web's images stack up:
 
-{# TODO - insert figure #}
-
-![alt_text](images/image6.png "image_tooltip")
-
-[TODO query link]
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 
 The median `<img>` on mobile hits that 10:1 compression ratio target on the nose: 2.4 bits/pixel. However, around that median, there is a tremendous spread. Let's break things down by format and learn a bit more.
 
 ##### Bits per pixel, by format
 
-{# TODO - insert figure #}
-
-![alt_text](images/image7.png "image_tooltip")
-
-_[TODO query link]_
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 
 The median JPEG weighs in at 2.1 bits per pixel. Given the format's ubiquity, this is the best baseline to measure other formats by.
 
@@ -264,9 +311,15 @@ One thing that is absolutely clear in both lab data and in our results is that b
 
 ##### Format adoption
 
-{# TODO - insert figure #}
-
-![alt_text](images/image8.png "image_tooltip")
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 
 The old formats still reign: JPEG dominates, with PNG and GIF rounding out the podium. Together, they account for almost 90% of the images on the web. WebP–which is now more than a decade old but which [only achieved universal browser support last year](https://www.macrumors.com/2020/06/22/webp-safari-14/)–is still in the single digits. And effectively no-one is using AVIF, which accounted for only 0.04% of crawled resources. We found a thousand JPEGs for every AVIF.
 
@@ -280,9 +333,15 @@ For an in-depth analysis of how (and educated guesses as to why!) WebP and AVIF 
 
 If there is one breakout story this year as far as images on the web, it is [native lazy-loading](https://web.dev/browser-level-image-lazy-loading/) adoption. Look at this chart:
 
-{# TODO - insert figure #}
-
-![alt_text](images/image9.png "image_tooltip")
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 
 Data: [https://docs.google.com/spreadsheets/d/1Mw6TjkIClRtlZPHbij5corOZbaSUp-vgTVq3Ig18IwQ/edit#gid=157636784](https://docs.google.com/spreadsheets/d/1Mw6TjkIClRtlZPHbij5corOZbaSUp-vgTVq3Ig18IwQ/edit#gid=157636784)
 
@@ -361,9 +420,15 @@ How are developers populating their `srcset`s with resources?
 
 Let's first take a look at the number of candidate resources developers are including:
 
-{# TODO - insert figure #}
-
-![alt_text](images/image10.png "image_tooltip")
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 
 [https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=1586096291](https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=1586096291)]]
 
@@ -373,9 +438,15 @@ A large majority of `srcset`s  are populated with five-or-fewer resources.
 
 Are developers giving the browser an appropriately wide range of choices? To figure this out, we can calculate each resource's [density](https://html.spec.whatwg.org/multipage/images.html#current-pixel-density): a measure of how many image pixels the `<img>` will paint in each CSS `px`, if left to its intrinsic dimensions. If the range of resource densities covers a reasonable range of real-world device DPRs, the `srcset` has a wide-enough range.
 
-{# TODO - insert figure #}
-
-![alt_text](images/image11.png "image_tooltip")
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 [[Data [https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=1410495845](https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=1410495845)
 
 TODO query
@@ -386,9 +457,15 @@ The mobile crawler here saw higher densities than the desktop crawler, which is 
 
 Responsive images can be tricky. Authoring reasonably-accurate `sizes` attributes–and keeping them up to date with evolving page layouts and content–might be the hardest part about getting responsive images right. How many authors  get `sizes` wrong? And how wrong do they get it?
 
-{# TODO - insert figure #}
-
-![alt_text](images/image12.png "image_tooltip")
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 
 More than a quarter of `sizes` attributes are perfect: exact matches for the layout size of the image. As someone who has authored a number of erroneous `sizes` attributes, myself, I found this both surprising and impressive. That is, until I realized that the accuracy measurement here was taken _after_ Javascript runs, and many `sizes` attributes are ultimately written by client-side Javascript. Here are the most common `sizes` values, _before_ Javascript runs:
 
@@ -488,9 +565,15 @@ https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi
 
 `<picture>` is used much less frequently than `srcset`, reflecting its somewhat-niche pair of use-cases. Here's how usage breaks down between those two use cases:
 
-{# TODO - insert figure #}
-
-![alt_text](images/image13.png "image_tooltip")
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 
 [https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=2031063502](https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=2031063502)
 
@@ -506,9 +589,15 @@ As [replaced elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced
 
 How many images are extrinsically vs extrinsically sized?
 
-{# TODO - insert figure #}
-
-![alt_text](images/image14.png "image_tooltip")
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 
 [https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=576119731](https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=576119731)
 
@@ -545,9 +634,15 @@ Finally, let's take a look at how images are delivered over the network.
 
 How many images are being hosted by the same origin that they're being embedded on? The slimmest of minorities:
 
-{# TODO - insert figure #}
-
-![alt_text](images/image15.png "image_tooltip")
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 
 Cross-origin images are subject to significant [security restrictions](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image), and can sometimes incur [performance costs](https://andydavies.me/blog/2019/03/22/improving-perceived-performance-with-a-link-rel-equals-preconnect-http-header/). On the other hand, moving your static assets to a dedicated CDN is one of the most impactful things you can do to help [Time to First Byte](https://developer.mozilla.org/en-US/docs/Glossary/time_to_first_byte), and image CDNs provide powerful transformation and [optimization](https://web.dev/image-cdns/) features which can automate all sorts of best-practices. It would be fascinating to see how many of the 51% of cross-origin images are hosted on image CDNs and to compare their performance against the rest of the web's; unfortunately that was outside the scope of our analysis.
 
@@ -557,17 +652,29 @@ And with that, it is time to turn our attention to...
 
 As the world has dramatically changed over the last year, we have seen a huge growth in video usage on the web. In the 2020 media report, it was estimated that 1-2% of websites had a `<video>` tag. In 2021, that number has jumped drastically, with over 5% of desktop sites and 4% of mobile sites incorporating a `<video>` tag.
 
-{# TODO - insert figure #}
-
-![alt_text](images/image16.png "image_tooltip")
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 
 This huge growth in video usage on the web indicates that as devices/networks improve, there is a desire to add immersive experiences such as video to sites.
 
 When it comes to interaction with video, it is interesting to see how long the videos are when posted on a webpage. We were able to query this value for 440k desktop videos, and 382k mobile videos, and broke down the duration into buckets of varying duration (in seconds):
 
-{# TODO - insert figure #}
-
-![alt_text](images/image17.png "image_tooltip")
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 
 Most videos on the web are short: ~ 60% of videos are under 30 seconds long on both mobile and desktop. However, 12-13% are between one and two minutes, and 10% of videos are over two minutes long.
 
@@ -577,9 +684,15 @@ What types of files are being delivered as video?  We queried all files with "vi
 
 The chart below shows all video extensions with over 1% market share:
 
-{# TODO - insert figure #}
-
-![alt_text](images/image18.png "image_tooltip")
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 
 By far, the #1 video format on the web is the mp4, since the mp4 h264 format has 98.1% support in all modern browsers ([https://caniuse.com/?search=mp4](https://caniuse.com/?search=mp4)), and the 1.9% of browsers that do not support mp4 have no video support, so the number is really 100% coverage. Interestingly, the mp4 usage has dropped by ~15% YOY on both desktop and mobile. WebM support also dropped significantly YOY (50% drop on both mobile and desktop). (2020 data from Web Almanac 2020 (https://almanac.httparchive.org/en/2020/media#videos)
 
@@ -591,9 +704,15 @@ To begin, let's look at how the video will appear on the page by looking at the 
 
 The  `display: none` declaration hides the video from the viewer. One in five videos on the web is hidden behind this display value. From a data usage perspective, this is less than optimal, as the video is still downloaded by the browser.
 
-{# TODO - insert figure #}
-
-![alt_text](images/image19.png "image_tooltip")
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 
 ### Video attributes
 
@@ -601,17 +720,29 @@ The video HTML5 tag has a number of attributes that can be used to define how th
 
 Let's look at the most common attributes and how they are used inside the `<video>` tag:
 
-{# TODO - insert figure #}
-
-![alt_text](images/image20.png "image_tooltip")
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 
 #### Preload
 
 The most commonly used attribute is preload. The preload attribute gives the browser a hint on the best way to handle the video download. There are four possible options: `auto`, `metadata`, `none`, and an empty response = `auto`.
 
-{# TODO - insert figure #}
-
-![alt_text](images/image21.png "image_tooltip")
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 
 Interestingly, we see a large push away from `preload=auto` on both mobile and desktop, with most of the movement to `preload=none.`  While it is possible that this changed for many videos, it could just be that the new videos added to the web over the last year utilize the "none" parameter more than in the past. From a page weight perspective—this is a large win for the web.
 
@@ -630,9 +761,15 @@ The width can be presented as a percentage, or a width in pixels.
 * When a percentage width is defined, the value "100%" is used in 99% of cases.
 * When a width in pixels is defined, we see very similar numbers of videos at lower widths, but a large dropoff in the 1800 and 1920 widths:
 
-{# TODO - insert figure #}
-
-![alt_text](images/image22.png "image_tooltip")
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 
 It appears that about half of sites with larger videos that also define the width of the video _remove_ the larger videos for mobile devices. Since very few devices need a 1080p (1920 wide) video embedded in a website, this makes sense.
 
@@ -644,9 +781,15 @@ One of the key ideas behind the `<source>` element is that the developer can sup
 
 When we look at `<source>` usage, we see that about 40% of videos have no `<source>` element—implying that they use the `src` attribute. This is similar to the ratio found in 2020 (35%).
 
-{# TODO - insert figure #}
-
-![alt_text](images/image23.png "image_tooltip")
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="A bar chart showing... TODO",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql"
+  )
+}}
 
 We also see that the source element is most often used with just one element (50% of all video tags). Only 10% of videos have 2 or more video sources named. By a 3:1 ratio, 2 is more common than 3 sources, and then there is a small selection of more than 3 (there is one video with 48 sources!).
 
@@ -685,7 +828,7 @@ Let's look at the videos that use 2 sources. Here are the top 10 occurrences:
         <td>`[]`</td>
       </tr>
       <tr>
-        <td>`["video/mp4; codecs=\"avc1.42E01E, mp4a.40.2\"","video/webm; codecs=\"vp8, vorbis\""`</td>
+        <td>`["video/mp4; codecs="avc1.42E01E, mp4a.40.2","video/webm; codecs="vp8, vorbis"`</td>
       </tr>
       <tr>
         <td>`["video/mp4;","video/webm;"]`</td>
@@ -723,7 +866,7 @@ The same trend holds for `<video>` elements with three sources—eight of the to
         <td>`["video/mp4","video/ogg","video/webm"]`</td>
       </tr>
       <tr>
-        <td>`["video/mp4;","video/ogg; codecs=\"theora, vorbis\"","video/webm; codecs=\"vp8, vorbis\""]`</td>
+        <td>`["video/mp4;","video/ogg; codecs="theora, vorbis","video/webm; codecs="vp8, vorbis"]`</td>
       </tr>
       <tr>
         <td>`["video/mp4; codecs=hevc","video/webm","video/mp4"]`</td>
@@ -732,7 +875,7 @@ The same trend holds for `<video>` elements with three sources—eight of the to
         <td>`["video/mp4"]`</td>
       </tr>
       <tr>
-        <td>`["video/ogg; codecs=\"theora, vorbis\"","video/webm","video/mp4"]`</td>
+        <td>`["video/ogg; codecs="theora, vorbis","video/webm","video/mp4"]`</td>
       </tr>
       <tr>
         <td>`["video/mp4","video/webm","video/ogv"]`</td>
