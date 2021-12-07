@@ -17,6 +17,7 @@ featured_stat_2: 51 trillion year
 featured_stat_label_2: Largest `max-age` value recorded
 featured_stat_3: 59.1%
 featured_stat_label_3: Mobile pages could save up to 1 MB with caching
+unedited: true
 ---
 
 ## Introduction
@@ -220,7 +221,7 @@ An essential step in caching a resource is understanding if it was previously ca
 {{ figure_markup(
   image="vary-directives.png",
   caption="Usage of `Vary` directives.",
-  description="A bar chart showing the distribution of `Vary` header. 90.4% of desktop responses use `Accept-Encoding`, much smaller values for the rest with 10.2% for `User-Agent`, approximately 10.5% for `Origin`, and 5.0% for `Accept`. 90.3% of mobile responses use of `Accept-Encoding`, much smaller values for the rest with 10.9% for `User-Agent`, approximately 10.1% for `Origin`, and 4.8% for `Accept`."
+  description="A bar chart showing the distribution of `Vary` header. 90.4% of desktop responses use `Accept-Encoding`, much smaller values for the rest with 10.2% for `User-Agent`, approximately 10.5% for `Origin`, and 5.0% for `Accept`. 90.3% of mobile responses use of `Accept-Encoding`, much smaller values for the rest with 10.9% for `User-Agent`, approximately 10.1% for `Origin`, and 4.8% for `Accept`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=1279247484&format=interactive",
   height=436,
   sheets_gid="1033782866",

@@ -171,8 +171,7 @@
           "part": "IV",
           "chapter_number": "23",
           "title": "Caching",
-          "slug": "caching",
-          "todo": true
+          "slug": "caching"
         },
         {
           "part": "IV",
@@ -1272,6 +1271,15 @@
       "website": "https://weston.ruter.net/",
       "github": "westonruter",
       "twitter": "westonruter"
+    },
+    "WilhelmWillie": {
+      "name": "Wilhelm Willie",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "4969041",
+      "website": "http://wilhelmwillie.com/",
+      "github": "WilhelmWillie"
     },
     "ydimova": {
       "name": "Yana Dimova",
