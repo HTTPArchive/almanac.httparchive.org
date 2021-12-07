@@ -47,7 +47,15 @@ Put simply, almost every page contains image content and effectively all pages s
 
 The impact that all of these images have is hard to overstate. [As the Page Weight chapter highlights](https://almanac.httparchive.org/en/2021/page-weight), images are still responsible for more bytes per page than any other resource type. However, year-over-year, image transfer size has decreased.
 
-{{ figure_markup( image="mobile-image-transfer-size-by-year.png", caption="Mobile image transfer size by year", description="Bar chart showing the distribution of total image transfer sizes, per page, and how it has changed between 2020 and 2021. At the 25th percentile, transfer sizes have reduced from 277 kB to 257 kB. At the 50th, they've shrunk from 916 kB to 877 kB. And at the 75th percentile, they've gone down from 2,352 kB to 2,324 kB.", chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=478222195&format=interactive", sheets_gid="381418851", sql_file="bytes_per_type_2021.sql" ) }}
+{{ figure_markup(
+  image="mobile-image-transfer-size-by-year.png",
+  caption="Mobile image transfer size by year".,
+  description="Bar chart showing the distribution of total image transfer sizes, per page, and how it has changed between 2020 and 2021. At the 25th percentile, transfer sizes have reduced from 277 kB to 257 kB. At the 50th, they've shrunk from 916 kB to 877 kB. And at the 75th percentile, they've gone down from 2,352 kB to 2,324 kB.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=478222195&format=interactive",
+  sheets_gid="381418851",
+  sql_file="bytes_per_type_2021.sql"
+)
+}}
 
 This is surprising; for the last decade, the [Image Bytes](https://httparchive.org/reports/state-of-images#bytesImg) chart on the HTTP Archive's monthly [State of Images report](https://httparchive.org/reports/state-of-images) has seemingly only ever gone one direction: up. What reversed this trend in 2021? I think it may have something to do with native lazy-loading's rapid adoption; more on that later in the chapter.
 
@@ -81,7 +89,7 @@ We'll start small. Many `<img>` elements don't actually represent contentful [im
     <thead>
       <tr>
         <th>Client</th>
-        <th>Percent of images which are 1x1</th>
+        <th>1x1 images</th>
       </tr>
     </thead>
     <tbody>
@@ -95,10 +103,8 @@ We'll start small. Many `<img>` elements don't actually represent contentful [im
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="TODO.", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Single pixel image use.", sheets_gid="1851007461", sql_file="TODO.sql") }}</figcaption>
 </figure>
-
-_[query link TODO]_
 
 These single-pixel `<img>` elements  are, put bluntly, hacks: they are being abused either to do layout (which would be better done with CSS) or to track users (which would be better accomplished using the [Beacon API](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API)).
 
@@ -109,7 +115,7 @@ We can establish a baseline breakdown of what jobs all of these single-pixel `<i
     <thead>
       <tr>
         <th>Client</th>
-        <th>Percent of single-pixel `<img>`s which use data URIs</th>
+        <th>Data URI single-pixel `<img>`s</th>
       </tr>
     </thead>
     <tbody>
@@ -123,7 +129,7 @@ We can establish a baseline breakdown of what jobs all of these single-pixel `<i
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="TODO.", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Data URI single pixel images.", sheets_gid="1851007461", sql_file="TODO.sql") }}</figcaption>
 </figure>
 
 The single-pixel `<img>`s containing data URIs are almost certainly being used for layout. The remaining ~54% which generate a request might be there for layout or they might be tracking pixels; we can't tell.
@@ -135,11 +141,11 @@ Note that throughout the rest of this analysis, we have excluded single-pixel `<
 When `<img>`s contain more than one pixel–how many pixels do they contain?
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="image-pixel-counts.png",
+  caption="Distribution of image pixel counts.",
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=493015352&format=interactive",
+  sheets_gid="1999710461",
   sql_file="TODO.sql"
   )
 }}
@@ -147,11 +153,11 @@ When `<img>`s contain more than one pixel–how many pixels do they contain?
 The median `<img>` loads ~40,000 pixels on both desktop and mobile. I found this number surprisingly small. Just under half of crawled`<img>`s (excluding the ones that loaded single-pixel images, or nothing at all) contain fewer pixels than a 200x200 image. When you consider the number of `<img>` elements per page, though, this statistic is less surprising. Most pages contain more than 15 images, so while images with more than half-a-megapixel might only account for one in ten `<img>` elements, they are not at all uncommon, as we navigate across pages.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="number-of-imgs-per-page.png",
+  caption="Number of `<img>`s per page.",
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=1641393356&format=interactive",
+  sheets_gid="1553608446",
   sql_file="TODO.sql"
   )
 }}
@@ -163,11 +169,11 @@ I was also surprised that there was almost no difference between desktop and mob
 Images on the web are mostly landscape-oriented, and portrait-oriented images are relatively rare.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="image-orientations.png",
+  caption="Image orientations.",
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=1361616235&format=interactive",
+  sheets_gid="478089289",
   sql_file="TODO.sql"
   )
 }}
@@ -238,21 +244,19 @@ Images' aspect ratios were clustered around "standard" values, such as 4:3, 16:9
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="TODO.", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="TODO.", sheets_gid="914161583", sql_file="TODO.sql") }}</figcaption>
 </figure>
-
-[todo query link]
 
 #### Bytes
 
 Let us turn our attention to file sizes.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="distribution-of-image-byte-sizes.png",
+  caption="Distribution of image byte sizes.",
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=717078449&format=interactive",
+  sheets_gid="1999710461",
   sql_file="TODO.sql"
   )
 }}
@@ -268,11 +272,11 @@ In general, bitmaps on the web decode to eight bits of information per channel, 
 So, with all of that context, here's how the web's images stack up:
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="distribution-of-image-bits-per-pixel.png",
+  caption="Distribution of image bits per pixel.",
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=839945889&format=interactive",
+  sheets_gid="1999710461",
   sql_file="TODO.sql"
   )
 }}
@@ -282,11 +286,11 @@ The median `<img>` on mobile hits that 10:1 compression ratio target on the nose
 ##### Bits per pixel, by format
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="median-bits-per-pixel-by-format.png",
+  caption="Median bits per pixel by format.",
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=1390065360&format=interactive",
+  sheets_gid="30152726",
   sql_file="TODO.sql"
   )
 }}
@@ -312,11 +316,11 @@ One thing that is absolutely clear in both lab data and in our results is that b
 ##### Format adoption
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="image-format-adoption-mobile.png",
+  caption="Image format adoption (mobile).",
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=832165430&format=interactive",
+  sheets_gid="1886692503",
   sql_file="TODO.sql"
   )
 }}
@@ -334,18 +338,14 @@ For an in-depth analysis of how (and educated guesses as to why!) WebP and AVIF 
 If there is one breakout story this year as far as images on the web, it is [native lazy-loading](https://web.dev/browser-level-image-lazy-loading/) adoption. Look at this chart:
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="adoption-of-native-loading-lazy-on-img.png",
+  caption='Adoption of `loading="lazy"` on `<img>`.',
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1314627953&format=interactive",
+  sheets_gid="157636784",
+  sql_file="../resource-hints/imgLazy.sql.sql"
   )
 }}
-
-Data: [https://docs.google.com/spreadsheets/d/1Mw6TjkIClRtlZPHbij5corOZbaSUp-vgTVq3Ig18IwQ/edit#gid=157636784](https://docs.google.com/spreadsheets/d/1Mw6TjkIClRtlZPHbij5corOZbaSUp-vgTVq3Ig18IwQ/edit#gid=157636784)
-
-Query:  https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2021/resource-hints/imgLazy.sql
 
 In July of 2020, native lazy-loading was used on just 1% of pages. By July of 2021, that number had exploded, to 18%. This is an unbelievable rate of  growth considering the vast number of pages and templates which are not updated from year to year.
 
@@ -377,40 +377,20 @@ First, let us consider the [`srcset` attribute](https://developer.mozilla.org/en
   caption="Percent of pages that use `srcset`.",
   content="31%",
   classes="big-number",
-  sheets_gid="TODO",
+  sheets_gid="1594311632",
   sql_file="TODO.sql"
 )
 }}
 
-[data: [https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=1594311632](https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=1594311632)]
-
-[Query: TODO]
-
-<figure>
-  <table>
-    <thead>
-      <tr>
-        <th>Descriptor</th>
-        <th>Percent of pages using feature</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>`x` descriptors</td>
-        <td>6%</td>
-      </tr>
-      <tr>
-        <td>`w` descriptors</td>
-        <td>24%</td>
-      </tr>
-    </tbody>
-  </table>
-  <figcaption>{{ figure_link(caption="TODO.", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
-</figure>
-
-[Data: https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=1030564653]
-
-[Query: ]
+{{ figure_markup(
+  image="srcset-descriptor-adoption.png",
+  caption="`srcset` descriptor adoption.",
+  description="A bar chart showing... TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=89579817&format=interactive",
+  sheets_gid="1030564653",
+  sql_file="TODO.sql"
+  )
+}}
 
 Almost a third of crawled pages use `srcset`; pretty good! And `w` descriptors, which allow browsers to select a resource based on both varying layout widths and varying screen densities, are four times more popular than `x` descriptors, which only enable DPR-adaptation.
 
@@ -421,16 +401,14 @@ How are developers populating their `srcset`s with resources?
 Let's first take a look at the number of candidate resources developers are including:
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="number-of-srcset-candidates.png",
+  caption="Number of srcset candidates.",
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=1875401927&format=interactive",
+  sheets_gid="1586096291",
   sql_file="TODO.sql"
   )
 }}
-
-[https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=1586096291](https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=1586096291)]]
 
 A large majority of `srcset`s  are populated with five-or-fewer resources.
 
@@ -439,17 +417,14 @@ A large majority of `srcset`s  are populated with five-or-fewer resources.
 Are developers giving the browser an appropriately wide range of choices? To figure this out, we can calculate each resource's [density](https://html.spec.whatwg.org/multipage/images.html#current-pixel-density): a measure of how many image pixels the `<img>` will paint in each CSS `px`, if left to its intrinsic dimensions. If the range of resource densities covers a reasonable range of real-world device DPRs, the `srcset` has a wide-enough range.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="distribution-of-image-srcset-candidate-densities.png",
+  caption="Distribution of image srcset candidate densities.",
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=403058700&format=interactive",
+  sheets_gid="1410495845",
   sql_file="TODO.sql"
   )
 }}
-[[Data [https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=1410495845](https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=1410495845)
-
-TODO query
 
 The mobile crawler here saw higher densities than the desktop crawler, which is expected. Viewport-relative `sizes` values resolve to smaller values on mobile viewports, resulting in higher densities for the same resources. Taken as a whole, [given that most devicePixelRatios fall somewhere between 1x-3x](https://twitter.com/TheRealNooshu/status/1397862141894529027), this appears to be a healthy range of densities. It would be interesting to perform a deeper analysis that counted how many `srcsets` _didn't_ fully cover a "reasonable" ~1x-2x range; this is left as an exercise to the reader (or next year's analysts!).
 
@@ -458,11 +433,11 @@ The mobile crawler here saw higher densities than the desktop crawler, which is 
 Responsive images can be tricky. Authoring reasonably-accurate `sizes` attributes–and keeping them up to date with evolving page layouts and content–might be the hardest part about getting responsive images right. How many authors  get `sizes` wrong? And how wrong do they get it?
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="distribution-of-img-sizes-errors.png",
+  caption="Distribution of `<img>` sizes errors.",
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=1870082934&format=interactive",
+  sheets_gid="424107069",
   sql_file="TODO.sql"
   )
 }}
@@ -536,7 +511,7 @@ More than a quarter of `sizes` attributes are perfect: exact matches for the lay
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="TODO.", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="TODO.", sheets_gid="228184279", sql_file="TODO.sql") }}</figcaption>
 </figure>
 
 One in ten `sizes` attributes on mobile has an initial value of `auto`. This non-standard value is then presumably replaced by a Javascript library (probably [lazysizes.js](https://github.com/aFarkas/lazysizes)), using the measured layout size of the image.
@@ -556,26 +531,22 @@ The `<picture>` element serves a couple of use cases:
   caption="The percentage of pages which use `<picture>`.",
   content="6%",
   classes="big-number",
-  sheets_gid="TODO",
+  sheets_gid="620965569",
   sql_file="TODO.sql"
 )
 }}
 
-https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=620965569
-
 `<picture>` is used much less frequently than `srcset`, reflecting its somewhat-niche pair of use-cases. Here's how usage breaks down between those two use cases:
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="picture-feature-usage.png",
+  caption="`<picture>` feature usage.",
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=1613173002&format=interactive",
+  sheets_gid="2031063502",
   sql_file="TODO.sql"
   )
 }}
-
-[https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=2031063502](https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=2031063502)
 
 Art direction appears a bit more popular than type-switching. Notably, these two features are not mutually exclusive, and, put together, the usage percentages here do not add up to 100%. This suggests that at least 15% of `<picture>` elements do not leverage either of these attributes, making those `<picture>`s  functionally equivalent to a `<span>`.
 
@@ -590,16 +561,14 @@ As [replaced elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced
 How many images are extrinsically vs extrinsically sized?
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="intrinsic-and-extrinsic-image-sizing.png",
+  caption="Intrinsic and extrinsic image sizing.",
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=769042260&format=interactive",
+  sheets_gid="576119731",
   sql_file="TODO.sql"
   )
 }}
-
-[https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=576119731](https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=576119731)
 
 The question is a little complicated because some images (those with a `max-width`, `max-height`, `min-width`, or `min-height` constraint), are sometimes extrinsically sized, but sometimes left to their intrinsic size. We've labelled those images as "both."
 
@@ -617,12 +586,10 @@ Unfortunately, `height` and `width` never played well with images that are assig
   caption="The percentage of `<img>`s on mobile have `height` and `width` attributes, and are extrinsically sized in only one dimension.",
   content="7.5%",
   classes="big-number",
-  sheets_gid="TODO",
+  sheets_gid="1150803469",
   sql_file="TODO.sql"
 )
 }}
-
-[data: https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=1150803469]
 
 It's hard to tell how many of these `<img>`s were authored with the new browser behavior in mind, but they're all benefiting from it. And that was the point; by re-using existing attributes, lots of existing content benefitted from the change, automatically.
 
@@ -635,11 +602,11 @@ Finally, let's take a look at how images are delivered over the network.
 How many images are being hosted by the same origin that they're being embedded on? The slimmest of minorities:
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="image-origins.png",
+  caption="Image origins.",
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=391739537&format=interactive",
+  sheets_gid="2134623775",
   sql_file="TODO.sql"
   )
 }}
@@ -653,11 +620,11 @@ And with that, it is time to turn our attention to...
 As the world has dramatically changed over the last year, we have seen a huge growth in video usage on the web. In the 2020 media report, it was estimated that 1-2% of websites had a `<video>` tag. In 2021, that number has jumped drastically, with over 5% of desktop sites and 4% of mobile sites incorporating a `<video>` tag.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="sites-with-at-least-one-video-element.png",
+  caption="Sites with at least one video element.",
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=2077989873&format=interactive",
+  sheets_gid="1629096429",
   sql_file="TODO.sql"
   )
 }}
@@ -667,11 +634,11 @@ This huge growth in video usage on the web indicates that as devices/networks im
 When it comes to interaction with video, it is interesting to see how long the videos are when posted on a webpage. We were able to query this value for 440k desktop videos, and 382k mobile videos, and broke down the duration into buckets of varying duration (in seconds):
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="video-durations.png",
+  caption="Video durations.",
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=366287434&format=interactive",
+  sheets_gid="1864781514",
   sql_file="TODO.sql"
   )
 }}
@@ -685,11 +652,11 @@ What types of files are being delivered as video?  We queried all files with "vi
 The chart below shows all video extensions with over 1% market share:
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="top-extensions-of-files-with-a-video-mime-type.png",
+  caption="Top extensions of files with a video MIME type.",
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=2066681624&format=interactive",
+  sheets_gid="1430902287",
   sql_file="TODO.sql"
   )
 }}
@@ -705,11 +672,11 @@ To begin, let's look at how the video will appear on the page by looking at the 
 The  `display: none` declaration hides the video from the viewer. One in five videos on the web is hidden behind this display value. From a data usage perspective, this is less than optimal, as the video is still downloaded by the browser.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="video-css-display-percentages.png",
+  caption="Video CSS display percentages.",
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=1841222549&format=interactive",
+  sheets_gid="428232209",
   sql_file="TODO.sql"
   )
 }}
@@ -721,11 +688,11 @@ The video HTML5 tag has a number of attributes that can be used to define how th
 Let's look at the most common attributes and how they are used inside the `<video>` tag:
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="video-element-attributes.png",
+  caption="Video element attributes.",
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=1099468813&format=interactive",
+  sheets_gid="1827909463",
   sql_file="TODO.sql"
   )
 }}
@@ -735,11 +702,11 @@ Let's look at the most common attributes and how they are used inside the `<vide
 The most commonly used attribute is preload. The preload attribute gives the browser a hint on the best way to handle the video download. There are four possible options: `auto`, `metadata`, `none`, and an empty response = `auto`.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="video-preload-values.png",
+  caption="Video preload values.",
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=1322480946&format=interactive",
+  sheets_gid="7133313",
   sql_file="TODO.sql"
   )
 }}
@@ -762,11 +729,11 @@ The width can be presented as a percentage, or a width in pixels.
 * When a width in pixels is defined, we see very similar numbers of videos at lower widths, but a large dropoff in the 1800 and 1920 widths:
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="video-widths.png",
+  caption="Video widths.",
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=1390110707&format=interactive",
+  sheets_gid="1827909463",
   sql_file="TODO.sql"
   )
 }}
@@ -782,11 +749,11 @@ One of the key ideas behind the `<source>` element is that the developer can sup
 When we look at `<source>` usage, we see that about 40% of videos have no `<source>` element—implying that they use the `src` attribute. This is similar to the ratio found in 2020 (35%).
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="source-element-count.png",
+  caption="<source> element count.",
   description="A bar chart showing... TODO",
-  chart_url="TODO",
-  sheets_gid="TODO",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=709685412&format=interactive",
+  sheets_gid="1279089769",
   sql_file="TODO.sql"
   )
 }}
@@ -835,7 +802,7 @@ Let's look at the videos that use 2 sources. Here are the top 10 occurrences:
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="TODO.", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="TODO.", sheets_gid="1549760253", sql_file="TODO.sql") }}</figcaption>
 </figure>
 
 In six of the top 10 examples, the MP4 is listed as the first source. MP4 support on the web is at 98.4% (https://caniuse.com/?search=mp4), and the browsers that do not support MP4 generally do not support the `<video>` tag at all. This implies that these sites do not need two sources, and could save some storage on their web servers by removing their WebM or Ogg video sources. (Or, they could reverse the order of the videos, and browsers that support WebM will download the WebM).
@@ -882,7 +849,7 @@ The same trend holds for `<video>` elements with three sources—eight of the to
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="TODO.", sheets_gid="TODO", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="TODO.", sheets_gid="1549760253", sql_file="TODO.sql") }}</figcaption>
 </figure>
 
 Of course, these implementations will just play the MP4 file, and the WebM and Ogg files will be ignored.
