@@ -7,6 +7,8 @@ reviewers: [Navaneeth-akam, tpiros, akshay-ranganath, addyosmani]
 analysts: [eeeps, dougsillars, akshay-ranganath]
 editors: []
 translators: []
+eeeps_bio: Eric Portis is a Web Platform Advocate at <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>.
+dougsillars_bio: Doug Sillars is a freelance digital nomad working on the intersection of performance and media. He tweets <a href="https://twitter.com/dougsillars">@dougsillars</a>, and blogs regularly at <a hreflang="en" href="https://dougsillars.com">dougsillars.com</a>.
 results: https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/
 featured_quote: This year, with native lazyloading, we collectively stemmed the tide of ever-increasing image transfer sizes.
 featured_stat_1: 99.93%
@@ -15,7 +17,7 @@ featured_stat_2: 87.1%
 featured_stat_label_2: Percentage of images on the web delivered as JPEGs, PNGs, or GIFs. All of these could be profitably converted to next-gen formats!
 featured_stat_3: 5.6%
 featured_stat_label_3: Share of desktop pages that included a `video` element. This represents a three-fold increase from last year.
-
+unedited: true
 ---
 
 ## Introduction
