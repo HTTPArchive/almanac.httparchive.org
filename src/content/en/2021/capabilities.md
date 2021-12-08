@@ -197,7 +197,7 @@ With 566,049 (9.00%) desktop and 642,507 (8.58%) mobile sites, the Web Share API
 The high usage of this API is probably related to a script that is included with embedded YouTube videos. If the Web Share API is available on the device, it is executed when the user clicks the "Share" button in the video player.
 
 {{ figure_markup(
-image="web-share-api.png",
+image="web-share-api.jpg",
 caption='The beta version of PaintZ uses the Web Share API to share drawings with local applications.',
 description='Screenshot showing the PaintZ drawing application with an overlay of the built-in messaging application that received the drawing from the app.',
 width=676,
@@ -366,7 +366,7 @@ sql_file="fugu.sql"
 This capability is relatively new, as it shipped with Chromium 89 in March 2021 (<a hreflang="en" href="https://caniuse.com/web-serial">current browser support for the Web Serial API</a>). Currently, 15 desktop and 14 mobile sites use the Web Serial API, including the <a hreflang="en" href="https://duino.app/">Duino App</a> that allows you to develop programs for Arduino and ESP microcontrollers right in your browser. They are compiled on a remote server and then uploaded to a connected board via the Web Serial API.
 
 {{ figure_markup(
-image="web-serial.png",
+image="web-serial.jpg",
 caption='The Duino app is a web-based IDE that uses Web Serial to upload programs to Arduino microcontrollers.',
 description='Screenshot showing the web-based Duino code editor application compiling code.',
 width=699,
@@ -404,7 +404,7 @@ sql_file="fugu.sql"
 The capability is supported by Chromium browsers starting from version 67 (<a hreflang="en" href="https://caniuse.com/mdn-api_sensor">current browser support for the Generic Sensor API</a>). The relative orientation sensor is used by 824 desktop and 831 mobile sites, the linear acceleration sensor by 257 desktop and 237 mobile sites, and the gyroscope by 36 desktop and 22 mobile sites. An example application that uses all three of them is <a hreflang="en" href="https://obs.ninja/">VDO.Ninja</a>, the former OBS Ninja. This software allows you to remotely connect with video broadcasting software such as OBS. The app allows the connected broadcasting software to read sensor data from the device. For example, to capture a smartphone's movements when streaming virtual reality content. Fugu contributor Intel provides additional <a hreflang="en" href="https://intel.github.io/generic-sensor-demos/">demos for the Generic Sensor API</a>.
 
 {{ figure_markup(
-image="generic-sensor-api.png",
+image="generic-sensor-api.jpg",
 caption='The Generic Sensor API can be used to rotate 3D models according to the orientation of the device.',
 description='Two screenshots of a cell phone showing a 3D model. In the second screenshot, the 3D model has been rotated because the orientation of the device has changed.',
 width=808,
