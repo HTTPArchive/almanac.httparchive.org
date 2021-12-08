@@ -12,11 +12,11 @@ dougsillars_bio: Doug Sillars is a freelance digital nomad working on the inters
 results: https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/
 featured_quote: This year, with native lazyloading, we collectively stemmed the tide of ever-increasing image transfer sizes.
 featured_stat_1: 99.93%
-featured_stat_label_1: Percent of pages that load an image resource of some kind.
+featured_stat_label_1: Pages that load an image resource of some kind.
 featured_stat_2: 87.1%
-featured_stat_label_2: Percentage of images on the web delivered as JPEGs, PNGs, or GIFs. All of these could be profitably converted to next-gen formats!
+featured_stat_label_2: Images on the web delivered as JPEGs, PNGs, or GIFs insteasd of next-gen formats!
 featured_stat_3: 5.6%
-featured_stat_label_3: Share of desktop pages that included a `video` element. This represents a three-fold increase from last year.
+featured_stat_label_3: Share of desktop pages that included a `video` element. A three-fold increase from last year.
 unedited: true
 ---
 
@@ -48,7 +48,7 @@ Images are ubiquitous on the web.
 
 Put simply, almost every page contains image content and effectively all pages serve up _some_ sort of imagery (even if it's just a background or favicon).
 
-The impact that all of these images have is hard to overstate. [As the Page Weight chapter highlights](.page-weight), images are still responsible for more bytes per page than any other resource type. However, year-over-year, image transfer size has decreased.
+The impact that all of these images have is hard to overstate. [As the Page Weight chapter highlights](./page-weight), images are still responsible for more bytes per page than any other resource type. However, year-over-year, image transfer size has decreased.
 
 {{ figure_markup(
   image="mobile-image-transfer-size-by-year.png",
@@ -62,7 +62,7 @@ The impact that all of these images have is hard to overstate. [As the Page Weig
 
 This is surprising; for the last decade, the <a hreflang="en" href="https://httparchive.org/reports/state-of-images#bytesImg">Image Bytes</a> chart on the HTTP Archive's monthly <a hreflang="en" href="https://httparchive.org/reports/state-of-images">State of Images report</a> has seemingly only ever gone one direction: up. What reversed this trend in 2021? I think it may have something to do with native lazy-loading's rapid adoption; more on that later in the chapter.
 
-In any case, by quantity, images continue to make up an awful lot of the _stuff_ of the web. But tallying the sheer number of elements, requests, and bytes doesn't tell us how crucial images are to users' experiences. To get a sense of that, we can look at the <a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> metric, which tries to identify the most important piece of above-the-fold content on any given page. [As you can see in the Performance chapter](.performance#fig-19), the LCP element has an image on around three quarters of pages.
+In any case, by quantity, images continue to make up an awful lot of the _stuff_ of the web. But tallying the sheer number of elements, requests, and bytes doesn't tell us how crucial images are to users' experiences. To get a sense of that, we can look at the <a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> metric, which tries to identify the most important piece of above-the-fold content on any given page. [As you can see in the Performance chapter](./performance#fig-19), the LCP element has an image on around three quarters of pages.
 
 {{ figure_markup(
   content="71%",
@@ -356,7 +356,7 @@ Personally, I think native lazy-loading's rapid adoption is the best explanation
 
 What fueled lazy-load adoption? There's some consensus that it was a combination of ease of use, pent-up developer demand, and WordPress <a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">enabling lazy loading by default across a vast swath of the web</a>.
 
-Perhaps native lazy-loading has been _too_ successful? The Resource Hints chapter notes that [the majority of lazy-loaded images were in the initial viewport](.resource-hints#fig-16) (whereas the feature is ideally used on "below the fold" images). Furthermore, the Performance chapter found that [9.3% of Largest Contentful Paint elements have their `loading` attribute set to `lazy`](.performance#fig-20), which significantly delays the page's most important piece of content from loading, and hurts users' experiences.
+Perhaps native lazy-loading has been _too_ successful? The Resource Hints chapter notes that [the majority of lazy-loaded images were in the initial viewport](./resource-hints#fig-16) (whereas the feature is ideally used on "below the fold" images). Furthermore, the Performance chapter found that [9.3% of Largest Contentful Paint elements have their `loading` attribute set to `lazy`](./performance#fig-20), which significantly delays the page's most important piece of content from loading, and hurts users' experiences.
 
 #### Decoding
 
@@ -364,7 +364,7 @@ The `decoding` attribute on `<img>` serves as a useful point of contrast to high
 
 #### Accessibility
 
-When you embed contentful images on webpages, you should make their content as accessible as possible for non-visual users. I note this only to [defer you to the Accessibility chapter](.accessibility#images), whose in-depth analysis of image accessibility on the web found small year-over-year progress in this area, but mostly: a whole lot of room for improvement.
+When you embed contentful images on webpages, you should make their content as accessible as possible for non-visual users. I note this only to [defer you to the Accessibility chapter](./accessibility#images), whose in-depth analysis of image accessibility on the web found small year-over-year progress in this area, but mostly: a whole lot of room for improvement.
 
 #### Responsive images
 
@@ -417,6 +417,8 @@ First, let us consider the [`srcset` attribute](https://developer.mozilla.org/en
   </table>
   <figcaption>{{ figure_link(caption="`srcset` descriptor adoption.", sheets_gid="1030564653", sql_file="image_srcset_descriptor.sql") }}</figcaption>
 </figure>
+
+{# TODO I was wondering if this was desktop or mobile, then discovered you had a graph which showed both, so repalced this table with that. I see the table is back now. Is it needed now we have the graph which In think is more interesting? #}
 
 Almost a third of crawled pages use `srcset`; pretty good! And `w` descriptors, which allow browsers to select a resource based on both varying layout widths and varying screen densities, are four times more popular than `x` descriptors, which only enable DPR-adaptation.
 
@@ -831,7 +833,11 @@ Let's look at the videos that use 2 sources. Here are the top 10 occurrences:
   <figcaption>{{ figure_link(caption="The most common ordered pairs of `type` values, when there are two `source` elements within a `video` element.", sheets_gid="1549760253", sql_file="video_source_formats_mobile.sql") }}</figcaption>
 </figure>
 
+{# TODO I'm not sure this is such an interesting table. Consider adding some stats to make it more interesting? % of usage on mobile and desktop? #}
+
 In six of the top 10 examples, the MP4 is listed as the first source. <a hreflang="en" href="https://caniuse.com/mpeg4">MP4 support on the web is at 98.4%</a>, and the browsers that do not support MP4 generally do not support the `<video>` tag at all. This implies that these sites do not need two sources, and could save some storage on their web servers by removing their WebM or Ogg video sources. (Or, they could reverse the order of the videos, and browsers that support WebM will download the WebM).
+
+{# TODO - second time you meantioned and links to the 9* MP4 stat, but this time it's 98.4% instead fo 98.1%. Do we need more references and do both need to be links? If so can we at least be consistent. #}
 
 The same trend holds for `<video>` elements with three sources—eight of the top 10 examples begin with MP4.
 
@@ -877,6 +883,8 @@ The same trend holds for `<video>` elements with three sources—eight of the to
   </table>
   <figcaption>{{ figure_link(caption="The most common ordered triplets of `type` values, when there are three `source` elements within a `video` element.", sheets_gid="1549760253", sql_file="video_source_formats_mobile.sql") }}</figcaption>
 </figure>
+
+{# TODO I'm not sure this is such an interesting table. Consider adding some stats to make it more interesting? % of usage on mobile and desktop? #}
 
 Of course, these implementations will just play the MP4 file, and the WebM and Ogg files will be ignored.
 
