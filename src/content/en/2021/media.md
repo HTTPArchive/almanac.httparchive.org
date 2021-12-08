@@ -8,13 +8,14 @@ analysts: [eeeps, dougsillars, akshay-ranganath]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: This year, with native lazyloading, we collectively stemmed the tide of ever-increasing image transfer sizes.
+featured_stat_1: 99.93%
+featured_stat_label_1: Percent of pages that load an image resource of some kind.
+featured_stat_2: 87.1%
+featured_stat_label_2: Percentage of images on the web delivered as JPEGs, PNGs, or GIFs. All of these could be profitably converted to next-gen formats!
+featured_stat_3: 5.6%
+featured_stat_label_3: Share of desktop pages that included a `video` element. This represents a three-fold increase from last year.
+
 ---
 
 ## Introduction
@@ -883,5 +884,7 @@ We do see movement to more performant usage of the `<video>` tag—with less use
 
 ## Conclusion
 
-As we stated at the outset: the web is increasingly visual, and the ways in which we use the web's evolving feature set to encode, embed, lay out, and deliver both images and videos are evolving from year to year. Some things, like native lazyload adoption and `video` tag usage, are exploding. Others, such as legacy file format usage, have a lot of changing left to do. The Almanac is a chance to take stock and look back; this conclusion is an opportunity to look forward. Here's to ever-more effective visual communication on the web in 2022.
+As we stated at the outset: the web is increasingly visual, and the ways in which we use the web's evolving feature set to encode, embed, lay out, and deliver media continue to evolve. This year, with native lazyloading, we collectively stemmed the tide of ever-increasing image transfer sizes. And universal support for WebP and initial support for AVIF pave the way for a visually-richer and more efficient future. On the video side, we saw an explosion in the number of `<video>` elements, and increasing use of sophisticated delivery methods like adaptive bitrate streaming.
+
+The Web Almanac is a chance to take stock and look back; it's also a time to chart a path forward. Here's to ever-more effective visual communication on the web in 2022.
 
