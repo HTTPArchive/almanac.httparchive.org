@@ -54,7 +54,7 @@ The impact that all of these images have is hard to overstate. [As the Page Weig
   description="Bar chart showing the distribution of total image transfer sizes, per page, and how it has changed between 2020 and 2021. At the 25th percentile, transfer sizes have reduced from 277 kB to 257 kB. At the 50th, they've shrunk from 916 kB to 877 kB. And at the 75th percentile, they've gone down from 2,352 kB to 2,324 kB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=478222195&format=interactive",
   sheets_gid="381418851",
-  sql_file="bytes_per_type_2021.sql"
+  sql_file="../page-weight/bytes_per_type_2021.sql"
 )
 }}
 
@@ -67,7 +67,7 @@ In any case, by quantity, images continue to make up an awful lot of the _stuff_
   caption="Mobile pages whose LCP element has an image. On the desktop it's 79%!",
   classes="big-number",
   sheets_gid="1423728540",
-  sql_file="lcp_element_data.sql"
+  sql_file="../performance/lcp_element_data.sql"
 )
 }}
 
