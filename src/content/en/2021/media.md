@@ -8,7 +8,7 @@ analysts: [eeeps, dougsillars, akshay-ranganath]
 editors: []
 translators: []
 eeeps_bio: Eric Portis is a Web Platform Advocate at <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>.
-dougsillars_bio: Doug Sillars is a freelance digital nomad working on the intersection of performance and media. He tweets [@dougsillars](https://twitter.com/dougsillars), and blogs regularly at <a hreflang="en" href="https://dougsillars.com">dougsillars.com</a>.
+dougsillars_bio: Doug Sillars is an leader in developer relations, and a digital nomad working on the intersection of performance and media. He tweets [@dougsillars](https://twitter.com/dougsillars), and blogs regularly at <a hreflang="en" href="https://dougsillars.com">dougsillars.com</a>.
 results: https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/
 featured_quote: This year, with native lazyloading, we collectively stemmed the tide of ever-increasing image transfer sizes.
 featured_stat_1: 99.93%
@@ -689,7 +689,7 @@ The chart below shows all video extensions with over 1% market share:
   )
 }}
 
-By far, the #1 video format on the web is the mp4, since the <a hreflang="en" href="https://caniuse.com/mpeg4">mp4 h264 format has 98.1% support in all modern browsers</a>, and the 1.9% of browsers that do not support mp4 have no video support, so the number is really 100% coverage. Interestingly, the mp4 usage has dropped by ~15% YOY on both desktop and mobile. WebM support also dropped significantly YOY (50% drop on both mobile and desktop). (data from Web Almanac 2020 (../2020/media#videos)
+By far, the #1 video format on the web is the mp4, since the <a hreflang="en" href="https://caniuse.com/mpeg4">mp4 h264 format has 98.4% support in all modern browsers</a>, and the 1.9% of browsers that do not support mp4 have no video support, so the number is really 100% coverage. Interestingly, the mp4 usage has dropped by ~15% YOY on both desktop and mobile. WebM support also dropped significantly YOY (50% drop on both mobile and desktop). (data from Web Almanac 2020 (../2020/media#videos)
 
 Where we see the growth are files with no extension (these are often from YouTube or other streaming platforms), and in web streaming. Ts files are segments used in HTTP Live Streaming (HLS)  where we see a 4% jump in usage. .m4s are MPEG Dynamic Adaptive Streaming over HTTP (MPEG-DASH) video segments. M4s files grew by 50% from 2.3% to 3.3% YOY.
 
