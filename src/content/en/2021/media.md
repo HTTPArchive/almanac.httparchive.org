@@ -865,7 +865,7 @@ Of course, these implementations will just play the MP4 file, and the WebM and O
 
 The incorporation of video on the web has grown immensely over the last year—jumping from 1-2% of webpages to 4-5%. We expect this growth to continue. Interestingly, the "king of video", MP4, while still the king, is having its market share eroded by video streaming formats (that feature responsive and adaptive video sizing).
 
-We do see movement to more performant usage of the `<video>` tag—with less use of `preload=auto`—and more use of `preload=none` as well as we see behaviors in the width attribute that indicate that videos are being modified (or removed) for smaller screens.
+We do see movement to more performant usage of the `<video>` tag—with less use of `preload=auto`—and more use of `preload=none` as well as we see behaviors in the `width` attribute that indicate that videos are being modified (or removed) for smaller screens.
 
 ## Conclusion
 
