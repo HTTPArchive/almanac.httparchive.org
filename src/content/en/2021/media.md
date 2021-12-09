@@ -724,7 +724,7 @@ The next most commonly used attribute is "autoplay."  This tells the browser tha
 
 The autoplay attribute is a boolean attribute, meaning that its presence by fault means true. So for the 190 sites that use `autoplay="false"`, we're sorry to tell you that is not going to work.
 
-#### Width
+#### `width`
 
 The width attribute is also one of the top video attributes. It tells the browser how wide the video player should be (note that height is very rarely used, since the aspect ratio of the video will decide the space with just one value.)
 
