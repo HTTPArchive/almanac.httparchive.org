@@ -10,7 +10,7 @@ translators: []
 eeeps_bio: Eric Portis is a Web Platform Advocate at <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>.
 dougsillars_bio: Doug Sillars is an leader in developer relations, and a digital nomad working on the intersection of performance and media. He tweets [@dougsillars](https://twitter.com/dougsillars), and blogs regularly at <a hreflang="en" href="https://dougsillars.com">dougsillars.com</a>.
 results: https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/
-featured_quote: This year, with native lazyloading, we collectively stemmed the tide of ever-increasing image transfer sizes.
+featured_quote: This year, with native lazy-loading, we collectively stemmed the tide of ever-increasing image transfer sizes.
 featured_stat_1: 99.93%
 featured_stat_label_1: Pages that load an image resource of some kind.
 featured_stat_2: 87.1%
@@ -22,11 +22,11 @@ unedited: true
 
 ## Introduction
 
-Almost three decades ago <a hreflang="en" href="https://thehistoryoftheweb.com/the-origin-of-the-img-tag/">the `<img>` tag dropped</a> and hyper_text_ became hyper_media_. The web has become increasingly visual, ever since. What is the state of media on the web in 2021? Let's look at images and videos, in turn.
+Almost three decades ago <a hreflang="en" href="https://thehistoryoftheweb.com/the-origin-of-the-img-tag/">the `<img>` tag dropped</a> and hyper<em>text</em> became hyper<em>media</em>. The web has become increasingly visual ever since. What is the state of media on the web in 2021? Let's look at images and videos, in turn.
 
 ## Images
 
-Images are ubiquitous on the web.
+Images are ubiquitous on the web. Almost every page contains image content.
 
 {{ figure_markup(
   content="96%",
@@ -37,6 +37,8 @@ Images are ubiquitous on the web.
 )
 }}
 
+And effectively _all_ pages serve up _some_ sort of imagery (even if it's just a background or favicon).
+
 {{ figure_markup(
   content="99.93%",
   caption="Percentage of pages that generated at least one request for an image resource",
@@ -46,9 +48,7 @@ Images are ubiquitous on the web.
 )
 }}
 
-Put simply, almost every page contains image content and effectively all pages serve up _some_ sort of imagery (even if it's just a background or favicon).
-
-The impact that all of these images have is hard to overstate. [As the Page Weight chapter highlights](./page-weight), images are still responsible for more bytes per page than any other resource type. However, year-over-year, image transfer size has decreased.
+The impact that all of these images have is hard to overstate. [As the Page Weight chapter highlights](./page-weight), images are still responsible for more bytes per page than any other resource type. However, year-over-year, per-page image transfer sizes have decreased.
 
 {{ figure_markup(
   image="mobile-image-transfer-size-by-year.png",
@@ -343,7 +343,7 @@ If there is one breakout story this year as far as images on the web, it is <a h
 {{ figure_markup(
   image="adoption-of-native-loading-lazy-on-img.png",
   caption='Adoption of `loading="lazy"` on `<img>`.',
-  description="A line chart showing the percent of pages using native lazyloading, over time. From January 2019 to May 2020 there is 0% usage. From there we get a nice, two-stage curve, with accelerating usage through the summer, up to about August when eight percent of pages used lazyload, and then decelerating (but still ever-increasing) adoption for the next year or so, through to July 2021, where the line terminates at about 18%.",
+  description="A line chart showing the percent of pages using native lazy-loading, over time. From January 2019 to May 2020 there is 0% usage. From there we get a nice, two-stage curve, with accelerating usage through the summer, up to about August when eight percent of pages used lazy-load, and then decelerating (but still ever-increasing) adoption for the next year or so, through to July 2021, where the line terminates at about 18%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1314627953&format=interactive",
   sheets_gid="157636784",
   sql_file="../resource-hints/imgLazy.sql"
@@ -354,13 +354,13 @@ In July of 2020, native lazy-loading was used on just 1% of pages. By July of 20
 
 Personally, I think native lazy-loading's rapid adoption is the best explanation we have for the trend-breaking reduction in image bytes per page, this year.
 
-What fueled lazy-load adoption? There's some consensus that it was a combination of ease of use, pent-up developer demand, and WordPress <a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">enabling lazy loading by default across a vast swath of the web</a>.
+What fueled lazy-load adoption? There's some consensus that it was a combination of ease of use, pent-up developer demand, and WordPress <a hreflang="en" href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">enabling lazy-loading by default across a vast swath of the web</a>.
 
 Perhaps native lazy-loading has been _too_ successful? The Resource Hints chapter notes that [the majority of lazy-loaded images were in the initial viewport](./resource-hints#fig-16) (whereas the feature is ideally used on "below the fold" images). Furthermore, the Performance chapter found that [9.3% of Largest Contentful Paint elements have their `loading` attribute set to `lazy`](./performance#fig-20), which significantly delays the page's most important piece of content from loading, and hurts users' experiences.
 
 #### Decoding
 
-The `decoding` attribute on `<img>` serves as a useful point of contrast to highlight native lazy loading's success. <a hreflang="en" href="https://www.chromestatus.com/feature/4897260684967936">First supported</a> in 2018–about a year before native lazy-loading–the `decoding` attribute allows developers to prevent large image decode operations from blocking the main thread. It provides functionality that not all web developers need or understand, and that shows in the usage data. <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=1934121343">`decoding` is used on just 1% of pages, and on only 0.3% of `<img>` elements</a>.
+The `decoding` attribute on `<img>` serves as a useful point of contrast to highlight native lazy-loading's success. <a hreflang="en" href="https://www.chromestatus.com/feature/4897260684967936">First supported</a> in 2018–about a year before native lazy-loading–the `decoding` attribute allows developers to prevent large image decode operations from blocking the main thread. It provides functionality that not all web developers need or understand, and that shows in the usage data. <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=1934121343">`decoding` is used on just 1% of pages, and on only 0.3% of `<img>` elements</a>.
 
 #### Accessibility
 
@@ -376,6 +376,8 @@ First, let us consider the [`srcset` attribute](https://developer.mozilla.org/en
 
 ###### Feature adoption
 
+Almost a third of crawled pages use `srcset`; pretty good!
+
 {{ figure_markup(
   caption="Percent of pages that use `srcset`.",
   content="31%",
@@ -385,42 +387,17 @@ First, let us consider the [`srcset` attribute](https://developer.mozilla.org/en
 )
 }}
 
+And `w` descriptors, which allow browsers to select a resource based on both varying layout widths and varying screen densities, are four times more popular than `x` descriptors, which only enable DPR-adaptation.
+
 {{ figure_markup(
   image="srcset-descriptor-adoption.png",
   caption="`srcset` descriptor adoption.",
-  description="A bar chart showing... TODO",
+  description="A bar chart showing the percentage of pages using `x` descriptors and `w` descriptors, within `srcset` attributes, on both mobile and desktop. `x` descriptors are used on 6.1% of pages on desktop and 6.5% of pages on mobile. `w` descriptors are used four times more: 24.4% of the time on desktop, and 24.3% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=89579817&format=interactive",
   sheets_gid="1030564653",
-  sql_file="TODO.sql"
+  sql_file="image_srcset_descriptor.sql"
   )
 }}
-
-
-<figure>
-  <table>
-    <thead>
-      <tr>
-        <th></th>
-        <th>Percent of pages using feature</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th>`x` descriptors</th>
-        <td class="numeric">6%</td>
-      </tr>
-      <tr>
-        <th>`w` descriptors</th>
-        <td class="numeric">24%</td>
-      </tr>
-    </tbody>
-  </table>
-  <figcaption>{{ figure_link(caption="`srcset` descriptor adoption.", sheets_gid="1030564653", sql_file="image_srcset_descriptor.sql") }}</figcaption>
-</figure>
-
-{# TODO I was wondering if this was desktop or mobile, then discovered you had a graph which showed both, so repalced this table with that. I see the table is back now. Is it needed now we have the graph which In think is more interesting? #}
-
-Almost a third of crawled pages use `srcset`; pretty good! And `w` descriptors, which allow browsers to select a resource based on both varying layout widths and varying screen densities, are four times more popular than `x` descriptors, which only enable DPR-adaptation.
 
 How are developers populating their `srcset`s with resources?
 
@@ -689,7 +666,7 @@ The chart below shows all video extensions with over 1% market share:
   )
 }}
 
-By far, the #1 video format on the web is the mp4, since the <a hreflang="en" href="https://caniuse.com/mpeg4">mp4 h264 format has 98.4% support in all modern browsers</a>, and the 1.9% of browsers that do not support mp4 have no video support, so the number is really 100% coverage. Interestingly, the mp4 usage has dropped by ~15% YOY on both desktop and mobile. WebM support also dropped significantly YOY (50% drop on both mobile and desktop). (data from Web Almanac 2020 (../2020/media#videos)
+By far, the #1 video format on the web is the mp4, since the <a hreflang="en" href="https://caniuse.com/mpeg4">mp4 h264 format has 98.4% support in all modern browsers</a>, and the 1.9% of browsers that do not support mp4 have no video support, so the number is really 100% coverage. Interestingly, the mp4 usage has dropped by ~15% YOY on both desktop and mobile. WebM support also dropped significantly YOY (50% drop on both mobile and desktop). (data from [Web Almanac 2020](../2020/media#videos)
 
 Where we see the growth are files with no extension (these are often from YouTube or other streaming platforms), and in web streaming. Ts files are segments used in HTTP Live Streaming (HLS)  where we see a 4% jump in usage. .m4s are MPEG Dynamic Adaptive Streaming over HTTP (MPEG-DASH) video segments. M4s files grew by 50% from 2.3% to 3.3% YOY.
 
@@ -745,7 +722,7 @@ Interestingly, we see a large push away from `preload=auto` on both mobile and d
 
 The next most commonly used attribute is "autoplay."  This tells the browser that the video should play as soon as possible (and because of this, autoplay will actually override the preload attribute).
 
-The autoplay attribute is a boolean attribute, meaning that its presence by fault means true. So for the 190 sites that use "autoplay="false," we're sorry to tell you that is not going to work.
+The autoplay attribute is a boolean attribute, meaning that its presence by fault means true. So for the 190 sites that use `autoplay="false"`, we're sorry to tell you that is not going to work.
 
 #### Width
 
@@ -894,7 +871,7 @@ We do see movement to more performant usage of the `<video>` tag—with less use
 
 ## Conclusion
 
-As we stated at the outset: the web is increasingly visual, and the ways in which we use the web's evolving feature set to encode, embed, lay out, and deliver media continue to evolve. This year, with native lazyloading, we collectively stemmed the tide of ever-increasing image transfer sizes. And universal support for WebP and initial support for AVIF pave the way for a visually-richer and more efficient future. On the video side, we saw an explosion in the number of `<video>` elements, and increasing use of sophisticated delivery methods like adaptive bitrate streaming.
+As we stated at the outset: the web is increasingly visual, and the ways in which we use the web's evolving feature set to encode, embed, lay out, and deliver media continue to evolve. This year, with native lazy-loading, we collectively stemmed the tide of ever-increasing image transfer sizes. And universal support for WebP and initial support for AVIF pave the way for a visually-richer and more efficient future. On the video side, we saw an explosion in the number of `<video>` elements, and increasing use of sophisticated delivery methods like adaptive bitrate streaming.
 
 The Web Almanac is a chance to take stock and look back; it's also a time to chart a path forward. Here's to ever-more effective visual communication on the web in 2022.
 
