@@ -730,7 +730,7 @@ The width attribute is also one of the top video attributes. It tells the browse
 
 The width can be presented as a percentage, or a width in pixels.
 
-* When a percentage width is defined, the value "100%" is used in 99% of cases.
+* When a percentage width is defined, the value `100%` is used in 99% of cases.
 * When a width in pixels is defined, we see very similar numbers of videos at lower widths, but a large dropoff in the 1800 and 1920 widths:
 
 {{ figure_markup(
