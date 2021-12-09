@@ -814,8 +814,6 @@ Let's look at the videos that use 2 sources. Here are the top 10 occurrences:
 
 In six of the top 10 examples, the MP4 is listed as the first source. <a hreflang="en" href="https://caniuse.com/mpeg4">MP4 support on the web is at 98.4%</a>, and the browsers that do not support MP4 generally do not support the `<video>` tag at all. This implies that these sites do not need two sources, and could save some storage on their web servers by removing their WebM or Ogg video sources. (Or, they could reverse the order of the videos, and browsers that support WebM will download the WebM).
 
-{# TODO - second time you meantioned and links to the 9* MP4 stat, but this time it's 98.4% instead fo 98.1%. Do we need more references and do both need to be links? If so can we at least be consistent. #}
-
 The same trend holds for `<video>` elements with three sources—eight of the top 10 examples begin with MP4.
 
 <figure>
