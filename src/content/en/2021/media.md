@@ -77,15 +77,13 @@ Images are crucial to user's experiences of the web! Let's dive in, taking a clo
 
 ### Encoding
 
-Every image on the web is passed around as a file. What can we say out about the files themselves, and the image data that they contain?
+Image data on the web is encoded and delivered in files. What can we say out about these files, and the image data that they contain?
 
-#### Dimensions
+Let's start by looking at their pixel dimensions. We'll start small.
 
-Let’s start by looking at their pixel dimensions. We'll start small.
+#### Single-pixel images
 
-##### Single-pixel images
-
-Many `<img>` elements don't actually represent contentful <a hreflang="en" href="https://www.merriam-webster.com/dictionary/image">images</a>; instead, they contain a only a single–likely invisible–pixel:
+Many `<img>` elements don't actually represent contentful <a hreflang="en" href="https://www.merriam-webster.com/dictionary/image">images</a>; instead, they contain a only a single – likely invisible – pixel:
 
 <figure>
   <table>
@@ -109,7 +107,7 @@ Many `<img>` elements don't actually represent contentful <a hreflang="en" href=
   <figcaption>{{ figure_link(caption="Single pixel image use.", sheets_gid="1851007461", sql_file="image_1x1.sql") }}</figcaption>
 </figure>
 
-These single-pixel `<img>` elements  are, put bluntly, hacks: they are being abused either to do layout (which would be better done with CSS) or to track users (which would be better accomplished using the [Beacon API](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API)).
+These single-pixel `<img>` elements  are, put bluntly, hacks: they are being abused either [to do layout](https://www.killersites.com/killerSites/1-design/single_pixel.html) (which would be better done with CSS) or [to track users](https://www.facebook.com/business/learn/facebook-ads-pixel) (which would be better-accomplished using the [Beacon API](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API)).
 
 We can establish a baseline breakdown of what jobs all of these single-pixel `<img>`s are doing by looking at how many use [data URIs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs).
 
@@ -139,9 +137,9 @@ The single-pixel `<img>`s containing data URIs are almost certainly being used f
 
 Note that throughout the rest of this analysis, we have excluded single-pixel `<img>`s from the results. We're interested in `<img>` elements that are presenting visual information to the user, not tracking pixels or layout hacks.
 
-##### Multiple-pixel images
+#### Multiple-pixel images
 
-When `<img>`s contain more than one pixel–how many pixels do they contain?
+When `<img>`s contain more than one pixel – how many pixels do they contain?
 
 {{ figure_markup(
   image="image-pixel-counts.png",
@@ -167,7 +165,7 @@ The median `<img>` loads ~40,000 pixels on both desktop and mobile. I found this
 
 I was also surprised that there was almost no difference between desktop and mobile top end of the pixel count distribution. Initially, this seemed to indicate a lack of effective adoption of responsive image features, but when you consider that the mobile crawler has a 360 × 512px @3x viewport, while the desktop viewport is 1,376 × 768px @1x, it isn't actually surprising: the crawlers' viewports had similar widths, in physical pixels (1,080 vs 1,376). A bigger difference in physical pixel resolution between the crawlers would be more revealing.
 
-##### Aspect ratios
+#### Aspect ratios
 
 Images on the web are mostly landscape-oriented, and portrait-oriented images are relatively rare.
 
@@ -264,7 +262,7 @@ Let us turn our attention to file sizes.
   )
 }}
 
-The median contentful `<img>` weighs in at just over 10kB. But, again, the median page contains 15-17 `<img>`s, so, when looking at _pages_, the ninetieth percentile here–images that push past 100kB–aren't rare at all.
+The median contentful `<img>` weighs in at just over 10kB. But, again, the median page contains 15-17 `<img>`s, so, when looking at _pages_, the ninetieth percentile here – images that push past 100kB – aren't rare at all.
 
 #### Bits per pixel
 
@@ -286,7 +284,7 @@ So, with all of that context, here's how the web's images stack up:
 
 The median `<img>` on mobile hits that 10:1 compression ratio target on the nose: 2.4 bits/pixel. However, around that median, there is a tremendous spread. Let's break things down by format in order to learn a bit more.
 
-##### Bits per pixel, by format
+#### Bits per pixel, by format
 
 {{ figure_markup(
   image="median-bits-per-pixel-by-format.png",
@@ -300,9 +298,9 @@ The median `<img>` on mobile hits that 10:1 compression ratio target on the nose
 
 The median JPEG weighs in at 2.1 bits per pixel. Given the format's ubiquity, this is the best baseline to measure other formats by.
 
-The median PNG weighs in at more than twice that. PNG is sometimes called a "lossless" format; a median of 4.6 bits per pixel shows how false this is. True lossless compression should typically land at around 12-16 bits per pixel (depending on whether or not we're dealing with an alpha channel); PNG comes in so far below this because common PNG tooling is usually _lossy_: it modifies pixels–reducing color palettes and introducing dithering patterns–before encoding pixels, to boost compression ratios.
+The median PNG weighs in at more than twice that. PNG is sometimes called a "lossless" format; a median of 4.6 bits per pixel shows how false this is. True lossless compression should typically land at around 12-16 bits per pixel (depending on whether or not we're dealing with an alpha channel); PNG comes in so far below this because common PNG tooling is usually _lossy_: it modifies pixels – reducing color palettes and introducing dithering patterns – before encoding pixels, to boost compression ratios.
 
-GIFs, weighing in at 7.4 bits per pixel, come off terribly here, and make no mistake, <a hreflang="en" href="https://web.dev/efficient-animated-content/">they</a> <a hreflang="en" href="https://bitsofco.de/optimising-gifs/">are</a> <a hreflang="en" href="https://dougsillars.com/2019/01/15/state-of-the-web-animated-gifs/">terrible</a>! But they're also at a bit of an unfair disadvantage here because many GIFs on the web are animated. Web platform APIs don't expose the number of frames in an animated image, so we haven't accounted for frames. To give you a sense of how much this inflates GIF's numbers: a GIF measured as 20 bits per pixel, here, which contains ten frames, should be fairly counted as using 2 bits per pixel.
+GIFs, weighing in at 7.4 bits per pixel, come off terribly here, and make no mistake, <a hreflang="en" href="https://web.dev/efficient-animated-content/">they</a> <a hreflang="en" href="https://bitsofco.de/optimising-gifs/">are</a> <a hreflang="en" href="https://dougsillars.com/2019/01/15/state-of-the-web-animated-gifs/">terrible</a>! But they're also at a bit of an unfair disadvantage here because many GIFs on the web are animated. Web platform APIs don't expose the number of frames in an animated image, so we haven't accounted for frames. To give you a sense of how much this inflates GIF's numbers: a GIF measured as 20 bits per pixel, here, which contains ten frames, should be fairly counted as using two bits per pixel.
 
 Things get really interesting when we look at two next-gen formats: WebP and AVIF. Both weigh in almost 40% lighter than JPEG, at 1.3-1.5 bits per pixel. In formal studies using <a hreflang="en" href="https://kornel.ski/en/faircomparison">matched qualities</a>, WebP outperforms JPEG by <a hreflang="en" href="https://developers.google.com/speed/webp/docs/webp_study">between 25-34%</a>, so its real-world performance seems surprisingly *good*. On the other hand, AVIF's creators have published data suggesting that it is capable of <a hreflang="en" href="https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4">outperforming modern JPEG encoders JPEG by 50%+, in the lab</a>. So while AVIF's performance here is good, I expected it to be better. I can think of a few possible explanations for these discrepancies between lab data and real world performance.
 
@@ -316,7 +314,7 @@ Another thing to keep in mind when evaluating AVIF's real-world performance here
 
 One thing that is absolutely clear in both lab data and in our results is that both WebP and AVIF can be used to deliver a wide variety of content (including photography, <a hreflang="en" href="https://jakearchibald.com/2020/avif-has-landed/#flat-illustration">illustrations</a>, and images with transparency) more efficiently than the web's legacy formats. But, as we'll see in the next section, not that many sites have adopted them.
 
-##### Format adoption
+#### Format adoption
 
 {{ figure_markup(
   image="image-format-adoption-mobile.png",
@@ -328,9 +326,9 @@ One thing that is absolutely clear in both lab data and in our results is that b
   )
 }}
 
-The old formats still reign: JPEG dominates, with PNG and GIF rounding out the podium. Together, they account for almost 90% of the images on the web. WebP–which is now more than a decade old but which <a hreflang="en" href="https://www.macrumors.com/2020/06/22/webp-safari-14/">only achieved universal browser support last year</a>–is still in the single digits. And effectively no-one is using AVIF, which accounted for only 0.04% of crawled resources. We found a thousand JPEGs for every AVIF.
+The old formats still reign: JPEG dominates, with PNG and GIF rounding out the podium. Together, they account for almost 90% of the images on the web. WebP – which is now more than a decade old but which <a hreflang="en" href="https://www.macrumors.com/2020/06/22/webp-safari-14/">only achieved universal browser support last year</a> – is still in the single digits. And effectively no-one is using AVIF, which accounted for only 0.04% of crawled resources. We found a thousand JPEGs for every AVIF.
 
-For an in-depth analysis of how (and educated guesses as to why!) WebP and AVIF adoption has changed over time, the best resource is Paul Calvano's excellent recent talk at ImageReady (<a hreflang="en" href="https://www.youtube.com/watch?v=tz5bpAQY43k">full video</a>; <a hreflang="en" href="https://docs.google.com/presentation/d/1VS5QjNR6lh2y9jL5xaeainQ2cTAWyy7QiEjDMh4hNQA/edit#slide=id.gefc0d6ffce_0_0">slides 13-15</a>). In it, he shows that WebP adoption increased by ~34% from July 2020 (when Safari added support) to July 2021. AVIF's numbers have risen even more rapidly, in percentage terms, though perhaps that's not surprising given that the format is still brand new and used by relatively few sites. A few [large](https://twitter.com/chriscoyier/status/1465474900588646408) <a hreflang="en" href="https://medium.com/vimeo-engineering-blog/upgrading-images-on-vimeo-620f79da8605">players</a> adopting AVIF was all it took.
+For an in-depth analysis of how (and educated guesses as to why) WebP and AVIF adoption has changed over time, the best resource is Paul Calvano's excellent recent talk at ImageReady (<a hreflang="en" href="https://www.youtube.com/watch?v=tz5bpAQY43k">full video</a>; <a hreflang="en" href="https://docs.google.com/presentation/d/1VS5QjNR6lh2y9jL5xaeainQ2cTAWyy7QiEjDMh4hNQA/edit#slide=id.gefc0d6ffce_0_0">slides 13-15</a>). In it, he shows that WebP adoption increased by ~34% from July 2020 (when Safari added support) to July 2021. AVIF's numbers have risen even more rapidly, in percentage terms, though perhaps that's not surprising given that the format is still brand new and used by relatively few sites. A few [large](https://twitter.com/chriscoyier/status/1465474900588646408) <a hreflang="en" href="https://medium.com/vimeo-engineering-blog/upgrading-images-on-vimeo-620f79da8605">players</a> adopting AVIF was all it took.
 
 ### Embedding
 
@@ -360,7 +358,7 @@ Perhaps native lazy-loading has been _too_ successful? The Resource Hints chapte
 
 #### Decoding
 
-The `decoding` attribute on `<img>` serves as a useful point of contrast to highlight native lazy-loading's success. <a hreflang="en" href="https://www.chromestatus.com/feature/4897260684967936">First supported</a> in 2018–about a year before native lazy-loading–the `decoding` attribute allows developers to prevent large image decode operations from blocking the main thread. It provides functionality that not all web developers need or understand, and that shows in the usage data. <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=1934121343">`decoding` is used on just 1% of pages, and on only 0.3% of `<img>` elements</a>.
+The `decoding` attribute on `<img>` serves as a useful point of contrast to highlight native lazy-loading's success. <a hreflang="en" href="https://www.chromestatus.com/feature/4897260684967936">First supported</a> in 2018 – about a year before native lazy-loading – the `decoding` attribute allows developers to prevent large image decode operations from blocking the main thread. It provides functionality that not all web developers need or understand, and that shows in the usage data. <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1nwkpviC3gNhRb48i8OoIgtJx1ckqRjJGW7uc7Gdi_sI/edit?pli=1#gid=1934121343">`decoding` is used on just 1% of pages, and on only 0.3% of `<img>` elements</a>.
 
 #### Accessibility
 
@@ -372,7 +370,7 @@ In 2013, a suite of features enabling adaptive image loading on responsive websi
 
 ##### Srcset
 
-First, let us consider the [`srcset` attribute](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset), which allows developers to supply multiple possible resources for the same `<img>`:
+First, let us consider the [`srcset` attribute](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset), which allows developers to supply multiple possible resources for the same `<img>`.
 
 ###### Feature adoption
 
@@ -435,7 +433,7 @@ The mobile crawler here saw higher densities than the desktop crawler, which is 
 
 ###### Sizes accuracy
 
-Responsive images can be tricky. Authoring reasonably-accurate `sizes` attributes–and keeping them up to date with evolving page layouts and content–might be the hardest part about getting responsive images right. How many authors  get `sizes` wrong? And how wrong do they get it?
+Responsive images can be tricky. Authoring reasonably-accurate `sizes` attributes – and keeping them up to date with evolving page layouts and content – might be the hardest part about getting responsive images right. How many authors  get `sizes` wrong? And how wrong do they get it?
 
 {{ figure_markup(
   image="distribution-of-img-sizes-errors.png",
@@ -521,7 +519,7 @@ More than a quarter of `sizes` attributes are perfect: exact matches for the lay
 
 One in ten `sizes` attributes on mobile has an initial value of `auto`. This non-standard value is then presumably replaced by a Javascript library (probably <a hreflang="en" href="https://github.com/aFarkas/lazysizes">lazysizes.js</a>), using the measured layout size of the image.
 
-Some error in `sizes` is acceptable; the attribute provides a pre-layout hint to the browser in order to help it select an appropriate resource to load,_ before_ layout is complete. But large errors can lead to bad resource choices. This appears likely for the least-accurate quarter of `sizes` attributes, which report widths twice as large as the actual `<img>` layout width on desktop and 1.5x as large as the actual `<img>` layout width on mobile.
+Some error in `sizes` is acceptable; the attribute provides a pre-layout hint to the browser in order to help it select an appropriate resource to load, _before_ layout is complete. But large errors can lead to bad resource choices. This appears likely for the least-accurate quarter of `sizes` attributes, which report widths twice as large as the actual `<img>` layout width on desktop and 1.5x as large as the actual `<img>` layout width on mobile.
 
 So: one in ten `sizes` attributes is being authored on the client by a Javascript library, and at least one in four is inaccurate enough that the error is likely to impact resource selection. Both of these facts represent significant opportunities for either <a hreflang="en" href="https://github.com/ausi/respimagelint">existing tooling</a> or <a hreflang="en" href="https://github.com/whatwg/html/issues/4654">new web platform features</a> to help more authors get `sizes` right.
 
@@ -583,7 +581,7 @@ In any case, perhaps unsurprisingly, most images have extrinsic width constraint
 
 This brings us to the last web platform feature that we'd like to investigate: <a hreflang="en" href="https://www.youtube.com/watch?v=4-d_SoCHeWE">using the `height` and `width` attributes to reserve layout space for flexible images</a>.
 
-By default, images left to their intrinsic dimensions take up no space until they load and their intrinsic dimensions become known. At that point–poof–they pop into the page, causing a <a hreflang="en" href="https://developers.google.com/publisher-tag/guides/minimize-layout-shift">layout shift</a>. This was exactly the problem that the `height` and `width` attributes were invented to solve–<a hreflang="en" href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#img">in 1996</a>.
+By default, images left to their intrinsic dimensions take up no space until they load and their intrinsic dimensions become known. At that point – poof – they pop into the page, causing a <a hreflang="en" href="https://developers.google.com/publisher-tag/guides/minimize-layout-shift">layout shift</a>. This was exactly the problem that the `height` and `width` attributes were invented to solve – <a hreflang="en" href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#img">in 1996</a>.
 
 Unfortunately, `height` and `width` never played well with images that are assigned a variable extrinsic size in one dimension (e.g., `width: 100%;`), and left to fill out their intrinsic aspect ratio, in the other dimension. This is the dominant pattern in responsive design. So `width` and `height` fell out of favor within responsive contexts until 2019, when [a tweak to how `height` and `width` are used by browsers](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping#a_new_way_of_sizing_images_before_loading_completes) fixed this problem. Now, consistently setting `height` and `width` is one of the best things authors can do to reduce <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a>. How often are these attributes accomplishing this task?
 
@@ -666,13 +664,13 @@ The chart below shows all video extensions with over 1% market share:
   )
 }}
 
-By far, the #1 video format on the web is the mp4, since the <a hreflang="en" href="https://caniuse.com/mpeg4">mp4 h264 format has 98.4% support in all modern browsers</a>, and the 1.9% of browsers that do not support mp4 have no video support, so the number is really 100% coverage. Interestingly, the mp4 usage has dropped by ~15% YOY on both desktop and mobile. WebM support also dropped significantly YOY (50% drop on both mobile and desktop). (data from [Web Almanac 2020](../2020/media#videos)
+By far, the #1 video format on the web is the mp4, since the <a hreflang="en" href="https://caniuse.com/mpeg4">mp4 h264 format has 98.4% support in all modern browsers</a>, and the 1.9% of browsers that do not support mp4 have no video support, so the number is really 100% coverage. Interestingly, the mp4 usage has dropped by ~15% YOY on both desktop and mobile. WebM support also dropped significantly YOY (50% drop on both mobile and desktop). (data from [Web Almanac 2020](../2020/media#videos))
 
 Where we see the growth are files with no extension (these are often from YouTube or other streaming platforms), and in web streaming. Ts files are segments used in HTTP Live Streaming (HLS)  where we see a 4% jump in usage. .m4s are MPEG Dynamic Adaptive Streaming over HTTP (MPEG-DASH) video segments. M4s files grew by 50% from 2.3% to 3.3% YOY.
 
 ### Video CSS: `display`
 
-To begin, let's look at how the video will appear on the page by looking at the CSS `display` property for the video. What we find is that approximately half of all videos use a display value of `block`—placing the video on its own line and allowing for height and width values to be set for the video. The `inline-block` value also  allows height and width to be specified—for a total of two third's of all videos.
+To begin, let's look at how the video will appear on the page by looking at the CSS `display` property for the video. What we find is that approximately half of all videos use a display value of `block` – placing the video on its own line and allowing for height and width values to be set for the video. The `inline-block` value also  allows height and width to be specified – for a total of two third's of all videos.
 
 The  `display: none` declaration hides the video from the viewer. One in five videos on the web is hidden behind this display value. From a data usage perspective, this is less than optimal, as the video is still downloaded by the browser.
 
@@ -716,7 +714,7 @@ The most commonly used attribute is preload. The preload attribute gives the bro
   )
 }}
 
-Interestingly, we see a large push away from `preload=auto` on both mobile and desktop, with most of the movement to `preload=none.`  While it is possible that this changed for many videos, it could just be that the new videos added to the web over the last year utilize the "none" parameter more than in the past. From a page weight perspective—this is a large win for the web.
+Interestingly, we see a large push away from `preload=auto` on both mobile and desktop, with most of the movement to `preload=none.`  While it is possible that this changed for many videos, it could just be that the new videos added to the web over the last year utilize the "none" parameter more than in the past. From a page weight perspective – this is a large win for the web.
 
 #### Autoplay
 
@@ -751,7 +749,7 @@ The src attribute is used in the `<video>` tag to point to the URL of the video 
 
 One of the key ideas behind the `<source>` element is that the developer can supply multiple video formats to the browser, and the browser will select the first format that the browser understands.
 
-When we look at `<source>` usage, we see that about 40% of videos have no `<source>` element—implying that they use the `src` attribute. This is similar to the ratio found in 2020 (35%).
+When we look at `<source>` usage, we see that about 40% of videos have no `<source>` element – implying that they use the `src` attribute. This is similar to the ratio found in 2020 (35%).
 
 {{ figure_markup(
   image="source-element-count.png",
@@ -814,7 +812,7 @@ Let's look at the videos that use 2 sources. Here are the top 10 occurrences:
 
 In six of the top 10 examples, the MP4 is listed as the first source. <a hreflang="en" href="https://caniuse.com/mpeg4">MP4 support on the web is at 98.4%</a>, and the browsers that do not support MP4 generally do not support the `<video>` tag at all. This implies that these sites do not need two sources, and could save some storage on their web servers by removing their WebM or Ogg video sources. (Or, they could reverse the order of the videos, and browsers that support WebM will download the WebM).
 
-The same trend holds for `<video>` elements with three sources—eight of the top 10 examples begin with MP4.
+The same trend holds for `<video>` elements with three sources – eight of the top 10 examples begin with MP4.
 
 <figure>
   <table>
@@ -863,9 +861,9 @@ The same trend holds for `<video>` elements with three sources—eight of the to
 
 Of course, these implementations will just play the MP4 file, and the WebM and Ogg files will be ignored.
 
-The incorporation of video on the web has grown immensely over the last year—jumping from 1-2% of webpages to 4-5%. We expect this growth to continue. Interestingly, the "king of video", MP4, while still the king, is having its market share eroded by video streaming formats (that feature responsive and adaptive video sizing).
+The incorporation of video on the web has grown immensely over the last year – jumping from 1-2% of webpages to 4-5%. We expect this growth to continue. Interestingly, the "king of video", MP4, while still the king, is having its market share eroded by video streaming formats (that feature responsive and adaptive video sizing).
 
-We do see movement to more performant usage of the `<video>` tag—with less use of `preload=auto`—and more use of `preload=none` as well as we see behaviors in the `width` attribute that indicate that videos are being modified (or removed) for smaller screens.
+We do see movement to more performant usage of the `<video>` tag – with less use of `preload=auto` – and more use of `preload=none` as well as we see behaviors in the `width` attribute that indicate that videos are being modified (or removed) for smaller screens.
 
 ## Conclusion
 
