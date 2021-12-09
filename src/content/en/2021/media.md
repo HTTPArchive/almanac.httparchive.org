@@ -48,7 +48,7 @@ And effectively _all_ pages serve up _some_ sort of imagery (even if it's just a
 )
 }}
 
-The impact that all of these images have is hard to overstate. [As the Page Weight chapter highlights](./page-weight), images are still responsible for more bytes per page than any other resource type. However, year-over-year, per-page image transfer sizes have decreased.
+The impact that all of these images have is hard to overstate. As the [Page Weight](./page-weight) chapter highlights, images are still responsible for more bytes per page than any other resource type. However, year-over-year, per-page image transfer sizes have decreased.
 
 {{ figure_markup(
   image="mobile-image-transfer-size-by-year.png",
