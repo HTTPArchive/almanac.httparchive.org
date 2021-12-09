@@ -588,7 +588,7 @@ By default, images left to their intrinsic dimensions take up no space until the
 Unfortunately, `height` and `width` never played well with images that are assigned a variable extrinsic size in one dimension (e.g., `width: 100%;`), and left to fill out their intrinsic aspect ratio, in the other dimension. This is the dominant pattern in responsive design. So `width` and `height` fell out of favor within responsive contexts until 2019, when [a tweak to how `height` and `width` are used by browsers](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping#a_new_way_of_sizing_images_before_loading_completes) fixed this problem. Now, consistently setting `height` and `width` is one of the best things authors can do to reduce <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a>. How often are these attributes accomplishing this task?
 
 {{ figure_markup(
-  caption="The percentage of `<img>`s on mobile have `height` and `width` attributes, and are extrinsically sized in only one dimension.",
+  caption="The percentage of `<img>`s on mobile that have both `height` and `width` attributes, and are extrinsically sized in only one dimension.",
   content="7.5%",
   classes="big-number",
   sheets_gid="1150803469",
@@ -869,7 +869,7 @@ We do see movement to more performant usage of the `<video>` tag—with less use
 
 ## Conclusion
 
-As we stated at the outset: the web is increasingly visual, and the ways in which we use the web's evolving feature set to encode, embed, lay out, and deliver media continue to evolve. This year, with native lazy-loading stemmed the tide of ever-increasing image transfer sizes. And universal support for WebP and initial support for AVIF pave the way for a visually-richer and more efficient future. On the video side, we saw an explosion in the number of `<video>` elements, and increasing use of sophisticated delivery methods like adaptive bitrate streaming.
+As we stated at the outset: the web is increasingly visual, and the ways in which we use the web's evolving feature set to encode, embed, lay out, and deliver media continue to evolve. This year, native lazy-loading stemmed the tide of ever-increasing image transfer sizes. And universal support for WebP and initial support for AVIF pave the way for a visually-richer and more efficient future. On the video side, we saw an explosion in the number of `<video>` elements, and increasing use of sophisticated delivery methods like adaptive bitrate streaming.
 
 The Web Almanac is a chance to take stock and look back; it's also a time to chart a path forward. Here's to ever-more effective visual communication on the web in 2022.
 
