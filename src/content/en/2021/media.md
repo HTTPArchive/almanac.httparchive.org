@@ -62,7 +62,7 @@ The impact that all of these images have is hard to overstate. As the [Page Weig
 
 This is surprising; for the last decade, the <a hreflang="en" href="https://httparchive.org/reports/state-of-images#bytesImg">Image Bytes</a> chart on the HTTP Archive's monthly <a hreflang="en" href="https://httparchive.org/reports/state-of-images">State of Images report</a> has seemingly only ever gone one direction: up. What reversed this trend in 2021? I think it may have something to do with native lazy-loading's rapid adoption; more on that later in the chapter.
 
-In any case, by quantity, images continue to make up an awful lot of the _stuff_ of the web. But tallying the sheer number of elements, requests, and bytes doesn't tell us how crucial images are to users' experiences. To get a sense of that, we can look at the <a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> metric, which tries to identify the most important piece of above-the-fold content on any given page. [As you can see in the Performance chapter](./performance#fig-19), the LCP element has an image on around three quarters of pages.
+In any case, by quantity, images continue to make up an awful lot of the _stuff_ of the web. But tallying the sheer number of elements, requests, and bytes doesn't tell us how crucial images are to users' experiences. To get a sense of that, we can look at the <a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> metric, which tries to identify the most important piece of above-the-fold content on any given page. As you can see in the [Performance](./performance#fig-19) chapter, the LCP element has an image on around three quarters of pages.
 
 {{ figure_markup(
   content="71%",
