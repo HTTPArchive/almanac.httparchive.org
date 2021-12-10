@@ -721,7 +721,7 @@ Interestingly, we see a large push away from `preload=auto` on both mobile and d
 
 #### Autoplay
 
-The next most commonly used attribute is "autoplay."  This tells the browser that the video should play as soon as possible (and because of this, autoplay will actually override the preload attribute).
+The next most commonly used attribute is `autoplay`.  This tells the browser that the video should play as soon as possible (and because of this, autoplay will actually override the preload attribute).
 
 The autoplay attribute is a boolean attribute, meaning that its presence by fault means true. So for the 190 sites that use `autoplay="false"`, we're sorry to tell you that is not going to work.
 
