@@ -667,7 +667,7 @@ The chart below shows all video extensions with over 1% market share:
   )
 }}
 
-By far, the #1 video format on the web is the mp4, since the <a hreflang="en" href="https://caniuse.com/mpeg4">mp4 h264 format has 98.4% support in all modern browsers</a>, and the 1.9% of browsers that do not support mp4 have no video support, so the number is really 100% coverage. Interestingly, the mp4 usage has dropped by ~15% YOY on both desktop and mobile. WebM support also dropped significantly YOY (50% drop on both mobile and desktop). (data from [Web Almanac 2020](../2020/media#videos))
+By far, the #1 video format on the web is the `mp4` (or MPEG-4), since the <a hreflang="en" href="https://caniuse.com/mpeg4">mp4 h264 format has 98.4% support in all modern browsers</a>, and the 1.9% of browsers that do not support `mp4` have no video support, so the number is really 100% coverage. Interestingly, the `mp4` usage has dropped by ~15% YOY on both desktop and mobile. WebM support also [dropped significantly YOY](../2020/media#videos) (50% drop on both mobile and desktop).
 
 Where we see the growth are files with no extension (these are often from YouTube or other streaming platforms), and in web streaming. `ts` files are segments used in HTTP Live Streaming (HLS)  where we see a 4% jump in usage. `.m4s` are MPEG Dynamic Adaptive Streaming over HTTP (MPEG-DASH) video segments. M4s files grew by 50% from 2.3% to 3.3% YOY.
 
