@@ -135,7 +135,7 @@ We can establish a baseline breakdown of what jobs all of these single-pixel `<i
 
 The single-pixel `<img>`s containing data URIs are almost certainly being used for layout. The remaining ~54% which generate a request might be there for layout or they might be tracking pixels; we can't tell.
 
-Note that throughout the rest of this analysis, we have excluded single-pixel `<img>`s from the results. We're interested in `<img>` elements that are presenting visual information to the user, not tracking pixels or layout hacks.
+Note that throughout the rest of this analysis, we have excluded single-pixel `<img>`s from the results. For this media chapter, we're interested in `<img>` elements that are presenting visual information to the user, not tracking pixels or layout hacks.
 
 #### Multiple-pixel images
 
