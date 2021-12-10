@@ -705,7 +705,7 @@ Let's look at the most common attributes and how they are used inside the `<vide
 
 #### Preload
 
-The most commonly used attribute is preload. The preload attribute gives the browser a hint on the best way to handle the video download. There are four possible options: `auto`, `metadata`, `none`, and an empty response = `auto`.
+The most commonly used attribute is preload. The preload attribute gives the browser a hint on the best way to handle the video download. There are four possible options: `auto`, `metadata`, `none`, and an empty response (which uses the default of `auto`).
 
 {{ figure_markup(
   image="video-preload-values.png",
