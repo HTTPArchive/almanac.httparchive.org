@@ -719,7 +719,7 @@ The most commonly used attribute is preload. The preload attribute gives the bro
 
 Interestingly, we see a large push away from `preload=auto` on both mobile and desktop, with most of the movement to `preload=none.`  While it is possible that this changed for many videos, it could just be that the new videos added to the web over the last year utilize the "none" parameter more than in the past. From a page weight perspective – this is a large win for the web.
 
-#### Autoplay
+#### `autoplay`
 
 The next most commonly used attribute is `autoplay`.  This tells the browser that the video should play as soon as possible (and because of this, autoplay will actually override the preload attribute).
 
