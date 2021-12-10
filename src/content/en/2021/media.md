@@ -703,7 +703,7 @@ Let's look at the most common attributes and how they are used inside the `<vide
   )
 }}
 
-#### Preload
+#### `preload`
 
 The most commonly used attribute is preload. The preload attribute gives the browser a hint on the best way to handle the video download. There are four possible options: `auto`, `metadata`, `none`, and an empty response (which uses the default of `auto`).
 
