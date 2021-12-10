@@ -3,7 +3,7 @@
 title: Caching
 description: Caching chapter of the 2021 Web Almanac covering Cache-control, Expires, TTLs, validity, Vary, Set-cookies, Service Workers and opportunities.
 authors: [Zizzamia, jessnicolet]
-reviewers: [WilhelmWillie]
+reviewers: [WilhelmWillie, roryhewitt]
 analysts: [rviscomi]
 editors: []
 translators: []
