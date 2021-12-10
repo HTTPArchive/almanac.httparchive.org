@@ -151,7 +151,9 @@ When `<img>`s contain more than one pixel – how many pixels do they contain?
   )
 }}
 
-The median `<img>` loads ~40,000 pixels on both desktop and mobile. I found this number surprisingly small. Just under half of crawled`<img>`s (excluding the ones that loaded single-pixel images, or nothing at all) contain fewer pixels than a 200x200 image. When you consider the number of `<img>` elements per page, though, this statistic is less surprising. Most pages contain more than 15 images, so while images with more than half-a-megapixel might only account for one in ten `<img>` elements, they are not at all uncommon, as we navigate across pages.
+The median `<img>` loads just over 40,000 pixels on both desktop and mobile. I found this number surprisingly small. Just under half of crawled`<img>`s (excluding the ones that loaded single-pixel images, or nothing at all) contain about the same number of pixels than a 200x200 image.
+
+However, when you consider the number of `<img>` elements per page, though, this statistic is less surprising. Most pages contain more than 15 images, so are often made up of many smaller images and icons. So, while images with more than half-a-megapixel might only account for one in ten `<img>` elements, they are not at all uncommon, as we navigate across pages as many pages will include at least one larger image.
 
 {{ figure_markup(
   image="number-of-imgs-per-page.png",
