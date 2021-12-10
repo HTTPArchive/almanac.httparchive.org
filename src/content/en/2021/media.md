@@ -673,7 +673,7 @@ Where we see the growth are files with no extension (these are often from YouTub
 
 ### Video CSS: `display`
 
-To begin, let's look at how the video will appear on the page by looking at the CSS `display` property for the video. What we find is that approximately half of all videos use a display value of `block` – placing the video on its own line and allowing for height and width values to be set for the video. The `inline-block` value also  allows height and width to be specified – for a total of two third's of all videos.
+To begin, let's look at how the video will appear on the page by looking at the CSS `display` property for the video. What we find is that approximately half of all videos use a display value of `block` – placing the video on its own line and allowing for height and width values to be set for the video. The `inline-block` value also allows height and width to be specified – for a total of two third's of all videos.
 
 The  `display: none` declaration hides the video from the viewer. One in five videos on the web is hidden behind this display value. From a data usage perspective, this is less than optimal, as the video is still downloaded by the browser.
 
