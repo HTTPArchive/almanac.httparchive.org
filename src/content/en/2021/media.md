@@ -388,7 +388,7 @@ First, let us consider the [`srcset` attribute](https://developer.mozilla.org/en
 
 Almost a third of crawled pages use `srcset`; pretty good!
 
-And `w` descriptors, which allow browsers to select a resource based on both varying layout widths and varying screen densities, are four times more popular than `x` descriptors, which only enable DPR-adaptation.
+And [`w` descriptors](https://cloudfour.com/thinks/responsive-images-101-part-4-srcset-width-descriptors/), which allow browsers to select a resource [based on both varying layout widths and varying screen densities](https://jakearchibald.com/2015/anatomy-of-responsive-images/#varying-size-and-density), are four times more popular than [`x` descriptors](https://cloudfour.com/thinks/responsive-images-101-part-3-srcset-display-density/), [which only enable DPR-adaptation](https://jakearchibald.com/2015/anatomy-of-responsive-images/#fixed-size-varying-density).
 
 {{ figure_markup(
   image="srcset-descriptor-adoption.png",
