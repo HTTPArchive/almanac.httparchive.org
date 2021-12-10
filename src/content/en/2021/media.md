@@ -653,7 +653,7 @@ Most videos on the web are short: ~ 60% of videos are under 30 seconds long on b
 
 ### Video: formats
 
-What types of files are being delivered as video?  We queried all files with "video" in the MIME type, and then sorted by the file extension.
+What types of files are being delivered as video?  We queried all files with `video` in the MIME type, and then sorted by the file extension.
 
 The chart below shows all video extensions with over 1% market share:
 
