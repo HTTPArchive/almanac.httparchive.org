@@ -308,7 +308,7 @@ Things get really interesting when we look at two next-gen formats: WebP and AVI
 
 First: tooling. JPEG encoders vary incredibly widely, ranging from hardware encoders in cameras which don't spend much effort compressing images well, to ancient copies of <a hreflang="en" href="https://en.wikipedia.org/wiki/Libjpeg">libjpeg</a> installed decades ago, to bleeding-edge, best-practice-by-default encoders like MozJPEG. In short, there are a lot of old, badly-compressed JPEGs out there, but every WebP and AVIF has been compressed with modern tooling.
 
-Also, anecdotally, <a hreflang="en" href="https://developers.google.com/speed/webp/download">cwebp</a> is relatively aggressive about quality/compression, and returns lower-quality, more-compressed results by default than most common JPEG tooling.
+Also, anecdotally, the reference WebP encoder (<a hreflang="en" href="https://developers.google.com/speed/webp/download">cwebp</a>) is relatively aggressive about quality/compression, and returns lower-quality, more-compressed results by default than most common JPEG tooling.
 
 And as far as AVIF is concerned: <a hreflang="en" href="https://github.com/AOMediaCodec/libavif">libavif</a> is capable of a wide variety of compression ratios depending on which "speed" setting you choose. At its slowest speeds (producing the highest-efficiency files) libavif can take _minutes_ to render a single image. It's reasonable to assume that different image-rendering pipelines will make different tradeoffs when choosing speed settings, depending on their constraints. This results in a wide distribution of compression performance.
 
