@@ -376,7 +376,6 @@ First, let us consider the [`srcset` attribute](https://developer.mozilla.org/en
 
 ###### Feature adoption
 
-Almost a third of crawled pages use `srcset`; pretty good!
 
 {{ figure_markup(
   caption="Percent of pages that use `srcset`.",
@@ -386,6 +385,8 @@ Almost a third of crawled pages use `srcset`; pretty good!
   sql_file="image_srcset_sizes.sql"
 )
 }}
+
+Almost a third of crawled pages use `srcset`; pretty good!
 
 And `w` descriptors, which allow browsers to select a resource based on both varying layout widths and varying screen densities, are four times more popular than `x` descriptors, which only enable DPR-adaptation.
 
