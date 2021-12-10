@@ -531,7 +531,7 @@ So: one in ten `sizes` attributes is being authored on the client by a Javascrip
 The `<picture>` element serves a couple of use cases:
 
 1. Art direction, with the [`media` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture#the_media_attribute)
-2. Type-switching, via the [`type` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture#the_type_attribute)
+2. Format-switching, based on mime-type, via the [`type` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture#the_type_attribute)
 
 {{ figure_markup(
   caption="The percentage of pages which use `<picture>`.",
