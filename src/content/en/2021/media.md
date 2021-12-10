@@ -364,7 +364,7 @@ The `decoding` attribute on `<img>` serves as a useful point of contrast to high
 
 #### Accessibility
 
-When you embed contentful images on webpages, you should make their content as accessible as possible for non-visual users. I note this only to [defer you to the Accessibility chapter](./accessibility#images), whose in-depth analysis of image accessibility on the web found small year-over-year progress in this area, but mostly: a whole lot of room for improvement.
+When you embed contentful images on webpages, you should make their content as accessible as possible for non-visual users. I note this only to defer you to the [Accessibility](./accessibility#images) chapter, whose in-depth analysis of image accessibility on the web found small year-over-year progress in this area, but mostly: a whole lot of room for improvement.
 
 #### Responsive images
 
