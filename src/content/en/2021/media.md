@@ -165,7 +165,7 @@ However, when you consider the number of `<img>` elements per page, though, this
   )
 }}
 
-I was also surprised that there was almost no difference between desktop and mobile top end of the pixel count distribution. Initially, this seemed to indicate a lack of effective adoption of responsive image features, but when you consider that the mobile crawler has a 360 × 512px @3x viewport, while the desktop viewport is 1,376 × 768px @1x, it isn't actually surprising: the crawlers' viewports had similar widths, in physical pixels (1,080 vs 1,376). A bigger difference in physical pixel resolution between the crawlers would be more revealing.
+I was also surprised that there was almost no difference between desktop and mobile top end of the pixel count distribution. Initially, this seemed to indicate a lack of effective adoption of responsive image features, but when you consider that the mobile crawler has a 360 × 512px @3x viewport (so effectively 1,080 by 1,536 physical pixels), while the desktop viewport is 1,376 × 768px @1x, it isn't actually surprising: the crawlers' viewports had similar widths, in physical pixels (1,080 vs 1,376). A bigger difference in physical pixel resolution between the crawlers would be more revealing.
 
 #### Aspect ratios
 
