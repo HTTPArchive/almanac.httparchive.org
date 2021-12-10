@@ -564,7 +564,7 @@ Once you've embedded an image on a page, you must lay it out amongst the rest of
 
 As [replaced elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element), images have a natural, ["intrinsic" size](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size). This is the size that they will render at by default, if there are no CSS rules placing "extrinsic" layout constraints upon them.
 
-How many images are extrinsically vs extrinsically sized?
+How many images are intrinsically vs extrinsically sized?
 
 {{ figure_markup(
   image="intrinsic-and-extrinsic-image-sizing.png",
