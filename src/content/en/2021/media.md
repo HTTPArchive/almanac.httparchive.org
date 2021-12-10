@@ -370,11 +370,9 @@ When you embed contentful images on webpages, you should make their content as a
 
 In 2013, a suite of features enabling adaptive image loading on responsive websites landed, to much fanfare. Eight years in, how are responsive image features being used?
 
-##### Srcset
-
 First, let us consider the [`srcset` attribute](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset), which allows developers to supply multiple possible resources for the same `<img>`.
 
-###### Feature adoption
+##### `x` and `w` descriptor adoption
 
 
 {{ figure_markup(
@@ -402,7 +400,7 @@ And [`w` descriptors](https://cloudfour.com/thinks/responsive-images-101-part-4-
 
 How are developers populating their `srcset`s with resources?
 
-###### Number of candidates
+##### Number of `srcset` candidates
 
 Let's first take a look at the number of candidate resources developers are including:
 
@@ -418,7 +416,7 @@ Let's first take a look at the number of candidate resources developers are incl
 
 A large majority of `srcset`s  are populated with five-or-fewer resources.
 
-###### Resource densities
+##### `srcset` resource densities
 
 Are developers giving the browser an appropriately wide range of choices? To figure this out, we can calculate each resource's <a hreflang="en" href="https://html.spec.whatwg.org/multipage/images.html#current-pixel-density">density</a>: a measure of how many image pixels the `<img>` will paint in each CSS `px`, if left to its intrinsic dimensions. If the range of resource densities covers a reasonable range of real-world device DPRs, the `srcset` has a wide-enough range.
 
@@ -434,7 +432,7 @@ Are developers giving the browser an appropriately wide range of choices? To fig
 
 The mobile crawler here saw higher densities than the desktop crawler, which is expected. Viewport-relative `sizes` values resolve to smaller values on mobile viewports, resulting in higher densities for the same resources. Taken as a whole, [given that most devicePixelRatios fall somewhere between 1x-3x](https://twitter.com/TheRealNooshu/status/1397862141894529027), this appears to be a healthy range of densities. It would be interesting to perform a deeper analysis that counted how many `srcsets` _didn't_ fully cover a "reasonable" ~1x-2x range; this is left as an exercise to the reader (or next year's analysts!).
 
-###### Sizes accuracy
+##### `sizes` accuracy
 
 Responsive images can be tricky. Authoring reasonably-accurate `sizes` attributes – and keeping them up to date with evolving page layouts and content – might be the hardest part about getting responsive images right. How many authors  get `sizes` wrong? And how wrong do they get it?
 
@@ -526,7 +524,7 @@ Some error in `sizes` is acceptable; the attribute provides a pre-layout hint to
 
 So: one in ten `sizes` attributes is being authored on the client by a Javascript library, and at least one in four is inaccurate enough that the error is likely to impact resource selection. Both of these facts represent significant opportunities for either <a hreflang="en" href="https://github.com/ausi/respimagelint">existing tooling</a> or <a hreflang="en" href="https://github.com/whatwg/html/issues/4654">new web platform features</a> to help more authors get `sizes` right.
 
-##### `<picture>`
+##### `<picture>` usage
 
 The `<picture>` element serves a couple of use cases:
 
