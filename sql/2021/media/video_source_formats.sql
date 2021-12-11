@@ -11,7 +11,7 @@ WITH videonotes AS (
     source_format_count
   FROM (
       SELECT
-        client,
+        _TABLE_SUFFIX AS client,
         url AS pageURL,
         JSON_VALUE(payload, "$._media") AS media,
         CAST(JSON_VALUE(JSON_VALUE(payload, "$._media"), "$.num_video_nodes") AS INT64) AS num_video_nodes,
@@ -43,7 +43,8 @@ total_videos AS (
 SELECT
   client,
   source_formats,
-  COUNT(source_formats) AS numberofoccurances.
+  COUNT(source_formats) AS numberofoccurances,
+  source_format_count,
   COUNT(source_formats) / total_video_nodes AS pct_videos
 FROM
   videonotes
@@ -55,6 +56,7 @@ WHERE
 GROUP BY
   client,
   source_formats,
+  source_format_count,
   total_video_nodes
 ORDER BY
   numberofoccurances DESC

@@ -22,7 +22,7 @@ WITH videonotes AS (
     END AS duration_bucket
   FROM (
       SELECT
-        _TABLE_SUFFIX as client,
+        _TABLE_SUFFIX AS client,
         url AS pageURL,
         JSON_VALUE(payload, "$._media") AS media,
         CAST(JSON_VALUE(JSON_VALUE(payload, "$._media"), "$.num_video_nodes") AS INT64) AS num_video_nodes,
