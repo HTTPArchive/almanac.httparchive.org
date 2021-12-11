@@ -560,8 +560,6 @@ It's possible that format-switching with `<source type>` is only used on 2-3% of
 
 Notably, `<source type>` and `<source media>` are not mutually exclusive, and, put together, the usage percentages here do not add up to 100%. This suggests that at least 15% of `<picture>` elements do not leverage either of these attributes, making those `<picture>`s functionally equivalent to a `<span>`.
 
-{# TODO consdier investigating a few examples to see if can understand why #}
-
 ### Layout
 
 Once you've embedded an image on a page, you must lay it out amongst the rest of the page's contents. There are many, many ways to do this, but we can derive a few insights about how it's generally done by zooming out and answering a couple of big-picture questions.
@@ -733,9 +731,7 @@ The autoplay attribute is a Boolean attribute, meaning that its presence by faul
 
 #### `width`
 
-The width attribute is also one of the top video attributes. It tells the browser how wide the video player should be (note that height is very rarely used, since the aspect ratio of the video will decide the space with just one value.)
-
-{# TODO: I discovered recently that this is not the case! And unless you override with CSS a default aspect-ration of 2:1 will be used: whatwg/html#3090 #}
+The width attribute is also one of the top video attributes. It tells the browser how wide the video player should be. Note that height is very rarely used, since the browser can set this - but it will use a  <a hreflang="en" href ="https://github.com/whatwg/html/issues/3090">default aspect-ratio of 2:1</a> which may be incorrect if not explicity overriden with the `aspect-ratio` CSS styling.
 
 The width can be presented as a percentage, or a width in pixels.
 
