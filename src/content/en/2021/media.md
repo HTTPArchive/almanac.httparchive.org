@@ -775,38 +775,60 @@ Let's look at the videos that use 2 sources. Here are the top 10 occurrences:
     <thead>
       <tr>
         <th>Format</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
       </tr>
     </thead>
     </tbody>
       <tr>
         <td>`["video/mp4","video/webm"]`</td>
+        <td class="numeric:">25.9%</td>
+        <td class="numeric:">26.1%</td>
       </tr>
       <tr>
         <td>`["video/webm","video/mp4"]`</td>
+        <td class="numeric:">22.3%</td>
+        <td class="numeric:">23.3%</td>
       </tr>
       <tr>
         <td>`["video/mp4","video/ogg"]`</td>
+        <td class="numeric:">20.2%</td>
+        <td class="numeric:">24.2%</td>
       </tr>
       <tr>
         <td>`[null,null]`</td>
+        <td class="numeric:">14.1%</td>
+        <td class="numeric:">8.0%</td>
       </tr>
       <tr>
         <td>`["video/mp4"]`</td>
+        <td class="numeric:">3.6%</td>
+        <td class="numeric:">3.4%</td>
       </tr>
       <tr>
         <td>`["video/mp4","video/mp4"]`</td>
+        <td class="numeric:">3.5%</td>
+        <td class="numeric:">5.1%</td>
       </tr>
       <tr>
         <td>`["application/x-mpegURL","video/mp4"]`</td>
+        <td class="numeric:">2.4%</td>
+        <td class="numeric:">2.1%</td>
       </tr>
       <tr>
         <td>`[]`</td>
+        <td class="numeric:">2.1%</td>
+        <td class="numeric:">1.8%</td>
       </tr>
       <tr>
         <td>`["video/mp4; codecs="avc1.42E01E, mp4a.40.2","video/webm; codecs="vp8, vorbis"`</td>
+        <td class="numeric:">0.8%</td>
+        <td class="numeric:">0.3%</td>
       </tr>
       <tr>
         <td>`["video/mp4;","video/webm;"]`</td>
+        <td class="numeric:">0.4%</td>
+        <td class="numeric:">0.3%</td>
       </tr>
     </tbody>
   </table>
@@ -824,38 +846,60 @@ The same trend holds for `<video>` elements with three sources – eight of the 
     <thead>
       <tr>
         <th>Format</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
       </tr>
     </thead>
     </tbody>
       <tr>
         <td>`["video/mp4","video/webm","video/ogg"]`</td>
+        <td class="numeric:">30.4%</td>
+        <td class="numeric:">28.6%</td>
       </tr>
       <tr>
         <td>`["video/mp4; codecs=avc1","video/mp4; codecs=avc1","video/mp4; codecs=avc1"]`</td>
+        <td class="numeric:">13.3%</td>
+        <td class="numeric:">16.4%</td>
       </tr>
       <tr>
         <td>`["video/webm","video/mp4","video/ogg"]`</td>
+        <td class="numeric:">7.0%</td>
+        <td class="numeric:">6.3%</td>
       </tr>
       <tr>
         <td>`["video/mp4; codecs=avc1"]`</td>
+        <td class="numeric:">5.8%</td>
+        <td class="numeric:">7.1%</td>
       </tr>
       <tr>
         <td>`["video/mp4","video/ogg","video/webm"]`</td>
+        <td class="numeric:">5.0%</td>
+        <td class="numeric:">5.5%</td>
       </tr>
       <tr>
         <td>`["video/mp4;","video/ogg; codecs="theora, vorbis","video/webm; codecs="vp8, vorbis"]`</td>
+        <td class="numeric:">3.8%</td>
+        <td class="numeric:">1.2%</td>
       </tr>
       <tr>
         <td>`["video/mp4; codecs=hevc","video/webm","video/mp4"]`</td>
+        <td class="numeric:">3.2%</td>
+        <td class="numeric:">3.4%</td>
       </tr>
       <tr>
         <td>`["video/mp4"]`</td>
+        <td class="numeric:">3.0%</td>
+        <td class="numeric:">3.0%</td>
       </tr>
       <tr>
         <td>`["video/ogg; codecs="theora, vorbis","video/webm","video/mp4"]`</td>
+        <td class="numeric:">2.7%</td>
+        <td class="numeric:">3.3%</td>
       </tr>
       <tr>
         <td>`["video/mp4","video/webm","video/ogv"]`</td>
+        <td class="numeric:">2.5%</td>
+        <td class="numeric:">1.7%</td>
       </tr>
     </tbody>
   </table>
