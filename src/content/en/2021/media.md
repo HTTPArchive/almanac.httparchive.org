@@ -556,7 +556,7 @@ Art direction appears a bit more popular than format-switching, but both feature
 
 It's possible that format-switching with `<source type>` is only used on 2-3% of pages because format-switching can also be accomplished using [server-side content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation). Unfortunately server-side adaptation mechanisms are hard to detect in the crawled data, and we have not analyzed them here.
 
-Notably, `<source type>` and `<source media>` are not mutually exclusive, and, put together, the usage percentages here do not add up to 100%. This suggests that at least 15% of `<picture>` elements do not leverage either of these attributes, making those `<picture>`s  functionally equivalent to a `<span>`.
+Notably, `<source type>` and `<source media>` are not mutually exclusive, and, put together, the usage percentages here do not add up to 100%. This suggests that at least 15% of `<picture>` elements do not leverage either of these attributes, making those `<picture>`s functionally equivalent to a `<span>`.
 
 ### Layout
 
@@ -677,7 +677,7 @@ Where we see the growth are files with no extension (these are often from YouTub
 
 To begin, let's look at how the video will appear on the page by looking at the CSS `display` property for the video. What we find is that approximately half of all videos use a display value of `block` – placing the video on its own line and allowing for height and width values to be set for the video. The `inline-block` value also allows height and width to be specified – for a total of two third's of all videos.
 
-The  `display: none` declaration hides the video from the viewer. One in five videos on the web is hidden behind this display value. From a data usage perspective, this is less than optimal, as the video is still downloaded by the browser.
+The `display: none` declaration hides the video from the viewer. One in five videos on the web is hidden behind this display value. From a data usage perspective, this is less than optimal, as the video is still downloaded by the browser.
 
 {{ figure_markup(
   image="video-css-display-percentages.png",
@@ -712,7 +712,7 @@ The most commonly used attribute is preload. The preload attribute gives the bro
 {{ figure_markup(
   image="video-preload-values.png",
   caption="Video preload values.",
-  description="A bar chart showing the prevalence of the various preload attribute values, on desktop and mobile, in both 2020 and 2021. `auto` was used in 36.0% of preload attributes in 2020 on desktop, falling to 22.8% in 2021. On mobile, `auto` fell from 27.0% to 17.8%. `metadata` was used in 24.0% of preload attribuets on desktop in 2020, rising slightly to 25.5% in 2021. On mobile, `metadata` usage rose from 33.0% to 36.1%. The `none` value was present in 33.0% of preload attributes on desktop in 2020, rising to 45.9% in 2021. On mobile, usage also rose, from 33.0% to 39.5%. Finally, 4.0% of preload attributes were present but left blank on desktop in 2020 barely changing to 4.1% in 2021, and on mobile this was 5.0% in 2020 and 4.6% in 2021.",
+  description="A bar chart showing the prevalence of the various preload attribute values, on desktop and mobile, in both 2020 and 2021. Preload was not used for 50.6% of videos on desktop in 2020, compared to 54.4% in 2021, with the mobile numbers being 59.2% and 58.8% respectively. The value `none` was used on 19.8% of videos on desktop in 2020 droping to 18.1% in 2021, for mobile the drop was smaller from 16.8% to 16.7%. The value `auto` was used on 16.6% of videos on desktop, dropping to 12.9%	for 2021, with the mobile drop being from 13.7% to 12.0%. `metadata` was used on 10.1% of videos on desktop in 2020 rising to 11.8% in 2021, and on mobile there was a similar rise from 8.0% to 10.1%. No value was set for 1.8% of desktop videos in 2020, 1.7% of desktop videos in 2021, 1.5% of mobile videos in 2020 and 1.6% of mobile videos in 2021.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=151055771&format=interactive",
   sheets_gid="1624656886",
   sql_file="video_preload_values.sql"
@@ -723,7 +723,7 @@ Interestingly, we see a large push away from `preload` on both mobile and deskto
 
 #### `autoplay`
 
-The next most commonly used attribute is `autoplay`.  This tells the browser that the video should play as soon as possible (and because of this, autoplay will actually override the preload attribute).
+The next most commonly used attribute is `autoplay`. This tells the browser that the video should play as soon as possible (and because of this, autoplay will actually override the preload attribute).
 
 The autoplay attribute is a boolean attribute, meaning that its presence by fault means true. So for the 190 sites that use `autoplay="false"`, we're sorry to tell you that is not going to work.
 
@@ -759,7 +759,7 @@ When we look at `<source>` usage, we see that about 40% of videos have no `<sour
 {{ figure_markup(
   image="source-element-count.png",
   caption="`source` element count.",
-  description="A bar chart showing the frequency of various numbers of `source` elements per `video` element.   and 7.5% contain 2. The most common number of `source` elements per `video` is 1; around 49.2% of desktop and 51.1% of mobile `video`s contain this many sources. The second most common number of `source` children is 0: 40.5% of desktop and 38.2% of mobile `video`s have no `source` children. 7.2% and 7.6% respectively contain 2, 2.8% on both contain 3, and finally 0.2% of `video` elements on both desktop and mobile contain 4 elements.",
+  description="A bar chart showing the frequency of various numbers of `source` elements per `video` element. The most common number of `source` elements per `video` is 1; around 49.2% of desktop and 51.1% of mobile `video`s contain this many sources. The second most common number of `source` children is 0: 40.5% of desktop and 38.2% of mobile `video`s have no `source` children. 7.2% and 7.6% respectively contain 2, 2.8% on both contain 3, and finally 0.2% of `video` elements on both desktop and mobile contain 4 elements.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=709685412&format=interactive",
   sheets_gid="1279089769",
   sql_file="video_number_of_sources.sql"
