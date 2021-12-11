@@ -77,13 +77,13 @@ Images are crucial to user's experiences of the web! Let's dive in, taking a clo
 
 ### Encoding
 
-Image data on the web is encoded and delivered in files. What can we say out about these files, and the image data that they contain?
+Image data on the web is encoded in files. What can we say out about these files, and the image data that they contain?
 
 Let's start by looking at their pixel dimensions. We'll start small.
 
 #### Single-pixel images
 
-Many `<img>` elements don't actually represent contentful <a hreflang="en" href="https://www.merriam-webster.com/dictionary/image">images</a>; instead, they contain a only a single – likely invisible – pixel:
+Many `<img>` elements don't actually represent contentful <a hreflang="en" href="https://www.merriam-webster.com/dictionary/image">images</a>; instead, they contain a only a single pixel:
 
 <figure>
   <table>
@@ -107,7 +107,7 @@ Many `<img>` elements don't actually represent contentful <a hreflang="en" href=
   <figcaption>{{ figure_link(caption="Single pixel image use.", sheets_gid="1851007461", sql_file="image_1x1.sql") }}</figcaption>
 </figure>
 
-These single-pixel `<img>` elements  are, put bluntly, hacks: they are being abused either [to do layout](https://www.killersites.com/killerSites/1-design/single_pixel.html) (which would be better done with CSS) or [to track users](https://www.facebook.com/business/learn/facebook-ads-pixel) (which would be better-accomplished using the [Beacon API](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API)).
+These single-pixel `<img>` elements are, put bluntly, hacks: they are being abused either [to do layout](https://en.wikipedia.org/wiki/Spacer_GIF) (which would be better done with CSS) or [to track users](https://en.wikipedia.org/wiki/Web_beacon) (which would be better-accomplished using the [Beacon API](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API)).
 
 We can establish a baseline breakdown of what jobs all of these single-pixel `<img>`s are doing by looking at how many use [data URIs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs).
 
@@ -139,7 +139,7 @@ Note that throughout the rest of this analysis, we have excluded single-pixel `<
 
 #### Multiple-pixel images
 
-When `<img>`s contain more than one pixel – how many pixels do they contain?
+When `<img>`s contain more than one pixel, how many pixels do they contain?
 
 {{ figure_markup(
   image="image-pixel-counts.png",
@@ -152,9 +152,9 @@ When `<img>`s contain more than one pixel – how many pixels do they contain?
   )
 }}
 
-The median `<img>` loads just over 40,000 pixels on both desktop and mobile. I found this number surprisingly small. Just under half of crawled`<img>`s (excluding the ones that loaded single-pixel images, or nothing at all) contain about the same number of pixels than a 200x200 image.
+The median `<img>` loads just over 40,000 pixels on mobile. I found this number surprisingly small. Just under half of crawled `<img>`s (excluding the ones that loaded single-pixel images, or nothing at all) contain about the same number of pixels than a 200x200 image.
 
-However, when you consider the number of `<img>` elements per page, though, this statistic is less surprising. Most pages contain more than 15 images, so are often made up of many smaller images and icons. So, while images with more than half-a-megapixel might only account for one in ten `<img>` elements, they are not at all uncommon, as we navigate across pages as many pages will include at least one larger image.
+However, when you consider the number of `<img>` elements per page, this statistic is less surprising. Most pages contain more than 15 images, so they are often made up of many smaller images and icons. So, while images with more than half-a-megapixel might only account for one in ten `<img>` elements, they are not at all uncommon, as we navigate across pages. Many pages will include at least one larger image.
 
 {{ figure_markup(
   image="number-of-imgs-per-page.png",
@@ -166,7 +166,7 @@ However, when you consider the number of `<img>` elements per page, though, this
   )
 }}
 
-I was also surprised that there was almost no difference between desktop and mobile top end of the pixel count distribution. Initially, this seemed to indicate a lack of effective adoption of responsive image features, but when you consider that the mobile crawler has a 360 × 512px @3x viewport (so effectively 1,080 by 1,536 physical pixels), while the desktop viewport is 1,376 × 768px @1x, it isn't actually surprising: the crawlers' viewports had similar widths, in physical pixels (1,080 vs 1,376). A bigger difference in physical pixel resolution between the crawlers would be more revealing.
+I was also surprised that there was almost no difference between desktop and mobile at the top end of the pixel count distribution. Initially, this seemed to indicate a lack of effective adoption of responsive image features, but when you consider that the mobile crawler has a 360 × 512px @3x viewport (so 1,080 by 1,536 physical pixels), while the desktop viewport is 1,376 × 768px @1x, it isn't actually surprising: the crawlers' viewports had similar widths, in physical pixels (1,080 vs 1,376). A bigger difference in physical pixel resolution between the crawlers would be more revealing.
 
 #### Aspect ratios
 
@@ -265,7 +265,7 @@ Let us turn our attention to file sizes.
   )
 }}
 
-The median contentful `<img>` weighs in at just over 10kB. But, again, the median page contains 15-17 `<img>`s, so, when looking at _pages_, the ninetieth percentile here – images that push past 100kB – aren't rare at all.
+The median contentful `<img>` weighs in at just over 10kB. But, again, the median page contains more than 15 `<img>`s, so, when looking at _pages_, the ninetieth percentile here – images that push past 100kB – aren't rare at all.
 
 #### Bits per pixel
 
@@ -305,17 +305,17 @@ The median PNG weighs in at more than twice that. PNG is sometimes called a "los
 
 GIFs, weighing in at 7.4 bits per pixel, come off terribly here, and make no mistake, <a hreflang="en" href="https://web.dev/efficient-animated-content/">they</a> <a hreflang="en" href="https://bitsofco.de/optimising-gifs/">are</a> <a hreflang="en" href="https://dougsillars.com/2019/01/15/state-of-the-web-animated-gifs/">terrible</a>! But they're also at a bit of an unfair disadvantage here because many GIFs on the web are animated. Web platform APIs don't expose the number of frames in an animated image, so we haven't accounted for frames. To give you a sense of how much this inflates GIF's numbers: a GIF measured as 20 bits per pixel, here, which contains ten frames, should be fairly counted as using two bits per pixel.
 
-Things get really interesting when we look at two next-gen formats: WebP and AVIF. Both weigh in almost 40% lighter than JPEG, at 1.3-1.5 bits per pixel. In formal studies using <a hreflang="en" href="https://kornel.ski/en/faircomparison">matched qualities</a>, WebP outperforms JPEG by <a hreflang="en" href="https://developers.google.com/speed/webp/docs/webp_study">between 25-34%</a>, so its real-world performance seems surprisingly *good*. On the other hand, AVIF's creators have published data suggesting that it is capable of <a hreflang="en" href="https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4">outperforming modern JPEG encoders JPEG by 50%+, in the lab</a>. So while AVIF's performance here is good, I expected it to be better. I can think of a few possible explanations for these discrepancies between lab data and real world performance.
+Things get really interesting when we look at two next-gen formats: WebP and AVIF. Both weigh in almost 40% lighter than JPEG, at 1.3-1.5 bits per pixel. In formal studies using <a hreflang="en" href="https://kornel.ski/en/faircomparison">matched qualities</a>, WebP outperforms JPEG by <a hreflang="en" href="https://developers.google.com/speed/webp/docs/webp_study">between 25-34%</a>, so its real-world performance seems surprisingly *good*. On the other hand, AVIF's creators have published data suggesting that it is capable of <a hreflang="en" href="https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4">outperforming modern JPEG encoders JPEG by 50%+, in the lab</a>. So while AVIF's performance here is good, I expected it to be better. I can think of a few possible explanations for these discrepancies between lab data and real-world performance.
 
 First: tooling. JPEG encoders vary incredibly widely, ranging from hardware encoders in cameras which don't spend much effort compressing images well, to ancient copies of <a hreflang="en" href="https://en.wikipedia.org/wiki/Libjpeg">libjpeg</a> installed decades ago, to bleeding-edge, best-practice-by-default encoders like MozJPEG. In short, there are a lot of old, badly-compressed JPEGs out there, but every WebP and AVIF has been compressed with modern tooling.
 
 Also, anecdotally, the reference WebP encoder (<a hreflang="en" href="https://developers.google.com/speed/webp/download">cwebp</a>) is relatively aggressive about quality/compression, and returns lower-quality, more-compressed results by default than most common JPEG tooling.
 
-And as far as AVIF is concerned: <a hreflang="en" href="https://github.com/AOMediaCodec/libavif">libavif</a> is capable of a wide variety of compression ratios depending on which "speed" setting you choose. At its slowest speeds (producing the highest-efficiency files) libavif can take _minutes_ to render a single image. It's reasonable to assume that different image-rendering pipelines will make different tradeoffs when choosing speed settings, depending on their constraints. This results in a wide distribution of compression performance.
+As far as AVIF is concerned: <a hreflang="en" href="https://github.com/AOMediaCodec/libavif">libavif</a> is capable of a wide variety of compression ratios depending on which "speed" setting you choose. At its slowest speeds (producing the highest-efficiency files) libavif can take _minutes_ to encode a single image. It's reasonable to assume that different image-rendering pipelines will make different tradeoffs when choosing speed settings, depending on their constraints. This results in a wide distribution of compression performance.
 
 Another thing to keep in mind when evaluating AVIF's real-world performance here, is that there just aren't that many AVIFs out there in the wild, yet. The format is currently being used by relatively few sites, on a limited set of content, so we don't yet have a full sense of how it will ultimately perform "in the wild," on the web. This will be interesting to track over the coming years, as adoption increases (and tooling improves).
 
-One thing that is absolutely clear in both lab data and in our results is that both WebP and AVIF can be used to deliver a wide variety of content (including photography, <a hreflang="en" href="https://jakearchibald.com/2020/avif-has-landed/#flat-illustration">illustrations</a>, and images with transparency) more efficiently than the web's legacy formats. But, as we'll see in the next section, not that many sites have adopted them.
+One thing that is absolutely clear is that both WebP and AVIF can be used to deliver a wide variety of content (including photography, <a hreflang="en" href="https://jakearchibald.com/2020/avif-has-landed/#flat-illustration">illustrations</a>, and images with transparency) more efficiently than the web's legacy formats. But, as we'll see in the next section, not that many sites have adopted them.
 
 #### Format adoption
 
@@ -365,7 +365,7 @@ The `decoding` attribute on `<img>` serves as a useful point of contrast to high
 
 #### Accessibility
 
-When you embed contentful images on webpages, you should make their content as accessible as possible for non-visual users. I note this only to defer you to the [Accessibility](./accessibility#images) chapter, whose in-depth analysis of image accessibility on the web found small year-over-year progress in this area, but mostly: a whole lot of room for improvement.
+When you embed contentful images on webpages, you should make their content as accessible as possible for non-visual users. I note this only to refer you to the [Accessibility](./accessibility#images) chapter, whose in-depth analysis of image accessibility on the web found small year-over-year progress, but mostly: a whole lot of room for improvement.
 
 #### Responsive images
 
@@ -419,7 +419,7 @@ A large majority of `srcset`s  are populated with five-or-fewer resources.
 
 ##### `srcset` resource densities
 
-Are developers giving the browser an appropriately wide range of choices? To figure this out, we can calculate each resource's <a hreflang="en" href="https://html.spec.whatwg.org/multipage/images.html#current-pixel-density">density</a>: a measure of how many image pixels the `<img>` will paint in each CSS `px`, if left to its intrinsic dimensions. If the range of resource densities covers a reasonable range of real-world device DPRs, the `srcset` has a wide-enough range.
+Are developers giving the browser an appropriately wide range of choices? To figure this out, we can calculate every candidate's <a hreflang="en" href="https://html.spec.whatwg.org/multipage/images.html#current-pixel-density">density</a>: a measure of how many image pixels the `<img>` will paint in each CSS `px`, if left to its intrinsic dimensions. If the range of candidate densities covers a reasonable range of real-world device DPRs, the `srcset` has a wide-enough range.
 
 {{ figure_markup(
   image="distribution-of-image-srcset-candidate-densities.png",
@@ -431,7 +431,7 @@ Are developers giving the browser an appropriately wide range of choices? To fig
   )
 }}
 
-The mobile crawler here saw higher densities than the desktop crawler, which is expected. Viewport-relative `sizes` values resolve to smaller values on mobile viewports, resulting in higher densities for the same resources. Taken as a whole, [given that most devicePixelRatios fall somewhere between 1x-3x](https://twitter.com/TheRealNooshu/status/1397862141894529027), this appears to be a healthy range of densities. It would be interesting to perform a deeper analysis that counted how many `srcsets` _didn't_ fully cover a "reasonable" ~1x-2x range; this is left as an exercise to the reader (or next year's analysts!).
+The mobile crawler here saw higher densities than the desktop crawler, which is expected. Viewport-relative `sizes` values resolve to smaller values on mobile viewports, resulting in higher densities for the same resources. Taken as a whole, [given that most devicePixelRatios fall somewhere between 1x-3x](https://twitter.com/TheRealNooshu/status/1397862141894529027), this appears to be a healthy range of candidate densities. It would be interesting to perform a deeper analysis that counted how many `srcsets` _didn't_ fully cover a "reasonable" ~1x-2x range; this is left as an exercise to the reader (or next year's analysts!).
 
 ##### `sizes` accuracy
 
@@ -530,7 +530,7 @@ So: one in ten `sizes` attributes is being authored on the client by a Javascrip
 The `<picture>` element serves a couple of use cases:
 
 1. Art direction, with the [`media` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture#the_media_attribute)
-2. Format-switching, based on mime-type, via the [`type` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture#the_type_attribute)
+2. Format-switching, based on MIME-type, via the [`type` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture#the_type_attribute)
 
 {{ figure_markup(
   caption="The percentage of pages which use `<picture>`.",
@@ -553,7 +553,7 @@ The `<picture>` element serves a couple of use cases:
   )
 }}
 
-Art direction appears a bit more popular than format-switching, but both features appear underutilized when you consider their potential utility. As we've seen, very few pages are tailoring images' aspect ratios to fit mobile screens, and many more pages could deliver their imagery more efficiently using next-generation image formats. These are exactly the problems `<picture>` was invented to solve, and perhaps more than 6% of pages should be addressing them, using it.
+Art direction appears a bit more popular than format-switching, but both features appear underutilized when you consider their potential utility. As we've seen, very few pages are tailoring images' aspect ratios to fit mobile screens, and many more pages could deliver their imagery more efficiently using next-generation formats. These are exactly the problems that `<picture>` was invented to solve, and perhaps more than 6% of pages could be addressing them, using it.
 
 It's possible that format-switching with `<source type>` is only used on 2-3% of pages because format-switching can also be accomplished using [server-side content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation). Unfortunately server-side adaptation mechanisms are hard to detect in the crawled data, and we have not analyzed them here.
 
@@ -620,7 +620,7 @@ How many images are being hosted by the same origin that they're being embedded 
   )
 }}
 
-Cross-origin images are subject to significant [security restrictions](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image), and can sometimes incur <a hreflang="en" href="https://andydavies.me/blog/2019/03/22/improving-perceived-performance-with-a-link-rel-equals-preconnect-http-header/">performance costs</a>. On the other hand, moving your static assets to a dedicated CDN is one of the most impactful things you can do to help [Time to First Byte](https://developer.mozilla.org/en-US/docs/Glossary/time_to_first_byte), and image CDNs provide powerful transformation and <a hreflang="en" href="https://web.dev/image-cdns/">optimization</a> features which can automate all sorts of best-practices. It would be fascinating to see how many of the 51% of cross-origin images are hosted on image CDNs and to compare their performance against the rest of the web's; unfortunately that was outside the scope of our analysis.
+Cross-origin images are subject to significant [security restrictions](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image), and can sometimes incur <a hreflang="en" href="https://andydavies.me/blog/2019/03/22/improving-perceived-performance-with-a-link-rel-equals-preconnect-http-header/">performance costs</a>. On the other hand, moving static assets to a dedicated CDN is one of the most impactful things you can do to help [Time to First Byte](https://developer.mozilla.org/en-US/docs/Glossary/time_to_first_byte), and image CDNs provide powerful transformation and <a hreflang="en" href="https://web.dev/image-cdns/">optimization</a> features which can automate all sorts of best-practices. It would be fascinating to see how many of the 51% of cross-origin images are hosted on image CDNs and to compare their performance against the rest of the web's; unfortunately that was outside the scope of our analysis.
 
 And with that, it is time to turn our attention to...
 
