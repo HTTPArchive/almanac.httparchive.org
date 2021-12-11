@@ -29,7 +29,7 @@ Almost three decades ago <a hreflang="en" href="https://thehistoryoftheweb.com/t
 Images are ubiquitous on the web. Almost every page contains image content.
 
 {{ figure_markup(
-  content="96%",
+  content="95.9%",
   caption="Percentage of pages that contained at least one contentful `<img>`",
   classes="big-number",
   sheets_gid="1756671383",
@@ -40,7 +40,7 @@ Images are ubiquitous on the web. Almost every page contains image content.
 And effectively _all_ pages serve up _some_ sort of imagery (even if it's just a background or favicon).
 
 {{ figure_markup(
-  content="99.93%",
+  content="99.9%",
   caption="Percentage of pages that generated at least one request for an image resource",
   classes="big-number",
   sheets_gid="1062090109",
@@ -65,10 +65,10 @@ This is surprising; for the last decade, the <a hreflang="en" href="https://http
 In any case, by quantity, images continue to make up an awful lot of the _stuff_ of the web. But tallying the sheer number of elements, requests, and bytes doesn't tell us how crucial images are to users' experiences. To get a sense of that, we can look at the <a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> metric, which tries to identify the most important piece of above-the-fold content on any given page. As you can see in the [Performance](./performance#fig-19) chapter, the LCP element has an image on around three quarters of pages.
 
 {{ figure_markup(
-  content="71%",
-  caption="Mobile pages whose LCP element has an image. On the desktop it's 79%!",
+  content="70.6%",
+  caption="Mobile pages whose LCP element has an image. On the desktop it's 79.4%!",
   classes="big-number",
-  sheets_gid="1423728540",
+  sheets_gid="https://docs.google.com/spreadsheets/d/13xhPx6o2Nowz_3b3_5ojiF_mY3Lhs25auBKM6eqGZmo/#gid=1423728540",
   sql_file="../performance/lcp_element_data.sql"
 )
 }}
@@ -122,11 +122,11 @@ We can establish a baseline breakdown of what jobs all of these single-pixel `<i
     <tbody>
       <tr>
         <td>Mobile</td>
-        <td>44.7%</td>
+        <td class="numeric">44.7%</td>
       </tr>
       <tr>
         <td>Desktop</td>
-        <td>47.1%</td>
+        <td class="numeric">47.1%</td>
       </tr>
     </tbody>
   </table>
@@ -145,8 +145,7 @@ When `<img>`s contain more than one pixel, how many pixels do they contain?
   image="image-pixel-counts.png",
   caption="Distribution of image pixel counts.",
   description="Bar chart showing the distribution of pixels per image. Both the desktop and mobile bars are shown, but there is little difference between them, and only the mobile bars are labeled. At the 10th percentile, images contain 999 pixels; at the 25th, 9,216; at the 50th, 43,200; at the 75th, 170,496; and at the 90th, 514,000.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=493015352&format=interactive
-  ",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=493015352&format=interactive",
   sheets_gid="1999710461",
   sql_file="bytes_and_dimensions.sql"
   )
@@ -159,7 +158,7 @@ However, when you consider the number of `<img>` elements per page, this statist
 {{ figure_markup(
   image="number-of-imgs-per-page.png",
   caption="Number of `<img>`s per page.",
-  description="Bar chart showing the distribution of img elements per page. Both the desktop and mobile bars are shown; the desktop bars are consistently 10-20% larger, but only the mobile bars are labeled. At the 10th percentile, mobile pages contain 2 img elements; at the 25th, 6; at the 50th, 15; at the 75th, 32; and at the 90th, 61.",
+  description="Bar chart showing the distribution of img elements per page. Both the desktop and mobile bars are shown; the desktop bars are consistently 10-20% larger, but only the mobile bars are labeled. At the 10th percentile, mobile pages contain 2 img elements; at the 25th, 6; at the 50th, 15; at the 75th, 32; and at the 90th, 61. At the 10th percentile, desktop pages contain 2 img elements; at the 25th, 6; at the 50th, 17; at the 75th, 36; and at the 90th, 70.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=1641393356&format=interactive",
   sheets_gid="1553608446",
   sql_file="imgs_per_page.sql"
@@ -278,7 +277,7 @@ So, with all of that context, here's how the web's images stack up:
 {{ figure_markup(
   image="distribution-of-image-bits-per-pixel.png",
   caption="Distribution of image bits per pixel.",
-  description="A bar chart showing the distribution of image bits per pixel, for both desktop and mobile. The desktop bars are consistently 5-10% taller than the mobile ones; only the mobile bars are labelled. At the tenth percentile, the web's images weigh in at 0.2 bits per pixel. At the 25th, 1.1; at the 50th, 2.4; at the 75th, 6.0; and finally at the 90th percentile, mobile images weigh in at a whopping 13.5 bits per pixel.",
+  description="A bar chart showing the distribution of image bits per pixel, for both desktop and mobile. The desktop bars are consistently 5-10% taller than the mobile ones. At the tenth percentile, the web's images weigh in at 0.2 bits per pixel for mobile and 0.3 for desktop. At the 25th, 1.1 for both; at the 50th, 2.4 for mobile and 2.5 for desktop; at the 75th, 6.0 for mobile and 6.3 for desktop; and finally at the 90th percentile, mobile images weigh in at a whopping 13.5 bits per pixel, while desktop are even more at 14.3.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=839945889&format=interactive",
   sheets_gid="1999710461",
   sql_file="bytes_and_dimensions.sql"
@@ -346,7 +345,7 @@ If there is one breakout story this year as far as images on the web, it is <a h
   caption='Adoption of `loading="lazy"` on `<img>`.',
   description="A line chart showing the percent of pages using native lazy-loading, over time. From January 2019 to May 2020 there is 0% usage. From there we get a nice, two-stage curve, with accelerating usage through the summer, up to about August when eight percent of pages used lazy-load, and then decelerating (but still ever-increasing) adoption for the next year or so, through to July 2021, where the line terminates at about 18%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgxCYoH2vDbhTky1qQKEeV034kReHF8JYYq0aDyoo6LG22XL6Tar3dNPsqU1_zyvR6vuFEdMGoF1oP/pubchart?oid=1314627953&format=interactive",
-  sheets_gid="157636784",
+  sheets_gid="https://docs.google.com/spreadsheets/d/1Mw6TjkIClRtlZPHbij5corOZbaSUp-vgTVq3Ig18IwQ/#gid=157636784",
   sql_file="../resource-hints/imgLazy.sql"
   )
 }}
@@ -377,8 +376,8 @@ First, let us consider the [`srcset` attribute](https://developer.mozilla.org/en
 
 
 {{ figure_markup(
-  caption="Percent of pages that use `srcset`.",
-  content="31%",
+  caption="Percent of mobile pages that use `srcset`.",
+  content="30.9%",
   classes="big-number",
   sheets_gid="1594311632",
   sql_file="image_srcset_sizes.sql"
@@ -424,7 +423,7 @@ Are developers giving the browser an appropriately wide range of choices? To fig
 {{ figure_markup(
   image="distribution-of-image-srcset-candidate-densities.png",
   caption="Distribution of image srcset candidate densities.",
-  description="A bar chart showing the distribution of image srcset candidate densities, on both desktop and mobile. Only the mobile bars (which are always higher) are labelled. At the tenth percentile, mobile candidates have a density of 0.7x; the desktop bar appears to be about 0.4x. At the 25th, 1.0x on mobile, and close to 0.8x on desktop. At the median (50th percentile), candidates on mobile have a density of 1.5x; the desktop density appears to be about 1x. At the 7th percentile, the mobile density is 2.7x and the desktop density appears to be about 2.0x. Lastly, at the 90th percentile, mobile candidates had 4.3x and desktop candidates were around 3.15x.",
+  description="A bar chart showing the distribution of image srcset candidate densities, on both desktop and mobile. At the tenth percentile, mobile candidates have a density of 0.7x and desktop 0.4x. At the 25th, 1.0x on mobile, and 0.8x on desktop. At the median (50th percentile), candidates on mobile have a density of 1.5x and 1x on desktop. At the 75th percentile, the mobile density is 2.7x and 2.0x on desktop. Lastly, at the 90th percentile, mobile candidates had 4.3x and desktop candidates 3.3x.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=403058700&format=interactive",
   sheets_gid="1410495845",
   sql_file="image_srcset_densities.sql"
@@ -533,8 +532,8 @@ The `<picture>` element serves a couple of use cases:
 2. Format-switching, based on MIME-type, via the [`type` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture#the_type_attribute)
 
 {{ figure_markup(
-  caption="The percentage of pages which use `<picture>`.",
-  content="6%",
+  caption="The percentage of mobile pages which use `<picture>`.",
+  content="5.9%",
   classes="big-number",
   sheets_gid="620965569",
   sql_file="picture_distribution.sql"
@@ -546,7 +545,7 @@ The `<picture>` element serves a couple of use cases:
 {{ figure_markup(
   image="picture-feature-usage.png",
   caption="`<picture>` feature usage.",
-  description="A bar chart showing the percent of pages which use the `media` and `type` attributes on `source` elements, in conjunction with the `picture` element. `media` is used with 48% of `picture` elements on mobile, and just over 44% on desktop. `type` is used with 37% of `picture` elements on mobile, and close to 39% of `picture` elements on desktop.",
+  description="A bar chart showing the percent of pages which use the `media` and `type` attributes on `source` elements, in conjunction with the `picture` element. `media` is used with 48.1% of `picture` elements on mobile, and 44.7% on desktop. `type` is used with 37.6% of `picture` elements on mobile, and 38.5% of `picture` elements on desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=1613173002&format=interactive",
   sheets_gid="2031063502",
   sql_file="picture_switching.sql"
@@ -572,7 +571,7 @@ How many images are intrinsically vs extrinsically sized?
 {{ figure_markup(
   image="intrinsic-and-extrinsic-image-sizing.png",
   caption="Intrinsic and extrinsic image sizing.",
-  description="A stacked bar chart showing the percentage of images whose width and height are determined based on extrinsic vs extrinsic sizing. There is a (for now) mysterious third category: both. The distributions between intrinsic, extrinsic, and both are quite different for height and width. For height, 60% of images are intrinsically sized, and 30% extrinsic; the remainder fall under both. For width, just 10% of images are intrinsically sized, and 66% are extrinsic; the remaining 24% are both.",
+  description="A stacked bar chart showing the percentage of images whose width and height are determined based on extrinsic vs extrinsic sizing. There is a (for now) mysterious third category: both. The distributions between intrinsic, extrinsic, and both are quite different for height and width. For height, 59.6% of images are intrinsically sized, and 30.3% extrinsic and the remaining 10.0% fall under both. For width, 9.6% of images are intrinsically sized, and 66.1% are extrinsic; the remaining 24.4% are both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=769042260&format=interactive",
   sheets_gid="576119731",
   sql_file="image_sizing_extrinsic_intrinsic.sql"
@@ -613,7 +612,7 @@ How many images are being hosted by the same origin that they're being embedded 
 {{ figure_markup(
   image="image-origins.png",
   caption="Image origins.",
-  description="A bar chart showing how many images were served by the same origin as the root HTML page, vs a different (cross) origin. On both mobile and desktop, 51% of images are have a different origin than the document that embeds them. The other 49% are same-origin.",
+  description="A bar chart showing how many images were served by the same origin as the root HTML page, vs a different (cross) origin. On both mobile 50.6% and on desktop 51.1% of images are have a different origin than the document that embeds them. The other 49.4% and 48.9% are same-origin.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=391739537&format=interactive",
   sheets_gid="2134623775",
   sql_file="img_xdomain.sql"
@@ -631,7 +630,7 @@ As the world has dramatically changed over the last year, we have seen a huge gr
 {{ figure_markup(
   image="sites-with-at-least-one-video-element.png",
   caption="Sites with at least one video element.",
-  description="A bar chart showing the prevalence of `video` elements. On desktop, 6% of sites have at least one video element; on mobile, 4%.",
+  description="A bar chart showing the prevalence of `video` elements. On desktop, 5.6% of sites have at least one video element; on mobile, 4.3%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=2077989873&format=interactive",
   sheets_gid="1629096429",
   sql_file="video_adoption.sql"
@@ -645,7 +644,7 @@ When it comes to interaction with video, it is interesting to see how long the v
 {{ figure_markup(
   image="video-durations.png",
   caption="Video durations.",
-  description="A bar chart showing how long videos are, on desktop and mobile. On desktop, 21% of videos are between 0-10 seconds, 39% are between 10-30 seconds, 19% are between 30-60 seconds, 12% are between 60-120 seconds, and 10% are over 120 seconds. On mobile, 21% are between 0-10 seconds, 36% are between 10-30 seconds, 20% are between 30-60 seconds, 13% are between 60-120 seconds, and 11% are more than 120 seconds.",
+  description="A bar chart showing how long videos are, on desktop and mobile. On desktop, 20.7% of videos are between 0-10 seconds, 39.5% are between 10-30 seconds, 18.7% are between 30-60 seconds, 11.5% are between 60-120 seconds, and 9.6% are over 120 seconds. On mobile, 20.8% are between 0-10 seconds, 35.8% are between 10-30 seconds, 20.0% are between 30-60 seconds, 12.6% are between 60-120 seconds, and 10.7% are more than 120 seconds.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=366287434&format=interactive",
   sheets_gid="1864781514",
   sql_file="video_durations_mobile.sql"
@@ -663,7 +662,7 @@ The chart below shows all video extensions with over 1% market share:
 {{ figure_markup(
   image="top-extensions-of-files-with-a-video-mime-type.png",
   caption="Top extensions of files with a video MIME type.",
-  description="A bar chart showing the extensions of video files delivered, on desktop and mobile, in both 2020 and 2021. Only the desktop numebrs are labeled; the mobile numbers are similar. The mp4 extension accounted for 64.31% of videos on desktop in 2020, but only 49.22% in 2021. Blank extensions accounted for 17.76% of videos in 2020, increasing sharply to 32.12% in 2021. The ts extension accounted for 6.27% of fvideos in 2020, and 10.04% in 2021. m4s rose from 2ish% (the label is obscured) to 3.34%. webm fell from 7.62% to 3.28%. Finally, mov fell from 0.83% in 2020 to an unlabelled, almost invisible bar that looks to be approximately 0% in 2021.",
+  description="A bar chart showing the extensions of video files delivered, on desktop and mobile, in both 2020 and 2021. Desktop and mobile numbers are similar. The `mp4` extension accounted for 64.3% of videos on desktop in 2020, but only 49.2% in 2021. Blank extensions accounted for 17.8% of videos in 2020, increasing sharply to 32.1% in 2021. The `ts` extension accounted for 6.3% of fvideos in 2020, and 10.0% in 2021. `m4s` rose from 2.4% to 3.3%. `webm` fell from 7.6% to 3.3%. Finally, `mov` grew from nothing in 2020 to 0.8% in 2021.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=2066681624&format=interactive",
   sheets_gid="1430902287",
   sql_file="video_ext.sql"
@@ -683,7 +682,7 @@ The  `display: none` declaration hides the video from the viewer. One in five vi
 {{ figure_markup(
   image="video-css-display-percentages.png",
   caption="Video CSS display percentages.",
-  description="A bar chart showing the percentage of video elements with various values of the CSS display property. `block` accounts for 51% of elements on desktop, and 45% on mobile. `inline` accounts for 15% of elements on desktop, and 17% on mobile. `inline-block` accounts for 15% of elements on desktop, and 16% on mobile. Finally, `none` accounts for 18% on desktop and 21% on mobile.",
+  description="A bar chart showing the percentage of video elements with various values of the CSS display property. `block` accounts for 50.5% of elements on desktop, and 45.4% on mobile. `inline` accounts for 15.5% of elements on desktop, and 16.7% on mobile. `inline-block` accounts for 14.9% of elements on desktop, and 16.5% on mobile. Finally, `none` accounts for 17.8% on desktop and 21.1% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=1841222549&format=interactive",
   sheets_gid="428232209",
   sql_file="video_styles_mobile.sql"
@@ -713,7 +712,7 @@ The most commonly used attribute is preload. The preload attribute gives the bro
 {{ figure_markup(
   image="video-preload-values.png",
   caption="Video preload values.",
-  description="A bar chart showing the prevalence of the various preload attribute values, on desktop and mobile, in both 2020 and 2021. `auto` was used in 36% of preload attributes in 2020 on desktop, falling to 23% in 2021. On mobile, `auto` fell from 27% to 18%. `metadata` was used in 24% of preload attribuets on desktop in 2020, rising slightly to 25% in 2021. On mobile, `metadata` usage rose from 33% to 36%. The `none` value was present in 33% of preload attributes on desktop in 2020, rising to 46% in 2021. On mobile, usage also rose, from 33% to 40%. Finally, around 4% of preload attributes were present but left blank on desktop, and 5% on mobile, with no change for either between 2020 and 2021.",
+  description="A bar chart showing the prevalence of the various preload attribute values, on desktop and mobile, in both 2020 and 2021. `auto` was used in 36.0% of preload attributes in 2020 on desktop, falling to 22.8% in 2021. On mobile, `auto` fell from 27.0% to 17.8%. `metadata` was used in 24.0% of preload attribuets on desktop in 2020, rising slightly to 25.5% in 2021. On mobile, `metadata` usage rose from 33.0% to 36.1%. The `none` value was present in 33.0% of preload attributes on desktop in 2020, rising to 45.9% in 2021. On mobile, usage also rose, from 33.0% to 39.5%. Finally, 4.0% of preload attributes were present but left blank on desktop in 2020 barely changing to 4.1% in 2021, and on mobile this was 5.0% in 2020 and 4.6% in 2021.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=1322480946&format=interactive",
   sheets_gid="7133313",
   sql_file="video_attribute_count_mobile.sql"
@@ -760,7 +759,7 @@ When we look at `<source>` usage, we see that about 40% of videos have no `<sour
 {{ figure_markup(
   image="source-element-count.png",
   caption="`source` element count.",
-  description="A bar chart showing the frequency of various numbers of `source` elements per `video` element. 0.02% of `video` elements contain 5 elements; 0.2% contain 4; 2-3% contain 3; and 7.5% contain 2. The most common number of `source` elements per `video` is 1; around 50% of `video`s contain this many sources. The second most common number of `source` children is 0: 38-40% of `video`s have no `source` children.",
+  description="A bar chart showing the frequency of various numbers of `source` elements per `video` element.   and 7.5% contain 2. The most common number of `source` elements per `video` is 1; around 49.2% of desktop and 51.1% of mobile `video`s contain this many sources. The second most common number of `source` children is 0: 40.5% of desktop and 38.2% of mobile `video`s have no `source` children. 7.2% and 7.6% respectively contain 2, 2.8% on both contain 3, and finally 0.2% of `video` elements on both desktop and mobile contain 4 elements.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=709685412&format=interactive",
   sheets_gid="1279089769",
   sql_file="video_number_of_sources_mobile.sql"
