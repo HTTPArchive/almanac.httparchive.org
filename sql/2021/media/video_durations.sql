@@ -2,6 +2,7 @@
 
 WITH videonotes AS (
   SELECT
+    client,
     pageURL,
     CAST(durations AS FLOAT64) AS durations,
     CASE
@@ -21,6 +22,7 @@ WITH videonotes AS (
     END AS duration_bucket
   FROM (
       SELECT
+        _TABLE_SUFFIX AS client,
         url AS pageURL,
         JSON_VALUE(payload, "$._media") AS media,
         CAST(JSON_VALUE(JSON_VALUE(payload, "$._media"), "$.num_video_nodes") AS INT64) AS num_video_nodes,
@@ -30,7 +32,7 @@ WITH videonotes AS (
         (JSON_QUERY_ARRAY(JSON_VALUE(payload, "$._media"), "$.video_source_format_count")) AS video_source_format_count,
         (JSON_QUERY_ARRAY(JSON_VALUE(payload, "$._media"), "$.video_source_format_type")) AS video_source_format_type
       FROM
-        `httparchive.pages.2021_07_01_mobile`
+        `httparchive.pages.2021_07_01_*`
     )
   CROSS JOIN
     UNNEST(video_duration) AS durations
@@ -41,13 +43,15 @@ WITH videonotes AS (
     durations DESC
 )
 
-
 SELECT
+  client,
   duration_bucket,
-  COUNT(duration_bucket) AS freq
+  COUNT(duration_bucket) AS freq,
+  COUNT(duration_bucket) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
   videonotes
 GROUP BY
+  client,
   duration_bucket
 ORDER BY
-  duration_bucket ASC
+  freq DESC
