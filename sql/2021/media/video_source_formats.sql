@@ -2,14 +2,16 @@
 
 WITH videonotes AS (
   SELECT
+    client,
     pageURL,
     num_video_nodes,
-    video_source_format_count,
-    source_count,
-    video_source_format_type
+    video_source_format_type,
+    source_formats,
+    video_source_format_type,
+    source_format_count
   FROM (
-
       SELECT
+        client,
         url AS pageURL,
         JSON_VALUE(payload, "$._media") AS media,
         CAST(JSON_VALUE(JSON_VALUE(payload, "$._media"), "$.num_video_nodes") AS INT64) AS num_video_nodes,
@@ -17,23 +19,42 @@ WITH videonotes AS (
         (JSON_QUERY(JSON_VALUE(payload, "$._media"), "$.video_display_style")) AS video_display_style,
         (JSON_QUERY_ARRAY(JSON_VALUE(payload, "$._media"), "$.video_attributes_values_counts")) AS video_attributes_values_counts,
         (JSON_QUERY_ARRAY(JSON_VALUE(payload, "$._media"), "$.video_source_format_count")) AS video_source_format_count,
-        (JSON_QUERY(JSON_VALUE(payload, "$._media"), "$.video_source_format_type")) AS video_source_format_type
+        (JSON_QUERY_ARRAY(JSON_VALUE(payload, "$._media"), "$.video_source_format_type")) AS video_source_format_type
       FROM
-        `httparchive.pages.2021_07_01_desktop`
+        `httparchive.pages.2021_07_01_*`
     )
   CROSS JOIN
-    UNNEST(video_source_format_count) AS source_count
+    UNNEST(video_source_format_type) AS source_formats
+  CROSS JOIN
+    UNNEST(video_source_format_count) AS source_format_count
+),
 
+total_videos AS (
+  SELECT
+    client,
+    COUNT(DISTINCT pageURL) AS urls,
+    SUM(num_video_nodes) AS total_video_nodes
+  FROM
+    videonotes
+  GROUP BY
+    client
 )
 
 SELECT
-  cast(source_count AS int64) AS source_counter,
-  COUNT(cast(source_count AS int64)) AS numberofoccurances
+  client,
+  source_formats,
+  COUNT(source_formats) AS numberofoccurances.
+  COUNT(source_formats) / total_video_nodes AS pct_videos
 FROM
   videonotes
+JOIN
+  total_videos
+USING (client)
 WHERE
   num_video_nodes > 0
 GROUP BY
-  source_count
+  client,
+  source_formats,
+  total_video_nodes
 ORDER BY
-  source_counter DESC
+  numberofoccurances DESC

@@ -5,7 +5,7 @@ description: Media chapter of the 2021 Web Almanac covering how images and video
 authors: [eeeps, dougsillars]
 reviewers: [Navaneeth-akam, tpiros, akshay-ranganath, addyosmani]
 analysts: [eeeps, dougsillars, akshay-ranganath]
-editors: []
+editors: [tunetheweb]
 translators: []
 eeeps_bio: Eric Portis is a Web Platform Advocate at <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>.
 dougsillars_bio: Doug Sillars is a leader in developer relations, and a digital nomad working on the intersection of performance and media. He tweets [@dougsillars](https://twitter.com/dougsillars), and blogs regularly at <a hreflang="en" href="https://dougsillars.com">dougsillars.com</a>.
@@ -350,7 +350,7 @@ If there is one breakout story this year as far as images on the web, it is <a h
   )
 }}
 
-In July of 2020, native lazy-loading was used on just 1% of pages. By July of 2021, that number had exploded, to 18%. This is an unbelievable rate of  growth considering the vast number of pages and templates which are not updated from year to year.
+In July of 2020, native lazy-loading was used on just 1% of pages. By July of 2021, that number had exploded, to 18%. This is an unbelievable rate of growth considering the vast number of pages and templates which are not updated from year to year.
 
 Personally, I think native lazy-loading's rapid adoption is the best explanation we have for the trend-breaking reduction in image bytes per page, this year.
 
@@ -414,7 +414,7 @@ Let's first take a look at the number of candidate resources developers are incl
   )
 }}
 
-A large majority of `srcset`s  are populated with five-or-fewer resources.
+A large majority of `srcset`s are populated with five-or-fewer resources.
 
 ##### `srcset` resource densities
 
@@ -434,7 +434,7 @@ The mobile crawler here saw higher densities than the desktop crawler, which is 
 
 ##### `sizes` accuracy
 
-Responsive images can be tricky. Authoring reasonably-accurate `sizes` attributes – and keeping them up to date with evolving page layouts and content – might be the hardest part about getting responsive images right. How many authors  get `sizes` wrong? And how wrong do they get it?
+Responsive images can be tricky. Authoring reasonably-accurate `sizes` attributes – and keeping them up to date with evolving page layouts and content – might be the hardest part about getting responsive images right. How many author get `sizes` wrong? And how wrong do they get it?
 
 {{ figure_markup(
   image="distribution-of-img-sizes-errors.png",
@@ -552,7 +552,7 @@ The `<picture>` element serves a couple of use cases:
   )
 }}
 
-Art direction appears a bit more popular than format-switching, but both features appear underutilized when you consider their potential utility. As we've seen, very few pages are tailoring images' aspect ratios to fit mobile screens, and many more pages could deliver their imagery more efficiently using next-generation formats. These are exactly the problems that `<picture>` was invented to solve, and perhaps more than 6% of pages could be addressing them, using it.
+Art direction appears a bit more popular than format-switching, but both features appear underutilized when you consider their potential utility. As we've seen, very few pages are tailoring images' aspect ratios to fit mobile screens, and many more pages could deliver their imagery more efficiently using next-generation formats. These are exactly the problems that `<picture>` was invented to solve, and perhaps more than 5.9% of pages could be addressing them, using it.
 
 It's possible that format-switching with `<source type>` is only used on 2-3% of pages because format-switching can also be accomplished using [server-side content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation). Unfortunately server-side adaptation mechanisms are hard to detect in the crawled data, and we have not analyzed them here.
 
@@ -647,7 +647,7 @@ When it comes to interaction with video, it is interesting to see how long the v
   description="A bar chart showing how long videos are, on desktop and mobile. On desktop, 20.7% of videos are between 0-10 seconds, 39.5% are between 10-30 seconds, 18.7% are between 30-60 seconds, 11.5% are between 60-120 seconds, and 9.6% are over 120 seconds. On mobile, 20.8% are between 0-10 seconds, 35.8% are between 10-30 seconds, 20.0% are between 30-60 seconds, 12.6% are between 60-120 seconds, and 10.7% are more than 120 seconds.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=366287434&format=interactive",
   sheets_gid="1864781514",
-  sql_file="video_durations_mobile.sql"
+  sql_file="video_durations.sql"
   )
 }}
 
@@ -682,10 +682,10 @@ The  `display: none` declaration hides the video from the viewer. One in five vi
 {{ figure_markup(
   image="video-css-display-percentages.png",
   caption="Video CSS display percentages.",
-  description="A bar chart showing the percentage of video elements with various values of the CSS display property. `block` accounts for 50.5% of elements on desktop, and 45.4% on mobile. `inline` accounts for 15.5% of elements on desktop, and 16.7% on mobile. `inline-block` accounts for 14.9% of elements on desktop, and 16.5% on mobile. Finally, `none` accounts for 17.8% on desktop and 21.1% on mobile.",
+  description="A bar chart showing the percentage of video elements with various values of the CSS display property. `block` accounts for 50.5% of elements on desktop, and 45.4% on mobile. `none` accounts for 17.8% on desktop and 21.1% on mobile. `inline` accounts for 15.5% of elements on desktop, and 16.7% on mobile. Finally, `inline-block` accounts for 14.9% of elements on desktop, and 16.5% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=1841222549&format=interactive",
   sheets_gid="428232209",
-  sql_file="video_styles_mobile.sql"
+  sql_file="video_styles.sql"
   )
 }}
 
@@ -701,7 +701,7 @@ Let's look at the most common attributes and how they are used inside the `<vide
   description="A bar chart showing the number of times various attributes on the HTML video element were found, on both desktop and mobile. With the exception of `controls`, which is slightly more common on mobile, every attribute is more common on desktop by 5-30%. The tallest pair of bars is `preload`; `buffered`s are the shortest. None of the bars are labelled, but their desktop numbers are approximately: `autoplay`: 100,000; `buffered`: 0; `controls`: 45,000; `controllist`: 1,000; `crossorigin`: 30,000; `height`: 3,000; `loop`: 50,000; `muted`: 55,000; `playsinline`: 52,000; `poster`: 24,000; `preload`: 115,000; `src`: 90,000; width: 60,000.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=1099468813&format=interactive",
   sheets_gid="1827909463",
-  sql_file="video_attribute_count_mobile.sql"
+  sql_file="video_attribute_count.sql"
   )
 }}
 
@@ -713,13 +713,13 @@ The most commonly used attribute is preload. The preload attribute gives the bro
   image="video-preload-values.png",
   caption="Video preload values.",
   description="A bar chart showing the prevalence of the various preload attribute values, on desktop and mobile, in both 2020 and 2021. `auto` was used in 36.0% of preload attributes in 2020 on desktop, falling to 22.8% in 2021. On mobile, `auto` fell from 27.0% to 17.8%. `metadata` was used in 24.0% of preload attribuets on desktop in 2020, rising slightly to 25.5% in 2021. On mobile, `metadata` usage rose from 33.0% to 36.1%. The `none` value was present in 33.0% of preload attributes on desktop in 2020, rising to 45.9% in 2021. On mobile, usage also rose, from 33.0% to 39.5%. Finally, 4.0% of preload attributes were present but left blank on desktop in 2020 barely changing to 4.1% in 2021, and on mobile this was 5.0% in 2020 and 4.6% in 2021.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=1322480946&format=interactive",
-  sheets_gid="7133313",
-  sql_file="video_attribute_count_mobile.sql"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=151055771&format=interactive",
+  sheets_gid="1624656886",
+  sql_file="video_preload_values.sql"
   )
 }}
 
-Interestingly, we see a large push away from `preload=auto` on both mobile and desktop, with most of the movement to `preload=none.`  While it is possible that this changed for many videos, it could just be that the new videos added to the web over the last year utilize the `none` parameter more than in the past. From a page weight perspective – this is a large win for the web.
+Interestingly, we see a large push away from `preload` on both mobile and desktop. While it is possible that this changed for many videos, it could just be that the new videos added to the web over the last year do not utilize this setting. From a page weight perspective this is a large win for the web.
 
 #### `autoplay`
 
@@ -762,7 +762,7 @@ When we look at `<source>` usage, we see that about 40% of videos have no `<sour
   description="A bar chart showing the frequency of various numbers of `source` elements per `video` element.   and 7.5% contain 2. The most common number of `source` elements per `video` is 1; around 49.2% of desktop and 51.1% of mobile `video`s contain this many sources. The second most common number of `source` children is 0: 40.5% of desktop and 38.2% of mobile `video`s have no `source` children. 7.2% and 7.6% respectively contain 2, 2.8% on both contain 3, and finally 0.2% of `video` elements on both desktop and mobile contain 4 elements.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=709685412&format=interactive",
   sheets_gid="1279089769",
-  sql_file="video_number_of_sources_mobile.sql"
+  sql_file="video_number_of_sources.sql"
   )
 }}
 
@@ -821,7 +821,7 @@ Let's look at the videos that use 2 sources. Here are the top 10 occurrences:
         <td class="numeric:">1.8%</td>
       </tr>
       <tr>
-        <td>`["video/mp4; codecs="avc1.42E01E, mp4a.40.2","video/webm; codecs="vp8, vorbis"`</td>
+        <td>`["video/mp4; codecs="avc1.42E01E, mp4a.40.2","video/webm; codecs="vp8, vorbis"]`</td>
         <td class="numeric:">0.8%</td>
         <td class="numeric:">0.3%</td>
       </tr>
@@ -832,7 +832,7 @@ Let's look at the videos that use 2 sources. Here are the top 10 occurrences:
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="The most common ordered pairs of `type` values, when there are two `source` elements within a `video` element.", sheets_gid="1549760253", sql_file="video_source_formats_mobile.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="The most common ordered pairs of `type` values, when there are two `source` elements within a `video` element.", sheets_gid="1549760253", sql_file="video_source_formats.sql") }}</figcaption>
 </figure>
 
 {# TODO I'm not sure this is such an interesting table. Consider adding some stats to make it more interesting? % of usage on mobile and desktop? #}
@@ -903,7 +903,7 @@ The same trend holds for `<video>` elements with three sources – eight of the 
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="The most common ordered triplets of `type` values, when there are three `source` elements within a `video` element.", sheets_gid="1549760253", sql_file="video_source_formats_mobile.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="The most common ordered triplets of `type` values, when there are three `source` elements within a `video` element.", sheets_gid="1549760253", sql_file="video_source_formats.sql") }}</figcaption>
 </figure>
 
 {# TODO I'm not sure this is such an interesting table. Consider adding some stats to make it more interesting? % of usage on mobile and desktop? #}
