@@ -144,8 +144,9 @@ When `<img>`s contain more than one pixel – how many pixels do they contain?
 {{ figure_markup(
   image="image-pixel-counts.png",
   caption="Distribution of image pixel counts.",
-  description="Bar chart showing the distribution of megapixels per image. Both the desktop and mobile bars are shown, but there is little difference between them, and only the mobile bars are labeled. At the 10th percentile, images contain 0.001 megapixels; at the 25th, 0.009; at the 50th, 0.043; at the 75th, 0.170, and at the 90th, 0.514.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=493015352&format=interactive",
+  description="Bar chart showing the distribution of pixels per image. Both the desktop and mobile bars are shown, but there is little difference between them, and only the mobile bars are labeled. At the 10th percentile, images contain 999 pixels; at the 25th, 9,216; at the 50th, 43,200; at the 75th, 170,496; and at the 90th, 514,000.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=493015352&format=interactive
+  ",
   sheets_gid="1999710461",
   sql_file="bytes_and_dimensions.sql"
   )
@@ -257,7 +258,7 @@ Let us turn our attention to file sizes.
 {{ figure_markup(
   image="distribution-of-image-byte-sizes.png",
   caption="Distribution of image byte sizes.",
-  description="A bar chart showing the distribution of image byte sizes on both desktop and mobile. At the tenth percentile, both the desktop and mobile bars are so small they're effectively invisible; the place where the mobile bar would otherwise be is labeled 252 (bytes). At the 25th percentile both bars are visible and tiny; the mobile bar is labeled 1,902. At the 50th percentile, both bars still look about the same and are still rather short; the mobile bar is labeled 10,290. At the seventy fifth percentile, the mobile bar is slightly taller than the desktop one, and is labelled 41,590. Finally, the 90th percentile bars tower over the rest. The desktop bar is slightly ahead this time; the mobile bar is labelled 130,662.",
+  description="A bar chart showing the distribution of image byte sizes (in kilobytes) on both desktop and mobile. At the tenth percentile, both the desktop and mobile bars are so small they're effectively invisible; the place where the mobile bar would otherwise be is labeled 0.3 (kilobytes). At the 25th percentile both bars are visible and tiny; the mobile bar is labeled 1.9. At the 50th percentile, both bars still look about the same and are still rather short; the mobile bar is labeled 10.3. At the seventy fifth percentile, the mobile bar is slightly taller than the desktop one, and is labelled 41.6. Finally, the 90th percentile bars tower over the rest. The desktop bar is slightly ahead this time; the mobile bar is labelled 130.7.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=717078449&format=interactive",
   sheets_gid="1999710461",
   sql_file="bytes_and_dimensions.sql"
@@ -540,7 +541,7 @@ The `<picture>` element serves a couple of use cases:
 )
 }}
 
-`<picture>` is used much less frequently than `srcset`, reflecting its somewhat-niche pair of use-cases. Here's how usage breaks down between those two use cases:
+`<picture>` is used much less frequently than `srcset`. Here's how usage breaks down between those two use cases:
 
 {{ figure_markup(
   image="picture-feature-usage.png",
@@ -552,7 +553,11 @@ The `<picture>` element serves a couple of use cases:
   )
 }}
 
-Art direction appears a bit more popular than type-switching. Notably, these two features are not mutually exclusive, and, put together, the usage percentages here do not add up to 100%. This suggests that at least 15% of `<picture>` elements do not leverage either of these attributes, making those `<picture>`s  functionally equivalent to a `<span>`.
+Art direction appears a bit more popular than format-switching, but both features appear underutilized when you consider their potential utility. As we've seen, very few pages are tailoring images' aspect ratios to fit mobile screens, and many more pages could deliver their imagery more efficiently using next-generation image formats. These are exactly the problems `<picture>` was invented to solve, and perhaps more than 6% of pages should be addressing them, using it.
+
+It's possible that format-switching with `<source type>` is only used on 2-3% of pages because format-switching can also be accomplished using [server-side content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation). Unfortunately server-side adaptation mechanisms are hard to detect in the crawled data, and we have not analyzed them here.
+
+Notably, `<source type>` and `<source media>` are not mutually exclusive, and, put together, the usage percentages here do not add up to 100%. This suggests that at least 15% of `<picture>` elements do not leverage either of these attributes, making those `<picture>`s  functionally equivalent to a `<span>`.
 
 ### Layout
 
