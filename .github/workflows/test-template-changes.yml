@@ -47,4 +47,4 @@ jobs:
           const { issue: { number: issue_number }, repo: { owner, repo }  } = context;
           // Unescape any escaped comments so code blocks appear correctly
           const pr_comment = process.env.PR_COMMENT.replace(/%0A/g,'\n').replace(/%0D/g,'\r').replace(/%27/g,"'").replace(/%22/g,'"').replace(/%25/g,'%');
-          github.issues.createComment({ issue_number, owner, repo, body: pr_comment });
+          github.rest.issues.createComment({ issue_number, owner, repo, body: pr_comment });
