@@ -418,6 +418,8 @@ A large majority of `srcset`s are populated with five-or-fewer resources.
 
 ##### `srcset` resource densities
 
+{# TODO consider dropping this section - as discussed in https://github.com/HTTPArchive/almanac.httparchive.org/pull/2705#discussion_r766943656 #}
+
 Are developers giving the browser an appropriately wide range of choices? To figure this out, we can calculate every candidate's <a hreflang="en" href="https://html.spec.whatwg.org/multipage/images.html#current-pixel-density">density</a>: a measure of how many image pixels the `<img>` will paint in each CSS `px`, if left to its intrinsic dimensions. If the range of candidate densities covers a reasonable range of real-world device DPRs, the `srcset` has a wide-enough range.
 
 {{ figure_markup(
@@ -557,6 +559,8 @@ Art direction appears a bit more popular than format-switching, but both feature
 It's possible that format-switching with `<source type>` is only used on 2-3% of pages because format-switching can also be accomplished using [server-side content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation). Unfortunately server-side adaptation mechanisms are hard to detect in the crawled data, and we have not analyzed them here.
 
 Notably, `<source type>` and `<source media>` are not mutually exclusive, and, put together, the usage percentages here do not add up to 100%. This suggests that at least 15% of `<picture>` elements do not leverage either of these attributes, making those `<picture>`s functionally equivalent to a `<span>`.
+
+{# TODO consdier investigating a few examples to see if can understand why #}
 
 ### Layout
 
@@ -731,6 +735,8 @@ The autoplay attribute is a boolean attribute, meaning that its presence by faul
 
 The width attribute is also one of the top video attributes. It tells the browser how wide the video player should be (note that height is very rarely used, since the aspect ratio of the video will decide the space with just one value.)
 
+{# TODO: I discovered recently that this is not the case! And unless you override with CSS a default aspect-ration of 2:1 will be used: whatwg/html#3090 #}
+
 The width can be presented as a percentage, or a width in pixels.
 
 * When a percentage width is defined, the value `100%` is used in 99% of cases.
@@ -835,8 +841,6 @@ Let's look at the videos that use 2 sources. Here are the top 10 occurrences:
   <figcaption>{{ figure_link(caption="The most common ordered pairs of `type` values, when there are two `source` elements within a `video` element.", sheets_gid="1549760253", sql_file="video_source_formats.sql") }}</figcaption>
 </figure>
 
-{# TODO I'm not sure this is such an interesting table. Consider adding some stats to make it more interesting? % of usage on mobile and desktop? #}
-
 In six of the top 10 examples, the MP4 is listed as the first source. <a hreflang="en" href="https://caniuse.com/mpeg4">MP4 support on the web is at 98.4%</a>, and the browsers that do not support MP4 generally do not support the `<video>` tag at all. This implies that these sites do not need two sources, and could save some storage on their web servers by removing their WebM or Ogg video sources. (Or, they could reverse the order of the videos, and browsers that support WebM will download the WebM).
 
 The same trend holds for `<video>` elements with three sources—eight of the top 10 examples begin with MP4.
@@ -905,8 +909,6 @@ The same trend holds for `<video>` elements with three sources—eight of the to
   </table>
   <figcaption>{{ figure_link(caption="The most common ordered triplets of `type` values, when there are three `source` elements within a `video` element.", sheets_gid="1549760253", sql_file="video_source_formats.sql") }}</figcaption>
 </figure>
-
-{# TODO I'm not sure this is such an interesting table. Consider adding some stats to make it more interesting? % of usage on mobile and desktop? #}
 
 Of course, these implementations will just play the MP4 file, and the WebM and Ogg files will be ignored.
 
