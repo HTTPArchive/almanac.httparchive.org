@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: SEO
-description: Глава «SEO» издания Web Almanac за 2021 год охватывает сканирование, индексацию, удобство страниц, on-page SEO, ссылки, AMP, мультиязычное SEO и многое другое. 
+description: Глава «SEO» издания Web Almanac за 2021 год охватывает сканируемость, индексируемость, удобство страниц, on-page SEO, ссылки, AMP, мультиязычное SEO и многое другое. 
 authors: [patrickstox, Tomek3c, wrttnwrd]
 reviewers: [fili, SeoRobt, fellowhuman1101]
 analysts: [jroakes, rvth]
@@ -11,20 +11,20 @@ results: https://docs.google.com/spreadsheets/d/11hw7zg4dpIY8XbQR5bNp5LvwbaQF0Tj
 patrickstox_bio: Патрик — советник по продукту, технический SEO-специалист и амбассадор бренда в <a hreflang="ru" href="https://ahrefs.com/ru/">Ahrefs</a>. Он является организатором <a hreflang="ru" href="https://www.meetup.com/ru-RU/RaleighSEO/">Raleigh SEO Meetup</a> (самый успешный SEO Meetup в США), <a hreflang="ru" href="https://www.meetup.com/ru-RU/beerandseo/">Beer and SEO Meetup</a> и <a hreflang="en" href="https://raleighseomeetup.org/conference/">Raleigh SEO Conference</a>. Он также руководит группой Technical SEO в Slack и является модератором <a hreflang="en" href="https://www.reddit.com/r/TechSEO">/r/TechSEO на Reddit</a>. Патрик любит делиться случайными знаниями о SEO в ветках Twitter, которые он называет «Необычные знания SEO». Он известный спикер конференций, блоггер индустрии (в настоящее время в основном в блоге Ahrefs), судья по присуждению наград в области поиска, а также помог определить роль стратега поискового маркетинга в Министерстве труда США.
 Tomek3c_bio: Томек — руководитель отдела исследований и разработок в <a hreflang="en" href="https://www.onely.com/">Onely</a>. Он также работает над <a hreflang="en" href="https://www.ziptie.dev/">ZipTie</a>, продуктом, призванным помочь владельцам сайтов получать больше контента, проиндексированного Google. В свободное время он любит ходить в походы и играть в покер.
 wrttnwrd_bio: Ян — консультант по маркетингу, SEO, спикер и основатель агентства по восстановлению. Он основал Portent, агентство цифрового маркетинга, в 1995 году и продал его Clearlink в 2017 году. Теперь он сам по себе, <a hreflang="en" href="https://www.ianlurie.com/digital-marketing-consulting/">консультирует бренды</a>, которые ему нравятся, и <a hreflang="en" href="https://www.ianlurie.com/speaking/">выступает на конференциях</a>, которые поставляют диетическую колу. Он также пытался стать профессиональным игроком в Dungeons & Dragons, но ничего не вышло. Вы можете найти его крутящим педали своего велосипеда по нелепым холмам Сиэтла.
-featured_quote: SEO is more popular than ever and has seen huge growth over the last couple years as companies sought new ways to reach customers. SEO's popularity has far outpaced other digital channels.
+featured_quote: SEO сейчас популярнее, чем когда-либо, и оно значительно выросло за последние пару лет, так как компании искали новые способы привлечь клиентов. Популярность SEO сильно превзошла другие цифровые каналы.
 featured_stat_1: 16.5%
-featured_stat_label_1: Websites that don't have a robots.txt file
+featured_stat_label_1: Веб-сайты без файла robots.txt
 featured_stat_2: 41.5%
-featured_stat_label_2: Mobile pages without a canonical tag
+featured_stat_label_2: Мобильные страницы без тега canonical
 featured_stat_3: 67%
-featured_stat_label_3: Mobile websites failing Core Web Vitals checks
+featured_stat_label_3: Мобильные сайты, не соответствующие Core Web Vitals
 ---
 
-## Introduction
+## Введение {introduction}
 
-SEO (Search Engine Optimization) is the practice of optimizing a website or webpage to increase the quantity and quality of its traffic from a search engine's organic results.
+SEO (Search Engine Optimization, поисковая оптимизация) — это практика оптимизации веб-сайта или веб-страницы для увеличения количества и качества их трафика на основе органических результатов поисковой системы.
 
-SEO is more popular than ever and has seen huge growth over the last couple years as companies sought new ways to reach customers. SEO's popularity has far outpaced other digital channels.
+SEO сейчас популярнее, чем когда-либо, и оно значительно выросло за последние пару лет, так как компании искали новые способы привлечь клиентов. Популярность SEO сильно превзошла другие цифровые каналы.
 
 {{ figure_markup(
    image="seo-term-trends.png",
@@ -35,13 +35,13 @@ SEO is more popular than ever and has seen huge growth over the last couple year
    )
 }}
 
-The purpose of the SEO chapter of the Web Almanac is to analyze various elements related to optimizing a website. In this chapter, we'll check if websites are providing a great experience for users and search engines.
+Цель главы «SEO» издания Web Almanac — проанализировать различные элементы, связанные с оптимизацией веб-сайта. В этой главе мы проверим, удобны ли веб-сайты для пользователей и поисковых систем.
 
-Many sources of data were used for our analysis including <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a>, the <a hreflang="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome User Experience Report (CrUX)</a>, as well as raw and rendered HTML elements from the <a hreflang="en" href="https://httparchive.org/">HTTP Archive</a> on mobile and desktop. In the case of the HTTP Archive and Lighthouse, the data is limited to the data identified from websites' homepages only, not site-wide crawls. Keep that in mind when drawing conclusions from our results. You can learn more about the analysis on our [Methodology](./methodology) page.
+Для нашего анализа использовались многие источники данных, включая <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a>, <a hreflang="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">отчет о пользовательском опыте Chrome (CrUX)</a>, а также необработанные и обработанные HTML-элементы из <a hreflang="en" href="https://httparchive.org/">HTTP Archive</a> на мобильных устройствах и компьютерах. В случае с HTTP Archive и Lighthouse данные ограничиваются анализом только домашних страниц веб-сайтов, а не сканированием всего сайта. Помните об этом, делая выводы на основе наших результатов. Вы можете узнать больше об анализе на нашей странице [Methodology](./methodology).
 
-Read on to find out more about the current state of the web and its search engine friendliness.
+Читайте дальше, чтобы узнать больше о текущем состоянии Интернета и его удобстве для поисковых систем.
 
-## Crawlability and Indexability
+## Сканируемость и Индексируемость {crawlability-and-indexability}
 
 To return relevant results to these user queries, search engines have to create an index of the web. The process for that involves:
 
