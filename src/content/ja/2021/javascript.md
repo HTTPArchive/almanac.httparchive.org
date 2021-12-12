@@ -469,7 +469,7 @@ JavaScriptリソースの`SourceMap`使用率の98.0%がファーストパーテ
 
 ## ライブラリーとフレームワーク
 
-多くの新しいライブラリやフレームワークが採用され、開発者とユーザーの体験をそれぞれ独自に改善することが期待されているため、JavaScriptの使用量は年々増加しているようです。あまりにも広く普及しているため、開発者が追いつくのに苦労している様子を表す<a hreflang="en" href="https://allenpike.com/2015/javascript-framework-fatigue"><em>framework fatigue</em>という言葉が作られました。このセクションでは、現在ウェブ上で使用されているJavaScriptライブラリやフレームワークの人気度を見てみましょう。
+多くの新しいライブラリやフレームワークが採用され、開発者とユーザーの体験をそれぞれ独自に改善することが期待されているため、JavaScriptの使用量は年々増加しているようです。あまりにも広く普及しているため、開発者が追いつくのに苦労している様子を表す<a hreflang="en" href="https://allenpike.com/2015/javascript-framework-fatigue"><em>framework fatigue</em></a>という言葉が作られました。このセクションでは、現在ウェブ上で使用されているJavaScriptライブラリやフレームワークの人気度を見てみましょう。
 
 ### ライブラリーの利用
 
