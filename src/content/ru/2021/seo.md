@@ -28,8 +28,8 @@ SEO сейчас популярнее, чем когда-либо, и оно з�
 
 {{ figure_markup(
    image="seo-term-trends.png",
-   caption="Google Trends comparison of SEO versus pay-per-click, social media marketing, and email marketing.",
-   description="Screenshot showing the interest over time in Google Trends comparing four digital marketing channels; search engine optimization, pay-per-click, social media marketing, and email marketing. SEO remained the most popular digital marketing channel, with interest far outpacing the other channels in recent years. SEO continued to be an evolving field with a growing community around the world.",
+   caption="Google Trends: сравнение SEO с платой за клик, маркетингом в социальных сетях и email-маркетингом.",
+   description="На скриншоте показан интерес в Google Trends с течением времени. Сравниваются четыре канала цифрового маркетинга: поисковая оптимизация, оплата за клик, маркетинг в социальных сетях и email-маркетинг. SEO всегда было самым популярным каналом, и в последние годы интерес к нему значительно вырос. SEO остается развивающейся сферой с растущим сообществом по всему миру.",
    width=1155,
    height=605
    )
@@ -43,13 +43,13 @@ SEO сейчас популярнее, чем когда-либо, и оно з�
 
 ## Сканируемость и Индексируемость {crawlability-and-indexability}
 
-To return relevant results to these user queries, search engines have to create an index of the web. The process for that involves:
+Чтобы возвращать релевантные результаты по запросам пользователей, поисковые системы должны создать индекс в Интернете. Этот процесс включает в себя:
 
-1. **Crawling** - search engines use web crawlers, or spiders, to visit pages on the internet. They find new pages through sources such as sitemaps or links between pages.
-2. **Processing** - in this step search engines may render the content of the pages. They will extract information they need like content and links that they will use to build and update their index, rank pages, and discover new content.
-3. **Indexing** - Pages that meet certain indexability requirements around content quality and uniqueness will typically be indexed. These indexed pages are eligible to be returned for user queries.
+1. **Сканирование** — поисковые системы используют поисковых роботов, или пауков, для посещения страниц в Интернете. Они находят новые страницы через такие источники, как карты сайта или ссылки между страницами.
+2. **Обработка** — на этом этапе поисковые системы могут отрисовывать контент на страницах. Они будут извлекать необходимую информацию, такую как контент и ссылки, которые они будут использовать для создания и обновления своего индекса, ранжирования страниц и поиска нового контента. 
+3. **Индексация** — cтраницы, отвечающие определенным требованиям к индексации в отношении качества и уникальности контента попадают в индекс. Эти проиндексированные страницы могут быть возвращены по запросам пользователей.
 
-Let's look at some issues that may impact crawlability and indexability.
+Давайте рассмотрим некоторые проблемы, оказывающие влияние на сканируемость и индексируемость.
 
 ### `robots.txt`
 
