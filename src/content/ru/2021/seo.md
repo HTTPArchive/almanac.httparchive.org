@@ -62,7 +62,7 @@ SEO сейчас популярнее, чем когда-либо, и оно з�
 {{ figure_markup(
    image="robots-txt-status-codes.png",
    caption="Распределение ответов сервера на запрос robots.txt.",
-   description="Гистограмма показывает процент страниц с правильным файлом robots.txt. Код ответа сервера 200 получен от 81.9% мобильных веб-сайтов, 404 — от 16.5%. Другие коды ответов сервера практически не использовались, и показатели на компьютерах почти такие же, как и на мобильных устройствах.",
+   description="Гистограмма показывает процент страниц с правильным файлом `robots.txt`. Код ответа сервера 200 получен от 81.9% мобильных веб-сайтов, 404 — от 16.5%. Другие коды ответа сервера практически не использовались, и показатели на компьютерах почти такие же, как и на мобильных устройствах.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2062029998&format=interactive",
    sheets_gid="91318795",
    sql_file="robots-txt-status-codes.sql"
@@ -77,22 +77,22 @@ SEO сейчас популярнее, чем когда-либо, и оно з�
 
 По нашим данным ~0.3% веб-сайтов вернули ошибку 403 Доступ запрещен или 5xx. Разные роботы могут реагировать по-разному, поэтому мы не знаем, как именно Googlebot обработал ошибку.
 
-The latest information available <a hreflang="en" href="https://www.youtube.com/watch?v=JvYh1oe5Zx0&amp;t=315s">from Google, from 2019</a> is that as many as 5% of websites were temporarily returning 5xx on robots.txt, while as many as 26% were unreachable.
+По последней информации, полученной <a hreflang="en" href="https://www.youtube.com/watch?v=JvYh1oe5Zx0&amp;t=315s">от Google за 2019 год</a>, до 5% веб-сайтов временно возвращали 5xx ответ сервера при запросе `robots.txt`, в то время как 26% были недоступны.
 
 {{ figure_markup(
    image="robots-usage-presentation.png",
-   caption="Breakdown of robots.txt status codes Googlebot encountered.",
-   description="Screenshot showing the percentage of robots.txt status codes encountered by Googlebot. Taken from 2019 data, 69% of sites were Good and utilized status code 200 or returned 404 for open access. As many as 5% were Temporarily OK returning 5xx on `robots.txt`. As much as 26% of sites were Unreachable.",
+   caption="Распределение ответов сервера на запрос robots.txt от Googlebot.",
+   description="На скриншоте показан процент кодов ответа сервера на запрос `robots.txt` от Googlebot. По данным за 2019 год 69% сайтов были в порядке и использовали ответ сервера 200 или 404 для открытого доступа. Целых 5% веб-сайтов были временно в порядке, возвращая 5хх при запросе `robots.txt`. 26% веб-сайтов оказались недоступны.",
    width=609,
    height=313
    )
 }}
 
-Two things may cause the discrepancy between the HTTP Archive and Google data:
+Две вещи могут вызвать расхождение между данными HTTP Archive и Google:
 
-1. Google presents data from 2 years back while the HTTP Archive is based on recent information, or
+1. Google представляет данные двухлетней давности, в то время как HTTP Archive основан на последней информации, или 
 
-2. The HTTP Archive focuses on websites that are popular enough to be included in the CrUX data, while Google tries to visit all known websites.
+2. HTTP Archive основан на данных веб-сайтов, которые достаточно популярны для попадания в CrUX, в то время как Google пытается посетить все известные веб-сайты. 
 
 ### `robots.txt` size
 
