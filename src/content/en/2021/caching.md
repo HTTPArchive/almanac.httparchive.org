@@ -359,7 +359,7 @@ Taking a look at the Median TTL across all resource types, we see that even if w
   ) }}</figcaption>
 </figure>
 
-When we look at the entirety of cacheable and non-cacheable resources,
+That said, even as we continue to optimize for the mobile experience, it's interesting to note that the potential amount of cacheable desktop resources remains slightly higher than those for mobile. 
 
 {{ figure_markup(
   image="cacheable-responses.png",
