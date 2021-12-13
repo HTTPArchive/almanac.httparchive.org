@@ -53,29 +53,29 @@ SEO сейчас популярнее, чем когда-либо, и оно з�
 
 ### `robots.txt`
 
-`robots.txt` is a file located in the root folder of each subdomain on a website that tells robots such as search engine crawlers where they can and can't go.
+`robots.txt` — файл, расположенный в корневой директории каждого поддомена на веб-сайте, который говорит роботам, например поисковым, куда они могут и не могут заходить. 
 
-81.9% of websites make use of the robots.txt file (mobile). Compared with previous years (72.2% in 2019 and 80.5% in 2020), that's a slight improvement.
+81.9% веб-сайтов используют файл robots.txt (для мобильных сайтов). По сравнению с предыдущими годами (72.2% в 2019 году и 80.5% в 2020 году) это небольшое улучшение.
 
-Having a `robots.txt` is not a requirement. If it's returning a 404 not found, Google assumes that every page on a website can be crawled. Other search engines may treat this differently.
+Наличие `robots.txt` не обязательно. Если возвращается 404 ответ сервера, Google воспримет это как разрешение сканировать все страницы веб-сайта. Другие поисковые системы могут реагировать иначе.
 
 {{ figure_markup(
    image="robots-txt-status-codes.png",
-   caption="Breakdown of robots.txt status codes.",
-   description="Bar chart showing percent of pages with a valid robots.txt file. Status code 200 was present on 81.9% of mobile sites, status code 404 was present on 16.5% of mobile sites. The other status codes are barely used, and desktop numbers are almost identical to mobile.",
+   caption="Распределение ответов сервера на запрос robots.txt.",
+   description="Гистограмма показывает процент страниц с правильным файлом robots.txt. Код ответа сервера 200 получен от 81.9% мобильных веб-сайтов, 404 — от 16.5%. Другие коды ответов сервера практически не использовались, и показатели на компьютерах почти такие же, как и на мобильных устройствах.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2062029998&format=interactive",
    sheets_gid="91318795",
    sql_file="robots-txt-status-codes.sql"
    )
 }}
 
-Using `robots.txt` allows website owners to control search engine robots. However, the data showed that as many as 16.5% of websites have no `robots.txt` file.
+Использование `robots.txt` позволяет владельцам веб-сайтов контролировать поисковых роботов. Однако данные анализа показали, что у 16.5% веб-сайтов нет файла `robots.txt`.
 
-Websites may have misconfigured `robots.txt` files. For example, some popular websites were (presumably mistakenly) blocking search engines. Google may keep these websites indexed for a period of time, but eventually their visibility in search results will be lessened.
+У веб-сайтов может быть неправильно настроен `robots.txt`. Например, некоторые популярные веб-сайты (вероятно по ошибке) блокировали поисковых роботов. Google может хранить эти веб-сайты в индексе некоторое время, но в конце концов их видимость в результатах поиска будет снижена.
 
-Another category of errors related to `robots.txt` is accessibility and/or network errors, meaning the `robots.txt` exists but cannot be accessed. If Google requests a `robots.txt` file and gets such an error, the bot may stop requesting pages for a while. The logic behind this is that search engines are unsure if a given page can or cannot be crawled, so it waits until `robots.txt` becomes accessible.
+Другая категория ошибок, связанных с `robots.txt` — ошибки доступа или сети. Ситуация, когда `robots.txt` существует, но к нему нельзя получить доступ. Если Google запрашивает файл `robots.txt` и получает ошибку, он может временно приостановить сканирование. Логика в том, что поисковая система не уверена, может ли выбранная страница быть просканирована, поэтому ждет доступа к `robots.txt`.
 
-~0.3% of websites in our dataset returned either 403 Forbidden or 5xx. Different bots may handle these errors differently, so we don't know exactly what Googlebot may have seen.
+По нашим данным ~0.3% веб-сайтов вернули ошибку 403 Доступ запрещен или 5xx. Разные роботы могут реагировать по-разному, поэтому мы не знаем, как именно Googlebot обработал ошибку.
 
 The latest information available <a hreflang="en" href="https://www.youtube.com/watch?v=JvYh1oe5Zx0&amp;t=315s">from Google, from 2019</a> is that as many as 5% of websites were temporarily returning 5xx on robots.txt, while as many as 26% were unreachable.
 
