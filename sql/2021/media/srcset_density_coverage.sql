@@ -3,7 +3,10 @@
 CREATE TEMPORARY FUNCTION getSrcsetInfo(responsiveImagesJsonString STRING)
 RETURNS ARRAY<STRUCT<
     hasSrcset BOOL,
+    srcsetHasXDescriptors BOOL,
+    srcsetHasWDescriptors BOOL,
     srcsetCandidateDensities ARRAY<FLOAT64>,
+    numberOfSrcsetCandidates INT64,
     minDensity FLOAT64,
     maxDensity FLOAT64
 >> LANGUAGE js AS '''
@@ -12,13 +15,17 @@ RETURNS ARRAY<STRUCT<
 		return parsed.map( d => {
             const result = {
                 hasSrcset: d.hasSrcset,
+                srcsetHasXDescriptors: d.srcsetHasXDescriptors,
+                srcsetHasWDescriptors: d.srcsetHasXDescriptors,
                 srcsetCandidateDensities: [],
+                numberOfSrcsetCandidates: 0,
                 minDensity: d.currentSrcDensity,
                 maxDensity: d.currentSrcDensity
             };
             if ( d.srcsetCandidateDensities && d.srcsetCandidateDensities.map ) {
                 const densities = d.srcsetCandidateDensities.map( n => parseFloat( n ) );
                 result.srcsetCandidateDensities = densities;
+                result.numberOfSrcsetCandidates = densities.length;
                 result.minDensity = Math.min( ...densities );
                 result.maxDensity = Math.max( ...densities );
 		    }
@@ -38,7 +45,7 @@ WITH imgs AS (
     `httparchive.pages.2021_07_01_*`,
     UNNEST(getSrcsetInfo(JSON_QUERY(JSON_VALUE(payload, '$._responsive_images' ), '$.responsive-images')))
   WHERE
-    hasSrcset = true
+    srcsetHasXDescriptors = true OR srcsetHasWDescriptors = true
 ),
 
 counts AS (

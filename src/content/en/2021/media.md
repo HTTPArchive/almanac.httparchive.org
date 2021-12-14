@@ -438,7 +438,7 @@ On a 500-CSS-`px`-wide viewport, these resources will be assigned the following 
 | `medium.jpg` | `750w` ÷ `500px` = 1.5x |
 | `small.jpg` | `500w` ÷ `500px` = 1x |
 
-However on a 1000-CSS-`px`-wide viewport, these same resources, marked up with the same `srcset` and `sizes` values, will receive different densities:
+However on a 1000-CSS-`px`-wide viewport, these same resources, marked up with the same `srcset` and `sizes` values, will have different densities:
 
 | Resource | Density |
 | `large.jpg` | `1000w` ÷ `1000px` = 1x |
@@ -452,12 +452,12 @@ So! Armed with both:
 1. an understanding of how browsers turn `x` and `w` descriptors, `sizes` values, and browsing contexts into resource densities;
 2. an understanding of how the range of resource densities in a `srcset` changes across browsing contexts, and ultimately impacts users
 
-…let's look at the ranges of densities supplied by the web's `srcset`s:
+…let's look at the ranges of densities supplied by the `srcset`s that use either `x` descriptors or `w` descriptors:
 
 {{ figure_markup(
-  image="srcset_density_coverage.png",
-  caption="Ranges of densities covered by the web's `srcset`.",
-  description="A bar chart showing the percent of `srcset`s that cover a few different ranges of densities, on both desktop and mobile. On desktop, 42% of `srcset`s covered a 1x to 1.5x range. 36% covered a 1x to 2x range. 18% covered a 1x to 2.5x range. And 14% covered a 1x to 3x range. On mobile, 55% covered a 1x to 1.5x range. 47% covered a 1x to 2x range. 29% covered a 1x to 2.5x range. And 23% covered a 1x to 3x range.",
+  image="srcset-density-coverage.png",
+  caption="Ranges of densities covered by `srcset`s that use either `x` or `w` descriptors.",
+  description="A bar chart showing the percent of `srcset`s using descriptors that cover a few different ranges of densities, on both desktop and mobile. On desktop, 91% of `srcset`s covered a 1x to 1.5x range. 90% covered a 1x to 2x range. 9% covered a 1x to 2.5x range. And 9% covered a 1x to 3x range. On mobile, 93% covered a 1x to 1.5x range. 92% covered a 1x to 2x range. 17% covered a 1x to 2.5x range. And 17% covered a 1x to 3x range.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=1895556643&format=interactive",
   sheets_gid="1895556643",
   sql_file="srcset_density_coverage.sql"
@@ -471,7 +471,7 @@ As you interpret this data, keep in mind the viewports of the two different craw
 
 Different viewport widths would have altered many resolved `sizes` values, and given different results.
 
-That said, these results are not great. They're worse for the desktop crawler, whose larger viewport resulted in larger resolved `sizes` values, and lower densities. But even for the mobile crawler, almost half of all `srcset`s didn't cover a reasonable 1x–2x range. In other words: something like half of all `srcset`s should probably be offering browsers a wider range of resources to pick from.
+That said, these results look good. Nine out of ten `srcset`s are providing a range of resources that covers a reasonable range of output display densities (1x–2x), even on the larger desktop viewport. Given [the exponential bandwidth costs and diminishing visual returns of densities above 2x](https://blog.twitter.com/engineering/en_us/topics/infrastructure/2019/capping-image-fidelity-on-ultra-high-resolution-devices), the steep drop-off after 2x seems not only reasonable, but perhaps even optimal.
 
 ##### `sizes` accuracy
 
