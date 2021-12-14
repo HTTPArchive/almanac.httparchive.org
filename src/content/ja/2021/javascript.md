@@ -712,7 +712,7 @@ JavaScriptは、サーバーと通信してさまざまな形式の情報を非�
   caption="モバイルページでの同期および非同期AJAXリクエストの使用について",
   description="モバイルページにおける同期および非同期のAJAXリクエストの使用状況を示す棒グラフ。モバイルページにおける同期型リクエストの割合は2.5％、非同期型リクエストの割合は77.6％となっている。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=189627938&format=interactive",
-  sheets_gid="183546956",
+  sheets_gid="1113974683",
   sql_file="ajax_request_per_page.sql"
   )
 }}
