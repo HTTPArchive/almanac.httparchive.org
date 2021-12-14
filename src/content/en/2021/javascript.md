@@ -68,7 +68,7 @@ According to [Lighthouse](./methodology#lighthouse), the median mobile page load
 
 {{ figure_markup(
   content="36.2%",
-  caption="Percent unused from the total loaded JavaScript",
+  caption="Percent unused from the total loaded JavaScript.",
   classes="big-number",
   sheets_gid="1521645399",
   sql_file="unused_js_bytes_distribution.sql"
@@ -203,7 +203,6 @@ However, loading the JavaScript asynchronously or deferred helps in some ways to
 
 There was an anti-pattern observed in last year's results that some websites use both `async` and `defer` attributes on the same script, which falls back to `async` if the browser supports it and using `defer` for IE 8 and IE 9 browsers. This is, however, unnecessary now for most of the sites since `async` takes precedence on all supported browsers and. In turn, this pattern interrupts HTML parsing instead of deferring until the page has loaded. The usage was so frequent that [11.4%](../2020/javascript#how-do-we-load-our-javascript) of mobile pages were seen with at least one script with `async` and `defer` attributes used together. The [root causes](https://twitter.com/rick_viscomi/status/1331735748060524551?s=20) were found and an action item was also taken down to [remove such usage going forward](https://twitter.com/Kraft/status/1336772912414601224?s=20).
 
-
 {{ figure_markup(
   content="35.6%",
   caption="Percent of mobile pages on which the `async` and `defer` attributes are set on the same script.",
@@ -252,7 +251,7 @@ Recall from the [How much JavaScript do we load](#how-much-javascript-do-we-load
 
 {{ figure_markup(
   image="js-requests-mobile-host.png",
-  caption="Distribution of the number of JavaScript requests per mobile page by host",
+  caption="Distribution of the number of JavaScript requests per mobile page by host.",
   description="Bar chart showing distribution of JavaScript requests per mobile page by host. A median mobile page makes 9 first-party requests and 10 third-party ones.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=395424439&format=interactive",
   sheets_gid="1354767842",
@@ -489,7 +488,6 @@ jQuery remains the most popular library, used by a staggering 84% of mobile page
 
 You might wonder why jQuery is still so dominant in 2021. There are two main reasons for this. First, as [highlighted over the previous years](../2019/javascript#open-source-libraries-and-frameworks), most <a hreflang="en" href="https://wordpress.org/">WordPress</a> sites use jQuery. Given that WordPress is used on nearly a third of all websites, according to the [CMS](./cms) chapter, this accounts for a huge proportion of jQuery adoption. Second, several of the other top-used JavaScript libraries still rely on jQuery in some way under the hood, contributing to indirect adoption of the library.
 
-
 {{ figure_markup(
   content="3.5.1",
   caption="The most popular version of jQuery.",
@@ -710,10 +708,10 @@ However, [this practice is discouraged](https://developer.mozilla.org/en-US/docs
 
 {{ figure_markup(
   image="usage-sync-async.png",
-  caption="Usage of synchronous and asynchronous AJAX requests on mobile pages",
+  caption="Usage of synchronous and asynchronous AJAX requests.",
   description="Bar chart showing the usage of synchronous and asynchronous AJAX requests on mobile pages. The percent of synchronous requests made on mobile page are 2.5% and that of asynchronous requests are 77.6%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=189627938&format=interactive",
-  sheets_gid="183546956",
+  sheets_gid="1113974683",
   sql_file="ajax_request_per_page.sql"
   )
 }}
