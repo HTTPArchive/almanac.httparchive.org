@@ -204,6 +204,7 @@ JavaScriptの読み込みは、非同期または遅延の指定がない限り�
 昨年の結果では、同じスクリプトに `async` と `defer` の両方の属性を使用しているウェブサイトがあるというアンチパターンが観察されました。これは、ブラウザがサポートしている場合は `async` にフォールバックし、IE8とIE9のブラウザでは `defer` を使用するというものです。しかし、ほとんどのサイトでは、サポートされているすべてのブラウザで`async`が優先されるため、現在ではこの方法は必要ありません。このパターンでは、ページが読み込まれるまで待つのではなく、HTMLの解析が中断されます。この使用頻度は非常に高く、モバイルページの [11.4%](../2020/javascript#how-do-we-load-our-javascript) には、`async` と `defer` 属性を持つスクリプトが少なくとも1つ使用されていました。The [root causes](https://twitter.com/rick_viscomi/status/1331735748060524551?s=20) were found and an action item was also taken down to [remove such usage going forward](https://twitter.com/Kraft/status/1336772912414601224?s=20).
 
 [根本的な原因](https://twitter.com/rick_viscomi/status/1331735748060524551?s=20)を見つけ、[今後そのような使い方をしないようにする](https://twitter.com/Kraft/status/1336772912414601224?s=20)というアクションアイテムも用意されています。
+
 {{ figure_markup(
   content="35.6%",
   caption="同一スクリプト上で `async` と `defer` 属性が設定されているモバイルページの割合。",
