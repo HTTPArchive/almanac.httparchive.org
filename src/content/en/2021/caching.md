@@ -291,7 +291,7 @@ Taking a look at the Median TTL across all resource types, we see that even if w
   <table>
     <thead>
       <tr>
-        <th colspan="6" scope="col">Median TTL (in days)</th>
+        <th colspan="3" scope="col">Median TTL (in days)</th>
       </tr>
       <tr>
         <th scope="col">Type</th>
@@ -359,7 +359,7 @@ Taking a look at the Median TTL across all resource types, we see that even if w
   ) }}</figcaption>
 </figure>
 
-That said, even as we continue to optimize for the mobile experience, it's interesting to note that the potential amount of cacheable desktop resources remains slightly higher than those for mobile. 
+That said, even as we continue to optimize for the mobile experience, it's interesting to note that the potential amount of cacheable desktop resources remains slightly higher than those for mobile.
 
 {{ figure_markup(
   image="cacheable-responses.png",
