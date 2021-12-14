@@ -434,6 +434,7 @@ When browsers pick a resource to load out of a `srcset`, they first assign every
 On a 500-CSS-`px`-wide viewport, these resources will be assigned the following densities:
 
 | Resource | Density |
+|---|---|
 | `large.jpg` | `1000w` ÷ `500px` = 2x |
 | `medium.jpg` | `750w` ÷ `500px` = 1.5x |
 | `small.jpg` | `500w` ÷ `500px` = 1x |
@@ -441,11 +442,12 @@ On a 500-CSS-`px`-wide viewport, these resources will be assigned the following 
 However on a 1000-CSS-`px`-wide viewport, these same resources, marked up with the same `srcset` and `sizes` values, will have different densities:
 
 | Resource | Density |
+|---|---|
 | `large.jpg` | `1000w` ÷ `1000px` = 1x |
 | `medium.jpg` | `750w` ÷ `1000px` = 0.75x |
 | `small.jpg` | `500w` ÷ `1000px` = 0.5x |
 
-After these densities are calculated, browsers pick the resource with the density that's the best match for the current browsing context. It's safe to say that in this example, the `srcset` did not contain a wide-enough range of resources. Viewports measuring more than 1000 `px` across, with higher than `1x` densities, are not uncommon; if you’re reading this on a laptop, you’re probably browsing in such a context, right now. And in these contexts, the best browsers can do is pick `large.jpg`, whose 1x density will appear blurry on the high-density display.
+After these densities are calculated, browsers pick the resource with the density that's the best match for the current browsing context. It's safe to say that in this example, the `srcset` did not contain a wide-enough range of resources. Viewports measuring more than `1000 px` across, with higher than `1x` densities, are not uncommon; if you're reading this on a laptop, you're probably browsing in such a context, right now. And in these contexts, the best browsers can do is pick `large.jpg`, whose 1x density will still appear blurry on the high-density display.
 
 So! Armed with both:
 
@@ -457,7 +459,7 @@ So! Armed with both:
 {{ figure_markup(
   image="srcset-density-coverage.png",
   caption="Ranges of densities covered by `srcset`s that use either `x` or `w` descriptors.",
-  description="A bar chart showing the percent of `srcset`s using descriptors that cover a few different ranges of densities, on both desktop and mobile. On desktop, 91% of `srcset`s covered a 1x to 1.5x range. 90% covered a 1x to 2x range. 9% covered a 1x to 2.5x range. And 9% covered a 1x to 3x range. On mobile, 93% covered a 1x to 1.5x range. 92% covered a 1x to 2x range. 17% covered a 1x to 2.5x range. And 17% covered a 1x to 3x range.",
+  description="A bar chart showing the percent of `srcset`s using descriptors that cover a few different ranges of densities, on both desktop and mobile. On desktop, 91.2% of `srcset`s covered a 1x to 1.5x range. 90.2% covered a 1x to 2x range. 9.2% covered a 1x to 2.5x range. And 9.1% covered a 1x to 3x range. On mobile, 92.9% covered a 1x to 1.5x range. 92.2% covered a 1x to 2x range. 17.4% covered a 1x to 2.5x range. And 17.3% covered a 1x to 3x range.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=1895556643&format=interactive",
   sheets_gid="1895556643",
   sql_file="srcset_density_coverage.sql"
