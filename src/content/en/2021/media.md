@@ -150,9 +150,9 @@ When `<img>`s contain more than one pixel, how many pixels do they contain?
   )
 }}
 
-The median `<img>` loads just over 40,000 pixels on mobile. I found this number surprisingly small. Just under half of crawled `<img>`s (excluding the ones that loaded single pixel images, or nothing at all) contain about the same number of pixels than a 200x200 image.
+The median `<img>` loads just over 40,000 pixels on mobile. I found this number surprisingly small. Just under half of crawled `<img>`s (excluding the ones that loaded single pixel images, or nothing at all) contain about the same number of pixels as a 200x200 image.
 
-However, when you consider the number of `<img>` elements per page, this statistic is less surprising. Most pages contain more than 15 images, so they are often made up of many smaller images and icons. So, while images with more than half-a-megapixel might only account for one in ten `<img>` elements, they are not at all uncommon, as we navigate across pages. Many pages will include at least one larger image.
+However, when you consider the number of `<img>` elements per page, this statistic is less surprising. Most pages contain more than 15 images, so they are often made up of many smaller images and icons. Thus, while images with more than half-a-megapixel might only account for one in ten `<img>` elements, they are not at all uncommon, as we navigate across pages. Many pages will include at least one larger image.
 
 {{ figure_markup(
   image="number-of-imgs-per-page.png",
@@ -312,7 +312,7 @@ Also, anecdotally, the reference WebP encoder (<a hreflang="en" href="https://de
 
 As far as AVIF is concerned: <a hreflang="en" href="https://github.com/AOMediaCodec/libavif">`libavif`</a> is capable of a wide variety of compression ratios depending on which "speed" setting you choose. At its slowest speeds (producing the highest-efficiency files) `libavif` can take minutes to encode a single image. It's reasonable to assume that different image-rendering pipelines will make different tradeoffs when choosing speed settings, depending on their constraints. This results in a wide distribution of compression performance.
 
-Another thing to keep in mind when evaluating AVIF's real-world performance here, is that there just aren't that many AVIFs out there in the wild, yet. The format is currently being used by relatively few sites, on a limited set of content, so we don't yet have a full sense of how it will ultimately perform "in the wild," on the web. This will be interesting to track over the coming years, as adoption increases (and tooling improves).
+Another thing to keep in mind when evaluating AVIF's real-world performance here, is that there just aren't that many AVIFs on the web, yet. The format is currently being used by relatively few sites, on a limited set of content, so we don't yet have a full sense of how it will ultimately perform "in the wild." This will be interesting to track over the coming years, as adoption increases (and tooling improves).
 
 One thing that is absolutely clear is that both WebP and AVIF can be used to deliver a wide variety of content (including photography, <a hreflang="en" href="https://jakearchibald.com/2020/avif-has-landed/#flat-illustration">illustrations</a>, and images with transparency) more efficiently than the web's legacy formats. But, as we'll see in the next section, not that many sites have adopted them.
 
@@ -447,7 +447,7 @@ However, on a 1000-CSS-`px`-wide viewport, these same resources, marked up with 
 | `medium.jpg` | `750w` ÷ `1000px` = 0.75x |
 | `small.jpg` | `500w` ÷ `1000px` = 0.5x |
 
-After these densities are calculated, browsers pick the resource with the density that's the best match for the current browsing context. It's safe to say that in this example, the `srcset` did not contain a wide-enough range of resources. Viewports measuring more than `1000 px` across, with higher than `1x` densities, are not uncommon; if you're reading this on a laptop, you're probably browsing in such a context, right now. And in these contexts, the best browsers can do is pick `large.jpg`, whose 1x density will still appear blurry on the high-density display.
+After these densities are calculated, browsers pick the resource with the density that's the best match for the current browsing context. It's safe to say that in this example, the `srcset` did not contain a wide-enough range of resources. Viewports measuring more than 1,000 CSS `px` across, with higher than `1x` densities, are not uncommon; if you're reading this on a laptop, you're probably browsing in such a context, right now. And in these contexts, the best browsers can do is pick `large.jpg`, whose 1x density will still appear blurry on the high-density display.
 
 So, armed with both:
 
@@ -714,11 +714,11 @@ The chart below shows all video extensions with over 1% market share:
 
 By far, the #1 video format on the web is the `mp4` (or MPEG-4), since the <a hreflang="en" href="https://caniuse.com/mpeg4">mp4 h264 format has 98.4% support in all modern browsers</a>, and the 1.9% of browsers that do not support `mp4` have no video support, so the number is really 100% coverage. Interestingly, the `mp4` usage has dropped by ~15% YOY on both desktop and mobile. WebM support also [dropped significantly YOY](../2020/media#videos) (50% drop on both mobile and desktop).
 
-Where we see the growth are files with no extension (these are often from YouTube or other streaming platforms), and in web streaming. `ts` files are segments used in HTTP Live Streaming (HLS)  where we see a 4% jump in usage. `.m4s` are MPEG Dynamic Adaptive Streaming over HTTP (MPEG-DASH) video segments. M4s files grew by 50% from 2.3% to 3.3% YOY.
+Where we see the growth are files with no extension (these are often from YouTube or other streaming platforms), and in web streaming. `ts` files are segments used in HTTP Live Streaming (HLS)  where we see a 4% jump in usage. `.m4s` are MPEG Dynamic Adaptive Streaming over HTTP (MPEG-DASH) video segments. M4S files grew by 50% from 2.3% to 3.3% YOY.
 
 ### Video CSS: `display`
 
-To begin, let's look at how the video will appear on the page by looking at the CSS `display` property for the video. What we find is that approximately half of all videos use a display value of `block`—placing the video on its own line and allowing for height and width values to be set for the video. The `inline-block` value also allows height and width to be specified—for a total of two thirds of all videos.
+To begin, let's look at how a video will appear on a page by looking at the CSS `display` property for that video. What we find is that approximately half of all videos use a display value of `block`—placing the video on its own line and allowing for height and width values to be set for the video. The `inline-block` value also allows height and width to be specified—for a total of two thirds of all videos.
 
 The `display: none` declaration hides the video from the viewer. One in five videos on the web is hidden behind this display value. From a data usage perspective, this is less than optimal, as the video is still downloaded by the browser.
 
@@ -734,7 +734,7 @@ The `display: none` declaration hides the video from the viewer. One in five vid
 
 ### Video attributes
 
-The video HTML5 tag has a number of attributes that can be used to define how the video player will appear to end users.
+The `<video>` HTML5 tag has a number of attributes that can be used to define how the video player will appear to end users.
 
 Let's look at the most common attributes and how they are used inside the `<video>` tag:
 
@@ -768,11 +768,11 @@ Interestingly, we see a large push away from `preload` on both mobile and deskto
 
 The next most commonly used attribute is `autoplay`. This tells the browser that the video should play as soon as possible (and because of this, autoplay will actually override the preload attribute).
 
-The autoplay attribute is a Boolean attribute, meaning that its presence by fault means true. So, for the 190 sites that use `autoplay="false"`, we're sorry to tell you that is not going to work.
+The autoplay attribute is a Boolean attribute, meaning that its presence by default means true. So, for the 190 sites that use `autoplay="false"`, we're sorry to tell you that is not going to work.
 
 #### `width`
 
-The width attribute is also one of the top video attributes. It tells the browser how wide the video player should be. Note that height is very rarely used, since the browser can set this - but it will use a  <a hreflang="en" href ="https://github.com/whatwg/html/issues/3090">default aspect-ratio of 2:1</a> which may be incorrect if not explicity overriden with the `aspect-ratio` CSS styling.
+The `width` attribute is also one of the top `<video>` attributes. It tells the browser how wide the video player should be. Note that `height` is very rarely used, since the browser can set this - but it will use a  <a hreflang="en" href ="https://github.com/whatwg/html/issues/3090">default aspect-ratio of 2:1</a> which may be incorrect if not explicity overriden with the `aspect-ratio` CSS styling.
 
 The width can be presented as a percentage, or a width in pixels.
 
@@ -791,9 +791,9 @@ The width can be presented as a percentage, or a width in pixels.
 
 It appears that about half of sites with larger videos that also define the width of the video remove the larger videos for mobile devices. Since very few devices need a 1080p (1920 wide) video embedded in a website, this makes sense.
 
-#### Src and source
+#### `src` and `<source>`
 
-The src attribute is used in the `<video>` tag to point to the URL of the video to be played. Another way to reference the video is to use the `<source>` element.
+The `src` attribute is used in the `<video>` tag to point to the URL of the video to be played. Another way to reference the video is to use the `<source>` element.
 
 One of the key ideas behind the `<source>` element is that the developer can supply multiple video formats to the browser, and the browser will select the first format that the browser understands.
 
@@ -809,7 +809,7 @@ When we look at `<source>` usage, we see that about 40% of videos have no `<sour
   )
 }}
 
-We also see that the source element is most often used with just one element (50% of all video tags). Only 10% of videos have 2 or more video sources named. By a 3:1 ratio, 2 is more common than 3 sources, and then there is a small selection of more than 3 (there is one video with 48 sources!).
+We also see that the `<source>` element is most often used with just one element (50% of all `<video>` tags). Only 10% of `<video>` elements have 2 or more video sources named. By a 3:1 ratio, 2 is more common than 3 sources, and then there is a small selection of more than 3 (there is one video with 48 sources!).
 
 Let's look at the videos that use 2 sources. Here are the top 10 occurrences:
 
