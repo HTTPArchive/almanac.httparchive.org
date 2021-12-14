@@ -488,7 +488,6 @@ jQuery remains the most popular library, used by a staggering 84% of mobile page
 
 You might wonder why jQuery is still so dominant in 2021. There are two main reasons for this. First, as [highlighted over the previous years](../2019/javascript#open-source-libraries-and-frameworks), most <a hreflang="en" href="https://wordpress.org/">WordPress</a> sites use jQuery. Given that WordPress is used on nearly a third of all websites, according to the [CMS](./cms) chapter, this accounts for a huge proportion of jQuery adoption. Second, several of the other top-used JavaScript libraries still rely on jQuery in some way under the hood, contributing to indirect adoption of the library.
 
-
 {{ figure_markup(
   content="3.5.1",
   caption="The most popular version of jQuery.",

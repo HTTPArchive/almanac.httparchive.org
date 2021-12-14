@@ -488,7 +488,6 @@ jQueryは依然としてもっとも人気のあるライブラリで、モバ�
 
 2021年になっても、なぜjQueryが主流なのか不思議に思うかもしれません。これには主に2つの理由があります。まず、[前年よりも強調されている](../2019/javascript#open-source-libraries-and-frameworks)ように、ほとんどの<a hreflang="en" href="https://wordpress.org/">WordPress</a>サイトがjQueryを使用しています。[CMS](./cms)の章によると、WordPressはすべてのWebサイトの約3分の1で使用されているため、これがjQuery採用の大きな割合を占めています。また、他の主要なJavaScriptライブラリの中にも、何らかの形でjQueryを利用しているものがあり、間接的にjQueryが採用されていると考えられます。
 
-
 {{ figure_markup(
   content="3.5.1",
   caption="もっとも普及しているjQueryのバージョンです。",
