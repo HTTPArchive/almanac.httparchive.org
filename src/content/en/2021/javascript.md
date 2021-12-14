@@ -203,7 +203,6 @@ However, loading the JavaScript asynchronously or deferred helps in some ways to
 
 There was an anti-pattern observed in last year's results that some websites use both `async` and `defer` attributes on the same script, which falls back to `async` if the browser supports it and using `defer` for IE 8 and IE 9 browsers. This is, however, unnecessary now for most of the sites since `async` takes precedence on all supported browsers and. In turn, this pattern interrupts HTML parsing instead of deferring until the page has loaded. The usage was so frequent that [11.4%](../2020/javascript#how-do-we-load-our-javascript) of mobile pages were seen with at least one script with `async` and `defer` attributes used together. The [root causes](https://twitter.com/rick_viscomi/status/1331735748060524551?s=20) were found and an action item was also taken down to [remove such usage going forward](https://twitter.com/Kraft/status/1336772912414601224?s=20).
 
-
 {{ figure_markup(
   content="35.6%",
   caption="Percent of mobile pages on which the `async` and `defer` attributes are set on the same script.",
