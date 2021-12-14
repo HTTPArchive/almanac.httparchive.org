@@ -416,23 +416,62 @@ Let's first take a look at the number of candidate resources developers are incl
 
 A large majority of `srcset`s are populated with five-or-fewer resources.
 
-##### `srcset` resource densities
+##### `srcset` density ranges
 
-{# TODO consider dropping this section - as discussed in https://github.com/HTTPArchive/almanac.httparchive.org/pull/2705#discussion_r766943656 #}
+Are developers giving browsers an appropriately-wide range of choices, within their `srcset`s? In order to answer this question, we must first understand how `srcset` and `sizes` values are used by browsers.
 
-Are developers giving the browser an appropriately wide range of choices? To figure this out, we can calculate every candidate's <a hreflang="en" href="https://html.spec.whatwg.org/multipage/images.html#current-pixel-density">density</a>: a measure of how many image pixels the `<img>` will paint in each CSS `px`, if left to its intrinsic dimensions. If the range of candidate densities covers a reasonable range of real-world device DPRs, the `srcset` has a wide-enough range.
+When browsers pick a resource to load out of a `srcset`, they first assign every candidate resource a <a hreflang="en" href="https://html.spec.whatwg.org/multipage/images.html#current-pixel-density">density</a>. Calculating the density of resources that use `x` descriptors is straightforward. A resource with a `2x` density descriptor has a density of (wait for it) 2x.
+
+`w` descriptors complicate things. What's the density of a `1000w` resource? It depends on the resolved `sizes` value (which might depend on the viewport width!). When `w` descriptors are used, each descriptor is divided by the resolved `sizes` value, to determine its density. For example:
+
+```html
+<img
+  srcset="large.jpg 1000w, medium.jpg 750w, small.jpg 500w"
+  sizes="100vw"
+/>
+```
+
+On a 500-CSS-`px`-wide viewport, these resources will be assigned the following densities:
+
+| Resource | Density |
+| `large.jpg` | `1000w` ÷ `500px` = 2x |
+| `medium.jpg` | `750w` ÷ `500px` = 1.5x |
+| `small.jpg` | `500w` ÷ `500px` = 1x |
+
+However on a 1000-CSS-`px`-wide viewport, these same resources, marked up with the same `srcset` and `sizes` values, will receive different densities:
+
+| Resource | Density |
+| `large.jpg` | `1000w` ÷ `1000px` = 1x |
+| `medium.jpg` | `750w` ÷ `1000px` = 0.75x |
+| `small.jpg` | `500w` ÷ `1000px` = 0.5x |
+
+After these densities are calculated, browsers pick the resource with the density that's the best match for the current browsing context. It's safe to say that in this example, the `srcset` did not contain a wide-enough range of resources. Viewports measuring more than 1000 `px` across, with higher than `1x` densities, are not uncommon; if you’re reading this on a laptop, you’re probably browsing in such a context, right now. And in these contexts, the best browsers can do is pick `large.jpg`, whose 1x density will appear blurry on the high-density display.
+
+So! Armed with both:
+
+1. an understanding of how browsers turn `x` and `w` descriptors, `sizes` values, and browsing contexts into resource densities;
+2. an understanding of how the range of resource densities in a `srcset` changes across browsing contexts, and ultimately impacts users
+
+…let's look at the ranges of densities supplied by the web's `srcset`s:
 
 {{ figure_markup(
-  image="distribution-of-image-srcset-candidate-densities.png",
-  caption="Distribution of image srcset candidate densities.",
-  description="A bar chart showing the distribution of image srcset candidate densities, on both desktop and mobile. At the tenth percentile, mobile candidates have a density of 0.7x and desktop 0.4x. At the 25th, 1.0x on mobile, and 0.8x on desktop. At the median (50th percentile), candidates on mobile have a density of 1.5x and 1x on desktop. At the 75th percentile, the mobile density is 2.7x and 2.0x on desktop. Lastly, at the 90th percentile, mobile candidates had 4.3x and desktop candidates 3.3x.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=403058700&format=interactive",
-  sheets_gid="1410495845",
-  sql_file="image_srcset_densities.sql"
+  image="srcset_density_coverage.png",
+  caption="Ranges of densities covered by the web's `srcset`.",
+  description="A bar chart showing the percent of `srcset`s that cover a few different ranges of densities, on both desktop and mobile. On desktop, 42% of `srcset`s covered a 1x to 1.5x range. 36% covered a 1x to 2x range. 18% covered a 1x to 2.5x range. And 14% covered a 1x to 3x range. On mobile, 55% covered a 1x to 1.5x range. 47% covered a 1x to 2x range. 29% covered a 1x to 2.5x range. And 23% covered a 1x to 3x range.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=1895556643&format=interactive",
+  sheets_gid="1895556643",
+  sql_file="srcset_density_coverage.sql"
   )
 }}
 
-The mobile crawler here saw higher densities than the desktop crawler, which is expected. Viewport-relative `sizes` values resolve to smaller values on mobile viewports, resulting in higher densities for the same resources. Taken as a whole, [given that most _Device Pixel Ratios_ fall somewhere between 1x-3x](https://twitter.com/TheRealNooshu/status/1397862141894529027), this appears to be a healthy range of candidate densities. It would be interesting to perform a deeper analysis that counted how many `srcsets` didn't fully cover a "reasonable" ~1x-2x range. This is left as an exercise to the reader (or next year's analysts!).
+As you interpret this data, keep in mind the viewports of the two different crawlers:
+
+- Desktop: 1,376 × 768px @1x
+- Mobile: 360 × 512px @3x
+
+Different viewport widths would have altered many resolved `sizes` values, and given different results.
+
+That said, these results are not great. They're worse for the desktop crawler, whose larger viewport resulted in larger resolved `sizes` values, and lower densities. But even for the mobile crawler, almost half of all `srcset`s didn't cover a reasonable 1x–2x range. In other words: something like half of all `srcset`s should probably be offering browsers a wider range of resources to pick from.
 
 ##### `sizes` accuracy
 
