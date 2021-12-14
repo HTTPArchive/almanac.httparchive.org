@@ -418,7 +418,7 @@ A large majority of `srcset`s are populated with five-or-fewer resources.
 
 ##### `srcset` density ranges
 
-Are developers giving browsers an appropriately-wide range of choices, within their `srcset`s? In order to answer this question, we must first understand how `srcset` and `sizes` values are used by browsers.
+Are developers giving browsers an appropriately wide range of choices, within their `srcset`s? In order to answer this question, we must first understand how `srcset` and `sizes` values are used by browsers.
 
 When browsers pick a resource to load out of a `srcset`, they first assign every candidate resource a <a hreflang="en" href="https://html.spec.whatwg.org/multipage/images.html#current-pixel-density">density</a>. Calculating the density of resources that use `x` descriptors is straightforward. A resource with a `2x` density descriptor has a density of (wait for it) 2x.
 
@@ -439,7 +439,7 @@ On a 500-CSS-`px`-wide viewport, these resources will be assigned the following 
 | `medium.jpg` | `750w` ÷ `500px` = 1.5x |
 | `small.jpg` | `500w` ÷ `500px` = 1x |
 
-However on a 1000-CSS-`px`-wide viewport, these same resources, marked up with the same `srcset` and `sizes` values, will have different densities:
+However, on a 1000-CSS-`px`-wide viewport, these same resources, marked up with the same `srcset` and `sizes` values, will have different densities:
 
 | Resource | Density |
 |---|---|
@@ -449,10 +449,10 @@ However on a 1000-CSS-`px`-wide viewport, these same resources, marked up with t
 
 After these densities are calculated, browsers pick the resource with the density that's the best match for the current browsing context. It's safe to say that in this example, the `srcset` did not contain a wide-enough range of resources. Viewports measuring more than `1000 px` across, with higher than `1x` densities, are not uncommon; if you're reading this on a laptop, you're probably browsing in such a context, right now. And in these contexts, the best browsers can do is pick `large.jpg`, whose 1x density will still appear blurry on the high-density display.
 
-So! Armed with both:
+So, armed with both:
 
-1. an understanding of how browsers turn `x` and `w` descriptors, `sizes` values, and browsing contexts into resource densities;
-2. an understanding of how the range of resource densities in a `srcset` changes across browsing contexts, and ultimately impacts users
+1. an understanding of how browsers turn `x` and `w` descriptors, `sizes` values, and browsing contexts into resource densities.
+2. an understanding of how the range of resource densities in a `srcset` changes across browsing contexts, and ultimately impacts users.
 
 …let's look at the ranges of densities supplied by the `srcset`s that use either `x` descriptors or `w` descriptors:
 
@@ -471,9 +471,9 @@ As you interpret this data, keep in mind the viewports of the two different craw
 - Desktop: 1,376 × 768px @1x
 - Mobile: 360 × 512px @3x
 
-Different viewport widths would have altered many resolved `sizes` values, and given different results.
+Different viewport widths would have altered many resolved `sizes` values and given different results.
 
-That said, these results look good. Nine out of ten `srcset`s are providing a range of resources that covers a reasonable range of output display densities (1x–2x), even on the larger desktop viewport. Given [the exponential bandwidth costs and diminishing visual returns of densities above 2x](https://blog.twitter.com/engineering/en_us/topics/infrastructure/2019/capping-image-fidelity-on-ultra-high-resolution-devices), the steep drop-off after 2x seems not only reasonable, but perhaps even optimal.
+That said, these results look good. Nine out of ten `srcset`s are providing a range of resources that covers a reasonable range of output display densities (1x-2x), even on the larger desktop viewport. Given <a hreflang="en" href="https://blog.twitter.com/engineering/en_us/topics/infrastructure/2019/capping-image-fidelity-on-ultra-high-resolution-devices">the exponential bandwidth costs and diminishing visual returns of densities above 2x</a>, the steep drop-off after 2x seems not only reasonable, but perhaps even optimal.
 
 ##### `sizes` accuracy
 
