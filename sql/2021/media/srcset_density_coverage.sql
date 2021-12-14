@@ -9,7 +9,7 @@ RETURNS ARRAY<STRUCT<
     numberOfSrcsetCandidates INT64,
     minDensity FLOAT64,
     maxDensity FLOAT64
->> LANGUAGE js AS '''
+    >> LANGUAGE js AS '''
 	const parsed = JSON.parse( responsiveImagesJsonString );
 	if ( parsed && parsed.map ) {
 		return parsed.map( d => {
