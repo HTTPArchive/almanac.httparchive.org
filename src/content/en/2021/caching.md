@@ -291,9 +291,6 @@ Taking a look at the Median TTL across all resource types, we see that even if w
   <table>
     <thead>
       <tr>
-        <th colspan="3" scope="col">Median TTL (in days)</th>
-      </tr>
-      <tr>
         <th scope="col">Type</th>
         <th scope="col">Desktop</th>
         <th scope="col">Mobile</th>
@@ -414,24 +411,28 @@ Developers are getting better at setting the cache duration more accurately to t
 
 <figure>
   <table>
-    <tr>
-     <th>Client</th>
-     <th>1st party</th>
-     <th>3rd party</th>
-     <th>Overall</th>
-    </tr>
-    <tr>
-     <td>Desktop</td>
-     <td class="numeric">59.5%</td>
-     <td class="numeric">46.2%</td>
-     <td class="numeric">54.3%</td>
-    </tr>
-    <tr>
-     <td>Mobile</td>
-     <td class="numeric">60.1%</td>
-     <td class="numeric">44.7%</td>
-     <td class="numeric">54.3%</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Client</th>
+        <th>1st party</th>
+        <th>3rd party</th>
+        <th>Overall</th>
+      </tr>
+    <thead>
+    <tbody>
+      <tr>
+        <td>Desktop</td>
+        <td class="numeric">59.5%</td>
+        <td class="numeric">46.2%</td>
+        <td class="numeric">54.3%</td>
+      </tr>
+      <tr>
+        <td>Mobile</td>
+        <td class="numeric">60.1%</td>
+        <td class="numeric">44.7%</td>
+        <td class="numeric">54.3%</td>
+      </tr>
+    </tbody>
   </table>
   <figcaption>{{ figure_link(
     caption="Percent of requests with short TTLs.",
