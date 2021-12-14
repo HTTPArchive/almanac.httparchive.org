@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>{{ self.organization() }}</title>
     <link rel="alternate" type="text/html" href="https://almanac.httparchive.org/{{ lang }}/" />
-    <updated><%= (new Date()).toISOString(); %></updated>
+    <% if (updated_date) { %><updated><%= updated_date %></updated><% } %>
     <link href="https://almanac.httparchive.org/{{ lang }}/rss.xml" rel="self" type="application/rss+xml"/>
     <id>https://almanac.httparchive.org/{{ lang }}/rss.xml</id>
 <% for (let url of urls ) { -%>
