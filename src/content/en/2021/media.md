@@ -143,7 +143,7 @@ When `<img>`s contain more than one pixel, how many pixels do they contain?
 {{ figure_markup(
   image="image-pixel-counts.png",
   caption="Distribution of image pixel counts.",
-  description="Bar chart showing the distribution of pixels per image on desktop and mobile, but there is little difference between them. At the 10th percentile, desktop images contain 676 pixels and mopbile 999 pixels, at the 25th percentile it's 7,260 and 9,216 respectively, at the 50th it's 40,000 and 43,200, at the 75th it's 160,000 and 170,496, and at the 90th percentile it's 516,242 and 514,000.",
+  description="Bar chart showing the distribution of pixels per image on desktop and mobile, but there is little difference between them. At the 10th percentile, desktop images contain 676 pixels and mobile 999 pixels, at the 25th percentile it's 7,260 and 9,216 respectively, at the 50th it's 40,000 and 43,200, at the 75th it's 160,000 and 170,496, and at the 90th percentile it's 516,242 and 514,000.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=493015352&format=interactive",
   sheets_gid="1999710461",
   sql_file="bytes_and_dimensions.sql"
@@ -364,7 +364,7 @@ The `decoding` attribute on `<img>` serves as a useful point of contrast to high
 
 #### Accessibility
 
-When you embed contentful images on webpages, you should make their content as accessible as possible for non-visual users. I note this only to refer you to the [Accessibility](./accessibility#images) chapter, whose in-depth analysis of image accessibility on the web found small year-over-year progress, but mostly: a whole lot of room for improvement.
+When you embed contentful images on web pages, you should make their content as accessible as possible for non-visual users. I note this only to refer you to the [Accessibility](./accessibility#images) chapter, whose in-depth analysis of image accessibility on the web found small year-over-year progress, but mostly: a whole lot of room for improvement.
 
 #### Responsive images
 
@@ -642,7 +642,7 @@ Unfortunately, `height` and `width` never played well with images that are assig
 )
 }}
 
-It's hard to tell how many of these `<img>`s were authored with the new browser behavior in mind, but they're all benefiting from it. And that was the point—by re-using existing attributes, lots of existing content benefitted from the change, automatically.
+It's hard to tell how many of these `<img>`s were authored with the new browser behavior in mind, but they're all benefiting from it. And that was the point—by re-using existing attributes, lots of existing content benefited from the change, automatically.
 
 ### Delivery
 
@@ -772,7 +772,7 @@ The autoplay attribute is a Boolean attribute, meaning that its presence by defa
 
 #### `width`
 
-The `width` attribute is also one of the top `<video>` attributes. It tells the browser how wide the video player should be. Note that `height` is very rarely used, since the browser can set this - but it will use a  <a hreflang="en" href ="https://github.com/whatwg/html/issues/3090">default aspect-ratio of 2:1</a> which may be incorrect if not explicity overriden with the `aspect-ratio` CSS styling.
+The `width` attribute is also one of the top `<video>` attributes. It tells the browser how wide the video player should be. Note that `height` is very rarely used, since the browser can set this - but it will use a  <a hreflang="en" href ="https://github.com/whatwg/html/issues/3090">default aspect-ratio of 2:1</a> which may be incorrect if not explicitly overridden with the `aspect-ratio` CSS styling.
 
 The width can be presented as a percentage, or a width in pixels.
 
@@ -949,7 +949,7 @@ The same trend holds for `<video>` elements with three sources—eight of the to
 
 Of course, these implementations will just play the MP4 file, and the WebM and Ogg files will be ignored.
 
-The incorporation of video on the web has grown immensely over the last year—jumping from 1-2% of webpages to 4-5%. We expect this growth to continue. Interestingly, the "king of video", MP4, while still the king, is having its market share eroded by video streaming formats (that feature responsive and adaptive video sizing).
+The incorporation of video on the web has grown immensely over the last year—jumping from 1-2% of web pages to 4-5%. We expect this growth to continue. Interestingly, the "king of video", MP4, while still the king, is having its market share eroded by video streaming formats (that feature responsive and adaptive video sizing).
 
 We do see movement to more performant usage of the `<video>` tag—with less use of `preload=auto`—and more use of `preload=none` as well as we see behaviors in the `width` attribute that indicate that videos are being modified (or removed) for smaller screens.
 
