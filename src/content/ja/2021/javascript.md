@@ -201,7 +201,7 @@ JavaScriptの読み込みは、非同期または遅延の指定がない限り�
   ) }}</figcaption>
 </figure>
 
-昨年の結果では、同じスクリプトに `async` と `defer` の両方の属性を使用しているウェブサイトがあるというアンチパターンが観察されました。これは、ブラウザがサポートしている場合は `async` にフォールバックし、IE8とIE9のブラウザでは `defer` を使用するというものです。しかし、ほとんどのサイトでは、サポートされているすべてのブラウザで`async`が優先されるため、現在ではこの方法は必要ありません。このパターンでは、ページが読み込まれるまで待つのではなく、HTMLの解析が中断されます。この使用頻度は非常に高く、モバイルページの [11.4%](../2020/javascript#how-do-we-load-our-javascript) には、`async` と `defer` 属性を持つスクリプトが少なくとも1つ使用されていました。The [root causes](https://twitter.com/rick_viscomi/status/1331735748060524551?s=20) were found and an action item was also taken down to [remove such usage going forward](https://twitter.com/Kraft/status/1336772912414601224?s=20). [根本的な原因](https://twitter.com/rick_viscomi/status/1331735748060524551?s=20)を見つけ、[今後そのような使い方をしないようにする](https://twitter.com/Kraft/status/1336772912414601224?s=20)というアクションアイテムも用意されています。
+昨年の結果では、同じスクリプトに `async` と `defer` の両方の属性を使用しているウェブサイトがあるというアンチパターンが観察されました。これは、ブラウザがサポートしている場合は `async` にフォールバックし、IE8とIE9のブラウザでは `defer` を使用するというものです。しかし、ほとんどのサイトでは、サポートされているすべてのブラウザで`async`が優先されるため、現在ではこの方法は必要ありません。このパターンでは、ページが読み込まれるまで待つのではなく、HTMLの解析が中断されます。この使用頻度は非常に高く、モバイルページの [11.4%](../2020/javascript#how-do-we-load-our-javascript) には、`async` と `defer` 属性を持つスクリプトが少なくとも1つ使用されていました。[根本原因](https://twitter.com/rick_viscomi/status/1331735748060524551?s=20)が判明し、[今後このような使い方をしない](https://twitter.com/Kraft/status/1336772912414601224?s=20)というアクションアイテムも降ろされたのです。
 
 {{ figure_markup(
   content="35.6%",
@@ -708,7 +708,7 @@ JavaScriptは、サーバーと通信してさまざまな形式の情報を非�
 
 {{ figure_markup(
   image="usage-sync-async.png",
-  caption="モバイルページでの同期および非同期AJAXリクエストの使用について",
+  caption="同期および非同期のAJAXリクエストの使用法",
   description="モバイルページにおける同期および非同期のAJAXリクエストの使用状況を示す棒グラフ。モバイルページにおける同期型リクエストの割合は2.5％、非同期型リクエストの割合は77.6％となっている。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpHzC_cMZYj2VLzQ4ODK3uvZkNBXtwdAZriZaBwjLjUM1SGwwmJs9rv8T6OtNdXox29PQ34CasUUwc/pubchart?oid=189627938&format=interactive",
   sheets_gid="1113974683",
