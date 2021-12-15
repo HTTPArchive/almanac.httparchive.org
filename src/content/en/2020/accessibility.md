@@ -15,7 +15,7 @@ featured_quote: As an industry it is time that we acknowledge the story told by 
 featured_stat_1: 15,357,625
 featured_stat_label_1: Longest known `alt` text length
 featured_stat_2: 3,200
-featured_stat_label_2: Sites mispelling `aria-labelledby` as `aria-labeledby`
+featured_stat_label_2: Sites misspelling `aria-labelledby` as `aria-labeledby`
 featured_stat_3: 0.79%
 featured_stat_label_3: Videos providing closed captions
 
