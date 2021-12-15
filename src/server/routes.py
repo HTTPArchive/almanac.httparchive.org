@@ -105,6 +105,23 @@ def sitemap():
     return resp
 
 
+@app.route('/<lang>/rss.xml')
+# Chrome and Safari use inline styles to display XMLs files.
+# https://bugs.chromium.org/p/chromium/issues/detail?id=924962
+# Override default CSP (including turning off nonce) to allow sitemap to display
+@talisman(
+    content_security_policy={'default-src': ['\'self\''], 'script-src': ['\'self\''],
+                             'style-src': ['\'unsafe-inline\''], 'img-src': ['\'self\'', 'data:']},
+    content_security_policy_nonce_in=['script-src']
+)
+@validate
+def rss(lang):
+    xml = render_template('%s/rss.xml' % lang)
+    resp = app.make_response(xml)
+    resp.mimetype = "application/atom+xml"
+    return resp
+
+
 # Stories require their own CSP and to allow framing
 @app.route('/<lang>/<year>/stories/<story>')
 @validate

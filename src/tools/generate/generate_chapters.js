@@ -11,6 +11,7 @@ const { generate_figure_ids } = require('./generate_figure_ids');
 const { generate_typographic_punctuation_body, generate_typographic_punctuation_metadata } = require('./generate_typographic_punctuation');
 const { generate_featured_chapters, generate_chapter_featured_quote } = require('./generate_featured_chapters');
 const { generate_sitemap } = require('./generate_sitemap');
+const { generate_rss } = require('./generate_rss');
 const { lazy_load_content } = require('./lazy_load_content');
 const { wrap_tables } = require('./wrap_tables');
 const { generate_table_figure_dropdowns } = require('./generate_table_figure_dropdowns');
@@ -30,6 +31,7 @@ converter.setOption('customizedHeaderId', true);
 const generate_chapters = async (chapter_match) => {
 
   let sitemap = [];
+  let rss = [];
   let sitemap_languages = {};
   let ebook_chapters = [];
   let configs = {};
@@ -105,6 +107,8 @@ const generate_chapters = async (chapter_match) => {
         }
         if ( sitemap_languages[year].includes(language) ) {
           sitemap.push({ language, year, chapter });
+          const {description, title, authors} = metadata;
+          rss.push({ language, year, chapter, title, description, authors });
         }
         ebook_chapters.push({ language, year, chapter, metadata, body, toc });
 
@@ -134,6 +138,8 @@ const generate_chapters = async (chapter_match) => {
 
     const sitemap_path = await generate_sitemap(sitemap,sitemap_languages);
     await size_of(sitemap_path);
+
+    await generate_rss(configs,rss,sitemap_languages);
 
     await get_contributors_difference(configs, contributors);
   }

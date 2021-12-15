@@ -2,22 +2,36 @@
 # preload attribute values
 
 SELECT
+  date,
   client,
-  LOWER(preload_value) AS preload_value,
+  IF(preload_value = '', '(empty)', preload_value) AS preload_value,
   COUNT(0) AS preload_value_count,
-  SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS preload_value_pct
+  SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY date, client)) AS preload_value_pct
 FROM
-  `httparchive.almanac.summary_response_bodies`,
-  # extract preload attribute value, or empty if none
-  UNNEST(REGEXP_EXTRACT_ALL(body, '<video[^>]*?preload=*(?:\"|\')*(.*?)(?:\"|\'|\\s|>)')) AS preload_value
-WHERE
-  date = '2021-08-01' AND
-  firstHtml
+  (
+    SELECT
+      '2021-07-01' AS date,
+      _TABLE_SUFFIX AS client,
+      LOWER(IFNULL(JSON_EXTRACT_SCALAR(video_nodes, '$.preload'), '(preload not used)')) AS preload_value
+    FROM
+      `httparchive.pages.2021_07_01_*`,
+      UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.videos.nodes')) AS video_nodes
+    UNION ALL
+    SELECT
+      '2020-08-01' AS date,
+      _TABLE_SUFFIX AS client,
+      LOWER(IFNULL(JSON_EXTRACT_SCALAR(video_nodes, '$.preload'), '(preload not used)')) AS preload_value
+    FROM
+      `httparchive.pages.2020_08_01_*`,
+      UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.videos.nodes')) AS video_nodes
+  )
 GROUP BY
+  date,
   client,
   preload_value
-HAVING
+QUALIFY
   preload_value_count > 10
 ORDER BY
+  date,
   client,
   preload_value_count DESC;
