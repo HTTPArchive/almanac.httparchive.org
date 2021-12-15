@@ -14,6 +14,8 @@ const generate_rss = async (configs, rss_chapters, rss_languages) => {
 
   const rss_languages_only = new Set();
 
+  const rss_last_updated_date = {};
+
   for (const year in rss_languages) {
     for (const languages in rss_languages[year]) {
       rss_languages_only.add(rss_languages[year][languages]);
@@ -34,13 +36,19 @@ const generate_rss = async (configs, rss_chapters, rss_languages) => {
     authors = authors.map(author => configs[year].contributors[author].name.replace(/\\/g, '\\\\').replace(/"/g, '\\"'));
     authors = '"' + authors.join('","') + '"';
 
+    // Capture the latest updated date as the overall rss updated date
+    if (!rss_last_updated_date[language] || updatedate > rss_last_updated_date[language]) {
+      rss_last_updated_date[language] = updatedate;
+    }
+
     urls.push({ language, url, pubdate, updatedate, title, description, authors });
   }
 
   urls.sort((a,b) => (a.url).localeCompare(b.url));
 
   for (let language of rss_languages_only) {
-    let rss = await ejs.renderFile(rss_template, { urls, language });
+    const updated_date = rss_last_updated_date[language];
+    let rss = await ejs.renderFile(rss_template, { urls, language, updated_date });
     const rss_filename = `templates/${language}/${rss_file}`;
 
     console.log(`Generating ${language}/${rss_file}`);

@@ -40,8 +40,7 @@
           "part": "I",
           "chapter_number": "5",
           "title": "Media",
-          "slug": "media",
-          "todo": true
+          "slug": "media"
         },
         {
           "part": "I",
@@ -171,8 +170,7 @@
           "part": "IV",
           "chapter_number": "23",
           "title": "Caching",
-          "slug": "caching",
-          "todo": true
+          "slug": "caching"
         },
         {
           "part": "IV",
@@ -228,6 +226,16 @@
       "github": "argyleink",
       "twitter": "argyleink"
     },
+    "addyosmani": {
+      "name": "Addy Osmani",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "110953",
+      "website": "https://www.addyosmani.com",
+      "github": "addyosmani",
+      "twitter": "addyosmani"
+    },
     "tropicadri": {
       "name": "Adriana Jara",
       "teams": [
@@ -235,6 +243,15 @@
       ],
       "avatar_url": "32825533",
       "github": "tropicadri"
+    },
+    "akshay-ranganath": {
+      "name": "Akshay Ranganath",
+      "teams": [
+        "analysts",
+        "reviewers"
+      ],
+      "avatar_url": "54864775",
+      "github": "akshay-ranganath"
     },
     "alankent": {
       "name": "Alan Kent",
@@ -914,7 +931,8 @@
     "Navaneeth-akam": {
       "name": "Navaneeth Krishna",
       "teams": [
-        "authors"
+        "authors",
+        "reviewers"
       ],
       "avatar_url": "69532755",
       "github": "Navaneeth-akam",
@@ -1038,6 +1056,17 @@
       ],
       "github": "rrajiv",
       "linkedin": "rajivramnath"
+    },
+    "roryhewitt": {
+      "name": "Rory Hewitt",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "11558891",
+      "website": "https://romche.com",
+      "github": "roryhewitt",
+      "linkedin": "roryhewitt",
+      "twitter": "roryhewitt3"
     },
     "RMHolmlund": {
       "name": "Rebecca Holmlund",
@@ -1186,6 +1215,16 @@
       "github": "simonhearne",
       "twitter": "simonhearne"
     },
+    "tpiros": {
+      "name": "Tamas Piros",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "2042718",
+      "website": "https://tamas.io",
+      "github": "tpiros",
+      "twitter": "tpiros"
+    },
     "thomkrupa": {
       "name": "Thom Krupa",
       "teams": [
@@ -1273,12 +1312,31 @@
       "github": "westonruter",
       "twitter": "westonruter"
     },
+    "WilhelmWillie": {
+      "name": "Wilhelm Willie",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "4969041",
+      "website": "http://wilhelmwillie.com/",
+      "github": "WilhelmWillie"
+    },
     "ydimova": {
       "name": "Yana Dimova",
       "teams": [
         "authors"
       ],
       "github": "ydimova"
+    },
+    "yuseyhan": {
+      "name": "Yusuf Seyhan",
+      "teams": [
+        "designers"
+      ],
+      "avatar_url": "74974506",
+      "twitter": "yuseyhan",
+      "website": "https://webpen.de/",
+      "github": "yuseyhan"
     },
     "ziemek-bucko": {
       "name": "Ziemek Bućko",
