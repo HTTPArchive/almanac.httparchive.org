@@ -8,9 +8,9 @@ analysts: [rviscomi]
 editors: [tunetheweb]
 translators: []
 Zizzamia_bio: Leonardo is a Staff Software Engineer at <a hreflang="en" href="https://www.coinbase.com/">Coinbase</a>, leading initiatives that enable product engineers to ship the highest quality applications in the world at scale. He curates the <a hreflang="en" href="https://ngrome.io">NGRome Conference</a>. Leo also maintains the <a hreflang="en" href="https://github.com/Zizzamia/perfume.js">Perfume.js</a> library, which helps companies prioritize roadmaps and make better business decisions through performance analytics.
-jessnicolet_bio: Jessica began her career as an opera singer and has been in the classical music industry for the past 10 years. In early 2020 and due to the pandemic, she decided to start a new career in Tech, specifically Web Development. She has always enjoyed writing and telling stories both onstage and off and published a <a hreflang="en" href="https://jessicanicolet.medium.com/">series of three articles</a> on Medium documenting her experience transitioning to this new field. She is currently looking for a full-time position in Technical Writing.
+jessnicolet_bio: Jessica began her career as an opera singer and has been in the classical music industry for the past 10 years. In early 2020 and due to the pandemic, she decided to start a new career in Tech, specifically Web Development. She has always enjoyed writing and telling stories both on stage and off and published a <a hreflang="en" href="https://jessicanicolet.medium.com/">series of three articles</a> on Medium documenting her experience transitioning to this new field. She is currently looking for a full-time position in Technical Writing.
 results: https://docs.google.com/spreadsheets/d/1-v3yR0LZIC3t4zWtqTgR3jJsKjjRMP-HATU2caP8e2c/
-featured_quote: Adoption of cache headers continues to steadily grow as we learn to navigate the multiverse of caching choices. Optimize pages not only for high-end devices but also for the next billion users that access your product from low-end devices.
+featured_quote: Adoption of cache headers continues to steadily grow as we learn to navigate the multitude of caching choices. Optimize pages not only for high-end devices but also for the next billion users that access your product from low-end devices.
 featured_stat_1: 99.8%
 featured_stat_label_1: Pages caching fonts
 featured_stat_2: 51 trillion year
@@ -21,7 +21,7 @@ featured_stat_label_3: Mobile pages could save up to 1 MB with caching
 
 ## Introduction
 
-Over the last two decades, the way we experience web applications has changed, giving us richer and more interactive content. Unfortunately, this content comes with a cost in both data storage and bandwidth. Most of the time, this makes it harder for many of us to fully experience a web product when the network we use is degraded, or our device doesn't have enough space. Caching is both a solution to and the cause of some of these problems. Learning to navigate the multiverse of choices will enable you to build not only for high-end devices but also for the next billion users that access your product from low-end devices.
+Over the last two decades, the way we experience web applications has changed, giving us richer and more interactive content. Unfortunately, this content comes with a cost in both data storage and bandwidth. Most of the time, this makes it harder for many of us to fully experience a web product when the network we use is degraded, or our device doesn't have enough space. Caching is both a solution to and the cause of some of these problems. Learning to navigate the multitude of choices will enable you to build not only for high-end devices but also for the next billion users that access your product from low-end devices.
 
 Caching is a technique that enables the reuse of previously downloaded content, from simple static assets like JavaScript, CSS files or basic string values to more complex JSON API responses.
 
