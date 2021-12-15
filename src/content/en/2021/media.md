@@ -642,7 +642,7 @@ Unfortunately, `height` and `width` never played well with images that are assig
 )
 }}
 
-It's hard to tell how many of these `<img>`s were authored with the new browser behavior in mind, but they're all benefiting from it. And that was the point—by re-using existing attributes, lots of existing content benefitted from the change, automatically.
+It's hard to tell how many of these `<img>`s were authored with the new browser behavior in mind, but they're all benefiting from it. And that was the point—by re-using existing attributes, lots of existing content benefited from the change, automatically.
 
 ### Delivery
 
