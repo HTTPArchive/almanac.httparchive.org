@@ -64,9 +64,11 @@ basehref
 battleaxe
 beforeinstallprompt
 bendell
+benefitted
 benseymour
 bgsound
 bidirectionality
+bitrate
 bkardell
 bling
 blogposting
@@ -120,6 +122,7 @@ const
 contentful
 contenservice
 contentinfo
+controlslist
 cowpaths
 crawlability
 crawlable
@@ -218,6 +221,7 @@ franca
 frontend
 fullscreen
 fullstacktraining
+fvideos
 gamepad
 gainsboro
 geekonaut
@@ -249,6 +253,7 @@ hackathon
 hardcoded
 hemanth
 henrihelvetica
+hevc
 homescreen
 homescreens
 horizontalized
@@ -274,6 +279,8 @@ imagesizes
 imkev
 imkevdev
 immersive
+impactful
+incentivized
 inbox
 indexability
 inline
@@ -296,6 +303,9 @@ javascript
 jdiv
 jeffposnick
 jeffy
+jessica
+jessicanicolet
+jessnicolet
 jimstatic
 jonoalderson
 jpamental
@@ -335,6 +345,8 @@ leaverou
 lepoch
 letterboxed
 levien
+libavif
+libjpeg
 lifecycle
 lightgray
 lightgrey
@@ -389,6 +401,7 @@ namespaces
 namespacing
 netdna
 nginx
+nicolet
 nobr
 nocache
 nofollow
@@ -451,6 +464,7 @@ phishing
 pinterest
 plaintext
 playbook
+playsinline
 plugin
 plugins
 plusone
@@ -598,6 +612,7 @@ spsn
 sqlite
 squarespace
 srcset
+srcsets
 srcs
 ssllabs
 stackpath
@@ -634,6 +649,7 @@ textbox
 textfield
 thefoxis
 theobto
+theora
 thirdpartyweb
 thinkwithgoogle
 timeframe
@@ -674,6 +690,7 @@ unfurlers
 unitless
 unpkg
 unprefixed
+unsecure
 unsecurely
 uptick
 uptodown
@@ -694,6 +711,7 @@ vimeo
 viscomi
 vmax
 vmin
+vorbis
 vscode
 wasm
 wasmgz
@@ -704,6 +722,7 @@ webkit
 webinars
 webmail
 webmaster
+webmasters
 webm
 webp
 webpage
