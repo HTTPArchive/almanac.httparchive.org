@@ -119,9 +119,9 @@
 
 {% set unit = 'mm' %}
 {% set spine = 25 %}
-{% if year == '2020' %}
-{% set spine = 34.5 %}
-{% endif %}
+{% if year == '2020' and lang == 'en' %}{% set spine = 36.0 %}{% endif %}
+{% if year == '2020' and lang == 'ja' %}{% set spine = 37.0 %}{% endif %}
+{% if year == '2021' %}{% set spine = 46.5 %}{% endif %}
 {% set pageWidth = 148 %}
 {% set pageHeight = 210 %}
 {% if request.args.get('unit') != None %}{% set unit = request.args.get('unit') %}{% endif %}
