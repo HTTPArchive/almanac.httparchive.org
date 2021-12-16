@@ -221,7 +221,7 @@ Images' aspect ratios were clustered around "standard" values, such as 4:3, 16:9
         <td class="numeric">1.5%</td>
       </tr>
       <tr>
-        <td>4:3</td>
+        <td>3:4</td>
         <td class="numeric">0.9%</td>
         <td class="numeric">1.0%</td>
       </tr>
