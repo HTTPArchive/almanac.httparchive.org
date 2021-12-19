@@ -82,7 +82,7 @@ In terms of popularity, HTML5, better known as `<!DOCTYPE html>` is still the mo
   ) }}</figcaption>
 </figure>
 
-The surprising part is that, <a hreflang="en" href="https://en.wikipedia.org/wiki/XHTML">almost 20 years later</a>, XHTML is still a considerable part of the web, with 8% of pages still using it on desktop and a little under 7% on mobile.
+The surprising part is that, [almost 20 years later](https://en.wikipedia.org/wiki/XHTML), XHTML is still a considerable part of the web, with 8% of pages still using it on desktop and a little under 7% on mobile.
 
 ### Document size
 
@@ -968,7 +968,7 @@ Uphold and Gatehub are the current wallets, and it looks like Uphold is the domi
 
 We've pointed out interesting, surprising, and concerning bits of data throughout the chapter. Let us reflect once more on the state of markup in 2021.
 
-The most surprising for us was that, <a hreflang="en" href="https://en.wikipedia.org/wiki/XHTML">almost 20 years later</a>, XHTML was still used on a considerable part of the web, with a little over 7% of pages using it in 2021.
+The most surprising for us was that, almost 20 years later, XHTML was still used on a considerable part of the web, with a little over 7% of pages using it in 2021.
 
 The median page sizes in 2020 were shrinking when compared to 2019, but this year it looks like the trend has regressed, surpassing the median sizes for 2019 as well. The web is getting heavier. Again.
 
