@@ -367,7 +367,7 @@ While the percentages are slightly different when compared with last year, the o
   <table>
     <thead>
       <tr>
-        <th>Element</em></th>
+        <th><em>Element</em></th>
         <th>Percent of pages (mobile)</th>
       </tr>
     </thead>
@@ -710,6 +710,7 @@ The most popular is viewport information, with the most popular `viewport` value
 The second most popular combination are `og:*` meta elements, also known as <a hreflang="en" href="https://ogp.me/">Open Graph</a> meta elements. We'll talk about those in the next section.
 
 #### Social markup
+
 Providing information and assets for social platforms to use when previewing links to your page  is a popular use case for the `meta` element.
 
 {{ figure_markup(
@@ -940,7 +941,7 @@ Web Monetization popularly uses a `meta` element on the page, specifying the wal
 {{ figure_markup(
   link="https://www.chromestatus.com/metrics/feature/timeline/popularity/3119",
   image="meta-monetization.png",
-  caption='Adoption of Web Monetization over time. (Source: <a hreflang="en" href="https://www.chromestatus.com/metrics/feature/timeline/popularity/3119\">Chrome Status</a>)',
+  caption='Adoption of Web Monetization over time. (Source: <a hreflang="en" href="https://www.chromestatus.com/metrics/feature/timeline/popularity/3119">Chrome Status</a>)',
   description="Bar graph showing the increase in adoption of Web Monetization, currently around 0.02% of URLs.",
   width=600,
   height=278
