@@ -132,7 +132,7 @@ _マークアップの章では、HTMLに焦点を当てます。他のマーク
   sql_file="html_lang.sql"
 ) }}
 
-Web Content Accessibility Guidelines (<a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/meaning-doc-lang-id.html">WCAG</a>) では、ページの言語を定義して「プログラムからアクセス可能」であることが求められているにもかかわらず、スキャンしたページのうち、デスクトップでは19.6% 、モバイルでは18.6% が [`lang` 属性の指定なし ](./accessibility) だったのです。言語は `xml:lang` 要素を含むさまざまな方法で指定できますが、今回はチェックしませんでしたので、スキャンされたページの中にはまだ望みがあるかもしれません。
+Web Content Accessibility Guidelines (<a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/meaning-doc-lang-id.html">WCAG</a>) では、ページの言語を定義して「プログラムからアクセス可能」であることが求められているにもかかわらず、スキャンしたページのうち、デスクトップでは19.6% 、モバイルでは18.6% が[`lang`属性の指定なし](./accessibility) だったのです。言語は `xml:lang` 要素を含むさまざまな方法で指定できますが、今回はチェックしませんでしたので、スキャンされたページの中にはまだ望みがあるかもしれません。
 
 {{ figure_markup(
   image="lang.png",
@@ -815,7 +815,7 @@ Googleは2021年になってもトップページに`center`要素を使用し�
   ) }}</figcaption>
 </figure>
 
-もっとも一般的な `viewport` コンテンツオプションは `initial-scale=1,width=device-width` で、これはビューポートについて説明している [MDN guide](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) で推奨されているオプションなので、驚くことではありません。分析したページの45.0%がこれを使用しており、[昨年](../2020/markup#`viewport`の仕様)よりほぼ3%多くなっています。8.2%のページで `content` 属性が空になっており、これも昨年より若干多くなっています。これは、ビューポートオプションの不適切な組み合わせの使用率が減少したことと相関しています。
+もっとも一般的な `viewport` コンテンツオプションは `initial-scale=1,width=device-width` で、これはビューポートについて説明している [MDN guide](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) で推奨されているオプションなので、驚くことではありません。分析したページの45.0%がこれを使用しており、[昨年](../2020/markup#viewportの仕様)よりほぼ3%多くなっています。8.2%のページで `content` 属性が空になっており、これも昨年より若干多くなっています。これは、ビューポートオプションの不適切な組み合わせの使用率が減少したことと相関しています。
 
 ### ファビコン
 
