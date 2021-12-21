@@ -13,10 +13,10 @@ results: https://docs.google.com/spreadsheets/d/1-v3yR0LZIC3t4zWtqTgR3jJsKjjRMP-
 featured_quote: Adoption of cache headers continues to steadily grow as we learn to navigate the multitude of caching choices. Optimize pages not only for high-end devices but also for the next billion users that access your product from low-end devices.
 featured_stat_1: 99.8%
 featured_stat_label_1: Pages caching fonts
-featured_stat_2: 51 trillion year
+featured_stat_2: 51 trillion years
 featured_stat_label_2: Largest `max-age` value recorded
 featured_stat_3: 59.1%
-featured_stat_label_3: Mobile pages could save up to 1 MB with caching
+featured_stat_label_3: Mobile pages that could save up to 1 MB with caching
 ---
 
 ## Introduction

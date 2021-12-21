@@ -40,7 +40,7 @@ jobs:
     - name: Use more complete checks for generated HTML linting
       run: cp -f .github/linters/.htmlhintrc_morechecks .github/linters/.htmlhintrc
     - name: Lint Generated HTML
-      uses: github/super-linter@v4.8.4
+      uses: github/super-linter@v4.8.5
       env:
         DEFAULT_BRANCH: main
         FILTER_REGEX_INCLUDE: src/static/html/.*

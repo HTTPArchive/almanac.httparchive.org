@@ -15,7 +15,7 @@
         <summary><%= url.description %></summary>
         <id>https://almanac.httparchive.org/<%= url.url %></id>
         <% if (url.pubdate) { %><published><%= url.pubdate %></published><% } %>
-        <% if (url.updatedate) { %><updated><%= url.pubdate %></updated><% } %>
+        <% if (url.updatedate) { %><updated><%= url.updatedate %></updated><% } %>
         {%- for author in [<%- url.authors %>] %}
         <author>
             <name>{{ author }}</name>

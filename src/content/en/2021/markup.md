@@ -6,8 +6,8 @@ authors: [AlexLakatos]
 reviewers: [j9t, bkardell, shantsis, tunetheweb, rviscomi]
 analysts: [kevinfarrugia]
 editors: [rviscomi]
-AlexLakatos_bio: Alex Lakatos has spent the past decade working on the Open Web within Browser, Communications, and FinTech organizations. With a background in web technologies and developer advocacy, he's helping the <a hreflang="en" href="https://interledger.org/">Interledger Foundation</a> build developer-friendly products while engaging with the developer community at large. You can [reach out to him on Twitter](https://twitter.com/avolakatos).
 translators: []
+AlexLakatos_bio: Alex Lakatos has spent the past decade working on the Open Web within Browser, Communications, and FinTech organizations. With a background in web technologies and developer advocacy, he's helping the <a hreflang="en" href="https://interledger.org/">Interledger Foundation</a> build developer-friendly products while engaging with the developer community at large. You can [reach out to him on Twitter](https://twitter.com/avolakatos).
 results: https://docs.google.com/spreadsheets/d/1Ta5Ck7y3W6LCn2CeGtW7dAdLF6Lh5wV2UBQJZTz3W5Q/
 featured_quote: Be part of the people who increase adoption of new standards every year. Start with something new you've learned today, one of the many standards we've covered not only in this chapter but in the whole Web Almanac.
 featured_stat_1: 35.3%
@@ -82,7 +82,7 @@ In terms of popularity, HTML5, better known as `<!DOCTYPE html>` is still the mo
   ) }}</figcaption>
 </figure>
 
-The surprising part is that, <a hreflang="en" href="https://en.wikipedia.org/wiki/XHTML">almost 20 years later</a>, XHTML is still a considerable part of the web, with 8% of pages still using it on desktop and a little under 7% on mobile.
+The surprising part is that, [almost 20 years later](https://en.wikipedia.org/wiki/XHTML), XHTML is still a considerable part of the web, with 8% of pages still using it on desktop and a little under 7% on mobile.
 
 ### Document size
 
@@ -367,7 +367,7 @@ While the percentages are slightly different when compared with last year, the o
   <table>
     <thead>
       <tr>
-        <th>Element</em></th>
+        <th><em>Element</em></th>
         <th>Percent of pages (mobile)</th>
       </tr>
     </thead>
@@ -495,7 +495,7 @@ We've also looked at elements that didn't show up in the HTML or SVG spec, be it
   ) }}</figcaption>
 </figure>
 
-By far, the most popular one is <a hreflang="en" href="https://www.sliderrevolution.com/faq/developer-guide-output-class-tag-changes/">Slider Revolution</a>, with a majority of elements attributed to the framework. It more than tripled in popularity over the past year, which leads us to believe it might be a part of a popular template or site builder. A close second is <a hreflang="en" href="https://www.wix.com/">Wix</a>, the popular free site builder. We couldn't identify `pages-css`, but we'd love to hear any ideas for why the `pages-css` element is so popular, so let us know by [suggesting an edit](#explore-results) on GitHub.
+By far, the most popular one is <a hreflang="en" href="https://www.sliderrevolution.com/faq/developer-guide-output-class-tag-changes/">Slider Revolution</a>, with a majority of elements attributed to the framework. It more than tripled in popularity over the past year, which leads us to believe it might be a part of a popular template or site builder. A close second is <a hreflang="en" href="https://www.wix.com/">Wix</a>, the popular free site builder. We initially couldn't identify `pages-css`, but [Alon Kochba](./contributors#alonko) reached out and identified it as another custom element used by Wix, which also explains the similar page count to `wix-image`.
 
 We would have thought that popular frameworks like <a hreflang="en" href="https://angular.io/">Angular</a>, <a hreflang="en" href="https://nextjs.org/">Next.js</a>, or the former <a hreflang="en" href="https://angularjs.org/">Angular.js</a> would account for more custom components, but `router-outlet` and `ng-component` make up a small part of the custom component base.
 
@@ -710,6 +710,7 @@ The most popular is viewport information, with the most popular `viewport` value
 The second most popular combination are `og:*` meta elements, also known as <a hreflang="en" href="https://ogp.me/">Open Graph</a> meta elements. We'll talk about those in the next section.
 
 #### Social markup
+
 Providing information and assets for social platforms to use when previewing links to your page  is a popular use case for the `meta` element.
 
 {{ figure_markup(
@@ -940,7 +941,7 @@ Web Monetization popularly uses a `meta` element on the page, specifying the wal
 {{ figure_markup(
   link="https://www.chromestatus.com/metrics/feature/timeline/popularity/3119",
   image="meta-monetization.png",
-  caption='Adoption of Web Monetization over time. (Source: <a hreflang="en" href="https://www.chromestatus.com/metrics/feature/timeline/popularity/3119\">Chrome Status</a>)',
+  caption='Adoption of Web Monetization over time. (Source: <a hreflang="en" href="https://www.chromestatus.com/metrics/feature/timeline/popularity/3119">Chrome Status</a>)',
   description="Bar graph showing the increase in adoption of Web Monetization, currently around 0.02% of URLs.",
   width=600,
   height=278
@@ -967,7 +968,7 @@ Uphold and Gatehub are the current wallets, and it looks like Uphold is the domi
 
 We've pointed out interesting, surprising, and concerning bits of data throughout the chapter. Let us reflect once more on the state of markup in 2021.
 
-The most surprising for us was that, <a hreflang="en" href="https://en.wikipedia.org/wiki/XHTML">almost 20 years later</a>, XHTML was still used on a considerable part of the web, with a little over 7% of pages using it in 2021.
+The most surprising for us was that, almost 20 years later, XHTML was still used on a considerable part of the web, with a little over 7% of pages using it in 2021.
 
 The median page sizes in 2020 were shrinking when compared to 2019, but this year it looks like the trend has regressed, surpassing the median sizes for 2019 as well. The web is getting heavier. Again.
 
