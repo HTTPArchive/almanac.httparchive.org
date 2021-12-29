@@ -614,6 +614,6 @@ A web made of deeply connected, structured data which powers a more integrated w
 
 ### Future years
 
-In future years we hope to be able to continue this analysis the analysis started here, and to map the evolution of structured data usage over time.
+In future years we hope to be able to continue the analysis started here, and to map the evolution of structured data usage over time.
 
 We look forward to exploring further.
