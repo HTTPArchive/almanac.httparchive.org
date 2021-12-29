@@ -94,33 +94,33 @@ SEO сейчас популярнее, чем когда-либо, и оно з�
 
 2. HTTP Archive основан на данных веб-сайтов, которые достаточно популярны для попадания в CrUX, в то время как Google пытается посетить все известные веб-сайты. 
 
-### `robots.txt` size
+### Размер `robots.txt` {robotstxt-size}
 
 {{ figure_markup(
    image="robots-txt-size-distribution.png",
-   caption="`robots.txt` size distribution.",
-   description="Bar chart showing robots.txt size distribution. Nearly all robots.txt files are small and weighed between 0-100 kb. We found that 96.72% of robots.txt files on mobile pages weighed between 0-100 kb (similar results for desktop). Virtually no web pages (desktop or mobile) had robots.txt files greater than 100 kb, and 1.58% were missing.",
+   caption="Распределение размеров файла `robots.txt`.", 
+   description="Гистограмма показывает распределение размеров `robots.txt`. Почти все файлы `robots.txt` имеют небольшой размер и весят от 0 до 100 Кб. Мы обнаружили, что 96.72% файлов `robots.txt` на мобильных страницах имеют размер 0-100 Кб (аналогичные результаты и для компьютеров). Практически ни на одной из веб-страниц (на компьютерах или телефонах) не было файлов robots.txt размером более 100 Кб, а на 1.58% веб-сайтов он отсутствовал.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1491943936&format=interactive",
    sheets_gid="1066408164",
    sql_file="robots-text-size.sql"
    )
 }}
 
-Most robots.txt files are fairly small, weighing between 0-100 kb. However, we did find over 3,000 domains that have a robots.txt file size over 500 KiB which is beyond Google's max limit. Rules after this size limit will be ignored.
+Большинство файлов `robots.txt` малы, их размер составляет от 0 до 100 Кб. Однако мы нашли более 3000 доменов с размером файла `robots.txt` больше 500 Кб, что превышает максимальный предел Google. Правила после этого ограничения будут проигнорированы.
 
 {{ figure_markup(
    image="robots-txt-user-agent.png",
-   caption="`robots.txt` user-agent usage.",
-   description="Bar chart showing the ten most common robots.txt user-agent usage. Results were nearly identical for desktop and mobile, with 75.2% of domains not indicating a specific user-agent. We found 6.3% for `adsbot-google`, 5.6% for `mj12bot`, 5.0% for `ahrefsbot`, 4.9% for `mediapartners-google`, 3.4% for `googlebot`, 3.3% for `nutch`, 3.1% for `yandex`, 2.9% for `pinterest`, 2.7% for `ahrefssiteaudit`.",
+   caption="Использование пользовательских агентов в `robots.txt`.",
+   description="Гистограмма показывает 10 наиболее часто используемых пользовательских агентов в `robots.txt`. Результаты были схожи для компьютеров и мобильных устройств, 75.2% доменов не указывают конкретный пользовательский агент. Мы обнаружили `adsbot-google` в 6.3% случаев, `mj12bot` — 5.6%, `ahrefsbot` — 5.0%, `mediapartners-google` — 4.9%, `googlebot` — 3.4%, `nutch` — 3.3%, `yandex` — 3.1%, `pinterest` — 2.9%, `ahrefssiteaudit` — 2.7%.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1206728832&format=interactive",
    sheets_gid="964313002",
    sql_file="robots-txt-user-agent-usage.sql"
    )
 }}
 
-You can declare a rule for all robots or specify a rule for specific robots. Bots usually try to follow the most specific rule for their user-agents. `Disallow: Googlebot` will refer to Googlebot only, while `Disallow: *` will refer to all bots that don't have a more specific rule.
+Вы можете объявить правило для всех роботов или указать правило для конкретных роботов. Роботы обычно пробуют следовать по наиболее конкретному правилу для их пользовательского агента. `User-agent: Googlebot` будет относиться только к Googlebot, а `User-agent: *` будет относиться ко всем роботам, для которых нет более конкретного правила.
 
-We saw two popular SEO-related robots: `mj12bot` (Majestic) and `ahrefsbot` (Ahrefs) in the top 5 most specified user agents.
+Мы увидели двух популярных SEO-роботов `mj12bot` (Majestic) и` ahrefsbot` (Ahrefs) в топ 5 наиболее часто используемых пользовательских агентов.
 
 ### `robots.txt` search engine breakdown
 
