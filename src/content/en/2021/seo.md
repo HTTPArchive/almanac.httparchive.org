@@ -118,7 +118,7 @@ Most robots.txt files are fairly small, weighing between 0-100 kb. However, we d
    )
 }}
 
-You can declare a rule for all robots or specify a rule for specific robots. Bots usually try to follow the most specific rule for their user-agents. `Disallow: Googlebot` will refer to Googlebot only, while `Disallow: *` will refer to all bots that don't have a more specific rule.
+You can declare a rule for all robots or specify a rule for specific robots. Bots usually try to follow the most specific rule for their user-agents. `User-agent: Googlebot` will refer to Googlebot only, while `User-agent: *` will refer to all bots that don't have a more specific rule.
 
 We saw two popular SEO-related robots: `mj12bot` (Majestic) and `ahrefsbot` (Ahrefs) in the top 5 most specified user agents.
 
