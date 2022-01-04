@@ -476,8 +476,8 @@
   },
   "en/2021/chapters/media.html": {
     "date_published": "2021-12-15T00:00:00.000Z",
-    "date_modified": "2021-12-21T00:00:00.000Z",
-    "hash": "011c308f59d0f7b36a3b80e87b47ca30"
+    "date_modified": "2022-01-04T00:00:00.000Z",
+    "hash": "a24caecdae8ba722be672b2b235adbbf"
   },
   "en/2021/chapters/mobile-web.html": {
     "date_published": "2021-12-01T00:00:00.000Z",
@@ -1218,6 +1218,11 @@
     "date_published": "2021-12-21T00:00:00.000Z",
     "date_modified": "2021-12-21T00:00:00.000Z",
     "hash": "81309002957ddb3c1ef59545f8b62697"
+  },
+  "ja/2021/chapters/media.html": {
+    "date_published": "2022-01-04T00:00:00.000Z",
+    "date_modified": "2022-01-04T00:00:00.000Z",
+    "hash": "822c2b40b6e8c699b5a8d79afb66eea2"
   },
   "ja/2021/chapters/structured-data.html": {
     "date_published": "2022-01-03T00:00:00.000Z",
