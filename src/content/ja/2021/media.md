@@ -371,7 +371,7 @@ WebPとAVIFの採用が時間とともにどのように変化したか（およ
 
 まず、[`srcset` 属性](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset) について考えてみましょう。この属性によって、開発者は同じ `<img>` に対して複数の可能なリソースを提供できます。
 
-##### `x` と `w` の記述子の採用。
+##### `x` と `w` の記述子の採用
 
 
 {{ figure_markup(
