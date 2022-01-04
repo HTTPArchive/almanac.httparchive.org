@@ -157,8 +157,7 @@ However, when you consider the number of `<img>` elements per page, this statist
 {{ figure_markup(
   image="number-of-imgs-per-page.png",
   caption="Number of `<img>`s per page.",
-  description="Bar chart showing the distribution of img elements per page. Both the desktop and mobile bars are shown. From the 50th percentile on, the desktop bars are consistently 10-20% larger. At the 10th percentile it's 2 on desktop and 2 on mobile, at the 25th percentile it's 6 and 6 respectively,
-at the 50th percentile it's 17 and 15,at the 75th percentile it's 36 and 32, and finally, at the 90th percentile it's 70 and 61.",
+  description="Bar chart showing the distribution of img elements per page. Both the desktop and mobile bars are shown. From the 50th percentile on, the desktop bars are consistently 10-20% larger. At the 10th percentile it's 2 on desktop and 2 on mobile, at the 25th percentile it's 6 and 6 respectively, at the 50th percentile it's 17 and 15, at the 75th percentile it's 36 and 32, and finally, at the 90th percentile it's 70 and 61.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQM9deg869BD9knNdVhFNbFnUdVXeyuwzUEIgSW-2XgOBEbALtVnoFapQ5JsDxzzepj6mVoepKBmN_m/pubchart?oid=1641393356&format=interactive",
   sheets_gid="1553608446",
   sql_file="imgs_per_page.sql"
