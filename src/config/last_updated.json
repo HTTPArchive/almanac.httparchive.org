@@ -41,8 +41,8 @@
   },
   "/static/js/web-vitals.js": {
     "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2021-10-19T00:00:00.000Z",
-    "hash": "fde8c167f5f8c045bd8bac49403097e4"
+    "date_modified": "2022-01-07T00:00:00.000Z",
+    "hash": "7172cc7d24dc2907ceb5a3f4c9457dce"
   },
   "/static/js/webmentions.js": {
     "date_published": "2021-12-01T00:00:00.000Z",
@@ -1633,6 +1633,11 @@
     "date_published": "2021-12-01T00:00:00.000Z",
     "date_modified": "2021-12-01T00:00:00.000Z",
     "hash": "a90342c27b61c4fe399c732c266d49a0"
+  },
+  "uk/2020/chapters/privacy.html": {
+    "date_published": "2022-01-07T00:00:00.000Z",
+    "date_modified": "2022-01-07T00:00:00.000Z",
+    "hash": "6cc518ab4d21c590a27c45542a44c8cf"
   },
   "uk/2020/contributors.html": {
     "date_published": "2021-01-17T00:00:00.000Z",
