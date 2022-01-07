@@ -192,3 +192,13 @@ def test_render_efonts_cache_control(client):
     response = client.get('/static/fonts/Poppins-Bold.woff2')
     assert response.status_code == 200 and \
         'max-age=3153600' in response.headers.get('Cache-Control')
+
+
+def test_test_webvitals_js(client):
+    response = client.get('/static/js/web-vitals.js')
+    assert response.status_code == 200
+
+
+def test_test_webvitals_js_versioned(client):
+    response = client.get('/static/js/web-vitals.js?v=1234')
+    assert response.status_code == 200
