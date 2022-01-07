@@ -34,9 +34,7 @@ jobs:
       with:
         python-version: '3.8'
     - name: Run the website
-      run:  |
-        cd src
-        ./tools/scripts/run_and_test_website.sh
+      run: ./src/tools/scripts/run_and_test_website.sh
     - name: Remove node modules to avoid linting errors
       run: rm -rf src/node_modules
     - name: Use more complete checks for generated HTML linting
