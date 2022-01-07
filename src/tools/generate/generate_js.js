@@ -2,7 +2,7 @@ const fs = require('fs-extra');
 
 const generate_js = async () => {
   console.log(`\n Generating web-vitals.js`);
-  await fs.copy(
+  fs.copy(
     './node_modules/web-vitals/dist/web-vitals.umd.js',
     './static/js/web-vitals.js',
   );
