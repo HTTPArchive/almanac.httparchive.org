@@ -126,23 +126,19 @@ function renderReactions(webmentions, reactionType, wmProperty) {
 
         let webMentionContent = reaction["content"]["text"];
         let length = webMentionContent.length;
-        let start = 0;
-        let stop = length;
 
         // If we've a really long webmention then want to only show a subset of it
         if (length > maxLength) {
 
-          // Check to see if we can find mention of us:
+          // Check to see if we can find a mention of us:
           const webMentionFirstMention = webMentionContent.search(/(web ?almanac|http ?archive)/i);
 
           // If there is a mention and it is not near the beginning
-          // then start from just before that mention
-          if (webMentionFirstMention > lookBack) {
-            start = webMentionFirstMention - lookBack;
-          }
+          // then start from just before that mention, else start at beginning
+          const start = webMentionFirstMention > lookBack ? webMentionFirstMention - lookBack : 0;
 
           //  Calculate the end
-          stop = start + Math.min(maxLength, length);
+          const stop = start + Math.min(maxLength, length);
 
           // Substring the webmention to the required length
           webMentionContent = webMentionContent.substring(start, stop);
