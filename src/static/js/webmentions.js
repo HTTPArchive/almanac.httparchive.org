@@ -125,7 +125,7 @@ function renderReactions(webmentions, reactionType, wmProperty) {
         const lookBack = 100;
 
         let webMentionContent = reaction["content"]["text"];
-        let length = webMentionContent.length;
+        const length = webMentionContent.length;
 
         // If we've a really long webmention then want to only show a subset of it
         if (length > maxLength) {
@@ -138,7 +138,7 @@ function renderReactions(webmentions, reactionType, wmProperty) {
           const start = webMentionFirstMention > lookBack ? webMentionFirstMention - lookBack : 0;
 
           //  Calculate the end
-          const stop = start + Math.min(maxLength, length);
+          const stop = start + Math.min(maxLength, length - start);
 
           // Substring the webmention to the required length
           webMentionContent = webMentionContent.substring(start, stop);
