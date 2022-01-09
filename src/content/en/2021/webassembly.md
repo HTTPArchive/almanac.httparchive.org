@@ -128,7 +128,7 @@ Languages compiled to WebAssembly usually have their own standard library. Since
 
 {{ figure_markup(
   caption="Uncompressed response sizes.",
-  description="Bar chart showing distribution of uncompressed response sizes on desktop and mobile at percentiles 25, 50, 75, 90. Most notably, at 10% there is 1 KB, median at about 810 KB, and 90% at 6.5 MB on desktop and 2.7 MB on mobile.",
+  description="Bar chart showing distribution of uncompressed response sizes on desktop and mobile at percentiles 25, 50, 75, 90. Most notably, at 10 percentiles there is 1 KB, median at about 810 KB, and 90 percentiles at 6.5 MB on desktop and 2.7 MB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=528882928&format=interactive",
   sheets_gid="1401232418",
   sql_file="sizes_and_savings.sql",
@@ -144,7 +144,7 @@ Let's check sizes of raw response bodies as sent by servers instead:
 
 {{ figure_markup(
   caption="Raw response sizes.",
-  description="Bar chart similar to the one above, but showing distribution of raw response sizes as received from the server. 10% is at about 1 KB, median is around 290 KB, and 90% is at 2.5 MB on desktop and 1.4 MB on mobile.",
+  description="Bar chart similar to the one above, but showing distribution of raw response sizes as received from the server. 10 percentiles is at about 1 KB, median is around 290 KB, and 90 percentiles is at 2.5 MB on desktop and 1.4 MB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1094358341&format=interactive",
   sheets_gid="1401232418",
   sql_file="sizes_and_savings.sql",
@@ -204,7 +204,7 @@ Here are the resulting sizes:
 
 {{ figure_markup(
   caption="Sizes after Brotli compression.",
-  description="Bar chart showing the distribution of sizes after manual Brotli recompression along various percentiles. Most notably, 10% at 1 KB, median at about 243 KB, and 90% at 2.2 MB on desktop and 846 KB on mobile.",
+  description="Bar chart showing the distribution of sizes after manual Brotli recompression along various percentiles. Most notably, 10 percentiles at 1 KB, median at about 243 KB, and 90 percentiles at 2.2 MB on desktop and 846 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=2085720303&format=interactive",
   sheets_gid="1401232418",
   sql_file="sizes_and_savings.sql",
@@ -212,13 +212,13 @@ Here are the resulting sizes:
   )
 }}
 
-The median drops from almost 290 KB to almost 240 KB, which is already a pretty good sign. The top 10% go down from 2.5 MB / 1.4 MB to 2.2 MB / 0.8 MB. We can see significant improvements across all other percentiles, too.
+The median drops from almost 290 KB to almost 240 KB, which is already a pretty good sign. The top 10 percentiles go down from 2.5 MB / 1.4 MB to 2.2 MB / 0.8 MB. We can see significant improvements across all other percentiles, too.
 
 Due to their nature, percentiles don't necessarily fall onto the same files between datasets, so it might be hard to compare numbers directly between graphs and to understand the size savings. Instead, from now on, let's see the savings themselves provided by each optimization, step by step:
 
 {{ figure_markup(
   caption="Brotli response savings.",
-  description="Similar bar chart to the one above, but adjusted to show savings. 10% doesn't show any difference, median shows improvements of 46 KB on desktop and 39 KB on mobile, and 90% shows improvements of 596 KB on desktop and 328 KB on mobile.",
+  description="Similar bar chart to the one above, but adjusted to show savings. 10 percentiles doesn't show any difference, median shows improvements of 46 KB on desktop and 39 KB on mobile, and 90 percentiles shows improvements of 596 KB on desktop and 328 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1741617577&format=interactive",
   sheets_gid="1401232418",
   sql_file="sizes_and_savings.sql",
@@ -348,7 +348,7 @@ Instead, let's take a look at the distribution of savings only over files that d
 
 {{ figure_markup(
   caption="strip-debug + Brotli savings.",
-  description="Bar chart showing the distribution of size improvements from the same transformation, but only over the files that had custom sections. Notably, 10 and 25 percentiles show negligible improvements of up to 1 KB, median is at 54 KB, and 90% shows improvements of 247 KB on desktop and 118 KB on mobile.",
+  description="Bar chart showing the distribution of size improvements from the same transformation, but only over the files that had custom sections. Notably, 10 and 25 percentiles show negligible improvements of up to 1 KB, median is at 54 KB, and 90 percentiles shows improvements of 247 KB on desktop and 118 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=1291981446&format=interactive",
   sheets_gid="440746911",
   sql_file="sizes_and_savings.sql",
@@ -404,7 +404,7 @@ While the resulting data is not representative of real-world usage and not relev
 
 {{ figure_markup(
   caption="`wasm-opt` + Brotli savings.",
-  description="Bar chart showing the distribution of absolute size changes when `wasm-opt` + Brotli are executed against our modified datasets.  The results are mixed but leaning downwards—10% shows 26 KB and 6 KB regressions on desktop and mobile correspondingly, median shows 4 KB and 1 KB regressions, and 90% shows small improvements under 1 KB.",
+  description="Bar chart showing the distribution of absolute size changes when `wasm-opt` + Brotli are executed against our modified datasets.  The results are mixed but leaning downwards—10percentiles shows 26 KB and 6 KB regressions on desktop and mobile correspondingly, median shows 4 KB and 1 KB regressions, and 90percentiles shows small improvements under 1 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=541095203&format=interactive",
   sheets_gid="1401232418",
   sql_file="sizes_and_savings.sql",
@@ -420,7 +420,7 @@ If we look at the uncompressed savings, it becomes more clear that, even on our 
 
 {{ figure_markup(
   caption="Uncompressed `wasm-opt` savings.",
-  description="Bar chart showing savings from running `wasm-opt` on the same datasets, but this time without Brotli. 10% and 25% shows an insignificant or no improvement of 0 kilobytes on desktop and mobile, median shows an improvement of 12 KB on both, 90% shows improvements of almost 100 KB on desktop and 45 KB on mobile.",
+  description="Bar chart showing savings from running `wasm-opt` on the same datasets, but this time without Brotli. 10 percentiles and 25 percentiles shows an insignificant or no improvement of 0 kilobytes on desktop and mobile, median shows an improvement of 12 KB on both, 90percentiles shows improvements of almost 100 KB on desktop and 45 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT6yhkn3lw148YQQHLoqA71NIsZLSSoBtgFmd_hRyhcmyPl2OpLyuOjUBk64I5DLE_grN8esL8oA3zt/pubchart?oid=270629181&format=interactive",
   sheets_gid="1401232418",
   sql_file="sizes_and_savings.sql",
