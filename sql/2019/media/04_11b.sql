@@ -49,12 +49,12 @@ FROM
       url AS page,
       getCssPixels(json_extract_scalar(payload, '$._Images')) AS cssPixels,
       getNaturalPixels(json_extract_scalar(payload, '$._Images')) AS naturalPixels,
-      CAST(json_extract_scalar(payload, '$._smallImageCount') AS Int64) AS smallImageCount,
-      CAST(json_extract_scalar(payload, '$._bigImageCount') AS Int64) AS bigImageCount,
-      CAST(json_extract_scalar(payload, '$._image_total') AS Int64) AS imageBytes,
-      CAST(json_extract_scalar(json_extract_scalar(payload, '$._Dpi'), '$.dppx') AS Float64) AS dpr,
-      CAST(json_extract_scalar(json_extract_scalar(payload, '$._Resolution'), '$.absolute.height') AS Int64) AS viewportHeight,
-      CAST(json_extract_scalar(json_extract_scalar(payload, '$._Resolution'), '$.absolute.width') AS Int64) AS viewportWidth
+      CAST(json_extract_scalar(payload, '$._smallImageCount') AS INT64) AS smallImageCount,
+      CAST(json_extract_scalar(payload, '$._bigImageCount') AS INT64) AS bigImageCount,
+      CAST(json_extract_scalar(payload, '$._image_total') AS INT64) AS imageBytes,
+      CAST(json_extract_scalar(json_extract_scalar(payload, '$._Dpi'), '$.dppx') AS FLOAT64) AS dpr,
+      CAST(json_extract_scalar(json_extract_scalar(payload, '$._Resolution'), '$.absolute.height') AS INT64) AS viewportHeight,
+      CAST(json_extract_scalar(json_extract_scalar(payload, '$._Resolution'), '$.absolute.width') AS INT64) AS viewportWidth
     FROM
       `httparchive.pages.2019_07_01_*`
   --  LIMIT 1000
