@@ -1,4 +1,4 @@
-CREATE OR REPLACE TABLE `httparchive.almanac.wasm_stats`
+CREATE OR REPLACE TABLE `httparchive.almanac.wasm_stats` --noqa: disable=L044
 PARTITION BY date
 CLUSTER BY client AS
 SELECT DATE('2021-09-01') AS date, * FROM (
