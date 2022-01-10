@@ -120,7 +120,36 @@ function renderReactions(webmentions, reactionType, wmProperty) {
 
       reactionDivContent.setAttribute("class", "webmention-content");
       if (reaction["content"]) {
-        reactionDivContent.textContent = reaction["content"]["text"];
+
+        const maxLength = 350;
+        const lookBack = 100;
+
+        let webMentionContent = reaction["content"]["text"];
+        const length = webMentionContent.length;
+
+        // If we've a really long webmention then want to only show a subset of it
+        if (length > maxLength) {
+
+          // Check to see if we can find a mention of us:
+          const webMentionFirstMention = webMentionContent.search(/(web ?almanac|http ?archive)/i);
+
+          // If there is a mention and it is not near the beginning
+          // then start from just before that mention, else start at beginning
+          const start = webMentionFirstMention > lookBack ? webMentionFirstMention - lookBack : 0;
+
+          //  Calculate the end
+          const stop = start + Math.min(maxLength, length - start);
+
+          // Substring the webmention to the required length
+          webMentionContent = webMentionContent.substring(start, stop);
+
+          // Add elipses to start or end.
+          if (start > 0) webMentionContent = "…" + webMentionContent;
+          if (stop < length) webMentionContent = webMentionContent + "…";
+
+        }
+
+        reactionDivContent.textContent = webMentionContent;
       }
 
       reactionDivMeta.setAttribute("class", "webmention-meta");
