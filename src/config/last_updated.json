@@ -46,8 +46,8 @@
   },
   "/static/js/webmentions.js": {
     "date_published": "2021-12-01T00:00:00.000Z",
-    "date_modified": "2021-12-01T00:00:00.000Z",
-    "hash": "ae71637d852c61b623e04d1ad356edb1"
+    "date_modified": "2022-01-10T00:00:00.000Z",
+    "hash": "0e8cd685de3b2f45a4417104bf38aece"
   },
   "/static/pdfs/web_almanac_2019_en.pdf": {
     "date_published": "2020-05-15T00:00:00.000Z",
@@ -531,8 +531,8 @@
   },
   "en/2021/chapters/webassembly.html": {
     "date_published": "2021-12-01T00:00:00.000Z",
-    "date_modified": "2021-12-05T00:00:00.000Z",
-    "hash": "abb002a197984950b95d39b25332cd68"
+    "date_modified": "2022-01-10T00:00:00.000Z",
+    "hash": "deb4f4698e2f6084a335a6cb4524f166"
   },
   "en/2021/contributors.html": {
     "date_published": "2021-11-17T00:00:00.000Z",
@@ -1229,6 +1229,11 @@
     "date_modified": "2022-01-03T00:00:00.000Z",
     "hash": "d8834c24e9f6d79fbe758608d9d5c84c"
   },
+  "ja/2021/chapters/webassembly.html": {
+    "date_published": "2022-01-10T00:00:00.000Z",
+    "date_modified": "2022-01-10T00:00:00.000Z",
+    "hash": "78c1258a4a9f59c6826e0b393bf86770"
+  },
   "ja/2021/contributors.html": {
     "date_published": "2021-11-17T00:00:00.000Z",
     "date_modified": "2021-11-17T00:00:00.000Z",
@@ -1636,8 +1641,8 @@
   },
   "uk/2020/chapters/privacy.html": {
     "date_published": "2022-01-07T00:00:00.000Z",
-    "date_modified": "2022-01-07T00:00:00.000Z",
-    "hash": "6cc518ab4d21c590a27c45542a44c8cf"
+    "date_modified": "2022-01-10T00:00:00.000Z",
+    "hash": "d6be175e06b4865ae09c43a5de09ba8e"
   },
   "uk/2020/contributors.html": {
     "date_published": "2021-01-17T00:00:00.000Z",
