@@ -25,7 +25,7 @@ jobs:
       - name: Lint SQL code
         if: |
             github.event_name == 'workflow_dispatch' ||
-            startsWith(github.event.pull_request.title,'Bump github/super-linter') == true
+            startsWith(github.event.pull_request.title,'Bump sqlfluff') == true
         run: |
           pip install -r src/requirements.txt
           sqlfluff lint sql
