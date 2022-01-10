@@ -144,8 +144,8 @@ function renderReactions(webmentions, reactionType, wmProperty) {
           webMentionContent = webMentionContent.substring(start, stop);
 
           // Add elipses to start or end.
-          if (start > 0) webMentionContent = "..." + webMentionContent;
-          if (stop < length) webMentionContent = webMentionContent + "...";
+          if (start > 0) webMentionContent = "…" + webMentionContent;
+          if (stop < length) webMentionContent = webMentionContent + "…";
 
         }
 
