@@ -40,7 +40,7 @@ base AS (
     category,
     canonicalDomain,
     APPROX_QUANTILES(body_size, 1000)[OFFSET(500)] / 1024 AS median_body_size_kb,
-    APPROX_QUANTILES(time, 1000)[OFFSET(500)] / 1000 AS median_time_s
+    APPROX_QUANTILES(time, 1000)[OFFSET(500)] / 1000 AS median_time_s -- noqa: L010
   FROM
     requests
   INNER JOIN

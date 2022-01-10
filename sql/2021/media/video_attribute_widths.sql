@@ -29,7 +29,7 @@ video_attributes AS (
     pageURL,
     JSON_VALUE(video_attributes_values_counts, "$.attribute") AS attribute,
     JSON_VALUE(video_attributes_values_counts, "$.value") AS value,
-    CAST(JSON_VALUE(video_attributes_values_counts, "$.count") AS int64) AS cnt,
+    CAST(JSON_VALUE(video_attributes_values_counts, "$.count") AS INT64) AS cnt,
     video_attributes_values_counts
   FROM
     videonotes

@@ -41,9 +41,9 @@ total_videos AS (
 
 SELECT
   client,
-  CAST(source_count AS int64) AS source_counter,
-  COUNT(CAST(source_count AS int64)) AS numberofoccurances,
-  COUNT(CAST(source_count AS int64)) / total_video_nodes AS pct_numberofoccurances_per_video
+  CAST(source_count AS INT64) AS source_counter,
+  COUNT(CAST(source_count AS INT64)) AS numberofoccurances,
+  COUNT(CAST(source_count AS INT64)) / total_video_nodes AS pct_numberofoccurances_per_video
 FROM
   videonotes
 JOIN
