@@ -27,5 +27,5 @@ jobs:
             github.event_name == 'workflow_dispatch' ||
             startsWith(github.event.pull_request.title,'Bump sqlfluff') == true
         run: |
-          pip install -r src/requirements.txt
+          pip install sqlfluff -p 4
           sqlfluff lint sql
