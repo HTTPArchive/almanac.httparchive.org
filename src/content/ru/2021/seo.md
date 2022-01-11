@@ -163,27 +163,27 @@ SEO сейчас популярнее, чем когда-либо, и оно з�
 
 Правила роботов, относящиеся к другим поисковым системам, таким как Bing, Baidu и Яндекс, менее популярны (2.5%, 1.9% и 0.5% соответственно). Мы не анализировали, какие правила применялись к этим роботам.
 
-### Canonical tags
+### Канонические теги {canonical-tags}
 
-The web is a massive set of documents, some of which are duplicates. To prevent duplicate content issues, webmasters can use canonical tags to tell search engines which version they prefer to be indexed. Canonicals also help to consolidate signals such as links to the ranking page.
+Интернет — это огромный набор документов, некоторые из которых повторяются. Чтобы избежать дублирования контента, веб-разработчики могут использовать канонические теги, чтобы сообщать поисковым системам, какую версию следует индексировать. Канонические теги также помогают объединять сигналы, такие как ссылки на ранжируемую страницу.
 
 {{ figure_markup(
    image="canonical-tag-usage.png",
-   caption="Canonical tag usage.",
-   description="Bar chart showing canonical tag usage. We found most web pages used canonical tags (58.5% of mobile pages and 56.6% of desktop pages). The percentage of canonicalized web pages was higher on mobile (8.3%) compared to desktop (4.3%).",
+   caption="Использование канонических тегов.",
+   description="Гистограмма показывает использование канонических тегов. Мы обнаружили, что большинство веб-страниц используют канонические теги (58.5% страниц для мобильных устройств и 56.6% страниц для компьютеров). Процент канонизированных страниц выше на мобильных устройствах (8.3%) в сравнении с компьютерами (4.3%).",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=118545040&format=interactive",
    sheets_gid="1066408164",
    sql_file="pages-canonical-stats.sql"
    )
 }}
 
-The data shows increased adoption of canonical tags over the years. For example, 2019's edition shows that 48.3% of mobile pages were using a canonical tag. In 2020's edition, the percentage grew to 53.6%, and in 2021 we see 58.5%.
+Данные показывают рост использования канонических тегов за последние годы. Например, издание 2019 года показывает, что 48.3% страниц мобильных страниц использовали канонический тег. В издании 2020 года процент вырос до 53.6%, а в 2021 — до 58.5%.
 
-More mobile pages have canonicals set than their desktop counterparts. In addition, 8.3% of mobile pages and 4.3% of desktop pages are canonicalized to another page so that they provide a clear hint to Google and other search engines that the page indicated in the canonical tag is the one that should be indexed.
+Канонические теги используются на большем количестве страниц для мобильных устройств, чем для компьютеров. Кроме того, 8.3% мобильных и 4.3% компьютерных страниц канонизированы в другую страницу, чтобы дать Google и другим поисковым системам, что страница, указанная в каноническом теге, является той, которую следует проиндексировать.
 
-A higher number of canonicalized pages on mobile seems to be related to websites using <a hreflang="en" href="https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls">separate mobile URLs</a>. In these cases, Google recommends placing a `rel="canonical"` tag pointing to the corresponding desktop URLs.
+Большее число канонизированных страниц на мобильных устройствах, по-видимому, связано с веб-сайтами, использующими <a hreflang="ru" href="https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls">отдельные URL-адреса для мобильных устройств</a>. В этих случаях Google рекомендует размещать тег `rel="canonical"`, указывающий на соответствующие URL-адреса для компьютеров.
 
-Our dataset and analysis are limited to homepages of websites; the data is likely to be different when considering all URLs on the tested websites.
+Наш набор данных и анализ ограничены главными страницами веб-сайтов; скорее всего, результат будет отличаться при рассмотрении всех URL-адресов на тестируемых веб-сайтах.
 
 #### Two methods of implementing canonical tags
 
