@@ -64,16 +64,16 @@ function sendWebVitals() {
     if ('deviceMemory' in navigator) {
         deviceMemory = navigator.deviceMemory.toString();
     }
-    let hasOSReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches.toString();
-    let systemColourScheme;
+    let prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches.toString();
+    let prefersColorScheme;
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      systemColourScheme = 'dark';
+      prefersColorScheme = 'dark';
     } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-      systemColourScheme = 'light';
+      prefersColorScheme = 'light';
     } else if (window.matchMedia('(prefers-color-scheme: no preference)').matches) {
-      systemColourScheme = 'no preference';
+      prefersColorScheme = 'no preference';
     } else {
-      systemColourScheme = 'not supported';
+      prefersColorScheme = 'not supported';
     }
 
     gtag('event', name, {
@@ -87,8 +87,8 @@ function sendWebVitals() {
       dimension2: effectiveType,
       dimension3: dataSaver,
       dimension4: deviceMemory,
-      dimension5: hasOSReducedMotion,
-      dimension6: systemColourScheme,
+      dimension5: prefersReducedMotion,
+      dimension6: prefersColorScheme,
     });
   }
 
