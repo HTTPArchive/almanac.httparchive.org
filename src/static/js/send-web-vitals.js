@@ -37,19 +37,19 @@ function sendWebVitals() {
     // or for LCP after a bfcache restore), so we have to check first.
     if (entries.length) {
       if (name === 'LCP') {
-         const lastEntry = entries[entries.length - 1];
-         webVitalInfo =  getSelector(lastEntry.element);
+        const lastEntry = entries[entries.length - 1];
+        webVitalInfo =  getSelector(lastEntry.element);
       } else if (name === 'FID') {
         const firstEntry = entries[0];
         webVitalInfo = getSelector(firstEntry.target);
       } else if (name === 'CLS') {
-         const largestEntry = getLargestLayoutShiftEntry(entries);
-         if (largestEntry && largestEntry.sources && largestEntry.sources.length) {
-            const largestSource = getLargestLayoutShiftSource(largestEntry.sources);
-            if (largestSource) {
-              webVitalInfo = getSelector(largestSource.node);
-            }
-         }
+        const largestEntry = getLargestLayoutShiftEntry(entries);
+        if (largestEntry && largestEntry.sources && largestEntry.sources.length) {
+          const largestSource = getLargestLayoutShiftSource(largestEntry.sources);
+          if (largestSource) {
+            webVitalInfo = getSelector(largestSource.node);
+          }
+        }
       }
     }
 
@@ -57,12 +57,12 @@ function sendWebVitals() {
     let dataSaver;
     let effectiveType;
     if ('connection' in navigator) {
-        dataSaver = navigator.connection.saveData.toString();
-        effectiveType = navigator.connection.effectiveType;
+      dataSaver = navigator.connection.saveData.toString();
+      effectiveType = navigator.connection.effectiveType;
     }
     let deviceMemory;
     if ('deviceMemory' in navigator) {
-        deviceMemory = navigator.deviceMemory.toString();
+      deviceMemory = navigator.deviceMemory.toString();
     }
     let prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches.toString();
     let prefersColorScheme;
