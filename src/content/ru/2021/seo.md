@@ -185,32 +185,32 @@ SEO сейчас популярнее, чем когда-либо, и оно з�
 
 Наш набор данных и анализ ограничены главными страницами веб-сайтов; скорее всего, результат будет отличаться при рассмотрении всех URL-адресов на тестируемых веб-сайтах.
 
-#### Two methods of implementing canonical tags
+#### Два способа использования канонических тегов {two-methods-of-implementing-canonical-tags}
 
-When implementing canonicals, there are two methods to specify canonical tags:
+Существует два способа использования канонических тегов:
 
-1. In the HTML's `<head>` section of a page
-2. In the HTTP headers (via the `Link` HTTP header)
+1. В секции `<head>` HTML-документа
+2. В HTTP-заголовке (через заголовок `Link`)
 
 {{ figure_markup(
    image="canonical-raw-rendered-usage.png",
-   caption="Canonical raw versus rendered usage.",
-   description="Bar chart showing the presence of raw vs rendered canonical tags (raw, rendered, rendered but not raw, rendering changed, http header changed). Our data found that raw canonical tags were found on 55.9% of desktop and 57.7% of mobile pages. Rendered canonical tags were found on 56.5% of desktop and 58.4% of mobile pages. Other tags were found on less than 1.5% of desktop or mobile pages.",
+   caption=" Использование канонического тега в необработанном и отрисованном вариантах.",
+   description="Гистограмма показывает наличие необработанных и отрисованных канонических тегов (необработанные, отрисованные, тег указан только после отрисовки, тег изменен после отрисовки, тег изменен HTTP-заголовком). По нашим данным канонический тег указан в необработанных документах у 55.9% компьютерных и 57.7% мобильных страниц. Отрисованные канонические теги были обнаружены у 56.5% компьютерных и 58.4% мобильных страниц. Другие теги использовались менее чем на 1.5% компьютерных или мобильных страниц.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1288519273&format=interactive",
    sheets_gid="1066408164",
    sql_file="pages-canonical-stats.sql"
    )
 }}
 
-Implementing canonical tags in the `<head>` of a HTML page is much more popular than using the `Link` header method. Implementing the tag in the head section is generally considered easier, which is why that usage so much higher.
+Внедрение канонических тегов в секции `<head>` HTML-документа популярнее, чем использование HTTP-заголовка `Link`. Реализация тега в секции `<head>` считается проще, поэтому используется значительно чаще. 
 
-We also saw a slight change (< 1%) in canonical between the raw HTML delivered, and the rendered HTML after JavaScript has been applied.
+Мы также увидели небольшое изменение (< 1%) в каноническом теге между доставленным необработанным и отрисованным HTML после применения JavaScript. 
 
-#### Conflicting canonical tags
+#### Конфликтующие канонические теги {conflicting-canonical-tags}
 
-Sometimes pages contain more than one canonical tag. When there are conflicting signals like this, search engines will have to figure it out. One of Google's Search Advocates, [Martin Splitt](https://twitter.com/g33konaut), once said <a hreflang="en" href="https://www.youtube.com/watch?v=bAE3L1E1Fmk&amp;t=772s">it causes undefined behavior</a> on Google's end.
+Иногда страницы содержат более одного канонического тега. При возникновении таких противоречивых сигналов поисковым системам приходится в этом разбираться. Один из адвокатов поиска Google, [Мартин Сплитт](https://twitter.com/g33konaut), однажды сказал, что <a hreflang="en" href="https://www.youtube.com/watch?v=bAE3L1E1Fmk&amp;t=772s">это вызывает неопределенное поведение</a> со стороны Google.
 
-The previous figure shows as many as 1.3% of mobile pages have different canonical tags in the initial HTML and the rendered version.
+На предыдущем рисунке показано, что 1.3% мобильных страниц имеют разные канонические теги в исходном HTML и в отрисованной версии.
 
 [Last year's chapter noted that](../2020/seo#canonicalization) "A similar conflict can be found with the different implementation methods, with 0.15% of the mobile pages and 0.17% of the desktop ones showing conflicts between the canonical tags implemented via their HTTP headers and HTML head."
 
