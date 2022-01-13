@@ -212,38 +212,38 @@ SEO сейчас популярнее, чем когда-либо, и оно з�
 
 На предыдущем рисунке показано, что 1.3% мобильных страниц имеют разные канонические теги в исходном HTML и в отрисованной версии.
 
-[Last year's chapter noted that](../2020/seo#canonicalization) "A similar conflict can be found with the different implementation methods, with 0.15% of the mobile pages and 0.17% of the desktop ones showing conflicts between the canonical tags implemented via their HTTP headers and HTML head."
+[В прошлогодней главе отмечалось](../2020/seo#canonicalization): «Подобный конфликт можно обнаружить с разными методами реализации: 0.15% мобильных и 0.17% компьютерных страниц показывают конфликты между каноническими тегами, реализованными через HTTP-заголовки и секцию `head`.»
 
-This year's data on that conflict is even more worrisome. Pages are sending conflicting signals in 0.4% of cases on desktop and 0.3% of cases on mobile.
+Данные 2021 года по этому конфликту вызывают еще большую тревогу. Страницы отправляют противоречивые сигналы в 0.4% случаев на компьютерах и в 0.3% случаев на мобильных устройствах.
 
-As the Web Almanac data only looks on homepages, there may be additional problems with pages located deeper in the architecture, which are pages more likely to be in need of canonical signals.
+Поскольку данные Web Almanac охватывают только домашние страницы, могут возникнуть дополнительные проблемы со страницами, расположенными глубже в архитектуре сайта, так как они с большей вероятностью нуждаются в канонических сигналах.
 
-## Page Experience
+## Удобство страницы {page-experience}
 
-2021 saw an increased focus on user experience. Google launched the <a hreflang="en" href="https://developers.google.com/search/blog/2020/11/timing-for-page-experience">Page Experience Update</a> which included existing signals, such as HTTPS and mobile-friendliness, and new speed metrics called Core Web Vitals.
+В 2021 году стали уделять больше внимания пользовательскому опыту. Google выпустил <a hreflang="ru" href="https://developers.google.com/search/blog/2020/11/timing-for-page-experience">обновление, связанное с удобством страниц</a>, которое включает существующие сигналы, такие как HTTPS и удобство для мобильных устройств, а также новые показатели скорости под названием Core Web Vitals.
 
 ### HTTPS
 
 {{ figure_markup(
    image="usage-of-https.png",
-   caption="Percentage of Desktop and Mobile pages served with HTTPS.",
-   description="Bar chart showing the percentage of HTTPS. We found that that 81.2% of mobile pages were HTTPS and 84.3% of desktop pages were HTTPS.",
+   caption="Процент страниц для компьютеров и мобильных устройств, обслуживаемых HTTPS.",
+   description="Гистограмма показывает процентное соотношение сайтов на HTTPS. Мы обнаружили, что 81.2% мобильных и 84.3% компьютерных страниц обслуживаются HTTPS.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1826599611&format=interactive",
    sheets_gid="1347655296",
    sql_file="seo-stats.sql"
    )
 }}
 
-Adoption of HTTPS is still increasing. HTTPS was the default on 81.2% of mobile pages and 84.3% of desktop pages. That's up nearly 8% on mobile websites and 7% on Desktop websites year over year.
+Распространение HTTPS все еще растет. HTTPS используется по умолчанию на 81.2% мобильных и 84.3% компьютерных страниц. Это больше почти на 8% на мобильных и на 7% на компьютерных сайтах по сравнению с прошлым годом.
 
-### Mobile-friendliness
+### Удобство для мобильных устройств {mobile-friendliness}
 
-There's a slight uptick in mobile-friendliness this year. Responsive design implementations have increased while dynamic serving has remained relatively flat.
+В этом году наблюдается небольшой всплеск удобства для мобильных устройств. Реализация адаптивного дизайна увеличились, в то время как динамический показ остался относительно неизменным.
 
-Responsive design sends the same code and adjusts how the website is displayed based on the screen size, while dynamic serving will send different code depending on the device. The `viewport` meta tag was used to identify responsive websites vs the `Vary: User-Agent header` to identify websites using dynamic serving.
+Адаптивный дизайн отправляет один и тот же код и настраивает отображение веб-сайта в зависимости от размера экрана, в то время как динамический показ отправляет другой код в зависимости от устройства. Метатег `viewport` использовался для распознавания адаптивных веб-сайтов, а заголовок `Vary: User-Agent` — для распознавания веб-сайтов, использующих динамический показ.
 
 {{ figure_markup(
-  caption="Percent of mobile pages using the `viewport` meta tag—a signal of mobile friendliness.",
+  caption="Процент мобильных страниц, использующих метатег `viewport` — сигнал удобства для мобильных устройств.",
   content="91.1%",
   classes="big-number",
   sheets_gid="704656954",
@@ -251,22 +251,22 @@ Responsive design sends the same code and adjusts how the website is displayed b
 )
 }}
 
- 91.1% of mobile pages include the `viewport` meta tag, up from 89.2% in 2020. 86.4% of desktop pages also included the viewport meta tag, up from 83.8% in 2020.
+91.1% мобильных страниц содержат метатег `viewport`, по сравнению с 89.2% в 2020 году. 86.4% компьютерных страниц также содержат метатег `viewport`, по сравнению с 83.8% в 2020 году.
 
 {{ figure_markup(
    image="vary-usage-agent-header-usage.png",
-   caption="`Vary: User-Agent` header usage.",
-   description="Bar chart showing the `vary` header used to identify mobile-friendless. We found that most web pages utilized a response design (87.4% for desktop and 86.6% for mobile), compared to pages that used dynamic serving (12.6% for desktop and 13.4% for mobile).",
+   caption="Использование заголовка `Vary: User-Agent`.",
+   description="Гистограмма показывает использование заголовка `vary`, необходимого для распознавания удобства для мобильных устройств. Мы обнаружили, что адаптивный дизайн на страницах используется чаще (87.4% для компьютеров и 86.6% для мобильных устройств), чем динамический показ (12.6% для компьютеров и 13.4% для мобильных устройств).",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1985736287&format=interactive",
    sheets_gid="478009067",
    sql_file="html-response-vary-header-used.sql"
    )
 }}
 
-For the `Vary: User-Agent` header, the numbers were pretty much unchanged with 12.6% of desktop pages and 13.4% of mobile pages with this footprint.
+Для заголовка `Vary: User-Agent` цифры почти не изменились: 12.6% страниц для компьютеров и 13.4% мобильных страниц.
 
 {{ figure_markup(
-  caption="Percent of mobile pages not using legible font sizes.",
+  caption="Процент мобильных страниц, не использующих разборчивые размеры шрифта.",
   content="13.5%",
   classes="big-number",
   sheets_gid="1705330480",
@@ -274,7 +274,7 @@ For the `Vary: User-Agent` header, the numbers were pretty much unchanged with 1
 )
 }}
 
-One of the biggest reasons for failing mobile-friendliness was that 13.5% of pages did not use a legible font size. Meaning <a hreflang="en" href="https://web.dev/font-size/">60% or more of the text had a font size smaller than 12px</a> which can be hard to read on mobile.
+Одна из главных причин неудобства страниц для мобильных устройств — 13.5% страниц не используют разборчивые размеры шрифта. Это значит, что <a hreflang="en" href="https://web.dev/font-size/">60% или больше текста на странице имеют размер шрифта меньше 12px</a>, что может сложно читаться на мобильных устройствах. 
 
 ### Core Web Vitals
 
