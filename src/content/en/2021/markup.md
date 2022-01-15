@@ -679,7 +679,7 @@ The second most popular attribute is `href`, with 9.9% of occurrences. With link
 
 #### Meta flavors
 
-`meta` elements are gaining some of their lost popularity this year, so we wanted to take a closer look at them. They provide a way to add machine-readable information to your pages, as well as perform some nifty HTTP equivalents. For example, setting a _Content Security Policy for a page:
+`meta` elements are gaining some of their lost popularity this year, so we wanted to take a closer look at them. They provide a way to add machine-readable information to your pages, as well as perform some nifty HTTP equivalents. For example, setting a _Content Security Policy_ for a page:
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*;">
