@@ -395,7 +395,7 @@ SVGはstyle要素と比較するとより多くのユースケースを持って
 
 興味深いのは、[テレタイプテキスト](https://developer.mozilla.org/ja/docs/Web/HTML/Element/tt) の非推奨要素である `tt` が、東アジアの文字の発音を示すために今でも使われている [ルビアノテーション](https://developer.mozilla.org/ja/docs/Web/HTML/Element/ruby) と [ルビ文字列](https://developer.mozilla.org/ja/docs/Web/HTML/Element/rt) の要素である `ruby` と `rt` より100%人気があることです。
 
-### スクリプト
+### `script`
 
 {{ figure_markup(
   caption="少なくとも1つの `script` 要素を持つモバイルページの割合。",
