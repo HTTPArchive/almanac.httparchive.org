@@ -115,9 +115,9 @@ With document sizes increasing, we also looked at compression this year. We felt
   sql_file="content_encoding.sql"
 ) }}
 
-Out of the 6 million desktop pages scanned, an overwhelming 84.4% were compressed with either gzip (62.7%) or Brotli (21.7%) compression. For mobile pages, the numbers are very similar, 85.6% were compressed with either gzip (63.7%) or Brotli (21.9%) compression.
+Out of the 6 million desktop pages scanned, an overwhelming 84.4% were compressed with either gzip (62.7%) or Brotli (21.7%) compression. For mobile pages, the numbers are very similar, 85.6% were compressed with either gzip (63.7%) or Brotli (21.9%) compression. The slight variation in percentages for mobile and desktop is not surprising, as they comprise of different URLs, and the [Mobile data set is a lot larger](./methodology#websites).
 
-While the slight variation in percentages for mobile and desktop is not surprising, what is surprising is that almost one percentage point more pages are compressed for mobile only. In a [mobile world, where every byte of data has a cost associated with it](./mobile-web), seeing that mobile pages are not only optimized, but smaller than the desktop counterparts is great. You can learn more about the states of content encoding and the mobile web in the [Compression](./compression) and [Mobile Web](./mobile-web) chapters.
+Compression is important as, particularly in a mobile world, every byte of data has a cost associated with it. You can learn more about the states of content encoding and the mobile web in the [Compression](./compression) and [Mobile Web](./mobile-web) chapters.
 
 ### Document language
 
@@ -145,7 +145,7 @@ Out of the pages scanned, 19.6% on desktop, and 18.6% on mobile, [specified no `
 
 While we looked at the top 10 normalized languages in the set, some interesting trends emerged:
 
-* Mobile has a lower relative percentage of English websites. We're not sure why that is the case, we've been discussing the cause as a team. It's possible that some people only use mobile phones to access the web, so that would diversify the mobile set's language landscape. This author believes a lot of the mobile pages are intended to be used on the go and are hence local.
+* Mobile has a lower relative percentage of English websites. We're not sure why that is the case, we've been discussing the cause as a team. It's possible that some people only use mobile phones to access the web, so that would diversify the mobile set's language landscape. This author believes a lot of the mobile pages are intended to be used on the go and hence are local.
 * While Spanish has a lot more region and subscript options than Japanese, it was a tight contest for the second most popular language.
 * There is an inverse correlation between the difference in empty attributes for desktop and mobile and English.
 
@@ -395,7 +395,7 @@ While the percentages are slightly different when compared with last year, the o
 
 It's interesting to see that `tt`, a deprecated element for [Teletype Text](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tt), is 100% more popular than `ruby` and `rt`, which are the [Ruby Annotation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ruby) and [Text](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rt) elements still used for showing the pronunciation of East Asian characters.
 
-### Script
+### `script`
 
 {{ figure_markup(
   caption="Percent of mobile pages with at least one `script` element.",
@@ -405,7 +405,7 @@ It's interesting to see that `tt`, a deprecated element for [Teletype Text](http
   sql_file="element_popularity.sql"
 ) }}
 
-A little over 98% of the pages scanned contain at least one `script` element. It's no surprise that `script` is also the 6th most popular element on a page. Compared with last year, the script element seems to remain constant in terms of popularity and has slightly increased levels of occurrence in the millions of pages analyzed, from 97% to 98%.
+A little over 98% of the pages scanned contain at least one `script` element. It's no surprise that `script` is also the 6th most popular element on a page. Compared with last year, the `script` element seems to remain constant in terms of popularity and has slightly increased levels of occurrence in the millions of pages analyzed, from 97% to 98%.
 
 {{ figure_markup(
   caption="Percent of mobile pages with at least one `noscript` element.",
@@ -417,13 +417,13 @@ A little over 98% of the pages scanned contain at least one `script` element. It
 
 51.4% of pages also contain a `noscript` element, which is generally used to display a message for browsers that have disabled JavaScript. Another popular use for the `noscript` element is the Google Tag Manager (GTM) snippet. 18.8% of pages on desktop and 16.9% of pages on mobile are using the `noscript` element as part of the GTM snippet. It's interesting to note that GTM is more popular on desktop than mobile.
 
-### Template
+### `template`
 
 One of the <a hreflang="en" href="https://css-tricks.com/crafting-reusable-html-templates/">least recognized, but most powerful features</a> of the Web Components specification is the `template` element. Despite the fact that the [`template` element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots) is well supported on modern browsers since 2013, only 0.5% of the pages were using it in 2021. In terms of popularity, it didn't even make it into the top 50 elements. We thought this speaks volumes about the adoption curve of the modern HTML specification for web developers.
 
 In case you don't really know what `template` does, here is a refresher from the specification: "the `template` element is used to declare fragments of HTML that can be cloned and inserted in the document by script". If you're a web developer and think that sounds familiar, you're right. Most of the popular frameworks today have a similar non-native mechanism to do the same: Angular has <a hreflang="en" href="https://angular.io/guide/content-projection">`ng-content`</a>, React has <a hreflang="en" href="https://reactjs.org/docs/portals.html">portals</a> and Vue has <a hreflang="en" href="https://v3.vuejs.org/guide/component-slots.html#slots">`slot`</a>. We would have thought those frameworks would use the native `template` element or Web Components instead of re-creating the functionality within the frameworks.
 
-### Style
+### `style`
 
 {{ figure_markup(
   caption="Percent of mobile pages with at least one `style` element.",
@@ -679,7 +679,7 @@ The second most popular attribute is `href`, with 9.9% of occurrences. With link
 
 #### Meta flavors
 
-`meta` elements are gaining some of their lost popularity this year, so we wanted to take a closer look at them. They provide a way to add machine-readable information to your pages, as well as perform some nifty HTTP equivalents. For example, setting a content security policy for a page:
+`meta` elements are gaining some of their lost popularity this year, so we wanted to take a closer look at them. They provide a way to add machine-readable information to your pages, as well as perform some nifty HTTP equivalents. For example, setting a _Content Security Policy_ for a page:
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*;">
@@ -922,7 +922,7 @@ That's what probably prompted a <a hreflang="en" href="https://github.com/whatwg
 
 ### Web Monetization
 
-<a hreflang="en" href="https://discourse.wicg.io/t/proposal-web-monetization-a-new-revenue-model-for-the-web/3785">Web Monetization</a> is being proposed as a W3C standard at the Web Platform Incubator Community Group (WICG). It's a young standard that provides an open, native, efficient, and automatic way to compensate creators, pay for API calls, and support crucial web infrastructure. While it is in its early days, and it is not implemented by any of the major browsers, it is supported via forks and extensions, and has been instrumented in Chromium and the HTTP Archive dataset for over a year. We wanted to take a look at adoption so far.
+<a hreflang="en" href="https://discourse.wicg.io/t/proposal-web-monetization-a-new-revenue-model-for-the-web/3785">Web Monetization</a> is being proposed as a W3C standard at the <a hreflang="en" href="https://www.w3.org/community/wicg/">Web Platform Incubator Community Group</a> (WICG). It's a young standard that provides an open, native, efficient, and automatic way to compensate creators, pay for API calls, and support crucial web infrastructure. While it is in its early days, and it is not implemented by any of the major browsers, it is supported via forks and extensions, and has been instrumented in Chromium and the HTTP Archive dataset for over a year. We wanted to take a look at adoption so far.
 
 {{ figure_markup(
   caption="Number of mobile pages that use Web Monetization.",
@@ -972,15 +972,13 @@ The most surprising for us was that, almost 20 years later, XHTML was still used
 
 The median page sizes in 2020 were shrinking when compared to 2019, but this year it looks like the trend has regressed, surpassing the median sizes for 2019 as well. The web is getting heavier. Again.
 
-Almost one percentage point more pages are compressed for mobile only. In a mobile world, where every byte of data has a cost associated with it, seeing that mobile pages are not only optimized, but smaller than the desktop counterparts is great.
-
 English is relatively less popular on mobile pages. We're not sure why, and this author would like to encourage you to explore the possibilities of why this is the case.
 
 It was interesting to see that libraries adopting better practices correlated directly with elements falling out of favor.  Both `i` and `option` are less-used this year because icon libraries have switched over to using SVG.
 
 It was great to see ICO finally being dethroned as the most popular favicon format in favor of PNG. Similarly, seeing SVG more than doubling in usage for favicons in the past year made us think we're 10 years away from dethroning PNG.
 
-The doctype percentage has increased steadily by half a percentage point every year. At this rate, we'll live in an ideal world where every page has a doctype by 2027.
+The `doctype` percentage has increased steadily by half a percentage point every year. At this rate, we'll live in an ideal world where every page has a `doctype` by 2027.
 
 It was concerning for this author to see that the adoption of  some of the newer standards is slow, sometimes on a 10-year cycle, and that web pages don't get updated as often as we'd like.
 
