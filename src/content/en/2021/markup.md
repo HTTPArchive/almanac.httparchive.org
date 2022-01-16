@@ -922,7 +922,7 @@ That's what probably prompted a <a hreflang="en" href="https://github.com/whatwg
 
 ### Web Monetization
 
-<a hreflang="en" href="https://discourse.wicg.io/t/proposal-web-monetization-a-new-revenue-model-for-the-web/3785">Web Monetization</a> is being proposed as a W3C standard at the <a hredflang="en" href="https://www.w3.org/community/wicg/">Web Platform Incubator Community Group</a> (WICG). It's a young standard that provides an open, native, efficient, and automatic way to compensate creators, pay for API calls, and support crucial web infrastructure. While it is in its early days, and it is not implemented by any of the major browsers, it is supported via forks and extensions, and has been instrumented in Chromium and the HTTP Archive dataset for over a year. We wanted to take a look at adoption so far.
+<a hreflang="en" href="https://discourse.wicg.io/t/proposal-web-monetization-a-new-revenue-model-for-the-web/3785">Web Monetization</a> is being proposed as a W3C standard at the <a hreflang="en" href="https://www.w3.org/community/wicg/">Web Platform Incubator Community Group</a> (WICG). It's a young standard that provides an open, native, efficient, and automatic way to compensate creators, pay for API calls, and support crucial web infrastructure. While it is in its early days, and it is not implemented by any of the major browsers, it is supported via forks and extensions, and has been instrumented in Chromium and the HTTP Archive dataset for over a year. We wanted to take a look at adoption so far.
 
 {{ figure_markup(
   caption="Number of mobile pages that use Web Monetization.",

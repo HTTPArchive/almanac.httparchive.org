@@ -115,9 +115,9 @@ _マークアップの章では、HTMLに焦点を当てます。他のマーク
   sql_file="content_encoding.sql"
 ) }}
 
-デスクトップ600万ページのうち、84.4%がgzip（62.7%）またはBrotli（21.7%）で圧縮されていることがわかりました。モバイルページについても、85.6%がgzip（63.7%）またはBrotli（21.9%）で圧縮されており、非常に似たような数字となっています。 {# TODO - make same edits here #}
+デスクトップ600万ページのうち、84.4%がgzip（62.7%）またはBrotli（21.7%）で圧縮されていることがわかりました。モバイルページについても、85.6%がgzip（63.7%）またはBrotli（21.9%）で圧縮されており、非常によく似た数字となっています。モバイルとデスクトップで割合が若干異なるのは、異なるURLで構成されていることと、[モバイルデータセットがより大きい](./methodology#websites)ことから、驚くべきことではありません。
 
-モバイルとデスクトップでパーセンテージが若干異なるのは、驚くことではありませんが、驚くべきは、モバイルのみで圧縮されるページがほぼ1ポイント多いということです。 [データの1バイトごとにコストがかかるモバイルの世界](./mobile-web)では、モバイルのページが最適化されているだけでなく、デスクトップよりも小さいことを確認するのは素晴らしいことです。コンテンツエンコーディングの状態やモバイルウェブについては、[圧縮](./compression) や [モバイルウェブ](./mobile-web) の章で詳しく説明しています。 {# TODO - make same edits here #}
+特にモバイルの世界では、1バイトのデータにもコストがかかるため、圧縮は重要です。[圧縮](./compression)と[モバイルウェブ](./mobile-web)の章で、コンテンツエンコーディングとモバイルウェブの状態についてより詳しく知ることができます。
 
 ### ドキュメントの言語
 
@@ -679,7 +679,7 @@ Googleは2021年になってもトップページに`center`要素を使用し�
 
 #### メタフレーバー
 
-今年、`meta`要素の人気が落ちてきているので、もう少し詳しく見ていきたいと思います。meta要素は、機械的に読み取り可能な情報をページに追加する方法を提供し、また、いくつかの巧妙なHTTP同等機能を実行します。たとえば、ページのコンテンツセキュリティポリシーを設定できます。 {# TODO make same edits here #}
+今年、`meta`要素の人気が落ちてきているので、もう少し詳しく見ていきたいと思います。これらは、機械的に読み取れる情報をページに追加する方法を提供するだけでなく、いくつかの巧妙なHTTP同等機能を実行します。たとえば、ページに対して _コンテンツセキュリティポリシー_ を設定できます。
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*;">
@@ -922,7 +922,7 @@ Googleは2021年になってもトップページに`center`要素を使用し�
 
 ### Webマネタイズ
 
-<a hreflang="en" href="https://discourse.wicg.io/t/proposal-web-monetization-a-new-revenue-model-for-the-web/3785">Web Monetization</a> は、<a hredflang="en" href="https://www.w3.org/community/wicg/">Web Platform Incubator Community Group</a> (WICG) でW3C標準として提案されています。これは、クリエイターへの報酬、APIコールへの支払い、重要なウェブインフラのサポートを、オープン、ネイティブ、効率的、かつ自動的に行うための歴史の浅い規格です。まだ初期段階にあり、主要なブラウザでは実装されていませんが、フォークや拡張機能でサポートされており、ChromiumやHTTP Archiveデータセットで1年以上前から組み込まれています。私たちは、これまでの採用状況を見てみたいと思いました。
+<a hreflang="en" href="https://discourse.wicg.io/t/proposal-web-monetization-a-new-revenue-model-for-the-web/3785">Web Monetization</a> は、<a hreflang="en" href="https://www.w3.org/community/wicg/">Web Platform Incubator Community Group</a> (WICG) でW3C標準として提案されています。これは、クリエイターへの報酬、APIコールへの支払い、重要なウェブインフラのサポートを、オープン、ネイティブ、効率的、かつ自動的に行うための歴史の浅い規格です。まだ初期段階にあり、主要なブラウザでは実装されていませんが、フォークや拡張機能でサポートされており、ChromiumやHTTP Archiveデータセットで1年以上前から組み込まれています。私たちは、これまでの採用状況を見てみたいと思いました。
 
 {{ figure_markup(
   caption="Webマネタイズを利用しているモバイルページ数。",
