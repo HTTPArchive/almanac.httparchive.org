@@ -20,7 +20,7 @@ USING
 JOIN
   `httparchive.almanac.third_parties` tp
 ON
-  NET.HOST(date, url) = domain
+  NET.HOST(url) = domain
 JOIN (
   SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total
   FROM `httparchive.summary_pages.2019_07_01_*`

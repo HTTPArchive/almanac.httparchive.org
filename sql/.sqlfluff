@@ -4,7 +4,7 @@ nocolor = False
 dialect = bigquery
 templater = jinja
 rules = None
-exclude_rules = L011,L014,L016,L020,L026,L027,L028,L029,L030,L031,L032,L034,L035,L036,L037,L042,L043,L051
+exclude_rules = L011,L014,L016,L020,L026,L027,L028,L029,L030,L031,L032,L034,L035,L036,L037,L042,L043,L051,L057
 # L011 - We don't always alias tables with AS ("FROM table1 AS tb1" instead of "FROM table1 tb1"). Do for columns but not for tables.
 # L014 - Unquoted identifiers (e.g. column names) will be mixed case so don't enforce case
 # L016 - We allow longer lines as some of our queries are complex. Maybe should limit in future?
@@ -22,6 +22,7 @@ exclude_rules = L011,L014,L016,L020,L026,L027,L028,L029,L030,L031,L032,L034,L035
 # L037 - if using DESC in one ORDER BY column, then insist on ASC/DESC for all.
 # L042 - Use CTEs instead of subqueries. We don't use this consistently and big rewrite to do that.
 # L043 - Use coalesce instead of case if you can. But it's clearer!?
+# L057 - We use tables with hyphens and some identifiers with special chars (e.g. 2019/css/02_43.sql on lines 49-53)
 recurse = 0
 output_line_length = 80
 runaway_limit = 10

@@ -39,7 +39,7 @@ SELECT
   category,
   percentile,
   APPROX_QUANTILES(body_size, 1000)[OFFSET(percentile * 10)] AS body_size,
-  APPROX_QUANTILES(time, 1000)[OFFSET(percentile * 10)] AS time
+  APPROX_QUANTILES(time, 1000)[OFFSET(percentile * 10)] AS time  -- noqa: L010
 FROM
   base,
   UNNEST([10, 25, 50, 75, 90]) AS percentile

@@ -3,7 +3,7 @@
 
 # https://stackoverflow.com/questions/65048929/bigquery-extract-keys-from-json-object-convert-json-from-object-to-key-value-a
 CREATE TEMP FUNCTION jsonToKeyValueArray(input STRING)
-RETURNS ARRAY<STRUCT<key String, value ARRAY<String>>>
+RETURNS ARRAY<STRUCT<key STRING, value ARRAY<STRING>>>
 LANGUAGE js AS """
   try {
     let json = JSON.parse(input ? input: "{}");
