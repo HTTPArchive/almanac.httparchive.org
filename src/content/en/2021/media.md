@@ -14,7 +14,7 @@ featured_quote: This year, native lazy-loading stemmed the tide of ever-increasi
 featured_stat_1: 99.93%
 featured_stat_label_1: Pages that load an image resource of some kind.
 featured_stat_2: 87.1%
-featured_stat_label_2: Images on the web delivered as JPEGs, PNGs, or GIFs insteasd of next-gen formats!
+featured_stat_label_2: Images on the web delivered as JPEGs, PNGs, or GIFs instead of next-gen formats!
 featured_stat_3: 5.6%
 featured_stat_label_3: Share of desktop pages that included a `video` element. A three-fold increase from last year.
 ---
