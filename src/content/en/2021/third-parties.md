@@ -231,7 +231,7 @@ Splitting the requested content types by the type of third party, we see the pre
 {{ figure_markup(
   image="third-parties-bytes-by-content-type-and-category-on-mobile.png",
   caption="Third-party requests by content type and category.",
-  description="Bar chart showing the breakdown of each third-party type by content type for mobile. `ad` third-party requests are fairly evenly divided by script, image, html and other with a small amount of text. `analytics` are mostly script and images, with a small amount of html, other and text. For `cdn` requests it is a mixture of script, image, css but mostly fonts. For the next set (`consent-providers`, `content`, `customer-success`, `marketing`, `other`, `social`, `tag-manager`, `unknown` and `utility` are nearly all scripts or images. `video` is similar with the amount of video content not even noticeable on the graph.",
+  description="Bar chart showing the breakdown of each third-party type by content type for mobile. `ad` third-party requests are fairly evenly divided by script, image, html and other with a small amount of text. `analytics` are mostly script and images, with a small amount of html, other and text. For `cdn` requests it is a mixture of script, image, css but mostly fonts. For the next set (`consent-providers`, `content`, `customer-success`, `marketing`, `other`, `social`, `tag-manager`, `unknown` and `utility`) are nearly all scripts or images. `video` is similar with the amount of video content not even noticeable on the graph.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=4067008&format=interactive",
   sheets_gid="1613966374",
   sql_file="percent_of_third_party_requests_and_bytes_by_category_and_content_type.sql"
@@ -314,7 +314,7 @@ Lighthouse has a <a hreflang="en" href="https://web.dev/third-party-summary/">Re
 {{ figure_markup(
   image="third-parties-popular-third-parties-main-thread-blocking-time.png",
   caption="Main-thread blocking time of top 15 third parties.",
-  description="Bar chart showing median main-thread blocking times on mobile for the most popular third parties. Google Analytics blocks the main-thread for 96 milliseconds at the median,  ms, Google Fonts for 0 ms ms, Google/Doubleclick Ads for 0 ms, Other Google APIs/SDKs for 0 ms, Google Tag Manager for 42 ms, Google CDN for 54 ms, Facebook for 139 ms, Cloudflare CDN for 0 ms, YouTube for 1,625 ms, Bootstrap CDN for 0 ms, Google Maps for 259 ms, JSDelivr CDN for 0 ms, jQuery CDN for 38 ms, FontAwesome CDN for 0 ms, and Adobe Tag Manager for 0 ms.",
+  description="Bar chart showing median main-thread blocking times on mobile for the most popular third parties. Google Analytics blocks the main-thread for 96 milliseconds at the median, Google Fonts for 0 ms, Google/Doubleclick Ads for 0 ms, Other Google APIs/SDKs for 0 ms, Google Tag Manager for 42 ms, Google CDN for 54 ms, Facebook for 139 ms, Cloudflare CDN for 0 ms, YouTube for 1,625 ms, Bootstrap CDN for 0 ms, Google Maps for 259 ms, JSDelivr CDN for 0 ms, jQuery CDN for 38 ms, FontAwesome CDN for 0 ms, and Adobe Tag Manager for 0 ms.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_08EoMGfiygKZtW4OwVivaaW3cIlt3ZcWNBtOdNePD_nKzkvb2nMlhWOX6g/pubchart?oid=973901251&format=interactive",
   sheets_gid="329121076",
   width=600,
