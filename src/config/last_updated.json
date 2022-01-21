@@ -41,8 +41,8 @@
   },
   "/static/js/web-vitals.js": {
     "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2022-01-07T00:00:00.000Z",
-    "hash": "7172cc7d24dc2907ceb5a3f4c9457dce"
+    "date_modified": "2022-01-21T00:00:00.000Z",
+    "hash": "137281bd7417491a37d9c523c9043469"
   },
   "/static/js/webmentions.js": {
     "date_published": "2021-12-01T00:00:00.000Z",
@@ -476,8 +476,8 @@
   },
   "en/2021/chapters/media.html": {
     "date_published": "2021-12-15T00:00:00.000Z",
-    "date_modified": "2022-01-04T00:00:00.000Z",
-    "hash": "a24caecdae8ba722be672b2b235adbbf"
+    "date_modified": "2022-01-21T00:00:00.000Z",
+    "hash": "b52bd2a3d71716713eabc0b721047b48"
   },
   "en/2021/chapters/mobile-web.html": {
     "date_published": "2021-12-01T00:00:00.000Z",
@@ -526,8 +526,8 @@
   },
   "en/2021/chapters/third-parties.html": {
     "date_published": "2021-11-17T00:00:00.000Z",
-    "date_modified": "2021-12-04T00:00:00.000Z",
-    "hash": "7928b0cf5ea5fb0de4d24b624171f891"
+    "date_modified": "2022-01-21T00:00:00.000Z",
+    "hash": "9202963a0f206921e3abeb2679c0e10e"
   },
   "en/2021/chapters/webassembly.html": {
     "date_published": "2021-12-01T00:00:00.000Z",
@@ -1228,6 +1228,11 @@
     "date_published": "2022-01-03T00:00:00.000Z",
     "date_modified": "2022-01-03T00:00:00.000Z",
     "hash": "d8834c24e9f6d79fbe758608d9d5c84c"
+  },
+  "ja/2021/chapters/third-parties.html": {
+    "date_published": "2022-01-21T00:00:00.000Z",
+    "date_modified": "2022-01-21T00:00:00.000Z",
+    "hash": "97a40b6a9fa6794fdfc1dfd7d27f62e3"
   },
   "ja/2021/chapters/webassembly.html": {
     "date_published": "2022-01-10T00:00:00.000Z",
