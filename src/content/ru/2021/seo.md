@@ -278,21 +278,21 @@ SEO сейчас популярнее, чем когда-либо, и оно з�
 
 ### Core Web Vitals
 
-Core Web Vitals are the new speed metrics that are part of Google's Page Experience signals. The metrics measure visual load with Largest Contentful Paint (LCP), visual stability with Cumulative Layout Shift (CLS), and interactivity with First Input Delay (FID).
+Core Web Vitals — это новые показатели скорости, которые являются частью сигналов удобства страниц для Google. Метрики измеряют производительность загрузки с помощью Largest Contentful Paint (LCP), визуальную стабильность с Cumulative Layout Shift (CLS) и интерактивность с First Input Delay (FID).
 
-The data comes from the Chrome User Experience Report (CrUX), which records real-world data from opted-in Chrome users.
+Данные поступают из отчета о пользовательском опыте Chrome (CrUX), в котором записываются реальные данные от зарегистрированных пользователей Chrome.
 
 {{ figure_markup(
    image="core-web-vitals-trend.png",
-   caption="Core web vitals metrics trend.",
-   description="Line chart showing the percentage of good CWV experiences on mobile. In 2021, Good LCP increased from 42% to 45%, Good FID increased from 81% to 90%, Good CLS increased from 55% to 62%, and Good CWV increased from 23% to 29%. Our findings suggest that percentage of mobile websites that offer good CWV experiences will continue to increase each year.",
+   caption="Тенденция показателей Core Web Vitals.",
+   description="Линейная диаграмма показывает процент веб-сайтов с хорошими показателями Core Web Vitals на мобильных устройствах. В 2021 году доля сайтов с хорошим показателем LCP выросла с 42% до 45%, с хорошим FID — с 81% до 90%, с хорошим CLS — с 55% до 62%, и в целом с хорошими данными CWV — с 23% до 29%. Наши результаты показывают, что процент мобильных веб-сайтов с хорошими показателями Core Web Vitals будет продолжать расти с каждым годом.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1693723951&format=interactive",
    sheets_gid="460991760",
    sql_file="core-web-vitals.sql"
    )
 }}
 
-29% of mobile websites are now passing Core Web Vitals thresholds, up from 20% last year. Most websites are passing FID, but website owners seem to be struggling to improve CLS and LCP. See the [Performance](./performance) chapter for more on this topic.
+29% мобильных веб-сайтов удовлетворяют пороговым значениям Core Web Vitals по сравнению с 20% в прошлом году. У большинства веб-сайтов удовлетворительный показатель FID, но владельцы веб-сайтов, похоже, пытаются улучшить CLS и LCP. Дополнительную информацию по этой теме смотрите в главе [Производительность](./performance).
 
 ## On-Page
 
