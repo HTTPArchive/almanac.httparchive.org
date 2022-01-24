@@ -314,14 +314,14 @@ Core Web Vitals — это новые показатели скорости, к�
 
 В 2021 году 98.8% компьютерных и мобильных страниц содержали элемент `<title>`. 71.1% домашних страниц для компьютеров и мобильных устройств содержали теги `<meta name="description">`.
 
-#### `<title>` Element
+#### Элемент `<title>` {title-element}
 
-The `<title>` element is an on-page ranking factor that provides a strong hint regarding page relevance and may appear on the Search Engine Results Page (SERP). In August 2021 <a hreflang="en" href="https://developers.google.com/search/blog/2021/08/update-to-generating-page-titles">Google started re-writing more titles in their search results</a>.
+Элемент `<title>` — это фактор ранжирования на странице, который дает подсказку о релевантности страницы и может отображаться на странице результатов поисковой системы (SERP). В августе 2021 года <a hreflang="ru" href="https://developers.google.com/search/blog/2021/08/update-to-generating-page-titles">Google начал чаще переписывать заголовки в результатах поиска</a>.
 
 {{ figure_markup(
    image="title-word-counts.png",
-   caption="Number of words used in title elements.",
-   description="Bar chart showing the number of words in the title tag percentile (10, 25, 50, 75, and 90). The median page contained a title that was 6 words, and 50% of all titles contained 3-9 words.  There was no difference in the word count between desktop and mobile within our dataset.",
+   caption="Количество слов, используемых в элементах `<title>`.",
+   description="Гистограмма показывает количество слов в теге `<title>` на процентиль (10, 25, 50, 75 и 90). Средняя страница содержала заголовок, который имел 6 слов, и 50% всех заголовков содержали 3-9 слов. По нашим данным не было обнаружено разницы в количестве слов между компьютерными и мобильными страницами.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2017837375&format=interactive",
    sheets_gid="455169599",
    sql_file="seo-stats.sql"
@@ -330,22 +330,22 @@ The `<title>` element is an on-page ranking factor that provides a strong hint r
 
 {{ figure_markup(
    image="title-character-counts.png",
-   caption="Number of characters used in title elements.",
-   description="Bar chart showing the number of characters in the title tag per percentile (10, 25, 50, 75, and 90). The median page contained a title character count of 39 characters on desktop and 40 on mobile. There was little different in the character count between desktop and mobile in our dataset.",
+   caption="Количество символов, испольуемых в элементах `<title>`.",
+   description="Гистограмма показывает количество символов в теге заголовка на процентиль (10, 25, 50, 75 и 90). Средняя страница содержала 39 символов в заголовке на компьютерах и 40 символов — на мобильных устройствах. По нашим данным количество символов между компьютерами и мобильными устройствами отличалось незначительно.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1099454676&format=interactive",
    sheets_gid="455169599",
    sql_file="seo-stats.sql"
    )
 }}
 
-In 2021:
+В 2021 году:
 
-- The median page `<title>` contained 6 words.
-- The median page `<title>` contained 39 and 40 characters on desktop and mobile, respectively.
-- 10% of pages had `<title>` elements containing 12 words.
-- 10% of desktop and mobile pages had `<title>` elements containing 74 and 75 characters, respectively.
+- Средняя страница содержала 6 слов в `<title>`.
+- Средняя страница содержала 39 и 40 символов в `<title>` на компьютерах и мобильных устройствах соответственно.
+- На 10% страниц элемент `<title>` содержал 12 слов.
+- На 10% компьютерных и мобильных страниц элемент `<title>` содержал 74 и 75 символов соответственно. 
 
-Most of these stats are relatively unchanged since last year. Reminder that these are titles on homepages which tend to be shorter than those used on deeper pages.
+Большинство из этих статистических данных относительно не изменились с прошлого года. Напоминаем, что это заголовки главных страниц, которые, как правило, короче, чем заголовки на более глубоких страницах.
 
 #### Meta description tag
 
