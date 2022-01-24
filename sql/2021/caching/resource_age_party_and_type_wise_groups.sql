@@ -40,7 +40,7 @@ FROM
     FROM
       `httparchive.summary_requests.2021_07_01_*`
     WHERE
-      TRIM(resp_last_modified) <> ""
+      TRIM(resp_last_modified) != ""
   )
 GROUP BY
   client,

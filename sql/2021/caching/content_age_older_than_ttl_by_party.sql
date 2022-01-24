@@ -26,7 +26,7 @@ FROM (
   FROM
     `httparchive.summary_requests.2021_07_01_*` requests
   WHERE
-    TRIM(requests.resp_last_modified) <> "" AND
+    TRIM(requests.resp_last_modified) != "" AND
     expAge > 0)
 GROUP BY
   client,
