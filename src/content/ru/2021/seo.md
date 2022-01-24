@@ -296,23 +296,23 @@ Core Web Vitals — это новые показатели скорости, к�
 
 ## On-Page
 
-Search engines look at your page's content to determine whether it's a relevant result for the search query. Other on-page elements may also impact rankings or appearance on the search engines.
+Поисковые системы просматривают контент вашей страницы, чтобы определить, соответствует ли содержимое поисковому запросу. Другие элементы на странице могут также влиять на ранжирование или внешний вид в поисковых системах.
 
-### Metadata
+### Метаданные {metadata}
 
-Metadata includes `<title>` elements and `<meta name="description">` tags. Metadata can directly and/or indirectly affect SEO performance.
+Метаданные включают в себя элементы `<title>` и теги `<meta name="description">`. Метаданные могут напрямую или косвенно влиять на эффективность SEO.
 
 {{ figure_markup(
    image="title-meta-description-usage.png",
-   caption="Breakdown of title and meta description usage.",
-   description="Bar chart showing the percentage of pages that have metadata. We found that 98.8% of mobile and desktop pages had a `title` element and 71.1% of mobile and desktop pages had a meta description.",
+   caption="Разбивка использования `title` и `meta description`.",
+   description="Гистограмма показывает процент страниц, имеющих метаданные. Мы обнаружили, что на 98.8% мобильных и компьютерных страниц есть элемент `title`, и на 71.1% — `meta description`.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=541272297&format=interactive",
    sheets_gid="1347655296",
    sql_file="seo-stats.sql"
    )
 }}
 
-In 2021, 98.8% of desktop and mobile pages had `<title>` elements. 71.1% of desktop and mobile homepages had `<meta name="description">` tags.
+В 2021 году 98.8% компьютерных и мобильных страниц содержали элемент `<title>`. 71.1% домашних страниц для компьютеров и мобильных устройств содержали теги `<meta name="description">`.
 
 #### `<title>` Element
 
