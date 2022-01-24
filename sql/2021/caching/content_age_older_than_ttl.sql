@@ -22,7 +22,7 @@ FROM (
   FROM
     `httparchive.summary_requests.2021_07_01_*`
   WHERE
-    resp_last_modified <> "" AND
+    resp_last_modified != "" AND
     expAge > 0)
 GROUP BY
   client
