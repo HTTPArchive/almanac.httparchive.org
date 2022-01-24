@@ -21,7 +21,7 @@ FROM (
   FROM
     `httparchive.summary_requests.2021_07_01_*`
   WHERE
-    resp_last_modified <> "" AND
+    resp_last_modified != "" AND
     expAge > 0),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY

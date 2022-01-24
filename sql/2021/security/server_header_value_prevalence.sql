@@ -22,7 +22,7 @@ FROM
     WHERE
       (date = "2020-08-01" OR date = "2021-07-01") AND
       resp_server IS NOT NULL AND
-      resp_server <> ''
+      resp_server != ''
     GROUP BY
       client,
       type,
@@ -45,7 +45,7 @@ UNION ALL
   WHERE
     (date = "2020-08-01" OR date = "2021-07-01") AND
     resp_x_powered_by IS NOT NULL AND
-    resp_x_powered_by <> ''
+    resp_x_powered_by != ''
   GROUP BY
     client,
     type,

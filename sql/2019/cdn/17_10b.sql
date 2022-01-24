@@ -13,7 +13,7 @@ WHERE
 GROUP BY
   client, firstHtml, vary, source
 HAVING
-  vary <> '' AND vary IS NOT NULL
+  vary != '' AND vary IS NOT NULL
 ORDER BY
   client DESC,
   firstHtml DESC,

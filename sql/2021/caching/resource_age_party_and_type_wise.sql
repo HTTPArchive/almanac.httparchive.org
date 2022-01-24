@@ -22,7 +22,7 @@ FROM
   `httparchive.summary_requests.2021_07_01_*`,
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 WHERE
-  TRIM(resp_last_modified) <> ""
+  TRIM(resp_last_modified) != ""
 GROUP BY
   percentile,
   client,

@@ -33,7 +33,7 @@ GROUP BY
   client,
   ch
 HAVING
-  ch <> ''
+  ch != ''
 ORDER BY
   client DESC,
   hits DESC
