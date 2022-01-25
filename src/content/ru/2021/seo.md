@@ -380,25 +380,25 @@ Core Web Vitals — это новые показатели скорости, к�
 
 Эти показатели практически не изменились с прошлого года.
 
-### Images
+### Изображения {images}
 
 {{ figure_markup(
    image="number-of-images-per-page.png",
-   caption="Number of images on each page.",
-   description="Bar chart showing the number of `<img>` elements per page per percentile (10, 25, 50, 75, and 90). The median desktop page featured 21 `<img>` elements and the median mobile page featured 19 `<img>` elements.",
+   caption="Количество изображений на каждой странице.",
+   description="Гистограмма показывает количество элементов `<img>` на странице на процентиль (10, 25, 50, 75 и 90). Средняя компьютерная и мобильная страницы содержали 21 и 19 элементов `<img>` соответственно.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1314615789&format=interactive",
    sheets_gid="1483073708",
    sql_file="image-alt-stats.sql"
    )
 }}
 
-Images can directly and indirectly impact SEO as they impact image search rankings and page performance.
+Изображения могу напрямую или косвенно влиять на SEO, поскольку они влияют на рейтинг изображений в поиске и производительность страницы. 
 
-- 10% of pages have two or fewer `<img>` tags. That's true of both desktop and mobile.
-- The median desktop page has 21 `<img>` tags while the median mobile page has 19 `<img>` tags.
-- 10% of desktop pages have 83 or more `<img>` tags. 10% of mobile pages have 73 or more `<img>` tags.
+- 10% страниц содержат 2 или меньше тегов `<img>`. Это верно и для компьютеров, и для мобильных устройств.
+- Средняя компьютерная и мобильная страницы содержат 21 и 19 тегов `<img>` соответственно.
+- На 10% компьютерных страниц содержится 83 или больше тегов `<img>`. На 10% мобильных страниц содержится 73 или больше тегов `<img>`.
 
-These numbers have changed very little since 2020.
+Эти цифры незначительно изменились с 2020 года.
 
 #### Image `alt` attributes
 
