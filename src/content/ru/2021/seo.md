@@ -347,14 +347,14 @@ Core Web Vitals — это новые показатели скорости, к�
 
 Большинство из этих статистических данных относительно не изменились с прошлого года. Напоминаем, что это заголовки главных страниц, которые, как правило, короче, чем заголовки на более глубоких страницах.
 
-#### Meta description tag
+#### Метатег description {meta-description-tag}
 
-The `<meta name="description>` tag does not directly impact rankings. However, it may appear as the page description on the SERP.
+Тег `<meta name="description>` не влияет напрямую на ранжирование, но может появляться в поисковой выдаче как описание страницы.
 
 {{ figure_markup(
    image="meta-word-counts.png",
-   caption="Number of words used in meta descriptions.",
-   description="Bar chart showing the number of words in the meta description per percentile (10, 25, 50, 75, and 90). The median page contained a meta description with 20 words for desktop and 19 words for mobile. There was little different in the character count between desktop and mobile in our dataset.",
+   caption="Количество слов, используемых в метатегах `description`.",
+   description="Гистограмма показывает количество слов в метатеге `description` на процентиль (10, 25, 50, 75 и 90). Средняя страница содержала мета описание из 20 слов для компьютеров и 19 слов для мобильных устройств. По нашим данным количество слов между компьютерами и мобильными устройствами отличалось незначительно.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2013621429&format=interactive",
    sheets_gid="455169599",
    sql_file="seo-stats.sql"
@@ -363,22 +363,22 @@ The `<meta name="description>` tag does not directly impact rankings. However, i
 
 {{ figure_markup(
    image="meta-character-counts.png",
-   caption="Number of characters used in meta descriptions.",
-   description="Bar chart showing the number of characters in the meta description tag per percentile (10, 25, 50, 75, and 90). The median page contained meta description with 138 characters on desktop pages and 137 characters on mobile pages. There was little different in the character count between desktop and mobile in our dataset.",
+   caption="Количество символов, используемых в метатегах `description`.",
+   description="Гистограмма показывает количество символов в метатеге `description` на процентиль (10, 25, 50, 75 и 90). Средняя страница содержала мета описание длиной 138 символов на компьютерных и 137 символов на мобильных страницах. По нашим данным количество символов между компьютерами и мобильными устройствами отличалось незначительно.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=971210715&format=interactive",
    sheets_gid="455169599",
    sql_file="seo-stats.sql"
    )
 }}
 
-In 2021:
+В 2021 году:
 
-- The median desktop and mobile page `<meta name="description>` tag contained 20 and 19 words, respectively.
-- The median desktop and mobile page `<meta name="description>` tag contained 138 and 127 characters, respectively.
-- 10% of desktop and mobile pages had `<meta name="description>` tags containing 35 words.
-- 10% of desktop and mobile pages had `<meta name="description>` tags containing 232 and 231 characters, respectively.
+- Средняя компьютерная и мобильная страницы содержали тег `<meta name="description>` длиной 20 и 19 слов соответственно.
+- Средняя компьютерная и мобильная страницы содержали тег `<meta name="description>` длиной 138 и 127 символов соответственно.
+- На 10% компьютерных и мобильных страниц тег `<meta name="description>` был длиной 35 слов.
+- На 10% компьютерных и мобильных страниц тег `<meta name="description>` был длиной 232 и 231 символов соответственно.
 
-These numbers are relatively unchanged from last year.
+Эти показатели практически не изменились с прошлого года.
 
 ### Images
 
