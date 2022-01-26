@@ -400,16 +400,16 @@ Core Web Vitals — это новые показатели скорости, к�
 
 Эти цифры незначительно изменились с 2020 года.
 
-#### Image `alt` attributes
+#### Атрибуты изображения `alt` {image-alt-attributes}
 
-The `alt` attribute on the `<img>` element helps explain image content and impacts <a hreflang="en" href="https://almanac.httparchive.org/en/2021/accessibility">accessibility</a>.
+Атрибут `alt` для элемента `<img>` помогает пояснить содержимое изображения и влияет на [общедоступность](./accessibility).
 
-Note that missing `alt` attributes may not indicate a problem. Pages may include extremely small or blank images which don't require an `alt` attribute for SEO (nor accessibility) reasons.
+Обратите внимание, что отсутствие атрибута `alt` не означает проблему. Страницы могут содержать очень маленькие или пустые изображения, которым не требуется атрибут `alt` для SEO или общедоступности.
 
 {{ figure_markup(
    image="images-with-alt-attribute.png",
-   caption="Percentage of images that contain `alt` attributes.",
-   description="Bar chart showing the number of images with `alt` attributes present per percentile (10, 25, 50, 75, and 90). Our data found the median web page contained 54.6% of images with an `alt` attribute on mobile pages and 56.5% on desktop pages.",
+   caption="Процент изображений, которые содержат атрибуты `alt`.",
+   description="Гистограмма показывает количество изображений с атрибутом `alt` на процентиль (10, 25, 50, 75 и 90). По нашим данным средняя страница содержит 54.6% и 56.5% изображений с атрибутом `alt` на мобильных и компьютерных страницах соответственно.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1862003290&format=interactive",
    sheets_gid="412947118",
    sql_file="image-alt-stats.sql"
@@ -418,8 +418,8 @@ Note that missing `alt` attributes may not indicate a problem. Pages may include
 
 {{ figure_markup(
    image="images-with-blank-alt-attribute.png",
-   caption="Percentage of `alt` attributes that were blank.",
-   description="Bar chart showing the percent of featured alt blank attributes per percentile (25, 50, 75, and 90). The median web page featured 10.5% blank `alt` attributes on desktop and 11.8% blank `alt` attributes on mobile.",
+   caption="Процент пустых атрибутов `alt`.",
+   description="Гистограмма показывает процент пустых атрибутов `alt` на процентиль (25, 50, 75 и 90). Средняя веб-страница содержала 10.5% и 11.8% пустых атрибутов `alt` на компьютерных и мобильных страницах соответственно.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=198831003&format=interactive",
    sheets_gid="412947118",
    sql_file="image-alt-stats.sql"
@@ -428,20 +428,20 @@ Note that missing `alt` attributes may not indicate a problem. Pages may include
 
 {{ figure_markup(
    image="images-with-missing-alt-attribute.png",
-   caption="Percentage of images missing alt attributes.",
-   description="Bar chart showing the percent of images with `alt` attributes missing per percentile (10, 25, 50, 75, and 90). The median web page had 1.4% of images with `alt` attributes missing on desktop on zero `alt` attributes missing on mobile.",
+   caption="Процент изображений без атрибутов `alt`.",
+   description="Гистограмма показывает процент изображений без атрибутов `alt` на процентиль (10, 25, 50, 75 и 90). Средняя веб-страница содержала 1.4% изображений без атрибутов `alt` на компьютерах и 0 изображений — на мобильных устройствах.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=819909313&format=interactive",
    sheets_gid="412947118",
    sql_file="image-alt-stats.sql"
    )
 }}
 
-We found that:
+Мы обнаружили, что:
 
-- On the median desktop page, 56.5% of `<img>` tags have an `alt` attribute. This is a slight increase versus 2020.
-- On the median mobile page, 54.6% of `<img>` tags have an `alt` attribute. This is a slight increase versus 2020.
-- However, on the median desktop and mobile pages 10.5% and 11.8% of `<img>` tags have blank `alt` attributes (respectively). This is effectively the same as 2020.
-- On the median desktop and mobile pages there are zero or close to zero `<img>` tags missing `alt` attributes. This is an improvement over 2020, when 2-3% of `<img>` tags on median pages were missing `alt` attributes.
+- На средней компьютерной странице 56.5% тегов `<img>` сожержали атрибут `alt`. Это небольшой рост по сравнению с 2020 годом.
+- На средней мобильной странице 54.6% тегов `<img>` сожержали атрибут `alt`. Это небольшой рост по сравнению с 2020 годом.
+- Однако в среднем страницы для компьютеров и мобильных устройств в 10.5% и 11.8% случаев имеют пустые атрибуты `alt` для тегов `<img>` соответственно. Это фактически то же самое, что и в 2020 году.
+- На средних страницах для компьютеров и мобильных устройств нет или почти нет тегов `<img>` без атрибутов `alt`. Это улучшение по сравнению с 2020 годом, когда на 2-3% страниц теги `<img>` не содержали атрибуты `alt`.
 
 #### Image `loading` attributes
 
