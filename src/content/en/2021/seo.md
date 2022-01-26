@@ -450,7 +450,7 @@ The `loading` attribute on `<img>` elements affects how user agents prioritize r
 {{ figure_markup(
    image="image-loading-property-usage.png",
    caption="Image loading property usage.",
-   description='Bar chart showing percent of pages and image loading property usage (missing, lazy, eager, invalid, auto, and blank). Our data found that 83.3% of desktop and 83.5% of mobile pages were missing an image loading property. We found that 15.6% of desktop and mobile pages use `loading="lazy"` while only .8% of desktop and mobile pages use `loading="eager"`. Other image loading properties such as `loading="invalid"`, `loading="auto"`, and `loading="blank"` were used on less than 1% of desktop or mobile pages.',
+   description='Bar chart showing percent of pages and image loading property usage (missing, lazy, eager, invalid, auto, and blank). Our data found that 83.3% of desktop and 83.5% of mobile pages were missing an image loading property. We found that 15.6% of desktop and mobile pages use `loading="lazy"` while only .8% of desktop and mobile pages use `loading="eager"`. The number of other cases is less than 1% on desktop and mobile pages, this includes cases with an invalid or blank property or with `loading="auto"`.',
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1305654777&format=interactive",
    sheets_gid="55531578",
    sql_file="image-loading-property-usage.sql"
