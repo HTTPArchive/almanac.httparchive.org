@@ -8,4 +8,4 @@ rules:
   line-length:
     max: 120
   indentation:
-    indent-sequences: false
+    indent-sequences: whatever
