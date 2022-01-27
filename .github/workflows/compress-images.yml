@@ -31,7 +31,7 @@ on:
   workflow_dispatch:
   schedule:
     # Run a full compression every Sunday at 11pm to start the week right
-    - cron:  '00 23 * * 0'
+    - cron: '00 23 * * 0'
 jobs:
   build:
     name: Compress All Images

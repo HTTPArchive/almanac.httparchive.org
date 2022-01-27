@@ -35,7 +35,7 @@ jobs:
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v2.5.1
       with:
-        node-version:  '15'
+        node-version: '15'
     - name: Test Template Changes
       run: ./src/tools/scripts/test_template_changes.sh
     - name: 'Comment PR'
@@ -44,6 +44,7 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
+          # yamllint disable-line rule:line-length
           const { issue: { number: issue_number }, repo: { owner, repo }  } = context;
           // Unescape any escaped comments so code blocks appear correctly
           const pr_comment = process.env.PR_COMMENT.replace(/%0A/g,'\n').replace(/%0D/g,'\r').replace(/%27/g,"'").replace(/%22/g,'"').replace(/%25/g,'%');
