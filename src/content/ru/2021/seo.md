@@ -530,23 +530,23 @@ Core Web Vitals — это новые показатели скорости, к�
 
 На 1.7% мобильных и 1.4% компьютерных страниц структурированные данные были добавлены с помощью JavaScript, их не было в исходном HTML.
 
-#### Most popular structured data formats
+#### Наиболее популярные форматы структурированных данных {most-popular-structured-data-formats}
 
 {{ figure_markup(
    image="structured-data-formats.png",
-   caption="Breakdown of structured data formats.",
-   description="Bar chart showing the number of pages with structured data formats (JSON-LD, microdata, RDFa, microformats2). The JSON-LD structured data format was implemented on 62.4% of desktop and 60.5% of mobile sites. The microdata format was implemented on 34.6% of desktop and 36.9% of mobile sites. The RDFa format was implemented on 2.9% of desktop and 2.4% of mobile sites. The microformats2 format was used on only .2% of desktop and mobile sites in our dataset.",
+   caption="Разбивка по форматам структурированных данных.",
+   description="Гистограмма показывает количество страниц с определенным форматом структурированных данных (JSON-LD, microdata, RDFa, microformats2). Формат структурированных данных JSON-LD использовался на 62.4% компьютерных и 60.5% мобильных сайтов. Формат microdata использовался на 34.6% компьютерных и 36.9 мобильных сайтов. Формат RDFa использовался на 2.9% компьютерных и 2.4% мобильных сайтов. Формат microformats2 использовался лишь на 0.2% веб-сайтов для компьютеров и мобильных устройств, согласно нашим данным.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1433352391&format=interactive",
    sheets_gid="1113852331",
    sql_file="structured-data-formats.sql"
    )
 }}
 
-There are several ways to include structured data on a page: JSON-LD, microdata, RDFa, and microformats2. JSON-LD is the most popular implementation method. Over 60% of desktop and mobile pages that have structured data implement it with JSON-LD.
+Существует несколько способов использования структурированных данных на странице: JSON-LD, microdata, RDFa, и microformats2. JSON-LD — наиболее популярный метод реализации. Более 60% страниц для компьютеров и мобильных устройств со структурированными данными используют JSON-LD.
 
-Among websites implementing structured data, over 36% of desktop and mobile pages use microdata and less than 3% of pages use RDFa or microformats2.
+Среди веб-сайтов, использующих структурированные данные, более 36% страниц для компьютеров и мобильных устройств используют microdata и менее 3% страниц используют RDFa или microformats2.
 
-Structured data adoption is up a bit since last year. It's used on 33.2% of pages in 2021 vs 30.6% in 2020.
+Внедрение структурированных данных немного выросло по сравению с прошлым годом. Структурированные данные используются на 33.2% страниц в 2021 году, по сравению с 30.6% в 2020 году.
 
 #### Most popular schema types
 
