@@ -28,7 +28,7 @@ jobs:
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v2.5.1
       with:
-        node-version:  '15'
+        node-version: '15'
     - name: Set up Python 3.8
       uses: actions/setup-python@v2.3.1
       with:

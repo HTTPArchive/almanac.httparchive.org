@@ -76,8 +76,7 @@ FROM (
       FROM
         `httparchive.almanac.parsed_css`
       LEFT JOIN
-        -- SQL Linter can't handle STRUCTs fields so noqa next line
-        UNNEST(getSelectorParts(css).attribute) AS attribute -- noqa: PRS
+        UNNEST(getSelectorParts(css).attribute) AS attribute
       WHERE
         date = '2021-07-01' AND
         # Limit the size of the CSS to avoid OOM crashes.
