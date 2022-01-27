@@ -548,12 +548,12 @@ Core Web Vitals — это новые показатели скорости, к�
 
 Внедрение структурированных данных немного выросло по сравению с прошлым годом. Структурированные данные используются на 33.2% страниц в 2021 году, по сравению с 30.6% в 2020 году.
 
-#### Most popular schema types
+#### Наиболее популярные типы разметки schema.org {most-popular-schema-types}
 
 {{ figure_markup(
    image="most-popular-schema-types.png",
-   caption="Most popular schema types.",
-   description="Bar chart showing the most popular schema types found on homepages. Results were nearly identical for desktop and mobile homepages. The most popular schema types were WebSite, SearchAction, WebPage, UnknownType and Organization.",
+   caption="Наиболее популярные типы разметки schema.org.",
+   description="Гистограмма показывает самые популярные типы разметки schema.org на домашних страницах сайтов. Результаты были почти идентичны для компьютерных и мобильных домашних страниц. Наиболее популярными типами разметки schema.org являются `WebSite`, `SearchAction`, `WebPage`, `UnknownType` и `Organization`.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=242663990&format=interactive",
    sheets_gid="1580260783",
    sql_file="structured-data-schema-types.sql",
@@ -562,7 +562,7 @@ Core Web Vitals — это новые показатели скорости, к�
    )
 }}
 
-The most popular schema types found on homepages are `WebSite`, `SearchAction`, `WebPage`. `SearchAction` is what powers the <a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox">Sitelinks Search Box</a>, which Google can choose to show in the Search Results Page.
+Наиболее популярными типами разметки schema.org являются `WebSite`, `SearchAction`, `WebPage`. `SearchAction` — это то, что приводит в действие <a hreflang="ru" href="https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox">окно поиска по сайту</a>, которое Google может выбрать для отображения на странице результатов поиска.
 
 ### `<h>` elements (headings)
 
