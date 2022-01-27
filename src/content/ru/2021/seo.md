@@ -508,27 +508,27 @@ Core Web Vitals — это новые показатели скорости, к�
 
 В целом, с помощью JavaScript генерируется 15% письменного контента на компьютерах, и 14.3% — на мобильных устройствах.
 
-### Structured Data
+### Структурированные данные {structured-data}
 
-Historically, search engines have worked with unstructured data: the piles of words, paragraphs and other content that comprise the text on a page.
+Исторически поисковые системы работали с неструктурированными данными: наборами слов, абзацев и другого контента, составляющего текст страницы.
 
-Schema markup and other types of structured data provide search engines another way to parse and organize content. Structured data powers many of <a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/search-gallery">Google's search features</a>.
+Разметка schema.org и другие типы структурированных данных предоставляют поисковым системам еще один способ анализа и организации контента. Структурированные данные поддерживают работу многих <a hreflang="ru" href="https://developers.google.com/search/docs/advanced/structured-data/search-gallery">функций поиска Google</a>.
 
-Like words on the page, structured data can be modified with JavaScript.
+Как и слова на странице, структурированные данные можно изменить с помощью JavaScript.
 
 {{ figure_markup(
    image="structured-data-usage.png",
-   caption="Structure data usage.",
-   description="Bar chart showing the number of pages with raw vs rendered structured data. 41.8% of desktop and 42.5% of mobile of pages had raw structured data. The number of pages that had rendered structure data was 43.2% for desktop and 44.2% for mobile. Few pages had only rendered structure data, 1.4% of desktop pages and 1.7% of mobile pages. Lastly, 4.5% of desktop pages and 4.7% of mobile pages had structured data rendering changes.",
+   caption="Использование структурированных данных.",
+   description="Гистограмма показывает количество страниц со структурированными данными в необработанном и отрисованном вариантах. 41.8% компьютерных и 42.5% мобильных страниц содержали необработанные структурированные данные. Количество страниц, содержащих отрисованные структурированные данные, составило 43.2% для компьютеров и 44.2% для мобильных устройств. На некоторых страницах структурированные данные отображались только в отрисованном варианте: 1.4% для компьютерных и 1.7% для мобильных страниц. В заключении, на 4.5% страниц для компьютеров и 4.7% страниц для мобильных устройств изменились структурированные данные в процессе отрисовки.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1924313131&format=interactive",
    sheets_gid="1347655296",
    sql_file="seo-stats.sql"
    )
 }}
 
-42.5% of mobile pages and 41.8% of desktop pages have structured data in the HTML. JavaScript modifies the structured data on 4.7% of mobile pages and 4.5% of desktop pages.
+42.5% мобильных и 41.8% компьютерных страниц содержали структурированные данные в исходном HTML. JavaScript изменяет структурированные данные на 4.7% мобильных и 4.5% компьютерных страниц.
 
-On 1.7% of mobile pages and 1.4% of desktop pages structured data is added by JavaScript where it didn't exist in the initial HTML response.
+На 1.7% мобильных и 1.4% компьютерных страниц структурированные данные были добавлены с помощью JavaScript, их не было в исходном HTML.
 
 #### Most popular structured data formats
 
