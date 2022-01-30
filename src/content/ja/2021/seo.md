@@ -450,7 +450,7 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 {{ figure_markup(
    image="image-loading-property-usage.png",
    caption="画像読み込みのプロパティの使用状況。",
-   description='ページと画像読み込みプロパティの使用率（missing, lazy, eager, invalid, auto, blank）を示す棒グラフ。当社のデータでは、デスクトップページの83.3%、モバイルページの83.5%で画像の読み込みプロパティが欠落していることが判明しました。その結果、デスクトップとモバイルのページの15.6%が `loading="lazy"` を使用しており、`loading="eager"` はデスクトップとモバイルのページの0.8%に過ぎないことがわかりました。その他の画像読み込みプロパティである `loading="invalid"` や `loading="auto"` 、 `loading="blank"` は、デスクトップやモバイルのページの1%未満にしか使用されていません。',
+   description='ページと画像読み込みプロパティの使用率（missing, lazy, eager, invalid, auto, blank）を示す棒グラフ。当社のデータでは、デスクトップページの83.3%、モバイルページの83.5%で画像の読み込みプロパティが欠落していることが判明しました。その結果、デスクトップとモバイルのページの15.6%が `loading="lazy"` を使用しており、`loading="eager"` はデスクトップとモバイルのページの0.8%に過ぎないことがわかりました。その他のケースは、デスクトップとモバイルのページで1%未満です。これには、無効なプロパティや空白のプロパティ、または `loading="auto"` を持つケースが含まれます。',
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1305654777&format=interactive",
    sheets_gid="55531578",
    sql_file="image-loading-property-usage.sql"
@@ -504,7 +504,7 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 
 - デスクトップページの中央値は369語であるのに対し、2020年には360語になっています。
 - モバイルページの中央値は321語であるのに対し、2020年には312語となっています。
-- モバイルの未加工ページは、デスクトップのレンダリングページよりも13.1%少ない単語しか含まれていません。Googleはモバイル専用のインデックスであることに注意してください。モバイルHTML版にないコンテンツは、インデックスされない可能性があります。
+- モバイルの未加工ページは、デスクトップの未加工ページよりも13.1%少ない単語しか含まれていません。Googleはモバイル専用のインデックスであることに注意してください。モバイルHTML版にないコンテンツは、インデックスされない可能性があります。
 
 全体として、デスクトップ端末で書かれたコンテンツの15％が、モバイル版では14.3％がJavaScriptによって生成されています。
 
