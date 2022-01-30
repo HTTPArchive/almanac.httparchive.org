@@ -428,7 +428,7 @@ Note that missing `alt` attributes may not indicate a problem. Pages may include
 
 {{ figure_markup(
    image="images-with-missing-alt-attribute.png",
-   caption="Percentage of images missing alt attributes.",
+   caption="Percentage of images missing `alt` attributes.",
    description="Bar chart showing the percent of images with `alt` attributes missing per percentile (10, 25, 50, 75, and 90). The median web page had 1.4% of images with `alt` attributes missing on desktop on zero `alt` attributes missing on mobile.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=819909313&format=interactive",
    sheets_gid="412947118",
@@ -571,7 +571,7 @@ Heading elements (`<h1>`, `<h2>`, etc.) are an important structural element. Whi
 {{ figure_markup(
    image="heading-element-usage.png",
    caption="Heading element usage.",
-   description="Bar chart showing the percent of pages with the presence of H elements by heading tag (level 1, 2, 3, 4). There was little to no difference between desktop and mobile results. `h1` headings were found on 65.4% of pages, `h2`s were found the most frequently on 71.9% of pages, `h3`3s were found on 61.8% of pages and `h4` headings were found on 37.6% of pages.",
+   description="Bar chart showing the percent of pages with the presence of H elements by heading tag (level 1, 2, 3, 4). There was little to no difference between desktop and mobile results. `h1` headings were found on 65.4% of pages, `h2`s were found the most frequently on 71.9% of pages, `h3`s were found on 61.8% of pages and `h4` headings were found on 37.6% of pages.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1197492338&format=interactive",
    sheets_gid="1347655296",
    sql_file="seo-stats.sql"
@@ -667,7 +667,7 @@ While a significant portion of links on the web are text based, a portion also l
 
 ### Link attributes
 
-In September of 2019, Google <a hreflang="en" href="https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html">introduced attributes</a> that allow publishers to classify links as being _sponsored_ or _user-generated content_. These attributes are in addition to `rel=nofollow` which was previously <a hreflang="en" href="https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html">introduced in 2005</a>. The new attributes, `rel=ug`c and `rel=sponsored`, add additional information to the links.
+In September of 2019, Google <a hreflang="en" href="https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html">introduced attributes</a> that allow publishers to classify links as being _sponsored_ or _user-generated content_. These attributes are in addition to `rel=nofollow` which was previously <a hreflang="en" href="https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html">introduced in 2005</a>. The new attributes, `rel=ug` and `rel=sponsored`, add additional information to the links.
 
 {{ figure_markup(
    image="rel-attibute-usage.png",
