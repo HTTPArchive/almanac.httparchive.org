@@ -571,21 +571,21 @@ Heading elements (`<h1>`, `<h2>`, etc.) are an important structural element. Whi
 {{ figure_markup(
    image="heading-element-usage.png",
    caption="Heading element usage.",
-   description="Bar chart showing the percent of pages with the presence of H elements by heading tag (level 1, 2, 3, 4). There was little to no difference between desktop and mobile results. `h1` headings were found on 65.4% of pages, `h2` were found the most frequently on 71.9% of pages, `h3` were found on 61.8% of pages and `h4` headings were found on 37.6% of pages.",
+   description="Bar chart showing the percent of pages with the presence of H elements by heading tag (level 1, 2, 3, 4). There was little to no difference between desktop and mobile results. `h1` headings were found on 65.4% of pages, `h2`s were found the most frequently on 71.9% of pages, `h3`s were found on 61.8% of pages and `h4` headings were found on 37.6% of pages.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1197492338&format=interactive",
    sheets_gid="1347655296",
    sql_file="seo-stats.sql"
    )
 }}
 
-For main headings, more pages (71.9%) have `h2` than have `h1` (65.4%). There's no obvious explanation for the discrepancy. 61.4% of desktop and mobile pages use `h3` and less than 39% use `h4`.
+For main headings, more pages (71.9%) have `h2`s than have `h1`s (65.4%). There's no obvious explanation for the discrepancy. 61.4% of desktop and mobile pages use `h3`s and less than 39% use `h4`s.
 
 There was very little difference between desktop and mobile heading usage, nor was there a major change versus 2020.
 
 {{ figure_markup(
    image="non-empty-heading-element-usage.png",
    caption="Non-empty heading element usage.",
-   description="Bar chart showing the percent of pages with the presence of non-empty `<h>` elements by heading tag (level 1, 2, 3, 4). There was little to no difference between desktop and mobile results. `h1` headings were found on 58.1% of pages, `h2` were found the most frequently on 70.5% of pages, `h3` on 60.3% of pages and `h4` headings were found on 36.5% of pages.",
+   description="Bar chart showing the percent of pages with the presence of non-empty `<h>` elements by heading tag (level 1, 2, 3, 4). There was little to no difference between desktop and mobile results. `h1` headings were found on 58.1% of pages, `h2`s were found the most frequently on 70.5% of pages, `h3`s on 60.3% of pages and `h4` headings were found on 36.5% of pages.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2102902536&format=interactive",
    sheets_gid="1347655296",
    sql_file="seo-stats.sql"
