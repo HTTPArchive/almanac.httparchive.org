@@ -51,7 +51,7 @@
         "value-keyword-case": [
             "lower",
             {
-                "ignoreKeywords": ["Art","A4","A5"]
+                "ignoreKeywords": ["Art","A4","A5","currentColor"]
             }
         ],
         "value-no-vendor-prefix": [

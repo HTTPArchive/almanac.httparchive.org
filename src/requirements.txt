@@ -4,4 +4,4 @@ gunicorn==20.1.0
 pytest==6.2.5
 pytest-watch==4.2.0
 pytest-cov==3.0.0
-sqlfluff==0.9.1
+sqlfluff==0.9.3

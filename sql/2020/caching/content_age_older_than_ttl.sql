@@ -23,7 +23,7 @@ FROM
     FROM
       `httparchive.summary_requests.2020_08_01_*`
     WHERE
-      resp_last_modified <> "" AND
+      resp_last_modified != "" AND
       expAge > 0
   )
 GROUP BY

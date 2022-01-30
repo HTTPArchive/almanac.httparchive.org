@@ -23,7 +23,7 @@ FROM
       `httparchive.almanac.requests`
     WHERE
       date = '2019-07-01' AND
-      resp_last_modified <> "" AND expAge > 0
+      resp_last_modified != "" AND expAge > 0
   ),
   UNNEST([10, 20, 30, 40, 50, 60, 70, 80, 90]) AS percentile
 GROUP BY

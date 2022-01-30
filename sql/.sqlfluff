@@ -1,10 +1,17 @@
 [sqlfluff]
+## verbose is an integer (0-2) indicating the level of log output
 verbose = 0
+## Turn off color formatting of output
 nocolor = False
+## Supported dialects https://docs.sqlfluff.com/en/stable/dialects.html
+## Or run 'sqlfluff dialects'
 dialect = bigquery
+## One of [raw|jinja|python|placeholder]
 templater = jinja
+## Comma separated list of rules to check, or None for all
 rules = None
-exclude_rules = L011,L014,L016,L020,L026,L027,L028,L029,L030,L031,L032,L034,L035,L036,L037,L042,L043,L051,L057
+## Comma separated list of rules to exclude, or None
+exclude_rules = L011,L014,L016,L020,L026,L027,L028,L029,L030,L031,L032,L034,L035,L036,L037,L042,L043,L051,L057,L060
 # L011 - We don't always alias tables with AS ("FROM table1 AS tb1" instead of "FROM table1 tb1"). Do for columns but not for tables.
 # L014 - Unquoted identifiers (e.g. column names) will be mixed case so don't enforce case
 # L016 - We allow longer lines as some of our queries are complex. Maybe should limit in future?
@@ -22,18 +29,28 @@ exclude_rules = L011,L014,L016,L020,L026,L027,L028,L029,L030,L031,L032,L034,L035
 # L037 - if using DESC in one ORDER BY column, then insist on ASC/DESC for all.
 # L042 - Use CTEs instead of subqueries. We don't use this consistently and big rewrite to do that.
 # L043 - Use coalesce instead of case if you can. But it's clearer!?
-# L057 - We use tables with hyphens and some identifiers with special chars (e.g. 2019/css/02_43.sql on lines 49-53)
+# L051 - INNER JOIN must be fully qualified. Probably should use this but not our style.
+# L057 - TODO Can be enabled when Super-Linter moves to 0.9.2
+# L060 - Use COALESCE instead of IFNULL or NVL. We think ISNULL is clearer.
+# The depth to recursively parse to (0 for unlimited)
 recurse = 0
+# Below controls SQLFluff output, see max_line_length for SQL output
 output_line_length = 80
+# Number of passes to run before admitting defeat
 runaway_limit = 10
+# Ignore linting errors in templated sections
 ignore_templated_areas = True
+# can either be autodetect or a valid encoding e.g. utf-8, utf-8-sig
 encoding = autodetect
-# Comma separated list of file extensions to lint.
-
-# NB: This config will only apply in the root folder.
+# Ignore inline overrides (e.g. to test if still required)
+disable_noqa = False
+# Comma separated list of file extensions to lint
+# NB: This config will only apply in the root folder
 sql_file_exts = .sql,.sql.j2,.dml,.ddl
 
+
 [sqlfluff:indentation]
+## See https://docs.sqlfluff.com/en/stable/indentation.html
 indented_joins = False
 indented_using_on = False
 template_blocks_indent = True
@@ -69,31 +86,38 @@ lint_templated_tokens = True
 [sqlfluff:rules:L007]
 operator_new_lines = before
 
-[sqlfluff:rules:L010]  # Keywords
+[sqlfluff:rules:L010]
+# Keywords
 capitalisation_policy = upper
 
-[sqlfluff:rules:L014]  # Unquoted identifiers
-#extended_capitalisation_policy = pascal
-
-[sqlfluff:rules:L016]
-ignore_comment_lines = False
-
-[sqlfluff:rules:L029]  # Keyword identifiers
-unquoted_identifiers_policy = aliases
-
-[sqlfluff:rules:L030]  # Function names
-#capitalisation_policy = consistent
+[sqlfluff:rules:L012]
+# Aliasing preference for columns
+aliasing = explicit
 
 [sqlfluff:rules:L038]
 select_clause_trailing_comma = forbid
 
-[sqlfluff:rules:L040]  # Null & Boolean Literals
+[sqlfluff:rules:L040]
+# Null & Boolean Literals
 capitalisation_policy = consistent
 
-[sqlfluff:rules:L042]
-# By default, allow subqueries in from clauses, but not join clauses.
-forbid_subquery_in = join
-
-[sqlfluff:rules:L047]  # Consistent syntax to count all rows
+[sqlfluff:rules:L047]
+# Consistent syntax to count all rows
 prefer_count_1 = False
 prefer_count_0 = True
+
+[sqlfluff:rules:L052]
+# Semi-colon formatting approach
+multiline_newline = False
+require_final_semicolon = False
+
+[sqlfluff:rules:L054]
+# GROUP BY/ORDER BY column references
+group_by_and_order_by_style = consistent
+
+[sqlfluff:rules:L057]
+## Special characters in identifiers
+unquoted_identifiers_policy = all
+quoted_identifiers_policy = all
+allow_space_in_identifier = False
+additional_allowed_characters = "-."

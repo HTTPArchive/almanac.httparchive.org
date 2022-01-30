@@ -21,6 +21,7 @@ jobs:
       - uses: actions/github-script@v5
         if: github.event_name == 'workflow_dispatch' || contains(github.event.issue.labels.*.name, env.FILTER_LABEL)
         with:
+          # yamllint disable rule:line-length
           script: |
             const filterLabel = process.env.FILTER_LABEL
             const trackerIssueNumber = process.env.TRACKER_ISSUE_NUMBER
