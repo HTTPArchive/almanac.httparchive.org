@@ -120,7 +120,7 @@ Setting an HTML `lang` attribute allows easy translation of a page and better sc
 There is no specific requirement from the WCAG with respect to minimum font size or line height, however there is a general consensus that a <a hreflang="en" href="https://accessibility.digital.gov/visual-design/typography/">base font size of 16px</a> or higher will help everyone with readability, especially those who have low vision. There is, however, a requirement that [text can be zoomed in and resized up to 200%](#zooming-and-scaling). Users can also set their own minimum font size at the browser level and these customized settings need to be supported.
 
 {{ figure_markup(
-  image="pages-overriding-focus-styles.png",
+  image="font-unit-usage.png",
   caption="Font unit usage.",
   description="A bar chart showing `px` is used for font sizes on 68.4% of desktop pages and 69.0% of mobiles pages, `em` on 16.7% and 16.4% respectively, `%` on 5.0% and 5.4%, `rem` on 5.5% and 5.2%, `<number>` on 2.3% and 2.1%, and finally `pt` on 1.8% and 1.6%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1495101594&format=interactive",
