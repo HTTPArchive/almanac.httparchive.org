@@ -19,7 +19,7 @@ jobs:
           # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0
       - name: Set up Python 3.8
-        uses: actions/setup-python@v2.3.1
+        uses: actions/setup-python@v2.3.2
         with:
           python-version: '3.8'
       - name: Lint SQL code
