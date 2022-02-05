@@ -641,12 +641,12 @@ Core Web Vitals — это новые показатели скорости, к�
 
 Значения почти такие же, как и в 2020 году. Несмотря на то, что в этом году Google развернул приоритетную индексацию для мобильных устройств, веб-сайты не довели свои мобильные версии до полного сходства с версиями для компьютеров.
 
-### Text and image links
+### Текстовые ссылки и ссылки-изображения {text-and-image-links}
 
 {{ figure_markup(
    image="text-links.png",
-   caption="Text links from homepages.",
-   description="Bar chart showing the number of text links per percentile (10, 25, 50, 75, and 90). The median page contained 69 text links on desktop and 63 text links on mobile.",
+   caption="Текстовые ссылки с главных страниц.",
+   description="Гистограмма показывает количество текстовых ссылок на процентиль (10, 25, 50, 75 и 90). Средняя страница содержала 69 текстовых ссылок на компьютерах и 63 — на мобильных устройствах.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1700739999&format=interactive",
    sheets_gid="455169599",
    sql_file="seo-stats-by-percentile.sql"
@@ -655,15 +655,15 @@ Core Web Vitals — это новые показатели скорости, к�
 
 {{ figure_markup(
    image="image-links.png",
-   caption="Image links from homepages.",
-   description="Bar chart showing the number of image links per percentile (10, 25, 50, 75, and 90). The median web page contained 7 image links on desktop and 6 image links on mobile.",
+   caption="Ссылки-изображения с главных страниц.",
+   description="Гистограмма показывает количество ссылок-изображений на процентиль (10, 25, 50, 75 и 90). Средняя страница содержала 7 ссылок-изображений на компьютерах и 6 — на мобильных устройствах.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1217720785&format=interactive",
    sheets_gid="455169599",
    sql_file="seo-stats-by-percentile.sql"
    )
 }}
 
-While a significant portion of links on the web are text based, a portion also link images to other pages. 9.2% of links on desktop pages and 8.7% of links on mobile pages are image links. With image links, the `alt` attributes set for the image act as anchor text to provide additional context on what the pages are about.
+Хотя значительная доля ссылок в Интернете основана на тексте, часть также содержит изображения в ссылках на другие страницы. 9.2% ссылок на компьютерных и 8.7% ссылок на мобильных страницах содержат изображения в элементе `<a>`. В случае со ссылками-изображениями атрибуты `alt` для изображения выступают в роли анкорного текста, чтобы обеспечить дополнительный контекст о том, о чем связанная страница.
 
 ### Link attributes
 
