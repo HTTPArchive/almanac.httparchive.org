@@ -564,35 +564,35 @@ Core Web Vitals — это новые показатели скорости, к�
 
 Наиболее популярными типами разметки schema.org являются `WebSite`, `SearchAction`, `WebPage`. `SearchAction` — это то, что приводит в действие <a hreflang="ru" href="https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox">окно поиска по сайту</a>, которое Google может выбрать для отображения на странице результатов поиска.
 
-### `<h>` elements (headings)
+### Элементы `<h>` (заголовки) {h-elements-headings}
 
-Heading elements (`<h1>`, `<h2>`, etc.) are an important structural element. While they don't directly impact rankings, they do help Google to better understand the content on the page.
+Элементы заголовков (`<h1>`, `<h2>` и так далее) являются важными структурными элементами. Хотя они не влияют напрямую на ранжирование, они помогают Google лучше понять содержание страницы.
 
 {{ figure_markup(
    image="heading-element-usage.png",
-   caption="Heading element usage.",
-   description="Bar chart showing the percent of pages with the presence of H elements by heading tag (level 1, 2, 3, 4). There was little to no difference between desktop and mobile results. `h1` headings were found on 65.4% of pages, `h2`s were found the most frequently on 71.9% of pages, `h3`3s were found on 61.8% of pages and `h4` headings were found on 37.6% of pages.",
+   caption="Использование заголовков.",
+   description="Гистограмма показывает процент страниц с заголовками разных уровней (уровень 1, 2, 3, 4). Между результатами для компьютеров и мобильных устройств почти нет разницы. Заголовки `h1` встречались на 65.4% страниц, `h2` чаще всего — на 71.9%, `h3` — на 61.8%, и `h4` — на 37.6% страниц.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1197492338&format=interactive",
    sheets_gid="1347655296",
    sql_file="seo-stats.sql"
    )
 }}
 
-For main headings, more pages (71.9%) have `h2`s than have `h1`s (65.4%). There's no obvious explanation for the discrepancy. 61.4% of desktop and mobile pages use `h3`s and less than 39% use `h4`s.
+Касаемо заголовков, на большем количестве страниц (71.9%) есть `h2`, чем `h1` (65.4%). Очевидного объяснения этому расхождению нет. На 61.4% компьютерных и мобильных страниц есть `h3` и менее чем на 39% — `h4`.
 
-There was very little difference between desktop and mobile heading usage, nor was there a major change versus 2020.
+Разница в использовании заголовков между компьютерами и мобильными устройствами минимальная, также не было серьезных изменений по сравнению с 2020 годом.
 
 {{ figure_markup(
    image="non-empty-heading-element-usage.png",
-   caption="Non-empty heading element usage.",
-   description="Bar chart showing the percent of pages with the presence of non-empty `<h>` elements by heading tag (level 1, 2, 3, 4). There was little to no difference between desktop and mobile results. `h1` headings were found on 58.1% of pages, `h2`s were found the most frequently on 70.5% of pages, `h3`s on 60.3% of pages and `h4` headings were found on 36.5% of pages.",
+   caption="Использование непустых заголовков.",
+   description="Гистограмма показывает процент страниц с наличием непустых заголовков `<h>` разного уровня (уровень 1, 2, 3, 4). Между результатами для компьютеров и мобильных устройств почти нет разницы. Заголовки `h1` встречались на 58.1% страниц, `h2` чаще всего — на 70.5%, `h3` — на 60.3%, и `h4` — на 36.5% страниц.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2102902536&format=interactive",
    sheets_gid="1347655296",
    sql_file="seo-stats.sql"
    )
 }}
 
-However, a lower percentage of pages include _non-empty_`<h>` elements, particularly `h1`. Websites often wrap logo-images in `<h1>` elements on homepages, and this may explain the discrepancy.
+Однако меньший процент страниц содержит _непустые_ элементы `<h>`, особенно `h1`. Веб-сайты часто помещают изображения логотипов в элементы `<h1>` на главных страницах, и это может объяснить расхождение.
 
 ## Links
 
