@@ -669,12 +669,12 @@ While a significant portion of links on the web are text based, a portion also l
 
 ### Link attributes
 
-In September of 2019, Google <a hreflang="en" href="https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html">introduced attributes</a> that allow publishers to classify links as being _sponsored_ or _user-generated content_. These attributes are in addition to `rel=nofollow` which was previously <a hreflang="en" href="https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html">introduced in 2005</a>. The new attributes, `rel=ug`c and `rel=sponsored`, add additional information to the links.
+In September of 2019, Google <a hreflang="en" href="https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html">introduced attributes</a> that allow publishers to classify links as being _sponsored_ or _user-generated content_. These attributes are in addition to `rel=nofollow` which was previously <a hreflang="en" href="https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html">introduced in 2005</a>. The new attributes, `rel=ugc` and `rel=sponsored`, add additional information to the links.
 
 {{ figure_markup(
    image="rel-attibute-usage.png",
    caption="Rel attribute usage.",
-   description="Bar chart showing the usage (in percent) of rel attributes on desktop and mobile. Our data found that that 29.2% of homepages featured nofollow attributes on their desktop version and 30.7% on mobile. Rel=noopener was featured on 31.6% of desktop pages and 30.1% on mobile. Rel=noreferrer was featured on 15.8% of desktop pages and 14.8% of mobile. Rel=dofollow, Rel=ugc, Rel=sponsored, and Rel=follow were all featured on fewer than 1% of desktop and mobile pages.",
+   description="Bar chart showing the usage (in percent) of rel attributes on desktop and mobile. Our data found that that 29.2% of homepages featured nofollow attributes on their desktop version and 30.7% on mobile. `rel="noopener"` was featured on 31.6% of desktop pages and 30.1% on mobile. `rel="noreferrer"` was featured on 15.8% of desktop pages and 14.8% of mobile. `rel="dofollow"`, `rel="ugc"`, `rel="sponsored"`, and `rel="follow"` were all featured on fewer than 1% of desktop and mobile pages.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1672151299&format=interactive",
    sheets_gid="1936997045",
    sql_file="anchor-rel-attribute-usage.sql"
