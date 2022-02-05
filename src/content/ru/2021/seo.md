@@ -594,12 +594,12 @@ Core Web Vitals — это новые показатели скорости, к�
 
 Однако меньший процент страниц содержит _непустые_ элементы `<h>`, особенно `h1`. Веб-сайты часто помещают изображения логотипов в элементы `<h1>` на главных страницах, и это может объяснить расхождение.
 
-## Links
+## Ссылки {links}
 
-Search engines use links to discover new pages and to pass [_PageRank_](https://en.wikipedia.org/wiki/PageRank) which helps determine the importance of pages.
+Поисковые системы используют ссылки для обнаружения новых страниц и передачи [_PageRank_](https://en.wikipedia.org/wiki/PageRank), что помогает определить важность страниц.
 
 {{ figure_markup(
-  caption="Pages using non-descriptive link texts.",
+  caption="Процент страниц с неинформативными анкорами ссылок.",
   content="16.0%",
   classes="big-number",
   sheets_gid="1705330480",
@@ -607,7 +607,7 @@ Search engines use links to discover new pages and to pass [_PageRank_](https://
 )
 }}
 
-On top of PageRank, the text used as a link anchor helps search engines to understand what a linked page is about. Lighthouse has a test to check if the anchor text used is useful text or if it's generic anchor text like "learn more" or "click here" which aren't very descriptive. 16% of the tested links did not have descriptive anchor text, which is a missed opportunity from an SEO perspective and also bad for accessibility.
+Помимо PageRank, текст, используемый в качестве анкора ссылки, помогает поисковым системам понять, о чем связанная страница. В Lighthouse есть тест, чтобы проверить, является ли используемый анкор полезным текстом, или это общий анкор, такой как "узнать больше" или "нажмите здесь", который не очень информативен. 16% протестированных ссылок не имели информативного анкорного текста, что является упущенной возможностью с точки зрения SEO, а также плохо влияет на общедоступность.
 
 ### Internal and external links
 
