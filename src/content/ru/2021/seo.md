@@ -665,25 +665,25 @@ Core Web Vitals — это новые показатели скорости, к�
 
 Хотя значительная доля ссылок в Интернете основана на тексте, часть также содержит изображения в ссылках на другие страницы. 9.2% ссылок на компьютерных и 8.7% ссылок на мобильных страницах содержат изображения в элементе `<a>`. В случае со ссылками-изображениями атрибуты `alt` для изображения выступают в роли анкорного текста, чтобы обеспечить дополнительный контекст о том, о чем связанная страница.
 
-### Link attributes
+### Атрибуты ссылки {link-attributes}
 
-In September of 2019, Google <a hreflang="en" href="https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html">introduced attributes</a> that allow publishers to classify links as being _sponsored_ or _user-generated content_. These attributes are in addition to `rel="nofollow"` which was previously <a hreflang="en" href="https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html">introduced in 2005</a>. The new attributes, `rel="ugc"` and `rel="sponsored"`, add additional information to the links.
+В сентябре 2019 года Google <a hreflang="ru" href="https://developers.google.com/search/blog/2019/09/evolving-nofollow-new-ways-to-identify">представил атрибуты</a>, которые позволяют издателям классифицировать ссылки как спонсируемые или созданные пользователем. Эти атрибуты являются дополнением к атрибуту `rel="nofollow"`, <a hreflang="en" href="https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html">введенному ранее в 2005 году</a>. Новые атрибуты `rel="ugc"` и `rel="sponsored"` дают дополнительную информацию о ссылках.
 
 {{ figure_markup(
    image="rel-attibute-usage.png",
-   caption="Rel attribute usage.",
-   description="Bar chart showing the usage (in percent) of rel attributes on desktop and mobile. Our data found that that 29.2% of homepages featured nofollow attributes on their desktop version and 30.7% on mobile. Rel=noopener was featured on 31.6% of desktop pages and 30.1% on mobile. Rel=noreferrer was featured on 15.8% of desktop pages and 14.8% of mobile. Rel=dofollow, Rel=ugc, Rel=sponsored, and Rel=follow were all featured on fewer than 1% of desktop and mobile pages.",
+   caption="Использование атрибута `rel`.",
+   description="Гистограмма показывает использование (в процентах) атрибутов `rel` на компьютерах и мобильных устройствах. Наши данные показали, что 29.2% главных страниц используют атрибуты `nofollow` на компьютерных версиях, и 30.7% — на мобильных. Атрибут `rel="noopener"` использовался на 31.6% компьютерных и на 30.1% мобильных страниц. Атрибут `rel="noreferrer"` использовался на 15.8% компьютерных и на 14.8% мобильных страниц. Атрибуты `rel="dofollow"`, `rel="ugc"`, `rel="sponsored"` и `rel="follow"` использовались менее чем на 1% страниц для компьютеров и мобильных устройств.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1672151299&format=interactive",
    sheets_gid="1936997045",
    sql_file="anchor-rel-attribute-usage.sql"
    )
 }}
 
-The new attributes are still fairly rare, at least on homepages, with `rel="ugc"` appearing on 0.4% of mobile pages and `rel="sponsored"` appearing on 0.3% of mobile pages. It's likely these attributes are seeing more adoption on pages that aren't homepages.
+Новые атрибуты по-прежнему используются редко, по крайней мере, на главных страницах: `rel="ugc"` обнаружен на 0.4% мобильных страниц, а `rel="sponsored"` — на 0.3% мобильных страниц. Скорее всего, эти атрибуты чаще используются на страницах, не являющихся главными.
 
-`rel="follow"` and `rel="dofollow"` appear on more pages than `rel="ugc"` and `rel="sponsored"`. While this is not a problem, Google ignores `rel="follow"` and `rel="dofollow"` because they aren't official attributes.
+Атрибуты `rel="follow"` и `rel="dofollow"` используются на большем количестве страниц, чем атрибуты `rel="ugc"` и `rel="sponsored"`. Это не является проблемой, но Google игнорирует `rel="follow"` и `rel="dofollow"`, поскользку они не являются официальными атрибутами.
 
-`rel="nofollow"` was found on 30.7% of mobile pages, similar to last year. With the attribute used so much, it's no surprise that Google has changed `nofollow` to a hint—which means they can choose whether or not they respect it.
+Атрибут `rel="nofollow"` был обнаружен на 30.7% мобильных страниц, как и в прошлом году. Посколько этот атрибут используется так часто, неудивительно, что Google начал воспринимать `nofollow` как подсказку, что означает, что Google сам решает, принимать во внимание этот атрибут или нет. 
 
 ## Accelerated Mobile Pages (AMP)
 
