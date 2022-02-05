@@ -712,8 +712,8 @@ Core Web Vitals — это новые показатели скорости, к�
 
 {{ figure_markup(
    image="hreflang-usage.png",
-   caption="Диаграмма главных атрибутов тега hreflang.",
-   description="Горизонтальная столбчатая диаграмма показывает использование атрибута hreflang. Самым популярным значением атрибута hreflang было `en` (английская версия), и атрибуты hreflang (на всех языках) использовались менее чем на 5% страниц для компьютеров и мобильных устройств.",
+   caption="Гистограмма главных атрибутов hreflang.",
+   description="Горизонтальная гистограмма показывает использование атрибута hreflang. Самым популярным значением атрибута hreflang было `en` (английская версия), и атрибуты hreflang (на всех языках) использовались менее чем на 5% страниц для компьютеров и мобильных устройств.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1149395895&format=interactive",
    sheets_gid="866829014",
    sql_file="hreflang-link-tag-usage.sql",
@@ -728,19 +728,19 @@ Core Web Vitals — это новые показатели скорости, к�
 
 Самый популярный атрибут hreflang — `"en"` (английская версия). Его используют 4.75% главных страниц для мобильных устройств, и 5.32% — для компьютеров.
 
-`x-default` (also called the fallback version) is used in 2.56% of cases on mobile. Other popular languages addressed by `hreflang` attributes are French and Spanish.
+Значение `x-default` (также называемое резервной версией) используется в 2.56% случаев на мобильных устройствах. Другими популярными языками, используемыми в атрибутах `hreflang`, являются французский и испанский.
 
-For Bing, [`hreflang` is a "far weaker signal" than the `content-language` header](https://twitter.com/facan/status/1304120691172601856).
+Для Bing [`hreflang` является "гораздо более слабым сигналом", чем HTTP-заголовок `content-language`](https://twitter.com/facan/status/1304120691172601856).
 
-As with many other SEO parameters, [`content-language`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language) has multiple implementation methods including:
+Как и многие другие параметры SEO, у [`content-language`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language) есть несколько методов реализации, включая:
 
-1. HTTP server response
-2. HTML tag
+1. HTTP-заголовок
+2. HTML-тег
 
 {{ figure_markup(
    image="language-usage-html-http.png",
-   caption="Language usage (HTML and HTTP header).",
-   description="Horizontal bar chart showing percent of pages with language usage (HTML and HTTP header).",
+   caption="Использование языков (через HTML-тег или HTTP-заголовок).",
+   description="Горизонтальная гистограмма показывает процент страниц с использованием языков (через HTML-тег или HTTP-заголовок).",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2048466165&format=interactive",
    sheets_gid="933228304",
    sql_file="content-language-usage.sql",
@@ -749,9 +749,9 @@ As with many other SEO parameters, [`content-language`](https://developer.mozill
    )
 }}
 
-Using an HTTP server response is the most popular way of implementing `content-language`. 8.7% of websites use it on desktop while 9.3% on mobile.
+Использование HTTP-заголовков является наиболее популярным способом реализации `content-language`. 8.7% веб-сайтов используют его на компьютерах, а 9.3% — на мобильных устройствах.
 
-Using the HTML tag is less popular, with content-language appearing on just 3.3% of mobile websites.
+Использование HTML-тега менее популярно: `content-language` используется только на 3.3% мобильных веб-сайтов.
 
 ## Conclusion
 
