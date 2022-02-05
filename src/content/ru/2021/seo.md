@@ -701,14 +701,14 @@ Core Web Vitals — это новые показатели скорости, к�
 
 Однако в 2021 году темпы распространения AMP продолжали расти. Атрибут AMP был обнаружен на 0.09% страниц для компьютеров и на 0.22% страниц для мобильных страниц. Это больше, чем 0.06% на компьютерных и 0.15% на мобильных страницах в 2020 году.
 
-## Internationalization
+## Интернационализация {internationalization}
 
 <figure>
-  <blockquote>If you have multiple versions of a page for different languages or regions, tell Google about these different variations. Doing so will help Google Search point users to the most appropriate version of your page by language or region.</blockquote>
-  <figcaption>— <cite><a hreflang="en" href="hhttps://developers.google.com/search/docs/advanced/crawling/localized-versions">Google SEO documentation</a></cite></figcaption>
+  <blockquote>Если у вас несколько версий страницы на разных языках или для разных регионов, помогите Google идентифицировать их. Тогда в результатах поиска будут показываться те языковые версии ваших страниц, которые лучше всего подходят для пользователя.</blockquote>
+  <figcaption>— <cite><a hreflang="en" href="https://developers.google.com/search/docs/advanced/crawling/localized-versions">SEO-документация Google</a></cite></figcaption>
 </figure>
 
-To let search engines know about localized versions of your pages, use `hreflang` tags. `hreflang` attributes are also used by <a hreflang="en" href="https://yandex.com/support/webmaster/yandex-indexing/locale-pages.html">Yandex</a> and Bing ([to some extent](https://twitter.com/facan/status/1304120691172601856)).
+Чтобы поисковые системы знали о локализованных версиях ваших страниц, используйте теги `hreflang`. Атрибуты `hreflang` также используются <a hreflang="ru" href="https://yandex.com/support/webmaster/yandex-indexing/locale-pages.html?lang=ru">Яндексом</a> и Bing ([в некоторой степени](https://twitter.com/facan/status/1304120691172601856)).
 
 {{ figure_markup(
    image="hreflang-usage.png",
