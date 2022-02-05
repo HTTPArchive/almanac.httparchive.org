@@ -667,7 +667,7 @@ While a significant portion of links on the web are text based, a portion also l
 
 ### Link attributes
 
-In September of 2019, Google <a hreflang="en" href="https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html">introduced attributes</a> that allow publishers to classify links as being _sponsored_ or _user-generated content_. These attributes are in addition to `rel=nofollow` which was previously <a hreflang="en" href="https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html">introduced in 2005</a>. The new attributes, `rel=ug`c and `rel=sponsored`, add additional information to the links.
+In September of 2019, Google <a hreflang="en" href="https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html">introduced attributes</a> that allow publishers to classify links as being _sponsored_ or _user-generated content_. These attributes are in addition to `rel="nofollow"` which was previously <a hreflang="en" href="https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html">introduced in 2005</a>. The new attributes, `rel="ugc"` and `rel="sponsored"`, add additional information to the links.
 
 {{ figure_markup(
    image="rel-attibute-usage.png",
@@ -681,7 +681,7 @@ In September of 2019, Google <a hreflang="en" href="https://googleblog.blogspot.
 
 The new attributes are still fairly rare, at least on homepages, with `rel="ugc"` appearing on 0.4% of mobile pages and `rel="sponsored"` appearing on 0.3% of mobile pages. It's likely these attributes are seeing more adoption on pages that aren't homepages.
 
-`rel="follow"` and `rel=dofollow` appear on more pages than `rel="ugc"` and `rel="sponsored"`. While this is not a problem, Google ignores `rel="follow"` and `rel="dofollow"` because they aren't official attributes.
+`rel="follow"` and `rel="dofollow"` appear on more pages than `rel="ugc"` and `rel="sponsored"`. While this is not a problem, Google ignores `rel="follow"` and `rel="dofollow"` because they aren't official attributes.
 
 `rel="nofollow"` was found on 30.7% of mobile pages, similar to last year. With the attribute used so much, it's no surprise that Google has changed `nofollow` to a hint—which means they can choose whether or not they respect it.
 
