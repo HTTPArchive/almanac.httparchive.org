@@ -6,7 +6,7 @@ authors: [patrickstox, Tomek3c, wrttnwrd]
 reviewers: [fili, SeoRobt, fellowhuman1101]
 analysts: [jroakes, rvth]
 editors: [tunetheweb]
-translators: []
+translators: [kartashovio]
 results: https://docs.google.com/spreadsheets/d/11hw7zg4dpIY8XbQR5bNp5LvwbaQF0TjV0X5cK0ng8Bg/
 patrickstox_bio: Патрик — советник по продукту, технический SEO-специалист и амбассадор бренда в <a hreflang="ru" href="https://ahrefs.com/ru/">Ahrefs</a>. Он является организатором <a hreflang="ru" href="https://www.meetup.com/ru-RU/RaleighSEO/">Raleigh SEO Meetup</a> (самый успешный SEO Meetup в США), <a hreflang="ru" href="https://www.meetup.com/ru-RU/beerandseo/">Beer and SEO Meetup</a> и <a hreflang="en" href="https://raleighseomeetup.org/conference/">Raleigh SEO Conference</a>. Он также руководит группой Technical SEO в Slack и является модератором <a hreflang="en" href="https://www.reddit.com/r/TechSEO">/r/TechSEO на Reddit</a>. Патрик любит делиться случайными знаниями о SEO в ветках Twitter, которые он называет «Необычные знания SEO». Он известный спикер конференций, блоггер индустрии (в настоящее время в основном в блоге Ahrefs), судья по присуждению наград в области поиска, а также помог определить роль стратега поискового маркетинга в Министерстве труда США.
 Tomek3c_bio: Томек — руководитель отдела исследований и разработок в <a hreflang="en" href="https://www.onely.com/">Onely</a>. Он также работает над <a hreflang="en" href="https://www.ziptie.dev/">ZipTie</a>, продуктом, призванным помочь владельцам сайтов получать больше контента, проиндексированного Google. В свободное время он любит ходить в походы и играть в покер.
