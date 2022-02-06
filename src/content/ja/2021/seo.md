@@ -667,12 +667,12 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 
 ### リンク属性
 
-2019年9月、Googleは<a hreflang="en" href="https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html">リンクを_スポンサー_または_ユーザーが作成したコンテンツ_に分類できる属性を導入しました</a>。これらの属性は、以前<a hreflang="en" href="https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html">2005年に導入された`rel=nofollow`を追加したものです</a>。新しい属性である `rel=ug` と `rel=sponsored` は、リンクに追加情報を与えます。
+2019年9月、Googleは<a hreflang="en" href="https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html">リンクを_スポンサー_または_ユーザーが作成したコンテンツ_に分類できる属性を導入しました</a>。これらの属性は、以前<a hreflang="en" href="https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html">2005年に導入された`rel=nofollow`を追加したものです</a>。新しい属性である `rel=ugc` と `rel=sponsored` は、リンクに追加情報を与えます。
 
 {{ figure_markup(
    image="rel-attibute-usage.png",
    caption="Rel属性の使用状況。",
-   description="デスクトップとモバイルでのrel属性の使用率（％）を示す棒グラフ。当社のデータでは、デスクトップ版で29.2%、モバイル版では30.7%のホームページがnofollow属性を採用していることがわかりました。Rel=noopenerは、デスクトップページの31.6%、モバイルページの30.1%で採用されました。Rel=noreferrerはデスクトップページの15.8%、モバイルページの14.8%に掲載されました。Rel=dofollow、Rel=ugc、Rel=sponsored、Rel=followはいずれもデスクトップとモバイルのページの1%未満にしか表示されませんでした。",
+   description='デスクトップとモバイルでのrel属性の使用率（％）を示す棒グラフ。当社のデータでは、デスクトップ版で29.2%、モバイル版では30.7%のホームページがnofollow属性を採用していることがわかりました。`rel="noopener"`は、デスクトップページの31.6%、モバイルページの30.1%で採用されました。`rel="noreferrer"`はデスクトップページの15.8%、モバイルページの14.8%に掲載されました。`rel="dofollow"`、`rel="ugc"`、`rel="sponsored"`、`rel="follow"`はいずれもデスクトップとモバイルのページの1%未満にしか表示されませんでした。',
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1672151299&format=interactive",
    sheets_gid="1936997045",
    sql_file="anchor-rel-attribute-usage.sql"
@@ -705,7 +705,7 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 
 <figure>
   <blockquote>言語や地域によって複数のバージョンのページがある場合は、Googleにそのことを伝えてください。そうすることで、Google検索がユーザーに言語や地域ごとにもっとも適切なバージョンのページを提供することができます。</blockquote>
-  <figcaption>— <cite><a hreflang="en" href="hhttps://developers.google.com/search/docs/advanced/crawling/localized-versions">Google SEOのドキュメント</a></cite></figcaption>
+  <figcaption>— <cite><a hreflang="en" href="https://developers.google.com/search/docs/advanced/crawling/localized-versions">Google SEOのドキュメント</a></cite></figcaption>
 </figure>
 
 検索エンジンにローカライズされたページを知らせるには、`hreflang`タグを使用します。`hreflang`属性は、<a hreflang="en" href="https://yandex.com/support/webmaster/yandex-indexing/locale-pages.html">Yandex</a> やBing（[ある程度](https://twitter.com/facan/status/1304120691172601856)）でも使用されています。
@@ -724,7 +724,7 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 
 デスクトップ用ページの9.0%、モバイル用ページの8.4%がhreflang属性を使用しています。
 
-`hreflang` 情報の実装方法には、HTMLの `<head>` 要素、 `X-robots` ヘッダー、XMLサイトマップの3つがあります。このデータには、XMLサイトマップのデータは含まれていない。
+`hreflang` 情報の実装方法には、HTMLの `<head>` 要素、 `Link` ヘッダー、XMLサイトマップの3つがあります。このデータには、XMLサイトマップのデータは含まれていない。
 
 hreflang属性でもっとも利用されているのは、`"en"`（英語版）です。モバイル用ホームページの4.75％、デスクトップ用ホームページの5.32％が使用しています。
 
