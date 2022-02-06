@@ -9,10 +9,8 @@ editors: [tunetheweb]
 translators: []
 results: https://docs.google.com/spreadsheets/d/11hw7zg4dpIY8XbQR5bNp5LvwbaQF0TjV0X5cK0ng8Bg/
 patrickstox_bio: Patrick is Product Advisor, Technical SEO, and Brand Ambassador at <a hreflang="en" href="https://ahrefs.com/">Ahrefs</a>. He's an organizer for the <a hreflang="en" href="https://www.meetup.com/RaleighSEO/">Raleigh SEO Meetup</a> (the most successful SEO Meetup in the US), the <a hreflang="en" href="https://www.meetup.com/beerandseo/">Beer and SEO Meetup</a>, and the <a hreflang="en" href="https://raleighseomeetup.org/conference/">Raleigh SEO Conference</a>. He also runs a Technical SEO Slack group and is a moderator for <a hreflang="en" href="https://www.reddit.com/r/TechSEO">/r/TechSEO on Reddit</a>. Patrick also likes to share random SEO knowledge in Twitter threads he calls Uncommon SEO Knowledge. He's a well-known conference speaker, industry blogger (mostly on the <a hreflang="en" href="https://ahrefs.com/blog/">Ahref's blog</a> these days), judge of search awards, and he helped define the role of Search Marketing Strategist for the US Department of Labor.
-Tomek3c_bio: Tomek is the Head of Research and Development at <a hreflang="en" href="http://onely.com/">Onely</a>. He's also building <a hreflang="en" href="https://www.ziptie.dev/">ZipTie</a>, a product aiming to help website owners get more content indexed by Google.
-In his spare time, he enjoys hiking and playing poker.
-wrttnwrd_bio: Ian is a marketing consultant, SEO, speaker, and recovering agency founder. He founded Portent, a digital marketing agency, in 1995, and sold it to Clearlink in 2017. He's now on his own, <a hreflang="en" href="https://www.ianlurie.com/digital-marketing-consulting/">consulting for brands</a> he loves and <a hreflang="en" href="https://www.ianlurie.com/speaking/">speaking at conferences</a> that provide Diet Coke. He's also trying to become a professional Dungeons & Dragons player, but it hasn't panned out.
-You can find him pedaling his bike up Seattle's ridiculous hills.
+Tomek3c_bio: Tomek is the Head of Research and Development at <a hreflang="en" href="http://onely.com/">Onely</a>. He's also building <a hreflang="en" href="https://www.ziptie.dev/">ZipTie</a>, a product aiming to help website owners get more content indexed by Google. In his spare time, he enjoys hiking and playing poker.
+wrttnwrd_bio: Ian is a marketing consultant, SEO, speaker, and recovering agency founder. He founded Portent, a digital marketing agency, in 1995, and sold it to Clearlink in 2017. He's now on his own, <a hreflang="en" href="https://www.ianlurie.com/digital-marketing-consulting/">consulting for brands</a> he loves and <a hreflang="en" href="https://www.ianlurie.com/speaking/">speaking at conferences</a> that provide Diet Coke. He's also trying to become a professional Dungeons & Dragons player, but it hasn't panned out. You can find him pedaling his bike up Seattle's ridiculous hills.
 featured_quote: SEO is more popular than ever and has seen huge growth over the last couple years as companies sought new ways to reach customers. SEO's popularity has far outpaced other digital channels.
 featured_stat_1: 16.5%
 featured_stat_label_1: Websites that don't have a robots.txt file
@@ -120,7 +118,7 @@ Most robots.txt files are fairly small, weighing between 0-100 kb. However, we d
    )
 }}
 
-You can declare a rule for all robots or specify a rule for specific robots. Bots usually try to follow the most specific rule for their user-agents. `Disallow: Googlebot` will refer to Googlebot only, while `Disallow: *` will refer to all bots that don't have a more specific rule.
+You can declare a rule for all robots or specify a rule for specific robots. Bots usually try to follow the most specific rule for their user-agents. `User-agent: Googlebot` will refer to Googlebot only, while `User-agent: *` will refer to all bots that don't have a more specific rule.
 
 We saw two popular SEO-related robots: `mj12bot` (Majestic) and `ahrefsbot` (Ahrefs) in the top 5 most specified user agents.
 
@@ -430,7 +428,7 @@ Note that missing `alt` attributes may not indicate a problem. Pages may include
 
 {{ figure_markup(
    image="images-with-missing-alt-attribute.png",
-   caption="Percentage of images missing alt attributes.",
+   caption="Percentage of images missing `alt` attributes.",
    description="Bar chart showing the percent of images with `alt` attributes missing per percentile (10, 25, 50, 75, and 90). The median web page had 1.4% of images with `alt` attributes missing on desktop on zero `alt` attributes missing on mobile.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=819909313&format=interactive",
    sheets_gid="412947118",
@@ -452,7 +450,7 @@ The `loading` attribute on `<img>` elements affects how user agents prioritize r
 {{ figure_markup(
    image="image-loading-property-usage.png",
    caption="Image loading property usage.",
-   description='Bar chart showing percent of pages and image loading property usage (missing, lazy, eager, invalid, auto, and blank). Our data found that 83.3% of desktop and 83.5% of mobile pages were missing an image loading property. We found that 15.6% of desktop and mobile pages use `loading="lazy"` while only .8% of desktop and mobile pages use `loading="eager"`. Other image loading properties such as `loading="invalid"`, `loading="auto"`, and `loading="blank"` were used on less than 1% of desktop or mobile pages.',
+   description='Bar chart showing percent of pages and image loading property usage (missing, lazy, eager, invalid, auto, and blank). Our data found that 83.3% of desktop and 83.5% of mobile pages were missing an image loading property. We found that 15.6% of desktop and mobile pages use `loading="lazy"` while only .8% of desktop and mobile pages use `loading="eager"`. The number of other cases is less than 1% on desktop and mobile pages, this includes cases with an invalid or blank property or with `loading="auto"`.',
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1305654777&format=interactive",
    sheets_gid="55531578",
    sql_file="image-loading-property-usage.sql"
@@ -506,7 +504,7 @@ Next, we look at the raw page content _Raw_ is the content of the page before th
 
 - The median _raw_ desktop page contains 369 words, versus 360 words in 2020.
 - The median _raw_ mobile page contains 321 words, versus 312 words in 2020.
-- Raw mobile pages contain 13.1% fewer words than rendered desktop pages. Note that Google is a mobile-only index. Content not on the mobile HTML version may not get indexed.
+- Raw mobile pages contain 13.1% fewer words than raw desktop pages. Note that Google is a mobile-only index. Content not on the mobile HTML version may not get indexed.
 
 Overall, 15% of written content on desktop devices is generated by JavaScript and 14.3% on mobile versions.
 
@@ -573,7 +571,7 @@ Heading elements (`<h1>`, `<h2>`, etc.) are an important structural element. Whi
 {{ figure_markup(
    image="heading-element-usage.png",
    caption="Heading element usage.",
-   description="Bar chart showing the percent of pages with the presence of H elements by heading tag (level 1, 2, 3, 4). There was little to no difference between desktop and mobile results. `h1` headings were found on 65.4% of pages, `h2`s were found the most frequently on 71.9% of pages, `h3`3s were found on 61.8% of pages and `h4` headings were found on 37.6% of pages.",
+   description="Bar chart showing the percent of pages with the presence of H elements by heading tag (level 1, 2, 3, 4). There was little to no difference between desktop and mobile results. `h1` headings were found on 65.4% of pages, `h2`s were found the most frequently on 71.9% of pages, `h3`s were found on 61.8% of pages and `h4` headings were found on 37.6% of pages.",
    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1197492338&format=interactive",
    sheets_gid="1347655296",
    sql_file="seo-stats.sql"

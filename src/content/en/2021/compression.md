@@ -193,7 +193,7 @@ To check which content of a website is using HTTP compression, the [Firefox Deve
 Responses that are Gzip compressed will show "gzip", while those compressed with Brotli will show "br". If the value is blank, no HTTP compression is used. For images this is normal, since these resources are already compressed on their own.
 
 {{ figure_markup(
-  image="content-encoding.png",
+  image="content-encoding.jpg",
   caption='Chrome DevTools checking the content-encoding of responses',
   description="Image showing how to use Chrome DevTools to see if content encoding is used.",
   width=575,

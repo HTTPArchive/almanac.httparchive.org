@@ -25,7 +25,7 @@ CSS (Cascading Style Sheets) is one of the three main pillars for building pages
 
 Compared to last edition, the 2021 Web Almanac offers a deeper insight into how the use of CSS differs in the realm of what we all think we need versus what we actually see in production. As the calls for more robust CSS features and the challenge of centering a `<div>` with CSS kept making the rounds on our blog posts, conference talks, and Twitter chatter, pages around the web offered us vastly contradicting results, betraying the fact that CSS has, perhaps, become old enough to put more thought on staying stable instead of going wild with the zaniest of toys.
 
-While CSS-in-JS adoption grew to 3% of all pages crawled (a 1% jump from last year), cutting-edge Houdini features are still mostly confined to tutorials and example galleries. Responsiveness continued to be one of most engrossing priorities, with `max-width` and `min-width` being the top media queries, and calc() being the top CSS function most commonly in use to determine widths.
+While CSS-in-JS adoption grew to 3% of all pages crawled (a 1 percentage point jump from last year), cutting-edge Houdini features are still mostly confined to tutorials and example galleries. Responsiveness continued to be one of most engrossing priorities, with `max-width` and `min-width` being the top media queries, and calc() being the top CSS function most commonly in use to determine widths.
 
 As users continue to throng to the web, let's jump into the data that would give us a better insight into how we have been faring in painting the internet—a place that is a second home, a workspace, a garage, or a rabbit hole for the rest of us.
 

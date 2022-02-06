@@ -461,7 +461,7 @@ Images are one of the bottlenecks of good User Experience (UX). If they are larg
 {{ figure_markup(
   image="image-adoption.png",
   caption="Adoption of image format.",
-  description="Bar chart represents adoption of image format usage for SSG pages. `png` is 32.7% on desktop and 29.0% on mobile, `jpg` is 27.7% and 26.2% respectivelty, `gif` is 16.2% and 19.5%, `svg` is 15.3% and 18.0%, `webp` is 5.8% and 5.1%, and finally `ico` is 2.1% and 2.0%.",
+  description="Bar chart represents adoption of image format usage for SSG pages. `png` is 32.7% on desktop and 29.0% on mobile, `jpg` is 27.7% and 26.2% respectively, `gif` is 16.2% and 19.5%, `svg` is 15.3% and 18.0%, `webp` is 5.8% and 5.1%, and finally `ico` is 2.1% and 2.0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=470820948&format=interactive",
   sheets_gid="626634977",
   sql_file="adoption_of_image_formats_in_ssgs.sql"

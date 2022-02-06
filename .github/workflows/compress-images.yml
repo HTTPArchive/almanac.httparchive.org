@@ -31,7 +31,7 @@ on:
   workflow_dispatch:
   schedule:
     # Run a full compression every Sunday at 11pm to start the week right
-    - cron:  '00 23 * * 0'
+    - cron: '00 23 * * 0'
 jobs:
   build:
     name: Compress All Images
@@ -57,7 +57,7 @@ jobs:
           github.event_name != 'pull_request' &&
           steps.calibre.outputs.markdown != ''
         id: cpr
-        uses: peter-evans/create-pull-request@v3.11.0
+        uses: peter-evans/create-pull-request@v3.12.1
         with:
           title: Auto Compress Images
           branch-suffix: timestamp
