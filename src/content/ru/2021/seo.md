@@ -732,7 +732,7 @@ Core Web Vitals — это новые показатели скорости, к�
 
 Для Bing [`hreflang` является "гораздо более слабым сигналом", чем HTTP-заголовок `content-language`](https://twitter.com/facan/status/1304120691172601856).
 
-Как и многие другие параметры SEO, у [`content-language`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language) есть несколько методов реализации, включая:
+Как и многие другие параметры SEO, у [`content-language`](https://developer.mozilla.org/ru/docs/Web/HTTP/Headers/Content-Language) есть несколько методов реализации, включая:
 
 1. HTTP-заголовок
 2. HTML-тег
