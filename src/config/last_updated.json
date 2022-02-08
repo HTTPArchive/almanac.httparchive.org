@@ -1411,8 +1411,8 @@
   },
   "nl/2021/chapters/privacy.html": {
     "date_published": "2021-12-01T00:00:00.000Z",
-    "date_modified": "2021-12-04T00:00:00.000Z",
-    "hash": "ef70baa459b26457ad5af0ab2ce860c3"
+    "date_modified": "2022-02-08T00:00:00.000Z",
+    "hash": "648cf43bb7020efc9ad108060bd6909b"
   },
   "nl/2021/contributors.html": {
     "date_published": "2021-11-17T00:00:00.000Z",
@@ -1568,6 +1568,11 @@
     "date_published": "2021-11-17T00:00:00.000Z",
     "date_modified": "2021-12-01T00:00:00.000Z",
     "hash": "267b9fd5055e8d9b8085c0ec027c4c2c"
+  },
+  "ru/2021/chapters/seo.html": {
+    "date_published": "2022-02-08T00:00:00.000Z",
+    "date_modified": "2022-02-08T00:00:00.000Z",
+    "hash": "5e18546c86ea9f4004660d2683d4249b"
   },
   "ru/2021/contributors.html": {
     "date_published": "2021-11-17T00:00:00.000Z",
