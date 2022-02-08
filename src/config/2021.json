@@ -1250,6 +1250,17 @@
       ],
       "github": "tosinarasi"
     },
+    "kartashovio": {
+      "name": "Timur Kartashov",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "60577846",
+      "website": "https://kartashov.io/",
+      "twitter": "krutoi_paren",
+      "github": "kartashovio",
+      "linkedin": "kartashov-io"
+    },
     "victorlep": {
       "name": "Victor Le Pochat",
       "teams": [
@@ -1287,17 +1298,6 @@
       ],
       "avatar_url": "60089915",
       "github": "ziemek-bucko"
-    },
-    "kartashovio": {
-      "name": "Timur Kartashov",
-      "teams": [
-        "translators"
-      ],
-      "avatar_url": "60577846",
-      "website": "https://kartashov.io/",
-      "twitter": "krutoi_paren",
-      "github": "kartashovio",
-      "linkedin": "kartashov-io"
     }
   }
 }
