@@ -329,7 +329,7 @@ HTTP-verzoeken kunnen een optionele `Referer`-header ("verwijzer") bevatten, die
 * Navigatieverzoeken, wanneer een gebruiker op een link klikt.
 * Verzoeken voor subbronnen, wanneer een browser afbeeldingen, iframes, scripts en andere bronnen die een pagina nodig heeft opvraagt.
 
-Voor navigaties en ifrmaes, kunnen deze gegevens ook opgevraagd worden via JavaScript door `document.referrer` te gebruiken.
+Voor navigaties en iframes, kunnen deze gegevens ook opgevraagd worden via JavaScript door `document.referrer` te gebruiken.
 
 De `Referer`-waarde kan goede inzichten bieden. Maar wanneer de volledige URL inclusief het pad en de vraagstring in de `Referer` over oorsprongen heen gestuurd wordt, kan dit privacyverhinderend zijn: URL's kunnen privé-informatie bevatten—soms zelfs identificerende of gevoelige informatie. Het stilletjes lekken hiervan over oorsprongen heen kan de privacy van gebruikers aantasten en beveiligingsrisico's inhouden. De HTTP-header [`Referrer-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) laat ontwikkelaars toe om te beperken welke verwijzergegevens toegankelijk wordt gemaakt aan verzoeken vanop hun website, om dit risico te verminderen.
 
