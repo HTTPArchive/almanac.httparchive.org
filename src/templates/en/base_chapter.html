@@ -4,7 +4,7 @@
 {% block citation_title %}The {{ year }} Web Almanac: {{ metadata.get('title') }}{% endblock %}
 {% block citation_journal_title %}The {{ year }} Web Almanac{% endblock %}
 
-{% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title')) + ' on the web.') }}{% endblock %}
+{% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('title') + ' on the web.') }}{% endblock %}
 
 {% block twitter_image_alt %}Chapter image for the {{ metadata.get('title') }} chapter of the {{ year }} Web Almanac{% endblock %}
 

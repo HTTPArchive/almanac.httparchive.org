@@ -4,7 +4,7 @@
 {% block citation_title %}{{ year }} Web Almanac: {{ metadata.get('title') }}{% endblock %}
 {% block citation_journal_title %}{{ year }} Web Almanac{% endblock %}
 
-{% block description %}{{ metadata.get('description',metadata.get('title') + ' 章節 ' + year + ' Web Almanac 探索使用狀況 ' + metadata.get('description',metadata.get('title')) + ' 在網路中。') }}{% endblock %}
+{% block description %}{{ metadata.get('description',metadata.get('title') + ' 章節 ' + year + ' Web Almanac 探索使用狀況 ' + metadata.get('title') + ' 在網路中。') }}{% endblock %}
 
 {% block twitter_image_alt %}圖片 {{ metadata.get('title') }} 章節 {{ year }} Web Almanac{% endblock %}
 

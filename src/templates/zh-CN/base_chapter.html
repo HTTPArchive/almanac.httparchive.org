@@ -4,7 +4,7 @@
 {% block citation_title %}{{ year }} Web Almanac网络年鉴: {{ metadata.get('title') }}{% endblock %}
 {% block citation_journal_title %}{{ year }} Web Almanac网络年鉴{% endblock %}
 
-{% block description %}{{ metadata.get('description',metadata.get('title') + ' 章节 ' + year + ' 调查Web Almanac的使用状况 ' + metadata.get('description',metadata.get('title')) + ' 在 web中。') }}{% endblock %}
+{% block description %}{{ metadata.get('description',metadata.get('title') + ' 章节 ' + year + ' 调查Web Almanac的使用状况 ' + metadata.get('title') + ' 在 web中。') }}{% endblock %}
 
 {% block twitter_image_alt %}的章节图像{{ metadata.get('title') }} 章节 {{ year }} Web Almanac{% endblock %}
 
