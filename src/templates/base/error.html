@@ -1,10 +1,6 @@
 {% extends "%s/%s/base.html" % (lang, year) %}
 
-{% block title %}
-  {% block error %}
-    {{ localizedStatusCode[error.code] if localizedStatusCode[error.code]|length else self.unknown_error() }}
-  {% endblock %}
-{% endblock %}
+{% block title %}{{ localizedStatusCode[error.code] if localizedStatusCode[error.code]|length else self.unknown_error() }}{% endblock %}
 
 {% block styles %}
 {{ super() }}
@@ -43,7 +39,7 @@
 {% block main %}
   <main class="main">
     <h1>
-      {{ expandedTitle(self.error()) }}
+      {{ expandedTitle(self.title()) }}
     </h1>
     {% block custom %}
       <p class="error-message">
