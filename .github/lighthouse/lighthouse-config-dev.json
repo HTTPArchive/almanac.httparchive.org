@@ -10,6 +10,7 @@
         "first-cpu-idle": "off",
         "first-meaningful-paint": "off",
         "font-display": "off",
+        "inspector-issues": "off",
         "installable-manifest": "off",
         "interactive": "off",
         "is-crawlable": "off",
@@ -31,6 +32,7 @@
         "unused-javascript": "off",
         "uses-long-cache-ttl": "off",
         "uses-passive-event-listeners": "off",
+        "uses-rel-preconnect": "off",
         "uses-text-compression": "off",
         "uses-responsive-images": "off",
         "uses-webp-images": "off"
