@@ -18,11 +18,6 @@
                 "ignoreFontFamilyNames": ["monospace"]
             }
         ],
-        "function-no-unknown": [
-            {
-                "ignoreFunctions" : ["content"]
-            }
-        ],
         "length-zero-no-unit": null,
         "max-line-length": null,
         "no-descending-specificity": null,
