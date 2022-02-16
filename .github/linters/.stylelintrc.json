@@ -19,6 +19,7 @@
             }
         ],
         "function-no-unknown": [
+            true,
             {
                 "ignoreFunctions" : ["content"]
             }
