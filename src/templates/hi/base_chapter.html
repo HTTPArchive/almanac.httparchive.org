@@ -4,7 +4,7 @@
 {% block citation_title %}{{ year }} Web Almanac: {{ metadata.get('title') }}{% endblock %}
 {% block citation_journal_title %}{{ year }} Web Almanac{% endblock %}
 
-{% block description %}{{ 'Web Almanac ' + year + ' के ' metadata.get('description',metadata.get('title') + ' अध्याय में ' + metadata.get('description',metadata.get('title')) + ' को कवर किया गया है!') }}{% endblock %}
+{% block description %}{{ metadata.get('description', 'Web Almanac ' + year + ' के ' + metadata.get('title') + ' अध्याय में ' + metadata.get('title') + ' को कवर किया गया है!') }}{% endblock %}
 
 {% block twitter_image_alt %}Web Almanac {{ year }} के {{ metadata.get('title') }} अध्याय के लिए अध्याय छवि{% endblock %}
 

@@ -4,7 +4,7 @@
 {% block citation_title %}Web Almanac за {{ year }} год: {{ metadata.get('title') }}{% endblock %}
 {% block citation_journal_title %}Web Almanac за {{ year }} год{% endblock %}
 
-{% block description %}{{ 'Глава ' + metadata.get('description',metadata.get('title') + ' в Web Almanac за ' + year + ' год разбирает использование ' + metadata.get('description',metadata.get('title')) + ' в вебе.') }}{% endblock %}
+{% block description %}{{metadata.get('description', 'Глава ' + metadata.get('title') + ' в Web Almanac за ' + year + ' год разбирает использование ' + metadata.get('title') + ' в вебе.') }}{% endblock %}
 
 {% block twitter_image_alt %}Изображение для главы {{ metadata.get('title') }} в Web Almanac за {{ year }} год{% endblock %}
 

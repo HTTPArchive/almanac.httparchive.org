@@ -4,7 +4,7 @@
 {% block citation_title %}{{ year }} Web Almanac: {{ metadata.get('title') }}{% endblock %}
 {% block citation_journal_title %}{{ year }} Web Almanac{% endblock %}
 
-{% block description %}{{ metadata.get('description',metadata.get('title') + ' の章 ' + year + ' Web Almanacの使用状況を調べる ' + metadata.get('description',metadata.get('title')) + ' をウェブ上で公開しています。') }}{% endblock %}
+{% block description %}{{ metadata.get('description',metadata.get('title') + ' の章 ' + year + ' Web Almanacの使用状況を調べる ' + metadata.get('title') + ' をウェブ上で公開しています。') }}{% endblock %}
 
 {% block twitter_image_alt %}のチャプター画像 {{ metadata.get('title') }} の章 {{ year }} Web Almanac{% endblock %}
 

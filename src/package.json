@@ -40,11 +40,11 @@
     "node-fetch": "3.2.0",
     "node-watch": "0.7.3",
     "prettier": "2.5.1",
-    "puppeteer": "13.2.0",
+    "puppeteer": "13.3.2",
     "rainbow-code": "2.1.7",
     "recursive-readdir": "2.2.2",
     "run-script-os": "1.1.6",
-    "showdown": "1.9.1",
+    "showdown": "2.0.0",
     "smartypants": "0.1.6",
     "web-vitals": "2.1.4",
     "xml-js": "1.6.11"

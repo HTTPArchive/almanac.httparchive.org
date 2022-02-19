@@ -40,7 +40,7 @@ jobs:
     - name: Use more complete checks for generated HTML linting
       run: cp -f .github/linters/.htmlhintrc_morechecks .github/linters/.htmlhintrc
     - name: Lint Generated HTML
-      uses: github/super-linter@v4.8.7
+      uses: github/super-linter@v4.9.0
       env:
         DEFAULT_BRANCH: main
         FILTER_REGEX_INCLUDE: src/static/html/.*
@@ -53,7 +53,7 @@ jobs:
         COMMIT_SHA: ${{ github.sha }}
       run: ./src/tools/scripts/set_lighthouse_urls.sh
     - name: Audit URLs using Lighthouse
-      uses: treosh/lighthouse-ci-action@8.2.0
+      uses: treosh/lighthouse-ci-action@9.3.0
       id: LHCIAction
       with:
         # For dev, turn off all timing perf audits (too unreliable) and a few others that don't work on dev
