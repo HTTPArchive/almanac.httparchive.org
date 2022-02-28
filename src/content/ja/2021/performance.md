@@ -20,7 +20,7 @@ featured_stat_label_3: 最長の総ブロッキング時間
 
 ## 序章
 
-ユーザー体験にとって、パフォーマンスは重要です。読み込みが遅く、反応が遅いWebサイトは、ユーザーをイライラさせ、コンバージョンの低下を招きます。<a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a>が<a hreflang="en" href="https://developers.google.com/search/blog/2020/11/timing-for-page-experience">Google検索ランキング</a>に寄与するのは今年がはじめてです。そのため、ウェブサイトのパフォーマンス向上に対する関心が高まっており、ユーザーにとっては嬉しいニュースです。
+ユーザー体験にとって、パフォーマンスは重要です。読み込みが遅く、反応が遅いWebサイトは、ユーザーをイライラさせ、コンバージョンの低下を招きます。<a hreflang="ja" href="https://web.dev/i18n/ja/vitals/">Core Web Vitals</a>が<a hreflang="en" href="https://developers.google.com/search/blog/2020/11/timing-for-page-experience">Google検索ランキング</a>に寄与するのは今年がはじめてです。そのため、ウェブサイトのパフォーマンス向上に対する関心が高まっており、ユーザーにとっては嬉しいニュースです。
 
 *今年の報告書の主なポイントは何ですか？*まず、良いユーザー体験を提供するためには、まだ長い道のりが必要です。たとえば、ネットワークやデバイスの高速化は、JavaScriptの配信量を無視できるレベルにはまだ達していませんし、そこまで到達していないかもしれません。2つ目は、新機能を性能のために誤用し、結果的に性能が低下します。第三に、インタラクティブ性を測定するためのより良い測定基準が必要であり、それは現在進行中です。そして、4つ目は、CMSやフレームワークレベルのパフォーマンスへの取り組みが、上位1000万のウェブサイトのユーザー体験に大きな影響を与える可能性があることです。
 
@@ -219,7 +219,7 @@ TTFBはまだまだこれからです。当社のウェブサイトの75％は4G
   link="https://datastudio.google.com/s/o6zLzlTpWaI",
   image="cms_ttfb_cwv_report.png",
   caption='CMSによる良いTTFBを持つオリジン (<a hreflang="en" href="https://datastudio.google.com/s/o6zLzlTpWaI">Core Web Vitalsテクノロジーレポート</a>)',
-  description="WordPress、Wix、Squarespaceの「Origin Having Good TTFB」の時系列チャート。7月は、WordPressとWixが5％、Squarespaceが20％でした。"
+  description="WordPress、Wix、Squarespaceの「良いTTFBを持つオリジン」の時系列チャート。7月は、WordPressとWixが5％、Squarespaceが20％でした。"
   )
 }}
 
