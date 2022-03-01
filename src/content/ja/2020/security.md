@@ -270,7 +270,7 @@ Let's Encryptが首位に立っているのを見ても不思議ではありま�
 
 他にも、<a hreflang="en" href="https://www.usenix.org/system/files/conference/usenixsecurity15/sec15-paper-lekies.pdf">Cross-Site Script Inclusion</a>のように、クロスサイトリクエストにCookieを含めることに依存する攻撃がいくつかあります。(XSSI)や、<a hreflang="en" href="https://xsleaks.dev/">XS-Leaks</a>の脆弱性クラスの様々な手法を利用することができます。さらに、ユーザの認証はCookieを介してのみ行われることが多いため、攻撃者はCookieを取得することでユーザになりすますことができます。これは中間者攻撃(MITM)で、ユーザを騙して安全ではないチャネルで認証を行うことができます。あるいは、クロスサイトスクリプティング(XSS)の脆弱性を悪用することで、攻撃者はDOMを通じて`document.cookie`にアクセスすることでCookieを漏洩させることができます。
 
-Cookieがもたらす脅威から身を守るために、ウェブサイトの開発者は、[Cookie](https://developer.mozilla.org/ja/docs/Web/HTTP/Cookies)に設定できる3つの属性、`HttpOnly`、`Secure`、および<a hreflang="en" href="https://web.dev/samesite-cookies-explained/">`SameSite`</a>を利用できます。1つ目はJavaScriptからのアクセスを防ぐもので、攻撃者がXSS攻撃でCookieを盗むことを防ぐことができます。`Secure`属性が設定されているCookieは、安全なHTTPS接続でのみ送信され、MITM攻撃での盗用を防げます。
+Cookieがもたらす脅威から身を守るために、ウェブサイトの開発者は、[Cookie](https://developer.mozilla.org/ja/docs/Web/HTTP/Cookies)に設定できる3つの属性、`HttpOnly`、`Secure`、および<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/samesite-cookies-explained/">`SameSite`</a>を利用できます。1つ目はJavaScriptからのアクセスを防ぐもので、攻撃者がXSS攻撃でCookieを盗むことを防ぐことができます。`Secure`属性が設定されているCookieは、安全なHTTPS接続でのみ送信され、MITM攻撃での盗用を防げます。
 
 最近導入された`SameSite`属性は、クロスサイトコンテキストでのCookieの送信方法を制限するために使用できます。属性には3つの値があります。`None`, `Lax`, `Strict` です。`SameSite=None`のCookieはすべてのクロスサイトリクエストに送信され、`Lax`のCookieはユーザーがリンクをクリックして新しいページに移動したときなどのナビゲートリクエストにのみ送信されます。最後に、`SameSite=Strict`属性を持つCookieはファーストパーティのコンテキストでのみ送信されます。
 
@@ -775,7 +775,7 @@ CSPの採用を容易にするもう1つのメカニズムはnoncesの使用で�
 
 他の2つのキーワード、`unsafe-inline`と`unsafe-eval`は、それぞれ97.28%、77.79%と大多数のCSPに存在しています。このことは、XSS攻撃を阻止するポリシーを実装することの難しさを思い知らされます。しかし、`strict-dynamic`キーワードが存在する場合、`unsafe-inline`や`unsafe-eval`キーワードは事実上無視されてしまいます。古いブラウザでは`strict-dynamic`キーワードはサポートされていない可能性があるため、すべてのブラウザのバージョンとの互換性を維持するため、他の2つの安全でないキーワードを含めることが最善の方法と考えられています。
 
-`strict-dynamic`や`nonce-`キーワードは、反映された持続的なXSS攻撃を防御するために使用できますが、保護されたページはDOMベースのXSS脆弱性に対して脆弱性を持っている可能性があります。このクラスの攻撃を防御するために、ウェブサイト開発者は<a hreflang="en" href="https://web.dev/trusted-types/">Trusted Types</a>を利用できます。これはかなり新しいメカニズムで、現在Chromiumベースのブラウザでのみサポートされています。Trusted Typesの採用には困難が伴う可能性があるにもかかわらず（ウェブサイトはポリシーを作成し、このポリシーに準拠するためJavaScriptコードを調整する必要があります）、また新しいメカニズムであることを考えると、11のホームページがCSPの`require-trusted-types-for`ディレクティブを通じてTrusted Typesをすでに採用していることは心強いことです。
+`strict-dynamic`や`nonce-`キーワードは、反映された持続的なXSS攻撃を防御するために使用できますが、保護されたページはDOMベースのXSS脆弱性に対して脆弱性を持っている可能性があります。このクラスの攻撃を防御するために、ウェブサイト開発者は<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/trusted-types/">Trusted Types</a>を利用できます。これはかなり新しいメカニズムで、現在Chromiumベースのブラウザでのみサポートされています。Trusted Typesの採用には困難が伴う可能性があるにもかかわらず（ウェブサイトはポリシーを作成し、このポリシーに準拠するためJavaScriptコードを調整する必要があります）、また新しいメカニズムであることを考えると、11のホームページがCSPの`require-trusted-types-for`ディレクティブを通じてTrusted Typesをすでに採用していることは心強いことです。
 
 ### クロスオリジンポリシーによるXSリークの防御
 

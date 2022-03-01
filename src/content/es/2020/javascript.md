@@ -113,7 +113,7 @@ Los números sin procesar pueden o no saltar a tu vista dependiendo de que tan a
 Esos 153 KB equivalen a alrededor de 37% del tamaño total del código que le enviamos a los dispositivos móviles. Esto definitivamente puede mejorar.
 
 ### `module` y `nomodule`
-Un mecanismo que tenemos que tiene el potencial de reducir la cantidad de código que enviamos es utilizar <a hreflang="en" href="https://web.dev/serve-modern-code-to-modern-browsers/">el patrón `module`/`nomodule`</a>. Con este patrón, creamos dos <i lang="en">bundles</i>: uno para navegadores modernos y otro para navegadores <i lang="en">legacy</i>. Al <i lang="en">bundle</i> para navegadores modernos se le asigna `type=module` y al <i lang="en">bundle</i> para navegadores <i lang="en">legacy</i> se le asigna `type=nomodule`.
+Un mecanismo que tenemos que tiene el potencial de reducir la cantidad de código que enviamos es utilizar <a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/serve-modern-code-to-modern-browsers/">el patrón `module`/`nomodule`</a>. Con este patrón, creamos dos <i lang="en">bundles</i>: uno para navegadores modernos y otro para navegadores <i lang="en">legacy</i>. Al <i lang="en">bundle</i> para navegadores modernos se le asigna `type=module` y al <i lang="en">bundle</i> para navegadores <i lang="en">legacy</i> se le asigna `type=nomodule`.
 
 Esta estrategia nos permite crear <i lang="en">bundles</i> más pequeños utilizando sintaxis moderna optimizada para los browsers que son compatibles, mientras tanto, también proveemos <i lang="en">polyfills</i> cargados condicionalmente y una sintaxis diferente para los que no son compatibles.
 
@@ -121,7 +121,7 @@ La compatibilidad con `module` y `nomodule` va en aumento pero aún es una estra
 
 ### Conteo de peticiones
 
-Otra manera de ver cuánto JavaScript usamos es explorar cuantas peticiones de JavaScript son hechas por página. Reducir el número de peticiones era fundamental para tener un buen desempeño usando HTTP/1.1, sin embargo, con HTTP/2 aplica lo contrario: dividir el código en JavaScript en <a hreflang="en" href="https://web.dev/granular-chunking-nextjs/">archivos individuales y más pequeños</a> resulta en [un mejor desempeño en general](../2019/http#impact-of-http2).
+Otra manera de ver cuánto JavaScript usamos es explorar cuantas peticiones de JavaScript son hechas por página. Reducir el número de peticiones era fundamental para tener un buen desempeño usando HTTP/1.1, sin embargo, con HTTP/2 aplica lo contrario: dividir el código en JavaScript en <a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/granular-chunking-nextjs/">archivos individuales y más pequeños</a> resulta en [un mejor desempeño en general](../2019/http#impact-of-http2).
 
 {{ figure_markup(
   image="requests-2020.png",

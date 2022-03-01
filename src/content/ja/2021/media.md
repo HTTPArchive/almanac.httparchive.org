@@ -61,7 +61,7 @@ featured_stat_label_3: 動画要素を含むデスクトップページのシェ
 
 これは驚きです。過去10年間、HTTP Archiveの毎月の<a hreflang="en" href="https://httparchive.org/reports/state-of-images">画像状態レポート</a>に掲載されてる<a hreflang="en" href="https://httparchive.org/reports/state-of-images#bytesImg">Image Bytes</a> チャートは、一見すると上昇する一方です。2021年、この流れを逆転させたのは何だったのか。後ほど詳しく説明する、ネイティブの遅延読み込みの急速な普及と関係があるのではないかと思います。
 
-いずれにせよ、量的に見れば、画像はウェブの中で非常に多くのものを占め続けているのです。しかし、要素数、リクエスト数、バイト数だけでは、画像がユーザーの体験にどれだけ重要であるかはわかりません。それを知るために、<a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> という指標を見てみましょう。これは、任意のページにおけるabove-the-foldコンテンツのもっとも重要な部分を識別しようとするものです。[パフォーマンス](./performance#fig-19)の章にあるように、LCP要素は約4分の3のページで画像が表示されます。
+いずれにせよ、量的に見れば、画像はウェブの中で非常に多くのものを占め続けているのです。しかし、要素数、リクエスト数、バイト数だけでは、画像がユーザーの体験にどれだけ重要であるかはわかりません。それを知るために、<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/lcp/">Largest Contentful Paint</a> という指標を見てみましょう。これは、任意のページにおけるabove-the-foldコンテンツのもっとも重要な部分を識別しようとするものです。[パフォーマンス](./performance#fig-19)の章にあるように、LCP要素は約4分の3のページで画像が表示されます。
 
 {{ figure_markup(
   content="70.6%",
@@ -301,7 +301,7 @@ JPEGの中央値は、1ピクセルあたり2.1ビットです。このフォー
 
 PNGの中央値は、その2倍以上です。PNGはロスレスフォーマットと呼ばれることがありますが、1ピクセルあたり4.6ビットの中央値は、これがいかに誤ったものであるかを示しています。真のロスレス圧縮は、通常、1ピクセルあたり約12〜16ビット（アルファチャンネルを扱うかどうかによって異なる）に収まるはずです。PNGがこれほどまでに低いのは、一般的なPNGツールは通常、_非可逆圧縮_だからです。圧縮率を高めるために、ピクセルをエンコードする前にカラーパレットを減らしたり、ディザリングパターンを導入したりと、ピクセルに手を加えてしまうのです。
 
-1ピクセルあたり7.4ビットのGIFは、ここではひどく見劣りします。<a hreflang="en" href="https://web.dev/efficient-animated-content/">これら</a> <a hreflang="en" href="https://bitsofco.de/optimising-gifs/">は</a> <a hreflang="en" href="https://dougsillars.com/2019/01/15/state-of-the-web-animated-gifs/">大変</a>！しかし、ウェブ上の多くのGIFはアニメーションであるため、ここでも少し不利な立場に立たされています。WebプラットフォームのAPIは、アニメーション画像のフレーム数を公開しないため、フレーム数を考慮していない。たとえば、1ピクセルあたり20ビットで計測されるGIFは、10フレームを含む場合、1ピクセルあたり2ビットと計算するのが妥当でしょう。
+1ピクセルあたり7.4ビットのGIFは、ここではひどく見劣りします。<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/efficient-animated-content/">これら</a> <a hreflang="en" href="https://bitsofco.de/optimising-gifs/">は</a> <a hreflang="en" href="https://dougsillars.com/2019/01/15/state-of-the-web-animated-gifs/">大変</a>！しかし、ウェブ上の多くのGIFはアニメーションであるため、ここでも少し不利な立場に立たされています。WebプラットフォームのAPIは、アニメーション画像のフレーム数を公開しないため、フレーム数を考慮していない。たとえば、1ピクセルあたり20ビットで計測されるGIFは、10フレームを含む場合、1ピクセルあたり2ビットと計算するのが妥当でしょう。
 
 次世代フォーマットである2つのフォーマットについて見てみると、実に興味深いことがわかります。WebPとAVIFです。どちらも1ピクセルあたり1.3〜1.5ビットで、JPEGより40％近く軽くなっています。<a hreflang="en" href="https://kornel.ski/en/faircomparison">matched qualities</a> を使用した正式な研究では、WebPはJPEGよりも <a hreflang="en" href="https://developers.google.com/speed/webp/docs/webp_study">25 ～ 34%</a> 高性能であり、実際のパフォーマンスは驚くほど *良い* と思われます。一方、AVIFの作成者は、<a hreflang="en" href="https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4">実験室で、最新のJPEGエンコーダーJPEGを50% 以上上回ることができる</a>というデータを発表しています。ですから、ここでのAVIFの性能は良いのですが、私はもっと良い結果を期待していました。実験室のデータと実際の性能の間にあるこのような不一致について、私はいくつかの可能性を考えることができます。
 
@@ -337,7 +337,7 @@ WebPとAVIFの採用が時間とともにどのように変化したか（およ
 
 #### 遅延読み込み
 
-ウェブ上の画像に関して今年ブレイクアウトした話があるとすれば、<a hreflang="en" href="https://web.dev/browser-level-image-lazy-loading/">ネイティブ遅延読み込み</a>の採用でしょう。このチャートを見てください。
+ウェブ上の画像に関して今年ブレイクアウトした話があるとすれば、<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/browser-level-image-lazy-loading/">ネイティブ遅延読み込み</a>の採用でしょう。このチャートを見てください。
 
 {{ figure_markup(
   image="adoption-of-native-loading-lazy-on-img.png",
@@ -630,7 +630,7 @@ WebPとAVIFの採用が時間とともにどのように変化したか（およ
 
 デフォルトでは、画像が読み込まれ、その固有寸法が判明するまで、内在寸法のままではスペースを取りません。その時点で、パッとページに現れて、<a hreflang="en" href="https://developers.google.com/publisher-tag/guides/minimize-layout-shift">レイアウト シフト</a>が発生するのです。これは、まさに `height` と `width` 属性が解決するために発明された問題でした。<a hreflang="en" href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#img">1996年</a> 。
 
-残念ながら`height` と `width` は、ある次元では可変の外在サイズ（たとえば、 `width: 100%;`）が割り当てられ、他の次元では内在の縦横比を満たすように放置される画像とはうまく動作しません。これはレスポンシブデザインにおける支配的なパターンです。そのため、`width` と `height` はレスポンシブコンテキスト内で人気がなくなりましたが、2019年に [ブラウザが `height` と `width` を使用する方法を調整](https://developer.mozilla.org/ja/docs/Web/Media/images/aspect_ratio_mapping#a_new_way_of_sizing_images_before_loading_completes) によってこの問題が修正されました。さて、一貫して `height` と `width` を設定することは、<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> を減らすために作成者ができる最善のことの1つです。これらの属性はどれくらいの頻度でこのタスクを達成しているのでしょうか？
+残念ながら`height` と `width` は、ある次元では可変の外在サイズ（たとえば、 `width: 100%;`）が割り当てられ、他の次元では内在の縦横比を満たすように放置される画像とはうまく動作しません。これはレスポンシブデザインにおける支配的なパターンです。そのため、`width` と `height` はレスポンシブコンテキスト内で人気がなくなりましたが、2019年に [ブラウザが `height` と `width` を使用する方法を調整](https://developer.mozilla.org/ja/docs/Web/Media/images/aspect_ratio_mapping#a_new_way_of_sizing_images_before_loading_completes) によってこの問題が修正されました。さて、一貫して `height` と `width` を設定することは、<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/cls/">Cumulative Layout Shift</a> を減らすために作成者ができる最善のことの1つです。これらの属性はどれくらいの頻度でこのタスクを達成しているのでしょうか？
 
 {{ figure_markup(
   caption="モバイルの `<img>` のうち、`height` と `width` の両方の属性を持ち、1次元のみの外形寸法を持つものの割合です。",
@@ -661,7 +661,7 @@ WebPとAVIFの採用が時間とともにどのように変化したか（およ
   )
 }}
 
-クロスオリジン画像は、重要な[セキュリティ制限](https://developer.mozilla.org/ja/docs/Web/HTML/CORS_enabled_image)の対象となり、時には<a hreflang="en" href="https://andydavies.me/blog/2019/03/22/improving-perceived-performance-with-a-link-rel-equals-preconnect-http-header/">パフォーマンスコスト</a>を発生することがあります。一方、静的資産を専用のCDNに移動することは、[最初の1バイトまでの時間](https://developer.mozilla.org/en-US/docs/Glossary/time_to_first_byte) を助けるためにできるもっともインパクトのあることの1つです。画像CDNは、あらゆる種類のベストプラクティスを自動化できる強力な変換および <a hreflang="en" href="https://web.dev/image-cdns/">最適化</a> 機能を提供します。51%のクロスオリジン画像のうち、何枚が画像CDNでホストされているか、またそのパフォーマンスを他のウェブのものと比較することは、とても興味深いことでしょう。残念ながら、これは私たちの分析の範囲外でした。
+クロスオリジン画像は、重要な[セキュリティ制限](https://developer.mozilla.org/ja/docs/Web/HTML/CORS_enabled_image)の対象となり、時には<a hreflang="en" href="https://andydavies.me/blog/2019/03/22/improving-perceived-performance-with-a-link-rel-equals-preconnect-http-header/">パフォーマンスコスト</a>を発生することがあります。一方、静的資産を専用のCDNに移動することは、[最初の1バイトまでの時間](https://developer.mozilla.org/en-US/docs/Glossary/time_to_first_byte) を助けるためにできるもっともインパクトのあることの1つです。画像CDNは、あらゆる種類のベストプラクティスを自動化できる強力な変換および <a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/image-cdns/">最適化</a> 機能を提供します。51%のクロスオリジン画像のうち、何枚が画像CDNでホストされているか、またそのパフォーマンスを他のウェブのものと比較することは、とても興味深いことでしょう。残念ながら、これは私たちの分析の範囲外でした。
 
 と、いうことで、そろそろ目を向けてもいいのでは。。。
 

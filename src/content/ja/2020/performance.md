@@ -67,7 +67,7 @@ Lighthouse 5とLighthouse 6の比較では、スコアの分布がどのよう�
 
 ## Core Web Vitals: Largest Contentful Paint
 
-Largest Contentful Paint(LCP)は、最大の<a hreflang="en" href="https://web.dev/lcp/#what-elements-are-considered">above-the-fold要素</a>がレンダリングされた時間を報告する、画期的なタイミングベースのメトリックです。
+Largest Contentful Paint(LCP)は、最大の<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/lcp/#what-elements-are-considered">above-the-fold要素</a>がレンダリングされた時間を報告する、画期的なタイミングベースのメトリックです。
 
 ### デバイス別LCP
 
@@ -115,7 +115,7 @@ Largest Contentful Paint(LCP)は、最大の<a hreflang="en" href="https://web.d
 
 LCPは、最大のオーバーザフォールド要素（画像、動画、テキストを含むブロックレベルの要素を含む）がレンダリングされたときに表示されるタイミングなので、ネットワークの速度が遅いほど、測定値の悪い部分が多くなるのは当然のことです。
 
-ネットワーク速度とLCPパフォーマンスの向上には明確な相関関係がありますが、4Gであっても、結果が「良好」に分類されたのは48% に過ぎず、読み取り値の半分は改善が必要とされています。メディアの最適化を自動化し、適切なサイズとフォーマットを提供し、さらに低データモードに最適化することで、針を動かすことができるでしょう。このガイドでは、<a hreflang="en" href="https://web.dev/optimize-lcp/">LCPの最適化について詳しく説明しています</a>。
+ネットワーク速度とLCPパフォーマンスの向上には明確な相関関係がありますが、4Gであっても、結果が「良好」に分類されたのは48% に過ぎず、読み取り値の半分は改善が必要とされています。メディアの最適化を自動化し、適切なサイズとフォーマットを提供し、さらに低データモードに最適化することで、針を動かすことができるでしょう。このガイドでは、<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/optimize-lcp/">LCPの最適化について詳しく説明しています</a>。
 
 ## Core Web Vitals: Cumulative Layout Shift
 
@@ -153,7 +153,7 @@ CrUXのデータによると、デスクトップの場合もモバイルの場�
 
 異なる地域でのCLSのパフォーマンスは主に良好で、少なくとも56％のサイトが「良好」と評価されました。これは、視覚的に安定していると思われる優れたニュースです。LCPの地域分布で見られたように、韓国、日本、チェコ、ドイツ、ポーランドといった国が上位を占めていることがわかります。
 
-視覚的安定性は、LCPのような他のメトリクスに対する地理的および遅延の影響を受けにくい。上位の国と下位の国との間の良い評価の割合の差は、LCPでは61％、CLSではわずか13％です。中程度の評価のウェブサイトの割合は全体的に比較的低く、全体的に悪い体験の割合は19%～29%となっています。CLSの低下には多くの要因があります。<a hreflang="en" href="https://web.dev/optimize-cls/">Optimize Cumulative Layout Shift guide</a>では、それらの要因に対処する方法を紹介しています。
+視覚的安定性は、LCPのような他のメトリクスに対する地理的および遅延の影響を受けにくい。上位の国と下位の国との間の良い評価の割合の差は、LCPでは61％、CLSではわずか13％です。中程度の評価のウェブサイトの割合は全体的に比較的低く、全体的に悪い体験の割合は19%～29%となっています。CLSの低下には多くの要因があります。<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/optimize-cls/">Optimize Cumulative Layout Shift guide</a>では、それらの要因に対処する方法を紹介しています。
 
 ### 接続タイプ別CLS
 
@@ -303,7 +303,7 @@ First Contentful Paint（FCP）は、ブラウザがテキスト、画像、非�
 
 この傾向は、デジタルデバイドの拡大を示しており、遅いネットワークや潜在的に性能の低いデバイスでの体験は一貫して悪化しています。低速回線でのFCPの改善は、TTFBの改善に直結します。これは、[接続タイプ別TTFBパフォーマンス集計表](#ttfb-by-connection-type)でも確認できます。
 
-<a hreflang="en" href="https://ismyhostfastyet.com/">ホスティングプロバイダー</a>や<a hreflang="en" href="https://www.cdnperf.com/">CDN</a>の選択は、速度に連鎖的な影響を与えます。最速の配信に基づいてこれらの決定を行うことは、とくに低速のネットワークでは、FCPとTTFBの改善に役立ちます。FCPはフォントの読み込み時間にも大きく影響されるため、<a hreflang="en" href="https://web.dev/font-display/">Webフォントのダウンロード中にテキストが表示されるようにする</a>ことも価値のある戦略です（とくに、低速の接続ではこれらのリソースを取得するのにコストがかかる場合）。
+<a hreflang="en" href="https://ismyhostfastyet.com/">ホスティングプロバイダー</a>や<a hreflang="en" href="https://www.cdnperf.com/">CDN</a>の選択は、速度に連鎖的な影響を与えます。最速の配信に基づいてこれらの決定を行うことは、とくに低速のネットワークでは、FCPとTTFBの改善に役立ちます。FCPはフォントの読み込み時間にも大きく影響されるため、<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/font-display/">Webフォントのダウンロード中にテキストが表示されるようにする</a>ことも価値のある戦略です（とくに、低速の接続ではこれらのリソースを取得するのにコストがかかる場合）。
 
 「オフライン」の統計を見ると、かなりの数のFCP問題もネットワークの種類とは相関していないことが推測できます。このカテゴリーでは、その言葉が真実であれば得られるであろう、大きな利益は観察されません。レンダリングは、JavaScriptを取得することでそれほど遅延しないように見えますが、解析と実行に影響されます。
 
@@ -361,7 +361,7 @@ TTFBは、ネットワークのレイテンシーと接続タイプの影響を�
 
 ## パフォーマンス・オブザーバーの使い方
 
-Webサイトやアプリケーションの評価に使用できるユーザー中心の評価基準は、何十種類もあります。しかし、事前に定義された評価基準は、私たちの特定のシナリオやニーズにまったく合わないことがあります。[PerformanceObserver API](https://developer.mozilla.org/ja/docs/Web/API/PerformanceObserver)では、[User Timing API](https://developer.mozilla.org/ja/docs/Web/API/User_Timing_API)、[Long Task API](https://developer.mozilla.org/ja/docs/Web/API/Long_Tasks_API)、<a hreflang="en" href="https://web.dev/custom-metrics/#event-timing-api">Event Timing API</a>や<a hreflang="en" href="https://web.dev/custom-metrics/">その他のいくつかの低レベルAPI</a>で得られたカスタムメトリックデータを取得できます。たとえば、彼らの協力を得て、ページ間の遷移のタイミングを記録したり、SSR（Server-Side-rendered）アプリケーションの水和を数値化したりすることができました。
+Webサイトやアプリケーションの評価に使用できるユーザー中心の評価基準は、何十種類もあります。しかし、事前に定義された評価基準は、私たちの特定のシナリオやニーズにまったく合わないことがあります。[PerformanceObserver API](https://developer.mozilla.org/ja/docs/Web/API/PerformanceObserver)では、[User Timing API](https://developer.mozilla.org/ja/docs/Web/API/User_Timing_API)、[Long Task API](https://developer.mozilla.org/ja/docs/Web/API/Long_Tasks_API)、<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/custom-metrics/#event-timing-api">Event Timing API</a>や<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/custom-metrics/">その他のいくつかの低レベルAPI</a>で得られたカスタムメトリックデータを取得できます。たとえば、彼らの協力を得て、ページ間の遷移のタイミングを記録したり、SSR（Server-Side-rendered）アプリケーションの水和を数値化したりすることができました。
 
 {{ figure_markup(
   image="performance-performance-observer-usage.png",

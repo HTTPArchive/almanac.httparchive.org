@@ -113,7 +113,7 @@ JavaScriptは、CSSとHTMLと並んでウェブの3つの礎となる最後の�
 その153KBは、モバイルデバイスに送信するスクリプトの総サイズの約37%に相当します。ここには間違いなく改善の余地があります。
 
 ### `module`と`nomodule`
-送信するコードの量を減らす可能性のあるメカニズムの1つとして、 <a hreflang="en" href="https://web.dev/serve-modern-code-to-modern-browsers/">`module`/`nomodule`パターン</a>を利用することがあります。このパターンでは、モダンブラウザ向けのバンドルとレガシーブラウザ向けのバンドルの2つのセットを作成します。モダンブラウザ向けのバンドルは`type=module`、レガシーブラウザ向けのバンドルは`type=nomodule`となります。
+送信するコードの量を減らす可能性のあるメカニズムの1つとして、 <a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/serve-modern-code-to-modern-browsers/">`module`/`nomodule`パターン</a>を利用することがあります。このパターンでは、モダンブラウザ向けのバンドルとレガシーブラウザ向けのバンドルの2つのセットを作成します。モダンブラウザ向けのバンドルは`type=module`、レガシーブラウザ向けのバンドルは`type=nomodule`となります。
 
 このアプローチにより、サポートしているブラウザに最適化された最新の構文を持つ小さなバンドルを作成できますが、そうでないブラウザには条件付きで読み込まれたポリフィルと異なる構文を提供します。
 
@@ -121,7 +121,7 @@ JavaScriptは、CSSとHTMLと並んでウェブの3つの礎となる最後の�
 
 ### リクエスト数
 
-私たちがどれだけのJavaScriptを使用しているかを見るもう1つの方法は、各ページでどれだけのJavaScriptリクエストが行われているかを調べることです。HTTP/1.1ではリクエスト数を減らすことがパフォーマンスを維持するための最優先事項でしたが、HTTP/2ではその逆です。JavaScriptを<a hreflang="en" href="https://web.dev/granular-chunking-nextjs/">小さくて個別のファイル</a>に分解することが[通常はパフォーマンスを向上させる]のです../2019/http#impact-of-http2)。
+私たちがどれだけのJavaScriptを使用しているかを見るもう1つの方法は、各ページでどれだけのJavaScriptリクエストが行われているかを調べることです。HTTP/1.1ではリクエスト数を減らすことがパフォーマンスを維持するための最優先事項でしたが、HTTP/2ではその逆です。JavaScriptを<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/granular-chunking-nextjs/">小さくて個別のファイル</a>に分解することが[通常はパフォーマンスを向上させる]のです../2019/http#impact-of-http2)。
 
 {{ figure_markup(
   image="requests-2020.png",

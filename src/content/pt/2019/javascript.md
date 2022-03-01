@@ -345,7 +345,7 @@ Se estiver usando módulos nativos, é importante garantir que um script de back
 <script nomodule src="fallback.js"></script>
 ```
 
-Quando usados ​​juntos, os navegadores que suportam módulos irão ignorar completamente qualquer script que contenha o atributo `nomodule`. Por outro lado, navegadores que ainda não suportam módulos não irão baixar nenhum script com `type="module"`. Como eles também não reconhecem `nomodule`, eles normalmente baixam scripts com o atributo. O uso dessa abordagem pode permitir que os desenvolvedores <a hreflang="en" href="https://web.dev/serve-modern-code-to-modern-browsers/">empurrem código moderno para navegadores modernos para carregamentos de página mais rápidos</a>. Então, quantos sites usam `nomodule` para os scripts em sua página?
+Quando usados ​​juntos, os navegadores que suportam módulos irão ignorar completamente qualquer script que contenha o atributo `nomodule`. Por outro lado, navegadores que ainda não suportam módulos não irão baixar nenhum script com `type="module"`. Como eles também não reconhecem `nomodule`, eles normalmente baixam scripts com o atributo. O uso dessa abordagem pode permitir que os desenvolvedores <a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/serve-modern-code-to-modern-browsers/">empurrem código moderno para navegadores modernos para carregamentos de página mais rápidos</a>. Então, quantos sites usam `nomodule` para os scripts em sua página?
 
 {{ figure_markup(
   image="/static/images/2019/javascript/fig14.png",
