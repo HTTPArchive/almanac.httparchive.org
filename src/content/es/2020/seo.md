@@ -253,7 +253,7 @@ Para entender lo que los motores de búsqueda son capaces de extraer exitosament
 
 #### Contenido de texto renderizado vs. no renderizado
 
-El uso de tecnologías [JavaScript](../javascript) como Single Page Application (SPA) ha incrementado con el crecimiento de la web. Este patrón de diseño introduce ciertas dificultades para los rastreadores de búsqueda, pues tanto su ejecución de transformaciones de JavaScript durante el tiempo de ejecución y las interacciones de usuario con la página después de ser cargada, pueden ocasionar que contenido adicional sea visible o renderizado.
+El uso de tecnologías [JavaScript](./javascript) como Single Page Application (SPA) ha incrementado con el crecimiento de la web. Este patrón de diseño introduce ciertas dificultades para los rastreadores de búsqueda, pues tanto su ejecución de transformaciones de JavaScript durante el tiempo de ejecución y las interacciones de usuario con la página después de ser cargada, pueden ocasionar que contenido adicional sea visible o renderizado.
 
 Los motores de búsqueda se encuentran con páginas durante su actividad de rastreo, pero pueden o no escoger una implementación de un segundo paso de renderización para la página. Como resultado, pueden existir disparidades entre el contenido que un usuario ve y el contenido que los motores de búsqueda indexan y consideran para el posicionamiento.
 
@@ -741,7 +741,7 @@ Encontramos que 80.29% de las páginas de escritorio y 82.92% de las móviles us
     {{ figure_link(
       caption="Porcentaje de páginas que usan cada propiedad de media queries.",
       sheets_gid="1141218471",
-      sql_file="../01_CSS/media_query_features.sql"
+      sql_file="../css/media_query_features.sql"
     ) }}
   </figcaption>
 </figure>
@@ -789,7 +789,7 @@ Escritorio sigue siendo la plataforma de mayor rendimiento para los usuarios a p
   description="Gráfico de barras que muestra el porcentaje de sitios web con una buena puntuación de los core web vitals por dispositivo. 33.13% de los sitios web obtuvieron una calificación _Buena_ en los Core Web Vitals para escritorio mientras que solo 19.96% de sus equivalentes móviles pasaron la evaluación de los Core Web Vitals.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1601210449&format=interactive",
   sheets_gid="996380787",
-  sql_file="../09_Performance/web_vitals_by_device.sql"
+  sql_file="../performance/web_vitals_by_device.sql"
 ) }}
 
 #### Experiencia de los Core Web Vitals por país
@@ -804,7 +804,7 @@ Los usuarios ubicados en los Estados Unidos registraron el mayor número absolut
   description="Gráfico de barras horizontal que muestra el agregado del rendimiento de los core web vitals por país.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=2077593128&format=interactive",
   sheets_gid="220428774",
-  sql_file="../09_Performance/web_vitals_by_country.sql",
+  sql_file="../performance/web_vitals_by_country.sql",
   width=645,
   height=792
 ) }}

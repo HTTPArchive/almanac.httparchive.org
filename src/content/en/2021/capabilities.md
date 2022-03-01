@@ -299,7 +299,7 @@ sql_file="fugu.sql"
 )
 }}
 
-The API has been generally available on Chromium-based browsers since version 61 (<a hreflang="en" href="https://caniuse.com/web-usb">current browser support for the Web USB API</a>). 182 desktop and 155 mobile sites use this API, for example, the PWA <a hreflang="en" href="https://app.vysor.io/#/">Vysor</a> that allows you to mirror the screen of an Android or iOS device—all without installing any additional software on your computer.
+The API has been generally available on Chromium-based browsers since version 61 (<a hreflang="en" href="https://caniuse.com/webusb">current browser support for the Web USB API</a>). 182 desktop and 155 mobile sites use this API, for example, the PWA <a hreflang="en" href="https://app.vysor.io/#/">Vysor</a> that allows you to mirror the screen of an Android or iOS device—all without installing any additional software on your computer.
 
 {{ figure_markup(
 image="web-usb.jpg",

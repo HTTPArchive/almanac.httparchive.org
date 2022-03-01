@@ -3,9 +3,9 @@
 title: JavaScript
 description: 2019年のWeb AlmanacのJavaScriptの章では、Web上でどれだけJavaScriptを使用しているか、圧縮、ライブラリとフレームワーク、読み込み、ソースマップを網羅しています。
 authors: [housseindjirdeh]
-reviewers: [obto, paulcalvano, mathiasbynens, rviscomi]
+reviewers: [foxdavidj, paulcalvano, mathiasbynens, rviscomi]
 analysts: [rviscomi]
-editors: [obto]
+editors: [foxdavidj]
 translators: [ksakae1216]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/

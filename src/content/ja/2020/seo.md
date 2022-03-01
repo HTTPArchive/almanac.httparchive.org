@@ -253,7 +253,7 @@ Lighthouseのテストでmeta robotsタグの使用状況を分析したとこ�
 
 #### レンダリングされたテキストコンテンツとレンダリングされていないテキストコンテンツ
 
-ウェブの発展に伴い、シングルページアプリケーション（SPA）[JavaScript](../javascript)技術の使用が爆発的に増加しています。このデザインパターンは実行時のJavaScript変換の実行と、ロード後のページでのユーザーのインタラクションの両方が、追加コンテンツの表示やレンダリングを引き起こす可能性があるため、検索エンジンのスパイダーにとっては困難なものとなっています。
+ウェブの発展に伴い、シングルページアプリケーション（SPA）[JavaScript](./javascript)技術の使用が爆発的に増加しています。このデザインパターンは実行時のJavaScript変換の実行と、ロード後のページでのユーザーのインタラクションの両方が、追加コンテンツの表示やレンダリングを引き起こす可能性があるため、検索エンジンのスパイダーにとっては困難なものとなっています。
 
 検索エンジンはそのクロール活動を通じてページに出会いますが、ページをレンダリングする第2段階を実施することを選択する場合もあれば、しない場合もあります。その結果、ユーザーが目にするコンテンツと、検索エンジンがインデックスを作成し、ランキングの対象とするコンテンツとの間に差異が生じることがあります。
 
@@ -741,7 +741,7 @@ Googleがモバイルファーストインデックスだけでなく、モバ�
     {{ figure_link(
       caption="各メディアクエリ機能が含まれているページの割合。",
       sheets_gid="1141218471",
-      sql_file="../01_CSS/media_query_features.sql"
+      sql_file="../css/media_query_features.sql"
     ) }}
   </figcaption>
 </figure>
@@ -789,7 +789,7 @@ Googleがモバイルファーストインデックスだけでなく、モバ�
   description="デバイスごとにコア・ウェブ・バイタルの良いスコアを獲得したウェブサイトの割合を示す棒グラフです。デスクトップ版では33.13%のウェブサイトが「良い」と評価されたのに対し、モバイル版では19.96%しかコア・ウェブ・バイタルの評価に合格していません。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1601210449&format=interactive",
   sheets_gid="996380787",
-  sql_file="../09_Performance/web_vitals_by_device.sql"
+  sql_file="../performance/web_vitals_by_device.sql"
 ) }}
 
 #### 国ごとのCore Web Vitalsの経験
@@ -804,7 +804,7 @@ Googleがモバイルファーストインデックスだけでなく、モバ�
   description="国別のコア・ウェブ・バイタルのパフォーマンスを集約した横棒グラフ。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=2077593128&format=interactive",
   sheets_gid="220428774",
-  sql_file="../09_Performance/web_vitals_by_country.sql",
+  sql_file="../performance/web_vitals_by_country.sql",
   width=645,
   height=792
 ) }}

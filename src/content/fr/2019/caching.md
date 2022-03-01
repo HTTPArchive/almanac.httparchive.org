@@ -3,8 +3,8 @@
 title: Mise en cache
 description: Le chapitre sur la mise en cache de Web Almanac couvre la gestion de la mise en cache, sa validité, les TTLs, les headers Vary, les cookies, l'AppCache, les service workers et d'autres possibilités.
 authors: [paulcalvano]
-reviewers: [obto, bkardell]
-analysts: [paulcalvano, obto]
+reviewers: [foxdavidj, bkardell]
+analysts: [paulcalvano, foxdavidj]
 editors: [tunetheweb]
 translators: [allemas]
 discuss: 1771

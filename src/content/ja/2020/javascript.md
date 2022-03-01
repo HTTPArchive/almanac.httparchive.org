@@ -53,7 +53,7 @@ JavaScriptは、CSSとHTMLと並んでウェブの3つの礎となる最後の�
 
 ここに大きなギャップがないのは少し残念です。使用中のデバイスが電話かデスクトップ（またはその間のどこか）かどうかに基づいて、ネットワークや処理能力についてあまりにも多くの仮定をするのは危険ですが、[HTTP Archive mobile tests](./methodology#webpagetest) は、Moto G4と3Gネットワークをエミュレートすることによって行われていることは注目に値します。言い換えれば、より少ないコードを渡すことであまり理想的でない状況に適応するために行われている作業があった場合、これらのテストはそれを示しているはずです。
 
-また、傾向としては、JavaScriptの使用量を減らすのではなく、より多くのJavaScriptを使用することに賛成しているようです。[昨年の結果](./2019/javascript#how-much-javascript-do-we-use)と比較すると、中央値ではデスクトップでテストされたJavaScriptが13.4%増加し、モバイルに送信されたJavaScriptの量が14.4%増加しています。
+また、傾向としては、JavaScriptの使用量を減らすのではなく、より多くのJavaScriptを使用することに賛成しているようです。[昨年の結果](../2019/javascript#how-much-javascript-do-we-use)と比較すると、中央値ではデスクトップでテストされたJavaScriptが13.4%増加し、モバイルに送信されたJavaScriptの量が14.4%増加しています。
 
 <figure>
   <table>
@@ -360,7 +360,7 @@ HTTP Archiveは[Wappalyzer](./methodology#wappalyzer) を使用して、特定�
   sql_file="frameworks_libraries.sql"
 ) }}
 
-昨年、[Houssein posited some reasons why jQuery's dominance continues](./2019/javascript#open-source-libraries-and-frameworks)を発表しました。
+昨年、[Houssein posited some reasons why jQuery's dominance continues](../2019/javascript#open-source-libraries-and-frameworks)を発表しました。
 
 > 3割以上のサイトで利用されているWordPressには、デフォルトでjQueryが含まれています。
 > アプリケーションの規模によってはjQueryから新しいクライアントサイドライブラリへの切り替えに時間がかかる場合があり、多くのサイトでは新しいクライアントサイドライブラリに加えてjQueryで構成されている場合があります。
@@ -629,7 +629,7 @@ ReactやGSAP、RequireJSなどのツールは、デスクトップやモバイ�
   sql_file="main_thread_time_frameworks.sql"
 ) }}
 
-さすがに[エミュレートされたMoto G4](method#webpagetest)の処理能力が低いため、使用しているすべてのツールにギャップがあります。EmberとPolymerは特に忌まわしい例として飛び出ているように見えますが、RxJSやMustacheのようなツールはデスクトップとモバイルの間でわずかな違いしかありません。
+さすがに[エミュレートされたMoto G4](./methodology#webpagetest)の処理能力が低いため、使用しているすべてのツールにギャップがあります。EmberとPolymerは特に忌まわしい例として飛び出ているように見えますが、RxJSやMustacheのようなツールはデスクトップとモバイルの間でわずかな違いしかありません。
 
 ## 何の影響があるの？
 

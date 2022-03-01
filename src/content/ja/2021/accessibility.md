@@ -4,7 +4,7 @@ title: アクセシビリティ
 description: 読みやすさ、メディア、ナビゲーションのしやすさ、支援技術との互換性などを網羅した「2021 Web Almanac」のアクセシビリティの章です。
 authors: [alextait1, scottdavis99, oluoluoxenfree, gwilhelm, kachiden]
 reviewers: [ericwbailey, clottman, shantsis, estelle, GigiRajani, cdixon83]
-analysts: [obto]
+analysts: [foxdavidj]
 editors: [tunetheweb]
 translators: [ksakae1216]
 results: https://docs.google.com/spreadsheets/d/1WjAM5ZnHjMQt-rKyHvj2eVhU_WdzzFTjpoYWMr_I0Cw/
@@ -505,7 +505,7 @@ HTML5仕様では、2014年に `<video>` と `<audio>` 要素が導入され、�
 
 画像は適切に説明する必要があります。短い説明文が役立つ場合もあれば、画像の意味や意図を理解するために長い説明文が必要な場合もあります。
 
-2021年のLighthouse監査データによると、57%のサイトが<a hreflang="ja" href="https://web.dev/i18n/ja/image-alt/">`alt`テキスト付き画像のテスト</a>をパスし、前年の54%からわずかに上昇しました。このテストは `img` 要素に `alt`、`aria-label` または `aria-labelledby` 属性のうち少なくとも1つが存在するかどうかを調べます。ほとんどの場合、 `alt` 属性を使用するのがもっとも良い選択です。
+2021年のLighthouse監査データによると、57%のサイトが<a hreflang="en" href="https://web.dev/image-alt/">`alt`テキスト付き画像のテスト</a>をパスし、前年の54%からわずかに上昇しました。このテストは `img` 要素に `alt`、`aria-label` または `aria-labelledby` 属性のうち少なくとも1つが存在するかどうかを調べます。ほとんどの場合、 `alt` 属性を使用するのがもっとも良い選択です。
 
 {{ figure_markup(
   image="pages-containing-alt-with-file-extension.png",

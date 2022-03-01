@@ -301,7 +301,7 @@ JPEGの中央値は、1ピクセルあたり2.1ビットです。このフォー
 
 PNGの中央値は、その2倍以上です。PNGはロスレスフォーマットと呼ばれることがありますが、1ピクセルあたり4.6ビットの中央値は、これがいかに誤ったものであるかを示しています。真のロスレス圧縮は、通常、1ピクセルあたり約12〜16ビット（アルファチャンネルを扱うかどうかによって異なる）に収まるはずです。PNGがこれほどまでに低いのは、一般的なPNGツールは通常、_非可逆圧縮_だからです。圧縮率を高めるために、ピクセルをエンコードする前にカラーパレットを減らしたり、ディザリングパターンを導入したりと、ピクセルに手を加えてしまうのです。
 
-1ピクセルあたり7.4ビットのGIFは、ここではひどく見劣りします。<a hreflang="ja" href="https://web.dev/i18n/ja/efficient-animated-content/">これら</a> <a hreflang="en" href="https://bitsofco.de/optimising-gifs/">は</a> <a hreflang="en" href="https://dougsillars.com/2019/01/15/state-of-the-web-animated-gifs/">大変</a>！しかし、ウェブ上の多くのGIFはアニメーションであるため、ここでも少し不利な立場に立たされています。WebプラットフォームのAPIは、アニメーション画像のフレーム数を公開しないため、フレーム数を考慮していない。たとえば、1ピクセルあたり20ビットで計測されるGIFは、10フレームを含む場合、1ピクセルあたり2ビットと計算するのが妥当でしょう。
+1ピクセルあたり7.4ビットのGIFは、ここではひどく見劣りします。<a hreflang="en" href="https://web.dev/efficient-animated-content/">これら</a> <a hreflang="en" href="https://bitsofco.de/optimising-gifs/">は</a> <a hreflang="en" href="https://dougsillars.com/2019/01/15/state-of-the-web-animated-gifs/">大変</a>！しかし、ウェブ上の多くのGIFはアニメーションであるため、ここでも少し不利な立場に立たされています。WebプラットフォームのAPIは、アニメーション画像のフレーム数を公開しないため、フレーム数を考慮していない。たとえば、1ピクセルあたり20ビットで計測されるGIFは、10フレームを含む場合、1ピクセルあたり2ビットと計算するのが妥当でしょう。
 
 次世代フォーマットである2つのフォーマットについて見てみると、実に興味深いことがわかります。WebPとAVIFです。どちらも1ピクセルあたり1.3〜1.5ビットで、JPEGより40％近く軽くなっています。<a hreflang="en" href="https://kornel.ski/en/faircomparison">matched qualities</a> を使用した正式な研究では、WebPはJPEGよりも <a hreflang="en" href="https://developers.google.com/speed/webp/docs/webp_study">25 ～ 34%</a> 高性能であり、実際のパフォーマンスは驚くほど *良い* と思われます。一方、AVIFの作成者は、<a hreflang="en" href="https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4">実験室で、最新のJPEGエンコーダーJPEGを50% 以上上回ることができる</a>というデータを発表しています。ですから、ここでのAVIFの性能は良いのですが、私はもっと良い結果を期待していました。実験室のデータと実際の性能の間にあるこのような不一致について、私はいくつかの可能性を考えることができます。
 
@@ -337,7 +337,7 @@ WebPとAVIFの採用が時間とともにどのように変化したか（およ
 
 #### 遅延読み込み
 
-ウェブ上の画像に関して今年ブレイクアウトした話があるとすれば、<a hreflang="ja" href="https://web.dev/i18n/ja/browser-level-image-lazy-loading/">ネイティブ遅延読み込み</a>の採用でしょう。このチャートを見てください。
+ウェブ上の画像に関して今年ブレイクアウトした話があるとすれば、<a hreflang="en" href="https://web.dev/browser-level-image-lazy-loading/">ネイティブ遅延読み込み</a>の採用でしょう。このチャートを見てください。
 
 {{ figure_markup(
   image="adoption-of-native-loading-lazy-on-img.png",

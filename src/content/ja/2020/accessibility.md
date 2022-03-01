@@ -3,8 +3,8 @@
 title: アクセシビリティ
 description: 2020年Web Almanacのアクセシビリティの章では、読みやすさ、メディア、ナビゲーションのしやすさ、支援技術との互換性を取り上げています。
 authors: [oluoluoxenfree, alextait1]
-reviewers: [aardrian, ericwbailey, obto]
-analysts: [obto]
+reviewers: [aardrian, ericwbailey, foxdavidj]
+analysts: [foxdavidj]
 editors: [tunetheweb]
 translators: [ksakae1216]
 oluoluoxenfree_bio: Olu Niyi-AwosusiはFTのソフトウェアエンジニアで、リスト、新しいことを学ぶこと、Bee and Puppycat、<a hreflang="en" href="https://alistapart.com/article/building-the-woke-web/">社会正義、アクセシビリティ</a>、そして日々努力することを愛しています。
@@ -92,7 +92,7 @@ featured_stat_label_3: クローズドキャプションを提供する動画
   content="77.67%",
   classes="big-number",
   sheets_gid="812908021",
-  sql_file="02_05.sql"
+  sql_file="valid_html_lang.sql"
 )
 }}
 

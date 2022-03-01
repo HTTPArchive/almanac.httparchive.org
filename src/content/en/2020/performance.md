@@ -3,7 +3,7 @@
 title: Performance
 description: Performance chapter of the 2020 Web Almanac covering Core Web Vitals, Lighthouse Performance Score, First Contentful Paint (FCP) and Time to First Byte (TTFB).
 authors: [thefoxis]
-reviewers: [borisschapira, rviscomi, obto, noamr, Zizzamia, exterkamp]
+reviewers: [borisschapira, rviscomi, foxdavidj, noamr, Zizzamia, exterkamp]
 analysts: [max-ostapenko, dooman87]
 editors: [tunetheweb]
 translators: []

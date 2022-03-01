@@ -3,7 +3,7 @@
 title: Prestatie
 description: Prestatiehoofdstuk van de Web Almanac 2020 met betrekking tot Core Web Vitals, Lighthouse Performance Score, First Contentful Paint (FCP) en Time to First Byte (TTFB).
 authors: [thefoxis]
-reviewers: [borisschapira, rviscomi, obto, noamr, Zizzamia, exterkamp]
+reviewers: [borisschapira, rviscomi, foxdavidj, noamr, Zizzamia, exterkamp]
 analysts: [max-ostapenko, dooman87]
 editors: [tunetheweb]
 translators: [noah-vdv]

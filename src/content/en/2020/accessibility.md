@@ -3,8 +3,8 @@
 title: Accessibility
 description: Accessibility chapter of the 2020 Web Almanac covering ease of reading, media, ease of navigation, and compatibility with assistive technologies.
 authors: [oluoluoxenfree, alextait1]
-reviewers: [aardrian, ericwbailey, obto]
-analysts: [obto]
+reviewers: [aardrian, ericwbailey, foxdavidj]
+analysts: [foxdavidj]
 editors: [tunetheweb]
 translators: []
 oluoluoxenfree_bio: Olu Niyi-Awosusi is a software engineer at the FT who loves lists, learning new things, Bee and Puppycat, <a hreflang="en" href="https://alistapart.com/article/building-the-woke-web/">social justice, accessibility</a> and trying harder every day.
@@ -92,7 +92,7 @@ We found that 29.34% of desktop pages and 30.66% of mobile pages attempt to disa
   content="77.67%",
   classes="big-number",
   sheets_gid="812908021",
-  sql_file="02_05.sql"
+  sql_file="valid_html_lang.sql"
 )
 }}
 

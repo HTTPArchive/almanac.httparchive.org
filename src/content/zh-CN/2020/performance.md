@@ -3,7 +3,7 @@
 title: 性能
 description: 2020年 Web 年鉴性能篇，涵盖了网页核心指标、Lighthouse 性能评分、首次内容绘制（FCP）、首字节时间（TTFB）。
 authors: [thefoxis]
-reviewers: [borisschapira, rviscomi, obto, noamr, Zizzamia, exterkamp]
+reviewers: [borisschapira, rviscomi, foxdavidj, noamr, Zizzamia, exterkamp]
 analysts: [max-ostapenko, dooman87]
 editors: [tunetheweb]
 translators: [Zuckjet]

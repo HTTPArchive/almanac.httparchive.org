@@ -3,8 +3,8 @@
 title: キャッシング
 description: 2019 Web Almanacのキャッシュの章は、キャッシュコントロール、有効期限、TTL、有効性、変化、Cookieの設定、アプリケーションキャッシュ、Service Worker、および機会について説明します。
 authors: [paulcalvano]
-reviewers: [obto, bkardell]
-analysts: [paulcalvano, obto]
+reviewers: [foxdavidj, bkardell]
+analysts: [paulcalvano, foxdavidj]
 editors: [tunetheweb]
 translators: [ksakae1216]
 discuss: 1771

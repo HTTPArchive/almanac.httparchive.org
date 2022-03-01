@@ -3,8 +3,8 @@
 title: モバイル・ウェブ
 description: 2020年版Web Almanacのモバイルウェブの章では、ページの読み込み、テキストコンテンツ、ズームとスケーリング、ボタンとリンク、フォームへの入力のしやすさなどを解説しています。
 authors: [spanicker, mdiblasio]
-reviewers: [obto]
-analysts: [obto]
+reviewers: [foxdavidj]
+analysts: [foxdavidj]
 editors: [exterkamp]
 translators: [ksakae1216]
 spanicker_bio: Shubhie Panickerは、Chromeのウェブフレームワークエコシステムへの取り組みを担当するエンジニアリングリーダーで、オープンソースツール、フレームワーク、コミュニティとのコラボレーションを行っています。Chromeのウェブプラットフォームチームのメンバーとして、ウェブ標準や、いくつかのウェブパフォーマンスAPIに対するchromiumの実装に取り組んできました。Chrome以前は、検索やGoogle PhotosなどのGoogle製品のインフラやウェブフレームワークに携わっていました。

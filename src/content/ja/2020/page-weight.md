@@ -117,7 +117,7 @@ JavaScriptは平均的にページ上で2番目に豊富なリソースですが
   description="gif、ico、jpg、png、svg、webpのフォーマット別の画像サイズの分布をボックスプロットしたものです。Jpgが最も高い分布をしていて、90パーセンタイルで1枚あたり150KBを超えています。Pngは90パーセンタイルで約100KBと2番目に高いです。WebPの90パーセンタイルはpngよりも小さいですが、75パーセンタイルは高くなっています。 gif、ico、svgはいずれも0KBに近い比較的小さな分布です。.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=211653520&format=interactive",
   sheets_gid="142855724",
-  sql_file="requests_format_distribution.sql"
+  sql_file="response_format_distribution.sql"
 ) }}
 
 画像がページの重さの大きな情報源であることを知っています。上の図は、画像の重さのトップソースと重さの分布を示しています。トップ3。JPG、PNG、WebP。つまり、JPGは最も人気のある画像フォーマットであるだけでなく、サイズ的にも最も大きい傾向があります。しかし、私たちが[昨年指摘したように](../2019/page-weight#file-size-by-image-format-for-images--1024-bytes)、それはPNGの主な使用例であるアイコンやロゴに関係しています。

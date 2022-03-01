@@ -283,7 +283,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
 
 ### 人気のサードパーティの埋め込みとそのパフォーマンスへの影響
 
-サードパーティーのパフォーマンスへの影響を理解するために、もっとも人気のあるサードパーティーの埋め込みをいくつか見ていきます。これらの中には、Webパフォーマンス界で悪名高いものもあるので、その悪評が本当にふさわしいかどうか見てみましょう。そのために、2つの[Lighthouse](./methodology#lighthouse)監査を活用することにします。<a hreflang="ja" href="https://web.dev/i18n/ja/render-blocking-resources/">レンダーブロッキングリソースの排除</a> と <a hreflang="ja" href="https://web.dev/i18n/ja/third-party-summary/">サードパーティーコードの影響を軽減</a>を基にした<a hreflang="en" href="https://twitter.com/hdjirdeh">Houssein Djirdeh</a>による<a hreflang="en" href="https://docs.google.com/spreadsheets/d/1Td-4qFjuBzxp8af_if5iBC0Lkqm_OROb7_2OcbxrU_g/edit?usp=sharing&resourcekey=0-ZCfve5cngWxF0-sv5pLRzg">同様の研究</a>があります。
+サードパーティーのパフォーマンスへの影響を理解するために、もっとも人気のあるサードパーティーの埋め込みをいくつか見ていきます。これらの中には、Webパフォーマンス界で悪名高いものもあるので、その悪評が本当にふさわしいかどうか見てみましょう。そのために、2つの[Lighthouse](./methodology#lighthouse)監査を活用することにします。<a hreflang="en" href="https://web.dev/render-blocking-resources/">レンダーブロッキングリソースの排除</a> と <a hreflang="en" href="https://web.dev/third-party-summary/">サードパーティーコードの影響を軽減</a>を基にした<a hreflang="en" href="https://twitter.com/hdjirdeh">Houssein Djirdeh</a>による<a hreflang="en" href="https://docs.google.com/spreadsheets/d/1Td-4qFjuBzxp8af_if5iBC0Lkqm_OROb7_2OcbxrU_g/edit?usp=sharing&resourcekey=0-ZCfve5cngWxF0-sv5pLRzg">同様の研究</a>があります。
 
 #### 人気のあるサードパーティとレンダーへの影響
 
@@ -309,7 +309,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
 
 #### 人気サードパーティと本スレッドへの影響
 
-Lighthouseには <a hreflang="ja" href="https://web.dev/i18n/ja/third-party-summary/">サードパーティコードの影響軽減</a> 監査があり、すべてのサード パーティ製リソースのメイン スレッドの時間が一覧表示されます。では、もっとも人気のあるものはどれくらいの時間メイン スレッドをブロックしているのでしょうか？
+Lighthouseには <a hreflang="en" href="https://web.dev/third-party-summary/">サードパーティコードの影響軽減</a> 監査があり、すべてのサード パーティ製リソースのメイン スレッドの時間が一覧表示されます。では、もっとも人気のあるものはどれくらいの時間メイン スレッドをブロックしているのでしょうか？
 
 {{ figure_markup(
   image="third-parties-popular-third-parties-main-thread-blocking-time.png",
@@ -431,7 +431,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
 
 上記の例の中には、良くも悪くもなるものがありますが、ウェブサイトのパフォーマンスに本当に影響を与えるのは、これらの累積効果であることを忘れてはなりません。地図と埋め込みTweetのあるページにGoogle Analytics、Facebook、TwitterのトラッキングをロードするGTMを追加すると、膨大な量になります。スマホがときどき熱くて手に負えなくなったり、ネットサーフィンをしているだけでPCのファンが回りだしたりするのは、当然といえば当然ですよね。
 
-これらのことから、Googleがドキュメントの順序付け、遅延ローディング、ファサード、その他のテクニックを使用して、<a hreflang="ja" href="https://web.dev/i18n/ja/embed-best-practices/">埋め込みの影響を軽減する</a>（皮肉にもほとんどが自分たちのものです！）ことを推奨している理由がわかります。しかし、これらのうちのいくつかはデフォルトではなく、これらのような高度なテクニックはウェブサイト所有者の責任に帰する必要があることは、実に腹立たしいことです。ここで取り上げたサードパーティは、本当はリソースや技術的なノウハウを持っていて、デフォルトですべての人の製品使用による影響を減らすことができるのに、そうしないことを選択することが多いのです。このパフォーマンス編は、サードパーティを使うことが必ずしもパフォーマンスに悪いわけではない、というところから始まりましたが、これらの例を見ると確かにこの分野ではもっとできることがあるようです。
+これらのことから、Googleがドキュメントの順序付け、遅延ローディング、ファサード、その他のテクニックを使用して、<a hreflang="en" href="https://web.dev/embed-best-practices/">埋め込みの影響を軽減する</a>（皮肉にもほとんどが自分たちのものです！）ことを推奨している理由がわかります。しかし、これらのうちのいくつかはデフォルトではなく、これらのような高度なテクニックはウェブサイト所有者の責任に帰する必要があることは、実に腹立たしいことです。ここで取り上げたサードパーティは、本当はリソースや技術的なノウハウを持っていて、デフォルトですべての人の製品使用による影響を減らすことができるのに、そうしないことを選択することが多いのです。このパフォーマンス編は、サードパーティを使うことが必ずしもパフォーマンスに悪いわけではない、というところから始まりましたが、これらの例を見ると確かにこの分野ではもっとできることがあるようです。
 
 このような有名な例を取り上げることで、読者が自分のサイトにおけるサードパーティーの埋め込みの影響を調査し、本当にすべて価値があるのか自問するきっかけになればと思います。おそらく、このテーマをサードパーティにもっと重要視してもらえば、パフォーマンスを優先してくれるでしょう。
 

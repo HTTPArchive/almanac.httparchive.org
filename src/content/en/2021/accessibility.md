@@ -4,7 +4,7 @@ title: Accessibility
 description: Accessibility chapter of the 2021 Web Almanac covering ease of reading, media, ease of navigation, and compatibility with assistive technologies.
 authors: [alextait1, scottdavis99, oluoluoxenfree, gwilhelm, kachiden]
 reviewers: [ericwbailey, clottman, shantsis, estelle, GigiRajani, cdixon83]
-analysts: [obto]
+analysts: [foxdavidj]
 editors: [tunetheweb]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1WjAM5ZnHjMQt-rKyHvj2eVhU_WdzzFTjpoYWMr_I0Cw/

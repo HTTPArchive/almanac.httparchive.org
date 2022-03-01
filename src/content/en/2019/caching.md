@@ -3,8 +3,8 @@
 title: Caching
 description: Caching chapter of the 2019 Web Almanac covering cache-control, expires, TTLs, validitaty, vary, set-cookies, AppCache, Service Workers and opportunities.
 authors: [paulcalvano]
-reviewers: [obto, bkardell]
-analysts: [paulcalvano, obto]
+reviewers: [foxdavidj, bkardell]
+analysts: [paulcalvano, foxdavidj]
 editors: [tunetheweb]
 translators: []
 discuss: 1771

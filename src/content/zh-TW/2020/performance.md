@@ -3,7 +3,7 @@
 title: 效能
 description: 2020 Web Almanac 的效能章節涵蓋了 Core WebVitals、Lighthouse Performance Score、First Contentful Paint (FCP) 以及 Time to First Byte (TTFB)。
 authors: [thefoxis]
-reviewers: [borisschapira, rviscomi, obto, noamr, Zizzamia, exterkamp]
+reviewers: [borisschapira, rviscomi, foxdavidj, noamr, Zizzamia, exterkamp]
 analysts: [max-ostapenko, dooman87]
 editors: [tunetheweb]
 translators: [cybai]

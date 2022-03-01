@@ -241,7 +241,7 @@ Jamstackのページロードの中央値は、デスクトップでは1.82MB、
 
 ### 画像フォーマット
 
-人気の画像フォーマットはPNG、JPG、GIF、SVG、WebP、ICOです。これらの中では、<a href = "en" href = "https://developers.google.com/speed/webp/">ほとんどの状況でWebPが最も効率的</a>で、WebPの損失のない画像は<a hreflang="en" href=" https://developers.google.com/speed/webp/docs/webp_lossless_alpha_study#results">同等のPNGよりも26%小さく</a>、同等のJPGよりも<a hreflang="en" href=" https://developers.google.com/speed/webp/docs/webp_study">25-34%小さく</a>なっています。しかし、WebPはすべてのJamstackページで2番目に人気のない画像フォーマットですが、モバイルとデスクトップではPNGが最も人気があります。一方、JPGはわずかに人気がないのに対し、GIFはJamstackサイトで使用されている画像の20%近くを占めています。興味深いのはSVGで、モバイルサイトではデスクトップサイトの約2倍の人気があります。
+人気の画像フォーマットはPNG、JPG、GIF、SVG、WebP、ICOです。これらの中では、<a href = "en" href = "https://developers.google.com/speed/webp/">ほとんどの状況でWebPが最も効率的</a>で、WebPの損失のない画像は<a hreflang="en" href="https://developers.google.com/speed/webp/docs/webp_lossless_alpha_study#results">同等のPNGよりも26%小さく</a>、同等のJPGよりも<a hreflang="en" href="https://developers.google.com/speed/webp/docs/webp_study">25-34%小さく</a>なっています。しかし、WebPはすべてのJamstackページで2番目に人気のない画像フォーマットですが、モバイルとデスクトップではPNGが最も人気があります。一方、JPGはわずかに人気がないのに対し、GIFはJamstackサイトで使用されている画像の20%近くを占めています。興味深いのはSVGで、モバイルサイトではデスクトップサイトの約2倍の人気があります。
 
 {{ figure_markup(
   image="jamstack-popularity-of-image-formats.png",

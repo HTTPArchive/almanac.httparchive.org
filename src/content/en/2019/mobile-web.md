@@ -2,14 +2,14 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Mobile Web
 description: Mobile Web chapter of the 2019 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms.
-authors: [obto]
+authors: [foxdavidj]
 reviewers: [AymenLoukil, logicalphase]
 analysts: [ymschaap, rviscomi]
 editors: [rviscomi]
 translators: []
 discuss: 1767
 results: https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/
-obto_bio: David Fox is the lead usability researcher and founder of LookZook, a company obsessed with finding out everything there is to know about building web experiences that meet user expectations. He is a website psychologist who digs into sites to learn not just what users are struggling with, but why, and how to best improve their experience. He is also a Google Chromium contributor, speaker, and provider of webinars and UX training.
+foxdavidj_bio: David Fox is the lead usability researcher and founder of LookZook, a company obsessed with finding out everything there is to know about building web experiences that meet user expectations. He is a website psychologist who digs into sites to learn not just what users are struggling with, but why, and how to best improve their experience. He is also a Google Chromium contributor, speaker, and provider of webinars and UX training.
 featured_quote: Since 2007, the mobile web has grown at an explosive rate. And now, 13 years later, mobile accounts for 59% of all searches and 58.7% of all web traffic, according to Akamai mPulse data in July 2019. It's no longer an afterthought, but the primary way people experience the web. So given how significant mobile is, what kind of experience are we providing our visitors? Where are we falling short? Let's find out.
 featured_stat_1: 65%
 featured_stat_label_1: Sites with medium or large content shifts during load

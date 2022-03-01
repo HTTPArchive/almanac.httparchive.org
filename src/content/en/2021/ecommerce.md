@@ -74,7 +74,7 @@ The mobile analysis received responses from 7.5 million sites and found that 1.5
 
 The overall share of ecommerce sites shrunk by 1.8% on mobile (1.6% on desktop) compared to last year's report which found 21.3% of sites were ecommerce (21.7% on desktop). The number of ecommerce sites still increased, with 4.5% more found this year on desktop (8.3% on mobile) compared to last year. However, this growth didn't keep pace with the growth in the overall list of sites visited by Chrome users.
 
-Comparing this with [the 2019 results](..2019/ecommerce#platform-detection) where 9.45% of mobile sites were ecommerce, we can see that while the change in the last year has been insignificant, over the last 2 years the increase is dramatic and sustained.
+Comparing this with [the 2019 results](../2019/ecommerce#platform-detection) where 9.45% of mobile sites were ecommerce, we can see that while the change in the last year has been insignificant, over the last 2 years the increase is dramatic and sustained.
 
 However, this should not be considered as evidence of ecommerce growth in response to COVID-19. As was [reported last year](../2020/ecommerce#ecommerce-platforms), this increase comes from our improved ability to detect ecommerce platforms: from increased platform coverage, to also using secondary signals such as the presence of Google Analytics Enhanced Ecommerce to indicate that a site is ecommerce.
 

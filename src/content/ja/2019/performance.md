@@ -3,7 +3,7 @@
 title: パフォーマンス
 description: コンテンツの初回ペイント（FCP）、最初のバイトまでの時間（TTFB）、初回入力遅延（FID）を取り扱う2019 Web Almanac パフォーマンスの章。
 authors: [rviscomi]
-reviewers: [JMPerez,obto,sergeychernyshev,zeman]
+reviewers: [JMPerez,foxdavidj,sergeychernyshev,zeman]
 analysts: [rviscomi, raghuramakrishnan71]
 editors: [rachellcostello]
 translators: [MSakamaki]

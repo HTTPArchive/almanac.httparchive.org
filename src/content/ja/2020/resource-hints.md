@@ -90,13 +90,13 @@ featured_stat_label_3: ネイティブの遅延ローディングを使用して
 
 ### ネイティブの遅延読み込み
 
-<a hreflang="ja" href="https://web.dev/i18n/ja/browser-level-image-lazy-loading/">ネイティブの遅延読み込み</a>のヒントは、画面外の画像やiframeの読み込みを延期するためのネイティブブラウザAPIです。これを使用することで、最初のページロード時に必要のないアセットはネットワークリクエストを開始しないため、データ消費量が削減され、ページパフォーマンスが向上します。
+<a hreflang="en" href="https://web.dev/browser-level-image-lazy-loading/">ネイティブの遅延読み込み</a>のヒントは、画面外の画像やiframeの読み込みを延期するためのネイティブブラウザAPIです。これを使用することで、最初のページロード時に必要のないアセットはネットワークリクエストを開始しないため、データ消費量が削減され、ページパフォーマンスが向上します。
 
 ```html
 <img src="image.png" loading="lazy" alt="…" width="200" height="200">
 ```
 
-留意点:Chromiumの遅延読み込みのしきい値ロジックの実装は、これまで<a hreflang="ja" href="https://web.dev/i18n/ja/browser-level-image-lazy-loading/#distance-from-viewport-thresholds">保守的</a>で、画面外の制限を3000pxに保っていました。昨年この制限は積極的にテストされ、開発者の期待に沿うように改善され、最終的にしきい値を1250pxに変更しました。また、<a hreflang="en" href="https://github.com/whatwg/html/issues/5408">ブラウザ間の標準はなく</a>、ウェブ開発者がブラウザの提供するデフォルトしきい値を上書きする機能はまだありません。
+留意点:Chromiumの遅延読み込みのしきい値ロジックの実装は、これまで<a hreflang="en" href="https://web.dev/browser-level-image-lazy-loading/#distance-from-viewport-thresholds">保守的</a>で、画面外の制限を3000pxに保っていました。昨年この制限は積極的にテストされ、開発者の期待に沿うように改善され、最終的にしきい値を1250pxに変更しました。また、<a hreflang="en" href="https://github.com/whatwg/html/issues/5408">ブラウザ間の標準はなく</a>、ウェブ開発者がブラウザの提供するデフォルトしきい値を上書きする機能はまだありません。
 
 ## リソースのヒント
 
@@ -264,7 +264,7 @@ Lighthouseの「<a hreflang="ja" href="https://web.dev/i18n/ja/offscreen-images/
 
 ## HTTP/2プッシュ
 
-[HTTP/2](./http)には「サーバープッシュ」と呼ばれる機能があり、製品のラウンドトリップタイム（https://developer.mozilla.org/ja/docs/Glossary/Round_Trip_Time_(RTT)）やサーバーの処理が長い場合に、ページのパフォーマンスを改善できる可能性があります。簡単に説明すると、クライアントがリクエストを送信するのを待つのではなく、クライアントがすぐにリクエストするだろうと予測したリソースをサーバーが先取りしてプッシュするのです。
+[HTTP/2](./http)には「サーバープッシュ」と呼ばれる機能があり、製品のラウンドトリップタイム([RTTs](https://developer.mozilla.org/ja/docs/Glossary/Round_Trip_Time_(RTT)))やサーバーの処理が長い場合に、ページのパフォーマンスを改善できる可能性があります。簡単に説明すると、クライアントがリクエストを送信するのを待つのではなく、クライアントがすぐにリクエストするだろうと予測したリソースをサーバーが先取りしてプッシュするのです。
 
 {{ figure_markup(
   caption="`preload`/`nopush`を使用したHTTP/2 Pushページの割合です。",

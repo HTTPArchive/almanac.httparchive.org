@@ -3,8 +3,8 @@
 title: Mobile Web
 description: Mobile Web chapter of the 2021 Web Almanac covering page web vitals, images, technology adoption, accessibility and more.
 authors: [fellowhuman1101, dwsmart, ashleyish]
-reviewers: [obto, fili]
-analysts: [rvth, obto]
+reviewers: [foxdavidj, fili]
+analysts: [rvth, foxdavidj]
 editors: [shantsis]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1mdma245ja_THTBApaJTeS4vmLY_Fn8VC6Kd8qx7wp-o/

@@ -5,7 +5,7 @@ description: ページの重さが重要な理由、帯域幅、複雑なペー�
 authors: [tammyeverts, khempenius]
 reviewers: [paulcalvano]
 analysts: [khempenius]
-editors: [obto]
+editors: [foxdavidj]
 translators: [ksakae1216]
 discuss: 1773
 results: https://docs.google.com/spreadsheets/d/1nWOo8efqDgzmA0wt1ipplziKhlReAxnVCW1HkjuFAxU/

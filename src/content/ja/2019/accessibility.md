@@ -2,15 +2,15 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: アクセシビリティ
 description: 読みやすさ、メディア、操作性の容易さ、および支援技術とその互換性をカバーする2019 Web Almanacアクセシビリティの章。
-authors: [nektarios-paisios, obto, kleinab]
+authors: [nektarios-paisios, foxdavidj, kleinab]
 reviewers: [ljme]
-analysts: [dougsillars, rviscomi, obto]
-editors: [obto]
+analysts: [dougsillars, rviscomi, foxdavidj]
+editors: [foxdavidj]
 translators: [MSakamaki]
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
 nektarios-paisios_bio: Nektarios Paisios氏は、過去5年間、Chromeアクセシビリティに取り組んできたソフトウェアエンジニアです。主にスクリーンリーダーや拡大鏡などのサードパーティの支援ソフトウェアとChromeの互換性を高めることに注力しています。Chromeアクセシビリティに携わる前は、GSuiteアクセシビリティやディスプレイ広告など、さまざまな役割を担っていました。Nektariosはニューヨーク大学でコンピュータサイエンスの博士号を取得しています。
-obto_bio: David Foxは、ユーザビリティ・リサーチャーのリーダーであり、LookZookの創設者でもあります。彼はウェブサイト心理学者であり、ユーザーが何に悩んでいるのかだけでなく、その理由や体験を改善するための最善の方法を学ぶためにサイトを掘り下げています。また、Google Chromiumのコントリビューターであり、講演者であり、ウェビナーやUXトレーニングの提供者でもある。
+foxdavidj_bio: David Foxは、ユーザビリティ・リサーチャーのリーダーであり、LookZookの創設者でもあります。彼はウェブサイト心理学者であり、ユーザーが何に悩んでいるのかだけでなく、その理由や体験を改善するための最善の方法を学ぶためにサイトを掘り下げています。また、Google Chromiumのコントリビューターであり、講演者であり、ウェビナーやUXトレーニングの提供者でもある。
 kleinab_bio: Abigail Kleinは、Googleのソフトウェアエンジニアです。彼女は Google Docs、Sheets、Slides のウェブアクセシビリティに取り組み、<a hreflang="en" href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">自動キャプションを Google Slides に追加しました</a> また、sc reen リーダー、点字、スクリーン拡大鏡、ハイコントラストのサポートを改善しました。現在は、Google Chrome と ChromeOS のアクセシビリティに取り組んでいます。MIT でコンピュータサイエンスの学士号と修士号を取得しており、支援技術ハッカソンを共同で立ち上げ、支援技術クラスのラボアシスタントとゲスト講師を務めました。
 featured_quote: ウェブ上のアクセシビリティは、包括的で公平な社会にとって不可欠です。私たちの社会生活や仕事の多くがオンラインの世界に移行するにつれ、障害を持つ人々が障害なくすべてのオンライン上の交流に参加できることがさらに重要になってきています。建築家が車椅子用スロープなどのアクセシビリティ機能を作成したり省略したりできるように、ウェブ開発者はユーザーが利用する支援技術を支援したり、妨げたりすることができます。
 featured_stat_1: 22%
