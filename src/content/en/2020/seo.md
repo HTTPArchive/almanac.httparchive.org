@@ -689,7 +689,7 @@ The browser's viewport is the visible area of a page content, which changes depe
     {{ figure_link(
       caption="Percent of pages having each viewport meta tag <code>content</code> attribute value.",
       sheets_gid="479500659",
-      sql_file="../03_Markup/summary_pages_by_device_and_viewport.sql"
+      sql_file="../markup/summary_pages_by_device_and_viewport.sql"
     ) }}
   </figcaption>
 </figure>

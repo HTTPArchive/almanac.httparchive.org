@@ -689,7 +689,7 @@ Il 42.98% delle pagine mobile e il 43.2% di quelle desktop hanno un meta tag vie
     {{ figure_link(
       caption="Percentuale di pagine con il valore dell'attributo <code>content</code> di ciascun metatag viewport.",
       sheets_gid="479500659",
-      sql_file="../03_Markup/summary_pages_by_device_and_viewport.sql"
+      sql_file="../markup/summary_pages_by_device_and_viewport.sql"
     ) }}
   </figcaption>
 </figure>

@@ -689,7 +689,7 @@ El viewport de un navegador es la parte visible del contenido, que cambia depend
     {{ figure_link(
       caption="Porcentaje de páginas con cada valor del atributo <code>content</code> de la meta etiqueta viewport.",
       sheets_gid="479500659",
-      sql_file="../03_Markup/summary_pages_by_device_and_viewport.sql"
+      sql_file="../markup/summary_pages_by_device_and_viewport.sql"
     ) }}
   </figcaption>
 </figure>

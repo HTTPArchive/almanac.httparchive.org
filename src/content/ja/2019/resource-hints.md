@@ -263,7 +263,7 @@ HTTPヘッダー内のリソースヒントの使用量が非常に少ないた�
 
 ### ネイティブの遅延ローディング
 
-<a hreflang="ja" href="https://web.dev/i18n/ja/native-lazy-loading">ネイティブの遅延ローディング</a>は、画面外の画像やiframeの読み込みを遅延させるためのネイティブAPIです。これにより、最初のページ読み込み時にリソースを解放し、使用されないアセットの読み込みを回避できます。以前は、この技術はサードパーティの[JavaScript](./javascript)ライブラリでしか実現できませんでした。
+<a hreflang="en" href="https://web.dev/native-lazy-loading">ネイティブの遅延ローディング</a>は、画面外の画像やiframeの読み込みを遅延させるためのネイティブAPIです。これにより、最初のページ読み込み時にリソースを解放し、使用されないアセットの読み込みを回避できます。以前は、この技術はサードパーティの[JavaScript](./javascript)ライブラリでしか実現できませんでした。
 
 ネイティブな遅延読み込みのためのAPIはこのようになります。`<img src="cat.jpg" loading="lazy">`.
 
