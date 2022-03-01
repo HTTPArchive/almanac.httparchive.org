@@ -37,7 +37,7 @@ A função de [`dns-prefetch`](https://developer.mozilla.org/en-US/docs/Learn/Pe
 
 ### `preconnect`
 
-<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/uses-rel-preconnect">`preconnect`</a> inicia uma conexão antecipada, incluindo pesquisa DNS, handshake TCP e negociação TLS. Esta dica é útil para estabelecer uma conexão com terceiros. Os usos de `preconnect` são muito semelhantes aos de `dns-prefetch`, mas `preconnect` tem menos suporte entre os navegadores. No entanto, se você não precisa do suporte do IE 11, a pré-conexão provavelmente é uma escolha melhor.
+<a hreflang="pt" href="https://web.dev/i18n/pt/uses-rel-preconnect">`preconnect`</a> inicia uma conexão antecipada, incluindo pesquisa DNS, handshake TCP e negociação TLS. Esta dica é útil para estabelecer uma conexão com terceiros. Os usos de `preconnect` são muito semelhantes aos de `dns-prefetch`, mas `preconnect` tem menos suporte entre os navegadores. No entanto, se você não precisa do suporte do IE 11, a pré-conexão provavelmente é uma escolha melhor.
 
 ### `preload`
 
@@ -263,7 +263,7 @@ Dicas de prioridade são <a hreflang="en" href="https://www.chromestatus.com/fea
 
 ### Native lazy loading
 
-<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/native-lazy-loading">O carregamento lento nativo</a> é uma API nativa para adiar o carregamento de imagens e iframes fora da tela. Isso libera recursos durante o carregamento inicial da página e evita o carregamento de ativos que nunca são usados. Anteriormente, essa técnica só podia ser alcançada por meio de bibliotecas [JavaScript](./javascript) de terceiros.
+<a hreflang="pt" href="https://web.dev/i18n/pt/native-lazy-loading">O carregamento lento nativo</a> é uma API nativa para adiar o carregamento de imagens e iframes fora da tela. Isso libera recursos durante o carregamento inicial da página e evita o carregamento de ativos que nunca são usados. Anteriormente, essa técnica só podia ser alcançada por meio de bibliotecas [JavaScript](./javascript) de terceiros.
 
 A API para carregamento lento nativa parece com isso: `<img src="cat.jpg" loading="lazy">`.
 

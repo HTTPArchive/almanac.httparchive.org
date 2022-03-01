@@ -68,7 +68,7 @@ Googleは、2019年に`robots.txt`をインターネットの公式規格にす�
 
 全体として、80.46%のモバイルページが`robots.txt`に対して2XXの応答をしました。このうち、25.09%は有効であると認識されませんでした。これは、[27.84%のモバイルサイトが有効な`robots.txt`を持っていた](../2019/seo#robotstxt)ことが判明した2019年よりも若干改善されています。
 
-`robots.txt`の有効性をテストするためのデータソースであるLighthouseは、v6アップデートの一環として、<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/robots-txt/">`robots.txt`の監査</a>を導入しました。この導入により、リクエストが正常に解決されても、基礎ファイルがWebクローラーに必要な指示を与えることができるとは限らないことが強調されました。
+`robots.txt`の有効性をテストするためのデータソースであるLighthouseは、v6アップデートの一環として、<a hreflang="ja" href="https://web.dev/i18n/ja/robots-txt/">`robots.txt`の監査</a>を導入しました。この導入により、リクエストが正常に解決されても、基礎ファイルがWebクローラーに必要な指示を与えることができるとは限らないことが強調されました。
 
 <figure>
   <table>
@@ -764,17 +764,17 @@ Googleがモバイルファーストインデックスだけでなく、モバ�
 
 2020年11月に発表されたように、<a hreflang="en" href="https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html">Core Web Vitals</a>と呼ばれる3つのパフォーマンス指標は、2021年5月に「ページ体験」シグナルの一部としてランキング要因となる予定です。Core Web Vitalsの構成は以下の通りです。
 
-**<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/lcp/">Largest Contentful Paint</a> (LCP)**
+**<a hreflang="ja" href="https://web.dev/i18n/ja/lcp/">Largest Contentful Paint</a> (LCP)**
 - 表現：ユーザーが感じるロードエクスペリエンス
 - 測定：ページロードタイムラインにおいて、ビューポート内にページ最大の画像またはテキストブロックが表示される時点
 - 目標：2.5秒未満
 
-**<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/fid/">First Input Delay</a> (FID)**
+**<a hreflang="ja" href="https://web.dev/i18n/ja/fid/">First Input Delay</a> (FID)**
 - 表現：ユーザーの入力に対するレスポンスの良さ
 - 計測：ユーザーが最初にページへアクセスしてから、そのアクセスに対応するイベントハンドラーの処理をブラウザが実際に開始できるまでの時間
 - 目標：300ミリ秒未満
 
-**<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/cls/">Cumulative Layout Shift</a> (CLS)**
+**<a hreflang="ja" href="https://web.dev/i18n/ja/cls/">Cumulative Layout Shift</a> (CLS)**
 - 表現：視覚的安定性
 - 計測方法：シフトしたビューポートの割合に近似した _レイアウトシフトスコア_ の数の合計値
 - 目標：<0.10

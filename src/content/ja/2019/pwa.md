@@ -56,7 +56,7 @@ Service Workerは2014年12月に<a hreflang="en" href="https://blog.chromium.org
 )
 }}
 
-[Lighthouse](./methodology#lighthouse)は、ページが<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/install-prompt">インストールプロンプト</a>の対象かどうかを確認します。モバイルページの1.56％に<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/installable-manifest/">インストール可能なマニフェスト</a>があります。
+[Lighthouse](./methodology#lighthouse)は、ページが<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/install-prompt">インストールプロンプト</a>の対象かどうかを確認します。モバイルページの1.56％に<a hreflang="ja" href="https://web.dev/i18n/ja/installable-manifest/">インストール可能なマニフェスト</a>があります。
 
 インストール体験をコントロールするために、全デスクトップの0.82％と全モバイルページの0.94％が<a hreflang="en" href="https://w3c.github.io/manifest/#beforeinstallpromptevent-interface">`OnBeforeInstallPrompt`インターフェイス</a>を使用します。現在、<a hreflang="en" href="https://caniuse.com/#feat=web-app-manifest">サポートはChromiumベースのブラウザに限定されています</a>。
 

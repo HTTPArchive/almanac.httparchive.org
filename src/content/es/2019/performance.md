@@ -139,7 +139,7 @@ Otros geos de APAC cuentan una historia diferente. Tailandia, Vietnam, Indonesia
 
 ### Time to First Byte (TTFB)
 
-<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/time-to-first-byte">Time to First Byte</a> (TTFB) es una medida de cuánto tiempo tarda la página web desde el momento de la navegación del usuario hasta que recibe el primer byte de la respuesta.
+<a hreflang="es" href="https://web.dev/i18n/es/time-to-first-byte">Time to First Byte</a> (TTFB) es una medida de cuánto tiempo tarda la página web desde el momento de la navegación del usuario hasta que recibe el primer byte de la respuesta.
 
 {{ figure_markup(
   image="nav-timing.png",
@@ -288,6 +288,6 @@ Cuantificar cómo de rápido carga una página web es una ciencia imperfecta que
 
 Los datos presentados en este capítulo mostraron que todavía hay mucho trabajo por hacer para cumplir los objetivos establecidos para los sitios web rápidos. Ciertos factores de forma, tipos de conexión efectivos y geos se correlacionan con mejores experiencias de usuario, pero no podemos olvidarnos de las combinaciones de datos demográficos con bajo rendimiento. En muchos casos la plataforma web se utiliza para negocios; ganar más dinero mejorando las tasas de conversión puede ser un gran motivador para acelerar un sitio web. En última instancia, para todos los sitios web, el rendimiento consiste en brindar experiencias positivas a los usuarios de una manera que no los impida, los frustre o los enfurezca.
 
-A medida que la web envejece un año más y nuestra capacidad de medir cómo los usuarios la experimentan mejora gradualmente, espero que los desarrolladores tengan acceso a métricas que capturan más la experiencia holística del usuario. FCP ocurre muy pronto en la línea de tiempo de mostrar contenido útil a los usuarios, y están surgiendo métricas más nuevas como <a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/largest-contentful-paint">Largest Contentful Paint</a> (LCP) para mejorar nuestra visibilidad sobre cómo la carga de la página es percibida. La <a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/layout-instability-api">API de Layout Instability</a> también nos ha dado una nueva visión de la frustración que experimentan los usuarios más allá de la carga de la página.
+A medida que la web envejece un año más y nuestra capacidad de medir cómo los usuarios la experimentan mejora gradualmente, espero que los desarrolladores tengan acceso a métricas que capturan más la experiencia holística del usuario. FCP ocurre muy pronto en la línea de tiempo de mostrar contenido útil a los usuarios, y están surgiendo métricas más nuevas como <a hreflang="es" href="https://web.dev/i18n/es/largest-contentful-paint">Largest Contentful Paint</a> (LCP) para mejorar nuestra visibilidad sobre cómo la carga de la página es percibida. La <a hreflang="es" href="https://web.dev/i18n/es/layout-instability-api">API de Layout Instability</a> también nos ha dado una nueva visión de la frustración que experimentan los usuarios más allá de la carga de la página.
 
 Equipados con estas nuevas métricas, la web en 2020 se volverá aún más transparente, mejor entendida y brindará a los desarrolladores una ventaja para lograr un progreso más significativo para mejorar el rendimiento y contribuir a experiencias de usuario positivas.

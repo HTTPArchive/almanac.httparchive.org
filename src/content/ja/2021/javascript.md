@@ -75,9 +75,9 @@ featured_stat_label_3: カスタムエレメントを使用しているデスク
   )
 }}
 
-言い換えれば、中央値のモバイルページでは、36.2%のJavaScriptバイトが使用されていません。JavaScriptがページの<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/optimize-lcp/">最大コンテンツの描画</a>（LCP）に与える影響を考えると、とくにデバイスの性能やデータプランが限られているモバイルユーザーにとっては、CPUサイクルや他の重要なリソースがムダに消費されていることを考えると、これは非常に大きな数字です。このようなムダは、大規模なフレームワークやライブラリに同梱されている、使用されていない多くの定型的なコードの結果である可能性があります。
+言い換えれば、中央値のモバイルページでは、36.2%のJavaScriptバイトが使用されていません。JavaScriptがページの<a hreflang="ja" href="https://web.dev/i18n/ja/optimize-lcp/">最大コンテンツの描画</a>（LCP）に与える影響を考えると、とくにデバイスの性能やデータプランが限られているモバイルユーザーにとっては、CPUサイクルや他の重要なリソースがムダに消費されていることを考えると、これは非常に大きな数字です。このようなムダは、大規模なフレームワークやライブラリに同梱されている、使用されていない多くの定型的なコードの結果である可能性があります。
 
-サイトオーナーは、Lighthouseを使って<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/unused-javascript/">使われていないJavaScript</a>をチェックし、ベストプラクティスにしたがって<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/remove-unused-code/">使われていないコード</a>を削除することで、ムダなJavaScriptバイトの割合を減らすことができます。
+サイトオーナーは、Lighthouseを使って<a hreflang="ja" href="https://web.dev/i18n/ja/unused-javascript/">使われていないJavaScript</a>をチェックし、ベストプラクティスにしたがって<a hreflang="ja" href="https://web.dev/i18n/ja/remove-unused-code/">使われていないコード</a>を削除することで、ムダなJavaScriptバイトの割合を減らすことができます。
 
 ### ページあたりのJavaScriptリクエスト数
 
@@ -398,7 +398,7 @@ JavaScriptのリソースは、圧縮と最小化によってネットワーク�
 
 圧縮はネットワーク上のJavaScriptリソースの転送サイズを変更するだけですが、ミニフィケーションは実際にコード自体を小さくし、より効率的にします。これにより、スクリプトの読み込み時間が短縮されるだけでなく、クライアントがスクリプトを解析するのに費やす時間も短縮されます。
 
-<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/unminified-javascript/">unminified JavaScript</a>のLighthouse監査では、最小化の機会を強調しています。
+<a hreflang="ja" href="https://web.dev/i18n/ja/unminified-javascript/">unminified JavaScript</a>のLighthouse監査では、最小化の機会を強調しています。
 
 {{ figure_markup(
   image="unminified-js-audit-scores.png",

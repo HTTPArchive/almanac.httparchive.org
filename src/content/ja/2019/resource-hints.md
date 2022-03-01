@@ -37,7 +37,7 @@ featured_stat_label_3: 優先順位のヒントの使い方
 
 ### `preconnect`
 
-<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/uses-rel-preconnect">`preconnect`</a>は、DNSルックアップ、TCPハンドシェイク、TLSネゴシエーションを含む早期接続を開始します。このヒントはサードパーティとの接続を設定する際に有用である。`preconnect`の用途は`dns-prefetch`の用途と非常によく似ているが、`preconnect`はブラウザのサポートが少ない。しかし、IE 11のサポートを必要としないのであれば、preconnectの方が良い選択であろう。
+<a hreflang="ja" href="https://web.dev/i18n/ja/uses-rel-preconnect">`preconnect`</a>は、DNSルックアップ、TCPハンドシェイク、TLSネゴシエーションを含む早期接続を開始します。このヒントはサードパーティとの接続を設定する際に有用である。`preconnect`の用途は`dns-prefetch`の用途と非常によく似ているが、`preconnect`はブラウザのサポートが少ない。しかし、IE 11のサポートを必要としないのであれば、preconnectの方が良い選択であろう。
 
 ### `preload`
 
@@ -263,7 +263,7 @@ HTTPヘッダー内のリソースヒントの使用量が非常に少ないた�
 
 ### ネイティブの遅延ローディング
 
-<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/native-lazy-loading">ネイティブの遅延ローディング</a>は、画面外の画像やiframeの読み込みを遅延させるためのネイティブAPIです。これにより、最初のページ読み込み時にリソースを解放し、使用されないアセットの読み込みを回避できます。以前は、この技術はサードパーティの[JavaScript](./javascript)ライブラリでしか実現できませんでした。
+<a hreflang="ja" href="https://web.dev/i18n/ja/native-lazy-loading">ネイティブの遅延ローディング</a>は、画面外の画像やiframeの読み込みを遅延させるためのネイティブAPIです。これにより、最初のページ読み込み時にリソースを解放し、使用されないアセットの読み込みを回避できます。以前は、この技術はサードパーティの[JavaScript](./javascript)ライブラリでしか実現できませんでした。
 
 ネイティブな遅延読み込みのためのAPIはこのようになります。`<img src="cat.jpg" loading="lazy">`.
 

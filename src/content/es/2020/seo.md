@@ -68,7 +68,7 @@ El archivo `robots.txt` debe ser de texto plano, codificado en UTF-8 y responder
 
 En general, 80.46% de las páginas móviles tuvieron una respuesta 2XX en su archivo `robots.txt`. De estas, 25.09% no fueron reconocidos como válidos. Esto ha mejorado ligeramente a lo largo del 2019, cuando se encontró que [27.84% de los sitios web móviles tenían un `robots.txt` válido](../2019/seo#robotstxt).
 
-Lighthouse, la fuente de datos para comprobar la validez del `robots.txt`, introdujo una <a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/robots-txt/">auditoría de`robots.txt`</a> como parte de la actualización de la v6. Esta inclusión destaca que una petición exitosa no significa que dicho archivo sea capaz de proporcionar las directivas necesarias a los rastreadores web.
+Lighthouse, la fuente de datos para comprobar la validez del `robots.txt`, introdujo una <a hreflang="es" href="https://web.dev/i18n/es/robots-txt/">auditoría de`robots.txt`</a> como parte de la actualización de la v6. Esta inclusión destaca que una petición exitosa no significa que dicho archivo sea capaz de proporcionar las directivas necesarias a los rastreadores web.
 
 <figure>
   <table>
@@ -764,17 +764,17 @@ Tener un sitio web que cargue rápido es fundamental para proporcionar una gran 
 
 Como se anunció en Noviembre de 2020, 3 métricas de rendimiento conocidas como las <a hreflang="en" href="https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html">Core Web Vitals</a> están en camino a ser un factor de posicionamiento como parte de las señales de "experiencia de página" en Mayo de 2021. Las Core Web Vitals consisten en:
 
-**<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/lcp/">Largest Contentful Paint</a> (LCP)**
+**<a hreflang="es" href="https://web.dev/i18n/es/lcp/">Largest Contentful Paint</a> (LCP)**
 - Representa: experiencia de carga percibida por el usuario
 - Medición: el punto en la línea del tiempo de carga cuando la imagen o bloque de texto más largo de la página es visible dentro del viewport
 - Objetivo: <2.5 segundos
 
-**<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/fid/">First Input Delay</a> (FID)**
+**<a hreflang="es" href="https://web.dev/i18n/es/fid/">First Input Delay</a> (FID)**
 - Representa: respuesta a entradas del usuario
 - Medición: el tiempo desde que un usuario interactúa inicialmente con la página hasta el tiempo en que el navegador es capaz de empezar a procesar los manejadores de eventos en respuesta a esa interacción
 - Objetivo: <300 milisegundos
 
-**<a hreflang="{{ lang }}" href="https://web.dev/i18n/{{ lang }}/cls/">Cumulative Layout Shift</a> (CLS)**
+**<a hreflang="es" href="https://web.dev/i18n/es/cls/">Cumulative Layout Shift</a> (CLS)**
 - Representa: estabilidad visual
 - Medición: la suma del número de _puntuaciones de los cambios de composición_ aproximando el porcentaje en que cambió el viewport
 - Objetivo: <0.10
