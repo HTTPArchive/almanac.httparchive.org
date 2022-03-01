@@ -279,7 +279,7 @@ Slecht beveiligingsbeheer binnen een bedrijf kan een {significante impact hebben
   description="Staafdiagram dat het aantal gebruikersaccounts toont dat betrokken is in gegevenslekken, op basis van de gegevensklasse die gelekt werd in het gegevenslek. 641 miljoen e-mailadressen waren aanwezig in gegevenslekken, 428 miljoen wachtwoorden, 369 miljoen namen, 173 miljoen geografische locaties, 149 miljoen telefoonnummers, 149 miljoen genders, 134 miljoen socialemediaprofielen, 127 miljoen onderwijsniveaus, 126 miljoen jobtitels, en ten slotte 110 miljoen fysieke adressen.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1612339126&format=interactive",
   sheets_gid="1158689200",
-  sql_file="data_breaches_pwned_accounts_per_class.sql"
+  sql_file="data_breaches_pwned_websites_per_data_class.sql"
   )
 }}
 

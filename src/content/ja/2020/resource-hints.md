@@ -39,7 +39,7 @@ featured_stat_label_3: ネイティブの遅延ローディングを使用して
 
 ### `dns-prefetch`
 
-<a hreflang="ja" href="https://web.dev/i18n/ja/preconnect-and-dns-prefetch/">`dns-prefetch`</a> は、指定されたドメインのIPアドレスを事前解決するのに役立ちます。利用可能な<a hreflang="en" href="https://caniuse.com/link-rel-dns-prefetch">もっとも古い</a>リソースヒントとして、`preconnect`と比較して最小限のCPUとネットワークリソースを使用し、ブラウザがDNS解決のための <a hreflang="en" href="https://www.chromium.org/developers/design-documents/dns-prefetching">1秒以上</a>の「最悪のケース」の遅延を経験しないことに役立ちます。
+<a hreflang="en" href="https://web.dev/preconnect-and-dns-prefetch/">`dns-prefetch`</a> は、指定されたドメインのIPアドレスを事前解決するのに役立ちます。利用可能な<a hreflang="en" href="https://caniuse.com/link-rel-dns-prefetch">もっとも古い</a>リソースヒントとして、`preconnect`と比較して最小限のCPUとネットワークリソースを使用し、ブラウザがDNS解決のための <a hreflang="en" href="https://www.chromium.org/developers/design-documents/dns-prefetching">1秒以上</a>の「最悪のケース」の遅延を経験しないことに役立ちます。
 
 ```html
 <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
@@ -61,11 +61,11 @@ featured_stat_label_3: ネイティブの遅延ローディングを使用して
 - 最初の負荷をかける際に、使用したオリジンのウォームアップが遅すぎないようにする。
 - CPUやバッテリーのコストが、かかる場合があるので、3つ以下のoriginで使用してください。
 
-最後に、`preconnect`は<a hreflang="en" href="https://caniuse.com/?search=preconnect">Internet ExplorerやFirefox</a>では利用できませんので、<a hreflang="ja" href="https://web.dev/i18n/ja/preconnect-and-dns-prefetch/#resolve-domain-name-early-with-reldns-prefetch">予備として`dns-prefetch`を利用することを</a>強くオススメします。
+最後に、`preconnect`は<a hreflang="en" href="https://caniuse.com/?search=preconnect">Internet ExplorerやFirefox</a>では利用できませんので、<a hreflang="en" href="https://web.dev/preconnect-and-dns-prefetch/#resolve-domain-name-early-with-reldns-prefetch">予備として`dns-prefetch`を利用することを</a>強くオススメします。
 
 ### `preload`
 
-<a hreflang="ja" href="https://web.dev/i18n/ja/uses-rel-preload/">`preload`</a> ヒントは、早期のリクエストを開始します。これはパーサーが、発見するのが遅れるような重要なリソースを読み込むのに便利です。
+<a hreflang="en" href="https://web.dev/uses-rel-preload/">`preload`</a> ヒントは、早期のリクエストを開始します。これはパーサーが、発見するのが遅れるような重要なリソースを読み込むのに便利です。
 
 ```html
 <link rel="preload" href="style.css" as="style">
@@ -78,7 +78,7 @@ featured_stat_label_3: ネイティブの遅延ローディングを使用して
 
 ### `prefetch`
 
-<a hreflang="ja" href="https://web.dev/i18n/ja/link-prefetch/">`prefetch`</a>ヒントを使用すると、次のナビゲーションで使用されると予想される低優先度のリクエストを開始できます。このヒントは、リソースをダウンロードして、あとで使用するためHTTPキャッシュにドロップします。重要なのは、`prefetch`はリソースの実行やその他の処理を行わず、実行するにはページが`<script>`タグでリソースを呼び出す必要があるということです。
+<a hreflang="en" href="https://web.dev/link-prefetch/">`prefetch`</a>ヒントを使用すると、次のナビゲーションで使用されると予想される低優先度のリクエストを開始できます。このヒントは、リソースをダウンロードして、あとで使用するためHTTPキャッシュにドロップします。重要なのは、`prefetch`はリソースの実行やその他の処理を行わず、実行するにはページが`<script>`タグでリソースを呼び出す必要があるということです。
 
 ```html
 <link rel="prefetch" as="script" href="next-page.bundle.js">
@@ -232,7 +232,7 @@ HTTP Archiveをもとに、2020年のトレンド分析に飛び込み、前回�
   sql_file="lighthouse_preconnect.sql"
 ) }}
 
-最後に、Lighthouseの"<a hreflang="ja" href="https://web.dev/i18n/ja/uses-rel-preload/">Preload key requests</a>"の監査を実行した結果、84.6％のページがテストに合格しました。はじめて`preload`を使おうとしている人は、フォントやクリティカルスクリプトを覚えておくといいでしょう。
+最後に、Lighthouseの"<a hreflang="en" href="https://web.dev/uses-rel-preload/">Preload key requests</a>"の監査を実行した結果、84.6％のページがテストに合格しました。はじめて`preload`を使おうとしている人は、フォントやクリティカルスクリプトを覚えておくといいでしょう。
 
 ### ネイティブの遅延ローディング
 
@@ -248,7 +248,7 @@ HTTP Archiveをもとに、2020年のトレンド分析に飛び込み、前回�
 
 とくに、今年初めに発表された公式基準値は保守的すぎ、<a hreflang="en" href="https://addyosmani.com/blog/better-image-lazy-loading-in-chrome/">最近</a>ようやく開発者の期待に応えられる状況です。約72％のブラウザがネイティブ画像/ソースの遅延ローディングをサポートしていることから、とくにローエンドデバイスでのデータ使用量やパフォーマンスを改善したいページにとっては、この分野もチャンスとなります。
 
-Lighthouseの「<a hreflang="ja" href="https://web.dev/i18n/ja/offscreen-images/">Defer offscreen images</a>」監査を実行した結果、68.65％のページがテストに合格しました。これらのページでは、すべての重要なリソースのロードが完了した後に、画像を遅延ロードできます。
+Lighthouseの「<a hreflang="en" href="https://web.dev/offscreen-images/">Defer offscreen images</a>」監査を実行した結果、68.65％のページがテストに合格しました。これらのページでは、すべての重要なリソースのロードが完了した後に、画像を遅延ロードできます。
 
 ビューポートが変わると画像が画面外に出てしまうことがあるので、デスクトップとモバイルの両方で監査を行うように注意してください。
 
@@ -256,7 +256,7 @@ Lighthouseの「<a hreflang="ja" href="https://web.dev/i18n/ja/offscreen-images/
 
 `prefetch`と機械学習を組み合わせることで、後続のページのパフォーマンスを向上させることができます。このソリューションの1つに、<a hreflang="en" href="https://github.com/guess-js/guess">Guess.js</a>があります。予測型プリフェッチの最初のブレークスルーとなり、すでに10以上のウェブサイトが本番で使用しています。
 
-<a hreflang="ja" href="https://web.dev/i18n/ja/predictive-prefetching/">予測型プリフェッチ</a>は、データ分析や機械学習の手法を用いて、データに基づいたプリフェッチのアプローチを提供する手法です。Guess.jsは、一般的なフレームワーク（Angular、Nuxt.js、Gatsby、Next.js）で予測型プリフェッチをサポートしているライブラリで、今日からでも利用できます。Guess.jsは、ページから可能なナビゲーションをランク付けし、次必要になりそうなJavaScriptのみをプリフェッチします。
+<a hreflang="en" href="https://web.dev/predictive-prefetching/">予測型プリフェッチ</a>は、データ分析や機械学習の手法を用いて、データに基づいたプリフェッチのアプローチを提供する手法です。Guess.jsは、一般的なフレームワーク（Angular、Nuxt.js、Gatsby、Next.js）で予測型プリフェッチをサポートしているライブラリで、今日からでも利用できます。Guess.jsは、ページから可能なナビゲーションをランク付けし、次必要になりそうなJavaScriptのみをプリフェッチします。
 
 学習セットにもよりますが、Guess.jsのプリフェッチは90％以上の精度で行われています。
 

@@ -351,7 +351,7 @@ Eleventyのようなフレームワークもありますが、そのようなフ
 
 さらに、Jamstackコミュニティが注意を払う必要がある分野をいくつか取り上げました。2021年のレポートで共有できるような進展があることを願っています。さまざまなJamstackフレームワークは、コア・ウェブ・バイタルを見ることで、リアル・ユーザー体験を向上させる方法を文書化できます。
 
-JamstackサイトをホストするCDNの1つであるVercelは、<a hreflang="en" href="https://vercel.com/docs/analytics#real-experience-score">リアルユーザー体験スコア</a>と呼ばれる分析サービスを構築しました。<a hreflang="ja" href="https://web.dev/i18n/ja/measure/">Lighthouse</a>のような他のパフォーマンス測定ツールが、ラボでシミュレーションを実行してユーザーの体験を推定するのに対し、Vercelのリアル体験スコアは、アプリケーションの実際のユーザーのデバイスから収集した実際のデータポイントを使用して計算されます。
+JamstackサイトをホストするCDNの1つであるVercelは、<a hreflang="en" href="https://vercel.com/docs/analytics#real-experience-score">リアルユーザー体験スコア</a>と呼ばれる分析サービスを構築しました。<a hreflang="en" href="https://web.dev/measure/">Lighthouse</a>のような他のパフォーマンス測定ツールが、ラボでシミュレーションを実行してユーザーの体験を推定するのに対し、Vercelのリアル体験スコアは、アプリケーションの実際のユーザーのデバイスから収集した実際のデータポイントを使用して計算されます。
 
 ここで注目すべきは、Next.jsのLCPスコアが低かったため、VercelがNext.jsを作成し、維持管理していることでしょう。今回の新しい提供は、来年にはLCPスコアが大幅に改善されることを意味しています。これは、ユーザーや開発者にとって非常に有益な情報となるでしょう。
 

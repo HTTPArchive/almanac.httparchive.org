@@ -345,7 +345,7 @@ JavaScriptのリソースを圧縮しているサイトはどれくらいある�
 <script nomodule src="fallback.js"></script>
 ```
 
-併用すると、モジュールをサポートしているブラウザは`nomodule`属性を含むスクリプトを完全に無視します。一方、モジュールをサポートしていないブラウザは ¥`type="module"`属性を持つスクリプトをダウンロードしません。ブラウザは`nomodule`も認識しないので、`type="module"`属性を持つスクリプトを普通にダウンロードします。このアプローチを使うことで、開発者は<a hreflang="ja" href="https://web.dev/i18n/ja/serve-modern-code-to-modern-browsers/">最新のコードを最新のブラウザに送信してページ読み込みを高速化する</a>できます。では、ページ上のスクリプトに`nomodule`を使っているサイトはどれくらいあるのだろうか。
+併用すると、モジュールをサポートしているブラウザは`nomodule`属性を含むスクリプトを完全に無視します。一方、モジュールをサポートしていないブラウザは ¥`type="module"`属性を持つスクリプトをダウンロードしません。ブラウザは`nomodule`も認識しないので、`type="module"`属性を持つスクリプトを普通にダウンロードします。このアプローチを使うことで、開発者は<a hreflang="en" href="https://web.dev/serve-modern-code-to-modern-browsers/">最新のコードを最新のブラウザに送信してページ読み込みを高速化する</a>できます。では、ページ上のスクリプトに`nomodule`を使っているサイトはどれくらいあるのだろうか。
 
 {{ figure_markup(
   image="fig14.png",
