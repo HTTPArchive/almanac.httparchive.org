@@ -290,7 +290,7 @@ WebSocketStream API已经完成了第一次初期试用，现在又回到了实�
 
 ### 启用QUIC
 
-<a hreflang="en" href="https://www.chromium.org/quic">QUIC</a> (<a hreflang="en" href="https://www.ietf.org/archive/id/draft-ietf-quic-transport-31.txt">IETF Internet-Draft</a>)是一种基于UDP实现的多路复用、基于流的双向传输协议。它是在TCP之上实现的HTTP/WebSocket API的替代品。<a hreflang="zh" href="https://web.dev/i18n/zh/quictransport/">QuicTransport API</a>是用于向QUIC服务器发送消息和接收消息的客户端API。开发者可以选择通过数据包不可靠地发送数据，或者通过使用其流API可靠地发送数据。
+<a hreflang="en" href="https://www.chromium.org/quic">QUIC</a> (<a hreflang="en" href="https://www.ietf.org/archive/id/draft-ietf-quic-transport-31.txt">IETF Internet-Draft</a>)是一种基于UDP实现的多路复用、基于流的双向传输协议。它是在TCP之上实现的HTTP/WebSocket API的替代品。<a hreflang="zh" href="https://web.dev/i18n/zh/webtransport/">QuicTransport API</a>是用于向QUIC服务器发送消息和接收消息的客户端API。开发者可以选择通过数据包不可靠地发送数据，或者通过使用其流API可靠地发送数据。
 
 ```js
 const transport = new QuicTransport(QUIC_URL);

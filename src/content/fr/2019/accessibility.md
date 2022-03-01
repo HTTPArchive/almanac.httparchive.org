@@ -64,7 +64,7 @@ Utiliser une <a hreflang="en" href="https://accessibleweb.com/question-answer/mi
 
 Il existe de rares cas où la désactivation de la mise à l’échelle est acceptable, comme lorsque la page en question est un jeu web utilisant des commandes tactiles. Si laissé activé dans ce cas, les téléphones des joueurs et joueuses feront un zoom avant et arrière à chaque fois qu’ils tapoteront deux fois sur le jeu, ce qui —&nbsp;ironiquement&nbsp;— le rendra inaccessible.
 
-De fait, les développeurs et développeuses ont la possibilité de désactiver cette fonctionnalité en définissant l’une des deux propriétés suivantes dans la [balise meta viewport](https://developer.mozilla.org/fr/docs/Mozilla/Mobile/Balise_meta_viewport)&nbsp;:
+De fait, les développeurs et développeuses ont la possibilité de désactiver cette fonctionnalité en définissant l’une des deux propriétés suivantes dans la [balise meta viewport](https://developer.mozilla.org/fr/docs/HTML/Viewport_meta_tag)&nbsp;:
 
 1. `user-scalable` mis à `0` ou `no`&nbsp;;
 

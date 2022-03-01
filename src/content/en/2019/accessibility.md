@@ -64,7 +64,7 @@ Using a <a hreflang="en" href="https://accessibleweb.com/question-answer/minimum
 
 There are rare cases when disabling scaling is acceptable, like when the page in question is a web-based game using touch controls. If left enabled in this case, players' phones will zoom in and out every time the player taps twice on the game, ironically making it inaccessible.
 
-Because of this, developers are given the ability to disable this feature by setting one of the following two properties in the [meta viewport tag](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag):
+Because of this, developers are given the ability to disable this feature by setting one of the following two properties in the [meta viewport tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag):
 
 1. `user-scalable` set to `0` or `no`
 

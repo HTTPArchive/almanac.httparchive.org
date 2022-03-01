@@ -290,7 +290,7 @@ WebSocketStream APIは、ストリームのリーダーとライターが安全�
 
 ### 速くする
 
-<a hreflang="en" href="https://www.chromium.org/quic">QUIC</a>(<a hreflang="en" href="https://www.ietf.org/archive/id/draft-ietf-quic-transport-31.txt">IETFインターネット草案</a>)は、UDP上に実装された多重化されたストリームベースの双方向トランスポートプロトコルです。これは、TCP上に実装されている<span lang="en">HTTP/WebSocket API</span>に代わるものです。<a hreflang="ja" href="https://web.dev/i18n/ja/quictransport/">QuicTransport API</a>は、QUICサーバとメッセージを送受信するためのクライアント側APIです。開発者は、データグラムを介して信頼性のないデータを送信するか、そのストリームAPIを使用して信頼性の高いデータを送信するかを選択できます。
+<a hreflang="en" href="https://www.chromium.org/quic">QUIC</a>(<a hreflang="en" href="https://www.ietf.org/archive/id/draft-ietf-quic-transport-31.txt">IETFインターネット草案</a>)は、UDP上に実装された多重化されたストリームベースの双方向トランスポートプロトコルです。これは、TCP上に実装されている<span lang="en">HTTP/WebSocket API</span>に代わるものです。<a hreflang="ja" href="https://web.dev/i18n/ja/webtransport/">QuicTransport API</a>は、QUICサーバとメッセージを送受信するためのクライアント側APIです。開発者は、データグラムを介して信頼性のないデータを送信するか、そのストリームAPIを使用して信頼性の高いデータを送信するかを選択できます。
 
 ```js
 const transport = new QuicTransport(QUIC_URL);

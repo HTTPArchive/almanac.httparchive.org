@@ -64,7 +64,7 @@ Usar um <a hreflang="en" href="https://accessibleweb.com/question-answer/minimum
 
 Existem raros casos em que a desativação do escalonamento é aceitável, como quando a página em questão é um jogo baseado na web que usa controles de toque. Se deixado ativado neste caso, os telefones dos jogadores irão aumentar e diminuir o zoom cada vez que o jogador tocar duas vezes no jogo, ironicamente tornando-o inacessível.
 
-Por causa disso, os desenvolvedores têm a capacidade de desativar esse recurso definindo uma das duas propriedades a seguir na [meta tag viewport](https://developer.mozilla.org/pt-BR/docs/Mozilla/Mobile/Viewport_meta_tag):
+Por causa disso, os desenvolvedores têm a capacidade de desativar esse recurso definindo uma das duas propriedades a seguir na [meta tag viewport](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag):
 
 1. `user-scalable` definido como `0` ou `no`
 

@@ -64,7 +64,7 @@ Het gebruik van een <a hreflang="en" href="https://accessibleweb.com/question-an
 
 Er zijn zeldzame gevallen waarin het uitschakelen van schalen acceptabel is, zoals wanneer de betreffende pagina een webgebaseerd spel is met aanraakbediening. Indien ingeschakeld in dit geval, zullen de telefoons van spelers elke keer dat de speler tweemaal op het spel tikt in- en uitzoomen, waardoor het ironisch genoeg ontoegankelijk wordt.
 
-Daarom krijgen ontwikkelaars de mogelijkheid om deze functie uit te schakelen door een van de volgende twee eigenschappen in de [meta viewport-tag](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag) in te stellen:
+Daarom krijgen ontwikkelaars de mogelijkheid om deze functie uit te schakelen door een van de volgende twee eigenschappen in de [meta viewport-tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) in te stellen:
 
 1. `user-scalable` ingesteld op `0` of `no`
 

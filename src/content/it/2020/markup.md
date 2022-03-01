@@ -965,7 +965,7 @@ Abbiamo trattato l'uso dell'HTML in generale, nonché l'adozione degli elementi 
 
 ### Specifiche di `viewport`
 
-Il meta elemento [viewport](https://developer.mozilla.org/it/docs/Mozilla/Mobile/Viewport_meta_tag) viene utilizzato per controllare il layout sui browser mobile. Mentre anni fa, il motto era una specie di "non dimenticare il meta elemento viewport" durante la creazione di una pagina web, alla fine questa divenne una pratica comune e il motto cambiò in "assicurati che lo zoom e il ridimensionamento non siano disabilitati".
+Il meta elemento [viewport](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) viene utilizzato per controllare il layout sui browser mobile. Mentre anni fa, il motto era una specie di "non dimenticare il meta elemento viewport" durante la creazione di una pagina web, alla fine questa divenne una pratica comune e il motto cambiò in "assicurati che lo zoom e il ridimensionamento non siano disabilitati".
 
 Gli utenti dovrebbero essere in grado di ingrandire e ridimensionare il testo <a hreflang="en" href="https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large">fino al 500%</a>.Ecco perché i controlli in strumenti popolari come <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> o <a hreflang="en" href="https://www.deque.com/axe/">axe</a> falliscono quando `user-scalable="no"` è usato all'interno dell'elemento `metaname="viewport"`, e quando il valore dell'attributo `maximum-scale` è minore di `5`.
 

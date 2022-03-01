@@ -965,7 +965,7 @@ We hebben het gebruik van HTML in het algemeen behandeld, evenals de acceptatie 
 
 ### `viewport` specificaties
 
-Het meta-element [viewport](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag) wordt gebruikt om de lay-out op mobiele browsers te beheren. Terwijl het motto jaren geleden een beetje was "vergeet het viewport-meta-element niet" bij het bouwen van een webpagina, werd dit uiteindelijk een gangbare praktijk en veranderde het motto in "zorg ervoor dat zoomen en schalen niet worden uitgeschakeld."
+Het meta-element [viewport](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) wordt gebruikt om de lay-out op mobiele browsers te beheren. Terwijl het motto jaren geleden een beetje was "vergeet het viewport-meta-element niet" bij het bouwen van een webpagina, werd dit uiteindelijk een gangbare praktijk en veranderde het motto in "zorg ervoor dat zoomen en schalen niet worden uitgeschakeld."
 
 Gebruikers moeten de tekst kunnen zoomen en schalen <a hreflang="en" href="https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large">tot 500%</a>. Daarom mislukken audits in populaire hulpmiddelen zoals <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> of <a hreflang="en" href="https://www.deque.com/axe/">axe</a> wanneer `user-scalable="no"` wordt gebruikt binnen het `meta name="viewport"` element, en wanneer de `maximum-scale` attribuutwaarde kleiner is dan `5`.
 
