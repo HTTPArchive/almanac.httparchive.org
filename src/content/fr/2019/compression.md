@@ -3,7 +3,7 @@
 title: Compression
 description: Chapitre sur la compression par Web Almanac 2019, les algorithmes, les types de contenu, la compression 1ere partie et tierce partie et les possibilités.
 authors: [paulcalvano]
-reviewers: [obto, yoavweiss]
+reviewers: [foxdavidj, yoavweiss]
 analysts: [paulcalvano]
 editors: [tunetheweb]
 translators: [allemas]

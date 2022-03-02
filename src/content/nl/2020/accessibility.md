@@ -3,8 +3,8 @@
 title: Toegankelijkheid
 description: Toegankelijkheidshoofdstuk van de Web Almanac 2020 over leesgemak, media, navigatiegemak en compatibiliteit met ondersteunende technologieën.
 authors: [oluoluoxenfree, alextait1]
-reviewers: [aardrian, ericwbailey, obto]
-analysts: [obto]
+reviewers: [aardrian, ericwbailey, foxdavidj]
+analysts: [foxdavidj]
 editors: [tunetheweb]
 translators: [noah-vdv]
 oluoluoxenfree_bio: Olu Niyi-Awosusi is een software engineer bij de FT die houdt van lijsten, nieuwe dingen leren, Bee en Puppycat, <a hreflang="en" href="https://alistapart.com/article/building-the-woke-web/">sociale rechtvaardigheid, toegankelijkheid</a> en elke dag harder proberen.
@@ -92,7 +92,7 @@ We ontdekten dat 29,34% van de desktoppagina's en 30,66% van de mobiele pagina's
   content="77,67%",
   classes="big-number",
   sheets_gid="812908021",
-  sql_file="02_05.sql"
+  sql_file="valid_html_lang.sql"
 )
 }}
 

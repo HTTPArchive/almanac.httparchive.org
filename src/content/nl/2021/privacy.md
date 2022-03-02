@@ -71,12 +71,12 @@ We zien dat domeinen die eigendom zijn van Google alomtegenwoordig zijn op de on
 Over het algemeen bevatten 82,08% van mobiele sites en 83,33% van desktopsites minstens één tracker, meestal voor siteanalytics of advertentiedoeleinden.
 
 {{ figure_markup(
-  image="nb_websites_with_nb_trackers.png",
+  image="number_of_websites_with_nb_trackers.png",
   caption="Het aantal trackers per website.",
   description="Lijndiagram dat het aantal trackers per websites toont, beginnend bij 15,62% van desktopsites en 16,31% van mobiele sites die één tracker hebben en naar beneden buigend voorbij respectievelijk 9,30% en 8,64% voor 5%, 0,38% en 0,41% voor 15 trackers en dan een lange staart afgekapt op 0,12% en 0,15% voor 25 trackers. Mobiel en desktop hebben doorlopend bijna identieke aantallen.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=268105548&format=interactive",
   sheets_gid="690197217",
-  sql_file="nb_websites_with_nb_trackers.sql"
+  sql_file="number_of_websites_with_nb_trackers.sql"
   )
 }}
 
@@ -126,12 +126,12 @@ Een van die technieken is _browser fingerprinting_ (letterlijk: "vingerafdrukken
 Het detecteren van fingerprinting is complex: het is effectief door een combinatie van methodeoproepen en _event listeners_ die ook gebruikt kunnen worden voor niet-trackingdoeleinden. In plaats van op deze individuele methoden te focussen, focussen we daarom op vijf populaire bibliotheken die het eenvoudig maken voor een website om fingerprinting te implementeren.
 
 {{ figure_markup(
-  image="nb_websites_using_each_fingerprinting.png",
+  image="number_of_websites_using_each_fingerprinting.png",
   caption="Websites die elke bibliotheek voor fingerprinting gebruikt.",
   description="Grafiek die het percentage toont van websites die een van de fingerprintingbibliotheken bevatten. FingerprintJS wordt gebruikt door 0,74% van de desktopsites en 0,64% van de mobiele sites, ClientJS door respectievelijk 0,04% en 0,04%, MaxMind door 0,03% en 0,02%, TruValidate door 0,03% en 0,02%, ThreatMetrix door 0,00% en 0,00%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1537414997&format=interactive",
   sheets_gid="1785016530",
-  sql_file="nb_websites_using_each_fingerprinting.sql"
+  sql_file="number_of_websites_using_each_fingerprinting.sql"
   )
 }}
 
@@ -190,12 +190,12 @@ CNAME-gebaseerde tracking kan een tegenmaatregel zijn wanneer de gebruiker mogel
 _Advertisement retargeting_ refereert naar de praktijk om bij te houden welke producten een gebruiker bekeken maar niet gekocht heeft, en op te volgen met advertenties voor deze producten op verschillende websites. In plaats van te kiezen voor een agressieve marketingstrategie terwijl een gebruiker de website bezoekt, kiest de website ervoor om de gebruiker te overhalen om het product te kopen door deze voortdurend te herinneren aan het merk en product.
 
 {{ figure_markup(
-  image="nb_websites_using_each_retargeting.png",
+  image="number_of_websites_using_each_retargeting.png",
   caption="Percentage van pagina's die een dienst voor retargeting gebruiken.",
   description="Staafdiagram dat de meest populaire diensten toont die gebruikt worden voor retargeting en het aantal websites dat die gebruikt. Google Remarketing Tag wordt gebruikt door 26,92% van de desktopsites en 26,64% van de mobiele sites, Criteo door respectievelijk 1,25% en 1,21%, AdRoll door 0,48% en 0,38%, SharpSpring Ads door 0,12% en 0,09%, Albacross door 0,04% en 0,03%, SteelHouse door 0,03% en 0,02%, Smarter Click door 0,02% en 0,01%, Blue door 0,02% en 0,01%, Cross Pixel door 0,02% en 0,01%, en ten slotte Picreel door 0,01% en 0,01%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=882622568&format=interactive",
   sheets_gid="1940290757",
-  sql_file="nb_websites_using_each_retargeting.sql",
+  sql_file="number_of_websites_using_each_retargeting.sql",
   width=600,
   height=580
   )
@@ -215,12 +215,12 @@ We keken naar hoe vaak websites toegang vragen tot gevoelige bronnen. Daarnaast 
 Sensoren kunnen nuttig zijn om een website interactiever te maken maar kunnen ook misbruikt worden voor het <a hreflang="en" href="https://www.esat.kuleuven.be/cosic/publications/article-3078.pdf">fingerprinten van gebruikers</a>. Gebaseerd op het gebruik van JavaScript _event listeners_, wordt de oriëntatie van het toestel het meest opgevraagd, zowel op mobiel als op desktop. Merk op dat we zochten naar de aanwezigheid van _event listeners_ op websites, maar we weten niet of deze code effectief werd uitgevoerd. Het gebruik van toestelsensoren is in deze sectie daarom een bovengrens.
 
 {{ figure_markup(
-  image="nb_websites_with_device_sensor_events.png",
+  image="number_of_websites_with_device_sensor_events.png",
   caption="5 meest gebruikte sensorevents.",
   description="Staafdiagram dat de meest gebruikte sensorevents toont, gebaseerd op het gebruik van JavaScript _event listeners_. `deviceOrientation` wordt gevonden op 3,32% van de desktopsites en 3,23% van de mobiele sites, `deviceReady` op 1,12% en 1,23%, `devicemotion` op 0,65% en 0,66%, `deviceChange` op 0,03% en 0,02%, en ten slotte  `deviceproximity` op 0,03% en 0,02%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=40988621&format=interactive",
   sheets_gid="1513080238",
-  sql_file="nb_websites_with_device_sensor_events.sql"
+  sql_file="number_of_websites_with_device_sensor_events.sql"
   )
 }}
 
@@ -233,7 +233,7 @@ De [MediaDevices API](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevi
   content="7,23%",
   classes="big-number",
   sheets_gid="2141743069",
-  sql_file="nb_websites_with_mediadevices_blink_usage.sql"
+  sql_file="number_of_websites_with_mediadevices_blink_usage.sql"
 )
 }}
 
@@ -244,24 +244,24 @@ Op 7,23% van de desktopwebsites en 5,33% van de mobiele websites wordt de `enume
 Geolocatiediensten voorzien GPS- en andere locatiegegevens (zoals [IP-adres](https://developer.mozilla.org/en-US/docs/Glossary/IP_Address)) van een gebruiker en kunnen gebruikt worden door trackers om relevantere inhoud weer te geven aan de gebruiker, naast andere zaken. We analyseren daarom het gebruik van "geolocation-as-a-service"-technologieën op websites, gebaseerd op bibliotheken gedetecteerd met [Wappalyzer](./methodology#wappalyzer).
 
 {{ figure_markup(
-  image="nb_websites_using_each_geolocation.png",
+  image="number_of_websites_using_each_geolocation.png",
   caption="Percentage van websites die geolocatiediensten gebruiken.",
   description="Diagram dat het percentage van websites toont dat elk van de geolocatiediensten gebruikt. ipify wordt gebruik door 0,09% van de desktopsites en 0,07% van de mobiele sites, MaxMind door respectievelijk 0,03% en 0,02%, db-ip door 0,01% en 0,01%, en ten slotte ipstack door 0,01% en 0,01%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2115506749&format=interactive",
   sheets_gid="1274602607",
-  sql_file="nb_websites_using_each_geolocation.sql"
+  sql_file="number_of_websites_using_each_geolocation.sql"
   )
 }}
 
 We zien dat de populairste dienst, <a hreflang="en" href="https://www.ipify.org/">ipify</a>, wordt gebruikt op 0,09% van de desktopwebsites en 0,07% van de mobiele websites. Het lijkt er dus op dat weinig websites locatiediensten gebruiken.
 
 {{ figure_markup(
-  image="nb_websites_with_geolocation_blink_usage.png",
+  image="number_of_websites_with_geolocation_blink_usage.png",
   caption="Percentage van websites die geolocatiefuncties gebruiken.",
   description="Staafdiagram dat het percentage van websites toont dat elk van de geolocatiefuncties gebruikt. `GeolocationGetCurrentPosition` wordt gebruikt door 0,59% van de desktopsites en 0,63% van de mobiele sites, `GeolocationSecureOrigin` door respectievelijk 0,59% en 0,62%, `GeolocationInsecureOrigin` door 0,01% en 0,02%, `GeolocationWatchPosition` door 0,02% en 0,02%, `GeolocationSecureOriginIframe` door 0,02% en 0,02%, `GeolocationDisabledByFeaturePolicy` door 0,02% en 0,01%, en ten slotte `GeolocationInsecureOriginIframe` door 0,00% en 0,01%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1513111756&format=interactive",
   sheets_gid="1110372680",
-  sql_file="nb_websites_with_geolocation_blink_usage.sql"
+  sql_file="number_of_websites_with_geolocation_blink_usage.sql"
   )
 }}
 
@@ -279,7 +279,7 @@ Slecht beveiligingsbeheer binnen een bedrijf kan een {significante impact hebben
   description="Staafdiagram dat het aantal gebruikersaccounts toont dat betrokken is in gegevenslekken, op basis van de gegevensklasse die gelekt werd in het gegevenslek. 641 miljoen e-mailadressen waren aanwezig in gegevenslekken, 428 miljoen wachtwoorden, 369 miljoen namen, 173 miljoen geografische locaties, 149 miljoen telefoonnummers, 149 miljoen genders, 134 miljoen socialemediaprofielen, 127 miljoen onderwijsniveaus, 126 miljoen jobtitels, en ten slotte 110 miljoen fysieke adressen.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1612339126&format=interactive",
   sheets_gid="1158689200",
-  sql_file="data_breaches_pwned_accounts_per_class.sql"
+  sql_file="data_breaches_pwned_websites_per_data_class.sql"
   )
 }}
 
@@ -334,12 +334,12 @@ Voor navigaties en iframes, kunnen deze gegevens ook opgevraagd worden via JavaS
 De `Referer`-waarde kan goede inzichten bieden. Maar wanneer de volledige URL inclusief het pad en de vraagstring in de `Referer` over oorsprongen heen gestuurd wordt, kan dit privacyverhinderend zijn: URL's kunnen privé-informatie bevatten—soms zelfs identificerende of gevoelige informatie. Het stilletjes lekken hiervan over oorsprongen heen kan de privacy van gebruikers aantasten en beveiligingsrisico's inhouden. De HTTP-header [`Referrer-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) laat ontwikkelaars toe om te beperken welke verwijzergegevens toegankelijk wordt gemaakt aan verzoeken vanop hun website, om dit risico te verminderen.
 
 {{ figure_markup(
-  image="nb_websites_with_referrerpolicy.png",
+  image="number_of_websites_with_referrerpolicy.png",
   caption="Percentage van websites die een Referrer Policy specificeren.",
   description="Staafdiagram dat het percentage van websites toont dat een Referrer Policy specificeert op basis van hoe de websites dit beleid specificeerden. Eender welke Referrer Policy wordt gezet op 11,12% van de desktopsites en 10,38% van de mobiele sites, Entire document policy op 9,66% en 8,68%, Entire document policy header op 7,37% en 6,49%, Entire document policy meta op 2,65% en 2,51%, Any individual requests op 1,92% en 2,10%, Any link relations op 0,00% en 0,00%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2144839216&format=interactive",
   sheets_gid="1720798838",
-  sql_file="nb_websites_with_referrerpolicy.sql"
+  sql_file="number_of_websites_with_referrerpolicy.sql"
   )
 }}
 
@@ -372,12 +372,12 @@ Wanneer een webbrowser een HTTP-verzoek maakt, zal het een [`User-Agent`](https:
 Servers kunnen hun ondersteuning voor deze Client Hints aangeven door de `Accept-CH`-header te specificeren. Deze header lijst de attributen op die de server vraagt van de client om een toestel- of netwerkspecifieke bron terug te geven. Over het algemeen voorzien Client Hints een manier voor servers om enkel de minimaal nodige informatie te verkrijgen op inhoud op een efficiënte manier terug te geven.
 
 {{ figure_markup(
-  image="nb_websites_with_user_agent_client_hints.png",
+  image="number_of_websites_with_user_agent_client_hints.png",
   caption="Percentage van pagina's die User-Agent Client Hints gebruiken.",
   description="Staafdiagram dat het percentage van pagina's toont dat User-Agent Client Hints gebruikt gegroepeerd op de rang van de website. Voor de top 1.000 websites is het 3,67% op desktop en 3,56% op mobiel, voor de top 10.000 is het respectievelijk 1,35% en 1,44%, voor de top 100.000 is het 0,40% en 0,42%, voor de top 1 miljoen is het 0,14% en 0,15%, en ten slotte voor alle sites is het 0,15% en 0,20%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2107002085&format=interactive",
   sheets_gid="190615661",
-  sql_file="nb_websites_with_user_agent_client_hints.sql"
+  sql_file="number_of_websites_with_user_agent_client_hints.sql"
   )
 }}
 
@@ -392,24 +392,24 @@ Websites zijn daarom cookietoestemmingsbanners, privacybeleiden en andere mechan
 ### Platformen voor toestemmingsbeheer
 
 {{ figure_markup(
-  image="nb_websites_with_cmp.png",
+  image="number_of_websites_with_cmp.png",
   caption="Percentage van websites die een platform voor toestemmingsbeheer gebruiken.",
   description="Staafdiagram dat het percentage van websites toont dat een bibliotheek van derden gebruikt voor toestemmingsbeheer. 7,10% van de desktopsites en 6,97% van de mobiele sites gebruiken een dergelijk platform.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=246947280&format=interactive",
   sheets_gid="147308043",
-  sql_file="nb_websites_with_privacy_service.sql"
+  sql_file="number_of_websites_with_privacy_service.sql"
   )
 }}
 
 Platformen voor toestemmingsbeheer ("Consent Management Platforms" of ook CMP's) zijn bibliotheken van derden die websites kunnen insluiten om een cookietoestemmingsbanner aan hun gebruikers aan te bieden. We zagen dat rond de 7% van websites een platform voor toestemmingsbeheer gebruikten.
 
 {{ figure_markup(
-  image="nb_websites_using_each_cmp.png",
+  image="number_of_websites_using_each_cmp.png",
   caption="10 populairste platformen voor toestemmingsbeheer.",
   description="Staafdiagram dat het percentage van pagina's toont die de 10 populairste bibliotheken van derden gebruiken voor het aanbieden van toestemmingsbeheer. CookieYes wordt gebruikt op 1,65% van de desktopsites en 1,70% van de mobiele sites, Osano op respectievelijk 1,64% en 1,59%, OneTrust op 0,90% en 0,73%, Cookiebot op 0,74% en 0,64%, AdRoll CMP System op 0,50% en 0,36%, iubenda op 0,34% en 0,35%, Quantcast Choice op 0,37% en 0,34%, Didomi op 0,29% en 0,24%, Usercentrics op 0,18% en 0,19%, en ten slotte HubSpot Cookie Policy Banner op 0,26% en 0,17%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=619927070&format=interactive",
   sheets_gid="387302670",
-  sql_file="nb_websites_using_each_cmp.sql",
+  sql_file="number_of_websites_using_each_cmp.sql",
   width=600,
   height=421
   )
@@ -424,12 +424,12 @@ Het <a hreflang="en" href="https://iabeurope.eu/transparency-consent-framework/"
 TCF is bedoeld om een mechanisme te zijn dat aan de AVG voldoet in Europa, hoewel <a hreflang="en" href="https://iabeurope.eu/all-news/update-on-the-belgian-data-protection-authoritys-investigation-of-iab-europe/">een recente beslissing door de Belgische Gegevensbeschermingsautoriteit</a> concludeerde dat dit systeem nog steeds de AVG overtreedt. Wanneer de CCPA in voege trad in Californië, ontwikkelde IAB Tech Lab US de technische specificaties voor <a hreflang="en" href="https://iabtechlab.com/standards/ccpa/">U.S. Privacy</a> (USP), op basis van dezelfde concepten.
 
 {{ figure_markup(
-  image="nb_websites_with_iab.png",
+  image="number_of_websites_with_iab.png",
   caption="Percentage van websites die frameworks van het IAB gebruiken.",
   description="Staafdiagram dat het percentage van websites toont dat elk framework gebruikt voor zowel IAB Europe als US. IAB TCF v1 wordt gebruikt op 0,35% van de desktopsites en 0,30% van de mobiele sites, IAB TCF v2 op respectievelijk 1,58% en 1,49%, IAB TCF any op 1,67% en 1,57%, IAB USP op 3,13% en 3,19%, IAB USP op 3,13% en 3,19%, en ten slotte  IAB any op 3,92% en 3,97%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1697790298&format=interactive",
   sheets_gid="1662197018",
-  sql_file="nb_websites_with_iab.sql"
+  sql_file="number_of_websites_with_iab.sql"
   )
 }}
 
@@ -472,7 +472,7 @@ Tegenwoordig hebben de meeste websites een privacybeleid, waar gebruikers kunnen
   content="39,70%",
   classes="big-number",
   sheets_gid="473955086",
-  sql_file="nb_websites_with_privacy_links.sql"
+  sql_file="number_of_websites_with_privacy_links.sql"
 )
 }}
 
@@ -483,12 +483,12 @@ Door te zoeken naar trefwoorden zoals "privacybeleid", "cookiebeleid" en meer, i
 De <a hreflang="en" href="https://www.eff.org/issues/do-not-track">Do Not Track</a> (DNT) HTTP-header kan gebruikt worden om naar websites te communiceren dat een gebruiker niet gevolgd wenst te worden. We kunnen het aantal websites dat de huidige waarde voor DNT lijkt op te vragen hier beneden zien, gebaseerd op de aanwezigheid van de [`Navigator.doNotTrack`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/doNotTrack) JavaScript-oproep.
 
 {{ figure_markup(
-  image="nb_websites_with_dnt_blink_usage.png",
+  image="number_of_websites_with_dnt_blink_usage.png",
   caption="Percentage van websites dat Do Not Track (DNT) gebruikt.",
   description="Staafdiagram dat het percentage van websites toont dat de waarde van DNT opvraagt door de `NavigatorDoNotTrack`-functie te gebruiken. 17,37% van de desktopsites en 17,39% van de mobiele sites vragen dit op.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1302428398&format=interactive",
   sheets_gid="485103492",
-  sql_file="nb_websites_with_dnt_blink_usage.sql"
+  sql_file="number_of_websites_with_dnt_blink_usage.sql"
   )
 }}
 
@@ -525,12 +525,12 @@ Dit is hoe het eerste FLoC-experiment werkte: terwijl een gebruiker doorheen het
 Individuele gebruikers en websites kunnen aangeven dat ze niet meegenomen willen worden bij de berekening van de cohort.
 
 {{ figure_markup(
-  image="nb_websites_with_floc_opt_out.png",
+  image="number_of_websites_with_floc_opt_out.png",
   caption="Percentage van websites dat zich afmeldt voor FLoC-cohorten.",
   description="Staafdiagram dat het percentage van pagina's toont dat zich afmeldt voor FLoC-cohorten, gegroepeerd op de rang van de website. Voor de top 1.000 sites meldt 3,29% van de desktopsites en 4,10% van de mobiele sites zich af, voor de top 10.000 is dit respectievelijk 1,10% en 1,26%, voor de top 100.000 is dit 0,64% en 0,67%, voor de top 1 miljoen is dit 0,69% en 0,69%, voor alle sites is dit 0,95% en 0,86%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=129384991&format=interactive",
   sheets_gid="637590731",
-  sql_file="nb_websites_with_floc_opt_out.sql"
+  sql_file="number_of_websites_with_floc_opt_out.sql"
   )
 }}
 

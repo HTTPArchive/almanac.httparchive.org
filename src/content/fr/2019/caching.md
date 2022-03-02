@@ -3,8 +3,8 @@
 title: Mise en cache
 description: Le chapitre sur la mise en cache de Web Almanac couvre la gestion de la mise en cache, sa validité, les TTLs, les headers Vary, les cookies, l'AppCache, les service workers et d'autres possibilités.
 authors: [paulcalvano]
-reviewers: [obto, bkardell]
-analysts: [paulcalvano, obto]
+reviewers: [foxdavidj, bkardell]
+analysts: [paulcalvano, foxdavidj]
 editors: [tunetheweb]
 translators: [allemas]
 discuss: 1771
@@ -591,7 +591,7 @@ L'un des risques de la mise en cache avec `Set-Cookie` est que les valeurs des c
 
 ## AppCache et service workers
 
-L'Application Cache ou AppCache est une fonctionnalité de HTML5 qui permet aux développeurs et développeuses de spécifier les ressources que le navigateur doit mettre en cache et mettre à disposition des utilisateurs hors ligne. Cette fonctionnalité a été <a hreflang="en" href="https://html.spec.whatwg.org/multipage/offline.html#offline">dépréciée et supprimée des standards du web</a>, et sa prise en charge par les navigateurs a diminué. En fait, lorsque son utilisation est détectée, [Firefox v44+ recommande aux développeurs et développeuses d'utiliser plutôt des service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers). <a hreflang="en" href="https://www.chromestatus.com/feature/5714236168732672">Chrome 70 limite le cache d'application au seul contexte sécurisé</a>. Le secteur s'est davantage orienté vers la mise en œuvre de ce type de fonctionnalité avec des service workers - et <a hreflang="en" href="https://caniuse.com/#feat=serviceworkers">la prise en charge des navigateurs</a> a connu une croissance rapide dans ce domaine.
+L'Application Cache ou AppCache est une fonctionnalité de HTML5 qui permet aux développeurs et développeuses de spécifier les ressources que le navigateur doit mettre en cache et mettre à disposition des utilisateurs hors ligne. Cette fonctionnalité a été <a hreflang="en" href="https://web.archive.org/web/20191115024726/https://html.spec.whatwg.org/multipage/offline.html">dépréciée et supprimée des standards du web</a>, et sa prise en charge par les navigateurs a diminué. En fait, lorsque son utilisation est détectée, [Firefox v44+ recommande aux développeurs et développeuses d'utiliser plutôt des service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers). <a hreflang="en" href="https://www.chromestatus.com/feature/5714236168732672">Chrome 70 limite le cache d'application au seul contexte sécurisé</a>. Le secteur s'est davantage orienté vers la mise en œuvre de ce type de fonctionnalité avec des service workers - et <a hreflang="en" href="https://caniuse.com/#feat=serviceworkers">la prise en charge des navigateurs</a> a connu une croissance rapide dans ce domaine.
 
 En fait, l'un des <a hreflang="en" href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">rapports de tendance des archives HTTP montre l'adoption des travailleurs des services</a> présenté ci-dessous&nbsp;:
 

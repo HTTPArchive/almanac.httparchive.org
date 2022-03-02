@@ -270,7 +270,7 @@ Let's Encryptが首位に立っているのを見ても不思議ではありま�
 
 他にも、<a hreflang="en" href="https://www.usenix.org/system/files/conference/usenixsecurity15/sec15-paper-lekies.pdf">Cross-Site Script Inclusion</a>のように、クロスサイトリクエストにCookieを含めることに依存する攻撃がいくつかあります。(XSSI)や、<a hreflang="en" href="https://xsleaks.dev/">XS-Leaks</a>の脆弱性クラスの様々な手法を利用することができます。さらに、ユーザの認証はCookieを介してのみ行われることが多いため、攻撃者はCookieを取得することでユーザになりすますことができます。これは中間者攻撃(MITM)で、ユーザを騙して安全ではないチャネルで認証を行うことができます。あるいは、クロスサイトスクリプティング(XSS)の脆弱性を悪用することで、攻撃者はDOMを通じて`document.cookie`にアクセスすることでCookieを漏洩させることができます。
 
-Cookieがもたらす脅威から身を守るために、ウェブサイトの開発者は、[Cookie](https://developer.mozilla.org/ja/docs/Web/HTTP/Cookies)に設定できる3つの属性、`HttpOnly`、`Secure`、および<a hreflang="en" href="https://web.dev/samesite-cookies-explained/">`SameSite`</a>を利用できます。1つ目はJavaScriptからのアクセスを防ぐもので、攻撃者がXSS攻撃でCookieを盗むことを防ぐことができます。`Secure`属性が設定されているCookieは、安全なHTTPS接続でのみ送信され、MITM攻撃での盗用を防げます。
+Cookieがもたらす脅威から身を守るために、ウェブサイトの開発者は、[Cookie](https://developer.mozilla.org/ja/docs/Web/HTTP/Cookies)に設定できる3つの属性、`HttpOnly`、`Secure`、および<a hreflang="ja" href="https://web.dev/i18n/ja/samesite-cookies-explained/">`SameSite`</a>を利用できます。1つ目はJavaScriptからのアクセスを防ぐもので、攻撃者がXSS攻撃でCookieを盗むことを防ぐことができます。`Secure`属性が設定されているCookieは、安全なHTTPS接続でのみ送信され、MITM攻撃での盗用を防げます。
 
 最近導入された`SameSite`属性は、クロスサイトコンテキストでのCookieの送信方法を制限するために使用できます。属性には3つの値があります。`None`, `Lax`, `Strict` です。`SameSite=None`のCookieはすべてのクロスサイトリクエストに送信され、`Lax`のCookieはユーザーがリンクをクリックして新しいページに移動したときなどのナビゲートリクエストにのみ送信されます。最後に、`SameSite=Strict`属性を持つCookieはファーストパーティのコンテキストでのみ送信されます。
 
@@ -373,7 +373,7 @@ Cookieを保護するために使用できる追加の仕組みとして、Cooki
 
 これは、ブラウザが混在するコンテンツをブロックする際に特に役立ちます。HTTPSで読み込まれるページでは、`upgrade-insecure-requests`ディレクティブがないと、HTTPからのコンテンツがブロックされてしまいます。このディレクティブはコンテンツを壊す可能性が低く実装が簡単なので、コンテンツセキュリティポリシーの良い出発点となりで、他のディレクティブに比べてこのディレクティブの採用率はかなり高くなるでしょう。
 
-どのソースからコンテンツを含めることができるかを示すCSPディレクティブ（`*-src`ディレクティブ）は、採用率がかなり低くなっています: デスクトップページで提供されたCSPポリシーの18.51%とモバイルページで提供された16.12%に過ぎません。この理由の1つは、Web開発者が[CSPの採用における多くの課題]に直面していることにあります(https://wkr.io/publication/raid-2014-content_security_policy.pdf)。厳格なCSPポリシーは、XSS攻撃を阻止する以上の大きなセキュリティ上の利点を提供できますが、不明確に定義されたポリシーは特定の有効なコンテンツの読み込みを妨げる可能性があります。
+どのソースからコンテンツを含めることができるかを示すCSPディレクティブ（`*-src`ディレクティブ）は、採用率がかなり低くなっています: デスクトップページで提供されたCSPポリシーの18.51%とモバイルページで提供された16.12%に過ぎません。この理由の1つは、Web開発者が[CSPの採用における多くの課題に直面していることにあります](https://wkr.io/publication/raid-2014-content_security_policy.pdf)。厳格なCSPポリシーは、XSS攻撃を阻止する以上の大きなセキュリティ上の利点を提供できますが、不明確に定義されたポリシーは特定の有効なコンテンツの読み込みを妨げる可能性があります。
 
 ウェブ開発者がCSPポリシーの正しさを評価できるようにするため、非強制的な代替手段も存在し、`Content-Security-Policy-Report-Only`応答ヘッダーでポリシーを定義することで有効にできます。このヘッダーの普及率はかなり低く、デスクトップおよびモバイルページの0.85%です。しかし、これはしばしば移行用のヘッダーであることに注意すべきです。そのため、この割合はCSPの使用への移行を意図しており、限られた時間だけReport-Onlyヘッダーを使用しているサイトを示している可能性が高い。
 
@@ -775,13 +775,13 @@ CSPの採用を容易にするもう1つのメカニズムはnoncesの使用で�
 
 他の2つのキーワード、`unsafe-inline`と`unsafe-eval`は、それぞれ97.28%、77.79%と大多数のCSPに存在しています。このことは、XSS攻撃を阻止するポリシーを実装することの難しさを思い知らされます。しかし、`strict-dynamic`キーワードが存在する場合、`unsafe-inline`や`unsafe-eval`キーワードは事実上無視されてしまいます。古いブラウザでは`strict-dynamic`キーワードはサポートされていない可能性があるため、すべてのブラウザのバージョンとの互換性を維持するため、他の2つの安全でないキーワードを含めることが最善の方法と考えられています。
 
-`strict-dynamic`や`nonce-`キーワードは、反映された持続的なXSS攻撃を防御するために使用できますが、保護されたページはDOMベースのXSS脆弱性に対して脆弱性を持っている可能性があります。このクラスの攻撃を防御するために、ウェブサイト開発者は<a hreflang="en" href="https://web.dev/trusted-types/">Trusted Types</a>を利用できます。これはかなり新しいメカニズムで、現在Chromiumベースのブラウザでのみサポートされています。Trusted Typesの採用には困難が伴う可能性があるにもかかわらず（ウェブサイトはポリシーを作成し、このポリシーに準拠するためJavaScriptコードを調整する必要があります）、また新しいメカニズムであることを考えると、11のホームページがCSPの`require-trusted-types-for`ディレクティブを通じてTrusted Typesをすでに採用していることは心強いことです。
+`strict-dynamic`や`nonce-`キーワードは、反映された持続的なXSS攻撃を防御するために使用できますが、保護されたページはDOMベースのXSS脆弱性に対して脆弱性を持っている可能性があります。このクラスの攻撃を防御するために、ウェブサイト開発者は<a hreflang="ja" href="https://web.dev/i18n/ja/trusted-types/">Trusted Types</a>を利用できます。これはかなり新しいメカニズムで、現在Chromiumベースのブラウザでのみサポートされています。Trusted Typesの採用には困難が伴う可能性があるにもかかわらず（ウェブサイトはポリシーを作成し、このポリシーに準拠するためJavaScriptコードを調整する必要があります）、また新しいメカニズムであることを考えると、11のホームページがCSPの`require-trusted-types-for`ディレクティブを通じてTrusted Typesをすでに採用していることは心強いことです。
 
 ### クロスオリジンポリシーによるXSリークの防御
 
 <a hreflang="en" href="https://xsleaks.dev/">XS-Leaks</a>と呼ばれる新しいクラスの攻撃から身を守るために、最近、様々な新しいセキュリティメカニズムが導入されました（いくつかはまだ開発中です）。一般的に、これらのセキュリティメカニズムは、他のサイトが自分のサイトとどのように相互作用するかをウェブサイトの管理者がコントロールできるようにしています。例えば、[`Cross-Origin-Openener-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) (COOP) レスポンスヘッダーは、ページを他の悪意のある可能性のあるブラウザコンテキストから分離処理すべきであることをブラウザに指示するために使用できます。そのため、敵対者はページのグローバルオブジェクトへの参照を取得することができません。その結果、<a hreflang="en" href="https://xsleaks.dev/docs/attacks/frame-counting/">frame counting</a>のような攻撃は、このメカニズムで防ぐことができます。データ収集が始まる数日前にChrome、Edge、Firefoxでしかサポートされていなかったこのメカニズムのアーリーアダプターが31件見つかりました。
 
-`Cross-Origin-Resource-Policy`(https://developer.mozilla.org/ja/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP))(CORP)ヘッダーは、Chrome、Firefox、Edgeでサポートされていますが、すでに1,712ページで採用されています（CORPはドキュメントだけでなく、すべてのリソースタイプで有効にできます/すべきであることに注意してください、したがってこの数は過小評価かもしれません）。ヘッダーは、ウェブリソースがどのように含まれることが予想されるかをブラウザに指示するために使用されます: 同一オリジン、同一サイト、クロスオリジン（制限が多いものから少ないものへ）。ブラウザは、CORPに違反する方法で含まれるリソースの読み込みを阻止します。このように、この応答ヘッダーで保護された機密リソースは、<a hreflang="en" href="https://spectreattack.com/spectre.pdf">Spectre攻撃</a>や様々な<a hreflang="en" href="https://xsleaks.dev/docs/defenses/opt-in/corp/">XS-Leaks攻撃</a>から保護されています。<a hreflang="en" href="https://fetch.spec.whatwg.org/#corb">Cross-Origin Read Blocking</a>(CORB)メカニズムも同様の保護を提供しますが、ブラウザではデフォルトで有効になっています（現在はChromiumベースのブラウザのみ）。
+[`Cross-Origin-Resource-Policy`](https://developer.mozilla.org/ja/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP))(CORP)ヘッダーは、Chrome、Firefox、Edgeでサポートされていますが、すでに1,712ページで採用されています（CORPはドキュメントだけでなく、すべてのリソースタイプで有効にできます/すべきであることに注意してください、したがってこの数は過小評価かもしれません）。ヘッダーは、ウェブリソースがどのように含まれることが予想されるかをブラウザに指示するために使用されます: 同一オリジン、同一サイト、クロスオリジン（制限が多いものから少ないものへ）。ブラウザは、CORPに違反する方法で含まれるリソースの読み込みを阻止します。このように、この応答ヘッダーで保護された機密リソースは、<a hreflang="en" href="https://spectreattack.com/spectre.pdf">Spectre攻撃</a>や様々な<a hreflang="en" href="https://xsleaks.dev/docs/defenses/opt-in/corp/">XS-Leaks攻撃</a>から保護されています。<a hreflang="en" href="https://fetch.spec.whatwg.org/#corb">Cross-Origin Read Blocking</a>(CORB)メカニズムも同様の保護を提供しますが、ブラウザではデフォルトで有効になっています（現在はChromiumベースのブラウザのみ）。
 
 CORPに関連しているのは [`Cross-Origin-Embedder-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy)(COEP)レスポンスヘッダーで、ページに読み込まれたリソースはすべてCORPヘッダーを持つべきであることをブラウザに指示するためにドキュメントで使用できます。さらに、Cross-Origin Resource Sharing(CORS)メカニズム（`Access-Control-Allow-Origin` ヘッダーなど）を通して読み込まれるリソースも許可されます。COOPと一緒にこのヘッダーを有効にすることで、ページは高精度タイマーや`SharedArrayBuffer`のような、潜在的にセンシティブなAPIへのアクセスを得ることができ、非常に正確なタイマーを構築するために使用することもできます。COEPを有効にしているページが6つ見つかりましたが、ヘッダーのサポートはデータ収集の数日前にブラウザへ追加されただけでした。
 

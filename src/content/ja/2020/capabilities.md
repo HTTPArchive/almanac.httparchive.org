@@ -21,23 +21,23 @@ featured_stat_label_3: 関連アプリのインストールを許可している
 
 ## 序章
 
-<a lang="en" href="./pwa">Progressive Web Apps</a>(PWA)はWeb技術をベースにしたクロスプラットフォームのアプリケーションモデルです。サービスワーカーの協力を得て、これらのアプリケーションはユーザーがオフラインの時でも実行されます。[Webアプリマニフェスト](https://developer.mozilla.org/ja/docs/Web/Manifest)を利用すると、ホーム画面やプログラムリストにPWAを追加できます。そこから開くと、PWAはネイティブアプリケーションとして表示されます。ただしPWAはWebプラットフォームAPIを通して公開されている機能のみを使用できます。任意のネイティブインターフェイスを呼び出すことはできず、ネイティブアプリケーションとWebアプリケーションの間にギャップが残ります。
+<a hreflang="en" href="./pwa">Progressive Web Apps</a>(PWA)はWeb技術をベースにしたクロスプラットフォームのアプリケーションモデルです。サービスワーカーの協力を得て、これらのアプリケーションはユーザーがオフラインの時でも実行されます。[Webアプリマニフェスト](https://developer.mozilla.org/ja/docs/Web/Manifest)を利用すると、ホーム画面やプログラムリストにPWAを追加できます。そこから開くと、PWAはネイティブアプリケーションとして表示されます。ただしPWAはWebプラットフォームAPIを通して公開されている機能のみを使用できます。任意のネイティブインターフェイスを呼び出すことはできず、ネイティブアプリケーションとWebアプリケーションの間にギャップが残ります。
 
-<a lang="en" href="https://www.chromium.org/teams/web-capabilities-fugu">Capabilities Project</a>は、非公式にはProject Fuguとしても知られていますがGoogle、Microsoft、Intelの3社によるWebとネイティブの間のギャップを埋めるためのクロスカンパニーの取り組みです。これは、プラットフォームとしてのWebの関連性を保つために重要です。そのために、Chromiumの貢献者たちは、ユーザーのセキュリティ、プライバシー、信頼性を維持しながらOSの機能をWebに公開する新しいAPIを実装しています。これらの機能には以下のものが含まれますが、これらに限定されません。
+<a hreflang="en" href="https://www.chromium.org/teams/web-capabilities-fugu">Capabilities Project</a>は、非公式にはProject Fuguとしても知られていますがGoogle、Microsoft、Intelの3社によるWebとネイティブの間のギャップを埋めるためのクロスカンパニーの取り組みです。これは、プラットフォームとしてのWebの関連性を保つために重要です。そのために、Chromiumの貢献者たちは、ユーザーのセキュリティ、プライバシー、信頼性を維持しながらOSの機能をWebに公開する新しいAPIを実装しています。これらの機能には以下のものが含まれますが、これらに限定されません。
 
 - ローカルファイルシステム上のファイルにアクセスするための<a hreflang="en" href="https://web.dev/file-system-access/">ファイルシステムアクセスAPI</a>
 - 特定のファイル拡張子のハンドラーとして登録するための<a hreflang="en" href="https://web.dev/file-handling/">ファイルハンドラーAPI</a>
-- ユーザーのクリップボードにアクセスするには、<a hreflang="en" href="https://web.dev/async-clipboard/">非同期クリップボードAPI</a>を使用します。
-- 他のアプリケーションとファイルを共有するための<a hreflang="en" href="https://web.dev/web-share/">Web共有API</a>
-- ユーザーのアドレス帳から連絡先にアクセスするには、<a hreflang="en" href="https://web.dev/contact-picker/">連絡先ピッカーAPI</a>を使用します。
+- ユーザーのクリップボードにアクセスするには、<a hreflang="ja" href="https://web.dev/i18n/ja/async-clipboard/">非同期クリップボードAPI</a>を使用します。
+- 他のアプリケーションとファイルを共有するための<a hreflang="ja" href="https://web.dev/i18n/ja/web-share/">Web共有API</a>
+- ユーザーのアドレス帳から連絡先にアクセスするには、<a hreflang="ja" href="https://web.dev/i18n/ja/contact-picker/">連絡先ピッカーAPI</a>を使用します。
 - 画像中の顔やバーコードを効率的に検出するための<a hreflang="en" href="https://web.dev/shape-detection/">形状検出API</a>
-- <a lang="en" href="https://web.dev/nfc/">Web NFC</a>、<a lang="en" href="https://web.dev/serial/">Web Serial</a>、<a lang="en" href="https://web.dev/usb/">Web USB</a>、<a lang="en" href="https://web.dev/bluetooth/">Web Bluetooth</a>、およびその他のAPI（全リストについては、<a lang="en" href="https://goo.gle/fugu-api-tracker">Fugu API Tracker</a>を参照）
+- <a hreflang="en" href="https://web.dev/nfc/">Web NFC</a>、<a hreflang="ja" href="https://web.dev/i18n/ja/serial/">Web Serial</a>、<a hreflang="ja" href="https://web.dev/i18n/ja/usb/">Web USB</a>、<a hreflang="ja" href="https://web.dev/i18n/ja/bluetooth/">Web Bluetooth</a>、およびその他のAPI（全リストについては、<a hreflang="en" href="https://goo.gle/fugu-api-tracker">Fugu API Tracker</a>を参照）
 
-誰でも新しい機能を提案するには、<a hreflang="en" href="https://bit.ly/new-fugu-request">Chromiumバグトラッカーでチケットを作成</a>する必要があります。Chromiumのコントリビューターは提案を検討し、適切な標準化団体を通じて他の開発者やブラウザベンダーとすべてのAPIについて議論します。一方、ふぐチームはChromiumでAPIを実装します。その後、APIは<a hreflang="en" href="https://web.dev/origin-trials/">オリジントライアル</a>を通じて限られた人たちへ利用可能になります。この段階では開発者は特定のオリジンでAPIをテストするためのトークンにサインアップできます。APIが十分に堅牢であることが判明した場合、APIはChromiumで提供され、ベンダーが決定した場合は他のブラウザでも提供されます。<a lang="en" href="https://web.dev/fugu-status/">Capability Status</a>のサイトでは、異なるCapability APIがどこで行われているかを示しています。
+誰でも新しい機能を提案するには、<a hreflang="en" href="https://bit.ly/new-fugu-request">Chromiumバグトラッカーでチケットを作成</a>する必要があります。Chromiumのコントリビューターは提案を検討し、適切な標準化団体を通じて他の開発者やブラウザベンダーとすべてのAPIについて議論します。一方、ふぐチームはChromiumでAPIを実装します。その後、APIは<a hreflang="en" href="https://developer.chrome.com/ja/blog/origin-trials/">オリジントライアル</a>を通じて限られた人たちへ利用可能になります。この段階では開発者は特定のオリジンでAPIをテストするためのトークンにサインアップできます。APIが十分に堅牢であることが判明した場合、APIはChromiumで提供され、ベンダーが決定した場合は他のブラウザでも提供されます。<a hreflang="en" href="https://web.dev/fugu-status/">Capability Status</a>のサイトでは、異なるCapability APIがどこで行われているかを示しています。
 
 ふぐプロジェクト、<span lang="en">Capabilities</a>プロジェクトのコードネームであるふぐは、日本料理にちなんで名付けられたもので、正しく調理されたふぐの肉は特別な味を体験できる。しかし正しく調理されていない場合は、致命的になる可能性があります。ふぐプロジェクトの強力なAPIは、開発者にとって非常にエキサイティングなものです。ユーザーのセキュリティやプライバシーに影響を与える可能性があります。そのため、ふぐチームはこれらの問題に特別な注意を払っています。例えば新しいインターフェイスでは、Webサイトを安全な接続（HTTPS）で送信する必要があります。中には、不正行為を防ぐために、クリックやキーを押すといったユーザーのジェスチャーを必要とするものもあります。その他の機能では、ユーザーによる明示的な許可が必要となります。開発者は、すべてのAPIを段階的な強化として使用できます。APIを機能検出することで、これらの機能をサポートしていないブラウザでアプリケーションが壊れることはありません。APIをサポートしているブラウザでは、ユーザーはより良い体験を得ることができます。このようにしてWebアプリはユーザーの特定のブラウザに応じて<a hreflang="en" href="https://web.dev/progressively-enhance-your-pwa/">段階的に強化</a>します。
 
-本章では、HTTP Archiveと<a lang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity">Chrome Platform Status</a>による利用状況データをもとに、様々な最新のWeb APIの概要と2020年のWeb機能の状況を紹介します。一部のインターフェイスは真新しいものもあるため、（相対的な）利用率は非常に低いです。そのため、他の章とは異なりHTTP Archiveの利用統計は相対的な割合ではなく、絶対的なページ数で表示されます。[技術的な制限](./methodology#metrics)のため、HTTP Archiveには、許可もユーザーのジェスチャーも必要としないAPIのデータしかありません。データがない場合は、代わりに<span lang="en">Chrome Platform Status</span>に従ったGoogle Chromeでのページロードのパーセンテージが表示されます。統計が必ずしも意味のあるものではないほど数値が小さくても、多くの場合はデータから傾向を読み取ることができます。また、これらの統計値は、この章の今後の年次版で、APIがどの程度成熟し、採用率が向上したかを振り返る際のベースラインとしても使用できます。特に断りのない限り、APIはChromiumベースのブラウザでのみ利用可能であり、その仕様は標準化の初期段階にあります。
+本章では、HTTP Archiveと<a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity">Chrome Platform Status</a>による利用状況データをもとに、様々な最新のWeb APIの概要と2020年のWeb機能の状況を紹介します。一部のインターフェイスは真新しいものもあるため、（相対的な）利用率は非常に低いです。そのため、他の章とは異なりHTTP Archiveの利用統計は相対的な割合ではなく、絶対的なページ数で表示されます。[技術的な制限](./methodology#metrics)のため、HTTP Archiveには、許可もユーザーのジェスチャーも必要としないAPIのデータしかありません。データがない場合は、代わりに<span lang="en">Chrome Platform Status</span>に従ったGoogle Chromeでのページロードのパーセンテージが表示されます。統計が必ずしも意味のあるものではないほど数値が小さくても、多くの場合はデータから傾向を読み取ることができます。また、これらの統計値は、この章の今後の年次版で、APIがどの程度成熟し、採用率が向上したかを振り返る際のベースラインとしても使用できます。特に断りのない限り、APIはChromiumベースのブラウザでのみ利用可能であり、その仕様は標準化の初期段階にあります。
 
 ## 非同期クリップボードAPI
 
@@ -66,9 +66,9 @@ featured_stat_label_3: 関連アプリのインストールを許可している
 
 ## ストレージマネージャーAPI
 
-ブラウザは、Cookies、インデックス化されたデータベース（IndexedDB）、サービスワーカーのキャッシュストレージ、またはWebストレージ（ローカルストレージ、セッションストレージ）など、さまざまな方法でユーザーのシステム上にデータを保存できます。最近のブラウザでは、開発者はブラウザに応じて簡単に<a hreflang="en" href="https://web.dev/storage-for-the-web/">数百メガバイト、さらにはそれ以上の容量を保存</a>できます。ブラウザが容量を使い果たすと、システムが限界を超えるまでデータをクリアしてしまい、データの損失につながることがあります。
+ブラウザは、Cookies、インデックス化されたデータベース（IndexedDB）、サービスワーカーのキャッシュストレージ、またはWebストレージ（ローカルストレージ、セッションストレージ）など、さまざまな方法でユーザーのシステム上にデータを保存できます。最近のブラウザでは、開発者はブラウザに応じて簡単に<a hreflang="ja" href="https://web.dev/i18n/ja/storage-for-the-web/">数百メガバイト、さらにはそれ以上の容量を保存</a>できます。ブラウザが容量を使い果たすと、システムが限界を超えるまでデータをクリアしてしまい、データの損失につながることがあります。
 
-<a lang="en" href="https://storage.spec.whatwg.org/#storagemanager">WHATWG Storage Living Standard</a>の一部である<a lang="en" href="https://developer.mozilla.org/ja/docs/Web/API/StorageManager">StorageManager API</a>のおかげで、ブラウザはもはやブラックボックスのように振る舞うことはありません。このAPIにより、開発者は残りの空き容量を推定して<a hreflang="en" href="https://web.dev/persistent-storage/">永続ストレージ</a>にオプトインでき、ディスク容量が少なくなってもブラウザがウェブサイトのデータをクリアしないことを意味します。そのため、このAPIでは、現在Chrome、Edge、Firefoxで利用可能な`navigator`オブジェクトに新しい`StorageManager`インターフェイスが導入されています。
+<a hreflang="en" href="https://storage.spec.whatwg.org/#storagemanager">WHATWG Storage Living Standard</a>の一部である<a hreflang="en" href="https://developer.mozilla.org/ja/docs/Web/API/StorageManager">StorageManager API</a>のおかげで、ブラウザはもはやブラックボックスのように振る舞うことはありません。このAPIにより、開発者は残りの空き容量を推定して<a hreflang="en" href="https://web.dev/persistent-storage/">永続ストレージ</a>にオプトインでき、ディスク容量が少なくなってもブラウザがウェブサイトのデータをクリアしないことを意味します。そのため、このAPIでは、現在Chrome、Edge、Firefoxで利用可能な`navigator`オブジェクトに新しい`StorageManager`インターフェイスが導入されています。
 
 ### 利用可能なストレージを見積もる
 
@@ -145,7 +145,7 @@ registration.showNotification('Title', {
 
 ## Screen Wake Lock API
 
-エネルギーを節約するために、モバイルデバイスは画面のバックライトを暗くし、最終的にはデバイスのディスプレイをオフにしますが、これはほとんどの場合で理にかなっています。しかし、例えば料理中にレシピを読んだり、プレゼンテーションを見たりしているときなど、ユーザーがアプリケーションに明示的にディスプレイをオフにしておきたいと思うようなシナリオもあります。<a lang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API">Screen Wake Lock API</a>(<a hreflang="en" href="https://www.w3.org/TR/screen-wake-lock/">W3C作業ドラフト</a>)は、画面をオンに保つメカニズムを提供することで、この問題を解決します。
+エネルギーを節約するために、モバイルデバイスは画面のバックライトを暗くし、最終的にはデバイスのディスプレイをオフにしますが、これはほとんどの場合で理にかなっています。しかし、例えば料理中にレシピを読んだり、プレゼンテーションを見たりしているときなど、ユーザーがアプリケーションに明示的にディスプレイをオフにしておきたいと思うようなシナリオもあります。<a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API">Screen Wake Lock API</a>(<a hreflang="en" href="https://www.w3.org/TR/screen-wake-lock/">W3C作業ドラフト</a>)は、画面をオンに保つメカニズムを提供することで、この問題を解決します。
 
 `navigator.wakeLock.request()`メソッドはウェイクロックを作成する。このメソッドは `WakeLockType`パラメーターを取ります。将来的には、Wake Lock APIは画面をオフにしてCPUをオンにしたままにするなど、他のロックタイプを提供できるようになるかもしれません。今のところ、APIはスクリーンロックのみをサポートしているので、デフォルト値が `screen` のオプション引数を1つだけ用意しています。このメソッドは`WakeLockSentinel`オブジェクトに解決するプロミスを返す。開発者はこの参照を保存して`release()`メソッドを呼び出し、後で画面のウェイクロックを解除する必要があります。ブラウザはタブが非アクティブになったり、ユーザがウィンドウを最小化したりすると自動的にロックを解除します。またブラウザは、例えばバッテリー残量が少ないなどの理由で、要求を拒否して約束を拒否することがあります。
 
@@ -222,7 +222,7 @@ self.addEventListener('periodicsync', (event) => {
 
 PWAは汎用性の高いアプリケーションモデルです。しかし、場合によっては、別個のネイティブアプリケーションを提供することはまだ意味があるかもしれません。例えば、アプリがウェブ上では利用できない機能を使用する必要がある場合や、アプリ開発者チームのプログラミング経験に基づいている場合などです。ユーザーがすでにネイティブアプリをインストールしている場合、アプリは通知を二度送信したり、対応するPWAのインストールを促進したくないかもしれません。
 
-ユーザーがシステム上に関連するネイティブアプリケーションやPWAを既に持っているかどうかを検出するため、開発者は`navigator`オブジェクト上で<a lang="en" href="https://web.dev/get-installed-related-apps/">getInstalledRelatedApps()</a>メソッド（<a hreflang="en" href="https://wicg.github.io/get-installed-related-apps/spec/">WICGコミュニティグループ報告書</a>）を使用できます。このメソッドは現在Chromiumベースのブラウザで提供されており、AndroidとUniversal Windows Platform(UWP)の両方のアプリで動作します。開発者はネイティブアプリのバンドルを調整してWebサイトを参照するようにし、ネイティブアプリに関する情報をPWAのWebアプリマニフェストに追加する必要があります。その後、`getInstalledRelatedApps()`メソッドを呼び出すと、ユーザのデバイスにインストールされているアプリのリストが返されます。
+ユーザーがシステム上に関連するネイティブアプリケーションやPWAを既に持っているかどうかを検出するため、開発者は`navigator`オブジェクト上で<a hreflang="ja" href="https://web.dev/i18n/ja/get-installed-related-apps/">getInstalledRelatedApps()</a>メソッド（<a hreflang="en" href="https://wicg.github.io/get-installed-related-apps/spec/">WICGコミュニティグループ報告書</a>）を使用できます。このメソッドは現在Chromiumベースのブラウザで提供されており、AndroidとUniversal Windows Platform(UWP)の両方のアプリで動作します。開発者はネイティブアプリのバンドルを調整してWebサイトを参照するようにし、ネイティブアプリに関する情報をPWAのWebアプリマニフェストに追加する必要があります。その後、`getInstalledRelatedApps()`メソッドを呼び出すと、ユーザのデバイスにインストールされているアプリのリストが返されます。
 
 ```js
 const relatedApps = await navigator.getInstalledRelatedApps();
@@ -266,7 +266,7 @@ Webアプリは、キャッシュストレージやインデックスDBなど、
 
 ### <span lang="en">WebSockets</span>の<span lang="en">Backpressure</span> {websocketsのbackpressure}
 
-<span lang="en">WebSocket API</span>は、Webサイトとサーバー間の双方向通信に最適です。しかし、<span lang="en">WebSocket API</span>は<span lang="en">backpressure</span>を許さないので、高頻度のメッセージを扱うアプリケーションはフリーズする可能性があります。<a lang="en" href="https://web.dev/websocketstream/">WebSocketStream API</a>（<a hreflang="en" href="https://github.com/ricea/websocketstream-explainer/blob/master/README.md">の説明者</a>は、まだ標準化トラックには乗っていません）は、<span lang="en">WebSocket API</span>をストリームで拡張することは、使いやすい<span lang="en">backpressure</span>のサポートを<span lang="en">WebSocket API</span>にもたらしたいと考えています。通常の`WebSocket`コンストラクタを使う代わりに、開発者は`WebSocketStream`インターフェイスの新しいインスタンスを作成する必要があります。ストリームの`connection`プロパティは、読み込みと書き込み可能なストリームへ解決する約束を返します。
+<span lang="en">WebSocket API</span>は、Webサイトとサーバー間の双方向通信に最適です。しかし、<span lang="en">WebSocket API</span>は<span lang="en">backpressure</span>を許さないので、高頻度のメッセージを扱うアプリケーションはフリーズする可能性があります。<a hreflang="ja" href="https://web.dev/i18n/ja/websocketstream/">WebSocketStream API</a>（<a hreflang="en" href="https://github.com/ricea/websocketstream-explainer/blob/master/README.md">の説明者</a>は、まだ標準化トラックには乗っていません）は、<span lang="en">WebSocket API</span>をストリームで拡張することは、使いやすい<span lang="en">backpressure</span>のサポートを<span lang="en">WebSocket API</span>にもたらしたいと考えています。通常の`WebSocket`コンストラクタを使う代わりに、開発者は`WebSocketStream`インターフェイスの新しいインスタンスを作成する必要があります。ストリームの`connection`プロパティは、読み込みと書き込み可能なストリームへ解決する約束を返します。
 
 ```js
 const wss = new WebSocketStream(WSS_URL);
@@ -290,7 +290,7 @@ WebSocketStream APIは、ストリームのリーダーとライターが安全�
 
 ### 速くする
 
-<a hreflang="en" href="https://www.chromium.org/quic">QUIC</a>(<a hreflang="en" href="https://www.ietf.org/archive/id/draft-ietf-quic-transport-31.txt">IETFインターネット草案</a>)は、UDP上に実装された多重化されたストリームベースの双方向トランスポートプロトコルです。これは、TCP上に実装されている<span lang="en">HTTP/WebSocket API</span>に代わるものです。<a lang="en" href="https://web.dev/quictransport/">QuicTransport API</a>は、QUICサーバとメッセージを送受信するためのクライアント側APIです。開発者は、データグラムを介して信頼性のないデータを送信するか、そのストリームAPIを使用して信頼性の高いデータを送信するかを選択できます。
+<a hreflang="en" href="https://www.chromium.org/quic">QUIC</a>(<a hreflang="en" href="https://www.ietf.org/archive/id/draft-ietf-quic-transport-31.txt">IETFインターネット草案</a>)は、UDP上に実装された多重化されたストリームベースの双方向トランスポートプロトコルです。これは、TCP上に実装されている<span lang="en">HTTP/WebSocket API</span>に代わるものです。<a hreflang="ja" href="https://web.dev/i18n/ja/webtransport/">QuicTransport API</a>は、QUICサーバとメッセージを送受信するためのクライアント側APIです。開発者は、データグラムを介して信頼性のないデータを送信するか、そのストリームAPIを使用して信頼性の高いデータを送信するかを選択できます。
 
 ```js
 const transport = new QuicTransport(QUIC_URL);

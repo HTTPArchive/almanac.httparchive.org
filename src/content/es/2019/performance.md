@@ -3,7 +3,7 @@
 title: Rendimiento
 description: Capítulo sobre rendimiento del Web Almanac de 2019 que explica First Contentful Paint (FCP), Time to First Byte (TTFB) y First Input Delay (FID)
 authors: [rviscomi]
-reviewers: [JMPerez,obto,sergeychernyshev,zeman]
+reviewers: [JMPerez,foxdavidj,sergeychernyshev,zeman]
 analysts: [rviscomi, raghuramakrishnan71]
 editors: [rachellcostello]
 translators: [JMPerez]
@@ -139,7 +139,7 @@ Otros geos de APAC cuentan una historia diferente. Tailandia, Vietnam, Indonesia
 
 ### Time to First Byte (TTFB)
 
-<a hreflang="en" href="https://web.dev/time-to-first-byte">Time to First Byte</a> (TTFB) es una medida de cuánto tiempo tarda la página web desde el momento de la navegación del usuario hasta que recibe el primer byte de la respuesta.
+<a hreflang="es" href="https://web.dev/i18n/es/time-to-first-byte">Time to First Byte</a> (TTFB) es una medida de cuánto tiempo tarda la página web desde el momento de la navegación del usuario hasta que recibe el primer byte de la respuesta.
 
 {{ figure_markup(
   image="nav-timing.png",

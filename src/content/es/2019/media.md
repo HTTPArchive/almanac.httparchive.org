@@ -371,7 +371,7 @@ Anteriormente, en la [Figura 4.5](#fig-5), mostramos como el volumen del conteni
 
 La auditoría <i lang="en">Lighthouse</i> nos da solo una idea ya que hay un buen número de situaciones que pueden ser difíciles de detectar, como el uso de marcadores de calidad.
 
-El <i lang="en">lazy loading</i> <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-vídeo">puede ser implementado</a> de muchas maneras, incluyendo el uso de una combinación de Observadores de intersección (<i lang="en">Intersection Observers</i>), Observadores de redimensión (<i lang="en">Resize Observers</i>), o el uso de librerías de JavaScript como <a hreflang="en" href="https://github.com/aFarkas/lazysizes">lazySizes</a>, <a hreflang="en" href="https://github.com/ApoorvSaxena/lozad.js">lozad</a>, y otras tantas.
+El <i lang="en">lazy loading</i> <a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video">puede ser implementado</a> de muchas maneras, incluyendo el uso de una combinación de Observadores de intersección (<i lang="en">Intersection Observers</i>), Observadores de redimensión (<i lang="en">Resize Observers</i>), o el uso de librerías de JavaScript como <a hreflang="en" href="https://github.com/aFarkas/lazysizes">lazySizes</a>, <a hreflang="en" href="https://github.com/ApoorvSaxena/lozad.js">lozad</a>, y otras tantas.
 
 En agosto de 2019, Chrome 76 fue lanzado con la compatibilidad para un <i lang="en">lazy loading</i> basado en marcado usando `<img loading="lazy">`. Aunque la instantánea de los sitios web usada para el 2019 Web Almanac utilizaba datos de julio de 2019, más de 2.509 sitios web ya utilizaban esta función.
 

@@ -41,7 +41,7 @@ CSS（Cascading Stylesheets）とは、ウェブページやその他のメデ�
 
 この章のデータは、121個のSQLクエリを使用し、SQL内の3000行のJavaScript関数を含む10000行以上のSQLを作成しました。これは、Web Almanacの歴史の中で最大の章となっています。
 
-この規模の分析を可能にするため、多くの技術的な作業が行われました。昨年と同様に、私たちはすべてのCSSコードを<a hreflang="en" href="https://github.com/reworkcss/css">CSSパーサー</a>に通し、コーパス内のすべてのスタイルシートの[抽象構文木](https://ja.wikipedia.org/wiki/%E6%8A%BD%E8%B1%A1%E6%A7%8B%E6%96%87%E6%9C%A8)(AST)を保存しました。今年は、このAST上で動作する<a hreflang="en" href="https://github.com/leaverou/rework-utils">ヘルパーのライブラリ</a>と<a hreflang="en" href="https://projects.verou.me/parsel">セレクタパーサー</a>も開発しましたが、これらも別々のオープンソースプロジェクトとしてリリースされました。ほとんどのメトリクスでは、単一のASTからデータを収集するために<a hreflang="en" href="https://github.com/LeaVerou/css-almanac/tree/master/js">JavaScript</a>を使用し、コーパス全体のデータを集約するために<a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/01_CSS">SQL</a>を使用しました。あなた自身のCSSが私たちのメトリクスに対してどのように機能しているか興味がありますか？　私たちは<a hreflang="en" href="https://projects.verou.me/css-almanac/playground">online playground</a>を作成し、自分のサイトで試してみることができます。
+この規模の分析を可能にするため、多くの技術的な作業が行われました。昨年と同様に、私たちはすべてのCSSコードを<a hreflang="en" href="https://github.com/reworkcss/css">CSSパーサー</a>に通し、コーパス内のすべてのスタイルシートの[抽象構文木](https://ja.wikipedia.org/wiki/%E6%8A%BD%E8%B1%A1%E6%A7%8B%E6%96%87%E6%9C%A8)(AST)を保存しました。今年は、このAST上で動作する<a hreflang="en" href="https://github.com/leaverou/rework-utils">ヘルパーのライブラリ</a>と<a hreflang="en" href="https://projects.verou.me/parsel">セレクタパーサー</a>も開発しましたが、これらも別々のオープンソースプロジェクトとしてリリースされました。ほとんどのメトリクスでは、単一のASTからデータを収集するために<a hreflang="en" href="https://github.com/LeaVerou/css-almanac/tree/master/js">JavaScript</a>を使用し、コーパス全体のデータを集約するために<a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/css">SQL</a>を使用しました。あなた自身のCSSが私たちのメトリクスに対してどのように機能しているか興味がありますか？　私たちは<a hreflang="en" href="https://projects.verou.me/css-almanac/playground">online playground</a>を作成し、自分のサイトで試してみることができます。
 
 特定の指標については、CSS ASTを見るだけでは十分ではありませんでした。私たちは、ソースマップを介して提供された<a hreflang="en" href="https://sass-lang.com/">SCSS</a>を見たいと考えていました。それは、開発者がCSSから何を必要としているかを示しているのに対し、CSSを研究することで開発者が現在使用しているものを示すことができるからです。そのためには、クローラーが特定のページを訪問したときにクローラーで実行される*カスタムメトリック*—JavaScriptコードを使用しなければなりませんでした。適切なSCSSパーサーを使用するとクロールが遅くなりすぎるので、<a hreflang="en" href="https://github.com/LeaVerou/css-almanac/blob/master/runtime/sass.js">正規表現</a>(*ああ、恐ろしい！*)に頼らざるを得ませんでした。粗野なアプローチにもかかわらず、私たちは[多くの洞察](#sass)を得ることができました！
 
@@ -1293,7 +1293,7 @@ FlexboxやGridのような柔軟で応答性の高い新しいレイアウト手
 
 ### Houdini
 
-[Houdini](https://developer.mozilla.org/ja/docs/Web/Houdini)という言葉を聞いたことがあるかもしれません。HoudiniはCSSエンジンの一部を公開する低レベルAPIのセットで、ブラウザのレンダリングエンジンのスタイリングやレイアウトプロセスにフックすることでCSSを拡張する力を開発者に与えます。いくつかのHoudiniの仕様がブラウザで出荷されている](https://ishoudinireadyyet.com/)ので、実際に使用されているかどうかを確認する時が来たと考えました。短い答え: いいえ。そして今、長い答えのために。。。
+[Houdini](https://developer.mozilla.org/ja/docs/Web/Houdini)という言葉を聞いたことがあるかもしれません。HoudiniはCSSエンジンの一部を公開する低レベルAPIのセットで、ブラウザのレンダリングエンジンのスタイリングやレイアウトプロセスにフックすることでCSSを拡張する力を開発者に与えます。いくつかの[Houdiniの仕様がブラウザで出荷されている](https://ishoudinireadyyet.com/)ので、実際に使用されているかどうかを確認する時が来たと考えました。短い答え: いいえ。そして今、長い答えのために。。。
 
 まず、[Properties & Values API](https://developer.mozilla.org/ja/docs/Web/API/CSS/RegisterProperty)を見てみました。これは開発者がカスタムプロパティを登録して、型や初期値を与え、継承を防ぐことができるというものです。主なユースケースの1つはカスタムプロパティをアニメーションさせることができることなので、カスタムプロパティがアニメーションされる頻度も調べてみました。
 
@@ -1312,7 +1312,7 @@ CSS-in-JSについては、誰もが愛犬と一緒に使っていると思わ�
   content="2%",
   classes="big-number",
   sheets_gid="1368222498",
-  sql_file="css_in_js"
+  sql_file="css_in_js.sql"
 )
 }}
 

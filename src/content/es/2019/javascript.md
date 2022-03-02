@@ -3,9 +3,9 @@
 title: JavaScript
 description: JavaScript chapter of the 2019 Web Almanac covering how much JavaScript we use on the web, compression, libraries and frameworks, loading, and source maps.
 authors: [housseindjirdeh]
-reviewers: [obto, paulcalvano, mathiasbynens, rviscomi]
+reviewers: [foxdavidj, paulcalvano, mathiasbynens, rviscomi]
 analysts: [rviscomi]
-editors: [obto]
+editors: [foxdavidj]
 translators: [c-torres]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
@@ -298,6 +298,8 @@ Otras bibliotecas JavaScript más utilizadas incluyen variantes de jQuery (jQuer
 
 ### Frameworks y bibliotecas de UI
 
+Aunque este análisis es interesante, es importante tener en cuenta que estos resultados se basan en una biblioteca de detección de terceros - <a hreflang="en" href="https://www.wappalyzer.com">Wappalyzer</a>. Todos estos números de uso dependen de la precisión de cada uno de los mecanismos de detección.
+
 En los últimos años, el ecosistema de JavaScript ha visto un aumento en las bibliotecas y frameworks de código abierto para facilitar la construcción de **aplicaciones de página única** (SPA por sus siglas en inglés). Una aplicación página única se caracteriza por ser una página web que carga una sola página HTML y usa JavaScript para modificar la página en la interacción del usuario en lugar de buscar nuevas páginas del servidor. Aunque esta sigue siendo la premisa principal de las aplicaciones de página única, todavía se pueden utilizar diferentes enfoques de representación del servidor para mejorar la experiencia de dichos sitios. ¿Cuántos sitios usan este tipo de frameworks?
 
 {{ figure_markup(
@@ -314,8 +316,6 @@ Aquí solo se analiza un subconjunto de marcos populares, pero es importante ten
 - Arquitectura basada en componentes
 
 Aunque ha habido un cambio hacia un modelo basado en componentes, muchos frameworks más antiguos que siguen el paradigma MVC (<a hreflang="en" href="https://angularjs.org/">AngularJS</a>, <a hreflang="en" href="https://backbonejs.org/">Backbone.js</a>, <a hreflang="en" href="https://emberjs.com/">Ember</a>) todavía se usan en miles de páginas. Sin embargo, <a hreflang="en" href="https://reactjs.org/">React</a>, <a hreflang="en" href="https://vuejs.org/">Vue</a> y <a hreflang="en" href="https://angular.io/">Angular</a> son los frameworks basados en componentes más populares (<a hreflang="en" href="https://github.com/angular/zone.js">Zone.js</a> es un paquete que ahora forma parte del núcleo angular).
-
-Aunque este análisis es interesante, es importante tener en cuenta que estos resultados se basan en una biblioteca de detección de terceros - <a hreflang="en" href="https://www.wappalyzer.com">Wappalyzer</a>. Todos estos números de uso dependen de la precisión de cada uno de los <a hreflang="en" href="https://github.com/AliasIO/Wappalyzer/blob/master/src/apps.json">mecanismos de detección</a>.
 
 ## Carga diferenciada
 
@@ -359,7 +359,7 @@ Del mismo modo, muy pocos sitios (0,50% - 0,80%) usan el atributo `nomodule` par
 
 ## Preload y prefetch
 
-[Preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content) y [prefetch](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ) son directivas que le permiten ayudar al navegador a determinar qué recursos deben descargarse.
+[Preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preload) y [prefetch](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ) son directivas que le permiten ayudar al navegador a determinar qué recursos deben descargarse.
 
 - Precargar un recurso con `<link rel="preload">` le dice al navegador que descargue este recurso lo antes posible. Esto es especialmente útil para los recursos críticos que se descubren tarde en el proceso de carga de la página (por ejemplo, JavaScript ubicado en la parte inferior de su HTML) y que, de lo contrario, se descargan al final.
 - Usar `<link rel="prefetch">` le dice al navegador que aproveche el tiempo de inactividad que tiene para obtener estos recursos necesarios para futuras navegaciones

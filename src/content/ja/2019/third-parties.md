@@ -3,7 +3,7 @@
 title: サードパーティ
 description: 2019 Web Almanacのサードパーティの章。サードパーティの使用目的、パフォーマンスへの影響、プライバシーへの影響について説明しています。
 authors: [patrickhulce]
-reviewers: [zcorpan, obto, jasti]
+reviewers: [zcorpan, foxdavidj, jasti]
 analysts: [patrickhulce]
 editors: [tunetheweb]
 translators: [ksakae1216]

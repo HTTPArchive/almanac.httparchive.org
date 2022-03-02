@@ -49,7 +49,7 @@ CrUX RUMのデータをHTTP ArchiveのWebPageTestのラボデータで補完し�
 
 ## ハイレベルなパフォーマンス：Core Web Vitals
 
-個々の指標へ飛び込む前に、<a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> (CWV) の複合パフォーマンスについて見てみましょう。Core Web Vitals（LCP、CLS、FID）は、ユーザー体験に焦点を当てたパフォーマンスメトリクスの集合体です。読み込み、インタラクティブ性、視覚的な安定性に重点を置いています。
+個々の指標へ飛び込む前に、<a hreflang="ja" href="https://web.dev/i18n/ja/vitals/">Core Web Vitals</a> (CWV) の複合パフォーマンスについて見てみましょう。Core Web Vitals（LCP、CLS、FID）は、ユーザー体験に焦点を当てたパフォーマンスメトリクスの集合体です。読み込み、インタラクティブ性、視覚的な安定性に重点を置いています。
 
 ウェブパフォーマンスは、アルファベットの羅列で有名ですが、このフレームワークでコミュニティがまとまりつつあります。
 
@@ -227,7 +227,7 @@ TTFBはまだまだこれからです。当社のウェブサイトの75％は4G
 
 ### コンテンツの初回ペイント (FCP)
 
-<a hreflang="en" href="https://web.dev/fcp/">コンテンツの初回ペイント (FCP)</a> は、読み込みが最初に開始されてから、ブラウザがページのコンテンツ部分（テキスト、画像など）を最初にレンダリングするまでの時間を測定するものです。
+<a hreflang="ja" href="https://web.dev/i18n/ja/fcp/">コンテンツの初回ペイント (FCP)</a> は、読み込みが最初に開始されてから、ブラウザがページのコンテンツ部分（テキスト、画像など）を最初にレンダリングするまでの時間を測定するものです。
 
 {{ figure_markup(
   image="performance-FCP-by-device.png",
@@ -273,7 +273,7 @@ FCPがうまくいかない原因としては、レンダリングをブロッ�
 
 ### 最大コンテンツの描画 (LCP)
 
-<a hreflang="en" href="https://web.dev/lcp/">最大コンテンツの描画（LCP）</a> は、ロード開始からブラウザがビューポートで最大の画像またはテキストを表示するまでの時間を測定します。
+<a hreflang="ja" href="https://web.dev/i18n/ja/lcp/">最大コンテンツの描画（LCP）</a> は、ロード開始からブラウザがビューポートで最大の画像またはテキストを表示するまでの時間を測定します。
 
 {{ figure_markup(
   image="performance-LCP-by-device.png",
@@ -384,7 +384,7 @@ LCP要素を遅延ローディングすると、パフォーマンスが低下�
   )
 }}
 
-<a hreflang="en" href="https://web.dev/cls/">累積レイアウトシフト (CLS)</a> は、FCPやLCPなどの視覚的な表示にかかる時間ではなく、ユーザーがどの程度のレイアウト シフトを経験するかによって特徴付けられます。このように、デバイスごとの性能はほぼ同等でした。
+<a hreflang="ja" href="https://web.dev/i18n/ja/cls/">累積レイアウトシフト (CLS)</a> は、FCPやLCPなどの視覚的な表示にかかる時間ではなく、ユーザーがどの程度のレイアウト シフトを経験するかによって特徴付けられます。このように、デバイスごとの性能はほぼ同等でした。
 
 {{ figure_markup(
   image="performance-CLS-by-ect.png",
@@ -416,7 +416,7 @@ CLSが悪くなる原因としては画像のスペースが確保されてい�
 
 ### 初回入力遅延 (FID)
 
-<a hreflang="en" href="https://web.dev/fid/">初回入力遅延 (FID)</a> は、ユーザーが最初にページと対話してから、その対話に応答してブラウザがイベントハンドラーの処理を開始するまでの時間を測ります。
+<a hreflang="ja" href="https://web.dev/i18n/ja/fid/">初回入力遅延 (FID)</a> は、ユーザーが最初にページと対話してから、その対話に応答してブラウザがイベントハンドラーの処理を開始するまでの時間を測ります。
 
 {{ figure_markup(
   image="performance-FID-by-device.png",
@@ -464,10 +464,10 @@ FIDのランク別実績は横ばい。
 
 <figure>
 <blockquote>合計ブロッキング時間 (TBT) メトリクスは、コンテンツの初回ペイント (FCP) と ユーザー操作可能になるまでの時間 (TTI) の間で、メインスレッドが入力反応を妨げるほど長くブロックされた時間の総計を測定します。</blockquote>
-<figcaption>— <cite><a hreflang="en" href="https://web.dev/tbt/">Web.dev</a></cite></figcaption>
+<figcaption>— <cite><a hreflang="ja" href="https://web.dev/i18n/ja/tbt/">Web.dev</a></cite></figcaption>
 </figure>
 
-<a hreflang="en" href="https://web.dev/tbt/">合計ブロッキング時間 (TBT)</a> は、潜在的な双方向性の問題をデバッグするのに役立つラボ ベースのメトリックです。FIDはフィールドベースの指標であり、TBTはラボベースの類似指標である。現在、私はクライアントのWebサイトを評価する際、JavaScriptによるパフォーマンスの問題の可能性を示す別の指標として、総ブロック時間TBTに着目しています。
+<a hreflang="ja" href="https://web.dev/i18n/ja/tbt/">合計ブロッキング時間 (TBT)</a> は、潜在的な双方向性の問題をデバッグするのに役立つラボ ベースのメトリックです。FIDはフィールドベースの指標であり、TBTはラボベースの類似指標である。現在、私はクライアントのWebサイトを評価する際、JavaScriptによるパフォーマンスの問題の可能性を示す別の指標として、総ブロック時間TBTに着目しています。
 
 残念ながら、TBTはChromeユーザー体験レポートでは計測されていません。しかし、HTTP Archive Lighthouseのデータ（モバイルのみ収集）を使用すれば、状況を把握することは可能です。
 

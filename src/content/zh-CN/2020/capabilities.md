@@ -27,13 +27,13 @@ featured_stat_label_3: 网站允许安装相关应用程序
 
 - <a hreflang="en" href="https://web.dev/file-system-access/">文件系统访问 API</a> 用于访问本地文件系统的文件
 - <a hreflang="en" href="https://web.dev/file-handling/">文件Handling API</a> 为特定的文件扩展注册一个 handler
-- <a hreflang="en" href="https://web.dev/async-clipboard/">异步剪贴板 API</a> 访问用户剪贴板
+- <a hreflang="zh" href="https://web.dev/i18n/zh/async-clipboard/">异步剪贴板 API</a> 访问用户剪贴板
 - <a hreflang="en" href="https://web.dev/web-share/">Web共享 API</a> 和其他应用共享文件
-- <a hreflang="en" href="https://web.dev/contact-picker/">联系人 API</a> 从用户地址簿访问联系人
+- <a hreflang="zh" href="https://web.dev/i18n/zh/contact-picker/">联系人 API</a> 从用户地址簿访问联系人
 - <a hreflang="en" href="https://web.dev/shape-detection/">形状检测 API</a> 用于高效检测图像中的人脸或条形码
-- <a hreflang="en" href="https://web.dev/nfc/">Web NFC</a>, <a hreflang="en" href="https://web.dev/serial/">Web 串口</a>, <a hreflang="en" href="https://web.dev/usb/">Web USB</a>, <a hreflang="en" href="https://web.dev/bluetooth/">Web 蓝牙</a>，以及其他 API (完整列表请参考 <a hreflang="en" href="https://goo.gle/fugu-api-tracker">Fugu API Tracker</a>)
+- <a hreflang="en" href="https://web.dev/nfc/">Web NFC</a>, <a hreflang="ja" href="https://web.dev/i18n/ja/serial/">Web 串口</a>, <a hreflang="zh" href="https://web.dev/i18n/zh/usb/">Web USB</a>, <a hreflang="zh" href="https://web.dev/i18n/zh/bluetooth/">Web 蓝牙</a>，以及其他 API (完整列表请参考 <a hreflang="en" href="https://goo.gle/fugu-api-tracker">Fugu API Tracker</a>)
 
-任何人都可以通过<a hreflang="en" href="https://bit.ly/new-fugu-request">在Chromium bug追踪器中创建一个票据</a>来提出一个新的能力。Chromium的贡献者会对这些建议进行审查，并通过相应的标准机构与其他开发者和浏览器厂商讨论所有的API。同时，Fugu团队在Chromium中实现API，在Chromium中，它最初是在一个标记后面实现的。后期，API会通过<a hreflang="en" href="https://web.dev/origin-trials/">原点试用</a>(origin trial)向有限的受众开放。在这个阶段，开发者可以注册一个令牌，在特定的原点上测试API。如果这个API被证明足够强健，API就会在Chromium中发布，如果其他浏览器厂商也决定这样做，也会在其他浏览器中发布。<a hreflang="en" href="https://web.dev/fugu-status/">能力状态</a>网站显示了不同的能力API在这个进程中的位置。
+任何人都可以通过<a hreflang="en" href="https://bit.ly/new-fugu-request">在Chromium bug追踪器中创建一个票据</a>来提出一个新的能力。Chromium的贡献者会对这些建议进行审查，并通过相应的标准机构与其他开发者和浏览器厂商讨论所有的API。同时，Fugu团队在Chromium中实现API，在Chromium中，它最初是在一个标记后面实现的。后期，API会通过<a hreflang="en" href="https://web.dev/origin-trials/">原点试用</a>(origin trial)向有限的受众开放。在这个阶段，开发者可以注册一个令牌，在特定的原点上测试API。如果这个API被证明足够强健，API就会在Chromium中发布，如果其他浏览器厂商也决定这样做，也会在其他浏览器中发布。<a hreflang="zh" href="https://web.dev/i18n/zh/fugu-status/">能力状态</a>网站显示了不同的能力API在这个进程中的位置。
 
 能力项目的代号 "Project Fugu "是以日本的一道菜命名的：如果正确的加工食材，那么河豚的肉是一种特别的味蕾体验。然而如果食材加工不当，则可能是致命的。Fugu项目强大的API对于开发者来说是非常令人兴奋的。但是，它们可能会影响到用户的安全和隐私。因此Fugu团队特别关注这些问题。例如，新的接口要求网站通过安全连接（HTTPS）发送。其中一些功能需要用户的动作，如点击或按键，以防止欺诈。别的功能则需要用户的明确许可。开发者可以用一种渐进式的功能扩展来使用所有的API：通过对API的特性检测，应用程序在缺乏对这些能力支持的浏览器中不会崩溃。在支持这些功能的浏览器中，用户可以获得更佳的体验。这样一来，Web应用就会根据用户的特定浏览器<a hreflang="en" href="https://web.dev/progressively-enhance-your-pwa/">渐进式增强</a>。
 
@@ -66,7 +66,7 @@ featured_stat_label_3: 网站允许安装相关应用程序
 
 ## 存储管理(<span lang="en">StorageManager</span>)API {存储管理storagemanagerapi}
 
-Web浏览器允许用户以不同的方式在用户系统上存储数据，如Cookie、索引数据库(IndexedDB)、Service Worker的缓存存储或Web存储(本地存储、会话存储)。在现代的浏览器中，取决于浏览器，开发者可以轻松<a hreflang="en" href="https://web.dev/storage-for-the-web/">存储数百兆甚至更多</a>。当浏览器的空间耗尽时，可以清除数据，直到系统不再超过限制（可能导致数据丢失）。
+Web浏览器允许用户以不同的方式在用户系统上存储数据，如Cookie、索引数据库(IndexedDB)、Service Worker的缓存存储或Web存储(本地存储、会话存储)。在现代的浏览器中，取决于浏览器，开发者可以轻松<a hreflang="zh" href="https://web.dev/i18n/zh/storage-for-the-web/">存储数百兆甚至更多</a>。当浏览器的空间耗尽时，可以清除数据，直到系统不再超过限制（可能导致数据丢失）。
 
 归功于[存储管理API](https://developer.mozilla.org/en-US/docs/Web/API/StorageManager)，它是<a hreflang="en" href="https://storage.spec.whatwg.org/#storagemanager">WHATWG 存储动态标准</a>的一部分，使得浏览器在这方面的表现不再像一个黑盒子了。这个API允许开发者估计剩余的可用空间，并选择加入<a hreflang="en" href="https://web.dev/persistent-storage/">持久性存储</a>，这意味着当磁盘空间不足时，浏览器不会清除网站的数据。因此，该API在`navigator` 对象上引入了一个新的`StorageManager`接口，目前在Chrome、Edge和Firefox上都支持。
 
@@ -180,7 +180,7 @@ BettyCrocker.com是美国一家很受欢迎的烹饪网站，在屏幕唤醒锁�
 
 ## 周期性后台同步API
 
-当用户关闭一个Web应用时，它就无法再与其后端服务进行通信。在某些情况下，开发人员可能仍然希望或多或少地定期同步数据，就像本地应用程序一样。例如，新闻应用可能希望在用户醒来之前下载最新的头条新闻。<a hreflang="en" href="https://web.dev/periodic-background-sync/">周期性后台同步API</a>(<a hreflang="en" href="https://wicg.github.io/periodic-background-sync/">WICG 社区小组报告草案</a>)力图弥合web和原生应用之间的这个差距。
+当用户关闭一个Web应用时，它就无法再与其后端服务进行通信。在某些情况下，开发人员可能仍然希望或多或少地定期同步数据，就像本地应用程序一样。例如，新闻应用可能希望在用户醒来之前下载最新的头条新闻。<a hreflang="zh" href="https://web.dev/i18n/zh/periodic-background-sync/">周期性后台同步API</a>(<a hreflang="en" href="https://wicg.github.io/periodic-background-sync/">WICG 社区小组报告草案</a>)力图弥合web和原生应用之间的这个差距。
 
 ### 注册定期同步
 
@@ -266,7 +266,7 @@ Web应用可以使用各种方式离线存储内容，比如Cache Storage，或�
 
 ### WebSockets的背压机制
 
-WebSocket API 是网站和服务器之间双向通信的绝佳选择。但是，WebSocket API 不允许背压，因此处理高频消息的应用程序可能会冻结。<a hreflang="en" href="https://web.dev/websocketstream/">WebSocketStream API</a>(<a hreflang="en" href="https://github.com/ricea/websocketstream-explainer/blob/master/README.md">解释</a>，尚未进入标准轨道)希望通过用流来扩展WebSocket API，为其带来易于使用的背压支持。开发者不需要使用通常的`WebSocket`构造函数，而是需要创建一个新的`WebSocketStream`接口实例。流的`connection`属性返回一个承诺，该承诺解析为一个可读和可写的流，允许分别获得一个流读取器或写入器。
+WebSocket API 是网站和服务器之间双向通信的绝佳选择。但是，WebSocket API 不允许背压，因此处理高频消息的应用程序可能会冻结。<a hreflang="zh" href="https://web.dev/i18n/zh/websocketstream/">WebSocketStream API</a>(<a hreflang="en" href="https://github.com/ricea/websocketstream-explainer/blob/master/README.md">解释</a>，尚未进入标准轨道)希望通过用流来扩展WebSocket API，为其带来易于使用的背压支持。开发者不需要使用通常的`WebSocket`构造函数，而是需要创建一个新的`WebSocketStream`接口实例。流的`connection`属性返回一个承诺，该承诺解析为一个可读和可写的流，允许分别获得一个流读取器或写入器。
 
 ```js
 const wss = new WebSocketStream(WSS_URL);
@@ -290,7 +290,7 @@ WebSocketStream API已经完成了第一次初期试用，现在又回到了实�
 
 ### 启用QUIC
 
-<a hreflang="en" href="https://www.chromium.org/quic">QUIC</a> (<a hreflang="en" href="https://www.ietf.org/archive/id/draft-ietf-quic-transport-31.txt">IETF Internet-Draft</a>)是一种基于UDP实现的多路复用、基于流的双向传输协议。它是在TCP之上实现的HTTP/WebSocket API的替代品。[QuicTransport API] (https://web.dev/quictransport/)是用于向QUIC服务器发送消息和接收消息的客户端API。开发者可以选择通过数据包不可靠地发送数据，或者通过使用其流API可靠地发送数据。
+<a hreflang="en" href="https://www.chromium.org/quic">QUIC</a> (<a hreflang="en" href="https://www.ietf.org/archive/id/draft-ietf-quic-transport-31.txt">IETF Internet-Draft</a>)是一种基于UDP实现的多路复用、基于流的双向传输协议。它是在TCP之上实现的HTTP/WebSocket API的替代品。<a hreflang="zh" href="https://web.dev/i18n/zh/webtransport/">QuicTransport API</a>是用于向QUIC服务器发送消息和接收消息的客户端API。开发者可以选择通过数据包不可靠地发送数据，或者通过使用其流API可靠地发送数据。
 
 ```js
 const transport = new QuicTransport(QUIC_URL);
