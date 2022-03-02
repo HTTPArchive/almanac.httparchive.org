@@ -3,8 +3,8 @@
 title: モバイル・ウェブ
 description: 2020年版Web Almanacのモバイルウェブの章では、ページの読み込み、テキストコンテンツ、ズームとスケーリング、ボタンとリンク、フォームへの入力のしやすさなどを解説しています。
 authors: [spanicker, mdiblasio]
-reviewers: [obto]
-analysts: [obto]
+reviewers: [foxdavidj]
+analysts: [foxdavidj]
 editors: [exterkamp]
 translators: [ksakae1216]
 spanicker_bio: Shubhie Panickerは、Chromeのウェブフレームワークエコシステムへの取り組みを担当するエンジニアリングリーダーで、オープンソースツール、フレームワーク、コミュニティとのコラボレーションを行っています。Chromeのウェブプラットフォームチームのメンバーとして、ウェブ標準や、いくつかのウェブパフォーマンスAPIに対するchromiumの実装に取り組んできました。Chrome以前は、検索やGoogle PhotosなどのGoogle製品のインフラやウェブフレームワークに携わっていました。
@@ -143,7 +143,7 @@ CrUXのデータがあるすべてのウェブサイトをバケツに入れて�
 
 レスポンシブWebサイトでは、viewport metaタグやCSSメディアクエリを使用して、モバイルフレンドリーな体験を提供しています。これらのモバイルフレンドリーについて詳しく知りたい方は、[SEOの章](./seo#mobile-friendliness)をご覧ください。
 
-<a hreflang="en" href="https://web.dev/responsive-web-design-basics/">レスポンシブWebデザインの詳細はこちら</a>。
+<a hreflang="ja" href="https://web.dev/i18n/ja/responsive-web-design-basics/">レスポンシブWebデザインの詳細はこちら</a>。
 
 検索エンジンからのオーガニックなトラフィックだけでなく、**広告のクリック**もウェブサイトに送られる訪問者の重要なソースとなる可能性があります。SEOと同様に広告に投資し、広告からのトラフィックを受け取るウェブサイトにとって、広告の最適化は重要な意味を持ちます。
 
@@ -211,9 +211,9 @@ CrUXのデータがあるすべてのウェブサイトをバケツに入れて�
 
 ##### 累積レイアウト変更
 
-<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLS)は、ユーザーの訪問中にビューポート内のコンテンツがどれだけ移動するかを定量化する指標です。
+<a hreflang="ja" href="https://web.dev/i18n/ja/cls/">Cumulative Layout Shift</a> (CLS)は、ユーザーの訪問中にビューポート内のコンテンツがどれだけ移動するかを定量化する指標です。
 
-<a hreflang="en" href="https://web.dev/optimize-cls/">CLSが悪くなる原因としてもっとも多いのは</a>。
+<a hreflang="ja" href="https://web.dev/i18n/ja/optimize-cls/">CLSが悪くなる原因としてもっとも多いのは</a>。
 
 * 寸法のない画像。
 * 寸法のない広告、埋め込み、iframeなど。
@@ -283,7 +283,7 @@ Mckinsey & Company社は、デザインやUXに強い企業は、より優れた
 
 たとえば、白地に薄いグレーの文字など、コントラスト比の低い文字は読みづらいです。これは、ユーザーの読解力や読書速度を低下させる原因となります。
 
-Lighthouseでは、<a hreflang="en" href="https://web.dev/color-contrast/">色のコントラストをチェック</a>したところ、78.94％と過半数のウェブページで色のコントラストが、十分でないことがわかりました。
+Lighthouseでは、<a hreflang="ja" href="https://web.dev/i18n/ja/color-contrast/">色のコントラストをチェック</a>したところ、78.94％と過半数のウェブページで色のコントラストが、十分でないことがわかりました。
 
 {{ figure_markup(
   image="sites-with-sufficient-color-contrast.png",
@@ -298,7 +298,7 @@ Lighthouseでは、<a hreflang="en" href="https://web.dev/color-contrast/">色�
 
 モバイルのユーザーエクスペリエンスは、デスクトップでマウスを使うのに比べてユーザーが指を使ってサイトにアクセスするため、「ファットフィンガリング」の影響を受けやすい。
 
-調査によると、ボタンやタップターゲットの最小サイズと、それらの間隔の最小値に関する基準があります。<a hreflang="en" href="https://web.dev/tap-targets/">Lighthouseの推奨</a>は、ターゲットが48px×48pxよりも小さく、8px以下の間隔で配置することです。その結果63.69％という大多数のウェブページで、タップターゲットのサイズが、不適切であることがわかりました。これは昨年の65.57％のウェブページが不適切なサイズのタップターゲットを持っていたことと比較すると、わずかに改善されています。
+調査によると、ボタンやタップターゲットの最小サイズと、それらの間隔の最小値に関する基準があります。<a hreflang="ja" href="https://web.dev/i18n/ja/tap-targets/">Lighthouseの推奨</a>は、ターゲットが48px×48pxよりも小さく、8px以下の間隔で配置することです。その結果63.69％という大多数のウェブページで、タップターゲットのサイズが、不適切であることがわかりました。これは昨年の65.57％のウェブページが不適切なサイズのタップターゲットを持っていたことと比較すると、わずかに改善されています。
 
 {{ figure_markup(
   image="sites-with-properly-sized-tap-targets.png",

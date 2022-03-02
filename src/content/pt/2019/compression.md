@@ -3,7 +3,7 @@
 title: Compressão
 description: Capítulo de compressão do Web Almanac de 2019 acerca de compressão HTTP, algoritmos, tipos de conteúdo, compressão própria ou por terceiros e oportunidades.
 authors: [paulcalvano]
-reviewers: [obto, yoavweiss]
+reviewers: [foxdavidj, yoavweiss]
 analysts: [paulcalvano]
 editors: [tunetheweb]
 translators: [soulcorrosion]

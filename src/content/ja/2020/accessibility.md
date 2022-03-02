@@ -3,8 +3,8 @@
 title: アクセシビリティ
 description: 2020年Web Almanacのアクセシビリティの章では、読みやすさ、メディア、ナビゲーションのしやすさ、支援技術との互換性を取り上げています。
 authors: [oluoluoxenfree, alextait1]
-reviewers: [aardrian, ericwbailey, obto]
-analysts: [obto]
+reviewers: [aardrian, ericwbailey, foxdavidj]
+analysts: [foxdavidj]
 editors: [tunetheweb]
 translators: [ksakae1216]
 oluoluoxenfree_bio: Olu Niyi-AwosusiはFTのソフトウェアエンジニアで、リスト、新しいことを学ぶこと、Bee and Puppycat、<a hreflang="en" href="https://alistapart.com/article/building-the-woke-web/">社会正義、アクセシビリティ</a>、そして日々努力することを愛しています。
@@ -33,7 +33,7 @@ featured_stat_label_3: クローズドキャプションを提供する動画
 
 2020年に向けて、これまで以上に露出が増えている危険な傾向は、「アクセシビリティ・オーバーレイ」の使用です。これらのウィジェットは一歩進んだアクセシビリティの遵守を約束しているが、多くの場合、新たな障壁を導入し、障害のあるユーザーの体験をかなり困難なものにしている。デジタル関係者は、使い勝手の良いインターフェイスの設計と実装に責任を持つことが重要であり、安易な修正でこのプロセスを台無しにしようとしないことが重要です。詳細については、Lainey Feingoldの記事、<a hreflang="en" href="https://www.lflegal.com/2020/08/quick-fix/">Honor the ADA: Avoid Web Accessibility Quick Fix Overlays</a>を参照してください。
 
-悲しいことに、私たちや<a hreflang="en" href="https://webaim.org/projects/million/">WebAIM Million</a>のような分析を行っている他のチームは、年々これらの指標にほとんど改善が見られず場合によっては全く改善が見られないことを発見しています。すべての<a hreflang="en" href="https://web.dev/lighthouse-accessibility/">Lighthouse Accessibility</a>監査データのサイト全体のスコアの中央値は、2019年の73%から2020年には80%に上昇しました。この7%の上昇は、正しい方向へのシフトを表していると期待しています。しかし、これらは自動化されたチェックであり、開発者がルールエンジンを裏切る良い仕事をしていることを意味する可能性があるので慎重に楽観視しています。
+悲しいことに、私たちや<a hreflang="en" href="https://webaim.org/projects/million/">WebAIM Million</a>のような分析を行っている他のチームは、年々これらの指標にほとんど改善が見られず場合によっては全く改善が見られないことを発見しています。すべての<a hreflang="ja" href="https://web.dev/i18n/ja/lighthouse-accessibility/">Lighthouse Accessibility</a>監査データのサイト全体のスコアの中央値は、2019年の73%から2020年には80%に上昇しました。この7%の上昇は、正しい方向へのシフトを表していると期待しています。しかし、これらは自動化されたチェックであり、開発者がルールエンジンを裏切る良い仕事をしていることを意味する可能性があるので慎重に楽観視しています。
 
 当社の分析は、自動化されたメトリクスのみに基づいています。自動化されたテストは、インターフェイスに存在しうるアクセシビリティの障壁のほんの一部を捉えているに過ぎないことを覚えておくことが重要です。アクセシブルなサイトやアプリケーションを実現するためには、手動テストや障害者によるユーザビリティ・テストを含む定性分析が必要です。
 
@@ -92,7 +92,7 @@ featured_stat_label_3: クローズドキャプションを提供する動画
   content="77.67%",
   classes="big-number",
   sheets_gid="812908021",
-  sql_file="02_05.sql"
+  sql_file="valid_html_lang.sql"
 )
 }}
 
@@ -266,7 +266,7 @@ HTMLの`lang`属性を設定すると、ページを簡単に翻訳でき、ス�
   sql_file="lighthouse_a11y_audits.sql"
 ) }}
 
-私たちの監査では、チェックされたサイトの58.72%が、レベルをスキップしない<a hreflang="en" href="https://web.dev/heading-order/">適切に並べられた見出しのテスト</a>に合格していることが明らかになりました。これらの見出しは、ページの意味的な構造を伝えます。多くのスクリーン・リーダー・ユーザーは見出しを使ってページをナビゲートしているので、見出しが正しい順序（ジャンプせずに昇順）であることは、支援技術ユーザーに最高の体験を提供することを意味します。このルールが守られる可能性の高いページだけをチェックしていることは注目に値します。
+私たちの監査では、チェックされたサイトの58.72%が、レベルをスキップしない<a hreflang="ja" href="https://web.dev/i18n/ja/heading-order/">適切に並べられた見出しのテスト</a>に合格していることが明らかになりました。これらの見出しは、ページの意味的な構造を伝えます。多くのスクリーン・リーダー・ユーザーは見出しを使ってページをナビゲートしているので、見出しが正しい順序（ジャンプせずに昇順）であることは、支援技術ユーザーに最高の体験を提供することを意味します。このルールが守られる可能性の高いページだけをチェックしていることは注目に値します。
 
 ### リンクをスキップする
 

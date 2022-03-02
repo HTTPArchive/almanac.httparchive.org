@@ -634,7 +634,7 @@ HTTP/2は強力なプロトコルで、わずか数年でかなりの採用が�
 
 インターネット上に新しいトランスポートプロトコルを展開しようとする過去の試みは、[Stream Control Transmission Protocol](https://ja.wikipedia.org/wiki/Stream_Control_Transmission_Protocol) (SCTP)のように困難であることが証明されています。QUICはUDPの上で動作する新しいトランスポートプロトコルです。QUICは、信頼性の高い順番配信やネットワークへのフラッディングを防ぐ輻輳制御など、TCPと同様の機能を提供します。
 
-[HTTP/1.0とHTTP/2](#http10-to-http2)で説明したように、HTTP/2は1つの接続の上に複数の異なるストリームを _多重化_ しています。TCP自体はこの事実に気付いていないため、パケットロスや遅延が発生したときに非効率やパフォーマンスに影響を与えてしまいます。 _head-of-line blocking_  (HOL blocking)として知られるこの問題の詳細については、こちらを参照してください](https://github.com/rmarx/holblocking-blogpost)。
+[HTTP/1.0とHTTP/2](#http10-to-http2)で説明したように、HTTP/2は1つの接続の上に複数の異なるストリームを _多重化_ しています。TCP自体はこの事実に気付いていないため、パケットロスや遅延が発生したときに非効率やパフォーマンスに影響を与えてしまいます。 _head-of-line blocking_  (HOL blocking)<a hreflang="en" href="https://github.com/rmarx/holblocking-blogpost">として知られるこの問題の詳細については、こちらを参照してください</a>。
 
 QUICはHTTP/2のストリームをトランスポート層に落とし、ストリームごとの損失検出と再送を行うことで、HOLブロッキングの問題を解決します。つまり、HTTP/2をQUICの上に置けばいいんですよね？　さて、TCPとHTTP/2でフロー制御を行うことで発生する問題のいくつかを[すでに述べました](#reducing-connections)。2つの独立した競合するストリーミングシステムを重ねて実行することは、さらなる問題となるでしょう。さらに、QUICストリームは独立しているので、HTTP/2がシステムのいくつかに要求する厳格な順序付けの要件を混乱させることになります。
 

@@ -253,7 +253,7 @@ To understand what search engines are able to effectively extract, we have broke
 
 #### Rendered versus non-rendered text content
 
-The usage of Single Page Application (SPA) [JavaScript](../javascript) technologies has exploded with the growth of the web. This design pattern introduces difficulties for search engine spiders because both the execution of JavaScript transformations at runtime and user interactions with the page after load can cause additional content to appear or be rendered.
+The usage of Single Page Application (SPA) [JavaScript](./javascript) technologies has exploded with the growth of the web. This design pattern introduces difficulties for search engine spiders because both the execution of JavaScript transformations at runtime and user interactions with the page after load can cause additional content to appear or be rendered.
 
 Search engines encounter pages through its crawling activity, but may or may not choose to implement a second step of rendering a page. As a result, there may be disparities between the content that a user sees and the content that a search engine indexes and considers for rankings.
 
@@ -689,7 +689,7 @@ The browser's viewport is the visible area of a page content, which changes depe
     {{ figure_link(
       caption="Percent of pages having each viewport meta tag <code>content</code> attribute value.",
       sheets_gid="479500659",
-      sql_file="../03_Markup/summary_pages_by_device_and_viewport.sql"
+      sql_file="../markup/summary_pages_by_device_and_viewport.sql"
     ) }}
   </figcaption>
 </figure>
@@ -741,7 +741,7 @@ We found that 80.29% of desktop pages and 82.92% of the mobile ones are using ei
     {{ figure_link(
       caption="Percent of pages that include each media query feature.",
       sheets_gid="1141218471",
-      sql_file="../01_CSS/media_query_features.sql"
+      sql_file="../css/media_query_features.sql"
     ) }}
   </figcaption>
 </figure>
@@ -789,7 +789,7 @@ Desktop continues to be the more performant platform for users despite more user
   description="Bar chart showing the percent of websites with a good core web vitals score per device. 33.13% of websites scored _Good_ Core Web Vitals for desktop while only 19.96% of their mobile counterparts passed the Core Web Vitals assessment.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1601210449&format=interactive",
   sheets_gid="996380787",
-  sql_file="../09_Performance/web_vitals_by_device.sql"
+  sql_file="../performance/web_vitals_by_device.sql"
 ) }}
 
 #### Core Web Vitals experiences per country
@@ -804,7 +804,7 @@ Users located in the United States recorded the largest absolute number of websi
   description="Horizontal bar chart showing the aggregate core web vitals performance by country.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=2077593128&format=interactive",
   sheets_gid="220428774",
-  sql_file="../09_Performance/web_vitals_by_country.sql",
+  sql_file="../performance/web_vitals_by_country.sql",
   width=645,
   height=792
 ) }}

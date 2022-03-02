@@ -3,8 +3,8 @@
 title: Caching
 description: Caching chapter of the 2019 Web Almanac covering cache-control, expires, TTLs, validitaty, vary, set-cookies, AppCache, Service Workers and opportunities.
 authors: [paulcalvano]
-reviewers: [obto, bkardell]
-analysts: [paulcalvano, obto]
+reviewers: [foxdavidj, bkardell]
+analysts: [paulcalvano, foxdavidj]
 editors: [tunetheweb]
 translators: []
 discuss: 1771
@@ -591,7 +591,7 @@ One of the risks of caching responses with `Set-Cookie` is that the cookie value
 
 ## AppCache and service workers
 
-The Application Cache or AppCache is a feature of HTML5 that allows developers to specify resources the browser should cache and make available to offline users. This feature was <a hreflang="en" href="https://html.spec.whatwg.org/multipage/offline.html#offline">deprecated and removed from web standards</a>, and browser support has been diminishing. In fact, when its use is detected, [Firefox v44+ recommends that developers should use service workers instead](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers). <a hreflang="en" href="https://www.chromestatus.com/feature/5714236168732672">Chrome 70 restricts the Application Cache to secure context only</a>. The industry has moved more towards implementing this type of functionality with service workers - and <a hreflang="en" href="https://caniuse.com/#feat=serviceworkers">browser support</a> has been rapidly growing for it.
+The Application Cache or AppCache is a feature of HTML5 that allows developers to specify resources the browser should cache and make available to offline users. This feature was <a hreflang="en" href="https://web.archive.org/web/20191115024726/https://html.spec.whatwg.org/multipage/offline.html">deprecated and removed from web standards</a>, and browser support has been diminishing. In fact, when its use is detected, [Firefox v44+ recommends that developers should use service workers instead](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers). <a hreflang="en" href="https://www.chromestatus.com/feature/5714236168732672">Chrome 70 restricts the Application Cache to secure context only</a>. The industry has moved more towards implementing this type of functionality with service workers - and <a hreflang="en" href="https://caniuse.com/#feat=serviceworkers">browser support</a> has been rapidly growing for it.
 
 In fact, one of the <a hreflang="en" href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive trend reports shows the adoption of service workers</a> shown below:
 

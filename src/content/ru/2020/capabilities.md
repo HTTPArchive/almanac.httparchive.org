@@ -290,7 +290,7 @@ const writer = writable.getWriter();
 
 ### Применение QUIC
 
-<a hreflang="en" href="https://www.chromium.org/quic">QUIC</a> (<a lang="en" href="https://www.ietf.org/archive/id/draft-ietf-quic-transport-31.txt">IETF Internet-Draft</a>) — это мультиплексированный, потоковый, двунаправленный транспортный UDP-протокол. Это альтернатива <span lang="en">HTTP/WebSocket API</span>, которые работают поверх TCP. <a lang="en" href="https://web.dev/quictransport/">QuicTransport API</a> — это клиентский API для отправки сообщений на сервер QUIC и получения сообщений с него. Разработчики могут выбирать между ненадёжной отправкой данных через датаграммы, так и надёжной, использующей потоковое API:
+<a hreflang="en" href="https://www.chromium.org/quic">QUIC</a> (<a lang="en" href="https://www.ietf.org/archive/id/draft-ietf-quic-transport-31.txt">IETF Internet-Draft</a>) — это мультиплексированный, потоковый, двунаправленный транспортный UDP-протокол. Это альтернатива <span lang="en">HTTP/WebSocket API</span>, которые работают поверх TCP. <a lang="en" href="https://web.dev/webtransport/">QuicTransport API</a> — это клиентский API для отправки сообщений на сервер QUIC и получения сообщений с него. Разработчики могут выбирать между ненадёжной отправкой данных через датаграммы, так и надёжной, использующей потоковое API:
 
 ```js
 const transport = new QuicTransport(QUIC_URL);

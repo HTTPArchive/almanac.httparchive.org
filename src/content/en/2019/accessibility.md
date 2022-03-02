@@ -2,15 +2,15 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Accessibility
 description: Accessibility chapter of the 2019 Web Almanac covering ease of reading, media, ease of navigation, and compatibility with assistive technologies.
-authors: [nektarios-paisios, obto, kleinab]
+authors: [nektarios-paisios, foxdavidj, kleinab]
 reviewers: [ljme]
-analysts: [dougsillars, rviscomi, obto]
-editors: [obto]
+analysts: [dougsillars, rviscomi, foxdavidj]
+editors: [foxdavidj]
 translators: []
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
 nektarios-paisios_bio: Nektarios Paisios is a software engineer working on Chrome accessibility for the last 5 years. He primarily focuses on making Chrome compatible with third party assistive software such as screen readers and screen magnifiers. Before working on Chrome accessibility, Nektarios worked in various other roles at the company, such as GSuite accessibility and display ads. Nektarios holds a Ph.D. in Computer Science from New York University.
-obto_bio: David Fox is the lead usability researcher and founder of LookZook, a company obsessed with finding out everything there is to know about building web experiences that meet user expectations. He is a website psychologist who digs into sites to learn not just what users are struggling with, but why, and how to best improve their experience. He is also a Google Chromium contributor, speaker, and provider of webinars and UX training.
+foxdavidj_bio: David Fox is the lead usability researcher and founder of LookZook, a company obsessed with finding out everything there is to know about building web experiences that meet user expectations. He is a website psychologist who digs into sites to learn not just what users are struggling with, but why, and how to best improve their experience. He is also a Google Chromium contributor, speaker, and provider of webinars and UX training.
 kleinab_bio: Abigail Klein is a Google software engineer. She worked on Google Docs, Sheets, and Slides web accessibility where she added <a hreflang="en" href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">automatic captions to Google Slides</a>, as well as improving screen reader, braille, screen magnifier, and high contrast support. She currently works on Google Chrome and ChromeOS accessibility. She has a bachelor's and master's degree in computer science from MIT, where she co-founded an assistive technology hackathon and was a lab assistant and guest lecturer of the assistive technology class.
 featured_quote: Accessibility on the web is essential for an inclusive and equitable society. As more of our social and work lives move to the online world, it becomes even more important for people with disabilities to be able to participate in all online interactions without barriers. Just as building architects can create or omit accessibility features such as wheelchair ramps, web developers can help or hinder the assistive technology users rely on.
 featured_stat_1: 22%
@@ -64,7 +64,7 @@ Using a <a hreflang="en" href="https://accessibleweb.com/question-answer/minimum
 
 There are rare cases when disabling scaling is acceptable, like when the page in question is a web-based game using touch controls. If left enabled in this case, players' phones will zoom in and out every time the player taps twice on the game, ironically making it inaccessible.
 
-Because of this, developers are given the ability to disable this feature by setting one of the following two properties in the [meta viewport tag](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag):
+Because of this, developers are given the ability to disable this feature by setting one of the following two properties in the [meta viewport tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag):
 
 1. `user-scalable` set to `0` or `no`
 

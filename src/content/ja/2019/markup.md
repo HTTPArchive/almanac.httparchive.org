@@ -270,7 +270,7 @@ featured_stat_label_3: カルーセルのバリエーションが見つかりま
 - 英国のeコマースプロバイダーである<a hreflang="en" href="https://www.oxatis.co.uk">Oxatis</a>の`<actinic:*>` 要素の一部はさらに多くのページに出現しています。たとえば、<a hreflang="en" href="https://rainy-periwinkle.glitch.me/permalink/30dfca0fde9fad9b2ec58b12cb2b0271a272fb5c8970cd40e316adc728a09d19.html">`<actinic:basehref>`</a>はデスクトップデータ中の154ページに出現しています。
 - Macromediaの要素はほとんど消えたようです。一覧にはたった一つの要素`<mm:endlock>`だけが現れており、その数はわずか22ページだけです。
 - Adobe Go-Liveの<a hreflang="en" href="https://rainy-periwinkle.glitch.me/permalink/579abc77652df3ac2db1338d17aab0a8dc737b9d945510b562085d8522b18799.html">`<csscriptdict>`</a>は、デスクトップデータセットの640ページに引き続いて現れています。
-- Microsoft Officeの<a hreflang="en" href="https://rainy-periwinkle.glitch.me/permalink/bc8f154a95dfe06a6d0fdb099b6c8df61727b2289141a0ef16dc17b2b57d3068.html">`<o:p>`</a>要素は、2万ページ以上のデスクトップページとなる0.5％に引き続いて現れています。
+- Microsoft Officeの<a hreflang="en" href="https://rainy-periwinkle.glitch.me/permalink/579abc77652df3ac2db1338d17aab0a8dc737b9d945510b562085d8522b18799.html">`<o:p>`</a>要素は、2万ページ以上のデスクトップページとなる0.5％に引き続いて現れています。
 
 そして、Hixieのオリジナルレポートにはなかった多くの新しい要素も現れました。
 

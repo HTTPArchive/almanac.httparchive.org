@@ -965,7 +965,7 @@ We've covered the use of HTML in general as well as the adoption of top elements
 
 ### `viewport` specifications
 
-The [viewport](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag) meta element is used to control layout on mobile browsers. While years ago, the motto was kind of "don't forget the viewport meta element" when building a web page, eventually this became a common practice and the motto changed to "make sure zooming and scaling are not disabled."
+The [viewport](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) meta element is used to control layout on mobile browsers. While years ago, the motto was kind of "don't forget the viewport meta element" when building a web page, eventually this became a common practice and the motto changed to "make sure zooming and scaling are not disabled."
 
 Users should be able to zoom and scale the text <a hreflang="en" href="https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large">up to 500%</a>. That's why audits in popular tools like <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> or <a hreflang="en" href="https://www.deque.com/axe/">axe</a> fail when `user-scalable="no"` is used within the `meta name="viewport"` element, and when the `maximum-scale` attribute value is less than `5`.
 

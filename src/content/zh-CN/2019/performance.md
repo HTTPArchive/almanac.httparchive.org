@@ -3,7 +3,7 @@
 title: 性能
 description: 2019 Web Almanac网络年鉴的性能章节，包括 首次有内容的绘制 (FCP), 首包字节 (TTFB), 以及首次输入延迟 (FID)。
 authors: [rviscomi]
-reviewers: [JMPerez,obto,sergeychernyshev,zeman]
+reviewers: [JMPerez,foxdavidj,sergeychernyshev,zeman]
 analysts: [rviscomi, raghuramakrishnan71]
 editors: [rachellcostello]
 translators: [chengxicn]

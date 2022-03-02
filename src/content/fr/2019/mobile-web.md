@@ -2,14 +2,14 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Web Mobile
 description: Chapitre sur les web mobile du Web Almanac 2019, couvrant le chargement des pages, du contenu textuel, du zoom et de la mise à l’échelle, des boutons et des liens, ainsi que de la facilité à remplir les formulaires.
-authors: [obto]
+authors: [foxdavidj]
 reviewers: [AymenLoukil, logicalphase]
 analysts: [ymschaap, rviscomi]
 editors: [rviscomi]
 translators: [borisschapira]
 discuss: 1767
 results: https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/
-obto_bio: David Fox est <i lang="en">lead usability researcher</i> et fondateur de LookZook, une entreprise obsédée par tout ce qu’il y a à savoir sur la création d’expériences Web qui répondent aux attentes des utilisateurs. Il est un psychologue de sites Web qui fouille dans ces derniers pour apprendre non seulement avec quels problèmes les utilisateurs se débattent, mais pourquoi et comment améliorer au mieux leur expérience. Il est également un contributeur, un conférencier et un fournisseur de Google Chromium de webinaires et de formations UX.
+foxdavidj_bio: David Fox est <i lang="en">lead usability researcher</i> et fondateur de LookZook, une entreprise obsédée par tout ce qu’il y a à savoir sur la création d’expériences Web qui répondent aux attentes des utilisateurs. Il est un psychologue de sites Web qui fouille dans ces derniers pour apprendre non seulement avec quels problèmes les utilisateurs se débattent, mais pourquoi et comment améliorer au mieux leur expérience. Il est également un contributeur, un conférencier et un fournisseur de Google Chromium de webinaires et de formations UX.
 featured_quote: Depuis 2007, le web mobile s’est développé à un rythme explosif. Aujourd’hui, 13 ans plus tard, le mobile représente 59&nbsp;% de toutes les recherches et 58,7&nbsp;% de tout le trafic web, selon les données de Akamai mPulse en juillet 2019. Ce n’est plus un usage secondaire, mais la principale façon dont les gens vivent le web. Alors, étant donné l’importance du mobile, quel genre d’expérience offrons-nous à nos visiteurs et visiteuses&nbsp;? Quels sont les points faibles&nbsp;? C’est ce que nous allons découvrir.
 featured_stat_1: 65 %
 featured_stat_label_1: des sites sont victimes de déplacements de contenu moyens ou importants pendant le chargement

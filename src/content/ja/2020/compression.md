@@ -248,7 +248,7 @@ HTTPレスポンスの約60%は、テキストベースの圧縮を行わずに�
   )
 }}
 
-また、サイトの圧縮について理解を深めるためのツールとして、Googleの<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a>というツールがあり、ウェブページに対して一連の監査を実行できます。<a hreflang="en" href="https://web.dev/uses-text-compression/">テキスト圧縮監査</a>では、サイトがテキストベースの圧縮を追加することで利益を得られるかどうかを評価します。この監査では、リソースの圧縮を試み、オブジェクトのサイズを少なくとも10%および1,400バイト削減できるかどうかを評価します。スコアに応じて、結果に圧縮の推奨事項が表示され、圧縮可能な特定のリソースのリストが表示されます。
+また、サイトの圧縮について理解を深めるためのツールとして、Googleの<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a>というツールがあり、ウェブページに対して一連の監査を実行できます。<a hreflang="ja" href="https://web.dev/i18n/ja/uses-text-compression/">テキスト圧縮監査</a>では、サイトがテキストベースの圧縮を追加することで利益を得られるかどうかを評価します。この監査では、リソースの圧縮を試み、オブジェクトのサイズを少なくとも10%および1,400バイト削減できるかどうかを評価します。スコアに応じて、結果に圧縮の推奨事項が表示され、圧縮可能な特定のリソースのリストが表示されます。
 
 [HTTP Archive Lighthouseの監査を実施](./methodology#lighthouse)はモバイルページごとに行われるため、すべてのサイトのスコアを集計して、より多くのコンテンツを圧縮する機会がどれだけあるかを知ることができます。全体では74％のウェブサイトがこの監査に合格していますが、約13％のウェブサイトが40点以下のスコアを記録しています。これは、[昨年](../2019/compression#identifying-compression-opportunities)の62.5%の合格スコアと比較すると、11.5%の改善となります。
 

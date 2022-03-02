@@ -3,8 +3,8 @@
 title: キャッシング
 description: 2019 Web Almanacのキャッシュの章は、キャッシュコントロール、有効期限、TTL、有効性、変化、Cookieの設定、アプリケーションキャッシュ、Service Worker、および機会について説明します。
 authors: [paulcalvano]
-reviewers: [obto, bkardell]
-analysts: [paulcalvano, obto]
+reviewers: [foxdavidj, bkardell]
+analysts: [paulcalvano, foxdavidj]
 editors: [tunetheweb]
 translators: [ksakae1216]
 discuss: 1771
@@ -591,7 +591,7 @@ Varyヘッダーは、1つ以上の要求ヘッダー値の値をキャッシュ
 
 ## AppCacheおよびService Worker
 
-アプリケーションキャッシュまたはAppCacheはHTML5の機能であり、開発者はブラウザがキャッシュするリソースを指定し、オフラインユーザーが利用できるようにできます。この機能は<a hreflang="en" href="https://html.spec.whatwg.org/multipage/offline.html#offline">廃止されており、Web標準からも削除</a>され、ブラウザーのサポートは減少しています。実際、使われているのが見つかった場合、[Firefox v44 +は、開発者に対して代わりにService Workerを使用することを推奨しています](https://developer.mozilla.org/ja-JP/docs/Web/API/Service_Worker_API/Using_Service_Workers)。 <a hreflang="en" href="https://www.chromestatus.com/feature/5714236168732672">Chrome 70は、アプリケーションキャッシュをセキュリティで保護されたコンテキストのみに制限します</a>。業界では、このタイプの機能をService Workerに実装する方向へ移行しており、<a hreflang="en" href="https://caniuse.com/#feat=serviceworkers">ブラウザサポート</a>は急速に成長しています。
+アプリケーションキャッシュまたはAppCacheはHTML5の機能であり、開発者はブラウザがキャッシュするリソースを指定し、オフラインユーザーが利用できるようにできます。この機能は<a hreflang="en" href="https://web.archive.org/web/20191115024726/https://html.spec.whatwg.org/multipage/offline.html">廃止されており、Web標準からも削除</a>され、ブラウザーのサポートは減少しています。実際、使われているのが見つかった場合、[Firefox v44 +は、開発者に対して代わりにService Workerを使用することを推奨しています](https://developer.mozilla.org/ja-JP/docs/Web/API/Service_Worker_API/Using_Service_Workers)。 <a hreflang="en" href="https://www.chromestatus.com/feature/5714236168732672">Chrome 70は、アプリケーションキャッシュをセキュリティで保護されたコンテキストのみに制限します</a>。業界では、このタイプの機能をService Workerに実装する方向へ移行しており、<a hreflang="en" href="https://caniuse.com/#feat=serviceworkers">ブラウザサポート</a>は急速に成長しています。
 
 実際、<a hreflang="en" href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archiveトレンドレポートの1つは、以下に示すService Worker</a>の採用を示しています。
 

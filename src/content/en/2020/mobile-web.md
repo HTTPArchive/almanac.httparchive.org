@@ -3,8 +3,8 @@
 title: Mobile Web
 description: Mobile Web chapter of the 2020 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms.
 authors: [spanicker, mdiblasio]
-reviewers: [obto]
-analysts: [obto]
+reviewers: [foxdavidj]
+analysts: [foxdavidj]
 editors: [exterkamp]
 translators: []
 spanicker_bio: Shubhie Panicker is the engineering lead for Chrome's engagement in the web framework ecosystem, where she collaborates with open source tools, frameworks and communities. As a member of Chrome's Web Platform team she has worked on web standards and chromium's implementation for several web performance APIs. Prior to Chrome, she worked on infrastructure and web frameworks for Google products like Search, Google Photos etc.

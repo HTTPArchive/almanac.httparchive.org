@@ -5,7 +5,7 @@ description: Page Weight chapter of the 2019 Web Almanac covering why page weigh
 authors: [tammyeverts, khempenius]
 reviewers: [paulcalvano]
 analysts: [khempenius]
-editors: [obto]
+editors: [foxdavidj]
 translators: []
 discuss: 1773
 results: https://docs.google.com/spreadsheets/d/1nWOo8efqDgzmA0wt1ipplziKhlReAxnVCW1HkjuFAxU/

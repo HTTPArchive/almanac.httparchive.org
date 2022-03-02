@@ -253,7 +253,7 @@ Per capire cosa sono in grado di estrarre efficacemente i motori di ricerca, abb
 
 #### Contenuto di testo sottoposto a rendering contro  contenuto di testo non sottoposto a rendering
 
-L'utilizzo delle tecnologie Single Page Application (SPA) [JavaScript](../javascript) è esploso con la crescita del web. Questo modello di progettazione introduce difficoltà per gli spider dei motori di ricerca perché sia l'esecuzione di trasformazioni JavaScript in fase di esecuzione sia le interazioni dell'utente con la pagina dopo il caricamento possono causare la visualizzazione o il rendering di contenuto aggiuntivo.
+L'utilizzo delle tecnologie Single Page Application (SPA) [JavaScript](./javascript) è esploso con la crescita del web. Questo modello di progettazione introduce difficoltà per gli spider dei motori di ricerca perché sia l'esecuzione di trasformazioni JavaScript in fase di esecuzione sia le interazioni dell'utente con la pagina dopo il caricamento possono causare la visualizzazione o il rendering di contenuto aggiuntivo.
 
 I motori di ricerca incontrano le pagine attraverso la loro attività di scansione, ma possono o meno scegliere di implementare un secondo passaggio di rendering di una pagina. Di conseguenza, potrebbero esserci disparità tra il contenuto che un utente vede e il contenuto che un motore di ricerca indicizza e considera per le classifiche.
 
@@ -689,7 +689,7 @@ Il 42.98% delle pagine mobile e il 43.2% di quelle desktop hanno un meta tag vie
     {{ figure_link(
       caption="Percentuale di pagine con il valore dell'attributo <code>content</code> di ciascun metatag viewport.",
       sheets_gid="479500659",
-      sql_file="../03_Markup/summary_pages_by_device_and_viewport.sql"
+      sql_file="../markup/summary_pages_by_device_and_viewport.sql"
     ) }}
   </figcaption>
 </figure>
@@ -741,7 +741,7 @@ Abbiamo scoperto che l'80.29% delle pagine desktop e l'82.92% di quelle per disp
     {{ figure_link(
       caption="Percentuale di pagine che includono ogni funzione di media query.",
       sheets_gid="1141218471",
-      sql_file="../01_CSS/media_query_features.sql"
+      sql_file="../css/media_query_features.sql"
     ) }}
   </figcaption>
 </figure>
@@ -789,7 +789,7 @@ Il desktop continua a essere la piattaforma più performante per gli utenti nono
   description="Grafico a barre che mostra la percentuale di siti web con un buon punteggio di core vitals web per dispositivo. Il 33.13% dei siti web ha ottenuto _Good_ Core Web Vitals per desktop, mentre solo il 19.96% delle loro controparti mobile ha superato la valutazione Core Web Vitals.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1601210449&format=interactive",
   sheets_gid="996380787",
-  sql_file="../09_Performance/web_vitals_by_device.sql"
+  sql_file="../performance/web_vitals_by_device.sql"
 ) }}
 
 #### Le esperienze di Core Web Vitals per paese
@@ -804,7 +804,7 @@ Gli utenti negli Stati Uniti hanno registrato il maggior numero assoluto di siti
   description="Grafico a barre orizzontali che mostra il rendimento aggregato dei core web vitals per paese.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=2077593128&format=interactive",
   sheets_gid="220428774",
-  sql_file="../09_Performance/web_vitals_by_country.sql",
+  sql_file="../performance/web_vitals_by_country.sql",
   width=645,
   height=792
 ) }}

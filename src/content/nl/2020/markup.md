@@ -154,7 +154,7 @@ Ongeveer 89% van de pagina's bevat minstens één HTML-opmerking, terwijl ongeve
 <![endif]-->
 ```
 
-Het bovenstaande is een niet-standaard voorwaardelijke HTML-opmerking. Hoewel deze in het verleden nuttig zijn gebleken om browserverschillen aan te pakken, ze zijn al een tijdje aan de geschiedenis toevertrouwd omdat Microsoft <a hreflang="en" href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214(v=vs.85">voorwaardelijke opmerkingen heeft laten vallen</a>) in Internet Explorer 10.
+Het bovenstaande is een niet-standaard voorwaardelijke HTML-opmerking. Hoewel deze in het verleden nuttig zijn gebleken om browserverschillen aan te pakken, ze zijn al een tijdje aan de geschiedenis toevertrouwd omdat Microsoft <a hreflang="en" href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214(v=vs.85)">voorwaardelijke opmerkingen heeft laten vallen</a>) in Internet Explorer 10.
 
 Toch ontdekten we bij de bovenstaande percentielextremen dat webpagina's ongeveer 6 voorwaardelijke opmerkingen in het 90e percentiel gebruiken en 1 opmerking in het 10e percentiel. De meeste pagina's bevatten ze voor helpers zoals <a hreflang="en" href="https://github.com/aFarkas/html5shiv">html5shiv</a>, [selectivizr](http://selectivizr.com/), en <a hreflang="en" href="https://github.com/scottjehl/Respond">respond.js</a>. Hoewel het fatsoenlijke en nog steeds actieve pagina's zijn, is onze conclusie dat veel van hen verouderde CMS-thema's gebruikten.
 
@@ -448,7 +448,7 @@ Standaardelementen zijn elementen die deel uitmaken van de HTML-specificatie. We
   <figcaption>{{ figure_link(caption="Lage kansen om een bepaald element op pagina's van de steekproef te vinden.", sheets_gid="184700688", sql_file="pages_element_count_by_device_and_element_type_present.sql") }}</figcaption>
 </figure>
 
-We nemen deze elementen op om een idee te geven welke elementen mogelijk uit de gratie zijn geraakt. Maar hoewel `dir` en `basefont` voor het laatst werden gespecificeerd in XHTML 1.0 (2000) en niet langer deel uitmaken van HTML, het zeldzame gebruik van `rp`, <a hreflang="en" href="https://www.w3.org/TR/1998/WD-rubya2-4">dat al in 1998 werd genoemd</a> en dat <a hreflang="en" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element">nog steeds deel uitmaakt van HTML</a>, suggereert misschien dat <a hreflang="en" href="https://www.w3.org/TR/ruby/">ruby-opmaak</a> niet erg populair is.
+We nemen deze elementen op om een idee te geven welke elementen mogelijk uit de gratie zijn geraakt. Maar hoewel `dir` en `basefont` voor het laatst werden gespecificeerd in XHTML 1.0 (2000) en niet langer deel uitmaken van HTML, het zeldzame gebruik van `rp`, <a hreflang="en" href="https://www.w3.org/TR/1998/WD-ruby-19981221/#a2-4">dat al in 1998 werd genoemd</a> en dat <a hreflang="en" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element">nog steeds deel uitmaakt van HTML</a>, suggereert misschien dat <a hreflang="en" href="https://www.w3.org/TR/ruby/">ruby-opmaak</a> niet erg populair is.
 
 ### Aangepaste elementen
 
@@ -965,7 +965,7 @@ We hebben het gebruik van HTML in het algemeen behandeld, evenals de acceptatie 
 
 ### `viewport` specificaties
 
-Het meta-element [viewport](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag) wordt gebruikt om de lay-out op mobiele browsers te beheren. Terwijl het motto jaren geleden een beetje was "vergeet het viewport-meta-element niet" bij het bouwen van een webpagina, werd dit uiteindelijk een gangbare praktijk en veranderde het motto in "zorg ervoor dat zoomen en schalen niet worden uitgeschakeld."
+Het meta-element [viewport](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) wordt gebruikt om de lay-out op mobiele browsers te beheren. Terwijl het motto jaren geleden een beetje was "vergeet het viewport-meta-element niet" bij het bouwen van een webpagina, werd dit uiteindelijk een gangbare praktijk en veranderde het motto in "zorg ervoor dat zoomen en schalen niet worden uitgeschakeld."
 
 Gebruikers moeten de tekst kunnen zoomen en schalen <a hreflang="en" href="https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large">tot 500%</a>. Daarom mislukken audits in populaire hulpmiddelen zoals <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> of <a hreflang="en" href="https://www.deque.com/axe/">axe</a> wanneer `user-scalable="no"` wordt gebruikt binnen het `meta name="viewport"` element, en wanneer de `maximum-scale` attribuutwaarde kleiner is dan `5`.
 

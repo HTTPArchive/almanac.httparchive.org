@@ -2,14 +2,14 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: モバイルウェブ
 description: 2019年Web AlmanacのモバイルWebの章では、ページの読み込み、テキストコンテンツ、拡大縮小、ボタンやリンク、フォームへの記入のしやすさなどをカバーしています。
-authors: [obto]
+authors: [foxdavidj]
 reviewers: [AymenLoukil, logicalphase]
 analysts: [ymschaap, rviscomi]
 editors: [rviscomi]
 translators: [ksakae1216]
 discuss: 1767
 results: https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/
-obto_bio: David Foxは、ユーザビリティ・リサーチャーのリーダーであり、LookZookの創設者でもあります。彼はウェブサイト心理学者であり、ユーザーが何に悩んでいるのかだけでなく、その理由や体験を改善するための最善の方法を学ぶためにサイトを掘り下げています。また、Google Chromiumのコントリビューターであり、講演者であり、ウェビナーやUXトレーニングの提供者でもある。
+foxdavidj_bio: David Foxは、ユーザビリティ・リサーチャーのリーダーであり、LookZookの創設者でもあります。彼はウェブサイト心理学者であり、ユーザーが何に悩んでいるのかだけでなく、その理由や体験を改善するための最善の方法を学ぶためにサイトを掘り下げています。また、Google Chromiumのコントリビューターであり、講演者であり、ウェビナーやUXトレーニングの提供者でもある。
 featured_quote: 2007年以降、モバイルウェブは爆発的な成長を遂げました。そして13年後の現在、2019年7月のAkamaimPulseのデータによると、モバイルはすべての検索の59%を占め、ウェブトラフィックの58.7%を占めています。モバイルはもはや余計なものではなく、人々がウェブを体験する主要な手段となっています。モバイルの重要性を考えると、当社は訪問者にどのような体験を提供しているのでしょうか？どこが不足しているのか？それを探ってみましょう。
 featured_stat_1: 65%
 featured_stat_label_1: ロード中に中または大きくシフトするサイト

@@ -37,7 +37,7 @@ featured_stat_label_3: 優先順位のヒントの使い方
 
 ### `preconnect`
 
-<a hreflang="en" href="https://web.dev/uses-rel-preconnect">`preconnect`</a>は、DNSルックアップ、TCPハンドシェイク、TLSネゴシエーションを含む早期接続を開始します。このヒントはサードパーティとの接続を設定する際に有用である。`preconnect`の用途は`dns-prefetch`の用途と非常によく似ているが、`preconnect`はブラウザのサポートが少ない。しかし、IE 11のサポートを必要としないのであれば、preconnectの方が良い選択であろう。
+<a hreflang="ja" href="https://web.dev/i18n/ja/uses-rel-preconnect">`preconnect`</a>は、DNSルックアップ、TCPハンドシェイク、TLSネゴシエーションを含む早期接続を開始します。このヒントはサードパーティとの接続を設定する際に有用である。`preconnect`の用途は`dns-prefetch`の用途と非常によく似ているが、`preconnect`はブラウザのサポートが少ない。しかし、IE 11のサポートを必要としないのであれば、preconnectの方が良い選択であろう。
 
 ### `preload`
 

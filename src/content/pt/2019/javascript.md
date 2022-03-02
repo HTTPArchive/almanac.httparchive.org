@@ -3,9 +3,9 @@
 title: JavaScript
 description: Capítulo de JavaScript de 2019 Web Almanac que cobre quanto JavaScript usamos na web, compressão, bibliotecas e estruturas, carregamento e mapas de origem.
 authors: [housseindjirdeh]
-reviewers: [obto, paulcalvano, mathiasbynens, rviscomi]
+reviewers: [foxdavidj, paulcalvano, mathiasbynens, rviscomi]
 analysts: [rviscomi]
-editors: [obto]
+editors: [foxdavidj]
 translators: [HakaCode]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
@@ -359,7 +359,7 @@ Da mesma forma, poucos sites (0,50% - 0,80%) usam o atributo `nomodule` para qua
 
 ## Preload e prefetch
 
-[Preload](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Preloading_content) e [prefetch](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ) são [dicas de recursos](./resource-hints) que permitem que você ajude o navegador a determinar quais recursos precisam ser baixados.
+[Preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preload) e [prefetch](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ) são [dicas de recursos](./resource-hints) que permitem que você ajude o navegador a determinar quais recursos precisam ser baixados.
 
 - Pré-carregar um recurso com `<link rel="preload">` diz ao navegador para baixar este recurso o mais rápido possível. Isso é especialmente útil para recursos críticos que são descobertos no final do processo de carregamento da página (por exemplo, JavaScript localizado na parte inferior de seu HTML) e, caso contrário, são baixados por último.
 - Usar `<link rel="prefetch">` diz ao navegador para tirar vantagem de qualquer tempo ocioso que ele tenha para buscar esses recursos necessários para navegações futuras.
