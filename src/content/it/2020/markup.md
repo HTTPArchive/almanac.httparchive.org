@@ -154,7 +154,7 @@ Circa l'89% delle pagine contiene almeno un commento HTML, mentre circa il 46% d
 <![endif]-->
 ```
 
-Quanto sopra è un commento condizionale HTML non standard. Sebbene questi si siano dimostrati utili in passato per affrontare le differenze del browser, sono stati consegnati alla cronologia per un po' di tempo poiché Microsoft <a hreflang="en" href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214(v=vs.85">ha rilasciato commenti condizionali</a>) in Internet Explorer 10.
+Quanto sopra è un commento condizionale HTML non standard. Sebbene questi si siano dimostrati utili in passato per affrontare le differenze del browser, sono stati consegnati alla cronologia per un po' di tempo poiché Microsoft <a hreflang="en" href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214(v=vs.85)">ha rilasciato commenti condizionali</a>) in Internet Explorer 10.
 
 Tuttavia, agli estremi percentili sopra, abbiamo scoperto che le pagine web utilizzano circa 6 commenti condizionali nel 90° percentile e 1 commento condizionale nel 10° percentile.  La maggior parte delle pagine li include come aiutanti quali <a hreflang="en" href="https://github.com/aFarkas/html5shiv">html5shiv</a>, [selectivizr](http://selectivizr.com/), and <a hreflang="en" href="https://github.com/scottjehl/Respond">respond.js</a>. Pur essendo pagine decenti e ancora attive, la nostra conclusione è che molte di esse utilizzavano temi CMS obsoleti.
 
