@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - name: Checkout branch
-      uses: actions/checkout@v2.4.0
+      uses: actions/checkout@v3
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v3
       with:
