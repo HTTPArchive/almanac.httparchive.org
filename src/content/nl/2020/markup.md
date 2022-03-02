@@ -154,7 +154,7 @@ Ongeveer 89% van de pagina's bevat minstens één HTML-opmerking, terwijl ongeve
 <![endif]-->
 ```
 
-Het bovenstaande is een niet-standaard voorwaardelijke HTML-opmerking. Hoewel deze in het verleden nuttig zijn gebleken om browserverschillen aan te pakken, ze zijn al een tijdje aan de geschiedenis toevertrouwd omdat Microsoft <a hreflang="en" href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214(v=vs.85">voorwaardelijke opmerkingen heeft laten vallen</a>) in Internet Explorer 10.
+Het bovenstaande is een niet-standaard voorwaardelijke HTML-opmerking. Hoewel deze in het verleden nuttig zijn gebleken om browserverschillen aan te pakken, ze zijn al een tijdje aan de geschiedenis toevertrouwd omdat Microsoft <a hreflang="en" href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh801214(v=vs.85)">voorwaardelijke opmerkingen heeft laten vallen</a>) in Internet Explorer 10.
 
 Toch ontdekten we bij de bovenstaande percentielextremen dat webpagina's ongeveer 6 voorwaardelijke opmerkingen in het 90e percentiel gebruiken en 1 opmerking in het 10e percentiel. De meeste pagina's bevatten ze voor helpers zoals <a hreflang="en" href="https://github.com/aFarkas/html5shiv">html5shiv</a>, [selectivizr](http://selectivizr.com/), en <a hreflang="en" href="https://github.com/scottjehl/Respond">respond.js</a>. Hoewel het fatsoenlijke en nog steeds actieve pagina's zijn, is onze conclusie dat veel van hen verouderde CMS-thema's gebruikten.
 
