@@ -3,13 +3,13 @@
 title: Mobile Web
 description: Mobile Web chapter of the 2021 Web Almanac covering page web vitals, images, technology adoption, accessibility and more.
 authors: [fellowhuman1101, dwsmart, ashleyish]
-reviewers: [obto, fili]
-analysts: [rvth, obto]
+reviewers: [foxdavidj, fili]
+analysts: [rvth, foxdavidj]
 editors: [shantsis]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1mdma245ja_THTBApaJTeS4vmLY_Fn8VC6Kd8qx7wp-o/
 fellowhuman1101_bio: Jamie Indigo isn't a robot, but speaks bot. As a technical SEO consultant at <a hreflang="en" href="https://www.deepcrawl.com">Deepcrawl</a>, they study how search engines crawl, render, and index the web. They love to tame wild JavaScript frameworks and optimize rendering strategies. When not working, Jamie likes horror movies, graphic novels, and Dungeons & Dragons.
-dwsmart_bio: Dave Smart is a developer and technical search engine consultant at <a hreflang="en" href="https://tamthebots.com">Tame the Bots</a>. They love building tools and experimenting with the modern web and can often be found at the front in a gig or two.
+dwsmart_bio: Dave Smart is a developer and technical search engine consultant at <a hreflang="en" href="https://tamethebots.com">Tame the Bots</a>. They love building tools and experimenting with the modern web and can often be found at the front in a gig or two.
 ashleyish_bio: Ashley Berman Hale is a technical SEO and VP of professional services at <a hreflang="en" href="https://www.deepcrawl.com">Deepcrawl</a>. She is a mom to plants, animals, and tiny humans. Ashley plays in her local roller derby league and mentors upcoming SEOs.
 featured_quote: In 2021, the perception of a distinct "mobile web" is outdated. Across multiple data sources, it seems that the mobile is one of many ways a user can interact with digital content.
 featured_stat_1: 18.4%

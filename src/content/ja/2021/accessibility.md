@@ -4,7 +4,7 @@ title: アクセシビリティ
 description: 読みやすさ、メディア、ナビゲーションのしやすさ、支援技術との互換性などを網羅した「2021 Web Almanac」のアクセシビリティの章です。
 authors: [alextait1, scottdavis99, oluoluoxenfree, gwilhelm, kachiden]
 reviewers: [ericwbailey, clottman, shantsis, estelle, GigiRajani, cdixon83]
-analysts: [obto]
+analysts: [foxdavidj]
 editors: [tunetheweb]
 translators: [ksakae1216]
 results: https://docs.google.com/spreadsheets/d/1WjAM5ZnHjMQt-rKyHvj2eVhU_WdzzFTjpoYWMr_I0Cw/
@@ -34,7 +34,7 @@ featured_stat_label_3: コンテンツからアクセス可能な名称を取得
 
 悲しいことに、年々、私たちや、<a hreflang="en" href="https://webaim.org/projects/million/">WebAIM Million</a> のような分析を行う他のチームは、これらの指標にほとんど改善が見られないことを発見しています。WebAIMの調査では、ホームページの97.4%がアクセシビリティの障害を自動的に検出しており、これは2020年の監査より1%も低いものでした。
 
-すべての<a hreflang="en" href="https://web.dev/lighthouse-accessibility/">Lighthouse Accessibility</a>監査データのサイト総合スコアの中央値は、2020年の80%から2021年の82%に上昇しました。この2％の増加は、正しい方向へのシフトを意味するものであることを期待しています。しかし、これらは自動チェックであり、開発者がルール エンジンをよりうまく破壊していることを潜在的に意味する可能性もあります。
+すべての<a hreflang="ja" href="https://web.dev/i18n/ja/lighthouse-accessibility/">Lighthouse Accessibility</a>監査データのサイト総合スコアの中央値は、2020年の80%から2021年の82%に上昇しました。この2％の増加は、正しい方向へのシフトを意味するものであることを期待しています。しかし、これらは自動チェックであり、開発者がルール エンジンをよりうまく破壊していることを潜在的に意味する可能性もあります。
 
 私たちの分析は、自動化された測定基準のみに基づいているため、自動化されたテストは、インターフェイスに存在し得るアクセシビリティ・バリアのほんの一部しか捉えていないことを忘れてはいけません。アクセシブルなWebサイトやアプリケーションを実現するためには、障がい者によるマニュアルテストやユーザビリティテストなどの定性的な分析が必要です。
 
@@ -305,7 +305,7 @@ HTML5導入以前は、これを実現するためにARIAのランドマーク�
 )
 }}
 
-私たちの監査では、チェックしたサイトの58%が、<a hreflang="en" href="https://web.dev/heading-order/">見出しテスト</a> で、レベルを飛ばさないテストに合格していることがわかりました。<a hreflang="en" href="https://webaim.org/projects/screenreadersurvey9/#heading"> WebAIMが2021年に調査したスクリーン リーダーのユーザーの</a> 85% 以上が、ウェブのナビゲーションに見出しが役に立つと回答しています。見出しを正しい順序で表示すること、つまり、レベルを飛ばすことなく昇順に表示することは、支援技術を必要とする障害者が最高の体験をすることを意味します。
+私たちの監査では、チェックしたサイトの58%が、<a hreflang="ja" href="https://web.dev/i18n/ja/heading-order/">見出しテスト</a> で、レベルを飛ばさないテストに合格していることがわかりました。<a hreflang="en" href="https://webaim.org/projects/screenreadersurvey9/#heading"> WebAIMが2021年に調査したスクリーン リーダーのユーザーの</a> 85% 以上が、ウェブのナビゲーションに見出しが役に立つと回答しています。見出しを正しい順序で表示すること、つまり、レベルを飛ばすことなく昇順に表示することは、支援技術を必要とする障害者が最高の体験をすることを意味します。
 
 ### テーブル
 

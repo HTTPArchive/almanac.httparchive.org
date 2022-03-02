@@ -3,9 +3,9 @@
 title: JavaScript
 description: 2019年のWeb AlmanacのJavaScriptの章では、Web上でどれだけJavaScriptを使用しているか、圧縮、ライブラリとフレームワーク、読み込み、ソースマップを網羅しています。
 authors: [housseindjirdeh]
-reviewers: [obto, paulcalvano, mathiasbynens, rviscomi]
+reviewers: [foxdavidj, paulcalvano, mathiasbynens, rviscomi]
 analysts: [rviscomi]
-editors: [obto]
+editors: [foxdavidj]
 translators: [ksakae1216]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
@@ -359,7 +359,7 @@ JavaScriptのリソースを圧縮しているサイトはどれくらいある�
 
 ## プリロードとプリフェッチ
 
-[プリロード](https://developer.mozilla.org/ja/docs/Web/HTML/Preloading_content) と [プリフェッチ](https://developer.mozilla.org/ja/docs/Web/HTTP/Link_prefetching_FAQ)は[リソースヒント](./resource-hints)であり、どのリソースをダウンロードする必要があるかを判断する際にブラウザを助けることができます。
+[プリロード](https://developer.mozilla.org/ja/docs/Web/HTML/Link_types/preload) と [プリフェッチ](https://developer.mozilla.org/ja/docs/Web/HTTP/Link_prefetching_FAQ)は[リソースヒント](./resource-hints)であり、どのリソースをダウンロードする必要があるかを判断する際にブラウザを助けることができます。
 
 - `<link rel="preload">`でリソースをプリロードすると、ブラウザはこのリソースをできるだけ早くダウンロードするように指示します。これは、ページの読み込みプロセスの後半に発見され、最後にダウンロードされてしまう重要なリソース（例えば、HTMLの下部にあるJavaScriptなど）に特に役立ちます。
 - `<link rel="prefetch">`を使用することで、ブラウザが将来のナビゲーションに必要なリソースを取得するためのアイドル時間を利用できるようにします。

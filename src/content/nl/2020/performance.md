@@ -3,7 +3,7 @@
 title: Prestatie
 description: Prestatiehoofdstuk van de Web Almanac 2020 met betrekking tot Core Web Vitals, Lighthouse Performance Score, First Contentful Paint (FCP) en Time to First Byte (TTFB).
 authors: [thefoxis]
-reviewers: [borisschapira, rviscomi, obto, noamr, Zizzamia, exterkamp]
+reviewers: [borisschapira, rviscomi, foxdavidj, noamr, Zizzamia, exterkamp]
 analysts: [max-ostapenko, dooman87]
 editors: [tunetheweb]
 translators: [noah-vdv]
@@ -99,7 +99,7 @@ In de bovenstaande grafiek kunnen we zien dat tussen 43% en 53% van de websites 
 
 Het hoogste percentage goede LCP-metingen wordt voornamelijk verspreid onder Europese en Aziatische landen, waarbij de Republiek Korea (Zuid-Korea) voorop staat met 76% van goede metrische metingen. Zuid-Korea is een constante leider op het gebied van mobiele snelheden, met een indrukwekkende download van 145 Mbps <a hreflang="en" href="https://www.speedtest.net/global-index">gerapporteerd door Speedtest Global Index</a> voor oktober. Japan, Tsjechië, Taiwan, Duitsland en België zijn ook een handvol landen met betrouwbaar hoge mobiele snelheden. Australië is toonaangevend op het gebied van mobiele netwerksnelheden, maar wordt in de steek gelaten door langzame desktopverbindingen en latentie, waardoor het onderaan in de bovenstaande ranglijst staat.
 
-India blijft de laatste in onze reeks gegevens, met slechts 16% goede ervaringen. Hoewel de populatie van mensen die voor het eerst verbinding maken met internet voortdurend toeneemt, zijn de snelheden van mobiele en desktopnetwerken <a hreflang="en" href="https://www.opensignal.com/reports/2020/04/india/mobile-netwerkervaring">nog steeds een probleem</a>, met gemiddelde downloads van 10 Mbps voor 4G, 3 Mbps voor 3G en minder dan 50 Mbps voor desktop.
+India blijft de laatste in onze reeks gegevens, met slechts 16% goede ervaringen. Hoewel de populatie van mensen die voor het eerst verbinding maken met internet voortdurend toeneemt, zijn de snelheden van mobiele en desktopnetwerken <a hreflang="en" href="https://www.opensignal.com/reports/2020/04/india/mobile-network-experience">nog steeds een probleem</a>, met gemiddelde downloads van 10 Mbps voor 4G, 3 Mbps voor 3G en minder dan 50 Mbps voor desktop.
 
 ### LCP per verbindingstype
 

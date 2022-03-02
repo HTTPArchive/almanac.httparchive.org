@@ -37,7 +37,7 @@ A função de [`dns-prefetch`](https://developer.mozilla.org/en-US/docs/Learn/Pe
 
 ### `preconnect`
 
-<a hreflang="en" href="https://web.dev/uses-rel-preconnect">`preconnect`</a> inicia uma conexão antecipada, incluindo pesquisa DNS, handshake TCP e negociação TLS. Esta dica é útil para estabelecer uma conexão com terceiros. Os usos de `preconnect` são muito semelhantes aos de `dns-prefetch`, mas `preconnect` tem menos suporte entre os navegadores. No entanto, se você não precisa do suporte do IE 11, a pré-conexão provavelmente é uma escolha melhor.
+<a hreflang="pt" href="https://web.dev/i18n/pt/uses-rel-preconnect">`preconnect`</a> inicia uma conexão antecipada, incluindo pesquisa DNS, handshake TCP e negociação TLS. Esta dica é útil para estabelecer uma conexão com terceiros. Os usos de `preconnect` são muito semelhantes aos de `dns-prefetch`, mas `preconnect` tem menos suporte entre os navegadores. No entanto, se você não precisa do suporte do IE 11, a pré-conexão provavelmente é uma escolha melhor.
 
 ### `preload`
 

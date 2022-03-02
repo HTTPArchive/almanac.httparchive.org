@@ -205,7 +205,7 @@ Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はペー�
 )
 }}
 
-うわー！　2％未満のページが<a hreflang="en" href="https://web.dev/uses-rel-preconnect">`preconnect`</a>を使用している！　Google Fontsが75％であることを考えると、これはもっと高いはずです！　開発者の皆さん: Google Fontsを使うなら、`preconnect`を使いましょう！　Google Fonts:`preconnect`をもっと宣伝しよう！
+うわー！　2％未満のページが<a hreflang="ja" href="https://web.dev/i18n/ja/uses-rel-preconnect">`preconnect`</a>を使用している！　Google Fontsが75％であることを考えると、これはもっと高いはずです！　開発者の皆さん: Google Fontsを使うなら、`preconnect`を使いましょう！　Google Fonts:`preconnect`をもっと宣伝しよう！
 
 実際、もしあなたがGoogle Fontsを使っているのであれば、`<head>`にこれを追加してください。
 

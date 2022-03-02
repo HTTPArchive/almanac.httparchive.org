@@ -2,15 +2,15 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: 无障碍可访问性
 description: 2019 Web Almanac 网络年鉴的无障碍易访问性章节，涵盖易阅读、媒体、易于导航和与辅助技术的兼容性。
-authors: [nektarios-paisios, obto, kleinab]
+authors: [nektarios-paisios, foxdavidj, kleinab]
 reviewers: [ljme]
-analysts: [dougsillars, rviscomi, obto]
-editors: [obto]
+analysts: [dougsillars, rviscomi, foxdavidj]
+editors: [foxdavidj]
 translators: [chengxicn]
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
 nektarios-paisios_bio: Nektarios Paisios 是过去5年致力于Chrome辅助功能的软件工程师。 他主要致力于使Chrome与第三方辅助软件（例如屏幕阅读器和屏幕放大镜）兼容。 在研究Chrome的辅助功能之前，Nektarios曾在公司担任过其他各种职务，例如GSuite辅助功能和展示广告。 Nektarios拥有博士学位。 纽约大学计算机科学专业。
-obto_bio: David Fox 是LookZook的首席可用性研究人员和创始人，LookZook沉迷于发现有关构建满足用户期望的Web体验的所有一切。 他是一位网站心理学家，他深入研究网站不仅要学习用户正在苦苦挣扎的东西，而且要学习为什么以及如何最好地改善他们的体验。 他还是Google Chromium的撰稿人，演讲者以及网络研讨会和UX培训的提供者。
+foxdavidj_bio: David Fox 是LookZook的首席可用性研究人员和创始人，LookZook沉迷于发现有关构建满足用户期望的Web体验的所有一切。 他是一位网站心理学家，他深入研究网站不仅要学习用户正在苦苦挣扎的东西，而且要学习为什么以及如何最好地改善他们的体验。 他还是Google Chromium的撰稿人，演讲者以及网络研讨会和UX培训的提供者。
 kleinab_bio: Abigail Klein 是谷歌的软件工程师. 她致力于谷歌文档、表格和幻灯片的web可访问性 她为谷歌幻灯片添加了<a hreflang="en" href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">自动字幕</a>,并改进了屏幕阅读器、盲文、屏幕放大镜和高对比度支持。 她目前致力于谷歌Chrome和ChromeOS的可访问性。她拥有麻省理工学院(MIT)计算机科学学士和硕士学位，在那里她参与创立了一个辅助技术黑客马拉松，她还是该辅助技术课程的实验室助理和客座讲师。
 featured_quote: 互联网的无障碍可访问性对一个包容和公平的社会至关重要。随着我们的社会生活和工作生活越来越多地转移到网络世界，残障人士能够无障碍地参与所有在线互动就变得更加重要了。正如建筑设计师可以创建或省略无障碍功能，例如轮椅坡道，web开发人员可以帮助或阻碍用户依赖的辅助技术。
 featured_stat_1: 22%
@@ -64,7 +64,7 @@ featured_stat_label_3: 使用跳过链接的网站
 
 在少数情况下，禁用缩放是可以接受的，比如有问题的页面是一个使用触摸控制的基于web的游戏。如果在这种情况下保持开启状态，玩家的手机游戏会在玩家双击时放大或缩小，讽刺的是，这个功能反而使得游戏无法访问。
 
-因此，开发人员被赋予禁用此特性的能力。可以通过设置[viewport元标签](https://developer.mozilla.org/zh-CN/docs/Mobile/Viewport_meta_tag)中的两个属性其中之一：
+因此，开发人员被赋予禁用此特性的能力。可以通过设置[viewport元标签](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag)中的两个属性其中之一：
 
 1. `user-scalable` 设为 `0` 或 `no`
 

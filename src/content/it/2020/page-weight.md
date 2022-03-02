@@ -117,7 +117,7 @@ Le immagini costituiscono ancora il maggior numero di richieste, anche se JavaSc
   description="Box plot della distribuzione delle dimensioni delle immagini per formato: gif, ico, jpg, png, svg e webp. Jpg si distingue per avere la distribuzione più alta con un 90° percentile superiore a 150 KB per immagine. Png è il secondo più alto con circa 100 KB al 90° percentile. Sebbene WebP abbia un 90° percentile più piccolo di png, il suo 75° percentile è più alto. gif, ico e svg hanno tutte distribuzioni relativamente piccole vicino a 0 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=211653520&format=interactive",
   sheets_gid="142855724",
-  sql_file="requests_format_distribution.sql"
+  sql_file="response_format_distribution.sql"
 ) }}
 
 Sappiamo che le immagini sono una grande fonte di peso della pagina. Il grafico sopra ci mostra le principali fonti di peso dell'immagine e la distribuzione del peso. Top 3: JPG, PNG e WebP. Quindi non solo il JPG è il formato di immagine più popolare, ma tende anche ad essere il più grande per dimensione, anche più grande di un formato senza perdita di dati come il PNG. Ma come abbiamo [notato l'anno scorso](../2019/page-weight#file-size-by-image-format-for-images--1024-bytes), ciò ha a che fare con il caso d'uso predominante per il PNG, che sembrano essere icone e loghi.

@@ -3,7 +3,7 @@
 title: Tierces Parties
 description: Le chapitre sur les ressources tierces du Web Almanac 2019, qui aborde les tierces parties utilisées, pourquoi elles le sont et les répercussions de leur usage sur le rendu et la confidentialité.
 authors: [patrickhulce]
-reviewers: [zcorpan, obto, jasti]
+reviewers: [zcorpan, foxdavidj, jasti]
 analysts: [patrickhulce]
 editors: [tunetheweb]
 translators: [borisschapira]

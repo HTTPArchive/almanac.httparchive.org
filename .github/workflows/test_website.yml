@@ -21,16 +21,16 @@ jobs:
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     steps:
     - name: Checkout branch
-      uses: actions/checkout@v2.4.0
+      uses: actions/checkout@v3
       with:
         # Full git history is needed to get a proper list of changed files within `super-linter`
         fetch-depth: 0
     - name: Setup Node.js for use with actions
-      uses: actions/setup-node@v2.5.1
+      uses: actions/setup-node@v3
       with:
         node-version: '15'
     - name: Set up Python 3.8
-      uses: actions/setup-python@v2.3.2
+      uses: actions/setup-python@v3.0.0
       with:
         python-version: '3.8'
     - name: Run the website

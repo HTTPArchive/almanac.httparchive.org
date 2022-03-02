@@ -3,7 +3,7 @@
 title: Performance
 description: Performance chapter of the 2019 Web Almanac covering First Contentful Paint (FCP), Time to First Byte (TTFB), and First Input Delay (FID).
 authors: [rviscomi]
-reviewers: [JMPerez,obto,sergeychernyshev,zeman]
+reviewers: [JMPerez,foxdavidj,sergeychernyshev,zeman]
 analysts: [rviscomi, raghuramakrishnan71]
 editors: [rachellcostello]
 translators: []

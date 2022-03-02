@@ -61,7 +61,7 @@ featured_stat_label_3: 動画要素を含むデスクトップページのシェ
 
 これは驚きです。過去10年間、HTTP Archiveの毎月の<a hreflang="en" href="https://httparchive.org/reports/state-of-images">画像状態レポート</a>に掲載されてる<a hreflang="en" href="https://httparchive.org/reports/state-of-images#bytesImg">Image Bytes</a> チャートは、一見すると上昇する一方です。2021年、この流れを逆転させたのは何だったのか。後ほど詳しく説明する、ネイティブの遅延読み込みの急速な普及と関係があるのではないかと思います。
 
-いずれにせよ、量的に見れば、画像はウェブの中で非常に多くのものを占め続けているのです。しかし、要素数、リクエスト数、バイト数だけでは、画像がユーザーの体験にどれだけ重要であるかはわかりません。それを知るために、<a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> という指標を見てみましょう。これは、任意のページにおけるabove-the-foldコンテンツのもっとも重要な部分を識別しようとするものです。[パフォーマンス](./performance#fig-19)の章にあるように、LCP要素は約4分の3のページで画像が表示されます。
+いずれにせよ、量的に見れば、画像はウェブの中で非常に多くのものを占め続けているのです。しかし、要素数、リクエスト数、バイト数だけでは、画像がユーザーの体験にどれだけ重要であるかはわかりません。それを知るために、<a hreflang="ja" href="https://web.dev/i18n/ja/lcp/">Largest Contentful Paint</a> という指標を見てみましょう。これは、任意のページにおけるabove-the-foldコンテンツのもっとも重要な部分を識別しようとするものです。[パフォーマンス](./performance#fig-19)の章にあるように、LCP要素は約4分の3のページで画像が表示されます。
 
 {{ figure_markup(
   content="70.6%",
@@ -630,7 +630,7 @@ WebPとAVIFの採用が時間とともにどのように変化したか（およ
 
 デフォルトでは、画像が読み込まれ、その固有寸法が判明するまで、内在寸法のままではスペースを取りません。その時点で、パッとページに現れて、<a hreflang="en" href="https://developers.google.com/publisher-tag/guides/minimize-layout-shift">レイアウト シフト</a>が発生するのです。これは、まさに `height` と `width` 属性が解決するために発明された問題でした。<a hreflang="en" href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#img">1996年</a> 。
 
-残念ながら`height` と `width` は、ある次元では可変の外在サイズ（たとえば、 `width: 100%;`）が割り当てられ、他の次元では内在の縦横比を満たすように放置される画像とはうまく動作しません。これはレスポンシブデザインにおける支配的なパターンです。そのため、`width` と `height` はレスポンシブコンテキスト内で人気がなくなりましたが、2019年に [ブラウザが `height` と `width` を使用する方法を調整](https://developer.mozilla.org/ja/docs/Web/Media/images/aspect_ratio_mapping#a_new_way_of_sizing_images_before_loading_completes) によってこの問題が修正されました。さて、一貫して `height` と `width` を設定することは、<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> を減らすために作成者ができる最善のことの1つです。これらの属性はどれくらいの頻度でこのタスクを達成しているのでしょうか？
+残念ながら`height` と `width` は、ある次元では可変の外在サイズ（たとえば、 `width: 100%;`）が割り当てられ、他の次元では内在の縦横比を満たすように放置される画像とはうまく動作しません。これはレスポンシブデザインにおける支配的なパターンです。そのため、`width` と `height` はレスポンシブコンテキスト内で人気がなくなりましたが、2019年に [ブラウザが `height` と `width` を使用する方法を調整](https://developer.mozilla.org/ja/docs/Web/Media/images/aspect_ratio_mapping#a_new_way_of_sizing_images_before_loading_completes) によってこの問題が修正されました。さて、一貫して `height` と `width` を設定することは、<a hreflang="ja" href="https://web.dev/i18n/ja/cls/">Cumulative Layout Shift</a> を減らすために作成者ができる最善のことの1つです。これらの属性はどれくらいの頻度でこのタスクを達成しているのでしょうか？
 
 {{ figure_markup(
   caption="モバイルの `<img>` のうち、`height` と `width` の両方の属性を持ち、1次元のみの外形寸法を持つものの割合です。",
@@ -661,7 +661,7 @@ WebPとAVIFの採用が時間とともにどのように変化したか（およ
   )
 }}
 
-クロスオリジン画像は、重要な[セキュリティ制限](https://developer.mozilla.org/ja/docs/Web/HTML/CORS_enabled_image)の対象となり、時には<a hreflang="en" href="https://andydavies.me/blog/2019/03/22/improving-perceived-performance-with-a-link-rel-equals-preconnect-http-header/">パフォーマンスコスト</a>を発生することがあります。一方、静的資産を専用のCDNに移動することは、[最初の1バイトまでの時間](https://developer.mozilla.org/en-US/docs/Glossary/time_to_first_byte) を助けるためにできるもっともインパクトのあることの1つです。画像CDNは、あらゆる種類のベストプラクティスを自動化できる強力な変換および <a hreflang="en" href="https://web.dev/image-cdns/">最適化</a> 機能を提供します。51%のクロスオリジン画像のうち、何枚が画像CDNでホストされているか、またそのパフォーマンスを他のウェブのものと比較することは、とても興味深いことでしょう。残念ながら、これは私たちの分析の範囲外でした。
+クロスオリジン画像は、重要な[セキュリティ制限](https://developer.mozilla.org/ja/docs/Web/HTML/CORS_enabled_image)の対象となり、時には<a hreflang="en" href="https://andydavies.me/blog/2019/03/22/improving-perceived-performance-with-a-link-rel-equals-preconnect-http-header/">パフォーマンスコスト</a>を発生することがあります。一方、静的資産を専用のCDNに移動することは、[最初の1バイトまでの時間](https://developer.mozilla.org/en-US/docs/Glossary/time_to_first_byte) を助けるためにできるもっともインパクトのあることの1つです。画像CDNは、あらゆる種類のベストプラクティスを自動化できる強力な変換および <a hreflang="ja" href="https://web.dev/i18n/ja/image-cdns/">最適化</a> 機能を提供します。51%のクロスオリジン画像のうち、何枚が画像CDNでホストされているか、またそのパフォーマンスを他のウェブのものと比較することは、とても興味深いことでしょう。残念ながら、これは私たちの分析の範囲外でした。
 
 と、いうことで、そろそろ目を向けてもいいのでは。。。
 

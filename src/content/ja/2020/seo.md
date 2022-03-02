@@ -68,7 +68,7 @@ Googleは、2019年に`robots.txt`をインターネットの公式規格にす�
 
 全体として、80.46%のモバイルページが`robots.txt`に対して2XXの応答をしました。このうち、25.09%は有効であると認識されませんでした。これは、[27.84%のモバイルサイトが有効な`robots.txt`を持っていた](../2019/seo#robotstxt)ことが判明した2019年よりも若干改善されています。
 
-`robots.txt`の有効性をテストするためのデータソースであるLighthouseは、v6アップデートの一環として、<a hreflang="en" href="https://web.dev/robots-txt/">`robots.txt`の監査</a>を導入しました。この導入により、リクエストが正常に解決されても、基礎ファイルがWebクローラーに必要な指示を与えることができるとは限らないことが強調されました。
+`robots.txt`の有効性をテストするためのデータソースであるLighthouseは、v6アップデートの一環として、<a hreflang="ja" href="https://web.dev/i18n/ja/robots-txt/">`robots.txt`の監査</a>を導入しました。この導入により、リクエストが正常に解決されても、基礎ファイルがWebクローラーに必要な指示を与えることができるとは限らないことが強調されました。
 
 <figure>
   <table>
@@ -253,7 +253,7 @@ Lighthouseのテストでmeta robotsタグの使用状況を分析したとこ�
 
 #### レンダリングされたテキストコンテンツとレンダリングされていないテキストコンテンツ
 
-ウェブの発展に伴い、シングルページアプリケーション（SPA）[JavaScript](../javascript)技術の使用が爆発的に増加しています。このデザインパターンは実行時のJavaScript変換の実行と、ロード後のページでのユーザーのインタラクションの両方が、追加コンテンツの表示やレンダリングを引き起こす可能性があるため、検索エンジンのスパイダーにとっては困難なものとなっています。
+ウェブの発展に伴い、シングルページアプリケーション（SPA）[JavaScript](./javascript)技術の使用が爆発的に増加しています。このデザインパターンは実行時のJavaScript変換の実行と、ロード後のページでのユーザーのインタラクションの両方が、追加コンテンツの表示やレンダリングを引き起こす可能性があるため、検索エンジンのスパイダーにとっては困難なものとなっています。
 
 検索エンジンはそのクロール活動を通じてページに出会いますが、ページをレンダリングする第2段階を実施することを選択する場合もあれば、しない場合もあります。その結果、ユーザーが目にするコンテンツと、検索エンジンがインデックスを作成し、ランキングの対象とするコンテンツとの間に差異が生じることがあります。
 
@@ -689,7 +689,7 @@ Googleがモバイルファーストインデックスだけでなく、モバ�
     {{ figure_link(
       caption="各ビューポートメタタグの<code>content</code>属性値を持つページの割合。",
       sheets_gid="479500659",
-      sql_file="../03_Markup/summary_pages_by_device_and_viewport.sql"
+      sql_file="../markup/summary_pages_by_device_and_viewport.sql"
     ) }}
   </figcaption>
 </figure>
@@ -741,7 +741,7 @@ Googleがモバイルファーストインデックスだけでなく、モバ�
     {{ figure_link(
       caption="各メディアクエリ機能が含まれているページの割合。",
       sheets_gid="1141218471",
-      sql_file="../01_CSS/media_query_features.sql"
+      sql_file="../css/media_query_features.sql"
     ) }}
   </figcaption>
 </figure>
@@ -764,17 +764,17 @@ Googleがモバイルファーストインデックスだけでなく、モバ�
 
 2020年11月に発表されたように、<a hreflang="en" href="https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html">Core Web Vitals</a>と呼ばれる3つのパフォーマンス指標は、2021年5月に「ページ体験」シグナルの一部としてランキング要因となる予定です。Core Web Vitalsの構成は以下の通りです。
 
-**<a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> (LCP)**
+**<a hreflang="ja" href="https://web.dev/i18n/ja/lcp/">Largest Contentful Paint</a> (LCP)**
 - 表現：ユーザーが感じるロードエクスペリエンス
 - 測定：ページロードタイムラインにおいて、ビューポート内にページ最大の画像またはテキストブロックが表示される時点
 - 目標：2.5秒未満
 
-**<a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID)**
+**<a hreflang="ja" href="https://web.dev/i18n/ja/fid/">First Input Delay</a> (FID)**
 - 表現：ユーザーの入力に対するレスポンスの良さ
 - 計測：ユーザーが最初にページへアクセスしてから、そのアクセスに対応するイベントハンドラーの処理をブラウザが実際に開始できるまでの時間
 - 目標：300ミリ秒未満
 
-**<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLS)**
+**<a hreflang="ja" href="https://web.dev/i18n/ja/cls/">Cumulative Layout Shift</a> (CLS)**
 - 表現：視覚的安定性
 - 計測方法：シフトしたビューポートの割合に近似した _レイアウトシフトスコア_ の数の合計値
 - 目標：<0.10
@@ -789,7 +789,7 @@ Googleがモバイルファーストインデックスだけでなく、モバ�
   description="デバイスごとにコア・ウェブ・バイタルの良いスコアを獲得したウェブサイトの割合を示す棒グラフです。デスクトップ版では33.13%のウェブサイトが「良い」と評価されたのに対し、モバイル版では19.96%しかコア・ウェブ・バイタルの評価に合格していません。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1601210449&format=interactive",
   sheets_gid="996380787",
-  sql_file="../09_Performance/web_vitals_by_device.sql"
+  sql_file="../performance/web_vitals_by_device.sql"
 ) }}
 
 #### 国ごとのCore Web Vitalsの経験
@@ -804,7 +804,7 @@ Googleがモバイルファーストインデックスだけでなく、モバ�
   description="国別のコア・ウェブ・バイタルのパフォーマンスを集約した横棒グラフ。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=2077593128&format=interactive",
   sheets_gid="220428774",
-  sql_file="../09_Performance/web_vitals_by_country.sql",
+  sql_file="../performance/web_vitals_by_country.sql",
   width=645,
   height=792
 ) }}

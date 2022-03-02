@@ -56,7 +56,7 @@ Service Workerは2014年12月に<a hreflang="en" href="https://blog.chromium.org
 )
 }}
 
-[Lighthouse](./methodology#lighthouse)は、ページが<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/install-prompt">インストールプロンプト</a>の対象かどうかを確認します。モバイルページの1.56％に<a hreflang="en" href="https://web.dev/installable-manifest/">インストール可能なマニフェスト</a>があります。
+[Lighthouse](./methodology#lighthouse)は、ページが<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/install-prompt">インストールプロンプト</a>の対象かどうかを確認します。モバイルページの1.56％に<a hreflang="ja" href="https://web.dev/i18n/ja/installable-manifest/">インストール可能なマニフェスト</a>があります。
 
 インストール体験をコントロールするために、全デスクトップの0.82％と全モバイルページの0.94％が<a hreflang="en" href="https://w3c.github.io/manifest/#beforeinstallpromptevent-interface">`OnBeforeInstallPrompt`インターフェイス</a>を使用します。現在、<a hreflang="en" href="https://caniuse.com/#feat=web-app-manifest">サポートはChromiumベースのブラウザに限定されています</a>。
 
@@ -217,6 +217,6 @@ HTTP Archiveは、Service Workerを登録するWebサイトの12.71％が少な�
 
 この章の統計は、PWAがまだごく一部のサイトでしか使用されていないことを示しています。ただし、この比較的少ない使用量はトラフィックのシェアがはるかに大きい人気のあるサイトによってもたらされ、ホームページ以外のページはこれをさらに使用する可能性があります。ページのロードの15％がService Workerを使用することがわかりました。特に[モバイル](./mobile-web)向けの[パフォーマンス](./performance)と[キャッシング](./caching)のより優れた制御に与える利点は、使用が増え続けることを意味するはずです。
 
-PWAは、Chrome主導のテクノロジーと見なされることがよくあります。一部のプラットフォームでは一流のインストール可能性が遅れているものの、他のブラウザは、基盤となるテクノロジーのほとんどを実装するために最近大きく進歩しました。サポートがさらに普及するのを前向きに見る事ができます。 [Maximiliano Firtman](https://twitter.com/firt)は、<a hreflang="en" href="https://medium.com/@firt/iphone-11-ipados-and-ios-13-for-pwas-and-web-development-5d5d9071cc49">Safari PWAサポートの説明</a>など、iOSでこれを追跡する素晴らしい仕事をしています。 AppleはPWAという用語をあまり使用せず、<a hreflang="en" href="https://developer.apple.com/news/?id=09062019b">HTML5アプリはApp Storeの外部に最適配信されると明示的に述べています</a>。Microsoftは逆の方向に進み、<a hreflang="en" href="https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/microsoft-store">アプリストアでPWAを奨励するだけでなく、Bing Webクローラーを介して検出されたPWAを自動的にショートリストに追加しました</a>。 Googleは、<a hreflang="en" href="https://developers.google.com/web/updates/2019/02/using-twa">信頼できるWebアクティビティ</a>を介して、Google PlayストアにWebアプリをリストする方法も提供しています。
+PWAは、Chrome主導のテクノロジーと見なされることがよくあります。一部のプラットフォームでは一流のインストール可能性が遅れているものの、他のブラウザは、基盤となるテクノロジーのほとんどを実装するために最近大きく進歩しました。サポートがさらに普及するのを前向きに見る事ができます。 [Maximiliano Firtman](https://twitter.com/firt)は、<a hreflang="en" href="https://medium.com/@firt/iphone-11-ipados-and-ios-13-for-pwas-and-web-development-5d5d9071cc49">Safari PWAサポートの説明</a>など、iOSでこれを追跡する素晴らしい仕事をしています。 AppleはPWAという用語をあまり使用せず、<a hreflang="en" href="https://developer.apple.com/news/?id=09062019b">HTML5アプリはApp Storeの外部に最適配信されると明示的に述べています</a>。Microsoftは逆の方向に進み、<a hreflang="en" href="https://web.archive.org/web/20190711051508/https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/microsoft-store">アプリストアでPWAを奨励するだけでなく、Bing Webクローラーを介して検出されたPWAを自動的にショートリストに追加しました</a>。 Googleは、<a hreflang="en" href="https://developers.google.com/web/updates/2019/02/using-twa">信頼できるWebアクティビティ</a>を介して、Google PlayストアにWebアプリをリストする方法も提供しています。
 
 PWAは、ネイティブプラットフォームやアプリストアではなくWeb上でビルドおよびリリースすることを希望する開発者に道を提供します。すべてのOSとブラウザがネイティブソフトウェアと完全に同等であるとは限りませんが、改善は継続され、おそらく2020年は展開が爆発的に増加する年になるでしょうか？

@@ -71,12 +71,12 @@ We see that Google-owned domains are prevalent in the online tracking market. Go
 Overall, 82.08% of mobile sites and 83.33% of desktop sites include at least one tracker, usually for site analytics or advertising purposes.
 
 {{ figure_markup(
-  image="nb_websites_with_nb_trackers.png",
+  image="number_of_websites_with_nb_trackers.png",
   caption="The number of trackers per website.",
   description="Line chart showing the number of trackers per website starting at 15.62% of desktop sites and 16.31% of mobile sites having one tracker and curving down past 9.30% and 8.64% respectively for 5%, 0.38% and 0.41% for 15 trackers and then a long tail cut off at 0.12% and 0.15% for 25 trackers. Mobile and desktop have near identical numbers throughout.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=268105548&format=interactive",
   sheets_gid="690197217",
-  sql_file="nb_websites_with_nb_trackers.sql"
+  sql_file="number_of_websites_with_nb_trackers.sql"
   )
 }}
 
@@ -125,12 +125,12 @@ One such technique is _browser fingerprinting_. A website collects information a
 Detecting fingerprinting is complex: it is effective through a combination of method calls and event listeners that may also be used for non-tracking purposes. Instead of focusing on these individual methods, we therefore focus on five popular libraries that make it easy for a website to implement fingerprinting.
 
 {{ figure_markup(
-  image="nb_websites_using_each_fingerprinting.png",
+  image="number_of_websites_using_each_fingerprinting.png",
   caption="Websites using each fingerprinting library.",
   description="Chart showing the percentage of websites that include each of the third-party fingerprinting libraries. FingerprintJS is used by 0.74% of desktop sites and 0.64% of mobile sites, ClientJS by 0.04% and 0.04% respectively, MaxMind by 0.03% and 0.02%, TruValidate by 0.03% and 0.02%, ThreatMetrix by 0.00% and 0.00%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1537414997&format=interactive",
   sheets_gid="1785016530",
-  sql_file="nb_websites_using_each_fingerprinting.sql"
+  sql_file="number_of_websites_using_each_fingerprinting.sql"
   )
 }}
 
@@ -190,12 +190,12 @@ CNAME-based tracking can be a countermeasure to when the user might have enabled
 Advertisement retargeting refers to the practice of keeping track of the products that a user has looked at but has not purchased and following up with ads about these products on different websites. Instead of opting for an aggressive marketing strategy while the user is visiting, the website chooses to nudge the user into buying the product by continuously reminding them of the brand and product.
 
 {{ figure_markup(
-  image="nb_websites_using_each_retargeting.png",
+  image="number_of_websites_using_each_retargeting.png",
   caption="Percentage of pages using a retargeting service.",
   description="Bar chart showing the most popular services used for retargeting and the number of websites that use them. Google Remarketing Tag is used by 26.92% of desktop sites and 26.64% of mobile sites, Criteo by 1.25% and 1.21% respectively, AdRoll by 0.48% and 0.38%, SharpSpring Ads by 0.12% and 0.09%, Albacross by 0.04% and 0.03%, SteelHouse by 0.03% and 0.02%, Smarter Click by 0.02% and 0.01%, Blue by 0.02% and 0.01%, Cross Pixel by 0.02% and 0.01%, and finally Picreel by 0.01% and 0.01%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=882622568&format=interactive",
   sheets_gid="1940290757",
-  sql_file="nb_websites_using_each_retargeting.sql",
+  sql_file="number_of_websites_using_each_retargeting.sql",
   width=600,
   height=580
   )
@@ -215,12 +215,12 @@ We looked at how often websites request access to sensitive resources. Moreover,
 Sensors can be useful to make a website more interactive but could also be abused for <a hreflang="en" href="https://www.esat.kuleuven.be/cosic/publications/article-3078.pdf">fingerprinting users</a>. Based on the use of JavaScript event listeners, the orientation of the device is accessed the most, both on mobile and on desktop clients. Note that we searched for the presence of event listeners on websites, but we do not know if the code is actually executed. Therefore, the access to device sensor events in this section is an upper bound.
 
 {{ figure_markup(
-  image="nb_websites_with_device_sensor_events.png",
+  image="number_of_websites_with_device_sensor_events.png",
   caption="5 most used sensor events.",
   description="Bar chart showing the most widely accessed sensor events, based on the use of JavaScript listeners. `deviceOrientation` is found on 3.32% of desktop sites and 3.23% of mobile sites, `deviceReady` on 1.12% and 1.23%, `devicemotion` on 0.65% and 0.66%, `deviceChange` on 0.03% and 0.02%, and finally `deviceproximity` on 0.03% and 0.02%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=40988621&format=interactive",
   sheets_gid="1513080238",
-  sql_file="nb_websites_with_device_sensor_events.sql"
+  sql_file="number_of_websites_with_device_sensor_events.sql"
   )
 }}
 
@@ -233,7 +233,7 @@ The [MediaDevices API](https://developer.mozilla.org/en-US/docs/Web/API/MediaDev
   content="7.23%",
   classes="big-number",
   sheets_gid="2141743069",
-  sql_file="nb_websites_with_mediadevices_blink_usage.sql"
+  sql_file="number_of_websites_with_mediadevices_blink_usage.sql"
 )
 }}
 
@@ -244,24 +244,24 @@ On 7.23% of desktop websites, and 5.33% of mobile websites the `enumerateDevices
 Geolocation services provide GPS and other location data (such as [IP address](https://developer.mozilla.org/en-US/docs/Glossary/IP_Address)) of the user and can be used by trackers to provide more relevant content to the user among other things. Therefore, we analyze the use of "geolocation-as-a-service" technologies on websites, based on libraries detected through [Wappalyzer](./methodology#wappalyzer).
 
 {{ figure_markup(
-  image="nb_websites_using_each_geolocation.png",
+  image="number_of_websites_using_each_geolocation.png",
   caption="Percentage of websites that use geolocation services.",
   description="Chart that shows the percentage of websites using each of the geolocation service libraries. ipify is used by 0.09% of desktop sites and 0.07% of mobile sites, MaxMind by 0.03% and 0.02% respectively, db-ip by 0.01% and 0.01%, and finally ipstack by 0.01% and 0.01%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2115506749&format=interactive",
   sheets_gid="1274602607",
-  sql_file="nb_websites_using_each_geolocation.sql"
+  sql_file="number_of_websites_using_each_geolocation.sql"
   )
 }}
 
 We find that the most popular service, <a hreflang="en" href="https://www.ipify.org/">ipify</a>, is used on 0.09% of desktop websites and 0.07% of mobile websites. So, it would appear that few websites use geolocation services.
 
 {{ figure_markup(
-  image="nb_websites_with_geolocation_blink_usage.png",
+  image="number_of_websites_with_geolocation_blink_usage.png",
   caption="Percentage of websites that use geolocation features.",
   description="Bar chart that shows the percentage of websites using each geolocation feature. `GeolocationGetCurrentPosition` is used by 0.59% of desktop sites and 0.63% of mobile sites, `GeolocationSecureOrigin` by 0.59% and 0.62% respectively, `GeolocationInsecureOrigin` by 0.01% and 0.02%, `GeolocationWatchPosition` by 0.02% and 0.02%, `GeolocationSecureOriginIframe` by 0.02% and 0.02%, `GeolocationDisabledByFeaturePolicy` by 0.02% and 0.01%, and finally `GeolocationInsecureOriginIframe` by 0.00% and 0.01%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1513111756&format=interactive",
   sheets_gid="1110372680",
-  sql_file="nb_websites_with_geolocation_blink_usage.sql"
+  sql_file="number_of_websites_with_geolocation_blink_usage.sql"
   )
 }}
 
@@ -279,7 +279,7 @@ Poor security management within a company can have a significant impact on its c
   description="Bar chart showing the number of user accounts involved in data breaches, according to the data class that leaked in the breach. 641 million Email addresses were included in breaches, 428 million Passwords, 369 million Names, 173 million Geographic locations, 149 million Phone numbers, 149 million Genders, 134 million Social media profiles, 127 million Education levels, 126 million Job titles, and finally 110 million Physical addresses.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1612339126&format=interactive",
   sheets_gid="1158689200",
-  sql_file="data_breaches_pwned_accounts_per_class.sql"
+  sql_file="data_breaches_pwned_websites_per_data_class.sql"
   )
 }}
 
@@ -333,12 +333,12 @@ For navigations and iframes, this data can also be accessed via JavaScript using
 The `Referer` value can be insightful. But when the full URL including the path and query string is sent in the `Referer` across origins, this can be privacy-hindering: URLs can contain private information—sometimes even identifying or sensitive information. Leaking this silently across origins can compromise users' privacy and pose security risks. The [`Referrer-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) HTTP header allows developers to restrict what referrer data is made available for requests made from their site to reduce this risk.
 
 {{ figure_markup(
-  image="nb_websites_with_referrerpolicy.png",
+  image="number_of_websites_with_referrerpolicy.png",
   caption="Percentage of websites that specify a Referrer Policy.",
   description="Bar chart showing the percentage of websites that use a Referrer Policy according to how the websites specified the policy. Any referrer policy is set on 11.12% of desktop and 10.38% of mobile sites, Entire document policy on 9.66% and 8.68%, Entire document policy header on 7.37% and 6.49%, Entire document policy meta on 2.65% and 2.51%, Any individual requests on 1.92% and 2.10%, Any link relations on 0.00% and 0.00%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2144839216&format=interactive",
   sheets_gid="1720798838",
-  sql_file="nb_websites_with_referrerpolicy.sql"
+  sql_file="number_of_websites_with_referrerpolicy.sql"
   )
 }}
 
@@ -371,12 +371,12 @@ When a web browser makes an HTTP request, it will include a [`User-Agent`](https
 Servers can indicate their support for these Client Hints by specifying the `Accept-CH` header. This header lists the attributes that the server requests from the client in order to serve a device-specific or network-specific resource. In general, Client Hints provide a way for servers to obtain only the minimum information necessary to serve content in an efficient manner.
 
 {{ figure_markup(
-  image="nb_websites_with_user_agent_client_hints.png",
+  image="number_of_websites_with_user_agent_client_hints.png",
   caption="Percentage of pages that use User-Agent Client Hints.",
   description="Bar chart showing the percentage of pages that use User-Agent Client Hints according to the rank of the website. For the top 1,000 websites it's 3.67% on desktop and 3.56% on mobile, for the top 10,000 it's 1.35% and 1.44% respectively, for the top 100,000 it's 0.40% and 0.42%, for the top 1,000,000 it's 0.14% and 0.15%, and finally for all sites it's 0.15% and 0.20%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2107002085&format=interactive",
   sheets_gid="190615661",
-  sql_file="nb_websites_with_user_agent_client_hints.sql"
+  sql_file="number_of_websites_with_user_agent_client_hints.sql"
   )
 }}
 
@@ -391,25 +391,25 @@ Therefore, websites turned to the use of cookie consent banners, privacy policie
 ### Consent Management Platforms
 
 {{ figure_markup(
-  image="nb_websites_with_cmp.png",
+  image="number_of_websites_with_cmp.png",
   caption="Percentage of websites that use a Consent Management Platform.",
   description="Bar chart showing the percentage of websites that use a third-party library for consent management. 7.10% of desktop sites and 6.97% of mobile sites use a CMP.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=246947280&format=interactive",
   sheets_gid="147308043",
-  sql_file="nb_websites_with_privacy_service.sql"
+  sql_file="number_of_websites_with_privacy_service.sql"
   )
 }}
 
 Consent Management Platforms (CMPs) are third-party libraries that websites can include to provide a cookie consent banner for users. We saw around 7% of websites using a Consent Management Platform.
 
 {{ figure_markup(
-  image="nb_websites_using_each_cmp.png",
+  image="number_of_websites_using_each_cmp.png",
   caption="10 most popular consent management platforms.",
   description="Bar chart showing the percentage of pages using the 10 most popular third-party libraries for providing consent management. CookieYes is used on 1.65% of desktop sites and 1.70% of mobile sites, Osano on 1.64% and 1.59% respectively, OneTrust on 0.90% and 0.73%, Cookiebot on 0.74% and 0.64%, AdRoll CMP System on 0.50% and 0.36%, iubenda on 0.34% and 0.35%, Quantcast Choice on 0.37% and 0.34%, Didomi on 0.29% and 0.24%, Usercentrics on 0.18% and 0.19%, and finally HubSpot Cookie Policy Banner on 0.26% and 0.17%.
 ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=619927070&format=interactive",
   sheets_gid="387302670",
-  sql_file="nb_websites_using_each_cmp.sql",
+  sql_file="number_of_websites_using_each_cmp.sql",
   width=600,
   height=421
   )
@@ -424,12 +424,12 @@ The <a hreflang="en" href="https://iabeurope.eu/transparency-consent-framework/"
 TCF is meant as a GDPR-compliant mechanism in Europe, although <a hreflang="en" href="https://iabeurope.eu/all-news/update-on-the-belgian-data-protection-authoritys-investigation-of-iab-europe/">a recent decision by the Belgian Data Protection Authority</a> found that this system is still infringing. When the CCPA came into play in California, IAB Tech Lab US developed the <a hreflang="en" href="https://iabtechlab.com/standards/ccpa/">U.S. Privacy</a> (USP) technical specifications, using the same concepts.
 
 {{ figure_markup(
-  image="nb_websites_with_iab.png",
+  image="number_of_websites_with_iab.png",
   caption="Percentage of websites using IAB compliance frameworks.",
   description="Bar chart showing the percentage of websites using each compliance framework of both IAB Europe and US. IAB TCF v1 is used on 0.35% of desktop and 0.30% of mobile sites, IAB TCF v2 on 1.58% and 1.49% respectively, IAB TCF any on 1.67% and 1.57%, IAB USP on 3.13% and 3.19%, IAB USP on 3.13% and 3.19%, and finally IAB any on 3.92% and 3.97%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1697790298&format=interactive",
   sheets_gid="1662197018",
-  sql_file="nb_websites_with_iab.sql"
+  sql_file="number_of_websites_with_iab.sql"
   )
 }}
 
@@ -472,7 +472,7 @@ Nowadays, most websites have a privacy policy, where users can learn about the t
   content="39.70%",
   classes="big-number",
   sheets_gid="473955086",
-  sql_file="nb_websites_with_privacy_links.sql"
+  sql_file="number_of_websites_with_privacy_links.sql"
 )
 }}
 
@@ -483,12 +483,12 @@ By looking for keywords such as "privacy policy", "cookie policy", and more, in 
 The <a hreflang="en" href="https://www.eff.org/issues/do-not-track">Do Not Track</a> (DNT) HTTP header can be used to communicate to websites that a user does not wish to be tracked. We can see the number of sites that appear to access the current value for DNT below, based on the presence of the [`Navigator.doNotTrack`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/doNotTrack) JavaScript call.
 
 {{ figure_markup(
-  image="nb_websites_with_dnt_blink_usage.png",
+  image="number_of_websites_with_dnt_blink_usage.png",
   caption="Percentage of websites using Do Not Track (DNT).",
   description="Bar chart showing the percentage of websites that access the value of DNT by using the `NavigatorDoNotTrack` feature. 17.37% of desktop sites and 17.39% of mobile sites access this.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1302428398&format=interactive",
   sheets_gid="485103492",
-  sql_file="nb_websites_with_dnt_blink_usage.sql"
+  sql_file="number_of_websites_with_dnt_blink_usage.sql"
   )
 }}
 
@@ -525,12 +525,12 @@ Here is how the first FLoC experiment worked: as a user moved around the web, th
 Individual users and websites could opt out of being included in the cohort calculation.
 
 {{ figure_markup(
-  image="nb_websites_with_floc_opt_out.png",
+  image="number_of_websites_with_floc_opt_out.png",
   caption="Percentages of websites that opt out of FLoC cohorts.",
   description="Bar chart showing the percentage of pages that opt out of FLoC cohorts, according to the rank of the website. Of the top 1,000 sites 3.29% of desktop sites and 4.10% of mobile sites opt out, for the top 10,000 it's 1.10% and 1.26% respectively, for the top 100,000 it's 0.64% and 0.67%, for the top million it's 0.69% and 0.69%, for all it's 0.95% and 0.86%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=129384991&format=interactive",
   sheets_gid="637590731",
-  sql_file="nb_websites_with_floc_opt_out.sql"
+  sql_file="number_of_websites_with_floc_opt_out.sql"
   )
 }}
 

@@ -479,7 +479,7 @@ Almanacのデータセットでも、その採用状況を見てみよう。
 
 複数値、参照型、末尾呼び出しなど、使用実績がゼロの機能も同様の状況です。これらはほとんどのWebAssemblyユースケースに恩恵をもたらす可能性がありますが、コンパイラやエンジンのサポートが不完全なためです。
 
-残り、使用されている機能の中で、とくに興味深いのはSIMDとatomicです。どちらも、さまざまなレベルで実行を並列化し、高速化するための命令を提供します。<a hreflang="en" href="https://v8.dev/features/simd">SIMD</a> により、一度に複数の値に対して数学演算を行うことができ、atomicにより <a hreflang="en" href="https://web.dev/webassembly-threads/">Wasmにおけるマルチスレッド</a>の基礎が提供されます。それらの機能はデフォルトでは有効ではなく、特定のユースケースを必要とし、とくにマルチスレッドはソースコードで特別なAPIを使用する必要があり、さらにWebサイトで使用する前 <a hreflang="en" href="https://web.dev/coop-coep/">cross-origin isolated</a> にするための追加設定も必要です。そのため、比較的低い利用レベルであることは当然ですが、時間の経過とともに成長していくことが期待されます。
+残り、使用されている機能の中で、とくに興味深いのはSIMDとatomicです。どちらも、さまざまなレベルで実行を並列化し、高速化するための命令を提供します。<a hreflang="en" href="https://v8.dev/features/simd">SIMD</a> により、一度に複数の値に対して数学演算を行うことができ、atomicにより <a hreflang="en" href="https://web.dev/webassembly-threads/">Wasmにおけるマルチスレッド</a>の基礎が提供されます。それらの機能はデフォルトでは有効ではなく、特定のユースケースを必要とし、とくにマルチスレッドはソースコードで特別なAPIを使用する必要があり、さらにWebサイトで使用する前 <a hreflang="ja" href="https://web.dev/i18n/ja/coop-coep/">cross-origin isolated</a> にするための追加設定も必要です。そのため、比較的低い利用レベルであることは当然ですが、時間の経過とともに成長していくことが期待されます。
 
 ## 結論
 

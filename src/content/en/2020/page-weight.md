@@ -117,7 +117,7 @@ Images again make up the largest number of requests, though JavaScript is closin
   description="Box plot of the distribution of image sizes by format: gif, ico, jpg, png, svg, and webp. Jpg sticks out as having the highest distribution with a 90th percentile exceeding 150 KB per image. Png is second highest at about 100 KB at the 90th percentile. While WebP has a smaller 90th percentile than png, its 75th percentile is higher. gif, ico, and svg all have relatively small distributions near 0 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=211653520&format=interactive",
   sheets_gid="142855724",
-  sql_file="requests_format_distribution.sql"
+  sql_file="response_format_distribution.sql"
 ) }}
 
 We know that images are a great source of page weight. This graphic above shows us the top sources of image weight and the weight distribution. Top 3: JPG, PNG and WebP. So not only is the JPG the most popular image format, it also tends to be the largest by size as well - even larger than a lossless format like the PNG. But as we [noted last year](../2019/page-weight#file-size-by-image-format-for-images--1024-bytes), that has to do with the predominant use case for the PNG, which seems to be icons and logos.

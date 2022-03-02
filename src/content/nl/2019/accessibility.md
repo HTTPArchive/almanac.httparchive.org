@@ -2,15 +2,15 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Toegankelijkheid
 description: Toegankelijkheidshoofdstuk van de Web Almanac 2019 over leesgemak, media, navigatiegemak en compatibiliteit met ondersteunende technologieën.
-authors: [nektarios-paisios, obto, kleinab]
+authors: [nektarios-paisios, foxdavidj, kleinab]
 reviewers: [ljme]
-analysts: [dougsillars, rviscomi, obto]
-editors: [obto]
+analysts: [dougsillars, rviscomi, foxdavidj]
+editors: [foxdavidj]
 translators: [noah-vdv]
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
 nektarios-paisios_bio: Nektarios Paisios is een software-engineer die de afgelopen 5 jaar aan de toegankelijkheid van Chrome heeft gewerkt. Hij richt zich voornamelijk op het compatibel maken van Chrome met ondersteunende software van derden, zoals schermlezers en schermvergroters. Voordat Nektarios aan de toegankelijkheid van Chrome werkte, werkte hij in verschillende andere rollen bij het bedrijf, zoals toegankelijkheid voor GSuite en display-advertenties. Nektarios heeft een Ph.D. in Computer Science van de New York University.
-obto_bio: David Fox is de hoofdonderzoeker naar bruikbaarheid en oprichter van LookZook, een bedrijf dat geobsedeerd is door alles te weten te komen over het bouwen van webervaringen die voldoen aan de verwachtingen van gebruikers. Hij is een website-psycholoog die zich verdiept in sites om niet alleen te leren waarmee gebruikers worstelen, maar ook waarom en hoe ze hun ervaring het beste kunnen verbeteren. Hij is ook een Google Chromium-bijdrager, spreker en aanbieder van webinars en UX-trainingen.
+foxdavidj_bio: David Fox is de hoofdonderzoeker naar bruikbaarheid en oprichter van LookZook, een bedrijf dat geobsedeerd is door alles te weten te komen over het bouwen van webervaringen die voldoen aan de verwachtingen van gebruikers. Hij is een website-psycholoog die zich verdiept in sites om niet alleen te leren waarmee gebruikers worstelen, maar ook waarom en hoe ze hun ervaring het beste kunnen verbeteren. Hij is ook een Google Chromium-bijdrager, spreker en aanbieder van webinars en UX-trainingen.
 kleinab_bio: Abigail Klein is een Google-software-engineer. Ze werkte aan de webtoegankelijkheid van Google Documenten, Spreadsheets en Presentaties, waar ze <a hreflang="en" href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">automatische ondertiteling voor Google Presentaties toevoegde</a>, evenals verbeterde ondersteuning voor schermlezer, braille, schermvergroting en hoog contrast. Ze werkt momenteel aan de toegankelijkheid van Google Chrome en ChromeOS. Ze heeft een bachelor en master in informatica van MIT, waar ze medeoprichter was van een ondersteunende technologie hackathon en labassistent en gastdocent was van de les ondersteunende technologie.
 featured_quote: Toegankelijkheid op internet is essentieel voor een inclusieve en rechtvaardige samenleving. Naarmate meer van ons sociale en werkleven naar de online wereld verhuizen, wordt het voor mensen met een handicap nog belangrijker om zonder belemmeringen aan alle online interacties te kunnen deelnemen. Net zoals gebouwarchitecten toegankelijkheidsfuncties kunnen creëren of weglaten, zoals rolstoelhellingen, kunnen webontwikkelaars de ondersteunende technologie waar gebruikers op vertrouwen helpen of hinderen.
 featured_stat_1: 22%
@@ -64,7 +64,7 @@ Het gebruik van een <a hreflang="en" href="https://accessibleweb.com/question-an
 
 Er zijn zeldzame gevallen waarin het uitschakelen van schalen acceptabel is, zoals wanneer de betreffende pagina een webgebaseerd spel is met aanraakbediening. Indien ingeschakeld in dit geval, zullen de telefoons van spelers elke keer dat de speler tweemaal op het spel tikt in- en uitzoomen, waardoor het ironisch genoeg ontoegankelijk wordt.
 
-Daarom krijgen ontwikkelaars de mogelijkheid om deze functie uit te schakelen door een van de volgende twee eigenschappen in de [meta viewport-tag](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag) in te stellen:
+Daarom krijgen ontwikkelaars de mogelijkheid om deze functie uit te schakelen door een van de volgende twee eigenschappen in de [meta viewport-tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) in te stellen:
 
 1. `user-scalable` ingesteld op `0` of `no`
 

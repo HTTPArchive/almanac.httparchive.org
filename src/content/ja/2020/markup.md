@@ -965,7 +965,7 @@ HTML仕様によると、<a hreflang="en" href="https://html.spec.whatwg.org/mul
 
 ### `viewport`の仕様
 
-[viewport](https://developer.mozilla.org/ja/docs/Mozilla/Mobile/Viewport_meta_tag)メタ要素は、モバイルブラウザでのレイアウトを制御するために使用されます。数年前まではWebページを構築する際に「viewport meta要素を忘れないように」というモットーのようなものがありましたが、やがてこれが一般的になり、「ズームやスケーリングが無効になっていないか確認する」というモットーに変わりました。
+[viewport](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag)メタ要素は、モバイルブラウザでのレイアウトを制御するために使用されます。数年前まではWebページを構築する際に「viewport meta要素を忘れないように」というモットーのようなものがありましたが、やがてこれが一般的になり、「ズームやスケーリングが無効になっていないか確認する」というモットーに変わりました。
 
 ユーザーは、テキストを<a hreflang="en" href="https://dequeuniversity.com/rules/axe/4.0/meta-viewport-large">最大500%</a>まで拡大・縮小できる必要があります。これが、<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a>や<a hreflang="en" href="https://www.deque.com/axe/">axe</a>のような人気のあるツールの監査が、`meta name="viewport"`要素内で`user-scalable="no"`が使用され、`maximum-scale`属性値が`5`未満の場合に失敗する理由です。
 

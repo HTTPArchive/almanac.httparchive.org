@@ -117,7 +117,7 @@ Afbeeldingen vormen opnieuw het grootste aantal verzoeken, hoewel JavaScript dic
   description="Boxplot van de verdeling van afbeeldingsformaten per indeling: gif, ico, jpg, png, svg en webp. Jpg springt eruit als de hoogste distributie met een 90e percentiel van meer dan 150KB per afbeelding. Png is de tweede hoogste met ongeveer 100KB op het 90e percentiel. Hoewel WebP een kleiner 90e percentiel heeft dan png, is het 75e percentiel hoger. gif, ico en svg hebben allemaal relatief kleine distributies van bijna 0KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlN4Clqeb8aPc63h0J58WfBxoJluSFT6kXn45JGPghw1LGU28hzabMYAATXNY5st9TtjKrr2HnbfGd/pubchart?oid=211653520&format=interactive",
   sheets_gid="142855724",
-  sql_file="requests_format_distribution.sql"
+  sql_file="response_format_distribution.sql"
 ) }}
 
 We weten dat afbeeldingen een grote bron van paginagewicht zijn. Deze afbeelding hierboven toont ons de belangrijkste bronnen van beeldgewicht en de gewichtsverdeling. Top 3: JPG, PNG en WebP. Dus niet alleen is de JPG het meest populaire afbeeldingsformaat, het heeft ook de neiging om ook het grootste formaat te hebben - zelfs groter dan een verliesvrij formaat zoals de PNG. Maar zoals we [vorig jaar opmerkten](../2019/page-weight#bestandsgrootte-op-afbeeldingsformaat-voor-afbeeldingen--1024-bytes), heeft dat te maken met de overheersende use case voor de PNG , die pictogrammen en logo's lijken te zijn.

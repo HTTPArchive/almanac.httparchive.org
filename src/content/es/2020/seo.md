@@ -68,7 +68,7 @@ El archivo `robots.txt` debe ser de texto plano, codificado en UTF-8 y responder
 
 En general, 80.46% de las páginas móviles tuvieron una respuesta 2XX en su archivo `robots.txt`. De estas, 25.09% no fueron reconocidos como válidos. Esto ha mejorado ligeramente a lo largo del 2019, cuando se encontró que [27.84% de los sitios web móviles tenían un `robots.txt` válido](../2019/seo#robotstxt).
 
-Lighthouse, la fuente de datos para comprobar la validez del `robots.txt`, introdujo una <a hreflang="en" href="https://web.dev/robots-txt/">auditoría de`robots.txt`</a> como parte de la actualización de la v6. Esta inclusión destaca que una petición exitosa no significa que dicho archivo sea capaz de proporcionar las directivas necesarias a los rastreadores web.
+Lighthouse, la fuente de datos para comprobar la validez del `robots.txt`, introdujo una <a hreflang="es" href="https://web.dev/i18n/es/robots-txt/">auditoría de`robots.txt`</a> como parte de la actualización de la v6. Esta inclusión destaca que una petición exitosa no significa que dicho archivo sea capaz de proporcionar las directivas necesarias a los rastreadores web.
 
 <figure>
   <table>
@@ -253,7 +253,7 @@ Para entender lo que los motores de búsqueda son capaces de extraer exitosament
 
 #### Contenido de texto renderizado vs. no renderizado
 
-El uso de tecnologías [JavaScript](../javascript) como Single Page Application (SPA) ha incrementado con el crecimiento de la web. Este patrón de diseño introduce ciertas dificultades para los rastreadores de búsqueda, pues tanto su ejecución de transformaciones de JavaScript durante el tiempo de ejecución y las interacciones de usuario con la página después de ser cargada, pueden ocasionar que contenido adicional sea visible o renderizado.
+El uso de tecnologías [JavaScript](./javascript) como Single Page Application (SPA) ha incrementado con el crecimiento de la web. Este patrón de diseño introduce ciertas dificultades para los rastreadores de búsqueda, pues tanto su ejecución de transformaciones de JavaScript durante el tiempo de ejecución y las interacciones de usuario con la página después de ser cargada, pueden ocasionar que contenido adicional sea visible o renderizado.
 
 Los motores de búsqueda se encuentran con páginas durante su actividad de rastreo, pero pueden o no escoger una implementación de un segundo paso de renderización para la página. Como resultado, pueden existir disparidades entre el contenido que un usuario ve y el contenido que los motores de búsqueda indexan y consideran para el posicionamiento.
 
@@ -689,7 +689,7 @@ El viewport de un navegador es la parte visible del contenido, que cambia depend
     {{ figure_link(
       caption="Porcentaje de páginas con cada valor del atributo <code>content</code> de la meta etiqueta viewport.",
       sheets_gid="479500659",
-      sql_file="../03_Markup/summary_pages_by_device_and_viewport.sql"
+      sql_file="../markup/summary_pages_by_device_and_viewport.sql"
     ) }}
   </figcaption>
 </figure>
@@ -741,7 +741,7 @@ Encontramos que 80.29% de las páginas de escritorio y 82.92% de las móviles us
     {{ figure_link(
       caption="Porcentaje de páginas que usan cada propiedad de media queries.",
       sheets_gid="1141218471",
-      sql_file="../01_CSS/media_query_features.sql"
+      sql_file="../css/media_query_features.sql"
     ) }}
   </figcaption>
 </figure>
@@ -764,17 +764,17 @@ Tener un sitio web que cargue rápido es fundamental para proporcionar una gran 
 
 Como se anunció en Noviembre de 2020, 3 métricas de rendimiento conocidas como las <a hreflang="en" href="https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html">Core Web Vitals</a> están en camino a ser un factor de posicionamiento como parte de las señales de "experiencia de página" en Mayo de 2021. Las Core Web Vitals consisten en:
 
-**<a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> (LCP)**
+**<a hreflang="es" href="https://web.dev/i18n/es/lcp/">Largest Contentful Paint</a> (LCP)**
 - Representa: experiencia de carga percibida por el usuario
 - Medición: el punto en la línea del tiempo de carga cuando la imagen o bloque de texto más largo de la página es visible dentro del viewport
 - Objetivo: <2.5 segundos
 
-**<a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID)**
+**<a hreflang="es" href="https://web.dev/i18n/es/fid/">First Input Delay</a> (FID)**
 - Representa: respuesta a entradas del usuario
 - Medición: el tiempo desde que un usuario interactúa inicialmente con la página hasta el tiempo en que el navegador es capaz de empezar a procesar los manejadores de eventos en respuesta a esa interacción
 - Objetivo: <300 milisegundos
 
-**<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLS)**
+**<a hreflang="es" href="https://web.dev/i18n/es/cls/">Cumulative Layout Shift</a> (CLS)**
 - Representa: estabilidad visual
 - Medición: la suma del número de _puntuaciones de los cambios de composición_ aproximando el porcentaje en que cambió el viewport
 - Objetivo: <0.10
@@ -789,7 +789,7 @@ Escritorio sigue siendo la plataforma de mayor rendimiento para los usuarios a p
   description="Gráfico de barras que muestra el porcentaje de sitios web con una buena puntuación de los core web vitals por dispositivo. 33.13% de los sitios web obtuvieron una calificación _Buena_ en los Core Web Vitals para escritorio mientras que solo 19.96% de sus equivalentes móviles pasaron la evaluación de los Core Web Vitals.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=1601210449&format=interactive",
   sheets_gid="996380787",
-  sql_file="../09_Performance/web_vitals_by_device.sql"
+  sql_file="../performance/web_vitals_by_device.sql"
 ) }}
 
 #### Experiencia de los Core Web Vitals por país
@@ -804,7 +804,7 @@ Los usuarios ubicados en los Estados Unidos registraron el mayor número absolut
   description="Gráfico de barras horizontal que muestra el agregado del rendimiento de los core web vitals por país.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTeddX0_5hUvxpYkd-927hEBlIqzuQiFn5450F2gNc9RJ5K8Wy0ln3KKD-gPWAxJ5Lo3H_km4ljHQEt/pubchart?oid=2077593128&format=interactive",
   sheets_gid="220428774",
-  sql_file="../09_Performance/web_vitals_by_country.sql",
+  sql_file="../performance/web_vitals_by_country.sql",
   width=645,
   height=792
 ) }}

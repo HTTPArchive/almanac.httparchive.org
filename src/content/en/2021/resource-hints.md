@@ -245,7 +245,7 @@ Of the sites using resource hints, when comparing the median for the top 1,000 s
   )
 }}
 
-By combining a page's <a hreflang="en" href="https://web.dev/cwv">Core Web Vitals</a> scores in the CrUX dataset and the usage of the preload resource hint, you can observe a negative correlation between the number of link elements and the percentage of pages which score a good rating on CWV. The pages which use fewer preload hints are more likely to have a good rating.
+By combining a page's <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> scores in the CrUX dataset and the usage of the preload resource hint, you can observe a negative correlation between the number of link elements and the percentage of pages which score a good rating on CWV. The pages which use fewer preload hints are more likely to have a good rating.
 
 {{ figure_markup(
   image="correlation-of-good-lcp-and-preload.png",

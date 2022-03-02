@@ -3,8 +3,8 @@
 title: Mobiel internet
 description: Het hoofdstuk over Mobiel Internet van de Web Almanac van 2020 behandelt het laden van pagina's, tekstuele inhoud, zoomen en schalen, knoppen en links en het gemak van het invullen van formulieren.
 authors: [spanicker, mdiblasio]
-reviewers: [obto]
-analysts: [obto]
+reviewers: [foxdavidj]
+analysts: [foxdavidj]
 editors: [exterkamp]
 translators: [noah-vdv]
 spanicker_bio: Shubhie Panicker is de technische leider voor Chrome's betrokkenheid bij het webframework-ecosysteem, waar ze samenwerkt met open source-hulpmiddelen, frameworks en gemeenschappen. Als lid van Chrome's Web Platform-team heeft ze gewerkt aan webstandaarden en de implementatie van Chromium voor verschillende webprestatie-API's. Voordat ze bij Chrome kwam, werkte ze aan infrastructuur- en webframeworks voor Google-producten zoals Search, Google Photos enz.

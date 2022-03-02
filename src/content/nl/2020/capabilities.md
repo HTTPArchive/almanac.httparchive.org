@@ -290,7 +290,7 @@ De WebSocketStream API heeft zijn eerste oorspronkelijke proef voltooid en bevin
 
 ### Maak het QUIC
 
-<a hreflang="en" href="https://www.chromium.org/quic">QUIC</a> (<a hreflang="en" href="https://www.ietf.org/archive/id/draft-ietf-quic-transport-31.txt">IETF Internet-Draft</a>) is een multiplex, stream-gebaseerd, bidirectioneel transportprotocol geïmplementeerd op UDP. Het is een alternatief voor HTTP / WebSocket-API's die bovenop TCP worden geïmplementeerd. De <a hreflang="en" href="https://web.dev/quictransport/">QuicTransport API</a> is de cliënt-kant API voor het verzenden van berichten naar en het ontvangen van berichten van een QUIC-server. Ontwikkelaars kunnen ervoor kiezen om gegevens onbetrouwbaar via datagrammen te verzenden, of betrouwbaar door de streams-API te gebruiken:
+<a hreflang="en" href="https://www.chromium.org/quic">QUIC</a> (<a hreflang="en" href="https://www.ietf.org/archive/id/draft-ietf-quic-transport-31.txt">IETF Internet-Draft</a>) is een multiplex, stream-gebaseerd, bidirectioneel transportprotocol geïmplementeerd op UDP. Het is een alternatief voor HTTP / WebSocket-API's die bovenop TCP worden geïmplementeerd. De <a hreflang="en" href="https://web.dev/webtransport/">QuicTransport API</a> is de cliënt-kant API voor het verzenden van berichten naar en het ontvangen van berichten van een QUIC-server. Ontwikkelaars kunnen ervoor kiezen om gegevens onbetrouwbaar via datagrammen te verzenden, of betrouwbaar door de streams-API te gebruiken:
 
 ```js
 const transport = new QuicTransport(QUIC_URL);

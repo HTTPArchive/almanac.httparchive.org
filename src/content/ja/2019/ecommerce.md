@@ -483,7 +483,7 @@ PNGフォールバックでWebPを使用することは、[画像要素](http://
 
 Eコマースプラットフォーム上の画像の1％だけがWebPであり、これはサイトレビューやパートナーの仕事での著者の経験と一致しています。WebPは<a hreflang="en" href="https://caniuse.com/#feat=webp">Safari以外のすべての最新ブラウザでサポートされています</a>し、フォールバックの仕組みも充実しています。WebPは透過性をサポートしており、写真画像のためのPNGよりもはるかに効率的なフォーマットです（上記のPNGのセクションを参照してください）。
 
-WebPをPNGのフォールバックで使用したり、無地の色の背景でWebP/JPEGを使用して透明化を可能にするため、Webコミュニティとして、より良いガイダンスや提唱を提供できます。WebPは、<a hreflang="en" href="https://web.dev/serve-images-webp">ガイド</a> やツール (例:<a hreflang="en" href="https://squoosh.app/">Squoosh</a>や<a hreflang="en" href="https://developers.google.com/speed/webp/docs/cwebp">cwebp</a>など)があるにもかかわらず、電子商取引プラットフォームではほとんど使用されていないようです。現在<a hreflang="en" href="https://blog.chromium.org/2010/09/webp-new-image-format-for-web.html">10年近く経っている</a>WebPの利用が増えていない理由をさらに調査する必要があります。
+WebPをPNGのフォールバックで使用したり、無地の色の背景でWebP/JPEGを使用して透明化を可能にするため、Webコミュニティとして、より良いガイダンスや提唱を提供できます。WebPは、<a hreflang="ja" href="https://web.dev/i18n/ja/serve-images-webp">ガイド</a> やツール (例:<a hreflang="en" href="https://squoosh.app/">Squoosh</a>や<a hreflang="en" href="https://developers.google.com/speed/webp/docs/cwebp">cwebp</a>など)があるにもかかわらず、電子商取引プラットフォームではほとんど使用されていないようです。現在<a hreflang="en" href="https://blog.chromium.org/2010/09/webp-new-image-format-for-web.html">10年近く経っている</a>WebPの利用が増えていない理由をさらに調査する必要があります。
 
 ## 画像の寸法
 

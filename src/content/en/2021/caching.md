@@ -178,7 +178,7 @@ When we take a look when `no-cache`, `max-age=0` and `no-store` are used togethe
   content="51 trillion years",
   classes="medium-number",
   sheets_gid="529870849",
-  sql_file="todo.sql"
+  sql_file="max_age_distribution.sql"
 ) }}
 
 Fun fact: The most common `max-age` value is 30 days, and the largest value is 51 trillion years.
@@ -262,7 +262,7 @@ In the 2020 Caching chapter, we were reminded to be aware of using `set-cookie` 
 {{ figure_markup(
   image="cacheable-set-cookie.png",
   caption="Percent of cacheable responses that use `Set-Cookie`.",
-  description="TODO",
+  description="Bar chart showing 35.6% of desktop and 36.0% of mobile responses use set-cookies, while 64.4% of desktop and 64.0% of mobile responses do not.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSGgVDZ9RkFQLmk5C3_siIcH-8macUEZMobcC0o1z8frYj8NOkI_C2s_yE5ppMdxDAD5INjNsCBa3h1/pubchart?oid=261881101&format=interactive",
   sheets_gid="104392613",
   sql_file="set_cookie.sql"
@@ -414,7 +414,7 @@ Mobile resources with a cache TTL that was considered too short compared to its 
   content="54%",
   classes="big-number",
   sheets_gid="768623684",
-  sql_file="todo.sql"
+  sql_file="content_age_older_than_ttl.sql"
 ) }}
 
 While a cache TTL that is too long may serve stale content, there is no benefit for the end user if it is too short. The connection between cache TTL and content age is slowly closing this gap, moving from 60.2% in 2020 to 54.3% in 2021. The more attentive we can be towards to content age (i.e. how often we revamp a page's HTML, CSS etc.), the more accurately we can set cache limits.

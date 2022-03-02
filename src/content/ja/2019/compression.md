@@ -3,7 +3,7 @@
 title: 圧縮
 description: HTTP圧縮、アルゴリズム、コンテンツタイプ、ファーストパーティとサードパーティの圧縮および機会をカバーする2019 Web Almanacの圧縮の章。
 authors: [paulcalvano]
-reviewers: [obto, yoavweiss]
+reviewers: [foxdavidj, yoavweiss]
 analysts: [paulcalvano]
 editors: [tunetheweb]
 translators: [ksakae1216]

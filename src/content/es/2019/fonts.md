@@ -205,7 +205,7 @@ Como se mencionó anteriormente, una manera súper fácil de acelerar las solici
 )
 }}
 
-¡Guauu! ¡Menos del 2% de las páginas están usando <a hreflang="en" href="https://web.dev/uses-rel-preconnect">`preconnect`</a>! Dado que Google Fonts está al 75%, ¡debería ser más alto! Desarrolladores: si usa Google Fonts, use `preconnect`! Google Fonts: ¡proselitice más `preconnect`!
+¡Guauu! ¡Menos del 2% de las páginas están usando <a hreflang="es" href="https://web.dev/i18n/es/uses-rel-preconnect">`preconnect`</a>! Dado que Google Fonts está al 75%, ¡debería ser más alto! Desarrolladores: si usa Google Fonts, use `preconnect`! Google Fonts: ¡proselitice más `preconnect`!
 
 De hecho, si está usando Google Fonts, continúe y agregue esto a su `<head>` si aún no está allí:
 

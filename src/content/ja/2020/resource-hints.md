@@ -49,7 +49,7 @@ featured_stat_label_3: ネイティブの遅延ローディングを使用して
 
 ### `preconnect`
 
-<a hreflang="en" href="https://web.dev/uses-rel-preconnect/">`preconnect`</a>は、指定されたドメインのIPアドレスを事前に解決し、TCP/TLS接続を開くのに役立ちます。`dns-prefetch`と同様に、クロスオリジンのドメインに使用され、最初のページ読み込み時に使用されるリソースをブラウザがウォームアップするのに役立ちます。
+<a hreflang="ja" href="https://web.dev/i18n/ja/uses-rel-preconnect/">`preconnect`</a>は、指定されたドメインのIPアドレスを事前に解決し、TCP/TLS接続を開くのに役立ちます。`dns-prefetch`と同様に、クロスオリジンのドメインに使用され、最初のページ読み込み時に使用されるリソースをブラウザがウォームアップするのに役立ちます。
 
 ```html
 <link rel="preconnect" href="https://www.googletagmanager.com/">
@@ -72,7 +72,7 @@ featured_stat_label_3: ネイティブの遅延ローディングを使用して
 <link rel="preload" href="main.js" as="script">
 ```
 
-`preload`することを意識します。なぜなら他のリソースのダウンロードを遅らせる可能性があるため、Largest Contentful Paint（<a hreflang="en" href="https://web.dev/lcp/">LCP</a>）の改善に役立つ、もっとも重要なものにのみ使用してください。 また、Chromeで使用した場合、`preload`リソースを過剰に優先する傾向があり、他の重要なリソースよりもpreloadを優先的に処理する可能性があります。
+`preload`することを意識します。なぜなら他のリソースのダウンロードを遅らせる可能性があるため、Largest Contentful Paint（<a hreflang="ja" href="https://web.dev/i18n/ja/lcp/">LCP</a>）の改善に役立つ、もっとも重要なものにのみ使用してください。 また、Chromeで使用した場合、`preload`リソースを過剰に優先する傾向があり、他の重要なリソースよりもpreloadを優先的に処理する可能性があります。
 
 最後に、HTTPレスポンスヘッダーで使用された場合、一部のCDNは`preload`を自動的に[HTTP/2 push](#http2-push)に変えてしまい、キャッシュされたリソースを過剰にプッシュしてしまうことがあります。
 
@@ -117,7 +117,7 @@ HTTP Archiveをもとに、2020年のトレンド分析に飛び込み、前回�
 
 `dns-prefetch`の採用率が33％と他のリソースヒントに比べて相対的に高いのは、2009年にはじめて登場し主要なリソースヒントの中でもっとも広くサポートされていることから、当然のことと言えるでしょう。
 
-[2019](../2019/resource-hints#resource-hints)と比較すると、`dns-prefetch`はDesktopの採用率が4％増加していました。また、`preconnect`でも同様の増加が見られました。すべてのヒントの中でもっとも大きな伸びを示した理由の1つは、<a hreflang="en" href="https://web.dev/uses-rel-preconnect/">Lighthouse audit</a>がこの問題に関して明確で有益なアドバイスをしていることです。今年のレポートからは、最新のデータセットがLighthouseの推奨事項に対してどのようなパフォーマンスを示すかについても紹介しています。
+[2019](../2019/resource-hints#resource-hints)と比較すると、`dns-prefetch`はDesktopの採用率が4％増加していました。また、`preconnect`でも同様の増加が見られました。すべてのヒントの中でもっとも大きな伸びを示した理由の1つは、<a hreflang="ja" href="https://web.dev/i18n/ja/uses-rel-preconnect/">Lighthouse audit</a>がこの問題に関して明確で有益なアドバイスをしていることです。今年のレポートからは、最新のデータセットがLighthouseの推奨事項に対してどのようなパフォーマンスを示すかについても紹介しています。
 
 {{ figure_markup(
   image="resource-hint-adoption-2019-vs-2020.png",
@@ -174,7 +174,7 @@ HTTP Archiveをもとに、2020年のトレンド分析に飛び込み、前回�
   sql_file="as_attribute_by_year.sql"
 ) }}
 
-[2019](../2019/resource-hints#the-as-attribute)の傾向と比較すると、`as`属性でのフォントやスタイルの使用が急激に増加しています。これは、開発者が重要なCSSの優先度を上げていることや、<a hreflang="en" href="https://web.dev/optimize-cls/#web-fonts-causing-foutfoit">改善</a>のために`preload`フォントを`display:optional`と組み合わせて、Cumulative Layout Shift（<a hreflang="en" href="https://web.dev/cls/">CLS</a>）を実現していることに関連していると考えられます。
+[2019](../2019/resource-hints#the-as-attribute)の傾向と比較すると、`as`属性でのフォントやスタイルの使用が急激に増加しています。これは、開発者が重要なCSSの優先度を上げていることや、<a hreflang="ja" href="https://web.dev/i18n/ja/optimize-cls/#web-fonts-causing-foutfoit">改善</a>のために`preload`フォントを`display:optional`と組み合わせて、Cumulative Layout Shift（<a hreflang="ja" href="https://web.dev/i18n/ja/cls/">CLS</a>）を実現していることに関連していると考えられます。
 
 `as`属性が省略されていたり無効な値が設定されていると、ブラウザが正しい優先順位を判断することが難しくなりスクリプトなどの場合には、リソースが2回取得されることもあるので注意が必要です。
 
@@ -196,7 +196,7 @@ HTTP Archiveをもとに、2020年のトレンド分析に飛び込み、前回�
 <link rel="preload" href="ComicSans.woff2" as="font" type="font/woff2" crossorigin>
 ```
 
-`crossorigin`属性を持たずにプリロードされたフォントは、<a hreflang="en" href="https://web.dev/preload-critical-assets/#how-to-implement-relpreload">2回</a>取得されてしまうことに注意してください。
+`crossorigin`属性を持たずにプリロードされたフォントは、<a hreflang="ja" href="https://web.dev/i18n/ja/preload-critical-assets/#how-to-implement-relpreload">2回</a>取得されてしまうことに注意してください。
 
 ### `media`属性
 
@@ -222,7 +222,7 @@ HTTP Archiveをもとに、2020年のトレンド分析に飛び込み、前回�
 
 同じ`<link>`タグ内に`dns-prefetch`フォールバックを実装すると、Safariで<a hreflang="en" href="https://bugs.webkit.org/show_bug.cgi?id=197010">バグ</a>が発生し、`preconnect`リクエストがキャンセルされてしまいます。2％近いページ（～40k）で、1つのリソースに`preconnect`と`dns-prefetch`の両方が存在するという問題が報告されました。
 
-"<a hreflang="en" href="https://web.dev/uses-rel-preconnect/">Preconnect to required origins</a>"の監査の場合、テストに合格したページはわずか19.67％で、何千ものウェブサイトが`preconnect`や`dns-prefetch`を使用して重要なサードパーティオリジンへの早期接続を確立し始める大きな機会を生み出していました。
+"<a hreflang="ja" href="https://web.dev/i18n/ja/uses-rel-preconnect/">Preconnect to required origins</a>"の監査の場合、テストに合格したページはわずか19.67％で、何千ものウェブサイトが`preconnect`や`dns-prefetch`を使用して重要なサードパーティオリジンへの早期接続を確立し始める大きな機会を生み出していました。
 
 {{ figure_markup(
   caption="Lighthouseの`preconnect`監査に合格したページの割合。",
@@ -264,7 +264,7 @@ Lighthouseの「<a hreflang="en" href="https://web.dev/offscreen-images/">Defer 
 
 ## HTTP/2プッシュ
 
-[HTTP/2](./http)には「サーバープッシュ」と呼ばれる機能があり、製品のラウンドトリップタイム（https://developer.mozilla.org/ja/docs/Glossary/Round_Trip_Time_(RTT)）やサーバーの処理が長い場合に、ページのパフォーマンスを改善できる可能性があります。簡単に説明すると、クライアントがリクエストを送信するのを待つのではなく、クライアントがすぐにリクエストするだろうと予測したリソースをサーバーが先取りしてプッシュするのです。
+[HTTP/2](./http)には「サーバープッシュ」と呼ばれる機能があり、製品のラウンドトリップタイム([RTTs](https://developer.mozilla.org/ja/docs/Glossary/Round_Trip_Time_(RTT)))やサーバーの処理が長い場合に、ページのパフォーマンスを改善できる可能性があります。簡単に説明すると、クライアントがリクエストを送信するのを待つのではなく、クライアントがすぐにリクエストするだろうと予測したリソースをサーバーが先取りしてプッシュするのです。
 
 {{ figure_markup(
   caption="`preload`/`nopush`を使用したHTTP/2 Pushページの割合です。",
