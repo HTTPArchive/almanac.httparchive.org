@@ -71,7 +71,7 @@ featured_stat_label_3: FLoCコホートからのオプトアウトを行う人�
 全体では、モバイルサイトの82.08%、デスクトップサイトの83.33%が少なくとも1つのトラッカーを含んでおり、通常はサイト分析または広告目的のために利用されています。
 
 {{ figure_markup(
-  image="number_of_websites_with_nb_trackers.png",
+  image="nb_websites_with_nb_trackers.png",
   caption="ウェブサイトごとのトラッカー数。",
   description="デスクトップサイトの15.62％とモバイルサイトの16.31％から始まり、1つのトラッカーを持ち、5％でそれぞれ9.30％と8.64％、15のトラッカーで0.38％と0.41％を超えて減少し、その後ロングテールは25トラッカーで0.12％と0.15％でカットオフしました。 モバイルとデスクトップは、全体を通してほぼ同じ数値を示しています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=268105548&format=interactive",
