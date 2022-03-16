@@ -39,7 +39,7 @@
     "jsdom": "19.0.0",
     "node-fetch": "3.2.3",
     "node-watch": "0.7.3",
-    "prettier": "2.5.1",
+    "prettier": "2.6.0",
     "puppeteer": "13.5.1",
     "rainbow-code": "2.1.7",
     "recursive-readdir": "2.2.2",
