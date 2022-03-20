@@ -59,7 +59,7 @@ We do see a continuous improvement in sites using HTTPS (approximately 7-8% incr
 
 ### Protocol versions
 
-_Transport Layer Security_ (TLS)) is the protocol that helps make HTTP requests secure and private. With time, new vulnerabilities are discovered and fixed in TLS. Hence, it's not just important to serve a website over HTTPS but also to ensure that modern, up-to-date TLS configuration is being used to avoid such vulnerabilities.
+_Transport Layer Security_ (TLS) is the protocol that helps make HTTP requests secure and private. With time, new vulnerabilities are discovered and fixed in TLS. Hence, it's not just important to serve a website over HTTPS but also to ensure that modern, up-to-date TLS configuration is being used to avoid such vulnerabilities.
 
 As part of this effort to improve security and reliability by adopting modern versions, TLS 1.0 and 1.1 have been <a hreflang="en" href="https://datatracker.ietf.org/doc/rfc8996/">deprecated by the Internet Engineering Task Force (IETF)</a> as of March 25, 2021. All upstream browsers have also either completely removed support or deprecated TLS 1.0 and 1.1. For example, Firefox has deprecated TLS 1.0 and 1.1 but has <a hreflang="en" href="https://www.ghacks.net/2020/03/21/mozilla-re-enables-tls-1-0-and-1-1-because-of-coronavirus-and-google/">not completely removed it</a> because during the pandemic, users might need to access government websites that often still run on TLS 1.0. The user may still decide to change `security.tls.version.min` in browser config to decide the lowest TLS version they want the browser to allow.
 
