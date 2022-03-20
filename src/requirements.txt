@@ -1,7 +1,7 @@
 flask==2.0.3
-flask-talisman==0.8.1
+flask-talisman==1.0.0
 gunicorn==20.1.0
-pytest==7.1.0
+pytest==7.1.1
 pytest-watch==4.2.0
 pytest-cov==3.0.0
-sqlfluff==0.11.0
+sqlfluff==0.11.1
