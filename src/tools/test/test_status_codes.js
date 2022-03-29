@@ -30,8 +30,6 @@ const test_status_code = async (page, status, location) => {
 
   if (location == undefined) {
     location = null;
-  } else {
-    location = base_url + location;
   }
 
   try {
@@ -53,7 +51,7 @@ const test_status_code = async (page, status, location) => {
         await fs.outputFile(output_dir + page, body, 'utf8');
       }
     } else {
-      console.error('Failed - expected:', status, 'got:', response.status, 'for page:', page, 'location:', location);
+      console.error('Failed - expected:', status, 'got:', response.status, 'for page:', page, 'location:', location, 'reponses location:', response.headers.get('location'));
       failures++;
     }
 
@@ -140,7 +138,7 @@ const test_status_codes = async () => {
   // Test Redirects
   await test_status_code('/', 302, `/${default_language}/${default_year}/`);
   await test_no_year_redirects();
-  await test_status_code('/zz', 308, `/zz/`);
+  await test_status_code('/zz', 308, `${base_url}/zz/`); //308 is absolute URL
   await test_status_code('/zh/', 302, `/zh-CN/`);
   await test_status_code('/zh-HANT/', 302, `/zh-TW/`);
   await test_status_code('/zh-CHT/', 302, `/zh-TW/`);
@@ -154,7 +152,7 @@ const test_status_codes = async () => {
   await test_status_code('/zz/2018/', 404);
   await test_status_code('/en/2018/', 404);
   await test_status_code('/base/', 404);
-  await test_status_code('/base/methodology', 308, `/base/methodology/`);
+  await test_status_code('/base/methodology', 308, `${base_url}/base/methodology/`); //308 is absolute URL
   await test_status_code('/base/methodology/', 404);
   await test_status_code('/base/2019/methodology/', 404);
 

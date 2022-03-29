@@ -37,7 +37,12 @@ def validate(func):
         if 'lang' in accepted_args:
             kwargs.update({'lang': lang})
             if lang != lang_arg and lang_arg is not None:
-                return redirect('%s' % request.full_path.replace(lang_arg, lang, 1), code=302)
+                full_path = request.full_path.replace(lang_arg, lang, 1)
+                # If the full_path has an empty query string then remove it
+                # as not needed and bit pointless and breaks tests
+                if full_path[-1] == "?":
+                    full_path = full_path[:-1]
+                return redirect('%s' % full_path, code=302)
 
         if 'year' in accepted_args:
             kwargs.update({'year': year})
