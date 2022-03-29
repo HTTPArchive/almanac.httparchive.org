@@ -127,9 +127,9 @@ const test_status_codes = async () => {
   await get_config();
 
   // Test success pages
-  //await test_sitemap_pages();
+  await test_sitemap_pages();
   await test_rss();
-  //await test_ebooks();
+  await test_ebooks();
   await test_search();
   await test_status_code('/sitemap.xml', 200);
   await test_status_code('/robots.txt', 200);
