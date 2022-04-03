@@ -106,7 +106,7 @@ CrUXのデータセットは、ログインしており、同期が有効で、_
 * FirefoxやSafariなど、他の主要なブラウザは欠落している
 * iOSユーザーからのデータはまったくありません（ChromeはiOSデバイスの他のブラウザと同様にiOSでWebKitを使用します）
 
-幸いなことに、他にもいくつかの資料があります。Paul Calvanoは、2021年7月の <a hreflang="en" href="https://www.akamai.com/products/mpulse-real-user-monitoring">Akamai mPulse</a> リアルユーザー モニタリング データについて、いくつかの分析を実施しました。また、モバイル端末からのトラフィックは59.4%で、モバイル端末とデスクトップ端末の比率はやや拮抗していることがわかりました。mPulseのデータは1時間ごとに集計されているため、いくつかの興味深い傾向を見ることができます。
+幸いなことに、他にもいくつかの資料があります。<a href="./contributors#paulcalvano">Paul Calvano</a>は、2021年7月の <a hreflang="en" href="https://www.akamai.com/products/mpulse-real-user-monitoring">Akamai mPulse</a> リアルユーザー モニタリング データについて、いくつかの分析を実施しました。また、モバイル端末からのトラフィックは59.4%で、モバイル端末とデスクトップ端末の比率はやや拮抗していることがわかりました。mPulseのデータは1時間ごとに集計されているため、いくつかの興味深い傾向を見ることができます。
 
 ##### すべての日々は平等ではない
 
