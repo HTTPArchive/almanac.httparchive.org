@@ -106,7 +106,7 @@ A limitation of the CrUX dataset is that it can only collect data from Chrome us
 * Other major browsers, like Firefox and Safari are missing
 * There is no data from iOS users at all (Chrome uses WebKit on iOS, like all other browsers on iOS devices)
 
-Fortunately, there are a few other sources. Paul Calvano ran some analysis on the <a hreflang="en" href="https://www.akamai.com/products/mpulse-real-user-monitoring">Akamai mPulse</a> real user monitoring data for July 2021. It found a slightly more even match between Mobile and Desktop traffic, at 59.4% being from mobile devices. The mPulse data is aggregated hourly, so it reveals some interesting trends
+Fortunately, there are a few other sources. <a href="./contributors#paulcalvano">Paul Calvano</a> ran some analysis on the <a hreflang="en" href="https://www.akamai.com/products/mpulse-real-user-monitoring">Akamai mPulse</a> real user monitoring data for July 2021. It found a slightly more even match between Mobile and Desktop traffic, at 59.4% being from mobile devices. The mPulse data is aggregated hourly, so it reveals some interesting trends
 
 ##### Not all days are equal
 
@@ -976,7 +976,7 @@ A good FID score is 100 ms or under, a poor FID score is over 300 ms.
 
 Encouragingly, 90% of mobile page loads in the CrUX dataset had a good FID score, up from 80% from 2020.
 
-Efforts are being made to better capture responsiveness, with the Chrome Speed Metrics team <a hreflang="en" href="https://web.dev/responsiveness/">sharing some plans and inviting feedback]</a> on a new responsiveness metric.
+Efforts are being made to better capture responsiveness, with the Chrome Speed Metrics team <a hreflang="en" href="https://web.dev/responsiveness/">sharing some plans and inviting feedback</a> on a new responsiveness metric.
 
 If you are looking to learn more about Core Web Vitals in general, the [Performance](./performance) chapter has plenty of details about the Core Web Vitals.
 
