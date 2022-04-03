@@ -976,7 +976,7 @@ A good FID score is 100 ms or under, a poor FID score is over 300 ms.
 
 Encouragingly, 90% of mobile page loads in the CrUX dataset had a good FID score, up from 80% from 2020.
 
-Efforts are being made to better capture responsiveness, with the Chrome Speed Metrics team <a hreflang="en" href="https://web.dev/responsiveness/">sharing some plans and inviting feedback]</a> on a new responsiveness metric.
+Efforts are being made to better capture responsiveness, with the Chrome Speed Metrics team <a hreflang="en" href="https://web.dev/responsiveness/">sharing some plans and inviting feedback</a> on a new responsiveness metric.
 
 If you are looking to learn more about Core Web Vitals in general, the [Performance](./performance) chapter has plenty of details about the Core Web Vitals.
 
