@@ -23,9 +23,16 @@ on:
     - cron: '30 1 * * 0'
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   CodeQL-Build:
     # CodeQL runs on ubuntu-20.04, windows-latest, and macos-latest
+    permissions:
+      actions: read  # for github/codeql-action/init to get workflow details
+      contents: read  # for actions/checkout to fetch code
+      security-events: write  # for github/codeql-action/analyze to upload SARIF results
     runs-on: ubuntu-20.04
     strategy:
       matrix:

@@ -13,8 +13,14 @@ on:
   push:
     branches:
       - main
+permissions:
+  contents: read
+
 jobs:
   lint:
+    permissions:
+      contents: read  # for actions/checkout to fetch code
+      statuses: write  # for github/super-linter to mark status of each linter run
     name: Lint Code Base
     runs-on: ubuntu-20.04
     steps:

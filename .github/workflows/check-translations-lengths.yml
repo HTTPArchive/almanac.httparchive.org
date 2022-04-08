@@ -24,6 +24,9 @@ on:
       - '**.html'
       - '**.md'
 
+permissions:
+  contents: read
+
 jobs:
   check_lengths:
     name: Check Lengths

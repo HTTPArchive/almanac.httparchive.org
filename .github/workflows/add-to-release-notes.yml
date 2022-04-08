@@ -10,8 +10,14 @@ on:
   push:
     branches:
       - main
+permissions:
+  contents: read
+
 jobs:
   release-notes:
+    permissions:
+      contents: write  # for release-drafter/release-drafter to create a github release
+      pull-requests: write  # for release-drafter/release-drafter to add label to PR
     runs-on: ubuntu-20.04
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     steps:
