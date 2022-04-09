@@ -36,7 +36,7 @@ jobs:
       with:
         node-version: '15'
     - name: Set up Python 3.8
-      uses: actions/setup-python@v3.1.0
+      uses: actions/setup-python@v3.1.1
       with:
         python-version: '3.8'
     - name: Install Asian Fonts
