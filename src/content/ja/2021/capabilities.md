@@ -8,7 +8,7 @@ analysts: [tomayac]
 editors: [tunetheweb]
 translators: [ksakae1216]
 results: https://docs.google.com/spreadsheets/d/1b4moteB9EiLYkH1Ln9qfi1tnU-E4N2UQ87uayWytDKw/
-christianliebel_bio: Christian Liebel は、<a hreflang="en" href="https://thinktecture.com">Thinktecture</a> のコンサルタントで、さまざまなビジネス分野のクライアントが優れた Web アプリケーションを実装できるように支援しています。Microsoft MVP for Developer Technologies、Google GDE for Web/Capabilities and Angularを取得しており、W3C Web Applications Working Groupに参加しています。
+christianliebel_bio: Christian Liebel は、<a hreflang="en" href="https://thinktecture.com">Thinktecture</a> のコンサルタントで、さまざまなビジネス分野のクライアントが優れた Web アプリケーションを実装できるように支援しています。Microsoft MVPのデベロッパー技術部門、Google GDEのWeb/ケイパビリティとAngularが取得しており、W3C Webアプリケーションワーキンググループに参加しています。
 featured_quote: ケイパビリティは、Webアプリケーションの全く新しいユースケースを解放する新しいWebプラットフォームAPIです。
 featured_stat_1: 9%
 featured_stat_label_1: _WebシェアAPI_を使用したデスクトップWebサイト
@@ -422,7 +422,7 @@ width=1050,
 height=442
 ) }}
 
-1. 1位は<a hreflang="en" href=<a hreflang="en" href="https://whatwebcando.today/">whatwebcando.today</a> で、28の機能を使用しています。HTML5のデバイス統合APIを、各機能のライブデモを提供することで、紹介しています。当然ながら、使用されているAPIの数は非常に多い。結果セットでは、<a hreflang="en" href="https://whatpwacando.today/">whatpwacando.today</a> という同様のサイトがPWA機能を紹介し、8つのAPIを使用していることがわかります。
+1. 1位は<a hreflang="en" href="https://whatwebcando.today/">whatwebcando.today</a> で、28の機能を使用しています。HTML5のデバイス統合APIを、各機能のライブデモを提供することで、紹介しています。当然ながら、使用されているAPIの数は非常に多い。結果セットでは、<a hreflang="en" href="https://whatpwacando.today/">whatpwacando.today</a> という同様のサイトがPWA機能を紹介し、8つのAPIを使用していることがわかります。
 1. 次点は、スウェーデンの警察告知を表示する<a hreflang="en" href="https://polisnotis.se/">PolisNotis</a> PWAです。PWA関連のリンクをクリックすると必ず新しいウィンドウが開くように定義する宣言型リンクキャプチャAPIなど、10個のAPIを使用しています。WebシェアAPIはソースコードで使用されていますが、共有機能はUIに公開されていません。また、Badging APIを利用して、新しいお知らせがあった場合にアプリアイコンを通じてユーザーに注意を促しています。
 1. 僅差の3位は、9つのAPIを使用するウェブサイト<a hreflang="en" href="https://system-scanner.net/">システムスキャナー</a>です。汎用センサーAPIで提供されるセンサー情報を含む、ブラウザが公開するシステム情報の概要を表示します。
 1. 8つのサイトが8つのフグAPIを使用しています。その1つが、前述の<a hreflang="en" href="https://excalidraw.com/">Excalidraw</a>で、手書き風の図面を作成するためのオンラインドローイングツールです。従来の生産性アプリとして、新機能の恩恵を受けています。
