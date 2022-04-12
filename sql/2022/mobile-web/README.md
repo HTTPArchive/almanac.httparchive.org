@@ -11,9 +11,9 @@
 
 ## Resources
 
-[📄 Google Docs][~google-doc] for outlining and drafting content
-[📊 Google Sheets][~google-sheets] for saving the results of queries
-[📝 Markdown file][~chapter-markdown] for publishing content and managing public metadata
+- [📄 Planning doc][~google-doc]
+- [📊 Results sheet][~google-sheets]
+- [📝 Markdown file][~chapter-markdown]
 
 [~google-doc]: https://docs.google.com/document/d/1CbfJi1AvEJp3N8h_oL6aUJfSroQm0WbzGFIWcRz1dQA/edit?usp=sharing
 [~google-sheets]: https://docs.google.com/spreadsheets/d/1GB39gbyOilTSvgJHVdY8zwxwaFdsUB5iaD29cMwkdDY/edit?usp=sharing
