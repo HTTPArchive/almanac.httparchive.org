@@ -43,7 +43,7 @@ JavaScriptを使ってメディアを埋め込むアプローチは無数にあ�
 
 ```html
 <img srcset="images/example_3x.jpg 3x, images/example_2x.jpg 2x"
-     src="images/example.jpg" alt="..." />
+      src="images/example.jpg" alt="..." />
 ```
 
 全ページの約26.5%が`srcset`を含むようになりました。
@@ -79,15 +79,15 @@ JavaScriptを使ってメディアを埋め込むアプローチは無数にあ�
 
 ```html
 <img srcset="images/example_3x.jpg 3x, images/example_2x.jpg 2x"
-     src="images/example.jpg" alt="..." />
+      src="images/example.jpg" alt="..." />
 ```
 
 `w`記述子は、候補者のピクセル幅を記述するもので、適切な画像を選択するために使用される`sizes`属性と一緒になっています。
 
 ```html
 <img srcset="images/example_small.jpg 600w, images/example_medium.jpg 1400w, images/example_large.jpg 2400w"
-     sizes="100vw"
-     src="images/example_fallback.jpg" alt="..." />
+      sizes="100vw"
+      src="images/example_fallback.jpg" alt="..." />
 ```
 
 どちらの方法でも、ユーザーエージェントは、最適な画像候補を評価する際に、現在のデバイスのピクセル比を数学的に考慮できます。
@@ -114,8 +114,8 @@ JavaScriptを使ってメディアを埋め込むアプローチは無数にあ�
 
 ```html
 <img sizes="(min-width: 640px) 50vw, 100vw"
-     srcset="images/example_small.jpg 600w, images/example_medium.jpg 1400w, images/example_large.jpg 2400w"
-     src="images/example_fallback.jpg" alt="..." />
+      srcset="images/example_small.jpg 600w, images/example_medium.jpg 1400w, images/example_large.jpg 2400w"
+      src="images/example_fallback.jpg" alt="..." />
 ```
 
 {{ figure_markup(
