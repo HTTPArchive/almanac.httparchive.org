@@ -866,9 +866,9 @@ Googleは2021年になってもトップページに`center`要素を使用し�
 <table>
   <thead>
     <tr>
-     <th>リンク</th>
-     <th>デスクトップ</th>
-     <th>モバイル</th>
+      <th>リンク</th>
+      <th>デスクトップ</th>
+      <th>モバイル</th>
     </tr>
   </thead>
   <tbody>

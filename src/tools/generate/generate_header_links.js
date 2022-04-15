@@ -6,4 +6,3 @@ const generate_header_links = (html) => {
 module.exports = {
   generate_header_links
 };
-  

@@ -412,7 +412,7 @@ Based on that, we measured sites using any type of Workbox features and found th
   classes="big-number",
   sheets_gid="2116306680",
   sql_file="workbox_usage.sql"
- )
+  )
 }}
 
 ### Workbox versions

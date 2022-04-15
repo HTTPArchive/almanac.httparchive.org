@@ -120,36 +120,36 @@ Below is a table showing the most common `Cache-Control` directives:
 
 <table>
   <tr>
-   <th>Directive</th>
-   <th>Description</th>
+    <th>Directive</th>
+    <th>Description</th>
   </tr>
   <tr>
-   <td><code class="no-wrap">max-age</code></td>
-   <td>Indicates the number of seconds that a resource can be cached for relative to the current time. For example, <code>max-age=86400</code>.</td>
+    <td><code class="no-wrap">max-age</code></td>
+    <td>Indicates the number of seconds that a resource can be cached for relative to the current time. For example, <code>max-age=86400</code>.</td>
   </tr>
   <tr>
-   <td><code class="no-wrap">public</code></td>
-   <td>Indicates that any cache can store the response, including the browser and the CDN. This is assumed by default.</td>
+    <td><code class="no-wrap">public</code></td>
+    <td>Indicates that any cache can store the response, including the browser and the CDN. This is assumed by default.</td>
   </tr>
   <tr>
-   <td><code class="no-wrap">no-cache</code></td>
-   <td>A cached resource must be revalidated before its use, via a conditional request, even if it is not marked as stale.</td>
+    <td><code class="no-wrap">no-cache</code></td>
+    <td>A cached resource must be revalidated before its use, via a conditional request, even if it is not marked as stale.</td>
   </tr>
   <tr>
-   <td><code class="no-wrap">must-revalidate</code></td>
-   <td>A stale cached entry must be revalidated before its use, via a conditional request.</td>
+    <td><code class="no-wrap">must-revalidate</code></td>
+    <td>A stale cached entry must be revalidated before its use, via a conditional request.</td>
   </tr>
   <tr>
-   <td><code class="no-wrap">no-store</code></td>
-   <td>Indicates that the response must not be cached.</td>
+    <td><code class="no-wrap">no-store</code></td>
+    <td>Indicates that the response must not be cached.</td>
   </tr>
   <tr>
-   <td><code class="no-wrap">private</code></td>
-   <td>The response is intended for a specific user and should not be stored by shared caches such as CDNs.</td>
+    <td><code class="no-wrap">private</code></td>
+    <td>The response is intended for a specific user and should not be stored by shared caches such as CDNs.</td>
   </tr>
   <tr>
-   <td><code class="no-wrap">immutable</code></td>
-   <td>Indicates that the cached entry will never change during its TTL, and that revalidation is not necessary.</td>
+    <td><code class="no-wrap">immutable</code></td>
+    <td>Indicates that the cached entry will never change during its TTL, and that revalidation is not necessary.</td>
   </tr>
 </table>
 
@@ -299,52 +299,52 @@ When we compare the mobile data between 2020 and 2021, we notice a 5.1% increase
     </thead>
     <tbody>
       <tr>
-        <td>Text</td>
+         <td>Text</td>
         <td class="numeric">0.2</td>
         <td class="numeric">0.2</td>
       </tr>
       <tr>
-        <td>XML</td>
+         <td>XML</td>
         <td class="numeric">1</td>
         <td class="numeric">1</td>
       </tr>
       <tr>
-        <td>Other</td>
+         <td>Other</td>
         <td class="numeric">1</td>
         <td class="numeric">1</td>
       </tr>
       <tr>
-        <td>Video</td>
+         <td>Video</td>
         <td class="numeric">4</td>
         <td class="numeric">8</td>
       </tr>
       <tr>
-        <td>HTML</td>
+         <td>HTML</td>
         <td class="numeric">3</td>
         <td class="numeric">14</td>
       </tr>
       <tr>
-        <td>Audio</td>
+         <td>Audio</td>
         <td class="numeric">0.2</td>
         <td class="numeric">30</td>
       </tr>
       <tr>
-        <td>CSS</td>
+         <td>CSS</td>
         <td class="numeric">30</td>
         <td class="numeric">30</td>
       </tr>
       <tr>
-        <td>Image</td>
+         <td>Image</td>
         <td class="numeric">30</td>
         <td class="numeric">30</td>
       </tr>
       <tr>
-        <td>Script</td>
+         <td>Script</td>
         <td class="numeric">30</td>
         <td class="numeric">30</td>
       </tr>
       <tr>
-        <td>Font</td>
+         <td>Font</td>
         <td class="numeric">365</td>
         <td class="numeric">365</td>
       </tr>
@@ -425,21 +425,21 @@ Developers are getting better at setting the cache duration more accurately to t
   <table>
     <thead>
       <tr>
-        <th>Client</th>
-        <th>First-party</th>
-        <th>Third-party</th>
-        <th>Overall</th>
+         <th>Client</th>
+         <th>First-party</th>
+         <th>Third-party</th>
+         <th>Overall</th>
       </tr>
     <thead>
     <tbody>
       <tr>
-        <td>Desktop</td>
+         <td>Desktop</td>
         <td class="numeric">59.5%</td>
         <td class="numeric">46.2%</td>
         <td class="numeric">54.3%</td>
       </tr>
       <tr>
-        <td>Mobile</td>
+         <td>Mobile</td>
         <td class="numeric">60.1%</td>
         <td class="numeric">44.7%</td>
         <td class="numeric">54.3%</td>

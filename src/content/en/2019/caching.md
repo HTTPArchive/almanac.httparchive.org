@@ -282,56 +282,56 @@ The HTTP/1.1 <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-
 <figure>
   <table>
     <tr>
-     <th>Directive</th>
-     <th>Description</th>
+      <th>Directive</th>
+      <th>Description</th>
     </tr>
     <tr>
-     <td>max-age</td>
-     <td>Indicates the number of seconds that a resource can be cached for.</td>
+      <td>max-age</td>
+      <td>Indicates the number of seconds that a resource can be cached for.</td>
     </tr>
     <tr>
-     <td>public</td>
-     <td>Any cache may store the response.</td>
+      <td>public</td>
+      <td>Any cache may store the response.</td>
     </tr>
     <tr>
-     <td>no-cache</td>
-     <td>A cached entry must be revalidated prior to its use.</td>
+      <td>no-cache</td>
+      <td>A cached entry must be revalidated prior to its use.</td>
     </tr>
     <tr>
-     <td>must-revalidate</td>
-     <td>A stale cached entry must be revalidated prior to its use.</td>
+      <td>must-revalidate</td>
+      <td>A stale cached entry must be revalidated prior to its use.</td>
     </tr>
     <tr>
-     <td>no-store</td>
-     <td>Indicates that a response is not cacheable.</td>
+      <td>no-store</td>
+      <td>Indicates that a response is not cacheable.</td>
     </tr>
     <tr>
-     <td>private</td>
-     <td>The response is intended for a specific user and should not be stored by shared caches.</td>
+      <td>private</td>
+      <td>The response is intended for a specific user and should not be stored by shared caches.</td>
     </tr>
     <tr>
-     <td>no-transform</td>
-     <td>No transformations or conversions should be made to this resource.</td>
+      <td>no-transform</td>
+      <td>No transformations or conversions should be made to this resource.</td>
     </tr>
     <tr>
-     <td>proxy-revalidate</td>
-     <td>Same as must-revalidate but applies to shared caches.</td>
+      <td>proxy-revalidate</td>
+      <td>Same as must-revalidate but applies to shared caches.</td>
     </tr>
     <tr>
-     <td>s-maxage</td>
-     <td>Same as max age but applies to shared caches only.</td>
+      <td>s-maxage</td>
+      <td>Same as max age but applies to shared caches only.</td>
     </tr>
     <tr>
-     <td>immutable</td>
-     <td>Indicates that the cached entry will never change, and that revalidation is not necessary.</td>
+      <td>immutable</td>
+      <td>Indicates that the cached entry will never change, and that revalidation is not necessary.</td>
     </tr>
     <tr>
-     <td>stale-while-revalidate</td>
-     <td>Indicates that the client is willing to accept a stale response while asynchronously checking in the background for a fresh one.</td>
+      <td>stale-while-revalidate</td>
+      <td>Indicates that the client is willing to accept a stale response while asynchronously checking in the background for a fresh one.</td>
     </tr>
     <tr>
-     <td>stale-if-error</td>
-     <td>Indicates that the client is willing to accept a stale response if the check for a fresh one fails.</td>
+      <td>stale-if-error</td>
+      <td>Indicates that the client is willing to accept a stale response if the check for a fresh one fails.</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="<code>Cache-Control</code> directives.") }}</figcaption>
@@ -417,22 +417,22 @@ When we break this out by first vs third-party, we can also see that 70% of firs
 <figure>
   <table>
     <tr>
-     <th>Client</th>
-     <th>1st Party</th>
-     <th>3rd Party</th>
-     <th>Overall</th>
+      <th>Client</th>
+      <th>1st Party</th>
+      <th>3rd Party</th>
+      <th>Overall</th>
     </tr>
     <tr>
-     <td>Desktop</td>
-     <td class="numeric">70.7%</td>
-     <td class="numeric">47.9%</td>
-     <td class="numeric">59.2%</td>
+      <td>Desktop</td>
+      <td class="numeric">70.7%</td>
+      <td class="numeric">47.9%</td>
+      <td class="numeric">59.2%</td>
     </tr>
     <tr>
-     <td>Mobile</td>
-     <td class="numeric">71.4%</td>
-     <td class="numeric">46.8%</td>
-     <td class="numeric">59.6%</td>
+      <td>Mobile</td>
+      <td class="numeric">71.4%</td>
+      <td class="numeric">46.8%</td>
+      <td class="numeric">59.6%</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="Percent of requests with short TTLs.") }}</figcaption>

@@ -168,7 +168,7 @@ For a deeper analysis on compression, refer to the ["Compression"](./compression
 Open source code, or code with a permissive license that can be accessed, viewed and modified by anyone. From tiny libraries to entire browsers, such as <a hreflang="en" href="https://www.chromium.org/Home">Chromium</a> and <a hreflang="en" href="https://www.openhub.net/p/firefox">Firefox</a>, open source code plays a crucial role in the world of web development. In the context of JavaScript, developers rely on open source tooling to include all types of functionality into their web page. Regardless of whether a developer decides to use a small utility library or a massive framework that dictates the architecture of their entire application, relying on open-source packages can make feature development easier and faster. So which JavaScript open-source libraries are used the most?
 
 <figure>
-   <table>
+    <table>
       <thead>
         <tr>
           <th>Library</th>
@@ -284,7 +284,7 @@ Open source code, or code with a permissive license that can be accessed, viewed
         </tr>
       </tbody>
     </table>
-   <figcaption>{{ figure_link(caption="Top JavaScript libraries on desktop and mobile.") }}</figcaption>
+    <figcaption>{{ figure_link(caption="Top JavaScript libraries on desktop and mobile.") }}</figcaption>
 </figure>
 
 <a hreflang="en" href="https://jquery.com/">jQuery</a>, the most popular JavaScript library ever created, is used in 85.03% of desktop pages and 83.46% of mobile pages. The advent of many Browser APIs and methods, such as [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector), standardized much of the functionality provided by the library into a native form. Although the popularity of jQuery may seem to be declining, why is it still used in the vast majority of the web?

@@ -14,7 +14,7 @@ getCo2Renewable(energy FLOAT64) AS (energy * 0.1008 * 33.4 + energy * 0.8992 * 4
 CREATE TEMP FUNCTION
 CO2(url STRING, bytes INT64) AS (
   IF(GREEN(url),
-           getCo2Renewable(energyConsumption(adjustDataTransfer(bytes))),
+    getCo2Renewable(energyConsumption(adjustDataTransfer(bytes))),
     getCo2Grid(energyConsumption(adjustDataTransfer(bytes)))));
 
 SELECT

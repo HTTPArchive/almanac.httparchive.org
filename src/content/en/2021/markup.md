@@ -866,9 +866,9 @@ When we compared the data to [last year](../2020/markup#button-and-input-types),
 <table>
   <thead>
     <tr>
-     <th>Link</th>
-     <th>Desktop</th>
-     <th>Mobile</th>
+      <th>Link</th>
+      <th>Desktop</th>
+      <th>Mobile</th>
     </tr>
   </thead>
   <tbody>

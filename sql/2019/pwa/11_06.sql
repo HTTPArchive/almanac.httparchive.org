@@ -14,7 +14,7 @@ USING (client),
 WHERE
   date = '2019-07-01' AND
   (firstHtml OR
-   type = 'script')
+    type = 'script')
 GROUP BY
   client,
   total

@@ -355,9 +355,9 @@ section.chapter {
     font-size: 10px;
   }
 
-  /* We have some big tables that can't be force to break
-   * So we cheat and make them small enough to fit on a page
-   */
+  /** We have some big tables that can't be force to break
+    * So we cheat and make them small enough to fit on a page
+    */
   figure table td,
   figure table td li,
   figure table td p {

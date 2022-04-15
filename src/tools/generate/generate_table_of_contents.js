@@ -37,7 +37,7 @@ const nest_headings = (source, current_level = 1) => {
       /* The heading needs to be added to the next level.
         - Put the element back on the source array.
         - Get the last item on the list, that becomes the parent.
-        - Use the rest of the source list to recurse and generate the 
+        - Use the rest of the source list to recurse and generate the
           rest of the children.
         - Set the children property of the parent heading, including
             * Previous children

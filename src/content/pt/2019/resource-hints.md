@@ -70,37 +70,37 @@ Como o uso de dicas de recursos em cabeçalhos HTTP é muito baixo, o restante d
 <figure>
   <table>
     <tr>
-     <th>Dica de recurso</th>
-     <th>Uso (porcentagem de sites)</th>
+      <th>Dica de recurso</th>
+      <th>Uso (porcentagem de sites)</th>
     </tr>
     <tr>
-     <td><code>dns-prefetch</code>
+      <td><code>dns-prefetch</code>
      </td>
-     <td>29%
-     </td>
-    </tr>
-    <tr>
-     <td><code>preload</code>
-     </td>
-     <td>16%
+      <td>29%
      </td>
     </tr>
     <tr>
-     <td><code>preconnect</code>
+      <td><code>preload</code>
      </td>
-     <td>4%
-     </td>
-    </tr>
-    <tr>
-     <td><code>prefetch</code>
-     </td>
-     <td>3%
+      <td>16%
      </td>
     </tr>
     <tr>
-     <td><code>prerender</code> (descontinuada)
+      <td><code>preconnect</code>
      </td>
-     <td>0.13%
+      <td>4%
+     </td>
+    </tr>
+    <tr>
+      <td><code>prefetch</code>
+     </td>
+      <td>3%
+     </td>
+    </tr>
+    <tr>
+      <td><code>prerender</code> (descontinuada)
+     </td>
+      <td>0.13%
      </td>
     </tr>
   </table>
@@ -116,48 +116,48 @@ Dito isso, se um site não precisa ser compatível com o IE11 e versões anterio
 <figure>
   <table>
     <tr>
-     <th>Dica de recurso</th>
-     <th>Dicas de recursos por página:<br>mediana</th>
-     <th>Dicas de recursos por página:<br>90th percentil</th>
+      <th>Dica de recurso</th>
+      <th>Dicas de recursos por página:<br>mediana</th>
+      <th>Dicas de recursos por página:<br>90th percentil</th>
     </tr>
     <tr>
-     <td><code>dns-prefetch</code>
+      <td><code>dns-prefetch</code>
      </td>
-     <td>2
+      <td>2
      </td>
-     <td>8
-     </td>
-    </tr>
-    <tr>
-     <td><code>preload</code>
-     </td>
-     <td>2
-     </td>
-     <td>4
+      <td>8
      </td>
     </tr>
     <tr>
-     <td><code>preconnect</code>
+      <td><code>preload</code>
      </td>
-     <td>2
+      <td>2
      </td>
-     <td>8
-     </td>
-    </tr>
-    <tr>
-     <td><code>prefetch</code>
-     </td>
-     <td>1
-     </td>
-     <td>3
+      <td>4
      </td>
     </tr>
     <tr>
-     <td><code>prerender</code> (descontinuada)
+      <td><code>preconnect</code>
      </td>
-     <td>1
+      <td>2
      </td>
-     <td>1
+      <td>8
+     </td>
+    </tr>
+    <tr>
+      <td><code>prefetch</code>
+     </td>
+      <td>1
+     </td>
+      <td>3
+     </td>
+    </tr>
+    <tr>
+      <td><code>prerender</code> (descontinuada)
+     </td>
+      <td>1
+     </td>
+      <td>1
      </td>
     </tr>
   </table>
@@ -177,32 +177,32 @@ Para tipos de recursos mais novos (por exemplo, fontes, solicitações `fetch()`
 <figure>
   <table>
     <tr>
-     <th><code>crossorigin</code> valor</th>
-     <th>Uso</th>
-     <th>Explicação</th>
+      <th><code>crossorigin</code> valor</th>
+      <th>Uso</th>
+      <th>Explicação</th>
     </tr>
     <tr>
-     <td>Não configurado
+      <td>Não configurado
      </td>
-     <td>92%
+      <td>92%
      </td>
-     <td>Se o atributo crossorigin estiver ausente, a solicitação seguirá a política de origem única.
-     </td>
-    </tr>
-    <tr>
-     <td>anônimo (ou equivalente)
-     </td>
-     <td>7%
-     </td>
-     <td>Executa uma solicitação de cross-origin que não inclui credenciais.
+      <td>Se o atributo crossorigin estiver ausente, a solicitação seguirá a política de origem única.
      </td>
     </tr>
     <tr>
-     <td>use-credentials
+      <td>anônimo (ou equivalente)
      </td>
-     <td>0.47%
+      <td>7%
      </td>
-     <td>Executa uma solicitação de cross-origin que inclui credenciais.
+      <td>Executa uma solicitação de cross-origin que não inclui credenciais.
+     </td>
+    </tr>
+    <tr>
+      <td>use-credentials
+     </td>
+      <td>0.47%
+     </td>
+      <td>Executa uma solicitação de cross-origin que inclui credenciais.
      </td>
     </tr>
   </table>

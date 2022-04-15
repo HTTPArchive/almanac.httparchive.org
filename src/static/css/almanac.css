@@ -228,34 +228,34 @@
 /* Browser elements */
 
 /**
- * A word on font-sizing units
- * ---------------------------
- * Font-sizes should in general be sized in rem (1rem usually equals 16px)
- * This allows fonts to be resized in browser, which is better for accessibility
- * (see https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html).
- *
- * We can also use ems, if you wish to nest elements and scale (components), but
- * this gets tricky quite quickly, so for the most part we use rems.
- *
- * We show the px value before, as a fallback for non-rem browsers and to remind
- * us of the calculated size.
- *
- * Margins and paddings should be considered if the need to be relative (em or rem)
- * or happy not to scale with fonts and want set about in px.
- * If scaling, then in general top and bottom should scale with element (em), and
- * left and right with root element (rem) to have consistent alignment (see
- * https://zellwk.com/blog/rem-vs-em/#rems-or-ems%3F for why).
- * So we set margin like this:
- *
- *   h2.header {
- *     font-size: 25px;
- *     font-size: 1.5625rem;
- *     margin: 14px;
- *     margin: 0.56em 0.875rem
- *   }
- *
- * and remember for the non-font elements, ems are relative to current font size (25px in above example), and rems to root (16px)
- */
+  * A word on font-sizing units
+  * ---------------------------
+  * Font-sizes should in general be sized in rem (1rem usually equals 16px)
+  * This allows fonts to be resized in browser, which is better for accessibility
+  * (see https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html).
+  *
+  * We can also use ems, if you wish to nest elements and scale (components), but
+  * this gets tricky quite quickly, so for the most part we use rems.
+  *
+  * We show the px value before, as a fallback for non-rem browsers and to remind
+  * us of the calculated size.
+  *
+  * Margins and paddings should be considered if the need to be relative (em or rem)
+  * or happy not to scale with fonts and want set about in px.
+  * If scaling, then in general top and bottom should scale with element (em), and
+  * left and right with root element (rem) to have consistent alignment (see
+  * https://zellwk.com/blog/rem-vs-em/#rems-or-ems%3F for why).
+  * So we set margin like this:
+  *
+  *   h2.header {
+  *     font-size: 25px;
+  *     font-size: 1.5625rem;
+  *     margin: 14px;
+  *     margin: 0.56em 0.875rem
+  *   }
+  *
+  * and remember for the non-font elements, ems are relative to current font size (25px in above example), and rems to root (16px)
+  */
 
 body {
   font-family: 'Lato', sans-serif;
@@ -1590,9 +1590,9 @@ pre .regexp {
 }
 
 /*
- * Automatically adds language after an anchor if not same language
- *
- * Add for links that are obviously in English
+  * Automatically adds language after an anchor if not same language
+  *
+  * Add for links that are obviously in English
 */
 html:not([lang="en"]) main a[href*="/en-US/"]::after,
 html:not([lang="en"]) main a[href*="/en/"]::after,
@@ -1606,8 +1606,8 @@ html:not([lang="en"]) main a[href^="https://en."]::after {
 }
 
 /*
- * Add links if an explicit `hreflang` attribute exists
- */
+  * Add links if an explicit `hreflang` attribute exists
+  */
 main a[hreflang]::after {
   content: '(' attr(hreflang) ')';
   /* vertical-align: super; */
@@ -1618,9 +1618,9 @@ main a[hreflang]::after {
 }
 
 /*
- * Remove it for English in English pages
- * (allows us to add this to base content to make it easier for translators)
- */
+  * Remove it for English in English pages
+  * (allows us to add this to base content to make it easier for translators)
+  */
 html[lang="en"] main a[hreflang="en"]::after {
   content: initial;
 }

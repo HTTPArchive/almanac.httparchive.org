@@ -16,7 +16,7 @@ JOIN (
   WHERE
     category = 'Ecommerce' AND
     (app != 'Cart Functionality' AND
-     app != 'Google Analytics Enhanced eCommerce')
+      app != 'Google Analytics Enhanced eCommerce')
 )
 USING
   (_TABLE_SUFFIX, url)
@@ -29,7 +29,7 @@ JOIN (
   WHERE
     category = 'Ecommerce' AND
     (app != 'Cart Functionality' AND
-     app != 'Google Analytics Enhanced eCommerce')
+      app != 'Google Analytics Enhanced eCommerce')
   GROUP BY
     _TABLE_SUFFIX
 )

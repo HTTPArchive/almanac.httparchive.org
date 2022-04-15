@@ -5,28 +5,28 @@ LANGUAGE js
 OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
-	function compute(ast) {
-		let ret = {};
+  function compute(ast) {
+    let ret = {};
 
-		walkDeclarations(ast, ({property, value}) => {
-			if (!property.startsWith("--")) { // Custom props are case sensitive
-				property = property.toLowerCase();
-			}
+    walkDeclarations(ast, ({property, value}) => {
+      if (!property.startsWith("--")) { // Custom props are case sensitive
+        property = property.toLowerCase();
+      }
 
-			incrementByKey(ret, property);
-		});
+      incrementByKey(ret, property);
+    });
 
-		return sortObject(ret);
-	}
+    return sortObject(ret);
+  }
 
-	let ast = JSON.parse(css);
-	let props = compute(ast);
-	return Object.entries(props).flatMap(([prop, freq]) => {
-		return Array(freq).fill(prop);
-	});
+  let ast = JSON.parse(css);
+  let props = compute(ast);
+  return Object.entries(props).flatMap(([prop, freq]) => {
+    return Array(freq).fill(prop);
+  });
 }
 catch (e) {
-	return [];
+  return [];
 }
 ''';
 
