@@ -1,18 +1,27 @@
-from server.config import get_config, get_chapters, get_languages, get_live, \
-    SUPPORTED_YEARS, SUPPORTED_CHAPTERS, SUPPORTED_LANGUAGES
+from server.config import (
+    get_config,
+    get_chapters,
+    get_languages,
+    get_live,
+    SUPPORTED_YEARS,
+    SUPPORTED_CHAPTERS,
+    SUPPORTED_LANGUAGES,
+)
 import pytest
 
 
 def test_get_config_year():
-    assert get_config('2020') is not None
-    assert get_config('2019') is not None
-    assert get_config('2018') is None
+    assert get_config("2020") is not None
+    assert get_config("2019") is not None
+    assert get_config("2018") is None
 
 
 def test_static_avatar():
     # For this test we use an existing contributor with no avatar as they should be assigned one on initial load
-    static_url = get_config('2020').get('contributors').get('michelleoconnor').get('avatar_url')
-    assert static_url is not None and static_url.startswith('/static/images/avatars/')
+    static_url = (
+        get_config("2020").get("contributors").get("michelleoconnor").get("avatar_url")
+    )
+    assert static_url is not None and static_url.startswith("/static/images/avatars/")
 
 
 def test_get_config_for_all_supported_years():
@@ -27,11 +36,11 @@ def test_get_chapters_for_all_supported_chapters():
 
 
 def test_get_chapters_good_chapter():
-    assert 'javascript' in get_chapters(get_config('2019'))
+    assert "javascript" in get_chapters(get_config("2019"))
 
 
 def test_get_chapters_bad_chapter():
-    assert 'random' not in get_chapters(get_config('2019'))
+    assert "random" not in get_chapters(get_config("2019"))
 
 
 def test_get_languages_for_all_supported_languages():
@@ -41,9 +50,9 @@ def test_get_languages_for_all_supported_languages():
 
 
 def test_get_languages_good_and_bad():
-    languages = [str(language) for language in get_languages(get_config('2019'))]
-    assert 'English' in languages
-    assert 'random' not in languages
+    languages = [str(language) for language in get_languages(get_config("2019"))]
+    assert "English" in languages
+    assert "random" not in languages
 
 
 def test_get_live_for_all_supported_years():
@@ -52,10 +61,10 @@ def test_get_live_for_all_supported_years():
 
 
 def test_get_live_for_known_years():
-    assert get_live(get_config('2019')) is True
-    assert get_live(get_config('2020')) is True
+    assert get_live(get_config("2019")) is True
+    assert get_live(get_config("2020")) is True
 
 
 def test_get_live_for_bad_year_raises_error():
     with pytest.raises(TypeError):
-        get_live(get_config('2018'))
+        get_live(get_config("2018"))

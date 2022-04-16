@@ -28,7 +28,7 @@ WHERE
   (
     app != 'Cart Functionality' AND
     app != 'Google Analytics Enhanced eCommerce'
-   )
+  )
 GROUP BY
   client,
   app,
