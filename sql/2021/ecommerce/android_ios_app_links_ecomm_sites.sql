@@ -19,8 +19,11 @@ FROM (
     `httparchive.technologies.2021_07_01_*`
   WHERE
     category = 'Ecommerce' AND
-    (app != 'Cart Functionality' AND
-      app != 'Google Analytics Enhanced eCommerce'))
+    (
+      app != 'Cart Functionality' AND
+      app != 'Google Analytics Enhanced eCommerce'
+    )
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -28,7 +31,8 @@ JOIN (
     JSON_VALUE(JSON_EXTRACT_SCALAR(payload, '$._well-known'), '$."/.well-known/assetlinks.json".found') = 'true' AS android_app_links,
     JSON_VALUE(JSON_EXTRACT_SCALAR(payload, '$._well-known'), '$."/.well-known/apple-app-site-association".found') = 'true' AS ios_universal_links
   FROM
-    `httparchive.pages.2021_07_01_*`)
+    `httparchive.pages.2021_07_01_*`
+  )
 USING
   (client, url)
 GROUP BY

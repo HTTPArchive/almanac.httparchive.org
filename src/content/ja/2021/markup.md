@@ -612,8 +612,7 @@ Googleは2021年になってもトップページに`center`要素を使用し�
       <tr>
         <td>`picture`</td>
         <td class="numeric">6.1%</td>
-        <td class="numeric">6.0%
-       </td>
+        <td class="numeric">6.0%</td>
       </tr>
       <tr>
         <td>`object`</td>

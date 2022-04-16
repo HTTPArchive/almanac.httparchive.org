@@ -13,8 +13,10 @@ USING (client),
   UNNEST(REGEXP_EXTRACT_ALL(body, 'beforeinstallprompt'))
 WHERE
   date = '2019-07-01' AND
-  (firstHtml OR
-    type = 'script')
+  (
+    firstHtml OR
+    type = 'script'
+  )
 GROUP BY
   client,
   total

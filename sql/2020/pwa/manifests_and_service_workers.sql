@@ -10,7 +10,8 @@ SELECT
   both / total AS both_pct,
   total
 FROM
-  (SELECT
+  (
+    SELECT
       date,
       client,
       COUNT(DISTINCT m.page) AS manifests,
@@ -28,7 +29,8 @@ FROM
       client
   )
 JOIN
-  (SELECT
+  (
+    SELECT
       date,
       client,
       COUNT(DISTINCT page) AS total

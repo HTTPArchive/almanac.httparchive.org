@@ -425,21 +425,21 @@ Developers are getting better at setting the cache duration more accurately to t
   <table>
     <thead>
       <tr>
-         <th>Client</th>
-         <th>First-party</th>
-         <th>Third-party</th>
-         <th>Overall</th>
+        <th>Client</th>
+        <th>First-party</th>
+        <th>Third-party</th>
+        <th>Overall</th>
       </tr>
     <thead>
     <tbody>
       <tr>
-         <td>Desktop</td>
+        <td>Desktop</td>
         <td class="numeric">59.5%</td>
         <td class="numeric">46.2%</td>
         <td class="numeric">54.3%</td>
       </tr>
       <tr>
-         <td>Mobile</td>
+        <td>Mobile</td>
         <td class="numeric">60.1%</td>
         <td class="numeric">44.7%</td>
         <td class="numeric">54.3%</td>

@@ -49,7 +49,7 @@ const nest_headings = (source, current_level = 1) => {
       parent.children = [...(parent.children || []), ...children];
     } else {
       /* The next item on the source is at a higher level, break out of this
-         level of recursion after putting the element back on the array.
+          level of recursion after putting the element back on the array.
       */
       source.unshift(element);
       return target;

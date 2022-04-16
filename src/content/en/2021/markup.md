@@ -612,8 +612,7 @@ All of them were present last year as well, and can be attributed to popular fra
       <tr>
         <td>`picture`</td>
         <td class="numeric">6.1%</td>
-        <td class="numeric">6.0%
-       </td>
+        <td class="numeric">6.0%</td>
       </tr>
       <tr>
         <td>`object`</td>

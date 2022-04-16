@@ -15,8 +15,10 @@ JOIN (
     `httparchive.technologies.2021_07_01_*`
   WHERE
     category = 'Ecommerce' AND
-    (app != 'Cart Functionality' AND
-      app != 'Google Analytics Enhanced eCommerce')
+    (
+      app != 'Cart Functionality' AND
+      app != 'Google Analytics Enhanced eCommerce'
+    )
 )
 USING
   (_TABLE_SUFFIX, url)
@@ -28,8 +30,10 @@ JOIN (
     `httparchive.technologies.2021_07_01_*`
   WHERE
     category = 'Ecommerce' AND
-    (app != 'Cart Functionality' AND
-      app != 'Google Analytics Enhanced eCommerce')
+    (
+      app != 'Cart Functionality' AND
+      app != 'Google Analytics Enhanced eCommerce'
+    )
   GROUP BY
     _TABLE_SUFFIX
 )

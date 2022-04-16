@@ -13,13 +13,15 @@ SELECT
 FROM
   `httparchive.technologies.*`
 JOIN
-  (SELECT
+  (
+    SELECT
       _TABLE_SUFFIX,
       COUNT(DISTINCT url) AS total
     FROM
       `httparchive.summary_pages.*`
     GROUP BY
-      _TABLE_SUFFIX)
+      _TABLE_SUFFIX
+  )
 USING (_TABLE_SUFFIX)
 WHERE
   category = 'Ecommerce' AND
