@@ -95,8 +95,8 @@ function pithyType( { contentType, url } ) {
   return 'unknown';
   }
 
-	const parsed = JSON.parse( responsiveImagesJsonString );
-	if ( parsed && parsed.map ) {
+  const parsed = JSON.parse( responsiveImagesJsonString );
+  if ( parsed && parsed.map ) {
     const dataRegEx = new RegExp('^data');
     return parsed.map( d => ({
       imgURL: d.url,
@@ -107,7 +107,7 @@ function pithyType( { contentType, url } ) {
       isPixel: d.approximateResourceWidth == 1 && d.approximateResourceHeight == 1,
       isDataURL: dataRegEx.test(d.url),
       resourceFormat: pithyType({ contentType: d.mimeType, url: d.url })
-		}) );
+    }) );
   }
 ''';
 

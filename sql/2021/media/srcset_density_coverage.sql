@@ -10,9 +10,9 @@ RETURNS ARRAY<STRUCT<
     minDensity FLOAT64,
     maxDensity FLOAT64>>
 LANGUAGE js AS '''
-	const parsed = JSON.parse( responsiveImagesJsonString );
-	if ( parsed && parsed.map ) {
-		return parsed.map( d => {
+  const parsed = JSON.parse( responsiveImagesJsonString );
+  if ( parsed && parsed.map ) {
+    return parsed.map( d => {
       const result = {
           hasSrcset: d.hasSrcset,
           srcsetHasXDescriptors: d.srcsetHasXDescriptors,
