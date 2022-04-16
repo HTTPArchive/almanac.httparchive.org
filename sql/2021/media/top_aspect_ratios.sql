@@ -4,14 +4,14 @@ LANGUAGE js AS '''
   const parsed = JSON.parse( responsiveImagesJsonString );
   if ( parsed && parsed.map ) {
     return parsed.map( d => ({
-            imgURL: d.url,
-            approximateResourceWidth: Math.floor( d.approximateResourceWidth || 0 ),
-            approximateResourceHeight: Math.floor( d.approximateResourceHeight || 0 ),
-            aspectRatio: ( d.approximateResourceWidth > 0 && d.approximateResourceHeight > 0 ?
-                           Math.round( ( d.approximateResourceWidth / d.approximateResourceHeight ) * 1000 ) / 1000 :
-                           -1 )
+      imgURL: d.url,
+      approximateResourceWidth: Math.floor( d.approximateResourceWidth || 0 ),
+      approximateResourceHeight: Math.floor( d.approximateResourceHeight || 0 ),
+      aspectRatio: ( d.approximateResourceWidth > 0 && d.approximateResourceHeight > 0 ?
+        Math.round( ( d.approximateResourceWidth / d.approximateResourceHeight ) * 1000 ) / 1000 :
+        -1 )
     }) );
-    }
+  }
 ''';
 
 WITH imgs AS (

@@ -13,25 +13,25 @@ LANGUAGE js AS '''
 	const parsed = JSON.parse( responsiveImagesJsonString );
 	if ( parsed && parsed.map ) {
 		return parsed.map( d => {
-            const result = {
-                hasSrcset: d.hasSrcset,
-                srcsetHasXDescriptors: d.srcsetHasXDescriptors,
-                srcsetHasWDescriptors: d.srcsetHasXDescriptors,
-                srcsetCandidateDensities: [],
-                numberOfSrcsetCandidates: 0,
-                minDensity: d.currentSrcDensity,
-                maxDensity: d.currentSrcDensity
-            };
-            if ( d.srcsetCandidateDensities && d.srcsetCandidateDensities.map ) {
-                const densities = d.srcsetCandidateDensities.map( n => parseFloat( n ) );
-                result.srcsetCandidateDensities = densities;
-                result.numberOfSrcsetCandidates = densities.length;
-                result.minDensity = Math.min( ...densities );
-                result.maxDensity = Math.max( ...densities );
-		    }
-            return result;
-        } );
-    }
+      const result = {
+          hasSrcset: d.hasSrcset,
+          srcsetHasXDescriptors: d.srcsetHasXDescriptors,
+          srcsetHasWDescriptors: d.srcsetHasXDescriptors,
+          srcsetCandidateDensities: [],
+          numberOfSrcsetCandidates: 0,
+          minDensity: d.currentSrcDensity,
+          maxDensity: d.currentSrcDensity
+        };
+      if ( d.srcsetCandidateDensities && d.srcsetCandidateDensities.map ) {
+        const densities = d.srcsetCandidateDensities.map( n => parseFloat( n ) );
+        result.srcsetCandidateDensities = densities;
+        result.numberOfSrcsetCandidates = densities.length;
+        result.minDensity = Math.min( ...densities );
+        result.maxDensity = Math.max( ...densities );
+        }
+      return result;
+    });
+  }
 ''';
 
 WITH imgs AS (
