@@ -14,7 +14,9 @@ JOIN
 USING (_TABLE_SUFFIX, url)
 WHERE
   category = 'Ecommerce' AND
-  (app != 'Cart Functionality' AND
-    app != 'Google Analytics Enhanced eCommerce')
+  (
+    app != 'Cart Functionality' AND
+    app != 'Google Analytics Enhanced eCommerce'
+  )
 GROUP BY
   client
