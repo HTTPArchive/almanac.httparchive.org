@@ -63,23 +63,23 @@ featured_stat_label_3: モバイルページ読み込みの上位1,000件のう�
 #### トラフィック利用の人気順
 
 {{ figure_markup(
-   caption="2021年7月データの817,4923オリジンのうち、モバイルトラフィックがデスクトップトラフィックを上回った割合。",
-   content="77.4%",
-   classes="big-number",
-   sheets_gid="601797488",
-   sql_file="mobile_greater_than_desktop.sql"
+  caption="2021年7月データの817,4923オリジンのうち、モバイルトラフィックがデスクトップトラフィックを上回った割合。",
+  content="77.4%",
+  classes="big-number",
+  sheets_gid="601797488",
+  sql_file="mobile_greater_than_desktop.sql"
 )
 }}
 
 今年の新しいCrUXデータセットでは、もっとも人気のあるサイト <a hreflang="en" href="https://developers.google.com/web/updates/2021/03/crux-rank-magnitude">ranked by magnitude</a> を、これらのオリジンへのトラフィック記録によって照会することが可能です。
 
 {{ figure_markup(
-   image="mobile-web-more-mobile-than-desktop-traffic.png",
-   caption="デスクトップよりモバイルのトラフィックが多いサイトの割合。",
-   description="デスクトップよりもモバイルのトラフィックが多いサイトの内訳を、ランクの大きさでグループ分けした棒グラフです。上位1Kオリジンのサイトでは、84.9%がモバイルトラフィックをより多く持っています。2つ目のグループ化である10Kオリジンでは、85.1%とモバイルトラフィックの割合が高くなっています。100Kオリジンの82.6%、上位1Mオリジンの80.1%は、デスクトップよりもモバイルからのトラフィックが多くなっています。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=787161132&format=interactive",
-   sheets_gid="601797488",
-   sql_file="mobile_greater_than_desktop.sql"
+  image="mobile-web-more-mobile-than-desktop-traffic.png",
+  caption="デスクトップよりモバイルのトラフィックが多いサイトの割合。",
+  description="デスクトップよりもモバイルのトラフィックが多いサイトの内訳を、ランクの大きさでグループ分けした棒グラフです。上位1Kオリジンのサイトでは、84.9%がモバイルトラフィックをより多く持っています。2つ目のグループ化である10Kオリジンでは、85.1%とモバイルトラフィックの割合が高くなっています。100Kオリジンの82.6%、上位1Mオリジンの80.1%は、デスクトップよりもモバイルからのトラフィックが多くなっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=787161132&format=interactive",
+  sheets_gid="601797488",
+  sql_file="mobile_greater_than_desktop.sql"
   )
 }}
 
@@ -88,13 +88,13 @@ CrUXランキング（データセット内のトラフィック上位1,000、10
 #### トラフィック分布
 
 {{ figure_markup(
-   image="mobile-web-mobile-traffic-distribution.png",
-   caption="モバイルとその他のトラフィックの分布。",
-   description="ほとんどのWebサイトにおいて、モバイルがトラフィックの大半を占めていることを示すグラフ。分析したウェブサイトの50％がモバイルデバイスから79.4％以上のトラフィックを得ており、2020年の77.6％から増加しています。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=2123612862&format=interactive",
-   sheets_gid="1909852444",
-   sql_file="mobile_traffic_distribution.sql"
-   )
+  image="mobile-web-mobile-traffic-distribution.png",
+  caption="モバイルとその他のトラフィックの分布。",
+  description="ほとんどのWebサイトにおいて、モバイルがトラフィックの大半を占めていることを示すグラフ。分析したウェブサイトの50％がモバイルデバイスから79.4％以上のトラフィックを得ており、2020年の77.6％から増加しています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=2123612862&format=interactive",
+  sheets_gid="1909852444",
+  sql_file="mobile_traffic_distribution.sql"
+  )
 }}
 
 分布も同様に、モバイルヘビーな傾向を示しています。50パーセンタイルでは、トラフィックの79.4%がモバイルデバイスからのもので、2020年の77.6%を上回り、2019年の79.9%に追いついています。
@@ -111,12 +111,12 @@ CrUXのデータセットは、ログインしており、同期が有効で、_
 ##### すべての日々は平等ではない
 
 {{ figure_markup(
-   image="mobile-web-akamai-device-distribution-by-day.png",
-   caption="日別デバイスタイプ分布 - mPulse 2021年7月。",
-   description="2021年7月にアカマイのmPulseが発表した曜日別のモバイルvsデスクトップのトラフィック分布では、週末ごとにモバイルトラフィックが顕著に10%増加し、デスクトップのトラフィックも同様に減少しています。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1981057164&format=interactive",
-   sheets_gid="634917379"
-   )
+  image="mobile-web-akamai-device-distribution-by-day.png",
+  caption="日別デバイスタイプ分布 - mPulse 2021年7月。",
+  description="2021年7月にアカマイのmPulseが発表した曜日別のモバイルvsデスクトップのトラフィック分布では、週末ごとにモバイルトラフィックが顕著に10%増加し、デスクトップのトラフィックも同様に減少しています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1981057164&format=interactive",
+  sheets_gid="634917379"
+  )
 }}
 
 週末のモバイルトラフィックの割合は、55～56%から65～67%へと10%程度増加しています。世界的に見ると、すべての国が月曜日から金曜日までの労働週ではありません。日曜日から木曜日も<a hreflang="en" href="https://en.wikipedia.org/wiki/Workweek_and_weekend">よくあるパターン</a>で、これは金曜日にわずかに上昇し、土曜日と日曜日にモバイル利用の大きなジャンプにつながることが見て取れるものです。
@@ -126,27 +126,27 @@ CrUXのデータセットは、ログインしており、同期が有効で、_
 平日はモバイルの利用が減少し、デスクトップの利用がトラフィック全体に占める割合が増加しています。これは、インターネットユーザーがモバイル端末とデスクトップ端末を切り替えて利用していることを示しています。午前5時（UTC）頃から上昇し、午後7時（UTC）頃に再び上昇し始めます（午前10時/11時頃にも若干の上昇があります）。これは、就業時間と一致しています。
 
 {{ figure_markup(
-   image="mobile-web-akamai-device-distribution-by-hour-weekdays.png",
-   caption="週末の時間帯別デバイスタイプ分布 - mPulse 2021年7月号。",
-   description="2021年7月のアカマイのmPulseによる、平日の時間帯別、モバイルとデスクトップのトラフィック分布の折れ線グラフ（UTC表記）です。このパターンから、モバイルとデスクトップのトラフィックの間に逆変動が、あることがわかります。一方のデバイスタイプのトラフィックが増加すると、もう一方のデバイスは減少します。デスクトップの利用率は、従来の就業時間帯（午前7時から午後6時）と考えられる時間帯にもっとも高くなりますが、モバイルの利用率はどの時間帯でも52%から65%で大きくなっています。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=12081105&format=interactive",
-   sheets_gid="300179855",
-   width="600",
-   height="480"
-   )
+  image="mobile-web-akamai-device-distribution-by-hour-weekdays.png",
+  caption="週末の時間帯別デバイスタイプ分布 - mPulse 2021年7月号。",
+  description="2021年7月のアカマイのmPulseによる、平日の時間帯別、モバイルとデスクトップのトラフィック分布の折れ線グラフ（UTC表記）です。このパターンから、モバイルとデスクトップのトラフィックの間に逆変動が、あることがわかります。一方のデバイスタイプのトラフィックが増加すると、もう一方のデバイスは減少します。デスクトップの利用率は、従来の就業時間帯（午前7時から午後6時）と考えられる時間帯にもっとも高くなりますが、モバイルの利用率はどの時間帯でも52%から65%で大きくなっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=12081105&format=interactive",
+  sheets_gid="300179855",
+  width="600",
+  height="480"
+  )
 }}
 
 週末は、モバイルとデスクトップのトラフィックの割合がより安定的に推移しています。
 
 {{ figure_markup(
-   image="mobile-web-akamai-device-distribution-by-hour-weekends.png",
-   caption="週末の時間帯別デバイスタイプ分布 - mPulse 2021年7月号。",
-   description="2021年7月のAkimai's mPulseによる、土日の時間帯別、モバイル対デスクトップのトラフィック分布（UTC表示）。時間ごとの変動が少ない先ほどのグラフに比べると、かなりフラットなグラフになっています。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1776273851&format=interactive",
-   sheets_gid="300179855",
-   width="600",
-   height="480"
-   )
+  image="mobile-web-akamai-device-distribution-by-hour-weekends.png",
+  caption="週末の時間帯別デバイスタイプ分布 - mPulse 2021年7月号。",
+  description="2021年7月のAkimai's mPulseによる、土日の時間帯別、モバイル対デスクトップのトラフィック分布（UTC表示）。時間ごとの変動が少ない先ほどのグラフに比べると、かなりフラットなグラフになっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1776273851&format=interactive",
+  sheets_gid="300179855",
+  width="600",
+  height="480"
+  )
 }}
 
 このことから、異なるデバイスを選択できる人は、プライベートな時間ではモバイルのものを使う可能性が、高いことがわかります。
@@ -195,13 +195,13 @@ HTTPクライアントヒントは比較的新しい機能で、<a hreflang="en"
 #### デバイスクライアントのヒント
 
 {{ figure_markup(
-   image="mobile-web-usage-of-device-client-hints.png",
-   caption="Device Client Hintディレクティブの使用方法。",
-   description="モバイルとデスクトップのページロードで検出されたデバイスクライアントヒントディレクティブの使用率を比較した棒グラフ。デスクトップサイトでは、モバイルサイトよりも `device-memory`、`dpr`、`viewport-width` クライアントヒントの使用率が低い（約0.10%対0.15%）ことがわかりました。また、`width`の使用率は、デバイスの種類によって異なり、0.01%でした。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=663083561&format=interactive",
-   sheets_gid="1041308066",
-   sql_file="client_hints.sql"
-   )
+  image="mobile-web-usage-of-device-client-hints.png",
+  caption="Device Client Hintディレクティブの使用方法。",
+  description="モバイルとデスクトップのページロードで検出されたデバイスクライアントヒントディレクティブの使用率を比較した棒グラフ。デスクトップサイトでは、モバイルサイトよりも `device-memory`、`dpr`、`viewport-width` クライアントヒントの使用率が低い（約0.10%対0.15%）ことがわかりました。また、`width`の使用率は、デバイスの種類によって異なり、0.01%でした。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=663083561&format=interactive",
+  sheets_gid="1041308066",
+  sql_file="client_hints.sql"
+  )
 }}
 
 [`DPR`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/DPR) と [`Viewport-Width`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Viewport-Width) はモバイルサイトの0.15%でトップ、 [`Device-Memory`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Device-Memory) は0.14%で少し遅れ[`Width`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Width) はわずか0%ですが、これは現在非推奨で代替案はSec-CH-Widthで、これを要求するサイトは見つかりませんでした。
@@ -211,13 +211,13 @@ HTTPクライアントヒントは比較的新しい機能で、<a hreflang="en"
 #### ネットワーククライアントのヒント
 
 {{ figure_markup(
-   image="mobile-web-usage-of-network-client-hints.png",
-   caption="Network Client Hintディレクティブの使用方法。",
-   description="モバイルとデスクトップのページロードで検出されたネットワーククライアントヒントディレクティブの使用状況を示す棒グラフです。ここでも、モバイルの方が高いようです（デスクトップが0.09%に対してモバイルは0.15%）。一方、`save-data`の使用率はどちらも低く、それぞれ0.04%と0.08%となっています。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=172140786&format=interactive",
-   sheets_gid="1041308066",
-   sql_file="client_hints.sql"
-   )
+  image="mobile-web-usage-of-network-client-hints.png",
+  caption="Network Client Hintディレクティブの使用方法。",
+  description="モバイルとデスクトップのページロードで検出されたネットワーククライアントヒントディレクティブの使用状況を示す棒グラフです。ここでも、モバイルの方が高いようです（デスクトップが0.09%に対してモバイルは0.15%）。一方、`save-data`の使用率はどちらも低く、それぞれ0.04%と0.08%となっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=172140786&format=interactive",
+  sheets_gid="1041308066",
+  sql_file="client_hints.sql"
+  )
 }}
 
 ネットワーククライアントヒントは、デバイスクライアントヒントと同様の利用率を示しており、[Downlink](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Downlink) と [ECT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ECT)（エフェクティブコネクションタイプ）はモバイルの負荷の0.2%が要求し、 [RTT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/RTT)（ラウンドトリップタイム）はモバイルの負荷の0.1%が要求しています。
@@ -239,13 +239,13 @@ _User-Agentクライアントヒント_ はこの情報を取得する方法を�
 #### ネットワーク情報API
 
 {{ figure_markup(
-   image="mobile-web-usage-of-networkinformation-effectivetype.png",
-   caption="`NetworkInformation.effectiveType`の使用法。",
-   description="ネットワーククライアントヒントディレクティブの使用状況をデスクトップとモバイルで比較した棒グラフです。デスクトップ端末の18.4%がこのAPIを使用しているのに対し、モバイル端末では18.2%となっています。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=844974484&format=interactive",
-   sheets_gid="277973945",
-   sql_file="network_info_effective_type_usage.sql"
-   )
+  image="mobile-web-usage-of-networkinformation-effectivetype.png",
+  caption="`NetworkInformation.effectiveType`の使用法。",
+  description="ネットワーククライアントヒントディレクティブの使用状況をデスクトップとモバイルで比較した棒グラフです。デスクトップ端末の18.4%がこのAPIを使用しているのに対し、モバイル端末では18.2%となっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=844974484&format=interactive",
+  sheets_gid="277973945",
+  sql_file="network_info_effective_type_usage.sql"
+  )
 }}
 
 モバイルとデスクトップのページロードの比較には、[`NetworkInformation.effectiveType`](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/effectiveType)を使用しました。これは、有効な接続タイプ、`slow-2g`、`2g`、`3g`、`4g`に基づく文字列を返します。最上位は`4g`なので、5gやブロードバンド、固定接続を含む「4g以上の高速接続」と考えてもよいでしょう。
@@ -255,13 +255,13 @@ _User-Agentクライアントヒント_ はこの情報を取得する方法を�
 #### デバイスメモリAPI
 
 {{ figure_markup(
-   image="mobile-web-usage-of-navigator-devicememory.png",
-   caption="`Navigator.deviceMemory`の使用法。",
-   description="モバイルとデスクトップでの `Navigator.deviceMemoryAPI` の使用状況を比較した棒グラフです。デスクトップサイトの10.2%がDevice Memory APIを使用したのに対し、モバイルのページロードでは10.9%でした。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=634683822&format=interactive",
-   sheets_gid="1309485612",
-   sql_file="navigator_device_memory_usage.sql"
-   )
+  image="mobile-web-usage-of-navigator-devicememory.png",
+  caption="`Navigator.deviceMemory`の使用法。",
+  description="モバイルとデスクトップでの `Navigator.deviceMemoryAPI` の使用状況を比較した棒グラフです。デスクトップサイトの10.2%がDevice Memory APIを使用したのに対し、モバイルのページロードでは10.9%でした。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=634683822&format=interactive",
+  sheets_gid="1309485612",
+  sql_file="navigator_device_memory_usage.sql"
+  )
 }}
 
 このAPIは、クライアントが処理できるかもしれないものを判断し、それに応じて適応するのに役立つ、デバイスメモリの概算量を返します。
@@ -510,13 +510,13 @@ WordPressがモバイルサイトでの人気を維持・拡大し、他のCMS�
 ウェブページのリンクの次に、モバイルウェブでアンカーhrefの値でよく使われるプロトコルは次の5つです。
 
 {{ figure_markup(
-   image="mobile-web-popular-link-protocols.png",
-   caption="人気のある代替プロトコルのリンク集です。",
-   description="デスクトップとモバイルで人気のある代替プロトコルリンクの利用状況を示す棒グラフ。`mailto`はデスクトップでわずかに多く使われています（28.3%に対して28.9%）、モバイルでは、`tel`の方が多く（20.7％対24.2％）、`whatsapp`、`viber`、`skype`の利用は少ないが、モバイルでは多い（デスクトップではそれぞれ0.4%、0.4%、0.3%に対し、モバイルでは0.6%、0.5%、0.3%)。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=859715983&format=interactive",
-   sheets_gid="115658247",
-   sql_file="popular_link_protocols.sql"
-   )
+  image="mobile-web-popular-link-protocols.png",
+  caption="人気のある代替プロトコルのリンク集です。",
+  description="デスクトップとモバイルで人気のある代替プロトコルリンクの利用状況を示す棒グラフ。`mailto`はデスクトップでわずかに多く使われています（28.3%に対して28.9%）、モバイルでは、`tel`の方が多く（20.7％対24.2％）、`whatsapp`、`viber`、`skype`の利用は少ないが、モバイルでは多い（デスクトップではそれぞれ0.4%、0.4%、0.3%に対し、モバイルでは0.6%、0.5%、0.3%)。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=859715983&format=interactive",
+  sheets_gid="115658247",
+  sql_file="popular_link_protocols.sql"
+  )
 }}
 
 モバイルデバイスは、電話であり、SMSやその他のメッセージングサービスを備えていますが、デスクトップクライアントは備えていない場合があります。標準的な `http:` / `https:` 以外のリンクプロトコルを使用することで、これらの機能のいくつかを解放できます。コピー＆ペーストすることなく、通話やメッセージ送信のためのタップ可能なリンクを提供することで、よりスムーズで統合されたユーザーインタラクションを実現できます。
@@ -578,11 +578,11 @@ URIスキームが、ユーザーがウェブサイトからアクションを�
 入力要素は、HTMLの中でもっとも強力で複雑な機能の1つです。入力要素は、ウェブベースのフォームのためのインタラクティブなコントロールを作成するために使用されます。ウェブユーザーは、ボタン、チェックボックス、カレンダー、検索など、ユーザーの入力に基づきページの内容を制御できるこれらの要素を経験します。
 
 {{ figure_markup(
-   caption="モバイルページで入力を使用している割合。",
-   content="71.5%",
-   classes="big-number",
-   sheets_gid="702940634",
-   sql_file="mobile_greater_than_desktop.sql"
+  caption="モバイルページで入力を使用している割合。",
+  content="71.5%",
+  classes="big-number",
+  sheets_gid="702940634",
+  sql_file="mobile_greater_than_desktop.sql"
 )
 }}
 
@@ -591,13 +591,13 @@ URIスキームが、ユーザーがウェブサイトからアクションを�
 #### タイプ宣言
 
 {{ figure_markup(
-   image="mobile-web-popular-input-types.png",
-   caption="モバイルで人気の入力タイプ。",
-   description="モバイルで人気のある入力タイプの使用状況を示す棒グラフ。入力タイプを使用しているモバイルページの72.6%で `text` が、53.2%で `hidden` が、40.1%で `submit` が、27.1%でnot set (n/a)、25.1%では`email`、23.9%で `search`、23.7%で `checkbox`、13.7%で`password`が使われ5.9%で `radio`、最後の5.4%で`tel`が使用されていることがわかります。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1625671749&format=interactive",
-   sheets_gid="1769747270",
-   sql_file="popular_mobile_input_types.sql"
-   )
+  image="mobile-web-popular-input-types.png",
+  caption="モバイルで人気の入力タイプ。",
+  description="モバイルで人気のある入力タイプの使用状況を示す棒グラフ。入力タイプを使用しているモバイルページの72.6%で `text` が、53.2%で `hidden` が、40.1%で `submit` が、27.1%でnot set (n/a)、25.1%では`email`、23.9%で `search`、23.7%で `checkbox`、13.7%で`password`が使われ5.9%で `radio`、最後の5.4%で`tel`が使用されていることがわかります。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1625671749&format=interactive",
+  sheets_gid="1769747270",
+  sql_file="popular_mobile_input_types.sql"
+  )
 }}
 
 入力によって作成されたインタラクティブ・コントロールの出現を追跡するには、`type`属性を探せばよいのです。 `type` 属性はinput要素がどのように動作するかを制御するため、もっとも重要です。テストしたサイトの70.9%で `type` 属性の値が宣言されていました。
@@ -611,11 +611,11 @@ URIスキームが、ユーザーがウェブサイトからアクションを�
 #### 高度な入力タイプ
 
 {{ figure_markup(
-   caption="モバイルページで入力を使用している割合。",
-   content="44.8%",
-   classes="big-number",
-   sheets_gid="785717317",
-   sql_file="usage_of_advanced_input_types.sql"
+  caption="モバイルページで入力を使用している割合。",
+  content="44.8%",
+  classes="big-number",
+  sheets_gid="785717317",
+  sql_file="usage_of_advanced_input_types.sql"
 )
 }}
 
@@ -674,13 +674,13 @@ HTTP Archiveのデータはホームページのみを対象としているた�
 サイトが支援技術を使用してアクセスされる場合、要素のARIAロールは、ユーザーがどのように対話できるかの情報を伝えます。
 
 {{ figure_markup(
-   image="mobile-web-most-common-mobile-aria-roles.png",
-   caption="ARIAの代表的な役割トップ10。",
-   description="モバイルウェブでのARIAロールの採用をデスクトップと比較した棒グラフです。`ボタン`はモバイルページの29.0%で使用され、次に`ナビゲーション` (22.5%)、`プレゼンテーション` (21.1%)、`ダイアログ` (20.1%)、`検索` (18.8%)、`メイン` (16.8%)、`バナー` (14.3%)、`コンテンツ情報` (12.1%)、`イメージ` (10.9%) そして最後に`タブリスト` (7.4%) が続きます。デスクトップでの利用も同様です。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1644250399&format=interactive",
-   sheets_gid="1584971419",
-   sql_file="../accessibility/common_aria_role.sql"
-   )
+  image="mobile-web-most-common-mobile-aria-roles.png",
+  caption="ARIAの代表的な役割トップ10。",
+  description="モバイルウェブでのARIAロールの採用をデスクトップと比較した棒グラフです。`ボタン`はモバイルページの29.0%で使用され、次に`ナビゲーション` (22.5%)、`プレゼンテーション` (21.1%)、`ダイアログ` (20.1%)、`検索` (18.8%)、`メイン` (16.8%)、`バナー` (14.3%)、`コンテンツ情報` (12.1%)、`イメージ` (10.9%) そして最後に`タブリスト` (7.4%) が続きます。デスクトップでの利用も同様です。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1644250399&format=interactive",
+  sheets_gid="1584971419",
+  sql_file="../accessibility/common_aria_role.sql"
+  )
 }}
 
 2021年にもっとも普及したARIAロールは`ボタン`で、29%のサイトに掲載されています。`ボタン`の役割は、ユーザーによってアクティブにされたとき反応を引き起こす、クリック可能な要素を示しています。
@@ -692,13 +692,13 @@ HTTP Archiveのデータはホームページのみを対象としているた�
 色覚異常や高齢者に多い低色感のユーザーには、色のコントラスト不足が影響します。十分なカラーコントラストは、コンテンツへの平等なアクセスを可能にし、ビジネス目標にポジティブな影響を与えることができます。Googleのケーススタディでは、eコマースサイトのEastpakは、コールトゥアクションボタンにテキスト色とその背景の十分なコントラストを使用すると、<a hreflang="en" href="https://www.thinkwithgoogle.com/intl/en-154/marketing-strategies/app-and-mobile/5-lessons-eastpak-learned-its-mobile-audience/">クリック率が20%増加した</a>と報告しています。
 
 {{ figure_markup(
-   image="mobile-web-sufficient-color-contrast.png",
-   caption='十分なカラーコントラストが確保されたモバイルサイト',
-   description="十分なカラーコントラストでモバイルページを読み込むことができた割合を示す棒グラフ。2019年は22.0%のサイトが監査に合格しました。2020年は21.1%に低下。2021年は22.2%に上昇しました。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1440359640&format=interactive",
-   sheets_gid="1628455121",
-   sql_file="../accessibility/color_contrast.sql"
-   )
+  image="mobile-web-sufficient-color-contrast.png",
+  caption='十分なカラーコントラストが確保されたモバイルサイト',
+  description="十分なカラーコントラストでモバイルページを読み込むことができた割合を示す棒グラフ。2019年は22.0%のサイトが監査に合格しました。2020年は21.1%に低下。2021年は22.2%に上昇しました。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1440359640&format=interactive",
+  sheets_gid="1628455121",
+  sql_file="../accessibility/color_contrast.sql"
+  )
 }}
 
 コンバージョン率を高める可能性があるにもかかわらず、77.8%のサイトで十分なカラーコントラストが使用されているかどうかのLighthouse監査に不合格となりました。これは、前年比でわずかに改善されています。
@@ -731,12 +731,12 @@ HTTP Archiveのデータはホームページのみを対象としているた�
 ドメインランキングで使用率を見ると、さらに状況は悪くなる。
 
 {{ figure_markup(
-   image="mobile-web-zoom-blocking-viewport-tags.png",
-   caption="ドメインランクによる拡大・縮小を無効化しました。",
-   description="モバイルページのロードでズームとスケーリングが無効化された割合を、オリジンの人気度でグループ化した棒グラフです。上位1Kのオリジンでは、45.0%でズームとスケーリングを無効化されたページロードがもっとも多くなっています。上位1Mサイトの30.4%が機能を無効化し、全サイトの29.4%が無効化するなど、グループごとに割合が段階的に減少しています。これは、もっとも人気のあるサイト（Cruxメトリックランキングの大きさで測定）が、アクセシビリティ機能を無効にする可能性がもっとも高いことを示しています。デスクトップについては、22.4%から27%と、すべてのランクで無効化率が低くなっています。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=86675708&format=interactive",
-   sheets_gid="1840321233",
-   sql_file="viewport_zoom_scale_by_domain_rank.sql"
+  image="mobile-web-zoom-blocking-viewport-tags.png",
+  caption="ドメインランクによる拡大・縮小を無効化しました。",
+  description="モバイルページのロードでズームとスケーリングが無効化された割合を、オリジンの人気度でグループ化した棒グラフです。上位1Kのオリジンでは、45.0%でズームとスケーリングを無効化されたページロードがもっとも多くなっています。上位1Mサイトの30.4%が機能を無効化し、全サイトの29.4%が無効化するなど、グループごとに割合が段階的に減少しています。これは、もっとも人気のあるサイト（Cruxメトリックランキングの大きさで測定）が、アクセシビリティ機能を無効にする可能性がもっとも高いことを示しています。デスクトップについては、22.4%から27%と、すべてのランクで無効化率が低くなっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=86675708&format=interactive",
+  sheets_gid="1840321233",
+  sql_file="viewport_zoom_scale_by_domain_rank.sql"
   )
 }}
 
@@ -806,12 +806,12 @@ Googleは<a hreflang="en" href="https://search.google.com/test/mobile-friendly">
 LCPは2.5秒以下が好スコアとされています。
 
 {{ figure_markup(
-   image="mobile-web-largest-contentful-paint.png",
-   caption='LCPのデバイス別パフォーマンス。[パフォーマンス](./performance)の章のデータです。',
-   description="モバイルとデスクトップでLCPの閾値を比較した棒グラフの積み上げ。デスクトップ用サイトの60.3%が「Good」と評価されたのに対し、モバイル用サイトは45.3%にとどまりました。デスクトップの27.5%が「要改善」と評価されたのに対し、モバイルは35.2%。デスクトップで12.2%、モバイルでは19.5%が「LCPが悪い」と回答しています。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=875306231&format=interactive",
-   sheets_gid="1682201087",
-   sql_file="../performance/web_vitals_by_device.sql"
+  image="mobile-web-largest-contentful-paint.png",
+  caption='LCPのデバイス別パフォーマンス。[パフォーマンス](./performance)の章のデータです。',
+  description="モバイルとデスクトップでLCPの閾値を比較した棒グラフの積み上げ。デスクトップ用サイトの60.3%が「Good」と評価されたのに対し、モバイル用サイトは45.3%にとどまりました。デスクトップの27.5%が「要改善」と評価されたのに対し、モバイルは35.2%。デスクトップで12.2%、モバイルでは19.5%が「LCPが悪い」と回答しています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=875306231&format=interactive",
+  sheets_gid="1682201087",
+  sql_file="../performance/web_vitals_by_device.sql"
   )
 }}
 
@@ -830,11 +830,11 @@ CSSやJavaScriptなど、さまざまなアセットがモバイルのロード�
 #### 適切な大きさの画像
 
 {{ figure_markup(
-   caption="モバイルページの読み込みで、適切なサイズの画像が表示された割合",
-   content="56.6%",
-   classes="big-number",
-   sheets_gid="1754517886",
-   sql_file="correctly_sized_images.sql"
+  caption="モバイルページの読み込みで、適切なサイズの画像が表示された割合",
+  content="56.6%",
+  classes="big-number",
+  sheets_gid="1754517886",
+  sql_file="correctly_sized_images.sql"
 )
 }}
 
@@ -845,12 +845,12 @@ CSSやJavaScriptなど、さまざまなアセットがモバイルのロード�
 画像も[レスポンシブに提供](https://developer.mozilla.org/ja/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)できます。`srcset`属性と`<picture>`要素で適切なサイズと適切なフォーマットの画像を指定し、画面とデバイスにもっとも適した画像をブラウザにダウンロードさせることができます。
 
 {{ figure_markup(
-   image="mobile-web-responsive-images.png",
-   caption="レスポンシブな画像を提供するために、`<picture>` と `srcset` を使用します。",
-   description="棒グラフは、モバイルサイトの6.2%が`<picture>`要素を使用し（デスクトップサイトでは6.3%）、32.0%が`srcset`属性を使用して画像をレスポンシブに読み込んでいることを示しています（デスクトップサイトでは31.7%）。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1030195048&format=interactive",
-   sheets_gid="1802999215",
-   sql_file="picture_source_srcset_usage.sql"
+  image="mobile-web-responsive-images.png",
+  caption="レスポンシブな画像を提供するために、`<picture>` と `srcset` を使用します。",
+  description="棒グラフは、モバイルサイトの6.2%が`<picture>`要素を使用し（デスクトップサイトでは6.3%）、32.0%が`srcset`属性を使用して画像をレスポンシブに読み込んでいることを示しています（デスクトップサイトでは31.7%）。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1030195048&format=interactive",
+  sheets_gid="1802999215",
+  sql_file="picture_source_srcset_usage.sql"
   )
 }}
 
@@ -863,11 +863,11 @@ CSSやJavaScriptなど、さまざまなアセットがモバイルのロード�
 初期ビューポートにない画像を遅延ロードさせることは、リソースを表示可能なもののロードに集中させるための良い戦略です。Chrome、Opera、そして2021年9月からAndroid版Firefox（引用元：<a hreflang="en" href="https://caniuse.com/loading-lazy-attr">caniuse.com</a>）でサポートされているネイティブのlazy-load属性は、JavaScriptの回避策なしにこれを実現できます。
 
 {{ figure_markup(
-   caption='画像を含むモバイルページのロードに `loading="lazy"` が使用されている。',
-   content="18.4%",
-   classes="big-number",
-   sheets_gid="1889147690",
-   sql_file="lazy_loading_usage.sql"
+  caption='画像を含むモバイルページのロードに `loading="lazy"` が使用されている。',
+  content="18.4%",
+  classes="big-number",
+  sheets_gid="1889147690",
+  sql_file="lazy_loading_usage.sql"
   )
 }}
 
@@ -876,11 +876,11 @@ CSSやJavaScriptなど、さまざまなアセットがモバイルのロード�
 HTTP Archiveの<a hreflang="ja" href="https://httparchive.org/reports/state-of-images#imgLazy">ネイティブ画像のレイジーローディングレポート</a> を見ると、とくに `<img>` タグに属性を使用することが、同じように目覚ましい成長を示していることがわかります。
 
 {{ figure_markup(
-   image="mobile-web-native-lazy-loading-over-time.png",
-   caption="遅延ローディング属性の経時的な使用状況。",
-   description="HTTP Archiveデータから、モバイルページとデスクトップページで `loading='lazy'` 属性が使用されている割合を時系列で示した折れ線グラフです。線は上昇傾向にあり、2020年7月の1.4%から始まり、2021年10月の19.4%まで連動して上昇しています。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=62374244&format=interactive",
-   sheets_gid="1889147690"
+  image="mobile-web-native-lazy-loading-over-time.png",
+  caption="遅延ローディング属性の経時的な使用状況。",
+  description="HTTP Archiveデータから、モバイルページとデスクトップページで `loading='lazy'` 属性が使用されている割合を時系列で示した折れ線グラフです。線は上昇傾向にあり、2020年7月の1.4%から始まり、2021年10月の19.4%まで連動して上昇しています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=62374244&format=interactive",
+  sheets_gid="1889147690"
   )
 }}
 
@@ -913,40 +913,40 @@ CLSのスコアが0.1以下は良好、0.25以下は確かに改善、それ以�
 画面サイズが小さいほどずれが大きく、360×640pxの場合、この例のブロックではCLSスコアが0.22となる。
 
 {{ figure_markup(
-   gif="mobile-cls-example.gif",
-   image="mobile-cls-example-static.png",
-   caption="モバイルサイズの画面上にCLSを引き起こす広告を表示した画面キャプチャモックアップ。",
-   description="広告の挿入により、モバイルのビューポートサイズでは画面上で比較的多くのコンテンツが移動します。",
-   width=600,
-   height=371,
-   gif_width=197,
-   gif_height=350
+  gif="mobile-cls-example.gif",
+  image="mobile-cls-example-static.png",
+  caption="モバイルサイズの画面上にCLSを引き起こす広告を表示した画面キャプチャモックアップ。",
+  description="広告の挿入により、モバイルのビューポートサイズでは画面上で比較的多くのコンテンツが移動します。",
+  width=600,
+  height=371,
+  gif_width=197,
+  gif_height=350
   )
 }}
 
 デスクトップ画面サイズでは、同じ要素が表示されてもCLSスコアは0.07にとどまります。
 
 {{ figure_markup(
-   gif="desktop-cls-example.gif",
-   image="desktop-cls-example-static.png",
-   caption="デスクトップサイズの画面にCLSを引き起こす広告を表示した画面キャプチャモックアップ。",
-   description="広告の挿入により、デスクトップのビューポートサイズでは、画面上で比較的少量のコンテンツが移動します。",
-   width=600,
-   height=371,
-   gif_width=600,
-   gif_height=341
+  gif="desktop-cls-example.gif",
+  image="desktop-cls-example-static.png",
+  caption="デスクトップサイズの画面にCLSを引き起こす広告を表示した画面キャプチャモックアップ。",
+  description="広告の挿入により、デスクトップのビューポートサイズでは、画面上で比較的少量のコンテンツが移動します。",
+  width=600,
+  height=371,
+  gif_width=600,
+  gif_height=341
   )
 }}
 
 CrUXデータセットによると、モバイルページの読み込みの62%でCLSが、0.1以下であったことが示されています。
 
 {{ figure_markup(
-   image="mobile-web-cumulative-layout-shift.png",
-   caption='デバイス別のCLS性能。',
-   description="CLSの閾値グループをモバイルとデスクトップで比較した棒グラフの積み上げ。デスクトップ62.2%、モバイル61.6%のサイトが「良い」と評価されました。デスクトップの22.7%が「要改善」と評価されたのに対し、モバイルは21.1%。デスクトップで15.0%、モバイルでは17.3%が「CLSが悪い」と回答しています。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=776500715&format=interactive",
-   sheets_gid="1682201087",
-   sql_file="../performance/web_vitals_by_device.sql"
+  image="mobile-web-cumulative-layout-shift.png",
+  caption='デバイス別のCLS性能。',
+  description="CLSの閾値グループをモバイルとデスクトップで比較した棒グラフの積み上げ。デスクトップ62.2%、モバイル61.6%のサイトが「良い」と評価されました。デスクトップの22.7%が「要改善」と評価されたのに対し、モバイルは21.1%。デスクトップで15.0%、モバイルでは17.3%が「CLSが悪い」と回答しています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=776500715&format=interactive",
+  sheets_gid="1682201087",
+  sql_file="../performance/web_vitals_by_device.sql"
   )
 }}
 
@@ -965,12 +965,12 @@ CrUXデータセットによると、モバイルページの読み込みの62%�
 FIDスコアは100ms以下が良好、300ms以上が不良となります。
 
 {{ figure_markup(
-   image="mobile-web-first-input-delay.png",
-   caption='デバイス別のFID性能。',
-   description="モバイルとデスクトップでFIDの閾値のグループ分けを比較した棒グラフ。デスクトップでは99.0%が「Good」と評価されたのに対し、モバイルでは90.0%。モバイルの9.8%が「要改善」と評価されました。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1158252805&format=interactive",
-   sheets_gid="1682201087",
-   sql_file="../performance/web_vitals_by_device.sql"
+  image="mobile-web-first-input-delay.png",
+  caption='デバイス別のFID性能。',
+  description="モバイルとデスクトップでFIDの閾値のグループ分けを比較した棒グラフ。デスクトップでは99.0%が「Good」と評価されたのに対し、モバイルでは90.0%。モバイルの9.8%が「要改善」と評価されました。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2xPBvpLK9_1QqEmOhsXHXcCzunEdsY14Xzeo1D7MYTuu0inzwmz0NtGSFI0mBRP5snPw8ciVWaJQ/pubchart?oid=1158252805&format=interactive",
+  sheets_gid="1682201087",
+  sql_file="../performance/web_vitals_by_device.sql"
   )
 }}
 

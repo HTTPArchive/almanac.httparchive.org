@@ -43,7 +43,7 @@ For example:
 
 ```html
 <img srcset="images/example_3x.jpg 3x, images/example_2x.jpg 2x"
-     src="images/example.jpg" alt="..." />
+      src="images/example.jpg" alt="..." />
 ```
 
 Around 26.5% of all pages now include `srcset`
@@ -79,15 +79,15 @@ When providing the candidate list to the user agent, we have two mechanisms to a
 
 ```html
 <img srcset="images/example_3x.jpg 3x, images/example_2x.jpg 2x"
-     src="images/example.jpg" alt="..." />
+      src="images/example.jpg" alt="..." />
 ```
 
 `w` descriptors describe the candidate's pixel width, along with a `sizes` attribute that is used to select the appropriate image.
 
 ```html
 <img srcset="images/example_small.jpg 600w, images/example_medium.jpg 1400w, images/example_large.jpg 2400w"
-     sizes="100vw"
-     src="images/example_fallback.jpg" alt="..." />
+      sizes="100vw"
+      src="images/example_fallback.jpg" alt="..." />
 ```
 
 Both approaches enable the user agent to mathematically factor in the current device pixel ratio when assessing the most appropriate image candidate.
@@ -114,8 +114,8 @@ For example:
 
 ```html
 <img sizes="(min-width: 640px) 50vw, 100vw"
-     srcset="images/example_small.jpg 600w, images/example_medium.jpg 1400w, images/example_large.jpg 2400w"
-     src="images/example_fallback.jpg" alt="..." />
+      srcset="images/example_small.jpg 600w, images/example_medium.jpg 1400w, images/example_large.jpg 2400w"
+      src="images/example_fallback.jpg" alt="..." />
 ```
 
 {{ figure_markup(

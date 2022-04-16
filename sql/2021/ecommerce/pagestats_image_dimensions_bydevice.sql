@@ -28,8 +28,10 @@ USING (_TABLE_SUFFIX, url),
   UNNEST([10, 25, 50, 75, 90])
 WHERE
   category = 'Ecommerce' AND
-  (app != 'Cart Functionality' AND
-   app != 'Google Analytics Enhanced eCommerce')
+  (
+    app != 'Cart Functionality' AND
+    app != 'Google Analytics Enhanced eCommerce'
+  )
 GROUP BY
   percentile,
   client

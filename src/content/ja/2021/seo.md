@@ -27,12 +27,12 @@ SEO (Search Engine Optimization) は、検索エンジンのオーガニック�
 SEOはかつてないほど人気があり、企業が顧客にアプローチする新しい方法を模索する中で、ここ数年大きな成長を遂げています。SEOの人気は、他のデジタルチャネルをはるかにしのいでいます。
 
 {{ figure_markup(
-   image="seo-term-trends.png",
-   caption="Google TrendsによるSEOとペイパークリック、ソーシャルメディアマーケティング、Eメールマーケティングの比較。",
-   description="Google Trendsで、検索エンジン最適化、ペイパークリック、ソーシャルメディアマーケティング、メールマーケティングの4つのデジタルマーケティングチャネルを比較し、時系列で関心を示している画面です。SEOは、近年、他のチャネルをはるかにしのぐ関心を集め、もっとも人気のあるデジタルマーケティングチャネルであり続けました。SEOは、世界中でコミュニティが拡大し、進化を続けている分野です。",
-   width=1155,
-   height=605
-   )
+  image="seo-term-trends.png",
+  caption="Google TrendsによるSEOとペイパークリック、ソーシャルメディアマーケティング、Eメールマーケティングの比較。",
+  description="Google Trendsで、検索エンジン最適化、ペイパークリック、ソーシャルメディアマーケティング、メールマーケティングの4つのデジタルマーケティングチャネルを比較し、時系列で関心を示している画面です。SEOは、近年、他のチャネルをはるかにしのぐ関心を集め、もっとも人気のあるデジタルマーケティングチャネルであり続けました。SEOは、世界中でコミュニティが拡大し、進化を続けている分野です。",
+  width=1155,
+  height=605
+  )
 }}
 
 Web AlmanacのSEOの章の目的は、Webサイトの最適化に関連するさまざまな要素を分析することです。この章では、Webサイトがユーザーと検索エンジンに優れた体験を提供しているかどうかをチェックします。
@@ -60,13 +60,13 @@ Webの現状と検索エンジンの利便性については、こちらをご�
 robots.txtの作成は必須でありません。404 not foundを返している場合、Googleはウェブサイトのすべてのページがクロールできると仮定しています。他の検索エンジンでは、これとは異なる扱いを受ける可能性があります。
 
 {{ figure_markup(
-   image="robots-txt-status-codes.png",
-   caption="robots.txtのステータスコードの内訳。",
-   description="robots.txtが有効なページの割合を示す棒グラフ。ステータスコード200は81.9%のモバイルサイトに、ステータスコード404は16.5%のモバイルサイトに存在しました。その他のステータスコードはほとんど使用されておらず、デスクトップの数値もモバイルとほぼ同じです。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2062029998&format=interactive",
-   sheets_gid="91318795",
-   sql_file="robots-txt-status-codes.sql"
-   )
+  image="robots-txt-status-codes.png",
+  caption="robots.txtのステータスコードの内訳。",
+  description="robots.txtが有効なページの割合を示す棒グラフ。ステータスコード200は81.9%のモバイルサイトに、ステータスコード404は16.5%のモバイルサイトに存在しました。その他のステータスコードはほとんど使用されておらず、デスクトップの数値もモバイルとほぼ同じです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2062029998&format=interactive",
+  sheets_gid="91318795",
+  sql_file="robots-txt-status-codes.sql"
+  )
 }}
 
 `robots.txt`を使用することで、ウェブサイトのオーナーは検索エンジンのロボットを制御できます。しかし、16.5%ものウェブサイトが`robots.txt`ファイルを持っていないというデータも出ています。
@@ -80,12 +80,12 @@ robots.txtの作成は必須でありません。404 not foundを返している
 <a hreflang="en" href="https://www.youtube.com/watch?v=JvYh1oe5Zx0&amp;t=315s">Googleが公開している2019年からの</a>最新情報では、5％ものウェブサイトがrobots.txtで一時的に5xxを返し、26％ものウェブサイトが到達不能になっていたそうです。
 
 {{ figure_markup(
-   image="robots-usage-presentation.png",
-   caption="Googlebotが遭遇したrobots.txtのステータスコードの内訳。",
-   description="Googlebotが遭遇したrobots.txtのステータスコードの割合を示す画面。2019年のデータから引用すると、69%のサイトがGoodでステータスコード200を利用するか、オープンアクセスで404を返しています。5%ものサイトが、`robots.txt`で5xxを返すTemporarily OKでした。26%ものサイトがUnreachableでした。",
-   width=609,
-   height=313
-   )
+  image="robots-usage-presentation.png",
+  caption="Googlebotが遭遇したrobots.txtのステータスコードの内訳。",
+  description="Googlebotが遭遇したrobots.txtのステータスコードの割合を示す画面。2019年のデータから引用すると、69%のサイトがGoodでステータスコード200を利用するか、オープンアクセスで404を返しています。5%ものサイトが、`robots.txt`で5xxを返すTemporarily OKでした。26%ものサイトがUnreachableでした。",
+  width=609,
+  height=313
+  )
 }}
 
 HTTP ArchiveとGoogleのデータの不一致の原因として、2つのことが考えられます。
@@ -97,25 +97,25 @@ HTTP ArchiveとGoogleのデータの不一致の原因として、2つのこと�
 ### `robots.txt` のサイズ
 
 {{ figure_markup(
-   image="robots-txt-size-distribution.png",
-   caption="`robots.txt` のサイズ分布。",
-   description="robots.txtのサイズ分布を示す棒グラフ。ほぼすべてのrobots.txtファイルは、0～100kbの間で小さくなっています。モバイルページのrobots.txtファイルの96.72%が0-100kbの間であることがわかりました（デスクトップでも同様の結果でした）。また、100kbを超えるrobots.txtファイルを持つウェブページは、デスクトップ、モバイルともにほぼ皆無で、1.58%は見つからないことがわかりました。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1491943936&format=interactive",
-   sheets_gid="1066408164",
-   sql_file="robots-text-size.sql"
-   )
+  image="robots-txt-size-distribution.png",
+  caption="`robots.txt` のサイズ分布。",
+  description="robots.txtのサイズ分布を示す棒グラフ。ほぼすべてのrobots.txtファイルは、0～100kbの間で小さくなっています。モバイルページのrobots.txtファイルの96.72%が0-100kbの間であることがわかりました（デスクトップでも同様の結果でした）。また、100kbを超えるrobots.txtファイルを持つウェブページは、デスクトップ、モバイルともにほぼ皆無で、1.58%は見つからないことがわかりました。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1491943936&format=interactive",
+  sheets_gid="1066408164",
+  sql_file="robots-text-size.sql"
+  )
 }}
 
 ほとんどのrobots.txtファイルは0～100kbの間でかなり小さいです。しかし、Googleの最大制限を超える500キロバイトを超えるrobots.txtファイルを持っている3,000以上のドメインを発見しました。このサイズ制限を超えたルールは無視されます。
 
 {{ figure_markup(
-   image="robots-txt-user-agent.png",
-   caption="`robots.txt` のユーザーエージェント使用状況。",
-   description="robots.txtのユーザーエージェントの使用頻度がもっとも高い10種類を示した棒グラフです。結果はデスクトップとモバイルでほぼ同じで、75.2%のドメインが特定のユーザーエージェントを示していませんでした。`adsbot-google` 6.3%、`mj12bot` 5.6%、`ahrefsbot` 5.0%、`mediapartners-google` 4.9%、`googlebot` 3.4%、`nutch` 3.3%、`yandex` 3.1%、`pinterest` 2.9%、`ahrefssiteaudit` 2.7%であることがわかりました。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1206728832&format=interactive",
-   sheets_gid="964313002",
-   sql_file="robots-txt-user-agent-usage.sql"
-   )
+  image="robots-txt-user-agent.png",
+  caption="`robots.txt` のユーザーエージェント使用状況。",
+  description="robots.txtのユーザーエージェントの使用頻度がもっとも高い10種類を示した棒グラフです。結果はデスクトップとモバイルでほぼ同じで、75.2%のドメインが特定のユーザーエージェントを示していませんでした。`adsbot-google` 6.3%、`mj12bot` 5.6%、`ahrefsbot` 5.0%、`mediapartners-google` 4.9%、`googlebot` 3.4%、`nutch` 3.3%、`yandex` 3.1%、`pinterest` 2.9%、`ahrefssiteaudit` 2.7%であることがわかりました。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1206728832&format=interactive",
+  sheets_gid="964313002",
+  sql_file="robots-txt-user-agent-usage.sql"
+  )
 }}
 
 全ロボットに対するルールを宣言することも、特定のロボットに対するルールを指定することも可能です。ボットは通常、ユーザーエージェントのもっとも具体的なルールに従おうとします。`User-agent: Googlebot` はGooglebotのみを参照し、`User-agent: *`はより具体的なルールを持たないすべてのボットを指します。
@@ -168,13 +168,13 @@ Bing、Baidu、Yandexなど他の検索エンジンに関連するロボット�
 ウェブは膨大なドキュメントの集合体であり、その中には重複しているものもあります。重複コンテンツの問題を防ぐために、ウェブマスターはcanonicalタグを使って、どのバージョンをインデックスされるのが好ましいかを検索エンジンに伝えることができます。また、canonicalは、ランキングページへのリンクなどのシグナルを統合するのに役立ちます。
 
 {{ figure_markup(
-   image="canonical-tag-usage.png",
-   caption="Canonicalタグの使用方法。",
-   description="canonicalタグの使用状況を示す棒グラフ。ほとんどのWebページでcanonicalタグが使用されていることがわかりました（モバイルページで58.5%、デスクトップページでは56.6%）。正規化されたウェブページの割合は、デスクトップ（4.3%）に比べ、モバイル（8.3%）で高いことがわかりました。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=118545040&format=interactive",
-   sheets_gid="1066408164",
-   sql_file="pages-canonical-stats.sql"
-   )
+  image="canonical-tag-usage.png",
+  caption="Canonicalタグの使用方法。",
+  description="canonicalタグの使用状況を示す棒グラフ。ほとんどのWebページでcanonicalタグが使用されていることがわかりました（モバイルページで58.5%、デスクトップページでは56.6%）。正規化されたウェブページの割合は、デスクトップ（4.3%）に比べ、モバイル（8.3%）で高いことがわかりました。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=118545040&format=interactive",
+  sheets_gid="1066408164",
+  sql_file="pages-canonical-stats.sql"
+  )
 }}
 
 このデータでは、年々canonicalタグの導入が進んでいることがわかります。たとえば、2019年版では、48.3%のモバイルページがcanonicalタグを使用していたことがわかります。2020年版では53.6%に増え、2021年版では58.5%となっています。
@@ -193,13 +193,13 @@ canonicalを実装する場合、指定する方法は2つあります。
 2. HTTPヘッダーの中で（`Link` HTTPヘッダーを経由して）
 
 {{ figure_markup(
-   image="canonical-raw-rendered-usage.png",
-   caption="未加工のCanonicalとレンダリングの使い分けの目安。",
-   description="未加工とレンダリングのcanonicalタグの有無を示す棒グラフ（未加工、レンダリング、レンダリングだが未加工ではない、レンダリングを変更した、httpヘッダーを変更した）。当社のデータでは、未加工のcanonicalタグはデスクトップページの55.9%、モバイルページの57.7%に見られました。レンダリングされたcanonicalタグは、デスクトップページの56.5%、モバイルページの58.4%で見つかりました。その他のタグは、デスクトップまたはモバイルページの1.5%未満にしか見当たりませんでした。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1288519273&format=interactive",
-   sheets_gid="1066408164",
-   sql_file="pages-canonical-stats.sql"
-   )
+  image="canonical-raw-rendered-usage.png",
+  caption="未加工のCanonicalとレンダリングの使い分けの目安。",
+  description="未加工とレンダリングのcanonicalタグの有無を示す棒グラフ（未加工、レンダリング、レンダリングだが未加工ではない、レンダリングを変更した、httpヘッダーを変更した）。当社のデータでは、未加工のcanonicalタグはデスクトップページの55.9%、モバイルページの57.7%に見られました。レンダリングされたcanonicalタグは、デスクトップページの56.5%、モバイルページの58.4%で見つかりました。その他のタグは、デスクトップまたはモバイルページの1.5%未満にしか見当たりませんでした。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1288519273&format=interactive",
+  sheets_gid="1066408164",
+  sql_file="pages-canonical-stats.sql"
+  )
 }}
 
 canonicalタグをHTMLページの`<head>`に実装することは、`Link`ヘッダーを使う方法よりもはるかに一般的です。一般に、headセクションにタグを実装する方が簡単だと考えられており、そのため、使用率が非常に高くなっています。
@@ -225,13 +225,13 @@ Web Almanacのデータはホームページのみを対象としているため
 ### HTTPS
 
 {{ figure_markup(
-   image="usage-of-https.png",
-   caption="HTTPSで提供されるデスクトップおよびモバイルページの割合。",
-   description="HTTPSの比率を示す棒グラフ。モバイルページの81.2％はHTTPS、デスクトップページの84.3％ではHTTPSであることがわかりました。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1826599611&format=interactive",
-   sheets_gid="1347655296",
-   sql_file="seo-stats.sql"
-   )
+  image="usage-of-https.png",
+  caption="HTTPSで提供されるデスクトップおよびモバイルページの割合。",
+  description="HTTPSの比率を示す棒グラフ。モバイルページの81.2％はHTTPS、デスクトップページの84.3％ではHTTPSであることがわかりました。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1826599611&format=interactive",
+  sheets_gid="1347655296",
+  sql_file="seo-stats.sql"
+  )
 }}
 
 HTTPSの採用は依然として増加している。モバイルページの81.2%、デスクトップページの84.3%でHTTPSがデフォルトとして採用されました。これは、前年比でモバイルサイトでは約8％、デスクトップサイトでは7％増加しています。
@@ -251,16 +251,16 @@ HTTPSの採用は依然として増加している。モバイルページの81.
 )
 }}
 
- モバイルページの91.1％が`viewport`メタタグを含んでおり、2020年の89.2％から増加した。また、デスクトップページの86.4％がviewport metaタグを含んでおり、2020年の83.8％から増加しています。
+モバイルページの91.1％が`viewport`メタタグを含んでおり、2020年の89.2％から増加した。また、デスクトップページの86.4％がviewport metaタグを含んでおり、2020年の83.8％から増加しています。
 
 {{ figure_markup(
-   image="vary-usage-agent-header-usage.png",
-   caption="`Vary: User-Agent` ヘッダーの使用状況。",
-   description="モバイルフレンドリーを識別するために使用される `vary` ヘッダーを示す棒グラフ。ほとんどのウェブページがレスポンスデザインを利用していること（デスクトップ：87.4%、モバイル：86.6%）と、ダイナミックサーブを利用しているページ（デスクトップ：12.6%、モバイル：13.4%）を比較すると、レスポンスデザインの方が多いようです。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1985736287&format=interactive",
-   sheets_gid="478009067",
-   sql_file="html-response-vary-header-used.sql"
-   )
+  image="vary-usage-agent-header-usage.png",
+  caption="`Vary: User-Agent` ヘッダーの使用状況。",
+  description="モバイルフレンドリーを識別するために使用される `vary` ヘッダーを示す棒グラフ。ほとんどのウェブページがレスポンスデザインを利用していること（デスクトップ：87.4%、モバイル：86.6%）と、ダイナミックサーブを利用しているページ（デスクトップ：12.6%、モバイル：13.4%）を比較すると、レスポンスデザインの方が多いようです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1985736287&format=interactive",
+  sheets_gid="478009067",
+  sql_file="html-response-vary-header-used.sql"
+  )
 }}
 
 また、`Vary: User-Agent`ヘッダーについては、このフットプリントのデスクトップページの12.6％、モバイルページの13.4％がこのヘッダーを使用しており、数値はほとんど変わりません。
@@ -283,13 +283,13 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 このデータは、オプトインしたChromeユーザーの実測データを記録した「Chromeユーザーエクスペリエンスレポート（CrUX）」から得られたものです。
 
 {{ figure_markup(
-   image="core-web-vitals-trend.png",
-   caption="Core web vitalsの指標推移。",
-   description="モバイルでのCWVの良い体験の割合を示す折れ線グラフ。2021年にはGood LCPが42％から45％に、Good FIDが81％から90％に、Good CLSが55％から62％に、Good CWVが23％から29％に増加しました。この結果から、良いCWV体験を提供するモバイルサイトの割合は、年々増加し続けることが予想されます。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1693723951&format=interactive",
-   sheets_gid="460991760",
-   sql_file="core-web-vitals.sql"
-   )
+  image="core-web-vitals-trend.png",
+  caption="Core web vitalsの指標推移。",
+  description="モバイルでのCWVの良い体験の割合を示す折れ線グラフ。2021年にはGood LCPが42％から45％に、Good FIDが81％から90％に、Good CLSが55％から62％に、Good CWVが23％から29％に増加しました。この結果から、良いCWV体験を提供するモバイルサイトの割合は、年々増加し続けることが予想されます。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1693723951&format=interactive",
+  sheets_gid="460991760",
+  sql_file="core-web-vitals.sql"
+  )
 }}
 
 モバイルサイトの29％がコアウェブバイタルの基準値をクリアしており、昨年の20％から増加しています。ほとんどのWebサイトがFIDをクリアしていますが、WebサイトのオーナーはCLSとLCPの改善に苦戦しているようです。このトピックについては、[パフォーマンス](./performance)の章を参照してください。
@@ -303,13 +303,13 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 メタデータには、`<title>` 要素と `<meta name="description">` タグが含まれます。メタデータは直接的、間接的にSEOのパフォーマンスに影響を与えることがあります。
 
 {{ figure_markup(
-   image="title-meta-description-usage.png",
-   caption="タイトルとメタ記述の使用状況の内訳。",
-   description="メタデータを持つページの割合を示す棒グラフ。モバイルページとデスクトップページの98.8%に`title`要素があり、モバイルページとデスクトップページの71.1%にメタ記述がありました。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=541272297&format=interactive",
-   sheets_gid="1347655296",
-   sql_file="seo-stats.sql"
-   )
+  image="title-meta-description-usage.png",
+  caption="タイトルとメタ記述の使用状況の内訳。",
+  description="メタデータを持つページの割合を示す棒グラフ。モバイルページとデスクトップページの98.8%に`title`要素があり、モバイルページとデスクトップページの71.1%にメタ記述がありました。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=541272297&format=interactive",
+  sheets_gid="1347655296",
+  sql_file="seo-stats.sql"
+  )
 }}
 
 2021年、デスクトップとモバイルのページの98.8%が `<title>` 要素を持っていた。デスクトップとモバイルのホームページの71.1%が `<meta name="description">` タグを持っていました。
@@ -319,23 +319,23 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 `<title>`要素は、ページの関連性に関する強いヒントを提供するページ上のランキング要因であり、検索エンジンの結果ページ（SERP）に表示されることがあります。2021年8月、<a hreflang="en" href="https://developers.google.com/search/blog/2021/08/update-to-generating-page-titles">Googleは検索結果のタイトルをより多く書き換えるようになりました</a>。
 
 {{ figure_markup(
-   image="title-word-counts.png",
-   caption="title要素に使用されている単語数。",
-   description="タイトルタグのパーセンタイル（10、25、50、75、90）の単語数を示す棒グラフ。中央のページには6語のタイトルが含まれ、全体の50%は3～9語のタイトルが含まれていました。 データセット内では、デスクトップとモバイルの間で単語数に差はありませんでした。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2017837375&format=interactive",
-   sheets_gid="455169599",
-   sql_file="seo-stats.sql"
-   )
+  image="title-word-counts.png",
+  caption="title要素に使用されている単語数。",
+  description="タイトルタグのパーセンタイル（10、25、50、75、90）の単語数を示す棒グラフ。中央のページには6語のタイトルが含まれ、全体の50%は3～9語のタイトルが含まれていました。 データセット内では、デスクトップとモバイルの間で単語数に差はありませんでした。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2017837375&format=interactive",
+  sheets_gid="455169599",
+  sql_file="seo-stats.sql"
+  )
 }}
 
 {{ figure_markup(
-   image="title-character-counts.png",
-   caption="title要素で使用される文字数。",
-   description="パーセンタイル（10、25、50、75、90）ごとのタイトルタグの文字数を示す棒グラフ。中央値のページのタイトル文字数は、デスクトップで39文字、モバイルで40文字でした。今回のデータセットでは、デスクトップとモバイルで文字数にほとんど差はありませんでした。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1099454676&format=interactive",
-   sheets_gid="455169599",
-   sql_file="seo-stats.sql"
-   )
+  image="title-character-counts.png",
+  caption="title要素で使用される文字数。",
+  description="パーセンタイル（10、25、50、75、90）ごとのタイトルタグの文字数を示す棒グラフ。中央値のページのタイトル文字数は、デスクトップで39文字、モバイルで40文字でした。今回のデータセットでは、デスクトップとモバイルで文字数にほとんど差はありませんでした。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1099454676&format=interactive",
+  sheets_gid="455169599",
+  sql_file="seo-stats.sql"
+  )
 }}
 
 2021年に
@@ -352,23 +352,23 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 `<meta name="description>` タグは、ランキングに直接影響を与えません。しかし、SERP上でページの説明文として表示されることがあります。
 
 {{ figure_markup(
-   image="meta-word-counts.png",
-   caption="メタ記述に使用されている単語数。",
-   description="パーセンタイル（10、25、50、75、90）ごとのmeta記述の単語数を示す棒グラフ。中央のページには、デスクトップで20語、モバイルで19語のメタ記述が含まれていました。デスクトップとモバイルの文字数には、ほとんど差がありませんでした。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2013621429&format=interactive",
-   sheets_gid="455169599",
-   sql_file="seo-stats.sql"
-   )
+  image="meta-word-counts.png",
+  caption="メタ記述に使用されている単語数。",
+  description="パーセンタイル（10、25、50、75、90）ごとのmeta記述の単語数を示す棒グラフ。中央のページには、デスクトップで20語、モバイルで19語のメタ記述が含まれていました。デスクトップとモバイルの文字数には、ほとんど差がありませんでした。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2013621429&format=interactive",
+  sheets_gid="455169599",
+  sql_file="seo-stats.sql"
+  )
 }}
 
 {{ figure_markup(
-   image="meta-character-counts.png",
-   caption="メタ記述に使用される文字数。",
-   description="パーセンタイル（10、25、50、75、90）ごとのメタ記述タグの文字数を示す棒グラフ。中央のページでは、デスクトップページで138文字、モバイルページで137文字のメタ記述が含まれていました。このデータセットでは、デスクトップとモバイルで文字数にほとんど差はありませんでした。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=971210715&format=interactive",
-   sheets_gid="455169599",
-   sql_file="seo-stats.sql"
-   )
+  image="meta-character-counts.png",
+  caption="メタ記述に使用される文字数。",
+  description="パーセンタイル（10、25、50、75、90）ごとのメタ記述タグの文字数を示す棒グラフ。中央のページでは、デスクトップページで138文字、モバイルページで137文字のメタ記述が含まれていました。このデータセットでは、デスクトップとモバイルで文字数にほとんど差はありませんでした。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=971210715&format=interactive",
+  sheets_gid="455169599",
+  sql_file="seo-stats.sql"
+  )
 }}
 
 2021年に
@@ -383,13 +383,13 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 ### 画像
 
 {{ figure_markup(
-   image="number-of-images-per-page.png",
-   caption="各ページの画像枚数。",
-   description="パーセンタイル（10、25、50、75、90）ごとに、1ページあたりの`<img>`要素の数を示す棒グラフです。デスクトップ用ページの中央値は21個の `<img>` 要素、モバイル用ページの中央値は19個の `<img>` 要素を備えていました。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1314615789&format=interactive",
-   sheets_gid="1483073708",
-   sql_file="image-alt-stats.sql"
-   )
+  image="number-of-images-per-page.png",
+  caption="各ページの画像枚数。",
+  description="パーセンタイル（10、25、50、75、90）ごとに、1ページあたりの`<img>`要素の数を示す棒グラフです。デスクトップ用ページの中央値は21個の `<img>` 要素、モバイル用ページの中央値は19個の `<img>` 要素を備えていました。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1314615789&format=interactive",
+  sheets_gid="1483073708",
+  sql_file="image-alt-stats.sql"
+  )
 }}
 
 画像は、画像検索順位やページパフォーマンスに影響を与えるため、直接的・間接的にSEOに影響を与える可能性があります。
@@ -407,33 +407,33 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 なお、`alt`属性の欠落は問題を示さない場合があります。ページには極端に小さい画像や空白の画像が含まれていることがありますが、SEO（あるいはアクセシビリティ）上の理由から `alt` 属性は必要でありません。
 
 {{ figure_markup(
-   image="images-with-alt-attribute.png",
-   caption="`alt` 属性を含む画像の割合。",
-   description="パーセンタイル（10、25、50、75、90）ごとに`alt`属性が存在する画像の数を示す棒グラフです。このデータから、中央のウェブページには、モバイルページで54.6%、デスクトップページでは56.5%の`alt`属性の付いた画像が含まれていることがわかりました。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1862003290&format=interactive",
-   sheets_gid="412947118",
-   sql_file="image-alt-stats.sql"
-   )
+  image="images-with-alt-attribute.png",
+  caption="`alt` 属性を含む画像の割合。",
+  description="パーセンタイル（10、25、50、75、90）ごとに`alt`属性が存在する画像の数を示す棒グラフです。このデータから、中央のウェブページには、モバイルページで54.6%、デスクトップページでは56.5%の`alt`属性の付いた画像が含まれていることがわかりました。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1862003290&format=interactive",
+  sheets_gid="412947118",
+  sql_file="image-alt-stats.sql"
+  )
 }}
 
 {{ figure_markup(
-   image="images-with-blank-alt-attribute.png",
-   caption="`alt` 属性が空白の割合。",
-   description="パーセンタイル（25、50、75、90）ごとに、空白`alt`属性がフィーチャーされる割合を示す棒グラフ。中央のウェブページでは、デスクトップで10.5%、モバイルでは11.8%の空白の`alt`属性が表示されています。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=198831003&format=interactive",
-   sheets_gid="412947118",
-   sql_file="image-alt-stats.sql"
-   )
+  image="images-with-blank-alt-attribute.png",
+  caption="`alt` 属性が空白の割合。",
+  description="パーセンタイル（25、50、75、90）ごとに、空白`alt`属性がフィーチャーされる割合を示す棒グラフ。中央のウェブページでは、デスクトップで10.5%、モバイルでは11.8%の空白の`alt`属性が表示されています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=198831003&format=interactive",
+  sheets_gid="412947118",
+  sql_file="image-alt-stats.sql"
+  )
 }}
 
 {{ figure_markup(
-   image="images-with-missing-alt-attribute.png",
-   caption="`alt`属性がない画像の割合。",
-   description="パーセンタイル（10、25、50、75、90）ごとに`alt`属性が欠落している画像の割合を示す棒グラフです。中央のウェブページでは、デスクトップでは `alt` 属性の欠落が1.4%、モバイルでは `alt` 属性の欠落が0%でした。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=819909313&format=interactive",
-   sheets_gid="412947118",
-   sql_file="image-alt-stats.sql"
-   )
+  image="images-with-missing-alt-attribute.png",
+  caption="`alt`属性がない画像の割合。",
+  description="パーセンタイル（10、25、50、75、90）ごとに`alt`属性が欠落している画像の割合を示す棒グラフです。中央のウェブページでは、デスクトップでは `alt` 属性の欠落が1.4%、モバイルでは `alt` 属性の欠落が0%でした。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=819909313&format=interactive",
+  sheets_gid="412947118",
+  sql_file="image-alt-stats.sql"
+  )
 }}
 
 私たちはそれがわかりました
@@ -448,13 +448,13 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 `<img>` 要素の `loading` 属性は、ユーザーエージェントがページ上の画像のレンダリングと表示をどのように優先させるかに影響します。ユーザー体験やページの読み込み性能に影響を与える可能性があり、これらはいずれもSEOの成功に影響を与えます。
 
 {{ figure_markup(
-   image="image-loading-property-usage.png",
-   caption="画像読み込みのプロパティの使用状況。",
-   description='ページと画像読み込みプロパティの使用率（missing, lazy, eager, invalid, auto, blank）を示す棒グラフ。当社のデータでは、デスクトップページの83.3%、モバイルページの83.5%で画像の読み込みプロパティが欠落していることが判明しました。その結果、デスクトップとモバイルのページの15.6%が `loading="lazy"` を使用しており、`loading="eager"` はデスクトップとモバイルのページの0.8%に過ぎないことがわかりました。その他のケースは、デスクトップとモバイルのページで1%未満です。これには、無効なプロパティや空白のプロパティ、または `loading="auto"` を持つケースが含まれます。',
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1305654777&format=interactive",
-   sheets_gid="55531578",
-   sql_file="image-loading-property-usage.sql"
-   )
+  image="image-loading-property-usage.png",
+  caption="画像読み込みのプロパティの使用状況。",
+  description='ページと画像読み込みプロパティの使用率（missing, lazy, eager, invalid, auto, blank）を示す棒グラフ。当社のデータでは、デスクトップページの83.3%、モバイルページの83.5%で画像の読み込みプロパティが欠落していることが判明しました。その結果、デスクトップとモバイルのページの15.6%が `loading="lazy"` を使用しており、`loading="eager"` はデスクトップとモバイルのページの0.8%に過ぎないことがわかりました。その他のケースは、デスクトップとモバイルのページで1%未満です。これには、無効なプロパティや空白のプロパティ、または `loading="auto"` を持つケースが含まれます。',
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1305654777&format=interactive",
+  sheets_gid="55531578",
+  sql_file="image-loading-property-usage.sql"
+  )
 }}
 
 私たちはそれを見たのです。
@@ -475,13 +475,13 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 まず、レンダリングされたページの内容を見ます。_レンダリング_とは、ブラウザがすべてのJavaScriptとDOMまたはCSSOMを変更する他のコードを実行した後のページのコンテンツです。
 
 {{ figure_markup(
-   image="visible-rendered-words-percentile.png",
-   caption="レンダリングされた可視ワードの割合。",
-   description="パーセンタイル（10、25、50、75、90）別にレンダリングされた可視ワード数を示す棒グラフ。レンダリングされたデスクトップページの中央値は425語、モバイルページの中央値は367語でした。モバイル・ページで、すべてのパーセンタイルでレンダリングされる単語数が少なくなっています。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=833732027&format=interactive",
-   sheets_gid="455169599",
-   sql_file="seo-stats-by-percentile.sql"
-   )
+  image="visible-rendered-words-percentile.png",
+  caption="レンダリングされた可視ワードの割合。",
+  description="パーセンタイル（10、25、50、75、90）別にレンダリングされた可視ワード数を示す棒グラフ。レンダリングされたデスクトップページの中央値は425語、モバイルページの中央値は367語でした。モバイル・ページで、すべてのパーセンタイルでレンダリングされる単語数が少なくなっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=833732027&format=interactive",
+  sheets_gid="455169599",
+  sql_file="seo-stats-by-percentile.sql"
+  )
 }}
 
 - デスクトップページのレンダリング文字数の中央値は425語で、2020年には402語になっています。
@@ -493,13 +493,13 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 次に、未加工のページコンテンツについて見ていきます。_未加工_とは、ブラウザがJavaScriptやDOMやCSSOMを修正する他のコードを実行する前のページのコンテンツのことです。ソースコードで配信され、目に見える「未加工」のコンテンツです。
 
 {{ figure_markup(
-   image="visible-raw-words-percentile.png",
-   caption="未加工の可視化単語の割合。",
-   description="パーセンタイル（10、25、50、75、90）ごとの未加工の可視ワード数を示す棒グラフ。デスクトップ用未加工ページの中央値は369語、モバイル用ページの中央値は321語でした。モバイル・ページで、すべてのパーセンタイルで未加工の単語数が少なくなっています。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=58186900&format=interactive",
-   sheets_gid="455169599",
-   sql_file="seo-stats-by-percentile.sql"
-   )
+  image="visible-raw-words-percentile.png",
+  caption="未加工の可視化単語の割合。",
+  description="パーセンタイル（10、25、50、75、90）ごとの未加工の可視ワード数を示す棒グラフ。デスクトップ用未加工ページの中央値は369語、モバイル用ページの中央値は321語でした。モバイル・ページで、すべてのパーセンタイルで未加工の単語数が少なくなっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=58186900&format=interactive",
+  sheets_gid="455169599",
+  sql_file="seo-stats-by-percentile.sql"
+  )
 }}
 
 - デスクトップページの中央値は369語であるのに対し、2020年には360語になっています。
@@ -517,13 +517,13 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 構造化データは、ページ上の単語と同様に、JavaScriptで変更できます。
 
 {{ figure_markup(
-   image="structured-data-usage.png",
-   caption="構造化データの割合。",
-   description="未加工の構造化データとレンダリングされた構造化データのページ数を示す棒グラフ。デスクトップでは41.8%、モバイルで42.5%のページが未加工の構造化データを持っていました。構造データをレンダリングしているページは、デスクトップで43.2%、モバイルでは44.2%であった。構造データのレンダリングのみを行っているページは少なく、デスクトップでは1.4％、モバイルでは1.7％でした。最後に、構造データのレンダリングが変更されたページは、デスクトップ用ページの4.5%、モバイル用ページの4.7%でした。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1924313131&format=interactive",
-   sheets_gid="1347655296",
-   sql_file="seo-stats.sql"
-   )
+  image="structured-data-usage.png",
+  caption="構造化データの割合。",
+  description="未加工の構造化データとレンダリングされた構造化データのページ数を示す棒グラフ。デスクトップでは41.8%、モバイルで42.5%のページが未加工の構造化データを持っていました。構造データをレンダリングしているページは、デスクトップで43.2%、モバイルでは44.2%であった。構造データのレンダリングのみを行っているページは少なく、デスクトップでは1.4％、モバイルでは1.7％でした。最後に、構造データのレンダリングが変更されたページは、デスクトップ用ページの4.5%、モバイル用ページの4.7%でした。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1924313131&format=interactive",
+  sheets_gid="1347655296",
+  sql_file="seo-stats.sql"
+  )
 }}
 
 モバイルページの42.5%、デスクトップページの41.8%が、HTML内に構造化データを有しています。モバイルページの4.7%、デスクトップページの4.5%で、JavaScriptが構造化データを修正しています。
@@ -533,13 +533,13 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 #### もっとも一般的な構造化データ形式
 
 {{ figure_markup(
-   image="structured-data-formats.png",
-   caption="構造化データ形式の内訳",
-   description="構造化データ形式（JSON-LD、microdata、RDFa、microformats2）を採用しているページ数を示す棒グラフ。JSON-LD構造化データ形式は、デスクトップサイトの62.4%、モバイルサイトの60.5%で実装されています。microdata形式は、デスクトップの34.6%、モバイルの36.9%で実装されていた。RDFa形式は、デスクトップ用サイトの2.9%、モバイル用サイトの2.4%に実装されています。microformats2フォーマットは、データセット内のデスクトップとモバイルのサイトの0.2%で使用されていました。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1433352391&format=interactive",
-   sheets_gid="1113852331",
-   sql_file="structured-data-formats.sql"
-   )
+  image="structured-data-formats.png",
+  caption="構造化データ形式の内訳",
+  description="構造化データ形式（JSON-LD、microdata、RDFa、microformats2）を採用しているページ数を示す棒グラフ。JSON-LD構造化データ形式は、デスクトップサイトの62.4%、モバイルサイトの60.5%で実装されています。microdata形式は、デスクトップの34.6%、モバイルの36.9%で実装されていた。RDFa形式は、デスクトップ用サイトの2.9%、モバイル用サイトの2.4%に実装されています。microformats2フォーマットは、データセット内のデスクトップとモバイルのサイトの0.2%で使用されていました。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1433352391&format=interactive",
+  sheets_gid="1113852331",
+  sql_file="structured-data-formats.sql"
+  )
 }}
 
 構造化データをページに含めるには、いくつかの方法があります。JSON-LD、microdata、RDFa、microformats2などです。JSON-LDは、もっとも一般的な実装方法です。構造化データを持つデスクトップとモバイルのページの60%以上が、JSON-LDで実装しています。
@@ -551,15 +551,15 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 #### もっとも一般的なスキーマの種類
 
 {{ figure_markup(
-   image="most-popular-schema-types.png",
-   caption="もっとも一般的なスキーマの種類。",
-   description="ホームページでもっともよく使われているスキーマの種類を示した棒グラフ。デスクトップとモバイルのホームページでほぼ同じ結果でした。もっとも人気のあるスキーマタイプは、WebSite、SearchAction、WebPage、UnknownType、Organizationでした。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=242663990&format=interactive",
-   sheets_gid="1580260783",
-   sql_file="structured-data-schema-types.sql",
-   width=600,
-   height=532
-   )
+  image="most-popular-schema-types.png",
+  caption="もっとも一般的なスキーマの種類。",
+  description="ホームページでもっともよく使われているスキーマの種類を示した棒グラフ。デスクトップとモバイルのホームページでほぼ同じ結果でした。もっとも人気のあるスキーマタイプは、WebSite、SearchAction、WebPage、UnknownType、Organizationでした。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=242663990&format=interactive",
+  sheets_gid="1580260783",
+  sql_file="structured-data-schema-types.sql",
+  width=600,
+  height=532
+  )
 }}
 
 ホームページでもっともよく見られるスキーマタイプは `WebSite`、`SearchAction`、`WebPage` です。`SearchAction` は、<a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox">サイトリンク検索ボックス</a> を動かすもので、Googleが検索結果ページで表示することを選択できます。
@@ -569,13 +569,13 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 見出し要素（`<h1>`、`<h2>`など）は、重要な構造要素です。ランキングに直接影響を与えるものではありませんが、Googleがページのコンテンツをより理解するのに役立ちます。
 
 {{ figure_markup(
-   image="heading-element-usage.png",
-   caption="見出し要素の割合。",
-   description="見出しタグ（レベル1、2、3、4）別に、H要素が存在するページの割合を示した棒グラフ。デスクトップとモバイルの結果にほとんど差はありませんでした。`h1`の見出しは65.4%のページに、`h2`は71.9%のページにもっとも多く、`h3`3は61.8%のページに、`h4`の見出しは37.6%のページに見受けられた。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1197492338&format=interactive",
-   sheets_gid="1347655296",
-   sql_file="seo-stats.sql"
-   )
+  image="heading-element-usage.png",
+  caption="見出し要素の割合。",
+  description="見出しタグ（レベル1、2、3、4）別に、H要素が存在するページの割合を示した棒グラフ。デスクトップとモバイルの結果にほとんど差はありませんでした。`h1`の見出しは65.4%のページに、`h2`は71.9%のページにもっとも多く、`h3`3は61.8%のページに、`h4`の見出しは37.6%のページに見受けられた。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1197492338&format=interactive",
+  sheets_gid="1347655296",
+  sql_file="seo-stats.sql"
+  )
 }}
 
 主な見出しについては、 `h1`（65.4％）よりも多くのページ（71.9％）に`h2`があります。この差に明確な説明はありません。デスクトップとモバイルのページの61.4%は `h3` を使い、`h4` は39%以下です。
@@ -583,13 +583,13 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 デスクトップとモバイルの見出しの使い方にほとんど差はなく、2020年に対して大きな変化もありませんでした。
 
 {{ figure_markup(
-   image="non-empty-heading-element-usage.png",
-   caption="空でない見出し要素の使用状況。",
-   description="見出しタグ（レベル1、2、3、4）別に、空でない`<h>`要素が存在するページの割合を示した棒グラフです。デスクトップとモバイルの結果には、ほとんど差がありませんでした。`h1`の見出しは58.1%のページで、`h2`は70.5%のページで、`h3`は60.3%のページで、`h4`の見出しは36.5%のページで、それぞれもっとも多く見受けられました。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2102902536&format=interactive",
-   sheets_gid="1347655296",
-   sql_file="seo-stats.sql"
-   )
+  image="non-empty-heading-element-usage.png",
+  caption="空でない見出し要素の使用状況。",
+  description="見出しタグ（レベル1、2、3、4）別に、空でない`<h>`要素が存在するページの割合を示した棒グラフです。デスクトップとモバイルの結果には、ほとんど差がありませんでした。`h1`の見出しは58.1%のページで、`h2`は70.5%のページで、`h3`は60.3%のページで、`h4`の見出しは36.5%のページで、それぞれもっとも多く見受けられました。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2102902536&format=interactive",
+  sheets_gid="1347655296",
+  sql_file="seo-stats.sql"
+  )
 }}
 
 しかし、_空ではない_`<h>`要素、とくに`h1`を含むページの割合は低くなっています。ホームページでは、ロゴ画像を`<h1>`要素で囲むことが多いので、このような結果になったのでしょう。
@@ -612,13 +612,13 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 ### 内部および外部リンク
 
 {{ figure_markup(
-   image="outgoing-internal-link.png",
-   caption="ホームページからの内部リンク",
-   description="ホームページの内部リンク数をパーセンタイル（10、25、50、75、90）別に示した棒グラフです。デスクトップ用ホームページの中央値には64の内部リンクがあったのに対し、モバイル用ホームページには55の内部リンクがありました。どのパーセンタイルでも、デスクトップのホームページの方が内部リンクは多くなっています。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1929473622&format=interactive",
-   sheets_gid="455169599",
-   sql_file="seo-stats-by-percentile.sql"
-   )
+  image="outgoing-internal-link.png",
+  caption="ホームページからの内部リンク",
+  description="ホームページの内部リンク数をパーセンタイル（10、25、50、75、90）別に示した棒グラフです。デスクトップ用ホームページの中央値には64の内部リンクがあったのに対し、モバイル用ホームページには55の内部リンクがありました。どのパーセンタイルでも、デスクトップのホームページの方が内部リンクは多くなっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1929473622&format=interactive",
+  sheets_gid="455169599",
+  sql_file="seo-stats-by-percentile.sql"
+  )
 }}
 
 内部リンクとは、同じサイト内の他のページへのリンクのことです。デスクトップ版に比べ、モバイル版ではページのリンクが少なかった。
@@ -628,13 +628,13 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 もっとも人気のあるウェブサイト（CrUXのデータによると上位1,000）は、人気のないウェブサイトよりも多くの発信内部リンクを持っています。デスクトップでは144、モバイルでは110で、中央値より2倍以上多いのです。これは、一般的にページ数の多い大規模なサイトでメガメニューが使用されているためと思われます。
 
 {{ figure_markup(
-   image="outgoing-external-links.png",
-   caption="ホームページからの外部リンク",
-   description="ホームページの外部リンク数をパーセンタイル（10、25、50、75、90）別に示した棒グラフ。デスクトップ用ホームページの中央値には7つの外部リンクがあったのに対し、モバイル用ホームページには6つの外部リンクがありました。どのパーセンタイルでも、デスクトップ用ホームページの方が外部リンクは多いことがわかります。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=876769621&format=interactive",
-   sheets_gid="455169599",
-   sql_file="seo-stats-by-percentile.sql"
-   )
+  image="outgoing-external-links.png",
+  caption="ホームページからの外部リンク",
+  description="ホームページの外部リンク数をパーセンタイル（10、25、50、75、90）別に示した棒グラフ。デスクトップ用ホームページの中央値には7つの外部リンクがあったのに対し、モバイル用ホームページには6つの外部リンクがありました。どのパーセンタイルでも、デスクトップ用ホームページの方が外部リンクは多いことがわかります。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=876769621&format=interactive",
+  sheets_gid="455169599",
+  sql_file="seo-stats-by-percentile.sql"
+  )
 }}
 
 外部リンクとは、あるウェブサイトから別のサイトへのリンクのことです。このデータでも、モバイル版のページで外部リンクは少ないことがわかります。
@@ -644,23 +644,23 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 ### テキストと画像のリンク
 
 {{ figure_markup(
-   image="text-links.png",
-   caption="ホームページからのテキストリンク",
-   description="パーセンタイル（10、25、50、75、90）ごとのテキストリンクの数を示す棒グラフ。中央値のページには、デスクトップで69、モバイルで63のテキストリンクが含まれていました。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1700739999&format=interactive",
-   sheets_gid="455169599",
-   sql_file="seo-stats-by-percentile.sql"
-   )
+  image="text-links.png",
+  caption="ホームページからのテキストリンク",
+  description="パーセンタイル（10、25、50、75、90）ごとのテキストリンクの数を示す棒グラフ。中央値のページには、デスクトップで69、モバイルで63のテキストリンクが含まれていました。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1700739999&format=interactive",
+  sheets_gid="455169599",
+  sql_file="seo-stats-by-percentile.sql"
+  )
 }}
 
 {{ figure_markup(
-   image="image-links.png",
-   caption="ホームページからの画像リンク",
-   description="パーセンタイル（10、25、50、75、90）ごとの画像リンク数を示す棒グラフ。中央のウェブページには、デスクトップでは7つの画像リンクが、モバイルでは6つの画像リンクが含まれていました。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1217720785&format=interactive",
-   sheets_gid="455169599",
-   sql_file="seo-stats-by-percentile.sql"
-   )
+  image="image-links.png",
+  caption="ホームページからの画像リンク",
+  description="パーセンタイル（10、25、50、75、90）ごとの画像リンク数を示す棒グラフ。中央のウェブページには、デスクトップでは7つの画像リンクが、モバイルでは6つの画像リンクが含まれていました。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1217720785&format=interactive",
+  sheets_gid="455169599",
+  sql_file="seo-stats-by-percentile.sql"
+  )
 }}
 
 ウェブ上のリンクの大部分はテキストベースですが、画像から他のページにリンクしているものもあります。デスクトップページのリンクの9.2％、モバイルページのリンクの8.7％が画像リンクです。画像リンクでは、画像に設定された `alt` 属性がアンカーテキストとして機能し、そのページが何についてのページなのか、さらに詳しい情報を提供します。
@@ -670,13 +670,13 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 2019年9月、Googleは<a hreflang="en" href="https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html">リンクを_スポンサー_または_ユーザーが作成したコンテンツ_に分類できる属性を導入しました</a>。これらの属性は、以前<a hreflang="en" href="https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html">2005年に導入された`rel=nofollow`を追加したものです</a>。新しい属性である `rel=ugc` と `rel=sponsored` は、リンクに追加情報を与えます。
 
 {{ figure_markup(
-   image="rel-attibute-usage.png",
-   caption="Rel属性の使用状況。",
-   description='デスクトップとモバイルでのrel属性の使用率（％）を示す棒グラフ。当社のデータでは、デスクトップ版で29.2%、モバイル版では30.7%のホームページがnofollow属性を採用していることがわかりました。`rel="noopener"`は、デスクトップページの31.6%、モバイルページの30.1%で採用されました。`rel="noreferrer"`はデスクトップページの15.8%、モバイルページの14.8%に掲載されました。`rel="dofollow"`、`rel="ugc"`、`rel="sponsored"`、`rel="follow"`はいずれもデスクトップとモバイルのページの1%未満にしか表示されませんでした。',
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1672151299&format=interactive",
-   sheets_gid="1936997045",
-   sql_file="anchor-rel-attribute-usage.sql"
-   )
+  image="rel-attibute-usage.png",
+  caption="Rel属性の使用状況。",
+  description='デスクトップとモバイルでのrel属性の使用率（％）を示す棒グラフ。当社のデータでは、デスクトップ版で29.2%、モバイル版では30.7%のホームページがnofollow属性を採用していることがわかりました。`rel="noopener"`は、デスクトップページの31.6%、モバイルページの30.1%で採用されました。`rel="noreferrer"`はデスクトップページの15.8%、モバイルページの14.8%に掲載されました。`rel="dofollow"`、`rel="ugc"`、`rel="sponsored"`、`rel="follow"`はいずれもデスクトップとモバイルのページの1%未満にしか表示されませんでした。',
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1672151299&format=interactive",
+  sheets_gid="1936997045",
+  sql_file="anchor-rel-attribute-usage.sql"
+  )
 }}
 
 新しい属性は、少なくともホームページではまだかなり稀で、`rel="ugc"`はモバイルページの0.4%、`rel="sponsored"`はモバイルページの0.3%に表示されます。これらの属性は、ホームページ以外のページでより多く採用されている可能性があります。
@@ -690,13 +690,13 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 2021年、アクセラレイテッド・モバイル・ページ (AMP)のエコシステムに大きな変化がありました。AMPは <a hreflang="en" href="https://developers.google.com/search/blog/2021/04/more-details-page-experience#details">トップページカルーセルには必要なくなり、Google Newsアプリにも必要なくなり、GoogleはSERPのAMP結果の横にAMPロゴを表示しなくなりました</a>。
 
 {{ figure_markup(
-   image="amp-markup-types.png",
-   caption="AMP属性の使用状況。",
-   description="AMPマークアップタイプを持つページの割合を示す棒グラフ。Amp属性は、デスクトップ向けページの0.09%、モバイル向けページの0.22%に存在しました。Amp & Emjoi属性は、デスクトップ向けページの0.02%、モバイル向けページの0.04%に適用されています。AmpまたはEmjoi属性は、デスクトップページの0.10%、モバイルページの0.26%で使用されました。最後に、Rel Ampタグは、デスクトップページの0.82%、モバイルページの0.75%で使用されました。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1787667985&format=interactive",
-   sheets_gid="718210755",
-   sql_file="markup-stats.sql"
-   )
+  image="amp-markup-types.png",
+  caption="AMP属性の使用状況。",
+  description="AMPマークアップタイプを持つページの割合を示す棒グラフ。Amp属性は、デスクトップ向けページの0.09%、モバイル向けページの0.22%に存在しました。Amp & Emjoi属性は、デスクトップ向けページの0.02%、モバイル向けページの0.04%に適用されています。AmpまたはEmjoi属性は、デスクトップページの0.10%、モバイルページの0.26%で使用されました。最後に、Rel Ampタグは、デスクトップページの0.82%、モバイルページの0.75%で使用されました。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1787667985&format=interactive",
+  sheets_gid="718210755",
+  sql_file="markup-stats.sql"
+  )
 }}
 
 しかし、2021年になってもAMPの採用は増え続けている。現在、デスクトップページの0.09%にAMP属性が含まれているのに対し、モバイルページは0.22%となっています。これは、2020年のデスクトップページの0.06％、モバイルページの0.15％から上昇したものです。
@@ -711,15 +711,15 @@ Core Web Vitalsは、Googleのページ体験シグナルの一部である新�
 検索エンジンにローカライズされたページを知らせるには、`hreflang`タグを使用します。`hreflang`属性は、<a hreflang="en" href="https://yandex.com/support/webmaster/yandex-indexing/locale-pages.html">Yandex</a> やBing（[ある程度](https://twitter.com/facan/status/1304120691172601856)）でも使用されています。
 
 {{ figure_markup(
-   image="hreflang-usage.png",
-   caption="hreflangタグのトップ属性表。",
-   description="hreflangの使用状況を示す横棒グラフ。もっとも利用されているhreflang属性は`en`（英語版）で、hreflang属性（全言語）はデスクトップおよびモバイルページの5%未満にしか実装されていませんでした。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1149395895&format=interactive",
-   sheets_gid="866829014",
-   sql_file="hreflang-link-tag-usage.sql",
-   width=600,
-   height=546
-   )
+  image="hreflang-usage.png",
+  caption="hreflangタグのトップ属性表。",
+  description="hreflangの使用状況を示す横棒グラフ。もっとも利用されているhreflang属性は`en`（英語版）で、hreflang属性（全言語）はデスクトップおよびモバイルページの5%未満にしか実装されていませんでした。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=1149395895&format=interactive",
+  sheets_gid="866829014",
+  sql_file="hreflang-link-tag-usage.sql",
+  width=600,
+  height=546
+  )
 }}
 
 デスクトップ用ページの9.0%、モバイル用ページの8.4%がhreflang属性を使用しています。
@@ -738,15 +738,15 @@ Bingにとって、[`hreflang` は `content-language` ヘッダーよりも「�
 2. HTMLタグ
 
 {{ figure_markup(
-   image="language-usage-html-http.png",
-   caption="言語使用状況（HTML、HTTPヘッダー）。",
-   description="言語が使用されているページの割合を示す横棒グラフ（HTMLとHTTPヘッダー）。",
-   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2048466165&format=interactive",
-   sheets_gid="933228304",
-   sql_file="content-language-usage.sql",
-   width=600,
-   height=529
-   )
+  image="language-usage-html-http.png",
+  caption="言語使用状況（HTML、HTTPヘッダー）。",
+  description="言語が使用されているページの割合を示す横棒グラフ（HTMLとHTTPヘッダー）。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7oSHa6DHYTfZqsuGmIYdlfYVkwrUvOYD_r6soecExV_ZpbbZjmG6watu0hwrOKqK3-inNrt0TfXCO/pubchart?oid=2048466165&format=interactive",
+  sheets_gid="933228304",
+  sql_file="content-language-usage.sql",
+  width=600,
+  height=529
+  )
 }}
 
 `content-language` を実装するには、HTTPサーバーレスポンスを使用するのがもっとも一般的な方法です。デスクトップでは8.7％、モバイルでは9.3％のウェブサイトがこの方法を採用しています。

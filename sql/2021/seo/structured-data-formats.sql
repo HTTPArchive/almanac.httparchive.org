@@ -51,10 +51,15 @@ FROM
     FROM
       `httparchive.pages.2021_07_01_*`
     JOIN
-      (SELECT _TABLE_SUFFIX, COUNT(0) AS total
-                                   FROM
-        `httparchive.pages.2021_07_01_*`
-        GROUP BY _TABLE_SUFFIX)
+      (
+        SELECT
+          _TABLE_SUFFIX,
+          COUNT(0) AS total
+        FROM
+          `httparchive.pages.2021_07_01_*`
+        GROUP BY
+          _TABLE_SUFFIX
+      )
     USING (_TABLE_SUFFIX)
   ), UNNEST(structured_data_wpt_bodies_info.items_by_format) AS format
 GROUP BY

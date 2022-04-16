@@ -13,7 +13,7 @@ try {
     var markup = JSON.parse(markup_string);
 
     if (Array.isArray(markup) || typeof markup != 'object') return result;
-	
+
     result.total = markup.images.img.total;
     result.alt_missing = markup.images.img.alt.missing;
     result.alt_blank = markup.images.img.alt.blank;

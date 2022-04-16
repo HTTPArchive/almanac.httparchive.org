@@ -18,7 +18,7 @@ try {
     if (Array.isArray(robots_txt) || typeof robots_txt != 'object') return result;
 
     if (robots_txt.status) {
-       result.status_code = ''+robots_txt.status;
+      result.status_code = ''+robots_txt.status;
     }
 
 } catch (e) {}

@@ -11,13 +11,15 @@ SELECT
 FROM
   `httparchive.technologies.2021_*`
 JOIN
-  (SELECT
+  (
+    SELECT
       _TABLE_SUFFIX,
       COUNT(DISTINCT url) AS total
     FROM
       `httparchive.summary_pages.2021_*`
     GROUP BY
-      _TABLE_SUFFIX)
+      _TABLE_SUFFIX
+  )
 USING (_TABLE_SUFFIX)
 WHERE
   category = 'Ecommerce'
@@ -39,13 +41,15 @@ SELECT
 FROM
   `httparchive.technologies.2020_*`
 JOIN
-  (SELECT
+  (
+    SELECT
       _TABLE_SUFFIX,
       COUNT(DISTINCT url) AS total
     FROM
       `httparchive.summary_pages.2020_*`
     GROUP BY
-      _TABLE_SUFFIX)
+      _TABLE_SUFFIX
+  )
 USING (_TABLE_SUFFIX)
 WHERE
   category = 'Ecommerce'

@@ -18,10 +18,12 @@ FROM
     WHERE
       date = '2021-07-01' AND
       pushed = '1' AND
-      (LOWER(protocol) = "http/2" OR
+      (
+        LOWER(protocol) = "http/2" OR
         LOWER(protocol) LIKE "%quic%" OR
         LOWER(protocol) LIKE "h3%" OR
-        LOWER(protocol) = "http/3")
+        LOWER(protocol) = "http/3"
+      )
     GROUP BY
       client,
       page

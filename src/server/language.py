@@ -6,14 +6,14 @@ class _Language(object):
 
     def __eq__(self, other):
         if isinstance(other, _Language):
-            return '%r' % self == '%r' % other
+            return "%r" % self == "%r" % other
         return False
 
     def __str__(self):
-        return '%s' % (self._local_name)
+        return "%s" % (self._local_name)
 
     def __repr__(self):
-        return '%s, %s' % (self.__str__(), self.lang_attribute)
+        return "%s, %s" % (self.__str__(), self.lang_attribute)
 
     # Currently this returns the same as lang_code as we don't support regions
     @property
@@ -28,41 +28,41 @@ class _Language(object):
 # Allow mapping of one language to another for when country agnostic lookup
 # will not work (e.g. Chinese)
 LANGUAGE_MAPPING = {
-    'zh-cht': 'zh-TW',
-    'zh-hant': 'zh-TW',
-    'zh-hk': 'zh-TW',
-    'zh-mo': 'zh-TW',
-    'zh-tw': 'zh-TW',
-    'zh-cn': 'zh-CN',
-    'zh-hans': 'zh-CN',
-    'zh-sg': 'zh-CN',
-    'zh': 'zh-CN'
+    "zh-cht": "zh-TW",
+    "zh-hant": "zh-TW",
+    "zh-hk": "zh-TW",
+    "zh-mo": "zh-TW",
+    "zh-tw": "zh-TW",
+    "zh-cn": "zh-CN",
+    "zh-hans": "zh-CN",
+    "zh-sg": "zh-CN",
+    "zh": "zh-CN",
 }
 
 
 # Mostly we use region-agnostic languages, but can add region where
 # there are significant differences (e.g. Chinese)
 class Language(object):
-    EN = _Language('English', 'en')
-    ES = _Language('Español', 'es')
-    FR = _Language('Français', 'fr')
-    HI = _Language('हिन्दी', 'hi')
-    IT = _Language('Italiano', 'it')
-    JA = _Language('日本語', 'ja')
-    NL = _Language('Nederlands', 'nl')
-    PT = _Language('Português', 'pt')
-    RU = _Language('Русский', 'ru')
-    TR = _Language('Türkçe', 'tr')
-    UK = _Language('Українська', 'uk')
-    ZH_CN = _Language('简体中文', 'zh-CN')
-    ZH_TW = _Language('繁體中文', 'zh-TW')
+    EN = _Language("English", "en")
+    ES = _Language("Español", "es")
+    FR = _Language("Français", "fr")
+    HI = _Language("हिन्दी", "hi")
+    IT = _Language("Italiano", "it")
+    JA = _Language("日本語", "ja")
+    NL = _Language("Nederlands", "nl")
+    PT = _Language("Português", "pt")
+    RU = _Language("Русский", "ru")
+    TR = _Language("Türkçe", "tr")
+    UK = _Language("Українська", "uk")
+    ZH_CN = _Language("简体中文", "zh-CN")
+    ZH_TW = _Language("繁體中文", "zh-TW")
 
 
 DEFAULT_LANGUAGE = Language.EN
 
 
 # Maps language codes to _Language objects.
-language_map = {v.lang_code: v for k, v in Language.__dict__.items() if k[:1] != '_'}
+language_map = {v.lang_code: v for k, v in Language.__dict__.items() if k[:1] != "_"}
 
 
 def get_language(lang_code):

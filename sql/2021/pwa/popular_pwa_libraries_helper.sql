@@ -5,7 +5,7 @@ CREATE TEMPORARY FUNCTION getSWLibraries(importScriptsInfo STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   /* 'importScriptsInfo' returns an array of libraries that might import other libraries
-     The final array of libraries comes from the combination of both */
+      The final array of libraries comes from the combination of both */
   var ObjKeys = Object.keys(JSON.parse(importScriptsInfo));
   var ObjValues = Object.values(JSON.parse(importScriptsInfo));
   var libraries = ObjKeys.concat(ObjValues);

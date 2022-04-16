@@ -208,52 +208,52 @@ Hieronder staat een tabel met de meest voorkomende `Cache-Control`-richtlijnen:
 <figure>
   <table>
     <tr>
-     <th>Richtlijn</th>
-     <th>Beschrijving</th>
+      <th>Richtlijn</th>
+      <th>Beschrijving</th>
     </tr>
     <tr>
-     <td><code class="no-wrap">max-age</code></td>
-     <td>Geeft het aantal seconden aan waarvoor een bron kan worden opgeslagen, ten opzichte van de huidige tijd. Bijvoorbeeld <code>max-age=86400</code>.</td>
+      <td><code class="no-wrap">max-age</code></td>
+      <td>Geeft het aantal seconden aan waarvoor een bron kan worden opgeslagen, ten opzichte van de huidige tijd. Bijvoorbeeld <code>max-age=86400</code>.</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">public</code></td>
-     <td>Elke cache kan de reactie opslaan, inclusief de browser en eventuele proxies tussen de server en de browser, zoals een CDN. Dit wordt standaard verondersteld.</td>
+      <td><code class="no-wrap">public</code></td>
+      <td>Elke cache kan de reactie opslaan, inclusief de browser en eventuele proxies tussen de server en de browser, zoals een CDN. Dit wordt standaard verondersteld.</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">no-cache</code></td>
-     <td>Een cache-invoer moet voorafgaand aan het gebruik worden herlandsideerd, via een voorwaardelijke aanvraag, zelfs als het niet als oud is gemarkeerd.</td>
+      <td><code class="no-wrap">no-cache</code></td>
+      <td>Een cache-invoer moet voorafgaand aan het gebruik worden herlandsideerd, via een voorwaardelijke aanvraag, zelfs als het niet als oud is gemarkeerd.</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">must-revalidate</code></td>
-     <td>Een verouderde vermelding in de cache moet opnieuw worden gevalideerd voordat deze wordt gebruikt, via een voorwaardelijke aanvraag.</td>
+      <td><code class="no-wrap">must-revalidate</code></td>
+      <td>Een verouderde vermelding in de cache moet opnieuw worden gevalideerd voordat deze wordt gebruikt, via een voorwaardelijke aanvraag.</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">no-store</code></td>
-     <td>Geeft aan dat de reactie niet in de cache mag worden opgeslagen.</td>
+      <td><code class="no-wrap">no-store</code></td>
+      <td>Geeft aan dat de reactie niet in de cache mag worden opgeslagen.</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">private</code></td>
-     <td>De reactie is bedoeld voor een specifieke gebruiker en mag niet worden opgeslagen door gedeelde caches zoals proxy's en CDN's.</td>
+      <td><code class="no-wrap">private</code></td>
+      <td>De reactie is bedoeld voor een specifieke gebruiker en mag niet worden opgeslagen door gedeelde caches zoals proxy's en CDN's.</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">proxy-revalidate</code></td>
-     <td>Hetzelfde als <code>must-revalidate</code> maar is van toepassing op gedeelde caches.</td>
+      <td><code class="no-wrap">proxy-revalidate</code></td>
+      <td>Hetzelfde als <code>must-revalidate</code> maar is van toepassing op gedeelde caches.</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">s-maxage</code></td>
-     <td>Hetzelfde als <code>max-age</code> maar is alleen van toepassing op gedeelde caches (bijv. CDN's).</td>
+      <td><code class="no-wrap">s-maxage</code></td>
+      <td>Hetzelfde als <code>max-age</code> maar is alleen van toepassing op gedeelde caches (bijv. CDN's).</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">immutable</code></td>
-     <td>Geeft aan dat de vermelding in de cache nooit zal veranderen tijdens de TTL en dat hernieuwde validatie niet nodig is.</td>
+      <td><code class="no-wrap">immutable</code></td>
+      <td>Geeft aan dat de vermelding in de cache nooit zal veranderen tijdens de TTL en dat hernieuwde validatie niet nodig is.</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">stale-while-revalidate</code></td>
-     <td>Geeft aan dat de cliënt bereid is een verouderde reactie te accepteren terwijl hij op de achtergrond asynchroon controleert op een nieuwe reactie.</td>
+      <td><code class="no-wrap">stale-while-revalidate</code></td>
+      <td>Geeft aan dat de cliënt bereid is een verouderde reactie te accepteren terwijl hij op de achtergrond asynchroon controleert op een nieuwe reactie.</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">stale-if-error</code></td>
-     <td>Geeft aan dat de cliënt bereid is een verouderde reactie te accepteren als de controle op een nieuwe mislukt.</td>
+      <td><code class="no-wrap">stale-if-error</code></td>
+      <td>Geeft aan dat de cliënt bereid is een verouderde reactie te accepteren als de controle op een nieuwe mislukt.</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="<code>Cache-Control</code>-richtlijnen.", sheets_gid="1950040019", sql_file="cache_control_directives.sql") }}</figcaption>
@@ -628,14 +628,14 @@ Adoptie is slechts bij 1% van de websites, maar het neemt gestaag toe sinds juli
 <figure>
   <table>
     <tr>
-     <th>Sites die geen service workers gebruiken</th>
-     <th>Sites die service workers gebruiken</th>
-     <th>Totaal aantal sites</th>
+      <th>Sites die geen service workers gebruiken</th>
+      <th>Sites die service workers gebruiken</th>
+      <th>Totaal aantal sites</th>
     </tr>
     <tr>
-     <td class="numeric">6.225.774</td>
-     <td class="numeric">64.373</td>
-     <td class="numeric">6.290.147</td>
+      <td class="numeric">6.225.774</td>
+      <td class="numeric">64.373</td>
+      <td class="numeric">6.290.147</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="Aantal websites dat service workers gebruikt.", sheets_gid="2106765718", sql_file="appcache_and_serviceworkers.sql") }}</figcaption>
@@ -646,14 +646,14 @@ In de bovenstaande tabel kunt u zien dat 64.373 van de in totaal 6.290.147 websi
 <figure>
   <table>
     <tr>
-     <th>HTTP-Sites</th>
-     <th>HTTPS-Sites</th>
-     <th>Totaal aantal sites</th>
+      <th>HTTP-Sites</th>
+      <th>HTTPS-Sites</th>
+      <th>Totaal aantal sites</th>
     </tr>
     <tr>
-     <td class="numeric">1.469</td>
-     <td class="numeric">62.904</td>
-     <td class="numeric">64.373</td>
+      <td class="numeric">1.469</td>
+      <td class="numeric">62.904</td>
+      <td class="numeric">64.373</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="Aantal websites dat gebruikmaakt van service workers via HTTP/HTTPS.", sheets_gid="2106765718", sql_file="appcache_and_serviceworkers.sql") }}</figcaption>
@@ -675,7 +675,7 @@ Zoals we hebben gezien, wordt een cachebare bron gedurende een bepaalde tijd doo
   )
 }}
 
- Bij alle HTTP(S) verzoeken wordt 90,4% van de reacties als cachebaar beschouwd, wat betekent dat een cache ze mag opslaan. De resterende 9,6% van de reacties mag niet worden opgeslagen in browsercaches—meestal vanwege `Cache-Control: no-store`.
+Bij alle HTTP(S) verzoeken wordt 90,4% van de reacties als cachebaar beschouwd, wat betekent dat een cache ze mag opslaan. De resterende 9,6% van de reacties mag niet worden opgeslagen in browsercaches—meestal vanwege `Cache-Control: no-store`.
 
 {{ figure_markup(
   image="ttl-cachable-responses.png",
@@ -861,22 +861,22 @@ In totaal heeft 60,2% van de mobiele bronnen die op internet worden aangeboden, 
 <figure>
   <table>
     <tr>
-     <th>Cliënt</th>
-     <th>1e partij</th>
-     <th>3e partij</th>
-     <th>Globaal</th>
+      <th>Cliënt</th>
+      <th>1e partij</th>
+      <th>3e partij</th>
+      <th>Globaal</th>
     </tr>
     <tr>
-     <td>desktop</td>
-     <td class="numeric">61,6%</td>
-     <td class="numeric">59,3%</td>
-     <td class="numeric">60,7%</td>
+      <td>desktop</td>
+      <td class="numeric">61,6%</td>
+      <td class="numeric">59,3%</td>
+      <td class="numeric">60,7%</td>
     </tr>
     <tr>
-     <td>mobiel</td>
-     <td class="numeric">61,8%</td>
-     <td class="numeric">57,9%</td>
-     <td class="numeric">60,2%</td>
+      <td>mobiel</td>
+      <td class="numeric">61,8%</td>
+      <td class="numeric">57,9%</td>
+      <td class="numeric">60,2%</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="Percentage verzoeken met korte TTL's.", sheets_gid="1706274506", sql_file="content_age_older_than_ttl_by_party.sql") }}</figcaption>

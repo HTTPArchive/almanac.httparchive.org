@@ -1195,9 +1195,9 @@ However, not everything has improved over the last year. The median desktop page
 
 It is also important to note how there's still an important opportunity for improvement across many critical SEO related areas and configurations. Despite the growing use of mobile devices and Google's move to a mobile-first index:
 
- - 10.84% of mobile pages and 16.18% of desktop ones are not including the `viewport` tag at all, suggesting that they are not yet mobile friendly.
- - Non-trivial disparities were found across mobile and desktop pages, like the one between mobile and desktop links, illustrated in the 62 links on mobile versus the 68 links on desktop for the median web page.
- - 33.13% of websites scored _Good_ Core Web Vitals for desktop while only 19.96% of their mobile counterparts passed the Core Web Vitals assessment, suggesting that desktop continues to be the more performant platform for users.
+- 10.84% of mobile pages and 16.18% of desktop ones are not including the `viewport` tag at all, suggesting that they are not yet mobile friendly.
+- Non-trivial disparities were found across mobile and desktop pages, like the one between mobile and desktop links, illustrated in the 62 links on mobile versus the 68 links on desktop for the median web page.
+- 33.13% of websites scored _Good_ Core Web Vitals for desktop while only 19.96% of their mobile counterparts passed the Core Web Vitals assessment, suggesting that desktop continues to be the more performant platform for users.
 
 These findings could negatively impact sites as Google completes its migration to a <a hreflang="en" href="https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html">mobile-first index in March 2021</a>.
 

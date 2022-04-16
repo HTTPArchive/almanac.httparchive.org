@@ -70,38 +70,38 @@ Because the usage of resource hints in HTTP headers is so low, the remainder of 
 <figure>
   <table>
     <tr>
-     <th>Resource Hint</th>
-     <th>Usage (percent of sites)</th>
+      <th>Resource Hint</th>
+      <th>Usage (percent of sites)</th>
     </tr>
     <tr>
-     <td><code>dns-prefetch</code>
-     </td>
-     <td>29%
-     </td>
+      <td><code>dns-prefetch</code>
+      </td>
+      <td>29%
+      </td>
     </tr>
     <tr>
-     <td><code>preload</code>
-     </td>
-     <td>16%
-     </td>
+      <td><code>preload</code>
+      </td>
+      <td>16%
+      </td>
     </tr>
     <tr>
-     <td><code>preconnect</code>
-     </td>
-     <td>4%
-     </td>
+      <td><code>preconnect</code>
+      </td>
+      <td>4%
+      </td>
     </tr>
     <tr>
-     <td><code>prefetch</code>
-     </td>
-     <td>3%
-     </td>
+      <td><code>prefetch</code>
+      </td>
+      <td>3%
+      </td>
     </tr>
     <tr>
-     <td><code>prerender</code> (deprecated)
-     </td>
-     <td>0.13%
-     </td>
+      <td><code>prerender</code> (deprecated)
+      </td>
+      <td>0.13%
+      </td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="Adoption of resource hints.") }}</figcaption>
@@ -116,49 +116,49 @@ That being said, if a site does not need to support IE11 and below, switching fr
 <figure>
   <table>
     <tr>
-     <th>Resource Hint</th>
-     <th>Resource Hints Per Page:<br>Median</th>
-     <th>Resource Hints Per Page:<br>90th Percentile</th>
+      <th>Resource Hint</th>
+      <th>Resource Hints Per Page:<br>Median</th>
+      <th>Resource Hints Per Page:<br>90th Percentile</th>
     </tr>
     <tr>
-     <td><code>dns-prefetch</code>
-     </td>
-     <td>2
-     </td>
-     <td>8
-     </td>
+      <td><code>dns-prefetch</code>
+      </td>
+      <td>2
+      </td>
+      <td>8
+      </td>
     </tr>
     <tr>
-     <td><code>preload</code>
-     </td>
-     <td>2
-     </td>
-     <td>4
-     </td>
+      <td><code>preload</code>
+      </td>
+      <td>2
+      </td>
+      <td>4
+      </td>
     </tr>
     <tr>
-     <td><code>preconnect</code>
-     </td>
-     <td>2
-     </td>
-     <td>8
-     </td>
+      <td><code>preconnect</code>
+      </td>
+      <td>2
+      </td>
+      <td>8
+      </td>
     </tr>
     <tr>
-     <td><code>prefetch</code>
-     </td>
-     <td>1
-     </td>
-     <td>3
-     </td>
+      <td><code>prefetch</code>
+      </td>
+      <td>1
+      </td>
+      <td>3
+      </td>
     </tr>
     <tr>
-     <td><code>prerender</code> (deprecated)
-     </td>
-     <td>1
-     </td>
-     <td>1
-     </td>
+      <td><code>prerender</code> (deprecated)
+      </td>
+      <td>1
+      </td>
+      <td>1
+      </td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="Median and 90th percentiles of the number of resource hints used per page, of all pages using that resource hint.") }}</figcaption>
@@ -177,33 +177,33 @@ For newer resource types (e.g. fonts, `fetch()` requests, ES modules), the brows
 <figure>
   <table>
     <tr>
-     <th><code>crossorigin</code> value</th>
-     <th>Usage</th>
-     <th>Explanation</th>
+      <th><code>crossorigin</code> value</th>
+      <th>Usage</th>
+      <th>Explanation</th>
     </tr>
     <tr>
-     <td>Not set
-     </td>
-     <td>92%
-     </td>
-     <td>If the crossorigin attribute is absent, the request will follow the single-origin policy.
-     </td>
+      <td>Not set
+      </td>
+      <td>92%
+      </td>
+      <td>If the crossorigin attribute is absent, the request will follow the single-origin policy.
+      </td>
     </tr>
     <tr>
-     <td>anonymous (or equivalent)
-     </td>
-     <td>7%
-     </td>
-     <td>Executes a cross-origin request that does not include credentials.
-     </td>
+      <td>anonymous (or equivalent)
+      </td>
+      <td>7%
+      </td>
+      <td>Executes a cross-origin request that does not include credentials.
+      </td>
     </tr>
     <tr>
-     <td>use-credentials
-     </td>
-     <td>0.47%
-     </td>
-     <td>Executes a cross-origin request that includes credentials.
-     </td>
+      <td>use-credentials
+      </td>
+      <td>0.47%
+      </td>
+      <td>Executes a cross-origin request that includes credentials.
+      </td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="Adoption of the <code>crossorigin</code> attribute as a percent of resource hint instances.") }}</figcaption>

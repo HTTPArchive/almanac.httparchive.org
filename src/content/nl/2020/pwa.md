@@ -195,7 +195,7 @@ We hebben onderzocht naar welke van deze gebeurtenissen wordt geluisterd door se
   )
 }}
 
- De resultaten voor mobiel en desktop lijken erg op elkaar, waarbij `install`, `fetch` en `activate` de drie meest populaire gebeurtenissen zijn, gevolgd door `message`, `notificationclick`, `push` en `sync`. Als we deze resultaten interpreteren, zijn offline use-cases die service workers inschakelen de meest aantrekkelijke functie voor app-ontwikkelaars, ver vooruit op pushmeldingen. Vanwege de beperkte beschikbaarheid en het minder vaak voorkomende gebruik, speelt synchronisatie op de achtergrond momenteel geen belangrijke rol.
+De resultaten voor mobiel en desktop lijken erg op elkaar, waarbij `install`, `fetch` en `activate` de drie meest populaire gebeurtenissen zijn, gevolgd door `message`, `notificationclick`, `push` en `sync`. Als we deze resultaten interpreteren, zijn offline use-cases die service workers inschakelen de meest aantrekkelijke functie voor app-ontwikkelaars, ver vooruit op pushmeldingen. Vanwege de beperkte beschikbaarheid en het minder vaak voorkomende gebruik, speelt synchronisatie op de achtergrond momenteel geen belangrijke rol.
 
 ## Manifesten voor web-apps
 

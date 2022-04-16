@@ -29,14 +29,14 @@ tracker_domains = {}
 
 sql_query = """
     SELECT
-      categories.name, tracker, domain
+        categories.name, tracker, domain
     FROM
-      tracker_domains
+        tracker_domains
     INNER JOIN
-      trackers
+        trackers
     ON trackers.id = tracker_domains.tracker
     INNER JOIN
-      categories
+        categories
     ON categories.id = trackers.category_id;
 """
 

@@ -1,10 +1,10 @@
 /**
- * Show the contributors should be added in `config/year.json` file and which should remove based on their contributions in a perticular team
- *
- * @param {object} configs all config file generate with get_yearly_configs().
- * @param {object}  chapter_contributors parsed contributors for each year (author, analyst, reviewer, editor)[Must be a Set (finding is more efficient)]
- * @returns void does not return anything just output in console.
- */
+  * Show the contributors should be added in `config/year.json` file and which should remove based on their contributions in a perticular team
+  *
+  * @param {object} configs all config file generate with get_yearly_configs().
+  * @param {object}  chapter_contributors parsed contributors for each year (author, analyst, reviewer, editor)[Must be a Set (finding is more efficient)]
+  * @returns void does not return anything just output in console.
+  */
 const get_contributors_difference = async (configs, chapter_contributors) => {
   let not_contributed_but_in_file = {};
   let contributed_but_not_in_file = {};

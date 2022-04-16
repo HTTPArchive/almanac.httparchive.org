@@ -69,7 +69,7 @@ try {
     if (markup.audios) {
 
       var autoplay_count = Object.entries(markup.audios.autoplay)
-       // .filter(([key, value]) => key == "" || key == "autoplay") // should check, but lets just include all values
+        // .filter(([key, value]) => key == "" || key == "autoplay") // should check, but lets just include all values
         .reduce((total, [key, value]) => total + value, 0);
 
       result.contains_audios_with_autoplay = autoplay_count > 0;

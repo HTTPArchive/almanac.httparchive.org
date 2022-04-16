@@ -10,8 +10,8 @@ LANGUAGE js AS """
   for (i in headers) {
       if (headers[i].name.toLowerCase() === 'link')
         preload.push(headers[i].value);
-      }
-     return preload;
+  }
+  return preload;
 
 """;
 

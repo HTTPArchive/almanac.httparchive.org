@@ -7,15 +7,15 @@ try {
     if (!rule.selectors) {
       return [];
     }
-    
+
     var isAtProperty = rule.selectors.filter(selector => {
       return selector.startsWith('@property');
     }).length;
-    
+
     if (!isAtProperty) {
       return [];
     }
-    
+
     return rule.declarations.filter(declaration => {
       return declaration.property == 'syntax';
     }).map(declaration => {

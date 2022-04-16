@@ -48,8 +48,8 @@ For HTTP content encoding, the HTTP standard defines the [Accept-Encoding](https
 
 Practically all text compression is done by one of two HTTP content encodings: <a hreflang="en" href="https://tools.ietf.org/html/rfc1952">Gzip</a> and <a hreflang="en" href="https://github.com/google/brotli">Brotli</a>. Both Brotli and Gzip are supported by virtually all browsers. On the server side, most [popular servers](https://en.wikipedia.org/wiki/HTTP_compression#Servers_that_support_HTTP_compression) like nginx and Apache can be configured to use Brotli and/or Gzip. The configuration is different depending on when the content is generated:
 
- - Static content: this content can be precompressed. The web server can be set up to map the URLs to the appropriate compressed files, e.g. based on the filename extension. For example, CSS and JavaScript are often static content and so can be precompressed to reduce effort for the web server to compress for each request.
- - Dynamically generated content: this has to be compressed on the fly for each request by the web server (or a plugin) itself. For example, HTML or JSON can be dynamic content in some cases.
+- Static content: this content can be precompressed. The web server can be set up to map the URLs to the appropriate compressed files, e.g. based on the filename extension. For example, CSS and JavaScript are often static content and so can be precompressed to reduce effort for the web server to compress for each request.
+- Dynamically generated content: this has to be compressed on the fly for each request by the web server (or a plugin) itself. For example, HTML or JSON can be dynamic content in some cases.
 
 When compressing text with Brotli or Gzip it is possible to select different compression levels. Higher compression levels will result in smaller compressed files, but take a longer time to compress. During decompression, CPU usage tends not to be higher for more heavily compressed files. Rather, files that are compressed with a higher compression level are slightly faster to decode.
 
@@ -201,7 +201,7 @@ Responses that are Gzip compressed will show "gzip", while those compressed with
   )
 }}
 
- A different tool that can analyze compression on a site is Google's <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> tool. It runs a series of audits, including the <a hreflang="en" href="https://web.dev/uses-text-compression/">"Enable text compression" audit</a>. This audit attempts to compress resources to check if they reduced by at least 10% and 1,400 bytes. Depending on the score, it can show a compression recommendation in the results, with a list of the resources that can be compressed to benefit a website.
+A different tool that can analyze compression on a site is Google's <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> tool. It runs a series of audits, including the <a hreflang="en" href="https://web.dev/uses-text-compression/">"Enable text compression" audit</a>. This audit attempts to compress resources to check if they reduced by at least 10% and 1,400 bytes. Depending on the score, it can show a compression recommendation in the results, with a list of the resources that can be compressed to benefit a website.
 
 The HTTP Archive [runs Lighthouse audits](./methodology#lighthouse) for every mobile page, and from this data we observed that 72% of websites pass this audit. This is 2% less than [last year's](../2020/compression#identifying-compression-opportunities) 74%, which is despite more usage of text compression overall compared to last year, a slight drop.
 

@@ -57,7 +57,7 @@ There are three metrics to consider when looking at pixel volume: CSS pixels, na
 * _Natural pixels_ refer to the logical pixels represented in a file. If you were to load this image in GIMP or Photoshop, the pixel file dimensions would be the natural pixels.
 * _Screen pixels_ refer to the physical electronics on the display. Prior to mobile phones and modern high-resolution displays, there was a 1:1 relationship between CSS pixels and LED points on a screen. However, because mobile devices are held closer to the eye, and laptop screens are closer than the old mainframe terminals, modern screens have a higher ratio of physical pixels to traditional CSS pixels. This ratio is referred to as Device-Pixel-Ratio or colloquially referred to as Retina™ displays.
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig3_image_pixel_per_page_mobile_css_v_actual.png",
   caption="Image pixels per page (mobile): CSS versus actual.",
   description="A comparison of the CSS pixels allocated to image content compared to the actual image pixels for mobile, showing 10th percentile (0.07 MP actual, 0.04 MP CSS), 25th percentile (0.38 MP actual, 0.18 MP CSS), 50th percentile (1.6 MP actual, 0.65 MP CSS), 75th percentile (5.1 MP actual, 1.8 MP CSS), and 90th percentile (12 MP actual, 4.6 MP CSS)",
@@ -153,7 +153,7 @@ Each format has its own merits and has ideal uses for the web. A very simplified
       </tr>
     </tbody>
   </table>
-   <figcaption>{{ figure_link(caption="Explanation of the mainstream file formats.") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Explanation of the mainstream file formats.") }}</figcaption>
 </figure>
 
 ### Image formats
@@ -204,7 +204,7 @@ There are two ways to look at image file sizes: absolute bytes per resource and 
 
 From this we can start to get a sense of how large or small a typical resource is on the web. However, this doesn't give us a sense of the volume of pixels represented on screen for these file distributions. To do this we can divide each resource bytes by the natural pixel volume of the image. A lower bytes-per-pixel indicates a more efficient transmission of visual content.
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig11_bytes_per_pixel.png",
   caption="Bytes per pixel.",
   description="A candlestick chart showing in 10th percentile we have 0.1175 bytes-per-pixel for JPEG, 0.1197 for PNG, 0.1702 for GIF, 0.0586 for WebP, and 0.0293 for SVG. In the 25th percentile we have 0.1848 bytes-per-pixel for JPEGs, 0.2874 for PNG, 0.3641 for GIF, 0.1025 for WebP, and 0.174 for SVG. In the 50th percentile we have 0.2997 bytes-per-pixel for JPEGs, 0.6918 for PNG, 0.7967 for GIF, 0.183 for WebP, and 0.6766 for SVG. In the 75th percentile we have 0.5456 bytes-per-pixel for JPEGs, 1.4548 for PNG, 2.515 for GIF, 0.3272 for WebP, and 1.9261 for SVG. In the 90th percentile we have 0.9822 bytes-per-pixel for JPEGs, 2.5026 for PNG, 8.5151 for GIF, 0.6474 for WebP, and 4.1075 for SVG",
@@ -228,7 +228,7 @@ Other format features simply organize the content and sometimes require contextu
 
 One [Lighthouse](./methodology#lighthouse) test is an A/B comparing baseline with a progressively encoded JPEG. This provides a smell to indicate whether the images overall can be further optimized with lossless techniques and potentially with lossy techniques like using different quality levels.
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig12_percentage_optimized_images.png",
   caption='Percent "optimized" images.',
   description="Bar chart showing in the 10th percentile 100% of images are optimized, same in 25th percentile, in the 50th percentile 98% of images are optimized (2% not), in the 75th percentile 83% of images are optimized (17% not), and in the 90th percentile 59% of images are optimized and 41% are not.",
@@ -238,7 +238,7 @@ One [Lighthouse](./methodology#lighthouse) test is an A/B comparing baseline wit
 
 The savings in this AB Lighthouse test is not just about potential byte savings, which can accrue to several MBs at the 95th percentile, it also demonstrates the page performance improvement.
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig13_project_perf_improvements_image_optimization.png",
   caption="Projected page performance improvements from image optimization from Lighthouse.",
   description="Bar chart showing in the 10th percentile 0 ms could be sized, same in 25th percentile, in the 50th percentile 150 ms could be saved, in the 75th percentile 1,460 ms could be saved and in the 90th percentile 5,720 ms could be saved.",
@@ -258,7 +258,7 @@ Another axis for improving page performance is to apply responsive images. This 
 
 The most common method to implement responsive images is to build a list of alternative images using either `<img srcset>` or `<source srcset>`. If the `srcset` is based on DPR, the browser can select the correct image from the list without additional information. However, most implementations also use `<img sizes>` to help instruct the browser how to perform the necessary layout calculation to select the correct image in the `srcset` based on pixel dimensions.
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig14_html_usage_of_responsive_images.png",
   caption="Percent of pages using responsive images with HTML.",
   description="A bar chart showing 18% of images uses 'sizes', 21% use 'srcset', and 2% use 'picture'.",
@@ -319,7 +319,7 @@ The utility of `srcset` is usually dependent on the precision of the `sizes` med
 
 * **`<img sizes="auto">`** - this is the most popular use, which is actually non-standard and is an artifact of the use of the `lazy_sizes` JavaScript library. This uses client-side code to inject a better `sizes` calculation for the browser. The downside of this is that it depends on the JavaScript loading and DOM to be fully ready, delaying image loading substantially.
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig16_top_patterns_of_img_sizes.png",
   caption="Top patterns of <code><img sizes></code>.",
   description="Bar chart showing 11.3 million images use 'img sizes=`(max-width: 300px) 100vw, 300px`', 1.60 million use 'auto', 1.00 million use 'img sizes=`(max-width: 767px) 89vw...etc.`', 0.23 million use '100vw' and 0.13 million use '300px'",

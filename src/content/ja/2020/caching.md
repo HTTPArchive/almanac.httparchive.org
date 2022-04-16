@@ -208,52 +208,52 @@ RFC 7234では、レスポンスにキャッシュ用のヘッダーが存在し
 <figure>
   <table>
     <tr>
-     <th>ディレクティブ</th>
-     <th>説明</th>
+      <th>ディレクティブ</th>
+      <th>説明</th>
     </tr>
     <tr>
-     <td><code class="no-wrap">max-age</code></td>
-     <td>現在の時刻を基準にして、リソースをキャッシュできる秒数を示します。 たとえば<code>max-age=86400</code>。</td>
+      <td><code class="no-wrap">max-age</code></td>
+      <td>現在の時刻を基準にして、リソースをキャッシュできる秒数を示します。 たとえば<code>max-age=86400</code>。</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">public</code></td>
-     <td>ブラウザや、サーバとブラウザの間にあるCDNなどのプロキシを含む、あらゆるキャッシュがレスポンスを保存する可能性があります。これはデフォルトで想定されています。</td>
+      <td><code class="no-wrap">public</code></td>
+      <td>ブラウザや、サーバとブラウザの間にあるCDNなどのプロキシを含む、あらゆるキャッシュがレスポンスを保存する可能性があります。これはデフォルトで想定されています。</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">no-cache</code></td>
-     <td>キャッシュされたエントリは、たとえstaleとマークされていなくても、使用前に条件付きリクエストで再検証されなければなりません。</td>
+      <td><code class="no-wrap">no-cache</code></td>
+      <td>キャッシュされたエントリは、たとえstaleとマークされていなくても、使用前に条件付きリクエストで再検証されなければなりません。</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">must-revalidate</code></td>
-     <td>古くなったキャッシュエントリは、使用前に条件付きリクエストで再検証する必要があります。</td>
+      <td><code class="no-wrap">must-revalidate</code></td>
+      <td>古くなったキャッシュエントリは、使用前に条件付きリクエストで再検証する必要があります。</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">no-store</code></td>
-     <td>応答をキャッシュしてはいけないことを示す。</td>
+      <td><code class="no-wrap">no-store</code></td>
+      <td>応答をキャッシュしてはいけないことを示す。</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">private</code></td>
-     <td>レスポンスは特定のユーザーを対象としており、プロキシやCDNなどの共有キャッシュには保存されないようになっています。</td>
+      <td><code class="no-wrap">private</code></td>
+      <td>レスポンスは特定のユーザーを対象としており、プロキシやCDNなどの共有キャッシュには保存されないようになっています。</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">proxy-revalidate</code></td>
-     <td><code>must-revalidate</code>と同じですが、共有キャッシュに適用されます。</td>
+      <td><code class="no-wrap">proxy-revalidate</code></td>
+      <td><code>must-revalidate</code>と同じですが、共有キャッシュに適用されます。</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">s-maxage</code></td>
-     <td><code>max-age</code>と同じですが、共有キャッシュ（例：CDN）にのみ適用されます。</td>
+      <td><code class="no-wrap">s-maxage</code></td>
+      <td><code>max-age</code>と同じですが、共有キャッシュ（例：CDN）にのみ適用されます。</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">immutable</code></td>
-     <td>TTLの間、キャッシュされたエントリが変更されることはなく、再検証は必要ないことを示す。</td>
+      <td><code class="no-wrap">immutable</code></td>
+      <td>TTLの間、キャッシュされたエントリが変更されることはなく、再検証は必要ないことを示す。</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">stale-while-revalidate</code></td>
-     <td>クライアントが、古い応答を受け入れる一方で、新しい応答をバックグラウンドで非同期的にチェックすることを示します。</td>
+      <td><code class="no-wrap">stale-while-revalidate</code></td>
+      <td>クライアントが、古い応答を受け入れる一方で、新しい応答をバックグラウンドで非同期的にチェックすることを示します。</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">stale-if-error</code></td>
-     <td>新鮮な応答のチェックに失敗した場合に、クライアントが古い応答を受け入れることを示す。</td>
+      <td><code class="no-wrap">stale-if-error</code></td>
+      <td>新鮮な応答のチェックに失敗した場合に、クライアントが古い応答を受け入れることを示す。</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="<code>Cache-Control</code>ディレクティブ。", sheets_gid="1950040019", sql_file="cache_control_directives.sql") }}</figcaption>
@@ -628,14 +628,14 @@ HTTPレスポンスの43.4％がVaryヘッダーを使用しており、その�
 <figure>
   <table>
     <tr>
-     <th>サービスワーカーを使わないサイト</th>
-     <th>サービスワーカーを使っているサイト</th>
-     <th>総サイト数</th>
+      <th>サービスワーカーを使わないサイト</th>
+      <th>サービスワーカーを使っているサイト</th>
+      <th>総サイト数</th>
     </tr>
     <tr>
-     <td class="numeric">6,225,774</td>
-     <td class="numeric">64,373</td>
-     <td class="numeric">6,290,147</td>
+      <td class="numeric">6,225,774</td>
+      <td class="numeric">64,373</td>
+      <td class="numeric">6,290,147</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="サービス・ワーカーを利用しているウェブサイトの数", sheets_gid="2106765718", sql_file="appcache_and_serviceworkers.sql") }}</figcaption>
@@ -646,14 +646,14 @@ HTTPレスポンスの43.4％がVaryヘッダーを使用しており、その�
 <figure>
   <table>
     <tr>
-     <th>HTTPサイト</th>
-     <th>HTTPSサイト</th>
-     <th>合計サイト</th>
+      <th>HTTPサイト</th>
+      <th>HTTPSサイト</th>
+      <th>合計サイト</th>
     </tr>
     <tr>
-     <td class="numeric">1,469</td>
-     <td class="numeric">62,904</td>
-     <td class="numeric">64,373</td>
+      <td class="numeric">1,469</td>
+      <td class="numeric">62,904</td>
+      <td class="numeric">64,373</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="HTTP/HTTPSでサービスワーカーを利用しているウェブサイトの数。", sheets_gid="2106765718", sql_file="appcache_and_serviceworkers.sql") }}</figcaption>
@@ -675,7 +675,7 @@ HTTPレスポンスの43.4％がVaryヘッダーを使用しており、その�
   )
 }}
 
- すべてのHTTP(S)リクエストにおいて、90.4％のレスポンスがキャッシュ可能であると考えられています（つまり、キャッシュの保存が許可されています）。残りの9.6％のレスポンスは、ブラウザのキャッシュに保存できません。
+すべてのHTTP(S)リクエストにおいて、90.4％のレスポンスがキャッシュ可能であると考えられています（つまり、キャッシュの保存が許可されています）。残りの9.6％のレスポンスは、ブラウザのキャッシュに保存できません。
 
 {{ figure_markup(
   image="ttl-cachable-responses.png",
@@ -861,22 +861,22 @@ HTTPレスポンスの43.4％がVaryヘッダーを使用しており、その�
 <figure>
   <table>
     <tr>
-     <th>クライアント</th>
-     <th>ファーストパーティ</th>
-     <th>サードパーティ</th>
-     <th>全体</th>
+      <th>クライアント</th>
+      <th>ファーストパーティ</th>
+      <th>サードパーティ</th>
+      <th>全体</th>
     </tr>
     <tr>
-     <td>デスクトップ</td>
-     <td class="numeric">61.6%</td>
-     <td class="numeric">59.3%</td>
-     <td class="numeric">60.7%</td>
+      <td>デスクトップ</td>
+      <td class="numeric">61.6%</td>
+      <td class="numeric">59.3%</td>
+      <td class="numeric">60.7%</td>
     </tr>
     <tr>
-     <td>モバイル</td>
-     <td class="numeric">61.8%</td>
-     <td class="numeric">57.9%</td>
-     <td class="numeric">60.2%</td>
+      <td>モバイル</td>
+      <td class="numeric">61.8%</td>
+      <td class="numeric">57.9%</td>
+      <td class="numeric">60.2%</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="TTLが短いリクエストの割合。", sheets_gid="1706274506", sql_file="content_age_older_than_ttl_by_party.sql") }}</figcaption>

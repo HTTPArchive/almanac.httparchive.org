@@ -2,7 +2,7 @@ name: Progress Tracker
 
 env:
   # Update these environment variables every year
-  # And check the tracker is enabled at: 
+  # And check the tracker is enabled at:
   # https://github.com/HTTPArchive/almanac.httparchive.org/actions/workflows/progress-tracker.yml
   FILTER_LABEL: '2022 chapter'
   TRACKER_ISSUE_NUMBER: 2908

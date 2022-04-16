@@ -72,7 +72,7 @@ featured_stat_label_3: 使用跳过链接的网站
 
 遗憾的是，开发者们滥用了这一功能，以至于几乎三分之一(32.21%)的移动版网站禁用了这一功能，而苹果(例如 iOS 10)也不再允许网络开发者禁用缩放功能。移动版Safari直接<a hreflang="en" href="https://archive.org/details/ios-10-beta-release-notes">忽略了这个标记</a>。无论如何设置，所有网站都可以在更新的iOS设备上进行缩放。
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig2.png",
   caption="禁用缩放的站点与设备类型的百分比。",
   description="垂直测量百分比数据， 从0到80，以20为增量，与设备类型相对应，分为桌面和移动设备。启用桌面版：75.46％； 禁用桌面版24.54％； 启用移动版：67.79％； 禁用移动版：32.21％。",
@@ -144,7 +144,7 @@ featured_stat_label_3: 使用跳过链接的网站
 
 我们发现，每四个页面中只有一页（26.03％）包含main地标。令人惊讶的是，8.06％的页面错误地包含多个main地标，使这些用户猜测哪个地标包含实际的主要内容。
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig4.png",
   caption="按“main”地标数量划分的页面百分比。",
   description="垂直条形图显示百分比数据，范围从0到80，以20为增量，而条形图则表示每页从0到4的“main”地标数量。数据源：HTTP Archive (2019年7月). 0：73.97%; 1：17.97%; 2：7.41%; 3：0.15%; 4：0.06%.",
@@ -162,7 +162,7 @@ featured_stat_label_3: 使用跳过链接的网站
 
 所有这些元素主要是为无障碍可访问性支持而设计的，并且没有视觉效果，这意味着您可以安全地用它们替换现有元素，并且不会遭受意外的后果。
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig5.png",
   caption="各种HTML语义元素的使用。",
   description="垂直条形图，每种元素类型的条形与页面百分比的关系，范围从0到60，增量为20。. nav：53.94%; header：54.82%; footer：55.92%; main：18.47%; aside：16.99%; article：22.59%; hr：19.1%; section：36.55%.",
@@ -174,7 +174,7 @@ featured_stat_label_3: 使用跳过链接的网站
 
 许多流行的屏幕阅读器还允许用户通过快速跳转链接，列表，列表项，iframe和表单字段（如编辑字段，按钮和列表框）进行导航。图9.6详细说明了我们观察到的使用这些元素的页面的频率。
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig6.png",
   caption="用于导航的其他HTML元素。",
   description="垂直条形图，每种元素的类型与页面百分比之间的关系，从0到100，以25为增量。a：98.22%; ul：88.62%; input：76.63%; iframe：60.39%; button：56.74%; select：19.68%; textarea：12.03%.",
@@ -239,7 +239,7 @@ featured_stat_label_3: 使用跳过链接的网站
 
 正确和适当的使用ARIA可能会遇到挑战。例如，在使用ARIA属性的页面中，我们发现12.31％的属性分配了无效值。这是有问题的，因为任何使用ARIA属性的错误都不会对页面产生视觉影响。这些错误中的一些可以通过使用自动验证工具来检测，但是通常它们需要动手使用真正的辅助软件（例如屏幕阅读器）。本节将研究如何在网络上使用ARIA，特别是该标准的哪些部分最为普遍。
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig8.png",
   caption="页面总数与ARIA属性的百分比。",
   description="垂直条形图显示百分比数据，范围从0到25，以5为增量，条形图代表每个属性。`aria-hidden`：23.46%，`aria-label`：17.67%，`aria-expanded`：8.68%，`aria-current`：7.76%，`aria-labelledby`：6.85%，`aria-controls`：3.56%，`aria-haspopup`：2.62%，`aria-invalid`：2.68%，`aria-describedby`：1.69%，`aria-live`：1.04%，`aria-required`：1%",
@@ -253,7 +253,7 @@ featured_stat_label_3: 使用跳过链接的网站
 
 当前，有46.91％的页面使用至少一个ARIA角色属性。在下面的图9.9中，我们汇总了使用最广泛的十个ARIA角色值。
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig9.png",
   caption="前10名aria角色。",
   description=" 垂直条形图，每种角色类型的条形图和使用的站点百分比，范围是0到25，以5为增量。Navigation：20.4%; search：15.49%; main：14.39%; banner：13.62%; contentinfo：11.23%; button：10.59%; dialog：7.87%; complementary：6.06%; menu：4.71%; form：3.75%",
