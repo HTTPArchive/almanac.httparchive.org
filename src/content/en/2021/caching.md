@@ -299,52 +299,52 @@ When we compare the mobile data between 2020 and 2021, we notice a 5.1% increase
     </thead>
     <tbody>
       <tr>
-         <td>Text</td>
+        <td>Text</td>
         <td class="numeric">0.2</td>
         <td class="numeric">0.2</td>
       </tr>
       <tr>
-         <td>XML</td>
+        <td>XML</td>
         <td class="numeric">1</td>
         <td class="numeric">1</td>
       </tr>
       <tr>
-         <td>Other</td>
+        <td>Other</td>
         <td class="numeric">1</td>
         <td class="numeric">1</td>
       </tr>
       <tr>
-         <td>Video</td>
+        <td>Video</td>
         <td class="numeric">4</td>
         <td class="numeric">8</td>
       </tr>
       <tr>
-         <td>HTML</td>
+        <td>HTML</td>
         <td class="numeric">3</td>
         <td class="numeric">14</td>
       </tr>
       <tr>
-         <td>Audio</td>
+        <td>Audio</td>
         <td class="numeric">0.2</td>
         <td class="numeric">30</td>
       </tr>
       <tr>
-         <td>CSS</td>
+        <td>CSS</td>
         <td class="numeric">30</td>
         <td class="numeric">30</td>
       </tr>
       <tr>
-         <td>Image</td>
+        <td>Image</td>
         <td class="numeric">30</td>
         <td class="numeric">30</td>
       </tr>
       <tr>
-         <td>Script</td>
+        <td>Script</td>
         <td class="numeric">30</td>
         <td class="numeric">30</td>
       </tr>
       <tr>
-         <td>Font</td>
+        <td>Font</td>
         <td class="numeric">365</td>
         <td class="numeric">365</td>
       </tr>
