@@ -46,29 +46,29 @@
 
 {% block structured_data %}
 <script type="application/ld+json">
-	{
-	  "@context": "http://schema.org",
-	  "@type": "Article",
-	  "mainEntityOfPage": {
-	  	  "@type": "WebPage",
-	  	  "@id": "{{ self.page_url() }}"
-	  },
-	  "headline": "{{ self.title() }}",
-	  "image": {
-	  	  "@type": "ImageObject",
-	  	  "url": "{{ self.image_url() }}",
-	  	  "height": {{ self.image_height() }},
-	  	  "width": {{ self.image_width() }}
-	  },
-	  "publisher": {
-	  	  "@type": "Organization",
-	  	  "name": "HTTP Archive",
-	  	  "logo": {
-	  	      "@type": "ImageObject",
-	  	      "url": "https://almanac.httparchive.org/static/images/ha.png",
-	  	      "height": 160,
-	  	      "width": 320
-	  	  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ self.page_url() }}"
+    },
+    "headline": "{{ self.title() }}",
+    "image": {
+        "@type": "ImageObject",
+        "url": "{{ self.image_url() }}",
+        "height": {{ self.image_height() }},
+        "width": {{ self.image_width() }}
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "HTTP Archive",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://almanac.httparchive.org/static/images/ha.png",
+            "height": 160,
+            "width": 320
+        },
         "sameAs": [
           "https://httparchive.org",
           "https://twitter.com/HTTPArchive",
@@ -80,7 +80,7 @@
       "description": "{{ self.description() }}",
       "datePublished": "{{ date_published }}",
       "dateModified": "{{ date_modified }}"
-	}
+  }
   </script>
   {% endblock %}
 

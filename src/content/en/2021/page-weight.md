@@ -36,11 +36,11 @@ To understand and find opportunities to keep web pages lighter and faster, it's 
 
 Page weight describes the total number of bytes of a particular web page. A web page is comprised of specific elements and assets that can be rendered and viewed in a web browser, including:
 
- - The [HTML](./markup) that makes up the page itself.
- - [Images and other media (video, audio, etc)](./media) embedded into the page.
- - [Cascading Style Sheets (CSS)](./css) used for styling the page.
- - [JavaScript](./javascript) to provide interactivity
- - [Third-Party](./third-parties) resource containing one or more of the above.
+- The [HTML](./markup) that makes up the page itself.
+- [Images and other media (video, audio, etc)](./media) embedded into the page.
+- [Cascading Style Sheets (CSS)](./css) used for styling the page.
+- [JavaScript](./javascript) to provide interactivity
+- [Third-Party](./third-parties) resource containing one or more of the above.
 
 Each of those resources exact a cost in weight (byte size), and computational resources to transmit, process and render in a web browser. While they have similar cost in some regards (storage and transmission), the CPU cost of some resource types may be more costly in those regards than others.
 

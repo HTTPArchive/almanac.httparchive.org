@@ -282,56 +282,56 @@ HTTP/1.1<a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-5.2.1
 <figure>
   <table>
     <tr>
-     <th>ディレクティブ</th>
-     <th>説明</th>
+      <th>ディレクティブ</th>
+      <th>説明</th>
     </tr>
     <tr>
-     <td>max-age</td>
-     <td>リソースをキャッシュできる秒数を示します。</td>
+      <td>max-age</td>
+      <td>リソースをキャッシュできる秒数を示します。</td>
     </tr>
     <tr>
-     <td>public</td>
-     <td>任意のキャッシュにレスポンスを保存できます。</td>
+      <td>public</td>
+      <td>任意のキャッシュにレスポンスを保存できます。</td>
     </tr>
     <tr>
-     <td>no-cache</td>
-     <td>キャッシュされたエントリは、使用する前に再検証する必要があります。</td>
+      <td>no-cache</td>
+      <td>キャッシュされたエントリは、使用する前に再検証する必要があります。</td>
     </tr>
     <tr>
-     <td>must-revalidate</td>
-     <td>古いキャッシュエントリは、使用する前に再検証する必要があります。</td>
+      <td>must-revalidate</td>
+      <td>古いキャッシュエントリは、使用する前に再検証する必要があります。</td>
     </tr>
     <tr>
-     <td>no-store</td>
-     <td>レスポンスがキャッシュ不可能なことを示します。</td>
+      <td>no-store</td>
+      <td>レスポンスがキャッシュ不可能なことを示します。</td>
     </tr>
     <tr>
-     <td>private</td>
-     <td>レスポンスは特定のユーザー向けであり、共有キャッシュに保存しない。</td>
+      <td>private</td>
+      <td>レスポンスは特定のユーザー向けであり、共有キャッシュに保存しない。</td>
     </tr>
     <tr>
-     <td>no-transform</td>
-     <td>このリソースに対して変換を行わないでください。</td>
+      <td>no-transform</td>
+      <td>このリソースに対して変換を行わないでください。</td>
     </tr>
     <tr>
-     <td>proxy-revalidate</td>
-     <td>must-revalidateと同じですが、共有キャッシュに適用されます。</td>
+      <td>proxy-revalidate</td>
+      <td>must-revalidateと同じですが、共有キャッシュに適用されます。</td>
     </tr>
     <tr>
-     <td>s-maxage</td>
-     <td>max ageと同じですが、共有キャッシュにのみ適用されます。</td>
+      <td>s-maxage</td>
+      <td>max ageと同じですが、共有キャッシュにのみ適用されます。</td>
     </tr>
     <tr>
-     <td>immutable</td>
-     <td>キャッシュされたエントリは決して変更されず、再検証は不要であることを示します。</td>
+      <td>immutable</td>
+      <td>キャッシュされたエントリは決して変更されず、再検証は不要であることを示します。</td>
     </tr>
     <tr>
-     <td>stale-while-revalidate</td>
-     <td>クライアントがバックグラウンドで新しいレスポンスを非同期にチェックしながら、古いレスポンスを受け入れようとしていることを示します。</td>
+      <td>stale-while-revalidate</td>
+      <td>クライアントがバックグラウンドで新しいレスポンスを非同期にチェックしながら、古いレスポンスを受け入れようとしていることを示します。</td>
     </tr>
     <tr>
-     <td>stale-if-error</td>
-     <td>新しいレスポンスのチェックが失敗した場合に、クライアントが古いレスポンスを受け入れる意思があることを示します。</td>
+      <td>stale-if-error</td>
+      <td>新しいレスポンスのチェックが失敗した場合に、クライアントが古いレスポンスを受け入れる意思があることを示します。</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="<code>Cache-Control</code> ディレクティブ。") }}</figcaption>
@@ -417,22 +417,22 @@ HTTP/1.1<a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-5.2.1
 <figure>
   <table>
     <tr>
-     <th>クライアント</th>
-     <th>ファーストパーティ</th>
-     <th>サードパーティ</th>
-     <th>全体</th>
+      <th>クライアント</th>
+      <th>ファーストパーティ</th>
+      <th>サードパーティ</th>
+      <th>全体</th>
     </tr>
     <tr>
-     <td>デスクトップ</td>
-     <td class="numeric">70.7%</td>
-     <td class="numeric">47.9%</td>
-     <td class="numeric">59.2%</td>
+      <td>デスクトップ</td>
+      <td class="numeric">70.7%</td>
+      <td class="numeric">47.9%</td>
+      <td class="numeric">59.2%</td>
     </tr>
     <tr>
-     <td>モバイル</td>
-     <td class="numeric">71.4%</td>
-     <td class="numeric">46.8%</td>
-     <td class="numeric">59.6%</td>
+      <td>モバイル</td>
+      <td class="numeric">71.4%</td>
+      <td class="numeric">46.8%</td>
+      <td class="numeric">59.6%</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="TTLが短いリクエストの割合。") }}</figcaption>
@@ -531,7 +531,7 @@ HTTP/1.1<a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-5.2.1
 * 0や-1などの数値
 * `Cache-Control`ヘッダーで有効な値
 
- 無効な`Expires`ヘッダーの最大のソースは、人気のあるサードパーティから提供されるアセットからのものです。たとえば、`Expires：Tue、27 Apr 1971 19:44:06 EST`など、日付/時刻はESTタイムゾーンを使用します。
+無効な`Expires`ヘッダーの最大のソースは、人気のあるサードパーティから提供されるアセットからのものです。たとえば、`Expires：Tue、27 Apr 1971 19:44:06 EST`など、日付/時刻はESTタイムゾーンを使用します。
 
 ## ヘッダーを変更
 

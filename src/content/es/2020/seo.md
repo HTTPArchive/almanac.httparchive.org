@@ -1195,9 +1195,9 @@ Sin embargo, no todo ha mejorado desde el año pasado. En promedio, las páginas
 
 También es importante mencionar que aún hay una importante oportunidad de mejora en varias áreas y configuraciones SEO críticas. A pesar del incremento en el uso de dispositivos móviles y la migración de Google a un índice móvil primero:
 
- - 10.84% de las páginas móviles y 16.18% de las páginas de escritorio no incluyen una etiqueta `viewport`, lo que sugiere que aún no son compatibles con dispositivos móviles.
- - Se encontraron disparidades importantes entre las páginas de escritorio y móvil, como la disparidad entre enlaces móviles y de escritorio, representado en los 62 enlaces en móvil frente a 68 enlaces en escritorio para el promedio de las páginas web.
- - 33.13% de los sitios web obtuvieron una _Buena_ calificación de los Core Web Vitals para escritorio, mientras que solo 19.96% de sus contrapartes móviles aprobaron la validación de los Core Web Vitals, lo que sugiere que escritorio sigue siendo la plataforma con mayor rendimiento para los usuarios.
+- 10.84% de las páginas móviles y 16.18% de las páginas de escritorio no incluyen una etiqueta `viewport`, lo que sugiere que aún no son compatibles con dispositivos móviles.
+- Se encontraron disparidades importantes entre las páginas de escritorio y móvil, como la disparidad entre enlaces móviles y de escritorio, representado en los 62 enlaces en móvil frente a 68 enlaces en escritorio para el promedio de las páginas web.
+- 33.13% de los sitios web obtuvieron una _Buena_ calificación de los Core Web Vitals para escritorio, mientras que solo 19.96% de sus contrapartes móviles aprobaron la validación de los Core Web Vitals, lo que sugiere que escritorio sigue siendo la plataforma con mayor rendimiento para los usuarios.
 
 Estos hallazgos pueden impactar negativamente a los sitios conforme Google termina su migración hacia un <a hreflang="en" href="https://webmasters.googleblog.com/2020/07/prepare-for-mobile-first-indexing-with.html">índice móvil primero en Marzo de 2021</a>.
 

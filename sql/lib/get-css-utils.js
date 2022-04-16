@@ -2,47 +2,47 @@ const fs = require("fs");
 const https = require("https");
 
 function readFile(file, enc = "utf8") {
-	return new Promise((resolve, reject) => {
-		fs.readFile(file, enc, (err,data) => {
-			if (err) {
-				reject(err);
-			}
+  return new Promise((resolve, reject) => {
+    fs.readFile(file, enc, (err,data) => {
+      if (err) {
+        reject(err);
+      }
 
-			resolve(data);
-		});
-	});
+      resolve(data);
+    });
+  });
 }
 
 function writeFile(file, contents, enc) {
-	return new Promise((resolve, reject) => {
-		fs.writeFile(file, contents, enc, (err) => {
-			if (err) {
-				reject(err);
-			}
+  return new Promise((resolve, reject) => {
+    fs.writeFile(file, contents, enc, (err) => {
+      if (err) {
+        reject(err);
+      }
 
-			resolve();
-		});
-	});
+      resolve();
+    });
+  });
 }
 
 function downloadFile(url) {
-	return new Promise((resolve, reject) => {
-		let data = "";
-		let request = https.get(url, response => {
-			response.on("data", chunk => data += chunk);
-			response.on("end", () => resolve(data));
-		});
+  return new Promise((resolve, reject) => {
+    let data = "";
+    let request = https.get(url, response => {
+      response.on("data", chunk => data += chunk);
+      response.on("end", () => resolve(data));
+    });
 
-		request.on("error", err => {
-			reject(err);
-		});
-	})
+    request.on("error", err => {
+      reject(err);
+    });
+  })
 
 }
 
 const urls = [
-	"https://projects.verou.me/parsel/parsel_nomodule.js",
-	"https://projects.verou.me/rework-utils/rework-utils.js"
+  "https://projects.verou.me/parsel/parsel_nomodule.js",
+  "https://projects.verou.me/rework-utils/rework-utils.js"
 ];
 
 (async ()=>{

@@ -6,11 +6,11 @@ try {
     if ('rules' in rule) {
       return rule.rules.reduce(reduceValues, values);
     }
-    
+
     if (rule.type != 'keyframes') {
       return values;
     }
-    
+
     var positions = rule.keyframes.flatMap(keyframe => {
       return keyframe.values;
     });

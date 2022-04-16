@@ -57,7 +57,7 @@ Hay tres métricas a tener en cuenta cuando se analiza el tamaño de píxeles: p
 * Los _píxeles lógicos_ se refieren a aquellos píxeles que conforman un archivo. Si tuvieras que cargar esa imagen en GIMP o en Photoshop, las dimensiones en píxeles de dicho archivo serían los píxeles lógicos (o píxeles naturales).
 * Los _píxeles físicos_ se refieren a las partes electrónicas de la pantalla. Antes del móvil y de las modernas pantallas de alta resolución, había una relación 1:1 entre los píxeles CSS y los puntos LED de una pantalla. Sin embargo, debido a que los dispositivos móviles son sostenidos muy próximos al ojo y que las pantallas de los ordenadores están más cerca que los monitores de los terminales antiguos, las pantallas actuales tienen un ratio mayor de píxeles físicos que los tradicionales píxeles CSS. Este ratio es el <i lang="en">Device-Pixel-Ratio</i>, coloquialmente llamado Retina™.
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig3_image_pixel_per_page_mobile_css_v_actual.png",
   caption="Píxeles de una imagen por página (móvil): CSS versus real.",
   description=" Una comparación entre los píxeles CSS distribuidos en el contenido de la imagen y los píxeles reales en móvil, mostrando el percentil 10 (0,07 MP reales, 0,04 MP CSS), el percentil 25 (0,38MP reales, 0,18 MP CSS), el percentil 50 (1,6 MP reales, 0,65 MP CSS), el percentil 75 (5,1 MP reales, 1,8 MP CSS), y el percentil 90 (12 MP reales, 4,6 MP CSS).",
@@ -117,43 +117,43 @@ Es raro encontrar una página web que no utilice imágenes. A lo largo de los a�
 Cada formato tiene sus propias ventajas y usos para la web. Una forma muy simple de resumirlo sería:
 
 <figure>
-<table>
-<thead>
-<tr>
-<th>Formato</th>
-<th class="width-45">Ventajas</th>
-<th class="width-45">Desventajas</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>JPEG</td>
-<td><ul><li>Soporte generalizado</li><li>Perfecto para contenido fotográfico</li></ul></td>
-<td><ul><li>Siempre hay pérdida de calidad</li><li>La mayoría de decodificadores no pueden manejar fotografías de alta profundidad de bits tomadas con cámaras modernas (> 8 bits por canal)</li><li>No hay soporte para transparencia</li></ul></td>
-</tr>
-<tr>
-<td>PNG</td>
-<td><ul><li>Como el JPEG y el GIF, comparte amplia compatibilidad</li><li>Sin pérdidas</li><li>Soporta transparencia, animación y alta profundidad de bits</li></ul></td>
-<td><ul><li>Archivos más grandes en comparación con el JPEG</li><li>No es el ideal para contenido fotográfico</li></ul></td>
-</tr>
-<tr>
-<td>GIF</td>
-<td><ul><li>El predecesor del PNG, más conocido por las animaciones</li><li>Sin pérdidas</li></ul></td>
-<td><ul><li>Debido a la limitación de 256 colores, durante la conversión siempre hay pérdida visual</li><li>Archivos muy grandes para las animaciones</li></ul></td>
-</tr>
-<tr>
-<td>SVG</td>
-<td><ul><li>Un formato vectorial que puede ser redimensionado sin aumentar el tamaño del archivo</li><li>Se basa en matemáticas más que en píxeles y genera unas líneas muy suaves</li></ul></td>
-<td><ul><li>No es útil para fotografía u otros contenidos de gráfico por puntos</li></ul></td>
-</tr>
-<tr>
-<td>WebP</td>
-<td><ul><li>Un formato de archivo más nuevo que puede crear imágenes sin pérdida, como el PNG, y con pérdida, como el JPEG</li><li><a hreflang="en" href="https://developers.google.com/speed/webp/faq">Presume de una reducción comparada promedia del 30% en archivos</a> a JPEG, mientras que otros datos sugieren que la mediana de reducción de archivo está <a hreflang="en" href="https://cloudinary.com/state-of-visual-media-report/">entre el 10-28% basado en la cantidad de píxeles</a>.</li></ul></td>
-<td><ul><li>Al contrario que el JPEG, se limita al submuestreo de crominancia lo que hará que algunas imágenes se muestren borrosas.</li><li>No tiene una compatibilidad universal. Únicamente ecosistemas Chrome, Firefox y Android.</li><li>Compatibilidad con funciones fragmentadas dependiendo de la versión de navegador</li></ul></td>
- </tr>
- </tbody>
- </table>
- <figcaption>{{ figure_link(caption="Explicación de los formatos de archivo convencionales.") }}</figcaption>
+  <table>
+    <thead>
+      <tr>
+        <th>Formato</th>
+        <th class="width-45">Ventajas</th>
+        <th class="width-45">Desventajas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>JPEG</td>
+        <td><ul><li>Soporte generalizado</li><li>Perfecto para contenido fotográfico</li></ul></td>
+        <td><ul><li>Siempre hay pérdida de calidad</li><li>La mayoría de decodificadores no pueden manejar fotografías de alta profundidad de bits tomadas con cámaras modernas (> 8 bits por canal)</li><li>No hay soporte para transparencia</li></ul></td>
+      </tr>
+      <tr>
+        <td>PNG</td>
+        <td><ul><li>Como el JPEG y el GIF, comparte amplia compatibilidad</li><li>Sin pérdidas</li><li>Soporta transparencia, animación y alta profundidad de bits</li></ul></td>
+        <td><ul><li>Archivos más grandes en comparación con el JPEG</li><li>No es el ideal para contenido fotográfico</li></ul></td>
+      </tr>
+      <tr>
+        <td>GIF</td>
+        <td><ul><li>El predecesor del PNG, más conocido por las animaciones</li><li>Sin pérdidas</li></ul></td>
+        <td><ul><li>Debido a la limitación de 256 colores, durante la conversión siempre hay pérdida visual</li><li>Archivos muy grandes para las animaciones</li></ul></td>
+      </tr>
+      <tr>
+        <td>SVG</td>
+        <td><ul><li>Un formato vectorial que puede ser redimensionado sin aumentar el tamaño del archivo</li><li>Se basa en matemáticas más que en píxeles y genera unas líneas muy suaves</li></ul></td>
+        <td><ul><li>No es útil para fotografía u otros contenidos de gráfico por puntos</li></ul></td>
+      </tr>
+      <tr>
+        <td>WebP</td>
+        <td><ul><li>Un formato de archivo más nuevo que puede crear imágenes sin pérdida, como el PNG, y con pérdida, como el JPEG</li><li><a hreflang="en" href="https://developers.google.com/speed/webp/faq">Presume de una reducción comparada promedia del 30% en archivos</a> a JPEG, mientras que otros datos sugieren que la mediana de reducción de archivo está <a hreflang="en" href="https://cloudinary.com/state-of-visual-media-report/">entre el 10-28% basado en la cantidad de píxeles</a>.</li></ul></td>
+        <td><ul><li>Al contrario que el JPEG, se limita al submuestreo de crominancia lo que hará que algunas imágenes se muestren borrosas.</li><li>No tiene una compatibilidad universal. Únicamente ecosistemas Chrome, Firefox y Android.</li><li>Compatibilidad con funciones fragmentadas dependiendo de la versión de navegador</li></ul></td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Explicación de los formatos de archivo convencionales.") }}</figcaption>
 </figure>
 
 ### Formatos de imagen
@@ -204,7 +204,7 @@ Hay dos formas de analizar los tamaños de archivo de imagen: total de bytes por
 
 A partir de esto, podemos hacer una idea de cuán grande o pequeño es el recurso habitual de una web. Sin embargo, esto no nos muestra la cantidad de píxeles en pantalla para estas distribuciones de archivo. Para ello podemos dividir cada recurso de bytes por la cantidad de píxeles lógicos de la imagen. A menor cuantía de bytes por pixel, mayor eficiencia en la transmisión del contenido visual.
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig11_bytes_per_pixel.png",
   caption="Bytes por pixel.",
   description=" Un gráfico de velas que muestra en el percentil 10 que tenemos 0,1175 bytes por pixel para JPEG, 0,1197 para PNG, 0,1702 para GIF, 0,0586 para WebP y 0,0293 para SVG. En el percentil 25 tenemos 0,1848 bytes por pixel para JPEGs, 0,2874 para PNG, 0,3641 para GIF, 0,1025 para WebP, y 0,174 para SVG. En el percentil 50 tenemos 0,2997 bytes por pixel para JPEGs, 0,6918 para PNG, 0,7967 para GIF, 0,183 para WebP, y 0,6766 para SVG. En el percentil 75 tenemos 0,5456 bytes por pixel para JPEGs, 1,4548 para PNG, 2,515 para GIF, 0,3272 para WebP, y 1,9261 para SVG. En el percentil 90 tenemos 0,9822 bytes por pixel para JPEGs, 2,5026 para PNG, 8,5151 para GIF, 0,6474 para WebP, y 4,1075 para SVG",
@@ -228,7 +228,7 @@ Otras funciones del formato simplemente organizan el contenido y, a veces, neces
 
 El test <i lang="en">[Lighthouse](./methodology#lighthouse)</i> es una comparación A/B con una encriptación progresiva del JPEG. Esto facilita una guía para saber qué imágenes pueden ser optimizadas un poco más con técnicas sin pérdida y potencialmente con técnicas con pérdida como usar diferentes niveles de calidad.
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig12_percentage_optimized_images.png",
   caption="Porcentaje de imágenes 'optimizadas'",
   description="Gráfico de barras mostrando que en el percentil 10 el 100% de las imágenes están optimizadas, igual que en el percentil 25, en el percentil 50 el 98% de las imágenes están optimizadas (un 2% no lo están), en el percentil 75 un 83% de las imágenes están optimizadas (un 17% no lo están), y en el percentil 90 un 59% de las imágenes están optimizadas y un 41% no lo están.",
@@ -238,7 +238,7 @@ El test <i lang="en">[Lighthouse](./methodology#lighthouse)</i> es una comparaci
 
 La ventaja de este test AB <i lang="en">Lighthouse</i> no es solo la potencial reducción de bytes, la cual puede suponer bastantes MBs en el p95, sino que también muestra la mejora del rendimiento de la página.
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig13_project_perf_improvements_image_optimization.png",
   caption='Estimación de la mejora del rendimiento de la página tras la optimización de imagen de <i lang="en">Lighthouse</i>.',
   description="Gráfico de barras que muestra  que en el percentil 10 0 ms pudieron ser medidos, lo mismo pasa en el percentil 25, en el percentil 50 se redujeron 150 ms, en el percentil 75 se redujeron 1.460 ms, y en el percentil 90 se redujeron 5.720 ms.",
@@ -258,7 +258,7 @@ Otra forma de mejorar el rendimiento de la página es usar imágenes <i lang="en
 
 El método más usado para implementar las imágenes <i lang="en">responsive</i> es construir una lista de imágenes alternativas usando tanto `<img srcset>` como `<source srcset>`. Si el `srcset` está basado en DPR, el navegador podrá seleccionar la imagen correcta del listado sin información adicional. De todos modos, la mayoría de implementaciones también usan `<img sizes>` para ayudar a enseñar al navegador cómo realizar los cálculos de estructura necesarios para seleccionar la imagen correcta en el `srcset` en función de las dimensiones en píxeles.
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig14_html_usage_of_responsive_images.png",
   caption="Porcentaje de páginas que usan imágenes adaptables con HTML.",
   description="Un gráfico de barras que muestra que el 18% de las imágenes usan 'sizes', un 21% usan 'srcset', y un 2% usan 'picture'.",
@@ -319,7 +319,7 @@ La utilidad de `srcset` normalmente depende de la precisión de la media query `
 
 * **`<img sizes="auto">`** - éste es el que más se usa, aunque en realidad no es standard, sino producto del uso de la librería JavaScript `lazy_sizes`. Ésta usa un código del lado del cliente que inyecta mejores cálculos de `sizes` para el navegador. Su desventaja es que depende de la carga del JavaScript y de que el DOM esté completamente listo, retrasando sustancialmente la carga de las imágenes.
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig16_top_patterns_of_img_sizes.png",
   caption="Top de patrones de <code><img sizes></code>.",
   description="Gráfico de barras que muestra que 11,3 millones de imágenes usan 'img sizes=`(max-width: 300px) 100vw, 300px`', 1,60 millones usan 'auto', 1 millón usan 'img sizes=`(max-width: 767px) 89vw...etc.`', 0,23 millones usan '100vw' y 0,13 millones usan '300px'",

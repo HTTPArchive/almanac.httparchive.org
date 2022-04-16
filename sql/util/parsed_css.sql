@@ -4,8 +4,8 @@ LANGUAGE js
 OPTIONS (library = "gs://httparchive/lib/parse-css.js")
 AS '''
   try {
-   var css = parse(stylesheet)
-   return JSON.stringify(css);
+    var css = parse(stylesheet)
+    return JSON.stringify(css);
   } catch (e) {
     '';
   }

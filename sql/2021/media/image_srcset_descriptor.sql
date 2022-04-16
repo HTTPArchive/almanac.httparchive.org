@@ -11,10 +11,10 @@ try {
     var media = JSON.parse(media_string);
 
     if (Array.isArray(media) || typeof media != 'object') return result;
-	
+
     result.num_srcset_all = media.num_srcset_all;
     result.num_srcset_descriptor_x = media.num_srcset_descriptor_x;
-	result.num_srcset_descriptor_w = media.num_srcset_descriptor_w;
+  result.num_srcset_descriptor_w = media.num_srcset_descriptor_w;
 
 } catch (e) {}
 return result;

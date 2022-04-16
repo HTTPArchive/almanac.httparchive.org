@@ -10,11 +10,11 @@ const generate_ebook_pdfs = async () => {
 
   // Read all the config files
   for (const config_file of await find_config_files()) {
-    const re = (process.platform != 'win32') 
-                  ? /config\/([0-9]*).json/ 
+    const re = (process.platform != 'win32')
+                  ? /config\/([0-9]*).json/
                   : /config\\([0-9]*).json/;
     const [path,year] = config_file.match(re);
-    
+
     configs[year] = JSON.parse(await fs.readFile(`config/${year}.json`, 'utf8'));
     ebook_languages[year] = configs[year].settings[0].ebook_languages
 

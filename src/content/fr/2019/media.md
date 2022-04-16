@@ -153,7 +153,7 @@ Chaque format a ses propres mérites et a des utilisations idéales pour le web.
       </tr>
     </tbody>
   </table>
-   <figcaption>{{ figure_link(caption="Explication des principaux formats de fichiers.") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Explication des principaux formats de fichiers.") }}</figcaption>
 </figure>
 
 ### Formats d’images

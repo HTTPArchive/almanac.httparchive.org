@@ -453,38 +453,38 @@ Web Components仕様の <a hreflang="en" href="https://css-tricks.com/crafting-r
     <tbody>
       <tr>
         <td>`rs-module-wrap`</td>
-         <td class="numeric">123,189</td>
-         <td class="numeric">2.0%</td>
+        <td class="numeric">123,189</td>
+        <td class="numeric">2.0%</td>
       </tr>
       <tr>
-         <td>`wix-image`</td>
-         <td class="numeric">76,138</td>
-         <td class="numeric">1.2%</td>
+        <td>`wix-image`</td>
+        <td class="numeric">76,138</td>
+        <td class="numeric">1.2%</td>
       </tr>
       <tr>
-         <td>`pages-css`</td>
-         <td class="numeric">75,539</td>
-         <td class="numeric">1.2%</td>
+        <td>`pages-css`</td>
+        <td class="numeric">75,539</td>
+        <td class="numeric">1.2%</td>
       </tr>
       <tr>
-         <td>`router-outlet`</td>
-         <td class="numeric">35,851</td>
-         <td class="numeric">0.6%</td>
+        <td>`router-outlet`</td>
+        <td class="numeric">35,851</td>
+        <td class="numeric">0.6%</td>
       </tr>
       <tr>
-         <td>`next-route-announcer`</td>
-         <td class="numeric">9,002</td>
-         <td class="numeric">0.1%</td>
+        <td>`next-route-announcer`</td>
+        <td class="numeric">9,002</td>
+        <td class="numeric">0.1%</td>
       </tr>
       <tr>
-         <td>`app-header`</td>
-         <td class="numeric">7,844</td>
-         <td class="numeric">0.1%</td>
+        <td>`app-header`</td>
+        <td class="numeric">7,844</td>
+        <td class="numeric">0.1%</td>
       </tr>
       <tr>
-         <td>`ng-component`</td>
-         <td class="numeric">3,714</td>
-         <td class="numeric">0.1%</td>
+        <td>`ng-component`</td>
+        <td class="numeric">3,714</td>
+        <td class="numeric">0.1%</td>
       </tr>
     </tbody>
   </table>
@@ -612,8 +612,7 @@ Googleは2021年になってもトップページに`center`要素を使用し�
       <tr>
         <td>`picture`</td>
         <td class="numeric">6.1%</td>
-        <td class="numeric">6.0%
-       </td>
+        <td class="numeric">6.0%</td>
       </tr>
       <tr>
         <td>`object`</td>
@@ -866,9 +865,9 @@ Googleは2021年になってもトップページに`center`要素を使用し�
 <table>
   <thead>
     <tr>
-     <th>リンク</th>
-     <th>デスクトップ</th>
-     <th>モバイル</th>
+      <th>リンク</th>
+      <th>デスクトップ</th>
+      <th>モバイル</th>
     </tr>
   </thead>
   <tbody>

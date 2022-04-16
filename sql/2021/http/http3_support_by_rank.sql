@@ -12,7 +12,7 @@ try {
 } catch (e) {
   return "";
 }
- """;
+""";
 SELECT
   client,
   rank_grouping,

@@ -14,8 +14,8 @@ def test_language_inequality_nonlanguage():
 
 
 def test_language_name():
-    assert str(Language.EN) == 'English'
+    assert str(Language.EN) == "English"
 
 
 def test_language_attribute():
-    assert str(Language.EN.lang_attribute) == 'en'
+    assert str(Language.EN.lang_attribute) == "en"

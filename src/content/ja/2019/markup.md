@@ -25,7 +25,7 @@ featured_stat_label_3: カルーセルのバリエーションが見つかりま
 
 14年すぎて、新しい見方をする時が来ました。以降、[カスタム要素(Custom Elements)](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements)と<a hreflang="en" href="https://extensiblewebmanifesto.org/">Extensible Web Manifesto</a>の導入により、開発者は要素そのものの空間を探し、標準化団体が<a hreflang="en" href="https://bkardell.com/blog/Dropping-The-F-Bomb-On-Standards.html">辞書編集者のようになる</a>ことで、牛の通り道を舗装する(pave the cowpaths)よりよい方法を見つけることを推奨しています。様々なものに使われる可能性があるCSSクラス名とは異なり、非標準の*要素*は作成者が要素であることを意識しているため、さらに確実なものとなります。
 
- 2019年7月の時点で、HTTP Archiveは、約440万のデスクトップホームページと約530万のモバイルホームページのDOMで使用されているすべての*要素*名の収集を開始しました。 _([方法論](./methodology)の詳細を御覧ください)_
+2019年7月の時点で、HTTP Archiveは、約440万のデスクトップホームページと約530万のモバイルホームページのDOMで使用されているすべての*要素*名の収集を開始しました。 _([方法論](./methodology)の詳細を御覧ください)_
 
 このクロールの結果、*5,000種類を超える非標準の要素*が検出されたため、計測する要素の合計数を「トップ」（以下で説明）5,048種類に制限しました。
 

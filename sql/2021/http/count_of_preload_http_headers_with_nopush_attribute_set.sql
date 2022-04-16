@@ -11,7 +11,7 @@ try {
 } catch (e) {
   return [];
 }
- """;
+""";
 
 SELECT
   client,

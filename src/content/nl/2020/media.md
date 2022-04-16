@@ -43,7 +43,7 @@ Bijvoorbeeld:
 
 ```html
 <img srcset="images/example_3x.jpg 3x, images/example_2x.jpg 2x"
-     src="images/example.jpg" alt="..." />
+      src="images/example.jpg" alt="..." />
 ```
 
 Ongeveer 26,5% van alle pagina's bevat nu `srcset`
@@ -79,15 +79,15 @@ Bij het verstrekken van de kandidatenlijst aan de user-agent, hebben we twee mec
 
 ```html
 <img srcset="images/example_3x.jpg 3x, images/example_2x.jpg 2x"
-     src="images/example.jpg" alt="..." />
+      src="images/example.jpg" alt="..." />
 ```
 
 `w`-descriptoren beschrijven de pixelbreedte van de kandidaat, samen met een `sizes`-attribuut dat wordt gebruikt om de juiste afbeelding te selecteren.
 
 ```html
 <img srcset="images/example_small.jpg 600w, images/example_medium.jpg 1400w, images/example_large.jpg 2400w"
-     sizes="100vw"
-     src="images/example_fallback.jpg" alt="..." />
+      sizes="100vw"
+      src="images/example_fallback.jpg" alt="..." />
 ```
 
 Beide benaderingen stellen de user-agent in staat om wiskundig rekening te houden met de huidige pixelverhouding van het apparaat bij het beoordelen van de meest geschikte afbeeldingskandidaat.
@@ -114,8 +114,8 @@ Bijvoorbeeld:
 
 ```html
 <img sizes="(min-width: 640px) 50vw, 100vw"
-     srcset="images/example_small.jpg 600w, images/example_medium.jpg 1400w, images/example_large.jpg 2400w"
-     src="images/example_fallback.jpg" alt="..." />
+      srcset="images/example_small.jpg 600w, images/example_medium.jpg 1400w, images/example_large.jpg 2400w"
+      src="images/example_fallback.jpg" alt="..." />
 ```
 
 {{ figure_markup(

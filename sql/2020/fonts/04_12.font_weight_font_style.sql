@@ -10,7 +10,7 @@ try {
         if (!('declarations' in rule)) {
             return values;
         }
-         if (rule.type != 'font-face') {
+        if (rule.type != 'font-face') {
             return values;
         }
         var props = {};
@@ -23,7 +23,7 @@ try {
                 props.style = d.value;
             }
         });
-         {
+        {
             values.push(props);
         }
         return values;

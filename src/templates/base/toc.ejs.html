@@ -2,9 +2,9 @@
   <% for (let heading of headings ) { %>
     <li>
         <a href="#<%= heading.id %>"><%- heading.title %></a>
-        <% if (heading.children && heading.children.length) { %>
+        <% if (heading.children && heading.children.length) { -%>
             <%- include('toc.ejs.html', { headings: heading.children }) %>
         <% } %>
     </li>
-  <% } %>   
+  <% } %>
 </ul>
