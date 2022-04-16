@@ -55,7 +55,7 @@ def render_template(template, *args, **kwargs):
         year_lang_template = TEMPLATES_DIR + "/%s/%s/%s" % (
             lang,
             y,
-            template[langcode_length + 1 + 4 :],
+            template[(langcode_length + 1 + 4):],
         )
         if os.path.isfile(year_lang_template):
             template_supported_years.append(y)
@@ -64,7 +64,7 @@ def render_template(template, *args, **kwargs):
     for y in supported_years:
         year_en_template = TEMPLATES_DIR + "/en/%s/%s" % (
             y,
-            template[langcode_length + 1 + 4 :],
+            template[(langcode_length + 1 + 4):],
         )
         if os.path.isfile(year_en_template):
             en_supported_years.append(y)
