@@ -15,8 +15,8 @@ WITH totals AS (
 SELECT
   _TABLE_SUFFIX AS client,
   JSON_QUERY(
-    JSON_VALUE(payload, "$._privacy"),
-    "$.iab_usp.privacy_string.uspString"
+    JSON_VALUE(payload, '$._privacy'),
+    '$.iab_usp.privacy_string.uspString'
   ) AS uspString,
   COUNT(0) AS nb_websites,
   total_websites,
@@ -26,8 +26,8 @@ FROM
 JOIN totals USING (_TABLE_SUFFIX)
 WHERE
   JSON_QUERY(
-    JSON_VALUE(payload, "$._privacy"),
-    "$.iab_usp.privacy_string.uspString"
+    JSON_VALUE(payload, '$._privacy'),
+    '$.iab_usp.privacy_string.uspString'
   ) IS NOT NULL
 GROUP BY
   client,

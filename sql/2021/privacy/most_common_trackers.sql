@@ -54,7 +54,7 @@ JOIN
   totals
 USING (client)
 WHERE
-  date = "2021-07-01" AND
+  date = '2021-07-01' AND
   NET.REG_DOMAIN(page) != NET.REG_DOMAIN(urlShort) -- third party
 GROUP BY
   client,

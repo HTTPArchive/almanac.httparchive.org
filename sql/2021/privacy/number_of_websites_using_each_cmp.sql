@@ -25,8 +25,8 @@ FROM
   `httparchive.technologies.2021_07_01_*`
 JOIN totals USING (_TABLE_SUFFIX)
 WHERE
-  category = "Cookie compliance" AND
-  app != ""
+  category = 'Cookie compliance' AND
+  app != ''
 GROUP BY
   client,
   total_websites,

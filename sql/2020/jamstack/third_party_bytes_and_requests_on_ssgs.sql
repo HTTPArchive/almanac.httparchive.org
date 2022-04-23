@@ -27,10 +27,10 @@ FROM (
     FROM
       `httparchive.technologies.2020_08_01_*`
     WHERE
-      LOWER(category) = "static site generator" OR
-      app = "Next.js" OR
-      app = "Nuxt.js" OR
-      app = "Docusaurus")
+      LOWER(category) = 'static site generator' OR
+      app = 'Next.js' OR
+      app = 'Nuxt.js' OR
+      app = 'Docusaurus')
   USING
     (client, page)
   WHERE

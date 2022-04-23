@@ -20,7 +20,7 @@ FROM
   `httparchive.pages.2021_07_01_*`
 JOIN totals USING (_TABLE_SUFFIX)
 WHERE
-  JSON_VALUE(payload, '$._well-known."/.well-known/gpc.json".found') = "true"
+  JSON_VALUE(payload, '$._well-known."/.well-known/gpc.json".found') = 'true'
 GROUP BY
   client,
   total_websites

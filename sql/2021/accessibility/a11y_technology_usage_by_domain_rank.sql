@@ -16,7 +16,7 @@ FROM (
   FROM
     `httparchive.technologies.2021_07_01_*`
   WHERE
-    category = "Accessibility"
+    category = 'Accessibility'
 )
 LEFT OUTER JOIN (
   SELECT

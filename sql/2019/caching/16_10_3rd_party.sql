@@ -26,7 +26,7 @@ JOIN (
     client,
     IF(STRPOS(NET.HOST(url), REGEXP_EXTRACT(NET.REG_DOMAIN(page), r'([\w-]+)')) > 0, 1, 3) AS party,
     COUNT(0) AS all_requests,
-    COUNTIF(TRIM(resp_cache_control) != "") AS total_using_control
+    COUNTIF(TRIM(resp_cache_control) != '') AS total_using_control
   FROM
     `httparchive.almanac.requests`
   WHERE

@@ -47,7 +47,7 @@ FROM (
     FROM
       `httparchive.almanac.requests`
     WHERE
-      date = "2021-07-01" AND
+      date = '2021-07-01' AND
       firstHtml
   )
   GROUP BY

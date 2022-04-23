@@ -33,9 +33,9 @@ WITH max_age_values AS (
     max_age_value
   FROM
     `httparchive.almanac.requests`,
-    UNNEST(JSON_QUERY_ARRAY(getCookieAgeValues(response_headers, startedDateTime), "$.maxAge")) AS max_age_value
+    UNNEST(JSON_QUERY_ARRAY(getCookieAgeValues(response_headers, startedDateTime), '$.maxAge')) AS max_age_value
   WHERE
-    date = "2021-07-01"
+    date = '2021-07-01'
 ),
 
 expires_values AS (
@@ -44,15 +44,15 @@ expires_values AS (
     expires_value
   FROM
     `httparchive.almanac.requests`,
-    UNNEST(JSON_QUERY_ARRAY(getCookieAgeValues(response_headers, startedDateTime), "$.expires")) AS expires_value
+    UNNEST(JSON_QUERY_ARRAY(getCookieAgeValues(response_headers, startedDateTime), '$.expires')) AS expires_value
   WHERE
-    date = "2021-07-01"
+    date = '2021-07-01'
 ),
 
 max_age AS (
   SELECT
     client,
-    "max-age" AS type,
+    'max-age' AS type,
     total_cookies_with_max_age AS total,
     COUNT(0) AS freq,
     COUNT(0) / total_cookies_with_max_age AS pct,
@@ -82,7 +82,7 @@ max_age AS (
 expires AS (
   SELECT
     client,
-    "expires" AS type,
+    'expires' AS type,
     total_cookies_with_expires AS total,
     COUNT(0) AS freq,
     COUNT(0) / total_cookies_with_expires AS pct,

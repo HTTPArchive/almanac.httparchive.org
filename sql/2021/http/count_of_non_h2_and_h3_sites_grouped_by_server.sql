@@ -29,10 +29,10 @@ USING (client)
 WHERE
   date = '2021-07-01' AND
   firstHtml AND
-  LOWER(protocol) != "http/2" AND
-  LOWER(protocol) NOT LIKE "%quic%" AND
-  LOWER(protocol) NOT LIKE "h3%" AND
-  LOWER(protocol) != "http/3"
+  LOWER(protocol) != 'http/2' AND
+  LOWER(protocol) NOT LIKE '%quic%' AND
+  LOWER(protocol) NOT LIKE 'h3%' AND
+  LOWER(protocol) != 'http/3'
 GROUP BY
   client,
   http_version,

@@ -10,7 +10,7 @@ FROM
     SELECT
       client,
       page,
-      replace(regexp_extract(regexp_extract(body, r'(?is)<meta[^><]*Accept-CH\b[^><]*'), r'(?im).*content=[&quot;#32"\']*([^\'"><]*)'), "#32;", '') AS chHTML,
+      replace(regexp_extract(regexp_extract(body, r'(?is)<meta[^><]*Accept-CH\b[^><]*'), r'(?im).*content=[&quot;#32"\']*([^\'"><]*)'), '#32;', '') AS chHTML,
       regexp_extract(regexp_extract(respOtherHeaders, r'(?is)Accept-CH = (.*)'), r'(?im)^([^=]*?)(?:, [a-z-]+ = .*)') AS chHeader
     FROM `httparchive.almanac.summary_response_bodies`
     WHERE

@@ -21,8 +21,8 @@ SELECT
 FROM
   `httparchive.pages.2021_07_01_*`
 WHERE
-  JSON_EXTRACT(payload, '$._pwa.manifests') != "[]" AND
-  JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
+  JSON_EXTRACT(payload, '$._pwa.manifests') != '[]' AND
+  JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'
 GROUP BY
   client,
   prefersNative

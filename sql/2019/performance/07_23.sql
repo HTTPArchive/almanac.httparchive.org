@@ -9,7 +9,7 @@ FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     (
-      CAST(IFNULL(JSON_EXTRACT(payload, "$['_cpu.ParseHTML']"), "0") AS INT64)
+      CAST(IFNULL(JSON_EXTRACT(payload, "$['_cpu.ParseHTML']"), '0') AS INT64)
     ) AS loading_cpu_time
   FROM
     `httparchive.pages.2019_07_01_*`),

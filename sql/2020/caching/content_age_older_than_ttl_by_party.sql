@@ -19,7 +19,7 @@ SELECT
 FROM
   (
     SELECT
-      "desktop" AS client,
+      'desktop' AS client,
       IF(NET.HOST(url) IN (
         SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2020-08-01' AND category != 'hosting'
       ), 'third party', 'first party') AS party,
@@ -27,11 +27,11 @@ FROM
     FROM
       `httparchive.summary_requests.2020_08_01_desktop` requests
     WHERE
-      TRIM(requests.resp_last_modified) != "" AND
+      TRIM(requests.resp_last_modified) != '' AND
       expAge > 0
     UNION ALL
     SELECT
-      "mobile" AS client,
+      'mobile' AS client,
       IF(NET.HOST(url) IN (
         SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2020-08-01' AND category != 'hosting'
       ), 'third party', 'first party') AS party,
@@ -39,7 +39,7 @@ FROM
     FROM
       `httparchive.summary_requests.2020_08_01_mobile` requests
     WHERE
-      TRIM(requests.resp_last_modified) != "" AND
+      TRIM(requests.resp_last_modified) != '' AND
       expAge > 0
   )
 GROUP BY

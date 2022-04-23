@@ -26,7 +26,7 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = "2020-08-01" AND
+    date = '2020-08-01' AND
     firstHtml
 ),
 UNNEST(REGEXP_EXTRACT_ALL(csp_header, r'(?i)(https*://[^\s;]+)[\s;]')) AS csp_allowed_host

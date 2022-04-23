@@ -11,8 +11,8 @@ FROM
     SELECT
       client,
       url,
-      JSON_EXTRACT_SCALAR(header, "$.name") AS header_name,
-      LENGTH(JSON_EXTRACT_SCALAR(header, "$.value")) AS header_length
+      JSON_EXTRACT_SCALAR(header, '$.name') AS header_name,
+      LENGTH(JSON_EXTRACT_SCALAR(header, '$.value')) AS header_length
     FROM
       `httparchive.almanac.requests`,
       UNNEST(JSON_EXTRACT_ARRAY(response_headers)) AS header

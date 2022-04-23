@@ -14,8 +14,8 @@ FROM (
     client,
     COUNT(0) AS total,
     COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), r'frame-ancestors') AND REGEXP_CONTAINS(LOWER(respOtherHeaders), 'content-security-policy =')) AS csp_frame_ancestors_count,
-    COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), r'content-security-policy =') AND ENDS_WITH(REGEXP_EXTRACT(respOtherHeaders, r'(?i)\Wframe-ancestors([^,|;]+)'), '\'none\'')) AS csp_frame_ancestors_none_count,
-    COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), r'content-security-policy =') AND ENDS_WITH(REGEXP_EXTRACT(respOtherHeaders, r'(?i)\Wframe-ancestors([^,|;]+)'), '\'self\'')) AS csp_frame_ancestors_self_count
+    COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), r'content-security-policy =') AND ENDS_WITH(REGEXP_EXTRACT(respOtherHeaders, r'(?i)\Wframe-ancestors([^,|;]+)'), "'none'")) AS csp_frame_ancestors_none_count,
+    COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), r'content-security-policy =') AND ENDS_WITH(REGEXP_EXTRACT(respOtherHeaders, r'(?i)\Wframe-ancestors([^,|;]+)'), "'self'")) AS csp_frame_ancestors_self_count
   FROM
     `httparchive.almanac.requests`
   WHERE

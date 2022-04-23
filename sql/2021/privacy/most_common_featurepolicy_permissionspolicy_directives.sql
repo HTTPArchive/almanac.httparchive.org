@@ -37,11 +37,11 @@ meta_tags AS (
     SELECT
       _TABLE_SUFFIX AS client,
       url,
-      JSON_VALUE(payload, "$._almanac") AS metrics
+      JSON_VALUE(payload, '$._almanac') AS metrics
     FROM
       `httparchive.pages.2021_07_01_*`
     ),
-    UNNEST(JSON_QUERY_ARRAY(metrics, "$.meta-nodes.nodes")) meta_node
+    UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node
   WHERE
     JSON_VALUE(meta_node, '$.http-equiv') IS NOT NULL
 ),
@@ -97,10 +97,10 @@ feature_policy_directives AS (
   SELECT
     client,
     page,
-    ARRAY_AGG(TRIM(SPLIT(TRIM(feature_policy_directive), " ")[OFFSET(0)])) AS directives
+    ARRAY_AGG(TRIM(SPLIT(TRIM(feature_policy_directive), ' ')[OFFSET(0)])) AS directives
   FROM
     merged_feature_policy,
-    UNNEST(SPLIT(feature_policy_value, ";")) feature_policy_directive
+    UNNEST(SPLIT(feature_policy_value, ';')) feature_policy_directive
   GROUP BY
     client,
     page
@@ -110,10 +110,10 @@ permissions_policy_directives AS (
   SELECT
     client,
     page,
-    ARRAY_AGG(TRIM(SPLIT(TRIM(permissions_policy_directive), "=")[OFFSET(0)])) AS directives
+    ARRAY_AGG(TRIM(SPLIT(TRIM(permissions_policy_directive), '=')[OFFSET(0)])) AS directives
   FROM
     merged_permissions_policy,
-    UNNEST(SPLIT(permissions_policy_value, ",")) permissions_policy_directive
+    UNNEST(SPLIT(permissions_policy_value, ',')) permissions_policy_directive
   GROUP BY
     client,
     page
@@ -130,7 +130,7 @@ site_directives AS (
       FROM
         UNNEST(ARRAY_CONCAT(feature_policy_directives.directives, permissions_policy_directives.directives)) d
       WHERE
-        TRIM(d) != ""
+        TRIM(d) != ''
       ORDER BY
         d
     ) AS directives

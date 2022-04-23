@@ -49,8 +49,8 @@ FROM (
     domain,
     page,
     category,
-    SUM(SAFE_CAST(JSON_VALUE(renderBlockingItems, "$.wastedMs") AS FLOAT64)) AS wasted_ms,
-    SUM(SAFE_CAST(JSON_VALUE(renderBlockingItems, "$.totalBytes") AS FLOAT64) / 1024) AS total_bytes_kib
+    SUM(SAFE_CAST(JSON_VALUE(renderBlockingItems, '$.wastedMs') AS FLOAT64)) AS wasted_ms,
+    SUM(SAFE_CAST(JSON_VALUE(renderBlockingItems, '$.totalBytes') AS FLOAT64) / 1024) AS total_bytes_kib
   FROM
     (
       SELECT
@@ -63,7 +63,7 @@ FROM (
   INNER JOIN
     `httparchive.almanac.third_parties`
   ON
-    NET.HOST(JSON_VALUE(renderBlockingItems, "$.url")) = domain
+    NET.HOST(JSON_VALUE(renderBlockingItems, '$.url')) = domain
   GROUP BY
     canonicalDomain,
     domain,

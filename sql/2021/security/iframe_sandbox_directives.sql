@@ -4,7 +4,7 @@ CREATE TEMP FUNCTION getNumWithSandboxAttribute(payload STRING) AS ((
   SELECT
     COUNT(0)
   FROM
-    UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.iframe-allow-sandbox")) AS iframeAttr
+    UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox')) AS iframeAttr
   WHERE
     JSON_EXTRACT_SCALAR(iframeAttr, '$.sandbox') IS NOT NULL
 ));
@@ -18,7 +18,7 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.iframe-allow-sandbox") AS iframeAttrs
+    JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox') AS iframeAttrs
   FROM
     `httparchive.pages.2021_07_01_*`),
   UNNEST(iframeAttrs) AS iframeAttr,

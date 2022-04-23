@@ -48,15 +48,15 @@ JOIN
     WHERE
       -- This condition filters out tests that might have broken when running the 'pwa' metric
       -- as even pages without any pwa capabilities will have a _pwa object with empty fields
-      JSON_EXTRACT(payload, '$._pwa') != "[]"
+      JSON_EXTRACT(payload, '$._pwa') != '[]'
     GROUP BY
       _TABLE_SUFFIX
   )
 USING (_TABLE_SUFFIX)
 WHERE
   (
-    JSON_EXTRACT(payload, '$._pwa.windowEventListenersInfo') != "[]" OR
-    JSON_EXTRACT(payload, '$._pwa.windowPropertiesInfo') != "[]"
+    JSON_EXTRACT(payload, '$._pwa.windowEventListenersInfo') != '[]' OR
+    JSON_EXTRACT(payload, '$._pwa.windowPropertiesInfo') != '[]'
   ) AND
   install_event != '' AND
   install_event != '[]'

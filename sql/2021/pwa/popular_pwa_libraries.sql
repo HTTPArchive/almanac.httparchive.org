@@ -74,8 +74,8 @@ FROM
       `httparchive.pages.2021_07_01_*`,
       UNNEST(getSWLibraries(JSON_EXTRACT(payload, '$._pwa.importScriptsInfo'))) AS script
     WHERE
-      JSON_EXTRACT(payload, '$._pwa.importScriptsInfo') != "[]" AND
-      JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
+      JSON_EXTRACT(payload, '$._pwa.importScriptsInfo') != '[]' AND
+      JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'
     GROUP BY
       _TABLE_SUFFIX,
       url
@@ -88,7 +88,7 @@ JOIN
     FROM
       `httparchive.pages.2021_07_01_*`
     WHERE
-      JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
+      JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'
     GROUP BY
       client
   )

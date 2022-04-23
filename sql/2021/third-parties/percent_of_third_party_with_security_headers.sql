@@ -48,10 +48,10 @@ base AS (
     client,
     req_origin,
     req_category,
-    IF(STRPOS(respOtherHeaders, "strict-transport-security") > 0, 1, 0) AS hsts_header,
-    IF(STRPOS(respOtherHeaders, "x-content-type-options") > 0, 1, 0) AS x_content_type_options_header,
-    IF(STRPOS(respOtherHeaders, "x-frame-options") > 0, 1, 0) AS x_frame_options_header,
-    IF(STRPOS(respOtherHeaders, "x-xss-protection") > 0, 1, 0) AS x_xss_protection_header
+    IF(STRPOS(respOtherHeaders, 'strict-transport-security') > 0, 1, 0) AS hsts_header,
+    IF(STRPOS(respOtherHeaders, 'x-content-type-options') > 0, 1, 0) AS x_content_type_options_header,
+    IF(STRPOS(respOtherHeaders, 'x-frame-options') > 0, 1, 0) AS x_frame_options_header,
+    IF(STRPOS(respOtherHeaders, 'x-xss-protection') > 0, 1, 0) AS x_xss_protection_header
   FROM headers
 )
 

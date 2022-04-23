@@ -11,7 +11,7 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = "2020-08-01"
+    date = '2020-08-01'
 ),
 UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY

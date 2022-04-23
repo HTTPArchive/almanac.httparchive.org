@@ -36,7 +36,7 @@ FROM (
     `httparchive.pages.2021_07_01_*`
 )
 WHERE
-  monetization != ""
+  monetization != ''
 GROUP BY
   client,
   host

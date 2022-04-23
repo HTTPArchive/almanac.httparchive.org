@@ -23,7 +23,7 @@ FROM (
   FROM (
     SELECT
       _TABLE_SUFFIX AS client,
-      JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.iframe-allow-sandbox") AS iframeAttrs
+      JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox') AS iframeAttrs
     FROM
       `httparchive.pages.2021_07_01_*`),
     UNNEST(iframeAttrs) AS iframeAttr,
@@ -32,7 +32,7 @@ FROM (
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
-    SUM(ARRAY_LENGTH(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.iframe-allow-sandbox"))) AS total_iframes
+    SUM(ARRAY_LENGTH(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox'))) AS total_iframes
   FROM
     `httparchive.pages.2021_07_01_*`
   GROUP BY
