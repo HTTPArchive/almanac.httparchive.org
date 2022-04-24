@@ -37,11 +37,11 @@ meta_tags AS (
     SELECT
       _TABLE_SUFFIX AS client,
       url,
-      JSON_VALUE(payload, "$._almanac") AS metrics
+      JSON_VALUE(payload, '$._almanac') AS metrics
     FROM
       `httparchive.pages.2021_07_01_*`
     ),
-    UNNEST(JSON_QUERY_ARRAY(metrics, "$.meta-nodes.nodes")) meta_node
+    UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node
   WHERE
     JSON_VALUE(meta_node, '$.http-equiv') IS NOT NULL
 ),
@@ -97,7 +97,7 @@ normalized_feature_policy AS (  -- normalize
   SELECT
     client,
     page,
-    REPLACE(feature_policy_value, "'", "") AS policy_value  -- remove quotes
+    REPLACE(feature_policy_value, "'", '') AS policy_value  -- remove quotes
   FROM
     merged_feature_policy
 ),
@@ -112,10 +112,10 @@ normalized_permissions_policy AS (  -- normalize
               REPLACE(
                 REPLACE(permissions_policy_value, ',', ';'),  -- swap directive delimiter
                 '=', ' '), -- drop name/value delimiter
-              "()", "none" -- special case for feature disabling
+              '()', 'none' -- special case for feature disabling
             ),
-            "(", ""), ")", ""), -- remove parentheses
-        '"', ""), "'", "") -- remove quotes
+            '(', ''), ')', ''), -- remove parentheses
+        '"', ''), "'", '') -- remove quotes
     AS policy_value
   FROM
     merged_permissions_policy
@@ -125,7 +125,7 @@ normalized_permissions_policy AS (  -- normalize
 SELECT
   client,
   rank_grouping,
-  RTRIM(SPLIT(TRIM(directive), ' ')[OFFSET(0)], ":") AS directive_name,
+  RTRIM(SPLIT(TRIM(directive), ' ')[OFFSET(0)], ':') AS directive_name,
   TRIM(origin) AS origin,
   COUNT(DISTINCT page) AS number_of_websites_with_directive,
   total_websites,
@@ -145,7 +145,7 @@ USING (client, page)
 JOIN
   totals
 USING (client, rank_grouping),
-  UNNEST(SPLIT(policy_value, ";")) directive,
+  UNNEST(SPLIT(policy_value, ';')) directive,
   UNNEST(  -- Directive may specify explicit origins or not.
     IF(
       ARRAY_LENGTH(SPLIT(TRIM(directive), ' ')) = 1,  -- test if any explicit origin is provided
@@ -155,7 +155,7 @@ USING (client, rank_grouping),
     )
   ) AS origin WITH OFFSET AS offset
 WHERE
-  TRIM(directive) != "" AND
+  TRIM(directive) != '' AND
   offset > 0 AND
   rank <= rank_grouping
 GROUP BY

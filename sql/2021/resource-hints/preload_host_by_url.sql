@@ -40,7 +40,7 @@ FROM (
             NET.HOST(href) AS host
           FROM
             `httparchive.pages.2021_07_01_*`,
-            UNNEST(getResourceHintsHrefs(payload, "preload")) AS href
+            UNNEST(getResourceHintsHrefs(payload, 'preload')) AS href
         )
       GROUP BY
         client,

@@ -29,8 +29,8 @@ FROM
   `httparchive.pages.2021_07_01_*`,
   UNNEST(getSWLibraries(JSON_EXTRACT(payload, '$._pwa.importScriptsInfo'))) AS script
 WHERE
-  JSON_EXTRACT(payload, '$._pwa.importScriptsInfo') != "[]" AND
-  JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true" AND
+  JSON_EXTRACT(payload, '$._pwa.importScriptsInfo') != '[]' AND
+  JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true' AND
   LOWER(script) NOT LIKE '%workbox%' AND
   LOWER(script) NOT LIKE '%sw-toolbox%' AND
   LOWER(script) NOT LIKE '%firebase%' AND

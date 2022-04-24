@@ -6,7 +6,7 @@ WITH privacy_link_keywords AS (
     _TABLE_SUFFIX AS client,
     ARRAY(
       SELECT DISTINCT LOWER(kw) FROM
-        UNNEST(JSON_QUERY_ARRAY(JSON_VALUE(payload, "$._privacy"), "$.privacy_wording_links")) AS p,
+        UNNEST(JSON_QUERY_ARRAY(JSON_VALUE(payload, '$._privacy'), '$.privacy_wording_links')) AS p,
         UNNEST(JSON_VALUE_ARRAY(p, '$.keywords')) kw
     ) AS keywords_per_site
   FROM

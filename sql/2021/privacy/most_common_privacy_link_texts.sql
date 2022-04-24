@@ -8,7 +8,7 @@ WITH privacy_link_texts AS (
       SELECT DISTINCT
         LOWER(JSON_VALUE(p, '$.text'))
       FROM
-        UNNEST(JSON_QUERY_ARRAY(JSON_VALUE(payload, "$._privacy"), "$.privacy_wording_links")) AS p
+        UNNEST(JSON_QUERY_ARRAY(JSON_VALUE(payload, '$._privacy'), '$.privacy_wording_links')) AS p
     ) AS texts_per_site
   FROM
     `httparchive.pages.2021_07_01_*`

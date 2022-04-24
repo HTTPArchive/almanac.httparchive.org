@@ -43,14 +43,14 @@ JOIN
     FROM
       `httparchive.pages.2021_07_01_*`
     WHERE
-      JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
+      JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'
     GROUP BY
       _TABLE_SUFFIX
   )
 USING (_TABLE_SUFFIX)
 WHERE
-  JSON_EXTRACT(payload, '$._pwa.workboxInfo') != "[]" AND
-  JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
+  JSON_EXTRACT(payload, '$._pwa.workboxInfo') != '[]' AND
+  JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'
 GROUP BY
   _TABLE_SUFFIX,
   workbox_version,

@@ -150,7 +150,7 @@ WITH pages_origin_trials AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    JSON_VALUE(payload, "$._origin-trials") AS metrics
+    JSON_VALUE(payload, '$._origin-trials') AS metrics
   FROM
     `httparchive.pages.2021_07_01_*`
 ),
@@ -179,11 +179,11 @@ meta_tags AS (
     SELECT
       _TABLE_SUFFIX AS client,
       url,
-      JSON_VALUE(payload, "$._almanac") AS metrics
+      JSON_VALUE(payload, '$._almanac') AS metrics
     FROM
       `httparchive.pages.2021_07_01_*`
     ),
-    UNNEST(JSON_QUERY_ARRAY(metrics, "$.meta-nodes.nodes")) meta_node
+    UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node
   WHERE
     JSON_VALUE(meta_node, '$.http-equiv') IS NOT NULL
 ),
@@ -192,7 +192,7 @@ extracted_origin_trials_from_custom_metric AS (
   SELECT
     client,
     url AS site, -- the home page that was crawled
-    retrieveOriginTrials(JSON_VALUE(metric, "$.token")) AS origin_trials_from_custom_metric
+    retrieveOriginTrials(JSON_VALUE(metric, '$.token')) AS origin_trials_from_custom_metric
   FROM
     pages_origin_trials, UNNEST(JSON_QUERY_ARRAY(metrics)) metric
 ),

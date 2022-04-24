@@ -25,7 +25,7 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = "2020-08-01" AND
+    date = '2020-08-01' AND
     firstHtml
 )
 WHERE

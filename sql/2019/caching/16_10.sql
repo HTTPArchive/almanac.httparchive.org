@@ -15,7 +15,7 @@ JOIN (
   SELECT
     client,
     COUNT(0) AS all_requests,
-    COUNTIF(TRIM(resp_cache_control) != "") AS total_using_control
+    COUNTIF(TRIM(resp_cache_control) != '') AS total_using_control
   FROM
     `httparchive.almanac.requests`
   WHERE

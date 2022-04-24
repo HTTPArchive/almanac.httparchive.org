@@ -45,7 +45,7 @@ cookies AS (
     UNNEST(cookie_names) AS cookie
   WHERE
     cookie IS NOT NULL AND
-    cookie != ""
+    cookie != ''
   GROUP BY
     client,
     request,

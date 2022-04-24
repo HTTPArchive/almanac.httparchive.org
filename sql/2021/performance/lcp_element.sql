@@ -4,7 +4,7 @@
 
 SELECT
   _TABLE_SUFFIX AS client,
-  JSON_EXTRACT_SCALAR(payload, "$._performance.lcp_elem_stats[0].nodeName") AS lcp_node,
+  JSON_EXTRACT_SCALAR(payload, '$._performance.lcp_elem_stats[0].nodeName') AS lcp_node,
   COUNT(DISTINCT url) AS pages,
   ANY_VALUE(total) AS total,
   COUNT(DISTINCT url) / ANY_VALUE(total) AS pct

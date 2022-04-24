@@ -42,7 +42,7 @@ JOIN
   totals
 USING (client)
 WHERE
-  date = "2021-07-01" AND
+  date = '2021-07-01' AND
   NET.REG_DOMAIN(page) != NET.REG_DOMAIN(urlShort) -- third party
 GROUP BY
   client,
@@ -67,7 +67,7 @@ JOIN
   totals
 USING (client)
 WHERE
-  date = "2021-07-01" AND
+  date = '2021-07-01' AND
   NET.REG_DOMAIN(page) != NET.REG_DOMAIN(urlShort) -- third party
 GROUP BY
   client,
@@ -91,7 +91,7 @@ JOIN
   totals
 USING (client)
 WHERE
-  date = "2021-07-01" AND
+  date = '2021-07-01' AND
   NET.REG_DOMAIN(page) != NET.REG_DOMAIN(urlShort) AND -- third party
   (
     -- categories selected from https://whotracks.me/blog/tracker_categories.html

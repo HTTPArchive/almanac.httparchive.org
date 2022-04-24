@@ -14,7 +14,7 @@ FROM
   (
     (
       SELECT
-        "desktop" AS client,
+        'desktop' AS client,
         total_requests,
         total_using_vary,
         total_using_both,
@@ -28,8 +28,8 @@ FROM
       CROSS JOIN (
         SELECT
           COUNT(0) AS total_requests,
-          COUNTIF(TRIM(resp_vary) != "") AS total_using_vary,
-          COUNTIF(TRIM(resp_vary) != "" AND TRIM(resp_cache_control) != "") AS total_using_both
+          COUNTIF(TRIM(resp_vary) != '') AS total_using_vary,
+          COUNTIF(TRIM(resp_vary) != '' AND TRIM(resp_cache_control) != '') AS total_using_both
         FROM
           `httparchive.summary_requests.2020_08_01_desktop`
       )
@@ -43,7 +43,7 @@ FROM
     UNION ALL
     (
       SELECT
-        "mobile" AS client,
+        'mobile' AS client,
         total_requests,
         total_using_vary,
         total_using_both,
@@ -57,8 +57,8 @@ FROM
       CROSS JOIN (
         SELECT
           COUNT(0) AS total_requests,
-          COUNTIF(TRIM(resp_vary) != "") AS total_using_vary,
-          COUNTIF(TRIM(resp_vary) != "" AND TRIM(resp_cache_control) != "") AS total_using_both
+          COUNTIF(TRIM(resp_vary) != '') AS total_using_vary,
+          COUNTIF(TRIM(resp_vary) != '' AND TRIM(resp_cache_control) != '') AS total_using_both
         FROM
           `httparchive.summary_requests.2020_08_01_mobile`
       )

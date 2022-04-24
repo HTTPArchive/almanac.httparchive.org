@@ -33,7 +33,7 @@ FROM (
   FROM (
     SELECT
       _TABLE_SUFFIX AS client,
-      JSON_EXTRACT(payload, "$._consoleLog") AS consoleLog,
+      JSON_EXTRACT(payload, '$._consoleLog') AS consoleLog,
       getResourceHints(payload) AS hints
     FROM
       `httparchive.pages.2021_07_01_*`

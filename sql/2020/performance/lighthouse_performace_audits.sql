@@ -32,7 +32,7 @@ SELECT
   MAX(audits.description) AS description
 FROM
   `httparchive.lighthouse.2020_09_01_mobile`,
-  UNNEST(getAudits(report, "performance")) AS audits
+  UNNEST(getAudits(report, 'performance')) AS audits
 WHERE
   LENGTH(report) < 20000000  # necessary to avoid out of memory issues. Excludes 16 very large results
 GROUP BY

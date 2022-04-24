@@ -198,8 +198,8 @@ SELECT
   rank,
   url,
   getSummary(payload).*, -- noqa: L013
-  JSON_EXTRACT(payload, "$.request.headers") AS request_headers,
-  JSON_EXTRACT(payload, "$.response.headers") AS response_headers,
+  JSON_EXTRACT(payload, '$.request.headers') AS request_headers,
+  JSON_EXTRACT(payload, '$.response.headers') AS response_headers,
   payload
 FROM
   `httparchive.requests.2021_07_01_*`

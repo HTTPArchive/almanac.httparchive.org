@@ -14,10 +14,10 @@ JOIN
 USING
   (_TABLE_SUFFIX, url)
 WHERE
-  LOWER(category) = "static site generator" OR
-  app = "Next.js" OR
-  app = "Nuxt.js" OR
-  app = "Docusaurus"
+  LOWER(category) = 'static site generator' OR
+  app = 'Next.js' OR
+  app = 'Nuxt.js' OR
+  app = 'Docusaurus'
 GROUP BY
   ssg,
   client

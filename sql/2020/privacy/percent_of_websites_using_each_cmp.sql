@@ -5,7 +5,7 @@ WITH apps AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    IF(category = "Cookie compliance", app, "") AS cmp_app
+    IF(category = 'Cookie compliance', app, '') AS cmp_app
   FROM `httparchive.technologies.2020_08_01_*`
   GROUP BY
     client,
@@ -36,7 +36,7 @@ SELECT
 FROM
   base
 WHERE
-  cmp_app != ""
+  cmp_app != ''
 GROUP BY
   client,
   cmp_app

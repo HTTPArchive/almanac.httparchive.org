@@ -24,7 +24,7 @@ FROM (
     SELECT
       _TABLE_SUFFIX AS client,
       url,
-      JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.iframe-allow-sandbox") AS iframeAttrs
+      JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.iframe-allow-sandbox') AS iframeAttrs
     FROM
       `httparchive.pages.2020_08_01_*`)
   LEFT JOIN UNNEST(iframeAttrs) AS iframeAttr

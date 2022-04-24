@@ -23,9 +23,9 @@ FROM
   `httparchive.almanac.requests`
 WHERE
   date = '2019-07-01' AND
-  url LIKE "https://%" AND
-  JSON_EXTRACT_SCALAR(payload, "$._protocol") != "HTTP/2" AND
-  getUpgradeHeader(payload) LIKE "%h2%"
+  url LIKE 'https://%' AND
+  JSON_EXTRACT_SCALAR(payload, '$._protocol') != 'HTTP/2' AND
+  getUpgradeHeader(payload) LIKE '%h2%'
 GROUP BY
   client,
   firstHtml

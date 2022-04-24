@@ -19,8 +19,8 @@ SELECT
 FROM (
   SELECT
     client,
-    TRIM(resp_date) != "" AS uses_date,
-    TRIM(resp_last_modified) != "" AS uses_last_modified,
+    TRIM(resp_date) != '' AS uses_date,
+    TRIM(resp_last_modified) != '' AS uses_last_modified,
 
     REGEXP_CONTAINS(TRIM(resp_date), r'^(Mon|Tue|Wed|Thu|Fri|Sat|Sun), \d{1,2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{4} \d{2}:\d{2}:\d{2} GMT$') AS has_valid_date_header,
     REGEXP_CONTAINS(TRIM(resp_last_modified), r'^(Mon|Tue|Wed|Thu|Fri|Sat|Sun), \d{1,2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{4} \d{2}:\d{2}:\d{2} GMT$') AS has_valid_last_modified

@@ -12,7 +12,7 @@ SELECT
 FROM (
   SELECT
     client,
-    CAST(JSON_EXTRACT(payload, "$._ttfb_ms") AS INT64) AS ttfb,
+    CAST(JSON_EXTRACT(payload, '$._ttfb_ms') AS INT64) AS ttfb,
     _cdn_provider AS cdn
   FROM
     `httparchive.almanac.requests`

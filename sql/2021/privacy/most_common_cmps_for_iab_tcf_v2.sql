@@ -14,7 +14,7 @@ WITH totals AS (
 
 SELECT
   _TABLE_SUFFIX AS client,
-  JSON_VALUE(JSON_VALUE(payload, "$._privacy"), '$.iab_tcf_v2.data.cmpId') AS cmpId,
+  JSON_VALUE(JSON_VALUE(payload, '$._privacy'), '$.iab_tcf_v2.data.cmpId') AS cmpId,
   COUNT(0) AS number_of_websites,
   total_websites,
   COUNT(0) / total_websites AS pct_websites
@@ -24,7 +24,7 @@ JOIN
   totals
 USING (_TABLE_SUFFIX)
 WHERE
-  JSON_VALUE(JSON_VALUE(payload, "$._privacy"), '$.iab_tcf_v2.data.cmpId') IS NOT NULL
+  JSON_VALUE(JSON_VALUE(payload, '$._privacy'), '$.iab_tcf_v2.data.cmpId') IS NOT NULL
 GROUP BY
   client,
   total_websites,

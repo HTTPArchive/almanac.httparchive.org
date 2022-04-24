@@ -5,7 +5,7 @@ WITH base AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    LOGICAL_OR(category = "Cookie compliance") AS with_cmp
+    LOGICAL_OR(category = 'Cookie compliance') AS with_cmp
   FROM `httparchive.technologies.2020_08_01_*`
   GROUP BY
     client,

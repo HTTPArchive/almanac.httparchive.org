@@ -17,7 +17,7 @@ WITH pages_events AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    JSON_QUERY(payload, "$._event-names") AS events
+    JSON_QUERY(payload, '$._event-names') AS events
   FROM
     `httparchive.pages.2021_07_01_*`
 ),

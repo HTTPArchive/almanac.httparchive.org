@@ -9,12 +9,12 @@ WITH meta_tags AS (
     SELECT
       _TABLE_SUFFIX AS client,
       url,
-      JSON_VALUE(payload, "$._almanac") AS metrics
+      JSON_VALUE(payload, '$._almanac') AS metrics
     FROM
       `httparchive.pages.2021_07_01_*`
     ),
-    UNNEST(JSON_QUERY_ARRAY(metrics, "$.meta-nodes.nodes")) meta_node
-  WHERE LOWER(JSON_VALUE(meta_node, '$.name')) = "robots"
+    UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node
+  WHERE LOWER(JSON_VALUE(meta_node, '$.name')) = 'robots'
 ),
 
 robot_headers AS (
@@ -35,7 +35,7 @@ robot_headers AS (
     ),
     UNNEST(JSON_QUERY_ARRAY(response_headers)) AS response_header
   WHERE
-    LOWER(JSON_VALUE(response_header, '$.name')) = "x-robots-tag"
+    LOWER(JSON_VALUE(response_header, '$.name')) = 'x-robots-tag'
 ),
 
 total_nb_pages AS (

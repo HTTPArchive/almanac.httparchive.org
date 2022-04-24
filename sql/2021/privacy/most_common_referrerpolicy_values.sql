@@ -15,7 +15,7 @@ referrer_policy_custom_metrics AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    JSON_VALUE(JSON_VALUE(payload, "$._privacy"), "$.referrerPolicy.entire_document_policy") AS entire_document_policy_meta
+    JSON_VALUE(JSON_VALUE(payload, '$._privacy'), '$.referrerPolicy.entire_document_policy') AS entire_document_policy_meta
   FROM
     `httparchive.pages.2021_07_01_*`
 ),

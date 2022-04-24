@@ -23,8 +23,8 @@ FROM
   `httparchive.almanac.requests`
 WHERE
   date = '2019-07-01' AND
-  url LIKE "http://%" AND
-  getUpgradeHeader(payload) LIKE "%h2%"
+  url LIKE 'http://%' AND
+  getUpgradeHeader(payload) LIKE '%h2%'
 GROUP BY
   client,
   firstHtml

@@ -17,12 +17,12 @@ SELECT
   APPROX_QUANTILES(blocking_time, 1000)[OFFSET(percentile * 10)] AS p50_blocking_time
 FROM (
   SELECT
-    JSON_VALUE(third_party_items, "$.entity.url") AS domain,
+    JSON_VALUE(third_party_items, '$.entity.url') AS domain,
     page,
-    JSON_VALUE(third_party_items, "$.entity.text") AS category,
-    COUNTIF(SAFE_CAST(JSON_VALUE(report, "$.audits.third-party-summary.details.summary.wastedMs") AS FLOAT64) > 250) AS blocking,
-    SUM(SAFE_CAST(JSON_VALUE(third_party_items, "$.blockingTime") AS FLOAT64)) AS blocking_time,
-    SUM(SAFE_CAST(JSON_VALUE(third_party_items, "$.transferSize") AS FLOAT64) / 1024) AS transfer_size_kib
+    JSON_VALUE(third_party_items, '$.entity.text') AS category,
+    COUNTIF(SAFE_CAST(JSON_VALUE(report, '$.audits.third-party-summary.details.summary.wastedMs') AS FLOAT64) > 250) AS blocking,
+    SUM(SAFE_CAST(JSON_VALUE(third_party_items, '$.blockingTime') AS FLOAT64)) AS blocking_time,
+    SUM(SAFE_CAST(JSON_VALUE(third_party_items, '$.transferSize') AS FLOAT64) / 1024) AS transfer_size_kib
   FROM
     (
       SELECT

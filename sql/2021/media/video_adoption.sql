@@ -6,7 +6,7 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    CAST(JSON_VALUE(JSON_VALUE(payload, "$._media"), "$.num_video_nodes") AS INT64) AS num_video_nodes
+    CAST(JSON_VALUE(JSON_VALUE(payload, '$._media'), '$.num_video_nodes') AS INT64) AS num_video_nodes
   FROM
     `httparchive.pages.2021_07_01_*`)
 GROUP BY
