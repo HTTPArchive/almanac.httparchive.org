@@ -9,7 +9,7 @@ SELECT
 FROM
   `httparchive.almanac.summary_response_bodies`,
   # extract preload attribute value, or empty if none
-  UNNEST(REGEXP_EXTRACT_ALL(body, '<video[^>]*?preload=*(?:\"|\')*(.*?)(?:\"|\'|\\s|>)')) AS preload_value
+  UNNEST(REGEXP_EXTRACT_ALL(body, '<video[^>]*?preload=*(?:"|\')*(.*?)(?:"|\'|\\s|>)')) AS preload_value
 WHERE
   date = '2020-08-01' AND
   firstHtml

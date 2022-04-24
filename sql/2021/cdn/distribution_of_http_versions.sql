@@ -27,16 +27,16 @@ FROM
       url,
       firstHtml,
       # WPT is inconsistent with protocol population.
-      UPPER(IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(CONCAT("HTTP/", JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'HTTP/')))) AS protocol,
+      UPPER(IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(CONCAT('HTTP/', JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'HTTP/')))) AS protocol,
       JSON_EXTRACT_SCALAR(payload, '$._tls_version') AS tlsVersion,
 
       # WPT joins CDN detection but we bias to the DNS detection which is the first entry
       IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') AS cdn,
-      CAST(JSON_EXTRACT(payload, "$.timings.ssl") AS INT64) AS tlstime,
+      CAST(JSON_EXTRACT(payload, '$.timings.ssl') AS INT64) AS tlstime,
 
       # isSecure reports what the browser thought it was going to use, but it can get upgraded with STS OR UpgradeInsecure: 1
       IF(STARTS_WITH(url, 'https') OR JSON_EXTRACT_SCALAR(payload, '$._tls_version') IS NOT NULL OR CAST(JSON_EXTRACT(payload, '$._is_secure') AS INT64) = 1, TRUE, FALSE) AS isSecure,
-      CAST(JSON_EXTRACT(payload, "$._socket") AS INT64) AS socket
+      CAST(JSON_EXTRACT(payload, '$._socket') AS INT64) AS socket
     FROM
       `httparchive.almanac.requests`
     --`httparchive.sample_data.requests`
@@ -50,16 +50,16 @@ LEFT JOIN
     SELECT
       client,
       page,
-      CAST(JSON_EXTRACT(payload, "$._socket") AS INT64) AS socket,
-      ANY_VALUE(UPPER(IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(concat("HTTP/", JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'HTTP/'))))) AS protocol,
+      CAST(JSON_EXTRACT(payload, '$._socket') AS INT64) AS socket,
+      ANY_VALUE(UPPER(IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(concat('HTTP/', JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'HTTP/'))))) AS protocol,
       ANY_VALUE(JSON_EXTRACT_SCALAR(payload, '$._tls_version')) AS tlsVersion
     FROM
       `httparchive.almanac.requests`
     WHERE
       JSON_EXTRACT_SCALAR(payload, '$._tls_version') IS NOT NULL AND
-      IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(concat("HTTP/",
+      IFNULL(JSON_EXTRACT_SCALAR(payload, '$._protocol'), IFNULL(NULLIF(JSON_EXTRACT_SCALAR(payload, '$._tls_next_proto'), 'unknown'), NULLIF(concat('HTTP/',
         JSON_EXTRACT_SCALAR(payload, '$.response.httpVersion')), 'HTTP/'))) IS NOT NULL AND
-      JSON_EXTRACT(payload, "$._socket") IS NOT NULL AND
+      JSON_EXTRACT(payload, '$._socket') IS NOT NULL AND
       date = '2021-07-01'
     GROUP BY
       client,

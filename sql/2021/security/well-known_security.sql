@@ -3,18 +3,18 @@
 SELECT
   client,
   COUNT(DISTINCT page) AS total_pages,
-  COUNTIF(has_security_txt = "true") AS count_security_txt,
-  COUNTIF(has_security_txt = "true") / COUNT(DISTINCT page) AS pct_security_txt,
-  COUNTIF(signed = "true") AS count_signed,
-  COUNTIF(signed = "true") / COUNTIF(has_security_txt = "true") AS pct_signed,
+  COUNTIF(has_security_txt = 'true') AS count_security_txt,
+  COUNTIF(has_security_txt = 'true') / COUNT(DISTINCT page) AS pct_security_txt,
+  COUNTIF(signed = 'true') AS count_signed,
+  COUNTIF(signed = 'true') / COUNTIF(has_security_txt = 'true') AS pct_signed,
   COUNTIF(canonical IS NOT NULL) AS canonical,
-  COUNTIF(canonical IS NOT NULL) / COUNTIF(has_security_txt = "true") AS pct_canonical,
+  COUNTIF(canonical IS NOT NULL) / COUNTIF(has_security_txt = 'true') AS pct_canonical,
   COUNTIF(encryption IS NOT NULL) AS encryption,
-  COUNTIF(encryption IS NOT NULL) / COUNTIF(has_security_txt = "true") AS pct_encryption,
+  COUNTIF(encryption IS NOT NULL) / COUNTIF(has_security_txt = 'true') AS pct_encryption,
   COUNTIF(expires IS NOT NULL) AS expires,
-  COUNTIF(expires IS NOT NULL) / COUNTIF(has_security_txt = "true") AS pct_expires,
+  COUNTIF(expires IS NOT NULL) / COUNTIF(has_security_txt = 'true') AS pct_expires,
   COUNTIF(policy IS NOT NULL) AS policy,
-  COUNTIF(policy IS NOT NULL) / COUNTIF(has_security_txt = "true") AS pct_policy
+  COUNTIF(policy IS NOT NULL) / COUNTIF(has_security_txt = 'true') AS pct_policy
 FROM (
     SELECT
       _TABLE_SUFFIX AS client,

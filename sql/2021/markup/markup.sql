@@ -152,13 +152,13 @@ SELECT
   SAFE_DIVIDE(COUNTIF(LENGTH(markup_info.dirs_html_dir) > 0), COUNT(0)) AS pct_html_dir_set,
 
   # pages with html dir set to ltr
-  SAFE_DIVIDE(COUNTIF(markup_info.dirs_html_dir = "ltr"), COUNT(0)) AS pct_html_dir_ltr,
+  SAFE_DIVIDE(COUNTIF(markup_info.dirs_html_dir = 'ltr'), COUNT(0)) AS pct_html_dir_ltr,
 
   # pages with html dir set to rtl
-  SAFE_DIVIDE(COUNTIF(markup_info.dirs_html_dir = "rtl"), COUNT(0)) AS pct_html_dir_rtl,
+  SAFE_DIVIDE(COUNTIF(markup_info.dirs_html_dir = 'rtl'), COUNT(0)) AS pct_html_dir_rtl,
 
   # pages with html dir set to auto
-  SAFE_DIVIDE(COUNTIF(markup_info.dirs_html_dir = "auto"), COUNT(0)) AS pct_html_dir_auto,
+  SAFE_DIVIDE(COUNTIF(markup_info.dirs_html_dir = 'auto'), COUNT(0)) AS pct_html_dir_auto,
 
   # pages with dir on other elements
   SAFE_DIVIDE(COUNTIF(markup_info.dirs_body_nodes_dir_total > 0), COUNT(0)) AS pct_body_nodes_dir_set

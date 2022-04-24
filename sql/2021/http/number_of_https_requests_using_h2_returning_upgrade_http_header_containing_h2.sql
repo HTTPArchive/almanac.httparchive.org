@@ -18,15 +18,15 @@ SELECT
   client,
   firstHtml,
   protocol AS http_version,
-  COUNTIF(extractHTTPHeader(response_headers, "upgrade") LIKE "%h2%") AS num_requests,
+  COUNTIF(extractHTTPHeader(response_headers, 'upgrade') LIKE '%h2%') AS num_requests,
   COUNT(0) AS total,
-  COUNTIF(extractHTTPHeader(response_headers, "upgrade") LIKE "%h2%") / COUNT(0) AS pct
+  COUNTIF(extractHTTPHeader(response_headers, 'upgrade') LIKE '%h2%') / COUNT(0) AS pct
 FROM
   `httparchive.almanac.requests`
 WHERE
   date = '2021-07-01' AND
-  url LIKE "https://%" AND
-  LOWER(protocol) = "http/2"
+  url LIKE 'https://%' AND
+  LOWER(protocol) = 'http/2'
 GROUP BY
   client,
   firstHtml,

@@ -20,7 +20,7 @@ FROM (
       client,
       page,
       url,
-      REGEXP_EXTRACT_ALL(body, "(?i)(<script [^>]*)") AS scripts
+      REGEXP_EXTRACT_ALL(body, '(?i)(<script [^>]*)') AS scripts
     FROM
       `httparchive.almanac.summary_response_bodies`
     WHERE

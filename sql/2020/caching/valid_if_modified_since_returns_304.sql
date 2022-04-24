@@ -14,9 +14,9 @@ FROM (
     _TABLE_SUFFIX AS client,
     status,
     TRIM(resp_last_modified) = TRIM(req_if_modified_since) AS no_change,
-    TRIM(resp_last_modified) != "" AS uses_last_modified,
-    TRIM(req_if_modified_since) != "" AS uses_if_modified,
-    TRIM(resp_etag) != "" AS uses_etag
+    TRIM(resp_last_modified) != '' AS uses_last_modified,
+    TRIM(req_if_modified_since) != '' AS uses_if_modified,
+    TRIM(resp_etag) != '' AS uses_etag
   FROM
     `httparchive.summary_requests.2020_08_01_*`
 )

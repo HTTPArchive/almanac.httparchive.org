@@ -40,7 +40,7 @@ WITH age_values AS (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = "2021-07-01"
+    date = '2021-07-01'
 ),
 
 max_age_values AS (
@@ -49,7 +49,7 @@ max_age_values AS (
     percentile,
     APPROX_QUANTILES(SAFE_CAST(max_age_value AS NUMERIC), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS max_age
   FROM age_values,
-    UNNEST(JSON_QUERY_ARRAY(values, "$.maxAge")) AS max_age_value,
+    UNNEST(JSON_QUERY_ARRAY(values, '$.maxAge')) AS max_age_value,
     UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
   GROUP BY
     percentile,
@@ -65,7 +65,7 @@ expires_values AS (
     percentile,
     APPROX_QUANTILES(SAFE_CAST(expires_value AS NUMERIC), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS expires
   FROM age_values,
-    UNNEST(JSON_QUERY_ARRAY(values, "$.expires")) AS expires_value,
+    UNNEST(JSON_QUERY_ARRAY(values, '$.expires')) AS expires_value,
     UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
   GROUP BY
     percentile,
@@ -81,7 +81,7 @@ real_age_values AS (
     percentile,
     APPROX_QUANTILES(SAFE_CAST(real_age_value AS NUMERIC), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS real_age
   FROM age_values,
-    UNNEST(JSON_QUERY_ARRAY(values, "$.realAge")) AS real_age_value,
+    UNNEST(JSON_QUERY_ARRAY(values, '$.realAge')) AS real_age_value,
     UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
   GROUP BY
     percentile,

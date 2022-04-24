@@ -4,8 +4,8 @@
 WITH tbt_stats AS (
   SELECT
     url,
-    CAST(JSON_EXTRACT_SCALAR(report, "$.audits.total-blocking-time.numericValue") AS FLOAT64) AS tbtValue,
-    CAST(JSON_EXTRACT_SCALAR(report, "$.audits.total-blocking-time.score") AS FLOAT64) AS tbtScore
+    CAST(JSON_EXTRACT_SCALAR(report, '$.audits.total-blocking-time.numericValue') AS FLOAT64) AS tbtValue,
+    CAST(JSON_EXTRACT_SCALAR(report, '$.audits.total-blocking-time.score') AS FLOAT64) AS tbtScore
   FROM
     `httparchive.lighthouse.2021_07_01_mobile`
 )

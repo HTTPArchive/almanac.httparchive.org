@@ -11,7 +11,7 @@ SELECT
 FROM (
   SELECT
     client,
-    IF(IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') = "ORIGIN", "ORIGIN", "CDN") AS cdn,
+    IF(IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') = 'ORIGIN', 'ORIGIN', 'CDN') AS cdn,
     rank
   FROM
     `httparchive.almanac.requests`

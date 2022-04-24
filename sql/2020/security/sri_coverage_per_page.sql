@@ -11,7 +11,7 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.sri-integrity") AS sris,
+    JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.sri-integrity') AS sris,
     SAFE_CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._element_count'), '$.script') AS INT64) AS num_scripts
   FROM
     `httparchive.pages.2020_08_01_*`),

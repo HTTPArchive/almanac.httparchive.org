@@ -10,7 +10,7 @@ WITH mimtype_file_ext_pairs AS (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = "2021-07-01"
+    date = '2021-07-01'
   GROUP BY
     client,
     mimetype,
@@ -30,14 +30,14 @@ FROM
   mimtype_file_ext_pairs
 WHERE
   mimetype IS NOT NULL AND
-  mimetype != "" AND
+  mimetype != '' AND
   file_extension IS NOT NULL AND
-  file_extension != "" AND
-  mimetype NOT LIKE CONCAT("%", file_extension) AND
-  NOT (REGEXP_CONTAINS(mimetype, "(application|text)/(x-)*javascript") AND REGEXP_CONTAINS(file_extension, r"(?i)^m?js$")) AND
-  NOT (mimetype = "image/svg+xml" AND REGEXP_CONTAINS(file_extension, r"(?i)^svg$")) AND
-  NOT (mimetype = "audio/mpeg" AND REGEXP_CONTAINS(file_extension, r"(?i)^mp3$")) AND
-  NOT (STARTS_WITH(mimetype, "image/") AND REGEXP_CONTAINS(file_extension, r"(?i)^(apng|avif|bmp|cur|gif|jpeg|jpg|jfif|ico|pjpeg|pjp|png|tif|tiff|webp)$"))
+  file_extension != '' AND
+  mimetype NOT LIKE CONCAT('%', file_extension) AND
+  NOT (REGEXP_CONTAINS(mimetype, '(application|text)/(x-)*javascript') AND REGEXP_CONTAINS(file_extension, r'(?i)^m?js$')) AND
+  NOT (mimetype = 'image/svg+xml' AND REGEXP_CONTAINS(file_extension, r'(?i)^svg$')) AND
+  NOT (mimetype = 'audio/mpeg' AND REGEXP_CONTAINS(file_extension, r'(?i)^mp3$')) AND
+  NOT (STARTS_WITH(mimetype, 'image/') AND REGEXP_CONTAINS(file_extension, r'(?i)^(apng|avif|bmp|cur|gif|jpeg|jpg|jfif|ico|pjpeg|pjp|png|tif|tiff|webp)$'))
 GROUP BY
   client,
   total_requests,

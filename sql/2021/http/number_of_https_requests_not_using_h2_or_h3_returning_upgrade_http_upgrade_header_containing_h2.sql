@@ -17,17 +17,17 @@ try {
 SELECT
   client,
   firstHtml,
-  COUNTIF(extractHTTPHeader(response_headers, "upgrade") LIKE "%h2%") AS num_requests,
+  COUNTIF(extractHTTPHeader(response_headers, 'upgrade') LIKE '%h2%') AS num_requests,
   COUNT(0) AS total
 FROM
   `httparchive.almanac.requests`
 WHERE
   date = '2021-07-01' AND
-  url LIKE "https://%" AND
-  LOWER(protocol) != "http/2" AND
-  LOWER(protocol) NOT LIKE "%quic%" AND
-  LOWER(protocol) NOT LIKE "h3%" AND
-  LOWER(protocol) != "http/3"
+  url LIKE 'https://%' AND
+  LOWER(protocol) != 'http/2' AND
+  LOWER(protocol) NOT LIKE '%quic%' AND
+  LOWER(protocol) NOT LIKE 'h3%' AND
+  LOWER(protocol) != 'http/3'
 GROUP BY
   client,
   firstHtml

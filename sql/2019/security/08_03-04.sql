@@ -1,7 +1,7 @@
 #standardSQL
 # 08_03: and 08_04: - RSA and ECDSA certificates
 CREATE TEMPORARY FUNCTION getHexCert(cert STRING) RETURNS STRING AS (
-  TO_HEX(FROM_BASE64(REPLACE(REGEXP_REPLACE(cert, "-----(BEGIN|END) CERTIFICATE-----", ""), "\n", "")))
+  TO_HEX(FROM_BASE64(REPLACE(REGEXP_REPLACE(cert, '-----(BEGIN|END) CERTIFICATE-----', ''), '\n', '')))
 );
 
 SELECT
@@ -15,11 +15,11 @@ FROM (
   SELECT
     client,
     COUNTIF(IF(tls13,
-      getHexCert(cert) LIKE "%2a8648ce3d0201%",
+      getHexCert(cert) LIKE '%2a8648ce3d0201%',
       REGEXP_CONTAINS(key_exchange, r'ECDSA')
     )) AS is_ecdsa,
     COUNTIF(IF(tls13,
-      getHexCert(cert) LIKE "%2a864886f70d010101%",
+      getHexCert(cert) LIKE '%2a864886f70d010101%',
       REGEXP_CONTAINS(key_exchange, r'RSA')
     )) AS is_rsa,
     COUNT(0) AS total

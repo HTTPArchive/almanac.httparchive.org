@@ -440,7 +440,7 @@ SELECT
   AS_PERCENT(COUNTIF(wpt_bodies_info.rendering_changes_structured_data), COUNT(0)) AS pct_rendering_changes_structured_data,
 
   # http or https
-  AS_PERCENT(COUNTIF(protocol = "https"), COUNT(0)) AS pct_https,
+  AS_PERCENT(COUNTIF(protocol = 'https'), COUNT(0)) AS pct_https,
 
   # meta robots
   AS_PERCENT(COUNTIF(wpt_bodies_info.rendered_otherbot_status_index), COUNT(0)) AS pct_rendered_otherbot_status_index,
@@ -480,7 +480,7 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    SPLIT(url, ":")[OFFSET(0)] AS protocol,
+    SPLIT(url, ':')[OFFSET(0)] AS protocol,
     get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
   FROM
     `httparchive.pages.2020_08_01_*`

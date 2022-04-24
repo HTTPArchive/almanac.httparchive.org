@@ -16,12 +16,12 @@ JOIN
   (
     SELECT
       _TABLE_SUFFIX AS client,
-      RTRIM(url, "/") AS origin,
+      RTRIM(url, '/') AS origin,
       COUNT(0) AS total
     FROM
       `httparchive.pages.2021_07_01_*`
     WHERE
-      JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
+      JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'
     GROUP BY
       _TABLE_SUFFIX,
       url

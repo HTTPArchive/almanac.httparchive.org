@@ -36,7 +36,7 @@ FROM
       firstHTML AND
       (
         LOWER(protocol) IN ('http/3', 'quic', 'h3-29', 'h3-q050') OR
-        extractHTTPHeader(response_headers, "alt-svc") LIKE '%h3%'
+        extractHTTPHeader(response_headers, 'alt-svc') LIKE '%h3%'
       )
   ),
   UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping

@@ -12,7 +12,7 @@ FROM
   (
     (
       SELECT
-        "desktop" AS client,
+        'desktop' AS client,
         total_requests,
         total_using_cache_control,
         directive_name,
@@ -25,7 +25,7 @@ FROM
       CROSS JOIN (
         SELECT
           COUNT(0) AS total_requests,
-          COUNTIF(TRIM(resp_cache_control) != "") AS total_using_cache_control
+          COUNTIF(TRIM(resp_cache_control) != '') AS total_using_cache_control
         FROM
           `httparchive.summary_requests.2020_08_01_desktop`
       )
@@ -38,7 +38,7 @@ FROM
     UNION ALL
     (
       SELECT
-        "mobile" AS client,
+        'mobile' AS client,
         total_requests,
         total_using_cache_control,
         directive_name,
@@ -51,7 +51,7 @@ FROM
       CROSS JOIN (
         SELECT
           COUNT(0) AS total_requests,
-          COUNTIF(TRIM(resp_cache_control) != "") AS total_using_cache_control
+          COUNTIF(TRIM(resp_cache_control) != '') AS total_using_cache_control
         FROM
           `httparchive.summary_requests.2020_08_01_mobile`
       )

@@ -52,7 +52,7 @@ WITH geos AS (
   SELECT *, 'cd' AS geo_code, 'Congo (Democratic Republic of the)' AS geo, 'Africa' AS region, 'Middle Africa' AS subregion FROM `chrome-ux-report.country_cd.201907` UNION ALL
   SELECT *, 'ck' AS geo_code, 'Cook Islands' AS geo, 'Oceania' AS region, 'Polynesia' AS subregion FROM `chrome-ux-report.country_ck.201907` UNION ALL
   SELECT *, 'cr' AS geo_code, 'Costa Rica' AS geo, 'Americas' AS region, 'Central America' AS subregion FROM `chrome-ux-report.country_cr.201907` UNION ALL
-  SELECT *, 'ci' AS geo_code, 'Côte d\'Ivoire' AS geo, 'Africa' AS region, 'Western Africa' AS subregion FROM `chrome-ux-report.country_ci.201907` UNION ALL
+  SELECT *, 'ci' AS geo_code, "Côte d'Ivoire" AS geo, 'Africa' AS region, 'Western Africa' AS subregion FROM `chrome-ux-report.country_ci.201907` UNION ALL
   SELECT *, 'hr' AS geo_code, 'Croatia' AS geo, 'Europe' AS region, 'Southern Europe' AS subregion FROM `chrome-ux-report.country_hr.201907` UNION ALL
   SELECT *, 'cu' AS geo_code, 'Cuba' AS geo, 'Americas' AS region, 'Caribbean' AS subregion FROM `chrome-ux-report.country_cu.201907` UNION ALL
   SELECT *, 'cw' AS geo_code, 'Curaçao' AS geo, 'Americas' AS region, 'Caribbean' AS subregion FROM `chrome-ux-report.country_cw.201907` UNION ALL
@@ -112,11 +112,11 @@ WITH geos AS (
   SELECT *, 'kz' AS geo_code, 'Kazakhstan' AS geo, 'Asia' AS region, 'Central Asia' AS subregion FROM `chrome-ux-report.country_kz.201907` UNION ALL
   SELECT *, 'ke' AS geo_code, 'Kenya' AS geo, 'Africa' AS region, 'Eastern Africa' AS subregion FROM `chrome-ux-report.country_ke.201907` UNION ALL
   SELECT *, 'ki' AS geo_code, 'Kiribati' AS geo, 'Oceania' AS region, 'Micronesia' AS subregion FROM `chrome-ux-report.country_ki.201907` UNION ALL
-  SELECT *, 'kp' AS geo_code, 'Korea (Democratic People\'s Republic of)' AS geo, 'Asia' AS region, 'Eastern Asia' AS subregion FROM `chrome-ux-report.country_kp.201907` UNION ALL
+  SELECT *, 'kp' AS geo_code, "Korea (Democratic People's Republic of)" AS geo, 'Asia' AS region, 'Eastern Asia' AS subregion FROM `chrome-ux-report.country_kp.201907` UNION ALL
   SELECT *, 'kr' AS geo_code, 'Korea (Republic of)' AS geo, 'Asia' AS region, 'Eastern Asia' AS subregion FROM `chrome-ux-report.country_kr.201907` UNION ALL
   SELECT *, 'kw' AS geo_code, 'Kuwait' AS geo, 'Asia' AS region, 'Western Asia' AS subregion FROM `chrome-ux-report.country_kw.201907` UNION ALL
   SELECT *, 'kg' AS geo_code, 'Kyrgyzstan' AS geo, 'Asia' AS region, 'Central Asia' AS subregion FROM `chrome-ux-report.country_kg.201907` UNION ALL
-  SELECT *, 'la' AS geo_code, 'Lao People\'s Democratic Republic' AS geo, 'Asia' AS region, 'South-Eastern Asia' AS subregion FROM `chrome-ux-report.country_la.201907` UNION ALL
+  SELECT *, 'la' AS geo_code, "Lao People's Democratic Republic" AS geo, 'Asia' AS region, 'South-Eastern Asia' AS subregion FROM `chrome-ux-report.country_la.201907` UNION ALL
   SELECT *, 'lv' AS geo_code, 'Latvia' AS geo, 'Europe' AS region, 'Northern Europe' AS subregion FROM `chrome-ux-report.country_lv.201907` UNION ALL
   SELECT *, 'lb' AS geo_code, 'Lebanon' AS geo, 'Asia' AS region, 'Western Asia' AS subregion FROM `chrome-ux-report.country_lb.201907` UNION ALL
   SELECT *, 'ls' AS geo_code, 'Lesotho' AS geo, 'Africa' AS region, 'Southern Africa' AS subregion FROM `chrome-ux-report.country_ls.201907` UNION ALL

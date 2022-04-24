@@ -14,7 +14,7 @@ FROM
   `httparchive.pages.2021_07_01_*`,
   UNNEST(getFuguAPIs(JSON_QUERY(payload, '$."_fugu-apis"'))) AS fuguAPI
 WHERE
-  JSON_QUERY(payload, '$."_fugu-apis"') != "[]"
+  JSON_QUERY(payload, '$."_fugu-apis"') != '[]'
 GROUP BY
   client,
   url

@@ -3,7 +3,7 @@
 
 SELECT
   _TABLE_SUFFIX AS client,
-  LOWER(REGEXP_REPLACE(TRIM(doctype), r" +", " ")) AS doctype, # remove extra spaces and make lower case
+  LOWER(REGEXP_REPLACE(TRIM(doctype), r' +', ' ')) AS doctype, # remove extra spaces and make lower case
   COUNT(0) AS freq,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS pct
 FROM

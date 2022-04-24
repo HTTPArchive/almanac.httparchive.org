@@ -3,7 +3,7 @@
 
 
 SELECT
-  JSON_EXTRACT_SCALAR(report, "$.audits.preload-lcp-image.score") AS score,
+  JSON_EXTRACT_SCALAR(report, '$.audits.preload-lcp-image.score') AS score,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER () AS total,
   COUNT(0) / SUM(COUNT(0)) OVER () AS pct

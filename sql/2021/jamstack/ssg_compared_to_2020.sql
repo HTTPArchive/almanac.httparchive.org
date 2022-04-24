@@ -20,9 +20,9 @@ JOIN (
 USING
   (_TABLE_SUFFIX)
 WHERE
-  LOWER(category) = "static site generator" OR
-  app = "Next.js" OR
-  app = "Nuxt.js"
+  LOWER(category) = 'static site generator' OR
+  app = 'Next.js' OR
+  app = 'Nuxt.js'
 GROUP BY
   client,
   total,
@@ -48,9 +48,9 @@ JOIN (
 USING
   (_TABLE_SUFFIX)
 WHERE
-  LOWER(category) = "static site generator" OR
-  app = "Next.js" OR
-  app = "Nuxt.js"
+  LOWER(category) = 'static site generator' OR
+  app = 'Next.js' OR
+  app = 'Nuxt.js'
 GROUP BY
   client,
   total,

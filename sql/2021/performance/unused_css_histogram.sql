@@ -11,7 +11,7 @@ SELECT
 FROM (
   SELECT
     url AS page,
-    CAST(JSON_EXTRACT(report, "$.audits.unused-css-rules.details.overallSavingsBytes") AS INT64) / 1024 AS unused_css_kbytes
+    CAST(JSON_EXTRACT(report, '$.audits.unused-css-rules.details.overallSavingsBytes') AS INT64) / 1024 AS unused_css_kbytes
   FROM
     `httparchive.lighthouse.2021_07_01_mobile`)
 GROUP BY

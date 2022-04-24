@@ -22,8 +22,8 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    TRIM(resp_expires) != "" AS uses_expires,
-    TRIM(resp_cache_control) != "" AS uses_cache_control,
+    TRIM(resp_expires) != '' AS uses_expires,
+    TRIM(resp_cache_control) != '' AS uses_cache_control,
     REGEXP_CONTAINS(resp_cache_control, r'(?i)max-age\s*=\s*[0-9]+') AS uses_max_age
   FROM
     `httparchive.summary_requests.2019_07_01_*`

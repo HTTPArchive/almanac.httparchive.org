@@ -14,11 +14,11 @@ WITH totals AS (
   SELECT
     _TABLE_SUFFIX,
     COUNT(0) AS total,
-    COUNTIF(JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true") AS pwa_total
+    COUNTIF(JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true') AS pwa_total
   FROM
     `httparchive.pages.2021_07_01_*`
   WHERE
-    JSON_EXTRACT(payload, '$._pwa.manifests') != "[]"
+    JSON_EXTRACT(payload, '$._pwa.manifests') != '[]'
   GROUP BY
     _TABLE_SUFFIX
 ),
@@ -31,9 +31,9 @@ manifests_icon_sizes AS (
     COUNT(DISTINCT url) AS freq,
     total,
     COUNT(DISTINCT url) / total AS pct,
-    COUNTIF(JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true") AS pwa_freq,
+    COUNTIF(JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true') AS pwa_freq,
     pwa_total,
-    COUNTIF(JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true") / pwa_total AS pwa_pct
+    COUNTIF(JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true') / pwa_total AS pwa_pct
   FROM
     `httparchive.pages.2021_07_01_*`,
     UNNEST(getIconSizes(JSON_EXTRACT(payload, '$._pwa.manifests'))) AS size
@@ -41,7 +41,7 @@ manifests_icon_sizes AS (
     totals
   USING (_TABLE_SUFFIX)
   WHERE
-    JSON_EXTRACT(payload, '$._pwa.manifests') != "[]"
+    JSON_EXTRACT(payload, '$._pwa.manifests') != '[]'
   GROUP BY
     client,
     size,

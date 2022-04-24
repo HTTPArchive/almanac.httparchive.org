@@ -12,7 +12,7 @@ FROM
 JOIN (
     SELECT DISTINCT
       _TABLE_SUFFIX AS client,
-      RTRIM(url, "/") AS origin
+      RTRIM(url, '/') AS origin
     FROM
       `httparchive.technologies.2020_08_01_*`
     WHERE category = 'Ecommerce')

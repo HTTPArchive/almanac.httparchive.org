@@ -9,11 +9,11 @@ FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page,
-    JSON_VALUE(payload, "$._almanac") AS metrics
+    JSON_VALUE(payload, '$._almanac') AS metrics
   FROM
     `httparchive.pages.2021_07_01_*`
 ),
-UNNEST(JSON_QUERY_ARRAY(metrics, "$.meta-nodes.nodes")) meta_node,
+UNNEST(JSON_QUERY_ARRAY(metrics, '$.meta-nodes.nodes')) meta_node,
 UNNEST(['Content-Security-Policy', 'Content-Security-Policy-Report-Only', 'Cross-Origin-Embedder-Policy', 'Cross-Origin-Opener-Policy', 'Cross-Origin-Resource-Policy', 'Expect-CT', 'Feature-Policy', 'Permissions-Policy', 'Referrer-Policy', 'referrer', 'Report-To', 'Strict-Transport-Security', 'X-Content-Type-Options', 'X-Frame-Options', 'X-XSS-Protection']) AS policy
 GROUP BY
   client,

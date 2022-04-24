@@ -27,7 +27,7 @@ FROM
 WHERE
   date = '2019-07-01' AND
   firstHtml AND
-  JSON_EXTRACT_SCALAR(payload, "$._protocol") != "HTTP/2"
+  JSON_EXTRACT_SCALAR(payload, '$._protocol') != 'HTTP/2'
 GROUP BY
   client,
   server_header

@@ -42,7 +42,7 @@ FROM (
     `httparchive.almanac.requests`,
     UNNEST(getClientHints(JSON_EXTRACT(payload, '$.response.headers'))) AS ch_directive
   WHERE
-    date = "2021-07-01" AND
+    date = '2021-07-01' AND
     firstHtml
 )
 LEFT JOIN (
