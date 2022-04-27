@@ -681,6 +681,12 @@ function addKeyboardScollableRegions() {
 
 function addShortKeyEventListers() {
   document.addEventListener("keyup", function onPress(event) {
+
+    // Prevent the search box and other inputs from processing these listeners.
+    if (event.target.nodeName == 'INPUT') {
+      return;
+    }
+
     if (event.key === 'p' || event.key === 'P' || event.key === ',' || event.key === '<') {
       var previous = document.getElementById('previous-chapter');
       if (previous) {
@@ -698,14 +704,6 @@ function addShortKeyEventListers() {
         descButton.click();
       });
     }
-  });
-
-  // Prevent the search box and other inputs from propogating key up events
-  // so the above are not activated when typing words with them.
-  document.querySelectorAll('input').forEach(searchInput => {
-    searchInput.addEventListener("keyup", function onPress(event) {
-      event.stopPropagation();
-    });
   });
 }
 
