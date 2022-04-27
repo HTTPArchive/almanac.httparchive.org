@@ -700,9 +700,9 @@ function addShortKeyEventListers() {
     }
   });
 
-  // Prevent the search box from propogating key up events
+  // Prevent the search box and other inputs from propogating key up events
   // so the above are not activated when typing words with them.
-  document.querySelectorAll('.search-input').forEach(searchInput => {
+  document.querySelectorAll('input').forEach(searchInput => {
     searchInput.addEventListener("keyup", function onPress(event) {
       event.stopPropagation();
     });
