@@ -683,7 +683,7 @@ function addShortKeyEventListers() {
   document.addEventListener("keyup", function onPress(event) {
 
     // Prevent the search box and other inputs from processing these listeners.
-    if (event.target.nodeName == 'INPUT') {
+    if (event.target.nodeName == 'INPUT' || event.target.nodeName == 'TEXTAREA' || event.target.nodeName == 'SELECT') {
       return;
     }
 
