@@ -6,7 +6,7 @@
 CREATE TEMPORARY FUNCTION get_almanac_html_dir(almanac_string STRING)
 RETURNS STRING LANGUAGE js AS '''
 try {
-    var almanac = JSON.parse(almanac_string); 
+    var almanac = JSON.parse(almanac_string);
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return '';
 

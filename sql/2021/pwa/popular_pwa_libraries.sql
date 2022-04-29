@@ -4,7 +4,7 @@ CREATE TEMPORARY FUNCTION getSWLibraries(importScriptsInfo STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   /* 'importScriptsInfo' returns an array of script that might import other script
-     The final array of script comes from the combination of both */
+      The final array of script comes from the combination of both */
   var ObjKeys = Object.keys(JSON.parse(importScriptsInfo));
   var ObjValues = Object.values(JSON.parse(importScriptsInfo));
   var script = ObjKeys.concat(ObjValues);
@@ -74,8 +74,8 @@ FROM
       `httparchive.pages.2021_07_01_*`,
       UNNEST(getSWLibraries(JSON_EXTRACT(payload, '$._pwa.importScriptsInfo'))) AS script
     WHERE
-      JSON_EXTRACT(payload, '$._pwa.importScriptsInfo') != "[]" AND
-      JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
+      JSON_EXTRACT(payload, '$._pwa.importScriptsInfo') != '[]' AND
+      JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'
     GROUP BY
       _TABLE_SUFFIX,
       url
@@ -88,7 +88,7 @@ JOIN
     FROM
       `httparchive.pages.2021_07_01_*`
     WHERE
-      JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
+      JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'
     GROUP BY
       client
   )

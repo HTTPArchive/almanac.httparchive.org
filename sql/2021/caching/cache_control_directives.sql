@@ -48,7 +48,7 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    TRIM(resp_cache_control) != "" AS uses_cache_control,
+    TRIM(resp_cache_control) != '' AS uses_cache_control,
     REGEXP_CONTAINS(resp_cache_control, r'(?i)max-age\s*=\s*[0-9]+') AS uses_max_age,
     REGEXP_CONTAINS(resp_cache_control, r'(?i)max-age\s*=\s*0') AS uses_max_age_zero,
     REGEXP_CONTAINS(resp_cache_control, r'(?i)public') AS uses_public,

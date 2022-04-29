@@ -25,7 +25,7 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = "2021-07-01"
+    date = '2021-07-01'
 )
 WHERE
   corp_header IS NOT NULL

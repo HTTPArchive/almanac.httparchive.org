@@ -15,7 +15,7 @@ try {
 
     result.num_srcset_all = media.num_srcset_all;
     result.num_srcset_candidates_avg =
-	    media.num_srcset_all == 0? 0: (media.num_srcset_candidates / media.num_srcset_all);
+      media.num_srcset_all == 0? 0: (media.num_srcset_candidates / media.num_srcset_all);
 
 } catch (e) {}
 return result;

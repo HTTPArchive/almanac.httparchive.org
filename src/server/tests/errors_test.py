@@ -18,20 +18,20 @@ def assert_route(client, path, status):
 
 
 def test_render_404_chapter(client):
-    assert_route(client, '/en/2019/random', 404)
+    assert_route(client, "/en/2019/random", 404)
 
 
 def test_render_404_year(client):
-    assert_route(client, '/en/2018/', 404)
+    assert_route(client, "/en/2018/", 404)
 
 
 def test_render_404_static(client):
-    assert_route(client, '/static/random', 404)
+    assert_route(client, "/static/random", 404)
 
 
 def test_render_404_static2(client):
-    assert_route(client, '/static/random/', 404)
+    assert_route(client, "/static/random/", 404)
 
 
 def test_render_404_accessibility_statement(client):
-    assert_route(client, '/random/accessibility-statement', 404)
+    assert_route(client, "/random/accessibility-statement", 404)

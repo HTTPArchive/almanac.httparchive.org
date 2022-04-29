@@ -3,7 +3,7 @@
 SELECT
   client,
   resp_content_encoding,
-  IF(LOWER(resp_cache_control) LIKE "%no-store%", 'dynamic', 'static') AS static_or_dynamic,
+  IF(LOWER(resp_cache_control) LIKE '%no-store%', 'dynamic', 'static') AS static_or_dynamic,
   COUNT(0) AS num_requests,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct

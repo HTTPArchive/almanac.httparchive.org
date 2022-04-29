@@ -3,8 +3,8 @@
 SELECT
   client,
   http_version,
-  IF(pages.cdn = "", "Not using CDN", pages.cdn) AS CDN,
-  IF(prioritization_status IS NOT NULL, prioritization_status, "Unknown") AS prioritizes_correctly,
+  IF(pages.cdn = '', 'Not using CDN', pages.cdn) AS CDN,
+  IF(prioritization_status IS NOT NULL, prioritization_status, 'Unknown') AS prioritizes_correctly,
   COUNT(0) AS num_pages,
   ROUND(COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client), 4) AS pct
 FROM (
@@ -19,10 +19,12 @@ FROM (
     WHERE
       date = '2020-08-01' AND
       firstHtml AND
-      (LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "http/2" OR
-                                 LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "%quic%" OR
-        LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "h3%" OR
-        LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "http/3%")
+      (
+        LOWER(JSON_EXTRACT_SCALAR(payload, '$._protocol')) LIKE 'http/2' OR
+        LOWER(JSON_EXTRACT_SCALAR(payload, '$._protocol')) LIKE '%quic%' OR
+        LOWER(JSON_EXTRACT_SCALAR(payload, '$._protocol')) LIKE 'h3%' OR
+        LOWER(JSON_EXTRACT_SCALAR(payload, '$._protocol')) LIKE 'http/3%'
+      )
 ) AS pages
 LEFT JOIN
   `httparchive.almanac.h2_prioritization_cdns`

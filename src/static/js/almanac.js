@@ -681,6 +681,12 @@ function addKeyboardScollableRegions() {
 
 function addShortKeyEventListers() {
   document.addEventListener("keyup", function onPress(event) {
+
+    // Prevent the search box and other inputs from processing these listeners.
+    if (event.target.nodeName == 'INPUT' || event.target.nodeName == 'TEXTAREA' || event.target.nodeName == 'SELECT') {
+      return;
+    }
+
     if (event.key === 'p' || event.key === 'P' || event.key === ',' || event.key === '<') {
       var previous = document.getElementById('previous-chapter');
       if (previous) {

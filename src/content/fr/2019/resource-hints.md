@@ -70,38 +70,38 @@ Comme l'utilisation des indices de ressources dans les en-têtes HTTP est très 
 <figure>
   <table>
     <tr>
-     <th>Type d'indice de ressource</th>
-     <th>Utilisation (pourcentage de sites)</th>
+      <th>Type d'indice de ressource</th>
+      <th>Utilisation (pourcentage de sites)</th>
     </tr>
     <tr>
-     <td><code>dns-prefetch</code>
-     </td>
-     <td>29&nbsp;%
-     </td>
+      <td><code>dns-prefetch</code>
+      </td>
+      <td>29&nbsp;%
+      </td>
     </tr>
     <tr>
-     <td><code>preload</code>
-     </td>
-     <td>16&nbsp;%
-     </td>
+      <td><code>preload</code>
+      </td>
+      <td>16&nbsp;%
+      </td>
     </tr>
     <tr>
-     <td><code>preconnect</code>
-     </td>
-     <td>4&nbsp;%
-     </td>
+      <td><code>preconnect</code>
+      </td>
+      <td>4&nbsp;%
+      </td>
     </tr>
     <tr>
-     <td><code>prefetch</code>
-     </td>
-     <td>3&nbsp;%
-     </td>
+      <td><code>prefetch</code>
+      </td>
+      <td>3&nbsp;%
+      </td>
     </tr>
     <tr>
-     <td><code>prerender</code> (déprécié)
-     </td>
-     <td>0,13&nbsp;%
-     </td>
+      <td><code>prerender</code> (déprécié)
+      </td>
+      <td>0,13&nbsp;%
+      </td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="Adoption des indices de ressources.") }}</figcaption>
@@ -116,49 +116,49 @@ Cela étant dit, si un site n'a pas besoin de supporter IE11 et les versions inf
 <figure>
   <table>
     <tr>
-     <th>Indice de ressource</th>
-     <th>Indices de ressources par page&nbsp;:<br>Médiane</th>
-     <th>Indices de ressources par page&nbsp;:<br>90e percentile</th>
+      <th>Indice de ressource</th>
+      <th>Indices de ressources par page&nbsp;:<br>Médiane</th>
+      <th>Indices de ressources par page&nbsp;:<br>90e percentile</th>
     </tr>
     <tr>
-     <td><code>dns-prefetch</code>
-     </td>
-     <td>2
-     </td>
-     <td>8
-     </td>
+      <td><code>dns-prefetch</code>
+      </td>
+      <td>2
+      </td>
+      <td>8
+      </td>
     </tr>
     <tr>
-     <td><code>preload</code>
-     </td>
-     <td>2
-     </td>
-     <td>4
-     </td>
+      <td><code>preload</code>
+      </td>
+      <td>2
+      </td>
+      <td>4
+      </td>
     </tr>
     <tr>
-     <td><code>preconnect</code>
-     </td>
-     <td>2
-     </td>
-     <td>8
-     </td>
+      <td><code>preconnect</code>
+      </td>
+      <td>2
+      </td>
+      <td>8
+      </td>
     </tr>
     <tr>
-     <td><code>prefetch</code>
-     </td>
-     <td>1
-     </td>
-     <td>3
-     </td>
+      <td><code>prefetch</code>
+      </td>
+      <td>1
+      </td>
+      <td>3
+      </td>
     </tr>
     <tr>
-     <td><code>prerender</code> (déprécié)
-     </td>
-     <td>1
-     </td>
-     <td>1
-     </td>
+      <td><code>prerender</code> (déprécié)
+      </td>
+      <td>1
+      </td>
+      <td>1
+      </td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="Médiane en 90e percentile du nombre d'indices de ressources utilisés sur les pages en utilisant au moins un.") }}</figcaption>
@@ -177,33 +177,33 @@ Pour les types de ressources plus récentes (par exemple les polices, les requê
 <figure>
   <table>
     <tr>
-     <th>Valeur <code>crossorigin</code></th>
-     <th>Utilisation</th>
-     <th>Explication</th>
+      <th>Valeur <code>crossorigin</code></th>
+      <th>Utilisation</th>
+      <th>Explication</th>
     </tr>
     <tr>
-     <td>Non définie
-     </td>
-     <td>92&nbsp;%
-     </td>
-     <td>Si l'attribut <code>crossorigin</code> est absent, la requête suivra la politique d'origine unique.
-     </td>
+      <td>Non définie
+      </td>
+      <td>92&nbsp;%
+      </td>
+      <td>Si l'attribut <code>crossorigin</code> est absent, la requête suivra la politique d'origine unique.
+      </td>
     </tr>
     <tr>
-     <td>anonyme (ou équivalent)
-     </td>
-     <td>7&nbsp;%
-     </td>
-     <td>Exécute une requête <code>crossorigin</code> qui ne comprend pas d'identifiant.
-     </td>
+      <td>anonyme (ou équivalent)
+      </td>
+      <td>7&nbsp;%
+      </td>
+      <td>Exécute une requête <code>crossorigin</code> qui ne comprend pas d'identifiant.
+      </td>
     </tr>
     <tr>
-     <td>use-credentials
-     </td>
-     <td>0,47&nbsp;%
-     </td>
-     <td>Exécute une requête <code>crossorigin</code> qui inclut des identifiants.
-     </td>
+      <td>use-credentials
+      </td>
+      <td>0,47&nbsp;%
+      </td>
+      <td>Exécute une requête <code>crossorigin</code> qui inclut des identifiants.
+      </td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="Adoption de l'attribut <code>crossorigin</code> en pourcentage du nombre d'indices de ressources.") }}</figcaption>

@@ -21,7 +21,7 @@ try {
 
 SELECT
   client,
-  REPLACE(TRIM(LOWER(setting)), '\'', '"') AS setting,
+  REPLACE(TRIM(LOWER(setting)), "'", '"') AS setting,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct

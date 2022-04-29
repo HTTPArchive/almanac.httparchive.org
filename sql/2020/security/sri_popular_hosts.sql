@@ -13,7 +13,7 @@ FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.sri-integrity") AS sris
+    JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), '$.sri-integrity') AS sris
   FROM
     `httparchive.pages.2020_08_01_*`),
   UNNEST(sris) AS sri

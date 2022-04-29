@@ -13,8 +13,8 @@ FROM (
     _TABLE_SUFFIX AS client,
     status,
     TRIM(resp_etag) = TRIM(req_if_none_match) AS no_change,
-    TRIM(resp_etag) != "" AS uses_etag,
-    TRIM(req_if_none_match) != "" AS uses_if_non_match
+    TRIM(resp_etag) != '' AS uses_etag,
+    TRIM(req_if_none_match) != '' AS uses_if_non_match
   FROM
     `httparchive.summary_requests.2021_07_01_*`
 )

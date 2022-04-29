@@ -208,52 +208,52 @@ Below is a table showing the most common `Cache-Control` directives:
 <figure>
   <table>
     <tr>
-     <th>Directive</th>
-     <th>Description</th>
+      <th>Directive</th>
+      <th>Description</th>
     </tr>
     <tr>
-     <td><code class="no-wrap">max-age</code></td>
-     <td>Indicates the number of seconds that a resource can be cached for, relative to the current time. For example <code>max-age=86400</code>.</td>
+      <td><code class="no-wrap">max-age</code></td>
+      <td>Indicates the number of seconds that a resource can be cached for, relative to the current time. For example <code>max-age=86400</code>.</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">public</code></td>
-     <td>Any cache may store the response, including the browser, and any proxies between the server and the browser, such as a CDN. This is assumed by default.</td>
+      <td><code class="no-wrap">public</code></td>
+      <td>Any cache may store the response, including the browser, and any proxies between the server and the browser, such as a CDN. This is assumed by default.</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">no-cache</code></td>
-     <td>A cached entry must be revalidated prior to its use, via a conditional request, even if it is not marked as stale.</td>
+      <td><code class="no-wrap">no-cache</code></td>
+      <td>A cached entry must be revalidated prior to its use, via a conditional request, even if it is not marked as stale.</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">must-revalidate</code></td>
-     <td>A stale cached entry must be revalidated prior to its use, via a conditional request.</td>
+      <td><code class="no-wrap">must-revalidate</code></td>
+      <td>A stale cached entry must be revalidated prior to its use, via a conditional request.</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">no-store</code></td>
-     <td>Indicates that the response must not be cached.</td>
+      <td><code class="no-wrap">no-store</code></td>
+      <td>Indicates that the response must not be cached.</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">private</code></td>
-     <td>The response is intended for a specific user and should not be stored by shared caches such as proxies and CDNs.</td>
+      <td><code class="no-wrap">private</code></td>
+      <td>The response is intended for a specific user and should not be stored by shared caches such as proxies and CDNs.</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">proxy-revalidate</code></td>
-     <td>Same as <code>must-revalidate</code> but applies to shared caches.</td>
+      <td><code class="no-wrap">proxy-revalidate</code></td>
+      <td>Same as <code>must-revalidate</code> but applies to shared caches.</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">s-maxage</code></td>
-     <td>Same as <code>max-age</code> but applies to shared caches (e.g. CDN's) only.</td>
+      <td><code class="no-wrap">s-maxage</code></td>
+      <td>Same as <code>max-age</code> but applies to shared caches (e.g. CDN's) only.</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">immutable</code></td>
-     <td>Indicates that the cached entry will never change during its TTL, and that revalidation is not necessary.</td>
+      <td><code class="no-wrap">immutable</code></td>
+      <td>Indicates that the cached entry will never change during its TTL, and that revalidation is not necessary.</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">stale-while-revalidate</code></td>
-     <td>Indicates that the client is willing to accept a stale response while asynchronously checking in the background for a fresh one.</td>
+      <td><code class="no-wrap">stale-while-revalidate</code></td>
+      <td>Indicates that the client is willing to accept a stale response while asynchronously checking in the background for a fresh one.</td>
     </tr>
     <tr>
-     <td><code class="no-wrap">stale-if-error</code></td>
-     <td>Indicates that the client is willing to accept a stale response if the check for a fresh one fails.</td>
+      <td><code class="no-wrap">stale-if-error</code></td>
+      <td>Indicates that the client is willing to accept a stale response if the check for a fresh one fails.</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="<code>Cache-Control</code> directives.", sheets_gid="1950040019", sql_file="cache_control_directives.sql") }}</figcaption>
@@ -628,14 +628,14 @@ Adoption is just at 1% of websites, but it has been steadily increasing since Ju
 <figure>
   <table>
     <tr>
-     <th>Sites not using service workers</th>
-     <th>Sites using service workers</th>
-     <th>Total sites</th>
+      <th>Sites not using service workers</th>
+      <th>Sites using service workers</th>
+      <th>Total sites</th>
     </tr>
     <tr>
-     <td class="numeric">6,225,774</td>
-     <td class="numeric">64,373</td>
-     <td class="numeric">6,290,147</td>
+      <td class="numeric">6,225,774</td>
+      <td class="numeric">64,373</td>
+      <td class="numeric">6,290,147</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="Number of websites using service workers.", sheets_gid="2106765718", sql_file="appcache_and_serviceworkers.sql") }}</figcaption>
@@ -646,14 +646,14 @@ In the table above, you can see that 64,373 site out of a total of 6,290,147 web
 <figure>
   <table>
     <tr>
-     <th>HTTP Sites</th>
-     <th>HTTPS Sites</th>
-     <th>Total Sites</th>
+      <th>HTTP Sites</th>
+      <th>HTTPS Sites</th>
+      <th>Total Sites</th>
     </tr>
     <tr>
-     <td class="numeric">1,469</td>
-     <td class="numeric">62,904</td>
-     <td class="numeric">64,373</td>
+      <td class="numeric">1,469</td>
+      <td class="numeric">62,904</td>
+      <td class="numeric">64,373</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="Number of websites using service workers by HTTP/HTTPS.", sheets_gid="2106765718", sql_file="appcache_and_serviceworkers.sql") }}</figcaption>
@@ -675,7 +675,7 @@ As we have seen, a cacheable resource is stored by the browser for a period of t
   )
 }}
 
- Across all HTTP(S) requests, 90.4% of responses are considered cacheable, meaning that a cache is permitted to store them. The remaining 9.6% of responses are not permitted to be stored in browser caches—typically because of `Cache-Control: no-store`.
+Across all HTTP(S) requests, 90.4% of responses are considered cacheable, meaning that a cache is permitted to store them. The remaining 9.6% of responses are not permitted to be stored in browser caches—typically because of `Cache-Control: no-store`.
 
 {{ figure_markup(
   image="ttl-cachable-responses.png",
@@ -861,22 +861,22 @@ Overall, 60.2% of mobile resources served on the web have a cache TTL that could
 <figure>
   <table>
     <tr>
-     <th>Client</th>
-     <th>1st party</th>
-     <th>3rd party</th>
-     <th>Overall</th>
+      <th>Client</th>
+      <th>1st party</th>
+      <th>3rd party</th>
+      <th>Overall</th>
     </tr>
     <tr>
-     <td>desktop</td>
-     <td class="numeric">61.6%</td>
-     <td class="numeric">59.3%</td>
-     <td class="numeric">60.7%</td>
+      <td>desktop</td>
+      <td class="numeric">61.6%</td>
+      <td class="numeric">59.3%</td>
+      <td class="numeric">60.7%</td>
     </tr>
     <tr>
-     <td>mobile</td>
-     <td class="numeric">61.8%</td>
-     <td class="numeric">57.9%</td>
-     <td class="numeric">60.2%</td>
+      <td>mobile</td>
+      <td class="numeric">61.8%</td>
+      <td class="numeric">57.9%</td>
+      <td class="numeric">60.2%</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="Percent of requests with short TTLs.", sheets_gid="1706274506", sql_file="content_age_older_than_ttl_by_party.sql") }}</figcaption>

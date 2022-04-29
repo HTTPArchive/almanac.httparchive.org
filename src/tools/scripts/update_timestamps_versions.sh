@@ -6,7 +6,7 @@
 #
 # This script updates CSS and JS reference to new versions numbers
 # when they are included in a commit. This is used for cahce busting.
-# 
+#
 # It also updates timestamps for any .md and .html files changed
 #
 # This script is run in a GitHub Action and should not need to be run manually
@@ -20,7 +20,7 @@ if [ "${COMMIT_SHA}" = "" ]; then
     echo "Must supply commit sha"
     exit 1
 fi
- 
+
 
 # This script must be run from src directory
 if [ -d "src" ]; then

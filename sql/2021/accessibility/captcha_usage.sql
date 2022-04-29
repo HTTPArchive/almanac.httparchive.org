@@ -12,7 +12,7 @@ FROM (
   FROM
     `httparchive.technologies.2021_07_01_*`
   WHERE
-    app = "reCAPTCHA" OR app = "hCaptcha"
+    app = 'reCAPTCHA' OR app = 'hCaptcha'
   GROUP BY
     client
 )

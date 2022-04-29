@@ -20,7 +20,7 @@ featured_stat_label_3: Median value of resource wights among Jamstack sites
 
 ## Introduction
 
- <figure>
+<figure>
   <blockquote>Jamstack has revolutionized the way we think about building for the web by providing a simpler developer experience, better performance, lower cost and greater scalability.</blockquote>
   <figcaption>— <cite><a hreflang="en" href="https://jamstack.wtf/">Jamstack.wtf</a></cite></figcaption>
 </figure>

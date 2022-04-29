@@ -57,7 +57,7 @@ featured_stat_label_3: `<picture>`要素の使用
 * _ナチュラルピクセル_ とは、 ファイル内で表現される論理的なピクセルのことを指します。この画像をGIMPやPhotoshopで読み込んだ場合、ピクセルファイルの寸法は自然なピクセルとなります。
 * _スクリーンピクセル_ とは、ディスプレイ上の物理的な電子機器を指します。携帯電話や最新の高解像度ディスプレイが登場する以前は、CSSピクセルとスクリーン上のLEDポイントの間には1:1の関係がありました。しかし、モバイルデバイスは目に近づけられ、ノートPCの画面は昔のメインフレーム端末よりも近づけられているため、現代のスクリーンは従来のCSSピクセルに対する物理ピクセルの比率が高くなっています。この比率は、Device-Pixel-Ratio、または口語でRetina™ディスプレイと呼ばれています。
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig3_image_pixel_per_page_mobile_css_v_actual.png",
   caption="1ページあたりのピクセル画像（モバイル）。CSS対実物。",
   description="画像コンテンツに割り当てられているCSSの画素数を、実際の画像の画素数と比較した結果、10パーセンタイル（実測は0.07MP、CSSは0.04MP）、25パーセンタイル（実測は0.38MP、CSSは0.18MP）、50パーセンタイル（実測は1.6MP、CSSは0.65MP）、75パーセンタイル（実測は5.1MP、CSSは1.8MP）、90パーセンタイル（実測は12MP、CSSは4.6MP）が表示されていることがわかります。",
@@ -117,43 +117,43 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 それぞれのフォーマットにはそれぞれメリットがあり、Web上での理想的な使い方があります。とても簡単にまとめると以下のようになります。
 
 <figure>
-<table>
-<thead>
-<tr>
-<th>フォーマット</th>
-<th class="width-45">ハイライト</th>
-<th class="width-45">欠点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>JPEG</td>
-<td><ul><li>ユビキタスに対応</li><li>写真コンテンツに最適</li></ul></td>
-<td><ul><li>常に品質の損失がある</li><li>ほとんどのデコーダは、最新のカメラからの高ビット深度の写真を扱うことができません（チャンネルあたり8ビット以上）</li><li>透明性のサポートはありません</li></ul></td>
-</tr>
-<tr>
-<td>PNG</td>
-<td><ul><li>JPEGやGIFのように、幅広いサポートを共有しています</li><li>ロスレスです</li><li>透明度、アニメーション、高ビット深度をサポート</li></ul></td>
-<td><ul><li>JPEGに比べてはるかに大きなファイル</li><li>写真コンテンツには理想的ではない</li></ul></td>
-</tr>
-<tr>
-<td>GIF</td>
-<td><ul><li>PNGの前身Gは、アニメーションで最もよく知られています。</li><li>ロスレス</li></ul></td>
-<td><ul><li>256色の制限があるため、変換による視覚的な損失が常にあります</li><li>アニメーション用の非常に大きなファイル</li></ul></td>
-</tr>
-<tr>
-<td>SVG</td>
-<td><ul><li>ファイルサイズを増やさずにリサイズできるベクターベースのフォーマット</li><li>ピクセルではなく数学に基づいており、滑らかな線を作成します</li></ul></td>
-<td><ul><li>写真やその他のラスターコンテンツには有用ではない</li></ul></td>
-</tr>
-<tr>
-<td>WebP</td>
-<td><ul><li>PNGのようなロスレス画像とJPEGのようなロスレス画像を生成することができる新しいファイル形式です</li><li><a hreflang="en" href="https://developers.google.com/speed/webp/faq">JPEGと比較して平均30%のファイル削減率を誇っています</a>が、他のデータでは、ファイル削減率の中央値は<a hreflang="en" href="https://cloudinary.com/state-of-visual-media-report/">ピクセル量に基づいて10-28%の間であることが示唆されています</a></li></ul></td>
-<td><ul><li>JPEGとは異なり、一部の画像がぼやけて見えるクロマサブサンプリングに限定されます</li><li>普遍的にサポートされているわけではありません。Chrome、Firefox、Androidのエコシステムのみ</li><li>ブラウザのバージョンに応じて断片化された機能のサポート</li></ul></td>
- </tr>
- </tbody>
- </table>
- <figcaption>{{ figure_link(caption="主流のファイル形式の説明。") }}</figcaption>
+  <table>
+    <thead>
+      <tr>
+        <th>フォーマット</th>
+        <th class="width-45">ハイライト</th>
+        <th class="width-45">欠点</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>JPEG</td>
+        <td><ul><li>ユビキタスに対応</li><li>写真コンテンツに最適</li></ul></td>
+        <td><ul><li>常に品質の損失がある</li><li>ほとんどのデコーダは、最新のカメラからの高ビット深度の写真を扱うことができません（チャンネルあたり8ビット以上）</li><li>透明性のサポートはありません</li></ul></td>
+      </tr>
+      <tr>
+        <td>PNG</td>
+        <td><ul><li>JPEGやGIFのように、幅広いサポートを共有しています</li><li>ロスレスです</li><li>透明度、アニメーション、高ビット深度をサポート</li></ul></td>
+        <td><ul><li>JPEGに比べてはるかに大きなファイル</li><li>写真コンテンツには理想的ではない</li></ul></td>
+      </tr>
+      <tr>
+        <td>GIF</td>
+        <td><ul><li>PNGの前身Gは、アニメーションで最もよく知られています。</li><li>ロスレス</li></ul></td>
+        <td><ul><li>256色の制限があるため、変換による視覚的な損失が常にあります</li><li>アニメーション用の非常に大きなファイル</li></ul></td>
+      </tr>
+      <tr>
+        <td>SVG</td>
+        <td><ul><li>ファイルサイズを増やさずにリサイズできるベクターベースのフォーマット</li><li>ピクセルではなく数学に基づいており、滑らかな線を作成します</li></ul></td>
+        <td><ul><li>写真やその他のラスターコンテンツには有用ではない</li></ul></td>
+      </tr>
+      <tr>
+        <td>WebP</td>
+        <td><ul><li>PNGのようなロスレス画像とJPEGのようなロスレス画像を生成することができる新しいファイル形式です</li><li><a hreflang="en" href="https://developers.google.com/speed/webp/faq">JPEGと比較して平均30%のファイル削減率を誇っています</a>が、他のデータでは、ファイル削減率の中央値は<a hreflang="en" href="https://cloudinary.com/state-of-visual-media-report/">ピクセル量に基づいて10-28%の間であることが示唆されています</a></li></ul></td>
+        <td><ul><li>JPEGとは異なり、一部の画像がぼやけて見えるクロマサブサンプリングに限定されます</li><li>普遍的にサポートされているわけではありません。Chrome、Firefox、Androidのエコシステムのみ</li><li>ブラウザのバージョンに応じて断片化された機能のサポート</li></ul></td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="主流のファイル形式の説明。") }}</figcaption>
 </figure>
 
 ### 画像フォーマット
@@ -204,7 +204,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 
 このことから、ウェブ上の典型的なリソースの大きさや小ささを知ることができます。しかし、これではこれらのファイル分布の画面上で表現されているピクセルの量を知ることはできません。これを行うには、各リソースのバイト数を画像の自然なピクセル数で割ることができます。1ピクセルあたりのバイト数が低いほど、視覚コンテンツの伝送効率が高いことを示しています。
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig11_bytes_per_pixel.png",
   caption="ピクセルあたりのバイト数。",
   description="ローソク足チャートは、10パーセンタイルでは、JPEGが0.1175byte/pixel、PNGが0.1197byte/pixel、GIFが0.1702byte/pixel、WebPが0.0586byte/pixel、SVGが0.0293byte/pixelであることを示しています。25パーセンタイルでは、JPEGが0.1848byte/pixel、PNGが0.2874byte/pixel、GIFが0.3641byte/pixel、WebPが0.1025byte/pixel、SVGが0.174byte/pixelとなっています。50パーセンタイルでは、JPEGが0.2997byte/pixel、PNGが0.6918byte/pixel、GIFが0.7967byte/pixel、WebPが0.183byte/pixel、SVGが0.6766byte/pixelとなっています。75パーセンタイルでは、JPEGが0.5456byte/pixel、PNGが1.4548byte/pixel、GIFが2.515byte/pixel、WebPが0.3272byte/pixel、SVGが1.9261byte/pixelとなっています。90パーセンタイルでは、JPEGが0.9822byte/pixel、PNGが2.5026byte/pixel、GIFが8.5151byte/pixel、WebPが0.6474byte/pixel、SVGが4.1075byte/pixelとなっています。",
@@ -228,7 +228,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 
 1つの[Lighthouse](./methodology#lighthouse)テストは、ベースラインとプログレッシブにエンコードされたJPEGをA/Bで比較するものです。これは画像全体がロスレス技術でさらに最適化されるか、また異なる品質レベルを使用するなど、潜在的には不可逆技術で最適化されるかどうかを示すための気付きを提供しています。
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig12_percentage_optimized_images.png",
   caption="「最適化された」画像の割合。",
   description="10パーセンタイルでは100%の画像が最適化されており、25パーセンタイルでも同様で、50パーセンタイルでは98%の画像が最適化されており（2%は最適化されていない）、75パーセンタイルでは83%の画像が最適化されており（17%は最適化されていない）、90パーセンタイルでは59%の画像が最適化されており、41%の画像が最適化されていないことを示す棒グラフです。",
@@ -238,7 +238,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 
 このAB Lighthouseテストでの節約は、p95で数MBに達することができる潜在的なバイトの節約だけでなく、ページパフォーマンスの向上を実証しています。
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig13_project_perf_improvements_image_optimization.png",
   caption="Lighthouseからの画像最適化によるページパフォーマンスの向上を予測。",
   description="10パーセンタイルでは0ms、25パーセンタイルでも同じ、50パーセンタイルでは150ms、75パーセンタイルでは1,460ms、90パーセンタイルでは5,720msの保存が可能であることを示す棒グラフです。",
@@ -258,7 +258,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 
 レスポンシブ画像を実装するもっとも一般的な方法は、`<img srcset>` または `<source srcset>`のいずれかを用いて代替画像のリストを作成することです。`srcset`がDPRに基づいている場合、ブラウザは追加情報なしでリストから正しい画像を選択できます。しかし、ほとんどの実装では、`srcset`のピクセルサイズに基づいて正しい画像を選択するため必要なレイアウト計算の方法をブラウザへ指示するため`<img sizes>`を利用しています。
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig14_html_usage_of_responsive_images.png",
   caption="HTMLでレスポンシブ画像を使用しているページの割合。",
   description="18%の画像が「sizes」を使用しており、21%が「srcset」を使用しており、2%が「picture」を使用していることを示す棒グラフです。",
@@ -319,7 +319,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 
 * **`<img sizes="auto">`** - これはもっともよく使われている使い方ですが、実際には非標準であり、`lazy_sizes`JavaScriptライブラリの使用によるものです。これはクライアント側のコードを使って、ブラウザのためにより良い`sizes`の計算を注入します。これの欠点は、JavaScriptの読み込みとDOMの準備が完全に整っているかどうかに依存し、画像の読み込みが大幅に遅れることです。
 
- {{ figure_markup(
+{{ figure_markup(
   image="fig16_top_patterns_of_img_sizes.png",
   caption="<code><img sizes></code> のトップパターン。",
   description="1,130万枚の画像が「img sizes=`(max-width: 300px) 100vw, 300px`」を使用しており、「auto」が160万枚、「img sizes=`(max-width: 767px) 89vwなどなど`」が100万枚、「100vw」が23万枚、「300px」が13万枚であることを棒グラフで示しています。",

@@ -29,8 +29,8 @@ try {
 SELECT
   client,
   CASE
-    WHEN unicode != " " THEN "unicode_ranges"
-    ELSE "none"
+    WHEN unicode != ' ' THEN 'unicode_ranges'
+    ELSE 'none'
   END AS use_unicode,
   COUNT(DISTINCT page) AS pages,
   SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,

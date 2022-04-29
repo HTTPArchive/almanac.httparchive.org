@@ -13,9 +13,12 @@ CREATE TEMP FUNCTION
 getCo2Renewable(energy FLOAT64) AS (energy * 0.1008 * 33.4 + energy * 0.8992 * 475);
 CREATE TEMP FUNCTION
 CO2(url STRING, bytes INT64) AS (
-  IF(GREEN(url),
-           getCo2Renewable(energyConsumption(adjustDataTransfer(bytes))),
-    getCo2Grid(energyConsumption(adjustDataTransfer(bytes)))));
+  IF(
+    GREEN(url),
+    getCo2Renewable(energyConsumption(adjustDataTransfer(bytes))),
+    getCo2Grid(energyConsumption(adjustDataTransfer(bytes)))
+  )
+);
 
 SELECT
   percentile,
@@ -38,10 +41,10 @@ FROM (
     FROM
       `httparchive.technologies.2020_08_01_*`
     WHERE
-      LOWER(category) = "static site generator" OR
-      app = "Next.js" OR
-      app = "Nuxt.js" OR
-      app = "Docusaurus"
+      LOWER(category) = 'static site generator' OR
+      app = 'Next.js' OR
+      app = 'Nuxt.js' OR
+      app = 'Docusaurus'
   )
   USING
     (_TABLE_SUFFIX, url)),

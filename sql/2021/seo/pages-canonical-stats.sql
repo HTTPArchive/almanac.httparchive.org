@@ -89,7 +89,7 @@ try {
       result.has_raw_canonical = canonicals.raw.html_link_canoncials.length > 0;
     }
     if (canonicals.canonical_missmatch) {
-     result.has_canonical_mismatch = canonicals.canonical_missmatch;
+      result.has_canonical_mismatch = canonicals.canonical_missmatch;
     }
     if (canonicals.raw && canonicals.rendered) {
       result.rendering_changed_canonical = !compareStringArrays(canonicals.raw.html_link_canoncials, canonicals.rendered.html_link_canoncials);

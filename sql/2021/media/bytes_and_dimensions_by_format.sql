@@ -60,8 +60,7 @@ function pithyType( { contentType, url } ) {
   }
 
   // if it's a data url, take the mime type from there, done.
-  if ( url &&
-       typeof url === "string" ) {
+  if ( url && typeof url === "string" ) {
       const match = url.toLowerCase().match( /^data:image\\/([\\w\\-\\.\\+]+)/ );
       if ( match && match[ 1 ] ) {
           return normalizeSubtype( match[ 1 ] );
@@ -69,8 +68,7 @@ function pithyType( { contentType, url } ) {
   }
 
   // if we get a content-type header, use it!
-  if ( contentType &&
-       typeof contentType === "string" ) {
+  if ( contentType && typeof contentType === "string" ) {
       const match = contentType.toLowerCase().match( /image\\/([\\w\\-\\.\\+]+)/ );
       if ( match && match[ 1 ] ) {
           return normalizeSubtype( match[ 1 ] );
@@ -78,8 +76,7 @@ function pithyType( { contentType, url } ) {
   }
 
   // otherwise fall back to extension in the URL
-  if ( url &&
-       typeof url === "string" ) {
+  if ( url && typeof url === "string" ) {
       const splitOnSlashes = url.split("/");
       if ( splitOnSlashes.length > 1 ) {
           const afterLastSlash = splitOnSlashes[ splitOnSlashes.length - 1 ],
@@ -98,20 +95,20 @@ function pithyType( { contentType, url } ) {
   return 'unknown';
   }
 
-	const parsed = JSON.parse( responsiveImagesJsonString );
-	if ( parsed && parsed.map ) {
-        const dataRegEx = new RegExp('^data');
-		return parsed.map( d => ({
-            imgURL: d.url,
-            approximateResourceWidth: Math.floor( d.approximateResourceWidth || 0 ),
-            approximateResourceHeight: Math.floor( d.approximateResourceHeight || 0 ),
-            byteSize: Math.floor( d.byteSize || 0 ),
-            bitsPerPixel: parseFloat( d.bitsPerPixel || 0 ),
-            isPixel: d.approximateResourceWidth == 1 && d.approximateResourceHeight == 1,
-            isDataURL: dataRegEx.test(d.url),
-            resourceFormat: pithyType({ contentType: d.mimeType, url: d.url })
-		}) );
-    }
+  const parsed = JSON.parse( responsiveImagesJsonString );
+  if ( parsed && parsed.map ) {
+    const dataRegEx = new RegExp('^data');
+    return parsed.map( d => ({
+      imgURL: d.url,
+      approximateResourceWidth: Math.floor( d.approximateResourceWidth || 0 ),
+      approximateResourceHeight: Math.floor( d.approximateResourceHeight || 0 ),
+      byteSize: Math.floor( d.byteSize || 0 ),
+      bitsPerPixel: parseFloat( d.bitsPerPixel || 0 ),
+      isPixel: d.approximateResourceWidth == 1 && d.approximateResourceHeight == 1,
+      isDataURL: dataRegEx.test(d.url),
+      resourceFormat: pithyType({ contentType: d.mimeType, url: d.url })
+    }) );
+  }
 ''';
 
 WITH imgs AS (

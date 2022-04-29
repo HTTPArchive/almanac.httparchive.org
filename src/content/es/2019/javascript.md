@@ -168,123 +168,123 @@ Para un análisis más profundo sobre la compresión, consulte el capítulo de [
 Código fuente abierto, o código con una licencia permisiva a la que cualquier persona pueda acceder, ver y modificar. Desde pequeñas bibliotecas hasta navegadores completos, como <a hreflang="en" href="https://www.chromium.org/Home">Chromium</a> y <a hreflang="en" href="https://www.openhub.net/p/firefox">Firefox</a>, el código fuente abierto juega un papel crucial en el mundo del desarrollo web. En el contexto de JavaScript, los desarrolladores confían en herramientas de código abierto para incluir todo tipo de funcionalidad en su página web. Independientemente de si un desarrollador decide usar una pequeña biblioteca de utilidades o un framework masivo que dicta la arquitectura de toda su aplicación, confiar en paquetes de código abierto puede hacer que el desarrollo de funciones sea más fácil y rápido. ¿Qué bibliotecas de código abierto de JavaScript se usan más?
 
 <figure>
-   <table>
-      <thead>
-        <tr>
-          <th>Librería</th>
-          <th>Escritorio</th>
-          <th>Móvil</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>jQuery</td>
-          <td class="numeric">85.03%</td>
-          <td class="numeric">83.46%</td>
-        </tr>
-        <tr>
-          <td>jQuery Migrate</td>
-          <td class="numeric">31.26%</td>
-          <td class="numeric">31.68%</td>
-        </tr>
-        <tr>
-          <td>jQuery UI</td>
-          <td class="numeric">23.60%</td>
-          <td class="numeric">21.75%</td>
-        </tr>
-        <tr>
-          <td>Modernizr</td>
-          <td class="numeric">17.80%</td>
-          <td class="numeric">16.76%</td>
-        </tr>
-        <tr>
-          <td>FancyBox</td>
-          <td class="numeric">7.04%</td>
-          <td class="numeric">6.61%</td>
-        </tr>
-        <tr>
-          <td>Lightbox</td>
-          <td class="numeric">6.02%</td>
-          <td class="numeric">5.93%</td>
-        </tr>
-        <tr>
-          <td>Slick</td>
-          <td class="numeric">5.53%</td>
-          <td class="numeric">5.24%</td>
-        </tr>
-        <tr>
-          <td>Moment.js</td>
-          <td class="numeric">4.92%</td>
-          <td class="numeric">4.29%</td>
-        </tr>
-        <tr>
-          <td>Underscore.js</td>
-          <td class="numeric">4.20%</td>
-          <td class="numeric">3.82%</td>
-        </tr>
-        <tr>
-          <td>prettyPhoto</td>
-          <td class="numeric">2.89%</td>
-          <td class="numeric">3.09%</td>
-        </tr>
-        <tr>
-          <td>Select2</td>
-          <td class="numeric">2.78%</td>
-          <td class="numeric">2.48%</td>
-        </tr>
-        <tr>
-          <td>Lodash</td>
-          <td class="numeric">2.65%</td>
-          <td class="numeric">2.68%</td>
-        </tr>
-        <tr>
-          <td>Hammer.js</td>
-          <td class="numeric">2.28%</td>
-          <td class="numeric">2.70%</td>
-        </tr>
-        <tr>
-          <td>YUI</td>
-          <td class="numeric">1.84%</td>
-          <td class="numeric">1.50%</td>
-        </tr>
-        <tr>
-          <td>Lazy.js</td>
-          <td class="numeric">1.26%</td>
-          <td class="numeric">1.56%</td>
-        </tr>
-        <tr>
-          <td>Fingerprintjs</td>
-          <td class="numeric">1.21%</td>
-          <td class="numeric">1.32%</td>
-        </tr>
-        <tr>
-          <td>script.aculo.us</td>
-          <td class="numeric">0.98%</td>
-          <td class="numeric">0.85%</td>
-        </tr>
-        <tr>
-          <td>Polyfill</td>
-          <td class="numeric">0.97%</td>
-          <td class="numeric">1.00%</td>
-        </tr>
-        <tr>
-          <td>Flickity</td>
-          <td class="numeric">0.83%</td>
-          <td class="numeric">0.92%</td>
-        </tr>
-        <tr>
-          <td>Zepto</td>
-          <td class="numeric">0.78%</td>
-          <td class="numeric">1.17%</td>
-        </tr>
-        <tr>
-          <td>Dojo</td>
-          <td class="numeric">0.70%</td>
-          <td class="numeric">0.62%</td>
-        </tr>
-      </tbody>
-    </table>
-   <figcaption>{{ figure_link(caption="Principales bibliotecas de JavaScript en computadoras de escritorio y dispositivos móviles.") }}</figcaption>
+  <table>
+    <thead>
+      <tr>
+        <th>Librería</th>
+        <th>Escritorio</th>
+        <th>Móvil</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>jQuery</td>
+        <td class="numeric">85.03%</td>
+        <td class="numeric">83.46%</td>
+      </tr>
+      <tr>
+        <td>jQuery Migrate</td>
+        <td class="numeric">31.26%</td>
+        <td class="numeric">31.68%</td>
+      </tr>
+      <tr>
+        <td>jQuery UI</td>
+        <td class="numeric">23.60%</td>
+        <td class="numeric">21.75%</td>
+      </tr>
+      <tr>
+        <td>Modernizr</td>
+        <td class="numeric">17.80%</td>
+        <td class="numeric">16.76%</td>
+      </tr>
+      <tr>
+        <td>FancyBox</td>
+        <td class="numeric">7.04%</td>
+        <td class="numeric">6.61%</td>
+      </tr>
+      <tr>
+        <td>Lightbox</td>
+        <td class="numeric">6.02%</td>
+        <td class="numeric">5.93%</td>
+      </tr>
+      <tr>
+        <td>Slick</td>
+        <td class="numeric">5.53%</td>
+        <td class="numeric">5.24%</td>
+      </tr>
+      <tr>
+        <td>Moment.js</td>
+        <td class="numeric">4.92%</td>
+        <td class="numeric">4.29%</td>
+      </tr>
+      <tr>
+        <td>Underscore.js</td>
+        <td class="numeric">4.20%</td>
+        <td class="numeric">3.82%</td>
+      </tr>
+      <tr>
+        <td>prettyPhoto</td>
+        <td class="numeric">2.89%</td>
+        <td class="numeric">3.09%</td>
+      </tr>
+      <tr>
+        <td>Select2</td>
+        <td class="numeric">2.78%</td>
+        <td class="numeric">2.48%</td>
+      </tr>
+      <tr>
+        <td>Lodash</td>
+        <td class="numeric">2.65%</td>
+        <td class="numeric">2.68%</td>
+      </tr>
+      <tr>
+        <td>Hammer.js</td>
+        <td class="numeric">2.28%</td>
+        <td class="numeric">2.70%</td>
+      </tr>
+      <tr>
+        <td>YUI</td>
+        <td class="numeric">1.84%</td>
+        <td class="numeric">1.50%</td>
+      </tr>
+      <tr>
+        <td>Lazy.js</td>
+        <td class="numeric">1.26%</td>
+        <td class="numeric">1.56%</td>
+      </tr>
+      <tr>
+        <td>Fingerprintjs</td>
+        <td class="numeric">1.21%</td>
+        <td class="numeric">1.32%</td>
+      </tr>
+      <tr>
+        <td>script.aculo.us</td>
+        <td class="numeric">0.98%</td>
+        <td class="numeric">0.85%</td>
+      </tr>
+      <tr>
+        <td>Polyfill</td>
+        <td class="numeric">0.97%</td>
+        <td class="numeric">1.00%</td>
+      </tr>
+      <tr>
+        <td>Flickity</td>
+        <td class="numeric">0.83%</td>
+        <td class="numeric">0.92%</td>
+      </tr>
+      <tr>
+        <td>Zepto</td>
+        <td class="numeric">0.78%</td>
+        <td class="numeric">1.17%</td>
+      </tr>
+      <tr>
+        <td>Dojo</td>
+        <td class="numeric">0.70%</td>
+        <td class="numeric">0.62%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Principales bibliotecas de JavaScript en computadoras de escritorio y dispositivos móviles.") }}</figcaption>
 </figure>
 
 <a hreflang="en" href="https://jquery.com/">jQuery</a>, la biblioteca JavaScript más popular jamás creada, se utiliza en el 85,03% de las páginas de escritorio y el 83,46% de las páginas móviles. El advenimiento de muchas API y métodos del navegador, tales como [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) y [querySelector](https://developer.mozilla.org/docs/Web/API/Document/querySelector), estandarizaron gran parte de la funcionalidad proporcionada por la biblioteca en una forma nativa. Aunque la popularidad de jQuery puede parecer estar disminuyendo, ¿por qué todavía se usa en la gran mayoría de la web?

@@ -4,20 +4,20 @@
 CREATE TEMPORARY FUNCTION get_almanac_meta_monetization(almanac_string STRING)
 RETURNS STRING LANGUAGE js AS '''
 try {
-    const almanac = JSON.parse(almanac_string); 
+    const almanac = JSON.parse(almanac_string);
     if (Array.isArray(almanac) || typeof almanac != 'object') return '';
 
     let nodes = almanac["meta-nodes"]["nodes"];
     nodes = typeof nodes === "string" ? JSON.parse(nodes) : nodes;
-    
-    const filteredNode = nodes.filter(n => n.name && n.name.toLowerCase() == "monetization");    
+
+    const filteredNode = nodes.filter(n => n.name && n.name.toLowerCase() == "monetization");
 
     if (filteredNode.length === 0) {
       return "";
     }
-    
+
     return filteredNode[0].content;
-} catch (e) { 
+} catch (e) {
   return "";
 }
 ''';
@@ -36,7 +36,7 @@ FROM (
     `httparchive.pages.2021_07_01_*`
 )
 WHERE
-  monetization != ""
+  monetization != ''
 GROUP BY
   client,
   host

@@ -1,8 +1,8 @@
 #standardSQL
 # 20.15 - Measure number of TCP Connections per site.
 SELECT
-  "mobile" AS client,
-  JSON_EXTRACT_SCALAR(payload, "$._protocol") AS protocol,
+  'mobile' AS client,
+  JSON_EXTRACT_SCALAR(payload, '$._protocol') AS protocol,
   COUNT(0) AS num_pages,
   APPROX_QUANTILES(_connections, 100)[SAFE_ORDINAL(50)] AS median,
   APPROX_QUANTILES(_connections, 100)[SAFE_ORDINAL(75)] AS p75,
@@ -14,7 +14,7 @@ INNER JOIN
 ON
   requests.url = summary.url
 WHERE
-  JSON_EXTRACT_SCALAR(payload, "$._is_base_page") = "true"
+  JSON_EXTRACT_SCALAR(payload, '$._is_base_page') = 'true'
 GROUP BY
   client,
   protocol
@@ -22,8 +22,8 @@ GROUP BY
 UNION ALL
 
 SELECT
-  "desktop" AS client,
-  JSON_EXTRACT_SCALAR(payload, "$._protocol") AS protocol,
+  'desktop' AS client,
+  JSON_EXTRACT_SCALAR(payload, '$._protocol') AS protocol,
   COUNT(0) AS num_pages,
   APPROX_QUANTILES(_connections, 100)[SAFE_ORDINAL(50)] AS median,
   APPROX_QUANTILES(_connections, 100)[SAFE_ORDINAL(75)] AS p75,
@@ -35,7 +35,7 @@ INNER JOIN
 ON
   requests.url = summary.url
 WHERE
-  JSON_EXTRACT_SCALAR(payload, "$._is_base_page") = "true"
+  JSON_EXTRACT_SCALAR(payload, '$._is_base_page') = 'true'
 GROUP BY
   client,
   protocol

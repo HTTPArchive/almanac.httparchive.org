@@ -282,56 +282,56 @@ La <a hreflang="en" href="https://tools.ietf.org/html/rfc7234#section-5.2.1">spe
 <figure>
   <table>
     <tr>
-     <th>Directive</th>
-     <th>Description</th>
+      <th>Directive</th>
+      <th>Description</th>
     </tr>
     <tr>
-     <td>max-age</td>
-     <td>Indique le nombre de secondes pendant lesquelles une ressource peut être mise en cache.</td>
+      <td>max-age</td>
+      <td>Indique le nombre de secondes pendant lesquelles une ressource peut être mise en cache.</td>
     </tr>
     <tr>
-     <td>public</td>
-     <td>N'importe quel cache peut stocker la réponse.</td>
+      <td>public</td>
+      <td>N'importe quel cache peut stocker la réponse.</td>
     </tr>
     <tr>
-     <td>no-cache</td>
-     <td>Une entrée en cache doit être revalidée avant son utilisation.</td>
+      <td>no-cache</td>
+      <td>Une entrée en cache doit être revalidée avant son utilisation.</td>
     </tr>
     <tr>
-     <td>must-revalidate</td>
-     <td>Une entrée en cache périmée doit être revalidée avant son utilisation.</td>
+      <td>must-revalidate</td>
+      <td>Une entrée en cache périmée doit être revalidée avant son utilisation.</td>
     </tr>
     <tr>
-     <td>no-store</td>
-     <td>Indique qu'une réponse ne doit pas être mise en cache.</td>
+      <td>no-store</td>
+      <td>Indique qu'une réponse ne doit pas être mise en cache.</td>
     </tr>
     <tr>
-     <td>private</td>
-     <td>La réponse est destinée à un utilisateur spécifique et ne doit pas être stockée par des caches partagés.</td>
+      <td>private</td>
+      <td>La réponse est destinée à un utilisateur spécifique et ne doit pas être stockée par des caches partagés.</td>
     </tr>
     <tr>
-     <td>no-transform</td>
-     <td>Aucune transformation ou conversion ne doit être effectuée sur cette ressource.</td>
+      <td>no-transform</td>
+      <td>Aucune transformation ou conversion ne doit être effectuée sur cette ressource.</td>
     </tr>
     <tr>
-     <td>proxy-revalidate</td>
-     <td>Identique à must-revalidate mais pour les caches partagés.</td>
+      <td>proxy-revalidate</td>
+      <td>Identique à must-revalidate mais pour les caches partagés.</td>
     </tr>
     <tr>
-     <td>s-maxage</td>
-     <td>Identique à l'âge maximum mais pour les caches partagés.</td>
+      <td>s-maxage</td>
+      <td>Identique à l'âge maximum mais pour les caches partagés.</td>
     </tr>
     <tr>
-     <td>immutable</td>
-     <td>Indique que l'entrée en cache ne changera jamais, et qu'une revalidation n'est pas nécessaire.</td>
+      <td>immutable</td>
+      <td>Indique que l'entrée en cache ne changera jamais, et qu'une revalidation n'est pas nécessaire.</td>
     </tr>
     <tr>
-     <td>stale-while-revalidate</td>
-     <td>Indique que le client est prêt à accepter une réponse périmée tout en vérifiant de manière asynchrone en arrière-plan l'existence d'une ressource plus fraiche.</td>
+      <td>stale-while-revalidate</td>
+      <td>Indique que le client est prêt à accepter une réponse périmée tout en vérifiant de manière asynchrone en arrière-plan l'existence d'une ressource plus fraiche.</td>
     </tr>
     <tr>
-     <td>stale-if-error</td>
-     <td>Indique que le client est prêt à accepter une réponse périmée même si la vérification qu'une ressource plus fraiche échoue.</td>
+      <td>stale-if-error</td>
+      <td>Indique que le client est prêt à accepter une réponse périmée même si la vérification qu'une ressource plus fraiche échoue.</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="<code>Cache-Control</code> directives.") }}</figcaption>
@@ -417,22 +417,22 @@ Si l'on compare les ressources du domaine principal et celles des tierces partie
 <figure>
   <table>
     <tr>
-     <th>Client</th>
-     <th>1ere partie</th>
-     <th>3e partie</th>
-     <th>Global</th>
+      <th>Client</th>
+      <th>1ere partie</th>
+      <th>3e partie</th>
+      <th>Global</th>
     </tr>
     <tr>
-     <td>Bureau</td>
-     <td class="numeric">70.7&nbsp;%</td>
-     <td class="numeric">47.9&nbsp;%</td>
-     <td class="numeric">59.2&nbsp;%</td>
+      <td>Bureau</td>
+      <td class="numeric">70.7&nbsp;%</td>
+      <td class="numeric">47.9&nbsp;%</td>
+      <td class="numeric">59.2&nbsp;%</td>
     </tr>
     <tr>
-     <td>Mobile</td>
-     <td class="numeric">71.4&nbsp;%</td>
-     <td class="numeric">46.8&nbsp;%</td>
-     <td class="numeric">59.6&nbsp;%</td>
+      <td>Mobile</td>
+      <td class="numeric">71.4&nbsp;%</td>
+      <td class="numeric">46.8&nbsp;%</td>
+      <td class="numeric">59.6&nbsp;%</td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="Pourcentage des requêtes avec des TTL courts.") }}</figcaption>

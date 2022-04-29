@@ -195,7 +195,7 @@ We have examined which of these events are being listened to by service workers 
   )
 }}
 
- The results for mobile and desktop are very similar with `install`, `fetch`, and `activate` being the three most popular events, followed by `message`, `notification click`, `push` and `sync`. If we interpret these results, offline use cases that service workers enable are the most attractive feature for app developers, far ahead of push notifications. Due to its limited availability, and less common use case, background sync doesn't play a significant role at this time.
+The results for mobile and desktop are very similar with `install`, `fetch`, and `activate` being the three most popular events, followed by `message`, `notification click`, `push` and `sync`. If we interpret these results, offline use cases that service workers enable are the most attractive feature for app developers, far ahead of push notifications. Due to its limited availability, and less common use case, background sync doesn't play a significant role at this time.
 
 ## Web app manifests
 

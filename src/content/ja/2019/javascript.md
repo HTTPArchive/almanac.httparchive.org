@@ -168,123 +168,123 @@ JavaScriptのリソースを圧縮しているサイトはどれくらいある�
 オープンソースコード、または誰でもアクセス、閲覧、修正が可能な寛容なライセンスを持つコード。小さなライブラリから、<a hreflang="en" href="https://www.chromium.org/Home">Chromium</a>や<a hreflang="en" href="https://www.openhub.net/p/firefox">Firefox</a>のようなブラウザ全体に至るまで、オープンソースコードはウェブ開発の世界で重要な役割を果たしています。JavaScriptの文脈では、開発者はオープンソースのツールに依存して、あらゆるタイプの機能をWebページに組み込んでいます。開発者が小さなユーティリティライブラリを使用するか、アプリケーション全体のアーキテクチャを決定する大規模なフレームワークを使用するかにかかわらずオープンソースのパッケージに依存することで、機能開発をより簡単かつ迅速にできます。では、どのJavaScriptオープンソースライブラリが最もよく使われているのでしょうか？
 
 <figure>
-   <table>
-      <thead>
-        <tr>
-          <th>ライブラリ</th>
-          <th>デスクトップ</th>
-          <th>モバイル</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>jQuery</td>
-          <td class="numeric">85.03%</td>
-          <td class="numeric">83.46%</td>
-        </tr>
-        <tr>
-          <td>jQuery Migrate</td>
-          <td class="numeric">31.26%</td>
-          <td class="numeric">31.68%</td>
-        </tr>
-        <tr>
-          <td>jQuery UI</td>
-          <td class="numeric">23.60%</td>
-          <td class="numeric">21.75%</td>
-        </tr>
-        <tr>
-          <td>Modernizr</td>
-          <td class="numeric">17.80%</td>
-          <td class="numeric">16.76%</td>
-        </tr>
-        <tr>
-          <td>FancyBox</td>
-          <td class="numeric">7.04%</td>
-          <td class="numeric">6.61%</td>
-        </tr>
-        <tr>
-          <td>Lightbox</td>
-          <td class="numeric">6.02%</td>
-          <td class="numeric">5.93%</td>
-        </tr>
-        <tr>
-          <td>Slick</td>
-          <td class="numeric">5.53%</td>
-          <td class="numeric">5.24%</td>
-        </tr>
-        <tr>
-          <td>Moment.js</td>
-          <td class="numeric">4.92%</td>
-          <td class="numeric">4.29%</td>
-        </tr>
-        <tr>
-          <td>Underscore.js</td>
-          <td class="numeric">4.20%</td>
-          <td class="numeric">3.82%</td>
-        </tr>
-        <tr>
-          <td>prettyPhoto</td>
-          <td class="numeric">2.89%</td>
-          <td class="numeric">3.09%</td>
-        </tr>
-        <tr>
-          <td>Select2</td>
-          <td class="numeric">2.78%</td>
-          <td class="numeric">2.48%</td>
-        </tr>
-        <tr>
-          <td>Lodash</td>
-          <td class="numeric">2.65%</td>
-          <td class="numeric">2.68%</td>
-        </tr>
-        <tr>
-          <td>Hammer.js</td>
-          <td class="numeric">2.28%</td>
-          <td class="numeric">2.70%</td>
-        </tr>
-        <tr>
-          <td>YUI</td>
-          <td class="numeric">1.84%</td>
-          <td class="numeric">1.50%</td>
-        </tr>
-        <tr>
-          <td>Lazy.js</td>
-          <td class="numeric">1.26%</td>
-          <td class="numeric">1.56%</td>
-        </tr>
-        <tr>
-          <td>Fingerprintjs</td>
-          <td class="numeric">1.21%</td>
-          <td class="numeric">1.32%</td>
-        </tr>
-        <tr>
-          <td>script.aculo.us</td>
-          <td class="numeric">0.98%</td>
-          <td class="numeric">0.85%</td>
-        </tr>
-        <tr>
-          <td>Polyfill</td>
-          <td class="numeric">0.97%</td>
-          <td class="numeric">1.00%</td>
-        </tr>
-        <tr>
-          <td>Flickity</td>
-          <td class="numeric">0.83%</td>
-          <td class="numeric">0.92%</td>
-        </tr>
-        <tr>
-          <td>Zepto</td>
-          <td class="numeric">0.78%</td>
-          <td class="numeric">1.17%</td>
-        </tr>
-        <tr>
-          <td>Dojo</td>
-          <td class="numeric">0.70%</td>
-          <td class="numeric">0.62%</td>
-        </tr>
-      </tbody>
-    </table>
-   <figcaption>{{ figure_link(caption="デスクトップとモバイルでのトップ JavaScript ライブラリ") }}</figcaption>
+  <table>
+    <thead>
+      <tr>
+        <th>ライブラリ</th>
+        <th>デスクトップ</th>
+        <th>モバイル</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>jQuery</td>
+        <td class="numeric">85.03%</td>
+        <td class="numeric">83.46%</td>
+      </tr>
+      <tr>
+        <td>jQuery Migrate</td>
+        <td class="numeric">31.26%</td>
+        <td class="numeric">31.68%</td>
+      </tr>
+      <tr>
+        <td>jQuery UI</td>
+        <td class="numeric">23.60%</td>
+        <td class="numeric">21.75%</td>
+      </tr>
+      <tr>
+        <td>Modernizr</td>
+        <td class="numeric">17.80%</td>
+        <td class="numeric">16.76%</td>
+      </tr>
+      <tr>
+        <td>FancyBox</td>
+        <td class="numeric">7.04%</td>
+        <td class="numeric">6.61%</td>
+      </tr>
+      <tr>
+        <td>Lightbox</td>
+        <td class="numeric">6.02%</td>
+        <td class="numeric">5.93%</td>
+      </tr>
+      <tr>
+        <td>Slick</td>
+        <td class="numeric">5.53%</td>
+        <td class="numeric">5.24%</td>
+      </tr>
+      <tr>
+        <td>Moment.js</td>
+        <td class="numeric">4.92%</td>
+        <td class="numeric">4.29%</td>
+      </tr>
+      <tr>
+        <td>Underscore.js</td>
+        <td class="numeric">4.20%</td>
+        <td class="numeric">3.82%</td>
+      </tr>
+      <tr>
+        <td>prettyPhoto</td>
+        <td class="numeric">2.89%</td>
+        <td class="numeric">3.09%</td>
+      </tr>
+      <tr>
+        <td>Select2</td>
+        <td class="numeric">2.78%</td>
+        <td class="numeric">2.48%</td>
+      </tr>
+      <tr>
+        <td>Lodash</td>
+        <td class="numeric">2.65%</td>
+        <td class="numeric">2.68%</td>
+      </tr>
+      <tr>
+        <td>Hammer.js</td>
+        <td class="numeric">2.28%</td>
+        <td class="numeric">2.70%</td>
+      </tr>
+      <tr>
+        <td>YUI</td>
+        <td class="numeric">1.84%</td>
+        <td class="numeric">1.50%</td>
+      </tr>
+      <tr>
+        <td>Lazy.js</td>
+        <td class="numeric">1.26%</td>
+        <td class="numeric">1.56%</td>
+      </tr>
+      <tr>
+        <td>Fingerprintjs</td>
+        <td class="numeric">1.21%</td>
+        <td class="numeric">1.32%</td>
+      </tr>
+      <tr>
+        <td>script.aculo.us</td>
+        <td class="numeric">0.98%</td>
+        <td class="numeric">0.85%</td>
+      </tr>
+      <tr>
+        <td>Polyfill</td>
+        <td class="numeric">0.97%</td>
+        <td class="numeric">1.00%</td>
+      </tr>
+      <tr>
+        <td>Flickity</td>
+        <td class="numeric">0.83%</td>
+        <td class="numeric">0.92%</td>
+      </tr>
+      <tr>
+        <td>Zepto</td>
+        <td class="numeric">0.78%</td>
+        <td class="numeric">1.17%</td>
+      </tr>
+      <tr>
+        <td>Dojo</td>
+        <td class="numeric">0.70%</td>
+        <td class="numeric">0.62%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="デスクトップとモバイルでのトップ JavaScript ライブラリ") }}</figcaption>
 </figure>
 
 これまでに作成された中で最も人気のあるJavaScriptライブラリである<a hreflang="en" href="https://jquery.com/">jQuery</a>は、デスクトップページの85.03％、モバイルページの83.46％で使用されています。[Fetch](https://developer.mozilla.org/ja/docs/Web/API/Fetch_API)や[querySelector](https://developer.mozilla.org/ja/docs/Web/API/Document/querySelector)など、多くのブラウザAPIやメソッドの出現により、ライブラリが提供する機能の多くがネイティブ形式に標準化されました。jQueryの人気は衰退しているように見えるかもしれませんが、なぜ今でもウェブの大部分で使われているのでしょうか？

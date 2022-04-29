@@ -1,5 +1,5 @@
 #standardSQL
-# Cross domain image requests 
+# Cross domain image requests
 CREATE TEMPORARY FUNCTION get_images(images_string STRING)
 RETURNS ARRAY<STRUCT<url STRING>>
 LANGUAGE js AS '''
@@ -24,8 +24,8 @@ FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     a.url AS pageUrl,
-    FORMAT("%T", NET.REG_DOMAIN(a.url)) AS pageDomain,
-    FORMAT("%T", NET.REG_DOMAIN(imageurl.url)) AS imageDomain
+    FORMAT('%T', NET.REG_DOMAIN(a.url)) AS pageDomain,
+    FORMAT('%T', NET.REG_DOMAIN(imageurl.url)) AS imageDomain
   FROM
     `httparchive.pages.2021_07_01_*` a,
     UNNEST(get_images(JSON_EXTRACT_SCALAR(payload, '$._Images'))) AS imageurl)

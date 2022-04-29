@@ -69,7 +69,7 @@ try {
     if (markup.audios) {
 
       var autoplay_count = Object.entries(markup.audios.autoplay)
-       // .filter(([key, value]) => key == "" || key == "autoplay") // should check, but lets just include all values
+        // .filter(([key, value]) => key == "" || key == "autoplay") // should check, but lets just include all values
         .reduce((total, [key, value]) => total + value, 0);
 
       result.contains_audios_with_autoplay = autoplay_count > 0;
@@ -157,13 +157,13 @@ SELECT
   AS_PERCENT(COUNTIF(LENGTH(markup_info.dirs_html_dir) > 0), COUNT(0)) AS pct_html_dir_set_m410,
 
   # pages with html dir set to ltr M411
-  AS_PERCENT(COUNTIF(markup_info.dirs_html_dir = "ltr"), COUNT(0)) AS pct_html_dir_ltr_m411,
+  AS_PERCENT(COUNTIF(markup_info.dirs_html_dir = 'ltr'), COUNT(0)) AS pct_html_dir_ltr_m411,
 
   # pages with html dir set to rtl M412
-  AS_PERCENT(COUNTIF(markup_info.dirs_html_dir = "rtl"), COUNT(0)) AS pct_html_dir_rtl_m412,
+  AS_PERCENT(COUNTIF(markup_info.dirs_html_dir = 'rtl'), COUNT(0)) AS pct_html_dir_rtl_m412,
 
   # pages with html dir set to auto M413
-  AS_PERCENT(COUNTIF(markup_info.dirs_html_dir = "auto"), COUNT(0)) AS pct_html_dir_auto_m413,
+  AS_PERCENT(COUNTIF(markup_info.dirs_html_dir = 'auto'), COUNT(0)) AS pct_html_dir_auto_m413,
 
   # pages with dir on other elements M414
   AS_PERCENT(COUNTIF(markup_info.dirs_body_nodes_dir_total > 0), COUNT(0)) AS pct_body_nodes_dir_set_m414

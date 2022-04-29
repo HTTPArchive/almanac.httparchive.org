@@ -11,7 +11,7 @@ SELECT
 FROM (
   SELECT
     client,
-    IF( IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') = "ORIGIN", "ORIGIN", "CDN") AS cdn,
+    IF( IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') = 'ORIGIN', 'ORIGIN', 'CDN') AS cdn,
     CASE
       WHEN resp_content_encoding = 'gzip' THEN 'Gzip'
       WHEN resp_content_encoding = 'br' THEN 'Brotli'

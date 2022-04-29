@@ -10,7 +10,7 @@ try {
     if (!('declarations' in rule)) {
       return values;
     }
-    
+
     // Oversimplified but fast regex check.
     var focusRegEx = /:focus/;
     var fastFocusCheck = rule.selectors.find(selector => {

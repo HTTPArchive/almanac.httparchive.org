@@ -236,7 +236,7 @@ HTML5導入以前は、これを実現するためにARIAのランドマーク�
 
 説明的なページタイトルは、コンテキストが変更されると通知されるため、支援技術を使ってページ、タブ、ウィンドウ間を移動する際のコンテキストに役立ちます。
 
- {{ figure_markup(
+{{ figure_markup(
   image="page_title-information.png",
   caption="Title要素の統計",
   description="デスクトップサイトの98.2%、モバイルサイトの98.1%が`<title>`要素を使用しており、そのうちの68.5%、69.3%が4文字以上のタイトルで、レンダリング時に変更されるのはデスクトップ、モバイルともに4.1%という棒グラフが示されています。",
@@ -267,7 +267,7 @@ HTML5導入以前は、これを実現するためにARIAのランドマーク�
 
 その結果、デスクトップサイトの58％、モバイルサイトの56％が、`tabindex`属性を何らかの形で利用していることがわかりました。
 
- {{ figure_markup(
+{{ figure_markup(
   image="tabindex-usage-and-values.png",
   caption="`tabindex` の使用状況",
   description="`tabindex`を使用しているページのうち、デスクトップでは96.9%、モバイルで97.4%がマイナスまたはゼロの`tabindex`を使用し、68.2%と68.3%が0の`tabindex`、74.2%と73.3%がマイナスの`tabindex`、最後に8.7%と7.7%がプラスの`tabindex`を使用し、棒グラフになっていることが示されています。",
@@ -417,7 +417,7 @@ HTMLフォームをアクセシブルにするもっとも重要な方法の1つ
 
 ウェブ開発者が `<label>` 要素を入力に関連付けない場合、そうでなければ無料で手に入るはずの多くの重要な機能を逃していることになるのです。たとえば、 `<label>`が `<input>`フィールドに適切に関連付けられている場合、 `<label>`をタップまたはクリックすると自動的に `<input>`フィールドにフォーカスが移ります。 これは、ユーザビリティの大きなメリットであるだけでなく、Web上で期待される動作でもあります。
 
- {{ figure_markup(
+{{ figure_markup(
   image="form-input-name-sources.png",
   caption="入力のアクセス可能な名称はどこから来るのか",
   description="デスクトップの入力要素の33.0%、モバイルの入力要素の32.7%にアクセシブルネームがないことを示す棒グラフです。`relatedElement: label`は、デスクトップページの27.2％、モバイルページの27.4％がソースとなっています。`placeholder`ではそれぞれ24.9%と25.3%、`attribute: aria-label`では6.7%と6.9%、`attribute: value`ではどちらも3.9%、`attribute: title`では1.9%と1.8%、`attribute: alt`では1.0%と0.8%, `relatedElement: aria-labelledby` は0.7%と0.8%, `attribute: type` は0.6%と0.5%, `contents` と `relatedElement: aria-labeledby` は小さすぎるので0.0%として表示されています.",
@@ -455,7 +455,7 @@ HTMLフォームをアクセシブルにするもっとも重要な方法の1つ
 
 <a hreflang="en" href="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Placeholder_Research">W3Cのプレースホルダー調査</a> は、意味的に正しい `<label>` 要素の代わりにプレースホルダーを使うという欠陥のある設計手法に反対する、26の異なる記事をリストアップしています。そして、こう言っています。
 
- <figure>
+<figure>
   <blockquote>ラベルの代わりにplaceholder属性を使用すると、高齢者や認知、移動、運動、視覚に障害のあるユーザーを含む様々なユーザーにとって、コントロールのアクセシビリティとユーザビリティが低下する可能性があります。</blockquote>
   <figcaption>— <cite><a hreflang="en" href="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Placeholder_Research">W3Cのプレースホルダーに関する研究</a></cite></figcaption>
 </figure>
@@ -468,7 +468,7 @@ HTMLフォームをアクセシブルにするもっとも重要な方法の1つ
 
 フォームフィールドの必要な状態を支援技術に伝えるため使用できる属性は2つあります。`required` 属性は、ほとんどのスクリーンリーダーによって通知され、必須フィールドが適切に記入されていない場合、実際にはフォームの送信を阻止します。[`aria-required`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute)属性は、支援技術に必須フィールドを示すために使用できますが、フォーム送信を妨害するような関連した動作は付属していません。
 
- {{ figure_markup(
+{{ figure_markup(
   image="form-required-controls.png",
   caption="必要な入力の指定方法",
   description="棒グラフは、`required`属性がデスクトップサイトの64.3%、モバイルサイトの65.7%、`aria-required`が32.3%と31.6%、アスタリスクが21.9%と22.6%で使用されていることを表しています。 `required`と`aria-required`は7.4%と7.7%、アスタリスクと`aria-required`は7.3%と8.2%、アスタリスクと`required`は7.1%と6.3%、3つとも使われているサイトはどちらも0.8%であった。",
@@ -782,7 +782,7 @@ _ARIAライブリージョン_は、DOMの変更を監視し、スクリーン�
 
 このようなオーバーレイ会社と、彼らが奉仕すると称している障害者コミュニティとの間には、緊張関係が存在する。たとえば、全米盲人連合は、<a hreflang="en" href="https://www.forbes.com/sites/gusalexiou/2021/06/26/largest-us-blind-advocacy-group-bans-web-accessibility-overlay-giant-accessibe/?sh=16621ec55a15">アクセシービーをその全国大会から追放し</a>、<a hreflang="en" href="https://nfb.org/about-us/press-room/national-convention-sponsorship-statement-regarding-accessibe">同社による被害についてこのように発表しています</a>。
 
- <figure>
+<figure>
   <blockquote>accessiBeは、何がアクセシブルで何がアクセシブルでないかを、盲目の専門家やスクリーンリーダーの常用者が知っていることを認めていないようです。この国の視覚障害者は、なだめたり、いじめたり、買収されたりすることはありません。</blockquote>
   <figcaption>— <cite><a hreflang="en" href="https://nfb.org/about-us/press-room/national-convention-sponsorship-statement-regarding-accessibe">全米盲人連合</a></cite></figcaption>
 </figure>
@@ -793,7 +793,7 @@ _ARIAライブリージョン_は、DOMの変更を監視し、スクリーン�
 
 <a hreflang="en" href="https://overlayfactsheet.com/#privacy">オーバーレイファクトシート</a>より。
 
- <figure>
+<figure>
 <blockquote>オーバーレイの中には、同じオーバーレイを使用しているサイト間でユーザーの設定を持続させるものがあることが分かっています。これは、ユーザーのコンピューターにクッキーを設定することで行われます。ユーザーがあるサイトでオーバーレイ機能の設定を有効にすると、他のサイトでも自動的にその機能が有効になります。大きなプライバシー問題は、ユーザーが追跡されることを決してオプトインしておらず、オプトアウトする能力もないことです。このようにオプトアウト（明示的にその設定をオフにすること以外）がないため、オーバーレイのお客様には一般データ保護規則（GDPR）とカリフォルニア消費者プライバシー法（CCPA）のリスクが発生します。</blockquote>
 <figcaption>— <cite><a hreflang="en" href="https://overlayfactsheet.com/">オーバーレイファクトシート</a></cite></figcaption>
 </figure>

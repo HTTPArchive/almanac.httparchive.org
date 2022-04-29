@@ -13,10 +13,10 @@ FROM
 WHERE
   date = '2020-08-01' AND
   firstHtml AND
-  LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) NOT LIKE "http/2" AND
-  LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) NOT LIKE "%quic%" AND
-  LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) NOT LIKE "h3%" AND
-  LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) NOT LIKE "http/3%"
+  LOWER(JSON_EXTRACT_SCALAR(payload, '$._protocol')) NOT LIKE 'http/2' AND
+  LOWER(JSON_EXTRACT_SCALAR(payload, '$._protocol')) NOT LIKE '%quic%' AND
+  LOWER(JSON_EXTRACT_SCALAR(payload, '$._protocol')) NOT LIKE 'h3%' AND
+  LOWER(JSON_EXTRACT_SCALAR(payload, '$._protocol')) NOT LIKE 'http/3%'
 GROUP BY
   client,
   http_version,

@@ -236,7 +236,7 @@ When a page has multiple instances of the same landmark, for example, a primary 
 
 Descriptive page titles are helpful for context when moving between pages, tabs, and windows with assistive technology because the change in context will be announced.
 
- {{ figure_markup(
+{{ figure_markup(
   image="page_title-information.png",
   caption="Title element statistics",
   description="A bar chart showing 98.2% of desktop sites and 98.1% of mobile sites use the `<title>` element, 68.5% and 69.3% of those titles have four or more words, and 4.1% on both desktop and mobile are changed on render.",
@@ -267,7 +267,7 @@ The focus order of the page should always be determined by the document flow mea
 
 We found that 58% of desktop sites and 56% of mobile sites have some usage of the `tabindex` attribute.
 
- {{ figure_markup(
+{{ figure_markup(
   image="tabindex-usage-and-values.png",
   caption="`tabindex` usage",
   description="Bar chart showing that of pages that use `tabindex`, a negative or zero `tabindex` is used on 96.9% of those pages for desktop and 97.4% of those pages for mobile, a `tabindex` of 0 is used on 68.2% and 68.3% respectively, a negative `tabindex` is used on 74.2% and 73.3%, and finally a positive `tabindex` is used on 8.7% and 7.7%.",
@@ -417,7 +417,7 @@ One of the most important ways of making HTML forms accessible is using the `<la
 
 When a web developer fails to associate a `<label>` element with an input, they are missing out on a number of key features that they would otherwise get for free. For example, when a `<label>` is properly associated with an `<input>` field, tapping or clicking on the `<label>` automatically puts focus in the `<input>` field. This is not only a major usability win—it is also expected behavior on the web.
 
- {{ figure_markup(
+{{ figure_markup(
   image="form-input-name-sources.png",
   caption="Where inputs get their accessible names from.",
   description="A bar chart showing 33.0% of desktop input elements and 32.7% of mobile input elements have no accessible name. `relatedElement: label` is the source for 27.2% of desktop pages and 27.4% of mobile pages. For `placeholder` it's 24.9% and 25.3% respectively, for `attribute: aria-label` it's 6.7% and 6.9%, for `attribute: value` it's 3.9% for both, for `attribute: title` it's 1.9% and 1.8%, for `attribute: alt` it's 1.0% and 0.8%, for `relatedElement: aria-labelledby` it's 0.7% and 0.8%, for `attribute: type` it's 0.6% and 0.5%, for `contents` and `relatedElement: aria-labeledby` they are too small and so show as 0.0%.",
@@ -455,7 +455,7 @@ There are <a hreflang="en" href="https://www.smashingmagazine.com/2018/06/placeh
 
 <a hreflang="en" href="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Placeholder_Research">The W3C's Placeholder Research</a> lists 26 different articles that advise against the flawed design approach of using a placeholder instead of the semantically correct `<label>` element. It goes on to say:
 
- <figure>
+<figure>
   <blockquote>Use of the placeholder attribute as a replacement for a label can reduce the accessibility and usability of the control for a range of users including older users and users with cognitive, mobility, fine motor skill or vision impairments.</blockquote>
   <figcaption>— <cite><a hreflang="en" href="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Placeholder_Research">The W3C's Placeholder Research</a></cite></figcaption>
 </figure>
@@ -468,7 +468,7 @@ Before HTML5 introduced the [`required` attribute](https://developer.mozilla.org
 
 There are two attributes that can be used to communicate the required state of a form field to assistive technology. The `required` attribute will be announced by most screen readers and actually prevents form submission when a required field has not been properly filled out. The [`aria-required`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute) attribute can be used to indicate required fields to assistive technology, but does not come with any associated behavior that would interfere with form submission.
 
- {{ figure_markup(
+{{ figure_markup(
   image="form-required-controls.png",
   caption="How required inputs are specified",
   description="A bar chart showing the `required` attribute is used on 64.3% of desktop sites and 65.7% of mobile sites, `aria-required` is used by 32.3% and 31.6%, asterisk is used by 21.9% and 22.3%, `required` and `aria-required` is used by 7.4% and 7.7%, asterisk and `aria-required` is used by 7.3% and 8.2%, asterisk and `required` us used by 7.1% and 6.3%, and all three are used by 0.8% of sites on both.",
@@ -782,7 +782,7 @@ As civil rights lawyer [Haben Girma](https://twitter.com/HabenGirma) explains in
 
 There have been tensions between some of these overlay companies and the disabled communities they purport to serve. For example, The National Federation of the Blind <a hreflang="en" href="https://www.forbes.com/sites/gusalexiou/2021/06/26/largest-us-blind-advocacy-group-bans-web-accessibility-overlay-giant-accessibe/?sh=16621ec55a15">banned accessiBe from their national convention</a> and released a <a hreflang="en" href="https://nfb.org/about-us/press-room/national-convention-sponsorship-statement-regarding-accessibe">this statement about the harm caused by the company</a>.
 
- <figure>
+<figure>
   <blockquote>It seems that accessiBe fails to acknowledge that blind experts and regular screen reader users know what is accessible and what is not. The nation's blind will not be placated, bullied, or bought off.</blockquote>
   <figcaption>— <cite><a hreflang="en" href="https://nfb.org/about-us/press-room/national-convention-sponsorship-statement-regarding-accessibe">National Federation for the Blind</a></cite></figcaption>
 </figure>
@@ -793,9 +793,9 @@ Some of these tools have techniques for detecting the use of assistive technolog
 
 From the <a hreflang="en" href="https://overlayfactsheet.com/#privacy">Overlay Fact Sheet</a>:
 
- <figure>
-<blockquote>Some overlays have been found to persist users' settings across sites which use the same overlay. This is done by setting a cookie on the user's computer. When the user enables a setting for an overlay feature on one site, the overlay will automatically turn on that feature on other sites... the big privacy problem is that the user never opted in to be tracked and there's also no ability to opt-out. Due to this lack of an opt-out (other than explicitly turning off that setting) this creates General Data Protection Regulation (GDPR) and California Consumer Privacy Act (CCPA) risk for the overlay customer.</blockquote>
-<figcaption>— <cite><a hreflang="en" href="https://overlayfactsheet.com/">Overlay Fact Sheet</a></cite></figcaption>
+<figure>
+  <blockquote>Some overlays have been found to persist users' settings across sites which use the same overlay. This is done by setting a cookie on the user's computer. When the user enables a setting for an overlay feature on one site, the overlay will automatically turn on that feature on other sites... the big privacy problem is that the user never opted in to be tracked and there's also no ability to opt-out. Due to this lack of an opt-out (other than explicitly turning off that setting) this creates General Data Protection Regulation (GDPR) and California Consumer Privacy Act (CCPA) risk for the overlay customer.</blockquote>
+  <figcaption>— <cite><a hreflang="en" href="https://overlayfactsheet.com/">Overlay Fact Sheet</a></cite></figcaption>
 </figure>
 
 This <a hreflang="en" href="https://tink.uk/accessibe-and-data-protection/">article by Léonie Watson</a> explores the privacy concerns of this type of data tracking in accessibility overlays.

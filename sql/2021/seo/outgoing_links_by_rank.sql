@@ -26,7 +26,7 @@ try {
       result.same_property = anchors.rendered.same_property;
       result.other_property = anchors.rendered.other_property;
     }
-    
+
 } catch (e) {}
 
 return result;

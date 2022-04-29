@@ -3,14 +3,14 @@ import os
 
 from .language import Language
 
-ROOT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-TEMPLATES_DIR = ROOT_DIR + '/templates'
-STATIC_DIR = ROOT_DIR + '/static'
+ROOT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+TEMPLATES_DIR = ROOT_DIR + "/templates"
+STATIC_DIR = ROOT_DIR + "/static"
 
 SUPPORTED_YEARS = []
-DEFAULT_YEAR = '2021'
+DEFAULT_YEAR = "2021"
 
-DEFAULT_AVATAR_FOLDER_PATH = '/static/images/avatars/'
+DEFAULT_AVATAR_FOLDER_PATH = "/static/images/avatars/"
 AVATAR_SIZE = 200
 AVATARS_NUMBER = 15
 
@@ -41,25 +41,25 @@ def get_entries_from_json(json_config, p_key, s_key):
 
 def get_chapters(json_config):
     chapters = []
-    data = get_entries_from_json(json_config, 'outline', 'chapters')
+    data = get_entries_from_json(json_config, "outline", "chapters")
     for list in data:
         for entry in list:
-            chapters.append(entry.get('slug'))
+            chapters.append(entry.get("slug"))
     return chapters
 
 
 def get_languages(json_config):
     languages = []
-    data = get_entries_from_json(json_config, 'settings', 'supported_languages')
+    data = get_entries_from_json(json_config, "settings", "supported_languages")
     for list in data:
         for entry in list:
-            languages.append(getattr(Language, entry.upper().replace('-', '_')))
+            languages.append(getattr(Language, entry.upper().replace("-", "_")))
     return languages
 
 
 def get_live(json_config):
     is_live = False
-    data = get_entries_from_json(json_config, 'settings', 'is_live')
+    data = get_entries_from_json(json_config, "settings", "is_live")
     for list in data:
         if list is True:
             is_live = True
@@ -75,18 +75,18 @@ def update_config():
 
     config_files = []
 
-    for root, directories, files in os.walk(ROOT_DIR + '/config'):
+    for root, directories, files in os.walk(ROOT_DIR + "/config"):
         for file in files:
-            if file == 'last_updated.json':
-                config_filename = 'config/%s' % file
-                with open(config_filename, 'r') as config_file:
+            if file == "last_updated.json":
+                config_filename = "config/%s" % file
+                with open(config_filename, "r") as config_file:
                     timestamps_json = json.load(config_file)
-            elif '.json' in file:
+            elif ".json" in file:
                 config_files.append(file[0:4])
 
     for year in config_files:
-        config_filename = 'config/%s.json' % year
-        with open(config_filename, 'r') as config_file:
+        config_filename = "config/%s.json" % year
+        with open(config_filename, "r") as config_file:
             json_config = json.load(config_file)
             config_json[year] = json_config
 
@@ -95,10 +95,13 @@ def update_config():
                 SUPPORTED_LANGUAGES.update({year: get_languages(json_config)})
                 SUPPORTED_CHAPTERS.update({year: set(get_chapters(json_config))})
 
-                for contributor_id, contributor in json_config['contributors'].items():
-                    if 'avatar_url' not in contributor:
-                        contributor['avatar_url'] = DEFAULT_AVATAR_FOLDER_PATH + str(
-                            hash(contributor_id) % AVATARS_NUMBER) + '.jpg'
+                for contributor_id, contributor in json_config["contributors"].items():
+                    if "avatar_url" not in contributor:
+                        contributor["avatar_url"] = (
+                            DEFAULT_AVATAR_FOLDER_PATH
+                            + str(hash(contributor_id) % AVATARS_NUMBER)
+                            + ".jpg"
+                        )
 
 
 update_config()

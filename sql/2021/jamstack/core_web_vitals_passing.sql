@@ -65,9 +65,9 @@ JOIN (
   FROM
     `httparchive.technologies.2021_07_01_*`
   WHERE
-    LOWER(category) = "static site generator" OR
-    app = "Next.js" OR
-    app = "Nuxt.js"
+    LOWER(category) = 'static site generator' OR
+    app = 'Next.js' OR
+    app = 'Nuxt.js'
   )
 USING (client, url)
 GROUP BY

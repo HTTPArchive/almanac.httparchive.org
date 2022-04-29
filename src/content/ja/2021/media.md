@@ -21,7 +21,7 @@ featured_stat_label_3: 動画要素を含むデスクトップページのシェ
 
 ## 序章
 
-ほぼ30年前 <a hreflang="en" href="https://thehistoryoftheweb.com/the-origin-of-the-img-tag/">`<img>` タグが削除されました</a>、そしてハイパー<em>テキスト</em>は、ハイパー<em>メディア</em>になりました。それ以来、ウェブはますますビジュアル化されています。2021年、Web上のメディアはどうなっているのか？画像と動画を、順番に見ていきましょう。
+ほぼ30年前 <a hreflang="en" href="https://thehistoryoftheweb.com/the-origin-of-the-img-tag/">`<img>` タグが生まれました</a>、そしてハイパー<em>テキスト</em>は、ハイパー<em>メディア</em>になりました。それ以来、ウェブはますますビジュアル化されています。2021年、Web上のメディアはどうなっているのか？画像と動画を、順番に見ていきましょう。
 
 ## 画像
 

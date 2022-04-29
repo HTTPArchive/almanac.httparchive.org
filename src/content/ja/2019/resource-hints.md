@@ -70,38 +70,38 @@ HTTPヘッダー内のリソースヒントの使用量が非常に少ないた�
 <figure>
   <table>
     <tr>
-     <th>リソースヒント</th>
-     <th>利用状況（サイトの割合）</th>
+      <th>リソースヒント</th>
+      <th>利用状況（サイトの割合）</th>
     </tr>
     <tr>
-     <td><code>dns-prefetch</code>
-     </td>
-     <td>29%
-     </td>
+      <td><code>dns-prefetch</code>
+      </td>
+      <td>29%
+      </td>
     </tr>
     <tr>
-     <td><code>preload</code>
-     </td>
-     <td>16%
-     </td>
+      <td><code>preload</code>
+      </td>
+      <td>16%
+      </td>
     </tr>
     <tr>
-     <td><code>preconnect</code>
-     </td>
-     <td>4%
-     </td>
+      <td><code>preconnect</code>
+      </td>
+      <td>4%
+      </td>
     </tr>
     <tr>
-     <td><code>prefetch</code>
-     </td>
-     <td>3%
-     </td>
+      <td><code>prefetch</code>
+      </td>
+      <td>3%
+      </td>
     </tr>
     <tr>
-     <td><code>prerender</code> (非推奨)
-     </td>
-     <td>0.13%
-     </td>
+      <td><code>prerender</code> (非推奨)
+      </td>
+      <td>0.13%
+      </td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="リソースヒントの採用。") }}</figcaption>
@@ -116,49 +116,49 @@ HTTPヘッダー内のリソースヒントの使用量が非常に少ないた�
 <figure>
   <table>
     <tr>
-     <th>リソースヒント</th>
-     <th>ページごとのリソースヒント<br>中央値</th>
-     <th>ページごとのリソースヒント<br>90パーセンタイル</th>
+      <th>リソースヒント</th>
+      <th>ページごとのリソースヒント<br>中央値</th>
+      <th>ページごとのリソースヒント<br>90パーセンタイル</th>
     </tr>
     <tr>
-     <td><code>dns-prefetch</code>
-     </td>
-     <td>2
-     </td>
-     <td>8
-     </td>
+      <td><code>dns-prefetch</code>
+      </td>
+      <td>2
+      </td>
+      <td>8
+      </td>
     </tr>
     <tr>
-     <td><code>preload</code>
-     </td>
-     <td>2
-     </td>
-     <td>4
-     </td>
+      <td><code>preload</code>
+      </td>
+      <td>2
+      </td>
+      <td>4
+      </td>
     </tr>
     <tr>
-     <td><code>preconnect</code>
-     </td>
-     <td>2
-     </td>
-     <td>8
-     </td>
+      <td><code>preconnect</code>
+      </td>
+      <td>2
+      </td>
+      <td>8
+      </td>
     </tr>
     <tr>
-     <td><code>prefetch</code>
-     </td>
-     <td>1
-     </td>
-     <td>3
-     </td>
+      <td><code>prefetch</code>
+      </td>
+      <td>1
+      </td>
+      <td>3
+      </td>
     </tr>
     <tr>
-     <td><code>prerender</code> (非推奨)
-     </td>
-     <td>1
-     </td>
-     <td>1
-     </td>
+      <td><code>prerender</code> (非推奨)
+      </td>
+      <td>1
+      </td>
+      <td>1
+      </td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="そのリソースヒントを使用している全ページのうち、1ページあたりに使用されているリソースヒントの数の中央値と90パーセンタイル。") }}</figcaption>
@@ -177,33 +177,33 @@ HTTPヘッダー内のリソースヒントの使用量が非常に少ないた�
 <figure>
   <table>
     <tr>
-     <th><code>クロスオリジン</code>値</th>
-     <th>使用方法</th>
-     <th>説明</th>
+      <th><code>クロスオリジン</code>値</th>
+      <th>使用方法</th>
+      <th>説明</th>
     </tr>
     <tr>
-     <td>未設定
-     </td>
-     <td>92%
-     </td>
-     <td>crossorigin属性がない場合、リクエストはシングルオリジンポリシーに従います。
-     </td>
+      <td>未設定
+      </td>
+      <td>92%
+      </td>
+      <td>crossorigin属性がない場合、リクエストはシングルオリジンポリシーに従います。
+      </td>
     </tr>
     <tr>
-     <td>anonymous(に相当する)
-     </td>
-     <td>7%
-     </td>
-     <td>クレデンシャルを含まないクロスオリジンリクエストを実行します。
-     </td>
+      <td>anonymous(に相当する)
+      </td>
+      <td>7%
+      </td>
+      <td>クレデンシャルを含まないクロスオリジンリクエストを実行します。
+      </td>
     </tr>
     <tr>
-     <td>use-credentials
-     </td>
-     <td>0.47%
-     </td>
-     <td>クレデンシャルを含むクロスオリジンリクエストを実行します。
-     </td>
+      <td>use-credentials
+      </td>
+      <td>0.47%
+      </td>
+      <td>クレデンシャルを含むクロスオリジンリクエストを実行します。
+      </td>
     </tr>
   </table>
   <figcaption>{{ figure_link(caption="リソースヒントインスタンスの割合としての <code>クロスオリジン</code> 属性の採用。") }}</figcaption>

@@ -14,7 +14,7 @@ try {
 ''';
 
 SELECT
-  "PWA Sites" AS type,
+  'PWA Sites' AS type,
   _TABLE_SUFFIX AS client,
   getOrientation(JSON_EXTRACT(payload, '$._pwa.manifests')) AS orientation,
   COUNT(0) AS freq,
@@ -23,15 +23,15 @@ SELECT
 FROM
   `httparchive.pages.2021_07_01_*`
 WHERE
-  JSON_EXTRACT(payload, '$._pwa.manifests') != "[]" AND
-  JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = "true"
+  JSON_EXTRACT(payload, '$._pwa.manifests') != '[]' AND
+  JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'
 GROUP BY
   type,
   client,
   orientation
 UNION ALL
 SELECT
-  "All Sites" AS type,
+  'All Sites' AS type,
   _TABLE_SUFFIX AS client,
   getOrientation(JSON_EXTRACT(payload, '$._pwa.manifests')) AS orientation,
   COUNT(0) AS freq,
@@ -40,7 +40,7 @@ SELECT
 FROM
   `httparchive.pages.2021_07_01_*`
 WHERE
-  JSON_EXTRACT(payload, '$._pwa.manifests') != "[]"
+  JSON_EXTRACT(payload, '$._pwa.manifests') != '[]'
 GROUP BY
   type,
   client,

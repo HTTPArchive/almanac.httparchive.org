@@ -412,7 +412,7 @@ Workbox по-прежнему остаётся самой популярной �
   classes="big-number",
   sheets_gid="2116306680",
   sql_file="workbox_usage.sql"
- )
+  )
 }}
 
 ### Версии Workbox {workbox-versions}

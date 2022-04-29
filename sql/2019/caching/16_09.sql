@@ -16,7 +16,7 @@ JOIN (
     date,
     client,
     COUNT(0) AS all_requests,
-    COUNTIF(TRIM(resp_vary) != "") AS total_with_vary
+    COUNTIF(TRIM(resp_vary) != '') AS total_with_vary
   FROM
     `httparchive.almanac.requests`
   WHERE

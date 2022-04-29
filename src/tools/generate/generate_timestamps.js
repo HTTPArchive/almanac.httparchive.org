@@ -123,7 +123,7 @@ const write_files_dates_file = async () => {
   console.log("Writing file")
 
   try {
-    fs.writeFile(path, JSON.stringify(file_dates, null, 2), (err) => {
+    fs.writeFile(path, JSON.stringify(file_dates, null, 2) + '\n', (err) => {
       if (err) console.log('Error')
     });
   } catch(err) {

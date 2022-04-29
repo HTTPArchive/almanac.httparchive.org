@@ -4,11 +4,11 @@
 WITH privacy_custom_metrics_data AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    JSON_VALUE(payload, "$._privacy") AS metrics
+    JSON_VALUE(payload, '$._privacy') AS metrics
   FROM
     `httparchive.pages.2021_07_01_*`
   WHERE
-    JSON_VALUE(payload, "$._privacy") IS NOT NULL
+    JSON_VALUE(payload, '$._privacy') IS NOT NULL
 )
 
 SELECT
@@ -24,25 +24,25 @@ FROM (
   SELECT
     client,
     COUNT(0) AS number_of_websites,
-    COUNTIF(JSON_VALUE(metrics, "$.iab_tcf_v1.present") = "true") AS number_of_websites_with_iab_tcf_v1,
-    COUNTIF(JSON_VALUE(metrics, "$.iab_tcf_v2.present") = "true") AS number_of_websites_with_iab_tcf_v2,
+    COUNTIF(JSON_VALUE(metrics, '$.iab_tcf_v1.present') = 'true') AS number_of_websites_with_iab_tcf_v1,
+    COUNTIF(JSON_VALUE(metrics, '$.iab_tcf_v2.present') = 'true') AS number_of_websites_with_iab_tcf_v2,
     COUNTIF(
-      JSON_VALUE(metrics, "$.iab_tcf_v1.present") = "true" OR
-      JSON_VALUE(metrics, "$.iab_tcf_v2.present") = "true"
+      JSON_VALUE(metrics, '$.iab_tcf_v1.present') = 'true' OR
+      JSON_VALUE(metrics, '$.iab_tcf_v2.present') = 'true'
     ) AS number_of_websites_with_iab_tcf_any,
-    COUNTIF(JSON_VALUE(metrics, "$.iab_usp.present") = "true") AS number_of_websites_with_iab_usp,
+    COUNTIF(JSON_VALUE(metrics, '$.iab_usp.present') = 'true') AS number_of_websites_with_iab_usp,
     COUNTIF(
-      JSON_VALUE(metrics, "$.iab_tcf_v1.present") = "true" OR
-      JSON_VALUE(metrics, "$.iab_tcf_v2.present") = "true" OR
-      JSON_VALUE(metrics, "$.iab_usp.present") = "true"
+      JSON_VALUE(metrics, '$.iab_tcf_v1.present') = 'true' OR
+      JSON_VALUE(metrics, '$.iab_tcf_v2.present') = 'true' OR
+      JSON_VALUE(metrics, '$.iab_usp.present') = 'true'
     ) AS number_of_websites_with_iab_any,
     COUNTIF(
-      JSON_VALUE(metrics, "$.iab_tcf_v1.present") = "true" AND
-      JSON_VALUE(metrics, "$.iab_tcf_v1.compliant_setup") = "true"
+      JSON_VALUE(metrics, '$.iab_tcf_v1.present') = 'true' AND
+      JSON_VALUE(metrics, '$.iab_tcf_v1.compliant_setup') = 'true'
     ) AS number_of_websites_with_iab_tcf_v1_compliant,
     COUNTIF(
-      JSON_VALUE(metrics, "$.iab_tcf_v2.present") = "true" AND
-      JSON_VALUE(metrics, "$.iab_tcf_v2.compliant_setup") = "true"
+      JSON_VALUE(metrics, '$.iab_tcf_v2.present') = 'true' AND
+      JSON_VALUE(metrics, '$.iab_tcf_v2.compliant_setup') = 'true'
     ) AS number_of_websites_with_iab_tcf_v2_compliant
   FROM
     privacy_custom_metrics_data

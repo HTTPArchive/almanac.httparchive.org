@@ -5,14 +5,14 @@
 CREATE TEMPORARY FUNCTION getType (href STRING) RETURNS STRING AS (
   IF(
     REGEXP_CONTAINS(href, r'fonts\.googleapis\.com'),
-    "fonts.googleapis.com",
+    'fonts.googleapis.com',
     TRIM(TRIM(REGEXP_EXTRACT(href, r'\.[0-9a-z]+(?:[\?#]|$)'), '?'), '#')
   )
 );
 
 SELECT
   client,
-  getType(TRIM(href, '\'')) AS type,
+  getType(TRIM(href, "'")) AS type,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
@@ -23,7 +23,7 @@ FROM (
   FROM (
     SELECT
       _TABLE_SUFFIX AS client,
-      JSON_EXTRACT(payload, "$._consoleLog") AS consoleLog
+      JSON_EXTRACT(payload, '$._consoleLog') AS consoleLog
     FROM
       `httparchive.pages.2021_07_01_*`
   )
