@@ -483,7 +483,7 @@ Wixは、モバイルビューの中央値で357KBと大幅に少ない画像バ
 
 GoDaddy Website BuilderとWixはWebPをもっとも多く使用しており、それぞれ〜58％と33％の採用率です。一方、WordPress、Joomla、DrupalはほとんどWebPを提供しておらず、WordPressサイトで提供される画像のうちWebPは〜5.7％のみとなっています。AVIFはこれらのプラットフォームではほとんど使用されておらず、すべてのプラットフォームで ~0.1% 未満となっています。
 
- <a hreflang="en" href="https://caniuse.com/webp">WebPのサポートの拡大</a>により、すべてのプラットフォームで、画質を落とさずに適用できる古いJPEGやPNG形式の使用を減らすための作業が必要になっているようです。
+<a hreflang="en" href="https://caniuse.com/webp">WebPのサポートの拡大</a>により、すべてのプラットフォームで、画質を落とさずに適用できる古いJPEGやPNG形式の使用を減らすための作業が必要になっているようです。
 
 #### JavaScript
 
