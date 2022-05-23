@@ -28,16 +28,14 @@ The Web Almanac is available in the original [English](https://almanac.httparchi
 
 See [our contributing guide](CONTRIBUTING.md). To run the Web Almanac locally please see [src/README.md](src/README.md).
 
-## 2021 Timeline
+## 2022 Timeline
 
 - April: forming teams
 - May: forming teams / planning content
-- June: final content planning
-- July: HTTP Archive crawl / analysis
+- June: HTTP Archive crawl / analysis
 - August: analysis / writing
 - September: analysis / writing
-- October: writing / editing
-- November: editing / launch
+- End of September: launch!
 
 ## Where to find us
 
