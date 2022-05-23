@@ -1,4 +1,5 @@
-#standardSQL
+`
+  UNION ALL#standardSQL
 # 07_04d: % fast FID per PSI by geo
 WITH geos AS (
   SELECT *, 'af' AS geo_code, 'Afghanistan' AS geo, 'Asia' AS region, 'Southern Asia' AS subregion FROM `chrome-ux-report.country_af.201907`
