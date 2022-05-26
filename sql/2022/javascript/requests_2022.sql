@@ -1,5 +1,5 @@
 #standardSQL
-# Sum of JS requests per page (2021)
+# Sum of JS requests per page (2022)
 SELECT
   percentile,
   _TABLE_SUFFIX AS client,
