@@ -1,16 +1,22 @@
 # standardSQL
-# usage of PaintWorklet using blink features from usage counters
+# usage of AudioWorklet.addModule and PaintWorklet using blink features from usage counters
 SELECT
+  feature,
   client,
   pct_urls
 FROM
   `httparchive.blink_features.usage`
 WHERE
   yyyymmdd = '20220401' AND
-  feature = 'PaintWorklet'
+  (
+    feature = 'PaintWorklet' OR
+    feature = 'AudioWorkletAddModule'
+  )
 GROUP BY
-  pct_urls,
-  client
+  feature,
+  client,
+  pct_urls
 ORDER BY
-  pct_urls,
-  client
+  feature,
+  client,
+  pct_urls
