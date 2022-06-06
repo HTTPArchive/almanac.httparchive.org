@@ -64,7 +64,7 @@ Current list of queries used
 * A11y usage on Ecomm sites - percent_of_ecommsites_using_a11y_solutions.sql
 * Webpush adoption stats - webpush_adoption_by_ecommsites.sql
 
-## Interested in bringing these queries back 
+## Interested in bringing these queries back
 * top_cdn_bydevice.sql
 * top_cdn_bydevice_vendor_cdn.sql
 * top_cdn_bydevice_vendor_wapp.sql
