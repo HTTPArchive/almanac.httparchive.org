@@ -19,9 +19,7 @@
 [~google-sheets]: https://docs.google.com/spreadsheets/d/1UXCD_A748UF79McCg1cdLdCKPKE8JNFAdd1l-t-glrI/edit?usp=sharing
 [~chapter-markdown]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2022/ecommerce.md
 
-## 2021 Queries for re-use (early list)
-
-Current list of queries used
+# 2021 Queries for re-use (early list)
 
 * Ecommerce comparison 2021 to 2022. - pct_ecommsites_bydevice_compare20212022.sql
 * Top ecommerce platforms. - top_vendors.sql, top_vendors_crux_rank.sql
@@ -45,7 +43,7 @@ Current list of queries used
 * Real-user Core Web Vitals experiences - core_web_vitals_passingmetrics_byvendor_bydevice.sql
 * Top analytics solutions on ecommerce sites - top_analytics_providers_bydevice_wapp.sql
 * Tag manager usage on ecommerce sites. - percent_of_ecommsites_using_each_tag_managers.sql
-* Consent Management Platform adoption - percent_of_ecommsites_using_cmp.sql, percent_of_ecommsites_using_cmp_aug21.sql, percent_of_ecommsites_using_cmp_sep21.sql
+* Consent Management Platform adoption - percent_of_ecommsites_using_cmp.sql
 * AMP usage on ecommerce sites (mobile). - pct_ampusage_bydevice_vendor.sql
 * Web Push Notification acceptance rates - webpushstats_ecommsites.sql
 * Top "JavaScript frameworks" - top_jsframework_providers_by_device.sql
@@ -64,7 +62,7 @@ Current list of queries used
 * A11y usage on Ecomm sites - percent_of_ecommsites_using_a11y_solutions.sql
 * Webpush adoption stats - webpush_adoption_by_ecommsites.sql
 
-## Interested in bringing these queries back
+# Interested in bringing these queries back
 * top_cdn_bydevice.sql
 * top_cdn_bydevice_vendor_cdn.sql
 * top_cdn_bydevice_vendor_wapp.sql
