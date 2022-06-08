@@ -18,7 +18,7 @@ SELECT
   'inline' AS url,
   parseCSS(style) AS css
 FROM
-  (SELECT date, client, page, url, body FROM `httparchive.almanac.summary_response_bodies` WHERE DATE = '2020-08-01' AND firstHtml),
+  (SELECT date, client, page, url, body FROM `httparchive.almanac.summary_response_bodies` WHERE DATE = '2022-06-01' AND firstHtml),
   UNNEST(REGEXP_EXTRACT_ALL(body, '(?i)<style[^>]*>(.*)</style>')) AS style
 WHERE
   style IS NOT NULL AND
