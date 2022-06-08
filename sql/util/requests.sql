@@ -47,7 +47,7 @@ LANGUAGE js AS """
       return 'script';
     } else if (['eot', 'ttf', 'woff', 'woff2', 'otf'].includes(ext)) {
       return 'font';
-    } else if (['png', 'gif', 'jpg', 'jpeg', 'webp', 'ico', 'svg'].includes(ext)) {
+    } else if (['png', 'gif', 'jpg', 'jpeg', 'webp', 'ico', 'svg', 'avif', 'jxl', 'heic', 'heif'].includes(ext)) {
       return 'image';
     } else if (['css', 'xml'].includes(ext)) {
       return ext;
@@ -64,7 +64,7 @@ LANGUAGE js AS """
   function getFormat(prettyType, mimeType, ext) {
     ext = ext.toLowerCase();
     if (prettyType == 'image') {
-      for (type of ['jpg', 'png', 'gif', 'webp', 'svg', 'ico']) {
+      for (type of ['jpg', 'png', 'gif', 'webp', 'svg', 'ico', 'avif', 'jxl', 'heic', 'heif']) {
         if (mimeType.includes(type) || ext == type) {
           return type;
         }
