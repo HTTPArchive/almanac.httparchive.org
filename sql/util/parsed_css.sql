@@ -20,6 +20,6 @@ SELECT
 FROM
   `httparchive.almanac.summary_response_bodies`
 WHERE
-  date = '2020-08-01' AND
+  date = '2022-06-01' AND
   type = 'css' AND
   LENGTH(body) < 3 * 1024 * 1024 # 3 MB
