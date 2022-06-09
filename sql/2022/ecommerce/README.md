@@ -26,6 +26,17 @@
 - [ ] Top platforms by 1M, 100k, 10k - top_vendors_crux_rank.sql
 - [ ] Top Enterprise targetted platforms - top_vendors.sql filtered
 
+## Growth trends - overall
+- [ ] eComm growth - ecomm_growth.sql
+- [ ] platform growth - ecomm_vendors_growth.sql
 
-## Post-Covid trend
+## Server Stack
+- [ ] CDN Provider - top_cdn_bydevice_vendor_cdn.sql top_cdn_bydevice_vendor_wapp.sql
 
+## Frontend Tech
+- [ ] JS Frameworks - top_jslibs_by_device.sql
+- [ ] JS Libraries - top_jsframework_providers_by_device.sql
+
+## User Experience
+- [ ] JS Frameworks - top_jslibs_by_device.sql
+- [ ] JS Libraries - top_jsframework_providers_by_device.sql
