@@ -45,7 +45,7 @@
 ## Page Anatomy
 - [ ] Page Reqs and Weight - pagestats_percentiles_bydevice.sql
 - [ ] Page Weight - HTML payload - pagestats_html_bydevice.sql
-- [ ] Page Reqs and Weight - images - pagestats_image_bydevice.sql 
+- [ ] Page Reqs and Weight - images - pagestats_image_bydevice.sql
 - [ ] Page Weight - 3rd party domain reqs and weight - pct_3pusage_bydevice.sql
 
 ## Tools and Misc
