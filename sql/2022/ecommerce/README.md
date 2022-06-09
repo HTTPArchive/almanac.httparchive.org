@@ -41,3 +41,9 @@
 - [ ] CWV - Platform - Passing grade 10k vs 100k vendor - core_web_vitals_passingmetrics_byvendor_bydevice.sql
 - [ ] CWV - Top x Platforms - CLS, FCP, LCP, FID, TTFB - core_web_vitals_distribution_byvendor_bydevice.sql
 - [ ] Lighthouse - Top x Platforms - 5 scores - median_lighthouse_score_ecommsites.sql
+
+## Page Anatomy
+- [ ] Page Reqs and Weight - pagestats_percentiles_bydevice.sql
+- [ ] Page Weight - HTML payload - pagestats_html_bydevice.sql
+- [ ] Page Reqs and Weight - images - pagestats_image_bydevice.sql
+- [ ] Page Weight - 3rd party domain reqs and weight - pct_3pusage_bydevice.sql
