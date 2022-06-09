@@ -18,3 +18,14 @@
 [~google-doc]: https://docs.google.com/document/d/1IsdOo8Tgjo4aLDdYZaTGc42BNnJIZMziqPBgNzqCYYg/edit?usp=sharing
 [~google-sheets]: https://docs.google.com/spreadsheets/d/1UXCD_A748UF79McCg1cdLdCKPKE8JNFAdd1l-t-glrI/edit?usp=sharing
 [~chapter-markdown]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2022/ecommerce.md
+
+## eComm Platforms
+
+- [ ] Top platforms - top_vendors.sql
+- [ ] Top platforms growth - pct_ecommsites_bydevice_compare20202122.sql
+- [ ] Top platforms by 1M, 100k, 10k - top_vendors_crux_rank.sql
+- [ ] Top Enterprise targetted platforms - top_vendors.sql filtered
+
+
+## Post-Covid trend
+
