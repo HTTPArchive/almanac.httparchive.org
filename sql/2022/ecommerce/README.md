@@ -47,3 +47,11 @@
 - [ ] Page Weight - HTML payload - pagestats_html_bydevice.sql
 - [ ] Page Reqs and Weight - images - pagestats_image_bydevice.sql
 - [ ] Page Weight - 3rd party domain reqs and weight - pct_3pusage_bydevice.sql
+
+## Tools and Misc
+- [ ] Analytics usage - top_analytics_providers_bydevice_wapp.sql
+- [ ] Tag Manager usage - percent_of_ecommsites_using_each_tag_managers.sql
+- [ ] AMP usage - pct_ampusage_bydevice_vendor.sql
+- [ ] Consent Management usage - percent_of_ecommsites_using_cmp.sql
+- [ ] CSP usage - review latest security query
+- [ ] Web Push usage - webpushstats_ecommsites.sql
