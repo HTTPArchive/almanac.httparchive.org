@@ -329,7 +329,7 @@ GitHub tops the stats when measuring on CDN level, likely reflecting the simpler
 {{ figure_markup(
   image="cwv-fid.png",
   caption="Real-user Core Web Vitals FID.",
-  description="Bar chart represents real-user Core Web Vitals FID for the five top measure SSGs. Next.js is 99.6% for desktop and 88.6% for mobile, Nuxt.js is 99.8% and 92.8% respectively, Gatsby is 99.9% and 96.3%, Hugo is 100.0% and 96.1%, and finally Jekyll is 99.9% and 94.8%..",
+  description="Bar chart represents real-user Core Web Vitals FID for the five top measure SSGs. Next.js is 99.6% for desktop and 88.6% for mobile, Nuxt.js is 99.8% and 92.8% respectively, Gatsby is 99.9% and 96.3%, Hugo is 100.0% and 96.1%, and finally Jekyll is 99.9% and 94.8%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUiAdcUCSYyS7cQcQlE9uKeMSacgRudtf4pFRkIKKCt8Nw18qOod6TaAUL7tfm8pUbCPKShEN0jJOS/pubchart?oid=1366681808&format=interactive",
   sheets_gid="1340534640",
   sql_file="core_web_vitals_passing.sql"
