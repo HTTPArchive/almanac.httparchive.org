@@ -31,14 +31,14 @@ JavaScriptベースのSSG。
 * Next.js
 * Gatsby
 * Nuxt.js
-* etc
+* その他
 
 伝統的なもの。
 * Eleventy
 * Hugo
 * Jekyll
 * Hexo
-* etc
+* その他
 
 そして、<a hreflang="en" href="https://jamstack.org/generators/">これら以外にも多くのSSGがあります</a>。必要に応じて、純粋なHTMLとJavaScriptの良さに変換したサイトを構築できます。
 
