@@ -1,5 +1,5 @@
 #standardSQL
-# 13_03: Timeseries to show eCommerce growth acceleration 
+# 13_03: Timeseries to show eCommerce growth acceleration
 # Excluding apps which are not eCommerce platforms/vendors themselves but are used to identify eCommerce sites. These are signals added in Wappalyzer in 2020 to get better idea on % of eCommerce sites but these are not relevant for vendor % market share analysis
 SELECT
   IF(ENDS_WITH(_TABLE_SUFFIX, '_desktop'), 'desktop', 'mobile') AS client,
