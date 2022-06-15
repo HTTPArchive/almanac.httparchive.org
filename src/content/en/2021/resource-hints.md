@@ -167,7 +167,7 @@ To counter this decrease, the top 1,000 pages have an increased adoption for the
 
 Resource hints can be very effective if used correctly. By shifting the responsibility from the browser to the developer, it allows you to prioritize resources required for the critical rendering path and improve the load times & user experience.
 
-<figure markdown>
+<figure>
 <table>
   <thead>
     <tr>
