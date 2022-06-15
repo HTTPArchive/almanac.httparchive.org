@@ -28,9 +28,7 @@ GROUP BY
   year,
   month,
   total
-
 UNION ALL
-
 SELECT
   IF(ENDS_WITH(_TABLE_SUFFIX, '_desktop'), 'desktop', 'mobile') AS client,
   COUNT(DISTINCT url) AS freq,
@@ -58,7 +56,6 @@ GROUP BY
   year,
   month,
   total
-
 ORDER BY
   year DESC,
   month DESC
