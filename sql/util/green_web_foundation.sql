@@ -1,5 +1,4 @@
--- noqa: L044
-SELECT
+SELECT -- noqa: L044
   DATE('2022-06-01') AS date,
   NET.HOST(LOWER(url)) AS host,
   NET.REG_DOMAIN(LOWER(url)) AS domain,
