@@ -23,3 +23,17 @@ WHERE
   date = '2022-06-01' AND
   type = 'css' AND
   LENGTH(body) < 3 * 1024 * 1024 # 3 MB
+UNION ALL
+SELECT
+  date,
+  client,
+  page,
+  'inline' AS url,
+  parseCSS(style) AS css
+FROM
+  (SELECT date, client, page, url, body FROM `httparchive.almanac.summary_response_bodies` WHERE DATE = '2022-06-01' AND firstHtml),
+  UNNEST(REGEXP_EXTRACT_ALL(body, '(?i)<style[^>]*>(.*)</style>')) AS style
+WHERE
+  style IS NOT NULL AND
+  LENGTH(style) > 0 AND
+  LENGTH(style) < 3 * 1024 * 1024 # 3 MB
