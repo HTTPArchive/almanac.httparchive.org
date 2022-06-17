@@ -490,6 +490,41 @@ function parse(css, options){
   }
 
   /**
+   * Parse property.
+   */
+
+  function atproperty() {
+    var pos = position();
+    var m = match(/^@property\s*/);
+
+    if (!m) return;
+
+    // Custom property
+    m = match(/\s*(--[-\w]+)\s*/);
+    if (!m) return error("@property --property name missing");
+    var property = m[1];
+
+    if (!open()) return error("@property missing '{'");
+
+    var decls = comments();
+
+    // declarations
+    var decl;
+    while (decl = declaration()) {
+      decls.push(decl);
+      decls = decls.concat(comments());
+    }
+
+    if (!close()) return error("@property missing '}'");
+
+    return pos({
+      type: 'property',
+      property: property,
+      declarations: decls
+    });
+  }
+
+  /**
    * Parse import
    */
 
@@ -541,7 +576,8 @@ function parse(css, options){
       || atdocument()
       || atpage()
       || athost()
-      || atfontface();
+      || atfontface()
+      || atproperty();
   }
 
   /**
@@ -602,3 +638,4 @@ function addParent(obj, parent) {
 
   return obj;
 }
+ //# sourceURL=snippet:///Rework%20CSS
