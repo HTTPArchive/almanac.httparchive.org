@@ -12,7 +12,7 @@ SELECT
   _TABLE_SUFFIX AS client,
   REGEXP_EXTRACT(href, r'^[\'"]?(\w+):') AS scheme,
   COUNT(DISTINCT url) AS pages,
-  ANY_VALUE(total) AS toal,
+  ANY_VALUE(total) AS total,
   COUNT(DISTINCT url) / ANY_VALUE(total) AS pct_pages
 FROM
   `httparchive.pages.2022_06_01_*`,
