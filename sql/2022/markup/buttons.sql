@@ -28,7 +28,7 @@ SELECT
   LOWER(TRIM(button_type)) AS button_type,
   COUNT(DISTINCT url) AS page,
   ANY_VALUE(total) AS total,
-  COUNT(DISTINCT url) / ANY_VALUE(total) AS pct_pages 
+  COUNT(DISTINCT url) / ANY_VALUE(total) AS pct_pages
 FROM
   `httparchive.pages.2022_06_01_*`
 JOIN

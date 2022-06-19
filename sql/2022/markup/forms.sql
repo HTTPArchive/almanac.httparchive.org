@@ -1,10 +1,10 @@
 WITH forms AS (
   SELECT
-  _TABLE_SUFFIX,
-  url,
-  CAST(IFNULL(JSON_VALUE(JSON_EXTRACT_SCALAR(payload, '$._element_count'), '$.form'), '0') AS INT64) AS forms_count
-FROM
-  `httparchive.pages.2022_06_01_*`
+    _TABLE_SUFFIX,
+    url,
+    CAST(IFNULL(JSON_VALUE(JSON_EXTRACT_SCALAR(payload, '$._element_count'), '$.form'), '0') AS INT64) AS forms_count
+  FROM
+    `httparchive.pages.2022_06_01_*`
 )
 
 SELECT
