@@ -123,11 +123,13 @@ additional_allowed_characters = "-."
 
 [sqlfluff:rules:L062]
 # Comma separated list of blocked words that should not be used
+blocked_words = None
+# Regex of blocked SQL that should not be used.
+# Can be overridden with `-- noqa: L062` for those chapters using secondary pages
 # Block 2022_05_12 (contains secondary pages)
 # Block 2022_06_09 (contains secondary pages)
 # Block 2022_07_01 (probably forgot to update month to June for 2022)
 # Block 2021_06_01 (probably forgot to update month to July for 2021)
-blocked_word = None
 blocked_regex = (2022_?05_?12|2022_?06_?09|2022_?07_?01|2021_?06_?01)
 
 [sqlfluff:rules:L063]
