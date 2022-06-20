@@ -1,14 +1,14 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-title: Markup
+title: Sustainability
 #TODO - Review and update chapter description
-description: Markup chapter of the 2022 Web Almanac covering the use of elements, attributes, document trends, as well as adoption rates of new standards.
-authors: [AlexLakatos, ibnesayeed, daKmoR]
-reviewers: [j9t, bkardell]
-analysts: [rviscomi]
+description: Sustainability chapter of the 2022 Web Almanac covering ...
+authors: [ldevernay, gerrymcgovernireland, tpgreenwood, timfrick]
+reviewers: [mrchrisadams, cqueern, Djohn12, hanopcan]
+analysts: [fershad, camcash17, 4upz]
 editors: []
 translators: []
-results: https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/
+results: https://docs.google.com/spreadsheets/d/1wU3SjB8XYkbaqxYt8CNtbmDbjCcYZ8m5kiYof7uyI5k/
 featured_quote: TODO
 featured_stat_1: TODO
 featured_stat_label_1: TODO
