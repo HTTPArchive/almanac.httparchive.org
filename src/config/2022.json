@@ -15,57 +15,67 @@
           "part": "I",
           "chapter_number": "1",
           "title": "CSS",
-          "slug": "css"
+          "slug": "css",
+          "todo": true
         },
         {
           "part": "I",
           "chapter_number": "2",
           "title": "JavaScript",
-          "slug": "javascript"
+          "slug": "javascript",
+          "todo": true
         },
         {
           "part": "I",
           "chapter_number": "3",
           "title": "Markup",
-          "slug": "markup"
+          "slug": "markup",
+          "todo": true
         },
         {
           "part": "I",
           "chapter_number": "4",
           "title": "Structured Data",
           "slug": "structured-data",
-          "hero_dir": "2021"
+          "hero_dir": "2021",
+          "todo": true
         },
         {
           "part": "I",
           "chapter_number": "5",
           "title": "Fonts",
-          "slug": "fonts"
+          "slug": "fonts",
+          "todo": true
         },
         {
           "part": "I",
           "chapter_number": "6",
           "title": "Media",
-          "slug": "media"
+          "slug": "media",
+          "todo": true
         },
         {
           "part": "I",
           "chapter_number": "7",
           "title": "WebAssembly",
           "slug": "webassembly",
-          "hero_dir": "2021"
+          "hero_dir": "2021",
+          "todo": true
         },
         {
           "part": "I",
           "chapter_number": "8",
           "title": "Third Parties",
-          "slug": "third-parties"
+          "slug": "third-parties",
+          "todo": true
         },
         {
           "part": "I",
           "chapter_number": "9",
           "title": "Interoperability",
-          "slug": "interop"
+          "slug": "interop",
+          "hero_dir": "2022",
+          "todo": true
         }
       ]
     },
@@ -77,51 +87,59 @@
           "part": "II",
           "chapter_number": "10",
           "title": "SEO",
-          "slug": "seo"
+          "slug": "seo",
+          "todo": true
         },
         {
           "part": "II",
           "chapter_number": "11",
           "title": "Accessibility",
-          "slug": "accessibility"
+          "slug": "accessibility",
+          "todo": true
         },
         {
           "part": "II",
           "chapter_number": "12",
           "title": "Performance",
-          "slug": "performance"
+          "slug": "performance",
+          "todo": true
         },
         {
           "part": "II",
           "chapter_number": "13",
           "title": "Privacy",
           "slug": "privacy",
-          "hero_dir": "2020"
+          "hero_dir": "2020",
+          "todo": true
         },
         {
           "part": "II",
           "chapter_number": "14",
           "title": "Security",
-          "slug": "security"
+          "slug": "security",
+          "todo": true
         },
         {
           "part": "II",
           "chapter_number": "15",
           "title": "Mobile Web",
-          "slug": "mobile-web"
+          "slug": "mobile-web",
+          "todo": true
         },
         {
           "part": "II",
           "chapter_number": "16",
           "title": "Capabilities",
           "slug": "capabilities",
-          "hero_dir": "2020"
+          "hero_dir": "2020",
+          "todo": true
         },
         {
           "part": "II",
           "chapter_number": "17",
           "title": "PWA",
-          "slug": "pwa"
+          "slug": "pwa",
+          "todo": true
         }
       ]
     },
@@ -133,27 +151,31 @@
           "part": "III",
           "chapter_number": "18",
           "title": "CMS",
-          "slug": "cms"
+          "slug": "cms",
+          "todo": true
         },
         {
           "part": "III",
           "chapter_number": "19",
           "title": "Ecommerce",
-          "slug": "ecommerce"
+          "slug": "ecommerce",
+          "todo": true
         },
         {
           "part": "III",
           "chapter_number": "20",
           "title": "Jamstack",
           "slug": "jamstack",
-          "hero_dir": "2020"
+          "hero_dir": "2020",
+          "todo": true
         },
         {
           "part": "III",
           "chapter_number": "21",
           "title": "Sustainability",
           "slug": "sustainability",
-          "hero_dir": "2022"
+          "hero_dir": "2022",
+          "todo": true
         }
       ]
     },
@@ -165,31 +187,36 @@
           "part": "IV",
           "chapter_number": "22",
           "title": "Page Weight",
-          "slug": "page-weight"
+          "slug": "page-weight",
+          "todo": true
         },
         {
           "part": "IV",
           "chapter_number": "23",
           "title": "CDN",
-          "slug": "cdn"
+          "slug": "cdn",
+          "todo": true
         },
         {
           "part": "IV",
           "chapter_number": "24",
           "title": "Compression",
-          "slug": "compression"
+          "slug": "compression",
+          "todo": true
         },
         {
           "part": "IV",
           "chapter_number": "25",
           "title": "Caching",
-          "slug": "caching"
+          "slug": "caching",
+          "todo": true
         },
         {
           "part": "IV",
           "chapter_number": "26",
           "title": "HTTP",
-          "slug": "http"
+          "slug": "http",
+          "todo": true
         }
       ]
     }

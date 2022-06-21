@@ -48,7 +48,9 @@ http://127.0.0.1:8080/en/2021/third-parties
 END
 )
 
-# TODO - when 2022 chapters are ready, remove the last check on line 72
+# TODO - when the 2022 base pages are ready, remove the last check on line 74.
+# when home page exists, chapters will 301 to that. Until then, they 404 as invalid year.
+# Lighthouse handles a 301 fine, but not a 404 (where it bombs out - hence need to strip out for now).
 
 if [ "${production}" == "1" ]; then
 
