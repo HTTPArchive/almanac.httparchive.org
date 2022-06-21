@@ -48,6 +48,10 @@ http://127.0.0.1:8080/en/2021/third-parties
 END
 )
 
+# TODO - when the 2022 base pages are ready, remove the last check on line 74.
+# when home page exists, chapters will 301 to that. Until then, they 404 as invalid year.
+# Lighthouse handles a 301 fine, but not a 404 (where it bombs out - hence need to strip out for now).
+
 if [ "${production}" == "1" ]; then
 
     # Get the production URLs from the production sitemap (except PDFs and Stories)
@@ -67,7 +71,7 @@ elif [ "${RUN_TYPE}" == "pull_request" ] && [ "${COMMIT_SHA}" != "" ]; then
     git pull --quiet
     git checkout main
     # Then get the changes
-    CHANGED_FILES=$(git diff --name-only "main...${COMMIT_SHA}" --diff-filter=d content templates | grep -v base.html | grep -v ejs | grep -v base_ | grep -v sitemap | grep -v error.html | grep -v stories)
+    CHANGED_FILES=$(git diff --name-only "main...${COMMIT_SHA}" --diff-filter=d content templates | grep -v base.html | grep -v ejs | grep -v base_ | grep -v sitemap | grep -v error.html | grep -v stories | grep -v "2022/")
     # Then back to the pull request changes
     git checkout --progress --force "${COMMIT_SHA}"
 
