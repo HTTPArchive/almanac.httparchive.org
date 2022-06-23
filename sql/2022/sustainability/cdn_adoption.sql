@@ -40,4 +40,3 @@ GROUP BY
 ORDER BY
   client DESC,
   firstHtmlHits DESC
-  
