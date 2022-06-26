@@ -21,8 +21,10 @@ const get_config = async () => {
 
   configs = await get_yearly_configs();
   for (const year in configs) {
-    languages[year] = configs[year].settings[0].supported_languages;
-    ebooks[year] = configs[year].settings[0].ebook_languages;
+    if (configs[year].settings[0].is_live) {
+      languages[year] = configs[year].settings[0].supported_languages;
+      ebooks[year] = configs[year].settings[0].ebook_languages;
+    }
   }
 };
 
