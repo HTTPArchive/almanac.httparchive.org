@@ -9,6 +9,21 @@
   Analysts: if helpful, you can use this README to give additional info about the queries.
 -->
 
+1. Jamstack sites are fast
+[ ] Lighthouse Performance score
+[ ] Largest Contentful Paint (this is also referenced in item 2, I'm not sure which one it fits in)
+
+2. Jamstack sites are resilient (and pre-rendered)
+[ ] Rendered content sizes (reuse SEO chapter query https://github.com/HTTPArchive/custom-metrics/blob/main/dist/wpt_bodies.js)
+[ ] Largest Contentful Paint?
+[ ] How much the content changes post-load
+
+3. Jamstack sites are cached for a long time
+[ ] Age header
+
+4. The Jamstack category is growing
+[ ] Percentage of "new" sites in crawl that meet the defined criteria of "fast", "resilient" and "cached"
+
 ## Resources
 
 - [📄 Planning doc][~google-doc]
