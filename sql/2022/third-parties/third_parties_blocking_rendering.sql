@@ -1,7 +1,7 @@
 #standardSQL
 # Third-Party domains which render block paint
 #
-# Unlike the blocking main thread queries, light nhouse only contains details if the
+# Unlike the blocking main thread queries, lighthouse only contains details if the
 # third-party is render blocking (i.e. wastedMs/total_bytes are never 0)
 # And also there are no categories given to each third-party
 # So we join to the usual almanac.third_parties table to get those totals and categories

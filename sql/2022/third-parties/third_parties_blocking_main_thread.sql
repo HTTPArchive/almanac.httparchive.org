@@ -13,8 +13,8 @@ SELECT
   COUNT(DISTINCT page) AS total_pages,
   COUNTIF(blocking > 0) AS blocking_pages,
   COUNT(DISTINCT page) - COUNTIF(blocking > 0) AS non_blocking_pages,
-  COUNTIF(blocking > 0) / COUNT(0) AS blocking_pages_pct,
-  (COUNT(DISTINCT page) - COUNTIF(blocking > 0)) / COUNT(0) AS non_blocking_pages_pct,
+  COUNTIF(blocking > 0) / COUNT(0) AS pct_blocking_pages,
+  (COUNT(DISTINCT page) - COUNTIF(blocking > 0)) / COUNT(0) AS pct_non_blocking_pages,
   APPROX_QUANTILES(transfer_size_kib, 1000)[OFFSET(500)] AS p50_transfer_size_kib,
   APPROX_QUANTILES(blocking_time, 1000)[OFFSET(500)] AS p50_blocking_time
 FROM (
