@@ -16,15 +16,15 @@ total_third_party_usage AS (
     category,
     COUNT(DISTINCT sp.url) AS total_pages
   FROM
-    `httparchive.summary_pages.2022_04_01_mobile` sp
+    `httparchive.summary_pages.2022_06_01_mobile` sp
   INNER JOIN
-    `httparchive.summary_requests.2022_04_01_mobile` sr
+    `httparchive.summary_requests.2022_06_01_mobile` sr
   USING (pageid)
   INNER JOIN
     `httparchive.almanac.third_parties`
   ON
     NET.HOST(sr.url) = NET.HOST(domain) AND
-    date = '2021-07-01' AND
+    date = '2022-06-01' AND
     category != 'hosting'
   GROUP BY
     canonicalDomain,
@@ -54,7 +54,7 @@ FROM (
         url AS page,
         report
       FROM
-        `httparchive.lighthouse.2022_04_01_mobile`
+        `httparchive.lighthouse.2022_06_01_mobile`
     ),
     UNNEST(JSON_QUERY_ARRAY(report, '$.audits.render-blocking-resources.details.items')) AS render_blocking_items
   INNER JOIN

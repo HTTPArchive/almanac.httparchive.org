@@ -7,7 +7,7 @@ WITH requests AS (
     pageid AS page,
     url
   FROM
-    `httparchive.summary_requests.2022_04_01_*`
+    `httparchive.summary_requests.2022_06_01_*`
 ),
 
 pages AS (
@@ -16,7 +16,7 @@ pages AS (
     pageid AS page,
     rank
   FROM
-    `httparchive.summary_pages.2022_04_01_*`
+    `httparchive.summary_pages.2022_06_01_*`
 ),
 
 third_party AS (

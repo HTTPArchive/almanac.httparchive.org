@@ -31,7 +31,7 @@ FROM (
         url AS page,
         report
       FROM
-        `httparchive.lighthouse.2022_04_01_mobile`
+        `httparchive.lighthouse.2022_06_01_mobile`
     ),
     UNNEST(JSON_QUERY_ARRAY(report, '$.audits.third-party-summary.details.items')) AS third_party_items
   GROUP BY
