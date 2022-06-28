@@ -19,7 +19,7 @@ FROM (
     REGEXP_CONTAINS(resp_cache_control, r'(?i)private') AS uses_private,
     (reqCookieLen > 0) AS uses_cookies
   FROM
-    `httparchive.summary_requests.2021_05_01_*`
+    `httparchive.summary_requests.2022_06_01_*`
 )
 GROUP BY
   client

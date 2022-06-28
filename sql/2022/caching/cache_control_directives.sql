@@ -65,7 +65,7 @@ FROM (
     REGEXP_CONTAINS(resp_cache_control, r'(?i)pre-check\s*=\s*0') AS uses_pre_check_zero,
     REGEXP_CONTAINS(resp_cache_control, r'(?i)post-check\s*=\s*0') AS uses_post_check_zero
   FROM
-    `httparchive.summary_requests.2021_05_01_*`
+    `httparchive.summary_requests.2022_06_01_*`
 )
 GROUP BY
   client

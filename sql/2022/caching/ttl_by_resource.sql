@@ -6,7 +6,7 @@ SELECT
   percentile,
   APPROX_QUANTILES(expAge, 1000)[OFFSET(percentile * 10)] AS ttl
 FROM
-  `httparchive.summary_requests.2021_05_01_*`,
+  `httparchive.summary_requests.2022_06_01_*`,
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 WHERE
   NOT REGEXP_CONTAINS(resp_cache_control, r'(?i)no-store') AND

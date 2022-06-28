@@ -9,7 +9,7 @@ FROM (
     _TABLE_SUFFIX,
     REGEXP_EXTRACT(resp_cache_control, r'(?i)max-age\s*=\s*(\d+)') AS max_age
   FROM
-    `httparchive.summary_requests.2021_05_01_*`
+    `httparchive.summary_requests.2022_06_01_*`
   ),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 WHERE

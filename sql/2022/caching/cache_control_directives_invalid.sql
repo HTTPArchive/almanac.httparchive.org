@@ -16,7 +16,7 @@ FROM (
     SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total_directives,
     SUM(COUNTIF(TRIM(resp_cache_control) != '')) OVER (PARTITION BY _TABLE_SUFFIX) AS total_using_cache_control
   FROM
-    `httparchive.summary_requests.2021_05_01_*`
+    `httparchive.summary_requests.2022_06_01_*`
   LEFT JOIN
     UNNEST(REGEXP_EXTRACT_ALL(LOWER(resp_cache_control), r'([a-z][^,\s="\']*)')) AS directive_name
   GROUP BY

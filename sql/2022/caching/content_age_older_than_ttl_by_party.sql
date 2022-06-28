@@ -20,11 +20,11 @@ FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     IF(NET.HOST(url) IN (
-      SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2021-07-01' AND category != 'hosting'
+      SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2022-06-01' AND category != 'hosting'
     ), 'third party', 'first party') AS party,
     requests.expAge - (requests.startedDateTime - toTimestamp(requests.resp_last_modified)) AS diff
   FROM
-    `httparchive.summary_requests.2021_05_01_*` requests
+    `httparchive.summary_requests.2022_06_01_*` requests
   WHERE
     TRIM(requests.resp_last_modified) != '' AND
     expAge > 0)

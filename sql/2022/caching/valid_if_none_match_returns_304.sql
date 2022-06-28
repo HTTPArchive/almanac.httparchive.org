@@ -16,7 +16,7 @@ FROM (
     TRIM(resp_etag) != '' AS uses_etag,
     TRIM(req_if_none_match) != '' AS uses_if_non_match
   FROM
-    `httparchive.summary_requests.2021_05_01_*`
+    `httparchive.summary_requests.2022_06_01_*`
 )
 GROUP BY
   client

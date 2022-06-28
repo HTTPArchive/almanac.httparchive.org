@@ -10,7 +10,7 @@ FROM
   `httparchive.blink_features.features`,
   UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_magnitude
 WHERE
-  yyyymmdd = '2021-07-01' AND
+  yyyymmdd = '2022-06-01' AND
   rank <= rank_magnitude
 GROUP BY
   client,

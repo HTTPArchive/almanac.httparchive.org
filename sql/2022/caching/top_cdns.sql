@@ -12,7 +12,7 @@ FROM (
     COUNT(0) AS total,
     ARRAY_CONCAT_AGG(SPLIT(cdn, ', ')) AS cdn_list
   FROM
-    `httparchive.summary_pages.2021_05_01_*`
+    `httparchive.summary_pages.2022_06_01_*`
   GROUP BY
     client),
   UNNEST(cdn_list) AS cdn

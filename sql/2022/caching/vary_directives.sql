@@ -17,7 +17,7 @@ FROM (
     COUNTIF(TRIM(resp_vary) != '') AS total_using_vary,
     COUNTIF(TRIM(resp_vary) != '' AND TRIM(resp_cache_control) != '') AS total_using_both
   FROM
-    `httparchive.summary_requests.2021_05_01_*`
+    `httparchive.summary_requests.2022_06_01_*`
   GROUP BY
     client)
 JOIN (
@@ -26,7 +26,7 @@ JOIN (
     vary_header,
     COUNT(0) AS occurrences
   FROM
-    `httparchive.summary_requests.2021_05_01_*`
+    `httparchive.summary_requests.2022_06_01_*`
   LEFT JOIN
     UNNEST(REGEXP_EXTRACT_ALL(LOWER(resp_vary), r'([a-z][^,\s="\']*)')) AS vary_header
   GROUP BY

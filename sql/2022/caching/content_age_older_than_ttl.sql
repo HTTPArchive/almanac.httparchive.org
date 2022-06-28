@@ -20,7 +20,7 @@ FROM (
     _TABLE_SUFFIX AS client,
     expAge - (startedDateTime - toTimestamp(resp_last_modified)) AS diff
   FROM
-    `httparchive.summary_requests.2021_05_01_*`
+    `httparchive.summary_requests.2022_06_01_*`
   WHERE
     resp_last_modified != '' AND
     expAge > 0)

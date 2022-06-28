@@ -29,7 +29,7 @@ FROM (
     `httparchive.almanac.requests`,
     UNNEST(getCookies(response_headers)) AS cookie
   WHERE
-    date = '2021-07-01'
+    date = '2022-06-01'
   GROUP BY
     client),
   UNNEST(cookies) AS cookie

@@ -19,7 +19,7 @@ FROM (
     _TABLE_SUFFIX AS client,
     ROUND((expAge - (startedDateTime - toTimestamp(resp_last_modified))) / (60 * 60 * 24), 2) AS diff_in_days
   FROM
-    `httparchive.summary_requests.2021_05_01_*`
+    `httparchive.summary_requests.2022_06_01_*`
   WHERE
     resp_last_modified != '' AND
     expAge > 0),

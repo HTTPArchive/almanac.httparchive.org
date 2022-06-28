@@ -9,7 +9,7 @@ SELECT
   SUM(COUNT(0)) OVER () AS total_requests,
   COUNT(0) / SUM(COUNT(0)) OVER () AS pct_requests
 FROM
-  `httparchive.summary_requests.2021_05_01_*`
+  `httparchive.summary_requests.2022_06_01_*`
 WHERE
   REGEXP_CONTAINS(resp_cache_control, r'(?i)immutable')
 GROUP BY

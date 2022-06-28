@@ -7,7 +7,7 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS pct_pages
 FROM
-  `httparchive.lighthouse.2021_05_01_*`
+  `httparchive.lighthouse.2022_06_01_*`
 GROUP BY
   client,
   caching_score
