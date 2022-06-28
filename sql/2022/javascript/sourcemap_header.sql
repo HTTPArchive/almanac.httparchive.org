@@ -35,7 +35,7 @@ JOIN (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_pages
   FROM
-    `httparchive.summary_pages.2022_04_01_*`
+    `httparchive.summary_pages.2022_06_01_*`
   GROUP BY
     client)
 USING

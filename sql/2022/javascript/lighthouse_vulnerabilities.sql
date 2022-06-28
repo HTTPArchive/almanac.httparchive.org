@@ -9,7 +9,7 @@ FROM (
   SELECT
     JSON_EXTRACT_SCALAR(report, "$.audits['no-vulnerable-libraries'].score") AS score
   FROM
-    `httparchive.lighthouse.2022_04_01_mobile`)
+    `httparchive.lighthouse.2022_06_01_mobile`)
 WHERE
   score IS NOT NULL
 GROUP BY

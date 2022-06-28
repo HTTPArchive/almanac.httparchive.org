@@ -7,7 +7,7 @@ FROM (
   SELECT
     CAST(IFNULL(JSON_EXTRACT(report, '$.audits.consistently-interactive.numericValue'), JSON_EXTRACT(report, '$.audits.interactive.numericValue')) AS FLOAT64) AS tti
   FROM
-    `httparchive.lighthouse.2022_04_01_mobile`),
+    `httparchive.lighthouse.2022_06_01_mobile`),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile

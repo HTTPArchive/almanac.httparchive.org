@@ -8,11 +8,11 @@ SELECT
 FROM
   `httparchive.almanac.summary_response_bodies`
 JOIN
-  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2022_04_01_*` GROUP BY _TABLE_SUFFIX)
+  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2022_06_01_*` GROUP BY _TABLE_SUFFIX)
 USING
   (client)
 WHERE
-  date = '2022-04-01' AND
+  date = '2022-06-01' AND
   type = 'script' AND
   body LIKE '%sourceMappingURL%' AND
   NET.REG_DOMAIN(page) = NET.REG_DOMAIN(url)

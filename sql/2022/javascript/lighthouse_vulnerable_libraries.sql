@@ -16,12 +16,12 @@ SELECT
   total,
   COUNT(0) / total AS pct
 FROM
-  `httparchive.lighthouse.2022_04_01_mobile`,
+  `httparchive.lighthouse.2022_06_01_mobile`,
   UNNEST(getVulnerabilities(JSON_EXTRACT(report, "$.audits['no-vulnerable-libraries']"))) AS lib, (
     SELECT
       COUNT(DISTINCT url) AS total
     FROM
-      `httparchive.lighthouse.2022_04_01_mobile`)
+      `httparchive.lighthouse.2022_06_01_mobile`)
 GROUP BY
   lib,
   total

@@ -12,14 +12,14 @@ FROM (
     url AS page,
     bytesJs
   FROM
-    `httparchive.summary_pages.2022_04_01_*`)
+    `httparchive.summary_pages.2022_06_01_*`)
 JOIN (
   SELECT DISTINCT
     _TABLE_SUFFIX AS client,
     url AS page,
     app
   FROM
-    `httparchive.technologies.2022_04_01_*`
+    `httparchive.technologies.2022_06_01_*`
   WHERE
     category = 'JavaScript frameworks')
 USING

@@ -14,10 +14,8 @@ base AS (
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
-    device IN ('desktop', 'phone')
-  AND
-    date IN ('2021-08-01', '2022-04-01')
-  AND
+    device IN ('desktop', 'phone') AND
+    date IN ('2021-07-01', '2022-06-01') AND
     IS_NON_ZERO(p75_inp, p75_inp_origin)
 )
 
@@ -25,7 +23,7 @@ SELECT
   device,
   percentile,
   APPROX_QUANTILES(p75_inp, 1000)[OFFSET(percentile * 10)] AS p75_inp,
-  APPROX_QUANTILES(p75_inp_origin, 1000)[OFFSET(percentile * 10)] AS p75_inp_origin,
+  APPROX_QUANTILES(p75_inp_origin, 1000)[OFFSET(percentile * 10)] AS p75_inp_origin
 FROM
   base,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile

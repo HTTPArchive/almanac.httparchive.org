@@ -42,7 +42,7 @@ FROM (
     hint.name = 'prefetch' AND hint.value = 'script' AS prefetch_hint,
     hint.name = 'preload' AND hint.value = 'script' AS preload_hint
   FROM
-    `httparchive.pages.2022_04_01_*`
+    `httparchive.pages.2022_06_01_*`
   LEFT JOIN
     UNNEST(getResourceHintAttrs(payload)) AS hint)
 GROUP BY

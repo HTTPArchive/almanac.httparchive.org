@@ -8,13 +8,13 @@ SELECT
   total,
   COUNT(DISTINCT url) / total AS pct
 FROM
-  `httparchive.technologies.2022_04_01_*`
+  `httparchive.technologies.2022_06_01_*`
 JOIN (
   SELECT
     _TABLE_SUFFIX,
     COUNT(0) AS total
   FROM
-    `httparchive.summary_pages.2022_04_01_*`
+    `httparchive.summary_pages.2022_06_01_*`
   GROUP BY
     _TABLE_SUFFIX)
 USING

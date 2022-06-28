@@ -6,7 +6,7 @@ WITH tbt_stats AS (
     url,
     CAST(JSON_EXTRACT_SCALAR(report, '$.audits.total-blocking-time.numericValue') AS FLOAT64) AS tbtValue
   FROM
-    `httparchive.lighthouse.2022_04_01_mobile`
+    `httparchive.lighthouse.2022_06_01_mobile`
 )
 
 SELECT
