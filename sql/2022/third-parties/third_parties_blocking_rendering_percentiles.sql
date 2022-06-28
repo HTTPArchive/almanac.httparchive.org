@@ -61,7 +61,7 @@ FROM (
     `httparchive.almanac.third_parties`
   ON
     NET.HOST(JSON_VALUE(render_blocking_items, '$.url')) = domain AND
-    date = '2022-04-01'
+    date = '2022-06-01'
   GROUP BY
     canonicalDomain,
     page,
