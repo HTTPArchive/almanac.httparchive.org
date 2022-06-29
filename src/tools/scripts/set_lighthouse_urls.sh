@@ -45,6 +45,7 @@ http://127.0.0.1:8080/en/2020/
 http://127.0.0.1:8080/en/2020/css
 http://127.0.0.1:8080/en/2021/
 http://127.0.0.1:8080/en/2021/third-parties
+http://127.0.0.1:8080/en/2022/
 END
 )
 
@@ -67,7 +68,7 @@ elif [ "${RUN_TYPE}" == "pull_request" ] && [ "${COMMIT_SHA}" != "" ]; then
     git pull --quiet
     git checkout main
     # Then get the changes
-    CHANGED_FILES=$(git diff --name-only "main...${COMMIT_SHA}" --diff-filter=d content templates | grep -v base.html | grep -v ejs | grep -v base_ | grep -v sitemap | grep -v error.html | grep -v stories)
+    CHANGED_FILES=$(git diff --name-only "main...${COMMIT_SHA}" --diff-filter=d content templates | grep -v base.html | grep -v ejs | grep -v base_ | grep -v sitemap | grep -v error.html | grep -v stories )
     # Then back to the pull request changes
     git checkout --progress --force "${COMMIT_SHA}"
 

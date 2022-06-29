@@ -10,7 +10,7 @@ const generate_figure_ids = (html) => {
   // Need to add id in <figure> element at top of table
   // and also in figure_link call from <figcaption> element
   // at bottom of table.
-  re = /(<figure>|<figure markdown>|<figure data-markdown="1">)\s*\n*\s*<table/gi;
+  re = /(<figure>|<figure markdown>(<p>)*|<figure data-markdown="1">(<p>)*)\s*\n*\s*<table/gi;
   html = html.replace(re, () => '<figure id="fig-_figid_"><table');
   re = /figure_link\s*\(/g;
   html = html.replace(re, () => 'figure_link(metadata=metadata, chapter_config=chapter_config, id=_figidn_, ');
