@@ -30,7 +30,7 @@ JOIN (
     url,
     app AS ecomm
   FROM
-    `httparchive.technologies.2022_07_01_*`
+    `httparchive.technologies.2022_06_01_*`
   WHERE
     category = 'Ecommerce' AND
     (

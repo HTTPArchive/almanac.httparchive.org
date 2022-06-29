@@ -17,7 +17,7 @@ FROM (
     `httparchive.almanac.requests`
   JOIN (
     SELECT _TABLE_SUFFIX AS client, url AS page, app
-    FROM `httparchive.technologies.2022_07_01_*`
+    FROM `httparchive.technologies.2022_06_01_*`
     WHERE category = 'Ecommerce')
   USING
     (client, page)
@@ -26,7 +26,7 @@ FROM (
     NET.HOST(url) IN
     (SELECT domain
             FROM `httparchive.almanac.third_parties`
-      WHERE date = '2022-07-01' AND category != 'hosting'
+      WHERE date = '2022-06-01' AND category != 'hosting'
     )
   GROUP BY
     client,

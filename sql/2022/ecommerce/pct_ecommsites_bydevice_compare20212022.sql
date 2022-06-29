@@ -1,6 +1,6 @@
 #standardSQL
 # 13_02: % of eCommerce tagged sites by device
-## Carry 2020 and 2021 data in run
+## Carry 2021 and 2022 data in run
 ## This query is built using 2019 query from https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2019/13_Ecommerce/13_02b.sql but this commit fixes a flaw in 2019 query. See - https://github.com/HTTPArchive/almanac.httparchive.org/issues/1810
 SELECT
   _TABLE_SUFFIX AS client,
@@ -9,13 +9,13 @@ SELECT
   total,
   COUNT(DISTINCT url) / total AS pct
 FROM
-  `httparchive.technologies.2022_05_01_*`
+  `httparchive.technologies.2022_06_01_*`
 JOIN (
   SELECT
     _TABLE_SUFFIX,
     COUNT(DISTINCT url) AS total
   FROM
-    `httparchive.summary_pages.2022_07_01_*`
+    `httparchive.summary_pages.2022_06_01_*`
   GROUP BY
     _TABLE_SUFFIX)
 USING
@@ -33,13 +33,13 @@ SELECT
   total,
   COUNT(DISTINCT url) / total AS pct
 FROM
-  `httparchive.technologies.2021_07_01_*`
+  `httparchive.technologies.2021_06_01_*`
 JOIN (
   SELECT
     _TABLE_SUFFIX,
     COUNT(DISTINCT url) AS total
   FROM
-    `httparchive.summary_pages.2021_07_01_*`
+    `httparchive.summary_pages.2021_06_01_*`
   GROUP BY
     _TABLE_SUFFIX)
 USING

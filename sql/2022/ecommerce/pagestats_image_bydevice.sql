@@ -6,12 +6,12 @@ SELECT
   APPROX_QUANTILES(reqImg, 1000)[OFFSET(percentile * 10)] AS image_count,
   APPROX_QUANTILES(bytesImg, 1000)[OFFSET(percentile * 10)] / 1024 AS image_kbytes
 FROM
-  `httparchive.summary_pages.2022_07_01_*`
+  `httparchive.summary_pages.2022_06_01_*`
 JOIN (
   SELECT DISTINCT
     _TABLE_SUFFIX,
     url
-  FROM `httparchive.technologies.2022_07_01_*`
+  FROM `httparchive.technologies.2022_06_01_*`
   WHERE category = 'Ecommerce' AND
     (
       app != 'Cart Functionality' AND

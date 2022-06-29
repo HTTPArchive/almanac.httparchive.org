@@ -5,9 +5,9 @@ SELECT
   percentile,
   APPROX_QUANTILES(bytesHtml, 1000)[OFFSET(percentile * 10)] / 1024 AS requests
 FROM
-  `httparchive.summary_pages.2022_07_01_*`
+  `httparchive.summary_pages.2022_06_01_*`
 JOIN
-  `httparchive.technologies.2022_07_01_*`
+  `httparchive.technologies.2022_06_01_*`
 USING (_TABLE_SUFFIX, url),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 WHERE

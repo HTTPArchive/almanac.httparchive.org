@@ -17,7 +17,7 @@ FROM (
     app,
     url
   FROM
-    `httparchive.technologies.2022_07_01_*`
+    `httparchive.technologies.2022_06_01_*`
   WHERE
     category = 'Ecommerce' AND
     app != 'Cart Functionality' AND
@@ -27,7 +27,7 @@ JOIN (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_pages
   FROM
-    `httparchive.summary_pages.2022_07_01_*`
+    `httparchive.summary_pages.2022_06_01_*`
   GROUP BY
     client)
 USING

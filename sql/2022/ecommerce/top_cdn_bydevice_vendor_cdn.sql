@@ -8,7 +8,7 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY vendor) AS total,
   COUNTIF(category = 'CDN') / SUM(COUNT(0)) OVER (PARTITION BY vendor) AS pct
 FROM
-  `httparchive.technologies.2022_07_01_*`
+  `httparchive.technologies.2022_06_01_*`
 JOIN
   (
     SELECT
@@ -16,7 +16,7 @@ JOIN
       url,
       app AS vendor
     FROM
-      `httparchive.technologies.2022_07_01_*`
+      `httparchive.technologies.2022_06_01_*`
     WHERE
       category = 'Ecommerce'
   )
