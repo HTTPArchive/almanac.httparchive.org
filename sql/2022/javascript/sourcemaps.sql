@@ -4,7 +4,7 @@ SELECT
   client,
   COUNT(DISTINCT page) AS freq,
   total,
-  ROUND(COUNT(DISTINCT page) * 100 / total, 2) AS pct
+  COUNT(DISTINCT page) / total AS pct
 FROM
   `httparchive.almanac.summary_response_bodies`
 JOIN

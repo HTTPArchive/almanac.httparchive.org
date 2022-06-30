@@ -19,5 +19,5 @@ GROUP BY
   percentile,
   client
 ORDER BY
-  percentile,
-  client
+  client,
+  percentile

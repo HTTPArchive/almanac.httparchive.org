@@ -15,7 +15,7 @@ base AS (
     `chrome-ux-report.materialized.device_summary`
   WHERE
     device IN ('desktop', 'phone') AND
-    date IN ('2021-07-01', '2022-06-01') AND
+    date IN ('2022-05-01') AND
     IS_NON_ZERO(p75_fid, p75_fid_origin)
 )
 

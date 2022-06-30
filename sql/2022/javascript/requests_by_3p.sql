@@ -28,6 +28,6 @@ GROUP BY
   client,
   host
 ORDER BY
-  percentile,
   client,
+  percentile,
   host

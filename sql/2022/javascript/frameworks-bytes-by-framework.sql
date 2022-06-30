@@ -30,6 +30,6 @@ GROUP BY
   client,
   js_framework
 ORDER BY
-  percentile,
   client,
+  percentile,
   pages DESC
