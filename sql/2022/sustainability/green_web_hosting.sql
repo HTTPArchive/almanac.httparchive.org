@@ -7,7 +7,9 @@ WITH green AS (
     TRUE AS is_green
   FROM
     `httparchive.almanac.green_web_foundation`
-), pages AS (
+),
+
+pages AS (
   SELECT
     NET.HOST(url) AS host
   FROM
