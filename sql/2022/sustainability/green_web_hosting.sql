@@ -32,7 +32,7 @@ LEFT JOIN
   green
 USING
   (host),
-UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
 WHERE
   rank <= rank_grouping
 GROUP BY
