@@ -7,20 +7,37 @@ WITH green AS (
     TRUE AS is_green
   FROM
     `httparchive.almanac.green_web_foundation`
+  WHERE
+    date = '2022-06-01'
 ),
 
 pages AS (
   SELECT
-    NET.HOST(url) AS host
+    _TABLE_SUFFIX AS client,
+    NET.HOST(url) AS host,
+    rank
   FROM
-    `httparchive.summary_pages.2022_06_01_mobile`
+    `httparchive.summary_pages.2022_06_01_*`
 )
 
 SELECT
-  COUNTIF(is_green) / COUNT(0)
+  client,
+  rank_grouping,
+  COUNTIF(is_green) AS total_green,
+  COUNT(0) AS total_sites,
+  COUNTIF(is_green) / COUNT(0) AS pct_green
 FROM
   pages
 LEFT JOIN
   green
 USING
-  (host)
+  (host),
+UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+WHERE
+  rank <= rank_grouping
+GROUP BY
+  client,
+  rank_grouping
+ORDER BY
+  client,
+  rank_grouping
