@@ -13,7 +13,7 @@ SELECT
   percentile,
   _TABLE_SUFFIX AS client,
   APPROX_QUANTILES(bytesTotal / 1024, 1000)[OFFSET(percentile * 10)] AS total_kbytes,
-  APPROX_QUANTILES((bytesTotal / 1000 / 1000 / 1000) * kw_per_GB * global_grid_intensity)[OFFSET(percentile * 10)] AS total_emissions,
+  APPROX_QUANTILES((bytesTotal / 1024 / 1024 / 1024) * kw_per_GB * global_grid_intensity)[OFFSET(percentile * 10)] AS total_emissions,
   APPROX_QUANTILES(bytesHtml / 1024, 1000)[OFFSET(percentile * 10)] AS html_kbytes,
   APPROX_QUANTILES(bytesJS / 1024, 1000)[OFFSET(percentile * 10)] AS js_kbytes,
   APPROX_QUANTILES(bytesCSS / 1024, 1000)[OFFSET(percentile * 10)] AS css_kbytes,
