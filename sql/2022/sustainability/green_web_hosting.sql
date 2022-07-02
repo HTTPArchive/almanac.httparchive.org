@@ -13,7 +13,7 @@ pages AS (
   SELECT
     NET.HOST(url) AS host
   FROM
-    `httparchive.summary_pages.2022_07_01_mobile`
+    `httparchive.summary_pages.2022_06_01_mobile`
 )
 
 SELECT

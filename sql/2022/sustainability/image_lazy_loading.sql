@@ -6,7 +6,7 @@ SELECT
   IF(ENDS_WITH(_TABLE_SUFFIX, 'desktop'), 'desktop', 'mobile') AS client,
   COUNT(DISTINCT IF(LOWER(attr) = '"lazy"', url, NULL)) / COUNT(DISTINCT url) AS percent
 FROM
-  `httparchive.pages.*`
+  `httparchive.pages.2022_06_01_*`
 LEFT JOIN
   UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, "$['_img-loading-attr']"), '$')) AS attr
 GROUP BY

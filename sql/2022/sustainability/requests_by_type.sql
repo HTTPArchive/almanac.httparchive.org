@@ -12,7 +12,7 @@ SELECT
   APPROX_QUANTILES(reqOther, 1000)[OFFSET(percentile * 10)] AS other_req,
   APPROX_QUANTILES(reqFont, 1000)[OFFSET(percentile * 10)] AS font_req
 FROM
-  `httparchive.summary_pages.2022_07_01_*`,
+  `httparchive.summary_pages.2022_06_01_*`,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

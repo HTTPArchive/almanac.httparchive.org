@@ -29,7 +29,7 @@ SELECT
   APPROX_QUANTILES(bytesFont / 1024, 1000)[OFFSET(percentile * 10)] AS font_kbytes,
   APPROX_QUANTILES((bytesFont / 1024 / 1024 / 1024) * kw_per_GB * global_grid_intensity)[OFFSET(percentile * 10)] AS font_emissions
 FROM
-  `httparchive.summary_pages.2022_07_01_*`,
+  `httparchive.summary_pages.2022_06_01_*`,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,
