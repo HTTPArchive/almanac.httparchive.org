@@ -23,7 +23,7 @@ FROM (
     test.url AS page,
     SUM(IFNULL(unminified_css_bytes, 0)) / 1024 AS unminified_css_kbytes
   FROM
-    `httparchive.lighthouse.2021_06_01_*` AS test
+    `httparchive.lighthouse.2022_06_01_*` AS test
   LEFT JOIN
     UNNEST(getUnminifiedCssBytes(JSON_EXTRACT(report, "$.audits['unminified-css']"))) AS unminified_css_bytes
   GROUP BY

@@ -23,7 +23,7 @@ FROM (
     test.url AS page,
     SUM(IFNULL(unminified_js_bytes, 0)) / 1024 AS unminified_js_kbytes
   FROM
-    `httparchive.lighthouse.2021_06_01_*` AS test
+    `httparchive.lighthouse.2022_06_01_*` AS test
   LEFT JOIN
     UNNEST(getUnminifiedJsBytes(JSON_EXTRACT(report, "$.audits['unminified-javascript']"))) AS unminified_js_bytes
   GROUP BY
