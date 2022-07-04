@@ -36,4 +36,3 @@ GROUP BY
 ORDER BY
   font_host,
   client
-  

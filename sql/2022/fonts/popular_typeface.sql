@@ -46,4 +46,3 @@ WHERE
   pages / total >= 0.004
 ORDER BY
   pct DESC
-  
