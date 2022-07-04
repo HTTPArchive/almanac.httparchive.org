@@ -8,7 +8,7 @@ SELECT
   END AS font_host,
   COUNT(DISTINCT page) AS pages,
   SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
-  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct,
+  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct
 FROM (
   SELECT
     client,
@@ -25,7 +25,7 @@ FROM (
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
-    url AS page,
+    url AS page
   FROM
     `httparchive.pages.2022_06_01_*`)
 USING
@@ -36,3 +36,4 @@ GROUP BY
 ORDER BY
   font_host,
   client
+  
