@@ -1,12 +1,9 @@
 // http://www.w3.org/TR/CSS21/grammar.html
 // https://github.com/visionmedia/css-parse/pull/49#issuecomment-30088027
 var commentre = /\/\*[^*]*\*+([^/*][^*]*\*+)*\//g
-var data_uri_pattern = /url\(['"]?data:[^,]*/i;
-var MAX_RULES = 1000;
 
 function parse(css, options){
   options = options || {};
-  var total_rules = 0;
 
   /**
    * Positional.
@@ -70,7 +67,7 @@ function parse(css, options){
     err.source = css;
 
     if (options.silent) {
-      //errorsList.push(err);
+      errorsList.push(err);
     } else {
       throw err;
     }
@@ -119,14 +116,9 @@ function parse(css, options){
     whitespace();
     comments(rules);
     while (css.length && css.charAt(0) != '}' && (node = atrule() || rule())) {
-      if (total_rules > MAX_RULES) {
-        break;
-      }
-
       if (node !== false) {
         rules.push(node);
         comments(rules);
-        total_rules++;
       }
     }
     return rules;
@@ -233,17 +225,11 @@ function parse(css, options){
 
     // val
     var val = match(/^((?:'(?:\\'|.)*?'|"(?:\\"|.)*?"|\([^\)]*?\)|[^};])+)/);
-    val = val ? trim(val[0]).replace(commentre, '') : '';
-
-    if (data_uri_pattern.test(val)) {
-      var m = val.match(data_uri_pattern);
-      val = `${m[0]}[snip]`;
-    }
 
     var ret = pos({
       type: 'declaration',
       property: prop.replace(commentre, ''),
-      value: val
+      value: val ? trim(val[0]).replace(commentre, '') : ''
     });
 
     // ;
@@ -504,41 +490,6 @@ function parse(css, options){
   }
 
   /**
-   * Parse property.
-   */
-
-  function atproperty() {
-    var pos = position();
-    var m = match(/^@property\s*/);
-
-    if (!m) return;
-
-    // Custom property
-    m = match(/\s*(--[-\w]+)\s*/);
-    if (!m) return error("@property --property name missing");
-    var property = m[1];
-
-    if (!open()) return error("@property missing '{'");
-
-    var decls = comments();
-
-    // declarations
-    var decl;
-    while (decl = declaration()) {
-      decls.push(decl);
-      decls = decls.concat(comments());
-    }
-
-    if (!close()) return error("@property missing '}'");
-
-    return pos({
-      type: 'property',
-      property: property,
-      declarations: decls
-    });
-  }
-
-  /**
    * Parse import
    */
 
@@ -590,8 +541,7 @@ function parse(css, options){
       || atdocument()
       || atpage()
       || athost()
-      || atfontface()
-      || atproperty();
+      || atfontface();
   }
 
   /**
