@@ -192,7 +192,7 @@ LANGUAGE js AS """
 """;
 
 SELECT
-  CAST('2021-07-01' AS DATE) AS date,
+  CAST('2022-06-01' AS DATE) AS date,
   _TABLE_SUFFIX AS client,
   page,
   rank,
@@ -202,6 +202,6 @@ SELECT
   JSON_EXTRACT(payload, '$.response.headers') AS response_headers,
   payload
 FROM
-  `httparchive.requests.2021_07_01_*`
-LEFT JOIN (SELECT _TABLE_SUFFIX, url AS page, rank FROM `httparchive.summary_pages.2021_07_01_*`)
+  `httparchive.requests.2022_06_01_*`
+LEFT JOIN (SELECT _TABLE_SUFFIX, url AS page, rank FROM `httparchive.summary_pages.2022_06_01_*`)
 USING (_TABLE_SUFFIX, page)
