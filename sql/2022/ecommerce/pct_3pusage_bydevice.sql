@@ -24,7 +24,7 @@ FROM (
   USING
     (client, page)
   WHERE
-    date = '2022-07-01' AND
+    date = '2022-06-01' AND
     NET.HOST(url) IN
     (SELECT domain
             FROM `httparchive.almanac.third_parties`

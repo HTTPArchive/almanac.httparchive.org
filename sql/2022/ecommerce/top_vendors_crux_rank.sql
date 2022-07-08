@@ -38,7 +38,7 @@ JOIN (
     url,
     MAX(rank) AS rank
   FROM
-    `httparchive.summary_pages.2022_07_01_*`,
+    `httparchive.summary_pages.2022_06_01_*`,
     UNNEST([10, 100, 1000, 10000, 100000, 1000000, 10000000]) AS rank_magnitude
   WHERE
     rank <= rank_magnitude

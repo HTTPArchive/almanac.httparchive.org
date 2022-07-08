@@ -7,13 +7,13 @@ SELECT
   total,
   COUNT(DISTINCT url) / total AS pct
 FROM
-  `httparchive.technologies.2022_07_01_*`
+  `httparchive.technologies.2022_06_01_*`
 JOIN (
   SELECT
     _TABLE_SUFFIX,
     url
   FROM
-    `httparchive.technologies.2022_07_01_*`
+    `httparchive.technologies.2022_06_01_*`
   WHERE
     category = 'Ecommerce' AND
     (
