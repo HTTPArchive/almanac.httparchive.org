@@ -14,7 +14,7 @@ FROM (
     url,
     app AS cms
   FROM
-    `httparchive.technologies.2021_07_01_*`
+    `httparchive.technologies.2022_07_01_*`
   WHERE
     category = 'CMS')
 JOIN (
@@ -25,7 +25,7 @@ JOIN (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2021-07-01' AND
+    date = '2022-07-01' AND
     type = 'image')
 USING
   (client, url)
@@ -35,7 +35,7 @@ JOIN (
     app AS cms,
     COUNT(DISTINCT url) AS pages
   FROM
-    `httparchive.technologies.2021_07_01_*`
+    `httparchive.technologies.2022_07_01_*`
   WHERE
     category = 'CMS'
   GROUP BY

@@ -1,6 +1,9 @@
-# 2021 CMS queries
+# 2022 CMS queries
 
-## Resources
+- [Draft doc](https://docs.google.com/document/d/1vaA7fumol1iWDvjYvUnVRpykOABLppJmhYNUnD7DDvY/edit?usp=sharing)
+- [Results sheet](https://docs.google.com/spreadsheets/d/1HvTcCEw9LeMNX-fI_yOy0HemKFYKaQAHBxtB0etakqY/edit#gid=2077755325)
+
+## 2021 (Previous Year) Resources
 
 - [Draft doc](https://docs.google.com/document/d/1107H58WlpqPOrIsRZMCK7q8h-f8rmNfLPr3BU6qGUqc/edit?usp=sharing)
 - [Results sheet](https://docs.google.com/spreadsheets/d/1gAJh4VcSEU6-6aQxBiTFl-7cbyHukfdhg-Iaq9y5pnc/edit?usp=sharing)

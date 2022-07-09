@@ -44,7 +44,7 @@ FROM (
   FROM
     `chrome-ux-report.materialized.country_summary`
   WHERE
-    yyyymm = 202107 AND
+    yyyymm = 202207 AND
     device IN ('desktop', 'phone'))
 JOIN (
   SELECT DISTINCT
@@ -52,7 +52,7 @@ JOIN (
     url,
     app AS cms
   FROM
-    `httparchive.technologies.2021_07_01_*`
+    `httparchive.technologies.2022_07_01_*`
   WHERE
     category = 'CMS')
 USING
