@@ -12,13 +12,13 @@ FROM (
     REGEXP_EXTRACT(url, r'/(themes|plugins|wp-includes)/') AS path,
     COUNT(0) AS freq
   FROM
-    (SELECT _TABLE_SUFFIX, url AS page FROM `httparchive.technologies.2021_07_01_*` WHERE app = 'WordPress')
+    (SELECT _TABLE_SUFFIX, url AS page FROM `httparchive.technologies.2022_07_01_*` WHERE app = 'WordPress')
   JOIN
-    (SELECT _TABLE_SUFFIX, pageid, url AS page FROM `httparchive.summary_pages.2021_07_01_*`)
+    (SELECT _TABLE_SUFFIX, pageid, url AS page FROM `httparchive.summary_pages.2022_07_01_*`)
   USING
     (_TABLE_SUFFIX, page)
   JOIN
-    (SELECT _TABLE_SUFFIX, pageid, url FROM `httparchive.summary_requests.2021_07_01_*`)
+    (SELECT _TABLE_SUFFIX, pageid, url FROM `httparchive.summary_requests.2022_07_01_*`)
   USING
     (_TABLE_SUFFIX, pageid)
   GROUP BY
