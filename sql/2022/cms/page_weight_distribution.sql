@@ -12,7 +12,7 @@ FROM (
     url,
     app AS cms
   FROM
-    `httparchive.technologies.2021_07_01_*`
+    `httparchive.technologies.2022_07_01_*`
   WHERE
     category = 'CMS')
 JOIN (
@@ -21,7 +21,7 @@ JOIN (
     url,
     bytesTotal / 1024 AS total_kb
   FROM
-    `httparchive.summary_pages.2021_07_01_*`)
+    `httparchive.summary_pages.2022_07_01_*`)
 USING
   (client, url),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
