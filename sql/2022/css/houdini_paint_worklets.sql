@@ -26,10 +26,22 @@ try {
 }
 ''';
 
+WITH totals AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(0) AS total_pages
+  FROM
+    `httparchive.summary_pages.2022_07_01_*`
+  GROUP BY
+    client
+)
+
 SELECT
   client,
   worklet,
   COUNT(DISTINCT url) AS pages,
+  ANY_VALUE(total_pages) AS total_pages,
+  COUNT(DISTINCT url) / ANY_VALUE(total_pages) AS pct_pages,
   SUM(freq) AS freq,
   SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
   SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
@@ -44,6 +56,10 @@ FROM (
     UNNEST(getPaintWorklets(css)) AS paint
   WHERE
     date = '2022-07-01')
+JOIN
+  totals
+USING
+  (client)
 GROUP BY
   client,
   worklet

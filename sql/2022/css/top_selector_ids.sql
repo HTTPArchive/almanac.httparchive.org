@@ -57,9 +57,21 @@ try {
 }
 ''';
 
+WITH totals AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(0) AS total_pages
+  FROM
+    `httparchive.summary_pages.2022_07_01_*`
+  GROUP BY
+    client
+)
+
 SELECT
   client,
   pages,
+  total_pages,
+  pct_pages,
   id.value AS id,
   id.count AS freq,
   id.count / pages AS pct
@@ -67,6 +79,8 @@ FROM (
   SELECT
     client,
     COUNT(DISTINCT page) AS pages,
+    ANY_VALUE(total_pages) AS total_pages,
+    COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
     APPROX_TOP_COUNT(id, 100) AS ids
   FROM (
       SELECT DISTINCT
@@ -81,6 +95,10 @@ FROM (
         date = '2022-07-01' AND
         # Limit the size of the CSS to avoid OOM crashes.
         LENGTH(css) < 0.1 * 1024 * 1024)
+  JOIN
+    totals
+  USING
+    (client)
   GROUP BY
     client),
   UNNEST(ids) AS id

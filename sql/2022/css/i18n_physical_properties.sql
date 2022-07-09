@@ -80,6 +80,16 @@ try {
 }
 ''';
 
+WITH totals AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(0) AS total_pages
+  FROM
+    `httparchive.summary_pages.2022_07_01_*`
+  GROUP BY
+    client
+)
+
 SELECT
   *
 FROM (
@@ -87,6 +97,8 @@ FROM (
     client,
     property,
     COUNT(DISTINCT page) AS pages,
+    ANY_VALUE(total_pages) AS total_pages,
+    COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
     SUM(freq) AS freq,
     SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
     SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct
@@ -103,6 +115,10 @@ FROM (
       date = '2022-07-01' AND
       # Limit the size of the CSS to avoid OOM crashes.
       LENGTH(css) < 0.1 * 1024 * 1024)
+  JOIN
+    totals
+  USING
+    (client)
   GROUP BY
     client,
     property)

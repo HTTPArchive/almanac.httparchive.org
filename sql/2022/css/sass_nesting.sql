@@ -25,6 +25,8 @@ SELECT
   client,
   nested,
   COUNT(DISTINCT IF(freq > 0, page, NULL)) AS pages,
+  total_sass,
+  COUNT(DISTINCT IF(freq > 0, page, NULL)) / total_sass AS pct_pages,
   SUM(freq) AS freq,
   SUM(SUM(freq)) OVER (PARTITION BY client) / 2 AS total,
   SUM(freq) / (SUM(SUM(freq)) OVER (PARTITION BY client) / 2) AS pct
@@ -41,8 +43,19 @@ FROM (
     client,
     page,
     nested)
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNTIF(SAFE_CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._sass'), '$.scss.size') AS INT64) > 0) AS total_sass
+  FROM
+    `httparchive.pages.2022_07_01_*`
+  GROUP BY
+    client)
+USING
+  (client)
 GROUP BY
   client,
-  nested
+  nested,
+  total_sass
 ORDER BY
   pct DESC
