@@ -17,8 +17,7 @@ FROM
       CASE
         WHEN LOWER(protocol) = 'quic' OR LOWER(protocol) LIKE 'h3%' THEN 'HTTP/2+'
         WHEN LOWER(protocol) = 'http/2' OR LOWER(protocol) = 'http/3' THEN 'HTTP/2+'
-        WHEN protocol IS NULL THEN 'Unknown'
-        ELSE UPPER(protocol)
+        ELSE 'non-HTTP/2'
       END AS http_version_category,
       COUNT(0) AS num_reqs,
       SUM(COUNT(0)) OVER (PARTITION BY client, page) AS total_reqs,
