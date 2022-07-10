@@ -34,8 +34,8 @@ FROM
     ORDER BY
       client ASC,
       num_reqs
-   ),
-  UNNEST(GENERATE_ARRAY(1,100)) AS percentile
+  ),
+  UNNEST(GENERATE_ARRAY(1, 100)) AS percentile
 GROUP BY
   client,
   http_version_category,
