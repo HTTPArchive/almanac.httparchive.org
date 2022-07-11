@@ -13,7 +13,7 @@
       <link rel="preload" href="/static/fonts/Lato-Black.woff2" as="font" type="font/woff2" crossorigin>
       <link rel="preload" href="/static/fonts/Lato-Bold.woff2" as="font" type="font/woff2" crossorigin>
 
-      <script async nonce="{{ csp_nonce() }}">
+      <script nonce="{{ csp_nonce() }}">
         window.dataLayer = window.dataLayer || [];
         function gtag() {
             dataLayer.push(arguments);
