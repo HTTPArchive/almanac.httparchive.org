@@ -27,8 +27,8 @@ JOIN (
     _TABLE_SUFFIX)
 USING
   (client),
-  # Color fonts have any of sbix, cbdt, svg or colr tables.
-  UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT(payload, '$._font_details.table_sizes'), '(?i)(sbix|CBDT|SVG|COLR)')) AS format
+  # Color fonts have any of sbix, cbdt, svg, colrv0 or colrv1 tables.
+  UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT(payload, '$._font_details.color.formats'), '(?i)(sbix|CBDT|SVG|COLRv0|COLRv1)')) AS format
 GROUP BY
   client,
   total_page,
