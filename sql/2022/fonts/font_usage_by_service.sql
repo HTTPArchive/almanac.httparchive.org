@@ -1,6 +1,8 @@
 WITH
 counts AS (
   SELECT
+    IF(ENDS_WITH(_TABLE_SUFFIX, 'desktop'), 'desktop', 'mobile') AS client,
+    REGEXP_REPLACE(_TABLE_SUFFIX, r'(\d+)_(\d+)_(\d+).*', r'\1-\2-\3') AS date,
     pageid,
     LOGICAL_OR(REGEXP_CONTAINS(url, r'(fonts\.(gstatic|googleapis)\.com)|(themes.googleusercontent.com/static/fonts)|(ssl.gstatic.com/fonts/)')) AS google_fonts,
     LOGICAL_OR(REGEXP_CONTAINS(url, r'(use|fonts)\.typekit\.(net|com)')) AS adobe_fonts,
@@ -47,12 +49,23 @@ counts AS (
         REGEXP_CONTAINS(url, r'kernest\.com') IS FALSE AND
         REGEXP_CONTAINS(url, r'typefront\.com') IS FALSE)) AS self_hosted
   FROM
-    `httparchive.summary_requests.2022_06_01_*`
+    `httparchive.summary_requests.*`
+  WHERE
+    (
+      _TABLE_SUFFIX LIKE '2019_07_01%' OR
+      _TABLE_SUFFIX LIKE '2020_08_01%' OR
+      _TABLE_SUFFIX LIKE '2021_07_01%' OR
+      _TABLE_SUFFIX LIKE '2022_06_01%'
+    )
   GROUP BY
+    date,
+    client,
     pageid
 )
 
 SELECT
+  date,
+  client,
   COUNT(DISTINCT pageid) AS pages,
   COUNTIF(google_fonts OR
     adobe_fonts OR
@@ -155,3 +168,9 @@ SELECT
   COUNTIF(typefront) AS typefront
 FROM
   counts
+GROUP BY
+  date,
+  client
+ORDER BY
+  date DESC,
+  client
