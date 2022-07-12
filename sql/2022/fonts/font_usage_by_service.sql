@@ -1,4 +1,22 @@
-WITH
+WITH totals AS (
+  SELECT
+    IF(ENDS_WITH(_TABLE_SUFFIX, 'desktop'), 'desktop', 'mobile') AS client,
+    REGEXP_REPLACE(_TABLE_SUFFIX, r'(\d+)_(\d+)_(\d+).*', r'\1-\2-\3') AS date,
+    COUNT(0) AS total
+  FROM
+    `httparchive.summary_pages.*`
+  WHERE
+    (
+      _TABLE_SUFFIX LIKE '2019_07_01%' OR
+      _TABLE_SUFFIX LIKE '2020_08_01%' OR
+      _TABLE_SUFFIX LIKE '2021_07_01%' OR
+      _TABLE_SUFFIX LIKE '2022_06_01%'
+    )
+  GROUP BY
+    client,
+    date
+),
+
 counts AS (
   SELECT
     IF(ENDS_WITH(_TABLE_SUFFIX, 'desktop'), 'desktop', 'mobile') AS client,
@@ -66,7 +84,7 @@ counts AS (
 SELECT
   date,
   client,
-  COUNT(DISTINCT pageid) AS pages,
+  total,
   COUNTIF(google_fonts OR
     adobe_fonts OR
     edge_web_fonts OR
@@ -86,7 +104,7 @@ SELECT
     typonine OR
     kernest OR
     typefront OR
-    self_hosted) AS pages_using_webfonts,
+    self_hosted) / total AS pages_using_webfonts,
   COUNTIF(google_fonts OR
     adobe_fonts OR
     edge_web_fonts OR
@@ -105,7 +123,7 @@ SELECT
     just_another_foundry OR
     typonine OR
     kernest OR
-    typefront) AS pages_using_webfont_services,
+    typefront) / total AS pages_using_webfont_services,
   COUNTIF((google_fonts OR
       adobe_fonts OR
       edge_web_fonts OR
@@ -125,8 +143,8 @@ SELECT
       typonine OR
       kernest OR
       typefront) AND
-    NOT self_hosted) AS pages_using_webfont_services_exclusive,
-  COUNTIF(self_hosted) AS self_hosted,
+    NOT self_hosted) / total AS pages_using_webfont_services_exclusive,
+  COUNTIF(self_hosted) / total AS self_hosted,
   COUNTIF(NOT(google_fonts OR
       adobe_fonts OR
       edge_web_fonts OR
@@ -146,31 +164,35 @@ SELECT
       typonine OR
       kernest OR
       typefront) AND
-    self_hosted) AS self_hosted_exclusive,
-  COUNTIF(google_fonts) AS google_fonts,
-  COUNTIF(adobe_fonts) AS adobe_fonts,
-  COUNTIF(edge_web_fonts) AS edge_web_fonts,
-  COUNTIF(fonts_com) AS fonts_com,
-  COUNTIF(fontdeck) AS fontdeck,
-  COUNTIF(webtype) AS webtype,
-  COUNTIF(type_network) AS type_network,
-  COUNTIF(cloud_typography) AS cloud_typography,
-  COUNTIF(webink) AS webink,
-  COUNTIF(typotheque) AS typotheque,
-  COUNTIF(fontstand) AS fontstand,
-  COUNTIF(type_square) AS type_square,
-  COUNTIF(font_plus) AS font_plus,
-  COUNTIF(fontawesome) AS fontawesome,
-  COUNTIF(fontslive) AS fontslive,
-  COUNTIF(just_another_foundry) AS just_another_foundry,
-  COUNTIF(typonine) AS typonine,
-  COUNTIF(kernest) AS kernest,
-  COUNTIF(typefront) AS typefront
+    self_hosted) / total AS self_hosted_exclusive,
+  COUNTIF(google_fonts) / total AS google_fonts,
+  COUNTIF(adobe_fonts) / total AS adobe_fonts,
+  COUNTIF(edge_web_fonts) / total AS edge_web_fonts,
+  COUNTIF(fonts_com) / total AS fonts_com,
+  COUNTIF(fontdeck) / total AS fontdeck,
+  COUNTIF(webtype) / total AS webtype,
+  COUNTIF(type_network) / total AS type_network,
+  COUNTIF(cloud_typography) / total AS cloud_typography,
+  COUNTIF(webink) / total AS webink,
+  COUNTIF(typotheque) / total AS typotheque,
+  COUNTIF(fontstand) / total AS fontstand,
+  COUNTIF(type_square) / total AS type_square,
+  COUNTIF(font_plus) / total AS font_plus,
+  COUNTIF(fontawesome) / total AS fontawesome,
+  COUNTIF(fontslive) / total AS fontslive,
+  COUNTIF(just_another_foundry) / total AS just_another_foundry,
+  COUNTIF(typonine) / total AS typonine,
+  COUNTIF(kernest) / total AS kernest,
+  COUNTIF(typefront) / total AS typefront
 FROM
   counts
+JOIN
+  totals
+USING (date, client)
 GROUP BY
   date,
-  client
+  client,
+  total
 ORDER BY
   date DESC,
   client
