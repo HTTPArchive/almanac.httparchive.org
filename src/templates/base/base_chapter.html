@@ -149,6 +149,47 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
   {% endif %}
 {% endmacro %}
 
+{% macro render_publish_dates() %}
+<div class="article-dates">
+  <div>
+  {{ self.date_published() }}<time id="published-date" datetime="{{ date_published }}">{{ date_published[0:4] }}/{{ date_published[5:7] }}/{{ date_published[8:10] }}</time>
+  </div>
+  {% if date_published != date_modified %}
+  <div>
+    {{ self.date_updated() }}<time id="modified-date" datetime="{{ date_modified }}">{{ date_modified[0:4] }}/{{ date_modified[5:7] }}/{{ date_modified[8:10] }}</time>
+  </div>
+  {% endif %}
+  <script nonce="{{ csp_nonce() }}">
+    // Display chapter dates immeadiately to avoid annoying shift as much as possible
+    function formatDates(selector) {
+      if (window.Intl && window.Intl.DateTimeFormat) {
+        var publishedDateElement=document.querySelector(selector);
+        var publishedDate = new Date(publishedDateElement.getAttribute("datetime"));
+
+        // Set up the date format - initially using the users default locale
+        // This allows different locales in same language to be respected
+        // (e.g. en-GB or en-US).
+        var options = { dateStyle: "medium" };
+        var dateFormat = new Intl.DateTimeFormat([], options)
+        const usedOptions = dateFormat.resolvedOptions();
+        if (!usedOptions.locale.startsWith("{{ lang }}")) {
+          // Reader is looking at a page in a language that is not their default locale
+          // Set date format to page's language locale to avoid incorrect date translation.
+          dateFormat = new Intl.DateTimeFormat("{{ lang }}", options)
+        }
+        publishedDateElement.innerHTML = dateFormat.format(publishedDate);
+
+      } else {
+        console.log("Could not format date");
+      }
+    }
+
+    formatDates("#published-date");
+    formatDates("#modified-date");
+  </script>
+</div>
+{% endmacro %}
+
 {% macro render_webmentions() %}
   <h2 id="reactions">
     <a href="#reactions" class="anchor-link">{{ self.reactions() }}</a>
@@ -362,7 +403,12 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
               <source type="image/jpeg" srcset="{{ chapter_hero_dir }}hero_sm.jpg 1x, {{ chapter_hero_dir }}hero_lg.jpg 2x" />
               <img src="{{ chapter_hero_dir }}hero_lg.jpg" class="content-banner" alt="" width="866" height="433" fetchpriority="high" />
             </picture>
-            {{ render_byline() }}
+            <div class="chapter-info">
+              <div>
+                {{ render_byline() }}
+              </div>
+              {{ render_publish_dates() }}
+            </div>
             {{ self.main_content() }}
         </article>
         <div class="chapter-links">
