@@ -209,10 +209,15 @@
 .chapter-info {
   display: flex;
   justify-content: space-between;
+  column-gap: 20px;
 }
 
 .article-dates {
   font-style: italic;
+}
+
+.article-dates time {
+  white-space: nowrap;
 }
 
 .btn.chapter-cta > svg {
