@@ -18,7 +18,7 @@ FROM (
       url AS page,
       JSON_VALUE(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/change-password".found') AS has_change_password,
       JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/change-password".redirected') AS redirected,
-      JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/change-password".status') AS status
+      CAST(JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/change-password".status') AS INT64) AS status
     FROM
       `httparchive.pages.2022_06_01_*`
 )
