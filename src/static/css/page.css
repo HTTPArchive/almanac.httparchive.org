@@ -172,6 +172,10 @@
   margin-bottom: 2rem;
 }
 
+.title {
+  margin: 10px 0;
+}
+
 .content ul li {
   list-style: none;
 }
@@ -206,14 +210,12 @@
   font-weight: normal;
 }
 
-.chapter-info {
+.article-dates {
   display: flex;
   justify-content: space-between;
   column-gap: 20px;
-}
-
-.article-dates {
   font-style: italic;
+  margin-bottom: 10px;
 }
 
 .article-dates time {
@@ -775,9 +777,7 @@ figure .fig-desktop {
   table {
     font-size: 0.8em;
   }
-}
 
-@media (max-width: 56.25em) {
   figure {
     margin: 0 15px;
     margin: 0 0.9375rem;
@@ -842,14 +842,15 @@ figure .fig-desktop {
   .content ul li {
     padding: 5px 0;
   }
+}
 
-  .chapter-info {
+/* Mobile View */
+@media (max-width: 37.5em) {
+
+  .article-dates {
     display: block;
   }
 
-  .article-dates {
-    margin-top: 20px;
-  }
 }
 
 /* Code highlighting */
