@@ -6,6 +6,7 @@
         "bootup-time": "off",
         "canonical": "off",
         "dom-size": "off",
+        "errors-in-console": "off",
         "first-contentful-paint": "off",
         "first-cpu-idle": "off",
         "first-meaningful-paint": "off",
