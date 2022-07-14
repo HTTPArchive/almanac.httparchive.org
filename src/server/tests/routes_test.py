@@ -195,7 +195,8 @@ def test_render_pdf_redirect(client):
         client,
         "/static/pdfs/web_almanac_2019_en_cover_A5.pdf",
         301,
-        "https://github.com/HTTPArchive/almanac.httparchive.org/raw/main/src/static/pdfs/web_almanac_2019_en_cover_A5.pdf",
+        "https://github.com/HTTPArchive/almanac.httparchive.org/raw/main/"
+        + "src/static/pdfs/web_almanac_2019_en_cover_A5.pdf",
     )
 
 
@@ -206,6 +207,7 @@ def test_render_old_http_image_dir_redirect(client):
         301,
         "/static/images/2020/http/random.png",
     )
+
 
 def test_render_old_hero_image_dir_redirect(client):
     assert_route(
