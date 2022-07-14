@@ -125,7 +125,7 @@ featured_stat_label_3: FLoCコホートからのオプトアウトを行う人�
 フィンガープリントの検出は複雑です。メソッドコールとイベントリスナーの組み合わせにより効果を発揮し、追跡以外の目的にも使用されることがあります。そこで、これらの個々のメソッドに焦点を当てる代わりに、ウェブサイトがフィンガープリントを簡単に実装できるようにする5つの人気のあるライブラリに焦点を当てます。
 
 {{ figure_markup(
-  image="number_of_websites_using_each_fingerprinting.png",
+  image="nb_websites_using_each_fingerprinting.png",
   caption="各フィンガープリント・ライブラリーを使用しているウェブサイト。",
   description="各サードパーティフィンガープリントライブラリを含むウェブサイトの割合を示すグラフ。FingerprintJSはデスクトップサイトの0.74%、モバイルサイトの0.64%、 ClientJSはそれぞれ0.04%、0.04%、 MaxMindでは0.03%、0.02%、 TruValidateで0.03%、0.02%、 ThreatMetrixでは0.00%と0.00%で使用されています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1537414997&format=interactive",
@@ -190,7 +190,7 @@ CNAMEベースのトラッキングは、ユーザーがサードパーティー
 広告再ターゲティングとは、ユーザーが見たが購入していない商品を記録し、その商品に関する広告を別のWebサイトでフォローアップすることを指します。ユーザーが訪問している間、積極的なマーケティング戦略を選ぶのではなく、ウェブサイトは継続的にブランドと製品を思い出させることで、ユーザーが製品を購入するように誘導することを選択します。
 
 {{ figure_markup(
-  image="number_of_websites_using_each_retargeting.png",
+  image="nb_websites_using_each_retargeting.png",
   caption="再ターゲティングサービスを利用しているページの割合。",
   description="再ターゲティングに利用されている代表的なサービスと、その利用サイト数を棒グラフで示したものです。Google Remarketing Tagはデスクトップ26.92%、モバイル26.64%、Criteoがそれぞれ1.25%、1.21%、AdRollでは0.48%、0.38%、SharpSpring Adsで0.12%、0.09%、Albacrossが0.04%と0.03%、SteelHouseが0.03%と0.02%、Smarter Clickが0.02%と0.01%、 Blueが0.02%と0.01%、Cross Pixelが0.02%と0.01%、そして最後にPicreelが0.01%と0.01% となった。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=882622568&format=interactive",
@@ -215,7 +215,7 @@ Webサイトが機密性の高いリソースへのアクセスを要求する�
 センサーは、ウェブサイトをよりインタラクティブへするのに便利ですが、<a hreflang="en" href="https://www.esat.kuleuven.be/cosic/publications/article-3078.pdf">指紋認証</a>のために悪用される可能性もあります。JavaScriptのイベントリスナーの使用状況から、モバイル、デスクトップクライアントで、デバイスの向きがもっともアクセスされていることがわかります。なお、Webサイト上でイベントリスナーの存在を検索したが、実際にコードが実行されたかどうかはわからない。したがって、本節のデバイスセンサーイベントへのアクセスは、上限値です。
 
 {{ figure_markup(
-  image="number_of_websites_with_device_sensor_events.png",
+  image="nb_websites_with_device_sensor_events.png",
   caption="もっとも使用されている5つのセンサーイベント。",
   description="センサーイベントへのアクセス頻度が高いものを、JavaScriptのリスナー使用率から棒グラフで表したものです。`deviceOrientation` はデスクトップサイトの3.32% とモバイルサイトの3.23%、`deviceReady` は1.12%と1.23%、`devicemotion`は0.65%と0.66%、`deviceChange`は0.03%と0.02%、最後に `deviceproximity` は0.03%と0.02% で確認されました。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=40988621&format=interactive",
@@ -244,7 +244,7 @@ Webサイトが機密性の高いリソースへのアクセスを要求する�
 ジオロケーションサービスは、GPSやユーザーのその他の位置情報（[IPアドレス](https://developer.mozilla.org/ja/docs/Glossary/IP_Address)など）を提供し、トラッカーはとくにユーザーにより関連性の高いコンテンツを提供するために利用できます。そこで、[Wappalyzer](./methodology#wappalyzer)で検出したライブラリをもとに、Webサイトにおける「ジオロケーションサービス」技術の利用を分析します。
 
 {{ figure_markup(
-  image="number_of_websites_using_each_geolocation.png",
+  image="nb_websites_using_each_geolocation.png",
   caption="ジオロケーションサービスを利用しているWebサイトの割合。",
   description="各ジオロケーションサービスライブラリを利用しているWebサイトの割合を示したグラフです。ipifyはデスクトップサイトの0.09%、モバイルサイトの0.07%、MaxMindは0.03%、0.02%、db-ipが0.01%、0.01%、そしてipstackは0.01%、0.01%が利用していることがわかりました。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2115506749&format=interactive",
@@ -256,7 +256,7 @@ Webサイトが機密性の高いリソースへのアクセスを要求する�
 もっとも人気のあるサービスである<a hreflang="en" href="https://www.ipify.org/">ipify</a>は、デスクトップWebサイトの0.09%とモバイルWebサイトの0.07% で使用されていることがわかります。つまり、ジオロケーションサービスを利用しているウェブサイトは少ないようです。
 
 {{ figure_markup(
-  image="number_of_websites_with_geolocation_blink_usage.png",
+  image="nb_websites_with_geolocation_blink_usage.png",
   caption="ジオロケーション機能を利用しているWebサイトの割合。",
   description="各ジオロケーション機能を利用しているWebサイトの割合を示す棒グラフです。`GeolocationGetCurrentPosition` はデスクトップサイトの0.59%とモバイルサイトの0.63% で、`GeolocationSecureOrigin` はそれぞれ0.59%と0.62% で、`GeolocationInsecureOrigin`は0.01%と0.02%, `GeolocationWatchPosition`が0.02%と0.02%, `GeolocationSecureOriginIframe`が0.02%と0.02%, `GeolocationDisabledByFeaturePolicy`が0.02%と0.01% そして最後に `GeolocationInsecureOriginIframe`は0.00%と0.01%となりました。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1513111756&format=interactive",
@@ -333,7 +333,7 @@ HTTPリクエストはオプションで `Referer` ヘッダーを含むこと�
 `Referer` の値は、洞察力を高めることができます。しかし、パスとクエリ文字列を含む完全なURLが `Referer` としてオリジン間で送信される場合、プライバシーを侵害する可能性があります。URLには、個人情報、時には個人を特定するような重要な情報が含まれていることがあります。このような情報は、送信元を越えて静かに流出することで、ユーザーのプライバシーを侵害し、セキュリティ上のリスクをもたらします。[`Referrer-Policy`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Referrer-Policy) HTTPヘッダーは、開発者が自分のサイトからのリクエストで利用できるリファラーデータを制限して、このリスクを軽減することを可能にします。
 
 {{ figure_markup(
-  image="number_of_websites_with_referrerpolicy.png",
+  image="nb_websites_with_referrerpolicy.png",
   caption="リファラーポリシーを指定しているWebサイトの割合。",
   description="リファラーポリシーを利用しているWebサイトの割合を、Webサイトがどのようにポリシーを指定しているかによって示した棒グラフ。参照元ポリシーはデスクトップ11.12%、モバイル10.38%、ドキュメント全体9.66%、8.68%、ドキュメント全体のヘッダー7.37%、6.49%、ドキュメント全体のメタ2.65%、2.51%、個別の要求は1.92%、2.10%、リンク関係0%と0%に設定されていることが分かりました。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2144839216&format=interactive",
@@ -371,7 +371,7 @@ HTTPリクエストはオプションで `Referer` ヘッダーを含むこと�
 サーバーは `Accept-CH` ヘッダーを指定することで、これらのClient Hintsをサポートすることを示すことができます。このヘッダーは、デバイス固有またはネットワーク固有のリソースを提供するために、サーバーがクライアントに要求する属性をリストアップしています。一般に、Client Hintsはサーバがコンテンツを効率的に提供するために必要な最小限の情報のみを取得する方法を提供します。
 
 {{ figure_markup(
-  image="number_of_websites_with_user_agent_client_hints.png",
+  image="nb_websites_with_user_agent_client_hints.png",
   caption="User-Agentクライアントヒントを使用しているページの割合。",
   description="ウェブサイトのランクに応じて、User-Agent Client Hintsを使用しているページの割合を示す棒グラフです。上位1,000サイトではデスクトップ3.67%、モバイル3.56%、上位1万サイトはそれぞれ1.35%、1.44%、上位10万サイトが0.40%、0.42%、上位100万サイトで0.14%、0.15%、最後にすべてのサイトで0.15%と0.20%となりました。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=2107002085&format=interactive",
@@ -391,7 +391,7 @@ HTTPリクエストはオプションで `Referer` ヘッダーを含むこと�
 ### 同意書管理プラットフォーム
 
 {{ figure_markup(
-  image="number_of_websites_with_cmp.png",
+  image="nb_websites_with_cmp.png",
   caption="同意管理プラットフォームを使用しているウェブサイトの割合。",
   description="同意管理にサードパーティライブラリを使用しているWebサイトの割合を示す棒グラフです。デスクトップサイトの7.10%、モバイルサイトの6.97%がCMPを使用しています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=246947280&format=interactive",
@@ -403,7 +403,7 @@ HTTPリクエストはオプションで `Referer` ヘッダーを含むこと�
 同意書管理プラットフォーム（CMP）は、ウェブサイトがユーザーのためにクッキーの同意バナーを提供するために組み込むことができるサードパーティライブラリです。約7%のWebサイトがCMPを利用していることが確認されています。
 
 {{ figure_markup(
-  image="number_of_websites_using_each_cmp.png",
+  image="nb_websites_using_each_cmp.png",
   caption="もっとも人気のある10の同意管理プラットフォーム。",
   description="同意管理を提供するサードパーティライブラリのうち、もっとも人気のある10個を使用しているページの割合を示す棒グラフです。CookieYesはデスクトップサイトの1.65%、モバイルサイトの1.70%、Osanoはそれぞれ1.64%、1.59%、OneTrustが0.90%、0.73%、Cookiebotで0.74%、0.64%、AdRoll CMP Systemでは0.50%と0.36%、iubendaが0.34%と0.35%、Quantcast Choiceが0.37%と0.34%、Didomiが0.29%と0.24%、USercentricsが0.18%と0.19%、最後にHubSpot Cookie Policy Bannerが0.26%と0.17%となっています。
   ",
@@ -424,7 +424,7 @@ HTTPリクエストはオプションで `Referer` ヘッダーを含むこと�
 TCFは、欧州ではGDPRに準拠した仕組みとして意味づけられていますが、<a hreflang="en" href="https://iabeurope.eu/all-news/update-on-the-belgian-data-protection-authoritys-investigation-of-iab-europe/">ベルギーデータ保護局による最近の決定</a>では、この仕組みはまだ侵害されていると判断されています。カリフォルニア州でCCPAが施行されたとき、IAB Tech Lab USは同じコンセプトで<a hreflang="en" href="https://iabtechlab.com/standards/ccpa/">U.S. プライバシー</a> (USP) 技術仕様を策定しました。
 
 {{ figure_markup(
-  image="number_of_websites_with_iab.png",
+  image="nb_websites_with_iab.png",
   caption="IAB準拠のフレームワークを使用しているウェブサイトの割合。",
   description="IAB欧米それぞれのコンプライアンスフレームワークを使用しているWebサイトの割合を示す棒グラフです。IAB TCF v1はデスクトップサイトの0.35%、モバイルサイトの0.30%、IAB TCF v2はそれぞれ1.58%、1.49%、IAB TCF anyが1.67%、1.57%、IAB USPでは3.13%、3.19%、そして最後にIAB anyは3.92%と3.97%が使用されていることがわかります。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1697790298&format=interactive",
@@ -483,7 +483,7 @@ USPフレームワークでは、ウェブサイトとユーザーのプライ�
 <a hreflang="en" href="https://www.eff.org/issues/do-not-track">追跡禁止</a> (DNT) HTTPヘッダーは、ユーザーが追跡を希望しないことをウェブサイトへ伝えるために使用できます。以下に、DNTの現在値にアクセスしていると思われるサイトの数を、[`Navigator.doNotTrack`](https://developer.mozilla.org/ja/docs/Web/API/Navigator/doNotTrack) JavaScriptコールの存在に基づいて確認できます。
 
 {{ figure_markup(
-  image="number_of_websites_with_dnt_blink_usage.png",
+  image="nb_websites_with_dnt_blink_usage.png",
   caption="追跡禁止 (DNT)を使用しているWebサイトの割合。",
   description="`NavigatorDoNotTrack`機能を使用してDNTの価値にアクセスするウェブサイトの割合を示す棒グラフ。デスクトップサイトの17.37％、モバイルサイトの17.39％がアクセスしています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=1302428398&format=interactive",
@@ -525,7 +525,7 @@ FLoCは実験的なものであったため、広く展開されることはな�
 個々のユーザーやウェブサイトは、コホート計算の対象から外れることも可能です。
 
 {{ figure_markup(
-  image="number_of_websites_with_floc_opt_out.png",
+  image="nb_websites_with_floc_opt_out.png",
   caption="FLoCコホートでオプトアウトするウェブサイトの割合。",
   description="ウェブサイトのランクに応じて、FLoCコホートをオプトアウトするページの割合を示す棒グラフ。上位1,000サイトのうち、デスクトップサイト3.29%、モバイルサイト4.10%、上位1万サイトはそれぞれ1.10%、1.26%、上位10万サイトでは0.64%、0.67%、上位100万サイトで0.69%、0.69%、全体では0.95%と0.86%となっているのが、オプトアウトの特徴です。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRfOwcNkLp-mYBkmhDV5AFxl8p0ls9oxFnmmo0WUcAJxjxQqmHjquRZCWj_lNZRyFtX3RdH5T92IESu/pubchart?oid=129384991&format=interactive",
