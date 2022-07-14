@@ -167,6 +167,8 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
     function formatDates(selector) {
       if (window.Intl && window.Intl.DateTimeFormat) {
         var publishedDateElement=document.querySelector(selector);
+        if (!publishedDateElement) return;
+
         var publishedDate = new Date(publishedDateElement.getAttribute("datetime"));
 
         // Set up the date format - initially using the users default locale
