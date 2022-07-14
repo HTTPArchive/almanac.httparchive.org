@@ -1,4 +1,0 @@
-fileignoreconfig:
-- filename: sql/2022/sustainability/cdn_adoption.sql
-  checksum: 9cabd6530b074fc88f703e67a9dff96b9c3221022ce4a29bfc2310b019db9e71
-version: "1.0"
