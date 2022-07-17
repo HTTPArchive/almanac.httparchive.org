@@ -430,7 +430,7 @@ CDNとブラウザの両方において、HTTPヘッダーは開発者がリソ�
         <th>サードパーティ</th>
         <th>全体</th>
       </tr>
-    <thead>
+    </thead>
     <tbody>
       <tr>
         <td>デスクトップ</td>
