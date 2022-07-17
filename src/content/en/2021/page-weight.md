@@ -152,7 +152,7 @@ The request distribution shows that the difference between desktop and mobile is
 
 The difference between current results for this year and last actually shows a tiny decrease in the average number of GET requests across most of the percentiles. Let's hope that trend continues downward.
 
-Something else worth noting: the median request on desktop at this time is the same [as last year](../2020/page-weight#page-requests) (74), yet the page weight has ticked up (141 kb).
+Something else worth noting: the median request on desktop at this time is the same [as last year](../2020/page-weight#requests) (74), yet the page weight has ticked up (141 kb).
 
 {{ figure_markup(
   image="requests-content-type.png",

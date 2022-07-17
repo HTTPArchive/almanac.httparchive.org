@@ -11,11 +11,12 @@ templater = jinja
 ## Comma separated list of rules to check, or None for all
 rules = None
 ## Comma separated list of rules to exclude, or None
-exclude_rules = L011,L014,L016,L020,L026,L027,L028,L029,L030,L031,L032,L034,L035,L036,L037,L042,L043,L051,L060
+exclude_rules = L011,L014,L016,L020,L022,L026,L027,L028,L029,L030,L031,L032,L034,L035,L036,L037,L042,L043,L051,L060
 # L011 - We don't always alias tables with AS ("FROM table1 AS tb1" instead of "FROM table1 tb1"). Do for columns but not for tables.
 # L014 - Unquoted identifiers (e.g. column names) will be mixed case so don't enforce case
 # L016 - We allow longer lines as some of our queries are complex. Maybe should limit in future?
 # L020 - Asks for unique table aliases meaning it complains if selecting from two 2021_07_01 tables as implicit alias is table name (not fully qualified) so same.
+# L022 - CTEs may be chained and do not require a blank line separator, only the last one.
 # L026 - BigQuery uses STRUCTS which can look like incorrect table references
 # L027 - Asks for qualified columns for ambiguous ones, but we not qualify our columns, and they are not really ambiguous (or BigQuery would complain)
 # L028 - Insists on references in column names even if not ambiguous. Bit OTT.
@@ -124,6 +125,13 @@ additional_allowed_characters = "-."
 [sqlfluff:rules:L062]
 # Comma separated list of blocked words that should not be used
 blocked_words = None
+# Regex of blocked SQL that should not be used.
+# Can be overridden with `-- noqa: L062` for those chapters using secondary pages
+# Block 2022_05_12 (contains secondary pages)
+# Block 2022_06_09 (contains secondary pages)
+# Block 2022_07_01 (probably forgot to update month to June for 2022)
+# Block 2021_06_01 (probably forgot to update month to July for 2021)
+blocked_regex = (2022_?05_?12|2022_?06_?09|2022_?07_?01|2021_?06_?01)
 
 [sqlfluff:rules:L063]
 # Data Types
