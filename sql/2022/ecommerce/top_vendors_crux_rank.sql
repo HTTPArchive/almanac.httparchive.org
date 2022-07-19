@@ -19,12 +19,12 @@ FROM (
   FROM
     `httparchive.technologies.2022_06_01_*`
   WHERE
-     category = 'Ecommerce' AND
-      (
-        app != 'Cart Functionality' AND
-        app != 'Google Analytics Enhanced eCommerce'
-      )
+    category = 'Ecommerce' AND
+    (
+      app != 'Cart Functionality' AND
+      app != 'Google Analytics Enhanced eCommerce'
     )
+  )
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,

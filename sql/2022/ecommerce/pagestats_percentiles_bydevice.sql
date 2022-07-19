@@ -22,7 +22,7 @@ FROM (
       (
         app != 'Cart Functionality' AND
         app != 'Google Analytics Enhanced eCommerce'
-      ) 
+      )
     )
   USING
     (client, page)

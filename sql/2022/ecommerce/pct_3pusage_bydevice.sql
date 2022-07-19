@@ -15,7 +15,7 @@ FROM (
   JOIN (
     SELECT DISTINCT _TABLE_SUFFIX AS client, url AS page
     FROM `httparchive.technologies.2022_06_01_*`
-    WHERE 
+    WHERE
       category = 'Ecommerce' AND
       (
         app != 'Cart Functionality' AND
