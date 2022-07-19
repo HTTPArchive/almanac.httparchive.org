@@ -20,7 +20,7 @@ FROM
     FROM
       `httparchive.almanac.requests`
     WHERE
-      (date = '2020-08-01' OR date = '2022-06-01') AND
+      (date = '2020-08-01' OR date = '2021-07-01' OR date = '2022-06-01') AND
       resp_server IS NOT NULL AND
       resp_server != ''
     GROUP BY
@@ -43,7 +43,7 @@ UNION ALL
   FROM
     `httparchive.almanac.requests`
   WHERE
-    (date = '2020-08-01' OR date = '2022-06-01') AND
+    (date = '2020-08-01' OR date = '2021-07-01' OR date = '2022-06-01') AND
     resp_x_powered_by IS NOT NULL AND
     resp_x_powered_by != ''
   GROUP BY
