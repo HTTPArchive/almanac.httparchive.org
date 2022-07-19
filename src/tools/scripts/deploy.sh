@@ -152,6 +152,15 @@ zip -q -r deployed . --exclude @.gcloudignore static/images/*/*/* static/pdfs/*
 echo "Deploying to GCP"
 echo "Y" | gcloud app deploy --project webalmanac --stop-previous-version
 
+echo "Deploying ebooks to GCP Storage"
+# shellcheck disable=SC2010
+pdfs=$(cd static/pdfs;ls web_almanac_* | grep -v print | grep -v cover)
+for pdf in ${pdfs}
+do
+  echo "Uploading $pdf"
+  gsutil cp "static/pdfs/${pdf}" "gs://httparchive/almanac/ebooks/${pdf}"
+done
+
 echo "Push production branch"
 git push
 git status
