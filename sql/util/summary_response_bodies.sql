@@ -21,8 +21,8 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2020-08-01')
+    date = '2022-06-01')
 JOIN
-  (SELECT _TABLE_SUFFIX AS client, * FROM `httparchive.response_bodies.2020_08_01_*`)
+  (SELECT _TABLE_SUFFIX AS client, * FROM `httparchive.response_bodies.2022_06_01_*`)
 USING
-  (client, page, url, requestId)
+  (client, page, url)

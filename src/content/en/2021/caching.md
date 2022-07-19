@@ -430,7 +430,7 @@ Developers are getting better at setting the cache duration more accurately to t
         <th>Third-party</th>
         <th>Overall</th>
       </tr>
-    <thead>
+    </thead>
     <tbody>
       <tr>
         <td>Desktop</td>

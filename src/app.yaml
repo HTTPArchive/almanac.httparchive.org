@@ -53,6 +53,11 @@ handlers:
     x-content-type-options: nosniff
     vary: Accept-Encoding
 
+# Allow python redirects for PDFs (since moved to GitHub)
+- url: /static/pdfs/.*$
+  script: auto
+  secure: always
+
 # Handler for everything else in static directory
 - url: /static
   static_dir: static
