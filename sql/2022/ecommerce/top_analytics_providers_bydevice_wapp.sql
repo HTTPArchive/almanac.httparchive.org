@@ -1,5 +1,7 @@
 #standardSQL
 # 13_10b: Top analytics provides on eCommerce Sites by device
+# REMOVE GA Enhanced ??? not needed Cart Functionality
+
 SELECT
   _TABLE_SUFFIX AS client,
   app,

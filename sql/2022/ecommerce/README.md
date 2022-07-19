@@ -21,37 +21,37 @@
 
 ## eComm Platforms
 
-- [ ] Top platforms - top_vendors.sql
-- [ ] Top platforms growth - pct_ecommsites_bydevice_compare20202122.sql
-- [ ] Top platforms by 1M, 100k, 10k - top_vendors_crux_rank.sql
-- [ ] Top Enterprise targetted platforms - top_vendors.sql filtered
+- [X] Top platforms - top_vendors.sql
+- [X] Top platforms growth - pct_ecommsites_bydevice_compare20202122.sql
+- [X] Top platforms by 1M, 100k, 10k - top_vendors_crux_rank.sql
+- [X] Top Enterprise targetted platforms - top_vendors.sql filtered
 
 ## Growth trends - overall
-- [ ] eComm growth - ecomm_growth.sql
-- [ ] platform growth - ecomm_vendors_growth.sql
+- [X] eComm growth - ecomm_growth.sql
+- [X] platform growth - ecomm_vendors_growth.sql
 
 ## Server Stack
-- [ ] CDN Provider - top_cdn_bydevice_vendor_cdn.sql top_cdn_bydevice_vendor_wapp.sql
+- [X] CDN Provider - top_cdn_bydevice_vendor_cdn.sql top_cdn_bydevice_vendor_wapp.sql
 
 ## Frontend Tech
-- [ ] JS Frameworks - top_jslibs_by_device.sql
-- [ ] JS Libraries - top_jsframework_providers_by_device.sql
+- [X] JS Frameworks - wCart_review - top_jslibs_by_device.sql
+- [X] JS Libraries - wCart_review - top_jsframework_providers_by_device.sql
 
 ## User Experience
-- [ ] CWV - Platform - Passing grade 10k vs 100k vendor - core_web_vitals_passingmetrics_byvendor_bydevice.sql
-- [ ] CWV - Top x Platforms - CLS, FCP, LCP, FID, TTFB - core_web_vitals_distribution_byvendor_bydevice.sql
-- [ ] Lighthouse - Top x Platforms - 5 scores - median_lighthouse_score_ecommsites.sql
+- [X] CWV - Platform - Passing grade 10k vs 100k vendor - core_web_vitals_passingmetrics_byvendor_bydevice.sql
+- [X] CWV - Top x Platforms - CLS, FCP, LCP, FID, TTFB - core_web_vitals_distribution_byvendor_bydevice.sql
+- [X] Lighthouse - Top x Platforms - 5 scores - median_lighthouse_score_ecommsites.sql
 
 ## Page Anatomy
-- [ ] Page Reqs and Weight - pagestats_percentiles_bydevice.sql
-- [ ] Page Weight - HTML payload - pagestats_html_bydevice.sql
-- [ ] Page Reqs and Weight - images - pagestats_image_bydevice.sql
-- [ ] Page Weight - 3rd party domain reqs and weight - pct_3pusage_bydevice.sql
+- [X] Page Reqs and Weight - pagestats_percentiles_bydevice.sql
+- [X] Page Weight - HTML payload - pagestats_html_bydevice.sql
+- [X] Page Reqs and Weight - images - pagestats_image_bydevice.sql
+- [X] Page Weight - 3rd party domain reqs and weight - pct_3pusage_bydevice.sql
 
 ## Tools and Misc
-- [ ] Analytics usage - top_analytics_providers_bydevice_wapp.sql
-- [ ] Tag Manager usage - percent_of_ecommsites_using_each_tag_managers.sql
-- [ ] AMP usage - pct_ampusage_bydevice_vendor.sql
-- [ ] Consent Management usage - percent_of_ecommsites_using_cmp.sql
-- [ ] CSP usage - review latest security query
-- [ ] Web Push usage - webpushstats_ecommsites.sql
+- [X] Analytics usage - wGAEnhanced_review - top_analytics_providers_bydevice_wapp.sql
+- [X] Tag Manager usage - percent_of_ecommsites_using_each_tag_managers.sql
+- [X] AMP usage - pct_ampusage_bydevice_vendor.sql
+- [X] Consent Management usage - percent_of_ecommsites_using_cmp.sql
+- [X] CSP usage - review latest security query
+- [X] Web Push usage - webpushstats_ecommsites.sql
