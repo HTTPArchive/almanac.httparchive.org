@@ -195,8 +195,7 @@ def test_render_pdf_redirect(client):
         client,
         "/static/pdfs/web_almanac_2019_en_cover_A5.pdf",
         301,
-        "https://github.com/HTTPArchive/almanac.httparchive.org/raw/main/"
-        + "src/static/pdfs/web_almanac_2019_en_cover_A5.pdf",
+        "https://cdn.httparchive.org/almanac/ebooks/web_almanac_2019_en_cover_A5.pdf",
     )
 
 

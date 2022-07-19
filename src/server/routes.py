@@ -236,4 +236,4 @@ def redirect_old_hero_images(folder, image):
     '/static/pdfs/<pdf>'
 )
 def redirect_pdfs(pdf):
-    return redirect("https://github.com/HTTPArchive/almanac.httparchive.org/raw/main/src/static/pdfs/%s" % (pdf)), 301
+    return redirect("https://cdn.httparchive.org/almanac/ebooks/%s" % (pdf)), 301
