@@ -17,7 +17,7 @@ WITH imgs AS (
     isPixel,
     isDataURL
   FROM
-    `httparchive.pages.2021_07_01_*`,
+    `httparchive.pages.2022_06_01_*`,
     UNNEST(getPixelInfo(JSON_QUERY(JSON_VALUE(payload, '$._responsive_images'), '$.responsive-images')))
 ),
 
