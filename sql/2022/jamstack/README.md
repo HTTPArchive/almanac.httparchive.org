@@ -10,19 +10,29 @@
 -->
 
 1. Jamstack sites are fast
-[ ] Lighthouse Performance score
-[ ] Largest Contentful Paint (this is also referenced in item 2, I'm not sure which one it fits in)
+
+- [ ] Lighthouse Performance score]
+  * Have [distribution of Lighthouse performance scores](lighthouse_distribution.sql); median score is 0.31
+- [ ] Largest Contentful Paint
+  * Have [distribution of LCP times](distribution_lcp.sql); median is 6.6 seconds
 
 2. Jamstack sites are resilient (and pre-rendered)
-[ ] Rendered content sizes (reuse SEO chapter query https://github.com/HTTPArchive/custom-metrics/blob/main/dist/wpt_bodies.js)
-[ ] Largest Contentful Paint?
-[ ] How much the content changes post-load
+
+- [ ] Rendered content sizes (reuse SEO chapter query https://github.com/HTTPArchive/custom-metrics/blob/main/dist/wpt_bodies.js)
+- [ ] How much the content changes post-load, i.e. Cumulative Layout Shift
+  * Have [distribution of CLS scores](distribution_cls.sql); median is 0.059
 
 3. Jamstack sites are cached for a long time
-[ ] Age header
+
+- [ ] Age header
+  * Have [distribution of Age headers](distribution_age_headers.sql); median is 1 day
 
 4. The Jamstack category is growing
-[ ] Percentage of "new" sites in crawl that meet the defined criteria of "fast", "resilient" and "cached"
+
+- [ ] Percentage of "new" sites in crawl that meet the defined criteria of "fast", "resilient" and "cached"
+
+5. Candidate sites
+  * Have a [join between all URLs better than median on all 4 current queries](candidate_urls.sql); this matches 10k sites.
 
 ## Resources
 
