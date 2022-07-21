@@ -23,7 +23,7 @@ SELECT
 FROM
   `httparchive.pages.2022_07_01_*`
 WHERE
-  JSON_EXTRACT(payload, '$._pwa.manifests') != '[]' AND
+  JSON_EXTRACT(payload, '$._pwa.manifests') != '[]' AND JSON_EXTRACT(payload, '$._pwa.manifests') != '{}' AND
   JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'
 GROUP BY
   type,
@@ -40,7 +40,7 @@ SELECT
 FROM
   `httparchive.pages.2022_07_01_*`
 WHERE
-  JSON_EXTRACT(payload, '$._pwa.manifests') != '[]'
+  JSON_EXTRACT(payload, '$._pwa.manifests') != '[]' AND JSON_EXTRACT(payload, '$._pwa.manifests') != '{}'
 GROUP BY
   type,
   client,

@@ -11,7 +11,7 @@ FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     IF(JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true', 1, 0) AS ServiceWorker,
-    IF(JSON_EXTRACT(payload, '$._pwa.manifests') != '[]', 1, 0) AS manifests
+    IF(JSON_EXTRACT(payload, '$._pwa.manifests') != '[]' AND JSON_EXTRACT(payload, '$._pwa.manifests') != '{}' AND JSON_EXTRACT(payload, '$._pwa.manifests') != '{}', 1, 0) AS manifests
   FROM
     `httparchive.pages.2022_07_01_*`
   )

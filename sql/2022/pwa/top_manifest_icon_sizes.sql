@@ -18,7 +18,7 @@ WITH totals AS (
   FROM
     `httparchive.pages.2022_07_01_*`
   WHERE
-    JSON_EXTRACT(payload, '$._pwa.manifests') != '[]'
+    JSON_EXTRACT(payload, '$._pwa.manifests') != '[]' AND JSON_EXTRACT(payload, '$._pwa.manifests') != '{}'
   GROUP BY
     _TABLE_SUFFIX
 ),
@@ -41,7 +41,7 @@ manifests_icon_sizes AS (
     totals
   USING (_TABLE_SUFFIX)
   WHERE
-    JSON_EXTRACT(payload, '$._pwa.manifests') != '[]'
+    JSON_EXTRACT(payload, '$._pwa.manifests') != '[]' AND JSON_EXTRACT(payload, '$._pwa.manifests') != '{}'
   GROUP BY
     client,
     size,
