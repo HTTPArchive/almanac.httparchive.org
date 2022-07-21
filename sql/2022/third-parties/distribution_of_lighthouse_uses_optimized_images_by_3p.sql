@@ -1,5 +1,5 @@
 #standardSQL
-#Third-party pages with unoptimized images
+# Third-party pages with unoptimized images
 
 CREATE TEMPORARY FUNCTION getUnminifiedImageUrls(audit STRING)
 RETURNS ARRAY<STRUCT<url STRING, wastedBytes INT64>> LANGUAGE js AS '''
