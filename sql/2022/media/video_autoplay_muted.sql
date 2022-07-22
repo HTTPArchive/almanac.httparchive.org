@@ -10,22 +10,13 @@ RETURNS STRUCT<
 var result = {};
 try {
     var media = JSON.parse(media_string);
-
-    if (Array.isArray(media) || typeof media != 'object') return result;
-
-    // fix "video_nodes_attributes":"[]"
-    if (!Array.isArray(media.video_nodes_attributes))
-    {
-      media.video_nodes_attributes = JSON.parse(media.video_nodes_attributes);
+    var attributes = Array();
+    if(Array.isArray(media.video_attributes_values_counts)) {
+      media.video_attributes_values_counts.map(({attribute}) => {
+        attributes.push(attribute)
+      })
     }
-
-    // skip "video_nodes_attributes":[{}]
-    if (media.video_nodes_attributes.length == 1 && Object.keys(media.video_nodes_attributes[0]).length === 0)
-    {
-      media.video_nodes_attributes = [];
-    }
-
-    result.video_nodes_attributes = media.video_nodes_attributes;
+    result.video_nodes_attributes = attributes;
     result.num_video_nodes = media.num_video_nodes;
 
 } catch (e) {}
@@ -44,7 +35,7 @@ FROM (
     _TABLE_SUFFIX AS client,
     get_media_info(JSON_EXTRACT_SCALAR(payload, '$._media')) AS media_info
   FROM
-    `httparchive.pages.2021_08_01_*`)
+    `httparchive.pages.2022_06_01_*`)
 GROUP BY
   client
 ORDER BY
