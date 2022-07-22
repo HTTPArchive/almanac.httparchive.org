@@ -32,20 +32,23 @@ FROM (
   FROM (
     SELECT
       _TABLE_SUFFIX AS client,
+      url,
       get_media_info(JSON_EXTRACT_SCALAR(payload, '$._media')) AS media_info
     FROM
-      `httparchive.pages.2021_08_01_*`)
+      `httparchive.pages.2022_06_01_*`)
   FULL OUTER JOIN (
     SELECT
       client,
+      url,
       LOWER(REGEXP_EXTRACT(url, '(?i)(hls|video|shaka|jwplayer|brightcove-player-loader|flowplayer)[(?:\\.min)]?\\.js')) AS player
     FROM
       `httparchive.almanac.requests`
     WHERE
-      date = '2021-08-01' AND
+      date = '2022-06-01' AND
       type = 'script'
     GROUP BY
       client,
+      url,
       page,
       player)
   USING (client, url)
