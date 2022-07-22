@@ -21,7 +21,7 @@ WITH videonotes AS (
         (JSON_QUERY_ARRAY(JSON_VALUE(payload, '$._media'), '$.video_source_format_count')) AS video_source_format_count,
         (JSON_QUERY(JSON_VALUE(payload, '$._media'), '$.video_source_format_type')) AS video_source_format_type
       FROM
-        `httparchive.pages.2021_07_01_*`
+        `httparchive.pages.2022_06_01_*`
     )
   CROSS JOIN
     UNNEST(video_source_format_count) AS source_count
