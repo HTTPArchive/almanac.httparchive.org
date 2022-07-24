@@ -22,7 +22,7 @@ WITH base AS (
       lighthouse.url AS page,
       NET.HOST(data.url) IS NOT NULL AND NET.HOST(data.url) IN (
         SELECT domain
-        FROM `httparchive.almanac.third_parties` 
+        FROM `httparchive.almanac.third_parties`
         WHERE date = '2022-06-01' AND category != 'hosting'
       ) AS is_3p,
       data.wastedBytes AS potential_savings
@@ -37,7 +37,7 @@ WITH base AS (
 SELECT
   percentile,
   APPROX_QUANTILES(potential_savings, 1000)[OFFSET(percentile * 10)] AS potential_savings_bytes
-FROM 
+FROM
   base,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY

@@ -2,8 +2,8 @@
 # Third-parties that register an `unload` listener
 
 CREATE TEMPORARY FUNCTION
-  getUrls(audit STRING)
-  RETURNS ARRAY<STRUCT<url STRING>> LANGUAGE js AS '''
+getUrls(audit STRING)
+RETURNS ARRAY<STRUCT<url STRING>> LANGUAGE js AS '''
 try {
   var $ = JSON.parse(audit);
   return $.details.items.map(i => ({url: i.source.url}));
@@ -19,14 +19,14 @@ WITH base AS (
   FROM
     (
       SELECT
-        NET.HOST(data.url) as domain,
+        NET.HOST(data.url) AS domain,
         lighthouse.url AS page,
         NET.HOST(data.url) IS NOT NULL AND
         NET.HOST(data.url) IN (
           SELECT domain
           FROM `httparchive.almanac.third_parties`
           WHERE date = '2022-06-01' AND category != 'hosting'
-        ) AS is_3p,
+        ) AS is_3p
       FROM
         `httparchive.lighthouse.2022_06_01_mobile` AS lighthouse,
         UNNEST(getUrls(JSON_EXTRACT(report, "$.audits['no-unload-listeners']"))) AS data
@@ -38,28 +38,21 @@ WITH base AS (
     domain
 )
 
--- SELECT
---   domain,
---   COUNT(0) AS freq,
---   total,
---   COUNT(0) / total AS pct
--- FROM
---   base,
---   (
---     SELECT
---       COUNT(DISTINCT url) AS total
---     FROM
---       `httparchive.lighthouse.2022_06_01_mobile`
---   )
--- GROUP BY
---   domain,
---   total
--- ORDER BY
---   freq DESC
-
 SELECT
-  data.*
+  domain,
+  COUNT(0) AS freq,
+  total,
+  COUNT(0) / total AS pct
 FROM
-  `httparchive.lighthouse.2022_06_01_mobile` AS lighthouse,
-  UNNEST(getUrls(JSON_EXTRACT(report, "$.audits['no-unload-listeners']"))) AS data
-LIMIT 10
+  base,
+  (
+    SELECT
+      COUNT(DISTINCT url) AS total
+    FROM
+      `httparchive.lighthouse.2022_06_01_mobile`
+  )
+GROUP BY
+  domain,
+  total
+ORDER BY
+  freq DESC

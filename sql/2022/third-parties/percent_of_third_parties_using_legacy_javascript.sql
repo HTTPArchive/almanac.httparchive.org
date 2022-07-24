@@ -2,8 +2,8 @@
 # Third-parties that use legacy JavaScript
 
 CREATE TEMPORARY FUNCTION
-  getUrls(audit STRING)
-  RETURNS ARRAY<STRUCT<url STRING>> LANGUAGE js AS '''
+getUrls(audit STRING)
+RETURNS ARRAY<STRUCT<url STRING>> LANGUAGE js AS '''
 try {
   var $ = JSON.parse(audit);
   return $.details.items.map(i => ({url: i.url}));
@@ -19,14 +19,14 @@ WITH base AS (
   FROM
     (
       SELECT
-        NET.HOST(data.url) as domain,
+        NET.HOST(data.url) AS domain,
         lighthouse.url AS page,
         NET.HOST(data.url) IS NOT NULL AND
         NET.HOST(data.url) IN (
           SELECT domain
           FROM `httparchive.almanac.third_parties`
           WHERE date = '2022-06-01' AND category != 'hosting'
-        ) AS is_3p,
+        ) AS is_3p
       FROM
         `httparchive.lighthouse.2022_06_01_mobile` AS lighthouse,
         UNNEST(getUrls(JSON_EXTRACT(report, "$.audits['legacy-javascript']"))) AS data

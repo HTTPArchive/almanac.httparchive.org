@@ -20,7 +20,7 @@ WITH base AS (
     SUM(IF(is_3p, potential_savings, 0)) AS potential_savings
   FROM (
     SELECT
-      NET.HOST(data.url) as domain,
+      NET.HOST(data.url) AS domain,
       lighthouse.url AS page,
       NET.HOST(data.url) IS NOT NULL AND
       NET.HOST(data.url) IN (
@@ -43,7 +43,7 @@ SELECT
   SUM(potential_savings) AS total_potential_savings_bytes,
   COUNT(DISTINCT page) AS total_pages,
   SUM(potential_savings) / COUNT(DISTINCT page) AS total_potential_savings_bytes_per_page
-FROM 
+FROM
   base
 WHERE
   potential_savings > 0

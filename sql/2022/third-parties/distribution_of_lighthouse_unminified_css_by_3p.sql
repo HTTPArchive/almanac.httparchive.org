@@ -37,7 +37,7 @@ WITH base AS (
 SELECT
   percentile,
   APPROX_QUANTILES(potential_savings, 1000)[OFFSET(percentile * 10)] AS potential_savings_bytes
-FROM 
+FROM
   base,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
