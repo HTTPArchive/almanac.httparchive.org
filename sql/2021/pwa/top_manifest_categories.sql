@@ -45,7 +45,7 @@ manifests_categories AS (
     totals
   USING (_TABLE_SUFFIX)
   WHERE
-    JSON_EXTRACT(payload, '$._pwa.manifests') != '[]' AND JSON_EXTRACT(payload, '$._pwa.manifests') != '{}'
+    JSON_EXTRACT(payload, '$._pwa.manifests') != '[]'
   GROUP BY
     client,
     category,
