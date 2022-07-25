@@ -29,7 +29,7 @@ SELECT
   csp_allowed_host,
   total AS total_pages,
   COUNT(DISTINCT page) AS freq,
-  COUNT(DISTINCT page) / MIN(total) AS pct
+  COUNT(DISTINCT page) / total AS pct
 FROM (
   SELECT
     client,
