@@ -15,7 +15,7 @@ FROM (
     `httparchive.almanac.requests`
   WHERE
     date = '2022-06-01' AND
-    NET.HOST(page) = NET.HOST(url) AND
+    firstHtml AND
     cert_issuer IS NOT NULL
   GROUP BY
     client,
