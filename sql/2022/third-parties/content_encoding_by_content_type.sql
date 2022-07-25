@@ -47,8 +47,8 @@ SELECT
   content_type,
   content_encoding,
   COUNT(0) AS num_requests,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+  SUM(COUNT(0)) OVER (PARTITION BY client, content_type) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client, content_type) AS pct
 FROM
   requests
 LEFT JOIN
