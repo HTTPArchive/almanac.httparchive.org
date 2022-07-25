@@ -39,9 +39,8 @@ FROM (
     `httparchive.summary_requests.2022_06_01_*` AS r
   INNER JOIN
     `httparchive.summary_pages.2022_06_01_*` AS p
-  ON
-    r._TABLE_SUFFIX = p._TABLE_SUFFIX AND
-    r.pageid = p.pageid
+  USING
+    (_TABLE_SUFFIX, pageid)
   INNER JOIN
     `httparchive.technologies.2022_06_01_*` AS t
   ON
