@@ -1,5 +1,5 @@
 #standardSQL
-# Third-party pages with unminified CSS
+# Pages with unminified third-party CSS
 
 CREATE TEMPORARY FUNCTION getUnminifiedCssUrls(audit STRING)
 RETURNS ARRAY<STRUCT<url STRING, wastedBytes INT64>> LANGUAGE js AS '''
