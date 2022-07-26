@@ -22,7 +22,7 @@
 
 # Query List
 Taken from [`Metrics` Section](https://docs.google.com/document/d/1IKV40fllCZTqeu-R6-73ckjQR9S6jiBfVBBfdcpAMkI/edit#heading=h.zbvh8yhwkp2i) in planning doc, where technical notes on how queries might be formulated live.
-### Web Getting Right
+### Web Getting Right (Not Custom)
 - [ ] % of sites that are using priority as an attribute on LCP element
 - [ ] % of sites where the LCP is element is preloaded
 
@@ -37,7 +37,7 @@ Taken from [`Metrics` Section](https://docs.google.com/document/d/1IKV40fllCZTqe
 #### Antipatterns (Custom)
 - [ ] LCP Lazy Loaded
 
-### Antipatterns (Not Custom)
+#### Antipatterns (Not Custom)
 - [ ] Are LCP Image Elements Responsive
 - [ ] LCP Element Resource Delay
 - [ ] TTFB by Category 
