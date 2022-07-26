@@ -1,12 +1,7 @@
 #standardSQL
 # A11Y technology usage
 
-SELECT
-  client,
-  freq,
-  total,
-  freq / total AS pct
-FROM (
+WITH a11y_technologies AS (
   SELECT
     _TABLE_SUFFIX AS client,
     COUNT(DISTINCT url) AS freq
@@ -16,8 +11,9 @@ FROM (
     category = 'Accessibility'
   GROUP BY
     client
-)
-JOIN (
+),
+
+pages AS (
   SELECT
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total
@@ -26,4 +22,14 @@ JOIN (
   GROUP BY
     client
 )
+
+SELECT
+  client,
+  freq,
+  total,
+  freq / total AS pct
+FROM 
+  a11y_technologies
+JOIN 
+  pages
 USING (client)

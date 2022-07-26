@@ -7,19 +7,7 @@ WITH requests AS (
     pageid AS page,
     url,
     resp_content_encoding AS content_encoding,
-    CASE
-      WHEN resp_content_type LIKE '%html%' THEN 'html'
-      WHEN resp_content_type LIKE '%xml%' THEN 'xml'
-      WHEN resp_content_type LIKE '%plain%' THEN 'plain'
-      WHEN resp_content_type LIKE '%video%' THEN 'video'
-      WHEN resp_content_type LIKE '%audio%' THEN 'audio'
-      WHEN resp_content_type LIKE '%image%' THEN 'image'
-      WHEN resp_content_type LIKE '%font%' THEN 'font'
-      WHEN resp_content_type LIKE '%css%' THEN 'css'
-      WHEN resp_content_type LIKE '%javascript%' THEN 'javascript'
-      WHEN resp_content_type LIKE '%json%' THEN 'json'
-      ELSE 'other'
-    END AS content_type
+    type
   FROM
     `httparchive.summary_requests.2022_06_01_*`
 ),
@@ -44,11 +32,11 @@ third_party AS (
 
 SELECT
   client,
-  content_type,
+  type,
   content_encoding,
   COUNT(0) AS num_requests,
-  SUM(COUNT(0)) OVER (PARTITION BY client, content_type) AS total,
-  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client, content_type) AS pct
+  SUM(COUNT(0)) OVER (PARTITION BY client, type) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client, type) AS pct
 FROM
   requests
 LEFT JOIN
@@ -59,9 +47,9 @@ WHERE
   domain IS NOT NULL
 GROUP BY
   client,
-  content_type,
+  type,
   content_encoding
 ORDER BY
   client,
-  content_type,
+  type,
   num_requests DESC
