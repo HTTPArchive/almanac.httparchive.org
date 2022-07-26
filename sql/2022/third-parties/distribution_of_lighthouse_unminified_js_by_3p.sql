@@ -1,5 +1,5 @@
 #standardSQL
-# Third-party pages with unminified JavaScript
+# Pages with unminified third-party JavaScript
 
 CREATE TEMPORARY FUNCTION getUnminifiedJavascriptUrls(audit STRING)
 RETURNS ARRAY<STRUCT<url STRING, wastedBytes INT64>> LANGUAGE js AS '''
