@@ -20,7 +20,7 @@
 [~chapter-markdown]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2022/performance.md
 
 
-# Query List
+## Query List
 Taken from [`Metrics` Section](https://docs.google.com/document/d/1IKV40fllCZTqeu-R6-73ckjQR9S6jiBfVBBfdcpAMkI/edit#heading=h.zbvh8yhwkp2i) in planning doc, where technical notes on how queries might be formulated live.
 ### Web Getting Right (Not Custom)
 - [ ] % of sites that are using priority as an attribute on LCP element
@@ -31,7 +31,7 @@ Taken from [`Metrics` Section](https://docs.google.com/document/d/1IKV40fllCZTqe
 - [ ] Filtering for synthetic tests
 - [ ] LCP Animation & Overlay Hack
 - [ ] LCP Svg Overlay Hack
-- [ ] CLS Animation Hack 
+- [ ] CLS Animation Hack
 - [ ] FID iFrame Hack
 
 #### Antipatterns (Custom)
@@ -40,7 +40,7 @@ Taken from [`Metrics` Section](https://docs.google.com/document/d/1IKV40fllCZTqe
 #### Antipatterns (Not Custom)
 - [ ] Are LCP Image Elements Responsive
 - [ ] LCP Element Resource Delay
-- [ ] TTFB by Category 
+- [ ] TTFB by Category
 - [ ] Domain Sharding
 - [ ] FID Double Tap to Zoom Disabled
 - [ ] FID / INP Long Task Data (let's pick either FID or INP)
