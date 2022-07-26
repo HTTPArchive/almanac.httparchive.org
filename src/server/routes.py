@@ -229,3 +229,11 @@ def redirect_old_images(folder, image):
 )
 def redirect_old_hero_images(folder, image):
     return redirect("/static/images/2020/%s/%s" % (folder, image)), 301
+
+
+# Redirect requests for the pdfs to GitHub
+@app.route(
+    '/static/pdfs/<pdf>'
+)
+def redirect_pdfs(pdf):
+    return redirect("https://cdn.httparchive.org/almanac/ebooks/%s" % (pdf)), 301
