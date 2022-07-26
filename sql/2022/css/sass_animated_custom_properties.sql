@@ -98,11 +98,11 @@ JOIN (
   FROM
     `httparchive.pages.2022_07_01_*`,
     UNNEST(getCustomPropertiesWithComputedStyle(payload)) AS prop)
+USING
+  (client, page, prop)
 JOIN
   totals
 USING
   (client)
-USING
-  (client, page, prop)
 GROUP BY
   client
