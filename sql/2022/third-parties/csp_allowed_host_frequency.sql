@@ -37,8 +37,8 @@ FROM (
     csp_allowed_host,
     COUNT(DISTINCT page) AS freq,
     total AS total_pages,
-    COUNT(DISTINCT page) / MIN(total) AS pct,
-    RANK() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT page) DESC) AS rank
+    COUNT(DISTINCT page) / total AS pct,
+    RANK() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT page) DESC) AS csp_allowed_host_rank
   FROM (
     SELECT
       client,

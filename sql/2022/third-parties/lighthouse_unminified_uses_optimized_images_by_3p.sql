@@ -17,7 +17,7 @@ WITH base AS (
   SELECT
     page,
     domain,
-    SUM(IF(is_3p, potential_savings, 0)) AS potential_savings
+    SUM(IF(is_3p, potential_savings, 0)) AS potential_third_party_savings
   FROM (
     SELECT
       NET.HOST(data.url) AS domain,
@@ -28,7 +28,7 @@ WITH base AS (
         FROM `httparchive.almanac.third_parties`
         WHERE date = '2022-06-01' AND category != 'hosting'
       ) AS is_3p,
-      data.wastedBytes AS potential_savings
+      data.wastedBytes AS potential_third_party_savings
     FROM
       `httparchive.lighthouse.2022_06_01_mobile` AS lighthouse,
       UNNEST(getUnminifiedImageUrls(JSON_EXTRACT(report, "$.audits['uses-optimized-images']"))) AS data
