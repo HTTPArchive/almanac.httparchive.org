@@ -43,4 +43,4 @@ Taken from [`Metrics` Section](https://docs.google.com/document/d/1IKV40fllCZTqe
 - [ ] TTFB by Category 
 - [ ] Domain Sharding
 - [ ] FID Double Tap to Zoom Disabled
-- [ ] FID / INP Long Task Data (let's pick one)
+- [ ] FID / INP Long Task Data (let's pick either FID or INP)
