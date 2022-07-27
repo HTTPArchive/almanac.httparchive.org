@@ -28,8 +28,8 @@ SELECT
   freq,
   total,
   freq / total AS pct
-FROM 
+FROM
   a11y_technologies
-JOIN 
+JOIN
   pages
 USING (client)

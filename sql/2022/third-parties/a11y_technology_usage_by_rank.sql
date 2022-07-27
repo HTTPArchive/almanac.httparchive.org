@@ -46,12 +46,12 @@ SELECT
   COUNT(0) AS freq,
   total,
   COUNT(0) / total AS pct
-FROM 
+FROM
   a11y_technologies
 LEFT OUTER JOIN (
   pages
 ) USING (client, url)
-JOIN 
+JOIN
   rank_totals
 USING (client, rank_grouping)
 GROUP BY

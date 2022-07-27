@@ -44,12 +44,12 @@ SELECT
   COUNT(DISTINCT url) AS freq,
   total,
   COUNT(DISTINCT url) / total AS pct
-FROM 
+FROM
   a11y_technologies
-LEFT OUTER JOIN 
+LEFT OUTER JOIN
   pages
 USING (client, url)
-JOIN 
+JOIN
   rank_totals
 USING (client, rank_grouping)
 GROUP BY
