@@ -16,7 +16,7 @@ try {
 WITH base AS (
   SELECT
     page,
-    SUM(IF(is_3p, potential_savings, 0)) AS potential_third_party_savings
+    SUM(IF(is_3p, potential_savings, 0)) AS potential_third_party_savings,
     SUM(potential_savings) AS potential_total_savings
   FROM (
     SELECT
