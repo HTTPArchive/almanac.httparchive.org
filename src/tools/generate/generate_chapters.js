@@ -48,7 +48,9 @@ const generate_chapters = async (chapter_match) => {
       "analysts": new Set(),
       "editors": new Set()
     };
-    sitemap_languages[year] = configs[year].settings[0].supported_languages;
+    if (configs[year].settings[0].is_live) {
+      sitemap_languages[year] = configs[year].settings[0].supported_languages;
+    }
     for (const part in configs[year].outline) {
       for (const chapter in configs[year].outline[part].chapters) {
         const theconfig = configs[year].outline[part].chapters[chapter];
@@ -105,7 +107,7 @@ const generate_chapters = async (chapter_match) => {
           }
           featured_quotes[language][year][chapter] = chapter_featured_quote;
         }
-        if ( sitemap_languages[year].includes(language) ) {
+        if ( sitemap_languages[year] && sitemap_languages[year].includes(language) ) {
           sitemap.push({ language, year, chapter });
           const {description, title, authors} = metadata;
           rss.push({ language, year, chapter, title, description, authors });

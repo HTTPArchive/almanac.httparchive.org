@@ -41,7 +41,6 @@
 {% block styles %}
   {{ super() }}
   <link rel="stylesheet" href="{{ get_versioned_filename('/static/css/index.css') }}">
-  <link rel="preload" href="{{ get_versioned_filename('/static/css/index.css') }}" as="style" />
   <link rel="preload" href="/static/fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossorigin>
 {% endblock %}
 
@@ -77,7 +76,7 @@
         <text x="8" y="15">{{ year }}</text>
       </svg>
       {% endif %}
-      <img src="/static/images/home-hero.png" alt="" width="820" height="562">
+      <img src="/static/images/home-hero.png" alt="" width="820" height="562" fetchpriority="high">
     </div>
   </section>
   {% block featured_chapter_section %}

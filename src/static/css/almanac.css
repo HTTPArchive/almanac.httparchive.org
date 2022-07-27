@@ -1075,6 +1075,7 @@ p.copyright a {
 
   .search-nav input {
     min-width: 200px;
+    margin-bottom: 10px;
   }
 
   header nav > ul > li:last-child {
