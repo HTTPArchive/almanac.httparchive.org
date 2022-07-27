@@ -19,7 +19,7 @@ const states = {
 /**
  * Returns true if the identifier is valid.
  * @param {string} identifier
- # @return {boolean}
+ * @return {boolean}
  */
 function isValidIdentifier(identifier) {
   return !/^(-?\\d|--)/.test(identifier);
@@ -267,7 +267,7 @@ function getSystemFonts(json) {
     const css = JSON.parse(json);
     const result = [];
 
-    parseCss(css.stylesheet, result);	
+    parseCss(css.stylesheet, result);
 
     return result.filter(font => system.includes(font));
   } catch (e) {
