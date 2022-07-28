@@ -49,7 +49,7 @@ JOIN
   )
 USING (_TABLE_SUFFIX)
 WHERE
-  JSON_EXTRACT(payload, '$._pwa.workboxInfo') != '[]' AND
+  JSON_EXTRACT(payload, '$._pwa.workboxInfo') != '[]' AND JSON_EXTRACT(payload, '$._pwa.workboxInfo') != '{}' AND
   JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'
 GROUP BY
   _TABLE_SUFFIX,
