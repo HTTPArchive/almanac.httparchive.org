@@ -9,6 +9,15 @@
   Analysts: if helpful, you can use this README to give additional info about the queries.
 -->
 
+Queries:
+* Content types using HTTP compression
+* Server settings for HTTP compression. (http vs https)
+* Trends in HTTP compression (4 year trend)
+* First vs Third Party compression
+* Lighthouse compression byte savings
+* Lighthouse compression scores
+
+
 ## Resources
 
 - [📄 Planning doc][~google-doc]
