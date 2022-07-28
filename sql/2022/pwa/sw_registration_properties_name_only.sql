@@ -1,5 +1,5 @@
 #standardSQL
-# SW registration properties
+# SW registration properties name only
 CREATE TEMPORARY FUNCTION getSWRegistrationProperties(swRegistrationPropertiesInfo STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {

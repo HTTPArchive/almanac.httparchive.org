@@ -1,5 +1,5 @@
 #standardSQL
-# SW objects
+# SW objects name only
 CREATE TEMPORARY FUNCTION getSWObjects(swObjectsInfo STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
