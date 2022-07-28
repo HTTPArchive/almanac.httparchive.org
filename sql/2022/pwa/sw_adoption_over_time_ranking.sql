@@ -1,7 +1,7 @@
 #standardSQL
 # SW adoption over time, including ranking
 SELECT
-  REGEXP_REPLACE(yyyymmdd, r'(\d{4})(\d{2})(\d{2})', r'\1-\2\-3') AS date,
+  yyyymmdd AS date,
   client,
   rank_grouping,
   CASE
