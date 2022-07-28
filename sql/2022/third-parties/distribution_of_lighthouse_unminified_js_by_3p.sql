@@ -25,7 +25,7 @@ base AS (
   SELECT
     page,
     SUM(IF(third_party_domains.domain IS NOT NULL, potential_savings, 0)) AS potential_third_party_savings,
-    SUM(potential_savings) AS potential_total_savings,
+    SUM(potential_savings) AS potential_total_savings
   FROM (
     SELECT
       lighthouse.url AS page,
