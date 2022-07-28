@@ -13,24 +13,31 @@ try {
 }
 ''';
 
-WITH base AS (
+WITH third_party_domains AS (
+  SELECT DISTINCT
+    NET.HOST(domain) AS domain
+  FROM
+    `httparchive.almanac.third_parties`
+),
+
+base AS (
   SELECT
     page,
-    SUM(IF(is_3p, potential_savings, 0)) AS potential_third_party_savings,
-    SUM(potential_savings) AS potential_total_savings
+    SUM(IF(third_party_domains.domain IS NOT NULL, potential_savings, 0)) AS potential_third_party_savings,
+    SUM(potential_savings) AS potential_total_savings,
   FROM (
     SELECT
       lighthouse.url AS page,
-      NET.HOST(data.url) IS NOT NULL AND NET.HOST(data.url) IN (
-        SELECT domain
-        FROM `httparchive.almanac.third_parties`
-        WHERE date = '2022-06-01' AND category != 'hosting'
-      ) AS is_3p,
+      NET.HOST(data.url) AS domain,
       data.wastedBytes AS potential_savings
     FROM
       `httparchive.lighthouse.2022_06_01_mobile` AS lighthouse,
       UNNEST(getUnminifiedImageUrls(JSON_EXTRACT(report, "$.audits['uses-optimized-images']"))) AS data
-  )
+  ) AS potential_third_parties
+  LEFT OUTER JOIN
+    third_party_domains
+  ON
+    potential_third_parties.domain = third_party_domains.domain
   GROUP BY
     page
 )
