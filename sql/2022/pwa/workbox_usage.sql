@@ -7,7 +7,7 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
   COUNTIF(JSON_EXTRACT(payload, '$._pwa.workboxInfo') != '[]' AND JSON_EXTRACT(payload, '$._pwa.workboxInfo') != '{}') / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS pct
 FROM
-  `httparchive.pages.2022_07_01_*`
+  `httparchive.pages.2022_06_01_*`
 WHERE
   JSON_EXTRACT(payload, '$._pwa.manifests') != '[]' AND JSON_EXTRACT(payload, '$._pwa.manifests') != '{}' AND
   JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'

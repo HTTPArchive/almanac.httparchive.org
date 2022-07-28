@@ -22,7 +22,7 @@ FROM
       `httparchive.blink_features.features`
     WHERE
       feature = 'ServiceWorkerControlledPage' AND
-      yyyymmdd >= '2021-05-01'
+      yyyymmdd >= '2022-05-01'
   ),
   UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
 JOIN (
@@ -35,7 +35,7 @@ JOIN (
     `httparchive.summary_pages.*`,
     UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
-    _TABLE_SUFFIX > '2021_05_01' AND
+    _TABLE_SUFFIX > '2022_05_01' AND
     rank <= rank_grouping
   GROUP BY
     yyyymmdd,

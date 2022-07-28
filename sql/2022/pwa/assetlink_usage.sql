@@ -8,14 +8,14 @@ SELECT
   total,
   COUNT(0) / total AS pct
 FROM
-  `httparchive.pages.2022_07_01_*`
+  `httparchive.pages.2022_06_01_*`
 JOIN
   (
     SELECT
       _TABLE_SUFFIX,
       COUNT(0) AS total
     FROM
-      `httparchive.pages.2022_07_01_*`
+      `httparchive.pages.2022_06_01_*`
     WHERE
       JSON_EXTRACT(payload, '$._pwa.manifests') != '[]' AND JSON_EXTRACT(payload, '$._pwa.manifests') != '{}' AND
       JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'
@@ -38,14 +38,14 @@ SELECT
   total,
   COUNT(0) / total AS pct
 FROM
-  `httparchive.pages.2022_07_01_*`
+  `httparchive.pages.2022_06_01_*`
 JOIN
   (
     SELECT
       _TABLE_SUFFIX,
       COUNT(0) AS total
     FROM
-      `httparchive.pages.2022_07_01_*`
+      `httparchive.pages.2022_06_01_*`
     GROUP BY
       _TABLE_SUFFIX
   )

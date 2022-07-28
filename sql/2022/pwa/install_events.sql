@@ -36,7 +36,7 @@ SELECT
   total,
   COUNT(DISTINCT url) / total AS pct
 FROM
-  `httparchive.pages.2022_07_01_*`,
+  `httparchive.pages.2022_06_01_*`,
   UNNEST(getInstallEvents(JSON_EXTRACT(payload, '$._pwa'))) AS install_event
 JOIN
   (
@@ -44,7 +44,7 @@ JOIN
       _TABLE_SUFFIX,
       COUNT(0) AS total
     FROM
-      `httparchive.pages.2022_07_01_*`
+      `httparchive.pages.2022_06_01_*`
     WHERE
       -- This condition filters out tests that might have broken when running the 'pwa' metric
       -- as even pages without any pwa capabilities will have a _pwa object with empty fields

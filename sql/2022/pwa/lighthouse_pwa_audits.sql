@@ -30,14 +30,14 @@ SELECT
   MAX(audits.audit_group) AS audit_group,
   MAX(audits.description) AS description
 FROM
-  `httparchive.lighthouse.2022_07_01_mobile`,
+  `httparchive.lighthouse.2022_06_01_mobile`,
   UNNEST(getAudits(JSON_EXTRACT(report, '$.categories.pwa.auditRefs'), JSON_EXTRACT(report, '$.audits'))) AS audits
 JOIN
   (
     SELECT
       url
     FROM
-      `httparchive.pages.2022_07_01_mobile`
+      `httparchive.pages.2022_06_01_mobile`
     WHERE
       JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true' AND
       JSON_EXTRACT(payload, '$._pwa.manifests') != '[]' AND JSON_EXTRACT(payload, '$._pwa.manifests') != '{}'
@@ -57,7 +57,7 @@ SELECT
   MAX(audits.audit_group) AS audit_group,
   MAX(audits.description) AS description
 FROM
-  `httparchive.lighthouse.2022_07_01_mobile`,
+  `httparchive.lighthouse.2022_06_01_mobile`,
   UNNEST(getAudits(JSON_EXTRACT(report, '$.categories.pwa.auditRefs'), JSON_EXTRACT(report, '$.audits'))) AS audits
 GROUP BY
   audits.id

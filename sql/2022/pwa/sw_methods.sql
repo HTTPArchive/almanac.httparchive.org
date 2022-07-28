@@ -17,7 +17,7 @@ SELECT
   total,
   COUNT(DISTINCT url) / total AS pct
 FROM
-  `httparchive.pages.2022_07_01_*`,
+  `httparchive.pages.2022_06_01_*`,
   UNNEST(getSWMethods(JSON_EXTRACT(payload, '$._pwa.swMethodsInfo'))) AS sw_method
 JOIN
   (
@@ -25,7 +25,7 @@ JOIN
       _TABLE_SUFFIX,
       COUNT(0) AS total
     FROM
-      `httparchive.pages.2022_07_01_*`
+      `httparchive.pages.2022_06_01_*`
     WHERE
       JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'
     GROUP BY

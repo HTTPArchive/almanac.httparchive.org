@@ -26,7 +26,7 @@ SELECT
   script,
   COUNT(DISTINCT url) AS freq
 FROM
-  `httparchive.pages.2022_07_01_*`,
+  `httparchive.pages.2022_06_01_*`,
   UNNEST(getSWLibraries(JSON_EXTRACT(payload, '$._pwa.importScriptsInfo'))) AS script
 WHERE
   JSON_EXTRACT(payload, '$._pwa.importScriptsInfo') != '[]' AND

@@ -16,7 +16,7 @@ WITH totals AS (
     COUNT(0) AS total,
     COUNTIF(JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true') AS pwa_total
   FROM
-    `httparchive.pages.2022_07_01_*`
+    `httparchive.pages.2022_06_01_*`
   WHERE
     JSON_EXTRACT(payload, '$._pwa.manifests') != '[]' AND JSON_EXTRACT(payload, '$._pwa.manifests') != '{}'
   GROUP BY
@@ -35,7 +35,7 @@ manifests_icon_sizes AS (
     pwa_total,
     COUNTIF(JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true') / pwa_total AS pwa_pct
   FROM
-    `httparchive.pages.2022_07_01_*`,
+    `httparchive.pages.2022_06_01_*`,
     UNNEST(getIconSizes(JSON_EXTRACT(payload, '$._pwa.manifests'))) AS size
   JOIN
     totals

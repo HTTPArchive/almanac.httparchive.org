@@ -71,7 +71,7 @@ FROM
         LOWER(script) NOT LIKE '%sendpulse%' AND
         LOWER(script) NOT LIKE '%quora%') AS none_of_the_above
     FROM
-      `httparchive.pages.2022_07_01_*`,
+      `httparchive.pages.2022_06_01_*`,
       UNNEST(getSWLibraries(JSON_EXTRACT(payload, '$._pwa.importScriptsInfo'))) AS script
     WHERE
       JSON_EXTRACT(payload, '$._pwa.importScriptsInfo') != '[]' AND
@@ -86,7 +86,7 @@ JOIN
       _TABLE_SUFFIX AS client,
       COUNT(0) AS total
     FROM
-      `httparchive.pages.2022_07_01_*`
+      `httparchive.pages.2022_06_01_*`
     WHERE
       JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'
     GROUP BY

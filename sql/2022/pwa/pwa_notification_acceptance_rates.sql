@@ -19,7 +19,7 @@ JOIN
       RTRIM(url, '/') AS origin,
       COUNT(0) AS total
     FROM
-      `httparchive.pages.2022_07_01_*`
+      `httparchive.pages.2022_06_01_*`
     WHERE
       JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true'
     GROUP BY
@@ -30,7 +30,7 @@ USING
   (origin),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 WHERE
-  date IN ('2021-07-01') AND
+  date IN ('2022-06-01') AND
   (
     notification_permission_accept IS NOT NULL OR
     notification_permission_deny IS NOT NULL OR

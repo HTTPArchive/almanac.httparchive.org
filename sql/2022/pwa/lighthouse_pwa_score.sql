@@ -2,7 +2,7 @@
 # Percentiles of lighthouse pwa score
 # This metric comes from Lighthouse only and is only available in mobile in HTTP Archive dataset
 SELECT
-  '2022_07_01' AS date,
+  '2022_06_01' AS date,
   'PWA Sites' AS type,
   percentile,
   APPROX_QUANTILES(score, 1000)[OFFSET(percentile * 10)] * 100 AS score
@@ -11,7 +11,7 @@ FROM (
     url,
     CAST(JSON_EXTRACT(report, '$.categories.pwa.score') AS NUMERIC) AS score
   FROM
-    `httparchive.lighthouse.2022_07_01_mobile`)
+    `httparchive.lighthouse.2022_06_01_mobile`)
 JOIN
   (
     SELECT
@@ -29,7 +29,7 @@ GROUP BY
   percentile
 UNION ALL
 SELECT
-  '2022_07_01' AS date,
+  '2022_06_01' AS date,
   'All Sites' AS type,
   percentile,
   APPROX_QUANTILES(score, 1000)[OFFSET(percentile * 10)] * 100 AS score
@@ -37,7 +37,7 @@ FROM (
   SELECT
     CAST(JSON_EXTRACT(report, '$.categories.pwa.score') AS NUMERIC) AS score
   FROM
-    `httparchive.lighthouse.2022_07_01_mobile`),
+    `httparchive.lighthouse.2022_06_01_mobile`),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   date,
