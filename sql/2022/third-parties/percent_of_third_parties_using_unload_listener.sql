@@ -12,27 +12,30 @@ try {
 }
 ''';
 
-WITH base AS (
+WITH third_party_domains AS (
+  SELECT DISTINCT
+    NET.HOST(domain) AS domain
+  FROM
+    `httparchive.almanac.third_parties`
+),
+
+base AS (
   SELECT
     page,
-    domain
+    third_party_domains.domain AS domain
   FROM
     (
       SELECT
         NET.HOST(data.url) AS domain,
-        lighthouse.url AS page,
-        NET.HOST(data.url) IS NOT NULL AND
-        NET.HOST(data.url) IN (
-          SELECT domain
-          FROM `httparchive.almanac.third_parties`
-          WHERE date = '2022-06-01' AND category != 'hosting'
-        ) AS is_3p
+        lighthouse.url AS page
       FROM
         `httparchive.lighthouse.2022_06_01_mobile` AS lighthouse,
         UNNEST(getUrls(JSON_EXTRACT(report, "$.audits['no-unload-listeners']"))) AS data
-    )
-  WHERE
-    is_3p = TRUE
+    ) AS potential_third_parties
+  INNER JOIN
+    third_party_domains
+  ON
+    potential_third_parties.domain = third_party_domains.domain
   GROUP BY
     page,
     domain
