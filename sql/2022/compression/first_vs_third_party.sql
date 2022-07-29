@@ -8,7 +8,7 @@ SELECT
     FROM
       `httparchive.almanac.third_parties`
     WHERE
-      date = '2021-07-01' AND
+      date = '2022-06-01' AND
       category != 'hosting'
   ), 'third party', 'first party') AS party,
   resp_content_encoding,
@@ -18,7 +18,7 @@ SELECT
 FROM
   `httparchive.almanac.requests`
 WHERE
-  date = '2021-07-01'
+  date = '2022-06-01'
 GROUP BY
   client,
   party,
