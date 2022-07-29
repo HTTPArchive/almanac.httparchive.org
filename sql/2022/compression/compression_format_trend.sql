@@ -12,13 +12,13 @@ SELECT
   COUNT(0) AS num_requests
 FROM
   (
-    SELECT 
+    SELECT
       date,
       client,
       resp_content_encoding
-    FROM 
-      `httparchive.almanac.requests` 
-    WHERE 
+    FROM
+      `httparchive.almanac.requests`
+    WHERE
       DATE IN ('2022-06-01', '2021-07-01', '2020-08-01', '2019-07-01')
   )
 
