@@ -11,15 +11,12 @@ var result = {
 };
 try {
     var robots_txt = JSON.parse(robots_txt_string);
-    if (Array.isArray(robots_txt) || typeof robots_txt != 'object') return result;
-    if (robots_txt.user_agents) {
-      var uas = robots_txt.user_agents.map(ua => ua.toLowerCase());
-      var uas =  uas.filter(function(item, pos) { return uas.indexOf(item) == pos;}); // remove duplicates
-      result.user_agents = uas;
-    }
+    var uas = robots_txt.record_counts.by_useragent;
+    result.user_agents  = typeof uas === 'object' ? Object.keys(uas).map(ua => ua.toLowerCase()) : [];
 } catch (e) {}
 return result;
 ''';
+
 
 WITH totals AS (
   SELECT
