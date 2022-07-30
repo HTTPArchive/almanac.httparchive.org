@@ -1,6 +1,5 @@
 #standardSQL
 # HaveIBeenPwned breaches by type of data breached, e.g., email addresses
-# https://docs.google.com/spreadsheets/d/148SxZICZ24O44roIuEkRgbpIobWXpqLxegCDhIiX8XA/edit#gid=1158689200
 
 SELECT
   data_class,
@@ -8,7 +7,7 @@ SELECT
   SUM(PwnCount) AS number_of_affected_accounts
 FROM
   `httparchive.almanac.breaches`,
-  UNNEST(JSON_VALUE_ARRAY(DataClasses)) AS data_class
+  UNNEST(DataClasses) AS data_class
 WHERE
   date = '2022-06-01' AND
   BreachDate BETWEEN '2021-08-01' AND '2022-05-31'

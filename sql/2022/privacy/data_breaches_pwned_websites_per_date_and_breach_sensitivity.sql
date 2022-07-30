@@ -1,7 +1,6 @@
 #standardSQL
 # 'Sensitive' HaveIBeenPwned breaches, where the existence of an account is sensitive in and of itself.
 # https://haveibeenpwned.com/FAQs#SensitiveBreach
-# https://docs.google.com/spreadsheets/d/148SxZICZ24O44roIuEkRgbpIobWXpqLxegCDhIiX8XA/edit#gid=1435927653
 
 SELECT
   DATE_TRUNC(DATE(BreachDate), MONTH) AS breach_date,
