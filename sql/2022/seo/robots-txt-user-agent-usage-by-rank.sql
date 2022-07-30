@@ -27,7 +27,7 @@ WITH totals AS (
     rank_grouping,
     COUNT(0) AS rank_page_count
   FROM
-    `httparchive.summary_pages.2022_06_01_*`,
+    `httparchive.summary_pages.2022_07_01_*`,
     UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
     rank <= rank_grouping
@@ -42,7 +42,7 @@ robots AS (
     url,
     getRobotsTxtUserAgents(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_user_agent_info
   FROM
-    `httparchive.pages.2022_06_01_*`
+    `httparchive.pages.2022_07_01_*`
 ),
 
 base AS (
@@ -55,7 +55,7 @@ base AS (
     robots,
     UNNEST(robots_txt_user_agent_info.user_agents) AS user_agent
   JOIN
-    `httparchive.summary_pages.2022_06_01_*`
+    `httparchive.summary_pages.2022_07_01_*`
   USING (_TABLE_SUFFIX, url)
 )
 

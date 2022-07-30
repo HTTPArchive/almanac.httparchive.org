@@ -36,7 +36,7 @@ FROM (
     url,
     getVideosAlmanacInfo(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS video_almanac_info
   FROM
-    `httparchive.pages.2022_06_01_*`,
+    `httparchive.pages.2022_07_01_*`,
     UNNEST([10, 25, 50, 75, 90]) AS percentile
 )
 WHERE

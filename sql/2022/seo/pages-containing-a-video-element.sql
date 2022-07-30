@@ -36,7 +36,7 @@ FROM
       _TABLE_SUFFIX AS client,
       getVideosAlmanacInfo(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS videos_almanac_info
     FROM
-      `httparchive.pages.2022_06_01_*`
+      `httparchive.pages.2022_07_01_*`
   )
 GROUP BY
   client

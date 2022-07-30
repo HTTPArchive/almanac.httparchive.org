@@ -7,7 +7,7 @@ SELECT
   COUNT(0) AS freq,
   SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct
 FROM
-  `httparchive.summary_requests.2022_06_01_*`
+  `httparchive.summary_requests.2022_07_01_*`
 WHERE
   firstHtml
 GROUP BY

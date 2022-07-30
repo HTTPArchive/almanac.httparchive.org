@@ -35,13 +35,13 @@ FROM
       total,
       getMetaTagAlmanacInfo(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS meta_tag_almanac_info
     FROM
-      `httparchive.pages.2022_06_01_*`
+      `httparchive.pages.2022_07_01_*`
     JOIN
       (
 
         SELECT _TABLE_SUFFIX, COUNT(0) AS total
         FROM
-          `httparchive.pages.2022_06_01_*`
+          `httparchive.pages.2022_07_01_*`
         GROUP BY _TABLE_SUFFIX
       )
     USING (_TABLE_SUFFIX)
