@@ -53,7 +53,8 @@ cookies AS (
     COUNT(DISTINCT page) AS websites_count,
     websites_per_client,
     COUNT(DISTINCT page) / websites_per_client AS pct_websites
-  FROM request_headers,
+  FROM
+    request_headers,
     UNNEST(cookie_names) AS cookie
   WHERE
     cookie IS NOT NULL AND

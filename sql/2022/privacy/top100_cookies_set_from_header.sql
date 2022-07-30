@@ -2,8 +2,7 @@
 # Top100 popular cookies and their origins
 
 CREATE TEMPORARY FUNCTION cookieNames(headers STRING)
-RETURNS ARRAY<STRING>
-DETERMINISTIC
+RETURNS ARRAY<STRING> DETERMINISTIC
 LANGUAGE js AS '''
 try {
   var headers = JSON.parse(headers);
@@ -38,6 +37,8 @@ request_headers AS (
     COUNT(DISTINCT page) OVER (PARTITION BY client) AS websites_per_client
   FROM
     `httparchive.almanac.requests`
+  WHERE
+    date = '2022-06-01'
   GROUP BY
     client,
     page,
@@ -66,6 +67,10 @@ cookies AS (
     websites_per_client
 )
 
+
+SELECT
+  *
+FROM (
 SELECT
   client,
   whotracksme.category,
@@ -74,7 +79,8 @@ SELECT
   cookie || ' - ' || request AS cookie_and_request,
   websites_count,
   websites_per_client,
-  pct_websites
+  pct_websites,
+  RANK() OVER (PARTITION BY client, category ORDER BY pct_websites DESC) AS rank
 FROM
   cookies
 LEFT JOIN
@@ -83,4 +89,5 @@ ON NET.HOST(request) = domain
 ORDER BY
   pct_websites DESC,
   client
-LIMIT 1000
+)
+WHERE rank <= 10
