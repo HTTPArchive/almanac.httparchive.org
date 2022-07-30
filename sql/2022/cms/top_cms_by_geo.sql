@@ -52,7 +52,7 @@ FROM (
       app AS cms,
       url
     FROM
-      `httparchive.technologies.2022_07_01_*`
+      `httparchive.technologies.2022_06_01_*`
     WHERE
       app IS NOT NULL AND
       category = 'CMS' AND

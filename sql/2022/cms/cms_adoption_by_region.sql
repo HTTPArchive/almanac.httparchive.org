@@ -1236,7 +1236,7 @@ FROM (
       _TABLE_SUFFIX AS client,
       url
     FROM
-      `httparchive.technologies.2022_07_01_*`
+      `httparchive.technologies.2022_06_01_*`
     WHERE
       category = 'CMS'
   ) USING (client, url)
