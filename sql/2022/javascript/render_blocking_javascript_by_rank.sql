@@ -25,7 +25,7 @@ WITH render_blocking_scripts AS (
       url,
       getRenderBlockingScripts(payload) AS number_of_render_blocking_scripts
     FROM
-      `httparchive.pages.2022_06_01_*` AS pages
+      `httparchive.pages.2022_06_01_*`
   )
   JOIN (
     SELECT
@@ -33,7 +33,7 @@ WITH render_blocking_scripts AS (
       url,
       rank
     FROM
-      `httparchive.summary_pages.2022_06_01_*` AS summary
+      `httparchive.summary_pages.2022_06_01_*`
   )
   USING
     (client, url)
@@ -49,7 +49,7 @@ FROM
   render_blocking_scripts,
   UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
 WHERE
-    rank <= rank_grouping
+  rank <= rank_grouping
 GROUP BY
   client,
   rank_grouping

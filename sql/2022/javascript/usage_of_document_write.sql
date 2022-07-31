@@ -22,7 +22,7 @@ WITH base AS (
       FROM
         `httparchive.lighthouse.2022_06_01_mobile` AS lighthouse,
         UNNEST(getUrls(JSON_EXTRACT(report, "$.audits['no-document-write']"))) AS data
-    ) 
+    )
   GROUP BY
     page
 )

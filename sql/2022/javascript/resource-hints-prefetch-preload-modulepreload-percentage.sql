@@ -43,7 +43,7 @@ FROM (
     url AS page,
     hint.name = 'prefetch' AND hint.value = 'script' AS prefetch_hint,
     hint.name = 'preload' AND hint.value = 'script' AS preload_hint,
-    hint.name = 'modulepreload' AND hint.value = 'script' AS modulepreload_hint,
+    hint.name = 'modulepreload' AND hint.value = 'script' AS modulepreload_hint
   FROM
     `httparchive.pages.2022_06_01_*`
   LEFT JOIN
