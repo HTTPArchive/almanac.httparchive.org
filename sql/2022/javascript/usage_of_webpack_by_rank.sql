@@ -4,7 +4,7 @@
 WITH webpack_pages AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    url AS page,
+    url AS page
   FROM
     `httparchive.technologies.2022_06_01_*`
   WHERE
