@@ -2,7 +2,7 @@
 CREATE TEMPORARY FUNCTION getResourceHintAttrs(payload STRING)
 RETURNS ARRAY<STRUCT<name STRING, attribute STRING, value STRING>>
 LANGUAGE js AS '''
-var hints = new Set(['preload', 'prefetch']);
+var hints = new Set(['preload', 'prefetch', 'modulepreload']);
 var attributes = ['as'];
 try {
   var $ = JSON.parse(payload);
@@ -29,29 +29,24 @@ try {
 ''';
 
 SELECT
-  percentile,
   client,
-  APPROX_QUANTILES(prefetch_hint, 1000)[OFFSET(percentile * 10)] AS prefetch_hints_per_page,
-  APPROX_QUANTILES(IF(prefetch_hint = 0, NULL, prefetch_hint), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS prefetch_hints_per_page_with_hints,
-  APPROX_QUANTILES(preload_hint, 1000)[OFFSET(percentile * 10)] AS preload_hints_per_page,
-  APPROX_QUANTILES(IF(preload_hint = 0, NULL, preload_hint), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS preload_hints_per_page_with_hints
+  COUNT(DISTINCT IF(prefetch_hint, page, NULL)) AS prefetch_pages,
+  COUNT(DISTINCT page) AS total,
+  COUNT(DISTINCT IF(prefetch_hint, page, NULL)) / COUNT(DISTINCT page) AS prefetch_pct,
+  COUNT(DISTINCT IF(preload_hint, page, NULL)) AS preload_pages,
+  COUNT(DISTINCT IF(preload_hint, page, NULL)) / COUNT(DISTINCT page) AS preload_pct,
+  COUNT(DISTINCT IF(modulepreload_hint, page, NULL)) AS modulepreload_pages,
+  COUNT(DISTINCT IF(modulepreload_hint, page, NULL)) / COUNT(DISTINCT page) AS modulepreload_pct
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page,
-    COUNTIF(hint.name = 'prefetch' AND hint.value = 'script') AS prefetch_hint,
-    COUNTIF(hint.name = 'preload' AND hint.value = 'script') AS preload_hint
+    hint.name = 'prefetch' AND hint.value = 'script' AS prefetch_hint,
+    hint.name = 'preload' AND hint.value = 'script' AS preload_hint,
+    hint.name = 'modulepreload' AND hint.value = 'script' AS modulepreload_hint,
   FROM
     `httparchive.pages.2022_06_01_*`
   LEFT JOIN
-    UNNEST(getResourceHintAttrs(payload)) AS hint
-  GROUP BY
-    client,
-    page),
-  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+    UNNEST(getResourceHintAttrs(payload)) AS hint)
 GROUP BY
-  percentile,
   client
-ORDER BY
-  client,
-  percentile

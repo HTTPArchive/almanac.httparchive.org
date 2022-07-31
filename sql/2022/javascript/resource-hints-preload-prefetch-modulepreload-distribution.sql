@@ -1,6 +1,4 @@
 #standardSQL
-# Returns the number of resource hints per page which are preload, prefetch or modulepreload
-
 CREATE TEMPORARY FUNCTION getResourceHintAttrs(payload STRING)
 RETURNS ARRAY<STRUCT<name STRING, attribute STRING, value STRING>>
 LANGUAGE js AS '''
@@ -33,13 +31,19 @@ try {
 SELECT
   percentile,
   client,
-  APPROX_QUANTILES(script_hint, 1000)[OFFSET(percentile * 10)] AS hints_per_page,
-  APPROX_QUANTILES(IF(script_hint = 0, NULL, script_hint), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS hints_per_page_with_hints
+  APPROX_QUANTILES(prefetch_hint, 1000)[OFFSET(percentile * 10)] AS prefetch_hints_per_page,
+  APPROX_QUANTILES(IF(prefetch_hint = 0, NULL, prefetch_hint), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS prefetch_hints_per_page_with_hints,
+  APPROX_QUANTILES(preload_hint, 1000)[OFFSET(percentile * 10)] AS preload_hints_per_page,
+  APPROX_QUANTILES(IF(preload_hint = 0, NULL, preload_hint), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS preload_hints_per_page_with_hints,
+  APPROX_QUANTILES(modulepreload_hint, 1000)[OFFSET(percentile * 10)] AS modulepreload_hints_per_page,
+  APPROX_QUANTILES(IF(modulepreload_hint = 0, NULL, modulepreload_hint), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS modulepreload_hints_per_page_with_hints
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page,
-    COUNTIF(hint.name IN ('prefetch', 'preload', 'modulepreload') AND hint.value = 'script') AS script_hint
+    COUNTIF(hint.name = 'prefetch' AND hint.value = 'script') AS prefetch_hint,
+    COUNTIF(hint.name = 'preload' AND hint.value = 'script') AS preload_hint,
+    COUNTIF(hint.name = 'modulepreload' AND hint.value = 'script') AS modulepreload_hint
   FROM
     `httparchive.pages.2022_06_01_*`
   LEFT JOIN

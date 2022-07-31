@@ -1,8 +1,10 @@
 #standardSQL
+# Returns the number of pages which have preload, prefetch or modulepreload for scripts
+
 CREATE TEMPORARY FUNCTION getResourceHintAttrs(payload STRING)
 RETURNS ARRAY<STRUCT<name STRING, attribute STRING, value STRING>>
 LANGUAGE js AS '''
-var hints = new Set(['preload', 'prefetch']);
+var hints = new Set(['preload', 'prefetch', 'modulepreload']);
 var attributes = ['as'];
 try {
   var $ = JSON.parse(payload);
@@ -37,7 +39,7 @@ FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page,
-    hint.name IN ('prefetch', 'preload') AND hint.value = 'script' AS script_hint
+    hint.name IN ('prefetch', 'preload', 'modulepreload') AND hint.value = 'script' AS script_hint
   FROM
     `httparchive.pages.2022_06_01_*`
   LEFT JOIN
