@@ -25,7 +25,7 @@ third_party AS (
     date = '2022-06-01' AND
     category != 'hosting'
   GROUP BY
-    domain
+    NET.HOST(domain)
   HAVING
     page_usage >= 50
 )
