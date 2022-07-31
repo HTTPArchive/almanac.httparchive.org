@@ -13,7 +13,7 @@ WITH requests AS (
 
 third_party AS (
   SELECT
-    domain,
+    NET.HOST(domain) AS domain,
     COUNT(DISTINCT page) AS page_usage
   FROM
     `httparchive.almanac.third_parties` tp
