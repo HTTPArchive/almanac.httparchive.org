@@ -1,6 +1,26 @@
 """
-
-After running the script, please recreate `httparchive.almanac.breaches` table with the current data.
+1. Download breaches.json
+2. Create a new table almanac.breaches_2022 via upload, with autodetected schema
+3. Append the output of this query to almanac.breaches:
+SELECT
+  DATE('2022-06-01') AS date,
+  Name,
+  Title,
+  Domain,
+  BreachDate,
+  AddedDate,
+  ModifiedDate,
+  PwnCount,
+  Description,
+  LogoPath,
+  IsVerified,
+  IsFabricated,
+  IsSensitive,
+  IsRetired,
+  IsSpamList,
+  TO_JSON_STRING(DataClasses) AS DataClasses
+FROM
+  `httparchive.almanac.breaches_2022`
 """
 
 import json

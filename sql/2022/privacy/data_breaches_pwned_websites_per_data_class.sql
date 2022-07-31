@@ -7,10 +7,10 @@ SELECT
   SUM(PwnCount) AS number_of_affected_accounts
 FROM
   `httparchive.almanac.breaches`,
-  UNNEST(DataClasses) AS data_class
+  UNNEST(JSON_VALUE_ARRAY(DataClasses)) AS data_class
 WHERE
   date = '2022-06-01' AND
-  BreachDate BETWEEN '2021-08-01' AND '2022-05-31'
+  BreachDate BETWEEN '2021-08-01' AND '2022-06-30'
 GROUP BY
   data_class
 ORDER BY

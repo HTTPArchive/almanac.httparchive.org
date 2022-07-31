@@ -2,7 +2,13 @@
 Retrieve and extract trackers as identified by WhoTracks.me.
 https://github.com/ghostery/whotracks.me/blob/master/blog/generating_adblocker_filters.md#loading-the-data
 
-After running the script, please upload the result into the `httparchive.almanac.whotracksme` table.
+1. Download trackers.csv
+2. Upload to almanac.trackers_2022 temp table
+3. Append to almanac.whotracksme with this query:
+SELECT
+  *
+FROM
+  `httparchive.almanac.trackers_2022`
 """
 
 import requests
