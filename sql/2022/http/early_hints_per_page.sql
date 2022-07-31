@@ -5,7 +5,7 @@
 SELECT
   client,
   percentile,
-  COUNT(DISTINCT page) as num_pages,
+  COUNT(DISTINCT page) AS num_pages,
   APPROX_QUANTILES(num_reqs, 1000)[OFFSET(percentile * 10)] AS num_reqs,
   APPROX_QUANTILES(early_hints, 1000)[OFFSET(percentile * 10)] AS early_hints,
   APPROX_QUANTILES(pct_early_hints, 1000)[OFFSET(percentile * 10)] AS pct_early_hints
