@@ -14,7 +14,7 @@ FROM
       _TABLE_SUFFIX AS client,
       LOWER(IFNULL(JSON_EXTRACT_SCALAR(video_nodes, '$.autoplay'), '(autoplay not used)')) AS autoplay_value
     FROM
-      `httparchive.sample_data.pages_*`,
+      `httparchive.pages.2022_06_01_*`,
       UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.videos.nodes')) AS video_nodes,
       UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
   )
