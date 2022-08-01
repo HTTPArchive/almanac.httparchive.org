@@ -6,7 +6,7 @@ SELECT
   SUM(IF(script NOT LIKE '%src%', 1, 0)) AS inline_script,
   SUM(IF(script LIKE '%src%', 1, 0)) AS external_script,
   SUM(IF(script LIKE '%src%', 1, 0)) / COUNT(0) AS pct_external_script,
-  SUM(IF(script NOT LIKE '%src%', 1, 0)) / COUNT(0) AS pct_inline_script,
+  SUM(IF(script NOT LIKE '%src%', 1, 0)) / COUNT(0) AS pct_inline_script
 FROM
   (
     SELECT

@@ -1,11 +1,10 @@
 #standardSQL
 # percent of sites using images with srcset w/wo sizes, or picture element
-
 CREATE TEMPORARY FUNCTION get_media_info(media_string STRING)
 RETURNS STRUCT<
   num_srcset_all INT64,
   num_srcset_sizes INT64,
-  num_picture_img INT64,
+  num_picture_img INT64
 > LANGUAGE js AS '''
 var result = {};
 try {
@@ -25,7 +24,7 @@ SELECT
   SAFE_DIVIDE((COUNTIF(media_info.num_srcset_all > 0) - COUNTIF(media_info.num_srcset_sizes > 0)), COUNT(0)) AS pages_with_srcset_wo_sizes_pct,
   SAFE_DIVIDE(SUM(media_info.num_srcset_sizes), SUM(media_info.num_srcset_all)) AS instances_of_srcset_sizes_pct,
   SAFE_DIVIDE((SUM(media_info.num_srcset_all) - SUM(media_info.num_srcset_sizes)), SUM(media_info.num_srcset_all)) AS instances_of_srcset_wo_sizes_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_picture_img > 0), COUNT(0)) AS pages_with_picture_pct,
+  SAFE_DIVIDE(COUNTIF(media_info.num_picture_img > 0), COUNT(0)) AS pages_with_picture_pct
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

@@ -15,7 +15,7 @@ SELECT
   _TABLE_SUFFIX AS client,
   COUNTIF(stylesheets.remote = 1) / COUNT(0) AS pct_1_remote,
   SUM(stylesheets.inline) AS num_inline_stylesheets,
-  SUM(stylesheets.remote) AS num_inline_stylesheets,
+  SUM(stylesheets.remote) AS num_inline_stylesheets
 FROM (
   SELECT
     _TABLE_SUFFIX,
