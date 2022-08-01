@@ -77,7 +77,7 @@ GROUP BY
   data.report
 
 HAVING
-  count >=20
+  count >= 20
 
 ORDER BY
   count DESC
