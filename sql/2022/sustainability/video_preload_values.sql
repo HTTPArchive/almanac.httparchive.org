@@ -9,27 +9,27 @@ SELECT
   SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY date, client)) AS preload_value_pct
 FROM
   (
-  SELECT
-  '2021-07-01' AS date,
-  _TABLE_SUFFIX AS client,
-  LOWER(IFNULL(JSON_EXTRACT_SCALAR(video_nodes, '$.preload'), '(preload not used)')) AS preload_value
-  FROM
-  `httparchive.pages.2021_07_01_*`,
-  UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.videos.nodes')) AS video_nodes
-  UNION ALL
-  SELECT
-  '2022-06-01' AS date,
-  _TABLE_SUFFIX AS client,
-  LOWER(IFNULL(JSON_EXTRACT_SCALAR(video_nodes, '$.preload'), '(preload not used)')) AS preload_value
-  FROM
-  `httparchive.pages.2020_08_01_*`,
-  UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.videos.nodes')) AS video_nodes
+    SELECT
+      '2021-07-01' AS date,
+      _TABLE_SUFFIX AS client,
+      LOWER(IFNULL(JSON_EXTRACT_SCALAR(video_nodes, '$.preload'), '(preload not used)')) AS preload_value
+    FROM
+      `httparchive.pages.2021_07_01_*`,
+      UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.videos.nodes')) AS video_nodes
+    UNION ALL
+    SELECT
+      '2022-06-01' AS date,
+      _TABLE_SUFFIX AS client,
+      LOWER(IFNULL(JSON_EXTRACT_SCALAR(video_nodes, '$.preload'), '(preload not used)')) AS preload_value
+    FROM
+      `httparchive.pages.2020_08_01_*`,
+      UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.videos.nodes')) AS video_nodes
   )
 GROUP BY
   date,
   client,
   preload_value
-  QUALIFY
+QUALIFY
   preload_value_count > 10
 ORDER BY
   date,
