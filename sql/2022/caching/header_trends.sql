@@ -20,7 +20,7 @@ WITH summary_requests AS (
     _TABLE_SUFFIX AS client,
     *
   FROM
-    `httparchive.summary_requests.2021_05_01_*`
+    `httparchive.summary_requests.2021_07_01_*`
   UNION ALL
   SELECT
     '2022' AS year,
