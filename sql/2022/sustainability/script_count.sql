@@ -15,9 +15,9 @@ FROM
       url,
       REGEXP_EXTRACT_ALL(LOWER(body), '(<script [^>]*)') AS scripts
     FROM
-      `httparchive.sample_data.summary_response_bodies`
+      `httparchive.almanac.summary_response_bodies`
     WHERE
-      date = '2021-07-01' AND
+      date = '2022-06-01' AND
       firstHtml
   )
 CROSS JOIN
