@@ -1,42 +1,28 @@
-#standardSQL
-# top_cdns.sql: Top CDNs used on the root HTML pages
 SELECT
   client,
+  percentile,
   cdn,
-  COUNTIF(firstHtml) AS firstHtmlHits,
-  SUM(COUNTIF(firstHtml)) OVER (PARTITION BY client) AS firstHtmlTotalHits,
-  SAFE_DIVIDE(COUNTIF(firstHtml), SUM(COUNTIF(firstHtml)) OVER (PARTITION BY client)) AS firstHtmlHitsPct,
-
-  COUNTIF(NOT firstHtml AND NOT sameHost AND sameDomain) AS subDomainHits,
-  SUM(COUNTIF(NOT firstHtml AND NOT sameHost AND sameDomain)) OVER (PARTITION BY client) AS subDomainTotalHits,
-  SAFE_DIVIDE(COUNTIF(NOT firstHtml AND NOT sameHost AND sameDomain), SUM(COUNTIF(NOT firstHtml AND NOT sameHost AND sameDomain)) OVER (PARTITION BY client)) AS subDomainHitsPct,
-
-  COUNTIF(NOT firstHtml AND NOT sameHost AND NOT sameDomain) AS thirdPartyHits,
-  SUM(COUNTIF(NOT firstHtml AND NOT sameHost AND NOT sameDomain)) OVER (PARTITION BY client) AS thirdPartyTotalHits,
-  SAFE_DIVIDE(COUNTIF(NOT firstHtml AND NOT sameHost AND NOT sameDomain), SUM(COUNTIF(NOT firstHtml AND NOT sameHost AND NOT sameDomain)) OVER (PARTITION BY client)) AS thirdPartyHitsPct,
-
-  COUNT(0) AS hits,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS totalHits,
-  SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS hitsPct
-FROM
-  (
-    SELECT
-      client,
-      page,
-      url,
-      firstHtml,
-      respBodySize,
-      IFNULL(NULLIF(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') AS cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
-      NET.HOST(url) = NET.HOST(page) AS sameHost,
-      NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page) AS sameDomain # if toplevel reg_domain will return NULL so we group this as sameDomain
-    FROM
-      `httparchive.almanac.requests`
-    WHERE
-      date = '2022-06-01'
-  )
+  COUNT(0) AS freq,
+  total,
+  COUNT(0) / total AS pct
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    percentile,
+    COUNT(0) AS total,
+    ARRAY_CONCAT_AGG(SPLIT(cdn, ', ')) AS cdn_list
+  FROM
+    `httparchive.summary_pages.2022_06_01_*`,
+    UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+  GROUP BY
+    percentile,
+    client),
+  UNNEST(cdn_list) AS cdn
 GROUP BY
+  percentile,
   client,
-  cdn
+  cdn,
+  total
 ORDER BY
-  client DESC,
-  firstHtmlHits DESC
+  client,
+  percentile
