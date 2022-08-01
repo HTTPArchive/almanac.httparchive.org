@@ -23,7 +23,7 @@ WITH long_tasks_pages AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    _longTasks AS long_tasks,
+    _longTasks AS long_tasks
   FROM
     `httparchive.pages.2022_06_01_*`,
     UNNEST(getLongTasks(payload)) AS _longTasks
@@ -45,7 +45,7 @@ SELECT
   client,
   percentile,
   APPROX_QUANTILES(IF(long_tasks IS NOT NULL, long_tasks, 0), 1000)[OFFSET(percentile * 10)] AS number_of_long_tasks_per_page
-FROM 
+FROM
   long_tasks_by_page,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY

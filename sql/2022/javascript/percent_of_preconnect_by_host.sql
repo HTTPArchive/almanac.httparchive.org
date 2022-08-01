@@ -73,7 +73,7 @@ FROM (
       COUNTIF(resource_hints.host IS NOT NULL) AS freq,
       SUM(COUNT(0)) OVER (PARTITION BY client, host) AS total,
       COUNTIF(resource_hints.host IS NOT NULL) / SUM(COUNT(0)) OVER (PARTITION BY client, host) AS pct,
-      RANK () OVER (PARTITION BY client ORDER BY COUNTIF(resource_hints.host IS NOT NULL) DESC) AS resource_hint_rank
+      RANK() OVER (PARTITION BY client ORDER BY COUNTIF(resource_hints.host IS NOT NULL) DESC) AS resource_hint_rank
     FROM
       requests
     LEFT OUTER JOIN
