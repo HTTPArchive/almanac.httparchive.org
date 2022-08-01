@@ -1,5 +1,5 @@
 # standardSQL
-# usage of dynamic import using blink features from usage counters
+# usage of PostTask API using blink features from usage counters
 SELECT
   client,
   pct_urls
@@ -7,7 +7,7 @@ FROM
   `httparchive.blink_features.usage`
 WHERE
   yyyymmdd = '20220601' AND
-  feature = 'DynamicImportModuleScript'
+  feature = 'SchedulerPostTask'
 GROUP BY
   pct_urls,
   client

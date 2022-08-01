@@ -1,5 +1,6 @@
 #standardSQL
 # Number of injected scripts per page.
+# Pages without any scripts are excluded
 
 # returns the number of injected scripts and inline
 CREATE TEMPORARY FUNCTION getScripts(payload STRING)
