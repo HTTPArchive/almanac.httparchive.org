@@ -19,7 +19,7 @@ try {
       isBabel: Boolean(sourceMaps.babel)
     });
   }
-  
+
   return {};
 } catch (e) {
   return {};

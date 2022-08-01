@@ -17,7 +17,7 @@ try {
       isPublic: Boolean(Object.keys(sourceMaps.ext).length)
     });
   }
-  
+
   return {};
 } catch (e) {
   return {};
