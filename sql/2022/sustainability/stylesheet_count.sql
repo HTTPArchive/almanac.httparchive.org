@@ -22,7 +22,8 @@ FROM (
     url,
     getStylesheets(payload) AS stylesheets
   FROM
-    `httparchive.sample_data.pages_*`)
+    `httparchive.pages.2022_06_01_*`
+)
 GROUP BY
   client
 ORDER BY
