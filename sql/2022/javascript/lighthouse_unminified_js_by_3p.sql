@@ -24,7 +24,7 @@ FROM (
     SELECT
       test.url AS page,
       NET.HOST(unminified.url) IS NOT NULL AND NET.HOST(unminified.url) IN (
-        SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2021-07-01' AND category != 'hosting'
+        SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2022-06-01' AND category != 'hosting'
       ) AS is_3p,
       unminified.wastedBytes AS wasted_bytes
     FROM

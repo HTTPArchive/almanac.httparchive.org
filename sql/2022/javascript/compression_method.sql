@@ -28,7 +28,7 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2021-07-01' AND
+    date = '2022-06-01' AND
     type = 'script')
 JOIN (
   SELECT
