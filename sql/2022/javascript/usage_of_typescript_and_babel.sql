@@ -32,7 +32,7 @@ SELECT
   COUNTIF(sourcemaps.isTypeScript = true) AS use_typescript,
   COUNT(0) AS total_pages_with_sourcemaps,
   COUNTIF(sourcemaps.isBabel = true) / COUNT(0) AS pct_use_babel,
-  COUNTIF(sourcemaps.isTypeScript = true) / COUNT(0) AS pct_use_typescript,
+  COUNTIF(sourcemaps.isTypeScript = true) / COUNT(0) AS pct_use_typescript
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
