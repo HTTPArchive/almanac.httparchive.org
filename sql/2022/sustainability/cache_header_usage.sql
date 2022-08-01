@@ -29,7 +29,7 @@ SELECT
   COUNTIF(uses_cache_control AND uses_expires) / COUNT(0) AS pct_using_both,
   COUNTIF(NOT uses_cache_control AND NOT uses_expires) / COUNT(0) AS pct_using_neither,
   COUNTIF(uses_cache_control AND NOT uses_expires) / COUNT(0) AS pct_using_only_cache_control,
-  COUNTIF(NOT uses_cache_control AND uses_expires) / COUNT(0) AS pct_using_only_expires,
+  COUNTIF(NOT uses_cache_control AND uses_expires) / COUNT(0) AS pct_using_only_expires
 FROM (
   SELECT
     client,
