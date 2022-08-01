@@ -1,3 +1,5 @@
+#standardSQL
+# The distribution of CDN adoption on websites by percentile and client.
 SELECT
   client,
   percentile,
