@@ -12,11 +12,11 @@ try {
   if (javascript) {
     // server-generated scripts
     const { scripts, inlineScripts } = javascript.document;
-    
+
     // all scripts including injected scripts
     const { inline, src } = javascript.script_tags;
 
-    return ({ 
+    return ({
       documentScripts: scripts,
       documentInline: inlineScripts,
       scripts: src,
