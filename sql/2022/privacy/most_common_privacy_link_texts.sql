@@ -42,5 +42,5 @@ GROUP BY
   total_websites
 ORDER BY
   client,
-  number_of_websites_with_text DESC,
-  text
+  number_of_websites_with_text DESC
+LIMIT 1000

@@ -3,6 +3,7 @@
 # cf. https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md#tcdata
 # https://stackoverflow.com/a/65054751/7391782
 # Warning: fails if there are colons in the keys/values, but these are not expected
+
 CREATE TEMPORARY FUNCTION ExtractKeyValuePairs(input STRING) RETURNS ARRAY < STRUCT < key STRING,
   value STRING > > AS (
   (
@@ -27,7 +28,8 @@ WITH pages_iab_tcf_v2 AS (
     JSON_QUERY(
       JSON_VALUE(payload, '$._privacy'),
       '$.iab_tcf_v2.data'
-    ) AS metrics
+    ) AS metrics,
+    COUNT(DISTINCT URL) OVER (partition by _TABLE_SUFFIX) AS number_of_websites
   FROM
     `httparchive.pages.2022_06_01_*`
   WHERE
@@ -38,11 +40,12 @@ WITH pages_iab_tcf_v2 AS (
 )
 
 SELECT
-  client,
+  a.client,
   field,
   result.key AS key,
   result.value AS value,
-  COUNT(0) AS number_of_websites
+  ANY_VALUE(number_of_websites) AS number_of_websites,
+  COUNT(0) AS number_of_websites_with_purpose
 FROM
   (
     SELECT
@@ -138,7 +141,9 @@ FROM
       ) AS results
     FROM
       pages_iab_tcf_v2
-  ),
+  ) AS a LEFT JOIN
+  (SELECT client, number_of_websites FROM pages_iab_tcf_v2 GROUP BY 1,2) AS b
+  ON a.client=b.client,
   UNNEST(results) result
 GROUP BY
   client,
@@ -147,4 +152,4 @@ GROUP BY
   value
 ORDER BY
   client,
-  number_of_websites DESC
+  number_of_websites_with_purpose DESC
