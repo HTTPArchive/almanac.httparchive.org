@@ -22,8 +22,8 @@ SELECT
   APPROX_QUANTILES(total_css_emissions, 1000)[OFFSET(500)] AS median_total_css_emissions,
   APPROX_QUANTILES(img_kb, 1000)[OFFSET(500)] AS median_img_kb,
   APPROX_QUANTILES(total_img_emissions, 1000)[OFFSET(500)] AS median_total_img_emissions,
-  APPROX_QUANTILES(font_kb, 1000)[OFFSET(500)] AS median_font_kb
-  APPROX_QUANTILES(total_font_emissions, 1000)[OFFSET(500)] AS median_total_font_emissions,
+  APPROX_QUANTILES(font_kb, 1000)[OFFSET(500)] AS median_font_kb,
+  APPROX_QUANTILES(total_font_emissions, 1000)[OFFSET(500)] AS median_total_font_emissions
 FROM (
   SELECT DISTINCT
     _TABLE_SUFFIX AS client,
@@ -50,8 +50,8 @@ JOIN (
     (bytesCSS / 1024 / 1024 / 1024) * kw_per_GB * global_grid_intensity AS total_css_emissions,
     bytesImg / 1024 AS img_kb,
     (bytesImg / 1024 / 1024 / 1024) * kw_per_GB * global_grid_intensity AS total_img_emissions,
-    bytesFont / 1024 AS font_kb
-    (bytesFont / 1024 / 1024 / 1024) * kw_per_GB * global_grid_intensity AS total_font_emissions,
+    bytesFont / 1024 AS font_kb,
+    (bytesFont / 1024 / 1024 / 1024) * kw_per_GB * global_grid_intensity AS total_font_emissions
   FROM
     `httparchive.summary_pages.2022_06_01_*`
 )
