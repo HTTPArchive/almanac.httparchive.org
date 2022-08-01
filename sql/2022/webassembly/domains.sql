@@ -9,7 +9,7 @@ FROM (
     _TABLE_SUFFIX AS client,
     COUNT(DISTINCT NET.REG_DOMAIN(url)) AS all_domains
   FROM
-    `httparchive.summary_pages.2021_09_01_*`
+    `httparchive.summary_pages.2022_06_01_*`
   GROUP BY
     client
 )
@@ -18,9 +18,10 @@ JOIN (
     client,
     COUNT(DISTINCT NET.REG_DOMAIN(page)) AS domains_using_wasm
   FROM
-    `httparchive.almanac.wasm_stats`
+    `httparchive.almanac.requests`
   WHERE
-    date = '2021-09-01'
+    date = '2022-06-01' AND
+    (mimeType = 'application/wasm' OR ext = 'wasm')
   GROUP BY
     client
 )

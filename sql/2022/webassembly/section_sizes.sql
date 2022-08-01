@@ -1,18 +1,29 @@
 # standardSQL
 # Size distribution of each wasm section type.
 
+WITH wasm AS (
+  SELECT
+    *,
+    JSON_QUERY(payload, '$._wasm_stats') AS wasm_stats
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    date = '2022-06-01' AND
+    (mimeType = 'application/wasm' OR ext = 'wasm')
+)
+
 SELECT
   client,
-  SUM(size.code) / SUM(size.total) AS code_pct,
-  SUM(size.init) / SUM(size.total) AS init_pct,
-  SUM(size.descriptors) / SUM(size.total) AS descriptors_pct,
-  SUM(size.externals) / SUM(size.total) AS externals_pct,
-  SUM(size.types) / SUM(size.total) AS types_pct,
-  SUM(size.custom) / SUM(size.total) AS custom_pct
+  SUM(SAFE_CAST(JSON_VALUE(wasm_stats, '$.size.code') AS INT64)) / SUM(SAFE_CAST(JSON_VALUE(wasm_stats, '$.size.total') AS INT64)) AS code_pct,
+  SUM(SAFE_CAST(JSON_VALUE(wasm_stats, '$.size.init') AS INT64)) / SUM(SAFE_CAST(JSON_VALUE(wasm_stats, '$.size.total') AS INT64)) AS init_pct,
+  SUM(SAFE_CAST(JSON_VALUE(wasm_stats, '$.size.descriptors') AS INT64)) / SUM(SAFE_CAST(JSON_VALUE(wasm_stats, '$.size.total') AS INT64)) AS descriptors_pct,
+  SUM(SAFE_CAST(JSON_VALUE(wasm_stats, '$.size.externals') AS INT64)) / SUM(SAFE_CAST(JSON_VALUE(wasm_stats, '$.size.total') AS INT64)) AS externals_pct,
+  SUM(SAFE_CAST(JSON_VALUE(wasm_stats, '$.size.types') AS INT64)) / SUM(SAFE_CAST(JSON_VALUE(wasm_stats, '$.size.total') AS INT64)) AS types_pct,
+  SUM(SAFE_CAST(JSON_VALUE(wasm_stats, '$.size.custom') AS INT64)) / SUM(SAFE_CAST(JSON_VALUE(wasm_stats, '$.size.total') AS INT64)) AS custom_pct
 FROM
-  `httparchive.almanac.wasm_stats`
+  wasm
 WHERE
-  date = '2021-09-01'
+  wasm_stats IS NOT NULL
 GROUP BY
   client
 ORDER BY
