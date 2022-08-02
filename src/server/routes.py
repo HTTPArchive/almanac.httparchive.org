@@ -215,10 +215,10 @@ def redirect_old_http2(year, image):
 
 
 # Redirect requests for the older 2019 mage URLs to new URLs
-@app.route('/static/images/2019/<int(fixed_digits=2):chap_num>_<string:folder>/<image>')
-def redirect_old_images(chap_num, folder, image):
+@app.route('/static/images/2019/<int(fixed_digits=2):chap_num>_<string:chap_name>/<image>')
+def redirect_old_images(chap_num, chap_name, image):
     return (
-        redirect("/static/images/2019/%s/%s" % (convert_old_image_path(str(chap_num).zfill(2) + '_' + folder), image)),
+        redirect("/static/images/2019/%s/%s" % (convert_old_image_path(str(chap_num).zfill(2) + '_' + chap_name), image)),
         301,
     )
 
