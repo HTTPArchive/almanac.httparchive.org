@@ -1,26 +1,29 @@
 #standardSQL
 # The percentage of scripts used inline v. external
+CREATE TEMPORARY FUNCTION getScripts(payload STRING)
+RETURNS STRUCT<total INT64, inline INT64, src INT64, async INT64, defer INT64, async_and_defer INT64, type_module INT64, nomodule INT64>
+LANGUAGE js AS '''
+try {
+  var $ = JSON.parse(payload);
+  var javascript = JSON.parse($._javascript);
+  return javascript.script_tags;
+} catch (e) {
+  return {};
+}
+''';
+
 SELECT
   client,
-  COUNT(0) AS total_scripts,
-  SUM(IF(script NOT LIKE '%src%', 1, 0)) AS inline_script,
-  SUM(IF(script LIKE '%src%', 1, 0)) AS external_script,
-  SUM(IF(script LIKE '%src%', 1, 0)) / COUNT(0) AS pct_external_script,
-  SUM(IF(script NOT LIKE '%src%', 1, 0)) / COUNT(0) AS pct_inline_script
-FROM
-  (
-    SELECT
-      client,
-      page,
-      url,
-      REGEXP_EXTRACT_ALL(LOWER(body), '(<script [^>]*)') AS scripts
-    FROM
-      `httparchive.almanac.summary_response_bodies`
-    WHERE
-      date = '2022-06-01' AND
-      firstHtml
-  )
-CROSS JOIN
-  UNNEST(scripts) AS script
+  SUM(script.total) AS total_scripts,
+  SUM(script.inline) AS inline_script,
+  SUM(script.src) AS external_script,
+  SUM(script.src) / SUM(script.total) AS pct_external_script,
+  SUM(script.inline) / SUM(script.total) AS pct_inline_script,
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    getScripts(payload) AS script
+  FROM
+    `httparchive.pages.2022_06_01_*`)
 GROUP BY
   client
