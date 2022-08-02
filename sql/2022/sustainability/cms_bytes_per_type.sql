@@ -57,6 +57,6 @@ USING
   (client, url)
 GROUP BY
   client,
-  ssg
+  cms
 ORDER BY
   pages DESC
