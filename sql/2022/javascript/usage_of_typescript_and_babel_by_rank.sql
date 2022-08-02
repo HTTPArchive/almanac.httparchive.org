@@ -26,22 +26,7 @@ try {
 }
 ''';
 
-WITH rank_totals AS (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    rank_grouping,
-    COUNT(0) AS total
-  FROM
-    `httparchive.summary_pages.2022_06_01_*`,
-    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
-  WHERE
-    rank <= rank_grouping
-  GROUP BY
-    client,
-    rank_grouping
-),
-
-pages AS (
+WITH pages AS (
   SELECT
     _TABLE_SUFFIX AS client,
     rank_grouping,
