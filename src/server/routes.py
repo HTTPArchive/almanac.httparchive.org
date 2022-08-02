@@ -209,31 +209,34 @@ def ebook(lang, year):
 
 
 # Redirect requests for http2 to new http URLs
-@app.route('/static/images/20<regex("[0-9][0-9]"):year>/http2/<image>')
+@app.route("/static/images/20<int(fixed_digits=2):year>/http2/<image>")
 def redirect_old_http2(year, image):
     return redirect("/static/images/20%s/http/%s" % (year, image)), 301
 
 
 # Redirect requests for the older 2019 mage URLs to new URLs
-@app.route('/static/images/2019/<regex("[0-2][0-9]_.*"):folder>/<image>')
-def redirect_old_images(folder, image):
+@app.route(
+    "/static/images/2019/<int(fixed_digits=2):chap_num>_<string:chap_name>/<image>"
+)
+def redirect_old_images(chap_num, chap_name, image):
     return (
-        redirect("/static/images/2019/%s/%s" % (convert_old_image_path(folder), image)),
+        redirect(
+            "/static/images/2019/%s/%s"
+            % (convert_old_image_path(str(chap_num).zfill(2) + "_" + chap_name), image)
+        ),
         301,
     )
 
 
 # Redirect requests for the older image URLs to new URLs
 @app.route(
-    '/static/images/2019/<regex("(privacy|jamstack|capabilities)"):folder>/<image>'
+    '/static/images/2019/<any("privacy","jamstack","capabilities"):folder>/<image>'
 )
 def redirect_old_hero_images(folder, image):
     return redirect("/static/images/2020/%s/%s" % (folder, image)), 301
 
 
 # Redirect requests for the pdfs to GitHub
-@app.route(
-    '/static/pdfs/<pdf>'
-)
+@app.route("/static/pdfs/<pdf>")
 def redirect_pdfs(pdf):
     return redirect("https://cdn.httparchive.org/almanac/ebooks/%s" % (pdf)), 301
