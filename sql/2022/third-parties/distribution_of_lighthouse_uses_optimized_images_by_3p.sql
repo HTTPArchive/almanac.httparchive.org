@@ -1,0 +1,55 @@
+#standardSQL
+# Third-party pages with unoptimized images
+
+CREATE TEMPORARY FUNCTION getUnminifiedImageUrls(audit STRING)
+RETURNS ARRAY<STRUCT<url STRING, wastedBytes INT64>> LANGUAGE js AS '''
+try {
+  var $ = JSON.parse(audit);
+  return $.details.items.map(({url, wastedBytes}) => {
+    return {url, wastedBytes};
+  });
+} catch (e) {
+  return [];
+}
+''';
+
+WITH third_party_domains AS (
+  SELECT DISTINCT
+    NET.HOST(domain) AS domain
+  FROM
+    `httparchive.almanac.third_parties`
+),
+
+base AS (
+  SELECT
+    page,
+    SUM(IF(third_party_domains.domain IS NOT NULL, potential_savings, 0)) AS potential_third_party_savings,
+    SUM(potential_savings) AS potential_total_savings
+  FROM (
+    SELECT
+      lighthouse.url AS page,
+      NET.HOST(data.url) AS domain,
+      data.wastedBytes AS potential_savings
+    FROM
+      `httparchive.lighthouse.2022_06_01_mobile` AS lighthouse,
+      UNNEST(getUnminifiedImageUrls(JSON_EXTRACT(report, "$.audits['uses-optimized-images']"))) AS data
+  ) AS potential_third_parties
+  LEFT OUTER JOIN
+    third_party_domains
+  ON
+    potential_third_parties.domain = third_party_domains.domain
+  GROUP BY
+    page
+)
+
+SELECT
+  percentile,
+  APPROX_QUANTILES(potential_third_party_savings, 1000)[OFFSET(percentile * 10)] AS potential_third_party_savings_bytes,
+  APPROX_QUANTILES(potential_total_savings, 1000)[OFFSET(percentile * 10)] AS potential_total_savings_bytes
+FROM
+  base,
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+GROUP BY
+  percentile
+ORDER BY
+  percentile
