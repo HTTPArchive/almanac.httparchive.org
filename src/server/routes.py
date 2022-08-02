@@ -225,7 +225,7 @@ def redirect_old_images(folder, image):
 
 # Redirect requests for the older image URLs to new URLs
 @app.route(
-    '/static/images/2019/<regex("(privacy|jamstack|capabilities)"):folder>/<image>'
+    '/static/images/2019/<regex("privacy|jamstack|capabilities"):folder>/<image>'
 )
 def redirect_old_hero_images(folder, image):
     return redirect("/static/images/2020/%s/%s" % (folder, image)), 301
