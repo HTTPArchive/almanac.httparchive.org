@@ -18,7 +18,7 @@ SELECT
   SUM(script.inline) AS inline_script,
   SUM(script.src) AS external_script,
   SUM(script.src) / SUM(script.total) AS pct_external_script,
-  SUM(script.inline) / SUM(script.total) AS pct_inline_script,
+  SUM(script.inline) / SUM(script.total) AS pct_inline_script
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
