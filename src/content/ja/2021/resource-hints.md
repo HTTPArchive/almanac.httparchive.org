@@ -558,7 +558,7 @@ Webサイトのパフォーマンスとプリロードヒントの数には、�
   image="google-fonts.png",
   alt="Google Fontsのフォントを埋め込むための手順",
   caption='Google Fontsの説明では、fonts.gstatic.comとfonts.googleapis.comへ事前接続するようになっています。（出典: <a hreflang="en" href="https://fonts.google.com/">Google Fonts</a>）',
-  description='Code snippet titled "Use on the web" and subtitled with "To embed a font, copy the code into the `<head>` of your html". Code snippet states `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">`',
+  description='「ウェブで使う」というタイトルのコードスニペットで、「フォントを埋め込むには、htmlの`<head>`内にコードをコピーしてください」というサブタイトルが付いています。コードスニペットの内容は、`<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">`となります。',
   width=268,
   height=255
   )
