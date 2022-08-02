@@ -18,7 +18,7 @@ SELECT
   SUM(IF(JSON_EXTRACT_SCALAR(payload, '$._performance.gaming_metrics.lcpOverlayStrict') = 'true', 1, 0)) AS lcp_overlay_strict,
   SUM(IF(JSON_EXTRACT_SCALAR(payload, '$._performance.gaming_metrics.lcpOverlayStrict') = 'true', 1, 0)) / COUNT(0) AS lcp_overlay_strict_per,
   SUM(IF(JSON_EXTRACT_SCALAR(payload, '$._performance.gaming_metrics.lcpOverlaySoft') = 'true', 1, 0)) AS lcp_overlay_soft,
-  SUM(IF(JSON_EXTRACT_SCALAR(payload, '$._performance.gaming_metrics.lcpOverlaySoft') = 'true', 1, 0)) / COUNT(0) AS lcp_overlay_soft_per,
+  SUM(IF(JSON_EXTRACT_SCALAR(payload, '$._performance.gaming_metrics.lcpOverlaySoft') = 'true', 1, 0)) / COUNT(0) AS lcp_overlay_soft_per
 FROM
   `httparchive.pages.2022_07_01_*`
 GROUP BY
