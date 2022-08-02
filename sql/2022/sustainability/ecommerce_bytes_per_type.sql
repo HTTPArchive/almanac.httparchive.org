@@ -1,5 +1,5 @@
 #standardSQL
-# Median resource weights by SSG
+# Median resource weights by Ecommerce platform
 
 # Declare variables to calculate the carbon emissions of one byte
 # Source: https://sustainablewebdesign.org/calculating-digital-emissions/
@@ -10,7 +10,7 @@ DECLARE global_grid_intensity NUMERIC DEFAULT 442;
 
 SELECT
   client,
-  ssg,
+  ecommerce,
   COUNT(0) AS pages,
   APPROX_QUANTILES(total_kb, 1000)[OFFSET(500)] AS median_total_kb,
   APPROX_QUANTILES(total_emissions, 1000)[OFFSET(500)] AS median_total_emissions,
@@ -28,7 +28,7 @@ FROM (
   SELECT DISTINCT
     _TABLE_SUFFIX AS client,
     url,
-    app AS ssg
+    app AS ecommerce
   FROM
     `httparchive.technologies.2021_07_01_*`
   WHERE
@@ -61,6 +61,6 @@ USING
   (client, url)
 GROUP BY
   client,
-  ssg
+  ecommerce
 ORDER BY
   pages DESC
