@@ -9,7 +9,6 @@ from .config import (
     SUPPORTED_CHAPTERS,
 )
 from .language import get_language, DEFAULT_LANGUAGE
-from werkzeug.routing import BaseConverter
 import os.path
 import re
 import datetime
