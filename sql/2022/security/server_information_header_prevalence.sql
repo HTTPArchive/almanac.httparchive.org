@@ -13,8 +13,8 @@ SELECT
   client,
   headername,
   COUNT(DISTINCT host) AS total_hosts,
-  COUNT(DISTINCT IF(hasHeader(response_headers, headername), host, NULL)) AS count_with_header,
-  COUNT(DISTINCT IF(hasHeader(response_headers, headername), host, NULL)) / COUNT(DISTINCT host) AS pct_with_header
+  COUNT(DISTINCT IF(response_headers IS NOT NULL AND hasHeader(response_headers, headername), host, NULL)) AS count_with_header,
+  COUNT(DISTINCT IF(response_headers IS NOT NULL AND hasHeader(response_headers, headername), host, NULL)) / COUNT(DISTINCT host) AS pct_with_header
 FROM (
   SELECT
     date,
