@@ -7,14 +7,14 @@ SELECT
   COUNTIF(has_resource_not_be_200 = 'true') AS count_has_resource_not_be_200,
   COUNTIF(has_resource_not_be_200 = 'true') / COUNT(DISTINCT page) AS pct_has_resource_not_be_200,
   COUNTIF(redirected = 'true') AS count_redirected,
-  COUNTIF(redirected = 'true') / COUNTIF(has_resource_not_be_200 = 'true') AS pct_redirected,
+  SAFE_DIVIDE(COUNTIF(redirected = 'true'), COUNTIF(has_resource_not_be_200 = 'true')) AS pct_redirected,
   # `status` reflects the status code after redirection, so checking only for 200 is fine.
   COUNTIF(status = 200) AS count_status_200,
-  COUNTIF(status = 200) / COUNTIF(has_resource_not_be_200 = 'true') AS pct_status_200,
+  SAFE_DIVIDE(COUNTIF(status = 200), COUNTIF(has_resource_not_be_200 = 'true')) AS pct_status_200,
   COUNTIF(status BETWEEN 201 AND 299) AS count_status_other_ok,
-  COUNTIF(status BETWEEN 201 AND 299) / COUNTIF(has_resource_not_be_200 = 'true') AS pct_status_other_ok,
+  SAFE_DIVIDE(COUNTIF(status BETWEEN 201 AND 299), COUNTIF(has_resource_not_be_200 = 'true')) AS pct_status_other_ok,
   COUNTIF(status NOT BETWEEN 200 AND 299) AS count_status_not_ok,
-  COUNTIF(status NOT BETWEEN 200 AND 299) / COUNTIF(has_resource_not_be_200 = 'true') AS pct_status_not_ok
+  SAFE_DIVIDE(COUNTIF(status NOT BETWEEN 200 AND 299), COUNTIF(has_resource_not_be_200 = 'true')) AS pct_status_not_ok
 FROM (
     SELECT
       _TABLE_SUFFIX AS client,
