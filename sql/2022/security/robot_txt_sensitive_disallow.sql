@@ -3,7 +3,12 @@
 CREATE TEMPORARY FUNCTION getAllDisallowedEndpoints(data STRING)
 RETURNS ARRAY<STRING> DETERMINISTIC
 LANGUAGE js AS '''
-  const parsed_data = JSON.parse(data);
+  let parsed_data;
+  try {
+    parsed_data = JSON.parse(data);
+  } catch (e) {
+      return [];
+  }
   if (parsed_data == null || parsed_data["/robots.txt"] == undefined || !parsed_data["/robots.txt"]["found"]) {
       return [];
   }

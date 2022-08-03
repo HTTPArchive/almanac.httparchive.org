@@ -38,7 +38,7 @@ robot_headers AS (
     LOWER(JSON_VALUE(response_header, '$.name')) = 'x-robots-tag'
 ),
 
-total_nb_pages AS (
+totals AS (
   SELECT
     _TABLE_SUFFIX AS client,
     COUNT(DISTINCT url) AS total_nb_pages
@@ -52,7 +52,7 @@ SELECT
   client,
   total_nb_pages AS total,
   COUNTIF(robots_content IS NOT NULL OR robot_header_value IS NOT NULL) AS count_robots,
-  COUNTIF(robots_content IS NOT NULL OR robot_header_value IS NOT NULL) / MIN(total_nb_pages.total_nb_pages) AS pct_robots,
+  COUNTIF(robots_content IS NOT NULL OR robot_header_value IS NOT NULL) / total_nb_pages AS pct_robots,
   COUNT(robots_content) AS count_robots_content,
   COUNT(robots_content) / total_nb_pages AS pct_robots_content,
   COUNT(robot_header_value) AS count_robot_header_value,
@@ -68,7 +68,7 @@ SELECT
 FROM
   meta_tags FULL OUTER JOIN robot_headers USING (client, page)
 JOIN
-  total_nb_pages
+  totals
 USING (client)
 GROUP BY
   client,
