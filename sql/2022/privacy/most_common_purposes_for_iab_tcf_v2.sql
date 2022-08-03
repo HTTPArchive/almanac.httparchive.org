@@ -28,8 +28,7 @@ WITH pages_iab_tcf_v2 AS (
     JSON_QUERY(
       JSON_VALUE(payload, '$._privacy'),
       '$.iab_tcf_v2.data'
-    ) AS metrics,
-    COUNT(DISTINCT URL) OVER (partition by _TABLE_SUFFIX) AS number_of_websites
+    ) AS metrics
   FROM
     `httparchive.pages.2022_06_01_*`
   WHERE
@@ -40,11 +39,10 @@ WITH pages_iab_tcf_v2 AS (
 )
 
 SELECT
-  a.client,
+  client,
   field,
   result.key AS key,
   result.value AS value,
-  ANY_VALUE(number_of_websites) AS number_of_websites,
   COUNT(0) AS number_of_websites_with_purpose
 FROM
   (
@@ -141,9 +139,7 @@ FROM
       ) AS results
     FROM
       pages_iab_tcf_v2
-  ) AS a LEFT JOIN
-  (SELECT client, number_of_websites FROM pages_iab_tcf_v2 GROUP BY 1,2) AS b
-  ON a.client=b.client,
+  ),
   UNNEST(results) result
 GROUP BY
   client,

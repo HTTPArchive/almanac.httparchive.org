@@ -1,5 +1,5 @@
 #standardSQL
-# Pages that use User-Agent Client Hints
+# Pages that use Client Hints
 
 WITH response_headers AS (
   SELECT
@@ -56,7 +56,6 @@ SELECT
   client,
   rank_grouping,
   COUNT(DISTINCT page) AS number_of_websites,
-  total_websites,
   COUNT(DISTINCT page) / total_websites AS pct_websites
 FROM
   response_headers

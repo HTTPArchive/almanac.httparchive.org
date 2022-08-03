@@ -35,19 +35,7 @@ LANGUAGE js AS r"""
   return result_array;
 """;
 
-WITH page_ranks AS (
-  SELECT
-    client,
-    page,
-    rank
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2022-06-01' AND
-    firstHtml = TRUE
-),
-
-response_headers AS (
+WITH response_headers AS (
   SELECT
     client,
     page,
