@@ -1,5 +1,5 @@
 #standardSQL
-# Pages that use User-Agent Client Hints
+# Pages that use Client Hints
 
 WITH response_headers AS (
   SELECT

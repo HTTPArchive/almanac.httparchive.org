@@ -6,9 +6,9 @@ https://github.com/ghostery/whotracks.me/blob/master/blog/generating_adblocker_f
 2. Upload to almanac.trackers_2022 temp table
 3. Append to almanac.whotracksme with this query:
 SELECT
-  *
+    *
 FROM
-  `httparchive.almanac.trackers_2022`
+    `httparchive.almanac.trackers_2022`
 """
 
 import requests

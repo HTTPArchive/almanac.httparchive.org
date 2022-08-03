@@ -3,7 +3,6 @@
 
 SELECT
   _TABLE_SUFFIX AS client,
-  COUNT(0) AS total_websites,
   COUNTIF(
     ARRAY_LENGTH(JSON_QUERY_ARRAY(JSON_VALUE(payload, '$._privacy'), '$.privacy_wording_links')) > 0
   ) AS websites_with_privacy_link,
