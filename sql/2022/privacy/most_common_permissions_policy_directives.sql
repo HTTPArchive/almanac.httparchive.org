@@ -5,22 +5,22 @@
 CREATE TEMP FUNCTION parse_policy_directive(policy STRING)
 RETURNS ARRAY<STRUCT<directive STRING, feature_name STRING, allowlist ARRAY<STRING>>>
 LANGUAGE js AS r"""
-  policy = policy.replaceAll(/\,/g, ';')  -- swap directive delimiter
+  policy = policy.replaceAll(/\,/g, ';')  // swap directive delimiter
   policy_directives = policy.split(';')
 
   result_array = []
   for (directive of policy_directives) {
     tokens = directive
-      .replaceAll(/\=/g, ' ')  -- replace '=' with ' '
-      .replaceAll(/(\(|\'|\")/g, ' $1')  -- add space before parentheses and quotes
+      .replaceAll(/\=/g, ' ')  // replace '=' with ' '
+      .replaceAll(/(\(|\'|\")/g, ' $1')  // add space before parentheses and quotes
       .trim().split(' ')
 
     feature_name = tokens.shift().replaceAll(/[^a-z0-9\-]+/g, '')
 
     tokens = tokens
       .join(' ')
-      .replaceAll( /\(|\'|\"|\)/g, '')  -- remove parentheses and quotes
-      .replaceAll(/ +/g, ' ')  -- collapse whitespace
+      .replaceAll( /\(|\'|\"|\)/g, '')  // remove parentheses and quotes
+      .replaceAll(/ +/g, ' ')  // collapse whitespace
       .trim().split(' ')
 
     if(feature_name && !['self', 'none'].includes(feature_name)) {
