@@ -1,5 +1,5 @@
 #standardSQL
-# Usage of Feature-Policy or Permissions-Policy
+# Usage of Permissions Policy
 
 WITH page_ranks AS (
   SELECT
@@ -47,7 +47,11 @@ meta_tags AS (
 )
 
 SELECT
-  *,
+  client,
+  rank_grouping,
+  number_of_websites_with_feature_policy,
+  number_of_websites_with_permissions_policy,
+  number_of_websites_with_any_policy,
   number_of_websites_with_feature_policy / number_of_websites AS pct_websites_with_feature_policy,
   number_of_websites_with_permissions_policy / number_of_websites AS pct_websites_with_permissions_policy,
   number_of_websites_with_any_policy / number_of_websites AS pct_websites_with_any_policy
