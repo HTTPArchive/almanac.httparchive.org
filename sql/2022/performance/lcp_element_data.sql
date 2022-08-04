@@ -51,7 +51,7 @@ lcp_stats AS (
     getDecodingAttr(JSON_EXTRACT(payload, '$._performance.lcp_elem_stats[0].attributes')) AS decoding,
     getLoadingClasses(JSON_EXTRACT(payload, '$._performance.lcp_elem_stats[0].attributes')) AS classWithLazyload
   FROM
-    `httparchive.pages.2021_07_01_*`
+    `httparchive.pages.2022_06_01_*`
 )
 
 SELECT
