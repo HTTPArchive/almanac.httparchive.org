@@ -18,7 +18,7 @@ rendered_data AS (
     url,
     getRDFaTypeOfs(JSON_EXTRACT(JSON_VALUE(JSON_EXTRACT(payload, '$._structured-data')), '$.structured_data.rendered')) AS rdfa_type_ofs
   FROM
-    `httparchive.pages.2021_07_01_*`
+    `httparchive.pages.2022_06_01_*`
 ),
 
 page_totals AS (
@@ -26,7 +26,7 @@ page_totals AS (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_pages
   FROM
-    `httparchive.pages.2021_07_01_*`
+    `httparchive.pages.2022_06_01_*`
   GROUP BY
     _TABLE_SUFFIX
 )
