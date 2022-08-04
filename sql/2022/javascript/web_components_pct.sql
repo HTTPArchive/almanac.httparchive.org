@@ -19,6 +19,6 @@ FROM (
       _TABLE_SUFFIX AS client,
       JSON_EXTRACT_SCALAR(payload, '$._javascript') AS js
     FROM
-      `httparchive.pages.2021_09_01_*`)
+      `httparchive.pages.2022_06_01_*`)
   GROUP BY
     client)
