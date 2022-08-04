@@ -14,7 +14,7 @@ SELECT
   client,
   IF(unminified_js_kbytes <= 200, CEIL(unminified_js_kbytes / 10) * 10, 200) AS unminified_js_kbytes,
   COUNT(0) AS pages,
-  SUM(COUNT(0)) OVER (client) AS total,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER () AS pct
 FROM (
   SELECT
