@@ -31,18 +31,23 @@ WITH base AS (
 )
 
 SELECT
-  client,
+  base.client AS client,
   COUNT(0) AS freq,
   total,
   COUNT(0) / total AS pct
 FROM
-  base,
-  (
-    SELECT
-      COUNT(DISTINCT url) AS total
-    FROM
-      `httparchive.lighthouse.2022_06_01_*`
-  )
+  base
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(DISTINCT url) AS total
+  FROM
+    `httparchive.lighthouse.2022_06_01_*`
+  GROUP BY
+    client
+)
+USING
+  (client)
 GROUP BY
   client,
   total

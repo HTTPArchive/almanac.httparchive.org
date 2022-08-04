@@ -18,11 +18,18 @@ SELECT
   COUNT(0) / total AS pct
 FROM
   `httparchive.lighthouse.2022_06_01_*`,
-  UNNEST(getVulnerabilities(JSON_EXTRACT(report, "$.audits['no-vulnerable-libraries']"))) AS lib, (
-    SELECT
-      COUNT(DISTINCT url) AS total
-    FROM
-      `httparchive.lighthouse.2022_06_01_*`)
+  UNNEST(getVulnerabilities(JSON_EXTRACT(report, "$.audits['no-vulnerable-libraries']"))) AS lib
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(DISTINCT url) AS total
+  FROM
+    `httparchive.lighthouse.2022_06_01_*`
+  GROUP BY
+    client
+)
+USING
+  (client)
 GROUP BY
   client,
   lib,
