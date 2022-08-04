@@ -59,12 +59,12 @@ FROM (
   FROM
     `httparchive.almanac.parsed_css`,
     UNNEST(getImportantProperties(css)) AS important
-  JOIN
-    totals
-  USING
-    (client)
   WHERE
     date = '2022-07-01')
+JOIN
+  totals
+USING
+  (client)
 GROUP BY
   client,
   property
