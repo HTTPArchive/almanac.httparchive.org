@@ -22,7 +22,7 @@ FROM (
     FROM
       `httparchive.almanac.requests`
     WHERE
-      date = '2022-07-01' AND
+      date = '2022-06-01' AND
       type = 'image')
   JOIN (
     SELECT
@@ -32,7 +32,7 @@ FROM (
     FROM
       `httparchive.almanac.requests`
     WHERE
-      date = '2022-07-01' AND
+      date = '2022-06-01' AND
       type = 'css')
   USING
     (client, page, url)

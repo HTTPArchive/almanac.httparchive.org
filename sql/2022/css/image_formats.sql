@@ -16,7 +16,7 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2022-07-01' AND
+    date = '2022-06-01' AND
     type = 'image')
 JOIN (
   SELECT
@@ -26,7 +26,7 @@ JOIN (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2022-07-01' AND
+    date = '2022-06-01' AND
     type = 'css')
 USING
   (client, page, css_url)
@@ -36,7 +36,7 @@ JOIN (
     url AS page,
     JSON_EXTRACT_SCALAR(image, '$.url') AS img_url
   FROM
-    `httparchive.pages.2022_07_01_*`,
+    `httparchive.pages.2022_06_01_*`,
     UNNEST(JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._Images'), '$')) AS image)
 USING
   (client, page, img_url)
