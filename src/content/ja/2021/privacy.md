@@ -29,7 +29,7 @@ featured_stat_label_3: FLoCコホートからのオプトアウトを行う人�
 
 この新しい法律により、ユーザーは個人情報を共有することにどれだけ抵抗がないか、より大きな発言権を持つようになりました。おそらく、すでに多くのクッキー同意バナーをクリックし、この選択を可能にしていることでしょう。さらにウェブブラウザは、機密データを隠してサードパーティのクッキーをブロックすることから、個人の属性に関する正当なユースケースと個々のユーザーのプライバシーのバランスをとる革新的な方法まで、ユーザーのプライバシーを改善する<a hreflang="en" href="https://privacysandbox.com/">技術的解決策</a> を実装しています。
 
-この章では、ウェブにおけるプライバシーの現状を概観する。まず、ユーザーのプライバシーがどのように害されうるかを考える。ここでは、ウェブサイトがどのように[オンライントラッキング](#how-websites-profile-you-online-online-tracking)によってあなたをプロファイリングし、どのように[あなたの機密データにアクセス](#how-websites-handle-your-sensitive-data)しているかについて議論します。次に、ウェブサイトが[機密データを保護](#how-websites-protect-your-sensitive-data)する方法と、[プライバシー設定シグナル](#how-websites-give-you-a-privacy-choice-privacy-preference-signals)によってユーザーに選択肢を与える方法について掘り下げます。最後に、[今後のブラウザによるプライバシー保護への取り組みについての展望](#how-browsers-are-evolving-their-privacy-approaches)を掲載します。
+この章では、ウェブにおけるプライバシーの現状を概観する。まず、ユーザーのプライバシーがどのように害されうるかを考える。ここでは、ウェブサイトがどのように[オンライントラッキング](#ウェブサイトがあなたをプロファイリングする方法：オンライントラッキング)によってあなたをプロファイリングし、どのように[あなたの機密データにアクセス](#how-websites-handle-your-sensitive-data)しているかについて議論します。次に、ウェブサイトが[機密データを保護](#how-websites-protect-your-sensitive-data)する方法と、[プライバシー設定シグナル](#how-websites-give-you-a-privacy-choice-privacy-preference-signals)によってユーザーに選択肢を与える方法について掘り下げます。最後に、[今後のブラウザによるプライバシー保護への取り組みについての展望](#how-browsers-are-evolving-their-privacy-approaches)を掲載します。
 
 
 ## ウェブサイトがあなたをプロファイリングする方法：オンライントラッキング
