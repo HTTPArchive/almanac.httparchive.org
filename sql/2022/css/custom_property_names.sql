@@ -13,7 +13,7 @@ try {
 SELECT
   client,
   name,
-  COUNT(DISTINCT url) AS freq,
+  COUNT(DISTINCT url) AS pages,
   total,
   COUNT(DISTINCT url) / total AS pct
 FROM (
