@@ -19,7 +19,6 @@
 [~google-sheets]: https://docs.google.com/spreadsheets/d/1TPA_4xRTBB2fQZaBPZHVFvD0ikrR-4sNkfJfUEpjibs/edit?usp=sharing
 [~chapter-markdown]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2022/performance.md
 
-
 ## Query List
 Taken from [`Metrics` Section](https://docs.google.com/document/d/1IKV40fllCZTqeu-R6-73ckjQR9S6jiBfVBBfdcpAMkI/edit#heading=h.zbvh8yhwkp2i) in planning doc, where technical notes on how queries might be formulated live.
 ### Web Getting Right (Not Custom)
