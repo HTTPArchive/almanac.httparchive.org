@@ -13,22 +13,30 @@ try {
 ''';
 
 SELECT
+  client,
   AVG(pct_1p_wasted_bytes) AS avg_pct_1p_wasted_bytes,
   AVG(pct_3p_wasted_bytes) AS avg_pct_3p_wasted_bytes
 FROM (
   SELECT
+    client,
     page,
     SUM(IF(is_3p, 0, wasted_bytes)) / SUM(wasted_bytes) AS pct_1p_wasted_bytes,
     SUM(IF(is_3p, wasted_bytes, 0)) / SUM(wasted_bytes) AS pct_3p_wasted_bytes
   FROM (
     SELECT
-      test.url AS page,
+      _TABLE_SUFFIX AS client,
+      lighthouse.url AS page,
       NET.HOST(unminified.url) IS NOT NULL AND NET.HOST(unminified.url) IN (
         SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2022-06-01' AND category != 'hosting'
       ) AS is_3p,
       unminified.wastedBytes AS wasted_bytes
     FROM
-      `httparchive.lighthouse.2022_06_01_mobile` AS test,
-      UNNEST(getUnminifiedJsUrls(JSON_EXTRACT(report, "$.audits['unminified-javascript']"))) AS unminified)
+      `httparchive.lighthouse.2022_06_01_*` AS lighthouse,
+      UNNEST(getUnminifiedJsUrls(JSON_EXTRACT(report, "$.audits['unminified-javascript']"))) AS unminified
+    )
+    GROUP BY
+      client,
+      page
+  )
   GROUP BY
-    page)
+    client

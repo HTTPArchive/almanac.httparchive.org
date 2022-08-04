@@ -11,19 +11,22 @@ try {
 ''';
 
 SELECT
+  _TABLE_SUFFIX AS client,
   lib,
   COUNT(0) AS freq,
   total,
   COUNT(0) / total AS pct
 FROM
-  `httparchive.lighthouse.2022_06_01_mobile`,
+  `httparchive.lighthouse.2022_06_01_*`,
   UNNEST(getVulnerabilities(JSON_EXTRACT(report, "$.audits['no-vulnerable-libraries']"))) AS lib, (
     SELECT
       COUNT(DISTINCT url) AS total
     FROM
-      `httparchive.lighthouse.2022_06_01_mobile`)
+      `httparchive.lighthouse.2022_06_01_*`)
 GROUP BY
+  client,
   lib,
   total
 ORDER BY
+  client,
   freq DESC

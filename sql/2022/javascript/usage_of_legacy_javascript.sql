@@ -14,20 +14,24 @@ try {
 
 WITH base AS (
   SELECT
+    client,
     page
   FROM
     (
       SELECT
+        _TABLE_SUFFIX AS client,
         lighthouse.url AS page
       FROM
-        `httparchive.lighthouse.2022_06_01_mobile` AS lighthouse,
+        `httparchive.lighthouse.2022_06_01_*` AS lighthouse,
         UNNEST(getUrls(JSON_EXTRACT(report, "$.audits['legacy-javascript']"))) AS data
     )
   GROUP BY
+    client,
     page
 )
 
 SELECT
+  client,
   COUNT(0) AS freq,
   total,
   COUNT(0) / total AS pct
@@ -40,6 +44,8 @@ FROM
       `httparchive.lighthouse.2022_06_01_*`
   )
 GROUP BY
+  client,
   total
 ORDER BY
+  client,
   freq DESC
