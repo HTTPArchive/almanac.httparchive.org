@@ -138,7 +138,7 @@ Visible focus styles are helpful for everyone but are necessary for sighted keyb
   caption="Pages overriding focus styles.",
   description="A bar chart showing 92.6% of desktop sites and 94.1% of mobile sites use a `:focus` pseudo class, and 90.0% of desktop sites and 91.0% of mobile sites use that `:focus` pseudo class to set the outline to 0 or none. 0.6% of desktop sites and 0.6% of mobile sites use the `:focus-visible` pseudo class.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1277337070&format=interactive",
-  sheets_gid="1027210289",
+  sheets_gid="1517955087",
   sql_file="../css/focus_outline_0.sql"
 ) }}
 
