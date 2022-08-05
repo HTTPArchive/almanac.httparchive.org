@@ -3,7 +3,7 @@
 This is a copy of 2021 queries (no new list).
 
 <!--
-  This directory contains all of the 2021 Mobile Web chapter queries.
+  This directory contains all of the 2022 Mobile Web chapter queries.
 
   Each query should have a corresponding `metric_name.sql` file.
   Note that readers are linked to this directory, so try to make the SQL file names descriptive for easy browsing.
