@@ -1,6 +1,5 @@
 #standardSQL
-# Percentiles of Max-Age-attribute, Expires-attribute and real age (Max-Age has precedence) of cookies set over all requests
-# Only incorporates values that are larger than 0
+# Count the number of cookies where the Max-Age-attribute, Expires-attribute and real age (Max-Age has precedence) of cookies are negative
 CREATE TEMPORARY FUNCTION getCookieAgeValues(headers STRING, epochOfRequest NUMERIC)
 RETURNS STRING DETERMINISTIC
 LANGUAGE js AS '''
@@ -47,69 +46,49 @@ WITH age_values AS (
 max_age_values AS (
   SELECT
     client,
-    percentile,
-    APPROX_QUANTILES(SAFE_CAST(max_age_value AS NUMERIC), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS max_age
+    COUNTIF(SAFE_CAST(max_age_value AS NUMERIC) <= 0) AS max_age
   FROM age_values,
-    UNNEST(JSON_QUERY_ARRAY(values, '$.maxAge')) AS max_age_value,
-    UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
-  WHERE
-    SAFE_CAST(max_age_value AS NUMERIC) > 0
+    UNNEST(JSON_QUERY_ARRAY(values, '$.maxAge')) AS max_age_value
   GROUP BY
-    percentile,
     client
   ORDER BY
-    percentile,
     client
 ),
 
 expires_values AS (
   SELECT
     client,
-    percentile,
-    APPROX_QUANTILES(SAFE_CAST(expires_value AS NUMERIC), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS expires
+    COUNTIF(SAFE_CAST(expires_value AS NUMERIC) <= 0) AS expires
   FROM age_values,
-    UNNEST(JSON_QUERY_ARRAY(values, '$.expires')) AS expires_value,
-    UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
-  WHERE
-    SAFE_CAST(expires_value AS NUMERIC) > 0
+    UNNEST(JSON_QUERY_ARRAY(values, '$.expires')) AS expires_value
   GROUP BY
-    percentile,
     client
   ORDER BY
-    percentile,
     client
 ),
 
 real_age_values AS (
   SELECT
     client,
-    percentile,
-    APPROX_QUANTILES(SAFE_CAST(real_age_value AS NUMERIC), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS real_age
+    COUNTIF(SAFE_CAST(real_age_value AS NUMERIC) <= 0) AS real_age
   FROM age_values,
-    UNNEST(JSON_QUERY_ARRAY(values, '$.realAge')) AS real_age_value,
-    UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
-  WHERE
-    SAFE_CAST(real_age_value AS NUMERIC) > 0
+    UNNEST(JSON_QUERY_ARRAY(values, '$.realAge')) AS real_age_value
   GROUP BY
-    percentile,
     client
   ORDER BY
-    percentile,
     client
 )
 
 SELECT
   client,
-  percentile,
   max_age,
   expires,
   real_age
 FROM
   max_age_values
 JOIN expires_values
-USING (client, percentile)
+USING (client)
 JOIN real_age_values
-USING (client, percentile)
+USING (client)
 ORDER BY
-  client,
-  percentile
+  client
