@@ -134,6 +134,23 @@
     "hash": "0b65c79e746dc4d84246e6622a7a4cb0",
     "size": 31
   },
+  "/static/pdfs/web_almanac_2021_ja.pdf": {
+    "date_published": "22-08-01T00:00:00.000Z",
+    "date_modified": "22-08-01T00:00:00.000Z",
+    "hash": "1234",
+    "size": 17
+  },
+  "/static/pdfs/web_almanac_2021_ja_cover_A5.pdf": {
+    "date_published": "22-08-01T00:00:00.000Z",
+    "date_modified": "22-08-01T00:00:00.000Z",
+    "hash": "1234"
+  },
+  "/static/pdfs/web_almanac_2021_ja_print_A5.pdf": {
+    "date_published": "22-08-01T00:00:00.000Z",
+    "date_modified": "22-08-01T00:00:00.000Z",
+    "hash": "1234",
+    "size": 17
+  },
   "en/2019/chapters/accessibility.html": {
     "date_published": "2019-11-11T00:00:00.000Z",
     "date_modified": "2022-03-02T00:00:00.000Z",
