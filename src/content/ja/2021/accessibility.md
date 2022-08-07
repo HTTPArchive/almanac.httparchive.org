@@ -138,7 +138,7 @@ HTMLの `lang` 属性を設定することで、ページの翻訳が容易に�
   caption="フォーカススタイルをオーバーライドするページ。",
   description="デスクトップサイトの92.6%、モバイルサイトの94.1%が `:focus` 擬似クラスを使用しており、デスクトップサイトの90.0%、モバイルサイトの91.0%がその `:focus` 擬似クラスを使ってアウトラインを0またはゼロに設定しているという棒グラフです。デスクトップサイトの0.6%、モバイルサイトの0.6%は `:focus-visible` 疑似クラスを使用しています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1277337070&format=interactive",
-  sheets_gid="1027210289",
+  sheets_gid="1517955087",
   sql_file="../css/focus_outline_0.sql"
 ) }}
 
@@ -567,8 +567,8 @@ HTML5仕様では、2014年に `<video>` と `<audio>` 要素が導入され、�
   caption="`<video>` 要素を持つデスクトップWebサイトには、少なくとも1つの `<track>` 要素が付随しています。",
   content="0.5%",
   classes="big-number",
-  sheets_gid="1198212185",
-  sql_file="audio_track_usage.sql"
+  sheets_gid="1261793459",
+  sql_file="video_track_usage.sql"
 )
 }}
 
