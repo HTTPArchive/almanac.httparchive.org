@@ -626,14 +626,14 @@ When a button role is applied to an `<a>` element, it overrides the implicit lin
 
 {{ figure_markup(
   caption="Desktop websites have at least one link with a button role",
-  content="17.5%",
+  content="18.6%",
   classes="big-number",
   sheets_gid="1014817325",
   sql_file="anchors_with_role_button.sql"
 )
 }}
 
-We found that 18% of desktop pages (up from 16% in 2020) and 19% (up from 15% in 2020) of mobile pages contained at least one anchor element with `role="button"`. A native `<button>` element would be a better choice, <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">per the first rule of ARIA</a>.
+We found that 19% of desktop pages (up from 16% in 2020) and 18% (up from 15% in 2020) of mobile pages contained at least one anchor element with `role="button"`. A native `<button>` element would be a better choice, <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">per the first rule of ARIA</a>.
 
 This act of adding ARIA roles, or a <a hreflang="en" href="https://adrianroselli.com/2020/02/role-up.html">"role-up"</a>, is usually less ideal than using the correct native HTML element. Again, in the vast majority of these cases a better pattern than explicitly defining `role="button"` on the element in question would be to leverage the native HTML `<button>` element, as it comes with the expected semantics and behavior.
 

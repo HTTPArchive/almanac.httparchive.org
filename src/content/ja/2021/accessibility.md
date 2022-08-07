@@ -626,14 +626,14 @@ ARIAロールのもっとも一般的な誤用の1つは、 `<div>`や `<span>`�
 
 {{ figure_markup(
   caption="デスクトップのWebサイトには、少なくとも1つのボタンの役割を持つリンクがあります。",
-  content="17.5%",
+  content="18.6%",
   classes="big-number",
   sheets_gid="1014817325",
   sql_file="anchors_with_role_button.sql"
 )
 }}
 
-デスクトップページの18％（2020年の16％から増加）、モバイルページの19％（2020年の15％から増加）に `role="button"` のアンカー要素が少なくとも1つ含まれていることがわかりました。ネイティブの `<button>` 要素の方が、<a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">ARIAの最初の規則</a>にしたがって、より良い選択でしょう。
+デスクトップページの19％（2020年の16％から増加）、モバイルページの18％（2020年の15％から増加）に `role="button"` のアンカー要素が少なくとも1つ含まれていることがわかりました。ネイティブの `<button>` 要素の方が、<a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">ARIAの最初の規則</a>にしたがって、より良い選択でしょう。
 
 このARIAロールを追加する行為、つまり<a hreflang="en" href="https://adrianroselli.com/2020/02/role-up.html">"role-up"</a>は、通常、正しいネイティブHTML要素を使用するより理想的ではありません。繰り返しますが、これらのケースの大部分では、問題の要素に明示的に `role="button"` を定義するよりも、ネイティブのHTML`<button>` 要素を活用する方が良いパターンでしょう。
 
