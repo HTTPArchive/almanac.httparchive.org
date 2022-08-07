@@ -45,7 +45,7 @@ Les recommandations pour réduire les coûts de performance du chargement des po
   )
 }}
 
-Le fait que les trois quarts soient hébergés sur des serveurs tierces-parties n'est peut-être pas surprenant compte tenu de la domination de Google Fonts dont nous parlerons [ci-dessous](#quels-sont-les-hébergeurs-tierces-parties-les-plus-populaires).
+Le fait que les trois quarts soient hébergés sur des serveurs tierces-parties n'est peut-être pas surprenant compte tenu de la domination de Google Fonts dont nous parlerons [ci-dessous](#quels-sont-les-hébergeurs-tierces-parties-les-plus-populaires).<!-- markdownlint-disable-line MD051 -->
 
 Google fournit des polices en utilisant des fichiers CSS tiers hébergés sur https://fonts.googleapis.com. Les développeurs font des requêtes vers ces feuilles de style en utilisant les balises `<link>` dans leur code. Bien que ces feuilles de style soient bloquantes, elles sont très petites. Cependant, les fichiers de police sont hébergés sur un autre domaine, `https://fonts.gstatic.com`. Le modèle consistant à exiger deux rebonds séparés vers deux domaines différents fait de `preconnect` une excellente option ici pour la deuxième requête qui ne sera pas découverte avant le téléchargement de la feuille de style.
 

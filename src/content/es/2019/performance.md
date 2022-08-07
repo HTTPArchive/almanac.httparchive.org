@@ -206,6 +206,7 @@ Comencemos definiendo algunos umbrales. De acuerdo con la nueva metodología PSI
   )
 }}
 
+<!-- markdownlint-disable-next-line MD051 -->
 Seguimos el mismo procedimiento que hasta ahora. Este gráfico muestra la distribución de las experiencias FID rápidas, moderadas y lentas de los sitios web. Éste es un gráfico dramáticamente diferente de los gráficos anteriores para FCP y TTFB. (Ver [Figura 7.1](#fig-1) y [Figura 7.9](#fig-9) respectivamente). La curva de FID rápido desciende muy lentamente del 100% al 75% y luego cae en picada. La gran mayoría de las experiencias de FID son rápidas para la mayoría de los sitios web.
 
 {{ figure_markup(
