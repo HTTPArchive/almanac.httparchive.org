@@ -108,7 +108,7 @@ When we consider the most popular sites in particular, the numbers for mobile ar
   content="80.5%",
   classes="big-number",
   sheets_gid="2009310389",
-  sql_file="common_html_lang_attrib.sql"
+  sql_file="valid_html_lang.sql"
 )
 }}
 
