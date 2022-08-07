@@ -433,7 +433,7 @@ Web Components仕様の <a hreflang="en" href="https://css-tricks.com/crafting-r
   sql_file="element_popularity.sql"
 ) }}
 
-ウェブページを作るとき、3つのものが一緒になります。ひとつはHTMLで、この章を通してそれを見ていきます。2つ目はJavaScriptで、JavaScriptを読み込むために使われる`script`要素がもっとも人気のあるものの1つであることを[前のセクション](#スクリプト)で見てきました。CSSのインライン化に使われる`style`要素も同様に人気があることは、さほどショックではないでしょう。スキャンされたモバイルページの83.8%は、少なくとも1つの `style` 要素を持っていました。
+ウェブページを作るとき、3つのものが一緒になります。ひとつはHTMLで、この章を通してそれを見ていきます。2つ目はJavaScriptで、JavaScriptを読み込むために使われる`script`要素がもっとも人気のあるものの1つであることを[前のセクション](#script)で見てきました。CSSのインライン化に使われる`style`要素も同様に人気があることは、さほどショックではないでしょう。スキャンされたモバイルページの83.8%は、少なくとも1つの `style` 要素を持っていました。
 
 ページ内での人気度という点では、0.7％とトップ20に入るのがやっとでした。つまり、1つのページで複数の `script` 要素が人気を集めている一方で、ほとんどのページでは `style` 要素の数が5倍も少ないと考えられます。そして、それは理にかなっているのです。なぜなら、`script`要素はインラインと外部スクリプトの両方に使用できますが、CSSでは外部スタイルシートの読み込みに`link`要素という別の要素を使用するからです。`link` 要素は `script` 要素よりもわずかに多くのページに存在していますが、出現数の点ではやや劣っています。
 
@@ -495,7 +495,7 @@ Web Components仕様の <a hreflang="en" href="https://css-tricks.com/crafting-r
   ) }}</figcaption>
 </figure>
 
-圧倒的に人気があるのは<a hreflang="en" href="https://www.sliderrevolution.com/faq/developer-guide-output-class-tag-changes/">Slider Revolution</a>で、大半の要素がこのフレームワークに起因するものだと言われています。この1年で3倍以上の人気となり、人気のあるテンプレートやサイトビルダーの一部かもしれないと考えるに至りました。僅差で2位は、人気の無料サイトビルダーの<a hreflang="en" href="https://www.wix.com/">Wix</a>です。`pages-css`は特定できませんでしたが、なぜ `pages-css` 要素が人気なのか、何かアイデアがありましたら、GitHubの[編集を提案する](#explore-results) で教えてください。
+圧倒的に人気があるのは<a hreflang="en" href="https://www.sliderrevolution.com/faq/developer-guide-output-class-tag-changes/">Slider Revolution</a>で、大半の要素がこのフレームワークに起因するものだと言われています。この1年で3倍以上の人気となり、人気のあるテンプレートやサイトビルダーの一部かもしれないと考えるに至りました。僅差で2位は、人気の無料サイトビルダーの<a hreflang="en" href="https://www.wix.com/">Wix</a>です。`pages-css`は特定できませんでしたが、なぜ `pages-css` 要素が人気なのか、何かアイデアがありましたら、GitHubの[編集を提案する](#explore-results) で教えてください。<!-- markdownlint-disable-line MD051 -->
 
 <a hreflang="en" href="https://angular.io/">Angular</a>や <a hreflang="en" href="https://nextjs.org/">Next.js</a> 、あるいは以前の <a hreflang="en" href="https://angularjs.org/">Angular.js</a> など人気フレームワークはもっとカスタムコンポーネントを占めていると思っていましたが、`router-outlet` と `ng-component` はカスタムコンポーネント基盤の小さな一部を構成していることがわかります。
 
