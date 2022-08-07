@@ -301,7 +301,7 @@ Headings make it easier for screen readers to properly navigate a page by supply
   content="58%",
   classes="big-number",
   sheets_gid="461215072",
-  sql_file="???"
+  sql_file="lighthouse_a11y_audits.sql"
 )
 }}
 
