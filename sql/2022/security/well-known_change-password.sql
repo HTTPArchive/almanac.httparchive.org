@@ -7,8 +7,8 @@
 SELECT
   client,
   COUNT(DISTINCT page) AS total_pages,
-  COUNTIF(change_password_redirected = 'true' AND (change_password_status BETWEEN 200 AND 299) AND resource_status != 200) AS count_change_password_did_redirect_and_ok,
-  COUNTIF(change_password_redirected = 'true' AND (change_password_status BETWEEN 200 AND 299) AND resource_status != 200) / COUNT(DISTINCT page) AS pct_change_password_did_redirect_and_ok
+  COUNTIF(change_password_redirected = 'true' AND (change_password_status BETWEEN 200 AND 299) AND (resource_status NOT BETWEEN 200 AND 299)) AS count_change_password_did_redirect_and_ok,
+  COUNTIF(change_password_redirected = 'true' AND (change_password_status BETWEEN 200 AND 299) AND (resource_status NOT BETWEEN 200 AND 299)) / COUNT(DISTINCT page) AS pct_change_password_did_redirect_and_ok
 FROM (
     SELECT
       _TABLE_SUFFIX AS client,
