@@ -15,7 +15,7 @@ SELECT
   blocking_pages,
   percentile,
   p50_transfer_size_kib,
-  p50_blocking_time,
+  p50_blocking_time
 FROM (
   SELECT
     client,

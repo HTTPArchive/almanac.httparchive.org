@@ -21,11 +21,11 @@ WITH total_third_party_usage AS (
     SELECT
       _TABLE_SUFFIX AS client,
       pageid,
-      url,
+      url
     FROM
       `httparchive.summary_requests.2022_06_01_*`
   ) AS requests
-  ON ( 
+  ON (
     pages._TABLE_SUFFIX = requests.client AND
     pages.pageid = requests.pageid
   )
