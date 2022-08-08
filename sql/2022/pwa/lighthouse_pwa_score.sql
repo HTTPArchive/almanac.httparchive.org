@@ -49,6 +49,7 @@ GROUP BY
   date,
   percentile
 ORDER BY
+  client,
   date,
-  type DESC,
+  type,
   percentile
