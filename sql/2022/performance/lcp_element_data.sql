@@ -105,7 +105,7 @@ SELECT
   COUNTIF(decoding = 'auto') AS auto_decoding,
   COUNT(0) AS total,
   COUNTIF(hints.preload) AS preload,
-  COUNTIF(hints.preload) / COUNT(0) AS pct_preload,
+  COUNTIF(hints.preload) / COUNT(0) AS pct_preload
 FROM
   lcp_stats
 JOIN (
