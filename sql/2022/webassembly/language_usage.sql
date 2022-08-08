@@ -17,12 +17,11 @@ SELECT
   JSON_VALUE(wasm_stats, '$.language') AS language,
   COUNT(0) AS count
 FROM
-`httparchive.scratchspace.wasm_stats`
+  wasm
 WHERE
-wasm_stats  IS NOT NULL
+  wasm_stats  IS NOT NULL
 GROUP BY
   client,
   language
 ORDER BY
-  language,
-  client
+  count DESC
