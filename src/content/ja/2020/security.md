@@ -728,7 +728,7 @@ iframeの`sandbox`属性が空の値を持つ場合、これは最も制限の�
 
 現在18.39%のWebサイトで採用されている[`X-XSS-Protection`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/X-XSS-Protection)ヘッダーは、ブラウザに内蔵されている反射型クロスサイトスクリプティングの検出機構を制御するために使用されていました。しかし、Chromeバージョン78では、ブラウザに内蔵されていたXSS検出機能が<a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=968591">非推奨・削除</a>されています。これは、様々な迂回経路が存在し、攻撃者に悪用される可能性のある新たな<a hreflang="en" href="https://frederik-braun.com/xssauditor-bad.html">脆弱性や情報漏洩</a>を導入していたためです。他のブラウザベンダーは同様のメカニズムを実装していないため、`X-XSS-Protection`ヘッダーは最近のブラウザには効果がなく、安全に削除できます。それにもかかわらず、このヘッダーの採用率は昨年の15.50%から18.39%へとわずかに増加しています。
 
-最も広く採用されている上位5つのヘッダーの残りの部分は、ウェブサイトのTLS実装に関連する2つのヘッダーで完結しています。[Strict-Transport-Security`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Strict-Transport-Security)ヘッダーは、`max-age`属性で定義された期間だけHTTPS接続でウェブサイトを訪問するようブラウザに指示するため使用されます。このヘッダーの設定については、この章で詳しく説明している[この章の前半](#transport-security)。`Expect-CT`ヘッダーは、現在のWebサイトに発行された証明書が公開されている[Certificate Transparency](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Expect-CT)ログに表示される必要があるかどうかを確認するようブラウザに指示します。
+最も広く採用されている上位5つのヘッダーの残りの部分は、ウェブサイトのTLS実装に関連する2つのヘッダーで完結しています。[Strict-Transport-Security](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Strict-Transport-Security)ヘッダーは、`max-age`属性で定義された期間だけHTTPS接続でウェブサイトを訪問するようブラウザに指示するため使用されます。このヘッダーの設定については、この章で詳しく説明している[この章の前半](#トランスポートのセキュリティ)。`Expect-CT`ヘッダーは、現在のWebサイトに発行された証明書が公開されている[Certificate Transparency](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Expect-CT)ログに表示される必要があるかどうかを確認するようブラウザに指示します。
 
 全体的に見ると、昨年はセキュリティヘッダーの採用が増加していることがわかります。最も広く使用されているセキュリティヘッダーは、相対的に15～35パーセントの増加を示しています。最近導入された`Report-To`ヘッダーや`Feature-Policy`ヘッダーのような機能の採用が増加していることも注目に値します（後者は昨年の3倍以上に増加しています）。最も強い絶対的な成長はCSPヘッダーで、採用率は4.94%から10.93%に増加しています。
 

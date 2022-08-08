@@ -1,5 +1,7 @@
 # 2022 Mobile Web queries
 
+This is a copy of 2021 queries (no new list).
+
 <!--
   This directory contains all of the 2022 Mobile Web chapter queries.
 
@@ -8,6 +10,7 @@
 
   Analysts: if helpful, you can use this README to give additional info about the queries.
 -->
+
 
 ## Resources
 
