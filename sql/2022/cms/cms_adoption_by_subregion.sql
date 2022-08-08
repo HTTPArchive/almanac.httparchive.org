@@ -1211,7 +1211,7 @@ WITH geo_summary AS (
     # Since we're only JOINing with the CrUX dataset to see which URLs
     # belong to different countries (as opposed to CWV field data)
     # it's not necessary to look at the 202207 dataset.
-    yyyymm = 202205
+    yyyymm = 202204
 )
 
 SELECT

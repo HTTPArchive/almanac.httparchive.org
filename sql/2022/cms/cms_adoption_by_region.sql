@@ -1210,8 +1210,8 @@ WITH geo_summary AS (
     # That's because there's a two month lag between CrUX and HA datasets.
     # Since we're only JOINing with the CrUX dataset to see which URLs
     # belong to different countries (as opposed to CWV field data)
-    # it's not necessary to look at the 202207 dataset.
-    yyyymm = 202205
+    # it's not necessary to look at the 202206 dataset.
+    yyyymm = 202204
 )
 
 SELECT
