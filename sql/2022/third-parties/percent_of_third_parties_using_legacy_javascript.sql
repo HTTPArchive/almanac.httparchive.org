@@ -21,11 +21,13 @@ WITH third_party_domains AS (
 
 base AS (
   SELECT
+    client,
     page,
     third_party_domains.domain AS domain
   FROM
     (
       SELECT
+        _TABLE_SUFFIX AS client,
         NET.HOST(data.url) AS domain,
         lighthouse.url AS page
       FROM
@@ -37,6 +39,7 @@ base AS (
   ON
     potential_third_parties.domain = third_party_domains.domain
   GROUP BY
+    client,
     page,
     domain
 )

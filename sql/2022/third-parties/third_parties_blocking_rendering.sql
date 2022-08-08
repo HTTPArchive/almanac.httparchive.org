@@ -48,55 +48,70 @@ SELECT
   canonicalDomain,
   category,
   total_pages,
-  COUNT(DISTINCT page) AS blocking_pages,
-  total_pages - COUNT(DISTINCT page) AS non_blocking_pages,
-  COUNT(DISTINCT page) / total_pages AS blocking_pages_pct,
-  (total_pages - COUNT(DISTINCT page)) / total_pages AS non_blocking_pages_pct,
-  APPROX_QUANTILES(wasted_ms, 1000)[OFFSET(500)] AS p50_wastedMs,
-  APPROX_QUANTILES(total_bytes_kib, 1000)[OFFSET(500)] AS p50_total_bytes_kib
+  blocking_pages,
+  non_blocking_pages,
+  blocking_pages_pct,
+  non_blocking_pages_pct,
+  p50_wastedMs,
+  p50_total_bytes_kib
 FROM (
   SELECT
     client,
     canonicalDomain,
-    domain,
-    page,
     category,
-    SUM(SAFE_CAST(JSON_VALUE(renderBlockingItems, '$.wastedMs') AS FLOAT64)) AS wasted_ms,
-    SUM(SAFE_CAST(JSON_VALUE(renderBlockingItems, '$.totalBytes') AS FLOAT64) / 1024) AS total_bytes_kib,
+    total_pages,
+    COUNT(DISTINCT page) AS blocking_pages,
+    total_pages - COUNT(DISTINCT page) AS non_blocking_pages,
+    COUNT(DISTINCT page) / total_pages AS blocking_pages_pct,
+    (total_pages - COUNT(DISTINCT page)) / total_pages AS non_blocking_pages_pct,
+    APPROX_QUANTILES(wasted_ms, 1000)[OFFSET(500)] AS p50_wastedMs,
+    APPROX_QUANTILES(total_bytes_kib, 1000)[OFFSET(500)] AS p50_total_bytes_kib,
     RANK() OVER (PARTITION BY client ORDER BY COUNT(DISTINCT page) DESC) AS total_pages_rank
-  FROM
-    (
-      SELECT
-        _TABLE_SUFFIX AS client,
-        url AS page,
-        report
-      FROM
-        `httparchive.lighthouse.2022_06_01_*`
-    ),
-    UNNEST(JSON_QUERY_ARRAY(report, '$.audits.render-blocking-resources.details.items')) AS renderBlockingItems
+  FROM (
+    SELECT
+      client,
+      canonicalDomain,
+      domain,
+      page,
+      category,
+      SUM(SAFE_CAST(JSON_VALUE(renderBlockingItems, '$.wastedMs') AS FLOAT64)) AS wasted_ms,
+      SUM(SAFE_CAST(JSON_VALUE(renderBlockingItems, '$.totalBytes') AS FLOAT64) / 1024) AS total_bytes_kib
+    FROM
+      (
+        SELECT
+          _TABLE_SUFFIX AS client,
+          url AS page,
+          report
+        FROM
+          `httparchive.lighthouse.2022_06_01_*`
+      ),
+      UNNEST(JSON_QUERY_ARRAY(report, '$.audits.render-blocking-resources.details.items')) AS renderBlockingItems
+    INNER JOIN
+      `httparchive.almanac.third_parties`
+    ON
+      NET.HOST(JSON_VALUE(renderBlockingItems, '$.url')) = domain
+    GROUP BY
+      client,
+      canonicalDomain,
+      domain,
+      page,
+      category
+    )
   INNER JOIN
-    `httparchive.almanac.third_parties`
-  ON
-    NET.HOST(JSON_VALUE(renderBlockingItems, '$.url')) = domain
+    total_third_party_usage
+  USING
+    (client, canonicalDomain, category)
   GROUP BY
     client,
     canonicalDomain,
-    domain,
-    page,
-    category
-  )
-INNER JOIN
-  total_third_party_usage
-USING (client, canonicalDomain, category)
+    category,
+    total_pages
+  HAVING
+    total_pages >= 50
+)
 WHERE
-  total_pages_rank < 200
-GROUP BY
-  client,
-  canonicalDomain,
-  category,
-  total_pages
+  total_pages_rank <= 200
 ORDER BY
   client,
   total_pages DESC,
   category
-LIMIT 200
