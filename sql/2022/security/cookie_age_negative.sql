@@ -36,6 +36,8 @@ LANGUAGE js AS '''
 WITH age_values AS (
   SELECT
     client,
+    page,
+    NET.HOST(urlShort) AS host,
     getCookieAgeValues(response_headers, startedDateTime) AS values
   FROM
     `httparchive.almanac.requests`
@@ -46,7 +48,12 @@ WITH age_values AS (
 max_age_values AS (
   SELECT
     client,
-    COUNTIF(SAFE_CAST(max_age_value AS NUMERIC) <= 0) AS max_age
+    COUNTIF(SAFE_CAST(max_age_value AS NUMERIC) <= 0) AS count_negative_max_age,
+    SUM(COUNT(0)) OVER (PARTITION BY client) AS total_max_age_cookies,
+    COUNT(DISTINCT IF(SAFE_CAST(max_age_value AS NUMERIC) <= 0, page, NULL)) AS num_max_age_pages,
+    COUNT(DISTINCT page) AS total_max_age_pages,
+    COUNT(DISTINCT IF(SAFE_CAST(max_age_value AS NUMERIC) <= 0, host, NULL)) AS num_max_age_hosts,
+    COUNT(DISTINCT host) AS total_max_age_hosts
   FROM age_values,
     UNNEST(JSON_QUERY_ARRAY(values, '$.maxAge')) AS max_age_value
   GROUP BY
@@ -58,7 +65,12 @@ max_age_values AS (
 expires_values AS (
   SELECT
     client,
-    COUNTIF(SAFE_CAST(expires_value AS NUMERIC) <= 0) AS expires
+    COUNTIF(SAFE_CAST(expires_value AS NUMERIC) <= 0) AS count_negative_expires,
+    SUM(COUNT(0)) OVER (PARTITION BY client) AS total_expires_cookies,
+    COUNT(DISTINCT IF(SAFE_CAST(expires_value AS NUMERIC) <= 0, page, NULL)) AS num_expires_pages,
+    COUNT(DISTINCT page) AS total_expires_pages,
+    COUNT(DISTINCT IF(SAFE_CAST(expires_value AS NUMERIC) <= 0, host, NULL)) AS num_expires_hosts,
+    COUNT(DISTINCT host) AS total_expires_hosts
   FROM age_values,
     UNNEST(JSON_QUERY_ARRAY(values, '$.expires')) AS expires_value
   GROUP BY
@@ -70,7 +82,12 @@ expires_values AS (
 real_age_values AS (
   SELECT
     client,
-    COUNTIF(SAFE_CAST(real_age_value AS NUMERIC) <= 0) AS real_age
+    COUNTIF(SAFE_CAST(real_age_value AS NUMERIC) <= 0) AS count_negative_real_age,
+    SUM(COUNT(0)) OVER (PARTITION BY client) AS total_real_age_cookies,
+    COUNT(DISTINCT IF(SAFE_CAST(real_age_value AS NUMERIC) <= 0, page, NULL)) AS num_real_age_pages,
+    COUNT(DISTINCT page) AS total_real_age_pages,
+    COUNT(DISTINCT IF(SAFE_CAST(real_age_value AS NUMERIC) <= 0, host, NULL)) AS num_real_age_hosts,
+    COUNT(DISTINCT host) AS total_real_age_hosts
   FROM age_values,
     UNNEST(JSON_QUERY_ARRAY(values, '$.realAge')) AS real_age_value
   GROUP BY
@@ -81,9 +98,24 @@ real_age_values AS (
 
 SELECT
   client,
-  max_age,
-  expires,
-  real_age
+  count_negative_max_age,
+  count_negative_max_age / total_max_age_cookies AS pct_negative_max_age,
+  num_max_age_pages,
+  num_max_age_pages / total_max_age_pages AS pct_max_age_pages,
+  num_max_age_hosts,
+  num_max_age_hosts / total_max_age_hosts AS pct_max_age_hosts,
+  count_negative_expires,
+  count_negative_expires / total_expires_cookies AS pct_negative_expires,
+  num_expires_pages,
+  num_expires_pages / total_expires_pages AS pct_expires_pages,
+  num_expires_hosts,
+  num_expires_hosts / total_expires_hosts AS pct_expires_hosts,
+  count_negative_real_age,
+  count_negative_real_age / total_real_age_cookies AS pct_negative_real_age,
+  num_real_age_pages,
+  num_real_age_pages / total_real_age_pages AS pct_real_age_pages,
+  num_real_age_hosts,
+  num_real_age_hosts / total_real_age_hosts AS pct_real_age_hosts
 FROM
   max_age_values
 JOIN expires_values
