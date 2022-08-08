@@ -88,7 +88,7 @@ We ontdekten dat 29,34% van de desktoppagina's en 30,66% van de mobiele pagina's
 ### Taalidentificatie
 
 {{ figure_markup(
-  caption="Desktopsites hebben een geldig kenmerk `lang`.",
+  caption="Mobiele sites hebben een geldig kenmerk `lang`.",
   content="77,67%",
   classes="big-number",
   sheets_gid="812908021",
@@ -96,7 +96,7 @@ We ontdekten dat 29,34% van de desktoppagina's en 30,66% van de mobiele pagina's
 )
 }}
 
-Door een HTML-attribuut `lang` in te stellen, kan een pagina gemakkelijk worden vertaald en is er betere ondersteuning voor schermlezers. Het percentage sites met een geldig HTML lang-attribuut op desktop dit jaar was 77,67%, met slechts 77,7% überhaupt een `lang`-attribuut.
+Door een HTML-attribuut `lang` in te stellen, kan een pagina gemakkelijk worden vertaald en is er betere ondersteuning voor schermlezers. Het percentage sites met een geldig HTML lang-attribuut op mobiel dit jaar was 77,67%, met slechts 77,7% überhaupt een `lang`-attribuut.
 
 ## Media op internet
 
