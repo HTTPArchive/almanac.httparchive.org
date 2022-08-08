@@ -62,7 +62,7 @@ FROM (
     csp_allowed_host
 )
 WHERE
-  rank <= 100
+  csp_allowed_host_rank <= 100
 ORDER BY
   client,
   pct DESC
