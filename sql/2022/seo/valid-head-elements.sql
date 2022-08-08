@@ -7,8 +7,8 @@ WITH pages AS (SELECT
   url,
   JSON_QUERY(payload, '$._valid-head.invalidHead') AS invalidHead,
   JSON_EXTRACT_ARRAY(payload, '$._valid-head.invalidElements') AS invalidElements,
-  ARRAY_LENGTH(JSON_EXTRACT_ARRAY(payload, '$._valid-head.invalidElements')) AS invalidCount,
-FROM
+  ARRAY_LENGTH(JSON_EXTRACT_ARRAY(payload, '$._valid-head.invalidElements')) AS invalidCount
+  FROM
   `httparchive.pages.2022_07_01_*`
 )
 
