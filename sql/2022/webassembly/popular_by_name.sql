@@ -16,13 +16,13 @@ SELECT
       )
   END AS name,
   COUNT(0) AS count,
-  COUNT(DISTINCT filename) AS count_versions,
   COUNT(DISTINCT NET.REG_DOMAIN(url)) AS count_serving_hosts,
   MIN(url) AS url
 FROM
-  `httparchive.almanac.wasm_stats`
+  `httparchive.almanac.requests`
 WHERE
-  date = '2021-09-01'
+  date = '2022-06-01' AND
+  (mimeType = 'application/wasm' OR ext = 'wasm')
 GROUP BY
   client,
   name
