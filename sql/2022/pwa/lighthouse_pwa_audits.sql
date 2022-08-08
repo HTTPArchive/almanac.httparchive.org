@@ -20,6 +20,7 @@ return results;
 ''';
 
 SELECT
+  _TABLE_SUFFIX AS client,
   'PWA Sites' AS type,
   audits.id AS id,
   COUNTIF(audits.score > 0) AS num_pages,
@@ -30,23 +31,26 @@ SELECT
   MAX(audits.audit_group) AS audit_group,
   MAX(audits.description) AS description
 FROM
-  `httparchive.lighthouse.2022_06_01_mobile`,
+  `httparchive.lighthouse.2022_06_01_*`,
   UNNEST(getAudits(JSON_EXTRACT(report, '$.categories.pwa.auditRefs'), JSON_EXTRACT(report, '$.audits'))) AS audits
 JOIN
   (
     SELECT
+      _TABLE_SUFFIX,
       url
     FROM
-      `httparchive.pages.2022_06_01_mobile`
+      `httparchive.pages.2022_06_01_*`
     WHERE
       JSON_EXTRACT(payload, '$._pwa.serviceWorkerHeuristic') = 'true' AND
       JSON_EXTRACT(payload, '$._pwa.manifests') != '[]' AND JSON_EXTRACT(payload, '$._pwa.manifests') != '{}'
   )
-USING (url)
+USING (_TABLE_SUFFIX, url)
 GROUP BY
+  client,
   audits.id
 UNION ALL
 SELECT
+  _TABLE_SUFFIX AS client,
   'ALL Sites' AS type,
   audits.id AS id,
   COUNTIF(audits.score > 0) AS num_pages,
@@ -57,11 +61,13 @@ SELECT
   MAX(audits.audit_group) AS audit_group,
   MAX(audits.description) AS description
 FROM
-  `httparchive.lighthouse.2022_06_01_mobile`,
+  `httparchive.lighthouse.2022_06_01_*`,
   UNNEST(getAudits(JSON_EXTRACT(report, '$.categories.pwa.auditRefs'), JSON_EXTRACT(report, '$.audits'))) AS audits
 GROUP BY
+  client,
   audits.id
 ORDER BY
+  client,
   type DESC,
   median_weight DESC,
   id
