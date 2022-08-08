@@ -35,23 +35,29 @@ CREATE TEMP FUNCTION getLoadingClasses(attributes STRING) RETURNS STRING LANGUAG
   }
 ''';
 
-CREATE TEMPORARY FUNCTION extractHTTPHeaders(HTTPheaders STRING, header STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS """
-try {
-  var headers = JSON.parse(HTTPheaders);
-
-  // Filter by header name (which is case insensitive) and return values
-  return headers.filter(h => h.name.toLowerCase() == header.toLowerCase()).map(h => h.value);
-
-} catch (e) {
-  return [];
-}
-""";
-
 CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
 RETURNS STRUCT<preload BOOLEAN, prefetch BOOLEAN, preconnect BOOLEAN, prerender BOOLEAN, `dns-prefetch` BOOLEAN, `modulepreload` BOOLEAN>
 LANGUAGE js AS '''
 var hints = ['preload', 'prefetch', 'preconnect', 'prerender', 'dns-prefetch', 'modulepreload'];
+try {
+  var $ = JSON.parse(payload);
+  var almanac = JSON.parse($._almanac);
+  return hints.reduce((results, hint) => {
+    results[hint] = !!almanac['link-nodes'].nodes.find(link => link.rel.toLowerCase() == hint);
+    return results;
+  }, {});
+} catch (e) {
+  return hints.reduce((results, hint) => {
+    results[hint] = false;
+    return results;
+  }, {});
+}
+''';
+
+CREATE TEMPORARY FUNCTION getFetchPriority(payload STRING)
+RETURNS STRUCT<high BOOLEAN, low BOOLEAN, auto BOOLEAN>
+LANGUAGE js AS '''
+var hints = ['high', 'low', 'auto'];
 try {
   var $ = JSON.parse(payload);
   var almanac = JSON.parse($._almanac);
