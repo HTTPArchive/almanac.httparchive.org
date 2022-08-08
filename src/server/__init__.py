@@ -9,7 +9,6 @@ from .helpers import (
     add_footnote_links,
     year_live,
     accentless_sort,
-    RegexConverter,
     get_versioned_filename,
 )
 from .config import TEMPLATES_DIR, STATIC_DIR
@@ -60,9 +59,6 @@ def add_header(response):
 # Flask default if not set is 12 hours but we want to match app.yaml
 # which is used by Google App Engine as it serves static files directly
 app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 10800
-
-# Convert URL routes with regex
-app.url_map.converters["regex"] = RegexConverter
 
 # Make these functions available in templates.
 app.jinja_env.globals["get_view_args"] = get_view_args

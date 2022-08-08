@@ -1,0 +1,11 @@
+{% extends "base/contributors.html" %}
+
+{% block title %}{{ year }} Katkıda bulunanlar | HTTP Archive'dan Web Almanac{% endblock %}
+
+{% block description %}{{ year }}Web Almanac'a Analistler, Yazarlar, Tasarımcılar, Geliştiriciler, Editörler, Liderler, İnceleyiciler ve Çevirmenler olarak katkıda bulunan {{ config.contributors.items() | length }}kişi.{% endblock %}
+
+{% block filter_by_team %}Takıma göre filtrele: Katkıda bulunan <span id="contributors-total">{{ config.contributors.items() | length }}</span><span id="contributors-total-text" class="hidden"> kişinin <span id="filtered-contributors">{{ self.contributors() }}</span></span>{% endblock %}
+{% block filter_by %}Filtrele{% endblock %}
+
+{% block join_the_team_title%}Web Almanac takımına katılın{% endblock %}
+{% block join_the_team_text%}Takıma katılın!{% endblock %}

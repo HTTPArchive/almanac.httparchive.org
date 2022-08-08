@@ -359,6 +359,7 @@ The network-related Client Hints, `downlink`, `rtt`, and `ect`, are only availab
 
 Improving web page performance can be partially characterized as a game of illusions; moving slow things out of band and out of site of the user. In this way, lazy loading images is one of these illusions where the image and media content is only loaded when the user scrolls on the page. This improves perceived performance, even on slow networks, and saves the user from downloading bytes that are not otherwise viewed.
 
+<!-- markdownlint-disable-next-line MD051 -->
 Earlier, in [Figure 4.5](#fig-5), we showed that the volume of image content at the 75th percentile is far more than could theoretically be shown in a single desktop or mobile viewport. The <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/offscreen-images">offscreen images</a> Lighthouse audit confirms this suspicion. The median web page has 27% of image content significantly below the fold. This grows to 84% at the 90th percentile.
 
 {{ figure_markup(

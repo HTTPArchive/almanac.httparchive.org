@@ -206,6 +206,7 @@ Let's start by defining some thresholds. According to the new PSI methodology, a
   )
 }}
 
+<!-- markdownlint-disable-next-line MD051 -->
 You know the drill by now. This chart shows the distribution of websites' fast, moderate, and slow FID experiences. This is a dramatically different chart from the previous charts for FCP and TTFB. (See [Figure 7.1](#fig-1) and [Figure 7.9](#fig-9), respectively). The curve of fast FID very slowly descends from 100% to 75%, then takes a nosedive. The overwhelming majority of FID experiences are fast for most websites.
 
 {{ figure_markup(
