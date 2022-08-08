@@ -88,7 +88,7 @@ We found that 29.34% of desktop pages and 30.66% of mobile pages attempt to disa
 ### Language identification
 
 {{ figure_markup(
-  caption="Desktop sites have a valid `lang` attribute.",
+  caption="Mobile sites have a valid `lang` attribute.",
   content="77.67%",
   classes="big-number",
   sheets_gid="812908021",
@@ -96,7 +96,7 @@ We found that 29.34% of desktop pages and 30.66% of mobile pages attempt to disa
 )
 }}
 
-Setting an HTML `lang` attribute allows easy translation of a page and better screen reader support. The percentage of sites with a valid HTML lang attribute on desktop this year was 77.67%, with only 77.7% having a `lang` attribute at all.
+Setting an HTML `lang` attribute allows easy translation of a page and better screen reader support. The percentage of sites with a valid HTML lang attribute on mobile this year was 77.67%, with only 77.7% having a `lang` attribute at all.
 
 ## Media on the web
 

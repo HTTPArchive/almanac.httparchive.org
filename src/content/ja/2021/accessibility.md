@@ -104,7 +104,7 @@ Webアクセシビリティの重要な要素として、コンテンツを可�
 ### 言語の識別
 
 {{ figure_markup(
-  caption="デスクトップサイトでは、有効な `lang` 属性があります。",
+  caption="モバイルサイトでは、有効な `lang` 属性があります。",
   content="80.5%",
   classes="big-number",
   sheets_gid="2009310389",

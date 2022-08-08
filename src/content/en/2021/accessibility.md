@@ -104,7 +104,7 @@ When we consider the most popular sites in particular, the numbers for mobile ar
 ### Language identification
 
 {{ figure_markup(
-  caption="Desktop sites have a valid `lang` attribute.",
+  caption="Mobile sites have a valid `lang` attribute.",
   content="80.5%",
   classes="big-number",
   sheets_gid="2009310389",
