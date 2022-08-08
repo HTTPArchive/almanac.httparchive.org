@@ -74,7 +74,7 @@ featured_stat_label_3: ネイティブの遅延ローディングを使用して
 
 `preload`することを意識します。なぜなら他のリソースのダウンロードを遅らせる可能性があるため、Largest Contentful Paint（<a hreflang="ja" href="https://web.dev/i18n/ja/lcp/">LCP</a>）の改善に役立つ、もっとも重要なものにのみ使用してください。 また、Chromeで使用した場合、`preload`リソースを過剰に優先する傾向があり、他の重要なリソースよりもpreloadを優先的に処理する可能性があります。
 
-最後に、HTTPレスポンスヘッダーで使用された場合、一部のCDNは`preload`を自動的に[HTTP/2 push](#http2-push)に変えてしまい、キャッシュされたリソースを過剰にプッシュしてしまうことがあります。
+最後に、HTTPレスポンスヘッダーで使用された場合、一部のCDNは`preload`を自動的に[HTTP/2 push](#http2プッシュ)に変えてしまい、キャッシュされたリソースを過剰にプッシュしてしまうことがあります。
 
 ### `prefetch`
 

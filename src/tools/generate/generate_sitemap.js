@@ -6,7 +6,6 @@ const { get_static_lang_files } = require('./shared');
 const min_publish_date = '2019-11-11';
 const sitemap_template = `templates/sitemap.ejs.xml`;
 const sitemap_path = `templates/sitemap.xml`;
-const ebook_path = "static/pdfs/web_almanac_";
 
 const last_updated_json = "config/last_updated.json";
 let file_dates = {};
@@ -62,19 +61,6 @@ const get_static_pages = async (sitemap_languages) => {
       const url = convert_file_name(loc);
 
       urls.push({ url, lastmod });
-    }
-  }
-
-  // For ebooks find out if the PDF exists, get lastmod from template
-  for (const year in sitemap_languages) {
-    for (const languages in sitemap_languages[year]) {
-      const language = sitemap_languages[year][languages];
-      const ebook_pdf = ebook_path + year + '_' + language + '.pdf';
-      if (fs.existsSync(ebook_pdf)) {
-        const lastmod = get_lastmod_date('/' + ebook_pdf);
-        const url = ebook_pdf;
-        urls.push({ url, lastmod });
-      }
     }
   }
 
