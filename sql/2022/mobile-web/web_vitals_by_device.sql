@@ -2,16 +2,16 @@
 # Core WebVitals by device
 
 CREATE TEMP FUNCTION IS_GOOD (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
-  good / (good + needs_improvement + poor) >= 0.75
+  SAFE_DIVIDE(good, (good + needs_improvement + poor)) >= 0.75
 );
 
 CREATE TEMP FUNCTION IS_NI (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
-  good / (good + needs_improvement + poor) < 0.75 AND
-  poor / (good + needs_improvement + poor) < 0.25
+  SAFE_DIVIDE(good, (good + needs_improvement + poor)) < 0.75 AND
+  SAFE_DIVIDE(poor, (good + needs_improvement + poor)) < 0.25
 );
 
 CREATE TEMP FUNCTION IS_POOR (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
-  poor / (good + needs_improvement + poor) >= 0.25
+  SAFE_DIVIDE(poor, (good + needs_improvement + poor)) >= 0.25
 );
 
 CREATE TEMP FUNCTION IS_NON_ZERO (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
@@ -90,22 +90,6 @@ SELECT
 
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
-        IS_GOOD(fast_fid, avg_fid, slow_fid), origin, NULL)),
-    COUNT(DISTINCT IF(
-        IS_NON_ZERO(fast_fid, avg_fid, slow_fid), origin, NULL))) AS pct_fid_good,
-  SAFE_DIVIDE(
-    COUNT(DISTINCT IF(
-        IS_NI(fast_fid, avg_fid, slow_fid), origin, NULL)),
-    COUNT(DISTINCT IF(
-        IS_NON_ZERO(fast_fid, avg_fid, slow_fid), origin, NULL))) AS pct_fid_ni,
-  SAFE_DIVIDE(
-    COUNT(DISTINCT IF(
-        IS_POOR(fast_fid, avg_fid, slow_fid), origin, NULL)),
-    COUNT(DISTINCT IF(
-        IS_NON_ZERO(fast_fid, avg_fid, slow_fid), origin, NULL))) AS pct_fid_poor,
-
-  SAFE_DIVIDE(
-    COUNT(DISTINCT IF(
         IS_GOOD(fast_inp, avg_inp, slow_inp), origin, NULL)),
     COUNT(DISTINCT IF(
         IS_NON_ZERO(fast_inp, avg_inp, slow_inp), origin, NULL))) AS pct_inp_good,
@@ -120,6 +104,21 @@ SELECT
     COUNT(DISTINCT IF(
         IS_NON_ZERO(fast_inp, avg_inp, slow_inp), origin, NULL))) AS pct_inp_poor,
 
+  SAFE_DIVIDE(
+    COUNT(DISTINCT IF(
+        IS_GOOD(fast_fid, avg_fid, slow_fid), origin, NULL)),
+    COUNT(DISTINCT IF(
+        IS_NON_ZERO(fast_fid, avg_fid, slow_fid), origin, NULL))) AS pct_fid_good,
+  SAFE_DIVIDE(
+    COUNT(DISTINCT IF(
+        IS_NI(fast_fid, avg_fid, slow_fid), origin, NULL)),
+    COUNT(DISTINCT IF(
+        IS_NON_ZERO(fast_fid, avg_fid, slow_fid), origin, NULL))) AS pct_fid_ni,
+  SAFE_DIVIDE(
+    COUNT(DISTINCT IF(
+        IS_POOR(fast_fid, avg_fid, slow_fid), origin, NULL)),
+    COUNT(DISTINCT IF(
+        IS_NON_ZERO(fast_fid, avg_fid, slow_fid), origin, NULL))) AS pct_fid_poor,
 
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
