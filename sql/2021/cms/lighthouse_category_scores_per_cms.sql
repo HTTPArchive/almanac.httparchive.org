@@ -13,13 +13,13 @@ FROM (
     url,
     JSON_EXTRACT(report, '$.categories') AS categories
   FROM
-    `httparchive.lighthouse.2022_07_01_mobile`)
+    `httparchive.lighthouse.2021_07_01_mobile`)
 JOIN (
   SELECT DISTINCT
     app AS cms,
     url
   FROM
-    `httparchive.technologies.2022_07_01_mobile`
+    `httparchive.technologies.2021_07_01_mobile`
   WHERE
     category = 'CMS')
 USING

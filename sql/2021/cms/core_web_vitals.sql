@@ -43,14 +43,14 @@ JOIN (
     url,
     app AS cms
   FROM
-    `httparchive.technologies.2022_07_01_*`
+    `httparchive.technologies.2021_07_01_*`
   WHERE
     category = 'CMS')
 ON
   CONCAT(origin, '/') = url AND
   IF(device = 'desktop', 'desktop', 'mobile') = client
 WHERE
-  date = '2022-07-01'
+  date = '2021-07-01'
 GROUP BY
   client,
   cms

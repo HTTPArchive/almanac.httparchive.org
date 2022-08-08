@@ -11,7 +11,7 @@ FROM (
     _TABLE_SUFFIX AS client,
     url
   FROM
-    `httparchive.technologies.2022_07_01_*`
+    `httparchive.technologies.2021_07_01_*`
   WHERE
     app = 'WordPress')
 JOIN (
@@ -20,7 +20,7 @@ JOIN (
     url,
     ARRAY_TO_STRING(ARRAY_AGG(app ORDER BY app), ', ') AS page_builders
   FROM
-    `httparchive.technologies.2022_07_01_*`
+    `httparchive.technologies.2021_07_01_*`
   WHERE
     category = 'Page builders'
   GROUP BY

@@ -16,7 +16,7 @@ FROM (
     url,
     app AS cms
   FROM
-    `httparchive.technologies.2022_07_01_*`
+    `httparchive.technologies.2021_07_01_*`
   WHERE
     category = 'CMS')
 JOIN (
@@ -30,7 +30,7 @@ JOIN (
     bytesImg / 1024 AS img_kb,
     bytesFont / 1024 AS font_kb
   FROM
-    `httparchive.summary_pages.2022_07_01_*`)
+    `httparchive.summary_pages.2021_07_01_*`)
 USING
   (client, url)
 GROUP BY

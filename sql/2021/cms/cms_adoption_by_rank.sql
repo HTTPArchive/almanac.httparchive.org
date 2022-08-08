@@ -13,7 +13,7 @@ FROM (
     app AS cms,
     url
   FROM
-    `httparchive.technologies.2022_07_01_*`
+    `httparchive.technologies.2021_07_01_*`
   WHERE
     category = 'CMS')
 JOIN (
@@ -22,7 +22,7 @@ JOIN (
     url,
     rank
   FROM
-    `httparchive.summary_pages.2022_07_01_*`)
+    `httparchive.summary_pages.2021_07_01_*`)
 USING
   (client, url)
 JOIN (
@@ -31,7 +31,7 @@ JOIN (
     rank_magnitude AS rank,
     COUNT(0) AS total
   FROM
-    `httparchive.summary_pages.2022_07_01_*`,
+    `httparchive.summary_pages.2021_07_01_*`,
     UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_magnitude
   WHERE
     rank <= rank_magnitude
