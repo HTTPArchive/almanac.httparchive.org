@@ -48,3 +48,11 @@ Taken from [`Metrics` Section](https://docs.google.com/document/d/1IKV40fllCZTqe
 - [ ] Domain Sharding
 - [ ] FID Double Tap to Zoom Disabled
 - [ ] FID / INP Long Task Data (let's pick either FID or INP)
+
+#### Web Vitals
+
+- [ ] By Device
+- [ ] By Country
+- [ ] By Network connection
+- [ ] By Rank
+- [ ] By Rank and device
