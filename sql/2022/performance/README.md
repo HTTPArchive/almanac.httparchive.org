@@ -51,8 +51,8 @@ Taken from [`Metrics` Section](https://docs.google.com/document/d/1IKV40fllCZTqe
 
 #### Web Vitals
 
-- [ ] By Device
-- [ ] By Country
-- [ ] By Network connection
-- [ ] By Rank
-- [ ] By Rank and device
+- [x] By Device
+- [x] By Country
+- [x] By Network connection
+- [x] By Rank
+- [x] By Rank and device

@@ -2,16 +2,16 @@
 # Core WebVitals by rank
 
 CREATE TEMP FUNCTION IS_GOOD (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
-  good / (good + needs_improvement + poor) >= 0.75
-);
-
-CREATE TEMP FUNCTION IS_NI (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
-  good / (good + needs_improvement + poor) < 0.75 AND
-  poor / (good + needs_improvement + poor) < 0.25
+  SAFE_DIVIDE(good, (good + needs_improvement + poor)) >= 0.75
 );
 
 CREATE TEMP FUNCTION IS_POOR (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
-  poor / (good + needs_improvement + poor) >= 0.25
+  SAFE_DIVIDE(poor, (good + needs_improvement + poor)) >= 0.25
+);
+
+CREATE TEMP FUNCTION IS_NI (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
+  NOT IS_GOOD(good, needs_improvement, poor) AND
+  NOT IS_POOR(good, needs_improvement, poor)
 );
 
 CREATE TEMP FUNCTION IS_NON_ZERO (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
@@ -28,6 +28,10 @@ base AS (
     fast_fid,
     avg_fid,
     slow_fid,
+
+    fast_inp,
+    avg_inp,
+    slow_inp,
 
     fast_lcp,
     avg_lcp,
@@ -48,7 +52,7 @@ base AS (
   FROM
     `chrome-ux-report.materialized.metrics_summary`
   WHERE
-    date IN ('2021-07-01')
+    date IN ('2022-06-01')
 )
 
 SELECT
@@ -69,6 +73,22 @@ SELECT
     COUNT(DISTINCT IF(
         IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp) AND
         IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_cwv_good,
+  
+  SAFE_DIVIDE(
+    COUNT(DISTINCT IF(
+        IS_GOOD(fast_inp, avg_inp, slow_inp), origin, NULL)),
+    COUNT(DISTINCT IF(
+        IS_NON_ZERO(fast_inp, avg_inp, slow_inp), origin, NULL))) AS pct_inp_good,
+  SAFE_DIVIDE(
+    COUNT(DISTINCT IF(
+        IS_NI(fast_inp, avg_inp, slow_inp), origin, NULL)),
+    COUNT(DISTINCT IF(
+        IS_NON_ZERO(fast_inp, avg_inp, slow_inp), origin, NULL))) AS pct_inp_ni,
+  SAFE_DIVIDE(
+    COUNT(DISTINCT IF(
+        IS_POOR(fast_inp, avg_inp, slow_inp), origin, NULL)),
+    COUNT(DISTINCT IF(
+        IS_NON_ZERO(fast_inp, avg_inp, slow_inp), origin, NULL))) AS pct_lcp_poor,
 
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(

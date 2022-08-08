@@ -28,6 +28,10 @@ base AS (
     SUM(avg_fid) / SUM(fast_fid + avg_fid + slow_fid) AS avg_fid,
     SUM(slow_fid) / SUM(fast_fid + avg_fid + slow_fid) AS slow_fid,
 
+    SUM(fast_inp) / SUM(fast_inp + avg_inp + slow_inp) AS fast_inp,
+    SUM(avg_inp) / SUM(fast_inp + avg_inp + slow_inp) AS avg_inp,
+    SUM(slow_inp) / SUM(fast_inp + avg_inp + slow_inp) AS slow_inp,
+
     SUM(fast_lcp) / SUM(fast_lcp + avg_lcp + slow_lcp) AS fast_lcp,
     SUM(avg_lcp) / SUM(fast_lcp + avg_lcp + slow_lcp) AS avg_lcp,
     SUM(slow_lcp) / SUM(fast_lcp + avg_lcp + slow_lcp) AS slow_lcp,
@@ -47,7 +51,7 @@ base AS (
   FROM
     `chrome-ux-report.materialized.country_summary`
   WHERE
-    yyyymm = 202107
+    yyyymm = 202206
   GROUP BY
     origin,
     country_code
@@ -83,6 +87,22 @@ SELECT
         IS_POOR(fast_lcp, avg_lcp, slow_lcp), origin, NULL)),
     COUNT(DISTINCT IF(
         IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp), origin, NULL))) AS pct_lcp_poor,
+
+  SAFE_DIVIDE(
+    COUNT(DISTINCT IF(
+        IS_GOOD(fast_inp, avg_inp, slow_inp), origin, NULL)),
+    COUNT(DISTINCT IF(
+        IS_NON_ZERO(fast_inp, avg_inp, slow_inp), origin, NULL))) AS pct_inp_good,
+  SAFE_DIVIDE(
+    COUNT(DISTINCT IF(
+        IS_NI(fast_inp, avg_inp, slow_inp), origin, NULL)),
+    COUNT(DISTINCT IF(
+        IS_NON_ZERO(fast_inp, avg_inp, slow_inp), origin, NULL))) AS pct_inp_ni,
+  SAFE_DIVIDE(
+    COUNT(DISTINCT IF(
+        IS_POOR(fast_inp, avg_inp, slow_inp), origin, NULL)),
+    COUNT(DISTINCT IF(
+        IS_NON_ZERO(fast_inp, avg_inp, slow_inp), origin, NULL))) AS pct_inp_poor,
 
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(

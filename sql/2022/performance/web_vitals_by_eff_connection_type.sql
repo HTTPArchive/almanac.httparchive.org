@@ -27,9 +27,10 @@ base AS (
     largest_contentful_paint,
     first_input,
     first_contentful_paint,
-    experimental.time_to_first_byte AS time_to_first_byte
+    experimental.time_to_first_byte AS time_to_first_byte,
+    experimental.interaction_to_next_paint AS interaction_to_next_paint
   FROM
-    `chrome-ux-report.all.202107`
+    `chrome-ux-report.all.202206`
 ),
 
 cls AS (
@@ -78,6 +79,23 @@ fid AS (
     base
   LEFT JOIN
     UNNEST(first_input.delay.histogram.bin) AS bin
+  GROUP BY
+    origin,
+    network
+),
+
+inp AS (
+  SELECT
+    origin,
+    network,
+    SUM(IF(bin.start < 2500, bin.density, 0)) AS fast,
+    SUM(IF(bin.start >= 2500 AND bin.start < 4000, bin.density, 0)) AS avg,
+    SUM(IF(bin.start >= 4000, bin.density, 0)) AS slow,
+    `chrome-ux-report`.experimental.PERCENTILE(ARRAY_AGG(bin), 75) AS p75
+  FROM
+    base
+  LEFT JOIN
+    UNNEST(interaction_to_next_paint.histogram.bin) AS bin
   GROUP BY
     origin,
     network
@@ -136,6 +154,11 @@ granular_metrics AS (
     fid.slow AS slow_fid,
     fid.p75 AS p75_fid,
 
+    inp.fast AS fast_inp,
+    inp.avg AS avg_inp,
+    inp.slow AS slow_inp,
+    inp.p75 AS p75_inp,
+
     fcp.fast AS fast_fcp,
     fcp.avg AS avg_fcp,
     fcp.slow AS slow_fcp,
@@ -153,6 +176,10 @@ granular_metrics AS (
     (origin, network)
   LEFT JOIN
     fid
+  USING
+    (origin, network)
+  LEFT JOIN
+    inp
   USING
     (origin, network)
   LEFT JOIN
@@ -211,6 +238,22 @@ SELECT
         IS_POOR(fast_fid, avg_fid, slow_fid), origin, NULL)),
     COUNT(DISTINCT IF(
         IS_NON_ZERO(fast_fid, avg_fid, slow_fid), origin, NULL))) AS pct_fid_poor,
+
+  SAFE_DIVIDE(
+    COUNT(DISTINCT IF(
+        IS_GOOD(fast_inp, avg_inp, slow_inp), origin, NULL)),
+    COUNT(DISTINCT IF(
+        IS_NON_ZERO(fast_inp, avg_inp, slow_inp), origin, NULL))) AS pct_inp_good,
+  SAFE_DIVIDE(
+    COUNT(DISTINCT IF(
+        IS_NI(fast_inp, avg_inp, slow_inp), origin, NULL)),
+    COUNT(DISTINCT IF(
+        IS_NON_ZERO(fast_inp, avg_inp, slow_inp), origin, NULL))) AS pct_inp_ni,
+  SAFE_DIVIDE(
+    COUNT(DISTINCT IF(
+        IS_POOR(fast_inp, avg_inp, slow_inp), origin, NULL)),
+    COUNT(DISTINCT IF(
+        IS_NON_ZERO(fast_inp, avg_inp, slow_inp), origin, NULL))) AS pct_inp_poor,
 
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
