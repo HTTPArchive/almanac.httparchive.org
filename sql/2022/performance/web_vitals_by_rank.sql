@@ -88,7 +88,7 @@ SELECT
     COUNT(DISTINCT IF(
         IS_POOR(fast_inp, avg_inp, slow_inp), origin, NULL)),
     COUNT(DISTINCT IF(
-        IS_NON_ZERO(fast_inp, avg_inp, slow_inp), origin, NULL))) AS pct_lcp_poor,
+        IS_NON_ZERO(fast_inp, avg_inp, slow_inp), origin, NULL))) AS pct_inp_poor,
 
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
