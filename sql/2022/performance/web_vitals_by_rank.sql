@@ -73,7 +73,7 @@ SELECT
     COUNT(DISTINCT IF(
         IS_NON_ZERO(fast_lcp, avg_lcp, slow_lcp) AND
         IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_cwv_good,
-  
+
   SAFE_DIVIDE(
     COUNT(DISTINCT IF(
         IS_GOOD(fast_inp, avg_inp, slow_inp), origin, NULL)),
