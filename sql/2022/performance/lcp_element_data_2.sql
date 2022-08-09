@@ -50,21 +50,19 @@ lcp_stats AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url,
-    JSON_EXTRACT_SCALAR(payload, '$._performance.lcp_elem_stats[0].nodeName') AS nodeName,
-    JSON_EXTRACT_SCALAR(payload, '$._performance.lcp_elem_stats[0].url') AS elementUrl,
-    CAST(JSON_EXTRACT_SCALAR(payload, '$._performance.lcp_elem_stats[0].size') AS INT64) AS size,
-    CAST(JSON_EXTRACT_SCALAR(payload, '$._performance.lcp_elem_stats[0].loadTime') AS FLOAT64) AS loadTime,
-    CAST(JSON_EXTRACT_SCALAR(payload, '$._performance.lcp_elem_stats[0].startTime') AS FLOAT64) AS startTime,
-    CAST(JSON_EXTRACT_SCALAR(payload, '$._performance.lcp_elem_stats[0].renderTime') AS FLOAT64) AS renderTime,
-    JSON_EXTRACT(payload, '$._performance.lcp_elem_stats[0].attributes') AS attributes,
-    getLoadingAttr(JSON_EXTRACT(payload, '$._performance.lcp_elem_stats[0].attributes')) AS loading,
-    getDecodingAttr(JSON_EXTRACT(payload, '$._performance.lcp_elem_stats[0].attributes')) AS decoding,
-    getLoadingClasses(JSON_EXTRACT(payload, '$._performance.lcp_elem_stats[0].attributes')) AS classWithLazyload,
-    getFetchPriorityAttr(JSON_EXTRACT(payload, '$._performance.lcp_elem_stats[0].attributes')) AS fetchPriority
+    JSON_EXTRACT_SCALAR(payload, '$._performance.lcp_elem_stats.nodeName') AS nodeName,
+    JSON_EXTRACT_SCALAR(payload, '$._performance.lcp_elem_stats.url') AS elementUrl,
+    CAST(JSON_EXTRACT_SCALAR(payload, '$._performance.lcp_elem_stats.size') AS INT64) AS size,
+    CAST(JSON_EXTRACT_SCALAR(payload, '$._performance.lcp_elem_stats.loadTime') AS FLOAT64) AS loadTime,
+    CAST(JSON_EXTRACT_SCALAR(payload, '$._performance.lcp_elem_stats.startTime') AS FLOAT64) AS startTime,
+    CAST(JSON_EXTRACT_SCALAR(payload, '$._performance.lcp_elem_stats.renderTime') AS FLOAT64) AS renderTime,
+    JSON_EXTRACT(payload, '$._performance.lcp_elem_stats.attributes') AS attributes,
+    getLoadingAttr(JSON_EXTRACT(payload, '$._performance.lcp_elem_stats.attributes')) AS loading,
+    getDecodingAttr(JSON_EXTRACT(payload, '$._performance.lcp_elem_stats.attributes')) AS decoding,
+    getLoadingClasses(JSON_EXTRACT(payload, '$._performance.lcp_elem_stats.attributes')) AS classWithLazyload,
+    getFetchPriorityAttr(JSON_EXTRACT(payload, '$._performance.lcp_elem_stats.attributes')) AS fetchPriority
   FROM
-    -- `httparchive.pages.2022_06_01_*`
-    -- `httparchive.pages.2022_06_09_*`
-    `httparchive.sample_data.pages_*`
+    `httparchive.pages.2022_06_01_*`
 )
 
 SELECT
@@ -92,9 +90,7 @@ JOIN (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total
   FROM
-    -- `httparchive.summary_pages.2022_06_01_*`
-    `httparchive.sample_data.summary_pages_*`
-    -- `httparchive.pages.2022_06_09_*`
+    `httparchive.summary_pages.2022_06_01_*`
   GROUP BY
     _TABLE_SUFFIX)
 USING
