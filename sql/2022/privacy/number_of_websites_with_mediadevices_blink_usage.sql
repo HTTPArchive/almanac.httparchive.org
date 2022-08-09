@@ -13,26 +13,10 @@ WHERE
   yyyymmdd = '20220601' AND
   (
     feature LIKE '%MediaDevices%' OR
-    feature LIKE '%EnumerateDevices%' OR
+    feature LIKE '%MediaSession%' OR
     feature LIKE '%GetUserMedia%' OR
-    feature LIKE '%GetDisplayMedia%' OR
-    feature LIKE '%Camera%' OR
-    feature LIKE '%Microphone%'
+    feature LIKE '%GetDisplayMedia%'
   )
 ORDER BY
   feature,
   client
-
-# relevant Blink features:
-
-# MediaDevicesEnumerateDevices
-# GetUserMediaSecureOrigin
-# GetUserMediaPromise
-# GetUserMediaLegacy
-# GetUserMediaPrefixed
-# GetUserMediaSecureOriginIframe
-# GetUserMediaInsecureOrigin
-# GetUserMediaInsecureOriginIframe
-# V8MediaSession_SetMicrophoneActive_Method
-# V8MediaSession_SetCameraActive_Method
-# GetDisplayMedia
