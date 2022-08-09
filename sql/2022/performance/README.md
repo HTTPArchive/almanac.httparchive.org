@@ -30,7 +30,7 @@ Taken from [`Metrics` Section](https://docs.google.com/document/d/1IKV40fllCZTqe
 ### Web Getting Wrong
 
 #### Gaming the Metrics (Custom)
-- [x] Filtering for synthetic tests
+- [x] Filtering for synthetic tests (does not catch hex codes, see https://www.simpleskincare.in/ for example)
 - [x] LCP Animation & Overlay Hack
 - [x] LCP Svg Overlay Hack
 - [x] CLS Animation Hack
