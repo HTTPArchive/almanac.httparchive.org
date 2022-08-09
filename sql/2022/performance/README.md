@@ -30,19 +30,19 @@ Taken from [`Metrics` Section](https://docs.google.com/document/d/1IKV40fllCZTqe
 ### Web Getting Wrong
 
 #### Gaming the Metrics (Custom)
-- [ ] Filtering for synthetic tests
-- [ ] LCP Animation & Overlay Hack
-- [ ] LCP Svg Overlay Hack
-- [ ] CLS Animation Hack
-- [ ] FID iFrame Hack
+- [x] Filtering for synthetic tests
+- [x] LCP Animation & Overlay Hack
+- [x] LCP Svg Overlay Hack
+- [x] CLS Animation Hack
+- [x] FID iFrame Hack
 
 #### Antipatterns (Custom)
 
-- [ ] LCP Lazy Loaded
+- [x] LCP Lazy Loaded
 
 #### Antipatterns (Not Custom)
 
-- [ ] Are LCP Image Elements Responsive
+- [x] Are LCP Image Elements Responsive
 - [ ] LCP Element Resource Delay
 - [ ] TTFB by Category
 - [ ] Domain Sharding
