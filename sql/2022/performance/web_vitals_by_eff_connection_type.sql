@@ -88,9 +88,9 @@ inp AS (
   SELECT
     origin,
     network,
-    SUM(IF(bin.start < 2500, bin.density, 0)) AS fast,
-    SUM(IF(bin.start >= 2500 AND bin.start < 4000, bin.density, 0)) AS avg,
-    SUM(IF(bin.start >= 4000, bin.density, 0)) AS slow,
+    SUM(IF(bin.start < 200, bin.density, 0)) AS fast,
+    SUM(IF(bin.start >= 200 AND bin.start < 500, bin.density, 0)) AS avg,
+    SUM(IF(bin.start >= 500, bin.density, 0)) AS slow,
     `chrome-ux-report`.experimental.PERCENTILE(ARRAY_AGG(bin), 75) AS p75
   FROM
     base
