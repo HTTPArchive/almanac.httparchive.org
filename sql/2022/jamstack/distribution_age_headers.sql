@@ -1,10 +1,10 @@
 -- getting ages to calculate median age (or any other percentage threshold)
--- we're using 2022-07-01 run as the baseline because values change every year
+-- we're using 2022-06-01 run as the baseline because values change every year
 with headers as (
   SELECT 
     url,
     JSON_EXTRACT_ARRAY(payload, '$.response.headers') as headers_array
-  FROM `httparchive.requests.2022_07_01_mobile` 
+  FROM `httparchive.requests.2022_06_01_mobile` 
 ),
 
 flattened_headers as (

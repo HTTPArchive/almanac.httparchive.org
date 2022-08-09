@@ -2,8 +2,8 @@
 with cls_values as (
   SELECT  
     url,
-    CAST(JSON_EXTRACT(report, '$.audits.cumulative-layout-shift.numericValue') as NUMERIC) as cls
-  FROM `httparchive.lighthouse.2022_07_01_mobile` 
+    CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.CumulativeLayoutShift']") as NUMERIC) as cls
+  FROM `httparchive.pages.2022_06_01_mobile` 
 ),
 
 cls_clean as (

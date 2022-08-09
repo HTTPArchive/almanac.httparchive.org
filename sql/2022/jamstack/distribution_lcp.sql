@@ -1,10 +1,10 @@
 -- getting distribution of LCP times to calculate median LCP time
 -- or whatever other threshold we decide looks reasonable
 with lcp_times as (
-  SELECT  
+  SELECT 
     url,
-    CAST(JSON_EXTRACT(report, '$.audits.largest-contentful-paint.numericValue') as NUMERIC) as lcp_ms
-  FROM `httparchive.lighthouse.2022_07_01_mobile` 
+    CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.LargestContentfulPaint']") as numeric) as lcp_ms
+  FROM `httparchive.pages.2022_06_01_mobile`
 )
 
 select 

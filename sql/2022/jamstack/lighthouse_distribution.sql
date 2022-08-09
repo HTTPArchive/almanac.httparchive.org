@@ -3,7 +3,7 @@ with performance_scores as (
   SELECT 
     url,
     CAST(JSON_EXTRACT(payload, "$['_lighthouse.Performance']") as numeric) as performance_score
-  FROM `httparchive.pages.2022_07_01_mobile`
+  FROM `httparchive.pages.2022_06_01_mobile`
 )
 
 select 

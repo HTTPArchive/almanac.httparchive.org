@@ -1,38 +1,34 @@
 # 2022 Jamstack queries
 
-<!--
-  This directory contains all of the 2022 Jamstack chapter queries.
-
-  Each query should have a corresponding `metric_name.sql` file.
-  Note that readers are linked to this directory, so try to make the SQL file names descriptive for easy browsing.
-
-  Analysts: if helpful, you can use this README to give additional info about the queries.
--->
+Jamstack is a hard category to define, since the definition is architectural -- a decoupled back end and front end -- which is not a distinction visible to a crawler. So we have gone with a number of proxy metrics, in combination:
 
 1. Jamstack sites are fast
 
-- [ ] Lighthouse Performance score]
-  * Have [distribution of Lighthouse performance scores](lighthouse_distribution.sql); median score is 0.31
-- [ ] Largest Contentful Paint
-  * Have [distribution of LCP times](distribution_lcp.sql); median is 6.6 seconds
+- [ ] Lighthouse Performance score
+  * Have [distribution of Lighthouse performance scores](lighthouse_distribution.sql); median score is 0.3
+  * Better means: anything with this or larger
+- [ ] Largest Contentful Paint using user timings
+  * Have [distribution of LCP times](distribution_lcp.sql); median is 5.5 seconds
+  * Better means: anything with this or lower
 
 2. Jamstack sites are resilient (and pre-rendered)
 
-- [ ] Rendered content sizes (reuse SEO chapter query https://github.com/HTTPArchive/custom-metrics/blob/main/dist/wpt_bodies.js)
 - [ ] How much the content changes post-load, i.e. Cumulative Layout Shift
-  * Have [distribution of CLS scores](distribution_cls.sql); median is 0.059
+  * Have [distribution of CLS scores](distribution_cls.sql); median is 0.058
+  * Better means: anything with this or lower
 
 3. Jamstack sites are cached for a long time
 
 - [ ] Age header
-  * Have [distribution of Age headers](distribution_age_headers.sql); median is 1 day
+  * Have [distribution of Age headers](distribution_age_headers.sql); median is 19 hours
+  * Better means: anything with this or longer
 
 4. The Jamstack category is growing
 
 - [ ] Percentage of "new" sites in crawl that meet the defined criteria of "fast", "resilient" and "cached"
 
 5. Candidate sites
-  * Have a [join between all URLs better than median on all 4 current queries](candidate_urls.sql); this matches 10k sites.
+  * We get this from a [join between all URLs matching criteria or "better" on all 4 current queries](candidate_urls.sql); this matches 26,107 sites out of 615,902 potential URLs = 4.2%
 
 ## Resources
 
