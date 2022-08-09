@@ -62,7 +62,9 @@ lcp_stats AS (
     getLoadingClasses(JSON_EXTRACT(payload, '$._performance.lcp_elem_stats[0].attributes')) AS classWithLazyload,
     getFetchPriorityAttr(JSON_EXTRACT(payload, '$._performance.lcp_elem_stats[0].attributes')) AS fetchPriority
   FROM
-    `httparchive.pages.2021_07_01_*`
+    -- `httparchive.pages.2022_06_01_*`
+    -- `httparchive.pages.2022_06_09_*`
+    `httparchive.sample_data.pages_*`
 )
 
 SELECT
@@ -90,7 +92,9 @@ JOIN (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total
   FROM
-    `httparchive.summary_pages.2022_06_01_*`
+    -- `httparchive.summary_pages.2022_06_01_*`
+    `httparchive.sample_data.summary_pages_*`
+    -- `httparchive.pages.2022_06_09_*`
   GROUP BY
     _TABLE_SUFFIX)
 USING
