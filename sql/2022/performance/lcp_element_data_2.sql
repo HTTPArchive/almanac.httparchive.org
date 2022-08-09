@@ -90,7 +90,7 @@ JOIN (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total
   FROM
-    `httparchive.summary_pages.2022_06_01_*`
+    `httparchive.pages.2022_06_01_*`
   GROUP BY
     _TABLE_SUFFIX)
 USING
