@@ -1,6 +1,5 @@
-CREATE TEMP FUNCTION getBlendModes(css STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMP FUNCTION getFilterFunctions(css STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
-  var blendModes = new Set(['background-blend-mode', 'mix-blend-mode']);
   var reduceValues = (values, rule) => {
     if ('rules' in rule) {
       return rule.rules.reduce(reduceValues, values);
@@ -9,8 +8,8 @@ try {
       return values;
     }
     return values.concat(rule.declarations.filter(d => {
-      return blendModes.has(d.property.toLowerCase());
-    }).map(d => d.value));
+      return d.property.toLowerCase() == 'filter'
+    }).map(d => d.value.split('(')[0]));
   };
   var $ = JSON.parse(css);
   return $.stylesheet.rules.reduce(reduceValues, []);
@@ -20,14 +19,14 @@ try {
 ''';
 
 
-WITH blend_modes AS (
+WITH filter_fns AS (
   SELECT
     client,
     page,
-    blend_mode
+    fn
   FROM
     `httparchive.almanac.parsed_css`,
-    UNNEST(getBlendModes(css)) AS blend_mode
+    UNNEST(getFilterFunctions(css)) AS fn
   WHERE
     date = '2022-07-01'
 ), totals AS (
@@ -35,7 +34,7 @@ WITH blend_modes AS (
     client,
     COUNT(DISTINCT page) AS total_pages
   FROM
-    blend_modes
+    filter_fns
   GROUP BY
     client
 )
@@ -45,7 +44,7 @@ SELECT
 FROM (
   SELECT
     client,
-    blend_mode,
+    fn,
     COUNT(DISTINCT page) AS pages,
     ANY_VALUE(total_pages) AS total,
     COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
@@ -55,12 +54,12 @@ FROM (
   FROM
     totals
   JOIN
-    blend_modes
+    filter_fns
   USING
     (client)
   GROUP BY
     client,
-    blend_mode)
+    fn)
 WHERE
   pct_pages > 0.01
 ORDER BY
