@@ -27,8 +27,11 @@ try {
     }
   });
 
-  return Object.entries(ret).map(([property, freq]) => {
-    return {property, freq};
+  return Object.entries(ret).flatMap(([property, freq]) => {
+    if (isNaN(+freq)) {
+      return [];
+    }
+    return [{property, freq: +freq}];
   });
 } catch (e) {
   return [];
@@ -58,8 +61,10 @@ FROM (
       UNNEST(getUnknownProperties(css)) AS property
     WHERE
       date = '2022-07-01' AND
-      LENGTH(property.property) > 1))
+      LENGTH(property.property) > 1 AND
+      # Limit the size of the CSS to avoid OOM crashes.
+      LENGTH(css) < 0.1 * 1024 * 1024))
 WHERE
-  pct >= 0.01
+  pct_pages >= 0.01
 ORDER BY
-  pct DESC
+  pct_pages DESC

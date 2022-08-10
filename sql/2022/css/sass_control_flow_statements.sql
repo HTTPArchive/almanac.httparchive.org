@@ -30,9 +30,10 @@ try {
 WITH totals AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_pages
+    COUNT(0) AS total_pages,
+    COUNTIF(SAFE_CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._sass'), '$.scss.size') AS INT64) > 0) AS total_sass
   FROM
-    `httparchive.summary_pages.2022_07_01_*`
+    `httparchive.pages.2022_07_01_*`
   GROUP BY
     client
 )
@@ -42,7 +43,9 @@ SELECT
   statement,
   COUNT(DISTINCT IF(freq > 0, page, NULL)) AS pages,
   ANY_VALUE(total_pages) AS total_pages,
+  ANY_VALUE(total_sass) AS total_sass_pages,
   COUNT(DISTINCT IF(freq > 0, page, NULL)) / ANY_VALUE(total_pages) AS pct_pages,
+  COUNT(DISTINCT IF(freq > 0, page, NULL)) / ANY_VALUE(total_sass) AS pct_sass_pages,
   SUM(freq) AS freq,
   SUM(SUM(freq)) OVER (PARTITION BY client) AS total,
   SUM(freq) / SUM(SUM(freq)) OVER (PARTITION BY client) AS pct

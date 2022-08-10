@@ -102,7 +102,7 @@ try {
 SELECT
   percentile,
   client,
-  APPROX_QUANTILES(duration, 1000)[OFFSET(percentile * 10)] AS duration
+  APPROX_QUANTILES(SAFE_CAST(duration AS NUMERIC), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS duration
 FROM
   `httparchive.almanac.parsed_css`,
   UNNEST(getTransitionDurations(css)) AS duration,

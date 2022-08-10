@@ -9,7 +9,7 @@ FROM (
     client,
     COUNT(0) AS total_stylesheets
   FROM
-    `httparchive.almanac.requests`
+    `httparchive.all.requests`
   WHERE
     date = '2022-07-01' AND
     type = 'css'
