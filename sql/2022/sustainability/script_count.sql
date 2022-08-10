@@ -26,6 +26,6 @@ FROM (
     getScripts(payload) AS script
   FROM
     `httparchive.pages.2022_06_01_*`),
-    UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   client
