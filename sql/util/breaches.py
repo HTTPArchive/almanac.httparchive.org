@@ -24,7 +24,7 @@ FROM
 """
 
 import json
-import requests
+import requests # pylint: disable=import-error
 
 year = 2022
 
