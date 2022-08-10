@@ -1,4 +1,4 @@
-CREATE TEMP FUNCTION getFilterFunctions(css STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMP FUNCTION getClipPathFunctions(css STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
     if ('rules' in rule) {
@@ -8,7 +8,7 @@ try {
       return values;
     }
     return values.concat(rule.declarations.filter(d => {
-      return d.property.toLowerCase() == 'filter'
+      return d.property.toLowerCase() == 'clip-path'
     }).map(d => d.value.split('(')[0]));
   };
   var $ = JSON.parse(css);
@@ -19,14 +19,14 @@ try {
 ''';
 
 
-WITH filter_fns AS (
+WITH clip_path_fns AS (
   SELECT
     client,
     page,
     fn
   FROM
     `httparchive.almanac.parsed_css`,
-    UNNEST(getFilterFunctions(css)) AS fn
+    UNNEST(getClipPathFunctions(css)) AS fn
   WHERE
     date = '2022-07-01'
 ), totals AS (
@@ -34,7 +34,7 @@ WITH filter_fns AS (
     client,
     COUNT(DISTINCT page) AS total_pages
   FROM
-    filter_fns
+    clip_path_fns
   GROUP BY
     client
 )
@@ -54,7 +54,7 @@ FROM (
   FROM
     totals
   JOIN
-    filter_fns
+    clip_path_fns
   USING
     (client)
   GROUP BY
