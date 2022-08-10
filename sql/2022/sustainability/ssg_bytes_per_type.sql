@@ -61,4 +61,6 @@ GROUP BY
   client,
   ssg
 ORDER BY
-  pages DESC
+  pages DESC,
+  ssg,
+  client

@@ -1,5 +1,5 @@
 #standardSQL
-# compression_by_content_type.sql : Compressopnn methods for different content types
+# compression_by_content_type.sql : Compression methods for different content types
 
 SELECT
   client,

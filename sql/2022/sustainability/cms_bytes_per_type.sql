@@ -59,4 +59,6 @@ GROUP BY
   client,
   cms
 ORDER BY
-  pages DESC
+  pages DESC,
+  cms,
+	client

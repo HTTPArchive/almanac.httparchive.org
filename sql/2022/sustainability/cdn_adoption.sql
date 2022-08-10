@@ -21,4 +21,6 @@ GROUP BY
   cdn,
   total
 ORDER BY
-  client
+  pct DESC,
+	client,
+	cdn

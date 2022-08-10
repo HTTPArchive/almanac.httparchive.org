@@ -30,7 +30,7 @@ FROM (
     url,
     app AS ecommerce
   FROM
-    `httparchive.technologies.2021_07_01_*`
+    `httparchive.technologies.2021_06_01_*`
   WHERE
     category = 'Ecommerce' AND
     (
@@ -63,4 +63,6 @@ GROUP BY
   client,
   ecommerce
 ORDER BY
-  pages DESC
+  pages DESC,
+  ecommerce,
+  client

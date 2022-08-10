@@ -55,7 +55,7 @@ base AS (
   SELECT
     client,
     page,
-    COUNT(canonicalDomain) AS third_parties_per_page
+    COUNT(DISTINCT canonicalDomain) AS third_parties_per_page
   FROM
     requests
   LEFT JOIN

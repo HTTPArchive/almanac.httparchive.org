@@ -13,9 +13,10 @@ try {
 
 SELECT
   _TABLE_SUFFIX AS client,
+  percentile,
   COUNTIF(stylesheets.remote = 1) / COUNT(0) AS pct_1_remote,
-  SUM(stylesheets.inline) AS num_inline_stylesheets,
-  SUM(stylesheets.remote) AS num_inline_stylesheets
+  APPROX_QUANTILES(stylesheets.inline, 1000)[OFFSET(percentile * 10)] AS num_inline_stylesheets,
+  APPROX_QUANTILES(stylesheets.remote, 1000)[OFFSET(percentile * 10)] AS num_inline_stylesheets
 FROM (
   SELECT
     _TABLE_SUFFIX,
@@ -23,6 +24,7 @@ FROM (
     getStylesheets(payload) AS stylesheets
   FROM
     `httparchive.pages.2022_06_01_*`
+    UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 )
 GROUP BY
   client

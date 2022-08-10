@@ -14,16 +14,18 @@ try {
 
 SELECT
   client,
-  SUM(script.total) AS total_scripts,
-  SUM(script.inline) AS inline_script,
-  SUM(script.src) AS external_script,
-  SUM(script.src) / SUM(script.total) AS pct_external_script,
-  SUM(script.inline) / SUM(script.total) AS pct_inline_script
+  percentile,
+  APPROX_QUANTILES(script.total, 1000)[OFFSET(percentile * 10)] AS total_scripts,
+  APPROX_QUANTILES(script.inline, 1000)[OFFSET(percentile * 10)] AS inline_script,
+  APPROX_QUANTILES(script.src, 1000)[OFFSET(percentile * 10)] AS external_script,
+  APPROX_QUANTILES(script.src / script.total, 1000)[OFFSET(percentile * 10)] AS pct_external_script,
+  APPROX_QUANTILES(script.inline / script.total, 1000)[OFFSET(percentile * 10)] AS pct_inline_script
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     getScripts(payload) AS script
   FROM
     `httparchive.pages.2022_06_01_*`)
+    UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   client
