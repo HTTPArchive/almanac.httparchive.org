@@ -29,7 +29,9 @@ WITH clip_path_fns AS (
     UNNEST(getClipPathFunctions(css)) AS fn
   WHERE
     date = '2022-07-01'
-), totals AS (
+),
+
+totals AS (
   SELECT
     client,
     COUNT(DISTINCT page) AS total_pages
