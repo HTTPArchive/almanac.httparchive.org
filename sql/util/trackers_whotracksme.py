@@ -11,7 +11,7 @@ FROM
     `httparchive.almanac.trackers_2022`
 """
 
-import requests # pylint: disable=import-error
+import requests  # pylint: disable=import-error
 import sqlite3
 import pandas
 
