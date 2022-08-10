@@ -228,11 +228,11 @@ WHERE
   COALESCE(
     origin_trials_from_custom_metric.featureElem,
     origin_trials_from_headers_and_meta_tags.featureElem) IN (
-      'InterestCohortAPI',
-      'ConversionMeasurement',
-      'TrustTokens',
-      'PrivacySandboxAdsAPIs'
-    )
+    'InterestCohortAPI',
+    'ConversionMeasurement',
+    'TrustTokens',
+    'PrivacySandboxAdsAPIs'
+  )
 GROUP BY
   client,
   featureElem,

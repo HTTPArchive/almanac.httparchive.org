@@ -9,5 +9,5 @@ SELECT
   COUNT(DISTINCT IF(LOWER(JSON_VALUE(meta_node, '$.name')) = 'adsmetadata', url, NULL)) / COUNT(DISTINCT url) AS pct_websites
 FROM
   `httparchive.pages.2022_06_01_*`,
-UNNEST(JSON_QUERY_ARRAY(JSON_VALUE(payload, '$._almanac'), '$.meta-nodes.nodes')) meta_node
+  UNNEST(JSON_QUERY_ARRAY(JSON_VALUE(payload, '$._almanac'), '$.meta-nodes.nodes')) meta_node
 GROUP BY 1
