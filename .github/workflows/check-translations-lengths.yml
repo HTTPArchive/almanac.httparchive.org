@@ -23,6 +23,7 @@ on:
     paths:
       - 'src/content/*/*/*.md'
       - 'src/templates/*/*/*.html'
+      - 'src/templates/*/*.html'
 
 jobs:
   check_lengths:
