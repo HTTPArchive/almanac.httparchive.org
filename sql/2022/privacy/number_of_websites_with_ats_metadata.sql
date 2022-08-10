@@ -1,5 +1,6 @@
 #standardSQL
 # Counts of pages with Ads Transparency Spotlight metadata
+# https://github.com/Ads-Transparency-Spotlight/documentation/blob/main/implement.md
 
 SELECT
   _TABLE_SUFFIX AS client,
