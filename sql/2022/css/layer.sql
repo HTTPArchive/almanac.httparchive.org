@@ -11,7 +11,9 @@ WITH layers AS (
     `httparchive.almanac.summary_response_bodies`
   WHERE
     date = '2022-06-01' AND
-    type = 'css')
+    type = 'css'
+)
+
 
 SELECT
   *
