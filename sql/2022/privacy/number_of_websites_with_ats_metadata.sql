@@ -3,13 +3,10 @@
 
 SELECT
   _TABLE_SUFFIX AS client,
-  COUNT(0) AS number_of_websites,
-  COUNTIF(JSON_VALUE(JSON_VALUE(payload, '$._privacy'), '$.ads_transparency_spotlight.present') = 'true') AS number_of_websites_ats,
-  COUNTIF(JSON_VALUE(JSON_VALUE(payload, '$._privacy'), '$.ads_transparency_spotlight.present') = 'true') / COUNT(0) AS pct_websites_ats
+  COUNT(DISTINCT url) AS total_websites,
+  COUNT(DISTINCT IF(LOWER(JSON_VALUE(meta_node, '$.name')) = 'adsmetadata', url, NULL)) AS number_of_websites,
+  COUNT(DISTINCT IF(LOWER(JSON_VALUE(meta_node, '$.name')) = 'adsmetadata', url, NULL)) / COUNT(DISTINCT url) AS pct_websites
 FROM
-  `httparchive.pages.2022_06_01_*`
-GROUP BY
-  client
-ORDER BY
-  client,
-  number_of_websites
+  `httparchive.pages.2022_06_01_*`,
+UNNEST(JSON_QUERY_ARRAY(JSON_VALUE(payload, '$._almanac'), '$.meta-nodes.nodes')) meta_node
+GROUP BY 1

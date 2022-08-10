@@ -4,39 +4,32 @@
 WITH blink AS (
   SELECT DISTINCT
     client,
-    url,
-    IF(feature = 'NavigatorDoNotTrack', 1, 0) AS dnt_from_blink
+    num_urls,
+    pct_urls
   FROM
-    `httparchive.blink_features.features`
+    `httparchive.blink_features.usage`
   WHERE
-    yyyymmdd = DATE('2022-06-01')
+    yyyymmdd = '20220601'
+    AND feature IN ('NavigatorDoNotTrack')
 ),
 pages AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    url,
-    IF(JSON_QUERY(JSON_VALUE(payload, '$._privacy'), '$.navigator_doNotTrack')='true', 1, 0) AS dnt_from_page
+    COUNT(DISTINCT IF(JSON_QUERY(JSON_VALUE(payload, '$._privacy'), '$.navigator_doNotTrack')='true', url, NULL)) AS num_urls,
+    COUNT(DISTINCT IF(JSON_QUERY(JSON_VALUE(payload, '$._privacy'), '$.navigator_doNotTrack')='true', url, NULL)) / COUNT(DISTINCT url) AS pct_urls
   FROM
     `httparchive.pages.2022_06_01_*`
+  GROUP BY 1
 )
 
 SELECT
-  client,
-  SUM(dnt_from_blink) AS number_of_websites_with_dnt_blink_usage,
-  SUM(dnt_from_blink) / COUNT(DISTINCT blink_url) AS percentage_of_websites_with_dnt_blink_usage,
-  SUM(dnt_from_page) AS number_of_websites_with_dnt_page_usage,
-  SUM(dnt_from_page) / COUNT(DISTINCT pages_url) AS percentage_of_websites_with_dnt_page
-FROM (
-  SELECT
-    COALESCE(blink.client, pages.client) AS client,
-    blink.url AS blink_url,
-    pages.url AS pages_url,
-    blink.dnt_from_blink,
-    pages.dnt_from_page
-  FROM blink
-  FULL OUTER JOIN pages
-  ON
-    blink.client = pages.client AND
-    blink.url = pages.url
-)
-GROUP BY client
+  COALESCE(blink.client, pages.client) AS client,
+  blink.num_urls AS number_of_websites_with_blink_usage,
+  blink.pct_urls AS percentage_of_websites_with_blink_usage,
+  pages.num_urls AS number_of_websites_with_response_body_usage,
+  pages.pct_urls AS percentage_of_websites_with_response_body_usage
+FROM
+  blink
+FULL OUTER JOIN pages
+ON
+  blink.client = pages.client

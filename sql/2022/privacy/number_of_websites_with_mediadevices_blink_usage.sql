@@ -1,5 +1,5 @@
 #standardSQL
-# Pages that use media devices (using Blink features)
+# Pages that use media devices
 
 SELECT DISTINCT
   client,
