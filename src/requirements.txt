@@ -5,4 +5,3 @@ pytest==7.1.2
 pytest-watch==4.2.0
 pytest-cov==3.0.0
 sqlfluff==1.2.1
-Werkzeug==2.2.1
