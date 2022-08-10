@@ -9,7 +9,7 @@ with lcp_times as (
 
 select 
   round(lcp_ms/1000,1) as lcp_s,
-  count(distinct(url))
+  count(distinct(url)) as urls
 from lcp_times 
 where lcp_ms is not null
 group by lcp_s

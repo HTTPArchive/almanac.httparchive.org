@@ -26,8 +26,8 @@ non_null_ages as (
 )
 
 select 
-  round(age/86400) as age_days,
+  round(age/3600) as age_hours,
   count(distinct(url)) as urls
 from non_null_ages
-group by age_days
-order by age_days
+group by age_hours
+order by age_hours

@@ -5,22 +5,29 @@ Jamstack is a hard category to define, since the definition is architectural -- 
 1. Jamstack sites are fast
 
 - [ ] Lighthouse Performance score
-  * Have [distribution of Lighthouse performance scores](lighthouse_distribution.sql); median score is 0.3
+  * Have [distribution of Lighthouse performance scores](lighthouse_distribution.sql)
+    * Mobile median score is 0.3
   * Better means: anything with this or larger
 - [ ] Largest Contentful Paint using user timings
-  * Have [distribution of LCP times](distribution_lcp.sql); median is 5.5 seconds
+  * Have [distribution of LCP times](distribution_lcp.sql)
+    * Mobile median is 5.5 seconds
+    * Desktop median is 3.7 seconds
   * Better means: anything with this or lower
 
 2. Jamstack sites are resilient (and pre-rendered)
 
 - [ ] How much the content changes post-load, i.e. Cumulative Layout Shift
-  * Have [distribution of CLS scores](distribution_cls.sql); median is 0.058
+  * Have [distribution of CLS scores](distribution_cls.sql)
+    * Mobile median is 0.058
+    * Desktop median is 0.023
   * Better means: anything with this or lower
 
 3. Jamstack sites are cached for a long time
 
 - [ ] Age header
-  * Have [distribution of Age headers](distribution_age_headers.sql); median is 19 hours
+  * Have [distribution of Age headers](distribution_age_headers.sql)
+    * Mobile median is 19 hours
+    * Desktop median is 21 hours
   * Better means: anything with this or longer
 
 4. The Jamstack category is growing
@@ -28,7 +35,7 @@ Jamstack is a hard category to define, since the definition is architectural -- 
 - [ ] Percentage of "new" sites in crawl that meet the defined criteria of "fast", "resilient" and "cached"
 
 5. Candidate sites
-  * We get this from a [join between all URLs matching criteria or "better" on all 4 current queries](candidate_urls.sql); this matches 26,107 sites out of 615,902 potential URLs = 4.2%
+  * We get this from a [join between all URLs matching criteria or "better" on all 4 current queries](candidate_urls.sql)
 
 ## Resources
 
