@@ -30,7 +30,9 @@ WITH blend_modes AS (
     UNNEST(getBlendModes(css)) AS blend_mode
   WHERE
     date = '2022-07-01'
-), totals AS (
+),
+
+totals AS (
   SELECT
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_pages
