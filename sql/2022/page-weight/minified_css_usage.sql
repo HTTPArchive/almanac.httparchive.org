@@ -1,14 +1,8 @@
 SELECT 
     _TABLE_SUFFIX as client,
-    COUNTIF(
-        REGEXP_CONTAINS(report,r'unminified-css\/\).","score":null')
-    ) AS null_count,
-    COUNTIF(
-        REGEXP_CONTAINS(report,r'unminified-css\/\).","score":1')
-    ) AS pass_count,
-    COUNTIF(
-        REGEXP_CONTAINS(report,r'unminified-css\/\).","score":0')
-    ) AS fail_count
+    COUNTIF(JSON_VALUE(report, '$.audits.unminified-css.score') IS NULL) AS null_count,
+    COUNTIF(SAFE_CAST(JSON_VALUE(report, '$.audits.unminified-css.score') AS FLOAT64) >= 0.9) AS pass_count,
+    COUNTIF(SAFE_CAST(JSON_VALUE(report, '$.audits.unminified-css.score') AS FLOAT64) < 0.9) AS fail_count
 FROM
   `httparchive.lighthouse.2022_06_01_*`
 GROUP BY
@@ -18,3 +12,4 @@ ORDER BY
     null_count,
     pass_count,
     fail_count
+    
