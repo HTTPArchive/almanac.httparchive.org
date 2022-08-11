@@ -18,26 +18,18 @@ Jamstack is a hard category to define, since the definition is architectural -- 
 
 2. Jamstack sites are resilient (and pre-rendered)
 
-- [ ] How much the content changes post-load, i.e. Cumulative Layout Shift
-  * Have [distribution of CLS scores](distribution_cls.sql)
+- How much the content changes post-load, i.e. Cumulative Layout Shift
+  * Have distribution of CLS scores on [mobile](distribution_cls_mobile.sql) and [desktop](distribution_cls_desktop.sql)
     * Mobile median is 0.058
     * Desktop median is 0.023
   * Better means: anything with this or lower
 
 3. Jamstack sites are cached for a long time
 
-- [ ] Age header
-  * Have [distribution of Age headers](distribution_age_headers.sql)
-    * Mobile median is 19 hours
-    * Desktop median is 21 hours
+- Age header
+  * Have distribution of Age headers on [mobile](distribution_age_headers_mobile.sql) and [desktop](distribution_age_headers_desktop.sql)
+    * Median 21 hours in both cases
   * Better means: anything with this or longer
-
-4. The Jamstack category is growing
-
-- [ ] Percentage of "new" sites in crawl that meet the defined criteria of "fast", "resilient" and "cached"
-
-5. Candidate sites
-  * We get this from a [join between all URLs matching criteria or "better" on all 4 current queries](candidate_urls.sql)
 
 ## Resources
 

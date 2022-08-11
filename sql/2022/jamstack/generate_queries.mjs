@@ -1,3 +1,7 @@
+// The queries in r1_jamstackishness_over_time are all very similar
+// This script generated them from a template
+// But the generated files are also checked in
+
 import fs from 'node:fs/promises'
 import { exit } from 'node:process'
 import { DateTime } from 'luxon'
