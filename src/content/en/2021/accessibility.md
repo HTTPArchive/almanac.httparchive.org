@@ -760,7 +760,7 @@ We found that 0.96% of desktop websites—or well over 60,000—use one of these
   description="A bar chart showing usage of the most popular accessibility apps by domain rank on desktop sites. AccessiBe is not used on the top 1,000 sites but is used by 0.15% of the top 10,000 sites, by 0.39% of the top 100,000 sites, by 0.37% of the top million sites and by 0.27% of all sites. AudioEye is used by 0.13%, 0.20%, 0.13%, 0.16%, and 0.24% respectively. EqualWeb is not used on the top 1,000 or top 10,000 site but is used by 0.02% of the top 100,000, 0.03% of the top million, and 0.02% of all sites. Texthelp similarly is not used on the top 1,000 or top 10,000 sites but is used by 0.02% of the top 100,000, 0.04% of the top million, and 0.02% of all sites. Finally, UserWay is not used on the top 1,000 sites but is used by 0.04% of the top 10,000 sites, by 0.09% of the top 100,000 sites, by 0.24% of the top million and by 0.39% of all sites. Only AudioEye is used by the top 1,000 sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=473077851&format=interactive",
   sheets_gid="2077755325",
-  sql_file="a11y_overall_tech_usage_by_domain_rank.sql"
+  sql_file="a11y_technology_usage_by_domain_rank.sql"
 ) }}
 
 When considering domain rank, the top 1,000 websites have a lower percentage —0.1%— of overlay usage. However, considering the reach of these top-ranking sites, the potential impact of even one website with this much traffic using an overlay is very substantial.
@@ -771,7 +771,7 @@ When considering domain rank, the top 1,000 websites have a lower percentage —
   description="A bar chart showing that for the top 1,000 sites, 0.1% on desktop and 0.1% on mobile use and accessibility app, for the top 10,000 it's 0.6% and 0.5% respectively, for the top 100,000 it's 0.8% and 0.7%, for the top million it's 0.9% and 0.8%, and finally for all sites 1.0% it's 0.8%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=851935325&format=interactive",
   sheets_gid="827309922",
-  sql_file="a11y_technology_usage_by_domain_rank.sql"
+  sql_file="a11y_overall_tech_usage_by_domain_rank.sql"
 ) }}
 
 ### The consequences of overlays
