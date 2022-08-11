@@ -7,7 +7,8 @@ WITH requests AS (
     pageid AS page,
     url,
     resp_content_encoding AS content_encoding,
-    type
+    type,
+    respBodySize AS size
   FROM
     `httparchive.summary_requests.2022_06_01_*`
   WHERE
@@ -42,18 +43,22 @@ SELECT
   client,
   content_encoding,
   domain,
+  size,
+  SUM(size) OVER (PARTITION BY client) AS total_size,
+  size / SUM(size) OVER (PARTITION BY client) AS pct_size,
   num_requests,
-  total,
-  pct
+  total_requests,
+  pct_requests
 FROM (
   SELECT
     client,
     content_encoding,
     domain,
     COUNT(0) AS num_requests,
-    SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct,
-    RANK() OVER (PARTITION BY client, content_encoding ORDER BY COUNT(0) DESC) AS domain_rank
+    SUM(size) AS size,
+    SUM(COUNT(0)) OVER (PARTITION BY client) AS total_requests,
+    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_requests,
+    RANK() OVER (PARTITION BY client, type, content_encoding ORDER BY COUNT(0) DESC) AS domain_rank
   FROM
     requests
   LEFT JOIN
@@ -73,4 +78,4 @@ WHERE
 ORDER BY
   client,
   content_encoding,
-  num_requests DESC
+  size DESC
