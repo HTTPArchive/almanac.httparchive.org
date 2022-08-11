@@ -1,8 +1,8 @@
 SELECT
-    _TABLE_SUFFIX as client,
-    COUNTIF(JSON_VALUE(report, '$.audits.third-party-facades.score') IS NULL) AS null_count,
-    COUNTIF(SAFE_CAST(JSON_VALUE(report, '$.audits.third-party-facades.score') AS FLOAT64) >= 0.9) AS pass_count,
-    COUNTIF(SAFE_CAST(JSON_VALUE(report, '$.audits.third-party-facades.score') AS FLOAT64) < 0.9) AS fail_count
+  _TABLE_SUFFIX AS client,
+  COUNTIF(JSON_VALUE(report, '$.audits.third-party-facades.score') IS NULL) AS null_count,
+  COUNTIF(SAFE_CAST(JSON_VALUE(report, '$.audits.third-party-facades.score') AS FLOAT64) >= 0.9) AS pass_count,
+  COUNTIF(SAFE_CAST(JSON_VALUE(report, '$.audits.third-party-facades.score') AS FLOAT64) < 0.9) AS fail_count
 FROM
   `httparchive.lighthouse.2022_06_01_*`
 GROUP BY
