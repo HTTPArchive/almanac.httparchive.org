@@ -1,5 +1,5 @@
 #standardSQL
-# Compressed images by third parties
+# Compressed images (excluding SVG) by third parties
 
 WITH requests AS (
   SELECT
@@ -14,6 +14,9 @@ WITH requests AS (
     type = 'image' AND (
       resp_content_encoding = 'gzip' OR
       resp_content_encoding = 'br'
+    ) AND (
+      resp_content_type NOT LIKE 'image/svg%' OR
+      ENDS_WITH(url, '.svg')
     )
 ),
 
@@ -48,8 +51,8 @@ FROM (
     content_encoding,
     domain,
     COUNT(0) AS num_requests,
-    SUM(COUNT(0)) OVER (PARTITION BY client, type) AS total,
-    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client, type) AS pct,
+    SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct,
     RANK() OVER (PARTITION BY client, content_encoding ORDER BY COUNT(0) DESC) AS domain_rank
   FROM
     requests
