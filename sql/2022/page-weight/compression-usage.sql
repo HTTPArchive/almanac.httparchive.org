@@ -1,4 +1,4 @@
-SELECT 
+SELECT
     _TABLE_SUFFIX as client,
     COUNTIF(JSON_VALUE(report, '$.audits.text-compression.score') IS NULL) AS null_count,
     COUNTIF(SAFE_CAST(JSON_VALUE(report, '$.audits.text-compression.score') AS FLOAT64) >= 0.9) AS pass_count,
@@ -12,4 +12,3 @@ ORDER BY
     null_count,
     pass_count,
     fail_count
-    
