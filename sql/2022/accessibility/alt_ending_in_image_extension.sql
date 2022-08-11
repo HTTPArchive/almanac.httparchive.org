@@ -33,7 +33,7 @@ SELECT
   # Given a random alt ending in a file extension, how often will it end in this file extension
   SUM(extension_stat.total) / total_alts_with_file_extensions AS pct_total_occurances
 FROM
-  `httparchive.pages.2021_07_01_*`,
+  `httparchive.pages.2022_06_01_*`,
   UNNEST(getUsedExtensions(JSON_EXTRACT_SCALAR(payload, '$._a11y'))) AS extension_stat
 LEFT JOIN (
   SELECT
@@ -49,7 +49,7 @@ LEFT JOIN (
       CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._markup'), '$.images.img.alt.present') AS INT64) AS total_non_empty_alt,
       CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.file_extension_alts.total_with_file_extension') AS INT64) AS total_with_file_extension
     FROM
-      `httparchive.pages.2021_07_01_*`
+      `httparchive.pages.2022_06_01_*`
   )
   GROUP BY
     client

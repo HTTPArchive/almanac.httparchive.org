@@ -31,7 +31,7 @@ SELECT
   MAX(audits.audit_group) AS audit_group,
   MAX(audits.description) AS description
 FROM
-  `httparchive.lighthouse.2021_07_01_mobile`,
+  `httparchive.lighthouse.2022_06_01_mobile`,
   UNNEST(getAudits(report, 'accessibility')) AS audits
 WHERE
   LENGTH(report) < 20000000  # necessary to avoid out of memory issues. Excludes very large results

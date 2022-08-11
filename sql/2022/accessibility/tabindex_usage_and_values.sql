@@ -44,7 +44,7 @@ FROM (
     _TABLE_SUFFIX AS client,
     getTotalPositiveTabIndexes(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS tab_index_stats
   FROM
-    `httparchive.pages.2021_07_01_*`
+    `httparchive.pages.2022_06_01_*`
 )
 GROUP BY
   client

@@ -8,5 +8,5 @@ FROM (
   SELECT
     JSON_EXTRACT_SCALAR(report, '$.audits.color-contrast.score') AS color_contrast_score
   FROM
-    `httparchive.lighthouse.2021_07_01_mobile`
+    `httparchive.lighthouse.2022_06_01_mobile`
 )

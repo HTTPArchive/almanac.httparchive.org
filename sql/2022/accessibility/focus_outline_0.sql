@@ -1,5 +1,6 @@
 #standardSQL
 # Adoption of :focus pseudoclass and outline: 0 style
+# Copy of sql/2021/css/focus_outline_0.sql
 CREATE TEMPORARY FUNCTION getFocusStylesOutline0(css STRING) RETURNS ARRAY<BOOL> LANGUAGE js
 OPTIONS (library = "gs://httparchive/lib/css-utils.js") AS '''
 try {
@@ -58,7 +59,7 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getFocusStylesOutline0(css)) AS sets_outline_0
   WHERE
-    date = '2021-07-01'
+    date = '2022-07-01'
   GROUP BY
     client,
     page)
@@ -67,7 +68,7 @@ JOIN (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_pages
   FROM
-    `httparchive.summary_pages.2021_07_01_*`
+    `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
   GROUP BY
     _TABLE_SUFFIX)
 USING (client)

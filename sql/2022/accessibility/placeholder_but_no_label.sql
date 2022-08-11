@@ -19,7 +19,7 @@ FROM (
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.placeholder_but_no_label.total_placeholder') AS INT64) AS total_placeholder,
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.placeholder_but_no_label.total_no_label') AS INT64) AS total_no_label
   FROM
-    `httparchive.pages.2021_07_01_*`
+    `httparchive.pages.2022_06_01_*`
 )
 GROUP BY
   client

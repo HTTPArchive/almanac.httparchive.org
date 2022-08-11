@@ -10,7 +10,7 @@ FROM (
     _TABLE_SUFFIX AS client,
     COUNT(DISTINCT url) AS sites_with_a11y_tech
   FROM
-    `httparchive.technologies.2021_07_01_*`
+    `httparchive.technologies.2022_06_01_*`
   WHERE
     category = 'Accessibility'
   GROUP BY
@@ -21,7 +21,7 @@ JOIN (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_sites
   FROM
-    `httparchive.summary_pages.2021_07_01_*`
+    `httparchive.summary_pages.2022_06_01_*`
   GROUP BY
     client
 )

@@ -10,7 +10,7 @@ FROM (
     _TABLE_SUFFIX AS client,
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.screen_reader_classes') AS BOOL) AS uses_sr_only
   FROM
-    `httparchive.pages.2021_07_01_*`
+    `httparchive.pages.2022_06_01_*`
 )
 GROUP BY
   client

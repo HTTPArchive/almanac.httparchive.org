@@ -40,7 +40,7 @@ FROM
       SAFE_CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.input_elements.total') AS INT64) > 0 AS has_inputs,
       hasSearchInput(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS has_search_input
     FROM
-      `httparchive.pages.2021_07_01_*`
+      `httparchive.pages.2022_06_01_*`
   )
 GROUP BY
   client

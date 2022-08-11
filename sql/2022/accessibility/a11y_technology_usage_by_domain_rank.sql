@@ -14,7 +14,7 @@ FROM (
     app,
     url
   FROM
-    `httparchive.technologies.2021_07_01_*`
+    `httparchive.technologies.2022_06_01_*`
   WHERE
     category = 'Accessibility'
 )
@@ -24,7 +24,7 @@ LEFT OUTER JOIN (
     url,
     rank_grouping
   FROM
-    `httparchive.summary_pages.2021_07_01_*`,
+    `httparchive.summary_pages.2022_06_01_*`,
     UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
     rank <= rank_grouping
@@ -35,7 +35,7 @@ JOIN (
     rank_grouping,
     COUNT(0) AS total_in_rank
   FROM
-    `httparchive.summary_pages.2021_07_01_*`,
+    `httparchive.summary_pages.2022_06_01_*`,
     UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
     rank <= rank_grouping

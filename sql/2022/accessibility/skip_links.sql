@@ -16,6 +16,6 @@ SELECT
   COUNT(0) AS total,
   COUNTIF(getEarlyHash(JSON_EXTRACT_SCALAR(payload, '$._almanac')) > 0) / COUNT(0) AS pct
 FROM
-  `httparchive.pages.2021_07_01_*`
+  `httparchive.pages.2022_06_01_*`
 GROUP BY
   client

@@ -19,7 +19,7 @@ FROM (
       _TABLE_SUFFIX AS client,
       SAFE_CAST(alt_length_string AS INT64) AS alt_length
     FROM
-      `httparchive.pages.2021_07_01_*`,
+      `httparchive.pages.2022_06_01_*`,
       UNNEST(
         JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.images.alt_lengths')
       ) AS alt_length_string

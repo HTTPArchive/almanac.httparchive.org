@@ -43,7 +43,7 @@ elements AS (
     url,
     element_type
   FROM
-    `httparchive.pages.2021_07_01_*`,
+    `httparchive.pages.2022_06_01_*`,
     UNNEST(get_element_types(JSON_EXTRACT_SCALAR(payload, '$._element_count'))) AS element_type
   JOIN
     mappings
@@ -56,7 +56,7 @@ roles AS (
     url,
     role_type
   FROM
-    `httparchive.pages.2021_07_01_*`,
+    `httparchive.pages.2022_06_01_*`,
     UNNEST(getUsedRoles(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS role_type
   JOIN
     mappings
@@ -73,7 +73,7 @@ base AS (
     COUNTIF(e.element_type IS NOT NULL) AS element_usage,
     COUNTIF(r.role_type IS NOT NULL) AS role_usage
   FROM
-    `httparchive.pages.2021_07_01_*`
+    `httparchive.pages.2022_06_01_*`
   INNER JOIN mappings ON (TRUE)
   LEFT OUTER JOIN
     elements e

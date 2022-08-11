@@ -1,5 +1,6 @@
 #standardSQL
 # Disabled zooming and scaling via the viewport tag by domain rank
+# Copy of sql/2022/mobile-web/viewport_zoom_scale_by_domain_rank.sql
 SELECT
   client,
   rank_grouping,
@@ -26,7 +27,7 @@ FROM (
       url,
       JSON_EXTRACT_SCALAR(payload, '$._meta_viewport') AS meta_viewport
     FROM
-      `httparchive.pages.2021_07_01_*`
+      `httparchive.pages.2022_06_01_*`
   )
 )
 LEFT JOIN (
@@ -35,7 +36,7 @@ LEFT JOIN (
     url,
     rank_grouping
   FROM
-    `httparchive.summary_pages.2021_07_01_*`,
+    `httparchive.summary_pages.2022_06_01_*`,
     UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
     rank <= rank_grouping

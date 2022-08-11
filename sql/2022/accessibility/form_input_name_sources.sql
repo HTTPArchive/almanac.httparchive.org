@@ -57,7 +57,7 @@ FROM (
     _TABLE_SUFFIX AS client,
     input_name_source
   FROM
-    `httparchive.pages.2021_07_01_*`,
+    `httparchive.pages.2022_06_01_*`,
     UNNEST(
       a11yInputNameSources(JSON_EXTRACT_SCALAR(payload, '$._a11y'))
     ) AS input_name_source

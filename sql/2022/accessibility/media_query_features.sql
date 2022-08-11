@@ -1,4 +1,5 @@
 #standardSQL
+# Copy of sql/2022/css/media_query_features.sql
 CREATE TEMPORARY FUNCTION getMediaQueryFeatures(css STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js
@@ -49,14 +50,14 @@ FROM (
   LEFT JOIN
     UNNEST(getMediaQueryFeatures(css)) AS feature
   WHERE
-    date = '2021-07-01' AND
+    date = '2022-07-01' AND
     feature IS NOT NULL)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total
   FROM
-    `httparchive.summary_pages.2021_07_01_*`
+    `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
   GROUP BY
     client)
 USING

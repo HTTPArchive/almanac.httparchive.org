@@ -15,7 +15,7 @@ FROM (
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.audios.total') AS INT64) AS total_audios,
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.audios.total_with_track') AS INT64) AS total_with_track
   FROM
-    `httparchive.pages.2021_07_01_*`
+    `httparchive.pages.2022_06_01_*`
 )
 GROUP BY
   client

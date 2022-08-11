@@ -1,4 +1,5 @@
 #standardSQL
+# Copy of sql/2021/css/focus_visible.sql
 CREATE TEMPORARY FUNCTION getSelectorParts(css STRING)
 RETURNS STRUCT<
   class ARRAY<STRING>,
@@ -72,7 +73,9 @@ FROM (
   LEFT JOIN
     UNNEST(getSelectorParts(css).pseudo_class) AS pseudo_class
   WHERE
-    date = '2021-07-01'
+    date = '2022-07-01' AND
+    # Limit the size of the CSS to avoid OOM crashes.
+    LENGTH(css) < 0.1 * 1024 * 1024
   GROUP BY
     client,
     page)
