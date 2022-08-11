@@ -5,7 +5,7 @@ with lighthouse_audits as (
     url,
     CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.LargestContentfulPaint']") as numeric) as lcp_ms,
     CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.CumulativeLayoutShift']") as NUMERIC) as cls
-  FROM `httparchive.pages.2020_06_01_mobile`
+  FROM `httparchive.pages.2022_06_01_desktop`
 ),
 
 -- step 2.2 & 3.2: filter URLs with LCP smaller than median and CLS smaller than median
@@ -13,8 +13,8 @@ cls_and_lcp_filtered as (
   select 
     distinct(url) as url
   from lighthouse_audits
-  where lcp_ms <= 5500
-  and cls <= 0.058
+  where lcp_ms <= 3700
+  and cls <= 0.023
 ),
 
 -- step 4.1: get URLs with age headers
@@ -22,7 +22,7 @@ headers as (
   SELECT 
     url,
     JSON_EXTRACT_ARRAY(payload, '$.response.headers') as headers_array
-  FROM `httparchive.requests.2020_06_01_mobile` 
+  FROM `httparchive.requests.2022_06_01_desktop` 
 ),
 
 flattened_headers as (

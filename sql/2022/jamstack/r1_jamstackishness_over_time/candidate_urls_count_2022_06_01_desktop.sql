@@ -13,8 +13,8 @@ cls_and_lcp_filtered as (
   select 
     distinct(url) as url
   from lighthouse_audits
-  where lcp_ms <= 3700
-  and cls <= 0.023
+  where lcp_ms <= 5500
+  and cls <= 0.058
 ),
 
 -- step 4.1: get URLs with age headers
@@ -48,7 +48,7 @@ age_filtered as (
   select 
     distinct(url) as url
   from non_null_ages
-  where age > 75600 -- 21 hours
+  where age > 68400 -- 19 hours
 ),
 
 candidates as (

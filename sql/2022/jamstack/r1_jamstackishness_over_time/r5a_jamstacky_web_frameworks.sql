@@ -5,7 +5,7 @@ with lighthouse_audits as (
     url,
     CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.LargestContentfulPaint']") as numeric) as lcp_ms,
     CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.CumulativeLayoutShift']") as NUMERIC) as cls
-  FROM `httparchive.pages.2022_06_01_desktop`
+  FROM `httparchive.pages.2022_06_01_mobile`
 ),
 
 -- step 2.2 & 3.2: filter URLs with LCP smaller than median and CLS smaller than median
@@ -22,7 +22,7 @@ headers as (
   SELECT 
     url,
     JSON_EXTRACT_ARRAY(payload, '$.response.headers') as headers_array
-  FROM `httparchive.requests.2022_06_01_desktop` 
+  FROM `httparchive.requests.2022_06_01_mobile` 
 ),
 
 flattened_headers as (
@@ -48,16 +48,32 @@ age_filtered as (
   select 
     distinct(url) as url
   from non_null_ages
-  where age > 68400 -- 19 hours
+  where age > 75600 -- 21 hours
+),
+
+frameworks as (
+  SELECT 
+    url,
+    app
+  FROM `httparchive.technologies.2022_06_01_mobile`
+  where category = 'Web frameworks'
 ),
 
 candidates as (
   select 
-    *
+    cl.url,
+    f.app
   from cls_and_lcp_filtered cl
   join age_filtered a 
     on a.url = cl.url
+  join frameworks f
+    on a.url = f.url
+    and cl.url = f.url
 )
 
-select count(*) from candidates
-
+select 
+  app,
+  count(*) as urls
+from candidates
+group by app
+order by urls desc 

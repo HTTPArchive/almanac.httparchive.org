@@ -4,7 +4,7 @@ Jamstack is a hard category to define, since the definition is architectural -- 
 
 1. Jamstack sites are fast
 
-- [ ] Lighthouse Performance score
+- Lighthouse Performance score
   * Have [distribution of Lighthouse performance scores](lighthouse_distribution.sql)
     * Mobile median score is 0.3
   * Better means: anything with this or larger

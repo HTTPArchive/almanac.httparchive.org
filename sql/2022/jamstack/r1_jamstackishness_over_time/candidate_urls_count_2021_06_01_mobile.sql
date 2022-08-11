@@ -48,7 +48,7 @@ age_filtered as (
   select 
     distinct(url) as url
   from non_null_ages
-  where age > 68400 -- 19 hours
+  where age > 75600 -- 21 hours
 ),
 
 candidates as (

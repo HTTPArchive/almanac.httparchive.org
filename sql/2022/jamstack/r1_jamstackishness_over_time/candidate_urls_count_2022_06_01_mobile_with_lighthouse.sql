@@ -1,6 +1,30 @@
+-- step 1.1: get URLs and lighthouse performance scores
+with performance_scores_raw as (
+  SELECT 
+    url,
+    CAST(JSON_EXTRACT(payload, "$['_lighthouse.Performance']") as numeric) as performance_score
+  FROM `httparchive.pages.2022_06_01_mobile`
+),
+
+performance_scores as (
+  select 
+    url,
+    round(performance_score,2) as perf_rounded
+  from performance_scores_raw
+  where performance_score is not null
+),
+
+-- step 1.2: filter to perf scores equal or better than median score
+performance_filtered as (
+  select
+    distinct(url) as url
+  from performance_scores
+  where perf_rounded >= 0.30
+),
+
 -- step 2.1: get URLs and LCP times from chrome user timings
 -- step 3.1: get URLs and CLS times from chrome user timings
-with lighthouse_audits as (
+lighthouse_audits as (
   SELECT  
     url,
     CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.LargestContentfulPaint']") as numeric) as lcp_ms,
@@ -54,9 +78,12 @@ age_filtered as (
 candidates as (
   select 
     *
-  from cls_and_lcp_filtered cl
+  from performance_filtered p
+  join cls_and_lcp_filtered cl
+    on p.url = cl.url
   join age_filtered a 
-    on a.url = cl.url
+    on a.url = p.url
+    and a.url = cl.url
 )
 
 select count(*) from candidates
