@@ -760,7 +760,7 @@ _ARIAライブリージョン_は、DOMの変更を監視し、スクリーン�
   description="デスクトップサイトでもっとも人気のあるアクセシビリティ・アプリのドメインランク別の利用状況を示す棒グラフです。AccessiBeは上位1,000サイトでは利用されていないが、上位10,000サイトでは0.15%、上位100,000サイトが0.39%、上位100万サイトは0.37%、全サイトで0.27%利用されていることがわかる。AudioEyeは、それぞれ0.13%、0.20%、0.13%、0.16%、0.24%で使用されています。EqualWebは、上位1,000サイトや上位10,000サイトでは使用されていませんが、上位10万サイトの0.02％、上位100万サイトの0.03％、全サイトの0.02％で使用されています。 テキストヘルプも同様に、上位1,000サイトや上位10,000サイトでは使用されていませんが、上位10万サイトの0.02％、上位100万サイトの0.04％、全サイトの0.02％で使用されています。最後に、UserWayは上位1,000サイトでは使用されていないが、上位1万サイトの0.04%、上位10万サイトの0.09%、上位100万サイトの0.24%、全サイトの0.39%で使用されている。AudioEyeのみ、上位1,000サイトで使用されています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=473077851&format=interactive",
   sheets_gid="2077755325",
-  sql_file="a11y_overall_tech_usage_by_domain_rank.sql"
+  sql_file="a11y_technology_usage_by_domain_rank.sql"
 ) }}
 
 ドメインランクを考慮すると、上位1,000サイトのオーバーレイ使用率は0.1%と低くなっています。しかし、これらの上位サイトのリーチを考慮すると、これだけのトラフィックを持つ1つのWebサイトがオーバーレイを使用した場合の潜在的な影響は非常に大きなものです。
@@ -771,7 +771,7 @@ _ARIAライブリージョン_は、DOMの変更を監視し、スクリーン�
   description="上位1,000サイトではデスクトップで0.1%、モバイル利用とアクセシビリティアプリで0.1%、上位1万サイトではそれぞれ0.6%、0.5%、上位10万サイトは0.8%、0.7%、上位100万サイトで0.9%、0.8%、最後にすべてのサイトで1%、0.8%となっており、棒グラフが示されています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=851935325&format=interactive",
   sheets_gid="827309922",
-  sql_file="a11y_technology_usage_by_domain_rank.sql"
+  sql_file="a11y_overall_tech_usage_by_domain_rank.sql"
 ) }}
 
 ### オーバーレイのもたらすもの
