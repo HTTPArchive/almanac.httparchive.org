@@ -14,8 +14,8 @@ WITH requests AS (
     type = 'image' AND (
       resp_content_encoding = 'gzip' OR
       resp_content_encoding = 'br'
-    ) AND (
-      resp_content_type NOT LIKE 'image/svg%' OR
+    ) AND NOT (
+      resp_content_type LIKE 'image/svg%' OR
       ENDS_WITH(url, '.svg')
     )
 ),
