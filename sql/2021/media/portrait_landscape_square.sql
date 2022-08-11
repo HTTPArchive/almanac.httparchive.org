@@ -30,7 +30,7 @@ WITH imgs AS (
     isLandscape,
     isSquare
   FROM
-    `httparchive.pages.2021_07_01_*`,
+    `httparchive.pages.2022_06_01_*`,
     UNNEST(getSrcsetInfo(JSON_QUERY(JSON_VALUE(payload, '$._responsive_images' ), '$.responsive-images')))
   WHERE
     approximateResourceWidth > 1 AND
