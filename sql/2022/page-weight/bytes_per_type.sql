@@ -18,4 +18,3 @@ GROUP BY
 ORDER BY
   client,
   percentile
-  
