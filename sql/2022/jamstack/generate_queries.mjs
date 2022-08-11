@@ -13,7 +13,7 @@ if(!inputFile) {
 
 let template
 try {
-    template = await fs.readFile(inputFile,{encoding:"utf8"})    
+    template = await fs.readFile(inputFile,{encoding:"utf8"})
 } catch (e) {
     console.error(`Failed to read input file ${inputFile}`)
     exit(-1)
@@ -24,7 +24,7 @@ if (!dateArg) {
     console.error("Must specify date argument")
     exit(-1)
 } else {
-    dt = DateTime.fromISO(dateArg)    
+    dt = DateTime.fromISO(dateArg)
     if(!dt.isValid) {
         console.error(`${dateArg} was not a valid date argument`)
         exit(-1)
