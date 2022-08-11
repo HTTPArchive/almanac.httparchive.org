@@ -13,4 +13,4 @@ GROUP BY
 ORDER BY
   client,
   type,
-  percentile  
+  percentile
