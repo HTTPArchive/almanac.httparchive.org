@@ -8,7 +8,7 @@ FROM
 GROUP BY
   client
 ORDER BY
-    client,
-    null_count,
-    pass_count,
-    fail_count
+  client,
+  null_count,
+  pass_count,
+  fail_count
