@@ -14,4 +14,3 @@ ORDER BY
   client,
   type,
   percentile
-
