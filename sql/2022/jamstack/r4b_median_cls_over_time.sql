@@ -1,18 +1,18 @@
-with cls_values as (
-  SELECT  
+WITH cls_values AS (
+  SELECT
     url,
-    CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.CumulativeLayoutShift']") as NUMERIC) as cls
-  FROM `httparchive.pages.2020_06_01_mobile` 
+    CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.CumulativeLayoutShift']") AS NUMERIC) AS cls
+  FROM `httparchive.pages.2020_06_01_mobile`
 ),
 
-cls_all as (
-  select 
-    round(cls,3) as cls_round
-  from cls_values
-  where cls is not null
-  order by cls_round
+cls_all AS (
+  SELECT
+    round(cls, 3) AS cls_round
+  FROM cls_values
+  WHERE cls IS NOT NULL
+  ORDER BY cls_round
 )
 
-select 
+SELECT
   PERCENTILE_CONT(cls_round, 0.5) OVER() AS median
-from cls_all limit 1
+FROM cls_all LIMIT 1

@@ -1,22 +1,22 @@
 -- getting bucketed distribution of CLS scores to find median and other percentiles
-with cls_values as (
-  SELECT  
+WITH cls_values AS (
+  SELECT
     url,
-    CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.CumulativeLayoutShift']") as NUMERIC) as cls
-  FROM `httparchive.pages.2022_06_01_desktop` 
+    CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.CumulativeLayoutShift']") AS NUMERIC) AS cls
+  FROM `httparchive.pages.2022_06_01_desktop`
 ),
 
-cls_clean as (
-  select 
+cls_clean AS (
+  SELECT
     url,
-    round(cls,3) as cls_round
-  from cls_values
-  where cls is not null
+    round(cls, 3) AS cls_round
+  FROM cls_values
+  WHERE cls IS NOT NULL
 )
 
-select 
+SELECT
   cls_round,
-  count(distinct(url)) as urls
-from cls_clean
-group by cls_round
-order by cls_round 
+  count(distinct(url)) AS urls
+FROM cls_clean
+GROUP BY cls_round
+ORDER BY cls_round

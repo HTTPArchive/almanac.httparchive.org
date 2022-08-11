@@ -1,81 +1,81 @@
 -- step 2.1: get URLs and LCP times from chrome user timings
 -- step 3.1: get URLs and CLS times from chrome user timings
-with lighthouse_audits as (
-  SELECT  
+WITH lighthouse_audits AS (
+  SELECT
     url,
-    CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.LargestContentfulPaint']") as numeric) as lcp_ms,
-    CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.CumulativeLayoutShift']") as NUMERIC) as cls
+    CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.LargestContentfulPaint']") AS NUMERIC) AS lcp_ms,
+    CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.CumulativeLayoutShift']") AS NUMERIC) AS cls
   FROM `httparchive.pages.2022_06_01_desktop`
 ),
 
 -- step 2.2 & 3.2: filter URLs with LCP smaller than median and CLS smaller than median
-cls_and_lcp_filtered as (
-  select 
-    distinct(url) as url
-  from lighthouse_audits
-  where lcp_ms <= 3700
-  and cls <= 0.023
+cls_and_lcp_filtered AS (
+  SELECT DISTINCT
+    url AS url
+  FROM lighthouse_audits
+  WHERE lcp_ms <= 3700 AND
+    cls <= 0.023
 ),
 
 -- step 4.1: get URLs with age headers
-headers as (
-  SELECT 
+headers AS (
+  SELECT
     url,
-    JSON_EXTRACT_ARRAY(payload, '$.response.headers') as headers_array
-  FROM `httparchive.requests.2020_06_01_desktop` 
+    JSON_EXTRACT_ARRAY(payload, '$.response.headers') AS headers_array
+  FROM `httparchive.requests.2020_06_01_desktop`
 ),
 
-flattened_headers as (
-  SELECT 
+flattened_headers AS (
+  SELECT
     url,
-    LOWER(JSON_VALUE(flattened_headers,'$.name')) as header_name,
-    JSON_VALUE(flattened_headers,'$.value') as header_value
+    LOWER(JSON_VALUE(flattened_headers, '$.name')) AS header_name,
+    JSON_VALUE(flattened_headers, '$.value') AS header_value
   FROM headers
   CROSS JOIN UNNEST(headers.headers_array) AS flattened_headers
 ),
 
-non_null_ages as (
-  select 
+non_null_ages AS (
+  SELECT
     url,
-    SAFE_CAST(header_value as numeric) as age 
-  from flattened_headers 
-  where header_name = 'age'
-  and SAFE_CAST(header_value as numeric) is not null
+    SAFE_CAST(header_value AS NUMERIC) AS age
+  FROM flattened_headers
+  WHERE header_name = 'age' AND
+    SAFE_CAST(header_value AS NUMERIC) IS NOT NULL
 ),
 
-link_headers as (
-  select 
+link_headers AS (
+  SELECT
     url,
-    header_value as link
-  from flattened_headers 
-  where header_name = 'link'
-  and header_value is not null
+    header_value AS link
+  FROM flattened_headers
+  WHERE header_name = 'link' AND
+    header_value IS NOT NULL
 ),
 
 -- step 4.2: filter URLs to age headers at our chosen level
-age_filtered as (
-  select 
-    distinct(url) as url
-  from non_null_ages
-  where age > 75600 -- 21 hours
+age_filtered AS (
+  SELECT DISTINCT
+    url AS url
+  FROM non_null_ages
+  WHERE age > 75600 -- 21 hours
 ),
 
-candidates as (
-  select 
+candidates AS (
+  SELECT
     cl.url
-  from cls_and_lcp_filtered cl
-  join age_filtered a 
-    on a.url = cl.url
+  FROM cls_and_lcp_filtered cl
+  JOIN age_filtered a
+  ON a.url = cl.url
 ),
 
-candidate_links as (
-  select 
+candidate_links AS (
+  SELECT
     c.url,
     link
-  from candidates c
-  join link_headers lh
-    on c.url = lh.url
+  FROM candidates c
+  JOIN link_headers lh
+  ON c.url = lh.url
 )
 
-select count(*) from candidate_links
-where link like '%wixstatic%'
+SELECT count(0) FROM candidate_links
+WHERE link LIKE '%wixstatic%'

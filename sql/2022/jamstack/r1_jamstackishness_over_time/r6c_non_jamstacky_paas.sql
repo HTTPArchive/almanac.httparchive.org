@@ -1,7 +1,7 @@
-SELECT 
+SELECT
   app,
-  count(*)
+  count(0)
 FROM `httparchive.technologies.2022_06_01_mobile`
-where category = 'PaaS'
-group by app
-order by count(*) desc
+WHERE category = 'PaaS'
+GROUP BY app
+ORDER BY count(0) DESC

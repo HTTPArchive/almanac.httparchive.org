@@ -1,15 +1,17 @@
 # 2022 Jamstack queries
 
-Jamstack is a hard category to define, since the definition is architectural -- a decoupled back end and front end -- which is not a distinction visible to a crawler. So we have gone with a number of proxy metrics, in combination:
+Jamstack is a hard category to define, since the definition is architectural -- a decoupled back end and front end -- which is not a distinction visible to a crawler. So we have gone with a number of proxy metrics, in combination. See [draft](https://docs.google.com/document/d/15RLaaTVqoqb5AuDrlBt6L0J_BMx1ltKW4t8VWX-sN_g/edit#heading=h.8z91yaf1dmft) for more detail on methodology.
 
 1. Jamstack sites are fast
 
-- Lighthouse Performance score
-  * Have [distribution of Lighthouse performance scores](lighthouse_distribution.sql)
-    * Mobile median score is 0.3
-  * Better means: anything with this or larger
-- [ ] Largest Contentful Paint using user timings
-  * Have [distribution of LCP times](distribution_lcp.sql)
+- <strike>Lighthouse Performance score</strike>
+  * We found [distribution of Lighthouse performance scores](lighthouse_distribution_mobile.sql) in 2022
+    * Mobile median score was 0.3
+    * Better means: anything with this or larger
+  * Lighthouse performance scores were not reliably available in earlier years
+    * And omitting the score in the 2022 data did not make a big difference to the resulting set of URLs (since they were performant on 3 other measures already) so we omitted this.
+- Largest Contentful Paint using user timings
+  * Distribution of LCP times on [mobile](distribution_lcp_mobile.sql) and [desktop](distribution_lcp_desktop.sql)
     * Mobile median is 5.5 seconds
     * Desktop median is 3.7 seconds
   * Better means: anything with this or lower

@@ -5,16 +5,16 @@ WITH lighthouse_audits AS (
     url,
     CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.LargestContentfulPaint']") AS NUMERIC) AS lcp_ms,
     CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.CumulativeLayoutShift']") AS NUMERIC) AS cls
-  FROM `httparchive.pages.2022_06_01_desktop`
+  FROM `httparchive.pages.2021_07_01_desktop`
 ),
 
--- step 2.2 & 3.2: filter URLs with LCP smaller than median and CLS smaller than median
+-- step 2.2 & 3.2: no filter
 cls_and_lcp_filtered AS (
   SELECT DISTINCT
     url AS url
   FROM lighthouse_audits
-  WHERE lcp_ms <= 3700 AND
-    cls <= 0.023
+-- where lcp_ms <= 5500
+-- and cls <= 0.058
 ),
 
 -- step 4.1: get URLs with age headers
@@ -22,7 +22,7 @@ headers AS (
   SELECT
     url,
     JSON_EXTRACT_ARRAY(payload, '$.response.headers') AS headers_array
-  FROM `httparchive.requests.2022_06_01_desktop`
+  FROM `httparchive.requests.2021_07_01_desktop`
 ),
 
 flattened_headers AS (
@@ -43,15 +43,15 @@ non_null_ages AS (
     SAFE_CAST(header_value AS NUMERIC) IS NOT NULL
 ),
 
--- step 4.2: filter URLs to age headers at our chosen level
+-- step 4.2: no filter
 age_filtered AS (
   SELECT DISTINCT
     url AS url
   FROM non_null_ages
-  WHERE age > 75600 -- 21 hours
+-- where age > 68400 -- 19 hours
 ),
 
-candidates AS (
+non_candidates AS (
   SELECT
     *
   FROM cls_and_lcp_filtered cl
@@ -59,4 +59,4 @@ candidates AS (
   ON a.url = cl.url
 )
 
-SELECT count(0) FROM candidates
+SELECT count(0) FROM non_candidates
