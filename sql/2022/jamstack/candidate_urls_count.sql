@@ -1,89 +1,64 @@
--- step 1.1: get URLs and lighthouse performance scores
-with performance_scores_raw as (
-  SELECT 
-    url,
-    CAST(JSON_EXTRACT(payload, "$['_lighthouse.Performance']") as numeric) as performance_score
-  FROM `httparchive.pages.{{ SAMPLE_MONTH }}`
-),
-
-performance_scores as (
-  select 
-    url,
-    round(performance_score,2) as perf_rounded
-  from performance_scores_raw
-  where performance_score is not null
-),
-
--- step 1.2: filter to perf scores equal or better than median score
-performance_filtered as (
-  select
-    distinct(url) as url
-  from performance_scores
-  where perf_rounded >= 0.30
-),
+{% set SAMPLE_MONTH = "2022-06-01" %}
 
 -- step 2.1: get URLs and LCP times from chrome user timings
 -- step 3.1: get URLs and CLS times from chrome user timings
-lighthouse_audits as (
-  SELECT  
+WITH lighthouse_audits AS (
+  SELECT
     url,
-    CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.LargestContentfulPaint']") as numeric) as lcp_ms,
-    CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.CumulativeLayoutShift']") as NUMERIC) as cls
+    CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.LargestContentfulPaint']") AS NUMERIC) AS lcp_ms,
+    CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.CumulativeLayoutShift']") AS NUMERIC) AS cls
   FROM `httparchive.pages.{{ SAMPLE_MONTH }}`
 ),
 
 -- step 2.2 & 3.2: filter URLs with LCP smaller than median and CLS smaller than median
-cls_and_lcp_filtered as (
-  select 
-    distinct(url) as url
-  from lighthouse_audits
-  where lcp_ms <= 5500
-  and cls <= 0.058
+cls_and_lcp_filtered AS (
+  SELECT DISTINCT
+    url AS url
+  FROM lighthouse_audits
+  WHERE lcp_ms <= 5500 AND
+    cls <= 0.058
 ),
 
 -- step 4.1: get URLs with age headers
-headers as (
-  SELECT 
+headers AS (
+  SELECT
     url,
-    JSON_EXTRACT_ARRAY(payload, '$.response.headers') as headers_array
-  FROM `httparchive.requests.{{ SAMPLE_MONTH }}` 
+    JSON_EXTRACT_ARRAY(payload, '$.response.headers') AS headers_array
+  FROM `httparchive.pages.{{ SAMPLE_MONTH }}`
 ),
 
-flattened_headers as (
-  SELECT 
+flattened_headers AS (
+  SELECT
     url,
-    LOWER(JSON_VALUE(flattened_headers,'$.name')) as header_name,
-    JSON_VALUE(flattened_headers,'$.value') as header_value
+    LOWER(JSON_VALUE(flattened_headers, '$.name')) AS header_name,
+    JSON_VALUE(flattened_headers, '$.value') AS header_value
   FROM headers
   CROSS JOIN UNNEST(headers.headers_array) AS flattened_headers
 ),
 
-non_null_ages as (
-  select 
+non_null_ages AS (
+  SELECT
     url,
-    SAFE_CAST(header_value as numeric) as age 
-  from flattened_headers 
-  where header_name = 'age'
-  and SAFE_CAST(header_value as numeric) is not null
+    SAFE_CAST(header_value AS NUMERIC) AS age
+  FROM flattened_headers
+  WHERE header_name = 'age' AND
+    SAFE_CAST(header_value AS NUMERIC) IS NOT NULL
 ),
 
 -- step 4.2: filter URLs to age headers at our chosen level
-age_filtered as (
-  select 
-    distinct(url) as url
-  from non_null_ages
-  where age > 68400 -- 19 hours
+age_filtered AS (
+  SELECT DISTINCT
+    url AS url
+  FROM non_null_ages
+  WHERE age > 75600 -- 21 hours
 ),
 
-candidates as (
-  select 
+candidates AS (
+  SELECT
     *
-  from performance_filtered p
-  join cls_and_lcp_filtered cl
-    on p.url = cl.url
-  join age_filtered a 
-    on a.url = p.url
-    and a.url = cl.url
+  FROM cls_and_lcp_filtered cl
+  JOIN age_filtered a
+  ON a.url = cl.url
 )
 
-select count(*) from candidates
+SELECT count(0) FROM candidates

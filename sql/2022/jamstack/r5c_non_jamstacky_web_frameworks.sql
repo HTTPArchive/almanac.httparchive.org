@@ -1,7 +1,7 @@
 SELECT
   app,
-  count(0)
+  count(0) AS urls
 FROM `httparchive.technologies.2022_06_01_mobile`
-WHERE category = 'PaaS'
+WHERE category = 'Web frameworks'
 GROUP BY app
-ORDER BY count(0) DESC
+ORDER BY urls DESC

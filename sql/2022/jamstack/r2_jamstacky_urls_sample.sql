@@ -43,15 +43,6 @@ non_null_ages AS (
     SAFE_CAST(header_value AS NUMERIC) IS NOT NULL
 ),
 
-non_null_server_headers AS (
-  SELECT
-    url,
-    header_value AS server
-  FROM flattened_headers
-  WHERE header_name = 'server' AND
-    header_value IS NOT NULL
-),
-
 -- step 4.2: filter URLs to age headers at our chosen level
 age_filtered AS (
   SELECT DISTINCT
