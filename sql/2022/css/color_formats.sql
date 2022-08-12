@@ -162,6 +162,9 @@ try {
     {name: 'hsl()', value: color.functions.hsl},
     {name: 'hsla()', value: color.functions.hsla},
     {name: 'color()', value: color.functions.color},
+    {name: 'lab()', value: color.functions.lab},
+    {name: 'lch()', value: color.functions.lch},
+    {name: 'hwb()', value: color.functions.hwb},
     {name: 'namedColor', value: Object.values(color.keywords).reduce((total, i) => total += i, 0)},
     {name: 'system', value: Object.values(color.system).reduce((total, i) => total += i, 0)},
     {name: 'currentColor', value: color.currentcolor},
@@ -172,15 +175,29 @@ try {
 }
 ''';
 
+WITH totals AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(0) AS total_pages
+  FROM
+    `httparchive.summary_pages.2022_07_01_*`
+  GROUP BY
+    client
+)
+
 SELECT
   client,
   name AS format,
+  COUNT(DISTINCT page) AS pages,
+  ANY_VALUE(total_pages) AS total_pages,
+  COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
   SUM(value) AS freq,
   SUM(SUM(value)) OVER (PARTITION BY client) AS total,
   SUM(value) / SUM(SUM(value)) OVER (PARTITION BY client) AS pct
 FROM (
   SELECT
     client,
+    page,
     format.name,
     format.value
   FROM
@@ -188,6 +205,10 @@ FROM (
     UNNEST(getColorFormats(css)) AS format
   WHERE
     date = '2022-07-01')
+JOIN
+  totals
+USING
+  (client)
 GROUP BY
   client,
   format

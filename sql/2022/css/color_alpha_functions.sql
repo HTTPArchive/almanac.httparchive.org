@@ -125,7 +125,7 @@ try {
           case 'hwb':
             // Check if the function uses the special "/" syntax or fourth arg for alpha.
             if (args.includes('/') || args.trim().split(/[\s+,/]+/).length == 4) {
-              incremenetByKey(usage.alpha, name);
+              incrementByKey(usage.alpha, name);
             }
             break;
         }
@@ -183,7 +183,7 @@ try {
     {name: 'lab()', value: color.alpha.lab}
   ];
 } catch (e) {
-  return [];
+  return [e];
 }
 ''';
 
