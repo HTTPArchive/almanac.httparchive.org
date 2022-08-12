@@ -183,7 +183,7 @@ try {
     {name: 'lab()', value: color.alpha.lab}
   ];
 } catch (e) {
-  return [e];
+  return [];
 }
 ''';
 
@@ -216,7 +216,8 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getColorFormats(css)) AS format
   WHERE
-    date = '2022-07-01')
+    date = '2022-07-01' AND
+    format.value IS NOT NULL)
 JOIN
   totals
 USING
