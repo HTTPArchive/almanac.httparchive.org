@@ -19,7 +19,7 @@ try {
           }
         }, {subtree: true});
       });
-    }, {type: 'print'});
+    }, {type: 'page'});
 
     for (let type in ret) {
       ret[type] = sortObject(ret[type]);

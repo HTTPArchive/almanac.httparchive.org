@@ -9,7 +9,7 @@ try {
     let ret = {};
 
     walkRules(ast, rule => {
-      walkDeclarations(rule.rules, ({property, value}) => {
+      walkDeclarations(rule, ({property, value}) => {
         incrementByKey(ret, property);
       });
     }, {
