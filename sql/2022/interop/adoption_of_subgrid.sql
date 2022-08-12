@@ -1,5 +1,5 @@
 #standardSQL
-# Adoption of CSS grid-template-columns: subgrid or grid-template-rows: subgrid 
+# Adoption of CSS grid-template-columns: subgrid or grid-template-rows: subgrid
 CREATE TEMPORARY FUNCTION getSubgrid(css STRING)
 RETURNS ARRAY<BOOL> LANGUAGE js
 OPTIONS (library = "gs://httparchive/lib/css-utils.js") AS '''
