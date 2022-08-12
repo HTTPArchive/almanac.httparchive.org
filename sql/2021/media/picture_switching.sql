@@ -23,7 +23,7 @@ SELECT
   COUNTIF(image.pictureMediaSwitching) / COUNT(0) AS pct_picture_media_switching,
   COUNTIF(image.pictureTypeSwitching) / COUNT(0) AS pct_picture_type_switching
 FROM
-  `httparchive.pages.2022_06_01_*`,
+  `httparchive.pages.2021_07_01_*`,
   UNNEST(getPictureSwitching(payload)) AS image
 GROUP BY
   client

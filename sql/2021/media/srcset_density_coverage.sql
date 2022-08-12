@@ -42,7 +42,7 @@ WITH imgs AS (
     minDensity,
     maxDensity
   FROM
-    `httparchive.pages.2022_06_01_*`,
+    `httparchive.pages.2021_07_01_*`,
     UNNEST(getSrcsetInfo(JSON_QUERY(JSON_VALUE(payload, '$._responsive_images' ), '$.responsive-images')))
   WHERE
     srcsetHasXDescriptors = TRUE OR srcsetHasWDescriptors = TRUE

@@ -27,7 +27,7 @@ FROM (
     FORMAT('%T', NET.REG_DOMAIN(a.url)) AS pageDomain,
     FORMAT('%T', NET.REG_DOMAIN(imageurl.url)) AS imageDomain
   FROM
-    `httparchive.pages.2022_06_01_*` a,
+    `httparchive.pages.2021_07_01_*` a,
     UNNEST(get_images(JSON_EXTRACT_SCALAR(payload, '$._Images'))) AS imageurl)
 GROUP BY
   client

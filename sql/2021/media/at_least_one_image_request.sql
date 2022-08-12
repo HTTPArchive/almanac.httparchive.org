@@ -4,6 +4,6 @@ SELECT
   COUNT(0) AS total,
   SAFE_DIVIDE(COUNTIF(reqImg > 0), COUNT(0)) AS atLeastOneImgReqPct
 FROM
-  `httparchive.summary_pages.2022_06_01_*`
+  `httparchive.summary_pages.2021_07_01_*`
 GROUP BY
   client

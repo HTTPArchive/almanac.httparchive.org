@@ -25,7 +25,7 @@ FROM (
     _TABLE_SUFFIX AS client,
     image
   FROM
-    `httparchive.pages.2022_06_01_*`,
+    `httparchive.pages.2021_07_01_*`,
     UNNEST(getSrcsetDensities(payload)) AS image),
   UNNEST(image.srcsetCandidateDensities) AS srcsetCandidateDensity,
   UNNEST([10, 25, 50, 75, 90]) AS percentile
