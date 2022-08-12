@@ -1,7 +1,7 @@
 #standardSQL
-# Popularity of CSS justify-content values
-CREATE TEMPORARY FUNCTION getJustifyContent(css STRING)
-RETURNS ARRAY<STRING> LANGUAGE js
+# Adoption of CSS grid-template-columns: subgrid or grid-template-rows: subgrid 
+CREATE TEMPORARY FUNCTION getSubgrid(css STRING)
+RETURNS ARRAY<BOOL> LANGUAGE js
 OPTIONS (library = "gs://httparchive/lib/css-utils.js") AS '''
 try {
   var reduceValues = (values, rule) => {
@@ -12,15 +12,11 @@ try {
       return values;
     }
 
-    var justifyContentProperty = rule.declarations.find(
-      (d) => d.property == "justify-content"
+    var subgrid = !!rule.declarations.find(
+      (d) => (d.property == "grid-template-columns" || d.property == "grid-template-rows") && d.value.includes("subgrid")
     );
 
-    if (!justifyContentProperty) {
-      return values;
-    }
-
-    return values.concat(justifyContentProperty.value.replace("!important", "").split(" ").filter(Boolean));
+    return values.concat(subgrid);
   };
 
   var $ = JSON.parse(css);
@@ -32,24 +28,22 @@ try {
 
 SELECT
   client,
-  justify_content,
-  COUNT(0) AS freq,
+  COUNTIF(sets_subgrid) AS sets_subgrid,
   ANY_VALUE(total_pages) AS total_pages,
-  COUNT(0) / ANY_VALUE(total_pages) AS pct
+  COUNTIF(sets_subgrid) / ANY_VALUE(total_pages) AS pct_sets_subgrid
 FROM (
   SELECT
     client,
     page,
-    justify_content
+    COUNTIF(subgrid) > 0 AS sets_subgrid
   FROM
     `httparchive.almanac.parsed_css`,
-    UNNEST(getJustifyContent(css)) AS justify_content
+    UNNEST(getSubgrid(css)) AS subgrid
   WHERE
     date = '2022-07-01'
   GROUP BY
     client,
-    page,
-    justify_content
+    page
 )
 JOIN (
   SELECT
@@ -63,8 +57,4 @@ JOIN (
 USING
   (client)
 GROUP BY
-  client,
-  justify_content
-ORDER BY
-  client,
-  freq DESC
+  client
