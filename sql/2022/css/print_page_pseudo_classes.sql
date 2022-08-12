@@ -52,40 +52,34 @@ WITH totals AS (
     client
 )
 
+
 SELECT
   client,
-  pages,
-  total_pages,
-  pct_pages,
-  pseudo_class.value AS pseudo_class,
-  pseudo_class.count AS freq,
-  pseudo_class.count / pages AS pct
+  pseudo_class,
+  COUNT(DISTINCT page) AS pages,
+  ANY_VALUE(total_pages) AS total_pages,
+  COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
+  COUNT(0) AS freq,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_freq,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_freq
 FROM (
-  SELECT
-    client,
-    COUNT(DISTINCT page) AS pages,
-    ANY_VALUE(total_pages) AS total_pages,
-    COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct_pages,
-    APPROX_TOP_COUNT(pseudo_class, 100) AS pseudo_classes
-  FROM (
-      SELECT DISTINCT
-        client,
-        page,
-        pseudo_class
-      FROM
-        `httparchive.almanac.parsed_css`
-      LEFT JOIN
-        UNNEST(getSelectorParts(css)) AS pseudo_class
-      WHERE
-        date = '2022-07-01')
-  JOIN
-    totals
-  USING
-    (client)
-  GROUP BY
-    client),
-  UNNEST(pseudo_classes) AS pseudo_class
-WHERE
-  pseudo_class.value IS NOT NULL
+    SELECT DISTINCT
+      client,
+      page,
+      pseudo_class
+    FROM
+      `httparchive.almanac.parsed_css`
+    LEFT JOIN
+      UNNEST(getSelectorParts(css)) AS pseudo_class
+    WHERE
+      date = '2022-07-01' AND
+      pseudo_class IS NOT NULL)
+JOIN
+  totals
+USING
+  (client)
+GROUP BY
+  client,
+  pseudo_class
 ORDER BY
-  pct DESC
+  pct_pages DESC

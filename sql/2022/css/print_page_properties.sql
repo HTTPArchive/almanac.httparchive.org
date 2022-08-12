@@ -32,7 +32,10 @@ SELECT
   property,
   COUNT(DISTINCT page) AS pages,
   total,
-  COUNT(DISTINCT page) / total AS pct
+  COUNT(DISTINCT page) / total AS pct,
+  COUNT(0) AS freq,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_freq,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_freq
 FROM (
   SELECT DISTINCT
     client,
