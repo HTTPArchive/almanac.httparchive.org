@@ -35,7 +35,7 @@ FROM (
   SELECT
     client,
     page,
-    COUNTIF(flex_basis_content) > 0 AS sets_flex_basis_content
+    LOGICAL_AND(flex_basis_content) AS sets_flex_basis_content
   FROM
     `httparchive.almanac.parsed_css`,
     UNNEST(getFlexBasisContent(css)) AS flex_basis_content

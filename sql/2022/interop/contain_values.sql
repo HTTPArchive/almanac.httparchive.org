@@ -33,9 +33,12 @@ try {
 SELECT
   client,
   contain,
-  COUNT(0) AS freq,
+  COUNT(DISTINCT page) AS pages,
   ANY_VALUE(total_pages) AS total_pages,
-  COUNT(0) / ANY_VALUE(total_pages) AS pct
+  COUNT(DISTINCT page) / ANY_VALUE(total_pages) AS pct,
+  COUNT(0) AS freq,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_freq,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_freq
 FROM (
   SELECT
     client,
@@ -46,10 +49,6 @@ FROM (
     UNNEST(getContaine(css)) AS contain
   WHERE
     date = '2022-07-01'
-  GROUP BY
-    client,
-    page,
-    contain
 )
 JOIN (
   SELECT

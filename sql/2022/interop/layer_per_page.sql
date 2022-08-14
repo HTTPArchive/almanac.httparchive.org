@@ -12,15 +12,28 @@ WITH layers AS (
   WHERE
     date = '2022-06-01' AND
     type = 'css'
+), layers_per_page AS (
+  SELECT
+    client,
+    COUNTIF(has_layer) AS layers
+  FROM
+    layers
+  GROUP BY
+    client,
+    page
 )
 
 
 SELECT
+  percentile,
   client,
-  COUNT(DISTINCT IF(has_layer, page, NULL)) AS pages,
-  COUNT(DISTINCT page) AS total,
-  COUNT(DISTINCT IF(has_layer, page, NULL)) / COUNT(DISTINCT page) AS pct
+  APPROX_QUANTILES(layers, 1000)[OFFSET(percentile * 10)] AS layers
 FROM
-  layers
+  layers_per_page,
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
+  percentile,
+  client
+ORDER BY
+  percentile,
   client
