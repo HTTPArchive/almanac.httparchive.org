@@ -154,7 +154,7 @@ FROM (
     value.type,
     value.freq
   FROM
-    `httparchive.pages.2022_07_01_*`
+    `httparchive.pages.2022_07_01_*` -- noqa: L062
   LEFT JOIN
     UNNEST(getCustomPropertyValueTypes(JSON_EXTRACT_SCALAR(payload, "$['_css-variables']"))) AS value)
 ORDER BY

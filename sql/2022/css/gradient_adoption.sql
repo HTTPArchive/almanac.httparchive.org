@@ -165,7 +165,7 @@ JOIN (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total
   FROM
-    `httparchive.summary_pages.2022_07_01_*`
+    `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
   GROUP BY
     client)
 USING
