@@ -25,7 +25,7 @@ FROM (
     var.usage,
     var.freq
   FROM
-    `httparchive.pages.2022_07_01_*`,
+    `httparchive.pages.2022_07_01_*`, -- noqa: L062
     UNNEST(countCombinedVariables(payload)) AS var),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY

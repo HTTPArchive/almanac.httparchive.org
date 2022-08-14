@@ -33,7 +33,7 @@ WITH totals AS (
     COUNT(0) AS total_pages,
     COUNTIF(SAFE_CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._sass'), '$.scss.size') AS INT64) > 0) AS total_sass
   FROM
-    `httparchive.pages.2022_07_01_*`
+    `httparchive.pages.2022_07_01_*` -- noqa: L062
   GROUP BY
     client
 )
@@ -56,7 +56,7 @@ FROM (
     statement.statement,
     SUM(statement.freq) AS freq
   FROM
-    `httparchive.pages.2022_07_01_*`,
+    `httparchive.pages.2022_07_01_*`, -- noqa: L062
     UNNEST(getStatements(payload)) AS statement
   GROUP BY
     client,

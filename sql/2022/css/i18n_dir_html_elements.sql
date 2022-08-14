@@ -37,7 +37,7 @@ FROM (
     SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, dir.element) AS total,
     COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, dir.element) AS pct
   FROM
-    `httparchive.pages.2022_07_01_*`,
+    `httparchive.pages.2022_07_01_*`, -- noqa: L062
     UNNEST(getMarkupDirs(payload)) AS dir
   GROUP BY
     client,
