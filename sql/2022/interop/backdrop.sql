@@ -1,5 +1,5 @@
 #standardSQL
-CREATE TEMPORARY FUNCTION countBackdrop(css STRING)
+CREATE TEMPORARY FUNCTION countSelectors(css STRING)
 RETURNS INT64 LANGUAGE js
 OPTIONS (library = "gs://httparchive/lib/css-utils.js")
 AS '''
@@ -8,13 +8,9 @@ try {
     let ret = 0;
 
     walkSelectors(ast, selector => {
-      let sast = parsel.parse(selector, {list: false});
-
-      parsel.walk(sast, node => {
-        if (node.type == 'pseudo-element' && node.name == 'backdrop') {
-          ret++;
-        }
-      }, {subtree: true});
+      if (/::backdrop/.test(selector)) {
+        ret++;
+      }
     });
 
     return ret;
@@ -27,11 +23,11 @@ try {
 }
 ''';
 
-WITH backdrop AS (
+WITH detections AS (
   SELECT
     client,
     page,
-    SUM(countBackdrop(css)) > 0 AS uses_backdrop
+    SUM(countSelectors(css)) > 0 AS detected
   FROM
     `httparchive.almanac.parsed_css`
   WHERE
@@ -43,10 +39,10 @@ WITH backdrop AS (
 
 SELECT
   client,
-  COUNTIF(uses_backdrop) AS pages,
+  COUNTIF(detected) AS pages,
   COUNT(0) AS total,
-  COUNTIF(uses_backdrop) / COUNT(0) AS pct
+  COUNTIF(detected) / COUNT(0) AS pct
 FROM
-  backdrop
+  detections
 GROUP BY
   client

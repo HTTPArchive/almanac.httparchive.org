@@ -1,23 +1,37 @@
-# Note: using response bodies here instead of parsed CSS.
-# The parser doesn't quite support the @layer syntax yet, resulting in errors.
-# Because the table is clustered, this query is actually cheaper than querying parsed_css.
-WITH layers AS (
+#standardSQL
+CREATE TEMPORARY FUNCTION countSelectors(css STRING)
+RETURNS INT64 LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
+try {
+  function compute(ast) {
+    let ret = 0;
+
+    walkSelectors(ast, selector => {
+      if (/@layer\b/.test(selector)) {
+        ret++;
+      }
+    });
+
+    return ret;
+  }
+
+  const ast = JSON.parse(css);
+  return compute(ast);
+} catch (e) {
+  return 0;
+}
+''';
+
+WITH detections AS (
   SELECT
     client,
     page,
-    url,
-    REGEXP_CONTAINS(body, r'\b@layer\b') AS has_layer
+    SUM(countSelectors(css)) AS per_page
   FROM
-    `httparchive.almanac.summary_response_bodies`
+    `httparchive.almanac.parsed_css`
   WHERE
-    date = '2022-06-01' AND
-    type = 'css'
-), layers_per_page AS (
-  SELECT
-    client,
-    COUNTIF(has_layer) AS layers
-  FROM
-    layers
+    date = '2022-07-01'
   GROUP BY
     client,
     page
@@ -27,9 +41,9 @@ WITH layers AS (
 SELECT
   percentile,
   client,
-  APPROX_QUANTILES(layers, 1000)[OFFSET(percentile * 10)] AS layers
+  APPROX_QUANTILES(per_page, 1000)[OFFSET(percentile * 10)] AS layers_per_page
 FROM
-  layers_per_page,
+  detections,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
   percentile,

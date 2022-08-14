@@ -8,7 +8,7 @@ try {
     let ret = 0;
 
     walkSelectors(ast, selector => {
-      if (/@layer\b/.test(selector)) {
+      if (/@container\b/.test(selector)) {
         ret++;
       }
     });
