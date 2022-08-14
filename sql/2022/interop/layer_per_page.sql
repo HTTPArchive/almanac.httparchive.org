@@ -2,7 +2,7 @@
 CREATE TEMPORARY FUNCTION countSelectors(css STRING)
 RETURNS INT64 LANGUAGE js
 OPTIONS (library = "gs://httparchive/lib/css-utils.js")
-AS '''
+AS r'''
 try {
   function compute(ast) {
     let ret = 0;
