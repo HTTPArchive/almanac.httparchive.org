@@ -31,7 +31,7 @@ FROM (
       fn.fn,
       fn.freq
     FROM
-      `httparchive.pages.2022_07_01_*`,
+      `httparchive.pages.2022_07_01_*`, -- noqa: L062
       UNNEST(getCustomFunctionCalls(payload)) AS fn)
   GROUP BY
     client,

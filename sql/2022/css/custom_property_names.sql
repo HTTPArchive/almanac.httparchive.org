@@ -23,13 +23,13 @@ FROM (
     getCustomPropertyNames(payload) AS names,
     total
   FROM
-    `httparchive.pages.2022_07_01_*`
+    `httparchive.pages.2022_07_01_*` -- noqa: L062
   JOIN (
     SELECT
       _TABLE_SUFFIX,
       COUNT(DISTINCT url) AS total
     FROM
-      `httparchive.pages.2022_07_01_*`
+      `httparchive.pages.2022_07_01_*` -- noqa: L062
     GROUP BY
       _TABLE_SUFFIX)
   USING (_TABLE_SUFFIX)),

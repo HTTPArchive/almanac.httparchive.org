@@ -37,7 +37,7 @@ FROM (
     nested.nested,
     SUM(nested.freq) AS freq
   FROM
-    `httparchive.pages.2022_07_01_*`,
+    `httparchive.pages.2022_07_01_*`, -- noqa: L062
     UNNEST(getNestedUsage(payload)) AS nested
   GROUP BY
     client,
@@ -48,7 +48,7 @@ JOIN (
     _TABLE_SUFFIX AS client,
     COUNTIF(SAFE_CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._sass'), '$.scss.size') AS INT64) > 0) AS total_sass
   FROM
-    `httparchive.pages.2022_07_01_*`
+    `httparchive.pages.2022_07_01_*` -- noqa: L062
   GROUP BY
     client)
 USING
