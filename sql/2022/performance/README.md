@@ -44,9 +44,9 @@ Taken from [`Metrics` Section](https://docs.google.com/document/d/1IKV40fllCZTqe
 
 - [x] Are LCP Image Elements Responsive
 - [ ] LCP Element Resource Delay
-- [ ] TTFB by Category
+- [x] TTFB by Category
 - [ ] Domain Sharding
-- [ ] FID Double Tap to Zoom Disabled
+- [x] FID Double Tap to Zoom Disabled
 - [ ] FID / INP Long Task Data (let's pick either FID or INP)
 
 #### Web Vitals
