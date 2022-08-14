@@ -50,7 +50,7 @@ JOIN (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_pages
   FROM
-    `httparchive.summary_pages.2022_07_01_*`
+    `httparchive.summary_pages.2022_07_01_*`  --noqa: L063
   GROUP BY
     _TABLE_SUFFIX
 )
