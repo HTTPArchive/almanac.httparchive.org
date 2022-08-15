@@ -20,13 +20,15 @@ try {
       return values;
     }
 
-    return values.concat(justifyContentProperty.value.replace("!important", "").split(" ").filter(Boolean));
+    values.push(justifyContentProperty.value);
+
+    return values
   };
 
   var $ = JSON.parse(css);
   return $.stylesheet.rules.reduce(reduceValues, []);
 } catch (e) {
-  return [e];
+  return [];
 }
 ''';
 
@@ -66,5 +68,4 @@ GROUP BY
   client,
   justify_content
 ORDER BY
-  client,
-  freq DESC
+  pct DESC

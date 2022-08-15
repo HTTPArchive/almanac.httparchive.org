@@ -1,4 +1,5 @@
 #standardSQL
+# Percentage of pages that have a ::backdrop selector.
 CREATE TEMPORARY FUNCTION countSelectors(css STRING)
 RETURNS INT64 LANGUAGE js
 OPTIONS (library = "gs://httparchive/lib/css-utils.js")

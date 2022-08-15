@@ -20,13 +20,15 @@ try {
       return values;
     }
 
-    return values.concat(align.value.replace("!important", "").split(" ").filter(Boolean));
+    values.push(align.value);
+    
+    return values;
   };
 
   var $ = JSON.parse(css);
   return $.stylesheet.rules.reduce(reduceValues, []);
 } catch (e) {
-  return [e];
+  return [];
 }
 ''';
 
