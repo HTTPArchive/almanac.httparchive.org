@@ -20,13 +20,15 @@ try {
       return values;
     }
 
-    return values.concat(contain.value.replace("!important", "").split(" ").filter(Boolean));
+    values.push(contain.value);
+
+    return values;
   };
 
   var $ = JSON.parse(css);
   return $.stylesheet.rules.reduce(reduceValues, []);
 } catch (e) {
-  return [e];
+  return [];
 }
 ''';
 
@@ -65,5 +67,4 @@ GROUP BY
   client,
   contain
 ORDER BY
-  client,
-  freq DESC
+  pct DESC
