@@ -46,7 +46,7 @@ FROM (
     url AS page,
     getOutgoingLinkMetrics(payload) AS outgoing_link_metrics
   FROM
-    `httparchive.pages.2022_07_01_*`
+    `httparchive.pages.2022_07_01_*` -- noqa: L062
 ),
 UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 LEFT JOIN (
@@ -55,7 +55,7 @@ LEFT JOIN (
     url AS page,
     rank
   FROM
-    `httparchive.summary_pages.2022_07_01_*`
+    `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
 )
 USING
   (client, page),

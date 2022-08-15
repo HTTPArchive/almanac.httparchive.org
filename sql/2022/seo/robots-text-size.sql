@@ -37,7 +37,7 @@ FROM (
     url AS site,
     getRobotsSize(payload) AS robots_size
   FROM
-    `httparchive.pages.2022_07_01_*`)
+    `httparchive.pages.2022_07_01_*`) -- noqa: L062
 GROUP BY
   client
 ORDER BY
