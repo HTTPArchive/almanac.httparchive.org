@@ -1,9 +1,8 @@
 #standardSQL
-# Top100 popular cookies and their origins
+# Top100 domains that set cookies via response header
 
 CREATE TEMPORARY FUNCTION cookieNames(headers STRING)
-RETURNS ARRAY<STRING>
-DETERMINISTIC
+RETURNS ARRAY<STRING> DETERMINISTIC
 LANGUAGE js AS '''
 try {
   var headers = JSON.parse(headers);
@@ -26,20 +25,20 @@ WITH whotracksme AS (
   FROM
     `httparchive.almanac.whotracksme`
   WHERE
-    date = '2021-07-01'
+    date = '2022-06-01'
 ),
 
 request_headers AS (
   SELECT
     client,
     page,
-    NET.REG_DOMAIN(url) AS request,
+    NET.REG_DOMAIN(url) AS domain,
     cookieNames(response_headers) AS cookie_names,
     COUNT(DISTINCT page) OVER (PARTITION BY client) AS websites_per_client
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2021-07-01'
+    date = '2022-06-01'
   GROUP BY
     client,
     page,
@@ -50,8 +49,7 @@ request_headers AS (
 cookies AS (
   SELECT
     client,
-    request,
-    cookie,
+    domain,
     COUNT(DISTINCT page) AS websites_count,
     websites_per_client,
     COUNT(DISTINCT page) / websites_per_client AS pct_websites
@@ -63,26 +61,23 @@ cookies AS (
     cookie != ''
   GROUP BY
     client,
-    request,
-    cookie,
+    domain,
     websites_per_client
 )
 
 SELECT
   client,
   whotracksme.category,
-  request,
-  cookie,
-  cookie || ' - ' || request AS cookie_and_request,
+  cookies.domain,
   websites_count,
   websites_per_client,
   pct_websites
 FROM
   cookies
-LEFT JOIN
+JOIN
   whotracksme
-ON NET.HOST(request) = domain
+ON NET.HOST(cookies.domain) = whotracksme.domain
 ORDER BY
   pct_websites DESC,
   client
-LIMIT 1000
+LIMIT 100
