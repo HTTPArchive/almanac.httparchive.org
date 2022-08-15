@@ -56,7 +56,7 @@ SELECT
   client,
   '2022_06_01' AS date,
   percentile,
-  APPROX_QUANTILES(score, 1000)[OFFSET(percentile * 10)] AS score,
+  APPROX_QUANTILES(score, 1000)[OFFSET(percentile * 10)] AS score
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
