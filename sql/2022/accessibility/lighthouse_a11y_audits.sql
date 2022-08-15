@@ -22,6 +22,7 @@ return results;
 ''';
 
 SELECT
+  _TABLE_SUFFIX AS client,
   audits.id AS id,
   COUNTIF(audits.score > 0) AS num_pages,
   COUNT(0) AS total,
@@ -31,12 +32,14 @@ SELECT
   MAX(audits.audit_group) AS audit_group,
   MAX(audits.description) AS description
 FROM
-  `httparchive.lighthouse.2022_06_01_mobile`,
+  `httparchive.lighthouse.2022_06_01_*`,
   UNNEST(getAudits(report, 'accessibility')) AS audits
 WHERE
   LENGTH(report) < 20000000  # necessary to avoid out of memory issues. Excludes very large results
 GROUP BY
+  client,
   audits.id
 ORDER BY
+  client,
   median_weight DESC,
   id
