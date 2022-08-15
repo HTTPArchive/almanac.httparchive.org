@@ -1,13 +1,15 @@
 # 2022 Accessibility queries
 
-<!--
-  This directory contains all of the 2022 Accessibility chapter queries.
+The majority of 2022 accessibility queries here copies from the [2021 accessibility queries](https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2021/accessibility), with a few exceptions copied from other chapters:
 
-  Each query should have a corresponding `metric_name.sql` file.
-  Note that readers are linked to this directory, so try to make the SQL file names descriptive for easy browsing.
+- From CSS 2022: `units_properties.sql`
+- From CSS 2022: `media_query_features.sql`
+- From CSS 2021: `focus_visible.sql` (with minor perf-related change)
+- From CSS 2021: `focus_outline_0.sql` (note this doesn’t include the 2021 variant `focus_outline_0_or_none.sql`, which didn’t make it to the published report)
+- From Mobile Web 2022: `viewport_zoom_scale.sql` (already copied in 2021 queries)
+- From Mobile Web 2022: `viewport_zoom_scale_by_domain_rank.sql`
 
-  Analysts: if helpful, you can use this README to give additional info about the queries.
--->
+Note out of the 44 2021 accessibility queries, we only copied the two thirds that were used in the published report.
 
 ## Resources
 
