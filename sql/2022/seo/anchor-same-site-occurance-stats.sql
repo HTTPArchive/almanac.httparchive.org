@@ -52,14 +52,14 @@ FROM (
     total,
     getLinkDesciptionsWptBodies(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
   FROM
-    `httparchive.pages.2022_07_01_*`
+    `httparchive.pages.2022_07_01_*` -- noqa: L062
   JOIN (
 
     SELECT
       _TABLE_SUFFIX,
       COUNT(0) AS total
     FROM
-      `httparchive.pages.2022_07_01_*`
+      `httparchive.pages.2022_07_01_*` -- noqa: L062
     GROUP BY
       _TABLE_SUFFIX
   )

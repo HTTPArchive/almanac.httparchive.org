@@ -84,7 +84,7 @@ FROM
       _TABLE_SUFFIX AS client,
       getMarkupStatsInfo(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info
     FROM
-      `httparchive.pages.2022_07_01_*`
+      `httparchive.pages.2022_07_01_*` -- noqa: L062
   )
 GROUP BY
   client

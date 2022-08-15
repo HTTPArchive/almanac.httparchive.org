@@ -87,5 +87,5 @@ FROM (
     JSON_EXTRACT_SCALAR(report, '$.audits.heading-order.score') = '1' AS heading_order_valid,
     isCrawlableDetails(report) AS is_crawlable_details
   FROM
-    `httparchive.lighthouse.2022_07_01_*`
+    `httparchive.lighthouse.2022_07_01_*` -- noqa: L062
 )

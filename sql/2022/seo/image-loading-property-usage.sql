@@ -46,12 +46,12 @@ FROM
       total,
       getLoadingPropertyMarkupInfo(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS loading_property_markup_info
     FROM
-      `httparchive.pages.2022_07_01_*`
+      `httparchive.pages.2022_07_01_*` -- noqa: L062
     JOIN
       (
         SELECT _TABLE_SUFFIX, COUNT(0) AS total
         FROM
-          `httparchive.pages.2022_07_01_*`
+          `httparchive.pages.2022_07_01_*` -- noqa: L062
         GROUP BY _TABLE_SUFFIX
       )
     USING (_TABLE_SUFFIX)
