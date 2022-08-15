@@ -21,7 +21,7 @@ try {
     }
 
     values.push(align.value);
-    
+
     return values;
   };
 
