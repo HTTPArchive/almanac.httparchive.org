@@ -16,8 +16,11 @@ WITH layers AS (
 
 
 SELECT
-  *
+  client,
+  COUNT(DISTINCT IF(has_layer, page, NULL)) AS pages,
+  COUNT(DISTINCT page) AS total,
+  COUNT(DISTINCT IF(has_layer, page, NULL)) / COUNT(DISTINCT page) AS pct
 FROM
   layers
-WHERE
-  has_layer
+GROUP BY
+  client
