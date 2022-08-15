@@ -8,10 +8,14 @@ SELECT
 FROM
   `chrome-ux-report.all.202206`,
   UNNEST(experimental.time_to_first_byte.histogram.bin) AS ttfb
-JOIN
-  (SELECT _TABLE_SUFFIX AS client, *
-  FROM `httparchive.technologies.2022_06_01_*`
-  WHERE category = 'CMS')
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    *
+  FROM
+    `httparchive.technologies.2022_06_01_*`
+  WHERE
+    category = 'CMS')
 ON
   client = IF(form_factor.name = 'desktop', 'desktop', 'mobile') AND
   CONCAT(origin, '/') = url
