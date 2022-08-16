@@ -1,22 +1,18 @@
--- getting bucketed distribution of CLS scores to find median and other percentiles
-WITH cls_values AS (
+-- getting distribution of LCP times to calculate median LCP time
+-- or whatever other threshold we decide looks reasonable
+WITH cls_times AS (
   SELECT
-    url,
-    CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.CumulativeLayoutShift']") AS NUMERIC) AS cls
-  FROM `httparchive.pages.2022_06_01_desktop`
-),
-
-cls_clean AS (
-  SELECT
-    url,
-    round(cls, 3) AS cls_round
-  FROM cls_values
-  WHERE cls IS NOT NULL
+    origin AS url,
+    p75_cls AS cls
+  FROM `chrome-ux-report.materialized.device_summary`
+  WHERE date = '2022-06-01'
+  AND device = 'desktop'
 )
 
 SELECT
-  cls_round,
+  cls,
   count(distinct(url)) AS urls
-FROM cls_clean
-GROUP BY cls_round
-ORDER BY cls_round
+FROM cls_times
+WHERE cls IS NOT NULL
+GROUP BY cls
+ORDER BY cls

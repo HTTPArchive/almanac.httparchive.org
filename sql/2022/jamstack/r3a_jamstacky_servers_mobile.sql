@@ -47,10 +47,51 @@ potential_jamstack_sites AS (
     client = 'mobile'
     AND p75_lcp <= 2400
     AND p75_cls < 0.05
+),
+
+category_table AS (
+  SELECT DISTINCT
+    _TABLE_SUFFIX AS client,
+    url,
+    app
+  FROM
+    `httparchive.technologies.2022_06_01_*`
+  WHERE
+    LOWER(category) = 'paas'
+),
+
+jamstack_totals AS (
+  SELECT
+    client,
+    date,
+    COUNT(0) AS total_jamstack_sites
+  FROM
+    potential_jamstack_sites
+  GROUP BY
+    client,
+    date
 )
 
 SELECT
-  url
+  client,
+  app,
+  COUNT(0) AS jamstack_sites,
+  total_jamstack_sites,
+  COUNT(0) / total_jamstack_sites AS percent_jamstack_sites
 FROM
-  potential_jamstack_sites
-limit 1000
+  `httparchive.almanac.jamstack_sites`
+JOIN
+  category_table
+USING (client, url)
+JOIN
+  jamstack_totals
+USING (client, date)
+WHERE
+  date = '2022-06-01'
+GROUP BY
+  client,
+  app,
+  total_jamstack_sites
+ORDER BY
+  client,
+  percent_jamstack_sites DESC

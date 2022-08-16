@@ -2,9 +2,11 @@
 -- or whatever other threshold we decide looks reasonable
 WITH lcp_times AS (
   SELECT
-    url,
-    CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.LargestContentfulPaint']") AS NUMERIC) AS lcp_ms
-  FROM `httparchive.pages.2022_06_01_mobile`
+    origin AS url,
+    p75_lcp AS lcp_ms
+  FROM `chrome-ux-report.materialized.device_summary`
+  WHERE date = '2022-06-01'
+  AND device = 'phone'
 )
 
 SELECT
