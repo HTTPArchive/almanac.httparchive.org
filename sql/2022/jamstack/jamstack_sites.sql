@@ -63,6 +63,10 @@ CREATE OR REPLACE TABLE `httparchive.almanac.jamstack_sites` AS
       (client = 'desktop' AND p75_lcp <= 2000 AND p75_cls < 0.05)
   )
 
+  -- Add with methodology of 2022, so different methodologies
+  -- (including backdating those, like we've done here),
+  -- can be added to this table in future, and other queries then
+  -- still reused.
   SELECT
     '2022' AS methodology,
     *
