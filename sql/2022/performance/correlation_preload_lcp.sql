@@ -1,7 +1,7 @@
 CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
 RETURNS STRUCT<preload INT64>
 LANGUAGE js AS '''
-var hints = 'preload';
+var hints = ['preload'];
 try {
   var $ = JSON.parse(payload);
   var almanac = JSON.parse($._almanac);
