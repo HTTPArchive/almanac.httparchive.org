@@ -1,79 +1,97 @@
--- step 2.1: get URLs and LCP times from chrome user timings
--- step 3.1: get URLs and CLS times from chrome user timings
-WITH lighthouse_audits AS (
-  SELECT
-    url,
-    CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.LargestContentfulPaint']") AS NUMERIC) AS lcp_ms,
-    CAST(JSON_EXTRACT(payload, "$['_chromeUserTiming.CumulativeLayoutShift']") AS NUMERIC) AS cls
-  FROM `httparchive.pages.2022_06_01_mobile`
-),
-
--- step 2.2 & 3.2: filter URLs with LCP smaller than median and CLS smaller than median
-cls_and_lcp_filtered AS (
+WITH potential_jamstack_sites_with_cache AS (
   SELECT DISTINCT
-    url AS url
-  FROM lighthouse_audits
-  WHERE lcp_ms <= 5500 AND
-    cls <= 0.058
+    client,
+    date,
+    page AS url,
+    rank
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    firstHtml AND
+    (
+      (
+        resp_age IS NOT NULL AND
+        resp_age != '' AND
+        safe_cast(resp_age as numeric) > 0
+      )
+      OR
+      (
+        resp_cache_control IS NOT NULL AND
+        resp_cache_control != '' AND
+        expAge IS NOT NULL AND
+        resp_cache_control NOT LIKE 'no-store' AND
+        resp_cache_control NOT LIKE 'no-cache' AND
+        expAge > 0
+      )
+    )
 ),
 
--- step 4.1: get URLs with age headers
-headers AS (
+potential_jamstack_sites AS (
   SELECT
-    url,
-    JSON_EXTRACT_ARRAY(payload, '$.response.headers') AS headers_array
-  FROM `httparchive.requests.2022_06_01_mobile`
+    s.*,
+    p75_lcp,
+    p75_cls
+  FROM
+    potential_jamstack_sites_with_cache s
+  JOIN
+    `chrome-ux-report.materialized.device_summary` c
+  ON
+    url = CONCAT(origin, '/') AND
+    s.date = c.date AND
+    (
+      (s.client = 'mobile' AND c.device = 'phone')
+      OR
+      (s.client = 'desktop' AND c.device = 'desktop')
+    )
+  WHERE 
+    client = 'mobile'
+    AND p75_lcp <= 2400
+    AND p75_cls < 0.05
 ),
 
-flattened_headers AS (
-  SELECT
-    url,
-    LOWER(JSON_VALUE(flattened_headers, '$.name')) AS header_name,
-    JSON_VALUE(flattened_headers, '$.value') AS header_value
-  FROM headers
-  CROSS JOIN UNNEST(headers.headers_array) AS flattened_headers
-),
-
-non_null_ages AS (
-  SELECT
-    url,
-    SAFE_CAST(header_value AS NUMERIC) AS age
-  FROM flattened_headers
-  WHERE header_name = 'age' AND
-    SAFE_CAST(header_value AS NUMERIC) IS NOT NULL
-),
-
--- step 4.2: filter URLs to age headers at our chosen level
-age_filtered AS (
+category_table AS (
   SELECT DISTINCT
-    url AS url
-  FROM non_null_ages
-  WHERE age > 75600 -- 21 hours
-),
-
-frameworks AS (
-  SELECT
+    _TABLE_SUFFIX AS client,
     url,
     app
-  FROM `httparchive.technologies.2022_06_01_mobile`
-  WHERE category = 'PaaS'
+  FROM
+    `httparchive.technologies.2022_06_01_*`
+  WHERE
+    LOWER(category) = 'paas'
 ),
 
-candidates AS (
+jamstack_totals AS (
   SELECT
-    cl.url,
-    f.app
-  FROM cls_and_lcp_filtered cl
-  JOIN age_filtered a
-  ON a.url = cl.url
-  JOIN frameworks f
-  ON a.url = f.url AND
-    cl.url = f.url
+    client,
+    date,
+    COUNT(0) AS total_jamstack_sites
+  FROM
+    potential_jamstack_sites
+  GROUP BY
+    client,
+    date
 )
 
 SELECT
+  client,
   app,
-  count(0) AS urls
-FROM candidates
-GROUP BY app
-ORDER BY urls DESC
+  COUNT(0) AS jamstack_sites,
+  total_jamstack_sites,
+  COUNT(0) / total_jamstack_sites AS percent_jamstack_sites
+FROM
+  `httparchive.almanac.jamstack_sites`
+JOIN
+  category_table
+USING (client, url)
+JOIN
+  jamstack_totals
+USING (client, date)
+WHERE
+  date = '2022-06-01'
+GROUP BY
+  client,
+  app,
+  total_jamstack_sites
+ORDER BY
+  client,
+  percent_jamstack_sites DESC
