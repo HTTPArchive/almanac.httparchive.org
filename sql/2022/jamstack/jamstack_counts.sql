@@ -12,15 +12,46 @@ WITH jamstack_total_sites AS (
     date
 ),
 
+-- CrUX and HA use slightly different sets of sites for the same date
+-- So the total sites we're looking at is the number of sites in the join
+total_eligible_sites AS (
+  SELECT
+    s.*,
+    p75_lcp,
+    p75_cls
+  FROM
+    (  
+      SELECT DISTINCT
+        client,
+        date,
+        page AS url,
+        rank
+      FROM
+        `httparchive.almanac.requests`
+      WHERE
+        firstHtml
+    ) AS s
+  JOIN
+    `chrome-ux-report.materialized.device_summary` AS c
+  ON
+    url = CONCAT(origin, '/') AND
+    s.date = c.date AND
+    (
+      (s.client = 'mobile' AND c.device = 'phone')
+      OR
+      (s.client = 'desktop' AND c.device = 'desktop')
+      OR
+      c.device IS NULL
+    )
+),
+
 totals AS (
   SELECT
     client,
     date,
     COUNT(0) AS total_sites
   FROM
-    `httparchive.almanac.requests`
-  WHERE
-    firstHtml
+    total_eligible_sites
   GROUP BY
     client,
     date
