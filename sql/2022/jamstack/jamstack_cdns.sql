@@ -11,46 +11,12 @@ WITH jamstack_totals AS (
     client
 ),
 
--- slight modification of total_eligible_sites to include _cdn_provider
-total_eligible_sites AS (
-  SELECT
-    s.*,
-    p75_lcp,
-    p75_cls
-  FROM
-    (  
-      SELECT DISTINCT
-        client,
-        date,
-        page AS url,
-        rank,
-        _cdn_provider
-      FROM
-        `httparchive.almanac.requests`
-      WHERE
-        firstHtml
-    ) AS s
-  JOIN
-    `chrome-ux-report.materialized.device_summary` AS c
-  ON
-    url = CONCAT(origin, '/') AND
-    s.date = c.date AND
-    (
-      (s.client = 'mobile' AND c.device = 'phone')
-      OR
-      (s.client = 'desktop' AND c.device = 'desktop')
-      OR
-      c.device IS NULL
-    )
-  WHERE s.date = '2022-06-01'
-),
-
 all_sites_totals AS (
   SELECT
-    client,
+    _TABLE_SUFFIX AS client,
     COUNT(0) AS total_all_sites
   FROM
-    total_eligible_sites
+    `httparchive.pages.2022_06_01_*`
   GROUP BY
     client
 )
@@ -82,10 +48,13 @@ SELECT
   total_all_sites AS total_sites,
   COUNT(0) / total_all_sites AS pct_sites
 FROM
-  total_eligible_sites
+  `httparchive.almanac.requests`
 JOIN
   all_sites_totals
 USING (client)
+WHERE
+  firstHTML AND
+    date = '2022-06-01'
 GROUP BY
   client,
   _cdn_provider,
