@@ -9,7 +9,7 @@ try {
   const sizes = JSON.parse(json);
   return Object.entries(sizes).map(([key, value]) => ({ key, value }));
 } catch (e) {
-  return [{key: 'error ' + e.toString(), value: -1}];
+  return [];
 }
 ''';
 
@@ -26,7 +26,7 @@ FROM (
     key AS table,
     value AS bytes
   FROM
-    `httparchive.almanac.requests` TABLESAMPLE SYSTEM (0.1 PERCENT),
+    `httparchive.almanac.requests`,
     UNNEST(getTableSizes(JSON_EXTRACT(payload, '$._font_details.table_sizes'))),
     UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
   WHERE
