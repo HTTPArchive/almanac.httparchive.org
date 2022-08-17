@@ -1,13 +1,29 @@
 # 2022 Jamstack queries
 
-<!--
-  This directory contains all of the 2022 Jamstack chapter queries.
+Jamstack is a hard category to define, since the definition is architectural -- a decoupled back end and front end -- which is not a distinction visible to a crawler. So we have gone with a number of proxy metrics, in combination. See [draft](https://docs.google.com/document/d/15RLaaTVqoqb5AuDrlBt6L0J_BMx1ltKW4t8VWX-sN_g/edit#heading=h.8z91yaf1dmft) for more detail on methodology.
 
-  Each query should have a corresponding `metric_name.sql` file.
-  Note that readers are linked to this directory, so try to make the SQL file names descriptive for easy browsing.
+1. Jamstack sites are fast
 
-  Analysts: if helpful, you can use this README to give additional info about the queries.
--->
+- Largest Contentful Paint using user timings
+  * Distribution of LCP times on [mobile](distribution_lcp_mobile.sql) and [desktop](distribution_lcp_desktop.sql)
+    * Mobile median p75 LCP is 2.4 seconds
+    * Desktop median p75 LCP is 2.0 seconds
+  * Better means: anything with this or lower
+
+2. Jamstack sites are resilient (and pre-rendered)
+
+- How much the content changes post-load, i.e. Cumulative Layout Shift
+  * Have distribution of CLS scores on [mobile](distribution_cls_mobile.sql) and [desktop](distribution_cls_desktop.sql)
+    * Mobile median p75 CLS is 0.05
+    * Desktop median p75 CLS is 0.05
+  * Better means: anything with this or lower
+
+3. Jamstack sites are cached (often for a long time)
+
+- Change Age and Cache Control Headers
+  * Better means: anything with this or longer
+
+This definition was used to populate the [`httparchive.almanac.jamstack_sites`](jamstack-sites.sql) table (including previous years based on that definition), and then queries were run based off of that.
 
 ## Resources
 
