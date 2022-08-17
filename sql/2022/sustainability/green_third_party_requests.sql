@@ -35,7 +35,7 @@ third_party AS (
 green_requests AS (
   SELECT
     NET.HOST(url) AS host,
-    TRUE AS is_green,
+    TRUE AS is_green
   FROM
     `httparchive.almanac.green_web_foundation` gwf
   JOIN
