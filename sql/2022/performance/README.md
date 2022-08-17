@@ -29,7 +29,13 @@ Taken from [`Metrics` Section](https://docs.google.com/document/d/1IKV40fllCZTqe
 
 This query generates a scatterplot of field-based, page-level p75 INP versus the sum of all lab-based long tasks on the page according to Lighthouse.
 
-Lab-based mobile CPU throttling necessarily means that long tasks should be higher than desktop. It's interesting to look at the trendlines for both desktop and mobile to see that higher INP correlates with higher long tasks. 
+Lab-based mobile CPU throttling necessarily means that long tasks should be higher than desktop. It's interesting to look at the trendlines for both desktop and mobile to see that higher INP correlates with higher long tasks.
+
+### `lcp_resource_delay.sql`
+
+This query subtracts the lab-based TTFB time from the lab-based LCP element's request start time and generates a distribution over all pages.
+
+The `lcp_elem_stats.startTime` and `lcp_resource.timestamp` values did not seem to correspond to the actual LCP element request start times seen in the WPT results, so the query goes the more expensive route to join the pages data with the more reliable requests data.
 
 ### `prelcp_domain_sharding.sql`
 

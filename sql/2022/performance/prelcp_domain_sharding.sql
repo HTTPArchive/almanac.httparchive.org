@@ -40,7 +40,7 @@ SELECT
     ELSE 'needs improvement'
   END AS lcp,
   COUNT(0) AS pages,
-  APPROX_TOP_COUNT(pre_lcp_hosts, 1000)[OFFSET(percentile * 10)] AS pre_lcp_hosts
+  APPROX_QUANTILES(pre_lcp_hosts, 1000)[OFFSET(percentile * 10)] AS pre_lcp_hosts
 FROM
   hosts,
   UNNEST([10, 25, 50,75, 90]) AS percentile
@@ -50,4 +50,5 @@ GROUP BY
   lcp
 ORDER BY
   percentile,
-  client
+  client,
+  lcp

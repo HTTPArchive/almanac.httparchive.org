@@ -6,7 +6,9 @@ WITH long_tasks AS (
   FROM
     `lighthouse.2022_06_01_*`,
     UNNEST(JSON_QUERY_ARRAY(report, '$.audits.long-tasks.details.items')) AS item
-), per_page AS (
+),
+
+per_page AS (
   SELECT
     client,
     page,
@@ -16,14 +18,18 @@ WITH long_tasks AS (
   GROUP BY
     client,
     page
-), crux_inp AS (
+),
+
+crux_inp AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page,
     httparchive.core_web_vitals.GET_CRUX_INP(payload) AS inp
   FROM
     `httparchive.pages.2022_06_01_*`
-), combined AS (
+),
+
+combined AS (
   SELECT
     client,
     long_tasks,
@@ -34,7 +40,9 @@ WITH long_tasks AS (
     crux_inp
   USING
     (client, page)
-), meta AS (
+),
+
+meta AS (
   SELECT
     *,
     COUNT(0) OVER (PARTITION BY client) AS n,
