@@ -2,7 +2,7 @@ WITH cacheable AS (
   SELECT
     client,
     date,
-    count(distinct(url)) AS urls
+    COUNT(DISTINCT(url)) AS urls
   FROM
     `httparchive.almanac.requests`
   WHERE
@@ -32,7 +32,7 @@ all_sites AS (
   SELECT
     client,
     date,
-    count(distinct(url)) AS urls
+    COUNT(DISTINCT(url)) AS urls
   FROM
     `httparchive.almanac.requests`
   WHERE
@@ -48,8 +48,10 @@ SELECT
   c.urls AS cacheable,
   a.urls AS all_urls,
   c.urls / a.urls AS percent_cacheable
-FROM cacheable c
-JOIN all_sites a
+FROM
+  cacheable c
+JOIN
+  all_sites a
 USING (client, date)
 ORDER BY
   client,

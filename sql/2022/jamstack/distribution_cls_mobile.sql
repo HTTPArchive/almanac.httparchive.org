@@ -4,15 +4,21 @@ WITH cls_times AS (
   SELECT
     origin AS url,
     p75_cls AS cls
-  FROM `chrome-ux-report.materialized.device_summary`
-  WHERE date = '2022-06-01' AND
+  FROM
+    `chrome-ux-report.materialized.device_summary`
+  WHERE
+    date = '2022-06-01' AND
     device = 'phone'
 )
 
 SELECT
   cls,
-  count(distinct(url)) AS urls
-FROM cls_times
-WHERE cls IS NOT NULL
-GROUP BY cls
-ORDER BY cls
+  COUNT(DISTINCT(url)) AS urls
+FROM
+  cls_times
+WHERE
+  cls IS NOT NULL
+GROUP BY
+  cls
+ORDER BY
+  cls
