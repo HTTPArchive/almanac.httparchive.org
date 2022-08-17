@@ -13,17 +13,25 @@ RETURNS ARRAY<STRING> LANGUAGE js AS '''
 ''';
 
 SELECT
+  client,
   cssInJs,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER () AS total,
   COUNT(0) / SUM(COUNT(0)) OVER () AS pct
 FROM (
   SELECT
+    _TABLE_SUFFIX AS client,
     url,
     cssInJs
-  FROM `httparchive.sample_data.pages_mobile_10k`
-  CROSS JOIN UNNEST(getCssInJS(payload)) AS cssInJs
+  FROM
+    `httparchive.pages.2020_08_01_*`
+  CROSS JOIN
+    UNNEST(getCssInJS(payload)) AS cssInJs
 )
-WHERE cssInJs != 'NONE'
-GROUP BY cssInJs
-ORDER BY freq
+WHERE
+  cssInJs != 'NONE'
+GROUP BY
+  client,
+  cssInJs
+ORDER BY
+  freq
