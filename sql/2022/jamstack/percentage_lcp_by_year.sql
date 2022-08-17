@@ -1,8 +1,8 @@
-with lcp_only as (
+WITH lcp_only AS (
   SELECT
-    device as client,
+    device AS client,
     date,
-    count(distinct(origin)) as urls
+    count(distinct(origin)) AS urls
   FROM `chrome-ux-report.materialized.device_summary`
   WHERE
     (device = 'phone' AND p75_lcp <= 2400)
@@ -13,24 +13,24 @@ with lcp_only as (
     date
 ),
 
-all_urls as (
+all_urls AS (
   SELECT
-    device as client,
+    device AS client,
     date,
-    count(distinct(origin)) as urls
+    count(distinct(origin)) AS urls
   FROM `chrome-ux-report.materialized.device_summary`
   GROUP BY
     client,
     date
 )
 
-select 
+SELECT
   l.client,
   l.date,
-  l.urls as lcp_matches,
-  a.urls as all_urls,
-  l.urls/a.urls as percent_match
-from lcp_only l
-join all_urls a
-using (client,date)
-order by client, date 
+  l.urls AS lcp_matches,
+  a.urls AS all_urls,
+  l.urls / a.urls AS percent_match
+FROM lcp_only l
+JOIN all_urls a
+USING (client, date)
+ORDER BY client, date

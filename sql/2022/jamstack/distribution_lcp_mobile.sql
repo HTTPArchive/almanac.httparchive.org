@@ -5,8 +5,8 @@ WITH lcp_times AS (
     origin AS url,
     p75_lcp AS lcp_ms
   FROM `chrome-ux-report.materialized.device_summary`
-  WHERE date = '2022-06-01'
-  AND device = 'phone'
+  WHERE date = '2022-06-01' AND
+    device = 'phone'
 )
 
 SELECT

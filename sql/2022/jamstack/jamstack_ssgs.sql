@@ -33,7 +33,7 @@ total_eligible_sites AS (
     p75_lcp,
     p75_cls
   FROM
-    (  
+    (
       SELECT DISTINCT
         client,
         date,
