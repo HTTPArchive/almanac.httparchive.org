@@ -14,7 +14,7 @@ try {
 SELECT
   _TABLE_SUFFIX AS client,
   percentile,
-  COUNTIF(stylesheets.remote = 1) / COUNT(0) AS pct_1_remote,
+  APPROX_QUANTILES(SAFE_DIVIDE(stylesheets.remote, (stylesheets.inline + stylesheets.remote)), 1000)[OFFSET(percentile * 10)] AS pct_remote,
   APPROX_QUANTILES(stylesheets.inline, 1000)[OFFSET(percentile * 10)] AS num_inline_stylesheets,
   APPROX_QUANTILES(stylesheets.remote, 1000)[OFFSET(percentile * 10)] AS num_inline_stylesheets
 FROM (
