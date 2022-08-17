@@ -216,7 +216,7 @@ blocked_words = None
 # Regex of blocked SQL that should not be used.
 # Can be overridden with `-- noqa: L062` for those chapters using secondary pages
 # TABLESAMPLE - sometimes used for testing. Shouldn't be used in production as not random.
-# sample
+# sample_data - sometimes used for testing. Shouldn't be used in production.
 # Block 2022_05_12 (contains secondary pages)
 # Block 2022_06_09 (contains secondary pages)
 # Block 2022_07_01 (probably forgot to update month to June for 2022)
