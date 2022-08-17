@@ -1,99 +1,131 @@
 #standardSQL
-# Distribution of websites by number of third party & green third party requests
+# Median number of third-parties & green third-party requests per websites by rank
 
 WITH requests AS (
   SELECT
     _TABLE_SUFFIX AS client,
     pageid AS page,
-    url AS pageUrl
+    url
   FROM
     `httparchive.summary_requests.2022_06_01_*`
+),
+
+green AS (
+  SELECT
+    NET.HOST(url) AS host,
+    TRUE AS is_green
+  FROM
+    `httparchive.almanac.green_web_foundation`
+  WHERE
+    date = '2022-06-01'
+),
+
+pages AS (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    pageid AS page,
+    rank
+  FROM
+    `httparchive.summary_pages.2022_06_01_*`
 ),
 
 third_party AS (
   SELECT
     domain,
     canonicalDomain,
-    category,
     COUNT(DISTINCT page) AS page_usage
   FROM
     `httparchive.almanac.third_parties` tp
   JOIN
     requests r
-  ON NET.HOST(r.pageUrl) = NET.HOST(tp.domain)
+  ON NET.HOST(r.url) = NET.HOST(tp.domain)
   WHERE
     date = '2022-06-01' AND
-    category != 'hosting'
+    category NOT IN ('hosting')
   GROUP BY
     domain,
-    canonicalDomain,
-    category
+    canonicalDomain
   HAVING
     page_usage >= 50
 ),
 
-green_requests AS (
+green_tp AS (
   SELECT
-    NET.HOST(url) AS host,
-    TRUE AS is_green
+    domain,
+    canonicalDomain,
   FROM
-    `httparchive.almanac.green_web_foundation` gwf
+    `httparchive.almanac.third_parties` tp
   JOIN
-    requests r
-  ON NET.HOST(r.pageUrl) = NET.HOST(gwf.host)
+    green g
+  ON NET.HOST(g.host) = NET.HOST(tp.domain)
   WHERE
-    date = '2022-06-01'
+    date = '2022-06-01' AND
+    category NOT IN ('hosting')
   GROUP BY
-    host,
-    is_green
+    domain,
+    canonicalDomain
 ),
 
 base AS (
   SELECT
     client,
     page,
-    COUNT(DISTINCT canonicalDomain) AS third_parties_per_page
+    rank,
+    COUNT(canonicalDomain) AS third_parties_per_page
   FROM
     requests
   LEFT JOIN
     third_party
   ON
-    NET.HOST(requests.pageUrl) = NET.HOST(third_party.domain)
+    NET.HOST(requests.url) = NET.HOST(third_party.domain)
+  INNER JOIN
+    pages
+  USING
+    (client, page)
   GROUP BY
     client,
-    page
+    page,
+    rank
 ),
 
 base_green AS (
   SELECT
     client,
     page,
-    COUNT(DISTINCT host) AS green_third_parties_per_page
+    rank,
+    COUNT(canonicalDomain) AS green_third_parties_per_page
   FROM
     requests
   LEFT JOIN
-    green_requests
+    green_tp
   ON
-    NET.HOST(requests.pageUrl) = NET.HOST(green_requests.host)
+    NET.HOST(requests.url) = NET.HOST(green_tp.domain)
+  INNER JOIN
+    pages
+  USING
+    (client, page)
   GROUP BY
     client,
-    page
+    page,
+    rank
 )
 
 SELECT
   client,
-  percentile,
-  APPROX_QUANTILES(third_parties_per_page, 1000)[OFFSET(percentile * 10)] AS approx_third_parties_per_page,
-  APPROX_QUANTILES(green_third_parties_per_page, 1000)[OFFSET(percentile * 10)] AS approx_green_third_parties_per_page
+  rank_grouping,
+  APPROX_QUANTILES(third_parties_per_page, 1000)[OFFSET(500)] AS p50_third_parties_per_page,
+  APPROX_QUANTILES(green_third_parties_per_page, 1000)[OFFSET(500)] AS p50_green_third_parties_per_page
 FROM
   base,
-  UNNEST([10, 25, 50, 75, 90]) AS percentile
+  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
 JOIN
   base_green
-USING (client, page)
+USING (client, page, rank)
+WHERE
+  rank <= rank_grouping
 GROUP BY
   client,
-  percentile
+  rank_grouping
 ORDER BY
   client,
-  percentile
+  rank_grouping
