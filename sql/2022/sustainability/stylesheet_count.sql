@@ -27,6 +27,8 @@ FROM (
     UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 )
 GROUP BY
-  client
+  client,
+  percentile
 ORDER BY
-  client
+  client,
+  percentile
