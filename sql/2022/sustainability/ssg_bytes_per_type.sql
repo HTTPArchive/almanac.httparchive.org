@@ -30,7 +30,7 @@ FROM (
     url,
     app AS ssg
   FROM
-    `httparchive.technologies.2021_07_01_*`
+    `httparchive.technologies.2022_06_01_*`
   WHERE
     LOWER(category) = 'static site generator' OR
     app = 'Next.js' OR
