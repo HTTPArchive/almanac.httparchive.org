@@ -2,7 +2,7 @@ WITH pages AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page,
-    JSON_QUERY(payload, '$._performance.lcp_elem_stats.url') AS url,
+    JSON_VALUE(payload, '$._performance.lcp_elem_stats.url') AS url,
     httparchive.core_web_vitals.GET_LAB_TTFB(payload) AS ttfb
   FROM
     `httparchive.pages.2022_06_01_*`
