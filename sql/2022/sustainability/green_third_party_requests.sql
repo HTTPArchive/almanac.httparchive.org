@@ -52,7 +52,7 @@ third_party AS (
 green_tp AS (
   SELECT
     domain,
-    canonicalDomain,
+    canonicalDomain
   FROM
     `httparchive.almanac.third_parties` tp
   JOIN
