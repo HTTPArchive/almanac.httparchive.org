@@ -36,7 +36,6 @@ green_requests AS (
   SELECT
     NET.HOST(url) AS host,
     TRUE AS is_green,
-    COUNT(DISTINCT page) AS page_usage
   FROM
     `httparchive.almanac.green_web_foundation` gwf
   JOIN
@@ -47,8 +46,6 @@ green_requests AS (
   GROUP BY
     host,
     is_green
-  HAVING
-    page_usage >= 50
 ),
 
 base AS (
@@ -69,9 +66,9 @@ base AS (
 
 base_green AS (
   SELECT
-    client AS green_client,
-    page AS green_page,
-    COUNT(host) AS green_third_parties_per_page
+    client,
+    page,
+    COUNT(DISTINCT host) AS green_third_parties_per_page
   FROM
     requests
   LEFT JOIN
@@ -90,8 +87,10 @@ SELECT
   APPROX_QUANTILES(green_third_parties_per_page, 1000)[OFFSET(percentile * 10)] AS approx_green_third_parties_per_page
 FROM
   base,
-  base_green,
   UNNEST([10, 25, 50, 75, 90]) AS percentile
+JOIN
+  base_green
+USING (client, page)
 GROUP BY
   client,
   percentile
