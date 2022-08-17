@@ -6,14 +6,18 @@ WITH requests AS (
     CAST(JSON_QUERY(payload, '$._all_start') AS INT64) AS req_start
   FROM
     `httparchive.requests.2022_06_01_*`
-), lcp AS (
+),
+
+lcp AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page,
     httparchive.core_web_vitals.GET_LAB_LCP(payload) AS lcp_time
   FROM
     `httparchive.pages.2022_06_01_*`
-), hosts AS (
+),
+
+hosts AS (
   SELECT
     client,
     COUNT(DISTINCT host) AS pre_lcp_hosts,
