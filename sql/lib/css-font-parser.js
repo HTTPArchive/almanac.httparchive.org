@@ -20,7 +20,7 @@ const parser = (() => {
   /**
    * Returns true if the identifier is valid.
    * @param {string} identifier
-   # @return {boolean}
+   * @return {boolean}
    */
   function isValidIdentifier(identifier) {
     return !/^(-?\d|--)/.test(identifier);
