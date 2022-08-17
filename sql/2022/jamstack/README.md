@@ -6,16 +6,16 @@ Jamstack is a hard category to define, since the definition is architectural -- 
 
 - Largest Contentful Paint using user timings
   * Distribution of LCP times on [mobile](distribution_lcp_mobile.sql) and [desktop](distribution_lcp_desktop.sql)
-    * Mobile median is 5.5 seconds
-    * Desktop median is 3.7 seconds
+    * Mobile median p75 LCP is 2.4 seconds
+    * Desktop median p75 LCP is 2.0 seconds
   * Better means: anything with this or lower
 
 2. Jamstack sites are resilient (and pre-rendered)
 
 - How much the content changes post-load, i.e. Cumulative Layout Shift
   * Have distribution of CLS scores on [mobile](distribution_cls_mobile.sql) and [desktop](distribution_cls_desktop.sql)
-    * Mobile median is 0.058
-    * Desktop median is 0.023
+    * Mobile median p75 CLS is 0.05
+    * Desktop median p75 CLS is 0.05
   * Better means: anything with this or lower
 
 3. Jamstack sites are cached (often for a long time)
