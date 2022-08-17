@@ -54,7 +54,7 @@ JOIN
 USING (client)
 WHERE
   firstHTML AND
-    date = '2022-06-01'
+  date = '2022-06-01'
 GROUP BY
   client,
   _cdn_provider,
