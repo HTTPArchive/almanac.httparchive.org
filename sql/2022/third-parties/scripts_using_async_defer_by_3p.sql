@@ -38,7 +38,7 @@ base AS (
     page,
     third_party_domains.domain AS domain,
     COUNTIF(isAsync) AS async_count,
-    COUNTIF(isDefer) AS defer_count,
+    COUNTIF(isDefer) AS defer_count
   FROM
     (
       SELECT
@@ -66,27 +66,16 @@ SELECT
   domain,
   COUNTIF(async_count > 0) AS freq_async,
   COUNTIF(defer_count > 0) AS freq_defer,
-  total,
-  COUNTIF(async_count > 0) / total AS pct_async,
-  COUNTIF(defer_count > 0) / total AS pct_defer,
+  COUNT(DISTINCT page) AS page_usage,
+  COUNTIF(async_count > 0) / COUNT(DISTINCT page) AS pct_async,
+  COUNTIF(defer_count > 0) / COUNT(DISTINCT page) AS pct_defer
 FROM
   base
-JOIN (
-    SELECT
-      _TABLE_SUFFIX AS client,
-      COUNT(DISTINCT url) AS total
-    FROM
-      `httparchive.pages.2022_06_01_*`
-    GROUP BY
-      _TABLE_SUFFIX
-)
-USING
-  (client)
 GROUP BY
   client,
-  domain,
-  total
+  domain
+HAVING
+  page_usage > 50
 ORDER BY
   client,
-  freq_async DESC,
-  freq_defer DESC
+  page_usage DESC

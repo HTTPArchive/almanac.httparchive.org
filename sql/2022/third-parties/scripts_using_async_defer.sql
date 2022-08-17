@@ -38,7 +38,7 @@ base AS (
     page,
     third_party_domains.domain AS domain,
     COUNTIF(isAsync) AS async_count,
-    COUNTIF(isDefer) AS defer_count,
+    COUNTIF(isDefer) AS defer_count
   FROM
     (
       SELECT
@@ -67,7 +67,7 @@ SELECT
   COUNTIF(defer_count > 0) AS freq_defer,
   COUNT(0) AS total,
   COUNTIF(async_count > 0) / COUNT(0) AS pct_async,
-  COUNTIF(defer_count > 0) / COUNT(0) AS pct_defer,
+  COUNTIF(defer_count > 0) / COUNT(0) AS pct_defer
 FROM
   base
 GROUP BY
