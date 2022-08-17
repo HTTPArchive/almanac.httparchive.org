@@ -4,12 +4,6 @@ Jamstack is a hard category to define, since the definition is architectural -- 
 
 1. Jamstack sites are fast
 
-- <strike>Lighthouse Performance score</strike>
-  * We found [distribution of Lighthouse performance scores](lighthouse_distribution_mobile.sql) in 2022
-    * Mobile median score was 0.3
-    * Better means: anything with this or larger
-  * Lighthouse performance scores were not reliably available in earlier years
-    * And omitting the score in the 2022 data did not make a big difference to the resulting set of URLs (since they were performant on 3 other measures already) so we omitted this.
 - Largest Contentful Paint using user timings
   * Distribution of LCP times on [mobile](distribution_lcp_mobile.sql) and [desktop](distribution_lcp_desktop.sql)
     * Mobile median is 5.5 seconds
@@ -24,12 +18,12 @@ Jamstack is a hard category to define, since the definition is architectural -- 
     * Desktop median is 0.023
   * Better means: anything with this or lower
 
-3. Jamstack sites are cached for a long time
+3. Jamstack sites are cached (often for a long time)
 
-- Age header
-  * Have distribution of Age headers on [mobile](distribution_age_headers_mobile.sql) and [desktop](distribution_age_headers_desktop.sql)
-    * Median 21 hours in both cases
+- Change Age and Cache Control Headers
   * Better means: anything with this or longer
+
+This definition was used to populate the [`httparchive.almanac.jamstack_sites`](jamstack-sites.sql) table (including previous years based on that definition), and then queries were run based off of that.
 
 ## Resources
 
