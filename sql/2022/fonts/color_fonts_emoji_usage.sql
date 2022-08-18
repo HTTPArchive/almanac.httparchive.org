@@ -7,7 +7,7 @@ AS r"""
 if (codepoints && codepoints.length) {
   const detected = detectWritingScript(codepoints.map(c => parseInt(c, 10)), 0.1);
   const scripts = [
-    'Emoji', 
+    'Emoji',
     'Emoji_Component',
     'Emoji_Modifier',
     'Emoji_Modifier_Base',
