@@ -1,62 +1,52 @@
-CREATE TEMPORARY FUNCTION getFontDisplay(css STRING)
-RETURNS ARRAY < STRING > LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getFontDisplay(json STRING)
+RETURNS ARRAY < STRING >
+LANGUAGE js
+OPTIONS(library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
-    var reduceValues = (values, rule) => {
-        if ('rules' in rule) {
-            return rule.rules.reduce(reduceValues, values);
-        }
-        if (!('declarations' in rule)) {
-            return values;
-        }
-        if (rule.type != 'font-face') {
-            return values;
-        }
-        rule.declarations.forEach(d => {
-            if (d.property.toLowerCase() == 'font-display') {
-                values.push(d.value);
-            }
-        });
-        return values;
-    };
-    var $ = JSON.parse(css);
-    return $.stylesheet.rules.reduce(reduceValues, []);
+  const ast = JSON.parse(json);
+  const result = [];
+  walkDeclarations(ast, decl => {
+    result.push(decl.value);
+  }, {
+    properties: 'font-display',
+    rules: r => r.type === 'font-face'
+  });
+
+  return result;
 } catch (e) {
-    return [null];
+  return [];
 }
 ''';
 
 SELECT
   client,
   font_display,
-  COUNT(DISTINCT page) AS pages,
-  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
-  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct_display
+  pages,
+  total,
+  pages / total AS pct
 FROM (
-  SELECT DISTINCT
+  SELECT
     client,
-    page,
-    font_display
+    font_display,
+    COUNT(DISTINCT page) AS pages
   FROM
-    `httparchive.almanac.parsed_css`
-  LEFT JOIN
+    `httparchive.almanac.parsed_css` ,
     UNNEST(getFontDisplay(css)) AS font_display
   WHERE
-    date = '2022-07-01')
+    date = '2022-07-01'
+  GROUP BY
+    client,
+    font_display)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
-    url AS page
+    COUNT(0) AS total
   FROM
-    `httparchive.pages.2022_07_01_*`
+    `httparchive.summary_pages.2022_07_01_*`
   GROUP BY
-    _TABLE_SUFFIX,
-    url,
-    payload)
+    client)
 USING
-  (client,
-    page)
-GROUP BY
-  client,
-  font_display
+  (client)
 ORDER BY
-  pages DESC
+  pct DESC
