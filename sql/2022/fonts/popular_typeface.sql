@@ -1,13 +1,20 @@
-#standardSQL
-#popular_typeface
 CREATE TEMPORARY FUNCTION getFontFamilies(css STRING)
-RETURNS ARRAY <STRING> LANGUAGE js AS '''
+RETURNS ARRAY <STRING>
+LANGUAGE js
+OPTIONS (library = ["gs://httparchive/lib/css-font-parser.js", "gs://httparchive/lib/css-utils.js"])
+AS '''
 try {
-  var $ = JSON.parse(css);
-  return $.stylesheet.rules.filter(rule => rule.type == 'font-face').map(rule => {
-    var family = rule.declarations && rule.declarations.find(d => d.property == 'font-family');
-    return family && family.value.replace(/[\'"]/g, '');
-  }).filter(family => family);
+  const ast = JSON.parse(css);
+  let result = [];
+
+  walkDeclarations(ast, (decl) => {
+    result.push(parseFontFamilyProperty(decl.value)[0]);
+  }, {
+    properties: 'font-family',
+    rules: (r) =>  r.type === 'font-face'
+  });
+
+  return result;
 } catch (e) {
   return [];
 }
@@ -28,7 +35,7 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getFontFamilies(css)) AS font_family
   WHERE
-    date = '2022-06-01'
+    date = '2022-07-01'
   GROUP BY
     client,
     font_family)
@@ -37,7 +44,7 @@ JOIN (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total
   FROM
-    `httparchive.summary_pages.2022_06_01_*`
+    `httparchive.summary_pages.2022_07_01_*`
   GROUP BY
     client)
 USING
