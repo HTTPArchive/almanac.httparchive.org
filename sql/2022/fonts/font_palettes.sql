@@ -6,8 +6,8 @@ SELECT
 FROM
   `httparchive.almanac.requests`
 WHERE
-  date = '2022-06-01'
-  AND type = 'font'
+  date = '2022-06-01' AND
+  type = 'font'
 GROUP BY
   client,
   entries
