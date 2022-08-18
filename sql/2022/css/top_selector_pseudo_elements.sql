@@ -86,6 +86,6 @@ FROM (
   UNNEST(pseudo_elements) AS pseudo_element
 WHERE
   pseudo_element.value IS NOT NULL AND
-  NOT STARTS_WITH(pseudo_element.value, "-")
+  NOT STARTS_WITH(pseudo_element.value, '-')
 ORDER BY
   pct DESC
