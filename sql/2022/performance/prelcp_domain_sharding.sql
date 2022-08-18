@@ -47,7 +47,7 @@ SELECT
   APPROX_QUANTILES(pre_lcp_hosts, 1000)[OFFSET(percentile * 10)] AS pre_lcp_hosts
 FROM
   hosts,
-  UNNEST([10, 25, 50,75, 90]) AS percentile
+  UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,
   client,
