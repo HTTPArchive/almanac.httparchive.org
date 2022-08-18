@@ -1,30 +1,17 @@
 #standardSQL
-# Popularity of CSS content values
-CREATE TEMPORARY FUNCTION getContentValues(css STRING)
-RETURNS ARRAY<STRING> LANGUAGE js
-OPTIONS (library = "gs://httparchive/lib/css-utils.js") AS '''
+# Most popular `content` property values.
+# Combines hex values together to reduce duplication (used by icon fonts).
+CREATE TEMP FUNCTION getContentStrings(css STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
-    if ("rules" in rule) {
+    if ('rules' in rule) {
       return rule.rules.reduce(reduceValues, values);
     }
-    if (!("declarations" in rule)) {
+    if (!('declarations' in rule)) {
       return values;
     }
-
-    var content = rule.declarations.find(
-      (d) => d.property == "content"
-    );
-
-    if (!content) {
-      return values;
-    }
-
-    values.push(content.value);
-
-    return values;
+    return values.concat(rule.declarations.filter(d => d.property.toLowerCase() == 'content').map(d => d.value));
   };
-
   var $ = JSON.parse(css);
   return $.stylesheet.rules.reduce(reduceValues, []);
 } catch (e) {
@@ -33,39 +20,43 @@ try {
 ''';
 
 SELECT
-  client,
-  content,
-  COUNT(0) AS freq,
-  ANY_VALUE(total_pages) AS total_pages,
-  COUNT(0) / ANY_VALUE(total_pages) AS pct
+  *
 FROM (
   SELECT
     client,
-    page,
-    content
-  FROM
-    `httparchive.almanac.parsed_css`,
-    UNNEST(getContentValues(css)) AS content
+    IF(
+      REGEXP_CONTAINS(content, r'[\'"]\\[ef][0-9a-f]{3}[\'"]'), '"\\f000"-like',
+      IF(
+        REGEXP_CONTAINS(content, r'[\'"]\\[a-f0-9]{4}[\'"]'), '"\\hex{4}"-like', content)) AS content,
+    COUNT(DISTINCT page) AS pages,
+    total_pages,
+    COUNT(DISTINCT page) / total_pages AS pct_pages,
+    COUNT(0) AS freq,
+    SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+  FROM (
+    SELECT
+      client,
+      COUNT(DISTINCT page) AS total_pages
+    FROM
+      `httparchive.almanac.parsed_css`
+    WHERE
+      date = '2022-07-01'
+    GROUP BY
+      client)
+  JOIN
+    `httparchive.almanac.parsed_css`
+  USING
+    (client),
+    UNNEST(getContentStrings(css)) AS content
   WHERE
     date = '2022-07-01'
   GROUP BY
     client,
-    page,
-    content
-)
-JOIN (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_pages
-  FROM
-    `httparchive.summary_pages.2022_07_01_*`  --noqa: L062
-  GROUP BY
-    _TABLE_SUFFIX
-)
-USING
-  (client)
-GROUP BY
-  client,
-  content
+    content,
+    total_pages)
+WHERE
+  pages >= 1000
 ORDER BY
-  pct DESC
+  pct_pages DESC
+LIMIT 200
