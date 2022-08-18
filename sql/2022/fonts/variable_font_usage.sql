@@ -27,7 +27,3 @@ USING
 GROUP BY
   client,
   total_page
-HAVING
-  freq_vf > 100
-ORDER BY
-  freq_vf DESC
