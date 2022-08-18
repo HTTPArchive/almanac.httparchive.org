@@ -1,74 +1,50 @@
-CREATE TEMPORARY FUNCTION getFontMetricsOverride(css STRING)
-RETURNS ARRAY < STRING > LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION getFontMetricsOverride(json STRING)
+RETURNS ARRAY < STRING > LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
 try {
-    var reduceValues = (values, rule) => {
-        if ('rules' in rule) {
-            return rule.rules.reduce(reduceValues, values);
-        }
-        if (!('declarations' in rule)) {
-            return values;
-        }
-        if (rule.type != 'font-face') {
-            return values;
-        }
-        rule.declarations.forEach(d => {
-            if (d.property.toLowerCase() == 'size-adjust') {
-                values.push('size-adjust');
-            }
-
-            if (d.property.toLowerCase() == 'ascent-override') {
-                values.push('ascent-override');
-            }
-
-            if (d.property.toLowerCase() == 'descent-override') {
-                values.push('descent-override');
-            }
-
-            if (d.property.toLowerCase() == 'line-gap-override') {
-                values.push('line-gap-override');
-            }
-        });
-        return values;
-    };
-    var $ = JSON.parse(css);
-    return $.stylesheet.rules.reduce(reduceValues, []);
+  const ast = JSON.parse(json);
+  const result = [];
+  walkDeclarations(ast, decl => {
+    result.push(decl.property);
+  }, {
+    properties: ['size-adjust', 'ascent-override', 'descent-override', 'line-gap-override'],
+    rules: r => r.type === 'font-face'
+  });
+  return result;
 } catch (e) {
-    return [null];
+  return [];
 }
 ''';
 
 SELECT
   client,
   font_override,
-  COUNT(DISTINCT page) AS pages,
-  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
-  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct_override
+  pages,
+  total,
+  pages / total AS pct
 FROM (
-  SELECT DISTINCT
+  SELECT
     client,
-    page,
-    font_override
+    font_override,
+    COUNT(DISTINCT page) AS pages
   FROM
-    `httparchive.almanac.parsed_css`
-  LEFT JOIN
+    `httparchive.almanac.parsed_css`,
     UNNEST(getFontMetricsOverride(css)) AS font_override
   WHERE
-    date = '2022-07-01')
+    date = '2022-07-01'
+  GROUP BY
+    client,
+    font_override)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
-    url AS page
+    COUNT(0) AS total
   FROM
-    `httparchive.pages.2022_07_01_*`
+    `httparchive.summary_pages.2022_07_01_*`
   GROUP BY
-    _TABLE_SUFFIX,
-    url,
-    payload)
+    client)
 USING
-  (client,
-    page)
-GROUP BY
-  client,
-  font_override
+  (client)
 ORDER BY
-  pages DESC
+  pct DESC
