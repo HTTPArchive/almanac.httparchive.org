@@ -1,44 +1,19 @@
-CREATE TEMPORARY FUNCTION getFontSmoothing(data STRING)
-RETURNS ARRAY < STRING > LANGUAGE js AS '''
-
-function parseCss(rule, acc) {
-  if (rule.hasOwnProperty('rules')) {
-    rule.rules.forEach(rule => parseCss(rule, acc));
-  }
-
-  if (rule.hasOwnProperty('declarations')) {
-    rule.declarations.forEach(decl => {
-      if (decl.property === '-webkit-font-smoothing') {
-        acc.push('-webkit-font-smoothing: ' + decl.value);
-      }
-
-      if (decl.property === '-moz-osx-font-smoothing') {
-        acc.push('-moz-osx-font-smoothing: ' + decl.value);
-      }
-
-      if (decl.property === 'font-smooth') {
-        acc.push('font-smooth: ' + decl.value);
-      }
-    });
-  }
+CREATE TEMPORARY FUNCTION getFontSmoothing(json STRING)
+RETURNS ARRAY < STRING > LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
+try {
+  const ast = JSON.parse(json);
+  const result = [];
+  walkDeclarations(ast, decl => {
+    result.push(`${decl.property}: ${decl.value}`);
+  }, {
+    properties: ['-webkit-font-smoothing', '-moz-osx-font-smoothing', 'font-smooth']
+  });
+  return result;
+} catch (e) {
+  return [];
 }
-
-function getData(json) {
-  try {
-    const css = JSON.parse(json);
-    const result = [];
-
-    parseCss(css.stylesheet, result);
-
-    // Convert to set and back to array: we are only interested if
-    // a property is used on a page, not how many times.
-    return [...new Set(result)];
-  } catch (e) {
-    return [];
-  }
-}
-
-return getData(data);
 ''';
 
 SELECT
