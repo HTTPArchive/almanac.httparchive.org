@@ -7,8 +7,8 @@ SELECT
 FROM (
   SELECT
     client,
-    JSON_EXTRACT_SCALAR(payload,
-      '$._font_details.color.numPalettes') AS num,
+    SAFE_CAST(JSON_EXTRACT_SCALAR(payload,
+      '$._font_details.color.numPalettes') AS INT64) AS num,
     COUNT(DISTINCT page) AS pages
   FROM
     `httparchive.almanac.requests`
@@ -28,8 +28,5 @@ JOIN (
     client)
 USING
   (client)
-WHERE
-  num IS NOT NULL AND
-  num != '0'
 ORDER BY
   pct DESC
