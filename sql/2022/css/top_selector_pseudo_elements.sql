@@ -59,8 +59,8 @@ try {
 
 SELECT
   client,
-  pages,
   pseudo_element.value AS pseudo_element,
+  pages,
   pseudo_element.count AS freq,
   pseudo_element.count / pages AS pct
 FROM (
@@ -85,6 +85,7 @@ FROM (
     client),
   UNNEST(pseudo_elements) AS pseudo_element
 WHERE
-  pseudo_element.value IS NOT NULL
+  pseudo_element.value IS NOT NULL AND
+  NOT STARTS_WITH(pseudo_element.value, "-")
 ORDER BY
   pct DESC
