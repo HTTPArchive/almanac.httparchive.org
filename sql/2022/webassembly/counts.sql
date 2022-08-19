@@ -5,17 +5,17 @@ WITH filenames AS (
   SELECT
     client,
     CASE
-    WHEN REGEXP_CONTAINS(url, r'/(hyphenopoly|patterns).*/[a-z-]{2,5}\.wasm')
-      THEN '(hyphenopoly dictionary)'
-    WHEN ENDS_WITH(url, '.unityweb')
-      THEN '(unityweb app)'
-    ELSE
-      REGEXP_REPLACE(
-        REGEXP_EXTRACT(LOWER(url), r'.*/([^./?]*)'), -- lowercase & extract filename between last `/` and `.` or `?`
-        r'-[0-9a-f]{20,32}$', -- trim trailing hashes to transform `name-0abc43234[...]` to `name`
-        ''
-    )
-  END AS name,
+      WHEN REGEXP_CONTAINS(url, r'/(hyphenopoly|patterns).*/[a-z-]{2,5}\.wasm')
+        THEN '(hyphenopoly dictionary)'
+      WHEN ENDS_WITH(url, '.unityweb')
+        THEN '(unityweb app)'
+      ELSE
+        REGEXP_REPLACE(
+          REGEXP_EXTRACT(LOWER(url), r'.*/([^./?]*)'), -- lowercase & extract filename between last `/` and `.` or `?`
+          r'-[0-9a-f]{20,32}$', -- trim trailing hashes to transform `name-0abc43234[...]` to `name`
+          ''
+        )
+    END AS name
   FROM
     `httparchive.almanac.requests`
   WHERE

@@ -19,7 +19,7 @@ SELECT
 FROM
   wasm
 WHERE
-  wasm_stats  IS NOT NULL
+  wasm_stats IS NOT NULL
 GROUP BY
   client,
   language
