@@ -1,35 +1,41 @@
 #standardSQL
-# The number of stylesheets used inline v. external
-
-CREATE TEMPORARY FUNCTION getStylesheets(payload STRING)
-RETURNS STRUCT<remote INT64, inline INT64> LANGUAGE js AS '''
+# Breakdown of inline vs external stylesheets
+CREATE TEMPORARY FUNCTION getStyles(payload STRING)
+RETURNS STRUCT<total INT64, inlineStyles INT64, stylesheets INT64>
+LANGUAGE js AS
+'''
 try {
-  var $ = JSON.parse(payload)
-  var sass = JSON.parse($._sass);
-  return sass.stylesheets;
+  var $ = JSON.parse(payload);
+  var javascript = JSON.parse($._javascript);
+
+  var inlineStyles = javascript.document.inlineStyles;
+  var stylesheets = javascript.document.stylesheets;
+  var total = inlineStyles + stylesheets;
+  return {
+    total,
+    inlineStyles,
+    stylesheets
+  };
 } catch (e) {
-  return null;
+  return {};
 }
 ''';
 
 SELECT
-  _TABLE_SUFFIX AS client,
-  percentile,
-  APPROX_QUANTILES(stylesheets.inline, 1000)[OFFSET(percentile * 10)] AS num_inline_stylesheets,
-  APPROX_QUANTILES(stylesheets.remote, 1000)[OFFSET(percentile * 10)] AS num_inline_stylesheets
+  client,
+  SUM(document.total) AS total_stylesheets,
+  SUM(document.inlineStyles) AS inline_stylesheets,
+  SUM(document.stylesheets) AS external_stylesheets,
+  SUM(document.stylesheets) / SUM(document.total) AS pct_external_stylesheets,
+  SUM(document.inlineStyles) / SUM(document.total) AS pct_inline_stylesheets,
+  APPROX_QUANTILES(SAFE_DIVIDE(document.stylesheets, document.total), 1000)[OFFSET(500)] AS median_external,
+  APPROX_QUANTILES(SAFE_DIVIDE(document.inlineStyles, document.total), 1000)[OFFSET(500)] AS median_inline
 FROM (
   SELECT
-    _TABLE_SUFFIX,
-    url,
-    percentile,
-    getStylesheets(payload) AS stylesheets
+    _TABLE_SUFFIX AS client,
+    getStyles(payload) AS document
   FROM
-    `httparchive.pages.2022_06_01_*`,
-    UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
-)
+    `httparchive.pages.2022_06_01_*`
+  )
 GROUP BY
-  client,
-  percentile
-ORDER BY
-  client,
-  percentile
+  client

@@ -1,5 +1,6 @@
 #standardSQL
 # Percentage adoption of image formats
+# Ignore really small images < 1500 bytes (often pixels) that would not benefit from more efficient format
 
 CREATE TEMPORARY FUNCTION fixFormat(format STRING, mimeType STRING)
 RETURNS STRING
@@ -32,7 +33,7 @@ FROM (
   WHERE
     date = '2022-06-01' AND
     type = 'image' AND
-    respSize > 0)
+    respSize > 1500)
 GROUP BY
   client,
   trueFormat

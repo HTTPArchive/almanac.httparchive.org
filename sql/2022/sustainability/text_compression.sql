@@ -3,7 +3,7 @@
 
 SELECT
   client,
-  mimeType,
+  LOWER(mimeType) AS mimeType,
   resp_content_encoding,
   COUNT(0) AS num_requests,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,

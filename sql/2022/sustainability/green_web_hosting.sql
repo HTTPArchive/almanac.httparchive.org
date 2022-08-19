@@ -23,6 +23,11 @@ pages AS (
 SELECT
   client,
   rank_grouping,
+  CASE
+    WHEN rank_grouping = 0 THEN ''
+    WHEN rank_grouping = 10000000 THEN 'all'
+    ELSE FORMAT("%'d", rank_grouping)
+  END AS ranking,
   COUNTIF(is_green) AS total_green,
   COUNT(0) AS total_sites,
   COUNTIF(is_green) / COUNT(0) AS pct_green

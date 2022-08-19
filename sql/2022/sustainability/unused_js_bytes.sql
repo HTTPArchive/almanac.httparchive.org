@@ -1,7 +1,7 @@
 #standardSQL
 # Distribution of unused JS request bytes per page
 SELECT
-  _TABLE_SUFFX AS client,
+  _TABLE_SUFFIX AS client,
   percentile,
   APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.unused-javascript.details.overallSavingsBytes') AS INT64) / 1024, 1000)[OFFSET(percentile * 10)] AS js_kilobytes
 FROM
