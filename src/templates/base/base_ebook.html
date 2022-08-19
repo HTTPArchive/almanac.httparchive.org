@@ -308,9 +308,11 @@
       <div class="part">
         <h2 class="part-name">{{ self.appendices() }}</h2>
         <div class="toc-chapters">
+          {% if get_ebook_methodology(lang,year) %}
           <div class="toc-chapter">
             <a href="#methodology">{{ self.methodology_title() }}</a>
           </div>
+          {% endif %}
           <div class="toc-chapter">
             <a href="#contributors">{{ self.contributors_title() }}</a>
           </div>
@@ -328,10 +330,12 @@
 
   {{ self.chapters() }}
 
+  {% if get_ebook_methodology(lang,year) %}
   <section class="chapter" id="methodology">
     <div class="subtitle">{{ self.appendix() }} A</div>
     {{ get_ebook_methodology(lang,year) | safe }}
   </section>
+  {% endif %}
 
   <section class="chapter" id="contributors">
     <div class="subtitle">{{ self.appendix() }} B</div>

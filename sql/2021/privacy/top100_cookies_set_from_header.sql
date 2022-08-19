@@ -38,6 +38,8 @@ request_headers AS (
     COUNT(DISTINCT page) OVER (PARTITION BY client) AS websites_per_client
   FROM
     `httparchive.almanac.requests`
+  WHERE
+    date = '2021-07-01'
   GROUP BY
     client,
     page,

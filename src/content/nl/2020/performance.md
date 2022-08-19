@@ -263,7 +263,7 @@ In de bovenstaande grafieken zijn de FCP-distributies uitgesplitst naar desktop 
 
 Als we FCP op mobiele apparaten op jaarbasis vergelijken, zien we minder goede ervaringen en meer gematigde en slechte ervaringen. 75% van de websites heeft een ondermaatse FCP. We kunnen speculeren dat dit hoge percentage van minder dan ideale FCP-metingen een bron van frustratie en verminderde gebruikerservaring is.
 
-Talrijke factoren kunnen verven vertragen, zoals serverlatentie (gemeten aan de hand van een handvol metrische gegevens, zoals [<span Lang="en">Time to First Byte</span> (TTFB)](#time-to-first-byte) en RTT), het blokkeren van JavaScript-verzoeken of ongepaste behandeling van aangepaste lettertypen om er maar een paar te noemen.
+Talrijke factoren kunnen verven vertragen, zoals serverlatentie (gemeten aan de hand van een handvol metrische gegevens, zoals [<span Lang="en">Time to First Byte</span> (TTFB)](#time-to-first-byte) en RTT), het blokkeren van JavaScript-verzoeken of ongepaste behandeling van aangepaste lettertypen om er maar een paar te noemen.<!-- markdownlint-disable-line MD051 -->
 
 ### FCP op geografische locatie
 
@@ -301,7 +301,7 @@ Nogmaals, er zijn verschillende redenen die FCP negatief beïnvloeden, zoals sle
 
 Net als bij andere statistieken wordt FCP beïnvloed door verbindingssnelheden. Op 3G scoort slechts 2% van de ervaringen goed, terwijl op 4G 31%. Het is geen ideale staat van FCP-prestaties, maar het [is verbeterd sinds 2019](../2019/performance#fcp-by-effectieve-verbindingstype) op sommige gebieden, wat opnieuw kan worden veroorzaakt door de verandering in categorisering van goede en slechte categorisering. We zien dezelfde stijging in het percentage goede websites en slechte websites, waardoor het aantal matige ("moet worden verbeterd") site-ervaringen worden verkleind.
 
-Deze trend illustreert de groeiende digitale kloof, waarbij ervaringen op langzamere netwerken en mogelijk minder capabele apparaten consequent slechter zijn. Het verbeteren van FCP op langzame verbindingen hangt direct samen met het verbeteren van TTFB, wat we zien in [Geaggregeerde TTFB-prestaties per diagram met verbindingstypes](#ttfb-by-connection-type) - slecht TTFB = slecht FCP.
+Deze trend illustreert de groeiende digitale kloof, waarbij ervaringen op langzamere netwerken en mogelijk minder capabele apparaten consequent slechter zijn. Het verbeteren van FCP op langzame verbindingen hangt direct samen met het verbeteren van TTFB, wat we zien in [Geaggregeerde TTFB-prestaties per diagram met verbindingstypes](#ttfb-per-verbindingstype) - slecht TTFB = slecht FCP.
 
 De keuze van <a hreflang="en" href="https://ismyhostfastyet.com/">hostingprovider</a> of <a hreflang="en" href="https://www.cdnperf.com/">CDN</a> zal een trapsgewijs effect hebben op de snelheid. Het nemen van deze beslissingen op basis van de snelst mogelijke levering zal helpen bij het verbeteren van FCP en TTFB, vooral op langzamere netwerken. FCP wordt ook aanzienlijk beïnvloed door de laadtijd van lettertypen, dus <a hreflang="en" href="https://web.dev/font-display/">ervoor zorgen dat tekst zichtbaar is terwijl weblettertypen worden gedownload</a> is ook een waardevolle strategie (vooral waar bij langzamere verbindingen deze bronnen kostbaar zijn om te halen).
 

@@ -45,7 +45,7 @@ Las recomendaciones para mitigar los costos de rendimiento de cargar fuentes web
   )
 }}
 
-El hecho de que tres cuartas partes estén alojadas tal vez no sea sorprendente dado el dominio de Google Fonts que discutiremos [más adelante](#cuales-son-los-dominios-de-terceros-mas-populares?).
+El hecho de que tres cuartas partes estén alojadas tal vez no sea sorprendente dado el dominio de Google Fonts que discutiremos [más adelante](#¿cuáles-son-los-dominios-de-terceros-más-populares).<!-- markdownlint-disable-line MD051 -->
 
 Google ofrece fuentes que utilizan archivos CSS de terceros alojados en `https://fonts.googleapis.com`. Los desarrolladores agregan solicitudes a estas hojas de estilo usando etiquetas`<link>` en su código. Si bien estas hojas de estilo bloquean el procesamiento, son muy pequeñas. Sin embargo, los archivos de fuentes se alojan en otro dominio, `https://fonts.gstatic.com`. El modelo de requerir dos peticiones separadas a dos dominios diferentes hace que `preconnect` sea una gran opción aquí para la segunda solicitud que no se descubrirá hasta que se descargue el CSS.
 

@@ -21,8 +21,9 @@ on:
   workflow_dispatch:
   pull_request:
     paths:
-      - '**.html'
-      - '**.md'
+      - 'src/content/*/*/*.md'
+      - 'src/templates/*/*/*.html'
+      - 'src/templates/*/*.html'
 
 jobs:
   check_lengths:

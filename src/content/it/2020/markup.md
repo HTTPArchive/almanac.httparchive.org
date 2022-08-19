@@ -162,7 +162,7 @@ Per la produzione, i commenti HTML vengono solitamente rimossi dagli strumenti d
 
 ### Utilizzo dello script
 
-Come mostrato nella sezione [Elementi principali](#top-elements) di seguito, l'elemento `script` è il sesto elemento HTML utilizzato più di frequente. Per gli scopi di questo capitolo, eravamo interessati al modo in cui l'elemento `script` viene utilizzato in questi milioni di pagine dal set di dati.
+Come mostrato nella sezione [Elementi principali](#gli-elementi-principali) di seguito, l'elemento `script` è il sesto elemento HTML utilizzato più di frequente. Per gli scopi di questo capitolo, eravamo interessati al modo in cui l'elemento `script` viene utilizzato in questi milioni di pagine dal set di dati.
 
 Complessivamente, circa il 2% delle pagine non contiene affatto script, nemmeno script di dati strutturati con l'attributo `type="application/ld+json"`. Considerando che al giorno d'oggi è abbastanza comune per una pagina includere almeno uno script per una soluzione di analisi, questo sembra degno di nota.
 
@@ -759,7 +759,7 @@ Questa sezione si concentra su come gli attributi vengono usati nei documenti ed
 
 ### Gli attributi principali
 
-Simile alla sezione sugli [elementi popolari](#top-elements), questa sezione approfondisce gli attributi più popolari sul Web. Dato quanto è importante l'attributo `href` per il web stesso, o l'attributo `alt` per rendere le informazioni [accessibili](./accessibility#images-and-their-text-alternatives), questi attributi sarebbero i più popolari?
+Simile alla sezione sugli [elementi popolari](#gli-elementi-principali), questa sezione approfondisce gli attributi più popolari sul Web. Dato quanto è importante l'attributo `href` per il web stesso, o l'attributo `alt` per rendere le informazioni [accessibili](./accessibility#images-and-their-text-alternatives), questi attributi sarebbero i più popolari?
 
 <figure>
   <table>
@@ -1321,11 +1321,11 @@ Abbiamo accennato ad alcune osservazioni nel corso del capitolo, ma come rifless
 
 Meno pagine arrivano in modalità quirks. Nel 2016, quel numero era di <a hreflang="en" href="https://discuss.httparchive.org/t/how-many-and-which-pages-are-in-quirks-mode/777">circa il 7,4%</a>. Alla fine del 2019, abbiamo osservato [4,85%](https://twitter.com/zcorpan/status/1205242913908838400). E ora siamo al 3,97% circa. Questa tendenza, per parafrasare [Simon Pieters](./contributors#zcorpan) nella sua revisione di questo capitolo, sembra chiaro e incoraggiante.
 
-Sebbene non ci siano dati storici per tracciare il quadro completo dello sviluppo, il markup `div`, `span` e `i` "senza significato" ha praticamente [sostituito](#top-elements) il markup `table` che abbiamo osservato negli anni '90 e nei primi anni 2000. Sebbene ci si possa chiedere se gli elementi `div` e `span` siano sempre usati senza che ci sia un'alternativa semanticamente più appropriata, questi elementi sono ancora preferibili al markup `table`, sebbene, come durante il periodo di massimo splendore del vecchio web, questi erano apparentemente utilizzati per tutto tranne che per i dati tabulari.
+Sebbene non ci siano dati storici per tracciare il quadro completo dello sviluppo, il markup `div`, `span` e `i` "senza significato" ha praticamente [sostituito](#gli-elementi-principali) il markup `table` che abbiamo osservato negli anni '90 e nei primi anni 2000. Sebbene ci si possa chiedere se gli elementi `div` e `span` siano sempre usati senza che ci sia un'alternativa semanticamente più appropriata, questi elementi sono ancora preferibili al markup `table`, sebbene, come durante il periodo di massimo splendore del vecchio web, questi erano apparentemente utilizzati per tutto tranne che per i dati tabulari.
 
-Gli elementi per pagina e i tipi di elementi per pagina sono rimasti più o meno gli stessi, mostrando [nessun cambiamento significativo](#element-diversity) nella nostra pratica di scrittura HTML rispetto al 2019. Tali modifiche potrebbero richiedere più tempo per manifestarsi.
+Gli elementi per pagina e i tipi di elementi per pagina sono rimasti più o meno gli stessi, mostrando [nessun cambiamento significativo](#diversità-degli-elementi) nella nostra pratica di scrittura HTML rispetto al 2019. Tali modifiche potrebbero richiedere più tempo per manifestarsi.
 
-Gli elementi proprietari specifici del prodotto come `g:plusone` (utilizzato su 17.607 pagine nell'esempio mobile) e `fb:like` (11.335) sono quasi scomparsi dopo essere ancora [tra i più popolari](../2019/markup#products-and-libraries-and-their-custom-markup) l'anno scorso. Tuttavia, osserviamo più [elementi personalizzati](#custom-elements) per cose come Slider Revolution, AMP e Angular. Anche elementi come `ym-measure`, `jdiv` e `ymaps` sono ancora prevalenti. Quello che immaginiamo di vedere qui è che, sotto il mare di pratiche che cambiano lentamente, l'HTML è in fase di sviluppo e manutenzione, con autori che rimuovono markup deprecati e adottano nuove soluzioni.
+Gli elementi proprietari specifici del prodotto come `g:plusone` (utilizzato su 17.607 pagine nell'esempio mobile) e `fb:like` (11.335) sono quasi scomparsi dopo essere ancora [tra i più popolari](../2019/markup#products-and-libraries-and-their-custom-markup) l'anno scorso. Tuttavia, osserviamo più [elementi personalizzati](#elementi-personalizzati) per cose come Slider Revolution, AMP e Angular. Anche elementi come `ym-measure`, `jdiv` e `ymaps` sono ancora prevalenti. Quello che immaginiamo di vedere qui è che, sotto il mare di pratiche che cambiano lentamente, l'HTML è in fase di sviluppo e manutenzione, con autori che rimuovono markup deprecati e adottano nuove soluzioni.
 
 Ora, il [capitolo 2019 Web Almanac Markup](../2019/markup) ha lavorato nel riassumere 14 anni di sviluppo su quest argomento, quindi potresti pensare che non avremmo molto da coprire nell'anno successivo. Tuttavia quello che osserviamo con i dati di quest'anno è che c'è molto movimento sia in superfice che nel fondale del mare dell'HTML. Ci avviciniamo all'adozione quasi completa dell'HTML vivente. Siamo pronti a sfoltire le nostre pagine di mode come i widget di Google e Facebook. Siamo anche veloci nell'adottare ed evitare i framework, poiché sia Angular che AMP (sebbene un "framework di componenti") sembrano aver perso in modo significativo in popolarità, probabilmente per soluzioni come React e Vue.
 

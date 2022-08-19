@@ -105,6 +105,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 
 
 {% macro render_byline() %}
+<div class="bylines">
   <div class="byline">{{ self.written_by_before() }}
   {% for author in metadata.get('authors') %}
   <a class="author" href="{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.length > 2 %}{{ self.comma() if loop.index < loop.length - 1 }}{{ self.oxford_comma() if loop.index == loop.length - 1 }}{% endif %}
@@ -147,6 +148,50 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
   {% endfor %}{{ self.translated_by_after() }}
   </div>
   {% endif %}
+</div>
+{% endmacro %}
+
+{% macro render_publish_dates() %}
+<div class="article-dates">
+  <div class="article-date">
+  {{ self.date_published() }}<time id="published-date" datetime="{{ date_published }}">{{ date_published[0:4] }}/{{ date_published[5:7] }}/{{ date_published[8:10] }}</time>
+  </div>
+  {% if date_published != date_modified %}
+  <div class="article-date">
+    {{ self.date_updated() }}<time id="modified-date" datetime="{{ date_modified }}">{{ date_modified[0:4] }}/{{ date_modified[5:7] }}/{{ date_modified[8:10] }}</time>
+  </div>
+  {% endif %}
+  <script nonce="{{ csp_nonce() }}">
+    // Update chapter dates to locale/language-specific format immeadiately with inline
+    // script to avoid annoying shift as much as possible since this is in initial viewport.
+    function formatDates(selector) {
+      if (window.Intl && window.Intl.DateTimeFormat) {
+        var publishedDateElement=document.querySelector(selector);
+        if (!publishedDateElement) return;
+        var publishedDate = new Date(publishedDateElement.getAttribute("datetime"));
+
+        // Set up the date format - initially using the users default locale
+        // This allows different locales in same language to be respected
+        // (e.g. en-GB or en-US).
+        var options = { day: "numeric", month: "short", year: "numeric" };
+        var dateFormat = new Intl.DateTimeFormat([], options)
+        const usedOptions = dateFormat.resolvedOptions();
+        if (!usedOptions.locale.startsWith("{{ lang }}")) {
+          // Reader is looking at a page in a language that is not their default locale
+          // Set date format to page's language locale to avoid incorrect date translation.
+          dateFormat = new Intl.DateTimeFormat("{{ lang }}", options)
+        }
+        publishedDateElement.innerHTML = dateFormat.format(publishedDate);
+
+      } else {
+        console.log("Could not format date");
+      }
+    }
+
+    formatDates("#published-date");
+    formatDates("#modified-date");
+  </script>
+</div>
 {% endmacro %}
 
 {% macro render_webmentions() %}
@@ -352,6 +397,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                 <span class="chapter-unedited">{{ self.unedited() }}</span>
                 {% endif %}
             </h1>
+            {{ render_publish_dates() }}
             <!-- Show large image for large screens and high density screens and use avif and webp when supported -->
             <picture>
               <source media="(min-width: 866px)" type="image/avif" srcset="{{ chapter_hero_dir }}hero_lg.avif" />

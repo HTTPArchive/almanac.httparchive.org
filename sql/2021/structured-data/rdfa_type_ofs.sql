@@ -2,7 +2,7 @@
 # Count RDFa Type Ofs
 CREATE TEMP FUNCTION getRDFaTypeOfs(rendered STRING)
 RETURNS ARRAY<STRING>
-LANGUAGE js AS """
+LANGUAGE js AS r"""
   try {
     rendered = JSON.parse(rendered);
     return rendered.rdfa_typeofs.map(typeOf => typeOf.toLowerCase().trim().split(/\s+/)).flat();
