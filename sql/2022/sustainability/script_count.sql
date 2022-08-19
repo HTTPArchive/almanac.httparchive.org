@@ -21,7 +21,7 @@ FROM (
   SELECT
     _TABLE_SUFFIX,
     url,
-  percentile,
+    percentile,
     getStylesheets(payload) AS stylesheets
   FROM
     `httparchive.pages.2022_06_01_*`,
