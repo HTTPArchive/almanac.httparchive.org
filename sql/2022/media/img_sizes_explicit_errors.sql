@@ -31,7 +31,7 @@ FROM (
     a.url AS pageUrl,
     respimg
   FROM
-    `httparchive.pages.2021_07_01_*` AS a,
+    `httparchive.pages.2022_06_01_*` AS a,
     UNNEST(get_responsive_settings(JSON_EXTRACT_SCALAR(payload, '$._responsive_images'))) AS respimg
   WHERE
     respimg.srcsetHasWDescriptors)

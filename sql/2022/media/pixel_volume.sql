@@ -40,15 +40,15 @@ FROM (
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._Resolution'), '$.absolute.height') AS FLOAT64) AS viewport_height,
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._Resolution'), '$.absolute.width') AS FLOAT64) AS viewport_width
   FROM
-    `httparchive.pages.2021_07_01_*`),
+    `httparchive.pages.2022_06_01_*`),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 WHERE
   # it appears the _Images array is populated only from <img> tag requests and not CSS or favicon
   # likewise the bigImageCount and smallImageCount only track images > 100,000 and < 10,000 respectively.
   # Meaning images between 10KB and 100KB won't show up in the count
   # https://github.com/WPO-Foundation/webpagetest/blob/master/www/breakdown.inc#L95
-  cssPixels > 0 AND
-  naturalPixels > 0
+  css_pixels > 0 AND
+  natural_pixels > 0
 GROUP BY
   percentile,
   client

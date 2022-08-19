@@ -28,7 +28,7 @@ FROM (
     REGEXP_CONTAINS(imageurl.url, r'.*[,\/]w_\d+.*') AS imgcdn1,
     REGEXP_CONTAINS(imageurl.url, r'\?.*w=.*') AS imgcdn2
   FROM
-    `httparchive.pages.2021_07_01_*` AS a,
+    `httparchive.pages.2022_06_01_*` AS a,
     UNNEST(get_images(JSON_EXTRACT_SCALAR(payload, '$._Images'))) AS imageurl)
 GROUP BY
   client

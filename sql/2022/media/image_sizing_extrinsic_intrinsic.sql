@@ -23,7 +23,7 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, image.property) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, image.property) AS pct
 FROM
-  `httparchive.pages.2021_07_01_*`,
+  `httparchive.pages.2022_06_01_*`,
   UNNEST(getImageSizing(payload)) AS image
 GROUP BY
   client,

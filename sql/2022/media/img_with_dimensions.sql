@@ -43,7 +43,7 @@ FROM (
     hasAlt,
     hasReservedLayoutDimension
   FROM
-    `httparchive.pages.2021_07_01_*`,
+    `httparchive.pages.2022_06_01_*`,
     UNNEST(get_image_info(JSON_VALUE(payload, '$._responsive_images'))))
 GROUP BY
   client
