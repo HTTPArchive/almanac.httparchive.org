@@ -44,17 +44,7 @@ catch (e) {
 }
 ''';
 
-WITH totals AS (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_pages
-  FROM
-    `httparchive.summary_pages.2022_07_01_*` -- noqa: L062
-  GROUP BY
-    client
-),
-
-print_stylesheets AS (
+WITH print_stylesheets AS (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page,
@@ -62,6 +52,16 @@ print_stylesheets AS (
   FROM
     `httparchive.pages.2022_07_01_*`, -- noqa: L062
     UNNEST(getPrintStylesheets(payload)) AS css_url
+),
+
+totals AS (
+  SELECT
+    client,
+    COUNT(DISTINCT page) AS total_pages
+  FROM
+    print_stylesheets
+  GROUP BY
+    client
 )
 
 SELECT
