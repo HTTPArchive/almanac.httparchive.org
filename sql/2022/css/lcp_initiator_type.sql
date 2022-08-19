@@ -5,7 +5,7 @@ WITH lcp AS (
     JSON_VALUE(payload, '$._performance.lcp_resource.initiator.url') AS url,
     COUNT(0) OVER (PARTITION BY _TABLE_SUFFIX) AS total
   FROM
-  `httparchive.pages.2022_06_01_*`
+    `httparchive.pages.2022_06_01_*`
 ),
 
 requests AS (
