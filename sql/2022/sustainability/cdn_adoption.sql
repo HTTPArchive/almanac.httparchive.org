@@ -2,7 +2,7 @@
 # The distribution of CDN adoption on websites by client.
 SELECT
   client,
-  cdn,
+  IF(cdn = '', 'No CDN', cdn) AS cdn,
   COUNT(0) AS freq,
   total,
   COUNT(0) / total AS pct
