@@ -9,7 +9,7 @@ SELECT
   COUNTIF(IFNULL(a.protocol, b.protocol) NOT IN ('HTTP/1.1', 'HTTP/2', 'H3-29', 'H3-Q050')) AS http_other,
   COUNT(0) AS total,
   COUNTIF(IFNULL(a.protocol, b.protocol) = 'HTTP/1.1') / COUNT(0) AS http11_pct,
-  COUNTIF(IFNULL(a.protocol, b.protocol)  IN ('HTTP/2', 'H3-29', 'H3-Q050')) / COUNT(0) AS http2plus_pct,
+  COUNTIF(IFNULL(a.protocol, b.protocol) IN ('HTTP/2', 'H3-29', 'H3-Q050')) / COUNT(0) AS http2plus_pct,
   COUNTIF(IFNULL(a.protocol, b.protocol) NOT IN ('HTTP/1.1', 'HTTP/2', 'H3-29', 'H3-Q050')) / COUNT(0) AS http_other_pct
 FROM (
   SELECT
