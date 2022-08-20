@@ -56,7 +56,7 @@ lcp_stats AS (
     getLoadingClasses(JSON_EXTRACT(payload, '$._performance.lcp_elem_stats.attributes')) AS classWithLazyload
   FROM
     `httparchive.pages.2022_06_01_*`
-  )
+)
 
 SELECT
   client,
