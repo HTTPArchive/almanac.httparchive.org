@@ -1,39 +1,38 @@
 #standardSQL
-# images srcset candidates average
-CREATE TEMPORARY FUNCTION get_media_info(media_string STRING)
-RETURNS STRUCT<
-  num_srcset_all INT64,
-  num_srcset_candidates_avg INT64
-> LANGUAGE js AS '''
-var result = {};
+# distribution of number of srcset candidates
+
+CREATE TEMPORARY FUNCTION getNumberOfSrcsetCandidates(payload STRING)
+RETURNS ARRAY<INT64>
+LANGUAGE js AS '''
 try {
-    var media = JSON.parse(media_string);
+  var $ = JSON.parse(payload);
+  var responsiveImages = JSON.parse($._responsive_images);
+  responsiveImages = responsiveImages['responsive-images'];
 
-    if (Array.isArray(media) || typeof media != 'object') return result;
-
-    result.num_srcset_all = media.num_srcset_all;
-    result.num_srcset_candidates_avg =
-      media.num_srcset_all == 0? 0: (media.num_srcset_candidates / media.num_srcset_all);
-
-} catch (e) {}
-return result;
+  return responsiveImages.map(({srcsetCandidateDensities}) =>
+    (srcsetCandidateDensities && srcsetCandidateDensities.length) ? srcsetCandidateDensities.length : null
+  );
+} catch (e) {
+  return [];
+}
 ''';
 
 SELECT
+  percentile,
   client,
-  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_all > 0), COUNT(0)) AS pages_with_srcset_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg >= 1 AND media_info.num_srcset_candidates_avg <= 3), COUNTIF(media_info.num_srcset_all > 0)) AS pages_with_srcset_candidates_1_3_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg >= 1 AND media_info.num_srcset_candidates_avg <= 5), COUNTIF(media_info.num_srcset_all > 0)) AS pages_with_srcset_candidates_1_5_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg > 5 AND media_info.num_srcset_candidates_avg <= 10), COUNTIF(media_info.num_srcset_all > 0)) AS pages_with_srcset_candidates_5_10_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg > 10 AND media_info.num_srcset_candidates_avg <= 15), COUNTIF(media_info.num_srcset_all > 0)) AS pages_with_srcset_candidates_10_15_pct,
-  SAFE_DIVIDE(COUNTIF(media_info.num_srcset_candidates_avg > 15 AND media_info.num_srcset_candidates_avg <= 20), COUNTIF(media_info.num_srcset_all > 0)) AS pages_with_srcset_candidates_15_20_pct
+  APPROX_QUANTILES(numberOfCandidates, 1000)[OFFSET(percentile * 10)] AS numberOfCandidates
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    get_media_info(JSON_EXTRACT_SCALAR(payload, '$._media')) AS media_info
+    numberOfCandidates
   FROM
-    `httparchive.pages.2022_06_01_*`)
+    `httparchive.pages.2022_06_01_*`,
+    UNNEST(getNumberOfSrcsetCandidates(payload)) AS numberOfCandidates
+),
+UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 GROUP BY
+  percentile,
   client
 ORDER BY
+  percentile,
   client
