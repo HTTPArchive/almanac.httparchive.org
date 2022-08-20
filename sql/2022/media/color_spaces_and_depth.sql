@@ -3,7 +3,7 @@
 
 WITH color_info AS (
   SELECT
-    _TABLE_SUFFIX as client,
+    _TABLE_SUFFIX AS client,
     JSON_EXTRACT( payload, '$._image_details.magick.depth') AS color_depth,
     JSON_EXTRACT( payload, '$._image_details.magick.colorspace') AS color_space,
     JSON_EXTRACT( payload, '$._image_details.magick.properties.icc:description') AS description
