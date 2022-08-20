@@ -9,9 +9,9 @@ try {
     walkDeclarations(ast, ({property, value}) => {
       const propName = property.toLowerCase();
 
-      if (propName.startsWith('font-variant')) {
+      if (propName.startsWith('font-variant-') && property.value !== 'none' && property.value !== 'normal') {
         incrementByKey(ret, 'font-variant');
-      } else if (propName === 'font-feature-settings') {
+      } else if (propName === 'font-feature-settings' && property.value !== 'normal') {
         incrementByKey(ret, 'font-feature-settings');
       }
     });
@@ -33,7 +33,7 @@ WITH totals AS (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_pages
   FROM
-    `httparchive.summary_pages.2022_07_01_*`
+    `httparchive.summary_pages.2022_07_01_*` --noqa: L062
   GROUP BY
     client
 )

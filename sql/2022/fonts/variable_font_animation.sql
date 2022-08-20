@@ -5,8 +5,16 @@ OPTIONS(library = "gs://httparchive/lib/css-utils.js")
 AS '''
 try {
   var ast = JSON.parse(css);
-  // TODO: This only includes transitions, but most animations are most likely in keyframes.
-  return countDeclarations(ast.stylesheet.rules, {properties: 'transition', values: /font-variation-settings/}) > 0;
+  let count = 0;
+
+  walkRules(ast, rule => {
+    rule.keyframes.forEach(f => {
+      count += countDeclarations(f, { properties: 'font-variation-settings' });
+    });
+  }, { type: 'keyframes' });
+
+  count += countDeclarations(ast.stylesheet.rules, {properties: 'transition', values: /font-variation-settings/})
+  return count > 0;
 } catch (e) {
   return false;
 }
