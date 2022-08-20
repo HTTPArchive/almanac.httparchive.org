@@ -2,6 +2,7 @@
 # Count of pages which use wasm at page ranking intervals.
 
 SELECT
+  client,
   _rank AS rank,
   COUNT(DISTINCT page) AS pages
 FROM
@@ -12,6 +13,7 @@ WHERE
   (mimeType = 'application/wasm' OR ext = 'wasm') AND
   rank <= _rank
 GROUP BY
+  client,
   rank
 ORDER BY
   rank

@@ -17,7 +17,6 @@ SELECT
   END AS name,
   COUNT(0) AS count,
   COUNT(DISTINCT NET.REG_DOMAIN(url)) AS count_serving_hosts,
-  MIN(url) AS url
 FROM
   `httparchive.almanac.requests`
 WHERE
