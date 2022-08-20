@@ -40,7 +40,7 @@ FROM (
     url,
     get_decode_info(JSON_EXTRACT_SCALAR(payload, '$._Images')) AS images_info
   FROM
-    `httparchive.pages.2022_07_01_*`)
+    `httparchive.pages.2022_06_01_*`)
 GROUP BY
   client
 ORDER BY
