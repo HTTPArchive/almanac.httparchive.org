@@ -1,5 +1,6 @@
 #standardSQL
 # usage of alt text in images
+
 CREATE TEMPORARY FUNCTION get_markup_info(markup_string STRING)
 RETURNS STRUCT<
   total INT64,

@@ -1,4 +1,6 @@
+#standardSQL
 # Number of picture elements per page
+
 SELECT
   percentile,
   client,

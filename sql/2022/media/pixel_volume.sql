@@ -1,5 +1,6 @@
 #standardSQL
-# pixel volume
+# pixel areas
+
 CREATE TEMPORARY FUNCTION getCssPixels(payload STRING)
 RETURNS INT64 LANGUAGE js AS '''
 try {

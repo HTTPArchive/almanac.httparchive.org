@@ -1,4 +1,6 @@
 #standardSQL
+# What attribute *names* are common?
+
 WITH videonotes AS (
   SELECT
     _TABLE_SUFFIX AS client,

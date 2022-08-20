@@ -1,5 +1,5 @@
 #standardSQL
-# get video source types
+# What types are most common?
 
 SELECT
   client,

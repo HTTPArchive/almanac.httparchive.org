@@ -1,4 +1,6 @@
 #standardSQL
+# What percent of <img>s have decode=async?
+
 CREATE TEMPORARY FUNCTION get_decode_info(images_string STRING)
 RETURNS STRUCT<
   total INT64,

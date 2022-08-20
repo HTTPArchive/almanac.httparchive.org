@@ -1,5 +1,7 @@
 #standardSQL
 # LCP element node details
+# How many LCPs had images? (either <img>s or as background images)?
+# How many of those <img>s were lazy-loaded (anti-pattern!)
 
 CREATE TEMP FUNCTION getLoadingAttr(attributes STRING) RETURNS STRING LANGUAGE js AS '''
   try {

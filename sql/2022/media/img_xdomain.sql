@@ -1,5 +1,7 @@
 #standardSQL
 # Cross domain image requests
+# Note to the future this would be more interesting if it looked at origins
+
 CREATE TEMPORARY FUNCTION get_images(images_string STRING)
 RETURNS ARRAY<STRUCT<url STRING>>
 LANGUAGE js AS '''

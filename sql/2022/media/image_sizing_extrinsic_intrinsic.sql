@@ -1,3 +1,6 @@
+#standardSQL
+# Are <img>s sized extrinsically or intrinsically (both height and width)?
+
 CREATE TEMPORARY FUNCTION getImageSizing(payload STRING)
 RETURNS ARRAY<STRUCT<property STRING, value STRING>>
 LANGUAGE js AS '''

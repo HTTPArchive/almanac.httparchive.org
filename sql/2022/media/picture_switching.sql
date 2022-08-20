@@ -1,3 +1,6 @@
+#standardSQL
+# How many picture elements are doing media and type switching?
+
 CREATE TEMPORARY FUNCTION getPictureSwitching(payload STRING)
 RETURNS ARRAY<STRUCT<pictureMediaSwitching BOOLEAN, pictureTypeSwitching BOOLEAN>>
 LANGUAGE js AS '''

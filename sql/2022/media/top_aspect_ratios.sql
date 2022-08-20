@@ -1,3 +1,6 @@
+#standardSQL
+# top particular aspect ratios
+
 CREATE TEMPORARY FUNCTION getSrcsetInfo(responsiveImagesJsonString STRING)
 RETURNS ARRAY<STRUCT<imgURL STRING, approximateResourceWidth INT64, approximateResourceHeight INT64, aspectRatio NUMERIC, resourceFormat STRING>>
 LANGUAGE js AS '''

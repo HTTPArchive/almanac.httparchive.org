@@ -1,4 +1,5 @@
 #standardSQL
+# What type stacks are most common?
 
 WITH videonotes AS (
   SELECT

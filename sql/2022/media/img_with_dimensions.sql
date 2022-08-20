@@ -1,8 +1,7 @@
 #standardSQL
-# usage meta open graph
-
-# extracts the data about width, height and alt from the new customer metric
+# extracts the data about width, height and alt
 # using this, counts and reports on the usage for each attribute
+
 CREATE TEMPORARY FUNCTION get_image_info(responsiveString STRING)
 RETURNS ARRAY<STRUCT<hasWidth INT64, hasHeight INT64, hasAlt INT64, hasReservedLayoutDimension INT64>>
 LANGUAGE js AS '''

@@ -1,5 +1,6 @@
 #standardSQL
-# images srcset candidates average
+# images srcset candidates' densities: do they cover useful ranges?
+
 CREATE TEMPORARY FUNCTION getSrcsetInfo(responsiveImagesJsonString STRING)
 RETURNS ARRAY<STRUCT<
     hasSrcset BOOL,

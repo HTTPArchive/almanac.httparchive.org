@@ -1,6 +1,5 @@
 #standardSQL
-# pixel volume
-
+# Distribution of image layout widths
 
 CREATE TEMPORARY FUNCTION layoutDimensions(payload STRING)
 RETURNS ARRAY<STRUCT<clientWidth INT64, clientHeight INT64>>

@@ -1,4 +1,5 @@
 #standardSQL
+# How are video elements styled with CSS?
 
 WITH videonotes AS (
   SELECT

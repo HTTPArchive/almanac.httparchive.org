@@ -1,4 +1,5 @@
 #standardSQL
+# What attribute *values* are common?
 
 WITH videonotes AS (
 

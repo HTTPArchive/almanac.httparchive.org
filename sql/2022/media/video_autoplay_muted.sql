@@ -1,5 +1,5 @@
 #standardSQL
-# video autoplay/muted
+# How many videos are autoplay/muted
 
 # returns all the data we need from _media
 CREATE TEMPORARY FUNCTION get_media_info(media_string STRING)

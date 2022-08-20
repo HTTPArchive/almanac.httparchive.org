@@ -1,3 +1,6 @@
+#standardSQL
+# How many pages use <video>?
+
 SELECT
   client,
   COUNTIF(num_video_nodes > 0) AS pages,

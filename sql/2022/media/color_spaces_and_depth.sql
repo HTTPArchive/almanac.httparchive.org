@@ -1,5 +1,6 @@
 #standardSQL
 # info on color depth and spaces – will need to be further filtered/aggregated, but this is everything
+
 WITH color_info AS (
 SELECT
   _TABLE_SUFFIX as client,

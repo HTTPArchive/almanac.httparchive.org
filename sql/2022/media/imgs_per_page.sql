@@ -1,3 +1,6 @@
+#standardSQL
+# Distribution of number-of-images per page
+
 CREATE TEMPORARY FUNCTION numberOfImages(images_string STRING)
 RETURNS INT64
 LANGUAGE js AS '''

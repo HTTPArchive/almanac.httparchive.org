@@ -1,5 +1,7 @@
 #standardSQL
+# How has lazy-loading adoption changed over time?
 # copied from https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2021/resource-hints/imgLazy.sql
+
 SELECT
   SUBSTR(_TABLE_SUFFIX, 0, 10) AS date,
   IF(ENDS_WITH(_TABLE_SUFFIX, 'desktop'), 'desktop', 'mobile') AS client,

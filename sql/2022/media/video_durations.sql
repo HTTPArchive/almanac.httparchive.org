@@ -1,4 +1,5 @@
 #standardSQL
+# How long are the web's <video>s?
 
 WITH videonotes AS (
   SELECT

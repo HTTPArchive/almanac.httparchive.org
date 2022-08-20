@@ -1,3 +1,6 @@
+#standardSQL
+# Format adoption
+
 CREATE TEMPORARY FUNCTION fixFormat(format STRING, mimeType STRING)
 RETURNS STRING
 LANGUAGE js AS '''

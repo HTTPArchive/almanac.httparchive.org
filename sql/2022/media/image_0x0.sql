@@ -1,3 +1,6 @@
+#standardSQL
+# <img>s whose sources have no dimensions (mostly not loaded because loading=lazy)
+
 CREATE TEMPORARY FUNCTION getPixelInfo(responsiveImagesJsonString STRING)
 RETURNS ARRAY<STRUCT<imgURL STRING, approximateResourceWidth INT64, approximateResourceHeight INT64, byteSize INT64, isPixel BOOL, isDataURL BOOL>>
 LANGUAGE js AS '''

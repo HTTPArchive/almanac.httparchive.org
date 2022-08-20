@@ -1,3 +1,6 @@
+#standardSQL
+# distribution of the densities of srcset candidates
+
 CREATE TEMPORARY FUNCTION getSrcsetDensities(payload STRING)
 RETURNS ARRAY<STRUCT<currentSrcDensity INT64, srcsetCandidateDensities ARRAY<FLOAT64>>>
 LANGUAGE js AS '''

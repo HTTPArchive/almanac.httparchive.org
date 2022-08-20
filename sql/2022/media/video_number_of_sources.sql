@@ -1,4 +1,5 @@
 #standardSQL
+# How many <source>s per <video>?
 
 WITH videonotes AS (
   SELECT

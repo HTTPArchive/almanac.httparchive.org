@@ -1,3 +1,6 @@
+#standardSQL
+# What % of pages have at least one <img>?
+
 CREATE TEMPORARY FUNCTION numberOfImages(images_string STRING)
 RETURNS INT64
 LANGUAGE js AS '''

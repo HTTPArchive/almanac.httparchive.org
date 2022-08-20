@@ -1,3 +1,6 @@
+#standardSQL
+# What % of pages load at least one image?
+
 SELECT
   _TABLE_SUFFIX AS client,
   COUNTIF(reqImg > 0) AS atLeastOneImgReqCount,

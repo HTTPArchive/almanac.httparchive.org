@@ -1,3 +1,6 @@
+#standardSQL
+# Measuring img loaded bytes and dimensions, broken down by detected format
+
 CREATE TEMPORARY FUNCTION getSrcsetInfo(responsiveImagesJsonString STRING)
 RETURNS ARRAY<STRUCT<imgURL STRING, approximateResourceWidth INT64, approximateResourceHeight INT64, byteSize INT64, bitsPerPixel NUMERIC, isPixel BOOL, isDataURL BOOL, resourceFormat STRING>>
 LANGUAGE js AS '''

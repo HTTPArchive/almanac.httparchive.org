@@ -1,5 +1,6 @@
 #standardSQL
-# images with srcset w/wo sizes
+# images (and pages) with srcset w/wo sizes
+
 CREATE TEMPORARY FUNCTION get_media_info(media_string STRING)
 RETURNS STRUCT<
   num_srcset_all INT64,

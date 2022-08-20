@@ -1,5 +1,6 @@
 #standardSQL
 # picture using orientation
+
 CREATE TEMPORARY FUNCTION get_media_info(media_string STRING)
 RETURNS STRUCT<
   num_picture_img INT64,

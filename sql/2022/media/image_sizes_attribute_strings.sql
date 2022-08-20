@@ -1,3 +1,6 @@
+#standardSQL
+# What are the most common values for sizes attributes (lots of auto!)
+
 SELECT
   client,
   sizes,

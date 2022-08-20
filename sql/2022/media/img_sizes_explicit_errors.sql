@@ -1,3 +1,7 @@
+#standardSQL
+# how many sizes attributes had explicit errors?
+# also how many were implicit (100vw)
+
 CREATE TEMPORARY FUNCTION get_responsive_settings(images_string STRING)
 RETURNS ARRAY<STRUCT<sizes BOOL, srcsetHasWDescriptors BOOL, sizesWasImplicit BOOL, sizesParseError BOOL>>
 LANGUAGE js AS '''

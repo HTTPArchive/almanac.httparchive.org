@@ -1,5 +1,5 @@
 #standardSQL
-# measure the impact of innacurate sizes elements per page
+# measure the impact of innacurate sizes attributes per page
 
 CREATE TEMPORARY FUNCTION pageUsesWDescriptors(payload STRING)
 RETURNS BOOL
@@ -39,7 +39,7 @@ try {
   }, 0 );
 
 } catch (e) {
-  return -1;
+  return null;
 }
 ''';
 
@@ -60,7 +60,7 @@ try {
   }, 0 );
 
 } catch (e) {
-  return -1;
+  return null;
 }
 ''';
 

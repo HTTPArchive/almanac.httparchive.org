@@ -1,4 +1,6 @@
 #standardSQL
+# Looking for some obvious signs in the URL that the image is dynamically resized
+
 CREATE TEMPORARY FUNCTION get_images(images_string STRING)
 RETURNS ARRAY<STRUCT<url STRING>>
 LANGUAGE js AS '''

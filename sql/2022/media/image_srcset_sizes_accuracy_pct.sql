@@ -1,3 +1,6 @@
+#standardSQL
+# How accurate are srcset and sizes attributes, and what is the impact of sizes innacuracies on srcset selection?
+
 CREATE TEMPORARY FUNCTION getSrcsetSizesAccuracy(payload STRING)
 RETURNS ARRAY<STRUCT<srcsetHasWDescriptors BOOL, sizesAbsoluteError INT64, sizesRelativeError FLOAT64, wDescriptorAbsoluteError INT64, actualSizesEstimatedWastedLoadedPixels INT64>>
 LANGUAGE js AS '''
