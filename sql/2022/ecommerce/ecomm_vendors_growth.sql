@@ -4,12 +4,11 @@
 # Limiting to top 5000 records to continue further analysis in Google Sheets. Using HAVING clauses based on 'pct' results in missing data for certain months
 SELECT
   IF(ENDS_WITH(_TABLE_SUFFIX, '_desktop'), 'desktop', 'mobile') AS client,
+  REGEXP_REPLACE(_TABLE_SUFFIX, r'(\d+)_(\d+)_(\d+).*', r'\1-\2-\3') AS date,
   app,
   COUNT(DISTINCT url) AS freq,
   total,
-  COUNT(DISTINCT url) / total AS pct,
-  LEFT(_TABLE_SUFFIX, 4) AS year,
-  SUBSTR(_TABLE_SUFFIX, 6, 2) AS month
+  COUNT(DISTINCT url) / total AS pct
 FROM
   `httparchive.technologies.*`
 JOIN
@@ -24,6 +23,7 @@ JOIN
   )
 USING (_TABLE_SUFFIX)
 WHERE
+  _TABLE_SUFFIX >= '2019_07_01' AND
   category = 'Ecommerce' AND
   (
     app != 'Cart Functionality' AND
@@ -31,12 +31,13 @@ WHERE
   )
 GROUP BY
   client,
+  date,
   app,
-  year,
-  month,
   total
+HAVING
+  pct > 0.0005
 ORDER BY
+  client,
+  date DESC,
   pct DESC,
-  client DESC,
   app DESC
-LIMIT 5000
