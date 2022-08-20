@@ -116,3 +116,5 @@ USING
 GROUP BY
   client,
   app
+ORDER BY
+  pct DESC
