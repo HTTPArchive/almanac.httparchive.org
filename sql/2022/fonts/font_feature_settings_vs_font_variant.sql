@@ -9,7 +9,9 @@ try {
     walkDeclarations(ast, ({property, value}) => {
       const propName = property.toLowerCase();
 
-      if (propName.startsWith('font-variant')) {
+      if (propName === 'font-variant' && property.value === 'small-caps') {
+        incrementByKey(ret, 'font-variant');
+      } else if (propName.startsWith('font-variant-')) {
         incrementByKey(ret, 'font-variant');
       } else if (propName === 'font-feature-settings') {
         incrementByKey(ret, 'font-feature-settings');
