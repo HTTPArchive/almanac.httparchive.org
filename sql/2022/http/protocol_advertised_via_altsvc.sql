@@ -1,5 +1,5 @@
 #standardSQL
-# Detailed alt-svc headers per page
+# Protocol advertised via alt-svc breakdown
 CREATE TEMPORARY FUNCTION extractHTTPHeader(HTTPheaders STRING, header STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS """
 try {
@@ -37,7 +37,7 @@ WITH altsvcTable AS (
 SELECT
   client,
   protocol,
-  COUNT(0),
+  COUNT(0) AS protocol_count,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total_advertised,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_advertised
 FROM
