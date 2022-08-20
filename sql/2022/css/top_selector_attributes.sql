@@ -59,8 +59,8 @@ try {
 
 SELECT
   client,
-  pages,
   attribute.value AS attribute,
+  pages,
   attribute.count AS freq,
   attribute.count / pages AS pct
 FROM (
