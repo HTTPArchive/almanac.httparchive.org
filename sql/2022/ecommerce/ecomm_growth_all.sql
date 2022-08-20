@@ -22,11 +22,7 @@ JOIN
   )
 USING (_TABLE_SUFFIX)
 WHERE
-  category = 'Ecommerce' AND
-  (
-    app != 'Cart Functionality' AND
-    app != 'Google Analytics Enhanced eCommerce'
-  )
+  category = 'Ecommerce'
 GROUP BY
   client,
   date,

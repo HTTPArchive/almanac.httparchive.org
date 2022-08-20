@@ -3,7 +3,7 @@
 SELECT
   _TABLE_SUFFIX AS client,
   percentile,
-  APPROX_QUANTILES(bytesHtml, 1000)[OFFSET(percentile * 10)] / 1024 AS requests
+  APPROX_QUANTILES(bytesHtml, 1000)[OFFSET(percentile * 10)] / 1024 AS bytes
 FROM
   `httparchive.summary_pages.2022_06_01_*`
 JOIN
