@@ -72,8 +72,8 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    getTotalEstimatedWastedLoadedPixels(payload) as totalEstimatedWastedLoadedPixels,
-    getTotalEstimatedWastedLoadedBytes(payload) as totalEstimatedWastedLoadedBytes
+    getTotalEstimatedWastedLoadedPixels(payload) AS totalEstimatedWastedLoadedPixels,
+    getTotalEstimatedWastedLoadedBytes(payload) AS totalEstimatedWastedLoadedBytes
   FROM
     `httparchive.pages.2022_06_01_*`
   WHERE
