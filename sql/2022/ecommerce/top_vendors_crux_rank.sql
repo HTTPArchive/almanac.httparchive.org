@@ -30,7 +30,7 @@ FROM (
     )
   )
 JOIN (
-  SELECT DISTINCT
+  SELECT
     _TABLE_SUFFIX AS client,
     url,
     rank_grouping
