@@ -5,14 +5,18 @@
 #standardSQL
 SELECT
   client,
-  rank,
+  rank_grouping,
+  CASE
+    WHEN rank_grouping = 0 THEN ''
+    WHEN rank_grouping = 10000000 THEN 'all'
+    ELSE FORMAT("%'d", rank_grouping)
+  END AS ranking,
   app,
   COUNT(DISTINCT url) AS freq,
   total_pages,
-  COUNT(DISTINCT url) / total_pages AS pct,
-  COUNT(DISTINCT url) / rank AS rank_pct
+  COUNT(DISTINCT url) / total_pages AS pct
 FROM (
-  SELECT
+  SELECT DISTINCT
     _TABLE_SUFFIX AS client,
     app,
     url
@@ -26,35 +30,42 @@ FROM (
     )
   )
 JOIN (
-  SELECT
+  SELECT DISTINCT
     _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_pages
+    url,
+    rank_grouping
   FROM
-    `httparchive.summary_pages.2022_06_01_*`
+    `httparchive.summary_pages.2022_06_01_*`,
+    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+  WHERE
+    rank <= rank_grouping
   GROUP BY
-    client)
+    client,
+    url,
+    rank_grouping)
 USING
-  (client)
+  (client, url)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
-    url,
-    MAX(rank) AS rank
+    rank_grouping,
+    COUNT(DISTINCT url) AS total_pages
   FROM
     `httparchive.summary_pages.2022_06_01_*`,
-    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_magnitude
+    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
-    rank <= rank_magnitude
+    rank <= rank_grouping
   GROUP BY
-    client,
-    url)
+    rank_grouping,
+    client)
 USING
-  (client, url)
+  (client, rank_grouping)
 GROUP BY
   client,
-  rank,
+  rank_grouping,
   app,
   total_pages
 ORDER BY
-  rank,
+  client,
+  rank_grouping,
   pct DESC
