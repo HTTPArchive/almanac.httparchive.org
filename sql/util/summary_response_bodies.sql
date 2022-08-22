@@ -1,4 +1,4 @@
-SELECT --noqa: disable=L044
+SELECT -- noqa: disable=L044
   date,
   client,
   page,

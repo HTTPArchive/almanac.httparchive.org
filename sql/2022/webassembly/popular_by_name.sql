@@ -16,7 +16,7 @@ SELECT
       )
   END AS name,
   COUNT(0) AS count,
-  COUNT(DISTINCT NET.REG_DOMAIN(url)) AS count_serving_hosts,
+  COUNT(DISTINCT NET.REG_DOMAIN(url)) AS count_serving_hosts
 FROM
   `httparchive.almanac.requests`
 WHERE
