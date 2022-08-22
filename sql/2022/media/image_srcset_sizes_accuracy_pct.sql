@@ -32,7 +32,7 @@ SELECT
   COUNTIF(image.wDescriptorAbsoluteError > 0) / COUNTIF(image.srcsetHasWDescriptors) AS pct_any_w_descriptor_error,
   COUNTIF(image.actualSizesEstimatedWastedLoadedPixels > 0) / COUNTIF(image.srcsetHasWDescriptors) AS pct_sizes_error_impacted_srcset_selection
 FROM
-  `httparchive.pages.2022_06_01_*` TABLESAMPLE SYSTEM ( 0.1 PERCENT ),
+  `httparchive.pages.2022_06_01_*`,
   UNNEST(getSrcsetSizesAccuracy(payload)) AS image
 GROUP BY
   client
