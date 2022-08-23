@@ -73,7 +73,7 @@
         <h2 id="dataset"><a href="#dataset" class="anchor-link">About the dataset</a></h2>
 
         <p>
-          The HTTP Archive dataset is continuously updating with new data monthly. For the {{ year }} edition of the Web Almanac, unless otherwise noted in the chapter, all metrics were sourced from the July {{ year }} crawl. These results are <a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">publicly queryable</a> on BigQuery in tables prefixed with <code>{{ year }}_07_01</code>.
+          The HTTP Archive dataset is continuously updating with new data monthly. For the {{ year }} edition of the Web Almanac, unless otherwise noted in the chapter, all metrics were sourced from the June {{ year }} crawl. These results are <a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">publicly queryable</a> on BigQuery in tables prefixed with <code>{{ year }}_06_01</code>.
         </p>
 
         <p>
@@ -92,24 +92,23 @@
           {# To generate this markup temporarily add a ```sql code block to a chapter and generate that chapter and you&#8217;ll get the HTML #}
           {# Note extra attributes on pre tag to allow keyboard scroll so add them back in #}
           <pre role="region" aria-label="bytes_2021.sql" tabindex="0"><code class="sql language-sql"><span class="comment">#standardSQL</span>
-<span class="comment"># Sum of JS request bytes per page (2021)</span>
+<span class="comment"># Sum of JS request bytes per page (2022)</span>
 <span class="keyword">SELECT</span>
   percentile,
   _TABLE_SUFFIX <span class="keyword">AS</span> client,
   <span class="function call">APPROX_QUANTILES</span>(bytesJs / <span class="constant numeric">1024</span>, <span class="constant numeric">1000</span>)[<span class="function call">OFFSET</span>(percentile <span class="keyword operator">*</span> <span class="constant numeric">10</span>)] <span class="keyword">AS</span> js_kilobytes
 <span class="keyword">FROM</span>
-  <span class="string">`httparchive.summary_pages.2021_07_01_*`</span>,
+  <span class="string">`httparchive.summary_pages.2022_06_01_*`</span>,
   <span class="function call">UNNEST</span>([<span class="constant numeric">10</span>, <span class="constant numeric">25</span>, <span class="constant numeric">50</span>, <span class="constant numeric">75</span>, <span class="constant numeric">90</span>, <span class="constant numeric">100</span>]) <span class="keyword">AS</span> percentile
 <span class="keyword">GROUP</span> <span class="keyword">BY</span>
   percentile,
   client
 <span class="keyword">ORDER</span> <span class="keyword">BY</span>
-  percentile,
-  client</code></pre>
-        </div>
+  client,
+  percentile</code></pre></div>
 
         <p>
-          Results for each metric are publicly viewable in chapter-specific spreadsheets, for example <a href="https://docs.google.com/spreadsheets/d/1zU9rHpI3nC6jTz3xgN6w13afW7x34xAKBh2IPH-lVxk/edit#gid=18398250">JavaScript results</a>. Links to the raw results and queries are available at the bottom of each chapter. Metric-specific results and queries are also linked directly from each figure.
+          Results for each metric are publicly viewable in chapter-specific spreadsheets, for example <a href="https://docs.google.com/spreadsheets/d/1vOeFUyfEtWRen3Xj57ZsWav40n5tlcJoV0HmAxmNE_I/edit?usp=sharing">JavaScript results</a>. Links to the raw results and queries are available at the bottom of each chapter. Metric-specific results and queries are also linked directly from each figure.
         </p>
     </section>
 
@@ -117,7 +116,7 @@
         <h3 id="websites"><a href="#websites" class="anchor-link">Websites</a></h3>
 
         <p>
-          There are 8,198,531 websites in the dataset. Among those, 7,499,763 are mobile websites and 6,294,605 are desktop websites. Most websites are included in both the mobile and desktop subsets.
+          There are 8,360,179 websites in the dataset. This represents an increase of 9% compared to the <a href="../2021/methodology#websites">2021 edition</a> of the Web Almanac. Among those, 7,905,956 are mobile websites and 5,428,235 are desktop websites. Most websites are included in both the mobile and desktop subsets.
         </p>
 
         <p>
@@ -125,11 +124,11 @@
         </p>
 
         <p>
-          The June {{ year }} HTTP Archive crawl used by the Web Almanac used the most recently available Chrome UX Report release for its list of websites. The {{ year }}05 dataset was released on June 8, {{ year }} and captures websites visited by Chrome users during the month of May.
+          The July {{ year }} HTTP Archive crawl used by the Web Almanac used the most recently available Chrome UX Report release for its list of websites. The {{ year }}04 dataset was released on May 3, {{ year }} and captures websites visited by Chrome users during the month of April.
         </p>
 
         <p>
-          Due to resource limitations, the HTTP Archive can only test one page from each website in the Chrome UX report. To reconcile this, only the home pages are included. Be aware that this will introduce some bias into the results because a home page is not necessarily representative of the entire website.
+          Due to resource limitations, the HTTP Archive previously could only test one page from each website in the Chrome UX report and only home pages were included. Be aware that this will introduce some bias into the results because a home page is not necessarily representative of the entire website. This year, we <a hreflang="en" href="https://discuss.httparchive.org/t/improving-the-http-archive-pipeline-and-dataset-by-10x/2372">introduced secondary pages</a>, after the Web Almanac project was beginning and some chapters use this new data. Most chapters, however, used just the home pages. We expect future analsysis to make much more use of this new dataset.
         </p>
 
         <p>
@@ -194,10 +193,10 @@
           <tr>
             <td>User Agent</td>
             <td>
-              Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36 PTST/210702.163639
+              Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.61 Safari/537.36 PTST/220609.133020
             </td>
             <td>
-              Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Mobile Safari/537.36 PTST/210702.163639
+              Mozilla/5.0 (Linux; Android 8.1.0; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.115 Mobile Safari/537.36 PTST/220609.133020
             </td>
           </tr>
 
@@ -214,7 +213,7 @@
           <tr>
             <td>Connection</td>
             <td>Cable (5/1 Mbps 28ms RTT)</td>
-            <td>3G (9 Mbps 170ms RTT)</td>
+            <td>4G (9 Mbps 170ms RTT)</td>
           </tr>
 
           <tr>
@@ -231,7 +230,7 @@
       </p>
 
       <p>
-        Mobile websites are run from within a mobile Chrome environment on an emulated Moto G4 device with a network speed equivalent to a 3G connection.
+        Mobile websites are run from within a mobile Chrome environment on an emulated Moto G4 device with a network speed equivalent to a 4G connection.
       </p>
 
       <p>
@@ -255,7 +254,7 @@
       </p>
 
       <p>
-        HTTP Archive runs the latest version of Lighthouse for all of its mobile web pages — desktop pages are not included because of limited resources. As of the July {{ year }} crawl, HTTP Archive used a combination of <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/releases/tag/v8.0.0">8.0.0</a> and <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/releases/tag/v8.1.0">8.1.0</a> versions of Lighthouse.
+        HTTP Archive runs the latest version of Lighthouse for all of its mobile web pages — desktop pages are not included because of limited resources. As of the June {{ year }} crawl, HTTP Archive used the <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/releases/tag/v9.6.2">9.6.2</a> versions of Lighthouse.
       </p>
 
       <p>
@@ -299,11 +298,11 @@
       <h3 id="wappalyzer"><a href="#wappalyzer" class="anchor-link">Wappalyzer</a></h3>
 
       <p>
-        <a hreflang="en" href="https://www.wappalyzer.com/">Wappalyzer</a> is a tool for detecting technologies used by web pages. There are <a hreflang="en" href="https://www.wappalyzer.com/technologies">90 categories</a> of technologies tested, ranging from JavaScript frameworks, to CMS platforms, and even cryptocurrency miners. There are over 2,600 supported technologies (an increase from 1,400 last year).
+        <a hreflang="en" href="https://www.wappalyzer.com/">Wappalyzer</a> is a tool for detecting technologies used by web pages. There are <a hreflang="en" href="https://www.wappalyzer.com/technologies">98 categories</a> of technologies tested, ranging from JavaScript frameworks, to CMS platforms, and even cryptocurrency miners. There are over 3,805 supported technologies (an increase from 2,600 last year).
       </p>
 
       <p>
-        HTTP Archive runs the latest version of Wappalyzer for all web pages. As of July {{ year }} the Web Almanac used the <a hreflang="en" href="https://github.com/AliasIO/Wappalyzer/releases/tag/v6.7.7">6.7.7 version</a> of Wappalyzer.
+        HTTP Archive runs the latest version of Wappalyzer for all web pages. As of July {{ year }} the Web Almanac used the <a hreflang="en" href="https://github.com/AliasIO/Wappalyzer/releases/tag/v6.10.26">6.10.26 version</a> of Wappalyzer.
       </p>
 
       <p>
@@ -323,11 +322,11 @@
       </p>
 
       <p>
-        As of this year, the Chrome UX Report dataset now includes relative <a href="https://developers.google.com/web/updates/2021/03/crux-rank-magnitude">website ranking data</a>. These are referred to as <em>rank magnitudes</em> because, as opposed to fine-grained ranks like the #1 or #116 most popular websites, websites are grouped into rank buckets from the top 1k, top 10k, up to the top 10M. Each website is ranked according to the number of <a href="https://developer.chrome.com/docs/crux/methodology/#eligibility">eligible</a> page views on all of its pages combined. This year's Web Almanac makes extensive use of this new data as a way to explore variations in the way the web is built by site popularity.
+        The Chrome UX Report dataset includes relative <a href="https://developers.google.com/web/updates/2021/03/crux-rank-magnitude">website ranking data</a>. These are referred to as <em>rank magnitudes</em> because, as opposed to fine-grained ranks like the #1 or #116 most popular websites, websites are grouped into rank buckets from the top 1k, top 10k, up to the top 10M. Each website is ranked according to the number of <a href="https://developer.chrome.com/docs/crux/methodology/#eligibility">eligible</a> page views on all of its pages combined. This year's Web Almanac makes extensive use of this new data as a way to explore variations in the way the web is built by site popularity.
       </p>
 
       <p>
-        For Web Almanac metrics that reference real-world user experience data from the Chrome UX Report, the July {{ year }} dataset ({{ year }}07) is used.
+        For Web Almanac metrics that reference real-world user experience data from the Chrome UX Report, the June {{ year }} dataset ({{ year }}06) is used.
       </p>
 
       <p>
@@ -383,7 +382,7 @@
       <h4 id="rework-utils"><a href="#rework-utils" class="anchor-link">Rework Utils</a></h4>
 
       <p>
-        This year&#8217;s <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> chapter revisits many of the metrics introduced in last year's CSS chapter, which was led by <a href="{{ url_for('contributors', year=2019, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a>. Lea wrote <a hreflang="en" href="https://github.com/LeaVerou/rework-utils">Rework Utils</a> to more easily extract insights from Rework CSS's output. Most of the stats you see in the CSS chapter continue to be powered by these scripts.
+        This year&#8217;s <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> chapter revisits many of the metrics introduced in 2020's CSS chapter, which was led by <a href="{{ url_for('contributors', year=2019, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a>. Lea wrote <a hreflang="en" href="https://github.com/LeaVerou/rework-utils">Rework Utils</a> to more easily extract insights from Rework CSS's output. Most of the stats you see in the CSS chapter continue to be powered by these scripts.
       </p>
     </section>
 
@@ -407,7 +406,7 @@
       <h3 id="planning"><a href="#planning" class="anchor-link">Planning</a></h3>
 
       <p>
-        The {{ year }} Web Almanac kicked off in April {{ year }} with a <a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/2167">call for contributors</a>. We initialized the project with all 23 chapters from previous years and the community suggested additional topics that became two new chapters this year: <a href="{{ url_for('chapter', year=year, lang=lang, chapter='structured-data') }}">Structured Data</a> and <a href="{{ url_for('chapter', year=year, lang=lang, chapter='webassembly') }}">WebAssembly</a>.
+        The {{ year }} Web Almanac kicked off in March {{ year }} with a <a href="https://twitter.com/HTTPArchive/status/1508506002383069192">call for contributors</a>. We initialized the project with all 22 chapters from previous years and the community suggested additional topics that became two new chapters this year: <a href="{{ url_for('chapter', year=year, lang=lang, chapter='interop') }}">Interoperability</a> and <a href="{{ url_for('chapter', year=year, lang=lang, chapter='sustainability') }}">Sustainability</a>.
       </p>
 
       <p>
@@ -419,7 +418,7 @@
       </blockquote>
 
       <p>
-        To that end, this year we&#8217;ve refined our <a href="https://github.com/HTTPArchive/almanac.httparchive.org/discussions/2165">author selection process</a>:
+        To that end, this year we&#8217;ve continued our <a href="https://github.com/HTTPArchive/almanac.httparchive.org/discussions/2165">author selection process</a>:
       </p>
 
       <ul>
@@ -443,15 +442,15 @@
       <h3 id="analysis"><a href="#analysis" class="anchor-link">Analysis</a></h3>
 
       <p>
-        In May and June {{ year }}, data analysts worked with authors and peer reviewers to come up with a list of metrics that would need to be queried for each chapter. In some cases, <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">custom metrics</a> were created to fill gaps in our analytic capabilities.
+        In April and May {{ year }}, data analysts worked with authors and peer reviewers to come up with a list of metrics that would need to be queried for each chapter. In some cases, <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">custom metrics</a> were created to fill gaps in our analytic capabilities.
       </p>
 
       <p>
-        Throughout July {{ year }}, the HTTP Archive data pipeline crawled several million websites, gathering the metadata to be used in the Web Almanac. These results were post-processed and saved to <a href="https://console.cloud.google.com/bigquery?p=httparchive&d=almanac&page=dataset">BigQuery</a>.
+        Throughout June {{ year }}, the HTTP Archive data pipeline crawled several million websites, gathering the metadata to be used in the Web Almanac. These results were post-processed and saved to <a href="https://console.cloud.google.com/bigquery?p=httparchive&d=almanac&page=dataset">BigQuery</a>.
       </p>
 
       <p>
-        Being our third year, we were able to update and reuse the queries written by previous analysts. Still, there were many new metrics that needed to be written from scratch. You can browse all of the queries by year and chapter in our open source <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}">query repository</a> on GitHub.
+        Being our fourth year, we were able to update and reuse the queries written by previous analysts. Still, there were many new metrics that needed to be written from scratch. You can browse all of the queries by year and chapter in our open source <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}">query repository</a> on GitHub.
       </p>
     </section>
 
@@ -475,11 +474,11 @@
       <h2 id="looking-ahead"><a href="#looking-ahead" class="anchor-link">Looking ahead</a></h2>
 
       <p>
-        The {{ year }} edition of the Web Almanac is the third in what we hope to continue as an annual tradition in the web community of introspection and a commitment to positive change. Getting to this point has been a monumental effort thanks to many dedicated <a href="{{ url_for('contributors', year=year, lang=lang) }}">contributors</a> and we hope to leverage as much of this work as possible to make future editions even more streamlined.
+        The {{ year }} edition of the Web Almanac is the fourth in what we hope to continue as an annual tradition in the web community of introspection and a commitment to positive change. Getting to this point has been a monumental effort thanks to many dedicated <a href="{{ url_for('contributors', year=year, lang=lang) }}">contributors</a> and we hope to leverage as much of this work as possible to make future editions even more streamlined.
       </p>
 
       <p>
-        If you&#8217;re interested in contributing to the 2022 edition of the Web Almanac, please fill out our <a hreflang="en" href="https://forms.gle/55uatdX9T3JZG2837">interest form</a>. Let&#8217;s work together to track the state of the web!
+        If you&#8217;re interested in contributing to the 2023 edition of the Web Almanac, please fill out our <a hreflang="en" href="https://forms.gle/55uatdX9T3JZG2837">interest form</a>. Let&#8217;s work together to track the state of the web!
       </p>
     </section>
 {% endblock main_content %}
