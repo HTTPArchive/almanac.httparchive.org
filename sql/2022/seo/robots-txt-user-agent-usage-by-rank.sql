@@ -22,10 +22,15 @@ WITH totals AS (
   SELECT
     _TABLE_SUFFIX AS client,
     rank_grouping,
+    CASE
+      WHEN rank_grouping = 100000000 THEN 'all'
+      ELSE FORMAT("%'d", rank_grouping)
+    END AS ranking,
+    COUNT(DISTINCT pageid) AS pages,
     COUNT(0) AS rank_page_count
   FROM
     `httparchive.summary_pages.2022_07_01_*`, -- noqa: L062
-    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+    UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
   WHERE
     rank <= rank_grouping
   GROUP BY
@@ -61,7 +66,7 @@ SELECT
   user_agent,
   rank_grouping,
   CASE
-    WHEN rank_grouping = 10000000 THEN 'all'
+    WHEN rank_grouping = 100000000 THEN 'all'
     ELSE FORMAT("%'d", rank_grouping)
   END AS ranking,
   rank_page_count,
@@ -69,7 +74,7 @@ SELECT
   SAFE_DIVIDE(COUNT(DISTINCT page), rank_page_count) AS pct
 FROM
   base,
-  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+  UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
 JOIN
   totals
 USING (client, rank_grouping)
@@ -80,8 +85,7 @@ GROUP BY
   user_agent,
   rank_grouping,
   rank_page_count
-HAVING
-  pages > 500
 ORDER BY
-  rank_grouping,
-  pct DESC
+  pct DESC,
+  rank_grouping
+LIMIT 1000
