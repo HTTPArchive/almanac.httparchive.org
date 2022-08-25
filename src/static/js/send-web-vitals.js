@@ -1,9 +1,8 @@
 function sendWebVitals() {
 
-  function sendWebVitalsGAEvents({name, delta, id, attribution}) {
+  function sendWebVitalsGAEvents({name, delta, id, attribution, navigationType}) {
 
     let webVitalInfo = '(not set)';
-    let erd = null;
 
     switch (name) {
       case 'CLS':
@@ -63,6 +62,7 @@ function sendWebVitals() {
       dimension4: deviceMemory,
       dimension5: prefersReducedMotion,
       dimension6: prefersColorScheme,
+      dimension7: navigationType,
     });
   }
 
