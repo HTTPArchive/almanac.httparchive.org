@@ -11,12 +11,9 @@ function sendWebVitals() {
         break;
       case 'FID':
         webVitalInfo = attribution.eventTarget;
-        console.log('barry', attribution)
         break;
       case 'LCP':
         webVitalInfo = attribution.element;
-        // Record element render delay of LCP images
-        erd = attribution.url ? attribution.elementRenderDelay : null;
         break;
       case 'TTFB':
         webVitalInfo = attribution.connectionTime;
