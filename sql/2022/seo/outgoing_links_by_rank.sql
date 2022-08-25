@@ -36,6 +36,10 @@ SELECT
   client,
   percentile,
   rank_grouping,
+  CASE
+    WHEN rank_grouping = 100000000 THEN 'all'
+    ELSE FORMAT("%'d", rank_grouping)
+  END AS ranking,
   COUNT(DISTINCT page) AS pages,
   APPROX_QUANTILES(outgoing_link_metrics.same_site, 1000)[OFFSET(percentile * 10)] AS outgoing_links_same_site,
   APPROX_QUANTILES(outgoing_link_metrics.same_property, 1000)[OFFSET(percentile * 10)] AS outgoing_links_same_property,
@@ -59,7 +63,7 @@ LEFT JOIN (
 )
 USING
   (client, page),
-  UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_grouping
+  UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
 WHERE
   rank <= rank_grouping
 GROUP BY
