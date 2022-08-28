@@ -96,9 +96,9 @@ const generate_images = async (chapter_match) => {
 
       // Test chart_url is a Google Sheets URL
       if (!(
-        (chart_url.startsWith('https://docs.google.com/spreadsheets') && chart_url.endsWith("&format=interactive"))
+        (chart_url.startsWith('https://docs.google.com/spreadsheets') && chart_url.endsWith('&format=interactive'))
         ||
-        (chart_url.startsWith("/") && chart_url.indexOf("/embeds/"))
+        (chart_url.startsWith('/') && chart_url.indexOf('/embeds/'))
       )) {
         console.log(`  Skipping: ${image_file} as chart_url is not of the correct format`);
         continue;
