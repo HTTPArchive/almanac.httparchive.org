@@ -101,8 +101,7 @@
           "part": "II",
           "chapter_number": "12",
           "title": "Performance",
-          "slug": "performance",
-          "todo": true
+          "slug": "performance"
         },
         {
           "part": "II",
@@ -1408,6 +1407,8 @@
     "siakaramalegos": {
       "name": "Sia Karamalegos",
       "teams": [
+        "analysts",
+        "authors",
         "leads"
       ],
       "avatar_url": "4777393",
