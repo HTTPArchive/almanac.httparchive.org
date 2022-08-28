@@ -20,3 +20,13 @@ unedited: true
 ---
 
 ## TODO
+
+{{ figure_markup(
+  image="sankey.png",
+  caption="Sankey Chart.",
+  description='Sankey chart showing...',
+  chart_url="/en/2022/structured-data-sankey",
+  width=600,
+  height=1200,
+  )
+}}

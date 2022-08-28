@@ -1,0 +1,24 @@
+{% extends "%s/%s/base.html" % (lang, year) %}
+
+{% block head %}
+{{ super() }}
+<meta name="robots" content="indexifembedded">
+{% endblock %}
+
+{% block author_structured_data %}
+    {% for author in metadata.get('authors') %}{% if loop.length > 1 and loop.index == 1 %}[{% endif -%}
+    {% set authordata = config.contributors[author] if author in config.contributors else None -%}
+    {% if authordata -%}
+    {
+        "@type": "Person",
+          "sameAs": [
+            "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"
+            {% if authordata.twitter %},"https://twitter.com/{{ authordata.twitter }}"{% endif %}
+            {% if authordata.github %},"https://github.com/{{ authordata.github }}"{% endif %}
+            {% if authordata.linkedin %},"https://www.linkedin.com/in/{{ authordata.linkedin }}/"{% endif %}
+            ],
+        "name": "{{ authordata.name if authordata.name else author }}"
+      }{% if loop.index < loop.length %},{% endif %}
+      {%- endif %}{% if loop.index > 1 and loop.index == loop.length %}]{% endif -%}
+      {% endfor %}
+{% endblock %}

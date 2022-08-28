@@ -241,3 +241,8 @@ def test_test_webvitals_js(client):
 def test_test_webvitals_js_versioned(client):
     response = client.get("/static/js/web-vitals.js?v=1234")
     assert response.status_code == 200
+
+
+def test_embed(client):
+    response = client.get("/en/2022/structured-data-sankey")
+    assert response.status_code == 200

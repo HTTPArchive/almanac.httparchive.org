@@ -10,6 +10,7 @@ from .validate import validate
 from .config import get_config, DEFAULT_YEAR
 from . import stories_csp
 from . import search_csp
+from . import embed_csp
 import random
 
 
@@ -146,6 +147,20 @@ def rss(lang):
 def stories(lang, year, story):
     return render_template(
         "%s/%s/stories/%s.html" % (lang, year, story.replace("-", "_"))
+    )
+
+
+# Allow embeds
+@app.route("/en/2022/structured-data-sankey")
+@validate
+@talisman(
+    content_security_policy=embed_csp.csp,
+    content_security_policy_nonce_in=["script-src"],
+    frame_options="self",
+)
+def embed():
+    return render_template(
+        "en/2022/structured-data-sankey.html"
     )
 
 
