@@ -29,7 +29,7 @@ featured_stat_label_3: FLoCコホートからのオプトアウトを行う人�
 
 この新しい法律により、ユーザーは個人情報を共有することにどれだけ抵抗がないか、より大きな発言権を持つようになりました。おそらく、すでに多くのクッキー同意バナーをクリックし、この選択を可能にしていることでしょう。さらにウェブブラウザは、機密データを隠してサードパーティのクッキーをブロックすることから、個人の属性に関する正当なユースケースと個々のユーザーのプライバシーのバランスをとる革新的な方法まで、ユーザーのプライバシーを改善する<a hreflang="en" href="https://privacysandbox.com/">技術的解決策</a> を実装しています。
 
-この章では、ウェブにおけるプライバシーの現状を概観する。まず、ユーザーのプライバシーがどのように害されうるかを考える。ここでは、ウェブサイトがどのように[オンライントラッキング](#how-websites-profile-you-online-online-tracking)によってあなたをプロファイリングし、どのように[あなたの機密データにアクセス](#how-websites-handle-your-sensitive-data)しているかについて議論します。次に、ウェブサイトが[機密データを保護](#how-websites-protect-your-sensitive-data)する方法と、[プライバシー設定シグナル](#how-websites-give-you-a-privacy-choice-privacy-preference-signals)によってユーザーに選択肢を与える方法について掘り下げます。最後に、[今後のブラウザによるプライバシー保護への取り組みについての展望](#how-browsers-are-evolving-their-privacy-approaches)を掲載します。
+この章では、ウェブにおけるプライバシーの現状を概観する。まず、ユーザーのプライバシーがどのように害されうるかを考える。ここでは、ウェブサイトがどのように[オンライントラッキング](#ウェブサイトがあなたをプロファイリングする方法：オンライントラッキング)によってあなたをプロファイリングし、どのように[あなたの機密データにアクセス](#ウェブサイトにおけるお客様の個人情報の取り扱いについて)しているかについて議論します。次に、ウェブサイトが[機密データを保護](#ウェブサイトが機密情報を保護する方法)する方法と、[プライバシー設定シグナル](#ウェブサイトがプライバシーを選択できるようにする方法-プライバシー・プリファレンス・シグナル)によってユーザーに選択肢を与える方法について掘り下げます。最後に、[今後のブラウザによるプライバシー保護への取り組みについての展望](#ブラウザはどのようにプライバシーへのアプローチを進化させているのか)を掲載します。<!-- markdownlint-disable-line MD051 -->
 
 
 ## ウェブサイトがあなたをプロファイリングする方法：オンライントラッキング
@@ -287,7 +287,7 @@ Webサイトが機密性の高いリソースへのアクセスを要求する�
 
 ## ウェブサイトが機密情報を保護する方法
 
-ウェブサイトを閲覧していると、閲覧したページ、フォームに入力した機密データ、位置情報など、非公開にしたいデータがあります。[セキュリティ](./security#transport-security)の章では、91.1%のモバイルサイトがHTTPSを有効にし、インターネットを通過するデータを盗聴から保護していることをご紹介しています。ここでは、機密性の高いリソースのプライバシーを確保するために、ウェブサイトがブラウザにどのように指示できるかに焦点を当てます。
+ウェブサイトを閲覧していると、閲覧したページ、フォームに入力した機密データ、位置情報など、非公開にしたいデータがあります。[セキュリティ](./security#トランスポートセキュリティ)の章では、91.1%のモバイルサイトがHTTPSを有効にし、インターネットを通過するデータを盗聴から保護していることをご紹介しています。ここでは、機密性の高いリソースのプライバシーを確保するために、ウェブサイトがブラウザにどのように指示できるかに焦点を当てます。
 
 ### パーミッションポリシー／フィーチャーポリシー
 
@@ -364,7 +364,7 @@ HTTPリクエストはオプションで `Referer` ヘッダーを含むこと�
 
 ### User-Agent クライアントヒント
 
-ウェブブラウザがHTTPリクエストを行う際、クライアントのブラウザ、デバイス、ネットワーク機能に関する情報を提供する[`User-Agent`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/User-Agent)ヘッダーが含まれます。しかし、これを悪用してユーザーをプロファイリングしたり、[フィンガープリンティング](#fingerprinting)によって一意に特定することが可能です。
+ウェブブラウザがHTTPリクエストを行う際、クライアントのブラウザ、デバイス、ネットワーク機能に関する情報を提供する[`User-Agent`](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/User-Agent)ヘッダーが含まれます。しかし、これを悪用してユーザーをプロファイリングしたり、[フィンガープリンティング](#指紋認証)によって一意に特定することが可能です。
 
 <a hreflang="en" href="https://wicg.github.io/ua-client-hints/">User-Agentクライアントヒント</a> は `User-Agent` 文字列と同じ情報へのアクセスを可能にしますが、よりプライバシーを保護する方法でアクセスします。これにより、Chromeが <a hreflang="en" href="https://www.chromium.org/updates/ua-reduction">User Agent削減</a> の段階的な計画で提案しているように、ブラウザが `User-Agent` 文字列をデフォルトで提供する情報量を最終的に削減することができるようになります。
 
@@ -492,13 +492,13 @@ USPフレームワークでは、ウェブサイトとユーザーのプライ�
   )
 }}
 
-モバイルクライアントとデスクトップクライアントでは、ほぼ同じ割合のページでDNTが使用されています。しかし、実際には、DNTのオプトアウトを尊重するウェブサイトはほとんどありません。DNTを規定するTracking Protection Working Groupは、2018年に<a hreflang="en" href="https://www.w3.org/2016/11/tracking-protection-wg.html">閉鎖</a>された。<a hreflang="en" href="https://lists.w3.org/Archives/Public/public-tracking/2018Oct/0000.html">「サポート不足」</a>のためです。Safariはその後、<a hreflang="en" href="https://developer.apple.com/documentation/safari-release-notes/safari-12_1-release-notes#:~:text=Removed%20support%20for%20the%20expired%20Do%20Not%20Track">DNTのサポートを止め</a>、[フィンガープリント](#fingerprinting) への悪用の可能性を防止するようにしました。
+モバイルクライアントとデスクトップクライアントでは、ほぼ同じ割合のページでDNTが使用されています。しかし、実際には、DNTのオプトアウトを尊重するウェブサイトはほとんどありません。DNTを規定するTracking Protection Working Groupは、2018年に<a hreflang="en" href="https://www.w3.org/2016/11/tracking-protection-wg.html">閉鎖</a>された。<a hreflang="en" href="https://lists.w3.org/Archives/Public/public-tracking/2018Oct/0000.html">「サポート不足」</a>のためです。Safariはその後、<a hreflang="en" href="https://developer.apple.com/documentation/safari-release-notes/safari-12_1-release-notes#:~:text=Removed%20support%20for%20the%20expired%20Do%20Not%20Track">DNTのサポートを止め</a>、[フィンガープリント](#指紋認証) への悪用の可能性を防止するようにしました。
 
 DNTの後継となる<a hreflang="en" href="https://globalprivacycontrol.org/">グローバル・プライバシー・コントロール</a>（GPC）は2020年10月にリリースされ、より強制力のある代替手段を提供するものであり、より良い普及を期待するものです。このプライバシー設定シグナルは、すべてのHTTPリクエストに1ビットで実装されています。まだ取り込みは確認できていませんが、<a hreflang="en" href="https://www.washingtonpost.com/technology/2021/10/26/global-privacy-control-firefox/">主要なブラウザがGPCを実装し始めている</a>ため、今後改善されることが期待できます。
 
 ## ブラウザはどのようにプライバシーへのアプローチを進化させているのか
 
-ウェブ閲覧中のユーザーのプライバシー保護を強化するため、主要ブラウザはユーザーの機密情報をより安全に保護する新機能を実装しています。[`Referrer-Policy` ヘッダー](#referrer-policy)や[`SameSite`クッキー](#third-party-cookies) に対して、ブラウザがよりプライバシーを保護するデフォルト設定を強制し始めたことは、すでに説明しました。
+ウェブ閲覧中のユーザーのプライバシー保護を強化するため、主要ブラウザはユーザーの機密情報をより安全に保護する新機能を実装しています。[`Referrer-Policy` ヘッダー](#refererポリシー)や[`SameSite`クッキー](#サードパーティークッキー) に対して、ブラウザがよりプライバシーを保護するデフォルト設定を強制し始めたことは、すでに説明しました。
 
 さらに、Firefoxは[トラッキング防止機能の強化](https://developer.mozilla.org/en-US/docs/Web/Privacy/Tracking_Protection)、Safariは<a hreflang="en" href="https://webkit.org/tracking-prevention/">インテリジェントなトラッキング防止</a>によりトラッキングをブロックしようとしています。
 

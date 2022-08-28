@@ -9,7 +9,6 @@ from .config import (
     SUPPORTED_CHAPTERS,
 )
 from .language import get_language, DEFAULT_LANGUAGE
-from werkzeug.routing import BaseConverter
 import os.path
 import re
 import datetime
@@ -279,7 +278,7 @@ def accentless_sort(value):
 def get_file_date_info(file, type):
     timestamps_config = get_timestamps_config()
     # Default Published and Last Updated to today
-    today = datetime.datetime.utcnow().isoformat()
+    today = datetime.datetime.utcnow().isoformat(timespec='milliseconds')
     if type == "date_published" or type == "date_modified":
         return timestamps_config.get(file, {}).get(type, today)
     else:
@@ -310,9 +309,3 @@ def plural_ru(value, quantitative):
     if value % 10 in (2, 3, 4):
         return quantitative[1]
     return quantitative[2]
-
-
-class RegexConverter(BaseConverter):
-    def __init__(self, url_map, *items):
-        super(RegexConverter, self).__init__(url_map)
-        self.regex = items[0]

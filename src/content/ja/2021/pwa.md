@@ -139,11 +139,13 @@ this.oninstall = function(event) {
 
 ##### 通知関連イベント
 
+<!-- markdownlint-disable-next-line MD051 -->
 [図16.4](#fig-4)に示すように、次に人気のあるイベントリスナー群は、<a hreflang="en" href="https://developers.google.com/web/fundamentals/push-notifications">Webプッシュ通知</a>に関連する `push`, `notificationclick`, `notificationclose` です。
 もっとも広く採用されているのは `push` で、サーバーから送信されるプッシュイベントを待ち受けることができ、サービスワーカーを持つデスクトップサイトの43.88%とモバイルサイトの45.44%で使用されています。これは、<a hreflang="en" href="https://caniuse.com/push-api">まだすべてのブラウザで利用できない</a>場合でも、PWAでWebプッシュ通知がいかに人気であるかを示しています。
 
 ##### バックグラウンド処理イベント
 
+<!-- markdownlint-disable-next-line MD051 -->
 [図16.4](#fig-4)の最後のイベントグループは、サービスワーカーの特定のタスクをバックグラウンドで実行できます。たとえば、データの同期や接続に失敗したときのタスクの再試行などです。<a hreflang="en" href="https://developers.google.com/web/updates/2015/12/background-sync">バックグラウンド同期</a>（`sync` イベントリスナーを介して）は、Webアプリがタスクをサービスワーカーに委任し、失敗したり接続がない場合に自動的に再試行できるようにします（その場合サービスワーカーは、接続が回復するのを待ち自動的に再試行する）。<a hreflang="en" href="https://web.dev/periodic-background-sync/">周期的なバックグラウンド同期</a>（`periodicSync` 経由）は、サービスワーカーのタスクを定期的に実行させます（たとえば、毎朝トップニュースを取得してキャッシュします）。<a hreflang="en" href="https://developers.google.com/web/updates/2018/12/background-fetch">バックグランドフェッチ</a> のような他のAPIは、その使用率がまだかなり低いため、グラフには表示されていません。
 
 このように、バックグラウンド同期技術は、他の技術に比べてまだ広く採用されていません。これは、バックグラウンド同期のユースケースが少ないことと、APIがまだすべてのブラウザで利用可能でないことが一因です。また、[Periodic Background Sync](https://developer.mozilla.org/ja/docs/Web/API/Web_Periodic_Background_Synchronization_API)を利用するにはPWAをインストールする必要があるため、[「ホーム画面に追加」](https://developer.mozilla.org/ja/docs/Web/Progressive_web_apps/Add_to_home_screen)機能を提供しないサイトでは利用することができません。
@@ -492,9 +494,11 @@ Workboxライブラリは、特定の機能を含む <a hreflang="en" href="http
 )
 }}
 
-また、サービスワーカーのイベント関連では、[図4](#fig-4)に示すように、プッシュメッセージを受信するための`push`イベントリスナーがデスクトップの43.88％、モバイルの45.44％で使用されています。
+<!-- markdownlint-disable-next-line MD051 -->
+また、サービスワーカーのイベント関連では、[図16.4](#fig-4)に示すように、プッシュメッセージを受信するための`push`イベントリスナーがデスクトップの43.88％、モバイルの45.44％で使用されています。
 
-サービスワーカーインターフェイスは、通知に関するユーザーインタラクションを処理するために、いくつかのイベントをリッスンすることもできます。[図4](#fig-4)は、`notificationclick`（通知へのクリックを捕捉）がデスクトップの45.64%、モバイルPWAの46.62%で使われていることを示しています。`notificationclose`は使用頻度が低く、デスクトップPWAの5.98%、モバイルPWAの6.34%です。これは、通知の「クリック」よりも、通知の「閉じる」イベントをリッスンすることが意味のあるユースケースが少ないと予想されます。
+<!-- markdownlint-disable-next-line MD051 -->
+サービスワーカーインターフェイスは、通知に関するユーザーインタラクションを処理するために、いくつかのイベントをリッスンすることもできます。[図16.4](#fig-4)は、`notificationclick`（通知へのクリックを捕捉）がデスクトップの45.64%、モバイルPWAの46.62%で使われていることを示しています。`notificationclose`は使用頻度が低く、デスクトップPWAの5.98%、モバイルPWAの6.34%です。これは、通知の「クリック」よりも、通知の「閉じる」イベントをリッスンすることが意味のあるユースケースが少ないと予想されます。
 
 <p class="note">**備考:** サービスワーカーの通知イベント（例： `push`、`notificationclick`）には、さらに `pushManager` プロパティが使われているのが興味深いです。このプロパティは、たとえば、Webプッシュ通知の許可を（ `pushManager.subscribe` を通じて）要求するために使用されます。この理由の1つは、いくつかのサイトがウェブプッシュを実装し、ある時点でロールバックすることを決定し、そのために許可を要求するコードを排除し、サービスワーカーのコードは変更しないままにしていることかもしれません。</p>
 

@@ -206,6 +206,7 @@ featured_stat_label_3: 有快速FID的站点
   )
 }}
 
+<!-- markdownlint-disable-next-line MD051 -->
 这样你就应该明白了。此图显示了网站的快速，中速和慢速FID体验的分布。这与以前的FCP和TTFB图表截然不同。(分别参见[图 7.1](#fig-1)和[图 7.9](#fig-9))。快速FID曲线从100％缓慢下降到75％，然后急速下降。 大多数网站的绝大多数FID体验都很快。
 
 {{ figure_markup(
