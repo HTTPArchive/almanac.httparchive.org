@@ -10,7 +10,7 @@ from .validate import validate
 from .config import get_config, DEFAULT_YEAR
 from . import stories_csp
 from . import search_csp
-from . import embed_csp
+from . import embeds_csp
 import random
 
 
@@ -154,7 +154,7 @@ def stories(lang, year, story):
 @app.route("/<lang>/<year>/embeds/<path:embed>")
 @validate
 @talisman(
-    content_security_policy=embed_csp.csp,
+    content_security_policy=embeds_csp.csp,
     content_security_policy_nonce_in=["script-src"],
     frame_options="self",
 )
