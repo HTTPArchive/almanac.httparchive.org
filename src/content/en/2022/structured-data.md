@@ -28,5 +28,7 @@ unedited: true
   chart_url="/en/2022/embeds/structured-data-sankey",
   width=600,
   height=1200,
+  sheets_gid="??",
+  sql_file="??.sql"
   )
 }}

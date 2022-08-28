@@ -5,6 +5,16 @@
 <meta name="robots" content="indexifembedded">
 {% endblock %}
 
+{% block styles %}
+{{ super() }}
+<style nonce="{{ csp_nonce() }}">
+  main {
+    max-width: 100%;
+    overflow: scroll;
+  }
+</style>
+{% endblock %}
+
 {% block author_structured_data %}
     {% for author in metadata.get('authors') %}{% if loop.length > 1 and loop.index == 1 %}[{% endif -%}
     {% set authordata = config.contributors[author] if author in config.contributors else None -%}
@@ -21,4 +31,10 @@
       }{% if loop.index < loop.length %},{% endif %}
       {%- endif %}{% if loop.index > 1 and loop.index == loop.length %}]{% endif -%}
       {% endfor %}
+{% endblock %}
+
+{% block content %}
+<main>
+  {% block main %}{% endblock %}
+</main>
 {% endblock %}
