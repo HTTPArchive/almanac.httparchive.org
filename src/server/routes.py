@@ -151,16 +151,16 @@ def stories(lang, year, story):
 
 
 # Allow embeds
-@app.route("/en/2022/structured-data-sankey")
+@app.route("/<lang>/<year>/embeds/<path:embed>")
 @validate
 @talisman(
     content_security_policy=embed_csp.csp,
     content_security_policy_nonce_in=["script-src"],
     frame_options="self",
 )
-def embed():
+def embed(lang, year, embed):
     return render_template(
-        "en/2022/structured-data-sankey.html"
+        "%s/%s/embeds/%s.html" % (lang, year, embed)
     )
 
 

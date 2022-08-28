@@ -244,5 +244,5 @@ def test_test_webvitals_js_versioned(client):
 
 
 def test_embed(client):
-    response = client.get("/en/2022/structured-data-sankey")
+    response = client.get("/en/2022/embeds/structured-data-sankey")
     assert response.status_code == 200

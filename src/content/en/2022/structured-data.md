@@ -25,7 +25,7 @@ unedited: true
   image="sankey.png",
   caption="Sankey Chart.",
   description='Sankey chart showing...',
-  chart_url="/en/2022/structured-data-sankey",
+  chart_url="/en/2022/embeds/structured-data-sankey",
   width=600,
   height=1200,
   )
