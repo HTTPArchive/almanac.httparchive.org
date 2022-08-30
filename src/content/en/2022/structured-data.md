@@ -32,3 +32,24 @@ unedited: true
   sql_file="??.sql"
   )
 }}
+
+{{ figure_markup(
+  image="structured-data-json-ld-entities-relationships.svg",
+  caption="JSON-LD entity relationship as a Sankey diagram.",
+  description='Sankey diagram showing a complex interweaving of relationships of the form: "From" -> "Relationship" -> "To". `WebPage` is the largest "From" item branching off to multiple "Relationship" types and "To" results (for example `WebPage` -> `PotentialAction` -> `SearchAction`). This is followed by `WebSite`, then `Organization`, `Product`, `BreadCrumblist`, `BlogPosting` and then a decreasingly used list of other items. Of the middle "Relationships" column `PotentialAction` is used most, followed by `ItemListElement`, `IsPartOf`, `Publisher`, `image` and then a similar long tail of ever-decreasing usage. The "To" column has `ImageObject` as the most used at the top, following by `Organization`, `SearchAction`, `ListItem`, `WebSite`, `WebPage` and then again a longer tail of every decreasing usage. The general sense created by the graph is a lot of different relationships with much cross-usage between the three columns.',
+  width=1200,
+  height=1200
+  )
+}}
+
+{{ figure_markup(
+  image="structured-data-relationships-sankey.png",
+  caption="Sankey Chart.",
+  description='Sankey chart showing...',
+  chart_url="/en/2022/embeds/structured-data-relationships-sankey",
+  width=600,
+  height=1200,
+  sheets_gid="??",
+  sql_file="??.sql"
+  )
+}}
