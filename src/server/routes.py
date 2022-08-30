@@ -156,7 +156,6 @@ def stories(lang, year, story):
 @talisman(
     content_security_policy=embeds_csp.csp,
     content_security_policy_nonce_in=["script-src"],
-    frame_options="self",
 )
 def embed(lang, year, embed):
     return render_template(
