@@ -7,8 +7,7 @@
 {% set metadata = {"authors":["cyberandy"]} %}
 
 {% block main %}
-<div id="sankey_multiple" style="width: 900px; height: 1500px;"></div>
-
+<div id="sankey_multiple"></div>
 
 <script nonce="{{ csp_nonce() }}" src="https://www.gstatic.com/charts/loader.js"></script>
 <script nonce="{{ csp_nonce() }}">
@@ -127,19 +126,19 @@
     var options = {
       width: 600,
       height: 1500,
-            sankey: {
-    node: {
-      colors: colors,
-      label: {fontName: 'Arial',
-              color: '#1a2b49'},
-    },
-    interactivity: true, // Allows you to select nodes.
-    labelPadding: 6,     // Horizontal distance between the label and the node.
-    nodePadding: 20,     // Vertical distance between nodes.
-    link: {
-      colors: colors
-    }
-  }
+      sankey: {
+        node: {
+          colors: colors,
+          label: {fontName: 'Arial',
+                  color: '#1a2b49'},
+        },
+        interactivity: true, // Allows you to select nodes.
+        labelPadding: 6,     // Horizontal distance between the label and the node.
+        nodePadding: 20,     // Vertical distance between nodes.
+        link: {
+          colors: colors
+        }
+      }
     };
 
     // Instantiates and draws our chart, passing in some options.
