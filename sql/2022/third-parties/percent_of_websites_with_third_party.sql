@@ -5,7 +5,8 @@ WITH requests AS (
   SELECT
     _TABLE_SUFFIX AS client,
     pageid AS page,
-    url
+    url,
+    respBodySize
   FROM
     `httparchive.summary_requests.2022_06_01_*`
 ),
@@ -38,7 +39,10 @@ SELECT
   COUNT(DISTINCT IF(domain IS NOT NULL, page, NULL)) / COUNT(DISTINCT page) AS pct_pages_with_third_party,
   COUNTIF(domain IS NOT NULL) AS third_party_requests,
   COUNT(0) AS total_requests,
-  COUNTIF(domain IS NOT NULL) / COUNT(0) AS pct_third_party_requests
+  COUNTIF(domain IS NOT NULL) / COUNT(0) AS pct_third_party_requests,
+  SUM(IF(domain IS NOT NULL, respBodySize, 0)) AS third_party_body_size,
+  SUM(respBodySize) AS total_body_size,
+  SUM(IF(domain IS NOT NULL, respBodySize, 0)) / SUM(respBodySize) AS pct_body_size
 FROM
   requests
 LEFT JOIN third_party
