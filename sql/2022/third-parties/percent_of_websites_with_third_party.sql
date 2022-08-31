@@ -6,7 +6,7 @@ WITH requests AS (
     _TABLE_SUFFIX AS client,
     pageid AS page,
     url,
-    respBodySize,
+    respBodySize
   FROM
     `httparchive.summary_requests.2022_06_01_*`
 ),
