@@ -17,8 +17,8 @@ base AS (
 SELECT
   device,
   percentile,
-  APPROX_QUANTILES(p75_inp, 1000)[OFFSET(percentile * 10)] AS p75_inp,
-  APPROX_QUANTILES(p75_inp_origin, 1000)[OFFSET(percentile * 10)] AS p75_inp_origin
+  APPROX_QUANTILES(p75_inp, 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS p75_inp,
+  APPROX_QUANTILES(p75_inp_origin, 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS p75_inp_origin
 FROM
   base,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
