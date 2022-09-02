@@ -18,7 +18,7 @@ featured_stat_3: TODO
 featured_stat_label_3: TODO
 unedited: true
 ---
-
+<!-- markdownlint-disable MD024 -->
 ## Introduction
 
 Compelling web experiences aren't limited to basic browser capabilities; they can take advantage of their underlying operating system. Web platform APIs expose these capabilities that are the foundation for Progressive Web Apps (PWA), i.e., web applications capable of providing high-quality experiences found like platform-specific apps. In addition, some functionality on the web platform gives access to lower-level features such as access to the [file system](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API), [geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API), access to the [clipboard](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API), and even the ability to detect [gamepads](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API).
@@ -64,7 +64,7 @@ await navigator.clipboard.write([
 
 The other method family is for reading data from the clipboard. This is done with the [`readText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/readText) and [`read()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/read) methods. Both methods return a Promise which will resolve with data from the clipboard. `readText()` resolves as a String while `read()` resolves as an array of `ClipboardItem`s.
 
- ```js
+```js
 const item = await navigator.clipboard.readText();
 const items = await navigator.clipboard.read();
 ```
