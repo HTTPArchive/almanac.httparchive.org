@@ -1587,6 +1587,16 @@
       "website": "https://blog.yoav.ws",
       "github": "yoavweiss",
       "twitter": "yoavweiss"
-    }
+    },
+    "alexnj": {
+      "name": "Alex N. Jose",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "683500",
+      "github": "alexnj",
+      "website": "https://alexnj.com",
+      "twitter": "4x13"
+    }  
   }
 }
