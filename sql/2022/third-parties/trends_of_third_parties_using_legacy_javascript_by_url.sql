@@ -33,7 +33,7 @@ base AS (
     FROM
       (
         SELECT
-          "2022" AS year,
+          '2022' AS year,
           NET.HOST(data.url) AS domain,
           lighthouse.url AS page
         FROM
@@ -51,7 +51,7 @@ base AS (
   )
   JOIN (
     SELECT
-      "2022" AS year,
+      '2022' AS year,
       COUNT(DISTINCT url) AS total
     FROM
       `httparchive.lighthouse.2022_06_01_mobile`
@@ -74,7 +74,7 @@ base AS (
     FROM
       (
         SELECT
-          "2021" AS year,
+          '2021' AS year,
           NET.HOST(data.url) AS domain,
           lighthouse.url AS page
         FROM
@@ -92,7 +92,7 @@ base AS (
   )
   JOIN (
     SELECT
-      "2021" AS year,
+      '2021' AS year,
       COUNT(DISTINCT url) AS total
     FROM
       `httparchive.lighthouse.2021_07_01_mobile`
@@ -115,7 +115,7 @@ base AS (
     FROM
       (
         SELECT
-          "2020" AS year,
+          '2020' AS year,
           NET.HOST(data.url) AS domain,
           lighthouse.url AS page
         FROM
@@ -133,7 +133,7 @@ base AS (
   )
   JOIN (
     SELECT
-      "2020" AS year,
+      '2020' AS year,
       COUNT(DISTINCT url) AS total
     FROM
       `httparchive.lighthouse.2020_08_01_mobile`
@@ -158,7 +158,7 @@ FROM (
     total,
     COUNT(0) / total AS pct,
     RANK() OVER (PARTITION BY year ORDER BY COUNT(0) DESC) AS domain_rank
-  FROM 
+  FROM
     base
   GROUP BY
     year,
