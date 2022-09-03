@@ -9,7 +9,7 @@ WITH totals AS (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date in ('2019-07-01', '2020-08-01', '2021-07-01', '2022-06-01')
+    date IN ('2019-07-01', '2020-08-01', '2021-07-01', '2022-06-01')
   GROUP BY
     date,
     client
@@ -29,7 +29,7 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date in ('2019-07-01', '2020-08-01', '2021-07-01', '2022-06-01') AND
+    date IN ('2019-07-01', '2020-08-01', '2021-07-01', '2022-06-01') AND
     pushed = '1'
 )
 JOIN
