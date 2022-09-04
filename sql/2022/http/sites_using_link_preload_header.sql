@@ -3,7 +3,7 @@
 # Number of <link rel="preload">.
 
 CREATE TEMPORARY FUNCTION getNumLinkRelPreloadRespHeader(HTTPheaders STRING, header STRING)
-RETURNS FLOAT64 LANGUAGE js AS """
+RETURNS INT64 LANGUAGE js AS """
 try {
   var headers = JSON.parse(HTTPheaders);
 
@@ -24,7 +24,7 @@ try {
   }
   return numPreload;
 } catch (e) {
-  return [];
+  return -1;
 }
 """;
 
@@ -37,12 +37,15 @@ FROM (
   SELECT
     client,
     page,
-    getNumLinkRelPreloadRespHeader(response_headers, 'link') AS num_link_rel_preload_resp_header
+    SUM(getNumLinkRelPreloadRespHeader(response_headers, 'link')) AS num_link_rel_preload_resp_header
   FROM
     `httparchive.almanac.requests`
   WHERE
     date = '2022-06-01' AND
     firstHtml
+  GROUP BY
+    client,
+    page
 )
 GROUP BY
   client
