@@ -16,20 +16,16 @@ try {
 
 SELECT
   client,
-  percentile,
-  APPROX_QUANTILES(num_link_rel_preload, 1000)[OFFSET(percentile * 10)] AS num_percentiles
+  COUNTIF(num_link_rel_preload_tag > 0) AS num_sites_using_link_preload_tag,
+  COUNT(0) AS total_sites,
+  COUNTIF(num_link_rel_preload_tag > 0) / COUNT(0) AS pct_sites_using_link_preload_tag
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page,
-    getNumLinkRelPreload(payload) AS num_link_rel_preload
+    getNumLinkRelPreload(payload) AS num_link_rel_preload_tag
   FROM
     `httparchive.pages.2022_06_01_*`
-),
-UNNEST([10, 25, 50, 75, 90, 95, 100]) AS percentile
+)
 GROUP BY
-  client,
-  percentile
-ORDER BY
-  client,
-  percentile
+  client
