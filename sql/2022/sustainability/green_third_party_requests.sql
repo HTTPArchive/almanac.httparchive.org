@@ -49,7 +49,7 @@ third_party AS (
 
 green_tp AS (
   SELECT
-    domain,
+    domain
   FROM
     `httparchive.almanac.third_parties` tp
   JOIN
