@@ -32,7 +32,6 @@ pages AS (
 third_party AS (
   SELECT
     domain,
-    canonicalDomain,
     COUNT(DISTINCT page) AS page_usage
   FROM
     `httparchive.almanac.third_parties` tp
@@ -43,8 +42,7 @@ third_party AS (
     date = '2022-06-01' AND
     category NOT IN ('hosting')
   GROUP BY
-    domain,
-    canonicalDomain
+    domain
   HAVING
     page_usage >= 50
 ),
@@ -52,7 +50,6 @@ third_party AS (
 green_tp AS (
   SELECT
     domain,
-    canonicalDomain
   FROM
     `httparchive.almanac.third_parties` tp
   JOIN
@@ -62,8 +59,7 @@ green_tp AS (
     date = '2022-06-01' AND
     category NOT IN ('hosting')
   GROUP BY
-    domain,
-    canonicalDomain
+    domain
 ),
 
 base AS (
@@ -71,7 +67,7 @@ base AS (
     client,
     page,
     rank,
-    COUNT(canonicalDomain) AS third_parties_per_page
+    COUNT(domain) AS third_parties_per_page
   FROM
     requests
   LEFT JOIN
@@ -93,7 +89,7 @@ base_green AS (
     client,
     page,
     rank,
-    COUNT(canonicalDomain) AS green_third_parties_per_page
+    COUNT(domain) AS green_third_parties_per_page
   FROM
     requests
   LEFT JOIN
