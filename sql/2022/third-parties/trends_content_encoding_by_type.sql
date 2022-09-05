@@ -10,14 +10,14 @@ WITH third_party_domains AS (
 
 base AS (
   SELECT
-    "2022" AS year,
+    '2022' AS year,
     client,
     domain,
     resp_content_encoding,
     type
   FROM (
     SELECT
-      "2022" AS year,
+      '2022' AS year,
       client,
       third_party_domains.domain AS domain,
       resp_content_encoding,
@@ -47,14 +47,14 @@ base AS (
   )
   UNION ALL
   SELECT
-    "2021" AS year,
+    '2021' AS year,
     client,
     domain,
     resp_content_encoding,
     type
   FROM (
     SELECT
-      "2021" AS year,
+      '2021' AS year,
       client,
       third_party_domains.domain AS domain,
       resp_content_encoding,
@@ -84,14 +84,14 @@ base AS (
   )
   UNION ALL
   SELECT
-    "2020" AS year,
+    '2020' AS year,
     client,
     domain,
     resp_content_encoding,
     type
   FROM (
     SELECT
-      "2020" AS year,
+      '2020' AS year,
       client,
       third_party_domains.domain AS domain,
       resp_content_encoding,
@@ -139,7 +139,7 @@ GROUP BY
   client,
   resp_content_encoding,
   type
-ORDER BY  
+ORDER BY
   year,
   client,
   third_party_requests DESC
