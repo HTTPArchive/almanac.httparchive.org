@@ -33,7 +33,8 @@ WITH base AS (
       FROM
         `httparchive.almanac.third_parties`
       WHERE
-        date = '2020-08-01'
+        date = '2020-08-01' AND
+        category != 'hosting'
     ) AS third_party_domains
     ON
       potential_third_parties.domain = third_party_domains.domain
@@ -76,7 +77,8 @@ WITH base AS (
       FROM
         `httparchive.almanac.third_parties`
       WHERE
-        date = '2020-08-01'
+        date = '2020-08-01' AND
+        category != 'hosting'
     ) AS third_party_domains
     ON
       potential_third_parties.domain = third_party_domains.domain
@@ -119,7 +121,8 @@ WITH base AS (
       FROM
         `httparchive.almanac.third_parties`
       WHERE
-        date = '2020-08-01'
+        date = '2020-08-01' AND
+        category != 'hosting'
     ) AS third_party_domains
     ON
       potential_third_parties.domain = third_party_domains.domain
