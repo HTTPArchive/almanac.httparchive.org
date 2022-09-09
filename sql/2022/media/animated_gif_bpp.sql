@@ -52,20 +52,21 @@ if ( matched && matched[1] && matched[2] ) {
 WITH gifs AS (
   SELECT
     _TABLE_SUFFIX AS client,
-    CAST( JSON_VALUE(payload, '$._image_details.animated') AS BOOL ) ) AS is_animated,
-    ( magickBytes( JSON_VALUE(payload, '$._image_details.magick.filesize') ) * 8 ) /
-      magickPixels(JSON_VALUE(payload, '$._image_details.magick.numberPixels') AS bits_per_pixel
+    CAST( JSON_VALUE(payload, '$._image_details.animated') AS BOOL) AS is_animated,
+    ( magickBytes(JSON_VALUE(payload, '$._image_details.magick.filesize') ) * 8 ) /
+      magickPixels(JSON_VALUE(payload, '$._image_details.magick.numberPixels') ) AS bits_per_pixel
   FROM
-    `requests.2022_06_01_*` TABLESAMPLE SYSTEM (0.001 PERCENT)
+    `requests.2022_06_01_*`
   WHERE
     JSON_VALUE(payload, '$._image_details.detected_type') = 'gif' AND
-    magickPixels(JSON_VALUE(payload, '$._image_details.magick.numberPixels')) > 1
+    magickPixels(JSON_VALUE(payload, '$._image_details.magick.numberPixels')) > 1 AND
+    JSON_VALUE(payload, '$._image_details.animated') IS NOT NULL
 )
 
 SELECT
   percentile,
-  _TABLE_SUFFIX AS client,
-  CAST( JSON_VALUE(payload, '$._image_details.animated') AS BOOL ) ) AS is_animated,
+  client,
+  is_animated,
   APPROX_QUANTILES(bits_per_pixel, 1000)[OFFSET(percentile * 10)] AS bpp
 FROM
   gifs,
