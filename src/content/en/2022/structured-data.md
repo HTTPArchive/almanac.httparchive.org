@@ -365,7 +365,7 @@ This is matched by desktop, going from 1.57% to 5.38% over the course of the yea
   )
 }}
 
-Twitter meta tags once again follow the pattern of a general increase in usage, more specifically in the common tags of `twitter:card`, `twitter:title`, ` twitter:description` and `twitter:image`. A notable increase can be seen for `twitter:label1` and `twitter:data1`, both at 6.85% in 2021 to 9.71% in 2022 for mobile pages.
+Twitter meta tags once again follow the pattern of a general increase in usage, more specifically in the common tags of `twitter:card`, `twitter:title`, `twitter:description` and `twitter:image`. A notable increase can be seen for `twitter:label1` and `twitter:data1`, both at 6.85% in 2021 to 9.71% in 2022 for mobile pages.
 
 
 {{ figure_markup(
