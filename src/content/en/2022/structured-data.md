@@ -28,7 +28,7 @@ Despite many advances in machine learning and in particular the field of ‘natu
 * the open availability of data for public research
 * ensuring the quality of the organization's data is maintained when the data leaves its origin
 
-Organizations of all sizes and types want their content to be discovered on the web. Search engines such as Google and Bing emphasize data discoverability by promoting the use of structured data. From an SEO point of view, it is advantageous to present data in an easy to find and parse manner. Some of these advantages will be discussed in the [Use Cases](#heading=h.9dgerkhy7i6) and [Key Concepts](#heading=h.sgp4kasx7abv) sections within this chapter.
+Organizations of all sizes and types want their content to be discovered on the web. Search engines such as Google and Bing emphasize data discoverability by promoting the use of structured data. From an SEO point of view, it is advantageous to present data in an easy to find and parse manner. Some of these advantages will be discussed in the [Use Cases](#use-cases) and [Key Concepts](#key-concepts) sections within this chapter.
 
 Last year's introduction pointed out that “when machines can reliably extract structured data, at scale, we enable new and smarter types of software, systems, services and businesses”. This year’s chapter includes sections that explore recently published research on structured data and open source frameworks and tools that assist the generation of high-quality structured data.
 
@@ -136,7 +136,7 @@ As will be discussed later, this semantic web creates many opportunities for bus
 
 Linked data may also be [open data](https://en.wikipedia.org/wiki/Open_data), described as Linked Open Data. Open data, as the name implies, is data that is openly accessible to anyone for any purpose. This data is licensed under an open license.
 
-Open Data is the first of the <a hreflang="en" href="https://5stardata.info/en/">5 stars of open data</a>, a deployment scheme suggested by Tim Berners-Lee. According to the <a hreflang="en" href="https://opendatahandbook.org/">open data handbook</a>, to score the maximum five stars, data must (1) Be available on the Web under an open license, (2) Be in the form of structured data, (3) Be in a non-proprietary file format, (4) Use URIs as its identifiers, (5) Include links to other data sources (see [data linking](#heading=h.u0uq7llkr1cj)).
+Open Data is the first of the <a hreflang="en" href="https://5stardata.info/en/">5 stars of open data</a>, a deployment scheme suggested by Tim Berners-Lee. According to the <a hreflang="en" href="https://opendatahandbook.org/">open data handbook</a>, to score the maximum five stars, data must (1) Be available on the Web under an open license, (2) Be in the form of structured data, (3) Be in a non-proprietary file format, (4) Use URIs as its identifiers, (5) Include links to other data sources (see [data linking](#data-linking)).
 
 While structured data is the second star in the 5 star open data plan, linked data should fulfill requirements for all 5 stars of open data.
 
@@ -663,7 +663,7 @@ With data linking, we collect information from different sources to create riche
 
 Search engine optimization (<a hreflang="en" href="https://www.webopedia.com/definitions/seo/#How_does_SEO_work">SEO</a>) is the area focusing on building the content of a web page so that it has better results from search engines. Naturally, this is highly important for discoverability as a successful implementation of SEO may allow for a page to appear higher on the search engine results page (<a hreflang="en" href="https://www.webopedia.com/definitions/serp/">SERP</a>). The SERP is where the titles, URLs, and meta descriptions are displayed from a search query.
 
-By adding structured data to web pages, we can optimize a web page for search engines, as well as have extra content visible from the SERP. This extra content can come in many forms, some of which has been [discussed previously](#heading=h.pun7uv6k8bah), namely Knowledge Panels, Rich Snippets and Related Questions.
+By adding structured data to web pages, we can optimize a web page for search engines, as well as have extra content visible from the SERP. This extra content can come in many forms, some of which has been [discussed previously](#semantic-search-engines-rich-results-and-beyond), namely Knowledge Panels, Rich Snippets and Related Questions.
 
 Having this added discoverability, enabled by structured data, is essential for increasing traffic to a web page from search engines. It follows that businesses and eCommerce pages would find great value in these technologies, which will be discussed in the following section.
 
