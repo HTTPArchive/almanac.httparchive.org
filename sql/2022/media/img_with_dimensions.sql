@@ -10,12 +10,14 @@ try {
   const responsiveImages = JSON.parse(responsiveString)
   if(responsiveImages &&  responsiveImages['responsive-images']){
   for(const image of responsiveImages["responsive-images"]){
-    result.push({
-      hasWidth: image.hasWidth ? 1 : 0,
-      hasHeight: image.hasHeight ? 1 : 0,
-      hasAlt: image.hasAlt ? 1 : 0,
-      hasReservedLayoutDimension: image.reservedLayoutDimensions ? 1 : 0
-    })
+    if ( image.approximateResourceWidth > 1 || image.approximateResourceHeight > 1 ) {
+      result.push({
+        hasWidth: image.hasWidth ? 1 : 0,
+        hasHeight: image.hasHeight ? 1 : 0,
+        hasAlt: image.hasAlt ? 1 : 0,
+        hasReservedLayoutDimension: image.reservedLayoutDimensions ? 1 : 0
+      })
+    }
   }}
   return result
 } catch(e) {
@@ -28,12 +30,14 @@ SELECT
   COUNT(0) AS images,
   COUNTIF(hasWidth = 1) AS hasWidth,
   COUNTIF(hasHeight = 1) AS hasHeight,
+  COUNTIF(hasWidth = 1 AND hasHeight = 1) as hasBoth,
   COUNTIF(hasAlt = 1) AS hasAlt,
   COUNTIF(hasReservedLayoutDimension = 1) AS hasDimensions,
   SAFE_DIVIDE(COUNTIF(hasWidth = 1), COUNT(0)) AS percHasWidth,
   SAFE_DIVIDE(COUNTIF(hasHeight = 1), COUNT(0)) AS percHasHeight,
+  SAFE_DIVIDE(COUNTIF(hasWidth = 1 AND hasHeight = 1), COUNT(0)) AS percHasBoth,
   SAFE_DIVIDE(COUNTIF(hasAlt = 1), COUNT(0)) AS percHasAlt,
-  SAFE_DIVIDE(COUNTIF(hasReservedLayoutDimension = 1), COUNT(0)) AS percHasDimensions
+  SAFE_DIVIDE(COUNTIF(hasReservedLayoutDimension = 1), COUNT(0)) AS percHasReservedLayoutDimensions
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
