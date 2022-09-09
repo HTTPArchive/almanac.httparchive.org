@@ -1,6 +1,26 @@
 #standardSQL
 # info on color depth and spaces – will need to be further filtered/aggregated, but this is everything
 
+CREATE TEMPORARY FUNCTION magickMillions(imageMagickNumberString STRING)
+RETURNS FLOAT64
+LANGUAGE js AS r'''
+
+if (!imageMagickNumberString) { return 0; }
+const matched = imageMagickNumberString.match( /(\d+)\.?(\d+)?M$/ );
+if ( matched && matched[1] ) {
+  if ( matched[2] ) {
+    // input had a decimal (e.g. "1.23456M")
+    return `${ matched[1] }.${ matched[2] }e6`;
+  } else {
+    // input did not have a decimal (e.g. "1M")
+    return `${ matched[1] }e6`;
+  }
+} else {
+  return imageMagickNumberString;
+}
+
+''';
+
 WITH color_info AS (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -10,7 +30,8 @@ WITH color_info AS (
   FROM
     `requests.2022_06_01_*`
   WHERE
-    JSON_QUERY(payload, '$._image_details.magick.colorspace') IS NOT NULL
+    JSON_QUERY(payload, '$._image_details.magick.colorspace') IS NOT NULL AND
+    magickMillions(JSON_VALUE(payload, '$._image_details.magick.numberPixels')) > 1
 ),
 
 totals AS (
