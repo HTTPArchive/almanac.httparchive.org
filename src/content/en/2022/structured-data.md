@@ -533,7 +533,7 @@ Most of the properties for Microdata have not seen much change, with a slight in
   )
 }}
 
- These increases are common for desktop as well, with slight decreases elsewhere such as `wpsidebar` (going from 1.38% to 1.17% on mobile pages and going from 1.25% to 1.08% on desktop pages), resulting in minimum change over the last year for both mobile and desktop pages as a whole.
+These increases are common for desktop as well, with slight decreases elsewhere such as `wpsidebar` (going from 1.38% to 1.17% on mobile pages and going from 1.25% to 1.08% on desktop pages), resulting in minimum change over the last year for both mobile and desktop pages as a whole.
 
 ### JSON-LD
 
