@@ -54,7 +54,7 @@ WITH gifs AS (
     _TABLE_SUFFIX AS client,
     CAST( JSON_VALUE(payload, '$._image_details.animated') AS BOOL) AS is_animated,
     ( magickBytes(JSON_VALUE(payload, '$._image_details.magick.filesize') ) * 8 ) /
-      magickPixels(JSON_VALUE(payload, '$._image_details.magick.numberPixels') ) AS bits_per_pixel
+    magickPixels(JSON_VALUE(payload, '$._image_details.magick.numberPixels') ) AS bits_per_pixel
   FROM
     `requests.2022_06_01_*`
   WHERE
