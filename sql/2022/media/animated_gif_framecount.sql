@@ -25,13 +25,13 @@ if ( matched && matched[1] ) {
 ''';
 
 WITH framecounts AS (
-SELECT
-  _TABLE_SUFFIX AS client,
-  CAST( JSON_VALUE(payload, '$._image_details.metadata.GIF.FrameCount') AS NUMERIC ) as framecount
-FROM `requests.2022_06_01_*`
-WHERE
-  JSON_VALUE(payload, '$._image_details.metadata.GIF.FrameCount') IS NOT NULL AND
-  magickPixels(JSON_VALUE(payload, '$._image_details.magick.numberPixels')) > 1
+  SELECT
+    _TABLE_SUFFIX AS client,
+    CAST( JSON_VALUE(payload, '$._image_details.metadata.GIF.FrameCount') AS NUMERIC ) AS framecount
+  FROM `requests.2022_06_01_*`
+  WHERE
+    JSON_VALUE(payload, '$._image_details.metadata.GIF.FrameCount') IS NOT NULL AND
+    magickPixels(JSON_VALUE(payload, '$._image_details.magick.numberPixels')) > 1
 )
 
 SELECT

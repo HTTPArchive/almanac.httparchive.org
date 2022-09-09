@@ -30,7 +30,7 @@ SELECT
   COUNT(0) AS images,
   COUNTIF(hasWidth = 1) AS hasWidth,
   COUNTIF(hasHeight = 1) AS hasHeight,
-  COUNTIF(hasWidth = 1 AND hasHeight = 1) as hasBoth,
+  COUNTIF(hasWidth = 1 AND hasHeight = 1) AS hasBoth,
   COUNTIF(hasAlt = 1) AS hasAlt,
   COUNTIF(hasReservedLayoutDimension = 1) AS hasDimensions,
   SAFE_DIVIDE(COUNTIF(hasWidth = 1), COUNT(0)) AS percHasWidth,
