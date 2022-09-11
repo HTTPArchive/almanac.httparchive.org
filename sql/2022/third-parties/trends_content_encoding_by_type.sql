@@ -7,14 +7,16 @@ WITH base AS (
     client,
     domain,
     resp_content_encoding,
-    type
+    type,
+    num_requests
   FROM (
     SELECT
       '2022' AS year,
       client,
       third_party_domains.domain AS domain,
       resp_content_encoding,
-      type
+      type,
+      COUNT(0) AS num_requests
     FROM (
       SELECT
         client,
@@ -51,21 +53,23 @@ WITH base AS (
     client,
     domain,
     resp_content_encoding,
-    type
+    type,
+    num_requests
   FROM (
     SELECT
       '2021' AS year,
       client,
       third_party_domains.domain AS domain,
       resp_content_encoding,
-      type
+      type,
+      COUNT(0) AS num_requests
     FROM (
       SELECT
         client,
         url AS page,
         NET.HOST(url) AS domain,
         resp_content_encoding,
-        type
+        type,
       FROM
         `httparchive.almanac.requests`
       WHERE
@@ -95,21 +99,23 @@ WITH base AS (
     client,
     domain,
     resp_content_encoding,
-    type
+    type,
+    num_requests
   FROM (
     SELECT
       '2020' AS year,
       client,
       third_party_domains.domain AS domain,
       resp_content_encoding,
-      type
+      type,
+      COUNT(0) AS num_requests
     FROM (
       SELECT
         client,
         url AS page,
         NET.HOST(url) AS domain,
         resp_content_encoding,
-        type
+        type,
       FROM
         `httparchive.almanac.requests`
       WHERE
@@ -140,12 +146,12 @@ SELECT
   client,
   resp_content_encoding AS content_encoding,
   type,
-  COUNTIF(domain IS NOT NULL) AS third_party_requests,
-  COUNTIF(domain IS NULL) AS first_party_requests,
-  SUM(COUNTIF(domain IS NOT NULL)) OVER (PARTITION BY year, client, type) AS total_third_party_requests,
-  SUM(COUNTIF(domain IS NULL)) OVER (PARTITION BY year, client, type) AS total_first_party_requests,
-  COUNTIF(domain IS NOT NULL) / SUM(COUNTIF(domain IS NOT NULL)) OVER (PARTITION BY year, client, type) AS pct_third_party_requests,
-  COUNTIF(domain IS NULL) / SUM(COUNTIF(domain IS NULL)) OVER (PARTITION BY year, client, type) AS pct_first_party_requests
+  SUM(IF(domain IS NOT NULL, num_requests, 0)) AS third_party_requests,
+  SUM(IF(domain IS NULL, num_requests, 0)) AS first_party_requests,
+  SUM(SUM(IF(domain IS NOT NULL, num_requests, 0))) OVER (PARTITION BY year, client, type) AS total_third_party_requests,
+  SUM(SUM(IF(domain IS NULL, num_requests, 0))) OVER (PARTITION BY year, client, type) AS total_first_party_requests,
+  SUM(IF(domain IS NOT NULL, num_requests, 0)) / SUM(SUM(IF(domain IS NOT NULL, num_requests, 0))) OVER (PARTITION BY year, client, type) AS pct_third_party_requests,
+  SUM(IF(domain IS NULL, num_requests, 0)) / SUM(SUM(IF(domain IS NULL, num_requests, 0))) OVER (PARTITION BY year, client, type) AS pct_first_party_requests
 FROM
   base
 GROUP BY
