@@ -69,7 +69,7 @@ WITH base AS (
         url AS page,
         NET.HOST(url) AS domain,
         resp_content_encoding,
-        type,
+        type
       FROM
         `httparchive.almanac.requests`
       WHERE
@@ -115,7 +115,7 @@ WITH base AS (
         url AS page,
         NET.HOST(url) AS domain,
         resp_content_encoding,
-        type,
+        type
       FROM
         `httparchive.almanac.requests`
       WHERE

@@ -20,7 +20,7 @@ WITH base AS (
         client,
         url AS page,
         NET.HOST(url) AS domain,
-        resp_content_encoding,
+        resp_content_encoding
       FROM
         `httparchive.almanac.requests`
       WHERE
@@ -62,7 +62,7 @@ WITH base AS (
         client,
         url AS page,
         NET.HOST(url) AS domain,
-        resp_content_encoding,
+        resp_content_encoding
       FROM
         `httparchive.almanac.requests`
       WHERE
@@ -104,7 +104,7 @@ WITH base AS (
         client,
         url AS page,
         NET.HOST(url) AS domain,
-        resp_content_encoding,
+        resp_content_encoding
       FROM
         `httparchive.almanac.requests`
       WHERE
