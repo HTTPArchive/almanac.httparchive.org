@@ -2,7 +2,7 @@ WITH
 fonts AS (
   SELECT
     url,
-    JSON_EXTRACT(payload, '$._font_details.table_sizes') AS payload
+    REGEXP_CONTAINS(JSON_EXTRACT(payload, '$._font_details.table_sizes'), '(?i)GPOS|GSUB') AS has_ot_features
   FROM
     `httparchive.almanac.requests`
   WHERE
@@ -10,16 +10,16 @@ fonts AS (
     type = 'font'
   GROUP BY
     url,
-    payload
+    has_ot_features
 )
+
 SELECT
-  format,
+  has_ot_features,
   COUNT(0) AS freq,
   COUNT(0) / SUM(COUNT(0)) OVER () AS pct_freq
 FROM
-  fonts,
-  UNNEST(REGEXP_EXTRACT_ALL(payload, '(?i)(CFF |glyf|SVG|CFF2)')) AS format
+  fonts
 GROUP BY
-  format
+  has_ot_features
 ORDER BY
   pct_freq DESC
