@@ -1,7 +1,7 @@
 #standardSQL
 # What are the aspect ratios of the web's images?
 
-CREATE TEMPORARY FUNCTION getSrcsetInfo(responsiveImagesJsonString STRING)
+CREATE TEMPORARY FUNCTION getAspectRatioInfo(responsiveImagesJsonString STRING)
 RETURNS ARRAY<STRUCT<imgURL STRING, approximateResourceWidth INT64, approximateResourceHeight INT64, aspectRatio NUMERIC, isPortrait BOOL, isLandscape BOOL, isSquare BOOL>>
 LANGUAGE js AS '''
   const parsed = JSON.parse( responsiveImagesJsonString );
@@ -34,7 +34,7 @@ WITH imgs AS (
     isSquare
   FROM
     `httparchive.pages.2022_06_01_*`,
-    UNNEST(getSrcsetInfo(JSON_QUERY(JSON_VALUE(payload, '$._responsive_images' ), '$.responsive-images')))
+    UNNEST(getAspectRatioInfo(JSON_QUERY(JSON_VALUE(payload, '$._responsive_images' ), '$.responsive-images')))
   WHERE
     approximateResourceWidth > 1 AND
     approximateResourceHeight > 1
