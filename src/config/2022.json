@@ -94,8 +94,7 @@
           "part": "II",
           "chapter_number": "11",
           "title": "Accessibility",
-          "slug": "accessibility",
-          "todo": true
+          "slug": "accessibility"
         },
         {
           "part": "II",
@@ -326,16 +325,6 @@
       "website": "https://alexnj.com",
       "twitter": "4x13",
       "linkedin": "alexnj"
-    },
-    "alextait1": {
-      "name": "Alex Tait",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "24625637",
-      "website": "https://atfreshsolutions.com",
-      "github": "alextait1",
-      "twitter": "at_fresh_dev"
     },
     "DataBytzAI": {
       "name": "Allen ONeill",
@@ -605,16 +594,6 @@
       "avatar_url": "939727",
       "github": "meyerweb",
       "website": "http://meyerweb.com/"
-    },
-    "ericwbailey": {
-      "name": "Eric Bailey",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "634191",
-      "github": "ericwbailey",
-      "website": "https://ericwbailey.design/",
-      "twitter": "ericwbailey"
     },
     "eeeps": {
       "name": "Eric Portis",
@@ -1378,7 +1357,6 @@
     "scottdavis99": {
       "name": "Scott Davis",
       "teams": [
-        "analysts",
         "authors"
       ],
       "avatar_url": "15577",
@@ -1447,7 +1425,8 @@
     "thibaudcolas": {
       "name": "Thibaud Colas",
       "teams": [
-        "analysts"
+        "analysts",
+        "authors"
       ],
       "avatar_url": "877585",
       "github": "thibaudcolas",
