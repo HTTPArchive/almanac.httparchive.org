@@ -82,9 +82,14 @@ The previous chart displays information on the most used service worker events. 
 
 Install and activate are lifecycle events. It is common practice to create a cache of assets that will allow running the app offline when installing. Activation is generally used to clean up old caches and anything associated with the previous service worker. 
 
-**62.53%**
-
-**_Usage percent of install event (desktop) _**
+{{ figure_markup(
+  caption="Usage percent of install event (desktop)",
+  content="62.53%",
+  classes="really-big-number",
+  sheets_gid="xxx",
+  sql_file="xxx.sql"
+)
+}}
 
 The service worker needs to be active in order to receive events like fetch and push. This makes them the cornerstone of service workers, and hence the 62.53% usage on desktop and 61.47% on mobile for install, and 62.63% usage on desktop and 60.84% on mobile regarding activate.
 
@@ -95,14 +100,17 @@ While these are still the most used events, there has been a decrease in the per
 
 With newly announced [support on Webkit](https://webkit.org/blog/12945/meet-web-push/) for Web Push, the related Push notification events come next in most used service worker methods. 
 
-**57.02%**
-
-**_Usage percent of Notificationclick event (desktop) _**
-
-
+{{ figure_markup(
+  caption="Usage percent of Notificationclick event (desktop)",
+  content="57.02%",
+  classes="really-big-number",
+  sheets_gid="xxx",
+  sql_file="xxx.sql"
+)
+}}
 
 * `notificationclick` comes up to 57.02% (an 11.4% increase over last year’s data) on desktop and 51.35% (up 4.73%) on mobile. 
-* `push` 56.02% (up 12.14%) on desktop and 50.66% (up 5.22%) on mobile.
+* `push` 56.02% (up 12.14%) on desktop and 50.6s6% (up 5.22%) on mobile.
 * `notificationclose` is now at 15.44% (up 9.46% ) on desktop and 16.09% (up 9.75%) on mobile.
 
 A couple of takeaways here is that momentum continues to grow this year for PWAs on desktop, and push notifications is not an exception. Usage of related events for notifications has gone up around 11%. Many tweaks and fixes have been worked on in different platforms to make sure that these pieces of UX feel completely integrated with the host OS.
@@ -112,11 +120,14 @@ A couple of takeaways here is that momentum continues to grow this year for PWAs
 
 The remaining events in the chart represent background processing events. 
 
-**48.69%**
-
-**_Usage percent of fetch event (desktop) _**
-
-
+{{ figure_markup(
+  caption="Usage percent of fetch event (desktop).",
+  content="48.69%",
+  classes="really-big-number",
+  sheets_gid="xxx",
+  sql_file="xxx.sql"
+)
+}}
 
 * Fetch, which occurs when a request is sent to the server, can be used to intercept said request and respond with custom or cached assets, enabling offline support for our PWAs. Fetch usage is 48.69% on desktop and 50.02% on mobile.
 * Sync, which fires when the UA believes the user has connectivity, has a usage of 6.06% on desktop and 5% on mobile.
@@ -170,9 +181,14 @@ The Web App Manifest file is a JSON file that contains information about the app
 
 Keeping the web app’s manifest up to date is essential to take advantage of advanced discoverability through online repositories, submissions to application stores, and more recently, a way to tap into advanced capabilities like share target and file handling for your app. Cutting edge work on [enabling Widgets based on PWA technology](https://github.com/aarongustafson/pwa-widgets#how-widgets-are-represented-in-these-apis) is also being based on definitions in the manifest, proving the versatility of the file itself for advanced platform integration even further.
 
-**95.23%**
-
-**_Percent of manifest files parseable (desktop) _**
+{{ figure_markup(
+  caption="Percent of manifest files parseable (desktop)",
+  content="95.23%",
+  classes="really-big-number",
+  sheets_gid="xxx",
+  sql_file="xxx.sql"
+)
+}}
 
 For most cases, 95.23% in desktop and 94.34% in mobile, websites that have a manifest are JSON parseable. This indicates that almost all web apps that use the manifest are correctly formed. This does not indicate completeness or minimum availability of certain fields that would contribute to the installation of the web app.
 
@@ -293,9 +309,14 @@ The manifest file also allows for the activation of modern platform capabilities
 
 #### Manifest preferring native
 
-**2.3%**
-
-**_Manifest files with a related_applications field (desktop) _**
+{{ figure_markup(
+  caption="Manifest files with a related_applications field (desktop)",
+  content="2.3%",
+  classes="really-big-number",
+  sheets_gid="xxx",
+  sql_file="xxx.sql"
+)
+}}
 
 There is a property in the manifest that specifies if applications listed in the related_applications field should be preferred over the web application. This might make the user agent suggest the installation of the related app instead of the web app. From all the manifest files analyzed, only 2.3% on desktop and 2.02% on mobile rely on this.
 
@@ -304,9 +325,14 @@ There is a property in the manifest that specifies if applications listed in the
 
 PWAs go hand in hand with advanced web capabilities. These capabilities are generally part of project FUGU which is the codename for the web capabilities project. From the growing list of features that have been added to the web platform, these are the top APIs being used on the web that are useful for PWAs:
 
-**8.84%**
-
-**_Most used FUGU API (desktop) _**
+{{ figure_markup(
+  caption="Most used FUGU API (desktop)",
+  content="8.84%",
+  classes="really-big-number",
+  sheets_gid="xxx",
+  sql_file="xxx.sql"
+)
+}}
 
 
 
@@ -447,13 +473,23 @@ We can acknowledge that the implementation for web notifications has not been th
 
 With the growth of notification support and the UX improvements  in different platforms, there hasn’t been any major changes in the acceptance of notifications. Since early 2020 they have been around the 6% acceptance rate on desktop and 20% on mobile. 
 
-**6.41%**
+{{ figure_markup(
+  caption="Notification acceptance rate (desktop)",
+  content="6.41%",
+  classes="really-big-number",
+  sheets_gid="xxx",
+  sql_file="xxx.sql"
+)
+}}
 
-**_Notification acceptance rate (desktop) _**
-
-**19.09%**
-
-**_Notification acceptance rate (mobile) _**
+{{ figure_markup(
+  caption="Notification acceptance rate (mobile)",
+  content="19.09%",
+  classes="really-big-number",
+  sheets_gid="xxx",
+  sql_file="xxx.sql"
+)
+}}
 
 Desktop and mobile notification acceptance rate share a common fashion, and it is the trend to ignore notifications. The sum of “ignore” has gone up from 48.27% in February 2020 all the way up to 69.66% in June 2022. For mobile platforms, from 1.88% in February 2020 to a staggering 33.62% for June this year. Notification fatigue, coupled with increasing number of prompts for security, privacy, and advanced capabilities are partially responsible, and work is being carried out to address this and present better unified UX across different platforms. 
 
