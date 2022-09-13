@@ -1,5 +1,5 @@
 #standardSQL
-# Total ofThird-Party domains which block the main thread by percentile
+# Total of Third-Party domains which block the main thread by percentile
 #
 # As Lighthouse measures all impact there is no need to do a separate total
 # Lighthouse also gives a useable category. So no need to use almanac.third-parties table
