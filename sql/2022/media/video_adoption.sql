@@ -12,7 +12,9 @@ FROM (
     _TABLE_SUFFIX AS client,
     CAST(JSON_VALUE(JSON_VALUE(payload, '$._media'), '$.num_video_nodes') AS INT64) AS num_video_nodes
   FROM
-    `httparchive.pages.*`)
+    `httparchive.pages.*`
+  WHERE
+    _TABLE_SUFFIX >= '2020-08-01')
 GROUP BY
   date,
   client
