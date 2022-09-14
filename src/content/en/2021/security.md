@@ -411,53 +411,53 @@ On the other side of the spectrum, the longest CSP header is almost twice as lon
     <tbody>
       <tr>
         <td>https://www.google-analytics.com</td>
-        <td class="numeric">1.4%</td>
-        <td class="numeric">1.3%</td>
+        <td class="numeric">0.29%</td>
+        <td class="numeric">0.22%</td>
       </tr>
       <tr>
         <td>https://www.googletagmanager.com</td>
-        <td class="numeric">1.2%</td>
-        <td class="numeric">1.2%</td>
+        <td class="numeric">0.26%</td>
+        <td class="numeric">0.22%</td>
       </tr>
       <tr>
         <td>https://fonts.googleapis.com</td>
-        <td class="numeric">1.0%</td>
-        <td class="numeric">1.0%</td>
+        <td class="numeric">0.22%</td>
+        <td class="numeric">0.16%</td>
       </tr>
       <tr>
         <td>https://fonts.gstatic.com</td>
-        <td class="numeric">0.9%</td>
-        <td class="numeric">0.9%</td>
+        <td class="numeric">0.20%</td>
+        <td class="numeric">0.15%</td>
       </tr>
       <tr>
         <td>https://www.google.com</td>
-        <td class="numeric">0.9%</td>
-        <td class="numeric">0.9%</td>
+        <td class="numeric">0.19%</td>
+        <td class="numeric">0.14%</td>
       </tr>
       <tr>
         <td>https://www.youtube.com</td>
-        <td class="numeric">0.9%</td>
-        <td class="numeric">0.8%</td>
+        <td class="numeric">0.19%</td>
+        <td class="numeric">0.13%</td>
       </tr>
       <tr>
         <td>https://connect.facebook.net</td>
-        <td class="numeric">0.7%</td>
-        <td class="numeric">0.7%</td>
+        <td class="numeric">0.16%</td>
+        <td class="numeric">0.11%</td>
       </tr>
       <tr>
         <td>https://stats.g.doubleclick.net</td>
-        <td class="numeric">0.7%</td>
-        <td class="numeric">0.7%</td>
+        <td class="numeric">0.15%</td>
+        <td class="numeric">0.11%</td>
       </tr>
       <tr>
         <td>https://www.gstatic.com</td>
-        <td class="numeric">0.7%</td>
-        <td class="numeric">0.6%</td>
+        <td class="numeric">0.14%</td>
+        <td class="numeric">0.11%</td>
       </tr>
       <tr>
         <td>https://cdnjs.cloudflare.com</td>
-        <td class="numeric">0.6%</td>
-        <td class="numeric">0.6%</td>
+        <td class="numeric">0.12%</td>
+        <td class="numeric">0.10%</td>
       </tr>
     </tbody>
   </table>

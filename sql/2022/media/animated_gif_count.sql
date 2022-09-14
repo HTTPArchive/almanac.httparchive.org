@@ -2,22 +2,24 @@
 # what percent of gifs are animated?
 
 # ImageMagick reports big images as having, e.g., "1.29097M" pixels. This means ~1.2 million pixels, but BigQuery doesn't know that.
-CREATE TEMPORARY FUNCTION magickMillions(imageMagickNumberString STRING)
-RETURNS FLOAT64
+CREATE TEMPORARY FUNCTION magickPixels(imageMagickNumberString STRING)
+RETURNS INT64
 LANGUAGE js AS r'''
 
-if (!imageMagickNumberString) { return 0; }
-const matched = imageMagickNumberString.match( /(\d+)\.?(\d+)?M$/ );
+if (!imageMagickNumberString) { return null; }
+const matched = imageMagickNumberString.match(/([\d\.]+)(\w+)?$/);
+const multiples = {
+  'K': 1e3,
+  'M': 1e6,
+  'G': 1e9,
+  'T': 1e12
+}
 if ( matched && matched[1] ) {
-  if ( matched[2] ) {
-    // input had a decimal (e.g. "1.23456M")
-    return `${ matched[1] }.${ matched[2] }e6`;
-  } else {
-    // input did not have a decimal (e.g. "1M")
-    return `${ matched[1] }e6`;
-  }
+  return Math.round(
+    parseFloat( matched[1] ) * ( multiples[ matched[2] ] || 1 )
+  );
 } else {
-  return imageMagickNumberString;
+  return null;
 }
 
 ''';
@@ -31,6 +33,6 @@ FROM
   `requests.2022_06_01_*`
 WHERE
   JSON_VALUE(payload, '$._image_details.detected_type') = 'gif' AND
-  magickMillions(JSON_VALUE(payload, '$._image_details.magick.numberPixels')) > 1
+  magickPixels(JSON_VALUE(payload, '$._image_details.magick.numberPixels')) > 1
 GROUP BY
   client

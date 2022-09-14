@@ -1,5 +1,5 @@
 #standardSQL
-# Total of Third-Party domains which block the main thread by percentile
+# Third-Party domains which block the main thread by percentile
 #
 # As Lighthouse measures all impact there is no need to do a separate total
 # Lighthouse also gives a useable category. So no need to use almanac.third-parties table
@@ -9,6 +9,8 @@
 
 SELECT
   client,
+  domain,
+  category,
   total_pages,
   blocking_pages,
   percentile,
@@ -17,6 +19,8 @@ SELECT
 FROM (
   SELECT
     client,
+    domain,
+    category,
     COUNT(DISTINCT page) AS total_pages,
     COUNTIF(blocking > 0) AS blocking_pages,
     percentile,
@@ -26,7 +30,9 @@ FROM (
   FROM (
     SELECT
       client,
+      JSON_VALUE(third_party_items, '$.entity.url') AS domain,
       page,
+      JSON_VALUE(third_party_items, '$.entity.text') AS category,
       COUNTIF(SAFE_CAST(JSON_VALUE(report, '$.audits.third-party-summary.details.summary.wastedMs') AS FLOAT64) > 250) AS blocking,
       SUM(SAFE_CAST(JSON_VALUE(third_party_items, '$.blockingTime') AS FLOAT64)) AS blocking_time,
       SUM(SAFE_CAST(JSON_VALUE(third_party_items, '$.transferSize') AS FLOAT64) / 1024) AS transfer_size_kib
@@ -42,11 +48,15 @@ FROM (
       UNNEST(JSON_QUERY_ARRAY(report, '$.audits.third-party-summary.details.items')) AS third_party_items
     GROUP BY
       client,
-      page
+      domain,
+      page,
+      category
     ),
     UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
   GROUP BY
     client,
+    domain,
+    category,
     percentile
   HAVING
     total_pages >= 50
@@ -56,4 +66,5 @@ WHERE
 ORDER BY
   client,
   total_pages DESC,
+  category,
   percentile
