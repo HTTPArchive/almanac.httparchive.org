@@ -9,7 +9,7 @@ analysts: [siakaramalegos, rviscomi]
 editors: [rviscomi]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1GB39gbyOilTSvgJHVdY8zwxwaFdsUB5iaD29cMwkdDY/
-Suzzicks_bio: TODO
+Suzzicks_bio: Cindy Krum is the CEO and Founder of MobileMoxie. She specializes in mobile SEO, app SEO (ASO), and anticipating and explaining changes in Google before they are announced.
 featured_quote: It is not enough to simply pay lip-service to the concept of mobile-first design and development; these concepts need to continue to be embraced and pushed when necessary. They also need to experience their own growth—outside of the web scenario to larger elements of business planning, marketing, strategy, and communication.
 featured_stat_1: 67%
 featured_stat_label_1: Websites receiving more mobile traffic than desktop
