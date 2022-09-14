@@ -199,7 +199,7 @@ Having appropriately sized tap targets makes it less likely that a user will err
 The minimum size for a tap target is generally considered to be no smaller than 48 pixels by 48 pixels, which is a rough estimation of the size of a finger being used on a touchscreen. Tap targets are also expected to be a minimum of 8 pixels apart from each other in order to pass any of Google’s evaluations. In our research, 42% of mobile sites had sufficient tap targets, which is disappointing as less than half of the sites manage to universally have appropriately sized tap targets.
 
 {{ figure_markup(
-    image=".png",
+    image="tap-target-failures.png",
     caption="Distribution of the number of tap target failures per page.",
     description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of tap target failures per page, with 1, 2, 5, 12, and 27 respectively.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2iu1w8TLfOTLCQ1O-d74ku9NirGCQJNeO789uKX1-M6N053ASsz2tXWPvU1twhScsa3rxWF7_7OBn/pubchart?oid=1203484621&format=interactive",
