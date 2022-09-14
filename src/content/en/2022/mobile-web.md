@@ -9,13 +9,14 @@ analysts: [siakaramalegos, rviscomi]
 editors: [rviscomi]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1GB39gbyOilTSvgJHVdY8zwxwaFdsUB5iaD29cMwkdDY/
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+Suzzicks_bio: TODO
+featured_quote: It is not enough to simply pay lip-service to the concept of mobile-first design and development; these concepts need to continue to be embraced and pushed when necessary. They also need to experience their own growth—outside of the web scenario to larger elements of business planning, marketing, strategy, and communication.
+featured_stat_1: 67%
+featured_stat_label_1: Websites receiving more mobile traffic than desktop
+featured_stat_2: 23%
+featured_stat_label_2: Mobile pages with sufficient color contrast
+featured_stat_3: 39%
+featured_stat_label_3: Websites with good CWV on mobile
 ---
 
 ## Introduction
