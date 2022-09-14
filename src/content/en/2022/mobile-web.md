@@ -21,7 +21,7 @@ featured_stat_label_3: Websites with good CWV on mobile
 
 ## Introduction
 
-Mobile access to web content is a critical aspect of internet access as a whole. In fact, in many situations and regions, it is the [default means of accessing the internet](https://www.gsma.com/mobileeconomy/wp-content/uploads/2022/02/280222-The-Mobile-Economy-2022.pdf). It is also often the [backbone of communication](https://www.investopedia.com/is-having-a-smartphone-a-requirement-in-2021-5190186) that happens seamlessly on platforms that use desktop, native app, and web apps to facilitate cross-device behavior and allows consumers to use their preferred method of access, simplifying and further democratizing information and communication online.
+Mobile access to web content is a critical aspect of internet access as a whole. In fact, in many situations and regions, it is the <a hreflang="en" href="https://www.gsma.com/mobileeconomy/wp-content/uploads/2022/02/280222-The-Mobile-Economy-2022.pdf">default means of accessing the internet</a>. It is also often the <a hreflang="en" href="https://www.investopedia.com/is-having-a-smartphone-a-requirement-in-2021-5190186">backbone of communication</a> that happens seamlessly on platforms that use desktop, native app, and web apps to facilitate cross-device behavior and allows consumers to use their preferred method of access, simplifying and further democratizing information and communication online.
 
 This chapter will outline the state of the web in 2022 when it is accessed from a mobile device. In some cases, mobile data is compared to desktop data, which many people are more familiar with. This comparison is important because though many will focus on desktop data, there is now more mobile web traffic around the world than there is desktop, and this has been the case since about 2016 or 2017, depending on the source.
 
@@ -35,7 +35,7 @@ New generations are getting involved in social media and have earlier access to 
 
 ### Traffic from mobile versus desktop
 
-In keeping with the [Methodology](../methodology), the primary data source for this report is the HTTP Archive and the Chrome UX Report (CrUX). In cases where tablet data was included as a separate measurement from any data source, it was omitted, since it does not neatly fit in the primary mobile or desktop classifications and can add confusion and complexity when interpreting or contrasting mobile and desktop information that is more neatly segmented out. Refer to the [CrUX documentation](https://developer.chrome.com/docs/crux/methodology/#user-eligibility) for more information about eligible mobile platforms.
+In keeping with the [Methodology](../methodology), the primary data source for this report is the HTTP Archive and the Chrome UX Report (CrUX). In cases where tablet data was included as a separate measurement from any data source, it was omitted, since it does not neatly fit in the primary mobile or desktop classifications and can add confusion and complexity when interpreting or contrasting mobile and desktop information that is more neatly segmented out. Refer to the <a hreflang="en" href="https://developer.chrome.com/docs/crux/methodology/#user-eligibility">CrUX documentation</a> for more information about eligible mobile platforms.
 
 {{ figure_markup(
     image="pct-mobile-traffic-rank.png",
@@ -47,9 +47,9 @@ In keeping with the [Methodology](../methodology), the primary data source for t
   )
 }}
 
-Across the most popular ranks, the percentage of sites with more mobile traffic than desktop traffic has increased relative to [last year](https://almanac.httparchive.org/en/2021/mobile-web#traffic-use-by-popularity). In 2022, 88% of the top 1,000 most popular sites receive more traffic from mobile devices than desktop, up from about 85% in 2021. And among the top 10,000 most popular sites, 89% of them receive more traffic from mobile devices and that is up from about 86% in 2021 - so roughly a 3% increase in sites that receive more mobile traffic than desktop in both of those to top-popularity ranking groups.
+Across the most popular ranks, the percentage of sites with more mobile traffic than desktop traffic has increased relative to [last year](../2021/mobile-web#traffic-use-by-popularity). In 2022, 88% of the top 1,000 most popular sites receive more traffic from mobile devices than desktop, up from about 85% in 2021. And among the top 10,000 most popular sites, 89% of them receive more traffic from mobile devices and that is up from about 86% in 2021 - so roughly a 3% increase in sites that receive more mobile traffic than desktop in both of those to top-popularity ranking groups.
 
-According to Oberlo, about [58%](https://www.oberlo.com/statistics/mobile-internet-traffic) of web traffic in 2022 is from mobile devices. The consistent growth and pervasiveness of these statistics is a clear indication of the obvious increasing importance in the overall evaluation of mobile web access and interactions.
+According to Oberlo, about <a hreflang="en" href="https://www.oberlo.com/statistics/mobile-internet-traffic">58%</a> of web traffic in 2022 is from mobile devices. The consistent growth and pervasiveness of these statistics is a clear indication of the obvious increasing importance in the overall evaluation of mobile web access and interactions.
 
 
 ## Communication from the mobile web
@@ -103,7 +103,7 @@ Engagement and interactivity are critical for a good mobile web experience, but 
   )
 }}
 
-Since modulating keyboards with input fields is much more important on mobile than it is on desktop, we track the most popular mobile input types across their archive of websites. In 2022, `text` was still the most popular input type, used on 71% of pages, which is down slightly from [last year](https://almanac.httparchive.org/en/2021/mobile-web#type-declarations) at 73%. `hidden` was the next most common input type at 53% of pages, then `submit` at 38%.
+Since modulating keyboards with input fields is much more important on mobile than it is on desktop, we track the most popular mobile input types across their archive of websites. In 2022, `text` was still the most popular input type, used on 71% of pages, which is down slightly from [last year](../2021/mobile-web#type-declarations) at 73%. `hidden` was the next most common input type at 53% of pages, then `submit` at 38%.
 
 After the most common input types, there is a cluster of input types that occur on around one quarter of the pages. These include `email`, no input fields (`N/A`) and `checkbox` at 27%, followed by `search` at 25%.
 
@@ -241,7 +241,7 @@ One of the most complex problems that site owners have to address on the mobile 
 
 ### Core Web Vitals
 
-[Core Web Vitals](https://web.dev/vitals/) is a collection of performance metrics that Google compiles to evaluate different websites, and specifically, different [page templates](https://support.google.com/webmasters/answer/9205520#page_groups) on websites to describe how they perform in both mobile and desktop page settings. The elements of Core Web Vitals include loading, interactivity, and layout stability.
+[Core Web Vitals](https://web.dev/vitals/) is a collection of performance metrics that Google compiles to evaluate different websites, and specifically, different [page groups](https://support.google.com/webmasters/answer/9205520#page_groups) on websites to describe how they perform in both mobile and desktop page settings. The elements of Core Web Vitals include loading, interactivity, and layout stability.
 
 All three are aspects of how users perceive the performance of a page that can help or hinder the loading experience for users. This type of evaluation began in May of 2020, and these metrics are taken into account in Google’s ranking algorithm specifically as an aspect of the [page experience](https://developers.google.com/search/docs/advanced/experience/page-experience) evaluation, and thus, the metrics are organized around thresholds of performance that are either considered “good”, “needs improvement”, or “poor”. For a site to be considered “good”, 75% of visits must meet the prescribed thresholds for each of the Core Web Vitals metrics.
 
@@ -318,14 +318,14 @@ Using images that are sized properly for a mobile device has long been one of th
   )
 }}
 
-Given Google’s increased focus on rewarding good performance with their Core Web Vitals program, you would expect that more sites would be optimizing their images. However, it’s interesting to see that sites are actually having fewer optimized images over time. The figure above shows that there is a decrease in the percentage of pages with properly sized images since [2020](https://almanac.httparchive.org/en/2020/mobile-web#images), when 59% of sites had properly sized images. But in 2022, that number is down to only 54%.
+Given Google’s increased focus on rewarding good performance with their Core Web Vitals program, you would expect that more sites would be optimizing their images. However, it’s interesting to see that sites are actually having fewer optimized images over time. The figure above shows that there is a decrease in the percentage of pages with properly sized images since [2020](../2020/mobile-web#images), when 59% of sites had properly sized images. But in 2022, that number is down to only 54%.
 
 
 #### Responsive images
 
 Creating images that can be responsive to different screen sizes is a common way to handle mobile image sizing. Using responsive images is a great way for websites to handle even the most unique presentation scenarios, like viewing a website on a wide-screen TV, viewing a website on a connected digital assistant, or even on a small feature phone or handheld gaming system.
 
-There are two main methods for embedding images on a screen: the `img` element, and the more-expanded `[picture](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)` element. The `picture` element offers a few more possibilities to include images based on certain criteria. The `[srcset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset)` attribute is available on both elements and enables images to be conditionally included based on things like screen size and display density. Some browsers may also take bandwidth into account when choosing an appropriate image.
+There are two main methods for embedding images on a screen: the `img` element, and the more-expanded [`picture`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture) element. The `picture` element offers a few more possibilities to include images based on certain criteria. The [`srcset`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset) attribute is available on both elements and enables images to be conditionally included based on things like screen size and display density. Some browsers may also take bandwidth into account when choosing an appropriate image.
 
 The `picture` element further expands on these capabilities to allow for [art direction](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#art_direction), for example specifying a 4:3 ratio image for mobile portrait screens, and a 16:9 for desktop or landscape views. A further use is being able to specify different image formats, for example the browser can load an AVIF image where supported, otherwise it will fall back to a WebP or PNG image. Allowing the browser to make the sensible choice based on the conditions it's operating in usually means better performance and thus a better user experience.
 
@@ -349,7 +349,7 @@ Overall, it is great to see an increase in the use of responsive image technique
 Lazy-loading is the process of assigning different loading priority levels to elements of a web page based on where they occur on a page. Without lazy loading, all of the elements and images on a page will eventually be loaded, but lazy loading allows images to be deferred until it is clear that they will be needed, based on where the user has scrolled to on the page. Lazy-loading is especially relevant on mobile devices, because common responsive design patterns will almost always stack content for a mobile rendering. The narrow nature of mobile screens ensures that many stacked elements of the page are pushed far down below the fold,  and may not be immediately necessary—especially if all the user wants to do is click a link in the top navigation. Lazy-loading eliminates that unnecessary data transfer, and the load time associated with it.
 
 {{ figure_markup(
-    caption="Percent of mobile pages that contained images using `loading=&quot;lazy&quot;`.",
+    caption='Percent of mobile pages that contained images using `loading="lazy"`.',
     content="25%",
     classes="big-number",
     sheets_gid="1710439776",
@@ -414,7 +414,7 @@ There has been a consistent growth in the percent of mobile sites that have “g
 
 #### Interaction to Next Paint (INP)
 
-[Interaction to Next Paint](https://web.dev/inp/), which is generally abbreviated as INP, is an experimental metric from Google that is used to measure responsiveness and response time on a page when a user interacts with it. A low INP is desirable because it means that the page was able to respond quickly to user interactions without substantial delays waiting for content to paint after it is requested. A “good” INP is 200 ms or less, and a poor one is anything over 500 ms. Eventually, INP could be added to the official Core Web Vitals metrics, but for now it is still being tested to make sure that it is a reliable and consistent metric that site owners will find useful.
+[Interaction to Next Paint](https://web.dev/inp/) (INP) is an experimental metric from Google that is used to measure responsiveness and response time on a page when a user interacts with it. A low INP is desirable because it means that the page was able to respond quickly to user interactions without substantial delays waiting for content to paint after it is requested. A “good” INP is 200 ms or less, and a poor one is anything over 500 ms. Eventually, INP could be added to the official Core Web Vitals metrics, but for now it is still being tested to make sure that it is a reliable and consistent metric that site owners will find useful.
 
 {{ figure_markup(
     caption="Percent of websites that have good INP on mobile.",
