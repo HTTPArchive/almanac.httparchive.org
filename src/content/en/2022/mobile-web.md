@@ -255,7 +255,7 @@ All three are aspects of how users perceive the performance of a page that can h
   )
 }}
 
-The figure above shows a comparison of overall performance for the web in 2022, as it has changed for mobile and desktop measurements since 2020, when Core Web Vitals first launched. You can see that overall, mobile websites are consistently improving year over year. In 2022, 39% of websites have good Core Web Vitals experiences on mobile devices.  See the [Performance](../performance) chapter for a deeper look at what may have caused such a significant change this year.
+The figure above shows how the overall performance of the web has changed since Core Web Vitals first launched in 2020. You can see that overall, mobile websites are consistently improving year over year. In 2022, 39% of websites have good Core Web Vitals experiences on mobile devices.  See the [Performance](../performance) chapter for a deeper look at what may have caused such a significant change this year.
 
 
 ### Loading performance metrics
