@@ -150,8 +150,7 @@
           "part": "III",
           "chapter_number": "18",
           "title": "CMS",
-          "slug": "cms",
-          "todo": true
+          "slug": "cms"
         },
         {
           "part": "III",
@@ -531,6 +530,7 @@
     "dknauss": {
       "name": "Dan Knauss",
       "teams": [
+        "editors",
         "reviewers"
       ],
       "avatar_url": "273554",
