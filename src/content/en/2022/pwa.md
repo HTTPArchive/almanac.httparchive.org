@@ -41,7 +41,7 @@ While there [isn't parity between major browsers when it comes to Service Worker
 
 Service workers are not as common as other core technologies of PWAs. For comparison reasons, we have run the same queries as last year, which allows us to try to make sense of the evolution of service worker usage. You can read the explanation of [why it isn’t trivial to find out actual usage of service worker](https://almanac.httparchive.org/en/2021/pwa#service-workers-usage),
 
-*  Lighthouse detects a 1.6% (mobile) and 1.7% (desktop) of all websites employ a service worker. We expect this is lower than the real-world percentage due to [additional checks](https://web.dev/service-worker) that Lighthouse takes into consideration.
+* Lighthouse detects a 1.6% (mobile) and 1.7% (desktop) of all websites employ a service worker. We expect this is lower than the real-world percentage due to [additional checks](https://web.dev/service-worker) that Lighthouse takes into consideration.
 * Following the same [metrics introduced last year](https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/pwa.js), usage of a Service Worker in websites comes up to 1.63% on desktop and 1.81% on mobile.
 
 {{ figure_markup(
@@ -341,16 +341,14 @@ PWAs go hand in hand with advanced web capabilities. These capabilities are gene
 )
 }}
 
-
-
-* Web Share (desktop)	8.84%
-* Add to Home Screen (desktop)	8.56%
-* Web Share (mobile)	8.36%
-* Add to Home Screen (mobile)	7.71%
-* Service Worker (desktop)	4.17%
-* Service Worker (mobile)	3.85%
-* Push (desktop)	2.03%
-* Push (mobile)	1.86%
+* Web Share (desktop): 8.84%
+* Add to Home Screen (desktop): 8.56%
+* Web Share (mobile): 8.36%
+* Add to Home Screen (mobile): 7.71%
+* Service Worker (desktop): 4.17%
+* Service Worker (mobile): 3.85%
+* Push (desktop): 2.03%
+* Push (mobile): 1.86%
 
 For detailed information about the FUGU APIs refer to the capabilities chapter.
 
