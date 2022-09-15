@@ -247,7 +247,7 @@ JavaScriptの読み込みは、非同期または遅延の指定がない限り�
 
 ### ファーストパーティとサードパーティ
 
-[How much JavaScript do we load](#how-much-javascript-do-we-load)のセクションで、モバイルページのJavaScriptリクエスト数の中央値が20であることを思い出してください。このセクションでは、ファーストおよびサードパーティのJavaScriptリクエストの内訳を見てみましょう。
+[JavaScriptをどれだけ読み込むか？](#javascriptをどれだけ読み込むか？)のセクションで、モバイルページのJavaScriptリクエスト数の中央値が20であることを思い出してください。このセクションでは、ファーストおよびサードパーティのJavaScriptリクエストの内訳を見てみましょう。<!-- markdownlint-disable-line MD051 -->
 
 {{ figure_markup(
   image="js-requests-mobile-host.png",

@@ -83,6 +83,9 @@ Misyonumuz, HTTP Archive&#8217;ın ham istatistiklerini ve eğilimlerini web top
 {% block reviewed_and_analyzed_by_after %}{% endblock %}
 {% block analysis_and_editing_by_after %}{% endblock %}
 
+{% block date_published %}Yayınlanma tarihi: {% endblock %}
+{% block date_updated %}Güncellenme tarihi: {% endblock %}
+
 {% block unedited %}[Düzenlenmiş olan]{% endblock %}
 
 {% block author %}Yazar{% endblock %}
@@ -188,7 +191,9 @@ Aksi belirtilmedikçe, {{ year }} Web Almanac&#8217;ın tüm {{ supported_chapte
     "capabilities": "Yetenekler",
     "jamstack": "Jamstack",
     "webassembly": "WebAssembly",
-    "structured-data": "Yapılandırılmış Veri"
+    "structured-data": "Structured Data",
+    "sustainability": "Sürdürülebilirlik",
+    "interop": "Birlikte çalışabilirlik"
   }
 %}
 {% if (year == "2019" or year == "2020") %}

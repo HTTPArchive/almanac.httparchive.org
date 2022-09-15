@@ -7,10 +7,10 @@ CREATE TEMPORARY FUNCTION ExtractKeyValuePairs(input STRING) RETURNS ARRAY < STR
   value STRING > > AS (
   (
     SELECT
-      array(
+      ARRAY(
         SELECT AS STRUCT
-          trim(split(kv, ':') [SAFE_OFFSET(0)]) AS key,
-          trim(split(kv, ':') [SAFE_OFFSET(1)]) AS value
+          TRIM(SPLIT(kv, ':') [SAFE_OFFSET(0)]) AS key,
+          TRIM(SPLIT(kv, ':') [SAFE_OFFSET(1)]) AS value
         FROM
           t.kv
       )

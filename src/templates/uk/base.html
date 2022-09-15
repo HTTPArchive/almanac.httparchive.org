@@ -83,6 +83,9 @@
 {% block reviewed_and_analyzed_by_after %}{% endblock %}
 {% block analysis_and_editing_by_after %}{% endblock %}
 
+{% block date_published %}Дата публікації: {% endblock %}
+{% block date_updated %}Дата оновлення: {% endblock %}
+
 {% block unedited %}[Очікує корегування]{% endblock %}
 
 {% block author %}Автор{% endblock %}
@@ -188,7 +191,9 @@
     "capabilities": "Можливості",
     "jamstack": "Jamstack",
     "webassembly": "WebAssembly",
-    "structured-data": "Структуровані дані"
+    "structured-data": "Structured Data",
+    "sustainability": "Стійкість",
+    "interop": "Cумісність"
   }
 %}
 {% if (year == "2019" or year == "2020") %}

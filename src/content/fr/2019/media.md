@@ -359,6 +359,7 @@ Les Indications Client liés au réseau, `downlink`, `rtt`, et `ect`, ne sont di
 
 L’amélioration des performances des pages web peut être partiellement caractérisée comme un jeu de miroirs&nbsp;: sans les supprimer, on décale les éléments les plus lents en dehors de la zone d’usage de l’utilisateur. Par exemple, le <span lang="en">lazy loading</span> d’images est une de ces illusions où les images et les contenus médias ne sont chargés que lorsque l’utilisateur fait défiler la page. Cela améliore les performances perçues, même sur des réseaux lents, et évite à l’utilisateur de télécharger des octets qui ne sont pas visualisés autrement.
 
+<!-- markdownlint-disable-next-line MD051 -->
 Plus tôt, dans la <a hreflang="en" href="#fig-5">Figure 5</a>, nous avons montré que le volume de contenu d’image au 75e percentile est bien plus important que ce qui pourrait théoriquement être affiché sur un seul écran de bureau ou de téléphone portable. L’audit <span lang="en">Lighthouse</span> concernant les <a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/audits/offscreen-images">images hors champs</a> confirme ce soupçon. La page web médiane contient 27&nbsp;% d’images situées nettement sous la partie visible de la page. Ce pourcentage passe à 84&nbsp;% au 90e percentile.
 
 {{ figure_markup(

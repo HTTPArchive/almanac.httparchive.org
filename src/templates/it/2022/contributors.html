@@ -1,0 +1,11 @@
+{% extends "base/contributors.html" %}
+
+{% block title %}{{ year }} Collaboratori | Il Web Almanac di HTTP Archive{% endblock %}
+
+{% block description %}Le {{ config.contributors.items() | length }} persone che hanno contribuito al {{ year }} Web Almanac come Analisti, Autori, Designer, Sviluppatori, Editori, Revisori e Traduttori.{% endblock %}
+
+{% block filter_by_team %}Filtra per squadra: <span id="filtered-contributors">{{ self.contributors() }}</span><span id="contributors-total-text" class="hidden"> di <span id="contributors-total">{{ config.contributors.items() | length }}</span></span> collaboratori.{% endblock %}
+{% block filter_by %}Filtra per{% endblock %}
+
+{% block join_the_team_title%}Unisciti al team di Web Almanac{% endblock %}
+{% block join_the_team_text%}Unisciti alla squadra!{% endblock %}
