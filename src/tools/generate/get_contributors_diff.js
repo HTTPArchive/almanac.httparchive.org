@@ -139,6 +139,9 @@ const get_contributors_difference = async (configs, chapter_contributors) => {
           contributed_editors.forEach(editor => console.log("\t\t\t### ", editor));
         }
       }
+
+      // Exit error if any mismatches
+      process.exit(1);
     }
   }
 };
