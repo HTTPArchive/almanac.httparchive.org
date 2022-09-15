@@ -12,9 +12,9 @@ featured_quote: Third parties are often associated with negative impact on web p
 featured_stat_1: 94%
 featured_stat_label_1: Websites using at least one third party
 featured_stat_2: 45%
-featured_stat_label_2: 45% of all requests made by websites are third-party requests.
+featured_stat_label_2: Requests made by websites that are third-party requests.
 featured_stat_3: 34%
-featured_stat_label_3: Third-party requests serve script content.
+featured_stat_label_3: Third-party requests serving script content.
 ---
 
 ## Introduction
