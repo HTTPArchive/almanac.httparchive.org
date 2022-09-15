@@ -238,7 +238,7 @@ First Input Delay (FID) measures the time from when a user first interacts with 
 
 Any delay is a pain point and could correlate with interference from other aspects of the site loading when the user tries to interact with the site. A “good” FID is regarded as being under 100 milliseconds.
 
- In 2021’s report, the fact that almost all platforms manage to deliver a good FID, raised questions about the strictness of this metric. The Chrome team <a hreflang="en" href="https://web.dev/responsiveness/">published an article</a>, which was updated in May of 2022 to include a reference to a new metric, <a hreflang="en" href="https://web.dev/inp/">Interaction to Next Paint (INP)</a> . Given its beta nature at the time of this writing, we’re limiting its inclusion to this reference, in anticipation of a possible expansion in next year’s report.
+In 2021’s report, the fact that almost all platforms manage to deliver a good FID, raised questions about the strictness of this metric. The Chrome team <a hreflang="en" href="https://web.dev/responsiveness/">published an article</a>, which was updated in May of 2022 to include a reference to a new metric, <a hreflang="en" href="https://web.dev/inp/">Interaction to Next Paint (INP)</a> . Given its beta nature at the time of this writing, we’re limiting its inclusion to this reference, in anticipation of a possible expansion in next year’s report.
 
 {{ figure_markup(
   image="fid-cwv-yoy.png",
