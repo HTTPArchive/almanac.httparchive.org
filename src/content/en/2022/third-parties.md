@@ -3,26 +3,25 @@
 title: Third Parties
 description: Third Parties chapter of the 2022 Web Almanac is covering third-party impact on web performance and the usage of best practices related to the third-parties.
 authors: [imeugenia]
-reviewers: [tunetheweb, kevinfarrugia, alexnj, shantsis]
+reviewers: [tunetheweb, kevinfarrugia, alexnj]
 analysts: [kevinfarrugia]
-editors: []
+editors: [shantsis]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1YqoRRsyiNsrEabVLu2nRU98JIG_0zLLuoQhC2nX8xbM/
-featured_quote: Third parties are often associated with negative impact on web performance. However, both third-party and website developers can eliminate it so that third-party functionality isn't harming user experience.
+featured_quote: Third parties are often associated with negative impact on web performance. However, both third parties and website developers can eliminate it so that third-party functionality isn't harming user experience.
 featured_stat_1: 94%
-featured_stat_label_1: Websites using at least one third-party
+featured_stat_label_1: Websites using at least one third party
 featured_stat_2: 45%
 featured_stat_label_2: 45% of all requests made by websites are third-party requests.
 featured_stat_3: 34%
 featured_stat_label_3: Third-party requests serve script content.
-unedited: true
 ---
 
 ## Introduction
 
 Third parties are an integral part of most websites. This chapter shows that nearly all websites use at least one third party, and nearly half of all requests are third-party requests.
 
-Website owners use third parties to delegate some complex functionality such as analytics, advertising, live chats, consent management, and others. Although website developers may not directly control third-party code, they still can influence third parties' impact on the websites. Taking into account how widely third parties are used, they have a crucial impact on web performance. It is quite common that they are [blocking page rendering especially on mobile devices](&lt;link to render-blocking figure>), for instance, the average median blocking time for top 10 most popular third parties is 1.4 seconds. This way, third-parties affect [Core Web Vitals](https://web.dev/vitals/) and other important performance metrics like [First Contentful Paint](https://web.dev/fcp).
+Website owners use third parties to delegate some complex functionality such as analytics, advertising, live chats, consent management, and others. Although website developers may not directly control third-party code, they still can influence third parties' impact on the websites. Taking into account how widely third parties are used, they have a crucial impact on web performance. It is quite common that they are [blocking page rendering especially on mobile devices](#performance-impact), for instance, the average median blocking time for top 10 most popular third parties is 1.4 seconds. This way, third-parties affect <a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> and other important performance metrics like <a hreflang="en" href="https://web.dev/fcp">First Contentful Paint</a>.
 
 Many recommendations help to eliminate the negative impact. It could be simple techniques like using minified resources or more complex ones, for example, evaluating and choosing third-party scripts that don't serve legacy JavaScript or loading and executing third-party scripts using web workers.
 
@@ -47,7 +46,7 @@ There are some third parties that serve content from different subdomains. Howev
 
 ### **Third-party categories**
 
-We are relying on the [third-party-web](https://github.com/patrickhulce/third-party-web/#third-parties-by-category) repository from [Patrick Hulce](https://twitter.com/patrickhulce) to help us identify and categorize third parties. This repository breaks down third parties by the following categories:
+We are relying on the <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/#third-parties-by-category">third-party-web</a> repository from <a hreflang="en" href="https://twitter.com/patrickhulce">Patrick Hulce</a> to help us identify and categorize third parties. This repository breaks down third parties by the following categories:
 
 * **Ad** - These scripts are part of advertising networks, either serving or measuring.
 * **Analytics** -These scripts measure or track users and their actions. There’s a wide range in impact here depending on what’s being tracked.
@@ -73,9 +72,9 @@ Note: The CDN category here includes providers that provide resources on public 
 * The pages are tested from servers in the US with no cookies set, so third parties requested after opt-in are not included. This will especially affect pages hosted and predominantly served to countries in scope for the [General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation), or other similar legislation.
 * Only the home pages are tested. Other pages may have different third-party requirements.
 * Some of the lesser-used third-party domains are grouped into the _unknown_ category.
-* We are leveraging different [Lighthouse audits](https://github.com/GoogleChrome/lighthouse/tree/master/core/audits). Some of them have limited coverage. Namely, it is not feasible to cover all existing facade implementations in the [third-party facades audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/third-party-facades.js).
+* We are leveraging different <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/tree/master/core/audits">Lighthouse audits</a>. Some of them have limited coverage. Namely, it is not feasible to cover all existing facade implementations in the <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/third-party-facades.js">third-party facades audit</a>.
 
-Learn more about our [methodology](https://almanac.httparchive.org/en/2021/methodology).
+Learn more about our [Methodology](./methodology).
 
 
 ## Prevalence
@@ -137,11 +136,11 @@ Google APIs: fonts, analytics, account management, advertising, and tag manageme
 )
 }}
 
-Third-party requests account for 45% of all requests made by websites. Of those third-party requests, approximately one-third are scripts. This suggests it is worthwhile analyzing scripts in more detail in &lt;link to best practices section>.
+Third-party requests account for 45% of all requests made by websites. Of those third-party requests, approximately one-third are scripts. This suggests it is worthwhile analyzing scripts in more detail in [the best practices section](#web-performance-best-practices).
 
 ## Performance impact
 
-Some third parties might inevitably block page rendering and negatively affect the webpage loading experience. Lighthouse has a [render blocking resources audit]([https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/render-blocking-resources.js](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/render-blocking-resources.js)) that provides data about render blocking time.
+Some third parties might inevitably block page rendering and negatively affect the webpage loading experience. Lighthouse has a <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/render-blocking-resources.js">render blocking resources audit]([https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/render-blocking-resources.js</a>) that provides data about render blocking time.
 
 {{ figure_markup(
   image="render-blocking-time-by-most-popular-third-parties.png",
@@ -153,13 +152,13 @@ Some third parties might inevitably block page rendering and negatively affect t
   )
 }}
 
-The figure above shows the median render-blocking time for the top 10 most popular third parties. Google maps have the most significant impact on rendering time. It accounts for more than 2 seconds for the median website. That is a significant impact taking into account that the recommended time for [First Contentful Paint](https://web.dev/fcp)—a page load speed metric, is 1.8 seconds.
+The figure above shows the median render-blocking time for the top 10 most popular third parties. Google maps have the most significant impact on rendering time. It accounts for more than 2 seconds for the median website. That is a significant impact taking into account that the recommended time for <a hreflang="en" href="https://web.dev/fcp">First Contentful Paint</a>—a page load speed metric, is 1.8 seconds.
 
-A website can save a lot of loading time by eliminating render-blocking resources. There are many methods to [embed third-parties in a non-blocking way](https://web.dev/embed-best-practices/). For example, in the case of Google Maps, the [Maps Static API](https://developers.google.com/maps/documentation/maps-static/overview) could be used to implement a third-party facade. Also, the third-party iframes can be lazy-loaded.
+A website can save a lot of loading time by eliminating render-blocking resources. There are many methods to <a hreflang="en" href="https://web.dev/embed-best-practices/">embed third-parties in a non-blocking way</a>. For example, in the case of Google Maps, the <a hreflang="en" href="https://developers.google.com/maps/documentation/maps-static/overview">Maps Static API</a> could be used to implement a third-party facade. Also, the third-party iframes can be lazy-loaded.
 
 Added third-party scripts compete for the main thread resources with the website's first-party code. If a third-party has a long-running JavaScript task that runs on the main thread for more than 50 ms, it is considered to be blocking the main thread. It could significantly influence user experience when interacting with a page as the main thread is responsible for processing user events. When it is blocked a user suffers from a non-responsive page.
 
-We inspected the [third party summary audit](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/third-party-summary.js) to emulate main thread blocking time caused by third-parties.
+We inspected the <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/third-party-summary.js">third party summary audit</a> to emulate main thread blocking time caused by third-parties.
 
 {{ figure_markup(
   image="third-parties-blocking-main-thread.png",
@@ -189,7 +188,7 @@ YouTube is the most blocking third party among top 5 most-used third parties. It
 
 Note that Lighthouse might mark some third parties as potentially render-blocking while their size is so small that they don’t have any tangible effect on the render-blocking time. This is the case for third parties like Google Fonts or Google/Doubleclick Ads whose median render-blocking time is 0ms.
 
-A blocked main thread has a big impact on [First Input Delay (FID)](https://web.dev/fid/) and [Interaction to Next Paint (INP)](https://web.dev/inp/) performance metrics. To provide good web page responsiveness, the FID should be 100ms or less and INP below 200ms. There is research about [correlation between Total Blocking Time and Interaction to Next Paint on mobile devices](https://github.com/GoogleChromeLabs/chrome-http-archive-analysis/blob/main/notebooks/HTTP_Archive_TBT_and_INP.ipynb) documented by [Annie Sullivan](https://twitter.com/anniesullie). It shows that the lower the main thread blocking time, the larger the percent of websites meet good INP and FID thresholds. That leads to a conclusion that it becomes harder to achieve good core web performance metrics if the third parties are blocking the main thread for such a long time as in the YouTube example. Moreover, other third-parties and first-party assets might also contribute to the render-blocking effect. Despite this, there are many ways to minimize the render-blocking effect of third parties. This will be further explored in the next section.
+A blocked main thread has a big impact on [First Input Delay (FID)](https://web.dev/fid/) and [Interaction to Next Paint (INP)](https://web.dev/inp/) performance metrics. To provide good web page responsiveness, the FID should be 100ms or less and INP below 200ms. There is research about <a hreflang="en" href="https://github.com/GoogleChromeLabs/chrome-http-archive-analysis/blob/main/notebooks/HTTP_Archive_TBT_and_INP.ipynb">correlation between Total Blocking Time and Interaction to Next Paint on mobile devices</a> documented by <a hreflang="en" href="https://twitter.com/anniesullie">Annie Sullivan</a>. It shows that the lower the main thread blocking time, the larger the percent of websites meet good INP and FID thresholds. That leads to a conclusion that it becomes harder to achieve good core web performance metrics if the third parties are blocking the main thread for such a long time as in the YouTube example. Moreover, other third-parties and first-party assets might also contribute to the render-blocking effect. Despite this, there are many ways to minimize the render-blocking effect of third parties. This will be further explored in the next section.
 
 ## Web performance best practices
 
@@ -198,7 +197,7 @@ The previous section confirmed that the third parties are causing a huge perform
 
 ### Minifying resources
 
-Minifying JavaScript and CSS files is one of the first recommendations when speaking about web performance. To check how third party resources are minified we are making use of the following Lighthouse audits: [Unminified JavaScript](https://web.dev/unminified-javascript/) and [Unminified CSS]([https://web.dev/unminified-css/](https://web.dev/unminified-css/)).
+Minifying JavaScript and CSS files is one of the first recommendations when speaking about web performance. To check how third party resources are minified we are making use of the following Lighthouse audits: <a hreflang="en" href="https://web.dev/unminified-javascript/">Unminified JavaScript</a> and <a hreflang="en" href="https://web.dev/unminified-css/">Unminified CSS]([https://web.dev/unminified-css/</a>).
 
 Minifying scripts should have a large positive impact as they are the most popular third-party content type. Moreover, compared to other content types like CSS, scripts tend to be a lot more verbose, with comments and large variable names that affect the file size.
 
@@ -237,7 +236,7 @@ jQuery is the most popular JavaScript library being used on 6% of all websites o
 )
 }}
 
-17% of the websites that use jQuery hosted on a third-party domain fail the [Lighthouse audit for unminified JavaScript]([https://web.dev/unminified-javascript/](https://web.dev/unminified-javascript/)). Digging deeper into how the library is imported shows that many websites are using the unminified versions of jQuery that should be used only for development purposes. A similar tendency can be found in the usage of some other less popular third-party scripts.
+17% of the websites that use jQuery hosted on a third-party domain fail the <a hreflang="en" href="https://web.dev/unminified-javascript/">Lighthouse audit for unminified JavaScript]([https://web.dev/unminified-javascript/</a>). Digging deeper into how the library is imported shows that many websites are using the unminified versions of jQuery that should be used only for development purposes. A similar tendency can be found in the usage of some other less popular third-party scripts.
 
 This should serve as a reminder for web developers to check if third-party scripts imported on their websites are suitable for production environments.
 
@@ -296,12 +295,12 @@ The rate of first-party scripts compressed via brotli almost tripled, increasing
 
 However, Brotli adoption among third-parties stayed more or less at the same level, changing from 24% to 28%. Despite the slight positive tendency, there is still room for improvement of Brotli adoption for third-parties.
 
-Website content encoding data displayed in the figure &lt;link to Content encoding distribution by third-party content type> revealed an interesting fact about image compression. Even though image formats like JPEG, PNG, WebP, AVIF, and others provide compression under the hood, 5.2% of image content is compressed using Gzip or Brotli compression. Adding additional layers of compression on top of the standard image compression formats is usually unnecessary and may lead to increased file size and add extra load on the CPU when uncompressing the image.
+Website content encoding data displayed in the [figure 13](#fig-13) revealed an interesting fact about image compression. Even though image formats like JPEG, PNG, WebP, AVIF, and others provide compression under the hood, 5.2% of image content is compressed using Gzip or Brotli compression. Adding additional layers of compression on top of the standard image compression formats is usually unnecessary and may lead to increased file size and add extra load on the CPU when uncompressing the image.
 
 
 ### Usage of third-party facades
 
-There are multiple techniques to eliminate render-blocking resources. One of them is [third-party facades](https://web.dev/third-party-facades/) that are useful for visual content like YouTube videos or interactive widgets like a live chat. They help to exclude third parties from the critical loading sequence and lazy load them. Lighthouse has introduced an audit [Lazy load third-party resources with facades]([https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/third-party-facades.js](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/third-party-facades.js)). However, there are multiple third-party facade solutions, for example [lite-youtube-embed](https://github.com/paulirish/lite-youtube-embed), [lite-youtube](https://github.com/justinribeiro/lite-youtube), or some custom approaches, and only a small number of them are in [the list of third-parties]([https://github.com/patrickhulce/third-party-web/blob/master/data/entities.js](https://github.com/patrickhulce/third-party-web/blob/master/data/entities.js)) checked during the audit. This limitation makes it complicated to assess third-party facade usage across the web.
+There are multiple techniques to eliminate render-blocking resources. One of them is <a hreflang="en" href="https://web.dev/third-party-facades/">third-party facades</a> that are useful for visual content like YouTube videos or interactive widgets like a live chat. They help to exclude third parties from the critical loading sequence and lazy load them. Lighthouse has introduced an audit <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/third-party-facades.js">Lazy load third-party resources with facades</a>). However, there are multiple third-party facade solutions, for example <a hreflang="en" href="https://github.com/paulirish/lite-youtube-embed">lite-youtube-embed</a>, <a hreflang="en" href="https://github.com/justinribeiro/lite-youtube">lite-youtube</a>, or some custom approaches, and only a small number of them are in <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/blob/master/data/entities.js">the list of third-parties</a>) checked during the audit. This limitation makes it complicated to assess third-party facade usage across the web.
 
 ### Usage of `async` and `defer`
 
@@ -317,13 +316,13 @@ Using `async` and `defer` is another technique that could be used by website dev
   )
 }}
 
-The `async` attribute is considerably more popular than `defer`. It is used for 62% of total third-party scripts on mobile devices. Usage of the `async` attribute can still result in a render-blocking script as its execution can start during HTML parsing. The `async` attribute is useful for critical resources that are important during the page loading and can interrupt rendering. The fact  that `async` is more used demonstrates that third-party scripts are mostly treated as critical resources. Although this is true for some scripts, many third-parties, for example, a video player are less critical. Deferred scripts potentially have a better impact on page rendering time that is reflected in core web performance metrics like [Largest Contentful Paint](https://web.dev/lcp/). To sum up, website developers should consider using `defer` for third-party assets that are not important for the critical rendering path.
+The `async` attribute is considerably more popular than `defer`. It is used for 62% of total third-party scripts on mobile devices. Usage of the `async` attribute can still result in a render-blocking script as its execution can start during HTML parsing. The `async` attribute is useful for critical resources that are important during the page loading and can interrupt rendering. The fact  that `async` is more used demonstrates that third-party scripts are mostly treated as critical resources. Although this is true for some scripts, many third-parties, for example, a video player are less critical. Deferred scripts potentially have a better impact on page rendering time that is reflected in core web performance metrics like <a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a>. To sum up, website developers should consider using `defer` for third-party assets that are not important for the critical rendering path.
 
 Which resources are critical and which could be deferred might be a tricky question to consider especially when speaking about consent management third parties that enable other third parties to be used. For example, analytics scripts are usually considered important for site owners but can’t be used without user’s consent in countries with [GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation), making user consent third-party critical. Loading consent third-party resources in a critical path may result in bad user experience causing Cumulative Layout Shifts and First Input Delay. Therefore, developers should strive for balance between the way third parties are loaded and good user experience.
 
 ### Legacy JavaScript
 
-Despite JavaScript's rapid involvement, the prevalence of legacy code is still significant. We are using one of the Lighthouse audits to check how much third-parties are [serving legacy JavaScript to modern browsers]([https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/legacy-javascript.js](https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/legacy-javascript.js)).
+Despite JavaScript's rapid involvement, the prevalence of legacy code is still significant. We are using one of the Lighthouse audits to check how much third-parties are <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/legacy-javascript.js">serving legacy JavaScript to modern browsers]([https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/legacy-javascript.js</a>).
 
 {{ figure_markup(
   caption="Percent of legacy JavaScript Lighthouse audit failure caused by third-party",
@@ -362,16 +361,16 @@ Serving legacy JavaScript to the modern browsers results in a bigger amount of r
 
 The median amount of unused third-party JavaScript is approximately 120 KB. For 25% of websites that use third-party scripts, it is more than 261 KB.
 
-Unfortunately, website owners do not always have the possibility to change the way third-party JavaScript is bundled. However, if the third-party dependencies are self-hosted they can be optimized during development by adopting [modern script bundling approaches]([https://web.dev/publish-modern-javascript](https://web.dev/publish-modern-javascript)) that could help to reduce the amount of unused code.
+Unfortunately, website owners do not always have the possibility to change the way third-party JavaScript is bundled. However, if the third-party dependencies are self-hosted they can be optimized during development by adopting <a hreflang="en" href="https://web.dev/publish-modern-javascript">modern script bundling approaches]([https://web.dev/publish-modern-javascript</a>) that could help to reduce the amount of unused code.
 
 
 ### Other optimization technologies
 
 One of the third-party resource management problems is that sometimes it can skip the development team and be added using tag management tools without proper web performance evaluation. As a result, third-party scripts can uncontrollably affect the page loading and responsiveness experience.
 
-Some modern third-party loading and execution solutions have appeared in recent years. For example, [Partytown]([https://partytown.builder.io/](https://partytown.builder.io/)) is a library that relocates third-party scripts into the web worker to free up the main thread for first-party code. Currently, the library is in the early adoption stage and its usage is very low. Only 70 websites from the whole dataset are using it in 2022. However, this [Next.js framework have started to introduce this solution](https://nextjs.org/docs/basic-features/script#off-loading-scripts-to-a-web-worker-experimental) that could raise Partytown popularity.
+Some modern third-party loading and execution solutions have appeared in recent years. For example, <a hreflang="en" href="https://partytown.builder.io/">Partytown]([https://partytown.builder.io/</a>) is a library that relocates third-party scripts into the web worker to free up the main thread for first-party code. Currently, the library is in the early adoption stage and its usage is very low. Only 70 websites from the whole dataset are using it in 2022. However, this <a hreflang="en" href="https://nextjs.org/docs/basic-features/script#off-loading-scripts-to-a-web-worker-experimental">Next.js framework have started to introduce this solution</a> that could raise Partytown popularity.
 
-The previous sections showed that the responsibility for third-party negative impact is split between first and third-party developers. However, [browsers are also showing interest in optimizing the loading of third-party resources]([https://developer.chrome.com/blog/third-party-scripts/#proposed-approach](https://developer.chrome.com/blog/third-party-scripts/#proposed-approach)). The proposals include better real user monitoring and developer tooling providing more data about the impact of third-parties on their websites.
+The previous sections showed that the responsibility for third-party negative impact is split between first and third-party developers. However, <a hreflang="en" href="https://developer.chrome.com/blog/third-party-scripts/#proposed-approach">browsers are also showing interest in optimizing the loading of third-party resources]([https://developer.chrome.com/blog/third-party-scripts/#proposed-approach</a>). The proposals include better real user monitoring and developer tooling providing more data about the impact of third-parties on their websites.
 
 {{ figure_markup(
   caption="Percent of third-party requests with Timing-Allow-Origin header header",
@@ -382,7 +381,7 @@ The previous sections showed that the responsibility for third-party negative im
 )
 }}
 
-That might be challenging to achieve given only 25% of total third-party requests provide [Timing-Allow-Origin (TAO) header]([https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin)) that is important for third-party web performance data transparency.
+That might be challenging to achieve given only 25% of total third-party requests provide [Timing-Allow-Origin (TAO) header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin) that is important for third-party web performance data transparency.
 
 Taking into account the [TAO header prevalence has not improved in comparison to the previous years](../2021/third-parties#timing-allow-origin-header-prevalence), we would encourage third-party providers to use it more actively.
 
