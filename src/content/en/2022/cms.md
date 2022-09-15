@@ -65,7 +65,7 @@ The deviation between our analysis and W3Techs’ analysis can be explained by a
 
 W3Techs definition is the following: “_Content Management Systems are applications for creating and managing the content of a website. We include all such systems in this category, also systems that are often classified as wikis, blog engines, discussion boards, static site generators, website editors or any type of software that provides website content_.”
 
-As mentioned previously, Wappalyzer has a stricter definition of a CMS, which excludes some major CMSs which appear in W3Techs reports. You can read more about our definition on the [Methodology](../2021/methodology) page.
+As mentioned previously, Wappalyzer has a stricter definition of a CMS, which excludes some major CMSs which appear in W3Techs reports. You can read more about our definition on the [Methodology](../methodology) page.
 
 ### CMS adoption by geography
 
@@ -110,7 +110,7 @@ A potentially correlated trend is the adoption of “headless” and the move to
 
 While our confidence in the overall dataset remains high, we’re interested in investigating the adoption by rank dataset further in future editions to see if more can be done to detect CMS usage and improve the overall accuracy of our results.
 
-## Most Popular CMSs
+## Most popular CMSs
 
 Among all websites that are attributed as using a CMS, WordPress sites account for the majority of the relative market share, with over 35% adoption on mobile, followed by Wix (2%), Joomla (1.8%), Drupal (1.6%), and Squarespace (1%).
 
@@ -142,7 +142,7 @@ As we see it today, page builders exert significant influence on the performance
 
 Now that we’re tracking page builder data, we’ll have the opportunity in future editions to evaluate year of year changes in page builder adoption and look for connections in those changes to the overall performance of WordPress as a CMS.
 
-## CMS User Experience
+## CMS user experience
 
 An important aspect of CMSs is the user experience they provide, for users visiting sites built on these platforms. We attempt to examine these experiences through Real User Measurements (RUM), provided by the <a hreflang="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome User Experience Report</a> (CrUX), and synthetic testing using [Lighthouse](../2021/methodology#lighthouse).
 
@@ -392,7 +392,7 @@ Most of the top 5 CMSs deliver a median page weight of around ~2 MB, except Squa
 
 The distribution of page weight in each platform’s percentiles is substantial, probably related to the difference in user content across different web pages, the number of images used, plugins, etc. The smallest pages delivered per platform come from WordPress, a marked improvement over last year’s data, which only sends 673KB for their 10th percentile of visits. The largest pages come from Squarespace, with ~11.4 MB delivered for their 90th percentile of visits, a ~2MB increase over last year’s data.
 
-### Page Weight Breakdown
+### Page weight breakdown
 
 Page Weight is a sum of resources used. We can attempt to evaluate these different resource sizes across different CMSs.
 
