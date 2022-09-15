@@ -142,7 +142,7 @@ _The notion of “carbon emissions” is a simplification since we are consideri
 ![alt_text](images/image2.png "image_tooltip")
 
 
-The carbon emissions for websites are very close on mobile and desktop. They seem quite low on the 10th percentile (around 0.15 g eqCO2, which would be equivalent to[ a little less than 1km with a thermic car](https://datagir.ademe.fr/apps/mon-impact-transport/) [FR]). They reach as much as 2.76 g eqCO2 on the 90th percentile (a little more than 14km with a thermic car).
+The carbon emissions for websites are very close on mobile and desktop. They seem quite low on the 10th percentile (around 0.15 g eqCO2, which would be equivalent to [a little less than 1km with a thermic car](https://datagir.ademe.fr/apps/mon-impact-transport/) [FR]). They reach as much as 2.76 g eqCO2 on the 90th percentile (a little more than 14km with a thermic car).
 
 This doesn’t seem like much but you should keep in mind that each website gets thousands or even millions of visitors each month (sometimes even more) and what you see in the following graph are emissions for a single page visited once. The environmental impact each month for all websites adds up.
 
@@ -206,7 +206,7 @@ _Here (and elsewhere), you should find mentions of “Green Hosting”. This is 
 
 For the majority of this chapter, we focus on how changes in the quantity of resources like network, compute and storage affect the environmental impact of digital services - you might think of this as in terms of **_consumption_** as a lever for sustainability. However there are other levers too. You can't efficiency your way to zero, and the same code, run on the same kind of server, but running on greener energy will have a lower environmental impact than otherwise. We can think of this lever as **intensity**.
 
-Here there is some good news. Across the world, electricity grids we rely on are getting greener over time, driven by the falling costs of renewables and storage. 38% of our electricity came from clean sources in 2022 ([examples ](https://ember-climate.org/insights/research/global-electricity-review-2022/)in the ember climate, and [this chart](https://public.flourish.studio/story/1176231/?utm_source=showcase&utm_campaign=story/1176231) ).
+Here there is some good news. Across the world, electricity grids we rely on are getting greener over time, driven by the falling costs of renewables and storage. 38% of our electricity came from clean sources in 2022 ([examples](https://ember-climate.org/insights/research/global-electricity-review-2022/) in the ember climate, and [this chart](https://public.flourish.studio/story/1176231/?utm_source=showcase&utm_campaign=story/1176231) ).
 
 However, not every grid, and not every region a provider operates is equally green. [Amazon's Web Service's customer carbon footprint tools](https://aws.amazon.com/aws-cost-management/aws-customer-carbon-footprint-tool/) show how running services in one region over another can provide a measurable difference in carbon emissions, as does the [open source cloud carbon footprint](https://www.cloudcarbonfootprint.org/), for a growing number of providers. Elsewhere, the Green Web Foundation also provides an API for looking up any domain, for an estimate of how much the grid in that region is powered by fossil fuels.
 
@@ -345,7 +345,7 @@ For a closer look on the relative benefits you can expect from possible technica
 
 ##### Format (WebP/AVIF)
 
-WebP[ is already widely supported](https://caniuse.com/?search=webp) and one of the best formats you can find for your images. Its compression is impressive and results in less data being transferred and processed. In addition to this, it enjoys wide support. AVIF should be even better but it might be wise to wait until it has reached [a wider adoption from browsers](https://caniuse.com/?search=avif). Until then, just make sure you use the WebP format for your images. As a matter of fact, your icons should be in [optimized SVG](https://jakearchibald.github.io/svgomg/) and you could even include them directly in the HTML to avoid additional requests.
+WebP [is already widely supported](https://caniuse.com/?search=webp) and one of the best formats you can find for your images. Its compression is impressive and results in less data being transferred and processed. In addition to this, it enjoys wide support. AVIF should be even better but it might be wise to wait until it has reached [a wider adoption from browsers](https://caniuse.com/?search=avif). Until then, just make sure you use the WebP format for your images. As a matter of fact, your icons should be in [optimized SVG](https://jakearchibald.github.io/svgomg/) and you could even include them directly in the HTML to avoid additional requests.
 
 
 
@@ -355,7 +355,7 @@ WebP[ is already widely supported](https://caniuse.com/?search=webp) and one of 
 ![alt_text](images/image10.png "image_tooltip")
 
 
-As of today, only 10% of the websites use WebP, which is already better than[ last year](https://almanac.httparchive.org/en/2021/media#format-adoption) but far from ideal. This could be a huge opportunity and help reduce the overall weight of images. AVIF is even further behind, only slightly over 0% but we can hope this figure will rise in the coming years.
+As of today, only 10% of the websites use WebP, which is already better than [last year](../2021/media#format-adoption) but far from ideal. This could be a huge opportunity and help reduce the overall weight of images. AVIF is even further behind, only slightly over 0% but we can hope this figure will rise in the coming years.
 
 
 ##### Responsiveness/size/quality
@@ -377,7 +377,7 @@ Around 34% of the websites use the srcset attribute, which is a great way to int
 
 ##### Lazy-loading
 
-An easy way to get a faster first load is to load images progressively : only load what you need when you need it. This is done through [lazy-loading](https://almanac.httparchive.org/en/2021/media#lazy-loading) and [most browsers now support this natively](https://caniuse.com/?search=lazy-loading). Not all users will scroll your page in its entirety so you should avoid loading images that might never be seen by the current user. As such, this is a quick win for sustainability and your users.
+An easy way to get a faster first load is to load images progressively : only load what you need when you need it. This is done through [lazy-loading](../2021/media#lazy-loading) and [most browsers now support this natively](https://caniuse.com/?search=lazy-loading). Not all users will scroll your page in its entirety so you should avoid loading images that might never be seen by the current user. As such, this is a quick win for sustainability and your users.
 
 
 
@@ -586,7 +586,7 @@ On this graph, it appears that a quarter of websites still use inline CSS. This 
 
 #### CDN
 
-This topic is [already covered in the Web Almanac](https://almanac.httparchive.org/en/2021/cdn) but it should be noted that implementing a CDN can help make your website more sustainable. It helps get your assets as close to your users as possible and sometimes automatically helps optimize them.
+This topic is [already covered in the Web Almanac](../2022/cdn) but it should be noted that implementing a CDN can help make your website more sustainable. It helps get your assets as close to your users as possible and sometimes automatically helps optimize them.
 
 
 
@@ -714,7 +714,7 @@ Another area of interest when looking across the three segments is that some sho
         <th scope="col">CSS</th>
         <th scope="col">Image</th>
         <th scope="col">Fonts</th>
- <th scope="col">HTML</th>
+        <th scope="col">HTML</th>
         <th scope="col">JavaScript</th>
         <th scope="col">CSS</th>
         <th scope="col">Image</th>
@@ -724,68 +724,68 @@ Another area of interest when looking across the three segments is that some sho
     <tbody>
       <tr>
         <td>WordPress</td>
-        <td>40</td>
-        <td>521</td>
-        <td>117</td>
-        <td>1,202</td>
-        <td>166</td>
-        <td>37</td>
-        <td>481</td>
-        <td>115</td>
-        <td>1,100</td>
-        <td>137</td>
+        <td class="numeric">40</td>
+        <td class="numeric">521</td>
+        <td class="numeric">117</td>
+        <td class="numeric">1,202</td>
+        <td class="numeric">166</td>
+        <td class="numeric">37</td>
+        <td class="numeric">481</td>
+        <td class="numeric">115</td>
+        <td class="numeric">1,100</td>
+        <td class="numeric">137</td>
       </tr>
       <tr>
         <td>Drupal</td>
-        <td>23</td>
-        <td>416</td>
-        <td>68</td>
-        <td>1,279</td>
-        <td>114</td>
-        <td>23</td>
-        <td>406</td>
-        <td>66</td>
-        <td>1,158</td>
-        <td>92</td>
+        <td class="numeric">23</td>
+        <td class="numeric">416</td>
+        <td class="numeric">68</td>
+        <td class="numeric">1,279</td>
+        <td class="numeric">114</td>
+        <td class="numeric">23</td>
+        <td class="numeric">406</td>
+        <td class="numeric">66</td>
+        <td class="numeric">1,158</td>
+        <td class="numeric">92</td>
       </tr>
       <tr>
         <td>Joomla</td>
-        <td>26</td>
-        <td>452</td>
-        <td>86</td>
-        <td>1,690</td>
-        <td>104</td>
-        <td>22</td>
-        <td>401</td>
-        <td>83</td>
-        <td>1,504</td>
-        <td>82</td>
+        <td class="numeric">26</td>
+        <td class="numeric">452</td>
+        <td class="numeric">86</td>
+        <td class="numeric">1,690</td>
+        <td class="numeric">104</td>
+        <td class="numeric">22</td>
+        <td class="numeric">401</td>
+        <td class="numeric">83</td>
+        <td class="numeric">1,504</td>
+        <td class="numeric">82</td>
       </tr>
       <tr>
         <td>Wix</td>
-        <td>123</td>
-        <td>1,318</td>
-        <td>86</td>
-        <td>647</td>
-        <td>197</td>
-        <td>118</td>
-        <td>1,215</td>
-        <td>9</td>
-        <td>290</td>
-        <td>148</td>
+        <td class="numeric">123</td>
+        <td class="numeric">1,318</td>
+        <td class="numeric">86</td>
+        <td class="numeric">647</td>
+        <td class="numeric">197</td>
+        <td class="numeric">118</td>
+        <td class="numeric">1,215</td>
+        <td class="numeric">9</td>
+        <td class="numeric">290</td>
+        <td class="numeric">148</td>
       </tr>
       <tr>
         <td>Squarespace</td>
-        <td>27</td>
-        <td>997</td>
-        <td>89</td>
-        <td>1,623</td>
-        <td>214</td>
-        <td>27</td>
-        <td>990</td>
-        <td>89</td>
-        <td>1,790</td>
-        <td>202</td>
+        <td class="numeric">27</td>
+        <td class="numeric">997</td>
+        <td class="numeric">89</td>
+        <td class="numeric">1,623</td>
+        <td class="numeric">214</td>
+        <td class="numeric">27</td>
+        <td class="numeric">990</td>
+        <td class="numeric">89</td>
+        <td class="numeric">1,790</td>
+        <td class="numeric">202</td>
       </tr>
     </tbody>
   </table>
