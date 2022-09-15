@@ -123,8 +123,7 @@
           "part": "II",
           "chapter_number": "15",
           "title": "Mobile Web",
-          "slug": "mobile-web",
-          "todo": true
+          "slug": "mobile-web"
         },
         {
           "part": "II",
@@ -736,7 +735,7 @@
       "twitter": "nutlope"
     },
     "hemanth": {
-      "name": "hemanth.hm",
+      "name": "Hemanth HM",
       "teams": [
         "reviewers"
       ],
@@ -840,14 +839,6 @@
       ],
       "avatar_url": "7421844",
       "github": "jrharalson"
-    },
-    "CodeMartian": {
-      "name": "Jeff Martin",
-      "teams": [
-        "analysts"
-      ],
-      "avatar_url": "49497114",
-      "github": "CodeMartian"
     },
     "j9t": {
       "name": "Jens Oliver Meiert",
@@ -1255,14 +1246,6 @@
       "github": "foolip",
       "website": "https://foolip.org/"
     },
-    "polyglotyeoja": {
-      "name": "polyglotyeoja",
-      "teams": [
-        "analysts"
-      ],
-      "avatar_url": "9722690",
-      "github": "polyglotyeoja"
-    },
     "25prathamesh": {
       "name": "Prathamesh Rasam",
       "teams": [
@@ -1425,6 +1408,7 @@
     "siakaramalegos": {
       "name": "Sia Karamalegos",
       "teams": [
+        "analysts",
         "leads"
       ],
       "avatar_url": "4777393",
@@ -1456,7 +1440,9 @@
         "authors"
       ],
       "avatar_url": "72282209",
-      "github": "Suzzicks"
+      "github": "Suzzicks",
+      "website": "https://mobilemoxie.com/",
+      "twitter": "suzzicks"
     },
     "thibaudcolas": {
       "name": "Thibaud Colas",
