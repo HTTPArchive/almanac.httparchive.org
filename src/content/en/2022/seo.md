@@ -10,15 +10,6 @@ translators: []
 results: https://docs.google.com/spreadsheets/d/1qBQWxNKIAVJNOFwGlslT7AW0VAoK85Mf3nFvtw0QjVU/
 SophieBrannon_bio: TODO
 itamarblauer_bio: TODO
-patrickstox_bio: TODO
-TusharPol_bio: TODO
-mobeenali97_bio: TODO
-dwsmart_bio: TODO
-johnmurch_bio: TODO
-csliva_bio: TODO
-jroakes_bio: TODO
-derekperkins_bio: TODO
-MichaelLewittes_bio: TODO
 featured_quote: The implementation of structured data in the HTML of a page has continually increased. In 2021, 41.8% of desktop pages and 42.5% of mobile pages used structured data. In 2022, it’s risen to 44% of desktop pages and 45.1% of mobile pages that have structured data within their HTML.
 featured_stat_1: 84.75%
 featured_stat_label_1: Sites adopting HTTPS
