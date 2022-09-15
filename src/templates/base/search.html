@@ -63,7 +63,7 @@
   {% endif %}
 </main>
 
-<script nonce="{{ csp_nonce() }}">
+<script defer nonce="{{ csp_nonce() }}">
   if (window.URLSearchParams) {
     var searchParams = new URLSearchParams(window.location.search);
     q = searchParams.get("q");

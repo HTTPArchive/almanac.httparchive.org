@@ -83,6 +83,9 @@
 {% block reviewed_and_analyzed_by_after %}{% endblock %}
 {% block analysis_and_editing_by_after %}{% endblock %}
 
+{% block date_published %}Publicatiedatum: {% endblock %}
+{% block date_updated %}Datum bijgewerkt: {% endblock %}
+
 {% block unedited %}[Onuitgegeven]{% endblock %}
 
 {% block author %}Auteur{% endblock %}
@@ -188,7 +191,9 @@ Tenzij anders vermeld, zijn de statistieken in alle {{ supported_chapters | leng
     "capabilities": "Mogelijkheden",
     "jamstack": "Jamstack",
     "webassembly": "WebAssembly",
-    "structured-data": "Gestructureerde gegevens"
+    "structured-data": "Structured Data",
+    "sustainability": "Duurzaamheid",
+    "interop": "Interoperabiliteit"
   }
 %}
 {% if (year == "2019" or year == "2020") %}

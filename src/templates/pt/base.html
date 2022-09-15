@@ -83,6 +83,9 @@ Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archi
 {% block reviewed_and_analyzed_by_after %}{% endblock %}
 {% block analysis_and_editing_by_after %}{% endblock %}
 
+{% block date_published %}Data de publicação:: {% endblock %}
+{% block date_updated %}Data atualizada: {% endblock %}
+
 {% block unedited %}[Não editado]{% endblock %}
 
 {% block author %}Autor(a){% endblock %}
@@ -188,7 +191,9 @@ Salvo indicação em contrário, as métricas em todos os {{ supported_chapters 
     "capabilities": "Capacidades",
     "jamstack": "Jamstack",
     "webassembly": "WebAssembly",
-    "structured-data": "Dados Estruturados"
+    "structured-data": "Structured Data",
+    "sustainability": "Sustentabilidade",
+    "interop": "Interoperabilidade"
   }
 %}
 {% if (year == "2019" or year == "2020") %}

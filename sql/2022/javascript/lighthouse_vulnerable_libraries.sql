@@ -1,0 +1,39 @@
+#standardSQL
+# Most frequent vulnerable libraries
+CREATE TEMPORARY FUNCTION getVulnerabilities(audit STRING)
+RETURNS ARRAY<STRING> LANGUAGE js AS '''
+try {
+  var $ = JSON.parse(audit);
+  return $.details.items.map(i => i.detectedLib.text.split('@')[0]);
+} catch(e) {
+  return [];
+}
+''';
+
+SELECT
+  _TABLE_SUFFIX AS client,
+  lib,
+  COUNT(0) AS freq,
+  total,
+  COUNT(0) / total AS pct
+FROM
+  `httparchive.lighthouse.2022_06_01_*` AS lighthouse,
+  UNNEST(getVulnerabilities(JSON_EXTRACT(report, "$.audits['no-vulnerable-libraries']"))) AS lib
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNT(DISTINCT url) AS total
+  FROM
+    `httparchive.lighthouse.2022_06_01_*`
+  GROUP BY
+    client
+)
+ON
+  lighthouse._TABLE_SUFFIX = client
+GROUP BY
+  client,
+  lib,
+  total
+ORDER BY
+  client,
+  freq DESC

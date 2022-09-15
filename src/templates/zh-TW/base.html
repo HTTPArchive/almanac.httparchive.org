@@ -83,6 +83,9 @@
 {% block reviewed_and_analyzed_by_after %}{% endblock %}
 {% block analysis_and_editing_by_after %}{% endblock %}
 
+{% block date_published %}發布日期：{% endblock %}
+{% block date_updated %}更新日期：{% endblock %}
+
 {% block unedited %}[尚未編輯]{% endblock %}
 
 {% block author %}作者{% endblock %}
@@ -188,7 +191,9 @@ Web Almanac 網路年鑑是被熱情的網路社群擁抱而茁壯。 {{ self.co
     "capabilities": "功能",
     "jamstack": "Jamstack",
     "webassembly": "WebAssembly",
-    "structured-data": "结构化数据"
+    "structured-data": "Structured Data",
+    "sustainability": "可持續性",
+    "interop": "互操作性"
   }
 %}
 {% if (year == "2019" or year == "2020") %}

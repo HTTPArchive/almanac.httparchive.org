@@ -104,11 +104,11 @@ When we consider the most popular sites in particular, the numbers for mobile ar
 ### Language identification
 
 {{ figure_markup(
-  caption="Desktop sites have a valid `lang` attribute.",
+  caption="Mobile sites have a valid `lang` attribute.",
   content="80.5%",
   classes="big-number",
   sheets_gid="2009310389",
-  sql_file="common_html_lang_attrib.sql"
+  sql_file="valid_html_lang.sql"
 )
 }}
 
@@ -138,7 +138,7 @@ Visible focus styles are helpful for everyone but are necessary for sighted keyb
   caption="Pages overriding focus styles.",
   description="A bar chart showing 92.6% of desktop sites and 94.1% of mobile sites use a `:focus` pseudo class, and 90.0% of desktop sites and 91.0% of mobile sites use that `:focus` pseudo class to set the outline to 0 or none. 0.6% of desktop sites and 0.6% of mobile sites use the `:focus-visible` pseudo class.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=1277337070&format=interactive",
-  sheets_gid="1027210289",
+  sheets_gid="1517955087",
   sql_file="../css/focus_outline_0.sql"
 ) }}
 
@@ -301,7 +301,7 @@ Headings make it easier for screen readers to properly navigate a page by supply
   content="58%",
   classes="big-number",
   sheets_gid="461215072",
-  sql_file="???"
+  sql_file="lighthouse_a11y_audits.sql"
 )
 }}
 
@@ -567,8 +567,8 @@ The `<video>` element was only present on roughly 5% of the websites included in
   caption="Desktop websites with an `<video>` element have at least one accompanying `<track>` element",
   content="0.5%",
   classes="big-number",
-  sheets_gid="1198212185",
-  sql_file="audio_track_usage.sql"
+  sheets_gid="1261793459",
+  sql_file="video_track_usage.sql"
 )
 }}
 
@@ -626,14 +626,14 @@ When a button role is applied to an `<a>` element, it overrides the implicit lin
 
 {{ figure_markup(
   caption="Desktop websites have at least one link with a button role",
-  content="17.5%",
+  content="18.6%",
   classes="big-number",
   sheets_gid="1014817325",
   sql_file="anchors_with_role_button.sql"
 )
 }}
 
-We found that 18% of desktop pages (up from 16% in 2020) and 19% (up from 15% in 2020) of mobile pages contained at least one anchor element with `role="button"`. A native `<button>` element would be a better choice, <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">per the first rule of ARIA</a>.
+We found that 19% of desktop pages (up from 16% in 2020) and 18% (up from 15% in 2020) of mobile pages contained at least one anchor element with `role="button"`. A native `<button>` element would be a better choice, <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">per the first rule of ARIA</a>.
 
 This act of adding ARIA roles, or a <a hreflang="en" href="https://adrianroselli.com/2020/02/role-up.html">"role-up"</a>, is usually less ideal than using the correct native HTML element. Again, in the vast majority of these cases a better pattern than explicitly defining `role="button"` on the element in question would be to leverage the native HTML `<button>` element, as it comes with the expected semantics and behavior.
 
@@ -760,7 +760,7 @@ We found that 0.96% of desktop websites—or well over 60,000—use one of these
   description="A bar chart showing usage of the most popular accessibility apps by domain rank on desktop sites. AccessiBe is not used on the top 1,000 sites but is used by 0.15% of the top 10,000 sites, by 0.39% of the top 100,000 sites, by 0.37% of the top million sites and by 0.27% of all sites. AudioEye is used by 0.13%, 0.20%, 0.13%, 0.16%, and 0.24% respectively. EqualWeb is not used on the top 1,000 or top 10,000 site but is used by 0.02% of the top 100,000, 0.03% of the top million, and 0.02% of all sites. Texthelp similarly is not used on the top 1,000 or top 10,000 sites but is used by 0.02% of the top 100,000, 0.04% of the top million, and 0.02% of all sites. Finally, UserWay is not used on the top 1,000 sites but is used by 0.04% of the top 10,000 sites, by 0.09% of the top 100,000 sites, by 0.24% of the top million and by 0.39% of all sites. Only AudioEye is used by the top 1,000 sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=473077851&format=interactive",
   sheets_gid="2077755325",
-  sql_file="a11y_overall_tech_usage_by_domain_rank.sql"
+  sql_file="a11y_technology_usage_by_domain_rank.sql"
 ) }}
 
 When considering domain rank, the top 1,000 websites have a lower percentage —0.1%— of overlay usage. However, considering the reach of these top-ranking sites, the potential impact of even one website with this much traffic using an overlay is very substantial.
@@ -771,7 +771,7 @@ When considering domain rank, the top 1,000 websites have a lower percentage —
   description="A bar chart showing that for the top 1,000 sites, 0.1% on desktop and 0.1% on mobile use and accessibility app, for the top 10,000 it's 0.6% and 0.5% respectively, for the top 100,000 it's 0.8% and 0.7%, for the top million it's 0.9% and 0.8%, and finally for all sites 1.0% it's 0.8%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQf4cxIC7ywDV-K2RpfaTeCYI4URyJE1air8BCAxoOw7VW9MjGRQfwHuILvhw-6UmcWnsrAJ0-1TTD_/pubchart?oid=851935325&format=interactive",
   sheets_gid="827309922",
-  sql_file="a11y_technology_usage_by_domain_rank.sql"
+  sql_file="a11y_overall_tech_usage_by_domain_rank.sql"
 ) }}
 
 ### The consequences of overlays

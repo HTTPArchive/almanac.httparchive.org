@@ -4,7 +4,7 @@ const convert = require('xml-js');
 
 const { get_yearly_configs } = require('../generate/shared');
 
-const default_year = 2021;
+const default_year = 2022;
 const default_language = 'en';
 const base_url = "http://127.0.0.1:8080";
 
@@ -21,8 +21,10 @@ const get_config = async () => {
 
   configs = await get_yearly_configs();
   for (const year in configs) {
-    languages[year] = configs[year].settings[0].supported_languages;
-    ebooks[year] = configs[year].settings[0].ebook_languages;
+    if (configs[year].settings[0].is_live) {
+      languages[year] = configs[year].settings[0].supported_languages;
+      ebooks[year] = configs[year].settings[0].ebook_languages;
+    }
   }
 };
 
