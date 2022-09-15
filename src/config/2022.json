@@ -123,8 +123,7 @@
           "part": "II",
           "chapter_number": "15",
           "title": "Mobile Web",
-          "slug": "mobile-web",
-          "todo": true
+          "slug": "mobile-web"
         },
         {
           "part": "II",
@@ -736,7 +735,7 @@
       "twitter": "nutlope"
     },
     "hemanth": {
-      "name": "hemanth.hm",
+      "name": "Hemanth HM",
       "teams": [
         "reviewers"
       ],
@@ -1456,7 +1455,9 @@
         "authors"
       ],
       "avatar_url": "72282209",
-      "github": "Suzzicks"
+      "github": "Suzzicks",
+      "website": "https://mobilemoxie.com/",
+      "twitter": "suzzicks"
     },
     "thibaudcolas": {
       "name": "Thibaud Colas",
