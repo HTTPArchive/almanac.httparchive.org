@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: PWA
 description: PWA chapter of the 2022 Web Almanac covering service workers (usage and features), Web App Manifests, Lighthouse insights, service worker libraries (including Workbox), and Web Push notifications.
-authors: [diekus]
+authors: [diekus, Suzzicks]
 reviewers: [aarongustafson, webmaxru, Schweinepriester, tropicadri, beth-panx, tropicadri]
 analysts: [beth-panx]
 editors: [siwinlo]
@@ -49,8 +49,8 @@ Service workers are not as common as other core technologies of PWAs. For compar
   caption="Service Worker controlled pages by rank.",
   description="Bar chart showing the percent of PWA websites that are controlled by a service worker. 8.26% of desktop and 8.68% of the top 1000 websites are controlled by a service worker.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=1762012854&format=interactive",
-  sheets_gid="",
-  sql_file=""
+  sheets_gid="2067971287",
+  sql_file="sw_adoption_over_time_ranking.sql"
   )
 }}
 
@@ -68,7 +68,8 @@ A Service Worker acts as a proxy server that sits between the web app, the brows
   caption="Most used Service Worker events.",
   description="Bar chart showing the most used service worker events. install, activate, notificationclick, push and fetch are the top events each with over 50% usage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=1426457626&format=interactive",
-  sql_file="xxx.sql"
+  sheets_gid="573162824",  
+    sql_file="sw_events.sql"
   )
 }}
 
@@ -86,8 +87,8 @@ Install and activate are lifecycle events. It is common practice to create a cac
   caption="Usage percent of install event (desktop)",
   content="62.53%",
   classes="really-big-number",
-  sheets_gid="xxx",
-  sql_file="xxx.sql"
+  sheets_gid="573162824",
+  sql_file="sw_events.sql"
 )
 }}
 
@@ -103,8 +104,8 @@ Push notification events come next in most used service worker methods.
   caption="Usage percent of Notificationclick event (desktop)",
   content="57.02%",
   classes="really-big-number",
-  sheets_gid="xxx",
-  sql_file="xxx.sql"
+  sheets_gid="573162824",
+  sql_file="sw_events.sql"
 )
 }}
 
@@ -114,8 +115,6 @@ Push notification events come next in most used service worker methods.
 
 A couple of takeaways here is that momentum continues to grow this year for PWAs on desktop, and push notifications is not an exception. Usage of related events for notifications has gone up around 11%. Many tweaks and fixes have been worked on in different platforms to make sure that these pieces of UX feel completely integrated with the host OS. We expect these numbers to continue growing, following the newly announced [support for Web Push on Webkit](https://webkit.org/blog/12945/meet-web-push/). This is a feature that has being requested by many developers for a long time and finally having support on macOS (and hopefully soon iOS devices) can encourage developers to use the API.
 
-
-
 ##### Background processing events
 
 The remaining events in the chart represent background processing events. 
@@ -124,8 +123,8 @@ The remaining events in the chart represent background processing events.
   caption="Usage percent of fetch event (desktop).",
   content="48.69%",
   classes="really-big-number",
-  sheets_gid="xxx",
-  sql_file="xxx.sql"
+  sheets_gid="573162824",
+  sql_file="sw_events.sql"
 )
 }}
 
@@ -143,6 +142,7 @@ Following the trend of last year, the [skipWaiting](https://developer.mozilla.or
   caption="Usage of skipWaiting() method.",
   description="Bar chart showing the usage of the skipWaiting() method. 60.24% on desktop, 59.07% on mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=174072819&format=interactive",
+  sheets_gid="58784102",
   sql_file="xxx.sql"
   )
 }}
@@ -154,7 +154,8 @@ These are the top most used service worker objects:
   caption="Most used Service Worker objects.",
   description="Bar chart depicting the most used Service Worker objects. Clients, caches, cache and client are the top 4 objects.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=1869777638&format=interactive",
-  sql_file="xxx.sql"
+  sheets_gid="1746822463",
+  sql_file="sw_objects.sql"
   )
 }}
 
@@ -171,7 +172,8 @@ And these are the most used methods:
   caption="Most used Service Worker object methods.",
   description="Bar chart that depicts the most used methods for the most used service worker objects. clients.matchAll (61.06%), clients.claim (58.26%) and clients.openWindow (56.13%) on desktop are the top 3 methods used.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=1209078963&format=interactive",
-  sql_file="xxx.sql"
+  sheets_gid="1969934262";  
+  sql_file="sw_methods.sql"
   )
 }}
 
@@ -185,8 +187,8 @@ Keeping the web app’s manifest fully authored is essential to take advantage o
   caption="Percent of manifest files parseable (desktop)",
   content="95.23%",
   classes="really-big-number",
-  sheets_gid="xxx",
-  sql_file="xxx.sql"
+  sheets_gid="717325565",
+  sql_file="manifests_not_json_parsable.sql"
 )
 }}
 
@@ -204,7 +206,8 @@ Following are the usage numbers of manifest file alongside service worker. These
   caption="Service Worker and Manifest usage.",
   description="Bar chart that shows the usage of service workers, manifest files and their combination in web apps. On desktop, service worker is on 1.63% of websites, manifest on 8.38%, and both on 0.77% of web apps.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=409958839&format=interactive",
-  sql_file="xxx.sql"
+  sheets_gid="1885116887",
+  sql_file="manifests_and_service_workers.sql"
   )
 }}
 
@@ -232,7 +235,8 @@ Note that the last field, `gcm_sender_id`, is not a standardized property. It is
   caption="Top PWA manifest properties.",
   description="Bar chart that shows the top properties used in the manifest file for PWAs. Top 5 are: name, display, icons, short_name and start_url.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=314127541&format=interactive",
-  sql_file="xxx.sql"
+  sheets_gid="400343770",
+  sql_file="top_manifest_properties.sql"
   )
 }}
 
@@ -245,7 +249,8 @@ Note that the last field, `gcm_sender_id`, is not a standardized property. It is
   caption="PWA manifest display values.",
   description="Bar chart that shows the top manifest values used in PWAs. Standalone with 70.54% on desktop and minimal-ui with 7.73% are the top 2 values used.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=463813741&format=interactive",
-  sql_file="xxx.sql"
+  sheets_gid="264101844",
+  sql_file="top_manifest_display_values.sql"
   )
 }}
 
@@ -257,7 +262,8 @@ Note that the last field, `gcm_sender_id`, is not a standardized property. It is
   caption="Top PWA manifest icon sizes.",
   description="Bar chart that depicts the most used sizes for icons in the manifest file. 192x192 and 512x512 are the top icon sizes used with around 70% of manifest using these sizes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=1961814023&format=interactive",
-  sql_file="xxx.sql"
+  sheets_gid="1009563515",
+  sql_file="top_manifest_icon_sizes.sql"
   )
 }}
 
@@ -274,7 +280,8 @@ A web app manifest file can contain data that is useful in describing of the app
   caption="Top PWA manifest categories.",
   description="Bar chart that shows the top categories for PWA as defined in the manifest. Top 5 are: shopping, news, business, lifestyle and social.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=2026035912&format=interactive",
-  sql_file="xxx.sql"
+sheets_gid="xxx",
+  sql_file="top_manifest_categories.sql"
   )
 }}
 
@@ -283,7 +290,8 @@ A web app manifest file can contain data that is useful in describing of the app
   caption="Top manifest categories.",
   description="Bar chart that shows the top categories for all websites as defined in the manifest. Top 5 are: news, shopping, business, social, entertainment.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=417728851&format=interactive",
-  sql_file="xxx.sql"
+sheets_gid="217012426",
+  sql_file="top_manifest_categories.sql"
   )
 }}
 
@@ -312,8 +320,8 @@ The manifest file also allows for the activation of modern platform capabilities
   caption="Manifest files with a related_applications field (desktop)",
   content="2.3%",
   classes="really-big-number",
-  sheets_gid="xxx",
-  sql_file="xxx.sql"
+  sheets_gid="228985826",
+  sql_file="manifests_preferring_native_apps.sql"
 )
 }}
 
@@ -328,8 +336,8 @@ PWAs go hand in hand with advanced web capabilities. These capabilities are gene
   caption="Most used FUGU API (desktop)",
   content="8.84%",
   classes="really-big-number",
-  sheets_gid="xxx",
-  sql_file="xxx.sql"
+  sheets_gid="1110821491",
+  sql_file="fugu.sql"
 )
 }}
 
@@ -359,7 +367,8 @@ Lighthouse scores give an idea of the performance, quality and correctness of we
   caption="Lighthouse PWA Audits for desktop.",
   description="Lighthouse PWA Audits for desktop. Top audits look for viewport meta tag, content-width and an installable manifest.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=2100711487&format=interactive",
-  sql_file="xxx.sql"
+sheets_gid="2095859911",
+  sql_file="lighthouse_pwa_audits.sql"
   )
 }}
 
@@ -370,7 +379,8 @@ The top three PWA audits for desktop devices are the presence of a [viewport met
   caption="Lighthouse PWA Audits for mobile.",
   description="Lighthouse PWA Audits for mobile. Top audits look for viewport meta tag, installable manifest and apple touch icon.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=51840174&format=interactive",
-  sql_file="xxx.sql"
+sheets_gid="2095859911",
+  sql_file="lighthouse_pwa_audits.sql"
   )
 }}
 
@@ -392,7 +402,8 @@ To conclude the Lighthouse insights section, we take a look at the Lighthouse PW
   caption="Lighthouse scores for desktop.",
   description="Lighthouse PWA scores for desktop sites. Installable PWAs have higher scores",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=1918292266&format=interactive",
-  sql_file="xxx.sql"
+sheets_gid="674035010",
+  sql_file="lighthouse_pwa_score.sql"
   )
 }}
 
@@ -401,7 +412,8 @@ To conclude the Lighthouse insights section, we take a look at the Lighthouse PW
   caption="Lighthouse scores for mobile.",
   description="Lighthouse PWA scores for mobile sites. Installable PWAs have higher scores.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=1463181209&format=interactive",
-  sql_file="xxx.sql"
+sheets_gid="674035010",
+  sql_file="lighthouse_pwa_score.sql"
   )
 }}
 
@@ -422,7 +434,8 @@ Service workers are really powerful tools, their API allows developers to create
   caption="Use of workbox on PWA pages .",
   description="Big spike in workbox usage compared to last year.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=417225871&format=interactive",
-  sql_file="xxx.sql"
+sheets_gid="1871711300",
+  sql_file="workbox_usage.sql"
   )
 }}
 
@@ -439,7 +452,8 @@ Workbox is structured in a way that developers can choose which parts to add to 
   caption="Top Workbox packages.",
   description="Increase in usage of the workbox-core base library.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=205966463&format=interactive",
-  sql_file="xxx.sql"
+sheets_gid="122135540",
+  sql_file="workbox_packages.sql"
   )
 }}
 
@@ -466,7 +480,8 @@ It bears repeating that for a notification to be useful it has to be [timely, pr
   caption="Notification acceptance rates.",
   description="Chart that shows the acceptance of notifications across desktop and mobile. It shows that users tend to ignore notification more and more frequently.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=148157045&format=interactive",
-  sql_file="xxx.sql"
+sheets_gid="435156894",
+  sql_file="pwa_notification_acceptance_rates.sql"
   )
 }}
 
@@ -476,8 +491,8 @@ With the growth of notification support and the UX improvements  in different pl
   caption="Notification acceptance rate (desktop)",
   content="6.41%",
   classes="really-big-number",
-  sheets_gid="xxx",
-  sql_file="xxx.sql"
+  sheets_gid="435156894",
+  sql_file="pwa_notification_acceptance_rates_over_time.sql"
 )
 }}
 
@@ -485,8 +500,8 @@ With the growth of notification support and the UX improvements  in different pl
   caption="Notification acceptance rate (mobile)",
   content="19.09%",
   classes="really-big-number",
-  sheets_gid="xxx",
-  sql_file="xxx.sql"
+  sheets_gid="435156894",
+  sql_file="pwa_notification_acceptance_rates_over_time.sql"
 )
 }}
 
@@ -502,4 +517,3 @@ Manifest files continue to be in a healthy state, with a slight increase over la
 Notification fatigue is, understandably, still a factor, but users also request and appreciate legitimate notification use cases. Browser vendors are experimenting with less intrusive permission requests and web push notifications have the advantage of providing a consistent experience across platforms, giving the users the nudge they requested independently of the device they are using.
 
 We hope this information sheds some light in your PWA journey and helps developers understand the current technology trends in API adoption.
-
