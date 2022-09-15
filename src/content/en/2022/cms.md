@@ -57,7 +57,7 @@ Our analysis throughout this work includes desktop and mobile websites. The vast
 
 As of June 2022, 44.65% of websites within the desktop dataset are powered by a CMS, indicating a drop of 0.35% [from 2021](https://almanac.httparchive.org/en/2021/cms#cms-adoption). The mobile dataset shows an increase from 45.54% [in 2021](https://almanac.httparchive.org/en/2021/cms#cms-adoption) to 47.31% here in 2022. In our estimate, the drop is more likely attributed to minor variances in attribution than an indicator of a downward trend in CMS usage.
 
-It is interesting to compare these numbers with another commonly used dataset, such as [W3Techs](https://w3techs.com/technologies/history_overview/content_management/all/q), which reported that as of June 2021, 64.6% of websites are created using a CMS, up from 59.2% in June 2020, which is an increase of over 9%.
+It is instructive to compare these numbers with another commonly used dataset, such as [W3Techs](https://w3techs.com/technologies/history_overview/content_management/all/q), which reported that as of June 2021, 64.6% of websites are created using a CMS, up from 59.2% in June 2020, which is an increase of over 9%.
 
 The deviation between our analysis and W3Techs’ analysis can be explained by a difference in research methodologies, and the definition of what is a CMS.
 
