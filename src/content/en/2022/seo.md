@@ -32,7 +32,7 @@ Search engine optimization (SEO) is a digital technique used to improve a websit
   )
 }}
 
-With custom metrics that expose some new, never-before-seen insights, we have analyzed more than eight million homepages across the web, comparing our findings to those from [2021]()../2021/seo) and, in some instances, from [2020]()../2020/seo). Note: Our data, particularly from Lighthouse and the HTTP Archive, is limited to just websites’ homepages, not sitewide crawls. Learn more about these limitations in our [Methodology](./methodology).
+With custom metrics that expose some new, never-before-seen insights, we have analyzed more than eight million homepages across the web, comparing our findings to those from [2021](../2021/seo) and, in some instances, from [2020](../2020/seo). Note: Our data, particularly from Lighthouse and the HTTP Archive, is limited to just websites’ homepages, not sitewide crawls. Learn more about these limitations in our [Methodology](./methodology).
 
 Read on for more about how search engine-friendly the web is.
 
@@ -534,7 +534,7 @@ Let’s begin with the number of words found on the page once it has been render
 
 The median desktop page in 2022 contains 421 words. This is quite close to the 425 words found in 2021. However, this is still a big leap percentage-wise from what we found back in 2020 when 402 words were found on the median desktop page. Whatever the cause was in 2021 for the uptick in rendered word count, it appears to have remained through 2022.
 
- Similarly, the median number of rendered words on mobile in 2022 contains 366 words, which is also similar percentage-wise to the data in 2021. For context, desktop pages contain more words than mobile pages. The median desktop page contains 15% more words than mobile pages within the 50th percentile. This is significant since Google some years ago adopted a mobile-first index, and content not found on the mobile version of a page runs the risk of not being indexed by the search engine.
+Similarly, the median number of rendered words on mobile in 2022 contains 366 words, which is also similar percentage-wise to the data in 2021. For context, desktop pages contain more words than mobile pages. The median desktop page contains 15% more words than mobile pages within the 50th percentile. This is significant since Google some years ago adopted a mobile-first index, and content not found on the mobile version of a page runs the risk of not being indexed by the search engine.
 
 #### Raw word count
 
@@ -694,7 +694,7 @@ The future of AMP appears to be changing ever since the launch of Core Web Vital
   )
 }}
 
- Desktop usage has dipped in 2022 from 0.09% to 0.07% compared to 2021 while mobile usage is down from 0.22% to 0.19% over the same time period.
+Desktop usage has dipped in 2022 from 0.09% to 0.07% compared to 2021 while mobile usage is down from 0.22% to 0.19% over the same time period.
 
 ## Internationalization
 
