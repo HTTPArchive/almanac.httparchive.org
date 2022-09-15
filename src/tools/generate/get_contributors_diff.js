@@ -141,7 +141,7 @@ const get_contributors_difference = async (configs, chapter_contributors) => {
       }
 
       // Exit error if any mismatches
-      process.exit(1)
+      process.exit(1);
     }
   }
 };
