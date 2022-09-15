@@ -467,32 +467,14 @@ One of the great things about web development is that you can easily rely on ext
 Third-party requests account for 45% of all requests, with 94% of mobile websites having at least one identifiable third-party resource. This is not surprising, given that third-party code is often used to deliver complex functionality on web pages. It also serves as a  quick fix for including cross-platform content onto a website.
 
 
-```
-
-
-## {{ figure_markup(
-
-
-##   caption="Percent of third-party requests on mobile pages that are served from green hosting.",
-
-
-##   content="91%",
-
-
-##   classes="big-number",
-
-
-##   sheets_gid="951750086",
-
-
-##   sql_file="percent_of_websites_with_third_party.sql"
-
-
-## )
-
-
-## }}
-```
+{{ figure_markup(
+caption="Percent of third-party requests on mobile pages that are served from green hosting.",
+content="91%",
+classes="big-number",
+sheets_gid="951750086",
+sql_file="percent_of_websites_with_third_party.sql"
+)
+}}
 
 
 With third-party requests making up such a large portion of requests on the web, it is reassuring to see that the vast majority of these requests are being served from green hosting providers. 
