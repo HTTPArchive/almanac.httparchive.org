@@ -37,7 +37,7 @@ With custom metrics that expose some new, never-before-seen insights, we have an
 Read on for more about how search engine-friendly the web is.
 
 
-## Crawlability and Indexability
+## Crawlability and indexability
 
 Crawling and Indexing are the backbone of what Google and other search engines ultimately display on their search results pages. Without them, ranking simply cannot happen.
 
@@ -86,7 +86,7 @@ As expected, the overwhelming majority of robots.txt files were quite small, wei
 
 Google’s max limit for a robots.txt file is 500 KiB. Any directives found after the file reaches that limit are ignored by the search engine. A very small number of robots.txt files fall into that category. Specifically, just .005% of both desktop and mobile sites contain a robots.txt file that is above Google’s max limit (which is consistent with 2021’s data). In cases where the file size exceeds limits, [Google recommends](https://developers.google.com/search/docs/advanced/robots/robots_txt) consolidating directives.
 
-### Robots.txt User-Agent Usage
+### Robots.txt user-agent usage
 
 {{ figure_markup(
   image="robots-useragents.png",
@@ -108,9 +108,9 @@ In terms of search engines, Googlebot leads the pack with 3.3% of robots.txt fil
 
 Of note, Yandexbot was specified in just 0.5% of robots.txt files in 2021. By 2022 , there was a six-fold increase, with 3% of files specifying Yandexbot.
 
-### Index If Embedded Tag
+### `IndexIfEmbedded` Tag
 
-In January 2022, Google introduced a new robots tag called _indexifembedded. _The tag offers control over indexation when content is embedded in an iframe on a page, even when a noindex tag has been applied.
+In January 2022, Google introduced a new robots tag called _indexifembedded_. The tag offers control over indexation when content is embedded in an iframe on a page, even when a noindex tag has been applied.
 
 Let’s start by determining the percentage of pages for which the new tag is possibly applicable.
 
@@ -140,7 +140,7 @@ Of the pages that have adopted the indexifembedded tag, 98.3% of them implemente
   )
 }}
 
-### Invalid Head Elements
+### Invalid head elements
 
 The `<head>` element serves as the container for a page’s metadata. From an SEO point of view, a page’s title tag and meta description reside within the `<head>` element, as do robots meta tags.
 
@@ -162,7 +162,7 @@ The most misapplied element to the `<head>` by far is the `<img>` element. It is
 
 The `<div>` element is the only other misapplied element to appear within the `<head>` on more than 3% of the pages within the 2022 dataset. It is incorrectly applied to the `<head>` on 3.5% of desktop pages and 3.9% of mobile pages.
 
-## Canonical Tags
+## Canonical tags
 
 Canonical tags are traditionally used when defining duplicate content pages and to help search engines prioritize. They are a snippet of HTML code (rel=”canonical”) that allows webmasters to define to the search engine which page is the “preferred” version. They are not directives, and instead act as a “hint.” Therefore, search engines such as Google determine their own canonical version of the page, based on how useful they believe the page is for the user. Canonical tags can also be used to consolidate other signals such as links, as well as to simplify tracking metrics and better manage syndicated content.
 
@@ -180,7 +180,7 @@ We see from the data that canonical tags usage has increased over the years. In 
 
 Mobile has a higher percentage of canonical attribution than desktop (60.6% vs. 58.7%), which is likely a direct result of single use URLs on mobile. Since the data set in this chapter is limited to home pages, it’s fair to assume that this is the reason for the higher canonical attribution on mobile. According to  [Google’s guidelines](https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls), having a separate mobile site is not recommended.
 
-### HTML vs. HTTP Canonical Usage
+### HTML vs. HTTP canonical usage
 
 There are two ways of implementing canonical tags:
 
@@ -199,7 +199,7 @@ There are two ways of implementing canonical tags:
 
 The most common usage across both desktop and mobile is through HTML at 58.6% and 60.4%, respectively. This is likely due to the ease of implementation. While one requires basic HTML knowledge, the other method (through HTTP headers) requires a more technical skillset.
 
-### Raw vs. Rendered Usage
+### Raw vs. rendered usage
 
 {{ figure_markup(
   image="raw-vs-rendered-canonical.png",
@@ -213,7 +213,7 @@ The most common usage across both desktop and mobile is through HTML at 58.6% an
 
 Compared to 2021, where raw canonical usage was 57.7% and rendered canonical usage was 58.4%, in 2022 there was some growth, with raw canonical usage reaching 59.4% and rendered canonical usage rising to 60.4%. This correlates with the growth in overall canonical use.
 
-## Page Experience
+## Page experience
 
 ### HTTPS
 
@@ -231,11 +231,11 @@ In 2021, there was an increased focus on site speed and page experience followin
 
 We see from the data how more sites are using a secure certificate (HTTPS) at the time of the crawl (taking into account expirations of these certificates). In 2021, 84.3% of desktop pages used HTTPs, and it went up to 87.71% in 2022. On mobile, this increased from 81.2% in 2021 to 84.75% in 2022. Since the announcement of the Core Web Vitals update in 2020 to the present there’s been an increase of nearly 11% on mobile and 10% on desktop.
 
-### Mobile Friendliness
+### Mobile friendliness
 
 Mobile-friendliness can be determined by looking at responsive design implementation vs. dynamic serving. To identify this, we looked at the use of the viewport meta tag which is commonly used in responsive design  vs. the vary: User-Agent header to determine if a website is using dynamic serving.
 
-### Viewport Meta Tag
+### Viewport meta tag
 
 {{ figure_markup(
   caption="92% of sites support a viewport meta tag.",
@@ -248,7 +248,7 @@ Mobile-friendliness can be determined by looking at responsive design implementa
 
 We have seen the use of the viewport meta tag grow from 91.1% of mobile pages using viewport meta tag in 2021 to now 92%. In 2020, it was at  89.2%.
 
-### Vary Header Usage
+### Vary header usage
 
 The vary header is a HTTP header that enables  different content to be served to different users on different devices. This is known as dynamic serving, and is the opposite to responsive design, which serves the exact same content, but to different devices.
 
@@ -264,7 +264,7 @@ The vary header is a HTTP header that enables  different content to be served to
 
 Vary header usage has remained relatively unchanged for the past few years. In 2021, 12.6% of desktop and 13.4% of mobile pages used this footprint. In 2022, the data is nearly identical, with 12% for desktop and 13% for mobile.
 
-### Legible Font Sizes
+### Legible font sizes
 
 In 2021, 13.5% of mobile pages were not using a legible font size. Thanks to Google’s focus on user experience across all devices, more pages than ever now use a legible font size. Only 11% of mobile pages are still not using a legible font size.
 
@@ -315,7 +315,7 @@ On mobile, 39% of sites now pass CWV, which is up from 29% in 2021 and just 20% 
 
 On desktop, we see an astounding 100% of sites passing FID, though similarly struggling to pass LCP and CLS. Noteworthy, more sites are passing CWV on desktop (43%) than on mobile (39%).
 
-### Lazy Loading vs. Eager Loading iFrames
+### Lazy loading vs. Eager loading iFrames
 
 Lazy loading is a technique that defers the loading of non-critical elements on a web page until the point in which they are needed. This can help with the reduction of page weight, as well as conserve bandwidth and system resources. Eager loading is when related entities are simultaneously loaded and fetched all at once.
 
@@ -333,11 +333,11 @@ When looking solely at iFrames, we see lazy loading is preferred far more to eag
 
 This is particularly interesting since [browser-level lazy loading for iFrames has become standardized in Chrome](https://web.dev/iframe-lazy-loading/). The standardization of the `loading` attribute, without specifying lazy or eager, is likely why data shows 94.4% of attributes do not contain lazy or eager.
 
-## On Page
+## On page
 
 When looking for relevancy signals, search engines look at the content on a web page. There are various on-page SEO elements that can affect rankings and/or appearance on the SERPs (Search Engine Results Pages).
 
-### Meta Data
+### Meta data
 
 {{ figure_markup(
   image="has-title-meta.png",
@@ -351,7 +351,7 @@ When looking for relevancy signals, search engines look at the content on a web 
 
 For the second year in a row, 98.8% of desktop and mobile pages had `<title>` elements. Also in 2022, 71% of desktop and mobile homepages had `<meta name="description">` tags, a 0.1% decrease from last year.
 
-#### `<title>` Element
+#### `<title>` element
 
 The `<title>` element is an on-page ranking factor that provides a strong hint regarding page relevance and may appear on the SERP. In August 2021, [Google started rewriting more websites’ titles in their search results](https://developers.google.com/search/blog/2021/08/update-to-generating-page-titles).
 
@@ -417,7 +417,7 @@ In 2022:
 
 For the most part, these stats are relatively unchanged from last year.
 
-#### Header Tags
+#### Header tags
 
 Heading elements  (`<h1>`, `<h2>`...) are important parts of a page’s structure since they help organize the content on the page. Heading elements are not a direct ranking factor, but they  can help Google better understand the content found on the page.
 
@@ -451,7 +451,7 @@ Overall, much like 2021’s stats, there are relatively few empty H elements fou
 
 There is divergence, however, with the h1.  While 65.8% of pages contained an h1 element, 58.5% contained a non-empty h1 element. That’s a 7.3 percentage point difference. Contrast that with the h2, which has just a 1.5 percentage point difference.  As noted in the 2021 Web Almanac, this may be a result of the many websites that wrap logo-images in the h1 element on homepages.
 
-### Image Attributes
+### Image attributes
 
 The primary purpose of the alt attribute on the `<img>` element is accessibility. Alt attributes also assist search engines rank specific assets in image search.
 
@@ -494,7 +494,7 @@ What we found:
 * There is a noticeable change in the median desktop and mobile pages containing `<img>` tags that have blank alt attributes compared to 2021. Last year, the median desktop and mobile pages, respectively had 10.5% and 11.8% `<img>` tags with blank `alt` attributes. In 2022, this figure rose to 12.1% and 12.5% on desktop and mobile, respectively.
 * The trend towards 0% of median desktop and mobile pages containing `<img>` tags missing the alt attribute continues. On the median desktop page in 2021, 1.4% of the `<img>` tags had blank attributes. It fell to 0% in 2022.
 
-### Image Loading Property Usage
+### Image `loading` property usage
 
 How user agents prioritize the rendering and displaying of images is affected by the loading attribute applied to `<img>` elements. This implementation can impact user experience and performance time, with possible effects on both SEO success and conversions.
 
@@ -514,11 +514,11 @@ What we found:
 * Conversely, the implementation of loading=” lazy” has increased. In 2021, both 15.6% of desktop and mobile pages implemented loading=” lazy”. This has increased to 19.8% (desktop) and 20.3% (mobile) in 2022.
 * The number of pages defaulting to the brower’s loading method has fallen in 2022. On desktop, .07% of pages use loading=”auto” and .08% on mobile. In 2021, .01% of pages utilized loading=”auto”.
 
-### Word Count
+### Word count
 
 While content length is not a ranking factor, it is still valuable to assess how many words a page contains on average.
 
-#### Rendered Word Count
+#### Rendered word count
 
 Let’s begin with the number of words found on the page once it has been rendered.
 
@@ -536,7 +536,7 @@ The median desktop page in 2022 contains 421 words. This is quite close to the 4
 
  Similarly, the median number of rendered words on mobile in 2022 contains 366 words, which is also similar percentage-wise to the data in 2021. For context, desktop pages contain more words than mobile pages. The median desktop page contains 15% more words than mobile pages within the 50th percentile. This is significant since Google some years ago adopted a mobile-first index, and content not found on the mobile version of a page runs the risk of not being indexed by the search engine.
 
-#### Raw Word Count
+#### Raw word count
 
 Let’s now examine the number of words contained in a page’s source code prior to the browser executing any JavaScript code or other modifications in the DOM or CSSOM.
 
@@ -574,7 +574,7 @@ This reflects a 5.3% and 6% increase on desktop and mobile pages, respectively. 
 
 There has also been a great reduction in both mobile and desktop pages that have structured data added via JavaScript where it was not contained within the initial HTML response. In 2021, 1.7% of mobile pages and 1.4% of desktop pages had structured data added via JavaScript where it was not contained within the initial HTML response. It’s now just .15% on desktop and .13% on mobile.
 
-### Most popular structured data formats
+### Most popular Structured Data formats
 
 {{ figure_markup(
   image="structured-data-formats.png",
@@ -618,11 +618,11 @@ You can read more about structured data in our dedicated chapter.
 
 Search engines utilize links to discover new pages and to pass PageRank, which helps determine the importance of pages. Links also act as a reference from one page to another (presumably relevant) page.
 
-### Non-Descriptive Link Text
+### Non-descriptive link text
 
 Anchor text, which is the clickable text used in a link, helps search engines to understand the content of the linked page. Lighthouse has a test to check if the anchor text used is useful and/or contextual, or if it’s generic and/or non-descriptive such as “learn more” or “click here.” In 2022, 15% and 17% of the tested links on mobile and desktop, respectively, did not have descriptive anchor text, a missed opportunity from an SEO perspective and bad for accessibility.
 
-### Outgoing Links
+### Outgoing links
 
 {{ figure_markup(
   image="median-internal-links.png",
@@ -652,7 +652,7 @@ According to CrUX data, the 1,000 most popular websites have more outgoing inter
 
 External links are links to other pages on a different website. The data, which has been consistent for the past few years, points to there being fewer external links on the mobile versions of pages compared to the desktop versions. Despite Google rolling out mobile-first indexing a few years ago, websites have not brought their mobile versions to parity with their desktop counterparts.
 
-### Anchor Rel Attribute Use
+### Anchor rel attribute use
 
 In September of 2019, Google [introduced attributes](https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html) that allow publishers to classify links as being _sponsored_ or _user-generated content_. These attributes are in addition to `rel=nofollow`, which was previously [introduced in 2005](https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html). The newer attributes, `rel=ugc` and `rel=sponsored`, add additional information to the links.
 
@@ -698,7 +698,7 @@ The future of AMP appears to be changing ever since the launch of Core Web Vital
 
 ## Internationalization
 
-### Hreflang Usage
+### Hreflang usage
 
 Hreflang tags help Google and other search engines, such as Bing and Yandex, understand what the main language is on a given page. It is primarily used in international SEO campaigns when several different languages are used across different versions of a website.
 
@@ -722,7 +722,7 @@ After x-default, which is the “fallback” version (and the second most common
 
 The three different ways to implement hreflang tags are via the `<head>`, link headers, or XML sitemaps. Note: As this data is looking solely at homepages, XML sitemaps are not included.
 
-### Content Language Usage
+### Content language usage
 
 While Google tends to use hreflang tags, other search engines such as Bing prefer the [content-language attribute](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Language). This can be implemented using two methods:
 
