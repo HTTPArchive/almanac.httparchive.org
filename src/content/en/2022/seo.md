@@ -32,7 +32,7 @@ Search engine optimization (SEO) is a digital technique used to improve a websit
   )
 }}
 
-With custom metrics that expose some new, never-before-seen insights, we have analyzed more than eight million homepages across the web, comparing our findings to those from [2021](https://almanac.httparchive.org/en/2021/seo) and, in some instances, from [2020](https://almanac.httparchive.org/en/2020/seo). Note: Our data, particularly from Lighthouse and the HTTP Archive, is limited to just websites’ homepages, not sitewide crawls. Learn more about these limitations in our [Methodology](/methodology).
+With custom metrics that expose some new, never-before-seen insights, we have analyzed more than eight million homepages across the web, comparing our findings to those from [2021]../2021/seo) and, in some instances, from [2020]../2020/seo). Note: Our data, particularly from Lighthouse and the HTTP Archive, is limited to just websites’ homepages, not sitewide crawls. Learn more about these limitations in our [Methodology](/methodology).
 
 Read on for more about how search engine-friendly the web is.
 
@@ -122,7 +122,7 @@ Let’s start by determining the percentage of pages for which the new tag is po
   )
 }}
 
-A little more than 4% of pages contain an <iframe> element.  Of the 4.1% of pages containing that element, 76% of them had the iframe noindexed, making them a potential use case for the new indexifembedded tag.
+A little more than 4% of pages contain an `<iframe>` element.  Of the 4.1% of pages containing that element, 76% of them had the iframe noindexed, making them a potential use case for the new indexifembedded tag.
 
 However, a miniscule percentage of sites have adopted the indexifembedded robots tag. The tag can be found on just 0.015% of pages surveyed.
 
@@ -739,7 +739,7 @@ HTML, on the other hand, has 2.98% adoption on desktop in 2022 and 3.01% adoptio
 
 ## Conclusion
 
-Much like patterns in our data from [2021](https://almanac.httparchive.org/en/2021/seo), [2020](https://almanac.httparchive.org/en/2020/seo), and [2019](https://almanac.httparchive.org/en/2019/seo), the majority of sites analyzed are showing small, yet consistent, improvement when it comes to various fundamentals of SEO, including having indexable and crawlable pages.
+Much like patterns in our data from [2021](../2021/seo), [2020](../2020/seo), and [2019](../2019/seo), the majority of sites analyzed are showing small, yet consistent, improvement when it comes to various fundamentals of SEO, including having indexable and crawlable pages.
 
 We have also seen an increasing focus on performance elements such as Core Web Vitals, with 39% of sites now having passing scores compared to just 20% in 2020 when the update was first announced. This seems to indicate sites are now taking Google’s guidance more to heart. Still, more work needs to be done across the web.
 
