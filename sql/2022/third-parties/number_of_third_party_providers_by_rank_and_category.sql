@@ -1,5 +1,6 @@
 #standardSQL
-# Number of distinct third-party providers per websites by rank
+# Number of third-parties per websites by rank and category
+
 WITH requests AS (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -31,7 +32,7 @@ third_party AS (
   ON NET.HOST(r.url) = NET.HOST(tp.domain)
   WHERE
     date = '2022-06-01' AND
-    category != 'hosting'
+    category NOT IN ('hosting')
   GROUP BY
     domain,
     canonicalDomain,
@@ -43,6 +44,7 @@ third_party AS (
 base AS (
   SELECT
     client,
+    category,
     page,
     rank,
     COUNT(DISTINCT canonicalDomain) AS third_parties_per_page
@@ -58,12 +60,14 @@ base AS (
     (client, page)
   GROUP BY
     client,
+    category,
     page,
     rank
 )
 
 SELECT
   client,
+  category,
   rank_grouping,
   APPROX_QUANTILES(third_parties_per_page, 1000)[OFFSET(500)] AS p50_third_parties_per_page
 FROM
@@ -73,7 +77,9 @@ WHERE
   rank <= rank_grouping
 GROUP BY
   client,
+  category,
   rank_grouping
 ORDER BY
   client,
+  category,
   rank_grouping
