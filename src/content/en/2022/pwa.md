@@ -39,10 +39,10 @@ While there [isn't parity between major browsers when it comes to Service Worker
 
 ### Service Worker Usage
 
-Service workers are not as common as other core technologies of PWAs. For comparison reasons, we have run the same queries as last year, which allows us to try to make sense of the evolution of service worker usage. You can read the explanation of [why it isn’t trivial to find out actual usage of service worker](https://almanac.httparchive.org/en/2021/pwa#service-workers-usage), 
+Service workers are not as common as other core technologies of PWAs. For comparison reasons, we have run the same queries as last year, which allows us to try to make sense of the evolution of service worker usage. You can read the explanation of [why it isn’t trivial to find out actual usage of service worker](https://almanac.httparchive.org/en/2021/pwa#service-workers-usage),
 
 *  Lighthouse detects a 1.6% (mobile) and 1.7% (desktop) of all websites employ a service worker. We expect this is lower than the real-world percentage due to [additional checks](https://web.dev/service-worker) that Lighthouse takes into consideration.
-* Following the same [metrics introduced last year](https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/pwa.js), usage of a Service Worker in websites comes up to 1.63% on desktop and 1.81% on mobile. 
+* Following the same [metrics introduced last year](https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/pwa.js), usage of a Service Worker in websites comes up to 1.63% on desktop and 1.81% on mobile.
 
 {{ figure_markup(
   image="sw_controlled_pages_rank.png",
@@ -54,21 +54,21 @@ Service workers are not as common as other core technologies of PWAs. For compar
   )
 }}
 
-There hasn’t been a noticeable change for Service Worker controlled pages in the top 1000 sites as well, with only a slight decrease in desktop and even smaller increase in mobile properties. But there was an increase in all other categories. If we follow the [reasoning from last year](https://almanac.httparchive.org/en/2021/pwa#:~:text=And%20how%20can,via%20service%20workers.), where we postulated that bigger websites adopted the advanced technologies faster. Seeing more growth in other categories makes sense, as smaller companies and developers have learned and adopted the technology shared from case studies and examples from the companies with more traffic. 
+There hasn’t been a noticeable change for Service Worker controlled pages in the top 1000 sites as well, with only a slight decrease in desktop and even smaller increase in mobile properties. But there was an increase in all other categories. If we follow the [reasoning from last year](https://almanac.httparchive.org/en/2021/pwa#:~:text=And%20how%20can,via%20service%20workers.), where we postulated that bigger websites adopted the advanced technologies faster. Seeing more growth in other categories makes sense, as smaller companies and developers have learned and adopted the technology shared from case studies and examples from the companies with more traffic.
 
 
 ### Service Worker Features
 
 #### Service Worker events
 
-A Service Worker acts as a proxy server that sits between the web app, the browser and the network. To install a Service Worker it must be fetched and registered. If this is successful, the Service Worker is executed in a [special worker container](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope) that runs off the main thread and has no DOM access. This is when events can be processed. 
+A Service Worker acts as a proxy server that sits between the web app, the browser and the network. To install a Service Worker it must be fetched and registered. If this is successful, the Service Worker is executed in a [special worker container](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope) that runs off the main thread and has no DOM access. This is when events can be processed.
 
 {{ figure_markup(
   image="most_used_sw_events.png",
   caption="Most used Service Worker events.",
   description="Bar chart showing the most used service worker events. install, activate, notificationclick, push and fetch are the top events each with over 50% usage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=1426457626&format=interactive",
-  sheets_gid="573162824",  
+  sheets_gid="573162824",
     sql_file="sw_events.sql"
   )
 }}
@@ -81,12 +81,12 @@ The previous chart displays information on the most used service worker events. 
 
 ##### Lifecycle events
 
-Install and activate are lifecycle events. It is common practice to create a cache of assets that will allow running the app offline when installing. Activation is generally used to clean up old caches associated with the previous service worker. 
+Install and activate are lifecycle events. It is common practice to create a cache of assets that will allow running the app offline when installing. Activation is generally used to clean up old caches associated with the previous service worker.
 
 {{ figure_markup(
   caption="Usage percent of install event (desktop)",
   content="62.53%",
-  classes="really-big-number",
+  classes="big-number",
   sheets_gid="573162824",
   sql_file="sw_events.sql"
 )
@@ -103,13 +103,13 @@ Push notification events come next in most used service worker methods.
 {{ figure_markup(
   caption="Usage percent of Notificationclick event (desktop)",
   content="57.02%",
-  classes="really-big-number",
+  classes="big-number",
   sheets_gid="573162824",
   sql_file="sw_events.sql"
 )
 }}
 
-* `notificationclick` comes up to 57.02% (an 11.4% increase over last year’s data) on desktop and 51.35% (up 4.73%) on mobile. 
+* `notificationclick` comes up to 57.02% (an 11.4% increase over last year’s data) on desktop and 51.35% (up 4.73%) on mobile.
 * `push` 56.02% (up 12.14%) on desktop and 50.6s6% (up 5.22%) on mobile.
 * `notificationclose` is now at 15.44% (up 9.46% ) on desktop and 16.09% (up 9.75%) on mobile.
 
@@ -117,12 +117,12 @@ A couple of takeaways here is that momentum continues to grow this year for PWAs
 
 ##### Background processing events
 
-The remaining events in the chart represent background processing events. 
+The remaining events in the chart represent background processing events.
 
 {{ figure_markup(
   caption="Usage percent of fetch event (desktop).",
   content="48.69%",
-  classes="really-big-number",
+  classes="big-number",
   sheets_gid="573162824",
   sql_file="sw_events.sql"
 )
@@ -172,21 +172,21 @@ And these are the most used methods:
   caption="Most used Service Worker object methods.",
   description="Bar chart that depicts the most used methods for the most used service worker objects. clients.matchAll (61.06%), clients.claim (58.26%) and clients.openWindow (56.13%) on desktop are the top 3 methods used.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=1209078963&format=interactive",
-  sheets_gid="1969934262";  
+  sheets_gid="1969934262",
   sql_file="sw_methods.sql"
   )
 }}
 
 ## Web App Manifest
 
-The Web App Manifest file is a JSON file that contains information about the application itself. Among the data that is present in the key-value pairs is information relevant to display, promote and integrate the app into the host OS. 
+The Web App Manifest file is a JSON file that contains information about the application itself. Among the data that is present in the key-value pairs is information relevant to display, promote and integrate the app into the host OS.
 
 Keeping the web app’s manifest fully authored is essential to take advantage of advanced discoverability through online repositories, submissions to application stores, and more recently, a way to tap into advanced capabilities like share target and file handling for your app. Cutting edge work to [enable Widgets based on PWA technology](https://github.com/aarongustafson/pwa-widgets#how-widgets-are-represented-in-these-apis) is also being rooted in the manifest, proving the versatility of the file itself for advanced platform integration even further.
 
 {{ figure_markup(
   caption="Percent of manifest files parseable (desktop)",
   content="95.23%",
-  classes="really-big-number",
+  classes="big-number",
   sheets_gid="717325565",
   sql_file="manifests_not_json_parsable.sql"
 )
@@ -213,7 +213,7 @@ Following are the usage numbers of manifest file alongside service worker. These
 
 The data tells us that web applications are around 5 times more likely to have a manifest file than a service worker. A contributing factor is that many platforms, such as Content Management Systems (CMSs), auto-generate manifest files for websites.
 
-Only a small percentage of websites, 0.77% on desktop and 0.84% on mobile, implement both service worker and manifest files, which means  less than 1% of websites can be installed on devices like traditional apps.  
+Only a small percentage of websites, 0.77% on desktop and 0.84% on mobile, implement both service worker and manifest files, which means  less than 1% of websites can be installed on devices like traditional apps.
 
 Looking at top properties used in manifest files this year as compared to last year, there is no significant change:
 
@@ -242,7 +242,7 @@ Note that the last field, `gcm_sender_id`, is not a standardized property. It is
 
 
 * lang: 23.83% of desktop and 23.05% of manifests are using the lang tag to specify the primary language for the value of the manifest’s localizable members.
-* display: “Standalone” mode is the most common display mode, used by  almost 3/4 of websites that define a display mode. It’s also  one of the display modes that enables an app to be installable.  
+* display: “Standalone” mode is the most common display mode, used by  almost 3/4 of websites that define a display mode. It’s also  one of the display modes that enables an app to be installable.
 
 {{ figure_markup(
   image="display_values.png",
@@ -255,7 +255,7 @@ Note that the last field, `gcm_sender_id`, is not a standardized property. It is
 }}
 
 * orientation: Most PWAs, 79.93% for desktop and 78.62% for mobile do not define a preferred orientation. When set, the most frequently used value is “portrait,” with 13.11% on desktop and 14.61% on mobile web sites defining that value on their manifest.
-* icons: PWAs need to generate different icon sizes to accommodate the range of surfaces where the app can be advertised and placed. Many tools exist to generate the plethora of icons needed for different desktop and mobile environments. The 2 most common icon sizes present in manifest files are 192x192 and 512x512. Both sizes appear in around 70% of the manifest files analyzed.  
+* icons: PWAs need to generate different icon sizes to accommodate the range of surfaces where the app can be advertised and placed. Many tools exist to generate the plethora of icons needed for different desktop and mobile environments. The 2 most common icon sizes present in manifest files are 192x192 and 512x512. Both sizes appear in around 70% of the manifest files analyzed.
 
 {{ figure_markup(
   image="top-icon-sizes.png",
@@ -272,8 +272,8 @@ Note that the last field, `gcm_sender_id`, is not a standardized property. It is
 A web app manifest file can contain data that is useful in describing of the application. These properties can be used by stores or other distribution mechanisms to promote the application. An increased growth of [rich browser-based installation dialogs](https://developer.chrome.com/blog/richer-pwa-installation/) is also utilizing these fields more prominently. Relevant fields, which can be found as part of the Application Information supplement to the Manifest file are listed below:
 
 * `description`: This property exists in 36.45% of desktop and 34.38% of mobile web app manifests. The description is important since it explains what the application does. It’s commonly used to provide information about the app for a store. Currently around a third of installable PWAs would offer this information.
-* `screenshots`: This property provides the URLs of one or more screenshots for use  in app stores and in-browser install prompts. PWAs with manifests that take advantage of this feature total 1.12% for desktop and 1.19% for mobiles devices. 
-* `categories`: Used as hints for catalog organization. 
+* `screenshots`: This property provides the URLs of one or more screenshots for use  in app stores and in-browser install prompts. PWAs with manifests that take advantage of this feature total 1.12% for desktop and 1.19% for mobiles devices.
+* `categories`: Used as hints for catalog organization.
 
 {{ figure_markup(
   image="top_pwa_manifest_cats.png",
@@ -304,11 +304,11 @@ The top categories for both websites and PWAs remain the same, yet each is sligh
 The manifest file also allows for the activation of modern platform capabilities. These capabilities can allow for advanced windowing capabilities or registration of behaviours in the host OS. Many of these capabilities have landed very recently into the platform, and therefore, we hope this data register an inception of many of these new APIs.
 
 * `shortcuts`: 6.25% of desktop and 4.35% of mobile PWAs are using shortcuts to deeplink into the app.
-* `file_handlers`: allows an installed PWA to register itself as a handler for a specific file extension. Only 0.01% of desktop and 0.02% of mobile are using `file_handlers`. 
+* `file_handlers`: allows an installed PWA to register itself as a handler for a specific file extension. Only 0.01% of desktop and 0.02% of mobile are using `file_handlers`.
 * `protocol_handlers`: PWAs can register to be handlers for predefined or custom protocols. Current usage stands at 0% on desktop and 0.01% for mobile web sites.
 * `share_target`: 5.30% of desktop and 3.10% of mobile PWAs have the ability to register themselves to receive shared data.
 * [Window Controls Overlay](https://wicg.github.io/window-controls-overlay/): The ability to free the area generally occupied by the title bar is a desktop only feature. This feature has recently launched in Chromium 105 and 0.01% of manifests of desktop PWAs are utilizing it.
-* `note_taking`: 0% of desktop and 0.01% of mobile sites are using the ability to have special integration as a convenient way of taking a quick note. 
+* `note_taking`: 0% of desktop and 0.01% of mobile sites are using the ability to have special integration as a convenient way of taking a quick note.
 
 
 ### Other properties
@@ -319,7 +319,7 @@ The manifest file also allows for the activation of modern platform capabilities
 {{ figure_markup(
   caption="Manifest files with a related_applications field (desktop)",
   content="2.3%",
-  classes="really-big-number",
+  classes="big-number",
   sheets_gid="228985826",
   sql_file="manifests_preferring_native_apps.sql"
 )
@@ -335,7 +335,7 @@ PWAs go hand in hand with advanced web capabilities. These capabilities are gene
 {{ figure_markup(
   caption="Most used FUGU API (desktop)",
   content="8.84%",
-  classes="really-big-number",
+  classes="big-number",
   sheets_gid="1110821491",
   sql_file="fugu.sql"
 )
@@ -360,7 +360,7 @@ For detailed information about the FUGU APIs refer to the capabilities chapter.
 
 #### Lighthouse audits
 
-Lighthouse scores give an idea of the performance, quality and correctness of web apps. The available data sheds some light on interesting facts about the state of PWAs these past 12 months. 
+Lighthouse scores give an idea of the performance, quality and correctness of web apps. The available data sheds some light on interesting facts about the state of PWAs these past 12 months.
 
 {{ figure_markup(
   image="lighthouse_pwa_audits_desktop.png",
@@ -372,7 +372,7 @@ sheets_gid="2095859911",
   )
 }}
 
-The top three PWA audits for desktop devices are the presence of a [viewport meta tag](https://web.dev/viewport/#how-to-add-a-viewport-meta-tag), an [installable manifest](https://developer.chrome.com/docs/lighthouse/pwa/installable-manifest/) and the [apple-touch-icon](https://web.dev/apple-touch-icon/#how-the-lighthouse-apple-touch-icon-audit-fails) meta tag. 
+The top three PWA audits for desktop devices are the presence of a [viewport meta tag](https://web.dev/viewport/#how-to-add-a-viewport-meta-tag), an [installable manifest](https://developer.chrome.com/docs/lighthouse/pwa/installable-manifest/) and the [apple-touch-icon](https://web.dev/apple-touch-icon/#how-the-lighthouse-apple-touch-icon-audit-fails) meta tag.
 
 {{ figure_markup(
   image="lighthouse_pwa_audits_mobile.png",
@@ -388,7 +388,7 @@ The top three PWA audits for mobile devices include the presence of a viewport m
 
 The presence of a viewport meta tag is relevant because it removes a 300-350ms delay that waits for a double-tap back when that was the way to zoom in. It has the additional benefit on mobile devices of optimizing the app for the device’s screen size. It is not surprising that almost all websites, PWA or not, include this.
 
-Installable manifest also appears in both top 3 lists. As expected, this has a very high value for PWA sites, both on desktop (90.2%) and mobile (95.2%), with a very low counterpart for all websites, presumably because developers don’t intend for these to be  installed. 
+Installable manifest also appears in both top 3 lists. As expected, this has a very high value for PWA sites, both on desktop (90.2%) and mobile (95.2%), with a very low counterpart for all websites, presumably because developers don’t intend for these to be  installed.
 
 Finally, apple-touch-icon is third on PWA related Lighthouse audits. Since iOS 1.1.3, Safari for iOS has supported a way for developers to specify an image that will be used to represent the web site or app on the home screen. This is mostly relevant for mobile devices.
 
@@ -439,7 +439,7 @@ sheets_gid="1871711300",
   )
 }}
 
-Compared with last year we see a big spike in Workbox usage. Last year its usage on mobile was 32.9% compared to 53.64% this year, and almost 60% of PWAs use Workbox in some capacity. 
+Compared with last year we see a big spike in Workbox usage. Last year its usage on mobile was 32.9% compared to 53.64% this year, and almost 60% of PWAs use Workbox in some capacity.
 
 Since the growth that we saw in the number of pages controlled by service workers was not in the top 1000 websites but in more granular categories, and this growth on Workbox usage we can infer that adoption of Workbox is happening inside this companies and websites that might have waited for the technology to be adopted by the top websites, or that might not have the need for a completely custom implementation of service workers and get the most out of Workbox’s tested patterns.
 
@@ -457,7 +457,7 @@ sheets_gid="122135540",
   )
 }}
 
-Here we also see an overall increase in usage, workbox-core. The base library saw an increase of 14% in usage. Workbox-core, together with workbox-routing and workbox-strategies, is used to create a caching strategy that works to serve different artifacts in their webapp to improve performance.  It makes sense they are all at the top as they enable a core benefit of service workers. 
+Here we also see an overall increase in usage, workbox-core. The base library saw an increase of 14% in usage. Workbox-core, together with workbox-routing and workbox-strategies, is used to create a caching strategy that works to serve different artifacts in their webapp to improve performance.  It makes sense they are all at the top as they enable a core benefit of service workers.
 
 There is also a considerable jump in usage on workbox-precaching. Pre-caching can be used to emulate the model that packaged apps use. With workbox-precaching, you can choose assets that will be cached at the time of service worker installation to make those assets load faster in subsequents visits.
 
@@ -485,12 +485,12 @@ sheets_gid="435156894",
   )
 }}
 
-With the growth of notification support and the UX improvements  in different platforms, there hasn’t been any major changes in the acceptance of notifications. Since early 2020 they have been around the 6% acceptance rate on desktop and 20% on mobile. 
+With the growth of notification support and the UX improvements  in different platforms, there hasn’t been any major changes in the acceptance of notifications. Since early 2020 they have been around the 6% acceptance rate on desktop and 20% on mobile.
 
 {{ figure_markup(
   caption="Notification acceptance rate (desktop)",
   content="6.41%",
-  classes="really-big-number",
+  classes="big-number",
   sheets_gid="435156894",
   sql_file="pwa_notification_acceptance_rates_over_time.sql"
 )
@@ -499,20 +499,20 @@ With the growth of notification support and the UX improvements  in different pl
 {{ figure_markup(
   caption="Notification acceptance rate (mobile)",
   content="19.09%",
-  classes="really-big-number",
+  classes="big-number",
   sheets_gid="435156894",
   sql_file="pwa_notification_acceptance_rates_over_time.sql"
 )
 }}
 
-Desktop and mobile notification acceptance rate share a common fashion, and it is the trend to ignore notifications. The sum of “ignore” has gone up from 48.27% in February 2020 all the way up to 69.66% in June 2022. For mobile platforms, from 1.88% in February 2020 to a staggering 33.62% for June this year. Notification fatigue, coupled with increasing number of prompts for security, privacy, and advanced capabilities are partially responsible, and work is being carried out to address this and present better unified UX across different platforms. 
+Desktop and mobile notification acceptance rate share a common fashion, and it is the trend to ignore notifications. The sum of “ignore” has gone up from 48.27% in February 2020 all the way up to 69.66% in June 2022. For mobile platforms, from 1.88% in February 2020 to a staggering 33.62% for June this year. Notification fatigue, coupled with increasing number of prompts for security, privacy, and advanced capabilities are partially responsible, and work is being carried out to address this and present better unified UX across different platforms.
 
 
 ## Conclusion
 
-2022 has been a stellar year for PWAs. The increasing features that allow integration of installable web applications with desktop platforms has driven adoption of the technology by big names in the industry. This past year advanced capabilities like protocol handlers, window controls overlay, run on OS login, and more have started to position PWAs as a key technology for application development. Whilst encouraging, this is not representative of the totality of the web platform. Service Worker usage percentage fell to around half, compared to the data from 2021, but the rise of big applications constructed using PWA technology rose.  
+2022 has been a stellar year for PWAs. The increasing features that allow integration of installable web applications with desktop platforms has driven adoption of the technology by big names in the industry. This past year advanced capabilities like protocol handlers, window controls overlay, run on OS login, and more have started to position PWAs as a key technology for application development. Whilst encouraging, this is not representative of the totality of the web platform. Service Worker usage percentage fell to around half, compared to the data from 2021, but the rise of big applications constructed using PWA technology rose.
 
-Manifest files continue to be in a healthy state, with a slight increase over last year to a 95.23% on desktop. The correctness of these files is superb, but their completeness still leaves much to be desired. Currently, only around 0.8% of all websites qualify as installable.  Many advanced capabilities like `shortcuts` and `share_target` are beginning to gain traction, appearing in around 5% of PWAs. Other capabilities like `protocol_handlers` and windows controls overlay are too new to have an impact on the data. This year also provides an initial snapshot for many of these FUGU APIs. 
+Manifest files continue to be in a healthy state, with a slight increase over last year to a 95.23% on desktop. The correctness of these files is superb, but their completeness still leaves much to be desired. Currently, only around 0.8% of all websites qualify as installable.  Many advanced capabilities like `shortcuts` and `share_target` are beginning to gain traction, appearing in around 5% of PWAs. Other capabilities like `protocol_handlers` and windows controls overlay are too new to have an impact on the data. This year also provides an initial snapshot for many of these FUGU APIs.
 
 Notification fatigue is, understandably, still a factor, but users also request and appreciate legitimate notification use cases. Browser vendors are experimenting with less intrusive permission requests and web push notifications have the advantage of providing a consistent experience across platforms, giving the users the nudge they requested independently of the device they are using.
 
