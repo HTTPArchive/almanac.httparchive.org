@@ -108,7 +108,7 @@ In terms of search engines, Googlebot leads the pack with 3.3% of robots.txt fil
 
 Of note, Yandexbot was specified in just 0.5% of robots.txt files in 2021. By 2022 , there was a six-fold increase, with 3% of files specifying Yandexbot.
 
-### `IndexIfEmbedded` Tag
+### `IndexIfEmbedded` tag
 
 In January 2022, Google introduced a new robots tag called _indexifembedded_. The tag offers control over indexation when content is embedded in an iframe on a page, even when a noindex tag has been applied.
 
@@ -315,7 +315,7 @@ On mobile, 39% of sites now pass CWV, which is up from 29% in 2021 and just 20% 
 
 On desktop, we see an astounding 100% of sites passing FID, though similarly struggling to pass LCP and CLS. Noteworthy, more sites are passing CWV on desktop (43%) than on mobile (39%).
 
-### Lazy loading vs. Eager loading iFrames
+### `lazy` loading vs. `eager` loading iFrames
 
 Lazy loading is a technique that defers the loading of non-critical elements on a web page until the point in which they are needed. This can help with the reduction of page weight, as well as conserve bandwidth and system resources. Eager loading is when related entities are simultaneously loaded and fetched all at once.
 
