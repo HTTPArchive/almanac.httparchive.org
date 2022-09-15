@@ -77,7 +77,9 @@ CMSs are used around the world, with some variance by country.
   description="Bar chart showcasing the adoption of CMSs by geography, in the 10 countries with the largest number of websites. In the US, 39% of mobile websites within the dataset are built using a CMS, and 43% of desktop websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1831148760&format=interactive",
   sheets_gid="353349768",
-  sql_file="cms_adoption_by_geo.sql"
+  sql_file="cms_adoption_by_geo.sql",
+  width=600,
+  height=538
   )
 }}
 
@@ -117,7 +119,8 @@ Among all websites that are attributed as using a CMS, WordPress sites account f
   caption="Wordpress and Wix experienced steady growth over the past 3 years.",
   description="Column chart depicting the percent of websites built on each of the top 5 CMSs, in the past 3 years. WordPress, Wix and Squarespace are growing in adoption year-over-year, while Drupal and Joomla are dropping.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=714516300&format=interactive",
-  sheets_gid="1396671791"
+  sheets_gid="1396671791",
+  sql_file="top_cms.sql"
   )
 }}
 
@@ -163,7 +166,9 @@ Initially, let’s review the 10 CMS platforms with the highest number of origin
   description="Bar chart showcasing the percentage of sites with good Core Web Vitals, for each of the 10 most adopted CMSs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1221898999&format=interactive",
   sheets_gid="445373655",
-  sql_file="core_web_vitals.sql"
+  sql_file="core_web_vitals.sql",
+  width=600,
+  height=559
   )
 }}
 
@@ -181,7 +186,9 @@ We can also evaluate the progress of these CMS platforms compared to last year�
   description="Bar chart showing the change in the percentage of passing Core Web Vitals mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=144597470&format=interactive",
   sheets_gid="1494726447",
-  sql_file="core_web_vitals_yoy.sql"
+  sql_file="core_web_vitals_yoy.sql",
+  width=600,
+  height=559
   )
 }}
 
@@ -201,7 +208,9 @@ A “good” LCP is regarded as being under 2.5 seconds.
   description="Bar chart showcasing the percentage of sites with good LCP, for each of the 10 most adopted CMSs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1306847805&format=interactive",
   sheets_gid="445373655",
-  sql_file="core_web_vitals.sql"
+  sql_file="core_web_vitals.sql",
+  width=600,
+  height=559
   )
 }}
 
@@ -213,7 +222,9 @@ TYPO3 and Duda had the best LCP scores with 79% of origins having a “good” L
   description="Bar chart showing the change in the percentage of good LCP mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=964886559&format=interactive",
   sheets_gid="1494726447",
-  sql_file="core_web_vitals_yoy.sql"
+  sql_file="core_web_vitals_yoy.sql",
+  width=600,
+  height=559
   )
 }}
 
@@ -235,7 +246,9 @@ Any delay is a pain point and could correlate with interference from other aspec
   description="Bar chart showing the change in the percentage of good FID mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=242914394&format=interactive",
   sheets_gid="1494726447",
-  sql_file="core_web_vitals_yoy.sql"
+  sql_file="core_web_vitals_yoy.sql",
+  width=600,
+  height=559
   )
 }}
 
@@ -257,7 +270,9 @@ A score of 0.1 or below is measured as “good”, over 0.25 as “poor”, and 
   description="Bar chart showing the change in the percentage of good CLS mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=2127088376&format=interactive",
   sheets_gid="1494726447",
-  sql_file="core_web_vitals_yoy.sql"
+  sql_file="core_web_vitals_yoy.sql",
+  width=600,
+  height=559
   )
 }}
 
@@ -281,7 +296,9 @@ The Lighthouse <a hreflang="en" href="https://web.dev/performance-scoring/">perf
   description="Bar chart showcasing the median Lighthouse mobile performance score for each of the top 10 most adopted CMSs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=2275923&format=interactive",
   sheets_gid="921264211",
-  sql_file="lighthouse_category_scores_per_cms.sql"
+  sql_file="lighthouse_category_scores_per_cms.sql",
+  width=600,
+  height=559
   )
 }}
 
@@ -299,7 +316,9 @@ Search Engine Optimization (or SEO) is the practice of improving a website to ma
   description="Bar chart showcasing the median Lighthouse mobile SEO score for each of the top 10 most adopted CMSs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1901746915&format=interactive",
   sheets_gid="921264211",
-  sql_file="lighthouse_category_scores_per_cms.sql"
+  sql_file="lighthouse_category_scores_per_cms.sql",
+  width=600,
+  height=559
   )
 }}
 
@@ -319,7 +338,9 @@ Each accessibility audit is either a pass or a fail, but unlike other Lighthouse
   description="Bar chart showcasing the median Lighthouse mobile SEO score for each of the top 10 most adopted CMSs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=201542197&format=interactive",
   sheets_gid="921264211",
-  sql_file="lighthouse_category_scores_per_cms.sql"
+  sql_file="lighthouse_category_scores_per_cms.sql",
+  width=600,
+  height=559
   )
 }}
 
@@ -335,7 +356,9 @@ The Lighthouse <a hreflang="en" href="https://web.dev/lighthouse-best-practices/
   description="Bar chart showcasing the median Lighthouse mobile best practices score for each of the top 10 most adopted CMSs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1066307789&format=interactive",
   sheets_gid="921264211",
-  sql_file="lighthouse_category_scores_per_cms.sql"
+  sql_file="lighthouse_category_scores_per_cms.sql",
+  width=600,
+  height=559
   )
 }}
 
@@ -399,7 +422,9 @@ We can examine the usage of the different image formats across the top CMSs:
   description="Bar chart showcasing the relative popularity of each image format, among the top 15 most adopted CMSs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1668189558&format=interactive",
   sheets_gid="710966440",
-  sql_file="image_format_popularity.sql"
+  sql_file="image_format_popularity.sql",
+  width=600,
+  height=556
   )
 }}
 
@@ -488,7 +513,9 @@ First, we examined WordPress adoption by geography, across all sites in our data
   description="Bar chart depicting the adoption of WordPress in each of the 10 geographies with the most websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=442489769&format=interactive",
   sheets_gid="694875761",
-  sql_file="cms_adoption_by_geo.sql"
+  sql_file="cms_adoption_by_geo.sql",
+  width=600,
+  height=579
   )
 }}
 
@@ -504,6 +531,8 @@ Next, let’s look at the amount of WordPress origins with passing Core Web Vita
   description="Bar chart depicting the adoption of WordPress in each of the 10 geographies with the most websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1279742547&format=interactive",
   sheets_gid="1742929367",
+  width=600,
+  height=579
   )
 }}
 
