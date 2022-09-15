@@ -829,14 +829,6 @@
       "avatar_url": "7421844",
       "github": "jrharalson"
     },
-    "CodeMartian": {
-      "name": "Jeff Martin",
-      "teams": [
-        "analysts"
-      ],
-      "avatar_url": "49497114",
-      "github": "CodeMartian"
-    },
     "j9t": {
       "name": "Jens Oliver Meiert",
       "teams": [
@@ -1243,14 +1235,6 @@
       "github": "foolip",
       "website": "https://foolip.org/"
     },
-    "polyglotyeoja": {
-      "name": "polyglotyeoja",
-      "teams": [
-        "analysts"
-      ],
-      "avatar_url": "9722690",
-      "github": "polyglotyeoja"
-    },
     "25prathamesh": {
       "name": "Prathamesh Rasam",
       "teams": [
@@ -1413,6 +1397,7 @@
     "siakaramalegos": {
       "name": "Sia Karamalegos",
       "teams": [
+        "analysts",
         "leads"
       ],
       "avatar_url": "4777393",
