@@ -8,8 +8,9 @@ analysts: [csliva]
 editors: [dknauss]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1HvTcCEw9LeMNX-fI_yOy0HemKFYKaQAHBxtB0etakqY/
+sirjonathan_bio: Jonathon is an expoert in CMS's
 featured_quote: Wix delivers substantially fewer image bytes, with only 290 KB delivered on the median of mobile views, suggesting good use of image compression and lazy image loading. All of the other top 5 platforms deliver over 1 MB of images, with Squarespace delivering the largest ~1.7 MB.
-featured_stat_1: 43% 
+featured_stat_1: 43%
 featured_stat_label_1: Mobile wordpress pages adopting Elementor
 featured_stat_2: 47%
 featured_stat_label_2: Website origins discovered to be using a CMS
@@ -22,7 +23,7 @@ unedited: true
 
 In this chapter, we work to understand the current state of Content Management System (CMS) ecosystems and the growing role they play in shaping users’ perception of how content can be experienced on the web. Our goal is to explore the CMS landscape in general and the characteristics of web pages created by these systems.
 
-We believe that the CMS plays a key role in the success of our collective efforts to build a fast and resilient web. Understanding the current state, asking questions, and posing lines of inquiry for future work is our path to achieving this goal. 
+We believe that the CMS plays a key role in the success of our collective efforts to build a fast and resilient web. Understanding the current state, asking questions, and posing lines of inquiry for future work is our path to achieving this goal.
 
 As a team, we’ve approached this year’s data with curiosity, and we’ve combined that curiosity with personal expertise with several of the most popular CMSs. We recommend that you take the comparisons and our analysis in stride, considering the variability between CMSs, and the differing types of user content that are built on these platforms.
 
@@ -40,7 +41,7 @@ Our dataset, based on [Wappalyzer’s definition](https://www.wappalyzer.com/tec
 
 Some CMSs in the dataset are open source (e.g., WordPress and Joomla) and some of them are proprietary (e.g., Wix and Squarespace). Some CMSs can be used on “free” hosted or self-hosted plans, and there are also options for using these platforms on higher-tiered plans even at the enterprise level.
 
-The CMS space as a whole is a complex, federated universe of CMS ecosystems, separated and at the same time intertwined. 
+The CMS space as a whole is a complex, federated universe of CMS ecosystems, separated and at the same time intertwined.
 
 ## CMS adoption
 
@@ -98,13 +99,13 @@ We examined CMS adoption by the estimated rank of the sites included within the 
   )
 }}
 
-According to the dataset, CMSs are used by less than 7% of the top 1,000 websites, compared to 47% of the complete dataset of all mobile sites in our analysis. A possible explanation, and the one we offered last year, is that smaller businesses and websites tend to use a CMS due to the ease of use, and the higher ranked websites tend to be built with proprietary solutions by professional web developers. 
+According to the dataset, CMSs are used by less than 7% of the top 1,000 websites, compared to 47% of the complete dataset of all mobile sites in our analysis. A possible explanation, and the one we offered last year, is that smaller businesses and websites tend to use a CMS due to the ease of use, and the higher ranked websites tend to be built with proprietary solutions by professional web developers.
 
 Another explanation is that for higher ranking sites which tend to have more resources allocated to development, the choice of a CMS is more likely to be obfuscated. It seems improbable that more than 90% of the top 1,000 would forgo a CMS entirely and more likely that they just don’t show up in our dataset.
 
-A potentially correlated trend is the adoption of “headless” and the move towards separating content, and the CMS that powers it, from the frontend experience offered to end-users. 
+A potentially correlated trend is the adoption of “headless” and the move towards separating content, and the CMS that powers it, from the frontend experience offered to end-users.
 
-While our confidence in the overall dataset remains high, we’re interested in investigating the adoption by rank dataset further in future editions to see if more can be done to detect CMS usage and improve the overall accuracy of our results. 
+While our confidence in the overall dataset remains high, we’re interested in investigating the adoption by rank dataset further in future editions to see if more can be done to detect CMS usage and improve the overall accuracy of our results.
 
 
 ## Most Popular CMSs
@@ -184,7 +185,7 @@ We can also evaluate the progress of these CMS platforms compared to last year�
   )
 }}
 
-All of these CMSs showed an improvement in the percentage of origins with good CWVs since June 2021. 
+All of these CMSs showed an improvement in the percentage of origins with good CWVs since June 2021.
 
 Let’s drill into the three Core Web Vitals, to see where each platform has room to improve, and which metrics improved the most since last year:
 
@@ -217,7 +218,7 @@ TYPO3 and Duda had the best LCP scores with 79% of origins having a “good” L
   )
 }}
 
-Compared to the 2021 dataset, all CMSs showed improvements. Joomla improved by 13%, Drupal, Squarespace, and TYPO3 by 10%, while WordPress improved by 9%. 
+Compared to the 2021 dataset, all CMSs showed improvements. Joomla improved by 13%, Drupal, Squarespace, and TYPO3 by 10%, while WordPress improved by 9%.
 
 These improvements are a positive sign, though still on the low end for most CMSs. The difficulty in achieving a good LCP score probably relates to the fact that the LCP is dependent on the download of image/font/CSS and then displaying the appropriate HTML elements. Achieving this in under 2.5 seconds for all device types and connection speeds can be challenging. Improving LCP scores usually involves the correct use of caching, pre-loading, resource prioritization, and lazy loading of other competing resources.
 
@@ -262,7 +263,7 @@ A score of 0.1 or below is measured as “good”, over 0.25 as “poor”, and 
   )
 }}
 
-Comparing yearly data, we can see that all CMSs made progress, WordPress, Squarespace, Duda, and Adobe Experience Manager in particular showing significant gains. 
+Comparing yearly data, we can see that all CMSs made progress, WordPress, Squarespace, Duda, and Adobe Experience Manager in particular showing significant gains.
 
 ### Lighthouse
 
@@ -304,7 +305,7 @@ Search Engine Optimization (or SEO) is the practice of improving a website to ma
   )
 }}
 
-The median SEO score in all of the top 10 platforms is over 83, a reduction from 84 in 2021. 
+The median SEO score in all of the top 10 platforms is over 83, a reduction from 84 in 2021.
 
 #### Accessibility score
 
@@ -410,11 +411,11 @@ We can examine the usage of the different image formats across the top CMSs:
   )
 }}
 
-Wix and Duda make the most use of WebP, with ~75% and 42% adoption respectively, while the rest show minor increases. 
+Wix and Duda make the most use of WebP, with ~75% and 42% adoption respectively, while the rest show minor increases.
 
 With the [growing support of WebP](https://caniuse.com/webp), it seems all platforms have work to do to reduce the usage of the older JPEG and PNG formats, where it is applicable without compromising on image quality.
 
-WordPress introduced support for WebP in 5.8, released in June of 2021 and is [planned to be included by default](https://make.wordpress.org/core/2022/06/30/plan-for-adding-webp-multiple-mime-support-for-images/) in WordPress 6.1, which we expect to lead to a significant increase in WebP adoption in the 2023 results. 
+WordPress introduced support for WebP in 5.8, released in June of 2021 and is [planned to be included by default](https://make.wordpress.org/core/2022/06/30/plan-for-adding-webp-multiple-mime-support-for-images/) in WordPress 6.1, which we expect to lead to a significant increase in WebP adoption in the 2023 results.
 
 
 #### JavaScript
