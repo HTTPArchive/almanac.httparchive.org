@@ -295,6 +295,7 @@ The rate of first-party scripts compressed via brotli almost tripled, increasing
 
 However, Brotli adoption among third-parties stayed more or less at the same level, changing from 24% to 28%. Despite the slight positive tendency, there is still room for improvement of Brotli adoption for third-parties.
 
+<!-- markdownlint-disable-next-line MD051 -->
 Website content encoding data displayed in the [figure 13](#fig-13) revealed an interesting fact about image compression. Even though image formats like JPEG, PNG, WebP, AVIF, and others provide compression under the hood, 5.2% of image content is compressed using Gzip or Brotli compression. Adding additional layers of compression on top of the standard image compression formats is usually unnecessary and may lead to increased file size and add extra load on the CPU when uncompressing the image.
 
 
