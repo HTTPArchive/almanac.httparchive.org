@@ -215,8 +215,7 @@
           "part": "IV",
           "chapter_number": "26",
           "title": "HTTP",
-          "slug": "http",
-          "todo": true
+          "slug": "http"
         }
       ]
     }

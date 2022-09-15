@@ -49,7 +49,7 @@ With the discovery of HTTP/3 being so delayed via the `alt-svc` HTTP header mech
 
 {{ figure_markup(
   image="http2-adoption-per-requests.png",
-  caption="Adoption of HTTP/2 and above as a percentage of requests."
+  caption="Adoption of HTTP/2 and above as a percentage of requests.",
   description="The adoption of HTTP/2 and above is very high. 77% of requests in June 2022 were served using HTTP/2 and above in both desktop and mobile settings.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTsnJP1ulTTc-j9n7CIbGHxO1SaFvmZWMPQnJHrluku254CqKXz_D2fn2Ck54FC-m9135eCFg83NHOc/pubchart?oid=109625269&format=interactive",
   sheets_gid="1707754058",
@@ -63,7 +63,7 @@ First, to understand the status quo, we measure the prevalence of HTTP/2+ adopti
 
 {{ figure_markup(
   image="http2-adoption-per-site.png",
-  caption="Adoption of HTTP/2 and above as a percentage of websites."
+  caption="Adoption of HTTP/2 and above as a percentage of websites.",
   description="66% of websites in June 2022 were served using HTTP/2 or above in both desktop and mobile settings.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTsnJP1ulTTc-j9n7CIbGHxO1SaFvmZWMPQnJHrluku254CqKXz_D2fn2Ck54FC-m9135eCFg83NHOc/pubchart?oid=328815423&format=interactive",
   sheets_gid="1707754058",
