@@ -678,9 +678,10 @@ Not much has changed in terms of the adoption of the newer attributes, with `rel
 
 AMP has been a controversial topic since its launch in 2015, with SEOs debating whether or not it had a direct impact on rankings. Google later released this statement (below) in its documentation for additional clarification:
 
-**_“While AMP itself isn’t a ranking factor, speed is a ranking factor for Google Search. Google Search applies the same standard to all pages, regardless of the technology used to build the page.”_**
-
-**<a hreflang="en" href="https://developers.google.com/search/docs/advanced/experience/about-amp">Google Search Central</a>**
+<figure>
+  <blockquote>While AMP itself isn’t a ranking factor, speed is a ranking factor for Google Search. Google Search applies the same standard to all pages, regardless of the technology used to build the page.</blockquote>
+  <figcaption>— <cite><a hreflang="en" href="https://developers.google.com/search/docs/advanced/experience/about-amp">Google Search Central</a></cite></figcaption>
+</figure>
 
 The future of AMP appears to be changing ever since the launch of Core Web Vitals. A main reason for previously implementing AMP, aside from improving page speed, was that it was necessary for inclusion in Top Carousels. In 2021, Google updated its requirements and outlined that any page is now eligible to appear in Top Carousels with or without AMP.
 
