@@ -32,7 +32,7 @@ Search engine optimization (SEO) is a digital technique used to improve a websit
   )
 }}
 
-With custom metrics that expose some new, never-before-seen insights, we have analyzed more than eight million homepages across the web, comparing our findings to those from [2021]../2021/seo) and, in some instances, from [2020]../2020/seo). Note: Our data, particularly from Lighthouse and the HTTP Archive, is limited to just websites’ homepages, not sitewide crawls. Learn more about these limitations in our [Methodology](/methodology).
+With custom metrics that expose some new, never-before-seen insights, we have analyzed more than eight million homepages across the web, comparing our findings to those from [2021]()../2021/seo) and, in some instances, from [2020]()../2020/seo). Note: Our data, particularly from Lighthouse and the HTTP Archive, is limited to just websites’ homepages, not sitewide crawls. Learn more about these limitations in our [Methodology](./methodology).
 
 Read on for more about how search engine-friendly the web is.
 
@@ -94,7 +94,9 @@ Google’s max limit for a robots.txt file is 500 KiB. Any directives found afte
   description="A bar chart showing the most common user agent targets in robots.txt files.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1197419046&format=interactive",
   sheets_gid="184863489",
-  sql_file="robots-txt-user-agent-usage.sql"
+  sql_file="robots-txt-user-agent-usage.sql",
+  width=600,
+  height=499
   )
 }}
 
@@ -140,11 +142,11 @@ Of the pages that have adopted the indexifembedded tag, 98.3% of them implemente
 
 ### Invalid Head Elements
 
-The <head> element serves as the container for a page’s metadata. From an SEO point of view, a page’s title tag and meta description reside within the <head> element, as do robots meta tags.
+The `<head>` element serves as the container for a page’s metadata. From an SEO point of view, a page’s title tag and meta description reside within the `<head>` element, as do robots meta tags.
 
-Not all elements, however, belong in the <head>. Should Google come across an invalid element in the page’s <head>, it assumes that it has reached the end of the <head> and [will not discover the rest of its contents](https://developers.google.com/search/docs/advanced/guidelines/valid-html).
+Not all elements, however, belong in the `<head>`. Should Google come across an invalid element in the page’s `<head>`, it assumes that it has reached the end of the `<head>` and [will not discover the rest of its contents](https://developers.google.com/search/docs/advanced/guidelines/valid-html).
 
-Our data from 2022 shows 12.7% of desktop pages and 12.6% of mobile pages contain an invalid element in the <head>.
+Our data from 2022 shows 12.7% of desktop pages and 12.6% of mobile pages contain an invalid element in the `<head>`.
 
 {{ figure_markup(
   image="invalid-head-elements.png",
@@ -156,9 +158,9 @@ Our data from 2022 shows 12.7% of desktop pages and 12.6% of mobile pages contai
   )
 }}
 
-The most misapplied element to the <head> by far is the <img> element. It is incorrectly placed within the <head> on 9.7% of mobile pages and 9.9% of desktop pages.
+The most misapplied element to the `<head>` by far is the `<img>` element. It is incorrectly placed within the `<head>` on 9.7% of mobile pages and 9.9% of desktop pages.
 
-The <div> element is the only other misapplied element to appear within the <head> on more than 3% of the pages within the 2022 dataset. It is incorrectly applied to the <head> on 3.5% of desktop pages and 3.9% of mobile pages.
+The `<div>` element is the only other misapplied element to appear within the `<head>` on more than 3% of the pages within the 2022 dataset. It is incorrectly applied to the `<head>` on 3.5% of desktop pages and 3.9% of mobile pages.
 
 ## Canonical Tags
 
@@ -182,7 +184,7 @@ Mobile has a higher percentage of canonical attribution than desktop (60.6% vs. 
 
 There are two ways of implementing canonical tags:
 
-1. Within the HTML <head>
+1. Within the HTML `<head>`
 2. Within the HTTP headers (`Link` HTTP header)
 
 {{ figure_markup(
@@ -329,7 +331,7 @@ Lazy loading is a technique that defers the loading of non-critical elements on 
 
 When looking solely at iFrames, we see lazy loading is preferred far more to eager loading, with 4.08% of iFrames being lazy loaded versus 0.37% of iFrames being eager loaded.
 
-This is particularly interesting since [browser-level lazy loading for iFrames has become standardized in Chrome](https://web.dev/iframe-lazy-loading/). The standardization of the <loading> attribute, without specifying lazy or eager, is likely why data shows 94.4% of attributes do not contain lazy or eager.
+This is particularly interesting since [browser-level lazy loading for iFrames has become standardized in Chrome](https://web.dev/iframe-lazy-loading/). The standardization of the `loading` attribute, without specifying lazy or eager, is likely why data shows 94.4% of attributes do not contain lazy or eager.
 
 ## On Page
 
@@ -340,7 +342,7 @@ When looking for relevancy signals, search engines look at the content on a web 
 {{ figure_markup(
   image="has-title-meta.png",
   caption="98% of pages have a title and 71% of pages have a meta description.",
-  description=A column chart with the percentage of pages containing a title tag and meta description",
+  description="A column chart with the percentage of pages containing a title tag and meta description",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1299529015&format=interactive",
   sheets_gid="1564568239",
   sql_file="seo-stats.sql"
@@ -349,7 +351,7 @@ When looking for relevancy signals, search engines look at the content on a web 
 
 For the second year in a row, 98.8% of desktop and mobile pages had `<title>` elements. Also in 2022, 71% of desktop and mobile homepages had `<meta name="description">` tags, a 0.1% decrease from last year.
 
-#### <title> Element
+#### `<title>` Element
 
 The `<title>` element is an on-page ranking factor that provides a strong hint regarding page relevance and may appear on the SERP. In August 2021, [Google started rewriting more websites’ titles in their search results](https://developers.google.com/search/blog/2021/08/update-to-generating-page-titles).
 
@@ -451,7 +453,7 @@ There is divergence, however, with the h1.  While 65.8% of pages contained an h1
 
 ### Image Attributes
 
-The primary purpose of the alt attribute on the <img> element is accessibility. Alt attributes also assist search engines rank specific assets in image search.
+The primary purpose of the alt attribute on the `<img>` element is accessibility. Alt attributes also assist search engines rank specific assets in image search.
 
 [Insert the 3 charts related to present, blank, and missing alt attributes]
 
@@ -477,7 +479,7 @@ The primary purpose of the alt attribute on the <img> element is accessibility. 
 
 {{ figure_markup(
   image="image-alt-missing.png",
-  caption="The median of missing alt attributes on images is 12.5%.,
+  caption="The median of missing alt attributes on images is 12.5%.",
   description="A distribution chart of page images missing alt attributes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=986554040&format=interactive",
   sheets_gid="1161905146",
@@ -487,14 +489,14 @@ The primary purpose of the alt attribute on the <img> element is accessibility. 
 
 What we found:
 
-* On the median desktop page, 56.25% of <img> tags have the alt attribute. This is a negligible decrease of just a quarter of a percentage point from 2021’s 56.5%.
-* On the median mobile page, 54.9% of <img> tags have the alt attribute. This is a marginal increase from the 54.6% of tags with the alt attribute in 2021.
-* There is a noticeable change in the median desktop and mobile pages containing <img> tags that have blank alt attributes compared to 2021. Last year, the median desktop and mobile pages, respectively had 10.5% and 11.8% `<img>` tags with blank `alt` attributes. In 2022, this figure rose to 12.1% and 12.5% on desktop and mobile, respectively.
-* The trend towards 0% of median desktop and mobile pages containing <img> tags missing the alt attribute continues. On the median desktop page in 2021, 1.4% of the <img> tags had blank attributes. It fell to 0% in 2022.
+* On the median desktop page, 56.25% of `<img>` tags have the alt attribute. This is a negligible decrease of just a quarter of a percentage point from 2021’s 56.5%.
+* On the median mobile page, 54.9% of `<img>` tags have the alt attribute. This is a marginal increase from the 54.6% of tags with the alt attribute in 2021.
+* There is a noticeable change in the median desktop and mobile pages containing `<img>` tags that have blank alt attributes compared to 2021. Last year, the median desktop and mobile pages, respectively had 10.5% and 11.8% `<img>` tags with blank `alt` attributes. In 2022, this figure rose to 12.1% and 12.5% on desktop and mobile, respectively.
+* The trend towards 0% of median desktop and mobile pages containing `<img>` tags missing the alt attribute continues. On the median desktop page in 2021, 1.4% of the `<img>` tags had blank attributes. It fell to 0% in 2022.
 
 ### Image Loading Property Usage
 
-How user agents prioritize the rendering and displaying of images is affected by the loading attribute applied to <img> elements. This implementation can impact user experience and performance time, with possible effects on both SEO success and conversions.
+How user agents prioritize the rendering and displaying of images is affected by the loading attribute applied to `<img>` elements. This implementation can impact user experience and performance time, with possible effects on both SEO success and conversions.
 
 {{ figure_markup(
   image="image-loading-property.png",
@@ -596,7 +598,9 @@ Compared to 2021’s figures, 2022’s data shows a nominal increase in implemen
   description="A bar chart of schema type implementations by popularity.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=201128426&format=interactive",
   sheets_gid="432096465",
-  sql_file="structured-data-schema-types.sql"
+  sql_file="structured-data-schema-types.sql",
+  width=600,
+  height=532
   )
 }}
 
@@ -704,7 +708,9 @@ Hreflang tags help Google and other search engines, such as Bing and Yandex, und
   description="A bar chart of common hreflang targets.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=561647523&format=interactive",
   sheets_gid="297028820",
-  sql_file="hreflang-link-tag-usage.sql"
+  sql_file="hreflang-link-tag-usage.sql",
+  width=600,
+  height=546
   )
 }}
 
@@ -714,7 +720,7 @@ The most popular hreflang tag in 2022 is “en” [English], which accounts for 
 
 After x-default, which is the “fallback” version (and the second most common to be adopted), the hreflang tags for French, German and Spanish are the next most frequently used.
 
-The three different ways to implement hreflang tags are via the <head>, link headers, or XML sitemaps. Note: As this data is looking solely at homepages, XML sitemaps are not included.
+The three different ways to implement hreflang tags are via the `<head>`, link headers, or XML sitemaps. Note: As this data is looking solely at homepages, XML sitemaps are not included.
 
 ### Content Language Usage
 
@@ -729,7 +735,9 @@ While Google tends to use hreflang tags, other search engines such as Bing prefe
   description="A bar chart showing language usage as a percentage of pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1743056980&format=interactive",
   sheets_gid="1291138023",
-  sql_file="content-language-usage.sql"
+  sql_file="content-language-usage.sql",
+  width=600,
+  height=507
   )
 }}
 
