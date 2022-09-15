@@ -618,7 +618,7 @@ p {
 
   .people-number {
     font-size: 220px;
-    font-size: min(220px, 60vw);
+    font-size: min(220px, 59vw);
     line-height: 220px;
     overflow: visible;
     top: 40px;

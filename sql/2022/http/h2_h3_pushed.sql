@@ -1,41 +1,44 @@
 #standardSQL
+# 20.10 - Count of sites using HTTP/2 Push
 
-# Distribution of requests being on HTTP/2 vs HTTP/1.1
+WITH totals AS (
+  SELECT
+    date,
+    client,
+    COUNT(DISTINCT page) AS total_pages
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    date IN ('2019-07-01', '2020-08-01', '2021-07-01', '2022-06-01')
+  GROUP BY
+    date,
+    client
+)
 
 SELECT
+  date,
   client,
-  percentile,
   COUNT(DISTINCT page) AS num_pages,
-  APPROX_QUANTILES(num_pushed, 1000)[OFFSET(percentile * 10)] AS pct_num_pushed,
-  APPROX_QUANTILES(transfered_KiB, 1000)[OFFSET(percentile * 10)] AS pct_transfered_KiB
-FROM
-  (
-    SELECT
-      client,
-      page,
-      SUM(respSize / 1024) AS transfered_KiB,
-      COUNT(0) AS num_pushed
-    FROM
-      `httparchive.almanac.requests`
-    WHERE
-      date = '2022-06-01' AND
-      pushed = '1' AND
-      (
-        LOWER(protocol) = 'http/2' OR
-        LOWER(protocol) LIKE '%quic%' OR
-        LOWER(protocol) LIKE 'h3%' OR
-        LOWER(protocol) = 'http/3'
-      )
-    GROUP BY
-      client,
-      page
-    ORDER BY
-      client ASC
-  ),
-  UNNEST(GENERATE_ARRAY(1, 100)) AS percentile
+  total_pages,
+  COUNT(DISTINCT page) / total_pages AS pct_pages
+FROM (
+  SELECT
+    date,
+    client,
+    page
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    date IN ('2019-07-01', '2020-08-01', '2021-07-01', '2022-06-01') AND
+    pushed = '1'
+)
+JOIN
+  totals
+USING (date, client)
 GROUP BY
-  client,
-  percentile
+  date,
+  total_pages,
+  client
 ORDER BY
-  client,
-  percentile
+  date,
+  client

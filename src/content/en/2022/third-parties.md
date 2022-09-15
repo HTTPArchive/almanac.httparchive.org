@@ -4,7 +4,7 @@ title: Third Parties
 #TODO - Review and update chapter description
 description: Third Parties chapter of the 2022 Web Almanac covering data of what third parties are used, what they are used for, a deep dive into performance impacts and a discussion on security and privacy impacts.
 authors: [imeugenia]
-reviewers: [tunetheweb, housseindjirdeh, pepelsbey, kevinfarrugia]
+reviewers: [tunetheweb, housseindjirdeh, pepelsbey, kevinfarrugia, alexnj]
 analysts: [kevinfarrugia, msolercanals]
 editors: []
 translators: []

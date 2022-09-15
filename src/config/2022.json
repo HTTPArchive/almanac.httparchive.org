@@ -122,8 +122,7 @@
           "part": "II",
           "chapter_number": "15",
           "title": "Mobile Web",
-          "slug": "mobile-web",
-          "todo": true
+          "slug": "mobile-web"
         },
         {
           "part": "II",
@@ -315,6 +314,17 @@
       "github": "AlexLakatos",
       "website": "http://alexlakatos.com",
       "twitter": "avolakatos"
+    },
+    "alexnj": {
+      "name": "Alex N. Jose",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "683500",
+      "github": "alexnj",
+      "website": "https://alexnj.com",
+      "twitter": "4x13",
+      "linkedin": "alexnj"
     },
     "alextait1": {
       "name": "Alex Tait",
@@ -724,7 +734,7 @@
       "twitter": "nutlope"
     },
     "hemanth": {
-      "name": "hemanth.hm",
+      "name": "Hemanth HM",
       "teams": [
         "reviewers"
       ],
@@ -828,14 +838,6 @@
       ],
       "avatar_url": "7421844",
       "github": "jrharalson"
-    },
-    "CodeMartian": {
-      "name": "Jeff Martin",
-      "teams": [
-        "analysts"
-      ],
-      "avatar_url": "49497114",
-      "github": "CodeMartian"
     },
     "j9t": {
       "name": "Jens Oliver Meiert",
@@ -1243,14 +1245,6 @@
       "github": "foolip",
       "website": "https://foolip.org/"
     },
-    "polyglotyeoja": {
-      "name": "polyglotyeoja",
-      "teams": [
-        "analysts"
-      ],
-      "avatar_url": "9722690",
-      "github": "polyglotyeoja"
-    },
     "25prathamesh": {
       "name": "Prathamesh Rasam",
       "teams": [
@@ -1446,7 +1440,9 @@
         "authors"
       ],
       "avatar_url": "72282209",
-      "github": "Suzzicks"
+      "github": "Suzzicks",
+      "website": "https://mobilemoxie.com/",
+      "twitter": "suzzicks"
     },
     "thibaudcolas": {
       "name": "Thibaud Colas",
