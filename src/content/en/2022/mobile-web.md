@@ -140,17 +140,17 @@ For example, if every user that clicks on a particular input field switches to t
 
 ## Accessibility on the mobile web
 
-Mobile devices are cheaper, lighter, and more portable than computers, so they house a lot of potential to help populations that have historically been ignored or marginalized by technology, often with only minor tweaks to a site’s accessibility. [According to Google](https://web.dev/accessibility/#what-is-accessibility), true accessibility on the web means that “the site's content is available, and its functionality can be operated by literally anyone.” In a more detailed explanation, Google offers that:
+Mobile devices are cheaper, lighter, and more portable than computers, so they house a lot of potential to help populations that have historically been ignored or marginalized by technology, often with only minor tweaks to a site’s accessibility. <a hreflang="en" href="https://web.dev/accessibility/#what-is-accessibility">According to Google</a>, true accessibility on the web means that “the site's content is available, and its functionality can be operated by literally anyone.” In a more detailed explanation, Google offers that:
 
 <blockquote>
   Accessibility, then, refers to the experience of users who might be outside the narrow range of the "typical" user, who might access or interact with things differently than you expect. Specifically, it concerns users who are experiencing some type of impairment or disability - and bear in mind that that experience might be non-physical or temporary.
 </blockquote>
 
-Web accessibility and mobile web accessibility are evolving in their importance and prevalence in the conversations and general consciousness of the web as a whole. Building more accessible sites will [allow the mobile web to reach more users](https://moz.com/blog/seo-and-accessibility-introduction) and potential customers for businesses online. It will also help position information and associated brands as inclusive and in-touch with the needs of _all users_ rather than perpetuating insensitivity and further marginalization by only considering the _average user_.
+Web accessibility and mobile web accessibility are evolving in their importance and prevalence in the conversations and general consciousness of the web as a whole. Building more accessible sites will <a hreflang="en" href="https://moz.com/blog/seo-and-accessibility-introduction">allow the mobile web to reach more users</a> and potential customers for businesses online. It will also help position information and associated brands as inclusive and in-touch with the needs of _all users_ rather than perpetuating insensitivity and further marginalization by only considering the _average user_.
 
-Accessibility concerns can be broken down into three types: situational, temporary, and permanent.  In most cases, it is possible to imagine circumstances in which an aspect of web accessibility is critical for someone with a permanent impairment while also being incredibly useful for people with situational or temporary impairments. And while it is not explicitly rewarding aspects of accessibility with rankings, meeting web accessibility standards often has the side benefit of [improving organic rankings](https://searchengineland.com/seo-accessibility-tips-deaf-disabled-386577) in Google search results.
+Accessibility concerns can be broken down into three types: situational, temporary, and permanent.  In most cases, it is possible to imagine circumstances in which an aspect of web accessibility is critical for someone with a permanent impairment while also being incredibly useful for people with situational or temporary impairments. And while it is not explicitly rewarding aspects of accessibility with rankings, meeting web accessibility standards often has the side benefit of <a hreflang="en" href="https://searchengineland.com/seo-accessibility-tips-deaf-disabled-386577">improving organic rankings</a> in Google search results.
 
-The [W3C](https://www.w3.org/TR/mobile-accessibility-mapping/) summarizes the basic tenets of accessibility in four groups of concerns, which make the website: _perceivable_ (something you can see or hear), _operable_ (buttons and gestures you can use), _understandable_ (layout and presentation concerns), and _robust_ (ability to enter and submit forms and information). The elements that we focus on here fall mostly under the _perceivable_ and _operable_ groups, including: color contrast, tap targets, and zooming and scaling.
+The <a hreflang="en" href="https://www.w3.org/TR/mobile-accessibility-mapping/">W3C</a> summarizes the basic tenets of accessibility in four groups of concerns, which make the website: _perceivable_ (something you can see or hear), _operable_ (buttons and gestures you can use), _understandable_ (layout and presentation concerns), and _robust_ (ability to enter and submit forms and information). The elements that we focus on here fall mostly under the _perceivable_ and _operable_ groups, including: color contrast, tap targets, and zooming and scaling.
 
 It is possible that the increased focus on mobile accessibility will reframe the function and importance of mobile and digital communication, especially if it helps us to reassert the humanity of digital technology and communication. This is particularly important in cultures where the increased digital connectivity may actually be perpetuating isolation and a lack of real-world connectivity. Making the mobile web more accessible should have a direct and indirect positive impact on mobile technology and society at large.
 
@@ -174,18 +174,18 @@ That said, many people don’t have perfect vision and use glasses or contact le
 
 Given the stakes, it is sad that only 23% of mobile sites this year actually have adequate color contrast. This is only one  full percentage point up from the 2021 statistic (22%), so it is an improvement,  but not a substantial improvement. When we look back further, this statistic has actually been 22% since 2019, so there has been almost no improvement in 4 years - Disappointing for something that is widely  considered the most impactful accessibility standard on the web.
 
-According to the [US General Services Administration](https://accessibility.digital.gov/visual-design/color-and-contrast/), site owners should “make sure the contrast between the text and background is greater than or equal to 4.5:1 for small text and 3:1 for large text.” The [W3C](https://www.w3.org/TR/mobile-accessibility-mapping/#h-contrast) backs this ratio and also adds an enhanced guideline that calls for “a contrast of at least 7:1 (or 4.5:1 for large-scale text).” Obviously there are  more mobile sites that miss the mark for _enhanced accessibility,_ making that statistic likely far below the 23% that meet the basic requirements for color contrast on mobile sites.
+According to the <a hreflang="en" href="https://accessibility.digital.gov/visual-design/color-and-contrast/">US General Services Administration</a>, site owners should “make sure the contrast between the text and background is greater than or equal to 4.5:1 for small text and 3:1 for large text.” The <a hreflang="en" href="https://www.w3.org/TR/mobile-accessibility-mapping/#h-contrast">W3C</a> backs this ratio and also adds an enhanced guideline that calls for “a contrast of at least 7:1 (or 4.5:1 for large-scale text).” Obviously there are  more mobile sites that miss the mark for _enhanced accessibility,_ making that statistic likely far below the 23% that meet the basic requirements for color contrast on mobile sites.
 
-If enhancing the perceivability of a site by improving the color contrast and making it actually usable is not enough of an incentive, having a minimum level of contrast between text and background colors has long been an important element for ranking in Google searches as well. It started as a means of preventing spammers from including hidden text on websites, which was often white text on a white background. Later, Google moved it over to be part of the original [Mobile Friendly](https://developers.google.com/search/mobile-sites/get-started) guidelines, and now is simply included as part of their general guidelines for designing websites that are good for users.
+If enhancing the perceivability of a site by improving the color contrast and making it actually usable is not enough of an incentive, having a minimum level of contrast between text and background colors has long been an important element for ranking in Google searches as well. It started as a means of preventing spammers from including hidden text on websites, which was often white text on a white background. Later, Google moved it over to be part of the original <a hreflang="en" href="https://developers.google.com/search/mobile-sites/get-started">Mobile Friendly</a> guidelines, and now is simply included as part of their general guidelines for designing websites that are good for users.
 
-Color contrast is something that we would like to encourage webmasters to focus on, especially in light of new color capabilities in browsers, like [`dark-mode`](https://support.google.com/chrome/answer/9275525?hl=en&co=GENIE.Platform%3DAndroid). If you are making site updates to [improve your sites compatibility in `dark-mode`](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/), you should ideally also take the time to improve overall color contrast as part of that project. This feature is often easier for some people to use, so you can count this combined effort as a double-benefit!
+Color contrast is something that we would like to encourage webmasters to focus on, especially in light of new color capabilities in browsers, like <a hreflang="en" href="https://support.google.com/chrome/answer/9275525?hl=en&co=GENIE.Platform%3DAndroid">`dark-mode`</a>. If you are making site updates to <a hreflang="en" href="https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/">improve your sites compatibility in `dark-mode`</a>, you should ideally also take the time to improve overall color contrast as part of that project. This feature is often easier for some people to use, so you can count this combined effort as a double-benefit!
 
 
 ### Tap targets
 
 Tap targets are effectively the clickable elements on a page. Since many designers and developers still think about websites as being designed on and for desktop interactions rather than _mobile-first,_ it can be common to overlook having large enough spaces for touchscreen interactions, on which navigation and clicking with a finger is so much less precise. On mobile devices, when things are resized and rearranged to fit the smaller screen, it is common for linked elements to be close together. This can become a problem if multiple clickable elements are clustered together, as they might appear in a navigation menu or footer.
 
-Having appropriately sized tap targets makes it less likely that a user will errantly click on the wrong button or link, and have to navigate back to try the click again. It is also not ideal to expect users to zoom in on the mobile screens simply to click the right button.  From an accessibility standpoint, having appropriately sized tap targets is also important for users that have any kind of [motor impairment](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html#benefits), or difficulty with fine motor skills.
+Having appropriately sized tap targets makes it less likely that a user will errantly click on the wrong button or link, and have to navigate back to try the click again. It is also not ideal to expect users to zoom in on the mobile screens simply to click the right button.  From an accessibility standpoint, having appropriately sized tap targets is also important for users that have any kind of <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/target-size.html#benefits">motor impairment</a>, or difficulty with fine motor skills.
 
 {{ figure_markup(
     caption="Percent of mobile pages with sufficient tap targets.",
@@ -213,7 +213,7 @@ Pages that fail the audit generally have more than one failing link. The median 
 
 ### Zooming and scaling
 
-Mobile devices have become a big part of daily life for most people, and the expectation is that interaction with mobile web content should be quick and easy. How websites handle zooming and scaling can go a long way to improving interactions on mobile. There are different takes on this, and while most will agree that you need to set a proper initial scale in the viewport for mobile users (`&lt;meta name="viewport" content="width=device-width, initial-scale=1">`), there is not universal agreement about the second part of a viewport setting, which controls if you should or shouldn’t disable scaling and zooming (`…user-scalable=no" />` or perhaps `…user-scalable=yes" />`). Most authorities, [including the W3C](https://www.w3.org/WAI/standards-guidelines/act/rules/b4f0c3/proposed/), suggest that restricting scaling and zooming can create a bad user experience and adversely impact accessibility, so it should be avoided. Settings for `minimum-scale` and `maximum-scale` can also be set, and these are often safer limits, if a developer believes that limits are needed.
+Mobile devices have become a big part of daily life for most people, and the expectation is that interaction with mobile web content should be quick and easy. How websites handle zooming and scaling can go a long way to improving interactions on mobile. There are different takes on this, and while most will agree that you need to set a proper initial scale in the viewport for mobile users (`&lt;meta name="viewport" content="width=device-width, initial-scale=1">`), there is not universal agreement about the second part of a viewport setting, which controls if you should or shouldn’t disable scaling and zooming (`…user-scalable=no" />` or perhaps `…user-scalable=yes" />`). Most authorities, <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/act/rules/b4f0c3/proposed/">including the W3C</a>, suggest that restricting scaling and zooming can create a bad user experience and adversely impact accessibility, so it should be avoided. Settings for `minimum-scale` and `maximum-scale` can also be set, and these are often safer limits, if a developer believes that limits are needed.
 
 Zooming can be a good workaround for a user who is visually impared, or anyone who just doesn’t have their reading glasses handy when they need them. On the other hand, it can be hard to build sites that universally scale well on mobile. There are many different font size settings that would need to be accomodated, and getting it wrong can make the site much harder to interact with. This is why some designers prefer to prevent scaling and zooming, to ensure that the page renders in a highly predictable way that is not impacted by scaling and zooming. While this is true, disabling zooming and scaling impedes the usability of a mobile site, and thus, should be avoided for the sake of accessibility.
 
@@ -241,9 +241,9 @@ One of the most complex problems that site owners have to address on the mobile 
 
 ### Core Web Vitals
 
-[Core Web Vitals](https://web.dev/vitals/) is a collection of performance metrics that Google compiles to evaluate different websites, and specifically, different [page groups](https://support.google.com/webmasters/answer/9205520#page_groups) on websites to describe how they perform in both mobile and desktop page settings. The elements of Core Web Vitals include loading, interactivity, and layout stability.
+<a hreflang="en" href="https://web.dev/vitals/">Core Web Vitals</a> is a collection of performance metrics that Google compiles to evaluate different websites, and specifically, different <a hreflang="en" href="https://support.google.com/webmasters/answer/9205520#page_groups">page groups</a> on websites to describe how they perform in both mobile and desktop page settings. The elements of Core Web Vitals include loading, interactivity, and layout stability.
 
-All three are aspects of how users perceive the performance of a page that can help or hinder the loading experience for users. This type of evaluation began in May of 2020, and these metrics are taken into account in Google’s ranking algorithm specifically as an aspect of the [page experience](https://developers.google.com/search/docs/advanced/experience/page-experience) evaluation, and thus, the metrics are organized around thresholds of performance that are either considered “good”, “needs improvement”, or “poor”. For a site to be considered “good”, 75% of visits must meet the prescribed thresholds for each of the Core Web Vitals metrics.
+All three are aspects of how users perceive the performance of a page that can help or hinder the loading experience for users. This type of evaluation began in May of 2020, and these metrics are taken into account in Google’s ranking algorithm specifically as an aspect of the <a hreflang="en" href="https://developers.google.com/search/docs/advanced/experience/page-experience">page experience</a> evaluation, and thus, the metrics are organized around thresholds of performance that are either considered “good”, “needs improvement”, or “poor”. For a site to be considered “good”, 75% of visits must meet the prescribed thresholds for each of the Core Web Vitals metrics.
 
 {{ figure_markup(
     image="good-cwv.png",
@@ -260,12 +260,12 @@ The figure above shows how the overall performance of the web has changed since 
 
 ### Loading performance metrics
 
-Load time on the mobile web is measured in the same way that it is measured in any other context, and despite the more difficult burdens that mobile devices face, that makes it harder for them to load a site quickly. [Research](https://unbounce.com/page-speed-report/#:~:text=Young%20folks%20have,on%20a%20cellphone.) shows that mobile visitors are more impatient, and actually expect and want the experience on a phone to be faster than it is on a larger device.
+Load time on the mobile web is measured in the same way that it is measured in any other context, and despite the more difficult burdens that mobile devices face, that makes it harder for them to load a site quickly. <a hreflang="en" href="https://unbounce.com/page-speed-report/#:~:text=Young%20folks%20have,on%20a%20cellphone.">Research</a> shows that mobile visitors are more impatient, and actually expect and want the experience on a phone to be faster than it is on a larger device.
 
 
 #### Time to First Byte (TTFB)
 
-[Time to First Byte](https://web.dev/ttfb/), which is often abbreviated as TTFB, is the measurement of the amount of time that elapses from the start of the navigation to the first byte of data received in response to the request. TTFB describes the responsiveness of the server and other network resources that are needed to begin building a page.
+<a hreflang="en" href="https://web.dev/ttfb/">Time to First Byte</a>, which is often abbreviated as TTFB, is the measurement of the amount of time that elapses from the start of the navigation to the first byte of data received in response to the request. TTFB describes the responsiveness of the server and other network resources that are needed to begin building a page.
 
 TTFB is not a Core Web Vitals metric itself, but it has a direct impact on all loading performance metrics, and thus, is often discussed as part of the optimization of all Core Web Vitals elements and general site performance, especially Largest Contentful Paint.
 
@@ -284,7 +284,7 @@ As you can see above, there are only minor fluctuations in the percent of mobile
 
 #### Largest Contentful Paint (LCP)
 
-[Largest Contentful Paint](https://web.dev/lcp/), or LCP, is a metric that describes how long it takes for a website to load the largest portion of the page content that is first displayed to a user with meaningful content; it is often a function of the size and performance of a header image or design. The LCP is important because it signals to a user when the page is ready to start consuming.
+<a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a>, or LCP, is a metric that describes how long it takes for a website to load the largest portion of the page content that is first displayed to a user with meaningful content; it is often a function of the size and performance of a header image or design. The LCP is important because it signals to a user when the page is ready to start consuming.
 
 {{ figure_markup(
     image="good-lcp.png",
@@ -341,7 +341,7 @@ The `picture` element further expands on these capabilities to allow for [art di
 
 The adoption of the `picture` element is at only 8% of mobile pages (up from 6% last year), but `srcset` is at 35%. In 2021, the use of `srcset` was around 32%, so we have seen a growth of about 3 percentage points.
 
-Overall, it is great to see an increase in the use of responsive image techniques. The relatively small uptake for `picture`, despite offering more flexibility in art direction and format fallback support, could be down to the fact that it can require more work to produce, and is less likely to be supported by default in popular CMS systems, like WordPress, which stick to the venerable `img` tag ([for now](https://github.com/WordPress/performance/issues/21)).
+Overall, it is great to see an increase in the use of responsive image techniques. The relatively small uptake for `picture`, despite offering more flexibility in art direction and format fallback support, could be down to the fact that it can require more work to produce, and is less likely to be supported by default in popular CMS systems, like WordPress, which stick to the venerable `img` tag (<a hreflang="en" href="https://github.com/WordPress/performance/issues/21">for now</a>).
 
 
 #### Lazy-loading
@@ -357,7 +357,7 @@ Lazy-loading is the process of assigning different loading priority levels to el
   )
 }}
 
-[Native lazy-loading](https://web.dev/browser-level-image-lazy-loading/) has been available since 2019, which allows browsers to do the complex calculations in the most efficient way possible, and only requires that site owners tag images with either `lazy` or `eager`. This simple tagging can be a great boon for page and site performance, and can also save a lot of time and effort associated with maintaining your own lazy-loading code. As long as you don’t [inadvertently lazy-load your LCP image](https://web.dev/lcp-lazy-loading/) at the top of the page, it is an easy win, but we found that only 25% of sites are currently using the `loading=lazy` attribute for their images.
+<a hreflang="en" href="https://web.dev/browser-level-image-lazy-loading/">Native lazy-loading</a> has been available since 2019, which allows browsers to do the complex calculations in the most efficient way possible, and only requires that site owners tag images with either `lazy` or `eager`. This simple tagging can be a great boon for page and site performance, and can also save a lot of time and effort associated with maintaining your own lazy-loading code. As long as you don’t <a hreflang="en" href="https://web.dev/lcp-lazy-loading/">inadvertently lazy-load your LCP image</a> at the top of the page, it is an easy win, but we found that only 25% of sites are currently using the `loading=lazy` attribute for their images.
 
 
 ### Layout stability
@@ -369,13 +369,13 @@ Since the loading order of content can be different under different conditions, 
 
 #### Cumulative Layout Shift (CLS)
 
-[Cumulative Layout Shift](https://web.dev/cls/), which is often abbreviated as CLS, is a representation of the stability of a page while it is in use.
+<a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a>, which is often abbreviated as CLS, is a representation of the stability of a page while it is in use.
 
 A low CLS represents a visually stable layout, which makes the experience less frustrating to users. Pages with a high CLS often experience movement when images begin to load and text must be rendered to fit, or wrap around the image. This can also happen when font files load and the page has to be painted to accommodate differences caused by the font, sometimes described as reflow, or when a large header image loads and moves all the content on the page—occurrences that had been colloquially described as _jank_.
 
 The screen size of the device requesting the page can have a significant impact on the way elements are laid out, and how much they move when shift-causing elements are loaded.
 
-CLS is measured as a score, and the highest instance of movement in any session window during the page lifespan is what is measured. This [changed](https://web.dev/cls-web-tooling/) in 2021, when CLS was previously measured as the sum of all individual shift scores on a page. Google considers scores of 0.1 or less as “good” and scores over 0.25 to be “poor”.
+CLS is measured as a score, and the highest instance of movement in any session window during the page lifespan is what is measured. This <a hreflang="en" href="https://web.dev/cls-web-tooling/">changed</a> in 2021, when CLS was previously measured as the sum of all individual shift scores on a page. Google considers scores of 0.1 or less as “good” and scores over 0.25 to be “poor”.
 
 {{ figure_markup(
     image="good-cls.png",
@@ -397,7 +397,7 @@ Responsiveness is always good in a mobile scenario, but it can have a layered me
 
 #### First Input Delay (FID)
 
-[First Input Delay](https://web.dev/fid/) (FID) describes the responsiveness of a site, especially related to how long it takes for a site to respond after a user first clicks on a page element. A low FID is desirable, especially on mobile web interactions, where the responsiveness of a mobile site should ideally rival the responsiveness of a comparable native app, to make the interactions feel equally fluid and satisfying. Google considers a site to have “good” FID if at least 75% of experiences are under 100 ms.
+<a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID) describes the responsiveness of a site, especially related to how long it takes for a site to respond after a user first clicks on a page element. A low FID is desirable, especially on mobile web interactions, where the responsiveness of a mobile site should ideally rival the responsiveness of a comparable native app, to make the interactions feel equally fluid and satisfying. Google considers a site to have “good” FID if at least 75% of experiences are under 100 ms.
 
 {{ figure_markup(
     image="good-fid.png",
@@ -414,7 +414,7 @@ There has been a consistent growth in the percent of mobile sites that have “g
 
 #### Interaction to Next Paint (INP)
 
-[Interaction to Next Paint](https://web.dev/inp/) (INP) is an experimental metric from Google that is used to measure responsiveness and response time on a page when a user interacts with it. A low INP is desirable because it means that the page was able to respond quickly to user interactions without substantial delays waiting for content to paint after it is requested. A “good” INP is 200 ms or less, and a poor one is anything over 500 ms. Eventually, INP could be added to the official Core Web Vitals metrics, but for now it is still being tested to make sure that it is a reliable and consistent metric that site owners will find useful.
+<a hreflang="en" href="https://web.dev/inp/">Interaction to Next Paint</a> (INP) is an experimental metric from Google that is used to measure responsiveness and response time on a page when a user interacts with it. A low INP is desirable because it means that the page was able to respond quickly to user interactions without substantial delays waiting for content to paint after it is requested. A “good” INP is 200 ms or less, and a poor one is anything over 500 ms. Eventually, INP could be added to the official Core Web Vitals metrics, but for now it is still being tested to make sure that it is a reliable and consistent metric that site owners will find useful.
 
 {{ figure_markup(
     caption="Percent of websites that have good INP on mobile.",
