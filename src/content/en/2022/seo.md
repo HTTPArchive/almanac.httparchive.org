@@ -84,7 +84,7 @@ Note: The above data does not indicate how well optimized a robots.txt file is. 
 
 As expected, the overwhelming majority of robots.txt files were quite small, weighing between 0-100 KB.
 
-Google’s max limit for a robots.txt file is 500 KiB. Any directives found after the file reaches that limit are ignored by the search engine. A very small number of robots.txt files fall into that category. Specifically, just .005% of both desktop and mobile sites contain a robots.txt file that is above Google’s max limit (which is consistent with 2021’s data). In cases where the file size exceeds limits, [Google recommends](https://developers.google.com/search/docs/advanced/robots/robots_txt) consolidating directives.
+Google’s max limit for a robots.txt file is 500 KiB. Any directives found after the file reaches that limit are ignored by the search engine. A very small number of robots.txt files fall into that category. Specifically, just .005% of both desktop and mobile sites contain a robots.txt file that is above Google’s max limit (which is consistent with 2021’s data). In cases where the file size exceeds limits, <a hreflang="en" href="https://developers.google.com/search/docs/advanced/robots/robots_txt">Google recommends</a> consolidating directives.
 
 ### Robots.txt user-agent usage
 
@@ -144,7 +144,7 @@ Of the pages that have adopted the indexifembedded tag, 98.3% of them implemente
 
 The `<head>` element serves as the container for a page’s metadata. From an SEO point of view, a page’s title tag and meta description reside within the `<head>` element, as do robots meta tags.
 
-Not all elements, however, belong in the `<head>`. Should Google come across an invalid element in the page’s `<head>`, it assumes that it has reached the end of the `<head>` and [will not discover the rest of its contents](https://developers.google.com/search/docs/advanced/guidelines/valid-html).
+Not all elements, however, belong in the `<head>`. Should Google come across an invalid element in the page’s `<head>`, it assumes that it has reached the end of the `<head>` and <a hreflang="en" href="https://developers.google.com/search/docs/advanced/guidelines/valid-html">will not discover the rest of its contents</a>.
 
 Our data from 2022 shows 12.7% of desktop pages and 12.6% of mobile pages contain an invalid element in the `<head>`.
 
@@ -178,7 +178,7 @@ Canonical tags are traditionally used when defining duplicate content pages and 
 
 We see from the data that canonical tags usage has increased over the years. In 2019, 48.3% of mobile pages used canonicals. In 2020, this grew to 53.6%. In 2021, this grew even further to 58.5%. And in 2022, it’s increased to 60.6%.
 
-Mobile has a higher percentage of canonical attribution than desktop (60.6% vs. 58.7%), which is likely a direct result of single use URLs on mobile. Since the data set in this chapter is limited to home pages, it’s fair to assume that this is the reason for the higher canonical attribution on mobile. According to  [Google’s guidelines](https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls), having a separate mobile site is not recommended.
+Mobile has a higher percentage of canonical attribution than desktop (60.6% vs. 58.7%), which is likely a direct result of single use URLs on mobile. Since the data set in this chapter is limited to home pages, it’s fair to assume that this is the reason for the higher canonical attribution on mobile. According to  <a hreflang="en" href="https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls">Google’s guidelines</a>, having a separate mobile site is not recommended.
 
 ### HTML vs. HTTP canonical usage
 
@@ -217,7 +217,7 @@ Compared to 2021, where raw canonical usage was 57.7% and rendered canonical usa
 
 ### HTTPS
 
-In 2021, there was an increased focus on site speed and page experience following Google’s introduction of the Core Web Vitals update, which had been publicized and pushed throughout 2020. While evidence of HTTPS being a ranking factor [dates back to 2014](https://developers.google.com/search/blog/2014/08/https-as-ranking-signal), the overall focus on page experience since the Core Web Vitals announcement likely had an impact on the adoption of HTTPS across the web.
+In 2021, there was an increased focus on site speed and page experience following Google’s introduction of the Core Web Vitals update, which had been publicized and pushed throughout 2020. While evidence of HTTPS being a ranking factor <a hreflang="en" href="https://developers.google.com/search/blog/2014/08/https-as-ranking-signal">dates back to 2014</a>, the overall focus on page experience since the Core Web Vitals announcement likely had an impact on the adoption of HTTPS across the web.
 
 {{ figure_markup(
   image="https-usage.png",
@@ -331,7 +331,7 @@ Lazy loading is a technique that defers the loading of non-critical elements on 
 
 When looking solely at iFrames, we see lazy loading is preferred far more to eager loading, with 4.08% of iFrames being lazy loaded versus 0.37% of iFrames being eager loaded.
 
-This is particularly interesting since [browser-level lazy loading for iFrames has become standardized in Chrome](https://web.dev/iframe-lazy-loading/). The standardization of the `loading` attribute, without specifying lazy or eager, is likely why data shows 94.4% of attributes do not contain lazy or eager.
+This is particularly interesting since <a hreflang="en" href="https://web.dev/iframe-lazy-loading/">browser-level lazy loading for iFrames has become standardized in Chrome</a>. The standardization of the `loading` attribute, without specifying lazy or eager, is likely why data shows 94.4% of attributes do not contain lazy or eager.
 
 ## On page
 
@@ -353,7 +353,7 @@ For the second year in a row, 98.8% of desktop and mobile pages had `<title>` el
 
 #### `<title>` element
 
-The `<title>` element is an on-page ranking factor that provides a strong hint regarding page relevance and may appear on the SERP. In August 2021, [Google started rewriting more websites’ titles in their search results](https://developers.google.com/search/blog/2021/08/update-to-generating-page-titles).
+The `<title>` element is an on-page ranking factor that provides a strong hint regarding page relevance and may appear on the SERP. In August 2021, <a hreflang="en" href="https://developers.google.com/search/blog/2021/08/update-to-generating-page-titles">Google started rewriting more websites’ titles in their search results</a>.
 
 {{ figure_markup(
   image="title-words-percentile.png",
@@ -606,7 +606,7 @@ Compared to 2021’s figures, 2022’s data shows a nominal increase in implemen
 
 There is strong correlation between the most popular types of schema found on homepages in 2021 and 2022.
 
-As noted in previous editions of the Web Almanac,  `WebSite`, `SearchAction`, `WebPage`, `SearchAction` is what powers the [Sitelinks Search Box](https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox) [see chart above].
+As noted in previous editions of the Web Almanac,  `WebSite`, `SearchAction`, `WebPage`, `SearchAction` is what powers the <a hreflang="en" href="https://developers.google.com/search/docs/advanced/structured-data/sitelinks-searchbox">Sitelinks Search Box</a> [see chart above].
 
 When comparing 2021 to 2022, there has been a significant increase in the adoption of the most popular schemas across the board. In fact, every noted schema type has experienced an increase in adoption in 2022. Among the most notable are the schema for BreadcrumbsList, which has risen 22.8% since 2021 and ImageObject, which is up 12.3%.
 
@@ -654,7 +654,7 @@ External links are links to other pages on a different website. The data, which 
 
 ### Anchor rel attribute use
 
-In September of 2019, Google [introduced attributes](https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html) that allow publishers to classify links as being _sponsored_ or _user-generated content_. These attributes are in addition to `rel=nofollow`, which was previously [introduced in 2005](https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html). The newer attributes, `rel=ugc` and `rel=sponsored`, add additional information to the links.
+In September of 2019, Google <a hreflang="en" href="https://webmasters.googleblog.com/2019/09/evolving-nofollow-new-ways-to-identify.html">introduced attributes</a> that allow publishers to classify links as being _sponsored_ or _user-generated content_. These attributes are in addition to `rel=nofollow`, which was previously <a hreflang="en" href="https://googleblog.blogspot.com/2005/01/preventing-comment-spam.html">introduced in 2005</a>. The newer attributes, `rel=ugc` and `rel=sponsored`, add additional information to the links.
 
 {{ figure_markup(
   image="anchor-rel-attr.png",
@@ -680,7 +680,7 @@ AMP has been a controversial topic since its launch in 2015, with SEOs debating 
 
 **_“While AMP itself isn’t a ranking factor, speed is a ranking factor for Google Search. Google Search applies the same standard to all pages, regardless of the technology used to build the page.”_**
 
-**[Google Search Central](https://developers.google.com/search/docs/advanced/experience/about-amp)**
+**<a hreflang="en" href="https://developers.google.com/search/docs/advanced/experience/about-amp">Google Search Central</a>**
 
 The future of AMP appears to be changing ever since the launch of Core Web Vitals. A main reason for previously implementing AMP, aside from improving page speed, was that it was necessary for inclusion in Top Carousels. In 2021, Google updated its requirements and outlined that any page is now eligible to appear in Top Carousels with or without AMP.
 
