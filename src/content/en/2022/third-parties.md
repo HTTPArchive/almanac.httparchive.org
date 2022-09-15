@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Third Parties
-description: Third Parties chapter of the 2022 Web Almanac is covering third-party impact on web performance and the usage of best practices related to the third-parties.
+description: Third Parties chapter of the 2022 Web Almanac covering third-party impact on web performance and the usage of best practices related to third parties.
 authors: [imeugenia]
 reviewers: [tunetheweb, kevinfarrugia, alexnj]
 analysts: [kevinfarrugia]
