@@ -173,8 +173,7 @@
           "chapter_number": "21",
           "title": "Sustainability",
           "slug": "sustainability",
-          "hero_dir": "2022",
-          "todo": true
+          "hero_dir": "2022"
         }
       ]
     },
@@ -705,16 +704,6 @@
       "github": "GregBrimble",
       "website": "https://gregbrimble.com/",
       "twitter": "GregBrimble"
-    },
-    "hanopcan": {
-      "name": "Hannah Smith",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "11687898",
-      "github": "hanopcan",
-      "website": "https://opcan.co.uk",
-      "twitter": "hanopcan"
     },
     "harendra": {
       "name": "Haren",
@@ -1498,14 +1487,6 @@
       "github": "timfrick",
       "website": "https://www.mightybytes.com/",
       "twitter": "timfrick"
-    },
-    "tpgreenwood": {
-      "name": "Tom Greenwood",
-      "teams": [
-        "authors"
-      ],
-      "avatar_url": "3329982",
-      "github": "tpgreenwood"
     },
     "bobbyshaw": {
       "name": "Tom Robertshaw",
