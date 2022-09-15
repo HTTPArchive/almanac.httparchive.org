@@ -37,7 +37,7 @@ CMSs differ widely in the approaches they offer for building sites; some provide
 
 When we think about CMSs, we try to account for all the parts that form an ecosystem surrounding the CMS platform, including hosting providers, extension developers, development agencies, site builders, etc. Thus, when we talk about a CMS, we usually refer to both the platform itself and its surrounding ecosystem.
 
-Our dataset, based on [Wappalyzer’s definition](https://www.wappalyzer.com/technologies/cms) of a CMS, identified over 270 individual CMSs. Know a CMS that’s missing? [Contribute to Wappalyzer](https://github.com/wappalyzer/wappalyzer/blob/7ac625c34432cb35d01abd683f88d3bfadca4cca/CONTRIBUTING.md).
+Our dataset, based on <a hreflang="en" href="https://www.wappalyzer.com/technologies/cms">Wappalyzer’s definition</a> of a CMS, identified over 270 individual CMSs. Know a CMS that’s missing? <a hreflang="en" href="https://github.com/wappalyzer/wappalyzer/blob/7ac625c34432cb35d01abd683f88d3bfadca4cca/CONTRIBUTING.md">Contribute to Wappalyzer</a>.
 
 Some CMSs in the dataset are open source (e.g., WordPress and Joomla) and some of them are proprietary (e.g., Wix and Squarespace). Some CMSs can be used on “free” hosted or self-hosted plans, and there are also options for using these platforms on higher-tiered plans even at the enterprise level.
 
@@ -57,17 +57,18 @@ Our analysis throughout this work includes desktop and mobile websites. The vast
   )
 }}
 
-As of June 2022, 44.65% of websites within the desktop dataset are powered by a CMS, indicating a drop of 0.35% [from 2021](https://almanac.httparchive.org/en/2021/cms#cms-adoption). The mobile dataset shows an increase from 45.54% [in 2021](https://almanac.httparchive.org/en/2021/cms#cms-adoption) to 47.31% here in 2022. In our estimate, the drop is more likely attributed to minor variances in attribution than an indicator of a downward trend in CMS usage.
+As of June 2022, 44.65% of websites within the desktop dataset are powered by a CMS, indicating a drop of 0.35% [from 2021](../2021/cms#cms-adoption). The mobile dataset shows an increase from 45.54% [in 2021](../2021/cms#cms-adoption) to 47.31% here in 2022. In our estimate, the drop is more likely attributed to minor variances in attribution than an indicator of a downward trend in CMS usage.
 
-It is instructive to compare these numbers with another commonly used dataset, such as [W3Techs](https://w3techs.com/technologies/history_overview/content_management/all/q), which reported that as of June 2021, 64.6% of websites are created using a CMS, up from 59.2% in June 2020, which is an increase of over 9%.
+It is instructive to compare these numbers with another commonly used dataset, such as <a hreflang="en" href="https://w3techs.com/technologies/history_overview/content_management/all/q">W3Techs</a>, which reported that as of June 2021, 64.6% of websites are created using a CMS, up from 59.2% in June 2020, which is an increase of over 9%.
 
 The deviation between our analysis and W3Techs’ analysis can be explained by a difference in research methodologies, and the definition of what is a CMS.
 
 W3Techs definition is the following: “_Content Management Systems are applications for creating and managing the content of a website. We include all such systems in this category, also systems that are often classified as wikis, blog engines, discussion boards, static site generators, website editors or any type of software that provides website content_.”
 
-As mentioned previously, Wappalyzer has a stricter definition of a CMS, which excludes some major CMSs which appear in W3Techs reports. You can read more about our definition on the [Methodology](https://almanac.httparchive.org/en/2021/methodology) page.
+As mentioned previously, Wappalyzer has a stricter definition of a CMS, which excludes some major CMSs which appear in W3Techs reports. You can read more about our definition on the [Methodology](../2021/methodology) page.
 
 ### CMS adoption by geography
+
 CMSs are used around the world, with some variance by country.
 
 {{ figure_markup(
@@ -107,7 +108,6 @@ A potentially correlated trend is the adoption of “headless” and the move to
 
 While our confidence in the overall dataset remains high, we’re interested in investigating the adoption by rank dataset further in future editions to see if more can be done to detect CMS usage and improve the overall accuracy of our results.
 
-
 ## Most Popular CMSs
 
 Among all websites that are attributed as using a CMS, WordPress sites account for the majority of the relative market share, with over 35% adoption on mobile, followed by Wix (2%), Joomla (1.8%), Drupal (1.6%), and Squarespace (1%).
@@ -141,19 +141,19 @@ Now that we’re tracking page builder data, we’ll have the opportunity in fut
 
 ## CMS User Experience
 
-An important aspect of CMSs is the user experience they provide, for users visiting sites built on these platforms. We attempt to examine these experiences through Real User Measurements (RUM), provided by the [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report) (CrUX), and synthetic testing using [Lighthouse](https://almanac.httparchive.org/en/2021/methodology#lighthouse).
+An important aspect of CMSs is the user experience they provide, for users visiting sites built on these platforms. We attempt to examine these experiences through Real User Measurements (RUM), provided by the <a hreflang="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome User Experience Report</a> (CrUX), and synthetic testing using [Lighthouse](../2021/methodology#lighthouse).
 
 ### Core Web Vitals
 
-The [Core Web Vitals Technology Report](https://httparchive.org/reports/cwv-tech) can be used to drill into available data and view the progress of evaluated platforms updated on a monthly basis.
+The <a hreflang="en" href="https://httparchive.org/reports/cwv-tech">Core Web Vitals Technology Report</a> can be used to drill into available data and view the progress of evaluated platforms updated on a monthly basis.
 
-In this section we focused on data from June 2022 to provide a consistent timeframe for data presented across the Web Almanac, and examined three important factors provided by the [Chrome User Experience Report](https://almanac.httparchive.org/en/2021/methodology#chrome-ux-report), which can shed light on our understanding of how users are experiencing CMS-powered web pages in the wild:
+In this section we focused on data from June 2022 to provide a consistent timeframe for data presented across the Web Almanac, and examined three important factors provided by the [Chrome User Experience Report](../2021/methodology#chrome-ux-report), which can shed light on our understanding of how users are experiencing CMS-powered web pages in the wild:
 
 * Largest Contentful Paint (LCP)
 * First Input Delay (FID)
 * Cumulative Layout Shift (CLS)
 
-These metrics aim to cover the core elements which are indicative of a great web user experience. The [Performance](https://almanac.httparchive.org/en/2021/performance) chapter covers these in more detail, but here we are interested in looking at these metrics specifically in terms of CMSs.
+These metrics aim to cover the core elements which are indicative of a great web user experience. The [Performance](../2021/performance) chapter covers these in more detail, but here we are interested in looking at these metrics specifically in terms of CMSs.
 
 Initially, let’s review the 10 CMS platforms with the highest number of origins, and examine what percentage of sites on each platform have a _passing_ grade, meaning that the 75th percentile of each of the above metrics must be in the “good” (green) range for each site.
 
@@ -188,7 +188,6 @@ We can also evaluate the progress of these CMS platforms compared to last year�
 All of these CMSs showed an improvement in the percentage of origins with good CWVs since June 2021.
 
 Let’s drill into the three Core Web Vitals, to see where each platform has room to improve, and which metrics improved the most since last year:
-
 
 #### Largest Contentful Paint (LCP)
 
@@ -228,7 +227,7 @@ First Input Delay (FID) measures the time from when a user first interacts with 
 
 Any delay is a pain point and could correlate with interference from other aspects of the site loading when the user tries to interact with the site. A “good” FID is regarded as being under 100 milliseconds.
 
- In 2021’s report, the fact that almost all platforms manage to deliver a good FID, raised questions about the strictness of this metric. The Chrome team [published an article](https://web.dev/responsiveness/), which was updated in May of 2022 to include a reference to a new metric, [Interaction to Next Paint (INP)](https://web.dev/inp/) . Given its beta nature at the time of this writing, we’re limiting its inclusion to this reference, in anticipation of a possible expansion in next year’s report.
+ In 2021’s report, the fact that almost all platforms manage to deliver a good FID, raised questions about the strictness of this metric. The Chrome team <a hreflang="en" href="https://web.dev/responsiveness/">published an article</a>, which was updated in May of 2022 to include a reference to a new metric, <a hreflang="en" href="https://web.dev/inp/">Interaction to Next Paint (INP)</a> . Given its beta nature at the time of this writing, we’re limiting its inclusion to this reference, in anticipation of a possible expansion in next year’s report.
 
 {{ figure_markup(
   image="fid-cwv-yoy.png",
@@ -242,14 +241,13 @@ Any delay is a pain point and could correlate with interference from other aspec
 
 Yearly data shows that most CMSs managed to improve their FID over the past year. Wix and Weebly both regressed by several percentage points over previous year’s data.
 
-
 #### Cumulative Layout Shift (CLS)
 
 Cumulative Layout Shift (CLS) measures the visual stability of content on a web page, measuring the largest burst of layout shift scores for every unexpected layout shift that occurs during the entire lifespan of a page that was not caused by direct user interactions.
 
 A layout shift occurs any time a visible element changes its position from one rendered frame to the next.
 
-The[ CLS metric evolved in 2021](https://web.dev/evolving-cls/),  mainly introducing the concept of Session Windows, to be fairer to long-lived pages and Single Page Apps (SPAs).
+The<a hreflang="en" href="https://web.dev/evolving-cls/"> CLS metric evolved in 2021</a>,  mainly introducing the concept of Session Windows, to be fairer to long-lived pages and Single Page Apps (SPAs).
 
 A score of 0.1 or below is measured as “good”, over 0.25 as “poor”, and anything in between as “needs improvement”.
 
@@ -267,15 +265,15 @@ Comparing yearly data, we can see that all CMSs made progress, WordPress, Square
 
 ### Lighthouse
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) is an open-source, automated tool for improving the quality of web pages. One key aspect of the tool is that it provides a set of audits to assess the status of a website in terms of performance, accessibility, SEO, best practices, and more. Lighthouse reports provide lab data, a way developers can get suggestions on how to improve website performance, but the Lighthouse score has no direct implications on the actual field data collected by [CrUX](https://developers.google.com/web/tools/chrome-user-experience-report). You can read more on Lighthouse and the correlation between its [lab scores and field data](https://web.dev/lab-and-field-data-differences/).
+<a hreflang="en" href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> is an open-source, automated tool for improving the quality of web pages. One key aspect of the tool is that it provides a set of audits to assess the status of a website in terms of performance, accessibility, SEO, best practices, and more. Lighthouse reports provide lab data, a way developers can get suggestions on how to improve website performance, but the Lighthouse score has no direct implications on the actual field data collected by <a hreflang="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">CrUX</a>. You can read more on Lighthouse and the correlation between its <a hreflang="en" href="https://web.dev/lab-and-field-data-differences/">lab scores and field data</a>.
 
-HTTP Archive runs Lighthouse on its mobile web pages, which are also [throttled to emulate a slow 4G connection with a CPU slowdown](https://almanac.httparchive.org/en/2021/methodology#lighthouse).
+HTTP Archive runs Lighthouse on its mobile web pages, which are also [throttled to emulate a slow 4G connection with a CPU slowdown](../2021/methodology#lighthouse).
 
 We can analyze this data to provide another perspective on CMS performance, using the results of these synthetic tests, which also include metrics that are not tracked in CrUX.
 
 #### Performance score
 
-The Lighthouse [performance score](https://web.dev/performance-scoring/) is a weighted average of several metric scores.
+The Lighthouse <a hreflang="en" href="https://web.dev/performance-scoring/">performance score</a> is a weighted average of several metric scores.
 
 {{ figure_markup(
   image="median-lighthouse.png",
@@ -287,13 +285,13 @@ The Lighthouse [performance score](https://web.dev/performance-scoring/) is a we
   )
 }}
 
-We can see that the median performance scores for most platforms on mobile are low, ranging from 19 to 35, with Duda at 47 the exception. As Philip Walton cited in 2021, [this does not directly imply bad results](https://philipwalton.com/articles/my-challenge-to-the-web-performance-community/) in mobile field data but does imply that all platforms have room for improvements, especially for low-end devices and network connections similar to those Lighthouse attempts to emulate.
+We can see that the median performance scores for most platforms on mobile are low, ranging from 19 to 35, with Duda at 47 the exception. As Philip Walton cited in 2021, <a hreflang="en" href="https://philipwalton.com/articles/my-challenge-to-the-web-performance-community/">this does not directly imply bad results</a> in mobile field data but does imply that all platforms have room for improvements, especially for low-end devices and network connections similar to those Lighthouse attempts to emulate.
 
 WordPress, Joomla, Drupal, and 1C-Bitrix showed no change from last year’s results. Wix dropped from 30% to 29% while the rest showed improvements.
 
 #### SEO score
 
-Search Engine Optimization (or SEO) is the practice of improving a website to make it more easily found in search engines. This is covered more in-depth in our [SEO](https://almanac.httparchive.org/en/2022/seo) chapter, but one part involves ensuring the site is coded in such a way to serve as much information to search engine crawlers to make it as easy as possible for them to show a site appropriately in search engine results. Compared to a custom-created website, one might expect a CMS to provide good SEO capabilities, and the Lighthouse scores in this category are appropriately high.
+Search Engine Optimization (or SEO) is the practice of improving a website to make it more easily found in search engines. This is covered more in-depth in our [SEO](../2022/seo) chapter, but one part involves ensuring the site is coded in such a way to serve as much information to search engine crawlers to make it as easy as possible for them to show a site appropriately in search engine results. Compared to a custom-created website, one might expect a CMS to provide good SEO capabilities, and the Lighthouse scores in this category are appropriately high.
 
 {{ figure_markup(
   image="median-lighthouse-seo.png",
@@ -309,9 +307,9 @@ The median SEO score in all of the top 10 platforms is over 83, a reduction from
 
 #### Accessibility score
 
-An accessible website is a site designed and developed so that people with disabilities can use them. Web accessibility also benefits people without disabilities, such as those on slow internet connections. Read more in our [Accessibility](https://almanac.httparchive.org/en/2022/accessibility) chapter.
+An accessible website is a site designed and developed so that people with disabilities can use them. Web accessibility also benefits people without disabilities, such as those on slow internet connections. Read more in our [Accessibility](../2022/accessibility) chapter.
 
-Lighthouse provides a set of accessibility audits, and it returns a weighted average of all of them (see [Scoring Details](https://web.dev/accessibility-scoring/) for a full list of how each audit is weighted).
+Lighthouse provides a set of accessibility audits, and it returns a weighted average of all of them (see <a hreflang="en" href="https://web.dev/accessibility-scoring/">Scoring Details</a> for a full list of how each audit is weighted).
 
 Each accessibility audit is either a pass or a fail, but unlike other Lighthouse audits, a page doesn’t get points for partially passing an accessibility audit. For example, if some elements have screen reader-friendly names, but others don’t, that page gets a 0 for the screen reader-friendly-names audit.
 
@@ -325,13 +323,11 @@ Each accessibility audit is either a pass or a fail, but unlike other Lighthouse
   )
 }}
 
-
 The median Lighthouse accessibility score for the top 10 CMSs ranges between 77 and 91. Squarespace had the highest score of 91, while 1C-Bitrix had the lowest accessibility scores.
-
 
 #### Best practices
 
-The Lighthouse [best practices](https://web.dev/lighthouse-best-practices/) try to ensure that web pages are following best practices for the web, for a variety of different metrics, such as supporting HTTPS, no errors logged in the console, and more.
+The Lighthouse <a hreflang="en" href="https://web.dev/lighthouse-best-practices/">best practices</a> try to ensure that web pages are following best practices for the web, for a variety of different metrics, such as supporting HTTPS, no errors logged in the console, and more.
 
 {{ figure_markup(
   image="median-lighthouse-best-practices.png",
@@ -344,7 +340,6 @@ The Lighthouse [best practices](https://web.dev/lighthouse-best-practices/) try 
 }}
 
 Wix had the highest median best practices score of 100, while many of the other top 10 platforms share the lowest score of 75.
-
 
 ## Resource weights
 
@@ -360,7 +355,6 @@ We also use HTTP Archive data to analyze the weight of resources used across dif
   )
 }}
 
-
 Most of the top 5 CMSs deliver a median page weight of around ~2 MB, except Squarespace which delivers a larger ~3.5 MB. All except Joomla showed increases in page weight over 2021 data.
 
 {{ figure_markup(
@@ -375,11 +369,9 @@ Most of the top 5 CMSs deliver a median page weight of around ~2 MB, except Squa
 
 The distribution of page weight in each platform’s percentiles is substantial, probably related to the difference in user content across different web pages, the number of images used, plugins, etc. The smallest pages delivered per platform come from WordPress, a marked improvement over last year’s data, which only sends 673KB for their 10th percentile of visits. The largest pages come from Squarespace, with ~11.4 MB delivered for their 90th percentile of visits, a ~2MB increase over last year’s data.
 
-
 ### Page Weight Breakdown
 
 Page Weight is a sum of resources used. We can attempt to evaluate these different resource sizes across different CMSs.
-
 
 #### Images
 
@@ -397,7 +389,7 @@ Images, which are usually the heaviest resource, account for a large portion of 
 
 Wix delivers substantially fewer image bytes, with only 290 KB delivered on the median of mobile views, suggesting good use of image compression and lazy image loading. All of the other top 5 platforms deliver over 1 MB of images, with Squarespace delivering the largest ~1.7 MB.
 
-Advanced image formats provide a considerable improvement in compression, enabling resource savings and faster site loading. WebP is commonly supported in all major browsers today, with over [95% support](https://caniuse.com/webp). In addition, there are several newer image formats gaining popularity and adoption, namely [AVIF](https://caniuse.com/avif), and [JPEG-XL](https://jpegxl.info).
+Advanced image formats provide a considerable improvement in compression, enabling resource savings and faster site loading. WebP is commonly supported in all major browsers today, with over <a hreflang="en" href="https://caniuse.com/webp">95% support</a>. In addition, there are several newer image formats gaining popularity and adoption, namely <a hreflang="en" href="https://caniuse.com/avif">AVIF</a>, and <a hreflang="en" href="https://jpegxl.info">JPEG-XL</a>.
 
 We can examine the usage of the different image formats across the top CMSs:
 
@@ -413,10 +405,9 @@ We can examine the usage of the different image formats across the top CMSs:
 
 Wix and Duda make the most use of WebP, with ~75% and 42% adoption respectively, while the rest show minor increases.
 
-With the [growing support of WebP](https://caniuse.com/webp), it seems all platforms have work to do to reduce the usage of the older JPEG and PNG formats, where it is applicable without compromising on image quality.
+With the <a hreflang="en" href="https://caniuse.com/webp">growing support of WebP</a>, it seems all platforms have work to do to reduce the usage of the older JPEG and PNG formats, where it is applicable without compromising on image quality.
 
-WordPress introduced support for WebP in 5.8, released in June of 2021 and is [planned to be included by default](https://make.wordpress.org/core/2022/06/30/plan-for-adding-webp-multiple-mime-support-for-images/) in WordPress 6.1, which we expect to lead to a significant increase in WebP adoption in the 2023 results.
-
+WordPress introduced support for WebP in 5.8, released in June of 2021 and is <a hreflang="en" href="https://make.wordpress.org/core/2022/06/30/plan-for-adding-webp-multiple-mime-support-for-images/">planned to be included by default</a> in WordPress 6.1, which we expect to lead to a significant increase in WebP adoption in the 2023 results.
 
 #### JavaScript
 
@@ -473,7 +464,6 @@ Next, we examine the use of explicit CSS resources that are downloaded. Here we 
   )
 }}
 
-
 To display text, web developers often choose to use a variety of fonts. Joomla delivers the fewest font bytes, with 82 KB on mobile views, and Squarespace delivers the most with 202 KB.
 
 ## WordPress in 2022
@@ -484,7 +474,7 @@ WordPress is an open-source project, which has been around since 2003. Many site
 
 The WordPress ecosystem maintains the CMS and services requirements for additional functionality through custom services and products (themes and plugins). This community has an outsized impact, with a relatively small number of people maintaining both the CMS itself and providing the additional functionality which makes WordPress sufficiently powerful and flexible that it can service most types of websites. This flexibility is important when explaining the market share, but also complicates the discussion around WordPress based site performance.
 
-In 2021, contributors from the WordPress community acknowledged the current state of performance, in this [proposal](https://make.wordpress.org/core/2021/10/12/proposal-for-a-performance-team/) to create a performance dedicated core team, which can hopefully improve the current performance of the average WordPress sites.
+In 2021, contributors from the WordPress community acknowledged the current state of performance, in this <a hreflang="en" href="https://make.wordpress.org/core/2021/10/12/proposal-for-a-performance-team/">proposal</a> to create a performance dedicated core team, which can hopefully improve the current performance of the average WordPress sites.
 
 [Setup this year’s YoY analysis]
 
@@ -545,5 +535,5 @@ CMSs are doing great work and have a huge opportunity to further improve user ex
 
 On the other hand, Core Web Vitals still have some progress and evolving to do.
 
-We mentioned the thoughts towards a [better responsiveness metric](https://web.dev/responsiveness/) above. In addition, navigations between pages in a site should be better tracked and take into account the difference between [Single-Page Applications (SPAs) and Multi-Page Applications (MPAs)](https://web.dev/vitals-spa-faq)architectures.
+We mentioned the thoughts towards a <a hreflang="en" href="https://web.dev/responsiveness/">better responsiveness metric</a> above. In addition, navigations between pages in a site should be better tracked and take into account the difference between <a hreflang="en" href="https://web.dev/vitals-spa-faq">Single-Page Applications (SPAs) and Multi-Page Applications (MPAs)</a>architectures.
 
