@@ -118,11 +118,14 @@ It is recommended to keep this metric as low as possible. 1 MB should be a maxim
 For more on this, check the Page Weight chapter [LINK TO BE ADDED].
 
 
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image1.png "image_tooltip")
+{{ figure_markup(
+  image="kilobytes-number-by-percentile.png"
+  caption="Number of kilobytes by percentile"
+  description="A column chart showing that on the 90th percentile web pages weight over 9MB on desktop and 8MB on mobile. On the 75th percentile the web pages get over 4.5MB on desktop and around 4MB on mobile, on the 50th percentile we found web pages weight a bit less than 2.5MB on desktop and over 2MB on mobile, on the 25th percentile it's over 1MB on desktop and a bit less than 1MB on mobile. Finally, on the 10th percentile we see pages weight about 0.5MB on desktop and 0.4MB on mobile."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1354451270&amp;format=interactive"
+  sheets_gid="1911144863"
+  sql_file=""
+) }}
 
 
 Comparing page weights on mobile and desktop, we notice that the difference between them is small, which seems surprising. Media should be served in an appropriate size and format depending on the size of the screen. This might not be the case here.
@@ -135,11 +138,14 @@ At the 90th percentile, desktop pages got over 9 MB and mobile pages over 8 MB. 
 _The notion of “carbon emissions” is a simplification since we are considering Greenhouse Gas Emissions, not only carbon emissions._
 
 
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image2.png "image_tooltip")
+{{ figure_markup(
+  image="total-carbon-emissions-by-percentile.png"
+  caption="Total Carbon emissions (g) by percentile"
+  description="A column chart showing that on the 90th percentile, desktop web pages emit 3.9g of carbon and mobile pages emit 2.76g of carbon, on the 75th percentile desktop pages emit 1.59g of carbon and mobile pages emit 1.38g of carbon. On the 50th percentile it goes 0.79g of carbon on desktop and 0.69 on mobile. On the 25th percentile it's 0.39g of carbon for desktop pages and 0.34g of carbon on mobile pages. Lastly, on the 10th percentile desktop pages emit 0.18g of carbon and mobile pages emit 0.15g of carbon."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=568360340&amp;format=interactive"
+  sheets_gid="1911144863"
+  sql_file=""
+) }}
 
 
 The carbon emissions for websites are very close on mobile and desktop. They seem quite low on the 10th percentile (around 0.15 g eqCO2, which would be equivalent to [a little less than 1km with a thermic car](https://datagir.ademe.fr/apps/mon-impact-transport/) [FR]). They reach as much as 2.76 g eqCO2 on the 90th percentile (a little more than 14km with a thermic car).
@@ -149,11 +155,14 @@ This doesn’t seem like much but you should keep in mind that each website gets
 Now for an additional graph : emissions per percentile by type of content.
 
 
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image3.png "image_tooltip")
+{{ figure_markup(
+  image="percent-of-total-emissions-by-type-desktop.png"
+  caption="Percent of total emissions by percentile by type (desktop)"
+  description="A bar chart showing the percent of different content types on desktop in the total page carbon emissions by percentile. On the 90th percentile HTML content accounts for around 2.5% of the total carbon emissions, Javascript is responsible a bit less than 17.5% of total carbon emissions, Css is around 2.5%, images accounts for around 72.5% and fonts represent 5% of the total carbon emissions. On the 75th percentile, Html represents 2%, Javascript 23%, Css around 5%, images around 65% and fonts around 5% of the total carbon emissions. On the 50th percentile, Html represents 2%, Javascript 30%, Css around 5%, images almost 60% and fonts around 7% of the total carbon emissions. On the 25th percentile, Html represents 2%, Javascript 35%, Css around 6%, images 50% and fonts around 7% of the total carbon emissions. On the 10th percentile, Html represents 2.5%, Javascript 50%, Css around 5%, images 42.5% and fonts 0% of the total carbon emissions."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1976764368&amp;format=interactive"
+  sheets_gid="1911144863"
+  sql_file=""
+) }}
 
 
 Images and JS seem to be the more impactful but images get even more impactful as you go to upper percentiles. However, keep in mind that we only take data transfer into account to calculate carbon emissions. Processing JS is usually more impactful than images. Once you have downloaded the JS files, you still need to process them, sometimes leading to reloading your page or fetching other resources. Nonetheless, this graph underlines the necessity to reduce these impacts. It can be quite easy for images, as we will see later in this chapter. It gets more tricky with JS, even though there are some easy technical optimizations such as minifying, compressing or reducing the need for it. More on that later too.
@@ -166,11 +175,14 @@ Requests are issued whenever a file is needed to load the page. As such, it help
 The number of requests should be kept to a minimum. Keeping an upper limit of no more than 25 is a fairly good start. But trackers and such often make it difficult to reach.
 
 
-
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image4.png "image_tooltip")
+{{ figure_markup(
+  image="number-of-requests-by-percentile.png"
+  caption="Number of requests by percentile"
+  description="A column chat showing that on the 90th percentile there are 184 requests per page on desktop and 168 requests on mobile. On the 75th percentile there are 121 requests on desktop and 111 on mobile. On the 50th percentile it drops at 76 requests on desktop and 70 on mobile. On the 25th percentile there are 45 requests on desktop and 41 on mobile. Finally on the 10th percentile we see a total of 25 requests on desktop and 23 on mobile."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=843262877&amp;format=interactive"
+  sheets_gid="174962437"
+  sql_file=""
+) }}
 
 
 Comparing the number of requests of mobile and desktop, we once again find only a small difference, which shouldn’t be the case. To find pages under the threshold of 25 HTTP requests, we need to get to the 10th percentile again.
@@ -178,11 +190,14 @@ Comparing the number of requests of mobile and desktop, we once again find only 
 So, which content type is to blame for this?
 
 
-
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image5.png "image_tooltip")
+{{ figure_markup(
+  image="number-of-requests-by-percentile-by-type-mobile.png"
+  caption="Number of requests by percentile by type on mobile"
+  description="A column chart showing that on mobile devices, on the 90th percentile we find 14 requests targetting Html content, 60 requests for javascript resources, almost 24 requests for Css, around 70 requests fetching images and 8 requests for fonts.. On the 75th percentile, there are 6 Html requests, 37 Javascript requests, 12 Css requests, 39 images requests and 5 Fonts requests. On the 50th percentile, we can see 2 Html requests, 20 javascript requests, 6 Css requests, 22 images and 3 fonts requests. On the 25th percentile, there are 1 Html, 9 javascript, 3 Css, 10 images and 1 font requests. On the 10h percentile, we find 1Html, 4 javascript, 1 Css, 6 images and 1 font requests."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=768422178&amp;format=interactive"
+  sheets_gid="174962437"
+  sql_file="../sustainability/requests_by_type.sql"
+) }}
 
 
 As usual, images are the main offenders but JS is close behind.
@@ -190,11 +205,14 @@ As usual, images are the main offenders but JS is close behind.
 There are almost as many HTTP requests for mobile and desktop versions, which shouldn’t be the case. As with page weight, mobile pages should be kept as light as possible to take into account aging devices, erratic connectivity and expensive mobile data. Since many individuals still use the web in such suboptimal conditions, mobile web should comply and make everything possible to be accessible for all.
 
 
-
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image6.png "image_tooltip")
+{{ figure_markup(
+  image="number-of-bytes-by-percentile-by-type-mobile.png"
+  caption="Number of bytes by percentile by type on mobile"
+  description="A column chart showing that on mobile devices, on the 90th percentile we find 135KB of Html, around 1367KB of Javascript, 256KB of Css, 5475KB of images and 338KB of fonts. On the 75th percentile it goes down at 67KB of Html, 857KB of Javascript, 139KB of Css, 2402KB of images and 191KB of fonts. On the 50th percentile we found 30KB of Html, 461KB of Javascript, 68KB of Css, 881KB of images and 97KB of fonts. On the 25th percentile there is 13KB of Html, 209KB of Javascript, 28KB of Css, 260KB of images and 29KB of fonts. On the 10th percentile there is 6KB of Html, 87KB of Javascript, 6KB of Css, 64KB of images and 0KB of fonts."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=683807493&amp;format=interactive"
+  sheets_gid="1911144863"
+  sql_file="../sustainability/page_bytes_per_type.sql"
+) }}
 
 
 There are almost as many HTTP requests for images and JS but the overall weight is much higher for images. JS being generally heavier to process than images, this is still bad news. Once again, the results are really close for mobile and desktop, even if it would totally make sense to offer lighter experiences on mobile.
@@ -218,11 +236,14 @@ You should however keep in mind that using renewable energy isn’t enough to pr
 An increasing number of technology firms are also taking steps to green **all** the electricity they buy to power their infrastructure. Companies like Microsoft and Salesforce already buy as much green energy as their server farms use on an annual basis, as do many other companies. We used the [https://www.thegreenwebfoundation.org/green-web-datasets/](https://www.thegreenwebfoundation.org/green-web-datasets/) to see how many organizations [are 'green hosts', taking similar steps](https://www.thegreenwebfoundation.org/what-we-accept-as-evidence-of-green-power/), and where they have shared evidence of powering all the energy they use on green energy, each year.
 
 
-
-<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image7.png "image_tooltip")
+{{ figure_markup(
+  image="green-hosting-percentages.png"
+  caption="% Green hosting"
+  description="A column chart showing that on the top 1,000 sites, on desktop, 54.3% of them relied on green web hosting and it drops at 52.3% on mobile. On the top 10,000 sites it's 49.6% on desktop and 48.2% on mobile, on the top 100,000 it's 38.7% on desktop and 37.6% on mobile, on the top million it's 24.5% for desktops and 23.7% on mobile. On all measured websites globally, only 13.5% rely on green web hosting for desktop and 10% for mobile"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=222811305&amp;format=interactive"
+  sheets_gid="1022303859"
+  sql_file="../sustainability/green_web_hosting.sql"
+) }}
 
 
 Overall, only 10 percent of the measured websites rely on green hosting. This highlights that a lot could and should be done on both sides : websites opting for green hosting as well as hosting companies aiming for more sustainability.
@@ -264,11 +285,14 @@ For more on this, you should check the Fonts chapter [LINK TO BE ADDED]. You can
 Unused CSS is especially found when using CSS frameworks (Bootstrap and others). When doing so, you should keep in mind to remove unused CSS during your build phase. [Chrome Dev Tools offer a Coverage tool to check on this](https://developer.chrome.com/docs/devtools/coverage/). Be careful : on many websites, all CSS and JS are loaded on the first visit in order to cache them for further visits and exploration of the website. This is not necessarily a bad thing but unused code is one of the drawbacks that you should keep in mind, even more because it might slow down further code processing.
 
 
-
-<p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image8.png "image_tooltip")
+{{ figure_markup(
+  image="unused-css-bytes.png"
+  caption="Unused Css bytes"
+  description="A column chart showing that on the 90th percentile there is 221KB of unused Css on desktop and 218KB on mobile, on the 75th percentile it's 117KB on desktop and 113KB on mobile, on the 50th percentile 52KB on desktop and 49KB on mobile. On the 25th percentile we found 19KB of unused Css on desktop and 17KB on mobile. Lastly, we saw 0KB of unused Css on the 10th percentile on either desktop and mobile"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1850605337&amp;format=interactive"
+  sheets_gid="1952093899"
+  sql_file="../sustainability/unused_css_bytes.sql"
+) }}
 
 
 The good news is the 10 percentile websites load no unnecessary CSS. Unfortunately, it rises steadily on this graph, reaching more than 200 kB on the 90th percentile. Whether this for early caching reasons or otherwise, this should be checked. For sustainability, 200 kB of CSS is already a big deal.
@@ -279,11 +303,14 @@ The good news is the 10 percentile websites load no unnecessary CSS. Unfortunate
 The amount of unused JS could grow fast when adding dependencies or using libraries such as jQuery. [The Coverage tool from Chrome Dev Tools is a good way to check on this](https://developer.chrome.com/docs/devtools/coverage/). As for CSS, this is sometimes part of a strategy to cache everything needed for further browsing.  This should be balanced by the fact that unused JS tends to result in longer processing. When possible, look for [smaller alternatives](http://microjs.com) with only the functionalities that you need instead of loading the whole toolbox, hoping it will one day prove useful. Once upon a time, jQuery was the all-in-one solution that you found on almost every website. [As of today, a lot of things can be handled with modern JS](https://youmightnotneedjquery.com/). [Maybe you should check your NPM dependencies and how they make your bundle bigger](https://bundlephobia.com/).
 
 
-
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image9.png "image_tooltip")
+{{ figure_markup(
+  image="unused-javascript-bytes.png"
+  caption="Unused Javascript bytes"
+  description="A column chart showing that on the 90th percentile there is 645KB of unused Javascript on desktop and 604KB on mobile, on the 75th percentile it's 372KB on desktop and 342KB on mobile, on the 50th percentile 177KB on desktop and 162KB on mobile. On the 25th percentile we found 69KB of unused Javascript on desktop and 62KB on mobile. Lastly, we saw 0KB of unused Javascript on the 10th percentile on either desktop and mobile"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=625795710&amp;format=interactive"
+  sheets_gid="1918594785"
+  sql_file="../sustainability/unused_js_bytes.sql"
+) }}
 
 
 One again, the 10th percentile looks great with no unused JS. However, this gets even worse than CSS for the upper percentiles, reaching more than 600 kB on the 90th percentile. Which is already more than the ideal total page weight you should aim for.
@@ -348,11 +375,14 @@ For a closer look on the relative benefits you can expect from possible technica
 WebP [is already widely supported](https://caniuse.com/?search=webp) and one of the best formats you can find for your images. Its compression is impressive and results in less data being transferred and processed. In addition to this, it enjoys wide support. AVIF should be even better but it might be wise to wait until it has reached [a wider adoption from browsers](https://caniuse.com/?search=avif). Until then, just make sure you use the WebP format for your images. As a matter of fact, your icons should be in [optimized SVG](https://jakearchibald.github.io/svgomg/) and you could even include them directly in the HTML to avoid additional requests.
 
 
-
-<p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image10.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image10.png "image_tooltip")
+{{ figure_markup(
+  image="image-formats-in-use.png"
+  caption="Image formats in use"
+  description="A column chart showing that overall, jpg represents the image format of 52.9% of all images on desktop and 54.9% on mobile, png is used in 29.1% of desktop images and 28.2% of mobile images. WebP is used on 11.6% of desktop images and 10.7% of mobile's. Gif is used in 2.8% of desktop image and 2.6% of mobile images, Svg accounts for 2.6% of desktop images format and 2.4% of mobile's. Ico represents the format used on 0.9% of all desktop and mobile images and lastly, avif is the format of 0.3% of both desktop and mobile images."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=865768073&amp;format=interactive"
+  sheets_gid="21166754"
+  sql_file="../sustainability/image_formats.sql"
+) }}
 
 
 As of today, only 10% of the websites use WebP, which is already better than [last year](../2021/media#format-adoption) but far from ideal. This could be a huge opportunity and help reduce the overall weight of images. AVIF is even further behind, only slightly over 0% but we can hope this figure will rise in the coming years.
@@ -365,11 +395,14 @@ As a growing proportion of users browse the web on various devices (mostly smart
 Also remember that you don’t need a quality of more than 85% since the human eye won’t detect a difference above this. Reducing quality to 85% might help reduce the size of images.
 
 
-
-<p id="gdcalert11" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image11.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert12">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image11.png "image_tooltip")
+{{ figure_markup(
+  image="responsive-image-types.png"
+  caption="Responsive image types"
+  description="A column chart showing that around 33% of websites use the srcset attribute on desktop and 34% on mobile, 25.3% of them used it with sizes on desktop and 26.1% on mobile, 7.7% of them used the srcset attribute with w/o sizes on desktop and 7.8% on mobile. 8% ofthe websites use the picture element on desktop and 7.7% of them on mobile"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=403648557&amp;format=interactive"
+  sheets_gid="695142267"
+  sql_file="../sustainability/responsive_images.sql"
+) }}
 
 
 Around 34% of the websites use the srcset attribute, which is a great way to integrate responsive images. The picture tag works great too and is already found on 7% of the websites. Being optimistic, we could focus on the fact that responsive images are gaining ground each year, even if it’s not used on a majority of websites. However, responsive design has been around for quite some time and this should be more widely spread.
@@ -380,11 +413,14 @@ Around 34% of the websites use the srcset attribute, which is a great way to int
 An easy way to get a faster first load is to load images progressively : only load what you need when you need it. This is done through [lazy-loading](../2021/media#lazy-loading) and [most browsers now support this natively](https://caniuse.com/?search=lazy-loading). Not all users will scroll your page in its entirety so you should avoid loading images that might never be seen by the current user. As such, this is a quick win for sustainability and your users.
 
 
-
-<p id="gdcalert12" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image12.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert13">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image12.png "image_tooltip")
+{{ figure_markup(
+  image="native-lazy-loading-usage.png"
+  caption="Native lazy loading usage"
+  description="A column chart showing that no websites used native lazy-loading on July the 1st, 2019. On August the 1st, 2020, 3.7% of websites used native lazy-loading on desktop 3.9% on mobile. On July the 1st, 2021, 17.8% of websites used native lazy-loading on both desktop and mobile, and on the 1st June of 2022, 23.3% of websites used native lazy-loading o ndesktop and 23.8% on mobile"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=862073668&amp;format=interactive"
+  sheets_gid="1363374212"
+  sql_file="../sustainability/image_lazy_loading.sql"
+) }}
 
 
 On this graph, we see that native lazy-loading has been more and more widely adopted since its implementation. Around 1 website out of 4 uses it. Some might still be using JS libraries to implement this behavior and do not appear on this graph. Switching to native lazy-loading could be a great opportunity for them to slightly reduce requests and avoid some JS processing.
@@ -402,11 +438,14 @@ A quick note on iframes : also note that lazy-loading could be natively applied 
 Automatically preloading videos (or audio files) involves retrieving data that might not be useful for all users. On a page including such content and having many visitors, it can quickly add up. As such, preloading should be avoided and only done on user interaction.
 
 
-
-<p id="gdcalert13" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image13.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert14">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image13.png "image_tooltip")
+{{ figure_markup(
+  image="video-preload-usage.png"
+  caption="Video preload usage"
+  description="A column chart showing the preload attribute is not used on 57.6% of desktop videos and 59.5% of mobile videos. The preload attribute can be found with the 'none' value on 17.3% of desktop videos 15.4% of mobile videos. The 'auto' value is used on 15.3% of desktop videos 13.6% of mobile videos. The 'metadata' value is used on 7.5%% of desktop videos 9.2% of mobile videos. The prealod attribute is empty on 1.6% of both desktop and mobile videos. The value preload attribute has a value "TRUE" on respectively 0.4% and 0.3% of desktop and mobile videos. Lastly, the preload attribute has a value of 'preload', yes', 'undefined' or 'FALSE' on 0.1% of both desktop and mobile videos."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1090171830&amp;format=interactive"
+  sheets_gid="1420607407"
+  sql_file="../sustainability/video_preload_values.sql"
+) }}
 
 
 Looking at this graph, one should keep in mind that the preload attribute only has 3 possible values : _none_, _auto_ and _metadata_ (default). Using the preload attribute with no value or with an erroneous value might be the same as using the _metadata_ value. It still involves loading as much as 3% of the video to get these metadata and can thus be quite impactful. _None_ is still the best way to go for sustainability. But you have to keep in mind that this is only a hint for the browser. In the end, the browser has its own way of handling the preloading of the video and it might not fit with what you had in mind.
@@ -421,11 +460,14 @@ Most of the considerations we made on preload also apply with autoplay. In addit
 Also, this attribute can override your _preload_ setting since autoplaying requires loading (obviously).
 
 
-
-<p id="gdcalert14" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image14.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert15">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image14.png "image_tooltip")
+{{ figure_markup(
+  image="video-autoplay-usage.png"
+  caption="Video autoplay usage"
+  description="A column chart showing that the autoplay attribute is not used on respectively 53.1% and 52.6% of desktop and mobile videos. It is used with an empty value on 38.6% of desktop videos and 38.8% of mobile videos. It is used with an 'autoplay' value on 5.3% of desktop videos and 5.1% of mobile videos. It is used with an value 'TRUE' on 2.5% of desktop videos and 3% of mobile videos. It is used with an value '1' on 0.3% of desktop mobile videos. It is used with an value 'TRUE' on 2.5% of desktop videos and 3% of mobile videos. It is used with an value 'FALSE' on 0.2% of desktop mobile videos."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=2034030994&amp;format=interactive"
+  sheets_gid="1238590607"
+  sql_file="../sustainability/video_autoplay_values.sql"
+) }}
 
 
 More than half of the websites don’t use autoplay, which is great. But this is a boolean attribute so having it, even with an empty value (or wrong value), triggers autoplay. For all the reasons mentioned above, this should be avoided for both sustainability and accessibility.
@@ -468,13 +510,13 @@ Third-party requests account for 45% of all requests, with 94% of mobile website
 
 
 {{ figure_markup(
-caption="Percent of third-party requests on mobile pages that are served from green hosting.",
-content="91%",
-classes="big-number",
-sheets_gid="951750086",
-sql_file="percent_of_websites_with_third_party.sql"
-)
-}}
+  image="green-third-party-requests.png"
+  caption="Percents of green third party requests"
+  description="A column chart showing that on the top 1,000 websites 64.23% of thrid party requests relied on green hosting on desktop and 63.16% on mobile devices. On the top 10,000 websites it's 66.34% on desktop and 66.67% on mobile. For the top 100,000 sites it's 74.19% on both desktop and mobile. On the top million, it's 83.72% on desktop and 82.78 on mobile. Overall, we see that 88.89% of third party requests rely on green hosting on desktop and it goes up to 91.21% on mobile."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1339778519&amp;format=interactive"
+  sheets_gid="951750086"
+  sql_file="../sustainability/green_third_party_requests.sql"
+) }}
 
 
 With third-party requests making up such a large portion of requests on the web, it is reassuring to see that the vast majority of these requests are being served from green hosting providers.
@@ -522,11 +564,14 @@ If you want to learn more about all this, you should check the JS chapter [LINK 
 Minifying JS involves removing unnecessary characters for the browser, making your files lighter.
 
 
-
-<p id="gdcalert16" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image16.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert17">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image16.png "image_tooltip")
+{{ figure_markup(
+  image="unminified-javascript-savings.png"
+  caption="Unminified Javascript savings"
+  description="A column chart showing that on the 90th percentile 40KB of Javascript could be saved on desktop and 36KB on mobile if using Js minifying. On the 75th percentile 10KB of Javascript could be saved on desktop and 9KB on mobile. On the 50th, 25th and 10th percentile we see no KB savings, this is explained by the usage of Javascript minifying already in place on those websites."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=457277769&amp;format=interactive"
+  sheets_gid="1952499146"
+  sql_file="../sustainability/unminified_js_bytes.sql"
+) }}
 
 
 On this graph, we notice that most websites already do a great job at minifying JS and that benefits from minifying are not so big. However, why not do it since it’s easy to implement and always beneficial?
@@ -537,11 +582,14 @@ On this graph, we notice that most websites already do a great job at minifying 
 Inlining code is bad practice, even more for sustainability. Making your HTML heavier to load and process is not something you want. Inlining JS might also make it sometimes more difficult to optimize (and maintain).
 
 
-
-<p id="gdcalert17" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image17.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert18">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image17.png "image_tooltip")
+{{ figure_markup(
+  image="script-usage.png"
+  caption="Script usage"
+  description="A bar chart showing that on desktop 34.5% of javascript is inline and the other 65.5% is external. On mobile, 34.8% of Javascript is inline and 65.2% comes from external files."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1900077125&amp;format=interactive"
+  sheets_gid="2126160877"
+  sql_file="../sustainability/script_count.sql "
+) }}
 
 
 Almost one third of websites inline JS. This is also something you see a lot with CMS.
@@ -559,11 +607,14 @@ If you want to learn more about all this, you should check the CSS chapter [LINK
 As with CSS, minifying JS involves removing unnecessary characters for the browser, making your files lighter.
 
 
-
-<p id="gdcalert18" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image18.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert19">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image18.png "image_tooltip")
+{{ figure_markup(
+  image="unminified-css-savings.png"
+  caption="Unminified Css savings"
+  description="A column chart showing that on the 90th percentile 15KB of Css could be saved on desktop and 14KB on mobile if using Css minifying. On the 75th percentile 5KB of Css could be saved on desktop and 4KB on mobile. On the 50th, 25th and 10th percentile we see no KB savings, this is explained by the usage of Css minifying already in place on those websites."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=898637516&amp;format=interactive"
+  sheets_gid="1896195819"
+  sql_file="../sustainability/unminified_css_bytes.sql"
+) }}
 
 
 Unminified CSS is absent from most of the websites and the potential gains appear really light. However, it is still beneficial to minify CSS and this should be implemented on all websites.
@@ -574,11 +625,14 @@ Unminified CSS is absent from most of the websites and the potential gains appea
 As with JS, inlining CSS could prove detrimental for the size of your HTML file and for the performance of your website. This is often found on websites built with CM and those relying on the [Critical CSS method](https://web.dev/extract-critical-css/).
 
 
-
-<p id="gdcalert19" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image19.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert20">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image19.png "image_tooltip")
+{{ figure_markup(
+  image="style-usage.png"
+  caption="Style usage"
+  description="A bar chart showing that on both desktop and mobile, 25% of Css is inline and the other 75% comes from external stylesheets"
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1184478802&amp;format=interactive"
+  sheets_gid="362809205"
+  sql_file="../sustainability/stylesheet_count.sql"
+) }}
 
 
 On this graph, it appears that a quarter of websites still use inline CSS. This should be avoided.
@@ -589,11 +643,14 @@ On this graph, it appears that a quarter of websites still use inline CSS. This 
 This topic is [already covered in the Web Almanac](../2022/cdn) but it should be noted that implementing a CDN can help make your website more sustainable. It helps get your assets as close to your users as possible and sometimes automatically helps optimize them.
 
 
-
-<p id="gdcalert20" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image20.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert21">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image20.png "image_tooltip")
+{{ figure_markup(
+  image="cdn-usage.png"
+  caption="Cdn usage on the web"
+  description="A column chart showing that 69.7% of the pages analysed do not use any CDN on desktop and 71.2% on mobile, 16.9% of them use Cloudflare on desktop and 15.1% on mobile, 5.2% of them use Google on desktop and 6.5% on mobile, 2.8% use Fastly on desktop and 2.6% on mobile, 2.2% use Amazon Cloudfront on desktop and 1.8% on mobile, 1.1% use Akamai on desktop and 0.8% on mobile, 0.4% use Automattic on desktop and 0.7% on mobile, 0.5% use Sucuri Firewall on desktop and 0.3% on mobile, 0.4% use Sucuri Firewall on desktop and 0.3% on mobile. Netlify and Vercel are both used on 0.2% of the page tested on mobile and desktop. Lastly, we see CDN, Highwinds, Microsoft Azure and OVH CDN being used on 0.1% of the pages, both on desktop and mobile."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=508019478&amp;format=interactive"
+  sheets_gid="1415782903"
+  sql_file="../sustainability/cdn_adoption.sql"
+) }}
 
 
 Despite these obvious benefits, more than 70% of websites still don’t use a CDN.
@@ -604,11 +661,14 @@ Despite these obvious benefits, more than 70% of websites still don’t use a CD
 [Compressing the text assets for a website](https://web.dev/uses-text-compression/) could require some (easy) server-side configuration. Text files such as HTML, JS and CSS are then compressed (in Brotli or Gzip format), which can easily make them lighter.
 
 
-
-<p id="gdcalert21" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image21.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert22">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image21.png "image_tooltip")
+{{ figure_markup(
+  image="compression-used-on-text-resources.png"
+  caption="Compression used on text resources"
+  description="A bar chart showing that on desktop 28% of text resources are compressed using Brotli format, 46.7% of them where compressed in Gzip and 25.2% are not compressed. On mobile, 28.8% of text resources are compressed using Brotli format, 46.4% of them where compressed in Gzip and 24.8% are not compressed at all."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=2065385728&amp;format=interactive"
+  sheets_gid="218418435"
+  sql_file="../sustainability/text_compression.sql"
+) }}
 
 
 However, a quarter of websites still don’t implement text compression. Gzip is unanimously supported so feel free to use it.
@@ -621,11 +681,14 @@ However, a quarter of websites still don’t implement text compression. Gzip is
 Caching is great for sustainability since it prevents browsers from requesting all resources everytime.
 
 
-
-<p id="gdcalert22" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image22.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert23">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image22.png "image_tooltip")
+{{ figure_markup(
+  image="cache-control-header-usage.png"
+  caption="Cache control header usage"
+  description="A bar chart showing that on desktop 23.3% of websites use Cache Control Only, 0.5% of them use Expiries only and 51.2% of them use both. 25% of the websites do not use any caching on desktop. On mobile 22.5% of websites use Cache Control Only, 0.6% of them use Expiries only and 51% of them use both. 25.9% of the websites do not use any caching on mobile."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1354451270&amp;format=interactive"
+  sheets_gid="326683091"
+  sql_file="../sustainability/cache_header_usage.sql"
+) }}
 
 
 On this page, we see that more than a quarter of websites don’t use caching at all. This is a huge loss for sustainability and performance (and, for obvious reasons, users).
@@ -671,27 +734,34 @@ Online platforms and CMS tools help lower the barrier to entry for those wishing
 The charts below show the median page weight of the top five most popular eCommerce platforms, CMS tools, and site generator tools.
 
 
-
-<p id="gdcalert23" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image23.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert24">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image23.png "image_tooltip")
-
-
-
-
-<p id="gdcalert24" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image24.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert25">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{{ figure_markup(
+  image="median-kilobytes-by-ecommerce.png"
+  caption="Median kilobytes by ecommerce"
+  description="A bar chart showing that the median weight for WooCommerce pages is 3048KB on desktop and 2827KB on mobile. For Shopify it's 2428KB on desktop and 2080KB on mobile. For Squerspace Commerce it's 3462KB on desktop and 3577KB on mobile. For PrestaShop it's 2900KB on desktop and 2528KB on mobile. For Magento it's 3317KB on desktop and 3093KB on mobile."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=574238152&amp;format=interactive"
+  sheets_gid="1434449385"
+  sql_file="../sustainability/ecommerce_bytes_per_type.sql"
+) }}
 
 
-![alt_text](images/image24.png "image_tooltip")
+{{ figure_markup(
+  image="median-kilobytes-by-cms.png"
+  caption="Median kilobytes by CMS"
+  description="A bar chart showing that the median weight for Wordpress pages is 2559KB on desktop and 2314KB on mobile. For Drupal it's 2351KB on desktop and 2146KB on mobile. For Joomla it's 2799KB on desktop and 2495KB on mobile. For Wix it's 3172KB on desktop and 2158KB on mobile. For Squarespace it's 3462KB on desktop and 3577KB on mobile."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1499422639&amp;format=interactive"
+  sheets_gid="1561070567"
+  sql_file=""
+) }}
 
 
-
-
-<p id="gdcalert25" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image25.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert26">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image25.png "image_tooltip")
+{{ figure_markup(
+  image="static-site-generator-median.png"
+  caption="Static site generators median KB"
+  description="A bar chart showing that the median weight for Next.js pages is 2387KB on desktop and 2064KB on mobile. For Nuxt.js it's 2877KB on desktop and 2210KB on mobile. For Gatsby it's 2049KB on desktop and 1731KB on mobile. For Hugo it's 870KB on desktop and 1088KB on mobile. For Jekyll it's 662KB on desktop and 781KB on mobile."
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1545025671&amp;format=interactive"
+  sheets_gid="613315308"
+  sql_file="./sustainability/ssg_bytes_per_type.sql"
+) }}
 
 
 Of interest here is that all but three of the platforms/tools listed have a median mobile page weight that is less than the overall median (2019 KB). These are all in the static site generator category, and especially in the case of Hugo and Jekyll, it can likely be attributed to the kinds of websites these tools are used to create - namely mostly blog and textual content, with much less reliance on JavaScript. It should also be noted that SSG are often used with performance in mind, which makes them more likely to be further optimized than the average website using a CMS only for commodity reasons.
@@ -793,18 +863,24 @@ Another area of interest when looking across the three segments is that some sho
 </figure>
 
 
-<p id="gdcalert26" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image26.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert27">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+{{ figure_markup(
+  image="median-kilobytes-by-cms-and-resource-type-desktop.png"
+  caption="Median kilobytes by cms and resource type (desktop)"
+  description=""
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=159460424&amp;format=interactive"
+  sheets_gid="1561070567"
+  sql_file="../sustainability/cms_bytes_per_type.sql"
+) }}
 
 
-![alt_text](images/image26.png "image_tooltip")
-
-
-
-
-<p id="gdcalert27" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image27.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert28">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image27.png "image_tooltip")
+{{ figure_markup(
+  image="median-kilobytes-by-cms-and-resource-type-mobile.png"
+  caption="Median kilobytes by cms and resource type (mobile)"
+  description=""
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1726838193&amp;format=interactive"
+  sheets_gid="1561070567"
+  sql_file="../sustainability/cms_bytes_per_type.sql"
+) }}
 
 
 The table and graph above highlight that Wix, as part of their platform, appear to be applying much more aggressive mobile image optimizations. A similar pattern is seen in the site generator segment, especially when looking at frameworks like Next.js and Nuxt.js.
