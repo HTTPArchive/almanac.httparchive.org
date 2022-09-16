@@ -16,7 +16,6 @@ featured_stat_2: 7%
 featured_stat_label_2: Percentage of top 1,000 websites attributed to a known CMS
 featured_stat_3: 34%
 featured_stat_label_3: WordPress sites attributed to using a page builder
-unedited: true
 ---
 
 ## Introduction
