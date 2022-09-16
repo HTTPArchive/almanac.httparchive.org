@@ -1,20 +1,20 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Third Parties
-description: Third Parties chapter of the 2022 Web Almanac covering third-party impact on web performance and the usage of best practices related to third parties.
+description: This chapter focuses on the topic of how first- and third-party developers are eliminating the third-party negative impact on web performence and if the best practices are followed.
 authors: [imeugenia]
 reviewers: [tunetheweb, kevinfarrugia, alexnj]
 analysts: [kevinfarrugia]
 editors: [shantsis]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1YqoRRsyiNsrEabVLu2nRU98JIG_0zLLuoQhC2nX8xbM/
-featured_quote: Third parties are often associated with negative impact on web performance. However, both third parties and website developers can eliminate it so that third-party functionality isn't harming user experience.
+featured_quote: Third parties are often associated with negative impact on web performance. However, both third-party and website developers can eliminate it so that third-party functionality isn't harming user experience.
 featured_stat_1: 94%
 featured_stat_label_1: Websites using at least one third party
-featured_stat_2: 45%
-featured_stat_label_2: Requests made by websites that are third-party requests.
-featured_stat_3: 34%
-featured_stat_label_3: Third-party requests serving script content.
+featured_stat_2: 60%
+featured_stat_label_2: Top 10 third parties are blocking main thread on more than 60% of websites
+featured_stat_3: 59%
+featured_stat_label_3: Websites fail Lighthouse legacy JavaScript audit because of a third party
 ---
 
 ## Introduction
