@@ -61,9 +61,9 @@ As of June 2022, 45% of websites within the desktop dataset are powered by a CMS
 
 It is instructive to compare these numbers with another commonly used dataset, such as <a hreflang="en" href="https://w3techs.com/technologies/history_overview/content_management/all/q">W3Techs</a>, which reported that as of June 2021, 64.6% of websites are created using a CMS, up from 59.2% in June 2020, which is an increase of over 9%.
 
-The deviation between our analysis and W3Techs’ analysis can be explained by a difference in research methodologies, and the definition of what is a CMS.
+The deviation between our analysis and W3Techs’ analysis can be explained by a difference in research methodologies, and the definition of a CMS.
 
-W3Techs definition is the following: “_Content Management Systems are applications for creating and managing the content of a website. We include all such systems in this category, also systems that are often classified as wikis, blog engines, discussion boards, static site generators, website editors or any type of software that provides website content_.”
+W3Techs' definition is as follows: “_Content Management Systems are applications for creating and managing the content of a website. We include all such systems in this category, also systems that are often classified as wikis, blog engines, discussion boards, static site generators, website editors or any type of software that provides website content_.”
 
 As mentioned previously, Wappalyzer has a stricter definition of a CMS, which excludes some major CMSs which appear in W3Techs reports. You can read more about our definition on the [Methodology](../methodology) page.
 
@@ -83,9 +83,9 @@ CMSs are used around the world, with some variance by country.
   )
 }}
 
-Among the geographies with the highest number of websites, CMS adoption percentage is the highest in Italy, and Spain, where 41%–40% of mobile sites visited by users are built with a CMS. Brazil and Japan have the lowest adoption with only 31% and 32% respectively.
+Among the geographies with the highest number of websites, CMS adoption percentage is the highest in Italy and Spain where 40%–41% of mobile sites visited by users are built with a CMS. Brazil and Japan have the lowest adoption with only 31% and 32% respectively.
 
-Of particular interest is the decrease across the board from the 2021 dataset. Comparing year over year for mobile results, all countries except India appear to show a drop, ranging from a 4% decrease for the UK and Germany to an 8% decrease for the US and Italy.  Given the consistency of the decreases across geographies, it feels more plausible to be a variance in attribution than a wholesale drop in CMS adoption. We recommend this be evaluated further in next year’s analysis.
+Of particular interest is the decrease across the board from the 2021 dataset. Comparing year over year for mobile results, all countries except India appear to show a drop, ranging from a 4% decrease for the UK and Germany to an 8% decrease for the US and Italy.  Given the consistency of the decreases across geographies, it feels more plausible to be a variance in attribution than a wholesale drop in CMS adoption. We recommend evaluating this further in next year’s analysis.
 
 
 ### CMS adoption by rank
@@ -94,7 +94,7 @@ We examined CMS adoption by the estimated rank of the sites included within the 
 
 {{ figure_markup(
   image="cms-adoption-rank.png",
-  caption="Top ranking sites are less likely to use a public-facing CMS at a 6.7% adoption rate.",
+  caption="Top ranking sites are less likely to use a public-facing CMS with less than 7% adoption rate.",
   description="Column chart showing the adoption of CMSs split by the rank of the websites. Higher ranking sites are less likely to have a CMS attributed, while a larger percentage of lower ranking sites have a clearly attributed CMS.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=898515378&format=interactive",
   sheets_gid="1599740178",
@@ -102,34 +102,34 @@ We examined CMS adoption by the estimated rank of the sites included within the 
   )
 }}
 
-According to the dataset, CMSs are used by less than 7% of the top 1,000 websites, compared to 47% of the complete dataset of all mobile sites in our analysis. A possible explanation, and the one we offered last year, is that smaller businesses and websites tend to use a CMS due to the ease of use, and the higher ranked websites tend to be built with proprietary solutions by professional web developers.
+According to the dataset, CMSs are used by less than 7% of the top 1,000 websites, compared to 47% of the complete dataset of all mobile sites in our analysis. A possible explanation, and the one we offered last year, is that smaller businesses and websites tend to use a CMS due to the ease of use, and the higher ranked websites tend to be built with proprietary solutions by professional web developers. 
 
-Another explanation is that for higher ranking sites which tend to have more resources allocated to development, the choice of a CMS is more likely to be obfuscated. It seems improbable that more than 90% of the top 1,000 would forgo a CMS entirely and more likely that they just don’t show up in our dataset.
+Another explanation is that for higher ranking sites which tend to have more resources allocated to development, the choice of a CMS is more likely to be obfuscated. It is improbable that more than 90% of the top 1,000 would forgo a CMS entirely and more likely that they just don’t show up in our dataset.
 
-A potentially correlated trend is the adoption of “headless” and the move towards separating content, and the CMS that powers it, from the frontend experience offered to end-users.
+A potentially correlated trend is the adoption of “headless” CMSs and the move towards separating content — and the CMS that powers it — from the frontend experience offered to end-users. 
 
-While our confidence in the overall dataset remains high, we’re interested in investigating the adoption by rank dataset further in future editions to see if more can be done to detect CMS usage and improve the overall accuracy of our results.
+While our confidence in the overall dataset remains high, we’re interested in investigating the adoption by rank dataset further in future editions of this report to see if more can be done to detect CMS usage and improve the overall accuracy of our results. 
 
 ## Most popular CMSs
 
-Among all websites that are attributed as using a CMS, WordPress sites account for the majority of the relative market share, with over 35% adoption on mobile, followed by Wix (2%), Joomla (1.8%), Drupal (1.6%), and Squarespace (1%).
+Among all websites that use an identifiable CMS, WordPress sites account for the majority of the relative market share — with over 35% adoption on mobile — followed by Wix (2%), Joomla (1.8%), Drupal (1.6%), and Squarespace (1%).
 
 {{ figure_markup(
   image="top-5-cms-yoy.png",
-  caption="Wordpress and Wix experienced steady growth over the past 3 years.",
-  description="Column chart depicting the percent of websites built on each of the top 5 CMSs, in the past 3 years. WordPress, Wix and Squarespace are growing in adoption year-over-year, while Drupal and Joomla are dropping.",
+  caption="WordPress and Wix experienced steady growth over the past 3 years.",
+  description="Column chart depicting the percent of websites built on each of the top five CMSs, in the past 3 years. WordPress, Wix and Squarespace are growing in adoption year-over-year, while Drupal and Joomla are dropping.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=714516300&format=interactive",
   sheets_gid="1396671791",
   sql_file="top_cms.sql"
   )
 }}
 
-Comparing year over year, Drupal and Joomla continue to decline in market share, while Squarespace remains steady and Wix grows. WordPress continues its assent, increasing 1.4% over 2021 on mobile, and 0.2% over 2021 on desktop.
+Comparing year over year, Drupal and Joomla continue to decline in market share, while Squarespace remains steady and Wix grows. WordPress continues its ascent, increasing 1.4% over 2021 on mobile, and 0.2% over 2021 on desktop.
 
 {{ figure_markup(
   image="wordpress-page-builders.png",
-  caption="43% of mobile wordpress page builders adopted elementor.",
-  description="Column chart depicting the top 5 page builders for WordPress.",
+  caption="43% of mobile WordPress page builders adopted elementor.",
+  description="Column chart depicting the top five page builders for WordPress.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=184382453&format=interactive",
   sheets_gid="2087504589",
   sql_file="wordpress_page_builders.sql"
