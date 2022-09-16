@@ -141,10 +141,12 @@ Now for an additional graph : emissions per percentile by type of content.
   description="A bar chart showing the percent of different content types on desktop in the total page carbon emissions by percentile. On the 90th percentile HTML content accounts for around 2.5% of the total carbon emissions, Javascript is responsible a bit less than 17.5% of total carbon emissions, Css is around 2.5%, images accounts for around 72.5% and fonts represent 5% of the total carbon emissions. On the 75th percentile, Html represents 2%, Javascript 23%, Css around 5%, images around 65% and fonts around 5% of the total carbon emissions. On the 50th percentile, Html represents 2%, Javascript 30%, Css around 5%, images almost 60% and fonts around 7% of the total carbon emissions. On the 25th percentile, Html represents 2%, Javascript 35%, Css around 6%, images 50% and fonts around 7% of the total carbon emissions. On the 10th percentile, Html represents 2.5%, Javascript 50%, Css around 5%, images 42.5% and fonts 0% of the total carbon emissions.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1976764368&format=interactive",
   sheets_gid="1911144863",
-  sql_file=""
+  sql_file="",
+  width=600,
+  height=391
 ) }}
 
-Images and JS seem to be the more impactful but images get even more impactful as you go to upper percentiles. However, keep in mind that we only take data transfer into account to calculate carbon emissions. Processing JS is usually more impactful than images. Once you have downloaded the JS files, you still need to process them, sometimes leading to reloading your page or fetching other resources. Nonetheless, this graph underlines the necessity to reduce these impacts. It can be quite easy for images, as we will see later in this chapter. It gets more tricky with JS, even though there are some easy technical optimizations such as minifying, compressing or reducing the need for it. More on that later too.
+Images and JavaScript seem to be the more impactful but images get even more impactful as you go to upper percentiles. However, keep in mind that we only take data transfer into account to calculate carbon emissions. Processing JavaScript is usually more impactful than images. Once you have downloaded the JavaScript files, you still need to process them, sometimes leading to reloading your page or fetching other resources. Nonetheless, this graph underlines the necessity to reduce these impacts. It can be quite easy for images, as we will see later in this chapter. It gets more tricky with JavaScript, even though there are some easy technical optimizations such as minifying, compressing or reducing the need for it. More on that later too.
 
 ### Number of requests
 
@@ -174,7 +176,7 @@ So, which content type is to blame for this?
   sql_file="requests_by_type.sql"
 ) }}
 
-As usual, images are the main offenders but JS is close behind.
+As usual, images are the main offenders but JavaScript is close behind.
 
 There are almost as many HTTP requests for mobile and desktop versions, which shouldn’t be the case. As with page weight, mobile pages should be kept as light as possible to take into account aging devices, erratic connectivity and expensive mobile data. Since many individuals still use the web in such suboptimal conditions, mobile web should comply and make everything possible to be accessible for all.
 
@@ -187,7 +189,7 @@ There are almost as many HTTP requests for mobile and desktop versions, which sh
   sql_file="page_bytes_per_type.sql"
 ) }}
 
-There are almost as many HTTP requests for images and JS but the overall weight is much higher for images. JS being generally heavier to process than images, this is still bad news. Once again, the results are really close for mobile and desktop, even if it would totally make sense to offer lighter experiences on mobile.
+There are almost as many HTTP requests for images and JavaScript but the overall weight is much higher for images. JavaScript being generally heavier to process than images, this is still bad news. Once again, the results are really close for mobile and desktop, even if it would totally make sense to offer lighter experiences on mobile.
 
 ### More sustainable hosting
 
@@ -208,7 +210,7 @@ An increasing number of technology firms are also taking steps to green **all** 
 {{ figure_markup(
   image="green-hosting-percentages.png",
   caption="% Green hosting",
-  description="A column chart showing that on the top 1,000 sites, on desktop, 54.3% of them relied on green web hosting and it drops at 52.3% on mobile. On the top 10,000 sites it's 49.6% on desktop and 48.2% on mobile, on the top 100,000 it's 38.7% on desktop and 37.6% on mobile, on the top million it's 24.5% for desktops and 23.7% on mobile. On all measured websites globally, only 13.5% rely on green web hosting for desktop and 10% for mobile",
+  description="A column chart showing that on the top 1,000 sites, on desktop, 54% of them relied on green web hosting and it drops at 52% on mobile. On the top 10,000 sites it's 50% on desktop and 48% on mobile, on the top 100,000 it's 39% on desktop and 38% on mobile, on the top million it's 24% for desktops and 24% on mobile. On all measured websites globally, only 13% rely on green web hosting for desktop and 10% for mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=222811305&format=interactive",
   sheets_gid="1022303859",
   sql_file="green_web_hosting.sql"
@@ -243,7 +245,7 @@ For more on this, you should check the [Fonts](./fonts) chapter. You can also fi
 
 ##### Unused CSS
 
-Unused CSS is especially found when using CSS frameworks (Bootstrap and others). When doing so, you should keep in mind to remove unused CSS during your build phase. <a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage/">Chrome Dev Tools offer a Coverage tool to check on this</a>. Be careful : on many websites, all CSS and JS are loaded on the first visit in order to cache them for further visits and exploration of the website. This is not necessarily a bad thing but unused code is one of the drawbacks that you should keep in mind, even more because it might slow down further code processing.
+Unused CSS is especially found when using CSS frameworks (Bootstrap and others). When doing so, you should keep in mind to remove unused CSS during your build phase. <a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage/">Chrome Dev Tools offer a Coverage tool to check on this</a>. Be careful : on many websites, all CSS and JavaScript are loaded on the first visit in order to cache them for further visits and exploration of the website. This is not necessarily a bad thing but unused code is one of the drawbacks that you should keep in mind, even more because it might slow down further code processing.
 
 {{ figure_markup(
   image="unused-css-bytes.png",
@@ -256,9 +258,9 @@ Unused CSS is especially found when using CSS frameworks (Bootstrap and others).
 
 The good news is the 10 percentile websites load no unnecessary CSS. Unfortunately, it rises steadily on this graph, reaching more than 200 kB on the 90th percentile. Whether this for early caching reasons or otherwise, this should be checked. For sustainability, 200 kB of CSS is already a big deal.
 
-##### Unused JS
+##### Unused JavaScript
 
-The amount of unused JS could grow fast when adding dependencies or using libraries such as jQuery. <a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage/">The Coverage tool from Chrome Dev Tools is a good way to check on this</a>. As for CSS, this is sometimes part of a strategy to cache everything needed for further browsing.  This should be balanced by the fact that unused JS tends to result in longer processing. When possible, look for <a hreflang="en" href="http://microjs.com">smaller alternatives</a> with only the functionalities that you need instead of loading the whole toolbox, hoping it will one day prove useful. Once upon a time, jQuery was the all-in-one solution that you found on almost every website. <a hreflang="en" href="https://youmightnotneedjquery.com/">As of today, a lot of things can be handled with modern JS</a>. <a hreflang="en" href="https://bundlephobia.com/">Maybe you should check your NPM dependencies and how they make your bundle bigger</a>.
+The amount of unused JavaScript could grow fast when adding dependencies or using libraries such as jQuery. <a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage/">The Coverage tool from Chrome Dev Tools is a good way to check on this</a>. As for CSS, this is sometimes part of a strategy to cache everything needed for further browsing.  This should be balanced by the fact that unused JavaScript tends to result in longer processing. When possible, look for <a hreflang="en" href="http://microjs.com">smaller alternatives</a> with only the functionalities that you need instead of loading the whole toolbox, hoping it will one day prove useful. Once upon a time, jQuery was the all-in-one solution that you found on almost every website. <a hreflang="en" href="https://youmightnotneedjquery.com/">As of today, a lot of things can be handled with modern JavaScript</a>. <a hreflang="en" href="https://bundlephobia.com/">Maybe you should check your NPM dependencies and how they make your bundle bigger</a>.
 
 {{ figure_markup(
   image="unused-javascript-bytes.png",
@@ -269,7 +271,7 @@ The amount of unused JS could grow fast when adding dependencies or using librar
   sql_file="unused_js_bytes.sql"
 ) }}
 
-One again, the 10th percentile looks great with no unused JS. However, this gets even worse than CSS for the upper percentiles, reaching more than 600 kB on the 90th percentile. Which is already more than the ideal total page weight you should aim for.
+One again, the 10th percentile looks great with no unused JavaScript. However, this gets even worse than CSS for the upper percentiles, reaching more than 600 kB on the 90th percentile. Which is already more than the ideal total page weight you should aim for.
 
 ### Sustainable UX
 
@@ -340,7 +342,7 @@ Also remember that you don’t need a quality of more than 85% since the human e
 {{ figure_markup(
   image="responsive-image-types.png",
   caption="Responsive image types",
-  description="A column chart showing that around 33% of websites use the srcset attribute on desktop and 34% on mobile, 25.3% of them used it with sizes on desktop and 26.1% on mobile, 7.7% of them used the srcset attribute with w/o sizes on desktop and 7.8% on mobile. 8% ofthe websites use the picture element on desktop and 7.7% of them on mobile",
+  description="A column chart showing that around 33% of websites use the srcset attribute on desktop and 34% on mobile, 25% of them used it with sizes on desktop and 26% on mobile, 8% of them used the srcset attribute with w/o sizes on desktop and 8% on mobile. 8% ofthe websites use the picture element on desktop and 8% of them on mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=403648557&format=interactive",
   sheets_gid="695142267",
   sql_file="responsive_images.sql"
@@ -355,13 +357,13 @@ An easy way to get a faster first load is to load images progressively : only lo
 {{ figure_markup(
   image="native-lazy-loading-usage.png",
   caption="Native lazy loading usage",
-  description="A column chart showing that no websites used native lazy-loading on July the 1st, 2019. On August the 1st, 2020, 3.7% of websites used native lazy-loading on desktop 3.9% on mobile. On July the 1st, 2021, 17.8% of websites used native lazy-loading on both desktop and mobile, and on the 1st June of 2022, 23.3% of websites used native lazy-loading o ndesktop and 23.8% on mobile",
+  description="A column chart showing that no websites used native lazy-loading on July the 1st, 2019. On August the 1st, 2020, 4% of websites used native lazy-loading on desktop 4% on mobile. On July the 1st, 2021, 18% of websites used native lazy-loading on both desktop and mobile, and on the 1st June of 2022, 23% of websites used native lazy-loading o ndesktop and 24% on mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=862073668&format=interactive",
   sheets_gid="1363374212",
   sql_file="image_lazy_loading.sql"
 ) }}
 
-On this graph, we see that native lazy-loading has been more and more widely adopted since its implementation. Around 1 website out of 4 uses it. Some might still be using JS libraries to implement this behavior and do not appear on this graph. Switching to native lazy-loading could be a great opportunity for them to slightly reduce requests and avoid some JS processing.
+On this graph, we see that native lazy-loading has been more and more widely adopted since its implementation. Around 1 website out of 4 uses it. Some might still be using JavaScript libraries to implement this behavior and do not appear on this graph. Switching to native lazy-loading could be a great opportunity for them to slightly reduce requests and avoid some JavaScript processing.
 
 A quick note on iframes : also note that lazy-loading could be natively applied to iframes, although, for sustainability reasons,  you should consider avoiding iframes altogether. Most of the time, <a hreflang="en" href="https://web.dev/third-party-facades/">facade</a> is the good pattern for you, whether you want (for example) to include embedded videos or interactive maps. Directly including external content on your page has a bad habit of increasing the weight and requests of the page and often causes accessibility issues.
 
@@ -434,7 +436,7 @@ Third-party requests account for 45% of all requests, with 94% of mobile website
 {{ figure_markup(
   image="green-third-party-requests.png",
   caption="Percents of green third party requests",
-  description="A column chart showing that on the top 1,000 websites 64.23% of thrid party requests relied on green hosting on desktop and 63.16% on mobile devices. On the top 10,000 websites it's 66.34% on desktop and 66.67% on mobile. For the top 100,000 sites it's 74.19% on both desktop and mobile. On the top million, it's 83.72% on desktop and 82.78 on mobile. Overall, we see that 88.89% of third party requests rely on green hosting on desktop and it goes up to 91.21% on mobile.",
+  description="A column chart showing that on the top 1,000 websites 64% of thrid party requests relied on green hosting on desktop and 63% on mobile devices. On the top 10,000 websites it's 66% on desktop and 67% on mobile. For the top 100,000 sites it's 74% on both desktop and mobile. On the top million, it's 84% on desktop and 83% on mobile. Overall, we see that 89% of third party requests rely on green hosting on desktop and it goes up to 91% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1339778519&format=interactive",
   sheets_gid="951750086",
   sql_file="green_third_party_requests.sql"
@@ -466,15 +468,15 @@ We have just seen a lot about the sustainability of the content of websites (eve
 
 By the way, the web performance experts have done a lot in the field of technical optimizations so there is a lot to learn from them. Just keep in mind that some of their best practices don’t necessarily make your websites more sustainable. However, making things lighter and simpler is great for sustainability AND performance (and accessibility).
 
-#### JS
+#### JavaScript
 
-There is a lot to be said about JS and how it helped the web grow (and how it sometimes slows it down). Let’s stick to some quick wins : easy to implement and great for sustainability.
+There is a lot to be said about JavaScript and how it helped the web grow (and how it sometimes slows it down). Let’s stick to some quick wins : easy to implement and great for sustainability.
 
 If you want to learn more about all this, you should check the [JavaScript](./javascript) chapter.
 
 ##### Minification
 
-Minifying JS involves removing unnecessary characters for the browser, making your files lighter.
+Minifying JavaScript involves removing unnecessary characters for the browser, making your files lighter.
 
 {{ figure_markup(
   image="unminified-javascript-savings.png",
@@ -485,22 +487,22 @@ Minifying JS involves removing unnecessary characters for the browser, making yo
   sql_file="unminified_js_bytes.sql"
 ) }}
 
-On this graph, we notice that most websites already do a great job at minifying JS and that benefits from minifying are not so big. However, why not do it since it’s easy to implement and always beneficial?
+On this graph, we notice that most websites already do a great job at minifying JavaScript and that benefits from minifying are not so big. However, why not do it since it’s easy to implement and always beneficial?
 
 ##### Including as few as possible directly in HTML
 
-Inlining code is bad practice, even more for sustainability. Making your HTML heavier to load and process is not something you want. Inlining JS might also make it sometimes more difficult to optimize (and maintain).
+Inlining code is bad practice, even more for sustainability. Making your HTML heavier to load and process is not something you want. Inlining JavaScript might also make it sometimes more difficult to optimize (and maintain).
 
 {{ figure_markup(
   image="script-usage.png",
   caption="Script usage",
-  description="A bar chart showing that on desktop 34.5% of javascript is inline and the other 65.5% is external. On mobile, 34.8% of Javascript is inline and 65.2% comes from external files.",
+  description="A bar chart showing that on desktop 34% of javascript is inline and the other 66% is external. On mobile, 35% of Javascript is inline and 65% comes from external files.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1900077125&format=interactive",
   sheets_gid="2126160877",
   sql_file="script_count.sql "
 ) }}
 
-Almost one third of websites inline JS. This is also something you see a lot with CMS.
+Almost one third of websites inline JavaScript. This is also something you see a lot with CMS.
 
 #### CSS
 
@@ -510,7 +512,7 @@ If you want to learn more about all this, you should check the [CSS](./css) chap
 
 ##### Minification
 
-As with CSS, minifying JS involves removing unnecessary characters for the browser, making your files lighter.
+As with CSS, minifying JavaScript involves removing unnecessary characters for the browser, making your files lighter.
 
 {{ figure_markup(
   image="unminified-css-savings.png",
@@ -525,7 +527,7 @@ Unminified CSS is absent from most of the websites and the potential gains appea
 
 ##### Including as few as possible directly in HTML
 
-As with JS, inlining CSS could prove detrimental for the size of your HTML file and for the performance of your website. This is often found on websites built with CM and those relying on the <a hreflang="en" href="https://web.dev/extract-critical-css/">Critical CSS method</a>.
+As with JavaScript, inlining CSS could prove detrimental for the size of your HTML file and for the performance of your website. This is often found on websites built with CM and those relying on the <a hreflang="en" href="https://web.dev/extract-critical-css/">Critical CSS method</a>.
 
 {{ figure_markup(
   image="style-usage.png",
@@ -548,19 +550,21 @@ This topic is [already covered in the Web Almanac](../2022/cdn) but it should be
   description="A column chart showing that 69.7% of the pages analysed do not use any CDN on desktop and 71.2% on mobile, 16.9% of them use Cloudflare on desktop and 15.1% on mobile, 5.2% of them use Google on desktop and 6.5% on mobile, 2.8% use Fastly on desktop and 2.6% on mobile, 2.2% use Amazon Cloudfront on desktop and 1.8% on mobile, 1.1% use Akamai on desktop and 0.8% on mobile, 0.4% use Automattic on desktop and 0.7% on mobile, 0.5% use Sucuri Firewall on desktop and 0.3% on mobile, 0.4% use Sucuri Firewall on desktop and 0.3% on mobile. Netlify and Vercel are both used on 0.2% of the page tested on mobile and desktop. Lastly, we see CDN, Highwinds, Microsoft Azure and OVH CDN being used on 0.1% of the pages, both on desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=508019478&format=interactive",
   sheets_gid="1415782903",
-  sql_file="cdn_adoption.sql"
+  sql_file="cdn_adoption.sql",
+  width=600,
+  height=511
 ) }}
 
 Despite these obvious benefits, more than 70% of websites still don’t use a CDN.
 
 #### Text compression
 
-<a hreflang="en" href="https://web.dev/uses-text-compression/">Compressing the text assets for a website</a> could require some (easy) server-side configuration. Text files such as HTML, JS and CSS are then compressed (in Brotli or Gzip format), which can easily make them lighter.
+<a hreflang="en" href="https://web.dev/uses-text-compression/">Compressing the text assets for a website</a> could require some (easy) server-side configuration. Text files such as HTML, JavaScript and CSS are then compressed (in Brotli or Gzip format), which can easily make them lighter.
 
 {{ figure_markup(
   image="compression-used-on-text-resources.png",
   caption="Compression used on text resources",
-  description="A bar chart showing that on desktop 28% of text resources are compressed using Brotli format, 46.7% of them where compressed in Gzip and 25.2% are not compressed. On mobile, 28.8% of text resources are compressed using Brotli format, 46.4% of them where compressed in Gzip and 24.8% are not compressed at all.",
+  description="A bar chart showing that on desktop 28% of text resources are compressed using Brotli format, 47% of them where compressed in Gzip and 25% are not compressed. On mobile, 29% of text resources are compressed using Brotli format, 46% of them where compressed in Gzip and 25% are not compressed at all.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=2065385728&format=interactive",
   sheets_gid="218418435",
   sql_file="text_compression.sql"
@@ -577,7 +581,7 @@ Caching is great for sustainability since it prevents browsers from requesting a
 {{ figure_markup(
   image="cache-control-header-usage.png",
   caption="Cache control header usage",
-  description="A bar chart showing that on desktop 23.3% of websites use Cache Control Only, 0.5% of them use Expiries only and 51.2% of them use both. 25% of the websites do not use any caching on desktop. On mobile 22.5% of websites use Cache Control Only, 0.6% of them use Expiries only and 51% of them use both. 25.9% of the websites do not use any caching on mobile.",
+  description="A bar chart showing that on desktop 23% of websites use Cache Control Only, 1% of them use Expiries only and 51% of them use both. 25% of the websites do not use any caching on desktop. On mobile 22% of websites use Cache Control Only, 1% of them use Expiries only and 51% of them use both. 26% of the websites do not use any caching on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1354451270&format=interactive",
   sheets_gid="326683091",
   sql_file="cache_header_usage.sql"
@@ -748,7 +752,9 @@ Another area of interest when looking across the three segments is that some sho
   description="",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=159460424&format=interactive",
   sheets_gid="1561070567",
-  sql_file="cms_bytes_per_type.sql"
+  sql_file="cms_bytes_per_type.sql",
+  width=600,
+  height=391
 ) }}
 
 {{ figure_markup(
@@ -757,7 +763,9 @@ Another area of interest when looking across the three segments is that some sho
   description="",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1726838193&format=interactive",
   sheets_gid="1561070567",
-  sql_file="cms_bytes_per_type.sql"
+  sql_file="cms_bytes_per_type.sql",
+  width=600,
+  height=391
 ) }}
 
 The table and graph above highlight that Wix, as part of their platform, appear to be applying much more aggressive mobile image optimizations. A similar pattern is seen in the site generator segment, especially when looking at frameworks like Next.js and Nuxt.js.
@@ -803,7 +811,7 @@ To get started on an existing website, you can :
 You should then :
 
 * Clean up your 3rd-parties
-* Optimize your CSS and JS (starting with the easy technical optimizations and automating them)
+* Optimize your CSS and JavaScript (starting with the easy technical optimizations and automating them)
 * Review the design to make your page more sober (less visual content, less animations, etc) and streamline the user journey(s)
 
 Making your websites more sustainable is part of continuous improvement. Not everything can (or should) be done at once. Rely on best practices AND measurements to make sure you’re going the right way. Whether you’re working on an existing website or creating a new one from scratch, keep everyone in the team involved or at least aware of this topic.
