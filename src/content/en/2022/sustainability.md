@@ -7,7 +7,7 @@ reviewers: [mrchrisadams, cqueern, Djohn12]
 analysts: [fershad, camcash17, 4upz]
 editors: [tunetheweb]
 translators: []
-results: https://docs.google.com/spreadsheets/d/1wU3SjB8XYkbaqxYt8CNtbmDbjCcYZ8m5kiYof7uyI5k/edit#gid=326683091
+results: https://docs.google.com/spreadsheets/d/1wU3SjB8XYkbaqxYt8CNtbmDbjCcYZ8m5kiYof7uyI5k/edit
 ldevernay_bio: Laurent Devernay is a Digital Sobriety Expert for <a href="https://greenspector.com/en/home/">Greenspector</a>. You can find him blogging <a href="https://ldevernay.github.io/">on his own</a> or <a href="https://greenspector.com/en/blog-2/">for this company</a> but almost always about web sustainability. Which makes him either an enthusiast or a monomaniac.
 gerrymcgovernireland_bio: Gerry has published eight books. His latest, <a href="https://gerrymcgovern.com/books/world-wide-waste/">World Wide Waste</a>, examines the impact digital is having on the environment. He developed <a href="https://gerrymcgovern.com/books/top-tasks-a-how-to-guide/">Top Tasks</a>, a research method which helps identify what truly matters to people.
 timfrick_bio: <a href="https://www.mightybytes.com/teammember/tim-frick/">Tim Frick</a> started his digital agency <a href="https://www.mightybytes.com/">Mightybytes</a> in 1998 to help nonprofits, social enterprises, and purpose-driven companies solve problems, amplify their impact, and drive measurable business results. Mightybytes is a <a href="https://www.mightybytes.com/b-corporation/">Certified B Corp</a> that uses business for good. Certified B Corps meet the highest verified standards of social and environmental performance, transparency, and accountability. Tim is the author of four books, including <em><a href="https://www.oreilly.com/library/view/designing-for-sustainability/9781491935767/">Designing for Sustainability&colon; A Guide to Building Greener Digital Products and Services</a></em>. A seasoned public speaker, he regularly presents at conferences and offers workshops on sustainable design, measuring impact, and problem solving in the digital economy. He has also served on the boards of several nonprofit organizations, including <a href="https://www.climateride.org/">Climate Ride</a>, <a href="https://www.illinoisbcorps.org/">B Local Illinois</a>, and the <a href="https://greatlakes.org/">Alliance for the Great Lakes</a>.
@@ -653,7 +653,6 @@ Another area of interest when looking across the three segments is that some sho
   <table>
     <thead>
       <tr>
-        <td></td>
         <th scope="colgroup" colspan="1" ></th>
         <th scope="colgroup" colspan="5" >Desktop</th>
         <th scope="colgroup" colspan="5" >Mobile</th>
