@@ -9,7 +9,7 @@ editors: [MichaelLewittes]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1qBQWxNKIAVJNOFwGlslT7AW0VAoK85Mf3nFvtw0QjVU/
 SophieBrannon_bio: Sophie is the Client Services Director at UK-based agency Absolute Digital Media and specialises in SEO strategy and content marketing in highly competitive industries such as health and finance. Sophie is a conference speaker and industry blogger, and has proven experience in strategising and delivering award-winning campaigns on a local, national and international scale.
-itamarblauer_bio: TODO
+itamarblauer_bio: Itamar Blauer is an SEO expert based in London. He has a proven track-record of increasing rankings with SEO that is UX-focused, data-backed, and creative.
 mordy-oberstein_bio: Mordy Oberstein is the Head of SEO Branding at Wix. He also serves as a consultant for SEMrush and sits behind the mic of multiple SEO podcasts, including the SERP's Up podcast.
 featured_quote: The implementation of structured data in the HTML of a page has continually increased. In 2021, 41.8% of desktop pages and 42.5% of mobile pages used structured data. In 2022, it’s risen to 44% of desktop pages and 45.1% of mobile pages that have structured data within their HTML.
 featured_stat_1: 84.75%
