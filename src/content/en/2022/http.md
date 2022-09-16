@@ -9,14 +9,14 @@ analysts: [paivaspol]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1NJrPOjBoJSDsHV0rAHpcZ9qBUgy6RVG3QtvbTqrj5_o/
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
-unedited: true
+featured_quote: This past year was an eventful year for the HTTP protocol especially with HTTP/3 being standardized. We continue to observe high HTTP/2 utilization and see a strong upcoming HTTP/3 support from web servers.
+featured_stat_1: 77%
+featured_stat_label_1: The percentage of requests served on HTTP/2 or above
+featured_stat_2: 1.5%
+featured_stat_label_2: The percentage of websites adopting 103 Early Hints
+featured_stat_3: 50%
+featured_stat_label_3: The increase in percentage of requests that have HTTP/3 support
+paivaspol_bio: Vaspol Ruamviboonsuk is a Software Engineer at Microsoft. He completed his PhD from the University of Michigan conducting research on systems to make web pages load faster. You can connect with him on <a hreflang="en" href="https://www.linkedin.com/in/vaspol-ruamviboonsuk-7898b824/">LinkedIn</a>.
 ---
 
 ## Introduction
@@ -123,11 +123,17 @@ With HTTP/2, clients can [multiplex](https://stackoverflow.com/questions/3651782
 
 With the challenges to HTTP/2 priorities, a new prioritization scheme was needed. The [Extensible Prioritization Scheme for HTTP](https://httpwg.org/specs/rfc9218.html) was developed separately from HTTP/3 and was standardized in June 2022. In this scheme, clients can explicitly assign a priority composed of two parameters via the `priority` HTTP header or the `PRIORITY_UPDATE` frame. The first parameter, `urgency`,  tells the server the priority of the requested resource. The second parameter, `incremental`, tells the server whether a resource can be partially used at the client (for example, partially displaying an image as parts of it arrive). Defining the scheme as a HTTP header and as the `PRIORITY_UPDATE` frame makes it extensible as both formats were designed to provide future extensibility. At the time of writing, the scheme has been deployed for HTTP/3 in Safari, Firefox, and Chrome.
 
-While most of the resource priorities are decided by the browser itself, developers can now also use the new [priority hints](https://web.dev/priority-hints/) to tweak the priority of a particular resource. Priority hints can be specified via the `fetchpriority` attribute in the HTML. For example, suppose that a website would like to prioritize a hero image, it can add `fetchpriority` to the image tag: `&lt;img  src=”hero.png” fetchpriority=”high” />`.
+While most of the resource priorities are decided by the browser itself, developers can now also use the new [priority hints](https://web.dev/priority-hints/) to tweak the priority of a particular resource. Priority hints can be specified via the `fetchpriority` attribute in the HTML. For example, suppose that a website would like to prioritize a hero image, it can add `fetchpriority` to the image tag: `<img  src=”hero.png” fetchpriority=”high” />`.
 
-**1.2%**
+{{ figure_markup(
+  caption="Mobile pages using Priority Hints.",
+  content="1.2%",
+  classes="big-number",
+  sheets_gid="1067615125",
+  sql_file="priority_hints_usage.sql"
+)
+}}
 
-&lt;Insert number figure for priority hints usage: 1.2% of mobile pages use priority hints>
 
 Priority hints can be very effective in improving user experience. For example, [Etsy conducted an experiment](https://www.etsy.com/codeascraft/priority-hints-what-your-browser-doesnt-know-yet) and observed a 4% improvement in Largest Contentful Paint (LCP) on product listing pages that included priority hints for certain images. While Priority Hints was only recently released at the end of April 2022 as part of Chrome 101, it has a very promising adoption as we observe that approximately 1% of desktop web pages and 1.2% of mobile web pages have already adopted priority hints in August 2022. With its potential to improve user experience with relative ease, it may be a good feature to experiment with.
 
@@ -159,7 +165,14 @@ Given the challenges to using HTTP/2 push, developers can use [Link rel=”prelo
 
 In 2017, the 103 Early Hints status code was standardized; Chrome added support for it this year. Early hints can be used to send interim HTTP responses before the final response of the requested object; they can boost performance by leveraging the fact that web servers often require some time to prepare a response  (especially for the main HTML document if it is dynamically rendered). One use case of Early Hints is to deliver Link rel=”preload” (or “preconnect”) for resources to preemptively fetch, but other headers can conceptually also be conveyed. Early hints can be a better alternative than push because clients retain greater control over how the resources are fetched, but still allow an improvement on just adding preloads and preconnects to the main document request.  Furthermore, early hints can be used for 3rd party resources, which was not possible with push
 
-&lt;insert number figure 1.5% showing percentage of websites using early hints>
+{{ figure_markup(
+  caption="Desktop pages using 103 Early Hints.",
+  content="1.6%",
+  classes="big-number",
+  sheets_gid="187640264",
+  sql_file="early_hints_usage.sql"
+)
+}}
 
 There are studies showing that adopting early hints can improve user experience. For example, [Shopify observed 20-30% LCP improvements](https://blog.cloudflare.com/early-hints-performance/) in their lab study. We observe that approximately 1.6% of web sites in our dataset have adopted early hints and most of the adoption  (1.5%) stems from websites running on Shopify’s platform. With the 25% of websites including &lt;link rel=”preload”> with the page response, there is significant potential to convert such link nodes to early hints.
 
