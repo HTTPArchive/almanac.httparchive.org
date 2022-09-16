@@ -2,14 +2,15 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: SEO
 description: SEO chapter of the 2022 Web Almanac covering crawlability, indexability, page experience, on-page SEO, links, AMP, internationalization, and more.
-authors: [SophieBrannon, itamarblauer]
+authors: [SophieBrannon, itamarblauer, mordy-oberstein]
 reviewers: [patrickstox, TusharPol, mobeenali97, dwsmart, johnmurch]
 analysts: [csliva, jroakes, derekperkins]
 editors: [MichaelLewittes]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1qBQWxNKIAVJNOFwGlslT7AW0VAoK85Mf3nFvtw0QjVU/
-SophieBrannon_bio: TODO
+SophieBrannon_bio: Sophie is the Client Services Director at UK-based agency Absolute Digital Media and specialises in SEO strategy and content marketing in highly competitive industries such as health and finance. Sophie is a conference speaker and industry blogger, and has proven experience in strategising and delivering award-winning campaigns on a local, national and international scale.
 itamarblauer_bio: TODO
+mordy-oberstein_bio: TODO
 featured_quote: The implementation of structured data in the HTML of a page has continually increased. In 2021, 41.8% of desktop pages and 42.5% of mobile pages used structured data. In 2022, it’s risen to 44% of desktop pages and 45.1% of mobile pages that have structured data within their HTML.
 featured_stat_1: 84.75%
 featured_stat_label_1: Sites adopting HTTPS
@@ -214,6 +215,8 @@ The most common usage across both desktop and mobile is through HTML at 58.6% an
 Compared to 2021, where raw canonical usage was 57.7% and rendered canonical usage was 58.4%, in 2022 there was some growth, with raw canonical usage reaching 59.4% and rendered canonical usage rising to 60.4%. This correlates with the growth in overall canonical use.
 
 ## Page experience
+
+In this section of the chapter, we're looking at different elements of page experience and how this has evolved since the 2021 Web Almanac.
 
 ### HTTPS
 
@@ -454,8 +457,6 @@ There is divergence, however, with the h1.  While 65.8% of pages contained an h1
 ### Image attributes
 
 The primary purpose of the alt attribute on the `<img>` element is accessibility. Alt attributes also assist search engines rank specific assets in image search.
-
-[Insert the 3 charts related to present, blank, and missing alt attributes]
 
 {{ figure_markup(
   image="image-alt-present.png",
@@ -698,6 +699,8 @@ The future of AMP appears to be changing ever since the launch of Core Web Vital
 Desktop usage has dipped in 2022 from 0.09% to 0.07% compared to 2021 while mobile usage is down from 0.22% to 0.19% over the same time period.
 
 ## Internationalization
+
+Internationalization in SEO is the process of optimising a website in line with best practices when targeting multiple countries and multiple languages, to ensure that it can be properly crawled and indexed by search engines.
 
 ### Hreflang usage
 
