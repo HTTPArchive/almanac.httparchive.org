@@ -22,7 +22,7 @@ featured_stat_label_3: Mobile websites not using cache at all
 
 ## Introduction
 
-Back in 2019, [GreenIT.fr estimated that there were 34 billion pieces of equipment and 4.1 billion internet users](https://www.greenit.fr/environmental-footprint-of-the-digital-world/). As such, the digital world’s contribution to humanity’s carbon footprint may represent roughly 4% of primary energy consumption and Greenhouse Gas emissions, as well as 0.2% of water consumption and 5.5% of electricity consumption.
+Back in 2019, <a hreflang="en" href="https://www.greenit.fr/environmental-footprint-of-the-digital-world/">GreenIT.fr estimated that there were 34 billion pieces of equipment and 4.1 billion internet users</a>. As such, the digital world’s contribution to humanity’s carbon footprint may represent roughly 4% of primary energy consumption and Greenhouse Gas emissions, as well as 0.2% of water consumption and 5.5% of electricity consumption.
 
 Another significant indicator is its contribution to the depletion of abiotic resources (“not alive” resources, such as metals). All the devices we use need materials in order to be produced. As such, it is considered that the manufacture of user equipment is the most important source of environmental impact (followed by the end of life of equipment, most of them not being recycled at all). It is way more impactful than data centers, the network or even the usage of user equipment. Despite the efforts from some manufacturers, it should only get worse in the coming years because of the depletion of some required materials (indium, copper, gold, etc).
 
@@ -43,37 +43,37 @@ For this, we will differentiate :
 
 Some online activities to get started :
 
-* [Are you an eco-responsible Internet user?](https://learninglab.gitlabpages.inria.fr/mooc-impacts-num/mooc-impacts-num-ressources/Partie3/Activites/Capsule_Partie3_4_AgirUtilisateur/story.html)
-* [What is the impact of your internet browsing?](https://learninglab.gitlabpages.inria.fr/mooc-impacts-num/mooc-impacts-num-ressources/Partie3/Activites/Capsule_Partie3_3_Mesurer/story.html)
-* [Weight comparison of various elements composing a web page](https://learninglab.gitlabpages.inria.fr/mooc-impacts-num/mooc-impacts-num-ressources/Partie3/Activites/Capsule_Partie3_2_Mesurer/indexEn.html)
+* <a hreflang="en" href="https://learninglab.gitlabpages.inria.fr/mooc-impacts-num/mooc-impacts-num-ressources/Partie3/Activites/Capsule_Partie3_4_AgirUtilisateur/story.html">Are you an eco-responsible Internet user?</a>
+* <a hreflang="en" href="https://learninglab.gitlabpages.inria.fr/mooc-impacts-num/mooc-impacts-num-ressources/Partie3/Activites/Capsule_Partie3_3_Mesurer/story.html">What is the impact of your internet browsing?</a>
+* <a hreflang="en" href="https://learninglab.gitlabpages.inria.fr/mooc-impacts-num/mooc-impacts-num-ressources/Partie3/Activites/Capsule_Partie3_2_Mesurer/indexEn.html">Weight comparison of various elements composing a web page</a>
 
 To guide us on this journey, we can rely on some resources :
 
-* Repositories of best practices ([115 bonnes pratiques](https://github.com/cnumr/best-practices/) [FR], [Handbook of sustainable digital services](https://gr491.isit-europe.org/en/), etc).
+* Repositories of best practices (<a hreflang="en" href="https://github.com/cnumr/best-practices/">115 bonnes pratiques</a> [FR], <a hreflang="en" href="https://gr491.isit-europe.org/en/">Handbook of sustainable digital services</a>, etc).
 * Books and websites ([sustainablewebdesign.org](sustainablewebdesign.org), etc)
-* MOOC : [INR - Sustainable IT](https://www.isit-academy.org/), [Environmental impact of digital services](https://learninglab.inria.fr/en/mooc-impacts-environnementaux-du-numerique/), [Principles of Sustainable Software Engineering](https://docs.microsoft.com/en-us/learn/modules/sustainable-software-engineering-overview/), etc.
+* MOOC : <a hreflang="en" href="https://www.isit-academy.org/">INR - Sustainable IT</a>, <a hreflang="en" href="https://learninglab.inria.fr/en/mooc-impacts-environnementaux-du-numerique/">Environmental impact of digital services</a>, <a hreflang="en" href="https://docs.microsoft.com/en-us/learn/modules/sustainable-software-engineering-overview/">Principles of Sustainable Software Engineering</a>, etc.
 
 Limitations and hypothesis
 
 * We won’t be covering all best practices and available metrics can’t cover all of them. Metrics can’t tell us if a given website has unnecessary functionality or if some images are purely decorative. Even if such considerations go beyond the scope of this chapter, there is still a lot that can be done. And with Lighthouse providing more and more types of audits, we can expect new metrics to become available.
-* Carbon emissions are the only environmental indicator here but others (such as water consumption, land use, abiotic resources consumption) should be considered to avoid pollution transfers. This is exactly the point of [LCA (Life Cycle Assessment)](https://learninglab.gitlabpages.inria.fr/mooc-impacts-num/mooc-impacts-num-ressources/en/Partie3/FichesConcept/FC3.3.1-ACVservicesnumeriques-MoocImpactNum.html?lang=en). However, such an operation requires experts, lots of information and time. As of today, some structures are reaching for a compromise by using less metrics and information, combined with LCI (Life Cycle Inventory). This helps make the evaluation of environmental impacts more affordable and accessible (and repeatable, for example in CI/CD or monitoring) while keeping under control the assumptions you need to make.
+* Carbon emissions are the only environmental indicator here but others (such as water consumption, land use, abiotic resources consumption) should be considered to avoid pollution transfers. This is exactly the point of <a hreflang="en" href="https://learninglab.gitlabpages.inria.fr/mooc-impacts-num/mooc-impacts-num-ressources/en/Partie3/FichesConcept/FC3.3.1-ACVservicesnumeriques-MoocImpactNum.html?lang=en">LCA (Life Cycle Assessment)</a>. However, such an operation requires experts, lots of information and time. As of today, some structures are reaching for a compromise by using less metrics and information, combined with LCI (Life Cycle Inventory). This helps make the evaluation of environmental impacts more affordable and accessible (and repeatable, for example in CI/CD or monitoring) while keeping under control the assumptions you need to make.
 * We will only use metrics collected on pages but, in order to assess the environmental impacts of some digital services, it might be more accurate to collect metrics on a whole user journey. For example, on an ecommerce website, it would be better to consider a user purchasing an article and paying for it.
 
 ### [FOCUS] Intersectional Environmental Issues
 
 Sustainability has evolved significantly since its initial definition in 1987 by the Brundtland Commission. It now incorporates a variety of intersectional social and governance issues (the “S” and “G” in “ESG”) alongside its core environmental focus. A more responsible and sustainable internet should reflect this.
 
-In other words, digital sustainability cannot focus only on emissions. While climate change is a huge driver, it cannot be used to [justify inequitable solutions](https://qz.com/845206/renewable-energy-human-rights-violations/) or [fuel inequality](https://www.iisd.org/system/files/publications/green-conflict-minerals.pdf) [PDF] in any way. It must be grounded in climate _justice_.
+In other words, digital sustainability cannot focus only on emissions. While climate change is a huge driver, it cannot be used to <a hreflang="en" href="https://qz.com/845206/renewable-energy-human-rights-violations/">justify inequitable solutions</a> or <a hreflang="en" href="https://www.iisd.org/system/files/publications/green-conflict-minerals.pdf">fuel inequality</a> [PDF] in any way. It must be grounded in climate _justice_.
 
 To this end, when designing digital products and services, keep the following intersectional issues in mind:
 
 * **Accessibility:**  By removing barriers to content, your website becomes more usable and accessible. This also improves its environmental impact because users, especially those with disabilities, don’t have to find workarounds to accomplish tasks.
 * **Privacy:** A less intrusive website is better for users, giving them control over their data and what they choose to share. Privacy-focused websites are also often more environmentally-friendly in that they track, store, and maintain less data.
 * **Mis/disinformation:**  People turn to the internet to answer questions. Content that includes misinformation (unintentional) and disinformation (intentional) undermines users’ ability to do this in an efficient manner.
-* **Attention economy:** Avoiding [deceptive patterns](https://blog.mozilla.org/en/internet-culture/mozilla-explains/deceptive-design-patterns/) keeps users focused, reducing pointless browsing or diverting them from their initial purpose.
+* **Attention economy:** Avoiding <a hreflang="en" href="https://blog.mozilla.org/en/internet-culture/mozilla-explains/deceptive-design-patterns/">deceptive patterns</a> keeps users focused, reducing pointless browsing or diverting them from their initial purpose.
 * **Security:** Aiming for sustainability can also help secure your website by reducing its attack surface : less externalities, less functionalities, etc
 
-These are all part of a broader organizational approach to [corporate digital responsibility](https://www.mightybytes.com/blog/what-is-corporate-digital-responsibility/) that aligns with digital sustainability principles.
+These are all part of a broader organizational approach to <a hreflang="en" href="https://www.mightybytes.com/blog/what-is-corporate-digital-responsibility/">corporate digital responsibility</a> that aligns with digital sustainability principles.
 
 ### [FOCUS] Understanding the environmental impact of the web
 
@@ -85,13 +85,13 @@ We can design and develop more sustainability for the Web by focusing on better 
 
 The less energy consumed during the design and development process the better. If we can reuse code or content, then that’s a great idea. Use the least amount of wattage. A laptop will be much more energy efficient than a desktop. Large screens, for example, should be avoided, as they can consume as much energy themselves as a laptop. Anything that reduces energy consumption is a good thing.
 
-For popular, high demand websites or apps, up to 98% of the energy and waste consequences will occur on the smartphones or laptops of the users. Small savings can make a big difference. Danny van Kooten, developed a Mailchimp plugin for WordPress that is used by two million websites. [He made a 20 KB reduction in code and estimated that that resulted in a monthly reduction of 59,000 kgs of CO2](https://raidboxes.io/en/blog/wordpress/wordpress-plugin-co2/).
+For popular, high demand websites or apps, up to 98% of the energy and waste consequences will occur on the smartphones or laptops of the users. Small savings can make a big difference. Danny van Kooten, developed a Mailchimp plugin for WordPress that is used by two million websites. <a hreflang="en" href="https://raidboxes.io/en/blog/wordpress/wordpress-plugin-co2/">He made a 20 KB reduction in code and estimated that that resulted in a monthly reduction of 59,000 kgs of CO2</a>.
 
 ## Evaluating the environmental impact of websites
 
-We decided on [the methodology already shared by some available tools such as Ecograder, Website Carbon, Ecoping, CO2.js and others](https://sustainablewebdesign.org/calculating-digital-emissions/). Thanks to this, we estimate the Greenhouse Gas emissions based solely on the amount of data transferred (for instance here, the Page Weight).
+We decided on <a hreflang="en" href="https://sustainablewebdesign.org/calculating-digital-emissions/">the methodology already shared by some available tools such as Ecograder, Website Carbon, Ecoping, CO2.js and others</a>. Thanks to this, we estimate the Greenhouse Gas emissions based solely on the amount of data transferred (for instance here, the Page Weight).
 
-The community is [still struggling on reaching a consensus on this topic](https://marmelab.com/blog/2022/04/05/greenframe-compare.html). Given the metrics available here, this sounded as the best possible compromise.  Yet, we are aware that not everybody will agree on this and that this methodology should and will probably evolve in the coming months or years.
+The community is <a hreflang="en" href="https://marmelab.com/blog/2022/04/05/greenframe-compare.html">still struggling on reaching a consensus on this topic</a>. Given the metrics available here, this sounded as the best possible compromise.  Yet, we are aware that not everybody will agree on this and that this methodology should and will probably evolve in the coming months or years.
 
 So, we will start with an overview of Page Weight, then proceed with a calculation of carbon emissions.
 
@@ -99,7 +99,7 @@ So, we will start with an overview of Page Weight, then proceed with a calculati
 
 Page Weight represents the amount of data transferred to access the webpage (based only on HTTP requests). As explained before, it is here used as a proxy to calculate Greenhouse Gas Emissions.
 
-It is recommended to keep this metric as low as possible. 1 MB should be a maximum when you get started but [500 kB should be your ultimate threshold](https://infrequently.org/2021/03/the-performance-inequality-gap/).
+It is recommended to keep this metric as low as possible. 1 MB should be a maximum when you get started but <a hreflang="en" href="https://infrequently.org/2021/03/the-performance-inequality-gap/">500 kB should be your ultimate threshold</a>.
 
 For more on this, check the [Page Weight](./page-weight) chapter.
 
@@ -129,7 +129,7 @@ _The notion of “carbon emissions” is a simplification since we are consideri
   sql_file=""
 ) }}
 
-The carbon emissions for websites are very close on mobile and desktop. They seem quite low on the 10th percentile (around 0.15 g eqCO2, which would be equivalent to [a little less than 1km with a thermic car](https://datagir.ademe.fr/apps/mon-impact-transport/) [FR]). They reach as much as 2.76 g eqCO2 on the 90th percentile (a little more than 14km with a thermic car).
+The carbon emissions for websites are very close on mobile and desktop. They seem quite low on the 10th percentile (around 0.15 g eqCO2, which would be equivalent to <a hreflang="en" href="https://datagir.ademe.fr/apps/mon-impact-transport/">a little less than 1km with a thermic car</a> [FR]). They reach as much as 2.76 g eqCO2 on the 90th percentile (a little more than 14km with a thermic car).
 
 This doesn’t seem like much but you should keep in mind that each website gets thousands or even millions of visitors each month (sometimes even more) and what you see in the following graph are emissions for a single page visited once. The environmental impact each month for all websites adds up.
 
@@ -195,15 +195,15 @@ _Here (and elsewhere), you should find mentions of “Green Hosting”. This is 
 
 For the majority of this chapter, we focus on how changes in the quantity of resources like network, compute and storage affect the environmental impact of digital services - you might think of this as in terms of **_consumption_** as a lever for sustainability. However there are other levers too. You can't efficiency your way to zero, and the same code, run on the same kind of server, but running on greener energy will have a lower environmental impact than otherwise. We can think of this lever as **intensity**.
 
-Here there is some good news. Across the world, electricity grids we rely on are getting greener over time, driven by the falling costs of renewables and storage. 38% of our electricity came from clean sources in 2022 ([examples](https://ember-climate.org/insights/research/global-electricity-review-2022/) in the ember climate, and [this chart](https://public.flourish.studio/story/1176231/?utm_source=showcase&utm_campaign=story/1176231) ).
+Here there is some good news. Across the world, electricity grids we rely on are getting greener over time, driven by the falling costs of renewables and storage. 38% of our electricity came from clean sources in 2022 (<a hreflang="en" href="https://ember-climate.org/insights/research/global-electricity-review-2022/">examples</a> in the ember climate, and <a hreflang="en" href="https://public.flourish.studio/story/1176231/?utm_source=showcase&utm_campaign=story/1176231">this chart</a> ).
 
-However, not every grid, and not every region a provider operates is equally green. [Amazon's Web Service's customer carbon footprint tools](https://aws.amazon.com/aws-cost-management/aws-customer-carbon-footprint-tool/) show how running services in one region over another can provide a measurable difference in carbon emissions, as does the [open source cloud carbon footprint](https://www.cloudcarbonfootprint.org/), for a growing number of providers. Elsewhere, the Green Web Foundation also provides an API for looking up any domain, for an estimate of how much the grid in that region is powered by fossil fuels.
+However, not every grid, and not every region a provider operates is equally green. <a hreflang="en" href="https://aws.amazon.com/aws-cost-management/aws-customer-carbon-footprint-tool/">Amazon's Web Service's customer carbon footprint tools</a> show how running services in one region over another can provide a measurable difference in carbon emissions, as does the <a hreflang="en" href="https://www.cloudcarbonfootprint.org/">open source cloud carbon footprint</a>, for a growing number of providers. Elsewhere, the Green Web Foundation also provides an API for looking up any domain, for an estimate of how much the grid in that region is powered by fossil fuels.
 
-You should however keep in mind that using renewable energy isn’t enough to provide truly sustainable hosting. You should also check the PUE (Power Usage Effectiveness), WUE (Water Usage Effectiveness), how equipment is handled, etc. To further investigate this, you could check [an article from Wholegrain Digital](https://www.wholegraindigital.com/blog/choose-a-green-web-host/) and [the European Data Centres Code of Conduct](https://e3p.jrc.ec.europa.eu/communities/data-centres-code-conduct). More generally, beware of companies claiming to be carbon neutral ([as stated by the french institute ADEME](https://presse.ademe.fr/2022/02/lademe-publie-un-avis-dexperts-sur-lutilisation-de-largument-de-neutralite-carbone-dans-les-communications.html) [FR]), especially since most of them don’t include Scope 3 emissions. Also, as stated above, compensating your carbon emissions is not enough, you should reduce them too.
+You should however keep in mind that using renewable energy isn’t enough to provide truly sustainable hosting. You should also check the PUE (Power Usage Effectiveness), WUE (Water Usage Effectiveness), how equipment is handled, etc. To further investigate this, you could check <a hreflang="en" href="https://www.wholegraindigital.com/blog/choose-a-green-web-host/">an article from Wholegrain Digital</a> and <a hreflang="en" href="https://e3p.jrc.ec.europa.eu/communities/data-centres-code-conduct">the European Data Centres Code of Conduct</a>. More generally, beware of companies claiming to be carbon neutral (<a hreflang="en" href="https://presse.ademe.fr/2022/02/lademe-publie-un-avis-dexperts-sur-lutilisation-de-largument-de-neutralite-carbone-dans-les-communications.html">as stated by the french institute ADEME</a> [FR]), especially since most of them don’t include Scope 3 emissions. Also, as stated above, compensating your carbon emissions is not enough, you should reduce them too.
 
 #### How many of the sites listed in the HTTP Archive run on Green hosting?
 
-An increasing number of technology firms are also taking steps to green **all** the electricity they buy to power their infrastructure. Companies like Microsoft and Salesforce already buy as much green energy as their server farms use on an annual basis, as do many other companies. We used the [https://www.thegreenwebfoundation.org/green-web-datasets/](https://www.thegreenwebfoundation.org/green-web-datasets/) to see how many organizations [are 'green hosts', taking similar steps](https://www.thegreenwebfoundation.org/what-we-accept-as-evidence-of-green-power/), and where they have shared evidence of powering all the energy they use on green energy, each year.
+An increasing number of technology firms are also taking steps to green **all** the electricity they buy to power their infrastructure. Companies like Microsoft and Salesforce already buy as much green energy as their server farms use on an annual basis, as do many other companies. We used the <a hreflang="en" href="https://www.thegreenwebfoundation.org/green-web-datasets/">https://www.thegreenwebfoundation.org/green-web-datasets/</a> to see how many organizations <a hreflang="en" href="https://www.thegreenwebfoundation.org/what-we-accept-as-evidence-of-green-power/">are 'green hosts', taking similar steps</a>, and where they have shared evidence of powering all the energy they use on green energy, each year.
 
 {{ figure_markup(
   image="green-hosting-percentages.png",
@@ -216,7 +216,7 @@ An increasing number of technology firms are also taking steps to green **all** 
 
 Overall, only 10 percent of the measured websites rely on green hosting. This highlights that a lot could and should be done on both sides : websites opting for green hosting as well as hosting companies aiming for more sustainability.
 
-<p class="note">Note: these figures for green domains are based on the information that is either shared directly with The Green Web Foundation, or placed in the public domain, where it is linked in API responses for their lookup service. See [their explainer page](https://www.thegreenwebfoundation.org/support/why-does-my-website-show-up-as-grey-in-the-green-web-checker/) for why a site might show up as 'not green' when you think it should.</p>
+<p class="note">Note: these figures for green domains are based on the information that is either shared directly with The Green Web Foundation, or placed in the public domain, where it is linked in API responses for their lookup service. See <a hreflang="en" href="https://www.thegreenwebfoundation.org/support/why-does-my-website-show-up-as-grey-in-the-green-web-checker/">their explainer page</a> for why a site might show up as 'not green' when you think it should.</p>
 
 ## Reducing the environmental impact of websites
 
@@ -228,22 +228,22 @@ One of the most obvious ways to reduce the impact of websites is to avoid all th
 
 * Reduce content and code waste: A great many websites and apps have unnecessary content and features. Be the voice that asks whether we need this page or that feature. Cliché stock images add nothing to most pages except weight. Removing images is one of the best ways to reduce page weight. Unused code should go too.
 * Reduce processing. Byte for byte, JavaScript has a much bigger impact than HTML, CSS, images or text, because it causes energy-intensive processing to occur on the user’s device. Try and choose the least energy intense implementation. Many webpages don’t even need JavaScript. Always choose the lightest coding option.
-* Choose the lightest communication option. [Text is by far the most environmentally friendly way to communicate](https://www.google.com/url?q=https://text.npr.org/&sa=D&source=docs&ust=1662467318246688&usg=AOvVaw2K1v83mXXmEePMRoG6edxq). Video is by far the most energy-intense and unsustainable. As such, it should be used only if necessary, according to the needs of users. In these cases, video should be integrated as efficiently as possible.
+* Choose the lightest communication option. <a hreflang="en" href="https://www.google.com/url?q=https://text.npr.org/&sa=D&source=docs&ust=1662467318246688&usg=AOvVaw2K1v83mXXmEePMRoG6edxq">Text is by far the most environmentally friendly way to communicate</a>. Video is by far the most energy-intense and unsustainable. As such, it should be used only if necessary, according to the needs of users. In these cases, video should be integrated as efficiently as possible.
 * Design for long life. Design so that those using older machines and older operating systems can still use your website / app. Design so that you support people in holding onto their devices as long as possible. From a digital perspective, there’s nothing better you could do for the environment.
 
 #### Loading unused assets
 
-You should only load assets that are needed to display the page and more particularly the portion of the page that is visible. This could be done through lazy-loading, critical CSS and patterns such as [Import on interaction](https://www.patterns.dev/posts/import-on-interaction/) and [Import on visibility](https://www.patterns.dev/posts/import-on-visibility/). It could also involve loading images at the right size for the client device. We will mostly focus here on oversized fonts and unused code.
+You should only load assets that are needed to display the page and more particularly the portion of the page that is visible. This could be done through lazy-loading, critical CSS and patterns such as <a hreflang="en" href="https://www.patterns.dev/posts/import-on-interaction/">Import on interaction</a> and <a hreflang="en" href="https://www.patterns.dev/posts/import-on-visibility/">Import on visibility</a>. It could also involve loading images at the right size for the client device. We will mostly focus here on oversized fonts and unused code.
 
 ##### Fonts
 
-For sustainability, it is recommended to [stick to system fonts](https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/). If you really need to use some custom fonts, there are some things to consider to avoid waste. Loading a font sometimes involves loading lots of characters and symbols that you might not need. For example, not all websites need cyrillic characters but some fonts still include them natively. To check this, you can use tools such as [wakamaifondue](https://wakamaifondue.com/).To reduce the size of your font files, you should aim for a WOFF2 format and [a variable font](https://the-sustainable.dev/reduce-the-weight-of-your-typography-with-variable-fonts/). You could also use [a subset](https://everythingfonts.com/subsetter) or use a tool such as [subfont](https://github.com/Munter/subfont). [The Google Fonts API offers some clever options for all this](https://web.dev/api-for-fast-beautiful-web-fonts/). [Regarding Google Fonts, you should still keep GDPR in mind](https://rewis.io/urteile/urteil/lhm-20-01-2022-3-o-1749320/).
+For sustainability, it is recommended to <a hreflang="en" href="https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/">stick to system fonts</a>. If you really need to use some custom fonts, there are some things to consider to avoid waste. Loading a font sometimes involves loading lots of characters and symbols that you might not need. For example, not all websites need cyrillic characters but some fonts still include them natively. To check this, you can use tools such as <a hreflang="en" href="https://wakamaifondue.com/">wakamaifondue</a>.To reduce the size of your font files, you should aim for a WOFF2 format and <a hreflang="en" href="https://the-sustainable.dev/reduce-the-weight-of-your-typography-with-variable-fonts/">a variable font</a>. You could also use <a hreflang="en" href="https://everythingfonts.com/subsetter">a subset</a> or use a tool such as <a hreflang="en" href="https://github.com/Munter/subfont">subfont</a>. <a hreflang="en" href="https://web.dev/api-for-fast-beautiful-web-fonts/">The Google Fonts API offers some clever options for all this</a>. <a hreflang="en" href="https://rewis.io/urteile/urteil/lhm-20-01-2022-3-o-1749320/">Regarding Google Fonts, you should still keep GDPR in mind</a>.
 
-For more on this, you should check the [Fonts](./fonts) chapter. You can also find some documentation on [web.dev](https://web.dev/reduce-webfont-size/).
+For more on this, you should check the [Fonts](./fonts) chapter. You can also find some documentation on <a hreflang="en" href="https://web.dev/reduce-webfont-size/">web.dev</a>.
 
 ##### Unused CSS
 
-Unused CSS is especially found when using CSS frameworks (Bootstrap and others). When doing so, you should keep in mind to remove unused CSS during your build phase. [Chrome Dev Tools offer a Coverage tool to check on this](https://developer.chrome.com/docs/devtools/coverage/). Be careful : on many websites, all CSS and JS are loaded on the first visit in order to cache them for further visits and exploration of the website. This is not necessarily a bad thing but unused code is one of the drawbacks that you should keep in mind, even more because it might slow down further code processing.
+Unused CSS is especially found when using CSS frameworks (Bootstrap and others). When doing so, you should keep in mind to remove unused CSS during your build phase. <a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage/">Chrome Dev Tools offer a Coverage tool to check on this</a>. Be careful : on many websites, all CSS and JS are loaded on the first visit in order to cache them for further visits and exploration of the website. This is not necessarily a bad thing but unused code is one of the drawbacks that you should keep in mind, even more because it might slow down further code processing.
 
 {{ figure_markup(
   image="unused-css-bytes.png",
@@ -258,7 +258,7 @@ The good news is the 10 percentile websites load no unnecessary CSS. Unfortunate
 
 ##### Unused JS
 
-The amount of unused JS could grow fast when adding dependencies or using libraries such as jQuery. [The Coverage tool from Chrome Dev Tools is a good way to check on this](https://developer.chrome.com/docs/devtools/coverage/). As for CSS, this is sometimes part of a strategy to cache everything needed for further browsing.  This should be balanced by the fact that unused JS tends to result in longer processing. When possible, look for [smaller alternatives](http://microjs.com) with only the functionalities that you need instead of loading the whole toolbox, hoping it will one day prove useful. Once upon a time, jQuery was the all-in-one solution that you found on almost every website. [As of today, a lot of things can be handled with modern JS](https://youmightnotneedjquery.com/). [Maybe you should check your NPM dependencies and how they make your bundle bigger](https://bundlephobia.com/).
+The amount of unused JS could grow fast when adding dependencies or using libraries such as jQuery. <a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage/">The Coverage tool from Chrome Dev Tools is a good way to check on this</a>. As for CSS, this is sometimes part of a strategy to cache everything needed for further browsing.  This should be balanced by the fact that unused JS tends to result in longer processing. When possible, look for <a hreflang="en" href="http://microjs.com">smaller alternatives</a> with only the functionalities that you need instead of loading the whole toolbox, hoping it will one day prove useful. Once upon a time, jQuery was the all-in-one solution that you found on almost every website. <a hreflang="en" href="https://youmightnotneedjquery.com/">As of today, a lot of things can be handled with modern JS</a>. <a hreflang="en" href="https://bundlephobia.com/">Maybe you should check your NPM dependencies and how they make your bundle bigger</a>.
 
 {{ figure_markup(
   image="unused-javascript-bytes.png",
@@ -275,19 +275,19 @@ One again, the 10th percentile looks great with no unused JS. However, this gets
 
 Sustainable choices and optimizations can be made for a website before the development process during the early stages of design and prototyping.  It is possible to design user experiences that prioritize efficient content from the beginning, while even creating experiences that engage users as active participants in sustainability practices. Contrary to moderate belief, all of this can be accomplished while still crafting beautiful, planet-centric web experiences.
 
-While emissions associated with specific user experience tasks are difficult to quantify, some studies have estimated that consumer device use comprises as much as [52% of a product’s overall digital footprint](https://www.mightybytes.com/blog/where-do-digital-emissions-come-from/). Therefore, it stands to reason that optimizing UX for sustainability can significantly reduce a product’s environmental impact.
+While emissions associated with specific user experience tasks are difficult to quantify, some studies have estimated that consumer device use comprises as much as <a hreflang="en" href="https://www.mightybytes.com/blog/where-do-digital-emissions-come-from/">52% of a product’s overall digital footprint</a>. Therefore, it stands to reason that optimizing UX for sustainability can significantly reduce a product’s environmental impact.
 
 #### Designing for Stakeholders
 
-The most sustainable products are those that retain a clear picture of who stakeholders are, including the non-human ones. In doing so, we have products that take both a human-centered and [planet-centered](https://planetcentricdesign.com/) approach during the design process.
+The most sustainable products are those that retain a clear picture of who stakeholders are, including the non-human ones. In doing so, we have products that take both a human-centered and <a hreflang="en" href="https://planetcentricdesign.com/">planet-centered</a> approach during the design process.
 
-Engaging in streamlined practices such as [stakeholder mapping](https://www.mightybytes.com/blog/stakeholder-mapping/) is helpful in identifying an ecosystem of stakeholders and their needs to set a path towards curating an inclusive experience for everyone involved. You’ll be able to use this research to map out opportunities for designing a product that prevents unintended consequences from ignoring the needs of all stakeholders involved (human and non-human). This can be taken even further by leveraging intersecting touchpoints to build planet-centric innovation into your [business model](https://www.mightybytes.com/blog/how-to-design-an-impact-business-model/) that aligns with users’ goals.
+Engaging in streamlined practices such as <a hreflang="en" href="https://www.mightybytes.com/blog/stakeholder-mapping/">stakeholder mapping</a> is helpful in identifying an ecosystem of stakeholders and their needs to set a path towards curating an inclusive experience for everyone involved. You’ll be able to use this research to map out opportunities for designing a product that prevents unintended consequences from ignoring the needs of all stakeholders involved (human and non-human). This can be taken even further by leveraging intersecting touchpoints to build planet-centric innovation into your <a hreflang="en" href="https://www.mightybytes.com/blog/how-to-design-an-impact-business-model/">business model</a> that aligns with users’ goals.
 
 #### Optimizing User Journeys
 
 Crafting strategic user journeys that prioritize helping users achieve their goals in the least amount of steps is an early method for creating a carbon-friendly web experience for your site. The less time a user spends navigating your product, overcoming obstacles, and completing their tasks – the less energy, data, and resources are used during their visit. Strategies in doing so often include being mindful in the use of images, videos, and visual assets to help drive user engagement and direction.
 
-This also involves a “less is more” approach by engaging in wasteless design practices that only show content that is necessary to a user at a given time and emphasizing asset choices that deliver the same value. These are all things that aid the user in getting what they need faster by avoiding the already surging [attention economy](https://econreview.berkeley.edu/paying-attention-the-attention-economy/) on our devices for each page they visit. After doing so, it’s best to continue to test and gather user feedback through prototyping and other methods to identify potential pain points that ensure you’re creating the most optimal experience for your users.
+This also involves a “less is more” approach by engaging in wasteless design practices that only show content that is necessary to a user at a given time and emphasizing asset choices that deliver the same value. These are all things that aid the user in getting what they need faster by avoiding the already surging <a hreflang="en" href="https://econreview.berkeley.edu/paying-attention-the-attention-economy/">attention economy</a> on our devices for each page they visit. After doing so, it’s best to continue to test and gather user feedback through prototyping and other methods to identify potential pain points that ensure you’re creating the most optimal experience for your users.
 
 #### Empowering Sustainable Behavior
 
@@ -301,7 +301,7 @@ These types of options help minimize potential pain points of users while enabli
 
 Analyzing and understanding the entire lifecycle of a digital product or service reveals opportunities to reduce waste and improve environmental impact over time. Defining and tracking clear, measurable success indicators can help guide this process.
 
-* **Circularity:** Designing modular, easily replaceable or updateable components and focusing on continuous improvement can help you [reduce technical debt](https://www.mightybytes.com/blog/technical-debt-agile-and-sustainability/) and prolong the life of a digital product or service. This also saves time and reduces resource use.
+* **Circularity:** Designing modular, easily replaceable or updateable components and focusing on continuous improvement can help you <a hreflang="en" href="https://www.mightybytes.com/blog/technical-debt-agile-and-sustainability/">reduce technical debt</a> and prolong the life of a digital product or service. This also saves time and reduces resource use.
 * **End-of-Life:** Creating a clear retirement plan for your digital product or service will reduce the energy required to store and serve outdated or unused data. Plus, good data disposal practices also align with emerging data privacy laws that respect users’ “right to be forgotten”.
 
 ### Optimizing your content
@@ -314,11 +314,11 @@ In this section, we will look into images, videos and animations (more info on t
 
 Images represent a huge part of requests and page weight. Let’s see what we can do to mitigate this (in addition to avoiding stock images that bring you no additional information). As already mentioned, you should have already removed unnecessary images.
 
-For a closer look on the relative benefits you can expect from possible technical optimizations, there is [a post on the HTTP Archive that compares them](https://discuss.httparchive.org/t/state-of-the-web-top-image-optimization-strategies/1367). Since you can more and more easily rely on native HTML (and sometimes CSS) for this, you should implement all of them.
+For a closer look on the relative benefits you can expect from possible technical optimizations, there is <a hreflang="en" href="https://discuss.httparchive.org/t/state-of-the-web-top-image-optimization-strategies/1367">a post on the HTTP Archive that compares them</a>. Since you can more and more easily rely on native HTML (and sometimes CSS) for this, you should implement all of them.
 
 ##### Format (WebP/AVIF)
 
-WebP [is already widely supported](https://caniuse.com/?search=webp) and one of the best formats you can find for your images. Its compression is impressive and results in less data being transferred and processed. In addition to this, it enjoys wide support. AVIF should be even better but it might be wise to wait until it has reached [a wider adoption from browsers](https://caniuse.com/?search=avif). Until then, just make sure you use the WebP format for your images. As a matter of fact, your icons should be in [optimized SVG](https://jakearchibald.github.io/svgomg/) and you could even include them directly in the HTML to avoid additional requests.
+WebP <a hreflang="en" href="https://caniuse.com/?search=webp">is already widely supported</a> and one of the best formats you can find for your images. Its compression is impressive and results in less data being transferred and processed. In addition to this, it enjoys wide support. AVIF should be even better but it might be wise to wait until it has reached <a hreflang="en" href="https://caniuse.com/?search=avif">a wider adoption from browsers</a>. Until then, just make sure you use the WebP format for your images. As a matter of fact, your icons should be in <a hreflang="en" href="https://jakearchibald.github.io/svgomg/">optimized SVG</a> and you could even include them directly in the HTML to avoid additional requests.
 
 {{ figure_markup(
   image="image-formats-in-use.png",
@@ -350,7 +350,7 @@ Around 34% of the websites use the srcset attribute, which is a great way to int
 
 ##### Lazy-loading
 
-An easy way to get a faster first load is to load images progressively : only load what you need when you need it. This is done through [lazy-loading](../2021/media#lazy-loading) and [most browsers now support this natively](https://caniuse.com/?search=lazy-loading). Not all users will scroll your page in its entirety so you should avoid loading images that might never be seen by the current user. As such, this is a quick win for sustainability and your users.
+An easy way to get a faster first load is to load images progressively : only load what you need when you need it. This is done through [lazy-loading](../2021/media#lazy-loading) and <a hreflang="en" href="https://caniuse.com/?search=lazy-loading">most browsers now support this natively</a>. Not all users will scroll your page in its entirety so you should avoid loading images that might never be seen by the current user. As such, this is a quick win for sustainability and your users.
 
 {{ figure_markup(
   image="native-lazy-loading-usage.png",
@@ -363,11 +363,11 @@ An easy way to get a faster first load is to load images progressively : only lo
 
 On this graph, we see that native lazy-loading has been more and more widely adopted since its implementation. Around 1 website out of 4 uses it. Some might still be using JS libraries to implement this behavior and do not appear on this graph. Switching to native lazy-loading could be a great opportunity for them to slightly reduce requests and avoid some JS processing.
 
-A quick note on iframes : also note that lazy-loading could be natively applied to iframes, although, for sustainability reasons,  you should consider avoiding iframes altogether. Most of the time, [facade](https://web.dev/third-party-facades/) is the good pattern for you, whether you want (for example) to include embedded videos or interactive maps. Directly including external content on your page has a bad habit of increasing the weight and requests of the page and often causes accessibility issues.
+A quick note on iframes : also note that lazy-loading could be natively applied to iframes, although, for sustainability reasons,  you should consider avoiding iframes altogether. Most of the time, <a hreflang="en" href="https://web.dev/third-party-facades/">facade</a> is the good pattern for you, whether you want (for example) to include embedded videos or interactive maps. Directly including external content on your page has a bad habit of increasing the weight and requests of the page and often causes accessibility issues.
 
 #### Video
 
-[Videos are some of the most impactful resources](https://theshiftproject.org/en/article/unsustainable-use-online-video/) you can include on a website. More info on these in the [Media](./media) chapter. To integrate third-party videos, you should use [facades](https://web.dev/third-party-facades/). Otherwise, you should [set them up wisely](https://www.smashingmagazine.com/2021/02/optimizing-video-size-quality/). For instance, avoid preloading and autoplay. You could also learn [how to quickly reduce the size of your videos](https://theshiftproject.org/en/guide-reduce-weight-video-5-minutes/).
+<a hreflang="en" href="https://theshiftproject.org/en/article/unsustainable-use-online-video/">Videos are some of the most impactful resources</a> you can include on a website. More info on these in the [Media](./media) chapter. To integrate third-party videos, you should use <a hreflang="en" href="https://web.dev/third-party-facades/">facades</a>. Otherwise, you should <a hreflang="en" href="https://www.smashingmagazine.com/2021/02/optimizing-video-size-quality/">set them up wisely</a>. For instance, avoid preloading and autoplay. You could also learn <a hreflang="en" href="https://theshiftproject.org/en/guide-reduce-weight-video-5-minutes/">how to quickly reduce the size of your videos</a>.
 
 ##### Preload
 
@@ -384,7 +384,7 @@ Automatically preloading videos (or audio files) involves retrieving data that m
 
 Looking at this graph, one should keep in mind that the preload attribute only has 3 possible values : _none_, _auto_ and _metadata_ (default). Using the preload attribute with no value or with an erroneous value might be the same as using the _metadata_ value. It still involves loading as much as 3% of the video to get these metadata and can thus be quite impactful. _None_ is still the best way to go for sustainability. But you have to keep in mind that this is only a hint for the browser. In the end, the browser has its own way of handling the preloading of the video and it might not fit with what you had in mind.
 
-For more on this, you should check [the article from Steve Souders](https://www.stevesouders.com/blog/2013/04/12/html5-video-preload/) (2013) and [another one from web.dev 2017)](https://web.dev/fast-playback-with-preload/). Even if you can configure your browser or device to save data, video preload is something that browsers should handle more sustainably by default.
+For more on this, you should check <a hreflang="en" href="https://www.stevesouders.com/blog/2013/04/12/html5-video-preload/">the article from Steve Souders</a> (2013) and <a hreflang="en" href="https://web.dev/fast-playback-with-preload/">another one from web.dev 2017)</a>. Even if you can configure your browser or device to save data, video preload is something that browsers should handle more sustainably by default.
 
 ##### Autoplay
 
@@ -409,10 +409,10 @@ For accessibility, moving and blinking parts should be avoided unless users have
 
 The (infamous) case of carousel is documented on these pages :
 
-* [Why you shouldn’t use them](https://shouldiuseacarousel.com/)
-* [What can be done instead](https://www.smashingmagazine.com/2022/04/designing-better-carousel-ux/)
+* <a hreflang="en" href="https://shouldiuseacarousel.com/">Why you shouldn’t use them</a>
+* <a hreflang="en" href="https://www.smashingmagazine.com/2022/04/designing-better-carousel-ux/">What can be done instead</a>
 
-If you must use animations you should also avoid [GIF](https://web.dev/efficient-animated-content/) or at least convert them to optimized videos, since animated GIF can get really heavy.
+If you must use animations you should also avoid <a hreflang="en" href="https://web.dev/efficient-animated-content/">GIF</a> or at least convert them to optimized videos, since animated GIF can get really heavy.
 
 #### Favicon and error pages
 
@@ -421,7 +421,7 @@ By default, your browser will look for a favicon upon arriving on a website. If 
 * Don’t forget your favicon (and cache it)
 * Don’t forget to optimize the HTML of your 404 page to make it as light as possible or, even better, configure your server to make sure it only sends some text rather than this HTML of your 404 page.
 
-For more details on all this, check [this article from Matt Hobbs](https://nooshu.com/blog/2020/08/25/you-should-be-testing-your-404-pages-web-performance/).
+For more details on all this, check <a hreflang="en" href="https://nooshu.com/blog/2020/08/25/you-should-be-testing-your-404-pages-web-performance/">this article from Matt Hobbs</a>.
 
 ### Optimizing external content
 
@@ -450,7 +450,7 @@ The chart above shows the percentage of third-party requests served from green h
 
 ##### Making third-party requests more sustainable
 
-As we have seen, most third-party requests are being served from green hosting. However, there is still room for improvement, especially for higher ranked sites. If you are interested in the sustainability of third-party services used on your website, ‘_[Are my third parties green?](https://aremythirdpartiesgreen.com/)_’ is an online testing tool, directory, and API that can help you get started. _For the sake of transparency, it should be noted that this tool was created by one of the chapter authors._
+As we have seen, most third-party requests are being served from green hosting. However, there is still room for improvement, especially for higher ranked sites. If you are interested in the sustainability of third-party services used on your website, ‘_<a hreflang="en" href="https://aremythirdpartiesgreen.com/">Are my third parties green?</a>_’ is an online testing tool, directory, and API that can help you get started. _For the sake of transparency, it should be noted that this tool was created by one of the chapter authors._
 
 Beyond hosting, we should also be considering the impact of data transfer for third parties. While providers of third-party services make it relatively easy to integrate their content on another website, that doesn’t mean it is always optimized to reduce the amount of data being transferred. For example, the Third Party chapter of the 2022 Almanac uncovered that:
 
@@ -458,7 +458,7 @@ Beyond hosting, we should also be considering the impact of data transfer for th
 
 In the case of fonts, self-hosting and subsetting are two techniques that, when combined, can help reduce this waste. However, most third-parties come in the form of scripts. These incur a cost when transferring data over the network, but also utilize processing power on the end-user’s device. For these, we can reduce their impact by loading them “just in time”.
 
-This pattern is known as [Import on Interaction](https://www.patterns.dev/posts/import-on-interaction/), which sees static facades used in place of interactive content when the page first loads. The content then gets requested and loaded just before the user interacts with an element. This can result in less data being transferred initially, and also reduces the processing required when viewing the page - especially if the script is never requested.
+This pattern is known as <a hreflang="en" href="https://www.patterns.dev/posts/import-on-interaction/">Import on Interaction</a>, which sees static facades used in place of interactive content when the page first loads. The content then gets requested and loaded just before the user interacts with an element. This can result in less data being transferred initially, and also reduces the processing required when viewing the page - especially if the script is never requested.
 
 ### Implementing technical optimizations
 
@@ -525,7 +525,7 @@ Unminified CSS is absent from most of the websites and the potential gains appea
 
 ##### Including as few as possible directly in HTML
 
-As with JS, inlining CSS could prove detrimental for the size of your HTML file and for the performance of your website. This is often found on websites built with CM and those relying on the [Critical CSS method](https://web.dev/extract-critical-css/).
+As with JS, inlining CSS could prove detrimental for the size of your HTML file and for the performance of your website. This is often found on websites built with CM and those relying on the <a hreflang="en" href="https://web.dev/extract-critical-css/">Critical CSS method</a>.
 
 {{ figure_markup(
   image="style-usage.png",
@@ -555,7 +555,7 @@ Despite these obvious benefits, more than 70% of websites still don’t use a CD
 
 #### Text compression
 
-[Compressing the text assets for a website](https://web.dev/uses-text-compression/) could require some (easy) server-side configuration. Text files such as HTML, JS and CSS are then compressed (in Brotli or Gzip format), which can easily make them lighter.
+<a hreflang="en" href="https://web.dev/uses-text-compression/">Compressing the text assets for a website</a> could require some (easy) server-side configuration. Text files such as HTML, JS and CSS are then compressed (in Brotli or Gzip format), which can easily make them lighter.
 
 {{ figure_markup(
   image="compression-used-on-text-resources.png",
@@ -570,7 +570,7 @@ However, a quarter of websites still don’t implement text compression. Gzip is
 
 #### Caching
 
-[Caching](https://web.dev/uses-long-cache-ttl/) is one of the killer features of browsers but not always easy to implement flawlessly.
+<a hreflang="en" href="https://web.dev/uses-long-cache-ttl/">Caching</a> is one of the killer features of browsers but not always easy to implement flawlessly.
 
 Caching is great for sustainability since it prevents browsers from requesting all resources everytime.
 
@@ -605,12 +605,12 @@ Many years ago, Google noted that the energy required for a single search could 
 As noted above, structured data helps search engines better understand web pages to produce more relevant results. However, our collective relationship with data has sustainability implications beyond SEO. For example:
 
 * Unused, duplicated, outdated, or incomplete data and poorly managed content use up server space,  cause errors for users, and require energy to host and maintain.
-* Related, [regular content audits](https://www.mightybytes.com/blog/how-to-run-a-content-audit/) and a clear [content governance plan](https://www.mightybytes.com/blog/content-governance/) can help you measure content performance and prune outdated or underperforming content over time to keep your website lean, efficient, and well-organized.
-* While third-party services may only inject a small snippet of code into an individual webpage, the data they collect can be very resource-intensive. A single digital ad, for instance, can produce as much as [323 tons of CO2e](https://www.businessinsider.com/making-net-zero-possible-the-hidden-impact-of-digital-ads-2022-7).
+* Related, <a hreflang="en" href="https://www.mightybytes.com/blog/how-to-run-a-content-audit/">regular content audits</a> and a clear <a hreflang="en" href="https://www.mightybytes.com/blog/content-governance/">content governance plan</a> can help you measure content performance and prune outdated or underperforming content over time to keep your website lean, efficient, and well-organized.
+* While third-party services may only inject a small snippet of code into an individual webpage, the data they collect can be very resource-intensive. A single digital ad, for instance, can produce as much as <a hreflang="en" href="https://www.businessinsider.com/making-net-zero-possible-the-hidden-impact-of-digital-ads-2022-7">323 tons of CO2e</a>.
 * Data tool makers—like marketing automation, email marketing, and CRM systems—often focus their product management efforts on _collecting_ data rather than _optimizing_ it. In fact, some of these platforms charge for data use, making their business models at odds with sustainability principles.
 * Similarly, many organizations don’t have clear data disposal policies nor do they train their teams on effective data management. This is not only a sustainability issue but a privacy/security issue as well.
 
-These are just several examples from a long list of sustainability issues associated with poorly managed content and data. Organizations should regularly audit their content and data management practices to [improve efficiency and reduce resource use](https://www.mightybytes.com/blog/design-a-sustainable-data-strategy/).
+These are just several examples from a long list of sustainability issues associated with poorly managed content and data. Organizations should regularly audit their content and data management practices to <a hreflang="en" href="https://www.mightybytes.com/blog/design-a-sustainable-data-strategy/">improve efficiency and reduce resource use</a>.
 
 ## [FOCUS] Popular frameworks, platforms, and CMSs
 
@@ -763,7 +763,7 @@ Another area of interest when looking across the three segments is that some sho
 
 The table and graph above highlight that Wix, as part of their platform, appear to be applying much more aggressive mobile image optimizations. A similar pattern is seen in the site generator segment, especially when looking at frameworks like Next.js and Nuxt.js.
 
-This seemingly small insight helps to capture the important role that platforms and frameworks can play in helping deliver more sustainable websites. By applying sensible defaults, platform developers and framework authors can help developers leverage their tools to make sites that are _[green by default](https://screenspan.net/blog/green-by-default/)_.
+This seemingly small insight helps to capture the important role that platforms and frameworks can play in helping deliver more sustainable websites. By applying sensible defaults, platform developers and framework authors can help developers leverage their tools to make sites that are _<a hreflang="en" href="https://screenspan.net/blog/green-by-default/">green by default</a>_.
 
 ## Conclusion
 
