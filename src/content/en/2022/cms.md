@@ -138,9 +138,9 @@ Comparing year over year, Drupal and Joomla continue to decline in market share,
 
 Within WordPress, users often make use of a “page builder” that sits as a layer on top of WordPress and provides an interface for content management. This year, with Wappalyzer’s detection methods improving, we looked at page builder adoption. We discovered that of the WordPress sites attributed to a page builder (approximately 34% of all WordPress sites in our dataset), Elementor and WP Bakery are the clear winners, with Divi, SiteOrigin, and Oxygen trailing behind.
 
-As we see it today, page builders exert significant influence on the performance of a site and, historically, have been anecdotal indicators of poor performance. As one example, our dataset indicates that it’s not uncommon for websites to have multiple page builders installed, adding a significant increase to the resources loaded by a site.
+As we see it today, page builders exert significant influence on the performance of a site, and historically have been anecdotal indicators of poor performance. As one example, our dataset indicates that it’s not uncommon for websites to have multiple page builders installed, adding a significant increase to the resources loaded by a site.
 
-Now that we’re tracking page builder data, we’ll have the opportunity in future editions to evaluate year of year changes in page builder adoption and look for connections in those changes to the overall performance of WordPress as a CMS.
+Now that we’re tracking page builder data, we’ll have the opportunity in future editions to evaluate year over year changes in page builder adoption and look for connections in those changes to the overall performance of WordPress as a CMS.
 
 ## CMS user experience
 
@@ -150,7 +150,7 @@ An important aspect of CMSs is the user experience they provide, for users visit
 
 The <a hreflang="en" href="https://httparchive.org/reports/cwv-tech">Core Web Vitals Technology Report</a> can be used to drill into available data and view the progress of evaluated platforms updated on a monthly basis.
 
-In this section we focused on data from June 2022 to provide a consistent timeframe for data presented across the Web Almanac, and examined three important factors provided by the [Chrome User Experience Report](../2021/methodology#chrome-ux-report), which can shed light on our understanding of how users are experiencing CMS-powered web pages in the wild:
+In this section we focus on data from June 2022 to provide a consistent timeframe for data presented across the Web Almanac. We examine three important factors provided by the [Chrome User Experience Report](../2021/methodology#chrome-ux-report) which can shed light on our understanding of how users are experiencing CMS-powered web pages in the wild:
 
 * Largest Contentful Paint (LCP)
 * First Input Delay (FID)
@@ -158,7 +158,7 @@ In this section we focused on data from June 2022 to provide a consistent timefr
 
 These metrics aim to cover the core elements which are indicative of a great web user experience. The [Performance](../2021/performance) chapter covers these in more detail, but here we are interested in looking at these metrics specifically in terms of CMSs.
 
-Initially, let’s review the 10 CMS platforms with the highest number of origins, and examine what percentage of sites on each platform have a _passing_ grade, meaning that the 75th percentile of each of the above metrics must be in the “good” (green) range for each site.
+Initially, let’s review the 10 CMS platforms with the highest number of origins and examine the percentage of sites on each platform that have a _passing_ grade, meaning that the 75th percentile in each of the above metrics must be in the “good” (green) range for each site.
 
 {{ figure_markup(
   image="top-cwv-performance.png",
@@ -182,7 +182,7 @@ We can also evaluate the progress of these CMS platforms compared to last year�
 
 {{ figure_markup(
   image="top-cwv-yoy.png",
-  caption="All CMS's in the top 10 improve year over year, with Duda improving from 30% to 67% since 2021.",
+  caption="All CMSs in the top 10 improve year over year, with Duda improving from 30% to 67% since 2021.",
   description="Bar chart showing the change in the percentage of passing Core Web Vitals mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=144597470&format=interactive",
   sheets_gid="1494726447",
@@ -242,7 +242,7 @@ In 2021’s report, the fact that almost all platforms manage to deliver a good 
 
 {{ figure_markup(
   image="fid-cwv-yoy.png",
-  caption="Year over year FID is a tight spread between 89% and 96%.",
+  caption="Year over year FID is a tight spread between 89% and 98%.",
   description="Bar chart showing the change in the percentage of good FID mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=242914394&format=interactive",
   sheets_gid="1494726447",
@@ -260,7 +260,7 @@ Cumulative Layout Shift (CLS) measures the visual stability of content on a web 
 
 A layout shift occurs any time a visible element changes its position from one rendered frame to the next.
 
-The<a hreflang="en" href="https://web.dev/evolving-cls/"> CLS metric evolved in 2021</a>,  mainly introducing the concept of Session Windows, to be fairer to long-lived pages and Single Page Apps (SPAs).
+The <a hreflang="en" href="https://web.dev/evolving-cls/">CLS metric evolved in 2021</a>, mainly introducing the concept of Session Windows, to be fairer to long-lived pages and Single Page Apps (SPAs).
 
 A score of 0.1 or below is measured as “good”, over 0.25 as “poor”, and anything in between as “needs improvement”.
 
@@ -276,7 +276,7 @@ A score of 0.1 or below is measured as “good”, over 0.25 as “poor”, and 
   )
 }}
 
-Comparing yearly data, we can see that all CMSs made progress, WordPress, Squarespace, Duda, and Adobe Experience Manager in particular showing significant gains.
+Comparing yearly data, we can see that all CMSs made progress, WordPress, Squarespace, Duda, and Adobe Experience Manager in particular showing significant gains. 
 
 ### Lighthouse
 
