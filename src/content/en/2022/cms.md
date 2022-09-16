@@ -3,7 +3,7 @@
 title: CMS
 description: CMS chapter of the 2022 Web Almanac covering CMS adoption, user experience of websites running on CMS platforms, and CMS resource weights.
 authors: [sirjonathan]
-reviewers: [alexdenning, dknauss, alonkochba, honzasladek]
+reviewers: [alexdenning, alonkochba, dknauss]
 analysts: [csliva]
 editors: [dknauss]
 translators: []
@@ -73,7 +73,7 @@ CMSs are used around the world, with some variance by country.
 
 {{ figure_markup(
   image="cms-adoption-geo.png",
-  caption="Mobile CMS across top 10 countries ranged from 31% to 41%.",
+  caption="CMS adoption by geography.",
   description="Bar chart showcasing the adoption of CMSs by geography, in the 10 countries with the largest number of websites. In the US, 39% of mobile websites within the dataset are built using a CMS, and 43% of desktop websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1831148760&format=interactive",
   sheets_gid="353349768",
@@ -94,7 +94,7 @@ We examined CMS adoption by the estimated rank of the sites included within the 
 
 {{ figure_markup(
   image="cms-adoption-rank.png",
-  caption="Top ranking sites are less likely to use a public-facing CMS with less than 7% adoption rate.",
+  caption="CMS adoption by rank.",
   description="Column chart showing the adoption of CMSs split by the rank of the websites. Higher ranking sites are less likely to have a CMS attributed, while a larger percentage of lower ranking sites have a clearly attributed CMS.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=898515378&format=interactive",
   sheets_gid="1599740178",
@@ -116,7 +116,7 @@ Among all websites that use an identifiable CMS, WordPress sites account for the
 
 {{ figure_markup(
   image="top-5-cms-yoy.png",
-  caption="WordPress and Wix experienced steady growth over the past 3 years.",
+  caption="Top five CMSs year over year.",
   description="Column chart depicting the percent of websites built on each of the top five CMSs, in the past 3 years. WordPress, Wix and Squarespace are growing in adoption year-over-year, while Drupal and Joomla are dropping.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=714516300&format=interactive",
   sheets_gid="1396671791",
@@ -128,7 +128,7 @@ Comparing year over year, Drupal and Joomla continue to decline in market share,
 
 {{ figure_markup(
   image="wordpress-page-builders.png",
-  caption="43% of mobile WordPress page builders adopted elementor.",
+  caption="WordPress page builder adoption.",
   description="Column chart depicting the top five page builders for WordPress.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=184382453&format=interactive",
   sheets_gid="2087504589",
@@ -162,7 +162,7 @@ Initially, let’s review the 10 CMS platforms with the highest number of origin
 
 {{ figure_markup(
   image="top-cwv-performance.png",
-  caption="Out of the top 10 CMSs, Duda pages had a good score on 67% of mobile pages.",
+  caption="Core web vitals performance by CMS.",
   description="Bar chart showcasing the percentage of sites with good Core Web Vitals, for each of the 10 most adopted CMSs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1221898999&format=interactive",
   sheets_gid="445373655",
@@ -182,7 +182,7 @@ We can also evaluate the progress of these CMS platforms compared to last year�
 
 {{ figure_markup(
   image="top-cwv-yoy.png",
-  caption="All CMSs in the top 10 improve year over year, with Duda improving from 30% to 67% since 2021.",
+  caption="Core web vitals mobile year-over-year.",
   description="Bar chart showing the change in the percentage of passing Core Web Vitals mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=144597470&format=interactive",
   sheets_gid="1494726447",
@@ -204,7 +204,7 @@ A “good” LCP is regarded as being under 2.5 seconds.
 
 {{ figure_markup(
   image="lcp-cwv-performance.png",
-  caption="TYPO3 and Duda tied with the most good LCP scores on 79% of origins.",
+  caption="Percentage of sites with good LCP by CMS.",
   description="Bar chart showcasing the percentage of sites with good LCP, for each of the 10 most adopted CMSs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1306847805&format=interactive",
   sheets_gid="445373655",
@@ -218,7 +218,7 @@ TYPO3 and Duda had the best LCP scores with 79% of origins having a “good” L
 
 {{ figure_markup(
   image="lcp-cwv-yoy.png",
-  caption="Joomla had the largest growth of good LCP scoring pages at a 13% increase.",
+  caption="LCP mobile year-over-year.",
   description="Bar chart showing the change in the percentage of good LCP mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=964886559&format=interactive",
   sheets_gid="1494726447",
@@ -242,7 +242,7 @@ In 2021’s report, the fact that almost all platforms manage to deliver a good 
 
 {{ figure_markup(
   image="fid-cwv-yoy.png",
-  caption="Year over year FID is a tight spread between 89% and 98%.",
+  caption="FID mobile year-over-year.",
   description="Bar chart showing the change in the percentage of good FID mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=242914394&format=interactive",
   sheets_gid="1494726447",
@@ -266,7 +266,7 @@ A score of 0.1 or below is measured as “good”, over 0.25 as “poor”, and 
 
 {{ figure_markup(
   image="cls-cwv-yoy.png",
-  caption="Wix has the most improved CLS pages with 89% of origins scored as good.",
+  caption="CLS mobile year-over-year.",
   description="Bar chart showing the change in the percentage of good CLS mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=2127088376&format=interactive",
   sheets_gid="1494726447",
@@ -292,7 +292,7 @@ The Lighthouse <a hreflang="en" href="https://web.dev/performance-scoring/">perf
 
 {{ figure_markup(
   image="median-lighthouse.png",
-  caption="Median lighthouse performance scores range from 19 to 47 among the top CMSs.",
+  caption="Median lighthouse mobile performance.",
   description="Bar chart showcasing the median Lighthouse mobile performance score for each of the top 10 most adopted CMSs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=2275923&format=interactive",
   sheets_gid="921264211",
@@ -312,7 +312,7 @@ Search Engine Optimization (or SEO) is the practice of improving a website to ma
 
 {{ figure_markup(
   image="median-lighthouse-seo.png",
-  caption="Most top CMS's score well on SEO metrics with a median spread between 83 and 92.",
+  caption="Median lighthouse mobile SEO scores.",
   description="Bar chart showcasing the median Lighthouse mobile SEO score for each of the top 10 most adopted CMSs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1901746915&format=interactive",
   sheets_gid="921264211",
@@ -334,7 +334,7 @@ Each accessibility audit is either a pass or a fail, but unlike other Lighthouse
 
 {{ figure_markup(
   image="median-lighthouse-accessibility.png",
-  caption="Lighthouse accessibility's lowest score is 77 and highest is 91 among top CMSs.",
+  caption="Media Lighthouse mobile accessibility scores.",
   description="Bar chart showcasing the median Lighthouse mobile SEO score for each of the top 10 most adopted CMSs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=201542197&format=interactive",
   sheets_gid="921264211",
@@ -352,7 +352,7 @@ The Lighthouse <a hreflang="en" href="https://web.dev/lighthouse-best-practices/
 
 {{ figure_markup(
   image="median-lighthouse-best-practices.png",
-  caption="Wix capped out the best practices score with a median score of 100.",
+  caption="Media Lighthouse mobile best practices scores.",
   description="Bar chart showcasing the median Lighthouse mobile best practices score for each of the top 10 most adopted CMSs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1066307789&format=interactive",
   sheets_gid="921264211",
@@ -370,7 +370,7 @@ We also used HTTP Archive data to analyze the weight of resources used across di
 
 {{ figure_markup(
   image="median-cms-page-weight.png",
-  caption="Squarespace has the largest median page size breaking the 3 megabyte barrier among top five CMSs.",
+  caption="Media resource weights by CMS.",
   description="Column chart showing the median total page weight of each of the top five most adopted CMSs, for each device.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1764509612&format=interactive",
   sheets_gid="1736220112",
@@ -382,7 +382,7 @@ Most of the top five CMSs deliver a median page weight of around ~2 MB, except S
 
 {{ figure_markup(
   image="distribution-cms-page-weight.png",
-  caption="Wix delivers a competitive median of 3.5mb on the low end of page weight while Squarespace hits 6.5mb as a median size among a larger distribution.",
+  caption="Mobile page weight distribution by CMS.",
   description="Distribution showing the percentile distribution of total mobile page weight among each of the top five most adopted CMSs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1236078412&format=interactive",
   sheets_gid="859067552",
@@ -402,7 +402,7 @@ Images, which are usually the heaviest resource loaded on a web page, account fo
 
 {{ figure_markup(
   image="median-cms-image-size.png",
-  caption="Wix performed well with a median size of 290 KB.",
+  caption="Median image size by CMS.",
   description="Column chart showing the median weight of image resources downloaded in each of the top five most adopted CMSs, for each device.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1491116500&format=interactive",
   sheets_gid="1736220112",
@@ -418,7 +418,7 @@ We can examine the usage of the different image formats across the top CMSs:
 
 {{ figure_markup(
   image="image-format-popularity.png",
-  caption="WebP adoption is an indicator of image size savings.",
+  caption="Image format popularity by CMS.",
   description="Bar chart showcasing the relative popularity of each image format, among the top 15 most adopted CMSs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1668189558&format=interactive",
   sheets_gid="710966440",
@@ -438,7 +438,7 @@ WordPress introduced support for WebP in 5.8, released in June of 2021 and is <a
 
 {{ figure_markup(
   image="median-size-js.png",
-  caption="CMS providers Wix and Squarespace utilize more javascript on average.",
+  caption="Median JavaScript resources by CMS.",
   description="Column chart showing the median weight of JavaScript resources downloaded in each of the top five most adopted CMSs, for each device.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1169405351&format=interactive",
   sheets_gid="1736220112",
@@ -452,7 +452,7 @@ The top five CMSs all deliver pages that rely on JavaScript, with Drupal deliver
 
 {{ figure_markup(
   image="median-size-html.png",
-  caption="Wix delivers more kilobytes of HTML across the median request than the other 4 sites combined.",
+  caption="Median HTML size by CMS.",
   description="Column chart showing the median weight of the HTML resource downloaded in each of the top five most adopted CMSs, for each device.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1713320070&format=interactive",
   sheets_gid="1736220112",
@@ -466,7 +466,7 @@ Examining the HTML document sizes, we can see that most of the top CMSs deliver 
 
 {{ figure_markup(
   image="median-size-css.png",
-  caption="WordPress uses the largest median CSS payload at 115 KB.",
+  caption="Median CSS size by CMS.",
   description="Column chart showing the median weight of CSS resources downloaded in each of the top five most adopted CMSs, for each device.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=176229983&format=interactive",
   sheets_gid="1736220112",
@@ -480,7 +480,7 @@ Next, we examine the use of explicit CSS resources that are downloaded. Here we 
 
 {{ figure_markup(
   image="median-size-font.png",
-  caption="Joomla sites are more likely to rely on system fonts making their payloads smaller at 82 KB.",
+  caption="Median font size by CMS.",
   description="Column chart showing the median weight of fonts resources downloaded in each of the top five most adopted CMSs, for each device.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1008146261&format=interactive",
   sheets_gid="1736220112",
@@ -502,15 +502,13 @@ In 2021, contributors from the WordPress community acknowledged the current stat
 
 This year, we compared our results against last year, focusing on adoption by geography and passing Core Web Vitals by geography along with a look at average resource usage.
 
-[Setup this year’s YoY analysis]
-
 ### Adoption by geography
 
 First, we examined WordPress adoption by geography across all sites in our dataset with comparison to our 2021 results.
 
 {{ figure_markup(
   image="wordpress-adoption-geo-yoy.png",
-  caption="Year over year, less WordPress sites were discovered across all geographies.",
+  caption="WordPress adoption by geography year-over-year.",
   description="Bar chart depicting the adoption of WordPress in each of the 10 geographies with the most websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=442489769&format=interactive",
   sheets_gid="694875761",
@@ -528,7 +526,7 @@ Next, we looked at the number of WordPress origins with passing Core Web Vitals,
 
 {{ figure_markup(
   image="wordpress-cwv-yoy.png",
-  caption="Geography plays a large role with the spread of passing sites ranging from 10% to 52%.",
+  caption="WordPress core web vitals by geography year-over-year.",
   description="Bar chart depicting the adoption of WordPress in each of the 10 geographies with the most websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1279742547&format=interactive",
   sheets_gid="1742929367",
@@ -545,7 +543,7 @@ We explored how WordPress sites use external resources and separated them into r
 
 {{ figure_markup(
   image="median-wordpress-resources.png",
-  caption="WordPress sites did not show changes in resource patterns.",
+  caption="WordPress resources year-over-year.",
   description="Column chart showing the percentile distributions of resources used for WordPress websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=660449132&format=interactive",
   sheets_gid="1922458949"
