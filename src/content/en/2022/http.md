@@ -48,7 +48,7 @@ However, with our setup, it is not trivial to accurately count resources deliver
 With the discovery of HTTP/3 being so delayed via the `alt-svc` HTTP header mechanism, our measurements may undercount resources that would have been delivered on HTTP/3 for normal browsing users. Thus, we group resources delivered on HTTP/2 and HTTP/3 together as HTTP/2+.
 
 {{ figure_markup(
-  image="http2-adoption-per-requests.png",
+  image="http2-adoption-per-request.png",
   caption="Adoption of HTTP/2 and above as a percentage of requests.",
   description="The adoption of HTTP/2 and above is very high. 77% of requests in June 2022 were served using HTTP/2 and above in both desktop and mobile settings.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTsnJP1ulTTc-j9n7CIbGHxO1SaFvmZWMPQnJHrluku254CqKXz_D2fn2Ck54FC-m9135eCFg83NHOc/pubchart?oid=109625269&format=interactive",
@@ -75,11 +75,15 @@ First, to understand the status quo, we measure the prevalence of HTTP/2+ adopti
 With the _increase_ in HTTP/2+ adoption, we would like to understand the driving forces that enable the increase. First, we analyze the HTTP/2+ adoption at per-website granularity by checking whether the landing page of the website was served on HTTP/2+. We observed that approximately 66% of the websites from our dataset, in both desktop and mobile settings, were served on HTTP/2+, whereas this was only true for [approximately 60% of the websites in our dataset in 2021](https://almanac.httparchive.org/en/2021/http#adoption-of-http2). This increase is a positive trend which suggests that websites are ready and moving towards an up-to-date version of HTTP.
 
 
-
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image4.png "image_tooltip")
+{{ figure_markup(
+  image="http2-adoption-per-cdn.png",
+  caption="Adoption of HTTP/2 and above as a percentage of requests served from a CDN.",
+  description="On both desktop and mobile settings, 95% of the requests that were served from a CDN were served using HTTP/2 or above. This suggests that CDN is the main driver for the increase in HTTP/2 adoption.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTsnJP1ulTTc-j9n7CIbGHxO1SaFvmZWMPQnJHrluku254CqKXz_D2fn2Ck54FC-m9135eCFg83NHOc/pubchart?oid=1268139215&format=interactive",
+  sheets_gid="427272739",
+  sql_file="h2_adoption_by_cdn_pct.sql"
+  )
+}}
 
 
 Another factor in enabling HTTP/2+ adoption is resources served from CDN. Similar to the observation in our [2021 analysis](https://almanac.httparchive.org/en/2021/http#adoption-by-cdns), we noticed that most resources served from a CDN were on HTTP/2+. The figure above shows that 95% of the requests served from CDN were delivered on HTTP/2+.
@@ -97,11 +101,15 @@ An important feature of HTTP/2 is multiplexing requests over a single TCP connec
 An implication of multiplexing requests into one TCP connection is the [reduction of connections](https://almanac.httparchive.org/en/2021/http#number-of-connections) required during page loads. Similar to our findings in 2021, pages with HTTP/2 enabled we observe fewer connections than pages that do not have HTTP/2 enabled.
 
 
-
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image5.png "image_tooltip")
+{{ figure_markup(
+  image="connections-comparison-per-page.png",
+  caption="Distribution of number of connections established during page load broken down by whether a web page uses HTTP/2+.",
+  description="With HTTP/2 enabled, web pages establishes fewer connections during the page load. For example, the median mobile page with HTTP/2 establishes 12 connections, but the median mobile page without HTTP/2 establishes 15 connections.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTsnJP1ulTTc-j9n7CIbGHxO1SaFvmZWMPQnJHrluku254CqKXz_D2fn2Ck54FC-m9135eCFg83NHOc/pubchart?oid=461867891&format=interactive",
+  sheets_gid="901907129",
+  sql_file="connections_per_page_load_dist.sql"
+  )
+}}
 
 
 The figure above shows that the median mobile page has 12 connections established during the page load when HTTP/2 is enabled. In contrast, the median page without HTTP/2 has 15 connections established—an overhead of 3 additional connections. However, the overhead worsens at higher percentiles. The page at the 90th percentile with HTTP/2 enabled has 32 connections, whereas the 90th percentile page without HTTP/2 enabled has 38 connections—a 6 additional connection overhead. These trends are the same between desktop and mobile versions of websites.
@@ -129,24 +137,20 @@ Priority hints can be very effective in improving user experience. For example, 
 HTTP/2 push allows web servers to pre-emptively send a response to a request before that request is even sent by the client. For example, a web site provider can push a resource that will be used during a page load to the end user along with the main HTML.
 
 
-
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image6.png "image_tooltip")
+{{ figure_markup(
+  image="h2-push-usage.png",
+  caption="Comparison of percentage of websites using HTTP/2 Push between 2021 and 2022 Web Alamnac datasets.",
+  description="While HTTP/2 push usage was already very low in the Web Almanac 2021 dataset, we observe lower HTTP/2 push utilization in this year's Web Almanac dataset, where only 0.66% of the mobile web pages utilizes HTTP/2 push.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTsnJP1ulTTc-j9n7CIbGHxO1SaFvmZWMPQnJHrluku254CqKXz_D2fn2Ck54FC-m9135eCFg83NHOc/pubchart?oid=1440772038&format=interactive",
+  sheets_gid="1278005075",
+  sql_file="h2_h3_pushed.sql"
+  )
+}}
 
 
 In 2021, as shown in the figure above, the percentage of websites using push was very low at 1.25%. However, in this year’s analysis, the number of websites using push decreases to 0.7% for both desktop and mobile websites. This marks the first decrease in push usage since 2020.
 
 The decrease in websites using push is likely because [it is difficult to use effectively](https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/). For example, websites cannot accurately know whether a resource being pushed already exists in the client’s cache. If it is in the client’s cache, the bandwidth used for pushing the resource is wasteful. With the difficulties, [Chrome decided to deprecate HTTP/2 push](https://groups.google.com/a/chromium.org/g/blink-dev/c/K3rYLvmQUBY/m/ho4qP49oAwAJ) starting from [Chrome version 106](https://developer.chrome.com/blog/removing-push/). Despite push also still being a part of the HTTP/3 standard, Chrome never implemented it, nor does it plan to, which might further explain the reduction in usage as sites moved to that version and lost the ability to push.
-
-
-
-<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image7.png "image_tooltip")
-
 
 
 ### Alternatives to Push
@@ -177,32 +181,41 @@ HTTP/3 aims to improve upon the shortcomings of HTTP/2 and is built on QUIC, a U
 To advertise that HTTP/3 is supported, web servers rely on the `alt-svc` in the HTTP response header. The value of `alt-svc` header contains a list of protocols supported by the server.
 
 
-
-<p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image8.png "image_tooltip")
-
+{{ figure_markup(
+  image="alt-svc-example.png",
+  caption="`alt-svc` response header example.",
+  description="Screenshot showing `alt-svc` response header supporting HTTP/3 with values `h3`, and `h3-29`.",
+  width=417,
+  height=267
+  )
+}}
 
 For example, in September 2022, the `alt-svc` value in the response for [https://www.cloudflare.com](https://www.cloudflare.com) is `h3=":443"; ma=86400, h3-29=":443"; ma=86400` as shown in the  screenshot below. `h3` and `h3-29` tell us that Cloudflare supports HTTP/3 and IETF draft 29 of HTTP/3 over UDP port 443. There is also a proposal to speed up the discovery of HTTP/3 as part of DNS lookup; for more details see [this post from Cloudflare](https://blog.cloudflare.com/speeding-up-https-and-http-3-negotiation-with-dns/).
 
 
-
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image9.png "image_tooltip")
+{{ figure_markup(
+  image="h3-support-per-request.png",
+  caption="Comparison of percentage of requests with HTTP/3 support between 2021 and 2022 Web Almanac datasets.",
+  description="HTTP/3 support has increased between July 2021 and June 2022. In June 2022, 15% of the requests have HTTP/3 support, whereas only 10% of the requests in July 2021 has HTTP/3 support.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTsnJP1ulTTc-j9n7CIbGHxO1SaFvmZWMPQnJHrluku254CqKXz_D2fn2Ck54FC-m9135eCFg83NHOc/pubchart?oid=971486939&format=interactive",
+  sheets_gid="1456324569",
+  sql_file="h3_support.sql"
+  )
+}}
 
 
 We analyze the HTTP/3 adoption by identifying a resource that was served on HTTP/3 or its response header containing an `alt-svc` header with either `h3` or `h3-29` being one of the protocols advertised. The figure above shows that there is a 5 percentage point increase, from 10% to 15%, in the percentage of requests with HTTP/3 support. The increase was observed in both desktop and mobile requests.
 
 
-
-<p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image10.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image10.png "image_tooltip")
-
+{{ figure_markup(
+  image="h3-support-by-cdn-use.png",
+  caption="Breakdown of HTTP/3 support for requests served from a CDN.",
+  description="Similar to HTTP/2, HTTP/3 support largely stems from CDNs. More than 80% of resources that were served from a CDN have HTTP/3 support for both desktop and mobile web pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTsnJP1ulTTc-j9n7CIbGHxO1SaFvmZWMPQnJHrluku254CqKXz_D2fn2Ck54FC-m9135eCFg83NHOc/pubchart?oid=2018898771&format=interactive",
+  sheets_gid="151549205",
+  sql_file="h3_support_from_cdn.sql"
+  )
+}}
 
 Similar to HTTP/2+ adoption, most of the HTTP/3 support originates from CDNs. The figure above shows that of the requests with HTTP/3 support more than 80% of them were served from a CDN. For example, 75% of the resources served from Cloudflare and 99% percent of the resources served from Facebook have HTTP/3 support. We expect the support to grow in the future when more CDNs start to support HTTP/3.
 
