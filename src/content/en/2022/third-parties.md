@@ -140,7 +140,7 @@ Third-party requests account for 45% of all requests made by websites. Of those 
 
 ## Performance impact
 
-Some third parties might inevitably block page rendering and negatively affect the webpage loading experience. Lighthouse has a <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/render-blocking-resources.js">render blocking resources audit]([https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/render-blocking-resources.js</a>) that provides data about render blocking time.
+Some third parties might inevitably block page rendering and negatively affect the webpage loading experience. Lighthouse has a <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/render-blocking-resources.js">render blocking resources audit</a>) that provides data about render blocking time.
 
 {{ figure_markup(
   image="render-blocking-time-by-most-popular-third-parties.png",
@@ -197,7 +197,7 @@ The previous section confirmed that the third parties are causing a huge perform
 
 ### Minifying resources
 
-Minifying JavaScript and CSS files is one of the first recommendations when speaking about web performance. To check how third party resources are minified we are making use of the following Lighthouse audits: <a hreflang="en" href="https://web.dev/unminified-javascript/">Unminified JavaScript</a> and <a hreflang="en" href="https://web.dev/unminified-css/">Unminified CSS]([https://web.dev/unminified-css/</a>).
+Minifying JavaScript and CSS files is one of the first recommendations when speaking about web performance. To check how third party resources are minified we are making use of the following Lighthouse audits: <a hreflang="en" href="https://web.dev/unminified-javascript/">Unminified JavaScript</a> and <a hreflang="en" href="https://web.dev/unminified-css/">Unminified CSS</a>).
 
 Minifying scripts should have a large positive impact as they are the most popular third-party content type. Moreover, compared to other content types like CSS, scripts tend to be a lot more verbose, with comments and large variable names that affect the file size.
 
@@ -236,7 +236,7 @@ jQuery is the most popular JavaScript library being used on 6% of all websites o
 )
 }}
 
-17% of the websites that use jQuery hosted on a third-party domain fail the <a hreflang="en" href="https://web.dev/unminified-javascript/">Lighthouse audit for unminified JavaScript]([https://web.dev/unminified-javascript/</a>). Digging deeper into how the library is imported shows that many websites are using the unminified versions of jQuery that should be used only for development purposes. A similar tendency can be found in the usage of some other less popular third-party scripts.
+17% of the websites that use jQuery hosted on a third-party domain fail the <a hreflang="en" href="https://web.dev/unminified-javascript/">Lighthouse audit for unminified JavaScript</a>). Digging deeper into how the library is imported shows that many websites are using the unminified versions of jQuery that should be used only for development purposes. A similar tendency can be found in the usage of some other less popular third-party scripts.
 
 This should serve as a reminder for web developers to check if third-party scripts imported on their websites are suitable for production environments.
 
@@ -301,7 +301,7 @@ Website content encoding data displayed in the [figure 13](#fig-13) revealed an 
 
 ### Usage of third-party facades
 
-There are multiple techniques to eliminate render-blocking resources. One of them is <a hreflang="en" href="https://web.dev/third-party-facades/">third-party facades</a> that are useful for visual content like YouTube videos or interactive widgets like a live chat. They help to exclude third parties from the critical loading sequence and lazy load them. Lighthouse has introduced an audit <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/third-party-facades.js">Lazy load third-party resources with facades</a>). However, there are multiple third-party facade solutions, for example <a hreflang="en" href="https://github.com/paulirish/lite-youtube-embed">lite-youtube-embed</a>, <a hreflang="en" href="https://github.com/justinribeiro/lite-youtube">lite-youtube</a>, or some custom approaches, and only a small number of them are in <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/blob/master/data/entities.js">the list of third-parties</a>) checked during the audit. This limitation makes it complicated to assess third-party facade usage across the web.
+There are multiple techniques to eliminate render-blocking resources. One of them is <a hreflang="en" href="https://web.dev/third-party-facades/">third-party facades</a> that are useful for visual content like YouTube videos or interactive widgets like a live chat. They help to exclude third parties from the critical loading sequence and lazy load them. Lighthouse has introduced an audit <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/third-party-facades.js">Lazy load third-party resources with facades</a>. However, there are multiple third-party facade solutions, for example <a hreflang="en" href="https://github.com/paulirish/lite-youtube-embed">lite-youtube-embed</a>, <a hreflang="en" href="https://github.com/justinribeiro/lite-youtube">lite-youtube</a>, or some custom approaches, and only a small number of them are in <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/blob/master/data/entities.js">the list of third-parties</a>) checked during the audit. This limitation makes it complicated to assess third-party facade usage across the web.
 
 ### Usage of `async` and `defer`
 
@@ -323,7 +323,7 @@ Which resources are critical and which could be deferred might be a tricky quest
 
 ### Legacy JavaScript
 
-Despite JavaScript's rapid involvement, the prevalence of legacy code is still significant. We are using one of the Lighthouse audits to check how much third-parties are <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/legacy-javascript.js">serving legacy JavaScript to modern browsers]([https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/legacy-javascript.js</a>).
+Despite JavaScript's rapid involvement, the prevalence of legacy code is still significant. We are using one of the Lighthouse audits to check how much third-parties are <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/legacy-javascript.js">serving legacy JavaScript to modern browsers</a>).
 
 {{ figure_markup(
   caption="Percent of legacy JavaScript Lighthouse audit failure caused by third-party",
@@ -362,16 +362,16 @@ Serving legacy JavaScript to the modern browsers results in a bigger amount of r
 
 The median amount of unused third-party JavaScript is approximately 120 KB. For 25% of websites that use third-party scripts, it is more than 261 KB.
 
-Unfortunately, website owners do not always have the possibility to change the way third-party JavaScript is bundled. However, if the third-party dependencies are self-hosted they can be optimized during development by adopting <a hreflang="en" href="https://web.dev/publish-modern-javascript">modern script bundling approaches]([https://web.dev/publish-modern-javascript</a>) that could help to reduce the amount of unused code.
+Unfortunately, website owners do not always have the possibility to change the way third-party JavaScript is bundled. However, if the third-party dependencies are self-hosted they can be optimized during development by adopting <a hreflang="en" href="https://web.dev/publish-modern-javascript">modern script bundling approaches</a>) that could help to reduce the amount of unused code.
 
 
 ### Other optimization technologies
 
 One of the third-party resource management problems is that sometimes it can skip the development team and be added using tag management tools without proper web performance evaluation. As a result, third-party scripts can uncontrollably affect the page loading and responsiveness experience.
 
-Some modern third-party loading and execution solutions have appeared in recent years. For example, <a hreflang="en" href="https://partytown.builder.io/">Partytown]([https://partytown.builder.io/</a>) is a library that relocates third-party scripts into the web worker to free up the main thread for first-party code. Currently, the library is in the early adoption stage and its usage is very low. Only 70 websites from the whole dataset are using it in 2022. However, this <a hreflang="en" href="https://nextjs.org/docs/basic-features/script#off-loading-scripts-to-a-web-worker-experimental">Next.js framework have started to introduce this solution</a> that could raise Partytown popularity.
+Some modern third-party loading and execution solutions have appeared in recent years. For example, <a hreflang="en" href="https://partytown.builder.io/">Partytown</a>) is a library that relocates third-party scripts into the web worker to free up the main thread for first-party code. Currently, the library is in the early adoption stage and its usage is very low. Only 70 websites from the whole dataset are using it in 2022. However, this <a hreflang="en" href="https://nextjs.org/docs/basic-features/script#off-loading-scripts-to-a-web-worker-experimental">Next.js framework have started to introduce this solution</a> that could raise Partytown popularity.
 
-The previous sections showed that the responsibility for third-party negative impact is split between first and third-party developers. However, <a hreflang="en" href="https://developer.chrome.com/blog/third-party-scripts/#proposed-approach">browsers are also showing interest in optimizing the loading of third-party resources]([https://developer.chrome.com/blog/third-party-scripts/#proposed-approach</a>). The proposals include better real user monitoring and developer tooling providing more data about the impact of third-parties on their websites.
+The previous sections showed that the responsibility for third-party negative impact is split between first and third-party developers. However, <a hreflang="en" href="https://developer.chrome.com/blog/third-party-scripts/#proposed-approach">browsers are also showing interest in optimizing the loading of third-party resources</a>). The proposals include better real user monitoring and developer tooling providing more data about the impact of third-parties on their websites.
 
 {{ figure_markup(
   caption="Percent of third-party requests with Timing-Allow-Origin header header",
