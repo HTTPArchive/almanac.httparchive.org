@@ -49,7 +49,7 @@ Our analysis throughout this work includes desktop and mobile websites. The vast
 
 {{ figure_markup(
   image="cms-adoption.png",
-  caption="47% of mobile sites were flagged as CMS's in 2022.",
+  caption="CMS adoption.",
   description="Column chart showing the adoption of CMSs over the past 3 years. 45% of desktop websites and 47% of mobile websites are built using a CMS in 20212 For 2021, both desktop and mobile are approximately 45%, while in 2020 they are both 42%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=386824637&format=interactive",
   sheets_gid="643278583",
