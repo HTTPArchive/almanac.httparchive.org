@@ -9,13 +9,13 @@ editors: [dknauss]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1HvTcCEw9LeMNX-fI_yOy0HemKFYKaQAHBxtB0etakqY/
 sirjonathan_bio: Jonathan Wold is an Open Web advocate with more than 17 years focused on the WordPress ecosystem. Beyond his love for WordPress, he enjoys reading widely, playing strategy games, acting, rock climbing, and occasionally writing in third-person.
-featured_quote: Wix delivers substantially fewer image bytes, with only 290 KB delivered on the median of mobile views, suggesting good use of image compression and lazy image loading. All of the other top 5 platforms deliver over 1 MB of images, with Squarespace delivering the largest ~1.7 MB.
-featured_stat_1: 43%
-featured_stat_label_1: Mobile wordpress pages adopting Elementor
-featured_stat_2: 47%
-featured_stat_label_2: Website origins discovered to be using a CMS
-featured_stat_3: 6.7%
-featured_stat_label_3: Percentage of top 1000 webpages using a known CMS
+featured_quote: Comparing year over year, Drupal and Joomla continue to decline in market share, while Squarespace remains steady and Wix grows. WordPress continues its ascent, increasing 1.4% over 2021 on mobile, and 0.2% over 2021 on desktop.
+featured_stat_1: 45%
+featured_stat_label_1: Percentage of websites within the desktop dataset attributed to a known CMS
+featured_stat_2: 7%
+featured_stat_label_2: Percentage of top 1,000 websites attributed to a known CMS
+featured_stat_3: 34%
+featured_stat_label_3: WordPress sites attributed to using a page builder
 unedited: true
 ---
 
