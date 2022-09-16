@@ -102,13 +102,13 @@ We examined CMS adoption by the estimated rank of the sites included within the 
   )
 }}
 
-According to the dataset, CMSs are used by less than 7% of the top 1,000 websites, compared to 47% of the complete dataset of all mobile sites in our analysis. A possible explanation, and the one we offered last year, is that smaller businesses and websites tend to use a CMS due to the ease of use, and the higher ranked websites tend to be built with proprietary solutions by professional web developers. 
+According to the dataset, CMSs are used by less than 7% of the top 1,000 websites, compared to 47% of the complete dataset of all mobile sites in our analysis. A possible explanation, and the one we offered last year, is that smaller businesses and websites tend to use a CMS due to the ease of use, and the higher ranked websites tend to be built with proprietary solutions by professional web developers.
 
 Another explanation is that for higher ranking sites which tend to have more resources allocated to development, the choice of a CMS is more likely to be obfuscated. It is improbable that more than 90% of the top 1,000 would forgo a CMS entirely and more likely that they just don’t show up in our dataset.
 
-A potentially correlated trend is the adoption of “headless” CMSs and the move towards separating content — and the CMS that powers it — from the frontend experience offered to end-users. 
+A potentially correlated trend is the adoption of “headless” CMSs and the move towards separating content — and the CMS that powers it — from the frontend experience offered to end-users.
 
-While our confidence in the overall dataset remains high, we’re interested in investigating the adoption by rank dataset further in future editions of this report to see if more can be done to detect CMS usage and improve the overall accuracy of our results. 
+While our confidence in the overall dataset remains high, we’re interested in investigating the adoption by rank dataset further in future editions of this report to see if more can be done to detect CMS usage and improve the overall accuracy of our results.
 
 ## Most popular CMSs
 
@@ -276,7 +276,7 @@ A score of 0.1 or below is measured as “good”, over 0.25 as “poor”, and 
   )
 }}
 
-Comparing yearly data, we can see that all CMSs made progress, WordPress, Squarespace, Duda, and Adobe Experience Manager in particular showing significant gains. 
+Comparing yearly data, we can see that all CMSs made progress, WordPress, Squarespace, Duda, and Adobe Experience Manager in particular showing significant gains.
 
 ### Lighthouse
 
@@ -428,7 +428,7 @@ We can examine the usage of the different image formats across the top CMSs:
   )
 }}
 
-Wix and Duda make the most use of WebP, with ~75% and 42% adoption respectively, while the rest show minor increases. 
+Wix and Duda make the most use of WebP, with ~75% and 42% adoption respectively, while the rest show minor increases.
 
 With the <a hreflang="en" href="https://caniuse.com/webp">growing support of WebP</a>, it seems all platforms have work to do to reduce the usage of the older JPEG and PNG formats without compromising on image quality.
 
@@ -535,7 +535,7 @@ Next, we looked at the number of WordPress origins with passing Core Web Vitals,
   )
 }}
 
-All geographies showed improvements, ranging from a 5% overall gain in Brazil to 14% in Japan. Also worth noting is the large disparity across geographies, with Brazil at 10% total compared to Japan at 52%. Brazil on the low end is growing, though, improving 100% year over year. As we evaluate next year's dataset, it may be worth investigating the low end performers further to identify potential causes and opportunities for improvement. 
+All geographies showed improvements, ranging from a 5% overall gain in Brazil to 14% in Japan. Also worth noting is the large disparity across geographies, with Brazil at 10% total compared to Japan at 52%. Brazil on the low end is growing, though, improving 100% year over year. As we evaluate next year's dataset, it may be worth investigating the low end performers further to identify potential causes and opportunities for improvement.
 
 ### Plugins
 
@@ -560,7 +560,7 @@ The introduction of Core Web Vitals, along with the advancements in performance 
 
 CMSs are doing great work and have opportunity to further improve user experiences on the web at scale by striving to enhance their infrastructure, experiment and integrate with new standards as they evolve, and follow best practices.
 
-On the other hand, Core Web Vitals as standards still evolving to do. 
+On the other hand, Core Web Vitals as standards still evolving to do.
 
 We mentioned some ideas for a <a hreflang="en" href="https://web.dev/responsiveness/">better responsiveness metric</a> above. In addition, navigation between pages in a site should be better tracked and take into account the architectural differences between <a hreflang="en" href="https://web.dev/vitals-spa-faq">Single-Page Applications (SPAs) and Multi-Page Applications (MPAs)</a> architectures.
 
