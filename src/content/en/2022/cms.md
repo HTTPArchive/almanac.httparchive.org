@@ -8,7 +8,7 @@ analysts: [csliva]
 editors: [dknauss]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1HvTcCEw9LeMNX-fI_yOy0HemKFYKaQAHBxtB0etakqY/
-sirjonathan_bio: Jonathon is an expoert in CMS's
+sirjonathan_bio: Jonathan Wold is an Open Web advocate with more than 17 years focused on the WordPress ecosystem. Beyond his love for WordPress, he enjoys reading widely, playing strategy games, acting, rock climbing, and occasionally writing in third-person.
 featured_quote: Wix delivers substantially fewer image bytes, with only 290 KB delivered on the median of mobile views, suggesting good use of image compression and lazy image loading. All of the other top 5 platforms deliver over 1 MB of images, with Squarespace delivering the largest ~1.7 MB.
 featured_stat_1: 43%
 featured_stat_label_1: Mobile wordpress pages adopting Elementor
