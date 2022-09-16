@@ -252,7 +252,7 @@ In 2021’s report, the fact that almost all platforms manage to deliver a good 
   )
 }}
 
-Yearly data shows that most CMSs managed to improve their FID over the past year. Wix and Weebly both regressed by several percentage points over previous year’s data.
+Yearly data shows that most CMSs managed to improve their FID over the past year. Wix and Weebly both regressed by several percentage points over the previous year's data.
 
 #### Cumulative Layout Shift (CLS)
 
@@ -330,11 +330,11 @@ An accessible website is a site designed and developed so that people with disab
 
 Lighthouse provides a set of accessibility audits, and it returns a weighted average of all of them (see <a hreflang="en" href="https://web.dev/accessibility-scoring/">Scoring Details</a> for a full list of how each audit is weighted).
 
-Each accessibility audit is either a pass or a fail, but unlike other Lighthouse audits, a page doesn’t get points for partially passing an accessibility audit. For example, if some elements have screen reader-friendly names, but others don’t, that page gets a 0 for the screen reader-friendly-names audit.
+Each accessibility audit is either a pass or a fail, but unlike other Lighthouse audits, a page doesn’t get points for partially passing an accessibility audit. For example, if some elements have screen reader-friendly names, but others don’t, that page gets a zero for the screen reader-friendly-names audit.
 
 {{ figure_markup(
   image="median-lighthouse-accessibility.png",
-  caption="Lighthouse accessibility's lowest score is 77 and highest is 91 among top CMS's.",
+  caption="Lighthouse accessibility's lowest score is 77 and highest is 91 among top CMSs.",
   description="Bar chart showcasing the median Lighthouse mobile SEO score for each of the top 10 most adopted CMSs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=201542197&format=interactive",
   sheets_gid="921264211",
@@ -366,51 +366,51 @@ Wix had the highest median best practices score of 100, while many of the other 
 
 ## Resource weights
 
-We also use HTTP Archive data to analyze the weight of resources used across different platforms, to highlight possible opportunities. Page loading performance does not exclusively depend on the number of downloaded bytes, but fewer bytes necessary to load a page results in reduced costs, carbon emissions, and potentially faster performance, especially for slower connections.
+We also used HTTP Archive data to analyze the weight of resources used across different platforms. We did this to highlight possible opportunities. Page loading performance does not depend exclusively on the number of downloaded bytes, but fewer bytes necessary to load a page results in reduced costs, carbon emissions, and potentially faster performance, especially for slower connections.
 
 {{ figure_markup(
   image="median-cms-page-weight.png",
-  caption="Squarespace has the largest median page size breaking the 3 megabyte barrier among top 5 CMS's.",
-  description="Column chart showing the median total page weight of each of the top 5 most adopted CMSs, for each device.",
+  caption="Squarespace has the largest median page size breaking the 3 megabyte barrier among top five CMSs.",
+  description="Column chart showing the median total page weight of each of the top five most adopted CMSs, for each device.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1764509612&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
   )
 }}
 
-Most of the top 5 CMSs deliver a median page weight of around ~2 MB, except Squarespace which delivers a larger ~3.5 MB. All except Joomla showed increases in page weight over 2021 data.
+Most of the top five CMSs deliver a median page weight of around ~2 MB, except Squarespace which delivers a larger ~3.5 MB. All except Joomla showed increases in page weight over 2021 data.
 
 {{ figure_markup(
   image="distribution-cms-page-weight.png",
   caption="Wix delivers a competitive median of 3.5mb on the low end of page weight while Squarespace hits 6.5mb as a median size among a larger distribution.",
-  description="Distribution showing the percentile distribution of total mobile page weight among each of the top 5 most adopted CMSs.",
+  description="Distribution showing the percentile distribution of total mobile page weight among each of the top five most adopted CMSs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1236078412&format=interactive",
   sheets_gid="859067552",
   sql_file="page_weight_distribution.sql"
   )
 }}
 
-The distribution of page weight in each platform’s percentiles is substantial, probably related to the difference in user content across different web pages, the number of images used, plugins, etc. The smallest pages delivered per platform come from WordPress, a marked improvement over last year’s data, which only sends 673KB for their 10th percentile of visits. The largest pages come from Squarespace, with ~11.4 MB delivered for their 90th percentile of visits, a ~2MB increase over last year’s data.
+The distribution of page weight in each platform’s percentiles is substantial. Page weight is probably related to the differences in user content across web pages, the number of images used, plugins installed, etc. The smallest pages delivered per platform come from WordPress, a marked improvement over last year’s data. This year, WordPress only sends 673 KB for their 10th percentile of visits. The largest pages come from Squarespace, with ~11.4 MB delivered for their 90th percentile of visits, a ~2 MB increase over last year’s data.
 
 ### Page weight breakdown
 
-Page Weight is a sum of resources used. We can attempt to evaluate these different resource sizes across different CMSs.
+Page weight is the sum in kilobytes of resources used on a page. We can attempt to evaluate these different resource sizes across different CMSs.
 
 #### Images
 
-Images, which are usually the heaviest resource, account for a large portion of the resource weight.
+Images, which are usually the heaviest resource loaded on a web page, account for a large portion of the resource weight.
 
 {{ figure_markup(
   image="median-cms-image-size.png",
-  caption="Wix keeps images well compressed and optimized with a median size of 290kb.",
-  description="Column chart showing the median weight of image resources downloaded in each of the top 5 most adopted CMSs, for each device.",
+  caption="Wix performed well with a median size of 290 KB.",
+  description="Column chart showing the median weight of image resources downloaded in each of the top five most adopted CMSs, for each device.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1491116500&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
   )
 }}
 
-Wix delivers substantially fewer image bytes, with only 290 KB delivered on the median of mobile views, suggesting good use of image compression and lazy image loading. All of the other top 5 platforms deliver over 1 MB of images, with Squarespace delivering the largest ~1.7 MB.
+Wix delivers substantially fewer image bytes, with only 290 KB delivered for the median of mobile views. This suggests good use of image compression and lazy image loading. All of the other top five platforms deliver over 1 MB of images, with Squarespace delivering the largest ~1.7 MB.
 
 Advanced image formats provide a considerable improvement in compression, enabling resource savings and faster site loading. WebP is commonly supported in all major browsers today, with over <a hreflang="en" href="https://caniuse.com/webp">95% support</a>. In addition, there are several newer image formats gaining popularity and adoption, namely <a hreflang="en" href="https://caniuse.com/avif">AVIF</a>, and <a hreflang="en" href="https://jpegxl.info">JPEG-XL</a>.
 
@@ -418,7 +418,7 @@ We can examine the usage of the different image formats across the top CMSs:
 
 {{ figure_markup(
   image="image-format-popularity.png",
-  caption="Webp adoption is an indicator of image size savings.",
+  caption="WebP adoption is an indicator of image size savings.",
   description="Bar chart showcasing the relative popularity of each image format, among the top 15 most adopted CMSs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1668189558&format=interactive",
   sheets_gid="710966440",
@@ -428,9 +428,9 @@ We can examine the usage of the different image formats across the top CMSs:
   )
 }}
 
-Wix and Duda make the most use of WebP, with ~75% and 42% adoption respectively, while the rest show minor increases.
+Wix and Duda make the most use of WebP, with ~75% and 42% adoption respectively, while the rest show minor increases. 
 
-With the <a hreflang="en" href="https://caniuse.com/webp">growing support of WebP</a>, it seems all platforms have work to do to reduce the usage of the older JPEG and PNG formats, where it is applicable without compromising on image quality.
+With the <a hreflang="en" href="https://caniuse.com/webp">growing support of WebP</a>, it seems all platforms have work to do to reduce the usage of the older JPEG and PNG formats without compromising on image quality.
 
 WordPress introduced support for WebP in 5.8, released in June of 2021 and is <a hreflang="en" href="https://make.wordpress.org/core/2022/06/30/plan-for-adding-webp-multiple-mime-support-for-images/">planned to be included by default</a> in WordPress 6.1, which we expect to lead to a significant increase in WebP adoption in the 2023 results.
 
@@ -439,27 +439,26 @@ WordPress introduced support for WebP in 5.8, released in June of 2021 and is <a
 {{ figure_markup(
   image="median-size-js.png",
   caption="CMS providers Wix and Squarespace utilize more javascript on average.",
-  description="Column chart showing the median weight of JavaScript resources downloaded in each of the top 5 most adopted CMSs, for each device .",
+  description="Column chart showing the median weight of JavaScript resources downloaded in each of the top five most adopted CMSs, for each device.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1169405351&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
   )
 }}
 
-The largest five CMSs all deliver pages that rely on JavaScript, with Drupal delivering the least amount of JavaScript bytes–416 KB on mobile, while Wix delivers the most JavaScript bytes, over 1.3 MB.
+The top five CMSs all deliver pages that rely on JavaScript, with Drupal delivering the least amount of JavaScript bytes: 416 KB on mobile. Wix delivers the most JavaScript bytes, over 1.3 MB.
 
 #### HTML document
 
 {{ figure_markup(
   image="median-size-html.png",
   caption="Wix delivers more kilobytes of HTML across the median request than the other 4 sites combined.",
-  description="Column chart showing the median weight of the HTML resource downloaded in each of the top 5 most adopted CMSs, for each device.",
+  description="Column chart showing the median weight of the HTML resource downloaded in each of the top five most adopted CMSs, for each device.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1713320070&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
   )
 }}
-
 
 Examining the HTML document sizes, we can see that most of the top CMSs deliver a median HTML size of ~22 KB–37 KB, except Wix which delivers ~118 KB, a minor improvement over 2021’s results. This may suggest extensive use of inlined resources and shows an area that can be further improved.
 
@@ -467,8 +466,8 @@ Examining the HTML document sizes, we can see that most of the top CMSs deliver 
 
 {{ figure_markup(
   image="median-size-css.png",
-  caption="Wordpress uses the largest median CSS payload at 115kb.",
-  description="Column chart showing the median weight of CSS resources downloaded in each of the top 5 most adopted CMSs, for each device.",
+  caption="WordPress uses the largest median CSS payload at 115 KB.",
+  description="Column chart showing the median weight of CSS resources downloaded in each of the top five most adopted CMSs, for each device.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=176229983&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
@@ -481,8 +480,8 @@ Next, we examine the use of explicit CSS resources that are downloaded. Here we 
 
 {{ figure_markup(
   image="median-size-font.png",
-  caption="Joomla sites are more likely to rely on system fonts making their payloads smaller at 82kb.",
-  description="Column chart showing the median weight of fonts resources downloaded in each of the top 5 most adopted CMSs, for each device.",
+  caption="Joomla sites are more likely to rely on system fonts making their payloads smaller at 82 KB.",
+  description="Column chart showing the median weight of fonts resources downloaded in each of the top five most adopted CMSs, for each device.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1008146261&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
@@ -493,23 +492,25 @@ To display text, web developers often choose to use a variety of fonts. Joomla d
 
 ## WordPress in 2022
 
-WordPress is the most commonly used CMS today–almost 3 out of 4 sites built with a CMS are using WordPress, thus deserving further discussion.
+WordPress is the most commonly used CMS today. Almost three out of four sites built with a CMS are using WordPress, which merits further discussion.
 
-WordPress is an open-source project, which has been around since 2003. Many sites built on WordPress use various themes and plugins, sometimes through page builders such as Elementor, WP Bakery, or Divi.
+WordPress is an open-source project, which has been around since 2003. Many sites built on WordPress use a variety of themes and plugins, sometimes through page builders such as Elementor, WP Bakery, or Divi.
 
-The WordPress ecosystem maintains the CMS and services requirements for additional functionality through custom services and products (themes and plugins). This community has an outsized impact, with a relatively small number of people maintaining both the CMS itself and providing the additional functionality which makes WordPress sufficiently powerful and flexible that it can service most types of websites. This flexibility is important when explaining the market share, but also complicates the discussion around WordPress based site performance.
+The WordPress ecosystem maintains the CMS and services required for additional functionality through custom services and products (themes and plugins). This community has an outsized impact, with a relatively small number of people maintaining both the CMS itself and providing the additional functionality which makes WordPress sufficiently powerful and flexible that it can serve most kinds of websites. This flexibility is important when explaining the market share, but it also complicates the discussion around WordPress-based site performance.
 
-In 2021, contributors from the WordPress community acknowledged the current state of performance, in this <a hreflang="en" href="https://make.wordpress.org/core/2021/10/12/proposal-for-a-performance-team/">proposal</a> to create a performance dedicated core team, which can hopefully improve the current performance of the average WordPress sites.
+In 2021, contributors from the WordPress community acknowledged the current state of performance, in this <a hreflang="en" href="https://make.wordpress.org/core/2021/10/12/proposal-for-a-performance-team/">proposal</a> to create a performance-dedicated core team, which we hope will improve the performance of the average WordPress site.
+
+This year, we compared our results against last year, focusing on adoption by geography and passing Core Web Vitals by geography along with a look at average resource usage.
 
 [Setup this year’s YoY analysis]
 
 ### Adoption by geography
 
-First, we examined WordPress adoption by geography, across all sites in our dataset, comparing to 2021 results.
+First, we examined WordPress adoption by geography across all sites in our dataset with comparison to our 2021 results.
 
 {{ figure_markup(
   image="wordpress-adoption-geo-yoy.png",
-  caption="Year over year, less Wordpress sites were discovered across all geographies.",
+  caption="Year over year, less WordPress sites were discovered across all geographies.",
   description="Bar chart depicting the adoption of WordPress in each of the 10 geographies with the most websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=442489769&format=interactive",
   sheets_gid="694875761",
@@ -519,11 +520,11 @@ First, we examined WordPress adoption by geography, across all sites in our data
   )
 }}
 
-[Analysis]
+According to our dataset, WordPress adoption is down across all geographies. Given the continued growth of WordPress overall and the uniformity of the percentage decrease, we're inclined to consider this a change in methodology or an issue with attribution. Next year's dataset may make this clearer.
 
 ### Passing CWVs by geography
 
-Next, let’s look at the amount of WordPress origins with passing Core Web Vitals, but this time, breakdown by geography, for mobile devices and compared to 2021 results.
+Next, we looked at the number of WordPress origins with passing Core Web Vitals, but this time we broke them down by geography, mobile device usage, and in comparison with our 2021 results.
 
 {{ figure_markup(
   image="wordpress-cwv-yoy.png",
@@ -536,33 +537,33 @@ Next, let’s look at the amount of WordPress origins with passing Core Web Vita
   )
 }}
 
-[Analysis]
+All geographies showed improvements, ranging from a 5% overall gain in Brazil to 14% in Japan. Also worth noting is the large disparity across geographies, with Brazil at 10% total compared to Japan at 52%. Brazil on the low end is growing, though, improving 100% year over year. As we evaluate next year's dataset, it may be worth investigating the low end performers further to identify potential causes and opportunities for improvement. 
 
 ### Plugins
 
-We explored how WordPress sites use external resources and separated them between resources that are included in plugins, themes, and shipped in WordPress core (wp-includes), compared to 2021 results.
+We explored how WordPress sites use external resources and separated them into resources that are included in plugins, themes, and shipped in WordPress core (wp-includes) with comparison to our 2021 results.
 
 {{ figure_markup(
   image="median-wordpress-resources.png",
-  caption="Wordpress did not change their resources pattern in form or function.",
+  caption="WordPress sites did not show changes in resource patterns.",
   description="Column chart showing the percentile distributions of resources used for WordPress websites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=660449132&format=interactive",
   sheets_gid="1922458949"
   )
 }}
 
-
-[Analysis]
+Our analyis was brief and began with a check to see if there was a mistake in the results. No mistake found and we'll revisit again next year, perhaps looking more closely at the implied performance impact of popular themes and plugins.
 
 ## Conclusion
 
-CMS platforms continue to grow and are becoming more ubiquitous year-over-year. They are essential for creating and consuming content on the internet, especially as more people and businesses establish an online presence.
+CMS platforms continue to grow and are becoming more ubiquitous year by year. They are essential for creating and consuming content on the internet, especially as more people and businesses establish an online presence.
 
-The introduction of Core Web Vitals, along with the advancements in performance data visibility, has generated a focus on web performance across the web, and we hope these insights will help us all get a better understanding of the current state of the web, ultimately making the web a better place.
+The introduction of Core Web Vitals, along with the advancements in performance data visibility, has made web performance a priority everywhere CMSs are used. We hope the insights in this chapter will help us all form a better understanding of the current state of the web, ultimately making the web a better place.
 
-CMSs are doing great work and have a huge opportunity to further improve user experiences on the web at scale, by striving to enhance their infrastructure, experiment and integrate with new standards as they evolve, and follow best practices.
+CMSs are doing great work and have opportunity to further improve user experiences on the web at scale by striving to enhance their infrastructure, experiment and integrate with new standards as they evolve, and follow best practices.
 
-On the other hand, Core Web Vitals still have some progress and evolving to do.
+On the other hand, Core Web Vitals as standards still evolving to do. 
 
-We mentioned the thoughts towards a <a hreflang="en" href="https://web.dev/responsiveness/">better responsiveness metric</a> above. In addition, navigations between pages in a site should be better tracked and take into account the difference between <a hreflang="en" href="https://web.dev/vitals-spa-faq">Single-Page Applications (SPAs) and Multi-Page Applications (MPAs)</a>architectures.
+We mentioned some ideas for a <a hreflang="en" href="https://web.dev/responsiveness/">better responsiveness metric</a> above. In addition, navigation between pages in a site should be better tracked and take into account the architectural differences between <a hreflang="en" href="https://web.dev/vitals-spa-faq">Single-Page Applications (SPAs) and Multi-Page Applications (MPAs)</a> architectures.
 
+We look forward to next year's results and hope to both expand our datasets and improve our methodologies. In the meantime, onward and upword, let's keep making the web better.
