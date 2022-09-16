@@ -13,6 +13,7 @@ if (codepoints && codepoints.length) {
 WITH
 fonts AS (
   SELECT
+    client,
     url,
     payload
   FROM
@@ -21,18 +22,22 @@ fonts AS (
     date = '2022-06-01' AND
     type = 'font'
   GROUP BY
+    client,
     url,
     payload
 )
 
 SELECT
+  client,
   writing_system,
   COUNT(0) AS freq,
-  COUNT(0) / SUM(COUNT(0)) OVER () AS pct_freq
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_freq
 FROM
   fonts,
   UNNEST(detect(JSON_EXTRACT_STRING_ARRAY(payload, '$._font_details.cmap.codepoints'))) AS writing_system
 GROUP BY
+  client,
   writing_system
 ORDER BY
   pct_freq DESC
