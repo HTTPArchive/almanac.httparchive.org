@@ -88,32 +88,32 @@ Learn more about our [Methodology](./methodology).
 )
 }}
 
-The prevalence of third-parties remained at the same high levels as the previous year, i.e. 94% of websites use at least one-third party.
+The prevalence of third-parties remained at the same high levels as the previous year, i.e. 94% of websites use at least one third party.
 
-<!-- TODO: update charts and text once data is validated -->
-<!-- {{ figure_markup(
+{{ figure_markup(
   image="median-number-of-third-parties-by-rank.png",
-  caption="Median number of third parties per website by rank.",
-  description="Bar chart showing the median number of third-parties across various website rank categories. For the top 1,000 websites 25 and 23 third-parties are used on desktop and mobile websites respectively. The top 10,000 websites use 31 and 28 third-parties on desktop and mobile websites respectively. The top 100,000 websites use 25 and 22 third-parties on desktop and mobile websites respectively. The top 1,000,000 websites use 21 and 19 third-parties on desktop and mobile websites respectively. The median number of third-parties for all websites is 18 and 16 on desktop and mobile websites respectively.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=765132350&format=interactive",
+  caption="Median number of third-party domains per page by rank.",
+  description="Bar chart showing the median number of third-party domains across various website rank categories. For the top 1,000 websites 53 and 43 third-parties are used on desktop and mobile websites respectively. The top 10,000 websites use 48 and 43 third-parties on desktop and mobile websites respectively. The top 100,000 websites use 34 and 31 third-parties on desktop and mobile websites respectively. The top 1,000,000 websites use 28 and 25 third-parties on desktop and mobile websites respectively. The median number of third-parties for all websites is 24 and 21 on desktop and mobile websites respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=1946246067&format=interactive",
   sheets_gid="1355951746",
   sql_file="number_of_third_party_providers_by_rank.sql"
   )
-}} -->
-<!--
-This figure shows the number of third parties for the most-used websites. For example, on average the top 1,000 popular websites use 23 third-parties on mobile and 25 on desktop devices. More popular websites seem to have a larger number of third parties, i.e. top 10,000 sites have twice more third parties than the median number of third-parties for all websites. -->
+}}
 
-<!-- {{ figure_markup(
-  image="websites-by-rank-and-third-party-category",
-  caption="Percent of websites by third-party category and website rank.",
-  description="",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=171851512&format=interactive",
+The figure above shows the number of third-party domains for the most-used websites. For example, on average the top 1,000 popular websites use 43 third-party domains on mobile and 53 on desktop devices. More popular websites seem to have a larger number of third-party domains, i.e. top 1,000 sites have twice more third parties than the median number of third-parties for all websites. This large number is explained by the fact that some third party providers might have content hosted on multiple domains, for example, Yahoo serves their content from mempf.yahoo.co.jp, yjtag.yahoo.co.jp, etc.
+Though the exact number of third party providers is still a subject for further research, the current data about third-party domains gives an overview of how much they might affect time spent on network requests. As every request to a new domain takes time for DNS lookup and establishing an initial connection, the more third party domains are used the more it might affect page loading speed.
+
+{{ figure_markup(
+  image="third-party-domains-per-page-by-rank-and-category.png",
+  caption="Median number of third-party domains per page by category and rank.",
+  description="Bar chart showing the median number of third-party domains by third-party category across various website rank categories. The data is shown for mobile pages. Only ad, unknown, and video category differs significantly depending on a rank. For the top 1,000 websites 18 third-party domains are from ad category, 21 unknown, and 5 video. For the top 10,000 websites 22 are from ad category, 16 unknown, and 4 video. For the top 100,000 websites 15 are from ad category, 12 unknown, and 8 video. For the top 1,000,000 websites 7 are from ad category, 9 unknown, and 11 video. For all websites 4 are from ad category, 8 unknown, and 11 video. Data about the rest of third-party categories shows that analicts category makes up from 3 to 5 third-party domains per page, CDN 4-5 domains, consent providers 7-8, content providers 3-5, customer success 9, marketing 2-3, social 5-6, tag manager 1-2, utility category 3-4, and other category 2.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=419972852&format=interactive",
   sheets_gid="1355951746",
   sql_file="number_of_third_parties_by_rank_and_category.sql"
   )
-}} -->
+}}
 
-<!-- When looking at the distribution of third-parties by category and rank, it becomes clear that the increase in the number of third-parties on more popular websites is mostly made up of the "ad" category. That means the third parties, especially ads have a crucial impact on the user experience because they are more used on the websites with a larger number of users. -->
+When looking at the distribution of third-parties by category and by rank, it becomes clear that the increase in the number of third parties on more popular websites is mostly made up of the ad and unknown third-party category. That means the third parties especially ads have a crucial impact on the users because they are more used on the websites with a larger number of users.
 
 {{ figure_markup(
   image="top-third-parties-by-number-of-pages.png",
