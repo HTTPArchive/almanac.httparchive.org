@@ -42,8 +42,6 @@ To match the definition, only third-parties originating from a domain whose reso
 
 In the case where third-party content is served from a first-party domain, it is counted as first-party content. For example, self-hosting Google Fonts or bootstrap.css is counted as _first-party content_. Similarly, first-party content served from a third-party domain is counted as third-party content—assuming it passes the “more than 50 pages criteria”.
 
-There are some third parties that serve content from different subdomains. However, regardless of the number of subdomains they should be counted as a single third party. For that reason, a term third-party provider is used in some charts.
-
 ### **Third-party categories**
 
 We are relying on the <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/#third-parties-by-category">third-party-web</a> repository from <a hreflang="en" href="https://twitter.com/patrickhulce">Patrick Hulce</a> to help us identify and categorize third parties. This repository breaks down third parties by the following categories:
