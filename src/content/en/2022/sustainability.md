@@ -107,7 +107,7 @@ For more on this, check the [Page Weight](./page-weight) chapter.
   image="kilobytes-number-by-percentile.png",
   caption="Number of kilobytes by percentile",
   description="A column chart showing that on the 90th percentile web pages weight over 9MB on desktop and 8MB on mobile. On the 75th percentile the web pages get over 4.5MB on desktop and around 4MB on mobile, on the 50th percentile we found web pages weight a bit less than 2.5MB on desktop and over 2MB on mobile, on the 25th percentile it's over 1MB on desktop and a bit less than 1MB on mobile. Finally, on the 10th percentile we see pages weight about 0.5MB on desktop and 0.4MB on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1354451270&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=2123741324&format=interactive",
   sheets_gid="1911144863",
   sql_file=""
 ) }}
