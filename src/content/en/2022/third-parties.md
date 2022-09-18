@@ -143,7 +143,7 @@ Some third parties might inevitably block page rendering and negatively affect t
 {{ figure_markup(
   image="render-blocking-time-by-most-popular-third-parties.png",
   caption="Median render blocking time for top 10 most popular third parties.",
-  description="Bar chart showing the potential render-blocking time of top 10 most popular render-blocking third parties. Median render-blocking time of fonts.googleapis.com is 1.085 milliseconds on mobile pages, accounts.google.com is render-blocking for 1.077 milliseconds, adservice.google.com for 1.571, googletagmanager.com for 1.806, ajax.googleapis.com for 1.530, cloudflare.com for 1.300, youtube.com for 1.146, bootstrapcdn.com for 1.241, maps.google.com for 2.095 and jsdelivr.net for 1.370. Desktop and mobile data is similar for all third parties.",
+  description="Bar chart showing the potential render-blocking time of top 10 most popular render-blocking third parties. Median render-blocking time of fonts.googleapis.com is 1.085 milliseconds on mobile pages, accounts.google.com is render-blocking for 1,077 milliseconds, adservice.google.com for 1,571, googletagmanager.com for 1,806, ajax.googleapis.com for 1,530, cloudflare.com for 1,300, youtube.com for 1,146, bootstrapcdn.com for 1,241, maps.google.com for 2.095 and jsdelivr.net for 1,370. Desktop and mobile data is similar for all third parties.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=549590895&format=interactive",
   sheets_gid="1355951746",
   sql_file="third_parties_blocking_rendering_percentiles.sql"
