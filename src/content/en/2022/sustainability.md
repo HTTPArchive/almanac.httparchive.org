@@ -139,9 +139,7 @@ Now for an additional graph: emissions per percentile by type of content.
   description="A bar chart showing the percent of different content types on desktop in the total page carbon emissions by percentile. On the 90th percentile HTML content accounts for around 1.8% of the total carbon emissions, Javascript is responsible a bit less than 18.1% of total carbon emissions, CSS is around 3.4%, images accounts for around 72.3% and fonts represent 4.5% of the total carbon emissions. On the 75th percentile, HTML represents 1.8%, Javascript 23.4%, CSS around 3.8%, images around 65.7% and fonts around 5.2% of the total carbon emissions. On the 50th percentile, HTML represents 1.9%, Javascript 30%, CSS around 4.4%, images almost 57.4% and fonts around 6.3% of the total carbon emissions. On the 25th percentile, HTML represents 2.4%, Javascript 38.8%, CSS around 5.2%, images 48.3% and fonts around 5.3% of the total carbon emissions. On the 10th percentile, HTML represents 3.8%, Javascript 53.4%, CSS around 3.6%, images 39.2% and fonts 0% of the total carbon emissions.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=141071996&format=interactive",
   sheets_gid="1911144863",
-  sql_file="",
-  width=600,
-  height=391
+  sql_file=""
 ) }}
 
 Images and JavaScript seem to be the more impactful but images get even more impactful as you go to upper percentiles. However, keep in mind that we only take data transfer into account to calculate carbon emissions. Processing JavaScript is usually more impactful than images. Once you have downloaded the JavaScript files, you still need to process them, sometimes leading to reloading your page or fetching other resources. Nonetheless, this graph underlines the necessity to reduce these impacts. It can be quite easy for images, as we will see later in this chapter. It gets more tricky with JavaScript, even though there are some easier technical optimizations such as minifying, compressing or reducing the need for it. More on that later too.
@@ -584,7 +582,7 @@ However, a quarter of websites still don't implement text compression. Gzip is u
   sql_file="cache_header_usage.sql"
 ) }}
 
-On this page, we see that more than a quarter of websites don't use caching at all. This is a huge loss for sustainability and performance (and, for obvious reasons, users).
+On this page, we see that more than a quarter of websites don't use caching at all. This is a huge loss for sustainability and performance and—for obvious reasons, users.
 
 ## SEO and sustainability
 
@@ -606,10 +604,10 @@ Many years ago, Google noted that the energy required for a single search could 
 As noted above, structured data helps search engines better understand web pages to produce more relevant results. However, our collective relationship with data has sustainability implications beyond SEO. For example:
 
 - Unused, duplicated, outdated, or incomplete data and poorly managed content use up server space,  cause errors for users, and require energy to host and maintain.
-- Related, <a hreflang="en" href="https://www.mightybytes.com/blog/how-to-run-a-content-audit/">regular content audits</a> and a clear <a hreflang="en" href="https://www.mightybytes.com/blog/content-governance/">content governance plan</a> can help you measure content performance and prune outdated or underperforming content over time to keep your website lean, efficient, and well-organized.
+- <a hreflang="en" href="https://www.mightybytes.com/blog/how-to-run-a-content-audit/">Regular content audits</a> and a clear <a hreflang="en" href="https://www.mightybytes.com/blog/content-governance/">content governance plan</a> can help you measure content performance and prune outdated or underperforming content over time to keep your website lean, efficient, and well-organized.
 - While third-party services may only inject a small snippet of code into an individual web page, the data they collect can be very resource-intensive. A single digital ad, for instance, can produce as much as <a hreflang="en" href="https://www.businessinsider.com/making-net-zero-possible-the-hidden-impact-of-digital-ads-2022-7">323 tons of CO2e</a>.
-- Data tool makers—like marketing automation, email marketing, and CRM systems—often focus their product management efforts on _collecting_ data rather than _optimizing_ it. In fact, some of these platforms charge for data use, making their business models at odds with sustainability principles.
-- Similarly, many organizations don't have clear data disposal policies nor do they train their teams on effective data management. This is not only a sustainability issue but a privacy/security issue as well.
+- Data tool makers—like marketing automation, email marketing, and CRM systems—often focus their product management efforts on collecting data rather than optimizing it. In fact, some of these platforms charge for data use, making their business models at odds with sustainability principles.
+- Similarly, many organizations don't have clear data disposal policies nor do they train their teams on effective data management. This is not only a sustainability issue but a privacy and security issue as well.
 
 These are just several examples from a long list of sustainability issues associated with poorly managed content and data. Organizations should regularly audit their content and data management practices to <a hreflang="en" href="https://www.mightybytes.com/blog/design-a-sustainable-data-strategy/">improve efficiency and reduce resource use</a>.
 
@@ -646,7 +644,7 @@ The charts below show the median page weight of the top five most popular eComme
   sql_file="./sustainability/ssg_bytes_per_type.sql"
 ) }}
 
-Of interest here is that all but three of the platforms/tools listed have a median mobile page weight that is less than the overall median (2,019 KB). These are all in the static site generator category, and especially in the case of Hugo and Jekyll, it can likely be attributed to the kinds of websites these tools are used to create—namely mostly blog and textual content, with much less reliance on JavaScript. It should also be noted that SSG are often used with performance in mind, which makes them more likely to be further optimized than the average website using a CMS only for commodity reasons.
+Of interest here is that all but three of the platforms/tools listed have a median mobile page weight that is less than the overall median (2,019 KB). These are all in the static site generator category, and especially in the case of Hugo and Jekyll, it can likely be attributed to the kinds of websites these tools are used to create—namely mostly blog and textual content, with much less reliance on JavaScript. It should also be noted that SSGs are often used with performance in mind, which makes them more likely to be further optimized than the average website using a CMS only for commodity reasons.
 
 Another area of interest when looking across the three segments is that some show a bigger gap between desktop and mobile page size. On closer inspection, this seems to be largely down to image optimizations that some platforms seem to be applying for mobile devices. To highlight this, let's look at the CMS category, where Wix shows a big difference between desktop and mobile size compared to the other popular platforms.
 
@@ -655,6 +653,7 @@ Another area of interest when looking across the three segments is that some sho
     <thead>
       <tr>
         <th scope="col">CMS</th>
+        <th scope="col">Device</th>
         <th scope="col">HTML</th>
         <th scope="col">JavaScript</th>
         <th scope="col">CSS</th>
@@ -665,6 +664,16 @@ Another area of interest when looking across the three segments is that some sho
     <tbody>
       <tr>
         <td>WordPress</td>
+        <td>Desktop</td>
+        <td class="numeric">40</td>
+        <td class="numeric">521</td>
+        <td class="numeric">117</td>
+        <td class="numeric">1,202</td>
+	      <td class="numeric">166</td>
+      </tr>
+      <tr>
+        <td>WordPress</td>
+        <td>Mobile</td>
         <td class="numeric">37</td>
         <td class="numeric">481</td>
         <td class="numeric">115</td>
@@ -673,6 +682,16 @@ Another area of interest when looking across the three segments is that some sho
       </tr>
       <tr>
         <td>Drupal</td>
+        <td>Desktop</td>
+        <td class="numeric">23</td>
+        <td class="numeric">416</td>
+        <td class="numeric">68</td>
+        <td class="numeric">1,279</td>
+	      <td class="numeric">114</td>
+      </tr>
+      <tr>
+        <td>Drupal</td>
+        <td>Mobile</td>
         <td class="numeric">23</td>
         <td class="numeric">406</td>
         <td class="numeric">66</td>
@@ -681,6 +700,16 @@ Another area of interest when looking across the three segments is that some sho
       </tr>
       <tr>
         <td>Joomla</td>
+        <td>Desktop</td>
+        <td class="numeric">26</td>
+        <td class="numeric">452</td>
+        <td class="numeric">86</td>
+        <td class="numeric">1,690</td>
+	      <td class="numeric">104</td>
+      </tr>
+      <tr>
+        <td>Joomla</td>
+        <td>Mobile</td>
         <td class="numeric">22</td>
         <td class="numeric">401</td>
         <td class="numeric">83</td>
@@ -689,6 +718,16 @@ Another area of interest when looking across the three segments is that some sho
       </tr>
       <tr>
         <td>Wix</td>
+        <td>Desktop</td>
+        <td class="numeric">123</td>
+        <td class="numeric">1,318</td>
+        <td class="numeric">86</td>
+        <td class="numeric">647</td>
+	      <td class="numeric">197</td>
+      </tr>
+      <tr>
+        <td>Wix</td>
+        <td>Mobile</td>
         <td class="numeric">118</td>
         <td class="numeric">1,215</td>
         <td class="numeric">9</td>
@@ -697,6 +736,16 @@ Another area of interest when looking across the three segments is that some sho
       </tr>
       <tr>
         <td>Squarespace</td>
+        <td>Desktop</td>
+        <td class="numeric">27</td>
+        <td class="numeric">997</td>
+        <td class="numeric">89</td>
+        <td class="numeric">1,623</td>
+	      <td class="numeric">214</td>
+      </tr>
+      <tr>
+        <td>Squarespace</td>
+        <td>Mobile</td>
         <td class="numeric">27</td>
         <td class="numeric">990</td>
         <td class="numeric">89</td>
@@ -705,8 +754,17 @@ Another area of interest when looking across the three segments is that some sho
       </tr>
     </tbody>
   </table>
-<figcaption>{{ figure_link(caption="Median mobile kilobytes by CMS and resource type", sheets_gid="1561070567", sql_file="cms_bytes_per_type.sql") }}</figcaption>
+<figcaption>{{ figure_link(caption="Median kilobytes by CMS, device, and resource type", sheets_gid="1561070567", sql_file="cms_bytes_per_type.sql") }}</figcaption>
 </figure>
+
+{{ figure_markup(
+  image="median-kilobytes-by-cms-and-resource-type-desktop.png",
+  caption="Median kilobytes by cms and resource type (desktop)",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=159460424&format=interactive",
+  sheets_gid="1561070567",
+  sql_file="cms_bytes_per_type.sql"
+) }}
 
 {{ figure_markup(
   image="median-kilobytes-by-cms-and-resource-type-mobile.png",
@@ -714,12 +772,10 @@ Another area of interest when looking across the three segments is that some sho
   description="",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1726838193&format=interactive",
   sheets_gid="1561070567",
-  sql_file="cms_bytes_per_type.sql",
-  width=600,
-  height=391
+  sql_file="cms_bytes_per_type.sql"
 ) }}
 
-The table and graph above highlight that Wix, as part of their platform, appear to be applying much more aggressive mobile image optimizations. A similar pattern is seen in the site generator segment, especially when looking at frameworks like Next.js and Nuxt.js.
+The table and charts above highlights that Wix, as part of their platform, appear to be applying much more aggressive mobile image optimizations. A similar pattern is seen in the site generator segment, especially when looking at frameworks like Next.js and Nuxt.js.
 
 This seemingly small insight helps to capture the important role that platforms and frameworks can play in helping deliver more sustainable websites. By applying sensible defaults, platform developers and framework authors can help developers leverage their tools to make sites that are _<a hreflang="en" href="https://screenspan.net/blog/green-by-default/">green by default</a>_.
 
@@ -737,7 +793,7 @@ With this chapter, we hope to make you more aware about web sustainability, help
 
 ### Actions you can take
 
-The sustainability of websites needs to be taken into account. As of today, there is still a lot to be done. If needed, you should start with some of the resources recommended above to gain awareness on this subject (and spread the word).
+The sustainability of websites needs to be taken into account. As of today, there is still a lot to be done. If needed, you should start with some of the resources recommended above to gain awareness on this subject —and spread the word.
 
 To get started on an existing website, you can:
 
@@ -747,12 +803,12 @@ To get started on an existing website, you can:
 
 You should then:
 
-- Clean up your 3rd-parties
-- Optimize your CSS and JavaScript (starting with the easy technical optimizations and automating them)
+- Clean up your 3rd-parties.
+- Optimize your CSS and JavaScript starting with the easy technical optimizations and automating them.
 - Review the design to make your page more sober (less visual content, less animations, etc) and streamline the user journey(s)
 
-Making your websites more sustainable is part of continuous improvement. Not everything can (or should) be done at once. Rely on best practices AND measurements to make sure you're going the right way. Whether you're working on an existing website or creating a new one from scratch, keep everyone in the team involved or at least aware of this topic.
+Making your websites more sustainable is part of continuous improvement. Not everything can—or should—be done at once. Rely on best practices and measurements to make sure you're going the right way. Whether you're working on an existing website or creating a new one from scratch, keep everyone in the team involved or at least aware of this topic.
 
 Some of your users would love to know that your website is more sustainable and how you achieved it. And all of them would benefit from this.
 
-_With special thanks to Tom Greenwood, Hannah Smith, Eugenia Zigisova, Rick Viscomi and all the other wonderful people who made this chapter possible._
+_With special thanks to <a hreflang="en" href="https://www.wholegraindigital.com/team/tom-greenwood/">Tom Greenwood</a>, Hannah Smith, [Eugenia Zigisova](https://twitter.com/jevgeniazi), [Rick Viscomi](https://twitter.com/rick_viscomi) and all the other wonderful people who made this chapter possible._
