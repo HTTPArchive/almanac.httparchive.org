@@ -382,7 +382,7 @@ Most of the top five CMSs deliver a median page weight of around ~2 MB, except S
 {{ figure_markup(
   image="distribution-cms-page-weight.png",
   caption="Mobile page weight distribution by CMS.",
-  description="Distribution showing the percentile distribution of total mobile page weight among each of the top five most adopted CMSs.",
+  description="Distribution showing the percentile distribution of total mobile page weight among each of the top five most adopted CMSs. WordPress it's 673 KB at 10th percentile, 1,229 KB at 25th, 2,314 KB at 50th, 4,479 at 75th, and 8,558 at 90th percentile. For Wix it's 1,048, 1,455, 2,158, 3,586, and 6,843 KB respectively. For Joomla it's 685, 1,268, 2,495, 4,892, and 9,473 KB. For Drupal it's 618, 1,130, 2,146, 4,193, and 8,229 KB. And finally for Squarespace it's 1,496 KB at the 10th percentile, 2,123 KB at 25th, 3,577 KB  at 50th, 6,539 KB at 75th, and 11,434 KB at the 90th percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1236078412&format=interactive",
   sheets_gid="859067552",
   sql_file="page_weight_distribution.sql"
@@ -550,7 +550,7 @@ We explored how WordPress sites use external resources and separated them into r
   )
 }}
 
-Our analyis was brief and began with a check to see if there was a mistake in the results. No mistake found and we'll revisit again next year, perhaps looking more closely at the implied performance impact of popular themes and plugins.
+We can see no noticeable change in the number of resources used year on year. We'll revisit again next year, perhaps looking more closely at the implied performance impact of popular themes and plugins.
 
 ## Conclusion
 
@@ -560,8 +560,6 @@ The introduction of Core Web Vitals, along with the advancements in performance 
 
 CMSs are doing great work and have opportunity to further improve user experiences on the web at scale by striving to enhance their infrastructure, experiment and integrate with new standards as they evolve, and follow best practices.
 
-On the other hand, Core Web Vitals as standards still evolving to do.
-
-We mentioned some ideas for a <a hreflang="en" href="https://web.dev/responsiveness/">better responsiveness metric</a> above. In addition, navigation between pages in a site should be better tracked and take into account the architectural differences between <a hreflang="en" href="https://web.dev/vitals-spa-faq">Single-Page Applications (SPAs) and Multi-Page Applications (MPAs)</a> architectures.
+On the other hand, Core Web Vitals as standards still have some evolving to do. We mentioned some ideas for a <a hreflang="en" href="https://web.dev/responsiveness/">better responsiveness metric</a> above. In addition, navigation between pages in a site should be better tracked and take into account the architectural differences between <a hreflang="en" href="https://web.dev/vitals-spa-faq">Single-Page Applications (SPAs) and Multi-Page Applications (MPAs)</a> architectures.
 
 We look forward to next year's results and hope to both expand our datasets and improve our methodologies. In the meantime, onward and upword, let's keep making the web better.
