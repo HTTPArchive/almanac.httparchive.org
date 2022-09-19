@@ -669,7 +669,7 @@ Another area of interest when looking across the three segments is that some sho
         <td class="numeric">521</td>
         <td class="numeric">117</td>
         <td class="numeric">1,202</td>
-	      <td class="numeric">166</td>
+        <td class="numeric">166</td>
       </tr>
       <tr>
         <td>WordPress</td>
@@ -687,7 +687,7 @@ Another area of interest when looking across the three segments is that some sho
         <td class="numeric">416</td>
         <td class="numeric">68</td>
         <td class="numeric">1,279</td>
-	      <td class="numeric">114</td>
+        <td class="numeric">114</td>
       </tr>
       <tr>
         <td>Drupal</td>
@@ -705,7 +705,7 @@ Another area of interest when looking across the three segments is that some sho
         <td class="numeric">452</td>
         <td class="numeric">86</td>
         <td class="numeric">1,690</td>
-	      <td class="numeric">104</td>
+        <td class="numeric">104</td>
       </tr>
       <tr>
         <td>Joomla</td>
@@ -723,7 +723,7 @@ Another area of interest when looking across the three segments is that some sho
         <td class="numeric">1,318</td>
         <td class="numeric">86</td>
         <td class="numeric">647</td>
-	      <td class="numeric">197</td>
+        <td class="numeric">197</td>
       </tr>
       <tr>
         <td>Wix</td>
@@ -741,7 +741,7 @@ Another area of interest when looking across the three segments is that some sho
         <td class="numeric">997</td>
         <td class="numeric">89</td>
         <td class="numeric">1,623</td>
-	      <td class="numeric">214</td>
+        <td class="numeric">214</td>
       </tr>
       <tr>
         <td>Squarespace</td>
