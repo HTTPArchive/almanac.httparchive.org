@@ -705,6 +705,7 @@ Another area of interest when looking across the three segments is that some sho
       </tr>
       <tr>
         <td>Squarespace</td>
+        <td class="numeric">27</td>
         <td class="numeric">990</td>
         <td class="numeric">89</td>
         <td class="numeric">1,790</td>
