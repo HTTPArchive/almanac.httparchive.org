@@ -370,14 +370,14 @@ We also used HTTP Archive data to analyze the weight of resources used across di
 {{ figure_markup(
   image="median-cms-page-weight.png",
   caption="Media resource weights by CMS.",
-  description="Column chart showing the median total page weight of each of the top five most adopted CMSs, for each device.",
+  description="Column chart showing the median total page weight of each of the top five most adopted CMSs, for each device. For WordPress it's 2,559 KB on desktop and 2,314 KB on mobile. For Drupal it's 2,351 KB and 2,146 KB respectively, KB for Joomla it's 2,799 KB and 2,495, KB for Wix it's 3,172 KB and 2,158, KB and finally for Squarespace it's 3,462 KB and 3,577 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1764509612&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
   )
 }}
 
-Most of the top five CMSs deliver a median page weight of around ~2 MB, except Squarespace which delivers a larger ~3.5 MB. All except Joomla showed increases in page weight over 2021 data.
+Most of the top five CMSs deliver a median page weight of around ~2 MB, except Squarespace which delivers a larger ~3.5 MB. All except Joomla showed [increases in page weight over 2021 data](../2021/cms#page-weight-breakdown).
 
 {{ figure_markup(
   image="distribution-cms-page-weight.png",
@@ -438,7 +438,7 @@ WordPress introduced support for WebP in 5.8, released in June of 2021 and is <a
 {{ figure_markup(
   image="median-size-js.png",
   caption="Median JavaScript resources by CMS.",
-  description="Column chart showing the median weight of JavaScript resources downloaded in each of the top five most adopted CMSs, for each device.",
+  description="Column chart showing the median weight of JavaScript resources downloaded in each of the top five most adopted CMSs, for each device. In all cases the desktop and mobile sizes are identical. For WordPress it's 521 KB on both desktop and mobile, for Drupal it's 416 KB for both, for Joomla it's 452 KB, for Wix it's 1,318 KB, and finally for Squarespace it's 997 KB for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1169405351&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
@@ -452,7 +452,7 @@ The top five CMSs all deliver pages that rely on JavaScript, with Drupal deliver
 {{ figure_markup(
   image="median-size-html.png",
   caption="Median HTML size by CMS.",
-  description="Column chart showing the median weight of the HTML resource downloaded in each of the top five most adopted CMSs, for each device.",
+  description="Column chart showing the median weight of the HTML resource downloaded in each of the top five most adopted CMSs, for each device. In most cases the desktop and mobile sizes are very similar. For WordPress it's 40 KB on desktop and 37 KB on mobile, for Drupal it's 23 KB for both, for Joomla it's 26 KB and 22 KB, for Wix it's 123 KB on desktop and 118 KB on mobile, and finally for Squarespace it's 27 KB for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1713320070&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
@@ -466,7 +466,7 @@ Examining the HTML document sizes, we can see that most of the top CMSs deliver 
 {{ figure_markup(
   image="median-size-css.png",
   caption="Median CSS size by CMS.",
-  description="Column chart showing the median weight of CSS resources downloaded in each of the top five most adopted CMSs, for each device.",
+  description="Column chart showing the median weight of CSS resources downloaded in each of the top five most adopted CMSs, for each device. In most cases (apart from Wixs) the desktop and mobile sizes are very similar. For WordPress it's 117 KB on desktop and 115 KB on mobile, for Drupal it's 68 KB and 66 KB respectively, for Joomla it's 86 KB and 83 KB, for Wix it's 18 KB on desktop but only 9 KB on mobile, and finally for Squarespace it's 89 KB for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=176229983&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
@@ -480,7 +480,7 @@ Next, we examine the use of explicit CSS resources that are downloaded. Here we 
 {{ figure_markup(
   image="median-size-font.png",
   caption="Median font size by CMS.",
-  description="Column chart showing the median weight of fonts resources downloaded in each of the top five most adopted CMSs, for each device.",
+  description="Column chart showing the median weight of fonts resources downloaded in each of the top five most adopted CMSs, for each device. In all cases the desktop and mobile sizes are the same. For WordPress it's 137 KB, for Drupal it's 92 KB, for Joomla it's 82 KB, for Wix it's 148 KB, and finally for Squarespace it's 202 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1008146261&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
@@ -507,8 +507,8 @@ First, we examined WordPress adoption by geography across all sites in our datas
 
 {{ figure_markup(
   image="wordpress-adoption-geo-yoy.png",
-  caption="WordPress adoption by geography year-over-year.",
-  description="Bar chart depicting the adoption of WordPress in each of the 10 geographies with the most websites.",
+  caption="WordPress adoption by geography year-over-year on mobile.",
+  description="Bar chart depicting the adoption of WordPress in each of the 10 geographies with the most websites. For all counties it's 32% on 2021 and 34% on 2022, for United States of America it's 32% for both, for Japan it's 35% and 38% respectively, for Brazil it's 29% and 31%, for Germany it's 27% and 29%, for United Kingdom of Great Britain and Northern Ireland it's 31% and 32%, for Spain it's 37% and 39%, for Italy it's 36% and 38%, for India it's 28% and 30%, for France it's also 28% and 30%, and finally for Canada it's 32% in 2021 and 33% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=442489769&format=interactive",
   sheets_gid="694875761",
   sql_file="cms_adoption_by_geo.sql",
@@ -517,7 +517,7 @@ First, we examined WordPress adoption by geography across all sites in our datas
   )
 }}
 
-According to our dataset, WordPress adoption is down across all geographies. Given the continued growth of WordPress overall and the uniformity of the percentage decrease, we're inclined to consider this a change in methodology or an issue with attribution. Next year's dataset may make this clearer.
+According to our dataset, WordPress adoption is growign significantly in all the tops geographies.
 
 ### Passing CWVs by geography
 
@@ -526,9 +526,10 @@ Next, we looked at the number of WordPress origins with passing Core Web Vitals,
 {{ figure_markup(
   image="wordpress-cwv-yoy.png",
   caption="WordPress core web vitals by geography year-over-year.",
-  description="Bar chart depicting the adoption of WordPress in each of the 10 geographies with the most websites.",
+  description="Bar chart depicting the adoption of WordPress in each of the 10 geographies with the most websites. For United States of America it's 28% for 2021 and 40% for 2022, for Japan it's 38% and 52% respectively, for India it's 8% and 15%, for Brazil it's 5% and 10%, for United Kingdom of Great Britain and Northern Ireland it's 33% and 44%, for Germany it's 35% and 48%, for Spain it's 21% and 33%, for Italy it's 19% and 29%, for France it's 26% and 39%, and finally for Canada it's 36% for 2021 and 49% for 2022. ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1279742547&format=interactive",
   sheets_gid="1742929367",
+  sql_file="core_web_vitals_by_geo.sql",
   width=600,
   height=579
   )
@@ -543,7 +544,7 @@ We explored how WordPress sites use external resources and separated them into r
 {{ figure_markup(
   image="median-wordpress-resources.png",
   caption="WordPress resources year-over-year.",
-  description="Column chart showing the percentile distributions of resources used for WordPress websites.",
+  description="Column chart showing the median resources used for WordPress websites. The number of resources are the same for desktop and mobile: 24 Plugins, 18 themes, and 12 wp-includes at the median.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=660449132&format=interactive",
   sheets_gid="1922458949"
   )
