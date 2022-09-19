@@ -20,11 +20,11 @@ featured_stat_label_3: WordPress sites attributed to using a page builder
 
 ## Introduction
 
-In this chapter, we work to understand the current state of Content Management System (CMS) ecosystems and the growing role they play in shaping users’ perception of how content can be experienced on the web. Our goal is to explore the CMS landscape in general and the characteristics of web pages created by these systems.
+In this chapter, we work to understand the current state of Content Management System (CMS) ecosystems and the growing role they play in shaping users' perception of how content can be experienced on the web. Our goal is to explore the CMS landscape in general and the characteristics of web pages created by these systems.
 
 We believe that the CMS plays a key role in the success of our collective efforts to build a fast and resilient web. Understanding the current state, asking questions, and posing lines of inquiry for future work is our path to achieving this goal.
 
-As a team, we’ve approached this year’s data with curiosity, and we’ve combined that curiosity with personal expertise with several of the most popular CMSs. We recommend that you take the comparisons and our analysis in stride, considering the variability between CMSs, and the differing types of user content that are built on these platforms.
+As a team, we've approached this year's data with curiosity, and we've combined that curiosity with personal expertise with several of the most popular CMSs. We recommend that you take the comparisons and our analysis in stride, considering the variability between CMSs, and the differing types of user content that are built on these platforms.
 
 ## What is a CMS?
 
@@ -36,9 +36,9 @@ CMSs differ widely in the approaches they offer for building sites; some provide
 
 When we think about CMSs, we try to account for all the parts that form an ecosystem surrounding the CMS platform, including hosting providers, extension developers, development agencies, site builders, etc. Thus, when we talk about a CMS, we usually refer to both the platform itself and its surrounding ecosystem.
 
-Our dataset, based on <a hreflang="en" href="https://www.wappalyzer.com/technologies/cms">Wappalyzer’s definition</a> of a CMS, identified over 270 individual CMSs. Know a CMS that’s missing? <a hreflang="en" href="https://github.com/wappalyzer/wappalyzer/blob/7ac625c34432cb35d01abd683f88d3bfadca4cca/CONTRIBUTING.md">Contribute to Wappalyzer</a>.
+Our dataset, based on <a hreflang="en" href="https://www.wappalyzer.com/technologies/cms">Wappalyzer's definition</a> of a CMS, identified over 270 individual CMSs. Know a CMS that's missing? <a hreflang="en" href="https://github.com/wappalyzer/wappalyzer/blob/7ac625c34432cb35d01abd683f88d3bfadca4cca/CONTRIBUTING.md">Contribute to Wappalyzer</a>.
 
-Some CMSs in the dataset are open source (e.g., WordPress and Joomla) and some of them are proprietary (e.g., Wix and Squarespace). Some CMSs can be used on “free” hosted or self-hosted plans, and there are also options for using these platforms on higher-tiered plans even at the enterprise level.
+Some CMSs in the dataset are open source (e.g., WordPress and Joomla) and some of them are proprietary (e.g., Wix and Squarespace). Some CMSs can be used on "free" hosted or self-hosted plans, and there are also options for using these platforms on higher-tiered plans even at the enterprise level.
 
 The CMS space as a whole is a complex, federated universe of CMS ecosystems, separated and at the same time intertwined.
 
@@ -60,9 +60,9 @@ As of June 2022, 45% of websites within the desktop dataset are powered by a CMS
 
 It is instructive to compare these numbers with another commonly used dataset, such as <a hreflang="en" href="https://w3techs.com/technologies/history_overview/content_management/all/q">W3Techs</a>, which reported that as of June 2021, 64.6% of websites are created using a CMS, up from 59.2% in June 2020, which is an increase of over 9%.
 
-The deviation between our analysis and W3Techs’ analysis can be explained by a difference in research methodologies, and the definition of a CMS.
+The deviation between our analysis and W3Techs' analysis can be explained by a difference in research methodologies, and the definition of a CMS.
 
-W3Techs' definition is as follows: “_Content Management Systems are applications for creating and managing the content of a website. We include all such systems in this category, also systems that are often classified as wikis, blog engines, discussion boards, static site generators, website editors or any type of software that provides website content_.”
+W3Techs' definition is as follows: "_Content Management Systems are applications for creating and managing the content of a website. We include all such systems in this category, also systems that are often classified as wikis, blog engines, discussion boards, static site generators, website editors or any type of software that provides website content_."
 
 As mentioned previously, Wappalyzer has a stricter definition of a CMS, which excludes some major CMSs which appear in W3Techs reports. You can read more about our definition on the [Methodology](../methodology) page.
 
@@ -84,7 +84,7 @@ CMSs are used around the world, with some variance by country.
 
 Among the geographies with the highest number of websites, CMS adoption percentage is the highest in Italy and Spain where 40%–41% of mobile sites visited by users are built with a CMS. Brazil and Japan have the lowest adoption with only 31% and 32% respectively.
 
-Of particular interest is the decrease across the board from the 2021 dataset. Comparing year over year for mobile results, all countries except India appear to show a drop, ranging from a 4% decrease for the UK and Germany to an 8% decrease for the US and Italy.  Given the consistency of the decreases across geographies, it feels more plausible to be a variance in attribution than a wholesale drop in CMS adoption. We recommend evaluating this further in next year’s analysis.
+Of particular interest is the decrease across the board from the 2021 dataset. Comparing year over year for mobile results, all countries except India appear to show a drop, ranging from a 4% decrease for the UK and Germany to an 8% decrease for the US and Italy.  Given the consistency of the decreases across geographies, it feels more plausible to be a variance in attribution than a wholesale drop in CMS adoption. We recommend evaluating this further in next year's analysis.
 
 
 ### CMS adoption by rank
@@ -103,11 +103,11 @@ We examined CMS adoption by the estimated rank of the sites included within the 
 
 According to the dataset, CMSs are used by less than 7% of the top 1,000 websites, compared to 47% of the complete dataset of all mobile sites in our analysis. A possible explanation, and the one we offered last year, is that smaller businesses and websites tend to use a CMS due to the ease of use, and the higher ranked websites tend to be built with proprietary solutions by professional web developers.
 
-Another explanation is that for higher ranking sites which tend to have more resources allocated to development, the choice of a CMS is more likely to be obfuscated. It is improbable that more than 90% of the top 1,000 would forgo a CMS entirely and more likely that they just don’t show up in our dataset.
+Another explanation is that for higher ranking sites which tend to have more resources allocated to development, the choice of a CMS is more likely to be obfuscated. It is improbable that more than 90% of the top 1,000 would forgo a CMS entirely and more likely that they just don't show up in our dataset.
 
-A potentially correlated trend is the adoption of “headless” CMSs and the move towards separating content — and the CMS that powers it — from the frontend experience offered to end-users.
+A potentially correlated trend is the adoption of "headless" CMSs and the move towards separating content — and the CMS that powers it — from the frontend experience offered to end-users.
 
-While our confidence in the overall dataset remains high, we’re interested in investigating the adoption by rank dataset further in future editions of this report to see if more can be done to detect CMS usage and improve the overall accuracy of our results.
+While our confidence in the overall dataset remains high, we're interested in investigating the adoption by rank dataset further in future editions of this report to see if more can be done to detect CMS usage and improve the overall accuracy of our results.
 
 ## Most popular CMSs
 
@@ -135,11 +135,11 @@ Comparing year over year, Drupal and Joomla continue to decline in market share,
   )
 }}
 
-Within WordPress, users often make use of a “page builder” that sits as a layer on top of WordPress and provides an interface for content management. This year, with Wappalyzer’s detection methods improving, we looked at page builder adoption. We discovered that of the WordPress sites attributed to a page builder (approximately 34% of all WordPress sites in our dataset), Elementor and WP Bakery are the clear winners, with Divi, SiteOrigin, and Oxygen trailing behind.
+Within WordPress, users often make use of a "page builder" that sits as a layer on top of WordPress and provides an interface for content management. This year, with Wappalyzer's detection methods improving, we looked at page builder adoption. We discovered that of the WordPress sites attributed to a page builder (approximately 34% of all WordPress sites in our dataset), Elementor and WP Bakery are the clear winners, with Divi, SiteOrigin, and Oxygen trailing behind.
 
-As we see it today, page builders exert significant influence on the performance of a site, and historically have been anecdotal indicators of poor performance. As one example, our dataset indicates that it’s not uncommon for websites to have multiple page builders installed, adding a significant increase to the resources loaded by a site.
+As we see it today, page builders exert significant influence on the performance of a site, and historically have been anecdotal indicators of poor performance. As one example, our dataset indicates that it's not uncommon for websites to have multiple page builders installed, adding a significant increase to the resources loaded by a site.
 
-Now that we’re tracking page builder data, we’ll have the opportunity in future editions to evaluate year over year changes in page builder adoption and look for connections in those changes to the overall performance of WordPress as a CMS.
+Now that we're tracking page builder data, we'll have the opportunity in future editions to evaluate year over year changes in page builder adoption and look for connections in those changes to the overall performance of WordPress as a CMS.
 
 ## CMS user experience
 
@@ -157,7 +157,7 @@ In this section we focus on data from June 2022 to provide a consistent timefram
 
 These metrics aim to cover the core elements which are indicative of a great web user experience. The [Performance](../2021/performance) chapter covers these in more detail, but here we are interested in looking at these metrics specifically in terms of CMSs.
 
-Initially, let’s review the 10 CMS platforms with the highest number of origins and examine the percentage of sites on each platform that have a _passing_ grade, meaning that the 75th percentile in each of the above metrics must be in the “good” (green) range for each site.
+Initially, let's review the 10 CMS platforms with the highest number of origins and examine the percentage of sites on each platform that have a _passing_ grade, meaning that the 75th percentile in each of the above metrics must be in the "good" (green) range for each site.
 
 {{ figure_markup(
   image="top-cwv-performance.png",
@@ -177,7 +177,7 @@ In June, for mobile devices, Duda had the largest percentage of passing sites, w
 
 Desktop device experience was better for most CMSs, with Duda having the largest percentage with 68% of sites passing CWVs. WordPress had the lowest ratio of passing sites, with 30%.
 
-We can also evaluate the progress of these CMS platforms compared to last year’s data, focusing on mobile views:
+We can also evaluate the progress of these CMS platforms compared to last year's data, focusing on mobile views:
 
 {{ figure_markup(
   image="top-cwv-yoy.png",
@@ -193,13 +193,13 @@ We can also evaluate the progress of these CMS platforms compared to last year�
 
 All of these CMSs showed an improvement in the percentage of origins with good CWVs since June 2021.
 
-Let’s drill into the three Core Web Vitals, to see where each platform has room to improve, and which metrics improved the most since last year:
+Let's drill into the three Core Web Vitals, to see where each platform has room to improve, and which metrics improved the most since last year:
 
 #### Largest Contentful Paint (LCP)
 
-Largest Contentful Paint (LCP) measures the point in time when the page’s main content has likely loaded and thus the page is useful to the user. It does this by measuring the render time of the largest image or text block visible within the viewport.
+Largest Contentful Paint (LCP) measures the point in time when the page's main content has likely loaded and thus the page is useful to the user. It does this by measuring the render time of the largest image or text block visible within the viewport.
 
-A “good” LCP is regarded as being under 2.5 seconds.
+A "good" LCP is regarded as being under 2.5 seconds.
 
 {{ figure_markup(
   image="lcp-cwv-performance.png",
@@ -213,7 +213,7 @@ A “good” LCP is regarded as being under 2.5 seconds.
   )
 }}
 
-TYPO3 and Duda had the best LCP scores with 79% of origins having a “good” LCP experience, while WordPress and Squarespace have the worst LCP scores, with 37% and 40% of origins, respectively, having a good LCP score.
+TYPO3 and Duda had the best LCP scores with 79% of origins having a "good" LCP experience, while WordPress and Squarespace have the worst LCP scores, with 37% and 40% of origins, respectively, having a good LCP score.
 
 {{ figure_markup(
   image="lcp-cwv-yoy.png",
@@ -233,11 +233,11 @@ These improvements are a positive sign, though still on the low end for most CMS
 
 #### First Input Delay (FID)
 
-First Input Delay (FID) measures the time from when a user first interacts with the page (i.e., when they click a link, tap on a button, or use a custom, JavaScript-powered control) to the time when the browser is able to process that interaction. A “fast” FID from a user’s perspective would be almost immediate feedback from their actions on a site rather than a stalled experience.
+First Input Delay (FID) measures the time from when a user first interacts with the page (i.e., when they click a link, tap on a button, or use a custom, JavaScript-powered control) to the time when the browser is able to process that interaction. A "fast" FID from a user's perspective would be almost immediate feedback from their actions on a site rather than a stalled experience.
 
-Any delay is a pain point and could correlate with interference from other aspects of the site loading when the user tries to interact with the site. A “good” FID is regarded as being under 100 milliseconds.
+Any delay is a pain point and could correlate with interference from other aspects of the site loading when the user tries to interact with the site. A "good" FID is regarded as being under 100 milliseconds.
 
-In 2021’s report, the fact that almost all platforms manage to deliver a good FID, raised questions about the strictness of this metric. The Chrome team <a hreflang="en" href="https://web.dev/responsiveness/">published an article</a>, which was updated in May of 2022 to include a reference to a new metric, <a hreflang="en" href="https://web.dev/inp/">Interaction to Next Paint (INP)</a> . Given its beta nature at the time of this writing, we’re limiting its inclusion to this reference, in anticipation of a possible expansion in next year’s report.
+In 2021's report, the fact that almost all platforms manage to deliver a good FID, raised questions about the strictness of this metric. The Chrome team <a hreflang="en" href="https://web.dev/responsiveness/">published an article</a>, which was updated in May of 2022 to include a reference to a new metric, <a hreflang="en" href="https://web.dev/inp/">Interaction to Next Paint (INP)</a> . Given its beta nature at the time of this writing, we're limiting its inclusion to this reference, in anticipation of a possible expansion in next year's report.
 
 {{ figure_markup(
   image="fid-cwv-yoy.png",
@@ -261,7 +261,7 @@ A layout shift occurs any time a visible element changes its position from one r
 
 The <a hreflang="en" href="https://web.dev/evolving-cls/">CLS metric evolved in 2021</a>, mainly introducing the concept of Session Windows, to be fairer to long-lived pages and Single Page Apps (SPAs).
 
-A score of 0.1 or below is measured as “good”, over 0.25 as “poor”, and anything in between as “needs improvement”.
+A score of 0.1 or below is measured as "good", over 0.25 as "poor", and anything in between as "needs improvement".
 
 {{ figure_markup(
   image="cls-cwv-yoy.png",
@@ -303,7 +303,7 @@ The Lighthouse <a hreflang="en" href="https://web.dev/performance-scoring/">perf
 
 We can see that the median performance scores for most platforms on mobile are low, ranging from 19 to 35, with Duda at 47 the exception. As Philip Walton cited in 2021, <a hreflang="en" href="https://philipwalton.com/articles/my-challenge-to-the-web-performance-community/">this does not directly imply bad results</a> in mobile field data but does imply that all platforms have room for improvements, especially for low-end devices and network connections similar to those Lighthouse attempts to emulate.
 
-WordPress, Joomla, Drupal, and 1C-Bitrix showed no change from last year’s results. Wix dropped from 30% to 29% while the rest showed improvements.
+WordPress, Joomla, Drupal, and 1C-Bitrix showed no change from last year's results. Wix dropped from 30% to 29% while the rest showed improvements.
 
 #### SEO score
 
@@ -329,7 +329,7 @@ An accessible website is a site designed and developed so that people with disab
 
 Lighthouse provides a set of accessibility audits, and it returns a weighted average of all of them (see <a hreflang="en" href="https://web.dev/accessibility-scoring/">Scoring Details</a> for a full list of how each audit is weighted).
 
-Each accessibility audit is either a pass or a fail, but unlike other Lighthouse audits, a page doesn’t get points for partially passing an accessibility audit. For example, if some elements have screen reader-friendly names, but others don’t, that page gets a zero for the screen reader-friendly-names audit.
+Each accessibility audit is either a pass or a fail, but unlike other Lighthouse audits, a page doesn't get points for partially passing an accessibility audit. For example, if some elements have screen reader-friendly names, but others don't, that page gets a zero for the screen reader-friendly-names audit.
 
 {{ figure_markup(
   image="median-lighthouse-accessibility.png",
@@ -389,7 +389,7 @@ Most of the top five CMSs deliver a median page weight of around ~2 MB, except S
   )
 }}
 
-The distribution of page weight in each platform’s percentiles is substantial. Page weight is probably related to the differences in user content across web pages, the number of images used, plugins installed, etc. The smallest pages delivered per platform come from WordPress, a marked improvement over last year’s data. This year, WordPress only sends 673 KB for their 10th percentile of visits. The largest pages come from Squarespace, with ~11.4 MB delivered for their 90th percentile of visits, a ~2 MB increase over last year’s data.
+The distribution of page weight in each platform's percentiles is substantial. Page weight is probably related to the differences in user content across web pages, the number of images used, plugins installed, etc. The smallest pages delivered per platform come from WordPress, a marked improvement over last year's data. This year, WordPress only sends 673 KB for their 10th percentile of visits. The largest pages come from Squarespace, with ~11.4 MB delivered for their 90th percentile of visits, a ~2 MB increase over last year's data.
 
 ### Page weight breakdown
 
@@ -459,7 +459,7 @@ The top five CMSs all deliver pages that rely on JavaScript, with Drupal deliver
   )
 }}
 
-Examining the HTML document sizes, we can see that most of the top CMSs deliver a median HTML size of ~22 KB–37 KB, except Wix which delivers ~118 KB, a minor improvement over 2021’s results. This may suggest extensive use of inlined resources and shows an area that can be further improved.
+Examining the HTML document sizes, we can see that most of the top CMSs deliver a median HTML size of ~22 KB–37 KB, except Wix which delivers ~118 KB, a minor improvement over 2021's results. This may suggest extensive use of inlined resources and shows an area that can be further improved.
 
 #### CSS
 
