@@ -1,4 +1,4 @@
-CREATE TEMP FUNCTION getFeatures(data STRING) RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMP FUNCTION hasGPOSKerning(data STRING) RETURNS BOOL LANGUAGE js AS '''
 try {
   const json = JSON.parse(data);
   const result = new Set();
@@ -9,9 +9,9 @@ try {
       }
     }
   }
-  return Array.from(result);
+  return Array.from(result).includes('kern');
 } catch (e) {
-  return [];
+  return false;
 }
 ''';
 
@@ -20,7 +20,8 @@ fonts AS (
   SELECT
     client,
     url,
-    payload
+    (hasGPOSKerning(JSON_EXTRACT(payload, '$._font_details.features')) OR IFNULL(REGEXP_CONTAINS(JSON_EXTRACT(payload,
+      '$._font_details.table_sizes'), '(?i)kern'), false)) AS kerning
   FROM
     `httparchive.almanac.requests`
   WHERE
@@ -29,20 +30,19 @@ fonts AS (
   GROUP BY
     client,
     url,
-    payload
+    kerning
 )
 
 SELECT
   client,
-  feature,
+  kerning,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_freq
 FROM
-  fonts,
-  UNNEST(getFeatures(JSON_EXTRACT(payload, '$._font_details.features'))) AS feature
+  fonts
 GROUP BY
   client,
-  feature
+  kerning
 ORDER BY
   pct_freq DESC
