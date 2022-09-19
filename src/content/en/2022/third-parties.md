@@ -7,6 +7,7 @@ reviewers: [tunetheweb, kevinfarrugia, alexnj]
 analysts: [kevinfarrugia]
 editors: [shantsis]
 translators: []
+imeugenia_bio: Eugenia is a Senior frontend engineer at Gorillas. She is passionate about web performance and state machines.
 results: https://docs.google.com/spreadsheets/d/1YqoRRsyiNsrEabVLu2nRU98JIG_0zLLuoQhC2nX8xbM/
 featured_quote: Third parties are often associated with negative impact on web performance. However, both third-party and website developers can eliminate it so that third-party functionality isn't harming user experience.
 featured_stat_1: 94%
@@ -43,7 +44,7 @@ In the case where third-party content is served from a first-party domain, it is
 
 ### **Third-party categories**
 
-We are relying on the <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/#third-parties-by-category">third-party-web</a> repository from <a hreflang="en" href="https://twitter.com/patrickhulce">Patrick Hulce</a> to help us identify and categorize third parties. This repository breaks down third parties by the following categories:
+We are relying on the <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/#third-parties-by-category">third-party-web</a> repository from [Patrick Hulce](https://twitter.com/patrickhulce) to help us identify and categorize third parties. This repository breaks down third parties by the following categories:
 
 * **Ad** - These scripts are part of advertising networks, either serving or measuring.
 * **Analytics** -These scripts measure or track users and their actions. There’s a wide range in impact here depending on what’s being tracked.
