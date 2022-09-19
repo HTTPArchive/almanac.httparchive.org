@@ -1,20 +1,20 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Third Parties
-description: Third Parties chapter of the 2022 Web Almanac covering third-party impact on web performance and the usage of best practices related to third parties.
+description: This chapter focuses on the topic of how first- and third-party developers are eliminating the third-party negative impact on web performence and if the best practices are followed.
 authors: [imeugenia]
 reviewers: [tunetheweb, kevinfarrugia, alexnj]
 analysts: [kevinfarrugia]
 editors: [shantsis]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1YqoRRsyiNsrEabVLu2nRU98JIG_0zLLuoQhC2nX8xbM/
-featured_quote: Third parties are often associated with negative impact on web performance. However, both third parties and website developers can eliminate it so that third-party functionality isn't harming user experience.
+featured_quote: Third parties are often associated with negative impact on web performance. However, both third-party and website developers can eliminate it so that third-party functionality isn't harming user experience.
 featured_stat_1: 94%
 featured_stat_label_1: Websites using at least one third party
-featured_stat_2: 45%
-featured_stat_label_2: Requests made by websites that are third-party requests.
-featured_stat_3: 34%
-featured_stat_label_3: Third-party requests serving script content.
+featured_stat_2: 60%
+featured_stat_label_2: Top 10 third parties are blocking main thread on more than 60% of websites
+featured_stat_3: 59%
+featured_stat_label_3: Websites fail Lighthouse legacy JavaScript audit because of a third party
 ---
 
 ## Introduction
@@ -41,8 +41,6 @@ Some examples of third-parties include Google Fonts, the jQuery library served o
 To match the definition, only third-parties originating from a domain whose resources can be found on at least 50 unique pages in the HTTP Archive dataset were included.
 
 In the case where third-party content is served from a first-party domain, it is counted as first-party content. For example, self-hosting Google Fonts or bootstrap.css is counted as _first-party content_. Similarly, first-party content served from a third-party domain is counted as third-party content—assuming it passes the “more than 50 pages criteria”.
-
-There are some third parties that serve content from different subdomains. However, regardless of the number of subdomains they should be counted as a single third party. For that reason, a term third-party provider is used in some charts.
 
 ### **Third-party categories**
 
@@ -88,32 +86,32 @@ Learn more about our [Methodology](./methodology).
 )
 }}
 
-The prevalence of third-parties remained at the same high levels as the previous year, i.e. 94% of websites use at least one-third party.
+The prevalence of third-parties remained at the same high levels as the previous year, i.e. 94% of websites use at least one third party.
 
-<!-- TODO: update charts and text once data is validated -->
-<!-- {{ figure_markup(
+{{ figure_markup(
   image="median-number-of-third-parties-by-rank.png",
-  caption="Median number of third parties per website by rank.",
-  description="Bar chart showing the median number of third-parties across various website rank categories. For the top 1,000 websites 25 and 23 third-parties are used on desktop and mobile websites respectively. The top 10,000 websites use 31 and 28 third-parties on desktop and mobile websites respectively. The top 100,000 websites use 25 and 22 third-parties on desktop and mobile websites respectively. The top 1,000,000 websites use 21 and 19 third-parties on desktop and mobile websites respectively. The median number of third-parties for all websites is 18 and 16 on desktop and mobile websites respectively.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=765132350&format=interactive",
+  caption="Median number of third-party domains per page by rank.",
+  description="Bar chart showing the median number of third-party domains across various website rank categories. For the top 1,000 websites 53 and 43 third-parties are used on desktop and mobile websites respectively. The top 10,000 websites use 48 and 43 third-parties on desktop and mobile websites respectively. The top 100,000 websites use 34 and 31 third-parties on desktop and mobile websites respectively. The top 1,000,000 websites use 28 and 25 third-parties on desktop and mobile websites respectively. The median number of third-parties for all websites is 24 and 21 on desktop and mobile websites respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=1946246067&format=interactive",
   sheets_gid="1355951746",
   sql_file="number_of_third_party_providers_by_rank.sql"
   )
-}} -->
-<!--
-This figure shows the number of third parties for the most-used websites. For example, on average the top 1,000 popular websites use 23 third-parties on mobile and 25 on desktop devices. More popular websites seem to have a larger number of third parties, i.e. top 10,000 sites have twice more third parties than the median number of third-parties for all websites. -->
+}}
 
-<!-- {{ figure_markup(
-  image="websites-by-rank-and-third-party-category",
-  caption="Percent of websites by third-party category and website rank.",
-  description="",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=171851512&format=interactive",
+The figure above shows the number of third-party domains for the most-used websites. For example, on average the top 1,000 popular websites use 43 third-party domains on mobile and 53 on desktop devices. More popular websites seem to have a larger number of third-party domains, i.e. top 1,000 sites have twice more third parties than the median number of third-parties for all websites. This large number is explained by the fact that some third party providers might have content hosted on multiple domains, for example, Yahoo serves their content from mempf.yahoo.co.jp, yjtag.yahoo.co.jp, etc.
+Though the exact number of third party providers is still a subject for further research, the current data about third-party domains gives an overview of how much they might affect time spent on network requests. As every request to a new domain takes time for DNS lookup and establishing an initial connection, the more third party domains are used the more it might affect page loading speed.
+
+{{ figure_markup(
+  image="third-party-domains-per-page-by-rank-and-category.png",
+  caption="Median number of third-party domains per page by category and rank.",
+  description="Bar chart showing the median number of third-party domains by third-party category across various website rank categories. The data is shown for mobile pages. Only ad, unknown, and video category differs significantly depending on a rank. For the top 1,000 websites 18 third-party domains are from ad category, 21 unknown, and 5 video. For the top 10,000 websites 22 are from ad category, 16 unknown, and 4 video. For the top 100,000 websites 15 are from ad category, 12 unknown, and 8 video. For the top 1,000,000 websites 7 are from ad category, 9 unknown, and 11 video. For all websites 4 are from ad category, 8 unknown, and 11 video. Data about the rest of third-party categories shows that analicts category makes up from 3 to 5 third-party domains per page, CDN 4-5 domains, consent providers 7-8, content providers 3-5, customer success 9, marketing 2-3, social 5-6, tag manager 1-2, utility category 3-4, and other category 2.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=419972852&format=interactive",
   sheets_gid="1355951746",
   sql_file="number_of_third_parties_by_rank_and_category.sql"
   )
-}} -->
+}}
 
-<!-- When looking at the distribution of third-parties by category and rank, it becomes clear that the increase in the number of third-parties on more popular websites is mostly made up of the "ad" category. That means the third parties, especially ads have a crucial impact on the user experience because they are more used on the websites with a larger number of users. -->
+When looking at the distribution of third-parties by category and by rank, it becomes clear that the increase in the number of third parties on more popular websites is mostly made up of the ad and unknown third-party category. That means the third parties especially ads have a crucial impact on the users because they are more used on the websites with a larger number of users.
 
 {{ figure_markup(
   image="top-third-parties-by-number-of-pages.png",
@@ -140,12 +138,12 @@ Third-party requests account for 45% of all requests made by websites. Of those 
 
 ## Performance impact
 
-Some third parties might inevitably block page rendering and negatively affect the webpage loading experience. Lighthouse has a <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/render-blocking-resources.js">render blocking resources audit]([https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/render-blocking-resources.js</a>) that provides data about render blocking time.
+Some third parties might inevitably block page rendering and negatively affect the webpage loading experience. Lighthouse has a <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/render-blocking-resources.js">render blocking resources audit</a>) that provides data about render blocking time.
 
 {{ figure_markup(
   image="render-blocking-time-by-most-popular-third-parties.png",
   caption="Median render blocking time for top 10 most popular third parties.",
-  description="Bar chart showing the potential render-blocking time of top 10 most popular render-blocking third parties. Median render-blocking time of fonts.googleapis.com is 1.085 milliseconds on mobile pages, accounts.google.com is render-blocking for 1.077 milliseconds, adservice.google.com for 1.571, googletagmanager.com for 1.806, ajax.googleapis.com for 1.530, cloudflare.com for 1.300, youtube.com for 1.146, bootstrapcdn.com for 1.241, maps.google.com for 2.095 and jsdelivr.net for 1.370. Desktop and mobile data is similar for all third parties.",
+  description="Bar chart showing the potential render-blocking time of top 10 most popular render-blocking third parties. Median render-blocking time of fonts.googleapis.com is 1.085 milliseconds on mobile pages, accounts.google.com is render-blocking for 1,077 milliseconds, adservice.google.com for 1,571, googletagmanager.com for 1,806, ajax.googleapis.com for 1,530, cloudflare.com for 1,300, youtube.com for 1,146, bootstrapcdn.com for 1,241, maps.google.com for 2.095 and jsdelivr.net for 1,370. Desktop and mobile data is similar for all third parties.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=549590895&format=interactive",
   sheets_gid="1355951746",
   sql_file="third_parties_blocking_rendering_percentiles.sql"
@@ -197,7 +195,7 @@ The previous section confirmed that the third parties are causing a huge perform
 
 ### Minifying resources
 
-Minifying JavaScript and CSS files is one of the first recommendations when speaking about web performance. To check how third party resources are minified we are making use of the following Lighthouse audits: <a hreflang="en" href="https://web.dev/unminified-javascript/">Unminified JavaScript</a> and <a hreflang="en" href="https://web.dev/unminified-css/">Unminified CSS]([https://web.dev/unminified-css/</a>).
+Minifying JavaScript and CSS files is one of the first recommendations when speaking about web performance. To check how third party resources are minified we are making use of the following Lighthouse audits: <a hreflang="en" href="https://web.dev/unminified-javascript/">Unminified JavaScript</a> and <a hreflang="en" href="https://web.dev/unminified-css/">Unminified CSS</a>).
 
 Minifying scripts should have a large positive impact as they are the most popular third-party content type. Moreover, compared to other content types like CSS, scripts tend to be a lot more verbose, with comments and large variable names that affect the file size.
 
@@ -236,7 +234,7 @@ jQuery is the most popular JavaScript library being used on 6% of all websites o
 )
 }}
 
-17% of the websites that use jQuery hosted on a third-party domain fail the <a hreflang="en" href="https://web.dev/unminified-javascript/">Lighthouse audit for unminified JavaScript]([https://web.dev/unminified-javascript/</a>). Digging deeper into how the library is imported shows that many websites are using the unminified versions of jQuery that should be used only for development purposes. A similar tendency can be found in the usage of some other less popular third-party scripts.
+17% of the websites that use jQuery hosted on a third-party domain fail the <a hreflang="en" href="https://web.dev/unminified-javascript/">Lighthouse audit for unminified JavaScript</a>). Digging deeper into how the library is imported shows that many websites are using the unminified versions of jQuery that should be used only for development purposes. A similar tendency can be found in the usage of some other less popular third-party scripts.
 
 This should serve as a reminder for web developers to check if third-party scripts imported on their websites are suitable for production environments.
 
@@ -301,7 +299,7 @@ Website content encoding data displayed in the [figure 13](#fig-13) revealed an 
 
 ### Usage of third-party facades
 
-There are multiple techniques to eliminate render-blocking resources. One of them is <a hreflang="en" href="https://web.dev/third-party-facades/">third-party facades</a> that are useful for visual content like YouTube videos or interactive widgets like a live chat. They help to exclude third parties from the critical loading sequence and lazy load them. Lighthouse has introduced an audit <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/third-party-facades.js">Lazy load third-party resources with facades</a>). However, there are multiple third-party facade solutions, for example <a hreflang="en" href="https://github.com/paulirish/lite-youtube-embed">lite-youtube-embed</a>, <a hreflang="en" href="https://github.com/justinribeiro/lite-youtube">lite-youtube</a>, or some custom approaches, and only a small number of them are in <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/blob/master/data/entities.js">the list of third-parties</a>) checked during the audit. This limitation makes it complicated to assess third-party facade usage across the web.
+There are multiple techniques to eliminate render-blocking resources. One of them is <a hreflang="en" href="https://web.dev/third-party-facades/">third-party facades</a> that are useful for visual content like YouTube videos or interactive widgets like a live chat. They help to exclude third parties from the critical loading sequence and lazy load them. Lighthouse has introduced an audit <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/third-party-facades.js">Lazy load third-party resources with facades</a>. However, there are multiple third-party facade solutions, for example <a hreflang="en" href="https://github.com/paulirish/lite-youtube-embed">lite-youtube-embed</a>, <a hreflang="en" href="https://github.com/justinribeiro/lite-youtube">lite-youtube</a>, or some custom approaches, and only a small number of them are in <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/blob/master/data/entities.js">the list of third-parties</a>) checked during the audit. This limitation makes it complicated to assess third-party facade usage across the web.
 
 ### Usage of `async` and `defer`
 
@@ -323,7 +321,7 @@ Which resources are critical and which could be deferred might be a tricky quest
 
 ### Legacy JavaScript
 
-Despite JavaScript's rapid involvement, the prevalence of legacy code is still significant. We are using one of the Lighthouse audits to check how much third-parties are <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/legacy-javascript.js">serving legacy JavaScript to modern browsers]([https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/legacy-javascript.js</a>).
+Despite JavaScript's rapid involvement, the prevalence of legacy code is still significant. We are using one of the Lighthouse audits to check how much third-parties are <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/legacy-javascript.js">serving legacy JavaScript to modern browsers</a>).
 
 {{ figure_markup(
   caption="Percent of legacy JavaScript Lighthouse audit failure caused by third-party",
@@ -362,16 +360,16 @@ Serving legacy JavaScript to the modern browsers results in a bigger amount of r
 
 The median amount of unused third-party JavaScript is approximately 120 KB. For 25% of websites that use third-party scripts, it is more than 261 KB.
 
-Unfortunately, website owners do not always have the possibility to change the way third-party JavaScript is bundled. However, if the third-party dependencies are self-hosted they can be optimized during development by adopting <a hreflang="en" href="https://web.dev/publish-modern-javascript">modern script bundling approaches]([https://web.dev/publish-modern-javascript</a>) that could help to reduce the amount of unused code.
+Unfortunately, website owners do not always have the possibility to change the way third-party JavaScript is bundled. However, if the third-party dependencies are self-hosted they can be optimized during development by adopting <a hreflang="en" href="https://web.dev/publish-modern-javascript">modern script bundling approaches</a>) that could help to reduce the amount of unused code.
 
 
 ### Other optimization technologies
 
 One of the third-party resource management problems is that sometimes it can skip the development team and be added using tag management tools without proper web performance evaluation. As a result, third-party scripts can uncontrollably affect the page loading and responsiveness experience.
 
-Some modern third-party loading and execution solutions have appeared in recent years. For example, <a hreflang="en" href="https://partytown.builder.io/">Partytown]([https://partytown.builder.io/</a>) is a library that relocates third-party scripts into the web worker to free up the main thread for first-party code. Currently, the library is in the early adoption stage and its usage is very low. Only 70 websites from the whole dataset are using it in 2022. However, this <a hreflang="en" href="https://nextjs.org/docs/basic-features/script#off-loading-scripts-to-a-web-worker-experimental">Next.js framework have started to introduce this solution</a> that could raise Partytown popularity.
+Some modern third-party loading and execution solutions have appeared in recent years. For example, <a hreflang="en" href="https://partytown.builder.io/">Partytown</a>) is a library that relocates third-party scripts into the web worker to free up the main thread for first-party code. Currently, the library is in the early adoption stage and its usage is very low. Only 70 websites from the whole dataset are using it in 2022. However, this <a hreflang="en" href="https://nextjs.org/docs/basic-features/script#off-loading-scripts-to-a-web-worker-experimental">Next.js framework have started to introduce this solution</a> that could raise Partytown popularity.
 
-The previous sections showed that the responsibility for third-party negative impact is split between first and third-party developers. However, <a hreflang="en" href="https://developer.chrome.com/blog/third-party-scripts/#proposed-approach">browsers are also showing interest in optimizing the loading of third-party resources]([https://developer.chrome.com/blog/third-party-scripts/#proposed-approach</a>). The proposals include better real user monitoring and developer tooling providing more data about the impact of third-parties on their websites.
+The previous sections showed that the responsibility for third-party negative impact is split between first and third-party developers. However, <a hreflang="en" href="https://developer.chrome.com/blog/third-party-scripts/#proposed-approach">browsers are also showing interest in optimizing the loading of third-party resources</a>). The proposals include better real user monitoring and developer tooling providing more data about the impact of third-parties on their websites.
 
 {{ figure_markup(
   caption="Percent of third-party requests with Timing-Allow-Origin header header",
