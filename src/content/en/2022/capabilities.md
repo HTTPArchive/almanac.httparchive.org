@@ -140,8 +140,8 @@ The `beforeinstallprompt` event triggers right before a user is about to be prom
 The ability to add an application to the home screen is a crucial feature of PWAs. To use this feature, web applications must meet the [following criteria](https://web.dev/install-criteria/#criteria):
 
 - The web app must not already be installed.
-- The user must have spent at least 30 seconds viewing the page.
-- The user must have clicked or tapped at least once on the page.
+- The user must have spent at least 30 seconds viewing the page at any time.
+- The user must have clicked or tapped at least once on the page at any time.
 - The web app must be served over HTTPS.
 - The web app must include a [web app manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) with:
   - `short_name` or `name`.
@@ -227,6 +227,8 @@ Web applications such as YouTube, YouTube Music, Spotify, and others take advant
   description="Accessing controls and information for YouTube Music via the Window’s Taskbar.",
 ) }}
 
+For a deeper dive into video usage on the web, check out the [Media chapter](/en/2022/media#video) of the 2022 Web Almanac.
+
 ## Device Memory API
 
 A device's capabilities depend on a few things, like the network, the CPU core count, and the amount of memory available. The [Device Memory API](https://developer.mozilla.org/en-US/docs/Web/API/Device_Memory_API) provides insight into the memory available by providing the read-only property `deviceMemory` on the `Navigator` interface. The property returns an approximate amount of device memory in gigabytes as a floating point number.
@@ -260,7 +262,7 @@ The Service Worker API is available on modern versions of Chrome, Edge, and Safa
 
 ### Growth of Service Worker API
 
-The Service Worker API was not measured in last year's Capabilities chapter. However, using [data from the previous year's PWA chapter](https://almanac.httparchive.org/en/2021/pwa#service-workers-usage), the API grew in usage from 3.05% to 4.17% on desktop and 3.22% to 3.85% on mobile pages, making it the sixth most used capability on desktop and the seventh most used mobile.
+The Service Worker API was not measured in last year's Capabilities chapter. However, using [data from the previous year's PWA chapter](/en/2021/pwa#service-workers-usage), the API grew in usage from 3.05% to 4.17% on desktop and 3.22% to 3.85% on mobile pages, making it the sixth most used capability on desktop and the seventh most used mobile.
 
 {{ figure_markup(
   image="Service-Worker-API-Usage.svg",
@@ -272,6 +274,8 @@ The Service Worker API was not measured in last year's Capabilities chapter. How
 ) }}
 
 Note that how the service worker usage in the PWA chapter is measured differs from how the Capabilities chapter measures it. Additionally, a bug in the data pipeline for last year's PWA chapter was found, resulting in an undercounting of service worker usage.
+
+For a deeper dive into service worker usage on the web, check out the [PWA chapter](/en/2022/pwa#service-workers) of the 2022 Web Almanac.
 
 ## Gamepad API
 
@@ -326,3 +330,11 @@ Many features users expect to belong to platform-specific applications also exis
 Project Fugu comprises Microsoft, Intel, Samsung, Google, and many other groups and individuals.
 
 Check out [this post](https://developer.chrome.com/blog/fugu-status/) on the Chrome Developers blog to learn more about the Capabilities Project.
+
+## Conclusion
+
+Capabilities unlock new possibilities and functionality for developers to take advantage of on the web. This chapter shared 8 of the most popular web platform APIs currently being used on the web. This chapter also showcased some of these capabilities used in different web applications. The beauty of the web is that it can use these platform-based functionalities without needing to be installed onto a device or additional libraries and plugins.
+
+Some exciting experiences that utilize the web's capabilities include [What Web Can Do Today?](https://whatwebcando.today/) (WWCDT) and [Discourse](https://www.discourse.org/). WWCDT, which uses 38 of the capabilities we track, showcases many Web APIs with a live demo of each API. Discourse provides communities with web forums and uses 14 of the capabilities we track, such as the Badging API, so users can see the number of unread notifications they have.
+
+The Capabilities Project, Project Fugu, allows applications to migrate to the web, removing some barriers associated with platform-specific applications. No need to write "native" code, no need to worry about users having access to the latest updates, and no need to get users to install your application. The web, and its capabilities, open up all new possibilities in building compelling experiences for users.
