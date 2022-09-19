@@ -5,7 +5,7 @@ title: Capabilities
 description: Capabilities chapter of the 2022 Web Almanac covering brand-new, powerful web platform APIs that give web apps access to hardware interfaces, enhance web-based productivity apps, and more.
 authors: [MichaelSolati]
 reviewers: [webmaxru, hemanth, beaufortfrancois, tomayac, christianliebel]
-analysts: [tunetheweb]
+analysts: []
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/13S9FRj8OPRtoMPb94jFh6pPNz3lNS9yztIaorZYe288/
@@ -81,8 +81,8 @@ The Async Clipboard API saw growth in usage from 8.91% in 2021 to 10.10% in 2022
   image="Async-Clipboard-API-Usage.svg",
   caption="Usage of the Async Clipboard API from 2021 to 2022 on desktop and mobile.",
   description="The Async Clipboard API grew in usage from 8.91% in 2021 to 10.10% in 2022 on desktop. On mobile, usage grew from 8.25% in 2021 to 9.27% in 2022.",
-  chart_url="",
-  sheets_gid="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTZp0g2lyspAvJUN-xV4TtqC_9wrRMqyg_bEzHCd1Be3p0Yhy3o2k-SH7DGX5a-LfaodNUTl4Ai-NXg/pubchart?oid=602028150&format=interactive",
+  sheets_gid="637848098",
   sql_file="fugu.sql"
 ) }}
 
@@ -116,15 +116,15 @@ The Web Share API shrunk in usage from 9% in 2021 to 8.84% in 2022 on desktop. O
   image="Web-Share-API-Usage.svg",
   caption="Usage of the Web Share API from 2021 to 2022 on desktop and mobile.",
   description="The Web Share API shrunk in usage from 9% in 2021 to 8.84% in 2022 on desktop. On mobile, usage shrunk from 8.58% in 2021 to 8.36% in 2022.",
-  chart_url="",
-  sheets_gid="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTZp0g2lyspAvJUN-xV4TtqC_9wrRMqyg_bEzHCd1Be3p0Yhy3o2k-SH7DGX5a-LfaodNUTl4Ai-NXg/pubchart?oid=934956615&format=interactive",
+  sheets_gid="1887140434",
   sql_file="fugu.sql"
 ) }}
 
 On many sites, you can find the Web Share API in use. For example, social media platforms, documentation sites, and others use it as a great way to share content. Some examples where you can find the API in use include [web.dev](https://web.dev/) and [twitter.com](https://twitter.com/).
 
 {{ figure_markup(
-  image="Web-Share-API.webp",
+  image="Web-Share-API.gif",
   caption="Sharing a Twitter profile using the Web Share API.",
   description="Sharing a Twitter profile using the Web Share API.",
 ) }}
@@ -162,7 +162,7 @@ As mentioned, the add to home screen capability was not measured last year. Howe
 By taking advantage of the `beforeinstallprompt` event, developers can provide a customized experience in how user installs their web application. One example is YouTube TV, which invites users to install their application to access it more quickly and easily.
 
 {{ figure_markup(
-  image="Add-to-Home-Screen.webp",
+  image="Add-to-Home-Screen.gif",
   caption="Installing YouTube TV from an in app prompt, powered by the `beforeinstallprompt` event.",
   description="Installing YouTube TV from an in app prompt, powered by the `beforeinstallprompt` event.",
 ) }}
@@ -266,8 +266,8 @@ The Service Worker API was not measured in last year's Capabilities chapter. How
   image="Service-Worker-API-Usage.svg",
   caption="Usage of the Service Worker API from 2021 to 2022 on desktop and mobile.",
   description="The Service Worker API grew in usage from 3.05% in 2021 to 4.17% in 2022 on desktop. On mobile, usage grew from 3.22% in 2021 to 3.85% in 2022.",
-  chart_url="",
-  sheets_gid="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTZp0g2lyspAvJUN-xV4TtqC_9wrRMqyg_bEzHCd1Be3p0Yhy3o2k-SH7DGX5a-LfaodNUTl4Ai-NXg/pubchart?oid=304563360&format=interactive",
+  sheets_gid="208641216",
   sql_file="fugu.sql"
 ) }}
 
@@ -294,15 +294,15 @@ The Gamepad API shrunk in usage from 4.39% in 2021 to 4.12% in 2022 on desktop. 
   image="Gamepad-API-Usage.svg",
   caption="Usage of the Gamepad API from 2021 to 2022 on desktop and mobile.",
   description="The Gamepad API shrunk in usage from 4.39% in 2021 to 4.12% in 2022 on desktop. On mobile, usage shrunk from 5.10% in 2021 to 4.65% in 2022.",
-  chart_url="",
-  sheets_gid="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTZp0g2lyspAvJUN-xV4TtqC_9wrRMqyg_bEzHCd1Be3p0Yhy3o2k-SH7DGX5a-LfaodNUTl4Ai-NXg/pubchart?oid=679096832&format=interactive",
+  sheets_gid="1737472884",
   sql_file="fugu.sql"
 ) }}
 
 Web applications such as Google's Stadia, Nvidia's GeForce Now, and Microsoft's Xbox Cloud Gaming provide gaming experiences that run on the cloud comparable to the experience of running games on local devices or a gaming console. Thanks to the Gamepad API, these web applications allow users to use traditional console game controllers rather than just a keyboard and mouse.
 
 {{ figure_markup(
-  image="Gamepad-API.webp",
+  image="Gamepad-API.gif",
   caption="Connecting a Xbox controller to Google Stadia in the Chrome browser.",
   description="Connecting a Xbox controller to Google Stadia in the Chrome browser.",
 ) }}
