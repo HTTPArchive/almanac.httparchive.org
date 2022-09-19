@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Third Parties
-description: Third Parties chapter of the 2022 Web Almanac covering data of what third parties are usedon the web and a deep dive into preventing them causing negatibe performance impacts.
+description: Third Parties chapter of the 2022 Web Almanac covering data of what third parties are used on the web and a deep dive into preventing them causing negative performance impacts.
 authors: [imeugenia]
 reviewers: [tunetheweb, kevinfarrugia, alexnj]
 analysts: [kevinfarrugia]
@@ -15,7 +15,7 @@ featured_stat_label_1: Websites using at least one third party
 featured_stat_2: 60%
 featured_stat_label_2: Top 10 third parties are blocking main thread on more than 60% of websites
 featured_stat_3: 59%
-featured_stat_label_3: Websites fail Lighthouse legacy JavaScript audit because of a third party
+featured_stat_label_3: Lighthouse legacy JavaScript audit fails due to a third party
 ---
 
 ## Introduction
