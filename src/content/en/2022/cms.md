@@ -9,7 +9,7 @@ editors: [dknauss]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1HvTcCEw9LeMNX-fI_yOy0HemKFYKaQAHBxtB0etakqY/
 sirjonathan_bio: Jonathan Wold is an Open Web advocate with more than 17 years focused on the WordPress ecosystem. Beyond his love for WordPress, he enjoys reading widely, playing strategy games, acting, rock climbing, and occasionally writing in third-person.
-featured_quote: Comparing year over year, Drupal and Joomla continue to decline in market share, while Squarespace remains steady and Wix grows. WordPress continues its ascent, increasing 1.4% over 2021 on mobile, and 0.2% over 2021 on desktop.
+featured_quote: Comparing year-over-year, Drupal and Joomla continue to decline in market share, while Squarespace remains steady and Wix grows. WordPress continues its ascent, increasing 1.4% over 2021 on mobile, and 0.2% over 2021 on desktop.
 featured_stat_1: 45%
 featured_stat_label_1: Percentage of websites within the desktop dataset attributed to a known CMS
 featured_stat_2: 7%
@@ -24,27 +24,27 @@ In this chapter, we work to understand the current state of Content Management S
 
 We believe that the CMS plays a key role in the success of our collective efforts to build a fast and resilient web. Understanding the current state, asking questions, and posing lines of inquiry for future work is our path to achieving this goal.
 
-As a team, we've approached this year's data with curiosity, and we've combined that curiosity with personal expertise with several of the most popular CMSs. We recommend that you take the comparisons and our analysis in stride, considering the variability between CMSs, and the differing types of user content that are built on these platforms.
+As a team, we've approached this year's data with curiosity, and we've combined that curiosity with personal expertise with several of the most popular CMSs. We recommend that you read our analysis in light of the variability between CMSs and types of content on them.
 
 ## What is a CMS?
 
 The term Content Management System (CMS) refers to systems enabling individuals and organizations to create, manage, and publish content. A CMS for web content, specifically, is a system aimed at creating, managing, and publishing content to be experienced on the web.
 
-Each CMS implements a range of content management capabilities and the corresponding mechanisms for users to build websites around their content. CMSs also provide administrative capabilities to facilitate the addition and management of content as needed.
+Each CMS implements a range of content management capabilities and corresponding mechanisms for users to build websites around their content. CMSs also provide administrative capabilities to facilitate the addition and management of content.
 
-CMSs differ widely in the approaches they offer for building sites; some provide ready-to-use templates which are supplemented with user content, and others require user involvement for designing and constructing the site structure.
+CMSs differ widely in the approaches they offer for building sites. Some provide ready-to-use templates which are supplemented with user content, and others require user involvement for designing and constructing the site structure.
 
-When we think about CMSs, we try to account for all the parts that form an ecosystem surrounding the CMS platform, including hosting providers, extension developers, development agencies, site builders, etc. Thus, when we talk about a CMS, we usually refer to both the platform itself and its surrounding ecosystem.
+In this chapter of the Web Almanac, we tried to account for all the things that form an ecosystem around a CMS platform, including hosting providers, extension developers, development agencies, site builders, etc. For this reason, when we refer to a CMS, we usually intend both the platform itself and its surrounding ecosystem.
 
 Our dataset, based on <a hreflang="en" href="https://www.wappalyzer.com/technologies/cms">Wappalyzer's definition</a> of a CMS, identified over 270 individual CMSs. Know a CMS that's missing? <a hreflang="en" href="https://github.com/wappalyzer/wappalyzer/blob/7ac625c34432cb35d01abd683f88d3bfadca4cca/CONTRIBUTING.md">Contribute to Wappalyzer</a>.
 
-Some CMSs in the dataset are open source (e.g., WordPress and Joomla) and some of them are proprietary (e.g., Wix and Squarespace). Some CMSs can be used on "free" hosted or self-hosted plans, and there are also options for using these platforms on higher-tiered plans even at the enterprise level.
+Some CMSs in the dataset are open source (e.g., WordPress and Joomla), and some of them are proprietary (e.g., Wix and Squarespace). Some CMSs can be used on "free" hosted or self-hosted plans, and there are also options for using these platforms on higher-tier plans up to the enterprise level.
 
-The CMS space as a whole is a complex, federated universe of CMS ecosystems, separated and at the same time intertwined.
+The CMS space as a whole is a complex, federated universe of discrete but also interrelated CMS ecosystems.
 
 ## CMS adoption
 
-Our analysis throughout this work includes desktop and mobile websites. The vast majority of URLs we looked at are in both datasets, but some URLs are only accessed by desktop or mobile devices. This can cause divergences in the data, and we thus look at desktop and mobile results separately.
+Our analysis throughout this work included desktop and mobile websites. The vast majority of URLs we looked at are in both datasets, but some URLs are only accessed by desktop or mobile devices. This can cause divergences in the data, so we considered desktop and mobile results separately.
 
 {{ figure_markup(
   image="cms-adoption.png",
@@ -56,15 +56,15 @@ Our analysis throughout this work includes desktop and mobile websites. The vast
   )
 }}
 
-As of June 2022, 45% of websites within the desktop dataset are powered by a CMS, indicating a similar usage [to 2021](../2021/cms#cms-adoption). The mobile dataset shows an increase from 46% [in 2021](../2021/cms#cms-adoption) to 47% here in 2022. Looking coser at the desktop raw figures we actually see a slight drop in both absolute and percentage terms but the drop is more likely attributed to minor variances in attribution than an indicator of a downward trend in CMS usage. It should be noted that the amount of desktop sites tracked by HTTP Archive (and the source CrUX dataset) has falled considerably from 6.4 million sites to 5.4 million sites, while the number of mobile sites has grown by about 400,000 sites from 7.5 million to 7.9 million sites relfecting a continued growth in mobile usage at the expense of desktop.
+As of June 2022, 45% of websites within the desktop dataset are powered by a CMS, indicating a similar usage [to 2021](../2021/cms#cms-adoption). The mobile dataset shows an increase from 46% [in 2021](../2021/cms#cms-adoption) to 47% here in 2022. Looking closer at the desktop raw figures we actually see a slight drop in both absolute and percentage terms, but the drop is more likely an artifact of minor variances in attribution than an indicator of a downward trend in CMS usage. It should be noted that the number of desktop sites tracked by HTTP Archive (and the source CrUX dataset) has fallen considerably from 6.4 million sites to 5.4 million sites, while the number of mobile sites has grown by about 400,000 sites from 7.5 million to 7.9 million sites. We take this increase to reflect continued growth in mobile device usage at the expense of the desktop.
 
 It is instructive to compare these numbers with another commonly used dataset, such as <a hreflang="en" href="https://w3techs.com/technologies/history_overview/content_management/all/q">W3Techs</a>, which reported that as of June 2021, 64.6% of websites are created using a CMS, up from 59.2% in June 2020, which is an increase of over 9%.
 
-The deviation between our analysis and W3Techs' analysis can be explained by a difference in research methodologies, and the definition of a CMS.
+The deviation between our analysis and W3Techs' analysis can be explained by differences in research methodologies and definitions of a CMS.
 
 W3Techs' definition is as follows: "_Content Management Systems are applications for creating and managing the content of a website. We include all such systems in this category, also systems that are often classified as wikis, blog engines, discussion boards, static site generators, website editors or any type of software that provides website content_."
 
-As mentioned previously, Wappalyzer has a stricter definition of a CMS, which excludes some major CMSs which appear in W3Techs reports. You can read more about our definition on the [Methodology](../methodology) page.
+As we mentioned previously, Wappalyzer has a stricter definition of a CMS than we do. Wappalyzer excludes some major CMSs that appear in W3Techs reports. You can read more about our definition of a CMS on the [Methodology](../methodology) page.
 
 ### CMS adoption by geography
 
@@ -73,7 +73,7 @@ CMSs are used around the world, with some variance by country.
 {{ figure_markup(
   image="cms-adoption-geo.png",
   caption="CMS adoption by geography.",
-  description="Bar chart showcasing the adoption of CMSs by geography, in the 10 countries with the largest number of websites. In the US, 39% of mobile websites within the dataset are built using a CMS, and 43% of desktop websites. In Japan it is 38% and 32% respectively, in UK 39% and 39%, in Germany 36% and 39%, in India 35% and 35%, in Brazil 34% and 31%, in France 38% and 35%, in Russian Federation 40% and 35%, in Italy 42% and 40%, and in Spain 42% on desktop and 41% on mobile.",
+  description="Bar chart showcasing the adoption of CMSs by location in the 10 countries with the largest number of websites. In the US, 39% of mobile websites within the dataset are built using a CMS and so are 43% of desktop websites. In Japan it is 38% and 32% respectively, in the UK 39% and 39%, in Germany 36% and 39%, in India 35% and 35%, in Brazil 34% and 31%, in France 38% and 35%, in the Russian Federation 40% and 35%, in Italy 42% and 40%, and in Spain 42% on desktop and 41% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1831148760&format=interactive",
   sheets_gid="353349768",
   sql_file="cms_adoption_by_geo.sql",
@@ -82,9 +82,9 @@ CMSs are used around the world, with some variance by country.
   )
 }}
 
-Among the geographies with the highest number of websites, CMS adoption percentage is the highest in Italy and Spain where 40%–41% of mobile sites visited by users are built with a CMS. Brazil and Japan have the lowest adoption with only 31% and 32% respectively.
+Among the countries with the highest number of websites, CMS adoption is highest in Italy and Spain where 40%–41% of mobile sites visited by users are built with a CMS. Brazil and Japan have the lowest adoption with only 31% and 32% respectively.
 
-Of particular interest is the decrease across the board from the [2021 dataset](../2021/cms#cms-adoption-by-geography) when looking by country. Comparing year over year for mobile results, all countries except India appear to show a drop, ranging from a 4% decrease for the UK and Germany to an 8% decrease for the US and Italy.  Given the consistency of the decreases across geographies, it feels more plausible to be a variance in attribution than a wholesale drop in CMS adoption. We recommend evaluating this further in next year's analysis.
+Of particular interest is the decrease across the board compared to our [2021 dataset](../2021/cms#cms-adoption-by-geography) when individual countries are considered. Comparing year-over-year for mobile results, all countries except India appear to show a drop, ranging from a 4% decrease for the UK and Germany to an 8% decrease for the US and Italy.  Given the consistency of the decreases across geographies, it seems more plausible to be a variance in attribution than a wholesale drop in CMS adoption. We recommend evaluating this further in next year's analysis.
 
 
 ### CMS adoption by rank
@@ -94,7 +94,7 @@ We examined CMS adoption by the estimated rank of the sites included within the 
 {{ figure_markup(
   image="cms-adoption-rank.png",
   caption="CMS adoption by rank.",
-  description="Column chart showing the adoption of CMSs split by the rank of the websites. For the top 1,000 sites it is 7% on both desktop and mobile. For the top 10,000 it is 15% and 16% respectively, for the top 100,000 it is 21% and 21%, forn the top 1,000,000 it is 29% and 29%, and for all sites it is 39% and 43%. Higher ranking sites are less likely to have a CMS attributed, while a larger percentage of lower ranking sites have a clearly attributed CMS.",
+  description="Column chart showing the adoption of CMSs split by the rank of the websites. For the top 1,000 sites it is 7% on both desktop and mobile. For the top 10,000 it is 15% and 16% respectively. For the top 100,000 it is 21% and 21%. For the top 1,000,000 it is 29% and 29%. For all sites it is 39% and 43%. Higher ranking sites are less likely to have a CMS attributed, while a larger percentage of lower ranking sites have a clearly attributed CMS.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=898515378&format=interactive",
   sheets_gid="1599740178",
   sql_file="cms_adoption_by_rank.sql"
