@@ -5,7 +5,7 @@ title: Capabilities
 description: Capabilities chapter of the 2022 Web Almanac covering brand-new, powerful web platform APIs that give web apps access to hardware interfaces, enhance web-based productivity apps, and more.
 authors: [MichaelSolati]
 reviewers: [webmaxru, hemanth, beaufortfrancois, tomayac, christianliebel]
-analysts: [jrstanley]
+analysts: [tunetheweb]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/13S9FRj8OPRtoMPb94jFh6pPNz3lNS9yztIaorZYe288/
@@ -18,7 +18,7 @@ featured_stat_3: TODO
 featured_stat_label_3: TODO
 unedited: true
 ---
-<!-- markdownlint-disable MD024 -->
+
 ## Introduction
 
 Compelling web experiences aren't limited to basic browser capabilities; they can take advantage of their underlying operating system. Web platform APIs expose these capabilities that are the foundation for Progressive Web Apps (PWA), i.e., web applications capable of providing high-quality experiences found like platform-specific apps. In addition, some functionality on the web platform gives access to lower-level features such as access to the [file system](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API), [geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API), access to the [clipboard](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API), and even the ability to detect [gamepads](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API).
@@ -45,14 +45,14 @@ Note that the Async Clipboard API replaces the deprecated `document.execCommand(
 
 ### Write access
 
-One of the two method families to write data into the clipboard is the [`writeText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText) and [`write()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/write) methods. `writeText()` takes a String argument and returns a Promise, while `write()` takes an array of [`ClipboardItem`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem)s and also returns a Promise. `ClipboardItem`s take arbitrary data, such as images.
+In order to write data into the clipboard there are the [`writeText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText) and [`write()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/write) methods. `writeText()` takes a String argument and returns a Promise, while `write()` takes an array of [`ClipboardItem`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem)s and also returns a Promise. `ClipboardItem`s take arbitrary data, such as images.
 
-For a list of the mandatory data types that a browser must support by the Clipboards API specification, view this [list by the W3C](https://www.w3.org/TR/clipboard-apis/#mandatory-data-types-x).
+A list of the mandatory data types a browser must support by the Clipboards API specification exists; see this [list by the W3C](https://www.w3.org/TR/clipboard-apis/#mandatory-data-types-x). Unfortunately, not all vendors support the complete list; check browser-specific documentation when possible.
 
 ```js
-await navigator.clipboard.writeText('hello world');
+await navigator.clipboard.writeText("hello world");
 
-const blob = new Blob(['hello world'], { type: 'text/plain' });
+const blob = new Blob(["hello world"], { type: "text/plain" });
 await navigator.clipboard.write([
   new ClipboardItem({
     [blob.type]: blob,
@@ -62,7 +62,7 @@ await navigator.clipboard.write([
 
 ### Read access
 
-The other method family is for reading data from the clipboard. This is done with the [`readText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/readText) and [`read()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/read) methods. Both methods return a Promise which will resolve with data from the clipboard. `readText()` resolves as a String while `read()` resolves as an array of `ClipboardItem`s.
+In order to read data from the clipboard there are the [`readText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/readText) and [`read()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/read) methods. Both methods return a Promise which will resolve with data from the clipboard. `readText()` resolves as a String while `read()` resolves as an array of `ClipboardItem`s.
 
 ```js
 const item = await navigator.clipboard.readText();
@@ -73,9 +73,18 @@ To keep user data safe, the `"clipboard-read"` permission of the [Permissions AP
 
 Both read and write access to the clipboard is available on modern versions of Chrome, Edge, and Safari. Firefox only supports `writeText()`.
 
-### Growth
+### Growth of Async Clipboard API
 
 The Async Clipboard API saw growth in usage from 8.91% in 2021 to 10.10% in 2022 on desktop. On mobile, there was also growth from 8.25% in 2021 to 9.27% in 2022. As a result, this year, the Async Clipboard API was the most used API on both desktop and mobile, beating the Web Share API (last year's most used API).
+
+{{ figure_markup(
+  image="Async-Clipboard-API-Usage.svg",
+  caption="Usage of the Async Clipboard API from 2021 to 2022 on desktop and mobile.",
+  description="The Async Clipboard API grew in usage from 8.91% in 2021 to 10.10% in 2022 on desktop. On mobile, usage grew from 8.25% in 2021 to 9.27% in 2022.",
+  chart_url="",
+  sheets_gid="",
+  sql_file="fugu.sql"
+) }}
 
 ## Web Share API
 
@@ -83,13 +92,13 @@ The [Web Share API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Share_A
 
 The method called to share data is [`navigator.share()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share). `navigator.share()` accepts an object containing the data to share and returns a Promise. Not every file type can be shared, though, and the [`navigator.canShare()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/canShare) method can test a data object to see if the browser can share it.
 
-After calling `navigator.share()`, the browser will open a built-in sheet where users select which application to share the data with.
+After calling `navigator.share()`, the browser will open a platform-specific sheet where users select which application to share the data with.
 
-Additionally, the Web Share API can only be triggered by a user's interaction with the page, such as a button click; the Web Share API can not be called arbitrarily by executed code.
+Additionally, the Web Share API can only be triggered by a user's interaction with the page, such as a button click; the Web Share API cannot be called arbitrarily by executed code.
 
 ```js
 const data = {
-  url: 'https://almanac.httparchive.org/en/2022/capabilities',
+  url: "https://almanac.httparchive.org/en/2022/capabilities",
 };
 
 if (navigator.canShare(data)) {
@@ -99,29 +108,221 @@ if (navigator.canShare(data)) {
 
 The Web Share API is available on modern versions of Chrome, Edge, and Safari. For Chrome, though, it is only supported on Windows and Chrome OS.
 
-### Growth
+### Growth of Web Share API
 
 The Web Share API shrunk in usage from 9% in 2021 to 8.84% in 2022 on desktop. On mobile, usage shrunk from 8.58% in 2021 to 8.36% in 2022. As a result, this year, the Web Share API was the second most used API on both desktop and mobile, falling behind the Async Clipboard API (last year's second most used API).
+
+{{ figure_markup(
+  image="Web-Share-API-Usage.svg",
+  caption="Usage of the Web Share API from 2021 to 2022 on desktop and mobile.",
+  description="The Web Share API shrunk in usage from 9% in 2021 to 8.84% in 2022 on desktop. On mobile, usage shrunk from 8.58% in 2021 to 8.36% in 2022.",
+  chart_url="",
+  sheets_gid="",
+  sql_file="fugu.sql"
+) }}
+
+On many sites, you can find the Web Share API in use. For example, social media platforms, documentation sites, and others use it as a great way to share content. Some examples where you can find the API in use include [web.dev](https://web.dev/) and [twitter.com](https://twitter.com/).
+
+{{ figure_markup(
+  image="Web-Share-API.webp",
+  caption="Sharing a Twitter profile using the Web Share API.",
+  description="Sharing a Twitter profile using the Web Share API.",
+) }}
 
 ## Add to Home Screen
 
 The ability to add a web application to a device's home screen is a feature we didn't look at in last year's Capabilities report. To calculate how many sites have this functionality, pages were tested to see if they had a listener for the [`beforeinstallprompt`](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeinstallprompt_event) event.
 
+Note that the `beforeinstallprompt`event is a Chromium-only API and is currently [incubating within the WICG](https://wicg.github.io/manifest-incubations/index.html#installation-prompts).
+
 The `beforeinstallprompt` event triggers right before a user is about to be prompted to "install" a web app. The usage of an event listener for the `beforeinstallprompt` event is not required for web apps to be added to a device's home screen, so it is safe to assume that the actual usage is much higher. However, this methodology will allow us to get an idea of how popular of a feature it is.
 
-The ability to add an application to the home screen is a crucial feature of PWAs. To use this feature, web applications must meet the following criteria:
+The ability to add an application to the home screen is a crucial feature of PWAs. To use this feature, web applications must meet the [following criteria](https://web.dev/install-criteria/#criteria):
 
-- The web app can not already be installed.
+- The web app must not already be installed.
 - The user must have spent at least 30 seconds viewing the page.
 - The user must have clicked or tapped at least once on the page.
 - The web app must be served over HTTPS.
-- The web app must include a [web app manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest).
+- The web app must include a [web app manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) with:
+  - `short_name` or `name`.
+  - `icons` (must include a 192px and a 512px icon).
+  - `start_url`.
+  - `display` (must be one of `fullscreen`, `standalone`, or `minimal-ui`).
+  - `prefer_related_applications` (must not be present, or `be false`).
 - The web app must register a service worker with a `fetch` handler.
 
-Once an application is added, or installed, users can use it as if it was an installed app. Installed applications can appear in Start menus, desktops, home screens, the Applications folder, a device search, content sharing sheets, and more.
+Installed applications can appear in Start menus, desktops, home screens, the Applications folder, when searching for applications on a device, content sharing sheets, and more.
 
-The ability to add to the home screen is only available on modern versions of Chrome and Edge.
+The ability to add to the home screen is only available on modern versions of Chrome, Edge, and Safari on iOS and iPadOS.
 
-### Usage
+### Usage of Add to Home Screen
 
 As mentioned, the add to home screen capability was not measured last year. However, for posterity and detailed reporting, the `beforeinstallprompt` event was used on 8.56% of desktop pages and 7.71% of mobile pages, making it the third most used capability on desktop and mobile.
+
+By taking advantage of the `beforeinstallprompt` event, developers can provide a customized experience in how user installs their web application. One example is YouTube TV, which invites users to install their application to access it more quickly and easily.
+
+{{ figure_markup(
+  image="Add-to-Home-Screen.webp",
+  caption="Installing YouTube TV from an in app prompt, powered by the `beforeinstallprompt` event.",
+  description="Installing YouTube TV from an in app prompt, powered by the `beforeinstallprompt` event.",
+) }}
+
+## Media Session API
+
+The [Media Session API](https://developer.mozilla.org/en-US/docs/Web/API/Media_Session_API) allows developers to create custom media notifications for audio or video content on the web. The API includes action handlers that browsers can use to access media control on keyboards, headsets, and the software controls on a device's notification area and lock screens. The Media Session API empowers users to know and control what's playing on a web page without needing to be actively viewing said page.
+
+When a page plays audio or video content, users get a media notification that appears in their mobile device's notification tray or on their desktop's media hub. Browsers will try to show a title and an icon, but the Media Session API allows the notification to be customized with rich media metadata, such as the title, artist name, album name, and album artwork.
+
+```js
+navigator.mediaSession.metadata = new MediaMetadata({
+  title: "Creep",
+  artist: "Radiohead",
+  album: "Pablo Honey",
+  artwork: [
+    {
+      src: "https://via.placeholder.com/96",
+      sizes: "96x96",
+      type: "image/png",
+    },
+    {
+      src: "https://via.placeholder.com/128",
+      sizes: "128x128",
+      type: "image/png",
+    },
+    {
+      src: "https://via.placeholder.com/192",
+      sizes: "192x192",
+      type: "image/png",
+    },
+    {
+      src: "https://via.placeholder.com/256",
+      sizes: "256x256",
+      type: "image/png",
+    },
+    {
+      src: "https://via.placeholder.com/384",
+      sizes: "384x384",
+      type: "image/png",
+    },
+    {
+      src: "https://via.placeholder.com/512",
+      sizes: "512x512",
+      type: "image/png",
+    },
+  ],
+});
+```
+
+The Media Session API is available on modern versions of Chrome, Edge, Firefox, and Safari.
+
+### Usage of Media Session API
+
+The Media Session API was not measured last year. In its first year of tracking, the API was used on 8.37% of desktop pages and 7.41% of mobile pages, making it the fourth most used capability on desktop and mobile.
+
+Web applications such as YouTube, YouTube Music, Spotify, and others take advantage of the Media Session API and provide rich controls for the video or audio played.
+
+{{ figure_markup(
+  image="Media-Session-API.png",
+  caption="Accessing controls and information for YouTube Music via the Window’s Taskbar.",
+  description="Accessing controls and information for YouTube Music via the Window’s Taskbar.",
+) }}
+
+## Device Memory API
+
+A device's capabilities depend on a few things, like the network, the CPU core count, and the amount of memory available. The [Device Memory API](https://developer.mozilla.org/en-US/docs/Web/API/Device_Memory_API) provides insight into the memory available by providing the read-only property `deviceMemory` on the `Navigator` interface. The property returns an approximate amount of device memory in gigabytes as a floating point number.
+
+The value returned is imprecise, protecting the user's privacy. It's calculated by rounding down the nearest power of 2, then dividing that number by 1,024. The number is also clamped within an upper and lower bound. So you can expect the numbers: `0.25`, `0.5`, `1`, `2`, `4`, and `8` (gigabytes).
+
+```js
+const memory = navigator.deviceMemory;
+console.log(`This device has at least ${memory}GiB of RAM.`);
+```
+
+The Device Memory API is only available on modern versions of Chrome and Edge.
+
+### Usage of Device Memory API
+
+The Device Memory API was not measured last year. In its first year of tracking, the API was used on 6.27% of desktop pages and 5.76% of mobile pages, making it the fifth most used capability on desktop and mobile.
+
+For the release of Facebook's 2019 redesign, FB5, they actively integrated adaptive loading into this new version. They did this by adapting based on users' actual hardware, changing what loaded and what ran based on what users were using. For example, on the desktop, Facebook defined buckets of users based on CPU cores ([`navigator.hardwareConcurrency`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/hardwareConcurrency)) and device memory (`navigator.deviceMemory`) available.
+
+Check out [this video](https://www.youtube.com/watch?v=puUPpVrIRkc&t=1443s) from Chrome Dev Summit 2019, starting at 24:03, where Nate Schloss shares how Facebook handles adaptive loading using features such as the Device Memory API.
+
+## Service Worker API
+
+[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) are one of the core components of Progressive Web Apps. They act as a client-side proxy that puts developers in control of the system's cache and how to respond to resource requests. By pre-caching essential resources, developers can eliminate the dependence on the network, ensuring instant and reliable experiences.
+
+In addition to caching resources, service workers can update assets from the server, allow for push notifications, and allow access to the background sync APIs.
+
+While service workers have become widely adopted and supported by major browsers, not all features of service workers are available on all browsers. An example of a currently unsupported feature is that of the `Push` API on Safari. Safari will support the `Push` API in the upcoming release of [macOS Ventura](https://www.apple.com/macos/macos-ventura-preview/features/) in 2022 and [iOS 16](https://www.apple.com/ios/ios-16/features/) and IPadOS 16 in 2023.
+
+The Service Worker API is available on modern versions of Chrome, Edge, and Safari.
+
+### Growth of Service Worker API
+
+The Service Worker API was not measured in last year's Capabilities chapter. However, using [data from the previous year's PWA chapter](https://almanac.httparchive.org/en/2021/pwa#service-workers-usage), the API grew in usage from 3.05% to 4.17% on desktop and 3.22% to 3.85% on mobile pages, making it the sixth most used capability on desktop and the seventh most used mobile.
+
+{{ figure_markup(
+  image="Service-Worker-API-Usage.svg",
+  caption="Usage of the Service Worker API from 2021 to 2022 on desktop and mobile.",
+  description="The Service Worker API grew in usage from 3.05% in 2021 to 4.17% in 2022 on desktop. On mobile, usage grew from 3.22% in 2021 to 3.85% in 2022.",
+  chart_url="",
+  sheets_gid="",
+  sql_file="fugu.sql"
+) }}
+
+Note that how the service worker usage in the PWA chapter is measured differs from how the Capabilities chapter measures it. Additionally, a bug in the data pipeline for last year's PWA chapter was found, resulting in an undercounting of service worker usage.
+
+## Gamepad API
+
+The [Gamepad API](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API) is how web applications respond to input from gamepads and other game controllers. This API has three interfaces; one that represents the controller connected to the device, one that represents buttons on the connected controller, and finally, one that is for events fired when a gamepad is connected or disconnected.
+
+```js
+window.addEventListener("gamepadconnected", (e) => {
+  const gp = navigator.getGamepads()[e.gamepad.index];
+  console.log(`Controller connected at index ${gp.index}`);
+});
+```
+
+The Gamepad API is available on modern versions of Chrome, Edge, Firefox, and Safari.
+
+### Growth of Gamepad API
+
+The Gamepad API shrunk in usage from 4.39% in 2021 to 4.12% in 2022 on desktop. On mobile, use shrunk from 5.10% in 2021 to 4.65% in 2022. As a result, this year, the Gamepad API was the seventh most used capability on desktop and the sixth most used mobile.
+
+{{ figure_markup(
+  image="Gamepad-API-Usage.svg",
+  caption="Usage of the Gamepad API from 2021 to 2022 on desktop and mobile.",
+  description="The Gamepad API shrunk in usage from 4.39% in 2021 to 4.12% in 2022 on desktop. On mobile, usage shrunk from 5.10% in 2021 to 4.65% in 2022.",
+  chart_url="",
+  sheets_gid="",
+  sql_file="fugu.sql"
+) }}
+
+Web applications such as Google's Stadia, Nvidia's GeForce Now, and Microsoft's Xbox Cloud Gaming provide gaming experiences that run on the cloud comparable to the experience of running games on local devices or a gaming console. Thanks to the Gamepad API, these web applications allow users to use traditional console game controllers rather than just a keyboard and mouse.
+
+{{ figure_markup(
+  image="Gamepad-API.webp",
+  caption="Connecting a Xbox controller to Google Stadia in the Chrome browser.",
+  description="Connecting a Xbox controller to Google Stadia in the Chrome browser.",
+) }}
+
+## Push API
+
+The [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) allows web applications to receive messages from a server regardless of whether the application was in the foreground. Developers can send asynchronous notifications and updates to users who opt in, giving them meaningful updates and a nudge to reengage with an application.
+
+Web applications must also have a service worker to receive push notifications from a server. From within the service worker, push notifications can be subscribed to using the [`PushManager.subscribe()`](https://developer.mozilla.org/en-US/docs/Web/API/PushManager/subscribe).
+
+The Push API is available on modern versions of Chrome, Edge, Firefox, and Safari.
+
+### Usage of Push API
+
+The Push API was not measured last year. In its first year of tracking, the API was used on 2.03% of desktop pages and 1.86% of mobile pages, making it the eighth most used capability on desktop and mobile.
+
+## Project Fugu
+
+Many features users expect to belong to platform-specific applications also exist on the web. However, thanks to the Capabilities Project, known by many as Project Fugu, these features exist on the web. Project Fugu is a cross-company effort to bring feature parity to web applications, considering what iOS, Android, or desktop apps can do. Project Fugu works on exposing platform-specific capabilities to the web while maintaining user security, privacy, trust, and the web's other core tenets.
+
+Project Fugu comprises Microsoft, Intel, Samsung, Google, and many other groups and individuals.
+
+Check out [this post](https://developer.chrome.com/blog/fugu-status/) on the Chrome Developers blog to learn more about the Capabilities Project.
