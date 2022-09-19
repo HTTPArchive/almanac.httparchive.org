@@ -22,23 +22,19 @@ featured_stat_label_3: Mobile websites not using cache at all
 
 ## Introduction
 
-Back in 2019, <a hreflang="en" href="https://www.greenit.fr/environmental-footprint-of-the-digital-world/">GreenIT.fr estimated that there were 34 billion pieces of equipment and 4.1 billion internet users</a>. As such, the digital world's contribution to humanity's carbon footprint may represent roughly 4% of primary energy consumption and Greenhouse Gas emissions, as well as 0.2% of water consumption and 5.5% of electricity consumption.
+Back in 2019, <a hreflang="en" href="https://www.greenit.fr/environmental-footprint-of-the-digital-world/">GreenIT.fr estimated that there were 34 billion pieces of equipment and 4.1 billion internet users</a>. As such, the digital world's contribution to humanity's carbon footprint may represent roughly 4% of primary energy consumption and greenhouse gas emissions, as well as 0.2% of water consumption and 5.5% of electricity consumption.
 
-Another significant indicator is its contribution to the depletion of abiotic resources ("not alive" resources, such as metals). All the devices we use need materials in order to be produced. As such, it is considered that the manufacture of user equipment is the most important source of environmental impact (followed by the end of life of equipment, most of them not being recycled at all). It is way more impactful than data centers, the network or even the usage of user equipment. Despite the efforts from some manufacturers, it should only get worse in the coming years because of the depletion of some required materials (indium, copper, gold, etc).
+Another significant indicator is its contribution to the depletion of abiotic resources ("not alive" resources, such as metals). All the devices we use need materials in order to be produced. As such, the manufacture of user equipment is considered the most important source of environmental impact. This is followed by the end of life of equipment as most of them not being recycled at all. It is way more impactful than data centers, the network or even the usage of user equipment. Despite the efforts from some manufacturers, it will likely only get worse in the coming years because of the depletion of some required materials (indium, copper, gold, etc).
 
-The previously mentioned study from GreenIT.fr states that the overall impact of digital services has been steadily increasing for years and could be doubling or tripling between 2010 and 2025.
+The previously mentioned study from GreenIT.fr states that the overall impact of digital services has been steadily increasing for years and could double or triple between 2010 and 2025. If we want to avoid—or at least mitigate–this, we should reduce the number of connected devices that we own and keep each of them for as long as possible: repairing rather than buying. This might sound tough because some devices, especially smartphones, seem to be aging quickly: the longer websites and applications take to load, the less a battery will last.
 
-If we want to avoid or at least mitigate this, we should reduce the number of connected devices that we own and keep each of them for as long as possible (repairing rather than buying).
+What we can do about that is to reduce the impact of digital services and change the way we think about digital services as being immaterial and environmentally friendly by default.
 
-This might sound tough because some devices, especially smartphones, seem to be aging quickly: the longer websites and applications take to load, the less a battery will last.
-
-What we can do about that is to reduce the impact of digital services (and change the way we think about digital services as being immaterial and environmentally friendly by default).
-
-Considering all the data gathered, the Web Almanac sounds like the best place to assess the environmental impacts of websites as a whole. On this journey, we will also see how to reduce them through best practices and how widely these are already adopted.
+Considering all the data gathered, the Web Almanac sounds like a great place to assess the environmental impacts of websites as a whole. On this journey, we will also see how to reduce them through best practices and how widely these are already adopted.
 
 For this, we will differentiate:
 
-- Sobriety: implementing something only when needed. It could be digital as a whole (do you really need connected diapers?), some functionality (are these social media feeds useful on your homepage?) or content (decorative images, videos, etc). Ask yourself if everything on your website is useful, used, usable (and reusable).
+- Moderation: implementing something only when needed. It could be digital as a whole (do you really need connected diapers?), some functionality (are these social media feeds useful on your homepage?) or content (decorative images, videos, etc). Ask yourself if everything on your website is useful, used, usable (and reusable).
 - Efficiency: how you reduce the size and/or impact of what remains on your website after considering sobriety. For websites, this is mostly done through technical optimizations such as minification, compression, caching, etc.
 
 Some online activities to get started:
@@ -47,17 +43,19 @@ Some online activities to get started:
 - <a hreflang="en" href="https://learninglab.gitlabpages.inria.fr/mooc-impacts-num/mooc-impacts-num-ressources/Partie3/Activites/Capsule_Partie3_3_Mesurer/story.html">What is the impact of your internet browsing?</a>
 - <a hreflang="en" href="https://learninglab.gitlabpages.inria.fr/mooc-impacts-num/mooc-impacts-num-ressources/Partie3/Activites/Capsule_Partie3_2_Mesurer/indexEn.html">Weight comparison of various elements composing a web page</a>
 
-To guide us on this journey, we can rely on some resources:
+To guide us on this journey, we can rely on some resources, including:
 
-- Repositories of best practices (<a hreflang="en" href="https://github.com/cnumr/best-practices/">115 bonnes pratiques</a> [FR], <a hreflang="en" href="https://gr491.isit-europe.org/en/">Handbook of sustainable digital services</a>, etc).
-- Books and websites ([sustainablewebdesign.org](sustainablewebdesign.org), etc)
-- MOOC: <a hreflang="en" href="https://www.isit-academy.org/">INR - Sustainable IT</a>, <a hreflang="en" href="https://learninglab.inria.fr/en/mooc-impacts-environnementaux-du-numerique/">Environmental impact of digital services</a>, <a hreflang="en" href="https://docs.microsoft.com/en-us/learn/modules/sustainable-software-engineering-overview/">Principles of Sustainable Software Engineering</a>, etc.
+- Repositories of best practices: <a hreflang="fr" href="https://github.com/cnumr/best-practices/">115 bonnes pratiques</a>, <a hreflang="en" href="https://gr491.isit-europe.org/en/">Handbook of sustainable digital services</a>.
+- Books and websites: [sustainablewebdesign.org](sustainablewebdesign.org).
+- Online courses: <a hreflang="en" href="https://www.isit-academy.org/">INR - Sustainable IT</a>, <a hreflang="en" href="https://learninglab.inria.fr/en/mooc-impacts-environnementaux-du-numerique/">Environmental impact of digital services</a>, <a hreflang="en" href="https://docs.microsoft.com/en-us/learn/modules/sustainable-software-engineering-overview/">Principles of Sustainable Software Engineering</a>.
 
-Limitations and hypothesis
+### Limitations and hypothesis
 
-- We won't be covering all best practices and available metrics can't cover all of them. Metrics can't tell us if a given website has unnecessary functionality or if some images are purely decorative. Even if such considerations go beyond the scope of this chapter, there is still a lot that can be done. And with Lighthouse providing more and more types of audits, we can expect new metrics to become available.
-- Carbon emissions are the only environmental indicator here but others (such as water consumption, land use, abiotic resources consumption) should be considered to avoid pollution transfers. This is exactly the point of <a hreflang="en" href="https://learninglab.gitlabpages.inria.fr/mooc-impacts-num/mooc-impacts-num-ressources/en/Partie3/FichesConcept/FC3.3.1-ACVservicesnumeriques-MoocImpactNum.html?lang=en">LCA (Life Cycle Assessment)</a>. However, such an operation requires experts, lots of information and time. As of today, some structures are reaching for a compromise by using less metrics and information, combined with LCI (Life Cycle Inventory). This helps make the evaluation of environmental impacts more affordable and accessible (and repeatable, for example in CI/CD or monitoring) while keeping under control the assumptions you need to make.
-- We will only use metrics collected on pages but, in order to assess the environmental impacts of some digital services, it might be more accurate to collect metrics on a whole user journey. For example, on an ecommerce website, it would be better to consider a user purchasing an article and paying for it.
+We won't be covering all best practices and available metrics can't cover all of them. Metrics can't tell us if a given website has unnecessary functionality or if some images are purely decorative. Even if such considerations go beyond the scope of this chapter, there is still a lot that can be done. And with Lighthouse providing more and more types of audits, we can expect new metrics to become available.
+
+Carbon emissions are the only environmental indicator here but others—such as water consumption, land use, abiotic resources consumption—should be considered to avoid pollution transfers. This is exactly the point of <a hreflang="en" href="https://learninglab.gitlabpages.inria.fr/mooc-impacts-num/mooc-impacts-num-ressources/en/Partie3/FichesConcept/FC3.3.1-ACVservicesnumeriques-MoocImpactNum.html?lang=en">LCA (Life Cycle Assessment)</a>. However, such an operation requires expertise, lots of information and time. As of today, some structures are reaching for a compromise by using less metrics and information, combined with LCI (Life Cycle Inventory). This helps make the evaluation of environmental impacts more affordable and accessible (and repeatable, for example in CI/CD or monitoring) while keeping under control the assumptions you need to make.
+
+We will only use metrics collected on pages but, in order to assess the environmental impacts of some digital services, it might be more accurate to collect metrics on a whole user journey. For example, on an ecommerce website, it would be better to consider a user purchasing an article and paying for it.
 
 ### Intersectional environmental issues
 
@@ -77,11 +75,11 @@ These are all part of a broader organizational approach to <a hreflang="en" href
 
 ### Understanding the environmental impact of the web
 
-The Internet is the greatest, most energy intense, machine that has ever existed. To create and maintain the Internet requires massive material input. One server can cause one ton or more of CO2 during manufacture. A laptop can cause 300 kg of CO2 to manufacture, and result in the mining of 1,200 kg of raw materials. There is no such thing as sustainable mining.
+The internet is the greatest, most energy intense, machine that has ever existed. To create and maintain the internet requires massive material input. One server can cause one ton or more of CO2 during manufacture. A laptop can cause 300 kg of CO2 to manufacture, and result in the mining of 1,200 kg of raw materials. There is no such thing as sustainable mining.
 
-While most of the energy and waste of the Internet is embedded in the devices themselves, the energy required to run the Internet is not insignificant. While we are constantly marketed to about how data is essentially free, to store as much as we want, data storage and processing have real and exponentially growing energy demands. In 2015, for example, data centers in Ireland were consuming 5% of electricity, by 2021 that had grown to 14%--more than the demand of all the houses and buildings in rural Ireland.
+While most of the energy and waste of the internet is embedded in the devices themselves, the energy required to run the internet is not insignificant. While we are constantly marketed to about how data is essentially free, to store as much as we want, data storage and processing have real and exponentially growing energy demands. In 2015, for example, data centers in Ireland were consuming 5% of electricity, by 2021 that had grown to 14%—more than the demand of all the houses and buildings in rural Ireland.
 
-We can design and develop more sustainability for the Web by focusing on better managing our devices, and by seeking to put as little stress as possible on the devices that are used to interact with our websites or apps. In relation to our own devices, we must focus on device life and energy consumption. The longer the working life of a computer, the more we can amortize the harm that was caused during its manufacture. The pinnacle of this thinking is going open source and using an operating system like Linux to extend the life of a device. Open source is the original digital sustainability philosophy by focusing on reusing and sharing. Nonetheless, it should not prevent the implementation of sustainability best practices.
+We can design and develop more sustainability for the eb by focusing on better managing our devices, and by seeking to put as little stress as possible on the devices that are used to interact with our websites or apps. In relation to our own devices, we must focus on device life and energy consumption. The longer the working life of a computer, the more we can amortize the harm that was caused during its manufacture. The pinnacle of this thinking is going open source and using an operating system like Linux to extend the life of a device. Open source is the original digital sustainability philosophy by focusing on reusing and sharing. Nonetheless, it should not prevent the implementation of sustainability best practices.
 
 The less energy consumed during the design and development process the better. If we can reuse code or content, then that's a great idea. Use the least amount of wattage. A laptop will be much more energy efficient than a desktop. Large screens, for example, should be avoided, as they can consume as much energy themselves as a laptop. Anything that reduces energy consumption is a good thing.
 
@@ -107,7 +105,7 @@ For more on this, check the [Page Weight](./page-weight) chapter.
   image="kilobytes-number-by-percentile.png",
   caption="Number of kilobytes by percentile",
   description="A column chart showing that on the 90th percentile web pages weight over 9 MB on desktop and 8 MB on mobile. On the 75th percentile the web pages get over 4.5 MB on desktop and around 4 MB on mobile, on the 50th percentile we found web pages weight a bit less than 2.5 MB on desktop and over 2 MB on mobile, on the 25th percentile it's over 1 MB on desktop and a bit less than 1 MB on mobile. Finally, on the 10th percentile we see pages weight about 0.5 MB on desktop and 0.4 MB on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=2123741324&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=2123741324&format=interactive",
   sheets_gid="1911144863",
   sql_file=""
 ) }}
@@ -124,7 +122,7 @@ _The notion of "carbon emissions" is a simplification since we are considering G
   image="total-carbon-emissions-by-percentile.png",
   caption="Total Carbon emissions (g) by percentile",
   description="A column chart showing that on the 90th percentile, desktop web pages emit 3.9g of carbon and mobile pages emit 2.76g of carbon, on the 75th percentile desktop pages emit 1.59g of carbon and mobile pages emit 1.38g of carbon. On the 50th percentile it goes 0.79g of carbon on desktop and 0.69 on mobile. On the 25th percentile it's 0.39g of carbon for desktop pages and 0.34g of carbon on mobile pages. Lastly, on the 10th percentile desktop pages emit 0.18g of carbon and mobile pages emit 0.15g of carbon.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=568360340&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=568360340&format=interactive",
   sheets_gid="1911144863",
   sql_file=""
 ) }}
@@ -139,7 +137,7 @@ Now for an additional graph: emissions per percentile by type of content.
   image="percent-of-total-emissions-by-type-desktop.png",
   caption="Percent of total emissions by percentile by type (desktop)",
   description="A bar chart showing the percent of different content types on desktop in the total page carbon emissions by percentile. On the 90th percentile HTML content accounts for around 2.5% of the total carbon emissions, Javascript is responsible a bit less than 17.5% of total carbon emissions, Css is around 2.5%, images accounts for around 72.5% and fonts represent 5% of the total carbon emissions. On the 75th percentile, Html represents 2%, Javascript 23%, Css around 5%, images around 65% and fonts around 5% of the total carbon emissions. On the 50th percentile, Html represents 2%, Javascript 30%, Css around 5%, images almost 60% and fonts around 7% of the total carbon emissions. On the 25th percentile, Html represents 2%, Javascript 35%, Css around 6%, images 50% and fonts around 7% of the total carbon emissions. On the 10th percentile, Html represents 2.5%, Javascript 50%, Css around 5%, images 42.5% and fonts 0% of the total carbon emissions.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1976764368&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1976764368&format=interactive",
   sheets_gid="1911144863",
   sql_file="",
   width=600,
@@ -158,7 +156,7 @@ The number of requests should be kept to a minimum. Keeping an upper limit of no
   image="number-of-requests-by-percentile.png",
   caption="Number of requests by percentile",
   description="A column chat showing that on the 90th percentile there are 184 requests per page on desktop and 168 requests on mobile. On the 75th percentile there are 121 requests on desktop and 111 on mobile. On the 50th percentile it drops at 76 requests on desktop and 70 on mobile. On the 25th percentile there are 45 requests on desktop and 41 on mobile. Finally on the 10th percentile we see a total of 25 requests on desktop and 23 on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=843262877&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=843262877&format=interactive",
   sheets_gid="174962437",
   sql_file=""
 ) }}
@@ -171,7 +169,7 @@ So, which content type is to blame for this?
   image="number-of-requests-by-percentile-by-type-mobile.png",
   caption="Number of requests by percentile by type on mobile",
   description="A column chart showing that on mobile devices, on the 90th percentile we find 14 requests targetting Html content, 60 requests for javascript resources, almost 24 requests for Css, around 70 requests fetching images and 8 requests for fonts.. On the 75th percentile, there are 6 Html requests, 37 Javascript requests, 12 Css requests, 39 images requests and 5 Fonts requests. On the 50th percentile, we can see 2 Html requests, 20 javascript requests, 6 Css requests, 22 images and 3 fonts requests. On the 25th percentile, there are 1 Html, 9 javascript, 3 Css, 10 images and 1 font requests. On the 10h percentile, we find 1Html, 4 javascript, 1 Css, 6 images and 1 font requests.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=768422178&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=768422178&format=interactive",
   sheets_gid="174962437",
   sql_file="requests_by_type.sql"
 ) }}
@@ -184,7 +182,7 @@ There are almost as many HTTP requests for mobile and desktop versions, which sh
   image="number-of-bytes-by-percentile-by-type-mobile.png",
   caption="Number of bytes by percentile by type on mobile",
   description="A column chart showing that on mobile devices, on the 90th percentile we find 135 KB of Html, around 1,367 KB of Javascript, 256 KB of Css, 5,475 KB of images and 338 KB of fonts. On the 75th percentile it goes down at 67 KB of Html, 857 KB of Javascript, 139 KB of Css, 2,402 KB of images and 191 KB of fonts. On the 50th percentile we found 30 KB of Html, 461 KB of Javascript, 68 KB of Css, 881 KB of images and 97 KB of fonts. On the 25th percentile there is 13 KB of Html, 209 KB of Javascript, 28 KB of Css, 260 KB of images and 29 KB of fonts. On the 10th percentile there is 6 KB of Html, 87 KB of Javascript, 6 KB of Css, 64 KB of images and 0 KB of fonts.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=683807493&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=683807493&format=interactive",
   sheets_gid="1911144863",
   sql_file="page_bytes_per_type.sql"
 ) }}
@@ -195,7 +193,7 @@ There are almost as many HTTP requests for images and JavaScript but the overall
 
 _Here (and elsewhere), you should find mentions of "Green Hosting". This is kind of a shortcut since no hosting will be truly green, carbon neutral or other such things. We will focus here on how to use more sustainable hosting. _
 
-For the majority of this chapter, we focus on how changes in the quantity of resources like network, compute and storage affect the environmental impact of digital services - you might think of this as in terms of **_consumption_** as a lever for sustainability. However there are other levers too. You can't efficiency your way to zero, and the same code, run on the same kind of server, but running on greener energy will have a lower environmental impact than otherwise. We can think of this lever as **intensity**.
+For the majority of this chapter, we focus on how changes in the quantity of resources like network, compute and storage affect the environmental impact of digital services—you might think of this as in terms of **_consumption_** as a lever for sustainability. However there are other levers too. You can't efficiency your way to zero, and the same code, run on the same kind of server, but running on greener energy will have a lower environmental impact than otherwise. We can think of this lever as **intensity**.
 
 Here there is some good news. Across the world, electricity grids we rely on are getting greener over time, driven by the falling costs of renewables and storage. 38% of our electricity came from clean sources in 2022 (<a hreflang="en" href="https://ember-climate.org/insights/research/global-electricity-review-2022/">examples</a> in the ember climate, and <a hreflang="en" href="https://public.flourish.studio/story/1176231/?utm_source=showcase&utm_campaign=story/1176231">this chart</a> ).
 
@@ -211,7 +209,7 @@ An increasing number of technology firms are also taking steps to green **all** 
   image="green-hosting-percentages.png",
   caption="% Green hosting",
   description="A column chart showing that on the top 1,000 sites, on desktop, 54% of them relied on green web hosting and it drops at 52% on mobile. On the top 10,000 sites it's 50% on desktop and 48% on mobile, on the top 100,000 it's 39% on desktop and 38% on mobile, on the top million it's 24% for desktops and 24% on mobile. On all measured websites globally, only 13% rely on green web hosting for desktop and 10% for mobile",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=222811305&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=222811305&format=interactive",
   sheets_gid="1022303859",
   sql_file="green_web_hosting.sql"
 ) }}
@@ -251,7 +249,7 @@ Unused CSS is especially found when using CSS frameworks (Bootstrap and others).
   image="unused-css-bytes.png",
   caption="Unused Css bytes",
   description="A column chart showing that on the 90th percentile there is 221 KB of unused Css on desktop and 218 KB on mobile, on the 75th percentile it's 117 KB on desktop and 113 KB on mobile, on the 50th percentile 52 KB on desktop and 49 KB on mobile. On the 25th percentile we found 19 KB of unused Css on desktop and 17 KB on mobile. Lastly, we saw 0 KB of unused Css on the 10th percentile on either desktop and mobile",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1850605337&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1850605337&format=interactive",
   sheets_gid="1952093899",
   sql_file="unused_css_bytes.sql"
 ) }}
@@ -266,7 +264,7 @@ The amount of unused JavaScript could grow fast when adding dependencies or usin
   image="unused-javascript-bytes.png",
   caption="Unused Javascript bytes",
   description="A column chart showing that on the 90th percentile there is 645 KB of unused Javascript on desktop and 604 KB on mobile, on the 75th percentile it's 372 KB on desktop and 342 KB on mobile, on the 50th percentile 177 KB on desktop and 162 KB on mobile. On the 25th percentile we found 69 KB of unused Javascript on desktop and 62 KB on mobile. Lastly, we saw 0 KB of unused Javascript on the 10th percentile on either desktop and mobile",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=625795710&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=625795710&format=interactive",
   sheets_gid="1918594785",
   sql_file="unused_js_bytes.sql"
 ) }}
@@ -326,7 +324,7 @@ WebP <a hreflang="en" href="https://caniuse.com/webp">is already widely supporte
   image="image-formats-in-use.png",
   caption="Image formats in use",
   description="A column chart showing that overall, jpg represents the image format of 52.9% of all images on desktop and 54.9% on mobile, png is used in 29.1% of desktop images and 28.2% of mobile images. WebP is used on 11.6% of desktop images and 10.7% of mobile's. Gif is used in 2.8% of desktop image and 2.6% of mobile images, Svg accounts for 2.6% of desktop images format and 2.4% of mobile's. Ico represents the format used on 0.9% of all desktop and mobile images and lastly, avif is the format of 0.3% of both desktop and mobile images.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=865768073&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=865768073&format=interactive",
   sheets_gid="21166754",
   sql_file="image_formats.sql"
 ) }}
@@ -343,7 +341,7 @@ Also remember that you don't need a quality of more than 85% since the human eye
   image="responsive-image-types.png",
   caption="Responsive image types",
   description="A column chart showing that around 33% of websites use the srcset attribute on desktop and 34% on mobile, 25% of them used it with sizes on desktop and 26% on mobile, 8% of them used the srcset attribute with w/o sizes on desktop and 8% on mobile. 8% ofthe websites use the picture element on desktop and 8% of them on mobile",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=403648557&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=403648557&format=interactive",
   sheets_gid="695142267",
   sql_file="responsive_images.sql"
 ) }}
@@ -358,7 +356,7 @@ An easy way to get a faster first load is to load images progressively: only loa
   image="native-lazy-loading-usage.png",
   caption="Native lazy loading usage",
   description="A column chart showing that no websites used native lazy-loading on July the 1st, 2019. On August the 1st, 2020, 4% of websites used native lazy-loading on desktop 4% on mobile. On July the 1st, 2021, 18% of websites used native lazy-loading on both desktop and mobile, and on the 1st June of 2022, 23% of websites used native lazy-loading o ndesktop and 24% on mobile",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=862073668&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=862073668&format=interactive",
   sheets_gid="1363374212",
   sql_file="image_lazy_loading.sql"
 ) }}
@@ -379,7 +377,7 @@ Automatically preloading videos (or audio files) involves retrieving data that m
   image="video-preload-usage.png",
   caption="Video preload usage",
   description="A column chart showing the preload attribute is not used on 57.6% of desktop videos and 59.5% of mobile videos. The preload attribute can be found with the 'none' value on 17.3% of desktop videos 15.4% of mobile videos. The 'auto' value is used on 15.3% of desktop videos 13.6% of mobile videos. The 'metadata' value is used on 7.5%% of desktop videos 9.2% of mobile videos. The prealod attribute is empty on 1.6% of both desktop and mobile videos. The value preload attribute has a value 'TRUE' on respectively 0.4% and 0.3% of desktop and mobile videos. Lastly, the preload attribute has a value of 'preload', yes', 'undefined' or 'FALSE' on 0.1% of both desktop and mobile videos.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1090171830&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1090171830&format=interactive",
   sheets_gid="1420607407",
   sql_file="video_preload_values.sql"
 ) }}
@@ -398,7 +396,7 @@ Also, this attribute can override your _preload_ setting since autoplaying requi
   image="video-autoplay-usage.png",
   caption="Video autoplay usage",
   description="A column chart showing that the autoplay attribute is not used on respectively 53.1% and 52.6% of desktop and mobile videos. It is used with an empty value on 38.6% of desktop videos and 38.8% of mobile videos. It is used with an 'autoplay' value on 5.3% of desktop videos and 5.1% of mobile videos. It is used with an value 'TRUE' on 2.5% of desktop videos and 3% of mobile videos. It is used with an value '1' on 0.3% of desktop mobile videos. It is used with an value 'TRUE' on 2.5% of desktop videos and 3% of mobile videos. It is used with an value 'FALSE' on 0.2% of desktop mobile videos.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=2034030994&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=2034030994&format=interactive",
   sheets_gid="1238590607",
   sql_file="video_autoplay_values.sql"
 ) }}
@@ -448,7 +446,7 @@ With third-party requests making up such a large portion of requests on the web,
   image="green-third-party-requests.png",
   caption="Percents of green third party requests",
   description="A column chart showing that on the top 1,000 websites 64% of thrid party requests relied on green hosting on desktop and 63% on mobile devices. On the top 10,000 websites it's 66% on desktop and 67% on mobile. For the top 100,000 sites it's 74% on both desktop and mobile. On the top million, it's 84% on desktop and 83% on mobile. Overall, we see that 89% of third party requests rely on green hosting on desktop and it goes up to 91% on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1339778519&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1339778519&format=interactive",
   sheets_gid="951750086",
   sql_file="green_third_party_requests.sql"
 ) }}
@@ -465,7 +463,7 @@ Beyond hosting, we should also be considering the impact of data transfer for th
 
 In the case of fonts, self-hosting and subsetting are two techniques that, when combined, can help reduce this waste. However, most third-parties come in the form of scripts. These incur a cost when transferring data over the network, but also utilize processing power on the end-user's device. For these, we can reduce their impact by loading them "just in time".
 
-This pattern is known as <a hreflang="en" href="https://www.patterns.dev/posts/import-on-interaction/">Import on Interaction</a>, which sees static facades used in place of interactive content when the page first loads. The content then gets requested and loaded just before the user interacts with an element. This can result in less data being transferred initially, and also reduces the processing required when viewing the page - especially if the script is never requested.
+This pattern is known as <a hreflang="en" href="https://www.patterns.dev/posts/import-on-interaction/">Import on Interaction</a>, which sees static facades used in place of interactive content when the page first loads. The content then gets requested and loaded just before the user interacts with an element. This can result in less data being transferred initially, and also reduces the processing required when viewing the page—especially if the script is never requested.
 
 ### Implementing technical optimizations
 
@@ -487,7 +485,7 @@ Minifying JavaScript involves removing unnecessary characters for the browser, m
   image="unminified-javascript-savings.png",
   caption="Unminified Javascript savings",
   description="A column chart showing that on the 90th percentile 40 KB of Javascript could be saved on desktop and 36 KB on mobile if using Js minifying. On the 75th percentile 10 KB of Javascript could be saved on desktop and 9 KB on mobile. On the 50th, 25th and 10th percentile we see no KB savings, this is explained by the usage of Javascript minifying already in place on those websites.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=457277769&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=457277769&format=interactive",
   sheets_gid="1952499146",
   sql_file="unminified_js_bytes.sql"
 ) }}
@@ -502,7 +500,7 @@ Inlining code is bad practice, even more for sustainability. Making your HTML he
   image="script-usage.png",
   caption="Script usage",
   description="A bar chart showing that on desktop 34% of javascript is inline and the other 66% is external. On mobile, 35% of Javascript is inline and 65% comes from external files.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1900077125&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1900077125&format=interactive",
   sheets_gid="2126160877",
   sql_file="script_count.sql "
 ) }}
@@ -523,7 +521,7 @@ As with CSS, minifying JavaScript involves removing unnecessary characters for t
   image="unminified-css-savings.png",
   caption="Unminified Css savings",
   description="A column chart showing that on the 90th percentile 15 KB of Css could be saved on desktop and 14 KB on mobile if using Css minifying. On the 75th percentile 5 KB of Css could be saved on desktop and 4 KB on mobile. On the 50th, 25th and 10th percentile we see no KB savings, this is explained by the usage of Css minifying already in place on those websites.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=898637516&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=898637516&format=interactive",
   sheets_gid="1896195819",
   sql_file="unminified_css_bytes.sql"
 ) }}
@@ -538,7 +536,7 @@ As with JavaScript, inlining CSS could prove detrimental for the size of your HT
   image="style-usage.png",
   caption="Style usage",
   description="A bar chart showing that on both desktop and mobile, 25% of Css is inline and the other 75% comes from external stylesheets",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1184478802&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1184478802&format=interactive",
   sheets_gid="362809205",
   sql_file="stylesheet_count.sql"
 ) }}
@@ -553,7 +551,7 @@ Implementing a CDN can help make your website more sustainable. It helps get you
   image="cdn-usage.png",
   caption="Cdn usage on the web",
   description="A column chart showing that 69.7% of the pages analysed do not use any CDN on desktop and 71.2% on mobile, 16.9% of them use Cloudflare on desktop and 15.1% on mobile, 5.2% of them use Google on desktop and 6.5% on mobile, 2.8% use Fastly on desktop and 2.6% on mobile, 2.2% use Amazon Cloudfront on desktop and 1.8% on mobile, 1.1% use Akamai on desktop and 0.8% on mobile, 0.4% use Automattic on desktop and 0.7% on mobile, 0.5% use Sucuri Firewall on desktop and 0.3% on mobile, 0.4% use Sucuri Firewall on desktop and 0.3% on mobile. Netlify and Vercel are both used on 0.2% of the page tested on mobile and desktop. Lastly, we see CDN, Highwinds, Microsoft Azure and OVH CDN being used on 0.1% of the pages, both on desktop and mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=508019478&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=508019478&format=interactive",
   sheets_gid="1415782903",
   sql_file="cdn_adoption.sql",
   width=600,
@@ -570,7 +568,7 @@ Despite these obvious benefits, more than 70% of websites still don't use a CDN.
   image="compression-used-on-text-resources.png",
   caption="Compression used on text resources",
   description="A bar chart showing that on desktop 28% of text resources are compressed using Brotli format, 47% of them where compressed in Gzip and 25% are not compressed. On mobile, 29% of text resources are compressed using Brotli format, 46% of them where compressed in Gzip and 25% are not compressed at all.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=2065385728&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=2065385728&format=interactive",
   sheets_gid="218418435",
   sql_file="text_compression.sql"
 ) }}
@@ -587,7 +585,7 @@ Caching is great for sustainability since it prevents browsers from requesting a
   image="cache-control-header-usage.png",
   caption="Cache control header usage",
   description="A bar chart showing that on desktop 23% of websites use Cache Control Only, 1% of them use Expiries only and 51% of them use both. 25% of the websites do not use any caching on desktop. On mobile 22% of websites use Cache Control Only, 1% of them use Expiries only and 51% of them use both. 26% of the websites do not use any caching on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1354451270&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1354451270&format=interactive",
   sheets_gid="326683091",
   sql_file="cache_header_usage.sql"
 ) }}
@@ -631,7 +629,7 @@ The charts below show the median page weight of the top five most popular eComme
   image="median-kilobytes-by-ecommerce.png",
   caption="Median kilobytes by ecommerce",
   description="A bar chart showing that the median weight for WooCommerce pages is 3,048 KB on desktop and 2,827 KB on mobile. For Shopify it's 2,428 KB on desktop and 2,080 KB on mobile. For Squerspace Commerce it's 3,462 KB on desktop and 3,577 KB on mobile. For PrestaShop it's 2,900 KB on desktop and 2,528 KB on mobile. For Magento it's 3,317 KB on desktop and 3,093 KB on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=574238152&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=574238152&format=interactive",
   sheets_gid="1434449385",
   sql_file="ecommerce_bytes_per_type.sql"
 ) }}
@@ -640,7 +638,7 @@ The charts below show the median page weight of the top five most popular eComme
   image="median-kilobytes-by-cms.png",
   caption="Median kilobytes by CMS",
   description="A bar chart showing that the median weight for Wordpress pages is 2,559 KB on desktop and 2,314 KB on mobile. For Drupal it's 2,351 KB on desktop and 2,146 KB on mobile. For Joomla it's 2,799 KB on desktop and 2,495 KB on mobile. For Wix it's 3,172 KB on desktop and 2,158 KB on mobile. For Squarespace it's 3,462 KB on desktop and 3,577 KB on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1499422639&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1499422639&format=interactive",
   sheets_gid="1561070567",
   sql_file=""
 ) }}
@@ -649,12 +647,12 @@ The charts below show the median page weight of the top five most popular eComme
   image="static-site-generator-median.png",
   caption="Static site generators median KB",
   description="A bar chart showing that the median weight for Next.js pages is 2,387 KB on desktop and 2,064 KB on mobile. For Nuxt.js it's 2,877 KB on desktop and 2,210 KB on mobile. For Gatsby it's 2,049 KB on desktop and 1,731 KB on mobile. For Hugo it's 870 KB on desktop and 1,088 KB on mobile. For Jekyll it's 662 KB on desktop and 781 KB on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1545025671&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1545025671&format=interactive",
   sheets_gid="613315308",
   sql_file="./sustainability/ssg_bytes_per_type.sql"
 ) }}
 
-Of interest here is that all but three of the platforms/tools listed have a median mobile page weight that is less than the overall median (2,019 KB). These are all in the static site generator category, and especially in the case of Hugo and Jekyll, it can likely be attributed to the kinds of websites these tools are used to create - namely mostly blog and textual content, with much less reliance on JavaScript. It should also be noted that SSG are often used with performance in mind, which makes them more likely to be further optimized than the average website using a CMS only for commodity reasons.
+Of interest here is that all but three of the platforms/tools listed have a median mobile page weight that is less than the overall median (2,019 KB). These are all in the static site generator category, and especially in the case of Hugo and Jekyll, it can likely be attributed to the kinds of websites these tools are used to create—namely mostly blog and textual content, with much less reliance on JavaScript. It should also be noted that SSG are often used with performance in mind, which makes them more likely to be further optimized than the average website using a CMS only for commodity reasons.
 
 Another area of interest when looking across the three segments is that some show a bigger gap between desktop and mobile page size. On closer inspection, this seems to be largely down to image optimizations that some platforms seem to be applying for mobile devices. To highlight this, let's look at the CMS category, where Wix shows a big difference between desktop and mobile size compared to the other popular platforms.
 
@@ -720,7 +718,7 @@ Another area of interest when looking across the three segments is that some sho
   image="median-kilobytes-by-cms-and-resource-type-mobile.png",
   caption="Median kilobytes by cms and resource type (mobile)",
   description="",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96MBcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1726838193&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1726838193&format=interactive",
   sheets_gid="1561070567",
   sql_file="cms_bytes_per_type.sql",
   width=600,
