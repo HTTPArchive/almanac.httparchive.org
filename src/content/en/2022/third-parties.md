@@ -7,7 +7,7 @@ reviewers: [tunetheweb, kevinfarrugia, alexnj]
 analysts: [kevinfarrugia]
 editors: [shantsis]
 translators: []
-imeugenia_bio: Eugenia is a Senior frontend engineer at Gorillas. She is passionate about web performance and state machines.
+imeugenia_bio: Eugenia is a Senior frontend engineer at <a hreflang="en" href="https://gorillas.io/">Gorillas</a>. She is passionate about web performance and state machines.
 results: https://docs.google.com/spreadsheets/d/1YqoRRsyiNsrEabVLu2nRU98JIG_0zLLuoQhC2nX8xbM/
 featured_quote: Third parties are often associated with negative impact on web performance. However, both third-party and website developers can eliminate it so that third-party functionality isn't harming user experience.
 featured_stat_1: 94%
