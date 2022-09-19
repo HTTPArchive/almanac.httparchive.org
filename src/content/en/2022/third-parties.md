@@ -27,7 +27,6 @@ Many recommendations help to eliminate the negative impact. It could be simple t
 
 This chapter focuses on the topic of how website owners and third-party developers are eliminating a third-party negative impact and if the best practices are followed. The first part is a review of third-party prevalence and some web performance-related metrics: render-blocking time and impact on the main thread. The second part is an analysis of the best practices regarding minifying and compressing resources, third-party facades, `async` and `defer` script attributes, legacy JavaScript, and other optimization opportunities.
 
-
 ## Definitions
 
 A third-party is an entity outside the primary site-user relationship. It involves the aspects of the site not directly within the control of the site owner but with their approval. Third-party resources are:
@@ -74,7 +73,6 @@ Note: The CDN category here includes providers that provide resources on public 
 
 Learn more about our [Methodology](./methodology).
 
-
 ## Prevalence
 
 {{ figure_markup(
@@ -93,7 +91,7 @@ The prevalence of third-parties remained at the same high levels as the previous
   caption="Median number of third-party domains per page by rank.",
   description="Bar chart showing the median number of third-party domains across various website rank categories. For the top 1,000 websites 53 and 43 third-parties are used on desktop and mobile websites respectively. The top 10,000 websites use 48 and 43 third-parties on desktop and mobile websites respectively. The top 100,000 websites use 34 and 31 third-parties on desktop and mobile websites respectively. The top 1,000,000 websites use 28 and 25 third-parties on desktop and mobile websites respectively. The median number of third-parties for all websites is 24 and 21 on desktop and mobile websites respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=1946246067&format=interactive",
-  sheets_gid="1355951746",
+  sheets_gid="759454652",
   sql_file="number_of_third_party_providers_by_rank.sql"
   )
 }}
@@ -106,7 +104,7 @@ Though the exact number of third party providers is still a subject for further 
   caption="Median number of third-party domains per page by category and rank.",
   description="Bar chart showing the median number of third-party domains by third-party category across various website rank categories. The data is shown for mobile pages. Only ad, unknown, and video category differs significantly depending on a rank. For the top 1,000 websites 18 third-party domains are from ad category, 21 unknown, and 5 video. For the top 10,000 websites 22 are from ad category, 16 unknown, and 4 video. For the top 100,000 websites 15 are from ad category, 12 unknown, and 8 video. For the top 1,000,000 websites 7 are from ad category, 9 unknown, and 11 video. For all websites 4 are from ad category, 8 unknown, and 11 video. Data about the rest of third-party categories shows that analicts category makes up from 3 to 5 third-party domains per page, CDN 4-5 domains, consent providers 7-8, content providers 3-5, customer success 9, marketing 2-3, social 5-6, tag manager 1-2, utility category 3-4, and other category 2.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=419972852&format=interactive",
-  sheets_gid="1355951746",
+  sheets_gid="163918555",
   sql_file="number_of_third_parties_by_rank_and_category.sql"
   )
 }}
@@ -118,7 +116,7 @@ When looking at the distribution of third-parties by category and by rank, it be
   caption="Top 10 third parties by number of pages they are used on",
   description="Bar chart showing the usage of top 10 most popular third parties. fonts.googleapis.com is used on 63% of mobile pages, google-analytics.com on 51%, accounts.google.com on 49%, adservice.google.com on 47%, and googletagmanager.com on 46%. The rest, i.e. ajax.googleapis.com, facebook.com, cdnjs.cloudflare.com, youtube.com and  maps.google.com are used on less than 30% of mobile pages. Desktop and mobile percentage is similar for all third parties.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=857401072&format=interactive",
-  sheets_gid="1355951746",
+  sheets_gid="756029157",
   sql_file="top100_third_parties_by_number_of_websites.sql"
   )
 }}
@@ -129,7 +127,7 @@ Google APIs: fonts, analytics, account management, advertising, and tag manageme
   caption="Percentage of scripts of all third-party requests",
   content="34%",
   classes="big-number",
-  sheets_gid="1355951746",
+  sheets_gid="811897794",
   sql_file="percent_of_third_parties_by_content_type.sql"
 )
 }}
@@ -145,7 +143,7 @@ Some third parties might inevitably block page rendering and negatively affect t
   caption="Median render blocking time for top 10 most popular third parties.",
   description="Bar chart showing the potential render-blocking time of top 10 most popular render-blocking third parties. Median render-blocking time of fonts.googleapis.com is 1.085 milliseconds on mobile pages, accounts.google.com is render-blocking for 1,077 milliseconds, adservice.google.com for 1,571, googletagmanager.com for 1,806, ajax.googleapis.com for 1,530, cloudflare.com for 1,300, youtube.com for 1,146, bootstrapcdn.com for 1,241, maps.google.com for 2.095 and jsdelivr.net for 1,370. Desktop and mobile data is similar for all third parties.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=549590895&format=interactive",
-  sheets_gid="1355951746",
+  sheets_gid="944312903",
   sql_file="third_parties_blocking_rendering_percentiles.sql"
   )
 }}
@@ -163,7 +161,7 @@ We inspected the <a hreflang="en" href="https://github.com/GoogleChrome/lighthou
   caption="Top 10 third parties blocking main thread",
   description="Bar chart showing the percentage of mobile pages that have main thread blocked by a third party by top 10 third parties. YouTube is blocking main thread on 90% of mobile pages, Google Maps on 85%, Other Google APIs/SDKs on 84%, Facebook 82%, Google Dounbleclick Ads 81%, Google CDN 79%, Google Tag Manager 75%, Cloudfare CDN 71%, Google Analytics 70%, Google Fonts 63%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=1753375995&format=interactive",
-  sheets_gid="1355951746",
+  sheets_gid="1541263858",
   sql_file="third_parties_blocking_main_thread.sql"
   )
 }}
@@ -177,7 +175,7 @@ To examine in more detail how the website users could be affected by the main th
   caption="Median main thread blocking time in ms for top 5 most popular third parties.",
   description="Bar chart showing the median main thread blocking time by top 5 third parties. YouTube is blocking main thread for 1.721 milliseconds on mobile pages and 117 milliseconds on desktop pages, Google Maps for 298 and 0, Facebook 93 and 0, Google Analytics 76 and 0, Google Tag Manager 65 and 0.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=1006809602&format=interactive",
-  sheets_gid="1355951746",
+  sheets_gid="1541263858",
   sql_file="third_parties_blocking_main_thread.sql"
   )
 }}
@@ -186,12 +184,11 @@ YouTube is the most blocking third party among top 5 most-used third parties. It
 
 Note that Lighthouse might mark some third parties as potentially render-blocking while their size is so small that they don’t have any tangible effect on the render-blocking time. This is the case for third parties like Google Fonts or Google/Doubleclick Ads whose median render-blocking time is 0ms.
 
-A blocked main thread has a big impact on [First Input Delay (FID)](https://web.dev/fid/) and [Interaction to Next Paint (INP)](https://web.dev/inp/) performance metrics. To provide good web page responsiveness, the FID should be 100ms or less and INP below 200ms. There is research about <a hreflang="en" href="https://github.com/GoogleChromeLabs/chrome-http-archive-analysis/blob/main/notebooks/HTTP_Archive_TBT_and_INP.ipynb">correlation between Total Blocking Time and Interaction to Next Paint on mobile devices</a> documented by <a hreflang="en" href="https://twitter.com/anniesullie">Annie Sullivan</a>. It shows that the lower the main thread blocking time, the larger the percent of websites meet good INP and FID thresholds. That leads to a conclusion that it becomes harder to achieve good core web performance metrics if the third parties are blocking the main thread for such a long time as in the YouTube example. Moreover, other third-parties and first-party assets might also contribute to the render-blocking effect. Despite this, there are many ways to minimize the render-blocking effect of third parties. This will be further explored in the next section.
+A blocked main thread has a big impact on [First Input Delay (FID)](https://web.dev/fid/) and [Interaction to Next Paint (INP)](https://web.dev/inp/) performance metrics. To provide good web page responsiveness, the FID should be 100ms or less and INP below 200ms. There is research about <a hreflang="en" href="https://github.com/GoogleChromeLabs/chrome-http-archive-analysis/blob/main/notebooks/HTTP_Archive_TBT_and_INP.ipynb">correlation between Total Blocking Time and Interaction to Next Paint on mobile devices</a> documented by [Annie Sullivan](https://twitter.com/anniesullie). It shows that the lower the main thread blocking time, the larger the percent of websites meet good INP and FID thresholds. That leads to a conclusion that it becomes harder to achieve good core web performance metrics if the third parties are blocking the main thread for such a long time as in the YouTube example. Moreover, other third-parties and first-party assets might also contribute to the render-blocking effect. Despite this, there are many ways to minimize the render-blocking effect of third parties. This will be further explored in the next section.
 
 ## Web performance best practices
 
 The previous section confirmed that the third parties are causing a huge performance impact that could affect the entire website experience. However, website and third-party developers can follow many best practices to minimize third-party performance impact from minifying resources to using third-party facades. We looked at different third party usage trends to understand how the best practices are followed.
-
 
 ### Minifying resources
 
@@ -204,7 +201,7 @@ Minifying scripts should have a large positive impact as they are the most popul
   caption="Percentage of average potentially saved bytes of unminified JavaScript by first and third party.",
   description="Pie chart showing the distribution of the average potentially saved bytes of unminified JavaScript by resource origin type on mobile pages. 18.7% of unminified JavaScript is originated from third parties and 81.3% from a first party.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=1231774655&format=interactive",
-  sheets_gid="1355951746",
+  sheets_gid="1485577770",
   sql_file="lighthouse_average_unminified_js_by_3p.sql"
   )
 }}
@@ -218,7 +215,7 @@ The next figure displays the size of potential savings by a third-party. It is i
   caption="Average potentially saved kilobytes of unminified JavaScript for top 5 third-party script providers.",
   description="Bar chart showing potentially saved kilobytes of unminified JavaScript per page by a third party. Potential savings of minifying scripts served from code.jquery.com are 42 kilobytes for mobile pages, from s0.wp.com 14 kilobytes, from vk.com 13, from shopify.com 20 and from cloudflare.com 14.Data for desktop and mobile pages is almost identical.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=496701127&format=interactive",
-  sheets_gid="1355951746",
+  sheets_gid="438030733",
   sql_file="lighthouse_unminified_js_by_3p.sql"
   )
 }}
@@ -229,7 +226,7 @@ jQuery is the most popular JavaScript library being used on 6% of all websites o
   caption="Percent of desktop pages with unminified jQuery from all pages using jQuery third-party",
   content="17%",
   classes="big-number",
-  sheets_gid="1355951746",
+  sheets_gid="438030733",
   sql_file="lighthouse_unminified_js_by_3p.sql"
 )
 }}
@@ -243,7 +240,7 @@ This should serve as a reminder for web developers to check if third-party scrip
   caption="Percentage of average potentially saved bytes of unminified CSS by first and third party",
   description="Pie chart showing the distribution of the average potentially saved bytes of unminified CSS by resource origin type on mobile pages. 10.7% of unminified JavaScript is originated from third parties and 89.3% from a first party.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=417912172&format=interactive",
-  sheets_gid="1355951746",
+  sheets_gid="1857859997",
   sql_file="lighthouse_average_unminified_css_by_3p.sql"
   )
 }}
@@ -251,7 +248,6 @@ This should serve as a reminder for web developers to check if third-party scrip
 The unminified CSS audit shows that third-party assets have a much smaller impact, especially when compared with the first-party average of potentially saved bytes of CSS code that is 89% of total average potentially saved bytes. This data demonstrates that third-party CSS content is well minified and has a much lower impact than first-party CSS.
 
 Google fonts are the most-popular third party on mobile devices being used by 62.6% of all websites. The CSS they provide is not minified. The data shows the average page which has Google Fonts could save 13.3 KB from minifying it. This would seem like an opportunity for improvements. However, their CSS contains a number of similar font-face definitions that are repeated in case of many fonts, so HTTP-level compression will work really well and significantly reduce the file size even without minification. That makes the benefits of minifying very low, compared to the code readability for those wanting to see the CSS to potentially replicate locally. Other third-parties with more complicated and larger CSS, may benefit from minification considerably more.
-
 
 ### Compressing resources
 
@@ -262,7 +258,7 @@ Compressing files is another quick win that third-party developers can do to hav
   caption="Content encoding by third-party content type on mobile pages.",
   description="Distribution chart showing percentage of thirs-party requests by content-encoding type on mobile pages. “video” content has no compression, 2% of “other” content has gzip compression, “font” content has 2.5% gzip and 0.75% brotli comression, “image” content 4.59% and 1.34%, “text” 3.76%  and 5.47%, “plain” 4.43% and 5.37%, “audio” 32.79%, “html” 25.12% and 13.98%, “xml” 29.84% and 18.69%, “script” 59.70% and 28.66%, and “css” 68.93% and 26.91%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=1766106033&format=interactive",
-  sheets_gid="1355951746",
+  sheets_gid="376393975",
   sql_file="content_encoding_by_content_type.sql"
   )
 }}
@@ -274,7 +270,7 @@ Gzip is still the most popular compression type, i.e. 59% of scripts and 68% of 
   caption="Percentage of first-party script requests by content encoding type and by year on mobile websites.",
   description="Bar chart showing first-party content-encoding trends for the period from 2020 to 2022. In 2020 19% of content has no compression, in 2021 16% and in 2022 15.14%.  In 2020 13% of content has brotli compression, in 2021 32% and in 2022 40%. In 2020 66% of content has gzip compression, in 2021 52% and in 2022 45%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=2058399908&format=interactive",
-  sheets_gid="1355951746",
+  sheets_gid="1568790776",
   sql_file="trends_content_encoding_by_type.sql"
   )
 }}
@@ -286,7 +282,7 @@ The rate of first-party scripts compressed via brotli almost tripled, increasing
   caption="Percentage of third-party script requests by content encoding type and by year",
   description="Bar chart showing first-party content-encoding trends for the period from 2020 to 2022. In 2020 12% of content has no compression, in 2021 11% and in 2022 12%.  In 2020 24% of content has brotli compression, in 2021 30% and in 2022 29%. In 2020 64% of content has gzip compression, in 2021 59% and in 2022 60%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=1920216281&format=interactive",
-  sheets_gid="1355951746",
+  sheets_gid="1568790776",
   sql_file="trends_content_encoding_by_type.sql"
   )
 }}
@@ -295,7 +291,6 @@ However, Brotli adoption among third-parties stayed more or less at the same lev
 
 <!-- markdownlint-disable-next-line MD051 -->
 Website content encoding data displayed in the [figure 13](#fig-13) revealed an interesting fact about image compression. Even though image formats like JPEG, PNG, WebP, AVIF, and others provide compression under the hood, 5.2% of image content is compressed using Gzip or Brotli compression. Adding additional layers of compression on top of the standard image compression formats is usually unnecessary and may lead to increased file size and add extra load on the CPU when uncompressing the image.
-
 
 ### Usage of third-party facades
 
@@ -310,7 +305,7 @@ Using `async` and `defer` is another technique that could be used by website dev
   caption="Percentage of all third-party script requests by `async` and `defer` attributes.",
   description="Bar chart showing 62% of third-party scripts having `async` atribute and 7% `defer` attribute on mobile pages. Data for destop pages is very similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=1722277284&format=interactive",
-  sheets_gid="1355951746",
+  sheets_gid="1590023791",
   sql_file="scripts_using_async_defer.sql"
   )
 }}
@@ -327,7 +322,7 @@ Despite JavaScript's rapid involvement, the prevalence of legacy code is still s
   caption="Percent of legacy JavaScript Lighthouse audit failure caused by third-party",
   content="59%",
   classes="big-number",
-  sheets_gid="1355951746",
+  sheets_gid="2078522493",
   sql_file="third_parties_using_legacy_javascript.sql"
 )
 }}
@@ -339,7 +334,7 @@ In general, third parties account for 59% of Lighthouse legacy JavaScript audit 
   caption="Percentage of websites using third parties that have legacy JavaScript",
   description="Bar chart showing top 5 most-used third parties that serve legacy JavaScript. connect.facebook.net is used on 18.5% of mobile pages, apis.google.com on 3.3%, script.hotjar.com on 3.2%, cdn.shopify.com on 2.8% and static.xx.fbcdn.net on 2.4%. Data for desktop pages is very similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=2145007275&format=interactive",
-  sheets_gid="1355951746",
+  sheets_gid="596336022",
   sql_file="percent_of_third_parties_using_legacy_javascript.sql"
   )
 }}
@@ -353,7 +348,7 @@ Serving legacy JavaScript to the modern browsers results in a bigger amount of r
   caption="Size of unused third-party JavaScript.",
   description="Bar chart showing size of unused third-party JavaScript in kilobytes by percentile. At 25th percentile the size of unused JavaScript is 39 kilobytes for mobile pages, at 50th percentile 116, at 75th 261, and at 90th 507. Desktop pages have slightly larger size of unused JavaScript.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=291457440&format=interactive",
-  sheets_gid="1355951746",
+  sheets_gid="1663851660",
   sql_file="distribution_of_lighthouse_unused_js_by_3p.sql"
   )
 }}
@@ -361,7 +356,6 @@ Serving legacy JavaScript to the modern browsers results in a bigger amount of r
 The median amount of unused third-party JavaScript is approximately 120 KB. For 25% of websites that use third-party scripts, it is more than 261 KB.
 
 Unfortunately, website owners do not always have the possibility to change the way third-party JavaScript is bundled. However, if the third-party dependencies are self-hosted they can be optimized during development by adopting <a hreflang="en" href="https://web.dev/publish-modern-javascript">modern script bundling approaches</a>) that could help to reduce the amount of unused code.
-
 
 ### Other optimization technologies
 
@@ -375,7 +369,7 @@ The previous sections showed that the responsibility for third-party negative im
   caption="Percent of third-party requests with Timing-Allow-Origin header header",
   content="25%",
   classes="big-number",
-  sheets_gid="1355951746",
+  sheets_gid="1045520136",
   sql_file="tao_by_third_party.sql"
 )
 }}
@@ -383,7 +377,6 @@ The previous sections showed that the responsibility for third-party negative im
 That might be challenging to achieve given only 25% of total third-party requests provide [Timing-Allow-Origin (TAO) header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin) that is important for third-party web performance data transparency.
 
 Taking into account the [TAO header prevalence has not improved in comparison to the previous years](../2021/third-parties#timing-allow-origin-header-prevalence), we would encourage third-party providers to use it more actively.
-
 
 ## Conclusion
 
