@@ -402,7 +402,7 @@ Images, which are usually the heaviest resource loaded on a web page, account fo
 {{ figure_markup(
   image="median-cms-image-size.png",
   caption="Median image size by CMS.",
-  description="Column chart showing the median weight of image resources downloaded in each of the top five most adopted CMSs, for each device.",
+  description="Column chart showing the median weight of image resources downloaded in each of the top five most adopted CMSs, for each device. For WordPress it's 1,202 KB on desktop and 1,100 KB on mobile, for Drupal it's 1,279 KB on desktop and 1,158 KB on mobile, for Joomla it's 1,690 KB and 1,504 KB, for Wix it's 647 KB on desktop and 290 KB on mobile, and finally for Squarespace it's 1,623 KB for desktop and 1,790 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1491116500&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
@@ -418,7 +418,7 @@ We can examine the usage of the different image formats across the top CMSs:
 {{ figure_markup(
   image="image-format-popularity.png",
   caption="Image format popularity by CMS.",
-  description="Bar chart showcasing the relative popularity of each image format, among the top 15 most adopted CMSs.",
+  description="Bar chart showcasing the relative popularity of each image format, among the top 15 most adopted CMSs. For WordPress it's 39% jpg, 30% png, 20% gif, 7% webp, 4% svg, 1% ico and 0% avif, for Wix it's 11%, 5%, 6%, 75%, 0%, 1%, and 0% respectively, for Joomla it's 48%, 36%, 10%, 2%, 2%, 3%, and 0%, for Drupal it's 41%, 35%, 13%, 2%, 6%, 2% and 0%, and finally for Squarespace it's 53%, 30%, 12%, 0%, 3%, 2% and 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1668189558&format=interactive",
   sheets_gid="710966440",
   sql_file="image_format_popularity.sql",
