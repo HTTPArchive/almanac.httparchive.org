@@ -99,7 +99,7 @@ Page weight represents the amount of data transferred to access the web page (ba
 
 It is recommended to keep this metric as low as possible. 1 MB should be a maximum when you get started but <a hreflang="en" href="https://infrequently.org/2021/03/the-performance-inequality-gap/">500 kB should be your ultimate threshold</a>.
 
-For more on this, check the [Page Weight](./page-weight) chapter.
+For more on this, see the [Page Weight](./page-weight) chapter.
 
 {{ figure_markup(
   image="kilobytes-number-by-percentile.png",
@@ -112,11 +112,11 @@ For more on this, check the [Page Weight](./page-weight) chapter.
 
 Comparing page weights on mobile and desktop, we notice that the difference between them is small, which seems surprising. Media should be served in an appropriate size and format depending on the size of the screen. This might not be the case here.
 
-At the 90th percentile, desktop pages got over 9 MB and mobile pages over 8 MB. We are far from the recommended threshold of 500 kB. To find pages under this threshold, we have to get to the 10th percentile. If we feel generous and aim for 1 MB, this can be found around the 25th percentile. There is still a long way to go…
+At the 90th percentile, desktop pages were over 9 MB and mobile pages over 8 MB. We are far from the recommended threshold of 500 kB. To find pages under this threshold, we have to get to the 10th percentile. If we feel generous and aim for 1 MB, this can be found around the 25th percentile. There is still a long way to go…
 
 ### Carbon emissions
 
-_The notion of "carbon emissions" is a simplification since we are considering Greenhouse Gas Emissions, not only carbon emissions._
+<p class="note">Note: The notion of "carbon emissions" is a simplification since we are considering Greenhouse Gas Emissions, not only carbon emissions.</p>
 
 {{ figure_markup(
   image="total-carbon-emissions-by-percentile.png",
@@ -127,30 +127,30 @@ _The notion of "carbon emissions" is a simplification since we are considering G
   sql_file=""
 ) }}
 
-The carbon emissions for websites are very close on mobile and desktop. They seem quite low on the 10th percentile (around 0.15 g eqCO2, which would be equivalent to <a hreflang="en" href="https://datagir.ademe.fr/apps/mon-impact-transport/">a little less than 1km with a thermic car</a> [FR]). They reach as much as 2.76 g eqCO2 on the 90th percentile (a little more than 14km with a thermic car).
+The carbon emissions for websites are very close on mobile and desktop. They seem quite low on the 10th percentile (around 0.15 g eqCO2, which would be equivalent to <a hreflang="fr" href="https://datagir.ademe.fr/apps/mon-impact-transport/">a little less than 1km with a thermic car</a>). They reach as much as 2.76 g eqCO2 on the 90th percentile (a little more than 14km with a thermic car).
 
-This doesn't seem like much but you should keep in mind that each website gets thousands or even millions of visitors each month (sometimes even more) and what you see in the following graph are emissions for a single page visited once. The environmental impact each month for all websites adds up.
+This doesn't seem like much but you should keep in mind that each website gets thousands or even millions of visitors each month (sometimes even more) and what you see in the graph is emissions for a single page visited once. The environmental impact each month for all websites adds up.
 
 Now for an additional graph: emissions per percentile by type of content.
 
 {{ figure_markup(
-  image="percent-of-total-emissions-by-type-desktop.png",
-  caption="Percent of total emissions by percentile by type (desktop)",
-  description="A bar chart showing the percent of different content types on desktop in the total page carbon emissions by percentile. On the 90th percentile HTML content accounts for around 2.5% of the total carbon emissions, Javascript is responsible a bit less than 17.5% of total carbon emissions, Css is around 2.5%, images accounts for around 72.5% and fonts represent 5% of the total carbon emissions. On the 75th percentile, Html represents 2%, Javascript 23%, Css around 5%, images around 65% and fonts around 5% of the total carbon emissions. On the 50th percentile, Html represents 2%, Javascript 30%, Css around 5%, images almost 60% and fonts around 7% of the total carbon emissions. On the 25th percentile, Html represents 2%, Javascript 35%, Css around 6%, images 50% and fonts around 7% of the total carbon emissions. On the 10th percentile, Html represents 2.5%, Javascript 50%, Css around 5%, images 42.5% and fonts 0% of the total carbon emissions.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1976764368&format=interactive",
+  image="percent-of-total-emissions-by-type-mobile.png",
+  caption="Percent of total emissions by percentile by type (mobile)",
+  description="A bar chart showing the percent of different content types on desktop in the total page carbon emissions by percentile. On the 90th percentile HTML content accounts for around 1.8% of the total carbon emissions, Javascript is responsible a bit less than 18.1% of total carbon emissions, CSS is around 3.4%, images accounts for around 72.3% and fonts represent 4.5% of the total carbon emissions. On the 75th percentile, HTML represents 1.8%, Javascript 23.4%, CSS around 3.8%, images around 65.7% and fonts around 5.2% of the total carbon emissions. On the 50th percentile, HTML represents 1.9%, Javascript 30%, CSS around 4.4%, images almost 57.4% and fonts around 6.3% of the total carbon emissions. On the 25th percentile, HTML represents 2.4%, Javascript 38.8%, CSS around 5.2%, images 48.3% and fonts around 5.3% of the total carbon emissions. On the 10th percentile, HTML represents 3.8%, Javascript 53.4%, CSS around 3.6%, images 39.2% and fonts 0% of the total carbon emissions.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=141071996&format=interactive",
   sheets_gid="1911144863",
   sql_file="",
   width=600,
   height=391
 ) }}
 
-Images and JavaScript seem to be the more impactful but images get even more impactful as you go to upper percentiles. However, keep in mind that we only take data transfer into account to calculate carbon emissions. Processing JavaScript is usually more impactful than images. Once you have downloaded the JavaScript files, you still need to process them, sometimes leading to reloading your page or fetching other resources. Nonetheless, this graph underlines the necessity to reduce these impacts. It can be quite easy for images, as we will see later in this chapter. It gets more tricky with JavaScript, even though there are some easy technical optimizations such as minifying, compressing or reducing the need for it. More on that later too.
+Images and JavaScript seem to be the more impactful but images get even more impactful as you go to upper percentiles. However, keep in mind that we only take data transfer into account to calculate carbon emissions. Processing JavaScript is usually more impactful than images. Once you have downloaded the JavaScript files, you still need to process them, sometimes leading to reloading your page or fetching other resources. Nonetheless, this graph underlines the necessity to reduce these impacts. It can be quite easy for images, as we will see later in this chapter. It gets more tricky with JavaScript, even though there are some easier technical optimizations such as minifying, compressing or reducing the need for it. More on that later too.
 
 ### Number of requests
 
-Requests are issued whenever a file is needed to load the page. As such, it helps represent the impact of the page on the network and servers, which is why it is sometimes used to calculate environmental impacts. Analyzing the requests helps find possible optimizations, which we'll consider when discussing the various types of assets and external requests.
+Requests are issued whenever a file is needed to load the page. As such, it helps represent the impact of the page on the network and servers, which is why it is sometimes used to calculate environmental impact. Analyzing the requests helps find possible optimizations, which we'll consider when discussing the various types of assets and external requests.
 
-The number of requests should be kept to a minimum. Keeping an upper limit of no more than 25 is a fairly good start. But trackers and such often make it difficult to reach.
+The number of requests should be kept to a minimum. Keeping an upper limit of no more than 25 is a fairly good start. But trackers and such often make that target difficult to reach.
 
 {{ figure_markup(
   image="number-of-requests-by-percentile.png",
@@ -176,7 +176,7 @@ So, which content type is to blame for this?
 
 As usual, images are the main offenders but JavaScript is close behind.
 
-There are almost as many HTTP requests for mobile and desktop versions, which shouldn't be the case. As with page weight, mobile pages should be kept as light as possible to take into account aging devices, erratic connectivity and expensive mobile data. Since many individuals still use the web in such suboptimal conditions, mobile web should comply and make everything possible to be accessible for all.
+There are almost as many HTTP requests for mobile and desktop versions, which shouldn't be the case. As with page weight, mobile pages should be kept as light as possible to take into account aging devices, erratic connectivity and expensive mobile data. Since many individuals still use the web in such suboptimal conditions, mobile web should account for this and do everything possible to be accessible for all.
 
 {{ figure_markup(
   image="number-of-bytes-by-percentile-by-type-mobile.png",
@@ -187,23 +187,23 @@ There are almost as many HTTP requests for mobile and desktop versions, which sh
   sql_file="page_bytes_per_type.sql"
 ) }}
 
-There are almost as many HTTP requests for images and JavaScript but the overall weight is much higher for images. JavaScript being generally heavier to process than images, this is still bad news. Once again, the results are really close for mobile and desktop, even if it would totally make sense to offer lighter experiences on mobile.
+There are almost as many HTTP requests for images and JavaScript but the overall weight is much higher for images. JavaScript being generally heavier to process than images, this is still bad news. Once again, the results are really close for mobile and desktop, even if it would seem to make sense to offer lighter experiences on mobile.
 
 ### More sustainable hosting
 
-_Here (and elsewhere), you should find mentions of "Green Hosting". This is kind of a shortcut since no hosting will be truly green, carbon neutral or other such things. We will focus here on how to use more sustainable hosting. _
+<p class="note">Note: Here (and elsewhere), you should find mention of "Green Hosting". This is kind of a shortcut since no hosting will be truly green, carbon neutral or other such things. We will focus here on how to use more sustainable hosting.</p>
 
-For the majority of this chapter, we focus on how changes in the quantity of resources like network, compute and storage affect the environmental impact of digital services—you might think of this as in terms of **_consumption_** as a lever for sustainability. However there are other levers too. You can't efficiency your way to zero, and the same code, run on the same kind of server, but running on greener energy will have a lower environmental impact than otherwise. We can think of this lever as **intensity**.
+For the majority of this chapter, we focus on how changes in the quantity of resources like network, compute and storage affect the environmental impact of digital services—you might think of this as in terms of _consumption_ as a lever for sustainability. However there are other levers too. You can't efficiency your way to zero, and the same code, run on the same kind of server, but running on greener energy will have a lower environmental impact than otherwise. We can think of this lever as _intensity_.
 
 Here there is some good news. Across the world, electricity grids we rely on are getting greener over time, driven by the falling costs of renewables and storage. 38% of our electricity came from clean sources in 2022 (<a hreflang="en" href="https://ember-climate.org/insights/research/global-electricity-review-2022/">examples</a> in the ember climate, and <a hreflang="en" href="https://public.flourish.studio/story/1176231/?utm_source=showcase&utm_campaign=story/1176231">this chart</a> ).
 
-However, not every grid, and not every region a provider operates is equally green. <a hreflang="en" href="https://aws.amazon.com/aws-cost-management/aws-customer-carbon-footprint-tool/">Amazon's Web Service's customer carbon footprint tools</a> show how running services in one region over another can provide a measurable difference in carbon emissions, as does the <a hreflang="en" href="https://www.cloudcarbonfootprint.org/">open source cloud carbon footprint</a>, for a growing number of providers. Elsewhere, the Green Web Foundation also provides an API for looking up any domain, for an estimate of how much the grid in that region is powered by fossil fuels.
+However, not every grid, and not every region a provider operates is equally green. <a hreflang="en" href="https://aws.amazon.com/aws-cost-management/aws-customer-carbon-footprint-tool/">Amazon's Web Service's customer carbon footprint tools</a> show how running services in one region over another can provide a measurable difference in carbon emissions, as does the <a hreflang="en" href="https://www.cloudcarbonfootprint.org/">open source cloud carbon footprint</a>, for a growing number of providers. Elsewhere, the <a hreflang="en" href="https://www.thegreenwebfoundation.org/">Green Web Foundation</a> also provides an API for looking up any domain, for an estimate of how much the grid in that region is powered by fossil fuels.
 
-You should however keep in mind that using renewable energy isn't enough to provide truly sustainable hosting. You should also check the PUE (Power Usage Effectiveness), WUE (Water Usage Effectiveness), how equipment is handled, etc. To further investigate this, you could check <a hreflang="en" href="https://www.wholegraindigital.com/blog/choose-a-green-web-host/">an article from Wholegrain Digital</a> and <a hreflang="en" href="https://e3p.jrc.ec.europa.eu/communities/data-centres-code-conduct">the European Data Centres Code of Conduct</a>. More generally, beware of companies claiming to be carbon neutral (<a hreflang="en" href="https://presse.ademe.fr/2022/02/lademe-publie-un-avis-dexperts-sur-lutilisation-de-largument-de-neutralite-carbone-dans-les-communications.html">as stated by the french institute ADEME</a> [FR]), especially since most of them don't include Scope 3 emissions. Also, as stated above, compensating your carbon emissions is not enough, you should reduce them too.
+You should however keep in mind that using renewable energy isn't enough to provide truly sustainable hosting. You should also check the PUE (Power Usage Effectiveness), WUE (Water Usage Effectiveness), how equipment is handled, etc. To further investigate this, you could check <a hreflang="en" href="https://www.wholegraindigital.com/blog/choose-a-green-web-host/">an article from Wholegrain Digital</a> and <a hreflang="en" href="https://e3p.jrc.ec.europa.eu/communities/data-centres-code-conduct">the European Data Centres Code of Conduct</a>. More generally, beware of companies claiming to be carbon neutral (<a hreflang="fr" href="https://presse.ademe.fr/2022/02/lademe-publie-un-avis-dexperts-sur-lutilisation-de-largument-de-neutralite-carbone-dans-les-communications.html">as stated by the french institute ADEME</a>), especially since most of them don't include Scope 3 emissions. Also, as stated above, compensating your carbon emissions is not enough, you should reduce them too.
 
 #### How many of the sites listed in the HTTP Archive run on green hosting?
 
-An increasing number of technology firms are also taking steps to green **all** the electricity they buy to power their infrastructure. Companies like Microsoft and Salesforce already buy as much green energy as their server farms use on an annual basis, as do many other companies. We used the <a hreflang="en" href="https://www.thegreenwebfoundation.org/green-web-datasets/">https://www.thegreenwebfoundation.org/green-web-datasets/</a> to see how many organizations <a hreflang="en" href="https://www.thegreenwebfoundation.org/what-we-accept-as-evidence-of-green-power/">are 'green hosts', taking similar steps</a>, and where they have shared evidence of powering all the energy they use on green energy, each year.
+An increasing number of technology firms are also taking steps to green **all** the electricity they buy to power their infrastructure. Companies like Microsoft and Salesforce already buy as much green energy as their server farms use on an annual basis, as do many other companies. We used the <a hreflang="en" href="https://www.thegreenwebfoundation.org/green-web-datasets/">Green Web Foundation Dataset</a> to see how many organizations <a hreflang="en" href="https://www.thegreenwebfoundation.org/what-we-accept-as-evidence-of-green-power/">are "green hosts", taking similar steps</a>, and where they have shared evidence of powering all the energy they use on green energy, each year.
 
 {{ figure_markup(
   image="green-hosting-percentages.png",
@@ -216,7 +216,7 @@ An increasing number of technology firms are also taking steps to green **all** 
 
 Overall, only 10 percent of the measured websites rely on green hosting. This highlights that a lot could and should be done on both sides: websites opting for green hosting as well as hosting companies aiming for more sustainability.
 
-<p class="note">Note: these figures for green domains are based on the information that is either shared directly with The Green Web Foundation, or placed in the public domain, where it is linked in API responses for their lookup service. See <a hreflang="en" href="https://www.thegreenwebfoundation.org/support/why-does-my-website-show-up-as-grey-in-the-green-web-checker/">their explainer page</a> for why a site might show up as 'not green' when you think it should.</p>
+<p class="note">Note: these figures for green domains are based on the information that is either shared directly with The Green Web Foundation, or placed in the public domain, where it is linked in API responses for their lookup service. See <a hreflang="en" href="https://www.thegreenwebfoundation.org/support/why-does-my-website-show-up-as-grey-in-the-green-web-checker/">their explainer page</a> for why a site might show up as "not green" when you think it should.</p>
 
 ## Reducing the environmental impact of websites
 
@@ -233,17 +233,17 @@ One of the most obvious ways to reduce the impact of websites is to avoid all th
 
 #### Loading unused assets
 
-You should only load assets that are needed to display the page and more particularly the portion of the page that is visible. This could be done through lazy-loading, critical CSS and patterns such as <a hreflang="en" href="https://www.patterns.dev/posts/import-on-interaction/">Import on interaction</a> and <a hreflang="en" href="https://www.patterns.dev/posts/import-on-visibility/">Import on visibility</a>. It could also involve loading images at the right size for the client device. We will mostly focus here on oversized fonts and unused code.
+You should only load assets that are needed to display the page and more particularly the portion of the page that is visible. This could be done through lazy-loading, critical CSS and patterns such as <a hreflang="en" href="https://www.patterns.dev/posts/import-on-interaction/">_Import on Interaction_</a> and <a hreflang="en" href="https://www.patterns.dev/posts/import-on-visibility/">_Import on Visibility_</a>. It could also involve loading images at the right size for the client device. We will mostly focus here on oversized fonts and unused code.
 
 ##### Fonts
 
-For sustainability, it is recommended to <a hreflang="en" href="https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/">stick to system fonts</a>. If you really need to use some custom fonts, there are some things to consider to avoid waste. Loading a font sometimes involves loading lots of characters and symbols that you might not need. For example, not all websites need cyrillic characters but some fonts still include them natively. To check this, you can use tools such as <a hreflang="en" href="https://wakamaifondue.com/">wakamaifondue</a>.To reduce the size of your font files, you should aim for a WOFF2 format and <a hreflang="en" href="https://the-sustainable.dev/reduce-the-weight-of-your-typography-with-variable-fonts/">a variable font</a>. You could also use <a hreflang="en" href="https://everythingfonts.com/subsetter">a subset</a> or use a tool such as <a hreflang="en" href="https://github.com/Munter/subfont">subfont</a>. <a hreflang="en" href="https://web.dev/api-for-fast-beautiful-web-fonts/">The Google Fonts API offers some clever options for all this</a>. <a hreflang="en" href="https://rewis.io/urteile/urteil/lhm-20-01-2022-3-o-1749320/">Regarding Google Fonts, you should still keep GDPR in mind</a>.
+For sustainability, it is recommended to <a hreflang="en" href="https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/">stick to system fonts</a>. If you really need to use some custom fonts, there are some things to consider to avoid waste. Loading a font sometimes involves loading lots of characters and symbols that you might not need. For example, not all websites need cyrillic characters but some fonts still include them natively. To check this, you can use tools such as <a hreflang="en" href="https://wakamaifondue.com/">wakamaifondue</a>. To reduce the size of your font files, you should aim for a WOFF2 format and <a hreflang="en" href="https://the-sustainable.dev/reduce-the-weight-of-your-typography-with-variable-fonts/">using variable fonts</a>. You could also use <a hreflang="en" href="https://everythingfonts.com/subsetter">subsets</a> or use a tool such as <a hreflang="en" href="https://github.com/Munter/subfont">subfont</a>. <a hreflang="en" href="https://web.dev/api-for-fast-beautiful-web-fonts/">The Google Fonts API offers some clever options for all this</a>. Regarding Google Fonts, <a hreflang="en" href="https://rewis.io/urteile/urteil/lhm-20-01-2022-3-o-1749320/">you should still keep GDPR in mind</a>.
 
-For more on this, you should check the [Fonts](./fonts) chapter. You can also find some documentation on <a hreflang="en" href="https://web.dev/reduce-webfont-size/">web.dev</a>.
+For more on this topic, see the [Fonts](./fonts) chapter. You can also find some documentation on <a hreflang="en" href="https://web.dev/reduce-webfont-size/">web.dev</a>.
 
 ##### Unused CSS
 
-Unused CSS is especially found when using CSS frameworks (Bootstrap and others). When doing so, you should keep in mind to remove unused CSS during your build phase. <a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage/">Chrome Dev Tools offer a Coverage tool to check on this</a>. Be careful: on many websites, all CSS and JavaScript are loaded on the first visit in order to cache them for further visits and exploration of the website. This is not necessarily a bad thing but unused code is one of the drawbacks that you should keep in mind, even more because it might slow down further code processing.
+Unused CSS is especially found when using CSS frameworks (Bootstrap and others). When doing so, you should keep in mind to remove unused CSS during your build phase. <a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage/">Chrome Dev Tools offer a Coverage tool to check on this</a>. Be careful: on many websites, all CSS and JavaScript are loaded on the first visit in order to cache them for further visits and exploration of the website. This is not necessarily a bad thing, but unused code is one of the drawbacks that you should keep in mind, especially because it might slow down further code processing.
 
 {{ figure_markup(
   image="unused-css-bytes.png",
@@ -254,11 +254,11 @@ Unused CSS is especially found when using CSS frameworks (Bootstrap and others).
   sql_file="unused_css_bytes.sql"
 ) }}
 
-The good news is the 10 percentile websites load no unnecessary CSS. Unfortunately, it rises steadily on this graph, reaching more than 200 kB on the 90th percentile. Whether this for early caching reasons or otherwise, this should be checked. For sustainability, 200 kB of CSS is already a big deal.
+The good news is the 10 percentile websites load no unnecessary CSS. Unfortunately, it rises steadily on this graph, reaching more than 200 kB on the 90th percentile. Whether this for early caching reasons or otherwise, this should be checked. For sustainability, 200 kB of CSS is a big deal.
 
 ##### Unused JavaScript
 
-The amount of unused JavaScript could grow fast when adding dependencies or using libraries such as jQuery. <a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage/">The Coverage tool from Chrome Dev Tools is a good way to check on this</a>. As for CSS, this is sometimes part of a strategy to cache everything needed for further browsing.  This should be balanced by the fact that unused JavaScript tends to result in longer processing. When possible, look for <a hreflang="en" href="http://microjs.com">smaller alternatives</a> with only the functionalities that you need instead of loading the whole toolbox, hoping it will one day prove useful. Once upon a time, jQuery was the all-in-one solution that you found on almost every website. <a hreflang="en" href="https://youmightnotneedjquery.com/">As of today, a lot of things can be handled with modern JavaScript</a>. <a hreflang="en" href="https://bundlephobia.com/">Maybe you should check your NPM dependencies and how they make your bundle bigger</a>.
+The amount of unused JavaScript can grow quickly when adding dependencies or using libraries such as jQuery. <a hreflang="en" href="https://developer.chrome.com/docs/devtools/coverage/">The Coverage tool from Chrome Dev Tools</a> is a good way to check on this. As for CSS, this is sometimes part of a strategy to cache everything needed for further browsing.  This should be balanced by the fact that unused JavaScript tends to result in longer processing. When possible, look for <a hreflang="en" href="http://microjs.com">smaller alternatives</a> with only the functionality that you need instead of loading the whole toolbox, hoping it will one day prove useful. Once upon a time, jQuery was the all-in-one solution that you found on almost every website. <a hreflang="en" href="https://youmightnotneedjquery.com/">As of today, a lot of things can be handled with modern JavaScript</a>. Check your <a hreflang="en" href="https://bundlephobia.com/">NPM dependencies and how they make your bundle bigger</a>.
 
 {{ figure_markup(
   image="unused-javascript-bytes.png",
@@ -269,11 +269,11 @@ The amount of unused JavaScript could grow fast when adding dependencies or usin
   sql_file="unused_js_bytes.sql"
 ) }}
 
-One again, the 10th percentile looks great with no unused JavaScript. However, this gets even worse than CSS for the upper percentiles, reaching more than 600 kB on the 90th percentile. Which is already more than the ideal total page weight you should aim for.
+One again, the 10th percentile looks great with no unused JavaScript. However, this gets even worse than CSS for the upper percentiles, reaching more than 600 kB on the 90th percentile. This is already more than the ideal total page weight you should aim for.
 
 ### Sustainable UX
 
-Sustainable choices and optimizations can be made for a website before the development process during the early stages of design and prototyping.  It is possible to design user experiences that prioritize efficient content from the beginning, while even creating experiences that engage users as active participants in sustainability practices. Contrary to moderate belief, all of this can be accomplished while still crafting beautiful, planet-centric web experiences.
+Sustainable choices and optimizations can be made for a website before the development process during the early stages of design and prototyping.  It is possible to design user experiences that prioritize efficient content from the beginning, even while creating experiences that engage users as active participants in sustainability practices. Contrary to some beliefs, all of this can be accomplished while still crafting beautiful, planet-centric web experiences.
 
 While emissions associated with specific user experience tasks are difficult to quantify, some studies have estimated that consumer device use comprises as much as <a hreflang="en" href="https://www.mightybytes.com/blog/where-do-digital-emissions-come-from/">52% of a product's overall digital footprint</a>. Therefore, it stands to reason that optimizing UX for sustainability can significantly reduce a product's environmental impact.
 
@@ -285,17 +285,17 @@ Engaging in streamlined practices such as <a hreflang="en" href="https://www.mig
 
 #### Optimizing user journeys
 
-Crafting strategic user journeys that prioritize helping users achieve their goals in the least amount of steps is an early method for creating a carbon-friendly web experience for your site. The less time a user spends navigating your product, overcoming obstacles, and completing their tasks – the less energy, data, and resources are used during their visit. Strategies in doing so often include being mindful in the use of images, videos, and visual assets to help drive user engagement and direction.
+Crafting strategic user journeys that prioritize helping users achieve their goals in the least amount of steps is one method for creating a carbon-friendly web experience for your site. The less time a user spends navigating your product—overcoming obstacles, and completing their tasks—the less energy, data, and resources are used during their visit. Strategies in doing so often include being mindful in the use of images, videos, and visual assets to help drive user engagement and direction.
 
-This also involves a "less is more" approach by engaging in wasteless design practices that only show content that is necessary to a user at a given time and emphasizing asset choices that deliver the same value. These are all things that aid the user in getting what they need faster by avoiding the already surging <a hreflang="en" href="https://econreview.berkeley.edu/paying-attention-the-attention-economy/">attention economy</a> on our devices for each page they visit. After doing so, it's best to continue to test and gather user feedback through prototyping and other methods to identify potential pain points that ensure you're creating the most optimal experience for your users.
+This also involves a "less is more" approach by engaging in wasteless design practices that only show content that is necessary to a user at a given time and emphasizing asset choices that deliver the same value. These are all things that aid the user in getting what they need faster by avoiding the already surging <a hreflang="en" href="https://econreview.berkeley.edu/paying-attention-the-attention-economy/">attention economy</a> on our devices for each page they visit. Continue to test and gather user feedback through prototyping and other methods to identify potential pain points that ensure you're creating the most optimal experience for your users.
 
 #### Empowering sustainable behavior
 
 There has been a rising popularity in incorporating a choice architecture into product features to nudge users into making sustainable choices relative to the environmental touchpoint of that product. Examples of this practice range anywhere from providing users more sustainable packaging options at checkout, displaying the most carbon-friendly product options, and even building reward systems or dashboards that visualize and incentivize these choices.
 
-Aiding in this decision-making and offering these types of choice can not only help users interact with your website in more sustainable ways, but also help remove barriers of entry that help optimize user interactions. More recently, popular options can include accessibility features, language choices, device optimization, or the ever popular dark mode that utilizes low-energy colors while promoting proper contrast.
+Aiding in this decision-making and offering these types of choice can not only help users interact with your website in more sustainable ways, but also help remove barriers of entry that help optimize user interactions. More recently, popular options can include accessibility features, language choices, device optimization, or the ever-popular dark mode that utilizes low-energy colors while promoting proper contrast.
 
-These types of options help minimize potential pain points of users while enabling a custom experience that saves time, energy, and prevents frustration in a user. The power of choice can grow deeper into popular opt-out features such as the enablement and frequency of notifications– all choices that inevitably save resources when utilized, thus allowing users to customize both their experience and impact per visit.
+These types of options help minimize potential pain points of users while enabling a custom experience that saves time, energy, and prevents frustration in a user. The power of choice can grow deeper into popular opt-out features such as the enablement and frequency of notifications—all choices that inevitably save resources when utilized, thus allowing users to customize both their experience and impact per visit.
 
 #### Designing for circularity and end-of-Life
 
@@ -306,19 +306,19 @@ Analyzing and understanding the entire lifecycle of a digital product or service
 
 ### Optimizing your content
 
-Let's say you have optimized your website, making sure unneeded content and functionalities were removed. This was the sobriety part (and usually the tough part). We can now look into the efficiency part: making sure everything you keep is as sustainable as possible.
+Let's say you have optimized your website, making sure unneeded content and functionalities were removed. This was the moderation part (and usually the tough part). We can now look into the efficiency part: making sure everything you keep is as sustainable as possible.
 
-In this section, we will look into images, videos and animations (more info on these in the [Media](./media) chapter.
+In this section, we will look into images, videos and animations. More info on these in the [Media](./media) chapter.
 
 #### Image optimization
 
-Images represent a huge part of requests and page weight. Let's see what we can do to mitigate this (in addition to avoiding stock images that bring you no additional information). As already mentioned, you should have already removed unnecessary images.
+Images represent a huge part of requests and page weight. Let's see what we can do to mitigate this—in addition to avoiding stock images that bring you no additional information. As already mentioned, you should have already removed unnecessary images.
 
 For a closer look on the relative benefits you can expect from possible technical optimizations, there is <a hreflang="en" href="https://discuss.httparchive.org/t/state-of-the-web-top-image-optimization-strategies/1367">a post on the HTTP Archive that compares them</a>. Since you can more and more easily rely on native HTML (and sometimes CSS) for this, you should implement all of them.
 
 ##### Format (WebP/AVIF)
 
-WebP <a hreflang="en" href="https://caniuse.com/webp">is already widely supported</a> and one of the best formats you can find for your images. Its compression is impressive and results in less data being transferred and processed. In addition to this, it enjoys wide support. AVIF should be even better but it might be wise to wait until it has reached <a hreflang="en" href="https://caniuse.com/avif">a wider adoption from browsers</a>. Until then, just make sure you use the WebP format for your images. As a matter of fact, your icons should be in <a hreflang="en" href="https://jakearchibald.github.io/svgomg/">optimized SVG</a> and you could even include them directly in the HTML to avoid additional requests.
+WebP <a hreflang="en" href="https://caniuse.com/webp">is already widely supported</a> and one of the best formats you can find for your images. Its compression is impressive and results in less data being transferred and processed. In addition to this, it enjoys wide support. AVIF should be even better but it might be wise to wait until it has reached <a hreflang="en" href="https://caniuse.com/avif">a wider adoption from browsers</a>. Until then, just make sure you use the WebP format for your images. Your icons should be in <a hreflang="en" href="https://jakearchibald.github.io/svgomg/">optimized SVG</a> and you could even include them directly in the HTML to avoid additional requests.
 
 {{ figure_markup(
   image="image-formats-in-use.png",
@@ -331,11 +331,11 @@ WebP <a hreflang="en" href="https://caniuse.com/webp">is already widely supporte
 
 As of today, only 10% of the websites use WebP, which is already better than [last year](../2021/media#format-adoption) but far from ideal. This could be a huge opportunity and help reduce the overall weight of images. AVIF is even further behind, only slightly over 0% but we can hope this figure will rise in the coming years.
 
-##### Responsiveness/size/quality
+##### Responsiveness, size, and quality
 
-As a growing proportion of users browse the web on various devices (mostly smartphones but also game consoles, smart watches, tablets, etc), you should aim to deliver images of the right size (and weight) for each of them. After all, this is one of the major topics of responsive design and developers have lots of tools to automate this.
+As a growing proportion of users browse the web on various devices (mostly smartphones but also game consoles, smart watches, tablets, etc), you should aim to deliver images of the right size—and weight—for each of them. After all, this is one of the major topics of responsive design and developers have lots of tools to automate this.
 
-Also remember that you don't need a quality of more than 85% since the human eye won't detect a difference above this. Reducing quality to 85% might help reduce the size of images.
+Also remember that you often don't need a quality of more than 85% since the human eye won't detect a difference above this. Reducing quality to 85% will help reduce the size of images.
 
 {{ figure_markup(
   image="responsive-image-types.png",
@@ -346,7 +346,7 @@ Also remember that you don't need a quality of more than 85% since the human eye
   sql_file="responsive_images.sql"
 ) }}
 
-Around 34% of the websites use the srcset attribute, which is a great way to integrate responsive images. The picture tag works great too and is already found on 7% of the websites. Being optimistic, we could focus on the fact that responsive images are gaining ground each year, even if it's not used on a majority of websites. However, responsive design has been around for quite some time and this should be more widely spread.
+Around 34% of the websites use the `srcset` attribute, which is a great way to integrate responsive images. The `<picture>` element works great too and is already found on 7% of the websites. Being optimistic, we could focus on the fact that responsive images are gaining ground each year, even if it's not used on a majority of websites. However, responsive design has been around for quite some time and this should be more widely spread.
 
 ##### Lazy-loading
 
@@ -361,13 +361,13 @@ An easy way to get a faster first load is to load images progressively: only loa
   sql_file="image_lazy_loading.sql"
 ) }}
 
-On this graph, we see that native lazy-loading has been more and more widely adopted since its implementation. Around 1 website out of 4 uses it. Some might still be using JavaScript libraries to implement this behavior and do not appear on this graph. Switching to native lazy-loading could be a great opportunity for them to slightly reduce requests and avoid some JavaScript processing.
+On this graph, we see that native lazy-loading has been more and more widely adopted since its implementation. Around one our of four websites use it. Some might still be using JavaScript libraries to implement this behavior and do not appear on this graph. Switching to native lazy-loading could be a great opportunity for them to slightly reduce requests and avoid some JavaScript processing.
 
-A quick note on iframes: also note that lazy-loading could be natively applied to iframes, although, for sustainability reasons,  you should consider avoiding iframes altogether. Most of the time, <a hreflang="en" href="https://web.dev/third-party-facades/">facade</a> is the good pattern for you, whether you want (for example) to include embedded videos or interactive maps. Directly including external content on your page has a bad habit of increasing the weight and requests of the page and often causes accessibility issues.
+A quick note on iframes: lazy-loading could also be natively applied to iframes, although, for sustainability reasons,  you should consider avoiding iframes altogether. Most of the time, <a hreflang="en" href="https://web.dev/third-party-facades/">facade</a> is the good pattern for you, whether you want, for example, to include embedded videos or interactive maps. Directly including external content on your page has a bad habit of increasing the weight and requests of the page and often causes accessibility issues.
 
 #### Video
 
-<a hreflang="en" href="https://theshiftproject.org/en/article/unsustainable-use-online-video/">Videos are some of the most impactful resources</a> you can include on a website. More info on these in the [Media](./media) chapter. To integrate third-party videos, you should use <a hreflang="en" href="https://web.dev/third-party-facades/">facades</a>. Otherwise, you should <a hreflang="en" href="https://www.smashingmagazine.com/2021/02/optimizing-video-size-quality/">set them up wisely</a>. For instance, avoid preloading and autoplay. You could also learn <a hreflang="en" href="https://theshiftproject.org/en/guide-reduce-weight-video-5-minutes/">how to quickly reduce the size of your videos</a>.
+<a hreflang="en" href="https://theshiftproject.org/en/article/unsustainable-use-online-video/">Videos are some of the most impactful resources</a> you can include on a website. More info on these in the [Media](./media) chapter. To integrate third-party videos, you should use <a hreflang="en" href="https://web.dev/third-party-facades/">facades</a>. On top of this, you should <a hreflang="en" href="https://www.smashingmagazine.com/2021/02/optimizing-video-size-quality/">set them up wisely</a>. For instance, avoid preloading and autoplay. You could also learn <a hreflang="en" href="https://theshiftproject.org/en/guide-reduce-weight-video-5-minutes/">how to quickly reduce the size of your videos</a>.
 
 ##### Preload
 
@@ -382,15 +382,15 @@ Automatically preloading videos (or audio files) involves retrieving data that m
   sql_file="video_preload_values.sql"
 ) }}
 
-Looking at this graph, one should keep in mind that the preload attribute only has 3 possible values: _none_, _auto_ and _metadata_ (default). Using the preload attribute with no value or with an erroneous value might be the same as using the _metadata_ value. It still involves loading as much as 3% of the video to get these metadata and can thus be quite impactful. _None_ is still the best way to go for sustainability. But you have to keep in mind that this is only a hint for the browser. In the end, the browser has its own way of handling the preloading of the video and it might not fit with what you had in mind.
+Looking at this graph, one should keep in mind that the `preload` attribute only has 3 possible values: `none`, `auto` and `metadata` (default). Using the `preload` attribute with no value or with an erroneous value might be the same as using the `metadata` value. It still involves loading as much as 3% of the video to get these metadata and can thus be quite impactful. `none` is still the best way to go for sustainability. But you have to keep in mind that this is only a hint for the browser. In the end, the browser has its own way of handling the preloading of the video and it might not fit with what you had in mind.
 
-For more on this, you should check <a hreflang="en" href="https://www.stevesouders.com/blog/2013/04/12/html5-video-preload/">the article from Steve Souders</a> (2013) and <a hreflang="en" href="https://web.dev/fast-playback-with-preload/">another one from web.dev 2017)</a>. Even if you can configure your browser or device to save data, video preload is something that browsers should handle more sustainably by default.
+For more on this, you should check <a hreflang="en" href="https://www.stevesouders.com/blog/2013/04/12/html5-video-preload/">the article from Steve Souders (2013)</a> and <a hreflang="en" href="https://web.dev/fast-playback-with-preload/">another one from web.dev (2017)</a>. Even if you can configure your browser or device to save data, video preload is something that browsers should handle more sustainably by default.
 
 ##### Autoplay
 
 Most of the considerations we made on preload also apply with autoplay. In addition to the fact that it involves loading data and displaying content to users who might not be interested, it can cause accessibility issues. For some users, unsolicited moving pictures and/or sound might be bothersome and hinder their browsing experience.
 
-Also, this attribute can override your _preload_ setting since autoplaying requires loading (obviously).
+Also, this attribute can override your `preload` setting since autoplaying requires loading (obviously).
 
 {{ figure_markup(
   image="video-autoplay-usage.png",
@@ -405,31 +405,31 @@ More than half of the websites don't use autoplay, which is great. But this is a
 
 #### Animations
 
-For accessibility, moving and blinking parts should be avoided unless users have some control on them. Regarding sustainability, animations are costly: they tend to increase the battery discharge speed and CPU consumption (which might in the end reduce the autonomy of a smartphone). They also involve retrieving and running some code, which might delay rendering.
+For accessibility, moving and blinking parts should be avoided unless users have some control on them. Regarding sustainability, animations are costly: they tend to increase the battery discharge speed and CPU consumption—which might in the end reduce the autonomy of a smartphone. They also involve retrieving and running some code, which might delay rendering.
 
 The (infamous) case of carousel is documented on these pages:
 
 - <a hreflang="en" href="https://shouldiuseacarousel.com/">Why you shouldn't use them</a>
 - <a hreflang="en" href="https://www.smashingmagazine.com/2022/04/designing-better-carousel-ux/">What can be done instead</a>
 
-If you must use animations you should also avoid <a hreflang="en" href="https://web.dev/efficient-animated-content/">GIF</a> or at least convert them to optimized videos, since animated GIF can get really heavy.
+If you must use animations you should also avoid <a hreflang="en" href="https://web.dev/efficient-animated-content/">GIF</a> or at least convert them to optimized videos, since animated GIFs can get really heavy.
 
 #### Favicon and error pages
 
 By default, your browser will look for a favicon upon arriving on a website. If it's missing, most servers will return a 404 error and the HTML for the 404 page of said website. So, some things to consider:
 
-- Don't forget your favicon (and cache it)
-- Don't forget to optimize the HTML of your 404 page to make it as light as possible or, even better, configure your server to make sure it only sends some text rather than this HTML of your 404 page.
+- Don't forget your favicon—and cache it!
+- Don't forget to optimize the HTML of your 404 page to make it as light as possible or, even better, configure your server to make sure it only sends some text rather than the HTML of your 404 page.
 
-For more details on all this, check <a hreflang="en" href="https://nooshu.com/blog/2020/08/25/you-should-be-testing-your-404-pages-web-performance/">this article from Matt Hobbs</a>.
+For more details on all this, see <a hreflang="en" href="https://nooshu.com/blog/2020/08/25/you-should-be-testing-your-404-pages-web-performance/">this article from Matt Hobbs</a>.
 
 ### Optimizing external content
 
-One of the great things about web development is that you can easily rely on external content (frameworks and libraries but also content). However, just because it is easy to implement doesn't make it useful or any less impactful. For each external element that you want to add, try to ponder whether it is really needed by the users. If so, then try to integrate it as efficiently as possible. And also keep in mind that each piece of content comes at a cost (requests, additional code but also sometimes vulnerabilities or at least increasing the attack surface, etc).
+One of the great things about web development is that you can easily rely on external content: frameworks and libraries but also content. However, just because it is easy to implement doesn't make it useful or any less impactful. For each external element that you want to add, try to ponder whether it is really needed by the users. If so, then try to integrate it as efficiently as possible. And also keep in mind that each piece of content comes at a cost—requests and additional code, but also sometimes vulnerabilities or at least increasing the attack surface.
 
 #### Third parties
 
-Third-party requests account for 45% of all requests, with 94% of mobile websites having at least one identifiable third-party resource. This is not surprising, given that third-party code is often used to deliver complex functionality on web pages. It also serves as a  quick fix for including cross-platform content onto a website.
+Third-party requests account for 45% of all requests, with 94% of mobile websites having at least one identifiable third-party resource. This is not surprising, given that third-party code is often used to deliver complex functionality on web pages. It also serves as a quick fix for including cross-platform content onto a website.
 
 {{ figure_markup(
   caption="Percent of third-party requests on mobile pages that are served from green hosting.",
@@ -455,7 +455,7 @@ The chart above shows the percentage of third-party requests served from green h
 
 ##### Making third-party requests more sustainable
 
-As we have seen, most third-party requests are being served from green hosting. However, there is still room for improvement, especially for higher ranked sites. If you are interested in the sustainability of third-party services used on your website, '_<a hreflang="en" href="https://aremythirdpartiesgreen.com/">Are my third parties green?</a>_' is an online testing tool, directory, and API that can help you get started. _For the sake of transparency, it should be noted that this tool was created by one of the chapter authors._
+As we have seen, most third-party requests are being served from green hosting. However, there is still room for improvement, especially for higher ranked sites. If you are interested in the sustainability of third-party services used on your website, <a hreflang="en" href="https://aremythirdpartiesgreen.com/">Are my third parties green?</a> is an online testing tool, directory, and API that can help you get started. _For the sake of transparency, it should be noted that this tool was created by one of the chapter authors._
 
 Beyond hosting, we should also be considering the impact of data transfer for third parties. While providers of third-party services make it relatively easy to integrate their content on another website, that doesn't mean it is always optimized to reduce the amount of data being transferred. For example, the [Third Party](/third-party) chapter of the 2022 Almanac uncovered that:
 
@@ -463,19 +463,17 @@ Beyond hosting, we should also be considering the impact of data transfer for th
 
 In the case of fonts, self-hosting and subsetting are two techniques that, when combined, can help reduce this waste. However, most third-parties come in the form of scripts. These incur a cost when transferring data over the network, but also utilize processing power on the end-user's device. For these, we can reduce their impact by loading them "just in time".
 
-This pattern is known as <a hreflang="en" href="https://www.patterns.dev/posts/import-on-interaction/">Import on Interaction</a>, which sees static facades used in place of interactive content when the page first loads. The content then gets requested and loaded just before the user interacts with an element. This can result in less data being transferred initially, and also reduces the processing required when viewing the page—especially if the script is never requested.
+This pattern is known as <a hreflang="en" href="https://www.patterns.dev/posts/import-on-interaction/">_Import on Interaction_</a>, which sees static facades used in place of interactive content when the page first loads. The content then gets requested and loaded just before the user interacts with an element. This can result in less data being transferred initially, and also reduces the processing required when viewing the page—especially if the script is never requested.
 
 ### Implementing technical optimizations
 
-We have just seen a lot about the sustainability of the content of websites (even external content). This leaves us with all the other technical optimizations. There is a lot to be done here too and most of this could and should be automated. Once again, this might intersect with some other chapters from this Almanac but the idea is to offer you a whole chapter about sustainability and how to make websites more sustainable.
+We have just seen a lot about the sustainability of the content of websites—even external content. This leaves us with all the other technical optimizations. There is a lot to be done here too and most of this could and should be automated. Once again, this might intersect with some other chapters from the Web Almanac but the idea is to offer you a whole chapter about sustainability and how to make websites more sustainable.
 
-By the way, the web performance experts have done a lot in the field of technical optimizations so there is a lot to learn from them. Just keep in mind that some of their best practices don't necessarily make your websites more sustainable. However, making things lighter and simpler is great for sustainability AND performance (and accessibility).
+The web performance experts have done a lot in the field of technical optimizations so there is a lot to learn from them. Just keep in mind that some of their best practices don't necessarily make your websites more sustainable. However, making things lighter and simpler is great for sustainability AND performance—not to mention accessibility.
 
 #### JavaScript
 
-There is a lot to be said about JavaScript and how it helped the web grow (and how it sometimes slows it down). Let's stick to some quick wins: easy to implement and great for sustainability.
-
-If you want to learn more about all this, you should check the [JavaScript](./javascript) chapter.
+There is a lot to be said about JavaScript and how it helped the web grow (and how it sometimes slows it down). Let's stick to some quick wins: easy to implement and great for sustainability. If you want to learn more about all this, you should check the [JavaScript](./javascript) chapter.
 
 ##### Minification
 
@@ -509,9 +507,7 @@ Almost one third of websites inline JavaScript. This is also something you see a
 
 #### CSS
 
-CSS could be a great lever for sustainability, especially if you want to limit the number of images on your website or create some animations (as mentioned earlier in this chapter). You can find documentation on how to write efficient CSS (and should definitely look for this) but we'll stick to standard optimizations that should be implemented everywhere.
-
-If you want to learn more about all this, you should check the [CSS](./css) chapter.
+CSS could be a great lever for sustainability, especially if you want to limit the number of images on your website or create some animations as mentioned earlier in this chapter. You can find documentation on how to write efficient CSS—and should definitely look for this—but we'll stick to standard optimizations that should be implemented everywhere. If you want to learn more about all this, see the [CSS](./css) chapter.
 
 ##### Minification
 
@@ -541,7 +537,7 @@ As with JavaScript, inlining CSS could prove detrimental for the size of your HT
   sql_file="stylesheet_count.sql"
 ) }}
 
-On this graph, it appears that a quarter of websites still use inline CSS. This should be avoided.
+On this graph, it appears that a quarter of websites still use inline CSS. For sustainability reasons, this should be avoided.
 
 #### CDN
 
@@ -577,9 +573,7 @@ However, a quarter of websites still don't implement text compression. Gzip is u
 
 #### Caching
 
-<a hreflang="en" href="https://web.dev/uses-long-cache-ttl/">Caching</a> is one of the killer features of browsers but not always easy to implement flawlessly.
-
-Caching is great for sustainability since it prevents browsers from requesting all resources everytime.
+<a hreflang="en" href="https://web.dev/uses-long-cache-ttl/">Caching</a> is one of the killer features of browsers but not always easy to implement flawlessly. Caching is great for sustainability since it prevents browsers from requesting all resources everytime.
 
 {{ figure_markup(
   image="cache-control-header-usage.png",
