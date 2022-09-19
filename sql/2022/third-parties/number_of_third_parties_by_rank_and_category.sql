@@ -47,7 +47,7 @@ base AS (
     category,
     page,
     rank,
-    COUNT(canonicalDomain) AS third_parties_per_page
+    COUNT(domain) AS third_parties_per_page
   FROM
     requests
   LEFT JOIN
