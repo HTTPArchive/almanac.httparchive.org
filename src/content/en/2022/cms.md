@@ -101,13 +101,13 @@ We examined CMS adoption by the estimated rank of the sites included within the 
   )
 }}
 
-According to the dataset, CMSs are used by less than 7% of the top 1,000 websites, compared to 47% of the complete dataset of all mobile sites in our analysis. A possible explanation, and the one we offered last year, is that smaller businesses and websites tend to use a CMS due to the ease of use, and the higher ranked websites tend to be built with proprietary solutions by professional web developers.
+According to the dataset, CMSs are used by fewer than 7% of the top 1,000 websites for both desktop and mobile even though 47% of all mobile sites in the dataset use a CMS. A possible explanation for this apparent discrepancy, and the one we offered last year, is that smaller businesses with websites tend to use a popular CMS for their ease of use, and those CMSs are easily identified. However, larger businesses with higher ranked websites tend to have custom CMS solutions built by professional web developers that we can't identify.
 
-Another explanation is that for higher ranking sites which tend to have more resources allocated to development, the choice of a CMS is more likely to be obfuscated. It is improbable that more than 90% of the top 1,000 would forgo a CMS entirely and more likely that they just don't show up in our dataset.
+Another explanation is that higher ranking sites with more resources allocated to their development are more likely to obfuscate the identity of their CMS for security reasons. It is improbable that more than 90% of the top 1,000 would forgo a CMS entirely and more likely that they just don't show up in our dataset.
 
-A potentially correlated trend is the adoption of "headless" CMSs and the move towards separating content—and the CMS that powers it—from the frontend experience offered to end-users.
+A potentially correlated trend is the adoption of "headless" CMSs and the move to separate content — and the CMS that powers it — from the frontend experience offered to end-users.
 
-While our confidence in the overall dataset remains high, we're interested in investigating the adoption by rank dataset further in future editions of this report to see if more can be done to detect CMS usage and improve the overall accuracy of our results.
+While our confidence in the overall dataset remains high, we're interested in investigating the adoption by rank dataset further in future editions of this report to see if more can be done to detect and identify CMSs to improve the overall accuracy of our results.
 
 ## Most popular CMSs
 
