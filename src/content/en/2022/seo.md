@@ -429,7 +429,7 @@ Heading elements  (`<h1>`, `<h2>`...) are important parts of a page’s structur
 {{ figure_markup(
   image="has-h-elements.png",
   caption="Presence of H elements.",
-  description="A column charting showing usage of H1 tags through H4 tags. On desktop 66%	of pages have an H1 tag, 73% an H2, 62% an H3, and 38% an H4. The percentages are identical on mobile.",
+  description="A column charting showing usage of H1 tags through H4 tags. On desktop 66% of pages have an H1 tag, 73% an H2, 62% an H3, and 38% an H4. The percentages are identical on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=46522676&format=interactive",
   sheets_gid="1564568239",
   sql_file="seo-stats.sql"
@@ -445,7 +445,7 @@ Although there is no  definitive explanation for this, one possible reason is th
 {{ figure_markup(
   image="nonempty-h-elements.png",
   caption="Presence of non-empty H elements.",
-  description="A column charting showing non-empty usage of H1 tags through H4 tags. On desktop 58%	of pages have a non-empty H1 tag, 72% a non-empty H2, 61% a non-empty H3, and 37% a non-empty H4. The percentages are very similar on mobile at 59%, 71%, 60%, and 37% respectively.",
+  description="A column charting showing non-empty usage of H1 tags through H4 tags. On desktop 58% of pages have a non-empty H1 tag, 72% a non-empty H2, 61% a non-empty H3, and 37% a non-empty H4. The percentages are very similar on mobile at 59%, 71%, 60%, and 37% respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1398855380&format=interactive",
   sheets_gid="1564568239",
   sql_file="seo-stats.sql"
