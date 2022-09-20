@@ -66,8 +66,7 @@
           "part": "I",
           "chapter_number": "8",
           "title": "Third Parties",
-          "slug": "third-parties",
-          "todo": true
+          "slug": "third-parties"
         },
         {
           "part": "I",
@@ -87,8 +86,7 @@
           "part": "II",
           "chapter_number": "10",
           "title": "SEO",
-          "slug": "seo",
-          "todo": true
+          "slug": "seo"
         },
         {
           "part": "II",
@@ -123,8 +121,7 @@
           "part": "II",
           "chapter_number": "15",
           "title": "Mobile Web",
-          "slug": "mobile-web",
-          "todo": true
+          "slug": "mobile-web"
         },
         {
           "part": "II",
@@ -174,8 +171,7 @@
           "chapter_number": "21",
           "title": "Sustainability",
           "slug": "sustainability",
-          "hero_dir": "2022",
-          "todo": true
+          "hero_dir": "2022"
         }
       ]
     },
@@ -706,16 +702,6 @@
       "website": "https://gregbrimble.com/",
       "twitter": "GregBrimble"
     },
-    "hanopcan": {
-      "name": "Hannah Smith",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "11687898",
-      "github": "hanopcan",
-      "website": "https://opcan.co.uk",
-      "twitter": "hanopcan"
-    },
     "harendra": {
       "name": "Haren",
       "teams": [
@@ -735,7 +721,7 @@
       "twitter": "nutlope"
     },
     "hemanth": {
-      "name": "hemanth.hm",
+      "name": "Hemanth HM",
       "teams": [
         "reviewers"
       ],
@@ -840,14 +826,6 @@
       "avatar_url": "7421844",
       "github": "jrharalson"
     },
-    "CodeMartian": {
-      "name": "Jeff Martin",
-      "teams": [
-        "analysts"
-      ],
-      "avatar_url": "49497114",
-      "github": "CodeMartian"
-    },
     "j9t": {
       "name": "Jens Oliver Meiert",
       "teams": [
@@ -869,12 +847,14 @@
       "twitter": "malchata"
     },
     "imeugenia": {
-      "name": "Jevgenija Zigisova",
+      "name": "Eugenia Zigisova",
       "teams": [
         "authors"
       ],
       "avatar_url": "17236402",
-      "github": "imeugenia"
+      "github": "imeugenia",
+      "twitter": "jevgeniazi",
+      "website": "https://github.com/imeugenia/speaking/blob/main/README.md"
     },
     "joeviggiano": {
       "name": "Joe Viggiano",
@@ -1151,6 +1131,7 @@
     "mordy-oberstein": {
       "name": "Mordy Oberstein",
       "teams": [
+        "authors",
         "reviewers"
       ],
       "avatar_url": "104999516",
@@ -1165,14 +1146,6 @@
       "github": "mo271",
       "website": "https://mo271.github.io/",
       "twitter": "MoritzFirsching"
-    },
-    "msolercanals": {
-      "name": "msolercanals",
-      "teams": [
-        "analysts"
-      ],
-      "avatar_url": "76776586",
-      "github": "msolercanals"
     },
     "Navaneeth-Akamai": {
       "name": "Navaneeth",
@@ -1253,14 +1226,6 @@
       "avatar_url": "498917",
       "github": "foolip",
       "website": "https://foolip.org/"
-    },
-    "polyglotyeoja": {
-      "name": "polyglotyeoja",
-      "teams": [
-        "analysts"
-      ],
-      "avatar_url": "9722690",
-      "github": "polyglotyeoja"
     },
     "25prathamesh": {
       "name": "Prathamesh Rasam",
@@ -1424,6 +1389,7 @@
     "siakaramalegos": {
       "name": "Sia Karamalegos",
       "teams": [
+        "analysts",
         "leads"
       ],
       "avatar_url": "4777393",
@@ -1455,7 +1421,9 @@
         "authors"
       ],
       "avatar_url": "72282209",
-      "github": "Suzzicks"
+      "github": "Suzzicks",
+      "website": "https://mobilemoxie.com/",
+      "twitter": "suzzicks"
     },
     "thibaudcolas": {
       "name": "Thibaud Colas",
@@ -1497,14 +1465,6 @@
       "website": "https://www.mightybytes.com/",
       "twitter": "timfrick"
     },
-    "tpgreenwood": {
-      "name": "Tom Greenwood",
-      "teams": [
-        "authors"
-      ],
-      "avatar_url": "3329982",
-      "github": "tpgreenwood"
-    },
     "bobbyshaw": {
       "name": "Tom Robertshaw",
       "teams": [
@@ -1532,16 +1492,6 @@
       ],
       "avatar_url": "104352788",
       "github": "TusharPol"
-    },
-    "pepelsbey": {
-      "name": "Vadim Makeev",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "105274",
-      "github": "pepelsbey",
-      "website": "https://pepelsbey.net/",
-      "twitter": "pepelsbey"
     },
     "paivaspol": {
       "name": "Vaspol Ruamviboonsuk",

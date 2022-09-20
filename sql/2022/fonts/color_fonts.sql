@@ -1,37 +1,33 @@
 #standardSQL
 #color_fonts
-SELECT
-  client,
-  format,
-  COUNT(DISTINCT page) AS pages_color,
-  total_page,
-  COUNT(DISTINCT page) / total_page AS pct_color
-FROM (
+WITH
+fonts AS (
   SELECT
+    url,
     client,
-    page,
-    format,
-    payload
+    JSON_EXTRACT(payload, '$._font_details.color.formats') AS payload
   FROM
     `httparchive.almanac.requests`
   WHERE
     date = '2022-06-01' AND
-    type = 'font')
-JOIN (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_page
-  FROM
-    `httparchive.pages.2022_06_01_*`
+    type = 'font'
   GROUP BY
-    _TABLE_SUFFIX)
-USING
-  (client),
+    url,
+    client,
+    payload
+)
+SELECT
+  client,
+  format,
+  COUNT(0) AS freq,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_freq
+FROM
+  fonts,
   # Color fonts have any of sbix, cbdt, svg, colrv0 or colrv1 tables.
-  UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT(payload, '$._font_details.color.formats'), '(?i)(sbix|CBDT|SVG|COLRv0|COLRv1)')) AS format
+  UNNEST(REGEXP_EXTRACT_ALL(payload, '(?i)(sbix|CBDT|SVG|COLRv0|COLRv1)')) AS format
 GROUP BY
   client,
-  total_page,
   format
 ORDER BY
-  pages_color DESC
+  pct_freq DESC

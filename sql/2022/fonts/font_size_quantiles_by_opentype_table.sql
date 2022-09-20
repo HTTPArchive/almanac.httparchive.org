@@ -13,9 +13,26 @@ try {
 }
 ''';
 
+WITH
+fonts AS (
+  SELECT
+    client,
+    url,
+    JSON_EXTRACT(payload, '$._font_details.table_sizes') AS payload
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    date = '2022-06-01' AND
+    type = 'font'
+  GROUP BY
+    client,
+    url,
+    payload
+)
+
 SELECT
-  percentile,
   client,
+  percentile,
   table,
   COUNT(0) AS total,
   APPROX_QUANTILES(bytes, 1000)[OFFSET(percentile * 10)] AS bytes
@@ -26,17 +43,13 @@ FROM (
     key AS table,
     value AS bytes
   FROM
-    `httparchive.almanac.requests`,
-    UNNEST(getTableSizes(JSON_EXTRACT(payload, '$._font_details.table_sizes'))),
-    UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
-  WHERE
-    (date = '2022-06-01' AND
-      type = 'font'))
+    fonts,
+    UNNEST(getTableSizes(payload)) AS table,
+    UNNEST([10, 25, 50, 75, 90, 100]) AS percentile)
 GROUP BY
   client,
   table,
   percentile
 ORDER BY
-  client,
   table,
   percentile
