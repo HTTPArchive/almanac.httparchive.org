@@ -178,7 +178,7 @@ To examine in more detail how the website users could be affected by the main th
 {{ figure_markup(
   image="main-thread-blocking-time-by-third-party.png",
   caption="Median main thread blocking time in ms for top 5 most popular third parties.",
-  description="Bar chart showing the median main thread blocking time by top 5 third parties. YouTube is blocking the main thread for 1.721 milliseconds on mobile pages and 117 milliseconds on desktop pages, Google Maps for 298 and 0, Facebook 93 and 0, Google Analytics 76 and 0, Google Tag Manager 65 and 0.",
+  description="Bar chart showing the median main thread blocking time by top 5 third parties. YouTube blocks the main thread for 1.721 milliseconds on mobile pages and 117 milliseconds on desktop pages, Google Maps for 298 and 0, Facebook 93 and 0, Google Analytics 76 and 0, Google Tag Manager 65 and 0.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=1006809602&format=interactive",
   sheets_gid="1541263858",
   sql_file="third_parties_blocking_main_thread.sql"
