@@ -1142,6 +1142,7 @@
     "mordy-oberstein": {
       "name": "Mordy Oberstein",
       "teams": [
+        "authors",
         "reviewers"
       ],
       "avatar_url": "104999516",
