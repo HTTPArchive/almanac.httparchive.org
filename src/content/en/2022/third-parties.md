@@ -44,7 +44,7 @@ In the case where third-party content is served from a first-party domain, it is
 
 ### Third-party categories
 
-We are relying on the <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/#third parties-by-category">third-party-web</a> repository from [Patrick Hulce](https://twitter.com/patrickhulce) to help us identify and categorize third parties. This repository breaks down third parties by the following categories:
+We are relying on the <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/#third-parties-by-category">third-party-web</a> repository from [Patrick Hulce](https://twitter.com/patrickhulce) to help us identify and categorize third parties. This repository breaks down third parties by the following categories:
 
 - **Ad** - These scripts are part of advertising networks, either serving or measuring.
 - **Analytics** -These scripts measure or track users and their actions. There's a wide range in impact here depending on what's being tracked.
@@ -88,7 +88,7 @@ Learn more about our [Methodology](./methodology).
 The prevalence of third parties remained at the same high levels as the previous year: 94% of websites use at least one third party.
 
 {{ figure_markup(
-  image="median-number-of-third parties-by-rank.png",
+  image="median-number-of-third-parties-by-rank.png",
   caption="Median number of third-party domains per page by rank.",
   description="Bar chart showing the median number of third-party domains across various website rank categories. For the top 1,000 websites 53 and 43 third parties are used on desktop and mobile websites respectively. The top 10,000 websites use 48 and 43 third parties on desktop and mobile websites respectively. The top 100,000 websites use 34 and 31 third parties on desktop and mobile websites respectively. The top 1,000,000 websites use 28 and 25 third parties on desktop and mobile websites respectively. The median number of third parties for all websites is 24 and 21 on desktop and mobile websites respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=1946246067&format=interactive",
@@ -113,7 +113,7 @@ Though the exact number of third-party providers is still a subject for further 
 When looking at the distribution of third parties by category and by rank, it becomes clear that the increase in the number of third parties on more popular websites is mostly made up of the ad and unknown (i.e. unclassified) third-party categories. That means the third parties—especially ads—have a crucial impact on the users because they are more used on websites with a larger number of users.
 
 {{ figure_markup(
-  image="top-third parties-by-number-of-pages.png",
+  image="top-third-parties-by-number-of-pages.png",
   caption="Top 10 third parties by number of pages they are used on",
   description="Bar chart showing the usage of top 10 most popular third parties. fonts.googleapis.com is used on 63% of mobile pages, google-analytics.com on 51%, accounts.google.com on 49%, adservice.google.com on 47%, and googletagmanager.com on 46%. The rest, i.e. ajax.googleapis.com, facebook.com, cdnjs.cloudflare.com, youtube.com and  maps.google.com are used on less than 30% of mobile pages. Desktop and mobile percentage is similar for all third parties.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=857401072&format=interactive",
@@ -140,7 +140,7 @@ Third-party requests account for 45% of all requests made by websites, and of th
 Some third parties might inevitably block page rendering and negatively affect the webpage loading experience. Lighthouse has a <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/render-blocking-resources.js">render-blocking resources audit</a>, that provides data about render-blocking time.
 
 {{ figure_markup(
-  image="render-blocking-time-by-most-popular-third parties.png",
+  image="render-blocking-time-by-most-popular-third-parties.png",
   caption="Median render-blocking time for top 10 most popular third parties.",
   description="Bar chart showing the potential render-blocking time of top 10 most popular render-blocking third parties. Median render-blocking time of fonts.googleapis.com is 1.085 milliseconds on mobile pages, accounts.google.com is render-blocking for 1,077 milliseconds, adservice.google.com for 1,571, googletagmanager.com for 1,806, ajax.googleapis.com for 1,530, cloudflare.com for 1,300, youtube.com for 1,146, bootstrapcdn.com for 1,241, maps.google.com for 2.095 and jsdelivr.net for 1,370. Desktop and mobile data is similar for all third parties.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=549590895&format=interactive",
@@ -160,7 +160,7 @@ Additionally, third-party scripts compete for the main thread resources with the
 We inspected the <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/third-party-summary.js">third party summary audit</a> to emulate main-thread blocking time caused by third parties.
 
 {{ figure_markup(
-  image="third parties-blocking-main-thread.png",
+  image="third-parties-blocking-main-thread.png",
   caption="Top 10 third parties blocking the main thread",
   description="Bar chart showing the percentage of mobile pages that have main thread blocked by a third party by top 10 third parties. YouTube is blocking the main thread on 90% of mobile pages, Google Maps on 85%, Other Google APIs/SDKs on 84%, Facebook 82%, Google Dounbleclick Ads 81%, Google CDN 79%, Google Tag Manager 75%, Cloudfare CDN 71%, Google Analytics 70%, Google Fonts 63%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=1753375995&format=interactive",
@@ -336,7 +336,7 @@ Despite JavaScript's rapid involvement, the prevalence of legacy code is still s
 In general, third parties account for 59% of Lighthouse legacy JavaScript audit failures. A closer look into the audit results highlights the top 5 third-party script providers that include legacy JavaScript.
 
 {{ figure_markup(
-  image="pages-with-third parties-that-use-legacy-javascript.png",
+  image="pages-with-third-parties-that-use-legacy-javascript.png",
   caption="Percentage of websites using third parties that have legacy JavaScript",
   description="Bar chart showing top 5 most-used third parties that serve legacy JavaScript. connect.facebook.net is used on 18.5% of mobile pages, apis.google.com on 3.3%, script.hotjar.com on 3.2%, cdn.shopify.com on 2.8% and static.xx.fbcdn.net on 2.4%. Data for desktop pages is very similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=2145007275&format=interactive",
