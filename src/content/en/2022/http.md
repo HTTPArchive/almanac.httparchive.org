@@ -132,7 +132,7 @@ While Priority Hints was only recently released at the end of April 2022 as part
 
 ### HTTP/2 Push
 
-HTTP/2 Push allows web servers to pre-emptively send a response to a request before that request is even sent by the client. For example, a web site provider can push a resource that will be used during a page load to the end user along with the main HTML.
+HTTP/2 Push allows web servers to pre-emptively send a response to a request before that request is even sent by the client. For example, a website provider can push a resource that will be used during a page load to the end user along with the main HTML.
 
 {{ figure_markup(
   image="h2-push-usage.png",
@@ -159,7 +159,7 @@ Given the challenges to using HTTP/2 Push, and it's deprecation from Chrome, dev
 Developers can use Preload as one alternative to pre-emptively request a resource that will be used later in a page load. This is enabled by including[`<link rel="preload">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preload) in the `<head>` section of the HTML. For example:
 
 ```html
- <link rel="preload" href="/css/style.css" as="style" />
+<link rel="preload" href="/css/style.css" as="style" />
 ```
 
 Or as a `Link` HTTP header:
@@ -202,7 +202,7 @@ Early hints can be a better alternative than push because clients retain greater
 )
 }}
 
-There are studies showing that adopting Early Hints can improve user experience. For example, <a hreflang="en" href="https://blog.cloudflare.com/early-hints-performance/">Shopify observed 20-30% LCP improvements</a> in their lab study. We observe that approximately 1.6% of web sites in our dataset have adopted Early Hints even at this early stage and most of the adoption (1.5%) stems from websites running on Shopify's platform.
+There are studies showing that adopting Early Hints can improve user experience. For example, <a hreflang="en" href="https://blog.cloudflare.com/early-hints-performance/">Shopify observed 20-30% LCP improvements</a> in their lab study. We observe that approximately 1.6% of websites in our dataset have adopted Early Hints even at this early stage and most of the adoption (1.5%) stems from websites running on Shopify's platform.
 
 With the 25% of websites including `<link rel="preload">` with the page response, there is significant potential to convert such link nodes to Early Hints.
 
