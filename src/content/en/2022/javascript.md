@@ -585,9 +585,9 @@ Consider that a "good" INP score is [200 milliseconds](https://web.dev/inp/#what
   )
 }}
 
-Dovetailing into long tasks, there's the [Total Blocking Time (TBT)](https://web.dev/tbt/) metric, which calculates the total blocking time of long tasks during startup. 
+Dovetailing into long tasks, there's the [Total Blocking Time (TBT)](https://web.dev/tbt/) metric, which calculates the total blocking time of long tasks during startup.
 
-Note that unlike the preceding stats on FID and INP, TBT and TTI (below) are not sourced from real-user data. Instead, we're measuring synthetic performance in [simulated](./methodology#webpagetest) desktop and mobile environments with device-appropriate CPU and network throttling enabled. As a result of this approach, we get exactly one TBT and TTI value for each page, rather than a distribution of real-user values across the entire website. 
+Note that unlike the preceding stats on FID and INP, TBT and TTI (below) are not sourced from real-user data. Instead, we're measuring synthetic performance in [simulated](./methodology#webpagetest) desktop and mobile environments with device-appropriate CPU and network throttling enabled. As a result of this approach, we get exactly one TBT and TTI value for each page, rather than a distribution of real-user values across the entire website.
 
 Considering that [INP correlates very well with TBT](https://github.com/GoogleChromeLabs/chrome-http-archive-analysis/blob/main/notebooks/HTTP_Archive_TBT_and_INP.ipynb), it's reasonable to assume that high TBT scores may produce poorer INP scores. Using our synthetic approach, we see a wide gulf between desktop and mobile segments, indicating that desktop devices with better processing power and memory are outperforming less capable mobile devices by a wide margin. At the 75th percentile, a page has nearly 3.6 seconds of blocking time, which qualifies as a poor experience.
 
