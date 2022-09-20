@@ -12,8 +12,8 @@ results: https://docs.google.com/spreadsheets/d/1YqoRRsyiNsrEabVLu2nRU98JIG_0zLL
 featured_quote: Third parties are often associated with negative impact on web performance. However, both third-party and website developers can eliminate it so that third-party functionality isn't harming user experience.
 featured_stat_1: 94%
 featured_stat_label_1: Websites using at least one third party
-featured_stat_2: 60%
-featured_stat_label_2: Top 10 third parties are blocking main thread on more than 60% of websites
+featured_stat_2: 2 sec
+featured_stat_label_2: Potential median render-blocking time caused by Google Maps
 featured_stat_3: 59%
 featured_stat_label_3: Lighthouse legacy JavaScript audit fails due to a third party
 ---
