@@ -41,7 +41,7 @@ Although the state of web accessibility still leaves a lot to be desired, we did
   sql_file="lighthouse_a11y_audits.sql",
 ) }}
 
-Looking at Lighthouse audits reporting results, out of 41 automated checks, 35 passed successfully on more sites in 2022 compared to 2021. 11 audits show improvements greater than 1%, with <a hreflang="en" href="https://web.dev/aria-required-children/)">aria-required-children</a>, <a hreflang="en" href="https://web.dev/aria-name/)">aria-tooltip-name</a>, <a hreflang="en" href="https://web.dev/definition-list/)">definition-list</a>, <a hreflang="en" href="https://web.dev/html-has-lang/)">html-has-lang</a>, and <a hreflang="en" href="https://web.dev/object-alt/)">object-alt</a> showing the most noteworthy increases. We hope that this increase represents a shift in the right direction.
+Looking at Lighthouse audits reporting results, out of 41 automated checks, 35 passed successfully on more sites in 2022 compared to 2021. 11 audits show improvements greater than 1%, with <a hreflang="en" href="https://web.dev/aria-required-children/)">`aria-required-children`</a>, <a hreflang="en" href="https://web.dev/aria-name/)">`aria-tooltip-name`</a>, <a hreflang="en" href="https://web.dev/definition-list/)">`definition-list`</a>, <a hreflang="en" href="https://web.dev/html-has-lang/)">`html-has-lang`</a>, and <a hreflang="en" href="https://web.dev/object-alt/)">`object-alt`</a> showing the most noteworthy increases. We hope that this increase represents a shift in the right direction.
 
 In the hope of improvement towards accessibility in the web, we have tried to write the chapter with some actionable links and solutions that people can follow. For consistency, we chose to use the person-first term "people with disabilities" throughout this chapter, though we acknowledge that the identity-first term "disabled people" is also used. Our choice in terminology is in no way prescriptive of which term is most appropriate.
 
@@ -51,7 +51,7 @@ Readability of information and content on the web is crucial. There are a number
 
 ### Color contrast
 
-Color contrast refers to how easily the foreground (which can include text, diagrams, iconography or other pieces of information) stands out from the background of the section. A higher color contrast usually means it's easier for people to distinguish the content.
+Color contrast refers to how easily the foreground—which can include text, diagrams, iconography or other pieces of information—stands out from the background of the section. A higher color contrast usually means it's easier for people to distinguish the content.
 
 The minimum contrast requirement defined by the <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility Guidelines</a> (WCAG) for normal sized text (up to 24px) is 4.5:1 for AA conformance and 7:1 for AAA conformance. However, for larger font sizes, the contrast requirement is only 3:1 as larger text has increased legibility even at a lower contrast.
 
@@ -64,7 +64,7 @@ The minimum contrast requirement defined by the <a hreflang="en" href="https://w
   sql_file="color_contrast.sql",
 ) }}
 
-We found that 22.9% of mobile sites have sufficient text color contrast, which is less than a 1% increase from last year. In 2022, we also have data for desktop sites, with 22.7% passing automated text contrast checks. The color contrast issue (at least for the text-based color contrasts that we tested) is pretty straightforward to validate even before you start building the website. There are multiple tools that can help developers and designers to check color contrast of text and graphical elements such as:
+We found that 22.9% of mobile sites have sufficient text color contrast, which is less than a 1% increase from last year. In 2022, we also have data for desktop sites, with 22.7% passing automated text contrast checks. The color contrast issue—at least for the text-based color contrasts that we tested—is pretty straightforward to validate even before you start building the website. There are multiple tools that can help developers and designers to check color contrast of text and graphical elements such as:
 
 - <a hreflang="en" href="https://webaim.org/resources/contrastchecker/">Web Color Contrast Checker (by WebAIM)</a>
 - <a hreflang="en" href="https://www.figma.com/community/plugin/733159460536249875">Figma Plugin (by Stark)</a>
@@ -73,36 +73,36 @@ It's a good idea to select a color scheme that passes color contrast requirement
 
 ### Zooming and scaling
 
-Zooming is another feature that users with low vision often use to view the text in a website better. There are system settings in the browser, as well as some magnifying tools that allow a user to zoom and scale a website. Adrian Roselli talks in detail about the <a hreflang="en" href="https://adrianroselli.com/2015/10/dont-disable-zoom.html">different reasons you should not disable zoom</a>.
+Zooming is another feature that users with low vision often use to view the text in a website better. There are system settings in the browser, as well as some magnifying tools that allow a user to zoom and scale a website. [Adrian Roselli](https://twitter.com/aardrian) talks in detail about the <a hreflang="en" href="https://adrianroselli.com/2015/10/dont-disable-zoom.html">different reasons you should not disable zoom</a>.
 
 {{ figure_markup(
   image="pages-zooming-scaling-disabled.png",
   caption="Pages with zooming and scaling disabled.",
-  description="A bar chart showing that 15.7% of desktop sites and 18.3% of mobile sites disable scaling, 20.2% and 24.4% respectively set a max scale of 1 and 23.4% and 27.8% use either.",
+  description="A bar chart showing that 16% of desktop sites and 18% of mobile sites disable scaling, 20% and 24% respectively set a max scale of 1 and 23% and 28% use either.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSi-gjiB_GnE2U4P7oxN2zqs0DbA2YDPqtsfIm3IBmtph_VE7FTrQvw7L6FsOsJlcZFI6HEULXuKEeb/pubchart?oid=550476172&format=interactive",
   sheets_gid="602773443",
   sql_file="viewport_zoom_scale.sql",
 ) }}
 
-WCAG requires that text in a website can be resized up to at least 200%. We have found that 23.4% of desktop homepages and 27.8% of mobile homepages attempt to disable zoom.
+WCAG requires that text in a website can be resized up to at least 200%. We have found that 23% of desktop homepages and 28% of mobile homepages attempt to disable zoom.
 
 The method by which a developer disabled zoom is by adding a `<meta name="viewport" >` tag with a value like `maximum-scale, minimum-scale, user-scalable=no, or user-scalable=0` in the `content` attribute. So if you have a website that has one of these values, please delete those particular values from the `content` attribute to enable zoom.
 
 {{ figure_markup(
   image="pages-zooming-scaling-disabled-by-rank.png",
   caption="Pages with zooming and scaling disabled by rank.",
-  description="A bar chart showing that for the top 1,000 sites zooming and scaling is disabled by 21.0% of desktop sites and 40.2% of mobile sites, for the top 10,000 it's 25.2% and 36.0% respectively, for the top 100,000 it's 25.0% and 31.9%, for the top million it's 24.4% and 28.9% and finally for all sites it's 23.4% and 27.8%.",
+  description="A bar chart showing that for the top 1,000 sites zooming and scaling is disabled by 21% of desktop sites and 40% of mobile sites, for the top 10,000 it's 25% and 36% respectively, for the top 100,000 it's 25% and 32%, for the top million it's 24% and 29% and finally for all sites it's 23% and 28%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSi-gjiB_GnE2U4P7oxN2zqs0DbA2YDPqtsfIm3IBmtph_VE7FTrQvw7L6FsOsJlcZFI6HEULXuKEeb/pubchart?oid=1987306037&format=interactive",
   sheets_gid="1896788548",
   sql_file="viewport_zoom_scale_by_domain_rank.sql",
 ) }}
 
-Of the top 1,000 most visited sites, 21% of desktop sites and 40.2% of mobile sites are built using code that attempts to disable user zooming or scaling. This means that the percentage of sites with zooming disabled is almost double on mobile compared to desktop. It's really important to not disable zooming on any device. To combat this, browsers have begun to override developers' attempts to disable zoom. Manuel Matuzovic wrote an article talking about the <a hreflang="en" href="https://www.matuzo.at/blog/2022/please-stop-disabling-zoom/">concerns with disabling zoom and user settings in browsers</a>.
+Of the top 1,000 most visited sites, 21% of desktop sites and 40% of mobile sites are built using code that attempts to disable user zooming or scaling. This means that the percentage of sites with zooming disabled is almost double on mobile compared to desktop. It's really important to not disable zooming on any device. To combat this, browsers have begun to override developers' attempts to disable zoom. [Manuel Matuzović](https://twitter.com/mmatuzo) wrote an article talking about the <a hreflang="en" href="https://www.matuzo.at/blog/2022/please-stop-disabling-zoom/">concerns with disabling zoom and user settings in browsers</a>.
 
 {{ figure_markup(
   image="font-unit-usage.png",
   caption="Font unit usage.",
-  description="A bar chart showing `px` is used for font sizes on 71% of desktop and mobiles pages, `em` on 15% and 15% respectively, `rem` on 6% and 6%, `%` on 4% and 5%, `<number>` on 2% and 2%, and finally `pt` on 2% and 2%.",
+  description="A bar chart showing `px` is used for font sizes on 71% of desktop and mobiles pages, `em` on 15% of both, `rem` on 6% of both, `%` on 4% of desktop and 5% of mobile, `<number>` on 2% of both, and finally `pt` on 2% of both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSi-gjiB_GnE2U4P7oxN2zqs0DbA2YDPqtsfIm3IBmtph_VE7FTrQvw7L6FsOsJlcZFI6HEULXuKEeb/pubchart?oid=850268795&format=interactive",
   sheets_gid="955782036",
   sql_file="units_properties.sql",
@@ -112,7 +112,7 @@ Another thing to keep in mind is the unit you choose for font size. We found tha
 
 ### Language identification
 
-Language identification using the `lang` attribute is important for providing better screen reader support, and also helps in proper browser translation. This is another good example of a feature that helps everyone, including people with disabilities. Without the `lang` attribute, the automatic browser translation in Chrome can often translate the text incorrectly. Manuel Matuzovic gives one such <a hreflang="en" href="https://www.matuzo.at/blog/lang-attribute/">example of an auto-translate mishap</a> due to the lack of a`lang` attribute.
+Language identification using the `lang` attribute is important for providing better screen reader support, and also helps for automatic browser translations. This is another good example of a feature that helps everyone, including people with disabilities. Without the `lang` attribute, the automatic browser translation in Chrome can often translate the text incorrectly. Manuel Matuzovic gives one such <a hreflang="en" href="https://www.matuzo.at/blog/lang-attribute/">example of an auto-translate mishap</a> due to the lack of a`lang` attribute.
 
 {{ figure_markup(
   content="83%",
@@ -143,7 +143,7 @@ We found that 34% of mobile websites use `prefers-reduced-motion`. Websites that
 
 ### Forced colors mode
 
-Forced colors mode is an accessibility feature intended to increase the readability of text through color contrast. In forced colors mode, the user's operating system takes over control of most color-related styles. Common patterns such as background images are completely disabled, so text-to-background contrast is more predictable. Its best-known implementation is the High contrast mode in Windows, renamed <a hreflang="en" href="https://support.microsoft.com/en-us/topic/fedc744c-90ac-69df-aed5-c8a90125e696">Contrast Themes</a> in Windows 11. Those themes provide alternative low and high contrast color palettes, as well as the ability to customize any of the available [system colors](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/system_color_keywords).
+Forced colors mode is an accessibility feature intended to increase the readability of text through color contrast. In forced colors mode, the user's operating system takes over control of most color-related styles. Common patterns such as background images are completely disabled, so text-to-background contrast is more predictable. Its best-known implementation is the _High Contrast Mode_ in Windows, renamed <a hreflang="en" href="https://support.microsoft.com/en-us/topic/fedc744c-90ac-69df-aed5-c8a90125e696">_Contrast Themes_</a> in Windows 11. Those themes provide alternative low and high contrast color palettes, as well as the ability to customize any of the available [system colors](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/system_color_keywords).
 
 {{ figure_markup(
   image="forced-colors-mode.png",
@@ -159,11 +159,11 @@ This doesn't tell us to what extent sites do support forced colors mode, but the
 
 ## Navigation
 
-When talking about navigating through websites, one thing that is important to remember and be cautious of is that users may use a variety of methods and input devices. Some people use a mouse to scroll through a page, others use their keyboard or a switch control device, and some may use a screen reader to browse through the different heading levels. When making a website, it's important to ensure that the website works for everyone, irrespective of the device or assistive technology that a person chooses to use.
+When talking about navigating through websites, one thing that is important to remember—and be cautious of—is that users may use a variety of methods and input devices. Some people use a mouse to scroll through a page, others use their keyboard or a switch control device, and some may use a screen reader to browse through the different heading levels. When making a website, it's important to ensure that the website works for everyone, irrespective of the device or assistive technology that a person chooses to use.
 
 ### Focus indication
 
-Focus indication is super important for people who primarily rely on keyboard navigation or switch control devices. These tools are often used by people with limited motor capacity. There are many different switch control devices, from a <a hreflang="en" href="https://www.24a11y.com/2018/i-used-a-switch-control-for-a-day/">single switch</a> to a <a hreflang="en" href="https://accessibleweb.com/assistive-technologies/assistive-technology-focus-sip-and-puff-devices/">sip-and-puff device</a>. Visible focus styles and proper focus orders are essential for such users to get a visual indication of where they are on a page.
+Focus indication is really important for people who primarily rely on keyboard navigation or switch control devices. These tools are often used by people with limited motor capacity. There are many different switch control devices, from a <a hreflang="en" href="https://www.24a11y.com/2018/i-used-a-switch-control-for-a-day/">single switch</a> to a <a hreflang="en" href="https://accessibleweb.com/assistive-technologies/assistive-technology-focus-sip-and-puff-devices/">sip-and-puff device</a>. Visible focus styles and proper focus orders are essential for such users to get a visual indication of where they are on a page.
 
 #### Focus styles
 
@@ -178,16 +178,17 @@ The WCAG requires a visible focus indicator for all interactive content to help 
   sql_file="focus_outline_0.sql",
 ) }}
 
-We found that 86% of websites add `:focus {outline: 0}`. This removes the default outline that browsers use for the focused interactive element. In some cases, they are overridden using some custom styling, but not always. This makes it impossible for users to determine which element has focus which in turn hinders navigation. Sara Souedian has a great article on how to <a hreflang="en" href="https://www.sarasoueidan.com/blog/focus-indicators/">design WCAG-compliant focus indicators</a>. However, it's exciting to see that 9% of websites have `:focus-visible` compared to only 0.6% last year. This is definitely a step in the right direction.
+We found that 86% of websites add `:focus {outline: 0}`. This removes the default outline that browsers use for the focused interactive element. In some cases, they are overridden using some custom styling, but not always. This makes it impossible for users to determine which element has focus which in turn hinders navigation. [Sara Souedian](https://twitter.com/SaraSoueidan) has a great article on how to <a hreflang="en" href="https://www.sarasoueidan.com/blog/focus-indicators/">design WCAG-compliant focus indicators</a>. However, it's exciting to see that 9% of websites have `:focus-visible` compared to only 0.6% last year. This is definitely a step in the right direction.
 
-#### TabIndex
+#### `tabindex`
 
 `tabindex` is an attribute that can be added to elements to control whether they can receive focus. Depending on its value, the element can also be organized within the keyboard focus or "tab" order.
 
-We found that 60% of mobile websites and 62% of desktop websites use `tabindex`. The `tabindex` attribute can be used for a few different purposes, which may or may not cause accessibility issues.
+We found that 60% of mobile websites and 62% of desktop websites use `tabindex`. The `tabindex` attribute can be used for a few different purposes, which may or may not cause accessibility issues:
 
 - Adding `tabindex="0"` adds an element in the sequential keyboard focus order. Custom elements and widgets that are intended to be interactive need an explicitly assigned `tabindex="0"`.
 - `tabindex="-1"` means that the element is not in the keyboard focus order, but can be programmatically focused using JavaScript.
+- A positive value for `tabindex` is used to override the keyboard focus order and most of the time leads to a <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-order.html">WCAG 2.4.3 - Focus Order</a> failure
 
 It's important to remember that placing non-interactive elements in the keyboard focus order can be confusing for low-vision users and should hence be avoided.
 
@@ -200,7 +201,7 @@ It's important to remember that placing non-interactive elements in the keyboard
   sql_file="tabindex_usage_and_values.sql",
 ) }}
 
-Out of all websites with `tabindex` attribute, 7% have `tabindex` with a positive value. A positive value for `tabindex` is used to override the keyboard focus order and most of the time leads to a <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-order.html">WCAG 2.4.3 - Focus Order</a> failure. Using positive values for `tabindex` is generally bad practice since it disrupts the normal navigation. Karl Groves has a <a hreflang="en" href="https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad">great article</a> that explains this concept further.
+Out of all websites with `tabindex` attribute, 7% have `tabindex` with a positive value. Using positive values for `tabindex` is generally bad practice since it disrupts the normal navigation. [Karl Groves](https://twitter.com/karlgroves) has a <a hreflang="en" href="https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad">great article</a> that explains this concept further.
 
 ### Landmarks
 
@@ -257,11 +258,11 @@ Landmarks help divide a web page into thematic regions that makes it easier for 
   </figcaption>
 </figure>
 
-The most commonly expected landmarks that the majority of web pages should have are `<main>`, `<header>`, `<nav>` and `<footer>`. We found that only 31% of desktop and mobile pages have a native HTML `<main>` element, while 17% of desktop pages have an element with a `role="main"`, and 38% of pages have either `<main>` or `role="main"`. It's good to see the use of native elements increase. <a hreflang="en" href="https://www.scottohara.me/blog/2018/03/03/landmarks.html">Scott O' Hara's article on landmarks</a> covers all the details that one should keep in mind to ensure better accessibility.
+The most commonly expected landmarks that the majority of web pages should have are `<main>`, `<header>`, `<nav>` and `<footer>`. We found that only 31% of desktop and mobile pages have a native HTML `<main>` element, while 17% of desktop pages have an element with a `role="main"`, and 38% of pages have either `<main>` or `role="main"`. It's good to see the use of native elements increase. [Scott O' Hara](https://twitter.com/scottohara)'s <a hreflang="en" href="https://www.scottohara.me/blog/2018/03/03/landmarks.html">article on landmarks</a> covers all the details that one should keep in mind to ensure better accessibility.
 
 ### Heading hierarchy
 
-Headings help all users, including those using assistive technologies, to navigate through the website. Users with assistive technologies can navigate to the exact sections that they are interested in. As mentioned in <a hreflang="en" href="https://marcysutton.com/how-i-audit-a-website-for-accessibility#Headings-and-Semantic-Structure">Marcy Sutton's article on headings and semantic structure</a> , headings can be thought of as a table of contents that one can navigate through to go to a particular content area.
+Headings help all users, including those using assistive technologies, to navigate through the website. Users with assistive technologies can navigate to the exact sections that they are interested in. As mentioned in [Marcy Sutton](https://twitter.com/marcysutton)'s <a hreflang="en" href="https://marcysutton.com/how-i-audit-a-website-for-accessibility#Headings-and-Semantic-Structure">article on headings and semantic structure</a> , headings can be thought of as a table of contents that one can navigate through to go to a particular content area.
 
 {{ figure_markup(
   content="58%",
@@ -275,7 +276,7 @@ Headings help all users, including those using assistive technologies, to naviga
 
 ### Secondary navigation
 
-WCAG requires websites to have multiple ways to navigate between the different pages apart from the primary navigation menu in the header (see <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/multiple-ways.html">Success Criterion 2.4.5: Multiple Ways</a>). For example many people, including those with cognitive limitations, prefer to use search features to find a page when there are a substantial number of pages in a website.
+WCAG requires websites to have multiple ways to navigate between the different pages apart from the primary navigation menu in the header—see <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/multiple-ways.html">Success Criterion 2.4.5: Multiple Ways</a>. For example many people, including those with cognitive limitations, prefer to use search features to find a page when there are a substantial number of pages in a website.
 
 There are 23% of websites on mobile that have a search input, and 24% on desktop. Another recommended method for secondary navigation is to include a sitemap for a website. Although we do not have any data about the presence of site maps, this <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/general/G63">technique guide from the W3C</a> explains what they are in detail and how to implement one effectively.
 
@@ -769,7 +770,7 @@ There is a lot of pushback against overlays, <a hreflang="en" href="https://over
 
 accessiBe raised <a hreflang="en" href="https://www.geektime.com/accessibe-raised-30m/">an additional $30M in 2022</a>, and is one of the overlays showing a clear rise in usage year-to-year, from 0.27% of desktop sites and 0.21% of mobile sites in 2021, to 0.37% and 0.25% in 2022.
 
-[Adrian Roselli](https://twitter.com/aardrian)'s <a hreflang="en" href="https://adrianroselli.com/2020/06/accessibe-will-get-you-sued.html">#accessiBe Will Get You Sued</a> is an excellent resource on the practical implications of using such an overlay, including legal risks and privacy issues.
+Adrian Roselli's <a hreflang="en" href="https://adrianroselli.com/2020/06/accessibe-will-get-you-sued.html">#accessiBe Will Get You Sued</a> is an excellent resource on the practical implications of using such an overlay, including legal risks and privacy issues.
 
 ## Conclusion
 
