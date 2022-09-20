@@ -105,7 +105,7 @@ According to the dataset, CMSs are used by fewer than 7% of the top 1,000 websit
 
 Another explanation is that higher ranking sites with more resources allocated to their development are more likely to obfuscate the identity of their CMS for security reasons. It is improbable that more than 90% of the top 1,000 would forgo a CMS entirely and more likely that they just don't show up in our dataset.
 
-A potentially correlated trend is the adoption of "headless" CMSs and the move to separate content — and the CMS that powers it — from the frontend experience offered to end-users.
+A potentially correlated trend is the adoption of "headless" CMSs and the move to separate content—and the CMS that powers it—from the frontend experience offered to end-users.
 
 While our confidence in the overall dataset remains high, we're interested in investigating the adoption by rank dataset further in future editions of this report to see if more can be done to detect and identify CMSs to improve the overall accuracy of our results.
 
