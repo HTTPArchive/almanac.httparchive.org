@@ -22,7 +22,7 @@ featured_stat_label_3: TODO
 
 JavaScript is a powerful force that provides the lion's share of interactivity on the web. It drives behaviors from the simple to the complex, and is making more things possible on the web than ever before.
 
-Yet, the increased usage of JavaScript to deliver rich user experiences comes at a cost. From the moment JavaScript is downloaded, parsed, and compiled, to every moment it executes, the browser must orchestrate all kinds of work to make everything possible. Doing too little with JavaScript means you _might_ fall short of fulfilling user experience and business goals. On the other hand, shipping too much on JavaScript means you might be creating user experiences that are slow to load, sluggish to respond, and frustrating to users.
+Yet, the increased usage of JavaScript to deliver rich user experiences comes at a cost. From the moment JavaScript is downloaded, parsed, and compiled, to every line of code it executes, the browser must orchestrate all kinds of work to make everything possible. Doing too little with JavaScript means you might fall short of fulfilling user experience and business goals. On the other hand, shipping too much on JavaScript means you will be creating user experiences that are slow to load, sluggish to respond, and frustrating to users.
 
 This year, we'll once again be looking at the role of JavaScript on the web, as we present our findings for 2022 and offering advice for creating delightful user experiences.
 
@@ -40,7 +40,7 @@ To begin, we'll assess the amount of JavaScript web developers ship on the web. 
   )
 }}
 
-As was the case last year, this year marks yet another increase in the amount of JavaScript shipped to browsers. [From 2021](../../2021/javascript#how-much-javascript-do-we-load) to 2022, an increase of 8% for mobile devices was observed, whereas desktop devices saw an increase of 10%. While this increase is less steep than in previous years, it's nonetheless the continuation of a concerning trend. While device capabilities continue to improve, the fact remains that more JavaScript equates to more strain on a device's resources.
+As was the case last year, this year marks yet another increase in the amount of JavaScript shipped to browsers. [From 2021](../2021/javascript#how-much-javascript-do-we-load) to 2022, an increase of 8% for mobile devices was observed, whereas desktop devices saw an increase of 10%. While this increase is less steep than in previous years, it's nonetheless the continuation of a concerning trend. While device capabilities continue to improve, not every one is running the latest device. The fact remains that more JavaScript equates to more strain on a device's resources.
 
 {{ figure_markup(
     image="unused-js.png",
@@ -52,7 +52,7 @@ As was the case last year, this year marks yet another increase in the amount of
   )
 }}
 
-According to [Lighthouse](../methodology#lighthouse), the median mobile page loads 162 KB of unused JavaScript. At the 90th percentile, 604 KB of JavaScript are unused. This is a slight uptick from last year, where the median and 90th percentile of unused JavaScript was 155 KB and 598 KB, respectively. All of this represents a _very_ large amount of unused JavaScript, especially when you consider that this analysis tracks the _transfer size_ of JavaScript resources which, if compressed, means that the decompressed portion of used JavaScript may be a lot larger than the chart suggests.
+According to [Lighthouse](https://web.dev/unused-javascript/), the median mobile page loads 162 KB of unused JavaScript. At the 90th percentile, 604 KB of JavaScript are unused. This is a slight uptick from last year, where the median and 90th percentile of unused JavaScript was 155 KB and 598 KB, respectively. All of this represents a _very_ large amount of unused JavaScript, especially when you consider that this analysis tracks the _transfer size_ of JavaScript resources which, if compressed, means that the decompressed portion of used JavaScript may be a lot larger than the chart suggests.
 
 When contrasted with the total number of bytes loaded for mobile pages at the median, unused JavaScript accounts for 35% of all loaded scripts. This is down slightly from last year's figure of 36%, but is still a significantly large chunk of bytes loaded that go unused. This suggests that many pages are loading scripts that may not be used on the current page, or are triggered by interactions later on in the page lifecycle, and may benefit from [dynamic `import()`](#dynamic-import) to reduce startup costs.
 
@@ -90,7 +90,7 @@ function sum (a, b) {
 }
 ```
 
-A bundler will transform this code to a much smaller, but more optimized equivalent that takes less time for the browser to download:
+A bundler will transform this code to a smaller, but more optimized equivalent that takes less time for the browser to download:
 
 ```js
 function n(n,r){return n+r}
@@ -154,19 +154,47 @@ The manner in which JavaScript is requested may also have performance implicatio
 
 ### `async`, `defer`, `module`, and `nomodule`
 
-The `async` and `defer` attributes on the HTML `<script>` element control the behavior of how scripts load. The `async` attribute will prevent scripts from blocking parsing and rendering, but will execute as soon as they are downloaded. The `defer` attribute will delay execution of scripts until the DOM is ready.
+The `async` and `defer` attributes on the HTML `<script>` element control the behavior of how scripts load. The `async` attribute will prevent scripts from blocking parsing, but will execute as soon as they are downloaded, so may still block rendering. The `defer` attribute will delay execution of scripts until the DOM is ready so should prevent those scripts from blocking both parsing and rendering.
 
 The `type="module"` and `nomodule` attributes are specific to the presence (or absence) of ES6 modules being shipped to the browser. When `type="module"` is used, the browser expects that the content of those scripts will contain ES6 modules, and will defer the execution of those scripts until the DOM is constructed by default. The opposite `nomodule` attribute indicates to the browser that the current script does not use ES6 modules.
 
-<figure markdown>
-Feature | Desktop | Mobile
--- | -- | --
-`async` | 49.3% | 47.2%
-`defer` | 8.8% | 9.1%
-`async` and `defer` | 3.0% | 3.1%
-`module` | 0.4% | 0.4%
-`nomodule` | 0.0% | 0.0%
-
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>async</code></td>
+        <td class="numeric">49.3%</td>
+        <td class="numeric">47.2%</td>
+      </tr>
+      <tr>
+        <td><code>defer</code></td>
+        <td class="numeric">8.8%</td>
+        <td class="numeric">9.1%</td>
+      </tr>
+      <tr>
+        <td><code>async</code> and <code>defer</code></td>
+        <td class="numeric">3.0%</td>
+        <td class="numeric">3.1%</td>
+      </tr>
+      <tr>
+        <td><code>module</code></td>
+        <td class="numeric">0.4%</td>
+        <td class="numeric">0.4%</td>
+      </tr>
+      <tr>
+        <td><code>nomodule</code></td>
+        <td class="numeric">0.0%</td>
+        <td class="numeric">0.0%</td>
+      </tr>
+    </tbody>
+  </table>
   <figcaption>{{ figure_link(
     caption='Percentage of pages using `async`, `defer`, `async` _and_ `defer`, `type="module"`, and `nomodule` attributes on `<script>` elements.',
     sheets_gid="357655091",
@@ -176,19 +204,41 @@ Feature | Desktop | Mobile
 
 It's encouraging that 47% of mobile pages load scripts with `async`, as that suggests developers are cognizant of the effects of render blocking. However, such a low usage of `defer` suggests that there are opportunities being left on the table to improve rendering performance.
 
+As noted [last year](../2021/javascript/#async-and-defer), using both `async` and `defer` is an antipattern that should be avoided as the `defer` part is ignored and `async` takes precedence.
+
 The general absence of `type="module"` and `nomodule` is not surprising, as few pages seem to be shipping JavaScript modules. As time goes on, the usage of `type="module"` in particular may increase, as developers ship untransformed JavaScript modules to the browser.
 
 ### `preload`, `prefetch`, and `modulepreload`
 
-Resource hints such as `preload`, `prefetch`, and `modulepreload` are useful in hinting to the browser which resources should be fetched early. Each hint has a different purpose, with `preload` being used to fetch resources needed for the current navigation, `prefetch` for resources needed in the _next_ navigation, and `modulepreload` for preloading scripts that contain [JavaScript modules](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules).
+Resource hints such as `preload`, `prefetch`, and `modulepreload` are useful in hinting to the browser which resources should be fetched early. Each hint has a different purpose, with `preload` used to fetch resources needed for the current navigation, `modulepreload` the equivalent for preloading scripts that contain [JavaScript modules](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules), and `prefetch` used for resources needed in the _next_ navigation.
 
-<figure markdown>
-Resource hint | Desktop | Mobile
--- | -- | --
-`preload` | 16.4% | 15.4%
-`prefetch` | 1.0% | 0.8%
-`modulepreload` | 0.1% | 0.1%
-
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Resource hint</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>preload</code></td>
+        <td class="numeric">16.4%</td>
+        <td class="numeric">15.4%</td>
+      </tr>
+      <tr>
+        <td><code>prefetch</code></td>
+        <td class="numeric">1.0%</td>
+        <td class="numeric">0.8%</td>
+      </tr>
+      <tr>
+        <td><code>modulepreload</code></td>
+        <td class="numeric">0.1%</td>
+        <td class="numeric">0.1%</td>
+      </tr>
+    </tbody>
+  </table>
   <figcaption>{{ figure_link(
     caption="Percentage of pages using various resource hints.",
     sheets_gid="625000048",
@@ -226,9 +276,9 @@ Adoption of `prefetch` here is somewhat surprising, with three `prefetch` hints 
   )
 }}
 
-Remember—this analysis tracks how many resource hints are used for _JavaScript_ resources on pages that use one or more `preload` hints. The median page is delivering two `preload` hints for JavaScript, which isn't bad on its face, but it often depends on the _size_ of the script, how much processing scripts can kick off, or whether the script fetched via `preload` is even needed for the initial page load.
+Remember—this analysis tracks how many resource hints are used for _JavaScript_ resources on pages that use one or more `preload` hints. The median page is delivering two `preload` hints for JavaScript, which isn't bad on its face, but it often depends on the size of the script, how much processing scripts can kick off, or whether the script fetched via `preload` is even needed for the initial page load.
 
-Unfortunately, we see five `preload` hints for JavaScript resources at the 90th percentile, which may be too much. This suggests that pages at the 90th percentile are especially reliant on JavaScript, and are using preload to try and overcome the performance issues that result.
+Unfortunately, we see five `preload` hints for JavaScript resources at the 90th percentile, which may be too much. This suggests that pages at the 90th percentile are especially reliant on JavaScript, and are using `preload` to try and overcome the performance issues that result.
 
 {{ figure_markup(
     image="modulepreload.png",
@@ -240,9 +290,9 @@ Unfortunately, we see five `preload` hints for JavaScript resources at the 90th 
   )
 }}
 
-With `modulepreload`, we see a staggering 6 hints at the 75th percentile, and _14_ at the 90th percentile. This suggests that, while pages using one or more `modulepreload` hints at upper percentiles are shipping untransformed ES6 modules directly to the browser, the need for so many resource hints suggests an overreliance on JavaScript at the upper range.
+With `modulepreload`, we see a staggering 6 hints at the 75th percentile, and 14 at the 90th percentile! This suggests that, while pages using one or more `modulepreload` hints at upper percentiles are shipping untransformed ES6 modules directly to the browser, the need for so many resource hints suggests an overreliance on JavaScript at the upper range.
 
-Resource hints are great tools for optimizing how we load resources in the browser, but if there's one piece of advice you can heed when using them, it's to use them sparingly, and for resources that may not be initially discoverable; for example, a JavaScript file initially loaded in the DOM that requests another one. Rather than preloading loads of scripts, try to whittle down the _amount_ of JavaScript you're shipping, as that will lead to a better user experience rather than preloading gobs of it.
+Resource hints are great tools for optimizing how we load resources in the browser, but if there's one piece of advice you can heed when using them, it's to use them sparingly, and for resources that may not be initially discoverable; for example, a JavaScript file initially loaded in the DOM that requests another one. Rather than preloading loads of scripts, try to whittle down the amount of JavaScript you're shipping, as that will lead to a better user experience rather than preloading gobs of it.
 
 ### JavaScript in the `<head>`
 
@@ -297,7 +347,7 @@ At the median, we see that 25% of a page's scripts are injected, as opposed to l
 
 Script injection has [the potential to harm performance](https://www.igvita.com/2014/05/20/script-injected-async-scripts-considered-harmful/) when used to render page content the user consumes, and should be avoided in these cases whenever necessary. That script injection is so prevalent in today's web is a concerning trend. Modern frameworks and tooling may rely on this pattern, which means that some out-of-the-box experiences may rely on this potential anti-pattern to provide functionality for websites.
 
-### First-party vs. third-party JavaScript
+### First-party versus third-party JavaScript
 
 There are two categories of JavaScript that websites often ship:
 
@@ -320,7 +370,7 @@ In this section, we'll analyze the breakdown of first-party and third-party code
   )
 }}
 
-Here, we see a sobering picture. Regardless of the percentile, it seems that all observed hosts are serving an equivalent amount of first and third-party scripts. The median host serves 10 of each type, the 75th percentile serves 20 of each type, and the 90th percentile host serves _34 third-party scripts_.
+Here, we see a sobering picture. Regardless of the percentile, it seems that all observed hosts are serving an equivalent amount of first and third-party scripts. The median host serves 10 of each type, the 75th percentile serves 20 of each type, and the 90th percentile host serves 34 third-party scripts!
 
 This is a problematic and worrying trend. Third-party scripts are responsible for all sorts of damage when it comes to performance. Third-party scripts may do a number of things, such as running expensive timers that orchestrate multitudes of tasks, attach their own event listeners that add extra work which can delay interactivity, and some video and social media third-parties ship exorbitant amounts of scripts to power the services they provide.
 
@@ -342,7 +392,7 @@ So we know that hosts are shipping a lot of third-party scripts, but what's the 
   )
 }}
 
-At nearly every percentile, the amount of bytes third-party scripts ship exceeds that of first-party scripts. At the 75th percentile, it appears that third-party script payloads are _twice_ that of first-party scripts. At the 90th percentile, it appears that the amount of third-party scripts sent over the wire is nearly _one megabyte_.
+At nearly every percentile, the amount of bytes third-party scripts ship exceeds that of first-party scripts. At the 75th percentile, it appears that third-party script payloads are twice that of first-party scripts. At the 90th percentile, it appears that the amount of third-party scripts sent over the wire is nearly one megabyte.
 
 If you find your website's first versus third-party script payloads is similar to the graph above, it is key that you should work with your engineering organization to try and get this number down. It can only help your users if you do.
 
@@ -363,11 +413,11 @@ Dynamic `import()` allows developers to effectively "split" off chunks of JavaSc
 
 A staggeringly low 0.34% of all observed mobile pages currently use dynamic `import()`, while 0.41% of desktop pages use it. This is a missed opportunity to ship less code during startup. Perhaps dynamic `import()` is not seeing much use because it shifts the loading of JavaScript on-demand for features, rather than upfront.
 
-It's tricky, but a balance _can_ be struck, and it involves gauging the user's intent. One way of deferring loading of JavaScript without delaying interactions is to [preload](https://developer.mozilla.org/docs/Web/HTML/Link_types/preload) that JavaScript when the user signals intent to make an interaction. One example of this could be to defer loading JavaScript for the validation of a form, and preload that JavaScript once the user has focused a field in that form. That way, when the JavaScript is requested, it will already be in the browser cache.
+It's tricky, but a balance can be struck, and it involves gauging the user's intent. One way of deferring loading of JavaScript without delaying interactions is to [preload](https://developer.mozilla.org/docs/Web/HTML/Link_types/preload) that JavaScript when the user signals intent to make an interaction. One example of this could be to defer loading JavaScript for the validation of a form, and preload that JavaScript once the user has focused a field in that form. That way, when the JavaScript is requested, it will already be in the browser cache.
 
 Another way could be to use a service worker to precache JavaScript necessary for interactions when the service worker is installed. Installation should occur at a point in which the page has fully loaded in the page's [`load` event](https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event). That way, when the necessary functionality is requested, it can be retrieved from the service worker cache without startup costs.
 
-Dynamic `import()` _is_ tricky to use, but more widespread adoption of it can help shift the performance cost of loading JavaScript from startup to a later point in the page lifecycle, presumably when there will be less network contention for resources. We hope to see increased adoption of dynamic `import()`, as the amount of JavaScript we see loaded during startup is only increasing.
+Dynamic `import()` is tricky to use, but more widespread adoption of it can help shift the performance cost of loading JavaScript from startup to a later point in the page lifecycle, presumably when there will be less network contention for resources. We hope to see increased adoption of dynamic `import()`, as the amount of JavaScript we see loaded during startup is only increasing.
 
 ### Web workers
 
@@ -388,7 +438,7 @@ If you have significant work that can be done without direct access to the DOM, 
 
 However, that communication pipeline can be tricky to set up and use, though there are open source solutions that can simplify this process. [comlink](https://www.npmjs.com/package/comlink) is one such library that helps with this, and can make the developer experience around web workers much more enjoyable.
 
-Whether you manage web workers on your own or with a library, the point is this: if you have expensive work to do, gauge whether or not it _needs_ to happen on the main thread, and if not, strongly consider using web workers to make the user experience of your websites as good as it possibly can be.
+Whether you manage web workers on your own or with a library, the point is this: if you have expensive work to do, gauge whether or not it needs to happen on the main thread, and if not, strongly consider using web workers to make the user experience of your websites as good as it possibly can be.
 
 ### Worklets
 
@@ -418,7 +468,7 @@ Adoption of audio worklets is even lower: only four in a million websites use it
 
 ## How is JavaScript delivered?
 
-An equally important aspect of JavaScript performance is how we _deliver_ scripts to the browser, which includes a few common—yet sometimes missed—opportunities for optimization, starting with how we _compress_ JavaScript.
+An equally important aspect of JavaScript performance is how we deliver scripts to the browser, which includes a few common—yet sometimes missed—opportunities for optimization, starting with how we compress JavaScript.
 
 ### Compression
 
@@ -436,7 +486,7 @@ An equally important aspect of JavaScript performance is how we _deliver_ script
 
 There are a few compression techniques that can be used to reduce the transfer size of a script, with the [Brotli](https://github.com/google/brotli) (br) method being the [most effective](https://www.smashingmagazine.com/2016/10/next-generation-server-compression-with-brotli/). Despite Brotli's [excellent support in modern browsers](https://caniuse.com/brotli), it's still clear that [gzip](https://www.gzip.org/) is the most preferred method of compression. This is likely due to the fact that many web servers use it as the default.
 
-When something is the default, that default sometimes remains in place rather than being tuned for better performance. Given that only 34% of pages observed are compressing scripts with Brotli, it's clear that there's an opportunity on the table to improve the loading performance of script resources, but it's also worth noting that it _is_ an improvement over last year's adoption at 30%.
+When something is the default, that default sometimes remains in place rather than being tuned for better performance. Given that only 34% of pages observed are compressing scripts with Brotli, it's clear that there's an opportunity on the table to improve the loading performance of script resources, but it's also worth noting that it is an improvement over last year's adoption at 30%.
 
 {{ figure_markup(
     image="compression-by-host.png",
@@ -462,7 +512,7 @@ The problem is made worse by third-party script providers, which still deploy gz
 
 Thankfully, we're seeing that it's only mostly the smallest resources, specifically those third-party scripts that have payloads smaller than 5 KB, that are being delivered without compression. This is because compression yields diminishing returns when applied to small resources, and in fact, the added overhead of dynamic compression may cause delayed resource delivery. There are, unfortunately, some opportunities across the spectrum to compress larger resources, such as some first-party scripts with payloads over 100 KB.
 
-_Always_ check your compression settings to ensure you're delivering the smallest possible script payloads over the network, and remember: compression speeds up resource _delivery_. Those scripts, once delivered to the browser, will be decompressed and their processing time will not change due to compression. Compression is not a good excuse to deliver huge script payloads that can make interactivity worse during startup.
+Always check your compression settings to ensure you're delivering the smallest possible script payloads over the network, and remember: compression speeds up resource delivery. Those scripts, once delivered to the browser, will be decompressed and their processing time will not change due to compression. Compression is not a good excuse to deliver huge script payloads that can make interactivity worse during startup.
 
 ### Minification
 
@@ -534,7 +584,7 @@ Minification addresses one of the first principles of web performance: ship less
 
 Only 0.12% of requests for JavaScript resources on mobile devices used a source map HTTP header, whereas the number for desktop devices is 0.07%.
 
-From a performance perspective, this doesn't mean much. Source maps are a developer experience enhancement. What you _should_ avoid, however, is the use of _inline_ source maps, which insert a base64 representation of the original source into a production-ready JavaScript asset. Inlining source maps means that you're not just sending your JavaScript resources to users, but also their source maps, which can lead to oversized JavaScript assets that take longer to download and process.
+From a performance perspective, this doesn't mean much. Source maps are a developer experience enhancement. What you should avoid, however, is the use of inline source maps, which insert a base64 representation of the original source into a production-ready JavaScript asset. Inlining source maps means that you're not just sending your JavaScript resources to users, but also their source maps, which can lead to oversized JavaScript assets that take longer to download and process.
 
 ## Responsiveness
 
@@ -586,7 +636,7 @@ Consider that a "good" INP score is [200 milliseconds](https://web.dev/inp/#what
 
 Dovetailing into long tasks, there's the [Total Blocking Time (TBT)](https://web.dev/tbt/) metric, which calculates the total blocking time of long tasks during startup.
 
-Note that unlike the preceding stats on FID and INP, TBT and TTI (below) are not sourced from real-user data. Instead, we're measuring synthetic performance in [simulated](./methodology#webpagetest) desktop and mobile environments with device-appropriate CPU and network throttling enabled. As a result of this approach, we get exactly one TBT and TTI value for each page, rather than a distribution of real-user values across the entire website.
+Note that unlike the preceding stats on FID and INP, TBT and TTI (below) are not sourced from real-user data. Instead, we're measuring synthetic performance in [simulated](./methodology#lighthouse) desktop and mobile environments with device-appropriate CPU and network throttling enabled. As a result of this approach, we get exactly one TBT and TTI value for each page, rather than a distribution of real-user values across the entire website.
 
 Considering that [INP correlates very well with TBT](https://github.com/GoogleChromeLabs/chrome-http-archive-analysis/blob/main/notebooks/HTTP_Archive_TBT_and_INP.ipynb), it's reasonable to assume that high TBT scores may produce poorer INP scores. Using our synthetic approach, we see a wide gulf between desktop and mobile segments, indicating that desktop devices with better processing power and memory are outperforming less capable mobile devices by a wide margin. At the 75th percentile, a page has nearly 3.6 seconds of blocking time, which qualifies as a poor experience.
 
@@ -600,7 +650,7 @@ Considering that [INP correlates very well with TBT](https://github.com/GoogleCh
   )
 }}
 
-Finally, we come to [Time to Interactive (TTI)](https://web.dev/tti/), which is considered "good" if the metric comes in at under 5 seconds. Given that only the 10th percentile _barely_ slips in under the 5 second mark, most websites in our simulated environment are relying on JavaScript to such an extent that pages are unable to become interactive within a reasonable timeframe—especially the 90th percentile, which takes a staggering 41.2 seconds to become interactive.
+Finally, we come to [Time to Interactive (TTI)](https://web.dev/tti/), which is considered "good" if the metric comes in at under 5 seconds. Given that only the 10th percentile barely slips in under the 5 second mark, most websites in our simulated environment are relying on JavaScript to such an extent that pages are unable to become interactive within a reasonable timeframe—especially the 90th percentile, which takes a staggering 41.2 seconds to become interactive.
 
 ### Long tasks/blocking time
 
@@ -678,7 +728,7 @@ Avoid using synchronous XHR, and XHR in general. `fetch` is a much more ergonomi
 
 Before the introduction of DOM insertion methods ([`appendChild`](https://developer.mozilla.org/docs/Web/API/Node/appendChild) and others, for example), [`document.write`](https://developer.mozilla.org/en-US/docs/Web/API/Document/write) was used to insert content at the position the `document.write` was made in the document.
 
-`document.write` is very problematic. For one, it blocks the HTML parser, and is problematic for a number of other reasons [the HTML spec itself warns about](https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document.write()). On slow connections, blocking document parsing to append nodes in this way creates performance problems that are entirely avoidable.
+`document.write` is very problematic. For one, it blocks the HTML parser, and is problematic for a number of other reasons [the HTML spec itself warns against its use](https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document.write()). On slow connections, blocking document parsing to append nodes in this way creates performance problems that are entirely avoidable.
 
 {{ figure_markup(
     caption="The number of mobile pages using `document.write`.",
@@ -714,7 +764,7 @@ Transformations can add a lot of extra bytes to production JavaScript for the sa
 
 Babel is doing much to solve this problem out of the box, such as through [the compiler assumptions feature](https://babeljs.io/docs/en/assumptions), but Babel is still driven by user-defined configurations, and can only do so much in the presence of outdated configuration files.
 
-We strongly encourage developers to carefully review their [Babel](https://babeljs.io/docs/en/configuration) and [Browserslist](https://github.com/browserslist/browserslist) configurations to ensure that the minimum amount of transforms are applied to code in order for them to work in required browsers. Doing so can result in large reduction of bytes shipped to end users. Developers have a lot of work to do in this area, and we hope to see this figure decline over time now that the language's evolution has relatively stabilized.
+As mentioned above, we strongly encourage developers to carefully review their [Babel](https://babeljs.io/docs/en/configuration) and [Browserslist](https://github.com/browserslist/browserslist) configurations to ensure that the minimum amount of transforms are applied to code in order for them to work in required browsers. Doing so can result in large reduction of bytes shipped to end users. Developers have a lot of work to do in this area, and we hope to see this figure decline over time now that the language's evolution has relatively stabilized.
 
 ## How is JavaScript used?
 
@@ -751,20 +801,68 @@ React usage notably remained the same from last year at 8%, which may be a signa
 
 It's not an uncommon scenario to see multiple frameworks and libraries used on the same page. As with last year, we'll examine this phenomenon to gain insight into how many libraries and frameworks have been used together in 2022.
 
-<figure markdown>
-| Libraries                                              | Desktop  | Mobile  |
-| ------------------------------------------------------ | -------- | ------- |
-| jQuery                                                 | 10.19%   | 10.33%  |
-| jQuery, jQuery Migrate                                 | 4.30%    | 4.94%   |
-| core-js, jQuery, jQuery Migrate                        | 2.48%    | 2.80%   |
-| core-js, jQuery                                        | 2.78%    | 2.74%   |
-| jQuery, jQuery UI                                      | 2.40%    | 2.07%   |
-| core-js, jQuery, jQuery Migrate, jQuery UI             | 1.18%    | 1.36%   |
-| jQuery, jQuery Migrate, jQuery UI                      | 0.88%    | 0.99%   |
-| GSAP, Lodash, Polyfill, React                          | 0.48%    | 0.93%   |
-| Modernizr, jQuery                                      | 0.87%    | 0.86%   |
-| core-js                                                | 0.92%    | 0.85%   |
-
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Libraries</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>jQuery</td>
+        <td class="numeric">10.19%</td>
+        <td class="numeric">10.33%</td>
+      </tr>
+      <tr>
+        <td>jQuery, jQuery Migrate</td>
+        <td class="numeric">4.30%</td>
+        <td class="numeric">4.94%</td>
+      </tr>
+      <tr>
+        <td>core-js, jQuery, jQuery Migrate</td>
+        <td class="numeric">2.48%</td>
+        <td class="numeric">2.80%</td>
+      </tr>
+      <tr>
+        <td>core-js, jQuery</td>
+        <td class="numeric">2.78%</td>
+        <td class="numeric">2.74%</td>
+      </tr>
+      <tr>
+        <td>jQuery, jQuery UI</td>
+        <td class="numeric">2.40%</td>
+        <td class="numeric">2.07%</td>
+      </tr>
+      <tr>
+        <td>core-js, jQuery, jQuery Migrate, jQuery UI</td>
+        <td class="numeric">1.18%</td>
+        <td class="numeric">1.36%</td>
+      </tr>
+      <tr>
+        <td>jQuery, jQuery Migrate, jQuery UI</td>
+        <td class="numeric">0.88%</td>
+        <td class="numeric">0.99%</td>
+      </tr>
+      <tr>
+        <td>GSAP, Lodash, Polyfill, React</td>
+        <td class="numeric">0.48%</td>
+        <td class="numeric">0.93%</td>
+      </tr>
+      <tr>
+        <td>Modernizr, jQuery</td>
+        <td class="numeric">0.87%</td>
+        <td class="numeric">0.86%</td>
+      </tr>
+      <tr>
+        <td>core-js</td>
+        <td class="numeric">0.92%</td>
+        <td class="numeric">0.85%</td>
+      </tr>
+    </tbody>
+  </table>
   <figcaption>{{ figure_link(
     caption="Analysis of libraries and frameworks used together on observed pages.",
     sheets_gid="1200090523",
@@ -787,22 +885,70 @@ Given the wide proliferation of JavaScript on today's web, and with the advent o
   )
 }}
 
-While 57% of mobile pages serving up a vulnerable JavaScript library or framework is significant, this figure _is_ down from last year's figure of 64%. This is encouraging, but there's quite a bit of work to be done to lower this figure. We hope that as more security vulnerabilities are patched, developers will be incentivized to update their dependencies to avoid exposing their users to harm.
+While 57% of mobile pages serving up a vulnerable JavaScript library or framework is significant, this figure is down from last year's figure of 64%. This is encouraging, but there's quite a bit of work to be done to lower this figure. We hope that as more security vulnerabilities are patched, developers will be incentivized to update their dependencies to avoid exposing their users to harm.
 
-<figure markdown>
-Library or framework | Desktop | Mobile
--- | -- | --
-jQuery | 49.12% | 48.80%
-jQuery UI | 16.01% | 14.88%
-Bootstrap | 11.53% | 11.19%
-Moment.js | 4.54% | 3.91%
-Underscore | 3.41% | 3.11%
-Lo-Dash | 2.52% | 2.44%
-GreenSock JS | 1.65% | 1.62%
-Handlebars | 1.27% | 1.12%
-AngularJS | 0.99% | 0.79%
-Mustache | 0.44% | 0.57%
-
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Library or framework</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>jQuery</td>
+        <td class="numeric">49.12%</td>
+        <td class="numeric">48.80%</td>
+      </tr>
+      <tr>
+        <td>jQuery UI</td>
+        <td class="numeric">16.01%</td>
+        <td class="numeric">14.88%</td>
+      </tr>
+      <tr>
+        <td>Bootstrap</td>
+        <td class="numeric">11.53%</td>
+        <td class="numeric">11.19%</td>
+      </tr>
+      <tr>
+        <td>Moment.js</td>
+        <td class="numeric">4.54%</td>
+        <td class="numeric">3.91%</td>
+      </tr>
+      <tr>
+        <td>Underscore</td>
+        <td class="numeric">3.41%</td>
+        <td class="numeric">3.11%</td>
+      </tr>
+      <tr>
+        <td>Lo-Dash</td>
+        <td class="numeric">2.52%</td>
+        <td class="numeric">2.44%</td>
+      </tr>
+      <tr>
+        <td>GreenSock JS</td>
+        <td class="numeric">1.65%</td>
+        <td class="numeric">1.62%</td>
+      </tr>
+      <tr>
+        <td>Handlebars</td>
+        <td class="numeric">1.27%</td>
+        <td class="numeric">1.12%</td>
+      </tr>
+      <tr>
+        <td>AngularJS</td>
+        <td class="numeric">0.99%</td>
+        <td class="numeric">0.79%</td>
+      </tr>
+      <tr>
+        <td>Mustache</td>
+        <td class="numeric">0.44%</td>
+        <td class="numeric">0.57%</td>
+      </tr>
+    </tbody>
+  </table>
   <figcaption>{{ figure_link(
     caption="The percentage of pages having known JavaScript vulnerabilities among the top ten most commonly used libraries and frameworks.",
     sheets_gid="1532536873",
