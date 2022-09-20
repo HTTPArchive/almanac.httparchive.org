@@ -115,14 +115,14 @@ Another thing to keep in mind is the unit you choose for font size. We found tha
 Language identification using the `lang` attribute is important for providing better screen reader support, and also helps in proper browser translation. This is another good example of a feature that helps everyone, including people with disabilities. Without the `lang` attribute, the automatic browser translation in Chrome can often translate the text incorrectly. Manuel Matuzovic gives one such <a hreflang="en" href="https://www.matuzo.at/blog/lang-attribute/">example of an auto-translate mishap</a> due to the lack of a`lang` attribute.
 
 {{ figure_markup(
-  content="82.7%",
+  content="83%",
   caption="Mobile sites have a valid `lang` attribute.",
   classes="big-number",
   sheets_gid="420415839",
   sql_file="valid_html_lang.sql",
 ) }}
 
-It's encouraging to see that 82.7% of mobile websites do have a `lang` attribute, and within that group, 99.4% have a valid value. There's still room for improvement given this is a Level A conformance issue under WCAG 2.1. To meet this success criteria, one can put the `lang` attribute in the `<html>` tag with a <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/act/rules/bf051a/#known-primary-language-tag">known primary language tag</a>. The [`lang` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang) is a global attribute and can be set on other tags as well in case the web page has content in more than one language. It's important to define the correct language for a website. In cases where people copy a template to create a website, there is sometimes a discrepancy between the language used in the website's content and the `lang="en"` attribute used in the code.
+It's encouraging to see that 83% of mobile websites do have a `lang` attribute, and within that group, over 99% have a valid value. There's still room for improvement given this is a Level A conformance issue under WCAG 2.1. To meet this success criteria, one can put the `lang` attribute in the `<html>` tag with a <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/act/rules/bf051a/#known-primary-language-tag">known primary language tag</a>. The [`lang` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang) is a global attribute and can be set on other tags as well in case the web page has content in more than one language. It's important to define the correct language for a website. In cases where people copy a template to create a website, there is sometimes a discrepancy between the language used in the website's content and the `lang="en"` attribute used in the code.
 
 ### User preference
 
@@ -221,30 +221,30 @@ Landmarks help divide a web page into thematic regions that makes it easier for 
       <tr>
         <td>`<main>`</td>
         <td>`role="main"`</td>
-        <td class="numeric">31.0%</td>
-        <td class="numeric">16.8%</td>
-        <td class="numeric">38.1%</td>
+        <td class="numeric">31%</td>
+        <td class="numeric">17%</td>
+        <td class="numeric">38%</td>
       </tr>
       <tr>
         <td>`<header>`</td>
         <td>`role="banner"`</td>
-        <td class="numeric">63.4%</td>
-        <td class="numeric">13.2%</td>
-        <td class="numeric">64.8%</td>
+        <td class="numeric">63%</td>
+        <td class="numeric">13%</td>
+        <td class="numeric">65%</td>
       </tr>
       <tr>
         <td>`<nav>`</td>
         <td>`role="navigation"`</td>
-        <td class="numeric">63.4%</td>
-        <td class="numeric">22.1%</td>
-        <td class="numeric">67.0%</td>
+        <td class="numeric">63%</td>
+        <td class="numeric">22%</td>
+        <td class="numeric">67%</td>
       </tr>
       <tr>
         <td>`<footer>`</td>
         <td>`role="contentinfo"`</td>
-        <td class="numeric">64.6%</td>
-        <td class="numeric">11.4%</td>
-        <td class="numeric">65.7%</td>
+        <td class="numeric">65%</td>
+        <td class="numeric">11%</td>
+        <td class="numeric">66%</td>
       </tr>
     </tbody>
   </table>
@@ -264,14 +264,14 @@ The most commonly expected landmarks that the majority of web pages should have 
 Headings help all users, including those using assistive technologies, to navigate through the website. Users with assistive technologies can navigate to the exact sections that they are interested in. As mentioned in <a hreflang="en" href="https://marcysutton.com/how-i-audit-a-website-for-accessibility#Headings-and-Semantic-Structure">Marcy Sutton's article on headings and semantic structure</a> , headings can be thought of as a table of contents that one can navigate through to go to a particular content area.
 
 {{ figure_markup(
-  content="57.7%",
+  content="58%",
   caption="Mobile sites passing the Lighthouse audit for properly ordered headings.",
   classes="big-number",
   sheets_gid="1270834582",
   sql_file="lighthouse_a11y_audits.sql",
 ) }}
 
-57.7% of websites pass the test for properly ordered headings that do not skip levels, which is the same as last year. Hopefully this number will increase next year since the <a hreflang="en" href="https://github.com/whatwg/html/pull/7829">document outline example in WHATWG standards have been updated</a>. A very important thing to remember is that heading levels don't have to represent the actual style (or importance) of a particular element. Headings are to be used primarily for hierarchy purposes, while CSS can be used for the styling of the element. A very good article on how to structure headings in your page is by Steve Faulkner titled, <a hreflang="en" href="https://stevefaulkner.github.io/Articles/How%20to%20mark%20up%20subheadings,%20subtitles,%20alternative%20titles%20and%20taglines.html">"How to mark up subheadings, subtitles, alternative titles and taglines"</a>.
+58% of websites pass the test for properly ordered headings that do not skip levels, which is the same as last year. Hopefully this number will increase next year since the <a hreflang="en" href="https://github.com/whatwg/html/pull/7829">document outline example in WHATWG standards have been updated</a>. A very important thing to remember is that heading levels don't have to represent the actual style (or importance) of a particular element. Headings are to be used primarily for hierarchy purposes, while CSS can be used for the styling of the element. A very good article on how to structure headings in your page is by [Steve Faulkner](https://twitter.com/stevefaulkner) titled, <a hreflang="en" href="https://stevefaulkner.github.io/Articles/How%20to%20mark%20up%20subheadings,%20subtitles,%20alternative%20titles%20and%20taglines.html">"How to mark up subheadings, subtitles, alternative titles and taglines"</a>.
 
 ### Secondary navigation
 
@@ -434,14 +434,14 @@ The `required` and `aria-required` attributes are two ways of telling an assisti
 Websites often want to verify that the visitor is a human and not a bot, which is a program that crawls through websites for many different purposes. For example, The Web Almanac is created each year by sending out a similar kind of web crawler to gather information from websites. These types of "human-only" tests are called a CAPTCHA – "Completely Automated Public Turing Test, to Tell Computers and Humans Apart".
 
 {{ figure_markup(
-  content="18.5%",
+  content="19%",
   caption="Mobile sites using a CAPTCHA",
   classes="big-number",
   sheets_gid="1615174635",
   sql_file="captcha_usage.sql",
 ) }}
 
-18.5% of mobile websites have one of two captcha implementations which we can detect. This type of test can be difficult to solve for everyone (see <a hreflang="en" href="https://baymard.com/blog/captchas-in-checkout">CAPTCHAs Have an 8% Failure Rate</a>) but would likely be more difficult for people with low vision and other vision or reading-related disabilities. Also, such tests might fail under <a hreflang="en" href="https://w3c.github.io/wcag/understanding/accessible-authentication.html">WCAG 3.3.7 Accessible Authentication</a> once WCAG 2.2 is released. W3C actually has a <a hreflang="en" href="https://www.w3.org/TR/turingtest/">paper on alternatives to visual turing tests</a> that is definitely recommended.
+19% of mobile websites have one of two captcha implementations which we can detect. This type of test can be difficult to solve for everyone (see <a hreflang="en" href="https://baymard.com/blog/captchas-in-checkout">CAPTCHAs Have an 8% Failure Rate</a>) but would likely be more difficult for people with low vision and other vision or reading-related disabilities. Also, such tests might fail under <a hreflang="en" href="https://w3c.github.io/wcag/understanding/accessible-authentication.html">WCAG 3.3.7 Accessible Authentication</a> once WCAG 2.2 is released. W3C actually has a <a hreflang="en" href="https://www.w3.org/TR/turingtest/">paper on alternatives to visual turing tests</a> that is definitely recommended.
 
 ## Media on the web
 
@@ -450,14 +450,14 @@ Accessibility considerations become very crucial when it comes to media consumpt
 ### Images
 
 {{ figure_markup(
-  content="58.7%",
+  content="59%",
   caption="Mobile pages passing the Lighthouse image-alt audit for images with alt text",
   classes="big-number",
   sheets_gid="1270834582",
   sql_file="lighthouse_a11y_audits.sql",
 ) }}
 
-Images on the web can have an `alt` attribute which provides an alternate text description of the image. A screen reader can then use this information to create an audio description of the image for people with a visual impairment. We found that 58.7% of sites pass the test for images with alt text, which is a small (1%) increase from 2021.
+Images on the web can have an `alt` attribute which provides an alternate text description of the image. A screen reader can then use this information to create an audio description of the image for people with a visual impairment. We found that 59% of sites pass the test for images with alt text, which is a small (1%) increase from 2021.
 
 {{ figure_markup(
   image="pages-containing-alt-with-file-extension.png",
@@ -468,7 +468,7 @@ Images on the web can have an `alt` attribute which provides an alternate text d
   sql_file="alt_ending_in_image_extension.sql",
 ) }}
 
-The text in the `alt` attribute depends on the context. If the image is decorative and doesn't provide any meaningful information, then `alt=""` is ideal. However, if the image is crucial to the context of the page, then a proper text description is essential. If the image is a child of a link, then ideally the `alt` attribute should be used to label the link so the user knows where the link takes them. We found that 7.5% of mobile web pages and 7.2% of desktop pages with an `alt` attribute have a file extension assigned to that alt attribute. This probably means that the `alt` attribute just contains the image filename, which is not helpful at all, and should be avoided in every case.
+The text in the `alt` attribute depends on the context. If the image is decorative and doesn't provide any meaningful information, then `alt=""` is ideal. However, if the image is crucial to the context of the page, then a proper text description is essential. If the image is a child of a link, then ideally the `alt` attribute should be used to label the link so the user knows where the link takes them. We found that 7.5% of mobile web pages and 7.2% of desktop pages with an `alt` attribute have a file extension assigned to that `alt` attribute. This probably means that the `alt` attribute just contains the image filename, which is not helpful at all, and should be avoided in every case.
 
 {{ figure_markup(
   image="common-file-extensions-in-alt-text.png",
@@ -509,14 +509,14 @@ We found that 27% of alt text attributes in desktop and mobile websites were emp
 `<track>` loads one or more WebVTT files, which allows text content to be synchronized with the audio it is describing. We found that only 0.03% of all pages on desktop and 0.05% of all pages on mobile with a detectable `<audio>` element had at least one accompanying `<track>` element.
 
 {{ figure_markup(
-  content="0.7%",
+  content="0.71%",
   caption="Desktop websites with a `<video>` element have at least one accompanying `<track>` element",
   classes="big-number",
   sheets_gid="345150659",
   sql_file="video_track_usage.sql",
 ) }}
 
-The `<track>` element was included with a corresponding `<video>` element less than 1% of the time — 0.7% for desktop sites, and 0.6% for mobile sites. These data points do not include audio or video embedded via an `<iframe>` element, which is common for content like podcasts or YouTube videos. It should also be noted that most popular third-party audio and video embedding services include the ability to add synchronized text equivalents.
+The `<track>` element was included with a corresponding `<video>` element less than 1% of the time — 0.71% for desktop sites, and 0.65% for mobile sites. These data points do not include audio or video embedded via an `<iframe>` element, which is common for content like podcasts or YouTube videos. It should also be noted that most popular third-party audio and video embedding services include the ability to add synchronized text equivalents.
 
 ## Assistive technology with ARIA
 
@@ -551,38 +551,38 @@ Currently 72.1% of desktop pages have at least one instance of an ARIA role attr
 We found that 33% (up from 29% in 2021, and 25% in 2020) of desktop and mobile sites had homepages with at least one element with an explicitly assigned `role="button"`. This increase in percentage is likely not good since this indicates that websites are either creating custom buttons using `<div>` or `<span>`, or are adding a redundant role to `<button>` elements. Both of these are bad practices and go against the <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">first rule of ARIA</a>. Following this rule, one should always use a native HTML element (in this case, `<button>`) when possible.
 
 {{ figure_markup(
-  content="20.6%",
+  content="21%",
   caption="Desktop websites have at least one link with a button role",
   classes="big-number",
   sheets_gid="751886683",
   sql_file="anchors_with_role_button.sql",
 ) }}
 
-Adding an ARIA role tells assistive technology what the element is, but doesn't provide any other functionality to make elements behave like their native counterpart. For example, we found that 20.6% of websites had at least one link with a `role="button"`. This kind of pattern can cause issues with keyboard navigation, as links and buttons have different interactions. Though both links and buttons are interactive, links are not activated with the space key, whereas buttons are.
+Adding an ARIA role tells assistive technology what the element is, but doesn't provide any other functionality to make elements behave like their native counterpart. For example, we found that 21% of websites had at least one link with a `role="button"`. This kind of pattern can cause issues with keyboard navigation, as links and buttons have different interactions. Though both links and buttons are interactive, links are not activated with the space key, whereas buttons are.
 
 ### Using presentation role
 
 When an element has `role="presentation"` declared on it, its semantics are stripped away, as well the semantics of any of its child elements if those child elements are required child elements (such as `li` nested under a `ul` element, or rows and cells in a table). For example, declaring `role="presentation"` on a parent table or list element will cascade the role to their required child elements and none of them will have table or list semantics.
 
 {{ figure_markup(
-  content="23.7%",
+  content="24%",
   caption="Mobile websites have at least one element with a role=presentation",
   classes="big-number",
   sheets_gid="283521996",
   sql_file="common_aria_role.sql",
 ) }}
 
-Removing an element's semantics causes an element to lose its behavior. It becomes only visually present, and assistive technologies fail to understand the structure of the element and cannot convey that message to the user. For example, a list with a role="presentation" will no longer communicate any information to a screen reader about the list structure. We found that 24.9% of desktop pages and 23.7% of mobile pages have at least one element with role="presentation".
+Removing an element's semantics causes an element to lose its behavior. It becomes only visually present, and assistive technologies fail to understand the structure of the element and cannot convey that message to the user. For example, a list with a role="presentation" will no longer communicate any information to a screen reader about the list structure. We found that 25% of desktop pages and 24% of mobile pages have at least one element with role="presentation".
 
 {{ figure_markup(
-  content="11.3%",
+  content="11%",
   caption="Mobile websites have at least one element with a role=none",
   classes="big-number",
   sheets_gid="283521996",
   sql_file="common_aria_role.sql",
 ) }}
 
-The same effect of semantic removal takes place with `role="none"`. We found that this year, the percentage of `role="none"` has also increased to 11.3% and is one of the top 10 most common ARIA roles. There are very few use cases where this is particularly helpful for assistive technology users, for example if there is a `<table>` element being used only for layouting. But it can otherwise be harmful and should be used sparingly.
+The same effect of semantic removal takes place with `role="none"`. We found that this year, the percentage of `role="none"` has also increased to 11% and is one of the top 10 most common ARIA roles. There are very few use cases where this is particularly helpful for assistive technology users, for example if there is a `<table>` element being used only for layouting. But it can otherwise be harmful and should be used sparingly.
 
 Most browsers ignore role="presentation" and role="none" on focusable elements, including links and inputs, or anything with a tabindex attribute set. Browsers also ignore the inclusion of the role if any of the element contains any global ARIA states and properties, such as aria-describedby.
 
@@ -595,7 +595,7 @@ The accessible name can be derived from an element's content (such as button tex
 {{ figure_markup(
   image="top10-aria-attributes.png",
   caption="Top 10 ARIA attributes.",
-  description="A bar chart showing `aria-label` is used by 58.4% of desktop sites and 57.0% of mobile sites, `aria-hidden` by 57.8% and 57.0% respectively, `aria-expanded` by 28.5% and 27.8%, `aria-labelledby` by 24.3% and 22.6%, `aria-controls` by 23.9% and 22.8%, `aria-live` by 23.3% and 22.3%, `aria-haspopup` by 20.5% and 19.3%, `aria-current` by 17.8% and 19.4%, `aria-describedby` by 15.6% and 14.3%, and finally `aria-atomic` by 10.8% and 10.1%.",
+  description="A bar chart showing `aria-label` is used by 58% of desktop sites and 57% of mobile sites, `aria-hidden` by 58% and 57% respectively, `aria-expanded` by 29% and 28%, `aria-labelledby` by 24% and 23%, `aria-controls` by 24% and 23%, `aria-live` by 23% and 22%, `aria-haspopup` by 20% and 19%, `aria-current` by 18% and 19%, `aria-describedby` by 16% and 14%, and finally `aria-atomic` by 11% and 10%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSi-gjiB_GnE2U4P7oxN2zqs0DbA2YDPqtsfIm3IBmtph_VE7FTrQvw7L6FsOsJlcZFI6HEULXuKEeb/pubchart?oid=1585975336&format=interactive",
   sheets_gid="711360879",
   sql_file="common_element_attributes.sql",
@@ -606,7 +606,7 @@ There are two ARIA attributes that help in providing elements with an accessible
 {{ figure_markup(
   image="button-name-sources.png",
   caption="Button accessible name source.",
-  description="A bar chart showing the contents are used for 60.9% of desktop buttons and 57.9% of mobile buttons, `aria-label` attribute is used for 19.6% and 23.1% respectively, there is no accessible name for 9.1% and 11.8%, the `value` attribute is used for 9.6% and 6.6%, `title` attribute is used for 0.7% and 0.5%, an `aria-labelledby` related element is used for 0.1% and 0.1%.",
+  description="A bar chart showing the contents are used for 61% of desktop buttons and 58% of mobile buttons, `aria-label` attribute is used for 20% and 23% respectively, there is no accessible name for 9% and 12%, the `value` attribute is used for 10% and 7%, `title` attribute is used for 1% on both, an `aria-labelledby` related element is used for 0% on both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSi-gjiB_GnE2U4P7oxN2zqs0DbA2YDPqtsfIm3IBmtph_VE7FTrQvw7L6FsOsJlcZFI6HEULXuKEeb/pubchart?oid=561787469&format=interactive",
   sheets_gid="597786485",
   sql_file="button_name_sources.sql",
@@ -614,37 +614,37 @@ There are two ARIA attributes that help in providing elements with an accessible
   height="457",
 ) }}
 
-Buttons typically get their accessible names from their content or an ARIA attribute. Per the first rule of ARIA, if an element can derive its accessible name without the use of ARIA, this is preferable. Therefore a `<button>` should get its accessible name from its text content rather than an ARIA attribute if possible. We found that 60.9% of buttons on desktop and 57.9% in mobile sites get their accessible name from content which is good. We also found that 19.6% of buttons on desktop sites and 23.1% of buttons on mobile sites get their accessible names from the aria-label attribute. There are few cases where an aria-label can help. For example, if the page has multiple buttons with the same content, but different purposes, then an aria-label can be used to provide a better accessible name. Sometimes developers also use aria-label when the button has only an image or icon, which might be a reason why mobile sites use the aria-label, rather than the content, to define accessible names.
+Buttons typically get their accessible names from their content or an ARIA attribute. Per the first rule of ARIA, if an element can derive its accessible name without the use of ARIA, this is preferable. Therefore a `<button>` should get its accessible name from its text content rather than an ARIA attribute if possible. We found that 61% of buttons on desktop and 58% in mobile sites get their accessible name from content which is good. We also found that 20% of buttons on desktop sites and 23% of buttons on mobile sites get their accessible names from the aria-label attribute. There are few cases where an aria-label can help. For example, if the page has multiple buttons with the same content, but different purposes, then an aria-label can be used to provide a better accessible name. Sometimes developers also use aria-label when the button has only an image or icon, which might be a reason why mobile sites use the aria-label, rather than the content, to define accessible names.
 
 ### Hiding content
 
 Sometimes the visual interface can contain some redundant elements that are unhelpful for users of assistive technologies. In such cases `aria-hidden="true"` can be used to hide the element from screen readers. However, they should never be used if omitting such an element would provide a screen reader user with less information than the visual interface. Hiding content from assistive technologies should never be used to skip over content that is challenging to make accessible.
 
 {{ figure_markup(
-  content="57.8%",
+  content="58%",
   caption="Desktop websites have at least one instance of the `aria-hidden` attribute",
   classes="big-number",
   sheets_gid="711360879",
   sql_file="common_element_attributes.sql",
 ) }}
 
-We found that 24% of desktop pages and 23% of mobile pages had at least one instance of an element with the aria-hidden attribute. Hiding and showing content is a prevalent pattern in modern interfaces, and it can be helpful to declutter the UI for everyone.
+We found that 58% of desktop pages and 57% of mobile pages had at least one instance of an element with the `aria-hidden` attribute. Hiding and showing content is a prevalent pattern in modern interfaces, and it can be helpful to declutter the UI for everyone.
 
-It's important to use the proper aria attribute to convey the correct message. For example, disclosure widgets should be making use of the `aria-expanded` attribute to indicate to assistive technology that something is revealed by expanding when the control is activated and hidden when activated again. We found that 28.5% of desktop pages and 27.8% of mobile pages had at least one element with the aria-expanded attribute.
+It's important to use the proper aria attribute to convey the correct message. For example, disclosure widgets should be making use of the `aria-expanded` attribute to indicate to assistive technology that something is revealed by expanding when the control is activated and hidden when activated again. We found that 29% of desktop pages and 28% of mobile pages had at least one element with the `aria-expanded` attribute.
 
 ### Screen reader-only text
 
 A common technique that developers employ to supply additional information for screen reader users is to use CSS to visually hide a passage of text but make it discoverable by a screen reader. This <a hreflang="en" href="https://css-tricks.com/inclusively-hidden/">CSS code</a> is used such that it's present in the accessibility tree but hidden visually.
 
 {{ figure_markup(
-  content="15.4%",
+  content="15%",
   caption="Desktop websites with a `sr-only` or `visually-hidden` class",
   classes="big-number",
   sheets_gid="642136962",
   sql_file="sr_only_classes.sql",
 ) }}
 
-`sr-only` and `visually-hidden` are the most common class names used by developers and by UI frameworks to achieve screen reader-only text. Bootstrap and Tailwind also use `sr-only` classes for such elements. We found that 15.4% of desktop pages and 14.0% of mobile pages had one or both of these CSS class names. It is important to keep in mind that not all screen reader users are fully visually impaired, and thus one should avoid making too much use of screen reader-only solutions.
+`sr-only` and `visually-hidden` are the most common class names used by developers and by UI frameworks to achieve screen reader-only text. Bootstrap and Tailwind also use `sr-only` classes for such elements. We found that 15% of desktop pages and 14% of mobile pages had one or both of these CSS class names. It is important to keep in mind that not all screen reader users are fully visually impaired, and thus one should avoid making too much use of screen reader-only solutions.
 
 ### Dynamically-rendered content
 
@@ -674,32 +674,32 @@ ARIA live regions allow us to listen for changes in the DOM, such that the updat
       <tr>
         <th scope="row"><code>status</code></th>
         <td>polite</td>
-        <td class="numeric">5.64%</td>
-        <td class="numeric">5.09%</td>
+        <td class="numeric">5.6%</td>
+        <td class="numeric">5.1%</td>
       </tr>
       <tr>
         <th scope="row"><code>alert</code></th>
         <td>assertive</td>
-        <td class="numeric">3.74%</td>
-        <td class="numeric">3.41%</td>
+        <td class="numeric">3.7%</td>
+        <td class="numeric">3.4%</td>
       </tr>
       <tr>
         <th scope="row"><code>timer</code></th>
         <td>off</td>
-        <td class="numeric">0.58%</td>
-        <td class="numeric">0.58%</td>
+        <td class="numeric">0.6%</td>
+        <td class="numeric">0.6%</td>
       </tr>
       <tr>
         <th scope="row"><code>log</code></th>
         <td>polite</td>
-        <td class="numeric">0.37%</td>
-        <td class="numeric">0.36%</td>
+        <td class="numeric">0.4%</td>
+        <td class="numeric">0.4%</td>
       </tr>
       <tr>
         <th scope="row"><code>marquee</code></th>
         <td>off</td>
-        <td class="numeric">0.02%</td>
-        <td class="numeric">0.01%</td>
+        <td class="numeric">0.0%</td>
+        <td class="numeric">0.0%</td>
       </tr>
     </tbody>
   </table>
@@ -733,7 +733,7 @@ Their vendors generally promise a quick and easy solution to online accessibilit
   sql_file="a11y_technology_usage.sql",
 ) }}
 
-We found that 1.56% of desktop websites use one of 22 specific accessibility apps we could detect in 2022. This is a clear rise compared to 0.96% in 2021.
+We found that 1.6% of desktop websites use one of 22 specific accessibility apps we could detect in 2022. This is a clear rise compared to 1% in 2021.
 
 Not all of those products are accessibility overlays, however the specific overlays we can detect show a similar rise. UserWay is the most popular overlay in our dataset, in use by 0.49% of desktop websites and 0.39% on mobile, compared to respectively 0.39% and 0.33% in 2021.
 
@@ -773,8 +773,8 @@ Adrian Roselli's <a hreflang="en" href="https://adrianroselli.com/2020/06/access
 
 ## Conclusion
 
-Our analysis shows that there hasn't been much of a substantial change in the accessibility issues seen across websites. There have been some improvements. For example, adoption of `:focus-visible` has increased by almost 9% this year. Our analysis shows that there are still a lot of straightforward fixes, such as color contrast and image alt attributes, that could cause high impacts if addressed.
+Our analysis shows that there hasn't been much of a substantial change in the accessibility issues seen across websites. There have been some improvements. For example, adoption of `:focus-visible` has increased by almost 9% this year. Our analysis shows that there are still a lot of straightforward fixes, such as color contrast and image `alt` attributes, that could cause high impacts if addressed.
 
-We see that there are often a lot of misuse of features that may give an illusion of things being more accessible but in reality it often degrades the experience. For example, we see 19.8% of websites have an anchor tag with `role=button`. Also, we see that 2.2% of alt attributes across websites have a file extension in them, which really doesn't help in conveying the meaning of the image.
+We see that there are often a lot of misuse of features that may give an illusion of things being more accessible but in reality it often degrades the experience. For example, we see 19.8% of websites have an anchor tag with `role=button`. Also, we see that 2.2% of `alt` attributes across websites have a file extension in them, which really doesn't help in conveying the meaning of the image.
 
 A lot of the accessibility issues that we see in our analysis can be avoided if designers and developers start thinking about web accessibility from the very beginning and not as an enhancement at the end. Like [Anna E. Cook once said](https://twitter.com/annaecook/status/1404615552883060737), there's "no MVP without accessibility". The web community needs to realize that a website only has a great User Experience when that User Experience works for everyone, irrespective of the device and assistive technology used. We have tried to focus on key metrics that can be easily addressed in the hope that in 2023 we see the numbers improve.
