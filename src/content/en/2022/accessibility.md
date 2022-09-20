@@ -122,7 +122,7 @@ Language identification using the `lang` attribute is important for providing be
   sql_file="valid_html_lang.sql",
 ) }}
 
-It's encouraging to see that 82.7% of mobile websites do have a `lang` attribute, and within that group, 99.4% have a valid value. There's still room for improvement given this is a Level A conformance issue under WCAG 2.1. To meet this success criteria, one can put the `lang` attribute in the `<html>` tag with a <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/act/rules/bf051a/#known-primary-language-tag">known primary language tag</a>. The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">`lang` attribute</a> is a global attribute and can be set on other tags as well in case the web page has content in more than one language. It's important to define the correct language for a website. In cases where people copy a template to create a website, there is sometimes a discrepancy between the language used in the website's content and the `lang="en"` attribute used in the code.
+It's encouraging to see that 82.7% of mobile websites do have a `lang` attribute, and within that group, 99.4% have a valid value. There's still room for improvement given this is a Level A conformance issue under WCAG 2.1. To meet this success criteria, one can put the `lang` attribute in the `<html>` tag with a <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/act/rules/bf051a/#known-primary-language-tag">known primary language tag</a>. The [`lang` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang) is a global attribute and can be set on other tags as well in case the web page has content in more than one language. It's important to define the correct language for a website. In cases where people copy a template to create a website, there is sometimes a discrepancy between the language used in the website's content and the `lang="en"` attribute used in the code.
 
 ### User preference
 
@@ -143,7 +143,7 @@ We found that 34.2% of mobile websites use `prefers-reduced-motion`. Websites th
 
 ### Forced colors mode
 
-Forced colors mode is an accessibility feature intended to increase the readability of text through color contrast. In forced colors mode, the user's operating system takes over control of most color-related styles. Common patterns such as background images are completely disabled, so text-to-background contrast is more predictable. Its best-known implementation is the High contrast mode in Windows, renamed <a hreflang="en" href="https://support.microsoft.com/en-us/topic/fedc744c-90ac-69df-aed5-c8a90125e696">Contrast Themes</a> in Windows 11. Those themes provide alternative low and high contrast color palettes, as well as the ability to customize any of the available <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/system_color_keywords">system colors</a>.
+Forced colors mode is an accessibility feature intended to increase the readability of text through color contrast. In forced colors mode, the user's operating system takes over control of most color-related styles. Common patterns such as background images are completely disabled, so text-to-background contrast is more predictable. Its best-known implementation is the High contrast mode in Windows, renamed <a hreflang="en" href="https://support.microsoft.com/en-us/topic/fedc744c-90ac-69df-aed5-c8a90125e696">Contrast Themes</a> in Windows 11. Those themes provide alternative low and high contrast color palettes, as well as the ability to customize any of the available [system colors](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/system_color_keywords).
 
 {{ figure_markup(
   image="forced-colors-mode.png",
@@ -366,7 +366,7 @@ There are specific things that one should keep in mind when it comes to accessib
 
 ### `<label>` element
 
-The `<label>` element is the most effective way of providing accessible names to input fields (or <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Basic_native_form_controls">form controls</a>) in a form. One can link a `<label>` to a form control programmatically using the `for` attribute. The `for` attribute should contain the value of the `id` attribute of the form control element that you want to link it with. For example:
+The `<label>` element is the most effective way of providing accessible names to input fields (or [form controls](https://developer.mozilla.org/en-US/docs/Learn/Forms/Basic_native_form_controls)) in a form. One can link a `<label>` to a form control programmatically using the `for` attribute. The `for` attribute should contain the value of the `id` attribute of the form control element that you want to link it with. For example:
 
 ```html
 <label for="email">Email</label>
@@ -590,7 +590,7 @@ Most browsers ignore role="presentation" and role="none" on focusable elements, 
 
 Parallel to the DOM there is a similar browser structure called the accessibility tree. It contains information about HTML elements including accessible names, descriptions, roles and states. This information is conveyed to assistive technologies through accessibility APIs.
 
-The accessible name can be derived from an element's content (such as button text), an attribute (such as an image alt text value), or an associated element (such as a programmatically associated label for a form control). There is a specificity ranking that is used to determine where the element gets its accessible name from if there are multiple potential sources. <a hreflang="en" href="https://twitter.com/LeonieWatson">Léonie Watson's</a> article, <a hreflang="en" href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/">What is an accessible name?</a> is a great source to learn more about accessible names.
+The accessible name can be derived from an element's content (such as button text), an attribute (such as an image alt text value), or an associated element (such as a programmatically associated label for a form control). There is a specificity ranking that is used to determine where the element gets its accessible name from if there are multiple potential sources. [Léonie Watson](https://twitter.com/LeonieWatson)'s article, <a hreflang="en" href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/">What is an accessible name?</a> is a great source to learn more about accessible names.
 
 {{ figure_markup(
   image="top10-aria-attributes.png",
@@ -709,12 +709,12 @@ ARIA live regions allow us to listen for changes in the DOM, such that the updat
       sheets_gid="283521996",
       sql_file="common_aria_role.sql",
     ) }}
- </figcaption>
+  </figcaption>
 </figure>
 
-The <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output">`<output>` element</a> also deserves an honorable mention, as the only HTML element with an implicit live region role that will announce its contents to end users. We see it used 16,144 times across our dataset for mobile sites and 12,120 times on desktop, or around 0.0002% of elements usage.
+The [`<output>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output) also deserves an honorable mention, as the only HTML element with an implicit live region role that will announce its contents to end users. We see it used 16,144 times across our dataset for mobile sites and 12,120 times on desktop, or around 0.0002% of elements usage.
 
-For more information about live region variants and usage check out the <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">MDN live region documentation</a> or play with this <a hreflang="en" href="https://dequeuniversity.com/library/aria/liveregion-playground">live demo by Deque</a>.
+For more information about live region variants and usage check out the [MDN live region documentation](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) or play with this <a hreflang="en" href="https://dequeuniversity.com/library/aria/liveregion-playground">live demo by Deque</a>.
 
 ## Accessibility apps and overlays
 
@@ -777,4 +777,4 @@ Our analysis shows that there hasn't been much of a substantial change in the ac
 
 We see that there are often a lot of misuse of features that may give an illusion of things being more accessible but in reality it often degrades the experience. For example, we see 19.8% of websites have an anchor tag with `role=button`. Also, we see that 2.2% of alt attributes across websites have a file extension in them, which really doesn't help in conveying the meaning of the image.
 
-A lot of the accessibility issues that we see in our analysis can be avoided if designers and developers start thinking about web accessibility from the very beginning and not as an enhancement at the end. Like Anna E. Cook once <a hreflang="en" href="https://twitter.com/annaecook/status/1404615552883060737">said</a>, there's "no MVP without accessibility". The web community needs to realize that a website only has a great User Experience when that User Experience works for everyone, irrespective of the device and assistive technology used. We have tried to focus on key metrics that can be easily addressed in the hope that in 2023 we see the numbers improve.
+A lot of the accessibility issues that we see in our analysis can be avoided if designers and developers start thinking about web accessibility from the very beginning and not as an enhancement at the end. Like [Anna E. Cook once said](https://twitter.com/annaecook/status/1404615552883060737), there's "no MVP without accessibility". The web community needs to realize that a website only has a great User Experience when that User Experience works for everyone, irrespective of the device and assistive technology used. We have tried to focus on key metrics that can be easily addressed in the hope that in 2023 we see the numbers improve.
