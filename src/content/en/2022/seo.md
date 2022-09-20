@@ -27,7 +27,7 @@ Search engine optimization (SEO) is a digital technique used to improve a websit
 {{ figure_markup(
   image="seo-term-trends.png",
   caption="Google Trends comparing directional search popularity of topics of SEO versus pay-per-click, social media marketing, and email marketing.",
-  description="Screenshot showing the strong topical interest in SEO versus other digital marketing channels; search engine optimization, pay-per-click, social media marketing, and email marketing. In terms of relatives and absolute growth, SEO is in the lead by magnitudes.",
+  description="Screenshot of Google Trens showing the strong topical interest in SEO versus other digital marketing channels; search engine optimization, pay-per-click, social media marketing, and email marketing. In terms of relatives and absolute growth, SEO is in the lead by magnitudes.",
   width=2256,
   height=1492
   )
@@ -48,15 +48,17 @@ This section deals with the state of the web, as it pertains to bots crawling an
 
 Let’s explore the web and some of its facets that impact crawlability and indexability.
 
-
 ### Robots.txt
 
 The robots.txt file instructs bots, including search engine crawlers, as to where they can and cannot go, meaning what they can or cannot crawl.
 
+
+#### Robots.txt status codes
+
 {{ figure_markup(
   image="robots-txt-status-codes.png",
-  caption="Percentages for robots.txt status codes.",
-  description="Bar chart showing percent of pages with a valid robots.txt file. 82.4% of mobile sites returned a 200 status code, and 15.8% returned a 404. A small percentage of 0.2% returned 403 and 0.1% returned 500.",
+  caption="Robots.txt status codes.",
+  description="Bar chart showing percent of pages with a valid robots.txt file. 82.4% of mobile sites returned a 200 status code, and 15.8% returned a 404 while a small percentage of 0.2% returned 403 and 0.1% returned 500. For desktop it's very similar with 81.5%, 16.5%, 1.6%, 0.3%, and 0.1%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=240883913&format=interactive",
   sheets_gid="258446623",
   sql_file="robots-txt-status-codes.sql"
@@ -71,12 +73,12 @@ Like in 2021, the remaining status codes are associated with a minimal number of
 
 Note: The above data does not indicate how well optimized a robots.txt file is. Even a file returning a 200 status code can contain directives that are perhaps not in the best interest of a site’s overall health.
 
-### Robots.txt size
+#### Robots.txt size
 
 {{ figure_markup(
   image="robots-size.png",
-  caption="96% of robots.txt files are between 0 and 100 kilobytes.",
-  description="A distribution chart showing differences in robots.txt sizes in 100 kilobyte increments.",
+  caption="Robots.txt size codes.",
+  description="A distribution chart showing differences in robots.txt sizes in 100 kilobyte increments. For desktop, 96.29% are in 0-100 KB range, 0.31% in 100-200 KB, 0.10% in 200-300 KB, 0.04% in 300-400 KB, 0.02% in 400-500 KB, 0.05% are larger than 500 KB, and finally 2.26% are missing. For mobile, 96.48% are in 0-100 KB range, 0.30%  in 100-200 KB, 0.12%  in 200-300 KB, 0.04% in 300-400 KB, 0.02% in 400-500 KB, 0.05% are larger than 500 KB, and finally 1.97% are missing.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1600078634&format=interactive",
   sheets_gid="1828205691",
   sql_file="robots-text-size.sql"
@@ -87,12 +89,12 @@ As expected, the overwhelming majority of robots.txt files were quite small, wei
 
 Google’s max limit for a robots.txt file is 500 KiB. Any directives found after the file reaches that limit are ignored by the search engine. A very small number of robots.txt files fall into that category. Specifically, just .005% of both desktop and mobile sites contain a robots.txt file that is above Google’s max limit (which is consistent with 2021’s data). In cases where the file size exceeds limits, <a hreflang="en" href="https://developers.google.com/search/docs/advanced/robots/robots_txt">Google recommends</a> consolidating directives.
 
-### Robots.txt user-agent usage
+#### Robots.txt user-agent usage
 
 {{ figure_markup(
   image="robots-useragents.png",
-  caption="76.1% of robots.txt files target a wildcard user agent.",
-  description="A bar chart showing the most common user agent targets in robots.txt files.",
+  caption="Robots.txt user-agent usage.",
+  description="A bar chart showing the most common user agent targets in robots.txt files. For desktop `*` is 74.9%, `adsbot-google` is 6.8%, `mj12bot` is 6.0%, `ahrefsbot` is 5.4%, `mediapartners-google` is 3.4%, `nutch` is 3.7%, `googlebot` is 3.3%, `pinterest` is 3.3%, `adsbot-google-mobile` is 2.8%, `ahrefssiteaudit` is 3.2%, `yandex` is 2.9%, `bingbot` is 2.6%, `semrushbot` is 2.2%, `baiduspider` is 1.8%, and finally `dotbot` is 1.5%. Mobile is almost identical at 76.1%, 7.0%, 6.0%, 5.3%, 4.5%, 3.5%, 3.3%, 3.1%, 3.3%, 2.9%, 3.0%, 2.5%, 2.3%, 1.8%, and 1.7%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1197419046&format=interactive",
   sheets_gid="184863489",
   sql_file="robots-txt-user-agent-usage.sql",
@@ -117,24 +119,24 @@ Let’s start by determining the percentage of pages for which the new tag is po
 
 {{ figure_markup(
   image="pages-with-iframe.png",
-  caption="4.1% of pages utilized in iframe within the analyzed content.",
-  description="A pie chart comparing pages with an iframe versus those without.",
+  caption="Pages with `<iframe>`.",
+  description="A pie chart showing 4.1% of mobile pages utilized in iframe within the analyzed content, and 95.9% did not use an iframe.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1839527748&format=interactive",
   sheets_gid="1009024750",
   sql_file="robots-meta-usage.sql"
   )
 }}
 
-A little more than 4% of pages contain an `<iframe>` element.  Of the 4.1% of pages containing that element, 76% of them had the iframe noindexed, making them a potential use case for the new indexifembedded tag.
+A little more than 4% of pages contain an `<iframe>` element.  Of the 4.1% of pages containing that element, 76% of them had the iframe noindexed, making them a potential use case for the new `indexifembedded` tag.
 
-However, a miniscule percentage of sites have adopted the indexifembedded robots tag. The tag can be found on just 0.015% of pages surveyed.
+However, a miniscule percentage of sites have adopted the `indexifembedded` robots tag. The tag can be found on just 0.015% of pages surveyed.
 
-Of the pages that have adopted the indexifembedded tag, 98.3% of them implemented it in the header while 66.3% are using the HTML.
+Of the pages that have adopted the `indexifembedded` tag, 98.3% of them implemented it in the header while 66.3% are using the HTML.
 
 {{ figure_markup(
   image="indexifembedded-useragents.png",
-  caption="The majority of indexifembedded implementations use a robots header at 98.3% and target the googlebot user agent.",
-  description="A column chart showing robots headers and robots tag usage with indexifembedded.",
+  caption="`Indexifembedded` user agents.",
+  description="A bar chart showing the majority of indexifembedded implementations use a robots header at 98.3% and target the `googlebot` user agent. The other three user agents (`google`, `gogglebot-news`, and `robots` show 0% usage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=994494235&format=interactive",
   sheets_gid="1009024750",
   sql_file="robots-meta-usage.sql"
@@ -151,8 +153,8 @@ Our data from 2022 shows 12.7% of desktop pages and 12.6% of mobile pages contai
 
 {{ figure_markup(
   image="invalid-head-elements.png",
-  caption="The majority of indexifembedded implementations use a robots header at 98.3% and target the googlebot user agent.",
-  description="A column chart showing",
+  caption="Invalid `<head>` elements.",
+  description="A column chart showing the percentage of pages with various HTML elements than are invalid in the `<head>`. On Desktop `img` is used in the head on 9.92% of pages, `div` on 3.58%, `a` on 1.73%, `p` on 1.11%, `span` on 1.08%, `iframe` on 0.96%, `br` on 0.94%, `input` on 0.78%, `li` on 0.63%, and finally `ul` 0.63%. Mobile is very similar at 9.77%, 3.91%, 1.93%, 1.32%, 1.30%, 1.13%, 1.12%, 1.05%, 0.90%, and 0.90%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=2061840642&format=interactive",
   sheets_gid="130501136",
   sql_file="invalid-head-elements.sql"
@@ -169,8 +171,8 @@ Canonical tags are traditionally used when defining duplicate content pages and 
 
 {{ figure_markup(
   image="canonical-usage.png",
-  caption="Canonical adoption has increased to 60.6% on mobile.",
-  description="A column chart highlighting percentages of pages which have a canonical set or are canonicalized.",
+  caption="Canonical usage.",
+  description="A column chart highlighting percentages of pages which have a canonical set or are canonicalized. Canonical adoption is at 58.7% on desktop, and 60.6% on mobile, and is canonicalized is at 4.2% on desktop, and 7.5% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=34038632&format=interactive",
   sheets_gid="1931314929",
   sql_file="pages-canonical-stats.sql"
@@ -190,8 +192,8 @@ There are two ways of implementing canonical tags:
 
 {{ figure_markup(
   image="html-versus-http-canonical.png",
-  caption="HTML canonicals are the primary implementation with 60.4% appearing in the page markup.",
-  description="A column chart comparing canonical implementations between HTML and HTTP headers.",
+  caption="HTML versus HTTP Canonical usage.",
+  description="A column chart comparing canonical implementations between HTML and HTTP headers. HTML canonicals are the primary implementation with 58.6% on desktop and 60.4% on mobile appearing in the page markup, compared with 1.2% and 0.9% in HTTP Headers.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1403695913&format=interactive",
   sheets_gid="1931314929",
   sql_file="pages-canonical-stats.sql"
@@ -204,8 +206,8 @@ The most common usage across both desktop and mobile is through HTML at 58.6% an
 
 {{ figure_markup(
   image="raw-vs-rendered-canonical.png",
-  caption="1% of canonicals are rendered but were not received in the raw HTML.",
-  description="A bar chart comparing raw, rendered, or http canonical statuses.",
+  caption="Raw vs rendered canonical.",
+  description="A bar chart comparing raw, rendered, or http canonical statuses. 1% of canonicals are rendered but were not received in the raw HTML",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=473608668&format=interactive",
   sheets_gid="1931314929",
   sql_file="pages-canonical-stats.sql"
@@ -224,8 +226,8 @@ In 2021, there was an increased focus on site speed and page experience followin
 
 {{ figure_markup(
   image="https-usage.png",
-  caption="84.75% of sites use HTTPS on mobile",
-  description="Percentage of websites supporting HTTPS",
+  caption="Percentage of websites supporting HTTPS.",
+  description="84.75% of sites use HTTPS on mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=115976742&format=interactive",
   sheets_gid="1564568239",
   sql_file="seo-stats.sql"
@@ -241,7 +243,7 @@ Mobile-friendliness can be determined by looking at responsive design implementa
 ### Viewport meta tag
 
 {{ figure_markup(
-  caption="92% of sites support a viewport meta tag.",
+  caption="Sites supporting a viewport meta tag.",
   content="92%",
   classes="big-number",
   sheets_gid="1858203218",
@@ -257,8 +259,8 @@ The vary header is a HTTP header that enables  different content to be served to
 
 {{ figure_markup(
   image="vary-header.png",
-  caption="Vary headers are implemented on 13% of mobile sites.",
-  description="A column chart comparing whether vary header is used or not.",
+  caption="Vary header used.",
+  description="A column chart comparing whether vary header is used or not. Vary headers are implemented on 12% of desktop sites, and 13% of mobile sites, so 88% and 87% respectively are not using then.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1832557145&format=interactive",
   sheets_gid="942102950",
   sql_file="html-response-vary-header-used.sql"
@@ -272,7 +274,7 @@ Vary header usage has remained relatively unchanged for the past few years. In 2
 In 2021, 13.5% of mobile pages were not using a legible font size. Thanks to Google’s focus on user experience across all devices, more pages than ever now use a legible font size. Only 11% of mobile pages are still not using a legible font size.
 
 {{ figure_markup(
-  caption="11% of sites not using a legible font size",
+  caption="Sites not using a legible font size",
   content="11%",
   classes="big-number",
   sheets_gid="74703616",
@@ -296,8 +298,8 @@ The data for Core Web Vitals is sourced from the Chrome User Experience Report (
 
 {{ figure_markup(
   image="good-cwv-mobile.png",
-  caption="39% of mobile sites now fall into the good category of core web vitals.",
-  description="A timeseries chart showing mobile core web vitals improvements over time.",
+  caption="Percent of good CWV experiences on mobile.",
+  description="A timeseries chart showing mobile core web vitals improvements over time. 39% of mobile sites now fall into the good category of core web vitals.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1140903870&format=interactive",
   sheets_gid="1713598891",
   sql_file="core-web-vitals.sql"
@@ -308,8 +310,8 @@ On mobile, 39% of sites now pass CWV, which is up from 29% in 2021 and just 20% 
 
 {{ figure_markup(
   image="good-cwv-desktop.png",
-  caption="43% of desktop sites are classified as good with core web vitals.",
-  description="A timeseries chart showing desktop core web vitals improvements over time.",
+  caption="Percent of good CWV experiences on desktop.",
+  description="A timeseries chart showing desktop core web vitals improvements over time. 43% of desktop sites are classified as good with core web vitals.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1399758157&format=interactive",
   sheets_gid="1713598891",
   sql_file="core-web-vitals.sql"
@@ -318,23 +320,23 @@ On mobile, 39% of sites now pass CWV, which is up from 29% in 2021 and just 20% 
 
 On desktop, we see an astounding 100% of sites passing FID, though similarly struggling to pass LCP and CLS. Noteworthy, more sites are passing CWV on desktop (43%) than on mobile (39%).
 
-### `lazy` loading vs. `eager` loading iFrames
+### `lazy` loading vs. `eager` loading iframes
 
 Lazy loading is a technique that defers the loading of non-critical elements on a web page until the point in which they are needed. This can help with the reduction of page weight, as well as conserve bandwidth and system resources. Eager loading is when related entities are simultaneously loaded and fetched all at once.
 
 {{ figure_markup(
   image="iframe-loading.png",
-  caption="4.08% of iFrames are lazy loaded and 0.37% of iFrames are eager loaded.",
-  description="A column chart showing iframe loading properties between lazy, auto, eager, or none.",
+  caption="`iframe` loading property usage.",
+  description="A column chart showing `iframe` loading properties between `lazy`, `auto`, `eager`, or `none`. 4.08% of `iframe`s are lazy loaded and 0.37% of `iframe`s are `eager` loaded.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1451716640&format=interactive",
   sheets_gid="246694365",
   sql_file="iframe-loading-property-usage.sql"
   )
 }}
 
-When looking solely at iFrames, we see lazy loading is preferred far more to eager loading, with 4.08% of iFrames being lazy loaded versus 0.37% of iFrames being eager loaded.
+When looking solely at iframes, we see lazy loading is preferred far more to eager loading, with 4.08% of iframes being lazy loaded versus 0.37% of iframes being eager loaded.
 
-This is particularly interesting since <a hreflang="en" href="https://web.dev/iframe-lazy-loading/">browser-level lazy loading for iFrames has become standardized in Chrome</a>. The standardization of the `loading` attribute, without specifying lazy or eager, is likely why data shows 94.4% of attributes do not contain lazy or eager.
+This is particularly interesting since <a hreflang="en" href="https://web.dev/iframe-lazy-loading/">browser-level lazy loading for iframes has become standardized in Chrome</a>. The standardization of the `loading` attribute, without specifying lazy or eager, is likely why data shows 94.4% of attributes do not contain lazy or eager.
 
 ## On page
 
@@ -344,8 +346,8 @@ When looking for relevancy signals, search engines look at the content on a web 
 
 {{ figure_markup(
   image="has-title-meta.png",
-  caption="98% of pages have a title and 71% of pages have a meta description.",
-  description="A column chart with the percentage of pages containing a title tag and meta description",
+  caption="Title tag and Meta descriptions.",
+  description="A column chart with the percentage of pages containing a title tag and meta description. 98% of pages have a title and 71% of pages have a meta description.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1299529015&format=interactive",
   sheets_gid="1564568239",
   sql_file="seo-stats.sql"
@@ -360,8 +362,8 @@ The `<title>` element is an on-page ranking factor that provides a strong hint r
 
 {{ figure_markup(
   image="title-words-percentile.png",
-  caption="The median word count in titles is 6 words.",
-  description="A distribution of word counts within page titles.",
+  caption="Title words by percentile.",
+  description="A distribution of word counts within page titles. The median word count in titles is 6 words.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1674970307&format=interactive",
   sheets_gid="771280814",
   sql_file="seo-stats-by-percentile.sql"
@@ -370,8 +372,8 @@ The `<title>` element is an on-page ranking factor that provides a strong hint r
 
 {{ figure_markup(
   image="title-characters-percentile.png",
-  caption="The median character count for mobile titles is 40 characters.",
-  description="A distribution of character counts within page titles.",
+  caption="Title characters by percentile.",
+  description="A distribution of character counts within page titles. The median character count for mobile titles is 40 characters.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1110487580&format=interactive",
   sheets_gid="771280814",
   sql_file="seo-stats-by-percentile.sql"
@@ -393,8 +395,8 @@ The `<meta name="description>` tag does not directly impact rankings. However, i
 
 {{ figure_markup(
   image="meta-description-words-percentile.png",
-  caption="The median word count is 19 words for meta descriptions.",
-  description="A distribution of word count within meta descriptions.",
+  caption="Meta description words by percentile.",
+  description="A distribution of word count within meta descriptions. The median word count is 19 words for meta descriptions.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1883941031&format=interactive",
   sheets_gid="771280814",
   sql_file="seo-stats-by-percentile.sql"
@@ -403,8 +405,8 @@ The `<meta name="description>` tag does not directly impact rankings. However, i
 
 {{ figure_markup(
   image="meta-description-characters-percentile.png",
-  caption="The median character count is 136 characters for meta descriptions.",
-  description="A distribution of character counts within meta descriptions.",
+  caption="Meta description characters by percentile.",
+  description="A distribution of character counts within meta descriptions. The median character count is 136 characters for meta descriptions",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1915861678&format=interactive",
   sheets_gid="771280814",
   sql_file="seo-stats-by-percentile.sql"
@@ -426,8 +428,8 @@ Heading elements  (`<h1>`, `<h2>`...) are important parts of a page’s structur
 
 {{ figure_markup(
   image="has-h-elements.png",
-  caption="66% of sites have implemented an H1.",
-  description="A column charting showing usage of H1 tags through H4 tags.",
+  caption="Presence of H elements.",
+  description="A column charting showing usage of H1 tags through H4 tags. 66% of sites have implemented an H1.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=46522676&format=interactive",
   sheets_gid="1564568239",
   sql_file="seo-stats.sql"
@@ -442,8 +444,8 @@ Although there is no  definitive explanation for this, one possible reason is th
 
 {{ figure_markup(
   image="nonempty-h-elements.png",
-  caption="59% of sites have an H1 tag that is not empty.",
-  description="A column charting showing non-empty usage of H1 tags through H4 tags.",
+  caption="Presences of non-empty H elements.",
+  description="A column charting showing non-empty usage of H1 tags through H4 tags. 59% of sites have an H1 tag that is not empty.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1398855380&format=interactive",
   sheets_gid="1564568239",
   sql_file="seo-stats.sql"
@@ -460,8 +462,8 @@ The primary purpose of the alt attribute on the `<img>` element is accessibility
 
 {{ figure_markup(
   image="image-alt-present.png",
-  caption="The median usage of images with alt attributes is just under 54%.",
-  description="A distribution chart of pages with an img tag implementing alt attributes.",
+  caption="Percentage of `img` `alt` attributes present.",
+  description="A distribution chart of pages with an img tag implementing alt attributes. The median usage of images with alt attributes is just under 54%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1932752526&format=interactive",
   sheets_gid="1161905146",
   sql_file="image-alt-stats.sql"
@@ -470,8 +472,8 @@ The primary purpose of the alt attribute on the `<img>` element is accessibility
 
 {{ figure_markup(
   image="image-alt-empty.png",
-  caption="As a median, 0% of images have an alt attribute that is empty making it uncommon.",
-  description="A distribution chart of pages with an img tag implementing empty alt attributes.",
+  caption="Percentage of `img` with blank `alt`.",
+  description="A distribution chart of pages with an img tag implementing empty alt attributes. As a median, 0% of images have an alt attribute that is empty making it uncommon.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1460266248&format=interactive",
   sheets_gid="1161905146",
   sql_file="image-alt-stats.sql"
@@ -480,8 +482,8 @@ The primary purpose of the alt attribute on the `<img>` element is accessibility
 
 {{ figure_markup(
   image="image-alt-missing.png",
-  caption="The median of missing alt attributes on images is 12.5%.",
-  description="A distribution chart of page images missing alt attributes.",
+  caption="Percentage of `img` missing `alt`.",
+  description="A distribution chart of page images missing alt attributes. The median of missing alt attributes on images is 12.5%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=986554040&format=interactive",
   sheets_gid="1161905146",
   sql_file="image-alt-stats.sql"
@@ -490,10 +492,10 @@ The primary purpose of the alt attribute on the `<img>` element is accessibility
 
 What we found:
 
-* On the median desktop page, 56.25% of `<img>` tags have the alt attribute. This is a negligible decrease of just a quarter of a percentage point from 2021’s 56.5%.
-* On the median mobile page, 54.9% of `<img>` tags have the alt attribute. This is a marginal increase from the 54.6% of tags with the alt attribute in 2021.
-* There is a noticeable change in the median desktop and mobile pages containing `<img>` tags that have blank alt attributes compared to 2021. Last year, the median desktop and mobile pages, respectively had 10.5% and 11.8% `<img>` tags with blank `alt` attributes. In 2022, this figure rose to 12.1% and 12.5% on desktop and mobile, respectively.
-* The trend towards 0% of median desktop and mobile pages containing `<img>` tags missing the alt attribute continues. On the median desktop page in 2021, 1.4% of the `<img>` tags had blank attributes. It fell to 0% in 2022.
+- On the median desktop page, 56.25% of `<img>` tags have the alt attribute. This is a negligible decrease of just a quarter of a percentage point from 2021’s 56.5%.
+- On the median mobile page, 54.9% of `<img>` tags have the alt attribute. This is a marginal increase from the 54.6% of tags with the alt attribute in 2021.
+- There is a noticeable change in the median desktop and mobile pages containing `<img>` tags that have blank alt attributes compared to 2021. Last year, the median desktop and mobile pages, respectively had 10.5% and 11.8% `<img>` tags with blank `alt` attributes. In 2022, this figure rose to 12.1% and 12.5% on desktop and mobile, respectively.
+- The trend towards 0% of median desktop and mobile pages containing `<img>` tags missing the alt attribute continues. On the median desktop page in 2021, 1.4% of the `<img>` tags had blank attributes. It fell to 0% in 2022.
 
 ### Image `loading` property usage
 
@@ -501,8 +503,8 @@ How user agents prioritize the rendering and displaying of images is affected by
 
 {{ figure_markup(
   image="image-loading-property.png",
-  caption="20% of images have adopted native lazy loading.",
-  description="A column chart showing image-loading property adoption.",
+  caption="Image `loading` property usage.",
+  description="A column chart showing image-loading property adoption. 20% of images have adopted native lazy loading.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1909677331&format=interactive",
   sheets_gid="166283668",
   sql_file="image-loading-property-usage.sql"
@@ -511,9 +513,9 @@ How user agents prioritize the rendering and displaying of images is affected by
 
 What we found:
 
-* There has been a significant reduction in the number of pages that do not use any image loading property. In 2021, 83.3% of desktop pages and 83.5% of mobile pages didn’t utilize any image loading property at all. It’s now 78.3% of desktop pages and 77.9% of mobile pages in 2022.
-* Conversely, the implementation of loading=” lazy” has increased. In 2021, both 15.6% of desktop and mobile pages implemented loading=” lazy”. This has increased to 19.8% (desktop) and 20.3% (mobile) in 2022.
-* The number of pages defaulting to the brower’s loading method has fallen in 2022. On desktop, .07% of pages use loading=”auto” and .08% on mobile. In 2021, .01% of pages utilized loading=”auto”.
+- There has been a significant reduction in the number of pages that do not use any image loading property. In 2021, 83.3% of desktop pages and 83.5% of mobile pages didn’t utilize any image loading property at all. It’s now 78.3% of desktop pages and 77.9% of mobile pages in 2022.
+- Conversely, the implementation of loading=” lazy” has increased. In 2021, both 15.6% of desktop and mobile pages implemented loading=” lazy”. This has increased to 19.8% (desktop) and 20.3% (mobile) in 2022.
+- The number of pages defaulting to the brower’s loading method has fallen in 2022. On desktop, .07% of pages use loading=”auto” and .08% on mobile. In 2021, .01% of pages utilized loading=”auto”.
 
 ### Word count
 
@@ -525,8 +527,8 @@ Let’s begin with the number of words found on the page once it has been render
 
 {{ figure_markup(
   image="visible-words-rendered.png",
-  caption="On mobile, the median number of words rendered is 366 words.",
-  description="A distribution of rendered and visible content word counts.",
+  caption="Visible words rendered by percentile.",
+  description="A distribution of rendered and visible content word counts. On mobile, the median number of words rendered is 366 words.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1348358716&format=interactive",
   sheets_gid="771280814",
   sql_file="seo-stats-by-percentile.sql"
@@ -543,8 +545,8 @@ Let’s now examine the number of words contained in a page’s source code prio
 
 {{ figure_markup(
   image="visible-words-raw.png",
-  caption="On mobile, the raw number of words is 318 showing a distinct difference from rendered..",
-  description="A distribution of raw HTML words recieved.",
+  caption="Visible words raw by percentile.",
+  description="A distribution of raw HTML words recieved. On mobile, the raw number of words is 318 showing a distinct difference from rendered.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=519228938&format=interactive",
   sheets_gid="771280814",
   sql_file="seo-stats-by-percentile.sql"
@@ -561,8 +563,8 @@ Implementing Structured Data has come into increased focus as rich results on th
 
 {{ figure_markup(
   image="raw-vs-rendered-structured-data.png",
-  caption="0.3% of sites are creating a canonical mismatch.",
-  description="A column chart showing canonical status changes based on raw versus rendered.",
+  caption="Rw versus rendered canonical.",
+  description="A column chart showing canonical status changes based on raw versus rendered. 0.3% of sites are creating a canonical mismatch.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=2108798426&format=interactive",
   sheets_gid="1564568239",
   sql_file="seo-stats.sql"
@@ -579,8 +581,8 @@ There has also been a great reduction in both mobile and desktop pages that have
 
 {{ figure_markup(
   image="structured-data-formats.png",
-  caption="JSON-LD is the most popular schema data format with 62% of markups using it.",
-  description="A column chart of structured data formats out of those commonly supported.",
+  caption="Structured Data formats.",
+  description="A column chart of structured data formats out of those commonly supported. JSON-LD is the most popular schema data format with 62% of markups using it.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1310320311&format=interactive",
   sheets_gid="2048293717",
   sql_file="structured-data-formats.sql"
@@ -595,8 +597,8 @@ Compared to 2021’s figures, 2022’s data shows a nominal increase in implemen
 
 {{ figure_markup(
   image="popular-schemas.png",
-  caption="30% of sites have adopted a website schema from schema.org.",
-  description="A bar chart of schema type implementations by popularity.",
+  caption="Most popular schema types.",
+  description="A bar chart of schema type implementations by popularity. 30% of sites have adopted a website schema from schema.org.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=201128426&format=interactive",
   sheets_gid="432096465",
   sql_file="structured-data-schema-types.sql",
@@ -627,8 +629,8 @@ Anchor text, which is the clickable text used in a link, helps search engines to
 
 {{ figure_markup(
   image="median-internal-links.png",
-  caption="Sites within the top 10,000 have the most median internal links at 117 for mobile sites.",
-  description="A rank distribution of the median count of internal links..",
+  caption="Median links to same site.",
+  description="A rank distribution of the median count of internal links. Sites within the top 10,000 have the most median internal links at 117 for mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=2040803708&format=interactive",
   sheets_gid="1325442493",
   sql_file="outgoing_links_by_rank.sql"
@@ -643,8 +645,8 @@ According to CrUX data, the 1,000 most popular websites have more outgoing inter
 
 {{ figure_markup(
   image="median-external-links.png",
-  caption="Sites within the top 1,000 most commonly link out with a median of 12 external links.",
-  description="A rank distribution of the median count of external links.",
+  caption="Median external links.",
+  description="A rank distribution of the median count of external links. Sites within the top 1,000 most commonly link out with a median of 12 external links.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1367867640&format=interactive",
   sheets_gid="1325442493",
   sql_file="outgoing_links_by_rank.sql"
@@ -659,8 +661,8 @@ In September of 2019, Google <a hreflang="en" href="https://webmasters.googleblo
 
 {{ figure_markup(
   image="anchor-rel-attr.png",
-  caption="29.5% of links with rel attributes implement nofollow.",
-  description="A column chart comparing rel noopener, nofollow, noreferrer, dofollow, sponsored, ugc, and follow.",
+  caption="Achor `rel` attribute usage.",
+  description="A column chart comparing `rel` `noopener`, `nofollow`, `noreferrer`, `dofollow`, `sponsored`, `ugc`, and `follow`. 29.5% of links with `rel` attributes implement `nofollow`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=583878647&format=interactive",
   sheets_gid="411053146",
   sql_file="anchor-rel-attribute-usage.sql"
@@ -688,8 +690,8 @@ The future of AMP appears to be changing ever since the launch of Core Web Vital
 
 {{ figure_markup(
   image="amp-markup.png",
-  caption="Amp adoption is low across the sampled pageset.",
-  description="A column chart showing AMP implementations across all pages.",
+  caption="AMP markup types.",
+  description="A column chart showing AMP implementations across all pages. AMP adoption is low across the sampled pageset.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1100298070&format=interactive",
   sheets_gid="1210998028",
   sql_file="markup-stats.sql"
@@ -708,8 +710,8 @@ Hreflang tags help Google and other search engines, such as Bing and Yandex, und
 
 {{ figure_markup(
   image="hreflang-usage.png",
-  caption="3.7% of sites have implemented the x-default tag as a fallback.",
-  description="A bar chart of common hreflang targets.",
+  caption="Hreflang usage.",
+  description="A bar chart of common hreflang targets. 3.7% of sites have implemented the x-default tag as a fallback.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=561647523&format=interactive",
   sheets_gid="297028820",
   sql_file="hreflang-link-tag-usage.sql",
@@ -735,8 +737,8 @@ While Google tends to use hreflang tags, other search engines such as Bing prefe
 
 {{ figure_markup(
   image="content-language.png",
-  caption="Across headers, the broader en tag is most common at 3.28%.",
-  description="A bar chart showing language usage as a percentage of pages.",
+  caption="Language usage (HTML and HTTP header).",
+  description="A bar chart showing language usage as a percentage of pages. Across headers, the broader en tag is most common at 3.28%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1743056980&format=interactive",
   sheets_gid="1291138023",
   sql_file="content-language-usage.sql",
