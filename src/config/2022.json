@@ -66,8 +66,7 @@
           "part": "I",
           "chapter_number": "8",
           "title": "Third Parties",
-          "slug": "third-parties",
-          "todo": true
+          "slug": "third-parties"
         },
         {
           "part": "I",
@@ -850,12 +849,14 @@
       "twitter": "malchata"
     },
     "imeugenia": {
-      "name": "Jevgenija Zigisova",
+      "name": "Eugenia Zigisova",
       "teams": [
         "authors"
       ],
       "avatar_url": "17236402",
-      "github": "imeugenia"
+      "github": "imeugenia",
+      "twitter": "jevgeniazi",
+      "website": "https://github.com/imeugenia/speaking/blob/main/README.md"
     },
     "joeviggiano": {
       "name": "Joe Viggiano",
@@ -1146,14 +1147,6 @@
       "github": "mo271",
       "website": "https://mo271.github.io/",
       "twitter": "MoritzFirsching"
-    },
-    "msolercanals": {
-      "name": "msolercanals",
-      "teams": [
-        "analysts"
-      ],
-      "avatar_url": "76776586",
-      "github": "msolercanals"
     },
     "Navaneeth-Akamai": {
       "name": "Navaneeth",
@@ -1500,16 +1493,6 @@
       ],
       "avatar_url": "104352788",
       "github": "TusharPol"
-    },
-    "pepelsbey": {
-      "name": "Vadim Makeev",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "105274",
-      "github": "pepelsbey",
-      "website": "https://pepelsbey.net/",
-      "twitter": "pepelsbey"
     },
     "paivaspol": {
       "name": "Vaspol Ruamviboonsuk",
