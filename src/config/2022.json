@@ -860,13 +860,14 @@
       "twitter": "malchata"
     },
     "imeugenia": {
-      "name": "Jevgenija Zigisova",
+      "name": "Eugenia Zigisova",
       "teams": [
         "authors"
       ],
       "avatar_url": "17236402",
       "github": "imeugenia",
-      "twitter": "jevgeniazi"
+      "twitter": "jevgeniazi",
+      "website": "https://github.com/imeugenia/speaking/blob/main/README.md"
     },
     "joeviggiano": {
       "name": "Joe Viggiano",
