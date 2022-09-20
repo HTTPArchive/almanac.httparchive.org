@@ -28,8 +28,8 @@ Search engine optimization (SEO) is a digital technique used to improve a websit
   image="seo-term-trends.png",
   caption="Google Trends comparing directional search popularity of topics of SEO versus pay-per-click, social media marketing, and email marketing.",
   description="Screenshot showing the strong topical interest in SEO versus other digital marketing channels; search engine optimization, pay-per-click, social media marketing, and email marketing. In terms of relatives and absolute growth, SEO is in the lead by magnitudes.",
-  width=1155,
-  height=605
+  width=2256,
+  height=1492
   )
 }}
 
