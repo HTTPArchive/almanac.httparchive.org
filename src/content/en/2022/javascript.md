@@ -302,8 +302,8 @@ Script injection has [the potential to harm performance](https://www.igvita.com/
 
 There are two categories of JavaScript that websites often ship:
 
--  First-party scripts that power the essential functions of your website and provide interactivity.
--  Third-party scripts provided by external vendors that satisfy a variety of requirements, such as UX research, analytics, providing advertising revenue, and embeds for things such as videos and social media functions.
+- First-party scripts that power the essential functions of your website and provide interactivity.
+- Third-party scripts provided by external vendors that satisfy a variety of requirements, such as UX research, analytics, providing advertising revenue, and embeds for things such as videos and social media functions.
 
 While first-party JavaScript may be easier to optimize, third-party JavaScript can itself be a significant source of performance problems, as third-party vendors may not prioritize the optimization of their JavaScript resources over adding new features to serve additional business functions for their clients. Additionally, UX researchers, marketers, and other non-technical personnel may be hesitant to give up functionality or sources of revenue that these scripts provide.
 
