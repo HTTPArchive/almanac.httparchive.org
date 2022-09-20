@@ -1,7 +1,6 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: HTTP
-#TODO - Review and update chapter description
 description: The HTTP chapter of the 2022 Web Almanac covers data on historical versions of HTTP used across the web, as well as the uptick in new versions including HTTP/2 and HTTP/3, while also inspecting key metrics a part of the HTTP lifecycle.
 authors: [paivaspol]
 reviewers: [tunetheweb, rmarx, LPardue]
@@ -114,7 +113,7 @@ With the challenges to HTTP/2 priorities, a new prioritization scheme was needed
 While most of the resource priorities are decided by the browser itself, developers can now also use the new <a hreflang="en" href="https://web.dev/priority-hints/">priority hints</a> to tweak the priority of a particular resource. Priority hints can be specified via the `fetchpriority` attribute in the HTML. For example, suppose that a website would like to prioritize a hero image, it can add `fetchpriority` to the image tag:
 
 ```html
-<img  src="hero.png" fetchpriority="high" />
+<img src="hero.png" fetchpriority="high" />
 ```
 
 Priority hints can be very effective in improving user experience. For example, <a hreflang="en" href="https://www.etsy.com/codeascraft/priority-hints-what-your-browser-doesnt-know-yet">Etsy conducted an experiment</a> and observed a 4% improvement in Largest Contentful Paint (LCP) on product listing pages that included priority hints for certain images.
