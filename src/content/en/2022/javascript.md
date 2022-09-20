@@ -452,7 +452,7 @@ When something is the default, that default sometimes remains in place rather th
 The problem is made worse by third-party script providers, which still deploy gzip compression more widely than Brotli at 60% versus 29%, respectively. Given that third-party JavaScript is a serious performance issue on the web today, the resource load time of these resources could be reduced by deploying third-party resources using Brotli instead.
 
 {{ figure_markup(
-    image=".png",
+    image="uncompressed.png",
     caption="Uncompressed resources by size.",
     description="TODO",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=1991115497&format=interactive",
