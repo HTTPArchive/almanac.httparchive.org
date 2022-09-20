@@ -6,7 +6,7 @@ description: CSS chapter of the 2022 Web Almanac covering trends, changes, and p
 authors: [rachelandrew]
 reviewers: [j9t, meyerweb, svgeesus]
 analysts: [rviscomi]
-editors: [dereknahman]
+editors: [rviscomi]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1OU8ahxC5oYU8VRryQs9BzHToaXcOntVlh6KUHjm15G4/
 featured_quote: TODO
