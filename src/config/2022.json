@@ -86,8 +86,7 @@
           "part": "II",
           "chapter_number": "10",
           "title": "SEO",
-          "slug": "seo",
-          "todo": true
+          "slug": "seo"
         },
         {
           "part": "II",
@@ -1133,6 +1132,7 @@
     "mordy-oberstein": {
       "name": "Mordy Oberstein",
       "teams": [
+        "authors",
         "reviewers"
       ],
       "avatar_url": "104999516",
