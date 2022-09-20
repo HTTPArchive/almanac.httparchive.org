@@ -22,7 +22,7 @@ unedited: true
 
 ## Introduction
 
-CSS is the language used to lay out and format web pages and other media. It is one of the three main languages of the web, joining HTML which is used for structure, and JavaScript for behavior.
+CSS is the language used to lay out and format web pages and other media. It is one of the three main languages of the web, joining [HTML](./markup) which is used for structure, and [JavaScript](./javascript) for behavior.
 
 The past few years have seen a flurry of new CSS features. Many of these have taken inspiration from things developers were already doing with JavaScript or in preprocessors, others provide methods of doing things that were impossible a few years ago. Having new features available is one thing, but are developers actually using them in their production web pages and applications? It is this question we will try to answer with data.
 
@@ -31,62 +31,54 @@ In this chapter we use the data to find out what developers actually use in prod
 ## Usage
 
 {{ figure_markup(
-    image=".png",
-    caption="",
+    image="stylesheet-transfer-size.png",
+    caption="Distribution of the stylesheet transfer size by page.",
     description="TODO",
-    chart_url="",
-    sheets_gid="",
-    sql_file=".sql"
+    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1081662712&format=interactive",
+    sheets_gid="1921790724",
+    sql_file="stylesheet_kbytes.sql"
   )
 }}
-
-_Figure 1.1. Distribution of the stylesheet transfer size by page._
 
 Each year, we see that CSS grows in size, and 2022 was no exception. Other than the 25th percentile, which dropped a percentage point, each percentile showed a small increase in size. At the 90th percentile the increase was almost 7%, a similar increase to that seen between 2020 and 2021. Mobile stylesheets remain slightly smaller than those served to desktop.
 
 The desktop page with the greatest CSS weight was slightly smaller than last year at 62,631 KB. The largest mobile stylesheet had risen from 17,823 KB to 78,543 KB, thankfully this was an exception.
 
 {{ figure_markup(
-    image=".png",
-    caption="",
+    image="stylesheet-count.png",
+    caption="Distribution of the number of stylesheets per page.",
     description="TODO",
-    chart_url="",
-    sheets_gid="",
-    sql_file=".sql"
+    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=358463962&format=interactive",
+    sheets_gid="398646778",
+    sql_file="stylesheet_count.sql"
   )
 }}
-
-_Figure 1.2. Distribution of the number of stylesheets per page_
 
 The number of stylesheets per page has remained almost identical to 2021, with an increase of one for mobile at the 50th percentile.
 
 Last year the record was broken for the number of stylesheets loaded by a single page at 2,368. This year we found one site loading 1,387 stylesheets on mobile, still a significant amount.
 
 {{ figure_markup(
-    image=".png",
-    caption="",
+    image="rules-per-page.png",
+    caption="Distribution of the total number of style rules per page.",
     description="TODO",
-    chart_url="",
-    sheets_gid="",
-    sql_file=".sql"
+    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=2137701589&format=interactive",
+    sheets_gid="1977925185",
+    sql_file="rules_per_stylesheet.sql"
   )
 }}
-
-_Figure 1.3. Distribution of the total number of style rules per page._
 
 Taking a look at the number of style rules in a page showed an increase across all percentiles, the lower percentiles showing more rules for mobile, the higher percentiles more for desktop. These increases are substantial. Desktop rules for the 50th percentile increased by 130 rules, and the 90th percentile by 202.
 
 {{ figure_markup(
-    image=".png",
-    caption="",
+    image="rules-per-stylesheet.png",
+    caption="Distribution of the number of rules per stylesheet.",
     description="TODO",
-    chart_url="",
-    sheets_gid="",
-    sql_file=".sql"
+    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=56198269&format=interactive",
+    sheets_gid="1977925185",
+    sql_file="rules_per_stylesheet.sql"
   )
 }}
-
-_Figure 1.4. Distribution of the number of rules per stylesheet._
 
 We can see from the total number of stylesheets loaded, that typically people are breaking their CSS down into multiple stylesheets. At the 50th percentile this works out as 31 rules per stylesheet, growing to 276 rules on desktop and 285 rules for mobile at the 90th percentile. 
 
@@ -99,6 +91,36 @@ It's a little early to see widespread usage of this new method of managing the c
 ### Class names
 
 {{ figure_markup(
+    image="top-selector-classes.png",
+    caption="The most popular class names by the percent of pages.",
+    description="TODO",
+    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1082092053&format=interactive",
+    height="691",
+    sheets_gid="1020483137",
+    sql_file="top_selector_classes_wp_fa_prefixes.sql"
+  )
+}}
+
+As in 2020 and 2021 the most popular class name on the web is active. The fa, fa-* prefixes for Font Awesome still coming second and third. However, wp-* class names have crept up the rankings, moving to fourth place. They now show up on 31% of pages, having been at 20% in 2021. We also see class names such as has-large-font-size appearing, these are used in the new WordPress Block Editor.
+
+Clearfix has disappeared from the top 20, it is now found on only 10% of pages, a very clear indication that float-based layouts are vanishing from the web.
+
+{{ figure_markup(
+    image="top-selector-ids.png",
+    caption="The most popular ID names by percent of pages.",
+    description="TODO",
+    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=224121847&format=interactive",
+    height="497",
+    sheets_gid="756835829",
+    sql_file="top_selector_ids.sql"
+  )
+}}
+
+The name `content` is once again the most popular ID name, followed by `footer`, and `header`. The IDs starting with `fb_` indicate use of Facebook widgets. In 2021 IDs beginning with `rc-`, indicating use of Google's reCAPTCHA system were seen on 7% of pages, and are still seen with the same frequency, despite being pushed out of the top ten by the Facebook ID names.
+
+### !important
+
+{{ figure_markup(
     image=".png",
     caption="",
     description="TODO",
@@ -108,23 +130,21 @@ It's a little early to see widespread usage of this new method of managing the c
   )
 }}
 
-_Figure 1.5. The most popular class names by the percent of pages._
-
-As in 2020 and 2021 the most popular class name on the web is active. The fa, fa-* prefixes for Font Awesome still coming second and third. However, wp-* class names have crept up the rankings, moving to fourth place. They now show up on 31% of pages, having been at 20% in 2021. We also see class names such as has-large-font-size appearing, these are used in the new WordPress Block Editor.
-
-Clearfix has disappeared from the top 20, it is now found on only 10% of pages, a very clear indication that float-based layouts are vanishing from the web.
-
-_Figure 1.6. The most popular ID names by percent of pages._
-
-The name `content` is once again the most popular ID name, followed by `footer`, and `header`. The IDs starting with `fb_` indicate use of Facebook widgets. In 2021 IDs beginning with `rc-`, indicating use of Google's reCAPTCHA system were seen on 7% of pages, and are still seen with the same frequency, despite being pushed out of the top ten by the Facebook ID names.
-
-### !important
-
 _Figure 1.7. The distribution of the number of !important properties per page._
 
 The use of `!important` has slightly increased for the top two percentiles this year. As `@layer` usage takes hold it will be interesting to see how this impacts the use of this property, typically used to deal with specificity issues.
 
 In terms of what `!important` is applied to, the top properties remain unchanged. However, `position` has fallen out of the top ten, to be replaced with `font-size`.
+
+{{ figure_markup(
+    image=".png",
+    caption="",
+    description="TODO",
+    chart_url="",
+    sheets_gid="",
+    sql_file=".sql"
+  )
+}}
 
 _Figure 1.8. The top properties that !important is applied to by percent of pages._
 
@@ -144,11 +164,31 @@ Except for desktop at the 25th percentile, median specificity values are exactly
 
 ### Pseudo-classes and -elements
 
+{{ figure_markup(
+    image=".png",
+    caption="",
+    description="TODO",
+    chart_url="",
+    sheets_gid="",
+    sql_file=".sql"
+  )
+}}
+
 _Figure 1.10. Most popular pseudo-classes by percent of pages._
 
 Once again the user-action pseudo-classes `:hover`, `:focus`, and `:active` are in the top three spots. The negation pseudo-class `:not()` also continues its rise in popularity, along with `:root`, likely used to create custom properties.
 
-Last year it was noted that `:focus-visible`, a way to style elements in focus in a way that better matches user expectations, appeared in less than 1% of pages. The property has been available in all three major engines since March 2022, and is now found on 10% of desktop and 9% of mobile pages. 
+Last year it was noted that `:focus-visible`, a way to style elements in focus in a way that better matches user expectations, appeared in less than 1% of pages. The property has been available in all three major engines since March 2022, and is now found on 10% of desktop and 9% of mobile pages.
+
+{{ figure_markup(
+    image=".png",
+    caption="",
+    description="TODO",
+    chart_url="",
+    sheets_gid="",
+    sql_file=".sql"
+  )
+}}
 
 _Figure 1.11. Most popular pseudo-elements by percent of pages._
 
@@ -178,9 +218,19 @@ CSS provides multiple ways to specify values and units, either in set lengths, o
 
 ### Length
 
-> _Figure 1.13. Most popular `<length>` units by percent of pages._
+{{ figure_markup(
+    image=".png",
+    caption="",
+    description="TODO",
+    chart_url="",
+    sheets_gid="",
+    sql_file=".sql"
+  )
+}}
 
-> Pixel lengths remain the most popular at 71%, the same percentage as in 2021. The spread of usage remains roughly the same too.
+_Figure 1.13. Most popular `<length>` units by percent of pages._
+
+Pixel lengths remain the most popular at 71%, the same percentage as in 2021. The spread of usage remains roughly the same too.
 
 | PropertyProperty | px       | <number><number> | em       | %        | rem      | pt        |
 :          :          :          :          :          :          :           :
@@ -226,33 +276,103 @@ _Figure 1.14. Distribution of length types per property._
 
 The up and down arrows on this chart show the change from the [results in 2021](https://almanac.httparchive.org/en/2021/css#fig-15). As seen last year, in the majority of cases there is a shift away from using pixels, in favor of other length units. Once again, the `vertical-align` property saw a huge drop in pixel and `<number>` use, and a large rise in em use.
 
-> _Figure 1.15. The most popular font-relative length units._
+{{ figure_markup(
+    image=".png",
+    caption="",
+    description="TODO",
+    chart_url="",
+    sheets_gid="",
+    sql_file=".sql"
+  )
+}}
 
-> While em remains the most popular method of sizing fonts, the swing to rem continues with a small (just under two point) increase over last year.
+_Figure 1.15. The most popular font-relative length units._
 
-> _Figure 1.16. The units (or lack thereof) used on zero-length values._
+While em remains the most popular method of sizing fonts, the swing to rem continues with a small (just under two point) increase over last year.
 
-> There are a few properties that allow bare `<number>` units (for example, `line-height`), but `<length>` values have a special case where a length of zero does not require a unit. When we looked at all zero-length values, almost 87% of them omitted the unit, this is a small decrease from last year. Nearly all of those zero lengths that included a unit used pixels (0px).
+{{ figure_markup(
+    image=".png",
+    caption="",
+    description="TODO",
+    chart_url="",
+    sheets_gid="",
+    sql_file=".sql"
+  )
+}}
+
+_Figure 1.16. The units (or lack thereof) used on zero-length values._
+
+There are a few properties that allow bare `<number>` units (for example, `line-height`), but `<length>` values have a special case where a length of zero does not require a unit. When we looked at all zero-length values, almost 87% of them omitted the unit, this is a small decrease from last year. Nearly all of those zero lengths that included a unit used pixels (0px).
 
 ### Calculations
 
-> _Figure 1.17. The most popular properties using `calc()` functions._
+{{ figure_markup(
+    image=".png",
+    caption="",
+    description="TODO",
+    chart_url="",
+    sheets_gid="",
+    sql_file=".sql"
+  )
+}}
 
-> As in previous years, the most popular use of `calc()` is in values for width. This use has dropped 12% points, however, `max-width` has increased in popularity by 9 points. 
+_Figure 1.17. The most popular properties using `calc()` functions._
 
-> _Figure 1.18. The most popular length units used in `calc()` functions._
+As in previous years, the most popular use of `calc()` is in values for width. This use has dropped 12% points, however, `max-width` has increased in popularity by 9 points.
 
-> The percentage of sites using pixels in calculations has decreased 9 points, it is now level with percentages at 42%. There is a significant increase in usage for other values, the viewport units vw and vh both increased from 2% to 8% this year, em increased the same amount, and use of rem doubled from 3% to 6%.
+{{ figure_markup(
+    image=".png",
+    caption="",
+    description="TODO",
+    chart_url="",
+    sheets_gid="",
+    sql_file=".sql"
+  )
+}}
+
+_Figure 1.18. The most popular length units used in `calc()` functions._
+
+The percentage of sites using pixels in calculations has decreased 9 points, it is now level with percentages at 42%. There is a significant increase in usage for other values, the viewport units vw and vh both increased from 2% to 8% this year, em increased the same amount, and use of rem doubled from 3% to 6%.
+
+{{ figure_markup(
+    image=".png",
+    caption="",
+    description="TODO",
+    chart_url="",
+    sheets_gid="",
+    sql_file=".sql"
+  )
+}}
 
 _Figure 1.19. The most popular operators used in `calc()` functions._
 
 Subtraction remains the clear favorite in terms of calculation operators, but all four top values saw a drop since 2021, other than addition, which remained the same. 
+
+{{ figure_markup(
+    image=".png",
+    caption="",
+    description="TODO",
+    chart_url="",
+    sheets_gid="",
+    sql_file=".sql"
+  )
+}}
 
 _Figure 1.20. The number of unique units used in `calc()` values._
 
 As last year, `calc()` values tend to be fairly simple. The majority using two values, such as the common use case of subtracting a fixed length such as pixels from a percentage. There was a small rise in one unit values, and a small drop in two units.
 
 ## Global keywords
+
+{{ figure_markup(
+    image=".png",
+    caption="",
+    description="TODO",
+    chart_url="",
+    sheets_gid="",
+    sql_file=".sql"
+  )
+}}
 
 _Figure 1.22. Usage of global keyword values._
 
@@ -576,6 +696,14 @@ Around 22% of pages use border-box on checkboxes and radiobuttons, we then see a
 
 ### Multicolumn
 
+{{ figure_markup(
+    content="",
+    caption="",
+    classes="big-number",
+    sheets_gid="",
+    sql_file=".sql"
+  )
+}}
 **23%**  
 _Figure 1.41. The percentage of pages using multicolumn layout_
 
@@ -583,6 +711,14 @@ Use of multicolumn layout has increased once again, it's now found on 23% of pag
 
 ### The aspect-ratio property 
 
+{{ figure_markup(
+    content="",
+    caption="",
+    classes="big-number",
+    sheets_gid="",
+    sql_file=".sql"
+  )
+}}
 **2%**  
 _Figure 1.42. The percentage of pages using the aspect-ratio property_
 
@@ -694,6 +830,14 @@ _Figure 1.49. Types of animations as identified by animation name._
 
 ## Visual Effects
 
+{{ figure_markup(
+    content="",
+    caption="",
+    classes="big-number",
+    sheets_gid="",
+    sql_file=".sql"
+  )
+}}
 **18%**  
 _Figure 1.50. The percentage of pages using blend modes_
 
@@ -971,6 +1115,14 @@ _Figure 1.65. Use of explicit nesting in SCSS by percent of pages using SCSS._
 
 ## CSS for print
 
+{{ figure_markup(
+    content="",
+    caption="",
+    classes="big-number",
+    sheets_gid="",
+    sql_file=".sql"
+  )
+}}
 **5%**  
 _Figure 1.66. The percentage of desktop pages with print specific styles_
 
