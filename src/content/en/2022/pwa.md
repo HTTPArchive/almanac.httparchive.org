@@ -8,7 +8,7 @@ analysts: [beth-panx]
 editors: [siwinlo]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1PbzjhN--jU9MGuWobw5L9EsmlVzI9tlbCe3_NKA7giU/
-diekus_bio: Diego Gonzalez ([@diekus](https://twitter.com/diekus)) is a computer engineer from Costa Rica working as the PM for PWA platform features for the  Microsoft Edge browser.
+diekus_bio: Diego Gonzalez (@diekus) is a computer engineer from Costa Rica working as the PM for PWA platform features for the  Microsoft Edge browser.
 featured_quote: The increasing features that allow integration of installable web applications with desktop platforms has driven adoption of the PWAs by big names in the industry.
 featured_stat_1: 95.23%
 featured_stat_label_1: Percent of manifest files that are JSON parseable on desktop
