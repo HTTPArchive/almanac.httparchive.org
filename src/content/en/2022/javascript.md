@@ -8,6 +8,7 @@ reviewers: [mgechev, pankajparkar, NishuGoel, seldo, housseindjirdeh, kevinfarru
 analysts: [NishuGoel, kevinfarrugia]
 editors: [rviscomi]
 translators: []
+malchata_bio: "Jeremy Wagner is a technical writer for Google on performance and Core Web Vitals. He has also written for A List Apart, CSS-Tricks, and Smashing Magazine. Jeremy will someday relocate to the remote wilderness where sand has not yet been taught to think. Until then, he continues to reside in Minnesota’s Twin Cities with his wife and stepdaughters, bemoaning the existence of strip malls."
 results: https://docs.google.com/spreadsheets/d/1vOeFUyfEtWRen3Xj57ZsWav40n5tlcJoV0HmAxmNE_I/
 featured_quote: TODO
 featured_stat_1: TODO
