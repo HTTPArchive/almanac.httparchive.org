@@ -303,7 +303,7 @@ We can see that the median performance scores for most platforms on mobile are l
 
 WordPress, Joomla, Drupal, and 1C-Bitrix showed no change from last year's results. Wix dropped from 30% to 29% while the rest showed improvements.
 
-Desktop show—unsurprisingly given the faster CPUs and netwrok—better numbers with all CMSs seeing a 10-20 point improvements.
+Desktop show—unsurprisingly given the faster CPUs and network—better numbers with all CMSs seeing a 10-20 point improvements.
 
 #### SEO score
 
