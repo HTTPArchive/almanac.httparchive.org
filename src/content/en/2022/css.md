@@ -196,32 +196,30 @@ Except for desktop at the 25th percentile, median specificity values are exactly
 ### Pseudo-classes and -elements
 
 {{ figure_markup(
-    image=".png",
-    caption="",
+    image="pseudo-classes.png",
+    caption="Most popular pseudo-classes by percent of pages.",
     description="TODO",
-    chart_url="",
-    sheets_gid="",
-    sql_file=".sql"
+    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=108638805&format=interactive",
+    height="612",
+    sheets_gid="370286500",
+    sql_file="top_selector_pseudo_classes.sql"
   )
 }}
-
-_Figure 1.10. Most popular pseudo-classes by percent of pages._
 
 Once again the user-action pseudo-classes `:hover`, `:focus`, and `:active` are in the top three spots. The negation pseudo-class `:not()` also continues its rise in popularity, along with `:root`, likely used to create custom properties.
 
 Last year it was noted that `:focus-visible`, a way to style elements in focus in a way that better matches user expectations, appeared in less than 1% of pages. The property has been available in all three major engines since March 2022, and is now found on 10% of desktop and 9% of mobile pages.
 
 {{ figure_markup(
-    image=".png",
-    caption="",
+    image="pseudo-elements.png",
+    caption="Most popular pseudo-elements by percent of pages.",
     description="TODO",
-    chart_url="",
-    sheets_gid="",
-    sql_file=".sql"
+    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1671689923&format=interactive",
+    height="500",
+    sheets_gid="425572900",
+    sql_file="top_selector_pseudo_elements.sql"
   )
 }}
-
-_Figure 1.11. Most popular pseudo-elements by percent of pages._
 
 We filter out any prefixed, and therefore browser-specific, pseudo-elements. These are typically used to select interface components or parts of browser chrome, and we are interested in the pseudo-elements developers are actually using. 
 
@@ -232,16 +230,15 @@ Use of the `::marker` pseudo-element has now made 1%, showing that people are sl
 ### Attribute selectors
 
 {{ figure_markup(
-    image=".png",
-    caption="",
+    image="attribute-selectors.png",
+    caption="Most popular attribute selectors by percent of pages.",
     description="TODO",
-    chart_url="",
-    sheets_gid="",
-    sql_file=".sql"
+    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1566442848&format=interactive",
+    height="675",
+    sheets_gid="1504728475",
+    sql_file="top_selector_attributes.sql"
   )
 }}
-
-_Figure 1.12. Most popular attribute selectors by percent of pages._
 
 ## Values and Units
 
@@ -250,169 +247,237 @@ CSS provides multiple ways to specify values and units, either in set lengths, o
 ### Length
 
 {{ figure_markup(
-    image=".png",
-    caption="",
+    image="length-units.png",
+    caption="Most popular `<length>` units by percent of pages.",
     description="TODO",
-    chart_url="",
-    sheets_gid="",
-    sql_file=".sql"
+    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1742992649&format=interactive",
+    sheets_gid="161285719",
+    sql_file="units_frequency.sql"
   )
 }}
-
-_Figure 1.13. Most popular `<length>` units by percent of pages._
 
 Pixel lengths remain the most popular at 71%, the same percentage as in 2021. The spread of usage remains roughly the same too.
 
 <figure>
-| PropertyProperty | px       | <number><number> | em       | %        | rem      | pt        |
-:          :          :          :          :          :          :           :
-| -------- | -------- | -------- | -------- | -------- | -------- | --------- |
-| font-size | (up      | (down    | (down    | (down    | (up      | (down     |
-:          : 1.9%)    : 0.1%)    : 0.8%)    : 0.2%)    : 0.6%)    : 0.5%)     :
-:          : 70.89%   : 1.90%    : 15.24%   : 4.84%    : 5.62%    : 1.51%     :
-| border-radius | (down    | (down    | (up      | (up      | (up      |           |
-:          : 0.5%)    : 1.3%)    : 0.1%)    : 1.2%)    : 1.5%)    :           :
-:          : 64.45%   : 19.72%   : 3.13%    : 11.19%   : 1.51%    :           :
-| line-height | (down    | (up      | (down    | (down    | (up      | 0.00%     |
-:          : 5.4%)    : 4.1%)    : 0.1%)    : 0.8%0    : 1.2%)    :           :
-:          : 48.58%   : 35.09%   : 12.94%   : 2.22%    : 1.17%    :           :
-| border   | (down    | (up      | (down    |          |          |           |
-:          : 1%)      : 0.4%)    : 0.4%)    :          :          :           :
-:          : 70.03%   : 28.37%   : 1.60%    :          :          :           :
-| text-indent | (down    | (up      | (down    | (down    |          |           |
-:          : 5.4%)    : 12.8%)   : 3.5%)    : 2.9%)    :          :           :
-:          : 25.60%   : 64.78%   : 4.51%    : 5.11%    :          :           :
-| vertical-align | (down    | (down    | (up      |          |          |           |
-:          : 26.2%)   : 9.2%)    : 39.4%)   :          :          :           :
-:          : 2.84%    : 2.78%    : 94.38%   :          :          :           :
-| gap      | (up      | (down    | (up      |          | (down    |           |
-:          : 4.4%)    : 5.8%)    : 31.9%)   :          : 30.5%)31.51% :           :
-:          : 25.42%   : 10.19%   : 32.89%   :          :          :           :
-| margin-inline-start | (down    | (up      | (up      |          |          |           |
-:          : 30.9%)   : 2.6%)    : 30.3%)   :          :          :           :
-:          : 7.07%    : 48.61%   : 44.32%   :          :          :           :
-| grid-gapgrid-gap | (up      | (down    | (down    |          | (down    |           |
-:          : 5.3%)    : 1.4%)    : 2%)      :          : 0.9%)    :           :
-:          : 68.30%   : 9.65%    : 6.97%    :          : 15.08%   :           :
-| margin-block-end | (down    | (up      | (down    |          |          |           |
-:          : 1.2%)    : 53.9%)   : 52.7%)   :          :          :           :
-:          : 2.79%    : 84.94%   : 12.27%   :          :          :           :
-| padding-inline-start | (down    | (up      | (down    |          |  (up     |           |
-:          : 4.4%)    : 11.2%)   : 9.5%)    :          : 2.6%)    :           :
-:          : 28.63%   : 16.20%   : 52.53%   :          : 2.64%    :           :
-| mask-position | (up      | (up      | (down    | (up      |          |           |
-:          : 1.4%)    : 2.9%)    : 14.1%)   : 9.7%)    :          :           :
-:          : 1.42%    : 2.92%    : 35.93%   : 59.73%   :          :           :
+  <table>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th><code>px</code></th>
+        <th><code>&lt;number></code></th>
+        <th><code>em</code></th>
+        <th><code>%</code></th>
+        <th><code>rem</code></th>
+        <th><code>pt</code></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>font-size</td>
+        <td class="numeric"><span class="numeric-good">(▲2%)</span> 71%</td>
+        <td class="numeric">2%</td>
+        <td class="numeric"><span class="numeric-bad">(▼1%)</span> 15%</td>
+        <td class="numeric">5%</td>
+        <td class="numeric"><span class="numeric-good">(▲1%)</span> 6%</td>
+        <td class="numeric"><span class="numeric-bad">(▼1%)</span> 2%</td>
+      </tr>
+      <tr>
+        <td>border-radius</td>
+        <td class="numeric"><span class="numeric-bad">(▼1%)</span> 64%</td>
+        <td class="numeric"><span class="numeric-bad">(▼1%)</span> 20%</td>
+        <td class="numeric">3.13%</td>
+        <td class="numeric"><span class="numeric-good">(▲1%)</span> 11%</td>
+        <td class="numeric"><span class="numeric-good">(▲2%)</span> 2%</td>
+        <td class="numeric">0%</td>
+      </tr>
+      <tr>
+        <td>line-height</td>
+        <td class="numeric"><span class="numeric-bad">(▼5%)</span> 49%</td>
+        <td class="numeric"><span class="numeric-good">(▲4%)</span> 35%</td>
+        <td class="numeric">12.94%</td>
+        <td class="numeric"><span class="numeric-bad">(▼1%)</span> 2%</td>
+        <td class="numeric"><span class="numeric-good">(▲1%)</span> 1%</td>
+        <td class="numeric">0%</td>
+      </tr>
+      <tr>
+        <td>border</td>
+        <td class="numeric"><span class="numeric-bad">(▼1%)</span> 70%</td>
+        <td class="numeric">28%</td>
+        <td class="numeric">2%</td>
+        <td class="numeric">0%</td>
+        <td class="numeric">0%</td>
+        <td class="numeric">0%</td>
+      </tr>
+      <tr>
+        <td>text-indent</td>
+        <td class="numeric"><span class="numeric-bad">(▼5%)</span> 26%</td>
+        <td class="numeric"><span class="numeric-good">(▲13%)</span> 65%</td>
+        <td class="numeric"><span class="numeric-bad">(▼4%)</span> 5%</td>
+        <td class="numeric"><span class="numeric-bad">(▼3%)</span> 5%</td>
+        <td class="numeric">0%</td>
+        <td class="numeric">0%</td>
+      </tr>
+      <tr>
+        <td>vertical-align</td>
+        <td class="numeric"><span class="numeric-bad">(▼26%)</span> 3%</td>
+        <td class="numeric"><span class="numeric-bad">(▼9%)</span> 3%</td>
+        <td class="numeric"><span class="numeric-good">(▲39%)</span> 94%</td>
+        <td class="numeric">0%</td>
+        <td class="numeric">0%</td>
+        <td class="numeric">0%</td>
+      </tr>
+      <tr>
+        <td>gap</td>
+        <td class="numeric"><span class="numeric-good">(▲4%)</span> 25%</td>
+        <td class="numeric"><span class="numeric-bad">(▼6%)</span> 10%</td>
+        <td class="numeric"><span class="numeric-good">(▲32%)</span> 33%</td>
+        <td class="numeric">0%</td>
+        <td class="numeric"><span class="numeric-bad">(▼31%)</span> 32%</td>
+        <td class="numeric">0%</td>
+      </tr>
+      <tr>
+        <td>margin-inline-start</td>
+        <td class="numeric"><span class="numeric-bad">(▼31%)</span> 7%</td>
+        <td class="numeric"><span class="numeric-good">(▲3%)</span> 49%</td>
+        <td class="numeric"><span class="numeric-good">(▲30%)</span> 44%</td>
+        <td class="numeric">0%</td>
+        <td class="numeric">0%</td>
+        <td class="numeric">0%</td>
+      </tr>
+      <tr>
+        <td>grid-gap</td>
+        <td class="numeric"><span class="numeric-good">(▲5%)</span> 68%</td>
+        <td class="numeric"><span class="numeric-bad">(▼1%)</span> 10%</td>
+        <td class="numeric"><span class="numeric-bad">(▼2%)</span> 7%</td>
+        <td class="numeric">0%</td>
+        <td class="numeric"><span class="numeric-bad">(▼1%)</span> 15%</td>
+        <td class="numeric">0%</td>
+      </tr>
+      <tr>
+        <td>margin-block-end</td>
+        <td class="numeric"><span class="numeric-bad">(▼1%)</span> 3%</td>
+        <td class="numeric"><span class="numeric-good">(▲54%)</span> 85%</td>
+        <td class="numeric"><span class="numeric-bad">(▼53%)</span> 12%</td>
+        <td class="numeric">0%</td>
+        <td class="numeric">0%</td>
+        <td class="numeric">0%</td>
+      </tr>
+      <tr>
+        <td>padding-inline-start</td>
+        <td class="numeric"><span class="numeric-bad">(▼4%)</span> 29%</td>
+        <td class="numeric"><span class="numeric-good">(▲11%)</span> 16%</td>
+        <td class="numeric"><span class="numeric-bad">(▼10%)</span> 53%</td>
+        <td class="numeric">0%</td>
+        <td class="numeric"><span class="numeric-good">(▲3%)</span> 3%</td>
+        <td class="numeric">0%</td>
+      </tr>
+      <tr>
+        <td>mask-position</td>
+        <td class="numeric"><span class="numeric-good">(▲1%)</span> 1%</td>
+        <td class="numeric"><span class="numeric-good">(▲3%)</span> 3%</td>
+        <td class="numeric"><span class="numeric-bad">(▼14%)</span> 36%</td>
+        <td class="numeric"><span class="numeric-good">(▲10%)</span> 60%</td>
+        <td class="numeric">0%</td>
+        <td class="numeric">0%</td>
+      </tr>
+    </tbody>
+  </table>
 
   <figcaption>{{ figure_link(
-    caption="",
-    sheets_gid="",
-    sql_file=""
+    caption=" Distribution of length types per property.",
+    sheets_gid="1471089154",
+    sql_file="units_properties.sql"
   ) }}</figcaption>
 </figure>
-_Figure 1.14. Distribution of length types per property._
 
 The up and down arrows on this chart show the change from the [results in 2021](https://almanac.httparchive.org/en/2021/css#fig-15). As seen last year, in the majority of cases there is a shift away from using pixels, in favor of other length units. Once again, the `vertical-align` property saw a huge drop in pixel and `<number>` use, and a large rise in em use.
 
 {{ figure_markup(
-    image=".png",
-    caption="",
+    image="font-relative-length-units.png",
+    caption="The most popular font-relative length units.",
     description="TODO",
-    chart_url="",
-    sheets_gid="",
-    sql_file=".sql"
+    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1099832022&format=interactive",
+    sheets_gid="161285719",
+    sql_file="units_frequency.sql"
   )
 }}
-
-_Figure 1.15. The most popular font-relative length units._
 
 While em remains the most popular method of sizing fonts, the swing to rem continues with a small (just under two point) increase over last year.
 
 {{ figure_markup(
-    image=".png",
-    caption="",
+    image="zero-length-units.png",
+    caption="The units (or lack thereof) used on zero-length values.",
     description="TODO",
-    chart_url="",
-    sheets_gid="",
-    sql_file=".sql"
+    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=782579377&format=interactive",
+    sheets_gid="242535636",
+    sql_file="units_zero.sql"
   )
 }}
-
-_Figure 1.16. The units (or lack thereof) used on zero-length values._
 
 There are a few properties that allow bare `<number>` units (for example, `line-height`), but `<length>` values have a special case where a length of zero does not require a unit. When we looked at all zero-length values, almost 87% of them omitted the unit, this is a small decrease from last year. Nearly all of those zero lengths that included a unit used pixels (0px).
 
 ### Calculations
 
 {{ figure_markup(
-    image=".png",
-    caption="",
+    image="calc-props.png",
+    caption="The most popular properties using `calc()` functions.",
     description="TODO",
-    chart_url="",
-    sheets_gid="",
-    sql_file=".sql"
+    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=203539180&format=interactive",
+    height="695",
+    sheets_gid="2120544742",
+    sql_file="calc_properties.sql"
   )
 }}
-
-_Figure 1.17. The most popular properties using `calc()` functions._
 
 As in previous years, the most popular use of `calc()` is in values for width. This use has dropped 12% points, however, `max-width` has increased in popularity by 9 points.
 
 {{ figure_markup(
-    image=".png",
-    caption="",
+    image="calc-units.png",
+    caption="The most popular length units used in `calc()` functions.",
     description="TODO",
-    chart_url="",
-    sheets_gid="",
-    sql_file=".sql"
+    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1749089658&format=interactive",
+    sheets_gid="1431660156",
+    sql_file="calc_units.sql"
   )
 }}
-
-_Figure 1.18. The most popular length units used in `calc()` functions._
 
 The percentage of sites using pixels in calculations has decreased 9 points, it is now level with percentages at 42%. There is a significant increase in usage for other values, the viewport units vw and vh both increased from 2% to 8% this year, em increased the same amount, and use of rem doubled from 3% to 6%.
 
 {{ figure_markup(
-    image=".png",
-    caption="",
+    image="calc-operators.png",
+    caption="The most popular operators used in `calc()` functions.",
     description="TODO",
-    chart_url="",
-    sheets_gid="",
-    sql_file=".sql"
+    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1571752832&format=interactive",
+    sheets_gid="220199231",
+    sql_file="calc_operators.sql"
   )
 }}
-
-_Figure 1.19. The most popular operators used in `calc()` functions._
 
 Subtraction remains the clear favorite in terms of calculation operators, but all four top values saw a drop since 2021, other than addition, which remained the same. 
 
 {{ figure_markup(
-    image=".png",
-    caption="",
+    image="calc-unit-complexity.png",
+    caption="The number of unique units used in `calc()` values.",
     description="TODO",
-    chart_url="",
-    sheets_gid="",
-    sql_file=".sql"
+    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=220014387&format=interactive",
+    sheets_gid="87407358",
+    sql_file="calc_complexity_units.sql"
   )
 }}
-
-_Figure 1.20. The number of unique units used in `calc()` values._
 
 As last year, `calc()` values tend to be fairly simple. The majority using two values, such as the common use case of subtracting a fixed length such as pixels from a percentage. There was a small rise in one unit values, and a small drop in two units.
 
 ## Global keywords
 
 {{ figure_markup(
-    image=".png",
-    caption="",
+    image="keywords.png",
+    caption="Usage of global keyword values.",
     description="TODO",
-    chart_url="",
-    sheets_gid="",
-    sql_file=".sql"
+    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1675598127&format=interactive",
+    sheets_gid="393924630",
+    sql_file="keyword_totals.sql"
   )
 }}
-
-_Figure 1.22. Usage of global keyword values._
 
 Last year the use of global keywords had risen significantly, in 2022 inherit is found in the same percentage of pages, however the other three values have increased in use. The newer value of revert has increased from 1% to 4%.
 
@@ -424,7 +489,7 @@ Last year the use of global keywords had risen significantly, in 2022 inherit is
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -438,7 +503,7 @@ Custom properties (sometimes known as CSS variables) have seen a huge surge in u
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -454,7 +519,7 @@ As seen last year, WordPress is the driver for the most common custom property n
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -470,7 +535,7 @@ The value of a custom property includes a type. For example, `--red: #EF2143` is
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -486,7 +551,7 @@ While the number of pages including these properties has increased, the properti
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -512,7 +577,7 @@ As the comments in the previous example show, the more of these sub-references a
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -528,7 +593,7 @@ As seen in 2021 the vast majority of custom properties had a depth of zero, mean
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -546,7 +611,7 @@ The usage of other values showed a similar story, the web community hasn't yet s
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -560,7 +625,7 @@ _Figure 1.30. The least popular named colors by number of occurrences._
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -574,7 +639,7 @@ The `rgba()` function is the third most popular color format, used substantially
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -598,7 +663,7 @@ Another property becoming available in all engines this year is [color-scheme](h
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -614,13 +679,13 @@ Linear gradients continue as the leading choice, appearing on a slightly higher 
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
 _Figure 1.34. Image formats as loaded from CSS._
 
-This chart breaks down the image formats of images loaded from CSS. It does not include images loaded from HTML, just those that appear in a style rule. There has been a significant swing away from PNG (down from 44% to 30%), with SVG and WEBP each seeing an increase of 6 percentage points.
+This chart breaks down the image formats of images loaded from CSS. It does not include images loaded from HTML, just those that appear in a style rule. There has been a significant swing away from PNG <span class="numeric-bad">(▼from 44% to 30%)</span>, with SVG and WEBP each seeing an increase of 6 percentage points.
 
 ### Number of images in CSS
 
@@ -630,7 +695,7 @@ This chart breaks down the image formats of images loaded from CSS. It does not 
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -648,7 +713,7 @@ While CSS doesn't cause many image loads, the weight of those images is importan
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -664,7 +729,7 @@ The median page, on mobile, has increased image weight by 1KB to 17KB. At the up
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -682,7 +747,7 @@ We have many options to choose from when doing layout on the web, and most sites
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -698,7 +763,7 @@ This chart doesn't tell us the main layout method used on a page. It indicates t
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -722,7 +787,7 @@ The subgrid value for grid-template-rows and grid-template-columns is, at the ti
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -739,7 +804,7 @@ Around 22% of pages use border-box on checkboxes and radiobuttons, we then see a
     caption="",
     classes="big-number",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 **23%**  
@@ -754,7 +819,7 @@ Use of multicolumn layout has increased once again, it's now found on 23% of pag
     caption="",
     classes="big-number",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 **2%**  
@@ -772,13 +837,13 @@ The animation property appears on 77% of mobile pages (the same as last year) an
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
 _Figure 1.43. The most popular transition properties by percent of pages._
 
-As seen last year the most common usage is to apply transitions to all animatable properties with the `all` keyword. This usage has grown to 53% (up 7 percentage points), it is followed by `opacity`, at 50% pf pages including transitions. 
+As seen last year the most common usage is to apply transitions to all animatable properties with the `all` keyword. This usage has grown to 53% <span class="numeric-good">(▲7 percentage points)</span>, it is followed by `opacity`, at 50% pf pages including transitions. 
 
 {{ figure_markup(
     image=".png",
@@ -786,7 +851,7 @@ As seen last year the most common usage is to apply transitions to all animatabl
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -800,7 +865,7 @@ Looking at the duration of transitions we see a change from last year.  In 2021,
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -814,7 +879,7 @@ The distribution of transition delays has also changed. The 90th percentile dela
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -828,7 +893,7 @@ We also looked at the average number of keyframes used per animation, and found 
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -842,7 +907,7 @@ As you might expect the most popular stops are at 0% to and from 100%, followed 
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -860,7 +925,7 @@ As last year, the high showing for unknown/other is due to a prevalence of the c
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -873,7 +938,7 @@ _Figure 1.49. Types of animations as identified by animation name._
     caption="",
     classes="big-number",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 **18%**  
@@ -887,7 +952,7 @@ We looked at some visual effects being used in CSS. For example, 18% of desktop 
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -903,7 +968,7 @@ Around 18% of pages were using a custom property `var(--overlay-mix-blend-mode)`
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -919,7 +984,7 @@ Of the [standard values](https://developer.mozilla.org/en-US/docs/Web/CSS/filter
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -941,7 +1006,7 @@ When developers write media queries, they most often test the width of the viewp
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -955,7 +1020,7 @@ The prefers-reduced motion media query however, which was noted in 2021 as risin
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -969,7 +1034,7 @@ If we just look at the `prefers-` user preference features, we can see that `pre
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -987,7 +1052,7 @@ Both `hover` and `pointer` now appear in the top ten features. The less useful `
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -1007,7 +1072,7 @@ We looked at the properties that appear within media query blocks, to see which 
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -1029,7 +1094,7 @@ The number of feature query blocks per page is 4 at the 75th percentile, and at 
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -1045,7 +1110,7 @@ Non-standard features show up strongly in these tests, with touch-callout (-webk
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -1073,7 +1138,7 @@ Logical or flow-relative properties such as border-block-start and values such a
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -1093,7 +1158,7 @@ Once again we checked for usage of CSS Ruby, this is a collection of properties 
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -1117,7 +1182,7 @@ Looking at the function calls shows that color functions are still a very popula
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -1131,7 +1196,7 @@ Looking at control flow statements we see a small increase in `@for` and `@each`
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -1145,7 +1210,7 @@ Nesting is also interesting, given that a future spec for CSS Nesting is current
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -1158,7 +1223,7 @@ _Figure 1.65. Use of explicit nesting in SCSS by percent of pages using SCSS._
     caption="",
     classes="big-number",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 **5%**  
@@ -1172,7 +1237,7 @@ We wondered whether developers were creating print stylesheets to provide a bett
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -1188,7 +1253,7 @@ Print is a fragmented medium, the content is fragmented into pages, and we have 
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -1237,7 +1302,7 @@ In 2021 it was reported there was a slight drop in repetition, this year there i
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -1255,7 +1320,7 @@ When developers mix shorthand properties like background and longhand properties
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
@@ -1277,7 +1342,7 @@ As in previous years we checked for declarations that had valid syntax, but refe
     description="TODO",
     chart_url="",
     sheets_gid="",
-    sql_file=".sql"
+    sql_file=""
   )
 }}
 
