@@ -2,13 +2,13 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: PWA
 description: PWA chapter of the 2022 Web Almanac covering service workers (usage and features), Web App Manifests, Lighthouse insights, service worker libraries (including Workbox), and Web Push notifications.
-authors: [diekus, Suzzicks]
-reviewers: [aarongustafson, webmaxru, Schweinepriester, tropicadri, beth-panx, tropicadri]
+authors: [diekus]
+reviewers: [aarongustafson, tropicadri, webmaxru, Schweinepriester, beth-panx]
 analysts: [beth-panx]
 editors: [siwinlo]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1PbzjhN--jU9MGuWobw5L9EsmlVzI9tlbCe3_NKA7giU/
-diekus_bio: Diego Gonzalez (@diekus) is a computer engineer from Costa Rica working as the PM for PWA platform features for the  Microsoft Edge browser.
+diekus_bio: Diego Gonzalez ([@diekus](https://twitter.com/diekus)) is a computer engineer from Costa Rica working as the PM for PWA platform features for the  Microsoft Edge browser.
 featured_quote: The increasing features that allow integration of installable web applications with desktop platforms has driven adoption of the PWAs by big names in the industry.
 featured_stat_1: 95.23%
 featured_stat_label_1: Percent of manifest files that are JSON parseable on desktop
@@ -463,9 +463,9 @@ What is surprising is the rise in workbox-sw usage,  because starting with [Work
 
 It is possible the increase is coming from libraries that use older versions of Workbox like [create-react-app version 3](https://github.com/facebook/create-react-app/blob/v3.4.4/packages/react-scripts/package.json#L82)
 
-
 ### Web Push Notifications
 
+Notifications are a powerful way to re-engage with users. It is also one characteristic that we expect from platform-specific applications. Notifications are the perfect way to give timely, relevant and precise information, and it is powered by the Web Push API.
 
 #### Web Push notification acceptance rates
 
