@@ -118,47 +118,78 @@ Clearfix has disappeared from the top 20, it is now found on only 10% of pages, 
 
 The name `content` is once again the most popular ID name, followed by `footer`, and `header`. The IDs starting with `fb_` indicate use of Facebook widgets. In 2021 IDs beginning with `rc-`, indicating use of Google's reCAPTCHA system were seen on 7% of pages, and are still seen with the same frequency, despite being pushed out of the top ten by the Facebook ID names.
 
-### !important
+### `!important`
 
 {{ figure_markup(
-    image=".png",
-    caption="",
+    image="important-adoption.png",
+    caption="The distribution of the number of !important properties per page.",
     description="TODO",
-    chart_url="",
-    sheets_gid="",
-    sql_file=".sql"
+    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=316255168&format=interactive",
+    sheets_gid="1802353995",
+    sql_file="meta_important_adoption.sql"
   )
 }}
-
-_Figure 1.7. The distribution of the number of !important properties per page._
 
 The use of `!important` has slightly increased for the top two percentiles this year. As `@layer` usage takes hold it will be interesting to see how this impacts the use of this property, typically used to deal with specificity issues.
 
 In terms of what `!important` is applied to, the top properties remain unchanged. However, `position` has fallen out of the top ten, to be replaced with `font-size`.
 
 {{ figure_markup(
-    image=".png",
-    caption="",
+    image="important-props.png",
+    caption="The top properties that !important is applied to by percent of pages.",
     description="TODO",
-    chart_url="",
-    sheets_gid="",
-    sql_file=".sql"
+    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1202340370&format=interactive",
+    height="604",
+    sheets_gid="377488072",
+    sql_file="meta_important_properties.sql"
   )
 }}
 
-_Figure 1.8. The top properties that !important is applied to by percent of pages._
-
 ### Selector specificity
 
-| Percentile  | Desktop  | Mobile                                             |
-| ----------- | -------- | -------------------------------------------------- |
-| 10          | 0,1,0    | 0,1,0                                              |
-| 25          | 0,1,2    | 0,1,3                                              |
-| 50          | 0,2,0    | 0,2,0                                              |
-| 75          | 0,2,0    | 0,2,0                                              |
-| 90          | 0,3,0    | 0,3,0                                              |
-
-_Figure 1.9. Distribution of the median specificity per page._
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Percentile</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="numeric">10</td>
+        <td class="numeric">0,1,0</td>
+        <td class="numeric">0,1,0</td>
+      </tr>
+      <tr>
+        <td class="numeric">25</td>
+        <td class="numeric">0,1,2</td>
+        <td class="numeric">0,1,3</td>
+      </tr>
+      <tr>
+        <td class="numeric">50</td>
+        <td class="numeric">0,2,0</td>
+        <td class="numeric">0,2,0</td>
+      </tr>
+      <tr>
+        <td class="numeric">75</td>
+        <td class="numeric">0,2,0</td>
+        <td class="numeric">0,2,0</td>
+      </tr>
+      <tr>
+        <td class="numeric">90</td>
+        <td class="numeric">0,3,0</td>
+        <td class="numeric">0,3,0</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(
+    caption="Distribution of the median specificity per page.",
+    sheets_gid="1684019013",
+    sql_file="specificity.sql"
+  ) }}</figcaption>
+</figure>
 
 Except for desktop at the 25th percentile, median specificity values are exactly the same as last year, remaining constant over the past two years. These values indicate the  flattened specificity created by methodologies such as BEM.
 
@@ -232,6 +263,7 @@ _Figure 1.13. Most popular `<length>` units by percent of pages._
 
 Pixel lengths remain the most popular at 71%, the same percentage as in 2021. The spread of usage remains roughly the same too.
 
+<figure>
 | PropertyProperty | px       | <number><number> | em       | %        | rem      | pt        |
 :          :          :          :          :          :          :           :
 | -------- | -------- | -------- | -------- | -------- | -------- | --------- |
@@ -272,6 +304,12 @@ Pixel lengths remain the most popular at 71%, the same percentage as in 2021. Th
 :          : 1.4%)    : 2.9%)    : 14.1%)   : 9.7%)    :          :           :
 :          : 1.42%    : 2.92%    : 35.93%   : 59.73%   :          :           :
 
+  <figcaption>{{ figure_link(
+    caption="",
+    sheets_gid="",
+    sql_file=""
+  ) }}</figcaption>
+</figure>
 _Figure 1.14. Distribution of length types per property._
 
 The up and down arrows on this chart show the change from the [results in 2021](https://almanac.httparchive.org/en/2021/css#fig-15). As seen last year, in the majority of cases there is a shift away from using pixels, in favor of other length units. Once again, the `vertical-align` property saw a huge drop in pixel and `<number>` use, and a large rise in em use.
@@ -1166,12 +1204,19 @@ There is an entire specification for dealing with Paged Media, and CSS for print
 
 There is some browser support for the [@page](https://developer.mozilla.org/en-US/docs/Web/CSS/@page) rule, and its pseudo-classes, and we did find developers using these to set different page properties for the first page, and the left and right pages of a spread.
 
+<figure>
 | Pseudo-class  | Desktop  | Mobile                                           |
 | ------------- | -------- | ------------------------------------------------ |
 | \:first       | 5,950    | 7,352                                            |
 | \:right       | 1,548    | 2,115                                            |
 | \:left        | 1,554    | 2,101                                            |
 
+  <figcaption>{{ figure_link(
+    caption="",
+    sheets_gid="",
+    sql_file=""
+  ) }}</figcaption>
+</figure>
 _Figure 1.69. Number of pages found using @page spread pseudo-classes_
 
 Of people using these pseudo-classes the use was mostly to set the page margins, and also the size of the page.
