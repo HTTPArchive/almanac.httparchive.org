@@ -33,7 +33,7 @@ To begin, we'll assess the amount of JavaScript web developers ship on the web. 
 {{ figure_markup(
     image="bytes-per-page.png",
     caption="Distribution of the amount of JavaScript loaded per page.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of JavaScript kilobytes per page. On mobile pages, the values are 87, 209, 461, 857, and 1,367 KB respectively. Desktop values are slightly higher across the board. ",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=807278764&format=interactive",
     sheets_gid="1117050794",
     sql_file="bytes_2022.sql"
@@ -45,7 +45,7 @@ As was the case last year, this year marks yet another increase in the amount of
 {{ figure_markup(
     image="unused-js.png",
     caption="Distribution of the amount of unused JavaScript bytes.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of kilobytes of unused JavaScript per page. On mobile pages, the values are 0, 62, 162, 342, and 604. Desktop trends slightly higher.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=1640758017&format=interactive",
     sheets_gid="943216000",
     sql_file="unused_js_bytes_distribution.sql"
@@ -63,7 +63,7 @@ Every resource on a page accounts for one request, and scripts are no different.
 {{ figure_markup(
     image="requests-per-page.png",
     caption="Distribution of the number of JavaScript requests per page.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of JavaScript requests per page. On mobile pages, the values are 4, 10, 21, 37, and 60. Desktop trends slightly higher by 1-3 requests across the board.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=372493183&format=interactive",
     sheets_gid="1148191446",
     sql_file="requests_2022.sql"
@@ -103,7 +103,7 @@ There are a wealth of choices when it comes to JavaScript bundlers, but one that
 {{ figure_markup(
     image="webpack-rank.png",
     caption="Pages that use webpack-bundled JavaScript by rank.",
-    description="TODO",
+    description="Bar chart showing the percentage of pages that use webpack, in decreasing order of popularity. On mobile, the values are 17% for the top 1k, 15% for the top 10k, 12% for the top 100k, 8% for the top 1M, and 5% over all websites. Desktop pages trend close to mobile.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=1191436570&format=interactive",
     sheets_gid="1329160999",
     sql_file="usage_of_webpack_by_rank.sql"
@@ -115,7 +115,7 @@ Of the 1,000 most popular websites, 17% use webpack as a bundler. This makes sen
 {{ figure_markup(
     image="parcel-rank.png",
     caption="Pages that use Parcel-bundled JavaScript by rank.",
-    description="TODO",
+    description="Bar chart showing the percentage of pages that use Parcel, in decreasing order of popularity. On mobile, the values are 1.3% for the top 1k, 1.9% for the top 10k, 1.5% for the top 100k, 1.2% for the top 1M, and 1.3% over all websites. Desktop pages trend close to mobile.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=369910383&format=interactive",
     sheets_gid="908384281",
     sql_file="usage_of_parcel_by_rank.sql"
@@ -133,7 +133,7 @@ Transpilers are often used in toolchains at build-time to transform newer JavaSc
 {{ figure_markup(
     image="babel-rank.png",
     caption="Pages that use Babel by rank.",
-    description="TODO",
+    description="Bar chart showing the percentage of pages that use Babel, in decreasing order of popularity. On mobile pages, the values are 40% of the top 1k, 40% of the top 10k, 32% fo the top 100k, 23% of the top 1M, and 26% over all websites. Desktop pages trend close to mobile.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=1109529452&format=interactive",
     sheets_gid="304021769",
     sql_file="usage_of_typescript_and_babel_by_rank.sql"
@@ -257,7 +257,7 @@ Let's dig into an analysis of how many of each resource hint type is used.
 {{ figure_markup(
     image="prefetch.png",
     caption="Distribution of `prefetch` adoption for JavaScript resources per page.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of prefetch hints for JavaScript resources per page. The values for mobile pages are 1, 2, 3, 7, and 16, respectively. Desktop values trend higher above the 50th percentile by 1-4 hints per page.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=987611412&format=interactive",
     sheets_gid="397179470",
     sql_file="resource-hints-preload-prefetch-modulepreload-distribution.sql"
@@ -269,7 +269,7 @@ Adoption of `prefetch` here is somewhat surprising, with three `prefetch` hints 
 {{ figure_markup(
     image="preload.png",
     caption="Distribution of `preload` adoption for JavaScript resources per page.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of preload hints for JavaScript resources per page. The values for mobile pages are 1, 1, 2, 3, and 5, respectively. Desktop values are nearly identical to mobile.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=1371197443&format=interactive",
     sheets_gid="397179470",
     sql_file="resource-hints-preload-prefetch-modulepreload-distribution.sql"
@@ -283,7 +283,7 @@ Unfortunately, we see five `preload` hints for JavaScript resources at the 90th 
 {{ figure_markup(
     image="modulepreload.png",
     caption="Distribution of `modulepreload` adoption for JavaScript resources per page.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of modulepreload hints for JavaScript resources per page. The values for mobile pages are 1, 1, 2, 6, and 14, respectively. Desktop values are nearly identical to mobile..",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=100852946&format=interactive",
     sheets_gid="397179470",
     sql_file="resource-hints-preload-prefetch-modulepreload-distribution.sql"
@@ -314,7 +314,7 @@ We found that 77% of mobile pages have at least one render-blocking script in th
 {{ figure_markup(
     image="render-blocking-scripts-rank.png",
     caption="Pages by rank that have render-blocking scripts in the document `<head>`.",
-    description="TODO",
+    description="Bar chart showing the percent of pages that have render-blocking JavaScript segmented by site popularity. 63% of the top 1k mobile pages have it, 68% of the top 10k, 70% of the top 100k, 73% of the top 1M, and 77% overall. Desktop pages tend to have more render-blocking JavaScript, especially among the more popular pages.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=193447897&format=interactive",
     sheets_gid="971996043",
     sql_file="render_blocking_javascript_by_rank.sql"
@@ -336,7 +336,7 @@ Script injection is a fairly common practice used in a number of scenarios, but 
 {{ figure_markup(
     image="injected-scripts.png",
     caption="Distribution of percentage of injected scripts across various percentiles.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of the percent of scripts per page that are injected. On mobile pages, the values are 0%, 8%, 25%, 50%, and 70% respectively. Desktop values are nearly identical.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=389798470&format=interactive",
     sheets_gid="1017601908",
     sql_file="distribution_of_injected_scripts.sql"
@@ -363,7 +363,7 @@ In this section, we'll analyze the breakdown of first-party and third-party code
 {{ figure_markup(
     image="requests-party.png",
     caption="Distribution of first- versus third-party JavaScript requests by host.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of JavaScript requests per mobile page, broken down by whether the script was served by a first- or third-party host. The values for both are nearly identical, at 2, 4, 10, 20, and 34, respectively.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=2001603308&format=interactive",
     sheets_gid="755344459",
     sql_file="requests_by_3p.sql"
@@ -385,7 +385,7 @@ So we know that hosts are shipping a lot of third-party scripts, but what's the 
 {{ figure_markup(
     image="bytes-party.png",
     caption="Distribution of first- versus third-party JavaScript bytes by host.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of kilobytes of JavaScript loaded per mobile page, broken down by whether the script was served by a first- or third-party host. The values for third-parties are 34, 109, 292, 595, and 1,003 KB per page, respectively. First-party scripts are much lower, at 20, 65, 109, 309, and 642 KB per page.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=1411726363&format=interactive",
     sheets_gid="1560368150",
     sql_file="bytes_by_3p.sql"
@@ -477,7 +477,7 @@ An equally important aspect of JavaScript performance is how we deliver scripts 
 {{ figure_markup(
     image="compression-methods.png",
     caption="Compression of JavaScript by method.",
-    description="TODO",
+    description="Bar chart comparing the percent of script requests having either gzip, Brotli, deflate, or no compression method set. On mobile pages, the values are 52%, 34%, 0%, and 13% respectively. Desktop values are within 1 percentage point.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=1805733290&format=interactive",
     sheets_gid="1841484709",
     sql_file="compression_method.sql"
@@ -491,7 +491,7 @@ When something is the default, that default sometimes remains in place rather th
 {{ figure_markup(
     image="compression-by-host.png",
     caption="Compression methods of script resources by host.",
-    description="TODO",
+    description="Bar chart showing the percent of script requests on mobile pages that use each compression method, broken down by whether it was served by a first- or third-party host. 60% of third-party hosts serve scripts compressed with gzip, 29% with Brotli, 12% without any compression method, and 0% with deflate. Among first-party hosts, 45% serve gzip, 40% with Brotli, 15% wtihotu any compression method, and 0% with deflate.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=1368281759&format=interactive",
     sheets_gid="1339368020",
     sql_file="compression_method_by_3p.sql"
@@ -503,7 +503,7 @@ The problem is made worse by third-party script providers, which still deploy gz
 {{ figure_markup(
     image="uncompressed.png",
     caption="Uncompressed resources by size.",
-    description="TODO",
+    description="Histogram showing the distribution of kilobytes of uncompressed JavaScript resources on mobile pages, broken down by whether the script was served by a first- or third-party host. Uncompressed third-party scripts skew much more towards the small end, 90% of requests are less than 5 KB, with 3% of requests being 5-10 KB in size, and 2% being 100+ KB on the other end of the spectrum. First-party scripts skew more towards being larger in size, with only 50% being less than 5 KB, 12% between 5 and 10 KB, and 6% exceeding 100 KB.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=1991115497&format=interactive",
     sheets_gid="1609356066",
     sql_file="compression_none_by_bytes.sql"
@@ -521,7 +521,7 @@ Minification of text assets is a time-tested practice for reducing file size. Th
 {{ figure_markup(
     image="lighthouse-unminified.png",
     caption="Distribution of unminified JavaScript audit scores.",
-    description="TODO",
+    description="Histogram showing the percent of pages that have various ranges of scores on Lighthouse's unminified JavaScript audit. 68% of mobile pages have the best scores in the 0.9 to 1.0 range, 4% between 0.75 and 0.9, 8% between 0.5 and 0.75, 11% between 0.25 and 0.50, 2% between 0.1 and 0.25, and 7% in the worst range of 0.1 or less. Desktop pages tend to skew higher in the better ranges, with 79% of pages above 0.9.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=968128936&format=interactive",
     sheets_gid="906447348",
     sql_file="lighthouse_unminified_js.sql"
@@ -530,12 +530,10 @@ Minification of text assets is a time-tested practice for reducing file size. Th
 
 Here, 0.00 represents the worst score whereas 1.00 represents the best score. 68% of mobile pages are scoring between 0.9 and 1.0 on Lighthouse's minified JavaScript audit, whereas the figure for desktop pages is 79%. This means that on mobile, 32% of pages have opportunities to ship minified JavaScript, whereas that figure for desktop pages is 21%.
 
-{# TODO(editors): This metric corresponds to the 3P chapter, not the JS chapter. Edit this to ensure that the metadata links to the right source sheet/query. #}
-
 {{ figure_markup(
     image="lighthouse-unminified-bytes.png",
     caption="Distribution of the potential savings by minifying JavaScript.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of the kilobytes of potential savings with JavaScript minification, broken down by total savings and those only with third-party scripts. The total savings at each percentile are 3, 5, 12, 34, and 76 KB respectively. For only third-party scripts, the savings are 0, 0, 0, 3, and 19 KB.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=1309849294&format=interactive",
     sheets_gid="https://docs.google.com/spreadsheets/d/1YqoRRsyiNsrEabVLu2nRU98JIG_0zLLuoQhC2nX8xbM/edit#gid=442223364",
     sql_file="../third-parties/distribution_of_lighthouse_unminified_js_by_3p.sql"
@@ -547,7 +545,7 @@ At the median, we see that pages are shipping around 12 KB of JavaScript that ca
 {{ figure_markup(
     image="lighthouse-unminified-avg.png",
     caption="Average wasted bytes of unminified JavaScript.",
-    description="TODO",
+    description="Pie chart showing that on average 81.3% of wasted JavaScript bytes come from first-party scripts and 18.7% come from third-party scripts.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=656802580&format=interactive",
     sheets_gid="1457445566",
     sql_file="lighthouse_unminified_js_by_3p.sql"
@@ -599,7 +597,7 @@ The first of these is [First Input Delay (FID)](https://web.dev/fid/), which rec
 {{ figure_markup(
     image="fid.png",
     caption="The distribution of websites' 75th percentile FID values.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75 and 90th percentiles of origin's 75th percentile FID values. All values are 0 ms until the 90th percentile, where both desktop and phone are 25 ms.'",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=217835320&format=interactive",
     sheets_gid="2108420759",
     sql_file="fid.sql"
@@ -613,7 +611,7 @@ Given that the "good" FID threshold is [100 ms](https://web.dev/fid/#what-is-a-g
 {{ figure_markup(
     image="inp.png",
     caption="The distribution of websites' 75th percentile INP values.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of origins' 75th percentile INP values. Phone experiences are 75, 100, 150, 250, and 400 milliseconds, respectively. For desktop experiences, the values are lower across the board at 50, 75, 125, 225, and 350 milliseconds.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=675812331&format=interactive",
     sheets_gid="1763213051",
     sql_file="inp.sql"
@@ -627,7 +625,7 @@ Consider that a "good" INP score is [200 milliseconds](https://web.dev/inp/#what
 {{ figure_markup(
     image="tbt.png",
     caption="The distribution of pages' lab-based TBT values.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of pages' synthetic TBT values. Mobile pages have 154, 606, 1,686, 3,596, and 6,385 milliseconds of TBT, respectively. For desktop pages, the values are 0, 1, 72, 257, and 601 milliseconds.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=1624036326&format=interactive",
     sheets_gid="947698668",
     sql_file="tbt.sql"
@@ -643,7 +641,7 @@ Considering that [INP correlates very well with TBT](https://github.com/GoogleCh
 {{ figure_markup(
     image="tti.png",
     caption="The distribution of the TTI scores by origin and percentile.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of pages' synthetic TTI. On mobile pages, the distribution of TTI is 5, 9, 16, 27, and 41 seconds, respectively. For desktop pages, the values are 3, 5, 10, 20, and 32 seconds.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=1458856020&format=interactive",
     sheets_gid="864627793",
     sql_file="time_to_interactive.sql"
@@ -661,7 +659,7 @@ Long tasks are a problem because they block the main thread from doing any other
 {{ figure_markup(
     image="long-tasks.png",
     caption="The distribution of the number of long tasks per page.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of the number of long tasks per page. For mobile pages, there are 5, 10, 19, 32, and 48 long tasks per page, respectively. There are many fewer long tasks on desktop pages, which have only 2, 3, 7, 12, and 19 long tasks per page.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=563658830&format=interactive",
     sheets_gid="1504800023",
     sql_file="distribution_of_number_of_long_tasks.sql"
@@ -675,7 +673,7 @@ However, the picture gets much worse at higher percentiles. Long tasks at the 75
 {{ figure_markup(
     image="long-tasks-time.png",
     caption="Distribution of long tasks time per page.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentile of the total long task time per page. Mobile pages have 781, 1,744, 3,590, 6,570, and 10,856 milliseconds of long tasks per page, respectively. The values for desktop are much lower, at 160, 349, 738, 1,419, and 2,501 milliseconds.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=970989213&format=interactive",
     sheets_gid="1295792422",
     sql_file="distribution_of_long_tasks_time.sql"
@@ -781,7 +779,7 @@ To understand the usage of libraries and frameworks, HTTP Archive uses [Wappalyz
 {{ figure_markup(
     image="frameworks-libraries.png",
     caption="Adoption of top libraries and frameworks.",
-    description="TODO",
+    description="Bar chart showing the percent of pages that use the top JavaScript libraries and frameworks. Starting with the most popular, jQuery is used by 81% of mobile pages, followed by core-js on 41%, jQuery Migrate on 34%, jQuery UI on 23%, Modernizr on 13%, Lodash, LazySizes, and OWL Carousel on 9%, React, FancyBox, Slick, and GSAP on 8%, Isotope on 7%, and Underscore.js and Lightbox on 6%. Desktop adoption is very similar.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTok8UGqYaA58uKaASB2pfM2jlmQu6g3kwHxB6Lb8L7dbccyDtQht823YhchdXRG8SZpB3asRayJI97/pubchart?oid=1455350286&format=interactive",
     height="491",
     sheets_gid="582575220",
