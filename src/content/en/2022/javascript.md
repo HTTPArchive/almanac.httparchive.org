@@ -686,7 +686,7 @@ It's not enough to know how many long tasks there are per page—we need to unde
 
 {# TODO(authors): Consider rephrasing the "these results spell trouble" bit below, given that the results are coming from a simulated Moto G4 device in the lab. #}
 
-The 75th percentile suggests a much worse picture for those on mobile devices, coming in at nearly 6.6 seconds of processing time per page dedicated to handling long tasks. This is a _lot_ of time the browser is spending on intense work that could be optimized or even possibly be moved to web workers on a different thread. In any case, these results spell trouble for the mobile web and responsiveness.
+The 75th percentile suggests a much worse picture for those on mobile devices, coming in at nearly 6.6 seconds of processing time per page dedicated to handling long tasks. This is a lot of time the browser is spending on intense work that could be optimized or even possibly be moved to web workers on a different thread. In any case, these results spell trouble for the mobile web and responsiveness.
 
 ### Scheduler API
 
