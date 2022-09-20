@@ -537,8 +537,8 @@ Here, 0.00 represents the worst score whereas 1.00 represents the best score. 68
     caption="Distribution of the potential savings by minifying JavaScript.",
     description="TODO",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=1309849294&format=interactive",
-    sheets_gid="442223364",
-    sql_file="distribution_of_lighthouse_unminified_js_by_3p.sql"
+    sheets_gid="https://docs.google.com/spreadsheets/d/1YqoRRsyiNsrEabVLu2nRU98JIG_0zLLuoQhC2nX8xbM/edit#gid=442223364",
+    sql_file="../third-parties/distribution_of_lighthouse_unminified_js_by_3p.sql"
   )
 }}
 
