@@ -34,8 +34,8 @@ Although the state of web accessibility still leaves a lot to be desired, we did
 
 {{ figure_markup(
   image="lighthouse-audit-improvements-yoy.png",
-  caption="Lighthouse audit improvements year-over-year",
-  description="A bar chart showing how many sites pass 5 specific Lighthouse audits, in 2021 and 2022. aria-required-children passes on 63% of sites in 2021, and 68% in 2022. aria-tooltip-name passes on 29% in 2021, and 75% in 2022. definition-list passes on 65% in 2021, and 68% in 2022. html-has-lang passes on 81% in 2021, and 84% in 2022. object-alt passes on 1% in 2021, and 20% in 2022.",
+  caption="Lighthouse audit improvements year-over-year.",
+  description="A bar chart showing how many sites pass 5 specific Lighthouse audits, in 2021 and 2022. `aria-required-children` passes on 63% of sites in 2021, and 68% in 2022. `aria-tooltip-name` passes on 29% in 2021, and 75% in 2022. `definition-list` passes on 65% in 2021, and 68% in 2022. `html-has-lang passes` on 81% in 2021, and 84% in 2022. `object-alt` passes on 1% in 2021, and 20% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSi-gjiB_GnE2U4P7oxN2zqs0DbA2YDPqtsfIm3IBmtph_VE7FTrQvw7L6FsOsJlcZFI6HEULXuKEeb/pubchart?oid=1480221360&format=interactive",
   sheets_gid="1270834582",
   sql_file="lighthouse_a11y_audits.sql",
@@ -102,13 +102,13 @@ Of the top 1,000 most visited sites, 21% of desktop sites and 40.2% of mobile si
 {{ figure_markup(
   image="font-unit-usage.png",
   caption="Font unit usage.",
-  description="A bar chart showing `px` is used for font sizes on 70.5% of desktop and mobiles pages, `em` on 14.9% and 15.2% respectively, `rem` on 5.7% and 5.6%, `%` on 4.5% and 4.8%, `<number>` on 2.1% and 1.9%, and finally `pt` on 1.7% and 1.5%.",
+  description="A bar chart showing `px` is used for font sizes on 71% of desktop and mobiles pages, `em` on 15% and 15% respectively, `rem` on 6% and 6%, `%` on 4% and 5%, `<number>` on 2% and 2%, and finally `pt` on 2% and 2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSi-gjiB_GnE2U4P7oxN2zqs0DbA2YDPqtsfIm3IBmtph_VE7FTrQvw7L6FsOsJlcZFI6HEULXuKEeb/pubchart?oid=850268795&format=interactive",
   sheets_gid="955782036",
   sql_file="units_properties.sql",
 ) }}
 
-Another thing to keep in mind is the unit you choose for font size. We found that 70.5% of pages in desktop use px, and only 14.9% and 5.7% use em and rem respectively. So the percentage of px usage in desktop has increased by 2% compared to last year, while em usage has decreased by 1.5%. It's considered wise to use relative units such as `em` or `rem` when it comes to `font-size` because if you use `px` <a hreflang="en" href="https://adrianroselli.com/2019/12/responsive-type-and-zoom.html#Update02">it will not scale</a> if the user explicitly choses a bigger or smaller default font size in the browser settings.
+Another thing to keep in mind is the unit you choose for font size. We found that 71% of pages in desktop use `px`, and only 15% and 6% use `em` and `rem` respectively. So the percentage of `px` usage in desktop has increased by 2% compared to last year, while `em` usage has decreased by 2%. It's considered wise to use relative units such as `em` or `rem` when it comes to `font-size` because if you use `px` <a hreflang="en" href="https://adrianroselli.com/2019/12/responsive-type-and-zoom.html#Update02">it will not scale</a> if the user explicitly choses a bigger or smaller default font size in the browser settings.
 
 ### Language identification
 
@@ -131,15 +131,15 @@ There are certain User Preference Media Queries from the <a hreflang="en" href="
 {{ figure_markup(
   image="userpreference-media-queries.png",
   caption="User preference media queries.",
-  description="A bar chart showing that 33.6% of desktop sites and 34.2% of mobile sites use the `prefers-reduced-motion` media query, 8.2% of desktop sites and 7.7% of mobile sites use `prefers-color-scheme`, and `prefers-contrast` is used by 1.1% of desktop sites and 1.2% of mobile sites.",
+  description="A bar chart showing that 34% of desktop sites and 34% of mobile sites use the `prefers-reduced-motion` media query, 8% of desktop sites and 8% of mobile sites use `prefers-color-scheme`, and `prefers-contrast` is used by 1% of both desktop and mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSi-gjiB_GnE2U4P7oxN2zqs0DbA2YDPqtsfIm3IBmtph_VE7FTrQvw7L6FsOsJlcZFI6HEULXuKEeb/pubchart?oid=727284960&format=interactive",
   sheets_gid="48059230",
   sql_file="media_query_features.sql",
 ) }}
 
-We found that 34.2% of mobile websites use `prefers-reduced-motion`. Websites that rely on motion can cause issues for people with vestibular disorders, so it is important to adapt or remove those animations with the `prefers-reduced-motion` media query. There are many great <a hreflang="en" href="https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity/">resources</a> related to <a hreflang="en" href="https://www.a11yproject.com/posts/design-accessible-animation/">designing accessible animation</a>.
+We found that 34% of mobile websites use `prefers-reduced-motion`. Websites that rely on motion can cause issues for people with vestibular disorders, so it is important to adapt or remove those animations with the `prefers-reduced-motion` media query. There are many great <a hreflang="en" href="https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity/">resources</a> related to <a hreflang="en" href="https://www.a11yproject.com/posts/design-accessible-animation/">designing accessible animation</a>.
 
-8.2% of desktop websites and 7.7% of mobile websites used the `prefers-color-scheme` media query, while 1.1% of desktop sites and 1.2% of mobile sites used `prefers-contrast`. Both of these media queries improve content readability by adjusting the <a hreflang="en" href="https://www.a11yproject.com/posts/operating-system-and-browser-accessibility-display-modes/">display mode</a> based on the user's preference. `prefers-color-scheme` allows the browser to detect the user's system color. Using this information, the web developer can then provide a light or dark mode accordingly. `prefer-contrast` is useful for users with low vision or photosensitivity who may benefit from high contrast modes.
+8% of desktop and mobile websites used the `prefers-color-scheme` media query, while 1% of desktop and mobile sites used `prefers-contrast`. Both of these media queries improve content readability by adjusting the <a hreflang="en" href="https://www.a11yproject.com/posts/operating-system-and-browser-accessibility-display-modes/">display mode</a> based on the user's preference. `prefers-color-scheme` allows the browser to detect the user's system color. Using this information, the web developer can then provide a light or dark mode accordingly. `prefer-contrast` is useful for users with low vision or photosensitivity who may benefit from high contrast modes.
 
 ### Forced colors mode
 
@@ -148,14 +148,14 @@ Forced colors mode is an accessibility feature intended to increase the readabil
 {{ figure_markup(
   image="forced-colors-mode.png",
   caption="Forced colors mode.",
-  description="A bar chart showing that 24.7% of desktop sites and 23.6% of mobile sites use the `-ms-high-contrast` media query, and 8.7% of desktop sites and 8.1% of mobile sites use `forced-colors`.",
+  description="A bar chart showing that 25% of desktop sites and 24% of mobile sites use the `-ms-high-contrast` media query, and 9% of desktop sites and 8% of mobile sites use `forced-colors`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSi-gjiB_GnE2U4P7oxN2zqs0DbA2YDPqtsfIm3IBmtph_VE7FTrQvw7L6FsOsJlcZFI6HEULXuKEeb/pubchart?oid=359612516&format=interactive",
   sheets_gid="48059230",
   sql_file="media_query_features.sql",
 ) }}
 
-Like other user preference media queries, we see a lot of websites making adjustments based on forced colors mode. 8.1% of mobile sites and 8.7% of desktop sites use the `forced-colors` media query to alter their styles, while usage of the legacy IE11-only `-ms-high-contrast` media query is above 20% for both mobile and desktop.
-This doesn't tell us to what extent sites do support forced colors mode, but the data is encouraging nonetheless considering the `forced-colors` media query has only been supported in major browsers <a hreflang="en" href="https://caniuse.com/?search=forced-colors">since 2020</a>, and support for <a hreflang="en" href="https://developer.chrome.com/docs/devtools/rendering/emulate-css/">emulating `forced-colors` mode</a> on devices other than Windows is only available since February 2022.
+Like other user preference media queries, we see a lot of websites making adjustments based on forced colors mode. 8% of mobile sites and 9% of desktop sites use the `forced-colors` media query to alter their styles, while usage of the legacy IE11-only `-ms-high-contrast` media query is above 20% for both mobile and desktop.
+This doesn't tell us to what extent sites do support forced colors mode, but the data is encouraging nonetheless considering the `forced-colors` media query has only been supported in major browsers <a hreflang="en" href="https://caniuse.com/mdn-css_at-rules_media_forced-colors">since 2020</a>, and support for <a hreflang="en" href="https://developer.chrome.com/docs/devtools/rendering/emulate-css/">emulating `forced-colors` mode</a> on devices other than Windows is only available since February 2022.
 
 ## Navigation
 
@@ -172,19 +172,19 @@ The WCAG requires a visible focus indicator for all interactive content to help 
 {{ figure_markup(
   image="pages-overriding-focus-styles.png",
   caption="Pages overriding focus styles.",
-  description="A bar chart showing 89.7% of desktop sites and 88.9% of mobile sites use a `:focus` pseudo class, and 90.0% of desktop sites and 91.0% of mobile sites use the `:focus` pseudo class to set the outline to 0 or none. 9.0% of desktop sites and 9.8% of mobile sites use the `:focus-visible` pseudo class.",
+  description="A bar chart showing 90% of desktop sites and 89% of mobile sites use a `:focus` pseudo class, and 90% of desktop sites and 91% of mobile sites use the `:focus` pseudo class to set the outline to 0 or none. 9% of desktop sites and 10% of mobile sites use the `:focus-visible` pseudo class.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSi-gjiB_GnE2U4P7oxN2zqs0DbA2YDPqtsfIm3IBmtph_VE7FTrQvw7L6FsOsJlcZFI6HEULXuKEeb/pubchart?oid=500239469&format=interactive",
   sheets_gid="1548098920",
   sql_file="focus_outline_0.sql",
 ) }}
 
-We found that 86.0% of websites add `:focus {outline: 0}`. This removes the default outline that browsers use for the focused interactive element. In some cases, they are overridden using some custom styling, but not always. This makes it impossible for users to determine which element has focus which in turn hinders navigation. Sara Souedian has a great article on how to <a hreflang="en" href="https://www.sarasoueidan.com/blog/focus-indicators/">design WCAG-compliant focus indicators</a>. However, it's exciting to see that 9.0% of websites have `:focus-visible` compared to only 0.6% last year. This is definitely a step in the right direction.
+We found that 86% of websites add `:focus {outline: 0}`. This removes the default outline that browsers use for the focused interactive element. In some cases, they are overridden using some custom styling, but not always. This makes it impossible for users to determine which element has focus which in turn hinders navigation. Sara Souedian has a great article on how to <a hreflang="en" href="https://www.sarasoueidan.com/blog/focus-indicators/">design WCAG-compliant focus indicators</a>. However, it's exciting to see that 9% of websites have `:focus-visible` compared to only 0.6% last year. This is definitely a step in the right direction.
 
 #### TabIndex
 
 `tabindex` is an attribute that can be added to elements to control whether they can receive focus. Depending on its value, the element can also be organized within the keyboard focus or "tab" order.
 
-We found that 59.6% of mobile websites and 61.8% of desktop websites use `tabindex`. The `tabindex` attribute can be used for a few different purposes, which may or may not cause accessibility issues.
+We found that 60% of mobile websites and 62% of desktop websites use `tabindex`. The `tabindex` attribute can be used for a few different purposes, which may or may not cause accessibility issues.
 
 - Adding `tabindex="0"` adds an element in the sequential keyboard focus order. Custom elements and widgets that are intended to be interactive need an explicitly assigned `tabindex="0"`.
 - `tabindex="-1"` means that the element is not in the keyboard focus order, but can be programmatically focused using JavaScript.
@@ -193,14 +193,14 @@ It's important to remember that placing non-interactive elements in the keyboard
 
 {{ figure_markup(
   image="tabindex-usage-and-values.png",
-  caption="`tabindex` usage",
-  description="Bar chart showing that of pages that use `tabindex`, a `tabindex` of 0 is used on 76.7% of those pages for desktop and 76.4% of those pages for mobile, a negative `tabindex` is used on 69.1% and 69.4% respectively, and finally a positive `tabindex` is used on 8.5% and 7.4%.",
+  caption="`tabindex` usage.",
+  description="Bar chart showing that of pages that use `tabindex`, a `tabindex` of 0 is used on 77% of those pages for desktop and 76% of those pages for mobile, a negative `tabindex` is used on 69% of both, and finally a positive `tabindex` is used on 8% of desktop and 7% of mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSi-gjiB_GnE2U4P7oxN2zqs0DbA2YDPqtsfIm3IBmtph_VE7FTrQvw7L6FsOsJlcZFI6HEULXuKEeb/pubchart?oid=723679746&format=interactive",
   sheets_gid="1436895233",
   sql_file="tabindex_usage_and_values.sql",
 ) }}
 
-Out of all websites with `tabindex` attribute, 7.4% have `tabindex` with a positive value. A positive value for `tabindex` is used to override the keyboard focus order and most of the time leads to a <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-order.html">WCAG 2.4.3 - Focus Order</a> failure. Using positive values for `tabindex` is generally bad practice since it disrupts the normal navigation. Karl Groves has a <a hreflang="en" href="https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad">great article</a> that explains this concept further.
+Out of all websites with `tabindex` attribute, 7% have `tabindex` with a positive value. A positive value for `tabindex` is used to override the keyboard focus order and most of the time leads to a <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-order.html">WCAG 2.4.3 - Focus Order</a> failure. Using positive values for `tabindex` is generally bad practice since it disrupts the normal navigation. Karl Groves has a <a hreflang="en" href="https://karlgroves.com/2018/11/13/why-using-tabindex-values-greater-than-0-is-bad">great article</a> that explains this concept further.
 
 ### Landmarks
 
@@ -277,7 +277,7 @@ Headings help all users, including those using assistive technologies, to naviga
 
 WCAG requires websites to have multiple ways to navigate between the different pages apart from the primary navigation menu in the header (see <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/multiple-ways.html">Success Criterion 2.4.5: Multiple Ways</a>). For example many people, including those with cognitive limitations, prefer to use search features to find a page when there are a substantial number of pages in a website.
 
-There are 22.7% of websites on mobile that have a search input, and 24.1% on desktop. Another recommended method for secondary navigation is to include a sitemap for a website. Although we do not have any data about the presence of site maps, this <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/general/G63">technique guide from the W3C</a> explains what they are in detail and how to implement one effectively.
+There are 23% of websites on mobile that have a search input, and 24% on desktop. Another recommended method for secondary navigation is to include a sitemap for a website. Although we do not have any data about the presence of site maps, this <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/general/G63">technique guide from the W3C</a> explains what they are in detail and how to implement one effectively.
 
 ### Skip links
 
@@ -299,14 +299,14 @@ Descriptive page titles are useful when navigating between pages, tabs and windo
 
 {{ figure_markup(
   image="page_title-information.png",
-  caption="Title element statistics",
-  description="A bar chart showing 97.6% of desktop sites and 97.7% of mobile sites use the `<title>` element, 68.6% and 70.0% of those titles have four or more words, and 3.7% and 4.0% are changed on render.",
+  caption="Title element statistics.",
+  description="A bar chart showing 98% of desktop and mobile sites use the `<title>` element, 69% of desktop and 70% on mobile of those titles have four or more words, and 4% on both are changed on render.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSi-gjiB_GnE2U4P7oxN2zqs0DbA2YDPqtsfIm3IBmtph_VE7FTrQvw7L6FsOsJlcZFI6HEULXuKEeb/pubchart?oid=154664062&format=interactive",
   sheets_gid="634812711",
   sql_file="page_title.sql",
 ) }}
 
-Though there are 97.7% of mobile websites which have a document title, only 70% have a title that is longer than four words. Since we only scan homepages of websites, it's not possible for us to determine if the inner pages of the website use a more detailed text in the `<title>` tag that describes the page. A title should ideally have both the title of the website as well as a title giving context about the page in the website for better navigation.
+Though there are 98% of mobile websites which have a document title, only 70% have a title that is longer than four words. Since we only scan homepages of websites, it's not possible for us to determine if the inner pages of the website use a more detailed text in the `<title>` tag that describes the page. A title should ideally have both the title of the website as well as a title giving context about the page in the website for better navigation.
 
 ### Tables
 
@@ -378,7 +378,7 @@ The `for` attribute is important because without it, the `<label>`won't be progr
 {{ figure_markup(
   image="form-input-name-sources.png",
   caption="Where inputs get their accessible names from.",
-  description="A bar chart showing 38.3% of desktop input elements and 38.0% of mobile input elements have no accessible name. `placeholder` is the source for 23.7% of desktop pages and 26.0% of mobile pages. For `relatedElement: label` it's 19.8% and 18.8% respectively, for `attribute: aria-label` it's 7.2% and 8.2%, for `attribute: value` it's 5.3% and 5.1%, for `attribute: title` it's 3.5% and 2.3%, for `attribute: alt` it's 1.2% and 1.0%, for `attribute: type` it's 0.6% and 0.5%, for `relatedElement: aria-labelledby` it's 0.3% and 0.2%.",
+  description="A bar chart showing 38% of desktop input elements and 38% of mobile input elements have no accessible name. `placeholder` is the source for 24% of desktop pages and 26% of mobile pages. For `relatedElement: label` it's 20% and 19% respectively, for `attribute: aria-label` it's 7% and 8%, for `attribute: value` it's 5% and 5%, for `attribute: title` it's 4% and 2%, for `attribute: alt` it's 1% on both, for `attribute: type` it's 1% on both, for `relatedElement: aria-labelledby` it's 0% on both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSi-gjiB_GnE2U4P7oxN2zqs0DbA2YDPqtsfIm3IBmtph_VE7FTrQvw7L6FsOsJlcZFI6HEULXuKEeb/pubchart?oid=231535249&format=interactive",
   sheets_gid="1245935907",
   sql_file="form_input_name_sources.sql",
@@ -397,7 +397,7 @@ However, unlike `<label>` elements, the `placeholder` attribute disappears the m
 {{ figure_markup(
   image="placeholder-but-no-label.png",
   caption="Use of placeholders on inputs.",
-  description="A bar chart showing 58.6% of desktop sites and 55.5% of mobile sites use placeholders. 66.7% of desktop sites and 67.2% of mobile sites have inputs with no label. 61.1% of desktop sites and 62.7% of mobile sites have placeholders and also inputs with no labels.",
+  description="A bar chart showing 59% of desktop sites and 55% of mobile sites use placeholders. 67% of desktop sites and 67% of mobile sites have inputs with no label. 61% of desktop sites and 63% of mobile sites have placeholders and also inputs with no labels.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSi-gjiB_GnE2U4P7oxN2zqs0DbA2YDPqtsfIm3IBmtph_VE7FTrQvw7L6FsOsJlcZFI6HEULXuKEeb/pubchart?oid=1142115744&format=interactive",
   sheets_gid="1464041597",
   sql_file="placeholder_but_no_label.sql",
@@ -418,8 +418,8 @@ When websites gather input from their users, they need a clear way to indicate w
 
 {{ figure_markup(
   image="form-required-controls.png",
-  caption="How required inputs are specified",
-  description="A bar chart showing the `required` attribute is used on 65.6% of desktop sites and 67.2% of mobile sites, `aria-required` is used by 32.4% and 31.8%, asterisk is used by 21.9% and 21.7%, `required` and `aria-required` is used by 7.9% and 8.5%, asterisk and `required` is used by 7.7% and 8.6%, asterisk and `aria-required` is used by 7.1% and 5.9%, and all three are used by 0.9% and 0.8%.",
+  caption="How required inputs are specified.",
+  description="A bar chart showing the `required` attribute is used on 66% of desktop sites and 67% of mobile sites, `aria-required` is used by 32% and 32%, asterisk is used by 22% and 22%, `required` and `aria-required` is used by 8% and 8%, asterisk and `required` is used by 8% and 9%, asterisk and `aria-required` is used by 7% and 6%, and all three are used by 1% on both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSi-gjiB_GnE2U4P7oxN2zqs0DbA2YDPqtsfIm3IBmtph_VE7FTrQvw7L6FsOsJlcZFI6HEULXuKEeb/pubchart?oid=782719766&format=interactive",
   sheets_gid="1918657462",
   sql_file="form_required_controls.sql",
@@ -473,7 +473,7 @@ The text in the `alt` attribute depends on the context. If the image is decorati
 {{ figure_markup(
   image="common-file-extensions-in-alt-text.png",
   caption="Most common file extensions in `alt` text.",
-  description="A bar chart showing of all extensions used in alt `jpg` is used 52.9% of the time on desktop sites and 52.8% for mobile, `png` is 34.1% and 34.4% and respectively, `ico` is 4.9% and 4.8%, `jpeg` is 3.2% and 3.8%, `svg` is 2.0% and 1.6%, `gif` is 1.8% and 1.6%, `webp` is 0.5% and 0.5%, and finally `tif` is 0.4% and 0.3%.",
+  description="A bar chart showing of all extensions used in alt `jpg` is used 53% of the time on desktop sites and 53% for mobile, `png` is 34% and 34% and respectively, `ico` is 5% and 5%, `jpeg` is 3% and 4%, `svg` is 2% and 2%, `gif` is 2% and 2%, `webp` is 0% and 1%, and finally `tif` is 0% and 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSi-gjiB_GnE2U4P7oxN2zqs0DbA2YDPqtsfIm3IBmtph_VE7FTrQvw7L6FsOsJlcZFI6HEULXuKEeb/pubchart?oid=288529525&format=interactive",
   sheets_gid="304752448",
   sql_file="alt_ending_in_image_extension.sql",
@@ -486,7 +486,7 @@ The top five file extensions explicitly included in the alt text value (for site
 {{ figure_markup(
   image="alt-attribute-lengths.png",
   caption="`alt` attribute lengths.",
-  description="A bar chart showing no `alt` is set on 17.9% of desktop images and 18.0% of mobile images, it is set to empty on 27.0% and 27.9% respectively, it is 10 characters or less on 16.0% and 15.3%, 20 characters or less on 14.3% and 14.1%, 30 characters or less on 8.4% and 8.4%, 100 characters or less on 15.1% and 15.0%, and it is greater than 100 characters on 1.2% and 1.2%.",
+  description="A bar chart showing no `alt` is set on 18% of desktop images and 18% of mobile images, it is set to empty on 27% and 28% respectively, it is 10 characters or less on 16% and 15%, 20 characters or less on 14% and 14%, 30 characters or less on 8% and 8%, 100 characters or less on 15% and 15%, and it is greater than 100 characters on 1% and 1%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSi-gjiB_GnE2U4P7oxN2zqs0DbA2YDPqtsfIm3IBmtph_VE7FTrQvw7L6FsOsJlcZFI6HEULXuKEeb/pubchart?oid=1428144088&format=interactive",
   sheets_gid="877399863",
   sql_file="common_alt_text_length.sql",
@@ -540,7 +540,7 @@ Currently 72.1% of desktop pages have at least one instance of an ARIA role attr
 {{ figure_markup(
   image="top-10-aria-roles.png",
   caption="Top 10 most common ARIA roles.",
-  description="Bar chart showing `button` is used by 32.5% of desktop sites and 32.5% of mobile sites, `presentation` by 24.9% and 23.7% respectively, `dialog` by 22.8% and 21.9%, `navigation` by 22.1% and 21.9%, `search` by 19.6% and 18.9%, `main` by 16.8% and 16.7%, `banner` by 13.2% and 13.2%, `img` by 12.6% and 12.1%, `contentinfo` by 11.4% and 11.4%, and finally `none` by 11.0% and 11.3%.",
+  description="Bar chart showing `button` is used by 32% of desktop sites and 33% of mobile sites, `presentation` by 25% and 24% respectively, `dialog` by 23% and 22%, `navigation` by 22% and 22%, `search` by 20% and 19%, `main` by 16.8% and 17%, `banner` by 13% and 13%, `img` by 13% and 12%, `contentinfo` by 11% and 11%, and finally `none` by 11% and 11%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSi-gjiB_GnE2U4P7oxN2zqs0DbA2YDPqtsfIm3IBmtph_VE7FTrQvw7L6FsOsJlcZFI6HEULXuKEeb/pubchart?oid=1302320094&format=interactive",
   sheets_gid="283521996",
   sql_file="common_aria_role.sql",
@@ -566,17 +566,17 @@ When an element has `role="presentation"` declared on it, its semantics are stri
 
 {{ figure_markup(
   content="24%",
-  caption="Mobile websites have at least one element with a role=presentation",
+  caption="Mobile websites have at least one element with a `role=presentation`",
   classes="big-number",
   sheets_gid="283521996",
   sql_file="common_aria_role.sql",
 ) }}
 
-Removing an element's semantics causes an element to lose its behavior. It becomes only visually present, and assistive technologies fail to understand the structure of the element and cannot convey that message to the user. For example, a list with a role="presentation" will no longer communicate any information to a screen reader about the list structure. We found that 25% of desktop pages and 24% of mobile pages have at least one element with role="presentation".
+Removing an element's semantics causes an element to lose its behavior. It becomes only visually present, and assistive technologies fail to understand the structure of the element and cannot convey that message to the user. For example, a list with a `role="presentation"` will no longer communicate any information to a screen reader about the list structure. We found that 25% of desktop pages and 24% of mobile pages have at least one element with `role="presentation"`.
 
 {{ figure_markup(
   content="11%",
-  caption="Mobile websites have at least one element with a role=none",
+  caption="Mobile websites have at least one element with a `role=none`",
   classes="big-number",
   sheets_gid="283521996",
   sql_file="common_aria_role.sql",
@@ -584,7 +584,7 @@ Removing an element's semantics causes an element to lose its behavior. It becom
 
 The same effect of semantic removal takes place with `role="none"`. We found that this year, the percentage of `role="none"` has also increased to 11% and is one of the top 10 most common ARIA roles. There are very few use cases where this is particularly helpful for assistive technology users, for example if there is a `<table>` element being used only for layouting. But it can otherwise be harmful and should be used sparingly.
 
-Most browsers ignore role="presentation" and role="none" on focusable elements, including links and inputs, or anything with a tabindex attribute set. Browsers also ignore the inclusion of the role if any of the element contains any global ARIA states and properties, such as aria-describedby.
+Most browsers ignore `role="presentation"` and `role="none"` on focusable elements, including links and inputs, or anything with a tabindex attribute set. Browsers also ignore the inclusion of the role if any of the element contains any global ARIA states and properties, such as `aria-describedby`.
 
 ### Labeling elements with ARIA
 
@@ -601,7 +601,7 @@ The accessible name can be derived from an element's content (such as button tex
   sql_file="common_element_attributes.sql",
 ) }}
 
-There are two ARIA attributes that help in providing elements with an accessible name: `aria-label` and `aria-labelledby`. These attributes will be preferred over the native derived accessible name so they should be used very carefully and only when necessary. It's always a good idea to test the accessible names obtained with a screen reader, and involve people with disabilities to confirm that it is actually helpful and doesn't make the content more inaccessible. We found that 58.4% of desktop pages and 57.0% of mobile home pages had at least one element with the aria-label attribute, making it the most popular ARIA attribute for providing accessible names. We found that 24.3% of desktop pages and 22.6% of mobile pages had at least one element with the aria-labelledby attribute. This could mean that more elements now have accessible names but it may also be indicative that more elements now lack a visual label which can be problematic for people with cognitive disabilities and voice to text users (see [`<label>` element](#label-element)).
+There are two ARIA attributes that help in providing elements with an accessible name: `aria-label` and `aria-labelledby`. These attributes will be preferred over the native derived accessible name so they should be used very carefully and only when necessary. It's always a good idea to test the accessible names obtained with a screen reader, and involve people with disabilities to confirm that it is actually helpful and doesn't make the content more inaccessible. We found that 58.4% of desktop pages and 57.0% of mobile home pages had at least one element with the `aria-label` attribute, making it the most popular ARIA attribute for providing accessible names. We found that 24.3% of desktop pages and 22.6% of mobile pages had at least one element with the `aria-labelledby` attribute. This could mean that more elements now have accessible names but it may also be indicative that more elements now lack a visual label which can be problematic for people with cognitive disabilities and voice to text users (see [`<label>` element](#label-element)).
 
 {{ figure_markup(
   image="button-name-sources.png",
@@ -614,7 +614,7 @@ There are two ARIA attributes that help in providing elements with an accessible
   height="457",
 ) }}
 
-Buttons typically get their accessible names from their content or an ARIA attribute. Per the first rule of ARIA, if an element can derive its accessible name without the use of ARIA, this is preferable. Therefore a `<button>` should get its accessible name from its text content rather than an ARIA attribute if possible. We found that 61% of buttons on desktop and 58% in mobile sites get their accessible name from content which is good. We also found that 20% of buttons on desktop sites and 23% of buttons on mobile sites get their accessible names from the aria-label attribute. There are few cases where an aria-label can help. For example, if the page has multiple buttons with the same content, but different purposes, then an aria-label can be used to provide a better accessible name. Sometimes developers also use aria-label when the button has only an image or icon, which might be a reason why mobile sites use the aria-label, rather than the content, to define accessible names.
+Buttons typically get their accessible names from their content or an ARIA attribute. Per the first rule of ARIA, if an element can derive its accessible name without the use of ARIA, this is preferable. Therefore a `<button>` should get its accessible name from its text content rather than an ARIA attribute if possible. We found that 61% of buttons on desktop and 58% in mobile sites get their accessible name from content which is good. We also found that 20% of buttons on desktop sites and 23% of buttons on mobile sites get their accessible names from the `aria-label` attribute. There are few cases where an `aria-label` can help. For example, if the page has multiple buttons with the same content, but different purposes, then an `aria-label` can be used to provide a better accessible name. Sometimes developers also use `aria-label` when the button has only an image or icon, which might be a reason why mobile sites use the `aria-label`, rather than the content, to define accessible names.
 
 ### Hiding content
 
@@ -769,7 +769,7 @@ There is a lot of pushback against overlays, <a hreflang="en" href="https://over
 
 accessiBe raised <a hreflang="en" href="https://www.geektime.com/accessibe-raised-30m/">an additional $30M in 2022</a>, and is one of the overlays showing a clear rise in usage year-to-year, from 0.27% of desktop sites and 0.21% of mobile sites in 2021, to 0.37% and 0.25% in 2022.
 
-Adrian Roselli's <a hreflang="en" href="https://adrianroselli.com/2020/06/accessibe-will-get-you-sued.html">#accessiBe Will Get You Sued</a> is an excellent resource on the practical implications of using such an overlay, including legal risks and privacy issues.
+[Adrian Roselli](https://twitter.com/aardrian)'s <a hreflang="en" href="https://adrianroselli.com/2020/06/accessibe-will-get-you-sued.html">#accessiBe Will Get You Sued</a> is an excellent resource on the practical implications of using such an overlay, including legal risks and privacy issues.
 
 ## Conclusion
 
