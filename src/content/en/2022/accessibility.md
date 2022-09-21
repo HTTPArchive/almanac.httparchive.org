@@ -355,7 +355,7 @@ Tables help in representing data and the relationships between the data using tw
   </figcaption>
 </figure>
 
-When providing a caption for the table, the `<caption>` element is the correct semantic choice to provide the most context to a screen reader user. Table captions act as a heading summarizing the information of the table. 1.3% of desktop and mobile sites with table elements present used a `<caption>`.
+When providing a caption for the table, the `<caption>` element is the correct semantic choice to provide the most context to a screen reader user—though <a hreflang="en" href="https://www.w3.org/WAI/tutorials/tables/caption-summary/">there are alternative ways of lablling a table</a>. Table captions act as a heading summarizing the information of the table. 1.3% of desktop and mobile sites with table elements present used a `<caption>`.
 
 Tables are also sometimes used for laying out pages, though with the arrival of Flexbox and Grid properties in CSS, one should definitely avoid tables for any visual formatting. However, if there is no other option, tables can set a `role="presentation"`. We observe 1% of tables using this workaround.
 
@@ -370,8 +370,8 @@ There are specific things that one should keep in mind when it comes to accessib
 The `<label>` element is the most effective way of providing accessible names to input fields (or [form controls](https://developer.mozilla.org/en-US/docs/Learn/Forms/Basic_native_form_controls)) in a form. One can link a `<label>` to a form control programmatically using the `for` attribute. The `for` attribute should contain the value of the `id` attribute of the form control element that you want to link it with. For example:
 
 ```html
-<label for="email">Email</label>
-<input type="email" id="email">
+<label for="emailaddress">Email</label>
+<input type="email" id="emailaddress">
 ```
 
 The `for` attribute is important because without it, the `<label>`won't be programmatically linked to a corresponding form control. This affects the usability of the form as it's likely that a field does not have a semantically linked label unless another method is used.
@@ -387,7 +387,7 @@ The `for` attribute is important because without it, the `<label>`won't be progr
   height="537",
 ) }}
 
-38.0% of inputs have no accessible names, while only 18.8% use `<label>` . Without a proper accessible name, a screen reader user or a voice-to-text user won't be able to identify what data an input is trying to collect. Often there are inputs on websites that don't have any visible labels, which causes issues for all users, or the input's purpose isn't clearly defined both visually and programatically. In select cases where a label can be visually excluded (such as a search field), one must still add a screen reader-only `<label>` to provide the accessible name.
+38% of inputs have no accessible names, while only 19% use `<label>` . Without a proper accessible name, a screen reader user or a voice-to-text user won't be able to identify what data an input is trying to collect. Often there are inputs on websites that don't have any visible labels, which causes issues for all users, or the input's purpose isn't clearly defined both visually and programatically. In select cases where a label can be visually excluded (such as a search field), one must still add a screen reader-only `<label>` to provide the accessible name.
 
 ### `placeholder` attribute
 
@@ -428,7 +428,7 @@ When websites gather input from their users, they need a clear way to indicate w
   height="505",
 ) }}
 
-The `required` and `aria-required` attributes are two ways of telling an assistive technology that an input field is not optional. The `required` attribute also prevents form submission without an input, while `aria-required` only conveys the information to assistive technology and doesn't validate the input. We found that 67.2% of the sites use the `required` attribute and 31.8% use `aria-required`. However, there are still 21.7% websites which only use an asterisk (\*) to indicate a field is required. That should definitely be avoided unless it is also accompanied with `required` and `aria-required`.
+The `required` and `aria-required` attributes are two ways of telling an assistive technology that an input field is not optional. The `required` attribute also prevents form submission without an input, while `aria-required` only conveys the information to assistive technology and doesn't validate the input. We found that 67% of the sites use the `required` attribute and 32% use `aria-required`. However, there are still 22% websites which only use an asterisk (\*) to indicate a field is required. That should definitely be avoided unless it is also accompanied with `required` and `aria-required`.
 
 ### Captchas
 
@@ -469,7 +469,7 @@ Images on the web can have an `alt` attribute which provides an alternate text d
   sql_file="alt_ending_in_image_extension.sql",
 ) }}
 
-The text in the `alt` attribute depends on the context. If the image is decorative and doesn't provide any meaningful information, then `alt=""` is ideal. However, if the image is crucial to the context of the page, then a proper text description is essential. If the image is a child of a link, then ideally the `alt` attribute should be used to label the link so the user knows where the link takes them. We found that 7.5% of mobile web pages and 7.2% of desktop pages with an `alt` attribute have a file extension assigned to that `alt` attribute. This probably means that the `alt` attribute just contains the image filename, which is not helpful at all, and should be avoided in every case.
+The text in the `alt` attribute depends on the context. If the image is decorative and doesn't provide any meaningful information, then `alt=""` is ideal. However, if the image is crucial to the context of the page, then a proper text description is essential. If the image is a child of a link, then ideally the `alt` attribute should be used to label the link so the user knows where the link takes them. We found that 7.5% of mobile web pages and 7.2% of desktop pages with an `alt` attribute have a file extension assigned to that `alt` attribute. This probably means that the `alt` attribute just contains the image filename, which is likely not helpful at all, and should be avoided in every case.
 
 {{ figure_markup(
   image="common-file-extensions-in-alt-text.png",
@@ -477,12 +477,10 @@ The text in the `alt` attribute depends on the context. If the image is decorati
   description="A bar chart showing of all extensions used in alt `jpg` is used 53% of the time on desktop sites and 53% for mobile, `png` is 34% and 34% and respectively, `ico` is 5% and 5%, `jpeg` is 3% and 4%, `svg` is 2% and 2%, `gif` is 2% and 2%, `webp` is 0% and 1%, and finally `tif` is 0% and 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSi-gjiB_GnE2U4P7oxN2zqs0DbA2YDPqtsfIm3IBmtph_VE7FTrQvw7L6FsOsJlcZFI6HEULXuKEeb/pubchart?oid=288529525&format=interactive",
   sheets_gid="304752448",
-  sql_file="alt_ending_in_image_extension.sql",
-  width="600",
-  height="764",
+  sql_file="alt_ending_in_image_extension.sql"
 ) }}
 
-The top five file extensions explicitly included in the alt text value (for sites with images that have non-empty alt values) are jpg, png, ico, jpeg and svg. This likely reflects the use of CMS or other content management methods which auto-generate alternative text for images or ask the content editors for image descriptions compulsorily. However, if the CMS just puts the image filename in the `alt` attribute, this provides no value to the users, so it's important that meaningful text descriptions are provided.
+The top five file extensions explicitly included in the alt text value (for sites with images that have non-empty alt values) are jpg, png, ico, jpeg and svg. This likely reflects the use of CMS or other content management methods which auto-generate alternative text for images or ask the content editors for image descriptions compulsorily. However, if the CMS just puts the image filename in the `alt` attribute, this often provides no value to the users, so it's important that meaningful text descriptions are provided.
 
 {{ figure_markup(
   image="alt-attribute-lengths.png",
@@ -493,25 +491,25 @@ The top five file extensions explicitly included in the alt text value (for site
   sql_file="common_alt_text_length.sql",
 ) }}
 
-We found that 27% of alt text attributes in desktop and mobile websites were empty. An empty `alt` attribute is supposed to be used only when the image is presentational and should not be described by screen readers or other assistive technologies. However, most images on the web do add value to the content in the web page and hence should have a proper text description. We found that 15.3% have 10 or fewer characters, which would be a strangely short description for most images, indicating that information parity has not been achieved. Though it is possible that some of them might be used to provide labeling for a link, in which case it's okay.
+We found that 27% of alt text attributes in desktop and mobile websites were empty. An empty `alt` attribute is supposed to be used only when the image is presentational and should not be described by screen readers or other assistive technologies. However, <a hreflang="en" href="https://www.smashingmagazine.com/2021/06/img-alt-attribute-alternate-description-decorative/">most images on the web do add value to the content in the web page</a> and hence should have a proper text description. We found that 15.3% have 10 or fewer characters, which would be a strangely short description for most images, indicating that information parity has not been achieved. Though it is possible that some of them might be used to provide labeling for a link, in which case it's okay.
 
 ### Audio and video
 
 `<track>` allows providing timed textual content for `<audio>` and `<video>` elements. This can be for subtitles, captions, descriptions, or chapters. Captions allow people with permanent or temporary hearing loss to be able to consume the audio content. Descriptions allow blind screen reader users to understand what is happening in the video.
 
 {{ figure_markup(
-  content="0.03%",
+  content="0.06%",
   caption="Desktop websites with an `<audio>` element have at least one accompanying `<track>` element",
   classes="big-number",
   sheets_gid="201877037",
   sql_file="audio_track_usage.sql",
 ) }}
 
-`<track>` loads one or more WebVTT files, which allows text content to be synchronized with the audio it is describing. We found that only 0.03% of all pages on desktop and 0.05% of all pages on mobile with a detectable `<audio>` element had at least one accompanying `<track>` element.
+`<track>` loads one or more WebVTT files, which allows text content to be synchronized with the audio it is describing. When looking at only sites with a detectable `<audio>` element, we found that only 0.06% of all pages on desktop and 0.09% of all pages on mobile with had at least one accompanying `<track>` element. Looking at all `<audio>` elements, we see only 0.03% and 0.05% respectively include a `<track>`.
 
 {{ figure_markup(
   content="0.71%",
-  caption="Desktop websites with a `<video>` element have at least one accompanying `<track>` element",
+  caption="Desktop `<video>` elements with an accompanying `<track>` element",
   classes="big-number",
   sheets_gid="345150659",
   sql_file="video_track_usage.sql",
@@ -525,7 +523,11 @@ The `<track>` element was included with a corresponding `<video>` element less t
 
 ### ARIA roles
 
-When an assistive technology encounters an element, the element's role communicates information about how someone might interact with its content. HTML5 introduced many new native elements which have implicit semantics, including roles. For example, the `<nav`> element has an implicit `role="navigation"` and does not need to have this role added explicitly via ARIA.
+When an assistive technology encounters an element, the element's role communicates information about how someone might interact with its content.
+
+For example, <a hreflang="en" href="https://inclusive-components.design/tabbed-interfaces/">Tabbed interfaces</a> are one of the most commonly used UI elements that need various ARIA roles to be defined explicitly to convey the structure of the UI properly. A common implementation for an accessible tabbed interface is mentioned in the <a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel">WAI-ARIA Authoring Practices Design Patterns</a>. When creating a tablist widget, a `tablist` role can be assigned to the container element since there is no native HTML equivalent.
+
+HTML5 introduced many new native elements which have implicit semantics, including roles. For example, the `<nav`> element has an implicit `role="navigation"` and does not need to have this role added explicitly via ARIA.
 
 {{ figure_markup(
   image="sites-using-role.png",
@@ -536,7 +538,7 @@ When an assistive technology encounters an element, the element's role communica
   sql_file="sites_using_role.sql",
 ) }}
 
-Currently 72.1% of desktop pages have at least one instance of an ARIA role attribute. The median site has four instances of the role attribute. <a hreflang="en" href="https://inclusive-components.design/tabbed-interfaces/">Tabbed interfaces</a> are one of the most commonly used UI elements that need various ARIA roles to be defined explicitly to convey the structure of the UI properly. A common implementation for an accessible tabbed interface is mentioned in the <a hreflang="en" href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel">WAI-ARIA Authoring Practices Design Patterns</a>. When creating a tablist widget, a tablist role can be assigned to the container element since there is no native HTML equivalent.
+Currently 72% of desktop pages have at least one instance of an ARIA role attribute. The median site has four instances of the `role` attribute.
 
 {{ figure_markup(
   image="top-10-aria-roles.png",
@@ -549,11 +551,11 @@ Currently 72.1% of desktop pages have at least one instance of an ARIA role attr
   height="540",
 ) }}
 
-We found that 33% (up from 29% in 2021, and 25% in 2020) of desktop and mobile sites had homepages with at least one element with an explicitly assigned `role="button"`. This increase in percentage is likely not good since this indicates that websites are either creating custom buttons using `<div>` or `<span>`, or are adding a redundant role to `<button>` elements. Both of these are bad practices and go against the <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">first rule of ARIA</a>. Following this rule, one should always use a native HTML element (in this case, `<button>`) when possible.
+We found that 33% (up from 29% in 2021, and 25% in 2020) of desktop and mobile sites had homepages with at least one element with an explicitly assigned `role="button"`. This increase in percentage is likely not good since this indicates that websites are either creating custom buttons using `<div>` or `<span>`, or are adding a redundant role to `<button>` elements. Both of these are bad practices and go against the <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">first rule of ARIA</a>. Following this rule, one should always use a native HTML element—in this case, `<button>`—when possible.
 
 {{ figure_markup(
   content="21%",
-  caption="Desktop websites have at least one link with a button role",
+  caption="Desktop websites have at least one link with a `button` role",
   classes="big-number",
   sheets_gid="751886683",
   sql_file="anchors_with_role_button.sql",
@@ -561,13 +563,13 @@ We found that 33% (up from 29% in 2021, and 25% in 2020) of desktop and mobile s
 
 Adding an ARIA role tells assistive technology what the element is, but doesn't provide any other functionality to make elements behave like their native counterpart. For example, we found that 21% of websites had at least one link with a `role="button"`. This kind of pattern can cause issues with keyboard navigation, as links and buttons have different interactions. Though both links and buttons are interactive, links are not activated with the space key, whereas buttons are.
 
-### Using presentation role
+### Using the presentation role
 
 When an element has `role="presentation"` declared on it, its semantics are stripped away, as well the semantics of any of its child elements if those child elements are required child elements (such as `li` nested under a `ul` element, or rows and cells in a table). For example, declaring `role="presentation"` on a parent table or list element will cascade the role to their required child elements and none of them will have table or list semantics.
 
 {{ figure_markup(
   content="24%",
-  caption="Mobile websites have at least one element with a `role=presentation`",
+  caption="Mobile websites have at least one element with `role=presentation`",
   classes="big-number",
   sheets_gid="283521996",
   sql_file="common_aria_role.sql",
@@ -577,7 +579,7 @@ Removing an element's semantics causes an element to lose its behavior. It becom
 
 {{ figure_markup(
   content="11%",
-  caption="Mobile websites have at least one element with a `role=none`",
+  caption="Mobile websites have at least one element with `role=none`",
   classes="big-number",
   sheets_gid="283521996",
   sql_file="common_aria_role.sql",
@@ -585,13 +587,13 @@ Removing an element's semantics causes an element to lose its behavior. It becom
 
 The same effect of semantic removal takes place with `role="none"`. We found that this year, the percentage of `role="none"` has also increased to 11% and is one of the top 10 most common ARIA roles. There are very few use cases where this is particularly helpful for assistive technology users, for example if there is a `<table>` element being used only for layouting. But it can otherwise be harmful and should be used sparingly.
 
-Most browsers ignore `role="presentation"` and `role="none"` on focusable elements, including links and inputs, or anything with a tabindex attribute set. Browsers also ignore the inclusion of the role if any of the element contains any global ARIA states and properties, such as `aria-describedby`.
+Most browsers ignore `role="presentation"` and `role="none"` on focusable elements, including links and inputs, or anything with a `tabindex` attribute set. Browsers also ignore the inclusion of the role if any of the element contains any global ARIA states and properties, such as `aria-describedby`.
 
 ### Labeling elements with ARIA
 
 Parallel to the DOM there is a similar browser structure called the accessibility tree. It contains information about HTML elements including accessible names, descriptions, roles and states. This information is conveyed to assistive technologies through accessibility APIs.
 
-The accessible name can be derived from an element's content (such as button text), an attribute (such as an image alt text value), or an associated element (such as a programmatically associated label for a form control). There is a specificity ranking that is used to determine where the element gets its accessible name from if there are multiple potential sources. [Léonie Watson](https://twitter.com/LeonieWatson)'s article, <a hreflang="en" href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/">What is an accessible name?</a> is a great source to learn more about accessible names.
+The accessible name can be derived from an element's content (such as button text), an attribute (such as an image `alt` attribute value), or an associated element (such as a programmatically associated label for a form control). There is a specificity ranking that is used to determine where the element gets its accessible name from if there are multiple potential sources. [Léonie Watson](https://twitter.com/LeonieWatson)'s article, <a hreflang="en" href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/">What is an accessible name?</a> is a great source to learn more about accessible names.
 
 {{ figure_markup(
   image="top10-aria-attributes.png",
@@ -602,7 +604,9 @@ The accessible name can be derived from an element's content (such as button tex
   sql_file="common_element_attributes.sql",
 ) }}
 
-There are two ARIA attributes that help in providing elements with an accessible name: `aria-label` and `aria-labelledby`. These attributes will be preferred over the native derived accessible name so they should be used very carefully and only when necessary. It's always a good idea to test the accessible names obtained with a screen reader, and involve people with disabilities to confirm that it is actually helpful and doesn't make the content more inaccessible. We found that 58.4% of desktop pages and 57.0% of mobile home pages had at least one element with the `aria-label` attribute, making it the most popular ARIA attribute for providing accessible names. We found that 24.3% of desktop pages and 22.6% of mobile pages had at least one element with the `aria-labelledby` attribute. This could mean that more elements now have accessible names but it may also be indicative that more elements now lack a visual label which can be problematic for people with cognitive disabilities and voice to text users (see [`<label>` element](#label-element)).
+There are two ARIA attributes that help in providing elements with an accessible name: `aria-label` and `aria-labelledby`. These attributes will be preferred over the native derived accessible name so they should be used very carefully and only when necessary. It's always a good idea to test the accessible names obtained with a screen reader, and involve people with disabilities to confirm that it is actually helpful and doesn't make the content more inaccessible.
+
+We found that 58% of desktop pages and 57% of mobile home pages had at least one element with the `aria-label` attribute, making it the most popular ARIA attribute for providing accessible names. We found that 24% of desktop pages and 23% of mobile pages had at least one element with the `aria-labelledby` attribute. This could mean that more elements now have accessible names but it may also be indicative that more elements now lack a visual label which can be problematic for people with cognitive disabilities and voice to text users (see [`<label>` element](#label-element)).
 
 {{ figure_markup(
   image="button-name-sources.png",
@@ -615,7 +619,11 @@ There are two ARIA attributes that help in providing elements with an accessible
   height="457",
 ) }}
 
-Buttons typically get their accessible names from their content or an ARIA attribute. Per the first rule of ARIA, if an element can derive its accessible name without the use of ARIA, this is preferable. Therefore a `<button>` should get its accessible name from its text content rather than an ARIA attribute if possible. We found that 61% of buttons on desktop and 58% in mobile sites get their accessible name from content which is good. We also found that 20% of buttons on desktop sites and 23% of buttons on mobile sites get their accessible names from the `aria-label` attribute. There are few cases where an `aria-label` can help. For example, if the page has multiple buttons with the same content, but different purposes, then an `aria-label` can be used to provide a better accessible name. Sometimes developers also use `aria-label` when the button has only an image or icon, which might be a reason why mobile sites use the `aria-label`, rather than the content, to define accessible names.
+Buttons typically get their accessible names from their content or an ARIA attribute. Per the first rule of ARIA, if an element can derive its accessible name without the use of ARIA, this is preferable. Therefore a `<button>` should get its accessible name from its text content rather than an ARIA attribute if possible.
+
+We found that 61% of buttons on desktop and 58% in mobile sites get their accessible name from content which is good. We also found that 20% of buttons on desktop sites and 23% of buttons on mobile sites get their accessible names from the `aria-label` attribute.
+
+There are a few cases where an `aria-label` can help. For example, if the page has multiple buttons with the same content, but different purposes, then an `aria-label` can be used to provide a better accessible name. Sometimes developers also use `aria-label` when the button has only an image or icon, which might be a reason why more mobile sites use the `aria-label`, rather than the content, to define accessible names.
 
 ### Hiding content
 
@@ -623,7 +631,7 @@ Sometimes the visual interface can contain some redundant elements that are unhe
 
 {{ figure_markup(
   content="58%",
-  caption="Desktop websites have at least one instance of the `aria-hidden` attribute",
+  caption="Desktop websites having at least one instance of the `aria-hidden` attribute",
   classes="big-number",
   sheets_gid="711360879",
   sql_file="common_element_attributes.sql",
@@ -645,7 +653,7 @@ A common technique that developers employ to supply additional information for s
   sql_file="sr_only_classes.sql",
 ) }}
 
-`sr-only` and `visually-hidden` are the most common class names used by developers and by UI frameworks to achieve screen reader-only text. Bootstrap and Tailwind also use `sr-only` classes for such elements. We found that 15% of desktop pages and 14% of mobile pages had one or both of these CSS class names. It is important to keep in mind that not all screen reader users are fully visually impaired, and thus one should avoid making too much use of screen reader-only solutions.
+`sr-only` and `visually-hidden` are the most common class names used by developers and by UI frameworks to achieve screen reader-only text. For exampe, Bootstrap and Tailwind use `sr-only` classes for such elements. We found that 15% of desktop pages and 14% of mobile pages had one or both of these CSS class names. It is important to keep in mind that not all screen reader users are fully visually impaired, and thus one should avoid making too much use of screen reader-only solutions.
 
 ### Dynamically-rendered content
 
@@ -659,7 +667,7 @@ The presence of new or updated content in the DOM sometimes needs to be communic
   sql_file="common_element_attributes.sql",
 ) }}
 
-ARIA live regions allow us to listen for changes in the DOM, such that the updated content can be announced by a screen reader. We found that 23% of desktop pages (up from 21% in 2021, 17% in 2020) and 22% of mobile pages (up from 20% in 2021, 16% in 2020) have live regions using `aria-live`. In addition, pages also use <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#live_region_roles">live region ARIA roles</a> with implicit `aria-live` values.
+ARIA live regions allow us to listen for changes in the DOM, such that the updated content can be announced by a screen reader. We found that 23% of desktop pages (up from 21% in 2021, 17% in 2020) and 22% of mobile pages (up from 20% in 2021, 16% in 2020) have live regions using `aria-live`. In addition, pages also use <a hreflang="en" href="https://www.w3.org/TR/wai-aria-1.1/#live_region_roles">live region ARIA roles</a> with implicit `aria-live` values:
 
 <figure>
   <table>
@@ -673,32 +681,32 @@ ARIA live regions allow us to listen for changes in the DOM, such that the updat
     </thead>
     <tbody>
       <tr>
-        <th scope="row"><code>status</code></th>
-        <td>polite</td>
+        <td><code>status</code></td>
+        <td><code>polite</code></td>
         <td class="numeric">5.6%</td>
         <td class="numeric">5.1%</td>
       </tr>
       <tr>
-        <th scope="row"><code>alert</code></th>
-        <td>assertive</td>
+        <td><code>alert</code></td>
+        <td><code>assertive</code></td>
         <td class="numeric">3.7%</td>
         <td class="numeric">3.4%</td>
       </tr>
       <tr>
-        <th scope="row"><code>timer</code></th>
-        <td>off</td>
+        <td><code>timer</code></td>
+        <td><code>off</code></td>
         <td class="numeric">0.6%</td>
         <td class="numeric">0.6%</td>
       </tr>
       <tr>
-        <th scope="row"><code>log</code></th>
-        <td>polite</td>
+        <td><code>log</code></td>
+        <td><code>polite</code></td>
         <td class="numeric">0.4%</td>
         <td class="numeric">0.4%</td>
       </tr>
       <tr>
-        <th scope="row"><code>marquee</code></th>
-        <td>off</td>
+        <td><code>marquee</code></td>
+        <td><code>off</code></td>
         <td class="numeric">0.0%</td>
         <td class="numeric">0.0%</td>
       </tr>
@@ -734,9 +742,9 @@ Their vendors generally promise a quick and easy solution to online accessibilit
   sql_file="a11y_technology_usage.sql",
 ) }}
 
-We found that 1.6% of desktop websites use one of 22 specific accessibility apps we could detect in 2022. This is a clear rise compared to 1% in 2021.
+We found that 1.6% of desktop websites use one of 22 specific accessibility apps we could detect in 2022. This is a clear rise compared just under 1% in 2021.
 
-Not all of those products are accessibility overlays, however the specific overlays we can detect show a similar rise. UserWay is the most popular overlay in our dataset, in use by 0.49% of desktop websites and 0.39% on mobile, compared to respectively 0.39% and 0.33% in 2021.
+Not all of those products are accessibility overlays, however the specific overlays we can detect show a similar rise.
 
 {{ figure_markup(
   image="a11y-app-usage-by-rank.png",
@@ -747,7 +755,7 @@ Not all of those products are accessibility overlays, however the specific overl
   sql_file="a11y_technology_usage_by_domain_rank.sql",
 ) }}
 
-Usage of overlays, and accessibility apps generally, is more rare for high-traffic websites. For sites ranked in the top 1,000 by visits, only 0.3% – or 3 websites – use an overlay.
+UserWay is the most popular overlay in our dataset, in use by 0.49% of desktop websites and 0.39% on mobile, compared to  0.39% and 0.33% respectively in 2021.
 
 {{ figure_markup(
   image="pages-using-a11y-apps-by-rank.png",
@@ -757,6 +765,8 @@ Usage of overlays, and accessibility apps generally, is more rare for high-traff
   sheets_gid="134319036",
   sql_file="a11y_overall_tech_usage_by_domain_rank.sql",
 ) }}
+
+Usage of overlays, and accessibility apps generally, is more rare for high-traffic websites. For sites ranked in the top 1,000 by visits, only 0.3% – or 3 websites – use an overlay.
 
 ### Concerns with overlays
 
@@ -774,8 +784,8 @@ Adrian Roselli's <a hreflang="en" href="https://adrianroselli.com/2020/06/access
 
 ## Conclusion
 
-Our analysis shows that there hasn't been much of a substantial change in the accessibility issues seen across websites. There have been some improvements. For example, adoption of `:focus-visible` has increased by almost 9% this year. Our analysis shows that there are still a lot of straightforward fixes, such as color contrast and image `alt` attributes, that could cause high impacts if addressed.
+Our analysis shows that there hasn't been much of a substantial change in the accessibility issues seen across websites. Though there have been some improvements—for example, adoption of `:focus-visible` has increased by almost 9% this year. Our analysis shows that there are still a lot of straightforward fixes, such as color contrast and image `alt` attributes, that could cause high impacts if addressed.
 
-We see that there are often a lot of misuse of features that may give an illusion of things being more accessible but in reality it often degrades the experience. For example, we see 19.8% of websites have an anchor tag with `role=button`. Also, we see that 2.2% of `alt` attributes across websites have a file extension in them, which really doesn't help in conveying the meaning of the image.
+We see that there are often a lot of misuse of features that may give an illusion of things being more accessible but in reality it often degrades the experience. For example, we see 20% of websites have an anchor tag with `role=button`. Also, we see that 2.2% of `alt` attributes across websites have a file extension in them, which almost certainly doesn't help in conveying the meaning of the image.
 
 A lot of the accessibility issues that we see in our analysis can be avoided if designers and developers start thinking about web accessibility from the very beginning and not as an enhancement at the end. Like [Anna E. Cook once said](https://twitter.com/annaecook/status/1404615552883060737), there's "no MVP without accessibility". The web community needs to realize that a website only has a great User Experience when that User Experience works for everyone, irrespective of the device and assistive technology used. We have tried to focus on key metrics that can be easily addressed in the hope that in 2023 we see the numbers improve.
