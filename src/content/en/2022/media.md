@@ -1,13 +1,14 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Media
-#TODO - Review and update chapter description
 description: Media chapter of the 2022 Web Almanac covering how images and videos are currently being encoded, embedded, styled, and delivered on the web
 authors: [eeeps, akshay-ranganath]
 reviewers: [nhoizey, yoavweiss]
 analysts: [eeeps, akshay-ranganath]
 editors: [MichaelLewittes]
 translators: []
+eeeps_bio: Eric Portis is a Web Platform Advocate at <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>.
+akshay-ranganath_bio: TODO
 results: https://docs.google.com/spreadsheets/d/1T5oVAVmcH3sM6R-WwH4ksr2jFtPhuLXs3-iXXoABb3E/
 featured_quote: TODO
 featured_stat_1: TODO
@@ -18,7 +19,6 @@ featured_stat_3: TODO
 featured_stat_label_3: TODO
 unedited: true
 ---
-
 
 ## Introduction
 
@@ -31,7 +31,7 @@ Let's dive right in.
 Images account for a huge portion of a website's bandwidth. For instance, the median website's total weight in June of 2021 was 2,019 kilobytes (on mobile), and 881 of those kilobytes were images.
 
 {{ figure_markup(
-  content="43.7%",
+  content="44%",
   caption="Percentage of the median page's total weight (on mobile) that came from images.",
   classes="big-number",
   sheets_gid="1763112644",
@@ -52,11 +52,11 @@ Almost every page serves up some kind of an image, even if it's just a backgroun
 )
 }}
 
-On the vast majority of pages, the most impactful resource is an image. [Largest Contentful Paint](https://web.dev/lcp/) is a web performance metric that identifies the largest element above the fold. Most of the time that element has an image.
+On the vast majority of pages, the most impactful resource is an image. <a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> is a web performance metric that identifies the largest element above the fold. Most of the time that element has an image.
 
 {{ figure_markup(
-  content="70.2%",
-  caption="Percentage of mobile pages whose LCP responsible element has an image. For desktop, it's 80.3%.",
+  content="70%",
+  caption="Percentage of mobile pages whose LCP responsible element has an image. For desktop, it's 80%.",
   classes="big-number",
   sheets_gid="1131925867",
   sql_file="lcp_element_data.sql"
@@ -97,7 +97,7 @@ A suspiciously large number of them are 1×1:
 
 These `<img>`s don't contain any image content at all. Instead, they're being used for two purposes: for layout (as [spacer GIFs](https://en.wikipedia.org/wiki/Spacer_GIF)) or as [tracking beacons](https://en.wikipedia.org/wiki/Web_beacon).
 
-Any newly authored website should use CSS for layout and the [Beacon API](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API) for tracking. Lots of existing content will use tracking pixels and spacer GIFs forever, but it's disheartening that the desktop number here is unchanged from [last year](https://almanac.httparchive.org/en/2021/media#fig-5), and that the mobile number has only shrunk by a tiny amount. [Old habits](https://developers.facebook.com/docs/meta-pixel/implementation/marketing-api#intialize-img) [die hard](https://spacergif.org/stats/)!
+Any newly authored website should use CSS for layout and the [Beacon API](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API) for tracking. Lots of existing content will use tracking pixels and spacer GIFs forever, but it's disheartening that the desktop number here is unchanged from [last year](../2021/media#fig-5), and that the mobile number has only shrunk by a tiny amount. <a hreflang="en" href="https://developers.facebook.com/docs/meta-pixel/implementation/marketing-api#intialize-img">Old habits</a> <a hreflang="en" href="https://spacergif.org/stats/">die hard</a>!
 
 Wherever possible, we excluded these not-really-an-image `<img>`s from our analysis.
 
@@ -106,7 +106,7 @@ Wherever possible, we excluded these not-really-an-image `<img>`s from our analy
 Moving on to images that contain more than one pixel: Most of them are fairly small, but the majority of pages also contain at least one big image.
 
 {{ figure_markup(
-  image="TODO.png",
+  image="distribution-of-image-pixel-counts.png",
   caption="Distribution of image pixel counts.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=988080204&format=interactive",
@@ -118,7 +118,7 @@ Moving on to images that contain more than one pixel: Most of them are fairly sm
 "Megapixels" aren't the most intuitive measure of image size. For perspective, at a 4:3 aspect ratio, the median pixel count of 0.046MP works out to a 248x186 image. At a time of ever-increasing display sizes and densities that may seem small, but the median page includes at least one `<img>` that contains almost 10 times more pixels than the median `<img>` element.
 
 {{ figure_markup(
-  image="TODO.png",
+  image="largest-image-per-page-by-pixel-count.png",
   caption="Largest image per page (by pixel count).",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=230013578&format=interactive",
@@ -129,12 +129,12 @@ Moving on to images that contain more than one pixel: Most of them are fairly sm
 
 At the aspect ratio of 4:3, 0.431MP works out to 758×569. Considering the mobile crawler has a (typical) 360px-wide viewport, it's likely that many of these large images end up painted across almost the whole viewport and at high densities.
 
-#### Image Aspect Ratios
+#### Image aspect ratios
 
 What sorts of aspect ratios are common on the web?
 
 {{ figure_markup(
-  image="TODO.png",
+  image="image-orientations.png",
   caption="Image orientations.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=5572776&format=interactive",
@@ -143,7 +143,7 @@ What sorts of aspect ratios are common on the web?
 )
 }}
 
-[Much like last year](https://almanac.httparchive.org/en/2021/media#aspect-ratios), most images are landscape photos, and there is virtually no difference between the mobile and desktop numbers. Similar to 2021, this feels like a huge missed opportunity. As many-an-Instagrammer knows, portrait photos [render larger on mobile screens](https://uxdesign.cc/the-powerful-interaction-design-of-instagram-stories-47cdeb30e5b6) at full-width than square and landscape images do, and [drive higher engagement](https://www.dashhudson.com/blog/best-picture-format-instagram-dimension). Even when the source material is a landscape, we can and should try to tailor images for mobile screens, using [art direction](https://web.dev/codelab-art-direction/).
+[Much like last year](../2021/media#aspect-ratios), most images are landscape photos, and there is virtually no difference between the mobile and desktop numbers. Similar to 2021, this feels like a huge missed opportunity. As many-an-Instagrammer knows, portrait photos <a hreflang="en" href="https://uxdesign.cc/the-powerful-interaction-design-of-instagram-stories-47cdeb30e5b6">render larger on mobile screens</a> at full-width than square and landscape images do, and <a hreflang="en" href="https://www.dashhudson.com/blog/best-picture-format-instagram-dimension">drive higher engagement</a>. Even when the source material is a landscape, we can and should try to tailor images for mobile screens, using <a hreflang="en" href="https://web.dev/codelab-art-direction/">art direction</a>.
 
 Images' aspect ratios were clustered around "standard" values, such as 4:3, 3:2 and, in particular, 1:1 (square). In fact, 40% of all images had one of those three aspect ratios, and the top 10 aspect ratios accounted for nearly half of all `<img>`s:
 
@@ -152,7 +152,7 @@ Images' aspect ratios were clustered around "standard" values, such as 4:3, 3:2 
     <thead>
       <tr>
         <th>Aspect ratio</th>
-        <th>Percentage of images (mobile crawler)</th>
+        <th>% of images</th>
       </tr>
     </thead>
     <tbody>
@@ -198,14 +198,14 @@ Images' aspect ratios were clustered around "standard" values, such as 4:3, 3:2 
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="A ranked list of the top ten image aspect ratios.", sheets_gid="1668821585", sql_file="top_aspect_ratios.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="A ranked list of the top ten image aspect ratios (mobile).", sheets_gid="1668821585", sql_file="top_aspect_ratios.sql") }}</figcaption>
 </figure>
 
 #### Image colorspaces
 
 Images are made of pixels and each pixel has a color. The range of colors that are possible within a given image is determined by that image's [color space](https://en.wikipedia.org/wiki/Color_space).
 
-The default color space on the web is [sRGB](https://en.wikipedia.org/wiki/SRGB). CSS colors are specified in sRGB by default and, unless they're marked otherwise, [browsers assume that the colors in images are sRGB, too](https://imageoptim.com/color-profiles.html).
+The default color space on the web is [sRGB](https://en.wikipedia.org/wiki/SRGB). CSS colors are specified in sRGB by default and, unless they're marked otherwise, <a hreflang="en" href="https://imageoptim.com/color-profiles.html">browsers assume that the colors in images are sRGB, too</a>.
 
 This made sense in a world where approximately all display and capture hardware de`alt` in sRGB (or something close to it). But the times, they are a changin'. In 2022, most phone cameras capture in wider-than-sRGB gamuts. Also, display hardware capable of richer, outside-of-sRGB colors is now quite common.
 
@@ -223,7 +223,7 @@ In order to tell a browser an image uses a non-sRGB color space, one must usuall
         <th>ICC profile description</th>
         <th>sRGB-ish</th>
         <th>Wide-gamut</th>
-        <th>Percentage of images (mobile crawler)</th>
+        <th>% of images</th>
       </tr>
     </thead>
     <tbody>
@@ -355,16 +355,17 @@ In order to tell a browser an image uses a non-sRGB color space, one must usuall
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="A ranked list of the top twenty ICC colorspace descriptions.", sheets_gid="560546690", sql_file="color_spaces_and_depth.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="A ranked list of the top twenty ICC colorspace descriptions (mobile).", sheets_gid="560546690", sql_file="color_spaces_and_depth.sql") }}</figcaption>
 </figure>
 
-Nine out of 10 images on the web are untagged, meaning that if they contain RGB data, it will be interpreted as sRGB. Most of the remainder are explicitly tagged with sRGB or something similar to it: "c2ci", "uRGB", and "c2" are all sRGB variants [designed to be minimal and lightweight](https://github.com/saucecontrol/Compact-ICC-Profiles)). Just a little more than 1% of all of the web's images have been tagged with a wider-than-sRGB gamut. More succinctly, wide-gamut images are currently about as popular on the web as grayscale images ([which account for 1.16% of the web's images](https://docs.google.com/spreadsheets/d/1T5oVAVmcH3sM6R-WwH4ksr2jFtPhuLXs3-iXXoABb3E/edit?pli=1#gid=560546690&range=P5).
+Nine out of 10 images on the web are untagged, meaning that if they contain RGB data, it will be interpreted as sRGB. Most of the remainder are explicitly tagged with sRGB or something similar to it: "c2ci", "uRGB", and "c2" are all sRGB variants <a hreflang="en" href="https://github.com/saucecontrol/Compact-ICC-Profiles">designed to be minimal and lightweight</a>. Just a little more than 1% of all of the web's images have been tagged with a wider-than-sRGB gamut. More succinctly, wide-gamut images are currently about as popular on the web as grayscale images (<a hreflang="en" href="https://docs.google.com/spreadsheets/d/1T5oVAVmcH3sM6R-WwH4ksr2jFtPhuLXs3-iXXoABb3E/edit?pli=1#gid=560546690&range=P5">which account for 1.16% of the web's images</a>.
 
 One caveat: AVIF and PNG allow tagging images with wide-gamut spaces in their own particular ways, without an ICC profile. They also allow embedding ICC (like every other format), only they also provide a compact, format-specific shorthand. We started down the path of trying to detect wide-gamut AVIFs and PNGs that don't use ICC profiles, but accounting for the various ways they are encoded (and the ways our tooling reported on them) proved a bit too complex to tackle this year. (Maybe next year!)
 
 ### Encoding
 
 Now that we've gleaned a bit about the web's image content, what can we say about how that content is encoded for delivery?
+
 #### Format adoption
 
 GIF, JPEG, and PNG have been the standard bitmap image file formats on the web for decades. That started to change when Chrome first shipped support for WebP in 2014. Over the past couple of years that change has accelerated, since Safari and Firefox have shipped WebP support, and all three major browsers have shipped at least experimental support for AVIF.
@@ -372,7 +373,7 @@ GIF, JPEG, and PNG have been the standard bitmap image file formats on the web f
 By format, here's every image resource the crawler saw:
 
 {{ figure_markup(
-  image="TODO.png",
+  image="image-format-adoption.png",
   caption="Image format adoption.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=1390540775&format=interactive",
@@ -384,7 +385,7 @@ By format, here's every image resource the crawler saw:
 At 0.22%, AVIF's slice of that pie is so small it's not even labeled. And while 0.22% may not sound like a lot, compared to last year, it represents quite a bit of progress.
 
 {{ figure_markup(
-  image="TODO.png",
+  image="image-format-adoption-year-over-year-change.png",
   caption="Image format adoption, year-over-year change.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=1597734507&format=interactive",
@@ -400,7 +401,7 @@ Slowly, the old formats are making way for the new ones. As they should, the new
 How heavy is the typical image on the web?
 
 {{ figure_markup(
-  image="TODO.png",
+  image="distribution-of-image-byte-sizes.png",
   caption="Distribution of image byte sizes.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=961266271&format=interactive",
@@ -412,7 +413,7 @@ How heavy is the typical image on the web?
 A median of 10 KB might lead one to think, "Eh, not that heavy!" But, just as when we looked at pixel counts, while there are many small images, most pages have at least one large one:
 
 {{ figure_markup(
-  image="TODO.png",
+  image="largest-image-per-page-by-kilobytes.png",
   caption="Largest image per page (by kilobytes).",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=185626936&format=interactive",
@@ -427,7 +428,7 @@ Most pages have at least one image over 100 KB, and the top 10% have one at leas
 
 Bytes and pixel counts are interesting on their own, but to get a sense of how compressed the web's image data is, we need to put bytes and pixels together to calculate bits per pixel. Doing this allows us to make apples-to-apples comparisons of the information density of images, even if those images have different resolutions.
 
-In general, bitmaps on the web decode to eight bits of information per channel, per pixel. So, if we have an RGB image with no transparency, we can expect a decoded, uncompressed image to weigh in at [24 bits per pixel](https://en.wikipedia.org/wiki/Color_depth#True_color_(24-bit)). A good rule of thumb for lossless compression is that it should reduce file sizes by a 2:1 ratio (which would work out to 12 bits per pixel for our 8-bit RGB image). The rule of thumb for 1990s-era lossy compression schemes (JPEG and MP3) was a 10:1 ratio (2.4 bits per pixel). It should be noted that, depending on image content and encoding settings, these ratios vary widely, and modern JPEG encoders like [MozJPEG](https://github.com/mozilla/mozjpeg) typically outperform this 10:1 target at their default settings. To summarize:
+In general, bitmaps on the web decode to eight bits of information per channel, per pixel. So, if we have an RGB image with no transparency, we can expect a decoded, uncompressed image to weigh in at [24 bits per pixel](https://en.wikipedia.org/wiki/Color_depth#True_color_(24-bit)). A good rule of thumb for lossless compression is that it should reduce file sizes by a 2:1 ratio (which would work out to 12 bits per pixel for our 8-bit RGB image). The rule of thumb for 1990s-era lossy compression schemes (JPEG and MP3) was a 10:1 ratio (2.4 bits per pixel). It should be noted that, depending on image content and encoding settings, these ratios vary widely, and modern JPEG encoders like <a hreflang="en" href="https://github.com/mozilla/mozjpeg">MozJPEG</a> typically outperform this 10:1 target at their default settings. To summarize:
 
 <figure>
   <table>
@@ -456,13 +457,13 @@ In general, bitmaps on the web decode to eight bits of information per channel, 
       </tr>
     </tbody>
   </table>
-  <figcaption>Typical compression ratios and resulting bits/pixel numbers for bitmap RGB data.</figcaption>
+  <figcaption>{{ figure_link(caption="Typical compression ratios and resulting bits/pixel numbers for bitmap RGB data.") }}</figcaption>
 </figure>
 
 So, with all of that as context, here's how the web's images stack up:
 
 {{ figure_markup(
-  image="TODO.png",
+  image="distribution-of-image-bits-pixel.png",
   caption="Distribution of image bits/pixel.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=1231605169&format=interactive",
@@ -471,12 +472,12 @@ So, with all of that as context, here's how the web's images stack up:
 )
 }}
 
-At 2.3 bits per pixel, the median ``<img>`` on mobile almost hits that 10:1 compression ratio target on the nose. However, around that median, there is a tremendous spread. Let's break things down by format in order to learn a bit more.
+At 2.3 bits per pixel, the median `<img>` on mobile almost hits that 10:1 compression ratio target on the nose. However, around that median, there is a tremendous spread. Let's break things down by format in order to learn a bit more.
 
 #### Bits per pixel, by format
 
 {{ figure_markup(
-  image="TODO.png",
+  image="median-bits-per-pixel-by-format.png",
   caption="Median bits per pixel by format.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=816096019&format=interactive",
@@ -485,37 +486,37 @@ At 2.3 bits per pixel, the median ``<img>`` on mobile almost hits that 10:1 comp
 )
 }}
 
-Most of these numbers are essentially unchanged from [last year](https://almanac.httparchive.org/en/2021/media#bits-per-pixel-by-format).
+Most of these numbers are essentially unchanged from [last year](../2021/media#bits-per-pixel-by-format).
 
 We can again see that while PNG technically employs "lossless" compression techniques (which would lead us to expect 12-16 bits per pixel, depending on whether or not we're dealing with an alpha channel), its encoders are generally lossy. They reduce color palettes and introduce dithering patterns before "losslessly" compressing images in order to boost compression ratios.
 
-And we again see that the typical WebP is a third lighter, per pixel, than the typical JPEG. This is about what we would expect: [Formal studies](https://developers.google.com/speed/webp/docs/webp_study) (which, vitally, use [matched qualities](https://kornel.ski/en/faircomparison)) have estimated that WebP outperforms JPEG by about that same margin.
+And we again see that the typical WebP is a third lighter, per pixel, than the typical JPEG. This is about what we would expect: <a hreflang="en" href="https://developers.google.com/speed/webp/docs/webp_study">Formal studies</a> (which, vitally, use <a hreflang="en" href="https://kornel.ski/en/faircomparison">matched qualities</a>) have estimated that WebP outperforms JPEG by about that same margin.
 
 The only big mover, when compared to last year, is AVIF. The format dropped from 1.5 bits per pixel last year (less compressed than WebP!), all the way down to an even 1.0. This is a huge reduction, but it wasn't entirely unexpected either. AVIF is a very young format whose encoders have been iterating quickly, and whose adoption is broadening significantly. I expect next year the median AVIF will be even more compressed.
 
-Without looking at the quality side of the lossy-compression/quality tradeoff, it's not possible to conclude from these results alone that AVIF offers the "best" compression of all of the web-compatible formats. But this year we can conclude that in real-world usage, it exhibits the most compression. Pair that conclusion with [in-the-lab results](https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4), which suggest it also does good job of preserving quality, and the picture starts looking pretty good (pun intended).
+Without looking at the quality side of the lossy-compression/quality tradeoff, it's not possible to conclude from these results alone that AVIF offers the "best" compression of all of the web-compatible formats. But this year we can conclude that in real-world usage, it exhibits the most compression. Pair that conclusion with <a hreflang="en" href="https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4">in-the-lab results</a>, which suggest it also does good job of preserving quality, and the picture starts looking pretty good (pun intended).
 
-[AVIF's browser support](https://caniuse.com/avif) also took a huge leap this year. All of this is to say, if you're sending bitmap images across the web (as,  you may recall, [99.9% of pages do](TODO link to intro stat)), you should at least consider sending AVIFs.
+<a hreflang="en" href="https://caniuse.com/avif">AVIF's browser support</a> also took a huge leap this year. All of this is to say, if you're sending bitmap images across the web (as,  you may recall, [99.9% of pages do](TODO link to intro stat)), you should at least consider sending AVIFs.
 
 #### GIFs, animated and not
 
 At the other end of the compression chart is our old friend GIF. It comes out looking particularly bad, but it's not all the format's fault. One of the reasons this 35- year-old format is still in common use is its ability to do animation, and we have not accounted for the number of frames when calculating the number of pixels. This raises a few interesting questions. First, how many GIFs are animated?
 
 {{ figure_markup(
-  content="28.7%",
-  caption="Percentage of GIFs which  were animated GIFs on mobile.",
+  content="29%",
+  caption="Percentage of GIFs which were animated GIFs on mobile.",
   classes="big-number",
   sheets_gid="1586002077",
   sql_file="animated_gif_count.sql"
 )
 }}
 
-I found this surprisingly low. Ever since [PNG achieved universal support in 2006](https://caniuse.com/?search=png), there [hasn't been a good reason to ship a non-animated GIF](https://en.wikipedia.org/wiki/Portable_Network_Graphics#Compared_to_GIF). The word "GIF" has become synonymous with its only justifiable use case: Being a portable, universal format for short, silent, autoplaying, looping animation. One wonders whether all of these non-animated GIFs are legacy content, or whether there is a  significant number  of new, non-animated GIFs being created and published to the web. (I hope not!)
+I found this surprisingly low. Ever since <a hreflang="en" href="https://caniuse.com/?search=png">PNG achieved universal support in 2006</a>, there [hasn't been a good reason to ship a non-animated GIF](https://en.wikipedia.org/wiki/Portable_Network_Graphics#Compared_to_GIF). The word "GIF" has become synonymous with its only justifiable use case: Being a portable, universal format for short, silent, autoplaying, looping animation. One wonders whether all of these non-animated GIFs are legacy content, or whether there is a  significant number  of new, non-animated GIFs being created and published to the web. (I hope not!)
 
 Now that we've separated out the animated GIFs from the non-animated ones, we can also ask: What are the compression characteristics of non-animated vs animated GIFs?
 
 {{ figure_markup(
-  image="TODO.png",
+  image="gif-bits-per-pixel-animated-vs-non-animated.png",
   caption="GIF bits per pixel: animated vs. non-animated.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=1578261884&format=interactive",
@@ -529,7 +530,7 @@ Once we remove animated GIFs from the equation, they look much better. At a medi
 Before we move on from GIFs, I do have one more question about them: How many frames do animated GIFs typically have?
 
 {{ figure_markup(
-  image="TODO.png",
+  image="distribution-of-animated-gif-frame-counts.png",
   caption="Distribution of animated GIF frame counts.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=514250122&format=interactive",
@@ -544,12 +545,12 @@ A majority of animated GIFs come in at a dozen frames or less. Incidentally, the
 
 Now that we have a sense of what the web's image resources are like, what can we say about how they are embedded on web pages?
 
-#### Lazy-Loading
+#### Lazy-loading
 
 The biggest story last year was the rapid adoption of lazy-loading. While the pace of adoption has slowed, it's still proceeding at a remarkable rate. Last June, 17% of pages were using lazy-loading. This year, we saw a 1.4x increase. Now 24% of pages are using lazy-loading.
 
 {{ figure_markup(
-  image="TODO.png",
+  image="adoption-of-loading-lazy-on-img.png",
   caption="Adoption of `loading=lazy` on `<img>`.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=539020085&format=interactive",
@@ -575,10 +576,10 @@ Lazy-loading LCP elements makes LCP scores much worse. It's an anti-pattern that
 
 #### `alt` text
 
-Images embedded with ``<img>`` elements are supposed to be contentful. Which is to say: they're not just decorative; they should contain something meaningful. According to both [WCAG requirements](https://www.w3.org/WAI/WCAG22/Understanding/non-text-content) and [the HTML spec](https://html.spec.whatwg.org/multipage/images.html#`alt`), all contentful images must have `alt`ernative text, and that `alt`ernative text should usually be supplied by the ``alt`` attribute.
+Images embedded with `<img>` elements are supposed to be contentful. Which is to say: they're not just decorative; they should contain something meaningful. According to both <a hreflang="en" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">WCAG requirements</a> and <a hreflang="en" href="https://html.spec.whatwg.org/multipage/images.html#alt">the HTML spec</a>, all contentful images must have `alt`ernative text, and that `alt`ernative text should usually be supplied by the `alt` attribute.
 
 {{ figure_markup(
-  content="54.1%",
+  content="54%",
   caption="Percentage of images that had a non-blank `alt` attribute.",
   classes="big-number",
   sheets_gid="1159402915",
@@ -586,7 +587,7 @@ Images embedded with ``<img>`` elements are supposed to be contentful. Which is 
 )
 }}
 
-This result means that almost half of all `<img>`s are obviously inaccessible. If [the in-depth analysis from this year's accessibility chapter](https://almanac.httparchive.org/en/2022/accessibility#images) **[TODO: confirm this link works]** is any indication, a large chunk of the `<img>`s that do have non-blank `alt` attributes aren't all that accessible, either.
+This result means that almost half of all `<img>`s are obviously inaccessible. If [the in-depth analysis from this year's accessibility chapter](../2021/accessibility#images) **[TODO: update to this year as Accessibility has been merged]** is any indication, a large chunk of the `<img>`s that do have non-blank `alt` attributes aren't all that accessible, either.
 
 We can and must do better.
 
@@ -612,7 +613,7 @@ The `srcset` attribute allows authors to describe resources using one of two des
 The `x` descriptor came first, and is simpler to reason about. For years it enjoyed more popularity than the more powerful `w` descriptor. It warms my heart that nearly a decade in, the world's come around to `w` descriptors.
 
 {{ figure_markup(
-  image="TODO.png",
+  image="srcset-descriptor-usage.png",
   caption="`srcset` descriptor usage.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=1207511817&format=interactive",
@@ -630,7 +631,7 @@ The `sizes` attribute is supposed to be a hint to the browser about the eventual
 So how accurate are our `sizes`?
 
 {{ figure_markup(
-  image="TODO.png",
+  image="distribution-of-img-sizes-errors.png",
   caption="Distribution of `<img sizes>` errors.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=173383101&format=interactive",
@@ -642,7 +643,7 @@ So how accurate are our `sizes`?
 While many `sizes` attributes are entirely accurate, the median `sizes` attribute has an error rate of 13% on mobile and 19% on desktop. That might be OK, given the hint-like nature of the feature, but as you can see, the p75 and p90 numbers aren't pretty and lead to bad outcomes.
 
 {{ figure_markup(
-  content="19.4%",
+  content="19%",
   caption="Percentage of `sizes` attributes that were inaccurate enough to affect `srcset` selection on desktop. On mobile, it's 14%.",
   classes="big-number",
   sheets_gid="1675255539",
@@ -653,7 +654,7 @@ While many `sizes` attributes are entirely accurate, the median `sizes` attribut
 On desktop, where the difference between the default `sizes` value (`100vw`) and the actual layout width of the image is likely to be larger than on mobile, one-in-five `sizes` attributes is inaccurate enough to cause browsers to pick a suboptimal resource from the `srcset`. These errors add up.
 
 {{ figure_markup(
-  image="TODO.png",
+  image="excess-kilobytes-loaded-per-page-due-to-innaccurate-sizes.png",
   caption="Excess kilobytes loaded per page due to innaccurate `sizes`.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=2013610794&format=interactive",
@@ -664,9 +665,9 @@ On desktop, where the difference between the default `sizes` value (`100vw`) and
 
 Note: Our crawlers didn't actually load the correct resources, so the numbers here are estimates, based in part on the byte sizes of the incorrect resources, which the crawlers actually did load. However, we estimate that a quarter of desktop pages are loading more than 83 KB of extra image data, based purely on bad `sizes` attributes. That is to say: A better, smaller resource is there for the picking in the `srcset`, but because the `sizes` attribute is so erroneous, the browser doesn't pick it. Additionally, 10% of desktop pages that use sizes load more than a half-megabyte of excess image data because of bad `sizes` attributes!
 
-In the short term, individual developers can and should use [RespImageLint](https://ausi.github.io/respimagelint/) to audit and fix their badly broken `sizes` attributes and prevent this kind of waste.
+In the short term, individual developers can and should use <a hreflang="en" href="https://ausi.github.io/respimagelint/">RespImageLint</a> to audit and fix their badly broken `sizes` attributes and prevent this kind of waste.
 
-In the medium term, where possible, the web platform needs to provide better tooling. For many developers, authoring (and maintaining!) accurate `sizes` attributes has proven to be too hard. A proposal that would allow [automatic sizes for lazy-loaded images](https://github.com/whatwg/html/pull/8008) is on the table. (Let's hope it progresses in 2023). [The lazysizes.js library](https://github.com/aFarkas/lazysizes) has already proven the appetite for this sort of solution: [10% of `sizes` attributes currently have the value "auto" before JavaScript runs](https://docs.google.com/spreadsheets/d/1T5oVAVmcH3sM6R-WwH4ksr2jFtPhuLXs3-iXXoABb3E/edit#gid=232511628) and are later rewritten to perfectly accurate values by lazysizes.js, before it lazy-loads the image. Note that, because it relies on lazy-loading, this pattern is *not* appropriate for LCP images, or any image above the fold. For these images, the only way forward for performant responsive loading is a well-authored `sizes` attribute.
+In the medium term, where possible, the web platform needs to provide better tooling. For many developers, authoring (and maintaining!) accurate `sizes` attributes has proven to be too hard. A proposal that would allow <a hreflang="en" href="https://github.com/whatwg/html/pull/8008">automatic sizes for lazy-loaded images</a> is on the table. (Let's hope it progresses in 2023). <a hreflang="en" href="https://github.com/aFarkas/lazysizes">The lazysizes.js library</a> has already proven the appetite for this sort of solution: <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1T5oVAVmcH3sM6R-WwH4ksr2jFtPhuLXs3-iXXoABb3E/edit#gid=232511628">10% of `sizes` attributes currently have the value "auto" before JavaScript runs</a> and are later rewritten to perfectly accurate values by lazysizes.js, before it lazy-loads the image. Note that, because it relies on lazy-loading, this pattern is *not* appropriate for LCP images, or any image above the fold. For these images, the only way forward for performant responsive loading is a well-authored `sizes` attribute.
 
 #### `<picture>`
 
@@ -690,7 +691,7 @@ What are people using `<picture>` for?
 The `<picture>` element gives authors two ways to switch between resources. Type-switching allows authors to provide cutting-edge image formats to browsers that support them and fallback formats for everyone else. Media-switching facilitates [art direction][https://www.w3.org/TR/respimg-usecases/#art-direction], allowing authors to switch between various `<source>`s based on media conditions.
 
 {{ figure_markup(
-  image="TODO.png",
+  image="picture-feature-usage.png",
   caption="`<picture>` feature usage.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=1200360202&format=interactive",
@@ -699,7 +700,7 @@ The `<picture>` element gives authors two ways to switch between resources. Type
 )
 }}
 
-Usage is split reasonably evenly. Interestingly, type-switching has closed the gap since [last year](https://almanac.httparchive.org/en/2021/media#fig-23). This may be related to the increasing popularity of next-generation image formats like AVIF and WebP.
+Usage is split reasonably evenly. Interestingly, type-switching has closed the gap since [last year](../2021/media#fig-23). This may be related to the increasing popularity of next-generation image formats like AVIF and WebP.
 
 Part of what makes responsive images difficult is that it asks us to think about how `<img>`s will be laid out, while writing HTML. Which leads us to a basic question: How are `<img>`s laid out?
 
@@ -707,14 +708,14 @@ Part of what makes responsive images difficult is that it asks us to think about
 
 We already saw [how the web's image resources size up](TODO link to megapixel counts once we have an ID to link to). But before they can be shown to a user, embedded images must be placed within a layout and potentially squished or stretched to fit it.
 
-Throughout this analysis it will be useful to keep in mind the [crawlers' viewports](https://almanac.httparchive.org/en/2022/methodology#webpagetest): The desktop crawler was 1376px-wide,  with a DPR of 1x; the mobile crawler was 360px-wide, with a DPR of 3x.
+Throughout this analysis it will be useful to keep in mind the [crawlers' viewports](./methodology#webpagetest): The desktop crawler was 1376px-wide,  with a DPR of 1x; the mobile crawler was 360px-wide, with a DPR of 3x.
 
 #### Layout widths
 
 The simplest question here might be: How wide do the web's images end up when painted to the page?
 
 {{ figure_markup(
-  image="TODO.png",
+  image="distribution-of-img-layout-widths.png",
   caption="Distribution of `<img>` layout widths.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=1449895769&format=interactive",
@@ -726,7 +727,7 @@ The simplest question here might be: How wide do the web's images end up when pa
 Just like the resources that they embed, most of the web's images end up pretty small within layouts. Similarly, most pages have at least one fairly large image.
 
 {{ figure_markup(
-  image="TODO.png",
+  image="widest-img-per-page-layout-width.png",
   caption="Widest `<img>` per page (layout width).",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=334270155&format=interactive",
@@ -752,7 +753,7 @@ Complicating things further, some CSS rules allow `<img>`s to appear at their in
 With all of that explanation out of the way, here's how the web's `<img>` elements are sized for layout:
 
 {{ figure_markup(
-  image="TODO.png",
+  image="intrinsic-and-extrinsic-image-sizing.png",
   caption="Intrinsic and extrinsic image sizing.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=1534436519&format=interactive",
@@ -761,16 +762,16 @@ With all of that explanation out of the way, here's how the web's `<img>` elemen
 )
 }}
 
-The majority of images have extrinsic widths; the majority of images have intrinsic heights. The "both" category for width (representing images with either a max-width or min-width sizing constraint) is also fairly popular. Leaving images to their intrinsic widths is far less popular (and slightly less than it was [last year](https://almanac.httparchive.org/en/2021/media#fig-24)).
+The majority of images have extrinsic widths; the majority of images have intrinsic heights. The "both" category for width (representing images with either a max-width or min-width sizing constraint) is also fairly popular. Leaving images to their intrinsic widths is far less popular (and slightly less than it was [last year](../2021/media#fig-24)).
 
 #### `height`, `width`, and Cumulative Layout Shifts
 
-Any `<img>` whose layout size is dependent on its intrinsic width risks triggering a [Cumulative Layout Shift](https://web.dev/cls/). In essence, such images risk being laid out twice: Once when the page's DOM and CSS have been processed, and then again when the image finally finishes loading and their intrinsic dimensions are known.
+Any `<img>` whose layout size is dependent on its intrinsic width risks triggering a <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a>. In essence, such images risk being laid out twice: Once when the page's DOM and CSS have been processed, and then again when the image finally finishes loading and their intrinsic dimensions are known.
 
-As we've just seen, extrinsically scaling images to fit a certain width while leaving the height (and aspect ratio) intrinsic is very common. To fight the resulting plague of layout shifts, a couple of years ago browsers decided to [change the way that the height and width attributes on `<img>` work](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping#a_new_way_of_sizing_images_before_loading_completes). These days, consistently setting the height and width attributes to reflect the aspect ratio of the resource  is a universally recommended best practice, which allows authors to tell the browser the intrinsic dimensions of an image resource before it loads.
+As we've just seen, extrinsically scaling images to fit a certain width while leaving the height (and aspect ratio) intrinsic is very common. To fight the resulting plague of layout shifts, a couple of years ago browsers decided to <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping#a_new_way_of_sizing_images_before_loading_completes">change the way that the height and width attributes on `<img>` work</a>. These days, consistently setting the height and width attributes to reflect the aspect ratio of the resource  is a universally recommended best practice, which allows authors to tell the browser the intrinsic dimensions of an image resource before it loads.
 
 {{ figure_markup(
-  content="28.1%",
+  content="28%",
   caption="Percentage of `<img>` elements on mobile that have both `height` and `width` attributes set.",
   classes="big-number",
   sheets_gid="928689051",
@@ -786,10 +787,10 @@ Finally, let's take a look at how images are delivered over the network.
 
 #### Cross-domain image hosts
 
-How many images are being delivered from a different domain than the document they're embedded on? A majority of them, including [3.6 percentage points more than last year](https://almanac.httparchive.org/en/2021/media#cross-origin-image-hosts).
+How many images are being delivered from a different domain than the document they're embedded on? A majority of them, including [3.6 percentage points more than last year](../2021/media#cross-origin-image-hosts).
 
 {{ figure_markup(
-  image="TODO.png",
+  image="image-hosts-cross-vs-same-domain.png",
   caption="Image hosts: cross vs same domain.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=1184925121&format=interactive",
@@ -798,7 +799,7 @@ How many images are being delivered from a different domain than the document th
 )
 }}
 
-The fact that a growing majority of images are being delivered across domains underscores [how hard images are to get right](https://css-tricks.com/images-are-hard/), and the benefits of enlisting an [image CDN](https://web.dev/image-cdns/) to handle your media for you.
+The fact that a growing majority of images are being delivered across domains underscores <a hreflang="en" href="https://css-tricks.com/images-are-hard/">how hard images are to get right</a>, and the benefits of enlisting an <a hreflang="en" href="https://web.dev/image-cdns/">image CDN</a> to handle your media for you.
 
 And now let's turn our attention to `<img>`'s younger and more dynamic sibling: `<video>`.
 
@@ -813,7 +814,7 @@ Over the last few years, I have had the sense that web content is shifting. Wher
 Usage of the `<video>` element continues to rise:
 
 {{ figure_markup(
-  image="TODO.png",
+  image="adoption-of-video-over-time.png",
   caption="Adoption of `<video>` over time.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=642519393&format=interactive",
@@ -829,7 +830,7 @@ On mobile, video usage has risen from 4.3% of pages in June 2021 to an even 5% o
 How long are those videos? Not very!
 
 {{ figure_markup(
-  image="TODO.png",
+  image="video-durations.png",
   caption="Video durations.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=1553889662&format=interactive",
@@ -842,10 +843,10 @@ Nine out of 10 videos are less than two minutes long. And more than half are und
 
 ### Format adoption
 
-What formats are sites delivering in 2022? MP4, with its [universal support story](https://caniuse.com/mpeg4), is king:
+What formats are sites delivering in 2022? MP4, with its <a hreflang="en" href="https://caniuse.com/mpeg4">universal support story</a>, is king:
 
 {{ figure_markup(
-  image="TODO.png",
+  image="top-extensions-of-files-with-a-video-mime-type.png",
   caption="Top extensions of files with a video MIME type.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=153073113&format=interactive",
@@ -854,16 +855,16 @@ What formats are sites delivering in 2022? MP4, with its [universal support stor
 )
 }}
 
-But MP4's numbers are a couple ticks down from [last year](https://almanac.httparchive.org/en/2021/media#fig-29), and we continue to see blank extensions (.ts, and .m4s) all delivered when streaming using [HLS](https://en.wikipedia.org/wiki/HTTP_Live_Streaming) or [MPEG-DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP) are gaining ground.
+But MP4's numbers are a couple ticks down from [last year](../2021/media#fig-29), and we continue to see blank extensions (.ts, and .m4s) all delivered when streaming using [HLS](https://en.wikipedia.org/wiki/HTTP_Live_Streaming) or [MPEG-DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP) are gaining ground.
 
-It's encouraging to see responsive video delivery using adaptive streaming on the rise. At the same time, we look forward to the web platform offering [a simple, declarative solution that doesn't rely on JavaScript](https://github.com/whatwg/html/issues/6363).
+It's encouraging to see responsive video delivery using adaptive streaming on the rise. At the same time, we look forward to the web platform offering <a hreflang="en" href="https://github.com/whatwg/html/issues/6363">a simple, declarative solution that doesn't rely on JavaScript</a>.
 
 ### Embedding
 
 The `<video>` element offers a number of attributes that allow authors to control how the video will be loaded and presented on the page. Here they are, ranked by usage:
 
 {{ figure_markup(
-  image="TODO.png",
+  image="video-attribute-usage.png",
   caption="`<video>` attribute usage.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=1835151388&format=interactive",
@@ -874,9 +875,9 @@ The `<video>` element offers a number of attributes that allow authors to contro
 
 There are a number of things to unpack here.
 
-First, `autoplay` overtook `preload` to become the most popular attribute this year. We also see `playsinline`, `muted`, and `loop` increasing in popularity. Perhaps an increasing number of people are [using the `<video>` element to replace animated GIFs](https://web.dev/replace-gifs-with-videos/)? (If so, good!)
+First, `autoplay` overtook `preload` to become the most popular attribute this year. We also see `playsinline`, `muted`, and `loop` increasing in popularity. Perhaps an increasing number of people are <a hreflang="en" href="https://web.dev/replace-gifs-with-videos/">using the `<video>` element to replace animated GIFs</a>? (If so, good!)
 
-The fact that only 12% of `<video>`s have width attributes and just 0.4% (!) have `height` attributes means that most `<video>` elements are susceptible to the same kinds of [CLS](https://web.dev/cls/) problems we saw with `<img>` elements, which lack these attributes.  Help the browser help you and add these attributes!
+The fact that only 12% of `<video>`s have width attributes and just 0.4% (!) have `height` attributes means that most `<video>` elements are susceptible to the same kinds of <a hreflang="en" href="https://web.dev/cls/">CLS</a> problems we saw with `<img>` elements, which lack these attributes.  Help the browser help you and add these attributes!
 
 Additionally, the fact that fewer than one in 10 `<video>` elements has a `controls` attribute suggests a significant number of people are using players that provide their own user interface for interacting with the video.
 
@@ -887,7 +888,7 @@ Usage of `preload` deserves some more investigation.
 The `preload` attribute has seen declining usage over the past couple of years.
 
 {{ figure_markup(
-  image="TODO.png",
+  image="video-preload-attribute-value-usage.png",
   caption="`<video preload>` attribute value usage.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=1167702490&format=interactive",
@@ -907,7 +908,7 @@ The `src` attribute is only present on 8-9% of `<video>` elements. Many of the r
 How many `<source>` children do `<video>` elements have?
 
 {{ figure_markup(
-  image="TODO.png",
+  image="number-of-sources-per-video.png",
   caption="Number of `<source>`s per `<video>`.",
   description="TODO",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=905380642&format=interactive",
@@ -920,6 +921,8 @@ Most have just one, and very few use multiple.
 
 ## Conclusion
 
-So there you have it, a snapshot of the state of media on the web in 2022. We've seen just how pervasive images and (increasingly) videos are on the web, and have gained some insight into how the web's images and videos are encoded and embedded. The most exciting developments for me this year are the accelerating (and still nascent) adoption of AVIF and the ever-increasing adoption of lazy-loading and adaptive bitrate streaming. There were, however, some frustrating aspects, including the almost complete lack of wide-gamut colorspaces; the undying zombie format that is GIF (in both its both animated and more surprisingly non-animated forms); and the way that both sizes and lazy-loading – two features designed for performance – are (through improper use) hurting performance on a significant number of pages.
+So there you have it, a snapshot of the state of media on the web in 2022. We've seen just how pervasive images and—increasingly—videos are on the web, and have gained some insight into how the web's images and videos are encoded and embedded. The most exciting developments for me this year are the accelerating—and still nascent—adoption of AVIF and the ever-increasing adoption of lazy-loading and adaptive bitrate streaming.
+
+There were, however, some frustrating aspects, including the almost complete lack of wide-gamut colorspaces; the undying zombie format that is GIF (in both its both animated and more surprisingly non-animated forms); and the way that both sizes and lazy-loading—two features designed for performance–are (through improper use) hurting performance on a significant number of pages.
 
 Here's to more effective visual communication on the web in 2023!
