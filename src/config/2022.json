@@ -148,8 +148,7 @@
           "part": "III",
           "chapter_number": "18",
           "title": "CMS",
-          "slug": "cms",
-          "todo": true
+          "slug": "cms"
         },
         {
           "part": "III",
@@ -528,6 +527,7 @@
     "dknauss": {
       "name": "Dan Knauss",
       "teams": [
+        "editors",
         "reviewers"
       ],
       "avatar_url": "273554",
@@ -800,16 +800,6 @@
       ],
       "avatar_url": "27693707",
       "github": "JamieWhitMac"
-    },
-    "honzasladek": {
-      "name": "Jan Sládek",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "176694",
-      "github": "honzasladek",
-      "website": "http://cz.linkedin.com/in/honzasladek/",
-      "twitter": "honzasladek"
     },
     "JasmineDW": {
       "name": "Jasmine Drudge-Willson",
