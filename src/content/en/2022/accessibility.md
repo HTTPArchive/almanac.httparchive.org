@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Accessibility
 description: Accessibility chapter of the 2022 Web Almanac covering ease of reading, navigation, forms, media, ARIA, and accessibility apps.
-authors: [SaptakS, scottdavis99, thibaudcolas]
+authors: [SaptakS, thibaudcolas, scottdavis99]
 reviewers: [shantsis]
 analysts: [thibaudcolas]
 editors: [dereknahman]
