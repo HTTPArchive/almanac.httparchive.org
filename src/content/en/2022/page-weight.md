@@ -4,18 +4,20 @@ title: Page Weight
 #TODO - Review and update chapter description
 description: Page Weight chapter of the 2022 Web Almanac covering why page weight matters, bandwidth, complex pages, page weight over time, page requests, and file formats.
 authors: [fellowhuman1101, dwsmart]
-reviewers: [CSteele-gh, mordy-oberstein]
+reviewers: [CSteele-gh]
 analysts: [drohe]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1JvJMiRsL6T9m_NEBHFh-rrQmU5a-ufdOKriSJbrEN8M/
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+fellowhuman1101_bio: Jamie Indigo isn't a robot, but speaks bot. As a technical SEO consultant at <a hreflang="en" href="https://www.deepcrawl.com">Deepcrawl</a>, they study how search engines crawl, render, and index the web. They love to tame wild JavaScript frameworks and optimize rendering strategies. When not working, Jamie likes horror movies, graphic novels, and Dungeons & Dragons.
+dwsmart_bio: Dave Smart is a developer and technical search engine consultant at <a hreflang="en" href="https://tamthebots.com">Tame the Bots</a>. They love building tools and experimenting with the modern web, and can often be found at the front in a gig or two.
+featured_quote: In 2022, page weight continued the trend of growing larger and larger, despite the opportunities to reduce the size of pages available.
+featured_stat_1: 110 MB
+featured_stat_label_1: The largest weight of fonts loaded on mobile page
+featured_stat_2: 678 MB
+featured_stat_label_2: The weight of the largest desktop page
+featured_stat_3: 585%
+featured_stat_label_3: The growth in Mobile Page Weight over 10 years
 unedited: true
 ---
 
