@@ -40,7 +40,7 @@ This chapter will also compare API usage to last year's usage; you can view the 
 
 ## Async Clipboard API
 
-Our first API, the [Async Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API), allows read/write access to the system's clipboard.
+Our first API, the [_Async Clipboard API_](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API), allows read/write access to the system's clipboard.
 
 Note that the Async Clipboard API replaces the deprecated `document.execCommand()` API to access the clipboard.
 
@@ -90,7 +90,7 @@ The Async Clipboard API saw growth in usage from 8.91% in 2021 to 10.10% in 2022
 
 ## Web Share API
 
-The [Web Share API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Share_API) invokes the platform-specific sharing mechanism of the device, allowing data such as text, a URL, or files from a web application to be shared with any other application, such as mail clients, messaging applications, and more.
+The [_Web Share API_](https://developer.mozilla.org/en-US/docs/Web/API/Web_Share_API) invokes the platform-specific sharing mechanism of the device, allowing data such as text, a URL, or files from a web application to be shared with any other application, such as mail clients, messaging applications, and more.
 
 The method called to share data is [`navigator.share()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share). `navigator.share()` accepts an object containing the data to share and returns a Promise. Not every file type can be shared, though, and the [`navigator.canShare()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/canShare) method can test a data object to see if the browser can share it.
 
@@ -186,7 +186,7 @@ By taking advantage of the `beforeinstallprompt` event, developers can provide a
 
 ## Media Session API
 
-The [Media Session API](https://developer.mozilla.org/en-US/docs/Web/API/Media_Session_API) allows developers to create custom media notifications for audio or video content on the web. The API includes action handlers that browsers can use to access media control on keyboards, headsets, and the software controls on a device's notification area and lock screens. The Media Session API empowers users to know and control what's playing on a web page without needing to be actively viewing said page.
+The [_Media Session API_](https://developer.mozilla.org/en-US/docs/Web/API/Media_Session_API) allows developers to create custom media notifications for audio or video content on the web. The API includes action handlers that browsers can use to access media control on keyboards, headsets, and the software controls on a device's notification area and lock screens. The Media Session API empowers users to know and control what's playing on a web page without needing to be actively viewing said page.
 
 When a page plays audio or video content, users get a media notification that appears in their mobile device's notification tray or on their desktop's media hub. Browsers will try to show a title and an icon, but the Media Session API allows the notification to be customized with rich media metadata, such as the title, artist name, album name, and album artwork.
 
@@ -257,7 +257,7 @@ For a deeper dive into video usage on the web, check out the [Media](../media#vi
 
 ## Device Memory API
 
-A device's capabilities depend on a few things, like the network, the CPU core count, and the amount of memory available. The [Device Memory API](https://developer.mozilla.org/en-US/docs/Web/API/Device_Memory_API) provides insight into the memory available by providing the read-only property `deviceMemory` on the `Navigator` interface. The property returns an approximate amount of device memory in gigabytes as a floating point number.
+A device's capabilities depend on a few things, like the network, the CPU core count, and the amount of memory available. The [_Device Memory API_](https://developer.mozilla.org/en-US/docs/Web/API/Device_Memory_API) provides insight into the memory available by providing the read-only property `deviceMemory` on the `Navigator` interface. The property returns an approximate amount of device memory in gigabytes as a floating point number.
 
 The value returned is imprecise, protecting the user's privacy. It's calculated by rounding down the nearest power of 2, then dividing that number by 1,024. The number is also clamped within an upper and lower bound. So you can expect the numbers: `0.25`, `0.5`, `1`, `2`, `4`, and `8` (gigabytes).
 
@@ -287,7 +287,7 @@ Check out <a hreflang="en" href="https://www.youtube.com/watch?v=puUPpVrIRkc&t=1
 
 ## Service Worker API
 
-[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) are one of the core components of Progressive Web Apps. They act as a client-side proxy that puts developers in control of the system's cache and how to respond to resource requests. By pre-caching essential resources, developers can eliminate the dependence on the network, ensuring instant and reliable experiences.
+[_Service workers_](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) are one of the core components of Progressive Web Apps. They act as a client-side proxy that puts developers in control of the system's cache and how to respond to resource requests. By pre-caching essential resources, developers can eliminate the dependence on the network, ensuring instant and reliable experiences.
 
 In addition to caching resources, service workers can update assets from the server, allow for push notifications, and allow access to the background sync APIs.
 
@@ -314,7 +314,7 @@ For a deeper dive into service worker usage on the web, check out the [PWA chapt
 
 ## Gamepad API
 
-The [Gamepad API](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API) is how web applications respond to input from gamepads and other game controllers. This API has three interfaces; one that represents the controller connected to the device, one that represents buttons on the connected controller, and finally, one that is for events fired when a gamepad is connected or disconnected.
+The [_Gamepad API_](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API) is how web applications respond to input from gamepads and other game controllers. This API has three interfaces; one that represents the controller connected to the device, one that represents buttons on the connected controller, and finally, one that is for events fired when a gamepad is connected or disconnected.
 
 ```js
 window.addEventListener("gamepadconnected", (e) => {
@@ -351,7 +351,7 @@ Web applications such as Google's Stadia, Nvidia's GeForce Now, and Microsoft's 
 
 ## Push API
 
-The [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) allows web applications to receive messages from a server regardless of whether the application was in the foreground. Developers can send asynchronous notifications and updates to users who opt in, giving them meaningful updates and a nudge to reengage with an application.
+The [_Push API_](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) allows web applications to receive messages from a server regardless of whether the application was in the foreground. Developers can send asynchronous notifications and updates to users who opt in, giving them meaningful updates and a nudge to reengage with an application.
 
 Web applications must also have a service worker to receive push notifications from a server. From within the service worker, push notifications can be subscribed to using the [`PushManager.subscribe()`](https://developer.mozilla.org/en-US/docs/Web/API/PushManager/subscribe).
 
