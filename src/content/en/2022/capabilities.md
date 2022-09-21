@@ -1,13 +1,13 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Capabilities
-#TODO - Review and update chapter description
 description: Capabilities chapter of the 2022 Web Almanac covering brand-new, powerful web platform APIs that give web apps access to hardware interfaces, enhance web-based productivity apps, and more.
 authors: [MichaelSolati]
 reviewers: [webmaxru, hemanth, beaufortfrancois, tomayac, christianliebel]
-analysts: []
-editors: []
+analysts: [tunetheweb]
+editors: [tunetheweb]
 translators: []
+MichaelSolati_bio: Technically sophisticated Developer Advocate with a dynamic collection of skills and experience. Talent for efficiently and creatively designing web-based applications utilizing modern development technologies, tools, and methodologies. Passion for championing the development of developers and customer skills/knowledge through expert training abilities and tools. Proven track record of successfully delivering optimized results for strategic technical projects and initiatives.
 results: https://docs.google.com/spreadsheets/d/13S9FRj8OPRtoMPb94jFh6pPNz3lNS9yztIaorZYe288/
 featured_quote: TODO
 featured_stat_1: TODO
@@ -16,12 +16,13 @@ featured_stat_2: TODO
 featured_stat_label_2: TODO
 featured_stat_3: TODO
 featured_stat_label_3: TODO
-unedited: true
 ---
 
 ## Introduction
 
-Compelling web experiences aren't limited to basic browser capabilities; they can take advantage of their underlying operating system. Web platform APIs expose these capabilities that are the foundation for Progressive Web Apps (PWA), i.e., web applications capable of providing high-quality experiences found like platform-specific apps. In addition, some functionality on the web platform gives access to lower-level features such as access to the [file system](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API), [geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API), access to the [clipboard](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API), and even the ability to detect [gamepads](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API).
+Compelling web experiences aren't limited to basic browser capabilities; they can take advantage of their underlying operating system. Web platform APIs expose these capabilities that are the foundation for [Progressive Web Apps (PWA)](./pwa_)—web applications capable of providing high-quality experiences found like platform-specific apps.
+
+In addition, some functionality on the web platform gives access to lower-level features such as access to the [file system](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API), [geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API), access to the [clipboard](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API), and even the ability to detect [gamepads](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API).
 
 ## Methodology
 
@@ -31,11 +32,11 @@ The HTTP Archive's crawler parsed the source code for all of these pages to dete
 
 This method does have two significant issues. First, it may underreport some APIs used as it can not detect obfuscated code that may exist due to minification. Additionally, it may overreport occurrences of APIs because it does not execute code to see if an API is used. Regardless of these limitations, we believe this methodology should provide a sufficiently good overview of what capabilities are used on the web.
 
-Seventy-five total regular expressions for supported capabilities exist; view this [source file](https://github.com/HTTPArchive/custom-metrics/blob/5d2f74fbdc580e76da5d1dad738fca8381429b9a/dist/fugu-apis.js) to see all the expressions used.
+Seventy-five total regular expressions for supported capabilities exist; view this <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics/blob/5d2f74fbdc580e76da5d1dad738fca8381429b9a/dist/fugu-apis.js">source file</a> to see all the expressions used.
 
-The usage data in this chapter is from a crawl in August 2022; you can view the raw data in the [Capabilities 2022 Results Sheet](https://docs.google.com/spreadsheets/d/13S9FRj8OPRtoMPb94jFh6pPNz3lNS9yztIaorZYe288/edit?usp=sharing).
+The usage data in this chapter is from a crawl in June 2022; you can view the raw data in the <a hreflang="en" href="https://docs.google.com/spreadsheets/d/13S9FRj8OPRtoMPb94jFh6pPNz3lNS9yztIaorZYe288/edit?usp=sharing">Capabilities 2022 Results Sheet</a>.
 
-This chapter will also compare API usage to last year's usage; you can view the raw data from the previous year in the [Capabilities 2021 Results Sheet](https://docs.google.com/spreadsheets/d/1b4moteB9EiLYkH1Ln9qfi1tnU-E4N2UQ87uayWytDKw/edit#gid=2077755325).
+This chapter will also compare API usage to last year's usage; you can view the raw data from the previous year in the <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1b4moteB9EiLYkH1Ln9qfi1tnU-E4N2UQ87uayWytDKw/edit#gid=2077755325">Capabilities 2021 Results Sheet</a>.
 
 ## Async Clipboard API
 
@@ -47,7 +48,7 @@ Note that the Async Clipboard API replaces the deprecated `document.execCommand(
 
 In order to write data into the clipboard there are the [`writeText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText) and [`write()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/write) methods. `writeText()` takes a String argument and returns a Promise, while `write()` takes an array of [`ClipboardItem`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem)s and also returns a Promise. `ClipboardItem`s take arbitrary data, such as images.
 
-A list of the mandatory data types a browser must support by the Clipboards API specification exists; see this [list by the W3C](https://www.w3.org/TR/clipboard-apis/#mandatory-data-types-x). Unfortunately, not all vendors support the complete list; check browser-specific documentation when possible.
+A list of the mandatory data types a browser must support by the Clipboards API specification exists; see this <a hreflang="en" href="https://www.w3.org/TR/clipboard-apis/#mandatory-data-types-x">list by the W3C</a>. Unfortunately, not all vendors support the complete list; check browser-specific documentation when possible.
 
 ```js
 await navigator.clipboard.writeText("hello world");
@@ -75,16 +76,17 @@ Both read and write access to the clipboard is available on modern versions of C
 
 ### Growth of Async Clipboard API
 
-The Async Clipboard API saw growth in usage from 8.91% in 2021 to 10.10% in 2022 on desktop. On mobile, there was also growth from 8.25% in 2021 to 9.27% in 2022. As a result, this year, the Async Clipboard API was the most used API on both desktop and mobile, beating the Web Share API (last year's most used API).
-
 {{ figure_markup(
-  image="Async-Clipboard-API-Usage.svg",
+  image="Async-Clipboard-API-Usage.png",
   caption="Usage of the Async Clipboard API from 2021 to 2022 on desktop and mobile.",
   description="The Async Clipboard API grew in usage from 8.91% in 2021 to 10.10% in 2022 on desktop. On mobile, usage grew from 8.25% in 2021 to 9.27% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTZp0g2lyspAvJUN-xV4TtqC_9wrRMqyg_bEzHCd1Be3p0Yhy3o2k-SH7DGX5a-LfaodNUTl4Ai-NXg/pubchart?oid=602028150&format=interactive",
   sheets_gid="637848098",
   sql_file="fugu.sql"
 ) }}
+
+The Async Clipboard API saw growth in usage from 8.91% in 2021 to 10.10% in 2022 on desktop. On mobile, there was also growth from 8.25% in 2021 to 9.27% in 2022. As a result, this year, the Async Clipboard API was the most used API on both desktop and mobile, beating the Web Share API (last year's most used API).
+
 
 ## Web Share API
 
@@ -110,34 +112,37 @@ The Web Share API is available on modern versions of Chrome, Edge, and Safari. F
 
 ### Growth of Web Share API
 
-The Web Share API shrunk in usage from 9% in 2021 to 8.84% in 2022 on desktop. On mobile, usage shrunk from 8.58% in 2021 to 8.36% in 2022. As a result, this year, the Web Share API was the second most used API on both desktop and mobile, falling behind the Async Clipboard API (last year's second most used API).
-
 {{ figure_markup(
-  image="Web-Share-API-Usage.svg",
+  image="Web-Share-API-Usage.png",
   caption="Usage of the Web Share API from 2021 to 2022 on desktop and mobile.",
-  description="The Web Share API shrunk in usage from 9% in 2021 to 8.84% in 2022 on desktop. On mobile, usage shrunk from 8.58% in 2021 to 8.36% in 2022.",
+  description="The Web Share API shrunk in usage from 9.00% in 2021 to 8.84% in 2022 on desktop. On mobile, usage shrunk from 8.58% in 2021 to 8.36% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTZp0g2lyspAvJUN-xV4TtqC_9wrRMqyg_bEzHCd1Be3p0Yhy3o2k-SH7DGX5a-LfaodNUTl4Ai-NXg/pubchart?oid=934956615&format=interactive",
   sheets_gid="1887140434",
   sql_file="fugu.sql"
 ) }}
 
-On many sites, you can find the Web Share API in use. For example, social media platforms, documentation sites, and others use it as a great way to share content. Some examples where you can find the API in use include [web.dev](https://web.dev/) and [twitter.com](https://twitter.com/).
+The Web Share API shrunk in usage from 9.00% in 2021 to 8.84% in 2022 on desktop. On mobile, usage shrunk from 8.58% in 2021 to 8.36% in 2022. As a result, this year, the Web Share API was the second most used API on both desktop and mobile, falling behind the Async Clipboard API—last year's second most used API.
+
+On many sites, you can find the Web Share API in use. For example, social media platforms, documentation sites, and others use it as a great way to share content. Some examples where you can find the API in use include <a hreflang="en" href="https://web.dev/">web.dev</a> and [twitter.com](https://twitter.com/).
 
 {{ figure_markup(
-  image="Web-Share-API.gif",
+  gif="Web-Share-API.gif",
+  image="Web-Share-API.webp",
   caption="Sharing a Twitter profile using the Web Share API.",
   description="Sharing a Twitter profile using the Web Share API.",
+  width=640,
+  height=360
 ) }}
 
 ## Add to Home Screen
 
 The ability to add a web application to a device's home screen is a feature we didn't look at in last year's Capabilities report. To calculate how many sites have this functionality, pages were tested to see if they had a listener for the [`beforeinstallprompt`](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeinstallprompt_event) event.
 
-Note that the `beforeinstallprompt`event is a Chromium-only API and is currently [incubating within the WICG](https://wicg.github.io/manifest-incubations/index.html#installation-prompts).
+Note that the `beforeinstallprompt` event is a Chromium-only API and is currently <a hreflang="en" href="https://wicg.github.io/manifest-incubations/index.html#installation-prompts">incubating within the WICG</a>.
 
 The `beforeinstallprompt` event triggers right before a user is about to be prompted to "install" a web app. The usage of an event listener for the `beforeinstallprompt` event is not required for web apps to be added to a device's home screen, so it is safe to assume that the actual usage is much higher. However, this methodology will allow us to get an idea of how popular of a feature it is.
 
-The ability to add an application to the home screen is a crucial feature of PWAs. To use this feature, web applications must meet the [following criteria](https://web.dev/install-criteria/#criteria):
+The ability to add an application to the home screen is a crucial feature of PWAs. To use this feature, web applications must meet the <a hreflang="en" href="https://web.dev/install-criteria/#criteria">following criteria</a>:
 
 - The web app must not already be installed.
 - The user must have spent at least 30 seconds viewing the page at any time.
@@ -157,14 +162,26 @@ The ability to add to the home screen is only available on modern versions of Ch
 
 ### Usage of Add to Home Screen
 
+{{ figure_markup(
+  caption="Usage of Add to Home Screen on mobile.",
+  content="7.71%",
+  classes="big-number",
+  sheets_gid="1887140434",
+  sql_file="fugu.sql"
+)
+}}
+
 As mentioned, the add to home screen capability was not measured last year. However, for posterity and detailed reporting, the `beforeinstallprompt` event was used on 8.56% of desktop pages and 7.71% of mobile pages, making it the third most used capability on desktop and mobile.
 
 By taking advantage of the `beforeinstallprompt` event, developers can provide a customized experience in how user installs their web application. One example is YouTube TV, which invites users to install their application to access it more quickly and easily.
 
 {{ figure_markup(
-  image="Add-to-Home-Screen.gif",
+  gif="Add-to-Home-Screen.gif",
+  image="Add-to-Home-Screen.webp",
   caption="Installing YouTube TV from an in app prompt, powered by the `beforeinstallprompt` event.",
   description="Installing YouTube TV from an in app prompt, powered by the `beforeinstallprompt` event.",
+  width=640,
+  height=360
 ) }}
 
 ## Media Session API
@@ -217,17 +234,26 @@ The Media Session API is available on modern versions of Chrome, Edge, Firefox, 
 
 ### Usage of Media Session API
 
+{{ figure_markup(
+  caption="Usage of Media Session API on mobile.",
+  content="7.41%",
+  classes="big-number",
+  sheets_gid="1887140434",
+  sql_file="fugu.sql"
+)
+}}
+
 The Media Session API was not measured last year. In its first year of tracking, the API was used on 8.37% of desktop pages and 7.41% of mobile pages, making it the fourth most used capability on desktop and mobile.
 
 Web applications such as YouTube, YouTube Music, Spotify, and others take advantage of the Media Session API and provide rich controls for the video or audio played.
 
 {{ figure_markup(
   image="Media-Session-API.png",
-  caption="Accessing controls and information for YouTube Music via the Window’s Taskbar.",
-  description="Accessing controls and information for YouTube Music via the Window’s Taskbar.",
+  caption="Accessing controls and information for YouTube Music via the Window's Taskbar.",
+  description="Accessing controls and information for YouTube Music via the Window's Taskbar.",
 ) }}
 
-For a deeper dive into video usage on the web, check out the [Media chapter](/en/2022/media#video) of the 2022 Web Almanac.
+For a deeper dive into video usage on the web, check out the [Media](../media#video) chapter.
 
 ## Device Memory API
 
@@ -237,18 +263,27 @@ The value returned is imprecise, protecting the user's privacy. It's calculated 
 
 ```js
 const memory = navigator.deviceMemory;
-console.log(`This device has at least ${memory}GiB of RAM.`);
+console.log('This device has at least ', memory, 'GiB of RAM.');
 ```
 
 The Device Memory API is only available on modern versions of Chrome and Edge.
 
 ### Usage of Device Memory API
 
+{{ figure_markup(
+  caption="Usage of Device Memory API on mobile.",
+  content="5.76%",
+  classes="big-number",
+  sheets_gid="1887140434",
+  sql_file="fugu.sql"
+)
+}}
+
 The Device Memory API was not measured last year. In its first year of tracking, the API was used on 6.27% of desktop pages and 5.76% of mobile pages, making it the fifth most used capability on desktop and mobile.
 
 For the release of Facebook's 2019 redesign, FB5, they actively integrated adaptive loading into this new version. They did this by adapting based on users' actual hardware, changing what loaded and what ran based on what users were using. For example, on the desktop, Facebook defined buckets of users based on CPU cores ([`navigator.hardwareConcurrency`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/hardwareConcurrency)) and device memory (`navigator.deviceMemory`) available.
 
-Check out [this video](https://www.youtube.com/watch?v=puUPpVrIRkc&t=1443s) from Chrome Dev Summit 2019, starting at 24:03, where Nate Schloss shares how Facebook handles adaptive loading using features such as the Device Memory API.
+Check out <a hreflang="en" href="https://www.youtube.com/watch?v=puUPpVrIRkc&t=1443s">this video</a> from Chrome Dev Summit 2019, starting at 24:03, where Nate Schloss shares how Facebook handles adaptive loading using features such as the Device Memory API.
 
 ## Service Worker API
 
@@ -256,22 +291,22 @@ Check out [this video](https://www.youtube.com/watch?v=puUPpVrIRkc&t=1443s) from
 
 In addition to caching resources, service workers can update assets from the server, allow for push notifications, and allow access to the background sync APIs.
 
-While service workers have become widely adopted and supported by major browsers, not all features of service workers are available on all browsers. An example of a currently unsupported feature is that of the `Push` API on Safari. Safari will support the `Push` API in the upcoming release of [macOS Ventura](https://www.apple.com/macos/macos-ventura-preview/features/) in 2022 and [iOS 16](https://www.apple.com/ios/ios-16/features/) and IPadOS 16 in 2023.
+While service workers have become widely adopted and supported by major browsers, not all features of service workers are available on all browsers. An example of a currently unsupported feature is that of the `Push` API on Safari. Safari will support the `Push` API in the upcoming release of <a hreflang="en" href="https://www.apple.com/macos/macos-ventura-preview/features/">macOS Ventura</a> in 2022 and <a hreflang="en" href="https://www.apple.com/ios/ios-16/features/">iOS 16</a> and IPadOS 16 in 2023.
 
 The Service Worker API is available on modern versions of Chrome, Edge, and Safari.
 
 ### Growth of Service Worker API
 
-The Service Worker API was not measured in last year's Capabilities chapter. However, using [data from the previous year's PWA chapter](/en/2021/pwa#service-workers-usage), the API grew in usage from 3.05% to 4.17% on desktop and 3.22% to 3.85% on mobile pages, making it the sixth most used capability on desktop and the seventh most used mobile.
-
 {{ figure_markup(
-  image="Service-Worker-API-Usage.svg",
+  image="Service-Worker-API-Usage.png",
   caption="Usage of the Service Worker API from 2021 to 2022 on desktop and mobile.",
   description="The Service Worker API grew in usage from 3.05% in 2021 to 4.17% in 2022 on desktop. On mobile, usage grew from 3.22% in 2021 to 3.85% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTZp0g2lyspAvJUN-xV4TtqC_9wrRMqyg_bEzHCd1Be3p0Yhy3o2k-SH7DGX5a-LfaodNUTl4Ai-NXg/pubchart?oid=304563360&format=interactive",
   sheets_gid="208641216",
   sql_file="fugu.sql"
 ) }}
+
+The Service Worker API was not measured in last year's Capabilities chapter. However, using [data from the previous year's PWA chapter](/en/2021/pwa#service-workers-usage), the API grew in usage from 3.05% to 4.17% on desktop and 3.22% to 3.85% on mobile pages, making it the sixth most used capability on desktop and the seventh most used mobile.
 
 Note that how the service worker usage in the PWA chapter is measured differs from how the Capabilities chapter measures it. Additionally, a bug in the data pipeline for last year's PWA chapter was found, resulting in an undercounting of service worker usage.
 
@@ -292,10 +327,8 @@ The Gamepad API is available on modern versions of Chrome, Edge, Firefox, and Sa
 
 ### Growth of Gamepad API
 
-The Gamepad API shrunk in usage from 4.39% in 2021 to 4.12% in 2022 on desktop. On mobile, use shrunk from 5.10% in 2021 to 4.65% in 2022. As a result, this year, the Gamepad API was the seventh most used capability on desktop and the sixth most used mobile.
-
 {{ figure_markup(
-  image="Gamepad-API-Usage.svg",
+  image="Gamepad-API-Usage.png",
   caption="Usage of the Gamepad API from 2021 to 2022 on desktop and mobile.",
   description="The Gamepad API shrunk in usage from 4.39% in 2021 to 4.12% in 2022 on desktop. On mobile, usage shrunk from 5.10% in 2021 to 4.65% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTZp0g2lyspAvJUN-xV4TtqC_9wrRMqyg_bEzHCd1Be3p0Yhy3o2k-SH7DGX5a-LfaodNUTl4Ai-NXg/pubchart?oid=679096832&format=interactive",
@@ -303,12 +336,17 @@ The Gamepad API shrunk in usage from 4.39% in 2021 to 4.12% in 2022 on desktop. 
   sql_file="fugu.sql"
 ) }}
 
+The Gamepad API shrunk in usage from 4.39% in 2021 to 4.12% in 2022 on desktop. On mobile, use shrunk from 5.10% in 2021 to 4.65% in 2022. As a result, this year, the Gamepad API was the seventh most used capability on desktop and the sixth most used mobile.
+
 Web applications such as Google's Stadia, Nvidia's GeForce Now, and Microsoft's Xbox Cloud Gaming provide gaming experiences that run on the cloud comparable to the experience of running games on local devices or a gaming console. Thanks to the Gamepad API, these web applications allow users to use traditional console game controllers rather than just a keyboard and mouse.
 
 {{ figure_markup(
-  image="Gamepad-API.gif",
+  image="Gamepad-API.webp",
+  gif="Gamepad-API.gif",
   caption="Connecting a Xbox controller to Google Stadia in the Chrome browser.",
   description="Connecting a Xbox controller to Google Stadia in the Chrome browser.",
+  width=640,
+  height=360
 ) }}
 
 ## Push API
@@ -321,6 +359,15 @@ The Push API is available on modern versions of Chrome, Edge, Firefox, and Safar
 
 ### Usage of Push API
 
+{{ figure_markup(
+  caption="Usage of Push API on mobile.",
+  content="1.86%",
+  classes="big-number",
+  sheets_gid="1887140434",
+  sql_file="fugu.sql"
+)
+}}
+
 The Push API was not measured last year. In its first year of tracking, the API was used on 2.03% of desktop pages and 1.86% of mobile pages, making it the eighth most used capability on desktop and mobile.
 
 ## Project Fugu
@@ -329,12 +376,12 @@ Many features users expect to belong to platform-specific applications also exis
 
 Project Fugu comprises Microsoft, Intel, Samsung, Google, and many other groups and individuals.
 
-Check out [this post](https://developer.chrome.com/blog/fugu-status/) on the Chrome Developers blog to learn more about the Capabilities Project.
+Check out <a hreflang="en" href="https://developer.chrome.com/blog/fugu-status/">this post</a> on the Chrome Developers blog to learn more about the Capabilities Project.
 
 ## Conclusion
 
 Capabilities unlock new possibilities and functionality for developers to take advantage of on the web. This chapter shared 8 of the most popular web platform APIs currently being used on the web. This chapter also showcased some of these capabilities used in different web applications. The beauty of the web is that it can use these platform-based functionalities without needing to be installed onto a device or additional libraries and plugins.
 
-Some exciting experiences that utilize the web's capabilities include [What Web Can Do Today?](https://whatwebcando.today/) (WWCDT) and [Discourse](https://www.discourse.org/). WWCDT, which uses 38 of the capabilities we track, showcases many Web APIs with a live demo of each API. Discourse provides communities with web forums and uses 14 of the capabilities we track, such as the Badging API, so users can see the number of unread notifications they have.
+Some exciting experiences that utilize the web's capabilities include <a hreflang="en" href="https://whatwebcando.today/">What Web Can Do Today?</a> (WWCDT) and <a hreflang="en" href="https://www.discourse.org/">Discourse</a>. WWCDT, which uses 38 of the capabilities we track, showcases many Web APIs with a live demo of each API. Discourse provides communities with web forums and uses 14 of the capabilities we track, such as the Badging API, so users can see the number of unread notifications they have.
 
 The Capabilities Project, Project Fugu, allows applications to migrate to the web, removing some barriers associated with platform-specific applications. No need to write "native" code, no need to worry about users having access to the latest updates, and no need to get users to install your application. The web, and its capabilities, open up all new possibilities in building compelling experiences for users.
