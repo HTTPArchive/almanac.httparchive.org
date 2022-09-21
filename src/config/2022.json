@@ -210,8 +210,7 @@
           "part": "IV",
           "chapter_number": "26",
           "title": "HTTP",
-          "slug": "http",
-          "todo": true
+          "slug": "http"
         }
       ]
     }
@@ -1492,7 +1491,8 @@
       ],
       "avatar_url": "1900571",
       "github": "paivaspol",
-      "twitter": "paivaspol"
+      "twitter": "paivaspol",
+      "linkedin": "vaspol-ruamviboonsuk-7898b824"
     },
     "vgotluru": {
       "name": "vgotluru",
