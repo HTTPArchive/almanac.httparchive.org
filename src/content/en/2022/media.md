@@ -688,7 +688,7 @@ This is up a couple ticks from last year, but the fact that there are almost fiv
 
 What are people using `<picture>` for?
 
-The `<picture>` element gives authors two ways to switch between resources. Type-switching allows authors to provide cutting-edge image formats to browsers that support them and fallback formats for everyone else. Media-switching facilitates [art direction][https://www.w3.org/TR/respimg-usecases/#art-direction], allowing authors to switch between various `<source>`s based on media conditions.
+The `<picture>` element gives authors two ways to switch between resources. Type-switching allows authors to provide cutting-edge image formats to browsers that support them and fallback formats for everyone else. Media-switching facilitates <a hreflang="en" href="https://www.w3.org/TR/respimg-usecases/#art-direction">art direction</a>, allowing authors to switch between various `<source>`s based on media conditions.
 
 {{ figure_markup(
   image="picture-feature-usage.png",
