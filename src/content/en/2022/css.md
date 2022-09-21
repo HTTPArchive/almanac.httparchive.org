@@ -80,11 +80,11 @@ Taking a look at the number of style rules in a page showed an increase across a
   )
 }}
 
-We can see from the total number of stylesheets loaded, that typically people are breaking their CSS down into multiple stylesheets. At the 50th percentile this works out as 31 rules per stylesheet, growing to 276 rules on desktop and 285 rules for mobile at the 90th percentile. 
+We can see from the total number of stylesheets loaded, that typically people are breaking their CSS down into multiple stylesheets. At the 50th percentile this works out as 31 rules per stylesheet, growing to 276 rules on desktop and 285 rules for mobile at the 90th percentile.
 
 ## Selectors and the cascade
 
-2022 saw a shake-up with regard to the cascade with [@layer](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) landing in all engines. This new at-rule enables the grouping of selectors into layers, the order of precedence of the layers can then be managed. 
+2022 saw a shake-up with regard to the cascade with [@layer](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) landing in all engines. This new at-rule enables the grouping of selectors into layers, the order of precedence of the layers can then be managed.
 
 It's a little early to see widespread usage of this new method of managing the cascade, but let's take a look at how selector usage has evolved.
 
@@ -221,7 +221,7 @@ Last year it was noted that `:focus-visible`, a way to style elements in focus i
   )
 }}
 
-We filter out any prefixed, and therefore browser-specific, pseudo-elements. These are typically used to select interface components or parts of browser chrome, and we are interested in the pseudo-elements developers are actually using. 
+We filter out any prefixed, and therefore browser-specific, pseudo-elements. These are typically used to select interface components or parts of browser chrome, and we are interested in the pseudo-elements developers are actually using.
 
 The use of `::before` and `::after` has increased since last year. These are used to insert generated content into the document. By checking usage of the `content` property, it is possible to see that this is most often being used to insert an empty string, used for styling purposes. Generated content is one way to style a grid area without needing to add an element, perhaps this has contributed to the rise in usage of these properties?
 
@@ -453,7 +453,7 @@ The percentage of sites using pixels in calculations has decreased 9 points, it 
   )
 }}
 
-Subtraction remains the clear favorite in terms of calculation operators, but all four top values saw a drop since 2021, other than addition, which remained the same. 
+Subtraction remains the clear favorite in terms of calculation operators, but all four top values saw a drop since 2021, other than addition, which remained the same.
 
 {{ figure_markup(
     image="calc-unit-complexity.png",
@@ -549,17 +549,17 @@ While the number of pages including these properties has increased, the properti
   )
 }}
 
-We saw that `calc()` has started to be notable as a value type for custom properties, and it is by far the most commonly seen function used in this way. It is followed by `linear-gradient()`, and the `rgba()` function used to set RGB color values with an alpha channel.  After this are the various functions used for transitions and animations, showing a growing use of custom properties in this area. 
+We saw that `calc()` has started to be notable as a value type for custom properties, and it is by far the most commonly seen function used in this way. It is followed by `linear-gradient()`, and the `rgba()` function used to set RGB color values with an alpha channel.  After this are the various functions used for transitions and animations, showing a growing use of custom properties in this area.
 
 ### Complexity
 
 It's possible to include custom properties in the values of other custom properties. Consider this example from the 2020 Web Almanac:
 
 ```css
-:root {  
-  --base-hue: 335; /* depth = 0 */  
-  --base-color: hsl(var(--base-hue) 90% 50%); /* depth = 1 */  
-  --background: linear-gradient(var(--base-color), black); /* depth = 2 */  
+:root {
+  --base-hue: 335; /* depth = 0 */
+  --base-color: hsl(var(--base-hue) 90% 50%); /* depth = 1 */
+  --background: linear-gradient(var(--base-color), black); /* depth = 2 */
 }
 ```
 
@@ -590,7 +590,7 @@ As seen in 2021 the vast majority of custom properties had a depth of zero, mean
   )
 }}
 
-The use of the time-honored six-digit #RRGGBB syntax remains unchanged since 2021, being used in half of color declarations. Despite the widespread availability of eight-digit #RRGGBBAA hex, the `rgba()` form is the most widely used way to add an alpha component, likely because it was implemented in browsers much earlier. 
+The use of the time-honored six-digit #RRGGBB syntax remains unchanged since 2021, being used in half of color declarations. Despite the widespread availability of eight-digit #RRGGBBAA hex, the `rgba()` form is the most widely used way to add an alpha component, likely because it was implemented in browsers much earlier.
 
 The usage of other values showed a similar story, the web community hasn't yet started to take advantage of other color formats, even widely supported ones such as `hsl()`.
 
@@ -728,7 +728,7 @@ We have many options to choose from when doing layout on the web, and most sites
   )
 }}
 
-This chart doesn't tell us the main layout method used on a page. It indicates that a property or value appears in the CSS for those pages. For example, 51% of pages are using the old 2009 version of flexbox, with display: box. It's likely this has been added for backwards compatibility, perhaps via a tool such as Autoprefixer. 
+This chart doesn't tell us the main layout method used on a page. It indicates that a property or value appears in the CSS for those pages. For example, 51% of pages are using the old 2009 version of flexbox, with display: box. It's likely this has been added for backwards compatibility, perhaps via a tool such as Autoprefixer.
 
 ### Flexbox and grid adoption
 
@@ -766,7 +766,7 @@ The subgrid value for grid-template-rows and grid-template-columns is, at the ti
 
 The web has overwhelmingly voted to reject the original W3C box model in favor of box-sizing: border-box. The number of pages using this property and value combination has risen slightly again to over 90% of pages. Almost half of all pages analyzed apply border-box sizing to every element on the page via the universal selector (*). This approach may help explain why the median number of border-box declarations per page is so low across the bottom four percentiles.
 
-Around 22% of pages use border-box on checkboxes and radiobuttons, we then see a lot of .wp- classes again, showing that WordPress is responsible for the use on 20% of pages analyzed. 
+Around 22% of pages use border-box on checkboxes and radiobuttons, we then see a lot of .wp- classes again, showing that WordPress is responsible for the use on 20% of pages analyzed.
 
 ### Multicolumn
 
@@ -781,7 +781,7 @@ Around 22% of pages use border-box on checkboxes and radiobuttons, we then see a
 
 Use of multicolumn layout has increased once again, it's now found on 23% of pages, a rise of 3 points since 2021.
 
-### The aspect-ratio property 
+### The aspect-ratio property
 
 {{ figure_markup(
     content="2%",
@@ -796,7 +796,7 @@ We were interested in the adoption of the new `aspect-ratio` property. This beca
 
 ## Transitions and animations
 
-The animation property appears on 77% of mobile pages (the same as last year) and a slight increase on desktop to 76.8%. The transition property is even more popular, it's found on 85% of mobile and 85.6% of desktop pages. The desktop frequency has dropped slightly by around 4 percentage points since 2021. 
+The animation property appears on 77% of mobile pages (the same as last year) and a slight increase on desktop to 76.8%. The transition property is even more popular, it's found on 85% of mobile and 85.6% of desktop pages. The desktop frequency has dropped slightly by around 4 percentage points since 2021.
 
 {{ figure_markup(
     image="transition-props.png",
@@ -809,7 +809,7 @@ The animation property appears on 77% of mobile pages (the same as last year) an
   )
 }}
 
-As seen last year the most common usage is to apply transitions to all animatable properties with the `all` keyword. This usage has grown to 53% <span class="numeric-good">(▲7 percentage points)</span>, it is followed by `opacity`, at 50% pf pages including transitions. 
+As seen last year the most common usage is to apply transitions to all animatable properties with the `all` keyword. This usage has grown to 53% <span class="numeric-good">(▲7 percentage points)</span>, it is followed by `opacity`, at 50% pf pages including transitions.
 
 {{ figure_markup(
     image="transition-durations.png",
@@ -821,7 +821,7 @@ As seen last year the most common usage is to apply transitions to all animatabl
   )
 }}
 
-Looking at the duration of transitions we see a change from last year.  In 2021, at the 90th percentile the median transition duration was half a second, this has now jumped to 1 second. We see increases across all top four percentiles. 
+Looking at the duration of transitions we see a change from last year.  In 2021, at the 90th percentile the median transition duration was half a second, this has now jumped to 1 second. We see increases across all top four percentiles.
 
 {{ figure_markup(
     image="transition-delays.png",
@@ -939,7 +939,7 @@ Of the [standard values](https://developer.mozilla.org/en-US/docs/Web/CSS/filter
   )
 }}
 
-In pages that use clip-path to clip an element, the vast majority are using inset(), the value that simply insets the box of the element, 88% of pages using clip-path have used this function. 
+In pages that use clip-path to clip an element, the vast majority are using inset(), the value that simply insets the box of the element, 88% of pages using clip-path have used this function.
 
 After that, and the value none, most developers have chosen to use a polygon(), which is the value that gives the most flexibility to define your own path.
 
@@ -1019,7 +1019,7 @@ We looked at the properties that appear within media query blocks, to see which 
   )
 }}
 
-The display property is still top of the chart for properties changed within media queries, however there has been some reshuffling in the rankings. These are not as dramatic as they might seem. The color property has vanished from the chart, however this only represents a change from 74% to 67%. It is joined however by a reduction in usage of background-color for 65% to 63%, which makes us wonder if some framework, or perhaps WordPress has stopped using this in a stylesheet. 
+The display property is still top of the chart for properties changed within media queries, however there has been some reshuffling in the rankings. These are not as dramatic as they might seem. The color property has vanished from the chart, however this only represents a change from 74% to 67%. It is joined however by a reduction in usage of background-color for 65% to 63%, which makes us wonder if some framework, or perhaps WordPress has stopped using this in a stylesheet.
 
 Another interesting point to note is that in 2020 font-size appeared in 73% of media blocks, and was fifth on the list. In 2021, it showed up in 60% of blocks, appearing at 12th. This year it has gained ground, back to 76% and sixth place.
 
@@ -1039,7 +1039,7 @@ The number of feature query blocks per page is 4 at the 75th percentile, and at 
   )
 }}
 
-As last year, the most popular feature tested for in feature queries was `position: sticky`, however this has fallen from 53% to 36% of occurrences, perhaps due to the improved browser support for this feature. 
+As last year, the most popular feature tested for in feature queries was `position: sticky`, however this has fallen from 53% to 36% of occurrences, perhaps due to the improved browser support for this feature.
 
 Non-standard features show up strongly in these tests, with touch-callout (-webkit-touch-callout) and ime-align (-ms-ime-align). The former has grown in usage from 5% to 11%, while ime-align has dropped from 7% to 5%.
 
@@ -1056,17 +1056,17 @@ Non-standard features show up strongly in these tests, with touch-callout (-webk
 
 Having tested for support, which properties are then used inside these feature query blocks? The `object-fit` property came out top, the mask- properties making a good showing, along with their `-webkit-` counterparts. This is likely due to the lack of interoperability for masking until recently, the properties still requiring a `-webkit` prefix for Chrome.
 
-While the `display` property features in the top 20, you have to go a long way down the list to find any grid- properties. The `grid-template-columns` property being found in 2% of feature query blocks. 
+While the `display` property features in the top 20, you have to go a long way down the list to find any grid- properties. The `grid-template-columns` property being found in 2% of feature query blocks.
 
 ## Internationalization
 
-English is described as a horizontal top to bottom language, because sentences are written horizontally, starting at the top of the page. The script direction runs left-to-right. Arabic, Hebrew and Urdu are also horizontal top to bottom languages, but have a script direction of right-to-left. There are also languages that are written vertically, from top to bottom—such as Chinese, Japanese, and Mongolian. CSS has evolved to better cope with these different writing modes and script directions. 
+English is described as a horizontal top to bottom language, because sentences are written horizontally, starting at the top of the page. The script direction runs left-to-right. Arabic, Hebrew and Urdu are also horizontal top to bottom languages, but have a script direction of right-to-left. There are also languages that are written vertically, from top to bottom—such as Chinese, Japanese, and Mongolian. CSS has evolved to better cope with these different writing modes and script directions.
 
 ### Direction
 
 The number of pages using the direction property to set CSS either on the <body> or <html> element remained unchanged from 2021, with 11% of pages setting it on <html> and 3% on <body>. [It's recommended to use HTML](https://www.google.com/url?q=https://www.w3.org/International/questions/qa-html-dir&sa=D&source=docs&ust=1662570607226770&usg=AOvVaw0JqkyVnnoPjDKva82sSksV), rather than CSS to set direction, so a lower number here matches that best practice.
 
-## Logical and physical properties 
+## Logical and physical properties
 
 Logical or flow-relative properties such as border-block-start and values such as start for text-align are useful for internationalization, as they follow the flow of text rather than being tied to the physical dimensions of the screen. Browser support for these properties is now excellent, so we wondered whether we would see more adoption.
 
@@ -1113,11 +1113,11 @@ The use of CSS-in-JS has not increased from last year, staying at 3%. This usage
 
 ## Houdini
 
-There is still very little usage of Houdini on the open web, looking at the number of pages using animated custom properties shows only a small increase since 2021. We also looked at usage of the Houdini Paint API. We do find instances of this in use on the web. By looking at the names of worklets used, much of this is this [Smooth corners](https://css-houdini.rocks/smooth-corners/) worklet, indicating that people are using it as a progressive enhancement, given that this can fall back nicely to a regular border-radius. 
+There is still very little usage of Houdini on the open web, looking at the number of pages using animated custom properties shows only a small increase since 2021. We also looked at usage of the Houdini Paint API. We do find instances of this in use on the web. By looking at the names of worklets used, much of this is this [Smooth corners](https://css-houdini.rocks/smooth-corners/) worklet, indicating that people are using it as a progressive enhancement, given that this can fall back nicely to a regular border-radius.
 
 ## Sass
 
-Preprocessors like Sass can be seen as a good indicator of what developers want to be able to do with CSS, but can't. And, with CSS increasing in power, a common question from developers is whether we need to use Sass at all. We can see from the rise in custom properties usage, that one common preprocessor use, to be able to have variables or constants, has now a built-in CSS equivalent. 
+Preprocessors like Sass can be seen as a good indicator of what developers want to be able to do with CSS, but can't. And, with CSS increasing in power, a common question from developers is whether we need to use Sass at all. We can see from the rise in custom properties usage, that one common preprocessor use, to be able to have variables or constants, has now a built-in CSS equivalent.
 
 Looking at the function calls shows that color functions are still a very popular use of Sass, something that may well soon be replaced with new CSS color functions such as color-mix(). There are some changes from last year. The darken function has dropped 2 percentage points to 14% and third place. The lighten function has, however, gained a points.
 
@@ -1202,7 +1202,7 @@ The orphans property appears in 22% of print stylesheets, despite lacking suppor
 
 ### Paged media
 
-There is an entire specification for dealing with Paged Media, and CSS for print. However, this has been poorly implemented in browsers. To find a good implementation of these features you need to use a print specific user agent. 
+There is an entire specification for dealing with Paged Media, and CSS for print. However, this has been poorly implemented in browsers. To find a good implementation of these features you need to use a print specific user agent.
 
 There is some browser support for the [@page](https://developer.mozilla.org/en-US/docs/Web/CSS/@page) rule, and its pseudo-classes, and we did find developers using these to set different page properties for the first page, and the left and right pages of a spread.
 
@@ -1284,7 +1284,7 @@ As in 2020 and 2021, background-size came out top of the chart, and there was li
 
 ### Unrecoverable syntax errors
 
-To check for unrecoverable errors, we use the [Rework](https://github.com/reworkcss/css) CSS parsing engine. An unrecoverable error is one where the error is so bad, the full stylesheet is unable to be parsed by Rework. Last year, 0.94% of desktop pages, and 0.55% of mobile pages contained an unrecoverable error. This year 13% of desktop and 12% of mobile pages had such an error. This seems like a large jump, however due to some changes in methodology (adding size thresholds) it is likely that not all of the instances are unrecoverable errors. 
+To check for unrecoverable errors, we use the [Rework](https://github.com/reworkcss/css) CSS parsing engine. An unrecoverable error is one where the error is so bad, the full stylesheet is unable to be parsed by Rework. Last year, 0.94% of desktop pages, and 0.55% of mobile pages contained an unrecoverable error. This year 13% of desktop and 12% of mobile pages had such an error. This seems like a large jump, however due to some changes in methodology (adding size thresholds) it is likely that not all of the instances are unrecoverable errors.
 
 ## Nonexistent properties
 
