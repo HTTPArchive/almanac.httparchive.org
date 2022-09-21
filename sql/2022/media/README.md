@@ -27,6 +27,21 @@ The duplication and separation of custom metrics is unfortunate. `media.js`, `Im
 
 I didn't do anything new with video at all -- these are just Doug's queries from 2021 with updated dates. I'm positive more can be done here, not sure I'm the person to do it.
 
+---
+
+Some additional notes, that came out of the document review process:
+
+> I've seen multiple sites using `<picture>` where `srcset`/`sizes` would be enough, and even better, without type switching nor art direction. I don't know if this is something that can be detected, maybe for next year.
+
+– Nicolas Hoizey
+
+> Maybe we could add (next year?) details about which types are used in `<source>`s, in which order. (I've seen type switching with JPEG first… 😅)
+>
+> Also maybe useful:
+> - the number of `<source>`s for art direction
+> - wheither the latest `<source>` is useful or `<img srcset sizes>` would be enough, for both use cases (another frequent mistake)
+
+– Nicolas Hoizey
 
 ## Resources
 
