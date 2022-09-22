@@ -380,7 +380,7 @@ Check out <a hreflang="en" href="https://developer.chrome.com/blog/fugu-status/"
 
 ## Conclusion
 
-Capabilities unlock new possibilities and functionality for developers to take advantage of on the web. This chapter shared 8 of the most popular web platform APIs currently being used on the web. This chapter also showcased some of these capabilities used in different web applications. The beauty of the web is that it can use these platform-based functionalities without needing to be installed onto a device or additional libraries and plugins.
+Capabilities unlock new possibilities and functionality for developers to take advantage of on the web. This chapter shared eight of the most popular web platform APIs currently being used on the web. This chapter also showcased some of these capabilities used in different web applications. The beauty of the web is that it can use these platform-based functionalities without needing to be installed onto a device or additional libraries and plugins.
 
 Some exciting experiences that utilize the web's capabilities include <a hreflang="en" href="https://whatwebcando.today/">What Web Can Do Today?</a> (WWCDT) and <a hreflang="en" href="https://www.discourse.org/">Discourse</a>. WWCDT, which uses 38 of the capabilities we track, showcases many Web APIs with a live demo of each API. Discourse provides communities with web forums and uses 14 of the capabilities we track, such as the Badging API, so users can see the number of unread notifications they have.
 
