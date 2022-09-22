@@ -159,7 +159,7 @@ We have made some pretty radical progress toward closing these gaps in experimen
 
 #### Scrolling
 
-Over the years we've added new patterns and developed new abilities around scroll experiences like `scroll-snap, scroll-behavior `and `overscroll-behavior`. The desire for these sorts of powers are clear - in 2022, the number of CSS stylesheets including some of these key properties looked like this:
+Over the years we've added new patterns and developed new abilities around scroll experiences like `scroll-snap`, `scroll-behavior`, and `overscroll-behavior`. The desire for these sorts of powers are clear - in 2022, the number of CSS stylesheets including some of these key properties looked like this:
 
 {{ figure_markup(
   image="scroll-property-adoption.png",
@@ -183,7 +183,6 @@ Unfortunately, this is an area where a number of incompatibilities remain, and d
 
 It is very difficult to estimate what effect these improvements will have on adoption over time, but we'll keep an eye on these metrics. In the meantime, if you've experienced some interoperability pains with scrolling features, you might give them another look. We hope that as these improvements continue and reach stable browser releases, the experience will get a lot better.
 
-
 #### Typography and Encodings
 
 Rendering of text is sort of the web's forte. Like forms, many basic ideas have been around forever, but there remain a number of gaps and inconsistencies around support for typography and encodings.
@@ -204,7 +203,6 @@ Chrome has recently begun to close gaps with Safari, but both Safari and WebKit 
 ### Completing Implementations
 
 Aligning implementations is particularly difficult. There is a delicate balance between the need for experimentation and initial implementation experience and having enough agreement to ensure that the work is well understood and very likely to reach the status of shipping implementation in all browsers. Sometimes this alignment can take years. This year we've focused on three items which had an implementation and at least some agreement that it's ready: The `<dialog>` element, CSS Containment, and Subgrid. Let's look at each.
-
 
 #### `<dialog>`
 
