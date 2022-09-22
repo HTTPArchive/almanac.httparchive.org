@@ -355,7 +355,7 @@ The [_Push API_](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) allo
 
 Web applications must also have a service worker to receive push notifications from a server. From within the service worker, push notifications can be subscribed to using the [`PushManager.subscribe()`](https://developer.mozilla.org/en-US/docs/Web/API/PushManager/subscribe).
 
-The Push API is available on modern versions of Chrome, Edge, Firefox, and Safari.
+The Push API is available on modern versions of Chrome, Edge, and Firefox.
 
 ### Usage of Push API
 
