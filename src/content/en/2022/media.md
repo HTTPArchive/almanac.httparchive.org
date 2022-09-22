@@ -496,7 +496,7 @@ The only big mover, when compared to last year, is AVIF. The format dropped from
 
 Without looking at the quality side of the lossy-compression/quality tradeoff, it's not possible to conclude from these results alone that AVIF offers the "best" compression of all of the web-compatible formats. But this year we can conclude that in real-world usage, it exhibits the most compression. Pair that conclusion with <a hreflang="en" href="https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4">in-the-lab results</a>, which suggest it also does good job of preserving quality, and the picture starts looking pretty good (pun intended).
 
-<a hreflang="en" href="https://caniuse.com/avif">AVIF's browser support</a> also took a huge leap this year. All of this is to say, if you're sending bitmap images across the web (as,  you may recall, [99.9% of pages do](TODO link to intro stat)), you should at least consider sending AVIFs.
+<a hreflang="en" href="https://caniuse.com/avif">AVIF's browser support</a> also took a huge leap this year. All of this is to say, if you're sending bitmap images across the web (as,  you may recall, [99.9% of pages do](#fig-2)), you should at least consider sending AVIFs.
 
 #### GIFs, animated and not
 
@@ -587,7 +587,7 @@ Images embedded with `<img>` elements are supposed to be contentful. Which is to
 )
 }}
 
-This result means that almost half of all `<img>`s are obviously inaccessible. If [the in-depth analysis from this year's accessibility chapter](../2021/accessibility#images) **[TODO: update to this year as Accessibility has been merged]** is any indication, a large chunk of the `<img>`s that do have non-blank `alt` attributes aren't all that accessible, either.
+This result means that almost half of all `<img>`s are obviously inaccessible. If [the in-depth analysis from this year's accessibility chapter](./accessibility#images) is any indication, a large chunk of the `<img>`s that do have non-blank `alt` attributes aren't all that accessible, either.
 
 We can and must do better.
 
@@ -706,7 +706,7 @@ Part of what makes responsive images difficult is that it asks us to think about
 
 ### Layout
 
-We already saw [how the web's image resources size up](TODO link to megapixel counts once we have an ID to link to). But before they can be shown to a user, embedded images must be placed within a layout and potentially squished or stretched to fit it.
+We already saw [how the web's image resources size up](#image-dimensions). But before they can be shown to a user, embedded images must be placed within a layout and potentially squished or stretched to fit it.
 
 Throughout this analysis it will be useful to keep in mind the [crawlers' viewports](./methodology#webpagetest): The desktop crawler was 1376px-wide,  with a DPR of 1x; the mobile crawler was 360px-wide, with a DPR of 3x.
 
