@@ -9,7 +9,7 @@ analysts: [drohe]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1JvJMiRsL6T9m_NEBHFh-rrQmU5a-ufdOKriSJbrEN8M/
-fellowhuman1101_bio: Jamie Indigo isn't a robot, but speaks bot. As a technical SEO consultant at <a hreflang="en" href="https://www.deepcrawl.com">Deepcrawl</a>, they study how search engines crawl, render, and index the web. They love to tame wild JavaScript frameworks and optimize rendering strategies. When not working, Jamie likes horror movies, graphic novels, and Dungeons & Dragons.
+fellowhuman1101_bio: Jamie Indigo isn't a robot, but speaks bot. As a technical SEO at <a hreflang="en" href="https://www.deepcrawl.com">DeepCrawl</a>, they study how search engines crawl, render, and index the web. They love to tame wild JavaScript and optimize rendering strategies. When not working, Jamie likes horror movies, graphic novels, and Dungeons & Dragons.
 dwsmart_bio: Dave Smart is a developer and technical search engine consultant at <a hreflang="en" href="https://tamthebots.com">Tame the Bots</a>. They love building tools and experimenting with the modern web, and can often be found at the front in a gig or two.
 featured_quote: In 2022, page weight continued the trend of growing larger and larger, despite the opportunities to reduce the size of pages available.
 featured_stat_1: 110 MB
@@ -25,16 +25,22 @@ unedited: true
 
 Over the last ten years, mobile page weight has increased 585%. In this time, we've seen performance enhancing technologies emerge to buffer the impact. More recent performance measuring methodologies like eschew page weight as a factor.
 
+While the Google-driven Core Web Vitals initiative shifts the perception of performance to how quickly above the fold content because visible and usable, the large network payloads are still correlated to long load times.
+
+Many building websites have the luxury of high-speed desktop connections and don't experience the limited, and often expensive mobile network access.
+
+According to the <a hreflang="en" href="https://www.itu.int/itu-d/reports/statistics/2022/05/30/gcr-chapter-2/">International Telecommunication Union's Global Connectivity Report</a>, 66% of global households have internet access. In low-income countries, only 22% have access compared to 91% in high-income countries. In rural areas of developing countries only 3G is available despite 4G being the minimal connection for meaningful connectivity.
+
+In more than half of world's low- and middle-income countries, residents pay more than <a hreflang="en" href="https://digital-world.itu.int/ministerial-roundtable-cutting-the-cost-can-affordable-access-accelerate-digital-transformation/">2% of their average monthly income for 1GB of mobile broadband data</a>.
+
 Page weight still matters. Whether you're experiencing a weak network connection at an inopportune moment or live in a market  where access to the internet is charged by the megabyte, inflated page weight decreases the availability of information.
 
 
 ## What is page weight?
 
-Page weight refers to the byte size of a web page.  As it's no longer 1994, a web page is rarely only the HTML of the URL viewed in a browser's address bar. Rather a webpage as viewed and rendered in a browser uses specific elements and assets.  
+Page weight refers to the byte size of a web page.  As it's no longer 1994, a web page is rarely only the HTML of the URL viewed in a browser's address bar. Rather a webpage as viewed and rendered in a browser uses specific elements and assets.
 
-This is why page weight is inclusive of all assets used to create the page. These include: \
-
-
+This is why page weight is inclusive of all assets used to create the page. These include:
 
 
 * The [HTML](./markup) that makes up the page itself.
@@ -96,13 +102,13 @@ Modern, high-end smartphones, laptops and tablets might have the power to handle
 
 ## Assets (What are we shipping?)
 
-Think of assets as a way to view what resources a web page ships in order for a user to view the rendered content in browser. 
+Think of assets as a way to view what resources a web page ships in order for a user to view the rendered content in browser.
 
 Prior to the introduction of HTML 2.0 in 1995, page weights were predictable and manageable. The only asset to weigh was the HTML.  <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc1866">RFC1866</a> introduced the `<img>` tag.  Page weight dramatically increased as inline images could be included with web pages.
 
 Further versions of the HTML spec added even more features that could add weight, like external CSS, allowing consistent styling across pages.
 
-1996 saw the first emergence of JavaScript, 2005 brought XHR, and 2006 saw the birth of libraries like jQuery, followed by frameworks like Angular, React, Vue and many more, fully unleashing the leviathan in waiting: JavaScript. 
+1996 saw the first emergence of JavaScript, 2005 brought XHR, and 2006 saw the birth of libraries like jQuery, followed by frameworks like Angular, React, Vue and many more, fully unleashing the leviathan in waiting: JavaScript.
 
 The swell of page weight brought a proliferation of file types intended to improve performance while retaining functionalities.  Examining them by asset type will highlight the trade-offs.
 
@@ -111,7 +117,7 @@ The swell of page weight brought a proliferation of file types intended to impro
 
 Images are the poster child for balance between performance enhancing technologies and asset byte size.  These static files serve as resources to build out and render web pages. The increasingly visual nature of the web ensures the media-type will retain its title as most ubiquitous asset.
 
-Older formats like PNG, JPEG, GIF enjoy their legacy of broader "historical" browser support.  Performance-focused file type <a hreflang="en" href="https://developers.google.com/speed/webp">WebP</a> gained significant browser support and is now available to <a hreflang="en" href="https://caniuse.com/webp">97% of global users</a>. 
+Older formats like PNG, JPEG, GIF enjoy their legacy of broader "historical" browser support.  Performance-focused file type <a hreflang="en" href="https://developers.google.com/speed/webp">WebP</a> gained significant browser support and is now available to <a hreflang="en" href="https://caniuse.com/webp">97% of global users</a>.
 
 To delve into the findings and implications of image use on the web, refer to the [Media Chapter](./media).
 
@@ -132,7 +138,7 @@ According to the [Third Parties chapter](./third-parties) of the Web Almanac, 94
 
 ### Caching
 
-Caching allows a resource to be reused until a specified expiration. Caches are used in browsers and on servers. 
+Caching allows a resource to be reused until a specified expiration. Caches are used in browsers and on servers.
 
 CDNs are a popular example.  These interconnected servers are geographically distributed in order to send cached content from a network location closest to the user. CDNs do not reduce page weight but rather reduce the delay by reducing the distance between requestor and resource.
 
@@ -143,7 +149,7 @@ Both [Caching](./caching) and [CDNs](./cdn) are complex enough to warrant their 
 
 The basic building blocks of the web have remained relatively unchanged for over 25 years.  As the richness of web experiences increase, so does the use of fonts and videos.
 
-These increases are in step with the other file weight increases with a notable expectation to the 100th percentile.   
+These increases are in step with the other file weight increases with a notable expectation to the 100th percentile.
 
 In 2021, the 100th percentile of mobile sites used 20,452 kilobytes of font files.  In 2022, these outliers swelled to 110,404 kilobytes.  At the 90th percentile, the median mobile font weight was 401 kilobytes.
 
@@ -216,7 +222,7 @@ A look at the median weight of the most common resource content types making up 
   )
 }}
 
-Looking at the median page weight over time, it remains clear that the trend remains disappointingly  consistent, with the median weight only growing over time. 
+Looking at the median page weight over time, it remains clear that the trend remains disappointingly  consistent, with the median weight only growing over time.
 
 {{ figure_markup(
   caption="Growth in Mobile Page Weight over 10 years",
@@ -264,7 +270,7 @@ Breaking down requests by type shows that images are the leading resource reques
 
 JavaScript is the next largest in request count, 22 requests for desktop page loads, 21 for mobile, again a very close match to 2021, where there were 21 for desktop and 20 for mobile.
 
-In general there's little difference between desktop and mobile, other than images being slightly lower on desktop, perhaps attributable to lazy-loading not firing on smaller initial viewports. 
+In general there's little difference between desktop and mobile, other than images being slightly lower on desktop, perhaps attributable to lazy-loading not firing on smaller initial viewports.
 
 {{ figure_markup(
    image="page-weight-distribution-of-response-size-by-content-type.png",
@@ -276,7 +282,7 @@ In general there's little difference between desktop and mobile, other than imag
   )
 }}
 
-Whilst images are overall the biggest contributors to page weight across the internet, the biggest contributors in sheer size per request are video, audio and fonts, at the 90th percentile, video requests weigh in at 2,158 KB, far larger than than audio at 222 KB at the 20th percentile. 
+Whilst images are overall the biggest contributors to page weight across the internet, the biggest contributors in sheer size per request are video, audio and fonts, at the 90th percentile, video requests weigh in at 2,158 KB, far larger than than audio at 222 KB at the 20th percentile.
 
 Like images, there are a number of opportunities with more modern formats, and better encoding, sizing and compression that could help slim this down. But it's worth noting that video by its nature tends to be weighiter, and there's a balance between size and acceptable quality that needs to be struck. For more information, see the [Media chapter](./media#video).
 
@@ -307,7 +313,7 @@ Focusing on file formats, it's disappointing to see f4v, flash and flv adding si
 
 ### File formats
 
-Since the inception of the Web Almanac images have represented the largest percentage of page weight by bytes.  Distribution of image sizes by formats shows us that JPG, WebP and PNG file formats retain their 2021 status as top sources of image weight. 
+Since the inception of the Web Almanac images have represented the largest percentage of page weight by bytes.  Distribution of image sizes by formats shows us that JPG, WebP and PNG file formats retain their 2021 status as top sources of image weight.
 
 {{ figure_markup(
    image="page-weight-distribution-of-image-sizes-by-format.png",
@@ -334,12 +340,12 @@ The median desktop image weight for 2022 was 1,026 kilobytes, a mere 44 kilobyte
   )
 }}
 
-The year over year consistency is only disrupted by the extremities of the 100th percentile.  The largest desktop page contained 672MB of images, a significant increase from the hefty max of 186MB in 2021.  Similarly, the mobile 100th percentile saw a 959% increase to 385MB. 
+The year over year consistency is only disrupted by the extremities of the 100th percentile.  The largest desktop page contained 672MB of images, a significant increase from the hefty max of 186MB in 2021.  Similarly, the mobile 100th percentile saw a 959% increase to 385MB.
 
 
 ### Video bytes
 
-According to the media chapter of the mobile web, 5% of mobile pages include the `video` element.  This information aligns with the 100th percentile of other file type in overall page weight (as video files are grouped in the set). Pages bringing video experiences take on a corresponding increase in weight. 
+According to the media chapter of the mobile web, 5% of mobile pages include the `video` element.  This information aligns with the 100th percentile of other file type in overall page weight (as video files are grouped in the set). Pages bringing video experiences take on a corresponding increase in weight.
 
 MP4s, which represent [51.5% of videos](./media#video) on the web, also represent the capacity for largest response size.  At the 50th percentile, mp4 response sizes come in at 534 kilobytes.
 
@@ -364,7 +370,7 @@ A good design pattern is the use of facades, a form of lazy-loading. This is bas
 
 Whilst there are drawbacks to this approach, as detailed in the web.dev article: <a hreflang="en" href="https://web.dev/third-party-facades/">https://web.dev/third-party-facades/</a> the benefits to the user in terms of data sent over the wire are clear, they only need to pay that cost if they want to watch the video, or interact with the live chat app.
 
-In practice, adoption here is hard to track, lighthouse offers a test where it looks at the use of a limited set of third-party resources, and if these are requested, point out there might be a facade available. 
+In practice, adoption here is hard to track, lighthouse offers a test where it looks at the use of a limited set of third-party resources, and if these are requested, point out there might be a facade available.
 
 If a site is successfully using a facade, these resources would not be requested, and therefore isn't something lighthouse could test for.
 
@@ -450,9 +456,10 @@ Unlike compression, there's no overhead on the client side to minification, reso
 
 
 ## Conclusion
+A hefty page weight results in long user wait. The expense of ever-inflating webpages is paid in cost of data-access, cost of devices to meet the technical requirements, and time.
 
-WIP
+While images and JavaScript remain the largest contributors to byte size, 2022 revealed surprising increases such as a greater prevalence of byte-heavy videos on mobile and the median font byte size being higher than that of its image counterpart.
 
-Even though our perception of page performance has shifted away from page weight, 
+While adoption of 'Other' file types remains relatively low, the absurd outliers seen in the 100th percentile show the potential for unchecked bloat as new file types and functionalities are introduce to the digital experience.
 
-While page weight is no longer a core consideration in page performance, the size of most pages remain the same. 
+Byte-saving technologies have alleviated some of the pressure but with higher adoption rates on desktop despite their use being more impactful to mobile users. Unchecked, this continued inflation will further the gap of digital inequality.
