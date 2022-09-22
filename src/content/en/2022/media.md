@@ -496,6 +496,7 @@ The only big mover, when compared to last year, is AVIF. The format dropped from
 
 Without looking at the quality side of the lossy-compression/quality tradeoff, it's not possible to conclude from these results alone that AVIF offers the "best" compression of all of the web-compatible formats. But this year we can conclude that in real-world usage, it exhibits the most compression. Pair that conclusion with <a hreflang="en" href="https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4">in-the-lab results</a>, which suggest it also does good job of preserving quality, and the picture starts looking pretty good (pun intended).
 
+<!-- markdownlint-disable-next-line MD051 -->
 <a hreflang="en" href="https://caniuse.com/avif">AVIF's browser support</a> also took a huge leap this year. All of this is to say, if you're sending bitmap images across the web (as,  you may recall, [99.9% of pages do](#fig-2)), you should at least consider sending AVIFs.
 
 #### GIFs, animated and not
