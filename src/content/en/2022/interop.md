@@ -2,13 +2,12 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Interoperability
 description: Interoperability chapter of the 2022 Web Almanac covering ...
-authors: [bkardell, meyerweb]
+authors: [bkardell]
 reviewers: [miketaylr, meyerweb, foolip]
 analysts: [rviscomi, kevinfarrugia]
 editors: [tunetheweb]
 translators: []
 bkardell_bio: Brian Kardell is developer advocate at <a hreflang="en" href="https://igalia.com">Igalia</a>, standards contributor, <a hreflang="en" href="https://bkardell.com">blogger</a>, and is currently the W3C Advisory Committee Representative for the <a hreflang="en" href="https://openjsf.org/">Open JS Foundation</a>. He was a founder of the Extensible Web Community Group and co-author of <a hreflang="en" href="https://extensiblewebmanifesto.org">The Extensible Web Manifesto</a>.
-meyerweb_bio: Eric A. Meyer has been a burger flipper, a hardware jockey, a college webmaster, an early blogger, one of the original <a hreflang="en" href="https://archive.webstandards.org/css/members.html">CSS Samurai</a>, a member of the [CSS Working Group](https://en.wikipedia.org/wiki/CSS_Working_group), a consultant and trainer, and a Standards Evangelist for [Netscape](https://en.wikipedia.org/wiki/Netscape). Currently, he is a Developer Advocate at <a hreflang="en" href="http://igalia.com/">Igalia</a> and co-founder of <a hreflang="en" href="https://aneventapart.com/">An Event Apart</a> with <a hreflang="en" href="http://zeldman.com/">Jeffrey Zeldman</a>. Among other things, Eric co-wrote <cite><a hreflang="en" href="https://abookapart.com/products/design-for-real-life">Design For Real Life</a></cite> with <a hreflang="en" href="https://sarawb.com">Sara Wachter-Boettcher</a> for <a hreflang="en" href="https://abookapart.com/">A Book Apart</a> and <cite><a hreflang="en" href="http://meyerweb.com/eric/books/css-tdg/">CSS&colon; The Definitive Guide</a></cite> with <a hreflang="en" href="http://standardista.com/">Estelle Weyl</a> for <a hreflang="en" href="https://oreilly.com/">O'Reilly</a>, created the first official <a hreflang="en" href="http://w3.org/">W3C</a> test suite, and assisted in the creation of <a hreflang="en" href="http://microformats.org/">microformats</a>.
 results: https://docs.google.com/spreadsheets/d/1w3GzzTNeKxafFODmjDs6OC2dseNEDDKwUV8KeSgRI1Y/
 featured_quote: TODO
 featured_stat_1: TODO

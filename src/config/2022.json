@@ -583,7 +583,6 @@
     "meyerweb": {
       "name": "Eric A. Meyer",
       "teams": [
-        "authors",
         "reviewers"
       ],
       "avatar_url": "939727",
@@ -919,16 +918,6 @@
       ],
       "avatar_url": "44303527",
       "github": "somecloudguy"
-    },
-    "karlcow": {
-      "name": "Karl Dubost",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "505230",
-      "github": "karlcow",
-      "website": "http://www.la-grange.net/karl/",
-      "twitter": "karlcow"
     },
     "kevinfarrugia": {
       "name": "Kevin Farrugia",
