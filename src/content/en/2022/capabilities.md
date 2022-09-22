@@ -293,7 +293,7 @@ In addition to caching resources, service workers can update assets from the ser
 
 While service workers have become widely adopted and supported by major browsers, not all features of service workers are available on all browsers. An example of a currently unsupported feature is that of the Push API on Safari. Safari will support the Push API in the upcoming release of <a hreflang="en" href="https://www.apple.com/macos/macos-ventura-preview/features/">macOS Ventura</a> in 2022 and <a hreflang="en" href="https://www.apple.com/ios/ios-16/features/">iOS 16</a> and iPadOS 16 in 2023.
 
-The Service Worker API is available on modern versions of Chrome, Edge, and Safari.
+The Service Worker API is available on modern versions of Chrome, Edge, Firefox, and Safari.
 
 ### Growth of Service Worker API
 
