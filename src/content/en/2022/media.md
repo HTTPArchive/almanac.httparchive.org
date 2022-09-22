@@ -63,7 +63,7 @@ On the vast majority of pages, the most impactful resource is an image. <a hrefl
 )
 }}
 
-It's hard to overstate images' importance to the web. So, what can we say about images on the web?
+It's hard to overstate the importance of images on the web. So, what can we say about images?
 
 ### Image resources
 
@@ -207,11 +207,11 @@ Images are made of pixels and each pixel has a color. The range of colors that a
 
 The default color space on the web is [sRGB](https://en.wikipedia.org/wiki/SRGB). CSS colors are specified in sRGB by default and, unless they're marked otherwise, <a hreflang="en" href="https://imageoptim.com/color-profiles.html">browsers assume that the colors in images are sRGB, too</a>.
 
-This made sense in a world where approximately all display and capture hardware de`alt` in sRGB (or something close to it). But the times, they are a changin'. In 2022, most phone cameras capture in wider-than-sRGB gamuts. Also, display hardware capable of richer, outside-of-sRGB colors is now quite common.
+This made sense in a world where approximately all display and capture hardware de`alt` in sRGB (or something close to it). But the times, they are a-changin'. In 2022, most phone cameras capture in wider-than-sRGB gamuts. Also, display hardware capable of richer, outside-of-sRGB colors is now quite common.
 
 Every modern browser that's painting to a wide-gamut display will happily paint vibrant, outside-of-sRGB pixels, if we encode our images using wider than sRGB gamuts. But are we?
 
-In short: no.
+In short: No.
 
 In order to tell a browser an image uses a non-sRGB color space, one must usually (see big caveat, below) attach an [ICC profile](https://en.wikipedia.org/wiki/ICC_profile) to it that describes the image's color space. Those ICC profiles have names, and we found a little more than 25,000 unique ones in use on the web. Here are the top 20:
 
@@ -358,7 +358,7 @@ In order to tell a browser an image uses a non-sRGB color space, one must usuall
   <figcaption>{{ figure_link(caption="A ranked list of the top twenty ICC colorspace descriptions (mobile).", sheets_gid="560546690", sql_file="color_spaces_and_depth.sql") }}</figcaption>
 </figure>
 
-Nine out of 10 images on the web are untagged, meaning that if they contain RGB data, it will be interpreted as sRGB. Most of the remainder are explicitly tagged with sRGB or something similar to it: "c2ci", "uRGB", and "c2" are all sRGB variants <a hreflang="en" href="https://github.com/saucecontrol/Compact-ICC-Profiles">designed to be minimal and lightweight</a>. Just a little more than 1% of all of the web's images have been tagged with a wider-than-sRGB gamut. More succinctly, wide-gamut images are currently about as popular on the web as grayscale images (<a hreflang="en" href="https://docs.google.com/spreadsheets/d/1T5oVAVmcH3sM6R-WwH4ksr2jFtPhuLXs3-iXXoABb3E/edit?pli=1#gid=560546690&range=P5">which account for 1.16% of the web's images</a>.
+Nine out of 10 images on the web are untagged, meaning that if they contain RGB data, it will be interpreted as sRGB. Most of the remaining 10% are explicitly tagged with sRGB or something similar to it: "c2ci", "uRGB", and "c2" are all sRGB variants <a hreflang="en" href="https://github.com/saucecontrol/Compact-ICC-Profiles">designed to be minimal and lightweight</a>. Just a little more than 1% of all of the web's images have been tagged with a wider-than-sRGB gamut. More succinctly, wide-gamut images are currently about as popular on the web as grayscale images (<a hreflang="en" href="https://docs.google.com/spreadsheets/d/1T5oVAVmcH3sM6R-WwH4ksr2jFtPhuLXs3-iXXoABb3E/edit?pli=1#gid=560546690&range=P5">which account for 1.16% of the web's images</a>.
 
 One caveat: AVIF and PNG allow tagging images with wide-gamut spaces in their own particular ways, without an ICC profile. They also allow embedding ICC (like every other format), only they also provide a compact, format-specific shorthand. We started down the path of trying to detect wide-gamut AVIFs and PNGs that don't use ICC profiles, but accounting for the various ways they are encoded (and the ways our tooling reported on them) proved a bit too complex to tackle this year. (Maybe next year!)
 
@@ -422,7 +422,7 @@ A median of 10 KB might lead one to think, "Eh, not that heavy!" But, just as wh
 )
 }}
 
-Most pages have at least one image over 100 KB, and the top 10% have one at least image that weighs almost 1 MB or more.
+Most pages have at least one image over 100 KB, and the top 10% have at least one image that weighs almost 1 MB or more.
 
 #### Bits per pixel
 
@@ -490,22 +490,22 @@ Most of these numbers are essentially unchanged from [last year](../2021/media#b
 
 We can again see that while PNG technically employs "lossless" compression techniques (which would lead us to expect 12-16 bits per pixel, depending on whether or not we're dealing with an alpha channel), its encoders are generally lossy. They reduce color palettes and introduce dithering patterns before "losslessly" compressing images in order to boost compression ratios.
 
-And we again see that the typical WebP is a third lighter, per pixel, than the typical JPEG. This is about what we would expect: <a hreflang="en" href="https://developers.google.com/speed/webp/docs/webp_study">Formal studies</a> (which, vitally, use <a hreflang="en" href="https://kornel.ski/en/faircomparison">matched qualities</a>) have estimated that WebP outperforms JPEG by about that same margin.
+And we again see that the typical WebP is one third lighter, per pixel, than the typical JPEG. This is about what we would expect: <a hreflang="en" href="https://developers.google.com/speed/webp/docs/webp_study">Formal studies</a>, which, vitally, use <a hreflang="en" href="https://kornel.ski/en/faircomparison">matched qualities</a>, have estimated that WebP outperforms JPEG by about that same margin.
 
-The only big mover, when compared to last year, is AVIF. The format dropped from 1.5 bits per pixel last year (less compressed than WebP!), all the way down to an even 1.0. This is a huge reduction, but it wasn't entirely unexpected either. AVIF is a very young format whose encoders have been iterating quickly, and whose adoption is broadening significantly. I expect next year the median AVIF will be even more compressed.
+The only big mover, when compared to last year, is AVIF. The format dropped from 1.5 bits per pixel last year (less compressed than WebP!), all the way down to an even 1.0. This is a huge reduction, but it wasn't entirely unexpected either. AVIF is a very young format whose encoders have been quickly iterating, and whose adoption is significantly broadening. I expect next year the median AVIF will be even more compressed.
 
-Without looking at the quality side of the lossy-compression/quality tradeoff, it's not possible to conclude from these results alone that AVIF offers the "best" compression of all of the web-compatible formats. But this year we can conclude that in real-world usage, it exhibits the most compression. Pair that conclusion with <a hreflang="en" href="https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4">in-the-lab results</a>, which suggest it also does good job of preserving quality, and the picture starts looking pretty good (pun intended).
+Without looking at the quality side of the lossy-compression/quality tradeoff, it's not possible to conclude from these results alone that AVIF offers the "best" compression of all of the web-compatible formats. But this year we can conclude that in real-world usage, it exhibits the most compression. Pair that conclusion with <a hreflang="en" href="https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4">in-the-lab results</a>, which suggest it also does a good job of preserving quality, and the picture starts looking pretty good (pun intended).
 
 <!-- markdownlint-disable-next-line MD051 -->
-<a hreflang="en" href="https://caniuse.com/avif">AVIF's browser support</a> also took a huge leap this year. All of this is to say, if you're sending bitmap images across the web (as,  you may recall, [99.9% of pages do](#fig-2)), you should at least consider sending AVIFs.
+<a hreflang="en" href="https://caniuse.com/avif">AVIF's browser support</a> also took a huge leap this year. All of this is to say, if you're sending bitmap images across the web (as, you may recall, [99.9% of pages do](#fig-2)), you should at least consider sending AVIFs.
 
 #### GIFs, animated and not
 
-At the other end of the compression chart is our old friend GIF. It comes out looking particularly bad, but it's not all the format's fault. One of the reasons this 35- year-old format is still in common use is its ability to do animation, and we have not accounted for the number of frames when calculating the number of pixels. This raises a few interesting questions. First, how many GIFs are animated?
+At the other end of the compression chart is our old friend GIF. It comes out looking particularly bad, but it's not all the format's fault. One of the reasons this 35-year-old format is still in common use is its ability to do animation, and we have not accounted for the number of frames when calculating the number of pixels. This raises a few interesting questions. First, how many GIFs are animated?
 
 {{ figure_markup(
   content="29%",
-  caption="Percentage of GIFs which were animated GIFs on mobile.",
+  caption="Percentage of GIFs that were animated on mobile.",
   classes="big-number",
   sheets_gid="1586002077",
   sql_file="animated_gif_count.sql"
@@ -560,13 +560,13 @@ The biggest story last year was the rapid adoption of lazy-loading. While the pa
 )
 }}
 
-Given the vast amount of legacy content on the web, going from zero adoption to usage on a quarter of crawled pages within two years is a remarkable feat, and shows just how much demand there was for native lazy-loading.
+Given the vast amount of legacy content on the web, going from zero adoption to just about one-quarter of crawled pages within two years is a remarkable feat, and shows just how much demand there was for native lazy-loading.
 
 And indeed, just like last year, it seems pages are using lazy-loading a bit _too_ much.
 
 {{ figure_markup(
   content="9.8%",
-  caption="Percentage of LCP `<img>`s that use native lazy-loading, on mobile.",
+  caption="Percentage of LCP `<img>`s that use native lazy-loading on mobile.",
   classes="big-number",
   sheets_gid="747829499",
   sql_file="lazy_loading_adoption_over_time.sql"
@@ -577,7 +577,7 @@ Lazy-loading LCP elements makes LCP scores much worse. It's an anti-pattern that
 
 #### `alt` text
 
-Images embedded with `<img>` elements are supposed to be contentful. Which is to say: they're not just decorative; they should contain something meaningful. According to both <a hreflang="en" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">WCAG requirements</a> and <a hreflang="en" href="https://html.spec.whatwg.org/multipage/images.html#alt">the HTML spec</a>, all contentful images must have `alt`ernative text, and that `alt`ernative text should usually be supplied by the `alt` attribute.
+Images embedded with `<img>` elements are supposed to be contentful. That is to say: They're not just decorative, and they should contain something meaningful. According to both <a hreflang="en" href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content">WCAG requirements</a> and <a hreflang="en" href="https://html.spec.whatwg.org/multipage/images.html#alt">the HTML spec</a>, all contentful images must have alternative text, and that alternative text should usually be supplied by the `alt` attribute.
 
 {{ figure_markup(
   content="54%",
@@ -607,9 +607,9 @@ Let's start with the `srcset` attribute, which allows authors to give the browse
 )
 }}
 
-A third of pages use `srcset`, but two thirds don't. Given the prevalence of fluid grids within responsive designs in 2022, I suspect there are a lot of pages that aren't using `srcset` that should be.
+One-third of pages use `srcset`, but two-thirds don't. Given the prevalence of fluid grids within responsive designs in 2022, I suspect there are a lot of pages that aren't using `srcset` that should be.
 
-The `srcset` attribute allows authors to describe resources using one of two descriptors: `x` descriptors that specify which screen density a resource is appropriate for, and `w` descriptors, which instead give the browser the resources' width in pixels. Used in conjunction with the `sizes` attribute, `w` descriptors allow browsers to select a resource appropriate for both fluid layout sizes and variable screen densities.
+The `srcset` attribute allows authors to describe resources using one of two descriptors: `x` descriptors that specify which screen density a resource is appropriate for, and `w` descriptors, which instead give the browser the resource's width in pixels. Used in conjunction with the `sizes` attribute, `w` descriptors allow browsers to select a resource appropriate for both fluid layout sizes and variable screen densities.
 
 The `x` descriptor came first, and is simpler to reason about. For years it enjoyed more popularity than the more powerful `w` descriptor. It warms my heart that nearly a decade in, the world's come around to `w` descriptors.
 
@@ -625,7 +625,7 @@ The `x` descriptor came first, and is simpler to reason about. For years it enjo
 
 #### `sizes`
 
-I mentioned earlier that `w` descriptors should be used in conjunction with `sizes` attributes. How well are we using `sizes`? In three words: Not very well.
+I mentioned earlier that `w` descriptors should be used in conjunction with `sizes` attributes. How well are we using `sizes`? In two words: Not very.
 
 The `sizes` attribute is supposed to be a hint to the browser about the eventual layout size of the image, usually relative to the viewport width. There are many variables that can affect an image's layout width. The `sizes` attribute is explicitly supposed to be a hint, and so a little inaccuracy is OK and even expected. But if the `sizes` attribute is fairly inaccurate, it can affect resource selection, causing the browser to load an image to fit the `sizes` width when the actual layout width of the image is significantly different.
 
@@ -664,15 +664,15 @@ On desktop, where the difference between the default `sizes` value (`100vw`) and
 )
 }}
 
-Note: Our crawlers didn't actually load the correct resources, so the numbers here are estimates, based in part on the byte sizes of the incorrect resources, which the crawlers actually did load. However, we estimate that a quarter of desktop pages are loading more than 83 KB of extra image data, based purely on bad `sizes` attributes. That is to say: A better, smaller resource is there for the picking in the `srcset`, but because the `sizes` attribute is so erroneous, the browser doesn't pick it. Additionally, 10% of desktop pages that use sizes load more than a half-megabyte of excess image data because of bad `sizes` attributes!
+Note: Our crawlers didn't actually load the correct resources, so the numbers here are estimates, based in part on the byte sizes of the incorrect resources, which the crawlers actually did load. However, we estimate that one-quarter of desktop pages are loading more than 83 KB of extra image data, based purely on bad `sizes` attributes. That is to say: A better, smaller resource is there for the picking in the `srcset`, but because the `sizes` attribute is so erroneous, the browser doesn't pick it. Additionally, 10% of desktop pages that use sizes load more than a half-megabyte of excess image data because of bad `sizes` attributes!
 
 In the short term, individual developers can and should use <a hreflang="en" href="https://ausi.github.io/respimagelint/">RespImageLint</a> to audit and fix their badly broken `sizes` attributes and prevent this kind of waste.
 
-In the medium term, where possible, the web platform needs to provide better tooling. For many developers, authoring (and maintaining!) accurate `sizes` attributes has proven to be too hard. A proposal that would allow <a hreflang="en" href="https://github.com/whatwg/html/pull/8008">automatic sizes for lazy-loaded images</a> is on the table. (Let's hope it progresses in 2023). <a hreflang="en" href="https://github.com/aFarkas/lazysizes">The lazysizes.js library</a> has already proven the appetite for this sort of solution: <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1T5oVAVmcH3sM6R-WwH4ksr2jFtPhuLXs3-iXXoABb3E/edit#gid=232511628">10% of `sizes` attributes currently have the value "auto" before JavaScript runs</a> and are later rewritten to perfectly accurate values by lazysizes.js, before it lazy-loads the image. Note that, because it relies on lazy-loading, this pattern is *not* appropriate for LCP images, or any image above the fold. For these images, the only way forward for performant responsive loading is a well-authored `sizes` attribute.
+In the medium term, where possible, the web platform needs to provide better tooling. For many developers, authoring (and maintaining!) accurate `sizes` attributes has proven to be too hard. A proposal that would allow <a hreflang="en" href="https://github.com/whatwg/html/pull/8008">automatic sizes for lazy-loaded images</a> is on the table. (Let's hope it progresses in 2023). <a hreflang="en" href="https://github.com/aFarkas/lazysizes">The lazysizes.js library</a> has already proven the appetite for this sort of solution: <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1T5oVAVmcH3sM6R-WwH4ksr2jFtPhuLXs3-iXXoABb3E/edit#gid=232511628">10% of `sizes` attributes currently have the value "auto" before JavaScript runs</a> and are later rewritten to perfectly accurate values by lazysizes.js before it lazy-loads the image. Note that, because it relies on lazy-loading, this pattern is *not* appropriate for LCP images or any that are above the fold. For these images, the only way forward for performant responsive loading is a well-authored `sizes` attribute.
 
 #### `<picture>`
 
-The last responsive image feature to land in 2014 was the `<picture>` element. While `srcset` hands browsers a menu of resources to choose from, the `<picture>` element allows authors take charge, giving browsers an explicit set of instructions about which child `<source>` element to load a resource from.
+The last responsive image feature to land in 2014 was the `<picture>` element. While `srcset` hands browsers a menu of resources to choose from, the `<picture>` element allows authors to take charge, giving browsers an explicit set of instructions about which child `<source>` element to load a resource from.
 
 The `<picture>` element is used far less than `srcset`.
 
@@ -685,7 +685,7 @@ The `<picture>` element is used far less than `srcset`.
 )
 }}
 
-This is up a couple ticks from last year, but the fact that there are almost five pages that use `srcset` for every one  page that uses `<picture>` suggests that either `<picture>`'s use cases are more niche, or it's more difficult to deploy (or both).
+This is up a couple ticks from last year, but the fact that there are almost five pages that use `srcset` for every one page that uses `<picture>` suggests that either `<picture>`'s use cases are more niche, or it's more difficult to deploy (or both).
 
 What are people using `<picture>` for?
 
@@ -709,7 +709,7 @@ Part of what makes responsive images difficult is that it asks us to think about
 
 We already saw [how the web's image resources size up](#image-dimensions). But before they can be shown to a user, embedded images must be placed within a layout and potentially squished or stretched to fit it.
 
-Throughout this analysis it will be useful to keep in mind the [crawlers' viewports](./methodology#webpagetest): The desktop crawler was 1376px-wide,  with a DPR of 1x; the mobile crawler was 360px-wide, with a DPR of 3x.
+Throughout this analysis it will be useful to keep in mind the [crawlers' viewports](./methodology#webpagetest): The desktop crawler was 1376px-wide, with a DPR of 1x; the mobile crawler was 360px-wide, with a DPR of 3x.
 
 #### Layout widths
 
@@ -767,9 +767,9 @@ The majority of images have extrinsic widths; the majority of images have intrin
 
 #### `height`, `width`, and Cumulative Layout Shifts
 
-Any `<img>` whose layout size is dependent on its intrinsic width risks triggering a <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a>. In essence, such images risk being laid out twice: Once when the page's DOM and CSS have been processed, and then again when the image finally finishes loading and their intrinsic dimensions are known.
+Any `<img>` whose layout size is dependent on its intrinsic width risks triggering a <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a>. In essence, such images risk being laid out twice: Once when the page's DOM and CSS have been processed, and then a second time when the image finally finishes loading and their intrinsic dimensions are known.
 
-As we've just seen, extrinsically scaling images to fit a certain width while leaving the height (and aspect ratio) intrinsic is very common. To fight the resulting plague of layout shifts, a couple of years ago browsers decided to <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping#a_new_way_of_sizing_images_before_loading_completes">change the way that the height and width attributes on `<img>` work</a>. These days, consistently setting the height and width attributes to reflect the aspect ratio of the resource  is a universally recommended best practice, which allows authors to tell the browser the intrinsic dimensions of an image resource before it loads.
+As we've just seen, extrinsically scaling images to fit a certain width while leaving the height (and aspect ratio) intrinsic is very common. To fight the resulting plague of layout shifts, a couple of years ago browsers decided to <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping#a_new_way_of_sizing_images_before_loading_completes">change the way that the height and width attributes on `<img>` work</a>. These days, consistently setting the height and width attributes to reflect the aspect ratio of the resource is a universally recommended best practice, which allows authors to tell the browser the intrinsic dimensions of an image resource before it loads.
 
 {{ figure_markup(
   content="28%",
@@ -806,9 +806,9 @@ And now let's turn our attention to `<img>`'s younger and more dynamic sibling: 
 
 ## Video
 
-The `<video>` element shipped in 2010 and has been the best and (since the demise of plugins like Flash and Silverlight) only way to put video content on websites since then.
+The `<video>` element shipped in 2010, and has been the best and – since the demise of plugins like Flash and Silverlight – only way to put video content on websites since then.
 
-Over the last few years, I have had the sense that web content is shifting. Whereas still images (Flickr, Instagram) once ruled, I'm increasingly  seeing moving ones (TikTok) dominate. Is this shift borne out in the Almanac's dataset? How are we using `<video>` on the web?
+Over the last few years, I have had the sense that web content is shifting. Whereas still images (Flickr, Instagram) once ruled, I'm increasingly seeing moving ones (TikTok) dominate. Is this shift borne out in the Almanac's dataset? How are we using `<video>` on the web?
 
 ### Video adoption
 
@@ -856,7 +856,7 @@ What formats are sites delivering in 2022? MP4, with its <a hreflang="en" href="
 )
 }}
 
-But MP4's numbers are a couple ticks down from [last year](../2021/media#fig-29), and we continue to see blank extensions (.ts, and .m4s) all delivered when streaming using [HLS](https://en.wikipedia.org/wiki/HTTP_Live_Streaming) or [MPEG-DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP) are gaining ground.
+But MP4's numbers are a couple ticks down from [last year](../2021/media#fig-29), and we continue to see blank extensions (.ts, and .m4s) all delivered when streaming using [HLS](https://en.wikipedia.org/wiki/HTTP_Live_Streaming) while [MPEG-DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP) are gaining ground.
 
 It's encouraging to see responsive video delivery using adaptive streaming on the rise. At the same time, we look forward to the web platform offering <a hreflang="en" href="https://github.com/whatwg/html/issues/6363">a simple, declarative solution that doesn't rely on JavaScript</a>.
 
@@ -878,7 +878,7 @@ There are a number of things to unpack here.
 
 First, `autoplay` overtook `preload` to become the most popular attribute this year. We also see `playsinline`, `muted`, and `loop` increasing in popularity. Perhaps an increasing number of people are <a hreflang="en" href="https://web.dev/replace-gifs-with-videos/">using the `<video>` element to replace animated GIFs</a>? (If so, good!)
 
-The fact that only 12% of `<video>`s have width attributes and just 0.4% (!) have `height` attributes means that most `<video>` elements are susceptible to the same kinds of <a hreflang="en" href="https://web.dev/cls/">CLS</a> problems we saw with `<img>` elements, which lack these attributes.  Help the browser help you and add these attributes!
+The fact that only 12% of `<video>`s have width attributes and just 0.4% (!) have `height` attributes means that most `<video>` elements are susceptible to the same kinds of <a hreflang="en" href="https://web.dev/cls/">CLS</a> problems we saw with `<img>` elements, which lack these attributes. Help the browser help you and add these attributes!
 
 Additionally, the fact that fewer than one in 10 `<video>` elements has a `controls` attribute suggests a significant number of people are using players that provide their own user interface for interacting with the video.
 
@@ -898,7 +898,7 @@ The `preload` attribute has seen declining usage over the past couple of years.
 )
 }}
 
-Why? I like to think it's authors getting out of the browser's way.
+Why? I like to think it is authors getting out of the browser's way.
 
 Different browsers do different things when it comes to deciding when to load video data. The preload attribute is a way for authors to step in and have more control over that process. That could include explicitly asking the browser not to preload anything with "none;" asking the browser to preload just the metadata; or asking the browser to preload, using either the auto or empty values. It's interesting, and perhaps heartening, to see authors exert far less control over video loading during the past three years. Browsers know the most about their users' contexts; not including the preload attribute at all lets them do what they think is best.
 
@@ -924,6 +924,6 @@ Most have just one, and very few use multiple.
 
 So there you have it, a snapshot of the state of media on the web in 2022. We've seen just how pervasive images and—increasingly—videos are on the web, and have gained some insight into how the web's images and videos are encoded and embedded. The most exciting developments for me this year are the accelerating—and still nascent—adoption of AVIF and the ever-increasing adoption of lazy-loading and adaptive bitrate streaming.
 
-There were, however, some frustrating aspects, including the almost complete lack of wide-gamut colorspaces; the undying zombie format that is GIF (in both its both animated and more surprisingly non-animated forms); and the way that both sizes and lazy-loading—two features designed for performance–are (through improper use) hurting performance on a significant number of pages.
+There were, however, some frustrating aspects, including the almost complete lack of wide-gamut colorspaces; the undying zombie format that is GIF (in both its animated and, more surprisingly, non-animated forms); and the way that both sizes and lazy-loading – two features designed for performance – are (through improper use) hurting performance on a significant number of pages.
 
 Here's to more effective visual communication on the web in 2023!
