@@ -745,7 +745,7 @@ It's interesting to contrast this with desktop images, which don't top out at al
 
 Why do the web's images end up at these layout sizes? There are many ways to scale an image with CSS. But how many images are being scaled with any CSS at all?
 
-Images, like all ["replaced elements"](https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element), have an [intrinsic size](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size). By default (which is to say, in the absence of a `srcset` controlling their density or any CSS rules controlling their layout width), images on the web display at a density of 1x. Plop a 640x480 image into an <img `src`> and, by default, that `<img>` will be laid out with a width of 640 CSS pixels.
+Images, like all ["replaced elements"](https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element), have an [intrinsic size](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size). By default (which is to say, in the absence of a `srcset` controlling their density or any CSS rules controlling their layout width), images on the web display at a density of 1x. Plop a 640x480 image into an `<img src>` and, by default, that `<img>` will be laid out with a width of 640 CSS pixels.
 
 Authors may apply extrinsic sizing to an image's height, width, or both. If an image has been extrinsically sized in one dimension (e.g., with a width: 100%; rule), but left to its intrinsic size in the other (height: auto; or no rule at all), it will scale proportionally, using its intrinsic aspect ratio.
 
