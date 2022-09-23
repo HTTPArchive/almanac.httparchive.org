@@ -390,7 +390,7 @@ Pixel lengths remain the most popular at 71%, the same percentage as in 2021. Th
   ) }}</figcaption>
 </figure>
 
-The up and down arrows on this chart show the change from the [results in 2021](https://almanac.httparchive.org/en/2021/css#fig-15). As seen last year, in the majority of cases there is a shift away from using pixels, in favor of other length units. Once again, the `vertical-align` property saw a huge drop in pixel and `<number>` use, and a large rise in em use.
+The up and down arrows on this chart show the change from the [results in 2021](../2021/css#fig-15). As seen last year, in the majority of cases there is a shift away from using pixels, in favor of other length units. Once again, the `vertical-align` property saw a huge drop in pixel and `<number>` use, and a large rise in em use.
 
 {{ figure_markup(
     image="font-relative-length-units.png",
@@ -637,7 +637,7 @@ As we would expect from other data, rgba() is the most popular alpha-supporting 
 
 There are interesting things happening in the world of color. In addition to new color spaces, we have a number of color-related properties and values. We wondered if any of these were making an impact on the data.
 
-The [accent-color](https://web.dev/accent-color/) property lets you add your brand color as an accent color to notoriously hard to style form elements such as checkbox, radio buttons, and range sliders. Perhaps due to the fact it has only been available in all engines since March this year, it still shows less than 0.3% usage.
+The <a hreflang="en" href="https://web.dev/accent-color/">accent-color</a> property lets you add your brand color as an accent color to notoriously hard to style form elements such as checkbox, radio buttons, and range sliders. Perhaps due to the fact it has only been available in all engines since March this year, it still shows less than 0.3% usage.
 
 Another property becoming available in all engines this year is [color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme), a property that lets you specify which color schemes (light or dark) a component can be rendered in. This property is, somewhat surprisingly,  so far only found in 0.2% of pages.
 
@@ -925,7 +925,7 @@ Around 18% of pages were using a custom property `var(--overlay-mix-blend-mode)`
   )
 }}
 
-Of the percentage of pages that have set filters to apply graphical effects, 82% are using the `alpha()` value, which is non-standard and used for Internet Explorer 8 and below. We also see a high usage of the [Microsoft.gradient()](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms532997(v=vs.85)) filter.
+Of the percentage of pages that have set filters to apply graphical effects, 82% are using the `alpha()` value, which is non-standard and used for Internet Explorer 8 and below. We also see a high usage of the <a hreflang="en" href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms532997(v=vs.85">Microsoft.gradient()</a>) filter.
 
 Of the [standard values](https://developer.mozilla.org/en-US/docs/Web/CSS/filter), 31% of pages use `blur()` making it the most popular value after none.
 
@@ -1064,7 +1064,7 @@ English is described as a horizontal top to bottom language, because sentences a
 
 ### Direction
 
-The number of pages using the direction property to set CSS either on the <body> or <html> element remained unchanged from 2021, with 11% of pages setting it on <html> and 3% on <body>. [It's recommended to use HTML](https://www.google.com/url?q=https://www.w3.org/International/questions/qa-html-dir&sa=D&source=docs&ust=1662570607226770&usg=AOvVaw0JqkyVnnoPjDKva82sSksV), rather than CSS to set direction, so a lower number here matches that best practice.
+The number of pages using the direction property to set CSS either on the <body> or <html> element remained unchanged from 2021, with 11% of pages setting it on <html> and 3% on <body>. <a hreflang="en" href="https://www.w3.org/International/questions/qa-html-dir">It's recommended to use HTML</a>, rather than CSS to set direction, so a lower number here matches that best practice.
 
 ## Logical and physical properties
 
@@ -1109,11 +1109,11 @@ Its usage is still tiny, but has increased from 2021. In only 8,157 desktop page
   )
 }}
 
-The use of CSS-in-JS has not increased from last year, staying at 3%. This usage is almost all from libraries, the most popular of which is Styled Components. This library has dropped in share from 57% to 49%, with a new library entering the mix at almost 11%. [Goober](https://goober.js.org/) describes itself as "a less than 1KB css-in-js solution", and is certainly making some inroads among people who like this type of thing.
+The use of CSS-in-JS has not increased from last year, staying at 3%. This usage is almost all from libraries, the most popular of which is Styled Components. This library has dropped in share from 57% to 49%, with a new library entering the mix at almost 11%. <a hreflang="en" href="https://goober.js.org/">Goober</a> describes itself as "a less than 1KB css-in-js solution", and is certainly making some inroads among people who like this type of thing.
 
 ## Houdini
 
-There is still very little usage of Houdini on the open web, looking at the number of pages using animated custom properties shows only a small increase since 2021. We also looked at usage of the Houdini Paint API. We do find instances of this in use on the web. By looking at the names of worklets used, much of this is this [Smooth corners](https://css-houdini.rocks/smooth-corners/) worklet, indicating that people are using it as a progressive enhancement, given that this can fall back nicely to a regular border-radius.
+There is still very little usage of Houdini on the open web, looking at the number of pages using animated custom properties shows only a small increase since 2021. We also looked at usage of the Houdini Paint API. We do find instances of this in use on the web. By looking at the names of worklets used, much of this is this <a hreflang="en" href="https://css-houdini.rocks/smooth-corners/">Smooth corners</a> worklet, indicating that people are using it as a progressive enhancement, given that this can fall back nicely to a regular border-radius.
 
 ## Sass
 
@@ -1284,7 +1284,7 @@ As in 2020 and 2021, background-size came out top of the chart, and there was li
 
 ### Unrecoverable syntax errors
 
-To check for unrecoverable errors, we use the [Rework](https://github.com/reworkcss/css) CSS parsing engine. An unrecoverable error is one where the error is so bad, the full stylesheet is unable to be parsed by Rework. Last year, 0.94% of desktop pages, and 0.55% of mobile pages contained an unrecoverable error. This year 13% of desktop and 12% of mobile pages had such an error. This seems like a large jump, however due to some changes in methodology (adding size thresholds) it is likely that not all of the instances are unrecoverable errors.
+To check for unrecoverable errors, we use the <a hreflang="en" href="https://github.com/reworkcss/css">Rework</a> CSS parsing engine. An unrecoverable error is one where the error is so bad, the full stylesheet is unable to be parsed by Rework. Last year, 0.94% of desktop pages, and 0.55% of mobile pages contained an unrecoverable error. This year 13% of desktop and 12% of mobile pages had such an error. This seems like a large jump, however due to some changes in methodology (adding size thresholds) it is likely that not all of the instances are unrecoverable errors.
 
 ## Nonexistent properties
 
