@@ -7,7 +7,7 @@ reviewers: [miketaylr, meyerweb, foolip]
 analysts: [rviscomi, kevinfarrugia]
 editors: [tunetheweb]
 translators: []
-bkardell_bio: Brian Kardell is developer advocate at <a hreflang="en" href="https://igalia.com">Igalia</a>, standards contributor, <a hreflang="en" href="https://bkardell.com">blogger</a>, and is currently the W3C Advisory Committee Representative for the <a hreflang="en" href="https://openjsf.org/">Open JS Foundation</a>. He was a founder of the Extensible Web Community Group and co-author of <a hreflang="en" href="https://extensiblewebmanifesto.org">The Extensible Web Manifesto</a>.
+bkardell_bio: Brian Kardell is a developer advocate and W3C Advisory Committee Representative at <a hreflang="en" href="https://igalia.com">Igalia</a>, a standards contributor, <a hreflang="en" href="https://bkardell.com">blogger</a>. He was a founder of the Extensible Web Community Group and co-author of <a hreflang="en" href="https://extensiblewebmanifesto.org">The Extensible Web Manifesto</a>.
 results: https://docs.google.com/spreadsheets/d/1w3GzzTNeKxafFODmjDs6OC2dseNEDDKwUV8KeSgRI1Y/
 featured_quote: TODO
 featured_stat_1: TODO
@@ -153,7 +153,7 @@ We have made some pretty radical progress toward closing these gaps in experimen
   caption="Forms WPT dashboard.",
   description="A chart showing the improvement in forms interoperability over the course of 2022 in all browsers - very significant for Safari. All browsers are now scoring between ~92-99%.",
   width=732,
-  height=691
+  height=696
   )
 }}
 
@@ -177,7 +177,7 @@ Unfortunately, this is an area where a number of incompatibilities remain, and d
   caption="Scolling WPT dashboard.",
   description="A recent chart showing improvements in experimental browsers showing significant gains and alignment, particularly in Firefox which went from about 71% to over 86%.",
   width=718,
-  height=691
+  height=683
   )
 }}
 
@@ -194,7 +194,7 @@ Interop 2022 took up a general bag of issues around `font-variant-alternates`, `
   caption="Typography and encodings WPT dashboard.",
   description="A chart showing the interoperability scores for typography and encodings over the past year. Chrome began at about 70%, Safari at about 79% and Firefox at about 98%. Chrome has pretty much closed the ground between itself and Safari, but the chart is otherwise 3 straight lines with no change.",
   width=727,
-  height=680
+  height=688
   )
 }}
 
@@ -215,7 +215,7 @@ A number of things caused work on dialogs to stall for a long time, but over the
   caption="Dialog element WPT dashboard.",
   description="TODO.",
   width=720,
-  height=692
+  height=685
   )
 }}
 
@@ -230,7 +230,7 @@ CSS containment introduces a concept for isolating a subtree of the page from th
   caption="Containment WPT dashboard.",
   description="TODO.",
   width=709,
-  height=683
+  height=675
   )
 }}
 
@@ -288,7 +288,7 @@ As of the time of this writing, there has been very good progress (Safari is now
   caption="Subgrid WPT dashboard.",
   description="A chart showing the scores of subgrid in stable releases over the past year. Chrome started at has reached about 20%, Safari went from around 10% to around 98% and Firefox from about 81% to about 83%.",
   width=719,
-  height=693
+  height=683
   )
 }}
 
@@ -335,7 +335,7 @@ Interop 2022 took up <a hreflang="en" href="https://wpt.fyi/results/css/css-colo
   caption="Color spaces and functions WPT dashboard.",
   description="TODO.",
   width=719,
-  height=693
+  height=684
   )
 }}
 
@@ -361,7 +361,7 @@ Experimental:
   caption="Viewport units WPT dashboard (experimental).",
   description="TODO.",
   width=732,
-  height=695
+  height=697
   )
 }}
 
@@ -376,7 +376,7 @@ To set this off well, Interop 2022 defined <a hreflang="en" href="https://wpt.fy
   caption="Cascade layers WPT dashboard (experimental).",
   description="TODO.",
   width=720,
-  height=692
+  height=675
   )
 }}
 
