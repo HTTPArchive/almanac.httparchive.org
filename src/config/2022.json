@@ -299,16 +299,6 @@
       "website": "getellipsis.com",
       "twitter": "AlexDenning"
     },
-    "AlexLakatos": {
-      "name": "Alex Lakatos",
-      "teams": [
-        "authors"
-      ],
-      "avatar_url": "690132",
-      "github": "AlexLakatos",
-      "website": "http://alexlakatos.com",
-      "twitter": "avolakatos"
-    },
     "alexnj": {
       "name": "Alex N. Jose",
       "teams": [
@@ -797,6 +787,7 @@
     "j9t": {
       "name": "Jens Oliver Meiert",
       "teams": [
+        "authors",
         "reviewers"
       ],
       "avatar_url": "1700772",
@@ -1402,16 +1393,6 @@
       "github": "thibaudcolas",
       "website": "https://thib.me/",
       "twitter": "thibaud_colas"
-    },
-    "daKmoR": {
-      "name": "Thomas Allmer",
-      "teams": [
-        "authors"
-      ],
-      "avatar_url": "24378",
-      "github": "daKmoR",
-      "website": "https://open-wc.org",
-      "twitter": "daKmoR"
     },
     "tomayac": {
       "name": "Thomas Steiner",
