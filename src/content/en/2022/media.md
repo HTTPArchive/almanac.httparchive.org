@@ -821,7 +821,7 @@ Usage of the `<video>` element continues to rise:
 {{ figure_markup(
   image="adoption-of-video-over-time.png",
   caption="Adoption of `<video>` over time.",
-  description="A line chart, showing the percentage of pages containing <video> elements over time. The mobile numbers are regularly a percentage point under the desktop numbers. In the fall of 2010, the lines start out at just under 4% on mobile and just under 5% on desktop, in the fall of 2020. They rise, pretty much linearly, until the end of the chart in June 2022, where  obile is at 5% and desktop is at just over 6%.",
+  description="A line chart, showing the percentage of pages containing `<video>` elements over time. The mobile numbers are regularly a percentage point under the desktop numbers. In the fall of 2010, the lines start out at just under 4% on mobile and just under 5% on desktop, in the fall of 2020. They rise, pretty much linearly, until the end of the chart in June 2022, where  obile is at 5% and desktop is at just over 6%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=642519393&format=interactive",
   sheets_gid="331851685",
   sql_file="video_adoption.sql"
