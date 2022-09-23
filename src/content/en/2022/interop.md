@@ -3,19 +3,19 @@
 title: Interoperability
 description: Interoperability chapter of the 2022 Web Almanac covering ...
 authors: [bkardell]
-reviewers: [miketaylr, meyerweb, foolip]
+reviewers: [meyerweb, foolip]
 analysts: [rviscomi, kevinfarrugia]
 editors: [tunetheweb]
 translators: []
 bkardell_bio: Brian Kardell is a developer advocate and W3C Advisory Committee Representative at <a hreflang="en" href="https://igalia.com">Igalia</a>, a standards contributor, <a hreflang="en" href="https://bkardell.com">blogger</a>. He was a founder of the Extensible Web Community Group and co-author of <a hreflang="en" href="https://extensiblewebmanifesto.org">The Extensible Web Manifesto</a>.
 results: https://docs.google.com/spreadsheets/d/1w3GzzTNeKxafFODmjDs6OC2dseNEDDKwUV8KeSgRI1Y/
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: Interoperability is a key goal of standards, but we've sometimes fallen short.  This chapter will begin providing an annual update to developers about efforts to come together to improve things. It will cover what's new or improved in terms of interoperability this year, and will provide a means for implementers to measure the impacts over time.
+featured_stat_1: 309%
+featured_stat_label_1: The increase in sites using CSS aspect-ratio between April 2021 and September 2022
+featured_stat_2: 0.3%
+featured_stat_label_2: The percentage of sites using the newly interoperable dialog element as of September 2022
+featured_stat_3: 4%
+featured_stat_label_3: The number of mobile pages using recently interoperable CSS containment in their stylesheets. Containment support is critical for Container Queries.
 unedited: true
 ---
 
@@ -318,7 +318,7 @@ The RGB method of constructing colors can be very hard for humans to visualize, 
 {{ figure_markup(
   image="p3-color-space.jpg",
   caption="p3 color space compared to sRGB.",
-  description="TODO.",
+  description="An illustrating showing that the p3 color space is a wider gammut than sRGB and capable of expressing more colors.",
   width=736,
   height=300
   )
@@ -359,7 +359,7 @@ Experimental:
 {{ figure_markup(
   image="viewport-units-wpt-dashboard.png",
   caption="Viewport units WPT dashboard (experimental).",
-  description="TODO.",
+  description="A chart showing the scores of viewport units in experimental releases over the past year. In January, no engine supported them. Safari had an early jump, getting about 65% support in February, but was quickly surpassed by Chrome with about 87% support. As of September, all scored 100% pass rates.",
   width=732,
   height=697
   )
@@ -374,7 +374,7 @@ To set this off well, Interop 2022 defined <a hreflang="en" href="https://wpt.fy
 {{ figure_markup(
   image="cascade-layers-wpt-dashboard.png",
   caption="Cascade layers WPT dashboard (experimental).",
-  description="TODO.",
+  description="A chart showing the scores of cascade layers support in experimental releases over the past year. In January, Firefox had roughly 75% support, Safari 62% and Chrome only about 11%. Throughout the year each gained steadily. As of September both Firefox and Chrome have scores of about 96%, and Safari 100%.",
   width=720,
   height=675
   )
