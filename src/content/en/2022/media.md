@@ -8,7 +8,7 @@ analysts: [eeeps, akshay-ranganath]
 editors: [MichaelLewittes]
 translators: []
 eeeps_bio: Eric Portis is a Web Platform Advocate at <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>.
-akshay-ranganath_bio: TODO
+akshay-ranganath_bio: Akshay Ranganath is a Sr. Solution Architect at <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a> and likes to work on CDN/WebPerf challenges. He occasionally tweets at [@rakshay](https://twitter.com/rakshay). You can find him at <a hreflang="en" href="https://www.linkedin.com/in/akshayranganath/">LinkedIn</a> or at his <a hreflang="en" href="https://akshayranganath.github.io/">blog</a>.
 results: https://docs.google.com/spreadsheets/d/1T5oVAVmcH3sM6R-WwH4ksr2jFtPhuLXs3-iXXoABb3E/
 featured_quote: TODO
 featured_stat_1: TODO
@@ -760,7 +760,6 @@ With all of that explanation out of the way, here's how the web's `<img>` elemen
 {{ figure_markup(
   image="intrinsic-and-extrinsic-image-sizing.png",
   caption="Intrinsic and extrinsic image sizing.",
-  description="Intrinsic and extrinsic image sizing.",
   description="A stacked bar chart showing the percentage of images whose width and height are determined based on extrinsic vs extrinsic sizing. There is a (for now) mysterious third category: both. The distributions between intrinsic, extrinsic, and both are quite different for height and width. For height, 59% of images are intrinsically sized, 31% extrinsic and the remaining 10% fall under both. For width, 9% of images are intrinsically sized, and 67% are extrinsic, the remaining 24% are both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=1534436519&format=interactive",
   sheets_gid="1153572147",
