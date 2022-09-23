@@ -112,7 +112,7 @@ Are HTML documents being compressed? How many? How? 86% of them are—with 58% (
   image="html-languages.png",
   caption="Most popular regional HTML lang values.",
   description="Bar chart showing `en` is the langauge set on 22% of desktop and 19% of mobile pages, `(not set)` on 18% and 17% respectively, `en-us` on 16% and 13%, `ja` on 6% and 6%, `es` on 4% and 5%, `pt-br` on 2% and 3%, `en-gb` on 2% and 2%, `ru` on 2% and 2%, `de` on 2% and 2%, and `de-de` on 1% of desktop and 2% of mobile pages..",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=677908280&amp;format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=677908280&format=interactive",
   sheets_gid="1194853402",
   sql_file="lang.sql",
   width=600,
