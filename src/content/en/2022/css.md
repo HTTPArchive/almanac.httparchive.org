@@ -22,13 +22,15 @@ unedited: true
 
 ## Introduction
 
-CSS is the language used to lay out and format web pages and other media. It is one of the three main languages of the web, joining [HTML](./markup) which is used for structure, and [JavaScript](./javascript) for behavior.
+CSS is the language used to lay out and format web pages and other media. It is one of the three main languages of the web, joining [HTML](./markup), which is used for structure, and [JavaScript](./javascript) for behavior.
 
-The past few years have seen a flurry of new CSS features. Many of these have taken inspiration from things developers were already doing with JavaScript or in preprocessors, others provide methods of doing things that were impossible a few years ago. Having new features available is one thing, but are developers actually using them in their production web pages and applications? It is this question we will try to answer with data.
+The past few years have seen a flurry of new CSS features. Many of these have taken inspiration from things developers were already doing with JavaScript or in preprocessors, while others provide methods of doing things that were impossible a few years ago. Having new features available is one thing, but are developers actually using them in their production web pages and applications? It is this question we will try to answer with data.
 
-In this chapter we use the data to find out what developers actually use in production, rather than the features most talked about on Twitter, showcased at conferences, or found in clever demos. We can see which of the new features are being adopted, which old techniques are falling out of use, and the legacy techniques that are stubbornly remaining in our stylesheets.
+In this chapter, we use the data to find out what developers actually use in production, rather than the features most talked about on Twitter, showcased at conferences, or found in clever demos. We can see which of the new features are being adopted, which old techniques are falling out of use, and the legacy techniques that are stubbornly remaining in our stylesheets.
 
 ## Usage
+
+Each year, we see that CSS grows in size, and 2022 was no exception.
 
 {{ figure_markup(
     image="stylesheet-transfer-size.png",
@@ -40,9 +42,9 @@ In this chapter we use the data to find out what developers actually use in prod
   )
 }}
 
-Each year, we see that CSS grows in size, and 2022 was no exception. Other than the 25th percentile, which dropped a percentage point, each percentile showed a small increase in size. At the 90th percentile the increase was almost 7%, a similar increase to that seen between 2020 and 2021. Mobile stylesheets remain slightly smaller than those served to desktop.
+Other than the 25th percentile, which dropped a percentage point, each percentile showed a small increase in size. At the 90th percentile the increase was almost 7%, a similar increase to that seen between [2020](../2020/css) and [2021](../2021/css). Mobile stylesheets remain slightly smaller than those served to desktop.
 
-The desktop page with the greatest CSS weight was slightly smaller than last year at 62,631 KB. The largest mobile stylesheet had risen from 17,823 KB to 78,543 KB, thankfully this was an exception.
+The desktop page with the greatest CSS weight was slightly smaller than last year at 62,631 KB. The largest mobile stylesheet had risen from 17,823 KB to 78,543 KB—thankfully this was an exception.
 
 {{ figure_markup(
     image="stylesheet-count.png",
@@ -68,7 +70,7 @@ Last year the record was broken for the number of stylesheets loaded by a single
   )
 }}
 
-Taking a look at the number of style rules in a page showed an increase across all percentiles, the lower percentiles showing more rules for mobile, the higher percentiles more for desktop. These increases are substantial. Desktop rules for the 50th percentile increased by 130 rules, and the 90th percentile by 202.
+Taking a look at the number of style rules in a page showed an increase across all percentiles; the lower percentiles showing more rules for mobile, the higher percentiles more for desktop. These increases are substantial. Desktop rules for the 50th percentile increased by 130 rules, and the 90th percentile by 202.
 
 {{ figure_markup(
     image="rules-per-stylesheet.png",
@@ -84,7 +86,7 @@ We can see from the total number of stylesheets loaded, that typically people ar
 
 ## Selectors and the cascade
 
-2022 saw a shake-up with regard to the cascade with [@layer](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) landing in all engines. This new at-rule enables the grouping of selectors into layers, the order of precedence of the layers can then be managed.
+2022 saw a shake-up with regard to the cascade with [`@layer`](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) landing in all engines. This new at-rule enables the grouping of selectors into layers, the order of precedence of the layers can then be managed.
 
 It's a little early to see widespread usage of this new method of managing the cascade, but let's take a look at how selector usage has evolved.
 
@@ -101,9 +103,9 @@ It's a little early to see widespread usage of this new method of managing the c
   )
 }}
 
-As in 2020 and 2021 the most popular class name on the web is active. The fa, fa-* prefixes for Font Awesome still coming second and third. However, wp-* class names have crept up the rankings, moving to fourth place. They now show up on 31% of pages, having been at 20% in 2021. We also see class names such as has-large-font-size appearing, these are used in the new WordPress Block Editor.
+As in 2020 and 2021 the most popular class name on the web is active. The `fa`, `fa-*` prefixes for Font Awesome still coming second and third. However, `wp-*` class names have crept up the rankings, moving to fourth place. They now show up on 31% of pages, having been at 20% in 2021. We also see class names such as `has-large-font-size` appearing, these are used in the new WordPress Block Editor.
 
-Clearfix has disappeared from the top 20, it is now found on only 10% of pages, a very clear indication that float-based layouts are vanishing from the web.
+`clearfix` has disappeared from the top 20, it is now found on only 10% of pages, a very clear indication that float-based layouts are vanishing from the web.
 
 {{ figure_markup(
     image="top-selector-ids.png",
@@ -132,8 +134,6 @@ The name `content` is once again the most popular ID name, followed by `footer`,
 
 The use of `!important` has slightly increased for the top two percentiles this year. As `@layer` usage takes hold it will be interesting to see how this impacts the use of this property, typically used to deal with specificity issues.
 
-In terms of what `!important` is applied to, the top properties remain unchanged. However, `position` has fallen out of the top ten, to be replaced with `font-size`.
-
 {{ figure_markup(
     image="important-props.png",
     caption="The top properties that !important is applied to by percent of pages.",
@@ -145,7 +145,11 @@ In terms of what `!important` is applied to, the top properties remain unchanged
   )
 }}
 
+In terms of what `!important` is applied to, the top properties remain unchanged. However, `position` has fallen out of the top ten, to be replaced with `font-size`.
+
 ### Selector specificity
+
+{# TODO(author): Can you introduce what specificity is? #}
 
 <figure>
   <table>
@@ -191,7 +195,7 @@ In terms of what `!important` is applied to, the top properties remain unchanged
   ) }}</figcaption>
 </figure>
 
-Except for desktop at the 25th percentile, median specificity values are exactly the same as last year, remaining constant over the past two years. These values indicate the  flattened specificity created by methodologies such as BEM.
+Except for desktop at the 25th percentile, median specificity values are exactly the same as last year, remaining constant over the past two years. These values indicate the  flattened specificity created by methodologies such as <a href="https://en.bem.info/methodology/quick-start/" hreflang="en">BEM</a>.
 
 ### Pseudo-classes and -elements
 
@@ -223,7 +227,7 @@ Last year it was noted that `:focus-visible`, a way to style elements in focus i
 
 We filter out any prefixed, and therefore browser-specific, pseudo-elements. These are typically used to select interface components or parts of browser chrome, and we are interested in the pseudo-elements developers are actually using.
 
-The use of `::before` and `::after` has increased since last year. These are used to insert generated content into the document. By checking usage of the `content` property, it is possible to see that this is most often being used to insert an empty string, used for styling purposes. Generated content is one way to style a grid area without needing to add an element, perhaps this has contributed to the rise in usage of these properties?
+The use of `::before` and `::after` has increased since last year. These are used to insert generated content into the document. By checking usage of the `content` property, it is possible to see that this is most often being used to insert an empty string, used for styling purposes. Generated content is one way to style a grid area without needing to add an element; perhaps this has contributed to the rise in usage of these properties?
 
 Use of the `::marker` pseudo-element has now made 1%, showing that people are slowly starting to take advantage of the ability to select and style list markers.
 
@@ -239,6 +243,8 @@ Use of the `::marker` pseudo-element has now made 1%, showing that people are sl
     sql_file="top_selector_attributes.sql"
   )
 }}
+
+{# TODO(author): This subsection should have an intro and interpretation of the data. #}
 
 ## Values and Units
 
@@ -390,7 +396,7 @@ Pixel lengths remain the most popular at 71%, the same percentage as in 2021. Th
   ) }}</figcaption>
 </figure>
 
-The up and down arrows on this chart show the change from the [results in 2021](../2021/css#fig-15). As seen last year, in the majority of cases there is a shift away from using pixels, in favor of other length units. Once again, the `vertical-align` property saw a huge drop in pixel and `<number>` use, and a large rise in em use.
+The up and down arrows on this chart show the change from the [results in 2021](../2021/css#fig-15). As seen last year, in the majority of cases there is a shift away from using pixels, in favor of other length units. Once again, the `vertical-align` property saw a huge drop in pixel and `<number>` use, and a large rise in `em` use.
 
 {{ figure_markup(
     image="font-relative-length-units.png",
@@ -402,7 +408,7 @@ The up and down arrows on this chart show the change from the [results in 2021](
   )
 }}
 
-While em remains the most popular method of sizing fonts, the swing to rem continues with a small (just under two point) increase over last year.
+While `em` remains the most popular method of sizing fonts, the swing to `rem` continues with a small (just under two point) increase over last year.
 
 {{ figure_markup(
     image="zero-length-units.png",
@@ -441,7 +447,7 @@ As in previous years, the most popular use of `calc()` is in values for width. T
   )
 }}
 
-The percentage of sites using pixels in calculations has decreased 9 points, it is now level with percentages at 42%. There is a significant increase in usage for other values, the viewport units vw and vh both increased from 2% to 8% this year, em increased the same amount, and use of rem doubled from 3% to 6%.
+The percentage of sites using pixels in calculations has decreased 9 points, it is now level with `%` usage at 42%. There is a significant increase in usage for other values, the viewport units `vw` and `vh` both increased from 2% to 8% this year, `em` increased the same amount, and use of `rem` doubled from 3% to 6%.
 
 {{ figure_markup(
     image="calc-operators.png",
@@ -479,7 +485,7 @@ As last year, `calc()` values tend to be fairly simple. The majority using two v
   )
 }}
 
-Last year the use of global keywords had risen significantly, in 2022 inherit is found in the same percentage of pages, however the other three values have increased in use. The newer value of revert has increased from 1% to 4%.
+Last year the use of global keywords had risen significantly, in 2022 `inherit` is found in the same percentage of pages, however the other three values have increased in use. The newer value of `revert` has increased from 1% to 4%.
 
 ## Custom Properties
 
@@ -493,7 +499,7 @@ Last year the use of global keywords had risen significantly, in 2022 inherit is
   )
 }}
 
-Custom properties (sometimes known as CSS variables) have seen a huge surge in use, the growth between 2021 and 2022 is no exception. 43% of pages, for both desktop and mobile are using custom properties and have at least one var() function.
+Custom properties (sometimes known as CSS variables) have seen a huge surge in use, the growth between 2021 and 2022 is no exception. 43% of pages, for both desktop and mobile are using custom properties and have at least one `var()` function.
 
 {{ figure_markup(
     image="custom-property-names.png",
@@ -505,7 +511,7 @@ Custom properties (sometimes known as CSS variables) have seen a huge surge in u
   )
 }}
 
-As seen last year, WordPress is the driver for the most common custom property names, these are easily identifiable by the `–wp–` prefix. Following these we once again found a lot of color names `–white`, `–blue`, and so on, used to assign a particular shade of that color.
+As seen last year, WordPress is the driver for the most common custom property names, these are easily identifiable by the `–wp–*` prefix. Following these, we once again found a lot of color names `–white`, `–blue`, and so on, used to assign a particular shade of that color.
 
 ### Types
 
@@ -519,7 +525,7 @@ As seen last year, WordPress is the driver for the most common custom property n
   )
 }}
 
-The value of a custom property includes a type. For example, `--red: #EF2143` is assigning a color value to `--red`, whereas `--multiplier: 2.5` is assigning a number value. The types have changed a little since last year. While we know that setting a color is common use of custom properties, and the amount of pages where color types are found are increasing, in terms of the share of usage this has dropped from 40% to 30%. Entering this distribution is `calc()`, and images as a value type.
+The value of a custom property includes a type. For example, `--red: #EF2143` is assigning a color value to `--red`, whereas `--multiplier: 2.5` is assigning a number value. The types have changed a little since last year. We know that setting a color is the most common use of custom properties, and the amount of pages on which color types are found is increasing. However, in terms of the share of usage, this has dropped from 40% to 30%. Entering this distribution is `calc()`, and images as a value type.
 
 ### Properties
 
@@ -534,7 +540,7 @@ The value of a custom property includes a type. For example, `--red: #EF2143` is
   )
 }}
 
-While the number of pages including these properties has increased, the properties that have custom properties as a value have remained in roughly the same order as last year. Custom properties are most likely to be used for `color`, unsurprisingly as creating color schemes is an obvious use of this functionality. Using the `var()` function to set `font-size` has moved from 10th place to 5th in the list however, and setting the alignment value of justify-content has moved into the top ten. In 2021 5% of mobile, and 4% of desktop pages were using custom properties to set this alignment value, this has jumped to 20%. From the data it looks as if some of this increase is due to WordPress usage, 5% of pages use the `–navigation-layout-justify` custom property, for example.
+While the number of pages including these properties has increased, the properties that have custom properties as a value have remained in roughly the same order as last year. Custom properties are most likely to be used for `color`, unsurprisingly as creating color schemes is an obvious use of this functionality. Using the `var()` function to set `font-size` has moved from 10th place to 5th in the list however, and setting the alignment value of `justify-content` has moved into the top ten. In 2021 5% of mobile, and 4% of desktop pages were using custom properties to set this alignment value, this has jumped to 20%. From the data it looks as if some of this increase is due to WordPress usage, 5% of pages use the `–navigation-layout-justify` custom property, for example.
 
 ### Functions
 
@@ -549,11 +555,11 @@ While the number of pages including these properties has increased, the properti
   )
 }}
 
-We saw that `calc()` has started to be notable as a value type for custom properties, and it is by far the most commonly seen function used in this way. It is followed by `linear-gradient()`, and the `rgba()` function used to set RGB color values with an alpha channel.  After this are the various functions used for transitions and animations, showing a growing use of custom properties in this area.
+We saw that `calc()` has started to be notable as a value type for custom properties, and it is by far the most commonly seen function used in this way. It is followed by `linear-gradient()` and the `rgba()` function used to set RGB color values with an alpha channel.  After this are the various functions used for transitions and animations, showing a growing use of custom properties in this area.
 
 ### Complexity
 
-It's possible to include custom properties in the values of other custom properties. Consider this example from the 2020 Web Almanac:
+It's possible to include custom properties in the values of other custom properties. Consider [this example](../2020/css#complexity) from the 2020 Web Almanac:
 
 ```css
 :root {
@@ -563,7 +569,7 @@ It's possible to include custom properties in the values of other custom propert
 }
 ```
 
-As the comments in the previous example show, the more of these sub-references are chained together, the greater the depth of the custom property.
+As the comments in the previous example show, the more that these sub-references are chained together, the greater the depth of the custom property.
 
 {{ figure_markup(
     image="custom-property-depth.png",
@@ -575,7 +581,7 @@ As the comments in the previous example show, the more of these sub-references a
   )
 }}
 
-As seen in 2021 the vast majority of custom properties had a depth of zero, meaning that they did not include the values of other custom properties in their value. There has been a small increase in the number of properties with a depth of one, and a small decrease in the number with a depth of two. However, it does not seem from the data that our use of custom properties has become much more complex in the past year.
+As seen in 2021, the vast majority of custom properties had a depth of zero, meaning that they did not include the values of other custom properties in their value. There has been a small increase in the number of properties with a depth of one, and a small decrease in the number with a depth of two. However, it does not seem from the data that our use of custom properties has become much more complex in the past year.
 
 ## Colors
 
@@ -590,11 +596,9 @@ As seen in 2021 the vast majority of custom properties had a depth of zero, mean
   )
 }}
 
-The use of the time-honored six-digit #RRGGBB syntax remains unchanged since 2021, being used in half of color declarations. Despite the widespread availability of eight-digit #RRGGBBAA hex, the `rgba()` form is the most widely used way to add an alpha component, likely because it was implemented in browsers much earlier.
+The use of the time-honored six-digit `#RRGGBB` syntax remains unchanged since 2021, being used in half of color declarations. Despite the widespread availability of eight-digit `#RRGGBBAA` hex, the `rgba()` form is the most widely used way to add an alpha component, likely because it was implemented in browsers much earlier.
 
-The usage of other values showed a similar story, the web community hasn't yet started to take advantage of other color formats, even widely supported ones such as `hsl()`.
-
-8% of pages use the keyword transparent, making it the most popular named color. 2% of pages use other named colors, white being the most popular followed by black, at the other end of the scale mediumspringgreen languishes as the least popular color.
+The usage of other values showed a similar story; the web community hasn't yet started to take advantage of other color formats, even widely supported ones such as `hsl()`.
 
 {{ figure_markup(
     image="color-keywords.png",
@@ -606,6 +610,8 @@ The usage of other values showed a similar story, the web community hasn't yet s
     sql_file="color_keywords.sql"
   )
 }}
+
+8% of pages use the keyword `transparent`, making it the most popular named color. 2% of pages use other named colors, `white` being the most popular followed by `black`. At the other end of the scale `mediumspringgreen` languishes as the least popular color.
 
 ### Alpha support and use
 
@@ -631,15 +637,15 @@ The `rgba()` function is the third most popular color format, used substantially
   )
 }}
 
-As we would expect from other data, rgba() is the most popular alpha-supporting format in use, followed by the transparent keyword. Other formats such as hsla() barely feature.
+As we would expect from other data, `rgba()` is the most popular alpha-supporting format in use, followed by the `transparent` keyword. Other formats such as `hsla()` barely feature.
 
 ### New color properties and values
 
 There are interesting things happening in the world of color. In addition to new color spaces, we have a number of color-related properties and values. We wondered if any of these were making an impact on the data.
 
-The <a hreflang="en" href="https://web.dev/accent-color/">accent-color</a> property lets you add your brand color as an accent color to notoriously hard to style form elements such as checkbox, radio buttons, and range sliders. Perhaps due to the fact it has only been available in all engines since March this year, it still shows less than 0.3% usage.
+The <a hreflang="en" href="https://web.dev/accent-color/">`accent-color`</a> property lets you add your brand color as an accent color to notoriously hard-to-style form elements such as checkboxes, radio buttons, and range sliders. Perhaps due to the fact it has only been available in all engines since March this year, it still shows less than 0.3% usage.
 
-Another property becoming available in all engines this year is [color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme), a property that lets you specify which color schemes (light or dark) a component can be rendered in. This property is, somewhat surprisingly,  so far only found in 0.2% of pages.
+Another property becoming available in all engines this year is [`color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme), a property that lets you specify in which color schemes (light or dark) a component can be rendered. This property is, somewhat surprisingly, so far only found in 0.2% of pages.
 
 ## Gradients and Images
 
@@ -668,7 +674,7 @@ Linear gradients continue as the leading choice, appearing on a slightly higher 
   )
 }}
 
-This chart breaks down the image formats of images loaded from CSS. It does not include images loaded from HTML, just those that appear in a style rule. There has been a significant swing away from PNG <span class="numeric-bad">(▼from 44% to 30%)</span>, with SVG and WEBP each seeing an increase of 6 percentage points.
+This chart breaks down the image formats of images loaded from CSS. It does not include images loaded from HTML, just those that appear in a style rule. There has been a significant swing away from PNG—down from 44% to 30%—with SVG and WebP each seeing an increase of 6 percentage points.
 
 ### Number of images in CSS
 
@@ -698,7 +704,7 @@ While CSS doesn't cause many image loads, the weight of those images is importan
   )
 }}
 
-The median page, on mobile, has increased image weight by 1KB to 17KB. At the upper end of the chart however, at the 90th percentile we see an increase of 67KB on mobile and 42KB on desktop. As in 2021, the weight on mobile is consistently lower on mobile, an indication that developers are trying to serve smaller images to mobile contexts.
+The median page, on mobile, has increased image weight by 1KB to 17KB. At the upper end of the chart however, at the 90th percentile we see an increase of 67KB on mobile and 42KB on desktop. As in 2021, the weight is consistently lower on mobile, an indication that developers are trying to serve smaller images to mobile contexts.
 
 ### Pixel size of images in CSS
 
@@ -728,7 +734,7 @@ We have many options to choose from when doing layout on the web, and most sites
   )
 }}
 
-This chart doesn't tell us the main layout method used on a page. It indicates that a property or value appears in the CSS for those pages. For example, 51% of pages are using the old 2009 version of flexbox, with display: box. It's likely this has been added for backwards compatibility, perhaps via a tool such as Autoprefixer.
+This chart doesn't tell us the main layout method used on a page. It indicates that a property or value appears in the CSS for those pages. For example, 51% of pages are using the old 2009 version of flexbox, with `display: box`. It's likely this has been added for backwards compatibility, perhaps via a tool such as Autoprefixer.
 
 ### Flexbox and grid adoption
 
@@ -742,21 +748,21 @@ This chart doesn't tell us the main layout method used on a page. It indicates t
   )
 }}
 
-Flexbox and grid usage continues to grow. In 2021 flexbox adoption was 71%, it's now at 74%. Grid has jumped from 8% to 12%. Note that, in contrast to the previous section, what is measured here is the percentage of pages that are actually using Flexbox or Grid for layout, as opposed to the pages that simply have some sort of Flexbox or Grid property in their stylesheet.
+Flexbox and grid usage continue to grow. In 2021, flexbox adoption was 71%—it's now at 74%. Grid has jumped from 8% to 12%. Note that, in contrast to the previous section, what is measured here is the percentage of pages that are actually using flexbox or grid for layout, as opposed to the pages that simply have some sort of flexbox or grid property in their stylesheet.
 
-Grid adoption is reasonably slow, we feel this may be due to the prevalence of frameworks being used for layout, many of which have based their layout on flexbox.
+Grid adoption is reasonably slow. We feel this may be due to the prevalence of frameworks being used for layout, many of which have based their layouts on flexbox.
 
-We also took a look at a couple of values of flex and grid properties that are newer to us, to see how adoption of these new features was developing.
+We also took a look at a couple of values of `flex` and `grid` properties that are newer to us, to see how adoption of these new features was developing.
 
-The value of content for the flex-basis property is an explicit instruction for the browser to look at the intrinsic content size of the item, rather than any width set on it. It's a newer value, at the time of writing not available in the release version of Safari. Currently, only 0.5% of mobile and 0.6% of desktop sites use this value.
+The value of content for the `flex-basis` property is an explicit instruction for the browser to look at the intrinsic content size of the item, rather than any width set on it. It's a newer value, at the time of writing not available in the release version of Safari. Currently, only 0.5% of mobile and 0.6% of desktop sites use this value.
 
-The subgrid value for grid-template-rows and grid-template-columns is, at the time the queries were run, only supported in Firefox. Perhaps unsurprisingly, it appears in only 211 mobile and 212 desktop pages in the entire dataset. As the value is part of the Interop 2022 project, we will be interested to see how support grows once this becomes interoperable.
+The `subgrid` value for `grid-template-rows` and `grid-template-columns` is, at the time the queries were run, only supported in Firefox. Perhaps unsurprisingly, it appears in only 211 mobile and 212 desktop pages in the entire dataset. As the value is part of the [Interop 2022](./interoperability) project, we will be interested to see how support grows once this becomes interoperable.
 
 ### Box sizing
 
 {{ figure_markup(
     image="box-sizing.png",
-    caption="Distribution of number of border-box declarations per page.",
+    caption="Distribution of number of `border-box` declarations per page.",
     description="TODO",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1043112167&format=interactive",
     sheets_gid="859735058",
@@ -764,43 +770,43 @@ The subgrid value for grid-template-rows and grid-template-columns is, at the ti
   )
 }}
 
-The web has overwhelmingly voted to reject the original W3C box model in favor of box-sizing: border-box. The number of pages using this property and value combination has risen slightly again to over 90% of pages. Almost half of all pages analyzed apply border-box sizing to every element on the page via the universal selector (*). This approach may help explain why the median number of border-box declarations per page is so low across the bottom four percentiles.
+The web has overwhelmingly voted to reject the original W3C box model in favor of `box-sizing: border-box`. The number of pages using this property and value combination has risen slightly again to over 90% of pages. Almost half of all pages analyzed apply `border-box` sizing to every element on the page via the universal selector (`*`). This approach may help explain why the median number of `border-box` declarations per page is so low across the bottom four percentiles.
 
-Around 22% of pages use border-box on checkboxes and radiobuttons, we then see a lot of .wp- classes again, showing that WordPress is responsible for the use on 20% of pages analyzed.
+Around 22% of pages use `border-box` on checkboxes and radio buttons, we then see a lot of `.wp-` classes again, showing that WordPress is responsible for the use on 20% of pages analyzed.
 
 ### Multicolumn
 
 {{ figure_markup(
     content="23%",
-    caption="The percentage of pages using multicolumn layout.",
+    caption="The percentage of pages using multi-column layout.",
     classes="big-number",
     sheets_gid="1226061352",
     sql_file="multicol.sql"
   )
 }}
 
-Use of multicolumn layout has increased once again, it's now found on 23% of pages, a rise of 3 points since 2021.
+Use of [multi-column](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns) layout has increased once again, it's now found on 23% of pages, a rise of 3 points since 2021.
 
-### The aspect-ratio property
+### The `aspect-ratio` property
 
 {{ figure_markup(
     content="2%",
-    caption="The percentage of pages using the aspect-ratio property.",
+    caption="The percentage of pages using the `aspect-ratio` property.",
     classes="big-number",
     sheets_gid="1009310505",
     sql_file="all_properties.sql"
   )
 }}
 
-We were interested in the adoption of the new `aspect-ratio` property. This became interoperable towards the end of 2021, so it will be interesting to see usage of this property grow over time.
+The new `aspect-ratio` property is used on 2% of pages. This became interoperable towards the end of 2021, so it will be interesting to see usage of this property grow over time.
 
 ## Transitions and animations
 
-The animation property appears on 77% of mobile pages (the same as last year) and a slight increase on desktop to 76.8%. The transition property is even more popular, it's found on 85% of mobile and 85.6% of desktop pages. The desktop frequency has dropped slightly by around 4 percentage points since 2021.
+The `animation` property appears on 77% of mobile pages (the same as last year) and a slight increase on desktop to 76.8%. The `transition` property is even more popular, it's found on 85% of mobile and 85.6% of desktop pages. The desktop frequency has dropped slightly by around 4 percentage points since 2021.
 
 {{ figure_markup(
     image="transition-props.png",
-    caption="The most popular transition properties by percent of pages.",
+    caption="The most popular `transition` properties by percent of pages.",
     description="TODO",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1745619326&format=interactive",
     height="533",
@@ -809,7 +815,7 @@ The animation property appears on 77% of mobile pages (the same as last year) an
   )
 }}
 
-As seen last year the most common usage is to apply transitions to all animatable properties with the `all` keyword. This usage has grown to 53% <span class="numeric-good">(▲7 percentage points)</span>, it is followed by `opacity`, at 50% pf pages including transitions.
+As seen last year, the most common usage is to apply transitions to all animatable properties with the `all` keyword. This usage has grown to 53%—up 7 percentage points—followed by `opacity` at 50% of pages.
 
 {{ figure_markup(
     image="transition-durations.png",
@@ -821,7 +827,7 @@ As seen last year the most common usage is to apply transitions to all animatabl
   )
 }}
 
-Looking at the duration of transitions we see a change from last year.  In 2021, at the 90th percentile the median transition duration was half a second, this has now jumped to 1 second. We see increases across all top four percentiles.
+Looking at the duration of transitions, we see a change from last year.  In 2021, at the 90th percentile the median transition duration was half a second, this has now jumped to 1 second. We see increases across all top four percentiles.
 
 {{ figure_markup(
     image="transition-delays.png",
@@ -869,11 +875,7 @@ As you might expect the most popular stops are at 0% to and from 100%, followed 
   )
 }}
 
-There has been little change in the distribution of timing functions used during transitions when compared to 2021. As then, the clear leader is ease.
-
-To understand what developers are using animations for, we take a look at the names used for the animation classes. For example, anything with spin in the classname is deemed to be rotate. Rotate animations were the most popular, as in 2021. However the percentage has dropped from 18% to 13%, with bounce animations moving from 5th place to 3rd place in the list.
-
-As last year, the high showing for unknown/other is due to a prevalence of the classname ‘a', which we can't map to a specific animation type.
+There has been little change in the distribution of timing functions used during transitions when compared to 2021. As then, the clear leader is `ease`.
 
 {{ figure_markup(
     image="transition-animation-names.png",
@@ -885,6 +887,10 @@ As last year, the high showing for unknown/other is due to a prevalence of the c
     sql_file="transition_animation_names.sql"
   )
 }}
+
+To understand what developers are using animations for, we took a look at the names used for the animation classes. For example, anything with `spin` in the classname is deemed to be rotate. Rotate animations were the most popular, as in 2021. However the percentage has dropped from 18% to 13%, with bounce animations moving from 5th place to 3rd place in the list.
+
+As last year, the high showing for unknown/other is due to a prevalence of the classname `a`, which we can't map to a specific animation type.
 
 ## Visual Effects
 
@@ -910,7 +916,7 @@ We looked at some visual effects being used in CSS. For example, 18% of desktop 
   )
 }}
 
-The most frequently seen value for blend modes was multiply, seen in 42% of pages. However there is a fair distribution of other values too.
+The most frequently seen value for blend modes was `multiply`, seen on 42% of pages. However there is a fair distribution of other values too.
 
 Around 18% of pages were using a custom property `var(--overlay-mix-blend-mode)`, a specific name that must come from a library or tool of some sort.
 
@@ -925,9 +931,9 @@ Around 18% of pages were using a custom property `var(--overlay-mix-blend-mode)`
   )
 }}
 
-Of the percentage of pages that have set filters to apply graphical effects, 82% are using the `alpha()` value, which is non-standard and used for Internet Explorer 8 and below. We also see a high usage of the <a hreflang="en" href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms532997(v=vs.85">Microsoft.gradient()</a>) filter.
+Of the percentage of pages that have set filters to apply graphical effects, 82% are using the `alpha()` value, which is non-standard and used for Internet Explorer 8 and below. We also see a high usage of the <a hreflang="en" href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms532997(v=vs.85">`Microsoft.gradient()`</a> filter.
 
-Of the [standard values](https://developer.mozilla.org/en-US/docs/Web/CSS/filter), 31% of pages use `blur()` making it the most popular value after none.
+Of the [standard values](https://developer.mozilla.org/en-US/docs/Web/CSS/filter), 31% of pages use `blur()`, making it the most popular value after `none`.
 
 {{ figure_markup(
     image="clip-path-functions.png",
@@ -939,15 +945,15 @@ Of the [standard values](https://developer.mozilla.org/en-US/docs/Web/CSS/filter
   )
 }}
 
-In pages that use clip-path to clip an element, the vast majority are using inset(), the value that simply insets the box of the element, 88% of pages using clip-path have used this function.
+In pages that use `clip-path` to clip an element, the vast majority are using `inset()`, the value that simply insets the box of the element, 88% of pages using `clip-path` have used this function.
 
-After that, and the value none, most developers have chosen to use a polygon(), which is the value that gives the most flexibility to define your own path.
+After that, and the value `none`, most developers have chosen to use `polygon()`, which is the value that gives the most flexibility to define your own path.
 
 ## Responsive design
 
-While many developers are eagerly anticipating container queries, and new layout methods such as flexbox and grid can often enable a design to work well on multiple screen sizes, media queries are used in the majority of pages for responsive design.
+While many developers are eagerly anticipating [container queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries), and new layout methods such as flexbox and grid can often enable a design to work well on multiple screen sizes, [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) are used in the majority of pages for responsive design.
 
-When developers write media queries, they most often test the width of the viewport. max-width and min-width were the most popular queries by far, the same as in 2020 and 2021. There was no ranking change in the third and fourth place results either.
+When developers write media queries, they most often test the width of the viewport. `max-width` and `min-width` were the most popular queries by far, the same as in 2020 and 2021. There was no ranking change in the third and fourth place results either.
 
 {{ figure_markup(
     image="media-query-features.png",
@@ -960,7 +966,7 @@ When developers write media queries, they most often test the width of the viewp
   )
 }}
 
-The prefers-reduced motion media query however, which was noted in 2021 as rising in the rankings, has now edged out orientation to take the fourth spot. This is due to a 2% rise for `prefers-reduced-motion` but also a drop of 4% for `orientation`.
+The `prefers-reduced-motion` media query, however, which was noted in 2021 as rising in the rankings, has now edged out `orientation` to take the fourth spot. This is due to a 2% rise for `prefers-reduced-motion` but also a drop of 4% for `orientation`.
 
 {{ figure_markup(
     image="prefers-features.png",
@@ -972,7 +978,7 @@ The prefers-reduced motion media query however, which was noted in 2021 as risin
   )
 }}
 
-If we just look at the `prefers-` user preference features, we can see that `prefers-reduced-motion` is by far the most popular, due to good browser support plus the prevalence of animations and transitions on the web. The `prefers-color-scheme` feature, checking to see if the user has set a preference for a light or dark scheme, has increased in use slightly, as the use of dark mode on websites and applications becomes more popular.
+If we just look at the `prefers-*` user preference features, we can see that `prefers-reduced-motion` is by far the most popular, due to good browser support plus the prevalence of animations and transitions on the web. The `prefers-color-scheme` feature, checking to see if the user has set a preference for a light or dark scheme, has increased in use slightly, as the use of dark mode on websites and applications becomes more popular.
 
 {{ figure_markup(
     image="hover-features.png",
@@ -984,7 +990,7 @@ If we just look at the `prefers-` user preference features, we can see that `pre
   )
 }}
 
-The hover and pointer media features help developers test the capabilities of the device, and the way the user might be interacting with it. They are a better way to discover if a user is using a touchscreen, for example, than screen size alone given the number of large tablets and touchscreen laptops in use.
+The `hover` and `pointer` media features help developers test the capabilities of the device, and the way the user might be interacting with it. They are a better way to discover if a user is using a touchscreen, for example, than screen size alone given the number of large tablets and touchscreen laptops in use.
 
 Both `hover` and `pointer` now appear in the top ten features. The less useful `any-pointer` and `any-hover` see very little use. Using `any-pointer` allows you to determine if a user has access to a fine pointer such as a mouse or trackpad, even if `pointer` indicates they are currently using the touchscreen. Asking a user to switch is definitely not ideal, though a combination of these features could give you a good understanding of the environment a user is working in.
 
@@ -1000,9 +1006,9 @@ Both `hover` and `pointer` now appear in the top ten features. The less useful `
   )
 }}
 
-As in the past two years, common breakpoints have changed little. The chart follows the same shape, and the most common breakpoint being a max-width of 767px and min-width of 768px. As noted in 2021, this corresponds with an iPad in portrait mode.
+As in the past two years, common breakpoints have changed little. The chart follows the same shape, and the most common breakpoint being a `max-width` of 767px and `min-width` of 768px. As noted in 2021, this corresponds with an iPad in portrait mode.
 
-Once again, breakpoints are overwhelmingly set in pixel values, we haven't converted other values to pixels for the chart. The first em value is again 48em, found at position 78.
+Once again, breakpoints are overwhelmingly set in pixel values, we haven't converted other values to pixels for the chart. The first `em` value is again `48em`, found at position 78.
 
 ## Properties changed in queries
 
@@ -1019,13 +1025,13 @@ We looked at the properties that appear within media query blocks, to see which 
   )
 }}
 
-The display property is still top of the chart for properties changed within media queries, however there has been some reshuffling in the rankings. These are not as dramatic as they might seem. The color property has vanished from the chart, however this only represents a change from 74% to 67%. It is joined however by a reduction in usage of background-color for 65% to 63%, which makes us wonder if some framework, or perhaps WordPress has stopped using this in a stylesheet.
+The `display` property is still top of the chart for properties changed within media queries, however there has been some reshuffling in the rankings. These are not as dramatic as they might seem. The `color` property has vanished from the chart, however this only represents a change from 74% to 67%. It is joined however by a reduction in usage of `background-color` for 65% to 63%, which makes us wonder if some framework, or perhaps WordPress has stopped using this in a stylesheet.
 
-Another interesting point to note is that in 2020 font-size appeared in 73% of media blocks, and was fifth on the list. In 2021, it showed up in 60% of blocks, appearing at 12th. This year it has gained ground, back to 76% and sixth place.
+Another interesting point to note is that in 2020 `font-size` appeared in 73% of media blocks, and was fifth on the list. In 2021, it showed up in 60% of blocks, appearing at 12th. This year it has gained ground, back to 76% and sixth place.
 
 ## Feature Queries
 
-Features queries, testing for support of a CSS feature, were found in 40% of mobile pages and 38% of desktop pages. This was down from a figure of 48% in 2021. This may indicate that support for common features tested has become great enough for people not to worry about testing for the feature before use.
+Features queries, used for testing for support of a CSS feature, were found on 40% of mobile pages and 38% of desktop pages. This was down from a figure of 48% in 2021. This may indicate that support for common features tested has become great enough for people not to worry about testing for the feature before use.
 
 The number of feature query blocks per page is 4 at the 75th percentile, and at the 90th percentile 7 for desktop and 8 for mobile. We did find one site however with 1,722 feature query blocks.
 
@@ -1039,9 +1045,9 @@ The number of feature query blocks per page is 4 at the 75th percentile, and at 
   )
 }}
 
-As last year, the most popular feature tested for in feature queries was `position: sticky`, however this has fallen from 53% to 36% of occurrences, perhaps due to the improved browser support for this feature.
+As with last year, the most popular feature tested for in feature queries was `position: sticky`, however this has fallen from 53% to 36% of occurrences, perhaps due to the improved browser support for this feature.
 
-Non-standard features show up strongly in these tests, with touch-callout (-webkit-touch-callout) and ime-align (-ms-ime-align). The former has grown in usage from 5% to 11%, while ime-align has dropped from 7% to 5%.
+Non-standard features show up strongly in these tests, with `touch-callout` (`-webkit-touch-callout`) and `ime-align` (`-ms-ime-align`). The former has grown in usage from 5% to 11%, while `ime-align` has dropped from 7% to 5%.
 
 {{ figure_markup(
     image="supports-props.png",
@@ -1054,21 +1060,21 @@ Non-standard features show up strongly in these tests, with touch-callout (-webk
   )
 }}
 
-Having tested for support, which properties are then used inside these feature query blocks? The `object-fit` property came out top, the mask- properties making a good showing, along with their `-webkit-` counterparts. This is likely due to the lack of interoperability for masking until recently, the properties still requiring a `-webkit` prefix for Chrome.
+Having tested for support, which properties are then used inside these feature query blocks? The `object-fit` property came out top, the `mask-*` properties making a good showing, along with their `-webkit-mask-*` counterparts. This is likely due to the lack of interoperability for masking until recently, with the properties still requiring a `-webkit` prefix for Chrome.
 
-While the `display` property features in the top 20, you have to go a long way down the list to find any grid- properties. The `grid-template-columns` property being found in 2% of feature query blocks.
+While the `display` property features in the top 20, you have to go a long way down the list to find any grid properties. The `grid-template-columns` property being found in 2% of feature query blocks.
 
 ## Internationalization
 
-English is described as a horizontal top to bottom language, because sentences are written horizontally, starting at the top of the page. The script direction runs left-to-right. Arabic, Hebrew and Urdu are also horizontal top to bottom languages, but have a script direction of right-to-left. There are also languages that are written vertically, from top to bottom—such as Chinese, Japanese, and Mongolian. CSS has evolved to better cope with these different writing modes and script directions.
+English is described as a horizontal top to bottom language, because sentences are written horizontally, starting at the top of the page. The script direction runs left-to-right (LTR). Arabic, Hebrew, and Urdu are also horizontal top to bottom languages, but have a script direction of right-to-left (RTL). There are also languages that are written vertically, from top to bottom, such as Chinese, Japanese, and Mongolian. CSS has evolved to better cope with these different writing modes and script directions.
 
 ### Direction
 
-The number of pages using the direction property to set CSS either on the <body> or <html> element remained unchanged from 2021, with 11% of pages setting it on <html> and 3% on <body>. <a hreflang="en" href="https://www.w3.org/International/questions/qa-html-dir">It's recommended to use HTML</a>, rather than CSS to set direction, so a lower number here matches that best practice.
+The number of pages using the `direction` property to set CSS either on the `<body>` or `<html>` element remained unchanged from 2021, with 11% of pages setting it on `<html>` and 3% on `<body>`. <a hreflang="en" href="https://www.w3.org/International/questions/qa-html-dir">It's recommended to use HTML</a>, rather than CSS to set `direction`, so a lower number here matches that best practice.
 
 ## Logical and physical properties
 
-Logical or flow-relative properties such as border-block-start and values such as start for text-align are useful for internationalization, as they follow the flow of text rather than being tied to the physical dimensions of the screen. Browser support for these properties is now excellent, so we wondered whether we would see more adoption.
+Logical or flow-relative properties such as `border-block-start` and values such as `start` for `text-align` are useful for internationalization, as they follow the flow of text rather than being tied to the physical dimensions of the screen. Browser support for these properties is now excellent, so we wondered whether we would see more adoption.
 
 {{ figure_markup(
     image="logical-props.png",
@@ -1080,11 +1086,11 @@ Logical or flow-relative properties such as border-block-start and values such a
   )
 }}
 
-Logical property usage has increased slightly from 2021, up from 4% to 5%. However, the chart for 2022 looks very different to the one for 2021. Overwhelmingly people are using logical properties to set margin properties, up to 70% from 26%. The most popular margin- properties are margin-inline-start and margin-inline-end, they are found in 9% of total pages. These are particularly useful for making sure that spacing between a label and following field, for example, works in the same way in a LTR and RTL script.
+Logical property usage has increased slightly from 2021, up from 4% to 5%. However, the chart for 2022 looks very different to the one for 2021. Overwhelmingly, people are using logical properties to set `margin` properties, up to 70% from 26%. The most popular `margin` properties are `margin-inline-start` and `margin-inline-end`, found on 9% of total pages. These are particularly useful for making sure that spacing between a label and following field, for example, works in the same way in a LTR and RTL script.
 
 ### Ruby
 
-Once again we checked for usage of CSS Ruby, this is a collection of properties used for interlinear annotation, which are short runs of text alongside the base text.
+Once again we checked for usage of [CSS Ruby](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Ruby), a collection of properties used for interlinear annotation, which are short runs of text alongside the base text.
 
 {{ figure_markup(
     content="0.2%",
@@ -1095,7 +1101,7 @@ Once again we checked for usage of CSS Ruby, this is a collection of properties 
   )
 }}
 
-Its usage is still tiny, but has increased from 2021. In only 8,157 desktop pages and 9,119 mobile pages were found to be using it—less than 0.1% of all pages analyzed. This year 16,698 desktop, and 21,266 mobile pages—or 0.2% of all pages analyzed—were using it.
+Its usage is still tiny, but has increased from 2021. In only 8,157 desktop pages and 9,119 mobile pages were found to be using it—less than 0.1% of all pages analyzed. This year, 16,698 desktop and 21,266 mobile pages—or 0.2% of all pages analyzed—were using it.
 
 ## CSS in JS
 
@@ -1113,13 +1119,11 @@ The use of CSS-in-JS has not increased from last year, staying at 3%. This usage
 
 ## Houdini
 
-There is still very little usage of Houdini on the open web, looking at the number of pages using animated custom properties shows only a small increase since 2021. We also looked at usage of the Houdini Paint API. We do find instances of this in use on the web. By looking at the names of worklets used, much of this is this <a hreflang="en" href="https://css-houdini.rocks/smooth-corners/">Smooth corners</a> worklet, indicating that people are using it as a progressive enhancement, given that this can fall back nicely to a regular border-radius.
+There is still very little usage of [Houdini](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Houdini) on the open web. Looking at the number of pages using animated custom properties shows only a small increase since 2021. We also looked at usage of the Houdini Paint API. We do find instances of this in use on the web. By looking at the names of worklets used, much of this is the <a hreflang="en" href="https://css-houdini.rocks/smooth-corners/">smooth corners</a> worklet, indicating that people are using it as a progressive enhancement, given that this can fall back nicely to a regular `border-radius`.
 
 ## Sass
 
-Preprocessors like Sass can be seen as a good indicator of what developers want to be able to do with CSS, but can't. And, with CSS increasing in power, a common question from developers is whether we need to use Sass at all. We can see from the rise in custom properties usage, that one common preprocessor use, to be able to have variables or constants, has now a built-in CSS equivalent.
-
-Looking at the function calls shows that color functions are still a very popular use of Sass, something that may well soon be replaced with new CSS color functions such as color-mix(). There are some changes from last year. The darken function has dropped 2 percentage points to 14% and third place. The lighten function has, however, gained a points.
+Preprocessors like Sass can be seen as a good indicator of what developers want to be able to do with CSS, but can't. And, with CSS increasing in power, a common question from developers is whether we need to use Sass at all. We can see from the rise in custom properties usage, that one common preprocessor use—the ability to have variables or constants—now has a built-in CSS equivalent.
 
 {{ figure_markup(
     image="sass-function-calls.png",
@@ -1132,7 +1136,7 @@ Looking at the function calls shows that color functions are still a very popula
   )
 }}
 
-Looking at control flow statements we see a small increase in `@for` and `@each`, however `@while` has increased from 2% to 7%.
+Looking at the function calls shows that color functions are still a very popular use of Sass, something that may well soon be replaced with <a href="https://www.w3.org/TR/css-color-5/" hreflang="en">new CSS color functions</a> such as `color-mix()`. There are some changes from last year. The `darken` function has dropped 2 percentage points to 14% and third place. The `lighten` function has, however, gained a points.
 
 {{ figure_markup(
     image="sass-control-flow-statements.png",
@@ -1144,7 +1148,7 @@ Looking at control flow statements we see a small increase in `@for` and `@each`
   )
 }}
 
-Nesting is also interesting, given that a future spec for CSS Nesting is currently in development and discussion at the CSS Working Group. Nesting in SCSS sheets is very common, and can be identified by looking for the & character. As with last year pseudo-classes such as :hover, and classes such as .active make up most cases of nesting. All usage increased slightly, however & descendent increased 7 percentage points from 18% to 25%. Implicit nesting is not measured in this survey, as it does not use special characters.
+Looking at control flow statements we see a small increase in `@for` and `@each`, however `@while` has increased from 2% to 7%.
 
 {{ figure_markup(
     image="sass-nesting.png",
@@ -1157,11 +1161,13 @@ Nesting is also interesting, given that a future spec for CSS Nesting is current
   )
 }}
 
+Nesting is also interesting, given that a future spec for CSS Nesting is currently in development and discussion at the CSS Working Group. Nesting in SCSS sheets is very common, and can be identified by looking for the `&` character. As with last year pseudo-classes such as `:hover`, and classes such as `.active` make up most cases of nesting. All usage increased slightly, however `& descendent` increased 7 percentage points from 18% to 25%. Implicit nesting is not measured in this survey, as it does not use special characters.
+
 ## CSS for print
 
 {{ figure_markup(
     content="5%",
-    caption="The percentage of desktop pages with print specific styles.",
+    caption="The percentage of desktop pages with print-specific styles.",
     classes="big-number",
     sheets_gid="2112165521",
     sql_file="print_stylesheet_adoption.sql"
@@ -1181,9 +1187,9 @@ We wondered whether developers were creating print stylesheets to provide a bett
   )
 }}
 
-Of the pages using print styles, over half changed the value of display—perhaps to simplify a grid or flex layout for print. We also see people changing colors, tweaking margin and padding, and setting the font-size. At 34% is the content property, used to insert generated content.
+Of the pages using print styles, over half changed the value of `display`—perhaps to simplify a grid or flex layout for print. We also see people changing colors, tweaking margin and padding, and setting the `font-size`. At 34% is the `content` property, used to insert generated content.
 
-Print is a fragmented medium, the content is fragmented into pages, and we have a set of fragmentation properties that aim to give some control over how these breaks happen. For example, developers usually want to avoid a heading being the last thing on a page, or a caption being disconnected from the figure it relates to.
+Print is a fragmented medium; the content is fragmented into pages, and we have a set of fragmentation properties that aim to give some control over how these breaks happen. For example, developers usually want to avoid a heading being the last thing on a page, or a caption being disconnected from the figure it relates to.
 
 {{ figure_markup(
     image="print-fragmentation-props.png",
@@ -1198,13 +1204,13 @@ Print is a fragmented medium, the content is fragmented into pages, and we have 
 
 We see in this chart that many developers are using the old fragmentation properties of `page-break-inside`, `page-break-after`, and `page-break-before`, rather than the new properties such as `break-before`, which has very low usage.
 
-The orphans property appears in 22% of print stylesheets, despite lacking support in Firefox. This property defines the number of lines that should be left at the bottom of a page before a fragmentation break. The widows property (which sets the number of lines on their own after a fragmentation break) is seen with around the same frequency. It is likely that people are setting the same value for both.
+The `orphans` property appears in 22% of print stylesheets, despite lacking support in Firefox. This property defines the number of lines that should be left at the bottom of a page before a fragmentation break. The `widows` property (which sets the number of lines on their own after a fragmentation break) is seen with around the same frequency. It is likely that people are setting the same value for both.
 
 ### Paged media
 
-There is an entire specification for dealing with Paged Media, and CSS for print. However, this has been poorly implemented in browsers. To find a good implementation of these features you need to use a print specific user agent.
+There is an entire specification for dealing with Paged Media, and CSS for print. However, this has been poorly implemented in browsers. To find a good implementation of these features you need to use a print-specific user agent.
 
-There is some browser support for the [@page](https://developer.mozilla.org/en-US/docs/Web/CSS/@page) rule, and its pseudo-classes, and we did find developers using these to set different page properties for the first page, and the left and right pages of a spread.
+There is some browser support for the [`@page`](https://developer.mozilla.org/en-US/docs/Web/CSS/@page) rule and its pseudo-classes, and we did find developers using these to set different page properties for the first page, and the left and right pages of a spread.
 
 <figure>
   <table>
@@ -1241,7 +1247,7 @@ There is some browser support for the [@page](https://developer.mozilla.org/en-U
   ) }}</figcaption>
 </figure>
 
-Of people using these pseudo-classes the use was mostly to set the page margins, and also the size of the page.
+Of people using these pseudo-classes, usage was mostly to set the page margins, and also the size of the page.
 
 ## Meta
 
@@ -1250,8 +1256,6 @@ This section rounds up some general information about CSS usage, for example how
 ### Declaration repetition
 
 In 2020 and 2021, analysis was done to determine the amount of "declaration repetition". This aims to identify how efficient a stylesheet is by looking for the number of declarations using the same property and value.
-
-In 2021 it was reported there was a slight drop in repetition, this year there is a slight rise. This metric does therefore seem fairly stable year-on-year.
 
 {{ figure_markup(
     image="repetition.png",
@@ -1263,11 +1267,22 @@ In 2021 it was reported there was a slight drop in repetition, this year there i
   )
 }}
 
+In 2021 it was reported there was a slight drop in repetition, this year there is a slight rise. This metric does therefore seem fairly stable year-on-year.
+
 ### Shorthands and longhands
 
-In CSS a shorthand property is one that can set a number of longhand properties in one declaration. For example, the shorthand background property can be used to set all background longhand properties—background-attachment, background-clip, background-color, background-image, background-origin, background-position, background-repeat, and background-size.
+In CSS, a shorthand property is one that can set a number of longhand properties in one declaration. For example, the shorthand property `background` can be used to set all of the following longhand properties:
 
-When developers mix shorthand properties like background and longhand properties like background-size in a stylesheet, it is always best to have the longhands come after the shorthands. We looked at instances of this to see which longhands were most common.
+- `background-attachment`
+- `background-clip`
+- `background-color`
+- `background-image`
+- `background-origin`
+- `background-position`
+- `background-repeat`
+- `background-size`
+
+When developers mix shorthand properties like `background` and longhand properties like `background-size` in a stylesheet, it is always best to have the longhands come after the shorthands. We looked at instances of this to see which longhands were most common.
 
 {{ figure_markup(
     image="shorthand-first-props.png",
@@ -1280,11 +1295,11 @@ When developers mix shorthand properties like background and longhand properties
   )
 }}
 
-As in 2020 and 2021, background-size came out top of the chart, and there was little difference to be seen from 2021.
+As in 2020 and 2021, `background-size` came out top of the chart, and there was little difference to be seen from 2021.
 
 ### Unrecoverable syntax errors
 
-To check for unrecoverable errors, we use the <a hreflang="en" href="https://github.com/reworkcss/css">Rework</a> CSS parsing engine. An unrecoverable error is one where the error is so bad, the full stylesheet is unable to be parsed by Rework. Last year, 0.94% of desktop pages, and 0.55% of mobile pages contained an unrecoverable error. This year 13% of desktop and 12% of mobile pages had such an error. This seems like a large jump, however due to some changes in methodology (adding size thresholds) it is likely that not all of the instances are unrecoverable errors.
+As in previous years, we use the <a hreflang="en" href="https://github.com/reworkcss/css">Rework</a> engine for CSS parsing. An unrecoverable error is one where the error is so bad, the full stylesheet is unable to be parsed by Rework. Last year, 0.94% of desktop pages, and 0.55% of mobile pages contained an unrecoverable error. This year, 13% of desktop and 12% of mobile pages had such an error. This seems like a large jump, however due to some changes in methodology (adding size thresholds) it is likely that not all of the instances are unrecoverable errors.
 
 ## Nonexistent properties
 
@@ -1301,12 +1316,12 @@ As in previous years we checked for declarations that had valid syntax, but refe
   )
 }}
 
-The top mystery property is -archetype, which is now appearing in 11% of cases of stylesheets with nonexistent properties. This property has jumped from 4% last year to 11% to take the top spot. The second property is font-smoothing with a drop of 4% points from last year.  This appears to be an unprefixed version of -webkit-font-smoothing that does not actually exist. The use of the malformed webkit-transition (which should be -webkit-transition) has dropped from 14% to 3%. T, this makes us think it was perhaps getting into a large number of stylesheets via a framework or other third party, that has since updated to fix the problem.
+The top mystery property is `-archetype`, which is now appearing in 11% of cases of stylesheets with nonexistent properties. This property has jumped from 4% last year to 11% to take the top spot. The second property is `font-smoothing` with a drop of 4% points from last year.  This appears to be an unprefixed version of `-webkit-font-smoothing` that does not actually exist. The use of the malformed `webkit-transition` (which should be `-webkit-transition`) has dropped from 14% to 3%. This makes us think it was perhaps getting into a large number of stylesheets via a framework or other [third party](./third-parties) that has since been updated to fix the problem.
 
 ## Conclusion
 
-CSS continues to evolve at a rapid pace, however we can see from the data that new features are adopted quite slowly, even when they have been in all major engines for several years. There are a few highly requested features, such as container queries, landing in browsers as I write this conclusion. It will be interesting to see whether the uptake for these features will match the demand for them.
+CSS continues to evolve at a rapid pace, however we can see from the data that new features are adopted quite slowly, even when they have been in all major engines for several years. There are a few highly requested features, such as container queries, landing in browsers as of this writing. It will be interesting to see whether the uptake for these features will match the demand for them.
 
-Something that has been apparent in this data is how much popular platforms, in particular WordPress, can impact usage statistics. We can see WordPress class and custom property names clearly in the data, what is harder to see are the properties and values used by classes added to the majority of WordPress sites. If WordPress adopts a new feature, as part of one of these standard classes, we should expect to see a sudden uptick in usage.
+Something that has been apparent in this data is how much popular platforms, in particular WordPress, can impact usage statistics. We can see WordPress class and custom property names clearly in the data, but what is harder to see are the properties and values used by classes added to the majority of WordPress sites. If WordPress adopts a new feature, as part of one of these standard classes, we should expect to see a sudden uptick in usage.
 
 As noted in last year's conclusion, the data tells a story of gradual, steady adoption of new features (such as grid layout) or best practices (such as using logical rather than physical properties). We look forward to seeing how these changes develop in the years to come.
