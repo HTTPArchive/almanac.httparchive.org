@@ -7,14 +7,16 @@ reviewers: [clarkio, kushaldas]
 analysts: [VictorLeP, vikvanderlinden, GJFR]
 editors: [tunetheweb]
 translators: []
+SaptakS_bio: Saptak S is a human rights centered web developer, focusing on usability, security, privacy and accessibility topics in web development. He is a contributor and maintainer of various different open source projects like <a hreflang="en" href="https://www.a11yproject.com">The A11Y Project</a>, <a hreflang="en" href="https://onionshare.org/">OnionShare</a> and <a hreflang="en" href="https://wagtail.org/">Wagtail</a>. You can find him blogging at <a hreflang="en" href="https://saptaks.blog">saptaks.blog</a>.
+lirantal_bio: Known for his open source and JavaScript security initiatives, Liran Tal is an award-winning software developer, security researcher, and open source champion in the JavaScript community. He's an internationally recognized GitHub Star, acknowledged for his open source advocacy, and has received the OpenJS Foundation's Pathfinder for Security for his work on Node.js security. His contributions to developer security education include leading OWASP projects, building supply chain security tools, participation in CNCF and OpenSSF initiatives, and authoring books such as O'Reilly's Serverless Security. He leads the developer advocacy team at Snyk.io and is on a mission to empower developers with better application security skills.
 results: https://docs.google.com/spreadsheets/d/1cwJ43NL2IN2PxJa5oiOoJCRkSh566XE_k9uHnGJdWeg/
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: People's personal details and various aspects of life are becoming more and more digital everyday, making security and privacy extremely crucial. It is the responsibility of the websites to ensure that it's users are protected by adopting the security best practices.
+featured_stat_1: +14%
+featured_stat_label_1: Relative increase in adoption for Content-Security-Policy header from 2021
+featured_stat_2: 428
+featured_stat_label_2: Websites having `Clear-Site-Data` header
+featured_stat_3: +85%
+featured_stat_label_3: Relative increase in adoption of Permissions-Policy from 2021
 ---
 
 ## Introduction
