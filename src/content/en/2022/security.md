@@ -1,7 +1,6 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Security
-#TODO - Review and update chapter description
 description: Security chapter of the 2022 Web Almanac covering Transport Layer Security, content inclusion (CSP, Feature Policy, SRI), web defense mechanisms (tackling XSS, XS-Leaks), and drivers of security mechanism adoptions.
 authors: [SaptakS, lirantal, clarkio]
 reviewers: [clarkio, kushaldas]
@@ -16,20 +15,19 @@ featured_stat_2: TODO
 featured_stat_label_2: TODO
 featured_stat_3: TODO
 featured_stat_label_3: TODO
-unedited: true
 ---
 
 ## Introduction
 
 As people’s personal details continue to become more digital, security and privacy are becoming extremely crucial across the internet. It’s the website owner’s responsibility that they can secure the data they are taking from the user. Hence, it is essential for them to adopt all the security best practices to ensure protection of the user against vulnerabilities that malwares can exploit to get sensitive information.
 
-Like previous years, we have analyzed the adoption and usage of security methods and best practices by the web community. We have analyzed metrics related to the bare essential security measures that every website should adopt such as transport security and proper cookie management. We have also discussed the data related to the adoption of different security headers and how they help in content inclusion and preventing various malicious attacks.
+Like [previous years](../2021/security), we have analyzed the adoption and usage of security methods and best practices by the web community. We have analyzed metrics related to the bare essential security measures that every website should adopt such as [transport security](#transport-security) and [proper cookie management](#cookies). We have also discussed the data related to the adoption of different security headers and how they help in [content inclusion](#content-inclusion) and [preventing various malicious attacks](#attack-preventions).
 
-We looked at correlations for adoption of security measures with the location, technological stack and website popularity. We hope that such correlations encourage all technological stacks to aim for better security measures by default. We also discuss some well-known URIs that help towards vulnerability disclosure and other security related settings based on Web Application Security Working Group’s standards and drafts.
+We looked at correlations for [adoption of security measures](#drivers-of-security-mechanism-adoption) with the location, technological stack and website popularity. We hope that such correlations encourage all technological stacks to aim for better security measures by default. We also discuss some [well-known URIs](#well-known-uris) that help towards vulnerability disclosure and other security related settings based on Web Application Security Working Group’s standards and drafts.
 
 ## Transport security
 
-Transport Layer Security ensures secure communication of data and resources between the user and the websites. HTTPS uses TLS to encrypt all communication between the client and the server.
+Transport Layer Security ensures secure communication of data and resources between the user and the websites. [HTTPS](https://developer.mozilla.org/en-US/docs/Glossary/https) uses [TLS](https://www.cloudflare.com/en-gb/learning/ssl/transport-layer-security-tls/) to encrypt all communication between the client and the server.
 
 {{ figure_markup(
   caption="The percentage of requests that use HTTPS on desktop.",
@@ -40,7 +38,7 @@ Transport Layer Security ensures secure communication of data and resources betw
 )
 }}
 
-94% of total requests in desktop and 93% of total requests in mobile are made over HTTPS. All major browsers now have an HTTPS-only mode to show warning if a website uses HTTP instead of HTTPS.
+94% of total requests in desktop and 93% of total requests in mobile are made over HTTPS. All major browsers now have an [HTTPS-only mode](https://support.mozilla.org/en-US/kb/https-only-prefs) to show warning if a website uses HTTP instead of HTTPS.
 
 {{ figure_markup(
   image="security-https-usage-by-site.png",
@@ -52,7 +50,7 @@ Transport Layer Security ensures secure communication of data and resources betw
   )
 }}
 
-The percentage of homepages that are served over HTTPS continues to be lower compared to the total requests because a lot of the requests to a website are dominated by third-party services like fonts, CDN, etc. which have a higher HTTPS adoption. We do see a slight increase from last year in the percentage. 89.3% of homepages are now served over HTTPS on desktop compared to 84.3% last year. Similarly, in our mobile dataset, 85.5% of homepages are served over HTTPS compared to 81.2% last year.
+The percentage of homepages that are served over HTTPS continues to be lower compared to the total requests because a lot of the requests to a website are dominated by [third-party](./third-parties) services like fonts, CDN, etc. which have a higher HTTPS adoption. We do see a slight increase from last year in the percentage. 89.3% of homepages are now served over HTTPS on desktop compared to 84.3% last year. Similarly, in our mobile dataset, 85.5% of homepages are served over HTTPS compared to 81.2% last year.
 
 ### Protocol versions
 
@@ -75,7 +73,7 @@ In the above graph, we see that 70% of homepages in mobile and 67% of homepages 
 
 ### Cipher suites
 
-A cipher suite is a set of cryptographic algorithms that the client and server must agree on before they can begin communicating securely using TLS.
+A [cipher suite](https://learn.microsoft.com/en-au/windows/win32/secauthn/cipher-suites-in-schannel) is a set of cryptographic algorithms that the client and server must agree on before they can begin communicating securely using TLS.
 
 {{ figure_markup(
   image="security-distribution-of-cipher-suites.png",
@@ -87,7 +85,7 @@ A cipher suite is a set of cryptographic algorithms that the client and server m
   )
 }}
 
-Modern [Galois/Counter Mode (GCM)](https://en.wikipedia.org/wiki/Galois/Counter_Mode) cipher modes are considered to be much more secure since they are not vulnerable to [padding attacks](https://blog.qualys.com/product-tech/2019/04/22/zombie-poodle-and-goldendoodle-vulnerabilities). TLS v1.3 [only supports GCM and other modern block cipher modes](https://datatracker.ietf.org/doc/html/rfc8446#page-133) making it more secure. Another factor that determines the usage of a cipher suite is the key size for the encryption and decryption. We still see 128-bit key size being widely used. Hence, we don't see much difference from last year's graph with  `AES_128_GCM` continuing to be the most used cipher suite with 79% usage.
+Modern [Galois/Counter Mode (GCM)](https://en.wikipedia.org/wiki/Galois/Counter_Mode) cipher modes are considered to be much more secure since they are not vulnerable to [padding attacks](https://blog.qualys.com/product-tech/2019/04/22/zombie-poodle-and-goldendoodle-vulnerabilities). TLS v1.3 [only supports GCM and other modern block cipher modes](https://datatracker.ietf.org/doc/html/rfc8446#page-133) making it more secure. It also removes the trouble of [cipher suite ordering](https://go.dev/blog/tls-cipher-suites). Another factor that determines the usage of a cipher suite is the key size for the encryption and decryption. We still see 128-bit key size being widely used. Hence, we don't see much difference from last year's graph with  `AES_128_GCM` continuing to be the most used cipher suite with 79% usage.
 
 {{ figure_markup(
   image="security-forward-secrecy-support.png",
@@ -103,7 +101,7 @@ TLS v1.3 also makes [forward secrecy](https://en.wikipedia.org/wiki/Forward_secr
 
 ### Certificate Authority
 
-A Certificate Authority or CA is a company or organization that issues the TLS certificate to the websites that can be recognized by browsers and then establish a secure communication channel with the website.
+A [Certificate Authority](https://www.ssl.com/faqs/what-is-a-certificate-authority/) or CA is a company or organization that issues the TLS certificate to the websites that can be recognized by browsers and then establish a secure communication channel with the website.
 
 <figure>
   <table>
@@ -165,14 +163,14 @@ A Certificate Authority or CA is a company or organization that issues the TLS c
   <figcaption>{{ figure_link(caption="Top 10 certificate issuers for websites.", sheets_gid="1306037372", sql_file="tls_ca_issuers_pages.sql") }}</figcaption>
 </figure>
 
-Let's Encrypt (or R3) continues to lead the charts with 48% of websites in desktop and 52% of websites in mobile using certificates issued by them. Let's Encrypt being a non-profit organization has played an important role in the adoption of HTTPS and they continue to issue an [increasing number of certificates](https://letsencrypt.org/stats/#daily-issuance). We would also like to take a moment to recognise one of its founders, Peter Eckersly, who unfortunately passed away recently.
+[Let's Encrypt](https://letsencrypt.org/) (or R3) continues to lead the charts with 48% of websites in desktop and 52% of websites in mobile using certificates issued by them. Let's Encrypt being a non-profit organization has played an important role in the adoption of HTTPS and they continue to issue an [increasing number of certificates](https://letsencrypt.org/stats/#daily-issuance). We would also like to take a moment to recognise one of its founders, [Peter Eckersly](https://community.letsencrypt.org/t/peter-eckersley-may-his-memory-be-a-blessing/183854), who unfortunately passed away recently.
 
-Cloudflare continues to be in second position with its similarly free certificates for its customers. Cloudflare CDNs increase the usage of Elliptic Curve Cryptography (ECC) certificates which are smaller and more efficient than RSA certificates but are often difficult to deploy, due to the need to also continue to serve non-ECC certificates to older clients. We see as Let’s Encrypt and Cloudflare’s percentage continues to increase, the percentage for usage of other CAs are decreasing a little.
+[Cloudflare](https://developers.cloudflare.com/ssl/ssl-tls/certificate-authorities/) continues to be in second position with its similarly free certificates for its customers. Cloudflare CDNs increase the usage of [Elliptic Curve Cryptography (ECC)](https://www.digicert.com/faq/ecc.htm) certificates which are smaller and more efficient than RSA certificates but are often difficult to deploy, due to the need to also continue to serve non-ECC certificates to older clients. We see as Let’s Encrypt and Cloudflare’s percentage continues to increase, the percentage for usage of other CAs are decreasing a little.
 
 
 ### HTTP Strict Transport Security
 
-HTTP Strict Transport Security (HSTS) is a response header that informs the browser to automatically convert all attempts to access a site using HTTP to HTTPS requests instead.
+[HTTP Strict Transport Security (HSTS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) is a response header that informs the browser to automatically convert all attempts to access a site using HTTP to HTTPS requests instead.
 
 {{ figure_markup(
   caption="The percentage of requests that have HSTS header on mobile.",
@@ -213,13 +211,13 @@ The median value for `max-age` attribute in HSTS headers over all requests is 36
 
 ## Cookies
 
-An HTTP cookie is a set of data about the user that the server sends to the browser. A cookie can be used for things like session management, personalization, tracking and other stateful information related to the user over different requests.
+An [HTTP cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) is a set of data about the user that the server sends to the browser. A cookie can be used for things like session management, personalization, tracking and other stateful information related to the user over different requests.
 
-If a cookie is not set properly, it can be susceptible to many different forms of attacks such as session hijacking, Cross-Site Request Forgery (CSRF), Cross-Site Script Inclusion (XSSI) and various other Cross-Site Leak vulnerabilities.
+If a cookie is not set properly, it can be susceptible to many different forms of attacks such as [session hijacking](https://owasp.org/www-community/attacks/Session_hijacking_attack), [Cross-Site Request Forgery (CSRF)](https://owasp.org/www-community/attacks/csrf), [Cross-Site Script Inclusion (XSSI)](https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/11-Client_Side_Testing/13-Testing_for_Cross_Site_Script_Inclusion) and various other [Cross-Site Leak](https://xsleaks.dev/) vulnerabilities.
 
 ### Attributes
 
-To defend against the above mentioned threats, developers can use 3 different attributes in a cookie: `HttpOnly`, `Secure` and `SameSite`. The `Secure` attribute is similar to the `HSTS` header as it also ensures that the cookies are always sent over HTTPS, preventing Man in the Middle attacks. `HttpOnly` ensures that a cookie is not accessible from any JavaScript code, preventing Cross-Site Scripting Attacks.
+To defend against the above mentioned threats, developers can use 3 different attributes in a cookie: `HttpOnly`, `Secure` and `SameSite`. The `Secure` attribute is similar to the `HSTS` header as it also ensures that the cookies are always sent over HTTPS, preventing [Manipulator in the Middle attacks](https://owasp.org/www-community/attacks/Manipulator-in-the-middle_attack). `HttpOnly` ensures that a cookie is not accessible from any JavaScript code, preventing [Cross-Site Scripting](https://owasp.org/www-community/attacks/xss/) Attacks.
 
 {{ figure_markup(
   image="security-httponly-secure-samesite-cookie-usage.png",
@@ -230,7 +228,7 @@ To defend against the above mentioned threats, developers can use 3 different at
   sql_file="cookie_attributes.sql"
 ) }}
 
-There are 2 different kinds of cookies—First Party and Third Party. First-party cookies are usually set by the direct server that you are visiting. Third-party cookies are created by third-party services and are often used for tracking and ad-serving. 37% of the first-party cookies on the desktop have `Secure` and 36% of them have `HttpOnly`. However, in the third party cookies we see that 90% of cookies have `Secure` and 21% of cookies have `HttpOnly`. The percentage of `HttpOnly` is less in third party cookies, because they mostly do want to allow access to them by JavaScript code.
+There are 2 different kinds of cookies — First Party and Third Party. First-party cookies are usually set by the direct server that you are visiting. Third-party cookies are created by third-party services and are often used for tracking and ad-serving. 37% of the first-party cookies on the desktop have `Secure` and 36% of them have `HttpOnly`. However, in the third party cookies we see that 90% of cookies have `Secure` and 21% of cookies have `HttpOnly`. The percentage of `HttpOnly` is less in third party cookies, because they mostly do want to allow access to them by JavaScript code.
 
 {{ figure_markup(
   image="security-samesite-cookie-attributes.png",
@@ -257,7 +255,7 @@ There are two different ways to set the time when a cookie is deleted: `Max-Age`
   )
 }}
 
-Unlike last year, where we saw that the median for `Max-Age` was 365 days but the median for `Expires` was 180 days, this year it’s around 365 days for both. Hence the median for real maximum age has gone up from 180 days to 365 days this year. Even though the `Max-Age` is 729 days and `Expires` is 730 days in the 90th percentile, Chrome has been planning to put a cap of 400 days for both `Max-Age` and `Expires`.
+Unlike last year, where we saw that the median for `Max-Age` was 365 days but the median for `Expires` was 180 days, this year it’s around 365 days for both. Hence the median for real maximum age has gone up from 180 days to 365 days this year. Even though the `Max-Age` is 729 days and `Expires` is 730 days in the 90th percentile, Chrome has been planning to put a [cap of 400 days](https://chromestatus.com/feature/4887741241229312) for both `Max-Age` and `Expires`.
 
 <figure>
   <table>
@@ -330,7 +328,7 @@ The most prevalent `Expires` has some interesting values. We see that the most u
 
 A website’s content often takes many shapes and requires resources such as CSS, JavaScript, or other media assets like fonts and images. These are frequently loaded from external service providers of the likes of remote storage services of cloud-native infrastructure, or from content delivery networks (CDNs) with the aim of reducing worldwide networking round-trips just to serve the content.
 
-However, ensuring that the content we include on the website hasn’t been tampered with is of high stakes, and the impact of which can be devastating. Content inclusion is of even higher importance these days given the recent rise of awareness to supply chain security, and growing incidents of Magecart attacks that target website content systems to inject persistent malware through means of cross-site scripting (XSS) vulnerabilities and others.
+However, ensuring that the content we include on the website hasn’t been tampered with is of high stakes, and the impact of which can be devastating. Content inclusion is of even higher importance these days given the recent rise of awareness to supply chain security, and growing incidents of [Magecart attacks](https://www.imperva.com/learn/application-security/magecart/) that target website content systems to inject persistent malware through means of cross-site scripting (XSS) vulnerabilities and others.
 
 ### Content Security Policy
 
@@ -367,7 +365,7 @@ The top three CSP directives that we’re seeing serving more than a quarter of 
 
 The `upgrade-insecure-requests` policy’s high adoption rate could perhaps be attributed to the high adoption of TLS requests as a de-facto standard. However, despite `block-all-mixed-content` being considered deprecated as of this date, it’s showing a high adoption rate. This perhaps speaks to the fast rate at which the CSP specification is advancing and users having a hard time keeping up to date.
 
-More to do with mitigating cross-site scripting attacks is Google's security initiative for Trusted Types, which requires native browser API support to employ a technique which helps prevent DOM-injection class of vulnerabilities. It is actively advocated by Google engineers yet is still in draft proposal mode for the W3C. Nonetheless, we record its CSP related security headers `require-trusted-types-for` and `trusted-types` at 0.1% of requests which is not a lot, but perhaps speaks to a growing trend of adoption.
+More to do with mitigating cross-site scripting attacks is Google's security initiative for [Trusted Types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types), which requires native browser API support to employ a technique which helps prevent DOM-injection class of vulnerabilities. It is actively advocated by Google engineers yet is still in [draft proposal mode](https://w3c.github.io/trusted-types/dist/spec/) for the W3C. Nonetheless, we record its CSP related security headers `require-trusted-types-for` and `trusted-types` at 0.1% of requests which is not a lot, but perhaps speaks to a growing trend of adoption.
 
 To assess whether a CSP violation from the pre-defined set of rules is occurring, websites can set the `report-uri` directive that the browser will send JSON formatted data as an HTTP POST request. Although `report-uri` requests account for 4.3% of all desktop traffic with a CSP header, it is to date a deprecated directive and has been replaced with `report-to` which accounts for 1.8% of desktop requests.
 
@@ -381,7 +379,7 @@ Content-Security-Policy: script-src 'nonce-4891cc7b20c'
 
 And then referencing that in the HTML:
 
-```
+```html
 <script nonce="nonce-4891cc7b20c">
   …
 </script>
@@ -518,7 +516,7 @@ At a per page coverage, adoption rate for the SRI security feature is still cons
   sql_file="csp_number_of_allowed_hosts.sql"
 ) }}
 
-Subresource integrity is specified as a base64 string of a computed hash of one of SHA256, SHA384 or SHA512 cryptographic functions. As a use-case reference, developers can implement them as follows:
+Subresource integrity is specified as a base64 string of a computed hash of one of SHA256, SHA384 or SHA512 cryptographic functions. As a [use-case reference](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity), developers can implement them as follows:
 
 ```
 <script src="https://example.com/example-framework.js"
@@ -591,8 +589,6 @@ Consistent with last year’s report, SHA384 continues to demonstrate the majori
 CDNs are no strangers to Subresource Integrity and provide secure defaults to their consumers by including a Subresource Integrity value as part of their URL references for content to be served on the page.
 
 The above list shows the top 10 most common hosts for which a subresource integrity value has been observed. Notable changes from last year are the Cloudflare hosts jumping from position 4 to position 3, and jsDelivr jumping from position 7 to position 6 in ranking, surpassing Bootstrap’s hosts rankings.
-
-
 
 ### Permissions Policy
 Browsers are becoming more and more powerful with time, adding more native APIs to access and control different sorts of hardware and feature sets that are made available to websites. These also introduce potential security risks to users through misuse of said features, such as malicious scripts turning on a microphone and collecting data, or fingerprinting geolocation of a device to collect location information.
@@ -794,7 +790,7 @@ One of the common ways to prevent clickjacking attacks is to prevent the browser
   <figcaption>{{ figure_link(caption="Prevalence of CSP keywords based on policies that define a `default-src` or `script-src` directive.", sheets_gid="323360740", sql_file="csp_script_source_list_keywords.sql") }}</figcaption>
 </figure>
 
-One of the mechanisms to defend against XSS attacks is by setting a restrictive `script-src` directive for the website. This ensures that JavaScript is loaded only from a trusted source and the attacker cannot inject some malicious code. `strict-dynamic` is gradually gaining more adoption across websites with 6% websites in desktop using it compared to 5% of websites last year. `strict-dynamic` is helpful if you have a root script in your HTML that dynamically loads or injects other script files. It makes use of nonce or hash on the root script and ignores other allowlists like `unsafe-inline` or individual links. It’s supported in all modern browsers apart from IE. Also, we see that `unsafe-inline` and `unsafe-eval` usage has decreased by approximately 2% from last year. This is a step in the right direction.
+One of the mechanisms to defend against XSS attacks is by setting a restrictive `script-src` directive for the website. This ensures that JavaScript is loaded only from a trusted source and the attacker cannot inject some malicious code. [`strict-dynamic`](https://content-security-policy.com/strict-dynamic/) is gradually gaining more adoption across websites with 6% websites in desktop using it compared to 5% of websites last year. `strict-dynamic` is helpful if you have a root script in your HTML that dynamically loads or injects other script files. It makes use of nonce or hash on the root script and ignores other allowlists like `unsafe-inline` or individual links. It’s supported in all modern browsers apart from IE. Also, we see that `unsafe-inline` and `unsafe-eval` usage has decreased by approximately 2% from last year. This is a step in the right direction.
 
 ### Preventing attacks using Cross-Origin policies
 
@@ -811,11 +807,11 @@ Cross Origin policies are one of the main mechanisms used to defend against micr
   height=497
 ) }}
 
-`Cross-Origin-Resource-Policy` is present on 114,111(1.46%) websites in mobile and is the most used cross origin policy. It is used to indicate to the browser whether a resource should be included from cross-origin or not. `Cross-Origin-Embedder-Policy` is now present in 2,559 websites compared to 911 websites last year. We see a similar growth in the adoption of `Cross-Origin-Opener-Policy` as well with 34,968 websites in mobile now having the header compared to 15,727 sites last year. So there is a steady growth in the adoption of all the cross-origin policies, which is great because they can be really helpful in preventing XS-Leak attacks.
+[`Cross-Origin-Resource-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy) is present on 114,111(1.46%) websites in mobile and is the most used cross origin policy. It is used to indicate to the browser whether a resource should be included from cross-origin or not. [`Cross-Origin-Embedder-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) is now present in 2,559 websites compared to 911 websites last year. We see a similar growth in the adoption of [`Cross-Origin-Opener-Policy`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) as well with 34,968 websites in mobile now having the header compared to 15,727 sites last year. So there is a steady growth in the adoption of all the cross-origin policies, which is great because they can be really helpful in preventing XS-Leak attacks.
 
 ### Preventing attacks using Clear-Site-Data
 
-Clear-Site-Data provides web developers more control over clearing of user data related to their website. For example, a web developer can now make decisions such that when a user signs out of their web site, then all related cookie, cache, storage information about the user can be removed. This helps in limiting the consequences of an attack by having a restricted amount of data stored in the browser when not needed. This is a comparatively new header which is restricted only for sites served over HTTPS and only some of the features are supported by browsers. There were only 75 sites in mobile which had `Clear-Site-Data` header in 2021 and it has increased to 428 this year. It is worth noting that often times websites use this header only in their logout pages, which are not tracked in the web almanac data.
+[Clear-Site-Data](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Clear-Site-Data) provides web developers more control over clearing of user data related to their website. For example, a web developer can now make decisions such that when a user signs out of their web site, then all related cookie, cache, storage information about the user can be removed. This helps in limiting the consequences of an attack by having a restricted amount of data stored in the browser when not needed. This is a comparatively new header which is restricted only for sites served over HTTPS and only some of the features are [supported by browsers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Clear-Site-Data#browser_compatibility). There were only 75 sites in mobile which had `Clear-Site-Data` header in 2021 and it has increased to 428 this year. It is worth noting that often times websites use this header only in their logout pages, which are not tracked in the web almanac data.
 
 <figure>
   <table>
@@ -882,7 +878,7 @@ Clear-Site-Data provides web developers more control over clearing of user data 
   <figcaption>{{ figure_link(caption="Prevalence of `Clear-Site-Data` headers.", sheets_gid="1206925009", sql_file="clear-site-data_value_prevalence.sql") }}</figcaption>
 </figure>
 
-`cache` is the most prevalent directive (63% websites in mobile) for Clear-Site-Data which could mean that many developers are using this security header more for clearing cache to probably load newer static files, than for privacy and security of the user. But directives are supposed to follow quoted-string grammar and hence this directive is invalid. It is great to see that 9% of mobile websites using this header use “*” which means that they indicate the browser to clear all user data stored. Third most used directive is again `”cache”`, but used properly this time.
+`cache` is the most prevalent directive (63% websites in mobile) for Clear-Site-Data which could mean that many developers are using this security header more for clearing cache to probably load newer static files, than for privacy and security of the user. But directives are supposed to follow [quoted-string grammar](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6) and hence this directive is invalid. It is great to see that 9% of mobile websites using this header use "*" which means that they indicate the browser to clear all user data stored. Third most used directive is again `"cache"`, but used properly this time.
 
 ### Preventing attacks using `<meta>`
 
@@ -922,7 +918,7 @@ The issue with preventing attacks using `<meta>` tag is if you set any other sec
 
 ### Web Cryptography API
 
-Web Cryptography API is a JavaScript API for performing basic cryptographic operations on a website such as random number generation, hashing, signing, encryption and decryption.
+[Web Cryptography API](https://www.w3.org/TR/WebCryptoAPI/) is a JavaScript API for performing basic cryptographic operations on a website such as random number generation, hashing, signing, encryption and decryption.
 
 <figure>
   <table>
@@ -1006,7 +1002,7 @@ The internet today is filled with bots, and hence there is a constant rise in ba
   height="617"
 ) }}
 
-Our analysis shows that 29% of desktop websites and 26% of mobile websites use a mechanism to fight malicious bots which is a significant increase from last year (11% and 10% respectively). This increase could be because of Cloudflare Bot Management which is a captcha-free solution for protection against bad bots. Last year’s data crawl didn’t track this, but identifying this was added this year and we see 6% of websites on mobile using it. Usage of reCaptcha has also increased from last year on both desktop and mobile by approximately 9%.
+Our analysis shows that 29% of desktop websites and 26% of mobile websites use a mechanism to fight malicious bots which is a significant increase from last year (11% and 10% respectively). This increase could be because of [Cloudflare Bot Management](https://www.cloudflare.com/en-gb/products/bot-management/) which is a captcha-free solution for protection against bad bots. Last year’s data crawl didn’t track this, but identifying this was added this year and we see 6% of websites on mobile using it. Usage of reCaptcha has also increased from last year on both desktop and mobile by approximately 9%.
 
 ## Drivers of security mechanism adoption
 
@@ -1149,7 +1145,7 @@ Cryptocurrencies continued to grow in popularity this year with more types avail
   sql_file="cryptominer_usage.sql"
 ) }}
 
-As an example, around July and August of 2021, there were reports of several cryptojacking campaigns and vulnerabilities1,2,3 which could be the cause for the spikes in cryptominers found in websites around that time. More recently, in April of 2022 hackers attempted to leverage the SpringShell vulnerability to set up and run crypto miners.
+As an example, around July and August of 2021, there were reports of several cryptojacking campaigns and vulnerabilities1,2,3 which could be the cause for the spikes in cryptominers found in websites around that time. More recently, in April of 2022 hackers attempted to leverage the [SpringShell vulnerability to set up and run crypto miners](https://arstechnica.com/information-technology/2022/04/hackers-hammer-springshell-vulnerability-in-attempt-to-install-cryptominers/).
 
 Getting into the specifics of the cryptominers found in use among websites on both desktop and mobile we found that the share among miners has spread from last year. For example, Coinimp’s share has shrunk since last year by about 24% while Minero.cc has grown by about 11%.
 
@@ -1170,11 +1166,11 @@ Please also note that our results may not show the actual state of the websites 
 
 ## Well-known URIs
 
-Well-known URIs are used to designate specific locations to data or services related to the overall website. A well-known URI is a URI whose path component begins with the characters "/.well-known/"
+[Well-known URIs](https://datatracker.ietf.org/doc/html/rfc8615) are used to designate specific locations to data or services related to the overall website. A well-known URI is a [URI](https://datatracker.ietf.org/doc/html/rfc3986) whose path component begins with the characters "/.well-known/"
 
 ### security.txt
 
-security.txt is a file format for websites to provide a standard for vulnerability reporting. Website providers can provide contact details, PGP key, policy, and other information in this file. White hat hackers and penetration testers can use this information to conduct security analyses on these websites and report a vulnerability.
+[security.txt](https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt-12) is a file format for websites to provide a standard for vulnerability reporting. Website providers can provide contact details, PGP key, policy, and other information in this file. White hat hackers and penetration testers can use this information to conduct security analyses on these websites and report a vulnerability.
 
 {{ figure_markup(
   image="security-usage-of-properties-in-well-known-security.png",
@@ -1190,7 +1186,7 @@ The percentage of security.txt URIs with the `expires` property has increased fr
 
 ### change-password
 
-The change-password well-known URI is a specification under the webappsec working group of W3C which is in editor’s draft state right now. This specific well-known URI was suggested as a way for users and softwares to easily identify the link to be used for changing passwords.
+The [change-password](https://w3c.github.io/webappsec-change-password-url/) well-known URI is a specification under the webappsec working group of W3C which is in editor’s draft state right now. This specific well-known URI was suggested as a way for users and softwares to easily identify the link to be used for changing passwords.
 
 {{ figure_markup(
   image="security-usage-of-change-password.png",
@@ -1206,7 +1202,7 @@ The adoption of this well-known URI is still pretty low. The specification is st
 
 ### Detecting Status Code Reliability
 
-This particular well-known URI determines the reliability of a website’s HTTP response status code. This URI is also still in editor’s draft state and may change in the future. The idea behind this well-known URI is that it should never exist in any website. So this well-known URI should never respond with an ok-status. If it redirects and returns an “ok-status”, that means the website’s status codes are not reliable.
+This particular well-known URI determines the reliability of a website’s HTTP response status code. This URI is also still in [editor’s draft](https://w3c.github.io/webappsec-change-password-url/response-code-reliability.html) state and may change in the future. The idea behind this well-known URI is that it should never exist in any website. So this well-known URI should never respond with an [ok-status](https://fetch.spec.whatwg.org/#ok-status). If it redirects and returns an "ok-status", that means the website’s status codes are not reliable.
 
 {{ figure_markup(
   image="security-detecting-status-code-reliability.png",
@@ -1226,7 +1222,7 @@ Our analysis this year shows that websites are continuing to make improvements i
 
 We found that web developers are also slowly adopting new standards and replacing the old ones. This is definitely a step in the right direction. The importance of security and privacy on the internet is growing everyday. The web keeps becoming an integral part of life for many people and hence, web developers should continue to increase the usage of web security features.
 
-There’s still a lot of progress that we need to do in setting stricter Content Security Policy. Cross-site scripting continues to be in OWASP Top 10. There needs to be wider adoption of stricter `script-src` directives to prevent such attacks. Also, more developers can look into taking advantage of Web Cryptography API. Similar efforts need to be made in adopting well-known URIs like security.txt. Not only does it provide a way for security professionals to report vulnerabilities in the website, but it also shows that the developers care about the website’s security and are open to making improvements.
+There’s still a lot of progress that we need to do in setting stricter Content Security Policy. Cross-site scripting continues to be in [OWASP Top 10](https://owasp.org/Top10/). There needs to be wider adoption of stricter `script-src` directives to prevent such attacks. Also, more developers can look into taking advantage of Web Cryptography API. Similar efforts need to be made in adopting well-known URIs like security.txt. Not only does it provide a way for security professionals to report vulnerabilities in the website, but it also shows that the developers care about the website’s security and are open to making improvements.
 
 It’s encouraging to observe the continuous progress in usage of web security over the past years, but the web community needs to continue researching and adopting more security features since the web continues to grow and security becomes more crucial.
 
