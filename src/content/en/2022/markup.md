@@ -16,7 +16,6 @@ featured_stat_2: 30 KB
 featured_stat_label_2: Median HTML document transfer size
 featured_stat_3: 29%
 featured_stat_label_3: Elements which are `div`s.
-unedited: true
 ---
 
 ## Introduction
