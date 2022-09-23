@@ -59,7 +59,9 @@ When contrasted with the total number of bytes loaded for mobile pages at the me
 
 ## JavaScript requests per page
 
-Every resource on a page accounts for one request, and scripts are no different. When many scripts are loaded, it's reasonable to think that more bytes of JavaScript may be loaded as a result.
+Every resource on a page will kick off _at least_ one request, and possibly more if a resource makes additional requests for more resources.
+
+Where script requests are concerned, the more there are, the more likely you'll not just load more JavaScript, but also increase contention between script resources that may bog down the main thread, leading to slower startup.
 
 {{ figure_markup(
     image="requests-per-page.png",
