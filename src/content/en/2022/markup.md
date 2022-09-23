@@ -178,7 +178,7 @@ Alas, there's another trend which aligns with an increasing document size, and t
 {{ figure_markup(
   image="element-count-distribution.png",
   caption="Distribution of elements per page.",
-  description="Column chart showing the count of elements per device at common percentiles. For desktop it's 177 elements at 10th percentiles, 394 at the 25th percentiles, 711 at the 50th percentile, 1,220 at the 75th percentile, and	2,023 at the 90the percentile. Mobile trends the same but at at smaller amounts: 192, 371, 653, 1,104, and 1,832 respectively.",
+  description="Column chart showing the count of elements per device at common percentiles. For desktop it's 177 elements at 10th percentiles, 394 at the 25th percentiles, 711 at the 50th percentile, 1,220 at the 75th percentile, and 2,023 at the 90the percentile. Mobile trends the same but at at smaller amounts: 192, 371, 653, 1,104, and 1,832 respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=1598321449&format=interactive",
   sheets_gid="1201800477",
   sql_file="element_count_distribution.sql",
