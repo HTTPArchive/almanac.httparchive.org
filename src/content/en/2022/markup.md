@@ -91,7 +91,7 @@ Let's start with doctypes—which one is the most popular? But you know the answ
   sql_file="doctype.sql",
 ) }}
 
-90% of all mobile pages use it—as the mobile data set is largest, this chapter will usually work with that data. Next? XHTML 1.0 Transitional (3.9%, [down from 4.6% in 2021](../2021/markup#doctypes)). Next? None (2.7%, up from 2.5% last year).
+90% of all mobile pages use it—as the mobile data set is largest, this chapter will usually work with that data. Next most popular is XHTML 1.0 Transitional (3.9%, [down from 4.6% in 2021](../2021/markup#doctypes)). After that it's no doctype being set at all at 2.7%, up from 2.5% last year.
 
 ### Compression
 
@@ -104,7 +104,7 @@ Let's start with doctypes—which one is the most popular? But you know the answ
   sql_file="content_encoding.sql",
 ) }}
 
-Are HTML documents being compressed? How many? How? 86% of them are—with 58% (–5.8% since last year) overall being gzip-compressed, and 28% (+6.1%) being compressed using Brotli. To summarise slightly more documents are being compressed, and compressed more effectively.
+Are HTML documents being compressed? How many? How? 86% of them are—with 58% (down 5.8% since last year) overall being gzip-compressed, and 28% (up 6.1%) being compressed using Brotli. To summarise slightly more documents are being compressed, and compressed more effectively.
 
 ### Languages
 
@@ -171,7 +171,7 @@ What can we observe?
 
 The first thing we can note is that developers use slightly more different elements per page now, with a median of 32 different elements per document.
 
-This (median) is up from [31 elements in 2021](../2021/markup#element-diversity), and [30 elements in 2020](../2020/markup#element-diversity). As this is a trend throughout, it may be a tender sign that developers put HTML elements to better use, by using more of them for what they're there for.
+The median is up from [31 elements in 2021](../2021/markup#element-diversity), and [30 elements in 2020](../2020/markup#element-diversity). As this is a trend throughout, it may be a tender sign that developers put HTML elements to better use, by using more of them for what they're there for.
 
 Alas, there's another trend which aligns with an increasing document size, and that's a growing number of elements per page in total:
 
@@ -184,7 +184,7 @@ Alas, there's another trend which aligns with an increasing document size, and t
   sql_file="element_count_distribution.sql",
 ) }}
 
-The median is currently at 653 elements per page, up from 616 in 2021, and 587 in 2020—all per the respective mobile data set. Do we publish more content, requiring more elements to hold them (something like, more paragraphs per text, more `p` elements)? Or is this just another sign of an unchecked `div` pandemic? Our data doesn't answer this—we will probably face both, and many more reasons.
+The median is currently at 653 elements per page, up from 616 in 2021, and 587 in 2020—all per the respective mobile data set. Do we publish more content, requiring more elements to hold them (something like, more paragraphs per text, more `p` elements)? Or is this just another sign of an unchecked `div` pandemic? Our data doesn't answer this but it is probably both these—and many more—reasons.
 
 ### Top elements
 
@@ -302,14 +302,6 @@ But here it's not a surprise that not every document uses `html`, `head`, or `bo
 It's a lot more surprising to miss `title` on 1% of all sampled documents—this element is not optional and its omission an indicator for lack of conformance checking.
 
 The elements that then follow are old friends—especially `a`, `img`, and `meta` have been popular elements ever since <a hreflang="en" href="https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html">Ian Hickson's seminal HTML study back</a> in 2005.
-
-{{ figure_markup(
-  content="`samp`",
-  caption="The least used HTML element.",
-  classes="big-number",
-  sheets_gid="2057119066",
-  sql_file="element_popularity.sql",
-) }}
 
 What's the least used HTML element that's part of the current standard, you ask? That's <a hreflang="en" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element">`samp`</a>, with a mere 2,002 findings in our mobile set.
 
@@ -454,7 +446,7 @@ Are obsolete elements still a thing? Given that not-validating is still a thing,
   sql_file="obselete_elements.sql",
 ) }}
 
-On 6.1% of pages, you still find `center` elements (hi <a hreflang="en" href="https://www.google.com/">Google homepage</a> 👋), and on 5.4% of pages, you find `font` elements. Use of both elements went down (–0.5% in both cases), fortunately, while `marquee`, `nobr`, and `big` didn't witness significant changes.
+On 6.1% of pages, you still find `center` elements (hi <a hreflang="en" href="https://www.google.com/">Google homepage</a> 👋), and on 5.4% of pages, you find `font` elements. Use of both elements went down (down 0.5% in both cases), fortunately, while `marquee`, `nobr`, and `big` didn't witness significant changes.
 
 These two elements make for the lion's share (81.2%) of all obsolete elements, per our analysis:
 
