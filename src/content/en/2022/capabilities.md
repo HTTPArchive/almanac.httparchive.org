@@ -28,9 +28,9 @@ In addition, some functionality on the web platform gives access to lower-level 
 
 This chapter used the HTTP Archive's public dataset of millions of pages. These pages were archived as if they were visited on both desktop and mobile, as some sites will serve different content based on what device is requesting the page.
 
-The HTTP Archive's crawler parsed the source code for all of these pages to determine which APIs were used on the pages. For instance, regular expressions, such as `/navigator\.share\s*\(/g`, test pages to see if the API is found in its source code.
+The HTTP Archive's crawler then parsed the source code for all of these pages to determine which APIs were (potentially) used on the pages. For instance, regular expressions, such as `/navigator\.share\s*\(/g`, test pages to see if in the concrete case the [Web Share API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Share_API) is found in its source code.
 
-This method does have two significant issues. First, it may underreport some APIs used as it can not detect obfuscated code that may exist due to minification. Additionally, it may overreport occurrences of APIs because it does not execute code to see if an API is used. Regardless of these limitations, we believe this methodology should provide a sufficiently good overview of what capabilities are used on the web.
+This method does have two significant issues. First, it may underreport some APIs used as it can not detect obfuscated code that may exist due to minification, for example, when `navigator` was minified to `n`. Additionally, it may overreport occurrences of APIs because it does not execute code to see if an API is actually used. Regardless of these limitations, we believe this methodology should provide a sufficiently good overview of what capabilities are used on the web.
 
 Seventy-five total regular expressions for supported capabilities exist; view this <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics/blob/5d2f74fbdc580e76da5d1dad738fca8381429b9a/dist/fugu-apis.js">source file</a> to see all the expressions used.
 
@@ -46,7 +46,7 @@ Note that the Async Clipboard API replaces the deprecated `document.execCommand(
 
 ### Write access
 
-In order to write data into the clipboard there are the [`writeText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText) and [`write()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/write) methods. `writeText()` takes a String argument and returns a Promise, while `write()` takes an array of [`ClipboardItem`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem)s and also returns a Promise. `ClipboardItem`s take arbitrary data, such as images.
+In order to write data into the clipboard, there are the [`writeText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText) and [`write()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/write) methods. The `writeText()` method takes a String argument and returns a Promise, while `write()` takes an array of [`ClipboardItem`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem) objects and also returns a Promise. `ClipboardItem` objects can hold arbitrary data, such as images.
 
 A list of the mandatory data types a browser must support by the Clipboards API specification exists; see this <a hreflang="en" href="https://www.w3.org/TR/clipboard-apis/#mandatory-data-types-x">list by the W3C</a>. Unfortunately, not all vendors support the complete list; check browser-specific documentation when possible.
 
@@ -63,7 +63,7 @@ await navigator.clipboard.write([
 
 ### Read access
 
-In order to read data from the clipboard there are the [`readText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/readText) and [`read()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/read) methods. Both methods return a Promise which will resolve with data from the clipboard. `readText()` resolves as a String while `read()` resolves as an array of `ClipboardItem`s.
+In order to read data from the clipboard, there are the [`readText()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/readText) and [`read()`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/read) methods. Both methods return a Promise which will resolve with data from the clipboard. The `readText()` method resolves as a String while `read()` resolves as an array of `ClipboardItem` objects.
 
 ```js
 const item = await navigator.clipboard.readText();
@@ -74,7 +74,7 @@ To keep user data safe, the `"clipboard-read"` permission of the [Permissions AP
 
 Both read and write access to the clipboard is available on modern versions of Chrome, Edge, and Safari. Firefox only supports `writeText()`.
 
-### Growth of Async Clipboard API
+### Growth of the Async Clipboard API
 
 {{ figure_markup(
   image="Async-Clipboard-API-Usage.png",
@@ -92,7 +92,7 @@ The Async Clipboard API saw growth in usage from 8.91% in 2021 to 10.10% in 2022
 
 The [_Web Share API_](https://developer.mozilla.org/en-US/docs/Web/API/Web_Share_API) invokes the platform-specific sharing mechanism of the device, allowing data such as text, a URL, or files from a web application to be shared with any other application, such as mail clients, messaging applications, and more.
 
-The method called to share data is [`navigator.share()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share). `navigator.share()` accepts an object containing the data to share and returns a Promise. Not every file type can be shared, though, and the [`navigator.canShare()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/canShare) method can test a data object to see if the browser can share it.
+The method called to share data is [`navigator.share()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share). The `navigator.share()` method accepts an object containing the data to share and returns a Promise. Not every file type can be shared, though, and the [`navigator.canShare()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/canShare) method can test a data object to see if the browser can share it. You can see the [list of shareable file types](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share#shareable_file_types) on MDN.
 
 After calling `navigator.share()`, the browser will open a platform-specific sheet where users select which application to share the data with.
 
@@ -104,13 +104,17 @@ const data = {
 };
 
 if (navigator.canShare(data)) {
-  await navigator.share(data);
+  try {
+    await navigator.share(data);
+  catch (err) {
+    console.error(err.name, err.message);
+  }
 }
 ```
 
-The Web Share API is available on modern versions of Chrome, Edge, and Safari. For Chrome, though, it is only supported on Windows and Chrome OS.
+The Web Share API is available on modern versions of Chrome, Edge, and Safari. For Chrome, though, it is only supported on Windows and ChromeOS.
 
-### Growth of Web Share API
+### Growth of the Web Share API
 
 {{ figure_markup(
   image="Web-Share-API-Usage.png",
@@ -150,7 +154,7 @@ The ability to add an application to the home screen is a crucial feature of PWA
 - The web app must be served over HTTPS.
 - The web app must include a [web app manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) with:
   - `short_name` or `name`.
-  - `icons` (must include a 192px and a 512px icon).
+  - `icons` (must include a 192×192px and a 512×512px icon).
   - `start_url`.
   - `display` (must be one of `fullscreen`, `standalone`, or `minimal-ui`).
   - `prefer_related_applications` (must not be present, or `be false`).
@@ -173,7 +177,7 @@ The ability to add to the home screen is only available on modern versions of Ch
 
 As mentioned, the add to home screen capability was not measured last year. However, for posterity and detailed reporting, the `beforeinstallprompt` event was used on 8.56% of desktop pages and 7.71% of mobile pages, making it the third most used capability on desktop and mobile.
 
-By taking advantage of the `beforeinstallprompt` event, developers can provide a customized experience in how user installs their web application. One example is YouTube TV, which invites users to install their application to access it more quickly and easily.
+By taking advantage of the `beforeinstallprompt` event, developers can provide a customized experience in how users install their web application. One example is YouTube TV, which invites users to install their application to access it more quickly and easily.
 
 {{ figure_markup(
   gif="Add-to-Home-Screen.gif",
@@ -259,7 +263,7 @@ For a deeper dive into video usage on the web, check out the [Media](../media#vi
 
 A device's capabilities depend on a few things, like the network, the CPU core count, and the amount of memory available. The [_Device Memory API_](https://developer.mozilla.org/en-US/docs/Web/API/Device_Memory_API) provides insight into the memory available by providing the read-only property `deviceMemory` on the `Navigator` interface. The property returns an approximate amount of device memory in gigabytes as a floating point number.
 
-The value returned is imprecise, protecting the user's privacy. It's calculated by rounding down the nearest power of 2, then dividing that number by 1,024. The number is also clamped within an upper and lower bound. So you can expect the numbers: `0.25`, `0.5`, `1`, `2`, `4`, and `8` (gigabytes).
+The value returned is imprecise, protecting the user's privacy. It's calculated by rounding down to the nearest power of 2, then dividing that number by 1,024. The number is also clamped within an upper and lower bound. So you can expect the numbers: `0.25`, `0.5`, `1`, `2`, `4`, and `8` (gigabytes).
 
 ```js
 const memory = navigator.deviceMemory;
@@ -289,13 +293,13 @@ Check out <a hreflang="en" href="https://www.youtube.com/watch?v=puUPpVrIRkc&t=1
 
 [_Service workers_](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) are one of the core components of Progressive Web Apps. They act as a client-side proxy that puts developers in control of the system's cache and how to respond to resource requests. By pre-caching essential resources, developers can eliminate the dependence on the network, ensuring instant and reliable experiences.
 
-In addition to caching resources, service workers can update assets from the server, allow for push notifications, and allow access to the background sync APIs.
+In addition to caching resources, service workers can update assets from the server, allow for push notifications, and allow access to the background and periodic background sync APIs.
 
 While service workers have become widely adopted and supported by major browsers, not all features of service workers are available on all browsers. An example of a currently unsupported feature is that of the Push API on Safari. Safari will support the Push API in the upcoming release of <a hreflang="en" href="https://www.apple.com/macos/macos-ventura-preview/features/">macOS Ventura</a> in 2022 and <a hreflang="en" href="https://www.apple.com/ios/ios-16/features/">iOS 16</a> and iPadOS 16 in 2023.
 
 The Service Worker API is available on modern versions of Chrome, Edge, Firefox, and Safari.
 
-### Growth of Service Worker API
+### Growth of the Service Worker API
 
 {{ figure_markup(
   image="Service-Worker-API-Usage.png",
@@ -325,7 +329,7 @@ window.addEventListener("gamepadconnected", (e) => {
 
 The Gamepad API is available on modern versions of Chrome, Edge, Firefox, and Safari.
 
-### Growth of Gamepad API
+### Growth of the Gamepad API
 
 {{ figure_markup(
   image="Gamepad-API-Usage.png",
@@ -338,13 +342,13 @@ The Gamepad API is available on modern versions of Chrome, Edge, Firefox, and Sa
 
 The Gamepad API shrunk in usage from 4.39% in 2021 to 4.12% in 2022 on desktop. On mobile, use shrunk from 5.10% in 2021 to 4.65% in 2022. As a result, this year, the Gamepad API was the seventh most used capability on desktop and the sixth most used mobile.
 
-Web applications such as Google's Stadia, Nvidia's GeForce Now, and Microsoft's Xbox Cloud Gaming provide gaming experiences that run on the cloud comparable to the experience of running games on local devices or a gaming console. Thanks to the Gamepad API, these web applications allow users to use traditional console game controllers rather than just a keyboard and mouse.
+Web applications such as Google's Stadia, NVIDIA's GeForce Now, and Microsoft's Xbox Cloud Gaming provide gaming experiences that run on the cloud comparable to the experience of running games on local devices or a gaming console. Thanks to the Gamepad API, these web applications allow users to use traditional console game controllers rather than just a keyboard and mouse.
 
 {{ figure_markup(
   image="Gamepad-API.webp",
   gif="Gamepad-API.gif",
-  caption="Connecting a Xbox controller to Google Stadia in the Chrome browser.",
-  description="Connecting a Xbox controller to Google Stadia in the Chrome browser.",
+  caption="Connecting an Xbox controller to Google Stadia in the Chrome browser.",
+  description="Connecting an Xbox controller to Google Stadia in the Chrome browser.",
   width=640,
   height=360
 ) }}
@@ -353,7 +357,7 @@ Web applications such as Google's Stadia, Nvidia's GeForce Now, and Microsoft's 
 
 The [_Push API_](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) allows web applications to receive messages from a server regardless of whether the application was in the foreground. Developers can send asynchronous notifications and updates to users who opt in, giving them meaningful updates and a nudge to reengage with an application.
 
-Web applications must also have a service worker to receive push notifications from a server. From within the service worker, push notifications can be subscribed to using the [`PushManager.subscribe()`](https://developer.mozilla.org/en-US/docs/Web/API/PushManager/subscribe).
+Web applications must also have a service worker to receive push notifications from a server. From within the service worker, push notifications can be subscribed to using the [`PushManager.subscribe()`](https://developer.mozilla.org/en-US/docs/Web/API/PushManager/subscribe) method.
 
 The Push API is available on modern versions of Chrome, Edge, and Firefox.
 
@@ -380,8 +384,8 @@ Check out <a hreflang="en" href="https://developer.chrome.com/blog/fugu-status/"
 
 ## Conclusion
 
-Capabilities unlock new possibilities and functionality for developers to take advantage of on the web. This chapter shared eight of the most popular web platform APIs currently being used on the web. This chapter also showcased some of these capabilities used in different web applications. The beauty of the web is that it can use these platform-based functionalities without needing to be installed onto a device or additional libraries and plugins.
+Capabilities unlock new possibilities and functionality for developers to take advantage of on the web. This chapter shared eight of the most popular web platform APIs currently being used on the web. It also showcased some of these capabilities used in different web applications. The beauty of the web is that it can use these platform-based functionalities without needing to (necessarily) be installed onto a device or additional libraries and plugins.
 
 Some exciting experiences that utilize the web's capabilities include <a hreflang="en" href="https://whatwebcando.today/">What Web Can Do Today?</a> (WWCDT) and <a hreflang="en" href="https://www.discourse.org/">Discourse</a>. WWCDT, which uses 38 of the capabilities we track, showcases many Web APIs with a live demo of each API. Discourse provides communities with web forums and uses 14 of the capabilities we track, such as the Badging API, so users can see the number of unread notifications they have.
 
-The Capabilities Project, Project Fugu, allows applications to migrate to the web, removing some barriers associated with platform-specific applications. No need to write "native" code, no need to worry about users having access to the latest updates, and no need to get users to install your application. The web, and its capabilities, open up all new possibilities in building compelling experiences for users.
+The Capabilities Project, Project Fugu, allows applications to migrate to the web, removing some barriers associated with platform-specific applications. No need to write "native" code, no need to worry about users having access to the latest updates, and no need to get users to search for and download from your application in app stores. The web, and its capabilities, open up all new possibilities in building compelling experiences for users.
