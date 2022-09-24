@@ -28,8 +28,7 @@
           "part": "I",
           "chapter_number": "3",
           "title": "Markup",
-          "slug": "markup",
-          "todo": true
+          "slug": "markup"
         },
         {
           "part": "I",
@@ -297,16 +296,6 @@
       "github": "alexdenning",
       "website": "getellipsis.com",
       "twitter": "AlexDenning"
-    },
-    "AlexLakatos": {
-      "name": "Alex Lakatos",
-      "teams": [
-        "authors"
-      ],
-      "avatar_url": "690132",
-      "github": "AlexLakatos",
-      "website": "http://alexlakatos.com",
-      "twitter": "avolakatos"
     },
     "alexnj": {
       "name": "Alex N. Jose",
@@ -781,6 +770,7 @@
     "j9t": {
       "name": "Jens Oliver Meiert",
       "teams": [
+        "authors",
         "reviewers"
       ],
       "avatar_url": "1700772",
@@ -1349,6 +1339,15 @@
       "linkedin": "karamalegos",
       "twitter": "TheGreenGreek"
     },
+    "zcorpan": {
+      "name": "Simon Pieters",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "244772",
+      "github": "zcorpan",
+      "twitter": "zcorpan"
+    },
     "siwinlo": {
       "name": "Siwin Lo",
       "teams": [
@@ -1386,16 +1385,6 @@
       "github": "thibaudcolas",
       "website": "https://thib.me/",
       "twitter": "thibaud_colas"
-    },
-    "daKmoR": {
-      "name": "Thomas Allmer",
-      "teams": [
-        "authors"
-      ],
-      "avatar_url": "24378",
-      "github": "daKmoR",
-      "website": "https://open-wc.org",
-      "twitter": "daKmoR"
     },
     "tomayac": {
       "name": "Thomas Steiner",
