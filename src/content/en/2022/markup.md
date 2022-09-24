@@ -10,8 +10,8 @@ translators: []
 j9t_bio: Jens Oliver Meiert is an engineering lead and author (<a hreflang="en" href="https://meiert.com/en/blog/the-web-development-glossary/"><cite>The Web Development Glossary</cite></a>, <a hreflang="en" href="https://www.amazon.com/dp/B094W54R2N/"><cite>Upgrade Your HTML</cite></a>) who manages Developer Experience at <a hreflang="en" href="https://www.liveperson.com/">LivePerson</a>. As an an expert on web development, he specializes in HTML and CSS minimization and optimization. Jens regularly writes about his work on his website, <a hreflang="en" href="https://meiert.com/en/">meiert.com</a>.
 results: https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/
 featured_quote: Without HTML there are no web pages, no web sites, no web apps. You can say that without HTML, there's no Web. That makes HTML one of the most important web standards, if not the most important web standard.
-featured_stat_1: 2.7%
-featured_stat_label_1: Documents using no doctype.
+featured_stat_1: 90%
+featured_stat_label_1: Documents using the HTML5 doctype.
 featured_stat_2: 30 KB
 featured_stat_label_2: Median HTML document transfer size
 featured_stat_3: 29%
