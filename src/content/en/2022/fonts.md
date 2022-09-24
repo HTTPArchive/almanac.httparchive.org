@@ -4,10 +4,11 @@ title: Fonts
 ##TODO - Review and update chapter description
 description: Fonts chapter of the 2022 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.
 authors: [bramstein]
-reviewers: [RoelN, svgeesus, jmsole]
-analysts: [konfirmed]
+reviewers: [alexnj, jmsole, RoelN, svgeesus]
+analysts: [bramstein, konfirmed]
 editors: []
 translators: []
+bramstein_bio: TODO
 results: https://docs.google.com/spreadsheets/d/1A1XwuGa1DkqNLaF-lSXz4ndxO9G6SfACHwUvvywHgbQ/
 featured_quote: TODO
 featured_stat_1: TODO
@@ -26,12 +27,12 @@ We've come a long way since the early days of web fonts. We went from a handful 
 And it shows. Web font usage continues to grow. In the 2020 fonts chapter, 82% of all (desktop) sites used web fonts. In the two years since then, usage has increased to about 84%. The numbers are slightly lower for mobile, but represents a similar growth.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
+  image="webfont-usage.png",
+  caption="Webfont usage.",
+  description="Scatter chart showing the percentage of requests of web fonts over time from 2010 (0% usage) to 2022 (over 80%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1021821560&format=interactive",
   sheets_gid="1517999851",
-  sql_file="TODO.sql"
+  sql_file="font_usage_over_time.sql"
   )
 }}
 
@@ -44,12 +45,12 @@ There was no font chapter in 2021, but we  hope we can make up for that this yea
 Surprisingly, not a lot has changed in the types of fonts served. About 75% of all font files are served as <a hreflang="en" href="https://www.w3.org/TR/WOFF2/">WOFF2</a>, about 12% as WOFF and the remainder as either octet-stream or ttf (and then a whole bunch of random MIME types). This is fairly similar to the results in the 2020 fonts chapter. Fortunately, SVG and EOT font usage has almost disappeared completely.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
+  image="popular-web-font-mime-types.png",
+  caption="Popular web font MIME types.",
+  description="Column chart showing `woff2` is used on 78% of the time on desktop and 75% on mobile, `woff` on 10% and 12% respectively, `octet-stream` on 6% and 7%, `ttf` on 3% and 4%, `sfnt` on 1% and 1%, `otf` on 0% and 0%, and finally `opentype` on 0% of desktop and 0% of mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1637212263&format=interactive",
   sheets_gid="510414604",
-  sql_file="TODO.sql"
+  sql_file="font_format_usage.sql"
   )
 }}
 
@@ -64,12 +65,12 @@ This will simplify your CSS and workflow massively and also prevents any acciden
 Where do people get their fonts? Do they self host, or use a web font service? Both? Let's take a look at the numbers.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="hosting-type.png",
+  caption="Hosting type.",
+  description="Bar chart showing self hosted (non-exclusive) fonts are used on 67% of desktop pages and 67% of mobile pages, self hosted (exclusive) is used on on 18% and 20% respectively, services (non-exclusive) on 68% and 65%, and finally services (exclusive) on 19% of desktop and 18% of mobile pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1751970122&format=interactive",
+  sheets_gid="1791297167",
+  sql_file="font_usage_by_service.sql"
   )
 }}
 
@@ -78,12 +79,12 @@ In general, it is a mixture: 67% self host _and_ use a service. Only 19% only us
 We can further split this data by service. Perhaps not surprisingly, <a hreflang="en" href="https://fonts.google.com/">Google Fonts</a> is the most popular web font service with nearly 65% of all web pages using it. Free is hard to beat indeed.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="webfont-usage-by-service.png",
+  caption="Webfont usage by service.",
+  description="Column chart showing Google Fonts was used on 59.4% of pages in 2019, 63.9% in 2020, 65.2% in 2021, and 64.5% in 2022, Font Awesome on 3.7%, 5.4%, 6.3%, and 6.9% respectively, Adobe Fonts on 3.4%, 3.6%, 3.9%, and 4.2%, Fonts.com on 0.4%, 0.3%, 0.3%, and 0.2%, and finally Cloud.Typography on 0.3% in 2019, 0.2% in 2020, 0.2% in 2021, and 0.2% in 2022.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1049143598&format=interactive",
+  sheets_gid="1791297167",
+  sql_file="font_usage_by_service.sql"
   )
 }}
 
@@ -100,24 +101,24 @@ Note that the services data is measured differently compared to the 2020 and 201
 Compression is a great way to reduce the amount of data that needs to be downloaded, but it has its limits. To better understand what influences font file sizes, let's take a look at the median font sizes across all fonts.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="font-sizes.png",
+  caption="Font sizes.",
+  description="At the 10th percentile 10 KB of fonts are used on desktop and 8 KB on mobile, the 25th percentile it's 15 KB and 13 KB respectively, the 50th percentile it's 20 KB and 20 KB, the 75th percentile it's 44 KB and 43 KB, and finally at the 90th percentile it's 75 KB on both desktop and mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=2083466743&format=interactive",
+  sheets_gid="1323521462",
+  sql_file="font_size_quantiles.sql"
   )
 }}
 
 The median font size is about 20 kilobytes. That is pretty good. However, as we have seen earlier, font services account for nearly 70% of all font requests. Services like Google Fonts and Adobe Fonts have teams dedicated to optimizing the fonts as much as possible, so the median font sizes are likely heavily skewed by these services.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="self-hosted-font-sizes.png",
+  caption="Self-hosted font sizes.",
+  description="Column chart showing the size of self-hosted font sizes at various percentiles. At the 10th percentile self-hosted fonts are 7 KB on desktop and 7 KB on mobile, at the 25th percentile they are 17 KB and 17 KB respectively, at the 50th percentile 37 KB on both, at the 75th percentile they are 75 KB on both and finally at the 90th percentile they are 96 KB on desktop and 91 KB on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=15369234&format=interactive",
+  sheets_gid="1359064325",
+  sql_file="font_size_quantiles_without_services.sql"
   )
 }}
 
@@ -126,12 +127,12 @@ Looking at self-hosted font sizes paints a quite different picture. The median f
 A lot of websites using self-hosted fonts are still using WOFF instead of WOFF2. It's not clear if the fonts on these sites were never updated since WOFF2 was introduced, or if not enough developers know about WOFF2. Regardless, it's an easy optimization that could benefit a lot of sites.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="popular-web-font-mimetypes-self-hosted.png",
+  caption="Popular web font MIME types (self-hosted).",
+  description="Column chart showing woff2 is 45% of desktop and 46% of mobile self-hosted fonts, woff is 26% and 26% respectively, octet-stream is 15% and 15%, and finally ttf is 6% of desktop and 6% mobile self-hosted fonts.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=291490668&format=interactive",
+  sheets_gid="259914355",
+  sql_file="font_format_usage_without_services.sql"
   )
 }}
 
@@ -193,8 +194,8 @@ A reasonable way to measure how much of an impact a table has on overall file si
   <figcaption>
     {{ figure_link(
       caption="Impact (median file size × number of requests as percentage of total).",
-      sheets_gid="TODO",
-      sql_file="TODO.sql",
+      sheets_gid="1853636944",
+      sql_file="font_size_quantiles_by_opentype_table.sql",
     ) }}
   </figcaption>
 </figure>
@@ -214,42 +215,42 @@ The OpenType specification is what you could charatibly call "a compromise". Sev
 Type designers can choose the outline format they prefer. Looking at the distribution of outline formats, it is pretty clear what type designers have chosen. The overwhelming majority (91%) of fonts use the `glyf` outline format, while 9% use the `CFF` outline format. There is some `OT-SVG` color font usage as well, but less than 1% (not pictured).
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="outline-formats.png",
+  caption="Outline formats.",
+  description="Pie chart showing TrueType (glyf) is 90.8% of mobile fonts, and CFF 9.2%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=934239411&format=interactive",
+  sheets_gid="1181700309",
+  sql_file="outline_formats.sql"
   )
 }}
 
 The OpenType specification lists <a hreflang="en" href="https://docs.microsoft.com/en-us/typography/opentype/otspec191alpha/glyphformatcomparison_delta">the differences between glyf and CFF</a>:
 
-* The `glyf` format uses quadratic Bézier curves while CFF (and CFF2) uses cubic Bézier curves. This matters to some type designers, but not to users of the font.
-* The `glyf` format has more control over hinting (making small adjustments so that the glyph outlines snap to the correct pixels at smaller sizes) while `CFF` has most of its hinting built into the text rasterizer.
-* The `CFF` format claims to be a more efficient format, resulting in smaller font sizes.
+- The `glyf` format uses quadratic Bézier curves while CFF (and CFF2) uses cubic Bézier curves. This matters to some type designers, but not to users of the font.
+- The `glyf` format has more control over hinting (making small adjustments so that the glyph outlines snap to the correct pixels at smaller sizes) while `CFF` has most of its hinting built into the text rasterizer.
+- The `CFF` format claims to be a more efficient format, resulting in smaller font sizes.
 
 The last claim is interesting. Is CFF smaller? On average, CFF does indeed produce a smaller table size. However, the reality is more nuanced, as it doesn't take compression into account (the table sizes are recorded after the font has been uncompressed).
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="font-outline-sizes.png",
+  caption="Font outline sizes.",
+  description="Column chart showing font outline sizes at common percentiles. At the 10th percentile CFF is 1 KB and glyf 10 KB, at the 25th percentile it's 14 and 21 respectively, at the 50th percentile it's 29 and 49, at the 75th percentile it's 54 and 109, and finally at the 90th percentile CFF is 124 KB and glyf 136 KB.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=672500092&format=interactive",
+  sheets_gid="1853636944",
+  sql_file="font_size_quantiles_by_opentype_table.sql"
   )
 }}
 
 As can be seen in the <a hreflang="en" href="https://www.w3.org/TR/2016/NOTE-WOFF20ER-20160315/#brotli-adobe-cff">WOFF2 evaluation report</a>, the median `glyf` compression is at 66% while the median `CFF` compression is at 50% (from uncompressed to compressed using WOFF2). Applying compression paints a very different picture. The median file size differences are negligible, and large fonts are much smaller when using `glyf` outlines!
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="compressed-font-outline-sizes.png",
+  caption="Compressed font outline sizes.",
+  description="Column chart showing at the 25th percentile both CFF and glyh font sizes are 6 KB, at the 50th percentile they start to diverge with CFF 15 KB and glyf 17 KB, at the 75th percentile it's 32 and 39 KB respectively, and finally at the 90th percentile it's CFF is 86 KB and glyf is only 56 KB.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1880460638&format=interactive",
+  sheets_gid="1853636944",
+  sql_file="font_size_quantiles_by_opentype_table.sql"
   )
 }}
 
@@ -264,12 +265,12 @@ There are several types of resource hints that are relevant to web fonts: `dns-p
 There hasn't been any large change in the use of `dns-prefetch` hints since 2020, but there has been a fairly significant increase in the use of `preload` (from 17% in 2020 to 20% in 2022) and `preconnect` (from 8% in 2020 to 15% in 2022). This is great!
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="fonts-resource-hints-usage.png",
+  caption="Fonts resource hints usage.",
+  description="Column chart showing `dns-prefetch` is used on fonts on 30% of desktop pages and 32% of mobile pages, `preload` on 21% and 20% respectively, `preconnect` on 16% and 16%, and finally `prefetch` is uded on 2% of desktop and 2% of mobile pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1831399490&amp;format=interactive",
+  sheets_gid="592046045",
+  sql_file="resource_hints_usage.sql"
   )
 }}
 
@@ -287,22 +288,22 @@ For many years most browsers did not render text until web fonts had loaded. On 
 
 To give web developers more control over font loading, the `font-display` descriptor was introduced to tell the browser how it should behave while web fonts are loading. It defines four different values of what to do while fonts are loading. These values are implemented using different combinations of _block_ and _swap_ behavior.
 
-* `swap`: block for a very short period and always swap.
-* `block`: block for a short period and always swap.
-* `fallback`: block for a very short period and swap within a short period.
-* `optional`: block for a very short period and no swap period.
+- `swap`: block for a very short period and always swap.
+- `block`: block for a short period and always swap.
+- `fallback`: block for a very short period and swap within a short period.
+- `optional`: block for a very short period and no swap period.
 
 There is also `auto`, which leaves the decision up to the browser (all modern browsers use `block` as the default value).
 
-Use of `font-display: swap` has grown to an impressive 30% (from 11% in 2020). A fair chunk of this increase can most likely be attributed to <a hreflang="en" href="https://www.google.com/url?q=https://www.youtube.com/watch?v%3DYJGCZCaIZkQ%26t%3D1880s&sa=D&source=docs&ust=1662119120147197&usg=AOvVaw3yrrdDd1irsg4yHKjseYvL">Google Fonts making swap the recommended value in 2019</a>. It is also interesting to see the `block` value overtaking `auto` as the second most used value. We are not sure why developers are intentionally degrading the performance of their site, but it is an interesting, if not slightly worrying, development.
+Use of `font-display: swap` has grown to an impressive 30% (from 11% in 2020). A fair chunk of this increase can most likely be attributed to <a hreflang="en" href="https://www.youtube.com/watch?v=YJGCZCaIZkQ&t=1880s">Google Fonts making swap the recommended value in 2019</a>. It is also interesting to see the `block` value overtaking `auto` as the second most used value. We are not sure why developers are intentionally degrading the performance of their site, but it is an interesting, if not slightly worrying, development.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="usage-of-font-display.png",
+  caption="Usage of font-display.",
+  description="Column chart showing font display `swap` is used on 32% of desktop and 29% of mobile pages, `block` on 16% and 17% respectively, `auto` on 9% and 8%, `fallback` on 2% and 2%, and finally `optional` is on 0% of both desktop and mobile pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1648924039&format=interactive",
+  sheets_gid="1599822681",
+  sql_file="font_display_usage.sql"
   )
 }}
 
@@ -311,12 +312,12 @@ Our guess is that developers (or their customers) really dislike seeing a flash 
 The CSS `ascent-override`, `descent-override`, `line-gap-override`, and `size-adjust` descriptors go into the `@font-face` rule and can be used to override the metrics in any font. You can use these descriptors with `local()` to [create a customized fallback](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/ascent-override#overriding_metrics_of_a_fallback_font) font that roughly matches your web font (hey, finally a good use for <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html">`local()`</a>).
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="css-font-metrics-override-usage.png",
+  caption="CSS font metrics override usage.",
+  description="Column chart showing `ascent-override` is used on 0.11% of desktop and 0.20% mobile pages, `descent-override` on 0.07% and 0.13% respectively, `line-gap-override` on 0.07% and 0.13%, and finally `size-adjust` on 0.05% of desktop and 0.13% of mobile pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=2058878625&format=interactive",
+  sheets_gid="241586017",
+  sql_file="font_metric_override_usage.sql"
   )
 }}
 
@@ -449,9 +450,9 @@ With Google Fonts' massive impact on web font serving, it is no surprise the mos
   </table>
   <figcaption>
     {{ figure_link(
-      caption="TODO.",
-      sheets_gid="TODO",
-      sql_file="TODO.sql",
+      caption="Most used Google Fonts.",
+      sheets_gid="1543752771",
+      sql_file="popular_font_families_by_vendor.sql",
     ) }}
   </figcaption>
 </figure>
@@ -462,8 +463,8 @@ Font Awesome takes the number two spot, which is an impressive accomplishment fo
   content="18%",
   caption="Sites using icon web fonts.",
   classes="big-number",
-  sheets_gid="TODO",
-  sql_file="TODO.sql",
+  sheets_gid="1543752771",
+  sql_file="popular_font_families_by_vendor.sql",
 ) }}
 
 A special note should also be made of Proxima Nova at 1% usage. It is the only commercial, non-icon, font in the top 20. That's an amazing achievement by <a hreflang="en" href="https://www.marksimonson.com/">Mark Simonson Studio</a>.
@@ -474,7 +475,7 @@ Another interesting fact is that a large portion of the top families are open so
   <table>
     <thead>
       <tr>
-        <td><em>Vendor</em></td>
+        <td>Vendor</td>
         <td>desktop</td>
         <td>mobile</td>
       </tr>
@@ -534,9 +535,9 @@ Another interesting fact is that a large portion of the top families are open so
   </table>
   <figcaption>
     {{ figure_link(
-      caption="TODO.",
-      sheets_gid="TODO",
-      sql_file="TODO.sql",
+      caption="Most popular font foundries.",
+      sheets_gid="1543752771",
+      sql_file="popular_font_families_by_vendor.sql",
     ) }}
   </figcaption>
 </figure>
@@ -553,8 +554,8 @@ Some OpenType features are for stylistic purposes only, while others are require
   content="44%",
   caption="Fonts that include OpenType features.",
   classes="big-number",
-  sheets_gid="TODO",
-  sql_file="TODO.sql",
+  sheets_gid="183792112",
+  sql_file="font_opentype_support.sql",
 ) }}
 
 Discretionary features can be used to, for example, replace two adjacent glyphs with a ligature to improve legibility. It's also common for OpenType features to offer alternative versions of glyphs, for example by adding swashes.
@@ -562,12 +563,12 @@ Discretionary features can be used to, for example, replace two adjacent glyphs 
 A significant number of fonts have <a hreflang="en" href="https://fonts.google.com/knowledge/introducing_type/introducing_alternate_glyphs">discretionary OpenType features</a>. The most common discretionary feature is, not surprisingly, ligatures. This is followed by a whole range of features that modify numerals like fractions, proportional numerals, tabular numerals, lining numerals, and ordinals. Superscripts are also somewhat common.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="opentype-features-support-in-fonts.png",
+  caption="OpenType features support in fonts.",
+  description="Column chart showing `kern` is used on 12.8% of desktop fonts and 12.4% of mobile fonts, `liga` on 10.0% and 10.1% respectively, `locl` on 9.6% and 9.7%, `frac` on 8.1% and 7.6%, `numr` on 6.8% and 5.8%, `dnom` on 6.7% and 5.8%, `pnum` on 5.1% and 4.7%, and finally `tnum` on 5.0% of desktop and 4.5% of mobile fonts..",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1500912295&format=interactive",
+  sheets_gid="83804141",
+  sql_file="font_opentype_feature_usage.sql"
   )
 }}
 
@@ -579,21 +580,21 @@ Kerning is the process of slightly increasing or decreasing the space between an
   content="34%",
   caption="Fonts including kerning data.",
   classes="big-number",
-  sheets_gid="TODO",
-  sql_file="TODO.sql",
+  sheets_gid="1953603748",
+  sql_file="font_kerning.sql",
 ) }}
 
 Only 34% of all web fonts have kerning data stored as either an OpenType feature, or using the older `kern` table. Nearly all fonts need kerning to look correct, so we would have expected this number to be much higher than it is. One explanation is that when web fonts started taking off browser support for kerning wasn't very good, so many early web fonts did not include kerning data to save on space. Nowadays, all browsers support kerning so there is no reason fonts should not have kerning data in them.
 
-What's even more interesting is that kerning is also the most common feature tag used in the `font-feature-settings` property. Nearly 3.2% of sites manually enable (or worse, disable) kerning. There is no need for that; it is enabled by default. In fact, there is no need to _ever_ change kerning settings through `font-feature-settings` or the higher level <code><a hreflang="en" href="https://drafts.csswg.org/css-fonts/#font-kerning-prop">font-kerning property</a></code>. Disabling kerning won't make your site faster, but your typesetting will be poorer for it.
+What's even more interesting is that kerning is also the most common feature tag used in the `font-feature-settings` property. Nearly 3.2% of sites manually enable (or worse, disable) kerning. There is no need for that; it is enabled by default. In fact, there is no need to _ever_ change kerning settings through `font-feature-settings` or the higher level <a hreflang="en" href="https://drafts.csswg.org/css-fonts/#font-kerning-prop">`font-kerning property`</a>. Disabling kerning won't make your site faster, but your typesetting will be poorer for it.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="openType-feature-usage-in-css.png",
+  caption="OpenType feature usage in CSS.",
+  description="Column chart showing `kern` is used on 3.6% of desktop pages and 3.2% of mobile pages, `liga` on 2.2% and 2.2% respectively, `palt` on 0.4% and 0.4%, `pnum` on 0.4% and 0.4%, `tnum` on 0.4% and 0.3%, `lnum` on 0.3% and 0.3%, and finally `calt` on 0.1% of desktop and 0.1% mobile pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1359153027&format=interactive",
+  sheets_gid="1050025794",
+  sql_file="font_feature_settings_tags_usage.sql"
   )
 }}
 
@@ -602,12 +603,12 @@ The other most used features are roughly in line with what type designers actual
 Overall, usage of OpenType feature usage is quite low on the web. We were hoping most people are using the high-level `font-variant` properties to enable OpenType features, but their usage is even lower than `font-feature-settings`. The `font-feature-settings` property is used on 12.6% of sites, while the `font-variant` properties are used on only 3.5% of sites.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="usage-of-font-feature-settings-vs-font-variant.png",
+  caption="Usage of font-feature-settings vs font-variant.",
+  description="Column chart showing `font-feature-settings` is used on 13.3% of desktop pages and 12.6% of mobiles pages, and `font-variant` is used on 3.9% of desktop pages and 3.5% of mobile pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1087474243&format=interactive",
+  sheets_gid="959516935",
+  sql_file="font_feature_settings_vs_font_variant.sql"
   )
 }}
 
@@ -618,12 +619,14 @@ All of the most commonly used `font-feature-settings` values have `font-variant`
 The most used `font-variant` value is small-caps at 1.4% of pages. This is surprising, because small caps are only supported by 0.7% of fonts. That means that most people using `font-variant: small-caps` and `font-variant-caps` will get faux small caps that are generated by the browser instead of small caps created by the type designer! In the future, you can avoid faux small caps by using the <a hreflang="en" href="https://drafts.csswg.org/css-fonts-4/#font-synthesis-small-caps">font-synthesis-small-caps property</a>.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="usage-of-css-font-variant-values.png",
+  caption="Usage of CSS font-variant values.",
+  description="Bar chart showing `font-variant: small-caps` is used on 1.5% of desktop pages and 1.4% of mobile pages, `font-variant: tabular-nums` on 1.0% and 0.6% respectively, `font-variant-numeric: tabular-nums` on 0.8% and 0.7%, `font-variant-ligatures: discretionary-ligatures` on 0.4% and 0.3%, `font-variant-ligatures: no-common-ligatures` on 0.3% and 0.3%, `font-variant-caps: all-small-caps` on 0.2% and 0.2%, `font-variant-numeric: lining-nums` on 0.2% and 0.2%, and finally `font-variant-ligatures: common-ligatures` on 0.1% of desktop and mobile pages..",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=682306512&format=interactive",
+  sheets_gid="1231655846",
+  sql_file="font_variant_values.sql",
+  width=600,
+  height=535
   )
 }}
 
@@ -634,12 +637,12 @@ The other values roughly match what is provided by the fonts themselves. Even th
 To understand what kind of fonts are being made and used, we thought it would be interesting to look at what languages fonts support. For example, do people make a lot of German, Vietnamese, or Urdu fonts? Unfortunately, it is hard to answer this question because a lot of languages share the same writing system. That means they might share the same character set, but might have only been explicitly designed for one specific language. So instead of languages, we'll take a look at writing systems.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="writing-systems-supported-by-fonts.png",
+  caption="Writing systems supported by fonts.",
+  description="Bar chart showing Latin is used on 57.6% of desktop pages and 53.6% of mobile pages, Cyrillic on 6.1% and 6.2% respectively, Greek on 3.4% and 3.4%, Katakana on 0.9% and 1.0%, Hiragana on 0.9% and 0.9%, Hebrew on 0.5% and 0.5%, Arabic on 0.3% and 0.4%, Thai on 0.2% and 0.3%, Hangul on 0.5% and 0.3%, Devanagari on 0.2% and 0.3%, and finally Han is on 0.2% of desktop and mobile pages..",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=45355249&amp;format=interactive",
+  sheets_gid="841363278",
+  sql_file="font_writing_scripts.sql"
   )
 }}
 
