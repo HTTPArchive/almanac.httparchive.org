@@ -33,16 +33,16 @@ Note: As a set of web technologies, PWAs are not isolated from the rest of the w
 
 ## Service Workers
 
-[Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) are one of the 3 core technologies (alongside Manifest file and HTTPS) of PWAs and the enabler of offlining apps, getting push notifications, and doing background processing. They serve as the base for most of the advanced experiences we expect from applications. They are also being used to define data updates and for upcoming modern functionality like [widgets based on PWA technologies](https://github.com/aarongustafson/pwa-widgets#rich-widgets).
+[Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) are one of the 3 core technologies (alongside Manifest file and HTTPS) of PWAs and the enabler of offlining apps, getting push notifications, and doing background processing. They serve as the base for most of the advanced experiences we expect from applications. They are also being used to define data updates and for upcoming modern functionality like <a hreflang="en" href="https://github.com/aarongustafson/pwa-widgets#rich-widgets">widgets based on PWA technologies</a>.
 
-While there [isn't parity between major browsers when it comes to Service Worker](https://caniuse.com/push-api) feature support, Webkit  adding support for push notifications was a huge milestone. Earlier this year it was announced that [Apple had made changes](https://webkit.org/blog/12945/meet-web-push/) to their desktop platform to support the relevant parts of the [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API), [Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API) and that [Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) would enable Web Push. They also announced the feature would be coming to their mobile platforms in 2023.
+While there <a hreflang="en" href="https://caniuse.com/push-api">isn't parity between major browsers when it comes to Service Worker</a> feature support, Webkit  adding support for push notifications was a huge milestone. Earlier this year it was announced that <a hreflang="en" href="https://webkit.org/blog/12945/meet-web-push/">Apple had made changes</a> to their desktop platform to support the relevant parts of the [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API), [Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API) and that [Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) would enable Web Push. They also announced the feature would be coming to their mobile platforms in 2023.
 
 ### Service Worker Usage
 
-Service workers are not as common as other core technologies of PWAs. For comparison reasons, we have run the same queries as last year, which allows us to try to make sense of the evolution of service worker usage. You can read the explanation of [why it isn’t trivial to find out actual usage of service worker](https://almanac.httparchive.org/en/2021/pwa#service-workers-usage),
+Service workers are not as common as other core technologies of PWAs. For comparison reasons, we have run the same queries as last year, which allows us to try to make sense of the evolution of service worker usage. You can read the explanation of <a hreflang="en" href="https://almanac.httparchive.org/en/2021/pwa#service-workers-usage">why it isn’t trivial to find out actual usage of service worker</a>,
 
-* Lighthouse detects a 1.6% (mobile) and 1.7% (desktop) of all websites employ a service worker. We expect this is lower than the real-world percentage due to [additional checks](https://web.dev/service-worker) that Lighthouse takes into consideration.
-* Following the same [metrics introduced last year](https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/pwa.js), usage of a Service Worker in websites comes up to 1.63% on desktop and 1.81% on mobile.
+* Lighthouse detects a 1.6% (mobile) and 1.7% (desktop) of all websites employ a service worker. We expect this is lower than the real-world percentage due to <a hreflang="en" href="https://web.dev/service-worker">additional checks</a> that Lighthouse takes into consideration.
+* Following the same <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/pwa.js">metrics introduced last year</a>, usage of a Service Worker in websites comes up to 1.63% on desktop and 1.81% on mobile.
 
 {{ figure_markup(
   image="sw_controlled_pages_rank.png",
@@ -54,7 +54,7 @@ Service workers are not as common as other core technologies of PWAs. For compar
   )
 }}
 
-There hasn’t been a noticeable change for Service Worker controlled pages in the top 1000 sites as well, with only a slight decrease in desktop and even smaller increase in mobile properties. But there was an increase in all other categories. If we follow the [reasoning from last year](https://almanac.httparchive.org/en/2021/pwa#:~:text=And%20how%20can,via%20service%20workers.), where we postulated that bigger websites adopted the advanced technologies faster. Seeing more growth in other categories makes sense, as smaller companies and developers have learned and adopted the technology shared from case studies and examples from the companies with more traffic.
+There hasn’t been a noticeable change for Service Worker controlled pages in the top 1000 sites as well, with only a slight decrease in desktop and even smaller increase in mobile properties. But there was an increase in all other categories. If we follow the <a hreflang="en" href="https://almanac.httparchive.org/en/2021/pwa#:~:text=And%20how%20can,via%20service%20workers.">reasoning from last year</a>, where we postulated that bigger websites adopted the advanced technologies faster. Seeing more growth in other categories makes sense, as smaller companies and developers have learned and adopted the technology shared from case studies and examples from the companies with more traffic.
 
 ### Service Worker Features
 
@@ -91,7 +91,7 @@ Install and activate are lifecycle events. It is common practice to create a cac
 )
 }}
 
-The service worker needs to be active in order to receive events like fetch and push. This makes them the cornerstone of service workers, and hence the 63% usage on desktop and 61% on mobile for install, and 63% usage on desktop and 61% on mobile regarding activate. The remaining ~40% of sites with Service Worker might not be actively using these events, as they can be using Service Worker for notifications or utilizing techniques to cache requests made only when the site is running, also known as [runtime caching](https://web.dev/runtime-caching-with-workbox/).
+The service worker needs to be active in order to receive events like fetch and push. This makes them the cornerstone of service workers, and hence the 63% usage on desktop and 61% on mobile for install, and 63% usage on desktop and 61% on mobile regarding activate. The remaining ~40% of sites with Service Worker might not be actively using these events, as they can be using Service Worker for notifications or utilizing techniques to cache requests made only when the site is running, also known as <a hreflang="en" href="https://web.dev/runtime-caching-with-workbox/">runtime caching</a>.
 
 While these are still the most used events, we can speculate that there is an increased number of Service Workers which their main task is not pre-caching. This is reflected in the increase of other types of events being used.
 
@@ -112,7 +112,7 @@ Push notification events come next in most used service worker methods.
 * `push` 56% (up 12%) on desktop and 50% (up 5%) on mobile.
 * `notificationclose` is now at 15% (up 9%) on desktop and 16% (up 10%) on mobile.
 
-A couple of takeaways here is that momentum continues to grow this year for PWAs on desktop, and push notifications is not an exception. Usage of related events for notifications has gone up around 11%. Many tweaks and fixes have been worked on in different platforms to make sure that these pieces of UX feel completely integrated with the host OS. We expect these numbers to continue growing, following the newly announced [support for Web Push on Webkit](https://webkit.org/blog/12945/meet-web-push/). This is a feature that has being requested by many developers for a long time and finally having support on macOS (and hopefully soon iOS devices) can encourage developers to use the API.
+A couple of takeaways here is that momentum continues to grow this year for PWAs on desktop, and push notifications is not an exception. Usage of related events for notifications has gone up around 11%. Many tweaks and fixes have been worked on in different platforms to make sure that these pieces of UX feel completely integrated with the host OS. We expect these numbers to continue growing, following the newly announced <a hreflang="en" href="https://webkit.org/blog/12945/meet-web-push/">support for Web Push on Webkit</a>. This is a feature that has being requested by many developers for a long time and finally having support on macOS (and hopefully soon iOS devices) can encourage developers to use the API.
 
 ##### Background processing events
 
@@ -179,7 +179,7 @@ And these are the most used methods:
 
 The Web App Manifest file is a JSON file that contains information about the application itself. Among the data that is present in the key-value pairs is information relevant to display, promote and integrate the app into the host OS.
 
-Keeping the web app’s manifest fully authored is essential to take advantage of advanced discoverability through online repositories, submissions to application stores, and more recently, a way to tap into advanced capabilities like share target and file handling for your app. Cutting edge work to [enable Widgets based on PWA technology](https://github.com/aarongustafson/pwa-widgets#how-widgets-are-represented-in-these-apis) is also being rooted in the manifest, proving the versatility of the file itself for advanced platform integration even further.
+Keeping the web app’s manifest fully authored is essential to take advantage of advanced discoverability through online repositories, submissions to application stores, and more recently, a way to tap into advanced capabilities like share target and file handling for your app. Cutting edge work to <a hreflang="en" href="https://github.com/aarongustafson/pwa-widgets#how-widgets-are-represented-in-these-apis">enable Widgets based on PWA technology</a> is also being rooted in the manifest, proving the versatility of the file itself for advanced platform integration even further.
 
 {{ figure_markup(
   caption="Percent of manifest files parseable (desktop)",
@@ -194,7 +194,7 @@ For most cases, 95% in desktop and 94% in mobile, websites that have a manifest 
 
 ### Manifest Properties and Installability criteria
 
-The manifest file is one of the core technologies that defines PWAs and it plays a key part in signaling to the browser to prompt for installation. Although the way the prompt is triggered [varies with different browsers](https://web.dev/installable-manifest/#in-other-browsers), there’s always a subset of the manifest file involved.
+The manifest file is one of the core technologies that defines PWAs and it plays a key part in signaling to the browser to prompt for installation. Although the way the prompt is triggered <a hreflang="en" href="https://web.dev/installable-manifest/#in-other-browsers">varies with different browsers</a>, there’s always a subset of the manifest file involved.
 
 Following are the usage numbers of manifest file alongside service worker. These two used in conjunction generally imply installability.
 
@@ -265,7 +265,7 @@ Note that the last field, `gcm_sender_id`, is not a standardized property. It is
 
 ### Installation and discoverability properties
 
-A web app manifest file can contain data that is useful in describing of the application. These properties can be used by stores or other distribution mechanisms to promote the application. An increased growth of [rich browser-based installation dialogs](https://developer.chrome.com/blog/richer-pwa-installation/) is also utilizing these fields more prominently. Relevant fields, which can be found as part of the Application Information supplement to the Manifest file are listed below:
+A web app manifest file can contain data that is useful in describing of the application. These properties can be used by stores or other distribution mechanisms to promote the application. An increased growth of <a hreflang="en" href="https://developer.chrome.com/blog/richer-pwa-installation/">rich browser-based installation dialogs</a> is also utilizing these fields more prominently. Relevant fields, which can be found as part of the Application Information supplement to the Manifest file are listed below:
 
 * `description`: This property exists in 36% of desktop and 34% of mobile web app manifests. The description is important since it explains what the application does. It’s commonly used to provide information about the app for a store. Currently around a third of installable PWAs would offer this information.
 * `screenshots`: This property provides the URLs of one or more screenshots for use  in app stores and in-browser install prompts. PWAs with manifests that take advantage of this feature total 1.12% for desktop and 1.19% for mobiles devices.
@@ -293,7 +293,7 @@ sheets_gid="217012426",
 
 The top categories for both websites and PWAs remain the same, yet each is slightly different. Top categories are shopping, news, and business.
 
-* `iarc_rating_id`: It’s a string that represents the [IARC certification code](https://www.globalratings.com/how-iarc-works.aspx) of the web app. 0.05% of desktop and mobile apps utilize this field to advertise the rating of their app or game.
+* `iarc_rating_id`: It’s a string that represents the <a hreflang="en" href="https://www.globalratings.com/how-iarc-works.aspx">IARC certification code</a> of the web app. 0.05% of desktop and mobile apps utilize this field to advertise the rating of their app or game.
 
 #### Advanced capabilities
 
@@ -303,7 +303,7 @@ The manifest file also allows for the activation of modern platform capabilities
 * `file_handlers`: allows an installed PWA to register itself as a handler for a specific file extension. Only 0.01% of desktop and 0.02% of mobile are using `file_handlers`.
 * `protocol_handlers`: PWAs can register to be handlers for predefined or custom protocols. Current usage stands at 0% on desktop and 0.01% for mobile web sites.
 * `share_target`: 5.3% of desktop and 3.1% of mobile PWAs have the ability to register themselves to receive shared data.
-* [Window Controls Overlay](https://wicg.github.io/window-controls-overlay/): The ability to free the area generally occupied by the title bar is a desktop only feature. This feature has recently launched in Chromium 105 and 0.01% of manifests of desktop PWAs are utilizing it.
+* <a hreflang="en" href="https://wicg.github.io/window-controls-overlay/">Window Controls Overlay</a>: The ability to free the area generally occupied by the title bar is a desktop only feature. This feature has recently launched in Chromium 105 and 0.01% of manifests of desktop PWAs are utilizing it.
 * `note_taking`: 0% of desktop and 0.01% of mobile sites are using the ability to have special integration as a convenient way of taking a quick note.
 
 ### Other properties
@@ -361,7 +361,7 @@ sheets_gid="2095859911",
   )
 }}
 
-The top three PWA audits for desktop devices are the presence of a [viewport meta tag](https://web.dev/viewport/#how-to-add-a-viewport-meta-tag), an [installable manifest](https://developer.chrome.com/docs/lighthouse/pwa/installable-manifest/) and the [apple-touch-icon](https://web.dev/apple-touch-icon/#how-the-lighthouse-apple-touch-icon-audit-fails) meta tag.
+The top three PWA audits for desktop devices are the presence of a <a hreflang="en" href="https://web.dev/viewport/#how-to-add-a-viewport-meta-tag">viewport meta tag</a>, an <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/pwa/installable-manifest/">installable manifest</a> and the <a hreflang="en" href="https://web.dev/apple-touch-icon/#how-the-lighthouse-apple-touch-icon-audit-fails">apple-touch-icon</a> meta tag.
 
 {{ figure_markup(
   image="lighthouse_pwa_audits_mobile.png",
@@ -373,7 +373,7 @@ sheets_gid="2095859911",
   )
 }}
 
-The top three PWA audits for mobile devices include the presence of a viewport meta tag, a [content-width meta tag](https://developer.chrome.com/docs/lighthouse/pwa/content-width/) and an installable manifest.
+The top three PWA audits for mobile devices include the presence of a viewport meta tag, a <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/pwa/content-width/">content-width meta tag</a> and an installable manifest.
 
 The presence of a viewport meta tag is relevant because it removes a 300-350ms delay that waits for a double-tap back when that was the way to zoom in. It has the additional benefit on mobile devices of optimizing the app for the device’s screen size. It is not surprising that almost all websites, PWA or not, include this.
 
@@ -405,7 +405,7 @@ sheets_gid="674035010",
   )
 }}
 
-As expected, PWA sites tend to have considerably higher PWA audit scores. These audits look into speed, reliability, installability and other PWA requirements, as detailed in their [documentation](https://developer.chrome.com/docs/lighthouse/pwa/).
+As expected, PWA sites tend to have considerably higher PWA audit scores. These audits look into speed, reliability, installability and other PWA requirements, as detailed in their <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/pwa/">documentation</a>.
 
 ### Service Worker Libraries
 
@@ -413,7 +413,7 @@ Service workers are really powerful tools, their API allows developers to create
 
 #### Workbox Usage
 
-[Workbox]([https://developer.chrome.com/workbox/](https://developer.chrome.com/workbox/)) is precisely a set of libraries that was born to ease the usage of service workers for developers. It includes a set of libraries that go from the basics that are reused in other Workbox libraries with [workbox-core](https://developer.chrome.com/docs/workbox/modules/workbox-core/) to more specific tasks like [caching strategies](https://developer.chrome.com/docs/workbox/modules/workbox-strategies/), [background sync](https://developer.chrome.com/docs/workbox/modules/workbox-background-sync/), [precaching](https://developer.chrome.com/docs/workbox/modules/workbox-precaching/) and [much more]([https://developer.chrome.com/docs/workbox/modules/](https://developer.chrome.com/docs/workbox/modules/)).
+[Workbox](<a hreflang="en" href="https://developer.chrome.com/workbox/">https://developer.chrome.com/workbox/</a>) is precisely a set of libraries that was born to ease the usage of service workers for developers. It includes a set of libraries that go from the basics that are reused in other Workbox libraries with <a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-core/">workbox-core</a> to more specific tasks like <a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-strategies/">caching strategies</a>, <a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-background-sync/">background sync</a>, <a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/workbox-precaching/">precaching</a> and [much more](<a hreflang="en" href="https://developer.chrome.com/docs/workbox/modules/">https://developer.chrome.com/docs/workbox/modules/</a>).
 
 {{ figure_markup(
   image="workbox usage.png",
@@ -447,9 +447,9 @@ Here we also see an overall increase in usage, workbox-core. The base library sa
 
 There is also a considerable jump in usage on workbox-precaching. Pre-caching can be used to emulate the model that packaged apps use. With workbox-precaching, you can choose assets that will be cached at the time of service worker installation to make those assets load faster in subsequents visits.
 
-What is surprising is the rise in workbox-sw usage,  because starting with [Workbox 5](https://github.com/GoogleChrome/workbox/releases/tag/v5.0.0), the Workbox team has encouraged developers to create custom bundles of the Workbox runtime instead of using `importScripts()` to load <code>[workbox-sw](https://developers.google.com/web/tools/workbox/modules/workbox-sw)</code> (the runtime). The Workbox team will continue supporting <code>workbox-sw</code>, but the new technique is now the recommended approach. In fact, the defaults for the build tools have switched to prefer that method.
+What is surprising is the rise in workbox-sw usage,  because starting with <a hreflang="en" href="https://github.com/GoogleChrome/workbox/releases/tag/v5.0.0">Workbox 5</a>, the Workbox team has encouraged developers to create custom bundles of the Workbox runtime instead of using `importScripts()` to load <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-sw">`workbox-sw`</a> (the runtime). The Workbox team will continue supporting `workbox-sw`, but the new technique is now the recommended approach. In fact, the defaults for the build tools have switched to prefer that method.
 
-It is possible the increase is coming from libraries that use older versions of Workbox like [create-react-app version 3](https://github.com/facebook/create-react-app/blob/v3.4.4/packages/react-scripts/package.json#L82)
+It is possible the increase is coming from libraries that use older versions of Workbox like <a hreflang="en" href="https://github.com/facebook/create-react-app/blob/v3.4.4/packages/react-scripts/package.json#L82">create-react-app version 3</a>
 
 ### Web Push Notifications
 
@@ -459,7 +459,7 @@ Notifications are a powerful way to re-engage with users. It is also one charact
 
 We can acknowledge that the implementation for web notifications has not been the smoothest for developers or users, but it is important to also note how useful of a tool they are. Like calendar notifications, subscription updates, or games, the important thing is that users get to choose when to turn them on.
 
-It bears repeating that for a notification to be useful it has to be [timely, precise, and relevant](https://developers.google.com/web/fundamentals/push-notifications). At the moment of showing the prompt to request permission, the user needs to understand the value of the service. Developers have the chance to onboard the users into notifications before they show the browser permissions dialog by sharing the advantages the users will get your specific notifications.
+It bears repeating that for a notification to be useful it has to be <a hreflang="en" href="https://developers.google.com/web/fundamentals/push-notifications">timely, precise, and relevant</a>. At the moment of showing the prompt to request permission, the user needs to understand the value of the service. Developers have the chance to onboard the users into notifications before they show the browser permissions dialog by sharing the advantages the users will get your specific notifications.
 
 {{ figure_markup(
   image="notification_acceptance.png",
