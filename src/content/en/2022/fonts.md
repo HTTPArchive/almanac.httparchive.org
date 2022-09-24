@@ -58,7 +58,7 @@ As noted in 2019, 2020, and—if there had been a fonts chapter—in 2021 as wel
 
 > Use only WOFF2 and forget about everything else.
 
-This will simplify your CSS and workflow massively and also prevents any accidental double or incorrect font downloads. WOFF2 is now<a hreflang="en" href="https://caniuse.com/woff2"> supported everywhere</a>. So, unless you need to support _really _ancient browsers, just use WOFF2. If you can't, consider not serving any web fonts to those older browsers at all. This will not be a problem if you have a robust fallback strategy in place. Visitors on older browsers will simply see your fallback fonts.
+This will simplify your CSS and workflow massively and also prevents any accidental double or incorrect font downloads. WOFF2 is now <a hreflang="en" href="https://caniuse.com/woff2">supported everywhere</a>. So, unless you need to support _really_ ancient browsers, just use WOFF2. If you can't, consider not serving any web fonts to those older browsers at all. This will not be a problem if you have a robust fallback strategy in place. Visitors on older browsers will simply see your fallback fonts.
 
 ### Hosting
 
@@ -140,7 +140,7 @@ However, the difference in median font size between services and self-hosted is 
 
 ### OpenType table sizes
 
-A typical font is essentially a tiny relational database with each table storing data like glyph shapes, glyph relationships, and metadata. For example, there are tables to store the vector Bézier curves that make up glyphs. There are also tables for relating glyphs to one another, that store things like kerning and ligature relationships (i.e. swap these two glyphs with this one when they are used together, like the famous _fi_ ligature).
+A typical font is essentially a <a hreflang="en" href="https://simoncozens.github.io/fonts-and-layout/opentype.html">tiny relational database</a> with each table storing data like glyph shapes, glyph relationships, and metadata. For example, there are tables to store the vector Bézier curves that make up glyphs (the characters in the font). There are also tables for relating glyphs to one another, that store things like kerning and ligature relationships (i.e. swap these two glyphs with this one when they are used together, like the famous _fi_ ligature).
 
 A reasonable way to measure how much of an impact a table has on overall file size is to multiply its median size by the number of fonts that include that table.
 
