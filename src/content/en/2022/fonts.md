@@ -1,7 +1,6 @@
 ---
 ##See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Fonts
-##TODO - Review and update chapter description
 description: Fonts chapter of the 2022 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.
 authors: [bramstein]
 reviewers: [alexnj, jmsole, RoelN, svgeesus]
