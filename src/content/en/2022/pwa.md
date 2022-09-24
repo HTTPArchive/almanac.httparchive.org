@@ -64,8 +64,7 @@ A service worker acts as a proxy server that sits between the web app, the brows
 {{ figure_markup(
   image="most-used-sw-events.png",
   caption="Most used service worker events.",
-  description="Column chart showing `install` is used on 63% of desktop and 61% of mobile PWA websites,
- `activate` on 63% and 61% respectively, `notificationclick` on 57% and 51%, `push` on 56% and 51%, `fetch` on 49% and 50%, `notificationclose` on 15% and 16%, `sync` on 6% and 5%, and finally `periodicsync` on 0% of both.",
+  description="Column chart showing `install` is used on 63% of desktop and 61% of mobile PWA websites, `activate` on 63% and 61% respectively, `notificationclick` on 57% and 51%, `push` on 56% and 51%, `fetch` on 49% and 50%, `notificationclose` on 15% and 16%, `sync` on 6% and 5%, and finally `periodicsync` on 0% of both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=1426457626&format=interactive",
   sheets_gid="573162824",
   sql_file="sw_events.sql"
