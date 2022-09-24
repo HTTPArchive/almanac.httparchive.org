@@ -297,7 +297,7 @@ When it comes to what elements are being used on the most documents, the list lo
   sql_file="element_popularity.sql",
 ) }}
 
-But here it's not a surprise that not every document uses `html`, `head`, or `body` tags—the respective tags are optional in HTML and are automatically inserted in the DOM, which is what is being counted here. The reason these are slightly less than 100%, are due to the a small number of pages breaking our detection by overriding JavaScript APIs we use for this detection—for example <a hreflang="en" href="https://mootools.net/">MooTools</a> overriding the `JSON.stringify()` API we use.
+It's not a surprise that nearly every document uses `html`, `head`, or `body` tags—they are automatically inserted in the DOM and that is what is being counted here. That the numbers are slightly less than 100% is due to a small number of pages that break detection by overriding the JavaScript APIs we use—for example, <a hreflang="en" href="https://mootools.net/">MooTools</a> overriding the `JSON.stringify()` API.
 
 It's a lot more surprising to miss `title` on 1% of all sampled documents—this element is not optional, and not being inserted in the DOM, and its omission an indicator for lack of conformance checking.
 
