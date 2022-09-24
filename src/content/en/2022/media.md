@@ -530,7 +530,7 @@ Now that we've separated out the animated GIFs from the non-animated ones, we ca
 )
 }}
 
-Once we remove animated GIFs from the equation, the format looks much better. At a median of 3.5 bits per pixel, GIFs are smaller, pixel-for-pixel, than PNGs. This likely reflects the kinds of content that each format is asked to compress: GIFs, by design, can only contain 256 colors (8 bits per channel) and binary transparency. PNGs can contain 16.7 million colors (24 bits per channel) and a full alpha channel.
+Once we remove animated GIFs from the equation, the format looks much better. At a median of 3.5 bits per pixel, GIFs are smaller, pixel-for-pixel, than PNGs. This likely reflects the kinds of content that each format is asked to compress: GIFs, by design, can only contain 256 colors and binary transparency. PNGs can contain 16.7 million colors plus a full alpha channel.
 
 Before we move on from GIFs, I do have one more question about them: How many frames do animated GIFs typically have?
 
