@@ -10,13 +10,13 @@ editors: [DesignrKnight, rviscomi]
 translators: []
 malchata_bio: Jeremy Wagner is a technical writer for Google on performance and Core Web Vitals. He has also written for A List Apart, CSS-Tricks, and Smashing Magazine. Jeremy will someday relocate to the remote wilderness where sand has not yet been taught to think. Until then, he continues to reside in Minnesota’s Twin Cities with his wife and stepdaughters, bemoaning the existence of strip malls.
 results: https://docs.google.com/spreadsheets/d/1vOeFUyfEtWRen3Xj57ZsWav40n5tlcJoV0HmAxmNE_I/
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: The state of JavaScript is a constantly evolving phenomenon. It's clear that we have an increased reliance on it more than ever, but that spells trouble for the collective user experience of the web. We need to do all we can—and more—to stem the tide of how much JavaScript we ship on production websites.
+featured_stat_1: 26%
+featured_stat_label_1: Top million pages that transform code with Babel
+featured_stat_2: 8%
+featured_stat_label_2: Extra JavaScript downloaded in last year on mobile
+featured_stat_3: 20
+featured_stat_label_3: Median third-party scripts shipped
 ---
 
 ## Introduction
