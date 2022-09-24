@@ -10,14 +10,13 @@ editors: [shantsis]
 translators: []
 bramstein_bio: Bram Stein is a soft­ware ar­chi­tect and prod­uct man­ager work­ing at <a hreflang="en" href="https://www.adobe.com/">Adobe</a>. He cares a lot about web ty­pog­ra­phy and is hap­pi­est work­ing at the in­ter­sec­tion be­tween de­sign and tech­nol­ogy.
 results: https://docs.google.com/spreadsheets/d/1A1XwuGa1DkqNLaF-lSXz4ndxO9G6SfACHwUvvywHgbQ/
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
-unedited: true
+featured_quote: We think it is also time to proclaim&colon; "Use only WOFF2 and forget about everything else". This will simplify your CSS and workflow massively and WOFF2 is now supported everywhere.
+featured_stat_1: 29%
+featured_stat_label_1: Sites using `font-display&colon; swap`
+featured_stat_2: 18%
+featured_stat_label_2: Sites using icon web fonts.
+featured_stat_3: 97%
+featured_stat_label_3: Variable fonts used that are served by Google
 ---
 
 ## Introduction
@@ -717,7 +716,7 @@ Usage of variable fonts has nearly tripled since the last measurement in the Alm
 
 {{ figure_markup(
   content="97%",
-  caption="Variable fonts served by Google Fonts.",
+  caption="Variable fonts used that are served by Google Fonts.",
   classes="big-number",
   sheets_gid="325872648",
   sql_file="variable_font_googlefonts_vs_other.sql",
