@@ -24,8 +24,6 @@ unedited: true
 
 We've come a long way since the early days of web fonts. We went from a handful of web-safe fonts to a typographic explosion of hundreds of thousands web fonts. The technology and ease of use is almost unrecognizable: from elaborate "bullet-proof" font loading strategies with several font formats to simply including a WOFF2 file.
 
-And it shows. Web font usage continues to grow. In the 2020 fonts chapter, 82% of all (desktop) sites used web fonts. In the two years since then, usage has increased to about 84%. The numbers are slightly lower for mobile, but represents a similar growth.
-
 {{ figure_markup(
   image="webfont-usage.png",
   caption="Webfont usage.",
@@ -36,13 +34,13 @@ And it shows. Web font usage continues to grow. In the 2020 fonts chapter, 82% o
   )
 }}
 
-While we've made tremendous progress we're not quite there yet. Large percentages of the world's population can't use web fonts because their writing systems are either too large or too complex to be delivered as a (small) web font. Fortunately, the W3C Fonts Working Group is working hard on the <a hreflang="en" href="https://www.w3.org/TR/IFT/">Incremental Font Transfer</a> web standard that will hopefully solve this.
+This progression in web fonts shows. Web font usage continues to grow. In the [2020 Fonts](../2020/fonts) chapter, 82% of all desktop sites used web fonts. In the two years since then, usage has increased to about 84%. The numbers are slightly lower for mobile, but represents a similar growth.
 
-There was no font chapter in 2021, but we  hope we can make up for that this year. We took a slightly different angle this year by taking a closer look at what is inside font files and how fonts are used in CSS. We of course also returned to the "classics" such as services, font-display, and resource hints usage. Finally, we wrap up the chapter with two special focus sections on variable and color fonts, because we think they are great (and nobody stopped us).
+While we've made tremendous progress we're not quite there yet. Large percentages of the world's population can't use web fonts because their writing systems are either too large or too complex to be delivered as a (small) web font. Fortunately, the <a hreflang="en" href="https://www.w3.org/Fonts/WG/">W3C Fonts Working Group</a> is working hard on the <a hreflang="en" href="https://www.w3.org/TR/IFT/">Incremental Font Transfer</a> web standard that will hopefully solve this.
+
+There was no Fonts chapter in 2021, but w hope we can make up for that this year. We took a slightly different angle this year by taking a closer look at what is inside font files and how fonts are used in CSS. We of course also returned to the "classics" such as services, `font-display`, and resource hints usage. Finally, we wrap up the chapter with two special focus sections on variable and color fonts, because we think they are great.
 
 ## Performance
-
-Surprisingly, not a lot has changed in the types of fonts served. About 75% of all font files are served as <a hreflang="en" href="https://www.w3.org/TR/WOFF2/">WOFF2</a>, about 12% as WOFF and the remainder as either octet-stream or ttf (and then a whole bunch of random MIME types). This is fairly similar to the results in the 2020 fonts chapter. Fortunately, SVG and EOT font usage has almost disappeared completely.
 
 {{ figure_markup(
   image="popular-web-font-mime-types.png",
@@ -54,11 +52,14 @@ Surprisingly, not a lot has changed in the types of fonts served. About 75% of a
   )
 }}
 
-As noted in 2019, 2020, and—if there had been a fonts chapter—in 2021 as well: WOFF2 offers the best compression and should be the preferred format. In fact, we think it is also time to proclaim:
+Surprisingly, not a lot has changed in the types of fonts served. About 75% of all font files are served as <a hreflang="en" href="https://www.w3.org/TR/WOFF2/">WOFF2</a>, about 12% as WOFF and the remainder as either octet-stream or
+TrueType Font—and then a whole bunch of random MIME types. This is fairly similar to [the results in the 2020 Fonts chapter](../2020/fonts#formats-and-mime-types). Fortunately, SVG and EOT font usage has almost disappeared completely.
+
+As noted in 2019, 2020: WOFF2 offers the best compression and should be the preferred format. In fact, we think it is also time to proclaim:
 
 > Use only WOFF2 and forget about everything else.
 
-This will simplify your CSS and workflow massively and also prevents any accidental double or incorrect font downloads. WOFF2 is now <a hreflang="en" href="https://caniuse.com/woff2">supported everywhere</a>. So, unless you need to support _really_ ancient browsers, just use WOFF2. If you can't, consider not serving any web fonts to those older browsers at all. This will not be a problem if you have a robust fallback strategy in place. Visitors on older browsers will simply see your fallback fonts.
+This will simplify your CSS and workflow massively and also prevents any accidental double or incorrect font downloads. WOFF2 is now <a hreflang="en" href="https://caniuse.com/woff2">supported everywhere</a>. So, unless you need to support really ancient browsers, just use WOFF2. If you can't, consider not serving any web fonts to those older browsers at all. This will not be a problem if you have a robust fallback strategy in place. Visitors on older browsers will simply see your fallback fonts.
 
 ### Hosting
 
@@ -74,7 +75,7 @@ Where do people get their fonts? Do they self host, or use a web font service? B
   )
 }}
 
-In general, it is a mixture: 67% self host _and_ use a service. Only 19% only use self hosting exclusively. We expect this number to go up in the coming years for two reasons: there is no longer a performance benefit to using a hosted service after the introduction of <a hreflang="en" href="https://developers.google.com/web/updates/2020/10/http-cache-partitioning">cache partitioning</a>, and <a hreflang="en" href="https://www.theregister.com/2022/01/31/website_fine_google_fonts_gdpr/">European courts are slowly becoming highly skeptical of European-based companies using Google Fonts</a>.
+In general, it is a mixture: 67% self host and use a service. Only 19% only use self hosting exclusively. We expect this number to go up in the coming years for two reasons: there is no longer a performance benefit to using a hosted service after the introduction of <a hreflang="en" href="https://developers.google.com/web/updates/2020/10/http-cache-partitioning">cache partitioning</a>, and <a hreflang="en" href="https://www.theregister.com/2022/01/31/website_fine_google_fonts_gdpr/">European courts are slowly becoming highly skeptical of European-based companies using Google Fonts</a>.
 
 We can further split this data by service. Perhaps not surprisingly, <a hreflang="en" href="https://fonts.google.com/">Google Fonts</a> is the most popular web font service with nearly 65% of all web pages using it. Free is hard to beat indeed.
 
@@ -94,7 +95,7 @@ Looking back at previous years, we can see that Google Fonts usage declined for 
 
 In contrast, both Font Awesome and the Adobe Fonts service grew significantly over the last few years. Font Awesome service usage grew 86% from 2019 to 2022, while Adobe Fonts usage grew by 24% in the same period.
 
-Note that the services data is measured differently compared to the 2020 and 2019 font chapters. Those chapters looked at the number of requests to a service, whereas the 2022 data looks at pages using the services. Thus the data in 2022 is more accurate as it isn't influenced by the number of fonts loaded on a site. For example, the drop in Google Fonts usage noted in the 2020 chapter was most likely caused by Google Fonts switching to variable fonts and thereby significantly reducing the number of requests to their service.
+Note that the services data is measured differently compared to the 2020 and 2019 font chapters. Those chapters looked at the number of requests to a service, whereas the 2022 data looks at pages using the services. Thus the data in 2022 is more accurate as it isn't influenced by the number of fonts loaded on a site. For example, the drop in Google Fonts usage noted in the 2020 chapter was most likely caused by Google Fonts switching to _variable fonts_ and thereby significantly reducing the number of requests to their service.
 
 ### File sizes
 
@@ -140,7 +141,7 @@ However, the difference in median font size between services and self-hosted is 
 
 ### OpenType table sizes
 
-A typical font is essentially a <a hreflang="en" href="https://simoncozens.github.io/fonts-and-layout/opentype.html">tiny relational database</a> with each table storing data like glyph shapes, glyph relationships, and metadata. For example, there are tables to store the vector Bézier curves that make up glyphs (the characters in the font). There are also tables for relating glyphs to one another, that store things like kerning and ligature relationships (i.e. swap these two glyphs with this one when they are used together, like the famous _fi_ ligature).
+A typical font is essentially a <a hreflang="en" href="https://simoncozens.github.io/fonts-and-layout/opentype.html">tiny relational database</a> with each table storing data like glyph shapes, glyph relationships, and metadata. For example, there are tables to store the vector Bézier curves that make up glyphs—the characters in the font. There are also tables for relating glyphs to one another, that store things like kerning and ligature relationships (i.e. swap these two glyphs with this one when they are used together, like the famous _fi_ ligature).
 
 A reasonable way to measure how much of an impact a table has on overall file size is to multiply its median size by the number of fonts that include that table.
 
@@ -200,9 +201,9 @@ A reasonable way to measure how much of an impact a table has on overall file si
   </figcaption>
 </figure>
 
-The top ten highest impact tables starts with the `glyf`, `CFF`, `GPOS`, and `hmtx` tables. These contain the data for the Bézier curves that make up the outlines of all glyphs (`glyf` and CFF), OpenType positioning features (GPOS) and horizontal metrics (`hmtx`). This is great because these tables are directly related to the number of glyphs in the font. Reduce the number of glyphs in the font by removing glyphs you don't need and you will dramatically reduce its file size.
+The top ten highest impact tables starts with the `glyf`, CFF, GPOS, and `hmtx` tables. These contain the data for the Bézier curves that make up the outlines of all glyphs (`glyf` and CFF), OpenType positioning features (GPOS) and horizontal metrics (`hmtx`). This is great because these tables are directly related to the number of glyphs in the font. Reduce the number of glyphs in the font by removing glyphs you don't need and you will dramatically reduce its file size.
 
-Figuring out <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-subsetting.html">what you need and what you don't need</a> is the hard part though. You might accidentally remove glyphs, or break OpenType features that you need to render text correctly. Instead of subsetting manually using, for example, <a hreflang="en" href="https://fonttools.readthedocs.io/en/latest/subset/index.html">font tools</a>, you can use tools like <a hreflang="en" href="https://github.com/Munter/subfont">subfont</a> or <a hreflang="en" href="https://github.com/zachleat/glyphhanger">glyphhanger</a> to automatically create a "perfect" subset based on the content on your site. However, be mindful that the license of your font permits such modifications.
+Figuring out <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-subsetting.html">what you need and what you don't need</a> is the hard part though. You might accidentally remove glyphs, or break OpenType features that you need to render text correctly. Instead of subsetting manually using, for example, <a hreflang="en" href="https://fonttools.readthedocs.io/en/latest/subset/index.html">font tools</a>, you can use tools like <a hreflang="en" href="https://github.com/Munter/subfont">subfont</a> or <a hreflang="en" href="https://github.com/zachleat/glyphhanger">glyphhanger</a> to automatically create a "perfect" subset based on the content on your site. However, be mindful whether the license of your font permits such modifications.
 
 It is interesting to note that the `name` and `post` tables are in the top 10. These two tables primarily contain metadata that is important for desktop fonts, but not necessary for web fonts. This is an indication a lot of web fonts contain metadata that can be stripped without consequences, such as name table entries, glyph names in the post table, non-Unicode cmap entries, etc. We would love to see a universal set of recommendations (or even a <a hreflang="en" href="https://pmt.sourceforge.io/pngcrush/">pngcrush</a>-like tool) that can be used by foundries and web developers to remove every last unnecessary byte from a web font.
 
@@ -258,7 +259,7 @@ In other words, even if `CFF` starts out smaller, it compresses much less than `
 
 ### Resource hints
 
-Resource hints are special instructions to the browser to load or render a resource  before it normally would. Browsers normally only load web fonts when they know a font is used on the page. In order to know that, it needs to have parsed both the HTML and CSS. However, if you, as a web developer, _know_ that a font will be used, you can use resource hints to tell the browser to load fonts much earlier.
+Resource hints are special instructions to the browser to load or render a resource before it normally would. Browsers normally only load web fonts when they know a font is used on the page. In order to know that, it needs to have parsed both the HTML and CSS. However, if you, as a web developer, _know_ that a font will be used, you can use resource hints to tell the browser to load fonts much earlier.
 
 There are several types of resource hints that are relevant to web fonts: `dns-prefetch`, `preconnect`, and `preload` (in order of the lowest to highest impact). Ideally you would like to preload your most important fonts, but depending on where they are hosted that may not always be possible.
 
@@ -686,7 +687,7 @@ And now for a complete surprise (to us anyway): people _really_ like to specify 
   )
 }}
 
-Our hunch this is a combination of CSS frameworks including these properties and a dislike of how fonts are rendered slightly bolder on macOS (variable font grades to the rescue!) It would be interesting to return to these properties in the 2023 fonts chapter. Perhaps it is also time to put these properties on a standards track? The demand is clearly there.
+Our hunch this is a combination of CSS frameworks including these properties and a dislike of how fonts are rendered slightly bolder on macOS (variable font grades to the rescue!) It would be interesting to return to these properties in the 2023  Fonts chapter. Perhaps it is also time to put these properties on a standards track? The demand is clearly there.
 
 ## Variable fonts
 
@@ -694,7 +695,7 @@ Variable fonts allow type designers to combine multiple styles of a family into 
 
 For example, even if the type designer did not explicitly create a semibold style, using a variable font with a weight axis, the text rendering engine will simply interpolate a semibold style for you (and any other weight you might need, assuming the variable font's weight axis supports that range). Not only do variable fonts increase typographic expressiveness, they also offer a major benefit for web developers in terms of file size savings.
 
-Usage of variable fonts has nearly tripled since the last measurement in the Almanac's 2020 fonts chapter! Nearly 29% of websites use variable fonts. Most of this growth seems to have happened in the last year, with an amazing 125% growth.
+Usage of variable fonts has nearly tripled since the last measurement in the Almanac's 2020  Fonts chapter! Nearly 29% of websites use variable fonts. Most of this growth seems to have happened in the last year, with an amazing 125% growth.
 
 {{ figure_markup(
   image="usage-of-variable-fonts.png",
@@ -768,7 +769,7 @@ To us, it appears that variable fonts are primarily used for their performance b
 
 Color fonts are pretty much what you would expect: fonts with built in colors. Though the technology was originally created for emoji fonts, there are now more text color fonts than emoji fonts.
 
-Color fonts usage has grown quite a bit since the last fonts chapter in 2020. Usage went from 0.004% of pages using color fonts in 2020 to about 0.018% in 2022. While those numbers are still _very_ small, there is a clear growth in their usage.
+Color fonts usage has grown quite a bit since the last Fonts chapter in 2020. Usage went from 0.004% of pages using color fonts in 2020 to about 0.018% in 2022. While those numbers are still _very_ small, there is a clear growth in their usage.
 
 {{ figure_markup(
   image="color-font-usage.png",
