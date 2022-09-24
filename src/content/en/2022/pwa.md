@@ -23,11 +23,11 @@ unedited: true
 
 In the early days of Progressive Web Apps, there were two key features that harnessed the promise of an advanced modern web application: offline support and a direct icon on the home screen of the device.
 
-These two concepts were enabled after installing a PWA, a process that generally began by tapping on an “ambient badge” that would appear on the browser’s URL bar. This badge would prompt the user to install the website. Mobile browsers such as Samsung Internet and Mozilla Firefox, were among the first ones to explicitly support this behaviour, commonly known as [“Add to home screen” (A2HS)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen).
+These two concepts were enabled after installing a PWA, a process that generally began by tapping on an "ambient badge" that would appear on the browser's URL bar. This badge would prompt the user to install the website. Mobile browsers such as Samsung Internet and Mozilla Firefox, were among the first ones to explicitly support this behaviour, commonly known as ["Add to home screen" (A2HS)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen).
 
 Five years ago, this was a radical idea. A website would be able to launch directly from the home screen, listed alongside other applications a user had installed on their device. This was the start of progress made towards reducing the gap between capabilities of web apps and OS-specific experiences.
 
-The A2HS scenario has evolved into web apps that can be fully installed and deeply integrated into the host OS, in both mobile and desktop contexts. These past 12 months have seen browsers take important steps towards making sure that PWAs have a tight integration with desktop platforms, and many of the new additions to this year’s almanac reflect these changes. This is the state of PWAs in 2022.
+The A2HS scenario has evolved into web apps that can be fully installed and deeply integrated into the host OS, in both mobile and desktop contexts. These past 12 months have seen browsers take important steps towards making sure that PWAs have a tight integration with desktop platforms, and many of the new additions to this year's almanac reflect these changes. This is the state of PWAs in 2022.
 
 Note: As a set of web technologies, PWAs are not isolated from the rest of the web platform. While there is a chapter dedicated to Capabilities, this year we have investigated the intersection of some of these new advanced capabilities when used inside a PWA.
 
@@ -39,7 +39,7 @@ While there <a hreflang="en" href="https://caniuse.com/push-api">isn't parity be
 
 ### Service Worker Usage
 
-Service workers are not as common as other core technologies of PWAs. For comparison reasons, we have run the same queries as last year, which allows us to try to make sense of the evolution of service worker usage. You can read the explanation of <a hreflang="en" href="https://almanac.httparchive.org/en/2021/pwa#service-workers-usage">why it isn’t trivial to find out actual usage of service worker</a>,
+Service workers are not as common as other core technologies of PWAs. For comparison reasons, we have run the same queries as last year, which allows us to try to make sense of the evolution of service worker usage. You can read the explanation of <a hreflang="en" href="https://almanac.httparchive.org/en/2021/pwa#service-workers-usage">why it isn't trivial to find out actual usage of service worker</a>,
 
 * Lighthouse detects a 1.6% (mobile) and 1.7% (desktop) of all websites employ a service worker. We expect this is lower than the real-world percentage due to <a hreflang="en" href="https://web.dev/service-worker">additional checks</a> that Lighthouse takes into consideration.
 * Following the same <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/pwa.js">metrics introduced last year</a>, usage of a Service Worker in websites comes up to 1.63% on desktop and 1.81% on mobile.
@@ -54,7 +54,7 @@ Service workers are not as common as other core technologies of PWAs. For compar
   )
 }}
 
-There hasn’t been a noticeable change for Service Worker controlled pages in the top 1000 sites as well, with only a slight decrease in desktop and even smaller increase in mobile properties. But there was an increase in all other categories. If we follow the <a hreflang="en" href="https://almanac.httparchive.org/en/2021/pwa#:~:text=And%20how%20can,via%20service%20workers.">reasoning from last year</a>, where we postulated that bigger websites adopted the advanced technologies faster. Seeing more growth in other categories makes sense, as smaller companies and developers have learned and adopted the technology shared from case studies and examples from the companies with more traffic.
+There hasn't been a noticeable change for Service Worker controlled pages in the top 1000 sites as well, with only a slight decrease in desktop and even smaller increase in mobile properties. But there was an increase in all other categories. If we follow the <a hreflang="en" href="https://almanac.httparchive.org/en/2021/pwa#:~:text=And%20how%20can,via%20service%20workers.">reasoning from last year</a>, where we postulated that bigger websites adopted the advanced technologies faster. Seeing more growth in other categories makes sense, as smaller companies and developers have learned and adopted the technology shared from case studies and examples from the companies with more traffic.
 
 ### Service Worker Features
 
@@ -108,7 +108,7 @@ Push notification events come next in most used service worker methods.
 )
 }}
 
-* `notificationclick` comes up to 57% (an 11% increase over last year’s data) on desktop and 51% (up 5%) on mobile.
+* `notificationclick` comes up to 57% (an 11% increase over last year's data) on desktop and 51% (up 5%) on mobile.
 * `push` 56% (up 12%) on desktop and 50% (up 5%) on mobile.
 * `notificationclose` is now at 15% (up 9%) on desktop and 16% (up 10%) on mobile.
 
@@ -179,7 +179,7 @@ And these are the most used methods:
 
 The Web App Manifest file is a JSON file that contains information about the application itself. Among the data that is present in the key-value pairs is information relevant to display, promote and integrate the app into the host OS.
 
-Keeping the web app’s manifest fully authored is essential to take advantage of advanced discoverability through online repositories, submissions to application stores, and more recently, a way to tap into advanced capabilities like share target and file handling for your app. Cutting edge work to <a hreflang="en" href="https://github.com/aarongustafson/pwa-widgets#how-widgets-are-represented-in-these-apis">enable Widgets based on PWA technology</a> is also being rooted in the manifest, proving the versatility of the file itself for advanced platform integration even further.
+Keeping the web app's manifest fully authored is essential to take advantage of advanced discoverability through online repositories, submissions to application stores, and more recently, a way to tap into advanced capabilities like share target and file handling for your app. Cutting edge work to <a hreflang="en" href="https://github.com/aarongustafson/pwa-widgets#how-widgets-are-represented-in-these-apis">enable Widgets based on PWA technology</a> is also being rooted in the manifest, proving the versatility of the file itself for advanced platform integration even further.
 
 {{ figure_markup(
   caption="Percent of manifest files parseable (desktop)",
@@ -194,7 +194,7 @@ For most cases, 95% in desktop and 94% in mobile, websites that have a manifest 
 
 ### Manifest Properties and Installability criteria
 
-The manifest file is one of the core technologies that defines PWAs and it plays a key part in signaling to the browser to prompt for installation. Although the way the prompt is triggered <a hreflang="en" href="https://web.dev/installable-manifest/#in-other-browsers">varies with different browsers</a>, there’s always a subset of the manifest file involved.
+The manifest file is one of the core technologies that defines PWAs and it plays a key part in signaling to the browser to prompt for installation. Although the way the prompt is triggered <a hreflang="en" href="https://web.dev/installable-manifest/#in-other-browsers">varies with different browsers</a>, there's always a subset of the manifest file involved.
 
 Following are the usage numbers of manifest file alongside service worker. These two used in conjunction generally imply installability.
 
@@ -237,8 +237,8 @@ Note that the last field, `gcm_sender_id`, is not a standardized property. It is
   )
 }}
 
-* lang: 24% of desktop and 23% of mobile manifests are using the `lang` tag to specify the primary language for the value of the manifest’s localizable members.
-* display: `standalone` mode is the most common display mode, used by  almost 3/4 of websites that define a display mode. It’s also  one of the display modes that enables an app to be installable.
+* lang: 24% of desktop and 23% of mobile manifests are using the `lang` tag to specify the primary language for the value of the manifest's localizable members.
+* display: `standalone` mode is the most common display mode, used by  almost 3/4 of websites that define a display mode. It's also  one of the display modes that enables an app to be installable.
 
 {{ figure_markup(
   image="display_values.png",
@@ -250,7 +250,7 @@ Note that the last field, `gcm_sender_id`, is not a standardized property. It is
   )
 }}
 
-* `orientation`: Most PWAs, 80% for desktop and 79% for mobile do not define a preferred orientation. When set, the most frequently used value is “portrait,” with 13% on desktop and 15% on mobile web sites defining that value on their manifest.
+* `orientation`: Most PWAs, 80% for desktop and 79% for mobile do not define a preferred orientation. When set, the most frequently used value is "portrait," with 13% on desktop and 15% on mobile web sites defining that value on their manifest.
 * `icons`: PWAs need to generate different icon sizes to accommodate the range of surfaces where the app can be advertised and placed. Many tools exist to generate the plethora of icons needed for different desktop and mobile environments. The 2 most common icon sizes present in manifest files are `192x192` and `512x512`. Both sizes appear in around 70% of the manifest files analyzed.
 
 {{ figure_markup(
@@ -267,7 +267,7 @@ Note that the last field, `gcm_sender_id`, is not a standardized property. It is
 
 A web app manifest file can contain data that is useful in describing of the application. These properties can be used by stores or other distribution mechanisms to promote the application. An increased growth of <a hreflang="en" href="https://developer.chrome.com/blog/richer-pwa-installation/">rich browser-based installation dialogs</a> is also utilizing these fields more prominently. Relevant fields, which can be found as part of the Application Information supplement to the Manifest file are listed below:
 
-* `description`: This property exists in 36% of desktop and 34% of mobile web app manifests. The description is important since it explains what the application does. It’s commonly used to provide information about the app for a store. Currently around a third of installable PWAs would offer this information.
+* `description`: This property exists in 36% of desktop and 34% of mobile web app manifests. The description is important since it explains what the application does. It's commonly used to provide information about the app for a store. Currently around a third of installable PWAs would offer this information.
 * `screenshots`: This property provides the URLs of one or more screenshots for use  in app stores and in-browser install prompts. PWAs with manifests that take advantage of this feature total 1.12% for desktop and 1.19% for mobiles devices.
 * `categories`: Used as hints for catalog organization.
 
@@ -293,7 +293,7 @@ sheets_gid="217012426",
 
 The top categories for both websites and PWAs remain the same, yet each is slightly different. Top categories are shopping, news, and business.
 
-* `iarc_rating_id`: It’s a string that represents the <a hreflang="en" href="https://www.globalratings.com/how-iarc-works.aspx">IARC certification code</a> of the web app. 0.05% of desktop and mobile apps utilize this field to advertise the rating of their app or game.
+* `iarc_rating_id`: It's a string that represents the <a hreflang="en" href="https://www.globalratings.com/how-iarc-works.aspx">IARC certification code</a> of the web app. 0.05% of desktop and mobile apps utilize this field to advertise the rating of their app or game.
 
 #### Advanced capabilities
 
@@ -375,9 +375,9 @@ sheets_gid="2095859911",
 
 The top three PWA audits for mobile devices include the presence of a viewport meta tag, a <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/pwa/content-width/">content-width meta tag</a> and an installable manifest.
 
-The presence of a viewport meta tag is relevant because it removes a 300-350ms delay that waits for a double-tap back when that was the way to zoom in. It has the additional benefit on mobile devices of optimizing the app for the device’s screen size. It is not surprising that almost all websites, PWA or not, include this.
+The presence of a viewport meta tag is relevant because it removes a 300-350ms delay that waits for a double-tap back when that was the way to zoom in. It has the additional benefit on mobile devices of optimizing the app for the device's screen size. It is not surprising that almost all websites, PWA or not, include this.
 
-Installable manifest also appears in both top 3 lists. As expected, this has a very high value for PWA sites, both on desktop (90.2%) and mobile (95.2%), with a very low counterpart for all websites, presumably because developers don’t intend for these to be  installed.
+Installable manifest also appears in both top 3 lists. As expected, this has a very high value for PWA sites, both on desktop (90.2%) and mobile (95.2%), with a very low counterpart for all websites, presumably because developers don't intend for these to be  installed.
 
 Finally, apple-touch-icon is third on PWA related Lighthouse audits. Since iOS 1.1.3, Safari for iOS has supported a way for developers to specify an image that will be used to represent the web site or app on the home screen. This is mostly relevant for mobile devices.
 
@@ -427,7 +427,7 @@ sheets_gid="1871711300",
 
 Compared with last year we see a big spike in Workbox usage. Last year its usage on mobile was 33% compared to 54% this year, and almost 60% of PWAs use Workbox in some capacity.
 
-Since the growth that we saw in the number of pages controlled by service workers was not in the top 1000 websites but in more granular categories, and this growth on Workbox usage we can infer that adoption of Workbox is happening inside this companies and websites that might have waited for the technology to be adopted by the top websites, or that might not have the need for a completely custom implementation of service workers and get the most out of Workbox’s tested patterns.
+Since the growth that we saw in the number of pages controlled by service workers was not in the top 1000 websites but in more granular categories, and this growth on Workbox usage we can infer that adoption of Workbox is happening inside this companies and websites that might have waited for the technology to be adopted by the top websites, or that might not have the need for a completely custom implementation of service workers and get the most out of Workbox's tested patterns.
 
 #### Workbox packages
 
@@ -471,7 +471,7 @@ sheets_gid="435156894",
   )
 }}
 
-With the growth of notification support and the UX improvements  in different platforms, there hasn’t been any major changes in the acceptance of notifications. Since early 2020 they have been around the 6% acceptance rate on desktop and 20% on mobile.
+With the growth of notification support and the UX improvements  in different platforms, there hasn't been any major changes in the acceptance of notifications. Since early 2020 they have been around the 6% acceptance rate on desktop and 20% on mobile.
 
 {{ figure_markup(
   caption="Notification acceptance rate (desktop)",
@@ -491,7 +491,7 @@ With the growth of notification support and the UX improvements  in different pl
 )
 }}
 
-Desktop and mobile notification acceptance rate share a common fashion, and it is the trend to ignore notifications. The sum of “ignore” has gone up from 48% in February 2020 all the way up to 70% in June 2022. For mobile platforms, from 1.88% in February 2020 to a staggering 34% for June this year. Notification fatigue, coupled with increasing number of prompts for security, privacy, and advanced capabilities are partially responsible, and work is being carried out to address this and present better unified UX across different platforms.
+Desktop and mobile notification acceptance rate share a common fashion, and it is the trend to ignore notifications. The sum of "ignore" has gone up from 48% in February 2020 all the way up to 70% in June 2022. For mobile platforms, from 1.88% in February 2020 to a staggering 34% for June this year. Notification fatigue, coupled with increasing number of prompts for security, privacy, and advanced capabilities are partially responsible, and work is being carried out to address this and present better unified UX across different platforms.
 
 ## Conclusion
 
