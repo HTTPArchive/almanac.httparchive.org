@@ -329,7 +329,7 @@ These `@font-face` descriptors are very new, but are already seeing some use. To
 1. A set of consistent fallback fonts that are available in all browsers and on all platforms. They could even be variable fonts. Imagine the possibilities.
 2. Tools to automatically match fonts by tweaking its size and metrics. Doing this by hand is very time-consuming, so a tool is a must. This is not intended as a replacement for the web font, but merely as a temporary fallback while the web fonts are loading (or as a standin if the fonts don't load or the browser is very old).
 
-We're slowly getting there with tools such as the <a hreflang="en" href="https://meowni.ca/font-style-matcher/">Font Style Matcher</a>, but unfortunately, fallback fonts are still very much platform dependent.
+We're slowly getting there with tools such as <a hreflang="en" href="https://meowni.ca/font-style-matcher/">Font Style Matcher</a> and <a hreflang="en" href="https://www.industrialempathy.com/perfect-ish-font-fallback/">Perfect-ish Font Fallback</a>, but unfortunately, fallback fonts are still very much platform dependent.
 
 ## Font usage
 
