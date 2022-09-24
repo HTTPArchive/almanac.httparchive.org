@@ -299,7 +299,7 @@ When it comes to what elements are being used on the most documents, the list lo
 
 But here it's not a surprise that not every document uses `html`, `head`, or `body` tags—the respective tags are optional in HTML and are automatically inserted in the DOM, which is what is being counted here. The reason these are slightly less than 100%, are due to the a small number of pages breaking our detection by overriding JavaScript APIs we use for this detection—for example <a hreflang="en" href="https://mootools.net/">MooTools</a> overriding the `JSON.stringify()` API we use.
 
-It's a lot more surprising to miss `title` on 1% of all sampled documents—this element is not optional and its omission an indicator for lack of conformance checking.
+It's a lot more surprising to miss `title` on 1% of all sampled documents—this element is not optional, and not being inserted in the DOM, and its omission an indicator for lack of conformance checking.
 
 The elements that then follow are old friends—especially `a`, `img`, and `meta` have been popular elements ever since <a hreflang="en" href="https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html">Ian Hickson's seminal HTML study back</a> in 2005.
 
