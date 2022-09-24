@@ -119,7 +119,7 @@ Are HTML documents being compressed? How many? How? 86% of them are—with 58% (
   height=511
 ) }}
 
-What about languages? In our data set, 35% of pages used a lang attribute mapping to English; 17% had no language set; and you already see the difficulties—the sample is likely biased and also not as big as to reflect all of the world, and no lang attribute being used is not equaling no language being set so, this isn't something our data would be useful for.
+What about languages? In our data set, 35% of pages used a lang attribute mapping to English; 17% had no language set; and you already see the difficulties—the sample is likely biased and also not as big as to reflect all of the world, and no `lang` attribute being used is not equaling no language being set so, this isn't something our data would be useful for.
 
 ### Conformance
 
