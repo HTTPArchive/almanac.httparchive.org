@@ -11,11 +11,11 @@ MichaelSolati_bio: Michael is a Developer Advocate at Amplication, focusing on h
 results: https://docs.google.com/spreadsheets/d/13S9FRj8OPRtoMPb94jFh6pPNz3lNS9yztIaorZYe288/
 featured_quote: The Capabilities Project allows applications to migrate to the web, removing some barriers associated with platform-specific applications.
 featured_stat_1: 38
-featured_stat_label_1: Capabilities were found used on one site.
-featured_stat_2: 10.10%
-featured_stat_label_2: Desktop sites use the Async Clipboard API.
-featured_stat_3: ~8%
-featured_stat_label_3: Sites on mobile and desktop use the Web Share API.
+featured_stat_label_1: Capabilities were used on one site.
+featured_stat_2: ~10%
+featured_stat_label_2: Sites on mobile and desktop use the _Async Clipboard API_.
+featured_stat_3: 8%
+featured_stat_label_3: Sites on mobile and desktop use the _Web Share API_.
 ---
 
 ## Introduction
