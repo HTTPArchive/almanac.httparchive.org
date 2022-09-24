@@ -1,7 +1,7 @@
 ---
-#See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
+##See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Fonts
-#TODO - Review and update chapter description
+##TODO - Review and update chapter description
 description: Fonts chapter of the 2022 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.
 authors: [bramstein]
 reviewers: [RoelN, svgeesus, jmsole]
@@ -19,7 +19,7 @@ featured_stat_label_3: TODO
 unedited: true
 ---
 
-# Introduction
+## Introduction
 
 We've come a long way since the early days of web fonts. We went from a handful of web-safe fonts to a typographic explosion of hundreds of thousands web fonts. The technology and ease of use is almost unrecognizable: from elaborate "bullet-proof" font loading strategies with several font formats to simply including a WOFF2 file.
 
@@ -39,7 +39,7 @@ While we've made tremendous progress we're not quite there yet. Large percentage
 
 There was no font chapter in 2021, but we  hope we can make up for that this year. We took a slightly different angle this year by taking a closer look at what is inside font files and how fonts are used in CSS. We of course also returned to the "classics" such as services, font-display, and resource hints usage. Finally, we wrap up the chapter with two special focus sections on variable and color fonts, because we think they are great (and nobody stopped us).
 
-# Performance
+## Performance
 
 Surprisingly, not a lot has changed in the types of fonts served. About 75% of all font files are served as <a hreflang="en" href="https://www.w3.org/TR/WOFF2/">WOFF2</a>, about 12% as WOFF and the remainder as either octet-stream or ttf (and then a whole bunch of random MIME types). This is fairly similar to the results in the 2020 fonts chapter. Fortunately, SVG and EOT font usage has almost disappeared completely.
 
@@ -59,7 +59,7 @@ As noted in 2019, 2020, and—if there had been a fonts chapter—in 2021 as wel
 
 This will simplify your CSS and workflow massively and also prevents any accidental double or incorrect font downloads. WOFF2 is now<a hreflang="en" href="https://caniuse.com/woff2"> supported everywhere</a>. So, unless you need to support _really _ancient browsers, just use WOFF2. If you can't, consider not serving any web fonts to those older browsers at all. This will not be a problem if you have a robust fallback strategy in place. Visitors on older browsers will simply see your fallback fonts.
 
-## Hosting
+### Hosting
 
 Where do people get their fonts? Do they self host, or use a web font service? Both? Let's take a look at the numbers.
 
@@ -95,7 +95,7 @@ In contrast, both Font Awesome and the Adobe Fonts service grew significantly ov
 
 Note that the services data is measured differently compared to the 2020 and 2019 font chapters. Those chapters looked at the number of requests to a service, whereas the 2022 data looks at pages using the services. Thus the data in 2022 is more accurate as it isn't influenced by the number of fonts loaded on a site. For example, the drop in Google Fonts usage noted in the 2020 chapter was most likely caused by Google Fonts switching to variable fonts and thereby significantly reducing the number of requests to their service.
 
-## File sizes
+### File sizes
 
 Compression is a great way to reduce the amount of data that needs to be downloaded, but it has its limits. To better understand what influences font file sizes, let's take a look at the median font sizes across all fonts.
 
@@ -137,7 +137,7 @@ A lot of websites using self-hosted fonts are still using WOFF instead of WOFF2.
 
 However, the difference in median font size between services and self-hosted is too large to be explained by a lower usage of WOFF2. While WOFF2 offers excellent compression, compression alone does not explain the large difference in median font sizes. The web font services must be performing other types of optimizations that aren't being done (enough) for self hosted fonts. To find the answer, we'll need to take a look at the insides of a font.
 
-## OpenType table sizes
+### OpenType table sizes
 
 A typical font is essentially a tiny relational database with each table storing data like glyph shapes, glyph relationships, and metadata. For example, there are tables to store the vector Bézier curves that make up glyphs. There are also tables for relating glyphs to one another, that store things like kerning and ligature relationships (i.e. swap these two glyphs with this one when they are used together, like the famous _fi_ ligature).
 
@@ -205,7 +205,7 @@ Figuring out <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-
 
 It is interesting to note that the `name` and `post` tables are in the top 10. These two tables primarily contain metadata that is important for desktop fonts, but not necessary for web fonts. This is an indication a lot of web fonts contain metadata that can be stripped without consequences, such as name table entries, glyph names in the post table, non-Unicode cmap entries, etc. We would love to see a universal set of recommendations (or even a <a hreflang="en" href="https://pmt.sourceforge.io/pngcrush/">pngcrush</a>-like tool) that can be used by foundries and web developers to remove every last unnecessary byte from a web font.
 
-## Outline formats
+### Outline formats
 
 You might have noticed the OpenType sizes table contains two entries for vector glyph outline data: `glyf` and `CFF`. There are actually four competing ways to store vector outlines in OpenType: TrueType (`glyf`), Compact Font Format (`CFF`), Compact Font Format 2 (`CFF2`), and Scalable Vector Graphics (`OT-SVG`; not to be confused with the old SVG font format). There are also three image based formats—we will talk about two of them in the color fonts section.
 
@@ -255,7 +255,7 @@ As can be seen in the <a hreflang="en" href="https://www.w3.org/TR/2016/NOTE-WOF
 
 In other words, even if `CFF` starts out smaller, it compresses much less than `glyf`, so it all evens out in the end. In fact, for larger files, it appears using the `glyf` format produces smaller sizes.
 
-## Resource hints
+### Resource hints
 
 Resource hints are special instructions to the browser to load or render a resource  before it normally would. Browsers normally only load web fonts when they know a font is used on the page. In order to know that, it needs to have parsed both the HTML and CSS. However, if you, as a web developer, _know_ that a font will be used, you can use resource hints to tell the browser to load fonts much earlier.
 
@@ -281,7 +281,7 @@ As [mentioned in the 2020 chapter](../2020/fonts#resource-hints), preload and pr
 
 If you self-host your fonts you can go even further and provide hints to the browser to preload your most important fonts (i.e. your primary text font.) That way the browser can load it early and it will likely be available when text rendering starts.
 
-## Font-display
+### Font-display
 
 For many years most browsers did not render text until web fonts had loaded. On slow connections, this would often result in several seconds of invisible text even though the text content had already loaded. This behavior is called _block_, because it blocks rendering of the text. Other browsers showed fallback fonts right away and swapped them when the web font loaded. When a fallback font is replaced by a web font, this is called _swap_.
 
@@ -327,11 +327,11 @@ These `@font-face` descriptors are very new, but are already seeing some use. To
 
 We're slowly getting there with tools such as the <a hreflang="en" href="https://meowni.ca/font-style-matcher/">Font Style Matcher</a>, but unfortunately, fallback fonts are still very much platform dependent.
 
-# Font usage
+## Font usage
 
 Performance is important, but it is also interesting to see how fonts are being used on the web. For example, what are the most popular fonts and foundries? Are people using OpenType features? Let's take a look at the data.
 
-## Families & foundries
+### Families & foundries
 
 With Google Fonts' massive impact on web font serving, it is no surprise the most used font on the web is Roboto. Roboto was created by Google as a system font for its Android operating system. This also explains the huge discrepancy between Roboto's use on mobile compared to desktop sites. On Android, Google Fonts will use the system installed version instead of downloading it as a web font.
 
@@ -543,7 +543,7 @@ Another interesting fact is that a large portion of the top families are open so
 
 The list of most popular type foundries (or in some cases type designers) is equally fascinating. Besides large companies like Google, Adobe, Ascender (Monotype), it is good to see several smaller companies and even several individuals having such a large impact.
 
-## OpenType features
+### OpenType features
 
 OpenType features are often referred to as a font's superpowers. And of course, the fonts with superpowers are often unrecognized. OpenType features are hard to discover and use. Fortunately, there are web tools, such as <a hreflang="en" href="https://wakamaifondue.com/">Wakamai Fondue</a>, that clearly show you which features there are, what they do, and how to use them.
 
@@ -629,7 +629,7 @@ The most used `font-variant` value is small-caps at 1.4% of pages. This is surpr
 
 The other values roughly match what is provided by the fonts themselves. Even though use of the `font-variant` properties is low, we expect (or rather hope) that these numbers will go up over time and use of `font-feature-settings` becomes relegated to use with custom or proprietary OpenType features.
 
-## Writing system & languages
+### Writing system & languages
 
 To understand what kind of fonts are being made and used, we thought it would be interesting to look at what languages fonts support. For example, do people make a lot of German, Vietnamese, or Urdu fonts? Unfortunately, it is hard to answer this question because a lot of languages share the same writing system. That means they might share the same character set, but might have only been explicitly designed for one specific language. So instead of languages, we'll take a look at writing systems.
 
@@ -649,7 +649,7 @@ Sadly, other writing systems are much less prevalent. For example, Han (Chinese)
 
 While services like Google Fonts and Adobe Fonts support these writing systems, they are using proprietary technologies that simply are not available for self-hosting. However, the W3C Fonts Working Group is working on a new standard called <a hreflang="en" href="https://www.w3.org/TR/IFT/">Incremental Font Transfer</a> that enables web developers to self-host large fonts. We hope to see other writing systems catch up with Latin once this technology becomes widely available.
 
-## Generic font families
+### Generic font families
 
 We already touched on fallback fonts while talking about font-display. Sometimes you don't need web fonts at all though, for example in UI elements or form inputs. One of our favorite ways to avoid using web fonts is to use the new generic `system-ui` family name which maps to the font family used by the operating system. Did you know there are several other generic families? There is `ui-monospace`, `ui-sans-serif`, `ui-serif`, and `ui-rounded` as well, if you want to use an operating system font, but have slightly more specific needs.
 
@@ -669,7 +669,7 @@ The most popular, and well-known, is `system-ui` at 3.6%, followed by `ui-monosp
 
 We hope to see more use of these generic family names next year. They are great for UI elements, forms, or really anything where you want to evoke a native feel. As an added benefit, they are also great for performance as they are guaranteed to use a locally installed font.
 
-## Font smoothing
+### Font smoothing
 
 And now for a complete surprise (to us anyway): people _really_ like to specify their MacOS-only [font smoothing preferences](https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth). For example, the `-webkit-font-smoothing: antialiased` value is used on 73.4% of all sites. This is surprising because it (and its siblings `-mox-osx-font-smoothing`, and `font-smoothing`) are not even official CSS properties. This might make them the most used _unofficial_ CSS properties!
 
@@ -685,7 +685,7 @@ And now for a complete surprise (to us anyway): people _really_ like to specify 
 
 Our hunch this is a combination of CSS frameworks including these properties and a dislike of how fonts are rendered slightly bolder on macOS (variable font grades to the rescue!) It would be interesting to return to these properties in the 2023 fonts chapter. Perhaps it is also time to put these properties on a standards track? The demand is clearly there.
 
-# Variable fonts
+## Variable fonts
 
 Variable fonts allow type designers to combine multiple styles of a family into a single font file. They do this by defining one or more design axes, such as weight (thin, regular, and bold) or width (condensed, normal, and expanded). Instead of storing each style as individual font files, a variable font interpolates them from a handful of "master" instances.
 
@@ -761,7 +761,7 @@ One of the highly promoted benefits of variable fonts is animating one or multip
 
 To us, it appears that variable fonts are primarily used for their performance benefits, and less so for their ability to make typographic adjustments. While that's great, we do hope to see more people use variable fonts to their full typographic potential in the coming years.
 
-# Color fonts
+## Color fonts
 
 Color fonts are pretty much what you would expect: fonts with built in colors. Though the technology was originally created for emoji fonts, there are now more text color fonts than emoji fonts.
 
@@ -825,7 +825,7 @@ Still, it would be nice to see some more diversity in emoji fonts. With the intr
 
 Again, all of this is based on very low usage numbers, but there appear to be some developing trends. We're not quite ready to declare 2023 the year of color fonts, but it seems clear we'll see significant color font growth in the coming years, especially as the industry settles on a single recommended color font format and browser support for color fonts improves. Google Fonts has also just <a hreflang="en" href="https://material.io/blog/color-fonts-are-here">added the first batch of color fonts</a> to their library, which will surely have an impact.
 
-# Conclusion
+## Conclusion
 
 Looking back over this chapter and the previous years it stands out to us how much of an impact web font services have had (and likely will continue to have.) For example, Google Fonts alone is responsible for most of web font usage, most of the popular web fonts, and most of variable fonts usage. That's an impressive feat.
 
