@@ -926,8 +926,8 @@ Most have just one, and very few use multiple.
 
 ## Conclusion
 
-So there you have it, a snapshot of the state of media on the web in 2022. We've seen just how pervasive images and – increasingly – videos are on the web, and have gained some insight into how the web's images and videos are encoded and embedded. The most exciting developments this year are the accelerating adoption of AVIF and the ever-increasing adoption of lazy-loading and adaptive bitrate streaming.
+So there you have it, a snapshot of the state of media on the web in 2022. We've seen just how pervasive images and – increasingly – videos are on the web, and have gained some insight into how the web's images and videos are encoded and embedded. The most exciting developments this year are the accelerating adoption of AVIF and the ever-increasing adoption of both lazy-loading and adaptive bitrate streaming.
 
-There were, however, some frustrating aspects, including the almost complete lack of wide-gamut color spaces; the undying zombie format that is GIF (in both its animated and, more surprisingly, non-animated forms); and the way that both sizes and lazy-loading – two features designed for performance – are (through improper use) hurting performance on a significant number of pages.
+There were, however, some frustrating aspects, including the almost complete lack of wide-gamut color spaces; the undying zombie format that is GIF (in both its animated and, more surprisingly, non-animated forms); and the way that both the `sizes` attribute and lazy-loading – two features designed for performance – are (through improper use) hurting performance on a significant number of pages.
 
 Here's to more effective visual communication on the web in 2023!
