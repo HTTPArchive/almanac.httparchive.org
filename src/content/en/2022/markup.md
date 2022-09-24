@@ -464,7 +464,7 @@ If elements are the bread of HTML, then attributes are the butter. What can we l
 
 ### Top attributes
 
-The most popular attribute, by far, was and still is class:
+The most popular attribute, by far, was and still is `class`:
 
 {{ figure_markup(
   image="attribute-usage.png",
