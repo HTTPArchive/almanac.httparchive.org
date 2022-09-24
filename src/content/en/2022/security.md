@@ -31,10 +31,24 @@ We looked at correlations for adoption of security measures with the location, t
 
 Transport Layer Security ensures secure communication of data and resources between the user and the websites. HTTPS uses TLS to encrypt all communication between the client and the server.
 
-94%
-The percentage of requests that use HTTPS on desktop
+{{ figure_markup(
+  content="94%",
+  caption="The percentage of requests that use HTTPS on desktop.",
+  classes="big-number",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
 94% of total requests in desktop and 93% of total requests in mobile are made over HTTPS. All major browsers now have an HTTPS-only mode to show warning if a website uses HTTP instead of HTTPS.
+
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
 The percentage of homepages that are served over HTTPS continues to be lower compared to the total requests because a lot of the requests to a website are dominated by third-party services like fonts, CDN, etc. which have a higher HTTPS adoption. We do see a slight increase from last year in the percentage. 89.3% of homepages are now served over HTTPS on desktop compared to 84.3% last year. Similarly, in our mobile dataset, 85.5% of homepages are served over HTTPS compared to 81.2% last year.
 
@@ -44,14 +58,40 @@ It's important, not only to use HTTPS, but also to use an up-to-date TLS version
 
 TLS v1.3 is the latest and was released in August 2018 by IETF. It's <a hreflang="en" href="https://www.cloudflare.com/en-in/learning/ssl/why-use-tls-1.3/">much faster and is more secure</a> than TLS v1.2. Many of the major vulnerabilities in TLS v1.2 had to do with older cryptographic algorithms which TLS v1.3 removes.
 
-In the above graph, we see that 70% of homepages in mobile and 67% of homepages in desktop are served over TLSv1.3 which is approximately 7% more than last year. So, we are seeing some constant shift from use of TLS v1.2 to TLS v1.3
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
+In the above graph, we see that 70% of homepages in mobile and 67% of homepages in desktop are served over TLSv1.3 which is approximately 7% more than last year. So, we are seeing some constant shift from use of TLS v1.2 to TLS v1.3
 
 ### Cipher suites
 
 A cipher suite is a set of cryptographic algorithms that the client and server must agree on before they can begin communicating securely using TLS.
 
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
+
 Modern [Galois/Counter Mode (GCM)](https://en.wikipedia.org/wiki/Galois/Counter_Mode) cipher modes are considered to be much more secure since they are not vulnerable to <a hreflang="en" href="https://blog.qualys.com/product-tech/2019/04/22/zombie-poodle-and-goldendoodle-vulnerabilities">padding attacks</a>. TLS v1.3 <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc8446#page-133">only supports GCM and other modern block cipher modes</a> making it more secure. Another factor that determines the usage of a cipher suite is the key size for the encryption and decryption. We still see 128-bit key size being widely used. Hence, we don't see much difference from last year's graph with  `AES_128_GCM` continuing to be the most used cipher suite with 79% usage.
+
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
 TLS v1.3 also makes [forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy) compulsory. We see 97% of requests in both mobile and desktop using forward secrecy.
 
@@ -106,19 +146,32 @@ Cloudflare continues to be in second position with its similarly free certificat
 
 HTTP Strict Transport Security (HSTS) is a response header that informs the browser to automatically convert all attempts to access a site using HTTP to HTTPS requests instead.
 
-26%
-The percentage of requests that have HSTS header on mobile.
+{{ figure_markup(
+  content="26%",
+  caption="Mobile requests that have HSTS header.",
+  classes="big-number",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
 26% of the mobile responses and 28% of desktop responses have an HSTS header.
 
 HSTS is set using the `Strict-Transport-Security` header that can have three different directives: `max-age`, `includeSubDomains`, and `preload`. `max-age` helps denote the time, in seconds, that the browser should remember to access the site only using HTTPS. `max-age` is a compulsory directive for the header.
+
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
 We see 94% of sites in desktop and 95% of sites in mobile have a non-zero, non-empty `max-age`.
 
 34% of request responses for mobile, and 37% for desktop include `includeSubdomain` in the HSTS settings. The number of responses with the `preload` directive, which is [not part of the HSTS specification](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security#preloading_strict_transport_security) is lower. It needs a minimum `max-age` of 31,536,000 seconds (or 1 year) and also the `includeSubdomain` directive to be present.
 
 The median value for `max-age` attribute in HSTS headers over all requests is 365 days in both mobile and desktop. https://hstspreload.org/ recommends a `max-age` of 2 years once the HSTS header is set up properly and verified to not cause any issues.
-
 
 ## Cookies
 
@@ -130,13 +183,40 @@ If a cookie is not set properly, it can be susceptible to many different forms o
 
 To defend against the above mentioned threats, developers can use 3 different attributes in a cookie: `HttpOnly`, `Secure` and `SameSite`. The `Secure` attribute is similar to the `HSTS` header as it also ensures that the cookies are always sent over HTTPS, preventing Man in the Middle attacks. `HttpOnly` ensures that a cookie is not accessible from any JavaScript code, preventing Cross-Site Scripting Attacks.
 
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
+
 There are 2 different kinds of cookies—First Party and Third Party. First-party cookies are usually set by the direct server that you are visiting. Third-party cookies are created by third-party services and are often used for tracking and ad-serving. 37% of the first-party cookies on the desktop have `Secure` and 36% of them have `HttpOnly`. However, in the third party cookies we see that 90% of cookies have `Secure` and 21% of cookies have `HttpOnly`. The percentage of `HttpOnly` is less in third party cookies, because they mostly do want to allow access to them by JavaScript code.
+
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
 The `SameSite` attribute can be used to prevent CSRF attacks by telling the browser whether to send the cookie to cross-site requests. `Strict` value allows the cookie to be sent only to the site where it originated while `Lax` value allows cookies to be sent to cross-site requests only if a user is navigating to the origin site by following a link. For `None` value, cookies are sent to both originating and cross-site requests. If `SameSite=None` is set, the cookie's `Secure` attribute must also be set (or the cookie will be blocked). We see that 61% of first-party cookies with the `SameSite` attribute have the value `Lax`. Most browsers default to `SameSite=Lax` if no `SameSite` attribute is present for the cookie hence we see that it continues to dominate the charts. In third party cookies, `SameSite=None` still continues to be super high with 98% cookies in desktop, because third-party cookies do want to be sent across cross-site requests.
 
 ### Cookie age
 
 There are two different ways to set the time when a cookie is deleted: `Max-Age` and `Expires`. `Expires` uses a specific date (relative to the client) to determine when the cookie is deleted whereas `Max-Age` uses a duration in seconds.
+
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
 Unlike last year, where we saw that the median for `Max-Age` was 365 days but the median for `Expires` was 180 days, this year it's around 365 days for both. Hence the median for real maximum age has gone up from 180 days to 365 days this year. Even though the `Max-Age` is 729 days and `Expires` is 730 days in the 90th percentile, Chrome has been planning to put a cap of 400 days for both `Max-Age` and `Expires`.
 
@@ -187,7 +267,24 @@ It works by ensuring that a predefined trusted set of content rules is upheld an
 +14%
 Relative increase in adoption for Content-Security-Policy header from 2021
 
+{{ figure_markup(
+  content="TODO",
+  caption="TODO.",
+  classes="big-number",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
+
 We're seeing a 14% relative increase in adoption for `Content-Security-Policy` header from 2021's data of 12.8% to 2022's data of 14.6% which demonstrates a growing trend of adoption across developers and the web security community. This is positive, though it's still a minority of sites using this more advanced feature.
+
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
 CSP is most useful, when served on the HTML response itself and here we're seeing consistent growing adoption in mobile requests serving a CSP header with 7.2% two years ago, 9.3% last year, and this year a total of 11.2% of mobile homepages.
 
@@ -215,9 +312,27 @@ And then referencing that in the HTML:
 </script>
 ```
 
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
+
 The statistics collected for all desktop HTTP requests show that `unsafe-inline` is present on  for 94%, and `unsafe-eval`on 80% of all `script-src` values. This demonstrates the real challenges in locking down a website's application code to avoid inline JavaScript code. Furthermore, Only 14% of all above described requests employ a `nonce-` directive which assists in securing the use of unsafe inline JavaScript code.
 
 Perhaps speaking to the high complexity of defining a content security policy is the statistics we observe for CSP header length.
+
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
 At a median ranking, 50% of requests are only up to 70 bytes in size for desktop requests. This is a slight drop from last year's report which showed both desktop and mobile requests at 75 bytes in size. The 90th percentile of requests and above has grown from last year's 389 bytes for desktop requests, to 494 bytes this year. This demonstrates a slight progress towards more complex and complete security policies.
 
@@ -239,7 +354,14 @@ If a third-party library could be compromised due to a hosting issue by the CDN 
 
 Similar to CSP's use of a `nonce-`, Subresource Integrity (also known as SRI) allows browsers to validate the content that is served matches a cryptographically signed hash and prevents tampering with the content, whether over the wire or at its source.
 
-21%
+{{ figure_markup(
+  content="21%",
+  caption="TODO.",
+  classes="big-number",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
+
 Just about one of every fifth website (21%) adopts a subresource integrity in one of its webpage elements on desktop. Out of these, 83% were specifically used in `<script>` type elements on desktop, and 17% were used in `<link>` type  elements in desktop requests.
 
 At a per page coverage, adoption rate for the SRI security feature is still considerably low. Last year, the median percentage for both mobile and desktop was 3.3% and this year it decreased by 2% to 3.23%.
@@ -254,6 +376,15 @@ Subresource integrity is specified as a base64 string of a computed hash of one 
 
 Consistent with last year's report, SHA384 continues to demonstrate the majority of SRI hash types observed between all available hash functions.
 
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
+
 CDNs are no strangers to Subresource Integrity and provide secure defaults to their consumers by including a Subresource Integrity value as part of their URL references for content to be served on the page.
 
 The following list shows the top 10 most common hosts for which a subresource integrity value has been observed. Notable changes from last year are the Cloudflare hosts jumping from position 4 to position 3, and jsDelivr jumping from position 7 to position 6 in ranking, surpassing Bootstrap's hosts rankings.
@@ -266,7 +397,13 @@ Previously known as `Feature-Policy`, and now named `Permissions-Policy`, this i
 
 We've noticed a high correlation of usage for the `Permissions-Policy` with HTTPS-enabled connections (97%), with `X-Content-Type-Options` (82%), and `X-Frame-Options` (78%). All correlations are across desktop requests. Another high correlation is within the specific technology intersection, observed for Google My Business mobile pages (99%), and the next closest is Acquia's Cloud Platform (67%). All correlations are across mobile requests.
 
-+85%
+{{ figure_markup(
+  content="+85%",
+  caption="TODO.",
+  classes="big-number",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
 We're seeing an 85% relative increase in adoption for `Permissions-Policy` from 2021's data (1.3%) to 2022's data (2.5%) for mobile requests and similar trend for desktop requests too. The deprecated `Feature-Policy` shows a minuscule increase of 1 percentage point between last year's data and this year's which demonstrates that users are keeping pace with web browsers' specification changes.
 
@@ -281,7 +418,9 @@ Besides being used as an HTTP header, this feature can be used within `<iframe>`
 The following is a list of the top 10 `allow` directives that were detected in frames:
 
 Interesting to point out are places 11th, 12th and 13th allow directives for mobile that didn't make it into the above list and they are `vr` with 6%, `payment` with 2%, and `web-share` with 1%. They perhaps speak of growing trends we're seeing in the industry around virtual reality (and the metaverse, if you will), online payments and the fintech industry. Lastly, it seems to indicate better support for web-based sharing which is presumably due to the rise of work-from-home habits in the last couple of years.
+
 ### Iframe Sandbox
+
 Using iframe elements in websites has been a long-time practice for developers in order to easily embed third-party content such as rich media, cross-application components, or even ads. Some may even assume that iframe elements form a security boundary between the website embedding them to the sourced website, however that's not exactly the case.
 
 HTML `<iframe>` elements by default have access to top-level page capabilities such as pop-ups or direct interaction with the top-page browser navigation. For example, the following code could be embedded in the source of an iframe element which makes use of active user gestures and results in the hosting website of the iframe to  navigate to a new URL at `https://example.com`:
@@ -295,6 +434,15 @@ function clickToGo() {
 This is largely known as a clickjacking attack and is one of many other security risks that are embedded within iframes (pun intended).
 
 To mitigate these concerns the HTML specification (version 5) introduced the `sandbox` attribute that may be applied to iframe elements. It acts as an allowlist and if kept empty it essentially does not enable any capabilities within the iframe element. This results in no access to page interactivity like pop-ups, no permissions to run JavaScript code, and no access to cookies.
+
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
 The above chart of the 2022 data shows that more than 99% of websites with a `sandbox` attribute enable the `allow-scripts` and `allow-same-origin` permissions.
 
@@ -310,14 +458,29 @@ There are many different attacks that can exploit a website, and it's almost nev
 
 Security headers are one of the most common ways of preventing attacks by restricting the kind of traffic and data flow. But most of these security headers have to be set manually by website developers. Thus, the presence of security headers are often a good indication of the security hygiene that the developers of the website follow.
 
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
+
 The most widely used security mechanism is still the X-Content-Type-Options header, which is used on 40% of the websites we crawled on mobile, to protect against MIME-sniffing attacks. This header is followed by the X-Frame-Options header, which is enabled on 30% of all sites. We don't see much difference from last year's data with a gradual increase in adoption of all the security headers but the ranking of security headers by percentage usage is the same.
 
 ### Preventing attacks using CSP
 
 The main use of Content Security Policy (CSP) is to determine the trusted sources from which content can be loaded safely. This makes CSP a really useful security header in preventing various kinds of attacks such as clickjacking, cross-site scripting attacks, mixed-content inclusion and many more.
 
-53%
-The percentage of website with CSP that have frame-ancestors directive
+
+{{ figure_markup(
+  content="53%",
+  caption="Website with CSP that have `frame-ancestors` directive.",
+  classes="big-number",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
 One of the common ways to prevent clickjacking attacks is to prevent the browser from loading the website in a frame. One can use the [`frame-ancestors`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors) directive in a CSP Header to restrict other domains from including the page content in a frame. We found 53% of the websites in mobile that have CSP have a `frame-ancestor` directive. It's the second most used CSP directive, which is good for prevention of clickjacking attacks. Setting the value of `frame-ancestors` directive to `none` or `self` is the safest. `none` doesn't allow any domain to frame the content, while `self` allows only the origin domain to frame the contents. We found that 8% of websites in mobile which have a CSP header have only `frame-ancestors 'self'` and is the third most common value of CSP header.
 
@@ -347,6 +510,15 @@ One of the mechanisms to defend against XSS attacks is by setting a restrictive 
 ### Preventing attacks using Cross-Origin policies
 
 Cross Origin policies are one of the main mechanisms used to defend against micro-architectural attacks like Cross Site leaks. XS-Leaks are kind of similar to Cross Site Request Forgery, however they infer small pieces of information about the user which are exposed during interactions between websites.
+
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
 `Cross-Origin-Resource-Policy` is present on 114,111(1.46%) websites in mobile and is the most used cross origin policy. It is used to indicate to the browser whether a resource should be included from cross-origin or not. `Cross-Origin-Embedder-Policy` is now present in 2,559 websites compared to 911 websites last year. We see a similar growth in the adoption of `Cross-Origin-Opener-Policy` as well with 34,968 websites in mobile now having the header compared to 15,727 sites last year. So there is a steady growth in the adoption of all the cross-origin policies, which is great because they can be really helpful in preventing XS-Leak attacks.
 
@@ -474,6 +646,15 @@ There is not much change in the data from last year. `CryptoGetRandomValues` con
 
 The internet today is filled with bots, and hence there is a constant rise in bad bot attacks. According to <a hreflang="en" href="https://www.imperva.com/resources/reports/2022-Imperva-Bad-Bot-Report.pdf">2022 Bad Bot Report</a> by Imperva, 27.7% of all internet traffic was by bad bots. Bad bots are the ones which try to scrape data and exploit it. According to the report, the end of 2021 saw a surge in bad bot attacks probably because of the log4j vulnerability which is exploitable by bots.
 
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
+
 Our analysis shows that 29% of desktop websites and 26% of mobile websites use a mechanism to fight malicious bots which is a significant increase from last year (11% and 10% respectively). This increase could be because of Cloudflare Bot Management which is a captcha-free solution for protection against bad bots. Last year's data crawl didn't track this, but identifying this was added this year and we see 6% of websites on mobile using it. Usage of reCaptcha has also increased from last year on both desktop and mobile by approximately 9%.
 
 ## Drivers of security mechanism adoption
@@ -487,8 +668,25 @@ Popularity: widely popular websites may face more targeted attacks than a websit
 
 Location of the website, where the website developers are based or where the website is hosted can often have impacts on adoption of security features. This can be because of the awareness among developers being different, but can also be because of the laws of the country mandating adoption of certain security practices.
 
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
 We see a lot of new countries like Nigeria, Norway and Denmark quickly rise to the top in the adoption of HTTPS. It's a good sign to see new countries also adopting widespread security practices because that can be an indication of rising awareness everywhere. Also, the difference between the least adoption and most adoption of HTTPS is reducing, which shows that almost all countries at least strive to have HTTPS by default on their websites.
+
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
 The adoption of CSP and X-Frame-Options (XFO) is very similar to last year. Surprisingly, we see websites in Indonesia have started adopting CSP a lot, even though their adoption of HTTPS continues to be low. The adoption of CSP still seems to be very varied across countries but the gap between adoption of XFO is gradually decreasing. More countries need to increase the adoption of CSP since it is a very important security feature that protects against a varied number of attacks.
 
@@ -523,7 +721,14 @@ Above we see some of the common CMS and blogging sites. A common pattern that we
 
 Websites that have many visitors may be more prone to targeted attacks given that there are more users with potentially sensitive data to attract attackers. Therefore, it can be expected that widely visited websites invest more in security in order to safeguard their users.
 
-
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
 We found that `Strict-Transport-Security`, `X-Frame-Options`, and `X-Content-Type-Options` always have more adoption for websites which are more popular. 56.8% of the top 1000 websites in mobile have Strict-Transport-Security, which means these websites care more about serving their content and data only via HTTPS. The less popular websites might have HTTPS enabled, but often seem to not add a `Strict-Transport-Security` header to ensure that their website is always served over HTTPS. The numbers this year are pretty consistent with last year's findings.
 
@@ -531,11 +736,27 @@ We found that `Strict-Transport-Security`, `X-Frame-Options`, and `X-Content-Typ
 
 Cryptocurrencies continued to grow in popularity this year with more types available for various use cases. With that continued growth and existing economic incentive, cybercriminals have consistently leveraged this to their advantage via [cryptojacking](https://en.wikipedia.org/wiki/Cryptojacking). However the use of crypto miners has overall trended downward since last year. What seems to occur is certain vulnerability events that enable attackers to inject crypto miners into systems on both desktop and mobile triggers a spike in their usage:
 
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
 As an example, around July and August of 2021, there were reports of several cryptojacking campaigns and vulnerabilities1,2,3 which could be the cause for the spikes in cryptominers found in websites around that time. More recently, in April of 2022 hackers attempted to leverage the SpringShell vulnerability to set up and run crypto miners.
 
 Getting into the specifics of the cryptominers found in use among websites on both desktop and mobile we found that the share among miners has spread from last year. For example, Coinimp's share has shrunk since last year by about 24% while Minero.cc has grown by about 11%.
 
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
 These results suggest that cryptojacking continues to be a serious attack vector each year with usage spikes based on newly emerged vulnerabilities that enable them. Therefore proper diligence is still required in order to mitigate risks in this space.
 
@@ -551,6 +772,14 @@ Well-known URIs are used to designate specific locations to data or services rel
 
 `security.txt` is a file format for websites to provide a standard for vulnerability reporting. Website providers can provide contact details, PGP key, policy, and other information in this file. White hat hackers and penetration testers can use this information to conduct security analyses on these websites and report a vulnerability.
 
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
 The percentage of `security.txt` URIs with the `expires` property has increased from 0.7% to 2.3% this year. The `expires` property is a required property based on the standard, so it is good to see more websites adhering to the standard. `policy` continues to be the most popular property in a `security.txt` URI. `policy` is very essential in a `security.txt` URI since it describes the steps to be followed by a security researcher to report a vulnerability.
 
@@ -558,12 +787,29 @@ The percentage of `security.txt` URIs with the `expires` property has increased 
 
 The `change-password` well-known URI is a specification under the webappsec working group of W3C which is in editor's draft state right now. This specific well-known URI was suggested as a way for users and softwares to easily identify the link to be used for changing passwords.
 
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
 The adoption of this well-known URI is still pretty low. The specification is still work-in-progress so it's understandable that not many websites have started adopting it. Also, not all websites will have a change-password form, especially if they don't have a sign-in system for their website.
 
 ### Detecting Status Code Reliability
 
 This particular `well-known` URI determines the reliability of a website's HTTP response status code. This URI is also still in editor's draft state and may change in the future. The idea behind this `well-known` URI is that it should never exist in any website. So this `well-known` URI should never respond with an `ok-status`. If it redirects and returns an "ok-status", that means the website's status codes are not reliable.
+
+{{ figure_markup(
+  image="TODO.png",
+  caption="TODO.",
+  description="TODO.",
+  chart_url="TODO",
+  sheets_gid="TODO",
+  sql_file="TODO.sql",
+) }}
 
 We found that 84% of websites in both mobile and desktop respond with a not-ok status for this well-known URI. The good thing about this specification is if websites are correctly configured, this specification should automatically work and won't need website developers to make any specific changes.
 
