@@ -8,7 +8,7 @@ reviewers: [alexnj, jmsole, RoelN, svgeesus]
 analysts: [bramstein, konfirmed]
 editors: [shantsis]
 translators: []
-bramstein_bio: TODO
+bramstein_bio: Bram Stein is a soft­ware ar­chi­tect and prod­uct man­ager work­ing at <a hreflang="en" href="https://www.adobe.com/">Adobe</a>. He cares a lot about web ty­pog­ra­phy and is hap­pi­est work­ing at the in­ter­sec­tion be­tween de­sign and tech­nol­ogy.
 results: https://docs.google.com/spreadsheets/d/1A1XwuGa1DkqNLaF-lSXz4ndxO9G6SfACHwUvvywHgbQ/
 featured_quote: TODO
 featured_stat_1: TODO
