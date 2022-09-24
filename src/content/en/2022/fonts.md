@@ -268,7 +268,7 @@ There hasn't been any large change in the use of `dns-prefetch` hints since 2020
   image="fonts-resource-hints-usage.png",
   caption="Fonts resource hints usage.",
   description="Column chart showing `dns-prefetch` is used on fonts on 30% of desktop pages and 32% of mobile pages, `preload` on 21% and 20% respectively, `preconnect` on 16% and 16%, and finally `prefetch` is uded on 2% of desktop and 2% of mobile pages.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1831399490&amp;format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1831399490&format=interactive",
   sheets_gid="592046045",
   sql_file="resource_hints_usage.sql"
   )
@@ -640,7 +640,7 @@ To understand what kind of fonts are being made and used, we thought it would be
   image="writing-systems-supported-by-fonts.png",
   caption="Writing systems supported by fonts.",
   description="Bar chart showing Latin is used on 57.6% of desktop pages and 53.6% of mobile pages, Cyrillic on 6.1% and 6.2% respectively, Greek on 3.4% and 3.4%, Katakana on 0.9% and 1.0%, Hiragana on 0.9% and 0.9%, Hebrew on 0.5% and 0.5%, Arabic on 0.3% and 0.4%, Thai on 0.2% and 0.3%, Hangul on 0.5% and 0.3%, Devanagari on 0.2% and 0.3%, and finally Han is on 0.2% of desktop and mobile pages..",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=45355249&amp;format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=45355249&format=interactive",
   sheets_gid="841363278",
   sql_file="font_writing_scripts.sql"
   )
@@ -740,7 +740,7 @@ So, how are people using variable fonts? Not surprisingly the weight axis is the
   image="usage-of-font-variation-settings-axes.png",
   caption="Usage of font-variation-settings axes.",
   description="Column chart showing `wght` is used on 82% of desktop pages and 87% of mobile pages, `opsz` on 5% and 4% respectively, `wdth` on 5% and 4%, `slnt` on 3% and 2%, `ital` on 2% and 1%, and finally `GRAD` is used on 1% of desktop and mobile pages.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=2021084759&amp;format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=2021084759&format=interactive",
   sheets_gid="1634075051",
   sql_file="variable_font_axis_css.sql"
   )
@@ -792,7 +792,7 @@ Taking a look at usage data paints an interesting picture: 79% of color font usa
   image="color-font-formats.png",
   caption="Color font formats.",
   description="Pie chart showing SVG is the color font used on 74.2% of the time on mobile, COLRv0 is 22.8%, CBDT 2.5%, sbix 0.2% and finally COLRv1 also 0.2%..",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=2109618513&amp;format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=2109618513&format=interactive",
   sheets_gid="1976816146",
   sql_file="color_fonts.sql"
   )
