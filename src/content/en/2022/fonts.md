@@ -57,7 +57,7 @@ As noted in 2019, 2020, and—if there had been a fonts chapter—in 2021 as wel
 
 > Use only WOFF2 and forget about everything else.
 
-This will simplify your CSS and workflow massively and also prevents any accidental double or incorrect font downloads. WOFF2 is now<a hreflang="en" href="https://caniuse.com/woff2"> supported everywhere</a>. So, unless you need to support _really _ancient browsers, just use WOFF2. If you can't, consider not serving any web fonts to those older browsers at all. This will not be a problem if you have a robust fallback strategy in place. Visitors on older browsers will simply see your fallback fonts.
+This will simplify your CSS and workflow massively and also prevents any accidental double or incorrect font downloads. WOFF2 is now <a hreflang="en" href="https://caniuse.com/woff2">supported everywhere</a>. So, unless you need to support _really_ ancient browsers, just use WOFF2. If you can't, consider not serving any web fonts to those older browsers at all. This will not be a problem if you have a robust fallback strategy in place. Visitors on older browsers will simply see your fallback fonts.
 
 ### Hosting
 
