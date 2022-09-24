@@ -562,4 +562,4 @@ CMSs are doing great work and have opportunity to further improve user experienc
 
 On the other hand, Core Web Vitals as standards still have some evolving to do. We mentioned some ideas for a <a hreflang="en" href="https://web.dev/responsiveness/">better responsiveness metric</a> above. In addition, navigation between pages in a site should be better tracked and take into account the architectural differences between <a hreflang="en" href="https://web.dev/vitals-spa-faq">Single-Page Applications (SPAs) and Multi-Page Applications (MPAs)</a> architectures.
 
-We look forward to next year's results and hope to both expand our datasets and improve our methodologies. In the meantime, onward and upword, let's keep making the web better.
+We look forward to next year's results and hope to both expand our datasets and improve our methodologies. In the meantime, onward and upward, let's keep making the web better.
