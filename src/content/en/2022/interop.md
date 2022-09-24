@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Interoperability
-description: Interoperability chapter of the 2022 Web Almanac covering ...
+description: Interoperability chapter of the 2022 Web Almanac covering Compat 2021 (Gird and Flexbox) and Interop 2022 (Forms, Scrolling, Typography and encodings, dialog, containment, subgrid, color spaces, viewport units and cascade layers)
 authors: [bkardell]
 reviewers: [meyerweb, foolip]
 analysts: [rviscomi, kevinfarrugia]
@@ -20,7 +20,7 @@ featured_stat_label_3: The number of mobile pages using recently interoperable C
 
 ## Introduction
 
-In 2019, the Mozilla Developer Network's (MDN) Product Advisory Board put together a significant survey of over 28,000 developers and designers from 173 countries. Findings from this were published as the first <a hreflang="en" href="https://insights.developer.mozilla.org/reports/pdf/MDN-Web-DNA-Report-2019.pdf">Web Developer Needs Assessment</a> (Web DNA). This study identified (among other things) that some of the key frustrations and pain points most often involved differences between browsers. In 2020 this led to a followup known as the <a hreflang="en" href="https://insights.developer.mozilla.org/reports/mdn-browser-compatibility-report-2020.html">MDN Browser Compatibility Report</a>.
+In 2019, the Mozilla Developer Network's (MDN) Product Advisory Board put together a significant survey of over 28,000 developers and designers from 173 countries. Findings from this were published as the first <a hreflang="en" href="https://insights.developer.mozilla.org/reports/pdf/MDN-Web-DNA-Report-2019.pdf">Web Developer Needs Assessment</a> (Web DNA). This study identified—among other things—that some of the key frustrations and pain points most often involved differences between browsers. In 2020 this led to a followup known as the <a hreflang="en" href="https://insights.developer.mozilla.org/reports/mdn-browser-compatibility-report-2020.html">MDN Browser Compatibility Report</a>.
 
 Historically, implementer priorities and focus are independently managed. However, given this new data, browser manufactures came together for another first-of-its-kind effort called <a hreflang="en" href="https://web.dev/compat2021/">_Compat 2021_</a>, which identified 5 specific areas of joint focus toward alignment across thousands of Web Platform Tests. At the beginning of Compat 2021, all engines scored only 65-70% compatibility in the five areas in stable, shipping browsers. Today, all of them are over 90%. In 2022, this effort was expanded—and renamed—to <a hreflang="en" href="https://hacks.mozilla.org/2022/03/interop-2022/">_Interop 2022_</a>.
 
@@ -44,7 +44,7 @@ In January 2021, all stable/shipping browsers scored 65-70% compatibility in the
 
 {{ figure_markup(
   image="compat-2021-dashboard.png",
-  caption="Compat 2021 dashboard.",
+  caption='Compat 2021 dashboard.<br>(Source: <a hreflang="en" href="https://wpt.fyi/compat2021">Web Platform Tests</a>)',
   description="A recent screenshot from Compat 2021 dashboard showing the improvement in interoperability in real, shipping, stable browsers: Chrome/Edge 96%, Firefox 91%, Safari 94%.",
   width=780,
   height=801
@@ -55,13 +55,13 @@ Today, you can see that significant levels of improvement have been made. Chrome
 
 ### Grid
 
-CSS Grid is one of the most popular features in many years. [The HTTP Archive data](./css#flexbox-and-grid-adoption) shows year over year doubling of adoption since its arrival, with a slight slowdown this year (only increasing half-again instead of doubling). Grid already had quite a high degree of interoperability, but there were still a number of minor differences in support. Work was done throughout 2021 and 2022 to improve alignment of the over 900 tests in Web Platform Tests that test features of Grid. If you've had past headaches trying to do something in Grid, give it another try—the situation may have changed for the better.
+CSS Grid is one of the most popular features in many years. [The HTTP Archive data](./css#flexbox-and-grid-adoption) shows year over year doubling of adoption since its arrival, with a slight slowdown this year—only increasing half-again instead of doubling. Grid already had quite a high degree of interoperability, but there were still a number of minor differences in support. Work was done throughout 2021 and 2022 to improve alignment of the over 900 tests in Web Platform Tests that test features of Grid. If you've had past headaches trying to do something in Grid, give it another try—the situation may have changed for the better.
 
-A good example of this is the ability to animate grid tracks (grid rows and columns), which as of mid-2022 was only supported by Firefox. However, as this chapter was being written, grid-track animation was added to both <a hreflang="en" href="https://webkit.org/blog/13152/webkit-features-in-safari-16-0/">WebKit</a> and <a hreflang="en" href="https://groups.google.com/a/chromium.org/g/blink-dev/c/Ll7br0giMk8/m/l4WNHdatBQAJ">Chromium</a>, meaning all three major engines should be animating grid tracks by the time you read this.
+A good example of this is the ability to animate grid tracks—grid rows and columns—which as of mid-2022 was only supported by Firefox. However, as this chapter was being written, grid-track animation was added to both <a hreflang="en" href="https://webkit.org/blog/13152/webkit-features-in-safari-16-0/">WebKit</a> and <a hreflang="en" href="https://groups.google.com/a/chromium.org/g/blink-dev/c/Ll7br0giMk8/m/l4WNHdatBQAJ">Chromium</a>, meaning all three major engines should be animating grid tracks by the time you read this.
 
 ### Flexbox
 
-Flexbox is even older and more widely used: This year its use has grown again, [now appearing on 75% of mobile pages and 76% of desktop pages](./css#flexbox-and-grid-adoption). It has a similar number of tests to Grid and despite very wide adoption started in much worse shape. Entering 2021, some sub-features remained under-implemented, including:
+Flexbox is even older and more widely used. This year its use has grown again, [now appearing on 75% of mobile pages and 76% of desktop pages](./css#flexbox-and-grid-adoption). It has a similar number of tests to Grid and despite very wide adoption started in much worse shape. Entering 2021, some sub-features remained under-implemented, including:
 
 - Both Chrome and WebKit had issues with auto-height flex containers, leading to incorrectly sized images, which has now been resolved. {# TODO: Is this correct Brian? Added this to make it a sentence, as part of breaking up the list to allow the figures to be added #}
 
@@ -72,7 +72,7 @@ There were others issues, on top of these, that deserve some more indepth analys
 #### `flex-basis: content`
 
 {{ figure_markup(
-  caption="Number of desktop pages using flex-basis: content in their stylesheets.",
+  caption="Desktop pages using `flex-basis: content` in their stylesheets.",
   content="112,323",
   classes="big-number",
   sheets_gid="1354091711",
@@ -83,7 +83,7 @@ There were others issues, on top of these, that deserve some more indepth analys
 `flex-basis: content`, which is used to automatically size based on the flex item's content, was implemented in WebKit and Chromium, but not Firefox. Today these tests pass uniformly in all browsers and `flex-basis: content` appears on 112,323 pages on desktop and 75,565 mobile, roughly 1% of pages. That's not a bad start for a feature in its first year of universal support and about double what it was last year. We'll keep an eye on this metric in the future.
 
 {{ figure_markup(
-  caption="Number of desktop pages using position: sticky in their stylesheets.",
+  caption="Desktop pages using `position: sticky` in their stylesheets.",
   content="5.5%",
   classes="big-number",
   sheets_gid="712845051",
@@ -93,12 +93,12 @@ There were others issues, on top of these, that deserve some more indepth analys
 
 #### Sticky positioning
 
-Sticky positioning has been around for a while. In fact, it's worth noting that it was the [most popular feature query in 2021 by a large margin](../2021/css#feature-queries) {# TODO - check if 2022 numbers are better to use here #}, accounting for over 50% of feature queries. It had several interoperability issues; for example, the inability to stick headers in tables in Chrome. `position: sticky` is actively used in around 5% of desktop pages and 4% of mobile pages in 2022. We'll keep an eye on this metric for some time to come to see how addressing those interoperability issues affects adoption over time.
+Sticky positioning has been around for a while. In fact, it's worth noting that it is the [most popular feature query in used by a large margin](../2021/css#feature-queries), accounting for over 50% of feature queries. It had several interoperability issues; for example, the inability to stick headers in tables in Chrome. `position: sticky` is actively used in around 5% of desktop pages and 4% of mobile pages in 2022. We'll keep an eye on this metric for some time to come to see how addressing those interoperability issues affects adoption over time.
 
 {{ figure_markup(
   image="css-transforms-wpt-dashboard-stable.png",
-  caption="CSS Transforms Web Page Tests dashboard (stable).",
-  description="Recent Compat 2021 graph showing css-transforms improving by 20-30% in all stable browsers between then and now.",
+  caption='CSS Transforms Web Page Tests dashboard (stable).<br>(Source: <a hreflang="en" href="https://wpt.fyi/compat2021?feature=css-transforms&stable">Web Platform Tests</a>)',
+  description="Compat 2021 graph showing css-transforms improving by 20-30% in all stable browsers between then and now.",
   width=720,
   height=479
   )
@@ -110,14 +110,14 @@ CSS Transforms are popular and have been around for a long time. However, there 
 
 {{ figure_markup(
   image="css-transforms-wpt-dashboard-experimental.png",
-  caption="CSS Transforms Web Page Tests dashboard (experimental).",
-  description="A recent compat 2021 graph showing the same CSS transforms in experimental browsers, in which all browsers are scoring 90% or better.",
+  caption='CSS Transforms Web Page Tests dashboard (experimental).<br>(Source: <a hreflang="en" href="https://wpt.fyi/compat2021?feature=css-transforms">Web Platform Tests</a>)',
+  description="Compat 2021 graph showing the same CSS transforms in experimental browsers, in which all browsers are scoring 90% or better.",
   width=720,
   height=479
   )
 }}
 
-A recent compat 2021 graph showing the same CSS transforms in experimental browsers as above shows all browsers are scoring 90% or better in their experimental versions, which show future versions of the browsers. This was one of the areas with big, visible improvements in stable browsers, which continue to improve, aspart of Interop 2022 involves continuing Compat 2021 work.
+A recent compat 2021 graph showing the same CSS transforms in experimental browsers as above shows all browsers are scoring 90% or better in their experimental versions, which show future versions of the browsers. This was one of the areas with big, visible improvements in stable browsers, which continue to improve, as part of Interop 2022 involves continuing Compat 2021 work.
 
 #### `aspect-ratio`
 
@@ -125,7 +125,7 @@ A recent compat 2021 graph showing the same CSS transforms in experimental brows
 
 {{ figure_markup(
   image="aspect-ratio-usage.png",
-  caption='Aspect-ratio usage over time (source: <a hreflang="en" href="https://chromestatus.com/metrics/css/timeline/popularity/657">Chrome Status</a>).',
+  caption='Aspect-ratio usage over time.<br>(Source: <a hreflang="en" href="https://chromestatus.com/metrics/css/timeline/popularity/657">Chrome Status</a>)',
   description="A chart showing steady adoption over time of aspect-ratio containing rules over the last year and a half or so, going from 0.11% on desktop and 0.24% on mobile to 1.44% on desktop and 1.55% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSu00TnW-7UyYdnE2O4XVTW55MWJ0o5jmj-LWVYESaWrzhaCHELP82GwEnYxgEw3ZCmGMB6aiSVfaw7/pubchart?oid=921119661&format=interactive",
   sheets_gid="1987465082"
@@ -135,7 +135,7 @@ In 2022, `aspect-ratio` is already appearing in the [CSS of 2% of URLs in the ar
 
 ## Interop 2022
 
-Like the _Compat_ effort before it, the renamed _Interop_ effort focuses on a mix of things: From collections of bugs to landing good final implementations to relatively new but quickly shipping features we'd like to set off in good standing. Let's start with the bugs…
+Like the _Compat_ effort before it, the renamed _Interop_ effort focuses on a mix of things from collections of bugs to landing good, final implementations to relatively new but quickly shipping features we'd like to set off in good standing. Let's start with the bugs…
 
 ### Bugs
 
@@ -143,14 +143,14 @@ In many cases, we have otherwise mature features with ragged bugs reported in di
 
 #### Forms
 
-For most of the web's history, forms have played a pretty important role. Indeed, in 2022, over 69% of desktop pages include a `<form>` element. They've had a lot of investment, but despite that, they're still the source of a lot of browser bugs as developers find cases where things differ from the specs, or differ from other implementations in sometimes subtle ways. We identified <a hreflang="en" href="https://wpt.fyi/results/?label=master&label=experimental&product=chrome&product=firefox&product=safari&aligned&view=interop&q=label%3Ainterop-2022-forms">a set of 200 tests</a> in which the pass rate was very ragged. Individual scores ranged from ~62% (Safari) to ~91% (Chrome), but again, each browser had different gaps in support.
+For most of the web's history, forms have played a pretty important role. In 2022, <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/edit#gid=2057119066">over 69% of desktop pages include a `<form>` element</a>. They've had a lot of investment, but despite that, they're still the source of a lot of browser bugs as developers find cases where things differ from the specs, or differ from other implementations in sometimes subtle ways. We identified <a hreflang="en" href="https://wpt.fyi/results/?label=master&label=experimental&product=chrome&product=firefox&product=safari&aligned&view=interop&q=label%3Ainterop-2022-forms">a set of 200 tests</a> in which the pass rate was very ragged. Individual scores ranged from ~62% (Safari) to ~91% (Chrome), but again, each browser had different gaps in support.
 
 We have made some pretty radical progress toward closing these gaps in experimental releases, and we hope that as we close out the year these will land in stable browsers. There is probably little that can be tracked here using the HTTP Archive data in terms of use, or adoption, but hopefully developers experience less pain and frustration and require fewer workarounds for individual browsers.
 
 {{ figure_markup(
   image="forms-wpt-dashboard.png",
-  caption="Forms WPT dashboard.",
-  description="A chart showing the improvement in forms interoperability over the course of 2022 in all browsers - very significant for Safari. All browsers are now scoring between ~92-99%.",
+  caption='Forms WPT dashboard (experimental).<br>(Source: <a hreflang="en" href="https://wpt.fyi/interop-2022?feature=interop-2022-forms&stable">Web Platform Tests</a>)',
+  description="A chart showing the improvement in forms interoperability over the course of 2022 in all browsers—very significant for Safari. All browsers are now scoring between ~92-99%.",
   width=732,
   height=696
   )
@@ -158,7 +158,7 @@ We have made some pretty radical progress toward closing these gaps in experimen
 
 #### Scrolling
 
-Over the years we've added new patterns and developed new abilities around scroll experiences like `scroll-snap`, `scroll-behavior`, and `overscroll-behavior`. The desire for these sorts of powers are clear - in 2022, the number of CSS stylesheets including some of these key properties looked like this:
+Over the years we've added new patterns and developed new abilities around scroll experiences like `scroll-snap`, `scroll-behavior`, and `overscroll-behavior`. The desire for these sorts of powers are clear—in 2022, the number of CSS stylesheets including some of these key properties looked like this:
 
 {{ figure_markup(
   image="scroll-property-adoption.png",
@@ -173,7 +173,7 @@ Unfortunately, this is an area where a number of incompatibilities remain, and d
 
 {{ figure_markup(
   image="scrolling-wpt-dashboard.png",
-  caption="Scolling WPT dashboard.",
+  caption='Scolling WPT dashboard.<br>(Source: <a hreflang="en" href="https://wpt.fyi/interop-2022?feature=interop-2022-scrolling&stable">Web Platform Tests</a>)',
   description="A recent chart showing improvements in experimental browsers showing significant gains and alignment, particularly in Firefox which went from about 71% to over 86%.",
   width=718,
   height=683
@@ -190,7 +190,7 @@ Interop 2022 took up a general bag of issues around `font-variant-alternates`, `
 
 {{ figure_markup(
   image="typography-and-encodings-wpt-dashboard.png",
-  caption="Typography and encodings WPT dashboard.",
+  caption='Typography and encodings WPT dashboard.<br>(Source: <a hreflang="en" href="https://wpt.fyi/interop-2022?feature=interop-2022-text&stable">Web Platform Tests</a>)',
   description="A chart showing the interoperability scores for typography and encodings over the past year. Chrome began at about 70%, Safari at about 79% and Firefox at about 98%. Chrome has pretty much closed the ground between itself and Safari, but the chart is otherwise 3 straight lines with no change.",
   width=727,
   height=688
@@ -207,27 +207,27 @@ Aligning implementations is particularly difficult. There is a delicate balance 
 
 A dialog element was first shipped in Chrome 37 in August 2014. Introducing a dialog requires introducing and defining a number of supporting concepts like "top-layer" and "inertness." It also requires answering many new accessibility and UX questions.
 
-A number of things caused work on dialogs to stall for a long time, but over the years it's picked back up. It landed in Firefox Nightly 53 behind a flag in April 2017. Since then, a lot of work has gone into answering all of those questions. Final details were sorted out and work was prioritized as part of Interop 2022 to ensure good interoperability to start with. We identified 88 Tests. It was shipped by default in stable browsers in _both _[Firefox 98](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/98) and <a hreflang="en" href="https://developer.apple.com/documentation/safari-release-notes/safari-15_4-release-notes">Safari 15.4</a> in March 2022, with all browsers scoring ~93% or better.
+A number of things caused work on dialogs to stall for a long time, but over the years it's picked back up. It landed in Firefox Nightly 53 behind a flag in April 2017. Since then, a lot of work has gone into answering all of those questions. Final details were sorted out and work was prioritized as part of Interop 2022 to ensure good interoperability to start with. We identified 88 Tests. It was shipped by default in stable browsers in both [Firefox 98](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/98) and <a hreflang="en" href="https://developer.apple.com/documentation/safari-release-notes/safari-15_4-release-notes">Safari 15.4</a> in March 2022, with all browsers scoring ~93% or better.
 
 {{ figure_markup(
   image="dialog-element-wpt-dashboard.png",
-  caption="Dialog element WPT dashboard.",
-  description="TODO.",
+  caption='Dialog element WPT dashboard.<br>(Source: <a hreflang="en" href="https://wpt.fyi/interop-2022?feature=interop-2022-dialog&stable">Web Platform Tests</a>)',
+  description="A chart showing the interoperability scores for dialog over the past year. Firefox and Safari began at about 80%, with Chrome a little higher on 87%. All have made steady improvements with Chrome/Edge ending on 99.4%, Safari on 97.5% and Firefox on 92.8%.",
   width=720,
   height=685
   )
 }}
 
-It's hard to predict how many of the pages the archive crawls will require a `<dialog>`, but tracking its growth will be informative and interesting. Last year, only one shipping browser supported `<dialog>`, and it appeared on ~0.101% of pages in the mobile data set. At the time of the crawl we used for this chapter, it had been shipping universally for about 5 months. In 2022 we found it appearing in ~0.132%. Still small numbers, but that's ~130.7% of what it was this time last year. We will continue to track this metric next year. In the meantime, if you have a need for a `<dialog>` there's good news: It's now universally available for use!
+It's hard to predict how many of the pages the archive crawls will require a `<dialog>`, but tracking its growth will be informative and interesting. Last year, only one shipping browser supported `<dialog>`, and it appeared on ~0.101% of pages in the mobile data set. At the time of the crawl we used for this chapter, it had been shipping universally for about 5 months and <a hreflang="en" href="https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/edit#gid=2057119066">we found it appearing in ~0.148%</a>. Still small numbers, but that's ~146% of what it was this time last year. We will continue to track this metric next year. In the meantime, if you have a need for a `<dialog>` there's good news: It's now universally available for use!
 
 #### CSS containment
 
-CSS containment introduces a concept for isolating a subtree of the page from the rest of the page in terms of how CSS should process and render it. It was introduced as a primitive which could be used to improve performance, and to open the door for figuring out Container Queries.
+CSS containment introduces a concept for isolating a subtree of the page from the rest of the page in terms of how CSS should process and render it. It was introduced as a primitive which could be used to improve performance, and to open the door for figuring out [Container Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries).
 
 {{ figure_markup(
   image="containment-wpt-dashboard.png",
-  caption="Containment WPT dashboard.",
-  description="TODO.",
+  caption='Containment WPT dashboard.<br>(Source: <a hreflang="en" href="https://wpt.fyi/interop-2022?feature=interop-2022-contain&stable">Web Platform Tests</a>)',
+  description="A chart showing the interoperability scores for containment over the past year. Safari started quite low at about 30% but shot up to 88% early on and steadily increased to 99%. Chrome/Edge and Firefox all started much higher (84% and 95% respectively) but have also improved to 99%",
   width=709,
   height=675
   )
@@ -237,16 +237,15 @@ It first shipped in Chrome stable in July 2016. Firefox shipped the second imple
 
 {{ figure_markup(
   caption="Number of mobile pages using containment in their stylesheets.",
-  content="4%",
+  content="3.7%",
   classes="big-number",
   sheets_gid="1436876723",
   sql_file="contain.sql"
 )
 }}
 
-In the 2022 data, containment appears in stylesheets on 4% of pages on mobile and 3% of pages on desktop.
+In the 2022 data, containment appears in stylesheets on 3.7% of pages on mobile and 3.1% of pages on desktop.
 
-The figure below shows the relative appearance of values in those pages - layout containment being far and away the most popular usage, accounting for 34% of `contain` values.
 
 {{ figure_markup(
   image="contain-property-usage.png",
@@ -258,6 +257,8 @@ The figure below shows the relative appearance of values in those pages - layout
   width=600,
   height=489
 ) }}
+
+The figure above shows the relative appearance of values in those pages—`layout` containment being far and away the most popular usage, accounting for 34% of `contain` values.
 
 While it is useful on its own, additional levels of containment support are a prerequisite to supporting container queries, so this will be an interesting metric to continue to track over time as container queries is the <a hreflang="en" href="https://2021.stateofcss.com/en-US/opinions/#currently_missing_from_css_wins">#1 most requested CSS feature</a> for many years. Now that containment is universally available, it's a great time for you to have a look and familiarize yourself with the basic concepts.
 
@@ -280,21 +281,19 @@ While CSS grid layout has allowed a container to express layout of its children 
 
 Coordinating work on this long awaited feature and ensuring good interoperability was another goal in Interop 2022. We marked <a hreflang="en" href="https://wpt.fyi/results/css/css-grid/subgrid?label=master&label=experimental&product=chrome&product=firefox&product=safari&aligned&view=interop&q=label%3Ainterop-2022-subgrid">51 Tests in Web Platform Tests</a>.
 
-As of the time of this writing, there has been very good progress (Safari is now the most complete), and there are at least 2 implementations (Safari and Firefox) in stable shipping browsers. We hope to see rapid improvement in Chrome before the end of the year.
-
 {{ figure_markup(
   image="subgrid-wpt-dashboard.png",
-  caption="Subgrid WPT dashboard.",
+  caption='Subgrid WPT dashboard.<br>(Source: <a hreflang="en" href="https://wpt.fyi/interop-2022?feature=interop-2022-subgrid&stable">Web Platform Tests</a>)',
   description="A chart showing the scores of subgrid in stable releases over the past year. Chrome started at has reached about 20%, Safari went from around 10% to around 98% and Firefox from about 81% to about 83%.",
   width=719,
   height=683
   )
 }}
 
-While this isn't fully available in all stable browsers yet the dataset did include some small amount of use already.
+As of the time of this writing, there has been very good progress (Safari is now the most complete), and there are at least 2 implementations (Safari and Firefox) in stable shipping browsers. We hope to see rapid improvement in Chrome before the end of the year.
 
 {{ figure_markup(
-  caption="Percentage of mobile pages containing a use of `subgrid` in their stylesheet..",
+  caption="Percentage of mobile pages containing a use of `subgrid` in their stylesheet.",
   content="0.002%",
   classes="big-number",
   sheets_gid="519660506",
@@ -302,17 +301,19 @@ While this isn't fully available in all stable browsers yet the dataset did incl
 )
 }}
 
+While this isn't fully available in all stable browsers yet the dataset did include some small amount of use already.
+
 ### New Features
 
-This year, all of the new features that fall under the category of CSS, and most of the data about them, will be covered in the CSS chapter. Here, we'll mainly focus on some highlights.
+This year, all of the new features that fall under the category of CSS, and most of the data about them, will be covered in the [CSS](./css) chapter. Here, we'll mainly focus on some highlights.
 
 #### Color Spaces and Functions
 
-Color on the web has always been full of fascinating challenges. Over the years, we've given authors many ways to _express_ what are, in the end, the same [sRGB](https://en.wikipedia.org/wiki/SRGB) colors. That is, one can write as a color name (`red`). Simple enough.
+Color on the web has always been full of fascinating challenges. Over the years, we've given authors many ways to express what are—in the end—the same [sRGB](https://en.wikipedia.org/wiki/SRGB) colors. That is, one can write as a color name (`red`). Simple enough.
 
 However, we could also use its hex equivalent`(#FF0000)`. Humans don't generally think in hexadecimal, so we added the `rgb()` color function (`rgb(255,0,0)`). Note that both of those are just using two different, but equivalent, numbering systems. They are also about expressing things in terms of mixing the intensity of individual lights that were common in cathode ray tube displays.
 
-The RGB method of constructing colors can be very hard for humans to visualize, so we developed other coordinate systems for expressing sRGB colors in a (perhaps?) easier to understand, like [`hsl(0, 100%, 50%)`](https://en.wikipedia.org/wiki/HSL_and_HSV)or [`hwb(0, 0%, 0%)`](https://en.wikipedia.org/wiki/HWB_color_model). However, again, these are sRGB coordinate systems. So, what happens when our display abilities exceed their limits? This is, in fact, the case today, as can be seen with wide gamut displays.
+The RGB method of constructing colors can be very hard for humans to visualize, so we developed other coordinate systems for expressing sRGB colors in a (perhaps?) easier to understand, like [`hsl(0, 100%, 50%)`](https://en.wikipedia.org/wiki/HSL_and_HSV)or [`hwb(0, 0%, 0%)`](https://en.wikipedia.org/wiki/HWB_color_model). However, again, these are sRGB coordinate systems.
 
 {{ figure_markup(
   image="p3-color-space.jpg",
@@ -323,16 +324,18 @@ The RGB method of constructing colors can be very hard for humans to visualize, 
   )
 }}
 
+So, what happens when our display abilities exceed their limits? This is, in fact, the case today, as can be seen with wide gamut displays.
+
 In Safari 10, released in 2017, Apple added support for P3 color images. The new `lab()` and `lch()` coordinate systems were added to CSS in order to support the full available gamut space, based on the [CIELAB model](https://en.wikipedia.org/wiki/CIELAB_color_space#Cylindrical_model). They are perceptually uniform, allowing us to express colors we could not previously (and defining what to do if support is lacking). Support for these first shipped in Safari 15 in September 2021.
 
 The fuller gamut space and better perceptual uniformity of `lab()` and `lch()` also allow us to more easily focus on new color functions like `color-mix()`, which takes two colors and returns the result of mixing them in a specified color space by a specified amount.
 
-Interop 2022 took up <a hreflang="en" href="https://wpt.fyi/results/css/css-color?label=master&label=experimental&product=chrome&product=firefox&product=safari&aligned&view=interop&q=label%3Ainterop-2022-color">189 tests</a> around these items with a goal of prioritizing good interoperability. Safari began pretty well out ahead and has only improved - both Firefox and Chrome have made steady improvements, but they're still quite a bit behind in this area. One challenge, inevitably, is that much lower-level support (<a hreflang="en" href="https://youtu.be/eHZVuHKWdd8?t=906">throughout the underlying graphics library, rendering pipeline, etc</a>) is also built to deal in sRGB, so adding support is not easy.
+Interop 2022 took up <a hreflang="en" href="https://wpt.fyi/results/css/css-color?label=master&label=experimental&product=chrome&product=firefox&product=safari&aligned&view=interop&q=label%3Ainterop-2022-color">189 tests</a> around these items with a goal of prioritizing good interoperability. Safari began pretty well out ahead and has only improved—both Firefox and Chrome have made steady improvements, but they're still quite a bit behind in this area. One challenge, inevitably, is that much lower-level support—<a hreflang="en" href="https://youtu.be/eHZVuHKWdd8?t=906">throughout the underlying graphics library, rendering pipeline, etc.</a>—is also built to deal in sRGB, so adding support is not easy.
 
 {{ figure_markup(
   image="color-spaces-and-functions-wpt-dashboard.png",
-  caption="Color spaces and functions WPT dashboard.",
-  description="TODO.",
+  caption='Color spaces and functions WPT dashboard.<br>(Source: <a hreflang="en" href="https://wpt.fyi/interop-2022?feature=interop-2022-color&stable">Web Platform Tests</a>)',
+  description=" chart showing the scores of Color spaces and functions in stable releases over the past year. Chrome/Edge and Firefox started around 50% and Firefox has only moderately improved, while Chrome/Edge has improved a bit more to nearly 65%. Safari started strong at just above 90% and moved up above 95%.",
   width=719,
   height=684
   )
@@ -340,46 +343,42 @@ Interop 2022 took up <a hreflang="en" href="https://wpt.fyi/results/css/css-colo
 
 #### Viewport Units
 
-In the 2020 MDN Browser Compatibility Report, <a hreflang="en" href="https://insights.developer.mozilla.org/reports/mdn-browser-compatibility-report-2020.html#findings-viewport">the ability to work with the reported size of the viewport with existing vh/vw units was a common theme</a>. As browsers experiment with different interface choices and websites have different design needs, the <a hreflang="en" href="https://drafts.csswg.org/css-values-4/#viewport-variants">CSS Working Group defined several new classes of viewport units</a> for measuring the largest (lv* units), smallest (sv* units) and dynamic (dv* units) viewport measures. All viewport related measures includes similar units:
+In the 2020 MDN Browser Compatibility Report, <a hreflang="en" href="https://insights.developer.mozilla.org/reports/mdn-browser-compatibility-report-2020.html#findings-viewport">the ability to work with the reported size of the viewport with existing vh/vw units was a common theme</a>. As browsers experiment with different interface choices and websites have different design needs, the <a hreflang="en" href="https://drafts.csswg.org/css-values-4/#viewport-variants">CSS Working Group defined several new classes of viewport units</a> for measuring the largest (`lv*` units), smallest (`sv*` units) and dynamic (`dv*` units) viewport measures. All viewport related measures includes similar units:
 
-- 1% of the width (vw, lvw, svw, dvw)
-- 1% of the height (vh, lvh, svh, dvh)
-- 1% of the size in the inline axis (vi, lvi, svi, dvi)
-- 1% of the size of the initial containing block (vb, lvb, svb, dvb)
-- The smaller of two dimensions (vmin, lvmin, svmin, dvmin)
-- The larger of two dimensions (vmax, lvmax, svmax, dvmax)
-
-Interop 2022 identified 7 tests to verify various aspects of those units. Safari shipped the first support for these units in March 2022, followed by Firefox at the end of May. As of the time of this writing it is supported in experimental builds of Chromium.
-
-As of the time of this writing, the HTTP Archive hasn't turned up any use of these units in the wild yet, but it's very new. We'll continue to track adoption on this going forward.
-
-Experimental:
+- 1% of the width (`vw`, `lvw`, `svw`, `dvw`)
+- 1% of the height (`vh`, `lvh`, `svh`, `dvh`)
+- 1% of the size in the inline axis (`vi`, `lvi`, `svi`, `dvi`)
+- 1% of the size of the initial containing block (`vb`, `lvb`, `svb`, `dvb`)
+- The smaller of two dimensions (`vmin`, `lvmin`, `svmin`, `dvmin`)
+- The larger of two dimensions (`vmax`, `lvmax`, `svmax`, `dvmax`)
 
 {{ figure_markup(
   image="viewport-units-wpt-dashboard.png",
-  caption="Viewport units WPT dashboard (experimental).",
+  caption='Viewport units WPT dashboard (experimental).<br>(Source: <a hreflang="en" href="https://wpt.fyi/interop-2022?feature=interop-2022-viewport">Web Platform Tests</a>)',
   description="A chart showing the scores of viewport units in experimental releases over the past year. In January, no engine supported them. Safari had an early jump, getting about 65% support in February, but was quickly surpassed by Chrome with about 87% support. As of September, all scored 100% pass rates.",
   width=732,
   height=697
   )
 }}
 
+Interop 2022 identified 7 tests to verify various aspects of those units. Safari shipped the first support for these units in March 2022, followed by Firefox at the end of May. As of the time of this writing it is supported in experimental builds of Chromium.
+
+As of the time of this writing, the HTTP Archive hasn't turned up any use of these units in the wild yet, but it's very new. We'll continue to track adoption on this going forward.
+
 #### Cascade Layers
 
-Cascade Layers are an interesting new feature of CSS, built on a fundamental idea that has existed in CSS all along. As authors, our primary means of expressing the importance of rules has been specificity. This works well for a lot of things but it can quickly get unwieldy as we try to incorporate ideas for design systems or components. Browsers also use CSS internally in what is called the UA stylesheet. However, you might note that you don't typically have specificity related battles with the UA stylesheet. That's because there are "layers" of rules built right into how CSS works. Cascade Layers provides a way for authors to plug into that same mechanism and manage their CSS and specificity challenges more effectively. Miriam Suzanne wrote <a hreflang="en" href="https://css-tricks.com/css-cascade-layers/">a fuller explanation and guide</a>.
-
-To set this off well, Interop 2022 defined <a hreflang="en" href="https://wpt.fyi/results/css/css-cascade?label=experimental&label=master&product=chrome&product=firefox&product=safari&aligned&view=interop&q=label%3Ainterop-2022-cascade">31 tests in Web Platform Tests</a>. Support in stable browsers at the beginning of the year was non-existent, but since April it is now universally implemented among stable releases in the 3 engines. Here's what development looked like.
+Cascade Layers are an interesting new feature of CSS, built on a fundamental idea that has existed in CSS all along. As authors, our primary means of expressing the importance of rules has been specificity. This works well for a lot of things but it can quickly get unwieldy as we try to incorporate ideas for design systems or components. Browsers also use CSS internally in what is called the UA stylesheet. However, you might note that you don't typically have specificity related battles with the UA stylesheet. That's because there are "layers" of rules built right into how CSS works. Cascade Layers provides a way for authors to plug into that same mechanism and manage their CSS and specificity challenges more effectively. [Miriam Suzanne](https://twitter.com/TerribleMia) wrote <a hreflang="en" href="https://css-tricks.com/css-cascade-layers/">a fuller explanation and guide</a>.
 
 {{ figure_markup(
   image="cascade-layers-wpt-dashboard.png",
-  caption="Cascade layers WPT dashboard (experimental).",
+  caption='Cascade layers WPT dashboard (experimental)..<br>(Source: <a hreflang="en" href="https://wpt.fyi/interop-2022?feature=interop-2022-cascade">Web Platform Tests</a>)',
   description="A chart showing the scores of cascade layers support in experimental releases over the past year. In January, Firefox had roughly 75% support, Safari 62% and Chrome only about 11%. Throughout the year each gained steadily. As of September both Firefox and Chrome have scores of about 96%, and Safari 100%.",
   width=720,
   height=675
   )
 }}
 
-As of the time of the dataset for this year, layers occurred on a very small number of sites in the wild.
+To set this off well, Interop 2022 defined <a hreflang="en" href="https://wpt.fyi/results/css/css-cascade?label=experimental&label=master&product=chrome&product=firefox&product=safari&aligned&view=interop&q=label%3Ainterop-2022-cascade">31 tests in Web Platform Tests</a>. Support in stable browsers at the beginning of the year was non-existent, but since April it is now universally implemented among stable releases in the 3 engines. Here's what development looked like.
 
 {{ figure_markup(
   caption="Percentage of mobile pages containing a `@layer` ruleset.",
@@ -390,7 +389,9 @@ As of the time of the dataset for this year, layers occurred on a very small num
 )
 }}
 
-The largest number of layers defined was 6. Future editions of the almanac will continue to track adoption and trends on Cascade Layers. Hopefully aligned work, close releases and early focus on good interoperability help it reach its potential and reduce any frustrations.
+As of the time of the dataset for this year, layers occurred on a very small number of sites in the wild.
+
+The largest number of layers defined was 6. Future editions of the Web Almanac will continue to track adoption and trends on Cascade Layers. Hopefully aligned work, close releases and early focus on good interoperability help it reach its potential and reduce any frustrations.
 
 Given that it's shipping everywhere, now would be a great time to learn more about how Cascade Layers can help you wrangle control of your CSS.
 
