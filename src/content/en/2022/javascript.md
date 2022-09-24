@@ -173,6 +173,58 @@ The `type="module"` and `nomodule` attributes are specific to the presence (or a
     <tbody>
       <tr>
         <td><code>async</code></td>
+        <td class="numeric">76%</td>
+        <td class="numeric">76%</td>
+      </tr>
+      <tr>
+        <td><code>defer</code></td>
+        <td class="numeric">42%</td>
+        <td class="numeric">42%</td>
+      </tr>
+      <tr>
+        <td><code>async</code> and <code>defer</code></td>
+        <td class="numeric">28%</td>
+        <td class="numeric">29%</td>
+      </tr>
+      <tr>
+        <td><code>module</code></td>
+        <td class="numeric">4%</td>
+        <td class="numeric">4%</td>
+      </tr>
+      <tr>
+        <td><code>nomodule</code></td>
+        <td class="numeric">0%</td>
+        <td class="numeric">0%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(
+    caption='Percentage of pages using `async`, `defer`, `async` and `defer`, `type="module"`, and `nomodule` attributes on `<script>` elements.',
+    sheets_gid="2108682936",
+    sql_file="breakdown_of_pages_using_async_defer_module_nomodule.sql"
+  ) }}</figcaption>
+</figure>
+
+It's encouraging that 76% of mobile pages load scripts with `async`, as that suggests developers are cognizant of the effects of render blocking. However, such a low usage of `defer` suggests that there are opportunities being left on the table to improve rendering performance.
+
+As noted [last year](../2021/javascript/#async-and-defer), using both `async` and `defer` is an antipattern that should be avoided as the `defer` part is ignored and `async` takes precedence.
+
+The general absence of `type="module"` and `nomodule` is not surprising, as few pages seem to be shipping JavaScript modules. As time goes on, the usage of `type="module"` in particular may increase, as developers ship untransformed JavaScript modules to the browser.
+
+Looking at the percentage of overall scripts across all the sites, presents a slightly different view:
+
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>async</code></td>
         <td class="numeric">49.3%</td>
         <td class="numeric">47.2%</td>
       </tr>
@@ -193,23 +245,19 @@ The `type="module"` and `nomodule` attributes are specific to the presence (or a
       </tr>
       <tr>
         <td><code>nomodule</code></td>
-        <td class="numeric">0.0%</td>
-        <td class="numeric">0.0%</td>
+        <td class="numeric">0%</td>
+        <td class="numeric">0%</td>
       </tr>
     </tbody>
   </table>
   <figcaption>{{ figure_link(
-    caption='Percentage of pages using `async`, `defer`, `async` and `defer`, `type="module"`, and `nomodule` attributes on `<script>` elements.',
+    caption='Percentage of scripts using `async`, `defer`, `async` and `defer`, `type="module"`, and `nomodule` attributes on `<script>` elements.',
     sheets_gid="357655091",
     sql_file="breakdown_of_scripts_using_async_defer_module_nomodule.sql"
   ) }}</figcaption>
 </figure>
 
-It's encouraging that 47% of mobile pages load scripts with `async`, as that suggests developers are cognizant of the effects of render blocking. However, such a low usage of `defer` suggests that there are opportunities being left on the table to improve rendering performance.
-
-As noted [last year](../2021/javascript/#async-and-defer), using both `async` and `defer` is an antipattern that should be avoided as the `defer` part is ignored and `async` takes precedence.
-
-The general absence of `type="module"` and `nomodule` is not surprising, as few pages seem to be shipping JavaScript modules. As time goes on, the usage of `type="module"` in particular may increase, as developers ship untransformed JavaScript modules to the browser.
+Here we see a much smaller use of both `async` and `defer`. Some of these scripts may be being inserted dynamically after the initial rendering, but it's also likely a good proportion of pages are not setting these attributes on a lot of their scripts that are included in the initial HTML and so are delaying rendering.
 
 ### `preload`, `prefetch`, and `modulepreload`
 
