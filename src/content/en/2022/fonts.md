@@ -659,12 +659,12 @@ We already touched on fallback fonts while talking about font-display. Sometimes
 While these are fairly new, they are already seeing significant use. The usual suspects, sans-serif, monospace, and serif obviously take the lead as they have been around since the first version of the CSS specification.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="usage-of-css-generic-font-family-names.png",
+  caption="Usage of CSS generic font family names.",
+  description="Bar chart showing `sans-serif` is used on 89.1% of desktop pages and 89.3% of mobile pages, `monospace` on 65.8% and 64.7% respectively, `serif` on 54.0% and 55.0%, `cursive` on 3.7% and 3.9%, `system-ui` on 4.0% and 3.6%, `fantasy` on 0.5% and 0.5%, `ui-monospace` on 0.6% and 0.5%, and finally `ui-sans-serif` is used on 0.5% of desktop and 0.4% of mobiles pages..",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1479159855&format=interactive",
+  sheets_gid="467837585",
+  sql_file="usage_of_system_families.sql"
   )
 }}
 
@@ -677,12 +677,12 @@ We hope to see more use of these generic family names next year. They are great 
 And now for a complete surprise (to us anyway): people _really_ like to specify their MacOS-only [font smoothing preferences](https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth). For example, the `-webkit-font-smoothing: antialiased` value is used on 73.4% of all sites. This is surprising because it (and its siblings `-mox-osx-font-smoothing`, and `font-smoothing`) are not even official CSS properties. This might make them the most used _unofficial_ CSS properties!
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="usage-of-font-smoothing-properties.png",
+  caption="Usage of font smoothing properties.",
+  description="Bar chart showing `-webkit-font-smoothing: antialiased` is used on 74% of desktop and 73% of mobile pages, `-moz-osx-font-smoothing: grayscale` on 67% and 66%, `-webkit-font-smoothing: auto` on 13% and 12%, and finally `-webkit-font-smoothing: subpixel-antialiased` is used on 13% of desktop and 13% of mobile pages..",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=534216530&format=interactive",
+  sheets_gid="1970926839",
+  sql_file="font_smoothing_usage.sql"
   )
 }}
 
@@ -697,12 +697,12 @@ For example, even if the type designer did not explicitly create a semibold styl
 Usage of variable fonts has nearly tripled since the last measurement in the Almanac's 2020 fonts chapter! Nearly 29% of websites use variable fonts. Most of this growth seems to have happened in the last year, with an amazing 125% growth.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="usage-of-variable-fonts.png",
+  caption="Usage of variable fonts.",
+  description="Column chart showing that in 2020 11% of pages on both desktop and mobile used variable fonts, in 2021	that grew to 13% of both, and in 2022	that shot up to 28% of desktop pages and 29% of mobile pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=920070467&format=interactive",
+  sheets_gid="1460535004",
+  sql_file="variable_font_usage.sql"
   )
 }}
 
@@ -712,8 +712,8 @@ This impressive growth in usage can be explained by splitting the request data b
   content="97%",
   caption="Variable fonts served by Google Fonts.",
   classes="big-number",
-  sheets_gid="TODO",
-  sql_file="TODO.sql",
+  sheets_gid="325872648",
+  sql_file="variable_font_googlefonts_vs_other.sql",
 ) }}
 
 As a result, Google Fonts and their users are probably seeing huge benefits in performance. Variable fonts are usually smaller than using multiple static instances. For example, if a website uses more than two or three styles from the same family, a variable font is smaller in file size and only takes a single request. It doesn't take a lot: using regular, bold, and light weights are usually sufficient reasons to use a variable font. As an added benefit, with a variable font you can also tweak the axes to suit your needs (semi-demi-bold anyone?)
@@ -728,8 +728,8 @@ So which format should you use? Fortunately, for developers, type designers, and
   content="99.99%",
   caption="Variable fonts using the `glyf` outline format.",
   classes="big-number",
-  sheets_gid="TODO",
-  sql_file="TODO.sql",
+  sheets_gid="993301429",
+  sql_file="types_of_variable_font.sql",
 ) }}
 
 Our recommendation is to avoid CFF2-based variable fonts (for now, at least). Browsers and operating systems only recently added support for CFF2, and some browsers still don't support it. The only tangible benefit of using `CFF2` over `glyf` based variable fonts is the supposed file size savings, but as we've seen in the performance section this claim is dubious at best.
@@ -737,24 +737,24 @@ Our recommendation is to avoid CFF2-based variable fonts (for now, at least). Br
 So, how are people using variable fonts? Not surprisingly the weight axis is the most popular value used with the `font-variation-settings` property, followed by optical sizes, width, slant, italic, and grades.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="usage-of-font-variation-settings-axes.png",
+  caption="Usage of font-variation-settings axes.",
+  description="Column chart showing `wght` is used on 82% of desktop pages and 87% of mobile pages, `opsz` on 5% and 4% respectively, `wdth` on 5% and 4%, `slnt` on 3% and 2%, `ital` on 2% and 1%, and finally `GRAD` is used on 1% of desktop and mobile pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=2021084759&amp;format=interactive",
+  sheets_gid="1634075051",
+  sql_file="variable_font_axis_css.sql"
   )
 }}
 
 This somewhat surprised us, because there is no need to use the low-level `font-feature-settings` property to set a custom weight axis value. You can simply use the `font-weight` property with a custom value, for example, font-weight: 550 for a weight between 500 and 600. Even more puzzling is that the most popular weight axis values are the "default" CSS weight values that have been around since the early days of CSS! Only 16% of the weight values are custom values along the weight range.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="popular-variable-font-weight-values.png",
+  caption="Popular variable font weight values.",
+  description="Bar chart showing a font-weight of `400` is used on 22% of desktop pages using variable fonts and 23% of mobile pages using variable fonts, `600` on 22% of both, `700` on 21% of desktop and 22% of mobile pages, `300` on 19% and 21% respectively, `500` on 4% and 3%, `800` on 2% of both pages, `550` on 2% of desktop and 1% of mobile pages, `900` on 1% of both, `200` on 1% of both, and finally `450` on 1% of both desktop and mobile pages..",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1275376550&format=interactive",
+  sheets_gid="1634075051",
+  sql_file="variable_font_axis_css.sql"
   )
 }}
 
@@ -771,12 +771,12 @@ Color fonts are pretty much what you would expect: fonts with built in colors. T
 Color fonts usage has grown quite a bit since the last fonts chapter in 2020. Usage went from 0.004% of pages using color fonts in 2020 to about 0.018% in 2022. While those numbers are still _very_ small, there is a clear growth in their usage.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="color-font-usage.png",
+  caption="Color font usage.",
+  description="Column chart showing that in 2020 color fonts were used on 0.005% of desktop pages and 0.004% of mobile pages, 2021 on 0.013% and 0.015% respectively, 2022 on 0.015% of desktop and 0.018% of mobile pages..",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1366906842&format=interactive",
+  sheets_gid="1630630917",
+  sql_file="color_font_usage.sql"
   )
 }}
 
@@ -789,12 +789,12 @@ There are currently four competing color font formats: two based on vector outli
 Taking a look at usage data paints an interesting picture: 79% of color font usage is using SVG, 19% uses COLR v0, and 2% uses CBDT.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  image="color-font-formats.png",
+  caption="Color font formats.",
+  description="Pie chart showing SVG is the color font used on 74.2% of the time on mobile, COLRv0 is 22.8%, CBDT 2.5%, sbix 0.2% and finally COLRv1 also 0.2%..",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=2109618513&amp;format=interactive",
+  sheets_gid="1976816146",
+  sql_file="color_fonts.sql"
   )
 }}
 
@@ -805,12 +805,11 @@ The split between the vector color font formats however is more nuanced. While O
 The CSS specification has been updated to support color fonts to allow <a hreflang="en" href="https://css-tricks.com/colrv1-and-css-font-palette-web-typography/">selection and customization of palettes</a>. Palettes are custom color schemes stored in the font by the type designer. The CSS `font-palette` property allows you to select a palette from the font and the `@font-palette-values` rule allows you to create new palettes or override existing ones. One of the more obvious use cases of this technology is to have light and dark mode palettes built right into the color font. There is a lot of unexplored potential there.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
+  image="bradley-initials.png",
+  caption='<a hreflang="en" href="https://tools.djr.com/misc/bradley-initials/">Bradley Initials</a> using COLR v1 and multiple palettes by <a hreflang="en" href="https://djr.com/">David Jonathan Ross</a>.',
   description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODO.sql"
+  width=1911,
+  height=1142
   )
 }}
 
