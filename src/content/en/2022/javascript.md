@@ -53,13 +53,13 @@ As was the case last year, this year marks yet another increase in the amount of
   )
 }}
 
-According to <a hreflang="en" href="https://web.dev/unused-javascript/">Lighthouse</a>, the median mobile page loads 162 KB of unused JavaScript. At the 90th percentile, 604 KB of JavaScript are unused. This is a slight uptick from last year, where the median and 90th percentile of unused JavaScript was 155 KB and 598 KB, respectively. All of this represents a _very_ large amount of unused JavaScript, especially when you consider that this analysis tracks the _transfer size_ of JavaScript resources which, if compressed, means that the decompressed portion of used JavaScript may be a lot larger than the chart suggests.
+According to <a hreflang="en" href="https://web.dev/unused-javascript/">Lighthouse</a>, the median mobile page loads 162 KB of unused JavaScript. At the 90th percentile, 604 KB of JavaScript are unused. This is a slight uptick from last year, where the median and 90th percentile of unused JavaScript was 155 KB and 598 KB, respectively. All of this represents a very large amount of unused JavaScript, especially when you consider that this analysis tracks the transfer size of JavaScript resources which, if compressed, means that the decompressed portion of used JavaScript may be a lot larger than the chart suggests.
 
 When contrasted with the total number of bytes loaded for mobile pages at the median, unused JavaScript accounts for 35% of all loaded scripts. This is down slightly from last year's figure of 36%, but is still a significantly large chunk of bytes loaded that go unused. This suggests that many pages are loading scripts that may not be used on the current page, or are triggered by interactions later on in the page lifecycle, and may benefit from [dynamic `import()`](#dynamic-import) to reduce startup costs.
 
 ## JavaScript requests per page
 
-Every resource on a page will kick off _at least_ one request, and possibly more if a resource makes additional requests for more resources.
+Every resource on a page will kick off at least one request, and possibly more if a resource makes additional requests for more resources.
 
 Where script requests are concerned, the more there are, the more likely you'll not just load more JavaScript, but also increase contention between script resources that may bog down the main thread, leading to slower startup.
 
@@ -127,7 +127,7 @@ Of the 1,000 most popular websites, 17% use webpack as a bundler. This makes sen
 
 <a hreflang="en" href="https://parceljs.org/">Parcel</a> is a noteworthy alternative to webpack, and its adoption is significant. Parcel's adoption is consistent across all ranks, accounting for a range of 1.2% to 1.9% across rankings.
 
-While HTTP Archive is unable to track the usage of _all_ bundlers in the ecosystem, bundler usage is significant in the overall picture of JavaScript in that they're not only important to the developer experience, but the overhead they can contribute in the form of dependency management code can be a factor in how much JavaScript is shipped. It's worth checking how your overall project settings are configured to produce the most efficient possible output for the browsers your users use.
+While HTTP Archive is unable to track the usage of all bundlers in the ecosystem, bundler usage is significant in the overall picture of JavaScript in that they're not only important to the developer experience, but the overhead they can contribute in the form of dependency management code can be a factor in how much JavaScript is shipped. It's worth checking how your overall project settings are configured to produce the most efficient possible output for the browsers your users use.
 
 ### Transpilers
 
@@ -199,7 +199,7 @@ The `type="module"` and `nomodule` attributes are specific to the presence (or a
     </tbody>
   </table>
   <figcaption>{{ figure_link(
-    caption='Percentage of pages using `async`, `defer`, `async` _and_ `defer`, `type="module"`, and `nomodule` attributes on `<script>` elements.',
+    caption='Percentage of pages using `async`, `defer`, `async` and `defer`, `type="module"`, and `nomodule` attributes on `<script>` elements.',
     sheets_gid="357655091",
     sql_file="breakdown_of_scripts_using_async_defer_module_nomodule.sql"
   ) }}</figcaption>
@@ -213,7 +213,7 @@ The general absence of `type="module"` and `nomodule` is not surprising, as few 
 
 ### `preload`, `prefetch`, and `modulepreload`
 
-Resource hints such as `preload`, `prefetch`, and `modulepreload` are useful in hinting to the browser which resources should be fetched early. Each hint has a different purpose, with `preload` used to fetch resources needed for the current navigation, `modulepreload` the equivalent for preloading scripts that contain [JavaScript modules](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules), and `prefetch` used for resources needed in the _next_ navigation.
+Resource hints such as `preload`, `prefetch`, and `modulepreload` are useful in hinting to the browser which resources should be fetched early. Each hint has a different purpose, with `preload` used to fetch resources needed for the current navigation, `modulepreload` the equivalent for preloading scripts that contain [JavaScript modules](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules), and `prefetch` used for resources needed in the next navigation.
 
 <figure>
   <table>
@@ -279,7 +279,7 @@ Adoption of `prefetch` here is somewhat surprising, with three `prefetch` hints 
   )
 }}
 
-Remember—this analysis tracks how many resource hints are used for _JavaScript_ resources on pages that use one or more `preload` hints. The median page is delivering two `preload` hints for JavaScript, which isn't bad on its face, but it often depends on the size of the script, how much processing scripts can kick off, or whether the script fetched via `preload` is even needed for the initial page load.
+Remember—this analysis tracks how many resource hints are used for JavaScript resources on pages that use one or more `preload` hints. The median page is delivering two `preload` hints for JavaScript, which isn't bad on its face, but it often depends on the size of the script, how much processing scripts can kick off, or whether the script fetched via `preload` is even needed for the initial page load.
 
 Unfortunately, we see five `preload` hints for JavaScript resources at the 90th percentile, which may be too much. This suggests that pages at the 90th percentile are especially reliant on JavaScript, and are using `preload` to try and overcome the performance issues that result.
 
@@ -1019,8 +1019,8 @@ This is the first year we are tracking usage of this attribute, and unsurprising
 
 The state of JavaScript is largely continuing the way trends would have suggested last year. We're shipping more of it, for sure, but we're also trying to mitigate the ill effects of excessive JavaScript through increased usage of techniques such as minifiation, resource hints, compression, and even down to the libraries we use.
 
-The state of JavaScript is a constantly evolving phenomenon. It's clear that we have an increased reliance on it more than ever, but that spells trouble for the collective user experience of the web. We need to do all we can—and _more_—to stem the tide of how much JavaScript we ship on production websites.
+The state of JavaScript is a constantly evolving phenomenon. It's clear that we have an increased reliance on it more than ever, but that spells trouble for the collective user experience of the web. We need to do all we can—and more—to stem the tide of how much JavaScript we ship on production websites.
 
-As the web platform matures, we're hoping that we see increased direct adoption of its various APIs and features where it makes sense to do so. For those experiences that require frameworks for a better developer experience, we're hoping to see additional optimizations and opportunities for framework authors to adopt new APIs to help them develier on _both_ a better developer experience and better experiences for users.
+As the web platform matures, we're hoping that we see increased direct adoption of its various APIs and features where it makes sense to do so. For those experiences that require frameworks for a better developer experience, we're hoping to see additional optimizations and opportunities for framework authors to adopt new APIs to help them develier on both a better developer experience and better experiences for users.
 
 Let's hope that next year signals a shift in the trend. In the meantime, <a hreflang="en" href="https://web.dev/fast/">let's continue to do all we can</a> to make the web as fast as we possibly can, while keeping an eye on both <a hreflang="en" href="https://web.dev/lab-and-field-data-differences/#lab-data">lab</a> and <a hreflang="en" href="https://web.dev/lab-and-field-data-differences/#field-data">field</a> data along the way.
