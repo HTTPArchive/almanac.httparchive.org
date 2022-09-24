@@ -16,12 +16,11 @@ featured_stat_2: 0.3%
 featured_stat_label_2: The percentage of sites using the newly interoperable dialog element as of September 2022
 featured_stat_3: 4%
 featured_stat_label_3: The number of mobile pages using recently interoperable CSS containment in their stylesheets. Containment support is critical for Container Queries.
-unedited: true
 ---
 
 ## Introduction
 
-In 2019, the Mozilla Developer Network’s (MDN) Product Advisory Board put together a significant survey of over 28,000 developers and designers from 173 countries. Findings from this were published as the first <a hreflang="en" href="https://insights.developer.mozilla.org/reports/pdf/MDN-Web-DNA-Report-2019.pdf">Web Developer Needs Assessment</a> (Web DNA). This study identified (among other things) that some of the key frustrations and pain points most often involved differences between browsers. In 2020 this led to a followup known as the <a hreflang="en" href="https://insights.developer.mozilla.org/reports/mdn-browser-compatibility-report-2020.html">MDN Browser Compatibility Report</a>.
+In 2019, the Mozilla Developer Network's (MDN) Product Advisory Board put together a significant survey of over 28,000 developers and designers from 173 countries. Findings from this were published as the first <a hreflang="en" href="https://insights.developer.mozilla.org/reports/pdf/MDN-Web-DNA-Report-2019.pdf">Web Developer Needs Assessment</a> (Web DNA). This study identified (among other things) that some of the key frustrations and pain points most often involved differences between browsers. In 2020 this led to a followup known as the <a hreflang="en" href="https://insights.developer.mozilla.org/reports/mdn-browser-compatibility-report-2020.html">MDN Browser Compatibility Report</a>.
 
 Historically, implementer priorities and focus are independently managed. However, given this new data, browser manufactures came together for another first-of-its-kind effort called <a hreflang="en" href="https://web.dev/compat2021/">_Compat 2021_</a>, which identified 5 specific areas of joint focus toward alignment across thousands of Web Platform Tests. At the beginning of Compat 2021, all engines scored only 65-70% compatibility in the five areas in stable, shipping browsers. Today, all of them are over 90%. In 2022, this effort was expanded—and renamed—to <a hreflang="en" href="https://hacks.mozilla.org/2022/03/interop-2022/">_Interop 2022_</a>.
 
@@ -206,7 +205,7 @@ Aligning implementations is particularly difficult. There is a delicate balance 
 
 #### `<dialog>`
 
-A dialog element was first shipped in Chrome 37 in August 2014. Introducing a dialog requires introducing and defining a number of supporting concepts like “top-layer” and “inertness.” It also requires answering many new accessibility and UX questions.
+A dialog element was first shipped in Chrome 37 in August 2014. Introducing a dialog requires introducing and defining a number of supporting concepts like "top-layer" and "inertness." It also requires answering many new accessibility and UX questions.
 
 A number of things caused work on dialogs to stall for a long time, but over the years it's picked back up. It landed in Firefox Nightly 53 behind a flag in April 2017. Since then, a lot of work has gone into answering all of those questions. Final details were sorted out and work was prioritized as part of Interop 2022 to ensure good interoperability to start with. We identified 88 Tests. It was shipped by default in stable browsers in _both _[Firefox 98](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/98) and <a hreflang="en" href="https://developer.apple.com/documentation/safari-release-notes/safari-15_4-release-notes">Safari 15.4</a> in March 2022, with all browsers scoring ~93% or better.
 
@@ -260,7 +259,7 @@ The figure below shows the relative appearance of values in those pages - layout
   height=489
 ) }}
 
-While it is useful on its own, additional levels of containment support are a prerequisite to supporting container queries, so this will be an interesting metric to continue to track over time as container queries is the <a hreflang="en" href="https://2021.stateofcss.com/en-US/opinions/#currently_missing_from_css_wins">#1 most requested CSS feature</a> for many years. Now that containment is universally available, it’s a great time for you to have a look and familiarize yourself with the basic concepts.
+While it is useful on its own, additional levels of containment support are a prerequisite to supporting container queries, so this will be an interesting metric to continue to track over time as container queries is the <a hreflang="en" href="https://2021.stateofcss.com/en-US/opinions/#currently_missing_from_css_wins">#1 most requested CSS feature</a> for many years. Now that containment is universally available, it's a great time for you to have a look and familiarize yourself with the basic concepts.
 
 Note that some degree of container queries support is already available in Chrome and Safari and polyfills are available, so we also decided to look at how many stylesheets already contain a `@container ruleset`, wondering how much this would account for the use we saw above.
 
