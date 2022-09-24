@@ -104,7 +104,7 @@ Let's start with doctypes—which one is the most popular? But you know the answ
   sql_file="content_encoding.sql",
 ) }}
 
-Are HTML documents being compressed? How many? How? 86% of them are—with 58% (down 5.8% since last year) overall being gzip-compressed, and 28% (up 6.1%) being compressed using Brotli. To summarise slightly more documents are being compressed, and compressed more effectively.
+Are HTML documents being compressed? How many? How? 86% of them are—with 58% (down 5.8% since last year) overall being gzip-compressed, and 28% (up 6.1%) being compressed using Brotli. To summarize, slightly more documents are being compressed, and compressed more effectively.
 
 ### Languages
 
