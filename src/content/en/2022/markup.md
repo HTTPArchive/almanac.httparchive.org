@@ -148,7 +148,7 @@ HTML payload and document size are a staple in this series, however—we've look
 
 After some brief relief in 2020, document size has continued growing in 2021, and again in 2022, with a median transfer size of 30 kB in our mobile data set.
 
-Perhaps if we followed the advice to <cite><a hreflang="en" href="https://css-tricks.com/write-html-the-html-way-not-the-xhtml-way/">Write HTML, the HTML Way (Not the XHTML Way)</a></cite> that would result in smaller HTML transfer size, and would counter this trend. _Disclosure: Your author here likes to come up with HTML writing classifications, and enjoys promoting minimal HTML._
+One way to counter this trend is to <a hreflang="en" href="https://css-tricks.com/write-html-the-html-way-not-the-xhtml-way/">write HTML, the HTML way (and not the XHTML way)</a>, as that would already result in smaller HTML transfer size. _Disclosure: Your author here likes to come up with HTML writing classifications, and enjoys promoting minimal HTML._
 
 ## Elements
 
