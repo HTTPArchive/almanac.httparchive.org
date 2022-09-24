@@ -546,7 +546,7 @@ While the number of pages including these properties has increased, the properti
 {{ figure_markup(
     image="custom-property-functions.png",
     caption="The most popular custom property functions by percent of pages.",
-    description="TODO",
+    description="Bar chart showing the custom property functions used on the most pages. The most popular function is calc, used on 30% of pages, followed by linear-gradient on 11%, rgba on 6%, rotate, translate, and scaleX all on 5% of pages, translateX, scaleY, translateY, skewY, skewX, and min on 4% of pages, rgb, rotateY, and rotateX all on 3% of pages.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=580147519&format=interactive",
     height="525",
     sheets_gid="580592610",
@@ -573,7 +573,7 @@ As the comments in the previous example show, the more that these sub-references
 {{ figure_markup(
     image="custom-property-depth.png",
     caption="The distribution of custom property depth.",
-    description="TODO",
+    description="Bar chart showing the distribution of depth values of custom properties. 62% of custom property occurrences had a depth of 0, having no nested custom properties. 36% of occurrences had a depth of 1, with one level of nested custom properties. 2% of occurrences had a depth of 2, and less than 1% had a depth of 3 or more custom properties.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=742584548&format=interactive",
     sheets_gid="1220007551",
     sql_file="custom_property_depth.sql"
@@ -587,7 +587,7 @@ As seen in 2021, the vast majority of custom properties had a depth of zero, mea
 {{ figure_markup(
     image="color-formats.png",
     caption="The most popular color formats by percent of occurrences.",
-    description="TODO",
+    description="Bar chart showing the color formats used on the most pages. the six-digit #RRGGBB syntax is used on 49% of pages, three-digit #RGB on 25% of pages, the rgba function on 14% of pages, the transparent keyword on 8% of pages, a named color on 2%, the rgb functino on 1%, and the rest of the formats were used on less than 1% of pages, including: eight-digit #RRGGBBAA, hsla function, currentColor keyword, four-digit #RGBA, system color keywords, hsl function, color function, hwb function, lch function, and finally the lab function, in descending order of popularity.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=523191620&format=interactive",
     height="652",
     sheets_gid="750894349",
@@ -602,7 +602,7 @@ The usage of other values showed a similar story; the web community hasn't yet s
 {{ figure_markup(
     image="color-keywords.png",
     caption="The least popular named colors by number of occurrences.",
-    description="TODO",
+    description="Bar chart showing the named colors used on the fewest number of pages. MediumSpringGreen is used on only 1,793 mobile pages. Adoption slowly increases from there, to DarkSalmon, MediumOrchid, DarkOrchid, MediumSlateBlue, LavenderBlush, RosyBrown, Moccasin, SpringGreen, and Thistle, which is used on 2,205 pages.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=80217989&format=interactive",
     height="464",
     sheets_gid="2096495459",
@@ -617,7 +617,7 @@ The usage of other values showed a similar story; the web community hasn't yet s
 {{ figure_markup(
     image="color-formats-alpha.png",
     caption="The most popular color formats by alpha support.",
-    description="TODO",
+    description="Bar chart showing the popularity of alpha color formats relative to formats without alpha support. 23% of color formats used support alpha, and 77% do not.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=806405561&format=interactive",
     sheets_gid="750894349",
     sql_file="color_formats.sql"
@@ -629,7 +629,7 @@ The `rgba()` function is the third most popular color format, used substantially
 {{ figure_markup(
     image="color-formats-alpha-distribution.png",
     caption="Distribution of color formats by alpha support.",
-    description="TODO",
+    description="Bar chart showing the relative usage of alpha-supporting color formats. The rgba function is used in 14% of occurrences, followed by the transparent keyword in 8%. Other formats register in less than 1% of occurrences.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1242036465&format=interactive",
     sheets_gid="750894349",
     sql_file="color_formats.sql"
@@ -651,7 +651,7 @@ Another property becoming available in all engines this year is [`color-scheme`]
 {{ figure_markup(
     image="gradient-functions.png",
     caption="The most popular gradient functions by percent of pages.",
-    description="TODO",
+    description="Bar chart showing the gradient functions used on the most pages. linear-gradient is used on 76% of pages, followed by -webkit-linear-gradient on 53%, -webkit-gradient on 44%, -o-linear-gradient on 43%, -moz-linear-gradient on 38%, -ms-linear-gradient on 23%, radial-gradient on 15%, -webkit-radial-gradient on 6%, repeating-linear-gradient on 4%, and finally -moz-radial-gradient on 2% of pages.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=824533060&format=interactive",
     height="486",
     sheets_gid="972045834",
@@ -666,7 +666,7 @@ Linear gradients continue as the leading choice, appearing on a slightly higher 
 {{ figure_markup(
     image="image-formats.png",
     caption="Image formats as loaded from CSS.",
-    description="TODO",
+    description="Pie chart showing the relative popularity of formats of images loaded from CSS. PNG makes up 30.3% of usage, followed by SVG in 23.1%, GIF in 19.0%, JPG in 18.1%, WebP in 9.3%, and 0ther formats in fewer than 1% of occurrences.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1771292057&format=interactive",
     sheets_gid="947921429",
     sql_file="image_formats.sql"
@@ -680,7 +680,7 @@ This chart breaks down the image formats of images loaded from CSS. It does not 
 {{ figure_markup(
     image="css-initiated-images.png",
     caption="Distribution of number of images loaded from CSS.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of images loaded from CSS par page. The values for mobile pages are 1, 1, 3, 5, and 10 respectively and are very similar to that of desktop.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1307100659&format=interactive",
     sheets_gid="504054046",
     sql_file="image_weights.sql"
@@ -696,7 +696,7 @@ While CSS doesn't cause many image loads, the weight of those images is importan
 {{ figure_markup(
     image="image-weights.png",
     caption="Distribution of total weight of images loaded from CSS.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of total image bytes initiated from CSS per page. On mobile pages, the values are 1, 3, 17, 134, and 547 KB. Desktop pages tend to load heavier images at the higher percentiles, by tens of KB.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1802160609&format=interactive",
     sheets_gid="504054046",
     sql_file="image_weights.sql"
@@ -710,7 +710,7 @@ The median page, on mobile, has increased image weight by 1KB to 17KB. At the up
 {{ figure_markup(
     image="image-dimensions.png",
     caption="Distribution of sizes of images loaded from CSS.",
-    description="TODO",
+    description="Bar chart showing the 25, 50, and 75th percentiles of images sizes initiated in CSS per page, measured in square pixels. On mobile pages, the values are 729, 2,910, and 44,096 pixels squared. Desktop pages tend to load significantly smaller images.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=86638563&format=interactive",
     sheets_gid="366877201",
     sql_file="image_dimensions.sql"
@@ -726,7 +726,7 @@ We have many options to choose from when doing layout on the web, and most sites
 {{ figure_markup(
     image="layout-props.png",
     caption="Layout methods by percent of pages.",
-    description="TODO",
+    description="Bar chart showing the layout methods used on the most pages. Block and absolute layouts are used on 92% of pages, followed by inline-block on 90%, floats on 89%, fixed on 84%, inline on 82%, CSS tables on 79%, flex on 77%, and box on 51% of pages.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1738709324&format=interactive",
     sheets_gid="1793404870",
     sql_file="layout_properties.sql"
@@ -740,7 +740,7 @@ This chart doesn't tell us the main layout method used on a page. It indicates t
 {{ figure_markup(
     image="flexbox-grid.png",
     caption="Flexbox and grid adoption over the past four years.",
-    description="TODO",
+    description="Bar chart showing the adoption trends of flexbox and grid on mobile pages from 2019 to 2022, by year. Flexbox was used on 49% of pages in 2019, 63% in 2020, 71% in 2021, and 74% in 2022. Grid was used on 2% of pages in 2019, 5% in 2020, 8% in 2021, and 12% in 2022.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1410523848&format=interactive",
     sheets_gid="1855799827",
     sql_file="flexbox_grid.sql"
@@ -760,8 +760,33 @@ The `subgrid` value for `grid-template-rows` and `grid-template-columns` is, at 
 ### Box sizing
 
 {{ figure_markup(
+    content="92%",
+    caption="The percentage of pages that set `box-sizing: border-box`.",
+    classes="big-number",
+    sheets_gid="859735058",
+    sql_file="box_sizing.sql"
+  )
+}}
+
+The web has overwhelmingly voted to reject the original W3C box model in favor of `box-sizing: border-box`. The number of pages using this property and value combination has risen slightly again to over 90% of pages.
+
+
+{{ figure_markup(
+    content="44%",
+    caption="The percentage of pages that declare `box-sizing: border-box` on the `*` selector.",
+    classes="big-number",
+    sheets_gid="1754933881",
+    sql_file="box_sizing_border_box_selectors.sql"
+  )
+}}
+
+Almost half of all pages analyzed apply `border-box` sizing to every element on the page via the universal selector (`*`).
+
+Around 22% of pages use `border-box` on checkboxes and radio buttons. We see a lot of `.wp-` classes again, showing that WordPress is responsible for the use on 20% of pages analyzed.
+
+{{ figure_markup(
     image="box-sizing.png",
-    caption="Distribution of number of `border-box` declarations per page.",
+    caption="Distribution of the number of `border-box` declarations per page.",
     description="TODO",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1043112167&format=interactive",
     sheets_gid="859735058",
@@ -769,9 +794,7 @@ The `subgrid` value for `grid-template-rows` and `grid-template-columns` is, at 
   )
 }}
 
-The web has overwhelmingly voted to reject the original W3C box model in favor of `box-sizing: border-box`. The number of pages using this property and value combination has risen slightly again to over 90% of pages. Almost half of all pages analyzed apply `border-box` sizing to every element on the page via the universal selector (`*`). This approach may help explain why the median number of `border-box` declarations per page is so low across the bottom four percentiles.
-
-Around 22% of pages use `border-box` on checkboxes and radio buttons, we then see a lot of `.wp-` classes again, showing that WordPress is responsible for the use on 20% of pages analyzed.
+The median mobile page declares `border-box` 22 times. At the 90th percentile, it's declared an overwhelming 101 times. Note that previous years' queries had a bug affecting this metric. Correcting for that, the results in 2021 are comparable.
 
 ### Multicolumn
 
@@ -806,7 +829,7 @@ The `animation` property appears on 77% of mobile pages (the same as last year) 
 {{ figure_markup(
     image="transition-props.png",
     caption="The most popular `transition` properties by percent of pages.",
-    description="TODO",
+    description="Bar chart showing the transition properties used on the most pages. The most popular property is used on 53% of pages, followed by opacity on 50%, transform 38%, none 25%, height 22%, color 21%, background-color 20%, background 17%, box-shadow 13%, left 12%, width, top, and -webkit-transform 10%, border-color and visibility 8%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1745619326&format=interactive",
     height="533",
     sheets_gid="349042756",
@@ -819,7 +842,7 @@ As seen last year, the most common usage is to apply transitions to all animatab
 {{ figure_markup(
     image="transition-durations.png",
     caption="Distribution of transition durations.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of transition durations. The values in order are: 100, 170, 300, 400, and 1,000 milliseconds.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=364746687&format=interactive",
     sheets_gid="1177632572",
     sql_file="transition_durations.sql"
@@ -831,7 +854,7 @@ Looking at the duration of transitions, we see a change from last year.  In 2021
 {{ figure_markup(
     image="transition-delays.png",
     caption="Distribution of transition delays.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of transition delays. The values in order are: -600, 0, 140, 300, and 500 milliseconds.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=658113477&format=interactive",
     sheets_gid="1737381354",
     sql_file="transition_delays.sql"
@@ -843,7 +866,7 @@ The distribution of transition delays has also changed. The 90th percentile dela
 {{ figure_markup(
     image="transition-keyframe-distribution.png",
     caption="Distribution of keyframes per animation.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of the number of keyframes per animation. The values in order are: 2, 2, 2, 3, and 5 keyframes.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=646157411&format=interactive",
     sheets_gid="376876473",
     sql_file="transition_keyframes_distribution.sql"
@@ -855,7 +878,7 @@ We also looked at the average number of keyframes used per animation, and found 
 {{ figure_markup(
     image="transition-keyframe-stops.png",
     caption="The most popular transition keyframes by percent of occurrences.",
-    description="TODO",
+    description="Bar chart showing the keyframes used in the most transition rules. The most popular keyframe is the value 0% in 22% of occurrences, followed by the value to in 16%, the value 100% in 15%, the value from in 7%, with the remaining keyframes diminishing in popularity: 50%, 60%, 40%, 80%, 20%, 75%, and 90%, which ends at 2% of adoption.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=550751466&format=interactive",
     sheets_gid="1859883128",
     sql_file="transition_keyframe_stops.sql"
@@ -867,7 +890,7 @@ As you might expect the most popular stops are at 0% to and from 100%, followed 
 {{ figure_markup(
     image="transition-timing-functions.png",
     caption="Distribution of timing functions.",
-    description="TODO",
+    description="Pie chart showing the relative distribution of timing function usage. The ease function is used on 31.8% of transitions, followed by linear on 17.9%, ease-in-out on 17.5%, cubic-bezier on 16.4%, ease-out on 8.4%, ease-in on 5.2%, and steps on 2.8%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=586595091&format=interactive",
     sheets_gid="1907298177",
     sql_file="transition_timing_functions.sql"
@@ -879,7 +902,7 @@ There has been little change in the distribution of timing functions used during
 {{ figure_markup(
     image="transition-animation-names.png",
     caption="Types of animations as identified by animation name.",
-    description="TODO",
+    description="Bar chart showing the animation types used most of the time. The most popular type is uncategorized at 13%, followed by rotate at 13%, bounce at 11%, slide at 10%, fade at 9%, wobble at 5%, scale at 4%, pulse at 2%, and visibility at 2%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=214267440&format=interactive",
     height="463",
     sheets_gid="1632805666",
@@ -907,7 +930,7 @@ We looked at some visual effects being used in CSS. For example, 18% of desktop 
 {{ figure_markup(
     image="blend-mode-values.png",
     caption="Most popular blend modes used on pages that set blend mode.",
-    description="TODO",
+    description="Bar chart showing the blend modes used on the most pages. The multiply value is used on 42% of pages that set the blend-mode property, followed by overlay and screen on 33% of pages, darken on 32%, lighten on 31%, soft-light on 29%, color on 28%, color-burn and color-dodge on 28%, and finally difference on 21%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=204649391&format=interactive",
     height="515",
     sheets_gid="648874350",
@@ -922,7 +945,7 @@ Around 18% of pages were using a custom property `var(--overlay-mix-blend-mode)`
 {{ figure_markup(
     image="filter-functions.png",
     caption="Most popular filter functions used on pages that set filters.",
-    description="TODO",
+    description="Bar chart showing the functions used on the most pages that set filters. The alpha function is used 82% of the time, followed by no filtter (none) 59%, progid:DXImageTransform.Microsoft.gradient 46%, blur 31%, drop-shadow and grayscale 22%, brightness 20%, progid:DXImageTransform.Microsoft.BasicImage and inherit 10%, url, sepia, contrast, and none !important all 8%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1568163707&format=interactive",
     height="591",
     sheets_gid="1004790461",
@@ -937,7 +960,7 @@ Of the [standard values](https://developer.mozilla.org/en-US/docs/Web/CSS/filter
 {{ figure_markup(
     image="clip-path-functions.png",
     caption="Popular `clip-path` values in pages that set `clip-path()`.",
-    description="TODO",
+    description="Bar chart showing the clip-path values used on the most pages that set clip-path. The most popular value is inset, which is used 88% of the time, followed by none 70%, polygon 17%, var 9%, circle 7%, url 3%, and ellipse 2%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=163739565&format=interactive",
     sheets_gid="1458239816",
     sql_file="effects_clip_path_functions.sql"
@@ -957,7 +980,7 @@ When developers write media queries, they most often test the width of the viewp
 {{ figure_markup(
     image="media-query-features.png",
     caption="Popular media query features.",
-    description="TODO",
+    description="Bar chart showing the media query features used on the most pages. The most popular feature is max-width on 83% of pages, followed by min-width 79%, -webkit-min-device-pixel-ratio 35%, prefers-reduced-motion 34%, orientation 30%, max-device-width 26%, -ms-high-contrast 24%, max-height 23%, min-resolution 19%, -webkit-transform-3d and transform-3d 12%, min-device-pixel-ratio and min-height 11%, min--moz-device-pixel-ratio 10%, forced-colors, min-device-width, and prefers-color-scheme 8%, -o-min-device-pixel-ratio 7%, hover 5%, and pointer 2%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=2066259966&format=interactive",
     height="598",
     sheets_gid="2106336302",
@@ -970,7 +993,7 @@ The `prefers-reduced-motion` media query, however, which was noted in 2021 as ri
 {{ figure_markup(
     image="prefers-features.png",
     caption="Use of user preference features by percent of pages.",
-    description="TODO",
+    description="Bar chart showing the media query features that are prefixed with prefers. The most popular value is prefers-reduced-motion on 34% of pages, then prefers-color-scheme 8%, prefers-contrast 1%, and prefers-reduced-transparency less than 1%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=632942914&format=interactive",
     sheets_gid="2106336302",
     sql_file="media_query_features.sql"
@@ -982,7 +1005,7 @@ If we just look at the `prefers-*` user preference features, we can see that `pr
 {{ figure_markup(
     image="hover-features.png",
     caption="Use of hover and pointer media features.",
-    description="TODO",
+    description="Bar chart showing the popularity of hover and pointer media features. The hover feature is used on 5% of pages, pointer 2%, and any-pointer and any-hover below 1% of pages.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1898240066&format=interactive",
     sheets_gid="2106336302",
     sql_file="media_query_features.sql"
@@ -998,7 +1021,7 @@ Both `hover` and `pointer` now appear in the top ten features. The less useful `
 {{ figure_markup(
     image="media-query-breakpoints.png",
     caption="Distribution of the most popular breakpoints.",
-    description="TODO",
+    description="Bar chart showing the most popular breakpoints used in media queries. 35% of pages use 480px for max-width and 23% for min-width. 39% of pages use 600px for max-width and 32% for min-width. 51% of pages use 767px for max-width and 8% for min-width. 38% of pages use 768px for max-width and 57% for min-width. 12% of pages use 782px for max-width and 25% for min-width. 25% of pages use 800px for max-width and 7% for min-width. 29% of pages use 991px for max-width and 3% for min-width. 13% of pages use 992px for max-width and 39% for min-width. 26% of pages use 1024px for max-width and 17% for min-width. 19% of pages use 1200px for max-width and 42% for min-width.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1285928011&format=interactive",
     sheets_gid="1037504354",
     sql_file="media_query_values.sql"
@@ -1016,7 +1039,7 @@ We looked at the properties that appear within media query blocks, to see which 
 {{ figure_markup(
     image="media-query-props.png",
     caption="Most popular properties found in media query blocks.",
-    description="TODO",
+    description="Bar chart showing the properties found in media query blocks that are used on the most pages. The display and width properties are found in media queries on 83% of pages, followed by height and padding on 78%, margin-left 77%, font-size 76%, margin and position 75%, margin-right, left, top, margin-top, and max-width 74%, right and margin-bottom 73%, padding-left 72%, text-align 71%, padding-right 70%, background 69%, and float 67%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1670810448&format=interactive",
     height="714",
     sheets_gid="2050421561",
@@ -1037,7 +1060,7 @@ The number of feature query blocks per page is 4 at the 75th percentile, and at 
 {{ figure_markup(
     image="supports-features.png",
     caption="Most popular features tested for with feature queries.",
-    description="TODO",
+    description="Bar chart showing the features that are tested with the most feature queries (@supports). The sticky feature is accounts for 36% of usage, followed by mask-image 20%, touch-callout 11%, ime-align 5%, grid 5%, overflow-scrolling 5%, appearance 3%, custom properties 2%, object-fit 1%, and the max function 1%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=316208344&format=interactive",
     sheets_gid="542186816",
     sql_file="supports_criteria.sql"
@@ -1051,7 +1074,7 @@ Non-standard features show up strongly in these tests, with `touch-callout` (`-w
 {{ figure_markup(
     image="supports-props.png",
     caption="Properties used inside feature query blocks by percent of pages.",
-    description="TODO",
+    description="Bar chart showing the properties used within feature query blocks that are found on the most pages. The object-fit property is found in a feature query block on 27% of pages, followed by content 26%, background-attachment 25%, border-radius, mask-size, mask-image, mask-repeat, mask-position, mask-mode, and -webkit-mask-image 24%, -webkit-mask-size, -webkit-mask-repeat, -webkit-mask-position, and -o-object-fit 23%, display 17%, width 15%, height 13%, flex 11%, justify-content and align-items 10%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1247122547&format=interactive",
     height="783",
     sheets_gid="1467181186",
@@ -1078,7 +1101,7 @@ Logical or flow-relative properties such as `border-block-start` and values such
 {{ figure_markup(
     image="logical-props.png",
     caption="The distribution of logical properties used.",
-    description="TODO",
+    description="Pie chart showing the relative distribution of logical property usage. The margin property is used 70.0% of the time, text-align 12.6%, padding 11.2%, border 4.5%, and inset 1.7%..",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=597319721&format=interactive",
     sheets_gid="1478929671",
     sql_file="i18n_logical_properties.sql"
@@ -1107,7 +1130,7 @@ Its usage is still tiny, but has increased from 2021. In only 8,157 desktop page
 {{ figure_markup(
     image="css-in-js.png",
     caption="Usage of CSS in JS libraries.",
-    description="TODO",
+    description="Pie chart showing the relative distribution of CSS in JS library popularity. The most popular library is Styled Components with 49.4% of all CSS in JS adoption, followed by Emotion 22.9%, Goober 10.9%, Glamor 7.7%, Aphrodite 5.0%, and Styled Jax 2.4%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=140888375&format=interactive",
     sheets_gid="1374787728",
     sql_file="css_in_js.sql"
@@ -1127,7 +1150,7 @@ Preprocessors like Sass can be seen as a good indicator of what developers want 
 {{ figure_markup(
     image="sass-function-calls.png",
     caption="Most popular Sass function calls by percent of calls.",
-    description="TODO",
+    description="Bar chart showing the Sass function calls that used most of the time. The if function makes up 19% of Sass function calls, followed by other functions 17%, darken 14%, map-get 10%, map-keys 9%, percentage 6%, nth 5%, lighten and mix 4%, type-of, alpha adjustment, unit, and length 3%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1702171363&format=interactive",
     height="552",
     sheets_gid="1751596973",
@@ -1140,7 +1163,7 @@ Looking at the function calls shows that color functions are still a very popula
 {{ figure_markup(
     image="sass-control-flow-statements.png",
     caption="Distribution of control flow statements on SCSS.",
-    description="TODO",
+    description="Bar chart showing the control flow statements used on the most pages with SCSS. @if is used on 65% of SCSS pages, followed by @for 60%, @each 60%, and @while 7%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=652567190&format=interactive",
     sheets_gid="2100910538",
     sql_file="sass_control_flow_statements.sql"
@@ -1152,7 +1175,7 @@ Looking at control flow statements we see a small increase in `@for` and `@each`
 {{ figure_markup(
     image="sass-nesting.png",
     caption="Use of explicit nesting in SCSS by percent of pages using SCSS.",
-    description="TODO",
+    description="Bar chart showing the nesting selectors used on the most pages with SCSS. 88% of SCSS pages use nesting selectors. The most popular selector is &:pseudo-class on 85% of SCSS pages, followed by &.class 81%, &::pseudo-element 70%, bare & by itself 65%, &[attr] 59%, & + (adjacent sibling) 31%, & descendent 25%, & > (child) 24%, & ~ and &#id 5%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1858217462&format=interactive",
     height="455",
     sheets_gid="1739922540",
@@ -1178,7 +1201,7 @@ We wondered whether developers were creating print stylesheets to provide a bett
 {{ figure_markup(
     image="print-props.png",
     caption="The top properties found in print styles on pages that have a print stylesheet.",
-    description="TODO",
+    description="Bar chart showing the print properties used on the most pages that have print stylesheets. The display property is used on 55% of pages with print stylesheets, followed by margin 48%, color 47%, width 43%, background 42%, padding and text-decoration 39%, font-size 37%, text-align 36%, and content 34%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1905758001&format=interactive",
     height="455",
     sheets_gid="962139614",
@@ -1193,7 +1216,7 @@ Print is a fragmented medium; the content is fragmented into pages, and we have 
 {{ figure_markup(
     image="print-fragmentation-props.png",
     caption="Fragmentation properties used in print stylesheets.",
-    description="TODO",
+    description="Bar chart showing fragmentation properties usage on pages with print stylesheets. The page-break-inside property is used on 32% of pages with print stylesheets, followed by page-break-after 30%, orphans 22%, page-break-before 19%, and break-after 2%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=141331795&format=interactive",
     height="455",
     sheets_gid="962139614",
@@ -1259,7 +1282,7 @@ In 2020 and 2021, analysis was done to determine the amount of "declaration repe
 {{ figure_markup(
     image="repetition.png",
     caption="Distribution of repetition.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of the percentage of unique declarations per page. The values in order are 32%, 38%, 45%, 53%, and 61% of declarations per page that are unique.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1151123515&format=interactive",
     sheets_gid="477246191",
     sql_file="repetition.sql"
@@ -1286,7 +1309,7 @@ When developers mix shorthand properties like `background` and longhand properti
 {{ figure_markup(
     image="shorthand-first-props.png",
     caption="The most popular longhand properties that come after shorthands.",
-    description="TODO",
+    description="Bar chart showing the relative popularity of longhand properties that come after their associated shorthand properties. The background-size property makes up 15% of this pattern, followed by background-image 6%, font-size, margin-bottom, margin-top, and border-bottom-color 5%, line-height, border-top-color, and margin-left 4%, and padding-left 3%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1722219756&format=interactive",
     height="445",
     sheets_gid="293529425",
@@ -1307,7 +1330,7 @@ As in previous years we checked for declarations that had valid syntax, but refe
 {{ figure_markup(
     image="unknown-props.png",
     caption="The most frequently seen unknown properties.",
-    description="TODO",
+    description="Bar chart showing the properties that are invalid and found on the most pages. The most popular is -archetype on 11% of pages, followed by font-smoothing and behavior on 10%, tap-highlight-color 6%, moz-transition 5%, margin-center 4%, box-flex 3%, webkit-transition 3%, and the remainder are all found on less than 1% of pages: url-encoded, border-collapse, webkit-border-radius, moz-border-radius, and enable-background.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=932637515&format=interactive",
     height="514",
     sheets_gid="127761236",
