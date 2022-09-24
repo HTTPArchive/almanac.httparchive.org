@@ -430,7 +430,7 @@ What are the next popular custom elements that are not part of Slider Revolution
   </figcaption>
 </figure>
 
-This is more diverse: `pages-css` is an element from TODO. `wix-image` and `wix-iframe` come from the Wix website builder. `router-outlet` originates in Angular. And `ss3-loader` seems to be related to Smart Slider.
+This is more diverse: `pages-css`, `wix-image` and `wix-iframe` come from the Wix website builder. `router-outlet` originates in Angular. And `ss3-loader` seems to be related to Smart Slider.
 
 ### Obsolete elements
 
