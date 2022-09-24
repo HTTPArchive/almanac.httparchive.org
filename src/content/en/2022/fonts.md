@@ -36,7 +36,7 @@ This progression in web fonts shows. Web font usage continues to grow. In the [2
 
 While we've made tremendous progress we're not quite there yet. Large percentages of the world's population can't use web fonts because their writing systems are either too large or too complex to be delivered as a (small) web font. Fortunately, the <a hreflang="en" href="https://www.w3.org/Fonts/WG/">W3C Fonts Working Group</a> is working hard on the <a hreflang="en" href="https://www.w3.org/TR/IFT/">Incremental Font Transfer</a> web standard that will hopefully solve this.
 
-There was no Fonts chapter in 2021, but w hope we can make up for that this year. We took a slightly different angle this year by taking a closer look at what is inside font files and how fonts are used in CSS. We of course also returned to the "classics" such as services, `font-display`, and resource hints usage. Finally, we wrap up the chapter with two special focus sections on variable and color fonts, because we think they are great.
+There was no Fonts chapter in 2021, but we hope we can make up for that this year. We took a slightly different angle this year by taking a closer look at what is inside font files and how fonts are used in CSS. We of course also returned to the "classics" such as services, `font-display`, and resource hints usage. Finally, we wrap up the chapter with two special focus sections on _variable fonts_ and _color fonts_—because we think they are great.
 
 ## Performance
 
@@ -216,39 +216,39 @@ Type designers can choose the outline format they prefer. Looking at the distrib
 {{ figure_markup(
   image="outline-formats.png",
   caption="Outline formats.",
-  description="Pie chart showing TrueType (glyf) is 90.8% of mobile fonts, and CFF 9.2%.",
+  description="Pie chart showing TrueType (`glyf`) is 90.8% of mobile fonts, and `CFF` 9.2%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=934239411&format=interactive",
   sheets_gid="1181700309",
   sql_file="outline_formats.sql"
   )
 }}
 
-The OpenType specification lists <a hreflang="en" href="https://docs.microsoft.com/en-us/typography/opentype/otspec191alpha/glyphformatcomparison_delta">the differences between glyf and CFF</a>:
+The OpenType specification lists <a hreflang="en" href="https://docs.microsoft.com/en-us/typography/opentype/otspec191alpha/glyphformatcomparison_delta">the differences between `glyf` and `CFF`</a>:
 
 - The `glyf` format uses quadratic Bézier curves while `CFF` (and `CFF2`) uses cubic Bézier curves. This matters to some type designers, but not to users of the font.
 - The `glyf` format has more control over hinting—making small adjustments so that the glyph outlines snap to the correct pixels at smaller sizes—while `CFF` has most of its hinting built into the text rasterizer.
 - The `CFF` format claims to be a more efficient format, resulting in smaller font sizes.
 
-The last claim is interesting. Is CFF smaller?
+The last claim is interesting. Is `CFF` smaller?
 
 {{ figure_markup(
   image="font-outline-sizes.png",
   caption="Font outline sizes.",
-  description="Column chart showing font outline sizes at common percentiles. At the 10th percentile CFF is 1 KB and glyf 10 KB, at the 25th percentile it's 14 and 21 respectively, at the 50th percentile it's 29 and 49, at the 75th percentile it's 54 and 109, and finally at the 90th percentile CFF is 124 KB and glyf 136 KB.",
+  description="Column chart showing font outline sizes at common percentiles. At the 10th percentile `CFF` is 1 KB and glyf 10 KB, at the 25th percentile it's 14 and 21 respectively, at the 50th percentile it's 29 and 49, at the 75th percentile it's 54 and 109, and finally at the 90th percentile `CFF` is 124 KB and glyf 136 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=672500092&format=interactive",
   sheets_gid="1853636944",
   sql_file="font_size_quantiles_by_opentype_table.sql"
   )
 }}
 
-On average, CFF does indeed produce a smaller table size. However, the reality is more nuanced, as it doesn't take compression into account—the table sizes are recorded after the font has been uncompressed.
+On average, `CFF` does indeed produce a smaller table size. However, the reality is more nuanced, as it doesn't take compression into account—the table sizes are recorded after the font has been uncompressed.
 
 As can be seen in the <a hreflang="en" href="https://www.w3.org/TR/2016/NOTE-WOFF20ER-20160315/#brotli-adobe-cff">WOFF2 evaluation report</a>, the median `glyf` compression is at 66% while the median `CFF` compression is at 50% (from uncompressed to compressed using WOFF2).
 
 {{ figure_markup(
   image="compressed-font-outline-sizes.png",
   caption="Compressed font outline sizes.",
-  description="Column chart showing at the 25th percentile both CFF and glyh font sizes are 6 KB, at the 50th percentile they start to diverge with CFF 15 KB and glyf 17 KB, at the 75th percentile it's 32 and 39 KB respectively, and finally at the 90th percentile it's CFF is 86 KB and glyf is only 56 KB.",
+  description="Column chart showing at the 25th percentile both `CFF` and glyh font sizes are 6 KB, at the 50th percentile they start to diverge with `CFF` 15 KB and glyf 17 KB, at the 75th percentile it's 32 and 39 KB respectively, and finally at the 90th percentile it's `CFF` is 86 KB and glyf is only 56 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1880460638&format=interactive",
   sheets_gid="1853636944",
   sql_file="font_size_quantiles_by_opentype_table.sql"
@@ -277,7 +277,7 @@ There are several types of resource hints that are relevant to web fonts: `dns-p
 
 There hasn't been any large change in the use of `dns-prefetch` hints since 2020, but there has been a fairly significant increase in the use of `preload` (from 17% in 2020 to 20% in 2022) and `preconnect` (from 8% in 2020 to 15% in 2022). This is great!
 
-As [mentioned in the 2020 chapter](../2020/fonts#resource-hints), preload and preconnect resource hints have the single largest impact on your font loading performance. In most cases it is as simple as adding a link element to your head. For example, if you use Google Fonts:
+As [mentioned in the 2020 chapter](../2020/fonts#resource-hints), `preload` and `preconnect` resource hints have the single largest impact on your font loading performance. In most cases it is as simple as adding a link element to your head. For example, if you use Google Fonts:
 
 ```html
 <link rel="preconnect" href="https://fonts.gstatic.com">
