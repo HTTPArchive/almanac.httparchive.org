@@ -8,15 +8,15 @@ analysts: [eeeps, akshay-ranganath]
 editors: [MichaelLewittes]
 translators: []
 eeeps_bio: Eric Portis is a Web Platform Advocate at <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a>.
-akshay-ranganath_bio: Akshay Ranganath is a Sr. Solution Architect at <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a> and likes to work on CDN/WebPerf challenges. He occasionally tweets at [@rakshay](https://twitter.com/rakshay). You can find him at <a hreflang="en" href="https://www.linkedin.com/in/akshayranganath/">LinkedIn</a> or at his <a hreflang="en" href="https://akshayranganath.github.io/">blog</a>.
+akshay-ranganath_bio: Akshay Ranganath is a Sr. Solution Architect at <a hreflang="en" href="https://cloudinary.com/">Cloudinary</a> and likes to work on CDN/WebPerf challenges.
 results: https://docs.google.com/spreadsheets/d/1T5oVAVmcH3sM6R-WwH4ksr2jFtPhuLXs3-iXXoABb3E/
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: The most exciting developments this year are the accelerating adoption of AVIF and the ever-increasing adoption of lazy-loading and adaptive bitrate streaming. There were, however, some frustrating aspects, including the almost complete lack of wide-gamut color spaces; the undying zombie format that is GIF; and the way that both sizes and lazy-loading – two features designed for performance – are (through improper use) hurting performance on a significant number of pages.
+featured_stat_1: 99.9%
+featured_stat_label_1: Percentage of pages that generated at least one request for an image resource.
+featured_stat_2: 405%
+featured_stat_label_2: Year-over-year change in AVIF adoption.
+featured_stat_3: 59%
+featured_stat_label_3: Percentage of video elements whose duration is under thirty seconds.
 unedited: true
 ---
 
@@ -516,7 +516,7 @@ At the other end of the compression chart is our old friend GIF. It comes out lo
 )
 }}
 
-I found this surprisingly low. Ever since <a hreflang="en" href="https://caniuse.com/?search=png">PNG achieved universal support in 2006</a>, there [hasn't been a good reason to ship a non-animated GIF](https://en.wikipedia.org/wiki/Portable_Network_Graphics#Compared_to_GIF). The word "GIF" has become synonymous with its only justifiable use case: Being a portable, universal format for short, silent, autoplaying, looping animation. One wonders whether all of these non-animated GIFs are legacy content, or whether there are a  significant number of new, non-animated GIFs being created and published to the web. (I hope not!)
+I found this surprisingly low. Ever since <a hreflang="en" href="https://caniuse.com/?search=png">PNG achieved universal support in 2006</a>, there [hasn't been a good reason to ship a non-animated GIF](https://en.wikipedia.org/wiki/Portable_Network_Graphics#Compared_to_GIF). The word "GIF" has become synonymous with its only justifiable use case: Being a portable, universal format for short, silent, autoplaying, looping animation. One wonders whether all of these non-animated GIFs are legacy content, or whether there are a significant number of new, non-animated GIFs being created and published to the web. (I hope not!)
 
 Now that we've separated out the animated GIFs from the non-animated ones, we can also ask: What are the compression characteristics of non-animated vs animated GIFs?
 
@@ -926,7 +926,7 @@ Most have just one, and very few use multiple.
 
 ## Conclusion
 
-So there you have it, a snapshot of the state of media on the web in 2022. We've seen just how pervasive images and – increasingly – videos are on the web, and have gained some insight into how the web's images and videos are encoded and embedded. The most exciting developments for me this year are the accelerating adoption of AVIF and the ever-increasing adoption of lazy-loading and adaptive bitrate streaming.
+So there you have it, a snapshot of the state of media on the web in 2022. We've seen just how pervasive images and – increasingly – videos are on the web, and have gained some insight into how the web's images and videos are encoded and embedded. The most exciting developments this year are the accelerating adoption of AVIF and the ever-increasing adoption of lazy-loading and adaptive bitrate streaming.
 
 There were, however, some frustrating aspects, including the almost complete lack of wide-gamut color spaces; the undying zombie format that is GIF (in both its animated and, more surprisingly, non-animated forms); and the way that both sizes and lazy-loading – two features designed for performance – are (through improper use) hurting performance on a significant number of pages.
 
