@@ -597,8 +597,7 @@
     "meyerweb": {
       "name": "Eric A. Meyer",
       "teams": [
-        "authors",
-        "reviewers"
+        "authors"
       ],
       "avatar_url": "939727",
       "github": "meyerweb",
