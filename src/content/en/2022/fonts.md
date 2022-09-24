@@ -6,7 +6,7 @@ description: Fonts chapter of the 2022 Web Almanac covering where fonts are load
 authors: [bramstein]
 reviewers: [alexnj, jmsole, RoelN, svgeesus]
 analysts: [bramstein, konfirmed]
-editors: []
+editors: [shantsis]
 translators: []
 bramstein_bio: TODO
 results: https://docs.google.com/spreadsheets/d/1A1XwuGa1DkqNLaF-lSXz4ndxO9G6SfACHwUvvywHgbQ/
