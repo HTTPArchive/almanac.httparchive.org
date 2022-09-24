@@ -22,15 +22,13 @@
           "part": "I",
           "chapter_number": "2",
           "title": "JavaScript",
-          "slug": "javascript",
-          "todo": true
+          "slug": "javascript"
         },
         {
           "part": "I",
           "chapter_number": "3",
           "title": "Markup",
-          "slug": "markup",
-          "todo": true
+          "slug": "markup"
         },
         {
           "part": "I",
@@ -126,9 +124,8 @@
           "part": "II",
           "chapter_number": "16",
           "title": "Capabilities",
-          "slug": "capabilities",
           "hero_dir": "2020",
-          "todo": true
+          "slug": "capabilities"
         },
         {
           "part": "II",
@@ -300,16 +297,6 @@
       "website": "getellipsis.com",
       "twitter": "AlexDenning"
     },
-    "AlexLakatos": {
-      "name": "Alex Lakatos",
-      "teams": [
-        "authors"
-      ],
-      "avatar_url": "690132",
-      "github": "AlexLakatos",
-      "website": "http://alexlakatos.com",
-      "twitter": "avolakatos"
-    },
     "alexnj": {
       "name": "Alex N. Jose",
       "teams": [
@@ -380,6 +367,7 @@
     "tunetheweb": {
       "name": "Barry Pollard",
       "teams": [
+        "analysts",
         "developers",
         "editors",
         "leads",
@@ -638,14 +626,6 @@
       "website": "https://www.fershad.com",
       "twitter": "fershad"
     },
-    "beaufortfrancois": {
-      "name": "François Beaufort",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "634478",
-      "github": "beaufortfrancois"
-    },
     "brassic-lint": {
       "name": "Gareth Hughes",
       "teams": [
@@ -753,14 +733,6 @@
       "avatar_url": "104349412",
       "github": "itamarblauer"
     },
-    "jrstanley": {
-      "name": "James Stanley",
-      "teams": [
-        "analysts"
-      ],
-      "avatar_url": "291675",
-      "github": "jrstanley"
-    },
     "fellowhuman1101": {
       "name": "Jamie Indigo",
       "teams": [
@@ -798,6 +770,7 @@
     "j9t": {
       "name": "Jens Oliver Meiert",
       "teams": [
+        "authors",
         "reviewers"
       ],
       "avatar_url": "1700772",
@@ -1366,6 +1339,15 @@
       "linkedin": "karamalegos",
       "twitter": "TheGreenGreek"
     },
+    "zcorpan": {
+      "name": "Simon Pieters",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "244772",
+      "github": "zcorpan",
+      "twitter": "zcorpan"
+    },
     "siwinlo": {
       "name": "Siwin Lo",
       "teams": [
@@ -1403,16 +1385,6 @@
       "github": "thibaudcolas",
       "website": "https://thib.me/",
       "twitter": "thibaud_colas"
-    },
-    "daKmoR": {
-      "name": "Thomas Allmer",
-      "teams": [
-        "authors"
-      ],
-      "avatar_url": "24378",
-      "github": "daKmoR",
-      "website": "https://open-wc.org",
-      "twitter": "daKmoR"
     },
     "tomayac": {
       "name": "Thomas Steiner",
