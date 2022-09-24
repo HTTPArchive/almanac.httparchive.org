@@ -99,44 +99,71 @@ TLS v1.3 also makes [forward secrecy](https://en.wikipedia.org/wiki/Forward_secr
 
 A Certificate Authority or CA is a company or organization that issues the TLS certificate to the websites that can be recognized by browsers and then establish a secure communication channel with the website.
 
-
-SUM of pct
-client
-
-
-issuer
-desktop
-mobile
-R3
-48%
-52%
-Cloudflare Inc ECC CA-3
-13%
-12%
-Sectigo RSA Domain Validation Secure Server CA
-7%
-8%
-cPanel, Inc. Certification Authority
-5%
-5%
-Amazon
-3%
-3%
-Go Daddy Secure Certificate Authority - G2
-3%
-2%
-DigiCert TLS RSA SHA256 2020 CA1
-2%
-1%
-RapidSSL TLS DV RSA Mixed SHA256 2020 CA-1
-1%
-1%
-E1
-1%
-1%
-
-
-
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Issuer</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>R3</td>
+        <td class="numeric">48%</td>
+        <td class="numeric">52%</td>
+      </tr>
+      <tr>
+        <td>Cloudflare Inc ECC CA-3</td>
+        <td class="numeric">13%</td>
+        <td class="numeric">12%</td>
+      </tr>
+      <tr>
+        <td>Sectigo RSA Domain Validation Secure Server CA</td>
+        <td class="numeric">7%</td>
+        <td class="numeric">8%</td>
+      </tr>
+      <tr>
+        <td>cPanel, Inc. Certification Authority</td>
+        <td class="numeric">5%</td>
+        <td class="numeric">5%</td>
+      </tr>
+      <tr>
+        <td>Amazon</td>
+        <td class="numeric">3%</td>
+        <td class="numeric">3%</td>
+      </tr>
+      <tr>
+        <td>Go Daddy Secure Certificate Authority - G2</td>
+        <td class="numeric">3%</td>
+        <td class="numeric">2%</td>
+      </tr>
+      <tr>
+        <td>DigiCert TLS RSA SHA256 2020 CA1</td>
+        <td class="numeric">2%</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td>RapidSSL TLS DV RSA Mixed SHA256 2020 CA-1</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td>E1</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Must used Certificate Authorities.",
+      sheets_gid="1306037372",
+      sql_file="security_headers_prevalence.sql",
+    ) }}
+  </figcaption>
+</figure>
 
 Let's Encrypt (or R3) continues to lead the charts with 48% of websites in desktop and 52% of websites in mobile using certificates issued by them. Let's Encrypt being a non-profit organization has played an important role in the adoption of HTTPS and they continue to issue an <a hreflang="en" href="https://letsencrypt.org/stats/#daily-issuance">increasing number of certificates</a>. We would also like to take a moment to recognise one of its founders, Peter Eckersly, who unfortunately passed away recently.
 
@@ -220,35 +247,85 @@ There are two different ways to set the time when a cookie is deleted: `Max-Age`
 
 Unlike last year, where we saw that the median for `Max-Age` was 365 days but the median for `Expires` was 180 days, this year it's around 365 days for both. Hence the median for real maximum age has gone up from 180 days to 365 days this year. Even though the `Max-Age` is 729 days and `Expires` is 730 days in the 90th percentile, Chrome has been planning to put a cap of 400 days for both `Max-Age` and `Expires`.
 
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>%</th>
+        <th>Expires</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="numeric">1.8%</td>
+        <td>"Thu, 01-Jan-1970 00:00:00 GMT"</td>
+      </tr>
+      <tr>
+        <td class="numeric">1.2%</td>
+        <td>"Fri, 01-Aug-2008 22:45:55 GMT"</td>
+      </tr>
+      <tr>
+        <td class="numeric">0.7%</td>
+        <td>"Mon, 01-Mar-2004 00:00:00 GMT"</td>
+      </tr>
+      <tr>
+        <td class="numeric">0.7%</td>
+        <td>"Thu, 01-Jan-1970 00:00:01 GMT"</td>
+      </tr>
+      <tr>
+        <td class="numeric">0.3%</td>
+        <td>"Thu, 01 Jan 1970 00:00:00 GMT"</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Most common cookie expiry values on desktop.",
+      sheets_gid="707972861",
+      sql_file="cookie_max_age_expires_top_values.sql",
+    ) }}
+  </figcaption>
+</figure>
 
-Most prevalent values of Expires:
-Desktop
-pct
-Expires
-1.8%
-"Thu, 01-Jan-1970 00:00:00 GMT"
-1.2%
-"Fri, 01-Aug-2008 22:45:55 GMT"
-0.7%
-"Mon, 01-Mar-2004 00:00:00 GMT"
-0.7%
-"Thu, 01-Jan-1970 00:00:01 GMT"
-0.3%
-"Thu, 01 Jan 1970 00:00:00 GMT"
-Mobile
-pct
-Expires
-1.2%
-"Fri, 01-Aug-2008 22:45:55 GMT"
-0.9%
-"Thu, 01-Jan-1970 00:00:00 GMT"
-0.7%
-"Mon, 01-Mar-2004 00:00:00 GMT"
-0.6%
-"Thu, 01-Jan-1970 00:00:01 GMT"
-0.2%
-"Thu, 31-Dec-37 23:55:55 GMT"
-
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>%</th>
+        <th>Expires</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="numeric">1.2%</td>
+        <td>"Fri, 01-Aug-2008 22:45:55 GMT"</td>
+      </tr>
+      <tr>
+        <td class="numeric">0.9%</td>
+        <td>"Thu, 01-Jan-1970 00:00:00 GMT"</td>
+      </tr>
+      <tr>
+        <td class="numeric">0.7%</td>
+        <td>"Mon, 01-Mar-2004 00:00:00 GMT"</td>
+      </tr>
+      <tr>
+        <td class="numeric">0.6%</td>
+        <td>"Thu, 01-Jan-1970 00:00:01 GMT"</td>
+      </tr>
+      <tr>
+        <td class="numeric">0.2%</td>
+        <td>"Thu, 31-Dec-37 23:55:55 GMT"</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Most common cookie expiry values on mobile.",
+      sheets_gid="707972861",
+      sql_file="cookie_max_age_expires_top_values.sql",
+    ) }}
+  </figcaption>
+</figure>
 
 The most prevalent `Expires` has some interesting values. We see that the most used `Expires` value in Desktop is `January 1, 1970 00:00:00 GMT`. When cookies `Expires` value is set to a past date, they are deleted from the browser. January 1, 1970 00:00:00 GMT is the unix epoch time and hence it's often commonly used to expire or delete a cookie.
 
@@ -268,7 +345,7 @@ It works by ensuring that a predefined trusted set of content rules is upheld an
 Relative increase in adoption for Content-Security-Policy header from 2021
 
 {{ figure_markup(
-  content="TODO",
+  content="14%",
   caption="TODO.",
   classes="big-number",
   sheets_gid="TODO",
@@ -340,6 +417,77 @@ Observing the complete definitions for a content security policy, we can see tha
 
 The content security policy often has to allow content from other origins than its own in order to support loading of media such as fonts, ad related scripts, and general content delivery network usage. As such, the top 10 origins across requests are as follows:
 
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Host</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="https://www.google-analytics.com" rel="nofollow">https://www.google-analytics.com</a></td>
+        <td class="numeric">0.39%</td>
+        <td class="numeric">0.26%</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.googletagmanager.com" rel="nofollow">https://www.googletagmanager.com</a></td>
+        <td class="numeric">0.37%</td>
+        <td class="numeric">0.25%</td>
+      </tr>
+      <tr>
+        <td><a href="https://fonts.gstatic.com" rel="nofollow">https://fonts.gstatic.com</a></td>
+        <td class="numeric">0.27%</td>
+        <td class="numeric">0.19%</td>
+      </tr>
+      <tr>
+        <td><a href="https://fonts.googleapis.com" rel="nofollow">https://fonts.googleapis.com</a></td>
+        <td class="numeric">0.27%</td>
+        <td class="numeric">0.18%</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.google.com" rel="nofollow">https://www.google.com</a></td>
+        <td class="numeric">0.24%</td>
+        <td class="numeric">0.17%</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.youtube.com" rel="nofollow">https://www.youtube.com</a></td>
+        <td class="numeric">0.21%</td>
+        <td class="numeric">0.15%</td>
+      </tr>
+      <tr>
+        <td><a href="https://stats.g.doubleclick.net" rel="nofollow">https://stats.g.doubleclick.net</a></td>
+        <td class="numeric">0.19%</td>
+        <td class="numeric">0.13%</td>
+      </tr>
+      <tr>
+        <td><a href="https://connect.facebook.net" rel="nofollow">https://connect.facebook.net</a></td>
+        <td class="numeric">0.18%</td>
+        <td class="numeric">0.13%</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.gstatic.com" rel="nofollow">https://www.gstatic.com</a></td>
+        <td class="numeric">0.17%</td>
+        <td class="numeric">0.12%</td>
+      </tr>
+      <tr>
+        <td><a href="https://cdnjs.cloudflare.com" rel="nofollow">https://cdnjs.cloudflare.com</a></td>
+        <td class="numeric">0.16%</td>
+        <td class="numeric">0.11%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Most common allowed hosts in CSPs.",
+      sheets_gid="106248959",
+      sql_file="csp_allowed_host_frequency.sql",
+    ) }}
+  </figcaption>
+</figure>
+
 The above hosts account for roughly the same positioning in rank as was reported last year, but the usage is up slightly.
 
 The CSP security standard is widely supported both by web browsers, as well as content delivery networks and content management systems and is a highly recommended tool for websites and web applications in defense of web security vulnerabilities.
@@ -389,6 +537,72 @@ CDNs are no strangers to Subresource Integrity and provide secure defaults to th
 
 The following list shows the top 10 most common hosts for which a subresource integrity value has been observed. Notable changes from last year are the Cloudflare hosts jumping from position 4 to position 3, and jsDelivr jumping from position 7 to position 6 in ranking, surpassing Bootstrap's hosts rankings.
 
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Host</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>`www.gstatic.com`</td>
+        <td class="numeric">39%</td>
+        <td class="numeric">40%</td>
+      </tr>
+      <tr>
+        <td>`cdn.shopify.com`</td>
+        <td class="numeric">22%</td>
+        <td class="numeric">23%</td>
+      </tr>
+      <tr>
+        <td>`cdnjs.cloudflare.com`</td>
+        <td class="numeric">8%</td>
+        <td class="numeric">7%</td>
+      </tr>
+      <tr>
+        <td>`code.jquery.com`</td>
+        <td class="numeric">7%</td>
+        <td class="numeric">7%</td>
+      </tr>
+      <tr>
+        <td>`static.cloudflareinsights.com`</td>
+        <td class="numeric">5%</td>
+        <td class="numeric">4%</td>
+      </tr>
+      <tr>
+        <td>`cdn.jsdelivr.net`</td>
+        <td class="numeric">3%</td>
+        <td class="numeric">3%</td>
+      </tr>
+      <tr>
+        <td>`t1.daumcdn.net`</td>
+        <td class="numeric">3%</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>`stackpath.bootstrapcdn.com`</td>
+        <td class="numeric">2%</td>
+        <td class="numeric">2%</td>
+      </tr>
+      <tr>
+        <td>`maxcdn.bootstrapcdn.com`</td>
+        <td class="numeric">2%</td>
+        <td class="numeric">2%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Most popular hosts using SRI.",
+      sheets_gid="998292064",
+      sql_file="sri_popular_hosts.sql",
+    ) }}
+  </figcaption>
+</figure>
+
 ### Permissions Policy
 
 Browsers are becoming more and more powerful with time, adding more native APIs to access and control different sorts of hardware and feature sets that are made available to websites. These also introduce potential security risks to users through misuse of said features, such as malicious scripts turning on a microphone and collecting data, or fingerprinting geolocation of a device to collect location information.
@@ -416,6 +630,77 @@ Besides being used as an HTTP header, this feature can be used within `<iframe>`
 18.9% of 11.5 million frames in mobile contained the `allow` attribute to enable permission or feature policies.
 
 The following is a list of the top 10 `allow` directives that were detected in frames:
+
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Directive</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>`encrypted-media`</td>
+        <td class="numeric">75%</td>
+        <td class="numeric">75%</td>
+      </tr>
+      <tr>
+        <td>`autoplay`</td>
+        <td class="numeric">48%</td>
+        <td class="numeric">49%</td>
+      </tr>
+      <tr>
+        <td>`picture-in-picture`</td>
+        <td class="numeric">31%</td>
+        <td class="numeric">31%</td>
+      </tr>
+      <tr>
+        <td>`accelerometer`</td>
+        <td class="numeric">26%</td>
+        <td class="numeric">27%</td>
+      </tr>
+      <tr>
+        <td>`gyroscope`</td>
+        <td class="numeric">26%</td>
+        <td class="numeric">27%</td>
+      </tr>
+      <tr>
+        <td>`clipboard-write`</td>
+        <td class="numeric">21%</td>
+        <td class="numeric">21%</td>
+      </tr>
+      <tr>
+        <td>`microphone`</td>
+        <td class="numeric">9%</td>
+        <td class="numeric">9%</td>
+      </tr>
+      <tr>
+        <td>`fullscreen`</td>
+        <td class="numeric">8%</td>
+        <td class="numeric">7%</td>
+      </tr>
+      <tr>
+        <td>`camera`</td>
+        <td class="numeric">6%</td>
+        <td class="numeric">7%</td>
+      </tr>
+      <tr>
+        <td>`geolocation`</td>
+        <td class="numeric">5%</td>
+        <td class="numeric">6%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Top 10 `allow` directives in iframes.",
+      sheets_gid="1848560369",
+      sql_file="iframe_allow_directives.sql",
+    ) }}
+  </figcaption>
+</figure>
 
 Interesting to point out are places 11th, 12th and 13th allow directives for mobile that didn't make it into the above list and they are `vr` with 6%, `payment` with 2%, and `web-share` with 1%. They perhaps speak of growing trends we're seeing in the industry around virtual reality (and the metaverse, if you will), online payments and the fintech industry. Lastly, it seems to indicate better support for web-based sharing which is presumably due to the rise of work-from-home habits in the last couple of years.
 
@@ -485,25 +770,41 @@ The main use of Content Security Policy (CSP) is to determine the trusted source
 One of the common ways to prevent clickjacking attacks is to prevent the browser from loading the website in a frame. One can use the [`frame-ancestors`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors) directive in a CSP Header to restrict other domains from including the page content in a frame. We found 53% of the websites in mobile that have CSP have a `frame-ancestor` directive. It's the second most used CSP directive, which is good for prevention of clickjacking attacks. Setting the value of `frame-ancestors` directive to `none` or `self` is the safest. `none` doesn't allow any domain to frame the content, while `self` allows only the origin domain to frame the contents. We found that 8% of websites in mobile which have a CSP header have only `frame-ancestors 'self'` and is the third most common value of CSP header.
 
 
-SUM of pct
-client
-
-
-keyword
-desktop
-mobile
-strict-dynamic
-6%
-5%
-nonce-
-12%
-14%
-unsafe-inline
-94%
-95%
-unsafe-eval
-80%
-78%
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Keyword</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>`nonce-`</td>
+        <td class="numeric">12%</td>
+        <td class="numeric">14%</td>
+      </tr>
+      <tr>
+        <td>`unsafe-inline`</td>
+        <td class="numeric">94%</td>
+        <td class="numeric">95%</td>
+      </tr>
+      <tr>
+        <td>`unsafe-eval`</td>
+        <td class="numeric">80%</td>
+        <td class="numeric">78%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="CSP script-src attribute usage.",
+      sheets_gid="323360740",
+      sql_file="csp_script_source_list_keywords.sql",
+    ) }}
+  </figcaption>
+</figure>
 
 One of the mechanisms to defend against XSS attacks is by setting a restrictive `script-src` directive for the website. This ensures that JavaScript is loaded only from a trusted source and the attacker cannot inject some malicious code. `strict-dynamic` is gradually gaining more adoption across websites with 6% websites in desktop using it compared to 5% of websites last year. `strict-dynamic` is helpful if you have a root script in your HTML that dynamically loads or injects other script files. It makes use of nonce or hash on the root script and ignores other allowlists like `unsafe-inline` or individual links. It's supported in all modern browsers apart from IE. Also, we see that `unsafe-inline` and `unsafe-eval` usage has decreased by approximately 2% from last year. This is a step in the right direction.
 
@@ -526,45 +827,76 @@ Cross Origin policies are one of the main mechanisms used to defend against micr
 
 Clear-Site-Data provides web developers more control over clearing of user data related to their website. For example, a web developer can now make decisions such that when a user signs out of their web site, then all related cookie, cache, storage information about the user can be removed. This helps in limiting the consequences of an attack by having a restricted amount of data stored in the browser when not needed. This is a comparatively new header which is restricted only for sites served over HTTPS and only some of the features are supported by browsers. There were only 75 sites in mobile which had `Clear-Site-Data` header in 2021 and it has increased to 428 this year.
 
-SUM of pct
-client
-
-
-csd_header
-desktop
-mobile
-cache
-65%
-63%
-*
-9%
-8%
-"cache"
-7%
-7%
-cookies
-3%
-6%
-"storage"
-2%
-1%
-cache,cookies,storage
-1%
-1%
-"cache", "storage"
-1%
-1%
-"*"
-1%
-2%
-"cache", "cookies"
-1%
-0%
-"cookies"
-1%
-1%
-
-
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>csd_header</th>
+        <th>desktop</th>
+        <th>mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>cache</td>
+        <td class="numeric">65%</td>
+        <td class="numeric">63%</td>
+      </tr>
+      <tr>
+        <td><code class="notranslate">*</code></td>
+        <td class="numeric">9%</td>
+        <td class="numeric">8%</td>
+      </tr>
+      <tr>
+        <td>"cache"</td>
+        <td class="numeric">7%</td>
+        <td class="numeric">7%</td>
+      </tr>
+      <tr>
+        <td>cookies</td>
+        <td class="numeric">3%</td>
+        <td class="numeric">6%</td>
+      </tr>
+      <tr>
+        <td>"storage"</td>
+        <td class="numeric">2%</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td>cache,cookies,storage</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td>"cache", "storage"</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td>*</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">2%</td>
+      </tr>
+      <tr>
+        <td>"cache", "cookies"</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">0%</td>
+      </tr>
+      <tr>
+        <td>"cookies"</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Most common Clear Site Data directives.",
+      sheets_gid="1206925009",
+      sql_file="clear-site-data_value_prevalence.sql",
+    ) }}
+  </figcaption>
+</figure>
 
 `cache` is the most prevalent directive (63% websites in mobile) for Clear-Site-Data which could mean that many developers are using this security header more for clearing cache to probably load newer static files, than for privacy and security of the user. But directives are supposed to follow quoted-string grammar and hence this directive is invalid. It is great to see that 9% of mobile websites using this header use "*" which means that they indicate the browser to clear all user data stored. Third most used directive is again `"cache"`, but used properly this time.
 
@@ -572,27 +904,41 @@ cache,cookies,storage
 
 A `Content-Security-Policy` and `Referrer-Policy` can be set using a `<meta>` tag in the HTML code itself for a website. For example, one can set `Content-Security-Policy` using the code: `<meta http-equiv="Content-Security-Policy" content="default-src 'self'">`. We found that 0.47% and 2.60% of the websites in mobile enabled CSP and Referrer-Policy this way.
 
-
-
-
-client
-
-
-
-
-desktop
-mobile
-include Referrer-policy
-3.11%
-2.60%
-include CSP
-0.55%
-0.47%
-include not-allowed policy
-0.08%
-0.06%
-
-
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th>desktop</th>
+        <th>mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>include Referrer-policy</td>
+        <td class="numeric">3.11%</td>
+        <td class="numeric">2.60%</td>
+      </tr>
+      <tr>
+        <td>include CSP</td>
+        <td class="numeric">0.55%</td>
+        <td class="numeric">0.47%</td>
+      </tr>
+      <tr>
+        <td>include not-allowed policy</td>
+        <td class="numeric">0.08%</td>
+        <td class="numeric">0.06%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="`<meta>` security feature usage.",
+      sheets_gid="2049304175",
+      sql_file="meta_policies_allowed_vs_disallowed.sql",
+    ) }}
+  </figcaption>
+</figure>
 
 The issue with preventing attacks using `<meta>` tag is if you set any other security headers using it, then the browser will ignore that security header. For example, 2,815 sites had `X-Frame-Options` in the `<meta>` tag. So the developer might be expecting the website to be secure against certain attacks since they added the `<meta>` tag when in reality, that security header never gets added. However, this number has gone down from 3,410 sites last year, so maybe websites are fixing this misuse of the `<meta>` tag.
 
@@ -600,45 +946,66 @@ The issue with preventing attacks using `<meta>` tag is if you set any other sec
 
 Web Cryptography API is a JavaScript API for performing basic cryptographic operations on a website such as random number generation, hashing, signing, encryption and decryption.
 
-SUM of pct_urls
-client
-
-
-feature
-desktop
-mobile
-CryptoGetRandomValues
-69.6%
-65.5%
-SubtleCryptoDigest
-0.6%
-0.6%
-CryptoAlgorithmSha256
-0.5%
-0.3%
-SubtleCryptoImportKey
-0.2%
-0.1%
-SubtleCryptoGenerateKey
-0.2%
-0.2%
-SubtleCryptoEncrypt
-0.2%
-0.1%
-SubtleCryptoExportKey
-0.2%
-0.1%
-CryptoAlgorithmAesGcm
-0.1%
-0.1%
-SubtleCryptoSign
-0.1%
-0.1%
-CryptoAlgorithmAesCtr
-0.1%
-0.1%
-
-
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>`CryptoGetRandomValues`</td>
+        <td class="numeric">69.6%</td>
+        <td class="numeric">65.5%</td>
+      </tr>
+      <tr>
+        <td>`SubtleCryptoDigest`</td>
+        <td class="numeric">0.6%</td>
+        <td class="numeric">0.6%</td>
+      </tr>
+      <tr>
+        <td>`CryptoAlgorithmSha256`</td>
+        <td class="numeric">0.5%</td>
+        <td class="numeric">0.3%</td>
+      </tr>
+      <tr>
+        <td>`SubtleCryptoImportKey`</td>
+        <td class="numeric">0.2%</td>
+        <td class="numeric">0.1%</td>
+      </tr>
+      <tr>
+        <td>`SubtleCryptoGenerateKey`</td>
+        <td class="numeric">0.2%</td>
+        <td class="numeric">0.2%</td>
+      </tr>
+      <tr>
+        <td>`SubtleCryptoEncrypt`</td>
+        <td class="numeric">0.2%</td>
+        <td class="numeric">0.1%</td>
+      </tr>
+      <tr>
+        <td>`SubtleCryptoExportKey`</td>
+        <td class="numeric">0.2%</td>
+        <td class="numeric">0.1%</td>
+      </tr>
+      <tr>
+        <td>`CryptoAlgorithmAesGcm`</td>
+        <td class="numeric">0.1%</td>
+        <td class="numeric">0.1%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Web Cryptography API usage.",
+      sheets_gid="971581635",
+      sql_file="web_cryptography_api.sql",
+    ) }}
+  </figcaption>
+</figure>
 
 There is not much change in the data from last year. `CryptoGetRandomValues` continues to be the most adopted feature (even though its usage has dropped by approximately 1% since last year) because of its use in generating strong pseudo-random numbers. Its high usage is attributable to being used in common services such as Google Analytics.
 
@@ -694,26 +1061,57 @@ The adoption of CSP and X-Frame-Options (XFO) is very similar to last year. Surp
 
 Another factor that can strongly influence the adoption of certain security mechanisms is the technology stack that's being used to build a website. In some cases, security features may be enabled by default, for example, in content management systems.
 
-
-Technology
-Security features
-Blogger
-Content-Security-Policy(99%), X-Content-Type-Options(99%), X-Frame-Options(99%), X-XSS-Protection(99%)
-Wix
-Strict-Transport-Security(99%), X-Content-Type-Options(99%)
-Drupal
-X-Content-Type-Options(77%), X-Frame-Options(77%)
-Squarespace
-Strict-Transport-Security(91%), X-Content-Type-Options(98%)
-Google Sites
-Content-Security-Policy(96%), Cross-Origin-Opener-Policy(96%), Referrer-Policy(96%), X-Content-Type-Options(97%), X-Frame-Options(97%), X-XSS-Protection(97%)
-Plone
-X-Frame-Options(60%)
-Wagtail
-X-Content-Type-Options(51%), X-Frame-Options(72%)
-Medium
-Content-Security-Policy(75%), Expect-CT(83%), Strict-Transport-Security(84%), X-Content-Type-Options(83%)
-
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Technology</th>
+        <th>Security features</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Blogger</td>
+        <td>Content-Security-Policy(99%)<br>X-Content-Type-Options(99%)<br>X-Frame-Options(99%)<br>X-XSS-Protection(99%)</td>
+      </tr>
+      <tr>
+        <td>Wix</td>
+        <td>Strict-Transport-Security(99%)<br>X-Content-Type-Options(99%)</td>
+      </tr>
+      <tr>
+        <td>Drupal</td>
+        <td>X-Content-Type-Options(77%)<br>X-Frame-Options(77%)</td>
+      </tr>
+      <tr>
+        <td>Squarespace</td>
+        <td>Strict-Transport-Security(91%)<br>X-Content-Type-Options(98%)</td>
+      </tr>
+      <tr>
+        <td>Google Sites</td>
+        <td>Content-Security-Policy(96%)<br>Cross-Origin-Opener-Policy(96%)<br>Referrer-Policy(96%)<br>X-Content-Type-Options (97%)<br>X-Frame-Options(97%)<br>X-XSS-Protection(97%)</td>
+      </tr>
+      <tr>
+        <td>Plone</td>
+        <td>X-Frame-Options(60%)</td>
+      </tr>
+      <tr>
+        <td>Wagtail</td>
+        <td>X-Content-Type-Options(51%)<br>X-Frame-Options(72%)</td>
+      </tr>
+      <tr>
+        <td>Medium</td>
+        <td>Content-Security-Policy(75%), Expect-CT(83%)<br>Strict-Transport-Security(84%)<br>X-Content-Type-Options(83%)</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Security feature adoption by technology.",
+      sheets_gid="2004939103",
+      sql_file="feature_adoption_by_technology.sql",
+    ) }}
+  </figcaption>
+</figure>
 
 Above we see some of the common CMS and blogging sites. A common pattern that we see with sites that provide very little customization and focus more on content editing, like Wix, Squarespace and Medium, is they have basic security features by default such as `Strict-Transport-Security`. Content management systems like Wagtail, Plone and Drupal have very bare minimum security features, since they are often used by developers to set up the website and hence the responsibility to add security features are more on developers. We also see that websites using Google Sites have many security features by default.
 
