@@ -542,7 +542,7 @@ Last year's edition introduced [a section on social markup, special markup](../2
   height=604
 ) }}
 
-Do you need all of this metadata? That depends on your needs. But if these needs are about showing title, description, and image, you don't seem to need nearly as much. You may be able to do with `twitter:card`, `og:title`, `og:description` (hooked up to standard `description` metadata), and `og:image`. The author and many others have described options for <a hreflang="en" href="https://meiert.com/en/blog/minimal-social-markup/">minimal social markup</a>.
+Do you need all of this metadata? That depends on your requirements. But if these requirements are about showing title, description, and image, you don't seem to need nearly as much. You may be able to do with `twitter:card`, `og:title`, `og:description` (hooked up to standard `description` metadata), and `og:image`. The author and many others have described options for <a hreflang="en" href="https://meiert.com/en/blog/minimal-social-markup/">minimal social markup</a>.
 
 ## Conclusion
 
