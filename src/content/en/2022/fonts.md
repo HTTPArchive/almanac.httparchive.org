@@ -818,7 +818,7 @@ The CSS specification has been updated to support color fonts to allow <a hrefla
 {{ figure_markup(
   image="bradley-initials.png",
   caption='<a hreflang="en" href="https://tools.djr.com/misc/bradley-initials/">Bradley Initials</a> using COLR v1 and multiple palettes by <a hreflang="en" href="https://djr.com/">David Jonathan Ross</a>.',
-  description="TODO.",
+  description="A specimen of the font Bradley Initials by David Jonathan Ross showing six different color palettes.",
   width=1911,
   height=1142
   )
