@@ -303,7 +303,7 @@ We can see that the median performance scores for most platforms on mobile are l
 
 WordPress, Joomla, Drupal, and 1C-Bitrix showed no change from last year's results. Wix dropped from 30% to 29% while the rest showed improvements.
 
-Desktop show—unsurprisingly given the faster CPUs and network—better numbers with all CMSs seeing a 10-20 point improvements.
+Desktop show—unsurprisingly given the faster CPUs and network—better numbers with all CMSs seeing 10-20 point improvements.
 
 #### SEO score
 
@@ -343,7 +343,7 @@ Each accessibility audit is either a pass or a fail, but unlike other Lighthouse
   )
 }}
 
-The median Lighthouse accessibility score for the top 10 CMSs ranges between 77 and 91. Squarespace had the highest score of 91, while 1C-Bitrix had the lowest accessibility scores. The desktop scores are almost idential to mobile, perhaps reflecting that the same sites are delivered to both.
+The median Lighthouse accessibility score for the top 10 CMSs ranges between 77 and 91. Squarespace had the highest score of 91, while 1C-Bitrix had the lowest accessibility scores. The desktop scores are almost identical to mobile, perhaps reflecting that the same sites are delivered to both.
 
 #### Best practices
 
@@ -517,7 +517,7 @@ First, we examined WordPress adoption by geography across all sites in our datas
   )
 }}
 
-According to our dataset, WordPress adoption is growign significantly in all the tops geographies.
+According to our dataset, WordPress adoption is growing significantly in all the top geographies.
 
 ### Passing CWVs by geography
 
