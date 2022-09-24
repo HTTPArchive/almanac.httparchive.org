@@ -10,14 +10,13 @@ editors: [rviscomi]
 translators: []
 rachelandrew_bio: TODO
 results: https://docs.google.com/spreadsheets/d/1OU8ahxC5oYU8VRryQs9BzHToaXcOntVlh6KUHjm15G4/
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
-unedited: true
+featured_quote: The past few years have seen a flurry of new CSS features. Many of these have taken inspiration from things developers were already doing with JavaScript or in preprocessors, while others provide methods of doing things that were impossible a few years ago. Having new features available is one thing, but are developers actually using them in their production web pages and applications?
+featured_stat_1: 43%
+featured_stat_label_1: Percent of pages that use custom properties
+featured_stat_2: 0.3%
+featured_stat_label_2: Percent of pages that use the new `accent-color` property
+featured_stat_3: 12%
+featured_stat_label_3: Percent of pages that use grid layouts
 ---
 
 ## Introduction
