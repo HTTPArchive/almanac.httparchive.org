@@ -4,11 +4,11 @@ title: CSS
 #TODO - Review and update chapter description
 description: CSS chapter of the 2022 Web Almanac covering trends, changes, and patterns in CSS use across the web.
 authors: [rachelandrew]
-reviewers: [j9t, meyerweb, svgeesus]
+reviewers: [svgeesus, j9t]
 analysts: [rviscomi]
 editors: [rviscomi]
 translators: []
-rachelandrew_bio: TODO
+rachelandrew_bio: Rachel Andrew is a web developer and technical writer and editor, working for Google on the Chrome team as a staff technical writer and content lead.
 results: https://docs.google.com/spreadsheets/d/1OU8ahxC5oYU8VRryQs9BzHToaXcOntVlh6KUHjm15G4/
 featured_quote: The past few years have seen a flurry of new CSS features. Many of these have taken inspiration from things developers were already doing with JavaScript or in preprocessors, while others provide methods of doing things that were impossible a few years ago. Having new features available is one thing, but are developers actually using them in their production web pages and applications?
 featured_stat_1: 43%
