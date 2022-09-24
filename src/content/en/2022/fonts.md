@@ -699,7 +699,7 @@ Usage of variable fonts has nearly tripled since the last measurement in the Alm
 {{ figure_markup(
   image="usage-of-variable-fonts.png",
   caption="Usage of variable fonts.",
-  description="Column chart showing that in 2020 11% of pages on both desktop and mobile used variable fonts, in 2021	that grew to 13% of both, and in 2022	that shot up to 28% of desktop pages and 29% of mobile pages.",
+  description="Column chart showing that in 2020 11% of pages on both desktop and mobile used variable fonts, in 2021 that grew to 13% of both, and in 2022 that shot up to 28% of desktop pages and 29% of mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=920070467&format=interactive",
   sheets_gid="1460535004",
   sql_file="variable_font_usage.sql"
