@@ -1,7 +1,6 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CSS
-#TODO - Review and update chapter description
 description: CSS chapter of the 2022 Web Almanac covering trends, changes, and patterns in CSS use across the web.
 authors: [rachelandrew]
 reviewers: [svgeesus, j9t]
@@ -148,8 +147,6 @@ In terms of what `!important` is applied to, the top properties remain unchanged
 
 ### Selector specificity
 
-{# TODO(author): Can you introduce what specificity is? #}
-
 <figure>
   <table>
     <thead>
@@ -243,7 +240,7 @@ Use of the `::marker` pseudo-element has now made 1%, showing that people are sl
   )
 }}
 
-{# TODO(author): This subsection should have an intro and interpretation of the data. #}
+The most popular attribute selector is `type`, found on 54% of pages. The next most popular attribute selectors are `class` on 37%, `disabled` on 25%, and `dir` on 17% of pages.
 
 ## Values and Units
 
@@ -787,7 +784,7 @@ Around 22% of pages use `border-box` on checkboxes and radio buttons. We see a l
 {{ figure_markup(
     image="box-sizing.png",
     caption="Distribution of the number of `border-box` declarations per page.",
-    description="TODO",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of the number of box-sizing: border-box delcarations per page. The values in order are: 1, 7, 22, 52, and 101 declarations per page.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1043112167&format=interactive",
     sheets_gid="859735058",
     sql_file="box_sizing.sql"
