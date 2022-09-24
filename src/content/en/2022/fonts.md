@@ -199,19 +199,19 @@ A reasonable way to measure how much of an impact a table has on overall file si
   </figcaption>
 </figure>
 
-The top ten highest impact tables starts with the `glyf`, `CFF`, `GPOS`, and `hmtx` tables. These contain the data for the Bézier curves that make up the outlines of all glyphs (`glyf` and `CFF`), OpenType positioning features (GPOS) and horizontal metrics (`hmtx`). This is great because these tables are directly related to the number of glyphs in the font. Reduce the number of glyphs in the font by removing glyphs you don't need and you will dramatically reduce its file size.
+The top ten highest impact tables starts with the `glyf`, `CFF`, `GPOS`, and `hmtx` tables. These contain the data for the Bézier curves that make up the outlines of all glyphs (`glyf` and `CFF`), OpenType positioning features (`GPOS`) and horizontal metrics (`hmtx`). This is great because these tables are directly related to the number of glyphs in the font. Reduce the number of glyphs in the font by removing glyphs you don't need and you will dramatically reduce its file size.
 
 Figuring out <a hreflang="en" href="https://bramstein.com/writing/web-font-anti-patterns-subsetting.html">what you need and what you don't need</a> is the hard part though. You might accidentally remove glyphs, or break OpenType features that you need to render text correctly. Instead of subsetting manually using, for example, <a hreflang="en" href="https://fonttools.readthedocs.io/en/latest/subset/index.html">font tools</a>, you can use tools like <a hreflang="en" href="https://github.com/Munter/subfont">subfont</a> or <a hreflang="en" href="https://github.com/zachleat/glyphhanger">glyphhanger</a> to automatically create a "perfect" subset based on the content on your site. However, be mindful whether the license of your font permits such modifications.
 
-It is interesting to note that the `name` and `post` tables are in the top 10. These two tables primarily contain metadata that is important for desktop fonts, but not necessary for web fonts. This is an indication a lot of web fonts contain metadata that can be stripped without consequences, such as name table entries, glyph names in the post table, non-Unicode cmap entries, etc. We would love to see a universal set of recommendations (or even a <a hreflang="en" href="https://pmt.sourceforge.io/pngcrush/">pngcrush</a>-like tool) that can be used by foundries and web developers to remove every last unnecessary byte from a web font.
+It is interesting to note that the `name` and `post` tables are in the top 10. These two tables primarily contain metadata that is important for desktop fonts, but not necessary for web fonts. This is an indication a lot of web fonts contain metadata that can be stripped without consequences, such as name table entries, glyph names in the `post` table, non-Unicode `cmap` entries, etc. We would love to see a universal set of recommendations (or even a <a hreflang="en" href="https://pmt.sourceforge.io/pngcrush/">pngcrush</a>-like tool) that can be used by foundries and web developers to remove every last unnecessary byte from a web font.
 
 ### Outline formats
 
-You might have noticed the OpenType sizes table contains two entries for vector glyph outline data: `glyf` and `CFF`. There are actually four competing ways to store vector outlines in OpenType: TrueType (`glyf`), Compact Font Format (`CFF`), Compact Font Format 2 (`CFF2`), and Scalable Vector Graphics (`OT-SVG`; not to be confused with the old SVG font format). There are also three image based formats—we will talk about two of them in the color fonts section.
+You might have noticed the OpenType sizes table contains two entries for vector glyph outline data: `glyf` and `CFF`. There are actually four competing ways to store vector outlines in OpenType: TrueType (`glyf`), Compact Font Format (`CFF`), Compact Font Format 2 (`CFF2`), and Scalable Vector Graphics (`SVG`; not to be confused with the old SVG font format). There are also three image based formats—we will talk about two of them in the color fonts section.
 
 The OpenType specification is what you could charatibly call "a compromise". Several competing approaches to do mostly the same thing were added to the specification because there was no consensus. If you're interested in how this came to be, <a hreflang="en" href="https://www.pastemagazine.com/design/adobe/the-font-wars/">The Font Wars</a> by David Lemon is a great read. We'll see this pattern of competing approaches repeated again and again in the sections on variable and color fonts (though with different actors). At the end of the day, having multiple ways to store vector outlines mostly works, but it does place a heavy additional burden on type designers and implementations—not to mention increasing the attack surface area for exploits.
 
-Type designers can choose the outline format they prefer. Looking at the distribution of outline formats, it is pretty clear what type designers have chosen. The overwhelming majority (91%) of fonts use the `glyf` outline format, while 9% use the `CFF` outline format. There is some `OT-SVG` color font usage as well, but less than 1% (not pictured).
+Type designers can choose the outline format they prefer. Looking at the distribution of outline formats, it is pretty clear what type designers have chosen. The overwhelming majority (91%) of fonts use the `glyf` outline format, while 9% use the `CFF` outline format. There is some `SVG` color font usage as well, but less than 1% (not pictured).
 
 {{ figure_markup(
   image="outline-formats.png",
@@ -622,7 +622,7 @@ All of the most commonly used `font-feature-settings` values have `font-variant`
 {{ figure_markup(
   image="usage-of-css-font-variant-values.png",
   caption="Usage of CSS font-variant values.",
-  description="Bar chart showing `font-variant: small-caps` is used on 1.5% of desktop pages and 1.4% of mobile pages, `font-variant: tabular-nums` on 1.0% and 0.6% respectively, `font-variant-numeric: tabular-nums` on 0.8% and 0.7%, `font-variant-ligatures: discretionary-ligatures` on 0.4% and 0.3%, `font-variant-ligatures: no-common-ligatures` on 0.3% and 0.3%, `font-variant-caps: all-small-caps` on 0.2% and 0.2%, `font-variant-numeric: lining-nums` on 0.2% and 0.2%, and finally `font-variant-ligatures: common-ligatures` on 0.1% of desktop and mobile pages..",
+  description="Bar chart showing `font-variant: small-caps` is used on 1.5% of desktop pages and 1.4% of mobile pages, `font-variant: tabular-nums` on 1.0% and 0.6% respectively, `font-variant-numeric: tabular-nums` on 0.8% and 0.7%, `font-variant-ligatures: discretionary-ligatures` on 0.4% and 0.3%, `font-variant-ligatures: no-common-ligatures` on 0.3% and 0.3%, `font-variant-caps: all-small-caps` on 0.2% and 0.2%, `font-variant-numeric: lining-nums` on 0.2% and 0.2%, and finally `font-variant-ligatures: common-ligatures` on 0.1% of desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=682306512&format=interactive",
   sheets_gid="1231655846",
   sql_file="font_variant_values.sql",
@@ -642,7 +642,7 @@ To understand what kind of fonts are being made and used, we thought it would be
 {{ figure_markup(
   image="writing-systems-supported-by-fonts.png",
   caption="Writing systems supported by fonts.",
-  description="Bar chart showing Latin is used on 57.6% of desktop pages and 53.6% of mobile pages, Cyrillic on 6.1% and 6.2% respectively, Greek on 3.4% and 3.4%, Katakana on 0.9% and 1.0%, Hiragana on 0.9% and 0.9%, Hebrew on 0.5% and 0.5%, Arabic on 0.3% and 0.4%, Thai on 0.2% and 0.3%, Hangul on 0.5% and 0.3%, Devanagari on 0.2% and 0.3%, and finally Han is on 0.2% of desktop and mobile pages..",
+  description="Bar chart showing Latin is used on 57.6% of desktop pages and 53.6% of mobile pages, Cyrillic on 6.1% and 6.2% respectively, Greek on 3.4% and 3.4%, Katakana on 0.9% and 1.0%, Hiragana on 0.9% and 0.9%, Hebrew on 0.5% and 0.5%, Arabic on 0.3% and 0.4%, Thai on 0.2% and 0.3%, Hangul on 0.5% and 0.3%, Devanagari on 0.2% and 0.3%, and finally Han is on 0.2% of desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=45355249&format=interactive",
   sheets_gid="841363278",
   sql_file="font_writing_scripts.sql",
@@ -664,7 +664,7 @@ We already touched on fallback fonts while talking about `font-display`. Sometim
 {{ figure_markup(
   image="usage-of-css-generic-font-family-names.png",
   caption="Usage of CSS generic font family names.",
-  description="Bar chart showing `sans-serif` is used on 89.1% of desktop pages and 89.3% of mobile pages, `monospace` on 65.8% and 64.7% respectively, `serif` on 54.0% and 55.0%, `cursive` on 3.7% and 3.9%, `system-ui` on 4.0% and 3.6%, `fantasy` on 0.5% and 0.5%, `ui-monospace` on 0.6% and 0.5%, and finally `ui-sans-serif` is used on 0.5% of desktop and 0.4% of mobiles pages..",
+  description="Bar chart showing `sans-serif` is used on 89.1% of desktop pages and 89.3% of mobile pages, `monospace` on 65.8% and 64.7% respectively, `serif` on 54.0% and 55.0%, `cursive` on 3.7% and 3.9%, `system-ui` on 4.0% and 3.6%, `fantasy` on 0.5% and 0.5%, `ui-monospace` on 0.6% and 0.5%, and finally `ui-sans-serif` is used on 0.5% of desktop and 0.4% of mobiles pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1479159855&format=interactive",
   sheets_gid="467837585",
   sql_file="usage_of_system_families.sql",
@@ -673,7 +673,7 @@ We already touched on fallback fonts while talking about `font-display`. Sometim
   )
 }}
 
-While these are fairly new, they are already seeing significant use. The usual suspects, sans-serif, monospace, and serif obviously take the lead as they have been around since the first version of the CSS specification.
+While these are fairly new, they are already seeing significant use. The usual suspects, `sans-serif`, `monospace`, and `serif` obviously take the lead as they have been around since the first version of the CSS specification.
 
 The most popular, and well-known, is `system-ui` at 3.6%, followed by `ui-monospace` at 0.5% and `ui-sans-serif` at 0.4%. It isn't clear what the 0.5% of requests for `fantasy` were hoping for, as that generic is so under-specified as to be effectively useless.
 
@@ -684,7 +684,7 @@ We hope to see more use of these generic family names next year. They are great 
 {{ figure_markup(
   image="usage-of-font-smoothing-properties.png",
   caption="Usage of font smoothing properties.",
-  description="Bar chart showing `-webkit-font-smoothing: antialiased` is used on 74% of desktop and 73% of mobile pages, `-moz-osx-font-smoothing: grayscale` on 67% and 66%, `-webkit-font-smoothing: auto` on 13% and 12%, and finally `-webkit-font-smoothing: subpixel-antialiased` is used on 13% of desktop and 13% of mobile pages..",
+  description="Bar chart showing `-webkit-font-smoothing: antialiased` is used on 74% of desktop and 73% of mobile pages, `-moz-osx-font-smoothing: grayscale` on 67% and 66%, `-webkit-font-smoothing: auto` on 13% and 12%, and finally `-webkit-font-smoothing: subpixel-antialiased` is used on 13% of desktop and 13% of mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=534216530&format=interactive",
   sheets_gid="1970926839",
   sql_file="font_smoothing_usage.sql"
@@ -727,7 +727,7 @@ As a result, Google Fonts and their users are probably seeing huge benefits in p
 
 Regardless of a single actor being responsible for the growth, it is an amazing achievement, and a good indicator of the usefulness of variable fonts to optimize your site's performance.
 
-Variable fonts also have two competing formats: the variable extensions of the `glyf` format and the Compact Font Format 2 (`CFF`) format. The main differences between the `glyf` format and `CFF2` are the same as its `CFF` predecessor: different types of Bézier curves, more automated hinting, and a claim about smaller file sizes.
+Variable fonts also have two competing formats: the variable extensions of the `glyf` format and the Compact Font Format 2 (`CFF2`) format. The main differences between the `glyf` format and `CFF2` are the same as its `CFF` predecessor: different types of Bézier curves, more automated hinting, and a claim about smaller file sizes.
 
 {{ figure_markup(
   content="99.99%",
@@ -753,12 +753,12 @@ Our recommendation is to avoid `CFF2`-based variable fonts (for now, at least). 
 
 So, how are people using variable fonts? Not surprisingly the weight axis is the most popular value used with the `font-variation-settings` property, followed by optical sizes, width, slant, italic, and grades.
 
-This somewhat surprised us, because there is no need to use the low-level `font-feature-settings` property to set a custom weight axis value. You can simply use the `font-weight` property with a custom value, for example, font-weight: 550 for a weight between 500 and 600.
+This somewhat surprised us, because there is no need to use the low-level `font-variation-settings` property to set a custom weight axis value. You can simply use the `font-weight` property with a custom value, for example, `font-weight: 550` for a weight between 500 and 600.
 
 {{ figure_markup(
   image="popular-variable-font-weight-values.png",
   caption="Popular variable font weight values.",
-  description="Bar chart showing a font-weight of `400` is used on 22% of desktop pages using variable fonts and 23% of mobile pages using variable fonts, `600` on 22% of both, `700` on 21% of desktop and 22% of mobile pages, `300` on 19% and 21% respectively, `500` on 4% and 3%, `800` on 2% of both pages, `550` on 2% of desktop and 1% of mobile pages, `900` on 1% of both, `200` on 1% of both, and finally `450` on 1% of both desktop and mobile pages..",
+  description="Bar chart showing a font-weight of `400` is used on 22% of desktop pages using variable fonts and 23% of mobile pages using variable fonts, `600` on 22% of both, `700` on 21% of desktop and 22% of mobile pages, `300` on 19% and 21% respectively, `500` on 4% and 3%, `800` on 2% of both pages, `550` on 2% of desktop and 1% of mobile pages, `900` on 1% of both, `200` on 1% of both, and finally `450` on 1% of both desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1275376550&format=interactive",
   sheets_gid="1634075051",
   sql_file="variable_font_axis_css.sql",
@@ -795,7 +795,7 @@ However, compared to the growth in variable font usage, the limited uptake of co
 
 The primary factors that have severely hindered color font adoption (and might continue to do so) is the ongoing standards "battle" for _the one true color font format_, and the lack of support in browsers for the CSS that allows you to select and edit color font palettes—until recently.
 
-There are currently four competing color font formats: two based on vector outlines (OT-SVG and COLR) and two on images (CBDT and sbix). The COLR format re-uses the existing glyph outline and adds solid colors and layering to them. The most recent version, dubbed COLRv1 introduced gradients, compositing and blending modes as well. Due to its re-use of existing glyph outlines, the COLR format also supports variable fonts, so you can have <a hreflang="en" href="https://www.typearture.com/variable-fonts/">animated color fonts</a>. The OT-SVG format takes a different approach and essentially embeds an SVG image for each glyph in the font. Unfortunately, the OT-SVG format does not support variable fonts, and is unlikely to do so in the future. Both CBDT and sbix embed images for each glyph and they only differ in the supported image formats.
+There are currently four competing color font formats: two based on vector outlines (`SVG` and `COLR`) and two on images (`CBDT` and `sbix`). The `COLR` format re-uses the existing glyph outline and adds solid colors and layering to them. The most recent version, dubbed `COLRv1` introduced gradients, compositing and blending modes as well. Due to its re-use of existing glyph outlines, the `COLR` format also supports variable fonts, so you can have <a hreflang="en" href="https://www.typearture.com/variable-fonts/">animated color fonts</a>. The `SVG` format takes a different approach and essentially embeds an SVG image for each glyph in the font. Unfortunately, the `SVG` format does not support variable fonts, and is unlikely to do so in the future. Both `CBDT` and `sbix` embed images for each glyph and they only differ in the supported image formats.
 
 {{ figure_markup(
   image="color-font-formats.png",
@@ -807,11 +807,11 @@ There are currently four competing color font formats: two based on vector outli
   )
 }}
 
-Taking a look at usage data paints an interesting picture: 79% of color font usage is using SVG, 19% uses COLR v0, and 2% uses CBDT.
+Taking a look at usage data paints an interesting picture: 79% of color font usage is using `SVG`, 19% uses `COLRv0`, and 2% uses `CBDT`.
 
 We can safely conclude that the image based formats are not popular, and for good reasons: the embedded images don't scale well, and their file sizes are not appropriate for web usage.
 
-The split between the vector color font formats however is more nuanced. While OT-SVG seems to have the upper hand at the moment, COLR still has significant usage. The COLR format has a lot going for it: it is supported by all browsers, it can be used in variable fonts, and it is easy to implement. For those reasons alone, we expect it to become the most popular format. A more cynical take is that it will become the most popular format because Google is <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=306078">refusing to implement OT-SVG support in Chrome and Android</a>. Interestingly, <a hreflang="en" href="https://lists.webkit.org/pipermail/webkit-dev/2021-March/031765.html">Apple is refusing to implement COLR v1</a>, because a lot of COLR v1 features are already supported by OT-SVG. Unfortunately, web developers are caught in the middle of this "color fonts war". We hope this situation is soon resolved and we can all start using color fonts.
+The split between the vector color font formats however is more nuanced. While `SVG` seems to have the upper hand at the moment, `COLR` still has significant usage. The `COLR` format has a lot going for it: it is supported by all browsers, it can be used in variable fonts, and it is easy to implement. For those reasons alone, we expect it to become the most popular format. A more cynical take is that it will become the most popular format because Google is <a hreflang="en" href="https://bugs.chromium.org/p/chromium/issues/detail?id=306078">refusing to implement `SVG` support in Chrome and Android</a>. Interestingly, <a hreflang="en" href="https://lists.webkit.org/pipermail/webkit-dev/2021-March/031765.html">Apple is refusing to implement `COLRv1`</a>, because a lot of `COLRv1` features are already supported by the `SVG` format. Unfortunately, web developers are caught in the middle of this "color fonts war". We hope this situation is soon resolved and we can all start using color fonts.
 
 The CSS specification has been updated to support color fonts to allow <a hreflang="en" href="https://css-tricks.com/colrv1-and-css-font-palette-web-typography/">selection and customization of palettes</a>. Palettes are custom color schemes stored in the font by the type designer. The CSS `font-palette` property allows you to select a palette from the font and the `@font-palette-values` rule allows you to create new palettes or override existing ones. One of the more obvious use cases of this technology is to have light and dark mode palettes built right into the color font. There is a lot of unexplored potential there.
 
