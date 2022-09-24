@@ -201,7 +201,7 @@ We see 94% of sites in desktop and 95% of sites in mobile have a non-zero, non-e
 {{ figure_markup(
   image="hsts-max-age-values-for-requests-in-days.png",
   caption="HSTS max-age values for requests (in days).",
-  description="Column chart showing the HSTS `max-age` for common percentiles. At the 10th percentile it's 30 on desktop and 73 on mobile, at the 25th percentile it's 180 for both, at the 50th percentile it's 365 for both, at the 75th percentile it's 365 for both, and finally at the 90th percentile it's 730 and 730 for both..",
+  description="Column chart showing the HSTS `max-age` for common percentiles. At the 10th percentile it's 30 on desktop and 73 on mobile, at the 25th percentile it's 180 for both, at the 50th percentile it's 365 for both, at the 75th percentile it's 365 for both, and finally at the 90th percentile it's 730 and 730 for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=154290094&format=interactive",
   sheets_gid="1179482269",
   sql_file="hsts_max_age_percentiles.sql",
@@ -399,7 +399,7 @@ And then referencing that in the HTML:
 {{ figure_markup(
   image="csp-script-src-attribute-usage.png",
   caption="CSP `script-src` attribute usage.",
-  description="Column chart showing that `nonce-` is used on 12% of `script-src` CSPs on desktop and 14% on mobile, `unsafe-inline` on 94% and 95% respectively, and `unsafe-eval` on 80% and 78%..",
+  description="Column chart showing that `nonce-` is used on 12% of `script-src` CSPs on desktop and 14% on mobile, `unsafe-inline` on 94% and 95% respectively, and `unsafe-eval` on 80% and 78%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=310998764&format=interactive",
   sheets_gid="323360740",
   sql_file="csp_script_source_list_keywords.sql",
@@ -821,12 +821,12 @@ One of the mechanisms to defend against XSS attacks is by setting a restrictive 
 Cross Origin policies are one of the main mechanisms used to defend against micro-architectural attacks like Cross Site leaks. XS-Leaks are kind of similar to Cross Site Request Forgery, however they infer small pieces of information about the user which are exposed during interactions between websites.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="percentage-of-cross-origin-headers.png",
+  caption="Percentage of Cross Origin headers.",
+  description="Column chart showing `Cross-Origin-Resource-Policy` is used on 0.86% desktop and 1.46% mobile sites, `Cross-Origin-Embedder-Policy` on 0.04% and 0.03% respectively, and `Cross-Origin-Opener-Policy` on 0.23% and 0.45% respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=976367634&format=interactive",
+  sheets_gid="1799124531",
+  sql_file="security_headers_prevalence.sql",
 ) }}
 
 `Cross-Origin-Resource-Policy` is present on 114,111(1.46%) websites in mobile and is the most used cross origin policy. It is used to indicate to the browser whether a resource should be included from cross-origin or not. `Cross-Origin-Embedder-Policy` is now present in 2,559 websites compared to 911 websites last year. We see a similar growth in the adoption of `Cross-Origin-Opener-Policy` as well with 34,968 websites in mobile now having the header compared to 15,727 sites last year. So there is a steady growth in the adoption of all the cross-origin policies, which is great because they can be really helpful in preventing XS-Leak attacks.
@@ -1022,12 +1022,12 @@ There is not much change in the data from last year. `CryptoGetRandomValues` con
 The internet today is filled with bots, and hence there is a constant rise in bad bot attacks. According to <a hreflang="en" href="https://www.imperva.com/resources/reports/2022-Imperva-Bad-Bot-Report.pdf">2022 Bad Bot Report</a> by Imperva, 27.7% of all internet traffic was by bad bots. Bad bots are the ones which try to scrape data and exploit it. According to the report, the end of 2021 saw a surge in bad bot attacks probably because of the log4j vulnerability which is exploitable by bots.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="bot-protection-services-usage.png",
+  caption="Bot protection services usage.",
+  description="Stacked bar chart showing that reCAPTCHA is used on 19.9% of desktop sites, Cloudflare Bot Management on 7.9%, Akamai Bot Manager on 0.6%, Imperva on 0.4%, hCaptcha on 0.1% and other (smaller fractions) on 0.4% of desktop sites, totalling 29.3% of desktop sites using bot protection. For mobile it's similar but slightly less at 18.4%, 6.1%, 0.5%, 0.3%, 0.1%, and 0.3% respectively totalling 25.7% of mobile sites.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1782263355&format=interactive",
+  sheets_gid="1592374295",
+  sql_file="bot_detection.sql",
 ) }}
 
 Our analysis shows that 29% of desktop websites and 26% of mobile websites use a mechanism to fight malicious bots which is a significant increase from last year (11% and 10% respectively). This increase could be because of Cloudflare Bot Management which is a captcha-free solution for protection against bad bots. Last year's data crawl didn't track this, but identifying this was added this year and we see 6% of websites on mobile using it. Usage of reCaptcha has also increased from last year on both desktop and mobile by approximately 9%.
@@ -1044,23 +1044,27 @@ Popularity: widely popular websites may face more targeted attacks than a websit
 Location of the website, where the website developers are based or where the website is hosted can often have impacts on adoption of security features. This can be because of the awareness among developers being different, but can also be because of the laws of the country mandating adoption of certain security practices.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="Adoption of HTTPS per country.png",
+  caption="Adoption of HTTPS per country.",
+  description="Bar chart showing that for New Zealand 95% of sites visited use HTTPS for Nigeria it's 95%, for Australia it's 94%, for Norway it's 94%, for Switzerland it's 94%, for Denmark it's 94%, for Ireland it's 94%, for South Africa it's 93%, for Netherlands it's 93%, for Canada it's 93%, for then there is a gap, and then for Viet Nam it's 85%, for Serbia it's 85%, for Russian Federation it's 85%, for Poland it's 85%, for Iran (Islamic Republic of) it's 85%, for Indonesia it's 85%, for Taiwan, Province of China it's 85%, for Thailand it's 84%, for Korea, Republic of it's 82%, and finally for Japan it's 81% of sites visited.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1218814034&format=interactive",
+  sheets_gid="1838772734",
+  sql_file="feature_adoption_by_country.sql",
+  width=600,
+  height=617
 ) }}
 
 We see a lot of new countries like Nigeria, Norway and Denmark quickly rise to the top in the adoption of HTTPS. It's a good sign to see new countries also adopting widespread security practices because that can be an indication of rising awareness everywhere. Also, the difference between the least adoption and most adoption of HTTPS is reducing, which shows that almost all countries at least strive to have HTTPS by default on their websites.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="adoption-of-csp-and-xfo-per-country.png",
+  caption="Adoption of CSP and XFO per country.",
+  description="Bar chart showing that for mobile sites visited in New Zealand 22% of them use CSP and 38% us XFO, for Australia it's 21% and 35% respectively, for Indonesia it's 21% and 32%, for United States of America it's 20% and 31%, for Ireland it's 20% and 36%, and then there's a gap followed by Ukraine where it's 7% and 21%, for Japan it's 7% and 17%, for Kazakhstan it's 6% and 21%, for Belarus it's 5% and 20%, and finally for the Russian Federation it's 5% for CSP and 20% for XFO.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=651643593&format=interactive",
+  sheets_gid="1838772734",
+  sql_file="feature_adoption_by_country.sql",
+  width=600,
+  height=598
 ) }}
 
 The adoption of CSP and X-Frame-Options (XFO) is very similar to last year. Surprisingly, we see websites in Indonesia have started adopting CSP a lot, even though their adoption of HTTPS continues to be low. The adoption of CSP still seems to be very varied across countries but the gap between adoption of XFO is gradually decreasing. More countries need to increase the adoption of CSP since it is a very important security feature that protects against a varied number of attacks.
@@ -1128,12 +1132,12 @@ Above we see some of the common CMS and blogging sites. A common pattern that we
 Websites that have many visitors may be more prone to targeted attacks given that there are more users with potentially sensitive data to attract attackers. Therefore, it can be expected that widely visited websites invest more in security in order to safeguard their users.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="security-headers-adoption-by-rank.png",
+  caption="Security headers adoption by rank.",
+  description="Column chart showing that on mobile `Strict-Transport-Security` is used on 56.8% of the top 1,000 sites, 44.5% of the top 10,000 sites, 38.0% of the top 100,000 sites, 31.1% of the top million sites, and 25.7% across all sites. For `X-Frame-Options` it's 55.9%, 51.3%, 48.1%, 41.9%, and 31.0% respectively, for `X-Content-Type-Options` it's 51.8%, 48.6%, 45.1%, 42.6%, and 39.8%, for `X-XSS-Protection` it's 40.7%, 34.5%, 31.2%, 27.3%, and 21.2%, for `Expect-CT` it's 29.7%, 33.9%, 31.9%, 24.6%, and 15.5%, for `Content-Security-Policy` it's 27.0%, 20.6%, 17.8%, 16.4%, and 14.6%, for `Report-To` it's 21.3%, 22.6%, 22.7%, 17.3%, and 10.9%, for `Referrer-Policy` it's 16.0%, 15.6%, 14.4%, 13.1%, and 11.6%, for `Content-Security-Policy-Report-Only` it's 8.3%, 5.0%, 3.5%, 2.6%, and 1.9%, for `Permissions-Policy` it's 7.4%, 3.6%, 3.1%, 3.0%, and 2.4%, for `Cross-Origin-Resource-Policy` it's 5.3%, 2.6%, 1.9%, 1.2%, and 1.5%, for `Cross-Origin-Opener-Policy` it's 5.0%, 1.6%, 0.7%, 0.3%, and 0.4%, for `Feature-Policy` it's 0.9%, 1.2%, 1.3%, 1.0%, and 0.6%, for `Cross-Origin-Embedder-Policy` it's 0.2%, 0.2%, 0.2%, 0.1%, and 0.0%, and finally `Clear-Site-Data` is used on 0.0% of sites in all categories.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1055039456&format=interactive",
+  sheets_gid="1909836848",
+  sql_file="security_adoption_by_rank.sql",
 ) }}
 
 We found that `Strict-Transport-Security`, `X-Frame-Options`, and `X-Content-Type-Options` always have more adoption for websites which are more popular. 56.8% of the top 1000 websites in mobile have Strict-Transport-Security, which means these websites care more about serving their content and data only via HTTPS. The less popular websites might have HTTPS enabled, but often seem to not add a `Strict-Transport-Security` header to ensure that their website is always served over HTTPS. The numbers this year are pretty consistent with last year's findings.
@@ -1143,12 +1147,12 @@ We found that `Strict-Transport-Security`, `X-Frame-Options`, and `X-Content-Typ
 Cryptocurrencies continued to grow in popularity this year with more types available for various use cases. With that continued growth and existing economic incentive, cybercriminals have consistently leveraged this to their advantage via [cryptojacking](https://en.wikipedia.org/wiki/Cryptojacking). However the use of crypto miners has overall trended downward since last year. What seems to occur is certain vulnerability events that enable attackers to inject crypto miners into systems on both desktop and mobile triggers a spike in their usage:
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="Cryptominer usage.png",
+  caption="Cryptominer usage.",
+  description="Line chart showing the trends of cryptominer usage from January 2020 to July 2022 for boht desktop and mobile it's between 300 and 700 sites for the until February, where there's a noticable drop to between 100 and 200 sites, followed by a large increase in July and August 2021 to between 800 and 1,00 sites, a drop to less than 400 and a trend downwards to around 100 sites for each, but wiht another spike in May 2022. Mobile has more usage than desktop throughout.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1621924056&format=interactive",
+  sheets_gid="367286091",
+  sql_file="cryptominer_usage.sql",
 ) }}
 
 As an example, around July and August of 2021, there were reports of several cryptojacking campaigns and vulnerabilities1,2,3 which could be the cause for the spikes in cryptominers found in websites around that time. More recently, in April of 2022 hackers attempted to leverage the SpringShell vulnerability to set up and run crypto miners.
@@ -1156,12 +1160,12 @@ As an example, around July and August of 2021, there were reports of several cry
 Getting into the specifics of the cryptominers found in use among websites on both desktop and mobile we found that the share among miners has spread from last year. For example, Coinimp's share has shrunk since last year by about 24% while Minero.cc has grown by about 11%.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="cryptominer-market-share.png",
+  caption="Cryptominer market share.",
+  description="Pie chart showing the market share of cryptomining on mobile. Coinimp has 60.4% of the market share, CoinHive 15.6%, Minero.cc 12.4%, JSEcoin 6.8%, CoinHive Captcha 2.4%, deepMiner 0.8%, Coinhave 0.8%, and finally Crypto-Loot has 0.8% of the market share.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1570078079&format=interactive",
+  sheets_gid="280179954",
+  sql_file="cryptominer_share.sql",
 ) }}
 
 These results suggest that cryptojacking continues to be a serious attack vector each year with usage spikes based on newly emerged vulnerabilities that enable them. Therefore proper diligence is still required in order to mitigate risks in this space.
@@ -1179,12 +1183,12 @@ Well-known URIs are used to designate specific locations to data or services rel
 `security.txt` is a file format for websites to provide a standard for vulnerability reporting. Website providers can provide contact details, PGP key, policy, and other information in this file. White hat hackers and penetration testers can use this information to conduct security analyses on these websites and report a vulnerability.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="use-of-security-txt-properties.png",
+  caption="Use of `security.txt` properties.",
+  description="Column chart showing `signed` is used on 0.6% of desktop and 0.4% of mobile sites use `security.txt`, `canonical` is used on 4.2% and 3.5% respecitvely, `encryption` on 3.0% and 2.4%, `expires` on 3.0% and 2.3%, and finally `policy` is used on 7.3% of desktop and 6.8% of mobile sites use `security.txt`.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=446092062&format=interactive",
+  sheets_gid="337263220",
+  sql_file="well-known_security.sql",
 ) }}
 
 The percentage of `security.txt` URIs with the `expires` property has increased from 0.7% to 2.3% this year. The `expires` property is a required property based on the standard, so it is good to see more websites adhering to the standard. `policy` continues to be the most popular property in a `security.txt` URI. `policy` is very essential in a `security.txt` URI since it describes the steps to be followed by a security researcher to report a vulnerability.
@@ -1194,12 +1198,12 @@ The percentage of `security.txt` URIs with the `expires` property has increased 
 The `change-password` well-known URI is a specification under the webappsec working group of W3C which is in editor's draft state right now. This specific well-known URI was suggested as a way for users and softwares to easily identify the link to be used for changing passwords.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="use-of-change-password-endpoint.png",
+  caption="Use of `change-password` endpoints.",
+  description="Column chart showing `change-password` end point is used on 0.28% of desktop sites and 0.26% of mobile sites.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1340997331&format=interactive",
+  sheets_gid="168419039",
+  sql_file="well-known_change-password.sql",
 ) }}
 
 The adoption of this well-known URI is still pretty low. The specification is still work-in-progress so it's understandable that not many websites have started adopting it. Also, not all websites will have a change-password form, especially if they don't have a sign-in system for their website.
@@ -1209,12 +1213,12 @@ The adoption of this well-known URI is still pretty low. The specification is st
 This particular `well-known` URI determines the reliability of a website's HTTP response status code. This URI is also still in editor's draft state and may change in the future. The idea behind this `well-known` URI is that it should never exist in any website. So this `well-known` URI should never respond with an `ok-status`. If it redirects and returns an "ok-status", that means the website's status codes are not reliable.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="statuses-of-the-resource-that-should-not-exist-whose-status-code-should-not-be-200-endpoint.png",
+  caption="Statuses of the `resource-that-should-not-exist-whose-status-code-should-not-be-200` endpoint.",
+  description="Stacked bar chart showing status 200 is returned for 10% of desktop and 9% of mobile sites, status not ok (not 200-299) is returned for 84% of both, and other (201-299) is 6% of both desktop and mobile sites.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1477977449&format=interactive",
+  sheets_gid="1163882629",
+  sql_file="well-known_resource-not-be-200.sql",
 ) }}
 
 We found that 84% of websites in both mobile and desktop respond with a not-ok status for this well-known URI. The good thing about this specification is if websites are correctly configured, this specification should automatically work and won't need website developers to make any specific changes.
