@@ -42,12 +42,12 @@ Transport Layer Security ensures secure communication of data and resources betw
 94% of total requests in desktop and 93% of total requests in mobile are made over HTTPS. All major browsers now have an HTTPS-only mode to show warning if a website uses HTTP instead of HTTPS.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="https-usage-for-sites.png",
+  caption="HTTPS usage for sites.",
+  description="Bar chart showing 89% of desktop sites use HTTPS while 11% do not. There's slightly less adoption on mobile where 85% of sites using HTTPS while 15% do not.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1343950152&format=interactive",
+  sheets_gid="1806760937",
+  sql_file="home_page_https_usage.sql",
 ) }}
 
 The percentage of homepages that are served over HTTPS continues to be lower compared to the total requests because a lot of the requests to a website are dominated by third-party services like fonts, CDN, etc. which have a higher HTTPS adoption. We do see a slight increase from last year in the percentage. 89.3% of homepages are now served over HTTPS on desktop compared to 84.3% last year. Similarly, in our mobile dataset, 85.5% of homepages are served over HTTPS compared to 81.2% last year.
@@ -59,12 +59,12 @@ It's important, not only to use HTTPS, but also to use an up-to-date TLS version
 TLS v1.3 is the latest and was released in August 2018 by IETF. It's <a hreflang="en" href="https://www.cloudflare.com/en-in/learning/ssl/why-use-tls-1.3/">much faster and is more secure</a> than TLS v1.2. Many of the major vulnerabilities in TLS v1.2 had to do with older cryptographic algorithms which TLS v1.3 removes.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="distribution-of-tls-version-for-web-pages.png",
+  caption="Distribution of TLS version for web pages.",
+  description="Bar chart showing 67% of desktop web pages use TLS 1.3, and 33% use TLS 1.2 and QUIC is not registered. On mobile it's similar with 70% on TLS 1.3, 30% on TLS 1.2 and again QUIC being too small to register.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1390978067&format=interactive",
+  sheets_gid="1385583211",
+  sql_file="tls_versions_pages.sql",
 ) }}
 
 In the above graph, we see that 70% of homepages in mobile and 67% of homepages in desktop are served over TLSv1.3 which is approximately 7% more than last year. So, we are seeing some constant shift from use of TLS v1.2 to TLS v1.3
@@ -74,23 +74,23 @@ In the above graph, we see that 70% of homepages in mobile and 67% of homepages 
 A cipher suite is a set of cryptographic algorithms that the client and server must agree on before they can begin communicating securely using TLS.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="distribution-of-cipher-suites.png",
+  caption="Distribution of cipher suites.",
+  description="Stacked bar chart showing that on desktop 79% of HTTPS requests use `AES_128_GCM`, 19% use `AES_256_GCM`, 2% use `AES_256_CBC`, 1% use `CHACHA20_POLY1305`, and 0% use `AES_128_CBC`. On mobile it's almost identical and 79% of HTTPS requests use `AES_128_GCM`, 18% use `AES_256_GCM`, 1% use `AES_256_CBC`, 1% use `CHACHA20_POLY1305`, and 0% use `AES_128_CBC`.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1789949340&format=interactive",
+  sheets_gid="711514835",
+  sql_file="tls_cipher_suite.sql",
 ) }}
 
 Modern [Galois/Counter Mode (GCM)](https://en.wikipedia.org/wiki/Galois/Counter_Mode) cipher modes are considered to be much more secure since they are not vulnerable to <a hreflang="en" href="https://blog.qualys.com/product-tech/2019/04/22/zombie-poodle-and-goldendoodle-vulnerabilities">padding attacks</a>. TLS v1.3 <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc8446#page-133">only supports GCM and other modern block cipher modes</a> making it more secure. Another factor that determines the usage of a cipher suite is the key size for the encryption and decryption. We still see 128-bit key size being widely used. Hence, we don't see much difference from last year's graph with  `AES_128_GCM` continuing to be the most used cipher suite with 79% usage.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="forward-secrecy-support.png",
+  caption="Forward secrecy support.",
+  description="Stacked bar chart showing 97% of requests support forward secrecy on both desktop and mobile and 3% do not.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=298331860&format=interactive",
+  sheets_gid="1454804483",
+  sql_file="tls_forward_secrecy.sql",
 ) }}
 
 TLS v1.3 also makes [forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy) compulsory. We see 97% of requests in both mobile and desktop using forward secrecy.
@@ -175,7 +175,7 @@ HTTP Strict Transport Security (HSTS) is a response header that informs the brow
 
 {{ figure_markup(
   content="25%",
-  caption="Mobile requests that have HSTS header.",
+  caption="Mobile requests that have an HSTS header.",
   classes="big-number",
   sheets_gid="822440544",
   sql_file="hsts_attributes.sql",
@@ -186,17 +186,26 @@ HTTP Strict Transport Security (HSTS) is a response header that informs the brow
 HSTS is set using the `Strict-Transport-Security` header that can have three different directives: `max-age`, `includeSubDomains`, and `preload`. `max-age` helps denote the time, in seconds, that the browser should remember to access the site only using HTTPS. `max-age` is a compulsory directive for the header.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="hsts-directives-usage.png",
+  caption="HSTS directives usage.",
+  description="Column chart showing `preload` is used on 19% of desktop and 19% of mobile HSTS responses, `includeSubdomains` on 37% and 34% respectively, 6% and 5% respectively have a zero max-age, and 94% and 95% respectively have a valid max-age.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=683864207&format=interactive",
+  sheets_gid="822440544",
+  sql_file="hsts_attributes.sql",
 ) }}
 
 We see 94% of sites in desktop and 95% of sites in mobile have a non-zero, non-empty `max-age`.
 
 34% of request responses for mobile, and 37% for desktop include `includeSubdomain` in the HSTS settings. The number of responses with the `preload` directive, which is [not part of the HSTS specification](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security#preloading_strict_transport_security) is lower. It needs a minimum `max-age` of 31,536,000 seconds (or 1 year) and also the `includeSubdomain` directive to be present.
+
+{{ figure_markup(
+  image="hsts-max-age-values-for-requests-in-days.png",
+  caption="HSTS max-age values for requests (in days).",
+  description="Column chart showing the HSTS `max-age` for common percentiles. At the 10th percentile it's 30 on desktop and 73 on mobile, at the 25th percentile it's 180 for both, at the 50th percentile it's 365 for both, at the 75th percentile it's 365 for both, and finally at the 90th percentile it's 730 and 730 for both..",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=154290094&format=interactive",
+  sheets_gid="1179482269",
+  sql_file="hsts_max_age_percentiles.sql",
+) }}
 
 The median value for `max-age` attribute in HSTS headers over all requests is 365 days in both mobile and desktop. https://hstspreload.org/ recommends a `max-age` of 2 years once the HSTS header is set up properly and verified to not cause any issues.
 
@@ -206,28 +215,28 @@ An HTTP cookie is a set of data about the user that the server sends to the brow
 
 If a cookie is not set properly, it can be susceptible to many different forms of attacks such as session hijacking, Cross-Site Request Forgery (CSRF), Cross-Site Script Inclusion (XSSI) and various other Cross-Site Leak vulnerabilities.
 
-### Attributes
+### Cookie attributes
 
 To defend against the above mentioned threats, developers can use 3 different attributes in a cookie: `HttpOnly`, `Secure` and `SameSite`. The `Secure` attribute is similar to the `HSTS` header as it also ensures that the cookies are always sent over HTTPS, preventing Man in the Middle attacks. `HttpOnly` ensures that a cookie is not accessible from any JavaScript code, preventing Cross-Site Scripting Attacks.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="cookie-attributes-desktop.png",
+  caption="Cookie attributes (desktop).",
+  description="Column chart showing that on desktop the `HttpOnly` attribute is used on 36% of first-party cookies, and 21% of third-party attributes, the `Secure` attribute is used on 37% of first-party cookies, and 90% of third-party attributes, and finally the `SameSite` attribute is used on 45% of first-party cookies, and 88% of third-party attributes.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=528777115&format=interactive",
+  sheets_gid="168091712",
+  sql_file="cookie_attributes.sql",
 ) }}
 
 There are 2 different kinds of cookies—First Party and Third Party. First-party cookies are usually set by the direct server that you are visiting. Third-party cookies are created by third-party services and are often used for tracking and ad-serving. 37% of the first-party cookies on the desktop have `Secure` and 36% of them have `HttpOnly`. However, in the third party cookies we see that 90% of cookies have `Secure` and 21% of cookies have `HttpOnly`. The percentage of `HttpOnly` is less in third party cookies, because they mostly do want to allow access to them by JavaScript code.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="sameSite-cookie-attributes-desktop.png",
+  caption="SameSite cookie attributes (desktop).",
+  description="Stacked bar chart showing that on desktop 60.8% first-party cookies use `SameSite=lax`, 2% of them use `SameSite=strict` and 37% `SameSite=none`. For third-party cookies it's 1.5% `SameSite=lax`, 0% `SameSite=strict` and 98% `SameSite=none`.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1714102327&format=interactive",
+  sheets_gid="168091712",
+  sql_file="cookie_attributes.sql",
 ) }}
 
 The `SameSite` attribute can be used to prevent CSRF attacks by telling the browser whether to send the cookie to cross-site requests. `Strict` value allows the cookie to be sent only to the site where it originated while `Lax` value allows cookies to be sent to cross-site requests only if a user is navigating to the origin site by following a link. For `None` value, cookies are sent to both originating and cross-site requests. If `SameSite=None` is set, the cookie's `Secure` attribute must also be set (or the cookie will be blocked). We see that 61% of first-party cookies with the `SameSite` attribute have the value `Lax`. Most browsers default to `SameSite=Lax` if no `SameSite` attribute is present for the cookie hence we see that it continues to dominate the charts. In third party cookies, `SameSite=None` still continues to be super high with 98% cookies in desktop, because third-party cookies do want to be sent across cross-site requests.
@@ -237,12 +246,12 @@ The `SameSite` attribute can be used to prevent CSRF attacks by telling the brow
 There are two different ways to set the time when a cookie is deleted: `Max-Age` and `Expires`. `Expires` uses a specific date (relative to the client) to determine when the cookie is deleted whereas `Max-Age` uses a duration in seconds.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="cookie-age-in-days-desktop.png",
+  caption="Cookie age (in days) for desktop.",
+  description="Column chart showing the the maximum cookie age on desktop depending on `max-age` and `expires` and also the \"Real maximum age\" based on both, at common percentiles For the 10th percentile it's 1 day based on `max-age`, 10 days based on `expires`, and 7 days for both (note the percentiles for all three are caluclated independently hence why these do not match). For the 25th percentile it's 30, 60, and 60 respectively, for the 50th percentile it's 365 for all, for the 75th percentile it's also 365, and finally for the 90th percentile it's 730 for all.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=2015811517&format=interactive",
+  sheets_gid="1811539513",
+  sql_file="cookie_age_percentiles.sql",
 ) }}
 
 Unlike last year, where we saw that the median for `Max-Age` was 365 days but the median for `Expires` was 180 days, this year it's around 365 days for both. Hence the median for real maximum age has gone up from 180 days to 365 days this year. Even though the `Max-Age` is 729 days and `Expires` is 730 days in the 90th percentile, Chrome has been planning to put a cap of 400 days for both `Max-Age` and `Expires`.
@@ -353,12 +362,12 @@ It works by ensuring that a predefined trusted set of content rules is upheld an
 We're seeing a 14% relative increase in adoption for `Content-Security-Policy` header from 2021's data of 12.8% to 2022's data of 14.6% which demonstrates a growing trend of adoption across developers and the web security community. This is positive, though it's still a minority of sites using this more advanced feature.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="csp-directive-usage.png",
+  caption="CSP directive usage.",
+  description="Bar chart showing `upgrade-insecure-requests` is used on 54% of desktop and 56% of mobile pages that use CSP, `frame-ancestors` on 54% and 53% respectively, `block-all-mixed-content` on 26% and 28%, `default-src` on 19% and 16%, `script-src` on 17% and 15%, `style-src` on 14% and 12%, `img-src` on 13% and 11%, `font-src` on 11% and 9%, `connect-src` on 10% and 8%, and finally `frame-src` is used on 10% of desktop and 7% of mobile pages that use CSP.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=417279434&format=interactive",
+  sheets_gid="1303493233",
+  sql_file="csp_directives_usage.sql",
 ) }}
 
 CSP is most useful, when served on the HTML response itself and here we're seeing consistent growing adoption in mobile requests serving a CSP header with 7.2% two years ago, 9.3% last year, and this year a total of 11.2% of mobile homepages.
@@ -388,12 +397,12 @@ And then referencing that in the HTML:
 ```
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="csp-script-src-attribute-usage.png",
+  caption="CSP `script-src` attribute usage.",
+  description="Column chart showing that `nonce-` is used on 12% of `script-src` CSPs on desktop and 14% on mobile, `unsafe-inline` on 94% and 95% respectively, and `unsafe-eval` on 80% and 78%..",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=310998764&format=interactive",
+  sheets_gid="323360740",
+  sql_file="csp_script_source_list_keywords.sql",
 ) }}
 
 The statistics collected for all desktop HTTP requests show that `unsafe-inline` is present on  for 94%, and `unsafe-eval`on 80% of all `script-src` values. This demonstrates the real challenges in locking down a website's application code to avoid inline JavaScript code. Furthermore, Only 14% of all above described requests employ a `nonce-` directive which assists in securing the use of unsafe inline JavaScript code.
@@ -401,12 +410,12 @@ The statistics collected for all desktop HTTP requests show that `unsafe-inline`
 Perhaps speaking to the high complexity of defining a content security policy is the statistics we observe for CSP header length.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="csp-header-length.png",
+  caption="CSP header length.",
+  description="Column chart showing that at the 10th percentile the CSP header length is 22 bytes on desktop and mobile, at the 25th it's 25th on both, at the 50th it's 64 on desktop and 70 on mobile, at the 75th it's 75 bytes on both, and finally at the 90th percentile it's 494 bytes on desktop and 334 bytes on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=311379301&format=interactive",
+  sheets_gid="54898794",
+  sql_file="csp_number_of_allowed_hosts.sql",
 ) }}
 
 At a median ranking, 50% of requests are only up to 70 bytes in size for desktop requests. This is a slight drop from last year's report which showed both desktop and mobile requests at 75 bytes in size. The 90th percentile of requests and above has grown from last year's 389 bytes for desktop requests, to 494 bytes this year. This demonstrates a slight progress towards more complex and complete security policies.
@@ -523,12 +532,12 @@ Subresource integrity is specified as a base64 string of a computed hash of one 
 Consistent with last year's report, SHA384 continues to demonstrate the majority of SRI hash types observed between all available hash functions.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="sri-hash-function-usage.png",
+  caption="SRI hash function usage.",
+  description="Bar chart showing that `sha384` is used as the SRI hashing function on 58% of desktop and 61% of mobile SRIs, `sha256` on 32% and 31% respectively, and `sha512` on 11% and 10% respectively.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=699960446&format=interactive",
+  sheets_gid="1419400151",
+  sql_file="sri_hash_functions.sql",
 ) }}
 
 CDNs are no strangers to Subresource Integrity and provide secure defaults to their consumers by including a Subresource Integrity value as part of their URL references for content to be served on the page.
@@ -719,12 +728,12 @@ This is largely known as a clickjacking attack and is one of many other security
 To mitigate these concerns the HTML specification (version 5) introduced the `sandbox` attribute that may be applied to iframe elements. It acts as an allowlist and if kept empty it essentially does not enable any capabilities within the iframe element. This results in no access to page interactivity like pop-ups, no permissions to run JavaScript code, and no access to cookies.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="iframe-sandbox-directive-usage.png",
+  caption="iframe `sandbox` directive usage.",
+  description="Bar chart showing that `allow-scripts` is used on 100% of desktop and mobile pages with iframes, `allow-same-origin` also on 100% of both, `allow-popups` on 82% of desktop and 85% of mobile, `allow-forms` on 81% and 84% respectively, `allow-popups-to-escape-sandbox` on 80% and 83%, `allow-top-navigation-by-user-activation` on 59% and 61%, `allow-top-navigation` on 21% and 22%, and finally `allow-modals` on 20% of desktop and 21% of mobile pages with iframes.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=1144896878&format=interactive",
+  sheets_gid="245152438",
+  sql_file="iframe_sandbox_directives.sql",
 ) }}
 
 The above chart of the 2022 data shows that more than 99% of websites with a `sandbox` attribute enable the `allow-scripts` and `allow-same-origin` permissions.
@@ -742,12 +751,14 @@ There are many different attacks that can exploit a website, and it's almost nev
 Security headers are one of the most common ways of preventing attacks by restricting the kind of traffic and data flow. But most of these security headers have to be set manually by website developers. Thus, the presence of security headers are often a good indication of the security hygiene that the developers of the website follow.
 
 {{ figure_markup(
-  image="TODO.png",
-  caption="TODO.",
-  description="TODO.",
-  chart_url="TODO",
-  sheets_gid="TODO",
-  sql_file="TODOsql",
+  image="security-header-adoption-changes.png",
+  caption="Security header adoption changes.",
+  description="Bar chart showing security header adoption changes from 2021 to 2022. For `X-Frame-Options` it's growth from 29.4% to 31.0%, for `Strict-Transport-Security` it's grown from 22.9% to 25.7%, for `X-XSS-Protection` it's grown from 20.0% to 21.2%, for `Expect-CT` it's grown from 13.4% to 15.5%, for `Content-Security-Policy` it's grown from 12.8% to 14.6%, for `Referrer-Policy` it's grown from 10.0% to 11.6%, for `Report-To` it's shrunk from 11.9% to 10.9%, for `Permissions-Policy` it's grown from 1.3% to 2.4%, for `Content-Security-Policy-Report-Only` it's 1.4% to 1.9%, for `Cross-Origin-Resource-Policy` it's grown from 1.4% to 1.5%, for `Feature-Policy` it's remained at 0.6% and 0.6% across both years, for `Cross-Origin-Opener-Policy` it's grown from 0.2% to 0.4%, for `Cross-Origin-Embedder-Policy` and `Clear-Site-Data` it's 0% across both years.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=479752873&format=interactive",
+  sheets_gid="1799124531",
+  sql_file="security_headers_prevalence.sql",
+  width=600,
+  height=496
 ) }}
 
 The most widely used security mechanism is still the X-Content-Type-Options header, which is used on 40% of the websites we crawled on mobile, to protect against MIME-sniffing attacks. This header is followed by the X-Frame-Options header, which is enabled on 30% of all sites. We don't see much difference from last year's data with a gradual increase in adoption of all the security headers but the ranking of security headers by percentage usage is the same.
