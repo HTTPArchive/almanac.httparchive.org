@@ -384,7 +384,6 @@ That's impressive—but gives us little to work with other than saying that Slid
 
 What are the next popular custom elements that are not part of Slider Revolution?
 
-
 <figure>
   <table>
     <thead>
