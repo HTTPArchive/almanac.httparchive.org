@@ -35,8 +35,8 @@ There's much to be curious about when it comes to how we write HTML. We can ask 
     <thead>
       <tr>
         <th>Doctype</th>
-        <th>desktop</th>
-        <th>mobile</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
       </tr>
     </thead>
     <tbody>
@@ -314,8 +314,8 @@ What's the least used HTML element that's part of the current standard, you ask?
     <thead>
       <tr>
         <th>Custom element</th>
-        <th>desktop</th>
-        <th>mobile</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
       </tr>
     </thead>
     <tbody>
@@ -390,8 +390,8 @@ What are the next popular custom elements that are not part of Slider Revolution
     <thead>
       <tr>
         <th>Custom element</th>
-        <th>desktop</th>
-        <th>mobile</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
       </tr>
     </thead>
     <tbody>
