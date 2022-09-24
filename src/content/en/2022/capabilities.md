@@ -3,19 +3,19 @@
 title: Capabilities
 description: Capabilities chapter of the 2022 Web Almanac covering brand-new, powerful web platform APIs that give web apps access to hardware interfaces, enhance web-based productivity apps, and more.
 authors: [MichaelSolati]
-reviewers: [webmaxru, hemanth, beaufortfrancois, tomayac, christianliebel]
+reviewers: [tomayac, christianliebel]
 analysts: [tunetheweb]
 editors: [tunetheweb]
 translators: []
-MichaelSolati_bio: Technically sophisticated Developer Advocate with a dynamic collection of skills and experience. Talent for efficiently and creatively designing web-based applications utilizing modern development technologies, tools, and methodologies. Passion for championing the development of developers and customer skills/knowledge through expert training abilities and tools. Proven track record of successfully delivering optimized results for strategic technical projects and initiatives.
+MichaelSolati_bio: Michael is a Developer Advocate at Amplication, focusing on helping developers build APIs and drink IPAs. Additionally, he is a Web GDE and has found his love in creating compelling experiences on the web and the voodoo ways of the web...
 results: https://docs.google.com/spreadsheets/d/13S9FRj8OPRtoMPb94jFh6pPNz3lNS9yztIaorZYe288/
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: The Capabilities Project allows applications to migrate to the web, removing some barriers associated with platform-specific applications.
+featured_stat_1: 38
+featured_stat_label_1: Capabilities were found used on one site.
+featured_stat_2: 10.10%
+featured_stat_label_2: Desktop sites use the Async Clipboard API.
+featured_stat_3: ~8%
+featured_stat_label_3: Sites on mobile and desktop use the Web Share API.
 ---
 
 ## Introduction
@@ -86,7 +86,6 @@ Both read and write access to the clipboard is available on modern versions of C
 ) }}
 
 The Async Clipboard API saw growth in usage from 8.91% in 2021 to 10.10% in 2022 on desktop. On mobile, there was also growth from 8.25% in 2021 to 9.27% in 2022. As a result, this year, the Async Clipboard API was the most used API on both desktop and mobile, beating the Web Share API (last year's most used API).
-
 
 ## Web Share API
 
@@ -236,7 +235,7 @@ navigator.mediaSession.metadata = new MediaMetadata({
 
 The Media Session API is available on modern versions of Chrome, Edge, Firefox, and Safari.
 
-### Usage of Media Session API
+### Usage of the Media Session API
 
 {{ figure_markup(
   caption="Usage of Media Session API on mobile.",
@@ -272,7 +271,7 @@ console.log('This device has at least ', memory, 'GiB of RAM.');
 
 The Device Memory API is only available on modern versions of Chrome and Edge.
 
-### Usage of Device Memory API
+### Usage of the Device Memory API
 
 {{ figure_markup(
   caption="Usage of Device Memory API on mobile.",
@@ -361,7 +360,7 @@ Web applications must also have a service worker to receive push notifications f
 
 The Push API is available on modern versions of Chrome, Edge, and Firefox.
 
-### Usage of Push API
+### Usage of the Push API
 
 {{ figure_markup(
   caption="Usage of Push API on mobile.",
