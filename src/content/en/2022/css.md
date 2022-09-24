@@ -34,7 +34,7 @@ Each year, we see that CSS grows in size, and 2022 was no exception.
 {{ figure_markup(
     image="stylesheet-transfer-size.png",
     caption="Distribution of the stylesheet transfer size by page.",
-    description="TODO",
+    description="Bar graph showing the 10, 25, 50, 75, and 90th percentiles of stylesheet transfer sizes per page. For mobile pages, the values are 6, 28, 68, 139, and 256 KB. Across all percentiles these stats tend to be lower than desktop by less than 10 KB.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1081662712&format=interactive",
     sheets_gid="1921790724",
     sql_file="stylesheet_kbytes.sql"
@@ -48,7 +48,7 @@ The desktop page with the greatest CSS weight was slightly smaller than last yea
 {{ figure_markup(
     image="stylesheet-count.png",
     caption="Distribution of the number of stylesheets per page.",
-    description="TODO",
+    description="Bar graph showing the 10, 25, 50, 75, and 90th percentiles of the number of stylesheets per page. The values for desktop and mobile pages are nearly identical at 1, 3, 7, 13, and 22 stylesheets per page respectively.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=358463962&format=interactive",
     sheets_gid="398646778",
     sql_file="stylesheet_count.sql"
@@ -62,7 +62,7 @@ Last year the record was broken for the number of stylesheets loaded by a single
 {{ figure_markup(
     image="rules-per-page.png",
     caption="Distribution of the total number of style rules per page.",
-    description="TODO",
+    description="Bar graph showing the 10, 25, 50, 75, and 90th percentiles of the number of style rules per page. Mobile and desktop pages tend to be very similar. The values for mobile are 52, 224, 613, 1,197, and 2,023 rules per page.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=2137701589&format=interactive",
     sheets_gid="1977925185",
     sql_file="rules_per_stylesheet.sql"
@@ -74,7 +74,7 @@ Taking a look at the number of style rules in a page showed an increase across a
 {{ figure_markup(
     image="rules-per-stylesheet.png",
     caption="Distribution of the number of rules per stylesheet.",
-    description="TODO",
+    description="Bar graph showing the 10, 25, 50, 75, and 90th percentiles of the number of rules per stylesheet. Mobile and desktop values are nearly identical. On mobile pages, the values are 0, 4, 31, 110, and 285 rules per stylesheet.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=56198269&format=interactive",
     sheets_gid="1977925185",
     sql_file="rules_per_stylesheet.sql"
@@ -94,7 +94,7 @@ It's a little early to see widespread usage of this new method of managing the c
 {{ figure_markup(
     image="top-selector-classes.png",
     caption="The most popular class names by the percent of pages.",
-    description="TODO",
+    description="Bar graph showing the CSS class names used on the most pages. Mobile and desktop have similar results. On mobile the top class name is active at 47% of pages. Next is fa on 33% of pages, other classes prefixed with fa on 32%, and classes prefixed with wp on 31%. The rest of the top 10 classes in descending order are: button with 27% adoption, pull-right, emoji, and disabled at 26%, and finally pull-left and title at 25%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1082092053&format=interactive",
     height="691",
     sheets_gid="1020483137",
@@ -109,7 +109,7 @@ As in 2020 and 2021 the most popular class name on the web is active. The `fa`, 
 {{ figure_markup(
     image="top-selector-ids.png",
     caption="The most popular ID names by percent of pages.",
-    description="TODO",
+    description="Bar chart showing the CSS IDs used on the most pages. Mobile and desktop trends are similar. The ID content is used on 15% of pages, followed by footer on 12%, header, fb-root, fb_dialog_loader_close, fb_dialog_ipad_overlay, and fb_dialog_loader_spinner all on 10%, then respond and comments on 9%, and finally main on 8% of pages.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=224121847&format=interactive",
     height="497",
     sheets_gid="756835829",
@@ -123,8 +123,8 @@ The name `content` is once again the most popular ID name, followed by `footer`,
 
 {{ figure_markup(
     image="important-adoption.png",
-    caption="The distribution of the number of !important properties per page.",
-    description="TODO",
+    caption="The distribution of the number of `!important` properties per page.",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of the number of !important properties used per page. On mobile pages, the values are 0%, 1%, 2%, 5%, and 9%, respectively. Desktop values are the same.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=316255168&format=interactive",
     sheets_gid="1802353995",
     sql_file="meta_important_adoption.sql"
@@ -135,8 +135,8 @@ The use of `!important` has slightly increased for the top two percentiles this 
 
 {{ figure_markup(
     image="important-props.png",
-    caption="The top properties that !important is applied to by percent of pages.",
-    description="TODO",
+    caption="The top properties that `!important` is applied to by percent of pages.",
+    description="Bar chart showing the most popular properties used with !important. For mobile pages, the values are display on 83% of pages, color on 77%, width on 76%, height on 74%, padding on 72%, background, background-color, and margin each on 70%, border on 69%, and finally font-size on 64%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1202340370&format=interactive",
     height="604",
     sheets_gid="377488072",
@@ -201,7 +201,7 @@ Except for desktop at the 25th percentile, median specificity values are exactly
 {{ figure_markup(
     image="pseudo-classes.png",
     caption="Most popular pseudo-classes by percent of pages.",
-    description="TODO",
+    description="Bar chart showing the pseudo-classes used on the most pages. On mobile, the values are hover on 91%, before on 77%, focus on 76%, after on 75%, active on 73%, first-child on 63%, last-child on 60%, not on 59%, after which the popularity drops quickly with visited on 48%, root on 45%, nth-child on 39%, link on 34%, disabled on 29%, checked on 22%, and finally -ms-input-placeholder on 19%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=108638805&format=interactive",
     height="612",
     sheets_gid="370286500",
@@ -216,7 +216,7 @@ Last year it was noted that `:focus-visible`, a way to style elements in focus i
 {{ figure_markup(
     image="pseudo-elements.png",
     caption="Most popular pseudo-elements by percent of pages.",
-    description="TODO",
+    description="Bar chart showing the unprefixed pseudo-elements used on the most pages. For mobile, that is before on 41%, after on 38%, placeholder on 11%, selection on 9%, root and first-letter both on 2%, marker on 1%, and finally backdrop, full-page-media, and file-selector-button barely registering less than 1% of pages.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1671689923&format=interactive",
     height="500",
     sheets_gid="425572900",
@@ -235,7 +235,7 @@ Use of the `::marker` pseudo-element has now made 1%, showing that people are sl
 {{ figure_markup(
     image="attribute-selectors.png",
     caption="Most popular attribute selectors by percent of pages.",
-    description="TODO",
+    description="Bar char showing the attribute selectors used by the most pages. The top value is type used on 54% of pages, then class on 37%, disabled on 24%, dir on 17%, role and title on 11%, hidden and href on 10%, aria-disabled on 9%, style and src on 8%, controls and id on 7%, lang and aria-hidden on 5%, followed by tabindex, name, data-type, and aria-selected all on 4%, and finally multiple on 3% of pages.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1566442848&format=interactive",
     height="675",
     sheets_gid="1504728475",
@@ -254,7 +254,7 @@ CSS provides multiple ways to specify values and units, either in set lengths, o
 {{ figure_markup(
     image="length-units.png",
     caption="Most popular `<length>` units by percent of pages.",
-    description="TODO",
+    description="Bar chart showing the length units used on the most pages. The most popular length unit is pixels (px), used on 71% of pages, followed by percentage (%) on 18%, em on 8%, and rem on 2%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1742992649&format=interactive",
     sheets_gid="161285719",
     sql_file="units_frequency.sql"
@@ -400,7 +400,7 @@ The up and down arrows on this chart show the change from the [results in 2021](
 {{ figure_markup(
     image="font-relative-length-units.png",
     caption="The most popular font-relative length units.",
-    description="TODO",
+    description="Pie chart showing the relative popularity of font-relative length units on mobile pages. em makes up 79.9% of occurrences, rem on 19.5%, and ch on 0.5%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1099832022&format=interactive",
     sheets_gid="161285719",
     sql_file="units_frequency.sql"
@@ -412,7 +412,7 @@ While `em` remains the most popular method of sizing fonts, the swing to `rem` c
 {{ figure_markup(
     image="zero-length-units.png",
     caption="The units (or lack thereof) used on zero-length values.",
-    description="TODO",
+    description="Pie chart showing the relative popularity of units used on zero-length values. The most popular is the unitless 0 on 86.6% of pages, then px on 12.7%, and other units on 0.7%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=782579377&format=interactive",
     sheets_gid="242535636",
     sql_file="units_zero.sql"
@@ -426,7 +426,7 @@ There are a few properties that allow bare `<number>` units (for example, `line-
 {{ figure_markup(
     image="calc-props.png",
     caption="The most popular properties using `calc()` functions.",
-    description="TODO",
+    description="Bar chart showing the calc() properties used on the most pages. The most popular is width on 27% of pages, followed by max-width and top on 14%, height on 13%, left on 10%, max-height on 8%, right and margin-left on 6%, min-height on 5%, margin-right on 4%, padding-left and margin-top on 3%, then padding-bottom, margin, bottom, padding-right, flex-basis, and transform all on 2%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=203539180&format=interactive",
     height="695",
     sheets_gid="2120544742",
@@ -439,7 +439,7 @@ As in previous years, the most popular use of `calc()` is in values for width. T
 {{ figure_markup(
     image="calc-units.png",
     caption="The most popular length units used in `calc()` functions.",
-    description="TODO",
+    description="Bar chart showing the calc() units used on the most pages. Percentage (%) and pixels (px) are both used on 42% of pages, viewport width (vw), viewport height (vh), and em are all used on 8% of pages, and rem is used on 6%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1749089658&format=interactive",
     sheets_gid="1431660156",
     sql_file="calc_units.sql"
@@ -451,7 +451,7 @@ The percentage of sites using pixels in calculations has decreased 9 points, it 
 {{ figure_markup(
     image="calc-operators.png",
     caption="The most popular operators used in `calc()` functions.",
-    description="TODO",
+    description="Bar chart showing the calc() operators used on the most pages. The subtraction operator (-) is used on 42% of pages, followed by addition (+) on 18%, division (/) on 11%, and multiplication (*) on 10%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1571752832&format=interactive",
     sheets_gid="220199231",
     sql_file="calc_operators.sql"
@@ -463,7 +463,7 @@ Subtraction remains the clear favorite in terms of calculation operators, but al
 {{ figure_markup(
     image="calc-unit-complexity.png",
     caption="The number of unique units used in `calc()` values.",
-    description="TODO",
+    description="Bar chart showing the distribution of the number of units per calc() occurrence. 79% of calc() occurrences use two units, followed by 20% of occurrences that use one unit. Only 1% of occurrences use three or more units.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=220014387&format=interactive",
     sheets_gid="87407358",
     sql_file="calc_complexity_units.sql"
@@ -477,7 +477,7 @@ As last year, `calc()` values tend to be fairly simple. The majority using two v
 {{ figure_markup(
     image="keywords.png",
     caption="Usage of global keyword values.",
-    description="TODO",
+    description="Bar chart showing the global keywords used on the most pages. Inherit is used on 87% of pages, followed by initial on 64%, unset on 51%, and revert on 4%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1675598127&format=interactive",
     sheets_gid="393924630",
     sql_file="keyword_totals.sql"
@@ -491,7 +491,7 @@ Last year the use of global keywords had risen significantly, in 2022 `inherit` 
 {{ figure_markup(
     image="custom-property-adoption.png",
     caption="Usage of custom properties over the past four years.",
-    description="TODO",
+    description="Bar chart showing the annual history of custom property usage on mobile pages since 2019. From 2019-2022, custom property usage has risen from 5%, to 19%, 29%, and now 42% in 2022. The var() function was used on 27% of pages in 2020, 35% in 2021, and now 43% in 2022.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=832908182&format=interactive",
     sheets_gid="786267748",
     sql_file="custom_property_adoption.sql"
@@ -503,7 +503,7 @@ Custom properties (sometimes known as CSS variables) have seen a huge surge in u
 {{ figure_markup(
     image="custom-property-names.png",
     caption="Source of common custom property names.",
-    description="TODO",
+    description="Pie chart showing the relative popularity of sources of custom property names. WordPress accounts for 40.2% of custom property usage, other sources with 36.5%, Elementor with 11.4%, Bootstrap with 10.2%, and Woocommerce with 1.3%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=321767420&format=interactive",
     sheets_gid="409270558",
     sql_file="custom_property_names.sql"
@@ -517,7 +517,7 @@ As seen last year, WordPress is the driver for the most common custom property n
 {{ figure_markup(
     image="custom-property-value-types.png",
     caption="Distribution of custom property value types.",
-    description="TODO",
+    description="Pie chart showing the relative popularity of custom property value types. Custom properties that set a color value make up 30.6% of usage, followed by dimension types at 24.0%, other types at 15.3%, numeric types at 11.4%, images at 9.0%, font stacks at 7.6%, and calc at 2.2%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=2125209096&format=interactive",
     sheets_gid="1053355643",
     sql_file="custom_property_value_types.sql"
@@ -531,7 +531,7 @@ The value of a custom property includes a type. For example, `--red: #EF2143` is
 {{ figure_markup(
     image="custom-property-props.png",
     caption="The most popular custom property properties by percent of pages.",
-    description="TODO",
+    description="Bar chart showing the properties containing custom properties that are used on the most pages. The color property is set with a custom property on 38% of pages, followed by background-color on 34%, background on 32%, border-color on 30%, font-size and width on 27%, padding-top on 21%, justify-content on 20%, border on 19%, and height on 17%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1522542060&format=interactive",
     height="530",
     sheets_gid="1294760653",
