@@ -4,8 +4,8 @@ title: Fonts
 ##TODO - Review and update chapter description
 description: Fonts chapter of the 2022 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.
 authors: [bramstein]
-reviewers: [RoelN, svgeesus, jmsole]
-analysts: [konfirmed]
+reviewers: [alexnj, jmsole, RoelN, svgeesus]
+analysts: [bramstein, konfirmed]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1A1XwuGa1DkqNLaF-lSXz4ndxO9G6SfACHwUvvywHgbQ/
