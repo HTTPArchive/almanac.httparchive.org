@@ -139,7 +139,7 @@ However, the difference in median font size between services and self-hosted is 
 
 ### OpenType table sizes
 
-A typical font is essentially a tiny relational database with each table storing data like glyph shapes, glyph relationships, and metadata. For example, there are tables to store the vector Bézier curves that make up glyphs. There are also tables for relating glyphs to one another, that store things like kerning and ligature relationships (i.e. swap these two glyphs with this one when they are used together, like the famous _fi_ ligature).
+A typical font is essentially a <a hreflang="en" href="https://simoncozens.github.io/fonts-and-layout/opentype.html">tiny relational database</a> with each table storing data like glyph shapes, glyph relationships, and metadata. For example, there are tables to store the vector Bézier curves that make up glyphs (the characters in the font). There are also tables for relating glyphs to one another, that store things like kerning and ligature relationships (i.e. swap these two glyphs with this one when they are used together, like the famous _fi_ ligature).
 
 A reasonable way to measure how much of an impact a table has on overall file size is to multiply its median size by the number of fonts that include that table.
 
