@@ -15,8 +15,7 @@
           "part": "I",
           "chapter_number": "1",
           "title": "CSS",
-          "slug": "css",
-          "todo": true
+          "slug": "css"
         },
         {
           "part": "I",
@@ -572,8 +571,7 @@
     "meyerweb": {
       "name": "Eric A. Meyer",
       "teams": [
-        "authors",
-        "reviewers"
+        "authors"
       ],
       "avatar_url": "939727",
       "github": "meyerweb",
