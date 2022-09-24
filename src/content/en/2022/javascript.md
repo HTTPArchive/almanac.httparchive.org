@@ -939,7 +939,7 @@ While 57% of mobile pages serving up a vulnerable JavaScript library or framewor
         <td class="numeric">1.12%</td>
       </tr>
       <tr>
-        <td>AngularJS</td>
+        <td><a href="https://angularjs.org">AngularJS</a></td>
         <td class="numeric">0.99%</td>
         <td class="numeric">0.79%</td>
       </tr>
