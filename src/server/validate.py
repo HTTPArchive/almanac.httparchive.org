@@ -18,13 +18,14 @@ TYPO_CHAPTERS = {
     "http2": "http",
     "http3": "http",
     "html": "markup",
+    "interop": "interoperability",
+    "js": "javascript",
     "mobileweb": "mobile-web",
     "pageweight": "page-weight",
     "resourcehints": "resource-hints",
+    "sécurité": "security",
     "thirdparties": "third-parties",
     "third-party": "third-parties",
-    "sécurité": "security",
-    "js": "javascript",
 }
 
 
