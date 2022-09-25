@@ -7,11 +7,11 @@ reviewers: [bkardell, zcorpan]
 analysts: [rviscomi]
 editors: [tunetheweb]
 translators: []
-j9t_bio: Jens Oliver Meiert is an engineering lead and author (<a hreflang="en" href="https://meiert.com/en/blog/the-web-development-glossary/"><cite>The Web Development Glossary</cite></a>, <a hreflang="en" href="https://www.amazon.com/dp/B094W54R2N/"><cite>Upgrade Your HTML</cite></a>) who manages Developer Experience at <a hreflang="en" href="https://www.liveperson.com/">LivePerson</a>. As an an expert on web development, he specializes in HTML and CSS minimization and optimization. Jens regularly writes about his work on his website, <a hreflang="en" href="https://meiert.com/en/">meiert.com</a>.
+j9t_bio: Jens Oliver Meiert is an engineering lead and author (<a hreflang="en" href="https://leanpub.com/web-development-glossary"><cite>The Web Development Glossary</cite></a>, <a hreflang="en" href="https://www.amazon.com/dp/B094W54R2N/"><cite>Upgrade Your HTML</cite></a>), who works as an engineering manager at <a hreflang="en" href="https://www.liveperson.com/">LivePerson</a>. He specializes in HTML and CSS minimization and optimization. Jens regularly writes about the craft of web development on his website, <a hreflang="en" href="https://meiert.com/en/">meiert.com</a>.
 results: https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/
 featured_quote: Without HTML there are no web pages, no web sites, no web apps. You can say that without HTML, there's no Web. That makes HTML one of the most important web standards, if not the most important web standard.
 featured_stat_1: 90%
-featured_stat_label_1: Documents using the HTML5 doctype.
+featured_stat_label_1: Documents using the HTML doctype.
 featured_stat_2: 30 KB
 featured_stat_label_2: Median HTML document transfer size
 featured_stat_3: 29%
@@ -22,7 +22,7 @@ featured_stat_label_3: Elements which are `div`s.
 
 As the [2020 chapter said](../2020/markup#introduction), without HTML there are no web pages, no web sites, no web apps. You can say that without HTML, there's no Web. That makes HTML one of the most important web standards, if not the most important web standard.
 
-Accordingly, like every year, we used the millions of pages in our data set—7.9 million in the mobile set, 5.4 million in the desktop set, with overlap—to also look at HTML. This chapter doesn't cover "everything" there is about HTML, so we explicitly encourage you to [also analyse the data we gathered](https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/edit) and to share your own conclusions—and when you do, tag them: [#htmlalmanac](https://twitter.com/hashtag/htmlalmanac).
+Accordingly, like every year, we used the millions of pages in our data set—7.9 million in the mobile set, 5.4 million in the desktop set, with overlap—to also look at HTML. This chapter doesn't cover "everything" there is about HTML, so we explicitly encourage you to [also analyze the data we gathered](https://docs.google.com/spreadsheets/d/1grkd2_1xSV3jvNK6ucRQ0OL1HmGTsScHuwA8GZuRLHU/edit) and to share your own conclusions—and when you do, tag them: [#htmlalmanac](https://twitter.com/hashtag/htmlalmanac).
 
 ## Document data
 
@@ -51,7 +51,7 @@ There's much to be curious about when it comes to how we write HTML. We can ask 
         <td class="numeric">3.9%</td>
       </tr>
       <tr>
-        <td></td>
+        <td>No doctype</td>
         <td class="numeric">3.0%</td>
         <td class="numeric">2.7%</td>
       </tr>
@@ -85,7 +85,7 @@ Let's start with doctypes—which one is the most popular? But you know the answ
 
 {{ figure_markup(
   content="90%",
-  caption="Mobile using the standard HTML5 doctype.",
+  caption="Mobile using the standard HTML doctype.",
   classes="big-number",
   sheets_gid="1535288056",
   sql_file="doctype.sql",
@@ -97,14 +97,14 @@ Let's start with doctypes—which one is the most popular? But you know the answ
 
 {{ figure_markup(
   image="content-encoding.png",
-  caption="HTML document content-encoding.",
+  caption="HTML document content encoding.",
   description="Stacked bar chart, showing 28% of desktop and mobile HTML documents are being compressed with Brotli, 58% of desktop and mobile documents are being compressed with Gzip, and 14% of desktop and 13% of mobile HTML documents are not being compressed at all.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=1176900527&format=interactive",
   sheets_gid="1434175283",
   sql_file="content_encoding.sql",
 ) }}
 
-Are HTML documents being compressed? How many? How? 86% of them are—with 58% (down 5.8% since last year) overall being gzip-compressed, and 28% (up 6.1%) being compressed using Brotli. To summarize, slightly more documents are being compressed, and compressed more effectively.
+Are HTML documents being compressed? How many? How? 86% of them are—with 58% (down 5.8% since last year) overall being gzip-compressed, and 28% (up 6.1%) being compressed using Brotli. Overall, slightly more documents are being compressed, and compressed more effectively.
 
 ### Languages
 
@@ -119,11 +119,11 @@ Are HTML documents being compressed? How many? How? 86% of them are—with 58% (
   height=511
 ) }}
 
-What about languages? In our data set, 35% of pages used a lang attribute mapping to English; 17% had no language set; and you already see the difficulties—the sample is likely biased and also not as big as to reflect all of the world, and no `lang` attribute being used is not equaling no language being set so, this isn't something our data would be useful for.
+What about languages? In our data set, 35% of pages used a `lang` attribute mapping to English; 17% had no language set; and you already see the difficulties—the sample is likely biased and also not as big as to reflect all of the world, and no `lang` attribute being used is not equaling no language being set so, this isn't something our data would be useful for.
 
 ### Conformance
 
-Do documents conform with the HTML specification—are they valid? A quick way for you to tell is by using a tool like the <a hreflang="en" href="https://validator.w3.org/">W3C markup validation service</a>.
+Do documents conform with the HTML specification—i.e., are they valid? A quick way for you to tell is by using a tool like the <a hreflang="en" href="https://validator.w3.org/">W3C markup validation service</a>.
 
 We didn't and we couldn't check this yet. So why include this section?
 
@@ -135,7 +135,7 @@ We don't have conformance data to share in the Web Almanac yet, but that doesn't
 
 ### Document size
 
-HTML payload and document size are a staple in this series, however—we've looked at this information since 2019. But the trend is clear, and while it follows a common theme that other chapters will confirm, too, it's not a great one:
+HTML payload and document size are a staple in this series—we've looked at this information since 2019. But the trend is clear, and while it follows a common theme that other chapters will confirm, too, it's not a great one:
 
 {{ figure_markup(
   image="html-document-transfer-size.png",
@@ -152,7 +152,7 @@ One way to counter this trend is to <a hreflang="en" href="https://css-tricks.co
 
 ## Elements
 
-If you're not including the `svg` and `math` elements—because they're specified outside of HTML—the current HTML specification consists of 111 elements.
+If you're not including the `svg` and `math` elements—because they're specified outside of HTML—the current HTML specification currently consists of 111 elements.
 
 <p class="note">Elements, not tags, because we're not referring to mere start or end tags, like `<li>` or `</ins>`. And some people count HTML elements differently, but most important is to <a hreflang="en" href="https://meiert.com/en/blog/the-number-of-html-elements/">be clear about how you're counting</a>.</p>
 
@@ -184,7 +184,7 @@ Alas, there's another trend which aligns with an increasing document size, and t
   sql_file="element_count_distribution.sql",
 ) }}
 
-The median is currently at 653 elements per page, up from 616 in 2021, and 587 in 2020—all per the respective mobile data set. Do we publish more content, requiring more elements to hold them (something like, more paragraphs per text, more `p` elements)? Or is this just another sign of an unchecked `div` pandemic? Our data doesn't answer this but it is probably both these—and many more—reasons.
+The median is currently at 653 elements per page, up from 616 in 2021, and 587 in 2020—all per the respective mobile data set. Do we publish more content, requiring more elements to hold them (something like, more paragraphs per text, more `p` elements)? Or is this just another sign of an unchecked `div` pandemic? Our data doesn't answer this but it is probably due to both—and more—reasons.
 
 ### Top elements
 
@@ -434,7 +434,7 @@ This is more diverse: `pages-css`, `wix-image` and `wix-iframe` come from the Wi
 
 ### Obsolete elements
 
-Are obsolete elements still a thing? Given that not-validating is still a thing, yes—and how.
+Are obsolete elements still a thing? Given that not-validating is still a thing, yes.
 
 {{ figure_markup(
   image="obselete-elements.png",
@@ -445,9 +445,9 @@ Are obsolete elements still a thing? Given that not-validating is still a thing,
   sql_file="obselete_elements.sql",
 ) }}
 
-On 6.1% of pages, you still find `center` elements (hi <a hreflang="en" href="https://www.google.com/">Google homepage</a> 👋), and on 5.4% of pages, you find `font` elements. Use of both elements went down (down 0.5% in both cases), fortunately, while `marquee`, `nobr`, and `big` didn't witness significant changes.
+On 6.1% of pages, you still find `center` elements (hi <a hreflang="en" href="https://www.google.com/">Google homepage</a>), and on 5.4% of pages, you find `font` elements. Use of both elements went down (down 0.5% in both cases), fortunately, while `marquee`, `nobr`, and `big` didn't witness significant changes.
 
-These two elements make for the lion's share (81.2%) of all obsolete elements, per our analysis:
+`center` and `font` make for the lion's share (81.2%) of all obsolete elements, per our analysis:
 
 {{ figure_markup(
   image="obselete-elements.png",
@@ -481,7 +481,7 @@ This order isn't any different from what we've seen last year, but there are som
 
 - `class` (<span class="numeric-bad">▼0.3%</span>), `href` (<span class="numeric-bad">▼0.9%</span>), `style` (<span class="numeric-bad">▼0.6%</span>), `id` (<span class="numeric-bad">▼0.2%</span>), `type` (<span class="numeric-bad">▼0.1%</span>), `title` (<span class="numeric-bad">▼0.3%</span>), and `value` (<span class="numeric-bad">▼0.5%</span>) are all used a little less than before.
 - `src` (<span class="numeric-good">▲0.3%</span>) and `alt` (<span class="numeric-good">▲0.1%</span>) are used more than before—tentatively good news for accessibility!
-- `rel` usage doesn't appear to have changed much.
+- `rel` usage hasn't changed significantly.
 
 Are there attributes we find on (nearly) every document? Yes:
 
@@ -524,11 +524,11 @@ Let's have a look at how often we find `data-*` attributes on our pages:
   height=558
 ) }}
 
-Their popularity is high! Per the chart above at least close to every fourth document uses `data-*` attributes. But the overall data show that 88% of documents use at least one `data-*` attribute.  That's quite some adoption.
+Their popularity is high! Per the chart above close to every fourth document uses `data-*` attributes. But the overall data show that 88% of documents use at least one `data-*` attribute.  That's quite some adoption.
 
 ### Social markup
 
-Last year's edition introduced [a section on social markup, special markup](../2021/markup#social-markup) which makes it easier for social platforms to identify and display the respective metadata. Here's the 2022 update:
+Last year's edition introduced [a section on social markup](../2021/markup#social-markup), special markup which makes it easier for social platforms to identify and display the respective metadata. Here's the 2022 update:
 
 {{ figure_markup(
   image="social-meta-nodes-usage.png",
@@ -549,6 +549,6 @@ This was a glance at HTML in 2022.
 
 The conclusion is brief: Going from year to year, it's hard to say what important trends were started or reversed. Document size seems to keep growing—at least from 2020 to 2021 to 2022. The number of elements per page goes up every year too. There may be slightly more `alt` attributes now, but that's relative to itself and we can't tell whether more images now do have an appropriate `alt` attribute set—nor whether its text is really <a hreflang="en" href="https://html.spec.whatwg.org/multipage/images.html#alt">meaningful</a>.
 
-But with all of this, the Web Almanac will help. We're going to look at HTML again—next year, the year after next, and the year after that hopefully. And we'll go into more detail again and we'll look back at more years.
+But with all of this, the Web Almanac will help. We're going to look at HTML again—next year, the year after next, and the year after that. And we'll go into more detail again and we'll look back at more years.
 
 What perhaps we'll also be able to do is to look at conformance too. Not everyone may care about this at this time in our field. But we're all professionals, and it seems at least relevant to know whether overall, we produce work that corresponds to <a hreflang="en" href="https://html.spec.whatwg.org/multipage/">the underlying standard(s)</a>. After all, this shouldn't be a chapter about fantasy HTML—it should be one about HTML that actually works. It's one of the most important web standards.
