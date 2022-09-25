@@ -61,15 +61,7 @@ A good example of this is the ability to animate grid tracks—grid rows and col
 
 ### Flexbox
 
-Flexbox is even older and more widely used. This year its use has grown again, [now appearing on 75% of mobile pages and 76% of desktop pages](./css#flexbox-and-grid-adoption). It has a similar number of tests to Grid and despite very wide adoption started in much worse shape. Entering 2021, some sub-features remained under-implemented, including:
-
-- Both Chrome and WebKit had issues with auto-height flex containers, leading to incorrectly sized images. These have now been resolved.
-
-- CSS Box alignment defines several types of alignment. Among them [positional-alignment keyword values](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Alignment#positional_alignment_keyword_values), which can be applied to justify-content and align-content and also to justify-self and align-self. These had ragged support and several interoperability issues. For absolute positioned flex items this was even worse. These issues too have been resolved.
-
-There were others issues, on top of these, that deserve some more indepth analysis.
-
-#### `flex-basis: content`
+Flexbox is even older and more widely used. This year its use has grown again, [now appearing on 75% of mobile pages and 76% of desktop pages](./css#flexbox-and-grid-adoption). It has a similar number of tests to Grid and despite very wide adoption started in much worse shape. Entering 2021, we had a combination of ragged bugs and sub-features that remained under-implemented.  For example, [positional-alignment keyword values](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Alignment#positional_alignment_keyword_values) (which can be applied to justify-content and align-content and also to justify-self and align-self) had ragged support and several interoperability issues. For absolute positioned flex items this was even worse. These issues have been resolved.
 
 {{ figure_markup(
   caption="Desktop pages using `flex-basis: content` in their stylesheets.",
@@ -80,7 +72,7 @@ There were others issues, on top of these, that deserve some more indepth analys
 )
 }}
 
-`flex-basis: content`, which is used to automatically size based on the flex item's content, was implemented in WebKit and Chromium, but not Firefox. Today these tests pass uniformly in all browsers and `flex-basis: content` appears on 112,323 pages on desktop and 75,565 mobile, roughly 1% of pages. That's not a bad start for a feature in its first year of universal support and about double what it was last year. We'll keep an eye on this metric in the future.
+Another bit of focus was toward `flex-basis: content`, which is used to automatically size based on the flex item's content.  This was implemented in WebKit and Chromium, but not Firefox. Today these tests pass uniformly in all browsers and `flex-basis: content` appears on 112,323 pages on desktop and 75,565 mobile, roughly 1% of pages. That's not a bad start for a feature in its first year of universal support and about double what it was last year. We'll keep an eye on this metric in the future.
 
 ### Sticky positioning
 
