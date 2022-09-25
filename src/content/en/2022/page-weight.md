@@ -16,13 +16,13 @@ featured_stat_1: 110 MB
 featured_stat_label_1: The largest weight of fonts loaded on mobile page
 featured_stat_2: 678 MB
 featured_stat_label_2: The weight of the largest desktop page
-featured_stat_3: 585%
+featured_stat_3: 594%
 featured_stat_label_3: The growth in mobile page weight over 10 years
 ---
 
 ## Introduction
 
-Over the last ten years, <a hreflang="en" href="https://httparchive.org/reports/page-weight?start=2012_06_01&end=2022_06_01&view=list">mobile page weight has increased 593%</a>. In this time, we've seen performance enhancing technologies emerge to buffer the impact. More recent performance measuring methodologies like eschew page weight as a factor.
+We shall show that over the last ten years, mobile page weight has increased 594%. In this time, we've seen performance enhancing technologies emerge to buffer the impact. More recent performance measuring methodologies like eschew page weight as a factor.
 
 While the Google-driven Core Web Vitals initiative shifts the perception of performance to how quickly above the fold content because visible and usable, the large network payloads are still correlated to long load times.
 
