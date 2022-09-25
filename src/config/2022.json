@@ -409,6 +409,7 @@
     "clarkio": {
       "name": "Brian Clark",
       "teams": [
+        "authors",
         "reviewers"
       ],
       "avatar_url": "6265396",
@@ -1107,6 +1108,16 @@
       "website": "unravelweb.dev",
       "twitter": "TheNishuGoel"
     },
+    "nrllh": {
+      "name": "Nurullah Demir",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "13475745",
+      "github": "nrllh",
+      "website": "internet-sicherheit.de",
+      "twitter": "nrllah"
+    },
     "pankajparkar": {
       "name": "Pankaj Parkar",
       "teams": [
@@ -1394,6 +1405,14 @@
       "github": "bobbyshaw",
       "linkedin": "tomrobertshaw",
       "twitter": "bobbyshaw"
+    },
+    "tomvangoethem": {
+      "name": "Tom Van Goethem",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "4355579",
+      "github": "tomvangoethem"
     },
     "TusharPol": {
       "name": "Tushar Pol",
