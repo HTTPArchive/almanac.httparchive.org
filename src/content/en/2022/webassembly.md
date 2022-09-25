@@ -43,13 +43,13 @@ This represents a modest drop in the number of modules we discovered in the craw
 We found slightly fewer (-13%) WebAssembly modules served to mobile browsers. This isn’t a reflection on the WebAssembly capabilities of mobile browsers, which generally have excellent support. Rather, it is likely due to the standard practice of [progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement), where in these cases the more advanced features that require WebAssembly are not supported for mobile users.
 
 {{ figure_markup(
- caption="Number of Wasm responses.",
- description="Bar chart showing numbers of total Wasm responses on desktop and mobile datasets as well as number of unique files. Number of unique files is much lower—only 383 out of 3,204 total responses on desktop and 310 out of 2,777 on mobile.",
- chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZqlPK0L45J7IoVgmLcuRut9-M2nhaDMhs8cHtCLZacS7pkIqvEhHfdcYNSoEotQp0-Rs_RRslZ8sT/pubchart?oid=1842699031&format=interactive",
- sheets_gid="2142789475",
- sql_file="counts.sql",
- image="counts.png"
- )
+  caption="Number of Wasm responses.",
+  description="Bar chart showing numbers of total Wasm responses on desktop and mobile datasets as well as number of unique  files. Number of unique files is much lower—only 383 out of 3,204 total responses on desktop and 310 out of 2,777 on mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZqlPK0L45J7IoVgmLcuRut9-M2nhaDMhs8cHtCLZacS7pkIqvEhHfdcYNSoEotQp0-Rs_RRslZ8sT/pubchart?oid=1842699031&format=interactive",
+  sheets_gid="2142789475",
+  sql_file="counts.sql",
+  image="counts.png"
+  )
 }}
 
 By hashing the WebAssembly modules we can determine how many of these 3,204 modules (on desktop) are unique. By de-duplicating modules, the total number reduces by roughly a factor of 10, with 383 unique modules served to desktop browsers, and 310 to mobile. This indicates a significant amount of re-use, different websites making use of the same WebAssembly code, most likely through shared modules.
