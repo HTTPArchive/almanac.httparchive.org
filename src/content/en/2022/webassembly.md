@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: WebAssembly
-description: WebAssembly chapter of the 2022 Web Almanac covering Wasm compression, section sizes, most popular instructions, and post-MVP proposals
+description: WebAssembly chapter of the 2022 Web Almanac covering usage, languages, and post-MVP features.
 authors: [ColinEberhardt]
 reviewers: [binji, RReverser]
 analysts: [JamieWhitMac]
