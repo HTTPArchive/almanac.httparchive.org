@@ -49,16 +49,16 @@ Our analysis throughout this work included desktop and mobile websites. The vast
 {{ figure_markup(
   image="cms-adoption.png",
   caption="CMS adoption.",
-  description="Column chart showing the adoption of CMSs over the past 3 years. 45% of desktop websites and 47% of mobile websites are built using a CMS in 2022 For 2021, desktop is 45% and mobile are approximately 46%, while in 2020 they are both 42%.",
+  description="Column chart showing the adoption of CMSs over the past 3 years. 45% of desktop websites and 47% of mobile websites are built using a CMS in 2022. For 2021, desktop is 45% and mobile is approximately 46%, while in 2020 they were both 42%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=386824637&format=interactive",
   sheets_gid="643278583",
   sql_file="cms_adoption.sql"
   )
 }}
 
-As of June 2022, 45% of websites within the desktop dataset are powered by a CMS, indicating a similar usage [to 2021](../2021/cms#cms-adoption). The mobile dataset shows an increase from 46% [in 2021](../2021/cms#cms-adoption) to 47% here in 2022. Looking closer at the desktop raw figures we actually see a slight drop in both absolute and percentage terms, but the drop is more likely an artifact of minor variances in attribution than an indicator of a downward trend in CMS usage. It should be noted that the number of desktop sites tracked by HTTP Archive (and the source CrUX dataset) has fallen considerably from 6.4 million sites to 5.4 million sites, while the number of mobile sites has grown by about 400,000 sites from 7.5 million to 7.9 million sites. We take this increase to reflect continued growth in mobile device usage at the expense of the desktop.
+As of June 2022, 45% of the websites in the Web Almanac's desktop dataset were powered by a CMS, indicating similar usage [to 2021](../2021/cms#cms-adoption). The mobile dataset shows an increase from 46% [in 2021](../2021/cms#cms-adoption) to 47% here in 2022. Looking closer at the desktop raw figures we actually see a slight drop in both absolute and percentage terms, but the drop is more likely an artifact of minor variances in attribution than an indicator of a downward trend in CMS usage. It should be noted that the number of desktop sites tracked by HTTP Archive (and the source CrUX dataset) has fallen considerably from 6.4 million sites to 5.4 million sites, while the number of mobile sites has grown by about 400,000 sites from 7.5 million to 7.9 million sites. We take this increase to reflect continued growth in mobile device usage at the expense of the desktop.
 
-It is instructive to compare these numbers with another commonly used dataset, such as <a hreflang="en" href="https://w3techs.com/technologies/history_overview/content_management/all/q">W3Techs</a>, which reported that as of June 2021, 64.6% of websites are created using a CMS, up from 59.2% in June 2020, which is an increase of over 9%.
+It is instructive to compare these numbers with another commonly used dataset, such as <a hreflang="en" href="https://w3techs.com/technologies/history_overview/content_management/all/q">W3Techs</a>. W3Techs reported that as of June 2021, 64.6% of websites are created using a CMS. This is up from 59.2% in June 2020–an increase of over 9%.
 
 The deviation between our analysis and W3Techs' analysis can be explained by differences in research methodologies and definitions of a CMS.
 
@@ -82,7 +82,7 @@ CMSs are used around the world, with some variance by country.
   )
 }}
 
-Among the countries with the highest number of websites, CMS adoption is highest in Italy and Spain where 40%–41% of mobile sites visited by users are built with a CMS. Brazil and Japan have the lowest adoption with only 31% and 32% respectively.
+Among the countries with the highest number of websites, CMS adoption is highest in Italy and Spain where 40%–41% of mobile sites are built with a CMS. Brazil and Japan have the lowest adoption with only 31% and 32% respectively.
 
 Of particular interest is the decrease across the board compared to our [2021 dataset](../2021/cms#cms-adoption-by-geography) when individual countries are considered. Comparing year-over-year for mobile results, all countries except India appear to show a drop, ranging from a 4% decrease for the UK and Germany to an 8% decrease for the US and Italy.  Given the consistency of the decreases across geographies, it seems more plausible to be a variance in attribution than a wholesale drop in CMS adoption. We recommend evaluating this further in next year's analysis.
 
@@ -101,13 +101,13 @@ We examined CMS adoption by the estimated rank of the sites included within the 
   )
 }}
 
-According to the dataset, CMSs are used by fewer than 7% of the top 1,000 websites for both desktop and mobile even though 47% of all mobile sites in the dataset use a CMS. A possible explanation for this apparent discrepancy, and the one we offered last year, is that smaller businesses with websites tend to use a popular CMS for their ease of use, and those CMSs are easily identified. However, larger businesses with higher ranked websites tend to have custom CMS solutions built by professional web developers that we can't identify.
+According to the dataset, CMSs are used by fewer than 7% of the top 1,000 websites for both desktop and mobile even though 47% of all mobile sites in the dataset use a CMS. A possible explanation for this apparent discrepancy, and the one we offered last year, is that smaller businesses with websites tend to use a popular CMS for their ease of use, and those CMSs are easily identified. However, larger businesses with higher ranked websites tend to have custom-built CMS solutions that we can't identify.
 
 Another explanation is that higher ranking sites with more resources allocated to their development are more likely to obfuscate the identity of their CMS for security reasons. It is improbable that more than 90% of the top 1,000 would forgo a CMS entirely and more likely that they just don't show up in our dataset.
 
 A potentially correlated trend is the adoption of "headless" CMSs and the move to separate content—and the CMS that powers it—from the frontend experience offered to end-users.
 
-While our confidence in the overall dataset remains high, we're interested in investigating the adoption by rank dataset further in future editions of this report to see if more can be done to detect and identify CMSs to improve the overall accuracy of our results.
+While our confidence in the overall dataset remains high, we're interested in investigating the adoption-by-rank dataset further in future editions of this report to see if more can be done to detect and identify a greater number of CMSs to improve the overall accuracy of our results.
 
 ## Most popular CMSs
 
@@ -115,15 +115,15 @@ Among all websites that use an identifiable CMS, WordPress sites account for the
 
 {{ figure_markup(
   image="top-5-cms-yoy.png",
-  caption="Top five CMSs year over year.",
-  description="Column chart depicting the percent of websites built on each of the top five CMSs, in the past 3 years. WordPress is 31.4% in 2020, 33.6% in 2021, and 35.0% in 2022. Joomla is 2.1%, 1.9%, and 1.8% respectively, Drupal is 2.0%, 1.8%, and 1.6%, Wix is 1.2%, 1.6%, and 2.0%, and Squarespace 0.9% for 2020, 1.0%, for 2021, and 1.0% for 2022. WordPress, Wix and Squarespace are growing in adoption year-over-year, while Drupal and Joomla are dropping.",
+  caption="Top five CMSs year-over-year.",
+  description="Column chart depicting the percent of websites built on each of the top five CMSs in the past 3 years. WordPress is 31.4% in 2020, 33.6% in 2021, and 35.0% in 2022. Joomla is 2.1%, 1.9%, and 1.8%, respectively, across the same years. Drupal is 2.0%, 1.8%, and 1.6%. Wix is 1.2%, 1.6%, and 2.0%. Squarespace is 0.9% for 2020, 1.0%, for 2021, and 1.0% for 2022. WordPress, Wix, and Squarespace are growing in adoption year-over-year, while Drupal and Joomla are declining.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=714516300&format=interactive",
   sheets_gid="1396671791",
   sql_file="top_cms.sql"
   )
 }}
 
-Comparing year over year, Drupal and Joomla continue to decline in market share, while Squarespace remains steady and Wix grows. WordPress continues its ascent, increasing 1.4% over 2021 on mobile, and 0.2% over 2021 on desktop.
+Comparing year-over-year, Drupal and Joomla continue to decline in market share, while Squarespace remains steady and Wix grows. WordPress continues its ascent, increasing 1.4% over 2021 on mobile, and 0.2% over 2021 on desktop.
 
 {{ figure_markup(
   image="wordpress-page-builders.png",
@@ -135,34 +135,34 @@ Comparing year over year, Drupal and Joomla continue to decline in market share,
   )
 }}
 
-Within WordPress, users often make use of a "page builder" that sits as a layer on top of WordPress and provides an interface for content management. This year, with Wappalyzer's detection methods improving, we looked at page builder adoption. We discovered that of the WordPress sites attributed to a page builder (approximately 34% of all WordPress sites in our dataset), Elementor and WP Bakery are the clear winners, with Divi, SiteOrigin, and Oxygen trailing behind.
+Within WordPress, users often make use of a "page builder" that provides an interface for content management. This year, with Wappalyzer's detection methods improving, we looked at page builder adoption. We discovered that of the WordPress sites attributed to a page builder (approximately 34% of all WordPress sites in our dataset), Elementor and WP Bakery are the clear winners, with Divi, SiteOrigin, and Oxygen trailing behind.
 
-As we see it today, page builders exert significant influence on the performance of a site, and historically have been anecdotal indicators of poor performance. As one example, our dataset indicates that it's not uncommon for websites to have multiple page builders installed, adding a significant increase to the resources loaded by a site.
+As we see it today, page builders exert significant influence on the performance of a site. Historically, page builders have been anecdotal indicators of poor performance. As one example, our dataset indicates that it's not uncommon for websites to have multiple page builders installed, adding a significant increase to the resources loaded by a site.
 
-Now that we're tracking page builder data, we'll have the opportunity in future editions to evaluate year over year changes in page builder adoption and look for correlations in those changes to the overall performance of WordPress as a CMS.
+Now that we're tracking page builder data, we'll have the opportunity in future editions to evaluate year-over-year changes in page builder adoption and look for correlations in those changes to the overall performance of WordPress as a CMS.
 
 ## CMS user experience
 
-An important aspect of CMSs is the user experience they provide, for users visiting sites built on these platforms. We attempt to examine these experiences through Real User Measurements (RUM), provided by the <a hreflang="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome User Experience Report</a> (CrUX), and synthetic testing using [Lighthouse](../2021/methodology#lighthouse).
+An important feature of CMSs is the user experience they provide for users visiting sites built on these platforms. We attempt to examine these experiences through Real User Measurements (RUM) via the <a hreflang="en" href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome User Experience Report</a> (CrUX), and synthetic testing using [Lighthouse](../2021/methodology#lighthouse).
 
 ### Core Web Vitals
 
-The <a hreflang="en" href="https://httparchive.org/reports/cwv-tech">Core Web Vitals Technology Report</a> can be used to drill into available data and view the progress of evaluated platforms updated on a monthly basis.
+The <a hreflang="en" href="https://httparchive.org/reports/cwv-tech">Core Web Vitals Technology Report</a> can be used to drill down into the available data and view the progress of evaluated platforms updated on a monthly basis.
 
-In this section we focus on data from June 2022 to provide a consistent timeframe for data presented across the Web Almanac. We examine three important factors provided by the [Chrome User Experience Report](../2021/methodology#chrome-ux-report) which can shed light on our understanding of how users are experiencing CMS-powered web pages in the wild:
+In this section we focus on data from June 2022 to provide a consistent timeframe for data presented across the Web Almanac. We examine three important metrics provided by the [Chrome User Experience Report](../2021/methodology#chrome-ux-report) which can shed light on our understanding of how users are experiencing CMS-powered web pages in the wild:
 
 * <a hreflang="en" href="https://web.dev/lcp/">Largest Contentful Paint</a> (LCP)
 * <a hreflang="en" href="https://web.dev/fid/">First Input Delay</a> (FID)
 * <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a> (CLS)
 
-These metrics aim to cover the core elements which are indicative of a great web user experience. The [Performance](./performance) chapter covers these in more detail, but here we are interested in looking at these metrics specifically in terms of CMSs.
+These metrics aim to cover the technical fundamentals of a great web user experience. The [Performance](./performance) chapter covers these metrics in greater detail, but here we are interested in looking at them specifically in terms of CMSs.
 
-Initially, let's review the 10 CMS platforms with the highest number of origins and examine the percentage of sites on each platform that have a "passing" grade, meaning that the 75th percentile in each of the above metrics must be in the "good" (green) range for each site.
+Initially, let's review the 10 CMS platforms with the highest number of origins and examine the percentage of sites on each platform that have a "passing" grade. A passing grade means that each of the above metrics must be in the "good" (green) range for each site: an LCP of 2.5 seconds or less, a FID of 100ms or less, and a CLS of 0.1 or less.
 
 {{ figure_markup(
   image="top-cwv-performance.png",
   caption="Core web vitals performance by CMS.",
-  description="Bar chart showcasing the percentage of sites with good Core Web Vitals, for each of the 10 most adopted CMSs. For WordPress 30% of sites pass on desktop and mobile, for Wix it is 41% on desktop and 39% on mobile, for Joomla it's 40% and 38% respectively, for Drupal it's 49% and 50%, for Squarespace it's 47% and 34%, for 1C-Bitrix it's 54% and 40%, for TYPO3 CMS it's 57% and 62%, for Duda it's 68% and 67%, for Weebly 36% and 43%, and for Jimdo it's 54% on desktop and 61% on mobile.",
+  description="Bar chart showcasing the percentage of sites with good Core Web Vitals for each of the 10 most adopted CMSs. For WordPress, 30% of sites pass on desktop and mobile. For Wix, it is 41% on desktop and 39% on mobile. For Joomla, it's 40% and 38%, respectively. For Drupal, it's 49% and 50%. For Squarespace, it's 47% and 34%. For 1C-Bitrix, it's 54% and 40%. For TYPO3 CMS, it's 57% and 62%. For Duda, it's 68% and 67%. For Weebly 36% and 43%. For Jimdo it's 54% on desktop and 61% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1221898999&format=interactive",
   sheets_gid="445373655",
   sql_file="core_web_vitals.sql",
@@ -171,18 +171,18 @@ Initially, let's review the 10 CMS platforms with the highest number of origins 
   )
 }}
 
-We can see that desktop visitors generally score better than mobile, which can be explained by weaker mobile devices and poorer connections. The large difference between mobile and desktop in certain platforms also suggests considerably different pages are served to users on different devices.
+We can see that desktop visitors generally score better than mobile. This can be explained by resource limitations on mobile devices and poorer connections. The large difference between mobile and desktop performance on some platforms also suggests that very different pages are served to users depending on the device they use.
 
-In June, for mobile devices, Duda had the largest percentage of passing sites, with 67% of mobile sites passing all three CWVs. WordPress trailed furthest behind, with 30% of its sites passing, though this indicates a significant increase over 2021 data, where only 19% passed.
+In June, for mobile devices, Duda had the largest percentage of passing sites, with 67% of mobile sites passing all three CWVs. WordPress trailed farthest behind, with 30% of its sites passing. Nevertheless, this indicates a significant increase over our 2021 data, where only 19% of WordPress sites passed.
 
-Desktop device experience was better for most CMSs, with Duda having the largest percentage with 68% of sites passing CWVs. WordPress had the lowest ratio of passing sites, with 30%.
+Desktop device experience was better for most CMSs. Duda had the largest CWV passing rate at 68%. WordPress had the lowest ratio of passing sites: 30%.
 
-We can also evaluate the progress of these CMS platforms compared to last year's data, focusing on mobile views:
+We can also evaluate the progress of these CMS platforms' performance on mobile devices by looking at last year's data:
 
 {{ figure_markup(
   image="top-cwv-yoy.png",
   caption="Core web vitals mobile year-over-year.",
-  description="Bar chart showing the change in the percentage of passing Core Web Vitals mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage. For WordPress it's 15% in 2020, 19% in 2021, and 30% in 2022, for Joomla it's 20%, 26%, and 38% respectively, for Drupal it's 28%, 34%, and 50%, for Wix it's 4%, 29%, and 39%, for Squarespace it's 5%, 17%, and 34%, for 1C-Bitrix it's 23%, 30%, and 40%, for TYPO3 CMS it's 41%, 46%, and 62%, for Duda it's 21%, 30%, and 67%, for Weebly it's 28%, 32%, and 43%, and for Adobe Experience Manager it's 11% for 2020, 14% for 2021, and 23% for 2022.",
+  description="Bar chart showing the change in the percentage of mobile sites passing Core Web Vitals year-over-year, for each of the 10 most adopted CMSs, sorted by percentage. For WordPress, it's 15% in 2020, 19% in 2021, and 30% in 2022. For Joomla, it's 20%, 26%, and 38%, respectively. For Drupal, it's 28%, 34%, and 50%. For Wix, it's 4%, 29%, and 39%. For Squarespace, it's 5%, 17%, and 34%. For 1C-Bitrix, it's 23%, 30%, and 40%. For TYPO3 CMS, it's 41%, 46%, and 62%. For Duda, it's 21%, 30%, and 67%. For Weebly, it's 28%, 32%, and 43%. For Adobe Experience Manager ,it's 11% for 2020, 14% for 2021, and 23% for 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=144597470&format=interactive",
   sheets_gid="1494726447",
   sql_file="core_web_vitals_yoy.sql",
@@ -193,18 +193,18 @@ We can also evaluate the progress of these CMS platforms compared to last year's
 
 All of these CMSs showed an improvement in the percentage of origins with good CWVs since June 2021.
 
-Let's drill into the three Core Web Vitals, to see where each platform has room to improve, and which metrics improved the most since last year:
+Let's drill into the three Core Web Vitals to see where each platform has room to improve and which metrics improved the most since last year:
 
 #### Largest Contentful Paint (LCP)
 
-Largest Contentful Paint (LCP) measures the point in time when the page's main content has likely loaded and thus the page is useful to the user. It does this by measuring the render time of the largest image or text block visible within the viewport.
+Largest Contentful Paint (LCP) measures the point in time when the page's main content has likely loaded and thus the page is useful to the user. LCP is assessed by measuring the render time of the largest image or text block visible within the viewport.
 
 A "good" LCP is regarded as being under 2.5 seconds.
 
 {{ figure_markup(
   image="lcp-cwv-performance.png",
   caption="Percentage of sites with good LCP by CMS.",
-  description="Bar chart showcasing the percentage of sites with good LCP, for each of the 10 most adopted CMSs. For WordPress it's 45% on desktop and 37% on mobile, for Wix it's 48% and 43% respectively, for Joomla it's 62% and 55%, for Drupal it's 73% and 60%, for Squarespace it's 66% and 40%, for 1C-Bitrix it's 72% and 50%, for TYPO3 CMS it's 82% and 79%, for Duda it's 85% and 79%, for Weebly it's 59% and 49%, and finally for Jimdo it's 69% on desktop and 74% on mobile.",
+  description="Bar chart showcasing the percentage of sites with good LCP for each of the 10 most adopted CMSs. For WordPress, it's 45% on desktop and 37% on mobile. For Wix, it's 48% and 43% respectively. For Joomla, it's 62% and 55%. For Drupal, it's 73% and 60%. For Squarespace, it's 66% and 40%. For 1C-Bitrix ,it's 72% and 50%. For TYPO3 CMS, it's 82% and 79%. For Duda it's 85% and 79%. For Weebly, it's 59% and 49%. Finally, for Jimdo, it's 69% on desktop and 74% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1306847805&format=interactive",
   sheets_gid="445373655",
   sql_file="core_web_vitals.sql",
@@ -213,12 +213,12 @@ A "good" LCP is regarded as being under 2.5 seconds.
   )
 }}
 
-TYPO3 and Duda had the best LCP scores with 79% of origins having a "good" LCP experience, while WordPress and Squarespace have the worst LCP scores, with 37% and 40% of origins, respectively, having a good LCP score.
+TYPO3 and Duda had the best LCP scores with 79% of origins having a "good" LCP experience. WordPress and Squarespace have the worst LCP scores with 37% and 40% of origins having good LCP scores, respectively.
 
 {{ figure_markup(
   image="lcp-cwv-yoy.png",
   caption="LCP mobile year-over-year.",
-  description="Bar chart showing the change in the percentage of good LCP mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage. WordPress it's 28% in 2021 and 37% in 2022. For Joomla it's 42% and 55% respectively, for Drupal it's 50% and 60%, for Wix it's 33% and 43%, for Squarespace it's 30% and 40%, for 1C-Bitrix it's 45% and 50%, for TYPO3 CMS it's 69% and 79%, for Duda it's 52% and 79%, for Weebly it's 42% and 49%, and finally for Adobe Experience Manager it's 28% for 2021 and 34% for 2022.",
+  description="Bar chart showing the change in the percentage of good LCP mobile sites year-over-year for each of the 10 most adopted CMSs sorted by percentage. For WordPress, it's 28% in 2021 and 37% in 2022. For Joomla, it's 42% and 55% respectively. For Drupal, it's 50% and 60%. For Wix, it's 33% and 43%. For Squarespace, it's 30% and 40%. For 1C-Bitrix, it's 45% and 50%. For TYPO3 CMS, it's 69% and 79%. For Duda, it's 52% and 79%. For Weebly, it's 42% and 49%. For Adobe Experience Manager, it's 28% for 2021 and 34% for 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=964886559&format=interactive",
   sheets_gid="1494726447",
   sql_file="core_web_vitals_yoy.sql",
@@ -227,22 +227,22 @@ TYPO3 and Duda had the best LCP scores with 79% of origins having a "good" LCP e
   )
 }}
 
-Compared to the 2021 dataset, all CMSs showed improvements. Joomla improved by 13%, Drupal, Squarespace, and TYPO3 by 10%, while WordPress improved by 9%.
+Compared to the 2021 dataset, all CMSs showed improvements in LCP. Joomla improved by 13%. Drupal, Squarespace, and TYPO3 improved by 10%. WordPress improved by 9%.
 
-These improvements are a positive sign, though still on the low end for most CMSs. The difficulty in achieving a good LCP score probably relates to the fact that the LCP is dependent on the download of image/font/CSS and then displaying the appropriate HTML elements. Achieving this in under 2.5 seconds for all device types and connection speeds can be challenging. Improving LCP scores usually involves the correct use of caching, pre-loading, resource prioritization, and lazy loading of other competing resources.
+These improvements are a positive sign even though the numbers still are low for most CMSs. The difficulty in achieving a good LCP score probably relates to the fact that the LCP is dependent on the download of image/font/CSS and then displaying the appropriate HTML elements. Achieving this in under 2.5 seconds for all device types and connection speeds can be challenging. Improving LCP scores usually involves the correct use of caching, pre-loading, resource prioritization, and lazy loading of other competing resources.
 
 #### First Input Delay (FID)
 
-First Input Delay (FID) measures the time from when a user first interacts with the page (i.e., when they click a link, tap on a button, or use a custom, JavaScript-powered control) to the time when the browser is able to process that interaction. A "fast" FID from a user's perspective would be almost immediate feedback from their actions on a site rather than a stalled experience.
+First Input Delay (FID) measures the time from when a user first interacts with the page (i.e., when they click a link, tap on a button, or use a custom, JavaScript-powered control) to the time when the browser is able to process that interaction. A "fast" FID from a user's perspective would be almost immediate feedback from their actions rather than a stalled experience.
 
-Any delay is a pain point and could correlate with interference from other aspects of the site loading when the user tries to interact with the site. A "good" FID is regarded as being under 100 milliseconds.
+Any delay is a pain point and could correlate with interference from other parts of the site loading while the user tries to interact with the site. A "good" FID is regarded as being under 100 milliseconds.
 
-In 2021's report, the fact that almost all platforms manage to deliver a good FID, raised questions about the strictness of this metric. The Chrome team <a hreflang="en" href="https://web.dev/responsiveness/">published an article</a>, which was updated in May of 2022 to include a reference to a new metric, <a hreflang="en" href="https://web.dev/inp/">Interaction to Next Paint (INP)</a> . Given its beta nature at the time of this writing, we're limiting its inclusion to this reference, in anticipation of a possible expansion in next year's report.
+In 2021's report, the fact that almost all platforms manage to deliver a good FID raised questions about the strictness of this metric. The Chrome team <a hreflang="en" href="https://web.dev/responsiveness/">published an article</a> that was updated in May of 2022 to include a reference to a new metric, <a hreflang="en" href="https://web.dev/inp/">Interaction to Next Paint (INP)</a> . Given its beta nature at the time of this writing, we're limiting its inclusion to this reference in anticipation of a possible expansion in next year's report.
 
 {{ figure_markup(
   image="fid-cwv-yoy.png",
   caption="FID mobile year-over-year.",
-  description="Bar chart showing the change in the percentage of good FID mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage. WordPress it's 96% in both 2021 and 2022, for Joomla it's 85% for 2021 and 89% on 2022, for Drupal it's 90% and 95% respecitely, for Wix it's 94% and 92%, for Squarespace it's 98% and 98%, for 1C-Bitrix it's 83% and 94%, for TYPO3 CMS it's 93% and 95%, for Duda it's 92% and 95%, for Weebly it's 96% and 90%, and finally for Adobe Experience Manager it's 94% for 2021 and 95% for 2022.",
+  description="Bar chart showing the change in the percentage of good FID scores on mobile sites year-over-year for each of the 10 most adopted CMSs sorted by percentage. For WordPress, it's 96% in both 2021 and 2022. For Joomla, it's 85% for 2021 and 89% on 2022. For Drupal, it's 90% and 95%, respectively. For Wix, it's 94% and 92%. For Squarespace, it's 98% and 98%. For 1C-Bitrix, it's 83% and 94%. For TYPO3 CMS, it's 93% and 95%. For Duda, it's 92% and 95%. For Weebly, it's 96% and 90%. Finally, for Adobe Experience Manager, it's 94% for 2021 and 95% for 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=242914394&format=interactive",
   sheets_gid="1494726447",
   sql_file="core_web_vitals_yoy.sql",
@@ -259,12 +259,12 @@ Cumulative Layout Shift (CLS) measures the visual stability of content on a web 
 
 A layout shift occurs any time a visible element changes its position from one rendered frame to the next. The <a hreflang="en" href="https://web.dev/evolving-cls/">CLS metric evolved in 2021</a>, mainly introducing the concept of Session Windows, to be fairer to long-lived pages and Single Page Apps (SPAs).
 
-A score of 0.1 or below is measured as "good", over 0.25 as "poor", and anything in between as "needs improvement".
+A score of 0.1 or below is measured as "good," over 0.25 as "poor," and anything in between "needs improvement."
 
 {{ figure_markup(
   image="cls-cwv-yoy.png",
   caption="CLS mobile year-over-year.",
-  description="Bar chart showing the change in the percentage of good CLS mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage. For WordPress it's 61% in 2021 versus 75% in 2022, for Joomla it's 62% and 72% respectively, for Drupal it's 69% and 81%, for Wix it's 81% and 89%, for Squarespace it's 54% and 76%, for 1C-Bitrix it's 66% and 76%, for TYPO3 CMS it's 69% and 81%, for Duda it's 55% and 86%, for Weebly it's 56% and 69%, and finally for Adobe Experience Manager it's 44% in 2021 and 59% in 2022.",
+  description="Bar chart showing the change in the percentage of good CLS mobile sites year-over-year, for each of the 10 most adopted CMSs, sorted by percentage. For WordPress, it's 61% in 2021 versus 75% in 2022. For Joomla, it's 62% and 72% respectively. For Drupal, it's 69% and 81%. For Wix, it's 81% and 89%. For Squarespace, it's 54% and 76%. For 1C-Bitrix, it's 66% and 76%. For TYPO3 CMS, it's 69% and 81%. For Duda, it's 55% and 86%. For Weebly, it's 56% and 69%. Finally, for Adobe Experience Manager it's 44% in 2021 and 59% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=2127088376&format=interactive",
   sheets_gid="1494726447",
   sql_file="core_web_vitals_yoy.sql",
@@ -273,7 +273,7 @@ A score of 0.1 or below is measured as "good", over 0.25 as "poor", and anything
   )
 }}
 
-Comparing yearly data, we can see that all CMSs made progress, WordPress, Squarespace, Duda, and Adobe Experience Manager in particular showing significant gains.
+Comparing yearly data, we can see that all CMSs made progress. WordPress, Squarespace, Duda, and Adobe Experience Manager in particular show significant gains.
 
 ### Lighthouse
 
@@ -285,12 +285,12 @@ We can analyze this data to provide another perspective on CMS performance, usin
 
 #### Performance score
 
-The Lighthouse <a hreflang="en" href="https://web.dev/performance-scoring/">performance score</a> is a weighted average of several metric scores.
+The Lighthouse <a hreflang="en" href="https://web.dev/performance-scoring/">performance score</a> is a weighted average of several scored metrics.
 
 {{ figure_markup(
   image="median-lighthouse-performance.png",
   caption="Median lighthouse performance scores.",
-  description="Bar chart showcasing the median Lighthouse performance scores for each of the top 10 most adopted CMSs. For WordPress it's 43 for desktop and 26 for mobile, for Drupal it's 45 and 29 respectively, for Joomla it's 44 and 27, for Wix it's 45 and 29, for Squarespace it's 40 and 19, for 1C-Bitrix it's 37 and 22, for TYPO3 CMS it's 46 and 35, for Duda it's 53 and 47, for Weebly it's 45 and 25, and finally for Adobe Experience Manager it's 36 and 17.",
+  description="Bar chart showcasing the median Lighthouse performance scores for each of the top 10 most adopted CMSs. For WordPress, it's 43 for desktop and 26 for mobile. For Drupal, it's 45 and 29, respectively. For Joomla, it's 44 and 27. For Wix, it's 45 and 29. For Squarespace, it's 40 and 19. For 1C-Bitrix, it's 37 and 22. For TYPO3 CMS, it's 46 and 35. For Duda, it's 53 and 47. For Weebly, it's 45 and 25. For Adobe Experience Manager, it's 36 and 17.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=2275923&format=interactive",
   sheets_gid="921264211",
   sql_file="lighthouse_category_scores_per_cms.sql",
@@ -299,20 +299,20 @@ The Lighthouse <a hreflang="en" href="https://web.dev/performance-scoring/">perf
   )
 }}
 
-We can see that the median performance scores for most platforms on mobile are low, ranging from 19 to 35, with Duda at 47 the exception. As Philip Walton cited in 2021, <a hreflang="en" href="https://philipwalton.com/articles/my-challenge-to-the-web-performance-community/">this does not directly imply bad results</a> in mobile field data but does imply that all platforms have room for improvements, especially for low-end devices and network connections similar to those Lighthouse attempts to emulate.
+We can see that the median performance scores for most platforms on mobile are low and range from about 19 to 35. Duda at 47 is the exception. As Philip Walton noted in 2021, <a hreflang="en" href="https://philipwalton.com/articles/my-challenge-to-the-web-performance-community/">this does not directly imply bad results</a> in mobile field data, but it does imply that all platforms have room for improvement, especially on low-end devices with network connections similar to those Lighthouse attempts to emulate.
 
-WordPress, Joomla, Drupal, and 1C-Bitrix showed no change from last year's results. Wix dropped from 30% to 29% while the rest showed improvements.
+WordPress, Joomla, Drupal, and 1C-Bitrix showed no change from last year's results. Wix dropped from 30% to 29% while the rest showed improvement.
 
-Desktop show—unsurprisingly given the faster CPUs and network—better numbers with all CMSs seeing a 10-20 point improvements.
+Desktop scores were good across the board with all CMSs seeing 10-20 point improvements. This isn't surprising, given the faster CPUs and networks available to the desktop.
 
 #### SEO score
 
-Search Engine Optimization (or SEO) is the practice of improving a website to make it more easily found in search engines. This is covered more in-depth in our [SEO](./seo) chapter, but one part involves ensuring the site is coded in such a way to serve as much information to search engine crawlers to make it as easy as possible for them to show a site appropriately in search engine results. Compared to a custom-created website, one might expect a CMS to provide good SEO capabilities, and the Lighthouse scores in this category are appropriately high.
+Search Engine Optimization (or SEO) is the practice of improving a website to make it more easily found in search engines. This is covered more in-depth in our [SEO](./seo) chapter, but it relates to CMSs as well. A CMS and content on it is generally set up to serve as much information to search engine crawlers as possible to make it as easy as possible for them to index site content appropriately in search engine results. Compared to a custom-built website, one might expect a CMS to provide good SEO capabilities, and the Lighthouse scores in this category are appropriately high.
 
 {{ figure_markup(
   image="median-lighthouse-seo.png",
   caption="Median lighthouse SEO scores.",
-  description="Bar chart showcasing the median Lighthouse SEO scores for each of the top 10 most adopted CMSs. For WordPress it's 91 for desktop and 89 for mobile, for Drupal it's 83 and 83, for Joomla it's 83 and 86 respectively, for Wix it's 92 and 91, for Squarespace it's 92 and 92, for 1C-Bitrix it's 83 and 85, for TYPO3 CMS it's 83 and 86, for Duda it's 83 and 86, for Weebly it's 82 and 85, and finally for Adobe Experience Manager it's 83 and 85.",
+  description="Bar chart showcasing the median Lighthouse SEO scores for each of the top 10 most adopted CMSs. For WordPress it's 91 for desktop and 89 for mobile. For Drupal, it's 83 and 83. For Joomla, it's 83 and 86, respectively. For Wix, it's 92 and 91. For Squarespace, it's 92 and 92. For 1C-Bitrix, it's 83 and 85. For TYPO3 CMS, it's 83 and 86. For Duda, it's 83 and 86. For Weebly, it's 82 and 85. For Adobe Experience Manager, it's 83 and 85.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1901746915&format=interactive",
   sheets_gid="921264211",
   sql_file="lighthouse_category_scores_per_cms.sql",
@@ -334,7 +334,7 @@ Each accessibility audit is either a pass or a fail, but unlike other Lighthouse
 {{ figure_markup(
   image="median-lighthouse-accessibility.png",
   caption="Media Lighthouse accessibility scores.",
-  description="Bar chart showcasing the median Lighthouse SEO score for each of the top 10 most adopted CMSs. For WordPress it's 86 for desktop and 86 for mobile, for Drupal it's 86 and 86, for Joomla it's 83 and 83 respectively, for Wix it's 88 and 88, for Squarespace it's 93 and 91, for 1C-Bitrix it's 77 and 77, for TYPO3 CMS it's 84 and 85, for Duda it's 78 and 79, for Weebly it's 83 and 84, and finally for Adobe Experience Manager it's 86 and 86.",
+  description="Bar chart showcasing the median Lighthouse SEO score for each of the top 10 most adopted CMSs. For WordPress it's 86 for desktop and 86 for mobile. For Drupal, it's 86 and 86. For Joomla, it's 83 and 83 respectively. For Wix, it's 88 and 88. For Squarespace, it's 93 and 91. For 1C-Bitrix, it's 77 and 77. For TYPO3 CMS, it's 84 and 85. For Duda, it's 78 and 79. For Weebly, it's 83 and 84. For Adobe Experience Manager, it's 86 and 86.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=201542197&format=interactive",
   sheets_gid="921264211",
   sql_file="lighthouse_category_scores_per_cms.sql",
@@ -343,16 +343,16 @@ Each accessibility audit is either a pass or a fail, but unlike other Lighthouse
   )
 }}
 
-The median Lighthouse accessibility score for the top 10 CMSs ranges between 77 and 91. Squarespace had the highest score of 91, while 1C-Bitrix had the lowest accessibility scores. The desktop scores are almost idential to mobile, perhaps reflecting that the same sites are delivered to both.
+The median Lighthouse accessibility score for the top 10 CMSs ranges between 77 and 91. Squarespace had the highest score of 91, while 1C-Bitrix had the lowest accessibility scores. The desktop scores are almost identical to mobile, perhaps reflecting that the same sites are delivered to both desktop and mobile devices.
 
 #### Best practices
 
-The Lighthouse <a hreflang="en" href="https://web.dev/lighthouse-best-practices/">best practices</a> try to ensure that web pages are following best practices for the web, for a variety of different metrics, such as supporting HTTPS, no errors logged in the console, and more.
+The Lighthouse <a hreflang="en" href="https://web.dev/lighthouse-best-practices/">best practices</a> try to ensure that web pages are following best practices for the web for a variety of different metrics such as supporting HTTPS, no errors logged in the console, and more.
 
 {{ figure_markup(
   image="median-lighthouse-best-practices.png",
   caption="Media Lighthouse best practices scores.",
-  description="Bar chart showcasing the median Lighthouse best practices score for each of the top 10 most adopted CMSs. For WordPress it's 92 for desktop and 83 for mobile, for Drupal it's 83 and 83, for Joomla it's 83 and 75 respectively, for Wix it's 92 and 100, for Squarespace it's 92 and 92, for 1C-Bitrix it's 83 and 75, for TYPO3 CMS it's 92 and 83, for Duda it's 83 and 75, for Weebly it's 75 and 75, and finally for Adobe Experience Manager it's 83 and 75.",
+  description="Bar chart showcasing the median Lighthouse best practices score for each of the top 10 most adopted CMSs. For WordPress, it's 92 for desktop and 83 for mobile. For Drupal, it's 83 and 83. For Joomla, it's 83 and 75 respectively. For Wix, it's 92 and 100. For Squarespace, it's 92 and 92. For 1C-Bitrix, it's 83 and 75. For TYPO3 CMS, it's 92 and 83. For Duda, it's 83 and 75. For Weebly, it's 75 and 75. For Adobe Experience Manager, it's 83 and 75.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1066307789&format=interactive",
   sheets_gid="921264211",
   sql_file="lighthouse_category_scores_per_cms.sql",
@@ -361,16 +361,16 @@ The Lighthouse <a hreflang="en" href="https://web.dev/lighthouse-best-practices/
   )
 }}
 
-Wix had the highest median best practices score of 100, while many of the other top 10 platforms share the lowest score of 75. Again, desktop shows are very similar though larger in some cases perhaps reflecting incorrect image aspect-ratios on mobile pages, since most of the other audits in this category are platform based.
+Wix had the highest median best practices score of 100, while many of the other top 10 platforms share the lowest score of 75. Again, desktop results are very similar though larger in some cases. This may reflect incorrect image aspect ratios on mobile pages since most of the other audits in this category are platform-based.
 
 ## Resource weights
 
-We also used HTTP Archive data to analyze the weight of resources used across different platforms. We did this to highlight possible opportunities. Page loading performance does not depend exclusively on the number of downloaded bytes, but fewer bytes necessary to load a page results in reduced costs, carbon emissions, and potentially faster performance, especially for slower connections.
+We also used HTTP Archive data to analyze the weight of resources used across different platforms. We did this to highlight possible opportunities for performance improvement. Page loading performance does not depend exclusively on the number of downloaded bytes, but fewer bytes necessary to load a page results in reduced costs, fewer carbon emissions, and potentially faster performance—especially for slower connections.
 
 {{ figure_markup(
   image="median-cms-page-weight.png",
   caption="Media resource weights by CMS.",
-  description="Column chart showing the median total page weight of each of the top five most adopted CMSs, for each device. For WordPress it's 2,559 KB on desktop and 2,314 KB on mobile. For Drupal it's 2,351 KB and 2,146 KB respectively, KB for Joomla it's 2,799 KB and 2,495, KB for Wix it's 3,172 KB and 2,158, KB and finally for Squarespace it's 3,462 KB and 3,577 KB.",
+  description="Column chart showing the median total page weight of each of the top five most adopted CMSs for each device category. For WordPress, it's 2,559 KB on desktop and 2,314 KB on mobile. For Drupal, it's 2,351 KB and 2,146 KB respectively. For Joomla, it's 2,799 KB and 2,495 KB. For Wix, it's 3,172 KB and 2,158 KB. For Squarespace, it's 3,462 KB and 3,577 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1764509612&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
@@ -418,7 +418,7 @@ We can examine the usage of the different image formats across the top CMSs:
 {{ figure_markup(
   image="image-format-popularity.png",
   caption="Image format popularity by CMS.",
-  description="Bar chart showcasing the relative popularity of each image format, among the top 15 most adopted CMSs. For WordPress it's 39% jpg, 30% png, 20% gif, 7% webp, 4% svg, 1% ico and 0% avif, for Wix it's 11%, 5%, 6%, 75%, 0%, 1%, and 0% respectively, for Joomla it's 48%, 36%, 10%, 2%, 2%, 3%, and 0%, for Drupal it's 41%, 35%, 13%, 2%, 6%, 2% and 0%, and finally for Squarespace it's 53%, 30%, 12%, 0%, 3%, 2% and 0%.",
+  description="Bar chart showcasing the relative popularity of each image format, among the top 15 most adopted CMSs. For WordPress, it's 39% jpg, 30% png, 20% gif, 7% webp, 4% svg, 1% ico and 0% avif. For Wix, it's 11%, 5%, 6%, 75%, 0%, 1%, and 0% respectively. For Joomla, it's 48%, 36%, 10%, 2%, 2%, 3%, and 0%. For Drupal, it's 41%, 35%, 13%, 2%, 6%, 2% and 0%. FOr Squarespace, it's 53%, 30%, 12%, 0%, 3%, 2% and 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1668189558&format=interactive",
   sheets_gid="710966440",
   sql_file="image_format_popularity.sql",
@@ -427,67 +427,67 @@ We can examine the usage of the different image formats across the top CMSs:
   )
 }}
 
-Wix and Duda make the most use of WebP, with ~75% and 42% adoption respectively, while the rest show minor increases.
+Wix and Duda make the most use of WebP, at ~75% and 42% adoption respectively, while the rest show minor increases.
 
 With the <a hreflang="en" href="https://caniuse.com/webp">growing support of WebP</a>, it seems all platforms have work to do to reduce the usage of the older JPEG and PNG formats without compromising on image quality.
 
-WordPress introduced support for WebP in 5.8, released in June of 2021 and is <a hreflang="en" href="https://make.wordpress.org/core/2022/06/30/plan-for-adding-webp-multiple-mime-support-for-images/">planned to be included by default</a> in WordPress 6.1, which we expect to lead to a significant increase in WebP adoption in the 2023 results.
+WordPress introduced support for WebP in WordPress 5.8, which was released in June of 2021. WebP support was <a hreflang="en" href="https://make.wordpress.org/core/2022/06/30/plan-for-adding-webp-multiple-mime-support-for-images/">planned to be included by default</a> in WordPress 6.1. However, this decision has been delayed. Eventually, we expect a significant increase in WebP adoption via WordPress which may be apparent inthe 2023 results.
 
 #### JavaScript
 
 {{ figure_markup(
   image="median-size-js.png",
   caption="Median JavaScript resources by CMS.",
-  description="Column chart showing the median weight of JavaScript resources downloaded in each of the top five most adopted CMSs, for each device. In all cases the desktop and mobile sizes are identical. For WordPress it's 521 KB on both desktop and mobile, for Drupal it's 416 KB for both, for Joomla it's 452 KB, for Wix it's 1,318 KB, and finally for Squarespace it's 997 KB for both.",
+  description="Column chart showing the median weight of JavaScript resources downloaded in each of the top five most adopted CMSs, for each device. In all cases the desktop and mobile sizes are identical. For WordPress, it's 521 KB on both desktop and mobile. For Drupal, it's 416 KB for both. For Joomla, it's 452 KB. For Wix, it's 1,318 KB. For Squarespace it's 997 KB for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1169405351&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
   )
 }}
 
-The top five CMSs all deliver pages that rely on JavaScript, with Drupal delivering the least amount of JavaScript bytes: 416 KB on mobile. Wix delivers the most JavaScript bytes, over 1.3 MB.
+The top five CMSs all deliver pages that rely on JavaScript, with Drupal delivering the fewest JavaScript bytes: 416 KB on mobile. Wix delivers the most JavaScript bytes—over 1.3 MB.
 
 #### HTML document
 
 {{ figure_markup(
   image="median-size-html.png",
   caption="Median HTML size by CMS.",
-  description="Column chart showing the median weight of the HTML resource downloaded in each of the top five most adopted CMSs, for each device. In most cases the desktop and mobile sizes are very similar. For WordPress it's 40 KB on desktop and 37 KB on mobile, for Drupal it's 23 KB for both, for Joomla it's 26 KB and 22 KB, for Wix it's 123 KB on desktop and 118 KB on mobile, and finally for Squarespace it's 27 KB for both.",
+  description="Column chart showing the median weight of the HTML resource downloaded in each of the top five most adopted CMSs, for each device. In most cases the desktop and mobile sizes are very similar. For WordPress, it's 40 KB on desktop and 37 KB on mobile. For Drupal, it's 23 KB for both. For Joomla, it's 26 KB and 22 KB. For Wix, it's 123 KB on desktop and 118 KB on mobile. For Squarespace, it's 27 KB for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1713320070&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
   )
 }}
 
-Examining the HTML document sizes, we can see that most of the top CMSs deliver a median HTML size of ~22 KB–37 KB, except Wix which delivers ~118 KB, a minor improvement over 2021's results. This may suggest extensive use of inlined resources and shows an area that can be further improved.
+Examining the HTML document sizes, we can see that most of the top CMSs deliver a median HTML size of ~22 KB–37 KB. The only exception is Wix which delivers ~118 KB, a minor improvement over 2021's results. This may suggest extensive use of inlined resources and shows an area that can be further improved.
 
 #### CSS
 
 {{ figure_markup(
   image="median-size-css.png",
   caption="Median CSS size by CMS.",
-  description="Column chart showing the median weight of CSS resources downloaded in each of the top five most adopted CMSs, for each device. In most cases (apart from Wixs) the desktop and mobile sizes are very similar. For WordPress it's 117 KB on desktop and 115 KB on mobile, for Drupal it's 68 KB and 66 KB respectively, for Joomla it's 86 KB and 83 KB, for Wix it's 18 KB on desktop but only 9 KB on mobile, and finally for Squarespace it's 89 KB for both.",
+  description="Column chart showing the median weight of CSS resources downloaded in each of the top five most adopted CMSs for each device. In most cases (apart from Wix) the desktop and mobile sizes are very similar. For WordPress, it's 117 KB on desktop and 115 KB on mobile. For Drupal, it's 68 KB and 66 KB, respectively. For Joomla, it's 86 KB and 83 KB. For, Wix it's 18 KB on desktop but only 9 KB on mobile. For Squarespace, it's 89 KB for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=176229983&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
   )
 }}
 
-Next, we examine the use of explicit CSS resources that are downloaded. Here we can see a different distribution between platforms, strengthening the differences in inlining approaches. Wix delivers the fewest CSS resources, with only ~9 KB sent on mobile views; WordPress delivers the most with ~115 KB.
+Next, we examine the use of explicit CSS resources that are downloaded. Here we can see a different distribution between platforms that strengthens the case for inlining CSS. Wix delivers the fewest CSS resources, with only ~9 KB sent on mobile views. WordPress delivers the most with ~115 KB.
 
 #### Fonts
 
 {{ figure_markup(
   image="median-size-font.png",
   caption="Median font size by CMS.",
-  description="Column chart showing the median weight of fonts resources downloaded in each of the top five most adopted CMSs, for each device. In all cases the desktop and mobile sizes are the same. For WordPress it's 137 KB, for Drupal it's 92 KB, for Joomla it's 82 KB, for Wix it's 148 KB, and finally for Squarespace it's 202 KB.",
+  description="Column chart showing the median weight of fonts resources downloaded in each of the top five most adopted CMSs, for each device. In all cases the desktop and mobile sizes are the same. For WordPress, it's 137 KB. For Drupal, it's 92 KB. For Joomla, it's 82 KB. For Wix, it's 148 KB. For Squarespace, it's 202 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1008146261&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
   )
 }}
 
-To display text, web developers often choose to use a variety of fonts. Joomla delivers the fewest font bytes, with 82 KB on mobile views, and Squarespace delivers the most with 202 KB.
+To display text, web developers often choose to use a variety of fonts. Joomla delivers the fewest font bytes, with 82 KB on mobile views. Squarespace delivers the most with 202 KB.
 
 ## WordPress in 2022
 
@@ -503,12 +503,12 @@ This year, we compared our results against last year, focusing on adoption by ge
 
 ### Adoption by geography
 
-First, we examined WordPress adoption by geography across all sites in our dataset with comparison to our 2021 results.
+First, we examined WordPress adoption by geography across all sites in our dataset in comparison to our 2021 results.
 
 {{ figure_markup(
   image="wordpress-adoption-geo-yoy.png",
   caption="WordPress adoption by geography year-over-year on mobile.",
-  description="Bar chart depicting the adoption of WordPress in each of the 10 geographies with the most websites. For all counties it's 32% on 2021 and 34% on 2022, for United States of America it's 32% for both, for Japan it's 35% and 38% respectively, for Brazil it's 29% and 31%, for Germany it's 27% and 29%, for United Kingdom of Great Britain and Northern Ireland it's 31% and 32%, for Spain it's 37% and 39%, for Italy it's 36% and 38%, for India it's 28% and 30%, for France it's also 28% and 30%, and finally for Canada it's 32% in 2021 and 33% in 2022.",
+  description="Bar chart depicting the adoption of WordPress in each of the 10 geographies with the most websites. For all countries, it's 32% on 2021 and 34% on 2022. For the United States, it's 32% for both. For Japan, it's 35% and 38%, respectively. For Brazil, it's 29% and 31%. For Germany, it's 27% and 29%. For the United Kingdom of Great Britain and Northern Ireland, it's 31% and 32%. For Spain, it's 37% and 39%. For Italy, it's 36% and 38%. For India, it's 28% and 30%. For France, it's also 28% and 30%. For Canada, it's 32% in 2021 and 33% in 2022.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=442489769&format=interactive",
   sheets_gid="694875761",
   sql_file="cms_adoption_by_geo.sql",
@@ -517,16 +517,16 @@ First, we examined WordPress adoption by geography across all sites in our datas
   )
 }}
 
-According to our dataset, WordPress adoption is growign significantly in all the tops geographies.
+According to our dataset, WordPress adoption is growing significantly in all the top geographies.
 
 ### Passing CWVs by geography
 
-Next, we looked at the number of WordPress origins with passing Core Web Vitals, but this time we broke them down by geography, mobile device usage, and in comparison with our 2021 results.
+Next, we looked at the number of WordPress origins with passing scores for Core Web Vitals, but this time we broke them down by geography, mobile device usage, and in comparison with our 2021 results.
 
 {{ figure_markup(
   image="wordpress-cwv-yoy.png",
   caption="WordPress core web vitals by geography year-over-year.",
-  description="Bar chart depicting the adoption of WordPress in each of the 10 geographies with the most websites. For United States of America it's 28% for 2021 and 40% for 2022, for Japan it's 38% and 52% respectively, for India it's 8% and 15%, for Brazil it's 5% and 10%, for United Kingdom of Great Britain and Northern Ireland it's 33% and 44%, for Germany it's 35% and 48%, for Spain it's 21% and 33%, for Italy it's 19% and 29%, for France it's 26% and 39%, and finally for Canada it's 36% for 2021 and 49% for 2022. ",
+  description="Bar chart depicting the adoption of WordPress in each of the 10 geographies with the most websites. For United States of America, it's 28% for 2021 and 40% for 2022. For Japan, it's 38% and 52% respectively. For India, it's 8% and 15%. For Brazil, it's 5% and 10%. For the United Kingdom of Great Britain and Northern Ireland, it's 33% and 44%. For Germany, it's 35% and 48%. For Spain, it's 21% and 33%. For Italy, it's 19% and 29%. For France, it's 26% and 39%. For Canada, it's 36% for 2021 and 49% for 2022. ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1279742547&format=interactive",
   sheets_gid="1742929367",
   sql_file="core_web_vitals_by_geo.sql",
@@ -535,7 +535,7 @@ Next, we looked at the number of WordPress origins with passing Core Web Vitals,
   )
 }}
 
-All geographies showed improvements, ranging from a 5% overall gain in Brazil to 14% in Japan. Also worth noting is the large disparity across geographies, with Brazil at 10% total compared to Japan at 52%. Brazil on the low end is growing, though, improving 100% year over year. As we evaluate next year's dataset, it may be worth investigating the low end performers further to identify potential causes and opportunities for improvement.
+All geographies showed improvements, ranging from a 5% overall gain in Brazil to 14% in Japan. Also worth noting is the large disparity across geographies, with Brazil at 10% total compared to Japan at 52%. Brazil on the low end is growing, though, improving 100% year-over-year. As we evaluate next year's dataset, it may be worth investigating the low end performers further to identify potential causes and opportunities for improvement.
 
 ### Plugins
 
@@ -562,4 +562,4 @@ CMSs are doing great work and have opportunity to further improve user experienc
 
 On the other hand, Core Web Vitals as standards still have some evolving to do. We mentioned some ideas for a <a hreflang="en" href="https://web.dev/responsiveness/">better responsiveness metric</a> above. In addition, navigation between pages in a site should be better tracked and take into account the architectural differences between <a hreflang="en" href="https://web.dev/vitals-spa-faq">Single-Page Applications (SPAs) and Multi-Page Applications (MPAs)</a> architectures.
 
-We look forward to next year's results and hope to both expand our datasets and improve our methodologies. In the meantime, onward and upword, let's keep making the web better.
+We look forward to next year's results and hope to both expand our datasets and improve our methodologies. In the meantime, onward and upward, let's keep making the web better.
