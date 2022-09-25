@@ -132,7 +132,7 @@ Notably 16.9% of modules didn’t have an identifiable language. <a hreflang="en
 
 It is interesting to contrast these results with the <a hreflang="en" href="https://blog.scottlogic.com/2022/06/20/state-of-wasm-2022.html">State of WebAssembly 2022 survey</a>, where Rust was the most frequently used language. However, a significant number of respondents to that survey were using WebAssembly for non-browser based applications.
 
-**What features are being used?**
+## What features are being used?
 
 The initial release of WebAssembly was considered an MVP. In common with other web standards, it is continually evolving under the governance of the World Wide Web Consortium (W3C). This year saw the announcement of the <a hreflang="en" href="https://www.w3.org/TR/wasm-core-2/">WebAssembly v2 draft</a>, adding a number of new features.
 
