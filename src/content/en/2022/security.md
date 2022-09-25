@@ -13,12 +13,13 @@ clarkio_bio: Brian is a developer who has been building and architecting softwar
 results: https://docs.google.com/spreadsheets/d/1cwJ43NL2IN2PxJa5oiOoJCRkSh566XE_k9uHnGJdWeg/
 featured_quote: People's personal details and various aspects of life are becoming more and more digital everyday, making security and privacy extremely crucial. It is the responsibility of the websites to ensure that it's users are protected by adopting the security best practices.
 featured_stat_1: +14%
-featured_stat_label_1: Relative increase in adoption for Content-Security-Policy header from 2021
+featured_stat_label_1: Increase in adoption for Content Security Policy
 featured_stat_2: 428
-featured_stat_label_2: Websites having `Clear-Site-Data` header
+featured_stat_label_2: Websites using the `Clear-Site-Data` header
 featured_stat_3: +85%
-featured_stat_label_3: Relative increase in adoption of Permissions-Policy from 2021
+featured_stat_label_3: Increase in adoption of Permissions Policy
 ---
+
 ## Introduction
 
 As people's personal details continue to become more digital, security and privacy are becoming extremely crucial across the internet. It's the website owner's responsibility that they can secure the data they are taking from the user. Hence, it is essential for them to adopt all the security best practices to ensure protection of the user against vulnerabilities that malwares can exploit to get sensitive information.
