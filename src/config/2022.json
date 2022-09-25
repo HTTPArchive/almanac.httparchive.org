@@ -41,15 +41,13 @@
           "part": "I",
           "chapter_number": "5",
           "title": "Fonts",
-          "slug": "fonts",
-          "todo": true
+          "slug": "fonts"
         },
         {
           "part": "I",
           "chapter_number": "6",
           "title": "Media",
-          "slug": "media",
-          "todo": true
+          "slug": "media"
         },
         {
           "part": "I",
@@ -69,9 +67,8 @@
           "part": "I",
           "chapter_number": "9",
           "title": "Interoperability",
-          "slug": "interop",
-          "hero_dir": "2022",
-          "todo": true
+          "slug": "interoperability",
+          "hero_dir": "2022"
         }
       ]
     },
@@ -245,7 +242,9 @@
       ],
       "avatar_url": "54864775",
       "github": "akshay-ranganath",
-      "website": "https://www.cloudinary.com/"
+      "linkedin": "akshayranganath",
+      "twitter": "rakshay",
+      "website": "https://akshayranganath.github.io/"
     },
     "alexdenning": {
       "name": "Alex Denning",
@@ -343,11 +342,13 @@
     "bramstein": {
       "name": "Bram Stein",
       "teams": [
+        "analysts",
         "authors"
       ],
       "avatar_url": "114871",
       "github": "bramstein",
-      "website": "http://www.bramstein.com/"
+      "website": "http://www.bramstein.com/",
+      "twitter": "bram_stein"
     },
     "clarkio": {
       "name": "Brian Clark",
@@ -514,7 +515,7 @@
     "meyerweb": {
       "name": "Eric A. Meyer",
       "teams": [
-        "authors"
+        "reviewers"
       ],
       "avatar_url": "939727",
       "github": "meyerweb",
@@ -758,16 +759,6 @@
       "github": "konfirmed",
       "website": "https://www.knfrmd.com",
       "twitter": "kanmiobasa"
-    },
-    "karlcow": {
-      "name": "Karl Dubost",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "505230",
-      "github": "karlcow",
-      "website": "http://www.la-grange.net/karl/",
-      "twitter": "karlcow"
     },
     "kevinfarrugia": {
       "name": "Kevin Farrugia",
