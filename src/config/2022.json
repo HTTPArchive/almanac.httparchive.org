@@ -605,16 +605,6 @@
       "avatar_url": "203457",
       "github": "eustas"
     },
-    "feross": {
-      "name": "Feross Aboukhadijeh",
-      "teams": [
-        "authors"
-      ],
-      "avatar_url": "121766",
-      "github": "feross",
-      "website": "https://feross.org",
-      "twitter": "feross"
-    },
     "fershad": {
       "name": "Fershad Irani",
       "teams": [
@@ -1117,17 +1107,6 @@
       "website": "unravelweb.dev",
       "twitter": "TheNishuGoel"
     },
-    "nrllh": {
-      "name": "Nurullah Demir",
-      "teams": [
-        "authors",
-        "reviewers"
-      ],
-      "avatar_url": "13475745",
-      "github": "nrllh",
-      "website": "internet-sicherheit.de",
-      "twitter": "nrllah"
-    },
     "pankajparkar": {
       "name": "Pankaj Parkar",
       "teams": [
@@ -1415,15 +1394,6 @@
       "github": "bobbyshaw",
       "linkedin": "tomrobertshaw",
       "twitter": "bobbyshaw"
-    },
-    "tomvangoethem": {
-      "name": "Tom Van Goethem",
-      "teams": [
-        "authors",
-        "reviewers"
-      ],
-      "avatar_url": "4355579",
-      "github": "tomvangoethem"
     },
     "TusharPol": {
       "name": "Tushar Pol",

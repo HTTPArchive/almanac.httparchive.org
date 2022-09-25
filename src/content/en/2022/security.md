@@ -18,7 +18,6 @@ featured_stat_label_2: Websites having `Clear-Site-Data` header
 featured_stat_3: +85%
 featured_stat_label_3: Relative increase in adoption of Permissions-Policy from 2021
 ---
-
 ## Introduction
 
 As people's personal details continue to become more digital, security and privacy are becoming extremely crucial across the internet. It's the website owner's responsibility that they can secure the data they are taking from the user. Hence, it is essential for them to adopt all the security best practices to ensure protection of the user against vulnerabilities that malwares can exploit to get sensitive information.
