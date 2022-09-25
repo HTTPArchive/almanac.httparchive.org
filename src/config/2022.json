@@ -56,8 +56,7 @@
           "chapter_number": "7",
           "title": "WebAssembly",
           "slug": "webassembly",
-          "hero_dir": "2021",
-          "todo": true
+          "hero_dir": "2021"
         },
         {
           "part": "I",
