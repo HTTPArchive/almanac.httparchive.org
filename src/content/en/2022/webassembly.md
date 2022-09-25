@@ -57,13 +57,13 @@ By hashing the WebAssembly modules we can determine how many of these 3,204 modu
 A significant proportion of wasm requests are cross-origin, further reinforcing the notion that they are re-used. Notably this has increased significantly from last year (67.2% vs 55.2%).
 
 {{ figure_markup(
- caption="Cross-origin WebAssembly usage.",
- description="Bar chart showing 67.2% of WebAssembly usage on desktop, and 60.9% on mobile are cross-origin.",
- chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZqlPK0L45J7IoVgmLcuRut9-M2nhaDMhs8cHtCLZacS7pkIqvEhHfdcYNSoEotQp0-Rs_RRslZ8sT/pubchart?oid=2039142493&format=interactive",
- sheets_gid="491240617",
- sql_file="cross_domain.sql",
- image="cross_domain.png"
- )
+  caption="Cross-origin WebAssembly usage.",
+  description="Bar chart showing 67.2% of WebAssembly usage on desktop, and 60.9% on mobile are cross-origin.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZqlPK0L45J7IoVgmLcuRut9-M2nhaDMhs8cHtCLZacS7pkIqvEhHfdcYNSoEotQp0-Rs_RRslZ8sT/pubchart?oid=2039142493&format=interactive",
+  sheets_gid="491240617",
+  sql_file="cross_domain.sql",
+  image="cross_domain.png"
+  )
 }}
 
 These WebAssembly modules differ considerably in size, with the smallest being just a few kilobytes, and the largest weighing in at 7.3MBytes. Looking in more detail, at the uncompressed size, we see that the median (50th percentile) size is 835KBytes.
