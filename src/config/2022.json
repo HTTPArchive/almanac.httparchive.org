@@ -41,8 +41,7 @@
           "part": "I",
           "chapter_number": "5",
           "title": "Fonts",
-          "slug": "fonts",
-          "todo": true
+          "slug": "fonts"
         },
         {
           "part": "I",
@@ -400,11 +399,13 @@
     "bramstein": {
       "name": "Bram Stein",
       "teams": [
+        "analysts",
         "authors"
       ],
       "avatar_url": "114871",
       "github": "bramstein",
-      "website": "http://www.bramstein.com/"
+      "website": "http://www.bramstein.com/",
+      "twitter": "bram_stein"
     },
     "clarkio": {
       "name": "Brian Clark",
