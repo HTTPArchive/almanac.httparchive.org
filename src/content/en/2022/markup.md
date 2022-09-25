@@ -437,12 +437,12 @@ This is more diverse: `pages-css`, `wix-image` and `wix-iframe` come from the Wi
 Are obsolete elements still a thing? Given that not-validating is still a thing, yes.
 
 {{ figure_markup(
-  image="obselete-elements.png",
-  caption="Obselete elements.",
+  image="obsolete-elements.png",
+  caption="Obsolete elements.",
   description="Bar chart showing `center` is used on 6.3% of desktop and 6.1% of mobile pages, `font` is used on 5.7% and 5.4% pages repsectively, `marquee` on 0.8% and 1.0%, `nobr` on 0.5% and 0.4%, and finally `big` 0.4% of desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=2039309980&format=interactive",
   sheets_gid="69619977",
-  sql_file="obselete_elements.sql",
+  sql_file="obsolete_elements.sql",
 ) }}
 
 On 6.1% of pages, you still find `center` elements (hi <a hreflang="en" href="https://www.google.com/">Google homepage</a>), and on 5.4% of pages, you find `font` elements. Use of both elements went down (down 0.5% in both cases), fortunately, while `marquee`, `nobr`, and `big` didn't witness significant changes.
@@ -450,12 +450,12 @@ On 6.1% of pages, you still find `center` elements (hi <a hreflang="en" href="ht
 `center` and `font` make for the lion's share (81.2%) of all obsolete elements, per our analysis:
 
 {{ figure_markup(
-  image="obselete-elements.png",
-  caption="Obselete elements.",
-  description="Pie chart showing `center` is 43.0% of obselete element usage on mobile, `font` is 38.2%, `marquee` is 7.0%, `nobr` 2.6%, `big` 2.6%, `frame` 1.5% and the the resrt of the pie is make up of unlabelled other elements.",
+  image="obsolete-elements-relative-use.png",
+  caption="Obsolete elements relavative use.",
+  description="Pie chart showing `center` is 43.0% of obsolete element usage on mobile, `font` is 38.2%, `marquee` is 7.0%, `nobr` 2.6%, `big` 2.6%, `frame` 1.5% and the the resrt of the pie is make up of unlabelled other elements.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=1875548366&format=interactive",
   sheets_gid="69619977",
-  sql_file="obselete_elements.sql",
+  sql_file="obsolete_elements.sql",
 ) }}
 
 ## Attributes
@@ -470,7 +470,7 @@ The most popular attribute, by far, was and still is `class`:
   image="attribute-usage.png",
   caption="Attribute usage.",
   description="Bar chart showing `class` is 34% of attribute usage on both mobile and desktop, `href` is 10% of usage on desktop and 9% on mobile, `style` is 5% on both, `id` is 5% on both, `src` is 4% on both, `type` is 3% on both, `title` is 2% on both, `alt` is 2% on both, `rel` is 2% on both, and finally `value` is 1% on both.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=22586899&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=143284257&format=interactive",
   sheets_gid="1979652187",
   sql_file="attributes.sql",
   width=600,
