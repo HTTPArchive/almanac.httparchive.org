@@ -5,42 +5,41 @@ description: WebAssembly chapter of the 2022 Web Almanac covering Wasm compressi
 authors: [ColinEberhardt]
 reviewers: [binji, RReverser]
 analysts: [JamieWhitMac]
-editors: []
+editors: [tunetheweb]
 translators: []
-#ColinEberhardt_bio: TODO
+ColinEberhardt_bio: Colin is Technology Director at <a hreflang="en" href="https://www.scottlogic.com/">Scott Logic</a> and is a prolific technical author, blogger and speaker on a range of technologies. He is a board member of <a hreflang="en" href="https://www.finos.org/">FINOS</a>, which is encouraging open source collaboration in the financial sector. He is also very active on GitHub, contributing to a number of different projects.
 results: https://docs.google.com/spreadsheets/d/11jyABro0fKtuN6INnYP9pJlv5QWwp0jfJyTsGfKgScg/
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
-unedited: true
+featured_quote: Despite being a niche technology, WebAssembly is already adding value to the web. There are a number of web applications that benefit greatly from this technology.
+featured_stat_1: 383
+featured_stat_label_1: Unique WebAssembly binarys discovered
+featured_stat_2: 34.9%
+featured_stat_label_2: Mobile sites using Amazon IVS
+featured_stat_3: 72.8%
+featured_stat_label_3: Modules using Emscripten
 ---
 
 ## Introduction
 
-WebAssembly (or Wasm) is a relative newcomer to the family of web technologies (JavaScript, HTML, CSS), becoming an officially recognized W3C standard in December 2019.
+WebAssembly—or Wasm—is a relative newcomer to the family of web technologies (JavaScript, HTML, CSS), becoming an officially recognized W3C standard in December 2019.
 
-WebAssembly introduces a new runtime into the browser, one which works alongside, and in close collaboration, with the JavaScript runtime. It is relatively lightweight in comparison, with a small instruction set and a strict isolation model (WebAssembly has no I/O by default). One of the primary motivators for developing WebAssembly was to provide a compilation target for a wide range of programming languages (C++, Rust, Go etc…), allowing developers to write new web applications, or port existing applications, with a wider toolset.
+WebAssembly introduces a new runtime into the browser, one which works alongside, and in close collaboration, with the JavaScript runtime. It is relatively lightweight in comparison, with a small instruction set and a strict isolation model (WebAssembly has no I/O by default). One of the primary motivators for developing WebAssembly was to provide a compilation target for a wide range of programming languages (C++, Rust, Go etc.), allowing developers to write new web applications, or port existing applications, with a wider toolset.
 
 High-profile examples of WebAssembly include its <a hreflang="en" href="https://blog.chromium.org/2019/06/webassembly-brings-google-earth-to-more.html">use within Google Earth</a>, where the C++ desktop application is now available within the browser, <a hreflang="en" href="https://www.figma.com/blog/webassembly-cut-figmas-load-time-by-3x/">Figma</a>, a browser-based design tool that enjoyed significant performance improvements using this technology, and most recently <a hreflang="en" href="https://web.dev/ps-on-the-web/">Photoshop</a> which uses WebAssembly for similar reasons.
 
 ## Methodology
 
-WebAssembly is a compilation target, distributed as binary modules. For this reason, we face a number of challenges when analyzing its usage on the web. The 2021 Web Almanac, which is the first edition that included WebAssembly, includes a <a hreflang="en" href="https://almanac.httparchive.org/en/2021/webassembly#methodology">detailed section on the methodology used</a>, and related caveats. The findings here, in the 2022 edition, followed the same methodology. The only enhancement added is a mechanism for determining the language used to author WebAssembly modules. The accuracy of that analysis is covered in more detail in the respective section.
+WebAssembly is a compilation target, distributed as binary modules. For this reason, we face a number of challenges when analyzing its usage on the web. The 2021 Web Almanac, which is the first edition that included WebAssembly, includes a [detailed section on the methodology used](../2021/webassembly#methodology), and related caveats. The findings here, in the 2022 edition, followed the same methodology. The only enhancement added is a mechanism for determining the language used to author WebAssembly modules. The accuracy of that analysis is covered in more detail in the respective section.
 
 ## How widely is WebAssembly being used?
 
 We found 3,204 confirmed WebAssembly requests on desktop and 2,777 on mobile. Those modules are used across 2,524 domains on desktop and 2,216 domains on mobile, which represents 0.06% and 0.04% of all domains on desktop and mobile correspondingly.
 
-This represents a modest drop in the number of modules we discovered in the crawl, a reduction of 16% for desktop and 12% mobile requests. This doesn’t necessarily mean WebAssembly is in decline, when interpreting this change it is worth noting the following:
+This represents a modest drop in the number of modules we discovered in the crawl, a reduction of 16% for desktop and 12% mobile requests. This doesn't necessarily mean WebAssembly is in decline, when interpreting this change it is worth noting the following:
 
-* While you can use WebAssembly to create all sorts of web-based content, its main benefit is found in more complex line-of-business applications with large codebases, that are often many years old (e.g. Google Earth, Photoshop, AutoCAD). These web ‘apps’ are not as numerous as the websites, and are not always available to the Almanac ‘crawl’.
-* As seen in a later section, much of the WebAssembly usage we see comes from a relatively small number of 3rd party libraries. As a result, a small change in any one of those libraries will have a significant impact on the number of modules we find.
+- While you can use WebAssembly to create all sorts of web-based content, its main benefit is found in more complex line-of-business applications with large codebases, that are often many years old (e.g. Google Earth, Photoshop, AutoCAD). These web 'apps' are not as numerous as the websites, and are not always available to the Almanac crawl, which is primarily based on home pages where WebAssembly may be less prevalent.
+- As we shall see in a later section, much of the WebAssembly usage we see comes from a relatively small number of third-party libraries. As a result, a small change in any one of those libraries will have a significant impact on the number of modules we find.
 
-We found slightly fewer (-13%) WebAssembly modules served to mobile browsers. This isn’t a reflection on the WebAssembly capabilities of mobile browsers, which generally have excellent support. Rather, it is likely due to the standard practice of [progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement), where in these cases the more advanced features that require WebAssembly are not supported for mobile users.
+We found slightly fewer (-13%) WebAssembly modules served to mobile browsers. This isn't a reflection on the WebAssembly capabilities of mobile browsers, which generally have excellent support. Rather, it is likely due to the standard practice of [progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement), where in these cases the more advanced features that require WebAssembly are not supported for mobile users.
 
 {{ figure_markup(
   caption="Number of Wasm responses.",
@@ -52,7 +51,7 @@ We found slightly fewer (-13%) WebAssembly modules served to mobile browsers. Th
   )
 }}
 
-By hashing the WebAssembly modules we can determine how many of these 3,204 modules (on desktop) are unique. By de-duplicating modules, the total number reduces by roughly a factor of 10, with 383 unique modules served to desktop browsers, and 310 to mobile. This indicates a significant amount of re-use, different websites making use of the same WebAssembly code, most likely through shared modules.
+By hashing the WebAssembly modules we can determine how many of these 3,204 modules—on desktop—are unique. By de-duplicating modules, the total number reduces by roughly a factor of 10, with 383 unique modules served to desktop browsers, and 310 to mobile. This indicates a significant amount of re-use—different websites making use of the same WebAssembly code, most likely through shared modules.
 
 A significant proportion of wasm requests are cross-origin, further reinforcing the notion that they are re-used. Notably this has increased significantly from last year (67.2% vs 55.2%).
 
@@ -66,7 +65,7 @@ A significant proportion of wasm requests are cross-origin, further reinforcing 
   )
 }}
 
-These WebAssembly modules differ considerably in size, with the smallest being just a few kilobytes, and the largest weighing in at 7.3MBytes. Looking in more detail, at the uncompressed size, we see that the median (50th percentile) size is 835KBytes.
+These WebAssembly modules differ considerably in size, with the smallest being just a few kilobytes, and the largest weighing in at 7.3 megabytes. Looking in more detail, at the uncompressed size, we see that the median (50th percentile) size is 835KBytes.
 
 The smallest of WebAssembly modules are likely being used for quite specific functionality, for example polyfilling browser capabilities, or simple encryption tasks. The larger modules are likely entire applications that are compiled to WebAssembly.
 
@@ -80,19 +79,9 @@ The smallest of WebAssembly modules are likely being used for quite specific fun
   )
 }}
 
-Clearly WebAssembly isn’t widely used, and rather than seeing a growth in usage, we are seeing a modest contraction.
+Clearly WebAssembly isn't widely used, and rather than seeing a growth in usage, we are seeing a modest contraction.
 
 ## What is WebAssembly being used for?
-
-* <a hreflang="en" href="https://aws.amazon.com/ivs/">Amazon IVS</a> - Amazon Interactive Video Service, here WebAssembly is likely being used as a video codec, allowing consistent video decoding independent of the codec support of the user’s browser
-* <a hreflang="en" href="https://mnater.github.io/Hyphenopoly/">Hyphenopoly</a> - This in a npm module that provides a polyfill for CSS hyphenation. The core algorithm is shipped as a WebAssembly module, giving a small footprint and consistent performance
-* <a hreflang="en" href="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor">Blazor</a> - Microsoft Blazor is a platform (runtime and UI library) that supports the development of web applications using the .NET platform and C#.
-* <a hreflang="en" href="https://developers.arcgis.com/javascript/latest/">ArcGIS</a> - a comprehensive suite of tools for building interactive mapping applications. Performance is a primary concern for the ArcGIS team, and they employ various technologies such as WebGL to achieve this. Specifically, WebAssembly is used to enable fast client-side projections.
-* [CanvasKit](CanvasKit) - this library provides more advanced capabilities than the standard Canvas2D API. It is implemented via Skia, a graphics library written in C++, which is compiled to WebAssembly allowing execution in the browser.
-* <a hreflang="en" href="https://www.tableau.com/">Tableau</a> - a popular tool for building interactive visualisations. It is not clear whether WebAssembly is used as part of their core product, or whether it is just being used for the specific dashboards that were found as part of the crawl.
-* <a hreflang="en" href="https://google.github.io/draco/">Draco</a> - a library for compressing and decompressing 3D geometric meshes and point clouds. It is written in C++, with the WebAssemby building allowing its use within the browser.
-* <a hreflang="en" href="https://xat.com/">Xat</a> - a social media site. It is unclear what they are using WebAssembly for.
-* <a hreflang="en" href="https://www.hpe.com/us/en/home.html">Hewlett Packard Enterprise</a> - it is unclear what they are using WebAssembly for.
 
 {{ figure_markup(
   caption="Popular WebAssembly libraries.",
@@ -104,21 +93,27 @@ Clearly WebAssembly isn’t widely used, and rather than seeing a growth in usag
   )
 }}
 
+- <a hreflang="en" href="https://aws.amazon.com/ivs/">Amazon IVS (Amazon Interactive Video Service)</a> - Here WebAssembly is likely being used as a video codec, allowing consistent video decoding independent of the codec support of the user's browser
+- <a hreflang="en" href="https://mnater.github.io/Hyphenopoly/">Hyphenopoly</a> - This in an npm module that provides a polyfill for CSS hyphenation. The core algorithm is shipped as a WebAssembly module, giving a small footprint and consistent performance
+- <a hreflang="en" href="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor">Blazor</a> - Microsoft Blazor is a platform—runtime and UI library—that supports the development of web applications using the .NET platform and C#.
+- <a hreflang="en" href="https://developers.arcgis.com/javascript/latest/">ArcGIS</a> - A comprehensive suite of tools for building interactive mapping applications. Performance is a primary concern for the ArcGIS team, and they employ various technologies such as WebGL to achieve this. Specifically, WebAssembly is used to enable fast client-side projections.
+- <a hreflang="en" href="https://skia.org/docs/user/modules/canvaskit/">CanvasKit</a> - This library provides more advanced capabilities than the standard Canvas2D API. It is implemented via Skia, a graphics library written in C++, which is compiled to WebAssembly allowing execution in the browser.
+- <a hreflang="en" href="https://www.tableau.com/">Tableau</a> - A popular tool for building interactive visualisations. It is not clear whether WebAssembly is used as part of their core product, or whether it is just being used for the specific dashboards that were found as part of the crawl.
+- <a hreflang="en" href="https://google.github.io/draco/">Draco</a> - A library for compressing and decompressing 3D geometric meshes and point clouds. It is written in C++, with the WebAssemby building allowing its use within the browser.
+- <a hreflang="en" href="https://xat.com/">Xat</a> - A social media site. It is unclear what they are using WebAssembly for.
+- <a hreflang="en" href="https://www.hpe.com/us/en/home.html">Hewlett Packard Enterprise</a> - It is unclear what they are using WebAssembly for.
+
 From looking at the popular WebAssembly libraries we can see that its usage is quite targeted, often being used for specific number-crunching tasks, or leveraging large and mature C++ codebases, bringing their capabilities to the web without the need to port to JavaScript.
 
 ## What languages are people using?
 
-WebAssembly is a binary format, and as a result, much of the information in the source (programming language, application structure, variable names) is obfuscated or entirely lost in the compilation process.
+WebAssembly is a binary format, and as a result, much of the information in the source—programming language, application structure, variable names—is obfuscated or entirely lost in the compilation process.
 
-However, modules often have exports and imports, which name functions within the hosting environment (the JavaScript runtime within the browser) that describe the module interface. Most WebAssembly toolchains create a small amount of JavaScript code, for the purposes of ‘binding’, making it easier to integrate modules into JavaScript applications. These bindings often have recognisable function names which are present in the modules exports or imports, giving a reliable mechanism for identifying the language that was used to author the module.
+However, modules often have exports and imports, which name functions within the hosting environment—the JavaScript runtime within the browser—that describe the module interface. Most WebAssembly toolchains create a small amount of JavaScript code, for the purposes of 'binding', making it easier to integrate modules into JavaScript applications. These bindings often have recognisable function names which are present in the modules exports or imports, giving a reliable mechanism for identifying the language that was used to author the module.
 
 We enhanced the <a hreflang="en" href="https://github.com/HTTPArchive/wasm-stats">wasm-stats</a> project, which provides WebAssembly-specific analysis to the crawler, adding code which inspects exports / imports to identify common patterns that provide an indication of the language used to author a given module. As an example, if a module imports a module names `wbindgen` this is a reference to code generated by <a hreflang="en" href="https://crates.io/crates/wasm-bindgen">wasm-bindgen</a> and a clear indicator that the module was written in Rust.
 
 In some cases, the export / import names are minified, making it harder to identify the source language. However, Emscripten (a C++ toolchain), has a distinctive convention for minified names, meaning that we can be relatively confident that modules exhibiting this pattern were generated using Emscripten.
-
-Looking at the results, we found that, on desktop, 72.8% of modules were very likely created using Emscripten, and as a result are most likely written in C++. Next most popular is Rust at 6.0%, then Blazor (C#) at 3.5%. We also found a small number of modules written in Go.
-
-Notably 16.9% of modules didn’t have an identifiable language. <a hreflang="en" href="https://www.assemblyscript.org/">AssemblyScript</a>, a popular WebAssembly-specific language, doesn’t provide any obvious clues in the modules it produces. We know that Hypehnopoly, which represents 8.2% of all modules, uses AssemblyScript, and accounts for almost half of these ‘unidentified’ modules.
 
 {{ figure_markup(
   caption="WebAssembly language usage.",
@@ -130,13 +125,15 @@ Notably 16.9% of modules didn’t have an identifiable language. <a hreflang="en
   )
 }}
 
+Looking at the results, we found that, on desktop, 72.8% of modules were very likely created using Emscripten, and as a result are most likely written in C++. Next most popular is Rust at 6.0%, then Blazor (C#) at 3.5%. We also found a small number of modules written in Go.
+
+Notably, 16.9% of modules didn't have an identifiable language. <a hreflang="en" href="https://www.assemblyscript.org/">AssemblyScript</a> is a popular WebAssembly-specific language which doesn't provide any obvious clues in the modules it produces. We know that Hypehnopoly—which represents 8.2% of all modules—uses AssemblyScript, and it accounts for almost half of these 'unidentified' modules.
+
 It is interesting to contrast these results with the <a hreflang="en" href="https://blog.scottlogic.com/2022/06/20/state-of-wasm-2022.html">State of WebAssembly 2022 survey</a>, where Rust was the most frequently used language. However, a significant number of respondents to that survey were using WebAssembly for non-browser based applications.
 
 ## What features are being used?
 
 The initial release of WebAssembly was considered an MVP. In common with other web standards, it is continually evolving under the governance of the World Wide Web Consortium (W3C). This year saw the announcement of the <a hreflang="en" href="https://www.w3.org/TR/wasm-core-2/">WebAssembly v2 draft</a>, adding a number of new features.
-
-We looked at the Post-MVP features that are being used, finding that ‘sign extension’ (a relatively simple enhancement adding operators that allow you to extend integer values to a greater bit-depth), was by far the most frequently used. This doesn’t represent a significant <a hreflang="en" href="https://almanac.httparchive.org/en/2021/webassembly#whats-the-usage-of-post-mvp-extensions">difference to the result found in last year's analysis</a>.
 
 {{ figure_markup(
   caption="Post-MVP extensions usage.",
@@ -148,14 +145,16 @@ We looked at the Post-MVP features that are being used, finding that ‘sign ext
   )
 }}
 
-Notably, while web developers are faced with the choice of which HTML / JavaScript / CSS features to use, with WebAssembly this is often a decision made by the toolchain developers. As a result, we will likely see Post-MVP feature adoption ‘jump’ when a given toolchain determines that it is now a viable option.
+We looked at the Post-MVP features that are being used, finding that _sign extension_ (a relatively simple enhancement adding operators that allow you to extend integer values to a greater bit-depth), was by far the most frequently used. This doesn't represent a significant [difference to the result found in last year's analysis](../2021/webassembly#whats-the-usage-of-post-mvp-extensions).
+
+Notably, while web developers are faced with the choice of which HTML / JavaScript / CSS features to use, with WebAssembly this is often a decision made by the toolchain developers. As a result, we will likely see Post-MVP feature adoption jump when a given toolchain determines that it is now a viable option.
 
 ## Conclusions
 
-WebAssembly is undeniably a niche technology when it comes to the web, and there is a very good chance that it always will be. While WebAssembly has brought a wide range of languages to the web (C++, Rust, Go, AssemblyScript, C# and more), these cannot yet be used interchangeably with JavaScript. For the vast majority of websites, where the content is relatively static (rendered in HTML with CSS) with a modest amount of interactivity (via JavaScript) there simply isn’t a compelling reason to use WebAssembly at the moment.
+WebAssembly is undeniably a niche technology when it comes to the web, and there is a very good chance that it always will be. While WebAssembly has brought a wide range of languages to the web—C++, Rust, Go, AssemblyScript, C# and more—these cannot yet be used interchangeably with JavaScript. For the vast majority of websites, where the content is relatively static (rendered in HTML with CSS) with a modest amount of interactivity (via JavaScript) there simply isn't a compelling reason to use WebAssembly at the moment.
 
-There are some significant proposals which could change this in the future. Initially WebIDL, which was superseded by Interface Types, which has once again been superseded by the Component Model specification. These may result in a future where it is possible to easily interchange JavaScript for any other programming language, but for now, this simply isn’t the case.
+There are some significant proposals which could change this in the future. Initially WebIDL, which was superseded by Interface Types, which has once again been superseded by the Component Model specification. These may result in a future where it is possible to easily interchange JavaScript for any other programming language, but for now, this simply isn't the case.
 
-Despite being a niche technology, WebAssembly is already adding value to the web. There are a number of web applications that benefit greatly from this technology. However, web applications are often not visible to the ‘crawl’ which forms the basis of this study.
+Despite being a niche technology, WebAssembly is already adding value to the web. There are a number of web applications that benefit greatly from this technology. However, web applications are often not visible to the 'crawl' which forms the basis of this study.
 
-Finally, the core features of the WebAssembly runtime (multi-language, lightweight, secure) are making it a popular choice for a wider range of non-browser applications. The <a hreflang="en" href="https://blog.scottlogic.com/2022/06/20/state-of-wasm-2022.html">State of WebAssembly 2022 survey</a> saw a significant increase in the number of people using this technology for serverless, containerisation and plug-in applications. The future of WebAssembly could be as a niche web technology, but as an entirely mainstream runtime on a wide range of other platforms.
+Finally, the core features of the WebAssembly runtime—multi-language, lightweight, secure—are making it a popular choice for a wider range of non-browser applications. The <a hreflang="en" href="https://blog.scottlogic.com/2022/06/20/state-of-wasm-2022.html">State of WebAssembly 2022 survey</a> saw a significant increase in the number of people using this technology for serverless, containerisation and plug-in applications. The future of WebAssembly could be as a niche web technology, but as an entirely mainstream runtime on a wide range of other platforms.
