@@ -437,8 +437,8 @@ This is more diverse: `pages-css`, `wix-image` and `wix-iframe` come from the Wi
 Are obsolete elements still a thing? Given that not-validating is still a thing, yes.
 
 {{ figure_markup(
-  image="obselete-elements.png",
-  caption="Obselete elements.",
+  image="obsolete-elements.png",
+  caption="Obsolete elements.",
   description="Bar chart showing `center` is used on 6.3% of desktop and 6.1% of mobile pages, `font` is used on 5.7% and 5.4% pages repsectively, `marquee` on 0.8% and 1.0%, `nobr` on 0.5% and 0.4%, and finally `big` 0.4% of desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=2039309980&format=interactive",
   sheets_gid="69619977",
