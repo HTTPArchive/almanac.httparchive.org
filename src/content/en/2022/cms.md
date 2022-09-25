@@ -370,7 +370,7 @@ We also used HTTP Archive data to analyze the weight of resources used across di
 {{ figure_markup(
   image="median-cms-page-weight.png",
   caption="Media resource weights by CMS.",
-  description="Column chart showing the median total page weight of each of the top five most adopted CMSs for each device category. For WordPress, it's 2,559 kB on desktop and 2,314 kB on mobile. For Drupal, it's 2,351 kB and 2,146 kB respectively. For Joomla, it's 2,799 kB and 2,495 kB. For Wix, it's 3,172 kB and 2,158 kB. For Squarespace, it's 3,462 kB and 3,577 kB.",
+  description="Column chart showing the median total page weight of each of the top five most adopted CMSs for each device category. For WordPress, it's 2,559 KB on desktop and 2,314 KB on mobile. For Drupal, it's 2,351 KB and 2,146 KB respectively. For Joomla, it's 2,799 KB and 2,495 KB. For Wix, it's 3,172 KB and 2,158 KB. For Squarespace, it's 3,462 KB and 3,577 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1764509612&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
@@ -382,14 +382,14 @@ Most of the top five CMSs deliver a median page weight of around ~2 MB, except S
 {{ figure_markup(
   image="distribution-cms-page-weight.png",
   caption="Mobile page weight distribution by CMS.",
-  description="Distribution showing the percentile distribution of total mobile page weight among each of the top five most adopted CMSs. WordPress it's 673 kB at 10th percentile, 1,229 kB at 25th, 2,314 kB at 50th, 4,479 at 75th, and 8,558 at 90th percentile. For Wix it's 1,048, 1,455, 2,158, 3,586, and 6,843 kB respectively. For Joomla it's 685, 1,268, 2,495, 4,892, and 9,473 kB. For Drupal it's 618, 1,130, 2,146, 4,193, and 8,229 kB. And finally for Squarespace it's 1,496 kB at the 10th percentile, 2,123 kB at 25th, 3,577 kB  at 50th, 6,539 kB at 75th, and 11,434 kB at the 90th percentile.",
+  description="Distribution showing the percentile distribution of total mobile page weight among each of the top five most adopted CMSs. WordPress it's 673 KB at 10th percentile, 1,229 KB at 25th, 2,314 KB at 50th, 4,479 at 75th, and 8,558 at 90th percentile. For Wix it's 1,048, 1,455, 2,158, 3,586, and 6,843 KB respectively. For Joomla it's 685, 1,268, 2,495, 4,892, and 9,473 KB. For Drupal it's 618, 1,130, 2,146, 4,193, and 8,229 KB. And finally for Squarespace it's 1,496 KB at the 10th percentile, 2,123 KB at 25th, 3,577 KB  at 50th, 6,539 KB at 75th, and 11,434 KB at the 90th percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1236078412&format=interactive",
   sheets_gid="859067552",
   sql_file="page_weight_distribution.sql"
   )
 }}
 
-The distribution of page weight in each platform's percentiles is substantial. Page weight is probably related to the differences in user content across web pages, the number of images used, plugins installed, etc. The smallest pages delivered per platform come from WordPress, a marked improvement over last year's data. This year, WordPress only sends 673 kB for their 10th percentile of visits. The largest pages come from Squarespace, with ~11.4 MB delivered for their 90th percentile of visits, a ~2 MB increase over last year's data.
+The distribution of page weight in each platform's percentiles is substantial. Page weight is probably related to the differences in user content across web pages, the number of images used, plugins installed, etc. The smallest pages delivered per platform come from WordPress, a marked improvement over last year's data. This year, WordPress only sends 673 KB for their 10th percentile of visits. The largest pages come from Squarespace, with ~11.4 MB delivered for their 90th percentile of visits, a ~2 MB increase over last year's data.
 
 ### Page weight breakdown
 
@@ -402,14 +402,14 @@ Images, which are usually the heaviest resource loaded on a web page, account fo
 {{ figure_markup(
   image="median-cms-image-size.png",
   caption="Median image size by CMS.",
-  description="Column chart showing the median weight of image resources downloaded in each of the top five most adopted CMSs, for each device. For WordPress it's 1,202 kB on desktop and 1,100 kB on mobile, for Drupal it's 1,279 kB on desktop and 1,158 kB on mobile, for Joomla it's 1,690 kB and 1,504 kB, for Wix it's 647 kB on desktop and 290 kB on mobile, and finally for Squarespace it's 1,623 kB for desktop and 1,790 on mobile.",
+  description="Column chart showing the median weight of image resources downloaded in each of the top five most adopted CMSs, for each device. For WordPress it's 1,202 KB on desktop and 1,100 KB on mobile, for Drupal it's 1,279 KB on desktop and 1,158 KB on mobile, for Joomla it's 1,690 KB and 1,504 KB, for Wix it's 647 KB on desktop and 290 KB on mobile, and finally for Squarespace it's 1,623 KB for desktop and 1,790 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1491116500&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
   )
 }}
 
-Wix delivers substantially fewer image bytes, with only 290 kB delivered for the median of mobile views. This suggests good use of image compression and lazy image loading. All of the other top five platforms deliver over 1 MB of images, with Squarespace delivering the largest ~1.7 MB.
+Wix delivers substantially fewer image bytes, with only 290 KB delivered for the median of mobile views. This suggests good use of image compression and lazy image loading. All of the other top five platforms deliver over 1 MB of images, with Squarespace delivering the largest ~1.7 MB.
 
 Advanced image formats provide a considerable improvement in compression, enabling resource savings and faster site loading. WebP is commonly supported in all major browsers today, with over <a hreflang="en" href="https://caniuse.com/webp">95% support</a>. In addition, there are several newer image formats gaining popularity and adoption, namely <a hreflang="en" href="https://caniuse.com/avif">AVIF</a>, and <a hreflang="en" href="https://jpegxl.info">JPEG-XL</a>.
 
@@ -438,56 +438,56 @@ WordPress introduced support for WebP in WordPress 5.8, which was released in Ju
 {{ figure_markup(
   image="median-size-js.png",
   caption="Median JavaScript resources by CMS.",
-  description="Column chart showing the median weight of JavaScript resources downloaded in each of the top five most adopted CMSs, for each device. In all cases the desktop and mobile sizes are identical. For WordPress, it's 521 kB on both desktop and mobile. For Drupal, it's 416 kB for both. For Joomla, it's 452 kB. For Wix, it's 1,318 kB. For Squarespace it's 997 kB for both.",
+  description="Column chart showing the median weight of JavaScript resources downloaded in each of the top five most adopted CMSs, for each device. In all cases the desktop and mobile sizes are identical. For WordPress, it's 521 KB on both desktop and mobile. For Drupal, it's 416 KB for both. For Joomla, it's 452 KB. For Wix, it's 1,318 KB. For Squarespace it's 997 KB for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1169405351&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
   )
 }}
 
-The top five CMSs all deliver pages that rely on JavaScript, with Drupal delivering the fewest JavaScript bytes: 416 kB on mobile. Wix delivers the most JavaScript bytes—over 1.3 MB.
+The top five CMSs all deliver pages that rely on JavaScript, with Drupal delivering the fewest JavaScript bytes: 416 KB on mobile. Wix delivers the most JavaScript bytes—over 1.3 MB.
 
 #### HTML document
 
 {{ figure_markup(
   image="median-size-html.png",
   caption="Median HTML size by CMS.",
-  description="Column chart showing the median weight of the HTML resource downloaded in each of the top five most adopted CMSs, for each device. In most cases the desktop and mobile sizes are very similar. For WordPress, it's 40 kB on desktop and 37 kB on mobile. For Drupal, it's 23 kB for both. For Joomla, it's 26 kB and 22 kB. For Wix, it's 123 kB on desktop and 118 kB on mobile. For Squarespace, it's 27 kB for both.",
+  description="Column chart showing the median weight of the HTML resource downloaded in each of the top five most adopted CMSs, for each device. In most cases the desktop and mobile sizes are very similar. For WordPress, it's 40 KB on desktop and 37 KB on mobile. For Drupal, it's 23 KB for both. For Joomla, it's 26 KB and 22 KB. For Wix, it's 123 KB on desktop and 118 KB on mobile. For Squarespace, it's 27 KB for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1713320070&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
   )
 }}
 
-Examining the HTML document sizes, we can see that most of the top CMSs deliver a median HTML size of ~22 kB–37 kB. The only exception is Wix which delivers ~118 kB, a minor improvement over 2021's results. This may suggest extensive use of inlined resources and shows an area that can be further improved.
+Examining the HTML document sizes, we can see that most of the top CMSs deliver a median HTML size of ~22 KB–37 KB. The only exception is Wix which delivers ~118 KB, a minor improvement over 2021's results. This may suggest extensive use of inlined resources and shows an area that can be further improved.
 
 #### CSS
 
 {{ figure_markup(
   image="median-size-css.png",
   caption="Median CSS size by CMS.",
-  description="Column chart showing the median weight of CSS resources downloaded in each of the top five most adopted CMSs for each device. In most cases (apart from Wix) the desktop and mobile sizes are very similar. For WordPress, it's 117 kB on desktop and 115 kB on mobile. For Drupal, it's 68 kB and 66 kB, respectively. For Joomla, it's 86 kB and 83 kB. For, Wix it's 18 kB on desktop but only 9 kB on mobile. For Squarespace, it's 89 kB for both.",
+  description="Column chart showing the median weight of CSS resources downloaded in each of the top five most adopted CMSs for each device. In most cases (apart from Wix) the desktop and mobile sizes are very similar. For WordPress, it's 117 KB on desktop and 115 KB on mobile. For Drupal, it's 68 KB and 66 KB, respectively. For Joomla, it's 86 KB and 83 KB. For, Wix it's 18 KB on desktop but only 9 KB on mobile. For Squarespace, it's 89 KB for both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=176229983&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
   )
 }}
 
-Next, we examine the use of explicit CSS resources that are downloaded. Here we can see a different distribution between platforms that strengthens the case for inlining CSS. Wix delivers the fewest CSS resources, with only ~9 kB sent on mobile views. WordPress delivers the most with ~115 kB.
+Next, we examine the use of explicit CSS resources that are downloaded. Here we can see a different distribution between platforms that strengthens the case for inlining CSS. Wix delivers the fewest CSS resources, with only ~9 KB sent on mobile views. WordPress delivers the most with ~115 KB.
 
 #### Fonts
 
 {{ figure_markup(
   image="median-size-font.png",
   caption="Median font size by CMS.",
-  description="Column chart showing the median weight of fonts resources downloaded in each of the top five most adopted CMSs, for each device. In all cases the desktop and mobile sizes are the same. For WordPress, it's 137 kB. For Drupal, it's 92 kB. For Joomla, it's 82 kB. For Wix, it's 148 kB. For Squarespace, it's 202 kB.",
+  description="Column chart showing the median weight of fonts resources downloaded in each of the top five most adopted CMSs, for each device. In all cases the desktop and mobile sizes are the same. For WordPress, it's 137 KB. For Drupal, it's 92 KB. For Joomla, it's 82 KB. For Wix, it's 148 KB. For Squarespace, it's 202 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQpmp9GvO62PKJmEC_yxnHVx4zuqKwYh68tquM5yZCCrOlZETqbLhu3iuSarRq2n4bW7dRbUoSB8NO2/pubchart?oid=1008146261&format=interactive",
   sheets_gid="1736220112",
   sql_file="resource_weights.sql"
   )
 }}
 
-To display text, web developers often choose to use a variety of fonts. Joomla delivers the fewest font bytes, with 82 kB on mobile views. Squarespace delivers the most with 202 kB.
+To display text, web developers often choose to use a variety of fonts. Joomla delivers the fewest font bytes, with 82 KB on mobile views. Squarespace delivers the most with 202 KB.
 
 ## WordPress in 2022
 
