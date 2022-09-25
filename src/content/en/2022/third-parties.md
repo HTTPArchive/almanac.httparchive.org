@@ -380,9 +380,9 @@ The previous sections showed that the responsibility for third-party negative im
 )
 }}
 
-That might be challenging to achieve given only 25% of total third-party requests provide that [Timing-Allow-Origin (TAO) header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin) that is important for third-party web performance data transparency.
+That might be challenging to achieve given only 25% of total third-party requests provide the [Timing-Allow-Origin (TAO) header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin) that is important for third-party web performance data transparency.
 
-Taking into account that the [TAO header prevalence has not improved in comparison to the previous years](../2021/third parties#timing-allow-origin-header-prevalence), we would encourage third-party providers to use it more actively, to allow first parties to get more accurate insights into the performance of these resources.
+Taking into account that the [TAO header prevalence has not improved in comparison to the previous years](../2021/third-parties#timing-allow-origin-header-prevalence), we would encourage third-party providers to use it more actively, to allow first parties to get more accurate insights into the performance of these resources.
 
 ## Conclusion
 
