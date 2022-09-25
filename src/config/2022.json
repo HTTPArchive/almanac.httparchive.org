@@ -110,8 +110,7 @@
           "part": "II",
           "chapter_number": "14",
           "title": "Security",
-          "slug": "security",
-          "todo": true
+          "slug": "security"
         },
         {
           "part": "II",
@@ -409,7 +408,7 @@
     "clarkio": {
       "name": "Brian Clark",
       "teams": [
-        "reviewers"
+        "authors"
       ],
       "avatar_url": "6265396",
       "github": "clarkio",
@@ -603,16 +602,6 @@
       ],
       "avatar_url": "203457",
       "github": "eustas"
-    },
-    "feross": {
-      "name": "Feross Aboukhadijeh",
-      "teams": [
-        "authors"
-      ],
-      "avatar_url": "121766",
-      "github": "feross",
-      "website": "https://feross.org",
-      "twitter": "feross"
     },
     "fershad": {
       "name": "Fershad Irani",
@@ -1119,8 +1108,7 @@
     "nrllh": {
       "name": "Nurullah Demir",
       "teams": [
-        "authors",
-        "reviewers"
+        "authors"
       ],
       "avatar_url": "13475745",
       "github": "nrllh",
@@ -1418,8 +1406,7 @@
     "tomvangoethem": {
       "name": "Tom Van Goethem",
       "teams": [
-        "authors",
-        "reviewers"
+        "authors"
       ],
       "avatar_url": "4355579",
       "github": "tomvangoethem"
