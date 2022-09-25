@@ -147,7 +147,6 @@ We looked at the Post-MVP features that are being used, finding that ‘sign ext
   image="proposals.png"
   )
 }}
-```
 
 Notably, while web developers are faced with the choice of which HTML / JavaScript / CSS features to use, with WebAssembly this is often a decision made by the toolchain developers. As a result, we will likely see Post-MVP feature adoption ‘jump’ when a given toolchain determines that it is now a viable option.
 
