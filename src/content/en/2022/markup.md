@@ -295,6 +295,8 @@ When it comes to what elements are being used on the most documents, the list lo
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=714125011&format=interactive",
   sheets_gid="2057119066",
   sql_file="element_popularity.sql",
+  width=600,
+  height=656
 ) }}
 
 It's not a surprise that nearly every document uses `html`, `head`, or `body` tags—they are automatically inserted in the DOM and that is what is being counted here. That the numbers are slightly less than 100% is due to a small number of pages that break detection by overriding the JavaScript APIs we use—for example, <a hreflang="en" href="https://mootools.net/">MooTools</a> overriding the `JSON.stringify()` API.
