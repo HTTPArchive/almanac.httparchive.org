@@ -1,13 +1,15 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Security
-#TODO - Review and update chapter description
 description: Security chapter of the 2022 Web Almanac covering Transport Layer Security, content inclusion (CSP, Feature Policy, SRI), web defense mechanisms (tackling XSS, XS-Leaks), and drivers of security mechanism adoptions.
 authors: [SaptakS, feross, lirantal]
 reviewers: [kushaldas, tomvangoethem, nrllh, clarkio]
 analysts: [VictorLeP, vikvanderlinden, GJFR]
 editors: [tunetheweb]
 translators: []
+SaptakS_bio: Saptak S is a human rights centered web developer, focusing on usability, security, privacy and accessibility topics in web development. He is a contributor and maintainer of various different open source projects like <a hreflang="en" href="https://www.a11yproject.com">The A11Y Project</a>, <a hreflang="en" href="https://onionshare.org/">OnionShare</a> and <a hreflang="en" href="https://wagtail.org/">Wagtail</a>. You can find him blogging at <a hreflang="en" href="https://saptaks.blog">saptaks.blog</a>.
+feross_bio: Feross Aboukhadijeh, is an entrepreneur, programmer, open source author, and mad scientist. He maintain <a hreflang="en" href="https://www.npmjs.com/~feross">100+ packages on npm</a> which are downloaded 500+ million times per month.
+lirantal_bio: Liran is <a hreflang="en" href="https://stars.github.com/profiles/lirantal/">a GitHub Star</a>, world-wide recognized for championing open source software and actively working within communities to inspire and lift other humans. A <a hreflang="en" href="https://github.com/nodejs/security-wg">JavaScript & Node.js software developer, building web applications and command-line tools</a>. <a hreflang="en" href="https://owasp.org/www-project-cwe-toolkit/">A web security activist</a>, engaging in security research, software supply chain security, and regular contributor and project lead to OWASP Foundation projects. <a hreflang="en" href="https://github.com/nodejs/security-wg">An avid member of the Node.js Foundation ecosystem security working group</a>, dedicated to advancing Node.js security awareness and skillset in the open source community. <a hreflang="en" href="https://snyk.io/">Developer Advocate at Snyk</a>.
 results: https://docs.google.com/spreadsheets/d/1cwJ43NL2IN2PxJa5oiOoJCRkSh566XE_k9uHnGJdWeg/
 featured_quote: TODO
 featured_stat_1: TODO
