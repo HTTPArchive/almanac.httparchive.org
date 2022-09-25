@@ -1059,8 +1059,7 @@
     "mordy-oberstein": {
       "name": "Mordy Oberstein",
       "teams": [
-        "authors",
-        "reviewers"
+        "authors"
       ],
       "avatar_url": "104999516",
       "github": "mordy-oberstein"
