@@ -34,7 +34,7 @@ This chapter will summarize the work done in Compat 2021 and measure what we can
 
 Compat 2021 had 5 major focus areas
 
-- Grid 
+- Grid
 - Flexbox
 - Sticky Position
 - Transforms
