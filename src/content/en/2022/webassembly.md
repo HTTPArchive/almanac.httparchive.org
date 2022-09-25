@@ -8,6 +8,7 @@ reviewers: [binji, RReverser]
 analysts: [JamieWhitMac]
 editors: []
 translators: []
+#ColinEberhardt_bio: TODO
 results: https://docs.google.com/spreadsheets/d/11jyABro0fKtuN6INnYP9pJlv5QWwp0jfJyTsGfKgScg/
 featured_quote: TODO
 featured_stat_1: TODO
