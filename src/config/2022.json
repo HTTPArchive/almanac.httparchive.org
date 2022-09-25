@@ -409,8 +409,7 @@
     "clarkio": {
       "name": "Brian Clark",
       "teams": [
-        "authors",
-        "reviewers"
+        "authors"
       ],
       "avatar_url": "6265396",
       "github": "clarkio",
