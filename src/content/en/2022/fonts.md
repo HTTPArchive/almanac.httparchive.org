@@ -1,13 +1,13 @@
 ---
 ##See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Fonts
-description: Fonts chapter of the 2022 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.
+description: Fonts chapter of the 2022 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts, and color fonts.
 authors: [bramstein]
 reviewers: [alexnj, jmsole, RoelN, svgeesus]
 analysts: [bramstein, konfirmed]
 editors: [shantsis]
 translators: []
-bramstein_bio: Bram Stein is a soft­ware ar­chi­tect and prod­uct man­ager work­ing at <a hreflang="en" href="https://www.adobe.com/">Adobe</a>. He cares a lot about web ty­pog­ra­phy and is hap­pi­est work­ing at the in­ter­sec­tion be­tween de­sign and tech­nol­ogy.
+bramstein_bio: Bram Stein is a developer and product manager. He cares a lot about typography and is happiest working at the intersection between design and technology. He is the author of the <a hreflang="en" href="https://abookapart.com/products/webfont-handbook">Webfont Handbook</a> by A Book Apart and the <a hreflang="en" href="https://fontfaceobserver.com">FontFace Observer</a> library. He also speaks about typography and web performance at conferences around the world.
 results: https://docs.google.com/spreadsheets/d/1A1XwuGa1DkqNLaF-lSXz4ndxO9G6SfACHwUvvywHgbQ/
 featured_quote: We think it is also time to proclaim&colon; "Use only WOFF2 and forget about everything else". This will simplify your CSS and workflow massively and WOFF2 is now supported everywhere.
 featured_stat_1: 29%
