@@ -27,7 +27,7 @@ Let's dive right in.
 
 ## Images
 
-Images account for a huge portion of the typical website's page weight. We see from the [Media](./media) chapter that the median website's total weight in June of 2021 was 2,019 kilobytes (on mobile), and 881 of those kilobytes were images. That's more than HTML (30 KB), CSS (72 KB), JavaScript (461 KB) and fonts (97 KB) combined.
+Images account for a huge portion of the typical website's page weight. We see from the [Page Weight](./page-weight) chapter that the median website's total weight in June of 2021 was 2,019 kilobytes (on mobile), and 881 of those kilobytes were images. That's more than HTML (30 KB), CSS (72 KB), JavaScript (461 KB) and fonts (97 KB) combined.
 
 {{ figure_markup(
   content="99.9%",
