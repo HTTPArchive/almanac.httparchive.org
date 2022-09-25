@@ -34,11 +34,11 @@ This chapter will summarize the work done in Compat 2021 and measure what we can
 
 Compat 2021 had 5 major focus areas
 
-- Aspect Ratio
-- Flexbox
 - Grid
+- Flexbox
 - Sticky Position
 - Transforms
+- Aspect Ratio
 
 In January 2021, all stable/shipping browsers scored 65-70% compatibility in these areas, and it wasn't necessarily the same 30-35% of tests that were failing in each browser.
 
@@ -61,15 +61,7 @@ A good example of this is the ability to animate grid tracks—grid rows and col
 
 ### Flexbox
 
-Flexbox is even older and more widely used. This year its use has grown again, [now appearing on 75% of mobile pages and 76% of desktop pages](./css#flexbox-and-grid-adoption). It has a similar number of tests to Grid and despite very wide adoption started in much worse shape. Entering 2021, some sub-features remained under-implemented, including:
-
-- Both Chrome and WebKit had issues with auto-height flex containers, leading to incorrectly sized images, which has now been resolved. {# TODO: Is this correct Brian? Added this to make it a sentence, as part of breaking up the list to allow the figures to be added #}
-
-- CSS Box alignment defines several types of alignment. Among them [positional-alignment keyword values](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Alignment#positional_alignment_keyword_values), which can be applied to justify-content and align-content and also to justify-self and align-self. These had ragged support and several interoperability issues. For absolute positioned flex items this was even worse. Again, these issues have been resolved. {# TODO: Again, is this correct Brian? Added this to make it a sentence, as part of breaking up the list to allow the figures to be added #}
-
-There were others issues, on top of these, that deserve some more indepth analysis.
-
-#### `flex-basis: content`
+Flexbox is even older and more widely used. This year its use has grown again, [now appearing on 75% of mobile pages and 76% of desktop pages](./css#flexbox-and-grid-adoption). It has a similar number of tests to Grid and despite very wide adoption started in much worse shape. Entering 2021, we had a combination of ragged bugs and sub-features that remained under-implemented.  For example, [positional-alignment keyword values](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Alignment#positional_alignment_keyword_values) (which can be applied to justify-content and align-content and also to justify-self and align-self) had ragged support and several interoperability issues. For absolute positioned flex items this was even worse. These issues have been resolved.
 
 {{ figure_markup(
   caption="Desktop pages using `flex-basis: content` in their stylesheets.",
@@ -80,7 +72,9 @@ There were others issues, on top of these, that deserve some more indepth analys
 )
 }}
 
-`flex-basis: content`, which is used to automatically size based on the flex item's content, was implemented in WebKit and Chromium, but not Firefox. Today these tests pass uniformly in all browsers and `flex-basis: content` appears on 112,323 pages on desktop and 75,565 mobile, roughly 1% of pages. That's not a bad start for a feature in its first year of universal support and about double what it was last year. We'll keep an eye on this metric in the future.
+Another bit of focus was toward `flex-basis: content`, which is used to automatically size based on the flex item's content.  This was implemented in WebKit and Chromium, but not Firefox. Today these tests pass uniformly in all browsers and `flex-basis: content` appears on 112,323 pages on desktop and 75,565 mobile, roughly 1% of pages. That's not a bad start for a feature in its first year of universal support and about double what it was last year. We'll keep an eye on this metric in the future.
+
+### Sticky positioning
 
 {{ figure_markup(
   caption="Desktop pages using `position: sticky` in their stylesheets.",
@@ -91,9 +85,10 @@ There were others issues, on top of these, that deserve some more indepth analys
 )
 }}
 
-#### Sticky positioning
-
 Sticky positioning has been around for a while. In fact, it's worth noting that it is the [most popular feature query in used by a large margin](../2021/css#feature-queries), accounting for over 50% of feature queries. It had several interoperability issues; for example, the inability to stick headers in tables in Chrome. `position: sticky` is actively used in around 5% of desktop pages and 4% of mobile pages in 2022. We'll keep an eye on this metric for some time to come to see how addressing those interoperability issues affects adoption over time.
+
+
+### CSS transforms
 
 {{ figure_markup(
   image="css-transforms-wpt-dashboard-stable.png",
@@ -103,8 +98,6 @@ Sticky positioning has been around for a while. In fact, it's worth noting that 
   height=479
   )
 }}
-
-#### CSS transforms
 
 CSS Transforms are popular and have been around for a long time. However, there were many interoperability issues at the start, particularly around `perspective:none` and `transform-style: preserve-3d`. This meant that many animations were<a hreflang="en" href="https://web.dev/compat2021/#css-transforms"> annoyingly inconsistent</a>.
 
@@ -119,7 +112,7 @@ CSS Transforms are popular and have been around for a long time. However, there 
 
 A recent compat 2021 graph showing the same CSS transforms in experimental browsers as above shows all browsers are scoring 90% or better in their experimental versions, which show future versions of the browsers. This was one of the areas with big, visible improvements in stable browsers, which continue to improve, as part of Interop 2022 involves continuing Compat 2021 work.
 
-#### `aspect-ratio`
+### `aspect-ratio`
 
 `aspect-ratio` was a new feature developed in 2021. Given its potential widespread usefulness, we chose to aim for high interoperability from the start.
 
