@@ -21,7 +21,7 @@ featured_stat_label_3: Relative increase in adoption of Permissions-Policy from 
 
 ## Introduction
 
-As people’s personal details continue to become more digital, security and privacy are becoming extremely crucial across the internet. It’s the website owner’s responsibility that they can secure the data they are taking from the user. Hence, it is essential for them to adopt all the security best practices to ensure protection of the user against vulnerabilities that malwares can exploit to get sensitive information.
+As people's personal details continue to become more digital, security and privacy are becoming extremely crucial across the internet. It's the website owner's responsibility that they can secure the data they are taking from the user. Hence, it is essential for them to adopt all the security best practices to ensure protection of the user against vulnerabilities that malwares can exploit to get sensitive information.
 
 Like [previous years](../2021/security), we have analyzed the adoption and usage of security methods and best practices by the web community. We have analyzed metrics related to the bare essential security measures that every website should adopt such as [transport security](#transport-security) and [proper cookie management](#cookies). We have also discussed the data related to the adoption of different security headers and how they help in [content inclusion](#content-inclusion) and [preventing various malicious attacks](#attack-preventions).
 
@@ -32,13 +32,12 @@ We looked at correlations for [adoption of security measures](#drivers-of-securi
 Transport Layer Security ensures secure communication of data and resources between the user and the websites. [HTTPS](https://developer.mozilla.org/en-US/docs/Glossary/https) uses [TLS](https://www.cloudflare.com/en-gb/learning/ssl/transport-layer-security-tls/) to encrypt all communication between the client and the server.
 
 {{ figure_markup(
-  caption="The percentage of requests that use HTTPS on desktop.",
   content="94%",
+  caption="Requests that use HTTPS on desktop.",
   classes="big-number",
   sheets_gid="1093490384",
-  sql_file="https_request_over_time.sql"
-)
-}}
+  sql_file="https_request_over_time.sql",
+) }}
 
 94% of total requests in desktop and 93% of total requests in mobile are made over HTTPS. All major browsers now have an [HTTPS-only mode](https://support.mozilla.org/en-US/kb/https-only-prefs) to show warning if a website uses HTTP instead of HTTPS.
 
@@ -71,7 +70,6 @@ TLS v1.3 is the latest and was released in August 2018 by IETF. It's [much faste
 }}
 
 In the above graph, we see that 70% of homepages in mobile and 67% of homepages in desktop are served over TLSv1.3 which is approximately 7% more than last year. So, we are seeing some constant shift from use of TLS v1.2 to TLS v1.3
-
 
 ### Cipher suites
 
@@ -169,21 +167,19 @@ A [Certificate Authority](https://www.ssl.com/faqs/what-is-a-certificate-authori
 
 [Cloudflare](https://developers.cloudflare.com/ssl/ssl-tls/certificate-authorities/) continues to be in second position with its similarly free certificates for its customers. Cloudflare CDNs increase the usage of [Elliptic Curve Cryptography (ECC)](https://www.digicert.com/faq/ecc.htm) certificates which are smaller and more efficient than RSA certificates but are often difficult to deploy, due to the need to also continue to serve non-ECC certificates to older clients. We see as Let’s Encrypt and Cloudflare’s percentage continues to increase, the percentage for usage of other CAs are decreasing a little.
 
-
 ### HTTP Strict Transport Security
 
 [HTTP Strict Transport Security (HSTS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) is a response header that informs the browser to automatically convert all attempts to access a site using HTTP to HTTPS requests instead.
 
 {{ figure_markup(
-  caption="The percentage of requests that have HSTS header on mobile.",
-  content="26%",
+  content="25%",
+  caption="Mobile requests that have an HSTS header.",
   classes="big-number",
-  sheets_gid="1799124531",
-  sql_file="security_headers_prevalence.sql"
-)
-}}
+  sheets_gid="822440544",
+  sql_file="hsts_attributes.sql",
+) }}
 
-26% of the mobile responses and 28% of desktop responses have an HSTS header.
+25% of the mobile responses and 28% of desktop responses have an HSTS header.
 
 HSTS is set using the `Strict-Transport-Security` header that can have three different directives: `max-age`, `includeSubDomains`, and `preload`. `max-age` helps denote the time, in seconds, that the browser should remember to access the site only using HTTPS. `max-age` is a compulsory directive for the header.
 
@@ -217,7 +213,7 @@ An [HTTP cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) is a
 
 If a cookie is not set properly, it can be susceptible to many different forms of attacks such as [session hijacking](https://owasp.org/www-community/attacks/Session_hijacking_attack), [Cross-Site Request Forgery (CSRF)](https://owasp.org/www-community/attacks/csrf), [Cross-Site Script Inclusion (XSSI)](https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/11-Client_Side_Testing/13-Testing_for_Cross_Site_Script_Inclusion) and various other [Cross-Site Leak](https://xsleaks.dev/) vulnerabilities.
 
-### Attributes
+### Cookie attributes
 
 To defend against the above mentioned threats, developers can use 3 different attributes in a cookie: `HttpOnly`, `Secure` and `SameSite`. The `Secure` attribute is similar to the `HSTS` header as it also ensures that the cookies are always sent over HTTPS, preventing [Manipulator in the Middle attacks](https://owasp.org/www-community/attacks/Manipulator-in-the-middle_attack). `HttpOnly` ensures that a cookie is not accessible from any JavaScript code, preventing [Cross-Site Scripting](https://owasp.org/www-community/attacks/xss/) Attacks.
 
@@ -259,76 +255,92 @@ There are two different ways to set the time when a cookie is deleted: `Max-Age`
 
 Unlike last year, where we saw that the median for `Max-Age` was 365 days but the median for `Expires` was 180 days, this year it’s around 365 days for both. Hence the median for real maximum age has gone up from 180 days to 365 days this year. Even though the `Max-Age` is 729 days and `Expires` is 730 days in the 90th percentile, Chrome has been planning to put a [cap of 400 days](https://chromestatus.com/feature/4887741241229312) for both `Max-Age` and `Expires`.
 
+
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Device</th>
-        <th>Expires value</th>
-        <th>Percentage</th>
+        <th>%</th>
+        <th>Expires</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td rowspan="3">Desktop</td>
-        <td>"Thu, 01-Jan-1970 00:00:00 GMT"</td>
         <td class="numeric">1.8%</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>"Fri, 01-Aug-2008 22:45:55 GMT"</td>
-        <td class="numeric">1.2%</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>"Mon, 01-Mar-2004 00:00:00 GMT"</td>
-        <td class="numeric">0.7%</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>"Thu, 01-Jan-1970 00:00:01 GMT"</td>
-        <td class="numeric">0.7%</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>"Thu, 01 Jan 1970 00:00:00 GMT"</td>
-        <td class="numeric">0.3%</td>
-      </tr>
-      <tr>
-        <td rowspan="3">Mobile</td>
-        <td>"Fri, 01-Aug-2008 22:45:55 GMT"</td>
-        <td class="numeric">1.2%</td>
-      </tr>
-      <tr>
-        <td></td>
         <td>"Thu, 01-Jan-1970 00:00:00 GMT"</td>
-        <td class="numeric">0.9%</td>
       </tr>
       <tr>
-        <td></td>
-        <td>"Mon, 01-Mar-2004 00:00:00 GMT"</td>
+        <td class="numeric">1.2%</td>
+        <td>"Fri, 01-Aug-2008 22:45:55 GMT"</td>
+      </tr>
+      <tr>
         <td class="numeric">0.7%</td>
+        <td>"Mon, 01-Mar-2004 00:00:00 GMT"</td>
       </tr>
       <tr>
-        <td></td>
+        <td class="numeric">0.7%</td>
         <td>"Thu, 01-Jan-1970 00:00:01 GMT"</td>
-        <td class="numeric">0.6%</td>
       </tr>
       <tr>
-        <td></td>
-        <td>"Thu, 31-Dec-37 23:55:55 GMT"</td>
-        <td class="numeric">0.2%</td>
+        <td class="numeric">0.3%</td>
+        <td>"Thu, 01 Jan 1970 00:00:00 GMT"</td>
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Most prevalent values of Expires.", sheets_gid="707972861", sql_file="cookie_max_age_expires_top_values.sql") }}</figcaption>
+  <figcaption>
+    {{ figure_link(
+      caption="Most common cookie expiry values on desktop.",
+      sheets_gid="707972861",
+      sql_file="cookie_max_age_expires_top_values.sql",
+    ) }}
+  </figcaption>
 </figure>
 
-The most prevalent `Expires` has some interesting values. We see that the most used `Expires` value in Desktop is `January 1, 1970 00:00:00 GMT`. When cookies `Expires` value is set to a past date, they are deleted from the browser. January 1, 1970 00:00:00 GMT is the unix epoch time and hence it’s often commonly used to expire or delete a cookie.
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>%</th>
+        <th>Expires</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="numeric">1.2%</td>
+        <td>"Fri, 01-Aug-2008 22:45:55 GMT"</td>
+      </tr>
+      <tr>
+        <td class="numeric">0.9%</td>
+        <td>"Thu, 01-Jan-1970 00:00:00 GMT"</td>
+      </tr>
+      <tr>
+        <td class="numeric">0.7%</td>
+        <td>"Mon, 01-Mar-2004 00:00:00 GMT"</td>
+      </tr>
+      <tr>
+        <td class="numeric">0.6%</td>
+        <td>"Thu, 01-Jan-1970 00:00:01 GMT"</td>
+      </tr>
+      <tr>
+        <td class="numeric">0.2%</td>
+        <td>"Thu, 31-Dec-37 23:55:55 GMT"</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>
+    {{ figure_link(
+      caption="Most common cookie expiry values on mobile.",
+      sheets_gid="707972861",
+      sql_file="cookie_max_age_expires_top_values.sql",
+    ) }}
+  </figcaption>
+</figure>
+
+The most prevalent `Expires` has some interesting values. We see that the most used `Expires` value in Desktop is `January 1, 1970 00:00:00 GMT`. When cookies `Expires` value is set to a past date, they are deleted from the browser. January 1, 1970 00:00:00 GMT is the unix epoch time and hence it's often commonly used to expire or delete a cookie.
 
 ## Content inclusion
 
-A website’s content often takes many shapes and requires resources such as CSS, JavaScript, or other media assets like fonts and images. These are frequently loaded from external service providers of the likes of remote storage services of cloud-native infrastructure, or from content delivery networks (CDNs) with the aim of reducing worldwide networking round-trips just to serve the content.
+A website's content often takes many shapes and requires resources such as CSS, JavaScript, or other media assets like fonts and images. These are frequently loaded from external service providers of the likes of remote storage services of cloud-native infrastructure, or from content delivery networks (CDNs) with the aim of reducing worldwide networking round-trips just to serve the content.
 
 However, ensuring that the content we include on the website hasn’t been tampered with is of high stakes, and the impact of which can be devastating. Content inclusion is of even higher importance these days given the recent rise of awareness to supply chain security, and growing incidents of [Magecart attacks](https://www.imperva.com/learn/application-security/magecart/) that target website content systems to inject persistent malware through means of cross-site scripting (XSS) vulnerabilities and others.
 
@@ -336,7 +348,7 @@ However, ensuring that the content we include on the website hasn’t been tampe
 
 One effective measure you can deploy to mitigate security risks around content inclusion is by employing a Content Security Policy (CSP). It is a security standard that adds a defense-in-depth layer in order to mitigate attacks such as code injection via cross-site scripting, or clickjacking, to name a few.
 
-It works by ensuring that a predefined trusted set of content rules is upheld and any attempts to bypass or include restricted content are rejected. For example, a content security policy that would allow JavaScript code to run in the browser only from the same origin it was served, and from that of Google Analytics would be defined as `script-src ‘self’ www.google-analytics.com;`. Any attempts of cross-site scripting injections that add inline JavaScript code such as `<a img=x onError=alert(1)>` would be rejected by the browser enforcing the set policy.
+It works by ensuring that a predefined trusted set of content rules is upheld and any attempts to bypass or include restricted content are rejected. For example, a content security policy that would allow JavaScript code to run in the browser only from the same origin it was served, and from that of Google Analytics would be defined as `script-src 'self' www.google-analytics.com;`. Any attempts of cross-site scripting injections that add inline JavaScript code such as `<a img=x onError=alert(1)>` would be rejected by the browser enforcing the set policy.
 
 {{ figure_markup(
   caption="Relative increase in adoption for Content-Security-Policy header from 2021.",
@@ -347,7 +359,7 @@ It works by ensuring that a predefined trusted set of content rules is upheld an
 )
 }}
 
-We’re seeing a 14% relative increase in adoption for `Content-Security-Policy` header from 2021’s data of 12.8% to 2022’s data of 14.6% which demonstrates a growing trend of adoption across developers and the web security community. This is positive, though it’s still a minority of sites using this more advanced feature.
+We're seeing a 14% relative increase in adoption for `Content-Security-Policy` header from 2021's data of 12.8% to 2022's data of 14.6% which demonstrates a growing trend of adoption across developers and the web security community. This is positive, though it's still a minority of sites using this more advanced feature.
 
 CSP is most useful, when served on the HTML response itself and here we’re seeing consistent growing adoption in mobile requests serving a CSP header with 7.2% two years ago, 9.3% last year, and this year a total of 11.2% of mobile homepages.
 
@@ -363,15 +375,15 @@ CSP is most useful, when served on the HTML response itself and here we’re see
   )
 }}
 
-The top three CSP directives that we’re seeing serving more than a quarter of the HTTP requests for both desktop and mobile are `upgrade-insecure-requests` at a 54%, `frame-ancestors` at 54%, and the `block-all-mixed-content` policy at 27%. Trailing policies are `default-src`, `script-src`, `style-src`, and `img-src` to name a few.
+The top three CSP directives that we're seeing serving more than a quarter of the HTTP requests for both desktop and mobile are `upgrade-insecure-requests` at a 54%, `frame-ancestors` at 54%, and the `block-all-mixed-content` policy at 27%. Trailing policies are `default-src`, `script-src`, `style-src`, and `img-src` to name a few.
 
-The `upgrade-insecure-requests` policy’s high adoption rate could perhaps be attributed to the high adoption of TLS requests as a de-facto standard. However, despite `block-all-mixed-content` being considered deprecated as of this date, it’s showing a high adoption rate. This perhaps speaks to the fast rate at which the CSP specification is advancing and users having a hard time keeping up to date.
+The `upgrade-insecure-requests` policy's high adoption rate could perhaps be attributed to the high adoption of TLS requests as a de-facto standard. However, despite `block-all-mixed-content` being considered deprecated as of this date, it's showing a high adoption rate. This perhaps speaks to the fast rate at which the CSP specification is advancing and users having a hard time keeping up to date.
 
 More to do with mitigating cross-site scripting attacks is Google's security initiative for [Trusted Types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types), which requires native browser API support to employ a technique which helps prevent DOM-injection class of vulnerabilities. It is actively advocated by Google engineers yet is still in [draft proposal mode](https://w3c.github.io/trusted-types/dist/spec/) for the W3C. Nonetheless, we record its CSP related security headers `require-trusted-types-for` and `trusted-types` at 0.1% of requests which is not a lot, but perhaps speaks to a growing trend of adoption.
 
 To assess whether a CSP violation from the pre-defined set of rules is occurring, websites can set the `report-uri` directive that the browser will send JSON formatted data as an HTTP POST request. Although `report-uri` requests account for 4.3% of all desktop traffic with a CSP header, it is to date a deprecated directive and has been replaced with `report-to` which accounts for 1.8% of desktop requests.
 
-One of the biggest contributors to the challenge of implementing a tight content security policy is the existence of inline JavaScript code that’s commonly set as event handlers or at other parts of the DOM. To allow teams a progressive adoption of the CSP security standard, a policy may set `unsafe-inline` or `unsafe-eval` as keyword values for its `script-src` directive. Doing so, fails to prevent some cross-site scripting attack vectors and is counter-productive to the preventative measure of a policy.
+One of the biggest contributors to the challenge of implementing a tight content security policy is the existence of inline JavaScript code that's commonly set as event handlers or at other parts of the DOM. To allow teams a progressive adoption of the CSP security standard, a policy may set `unsafe-inline` or `unsafe-eval` as keyword values for its `script-src` directive. Doing so, fails to prevent some cross-site scripting attack vectors and is counter-productive to the preventative measure of a policy.
 
 Teams can utilize a more secure posture of inline JavaScript code by signing them with a nonce or a SHA256 hash. This would look like something along the lines of:
 
@@ -412,9 +424,9 @@ Perhaps speaking to the high complexity of defining a content security policy is
   sql_file="csp_number_of_allowed_hosts.sql"
 ) }}
 
-At a median ranking, 50% of requests are only up to 70 bytes in size for desktop requests. This is a slight drop from last year's report which showed both desktop and mobile requests at 75 bytes in size. The 90th percentile of requests and above has grown from last year’s 389 bytes for desktop requests, to 494 bytes this year. This demonstrates a slight progress towards more complex and complete security policies.
+At a median ranking, 50% of requests are only up to 70 bytes in size for desktop requests. This is a slight drop from last year's report which showed both desktop and mobile requests at 75 bytes in size. The 90th percentile of requests and above has grown from last year's 389 bytes for desktop requests, to 494 bytes this year. This demonstrates a slight progress towards more complex and complete security policies.
 
-Observing the complete definitions for a content security policy, we can see that single directives still make up a large proportion of all requests. 19% of all desktop requests are set only to `upgrade-insecure-requests`. 8% of all desktop requests are set to `frame-ancestors ‘self’` and 23% of all desktop requests are set to the value of `block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;` which mixes together the top 3 most common CSP directives.
+Observing the complete definitions for a content security policy, we can see that single directives still make up a large proportion of all requests. 19% of all desktop requests are set only to `upgrade-insecure-requests`. 8% of all desktop requests are set to `frame-ancestors 'self'` and 23% of all desktop requests are set to the value of `block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;` which mixes together the top 3 most common CSP directives.
 
 The content security policy often has to allow content from other origins than its own in order to support loading of media such as fonts, ad related scripts, and general content delivery network usage. As such, the top 10 origins across requests are as follows:
 
@@ -488,22 +500,22 @@ The above hosts account for roughly the same positioning in rank as was reported
 The CSP security standard is widely supported both by web browsers, as well as content delivery networks and content management systems and is a highly recommended tool for websites and web applications in defense of web security vulnerabilities.
 
 ### Subresource Integrity
-Another defense-in-depth tool is Subresource Integrity which provides a web security defensive layer against content tampering. Whereas a Content Security Policy defines which types and source of content are allowed, a Subresource Integrity mechanism ensures that said content hasn’t been modified for malicious intents.
+
+Another defense-in-depth tool is Subresource Integrity which provides a web security defensive layer against content tampering. Whereas a Content Security Policy defines which types and source of content are allowed, a Subresource Integrity mechanism ensures that said content hasn't been modified for malicious intents.
 
 A reference use-case for using Subresource Integrity is when loading JavaScript content from third-party package managers which also act as a CDN. Some examples of these are unpkg.com or cdnjs.com, both of which serve the content source for JavaScript libraries.
 
-If a third-party library could be compromised due to a hosting issue by the CDN provider, or by one of the project’s contributors or maintainers then you are effectively loading someone else’s code into your website.
+If a third-party library could be compromised due to a hosting issue by the CDN provider, or by one of the project's contributors or maintainers then you are effectively loading someone else's code into your website.
 
-Similar to CSP’s use of a `nonce-`, Subresource Integrity (also known as SRI) allows browsers to validate the content that is served matches a cryptographically signed hash and prevents tampering with the content, whether over the wire or at its source.
+Similar to CSP's use of a `nonce-`, Subresource Integrity (also known as SRI) allows browsers to validate the content that is served matches a cryptographically signed hash and prevents tampering with the content, whether over the wire or at its source.
 
 {{ figure_markup(
-  caption="SRI usage across various elements in websites on desktop.",
   content="20%",
+  caption="Desktop sites using SRI.",
   classes="big-number",
   sheets_gid="953586778",
-  sql_file="sri_usage.sql"
-)
-}}
+  sql_file="sri_usage.sql",
+) }}
 
 Just about one of every fifth website (20%) adopts a subresource integrity in one of its webpage elements on desktop. Out of these, 83% were specifically used in `<script>` type elements on desktop, and 17% were used in `<link>` type  elements in desktop requests.
 
@@ -520,7 +532,7 @@ At a per page coverage, adoption rate for the SRI security feature is still cons
 
 Subresource integrity is specified as a base64 string of a computed hash of one of SHA256, SHA384 or SHA512 cryptographic functions. As a [use-case reference](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity), developers can implement them as follows:
 
-```
+```html
 <script src="https://example.com/example-framework.js"
   integrity="sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC"
         crossorigin="anonymous"></script>
@@ -593,14 +605,15 @@ CDNs are no strangers to Subresource Integrity and provide secure defaults to th
 The above list shows the top 10 most common hosts for which a subresource integrity value has been observed. Notable changes from last year are the Cloudflare hosts jumping from position 4 to position 3, and jsDelivr jumping from position 7 to position 6 in ranking, surpassing Bootstrap’s hosts rankings.
 
 ### Permissions Policy
+
 Browsers are becoming more and more powerful with time, adding more native APIs to access and control different sorts of hardware and feature sets that are made available to websites. These also introduce potential security risks to users through misuse of said features, such as malicious scripts turning on a microphone and collecting data, or fingerprinting geolocation of a device to collect location information.
 
 Previously known as `Feature-Policy`, and now named `Permissions-Policy`, this is an experimental browser API that enables control to an allowlist and a denylist of a wide array of capabilities a browser is able to access.
 
-We’ve noticed a high correlation of usage for the `Permissions-Policy` with HTTPS-enabled connections (97%), with `X-Content-Type-Options` (82%), and `X-Frame-Options` (78%). All correlations are across desktop requests. Another high correlation is within the specific technology intersection, observed for Google My Business mobile pages (99%), and the next closest is Acquia’s Cloud Platform (67%). All correlations are across mobile requests.
+We've noticed a high correlation of usage for the `Permissions-Policy` with HTTPS-enabled connections (97%), with `X-Content-Type-Options` (82%), and `X-Frame-Options` (78%). All correlations are across desktop requests. Another high correlation is within the specific technology intersection, observed for Google My Business mobile pages (99%), and the next closest is Acquia's Cloud Platform (67%). All correlations are across mobile requests.
 
 {{ figure_markup(
-  caption="Relative increase in adoption of Permissions-Policy from 2021.",
+  caption="Relative increase in adoption of `Permissions-Policy` from 2021.",
   content="+85%",
   classes="big-number",
   sheets_gid="1799124531",
@@ -608,7 +621,7 @@ We’ve noticed a high correlation of usage for the `Permissions-Policy` with HT
 )
 }}
 
-We’re seeing an 85% relative increase in adoption for `Permissions-Policy` from 2021’s data (1.3%) to 2022’s data (2.5%) for mobile requests and similar trend for desktop requests too. The deprecated `Feature-Policy` shows a minuscule increase of 1 percentage point between last year’s data and this year’s which demonstrates that users are keeping pace with web browsers’ specification changes.
+We're seeing an 85% relative increase in adoption for `Permissions-Policy` from 2021's data (1.3%) to 2022's data (2.4%) for mobile requests and similar trend for desktop requests too. The deprecated `Feature-Policy` shows a minuscule increase of 1 percentage point between last year's data and this year's which demonstrates that users are keeping pace with web browsers' specification changes.
 
 Besides being used as an HTTP header, this feature can be used within `<iframe>` elements as follows:
 
@@ -826,37 +839,37 @@ Cross Origin policies are one of the main mechanisms used to defend against micr
     </thead>
     <tbody>
       <tr>
-        <td>`cache`</td>
+        <td>cache</td>
         <td class="numeric">65%</td>
         <td class="numeric">63%</td>
       </tr>
       <tr>
-        <td>`*`</td>
+        <td><code class="notranslate">*</code></td>
         <td class="numeric">9%</td>
         <td class="numeric">8%</td>
       </tr>
       <tr>
-        <td>`"cache"`</td>
+        <td>"cache"</td>
         <td class="numeric">7%</td>
         <td class="numeric">7%</td>
       </tr>
       <tr>
-        <td>`cookies`</td>
+        <td>cookies</td>
         <td class="numeric">3%</td>
         <td class="numeric">6%</td>
       </tr>
       <tr>
-        <td>`"storage"`</td>
+        <td>"storage"</td>
         <td class="numeric">2%</td>
         <td class="numeric">1%</td>
       </tr>
       <tr>
-        <td>`cache,cookies,storage`</td>
+        <td>cache,cookies,storage</td>
         <td class="numeric">1%</td>
         <td class="numeric">1%</td>
       </tr>
       <tr>
-        <td>`"cache", "storage"`</td>
+        <td>"cache", "storage"</td>
         <td class="numeric">1%</td>
         <td class="numeric">1%</td>
       </tr>
@@ -866,12 +879,12 @@ Cross Origin policies are one of the main mechanisms used to defend against micr
         <td class="numeric">2%</td>
       </tr>
       <tr>
-        <td>`"cache", "cookies"`</td>
+        <td>"cache", "cookies"</td>
         <td class="numeric">1%</td>
         <td class="numeric">0%</td>
       </tr>
       <tr>
-        <td>`"cookies"`</td>
+        <td>"cookies"</td>
         <td class="numeric">1%</td>
         <td class="numeric">1%</td>
       </tr>
@@ -926,7 +939,7 @@ The issue with preventing attacks using `<meta>` tag is if you set any other sec
   <table>
     <thead>
       <tr>
-        <th>Cryptography API</th>
+        <th>Feature</th>
         <th>Desktop</th>
         <th>Mobile</th>
       </tr>
@@ -991,7 +1004,7 @@ There is not much change in the data from last year. `CryptoGetRandomValues` con
 
 ### Bot protection services
 
-The internet today is filled with bots, and hence there is a constant rise in bad bot attacks. According to [2022 Bad Bot Report](https://www.imperva.com/resources/reports/2022-Imperva-Bad-Bot-Report.pdf) by Imperva, 27.7% of all internet traffic was by bad bots. Bad bots are the ones which try to scrape data and exploit it. According to the report, the end of 2021 saw a surge in bad bot attacks probably because of the log4j vulnerability which is exploitable by bots.
+The internet today is filled with bots, and hence there is a constant rise in bad bot attacks. According to <a hreflang="en" href="https://www.imperva.com/resources/reports/2022-Imperva-Bad-Bot-Report.pdf">2022 Bad Bot Report</a> by Imperva, 27.7% of all internet traffic was by bad bots. Bad bots are the ones which try to scrape data and exploit it. According to the report, the end of 2021 saw a surge in bad bot attacks probably because of the log4j vulnerability which is exploitable by bots.
 
 {{ figure_markup(
   image="security-bot-protection-service-usage.png",
@@ -1052,7 +1065,7 @@ Another factor that can strongly influence the adoption of certain security mech
     <thead>
       <tr>
         <th>Technology</th>
-        <th>Security features enabled by default</th>
+        <th>Security features</th>
       </tr>
     </thead>
     <tbody>
@@ -1149,7 +1162,7 @@ Cryptocurrencies continued to grow in popularity this year with more types avail
 
 As an example, around July and August of 2021, there were reports of several cryptojacking campaigns and vulnerabilities1,2,3 which could be the cause for the spikes in cryptominers found in websites around that time. More recently, in April of 2022 hackers attempted to leverage the [SpringShell vulnerability to set up and run crypto miners](https://arstechnica.com/information-technology/2022/04/hackers-hammer-springshell-vulnerability-in-attempt-to-install-cryptominers/).
 
-Getting into the specifics of the cryptominers found in use among websites on both desktop and mobile we found that the share among miners has spread from last year. For example, Coinimp’s share has shrunk since last year by about 24% while Minero.cc has grown by about 11%.
+Getting into the specifics of the cryptominers found in use among websites on both desktop and mobile we found that the share among miners has spread from last year. For example, Coinimp's share has shrunk since last year by about 24% while Minero.cc has grown by about 11%.
 
 {{ figure_markup(
   image="security-cryptominer-market-share.png",
@@ -1170,7 +1183,7 @@ Please also note that our results may not show the actual state of the websites 
 
 [Well-known URIs](https://datatracker.ietf.org/doc/html/rfc8615) are used to designate specific locations to data or services related to the overall website. A well-known URI is a [URI](https://datatracker.ietf.org/doc/html/rfc3986) whose path component begins with the characters "/.well-known/"
 
-### security.txt
+### `security.txt`
 
 [security.txt](https://datatracker.ietf.org/doc/html/draft-foudil-securitytxt-12) is a file format for websites to provide a standard for vulnerability reporting. Website providers can provide contact details, PGP key, policy, and other information in this file. White hat hackers and penetration testers can use this information to conduct security analyses on these websites and report a vulnerability.
 
@@ -1184,9 +1197,9 @@ Please also note that our results may not show the actual state of the websites 
   )
 }}
 
-The percentage of security.txt URIs with the `expires` property has increased from 0.7% to 2.3% this year. The `expires` property is a required property based on the standard, so it is good to see more websites adhering to the standard. `policy` continues to be the most popular property in a security.txt URI. `policy` is very essential in a security.txt URI since it describes the steps to be followed by a security researcher to report a vulnerability.
+The percentage of `security.txt` URIs with the `expires` property has increased from 0.7% to 2.3% this year. The `expires` property is a required property based on the standard, so it is good to see more websites adhering to the standard. `policy` continues to be the most popular property in a `security.txt` URI. `policy` is very essential in a `security.txt` URI since it describes the steps to be followed by a security researcher to report a vulnerability.
 
-### change-password
+### `change-password`
 
 The [change-password](https://w3c.github.io/webappsec-change-password-url/) well-known URI is a specification under the webappsec working group of W3C which is in editor’s draft state right now. This specific well-known URI was suggested as a way for users and softwares to easily identify the link to be used for changing passwords.
 
@@ -1200,7 +1213,7 @@ The [change-password](https://w3c.github.io/webappsec-change-password-url/) well
   )
 }}
 
-The adoption of this well-known URI is still pretty low. The specification is still work-in-progress so it’s understandable that not many websites have started adopting it. Also, not all websites will have a change-password form, especially if they don’t have a sign-in system for their website.
+The adoption of this well-known URI is still pretty low. The specification is still work-in-progress so it's understandable that not many websites have started adopting it. Also, not all websites will have a change-password form, especially if they don't have a sign-in system for their website.
 
 ### Detecting Status Code Reliability
 
@@ -1216,15 +1229,15 @@ This particular well-known URI determines the reliability of a website’s HTTP 
   )
 }}
 
-We found that 84% of websites in both mobile and desktop respond with a not-ok status for this well-known URI. The good thing about this specification is if websites are correctly configured, this specification should automatically work and won’t need website developers to make any specific changes.
+We found that 84% of websites in both mobile and desktop respond with a not-ok status for this well-known URI. The good thing about this specification is if websites are correctly configured, this specification should automatically work and won't need website developers to make any specific changes.
 
 ## Conclusion
 
-Our analysis this year shows that websites are continuing to make improvements in their security features like we have seen over the past years. It’s also exciting to see that many countries who were behind on web security adoptions are increasing their usage. This could mean that awareness around web security in general is increasing.
+Our analysis this year shows that websites are continuing to make improvements in their security features like we have seen over the past years. It's also exciting to see that many countries who were behind on web security adoptions are increasing their usage. This could mean that awareness around web security in general is increasing.
 
 We found that web developers are also slowly adopting new standards and replacing the old ones. This is definitely a step in the right direction. The importance of security and privacy on the internet is growing everyday. The web keeps becoming an integral part of life for many people and hence, web developers should continue to increase the usage of web security features.
 
 There’s still a lot of progress that we need to do in setting stricter Content Security Policy. Cross-site scripting continues to be in [OWASP Top 10](https://owasp.org/Top10/). There needs to be wider adoption of stricter `script-src` directives to prevent such attacks. Also, more developers can look into taking advantage of Web Cryptography API. Similar efforts need to be made in adopting well-known URIs like security.txt. Not only does it provide a way for security professionals to report vulnerabilities in the website, but it also shows that the developers care about the website’s security and are open to making improvements.
 
-It’s encouraging to observe the continuous progress in usage of web security over the past years, but the web community needs to continue researching and adopting more security features since the web continues to grow and security becomes more crucial.
+It's encouraging to observe the continuous progress in usage of web security over the past years, but the web community needs to continue researching and adopting more security features since the web continues to grow and security becomes more crucial.
 
