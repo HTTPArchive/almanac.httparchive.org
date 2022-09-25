@@ -48,8 +48,7 @@
           "part": "I",
           "chapter_number": "6",
           "title": "Media",
-          "slug": "media",
-          "todo": true
+          "slug": "media"
         },
         {
           "part": "I",
@@ -273,7 +272,9 @@
       ],
       "avatar_url": "54864775",
       "github": "akshay-ranganath",
-      "website": "https://www.cloudinary.com/"
+      "linkedin": "akshayranganath",
+      "twitter": "rakshay",
+      "website": "https://akshayranganath.github.io/"
     },
     "alankent": {
       "name": "Alan Kent",
