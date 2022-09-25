@@ -40,7 +40,7 @@
     "node-fetch": "3.2.10",
     "node-watch": "0.7.3",
     "prettier": "2.7.1",
-    "puppeteer": "17.1.3",
+    "puppeteer": "18.0.5",
     "rainbow-code": "2.1.7",
     "recursive-readdir": "2.2.2",
     "run-script-os": "1.1.6",
