@@ -67,13 +67,17 @@
       {% endif %}
     </div>
     <div class="intro-image-wrapper">
-      {% if year != "2020" %}
+      {% if year == "2022" %}
+      <svg viewBox="0 0 56 16">
+        <text x="9" y="15">{{ year }}</text>
+      </svg>
+      {% elif year != "2020" %}
       <svg viewBox="0 0 50 16">
-        <text x="8" y="15">{{ year }}</text>
+        <text x="0" y="15">{{ year }}</text>
       </svg>
       {% else %}
-      <svg viewBox="0 0 56 16">
-        <text x="8" y="15">{{ year }}</text>
+      <svg viewBox="0 0 57 16">
+        <text x="9" y="15">{{ year }}</text>
       </svg>
       {% endif %}
       <img src="/static/images/home-hero.png" alt="" width="820" height="562" fetchpriority="high">
