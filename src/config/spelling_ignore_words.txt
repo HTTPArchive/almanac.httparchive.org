@@ -2,6 +2,7 @@
 #For example https://www.internetmarketingninjas.com/online-spell-checker.php can spell check the website
 #Useful to run this after any major changes
 
+abiotic
 ableism
 accelerometer
 accesskey
@@ -17,6 +18,7 @@ ahrefssiteaudit
 affordance
 ahmadawais
 ajax
+akshayranganath
 akent
 alankent
 aleyda
@@ -72,6 +74,7 @@ bendell
 benseymour
 bgsound
 bidirectionality
+bingbot
 bitrate
 bkardell
 bling
@@ -105,6 +108,7 @@ ceberhardt
 cdnjs
 charset
 chari
+chatbots
 checkbox
 checkboxes
 christianliebel
@@ -174,6 +178,7 @@ datacommons
 datalist
 datamine
 dataset
+datasets
 daumcdn
 davewsmart
 dcterms
@@ -198,6 +203,7 @@ digicert
 discoverability
 discoverable
 divitis
+dnom
 doctype
 doctypes
 dofollow
@@ -230,6 +236,8 @@ etportis
 eucookie
 eval
 evangelization
+explainer
+extensibility
 fallback
 fallbacks
 fanu
@@ -239,6 +247,7 @@ fantasai
 fbcdn
 fbevents
 fellowhuman
+fetchpriority
 fieldset
 figcaption
 filesize
@@ -251,6 +260,7 @@ foaf
 focusable
 fontawesome
 foundational
+frac
 frameset
 franca
 frontend
@@ -267,11 +277,13 @@ gemservers
 geolocation
 geopositioning
 geos
+gerrymcgovernireland
 getellipsis
 gifs
 github
 globalized
 glyf
+glyphhanger
 gnumanth
 google
 googleads
@@ -313,6 +325,7 @@ hyperlinks
 iandevlin
 ianlurie
 iarc
+icomoon
 iframe
 iframes
 imagegallery
@@ -330,6 +343,7 @@ incentivize
 indexability
 indexable
 indexifembedded
+inflight
 inline
 inlining
 inlined
@@ -340,6 +354,7 @@ installable
 interactable
 interoperability
 interoperable
+intersectional
 intersectionally
 ipad
 iphone
@@ -359,6 +374,7 @@ jessicanicolet
 jessnicolet
 jevgeniazi
 jimstatic
+jonathanwold
 jonoalderson
 jpamental
 jpeg
@@ -393,6 +409,7 @@ laggy
 lang
 lazyload
 lazysizes
+ldevernay
 leaderboard
 leaderboards
 leaverou
@@ -410,8 +427,11 @@ linkedin
 linux
 liran
 lirantal
+listicles
 listitem
 livestreams
+lnum
+locl
 lockdowns
 logicalphase
 lookzook
@@ -450,10 +470,12 @@ microservices
 microsites
 microsoft
 middleboxes
+mightybytes
 minification
 minified
 minifier
 minifiers
+minify
 minifying
 misconfigured
 mobilemoxie
@@ -469,6 +491,7 @@ najva
 namespace
 namespaces
 namespacing
+natively
 netdna
 nginx
 nicolet
@@ -491,6 +514,7 @@ notsent
 notwillk
 nrllh
 nrllah
+numr
 nutch
 obscuresite
 obto
@@ -514,14 +538,18 @@ operability
 opsz
 oriendation
 outlier
+outliers
 outpacing
 outsized
 overreport
+oversized
 pagead
+paivaspol
 palt
 papayawhip
 param
 parastorage
+parsable
 patrickhulce
 patrickstox
 paywalls
@@ -558,6 +586,7 @@ precached
 precaching
 preconnect
 preconnecting
+preconnects
 precompress
 precompressed
 precompression
@@ -599,6 +628,7 @@ rachellcostello
 raghuramakrishnan
 rakshay
 raphlinus
+rasterizer
 ratatouille
 readible
 readonly
@@ -615,8 +645,10 @@ reneesoffice
 reneesvirtualoffice
 reprioritize
 repurposed
+requestor
 resizer
 retargeting
+retransmission
 revalidate
 revicons
 reyrey
@@ -641,6 +673,7 @@ rreverser
 rrggbb
 rrggbbaa
 rsheeter
+ruleset
 rviscomi
 safelist
 samdutton
@@ -649,6 +682,7 @@ samp
 saptaks
 sbix
 sboukortt
+scalable
 scdn
 scottdavis
 scotthelme
@@ -678,6 +712,7 @@ similarweb
 simonhearne
 simpl
 sioc
+sirjonathan
 siteassets
 sitelinks
 sitemap
@@ -709,6 +744,7 @@ ssllabs
 stackpath
 stacktraces
 stateful
+strategizing
 stringify
 stylesheet
 stylesheets
@@ -716,6 +752,7 @@ subgrid
 suboptimal
 subdomain
 subdomains
+subfont
 subpar
 subresource
 subresources
@@ -723,6 +760,7 @@ subsampling
 subsetting
 subtags
 subtree
+superfast
 suzzicks
 svgees
 svgeesus
@@ -748,6 +786,7 @@ textfield
 thefoxis
 theobto
 theora
+thib
 thibaud
 thibaudcolas
 thirdpartyweb
@@ -758,6 +797,7 @@ timeline
 timeseries
 timeslot
 timestamp
+timfrick
 tnum
 togethertech
 tomayac
@@ -769,6 +809,8 @@ toolchains
 tooltip
 tooltips
 toolset
+touchpoint
+touchpoints
 tpiros
 trackpad
 tradeoff
@@ -790,7 +832,9 @@ uncacheable
 uncategorized
 uncompressing
 uncrawlable
+undercount
 undercounting
+underperforming
 underreport
 underserved
 underuse
@@ -804,6 +848,7 @@ unprefixed
 unsecure
 unsecurely
 untagged
+updatable
 uptick
 uptodown
 upush
@@ -827,8 +872,10 @@ vmax
 vmin
 vorbis
 vscode
+wakamaifondue
 wasm
 wasmgz
+wasteless
 wbindgen
 wdth
 webcam
@@ -854,6 +901,7 @@ whitelisted
 whitelisting
 whitelists
 whitesmoke
+whitespace
 wikidata
 wikipedia
 wikis
@@ -872,6 +920,7 @@ worklets
 wpfooter
 wpheader
 wpsidebar
+xhtml
 xmlns
 yandex
 yandexuid

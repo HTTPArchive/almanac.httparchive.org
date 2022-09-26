@@ -255,7 +255,7 @@ The figure above shows the relative appearance of values in those pages—`layou
 
 While it is useful on its own, additional levels of containment support are a prerequisite to supporting container queries, so this will be an interesting metric to continue to track over time as container queries is the <a hreflang="en" href="https://2021.stateofcss.com/en-US/opinions/#currently_missing_from_css_wins">#1 most requested CSS feature</a> for many years. Now that containment is universally available, it's a great time for you to have a look and familiarize yourself with the basic concepts.
 
-Note that some degree of container queries support is already available in Chrome and Safari and polyfills are available, so we also decided to look at how many stylesheets already contain a `@container ruleset`, wondering how much this would account for the use we saw above.
+Note that some degree of container queries support is already available in Chrome and Safari and polyfills are available, so we also decided to look at how many stylesheets already contain a `@container` ruleset, wondering how much this would account for the use we saw above.
 
 {{ figure_markup(
   caption="Percentage of mobile pages containing a `@container` ruleset.",

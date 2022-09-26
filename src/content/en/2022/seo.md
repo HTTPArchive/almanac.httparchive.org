@@ -473,7 +473,7 @@ The primary purpose of the alt attribute on the `<img>` element is accessibility
 {{ figure_markup(
   image="image-alt-empty.png",
   caption="Percentage of `img` with blank `alt`.",
-  description="A distribution chart of pages with an img tag implementing empty alt attributes. As a median, 0% of images on bnoth mobile and desktop have an alt attribute that is empty making it uncommon At the 75th percentile this rises to 24% of images on both devices types, and at the 75th percentile it's 75% on desktop and 79% on mobile.",
+  description="A distribution chart of pages with an img tag implementing empty alt attributes. As a median, 0% of images on both mobile and desktop have an alt attribute that is empty making it uncommon At the 75th percentile this rises to 24% of images on both devices types, and at the 75th percentile it's 75% on desktop and 79% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1460266248&format=interactive",
   sheets_gid="1161905146",
   sql_file="image-alt-stats.sql"

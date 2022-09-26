@@ -248,7 +248,7 @@ As can be seen in the <a hreflang="en" href="https://www.w3.org/TR/2016/NOTE-WOF
 {{ figure_markup(
   image="compressed-font-outline-sizes.png",
   caption="Compressed font outline sizes.",
-  description="Column chart showing at the 25th percentile both `CFF` and glyh font sizes are 6 KB, at the 50th percentile they start to diverge with `CFF` 15 KB and glyf 17 KB, at the 75th percentile it's 32 and 39 KB respectively, and finally at the 90th percentile it's `CFF` is 86 KB and glyf is only 56 KB.",
+  description="Column chart showing at the 25th percentile both `CFF` and glyf font sizes are 6 KB, at the 50th percentile they start to diverge with `CFF` 15 KB and glyf 17 KB, at the 75th percentile it's 32 and 39 KB respectively, and finally at the 90th percentile it's `CFF` is 86 KB and glyf is only 56 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQF6OH_2-0apcFzjE-iHSQNuZqp9DtM7udIeOzPSOSMM-Pf6KdTnRwAclX9QPZF1vNNgu6acZvqoN5b/pubchart?oid=1880460638&format=interactive",
   sheets_gid="1853636944",
   sql_file="font_size_quantiles_by_opentype_table.sql"
@@ -327,7 +327,7 @@ The CSS `ascent-override`, `descent-override`, `line-gap-override`, and `size-ad
 These `@font-face` descriptors are very new, but are already seeing some use. To make them even more useful developers need two things:
 
 1. A set of consistent fallback fonts that are available in all browsers and on all platforms. They could even be variable fonts. Imagine the possibilities.
-2. Tools to automatically match fonts by tweaking its size and metrics. Doing this by hand is very time-consuming, so a tool is a must. This is not intended as a replacement for the web font, but merely as a temporary fallback while the web fonts are loading (or as a standin if the fonts don't load or the browser is very old).
+2. Tools to automatically match fonts by tweaking its size and metrics. Doing this by hand is very time-consuming, so a tool is a must. This is not intended as a replacement for the web font, but merely as a temporary fallback while the web fonts are loading (or as a stand-in if the fonts don't load or the browser is very old).
 
 We're slowly getting there with tools such as <a hreflang="en" href="https://meowni.ca/font-style-matcher/">Font Style Matcher</a> and <a hreflang="en" href="https://www.industrialempathy.com/perfect-ish-font-fallback/">Perfect-ish Font Fallback</a>, but unfortunately, fallback fonts are still very much platform dependent.
 
