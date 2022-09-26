@@ -907,9 +907,9 @@ There has been little change in the distribution of timing functions used during
   )
 }}
 
-To understand what developers are using animations for, we took a look at the names used for the animation classes. For example, anything with `spin` in the classname is deemed to be rotate. Rotate animations were the most popular, as in 2021. However the percentage has dropped from 18% to 13%, with bounce animations moving from 5th place to 3rd place in the list.
+To understand what developers are using animations for, we took a look at the names used for the animation classes. For example, anything with `spin` in the class name is deemed to be rotate. Rotate animations were the most popular, as in 2021. However the percentage has dropped from 18% to 13%, with bounce animations moving from 5th place to 3rd place in the list.
 
-As last year, the high showing for unknown/other is due to a prevalence of the classname `a`, which we can't map to a specific animation type.
+As last year, the high showing for unknown/other is due to a prevalence of the class name `a`, which we can't map to a specific animation type.
 
 ## Visual Effects
 
