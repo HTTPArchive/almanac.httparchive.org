@@ -67,7 +67,11 @@
       {% endif %}
     </div>
     <div class="intro-image-wrapper">
-      {% if year != "2020" %}
+      {% if year == "2022" %}
+      <svg viewBox="0 0 53.5 16">
+        <text x="8" y="15">{{ year }}</text>
+      </svg>
+      {% elif year != "2020" %}
       <svg viewBox="0 0 50 16">
         <text x="8" y="15">{{ year }}</text>
       </svg>
