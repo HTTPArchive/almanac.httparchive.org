@@ -111,7 +111,7 @@ Are HTML documents being compressed? How many? How? 86% of them are—with 58% (
 {{ figure_markup(
   image="html-languages.png",
   caption="Most popular regional HTML lang values.",
-  description="Bar chart showing `en` is the langauge set on 22% of desktop and 19% of mobile pages, `(not set)` on 18% and 17% respectively, `en-us` on 16% and 13%, `ja` on 6% and 6%, `es` on 4% and 5%, `pt-br` on 2% and 3%, `en-gb` on 2% and 2%, `ru` on 2% and 2%, `de` on 2% and 2%, and `de-de` on 1% of desktop and 2% of mobile pages..",
+  description="Bar chart showing `en` is the language set on 22% of desktop and 19% of mobile pages, `(not set)` on 18% and 17% respectively, `en-us` on 16% and 13%, `ja` on 6% and 6%, `es` on 4% and 5%, `pt-br` on 2% and 3%, `en-gb` on 2% and 2%, `ru` on 2% and 2%, `de` on 2% and 2%, and `de-de` on 1% of desktop and 2% of mobile pages..",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=677908280&format=interactive",
   sheets_gid="1194853402",
   sql_file="lang.sql",
@@ -140,7 +140,7 @@ HTML payload and document size are a staple in this series—we've looked at thi
 {{ figure_markup(
   image="html-document-transfer-size.png",
   caption="Median transfer size of HTML document.",
-  description="Column chart showing the transfer size of the median HTML document is trending upwarsds. In 2019 it was 27 KB on desktop, and 26 KB on mobile, in 2020 it fell slightly to 26 KB and 25 KB respectively, but in 2021 it increased again to 29 KB and 27 KB, and in 2022 it's the largest yet at 31 KB on desktop and 30 KB on mobile.",
+  description="Column chart showing the transfer size of the median HTML document is trending upwards. In 2019 it was 27 KB on desktop, and 26 KB on mobile, in 2020 it fell slightly to 26 KB and 25 KB respectively, but in 2021 it increased again to 29 KB and 27 KB, and in 2022 it's the largest yet at 31 KB on desktop and 30 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=381017848&format=interactive",
   sheets_gid="1090657426",
   sql_file="document_trends.sql",
@@ -163,7 +163,7 @@ What can we observe?
 {{ figure_markup(
   image="element-count-distribution.png",
   caption="Distribution of distinct elements per page.",
-  description="Column chart showing the count of distinct elements per page at common percentiles. Desktop and mobile are near identical with 22 elements at the 10th percentile, 27 at the 25th, 32 at the 50th percentils, 39 for desktop and 38 for mobile at the 75th percentile, and 45 at the 90th percentile.",
+  description="Column chart showing the count of distinct elements per page at common percentiles. Desktop and mobile are near identical with 22 elements at the 10th percentile, 27 at the 25th, 32 at the 50th percentiles, 39 for desktop and 38 for mobile at the 75th percentile, and 45 at the 90th percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=2146886292&format=interactive",
   sheets_gid="1201800477",
   sql_file="element_count_distribution.sql",
@@ -441,7 +441,7 @@ Are obsolete elements still a thing? Given that not-validating is still a thing,
 {{ figure_markup(
   image="obsolete-elements.png",
   caption="Obsolete elements.",
-  description="Bar chart showing `center` is used on 6.3% of desktop and 6.1% of mobile pages, `font` is used on 5.7% and 5.4% pages repsectively, `marquee` on 0.8% and 1.0%, `nobr` on 0.5% and 0.4%, and finally `big` 0.4% of desktop and mobile pages.",
+  description="Bar chart showing `center` is used on 6.3% of desktop and 6.1% of mobile pages, `font` is used on 5.7% and 5.4% pages respectively, `marquee` on 0.8% and 1.0%, `nobr` on 0.5% and 0.4%, and finally `big` 0.4% of desktop and mobile pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=2039309980&format=interactive",
   sheets_gid="69619977",
   sql_file="obsolete_elements.sql",
@@ -453,8 +453,8 @@ On 6.1% of pages, you still find `center` elements (hi <a hreflang="en" href="ht
 
 {{ figure_markup(
   image="obsolete-elements-relative-use.png",
-  caption="Obsolete elements relavative use.",
-  description="Pie chart showing `center` is 43.0% of obsolete element usage on mobile, `font` is 38.2%, `marquee` is 7.0%, `nobr` 2.6%, `big` 2.6%, `frame` 1.5% and the the resrt of the pie is make up of unlabelled other elements.",
+  caption="Obsolete elements relative use.",
+  description="Pie chart showing `center` is 43.0% of obsolete element usage on mobile, `font` is 38.2%, `marquee` is 7.0%, `nobr` 2.6%, `big` 2.6%, `frame` 1.5% and the the rest of the pie is make up of unlabelled other elements.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRjXjOczLu9q3mcQ-UFLUOmZgefGNCPVYeEwo4cDxQTymgmD_1D5dbZ728Mz1SkEMZHxQgwcWmLjkgx/pubchart?oid=1875548366&format=interactive",
   sheets_gid="69619977",
   sql_file="obsolete_elements.sql",

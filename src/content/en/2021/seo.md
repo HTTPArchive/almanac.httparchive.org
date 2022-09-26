@@ -22,7 +22,7 @@ featured_stat_label_3: Mobile websites failing Core Web Vitals checks
 
 ## Introduction
 
-SEO (Search Engine Optimization) is the practice of optimizing a website or webpage to increase the quantity and quality of its traffic from a search engine's organic results.
+SEO (Search Engine Optimization) is the practice of optimizing a website or web page to increase the quantity and quality of its traffic from a search engine's organic results.
 
 SEO is more popular than ever and has seen huge growth over the last couple years as companies sought new ways to reach customers. SEO's popularity has far outpaced other digital channels.
 
