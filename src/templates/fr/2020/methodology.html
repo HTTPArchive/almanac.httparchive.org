@@ -72,7 +72,7 @@
         <h2 id="dataset"><a href="#dataset" class="anchor-link">À propos du jeu de données</a></h2>
 
         <p>
-          Le jeu de données HTTP Archive est continuellement mis à jour avec de nouvelles données mensuelles. Pour l’édition 2020 du Web Almanac, sauf indication contraire dans le chapitre, tous les paramètres ont été obtenus à partir de l’index de août 2020. Ces résultats sont <a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">publiquement requêtables</a> sur BigQuery dans des tables préfixées par <code>2020_08_01</code>.
+          Le jeu de données HTTP Archive est continuellement mis à jour avec de nouvelles données mensuelles. Pour l’édition 2020 du Web Almanac, sauf indication contraire dans le chapitre, tous les paramètres ont été obtenus à partir de l’index de août 2020. Ces résultats sont <a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/blob/main/docs/gettingstarted_bigquery.md">publiquement requêtables</a> sur BigQuery dans des tables préfixées par <code>2020_08_01</code>.
         </p>
 
         <p>
@@ -176,7 +176,7 @@
       <h3 id="webpagetest"><a href="#webpagetest" lang="en" class="anchor-link">WebPageTest</a></h3>
 
       <p>
-        <a hreflang="en" href="https://www.webpagetest.org/" lang="en">WebPageTest</a> est un outil de test de performance Web incontournable et l’épine dorsale de HTTP Archive. Nous utilisons une <a hreflang="en" href="https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Private%20Instances/README.md">instance privée</a> de WebPageTest avec des agents de test privés, c’est-à-dire de vrais navigateurs testant chaque page web. Les sites pour ordinateurs de bureau et périphériques mobiles sont testés avec différentes configurations&nbsp;:
+        <a hreflang="en" href="https://www.webpagetest.org/" lang="en">WebPageTest</a> est un outil de test de performance Web incontournable et l’épine dorsale de HTTP Archive. Nous utilisons une <a hreflang="en" href="https://docs.webpagetest.org/private-instances/">instance privée</a> de WebPageTest avec des agents de test privés, c’est-à-dire de vrais navigateurs testant chaque page web. Les sites pour ordinateurs de bureau et périphériques mobiles sont testés avec différentes configurations&nbsp;:
       </p>
       <div class="table-wrap"><div class="table-wrap-container">
       <table>
@@ -244,7 +244,7 @@
       </p>
 
       <p>
-        L’instance privée de WebPageTest de HTTP Archive est synchronisée avec la dernière version publique et complétée par des <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">indicateurs personnalisés</a>. Ils sont collectés par des portions de JavaScript qui sont évaluées et exécutées sur chaque site web à la fin du test. Grâce aux <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/commits/master/custom_metrics">contributions</a> de nombreux analystes de données, notamment les <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/pulls?q=is%3Apr+author%3ATiggerito+sort%3Acreated-asc">efforts herculéens</a> de <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='Tiggerito') }}" lang="en">Tony McCreath</a>, l’édition 2020 du Web Almanac a considérablement élargi les capacités de l’infrastructure de test de HTTP Archive avec plus de 3000 nouvelles lignes de code.
+        L’instance privée de WebPageTest de HTTP Archive est synchronisée avec la dernière version publique et complétée par des <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">indicateurs personnalisés</a>. Ils sont collectés par des portions de JavaScript qui sont évaluées et exécutées sur chaque site web à la fin du test. Grâce aux <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/commits/master/custom_metrics">contributions</a> de nombreux analystes de données, notamment les <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/pulls?q=is%3Apr+author%3ATiggerito+sort%3Acreated-asc">efforts herculéens</a> de <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='Tiggerito') }}" lang="en">Tony McCreath</a>, l’édition 2020 du Web Almanac a considérablement élargi les capacités de l’infrastructure de test de HTTP Archive avec plus de 3000 nouvelles lignes de code.
       </p>
 
       <p>
@@ -435,7 +435,7 @@
       <h3 id="analysis"><a href="#analysis" class="anchor-link">Analyse</a></h3>
 
       <p>
-        En juillet et août 2020, ayant une liste bien établie de mesures et de chapitres, les analystes de données ont trié les mesures pour en déterminer la faisabilité. Dans certains cas, nous avons créé des <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">mesures personnalisées</a> pour combler les lacunes de nos capacités analytiques.
+        En juillet et août 2020, ayant une liste bien établie de mesures et de chapitres, les analystes de données ont trié les mesures pour en déterminer la faisabilité. Dans certains cas, nous avons créé des <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">mesures personnalisées</a> pour combler les lacunes de nos capacités analytiques.
       </p>
 
       <p>

@@ -73,7 +73,7 @@
         <h2 id="dataset"><a href="#dataset" class="anchor-link">About the dataset</a></h2>
 
         <p>
-          The HTTP Archive dataset is continuously updating with new data monthly. For the {{ year }} edition of the Web Almanac, unless otherwise noted in the chapter, all metrics were sourced from the July {{ year }} crawl. These results are <a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">publicly queryable</a> on BigQuery in tables prefixed with <code>{{ year }}_07_01</code>.
+          The HTTP Archive dataset is continuously updating with new data monthly. For the {{ year }} edition of the Web Almanac, unless otherwise noted in the chapter, all metrics were sourced from the July {{ year }} crawl. These results are <a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/blob/main/docs/gettingstarted_bigquery.md">publicly queryable</a> on BigQuery in tables prefixed with <code>{{ year }}_07_01</code>.
         </p>
 
         <p>
@@ -92,7 +92,7 @@
           {# To generate this markup temporarily add a ```sql code block to a chapter and generate that chapter and you&#8217;ll get the HTML #}
           {# Note extra attributes on pre tag to allow keyboard scroll so add them back in #}
           <pre role="region" aria-label="bytes_2021.sql" tabindex="0"><code class="sql language-sql"><span class="comment">#standardSQL</span>
-<span class="comment"># Sum of JS request bytes per page (2020)</span>
+<span class="comment"># Sum of JS request bytes per page (2021)</span>
 <span class="keyword">SELECT</span>
   percentile,
   _TABLE_SUFFIX <span class="keyword">AS</span> client,
@@ -173,7 +173,7 @@
       <h3 id="webpagetest"><a href="#webpagetest" class="anchor-link">WebPageTest</a></h3>
 
       <p>
-        <a hreflang="en" href="https://www.webpagetest.org/">WebPageTest</a> is a prominent web performance testing tool and the backbone of HTTP Archive. We use a <a hreflang="en" href="https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Private%20Instances/README.md">private instance</a> of WebPageTest with private test agents, which are the actual browsers that test each web page. Desktop and mobile websites are tested under different configurations:
+        <a hreflang="en" href="https://www.webpagetest.org/">WebPageTest</a> is a prominent web performance testing tool and the backbone of HTTP Archive. We use a <a hreflang="en" href="https://docs.webpagetest.org/private-instances/">private instance</a> of WebPageTest with private test agents, which are the actual browsers that test each web page. Desktop and mobile websites are tested under different configurations:
       </p>
       <div class="table-wrap"><div class="table-wrap-container">
       <table>
@@ -214,7 +214,7 @@
           <tr>
             <td>Connection</td>
             <td>Cable (5/1 Mbps 28ms RTT)</td>
-            <td>4G (9 Mbps 170ms RTT)</td>
+            <td>3G (1.600/0.768 Mbps 300ms RTT)</td>
           </tr>
 
           <tr>
@@ -231,7 +231,7 @@
       </p>
 
       <p>
-        Mobile websites are run from within a mobile Chrome environment on an emulated Moto G4 device with a network speed equivalent to a 4G connection.
+        Mobile websites are run from within a mobile Chrome environment on an emulated Moto G4 device with a network speed equivalent to a 3G connection.
       </p>
 
       <p>
@@ -239,7 +239,7 @@
       </p>
 
       <p>
-        HTTP Archive&#8217;s private instance of WebPageTest is kept in sync with the latest public version and augmented with <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">custom metrics</a>, which are snippets of JavaScript that are evaluated on each website at the end of the test.
+        HTTP Archive&#8217;s private instance of WebPageTest is kept in sync with the latest public version and augmented with <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">custom metrics</a>, which are snippets of JavaScript that are evaluated on each website at the end of the test.
       </p>
 
       <p>
@@ -323,7 +323,7 @@
       </p>
 
       <p>
-        As of this year, the Chrome UX Report dataset now includes relative <a href="https://developers.google.com/web/updates/2021/03/crux-rank-magnitude">website ranking data</a>. These are referred to as <em>rank magnitudes</em> because, as opposed to fine-grained ranks like the #1 or #116 most popular websites, websites are grouped into rank buckets from the top 1k, top 10k, up to the top 10M. Each website is ranked according to the number of <a href="https://developers.google.com/web/tools/chrome-user-experience-report/#methodology">eligible</a> page views on all of its pages combined. This year's Web Almanac makes extensive use of this new data as a way to explore variations in the way the web is built by site popularity.
+        As of this year, the Chrome UX Report dataset now includes relative <a href="https://developers.google.com/web/updates/2021/03/crux-rank-magnitude">website ranking data</a>. These are referred to as <em>rank magnitudes</em> because, as opposed to fine-grained ranks like the #1 or #116 most popular websites, websites are grouped into rank buckets from the top 1k, top 10k, up to the top 10M. Each website is ranked according to the number of <a href="https://developer.chrome.com/docs/crux/methodology/#eligibility">eligible</a> page views on all of its pages combined. This year's Web Almanac makes extensive use of this new data as a way to explore variations in the way the web is built by site popularity.
       </p>
 
       <p>
@@ -391,7 +391,7 @@
         <h4 id="parsel"><a href="#parsel" class="anchor-link">Parsel</a></h4>
 
         <p>
-            <a hreflang="en" href="https://projects.verou.me/parsel/">Parsel</a> is a CSS selector parser and specificity calculator, originally written by <a href="{{ url_for('chapter', year=2019, lang=lang, chapter='css') }}">2019 CSS</a> chapter lead <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a> and open sourced as a separate library. It is used extensively in all CSS metrics that relate to selectors and specificity.
+            <a hreflang="en" href="https://projects.verou.me/parsel/">Parsel</a> is a CSS selector parser and specificity calculator, originally written by <a href="{{ url_for('chapter', year=2019, lang=lang, chapter='css') }}">2020 CSS</a> chapter lead <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a> and open sourced as a separate library. It is used extensively in all CSS metrics that relate to selectors and specificity.
         </p>
     </section>
 
@@ -443,7 +443,7 @@
       <h3 id="analysis"><a href="#analysis" class="anchor-link">Analysis</a></h3>
 
       <p>
-        In May and June {{ year }}, data analysts worked with authors and peer reviewers to come up with a list of metrics that would need to be queried for each chapter. In some cases, <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">custom metrics</a> were created to fill gaps in our analytic capabilities.
+        In May and June {{ year }}, data analysts worked with authors and peer reviewers to come up with a list of metrics that would need to be queried for each chapter. In some cases, <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">custom metrics</a> were created to fill gaps in our analytic capabilities.
       </p>
 
       <p>

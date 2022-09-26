@@ -1,5 +1,6 @@
 #standardSQL
 # Percentiles of Max-Age-attribute, Expires-attribute and real age (Max-Age has precedence) of cookies set over all requests
+# Only incorporates values that are larger than 0
 CREATE TEMPORARY FUNCTION getCookieAgeValues(headers STRING, epochOfRequest NUMERIC)
 RETURNS STRING DETERMINISTIC
 LANGUAGE js AS '''
@@ -51,6 +52,8 @@ max_age_values AS (
   FROM age_values,
     UNNEST(JSON_QUERY_ARRAY(values, '$.maxAge')) AS max_age_value,
     UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+  WHERE
+    SAFE_CAST(max_age_value AS NUMERIC) > 0
   GROUP BY
     percentile,
     client
@@ -67,6 +70,8 @@ expires_values AS (
   FROM age_values,
     UNNEST(JSON_QUERY_ARRAY(values, '$.expires')) AS expires_value,
     UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+  WHERE
+    SAFE_CAST(expires_value AS NUMERIC) > 0
   GROUP BY
     percentile,
     client
@@ -83,6 +88,8 @@ real_age_values AS (
   FROM age_values,
     UNNEST(JSON_QUERY_ARRAY(values, '$.realAge')) AS real_age_value,
     UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+  WHERE
+    SAFE_CAST(real_age_value AS NUMERIC) > 0
   GROUP BY
     percentile,
     client

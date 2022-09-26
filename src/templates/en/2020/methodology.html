@@ -72,7 +72,7 @@
         <h2 id="dataset"><a href="#dataset" class="anchor-link">About the dataset</a></h2>
 
         <p>
-          The HTTP Archive dataset is continuously updating with new data monthly. For the 2020 edition of the Web Almanac, unless otherwise noted in the chapter, all metrics were sourced from the August 2020 crawl. These results are <a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">publicly queryable</a> on BigQuery in tables prefixed with <code>2020_08_01</code>.
+          The HTTP Archive dataset is continuously updating with new data monthly. For the 2020 edition of the Web Almanac, unless otherwise noted in the chapter, all metrics were sourced from the August 2020 crawl. These results are <a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/blob/main/docs/gettingstarted_bigquery.md">publicly queryable</a> on BigQuery in tables prefixed with <code>2020_08_01</code>.
         </p>
 
         <p>
@@ -176,7 +176,7 @@
       <h3 id="webpagetest"><a href="#webpagetest" class="anchor-link">WebPageTest</a></h3>
 
       <p>
-        <a hreflang="en" href="https://www.webpagetest.org/">WebPageTest</a> is a prominent web performance testing tool and the backbone of HTTP Archive. We use a <a hreflang="en" href="https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Private%20Instances/README.md">private instance</a> of WebPageTest with private test agents, which are the actual browsers that test each web page. Desktop and mobile websites are tested under different configurations:
+        <a hreflang="en" href="https://www.webpagetest.org/">WebPageTest</a> is a prominent web performance testing tool and the backbone of HTTP Archive. We use a <a hreflang="en" href="https://docs.webpagetest.org/private-instances/">private instance</a> of WebPageTest with private test agents, which are the actual browsers that test each web page. Desktop and mobile websites are tested under different configurations:
       </p>
       <div class="table-wrap"><div class="table-wrap-container">
       <table>
@@ -244,7 +244,7 @@
       </p>
 
       <p>
-        HTTP Archive&#8217;s private instance of WebPageTest is kept in sync with the latest public version and augmented with <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">custom metrics</a>. These are snippets of JavaScript that are evaluated on each website at the end of the test. Thanks to the <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/commits/master/custom_metrics">contributions</a> of many data analysts, especially the <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/pulls?q=is%3Apr+author%3ATiggerito+sort%3Acreated-asc">herculean efforts</a> of <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='Tiggerito') }}">Tony McCreath</a>, the 2020 edition of the Web Almanac greatly expanded the capabilities of HTTP Archive&#8217;s test infrastructure with over 3,000 lines of new code.
+        HTTP Archive&#8217;s private instance of WebPageTest is kept in sync with the latest public version and augmented with <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">custom metrics</a>. These are snippets of JavaScript that are evaluated on each website at the end of the test. Thanks to the <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/commits/master/custom_metrics">contributions</a> of many data analysts, especially the <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/pulls?q=is%3Apr+author%3ATiggerito+sort%3Acreated-asc">herculean efforts</a> of <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='Tiggerito') }}">Tony McCreath</a>, the 2020 edition of the Web Almanac greatly expanded the capabilities of HTTP Archive&#8217;s test infrastructure with over 3,000 lines of new code.
       </p>
 
       <p>
@@ -435,7 +435,7 @@
       <h3 id="analysis"><a href="#analysis" class="anchor-link">Analysis</a></h3>
 
       <p>
-        In July and August 2020, with the stable list of metrics and chapters, data analysts triaged the metrics for feasibility. In some cases, <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">custom metrics</a> were created to fill gaps in our analytic capabilities.
+        In July and August 2020, with the stable list of metrics and chapters, data analysts triaged the metrics for feasibility. In some cases, <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">custom metrics</a> were created to fill gaps in our analytic capabilities.
       </p>
 
       <p>

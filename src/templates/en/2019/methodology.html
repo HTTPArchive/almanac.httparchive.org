@@ -67,7 +67,7 @@
         <h2 id="dataset"><a href="#dataset" class="anchor-link">About the dataset</a></h2>
 
         <p>
-          The HTTP Archive dataset is continuously updating with new data monthly. For the 2019 edition of the Web Almanac, unless otherwise noted in the chapter, all metrics were sourced from the July 2019 crawl. These results are <a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">publicly queryable</a> on BigQuery in tables prefixed with <code>2019_07_01</code>.
+          The HTTP Archive dataset is continuously updating with new data monthly. For the 2019 edition of the Web Almanac, unless otherwise noted in the chapter, all metrics were sourced from the July 2019 crawl. These results are <a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/blob/main/docs/gettingstarted_bigquery.md">publicly queryable</a> on BigQuery in tables prefixed with <code>2019_07_01</code>.
         </p>
 
         <p>
@@ -167,7 +167,7 @@
       <h3 id="webpagetest"><a href="#webpagetest" class="anchor-link">WebPageTest</a></h3>
 
       <p>
-        <a hreflang="en" href="https://www.webpagetest.org/">WebPageTest</a> is a prominent web performance testing tool and the backbone of HTTP Archive. We use a <a hreflang="en" href="https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Private%20Instances/README.md">private instance</a> of WebPageTest with private test agents, which are the actual browsers that test each web page. Desktop and mobile websites are tested under different configurations:
+        <a hreflang="en" href="https://www.webpagetest.org/">WebPageTest</a> is a prominent web performance testing tool and the backbone of HTTP Archive. We use a <a hreflang="en" href="https://docs.webpagetest.org/private-instances/">private instance</a> of WebPageTest with private test agents, which are the actual browsers that test each web page. Desktop and mobile websites are tested under different configurations:
       </p>
       <div class="table-wrap"><div class="table-wrap-container">
       <table>
@@ -235,7 +235,7 @@
       </p>
 
       <p>
-        HTTP Archive&#8217;s private instance of WebPageTest is kept in sync with the latest public version and augmented with <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">custom metrics</a>. These are snippets of JavaScript that are evaluated on each website at the end of the test. The <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/almanac.js">almanac.js</a> custom metric includes several metrics that were otherwise infeasible to calculate, for example those that depend on  DOM state.
+        HTTP Archive&#8217;s private instance of WebPageTest is kept in sync with the latest public version and augmented with <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">custom metrics</a>. These are snippets of JavaScript that are evaluated on each website at the end of the test. The <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/almanac.js">almanac.js</a> custom metric includes several metrics that were otherwise infeasible to calculate, for example those that depend on  DOM state.
       </p>
 
       <p>

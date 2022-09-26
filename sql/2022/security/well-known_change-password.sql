@@ -1,24 +1,21 @@
 #standardSQL
-# Prevalence of /.well-known/change-password endpoints and counts for redirection and 'ok' HTTP status codes (https://fetch.spec.whatwg.org/#ok-status).
+# Prevalence of correctly configured /.well-known/change-password endpoints:
+# defined as `change-password` redirecting and having an 'ok' HTTP status code (https://fetch.spec.whatwg.org/#ok-status),
+# while `resource-that-should-not-exist-whose-status-code-should-not-be-200` indeed does not have status code 200,
+# as this would indicate that the server is badly configured, and that the redirect to `change-password` can't be trusted.
+# `status` reflects the status code after redirection, so checking only for the status code afterwards is fine.
 SELECT
   client,
   COUNT(DISTINCT page) AS total_pages,
-  COUNTIF(has_change_password = 'true') AS count_has_change_password,
-  COUNTIF(has_change_password = 'true') / COUNT(DISTINCT page) AS pct_has_change_password,
-  COUNTIF(redirected = 'true') AS count_redirected,
-  SAFE_DIVIDE(COUNTIF(redirected = 'true'), COUNTIF(has_change_password = 'true')) AS pct_redirected,
-  # `status` reflects the status code after redirection, so checking only for 200 is fine.
-  COUNTIF(status = 200) AS count_status_200,
-  SAFE_DIVIDE(COUNTIF(status = 200), COUNTIF(has_change_password = 'true')) AS pct_status_200,
-  COUNTIF(status BETWEEN 201 AND 299) AS count_status_other_ok,
-  SAFE_DIVIDE(COUNTIF(status BETWEEN 201 AND 299), COUNTIF(has_change_password = 'true')) AS pct_status_other_ok
+  COUNTIF(change_password_redirected = 'true' AND (change_password_status BETWEEN 200 AND 299) AND (resource_status NOT BETWEEN 200 AND 299)) AS count_change_password_did_redirect_and_ok,
+  COUNTIF(change_password_redirected = 'true' AND (change_password_status BETWEEN 200 AND 299) AND (resource_status NOT BETWEEN 200 AND 299)) / COUNT(DISTINCT page) AS pct_change_password_did_redirect_and_ok
 FROM (
     SELECT
       _TABLE_SUFFIX AS client,
       url AS page,
-      JSON_VALUE(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/change-password".found') AS has_change_password,
-      JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/change-password".redirected') AS redirected,
-      CAST(JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/change-password".status') AS INT64) AS status
+      JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/change-password".data.redirected') AS change_password_redirected,
+      CAST(JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/change-password".data.status') AS INT64) AS change_password_status,
+      CAST(JSON_QUERY(JSON_VALUE(payload, '$._well-known'), '$."/.well-known/resource-that-should-not-exist-whose-status-code-should-not-be-200/".data.status') AS INT64) AS resource_status
     FROM
       `httparchive.pages.2022_06_01_*`
 )

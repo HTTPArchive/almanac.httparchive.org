@@ -67,7 +67,7 @@
         <h2 id="dataset"><a href="#dataset" class="anchor-link">О наборе данных</a></h2>
 
         <p>
-          Набор данных HTTP Archive постоянно растёт каждый месяц. Для издания Web Almanac 2019 года, если в главе не указано иное, все метрики были взяты из сканирования сайтов за июль 2019 года. Эти показатели можно <a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">свободно запросить</a> из таблиц с префиксом <code>2019_07_01</code> на BigQuery.
+          Набор данных HTTP Archive постоянно растёт каждый месяц. Для издания Web Almanac 2019 года, если в главе не указано иное, все метрики были взяты из сканирования сайтов за июль 2019 года. Эти показатели можно <a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/blob/main/docs/gettingstarted_bigquery.md">свободно запросить</a> из таблиц с префиксом <code>2019_07_01</code> на BigQuery.
         </p>
 
         <p>
@@ -167,7 +167,7 @@
       <h3 id="webpagetest"><a href="#webpagetest" class="anchor-link">WebPageTest</a></h3>
 
       <p>
-        <a hreflang="en" href="https://www.webpagetest.org/">WebPageTest</a> — хорошо известный инструмент тестирования производительности веб-страниц и главная опора HTTP Archive. Мы используем <a hreflang="en" href="https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Private%20Instances/README.md">приватный экземпляр</a> WebPageTest вместе с агентами тестирования — браузерами, которые проверяют каждую веб-страницу. Обычные и мобильные сайты проверяются на разных конфигурациях:
+        <a hreflang="en" href="https://www.webpagetest.org/">WebPageTest</a> — хорошо известный инструмент тестирования производительности веб-страниц и главная опора HTTP Archive. Мы используем <a hreflang="en" href="https://docs.webpagetest.org/private-instances/">приватный экземпляр</a> WebPageTest вместе с агентами тестирования — браузерами, которые проверяют каждую веб-страницу. Обычные и мобильные сайты проверяются на разных конфигурациях:
       </p>
       <div class="table-wrap"><div class="table-wrap-container">
       <table>
@@ -235,7 +235,7 @@
       </p>
 
       <p>
-        Приватный экземпляр WebPageTest в HTTP Archive синхронизирован с последней публичной версией и дополнен  <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">собственными метриками</a>. Это фрагменты JavaScript-кода, которые выполняются на каждом сайте в конце теста. Собственная метрика в файле <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/almanac.js">almanac.js</a> включает в себя несколько метрик, которые зависят от состояния DOM.
+        Приватный экземпляр WebPageTest в HTTP Archive синхронизирован с последней публичной версией и дополнен  <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">собственными метриками</a>. Это фрагменты JavaScript-кода, которые выполняются на каждом сайте в конце теста. Собственная метрика в файле <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/almanac.js">almanac.js</a> включает в себя несколько метрик, которые зависят от состояния DOM.
       </p>
 
       <p>

@@ -72,7 +72,7 @@
         <h2 id="dataset"><a href="#dataset" class="anchor-link">关于数据集</a></h2>
 
         <p>
-          HTTP Archive 数据集每月持续更新新的数据。对于2020年版的Web Almanac，除非本章另有说明，否则所有的指标都来自于2020年8月的抓取。这些结果<a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">可以用<code>2020_08_01</code>为前缀在BigQuery公开的查询</a>。
+          HTTP Archive 数据集每月持续更新新的数据。对于2020年版的Web Almanac，除非本章另有说明，否则所有的指标都来自于2020年8月的抓取。这些结果<a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/blob/main/docs/gettingstarted_bigquery.md">可以用<code>2020_08_01</code>为前缀在BigQuery公开的查询</a>。
         </p>
 
         <p>
@@ -176,7 +176,7 @@
       <h3 id="webpagetest"><a href="#webpagetest" class="anchor-link">WebPageTest</a></h3>
 
       <p>
-        <a hreflang="en" href="https://www.webpagetest.org/">WebPageTest</a> 是一个卓越的web性能测试工具，同时是HTTP Archive的骨干。我们使用一个WebPageTest的<a hreflang="en" href="https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Private%20Instances/README.md">私有实例</a> ，携带着私有的测试UA，它是测试每个web页面的实际浏览器。桌面和移动网站在不同的配置下进行测试:
+        <a hreflang="en" href="https://www.webpagetest.org/">WebPageTest</a> 是一个卓越的web性能测试工具，同时是HTTP Archive的骨干。我们使用一个WebPageTest的<a hreflang="en" href="https://docs.webpagetest.org/private-instances/">私有实例</a> ，携带着私有的测试UA，它是测试每个web页面的实际浏览器。桌面和移动网站在不同的配置下进行测试:
       </p>
       <div class="table-wrap"><div class="table-wrap-container">
       <table>
@@ -244,7 +244,7 @@
       </p>
 
       <p>
-        HTTP Archive 的 WebPageTest 私有实例和最新的公有版本保持一致，使用 <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">自定义指标</a>来增强。这些是测试结尾时在每个网站上评估测试的JavaScript片段。感谢众多数据分析师的 <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/commits/master/custom_metrics">贡献</a> ， 特别是<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='Tiggerito') }}">Tony McCreath</a>的<a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/pulls?q=is%3Apr+author%3ATiggerito+sort%3Acreated-asc">艰巨的努力</a>， 2020年版的Web Almanac 网络年鉴极大地扩展了HTTP Archive的测试基础架构的功能，增加了3000多行新代码。
+        HTTP Archive 的 WebPageTest 私有实例和最新的公有版本保持一致，使用 <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">自定义指标</a>来增强。这些是测试结尾时在每个网站上评估测试的JavaScript片段。感谢众多数据分析师的 <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/commits/master/custom_metrics">贡献</a> ， 特别是<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='Tiggerito') }}">Tony McCreath</a>的<a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/pulls?q=is%3Apr+author%3ATiggerito+sort%3Acreated-asc">艰巨的努力</a>， 2020年版的Web Almanac 网络年鉴极大地扩展了HTTP Archive的测试基础架构的功能，增加了3000多行新代码。
       </p>
 
       <p>
@@ -435,7 +435,7 @@
       <h3 id="analysis"><a href="#analysis" class="anchor-link">分析</a></h3>
 
       <p>
-        在2020的7月和8月, 随着指标和章节的列表稳定下来，数据分析师对指标的可行性进行了筛选。在一些情况下，<a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">自定义指标</a> 需要被创建来填补我们分析能力的空白。
+        在2020的7月和8月, 随着指标和章节的列表稳定下来，数据分析师对指标的可行性进行了筛选。在一些情况下，<a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">自定义指标</a> 需要被创建来填补我们分析能力的空白。
       </p>
 
       <p>

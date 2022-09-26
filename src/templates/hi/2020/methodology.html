@@ -72,7 +72,7 @@
         <h2 id="dataset"><a href="#dataset" class="anchor-link">डेटासेट के बारे में</a></h2>
 
         <p>
-          HTTP Archive डेटासेट लगातार नए मासिक डेटा के साथ अपडेट हो रहे है। Web Almanac के 2020 संस्करण के लिए, जब तक कि अन्यथा अध्याय में उल्लेख नहीं किया गया, अगस्त 2020 से सभी मैट्रिक्स क्रॉल किए गए थे। ये परिणाम <code>2020_08_01</code> के साथ उपसर्ग किए गए तालिकाओं में BigQuery पर <a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">सार्वजनिक रूप से क्वेरी करने योग्य</a> हैं।
+          HTTP Archive डेटासेट लगातार नए मासिक डेटा के साथ अपडेट हो रहे है। Web Almanac के 2020 संस्करण के लिए, जब तक कि अन्यथा अध्याय में उल्लेख नहीं किया गया, अगस्त 2020 से सभी मैट्रिक्स क्रॉल किए गए थे। ये परिणाम <code>2020_08_01</code> के साथ उपसर्ग किए गए तालिकाओं में BigQuery पर <a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/blob/main/docs/gettingstarted_bigquery.md">सार्वजनिक रूप से क्वेरी करने योग्य</a> हैं।
         </p>
 
         <p>
@@ -176,7 +176,7 @@
       <h3 id="webpagetest"><a href="#webpagetest" class="anchor-link">WebPageTest</a></h3>
 
       <p>
-        <a hreflang="en" href="https://www.webpagetest.org/">WebPageTest</a> एक प्रमुख वेब परफॉरमेंस परीक्षण टूल और HTTP Archive की रीढ़ है। हम निजी परीक्षण एजेंटों के साथ WebPageTest के एक <a hreflang="en" href="https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Private%20Instances/README.md">निजी उदाहरण</a> का उपयोग करते हैं, जो वास्तविक ब्राउज़र हैं और जो प्रत्येक वेब पेज का परीक्षण करता हैं। डेस्कटॉप और मोबाइल वेबसाइटों को विभिन्न विन्यासों के तहत जांचा जाता है:
+        <a hreflang="en" href="https://www.webpagetest.org/">WebPageTest</a> एक प्रमुख वेब परफॉरमेंस परीक्षण टूल और HTTP Archive की रीढ़ है। हम निजी परीक्षण एजेंटों के साथ WebPageTest के एक <a hreflang="en" href="https://docs.webpagetest.org/private-instances/">निजी उदाहरण</a> का उपयोग करते हैं, जो वास्तविक ब्राउज़र हैं और जो प्रत्येक वेब पेज का परीक्षण करता हैं। डेस्कटॉप और मोबाइल वेबसाइटों को विभिन्न विन्यासों के तहत जांचा जाता है:
       </p>
       <div class="table-wrap"><div class="table-wrap-container">
       <table>
@@ -244,7 +244,7 @@
       </p>
 
       <p>
-        WebPageTest के HTTP Archive का निजी उदाहरण नवीनतम सार्वजनिक संस्करण के साथ सिंक में और <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">कस्टम मैट्रिक्स</a> के साथ संवर्धित रखा जाता है। ये JavaScript के स्निपेट हैं जिनका परीक्षण के अंत में प्रत्येक वेबसाइट पर मूल्यांकन किया जाता है। कई डेटा विश्लेषकों के <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/commits/master/custom_metrics">योगदान</a>के लिए धन्यवाद, विशेष रूप से <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='Tiggerito') }}">टोनी मैकक्रेथ</a> के <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/pulls?q=is%3Apr+author%3ATiggerito+sort%3Acreated-asc">कठिन प्रयासों</a> का जिन्होंने, Web Almanac के 2020 संस्करण में HTTP Archive के परीक्षण बुनियादी ढांचे की 3,000 से अधिक लाइनों के साथ क्षमताओं का बहुत विस्तार किया।
+        WebPageTest के HTTP Archive का निजी उदाहरण नवीनतम सार्वजनिक संस्करण के साथ सिंक में और <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">कस्टम मैट्रिक्स</a> के साथ संवर्धित रखा जाता है। ये JavaScript के स्निपेट हैं जिनका परीक्षण के अंत में प्रत्येक वेबसाइट पर मूल्यांकन किया जाता है। कई डेटा विश्लेषकों के <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/commits/master/custom_metrics">योगदान</a>के लिए धन्यवाद, विशेष रूप से <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='Tiggerito') }}">टोनी मैकक्रेथ</a> के <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/pulls?q=is%3Apr+author%3ATiggerito+sort%3Acreated-asc">कठिन प्रयासों</a> का जिन्होंने, Web Almanac के 2020 संस्करण में HTTP Archive के परीक्षण बुनियादी ढांचे की 3,000 से अधिक लाइनों के साथ क्षमताओं का बहुत विस्तार किया।
       </p>
 
       <p>
@@ -435,7 +435,7 @@
       <h3 id="analysis"><a href="#analysis" class="anchor-link">विश्लेषण</a></h3>
 
       <p>
-        जुलाई और अगस्त 2020 में, मैट्रिक्स और अध्यायों की स्थिर सूची के साथ, डेटा विश्लेषकों ने व्यवहार्यता के लिए मीट्रिक को कम कर दिया। कुछ मामलों में, <a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">कस्टम मेट्रिक्स</a> को हमारी विश्लेषणात्मक क्षमताओं में अंतराल को भरने के लिए बनाने की आवश्यकता हुई।
+        जुलाई और अगस्त 2020 में, मैट्रिक्स और अध्यायों की स्थिर सूची के साथ, डेटा विश्लेषकों ने व्यवहार्यता के लिए मीट्रिक को कम कर दिया। कुछ मामलों में, <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">कस्टम मेट्रिक्स</a> को हमारी विश्लेषणात्मक क्षमताओं में अंतराल को भरने के लिए बनाने की आवश्यकता हुई।
       </p>
 
       <p>

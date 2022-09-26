@@ -72,7 +72,7 @@
         <h2 id="dataset"><a href="#dataset" class="anchor-link">データセットについて</a></h2>
 
         <p>
-          HTTP Archiveデータセットは、毎月新しいデータで継続的に更新されています。Web Almanacの2020年版については、この章で特に断りのない限り、すべてのメトリクスは2020年8月のクロールからソースを得ています。これらの結果は、BigQuery上で接頭語のテーブル<code>2020_08_01</code>で<a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">公開</a>できます。
+          HTTP Archiveデータセットは、毎月新しいデータで継続的に更新されています。Web Almanacの2020年版については、この章で特に断りのない限り、すべてのメトリクスは2020年8月のクロールからソースを得ています。これらの結果は、BigQuery上で接頭語のテーブル<code>2020_08_01</code>で<a hreflang="en" href="https://github.com/HTTPArchive/httparchive.org/blob/main/docs/gettingstarted_bigquery.md">公開</a>できます。
         </p>
 
         <p>
@@ -176,7 +176,7 @@
       <h3 id="webpagetest"><a href="#webpagetest" class="anchor-link">WebPageTest</a></h3>
 
       <p>
-        <a hreflang="en" href="https://www.webpagetest.org/">WebPageTest</a>は、著名なウェブパフォーマンステストツールであり、HTTP Archiveのバックボーンです。WebPageTestは<a hreflang="en" href="https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Private%20Instances/README.md">プライベートインスタンス</a>とプライベートテストエージェントを使用しており、これは各Webページをテストする実際のブラウザです。デスクトップとモバイルのウェブサイトは、異なる構成でテストされます。
+        <a hreflang="en" href="https://www.webpagetest.org/">WebPageTest</a>は、著名なウェブパフォーマンステストツールであり、HTTP Archiveのバックボーンです。WebPageTestは<a hreflang="en" href="https://docs.webpagetest.org/private-instances/">プライベートインスタンス</a>とプライベートテストエージェントを使用しており、これは各Webページをテストする実際のブラウザです。デスクトップとモバイルのウェブサイトは、異なる構成でテストされます。
       </p>
       <div class="table-wrap"><div class="table-wrap-container">
       <table>
@@ -244,7 +244,7 @@
       </p>
 
       <p>
-        HTTP ArchiveのWebPageTestのプライベートインスタンスは、最新のパブリックバージョンと同期して維持され、<a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">カスタムメトリクス</a>で強化されています。これらは、テストの最後に各ウェブサイトで評価されるJavaScriptのスニペットです。多くのデータアナリストの<a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/commits/master/custom_metrics">貢献</a>に感謝します、特に<a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/pulls?q=is%3Apr+author%3ATiggerito+sort%3Acreated-asc">献身的な努力</a>をした<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='Tiggerito')}}">Tony McCreathのおかげで</a>、Web Almanacの2020年版では、HTTPアーカイブのテストインフラストラクチャの機能が3,000行以上の新しいコードで大幅に拡張されました。
+        HTTP ArchiveのWebPageTestのプライベートインスタンスは、最新のパブリックバージョンと同期して維持され、<a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">カスタムメトリクス</a>で強化されています。これらは、テストの最後に各ウェブサイトで評価されるJavaScriptのスニペットです。多くのデータアナリストの<a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/commits/master/custom_metrics">貢献</a>に感謝します、特に<a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/pulls?q=is%3Apr+author%3ATiggerito+sort%3Acreated-asc">献身的な努力</a>をした<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='Tiggerito')}}">Tony McCreathのおかげで</a>、Web Almanacの2020年版では、HTTPアーカイブのテストインフラストラクチャの機能が3,000行以上の新しいコードで大幅に拡張されました。
       </p>
 
       <p>
@@ -435,7 +435,7 @@
       <h3 id="analysis"><a href="#analysis" class="anchor-link">分析</a></h3>
 
       <p>
-        2020年7月と8月に、メトリクスとチャプターの安定したリストを持って、データアナリストは、実現可能性のためにメトリクスをトリアージしました。場合によっては、分析能力のギャップを埋めるために、<a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">カスタムメトリクス</a>を作成されました。
+        2020年7月と8月に、メトリクスとチャプターの安定したリストを持って、データアナリストは、実現可能性のためにメトリクスをトリアージしました。場合によっては、分析能力のギャップを埋めるために、<a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">カスタムメトリクス</a>を作成されました。
       </p>
 
       <p>
