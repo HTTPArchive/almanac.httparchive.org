@@ -261,7 +261,7 @@ A look at the median weight of the most common resource content types making up 
 
 Whilst images are overall the biggest contributors to page weight across the internet, the biggest contributors in sheer size per request are video, audio and fonts. At the 90th percentile, video requests weigh in at 2,158 KB, four times larger than than all the other 90th percentile types combined.
 
-Like images, there are a number of opportunities with more modern formats, and better encoding, sizing and compression that could help slim this down. But it's worth noting that video by its nature tends to be weighiter, and there's a balance between size and acceptable quality that needs to be struck. For more information, see the [video section of the Media chapter](./media#video).
+Like images, there are a number of opportunities with more modern formats, and better encoding, sizing and compression that could help slim this down. But it's worth noting that video by its nature tends to be weightier, and there's a balance between size and acceptable quality that needs to be struck. For more information, see the [video section of the Media chapter](./media#video).
 
 {{ figure_markup(
   image="median-response-size-by-content-type.png",

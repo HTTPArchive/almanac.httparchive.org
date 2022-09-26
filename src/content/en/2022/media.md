@@ -644,8 +644,8 @@ While many `sizes` attributes are entirely accurate, the median `sizes` attribut
 On desktop, where the difference between the default `sizes` value (`100vw`) and the actual layout width of the image is likely to be larger than on mobile, one-in-five `sizes` attributes is inaccurate enough to cause browsers to pick a suboptimal resource from the `srcset`. These errors add up.
 
 {{ figure_markup(
-  image="excess-kilobytes-loaded-per-page-due-to-innaccurate-sizes.png",
-  caption="Excess kilobytes loaded per page due to innaccurate `sizes`.",
+  image="excess-kilobytes-loaded-per-page-due-to-inaccurate-sizes.png",
+  caption="Excess kilobytes loaded per page due to inaccurate `sizes`.",
   description="A bar chart showing the distribution of wasted kilobytes loaded per page due to inaccurate `sizes` attributes. It starts off with a bunch of zeros. At the tenth, 25th, and 50th percentile, both mobile and desktop weigh in at zero kilobytes. At the 75th percentile, the desktop crawler saw 83 wasted kilobytes and the mobile 27; at the 90th percentile, desktop saw 536 kilobytes and mobile 283.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=2013610794&format=interactive",
   sheets_gid="1909870095",
@@ -810,7 +810,7 @@ Usage of the `<video>` element continues to rise:
 {{ figure_markup(
   image="adoption-of-video-over-time.png",
   caption="Adoption of `<video>` over time.",
-  description="A line chart, showing the percentage of pages containing `<video>` elements over time. The mobile numbers are regularly a percentage point under the desktop numbers. In the fall of 2010, the lines start out at just under 4% on mobile and just under 5% on desktop, in the fall of 2020. They rise, pretty much linearly, until the end of the chart in June 2022, where  obile is at 5% and desktop is at just over 6%.",
+  description="A line chart, showing the percentage of pages containing `<video>` elements over time. The mobile numbers are regularly a percentage point under the desktop numbers. In the fall of 2010, the lines start out at just under 4% on mobile and just under 5% on desktop, in the fall of 2020. They rise, pretty much linearly, until the end of the chart in June 2022, where mobile is at 5% and desktop is at just over 6%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsMG0kx2OTN-Dl9ap_Iu_99Ewpaf-X81B5EMTjVphfCJk953qZijIkGIfLF4mqCGlcrLWWzx_sWkJH/pubchart?oid=642519393&format=interactive",
   sheets_gid="331851685",
   sql_file="video_adoption.sql"
