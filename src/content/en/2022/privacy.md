@@ -4,7 +4,7 @@ description: Privacy chapter of the 2022 Web Almanac covering adoption and impac
 authors: [tomvangoethem, nrllh]
 reviewers: [iskander-sanchez-rola]
 analysts: [max-ostapenko, ydimova]
-editors: []
+editors: [DesignrKnight]
 translators: []
 tomvangoethem_bio: Tom Van Goethem recently joined the Chrome Privacy team at Google. Before, Tom was in PhD program with the DistriNet group of the university of Leuven, Belgium. His research interests cover a broad spectrum of topics in the field of web security and privacy, with a primary focus on side-channel attacks. By uncovering threats and proposing mitigations, Tom aims to make the web a nicer place, a tiny bit at a time.
 nrllh_bio: Nurullah Demir is a security researcher and PhD Student at <a hreflang="en" href="https://www.internet-sicherheit.de/en/">Institute for Internet Security</a>. His research focuses on robust web security mechanisms and adversarial machine learning.
