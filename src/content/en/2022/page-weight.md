@@ -22,7 +22,7 @@ featured_stat_label_3: The growth in mobile page weight over 10 years
 
 ## Introduction
 
-We shall show that over the last ten years, mobile page weight has increased 594%. In this time, we've seen performance enhancing technologies emerge to buffer the impact. More recent performance measuring methodologies like eschew page weight as a factor.
+We shall show that over the last ten years, mobile page weight has increased 594%. In this time, we've seen performance enhancing technologies emerge to buffer the impact. More recent performance measuring methodologies eschew page weight as a factor.
 
 While the Google-driven Core Web Vitals initiative shifts the perception of performance to how quickly above the fold content because visible and usable, the large network payloads are still correlated to long load times.
 
