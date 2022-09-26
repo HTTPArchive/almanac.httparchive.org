@@ -145,7 +145,7 @@ More insights into the typographical nature of the web can be found in the [Font
 
 ## Page weight by the numbers
 
-No we know what we are primarily interested in when considering page weight, let's dive into the details.
+Now we know what we are primarily interested in when considering page weight, let's dive into the details.
 
 ### Requests volume
 
@@ -369,7 +369,7 @@ Analysis showed that there are a number of sites where Lighthouse was able to de
 
 Compressing resources before serving them to the client can save bytes that have to be sent across the network, and with less bytes, in theory and usually in practice, this makes for faster loads.
 
-For text, non-media, files like [HTML](./markup)], [CSS](./css), [JavaScript](./javascript), JSON, or SVG, as well as for  ttf and ico files, HTTP compression is a powerful tool, using gzip or Brotli compression to squeeze down file size. Media like images and video tend not to see any benefit as they are already compressed.
+For text, non-media, files like [HTML](./markup), [CSS](./css), [JavaScript](./javascript), JSON, or SVG, as well as for  ttf and ico files, HTTP compression is a powerful tool, using gzip or Brotli compression to squeeze down file size. Media like images and video tend not to see any benefit as they are already compressed.
 
 {{ figure_markup(
   image="text-compression-proper-usage.png",
@@ -385,7 +385,7 @@ We detected that 74% of page loads on Desktop loads, and a slightly lower 73% of
 
 The slightly lower proportion of mobile usage is a disappointing result, because they are more likely to have slower and more expensive network connections.
 
-Ultimately compression doesn't reduce the whole impact og page weight, because these resources have to be decompressed on the client before they are used.
+Ultimately compression doesn't reduce the whole impact of page weight, because these resources have to be decompressed on the client before they are used.
 
 It's not an entirely free process, either. There is processing overhead on the server to compress—although this might be cacheable for static resources—and likewise a cost on the client side to decompress these resources before use.
 
