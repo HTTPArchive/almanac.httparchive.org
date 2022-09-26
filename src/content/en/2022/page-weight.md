@@ -137,9 +137,9 @@ These increases are in step with the other file weight increases with a notable 
 )
 }}
 
-In 2021, the 100th percentile of mobile sites used 20,452 kilobytes of font files. In 2022, these outliers swelled to 110 megabytes. This 540% growth was not seen in the year of year comparison for desktop which sat at 66,257 kilobytes in 2021 and 68,285 in 2022.
+In 2021, the 100th percentile of mobile sites used 20,452 kilobytes of font files. In 2022, these outliers swelled to 110 megabytes. This 540% growth was not seen in the year on year comparison for desktop which sat at 66,257 kilobytes in 2021 and 68,285 in 2022.
 
-However, the 100th percentile—while fun to investigate—will always show the worst of the web. At At the 90th percentile, the mobile font weight was a less extreme—though still large—401 kilobytes.
+However, the 100th percentile—while fun to investigate—will always show the worst of the web. At the 90th percentile, the mobile font weight was a less extreme—though still large—401 kilobytes.
 
 More insights into the typographical nature of the web can be found in the [Fonts](./2021/third-parties) chapter.
 
