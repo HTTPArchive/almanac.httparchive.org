@@ -8,7 +8,7 @@ analysts: [csliva, jroakes, derekperkins]
 editors: [MichaelLewittes]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1qBQWxNKIAVJNOFwGlslT7AW0VAoK85Mf3nFvtw0QjVU/
-SophieBrannon_bio: Sophie is the Client Services Director at UK-based agency Absolute Digital Media and specialises in SEO strategy and content marketing in highly competitive industries such as health and finance. Sophie is a conference speaker and industry blogger, and has proven experience in strategising and delivering award-winning campaigns on a local, national and international scale.
+SophieBrannon_bio: Sophie is the Client Services Director at UK-based agency Absolute Digital Media and specializes in SEO strategy and content marketing in highly competitive industries such as health and finance. Sophie is a conference speaker and industry blogger, and has proven experience in strategizing and delivering award-winning campaigns on a local, national and international scale.
 itamarblauer_bio: Itamar Blauer is an SEO expert based in London. He has a proven track-record of increasing rankings with SEO that is UX-focused, data-backed, and creative.
 mordy-oberstein_bio: Mordy Oberstein is the Head of SEO Branding at Wix. He also serves as a consultant for SEMrush and sits behind the mic of multiple SEO podcasts, including the SERP's Up podcast.
 featured_quote: The implementation of structured data in the HTML of a page has continually increased. In 2021, 41.8% of desktop pages and 42.5% of mobile pages used structured data. In 2022, it’s risen to 44% of desktop pages and 45.1% of mobile pages that have structured data within their HTML.
@@ -33,7 +33,7 @@ Search engine optimization (SEO) is a digital technique used to improve a websit
   )
 }}
 
-With custom metrics that expose some new, never-before-seen insights, we have analyzed more than eight million homepages across the web, comparing our findings to those from [2021](../2021/seo) and, in some instances, from [2020](../2020/seo). Note: Our data, particularly from Lighthouse and the HTTP Archive, is limited to just websites’ homepages, not sitewide crawls. Learn more about these limitations in our [Methodology](./methodology).
+With custom metrics that expose some new, never-before-seen insights, we have analyzed more than eight million homepages across the web, comparing our findings to those from [2021](../2021/seo) and, in some instances, from [2020](../2020/seo). Note: Our data, particularly from Lighthouse and the HTTP Archive, is limited to just websites’ homepages, not site wide crawls. Learn more about these limitations in our [Methodology](./methodology).
 
 Read on for more about how search engine-friendly the web is.
 
@@ -129,7 +129,7 @@ Let’s start by determining the percentage of pages for which the new tag is po
 
 A little more than 4% of pages contain an `<iframe>` element.  Of the 4.1% of pages containing that element, 76% of them had the iframe noindexed, making them a potential use case for the new `indexifembedded` tag.
 
-However, a miniscule percentage of sites have adopted the `indexifembedded` robots tag. The tag can be found on just 0.015% of pages surveyed.
+However, a minuscule percentage of sites have adopted the `indexifembedded` robots tag. The tag can be found on just 0.015% of pages surveyed.
 
 Of the pages that have adopted the `indexifembedded` tag, 98.3% of them implemented it in the header while 66.3% are using the HTML.
 
@@ -546,7 +546,7 @@ Let’s now examine the number of words contained in a page’s source code prio
 {{ figure_markup(
   image="visible-words-raw.png",
   caption="Visible words raw by percentile.",
-  description="A distribution of raw HTML words recieved. The median raw number of words is 363 words on desktop and 318 on mobile showing a distinct difference from rendered. There is a similar smaller number of raws words on mobile at the other percentiles above and below the median: at the 10th percentile it's 68 words on desktop and 61 on mobile, at the 25th percentile it's 174 and 151 respectively, at the 75th percentile it's 663 and 594, and at the 90th percentile it's 1,142 and 1,039.",
+  description="A distribution of raw HTML words received. The median raw number of words is 363 words on desktop and 318 on mobile showing a distinct difference from rendered. There is a similar smaller number of raws words on mobile at the other percentiles above and below the median: at the 10th percentile it's 68 words on desktop and 61 on mobile, at the 25th percentile it's 174 and 151 respectively, at the 75th percentile it's 663 and 594, and at the 90th percentile it's 1,142 and 1,039.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=519228938&format=interactive",
   sheets_gid="771280814",
   sql_file="seo-stats-by-percentile.sql"
@@ -691,7 +691,7 @@ The future of AMP appears to be changing ever since the launch of Core Web Vital
 {{ figure_markup(
   image="amp-markup.png",
   caption="AMP markup types.",
-  description="A column chart showing AMP implementations across all pages. AMP adoption is low across the sampled pageset. HTML Amp Attribute is used on 0.07% of desktop pages, and 0.19% of mobie. HTML Amp & Emjoi Attribute is used on 0.01%, and 0.03% respectively, HTML Amp or Emjoi Attribute on 0.09% and 0.22%, and Rel Amp HTML Tag on 0.67% and 0.60%.",
+  description="A column chart showing AMP implementations across all pages. AMP adoption is low across the sampled dataset. HTML Amp Attribute is used on 0.07% of desktop pages, and 0.19% of mobile. HTML Amp & Emjoi Attribute is used on 0.01%, and 0.03% respectively, HTML Amp or Emjoi Attribute on 0.09% and 0.22%, and Rel Amp HTML Tag on 0.67% and 0.60%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=1100298070&format=interactive",
   sheets_gid="1210998028",
   sql_file="markup-stats.sql"
@@ -702,7 +702,7 @@ Desktop usage has dipped in 2022 from 0.09% to 0.07% compared to 2021 while mobi
 
 ## Internationalization
 
-Internationalization in SEO is the process of optimising a website in line with best practices when targeting multiple countries and multiple languages, to ensure that it can be properly crawled and indexed by search engines.
+Internationalization in SEO is the process of optimizing a website in line with best practices when targeting multiple countries and multiple languages, to ensure that it can be properly crawled and indexed by search engines.
 
 ### Hreflang usage
 

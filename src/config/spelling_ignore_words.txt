@@ -3,6 +3,7 @@
 #Useful to run this after any major changes
 
 ableism
+accelerometer
 accesskey
 activeview
 admin
@@ -27,6 +28,7 @@ alice
 alignleft
 alignright
 allowlist
+allowlists
 amedina
 amphtml
 amsterdam
@@ -60,6 +62,7 @@ backend
 backlight
 backpressure
 badssl
+baiduspider
 barcodes
 basefont
 basehref
@@ -92,7 +95,9 @@ cacheability
 calc
 calt
 caniuse
+canonicalized
 canvaskit
+captcha
 carbonapi
 catalin
 catalinred
@@ -104,11 +109,13 @@ checkbox
 checkboxes
 christianliebel
 chromaticity
+clarkio
 clearfix
 cleartext
 clickable
 clickjacking
 cloudflare
+cloudflareinsights
 cloudinary
 codebase
 codebases
@@ -121,9 +128,11 @@ colorspace
 columnheader
 comis
 commercetools
+compat
 conf
 config
 conformant
+confoundingly
 consentmanager
 const
 contentful
@@ -140,6 +149,8 @@ crsb
 crypto
 cryptocurrency
 cryptocurrencies
+cryptographic
+cryptographically
 cryptojacking
 cryptominer
 cryptominers
@@ -162,6 +173,7 @@ datacommons
 datalist
 datamine
 dataset
+daumcdn
 davewsmart
 dcterms
 decentish
@@ -170,6 +182,7 @@ deduplicate
 deduplicated
 demianrenzulli
 denar
+denylist
 deprioritize
 deprioritizing
 descendent
@@ -180,12 +193,14 @@ deviceproximity
 devtools
 digicert
 discoverability
+discoverable
 divitis
 doctype
 doctypes
 dofollow
 dominatine
 dominiclovell
+dotbot
 dotjs
 dotnet
 doubleclick
@@ -193,6 +208,8 @@ dougsillars
 downlink
 downloadable
 drenzulli
+dvmax
+dvmin
 dwsmart
 ebay
 ecommerce
@@ -202,6 +219,7 @@ endif
 endlock
 enquiries
 emoji
+errantly
 ericportis
 ernee
 etag
@@ -221,12 +239,15 @@ fellowhuman
 fieldset
 figcaption
 filesize
+fintech
 firebase
 flexbox
 flickr
 flowerstorm
 foaf
+focusable
 fontawesome
+foundational
 frameset
 franca
 frontend
@@ -234,6 +255,7 @@ fullscreen
 fullstacktraining
 fvideos
 gamepad
+gammut
 gainsboro
 geekonaut
 gemservers
@@ -275,6 +297,7 @@ hostnames
 hotjar
 href
 hreflang
+hreflangs
 hsla
 hstspreload
 htaccess
@@ -298,7 +321,10 @@ immersive
 impactful
 incentivized
 inbox
+incentivize
 indexability
+indexable
+indexifembedded
 inline
 inlining
 inlined
@@ -315,6 +341,7 @@ ipify
 ipstack
 ipullrank
 isindex
+itamarblauer
 iubenda
 jank
 javascript
@@ -375,7 +402,10 @@ lightgrey
 limespot
 linkedin
 linux
+liran
+lirantal
 listitem
+livestreams
 lockdowns
 logicalphase
 lookzook
@@ -384,6 +414,8 @@ lossy
 lowat
 lozad
 lvandeve
+lvmax
+lvmin
 lyst
 mailto
 majorly
@@ -399,6 +431,7 @@ meetups
 meiert
 mempf
 metadata
+metaverse
 meyerweb
 microbrowser
 microbrowsers
@@ -416,6 +449,7 @@ minifier
 minifiers
 minifying
 misconfigured
+mobilemoxie
 modelling
 modulepreload
 monospace
@@ -486,11 +520,14 @@ paywalls
 paulcalvano
 pclass
 pepyaka
+perceivability
 perficient
 performant
 periodicsync
 permalink
+personalization
 phishing
+photosensitivity
 pinterest
 plaintext
 playbook
@@ -531,6 +568,7 @@ preprocessors
 prerender
 prerendered
 prerendering
+presentational
 princexml
 prioritization
 prioritizations
@@ -561,6 +599,8 @@ rebeccapurple
 recaptcha
 recompress
 recompression
+reflow
+reframe
 reimagining
 remediating
 reneesoffice
@@ -612,6 +652,7 @@ scss
 searchbox
 securityheaders
 semibold
+semrushbot
 sendpulse
 selectivizr
 serverless
@@ -659,13 +700,12 @@ srcs
 ssllabs
 stackpath
 stacktraces
-staticxx
+stateful
 stringify
 stylesheet
 stylesheets
 subgrid
 suboptimal
-subtags
 subdomain
 subdomains
 subpar
@@ -673,8 +713,13 @@ subresource
 subresources
 subsampling
 subsetting
+subtags
+subtree
+suzzicks
 svgees
 svgeesus
+svmax
+svmin
 tabindex
 tablist
 tabpanel
@@ -695,7 +740,10 @@ textfield
 thefoxis
 theobto
 theora
+thibaud
+thibaudcolas
 thirdpartyweb
+thirstyhead
 thinkwithgoogle
 timeframe
 timeline
@@ -725,6 +773,7 @@ truetype
 typeof
 tumblr
 tunetheweb
+turing
 twitterverse
 typekit
 uber
@@ -756,6 +805,7 @@ variablefonts
 veluca
 verou
 versioned
+vestibular
 viber
 viewable
 viewport

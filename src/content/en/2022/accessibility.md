@@ -112,7 +112,7 @@ Another thing to keep in mind is the unit you choose for font size. We found tha
 
 ### Language identification
 
-Language identification using the `lang` attribute is important for providing better screen reader support, and also helps for automatic browser translations. This is another good example of a feature that helps everyone, including people with disabilities. Without the `lang` attribute, the automatic browser translation in Chrome can often translate the text incorrectly. Manuel Matuzovic gives one such <a hreflang="en" href="https://www.matuzo.at/blog/lang-attribute/">example of an auto-translate mishap</a> due to the lack of a`lang` attribute.
+Language identification using the `lang` attribute is important for providing better screen reader support, and also helps for automatic browser translations. This is another good example of a feature that helps everyone, including people with disabilities. Without the `lang` attribute, the automatic browser translation in Chrome can often translate the text incorrectly. Manuel Matuzovic gives one such <a hreflang="en" href="https://www.matuzo.at/blog/lang-attribute/">example of an auto-translate mishap</a> due to the lack of a `lang` attribute.
 
 {{ figure_markup(
   content="83%",
@@ -355,7 +355,7 @@ Tables help in representing data and the relationships between the data using tw
   </figcaption>
 </figure>
 
-When providing a caption for the table, the `<caption>` element is the correct semantic choice to provide the most context to a screen reader user—though <a hreflang="en" href="https://www.w3.org/WAI/tutorials/tables/caption-summary/">there are alternative ways of lablling a table</a>. Table captions act as a heading summarizing the information of the table. 1.3% of desktop and mobile sites with table elements present used a `<caption>`.
+When providing a caption for the table, the `<caption>` element is the correct semantic choice to provide the most context to a screen reader user—though <a hreflang="en" href="https://www.w3.org/WAI/tutorials/tables/caption-summary/">there are alternative ways of labelling a table</a>. Table captions act as a heading summarizing the information of the table. 1.3% of desktop and mobile sites with table elements present used a `<caption>`.
 
 Tables are also sometimes used for laying out pages, though with the arrival of Flexbox and Grid properties in CSS, one should definitely avoid tables for any visual formatting. However, if there is no other option, tables can set a `role="presentation"`. We observe 1% of tables using this workaround.
 
@@ -387,13 +387,13 @@ The `for` attribute is important because without it, the `<label>`won't be progr
   height="537",
 ) }}
 
-38% of inputs have no accessible names, while only 19% use `<label>` . Without a proper accessible name, a screen reader user or a voice-to-text user won't be able to identify what data an input is trying to collect. Often there are inputs on websites that don't have any visible labels, which causes issues for all users, or the input's purpose isn't clearly defined both visually and programatically. In select cases where a label can be visually excluded (such as a search field), one must still add a screen reader-only `<label>` to provide the accessible name.
+38% of inputs have no accessible names, while only 19% use `<label>` . Without a proper accessible name, a screen reader user or a voice-to-text user won't be able to identify what data an input is trying to collect. Often there are inputs on websites that don't have any visible labels, which causes issues for all users, or the input's purpose isn't clearly defined both visually and programmatically. In select cases where a label can be visually excluded (such as a search field), one must still add a screen reader-only `<label>` to provide the accessible name.
 
 ### `placeholder` attribute
 
 The purpose of a `placeholder` attribute in a form control is to provide an example of the data or format that the form control accepts. For example, `<input type="text" id="credit-card" placeholder="1234-5678-9999-0000">` lets the user know that a card number should be entered with dashes in between every 4 digits.
 
-However, unlike `<label>` elements, the `placeholder` attribute disappears the moment someone starts typing or entering data. This can cause users with cognitive disabilities to get disoriented about the data they were trying to input. Also, not all screen readers support the`placeholder` attribute for accessible names which is also problematic. Hence, using the `placeholder` attribute for accessible names can create many <a hreflang="en" href="https://www.smashingmagazine.com/2018/06/placeholder-attribute/">accessibility issues</a> and should be avoided .
+However, unlike `<label>` elements, the `placeholder` attribute disappears the moment someone starts typing or entering data. This can cause users with cognitive disabilities to get disoriented about the data they were trying to input. Also, not all screen readers support the `placeholder` attribute for accessible names which is also problematic. Hence, using the `placeholder` attribute for accessible names can create many <a hreflang="en" href="https://www.smashingmagazine.com/2018/06/placeholder-attribute/">accessibility issues</a> and should be avoided .
 
 {{ figure_markup(
   image="placeholder-but-no-label.png",
@@ -585,7 +585,7 @@ Removing an element's semantics causes an element to lose its behavior. It becom
   sql_file="common_aria_role.sql",
 ) }}
 
-The same effect of semantic removal takes place with `role="none"`. We found that this year, the percentage of `role="none"` has also increased to 11% and is one of the top 10 most common ARIA roles. There are very few use cases where this is particularly helpful for assistive technology users, for example if there is a `<table>` element being used only for layouting. But it can otherwise be harmful and should be used sparingly.
+The same effect of semantic removal takes place with `role="none"`. We found that this year, the percentage of `role="none"` has also increased to 11% and is one of the top 10 most common ARIA roles. There are very few use cases where this is particularly helpful for assistive technology users, for example if there is a `<table>` element being used only for layout. But it can otherwise be harmful and should be used sparingly.
 
 Most browsers ignore `role="presentation"` and `role="none"` on focusable elements, including links and inputs, or anything with a `tabindex` attribute set. Browsers also ignore the inclusion of the role if any of the element contains any global ARIA states and properties, such as `aria-describedby`.
 
@@ -653,7 +653,7 @@ A common technique that developers employ to supply additional information for s
   sql_file="sr_only_classes.sql",
 ) }}
 
-`sr-only` and `visually-hidden` are the most common class names used by developers and by UI frameworks to achieve screen reader-only text. For exampe, Bootstrap and Tailwind use `sr-only` classes for such elements. We found that 15% of desktop pages and 14% of mobile pages had one or both of these CSS class names. It is important to keep in mind that not all screen reader users are fully visually impaired, and thus one should avoid making too much use of screen reader-only solutions.
+`sr-only` and `visually-hidden` are the most common class names used by developers and by UI frameworks to achieve screen reader-only text. For example, Bootstrap and Tailwind use `sr-only` classes for such elements. We found that 15% of desktop pages and 14% of mobile pages had one or both of these CSS class names. It is important to keep in mind that not all screen reader users are fully visually impaired, and thus one should avoid making too much use of screen reader-only solutions.
 
 ### Dynamically-rendered content
 
