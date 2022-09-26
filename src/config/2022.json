@@ -166,8 +166,7 @@
           "part": "IV",
           "chapter_number": "22",
           "title": "Page Weight",
-          "slug": "page-weight",
-          "todo": true
+          "slug": "page-weight"
         },
         {
           "part": "IV",
@@ -436,7 +435,7 @@
       "twitter": "signorcolt"
     },
     "CSteele-gh": {
-      "name": "CSteele-gh",
+      "name": "Chris Steele",
       "teams": [
         "reviewers"
       ],
@@ -920,8 +919,7 @@
     "mordy-oberstein": {
       "name": "Mordy Oberstein",
       "teams": [
-        "authors",
-        "reviewers"
+        "authors"
       ],
       "avatar_url": "104999516",
       "github": "mordy-oberstein"
