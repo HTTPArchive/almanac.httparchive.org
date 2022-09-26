@@ -20,6 +20,7 @@ unedited: true
 ---
 
 ## Introduction
+
 Whether it is to keep up-to-date with the latest news, stay in touch with friends via online social media, or look for a nice dress or sweater to buy, many of us rely on the web to provide us these services and information with just a couple of clicks. A side-effect of <a hreflang="en" href="https://datareportal.com/reports/digital-2022-global-overview-report">spending almost 7 hours per day on the internet on average</a>, is that a lot of our browsing activities, and thus indirectly our personal interests and data, is captured or shared with a plethora of online web services and companies.
 
 As advertisers try to provide users with ads that are most relevant to them (as these are the ones they are most likely to interact with), they need to resort to third-party tracking to infer the user's interest. In essence, a user's online activities are tracked step by step, providing trackers, in particular those that are most prevalent on the web, with a heap of information, most of which is probably not even relevant to infer the user's interests. On top of that, users are generally not given an adequate choice to opt out of this.
@@ -37,7 +38,7 @@ In this chapter, we explore the current state of the web in terms of privacy. We
 )
 }}
 
-Tracking is one of the most pervasive web technologies on the web - we find that 82% of desktop websites (80% for mobile) include at least one third-party tracker. By following users' behavior online, these tracking companies can create profiles of them, which can be used for personalized advertising, give insights to website owners on who visits their websites, or use this information to distinguish legitimate users from (unwanted) bots. In this section we explore the different techniques that are used to track the activities of users online and look at how trackers aim to circumvent the various privacy features that aim to protect users from being tracked.
+Tracking is one of the most pervasive web technologies on the web—we find that 82% of desktop websites (80% for mobile) include at least one third-party tracker. By following users' behavior online, these tracking companies can create profiles of them, which can be used for personalized advertising, give insights to website owners on who visits their websites, or use this information to distinguish legitimate users from (unwanted) bots. In this section we explore the different techniques that are used to track the activities of users online and look at how trackers aim to circumvent the various privacy features that aim to protect users from being tracked.
 
 ### Third-party tracking
 
@@ -85,6 +86,7 @@ When browsing the web, we often encounter advertisements for products that we re
 The tracker offering most of the purely retargeting services is Criteo, with a prevalence of 1.98% on desktop and 2.04% on mobile. It is followed by Yahoo Advertising and AdRoll, which collectively make up less than half of Criteo's market share. The most widely used retargeting service of [last year](../2021/privacy), Google Tag Manager, does not show in these results as it is now classified under the "tag managers" Wappalyzer category. Although this service still offers retargeting, it also provides a larger variety of other services.
 
 ### Third-party cookies
+
 As mentioned before, the most established way to track users across different websites is by means of third-party cookies. With recent changes in browser policies, cookies will no longer be included in cross-site requests by default. In technical terms this means that most browsers set the `SameSite` attribute of cookies to the default value `Lax`. Websites can override this by explicitly setting the value themselves. This has been happening on a large scale: of the third-party cookies that set the SameSite cookies, 98% of them set it to the value `None`, allowing them to be included in cross-site requests. Furthermore, the expiration time of the cookie also determines how long it remains valid; we find that the median lifetime of a cookie is 365 days. For a deeper dive into cookies and cookie attributes, please refer to the [security chapter](./security).
 
 {{ figure_markup(
@@ -127,6 +129,7 @@ As more and more browsers develop countermeasures for cookie-based tracking, and
 We find that the most prevalent library used on the web to perform fingerprinting is <a hreflang="en" href="https://github.com/fingerprintjs/fingerprintjs">FingerprintJS</a>, which we find on 0.62% of all websites (in our analysis, we looked for five different, known fingerprinting libraries). Most likely this is because the library is open source, and has a free version. Compared to [our measurements last year](../2021/privacy), we find that the use of fingerprinting has approximately stayed the same.
 
 ### Evasion technique: CNAME tracking
+
 As most of the tracking countermeasures focus on blocking or disabling third-party cookies, another way to circumvent these protections is to use first-party cookies instead. Here, the tracker is cloaked using a CNAME record (hence the name) on a subdomain of the website it is embedded in. When the tracker then sets a cookie, it will be considered a first-party cookie.  A limitation of CNAME-based tracking is that it can only be used to track a user's activities within a specific website, although the tracker could still rely on <a hreflang="en" href="https://adtechexplained.com/cookie-syncing-explained/">cookie syncing</a> to match visits across multiple sites together.
 
 {{ figure_markup(
@@ -293,14 +296,13 @@ Over the last few years, the average web user has become increasingly conscious 
 
 At the time of publishing this year's Web Almanac, Privacy Sandbox features are not yet available for general use. Websites and web services (such as ads, which are typically shown in iframes) can however participate in early testing of  the Privacy Sandbox features, by making use of the <a hreflang="en" href="https://developer.chrome.com/en/blog/privacy-sandbox-unified-origin-trial/">Origin Trial</a>. Note that this is only for users whose browser supports the feature (Privacy Sandbox features are only implemented in Chrome, and are still disabled by default at the time of this writing). This gives the web services access to three Privacy Sandbox-related APIs: <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/topics/">Topics</a>, <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/fledge/">FLEDGE</a>, and <a hreflang="en" href="https://developer.chrome.com/docs/privacy-sandbox/attribution-reporting/">Attribution Reporting</a>.
 
-
 <figure>
   <table>
     <thead>
       <tr>
         <th>Origin requesting feature</th>
-        <th>% of desktop sites</th>
-        <th>% of mobile sites</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
       </tr>
     </thead>
     <tbody>
@@ -382,6 +384,7 @@ The data privacy regulatory space continues to expand as the newest frontier of 
 In most cases, users can interact with such consent banners and set which data should be processed. However, managing such tasks is not easy on our modern, sophisticated web, which is also getting more complicated. For this reason, website operators try to hand over this task to third parties (so-called Consent Management Platform (CMP)). CMPs ensure that the cookies are used on the respective websites by the law. In the following, we discuss the use of CMP, TCP, and notification of privacy policy.
 
 ### Consent Management Platforms
+
 As we have already discussed, using the consent management platform should ensure that the website, in particular the behavior with cookies, should run in a legally compliant manner.
 
 At this point, we would also like to note that the integration of CMP services does not always ensure that the websites remain legally compliant, as the studies in this field show (e.g. <a hreflang="en" href="https://arxiv.org/abs/2104.06861">Santos et al.</a>, <a hreflang="en" href="https://ieeexplore.ieee.org/document/9229842">Fouad et al.</a>).
@@ -396,7 +399,7 @@ At this point, we would also like to note that the integration of CMP services d
   )
 }}
 
-Our analysis shows that CMP usage has increased from 7% to 11% since last year. So we recorded an increase of almost 60%. Also, this year we see that mobile is less involved than desktop - although the difference is minimal.
+Our analysis shows that CMP usage has increased from 7% to 11% since last year. So we recorded an increase of almost 60%. Also, this year we see that mobile is less involved than desktop—although the difference is minimal.
 We also see that the providers CookieYes (18%), OneTrust (64%), and Cookiebot (56%) have increased their market share since last year.
 
 ### IAB consent frameworks
@@ -456,11 +459,13 @@ Notifications regarding data processing do not always take place via a consent b
 We see that privacy (29%), policy (24%), and cookies (8%) are the top keywords for such links.
 
 ## Conclusion
+
 In this chapter we explored many different aspects related to our online privacy on the web. It is clear that in the past year a considerable amount of things have changed that affect our privacy, and this progress can be expected to continue in the following years. In short, there are some exciting times ahead of us. On the one hand, we found some unfortunate evolutions, which hopefully one day we will be able to refer to as the web's legacy. Third-party tracking, mainly fueled by third-party cookies, is still ubiquitous with over 82% of websites containing at least a single tracker. Furthermore, there still is a non-negligible number of websites or web services that employ evasive techniques to circumvent anti-tracking measures.
+
 On a more positive, privacy-preserving track, we find that fewer sites are trying to access potentially sensitive information from browser APIs. Hopefully this remains the case with the new APIs that are introduced in browsers on a regular basis.
 
 Generally, it seems that websites are starting to hear the call of users to respect their privacy (a call that is getting louder and louder). More and more sites are switching to employing browser features that restrict the information that is sent to third parties. Furthermore, mainly motivated by privacy regulations such as GDPR and CCPA, we are seeing a clear increase (of almost 60%) in the adoption of consent management platforms (CMPs), giving users more control on which information they want to share.
 
 Finally, on the side of the browsers, we are also seeing a strong evolution towards providing users with more control of their online privacy. Next to the features that several privacy-focused browsers offer as a built-in solution, there is also the Privacy Sandbox initiative that aims to continue providing the current functionalities on the web (such as targeted advertising, anti-fraud, attribution of purchases, ...) without the nefarious side-effects of cross-site tracking. Although the development is still in fairly early stages, we see that web services on a substantial number of websites are already opting-in to the Origin Trial. As such, the features are extensively being tested, and are likely to become a persistent part of the web.
 
-While it may still take a couple of years to finally get there, we are transitioning towards a web that gives users more control over what they want to share with which parties. We can see this convergence on both sides of the spectrum: on the one hand initiated by the website, and on the other hand enforced by the browser. We can be hopeful that in the not-so-distant future the data we share, is the data that we intend to share, and the journey on the web that we take on a day-to-day basis no longer needs to be collected, shared and analyzed by the numerous trackers that we currently encounter - in the hope of respectfully tomorrow for all.
+While it may still take a couple of years to finally get there, we are transitioning towards a web that gives users more control over what they want to share with which parties. We can see this convergence on both sides of the spectrum: on the one hand initiated by the website, and on the other hand enforced by the browser. We can be hopeful that in the not-so-distant future the data we share, is the data that we intend to share, and the journey on the web that we take on a day-to-day basis no longer needs to be collected, shared and analyzed by the numerous trackers that we currently encounter—in the hope of respectfully tomorrow for all.
