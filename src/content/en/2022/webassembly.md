@@ -7,7 +7,7 @@ reviewers: [binji, RReverser]
 analysts: [JamieWhitMac]
 editors: [tunetheweb]
 translators: []
-ColinEberhardt_bio: Colin is Technology Director at <a hreflang="en" href="https://www.scottlogic.com/">Scott Logic</a> and is a prolific technical author, blogger and speaker on a range of technologies. He is a board member of <a hreflang="en" href="https://www.finos.org/">FINOS</a>, which is encouraging open source collaboration in the financial sector. He is also very active on GitHub, contributing to a number of different projects.
+ColinEberhardt_bio: Colin is CTO at <a hreflang="en" href="https://www.scottlogic.com/">Scott Logic</a> and is a prolific technical author, blogger and speaker on a range of technologies. He is a board member of <a hreflang="en" href="https://www.finos.org/">FINOS</a>, which is encouraging open source collaboration in the financial sector. He is also very active on GitHub, contributing to a number of different projects.
 results: https://docs.google.com/spreadsheets/d/11jyABro0fKtuN6INnYP9pJlv5QWwp0jfJyTsGfKgScg/
 featured_quote: Despite being a niche technology, WebAssembly is already adding value to the web. There are a number of web applications that benefit greatly from this technology.
 featured_stat_1: 383
