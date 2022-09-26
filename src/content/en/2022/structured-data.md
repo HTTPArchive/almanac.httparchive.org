@@ -8,6 +8,8 @@ reviewers: [SeoRobt, jonoalderson]
 analysts: [rviscomi]
 editors: [JasmineDW]
 translators: []
+cyberandy_bio: Andrea Volpini is the CEO of WordLift, and is currently focusing on the semantic web, SEO and artificial intelligence.
+DataBytzAI_bio: TODO
 results: https://docs.google.com/spreadsheets/d/1iRsyYq4TDMpsgeo_uLq-yqBisHviypeKVUMF1pM1fiM/
 featured_quote: TODO
 featured_stat_1: TODO
@@ -50,7 +52,7 @@ Despite many advances in machine learning and in particular the field of ‘natu
 
 
 * making website data more widely available for automated discovery and linking
-* the open availability of data for public research 
+* the open availability of data for public research
 * ensuring the quality of the organization's data is maintained when the data leaves its origin
 
 Organizations of all sizes and types want their content to be discovered on the web. Search engines such as Google and Bing emphasize data discoverability by promoting the use of structured data. From an SEO point of view, it is advantageous to present data in an easy to find and parse manner. Some of these advantages will be discussed in the [Use Cases](#heading=h.9dgerkhy7i6) and [Key Concepts](#heading=h.sgp4kasx7abv) sections within this chapter.
@@ -62,23 +64,23 @@ This year's chapter provides the first year over year comparison of metrics such
 
 # Data caveats
 
-Structured data can appear in many forms, and may be more visible in certain domains, and their corresponding websites, over others. For example, compare a news website with an eCommerce website. In general, a news site shows the most important breaking news on its home page, therefore the structured data relating to the news articles may be present on the main website landing page attached as data-snippets to the individual article headlines. In comparison, structured data in eCommerce pertains to individual products and, as such, is mostly present within a website’s product catalog itself, and in many ways, ‘hidden’ from a high level search of the main navigation and promotional parts of the website. This is the key caveat that we need to be aware of in relation to the structured data chapter and report. 
+Structured data can appear in many forms, and may be more visible in certain domains, and their corresponding websites, over others. For example, compare a news website with an eCommerce website. In general, a news site shows the most important breaking news on its home page, therefore the structured data relating to the news articles may be present on the main website landing page attached as data-snippets to the individual article headlines. In comparison, structured data in eCommerce pertains to individual products and, as such, is mostly present within a website’s product catalog itself, and in many ways, ‘hidden’ from a high level search of the main navigation and promotional parts of the website. This is the key caveat that we need to be aware of in relation to the structured data chapter and report.
 
 Due to the fact that the technology used to harvest data from websites only scratches the surface of sites (ie: the top N pages), and does not go into depth on a full crawl of the site, we are unable to get a full picture of the extent of structured data usage in sites where such data is by necessity, contained deep within the site. In future years we hope to take a sample of sites across different domains and go deep to rectify this issue and give additional insight into domain-specific use of structured data.
 
-The high level caveats from last year’s chapter still remain, namely: 
+The high level caveats from last year’s chapter still remain, namely:
 
 
 
 
 * _Auto-generated structured data_ \
-This is where technologies such as content creation systems auto-generate structured data snippets based on templates. In this case any template-based error will inevitably populate across all data presented. 
+This is where technologies such as content creation systems auto-generate structured data snippets based on templates. In this case any template-based error will inevitably populate across all data presented.
 
 * _Data format overlaps_ \
 Structured data can be presented in a number of different ways, including JSON-LD, RDF etc. This means that we may see overlap, for example, between a Facebook meta tag and the same tag presented in a different manner in the RDFa section. As analysis is tightly based on queries created for the baseline in 2021, we expect the impact of cleaning/normalization and data flattening should carry through for like analysis.
 
 
-# Formats - A year in review 
+# Formats - A year in review
 
 Structured data is underpinned by formats and standards that describe a meta-level schema into which publishers can fit and present data in a pre-defined manner. RDFa, OpenGraph, JSON-LD and other established formats have been used in the analysis for this chapter. Figure 1 illustrates the distribution of structured data types (with a split between mobile and desktop), and Figure 2 shows a comparison in usage of these types between 2021 and 2022. While most of the types have remained reasonably similar in their overall position, the biggest mover seems to be the JSON-LD format which has increased coverage from 33.5% overall in 2021 to 36.5% overall in 2022. This increase of JSON-LD by 3 percentage points is contrasted with the average increase of only 1.2 percentage points for all other formats.
 
@@ -110,7 +112,7 @@ _Figure 1 - distribution of structured data types, 2022_
 
 _Figure 2 - distribution of structured data types, 2021 Vs 2022_
 
- 
+
 Overall there has been little change in the definitions of the major data types as Table 1 outlines, however some formats have been advanced in specific domains. Only types with changes have been listed:
 
 
@@ -125,9 +127,9 @@ Overall there has been little change in the definitions of the major data types 
    <td>RDFa
    </td>
    <td>Although there are no changes in the base format of RDFa, version 3 of the  ‘Data Catalog Vocabulary’ (DCAT) contained a significant update. DCAT is an <em>“RDF vocabulary designed to facilitate interoperability between data catalogs published on the Web”</em>. This is significant due to the increased availability of open datasets on the web. Being able to describe the entire contents of a dataset greatly increases the discoverability, and thus usefulness, of a public dataset and makes federated search and distribution more likely. \
- 
-_<em>references:</em>_ 
- 
+
+_<em>references:</em>_
+
 DCAT: <a href="https://www.w3.org/TR/2022/WD-vocab-dcat-3-20220510">https://www.w3.org/TR/2022/WD-vocab-dcat-3-20220510</a> \
 Google <a href="https://datasetsearch.research.google.com/">dataset search engine</a>  \
 Google dataset <a href="https://developers.google.com/search/docs/advanced/structured-data/dataset">structured data format guide</a>
@@ -139,7 +141,7 @@ Google dataset <a href="https://developers.google.com/search/docs/advanced/struc
    <td>Updates and additions in the past year were minor. Of these, most were related to maintenance and minor expansion of context, for example “adding OnlineBusiness as a subtype of Organization and OnlineStore as a subtype of OnlineBusiness”.
 <p>
 
-<em>references: 
+<em>references:
 </em>
 <p>
 <a href="https://schema.org/docs/releases.html">https://schema.org/docs/releases.html</a>
@@ -161,9 +163,9 @@ As structured data is a rich and complex area, it is important to explore and ex
 
 ### Linked Data
 
-By adding structured data to web pages (be it mobile or desktop web pages), and providing URI links to the entities the pages contain/reference, we create [linked data](https://en.wikipedia.org/wiki/Linked_data). This structured data is then interlinked, making it more useful through semantic queries. 
+By adding structured data to web pages (be it mobile or desktop web pages), and providing URI links to the entities the pages contain/reference, we create [linked data](https://en.wikipedia.org/wiki/Linked_data). This structured data is then interlinked, making it more useful through semantic queries.
 
-Adding linked data to describe web page content enables machines to treat web pages as databases. At a large scale, this contributes to the [semantic web](https://en.wikipedia.org/wiki/Semantic_Web). The semantic web links data together through The Resource Description Framework (RDF). This is a framework for representing information on the web using URIs to define entities and the relationships between them. 
+Adding linked data to describe web page content enables machines to treat web pages as databases. At a large scale, this contributes to the [semantic web](https://en.wikipedia.org/wiki/Semantic_Web). The semantic web links data together through The Resource Description Framework (RDF). This is a framework for representing information on the web using URIs to define entities and the relationships between them.
 
 A relationship between entities in the RDF data model is known as a semantic triple. With a [semantic triple](https://en.wikipedia.org/wiki/Semantic_triple) (or just triple), we can codify a statement about data. These expressions follow the form of subject–predicate–object (e.g., "Allen knows John").
 
@@ -200,19 +202,19 @@ Beyond knowledge panels and web page rich results, structured data can also enab
 The combination of SEO importance, higher click-through rates, improved user experience and machine-readable data being accessible for analysis illustrate significant benefits to implementing structured data. Understanding these key concepts will help both content providers and technical personnel who construct sites how to implement better navigation and understand the function of automated data consumption from web pages.
 
 
-# Structured Data Research 
+# Structured Data Research
 
-For this year's chapter we were interested in investigating what, if any, academic research has been carried out in the area of structured data, or if structured data was documented as being used to assist in development of state-of-the-art technologies and services. 
+For this year's chapter we were interested in investigating what, if any, academic research has been carried out in the area of structured data, or if structured data was documented as being used to assist in development of state-of-the-art technologies and services.
 
-To look for published research, we used academic search tools such as Google Scholar, ConnectedPapers and University-based citation databases. We not only looked for recent publications, but also older research that continues to be cited. 
+To look for published research, we used academic search tools such as Google Scholar, ConnectedPapers and University-based citation databases. We not only looked for recent publications, but also older research that continues to be cited.
 
-The results of our search showed that there is not a lot of highly cited recent work conducted into generating, managing and building structured web data. However, research on the application of structured web data (semantic web) like knowledge graphs, recommendation engines, information retrieval and explainable AI has been conducted in the past twelve months and continues to grow. Web structured data shares a synergetic relationship with the field of machine learning by providing consistent data with appropriate URI (uniform reference indicator) vocabulary which can be used to generate machine readable [labels](https://developers.google.com/machine-learning/crash-course/framing/ml-terminology). Our searches and background reading have shown that structured data has considerably reduced the work and time input to generate high quality web data for training machine learning algorithms. 
+The results of our search showed that there is not a lot of highly cited recent work conducted into generating, managing and building structured web data. However, research on the application of structured web data (semantic web) like knowledge graphs, recommendation engines, information retrieval and explainable AI has been conducted in the past twelve months and continues to grow. Web structured data shares a synergetic relationship with the field of machine learning by providing consistent data with appropriate URI (uniform reference indicator) vocabulary which can be used to generate machine readable [labels](https://developers.google.com/machine-learning/crash-course/framing/ml-terminology). Our searches and background reading have shown that structured data has considerably reduced the work and time input to generate high quality web data for training machine learning algorithms.
 
 On a practical level, we highlight two areas that structured data has improved:
 
 <span style="text-decoration:underline;">Knowledge graphs</span>
 
-Structured web data provides fixed vocabularies between entities and objects as a domain-specific language, which are generally stored in a RDF format. Knowledge graphs using RDF have proven to be great tools for querying relationships between entities. As an example, Wikidated 1.0 is an evolving knowledge graph which uses web structured data to store Wikipedia’s revision history. Its[ corresponding paper](https://arxiv.org/abs/2112.05003) talks through the process of aggregating revisions to a page as a set of additions and deletions of the RDF tuple. The authors have open sourced their method to convert wikipedia dumps into knowledge graphs. Applied research carried out by doordash engineering demonstrates that using [knowledge graphs can dramatically improve search performance] (https://doordash.engineering/2020/12/15/understanding-search-intent-with-better-recall/). 
+Structured web data provides fixed vocabularies between entities and objects as a domain-specific language, which are generally stored in a RDF format. Knowledge graphs using RDF have proven to be great tools for querying relationships between entities. As an example, Wikidated 1.0 is an evolving knowledge graph which uses web structured data to store Wikipedia’s revision history. Its[ corresponding paper](https://arxiv.org/abs/2112.05003) talks through the process of aggregating revisions to a page as a set of additions and deletions of the RDF tuple. The authors have open sourced their method to convert wikipedia dumps into knowledge graphs. Applied research carried out by doordash engineering demonstrates that using [knowledge graphs can dramatically improve search performance] (https://doordash.engineering/2020/12/15/understanding-search-intent-with-better-recall/).
 
 <span style="text-decoration:underline;">Explainable AI</span>
 
@@ -223,7 +225,7 @@ _references:_
 Knowledge graphs: [https://arxiv.org/abs/2112.05003](https://arxiv.org/abs/2112.05003)
 
 
-Explainable AI using structured data: 
+Explainable AI using structured data:
 
 [https://www.researchgate.net/profile/Matthias-Pfaff/publication/336578867_Semantic_Web_Technologies_for_Explainable_Machine_Learning_Models_A_Literature_Review/links/5daafb99a6fdccc99d91d120/Semantic-Web-Technologies-for-Explainable-Machine-Learning-Models-A-Literature-Review.pdf](https://www.researchgate.net/profile/Matthias-Pfaff/publication/336578867_Semantic_Web_Technologies_for_Explainable_Machine_Learning_Models_A_Literature_Review/links/5daafb99a6fdccc99d91d120/Semantic-Web-Technologies-for-Explainable-Machine-Learning-Models-A-Literature-Review.pdf)
 
@@ -234,7 +236,7 @@ Three projects of note that rely heavily on the use of structured data are the f
 
 
 
-* [Open Source Metadata Framework (OMF)](http://www.ibiblio.org/osrt/omf/) - The OMF aims to collect data about Open Source documentation / metadata which are typically stored in a structured data format that will be used to describe the documentation. The idea is that the OMF will act as a sophisticated card catalog type of system for the numerous Open Source documentation projects that exist. 
+* [Open Source Metadata Framework (OMF)](http://www.ibiblio.org/osrt/omf/) - The OMF aims to collect data about Open Source documentation / metadata which are typically stored in a structured data format that will be used to describe the documentation. The idea is that the OMF will act as a sophisticated card catalog type of system for the numerous Open Source documentation projects that exist.
 * [DBpedia](https://www.dbpedia.org/) is a set of datasets, tools and services related to structured web data. It contains more than 228 million freely-available entities to date. The main DBpedia Knowledge Graph encompasses clean data from Wikipedia. DBPedia is available in all supported Wikipedia languages and averages over 600k file downloads per year. Some open source tools that are built on top of DBpedia provide data access, versioning, quality control, ontology visualization and linking infrastructures.
 * [Wikidata](https://www.wikidata.org/) stores structured data from Wikimedia projects like Wikipedia. It is a document-oriented database, which focuses on storing structured web data.
 
@@ -334,7 +336,7 @@ _Figure 7 - RDFa usage on mobile pages_
 
 _Figure 8 - RDFa usage on desktop pages_
 
-RDFa remains more prominent on desktop with `foaf:image` appearing on 1% of desktop pages, compared to 0.81% on mobile pages. Other RDFa types saw a slight increase in appearance on desktop pages over mobile, with the exception of `og:website` reaching ahead with 0.08% on mobile pages and 0.07% on desktop pages. 
+RDFa remains more prominent on desktop with `foaf:image` appearing on 1% of desktop pages, compared to 0.81% on mobile pages. Other RDFa types saw a slight increase in appearance on desktop pages over mobile, with the exception of `og:website` reaching ahead with 0.08% on mobile pages and 0.07% on desktop pages.
 
 
 ## Dublin Core
@@ -353,7 +355,7 @@ RDFa remains more prominent on desktop with `foaf:image` appearing on 1% of desk
 
 _Figure 9 - Distribution of Dublin Core usage, 2021 Vs 2022_
 
-Dublin Core attribute type usage remains very similar across the most prominent attribute types. A notable exception is `dcterms.identifier`, going from 0.11% in 2021 to 0.18% in 2022 for mobile pages. Though small in percentage, this totals to a usage count of nearly 15,000 in our set. 
+Dublin Core attribute type usage remains very similar across the most prominent attribute types. A notable exception is `dcterms.identifier`, going from 0.11% in 2021 to 0.18% in 2022 for mobile pages. Though small in percentage, this totals to a usage count of nearly 15,000 in our set.
 
 
 {{ figure_markup(
@@ -432,7 +434,7 @@ _Figure 13 - Open Graph usage on mobile pages_
 
 _Figure 14 - Open Graph usage on desktop pages_
 
-This is matched by desktop, going from 1.57% to 5.38% over the course of the year. We have seen an increase in use for each Open Graph type in the top 10 for both mobile and desktop, resulting in Open Graph’s relative growth of 1.46% since 2021. 
+This is matched by desktop, going from 1.57% to 5.38% over the course of the year. We have seen an increase in use for each Open Graph type in the top 10 for both mobile and desktop, resulting in Open Graph’s relative growth of 1.46% since 2021.
 
 
 ## Twitter
@@ -451,7 +453,7 @@ This is matched by desktop, going from 1.57% to 5.38% over the course of the yea
 
 _Figure 15 - Distribution of Twitter meta tag usage, 2021 Vs 2022_
 
-Twitter meta tags once again follow the pattern of a general increase in usage, more specifically in the common tags of `twitter:card`, `twitter:title`, ` twitter:description` and `twitter:image`. A notable increase can be seen for `twitter:label1` and `twitter:data1`, both at 7% in 2021 to over 9% in 2022 for mobile pages. 
+Twitter meta tags once again follow the pattern of a general increase in usage, more specifically in the common tags of `twitter:card`, `twitter:title`, ` twitter:description` and `twitter:image`. A notable increase can be seen for `twitter:label1` and `twitter:data1`, both at 7% in 2021 to over 9% in 2022 for mobile pages.
 
 
 {{ figure_markup(
@@ -481,7 +483,7 @@ _Figure 16 - Twitter meta tag usage on mobile pages_
 
 _Figure 17 - Twitter meta tag usage on desktop pages_
 
-Twitter meta tags such as `twitter:site` and `twitter:image` have a larger presence on desktop sites, though the majority of these meta tags share the same prevalence between mobile and desktop, as well as year-to-year. Some of the less common tags saw a slight decrease in use this year, though Twitter meta tag usage maintains an overall increase from last year. 
+Twitter meta tags such as `twitter:site` and `twitter:image` have a larger presence on desktop sites, though the majority of these meta tags share the same prevalence between mobile and desktop, as well as year-to-year. Some of the less common tags saw a slight decrease in use this year, though Twitter meta tag usage maintains an overall increase from last year.
 
 
 ## Facebook
@@ -549,7 +551,7 @@ This is true for desktop pages too, with the exception of `fb:pages` at a slight
 
 _Figure 21 - Distribution of Microformats usage, 2021 Vs 2022_
 
-Microformats have remained very similar in usage numbers since 2021, with `adr` (appearing on 0.47% of pages in our set) still being the most common on the list. 
+Microformats have remained very similar in usage numbers since 2021, with `adr` (appearing on 0.47% of pages in our set) still being the most common on the list.
 
 
 {{ figure_markup(
@@ -595,7 +597,7 @@ Both mobile and desktop share a mix of increased and decreased usage between mic
 
 _Figure 24 - Distribution of microformats2 usage, 2021 Vs 2022_
 
-Meanwhile, microformats2 attributes have skyrocketed since 2021. The properties of `h-entry`, `h-card` and `h-feed` have shown huge increases in our set of pages, which account for the fact that microformats2 attributes have almost tripled in our set since the previous year. 
+Meanwhile, microformats2 attributes have skyrocketed since 2021. The properties of `h-entry`, `h-card` and `h-feed` have shown huge increases in our set of pages, which account for the fact that microformats2 attributes have almost tripled in our set since the previous year.
 
 {{ figure_markup(
   image="structureddata-images/image27.png",
@@ -626,7 +628,7 @@ _Figure 25 - Microformats2 usage on mobile pages_
 
 _Figure 26 - Microformats2 usage on desktop pages_
 
-This growth is seen more drastically on mobile pages, though desktop pages do follow the same pattern. Other than that, `h-adr` remains the exact same across both years and both platforms at 0.02% of pages.  
+This growth is seen more drastically on mobile pages, though desktop pages do follow the same pattern. Other than that, `h-adr` remains the exact same across both years and both platforms at 0.02% of pages.
 
 
 ## Microdata
@@ -645,7 +647,7 @@ This growth is seen more drastically on mobile pages, though desktop pages do fo
 
 _Figure 27 - Distribution of Microdata usage, 2021 Vs 2022_
 
-Most of the properties for Microdata have not seen much change, with a slight increase in some of the more common properties such as `webpage`, `sitenavigationelement` and `wpheader` appearing in 7.85%, 6.11% and 5.32% of mobile pages respectively. 
+Most of the properties for Microdata have not seen much change, with a slight increase in some of the more common properties such as `webpage`, `sitenavigationelement` and `wpheader` appearing in 7.85%, 6.11% and 5.32% of mobile pages respectively.
 
 
 {{ figure_markup(
@@ -695,7 +697,7 @@ _Figure 28 - Microdata usage on mobile pages_
 
 _Figure 30 - Distribution of JSON-LD usage, 2021 Vs 2022_
 
-JSON-LD types continue to be mostly similar with a few notable increases over the previous year. Namely, these are `LocalBusiness` (which has increased to 2.75% of pages in our set) and `Restaurant`  (which has increased to 0.28% of pages in our set). 
+JSON-LD types continue to be mostly similar with a few notable increases over the previous year. Namely, these are `LocalBusiness` (which has increased to 2.75% of pages in our set) and `Restaurant`  (which has increased to 0.28% of pages in our set).
 
 
 {{ figure_markup(
@@ -746,7 +748,7 @@ These increases are enough to make JSON-LD types have the 2nd biggest positive c
 
 _Figure 33 - Distribution of SameAs usage, 2021 Vs 2022_
 
-As was the case in 2021, the most common values of the `sameAs` property are social media platforms. These include facebook.com (at 4.32% on mobile and 4.94% on desktop), instagram.com (at 2.93% on mobile and 3.34% on desktop) and twitter.com (at 2.30% on mobile and 2.86% on desktop). The former two of which have seen a slight increase on mobile from 2021, with all 3 increasing on desktop. 
+As was the case in 2021, the most common values of the `sameAs` property are social media platforms. These include facebook.com (at 4.32% on mobile and 4.94% on desktop), instagram.com (at 2.93% on mobile and 3.34% on desktop) and twitter.com (at 2.30% on mobile and 2.86% on desktop). The former two of which have seen a slight increase on mobile from 2021, with all 3 increasing on desktop.
 
 
 {{ figure_markup(
@@ -835,7 +837,7 @@ For JSON-LD contexts, schema.org is by far the largest contributor, with over 60
 
 ## Structured data consumers
 
-The implementation of structured data is widely beneficial in numerous areas, some of which will be focused on in this section. It is important to note that many of these areas are overlapping, such is the nature of linked and structured data. 
+The implementation of structured data is widely beneficial in numerous areas, some of which will be focused on in this section. It is important to note that many of these areas are overlapping, such is the nature of linked and structured data.
 
 
 ### Data linking
@@ -856,7 +858,7 @@ Having this added discoverability, enabled by structured data, is essential for 
 
 ### eCommerce & Business
 
-The implementation of structured data for eCommerce web pages is incredibly beneficial for those involved with the business. There are numerous structured data types which are widely used for these businesses for SEO. 
+The implementation of structured data for eCommerce web pages is incredibly beneficial for those involved with the business. There are numerous structured data types which are widely used for these businesses for SEO.
 
 [LocalBusiness ](https://developers.google.com/search/docs/advanced/structured-data/local-business)is a structured data type which may return a Google knowledge panel with details entered in the structured data type during relevant search queries (e.g. “popular restaurants in Dublin”). This type also may have business hours, different departments within a business, reviews for the business, which could all be returned from a maps app search query as well.
 
@@ -876,11 +878,11 @@ In this chapter, there has been an outline of some of the benefits of using stru
 * Business pages
 * Researchers
 * Social media sites
-* Users 
+* Users
 
 
 through SEO, increased discoverability, general data linking and rich results. These technologies, and their growing implementation within web pages, result in a more connected and accessible web.
 
 With more information and insight available than ever before, it is important to understand the capabilities and limitations of certain techniques or choices when trying to increase web page traffic. Adding fake reviews or misleading data in the hopes of successful SEO can and will be detected, resulting in fewer benefits from those mentioned above, as well as poorer discoverability and performance from search engines.
 
-Although this is the second year in which this chapter has featured in the Web Almanac, we are excited to see how these trends continue and change, along with the state of structured data on the web. We are looking to see increased widespread implementation of these technologies, with all of the benefits they bring. 
+Although this is the second year in which this chapter has featured in the Web Almanac, we are excited to see how these trends continue and change, along with the state of structured data on the web. We are looking to see increased widespread implementation of these technologies, with all of the benefits they bring.
