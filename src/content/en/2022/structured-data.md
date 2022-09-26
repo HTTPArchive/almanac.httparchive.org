@@ -32,9 +32,9 @@ unedited: true
 
 # Content team
 
-_**Authors:  Allen ONeill ([allen.oneill@webdataworks.io](mailto:allen.oneill@webdataworks.io)), Andrea Volpini ([andrea@wordlift.io](mailto:andrea@wordlift.io)), John Barrett ([john.barrett@webdataworks.io](mailto:john.barrett@webdataworks.io)), Ananya Pathak ([ananya.pathak@webdataworks.io](mailto:ananya.pathak@webdataworks.io))**_
+_**Authors:  Allen ONeill ([allen.oneill@webdataworks.io](mailto:allen.oneill@webdataworks.io)), John Barrett ([john.barrett@webdataworks.io](mailto:john.barrett@webdataworks.io)), Ananya Pathak ([ananya.pathak@webdataworks.io](mailto:ananya.pathak@webdataworks.io)),Andrea Volpini ([andrea@wordlift.io](mailto:andrea@wordlift.io))**_
 
-**_Reviewers: Jono Alderson ([jonoalderson@gmail.com](mailto:jonoalderson@gmail.com)), Rob Teitelman ([seorobt@gmail.com](mailto:seorobt@gmail.com)), Aparna Garimella ([j.aparnaa@gmail.com](mailto:j.aparnaa@gmail.com))_**
+**_Reviewers: Jono Alderson ([jonoalderson@gmail.com](mailto:jonoalderson@gmail.com)), Rob Teitelman ([seorobt@gmail.com](mailto:seorobt@gmail.com)), Jason Bell ([jason.bell@webdataworks.io](mailto:jason.bell@webdataworks.io))_**
 
 _**Analysts:**_
 
@@ -55,7 +55,7 @@ Despite many advances in machine learning and in particular the field of ‘natu
 
 Organizations of all sizes and types want their content to be discovered on the web. Search engines such as Google and Bing emphasize data discoverability by promoting the use of structured data. From an SEO point of view, it is advantageous to present data in an easy to find and parse manner. Some of these advantages will be discussed in the [Use Cases](#heading=h.9dgerkhy7i6) and [Key Concepts](#heading=h.sgp4kasx7abv) sections within this chapter.
 
-Last year's introduction pointed out that “when machines can reliably extract structured data, at scale, we enable new and smarter types of software, systems, services and businesses”. This year’s chapter includes sections that explore recently published research on structured data and open source frameworks and tools that assist the generation of high-quality structured data.
+Last year's introduction pointed out that “when machines can reliably extract structured data, at scale, we enable new and smarter types of software, systems, services and businesses”. This year’s chapter includes sections that explore recently published research on structured data, open source frameworks and tools that assist the generation of high-quality structured data.
 
 This year's chapter provides the first year over year comparison of metrics such as the presence of different structured data types as well as the growth of those structured data types, and examines the evolving benefits of using structured data. Having a baseline of data from 2021 allows us to gain insights into how the use of structured data has changed over the intervening period and observe interesting trends, for example the growth of TikTok in the period.
 
@@ -212,7 +212,7 @@ On a practical level, we highlight two areas that structured data has improved:
 
 <span style="text-decoration:underline;">Knowledge graphs</span>
 
-Structured web data provides fixed vocabularies between entities and objects as a domain-specific language, which are generally stored in a RDF format. Knowledge graphs using RDF have proven to be great tools for querying relationships between entities. As an example, Wikidated 1.0 is an evolving knowledge graph which uses web structured data to store Wikipedia’s revision history. Its[ corresponding paper](https://arxiv.org/abs/2112.05003) talks through the process of aggregating revisions to a page as a set of additions and deletions of the RDF tuple. The authors have open sourced their method to convert wikipedia dumps into knowledge graphs. 
+Structured web data provides fixed vocabularies between entities and objects as a domain-specific language, which are generally stored in a RDF format. Knowledge graphs using RDF have proven to be great tools for querying relationships between entities. As an example, Wikidated 1.0 is an evolving knowledge graph which uses web structured data to store Wikipedia’s revision history. Its[ corresponding paper](https://arxiv.org/abs/2112.05003) talks through the process of aggregating revisions to a page as a set of additions and deletions of the RDF tuple. The authors have open sourced their method to convert wikipedia dumps into knowledge graphs. Applied research carried out by doordash engineering demonstrates that using [knowledge graphs can dramatically improve search performance] (https://doordash.engineering/2020/12/15/understanding-search-intent-with-better-recall/). 
 
 <span style="text-decoration:underline;">Explainable AI</span>
 
@@ -268,7 +268,7 @@ WikiData - [https://en.wikipedia.org/wiki/Wikidata](https://en.wikipedia.org/wik
 
 _Figure 3 - Distribution of structured data types, 2021 Vs 2022_
 
-RDFa and Open Graph remain in the majority with 62.38% and 57.45% of mobile pages, respectively. A general increase in these widely-used structured data types can be seen, including Twitter meta tags and JSON-LD. There is a slight decrease in usage for some of the less prevalent structured data types such as Microdata, Facebook meta tags, Dublin Core and Microformats.
+RDFa and Open Graph remain in the majority with 62% and 57% of mobile pages, respectively. A general increase in these widely-used structured data types can be seen, including Twitter meta tags and JSON-LD. There is a slight decrease in usage for some of the less prevalent structured data types such as Microdata, Facebook meta tags, Dublin Core and Microformats.
 
 
 {{ figure_markup(
@@ -285,20 +285,7 @@ RDFa and Open Graph remain in the majority with 62.38% and 57.45% of mobile page
 _Figure 4 -Structured data types on mobile pages_
 
 
-{{ figure_markup(
-  image="structureddata-images/image7.png",
-  caption="Structured data usage by year - Desktop",
-  description="A year on year comparison of structured data usage on desktop pages",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRr8oRb8NNs5MbpPpDi7QSsTUTPQL_vxQtQvmn52qGk97gpNhJIHa8VF0x5ZJtWXAFuEbDFZQB6TIuN/pubchart?oid=1678347903&format=interactive",
-  sheets_gid="1452747230",
-  sql_file=""
-  )
-}}
-
-
-_Figure 5 -Structured data types on desktop pages_
-
-Structured data types are seen consistently across mobile and desktop pages, with Microformats and microformats2 differing the most from other structured data types we examined in this chapter. Microformats are 86.11% as prominent on mobile pages, whereas microformats2 are 171.72% as prominent on mobile pages. These two structured data types make up a small percentage of those found in our set.
+Structured data types are seen consistently across mobile and desktop pages, with Microformats and microformats2 differing the most from other structured data types we examined in this chapter. Microformats are 86% as prominent on mobile pages, whereas microformats2 are 171% as prominent on mobile pages. These two structured data types make up a small percentage of those found in our set.
 
 
 ## RDFa
@@ -347,7 +334,7 @@ _Figure 7 - RDFa usage on mobile pages_
 
 _Figure 8 - RDFa usage on desktop pages_
 
-RDFa remains more prominent on desktop with `foaf:image` appearing on 1.05% of desktop pages, compared to 0.81% on mobile pages. Other RDFa types saw a slight increase in appearance on desktop pages over mobile, with the exception of `og:website` reaching ahead with 0.08% on mobile pages and 0.07% on desktop pages. 
+RDFa remains more prominent on desktop with `foaf:image` appearing on 1% of desktop pages, compared to 0.81% on mobile pages. Other RDFa types saw a slight increase in appearance on desktop pages over mobile, with the exception of `og:website` reaching ahead with 0.08% on mobile pages and 0.07% on desktop pages. 
 
 
 ## Dublin Core
@@ -464,7 +451,7 @@ This is matched by desktop, going from 1.57% to 5.38% over the course of the yea
 
 _Figure 15 - Distribution of Twitter meta tag usage, 2021 Vs 2022_
 
-Twitter meta tags once again follow the pattern of a general increase in usage, more specifically in the common tags of `twitter:card`, `twitter:title`, ` twitter:description` and `twitter:image`. A notable increase can be seen for `twitter:label1` and `twitter:data1`, both at 6.85% in 2021 to 9.71% in 2022 for mobile pages. 
+Twitter meta tags once again follow the pattern of a general increase in usage, more specifically in the common tags of `twitter:card`, `twitter:title`, ` twitter:description` and `twitter:image`. A notable increase can be seen for `twitter:label1` and `twitter:data1`, both at 7% in 2021 to over 9% in 2022 for mobile pages. 
 
 
 {{ figure_markup(
@@ -808,7 +795,7 @@ The rest of the list includes information sources such as wikipedia.org (at 0.13
 
 _Figure 36 - Relative change of SameAs usage from 2021 to 2022_
 
-It is insightful to look at the SameAs entries and how they change over time. TikTok has seen a huge increase with 2022 showing its appearance on six times as many pages relative to our set compared to 2021. This change is equal for both desktop and mobile pages. Pinterest, and the various domain names it has, make up for 3 of the top 5 largest growers for mobile pages in 2022. Mobile overall has seen a larger increase for SameAs entries than desktop, with Spotify being an exception with its desktop page appearances being doubled compared to 2021.
+It is insightful to look at the SameAs entries and how they change over time. TikTok has seen a huge increase with 2022 showing its appearance on six times as many pages relative to our set compared to 2021. This change is equal for both desktop and mobile pages. Pinterest, and the various domain names it has, make up for 3 of the top 5 largest growth for mobile pages in 2022. Mobile overall has seen a larger increase for SameAs entries than desktop, with Spotify being an exception with its desktop page appearances being doubled compared to 2021.
 
 
 {{ figure_markup(
@@ -824,7 +811,7 @@ It is insightful to look at the SameAs entries and how they change over time. Ti
 
 _Figure 37 - Relative change of SameAs domains from 2021 to 2022_
 
-Looking at the domain names of the SameAs entries, and how they change over time, also may give valuable insight. In the largest desktop page growers we see .ca, .net and .fr, with the latter also being up there in the top for mobile page increases. As this is an average, the amount of entries is not accounted for. In both years .com is far larger in numbers than all other entries, but the average change is 125% for mobile pages and 117% for desktop pages. The Canadian and French domain averages are heavily boosted by Pinterest, which (as mentioned above) has seen widespread increases from last year. In fact, 7 out of the top 10 SameAs domain growers have pinterest in their entries, sometimes being their only entry.
+Looking at the domain names of the SameAs entries, and how they change over time, also may give valuable insight. In the largest desktop page growth we see .ca, .net and .fr, with the latter also being up there in the top for mobile page increases. As this is an average, the amount of entries is not accounted for. In both years .com is far larger in numbers than all other entries, but the average change is 125% for mobile pages and 117% for desktop pages. The Canadian and French domain averages are heavily boosted by Pinterest, which (as mentioned above) has seen widespread increases from last year. In fact, 7 out of the top 10 SameAs domain growers have pinterest in their entries, sometimes being their only entry.
 
 
 {{ figure_markup(
