@@ -69,7 +69,7 @@ To this end, when designing digital products and services, keep the following in
 - **Privacy:** A less intrusive website is better for users, giving them control over their data and what they choose to share. Privacy-focused websites are also often more environmentally-friendly in that they track, store, and maintain less data.
 - **Mis/disinformation:**  People turn to the internet to answer questions. Content that includes misinformation (unintentional) and disinformation (intentional) undermines users' ability to do this in an efficient manner.
 - **Attention economy:** Avoiding <a hreflang="en" href="https://blog.mozilla.org/en/internet-culture/mozilla-explains/deceptive-design-patterns/">deceptive patterns</a> keeps users focused, reducing pointless browsing or diverting them from their initial purpose.
-- **Security:** Aiming for sustainability can also help secure your website by reducing its attack surface: less externalities, less functionalities, etc
+- **Security:** Aiming for sustainability can also help secure your website by reducing its attack surface: less external resources, less functionality, etc
 
 These are all part of a broader organizational approach to <a hreflang="en" href="https://www.mightybytes.com/blog/what-is-corporate-digital-responsibility/">corporate digital responsibility</a> that aligns with digital sustainability principles.
 
@@ -127,7 +127,7 @@ At the 90th percentile, desktop pages were over 9 MB and mobile pages over 8 MB.
   sql_file=""
 ) }}
 
-The carbon emissions for websites are very close on mobile and desktop. They seem quite low on the 10th percentile (around 0.15 g eqCO2, which would be equivalent to <a hreflang="fr" href="https://datagir.ademe.fr/apps/mon-impact-transport/">a little less than 1km with a thermic car</a>). They reach as much as 2.76 g eqCO2 on the 90th percentile (a little more than 14km with a thermic car).
+The carbon emissions for websites are very close on mobile and desktop. They seem quite low on the 10th percentile (around 0.15 g eqCO2, which would be equivalent to <a hreflang="fr" href="https://datagir.ademe.fr/apps/mon-impact-transport/">a little less than 1km with a thermal car</a>). They reach as much as 2.76 g eqCO2 on the 90th percentile (a little more than 14km with a thermal car).
 
 This doesn't seem like much but you should keep in mind that each website gets thousands or even millions of visitors each month (sometimes even more) and what you see in the graph is emissions for a single page visited once. The environmental impact each month for all websites adds up.
 
@@ -166,7 +166,7 @@ So, which content type is to blame for this?
 {{ figure_markup(
   image="number-of-requests-by-percentile-by-type-mobile.png",
   caption="Number of requests by percentile by type on mobile",
-  description="A column chart showing that on mobile devices, on the 90th percentile we find 14 requests targetting Html content, 60 requests for javascript resources, almost 24 requests for Css, around 70 requests fetching images and 8 requests for fonts.. On the 75th percentile, there are 6 Html requests, 37 Javascript requests, 12 Css requests, 39 images requests and 5 Fonts requests. On the 50th percentile, we can see 2 Html requests, 20 javascript requests, 6 Css requests, 22 images and 3 fonts requests. On the 25th percentile, there are 1 Html, 9 javascript, 3 Css, 10 images and 1 font requests. On the 10h percentile, we find 1Html, 4 javascript, 1 Css, 6 images and 1 font requests.",
+  description="A column chart showing that on mobile devices, on the 90th percentile we find 14 requests targeting Html content, 60 requests for javascript resources, almost 24 requests for Css, around 70 requests fetching images and 8 requests for fonts.. On the 75th percentile, there are 6 Html requests, 37 Javascript requests, 12 Css requests, 39 images requests and 5 Fonts requests. On the 50th percentile, we can see 2 Html requests, 20 javascript requests, 6 Css requests, 22 images and 3 fonts requests. On the 25th percentile, there are 1 Html, 9 javascript, 3 Css, 10 images and 1 font requests. On the 10h percentile, we find 1Html, 4 javascript, 1 Css, 6 images and 1 font requests.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=768422178&format=interactive",
   sheets_gid="174962437",
   sql_file="requests_by_type.sql"
@@ -235,7 +235,7 @@ You should only load assets that are needed to display the page and more particu
 
 ##### Fonts
 
-For sustainability, it is recommended to <a hreflang="en" href="https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/">stick to system fonts</a>. If you really need to use some custom fonts, there are some things to consider to avoid waste. Loading a font sometimes involves loading lots of characters and symbols that you might not need. For example, not all websites need cyrillic characters but some fonts still include them natively. To check this, you can use tools such as <a hreflang="en" href="https://wakamaifondue.com/">wakamaifondue</a>. To reduce the size of your font files, you should aim for a WOFF2 format and <a hreflang="en" href="https://the-sustainable.dev/reduce-the-weight-of-your-typography-with-variable-fonts/">using variable fonts</a>. You could also use <a hreflang="en" href="https://everythingfonts.com/subsetter">subsets</a> or use a tool such as <a hreflang="en" href="https://github.com/Munter/subfont">subfont</a>. <a hreflang="en" href="https://web.dev/api-for-fast-beautiful-web-fonts/">The Google Fonts API offers some clever options for all this</a>. Regarding Google Fonts, <a hreflang="en" href="https://rewis.io/urteile/urteil/lhm-20-01-2022-3-o-1749320/">you should still keep GDPR in mind</a>.
+For sustainability, it is recommended to <a hreflang="en" href="https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/">stick to system fonts</a>. If you really need to use some custom fonts, there are some things to consider to avoid waste. Loading a font sometimes involves loading lots of characters and symbols that you might not need. For example, not all websites need Cyrillic characters but some fonts still include them natively. To check this, you can use tools such as <a hreflang="en" href="https://wakamaifondue.com/">wakamaifondue</a>. To reduce the size of your font files, you should aim for a WOFF2 format and <a hreflang="en" href="https://the-sustainable.dev/reduce-the-weight-of-your-typography-with-variable-fonts/">using variable fonts</a>. You could also use <a hreflang="en" href="https://everythingfonts.com/subsetter">subsets</a> or use a tool such as <a hreflang="en" href="https://github.com/Munter/subfont">subfont</a>. <a hreflang="en" href="https://web.dev/api-for-fast-beautiful-web-fonts/">The Google Fonts API offers some clever options for all this</a>. Regarding Google Fonts, <a hreflang="en" href="https://rewis.io/urteile/urteil/lhm-20-01-2022-3-o-1749320/">you should still keep GDPR in mind</a>.
 
 For more on this topic, see the [Fonts](./fonts) chapter. You can also find some documentation on <a hreflang="en" href="https://web.dev/reduce-webfont-size/">web.dev</a>.
 
@@ -293,13 +293,13 @@ There has been a rising popularity in incorporating a choice architecture into p
 
 Aiding in this decision-making and offering these types of choice can not only help users interact with your website in more sustainable ways, but also help remove barriers of entry that help optimize user interactions. More recently, popular options can include accessibility features, language choices, device optimization, or the ever-popular dark mode that utilizes low-energy colors while promoting proper contrast.
 
-These types of options help minimize potential pain points of users while enabling a custom experience that saves time, energy, and prevents frustration in a user. The power of choice can grow deeper into popular opt-out features such as the enablement and frequency of notifications—all choices that inevitably save resources when utilized, thus allowing users to customize both their experience and impact per visit.
+These types of options help minimize potential pain points of users while enabling a custom experience that saves time, energy, and prevents frustration in a user. The power of choice can grow deeper into popular opt-out features such as the enabling and frequency of notifications—all choices that inevitably save resources when utilized, thus allowing users to customize both their experience and impact per visit.
 
 #### Designing for circularity and end-of-Life
 
 Analyzing and understanding the entire lifecycle of a digital product or service reveals opportunities to reduce waste and improve environmental impact over time. Defining and tracking clear, measurable success indicators can help guide this process.
 
-- **Circularity:** Designing modular, easily replaceable or updateable components and focusing on continuous improvement can help you <a hreflang="en" href="https://www.mightybytes.com/blog/technical-debt-agile-and-sustainability/">reduce technical debt</a> and prolong the life of a digital product or service. This also saves time and reduces resource use.
+- **Circularity:** Designing modular, easily replaceable or updatable components and focusing on continuous improvement can help you <a hreflang="en" href="https://www.mightybytes.com/blog/technical-debt-agile-and-sustainability/">reduce technical debt</a> and prolong the life of a digital product or service. This also saves time and reduces resource use.
 - **End-of-Life:** Creating a clear retirement plan for your digital product or service will reduce the energy required to store and serve outdated or unused data. Plus, good data disposal practices also align with emerging data privacy laws that respect users' "right to be forgotten".
 
 ### Optimizing your content
@@ -338,7 +338,7 @@ Also remember that you often don't need a quality of more than 85% since the hum
 {{ figure_markup(
   image="responsive-image-types.png",
   caption="Responsive image types",
-  description="A column chart showing that around 33% of websites use the srcset attribute on desktop and 34% on mobile, 25% of them used it with sizes on desktop and 26% on mobile, 8% of them used the srcset attribute with w/o sizes on desktop and 8% on mobile. 8% ofthe websites use the picture element on desktop and 8% of them on mobile",
+  description="A column chart showing that around 33% of websites use the srcset attribute on desktop and 34% on mobile, 25% of them used it with sizes on desktop and 26% on mobile, 8% of them used the srcset attribute with w/o sizes on desktop and 8% on mobile. 8% of the websites use the picture element on desktop and 8% of them on mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=403648557&format=interactive",
   sheets_gid="695142267",
   sql_file="responsive_images.sql"
@@ -353,7 +353,7 @@ An easy way to get a faster first load is to load images progressively: only loa
 {{ figure_markup(
   image="native-lazy-loading-usage.png",
   caption="Native lazy loading usage",
-  description="A column chart showing that no websites used native lazy-loading on July the 1st, 2019. On August the 1st, 2020, 4% of websites used native lazy-loading on desktop 4% on mobile. On July the 1st, 2021, 18% of websites used native lazy-loading on both desktop and mobile, and on the 1st June of 2022, 23% of websites used native lazy-loading o ndesktop and 24% on mobile",
+  description="A column chart showing that no websites used native lazy-loading on July the 1st, 2019. On August the 1st, 2020, 4% of websites used native lazy-loading on desktop 4% on mobile. On July the 1st, 2021, 18% of websites used native lazy-loading on both desktop and mobile, and on the 1st June of 2022, 23% of websites used native lazy-loading on desktop and 24% on mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=862073668&format=interactive",
   sheets_gid="1363374212",
   sql_file="image_lazy_loading.sql"
@@ -374,7 +374,7 @@ Automatically preloading videos (or audio files) involves retrieving data that m
 {{ figure_markup(
   image="video-preload-usage.png",
   caption="Video preload usage",
-  description="A column chart showing the preload attribute is not used on 57.6% of desktop videos and 59.5% of mobile videos. The preload attribute can be found with the 'none' value on 17.3% of desktop videos 15.4% of mobile videos. The 'auto' value is used on 15.3% of desktop videos 13.6% of mobile videos. The 'metadata' value is used on 7.5%% of desktop videos 9.2% of mobile videos. The prealod attribute is empty on 1.6% of both desktop and mobile videos. The value preload attribute has a value 'TRUE' on respectively 0.4% and 0.3% of desktop and mobile videos. Lastly, the preload attribute has a value of 'preload', yes', 'undefined' or 'FALSE' on 0.1% of both desktop and mobile videos.",
+  description="A column chart showing the `preload` attribute is not used on 57.6% of desktop videos and 59.5% of mobile videos. The `preload` attribute can be found with the `none` value on 17.3% of desktop videos 15.4% of mobile videos. The `auto` value is used on 15.3% of desktop videos 13.6% of mobile videos. The `metadata` value is used on 7.5%% of desktop videos 9.2% of mobile videos. The `preload` attribute is empty on 1.6% of both desktop and mobile videos. The value `preload` attribute has a value `TRUE` on respectively 0.4% and 0.3% of desktop and mobile videos. Lastly, the `preload` attribute has a value of `preload`, `yes`, `undefined` or `FALSE` on 0.1% of both desktop and mobile videos.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1090171830&format=interactive",
   sheets_gid="1420607407",
   sql_file="video_preload_values.sql"
@@ -382,7 +382,7 @@ Automatically preloading videos (or audio files) involves retrieving data that m
 
 Looking at this graph, one should keep in mind that the `preload` attribute only has 3 possible values: `none`, `auto` and `metadata` (default). Using the `preload` attribute with no value or with an erroneous value might be the same as using the `metadata` value. It still involves loading as much as 3% of the video to get these metadata and can thus be quite impactful. `none` is still the best way to go for sustainability. But you have to keep in mind that this is only a hint for the browser. In the end, the browser has its own way of handling the preloading of the video and it might not fit with what you had in mind.
 
-For more on this, you should check <a hreflang="en" href="https://www.stevesouders.com/blog/2013/04/12/html5-video-preload/">the article from Steve Souders (2013)</a> and <a hreflang="en" href="https://web.dev/fast-playback-with-preload/">another one from web.dev (2017)</a>. Even if you can configure your browser or device to save data, video preload is something that browsers should handle more sustainably by default.
+For more on this, you should check <a hreflang="en" href="https://www.stevesouders.com/blog/2013/04/12/html5-video-preload/">the article from Steve Souders (2013)</a> and <a hreflang="en" href="https://web.dev/fast-playback-with-preload/">another one from web.dev (2017)</a>. Even if you can configure your browser or device to save data, video preload is something that browsers should handle more sustainable by default.
 
 ##### Autoplay
 
@@ -399,7 +399,7 @@ Also, this attribute can override your `preload` setting since autoplaying requi
   sql_file="video_autoplay_values.sql"
 ) }}
 
-More than half of the websites don't use autoplay, which is great. But this is a boolean attribute so having it, even with an empty value (or wrong value), triggers autoplay. For all the reasons mentioned above, this should be avoided for both sustainability and accessibility.
+More than half of the websites don't use autoplay, which is great. But this is a Boolean attribute so having it, even with an empty value (or wrong value), triggers autoplay. For all the reasons mentioned above, this should be avoided for both sustainability and accessibility.
 
 #### Animations
 
@@ -443,7 +443,7 @@ With third-party requests making up such a large portion of requests on the web,
 {{ figure_markup(
   image="green-third-party-requests.png",
   caption="Percents of green third party requests",
-  description="A column chart showing that on the top 1,000 websites 64% of thrid party requests relied on green hosting on desktop and 63% on mobile devices. On the top 10,000 websites it's 66% on desktop and 67% on mobile. For the top 100,000 sites it's 74% on both desktop and mobile. On the top million, it's 84% on desktop and 83% on mobile. Overall, we see that 89% of third party requests rely on green hosting on desktop and it goes up to 91% on mobile.",
+  description="A column chart showing that on the top 1,000 websites 64% of third party requests relied on green hosting on desktop and 63% on mobile devices. On the top 10,000 websites it's 66% on desktop and 67% on mobile. For the top 100,000 sites it's 74% on both desktop and mobile. On the top million, it's 84% on desktop and 83% on mobile. Overall, we see that 89% of third party requests rely on green hosting on desktop and it goes up to 91% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1339778519&format=interactive",
   sheets_gid="951750086",
   sql_file="green_third_party_requests.sql"
@@ -544,7 +544,7 @@ Implementing a CDN can help make your website more sustainable. It helps get you
 {{ figure_markup(
   image="cdn-usage.png",
   caption="Cdn usage on the web",
-  description="A column chart showing that 69.7% of the pages analysed do not use any CDN on desktop and 71.2% on mobile, 16.9% of them use Cloudflare on desktop and 15.1% on mobile, 5.2% of them use Google on desktop and 6.5% on mobile, 2.8% use Fastly on desktop and 2.6% on mobile, 2.2% use Amazon Cloudfront on desktop and 1.8% on mobile, 1.1% use Akamai on desktop and 0.8% on mobile, 0.4% use Automattic on desktop and 0.7% on mobile, 0.5% use Sucuri Firewall on desktop and 0.3% on mobile, 0.4% use Sucuri Firewall on desktop and 0.3% on mobile. Netlify and Vercel are both used on 0.2% of the page tested on mobile and desktop. Lastly, we see CDN, Highwinds, Microsoft Azure and OVH CDN being used on 0.1% of the pages, both on desktop and mobile.",
+  description="A column chart showing that 69.7% of the pages analyzed do not use any CDN on desktop and 71.2% on mobile, 16.9% of them use Cloudflare on desktop and 15.1% on mobile, 5.2% of them use Google on desktop and 6.5% on mobile, 2.8% use Fastly on desktop and 2.6% on mobile, 2.2% use Amazon Cloudfront on desktop and 1.8% on mobile, 1.1% use Akamai on desktop and 0.8% on mobile, 0.4% use Automattic on desktop and 0.7% on mobile, 0.5% use Sucuri Firewall on desktop and 0.3% on mobile, 0.4% use Sucuri Firewall on desktop and 0.3% on mobile. Netlify and Vercel are both used on 0.2% of the page tested on mobile and desktop. Lastly, we see CDN, Highwinds, Microsoft Azure and OVH CDN being used on 0.1% of the pages, both on desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=508019478&format=interactive",
   sheets_gid="1415782903",
   sql_file="cdn_adoption.sql",
@@ -571,7 +571,7 @@ However, a quarter of websites still don't implement text compression. Gzip is u
 
 #### Caching
 
-<a hreflang="en" href="https://web.dev/uses-long-cache-ttl/">Caching</a> is one of the killer features of browsers but not always easy to implement flawlessly. Caching is great for sustainability since it prevents browsers from requesting all resources everytime.
+<a hreflang="en" href="https://web.dev/uses-long-cache-ttl/">Caching</a> is one of the killer features of browsers but not always easy to implement flawlessly. Caching is great for sustainability since it prevents browsers from requesting all resources every time.
 
 {{ figure_markup(
   image="cache-control-header-usage.png",

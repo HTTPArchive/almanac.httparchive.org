@@ -431,7 +431,7 @@ Wix and Duda make the most use of WebP, at ~75% and 42% adoption respectively, w
 
 With the <a hreflang="en" href="https://caniuse.com/webp">growing support of WebP</a>, it seems all platforms have work to do to reduce the usage of the older JPEG and PNG formats without compromising on image quality.
 
-WordPress introduced support for WebP in WordPress 5.8, which was released in June of 2021. WebP support was <a hreflang="en" href="https://make.wordpress.org/core/2022/06/30/plan-for-adding-webp-multiple-mime-support-for-images/">planned to be included by default</a> in WordPress 6.1. However, this decision has been delayed. Eventually, we expect a significant increase in WebP adoption via WordPress which may be apparent inthe 2023 results.
+WordPress introduced support for WebP in WordPress 5.8, which was released in June of 2021. WebP support was <a hreflang="en" href="https://make.wordpress.org/core/2022/06/30/plan-for-adding-webp-multiple-mime-support-for-images/">planned to be included by default</a> in WordPress 6.1. However, this decision has been delayed. Eventually, we expect a significant increase in WebP adoption via WordPress which may be apparent in the 2023 results.
 
 #### JavaScript
 

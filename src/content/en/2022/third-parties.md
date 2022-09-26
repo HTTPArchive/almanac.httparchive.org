@@ -103,7 +103,7 @@ Though the exact number of third-party providers is still a subject for further 
 {{ figure_markup(
   image="third-party-domains-per-page-by-rank-and-category.png",
   caption="Median number of third-party domains per page by category and rank.",
-  description="Bar chart showing the median number of third-party domains by third-party category across various website rank categories. The data is shown for mobile pages. Only ad, unknown, and video category differs significantly depending on a rank. For the top 1,000 websites 18 third-party domains are from ad category, 21 unknown, and 5 video. For the top 10,000 websites 22 are from ad category, 16 unknown, and 4 video. For the top 100,000 websites 15 are from ad category, 12 unknown, and 8 video. For the top 1,000,000 websites 7 are from ad category, 9 unknown, and 11 video. For all websites 4 are from ad category, 8 unknown, and 11 video. Data about the rest of third-party categories shows that analicts category makes up from 3 to 5 third-party domains per page, CDN 4-5 domains, consent providers 7-8, content providers 3-5, customer success 9, marketing 2-3, social 5-6, tag manager 1-2, utility category 3-4, and other category 2.",
+  description="Bar chart showing the median number of third-party domains by third-party category across various website rank categories. The data is shown for mobile pages. Only ad, unknown, and video category differs significantly depending on a rank. For the top 1,000 websites 18 third-party domains are from ad category, 21 unknown, and 5 video. For the top 10,000 websites 22 are from ad category, 16 unknown, and 4 video. For the top 100,000 websites 15 are from ad category, 12 unknown, and 8 video. For the top 1,000,000 websites 7 are from ad category, 9 unknown, and 11 video. For all websites 4 are from ad category, 8 unknown, and 11 video. Data about the rest of third-party categories shows that analytics category makes up from 3 to 5 third-party domains per page, CDN 4-5 domains, consent providers 7-8, content providers 3-5, customer success 9, marketing 2-3, social 5-6, tag manager 1-2, utility category 3-4, and other category 2.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=419972852&format=interactive",
   sheets_gid="163918555",
   sql_file="number_of_third_parties_by_rank_and_category.sql"
@@ -137,7 +137,7 @@ Third-party requests account for 45% of all requests made by websites, and of th
 
 ## Performance impact
 
-Some third parties might inevitably block page rendering and negatively affect the webpage loading experience. Lighthouse has a <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/render-blocking-resources.js">render-blocking resources audit</a>, that provides data about render-blocking time.
+Some third parties might inevitably block page rendering and negatively affect the web page loading experience. Lighthouse has a <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/blob/master/core/audits/byte-efficiency/render-blocking-resources.js">render-blocking resources audit</a>, that provides data about render-blocking time.
 
 {{ figure_markup(
   image="render-blocking-time-by-most-popular-third-parties.png",
@@ -261,7 +261,7 @@ Compressing files is another quick win that third-party developers can do to hav
 {{ figure_markup(
   image="content-encoding-by-content-type.png",
   caption="Content-encoding by third-party content type on mobile pages.",
-  description="Distribution chart showing percentage of thirs-party requests by content-encoding type on mobile pages. video content has no compression, 2% of other content has gzip compression, font content has 2% gzip and 1% brotli comression, image content 5% and 1%, text 4%  and 5%, plain 4% and 5%, audio 33% gzip, html 25% and 14%, xml 30% and 19%, script 60% and 29%, and css 69% and 27%",
+  description="Distribution chart showing percentage of thirs-party requests by content-encoding type on mobile pages. video content has no compression, 2% of other content has gzip compression, font content has 2% gzip and 1% brotli compression, image content 5% and 1%, text 4%  and 5%, plain 4% and 5%, audio 33% gzip, html 25% and 14%, xml 30% and 19%, script 60% and 29%, and css 69% and 27%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=1766106033&format=interactive",
   sheets_gid="376393975",
   sql_file="content_encoding_by_content_type.sql"
@@ -307,7 +307,7 @@ Using `async` and `defer` is another technique that could be used by website dev
 {{ figure_markup(
   image="async-and-defer-for-third-party-scripts.png",
   caption="Percentage of all third-party script requests by `async` and `defer` attributes.",
-  description="Bar chart showing 62% of third-party scripts having `async` atribute and 7% `defer` attribute on mobile pages. Data for destop pages is very similar.",
+  description="Bar chart showing 62% of third-party scripts having `async` attribute and 7% `defer` attribute on mobile pages. Data for desktop pages is very similar.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefmoEZjMhonz5fkMTxGIywJn-T7F8vYGAaj9wF9n5l8gApihCf3WCMZtrP3Syg-9E8RD8IKZg62U7/pubchart?oid=1722277284&format=interactive",
   sheets_gid="1590023791",
   sql_file="scripts_using_async_defer.sql"
@@ -345,7 +345,7 @@ In general, third parties account for 59% of Lighthouse legacy JavaScript audit 
   )
 }}
 
-Facebook is a third-party with legacy JavaScript that affects the most pages. It introduces legacy code to around 20% of the total number of webpages on mobile and desktop devices correspondingly when looking at both `facebook.net` and `fbcdn.net` from the above graph. Nowadays, when old browsers like Internet Explorer may no longer need to be supported, the necessity to keep legacy JavaScript becomes lower. Despite this fact, the trends of using Facebook resources that have legacy JavaScript in the past 3 years reveal that the numbers actually increased—from around 14% in 2020 to 18% in 2022 for `facebook.net` alone. This is due to the increasing number of websites that embed this third party.
+Facebook is a third-party with legacy JavaScript that affects the most pages. It introduces legacy code to around 20% of the total number of web pages on mobile and desktop devices correspondingly when looking at both `facebook.net` and `fbcdn.net` from the above graph. Nowadays, when old browsers like Internet Explorer may no longer need to be supported, the necessity to keep legacy JavaScript becomes lower. Despite this fact, the trends of using Facebook resources that have legacy JavaScript in the past 3 years reveal that the numbers actually increased—from around 14% in 2020 to 18% in 2022 for `facebook.net` alone. This is due to the increasing number of websites that embed this third party.
 
 Serving legacy JavaScript to modern browsers results in a larger amount of redundant and slower code. We can look into this more by analyzing the size of unused JavaScript.
 

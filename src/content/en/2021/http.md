@@ -305,7 +305,7 @@ Why our analysis is currently unable to measure the exact impact of Header compr
   )
 }}
 
-The median webpage returns 34 KB worth of headers for desktop and 31 KB for mobile. At the 90th percentile this increases to 98 KB and 94 KB for desktop and mobile respectively. However, the largest instance of response header was over 5.38 MB. Many sites were discovered having over 1 MB in response headers. Typically, these large response headers are due to overweight `CSP` or `P3P` headers, suggesting the complexities or mismanagement of these headers across websites. In other extreme examples, overweight headers were due to misconfigurations or errors in the application that duplicate multiple `Set-Cookies` or `Cache-Control` settings.
+The median web page returns 34 KB worth of headers for desktop and 31 KB for mobile. At the 90th percentile this increases to 98 KB and 94 KB for desktop and mobile respectively. However, the largest instance of response header was over 5.38 MB. Many sites were discovered having over 1 MB in response headers. Typically, these large response headers are due to overweight `CSP` or `P3P` headers, suggesting the complexities or mismanagement of these headers across websites. In other extreme examples, overweight headers were due to misconfigurations or errors in the application that duplicate multiple `Set-Cookies` or `Cache-Control` settings.
 
 ### Prioritization
 

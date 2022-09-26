@@ -507,7 +507,7 @@ The web is built on links. On the mobile web, [Unique Resource Identifier](https
 
 The most prevalent URI schemes were `https:`, found on 93.2% of sites, and its non-secure equivalent, `http:`, appearing on 56.7%. The high use of non-secure link protocols is noteworthy as 2020 saw major announcements from browsers to protect users' safety by alerting them when content is not secure.
 
-After webpage links, the next five most used protocols in anchor href values on the mobile web are as follows:
+After web page links, the next five most used protocols in anchor href values on the mobile web are as follows:
 
 {{ figure_markup(
     image="mobile-web-popular-link-protocols.png",

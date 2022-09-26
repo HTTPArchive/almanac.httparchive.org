@@ -584,7 +584,7 @@ As seen in 2021, the vast majority of custom properties had a depth of zero, mea
 {{ figure_markup(
     image="color-formats.png",
     caption="The most popular color formats by percent of occurrences.",
-    description="Bar chart showing the color formats used on the most pages. the six-digit #RRGGBB syntax is used on 49% of pages, three-digit #RGB on 25% of pages, the rgba function on 14% of pages, the transparent keyword on 8% of pages, a named color on 2%, the rgb functino on 1%, and the rest of the formats were used on less than 1% of pages, including: eight-digit #RRGGBBAA, hsla function, currentColor keyword, four-digit #RGBA, system color keywords, hsl function, color function, hwb function, lch function, and finally the lab function, in descending order of popularity.",
+    description="Bar chart showing the color formats used on the most pages. the six-digit #RRGGBB syntax is used on 49% of pages, three-digit #RGB on 25% of pages, the rgba function on 14% of pages, the transparent keyword on 8% of pages, a named color on 2%, the rgb function on 1%, and the rest of the formats were used on less than 1% of pages, including: eight-digit #RRGGBBAA, hsla function, currentColor keyword, four-digit #RGBA, system color keywords, hsl function, color function, hwb function, lch function, and finally the lab function, in descending order of popularity.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=523191620&format=interactive",
     height="652",
     sheets_gid="750894349",
@@ -784,7 +784,7 @@ Around 22% of pages use `border-box` on checkboxes and radio buttons. We see a l
 {{ figure_markup(
     image="box-sizing.png",
     caption="Distribution of the number of `border-box` declarations per page.",
-    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of the number of box-sizing: border-box delcarations per page. The values in order are: 1, 7, 22, 52, and 101 declarations per page.",
+    description="Bar chart showing the 10, 25, 50, 75, and 90th percentiles of the number of box-sizing: border-box declarations per page. The values in order are: 1, 7, 22, 52, and 101 declarations per page.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1043112167&format=interactive",
     sheets_gid="859735058",
     sql_file="box_sizing.sql"
@@ -907,9 +907,9 @@ There has been little change in the distribution of timing functions used during
   )
 }}
 
-To understand what developers are using animations for, we took a look at the names used for the animation classes. For example, anything with `spin` in the classname is deemed to be rotate. Rotate animations were the most popular, as in 2021. However the percentage has dropped from 18% to 13%, with bounce animations moving from 5th place to 3rd place in the list.
+To understand what developers are using animations for, we took a look at the names used for the animation classes. For example, anything with `spin` in the class name is deemed to be rotate. Rotate animations were the most popular, as in 2021. However the percentage has dropped from 18% to 13%, with bounce animations moving from 5th place to 3rd place in the list.
 
-As last year, the high showing for unknown/other is due to a prevalence of the classname `a`, which we can't map to a specific animation type.
+As last year, the high showing for unknown/other is due to a prevalence of the class name `a`, which we can't map to a specific animation type.
 
 ## Visual Effects
 
@@ -942,7 +942,7 @@ Around 18% of pages were using a custom property `var(--overlay-mix-blend-mode)`
 {{ figure_markup(
     image="filter-functions.png",
     caption="Most popular filter functions used on pages that set filters.",
-    description="Bar chart showing the functions used on the most pages that set filters. The alpha function is used 82% of the time, followed by no filtter (none) 59%, progid:DXImageTransform.Microsoft.gradient 46%, blur 31%, drop-shadow and grayscale 22%, brightness 20%, progid:DXImageTransform.Microsoft.BasicImage and inherit 10%, url, sepia, contrast, and none !important all 8%.",
+    description="Bar chart showing the functions used on the most pages that set filters. The alpha function is used 82% of the time, followed by no filter (none) 59%, progid:DXImageTransform.Microsoft.gradient 46%, blur 31%, drop-shadow and grayscale 22%, brightness 20%, progid:DXImageTransform.Microsoft.BasicImage and inherit 10%, url, sepia, contrast, and none !important all 8%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1568163707&format=interactive",
     height="591",
     sheets_gid="1004790461",
