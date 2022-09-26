@@ -11,7 +11,7 @@ ColinEberhardt_bio: Colin is CTO at <a hreflang="en" href="https://www.scottlogi
 results: https://docs.google.com/spreadsheets/d/11jyABro0fKtuN6INnYP9pJlv5QWwp0jfJyTsGfKgScg/
 featured_quote: Despite being a niche technology, WebAssembly is already adding value to the web. There are a number of web applications that benefit greatly from this technology.
 featured_stat_1: 383
-featured_stat_label_1: Unique WebAssembly binarys discovered
+featured_stat_label_1: Unique WebAssembly binaries discovered
 featured_stat_2: 34.9%
 featured_stat_label_2: Mobile sites using Amazon IVS
 featured_stat_3: 72.8%
