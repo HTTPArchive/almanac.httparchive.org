@@ -11,7 +11,7 @@ results: https://docs.google.com/spreadsheets/d/1PbzjhN%2D%2DjU9MGuWobw5L9EsmlVz
 diekus_bio: Diego Gonzalez is a computer engineer from Costa Rica working as the PM for PWA platform features for the Microsoft Edge browser.
 featured_quote: The increasing features that allow integration of installable web applications with desktop platforms has driven adoption of the PWAs by big names in the industry.
 featured_stat_1: 95%
-featured_stat_label_1: Manifest files that are JSON parseable on desktop
+featured_stat_label_1: Manifest files that are JSON parsable on desktop
 featured_stat_2: 63%
 featured_stat_label_2: Usage of the install event from the service worker on desktop PWAs
 featured_stat_3: 60%
@@ -180,7 +180,7 @@ The _Web App Manifest_ file is a JSON file that contains information about the a
 Keeping the web app's manifest fully authored is essential to take advantage of advanced discoverability through online repositories, submissions to application stores, and more recently, a way to tap into advanced capabilities like share target and file handling for your app. Cutting edge work to <a hreflang="en" href="https://github.com/aarongustafson/pwa-widgets#how-widgets-are-represented-in-these-apis">enable Widgets based on PWA technology</a> is also being rooted in the manifest, proving the versatility of the file itself for advanced platform integration even further.
 
 {{ figure_markup(
-  caption="Percent of manifest files parseable on desktop.",
+  caption="Percent of manifest files parsable on desktop.",
   content="95%",
   classes="big-number",
   sheets_gid="717325565",
@@ -188,7 +188,7 @@ Keeping the web app's manifest fully authored is essential to take advantage of 
 )
 }}
 
-For most cases—95% in desktop and 94% in mobile—the manifests we found are JSON parseable. This indicates that almost all web apps that use the manifest are correctly formed.
+For most cases—95% in desktop and 94% in mobile—the manifests we found are JSON parsable. This indicates that almost all web apps that use the manifest are correctly formed.
 
 This does not indicate completeness or minimum availability of certain fields that would contribute to the installation of the web app. As a matter of fact, there is currently no required properties for the Manifest file. Am empty file technically is a valid Manifest file.
 
@@ -378,7 +378,7 @@ From the growing list of features that have been added to the web platform, thes
   </figcaption>
 </figure>
 
-We won't delive into these much more as we have a separate [Capabilities](./capabilities) chapter that covers them.
+We won't delve into these much more as we have a separate [Capabilities](./capabilities) chapter that covers them.
 
 ## PWA insights from Lighthouse
 
@@ -443,7 +443,7 @@ To conclude the Lighthouse insights section, we take a look at the overall Light
 
 As expected, PWA sites tend to have considerably higher PWA audit scores. These audits look into speed, reliability, installability and other PWA requirements, as detailed in their <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/pwa/">documentation</a>.
 
-What's also notable is the range of audit scores in PWA sites (50-100) representing the difference in PWAs out there. In contrast the rest of the web has a fairly consistent ranfge of scores (20-40) reflecting the two main audits relevant for most sites discussed previously-viewport and icons.
+What's also notable is the range of audit scores in PWA sites (50-100) representing the difference in PWAs out there. In contrast the rest of the web has a fairly consistent range of scores (20-40) reflecting the two main audits relevant for most sites discussed previously-viewport and icons.
 
 ## Service worker libraries
 
@@ -481,7 +481,7 @@ Workbox is structured in a way that developers can choose which parts to add to 
   )
 }}
 
-Here we also see an overall increase in usage, `workbox-core`. The base library saw an increase of 14% in usage. `workbox-core`, together with `workbox-routing` and `workbox-strategies`, is used to create a caching strategy that works to serve different artifacts in their webapp to improve performance. It makes sense they are all at the top as they enable a core benefit of service workers.
+Here we also see an overall increase in usage, `workbox-core`. The base library saw an increase of 14% in usage. `workbox-core`, together with `workbox-routing` and `workbox-strategies`, is used to create a caching strategy that works to serve different artifacts in their web app to improve performance. It makes sense they are all at the top as they enable a core benefit of service workers.
 
 There is also a considerable jump in usage on `workbox-precaching`. Pre-caching can be used to emulate the model that packaged apps use. With `workbox-precaching`, you can choose assets that will be cached at the time of service worker installation to make those assets load faster in subsequents visits.
 
@@ -502,7 +502,7 @@ It bears repeating that for a notification to be useful it has to be <a hreflang
 {{ figure_markup(
   image="notification-acceptance.png",
   caption="Notification acceptance rates.",
-  description="Stacked bar charter showing that on desktop 6% of notications are accepted, 7% are denied, 70% are ignored, and 17% are dimissed. On mobile 19% of notification are accepted 35% are denied, 34% are ignored, and 13% are dimissed. On mobile there is a much higher rate of accepting or denying and a much smaller rate of ignoring.",
+  description="Stacked bar charter showing that on desktop 6% of notifications are accepted, 7% are denied, 70% are ignored, and 17% are dismissed. On mobile 19% of notification are accepted 35% are denied, 34% are ignored, and 13% are dismissed. On mobile there is a much higher rate of accepting or denying and a much smaller rate of ignoring.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=148157045&format=interactive",
   sheets_gid="435156894",
   sql_file="pwa_notification_acceptance_rates.sql"

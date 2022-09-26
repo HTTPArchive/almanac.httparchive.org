@@ -122,6 +122,7 @@ codebases
 codec
 codecs
 codelabs
+codename
 colinbendell
 colorfonts
 colorspace
@@ -191,6 +192,8 @@ detectible
 devicemotion
 deviceproximity
 devtools
+diek
+diekus
 digicert
 discoverability
 discoverable
@@ -255,6 +258,8 @@ fullscreen
 fullstacktraining
 fvideos
 gamepad
+gamepadconnected
+gamepads
 gammut
 gainsboro
 geekonaut
@@ -331,6 +336,7 @@ inlined
 inln
 instagram
 installability
+installable
 interactable
 interoperability
 interoperable
@@ -433,6 +439,7 @@ mempf
 metadata
 metaverse
 meyerweb
+michaelsolati
 microbrowser
 microbrowsers
 microcontrollers
@@ -509,6 +516,7 @@ oriendation
 outlier
 outpacing
 outsized
+overreport
 pagead
 palt
 papayawhip
@@ -782,6 +790,8 @@ uncacheable
 uncategorized
 uncompressing
 uncrawlable
+undercounting
+underreport
 underserved
 underuse
 unfurlers
