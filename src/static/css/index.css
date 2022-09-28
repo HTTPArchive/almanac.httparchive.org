@@ -517,7 +517,9 @@ p {
   header .container,
   footer .container {
     padding-left: 20px;
+    padding-left: min(20px, 5vw);
     padding-right: 20px;
+    padding-right: min(20px, 5vw);
   }
 
   #maincontent {
