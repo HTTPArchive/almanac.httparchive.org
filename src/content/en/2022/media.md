@@ -133,7 +133,7 @@ What sorts of aspect ratios are common on the web?
 )
 }}
 
-[Much like last year](../2021/media#aspect-ratios), most images are landscape-oriented, and there is virtually no difference between the mobile and desktop numbers. Similar to 2021, this feels like a huge missed opportunity. As many-an-Instagrammer knows, portrait-oriented images <a hreflang="en" href="https://uxdesign.cc/the-powerful-interaction-design-of-instagram-stories-47cdeb30e5b6">render larger on mobile screens</a> at full-width than either square or landscape-oriented images do, and <a hreflang="en" href="https://www.dashhudson.com/blog/best-picture-format-instagram-dimension">drive higher engagement</a>. Even when the source material is landscape-oriented, we can and should try to tailor images for mobile screens, using <a hreflang="en" href="https://web.dev/codelab-art-direction/">art direction</a>.
+[Much like last year](../2021/media#aspect-ratios), most images are landscape-oriented, and there is virtually no difference between the mobile and desktop numbers. Similar to 2021, this feels like a huge missed opportunity. As many-an-Instagrammer knows, portrait-oriented images <a hreflang="en" href="https://uxdesign.cc/the-powerful-interaction-design-of-instagram-stories-47cdeb30e5b6">render larger on mobile screens</a> at full-width than either square or landscape-oriented images do, and <a hreflang="en" href="https://www.dashhudson.com/blog/best-picture-format-instagram-dimensions">drive higher engagement</a>. Even when the source material is landscape-oriented, we can and should try to tailor images for mobile screens, using <a hreflang="en" href="https://web.dev/codelab-art-direction/">art direction</a>.
 
 <figure>
   <table>
