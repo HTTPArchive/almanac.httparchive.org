@@ -93,7 +93,7 @@ It's a little early to see widespread usage of this new method of managing the c
 {{ figure_markup(
     image="top-selector-classes.png",
     caption="The most popular class names by the percent of pages.",
-    description="Bar graph showing the CSS class names used on the most pages. Mobile and desktop have similar results. On mobile the top class name is active at 47% of pages. Next is fa on 33% of pages, other classes prefixed with fa on 32%, and classes prefixed with wp on 31%. The rest of the top 10 classes in descending order are: button with 27% adoption, pull-right, emoji, and disabled at 26%, and finally pull-left and title at 25%.",
+    description="Bar graph showing the CSS class names used on the most pages. Mobile and desktop have similar results. On mobile the top class name is `active` at 47% of pages. Next is `fa` on 33% of pages, other classes prefixed with `fa` on 32%, and classes prefixed with `wp` on 31%. The rest of the top 10 classes in descending order are: `button` with 27% `adoption`, `pull-right`, `emoji`, and `disabled` at 26%, and finally `pull-left` and `title` at 25%.",
     chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPMUe75uC8laUvzfECAPpT9fPoTdZA6FYDULorsUzKVmLmagphzh1UoXRcmyd6a3gxqr6dxIhmJyv5/pubchart?oid=1082092053&format=interactive",
     height="691",
     sheets_gid="1020483137",
@@ -101,7 +101,7 @@ It's a little early to see widespread usage of this new method of managing the c
   )
 }}
 
-As in 2020 and 2021 the most popular class name on the web is active. The `fa`, `fa-*` prefixes for Font Awesome still coming second and third. However, `wp-*` class names have crept up the rankings, moving to fourth place. They now show up on 31% of pages, having been at 20% in 2021. We also see class names such as `has-large-font-size` appearing, these are used in the new WordPress Block Editor.
+As in 2020 and 2021 the most popular class name on the web is `active`. The `fa`, `fa-*` prefixes for Font Awesome still coming second and third. However, `wp-*` class names have crept up the rankings, moving to fourth place. They now show up on 31% of pages, having been at 20% in 2021. We also see class names such as `has-large-font-size` appearing, these are used in the new WordPress Block Editor.
 
 `clearfix` has disappeared from the top 20, it is now found on only 10% of pages, a very clear indication that float-based layouts are vanishing from the web.
 
