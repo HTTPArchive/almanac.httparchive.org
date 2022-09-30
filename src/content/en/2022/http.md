@@ -235,7 +235,7 @@ We analyze HTTP/3 adoption by identifying a resource that was served on HTTP/3 o
 {{ figure_markup(
   image="h3-support-per-request.png",
   caption="HTTP/3 support on requests.",
-  description="Column chart showing the support of HTTP/3 push on desktop and mobile in July 2021 and June 2022. For both this has increased from 10% to 15%.",
+  description="Column chart showing the support of HTTP/3 on desktop and mobile in July 2021 and June 2022. For both this has increased from 10% to 15%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTsnJP1ulTTc-j9n7CIbGHxO1SaFvmZWMPQnJHrluku254CqKXz_D2fn2Ck54FC-m9135eCFg83NHOc/pubchart?oid=971486939&format=interactive",
   sheets_gid="1456324569",
   sql_file="h3_support.sql"
