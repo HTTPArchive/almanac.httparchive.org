@@ -44,7 +44,7 @@ Web 应用的添加到主屏幕的场景已经演变为，可以完全在移动�
 
 - Lighthouse 检测到所有网站中有 1.6%（移动）和 1.7%（桌面）使用了 Service Worker。由于 Lighthouse 进行了<a hreflang="en" href="https://web.dev/service-worker">额外检查</a>，我们预计这些数字低于实际百分比。
 - 遵循去年推出的相同<a hreflang="en" href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/pwa.js">指标</a>， 网站中 Service Worker 的使用率在桌面端和移动端分别达到 1.63% 和 1.81%。
-  
+
 {{ figure_markup(
   image="sw-controlled-pages-rank.png",
   caption="支持 Service Worker 的网站（按排名）",
@@ -127,7 +127,6 @@ Service Worker 需要处于活动状态才能接收诸如 fetch 和 push 之类�
 }}
 
 图表中剩余的事件为后台处理事件：
-
 - `fetch`：当请求发送到服务器时发生，可拦截请求并使用自定义或缓存资产进行响应，从而为 PWA 提供离线支持。桌面端的 fetch 使用率为 49%，移动端为 50%。
 - `sync`：当 UA 认为用户有连接时触发，桌面端的使用率为 6%，移动端的使用率为 5%。
 - `periodicsync`：允许 Web 应用在后台定期同步数据，目前在桌面和移动平台都是 0.01%。应该注意的是，`periodicsync` 被限制为最多每 12 小时一次。这可以人为地抑制该功能的使用。
@@ -176,7 +175,7 @@ Service Worker 需要处于活动状态才能接收诸如 fetch 和 push 之类�
 
 ## Web 应用程序清单（Web App Manifest）
 
- _Web 应用程序清单（Web App Manifest）_ 是一个 JSON 文件，其中包含应用程序本身的信息。Manifest 文件是定义 PWA 的另一项主要核心技术。键值对中的数据包括与显示、推广和将应用集成到操作系统相关的信息。
+_Web 应用程序清单（Web App Manifest）_ 是一个 JSON 文件，其中包含应用程序本身的信息。Manifest 文件是定义 PWA 的另一项主要核心技术。键值对中的数据包括与显示、推广和将应用集成到操作系统相关的信息。
 
 Web 应用程序 manifest 对于通过在线存储库、提交到应用商店、利用最新的高级功能（如应用的共享目标和文件处理）至关重要。<a hreflang="en" href="https://github.com/aarongustafson/pwa-widgets#how-widgets-are-represented-in-these-apis">启用基于 PWA 技术的 Widgets</a> 也植根于 manifest 中，证明了 manifest 的多功能性，并进一步用于高级平台集成。
 
@@ -218,7 +217,7 @@ Manifest 文件在向浏览器发出安装提示方面起着关键作用，尽�
 {{ figure_markup(
   image="top-pwa-manifest-props.png",
   caption="常用 PWA manifest 成员",
-  description="柱状图显示：87% 的桌面 PWA 网站和 88% 的移动 PWA 网站使用了`name`，`display` 分别为 83% 和 85%，`icons` 为 81% 和 83%，`short_name` 为 78% 和 81 %，`start_url` 为 77% 和 81%，`background_color` 为 78% 和 80%，`theme_color` 为 73% 和 76%，`description` 为 38% 和 37%，`lang` 为 24% 和 24%，最后 ` gcm_sender_id` 则是 23% 和 21%。",
+  description="柱状图显示：87% 的桌面 PWA 网站和 88% 的移动 PWA 网站使用了`name`，`display` 分别为 83% 和 85%，`icons` 为 81% 和 83%，`short_name` 为 78% 和 81 %，`start_url` 为 77% 和 81%，`background_color` 为 78% 和 80%，`theme_color` 为 73% 和 76%，`description` 为 38% 和 37%，`lang` 为 24% 和 24%，最后 `gcm_sender_id` 则是 23% 和 21%。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=314127541&format=interactive",
   sheets_gid="400343770",
   sql_file="top_manifest_properties.sql"
@@ -238,7 +237,7 @@ Manifest 文件在向浏览器发出安装提示方面起着关键作用，尽�
 {{ figure_markup(
   image="display-values.png",
   caption="PWA manifest display 值",
-  description="柱状图显示：`standalone` 是最常用的 `display` 值，桌面端占比 71%，移动端占比 73%，`minimal-ui` 分别占 8% 和 7%，`fullscreen` 占比为 3% 和 4%，` browser` 为 1% 和 1% ，而 17% 的桌面和 15% 的移动 PWA 网站没有设置该成员。",
+  description="柱状图显示：`standalone` 是最常用的 `display` 值，桌面端占比 71%，移动端占比 73%，`minimal-ui` 分别占 8% 和 7%，`fullscreen` 占比为 3% 和 4%，`browser` 为 1% 和 1%，而 17% 的桌面和 15% 的移动 PWA 网站没有设置该成员。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=463813741&format=interactive",
   sheets_gid="264101844",
   sql_file="top_manifest_display_values.sql"
@@ -412,7 +411,7 @@ Web 平台的新能力越来越多，这些是 Web 中可用于 PWA 的使用最
 
 我们看到 Lighthouse 关于移动网站一些类似的统计数据，仅用于移动端的 <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/pwa/content-width/">content-width</a> 元标签都通过了。
 
- Viewport 元标签的存在很重要，因为它在以重新缩放的方式等待双击时移除了 300-350ms 的延迟。在移动设备上，它还具有为屏幕尺寸优化应用的额外好处 。几乎所有 PWA 的网站都包含这个标签毫不奇怪。
+Viewport 元标签的存在很重要，因为它在以重新缩放的方式等待双击时移除了 300-350ms 的延迟。在移动设备上，它还具有为屏幕尺寸优化应用的额外好处 。几乎所有 PWA 的网站都包含这个标签毫不奇怪。
 
 可安装 manifest 也在两个列表中位列前 3。 不出所料，这对 PWA 站点很有价值，无论是在桌面端（90.2％）还是移动设备（95.2％）。但对所有网站来说该数据却非常低，可能是因为开发人员不打算安装这些网站。
 
@@ -486,7 +485,7 @@ Workbox 可以使开发人员根据站点的需要选择将哪些部分添加到
 
 `workbox-precaching` 的使用也有相当大的跳跃。预缓存可用于模拟打包应用的使用。使用 `workbox-precaching`，您可以在 Service Worker 安装时选择将要缓存的资产，以使这些资产在后续访问中加载得更快。
 
- 令人惊讶的是 `workbox-sw` 使用率的上升，因为从 <a hreflang="en" href="https://github.com/GoogleChrome/workbox/releases/tag/v5.0.0">Workbox 5</a> 开始，Workbox 团队鼓励开发人员创建 Workbox 运行时的自定义包，而不是使用 `importScripts()` 来加载 <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-sw">`workbox-sw`</a>（运行时）。Workbox 团队将继续支持 _workbox-sw_，但现在推荐使用新技术。 事实上，构建工具的默认设置已切换为推荐的方法。
+令人惊讶的是 `workbox-sw` 使用率的上升，因为从 <a hreflang="en" href="https://github.com/GoogleChrome/workbox/releases/tag/v5.0.0">Workbox 5</a> 开始，Workbox 团队鼓励开发人员创建 Workbox 运行时的自定义包，而不是使用 `importScripts()` 来加载 <a hreflang="en" href="https://developers.google.com/web/tools/workbox/modules/workbox-sw">`workbox-sw`</a>（运行时）。Workbox 团队将继续支持 _workbox-sw_，但现在推荐使用新技术。 事实上，构建工具的默认设置已切换为推荐的方法。
 
 这个数字的增加有可能是因为使用了旧版本 Workbox 库，例如 <a hreflang="en" href="https://github.com/facebook/create-react-app/blob/v3.4.4/packages/react-scripts/package.json#L82">`create-react-app` 版本 3</a>
 
