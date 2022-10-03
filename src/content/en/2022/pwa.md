@@ -38,7 +38,7 @@ While there isn't parity between major browsers when it comes to service worker 
 
 ### Service worker usage
 
-For comparison reasons, we have run the same queries as last year, which allows us to try to make sense of the evolution of service worker usage. Last year's chapter gave the explanation of [why it isn't trivial to find out actual usage of service worker](./2021/pwa#service-workers-usage), and that is just as true this year.
+For comparison reasons, we have run the same queries as last year, which allows us to try to make sense of the evolution of service worker usage. Last year's chapter gave the explanation of [why it isn't trivial to find out actual usage of service worker](../2021/pwa#service-workers-usage), and that is just as true this year.
 
 Looking at two of the measures:
 
