@@ -563,7 +563,7 @@ Implementing Structured Data has come into increased focus as rich results on th
 
 {{ figure_markup(
   image="raw-vs-rendered-structured-data.png",
-  caption="Rw versus rendered canonical.",
+  caption="Raw versus rendered canonical.",
   description="A column chart showing canonical status changes based on raw versus rendered. HTTP canonical is used on 1.1% of desktop pages, Raw canonical on 55.9%, Rendered canonical on 56.5%, Rendered not raw canonical on 0.7%, Canonical mismatch on 0.3%, Rendering changed canonical on 0.9%. Mobile is very similar with 0.9%, 57.5%, 58.4%, 0.9%, 0.3%, 1.2% respectively.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZxId5PPpTHp4835BI-rt4HqZVrhn1UiF0xcOrVUytVs6j262ZqFrY5e1FXZibAGDY6gWnZ0uG3WZC/pubchart?oid=2108798426&format=interactive",
   sheets_gid="1564568239",

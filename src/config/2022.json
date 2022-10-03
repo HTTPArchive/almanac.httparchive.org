@@ -317,6 +317,15 @@
       "linkedin": "tunetheweb",
       "twitter": "tunetheweb"
     },
+    "ibelem": {
+      "name": "Belem Zhang",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "5017359",
+      "github": "ibelem",
+      "twitter": "ibelem"
+    },
     "binji": {
       "name": "Ben Smith",
       "teams": [
@@ -449,7 +458,7 @@
       ],
       "avatar_url": "273554",
       "github": "dknauss",
-      "website": "newlocalmedia.com"
+      "website": "https://newlocalmedia.com"
     },
     "drohe": {
       "name": "Danielle Rohe",
@@ -629,7 +638,9 @@
         "authors"
       ],
       "avatar_url": "104349412",
-      "github": "itamarblauer"
+      "github": "itamarblauer",
+      "website": "https://www.itamarblauer.com/",
+      "twitter": "ItamarBlauer"
     },
     "fellowhuman1101": {
       "name": "Jamie Indigo",
@@ -803,8 +814,7 @@
       "name": "Laurie Voss",
       "teams": [
         "analysts",
-        "authors",
-        "reviewers"
+        "authors"
       ],
       "avatar_url": "185893",
       "github": "seldo",
@@ -961,7 +971,7 @@
       ],
       "avatar_url": "5320044",
       "github": "pankajparkar",
-      "website": "https://medium.com/@pankajparkar",
+      "website": "https://pankajparkar.dev",
       "twitter": "pankajparkar"
     },
     "patrickstox": {
@@ -1054,7 +1064,7 @@
       "website": "http://pixelambacht.nl"
     },
     "whitep4nth3r": {
-      "name": "Salma",
+      "name": "Salma Alam-Naylor",
       "teams": [
         "authors"
       ],
@@ -1073,16 +1083,6 @@
       "github": "SaptakS",
       "website": "https://saptaks.website",
       "twitter": "Saptak013"
-    },
-    "ibnesayeed": {
-      "name": "Sawood Alam",
-      "teams": [
-        "authors"
-      ],
-      "avatar_url": "65147",
-      "github": "ibnesayeed",
-      "website": "http://www.cs.odu.edu/~salam/",
-      "twitter": "ibnesayeed"
     },
     "scottdavis99": {
       "name": "Scott Davis",
