@@ -22,7 +22,7 @@ featured_stat_label_3: 以某种方式使用 Workbox 的 PWA 应用
 
 在渐进式 Web 应用 PWA 的早期，有两个关键功能吸纳了现代 Web 应用的能力，离线支持和添加到主屏幕的快捷方式。
 
-这两个概念在安装 PWA 后启用，该过程通常从点击浏览器地址栏中出现的安装图标开始。该图标会提示用户安装该网站。Samsung Internet 和 Mozilla Firefox 等移动浏览器最早明确支持此行为，被熟知为<a hreflang="zh-CN" href="https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps/Add_to_home_screen">`添加到主屏幕 (A2HS)`</a>。
+这两个概念在安装 PWA 后启用，该过程通常从点击浏览器地址栏中出现的安装图标开始。该图标会提示用户安装该网站。Samsung Internet 和 Mozilla Firefox 等移动浏览器最早明确支持此行为，被熟知为[添加到主屏幕 (A2HS)](https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps/Add_to_home_screen)。
 
 五年前，这还是一个激进的想法。一个网站能够直接从主屏启动，并与设备中其他安装的应用一起列出。这是在缩小 Web 应用的功能与特定于操作系统体验之间差距的方面取得进展的开始。
 
@@ -32,9 +32,9 @@ Web 应用的添加到主屏幕的场景已经演变为，可以完全在移动�
 
 ## Service Workers
 
-<a hreflang="zh-CN" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API">Service Workers</a> 是 PWA 的核心技术之一，使离线应用、获取推送通知以及后台处理成为可能。Service Workers 是我们从应用中获得大多数高级体验的基石。Service Workers 还被用于定义数据更新和支持即将推出的新功能，例如 <a hreflang="en" href="https://github.com/aarongustafson/pwa-widgets#rich-widgets">基于 PWA 技术的 widgets</a>。
+[Service Workers](https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API) 是 PWA 的核心技术之一，使离线应用、获取推送通知以及后台处理成为可能。Service Workers 是我们从应用中获得大多数高级体验的基石。Service Workers 还被用于定义数据更新和支持即将推出的新功能，例如 <a hreflang="en" href="https://github.com/aarongustafson/pwa-widgets#rich-widgets">基于 PWA 技术的 widgets</a>。
 
-在 Service Worker 功能支持方面，虽然各主要浏览器之间并不一致，但 Webkit 添加对<a hreflang="en" href="https://caniuse.com/push-api">推送通知</a> 的支持是一个巨大的里程碑。今年早些时候，Apple 宣布<a hreflang="en" href="https://webkit.org/blog/12945/meet-web-push/">对其桌面平台进行了更改</a>，以支持 <a hreflang="zh-CN" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Push_API">Push API</a> 、<a hreflang="zh-CN" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Notifications_API">Notifications API</a> 以及 <a hreflang="zh-CN" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API">Service Workers</a> 将会启用 Web Push。Apple 还宣布该功能将于 2023 年进入他们的移动平台。
+在 Service Worker 功能支持方面，虽然各主要浏览器之间并不一致，但 Webkit 添加对<a hreflang="en" href="https://caniuse.com/push-api">推送通知</a> 的支持是一个巨大的里程碑。今年早些时候，Apple 宣布<a hreflang="en" href="https://webkit.org/blog/12945/meet-web-push/">对其桌面平台进行了更改</a>，以支持 [Push API](https://developer.mozilla.org/zh-CN/docs/Web/API/Push_API) 、[Notifications API](https://developer.mozilla.org/zh-CN/docs/Web/API/Notifications_API) 以及 [Service Workers](https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API) 将会启用 Web Push。Apple 还宣布该功能将于 2023 年进入他们的移动平台。
 
 ### Service Worker 的使用情况
 
@@ -59,7 +59,7 @@ Web 应用的添加到主屏幕的场景已经演变为，可以完全在移动�
 
 ### Service Worker 事件
 
-Service Worker 在 Web 应用、浏览器和网络之间充当代理服务器的角色。要安装 Service Worker，必须获取并注册它。注册成功后，Service Worker 将在一个<a hreflang="zh-CN" href= "https://developer.mozilla.org/zh-CN/docs/Web/API/ServiceWorkerGlobalScope">特殊 Woker 容器</a>中执行，该容器在主线程之外运行并且没有 DOM 访问权。这是可以处理事件的时机。
+Service Worker 在 Web 应用、浏览器和网络之间充当代理服务器的角色。要安装 Service Worker，必须获取并注册它。注册成功后，Service Worker 将在一个[特殊 Woker 容器](https://developer.mozilla.org/zh-CN/docs/Web/API/ServiceWorkerGlobalScope)中执行，该容器在主线程之外运行并且没有 DOM 访问权。这是可以处理事件的时机。
 
 {{ figure_markup(
   image="most-used-sw-events.png",
