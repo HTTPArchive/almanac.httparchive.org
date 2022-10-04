@@ -72,7 +72,7 @@ Flexbox is even older and more widely used. This year its use has grown again, [
 )
 }}
 
-Another bit of focus was toward `flex-basis: content`, which is used to automatically size based on the flex item's content.  This was intially implemented Firefox, but implementations in WebKit and Chromium were underway in 2021. Today these tests pass uniformly in all browsers and `flex-basis: content` appears on 112,323 pages on desktop and 75,565 mobile, roughly 1% of pages. That's not a bad start for a feature in its first year of universal support and about double what it was last year. We'll keep an eye on this metric in the future.
+Another bit of focus was toward `flex-basis: content`, which is used to automatically size based on the flex item's content.  This was initially implemented in Firefox, but implementations in WebKit and Chromium were underway in 2021. Today these tests pass uniformly in all browsers and `flex-basis: content` appears on 112,323 pages on desktop and 75,565 mobile, roughly 1% of pages. That's not a bad start for a feature in its first year of universal support and about double what it was last year. We'll keep an eye on this metric in the future.
 
 ### Sticky positioning
 
