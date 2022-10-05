@@ -437,7 +437,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkT-CF5-NB7Oatd6XZq_
 
 ### Timing-Allow-Originヘッダーの普及率
 
-昨年は、<a href="https://developer.mozilla.org/ja/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API">Resource Timing API</a> をサードパーティのリクエストで使用できるようにする [`timing-allow-origin` header の普及](./third-parties#timing-allow-origin-prevalence) について調べました。このHTTPヘッダーがない場合、サードパーティからのリクエストに対してオンページ・パフォーマンス・モニタリング・ツールが利用できる情報は、セキュリティとプライバシー上の理由から制限されます。しかし、静的なリクエストについては、このヘッダーを許可するサードパーティは、そのリソースの読み込み性能についてより高い透明性を実現します。
+昨年は、<a href="https://developer.mozilla.org/ja/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API">Resource Timing API</a> をサードパーティのリクエストで使用できるようにする [`timing-allow-origin` header の普及](../2020/third-parties#timing-allow-origin-prevalence) について調べました。このHTTPヘッダーがない場合、サードパーティからのリクエストに対してオンページ・パフォーマンス・モニタリング・ツールが利用できる情報は、セキュリティとプライバシー上の理由から制限されます。しかし、静的なリクエストについては、このヘッダーを許可するサードパーティは、そのリソースの読み込み性能についてより高い透明性を実現します。
 
 {{ figure_markup(
   image="third-parties-timing-allow-origin-header-usage.png",
