@@ -127,7 +127,7 @@ At the 90th percentile, desktop pages were over 9 MB and mobile pages over 8 MB.
   sql_file=""
 ) }}
 
-The carbon emissions for websites are very close on mobile and desktop. They seem quite low on the 10th percentile (around 0.15 g eqCO2, which would be equivalent to <a hreflang="fr" href="https://datagir.ademe.fr/apps/mon-impact-transport/">a little less than 1km with a thermal car</a>). They reach as much as 2.76 g eqCO2 on the 90th percentile (a little more than 14km with a thermal car).
+The carbon emissions for websites are very close on mobile and desktop. They seem quite low on the 10th percentile (around 0.15 g eqCO2, which would be equivalent to <a hreflang="fr" href="https://datagir.ademe.fr/apps/mon-impact-transport/">a little less than 1m with a thermal car</a>). They reach as much as 2.76 g eqCO2 on the 90th percentile (a little more than 14m with a thermal car).
 
 This doesn't seem like much but you should keep in mind that each website gets thousands or even millions of visitors each month (sometimes even more) and what you see in the graph is emissions for a single page visited once. The environmental impact each month for all websites adds up.
 
