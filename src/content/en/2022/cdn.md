@@ -20,6 +20,15 @@ featured_stat_label_3: Domains using Brotli on CDN
 
 ## Introduction
 
+This chapter provides the insights regarding the current state of CDN usage. CDNs are increasingly playing important roles even for the smaller sites to deliver content to the user anywhere in the globe and facilitate the delivery of third party content 
+such as Javascript libraries, Fonts and other content.
+We have looked at the usage of CDNs over the past few years gaining very useful insights. This year we have expanded our dataset to include top 10 million sites to provide a much bigger picture regarding CDN usage.
+We think that CDNs will play a vital role in the future not just for content delivery but for the content security as well. 
+We recommend the users to look at CDNs from both performance and security viewpoint.
+
+
+## What is a CDN?
+
 A _Content Delivery Network_ (CDN) is a geographically distributed network of proxy servers in data-centers. The goal of a CDN is to provide high availability and performance for web content. It does this by distributing content closer to the end users.
 
 CDNs have been in existence for over two decades. With the exponential rise in internet traffic contributed by online video consumption, online shopping, and increased video conferencing due to COVID-19, CDNs are required more than ever before. They ensure high availability and good web performance despite this growth in internet traffic.
