@@ -437,7 +437,7 @@ Hopefully highlighting some of these well-known examples will cause readers to i
 
 ### Timing-Allow-Origin header prevalence
 
-Last year we looked at the [prevalence of the `timing-allow-origin` header](./third-parties#timing-allow-origin-prevalence), which allows the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API">Resource Timing API</a> to be used on third-party requests. Without this HTTP header, the information available to on-page performance monitoring tools for third-party requests is restricted for security and privacy reasons. However, for static requests, third parties that allow this header enable greater transparency into the loading performance of their resources.
+Last year we looked at the [prevalence of the `timing-allow-origin` header](../2020/third-parties#timing-allow-origin-prevalence), which allows the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API/Using_the_Resource_Timing_API">Resource Timing API</a> to be used on third-party requests. Without this HTTP header, the information available to on-page performance monitoring tools for third-party requests is restricted for security and privacy reasons. However, for static requests, third parties that allow this header enable greater transparency into the loading performance of their resources.
 
 {{ figure_markup(
   image="third-parties-timing-allow-origin-header-usage.png",
