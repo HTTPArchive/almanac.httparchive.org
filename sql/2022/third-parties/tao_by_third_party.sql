@@ -72,7 +72,7 @@ headers AS (
 base AS (
   SELECT
     client,
-    IF(base AS (
+    IF(
       page_origin = req_origin OR
       timing_allow_origin = '*' OR
       timing_allow_origin LIKE '*,%' OR
