@@ -7,15 +7,15 @@ analysts: [max-ostapenko, ydimova]
 editors: [DesignrKnight]
 translators: []
 tomvangoethem_bio: Tom Van Goethem recently joined the Chrome Privacy team at Google. Before, Tom was in PhD program with the DistriNet group of the University of Leuven, Belgium. His research interests cover a broad spectrum of topics in the field of web security and privacy, with a primary focus on side-channel attacks. By uncovering threats and proposing mitigations, Tom aims to make the web a nicer place, a tiny bit at a time.
-nrllh_bio: Nurullah Demir is a cyber security researcher and PhD Student at <a hreflang="en" href="https://www.internet-sicherheit.de/en/">Institute for Internet Security</a> and <a hreflang="en" href="https://intellisec.de">Intelligent System Security, KASTEL Security Research Labs</a>. His research focuses on web security & privacy, and web measurements.
+nrllh_bio: Nurullah Demir is a cyber security researcher and PhD student at <a hreflang="en" href="https://www.internet-sicherheit.de/en/">Institute for Internet Security</a> and <a hreflang="en" href="https://intellisec.de">Intelligent System Security, KASTEL Security Research Labs</a>. His research focuses on web security & privacy, and web measurements.
 results: https://docs.google.com/spreadsheets/d/1iJqj3g0VEjpmjzvtX6VLeRehE7LDQGcw6lOadxGxkjk/
 featured_quote: While it may still take a couple of years to finally get there, we are transitioning towards a web that gives users more control over what they want to share with which parties. We can see this convergence on both sides of the spectrum. On the one hand, initiated by the website, and on the other hand, enforced by the browser.
 featured_stat_1: 82%
 featured_stat_label_1: Sites that include at least one third-party tracker.
 featured_stat_2: 11%
-featured_stat_label_2: The prevalence of CMP services, an increase of almost 60% compared to last year.
+featured_stat_label_2: The prevalence of Consent Management Platforms (CMPs), an increase of almost 60% compared to last year.
 featured_stat_3: 9.53%
-featured_stat_label_3: Sites of the top 1,000 that make use of User-Agent Client Hints, a 3x increase over last year.
+featured_stat_label_3: Sites of the top 1,000 that make use of User-Agent Client Hints, a 3x increase over last year, indicating an interest in this privacy-focused feature.
 unedited: true
 ---
 
@@ -23,7 +23,7 @@ unedited: true
 
 Whether it is to keep up-to-date with the latest news, stay in touch with friends via online social media, or look for a nice dress or sweater to buy, many of us rely on the web to provide us with these services and information with just a couple of clicks. A side-effect of <a hreflang="en" href="https://datareportal.com/reports/digital-2022-global-overview-report">spending almost 7 hours per day on the internet on average</a>, is that a lot of our browsing activities, and thus indirectly our personal interests and data, is captured or shared with a plethora of online web services and companies.
 
-As advertisers try to provide users with ads that are most relevant to them (as these are the ones they are most likely to interact with), they need to resort to third-party tracking to infer the user's interest. In essence, a user's online activities are tracked step by step, providing trackers, in particular those that are most prevalent on the web, with a heap of information, most of which is probably not even relevant to infer the user's interests. On top of that, users are generally not given an adequate choice to opt-out of this.
+As advertisers try to provide users with ads that are most relevant to them (as these are the ones they are most likely to interact with), they often resort to third-party tracking to infer the user's interest. In essence, a user's online activities are tracked step by step, providing trackers, in particular those that are most prevalent on the web, with a heap of information, most of which is probably not even relevant to infer the user's interests. On top of that, users are generally not given an adequate choice to opt-out of this.
 
 In this chapter, we explore the current state of the web in terms of privacy. We report on the ubiquitousness of third-party tracking, the different services that make up this ecosystem, and how certain parties are trying to circumvent the protective measures (e.g. blocklist-based anti-trackers) that users are employing to protect their privacy. Furthermore, we also look into how websites are trying to enhance the privacy of their visitors, either by adopting features that limit the information shared with other parties, or being compliant with privacy regulations such as <a hreflang="en" href="https://gdpr.eu/">GDPR</a> and <a hreflang="en" href="https://oag.ca.gov/privacy/ccpa">CCPA</a>.
 
@@ -42,7 +42,7 @@ Tracking is one of the most pervasive web technologies on the web—we find that
 
 ### Third-party tracking
 
-One of the most common forms of online tracking is through third-party services, where a website owner typically includes a third-party (cross-site) script that provides site analytics or shows advertisements to visitors. This script can then set a third-party cookie, and register which website the user visited. Whenever the user visits another website that includes the same third-party service, the cookie will be sent along to the tracker, allowing them to re-identify the user and link both website visits to the same profile.
+One of the most common forms of online tracking is through third-party services, where a website owner typically includes a third-party (cross-site) script that provides site analytics or shows advertisements to visitors. This script can then set a third-party cookie, and log which website the user visited. Whenever the user visits another website that includes the same third-party service, the cookie will be sent along to the tracker, allowing them to re-identify the user and link both website visits to the same profile.
 
 The types of third-party services that are included, and by doing so are implicitly given the capabilities of tracking website visitors, somewhat vary. The two most common categories (<a hreflang="en" href="https://whotracks.me/blog/tracker_categories.html">as defined by WhoTracks.me</a>) of such trackers are site analytics scripts (68% on mobile, 73% on desktop) and advertising (66% on mobile, 68% on desktop). These two are followed by a couple of other categories, some of which might not have a clear link to tracking: customer interaction (services that allow customers to easily send messages to the website owner), audio/video players (e.g. YouTube embedded videos), and social (e.g. Facebook like buttons).
 
@@ -51,6 +51,7 @@ The types of third-party services that are included, and by doing so are implici
   caption="Most common trackers.",
   description="Bar chart showing the prevalence of trackers on web pages. Google Analytics (site analytics) can be found on 65% of desktop sites and 60% of mobile sites, Google (advertising) on 51% and 49% respectively, DoubleClick (advertising) on 50% and 46%, Facebook (advertising) on 30% and 28%, Google Adservices (advertising) on 23% and 21%, Google Syndication (advertising) on 12%, WordPress Stats (site analytics) on 6% for both mobile and desktop, Twitter (Social Media) on 6% and 5%, Adobe Audience Manager (advertising) on 5% and 6%, and finally Rubicon (advertising) on 5% for both mobile and desktop sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSnqWDZQ07x6NdnIix7JOfg5DqGcoTrrpwaKavCIvNFkIANncyMxahKaTYjLka3rsrcBmrRIURpnPo/pubchart?oid=951980374&format=interactive",
+  height="524",
   sheets_gid="944492219",
   sql_file="most_common_trackers.sql"
   )
@@ -77,6 +78,7 @@ Websites might want to make use of multiple third-party services, and thus may i
   caption="Most common retargeting services.",
   description="Bar chart showing the percentage of pages including a particular retargeting service. Criteo was found on 2.04% desktop and 1.98% mobile sites respectively, Yahoo Advertising on 0.44% and 0.54%, AdRoll on 0.34% and 0.49%, OptiMonk on 0.09% and 0.11%, SharpSpring Ads on 0.08% and 0.12%. The remaining entries in the chart have a prevalence of less than 0.10%. These are Albacross, Smarter Click, Blue, SteelHouse, Cross Pixel, Linx Impulse, and Picreel.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSnqWDZQ07x6NdnIix7JOfg5DqGcoTrrpwaKavCIvNFkIANncyMxahKaTYjLka3rsrcBmrRIURpnPo/pubchart?oid=2098143733&format=interactive",
+  height="454",
   sheets_gid="96406513",
   sql_file="number_of_websites_using_each_retargeting.sql"
   )
@@ -94,6 +96,7 @@ As mentioned before, the most established way to track users across different we
   caption="Top 10 origins of cookies set by trackers.",
   description="Bar chart showing the prevalence of the different origins that set cross-site cookies. Cookies set by doubleclick.net can be found on 26.34% of desktop and 24.06% of mobile sites respectively, for facebook.com this was 18.86% for mobile and 17.48% for desktop, cookies set by youtube.com can be found on 9.65% mobile and 8.65% desktop sites, google.com on 6.40% and 5.98%, yandex.ru on 4.32% and 4.91%, linkedin.com on 4.09% and 3.19%, adsrvr.org on 4.02% and 3.77%, pubmatic.com on 4.00% and 4.88%, yahoo.com on 3.94% and 3.62%, bing.com on 3.76% and 2.81%, and finally cookies were set by rubiconproject.com on 3.73% desktop and 3.30% mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSnqWDZQ07x6NdnIix7JOfg5DqGcoTrrpwaKavCIvNFkIANncyMxahKaTYjLka3rsrcBmrRIURpnPo/pubchart?oid=852543503&format=interactive",
+  height="429",
   sheets_gid="1010563596",
   sql_file="top100_domains_that_set_cookies_via_response_header.sql"
   )
@@ -106,6 +109,7 @@ For a large part, the third-party trackers that set cookies largely coincide wit
   caption="Top 10 cookies set by trackers.",
   description="Bar chart showing the prevalence of specific cross-site cookies, grouped by the cookie name. The cookie named `test_cookie`, which was set by doubleclick.net can be found on 26% desktop sites and 24% mobile sites respectively, `fr` set by facebook.com was found on 19% and 17%, `IDE` set by doubleclick.net on 12% and 12%, `YSC` set by youtube.com on 10% and 9%, `VISITOR_INFO1_LIVE` set by youtube.com on 10% and 8%, `sync_cookie_csrf` set by yandex.ru on 4% and 5%, `yandexuid` set by yandex.com on 4% and 5%, `yuidss` set by yandex.com on 4% and 5%, `i` set by yandex.com on 4% and 5%, and finally `ymex` set by yandex.com on 4% and 5%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSnqWDZQ07x6NdnIix7JOfg5DqGcoTrrpwaKavCIvNFkIANncyMxahKaTYjLka3rsrcBmrRIURpnPo/pubchart?oid=1506966442&format=interactive",
+  height="412",
   sheets_gid="1112448573",
   sql_file="top100_cookies_set_from_header.sql"
   )
@@ -120,6 +124,7 @@ When looking at the most common third-party cookies, we again see several tracki
   caption="Fingerprinting services usage.",
   description="Bar chart showing the prevalence of fingerprinting services. The fingerprinting script FingerprintJS was found on 0.62% desktop and 0.73% mobile sites respectively, ClientJS was detected on 0.04% and 0.04%, MaxMind on 0.03% and 0.04%, and finally TruValidate on 0.02% and 0.03%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSnqWDZQ07x6NdnIix7JOfg5DqGcoTrrpwaKavCIvNFkIANncyMxahKaTYjLka3rsrcBmrRIURpnPo/pubchart?oid=79170171&format=interactive",
+  height="324",
   sheets_gid="1069316937",
   sql_file="number_of_websites_using_each_fingerprinting.sql"
   )
@@ -137,6 +142,7 @@ As most of the tracking countermeasures focus on blocking or disabling third-par
   caption="Top 10 CNAME tracking services.",
   description="Bar chart showing the prevalence of CNAME trackers. Adobe Experience Cloud was found on 0.65% desktop and 0.38% mobile sites respectively, Pardot on 0.44% and 0.25%, Oracle Eloqua on 0.06% and 0.03%, Act-On Software on 0.05% and 0.03%, Webtrekk on 0.02% and 0.01%, and Eulerian on 0.01% and 0.01%. The remaining CNAME trackers are shown with 0.00% prevalence. These are AT Internet, Tracedock, Ingenious Technologies, Criteo, Wizaly, and Keyade.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSnqWDZQ07x6NdnIix7JOfg5DqGcoTrrpwaKavCIvNFkIANncyMxahKaTYjLka3rsrcBmrRIURpnPo/pubchart?oid=118406352&format=interactive",
+  height="412",
   sheets_gid="1717363829",
   sql_file="nb_sites_with_cname_tracking.sql"
   )
@@ -149,6 +155,7 @@ By analyzing the various CNAME trackers, we find that the market share is mainly
   caption="CNAME tracking usage per website rank group.",
   description="Bar chart showing the prevalence of CNAME trackers for different rank groups ranging from 1,000 to 1,000,000 and a separate category that captures all sites. The top 1,000 sites has CNAME tracking on 6.2% desktop and 5.8% mobile sites respectively, the top 10,000 has 5.9% and 5.3%, the top 100,000 has 2.9% and 2.7%, the top 1,000,000 has 1.3% and 1.2%, and finally the overall prevalence of CNAME tracking is 0.9% on desktop and 0.5% on mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSnqWDZQ07x6NdnIix7JOfg5DqGcoTrrpwaKavCIvNFkIANncyMxahKaTYjLka3rsrcBmrRIURpnPo/pubchart?oid=213195774&format=interactive",
+  height="412",
   sheets_gid="303099519",
   sql_file="nb_sites_with_cname_tracking_per_rank.sql"
   )
@@ -167,6 +174,7 @@ Browsers have an abundant number of APIs, which provide developers with useful m
   caption="Top device sensor events used.",
   description="Bar chart showing which percentage of websites use certain sensor events. The event named `deviceOrientation` was found to be used on 4.04% desktop and 4.10% mobile sites, `deviceReady` on 1.16% and 1.28%, `devicemotion` on 0.78% and 0.72%, `deviceChange` on 0.29% and 0.28%, and finally the `deviceproximity` event was found on 0.03% desktop and 0.02% mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSnqWDZQ07x6NdnIix7JOfg5DqGcoTrrpwaKavCIvNFkIANncyMxahKaTYjLka3rsrcBmrRIURpnPo/pubchart?oid=2114701877&format=interactive",
+  height="412",
   sheets_gid="217371442",
   sql_file="number_of_websites_with_device_sensor_events.sql"
   )
@@ -185,7 +193,7 @@ We find that the most prominent sensor event that websites listen for is the `de
 )
 }}
 
-Using the [MediaDevices API](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices), web developers can use the `enumerateDevices()` method to get a list of all media devices connected to the user's device. While this feature is useful to determine whether a user has a camera or microphone connected to initiate a video call, it can also be used to gather information about the system's environment for fingerprinting purposes. We find that 0.59% of desktop websites and 0.48% of mobile sites try to access the list of connected media devices (note that our crawler does not interact with the site, nor click on any buttons). Interestingly, the usage of this API has significantly reduced since last year, when **7.23%** of desktop sites were accessing the list of media devices. Most likely this is due to a popular library that no longer calls the API.
+Using the [MediaDevices API](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices), web developers can use the `enumerateDevices()` method to get a list of all media devices connected to the user's device. While this feature is useful to determine whether a user has a camera or microphone connected to initiate a video call, it can also be used to gather information about the system's environment for fingerprinting purposes. We find that 0.59% of desktop websites and 0.48% of mobile sites try to access the list of connected media devices (note that our crawler does not interact with the site, nor click on any buttons). Interestingly, the usage of this API has significantly reduced since last year, when the prevalence of sites accessing the list of media devices was still **12 times** higher. Most likely this is due to a popular library that no longer calls the API.
 
 ### Geolocation
 
@@ -194,6 +202,7 @@ Using the [MediaDevices API](https://developer.mozilla.org/en-US/docs/Web/API/Me
   caption="Most common geolocation services.",
   description="Bar chart showing which percentage of websites make use of a geolocation service. The geolocation service ipify was found on 0.083% desktop sites and 0.115% mobile sites, MaxMind on 0.029% and 0.044%, IPinfo on 0.003% and 0.005%, and finally Geo Targetly was detected on 0.002% and 0.002%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSnqWDZQ07x6NdnIix7JOfg5DqGcoTrrpwaKavCIvNFkIANncyMxahKaTYjLka3rsrcBmrRIURpnPo/pubchart?oid=1039516482&format=interactive",
+  height="347",
   sheets_gid="1999414939",
   sql_file="number_of_websites_using_each_geolocation.sql"
   )
@@ -224,6 +233,7 @@ As websites include a lot of content (scripts, plugins, ...) from third-parties 
   caption="Permissions Policy usage by API type.",
   description="Bar chart showing which percentage of websites use permission policy, either the Permissions Policy or Feature Policy. The Feature Policy API was used on 0.69% of desktop and 0.52% of mobile sites respectively, the Permissions Policy API was found on 2.71% of desktop and 2.31% of mobile sites, and in total 3.26% of desktop and 2.73% of mobile sites controlled which features their site supported by setting a policy.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSnqWDZQ07x6NdnIix7JOfg5DqGcoTrrpwaKavCIvNFkIANncyMxahKaTYjLka3rsrcBmrRIURpnPo/pubchart?oid=1921531833&format=interactive",
+  height="314",
   sheets_gid="741173570",
   sql_file="number_of_websites_with_permissions_policy.sql"
   )
@@ -238,6 +248,7 @@ By default most of the features regulated by the Permissions Policy are disabled
   caption="Most common Permissions Policy feature names.",
   description="Bar chart showing which Permissions Policy features are most prevalent. The feature `interest-cohort` of the Permissions Policy was present on 1.18% desktop and 0.93% mobile sites respectively, the `geolocation` feature was specified on 0.80% and 0.58% sites, `microphone` on 0.78% and 0.57%, `camera` on 0.75% and 0.55%, `payment` on 0.57% and 0.42%, `gyroscope` on 0.54% and 0.40%, `magnetometer` on 0.54% and 0.39%, `fullscreen` on 0.47% and 0.34%, `usb` on 0.45% and 0.33%, and finally `accelerometer` was defined on 0.44% desktop and 0.32% mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSnqWDZQ07x6NdnIix7JOfg5DqGcoTrrpwaKavCIvNFkIANncyMxahKaTYjLka3rsrcBmrRIURpnPo/pubchart?oid=1803269356&format=interactive",
+  height="448",
   sheets_gid="315730924",
   sql_file="most_common_permissions_policy_directives.sql"
   )
@@ -249,7 +260,7 @@ When we look at the directives that are used in the Permissions Policy, we see a
 
 {{ figure_markup(
   caption="The percentage of desktop sites that sets a document-wide referrer policy.",
-  content="11.64%%",
+  content="11.64%",
   classes="big-number",
   sheets_gid="1186623225",
   sql_file="number_of_websites_with_referrerpolicy.sql"
@@ -263,6 +274,7 @@ By default, most user agents will include a `Referer` header. In short, this rev
   caption="Most common Referrer Policies.",
   description="Bar chart showing which Referrer Policies are most commonly defined by websites. The policy `no-referrer-when-downgrade` was found on 4.33% desktop and 3.70% mobile sites respectively, `strict-origin-when-cross-origin` was found on 2.68% desktop and 2.14% mobile sites, `always` on 1.07% and 0.53%, `unsafe-url` on 0.64% and 0.71%, `same-origin` on 0.74% and 0.60%, `origin` on 0.41% and 0.57%, `no-referrer` on 0.44% and 0.33%, `origin-when-cross-origin` on 0.37% and 0.32%, `strict-origin` on 0.32% and 0.25%, and finally `no-referrer, strict-origin-when-cross-origin` was found on 0.11% desktop and 0.09% mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSnqWDZQ07x6NdnIix7JOfg5DqGcoTrrpwaKavCIvNFkIANncyMxahKaTYjLka3rsrcBmrRIURpnPo/pubchart?oid=2062222912&format=interactive",
+  height="473",
   sheets_gid="1353802246",
   sql_file="most_common_referrer_policy.sql"
   )
@@ -279,12 +291,13 @@ In an effort to reduce the information that is revealed about the browser enviro
   caption="Number of websites with Client Hints by rank group.",
   description="Bar chart showing the prevalence of websites employing User-Agent Client Hints for different rank groups ranging from 1,000 to 1,000,000 and a separate category that captures all sites. The top 1,000 sites enabled Client Hints on 9.53% desktop and 9.11% mobile sites respectively, on the top 10,000 Client Hints was found on 3.14% desktop and 3.12% mobile sites, on the top 100,000 on 1.02% and 1.05%, on the top 1,000,000 on 0.38% and 0.39%, and overall Client Hints was used on 0.31% desktop and 0.56% mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSnqWDZQ07x6NdnIix7JOfg5DqGcoTrrpwaKavCIvNFkIANncyMxahKaTYjLka3rsrcBmrRIURpnPo/pubchart?oid=318395619&format=interactive",
+  height="412",
   sheets_gid="1199573159",
   sql_file="number_of_websites_with_client_hints.sql"
   )
 }}
 
-When we look at the adoption of sites that respond with the `Accept-CH` header in comparison with the results from [last year](../2021/privacy) (top 1k: 3.56%, top 10k: 1.44%), we see a significant increase in adoption, almost 3x for the most popular sites. Presumably, this increase in adoption is related to the fact Chrome has been reducing the information that is shared in the User-Agent string (through the <a hreflang="en" href="https://www.chromium.org/updates/ua-reduction/">User-Agent Reduction plan</a>).
+When we look at the adoption of sites that respond with the `Accept-CH` header in comparison with the results from [last year](../2021/privacy) (top 1k: 3.56%, top 10k: 1.44%), we see a significant increase in adoption, almost 3× for the most popular sites. Presumably, this increase in adoption is related to the fact Chromium has been reducing the information that is shared in the User-Agent string (through the <a hreflang="en" href="https://www.chromium.org/updates/ua-reduction/">User-Agent Reduction plan</a>).
 
 We find that the sites that make use of User-Agent Client hints, generally request access to a relatively large number of properties, limiting the benefit of what browsers aim to achieve through efforts such as User-Agent Reduction. It will be interesting to see in the near future how/whether browsers will limit the practices of acquiring a lot of information about the user's browsing environment.
 
@@ -371,7 +384,7 @@ The most prevalent services on the web that will test during the Origin Trial of
 
 ### Privacy Sandbox experiments
 
-The Privacy Sandbox initiative consists of many different features that each touch upon different aspects, and aim to still support the current common actions that users perform on the web when third-party cookies are phased out. As most features are still under active development, websites have not adopted them yet (with the exception of services opting-in to the PrivacySandboxAdsAPIs Origin Trial).
+The Privacy Sandbox initiative consists of many different features that each touch upon different aspects, and aim to still support the current common actions that users perform on the web when third-party cookies are phased out. As most features are still under active development, websites have not adopted them yet (with the exception of services opting-in to the `PrivacySandboxAdsAPIs` Origin Trial).
 For some time the Origin Trial for various Privacy Sandbox features was divided into separate trials, one for each feature. Although these trials do not have any effect in modern browsing environments, some web services did opt-in to them and forgot to remove the `Origin-Trial` response header.
 For example, we find that on 34,128 sites a web service opts-in to the `ConversionMeasurement` Origin Trial, which at one point gave them access to the Attribution Reporting API (previously called the Conversion Measurement). This API is used to track the conversion of a user clicking an ad to e.g. a purchase.
 For the TrustTokens Origin Trial, which has also expired, we are still seeing 6,005 sites where a web service opts-in to it. This mechanism aims to allow websites to combat fraud by enabling one browsing context (e.g. site) to convey a limited amount of information to another.
@@ -394,6 +407,7 @@ At this point, we would also like to note that the integration of CMP services d
   caption="Most common CMP services.",
   description="Bar chart showing the most common CMP services. The CMP service CookieYes was found on 2.0% desktop and 2.1% mobile sites respectively, the Osano service on 1.4% and 1.4%, OneTrust on 1.2% and 0.9%, Cookiebot on 1.0% and 0.8%, Cookie Notice on 0.6% and 0.6%, iubenda on 0.5% and 0.5%, Complianz on 0.5% and 0.5%, Moove GDPR Consent on 0.4% and 0.4%, Quantcast Choice on 0.4% and 0.4%, and finally Borlabs Cookie was present on 0.2% and 0.3% sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSnqWDZQ07x6NdnIix7JOfg5DqGcoTrrpwaKavCIvNFkIANncyMxahKaTYjLka3rsrcBmrRIURpnPo/pubchart?oid=1774136411&format=interactive",
+  height="412",
   sheets_gid="2107042211",
   sql_file="number_of_websites_using_each_cmp.sql"
   )
@@ -409,8 +423,9 @@ Compared to GDPR, the <a hreflang="en" href="https://iabeurope.eu">IAB Europe Tr
 {{ figure_markup(
   image="iab-prevalence.png",
   caption="Websites with IAB.",
-  description="Bar chart showing the most common IAB frameworks. Overall, IAB was found on 4.6% of desktop and 4.4% of mobile sites respectively, the IAB USP was found on 3.5% and 3.4% sites, IAB TCF was found on 2.2% and 1.9% of which 2.1% and 1.8% were for version 2, and 0.4% and 0.3% respectively were for version 1.",
+  description="Bar chart showing the most common IAB frameworks. Overall, IAB was found on 4.6% of desktop and 4.4% of mobile sites respectively, the IAB USP was found on 3.5% desktop and 3.4% mobile sites, IAB TCF was found on 2.2% desktop and 1.9% mobile sites, of which 2.1% and 1.8% respectively were for version 2, and 0.4% and 0.3% respectively were for version 1.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSnqWDZQ07x6NdnIix7JOfg5DqGcoTrrpwaKavCIvNFkIANncyMxahKaTYjLka3rsrcBmrRIURpnPo/pubchart?oid=1149211507&format=interactive",
+  height="412",
   sheets_gid="772029978",
   sql_file="number_of_websites_with_iab.sql"
   )
@@ -423,6 +438,7 @@ In the following, we present the top CMP providers for AIB TCF v2.
   caption="Top CMPs for IAB TCF v2.",
   description="Bar chart showing the most common CMP providers for IAB TCF version 2. Quantcast International Limited was the CMP provider on 0.37% desktop and 0.33% mobile sites, Google LLC on 0.34% and 0.29%, Didomi on 0.31% and 0.26%, 1020, Inc. dba Placecast and Ericsson Emodo on 0.23% and 0.17%, iubenda on 0.10% and 0.10%, Sourcepoint Technologies, Inc. on 0.07% and 0.07%, and finally SIRDATA on 0.06% and 0.07% sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSnqWDZQ07x6NdnIix7JOfg5DqGcoTrrpwaKavCIvNFkIANncyMxahKaTYjLka3rsrcBmrRIURpnPo/pubchart?oid=1405483323&format=interactive",
+  height="412",
   sheets_gid="1374296424",
   sql_file="most_common_cmps_for_iab_tcf_v2.sql"
   )
@@ -444,13 +460,14 @@ Our analysis shows that the most common publishers we identified are from German
 
 ### Privacy policy
 
-Notifications regarding data processing do not always take place via a consent banner. They are also usually described in more detail on separate pages compared to such banners. On such pages, you will find information on integrated 3rd parties, which data is processed for which purpose, etc. To identify such sites, we used the privacy-relevant signatures from <a hreflang="en" href="https://github.com/RUB-SysSec/we-value-your-privacy/blob/master/privacy_wording.json">a study</a>. Using this method, we could determine that 45% of the websites (mobile: 41%)  contained a link on their homepage to a privacy-related page. The figure below shows the distribution of the top privacy link keywords.
+Notifications regarding data processing do not always take place via a consent banner. They are also usually described in more detail on separate pages compared to such banners. On such pages, you will find information on integrated third-parties, which data is processed for which purpose, etc. To identify such sites, we used the privacy-relevant signatures from <a hreflang="en" href="https://github.com/RUB-SysSec/we-value-your-privacy/blob/master/privacy_wording.json">a study</a>. Using this method, we could determine that 45% of the websites (mobile: 41%)  contained a link on their homepage to a privacy-related page. The figure below shows the distribution of the top privacy link keywords.
 
 {{ figure_markup(
   image="privacy-link-keywords.png",
   caption="Top privacy link keywords.",
   description="Bar chart showing the most common keywords used to refer to the website's privacy policy. The word 'privacy' was used on 28.63% desktop and 22.95% mobile sites to link to the privacy policy, the word 'policy' on 24.26% and 19.41% sites, 'cookies' on 8.19% and 7.90%, 'cookie policy' on 3.63% and 3.30%, 'privacidad' on 2.68% and 2.99%, 'datenschutz' on 2.09% and 3.14%, 'mentions légales' on 2.08% and 1.85%, 'privacidade' on 1.66% and 1.76%, 'aviso legal' on 1.35% and 1.65%, 'prywatności' on 0.97% and 1.12%, and finally the word 'gdpr' was used on 0.99% and 0.94% sites to link to the privacy policy.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSnqWDZQ07x6NdnIix7JOfg5DqGcoTrrpwaKavCIvNFkIANncyMxahKaTYjLka3rsrcBmrRIURpnPo/pubchart?oid=817391735&format=interactive",
+  height="412",
   sheets_gid="1284713488",
   sql_file="most_common_privacy_link_keywords.sql"
   )
