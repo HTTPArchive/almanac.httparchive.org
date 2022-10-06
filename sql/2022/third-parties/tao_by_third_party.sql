@@ -61,6 +61,7 @@ headers AS (
     requests.origin AS req_origin,
     pages.origin AS page_origin,
     get_tao(LOWER(respOtherHeaders)) AS timing_allow_origin,
+    respOtherHeaders,
     third_party.category AS req_category
   FROM requests
   LEFT JOIN pages
@@ -72,18 +73,30 @@ headers AS (
 base AS (
   SELECT
     client,
+    IF(respOtherHeaders LIKE '%timing-allow-origin = %', 1, 0) AS tao_header_present,
     IF(
       page_origin = req_origin OR
-      timing_allow_origin = '*, ' OR
-      STRPOS(timing_allow_origin, CONCAT(page_origin, ', ')) > 0,
+      timing_allow_origin = '*' OR
+      timing_allow_origin LIKE '*,%' OR
+      timing_allow_origin LIKE '%,*' OR
+      timing_allow_origin LIKE '%,*,%' OR
+      timing_allow_origin LIKE '%, *,%' OR
+      timing_allow_origin = page_origin OR
+      timing_allow_origin LIKE page_origin || ',' OR
+      timing_allow_origin LIKE '%,' || page_origin OR
+      timing_allow_origin LIKE '%, ' || page_origin OR
+      timing_allow_origin LIKE '%,' || page_origin || ',%' OR
+      timing_allow_origin LIKE '%, ' || page_origin || ',%',
       1, 0) AS timing_allowed
   FROM headers
 )
 
 SELECT
   client,
+  SUM(tao_header_present) AS tao_requests,
   SUM(timing_allowed) AS timing_allowed_requests,
   COUNT(0) AS total_requests,
+  SUM(tao_header_present) / COUNT(0) AS pct_tao_requests,
   SUM(timing_allowed) / COUNT(0) AS pct_timing_allowed_requests
 FROM
   base
