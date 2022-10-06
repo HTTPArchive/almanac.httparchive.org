@@ -14,7 +14,7 @@ featured_stat_1: 82%
 featured_stat_label_1: Sites that include at least one third-party tracker.
 featured_stat_2: 11%
 featured_stat_label_2: The prevalence of Consent Management Platforms (CMPs), an increase of almost 60% compared to last year.
-featured_stat_3: 9.53%
+featured_stat_3: 9.5%
 featured_stat_label_3: Sites of the top 1,000 that make use of User-Agent Client Hints, a 3x increase over last year, indicating an interest in this privacy-focused feature.
 unedited: true
 ---
@@ -85,7 +85,7 @@ Websites might want to make use of multiple third-party services, and thus may i
 }}
 
 When browsing the web, we often encounter advertisements for products that we recently looked up. The reason for that is ad retargeting. When a website detects that a user might be interested in a specific product, they report this to the tracker and/or advertiser, which will later on, when the user is visiting other, unrelated websites, show advertisements for the product that the user is supposedly interested in, in an attempt to nudge them into purchasing it.
-The tracker offering most of the purely retargeting services is Criteo, with a prevalence of 1.98% on desktop and 2.04% on mobile. It is followed by Yahoo Advertising and AdRoll, which collectively make up less than half of Criteo's market share. The most widely used retargeting service of [last year](../2021/privacy), Google Tag Manager, does not show in these results as it is now classified under the "tag managers" Wappalyzer category. Although this service still offers retargeting, it also provides a larger variety of other services.
+The tracker offering most of the purely retargeting services is Criteo, with a prevalence of 2% on both desktop and mobile sites. It is followed by Yahoo Advertising and AdRoll, which collectively make up less than half of Criteo's market share. The most widely used retargeting service of [last year](../2021/privacy), Google Tag Manager, does not show in these results as it is now classified under the "tag managers" Wappalyzer category. Although this service still offers retargeting, it also provides a larger variety of other services.
 
 ### Third-party cookies
 
@@ -94,7 +94,7 @@ As mentioned before, the most established way to track users across different we
 {{ figure_markup(
   image="cookie-origins.png",
   caption="Top 10 origins of cookies set by trackers.",
-  description="Bar chart showing the prevalence of the different origins that set cross-site cookies. Cookies set by doubleclick.net can be found on 26.34% of desktop and 24.06% of mobile sites respectively, for facebook.com this was 18.86% for mobile and 17.48% for desktop, cookies set by youtube.com can be found on 9.65% mobile and 8.65% desktop sites, google.com on 6.40% and 5.98%, yandex.ru on 4.32% and 4.91%, linkedin.com on 4.09% and 3.19%, adsrvr.org on 4.02% and 3.77%, pubmatic.com on 4.00% and 4.88%, yahoo.com on 3.94% and 3.62%, bing.com on 3.76% and 2.81%, and finally cookies were set by rubiconproject.com on 3.73% desktop and 3.30% mobile sites.",
+  description="Bar chart showing the prevalence of the different origins that set cross-site cookies. Cookies set by doubleclick.net can be found on 26.3% of desktop and 24.1% of mobile sites respectively, for facebook.com this was 18.9% for mobile and 17.5% for desktop, cookies set by youtube.com can be found on 9.7% mobile and 8.7% desktop sites, google.com on 6.4% and 6.0%, yandex.ru on 4.3% and 4.9%, linkedin.com on 4.1% and 3.2%, adsrvr.org on 4.0% and 3.8%, pubmatic.com on 4.0% and 4.9%, yahoo.com on 3.9% and 3.6%, bing.com on 3.8% and 2.8%, and finally cookies were set by rubiconproject.com on 3.7% desktop and 3.3% mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSnqWDZQ07x6NdnIix7JOfg5DqGcoTrrpwaKavCIvNFkIANncyMxahKaTYjLka3rsrcBmrRIURpnPo/pubchart?oid=852543503&format=interactive",
   height="429",
   sheets_gid="1010563596",
@@ -180,7 +180,7 @@ Browsers have an abundant number of APIs, which provide developers with useful m
   )
 }}
 
-We find that the most prominent sensor event that websites listen for is the `deviceOrientation` event, which fires when the device changes from portrait to landscape mode or vice versa. It is used on 4.04% of desktop websites and 4.10% of mobile websites. The usage is likely this high (relatively) because websites might want to update elements of the layout when the orientation of the device changes.
+We find that the most prominent sensor event that websites listen for is the `deviceOrientation` event, which fires when the device changes from portrait to landscape mode or vice versa. It is used on 4.0% of desktop websites and 4.1% of mobile websites. The usage is likely this high (relatively) because websites might want to update elements of the layout when the orientation of the device changes.
 
 ### Media devices
 
@@ -231,7 +231,7 @@ As websites include a lot of content (scripts, plugins, ...) from third-parties 
 {{ figure_markup(
   image="permissions-policy-type.png",
   caption="Permissions Policy usage by API type.",
-  description="Bar chart showing which percentage of websites use permission policy, either the Permissions Policy or Feature Policy. The Feature Policy API was used on 0.69% of desktop and 0.52% of mobile sites respectively, the Permissions Policy API was found on 2.71% of desktop and 2.31% of mobile sites, and in total 3.26% of desktop and 2.73% of mobile sites controlled which features their site supported by setting a policy.",
+  description="Bar chart showing which percentage of websites use permission policy, either the Permissions Policy or Feature Policy. The Feature Policy API was used on 0.69% of desktop and 0.52% of mobile sites respectively, the Permissions Policy API was found on 2.7% of desktop and 2.3% of mobile sites, and in total 3.3% of desktop and 2.7% of mobile sites controlled which features their site supported by setting a policy.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSnqWDZQ07x6NdnIix7JOfg5DqGcoTrrpwaKavCIvNFkIANncyMxahKaTYjLka3rsrcBmrRIURpnPo/pubchart?oid=1921531833&format=interactive",
   height="314",
   sheets_gid="741173570",
@@ -239,9 +239,9 @@ As websites include a lot of content (scripts, plugins, ...) from third-parties 
   )
 }}
 
-By default, any (third-party) script can access the same browser features as the website they're embedded in. In order to limit the features that will be enabled for the website, the website can make use of the <a hreflang="en" href="https://developer.chrome.com/en/docs/privacy-sandbox/permissions-policy/">Permissions Policy</a>. Through an HTTP response header the website can indicate which features it wants to be enabled. For instance, if the `microphone` feature is not included in this list, none of the scripts embedded in the web page can use it. Although the policy is fairly new, we are seeing an adoption of 2.71% on desktop sites and 2.31% on mobile sites.
+By default, any (third-party) script can access the same browser features as the website they're embedded in. In order to limit the features that will be enabled for the website, the website can make use of the <a hreflang="en" href="https://developer.chrome.com/en/docs/privacy-sandbox/permissions-policy/">Permissions Policy</a>. Through an HTTP response header the website can indicate which features it wants to be enabled. For instance, if the `microphone` feature is not included in this list, none of the scripts embedded in the web page can use it. Although the policy is fairly new, we are seeing an adoption of 2.7% on desktop sites and 2.3% on mobile sites.
 The Permissions Policy supersedes the [Feature Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy), which can still be found on 0.69% of desktop sites and 0.52% of mobile sites.
-By default most of the features regulated by the Permissions Policy are disabled in cross-origin iframes, they can be explicitly enabled through the `allow` attribute. We find that 15.18% of desktop sites and 14.32% of mobile sites make use of this feature. For a more detailed analysis on the use of the `allow` attribute on iframes, please refer to [the security chapter](./security).
+By default most of the features regulated by the Permissions Policy are disabled in cross-origin iframes, they can be explicitly enabled through the `allow` attribute. We find that 15% of desktop sites and 14% of mobile sites make use of this feature. For a more detailed analysis on the use of the `allow` attribute on iframes, please refer to [the security chapter](./security).
 
 {{ figure_markup(
   image="permission-policy-features.png",
@@ -260,14 +260,14 @@ When we look at the directives that are used in the Permissions Policy, we see a
 
 {{ figure_markup(
   caption="The percentage of desktop sites that sets a document-wide referrer policy.",
-  content="11.64%",
+  content="12%",
   classes="big-number",
   sheets_gid="1186623225",
   sql_file="number_of_websites_with_referrerpolicy.sql"
 )
 }}
 
-By default, most user agents will include a `Referer` header. In short, this reveals to third parties from which web page a request was initiated. This is the case for any resource that was embedded in the web page, as well as for the request that was initiated after a user clicked on a link. Of course, this has the undesirable side-effect that these third parties learn which website, or even which web page a specific user was visiting. By making use of the [Referrer Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy), websites can limit the instances in which the `Referrer` header is included in requests (and thus improve user privacy). We find that 11.64% of the desktop sites and 9.74% of the mobile sites set such a document-wide policy, mostly via an HTTP response header.
+By default, most user agents will include a `Referer` header. In short, this reveals to third parties from which web page a request was initiated. This is the case for any resource that was embedded in the web page, as well as for the request that was initiated after a user clicked on a link. Of course, this has the undesirable side-effect that these third parties learn which website, or even which web page a specific user was visiting. By making use of the [Referrer Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy), websites can limit the instances in which the `Referrer` header is included in requests (and thus improve user privacy). We find that 12% of the desktop sites and 10% of the mobile sites set such a document-wide policy, mostly via an HTTP response header.
 
 {{ figure_markup(
   image="referrer-policies.png",
@@ -280,7 +280,7 @@ By default, most user agents will include a `Referer` header. In short, this rev
   )
 }}
 
-We find that the most common usage of the Referrer Policy is to not include the `Referer` header on downgrade requests, that is, HTTP requests initiated on an HTTPS-enabled page. Unfortunately, this still leaks the page that the user is visiting in most scenarios (in HTTPS-enabled requests). We do see that 2.68% of desktop sites and 2.14% of mobile sites aim to hide the specific web page that a user is visiting through the `strict-origin-when-cross-origin` policy.
+We find that the most common usage of the Referrer Policy is to not include the `Referer` header on downgrade requests, that is, HTTP requests initiated on an HTTPS-enabled page. Unfortunately, this still leaks the page that the user is visiting in most scenarios (in HTTPS-enabled requests). We do see that 2.7% of desktop sites and 2.1% of mobile sites aim to hide the specific web page that a user is visiting through the `strict-origin-when-cross-origin` policy.
 
 ### User-Agent Client Hints
 
@@ -297,7 +297,7 @@ In an effort to reduce the information that is revealed about the browser enviro
   )
 }}
 
-When we look at the adoption of sites that respond with the `Accept-CH` header in comparison with the results from [last year](../2021/privacy) (top 1k: 3.56%, top 10k: 1.44%), we see a significant increase in adoption, almost 3× for the most popular sites. Presumably, this increase in adoption is related to the fact Chromium has been reducing the information that is shared in the User-Agent string (through the <a hreflang="en" href="https://www.chromium.org/updates/ua-reduction/">User-Agent Reduction plan</a>).
+When we look at the adoption of sites that respond with the `Accept-CH` header in comparison with the results from [last year](../2021/privacy) (top 1k: 3.6%, top 10k: 1.4%), we see a significant increase in adoption, almost 3× for the most popular sites. Presumably, this increase in adoption is related to the fact Chromium has been reducing the information that is shared in the User-Agent string (through the <a hreflang="en" href="https://www.chromium.org/updates/ua-reduction/">User-Agent Reduction plan</a>).
 
 We find that the sites that make use of User-Agent Client hints, generally request access to a relatively large number of properties, limiting the benefit of what browsers aim to achieve through efforts such as User-Agent Reduction. It will be interesting to see in the near future how/whether browsers will limit the practices of acquiring a lot of information about the user's browsing environment.
 
