@@ -72,10 +72,19 @@ headers AS (
 base AS (
   SELECT
     client,
-    IF(
+    IF(base AS (
       page_origin = req_origin OR
-      timing_allow_origin = '*, ' OR
-      STRPOS(timing_allow_origin, CONCAT(page_origin, ', ')) > 0,
+      timing_allow_origin = '*' OR
+      timing_allow_origin LIKE '*,%' OR
+      timing_allow_origin LIKE '%,*' OR
+      timing_allow_origin LIKE '%,*,%' OR
+      timing_allow_origin LIKE '%, *,%' OR
+      timing_allow_origin = page_origin OR
+      timing_allow_origin LIKE page_origin || ',' OR
+      timing_allow_origin LIKE '%,' || page_origin OR
+      timing_allow_origin LIKE '%, ' || page_origin OR
+      timing_allow_origin LIKE '%,' || page_origin || ',%' OR
+      timing_allow_origin LIKE '%, ' || page_origin || ',%',
       1, 0) AS timing_allowed
   FROM headers
 )
