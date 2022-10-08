@@ -433,7 +433,7 @@ Compared to GDPR, the <a hreflang="en" href="https://iabeurope.eu">IAB Europe Tr
   )
 }}
 
-We record that 4.6% of desktops websites use any IAB, with 3.5% using USP and 2.2% using IAB. Thus, we have recorded an increase for both specifications since last year. We would like to note here that our measurement is USA-based, so according to TCF, no consent banner is required for non-EU visits. So this can be the reason why we identify more websites with USP.
+We record that 4.6% of desktop websites use any IAB, with 3.5% using USP and 2.2% using IAB. Thus, we have recorded an increase for both specifications since last year. We would like to note here that our measurement is USA-based, so according to TCF, no consent banner is required for non-EU visits. So this can be the reason why we identify more websites with USP.
 
 {{ figure_markup(
   image="iab-tcfv2-prevalence.png",
