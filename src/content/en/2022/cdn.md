@@ -4,10 +4,10 @@ title: CDN
 description: CDN chapter of the 2021 Web Almanac covering adoption of CDNs, top CDN players, the impact of CDNs on TLS, HTTP/2+, and Brotli adoption
 authors: [harendra, joeviggiano]
 reviewers: [ytkoka]
-analysts: [harendra, ]
-editors: [harendra]
+analysts: [harendra, joeviggiano]
+editors: [harendra, joeviggiano]
 translators: []
-results: https://docs.google.com/spreadsheets/d/1DL7Pn1vbBwYmQZ5JPAjD69oCOvUidbuoNvdrw%2D%2Dj00U/
+results: https://docs.google.com/spreadsheets/d/1ySETT2IZ9ae5_VUphxUol2ZU3P1RJvcSVjDU5BgnK5A/edit#gid=542001559
 harendra_bio: Haren Bhandari is a Solutions Architect at Amazon Web Services. Before joining Amazon Web Services, Haren used to work at Akamai Technologies and has deep experience with CDNs.
 joeviggiano_bio: Joe Viggiano is a Media & Entertainment Solutions Architect at Amazon Web Services helping customers deliver media content at scale.
 featured_quote: CDNs have been in existence for over two decades. With the exponential rise in internet traffic, contributed by online video consumption, online shopping, and increased video conferencing due to COVID-19, CDNs are required more than ever before.
@@ -19,20 +19,23 @@ featured_stat_3: 42.5%
 featured_stat_label_3: Domains using Brotli on CDN
 ---
 
+
 ## Introduction
 
-This chapter provides the insights regarding the current state of CDN usage. CDNs are increasingly playing important roles even for the smaller sites to deliver content to the user anywhere in the globe and facilitate the delivery of third party content 
-such as Javascript libraries, Fonts and other content.
-We have looked at the usage of CDNs over the past few years gaining very useful insights. This year we have expanded our dataset to include top 10 million sites to provide a much bigger picture regarding CDN usage.
-We think that CDNs will play a vital role in the future not just for content delivery but for the content security as well. 
-We recommend the users to look at CDNs from both performance and security viewpoint.
+This chapter provides important insights regarding the current state of CDN usage. CDNs are playing an increasingly important role in delivering content to users around the globe, even for smaller sites by facilitating the delivery of static and third party content such as Javascript libraries, Fonts and other content. Another key aspect of the CDNs that we will discuss in this chapter is the role CDNs play in adoption of new standards such as TLS versions and HTTP versions.
+
+We have looked at the usage of CDNs over the past few years gaining very useful insights. 
+This year we have expanded our dataset to include the current top 10 million sites to provide a much bigger picture regarding CDN usage. 
+
+We think that CDNs will play a vital role in the future not just for content delivery but for content security as well. 
+We recommend that users look at CDNs from both a performance and a security viewpoint. 
 
 
 ## What is a CDN?
 
-A _Content Delivery Network_ (CDN) is a geographically distributed network of proxy servers in data-centers. The goal of a CDN is to provide high availability and performance for web content. It does this by distributing content closer to the end users.
+A _Content Delivery Network_ (CDN) is a geographically distributed network of proxy servers in data-centers. The goal of a CDN is to provide high availability and performance for web content. It does this by distributing content closer to the end users. 
 
-CDNs have been in existence for over two decades. With the exponential rise in internet traffic contributed by online video consumption, online shopping, and increased video conferencing due to COVID-19, CDNs are required more than ever before. They ensure high availability and good web performance despite this growth in internet traffic.
+Due to the explosion of web content such as videos and images, CDN has been a vital part of many web applications to provide a  smooth user experience. Post COVID-19, the need for CDN has only increased due to many brick and mortar businesses moving online, increase in web conferences, online gaming and video streaming.
 
 During the early days, a CDN was a simple network of proxy servers which would:
 
@@ -42,19 +45,18 @@ During the early days, a CDN was a simple network of proxy servers which would:
 
 They primarily helped web owners to improve the page load times and to offload traffic from the infrastructure hosting these web properties.
 
-Over time, the services offered by CDN providers have evolved beyond caching and offloading bandwidth/connections. Now they offer additional services such as:
+Over time, the services offered by CDN providers have evolved beyond caching and offloading bandwidth/connections. Due to its distributed nature and large distrubuted network capacity CDNs have proved to be extremely efficient at handling large scale DDoS attacks. Edge computing is another service that has gained popularity in the recent years. Many CDN vendors provide compute services at the edge that allows the web owners to run simple code at the Edge.
+Other services offered by the CDN vendors include the following.
 
 * Cloud-hosted Web Application Firewalls
 * Bot Management solutions
 * Clean pipe solutions (Scrubbing Data-centers)
 * Serverless Computing offerings
 * Image and Video Management solutions etc.,
-
-Thus, a web owner these days has a lot of options to choose from. This can be overwhelming and complex since these new offerings from CDNs make them an extension of your application and require closer integration with application development life-cycles.
+* Edge computing Services
 
 There are benefits to web owners in pushing web application logic and workflows closer to the end user. This eliminates the round trip and bandwidth that a HTTP/HTTPS request would take. It also handles near-instant scalability requirements for the origin. A side-effect of this is that Internet Service Providers (ISPs) benefit from the scalability management as well, which improves their infrastructure capacities.
 
-This reduction in requests reduces the load on the internet backbone, ([read Middle-Mile of the Internet](https://en.wikipedia.org/wiki/Middle_mile)). It also helps manage more of the internet load within the last mile of the internet. Thus, a CDN plays a multifaceted role in the Internet landscape as it allows web owners to improve the performance, reliability and scalability of content delivery.
 
 ### Caveats and disclaimers
 
@@ -97,7 +99,18 @@ A web page is composed of following key components:
 
 CDNs are utilized for delivering static content such as images, stylesheets, JavaScript, and fonts. This kind of content doesn’t change frequently, making it a good candidate for caching on a CDN’s proxy servers. CDNs provide better performance for delivering non static content as well as they often optimize the routes and use most efficient transport mechanisms.
 
-Compared to the year 2021(Figure 2) we found that the usage of CDN has been steadily increasing. There was a large bump in CDN usage for the content served from sub-domains (Figure 1, increase of almost 10%). These are some of the potential reasons that can be attributed to his rise.
+Compared to the year 2021([2021 chapter](../2021/cdn)) we found that the usage of CDN has been steadily increasing. There was a large bump in CDN usage for the content served from sub-domains. These are some of the potential reasons that can be attributed to this rise.
+
+* Post pandemic, many businesses took a large portion of their physical business online. This put a lot of strain on their servers and found that it was much more efficient to server the static content through CDNs for offloading through caching and faster delivery.
+* This increase was not seen in 2021([2021 chapter](../2021/cdn)) as many businesses were still trying to figure out the optimal solution for their problem.
+
+* Sites relied on serving third party content through third party domains instead of their own domains. The fact that the amount of content served from third party domains increased by 3% during this period supports this assumption.
+
+Regarding the base HTML page the traditional pattern has been to serve the base HTML from the origin and this pattern has continued as majority of base pages continue to be served from the origin. However, there has been a 4% increase in the base pages being served from CDNs. The trend of base HTML pages being served from the CDN is on the rise. 
+These can be the reason behind the rise
+* CDNs can improve load time of  the base HTML page that can be of high importance to improve the customer experience and keep the user engaged.
+* It is simpler and faster to load the base page from CDN using the DNS provided by CDN providers.
+* It is easier to plan BCP and Disaster Recovery if most of the content including the base HTML page is pushed through CDNs. CDNs often provide a failover functionality to automatically switch to the alternative site once the primary site becomes unstable or unavailable.
 
 
 {{ figure_markup(
@@ -121,7 +134,7 @@ Compared to the year 2021(Figure 2) we found that the usage of CDN has been stea
   )
 }}
 
-The trend has been similar for both Mobile and Desktop applications (Figure 3, Figure 4), there is no discernible difference between Mobile and Desktop applications regarding CDN usage.
+The trend has been similar for both Mobile and Desktop applications as shown below, there is no discernible difference between Mobile and Desktop applications regarding CDN usage.
 
 {{ figure_markup(
   image="cdn-usage-hosted-mobile.png",
@@ -143,7 +156,7 @@ The trend has been similar for both Mobile and Desktop applications (Figure 3, F
   )
 }}
 
-While we observed CDN adoption across different types of content, we will look at this data from a different point of view below. Figure below (Figure 5 and Figure 6) show the adoption of CDNs by the sites based on their popularity.
+While we observed CDN adoption across different types of content, we will look at this data from a different point of view below. Figure below show the adoption of CDNs by the sites based on their popularity.
 
 {{ figure_markup(
   image="cdn-usage-ranking-desktop.png",
@@ -317,50 +330,56 @@ The trend cannot be clearer than what the graph shows below. There is high HTTP/
 <p class="note">Note that due to the way HTTP/3 works (see the [HTTP](./http) chapter for more information), HTTP/3 is often not used for first connections which is why we are instead measuring "HTTP/2+", since many of those HTTP/2 connections may actually be HTTP/3 for repeat visitors (we have assumed that no servers implement HTTP/3 without HTTP/3).</p>
 
 {{ figure_markup(
-  image="http-versions-desktop.png",
+  image="cdn-http-versions-desktop.png",
   caption="Distribution of HTTP versions for HTML (desktop).",
-  description="This bar chart shows the HTTP version adoption across CDN and origin in desktop HTML requests. For desktop HTML requests served from CDN, 86.1% were served on HTTP/2 or better protocol while requests served from origin had 39.2% requests served on HTTP/2 or better protocol.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=707070598&format=interactive",
-  sheets_gid="1197207175",
+  description="This bar chart shows the HTTP version adoption across CDN and origin in desktop HTML requests. For desktop HTML requests served from CDN, 88% were served on HTTP/2 or better protocol while requests served from origin had 42% requests served on HTTP/2 or better protocol.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=1691162627&format=interactive",
+  sheets_gid="542001559",
   sql_file="distribution_of_http_versions_cdn_vs_origin.sql"
   )
 }}
 
 {{ figure_markup(
-  image="http-versions-mobile.png",
+  image="cdn-http-versions-mobile.png",
   caption="Distribution of HTTP versions for HTML (mobile).",
-  description="This bar chart shows the HTTP version adoption across CDN and origin in mobile HTML requests. For mobile HTML requests served from CDN, 81.7% were served on HTTP/2 or better protocol while requests served from origin had 39.8% requests served on HTTP/2 or better protocol.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=825211868&format=interactive",
-  sheets_gid="1197207175",
+  description="This bar chart shows the HTTP version adoption across CDN and origin in mobile HTML requests. For mobile HTML requests served from CDN, 84% were served on HTTP/2 or better protocol while requests served from origin had 43% requests served on HTTP/2 or better protocol.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=1385171364&format=interactive",
+  sheets_gid="542001559",
   sql_file="distribution_of_http_versions_cdn_vs_origin.sql"
   )
 }}
 
-Back in 2019, the origin domains had 27% adoption of HTTP/2 compared to 71% adoption on CDN. While we see in desktop sites that there is about a 14% increase in origins supporting HTTP/2+ in 2021, domains on CDNs have maintained that lead with a 15% increase. This gap is a bit less when we look at mobile sites, where domains using a CDN have a slightly lower HTTP/2+ adoption compared to desktop sites.
+In 2021 39.8% of the content served from origin had HTTP/2 adopted while during the same time 81% of the content served from CDNs were served through HTTP/2. For origin this number has grown by 3% points while for the CDN it has grown by 6% points. This shows how CDN was able to allow the web application owners to take advantage of HTTP/2 from very early stage whithout making any changes in the origin.
+The trends are very similar for both desktop and mobile sites.
 
 {{ figure_markup(
-  image="http-versions-desktop-3p.png",
+  image="cdn-http-versions-desktop-3p.png",
   caption="Distribution of HTTP versions for third-party requests (desktop).",
-  description="This bar chart shows the HTTP version adoption across CDN and origin for third-party requests on desktop. For these third-party requests served from CDN, 90.0% were served on HTTP/2 or better protocol while requests served from origin had 48.5% requests served on HTTP/2 or better protocol.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=315993105&format=interactive",
-  sheets_gid="1197207175",
+  description="This bar chart shows the HTTP version adoption across CDN and origin for third-party requests on desktop. For these third-party requests served from CDN, 87.0% were served on HTTP/2 or better protocol while requests served from origin had 50% requests served on HTTP/2 or better protocol.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=1387277164&format=interactive",
+  sheets_gid="542001559",
   sql_file="distribution_of_http_versions_cdn_vs_origin.sql"
   )
 }}
 
 {{ figure_markup(
-  image="http-versions-mobile-3p.png",
+  image="cdn-http-versions-mobile-3p.png",
   caption="Distribution of HTTP versions for third-party requests (mobile).",
-  description="This bar chart shows the HTTP version adoption across CDN and origin for third-party requests on mobile. For these third-party requests served from CDN, 90.4% were served on HTTP/2 or better protocol while requests served from origin had 43.7% requests served on HTTP/2 or better protocol.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=351977017&format=interactive",
-  sheets_gid="1197207175",
+  description="This bar chart shows the HTTP version adoption across CDN and origin for third-party requests on mobile. For these third-party requests served from CDN, 88% were served on HTTP/2 or better protocol while requests served from origin had 50% requests served on HTTP/2 or better protocol.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=983285021&format=interactive",
+  sheets_gid="542001559",
   sql_file="distribution_of_http_versions_cdn_vs_origin.sql"
   )
 }}
 
-Looking at third-party domains supporting newer protocols, we see an interesting trend of higher adoption of HTTP/2+protocols compared to first-party domains. This makes sense, considering the fact that most of the top third-party domains use purpose-built CDNs and thus have more control on the content development and content delivery. Additionally, third-party domains need to have consistent performance across all network conditions, and this is where HTTP/2+ adds value by mixing in other protocols like UDP (used by HTTP/3) along with traditional TCP connections.
+Third-party domains have been quick to support new protocols as we saw in our previous study. In 2022 we saw decline in the share of HTTP/2 protocol by a small percentage point for the third party domains. We also saw an uptick in other protocols (HTTP/3) share. This can be attributed to the fact that the third-party domains have been quick to adopt newer protocol for more effecient deliveryu.
+Looking at third-party domains supporting newer protocols, we see an interesting trend of higher adoption of HTTP/2+protocols compared to first-party domains. This makes sense, considering the fact that most of the top third-party domains use purpose-built CDNs and thus have more control on the content development and content delivery. 
 
-Back in 2019, Uber did an experiment to understand how UDP along with TCP (aka QUIC, the transport layer of HTTP/3) can help deliver content with consistent performance and overcome packet loss in highly congested mobile networks. The results of this experiment documented in <a hreflang="en" href="https://eng.uber.com/employing-quic-protocol/">this blog post</a> throws valuable insights into the demographic where HTTP/3 can help. Over time, this trend will trickle down and we should see web owners adopting HTTP/3, especially with mobile network traffic having a higher contribution to the total internet traffic.
+Compared to the year 2021 we saw decline in the share of HTTP/2 protocol by a small percentage point for the third party domains. We also saw an uptick in other protocols (HTTP/3) share. This can be attributed to the fact that the third-party domains have been quick to adopt newer protocol for more effecient delivery
+Third-party domains need to have consistent performance across all network conditions, and this is where HTTP/2+ adds value by mixing in other protocols like UDP (used by HTTP/3) along with traditional TCP connections.
+
+In June of 2022 the Internet Engineering Task Force (IETF) published the ([HTTP/3 RFC] (https://www.theregister.com/2022/06/07/http3_rfc_9114_published/)) to take the web from TCP to UDP. Many CDN providers have been quick to adopt HTTP/3 support and over time we should see web owners adopting HTTP/3, especially with mobile network traffic having a higher contribution to the total internet traffic. Stay tuned for more insights in 2023.
+
 
 ## Brotli adoption
 
@@ -371,33 +390,99 @@ Similar to TLS and HTTP/2 adoption, Brotli went through a phase of gradual adopt
 The impact of this is observed when we compare websites which are using CDN against the ones not using CDN.
 
 {{ figure_markup(
-  image="compression-desktop.png",
+  image="cdn-compression-desktop.png",
   caption="Distribution of compression types (desktop).",
-  description="This bar chart shows the Brotli adoption across CDN and origin on desktop requests. CDN's served 42.5% of requests in Brotli compressed format and 57.5% of requests in gzip compressed format. Origin on the other hand served 20.7% of requests in Brotli compressed format and 79.3% of requests in gzip compressed format.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=914242768&format=interactive",
-  sheets_gid="1196940164",
+  description="This bar chart shows the Brotli adoption across CDN and origin on desktop requests. CDN's served 46% of requests in Brotli compressed format and 54% of requests in gzip compressed format. Origin on the other hand served 23% of requests in Brotli compressed format and 77% of requests in gzip compressed format.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=229562009&format=interactive",
+  sheets_gid="2043216080",
   sql_file="distribution_of_compression_types_cdn_vs_origin.sql"
   )
 }}
 
 {{ figure_markup(
-  image="compression-mobile.png",
+  image="cdn-compression-mobile.png",
   caption="Distribution of compression types (mobile).",
-  description="This bar chart shows the Brotli adoption across CDN and origin on mobile requests. CDN's served 42.6% of requests in Brotli compressed format and 57.3% of requests in gzip compressed format. Origin on the other hand served 21.2% of requests in Brotli compressed format and 78.7% of requests in gzip compressed format.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=1852382089&format=interactive",
-  sheets_gid="1196940164",
+  description="This bar chart shows the Brotli adoption across CDN and origin on mobile requests. CDN's served 47% of requests in Brotli compressed format and 57.3% of requests in gzip compressed format. Origin on the other hand served 25% of requests in Brotli compressed format and 77% of requests in gzip compressed format.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=1836100530&format=interactive",
+  sheets_gid="2043216080",
   sql_file="distribution_of_compression_types_cdn_vs_origin.sql"
   )
 }}
 
-On both desktop and mobile platforms, we see that CDNs are delivering twice as many text assets in Brotli, compared to domains delivered from origin. From the [CDN adoption](#cdn-adoption) section covered earlier, 73% of the domains serving sites are on CDNs and these can all benefit from the Brotli compression. By offloading the computational load of compressing a text asset in the Brotli format to CDNs, website owners need not invest resources for hosting infrastructure.
+Both CDN and Origin have shown an increase in adoption of Brotli compared to the year 2021 [CDN 2021 ](../2021/cdn).
+We have seen the adoption of Brotli on CDN grow by 5% points while the Origin grew by 3% points. We will be able to see if this trend will continue in year 2023 or we have reached the saturation point.
 
-However, it is at the web property owner's discretion whether to use Brotli compression on their CDNs or not. Compared to 95% of the web browsers globally which support Brotli compression, even with CDNs in place, less than half of all the text assets are delivered in Brotli format—so there is clearly space for this adoption to improve.
+## Client Hint Adoption
+
+Client hints allows a web server to proactively request data from the client and are sent as part of the HTTP headers. The client may provide information such as device, user, user-agent preferences and networking. Based on the provided information, the server can determine the most optimal resources to respond with to the requesting client. Client hints was first introduced on the Google Chrome browsers and while other Chromium based browsers have adopted it, other popular browsers have limited or no support for client hints.
+
+The CDN, origin servers and client browser must all support client hints to be utilized properly. As part of the flow, the CDN can present the Accept-CH HTTP header to the client in order to request which client hints a client should include in subsequent requests. We measured clients responses where the CDN provided this header inside the request and measured it across all CDN requests recorded as part of our testing.
+
+For both desktop and mobile clients we saw less than 1% usage of client hints, showing that client hints adoption has a ways to go.
+
+{{ figure_markup(
+  image="cdn-client-hints-desktop.png",
+  caption="Client Hints Comparison (Desktop).",
+  description="This bar chart shows the usage of Client Hints in CDNs. Currently only 0.74% of the requests have client hints",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=1855462743&format=interactive",
+  sheets_gid="2048261739",
+  sql_file="clienthints_response_counts_by_client.sql"
+  )
+}}
+
+{{ figure_markup(
+  image="cdn-client-hints-mobile.png",
+  caption="Client Hints ComparisonClient Hints Comparison (mobile).",
+  description="This bar chart shows the usage of Client Hints in CDNs. Currently only 0.43% of the requests have client hints",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=1567266649&format=interactive",
+  sheets_gid="2043216080",
+  sql_file="clienthints_response_counts_by_client.sql"
+  )
+}}
+
+
+## Image Format Adoption
+
+CDN’s have traditionally been used to cache, compress and deliver static content such as images since their inception. Since then many CDN’s have added the ability to dynamically change images in both format and sizing on the fly to optimize the image for different use cases. This is often performed by sending additional parameters in the query string whereby compute at the edge will interpret and modify the image in the response accordingly.
+
+Across both desktop and mobile the dominant image formats were JPG (JPEG) and PNG. JPG provides a lossly compressed file format optimizing for size. PNG or Portable Graphics Format supports lossless compression meaning no data will be lost when the image is compressed, however the image overall is larger in size than a JPG. For more information on  JPG vs PNG visit [Adobe’s website] (https://www.adobe.com/creativecloud/file-types/image/comparison/jpeg-vs-png.html).
+
+{{ figure_markup(
+  image="cdn-image-formats-desktop.png",
+  caption="Distribution of Image Formats (Desktop).",
+  description="This chart shows the usate of different Image Formats served from CDNs.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=963068854&format=interactive",
+  sheets_gid="571877353",
+  sql_file="image_format_counts_by_client.sql"
+  )
+}}
+
+{{ figure_markup(
+  image="cdn-image-formats-mobile.png",
+  caption="Distribution of Image Formats (mobile).",
+  description="This bar chart shows the Brotli adoption across CDN and origin on mobile requests. CDN's served 42.6% of requests in Brotli compressed format and 57.3% of requests in gzip compressed format. Origin on the other hand served 21.2% of requests in Brotli compressed format and 78.7% of requests in gzip compressed format.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=293872923&format=interactive",
+  sheets_gid="571877353",
+  sql_file="image_format_counts_by_client.sql"
+  )
+}}
+
+
+
 
 ## Conclusion
 
+From our continued study in the past years we can see tha the CDNs have not only been vital to the web application owners in order to reliably deliver content from origin to any user across the globe, they have also played a major role in new Security and Web standard adoption.
+
+In general we have seen the rise in the usage of CDNs across the board. This year we significantly increased our sample size to cover most of the use cases out there and the results have been very consistent. We saw that the CDN greatly facilitated the adoption new web security standards such as TLS 1.3 where we saw much higher percentage of traffic using TLS 1.3 came from CDN.
+
+When it comes to the adoption of new web standards and new web technologies such as HTTP/2, Brotli compression we again saw CDNs leading the way. Much higher percentage of the web application served out of CDN saw these new standards being adopted.
+From the end user perspective this is very positive development as they will be able use the application securely while getting the optimal user experience.
+
+We are also looking at new metrics like Client Hints and Image Format adoption starting this year. We will be able to get more insights as we collect more data for the next year.
+
 There are limitations to the insights we can deduce about CDNs from the outside, since it is hard to know the secret sauce powering them behind the scenes. However, we have crawled the domains and compared the ones on CDNs against those who are not. We can see that CDNs have been an enabler for websites to adopt new web protocols, from the network layer to the application layer.
 
-This impact is universal, with similar adoption rates across mobile and desktop: from using the latest TLS versions to upgrading to the newest HTTP versions (like HTTP/2, HTTP/3) to using the Brotli compression. What stands out is the depth of this impact and the sizable lead the CDN domains have built relative to non-CDN domains.
-
 This role of CDNs is highly valuable and this will continue to be the case. CDN providers are also a key part of the <a hreflang="en" href="https://www.ietf.org/">Internet Engineering Task Force</a>, where they help shape the future of the internet. They will continue to play a key role aiding the internet-enabled industries to operate smoothly, reliably and quickly.
+
+We look forward to the next year to collect more data and provide useful insights to our readers.
