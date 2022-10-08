@@ -229,7 +229,7 @@ Sensors can be useful to make a website more interactive but could also be abuse
 The [MediaDevices API](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices) can be used to access connected media input such as cameras, microphones and screen sharing.
 
 {{ figure_markup(
-  caption="Percent of desktop pages that used the `MediaDevicesEnumerateDevices` API.",
+  caption="Percent of desktop pages that used the MediaDevices `EnumerateDevices` API.",
   content="7.23%",
   classes="big-number",
   sheets_gid="2141743069",
