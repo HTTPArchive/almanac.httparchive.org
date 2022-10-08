@@ -9,13 +9,13 @@ translators: []
 tomvangoethem_bio: Tom Van Goethem recently joined the Chrome Privacy team at Google. Before, Tom was in PhD program with the DistriNet group of the University of Leuven, Belgium. His research interests cover a broad spectrum of topics in the field of web security and privacy, with a primary focus on side-channel attacks. By uncovering threats and proposing mitigations, Tom aims to make the web a nicer place, a tiny bit at a time.
 nrllh_bio: Nurullah Demir is a cyber security researcher and PhD student at <a hreflang="en" href="https://www.internet-sicherheit.de/en/">Institute for Internet Security</a> and <a hreflang="en" href="https://intellisec.de">Intelligent System Security, KASTEL Security Research Labs</a>. His research focuses on web security & privacy, and web measurements.
 results: https://docs.google.com/spreadsheets/d/1iJqj3g0VEjpmjzvtX6VLeRehE7LDQGcw6lOadxGxkjk/
-featured_quote: While it may still take a couple of years to finally get there, we are transitioning towards a web that gives users more control over what they want to share with which parties. We can see this convergence on both sides of the spectrum. On the one hand, initiated by the website, and on the other hand, enforced by the browser.
+featured_quote: While it may still take a couple of years to finally get there, we are transitioning towards a web that gives users more control over what they want to share with which parties. We can see this convergence on both sides of the spectrum&colon; on the one hand, initiated by the website, and on the other hand, enforced by the browser.
 featured_stat_1: 82%
-featured_stat_label_1: Sites that include at least one third-party tracker.
+featured_stat_label_1: Sites including at least one third-party tracker.
 featured_stat_2: 11%
-featured_stat_label_2: The prevalence of Consent Management Platforms (CMPs), an increase of almost 60% compared to last year.
+featured_stat_label_2: The prevalence of Consent Management Platforms (CMPs).
 featured_stat_3: 9.5%
-featured_stat_label_3: Sites of the top 1,000 that make use of User-Agent Client Hints, a 3x increase over last year, indicating an interest in this privacy-focused feature.
+featured_stat_label_3: Sites of the top 1,000 that make use of User-Agent Client Hints.
 unedited: true
 ---
 
