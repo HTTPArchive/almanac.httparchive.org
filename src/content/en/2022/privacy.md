@@ -16,7 +16,6 @@ featured_stat_2: 11%
 featured_stat_label_2: The prevalence of Consent Management Platforms (CMPs).
 featured_stat_3: 9.5%
 featured_stat_label_3: Sites of the top 1,000 that make use of User-Agent Client Hints.
-unedited: true
 ---
 
 ## Introduction
