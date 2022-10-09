@@ -317,15 +317,13 @@ This is quite important when you consider that all sites will have to be on TLS 
 
 ## HTTP/2+ (HTTP/2 or better) adoption
 
-HTTP/2 was introduced with a lot of hype and expectation. This was because the application layer protocol had not been updated since HTTP 1.1 in 1997. Since then, the web traffic trend, content-type, content size, website design, platforms, mobile apps and more have evolved significantly. Thus, there was a need to have a protocol which can meet the requirements of the modern-day web traffic and that protocol was realized with HTTP/2, and then further improved with the more recent HTTP/3.
+The HTTP/2 specification was first introduced in 2015 and saw broad support with most major browsers adopting before the end of the year. The HTTP application layer protocol had not been updated since HTTP 1.1 in 1997 and since then the web traffic trend, content-type, content size, website design, platforms, mobile apps and more have evolved significantly. Thus, there was a need to have a protocol which can meet the requirements of the modern-day web traffic and that protocol was realized with HTTP/2.
 
-However, the implementation challenges of HTTP/2 discouraged adoption. In addition, the net performance gains which can be expected with these changes was also not clear. Challenges repeated with the introduction of HTTP/3.
-
-This was where the CDNs being the intermediary can help in bridging the challenge of HTTP/2 implementation for web owners. An HTTP/2 connection terminates at the CDN level, and this provides web owners the ability to deliver their website and subdomains over HTTP/2 without the need to upgrade their infrastructure to support it—the exact same reasons and benefits we saw for newer TLS versions.
+Despite the hype of HTTP/2 and the promise of reduced latency and other functionality, adoption relied on server side updates to support the newer application protocol. During this time and for future protocol improvements like HTTP/3, as being an intermediary CDNs can help bridge the challenge of newer implementations for web owners. An HTTP/2 connection terminates at the CDN level, and this provides web owners the ability to deliver their website and subdomains over HTTP/2 without the need to upgrade their infrastructure to support it. Similar benefits were also seen with the adoption of newer TLS versions.
 
 CDNs act as the proxy to bridge the gap by providing a layer to consolidate hostnames and route traffic to relevant endpoints with minimal change to their hosting infrastructure. Features like prioritizing content in the queue and server push can be managed from the CDN's side and a few CDN's even provide hands-off automated solutions to run these features without any inputs from website owners, thus providing a boost to HTTP/2 adoption.
 
-The trend cannot be clearer than what the graph shows below. There is high HTTP/2+ adoption by domains on CDNs compared to the ones not using a CDN.
+There are stark contrasts in the graphs below with high HTTP/2+ adoption by domains on CDNs compared to the ones not using a CDN.
 
 <p class="note">Note that due to the way HTTP/3 works (see the [HTTP](./http) chapter for more information), HTTP/3 is often not used for first connections which is why we are instead measuring "HTTP/2+", since many of those HTTP/2 connections may actually be HTTP/3 for repeat visitors (we have assumed that no servers implement HTTP/3 without HTTP/3).</p>
 
@@ -349,7 +347,7 @@ The trend cannot be clearer than what the graph shows below. There is high HTTP/
   )
 }}
 
-In 2021 39.8% of the content served from origin had HTTP/2 adopted while during the same time 81% of the content served from CDNs were served through HTTP/2. For origin this number has grown by 3% points while for the CDN it has grown by 6% points. This shows how CDN was able to allow the web application owners to take advantage of HTTP/2 from very early stage whithout making any changes in the origin.
+In 2021 39.8% of the content served from origin had HTTP/2 adopted while during the same time 81.7% of the content served from CDNs were served through HTTP/2. For origin this number has grown by 3% points while for the CDN it has grown by 6% points. This shows how CDN was able to allow the web application owners to take advantage of HTTP/2 from very early stage whithout making any changes in the origin.
 The trends are very similar for both desktop and mobile sites.
 
 {{ figure_markup(
@@ -372,13 +370,12 @@ The trends are very similar for both desktop and mobile sites.
   )
 }}
 
-Third-party domains have been quick to support new protocols as we saw in our previous study. In 2022 we saw decline in the share of HTTP/2 protocol by a small percentage point for the third party domains. We also saw an uptick in other protocols (HTTP/3) share. This can be attributed to the fact that the third-party domains have been quick to adopt newer protocol for more effecient deliveryu.
-Looking at third-party domains supporting newer protocols, we see an interesting trend of higher adoption of HTTP/2+protocols compared to first-party domains. This makes sense, considering the fact that most of the top third-party domains use purpose-built CDNs and thus have more control on the content development and content delivery. 
+Third-party domains have been quick to support new protocols as we saw in our previous study. In 2022 we saw decline in the share of HTTP/2 protocol by a small percentage point for the third party domains. We also saw an uptick in other protocols (HTTP/3) share. This can be attributed to the fact that the third-party domains have been quick to adopt newer protocol for more effecient delivery.
 
 Compared to the year 2021 we saw decline in the share of HTTP/2 protocol by a small percentage point for the third party domains. We also saw an uptick in other protocols (HTTP/3) share. This can be attributed to the fact that the third-party domains have been quick to adopt newer protocol for more effecient delivery
 Third-party domains need to have consistent performance across all network conditions, and this is where HTTP/2+ adds value by mixing in other protocols like UDP (used by HTTP/3) along with traditional TCP connections.
 
-In June of 2022 the Internet Engineering Task Force (IETF) published the ([HTTP/3 RFC] (https://www.theregister.com/2022/06/07/http3_rfc_9114_published/)) to take the web from TCP to UDP. Many CDN providers have been quick to adopt HTTP/3 support and over time we should see web owners adopting HTTP/3, especially with mobile network traffic having a higher contribution to the total internet traffic. Stay tuned for more insights in 2023.
+In June of 2022 the Internet Engineering Task Force (IETF) published the ([HTTP/3 RFC] (https://www.theregister.com/2022/06/07/http3_rfc_9114_published/)) to take the web from TCP to UDP. Many CDN providers have been quick to adopt HTTP/3 support, some before its formal RFC publication, and over time we should see web owners adopting HTTP/3, especially with mobile network traffic having a higher contribution to the total internet traffic. Stay tuned for more insights in 2023.
 
 
 ## Brotli adoption
