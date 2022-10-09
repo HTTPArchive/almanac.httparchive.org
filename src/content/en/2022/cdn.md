@@ -382,7 +382,7 @@ In June of 2022 the Internet Engineering Task Force (IETF) published the ([HTTP/
 
 Content delivered over the internet employs compression to reduce the payload size. A smaller payload means it's faster to deliver the content from server to end user. This makes websites load faster and provide a better end-user experience. For images, this compression is handled by image file formats like JPEG, WEBP, AVIF, etc. (refer to the [Media](./media) chapter for more on this). For textual web assets (such as HTML, JavaScript, and stylesheets) compression was traditionally handled by a file format called [_Gzip_](https://en.wikipedia.org/wiki/Gzip). Gzip has been in existence since 1992. It did a good job of making text asset payloads smaller, but a new text asset compression can do better than Gzip: [_Brotli_](https://en.wikipedia.org/wiki/Brotli) (refer to the [Compression](./compression) chapter for more information).
 
-Similar to TLS and HTTP/2 adoption, Brotli went through a phase of gradual adoption across web platforms. At the time of this writing, Brotli is <a hreflang="en" href="https://caniuse.com/brotli">supported by 96%</a> of the web browsers globally. However, not all websites compress text assets in Brotli format. This is because of both lack of support and of the longer time required to compress a text asset in Brotli format compared to Gzip compression. Also, the hosting infrastructure needs to have backward compatibility to serve Gzip compressed assets for older platforms which do not support the Brotli format, which can add complexity.
+Similar to TLS and HTTP/2 adoption, Brotli went through a phase of gradual adoption across web platforms. At the time of this writing, Brotli is <a hreflang="en" href="https://caniuse.com/brotli">supported by over 96%</a> of the web browsers globally. However, not all websites compress text assets in Brotli format. This is because of both lack of support and of the longer time required to compress a text asset in Brotli format compared to Gzip compression. Also, the hosting infrastructure needs to have backward compatibility to serve Gzip compressed assets for older platforms which do not support the Brotli format, which can add complexity.
 
 The impact of this is observed when we compare websites which are using CDN against the ones not using CDN.
 
@@ -413,9 +413,9 @@ We have seen the adoption of Brotli on CDN grow by 5% points while the Origin gr
 
 Client hints allows a web server to proactively request data from the client and are sent as part of the HTTP headers. The client may provide information such as device, user, user-agent preferences and networking. Based on the provided information, the server can determine the most optimal resources to respond with to the requesting client. Client hints was first introduced on the Google Chrome browsers and while other Chromium based browsers have adopted it, other popular browsers have limited or no support for client hints.
 
-The CDN, origin servers and client browser must all support client hints to be utilized properly. As part of the flow, the CDN can present the Accept-CH HTTP header to the client in order to request which client hints a client should include in subsequent requests. We measured clients responses where the CDN provided this header inside the request and measured it across all CDN requests recorded as part of our testing.
+The CDN, origin servers, and client browser must all support client hints to be utilized properly. As part of the flow, the CDN can present the Accept-CH HTTP header to the client in order to request which client hints a client should include in subsequent requests. We measured clients responses where the CDN provided this header inside the request and measured it across all CDN requests recorded as part of our testing.
 
-For both desktop and mobile clients we saw less than 1% usage of client hints, showing that client hints adoption has a ways to go.
+For both desktop and mobile clients we saw less than 1% usage of client hints, showing that client hints adoption is still in its infancy.
 
 {{ figure_markup(
   image="cdn-client-hints-desktop.png",
@@ -440,7 +440,7 @@ For both desktop and mobile clients we saw less than 1% usage of client hints, s
 
 ## Image Format Adoption
 
-CDN’s have traditionally been used to cache, compress and deliver static content such as images since their inception. Since then many CDN’s have added the ability to dynamically change images in both format and sizing on the fly to optimize the image for different use cases. This is often performed by sending additional parameters in the query string whereby compute at the edge will interpret and modify the image in the response accordingly.
+CDN’s have traditionally been used to cache, compress and deliver static content such as images since their inception. Since then many CDN’s have added the ability to dynamically change images in both format and sizing on the fly to optimize the image for different use cases. This is often performed by sending additional parameters in the query string whereby compute at the edge will interpret and modify the image in the response accordingly. This allows site operators to upload a single high resolution image and modify it on the fly for when lower quality or lower resolution images are needed such as in thumbnails.
 
 Across both desktop and mobile the dominant image formats were JPG (JPEG) and PNG. JPG provides a lossly compressed file format optimizing for size. PNG or Portable Graphics Format supports lossless compression meaning no data will be lost when the image is compressed, however the image overall is larger in size than a JPG. For more information on  JPG vs PNG visit [Adobe’s website] (https://www.adobe.com/creativecloud/file-types/image/comparison/jpeg-vs-png.html).
 
