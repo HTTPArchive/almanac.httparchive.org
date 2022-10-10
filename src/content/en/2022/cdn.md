@@ -45,13 +45,12 @@ During the early days, a CDN was a simple network of proxy servers which would:
 
 They primarily helped web owners to improve the page load times and to offload traffic from the infrastructure hosting these web properties.
 
-Over time, the services offered by CDN providers have evolved beyond caching and offloading bandwidth/connections. Due to its distributed nature and large distrubuted network capacity CDNs have proved to be extremely efficient at handling large scale DDoS attacks. Edge computing is another service that has gained popularity in the recent years. Many CDN vendors provide compute services at the edge that allows the web owners to run simple code at the Edge.
+Over time, the services offered by CDN providers have evolved beyond caching and offloading bandwidth/connections. Due to its distributed nature and large distributed network capacity CDNs have proved to be extremely efficient at handling large scale DDoS attacks. Edge computing is another service that has gained popularity in the recent years. Many CDN vendors provide compute services at the edge that allows the web owners to run simple code at the Edge.
 Other services offered by the CDN vendors include the following.
 
 * Cloud-hosted Web Application Firewalls
 * Bot Management solutions
 * Clean pipe solutions (Scrubbing Data-centers)
-* Serverless Computing offerings
 * Image and Video Management solutions etc.,
 * Edge computing Services
 
@@ -72,7 +71,7 @@ These are the limits to our testing [methodology](./methodology):
 
 - **Localization and internationalization:** Just like geographic distribution, the effects of language and geo-specific domains are also opaque to these tests.
 
-- **CDN detection:** This is primarily done through DNS resolution and HTTP headers. Most CDNs use a DNS CNAME to map a user to an optimal datacenter. However, some CDNs use Anycast IPs or direct A+AAAA responses from a delegated domain which hide the DNS chain. In other cases, websites use multiple CDNs to balance between vendors, which is hidden from the single-request pass of our crawler.
+- **CDN detection:** This is primarily done through DNS resolution and HTTP headers. Most CDNs use a DNS CNAME to map a user to an optimal data center. However, some CDNs use Anycast IPs or direct A+AAAA responses from a delegated domain which hide the DNS chain. In other cases, websites use multiple CDNs to balance between vendors, which is hidden from the single-request pass of our crawler.
 
 All of this influences our measurements.
 
@@ -99,10 +98,10 @@ A web page is composed of following key components:
 
 CDNs are utilized for delivering static content such as images, stylesheets, JavaScript, and fonts. This kind of content doesn’t change frequently, making it a good candidate for caching on a CDN’s proxy servers. CDNs provide better performance for delivering non static content as well as they often optimize the routes and use most efficient transport mechanisms.
 
-Compared to the year 2021([2021 chapter](../2021/cdn)) we found that the usage of CDN has been steadily increasing. There was a large bump in CDN usage for the content served from sub-domains. These are some of the potential reasons that can be attributed to this rise.
+Compared to the year 2021 ([2021 chapter](../2021/cdn)) we found that the usage of CDN has been steadily increasing. There was a large bump in CDN usage for the content served from sub-domains. These are some of the potential reasons that can be attributed to this rise.
 
 * Post pandemic, many businesses took a large portion of their physical business online. This put a lot of strain on their servers and found that it was much more efficient to server the static content through CDNs for offloading through caching and faster delivery.
-* This increase was not seen in 2021([2021 chapter](../2021/cdn)) as many businesses were still trying to figure out the optimal solution for their problem.
+* This increase was not seen in 2021 ([2021 chapter](../2021/cdn)) as many businesses were still trying to figure out the optimal solution for their problem.
 
 * Sites relied on serving third party content through third party domains instead of their own domains. The fact that the amount of content served from third party domains increased by 3% during this period supports this assumption.
 
@@ -185,7 +184,7 @@ Ranking the websites based on their popularity (sourced from Google’s Chrome U
 
 CDN providers can be broadly classified into 2 segments:
 
-1. Generic CDN (Akamai, Cloudflare, Cloudfront, Fastly etc.)
+1. Generic CDN (Akamai, Cloudflare, CloudFront, Fastly etc.)
 2. Purpose-built CDN (Netlify, WordPress etc.)
 
 Generic CDN addresses the mass market requirements. Their offerings include:
@@ -193,7 +192,7 @@ Generic CDN addresses the mass market requirements. Their offerings include:
 * Web site delivery
 * mobile app API delivery
 * Video streaming
-* Serverless compute offerings
+* Edge computing services
 * Web security offerings, etc.
 
 This appeals to a larger set of industries and is reflected in the data. Generic CDNs hold the lion's share of the HTML and First party subdomain traffic:
@@ -265,7 +264,7 @@ Compared to the year 2021, for desktop HTML content the adoption of TLS v1.3 has
   image="tls-version-mobile.png",
   caption="Distribution of TLS version for HTML (mobile).",
   description="Bar chart of TLS version usage in mobile requests served by CDN and origin. CDN's have served 87% of the requests using TLS 1.3 and 13% of the requests in TLS 1.2. Origin on the other served 42% of the requests over TLS 1.3 and 58% of the requests on TLS 1.2.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzfIy4p9ujiLHb9T6GpyDE9j7Pni5vBirHhsD53y5my_U4grve1zE4jTWdqGmmXtZahnBOzFeoil52/pubchart?oid=586006642&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=755535896&format=interactive",
   sheets_gid="2008253446",
   sql_file="distribution_of_tls_versions_cdn_vs_origin.sql"
   )
@@ -299,11 +298,22 @@ In the current security landscape it is important for the content to be delivere
 
 ## TLS performance impact
 
-Common logic dictates that the fewer hops it takes for a HTTPS request-response to traverse, the faster the round trip would be. So exactly how much quicker can it be if the TLS connection terminates closer to the end user? The answer: As much as 3 times faster!
+Common logic dictates that the fewer hops it takes for a HTTPS request-response to traverse, the faster the round trip would be. As it can be seen from the figure below the tls negotiation time is generally better when with CDNs.
+
+{{ figure_markup(
+  image="tls-negotiation-desktop.png",
+  caption="HTML TLS negotiation - CDN vs origin (Desktop)",
+  description="This bar chart provides insight into TLS connection time (in milliseconds) across 10th, 25th, 50th, 75th and 90th percentile for CDN and origin. As it can be seen from the chart the TLS negotiation time is generally faster for CDNs.",
+  chart_url="https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=1669978107&format=interactive",
+  sheets_gid="1644442668",
+  sql_file="distribution_of_tls_time_cdn_vs_origin.sql"
+  )
+}}
+
 
 {{ figure_markup(
   image="tls-negotiation.png",
-  caption="HTML TLS negotiation - CDN vs origin.",
+  caption="HTML TLS negotiation - CDN vs origin (Mobile)",
   description="This bar chart provides insight into TLS connection time (in milliseconds) across 10th, 25th, 50th, 75th and 90th percentile for CDN and origin. As it can be seen from the chart the TLS negotiation time is generally faster for CDNs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=1577806460&format=interactive",
   sheets_gid="1644442668",
@@ -311,7 +321,8 @@ Common logic dictates that the fewer hops it takes for a HTTPS request-response 
   )
 }}
 
-CDNs have helped slash the TLS connection times. This is due to their proximity to the end user and adoption of newer TLS protocols that optimize the TLS negotiation. CDNs hold the edge over origin at all percentiles here. At P10 and P25, CDNs are nearly 1.5x faster than origin in TLS set up time. The gap increases even more once we hit the median and above, where CDNs are nearly 2x faster. 90th percentile users using a CDN will have better performance than 50th percentile users on direct origin connections.
+
+CDNs have helped slash the TLS connection times. This is due to their proximity to the end user and adoption of newer TLS protocols that optimize the TLS negotiation. CDNs hold the edge over origin at all percentiles here. At P10 and P25, CDNs are nearly 1.5x faster than origin in TLS set up time. The gap increases even more once we hit the median and above, where CDNs are nearly 2x faster (Mobile) and nearly 3x faster (Desktop). 90th percentile users using a CDN will have better performance than 50th percentile users on direct origin connections.
 
 This is quite important when you consider that all sites will have to be on TLS these days. Optimal performance at this layer is essential for other steps that follow TLS connection. In this regard, CDNs are able to move more users to lower percentile brackets compared to direct origin connections.
 
@@ -347,7 +358,7 @@ There are stark contrasts in the graphs below with high HTTP/2+ adoption by doma
   )
 }}
 
-In 2021 39.8% of the content served from origin had HTTP/2 adopted while during the same time 81.7% of the content served from CDNs were served through HTTP/2. For origin this number has grown by 3% points while for the CDN it has grown by 6% points. This shows how CDN was able to allow the web application owners to take advantage of HTTP/2 from very early stage whithout making any changes in the origin.
+In 2021 39.8% of the content served from origin had HTTP/2 adopted while during the same time 81.7% of the content served from CDNs were served through HTTP/2. For origin this number has grown by 3% points while for the CDN it has grown by 6% points. This shows how CDN was able to allow the web application owners to take advantage of HTTP/2 from very early stage without making any changes in the origin.
 The trends are very similar for both desktop and mobile sites.
 
 {{ figure_markup(
@@ -370,12 +381,12 @@ The trends are very similar for both desktop and mobile sites.
   )
 }}
 
-Third-party domains have been quick to support new protocols as we saw in our previous study. In 2022 we saw decline in the share of HTTP/2 protocol by a small percentage point for the third party domains. We also saw an uptick in other protocols (HTTP/3) share. This can be attributed to the fact that the third-party domains have been quick to adopt newer protocol for more effecient delivery.
+Third-party domains have been quick to support new protocols as we saw in our previous study. In 2022 we saw decline in the share of HTTP/2 protocol by a small percentage point for the third-party domains. We also saw an uptick in other protocols (HTTP/3) share. This can be attributed to the fact that the third-party domains have been quick to adopt newer protocol for more efficient delivery.
 
-Compared to the year 2021 we saw decline in the share of HTTP/2 protocol by a small percentage point for the third party domains. We also saw an uptick in other protocols (HTTP/3) share. This can be attributed to the fact that the third-party domains have been quick to adopt newer protocol for more effecient delivery
+Compared to the year 2021, we saw decline in the share of HTTP/2 protocol by a small percentage point for the third party domains. We also saw an uptick in other protocols (HTTP/3) share. This can be attributed to the fact that the third-party domains have been quick to adopt newer protocol for more efficient delivery
 Third-party domains need to have consistent performance across all network conditions, and this is where HTTP/2+ adds value by mixing in other protocols like UDP (used by HTTP/3) along with traditional TCP connections.
 
-In June of 2022 the Internet Engineering Task Force (IETF) published the ([HTTP/3 RFC] (https://www.theregister.com/2022/06/07/http3_rfc_9114_published/)) to take the web from TCP to UDP. Many CDN providers have been quick to adopt HTTP/3 support, some before its formal RFC publication, and over time we should see web owners adopting HTTP/3, especially with mobile network traffic having a higher contribution to the total internet traffic. Stay tuned for more insights in 2023.
+In June of 2022, the Internet Engineering Task Force (IETF) published the ([HTTP/3 RFC] (https://www.theregister.com/2022/06/07/http3_rfc_9114_published/)) to take the web from TCP to UDP. Many CDN providers have been quick to adopt HTTP/3 support, some before its formal RFC publication, and over time we should see web owners adopting HTTP/3, especially with mobile network traffic having a higher contribution to the total internet traffic. Stay tuned for more insights in 2023.
 
 
 ## Brotli adoption
@@ -407,7 +418,7 @@ The impact of this is observed when we compare websites which are using CDN agai
 }}
 
 Both CDN and Origin have shown an increase in adoption of Brotli compared to the year 2021 [CDN 2021 ](../2021/cdn).
-We have seen the adoption of Brotli on CDN grow by 5% points while the Origin grew by 3% points. We will be able to see if this trend will continue in year 2023 or we have reached the saturation point.
+We have seen the adoption of Brotli on CDN grow by 5% points while the Origin grew by almost 4% points. We will be able to see if this trend will continue in year 2023 or we have reached the saturation point.
 
 ## Client Hint Adoption
 
@@ -469,9 +480,9 @@ Across both desktop and mobile the dominant image formats were JPG (JPEG) and PN
 
 ## Conclusion
 
-From our continued study in the past years we can see tha the CDNs have not only been vital to the web application owners in order to reliably deliver content from origin to any user across the globe, they have also played a major role in new Security and Web standard adoption.
+From our continued study in the past years, we can see that the CDNs have not only been vital to the web application owners in order to reliably deliver content from origin to any user across the globe, they have also played a major role in new Security and Web standard adoption.
 
-In general we have seen the rise in the usage of CDNs across the board. This year we significantly increased our sample size to cover most of the use cases out there and the results have been very consistent. We saw that the CDN greatly facilitated the adoption new web security standards such as TLS 1.3 where we saw much higher percentage of traffic using TLS 1.3 came from CDN.
+In general, we have seen the rise in the usage of CDNs across the board. This year we significantly increased our sample size to cover most of the use cases out there and the results have been very consistent. We saw that the CDN greatly facilitated the adoption new web security standards such as TLS 1.3 where we saw much higher percentage of traffic using TLS 1.3 came from CDN.
 
 When it comes to the adoption of new web standards and new web technologies such as HTTP/2, Brotli compression we again saw CDNs leading the way. Much higher percentage of the web application served out of CDN saw these new standards being adopted.
 From the end user perspective this is very positive development as they will be able use the application securely while getting the optimal user experience.
