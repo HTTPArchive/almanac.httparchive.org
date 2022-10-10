@@ -99,8 +99,7 @@
           "chapter_number": "13",
           "title": "Privacy",
           "slug": "privacy",
-          "hero_dir": "2020",
-          "todo": true
+          "hero_dir": "2020"
         },
         {
           "part": "II",
@@ -894,17 +893,6 @@
         "designers"
       ]
     },
-    "miketaylr": {
-      "name": "Mike Taylor",
-      "teams": [
-        "editors",
-        "reviewers"
-      ],
-      "avatar_url": "67283",
-      "github": "miketaylr",
-      "website": "https://miketaylr.com",
-      "twitter": "miketaylr"
-    },
     "mgechev": {
       "name": "Minko Gechev",
       "teams": [
@@ -961,7 +949,7 @@
       ],
       "avatar_url": "13475745",
       "github": "nrllh",
-      "website": "internet-sicherheit.de",
+      "website": "https://www.internet-sicherheit.de/team/demir-nurullah.html",
       "twitter": "nrllah"
     },
     "pankajparkar": {
@@ -1076,8 +1064,7 @@
     "SaptakS": {
       "name": "Saptak Sengupta",
       "teams": [
-        "authors",
-        "reviewers"
+        "authors"
       ],
       "avatar_url": "9530293",
       "github": "SaptakS",
@@ -1103,15 +1090,6 @@
       ],
       "avatar_url": "22671477",
       "github": "shantsis"
-    },
-    "spanicker": {
-      "name": "Shubhie Panicker",
-      "teams": [
-        "authors"
-      ],
-      "avatar_url": "4945616",
-      "github": "spanicker",
-      "twitter": "shubhie"
     },
     "siakaramalegos": {
       "name": "Sia Karamalegos",
@@ -1198,7 +1176,9 @@
         "authors"
       ],
       "avatar_url": "4355579",
-      "github": "tomvangoethem"
+      "github": "tomvangoethem",
+      "website": "https://tom.vg/",
+      "twitter": "tomvangoethem"
     },
     "TusharPol": {
       "name": "Tushar Pol",
