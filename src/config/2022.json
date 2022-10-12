@@ -143,8 +143,7 @@
           "chapter_number": "20",
           "title": "Jamstack",
           "slug": "jamstack",
-          "hero_dir": "2020",
-          "todo": true
+          "hero_dir": "2020"
         },
         {
           "part": "III",
@@ -575,7 +574,6 @@
     "GregBrimble": {
       "name": "Greg Brimble",
       "teams": [
-        "analysts",
         "reviewers"
       ],
       "avatar_url": "8484333",
