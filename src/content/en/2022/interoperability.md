@@ -72,7 +72,7 @@ Flexbox is even older and more widely used. This year its use has grown again, [
 )
 }}
 
-Another bit of focus was toward `flex-basis: content`, which is used to automatically size based on the flex item's content.  This was implemented in WebKit and Chromium, but not Firefox. Today these tests pass uniformly in all browsers and `flex-basis: content` appears on 112,323 pages on desktop and 75,565 mobile, roughly 1% of pages. That's not a bad start for a feature in its first year of universal support and about double what it was last year. We'll keep an eye on this metric in the future.
+Another bit of focus was toward `flex-basis: content`, which is used to automatically size based on the flex item's content.  This was initially implemented in Firefox, but implementations in WebKit and Chromium were underway in 2021. Today these tests pass uniformly in all browsers and `flex-basis: content` appears on 112,323 pages on desktop and 75,565 mobile, roughly 1% of pages. That's not a bad start for a feature in its first year of universal support and about double what it was last year. We'll keep an eye on this metric in the future.
 
 ### Sticky positioning
 
@@ -255,7 +255,7 @@ The figure above shows the relative appearance of values in those pages—`layou
 
 While it is useful on its own, additional levels of containment support are a prerequisite to supporting container queries, so this will be an interesting metric to continue to track over time as container queries is the <a hreflang="en" href="https://2021.stateofcss.com/en-US/opinions/#currently_missing_from_css_wins">#1 most requested CSS feature</a> for many years. Now that containment is universally available, it's a great time for you to have a look and familiarize yourself with the basic concepts.
 
-Note that some degree of container queries support is already available in Chrome and Safari and polyfills are available, so we also decided to look at how many stylesheets already contain a `@container ruleset`, wondering how much this would account for the use we saw above.
+Note that some degree of container queries support is already available in Chrome and Safari and polyfills are available, so we also decided to look at how many stylesheets already contain a `@container` ruleset, wondering how much this would account for the use we saw above.
 
 {{ figure_markup(
   caption="Percentage of mobile pages containing a `@container` ruleset.",

@@ -98,8 +98,7 @@
           "chapter_number": "13",
           "title": "Privacy",
           "slug": "privacy",
-          "hero_dir": "2020",
-          "todo": true
+          "hero_dir": "2020"
         },
         {
           "part": "II",
@@ -143,8 +142,7 @@
           "chapter_number": "20",
           "title": "Jamstack",
           "slug": "jamstack",
-          "hero_dir": "2020",
-          "todo": true
+          "hero_dir": "2020"
         },
         {
           "part": "III",
@@ -170,6 +168,12 @@
           "chapter_number": "26",
           "title": "HTTP",
           "slug": "http"
+        },
+        {
+          "part": "IV",
+          "chapter_number": "27",
+          "title": "CDN",
+          "slug": "cdn"
         }
       ]
     }
@@ -317,6 +321,15 @@
       "linkedin": "tunetheweb",
       "twitter": "tunetheweb"
     },
+    "ibelem": {
+      "name": "Belem Zhang",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "5017359",
+      "github": "ibelem",
+      "twitter": "ibelem"
+    },
     "binji": {
       "name": "Ben Smith",
       "teams": [
@@ -449,7 +462,7 @@
       ],
       "avatar_url": "273554",
       "github": "dknauss",
-      "website": "newlocalmedia.com"
+      "website": "https://newlocalmedia.com"
     },
     "drohe": {
       "name": "Danielle Rohe",
@@ -564,27 +577,6 @@
       "avatar_url": "5749508",
       "github": "GJFR"
     },
-    "GregBrimble": {
-      "name": "Greg Brimble",
-      "teams": [
-        "analysts",
-        "reviewers"
-      ],
-      "avatar_url": "8484333",
-      "github": "GregBrimble",
-      "website": "https://gregbrimble.com/",
-      "twitter": "GregBrimble"
-    },
-    "Nutlope": {
-      "name": "Hassan El Mghari",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "63742054",
-      "github": "Nutlope",
-      "website": "https://www.elmghari.com/",
-      "twitter": "nutlope"
-    },
     "hemanth": {
       "name": "Hemanth HM",
       "teams": [
@@ -629,7 +621,9 @@
         "authors"
       ],
       "avatar_url": "104349412",
-      "github": "itamarblauer"
+      "github": "itamarblauer",
+      "website": "https://www.itamarblauer.com/",
+      "twitter": "ItamarBlauer"
     },
     "fellowhuman1101": {
       "name": "Jamie Indigo",
@@ -803,8 +797,7 @@
       "name": "Laurie Voss",
       "teams": [
         "analysts",
-        "authors",
-        "reviewers"
+        "authors"
       ],
       "avatar_url": "185893",
       "github": "seldo",
@@ -884,17 +877,6 @@
         "designers"
       ]
     },
-    "miketaylr": {
-      "name": "Mike Taylor",
-      "teams": [
-        "editors",
-        "reviewers"
-      ],
-      "avatar_url": "67283",
-      "github": "miketaylr",
-      "website": "https://miketaylr.com",
-      "twitter": "miketaylr"
-    },
     "mgechev": {
       "name": "Minko Gechev",
       "teams": [
@@ -951,7 +933,7 @@
       ],
       "avatar_url": "13475745",
       "github": "nrllh",
-      "website": "internet-sicherheit.de",
+      "website": "https://www.internet-sicherheit.de/team/demir-nurullah.html",
       "twitter": "nrllah"
     },
     "pankajparkar": {
@@ -961,7 +943,7 @@
       ],
       "avatar_url": "5320044",
       "github": "pankajparkar",
-      "website": "https://medium.com/@pankajparkar",
+      "website": "https://pankajparkar.dev",
       "twitter": "pankajparkar"
     },
     "patrickstox": {
@@ -1054,7 +1036,7 @@
       "website": "http://pixelambacht.nl"
     },
     "whitep4nth3r": {
-      "name": "Salma",
+      "name": "Salma Alam-Naylor",
       "teams": [
         "authors"
       ],
@@ -1066,23 +1048,12 @@
     "SaptakS": {
       "name": "Saptak Sengupta",
       "teams": [
-        "authors",
-        "reviewers"
+        "authors"
       ],
       "avatar_url": "9530293",
       "github": "SaptakS",
       "website": "https://saptaks.website",
       "twitter": "Saptak013"
-    },
-    "ibnesayeed": {
-      "name": "Sawood Alam",
-      "teams": [
-        "authors"
-      ],
-      "avatar_url": "65147",
-      "github": "ibnesayeed",
-      "website": "http://www.cs.odu.edu/~salam/",
-      "twitter": "ibnesayeed"
     },
     "scottdavis99": {
       "name": "Scott Davis",
@@ -1103,15 +1074,6 @@
       ],
       "avatar_url": "22671477",
       "github": "shantsis"
-    },
-    "spanicker": {
-      "name": "Shubhie Panicker",
-      "teams": [
-        "authors"
-      ],
-      "avatar_url": "4945616",
-      "github": "spanicker",
-      "twitter": "shubhie"
     },
     "siakaramalegos": {
       "name": "Sia Karamalegos",
@@ -1198,7 +1160,9 @@
         "authors"
       ],
       "avatar_url": "4355579",
-      "github": "tomvangoethem"
+      "github": "tomvangoethem",
+      "website": "https://tom.vg/",
+      "twitter": "tomvangoethem"
     },
     "TusharPol": {
       "name": "Tushar Pol",
@@ -1255,6 +1219,29 @@
       "website": "https://blog.yoav.ws",
       "github": "yoavweiss",
       "twitter": "yoavweiss"
+    },
+    "harendra":{
+      "name": "Haren Bhandari",
+      "teams":[
+        "analysts",
+        "authors"
+      ],
+      "github":"harendra"
+    },
+    "joeviggiano":{
+      "name": "Joe Viggiano",
+      "teams":[
+        "analysts",
+        "authors"
+      ],
+      "github":"joeviggiano"
+    },
+    "ytkoka":{
+      "name": "Oka Yutaka",
+      "teams":[
+        "reviewers"
+      ],
+      "github":"yokoka"
     }
   }
 }

@@ -11,7 +11,7 @@ results: https://docs.google.com/spreadsheets/d/1PbzjhN%2D%2DjU9MGuWobw5L9EsmlVz
 diekus_bio: Diego Gonzalez is a computer engineer from Costa Rica working as the PM for PWA platform features for the Microsoft Edge browser.
 featured_quote: The increasing features that allow integration of installable web applications with desktop platforms has driven adoption of the PWAs by big names in the industry.
 featured_stat_1: 95%
-featured_stat_label_1: Manifest files that are JSON parseable on desktop
+featured_stat_label_1: Manifest files that are JSON parsable on desktop
 featured_stat_2: 63%
 featured_stat_label_2: Usage of the install event from the service worker on desktop PWAs
 featured_stat_3: 60%
@@ -22,7 +22,7 @@ featured_stat_label_3: PWAs that use Workbox in some capacity
 
 In the early days of Progressive Web Apps, there were two key features that harnessed the promise of an advanced modern web application: offline support and a direct icon on the home screen of the device.
 
-These two concepts were enabled after installing a PWA, a process that generally began by tapping on an "ambient badge" that would appear on the browser's URL bar. This badge would prompt the user to install the website. Mobile browsers such as Samsung Internet and Mozilla Firefox, were among the first ones to explicitly support this behaviour, commonly known as ["Add to home screen" (A2HS)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen).
+These two concepts were enabled after installing a PWA, a process that generally began by tapping on an "ambient badge" that would appear on the browser's URL bar. This badge would prompt the user to install the website. Mobile browsers such as Samsung Internet and Mozilla Firefox, were among the first ones to explicitly support this behavior, commonly known as ["Add to home screen" (A2HS)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen).
 
 Five years ago, this was a radical idea. A website would be able to launch directly from the home screen, listed alongside other applications a user had installed on their device. This was the start of progress made towards reducing the gap between capabilities of web apps and OS-specific experiences.
 
@@ -32,13 +32,13 @@ Note: As a set of web technologies, PWAs are not isolated from the rest of the w
 
 ## Service workers
 
-[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) is one of the core technologies of PWAs and the enabler of offlining apps, getting push notifications, and doing background processing. They serve as the base for most of the advanced experiences we expect from applications. They are also being used to define data updates and for upcoming modern functionality like <a hreflang="en" href="https://github.com/aarongustafson/pwa-widgets#rich-widgets">widgets based on PWA technologies</a>.
+[Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) is one of the core technologies of PWAs and the enabler of offline apps, getting push notifications, and doing background processing. They serve as the base for most of the advanced experiences we expect from applications. They are also being used to define data updates and for upcoming modern functionality like <a hreflang="en" href="https://github.com/aarongustafson/pwa-widgets#rich-widgets">widgets based on PWA technologies</a>.
 
 While there isn't parity between major browsers when it comes to service worker feature support, Webkit adding support for <a hreflang="en" href="https://caniuse.com/push-api">push notifications</a> was a huge milestone. Earlier this year it was announced that <a hreflang="en" href="https://webkit.org/blog/12945/meet-web-push/">Apple had made changes</a> to their desktop platform to support the relevant parts of the [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API), [Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API) and that [service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) would enable Web Push. They also announced the feature would be coming to their mobile platforms in 2023.
 
 ### Service worker usage
 
-For comparison reasons, we have run the same queries as last year, which allows us to try to make sense of the evolution of service worker usage. Last year's chapter gave the explanation of [why it isn't trivial to find out actual usage of service worker](./2021/pwa#service-workers-usage), and that is just as true this year.
+For comparison reasons, we have run the same queries as last year, which allows us to try to make sense of the evolution of service worker usage. Last year's chapter gave the explanation of [why it isn't trivial to find out actual usage of service worker](../2021/pwa#service-workers-usage), and that is just as true this year.
 
 Looking at two of the measures:
 
@@ -48,7 +48,7 @@ Looking at two of the measures:
 {{ figure_markup(
   image="sw-controlled-pages-rank.png",
   caption="Service worker controlled pages by rank.",
-  description="Column chart showing that on desktop 8.3% of the top 1,000 websites use a service work, this is 8.0% for the top 10,000 desktopm pages, 4.5% fior the top 100,000, 2.2% for the top million, and 1.4% for our entire dataset. Mobile is similar with 8.7%, 7.9%, 4.7%, 2.3%, and 1.4% respectively..",
+  description="Column chart showing that on desktop 8.3% of the top 1,000 websites use a service work, this is 8.0% for the top 10,000 desktop pages, 4.5% for the top 100,000, 2.2% for the top million, and 1.4% for our entire dataset. Mobile is similar with 8.7%, 7.9%, 4.7%, 2.3%, and 1.4% respectively..",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=1762012854&format=interactive",
   sheets_gid="2067971287",
   sql_file="sw_adoption_over_time_ranking.sql"
@@ -180,7 +180,7 @@ The _Web App Manifest_ file is a JSON file that contains information about the a
 Keeping the web app's manifest fully authored is essential to take advantage of advanced discoverability through online repositories, submissions to application stores, and more recently, a way to tap into advanced capabilities like share target and file handling for your app. Cutting edge work to <a hreflang="en" href="https://github.com/aarongustafson/pwa-widgets#how-widgets-are-represented-in-these-apis">enable Widgets based on PWA technology</a> is also being rooted in the manifest, proving the versatility of the file itself for advanced platform integration even further.
 
 {{ figure_markup(
-  caption="Percent of manifest files parseable on desktop.",
+  caption="Percent of manifest files parsable on desktop.",
   content="95%",
   classes="big-number",
   sheets_gid="717325565",
@@ -188,7 +188,7 @@ Keeping the web app's manifest fully authored is essential to take advantage of 
 )
 }}
 
-For most cases—95% in desktop and 94% in mobile—the manifests we found are JSON parseable. This indicates that almost all web apps that use the manifest are correctly formed.
+For most cases—95% in desktop and 94% in mobile—the manifests we found are JSON parsable. This indicates that almost all web apps that use the manifest are correctly formed.
 
 This does not indicate completeness or minimum availability of certain fields that would contribute to the installation of the web app. As a matter of fact, there is currently no required properties for the Manifest file. Am empty file technically is a valid Manifest file.
 
@@ -210,7 +210,7 @@ The data tells us that web applications are around 5 times more likely to have a
 
 Only a small percentage of websites—0.8% on both desktop and mobile—implement both service worker and manifest files, which means less than 1% of websites can be installed on devices like traditional apps.
 
-For this chapter we are mostly interested in sites that have both a sevrice worker and a manifest so–unless otherwise noted—the manifest data present in this chapter are for PWA sites.
+For this chapter we are mostly interested in sites that have both a service worker and a manifest so–unless otherwise noted—the manifest data present in this chapter are for PWA sites.
 
 ### Manifest properties
 
@@ -299,11 +299,11 @@ The top categories for both websites and PWAs remain the same, yet each is sligh
 
 #### Advanced capabilities
 
-The manifest file also allows for the activation of modern platform capabilities. These capabilities can allow for advanced windowing capabilities or registration of behaviours in the host OS. Many of these capabilities have landed very recently into the platform, and therefore, we hope this data register an inception of many of these new APIs.
+The manifest file also allows for the activation of modern platform capabilities. These capabilities can allow for advanced windowing capabilities or registration of behaviors in the host OS. Many of these capabilities have landed very recently into the platform, and therefore, we hope this data register an inception of many of these new APIs.
 
 As these are lesser-use, more advanced, capabilities they do not show on [our previous graph of the top manifest properties](#manifest-properties), but are worth looking at to see their usage too:
 
-* `shortcuts`: 6.2% of desktop and 4.3% of mobile PWAs are using shortcuts to deeplink into the app.
+* `shortcuts`: 6.2% of desktop and 4.3% of mobile PWAs are using shortcuts to deep link into the app.
 * `file_handlers`: allows an installed PWA to register itself as a handler for a specific file extension. Only 0.01% of desktop and 0.02% of mobile are using `file_handlers`.
 * `protocol_handlers`: PWAs can register to be handlers for predefined or custom protocols. Current usage stands at 0% on desktop and 0.01% for mobile web sites.
 * `share_target`: 5.3% of desktop and 3.1% of mobile PWAs have the ability to register themselves to receive shared data.
@@ -378,7 +378,7 @@ From the growing list of features that have been added to the web platform, thes
   </figcaption>
 </figure>
 
-We won't delive into these much more as we have a separate [Capabilities](./capabilities) chapter that covers them.
+We won't delve into these much more as we have a separate [Capabilities](./capabilities) chapter that covers them.
 
 ## PWA insights from Lighthouse
 
@@ -443,7 +443,7 @@ To conclude the Lighthouse insights section, we take a look at the overall Light
 
 As expected, PWA sites tend to have considerably higher PWA audit scores. These audits look into speed, reliability, installability and other PWA requirements, as detailed in their <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/pwa/">documentation</a>.
 
-What's also notable is the range of audit scores in PWA sites (50-100) representing the difference in PWAs out there. In contrast the rest of the web has a fairly consistent ranfge of scores (20-40) reflecting the two main audits relevant for most sites discussed previously-viewport and icons.
+What's also notable is the range of audit scores in PWA sites (50-100) representing the difference in PWAs out there. In contrast the rest of the web has a fairly consistent range of scores (20-40) reflecting the two main audits relevant for most sites discussed previously-viewport and icons.
 
 ## Service worker libraries
 
@@ -481,7 +481,7 @@ Workbox is structured in a way that developers can choose which parts to add to 
   )
 }}
 
-Here we also see an overall increase in usage, `workbox-core`. The base library saw an increase of 14% in usage. `workbox-core`, together with `workbox-routing` and `workbox-strategies`, is used to create a caching strategy that works to serve different artifacts in their webapp to improve performance. It makes sense they are all at the top as they enable a core benefit of service workers.
+Here we also see an overall increase in usage, `workbox-core`. The base library saw an increase of 14% in usage. `workbox-core`, together with `workbox-routing` and `workbox-strategies`, is used to create a caching strategy that works to serve different artifacts in their web app to improve performance. It makes sense they are all at the top as they enable a core benefit of service workers.
 
 There is also a considerable jump in usage on `workbox-precaching`. Pre-caching can be used to emulate the model that packaged apps use. With `workbox-precaching`, you can choose assets that will be cached at the time of service worker installation to make those assets load faster in subsequents visits.
 
@@ -502,7 +502,7 @@ It bears repeating that for a notification to be useful it has to be <a hreflang
 {{ figure_markup(
   image="notification-acceptance.png",
   caption="Notification acceptance rates.",
-  description="Stacked bar charter showing that on desktop 6% of notications are accepted, 7% are denied, 70% are ignored, and 17% are dimissed. On mobile 19% of notification are accepted 35% are denied, 34% are ignored, and 13% are dimissed. On mobile there is a much higher rate of accepting or denying and a much smaller rate of ignoring.",
+  description="Stacked bar charter showing that on desktop 6% of notifications are accepted, 7% are denied, 70% are ignored, and 17% are dismissed. On mobile 19% of notification are accepted 35% are denied, 34% are ignored, and 13% are dismissed. On mobile there is a much higher rate of accepting or denying and a much smaller rate of ignoring.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7KgpDrr_m20ZDaHDBYLFSGNVdj3lhGHbHopEi4071q21U5rZDJfbYrrdyaEIU1D9cwgxxBCI6NBsV/pubchart?oid=148157045&format=interactive",
   sheets_gid="435156894",
   sql_file="pwa_notification_acceptance_rates.sql"

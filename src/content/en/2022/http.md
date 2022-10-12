@@ -151,7 +151,7 @@ With the difficulties, <a hreflang="en" href="https://groups.google.com/a/chromi
 
 ### Alternatives to HTTP/2 Push
 
-Given the challenges to using HTTP/2 Push, and it's deprecation from Chrome, developers may be wonderign about alternatives.
+Given the challenges to using HTTP/2 Push, and it's deprecation from Chrome, developers may be wondering about alternatives.
 
 #### Preload
 
@@ -211,7 +211,7 @@ In the remainder of this section, we turn our focus to HTTP/3, as it is the futu
 
 ### Benefits of HTTP/3
 
-While HTTP/2 introduced various improvements over its predecessor, there remain further challenges and opportunities for the protocol. For example, even though multiplexing of requests onto a single TCP connection alleviated head-of-line blocking issues for each request, delivering requests using this method <a hreflang="en" href="https://calendar.perfplanet.com/2020/head-of-line-blocking-in-quic-and-http-3-the-details/">can still be inefficient</a>. This is because lost TCP packets can prevent properly received later TCP packets from being processed until their retransmission arrives—even if the later TCP packet is for a separate HTTP stream. TCP has no concept of the multiplexing happening in the higher, HTTP procotocol and so holds up all streams.
+While HTTP/2 introduced various improvements over its predecessor, there remain further challenges and opportunities for the protocol. For example, even though multiplexing of requests onto a single TCP connection alleviated head-of-line blocking issues for each request, delivering requests using this method <a hreflang="en" href="https://calendar.perfplanet.com/2020/head-of-line-blocking-in-quic-and-http-3-the-details/">can still be inefficient</a>. This is because lost TCP packets can prevent properly received later TCP packets from being processed until their retransmission arrives—even if the later TCP packet is for a separate HTTP stream. TCP has no concept of the multiplexing happening in the higher, HTTP protocol and so holds up all streams.
 
 HTTP/3 aims to improve upon the shortcomings of HTTP/2 and to do that it is built on QUIC, a UDP-based transport protocol. QUIC addresses TCP head-of-line blocking by implementing reliable packet delivery on top of UDP at a per-stream granularity.
 
@@ -230,12 +230,12 @@ To advertise that HTTP/3 is supported, web servers rely on the `alt-svc` in the 
 
 For example, in September 2022, the `alt-svc` value in the response for <a hreflang="en" href="https://www.cloudflare.com">https://www.cloudflare.com</a> is `h3=":443"; ma=86400, h3-29=":443"; ma=86400` as shown in the  screenshot below. `h3` and `h3-29` tell us that Cloudflare supports HTTP/3 and IETF draft 29 of HTTP/3 over UDP port 443. There is also a proposal to speed up the discovery of HTTP/3 as part of DNS lookup; for more details see <a hreflang="en" href="https://blog.cloudflare.com/speeding-up-https-and-http-3-negotiation-with-dns/">this post from Cloudflare</a>.
 
-We analyze HTTP/3 adoption by identifying a resource that was served on HTTP/3 or its response header contained an `alt-svc` header with either `h3` or `h3-29` as one of the protocols advertised. This allows us to understand if HTTP/3 could be used, and ignores the limitions mentioned above, of the fresh instance run by our crawler, which has yet to see the `alt-svc` header.
+We analyze HTTP/3 adoption by identifying a resource that was served on HTTP/3 or its response header contained an `alt-svc` header with either `h3` or `h3-29` as one of the protocols advertised. This allows us to understand if HTTP/3 could be used, and ignores the limitations mentioned above, of the fresh instance run by our crawler, which has yet to see the `alt-svc` header.
 
 {{ figure_markup(
   image="h3-support-per-request.png",
   caption="HTTP/3 support on requests.",
-  description="Column chart showing the support of HTTP/3 push on desktop and mobile in July 2021 and June 2022. For both this has increased from 10% to 15%.",
+  description="Column chart showing the support of HTTP/3 on desktop and mobile in July 2021 and June 2022. For both this has increased from 10% to 15%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTsnJP1ulTTc-j9n7CIbGHxO1SaFvmZWMPQnJHrluku254CqKXz_D2fn2Ck54FC-m9135eCFg83NHOc/pubchart?oid=971486939&format=interactive",
   sheets_gid="1456324569",
   sql_file="h3_support.sql"

@@ -164,7 +164,7 @@ A <a hreflang="en" href="https://www.ssl.com/faqs/what-is-a-certificate-authorit
   <figcaption>{{ figure_link(caption="Top 10 certificate issuers for websites.", sheets_gid="1306037372", sql_file="tls_ca_issuers_pages.sql") }}</figcaption>
 </figure>
 
-<a hreflang="en" href="https://letsencrypt.org/">Let's Encrypt</a> (or R3) continues to lead the charts with 48% of websites in desktop and 52% of websites in mobile using certificates issued by them. Let's Encrypt being a non-profit organization has played an important role in the adoption of HTTPS and they continue to issue an <a hreflang="en" href="https://letsencrypt.org/stats/#daily-issuance">increasing number of certificates</a>. We would also like to take a moment to recognise one of its founders, <a hreflang="en" href="https://community.letsencrypt.org/t/peter-eckersley-may-his-memory-be-a-blessing/183854">Peter Eckersly</a>, who unfortunately passed away recently.
+<a hreflang="en" href="https://letsencrypt.org/">Let's Encrypt</a> (or R3) continues to lead the charts with 48% of websites in desktop and 52% of websites in mobile using certificates issued by them. Let's Encrypt being a non-profit organization has played an important role in the adoption of HTTPS and they continue to issue an <a hreflang="en" href="https://letsencrypt.org/stats/#daily-issuance">increasing number of certificates</a>. We would also like to take a moment to recognize one of its founders, <a hreflang="en" href="https://community.letsencrypt.org/t/peter-eckersley-may-his-memory-be-a-blessing/183854">Peter Eckersly</a>, who unfortunately passed away recently.
 
 <a hreflang="en" href="https://developers.cloudflare.com/ssl/ssl-tls/certificate-authorities/">Cloudflare</a> continues to be in second position with its similarly free certificates for its customers. Cloudflare CDNs increase the usage of <a hreflang="en" href="https://www.digicert.com/faq/ecc.htm">Elliptic Curve Cryptography (ECC)</a> certificates which are smaller and more efficient than RSA certificates but are often difficult to deploy, due to the need to also continue to serve non-ECC certificates to older clients. We see as Let's Encrypt and Cloudflare's percentage continues to increase, the percentage for usage of other CAs are decreasing a little.
 
@@ -337,7 +337,7 @@ Unlike last year, where we saw that the median for `Max-Age` was 365 days but th
   </figcaption>
 </figure>
 
-The most prevalent `Expires` has some interesting values. We see that the most used `Expires` value in Desktop is `January 1, 1970 00:00:00 GMT`. When cookies `Expires` value is set to a past date, they are deleted from the browser. January 1, 1970 00:00:00 GMT is the unix epoch time and hence it's often commonly used to expire or delete a cookie.
+The most prevalent `Expires` has some interesting values. We see that the most used `Expires` value in Desktop is `January 1, 1970 00:00:00 GMT`. When cookies `Expires` value is set to a past date, they are deleted from the browser. January 1, 1970 00:00:00 GMT is the Unix epoch time and hence it's often commonly used to expire or delete a cookie.
 
 ## Content inclusion
 
@@ -520,7 +520,7 @@ Similar to CSP's use of a `nonce-`, Subresource Integrity (also known as SRI) al
   sql_file="sri_usage.sql",
 ) }}
 
-Just about one of every fifth website (20%) adopts a subresource integrity in one of its webpage elements on desktop. Out of these, 83% were specifically used in `<script>` type elements on desktop, and 17% were used in `<link>` type  elements in desktop requests.
+Just about one of every fifth website (20%) adopts a subresource integrity in one of its web page elements on desktop. Out of these, 83% were specifically used in `<script>` type elements on desktop, and 17% were used in `<link>` type  elements in desktop requests.
 
 At a per page coverage, adoption rate for the SRI security feature is still considerably low. Last year, the median percentage for both mobile and desktop was 3.3% and this year it decreased by 2% to 3.23%.
 
@@ -1241,7 +1241,7 @@ The percentage of `security.txt` URIs with the `expires` property has increased 
 
 ### `change-password`
 
-The <a hreflang="en" href="https://w3c.github.io/webappsec-change-password-url/">`change-password`</a> well-known URI is a specification under the webappsec working group of W3C which is in editor's draft state right now. This specific well-known URI was suggested as a way for users and softwares to easily identify the link to be used for changing passwords.
+The <a hreflang="en" href="https://w3c.github.io/webappsec-change-password-url/">`change-password`</a> well-known URI is a specification under the Web Application Security Working Group of the W3C which is in editor's draft state right now. This specific well-known URI was suggested as a way for users and softwares to easily identify the link to be used for changing passwords.
 
 {{ figure_markup(
   image="usage-of-change-password.png",
