@@ -47,7 +47,7 @@ That seems like it should be an obvious "yes": if the page is flat HTML that ren
 
 We landed on the "CDN" aspect of the early definition of Jamstack: it doesn't have to be any specific CDN provider, but part of the definition is definitely the "pre-rendering" part, which implies: you're rendering something, and then caching it. So a Jamstack site should be cached (though whether you cache it yourself, or use a CDN, doesn't matter).
 
-That produces another edge-case: lots of sites are cached! Even completely dynamic sites often cache things for a few minutes to avoid load spikes, and lots of sites are served by CDNs these days, which are intrinsically a cache even if the site's architecture owes nothing to Jamstack patterns. So what's the difference between a normal cached site and a Jamstack site? We decided it meant a Jamstack site should be cacheable for a long time (see below for how we decided how long exactly counts as "a long time").
+That produces another edge-case: lots of sites are cached! Even completely dynamic sites often cache things for a few minutes to avoid load spikes, and lots of sites are served by CDNs these days, which are intrinsically a cache even if the site's architecture owes nothing to Jamstack patterns. So what's the difference between a normal cached site and a Jamstack site? We decided it meant a Jamstack site should be cacheable.
 
 ### Does a Jamstack site have to use JavaScript?
 
@@ -77,7 +77,7 @@ If you are not interested in the nuts and bolts of how we picked a precise defin
 
 We knew we wanted to measure: sites that load most of their content very quickly, and can be cached. After a lot of experimentation with different ways of measuring these things, we came up with some specific metrics.
 
-**Largest Contentful Paint (LCP)**: we got the distribution of all LCP times across all pages, picked the median of real-world user data from the most recent <a hreflang="en" href="https://developer.chrome.com/docs/crux/">Chrome UX Report</a>, and decided that any site equal or less to the median counted as "loaded most content quickly". This was 2.4 seconds on mobile devices, and 2.0 seconds on desktop devices.
+**Largest Contentful Paint (LCP)**: we got the distribution of all LCP times across all pages, picked the median of real-world user data from the <a hreflang="en" href="https://developer.chrome.com/docs/crux/">Chrome UX Report</a>, and decided that any site equal or less to the median counted as "loaded most content quickly". This was 2.4 seconds on mobile devices, and 2.0 seconds on desktop devices.
 
 **Cumulative Layout Shift (CLS)**: we wanted to avoid sites that very quickly load a skeleton but then take a long time to load real content. The closest we could get to that is the <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a>, a measure of how much the page layout jumps around while loading. While there are ways to "game" CLS, we still believe it's a reasonable proxy for what we’re trying to measure. We liked this measure because we felt that a "jumpy" site also felt less "Jamstack-y", a word we were going to end up using a lot. Again, we picked the median of Chrome UX Report data.
 
@@ -119,6 +119,8 @@ Applying our new criteria, we measured what percentage of sites in the HTTP Arch
 }}
 
 Our headline finding is that 3.6% of mobile websites in 2022 seem "Jamstack-y" and that this has grown more than 100% since 2020. On desktop, 2.7% of sites are Jamstack-y and that number is also growing, the difference between the two groups being driven primarily by different numbers of sites meeting the CLS threshold, which varies a lot by device because of layout differences. Again, see above for the many caveats about how approximate this is.
+
+The historic figures, with this new definition, are [considerably higher than measured last year](../2021/jamstack#adoption-of-ssgs) when we based the adoption purely on technologies used. This is perhaps not surprising when we consider the limits of detecting certain technologies, coupled with the inclusion of technologies that were not previously considered as Jamstack.
 
 When we as humans randomly sampled the sites in the set we identified, we were mostly satisfied that we were finding sites that, to the best of our abilities to judge, looked and felt like Jamstack sites are supposed to look and feel.
 
@@ -425,7 +427,7 @@ Given these perhaps surprising results, we thought it was worth looking at how p
   </figcaption>
 </figure>
 
-GitHub Pages, Pantheon, Acquia Cloud Platform and Heroku all appear to be declining in popularity as a Jamstack hosting choice, while AWS, Netlify, Vercel, and Platform.sh are getting more popular (Cloudways or Azure are not in the 2021 PaaS data, so we can't compare them).
+GitHub Pages, Pantheon, Acquia Cloud Platform and Heroku all appear to be declining in popularity as a Jamstack hosting choice, while AWS, Netlify, Vercel, and Platform.sh are getting more popular. Note that Cloudways or Azure are not in the 2021 PaaS data, so we can't compare them. We can hypothesise that AWS, Netlify and Vercel are growing in popularity because they're not just hosting—they offer a suite of tools for a developer workflow.
 
 Absent from all the platform lists is web giant Cloudflare, which Wappalyzer categorizes as a CDN rather than a PaaS. Although Cloudflare has a PaaS offering that is very Jamstack-y, called Cloudflare Pages, Wappalyzer data does not distinguish between "hosted on a CDN" and "hosts some assets on that CDN" so we could not include it in this analysis. The author believes that Cloudflare is a very popular Jamstack hosting option, but we do not have good data to verify this.
 
