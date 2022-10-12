@@ -143,8 +143,7 @@
           "chapter_number": "20",
           "title": "Jamstack",
           "slug": "jamstack",
-          "hero_dir": "2020",
-          "todo": true
+          "hero_dir": "2020"
         },
         {
           "part": "III",
@@ -577,27 +576,6 @@
       ],
       "avatar_url": "5749508",
       "github": "GJFR"
-    },
-    "GregBrimble": {
-      "name": "Greg Brimble",
-      "teams": [
-        "analysts",
-        "reviewers"
-      ],
-      "avatar_url": "8484333",
-      "github": "GregBrimble",
-      "website": "https://gregbrimble.com/",
-      "twitter": "GregBrimble"
-    },
-    "Nutlope": {
-      "name": "Hassan El Mghari",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "63742054",
-      "github": "Nutlope",
-      "website": "https://www.elmghari.com/",
-      "twitter": "nutlope"
     },
     "hemanth": {
       "name": "Hemanth HM",
