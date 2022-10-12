@@ -7,7 +7,7 @@ reviewers: [tunetheweb]
 analysts: [seldo, tunetheweb]
 editors: [DesignrKnight]
 translators: []
-seldo_bio: Laurie has been a web developer since 1996, with occasional breaks to found companies like <a hreflang="en" href="https://www.crunchbase.com/organization/snowball-factory">awe.sm</a> (2010) and <a hreflanh="en" href="https://seldo.com/about/#:~:text=been%20a%20web,learn%20so%20much.">npm</a> (2014). He likes making websites, and he likes making the web bigger and better. He thinks one of the best ways to do that is to encourage more people to do web development, by teaching them existing techniques and by building tools and services that make web development easier, so they don't have to learn so much.
+seldo_bio: Laurie has been a web developer since 1996, with occasional breaks to found companies like <a hreflang="en" href="https://www.crunchbase.com/organization/snowball-factory">awe.sm</a> (2010) and <a hreflanh="en" href="https://npmjs.com/">npm</a> (2014). He likes making websites, and he likes making the web bigger and better. He thinks one of the best ways to do that is to encourage more people to do web development, by teaching them existing techniques and by building tools and services that make web development easier, so they don't have to learn so much.
 whitep4nth3r_bio: Salma helps developers build stuff, learn things and love what they do. She works at Netlify as a Staff Developer Experience Engineer, streams live coding, and loves helping people get into tech. After a career as a music teacher and comedian, Salma transitioned to technology in 2014, specializing in front end development and tech leadership for startups, agencies and global e-commerce. <a hreflang="en" href="https://twitch.tv/whitep4nth3r">Find Salma on Twitch</a> to see what she's currently building.
 results: https://docs.google.com/spreadsheets/d/1yfNaj25ToezMwQLKdYP6Qh7AUoX9zMdKMSRVC8JlZMY/
 featured_quote: Although we can't claim to know exactly what percentage of the web is Jamstack, we can say that around 3% of the web is Jamstack-y, and that this group has been growing strongly for the last 3 years—a great sign for the Jamstack community.
@@ -33,7 +33,7 @@ All three of the above definitions come from <a hreflang="en" href="https://jams
 
 But as the emphasized words demonstrate, there's clearly some continuity: the sites should be fast, they should be pre-rendered, and they should use an architectural approach that decouples "where you get your data" from "how you render your data". Even if a precise dictionary definition is hard to come by, Jamstack developers know what you mean when you say "Jamstack": you've got a site that loads really quickly, renders a lot of its useful content once, at build time, and retrieves additional data (if it needs to) via JavaScript.
 
-<p class="note">Disclosure: the two authors of this report were Netlify employees. This report and the underlying analysis were reviewed and approved by multiple volunteers not affiliated with Netlify.</p>
+<p class="note">Disclosure: the two authors of this report were Netlify employees. This report and the underlying analysis were reviewed and approved by others not affiliated with Netlify.</p>
 
 ## Quantifying the Jamstack: what counts?
 
