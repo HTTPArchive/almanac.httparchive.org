@@ -160,21 +160,21 @@ Generic CDNs address the mass market requirements. Their offerings include:
 This appeals to a larger set of industries and is reflected in the data.
 
 {{ figure_markup(
-  image="top-cdns.png",
+  image="top-cdns-html.png",
   caption="Top CDNs for HTML requests on mobile.",
-  description="Box plot showing the top CDN providers serving HTML requests. Cloudflare tops the list by serving 54% of the HTML requests followed by Google at 20%, Fastly at 8%, CloudFront at 7% and Akamai at 3%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=191918239&format=interactive",
+  description="Box plot showing the top CDN providers serving HTML requests. Cloudflare tops the list by serving 52% of the HTML requests followed by Google at 22%, Fastly at 9%, CloudFront at 6% and Akamai and Automattic at 3%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=1688291462&format=interactive",
   sheets_gid="2085205637",
   sql_file="top_cdns.sql"
   )
 }}
 
-The above igure shows the top CDN providers for base HTML requests. The top vendors in this category are Cloudflare, Google, Fastly Amazon CloudFront and Akamai.
+The above figure shows the top CDN providers for base HTML requests. The top vendors in this category are Cloudflare, Google, Fastly Amazon CloudFront, Akamai and Atomattic.
 
 {{ figure_markup(
   image="top-cdns-subdomain.png",
   caption="Top CDNs for subdomain requests on mobile.",
-  description="Box plot showing the top CDN providers serving subdomain requests. Cloudflare tops the list by serving 35% of the subdomain requests followed by CloudFront at 20%, Google at 14%, Automattic at 7%, Akamai at 6% and Fastly at 3%.",
+  description="Box plot showing the top CDN providers serving subdomain requests. Cloudflare tops the list by serving 35% of the subdomain requests followed by CloudFront at 18%, Google at 17%, Automattic at 9%, Akamai at 5% and Fastly at 3%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=1743984972&format=interactive",
   sheets_gid="2085205637",
   sql_file="top_cdns.sql"
@@ -183,12 +183,11 @@ The above igure shows the top CDN providers for base HTML requests. The top vend
 
 For the subdomain requests we can see greater usage of providers like Amazon and Google. This is because many users have their content hosted in the cloud services they provide and the users utilize CDN offerings along with their cloud services. This helps the users to scale their applications and increase the performance of their application.
 
-
 {{ figure_markup(
   image="top-cdns-3p.png",
   caption="Top CDNs for third-party requests on mobile.",
-  description="Box plot showing the top CDN providers serving third-party requests. Google tops the list by serving 47.0% of the third-party requests followed by Cloudlare at 15%, CloudFront at 12%, Facebook at 5% and Fastly at 4%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=2000521049&format=interactive",
+  description="Box plot showing the top CDN providers serving third-party requests. Google tops the list by serving 48% of the third-party requests followed by Cloudlare at 15%, CloudFront at 12%, Akamai at 6%, Facebook at 5% and Fastly at 4%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=1502237125&format=interactive",
   sheets_gid="2085205637",
   sql_file="top_cdns.sql"
   )
