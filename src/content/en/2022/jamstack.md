@@ -14,7 +14,7 @@ results: https://docs.google.com/spreadsheets/d/1yfNaj25ToezMwQLKdYP6Qh7AUoX9zMd
 featured_quote: Although we can't claim to know exactly what percentage of the web is Jamstack, we can say that around 3% of the web is Jamstack-y, and that this group has been growing strongly for the last 3 years—a great sign for the Jamstack community.
 featured_stat_1: ~3%
 featured_stat_label_1: Jamstack-y sites on the web in 2022
-featured_stat_2: 100%
+featured_stat_2: 106%
 featured_stat_label_2: Growth of Jamstack-y sites since 2020
 featured_stat_3: 36%
 featured_stat_label_3: Jekyll sites that are Jamstack-y
