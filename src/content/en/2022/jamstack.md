@@ -3,7 +3,7 @@
 title: Jamstack
 description: Jamstack chapter of the 2022 Web Almanac covers quantifying Jamstack sites, the growth of Jamstack, Jamstack-y frameworks and hosting.
 authors: [seldo, whitep4nth3r]
-reviewers: [GregBrimble, Nutlope, tunetheweb]
+reviewers: [GregBrimble, tunetheweb]
 analysts: [seldo, tunetheweb]
 editors: [DesignrKnight]
 translators: []
