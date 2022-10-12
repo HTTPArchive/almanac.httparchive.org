@@ -105,8 +105,8 @@ Web structured data shares a synergetic relationship with the field of machine l
 
 On a practical level, we highlight two areas that structured data has improved:
 
- - Knowledge graphs
- - Explainable AI
+- Knowledge graphs
+- Explainable AI
 
 ### Knowledge graphs
 
