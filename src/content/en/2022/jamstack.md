@@ -11,13 +11,13 @@ translators: []
 seldo_bio: Laurie has been a web developer since 1996, with occasional breaks to found companies like <a hreflang="en" href="https://www.crunchbase.com/organization/snowball-factory">awe.sm</a> (2010) and <a hreflanh="en" href="https://seldo.com/about/#:~:text=been%20a%20web,learn%20so%20much.">npm</a> (2014). He likes making websites, and he likes making the web bigger and better. He thinks one of the best ways to do that is to encourage more people to do web development, by teaching them existing techniques and by building tools and services that make web development easier, so they don't have to learn so much.
 whitep4nth3r_bio: Salma helps developers build stuff, learn things and love what they do. She works at Netlify as a Staff Developer Experience Engineer, streams live coding, and loves helping people get into tech. After a career as a music teacher and comedian, Salma transitioned to technology in 2014, specializing in front end development and tech leadership for startups, agencies and global e-commerce. <a hreflang="en" href="https://twitch.tv/whitep4nth3r">Find Salma on Twitch</a> to see what she's currently building.
 results: https://docs.google.com/spreadsheets/d/1yfNaj25ToezMwQLKdYP6Qh7AUoX9zMdKMSRVC8JlZMY/
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: Although we can't claim to know exactly what percentage of the web is Jamstack, we can say that around 3% of the web is Jamstack-y, and that this group has been growing strongly for the last 3 years—a great sign for the Jamstack community.
+featured_stat_1: ~3%
+featured_stat_label_1: Jamstack-y sites on the web in 2022
+featured_stat_2: 100%
+featured_stat_label_2: Growth of Jamstack-y sites since 2020
+featured_stat_3: 36%
+featured_stat_label_3: Jekyll sites that are Jamstack-y
 unedited: true
 ---
 
@@ -435,7 +435,7 @@ Absent from all the platform lists is web giant Cloudflare, which Wappalyzer cat
 
 Our most important takeaway from this year's analysis is that the Jamstack is hard to measure just by looking at HTTP Archive data. Nevertheless, our ability to use a measurement approach that was agnostic to both platform and framework and find in the resulting data strong correlations to "known" Jamstack platforms and frameworks was an encouraging sign that we have made progress in reliably identifying Jamstack sites in the Archive.
 
-Although we can't claim to know exactly what percentage of the web is Jamstack, we can say that around 3% of the web is Jamstack-y, and that this group has been growing strongly for the last 3 years, a great sign for the Jamstack community.
+Although we can't claim to know exactly what percentage of the web is Jamstack, we can say that around 3% of the web is Jamstack-y, and that this group has been growing strongly for the last 3 years—a great sign for the Jamstack community.
 
 We also found some frameworks and hosting platforms are more popular in the Jamstack than they are in the wider web. This might be because they are technically better at achieving our criteria, or it might just be because Jamstack developers have community preferences for specific stacks.
 
