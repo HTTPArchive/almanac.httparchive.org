@@ -2,7 +2,11 @@
 # top_cdns_by_rank.sql: Top CDNs used on the root HTML pages by CrUX rank
 SELECT
   client,
-  nested_rank,
+  rank_grouping,
+  CASE
+    WHEN rank_grouping = 10000000 THEN 'all'
+    ELSE FORMAT("%'d", rank_grouping)
+  END AS ranking,
   cdn,
   COUNTIF(firstHtml) AS firstHtmlHits,
   SUM(COUNTIF(firstHtml)) OVER (PARTITION BY client) AS firstHtmlTotalHits,
@@ -34,14 +38,14 @@ FROM (
     `httparchive.almanac.requests`
   WHERE
     date = '2022-06-01'),
-  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS nested_rank
+  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
 WHERE
-  rank <= nested_rank
+  rank <= rank_grouping
 GROUP BY
   client,
-  nested_rank,
+  rank_grouping,
   cdn
 ORDER BY
   client DESC,
-  nested_rank,
+  rank_grouping,
   firstHtmlHits DESC
