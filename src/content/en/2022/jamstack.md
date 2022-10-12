@@ -1,8 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Jamstack
-#TODO - Review and update chapter description
-description: Jamstack chapter of the 2022 Web Almanac covers adoption of technology, performance of websites built with Jamstack and weights for various resources.
+description: Jamstack chapter of the 2022 Web Almanac covers quantifying Jamstack sites, the growth of Jamstack, Jamstack-y frameworks and hosting.
 authors: [seldo, whitep4nth3r]
 reviewers: [GregBrimble, Nutlope, tunetheweb]
 analysts: [seldo, tunetheweb]
