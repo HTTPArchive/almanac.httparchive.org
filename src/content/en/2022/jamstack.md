@@ -341,7 +341,7 @@ Web giant Amazon Web Services is unsurprisingly dominant in both sets, but there
 
 WP Engine, Azure, and WordPress.com, hugely popular on the web as a whole, drop significantly in popularity in the Jamstack crowd. GitHub pages, which is #11 on the wider web, is #2 in the Jamstack set. Meanwhile Netlify and Vercel, darlings of Jamstack developers, occupy the #3 and #5 spots, while in the larger web Netlify is at #10 and Vercel at #14 (not shown). Pantheon and Acquia Cloud Platform, neither in the top 10 overall, jump significantly from #11 to #4 and from #12 to #6 respectively.
 
-Given these perhaps surprising results, we thought it was worth looking at how platform preferences changed from 2021 to 2022 in our sets. Using mobile data, here's how the percentage of Jamstack sites using various platforms changed from 2021 to 2022:
+The change in relative popularity of some of these hosts relative to the wider web is perhaps surprising given that they are not all household names, so we thought it was worth looking at how platform preferences changed from 2021 to 2022 in our sets. Using mobile data, here's how the percentage of Jamstack sites using various platforms changed from 2021 to 2022:
 
 <figure>
   <table>
