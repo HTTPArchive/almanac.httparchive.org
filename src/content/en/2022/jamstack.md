@@ -37,7 +37,7 @@ But as the emphasized words demonstrate, there's clearly some continuity: the si
 
 ## Quantifying the Jamstack: what counts?
 
-But the problem gets more tricky when you're trying to put together the 2022 Web Almanac. When you're dealing with millions of websites, "I know it when I see it" can't be your definition. How do we **quantify** the Jamstack? How do we precisely identify it so we can learn about it? We started by asking ourselves a series of questions.
+But the problem gets more tricky when you're trying to put together the 2022 Web Almanac. When you're dealing with millions of websites, "I know it when I see it" can't be your definition. How do we quantify the Jamstack? How do we precisely identify it so we can learn about it? We started by asking ourselves a series of questions.
 
 ### Is every static site a Jamstack site?
 
@@ -75,9 +75,9 @@ If you are not interested in the nuts and bolts of how we picked a precise defin
 
 We knew we wanted to measure: sites that load most of their content very quickly, and can be cached. After a lot of experimentation with different ways of measuring these things, we came up with some specific metrics.
 
-**Largest Contentful Paint**: we got the distribution of all LCP times across all pages, picked the median of real-world user data from the most recent <a hreflang="en" href="https://developer.chrome.com/docs/crux/">Chrome UX Report</a>, and decided that any site equal or less to the median counted as "loaded most content quickly". This was 2.4 seconds on mobile devices, and 2.0 seconds on desktop devices.
+**Largest Contentful Paint (LCP)**: we got the distribution of all LCP times across all pages, picked the median of real-world user data from the most recent <a hreflang="en" href="https://developer.chrome.com/docs/crux/">Chrome UX Report</a>, and decided that any site equal or less to the median counted as "loaded most content quickly". This was 2.4 seconds on mobile devices, and 2.0 seconds on desktop devices.
 
-**Cumulative Layout Shift**: we wanted to avoid sites that very quickly load a skeleton but then take a long time to load real content. The closest we could get to that is the <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a>, a measure of how much the page layout jumps around while loading.[^1] We liked this measure because we felt that a "jumpy" site also felt less "Jamstack-y", a word we were going to end up using a lot. Again, we picked the median of Chrome UX Report data.[^2]
+**Cumulative Layout Shift (CLS)**: we wanted to avoid sites that very quickly load a skeleton but then take a long time to load real content. The closest we could get to that is the <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a>, a measure of how much the page layout jumps around while loading.[^1] We liked this measure because we felt that a "jumpy" site also felt less "Jamstack-y", a word we were going to end up using a lot. Again, we picked the median of Chrome UX Report data.[^2]
 
 **Caching**: this was particularly tricky to quantify, since most home pages, even on Jamstack sites, request revalidation even if they are in practice cached for a long time. We went with a combination of HTTP Headers including `Age`, `Cache-Control`, and `Expires` that we found were common in pages that could be cached for a long time.
 
@@ -423,7 +423,7 @@ GitHub Pages, Pantheon, Acquia Cloud Platform and Heroku all appear to be declin
 
 Absent from all the platform lists is web giant Cloudflare, which Wappalyzer categorizes as a CDN rather than a PaaS. Although Cloudflare has a PaaS offering that is very Jamstack-y, called Cloudflare Pages, Wappalyzer data does not distinguish between "hosted on a CDN" and "hosts some assets on that CDN" so we could not include it in this analysis. The author believes that Cloudflare is a very popular Jamstack hosting option, but we do not have good data to verify this.
 
-## Conclusions
+## Conclusion
 
 Our most important takeaway from this year's analysis is that the Jamstack is hard to measure just by looking at HTTP Archive data. Nevertheless, our ability to use a measurement approach that was agnostic to both platform and framework and find in the resulting data strong correlations to "known" Jamstack platforms and frameworks was an encouraging sign that we have made progress in reliably identifying Jamstack sites in the Archive.
 
