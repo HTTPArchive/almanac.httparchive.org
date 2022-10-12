@@ -201,7 +201,7 @@ The `type="module"` and `nomodule` attributes are specific to the presence (or a
   <figcaption>{{ figure_link(
     caption='Percentage of pages using `async`, `defer`, `async` and `defer`, `type="module"`, and `nomodule` attributes on `<script>` elements.',
     sheets_gid="2108682936",
-    sql_file="breakdown_of_pages_using_async_defer_module_nomodule.sql"
+    sql_file="breakdown_of_pages_using_async_defer.sql"
   ) }}</figcaption>
 </figure>
 
