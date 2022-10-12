@@ -35,6 +35,8 @@ All three of the above definitions come from <a hreflang="en" href="https://jams
 
 But as the emphasized words demonstrate, there's clearly some continuity: the sites should be fast, they should be pre-rendered, and they should use an architectural approach that decouples "where you get your data" from "how you render your data". Even if a precise dictionary definition is hard to come by, Jamstack developers know what you mean when you say "Jamstack": you've got a site that loads really quickly, renders a lot of its useful content once, at build time, and retrieves additional data (if it needs to) via JavaScript.
 
+<p class="note">Disclosure: the two authors of this report were Netlify employees. This report and the underlying analysis were reviewed and approved by multiple volunteers not affiliated with Netlify.</p>
+
 ## Quantifying the Jamstack: what counts?
 
 But the problem gets more tricky when you're trying to put together the 2022 Web Almanac. When you're dealing with millions of websites, "I know it when I see it" can't be your definition. How do we quantify the Jamstack? How do we precisely identify it so we can learn about it? We started by asking ourselves a series of questions.
@@ -77,7 +79,9 @@ We knew we wanted to measure: sites that load most of their content very quickly
 
 **Largest Contentful Paint (LCP)**: we got the distribution of all LCP times across all pages, picked the median of real-world user data from the most recent <a hreflang="en" href="https://developer.chrome.com/docs/crux/">Chrome UX Report</a>, and decided that any site equal or less to the median counted as "loaded most content quickly". This was 2.4 seconds on mobile devices, and 2.0 seconds on desktop devices.
 
-**Cumulative Layout Shift (CLS)**: we wanted to avoid sites that very quickly load a skeleton but then take a long time to load real content. The closest we could get to that is the <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a>, a measure of how much the page layout jumps around while loading.[^1] We liked this measure because we felt that a "jumpy" site also felt less "Jamstack-y", a word we were going to end up using a lot. Again, we picked the median of Chrome UX Report data.[^2]
+**Cumulative Layout Shift (CLS)**: we wanted to avoid sites that very quickly load a skeleton but then take a long time to load real content. The closest we could get to that is the <a hreflang="en" href="https://web.dev/cls/">Cumulative Layout Shift</a>, a measure of how much the page layout jumps around while loading. While there are ways to "game" CLS, we still believe it's a reasonable proxy for what we’re trying to measure. We liked this measure because we felt that a "jumpy" site also felt less "Jamstack-y", a word we were going to end up using a lot. Again, we picked the median of Chrome UX Report data.
+
+<p class="note">Chrome UX report data rounds CLS data to the nearest 0.05, which is a shame, because the "real" median seems to be around 0.02-0.03, so on mobile it rounds down to zero and on desktop it rounds up to 0.05. Since 0 excludes huge numbers of pages, we decided to use 0.05 as the best available threshold for both mobile and desktop.</a>
 
 **Caching**: this was particularly tricky to quantify, since most home pages, even on Jamstack sites, request revalidation even if they are in practice cached for a long time. We went with a combination of HTTP Headers including `Age`, `Cache-Control`, and `Expires` that we found were common in pages that could be cached for a long time.
 
@@ -114,7 +118,9 @@ Applying our new criteria, we measured what percentage of sites in the HTTP Arch
   )
 }}
 
-Our headline finding is that 3.6% of mobile websites in 2022 seem "Jamstack-y" and that this has grown more than 100% since 2020.[^3] Again, see above for the many caveats about how approximate this is. When we as humans randomly sampled the sites in the set we identified, we were mostly satisfied that we were finding sites that, to the best of our abilities to judge, looked and felt like Jamstack sites are supposed to look and feel.
+Our headline finding is that 3.6% of mobile websites in 2022 seem "Jamstack-y" and that this has grown more than 100% since 2020. On desktop, 2.7% of sites are Jamstack-y and that number is also growing, the difference between the two groups being driven primarily by different numbers of sites meeting the CLS threshold, which varies a lot by device because of layout differences. Again, see above for the many caveats about how approximate this is.
+
+When we as humans randomly sampled the sites in the set we identified, we were mostly satisfied that we were finding sites that, to the best of our abilities to judge, looked and felt like Jamstack sites are supposed to look and feel.
 
 To judge for yourself, and keep us honest, here are 10 "Jamstack-y" sites from our sample, selected entirely at random without curation of any kind:
 
@@ -333,7 +339,7 @@ And here for Jamstack sites:
 
 Web giant Amazon Web Services is unsurprisingly dominant in both sets, but there are some significant differences between the global preferences and those of Jamstack-y developers.
 
-WP Engine, Azure, and WordPress.com, hugely popular on the web as a whole, drop significantly in popularity in the Jamstack crowd. GitHub pages, which is #11 on the wider web, is #2 in the Jamstack set. Meanwhile Netlify[^4] and Vercel, darlings of Jamstack developers, occupy the #3 and #5 spots, while in the larger web Netlify is at #10 and Vercel at #14 (not shown). Pantheon and Acquia Cloud Platform, neither in the top 10 overall, jump significantly from #11 to #4 and from #12 to #6 respectively.
+WP Engine, Azure, and WordPress.com, hugely popular on the web as a whole, drop significantly in popularity in the Jamstack crowd. GitHub pages, which is #11 on the wider web, is #2 in the Jamstack set. Meanwhile Netlify and Vercel, darlings of Jamstack developers, occupy the #3 and #5 spots, while in the larger web Netlify is at #10 and Vercel at #14 (not shown). Pantheon and Acquia Cloud Platform, neither in the top 10 overall, jump significantly from #11 to #4 and from #12 to #6 respectively.
 
 Given these perhaps surprising results, we thought it was worth looking at how platform preferences changed from 2021 to 2022 in our sets. Using mobile data, here's how the percentage of Jamstack sites using various platforms changed from 2021 to 2022:
 
