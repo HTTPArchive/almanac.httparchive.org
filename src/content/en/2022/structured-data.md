@@ -31,7 +31,7 @@ Despite many advances in machine learning and in particular the field of ‘natu
 - the open availability of data for public research
 - ensuring the quality of the organization's data is maintained when the data leaves its origin
 
-Organizations of all sizes and types want their content to be discovered on the web. Search engines such as Google and Bing emphasize data discoverability by promoting the use of structured data. From an SEO point of view, it is advantageous to present data in an easy to find and parse manner. Some of these advantages will be discussed in the [Use Cases](#heading=h.9dgerkhy7i6) and [Key Concepts](#heading=h.sgp4kasx7abv) sections within this chapter.
+Organizations of all sizes and types want their content to be discovered on the web. Search engines such as Google and Bing emphasize data discoverability by promoting the use of structured data. From an SEO point of view, it is advantageous to present data in an easy to find and parse manner. Some of these advantages will be discussed in the [Use Cases](#use-cases) and [Key Concepts](#key-concepts) sections within this chapter.
 
 Last year's introduction pointed out that “when machines can reliably extract structured data, at scale, we enable new and smarter types of software, systems, services and businesses”. This year’s chapter includes sections that explore recently published research on structured data, open source frameworks and tools that assist the generation of high-quality structured data.
 
