@@ -170,6 +170,12 @@
           "chapter_number": "26",
           "title": "HTTP",
           "slug": "http"
+        },
+        {
+          "part": "IV",
+          "chapter_number": "27",
+          "title": "CDN",
+          "slug": "cdn"
         }
       ]
     }
@@ -1235,6 +1241,29 @@
       "website": "https://blog.yoav.ws",
       "github": "yoavweiss",
       "twitter": "yoavweiss"
+    },
+    "harendra":{
+      "name": "Haren Bhandari",
+      "teams":[
+        "analysts",
+        "authors"
+      ],
+      "github":"harendra"
+    },
+    "joeviggiano":{
+      "name": "Joe Viggiano",
+      "teams":[
+        "analysts",
+        "authors"
+      ],
+      "github":"joeviggiano"
+    },
+    "ytkoka":{
+      "name": "Oka Yutaka",
+      "teams":[
+        "reviewers"
+      ],
+      "github":"yokoka"
     }
   }
 }
