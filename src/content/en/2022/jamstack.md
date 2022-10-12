@@ -41,7 +41,7 @@ But the problem gets more tricky when you're trying to put together the 2022 Web
 
 ### Is every static site a Jamstack site?
 
-That seems like it should be an obvious "yes": if the page is flat HTML that renders all at once then it certainly sounds like it should be Jamstack. But what about all those pages people built in the 90s, before JavaScript was popular and before servers did much? Are they Jamstack? It felt like they weren't, not every static site is a Jamstack site. So we tried to think of why.
+That seems like it should be an obvious "yes": if the page is flat HTML that renders all at once then it certainly sounds like it should be Jamstack. But what about all those pages people built in the 90s, before JavaScript was popular and most sites were static? Are they Jamstack? It felt like they weren't, not every static site is a Jamstack site. So we tried to think of why.
 
 We landed on the "CDN" aspect of the early definition of Jamstack: it doesn't have to be any specific CDN provider, but part of the definition is definitely the "pre-rendering" part, which implies: you're rendering something, and then caching it. So a Jamstack site should be cached (though whether you cache it yourself, or use a CDN, doesn't matter).
 
