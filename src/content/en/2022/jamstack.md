@@ -18,7 +18,6 @@ featured_stat_2: 106%
 featured_stat_label_2: Growth of Jamstack-y sites since 2020
 featured_stat_3: 36%
 featured_stat_label_3: Jekyll sites that are Jamstack-y
-unedited: true
 ---
 
 ## Introduction
@@ -110,11 +109,11 @@ Applying our new criteria, we measured what percentage of sites in the HTTP Arch
 
 {{ figure_markup(
   caption="Jamstack sites.",
-  description="Bar chart showing...",
+  description="Bar chart showing the percentage of Jamstack sites on desktop and mobile in 2020, 2021 and 2022. In 2020 it was 1.7% for both desktop and mobile, in 2021 it was 2.2% and 2.1% respectively, and in 2022 it was 2.7% on desktop and 3.6% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=2132409776&format=interactive",
   sheets_gid="1131487846",
   sql_file="jamstack_counts.sql",
-  image="jamstack_counts.png"
+  image="jamstack-counts.png"
   )
 }}
 
@@ -142,12 +141,12 @@ Whether or not exactly 3.6% (or 2.7% on desktop) of the web is Jamstack – whic
 Of course, since our definition is two performance metrics and a caching metric, one way we could be wrong is if the web is just getting more performant in general. To check that, we split the metrics back up (this is mobile data; desktop data was not significantly different):
 
 {{ figure_markup(
-  caption="Changes in Jamstack metrics over time.",
-  description="Line chart showing...",
+  caption="Changes in Jamstack metrics over time on mobile.",
+  description="Line chart showing the change in the three Jamstack metrics from 2020, 2021, and 2022. After being largely static between 2020 and 2021, the percentage of CLS has risen in the last year (from 48% to 61%), as has LCP to a lesser extent (from 44% to 50%). The percentage cacheable has stayed lagely static at 11% in all three years.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=806511079&format=interactive",
   sheets_gid="1068922155",
   sql_file="percentage_jamstack_criteria_per_year.sql",
-  image="changes_in_jamstack_counts_over_time.png"
+  image="changes-in-jamstack-counts-over-time.png"
   )
 }}
 
@@ -165,11 +164,11 @@ Wappalyzer has a somewhat arbitrary distinction between "web frameworks" and "Ja
 
 {{ figure_markup(
   caption="JavaScript frameworks used by all sites.",
-  description="Bar chart showing...",
+  description="Bar chart showing that React is used by 8.2% of desktop and 8.1% of mobile sites, GSAP by 6.9% and 7.7% respectively, Vue.js by 3.1% and 2.8%, RequireJS by 2.3% and 2.3%, styled-components by 1.9% and 1.8%, Handlebars by 1.8% and 1.5%, Backbone.js by 1.7% and 1.4%, AngularJS by 1.4% and 1.1%, Mustache by 1.1% and 1.3%, and finally MooTools is used by 0.9% of desktop and 1.1% of mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=1813867996&format=interactive",
   sheets_gid="496656547",
   sql_file="jamstack_javascript_frameworks.sql",
-  image="all_sites_javascript_frameworks.png",
+  image="all-sites-javascript-frameworks.png",
   width=600,
   height=489
   )
@@ -179,11 +178,11 @@ And here's the top 10 in Jamstack sites:
 
 {{ figure_markup(
   caption="JavaScript frameworks used by Jamstack sites.",
-  description="Bar chart showing...",
+  description="Bar chart showing React is used by 12.0% of desktop and 12.5% of mobile Jamstack sites, GSAP by 6.4% and 7.3% respectively, Stimulus by 6.0% and 5.6%, RequireJS by 3.4% and 4.5%, Vue.js by 2.3% and 1.9%, styled-components by 1.5% and 1.6%, Mustache by 0.7% and 1.8%, AMP by 1.0% and 1.5%, Emotion by 1.3% and 0.8%, and finally Gatsby is used by 1.2% of desktop and 0.8% of mobile Jamstack sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=691994111&format=interactive",
   sheets_gid="496656547",
   sql_file="jamstack_javascript_frameworks.sql",
-  image="jamstack_javascript_frameworks.png",
+  image="jamstack-javascript-frameworks.png",
   width=600,
   height=489
   )
@@ -192,8 +191,8 @@ And here's the top 10 in Jamstack sites:
 You can see that React is more popular in the Jamstack than the general web, and so is Gatsby. Now let's look at "web frameworks", again as somewhat arbitrarily defined by Wappalyzer:
 
 {{ figure_markup(
-  caption="JavaScript frameworks used by all sites.",
-  description="Bar chart showing...",
+  caption="Web frameworks used by all sites.",
+  description="Bar chart showing Microsoft ASP.NET is used by 8.4% of desktop and 6.7% of mobile sites, Ruby on Rails by 1.4% and 1.1% respectively, Laravel by 1.0% and 1.0%, Express by 0.8% and 0.7%, Next.js by 0.8% and 0.7%, CodeIgniter by 0.7% and 0.7%, Nuxt.js by 0.5% and 0.4%, Django by 0.3% and 0.3%, Helix Ultimate by 0.3% and 0.3%, and finally Yii is used by 0.3% of desktop and 0.2% of mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=193748603&format=interactive",
   sheets_gid="1751614355",
   sql_file="jamstack_web_frameworks.sql",
@@ -206,12 +205,12 @@ You can see that React is more popular in the Jamstack than the general web, and
 A great question here is: why are Next.js and Nuxt.js considered web frameworks, but Vue.js and React considered JavaScript frameworks? But leaving that aside, you can see that Microsoft's ASP.Net framework is extremely popular across the web as a whole, and so is stalwart Ruby on Rails. What does it look like in the Jamstack?
 
 {{ figure_markup(
-  caption="JavaScript frameworks used by Jamstack sites.",
-  description="Bar chart showing...",
+  caption="Web frameworks used by Jamstack sites.",
+  description="Bar chart showing Microsoft ASP.NET is by 3.5% of desktop and 3.1% of mobile Jamstack sites, Symfony by 2.1% and 1.8% respectively, Next.js by 1.8% and 1.4%, Ruby on Rails by 0.7% and 0.8%, Nuxt.js by 0.6% and 0.4%, CodeIgniter by 0.4% and 0.4%, Django by 0.4% and 0.3%, Express by 0.4% and 0.3%, and finally Laravel and Yii are used by 0.2% of both desktop and mobile Jamstack sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=1904684465&format=interactive",
   sheets_gid="1751614355",
   sql_file="jamstack_web_frameworks.sql",
-  image="jamstack_web_frameworks.png",
+  image="jamstack-web-frameworks.png",
   width=600,
   height=493
   )
@@ -227,7 +226,7 @@ What about the SSGs? Wappalyzer has them as a separate category; here are their 
 
 {{ figure_markup(
   caption="Detectable SSGs used by all sites.",
-  description="Bar chart showing...",
+  description="Bar chart showing Next.js is used by 0.74% of desktop and 0.63% of mobile sites, Nuxt.js by 0.45% and 0.40% respectively, Gatsby by 0.22% and 0.21%, Hugo by 0.09% and 0.06%, Jekyll by 0.07% and 0.03%, Docusaurus by 0.02% and 0.01%, Hexo by 0.02% and 0.00%, Gridsome by 0.01% and 0.01%, and finally SitePad and Astro are used by 0.00% of both mobile and desktop sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=582270948&format=interactive",
   sheets_gid="1299424402",
   sql_file="jamstack_ssgs.sql",
@@ -241,7 +240,7 @@ And here they are for Jamstack sites:
 
 {{ figure_markup(
   caption="Detectable SSGs used by Jamstack sites.",
-  description="Bar chart showing...",
+  description="Bar chart showing Next.js is used by 1.79% of desktop and 1.40% of mobile Jamstack sites, Gatsby by 1.19% and 0.81% respectively, Hugo by 0.77% and 0.49%, Jekyll by 0.85% and 0.34%, Nuxt.js by 0.56% and 0.41%, Docusaurus by 0.19% and 0.09%, Hexo by 0.16% and 0.04%, Gridsome by 0.05% and 0.03%, Octopress by 0.02% and 0.01%, and finally Astro is used by 0.02% of desktop and 0.01% of mobile Jamstack sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=1349389169&format=interactive",
   sheets_gid="1299424402",
   sql_file="jamstack_ssgs.sql",
@@ -315,7 +314,7 @@ We were also interested in where people host their Jamstack-y sites. Would there
 
 {{ figure_markup(
   caption="PaaS used by all sites.",
-  description="Bar chart showing...",
+  description="Bar chart showing Amazon Web Services is used by 7.2% of desktop and 5.9% of mobile sites, WP Engine by 1.7% and 1.1% respectively, Azure by 1.1% and 0.9%, WordPress.com by 0.8% and 1.1%, SiteGround by 0.7% and 0.6%, Heroku by 0.4% and 0.3%, Kinsta by 0.4% and 0.3%, Flywheel by 0.3% and 0.2%, Aruba.it by 0.2% and 0.4%, and finally Netlify is used by 0.3% of desktop and 0.2% of mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=966567769&format=interactive",
   sheets_gid="351874654",
   sql_file="jamstack_paas.sql",
@@ -329,7 +328,7 @@ And here for Jamstack sites:
 
 {{ figure_markup(
   caption="PaaS used by Jamstack sites.",
-  description="Bar chart showing...",
+  description="Bar chart showing Amazon Web Services is used by 10.8% of desktop and 9.4% of mobile Jamstack sites, GitHub Pages by 4.6% and 2.0% respectively, Netlify by 2.4% and 1.7%, Pantheon by 2.1% and 1.7%, Vercel by 1.6% and 1.1%, Acquia Cloud Platform by 1.4% and 1.2%, Cloudways by 0.7% and 0.9%, Azure by 0.7% and 0.7%, Platform.sh by 0.4% and 0.3%, and finally Heroku by 0.3% of desktop and 0.2% of mobile Jamstack sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=437110555&format=interactive",
   sheets_gid="351874654",
   sql_file="jamstack_paas.sql",
