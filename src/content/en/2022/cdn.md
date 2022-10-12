@@ -125,7 +125,7 @@ Regarding the base HTML page, the traditional pattern has been to serve the base
 
 These are some of the likely reasons behind the rise:
 * CDNs can improve load time of the base HTML page that can be of high importance to improve customer experience and keep users engaged.
-* It is simpler and faster to load the base page from CDNs using the DNS provided by CDN providers. {# TODO - is it? Why? #}
+* Using distributed DNS from by CDN providers is simpler and faster.
 * It is easier to plan Disaster Recovery if most of the content including the base HTML page is pushed through CDNs. CDNs often provide a failover functionality to automatically switch to the alternative site once the primary site becomes unstable or unavailable.
 
 While we observed CDN adoption across different types of content, we will look at this data from a different point of view below—based on the site popularity.
