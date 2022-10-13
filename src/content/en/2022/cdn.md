@@ -334,8 +334,8 @@ The CDN, origin servers, and client browser must all support Client Hints to be 
   caption="Client Hints ComparisonClient Hints Comparison (mobile).",
   description="This bar chart shows the usage of Client Hints in CDNs. Currently only 0.43% of the requests have client hints",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=1567266649&format=interactive",
-  sheets_gid="2043216080",
-  sql_file="clienthints_response_counts_by_client.sql"
+  sheets_gid="2048261739",
+  sql_file=""
   )
 }}
 
@@ -352,8 +352,7 @@ This may be performed automatically, based on the user agent or client hints, or
   caption="Distribution of Image Formats (mobile).",
   description="This bar chart shows the Brotli adoption across CDN and origin on mobile requests. CDNs served 42.6% of requests in Brotli compressed format and 57.3% of requests in gzip compressed format. Origin on the other hand served 21.2% of requests in Brotli compressed format and 78.7% of requests in gzip compressed format.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZQqyyKiQWgICD_a0WaEAmfZyFN_Zi3wVuQnZxsXqwZ_1JQg2x7GpRw4CTkX4gKvurzoCQ6YokkdpM/pubchart?oid=293872923&format=interactive",
-  sheets_gid="571877353",
-  sql_file="image_format_counts_by_client.sql"
+  sheets_gid="571877353"
   )
 }}
 

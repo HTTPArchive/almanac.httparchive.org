@@ -139,14 +139,14 @@
         },
         {
           "part": "III",
-          "chapter_number": "20",
+          "chapter_number": "19",
           "title": "Jamstack",
           "slug": "jamstack",
           "hero_dir": "2020"
         },
         {
           "part": "III",
-          "chapter_number": "21",
+          "chapter_number": "20",
           "title": "Sustainability",
           "slug": "sustainability",
           "hero_dir": "2022"
@@ -159,21 +159,21 @@
       "chapters": [
         {
           "part": "IV",
-          "chapter_number": "22",
+          "chapter_number": "21",
           "title": "Page Weight",
           "slug": "page-weight"
         },
         {
           "part": "IV",
-          "chapter_number": "26",
-          "title": "HTTP",
-          "slug": "http"
+          "chapter_number": "22",
+          "title": "CDN",
+          "slug": "cdn"
         },
         {
           "part": "IV",
-          "chapter_number": "27",
-          "title": "CDN",
-          "slug": "cdn"
+          "chapter_number": "23",
+          "title": "HTTP",
+          "slug": "http"
         }
       ]
     }
@@ -253,7 +253,7 @@
       ],
       "avatar_url": "3109255",
       "github": "alexdenning",
-      "website": "getellipsis.com",
+      "website": "https://getellipsis.com/",
       "twitter": "AlexDenning"
     },
     "alexnj": {
@@ -274,7 +274,7 @@
       ],
       "avatar_url": "422745",
       "github": "DataBytzAI",
-      "website": "https://www.thedataworks.com",
+      "website": "https://webdataworks.io/",
       "twitter": "DataBytesAI",
       "linkedin": "allenoneill"
     },
@@ -405,7 +405,7 @@
       ],
       "avatar_url": "17906",
       "github": "mrchrisadams",
-      "website": "chrisadams.me.uk"
+      "website": "https://chrisadams.me.uk"
     },
     "svgeesus": {
       "name": "Chris Lilley",
@@ -414,7 +414,7 @@
       ],
       "avatar_url": "2506926",
       "github": "svgeesus",
-      "website": "svgees.us",
+      "website": "https://svgees.us",
       "twitter": "svgeesus"
     },
     "christianliebel": {
@@ -719,7 +719,7 @@
       ],
       "avatar_url": "1424556",
       "github": "jmsole",
-      "website": "www.jmsole.cl",
+      "website": "https://www.jmsole.cl/",
       "twitter": "jmsoleb"
     },
     "jroakes": {
@@ -729,7 +729,6 @@
       ],
       "avatar_url": "10191545",
       "github": "jroakes",
-      "website": "codeseo.io",
       "twitter": "jroakes"
     },
     "Schweinepriester": {
@@ -923,7 +922,7 @@
       ],
       "avatar_url": "26349046",
       "github": "NishuGoel",
-      "website": "unravelweb.dev",
+      "website": "https://unravelweb.dev/",
       "twitter": "TheNishuGoel"
     },
     "nrllh": {

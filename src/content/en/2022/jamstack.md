@@ -45,7 +45,7 @@ That seems like it should be an obvious "yes": if the page is flat HTML that ren
 
 We landed on the "CDN" aspect of the early definition of Jamstack: it doesn't have to be any specific CDN provider, but part of the definition is definitely the "pre-rendering" part, which implies: you're rendering something, and then caching it. So a Jamstack site should be cached (though whether you cache it yourself, or use a CDN, doesn't matter).
 
-That produces another edge-case: lots of sites are cached! Even completely dynamic sites often cache things for a few minutes to avoid load spikes, and lots of sites are served by CDNs these days, which are intrinsically a cache even if the site's architecture owes nothing to Jamstack patterns. So what's the difference between a normal cached site and a Jamstack site? We decided it meant a Jamstack site should be cacheable.
+That produces another edge-case: lots of sites are cached! Even completely dynamic sites often cache things for a few minutes to avoid load spikes, and lots of sites are served by CDNs these days, which are intrinsically a cache even if the site's architecture owes nothing to Jamstack patterns. So what's the difference between a normal cached site and a Jamstack site? Cacheability is one part, but what else?
 
 ### Does a Jamstack site have to use JavaScript?
 
@@ -55,7 +55,7 @@ We decided a Jamstack site doesn't necessarily use JavaScript. Lots of Jamstack 
 
 There are definitely some frameworks that people think of when they think about the Jamstack; so much so that the 2020 and 2021 versions of the Web Almanac [defined the Jamstack exclusively by the frameworks used](../2021/jamstack), focusing on Static Site Generators (SSGs). That's logical enough, but we thought this presented some problems.
 
-First, what about frameworks you can't easily detect? As an example, <a hreflang="en" href="https://www.11ty.dev/">Eleventy</a>, a growing and popular choice in the Jamstack, leaves no trace in the generated HTML; it's invisible to the end user (by default, though you can add a <a hreflang="en" href="https://www.11ty.dev/docs/data-eleventy-supplied/#eleventy-variable">generator tag</a> if you want to). Not counting frameworks that politely goget out of the way seems wrong.
+First, what about frameworks you can't easily detect? As an example, <a hreflang="en" href="https://www.11ty.dev/">Eleventy</a>, a growing and popular choice in the Jamstack, leaves no trace in the generated HTML; it's invisible to the end user (by default, though you can add a <a hreflang="en" href="https://www.11ty.dev/docs/data-eleventy-supplied/#eleventy-variable">generator tag</a> if you want to). Not counting frameworks that politely get out of the way seems wrong.
 
 Secondly: there are a lot of frameworks! There are dozens of big ones and thousands of smaller ones. Even for the ones that can be detected, we don't always have a good way to detect them. Plus, we agreed that it is definitely possible to build a site that feels "Jamstack-y" without using a framework at all. Plain HTML can definitely be Jamstack.
 
@@ -127,13 +127,13 @@ To judge for yourself, and keep us honest, here are 10 "Jamstack-y" sites from o
 - <a hreflang="en" href="https://www.cazador-del-sol.de/">www.cazador-del-sol.de</a>
 - <a hreflang="en" href="https://snpbooks.org/">snpbooks.org</a>
 - <a hreflang="en" href="https://eikounoayumi.jp/">eikounoayumi.jp</a>
-- <a hreflang="en" href="https://eikounoayumi.jp/">rochesteronline.precollegeprograms.org</a>
-- <a hreflang="en" href="https://eikounoayumi.jp/">surveyforcustomers.com</a>
-- <a hreflang="en" href="https://eikounoayumi.jp/">www.shopmate.eu</a>
-- <a hreflang="en" href="https://eikounoayumi.jp/">docs.saleor.io</a>
-- <a hreflang="en" href="https://eikounoayumi.jp/">www.wildeyebrewing.ca</a>
-- <a hreflang="en" href="https://eikounoayumi.jp/">360insurancegroup.com</a>
-- <a hreflang="en" href="https://eikounoayumi.jp/">144onthehill.co.uk</a>
+- <a hreflang="en" href="https://rochesteronline.precollegeprograms.org/">rochesteronline.precollegeprograms.org</a>
+- <a hreflang="en" href="https://surveyforcustomers.com/">surveyforcustomers.com</a>
+- <a hreflang="en" href="https://www.shopmate.eu/">www.shopmate.eu</a>
+- <a hreflang="en" href="https://docs.saleor.io/">docs.saleor.io</a>
+- <a hreflang="en" href="https://www.wildeyebrewing.ca/">www.wildeyebrewing.ca</a>
+- <a hreflang="en" href="https://360insurancegroup.com/">360insurancegroup.com</a>
+- <a hreflang="en" href="https://144onthehill.co.uk/">144onthehill.co.uk</a>
 
 Whether or not exactly 3.6% (or 2.7% on desktop) of the web is Jamstack – which, because the definition of Jamstack relies on architectural choices we can't verify, we cannot definitively say – what we can be sure of is that Jamstack is growing. The percentage of sites that meet all of our criteria has been getting steadily bigger year on year. The web is getting more "Jamstack-y".
 
@@ -141,7 +141,7 @@ Of course, since our definition is two performance metrics and a caching metric,
 
 {{ figure_markup(
   caption="Changes in Jamstack metrics over time on mobile.",
-  description="Line chart showing the change in the three Jamstack metrics from 2020, 2021, and 2022. After being largely static between 2020 and 2021, the percentage of CLS has risen in the last year (from 48% to 61%), as has LCP to a lesser extent (from 44% to 50%). The percentage cacheable has stayed lagely static at 11% in all three years.",
+  description="Line chart showing the change in the three Jamstack metrics from 2020, 2021, and 2022. After being largely static between 2020 and 2021, the percentage of CLS has risen in the last year (from 48% to 61%), as has LCP to a lesser extent (from 44% to 50%). The percentage cacheable has stayed largely static at 11% in all three years.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVe-RPqA23n5VYyvNGcmljPDWPhiBqlMFOQFp5vc4CKT_u5Zd6cldCKUVg56FoqRyaarvvMTs-uY4c/pubchart?oid=806511079&format=interactive",
   sheets_gid="1068922155",
   sql_file="percentage_jamstack_criteria_per_year.sql",
@@ -425,7 +425,7 @@ The change in relative popularity of some of these hosts relative to the wider w
   </figcaption>
 </figure>
 
-GitHub Pages, Pantheon, Acquia Cloud Platform and Heroku all appear to be declining in popularity as a Jamstack hosting choice, while AWS, Netlify, Vercel, and Platform.sh are getting more popular. Note that Cloudways or Azure are not in the 2021 PaaS data, so we can't compare them. We can hypothesise that AWS, Netlify and Vercel are growing in popularity because they're not just hosting—they offer a suite of tools for a developer workflow.
+GitHub Pages, Pantheon, Acquia Cloud Platform and Heroku all appear to be declining in popularity as a Jamstack hosting choice, while AWS, Netlify, Vercel, and Platform.sh are getting more popular. Note that Cloudways or Azure are not in the 2021 PaaS data, so we can't compare them. We can hypothesize that AWS, Netlify and Vercel are growing in popularity because they're not just hosting—they offer a suite of tools for a developer workflow.
 
 Absent from all the platform lists is web giant Cloudflare, which Wappalyzer categorizes as a CDN rather than a PaaS. Although Cloudflare has a PaaS offering that is very Jamstack-y, called Cloudflare Pages, Wappalyzer data does not distinguish between "hosted on a CDN" and "hosts some assets on that CDN" so we could not include it in this analysis. The author believes that Cloudflare is a very popular Jamstack hosting option, but we do not have good data to verify this.
 

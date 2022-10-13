@@ -404,7 +404,7 @@ And then referencing that in the HTML:
   description="Column chart showing usage of nonce, `unsafe-inline` and `unsafe-eval` in CSP `script-src` directive. `nonce-` is used in 12% of websites in mobile with a CSP header and 14% of such websites in desktop. `unsafe-inline` is used 94% of such websites in mobile and 95% in desktop. `unsafe-eval` is used 80% of such websites in mobile and 78% in desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSPHK3G2Ir-ys_oTrrhugqxV0aOSj3y5d1lANQ54GdaQtIHrzXIjQQGEpIdT_mQvxTrMtpd0Hn30zhF/pubchart?oid=310998764&format=interactive",
   sheets_gid="323360740",
-  sql_file="csp_script_src_list_keywords.sql"
+  sql_file="csp_script_source_list_keywords.sql"
   )
 }}
 
