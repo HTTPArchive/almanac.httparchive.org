@@ -431,9 +431,9 @@ Unlike compression, there's no overhead on the client side to minification, reso
 
 Caching allows a resource to be reused until a specified expiration. Caches are used in browsers and on servers.
 
-CDNs are a popular example. These interconnected servers are geographically distributed in order to send cached content from a network location closest to the user.
+CDNs are a popular example. These interconnected servers are geographically distributed in order to send cached content from a network location closest to the user. CDNs do not reduce page weight but rather reduce the delay by reducing the distance between requestor and resource.
 
-CDNs do not reduce page weight but rather reduce the delay by reducing the distance between requestor and resource. As such, we did not investigate these in this chapter, but both [Caching](../2021/caching) and [CDNs](../2021/cdn) were covered in more detail in last year's Web Almanac.
+As such, we did not investigate this in this chapter, but the [CDN](./cdn) chapter covers this in more detail and last year's [Caching](../2021/cdn) chapter gives more detail on that.
 
 ## Conclusion
 

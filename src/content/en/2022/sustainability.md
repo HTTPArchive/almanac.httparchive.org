@@ -348,7 +348,7 @@ Around 34% of the websites use the `srcset` attribute, which is a great way to i
 
 ##### Lazy-loading
 
-An easy way to get a faster first load is to load images progressively: only load what you need when you need it. This is done through [lazy-loading](../2021/media#lazy-loading) and <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">most browsers now support this natively</a>. Not all users will scroll your page in its entirety so you should avoid loading images that might never be seen by the current user. As such, this is a quick win for sustainability and your users.
+An easy way to get a faster first load is to load images progressively: only load what you need when you need it. This is done through [lazy-loading](./media#lazy-loading) and <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">most browsers now support this natively</a>. Not all users will scroll your page in its entirety so you should avoid loading images that might never be seen by the current user. As such, this is a quick win for sustainability and your users.
 
 {{ figure_markup(
   image="native-lazy-loading-usage.png",
