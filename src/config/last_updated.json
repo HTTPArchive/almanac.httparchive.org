@@ -581,6 +581,11 @@
     "date_modified": "2022-09-26T00:00:00.000Z",
     "hash": "2b287a4363265ba3b0802b310881d011"
   },
+  "en/2022/chapters/cdn.html": {
+    "date_published": "2022-10-13T00:00:00.000Z",
+    "date_modified": "2022-10-13T00:00:00.000Z",
+    "hash": "fbdc8edb7551ac08b126428b383a738d"
+  },
   "en/2022/chapters/cms.html": {
     "date_published": "2022-09-26T00:00:00.000Z",
     "date_modified": "2022-09-26T00:00:00.000Z",
@@ -607,8 +612,8 @@
     "hash": "07a9ba643e7368da68fb155716d008c2"
   },
   "en/2022/chapters/jamstack.html": {
-    "date_published": "2022-09-26T00:00:00.000Z",
-    "date_modified": "2022-09-26T00:00:00.000Z",
+    "date_published": "2022-10-13T00:00:00.000Z",
+    "date_modified": "2022-10-13T00:00:00.000Z",
     "hash": "aaff6ce0d02d4751bad3b4d299da4beb"
   },
   "en/2022/chapters/javascript.html": {
@@ -642,8 +647,8 @@
     "hash": "c5e976dadd53efa85fc32879de02cf06"
   },
   "en/2022/chapters/privacy.html": {
-    "date_published": "2022-10-10T00:00:00.000Z",
-    "date_modified": "2022-10-10T00:00:00.000Z",
+    "date_published": "2022-10-13T00:00:00.000Z",
+    "date_modified": "2022-10-13T00:00:00.000Z",
     "hash": "2b1ff1c530338c8e7b31d3310fbc233c"
   },
   "en/2022/chapters/pwa.html": {
