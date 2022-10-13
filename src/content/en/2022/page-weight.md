@@ -141,7 +141,7 @@ In 2021, the 100th percentile of mobile sites used 20,452 kilobytes of font file
 
 However, the 100th percentile—while fun to investigate—will always show the worst of the web. At the 90th percentile, the mobile font weight was less extreme—though still large—401 kilobytes.
 
-More insights into the typographical nature of the web can be found in the [Fonts](../2021/fonts) chapter.
+More insights into the typographical nature of the web can be found in the [Fonts](./fonts) chapter.
 
 ## Page weight by the numbers
 
