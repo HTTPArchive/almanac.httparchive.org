@@ -45,7 +45,7 @@ That seems like it should be an obvious "yes": if the page is flat HTML that ren
 
 We landed on the "CDN" aspect of the early definition of Jamstack: it doesn't have to be any specific CDN provider, but part of the definition is definitely the "pre-rendering" part, which implies: you're rendering something, and then caching it. So a Jamstack site should be cached (though whether you cache it yourself, or use a CDN, doesn't matter).
 
-That produces another edge-case: lots of sites are cached! Even completely dynamic sites often cache things for a few minutes to avoid load spikes, and lots of sites are served by CDNs these days, which are intrinsically a cache even if the site's architecture owes nothing to Jamstack patterns. So what's the difference between a normal cached site and a Jamstack site? We decided it meant a Jamstack site should be cacheable.
+That produces another edge-case: lots of sites are cached! Even completely dynamic sites often cache things for a few minutes to avoid load spikes, and lots of sites are served by CDNs these days, which are intrinsically a cache even if the site's architecture owes nothing to Jamstack patterns. So what's the difference between a normal cached site and a Jamstack site? Cacheability is one part, but what else?
 
 ### Does a Jamstack site have to use JavaScript?
 
