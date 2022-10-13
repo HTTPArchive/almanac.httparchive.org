@@ -329,7 +329,7 @@ The utility of `srcset` is usually dependent on the precision of the `sizes` med
 
 ### Client Hints
 
-<a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints">Client Hints</a> allow content creators to move the resizing of images to HTTP content negotiation. In this way, the HTML does not need additional `<img srcset>` to clutter the markup, and instead can depend on a server or <a hreflang="en" href="https://cloudinary.com/blog/client_hints_and_responsive_images_what_changed_in_chrome_67">image CDN to select an optimal image</a> for the context. This allows simplifying of HTML and enables origin servers to adapt overtime and disconnect the content and presentation layers.
+<a hreflang="en" href="https://web.dev/user-agent-client-hints/">Client Hints</a> allow content creators to move the resizing of images to HTTP content negotiation. In this way, the HTML does not need additional `<img srcset>` to clutter the markup, and instead can depend on a server or <a hreflang="en" href="https://cloudinary.com/blog/client_hints_and_responsive_images_what_changed_in_chrome_67">image CDN to select an optimal image</a> for the context. This allows simplifying of HTML and enables origin servers to adapt overtime and disconnect the content and presentation layers.
 
 To enable Client Hints, the web page must signal to the browser using either an extra HTTP header `Accept-CH: DPR, Width, Viewport-Width` _or_ by adding the HTML `<meta http-equiv="Accept-CH" content="DPR, Width, Viewport-Width">`. The convenience of one or the other technique depends on the team implementing and both are offered for convenience.
 

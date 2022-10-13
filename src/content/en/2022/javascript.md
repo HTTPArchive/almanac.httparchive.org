@@ -523,7 +523,7 @@ An equally important aspect of JavaScript performance is how we deliver scripts 
 
 ### Compression
 
-[Compression](./compression) is an often-used technique that applies largely to text-based assets, such as HTML, CSS, SVG images, and yes, JavaScript. There are a variety of compression techniques that are widely used on the web that can speed up the delivery of scripts to the browser, effectively shortening the resource load phase.
+Compression is an often-used technique that applies largely to text-based assets, such as HTML, CSS, SVG images, and yes, JavaScript. There are a variety of compression techniques that are widely used on the web that can speed up the delivery of scripts to the browser, effectively shortening the resource load phase.
 
 {{ figure_markup(
     image="compression-methods.png",

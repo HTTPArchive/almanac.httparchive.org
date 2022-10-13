@@ -20,7 +20,7 @@ featured_stat_label_3: Sites on mobile and desktop use the _Web Share API_.
 
 ## Introduction
 
-Compelling web experiences aren't limited to basic browser capabilities; they can take advantage of their underlying operating system. Web platform APIs expose these capabilities that are the foundation for [Progressive Web Apps (PWA)](./pwa_)—web applications capable of providing high-quality experiences like platform-specific apps.
+Compelling web experiences aren't limited to basic browser capabilities; they can take advantage of their underlying operating system. Web platform APIs expose these capabilities that are the foundation for [Progressive Web Apps (PWA)](./pwa)—web applications capable of providing high-quality experiences like platform-specific apps.
 
 In addition, some functionality on the web platform gives access to lower-level features such as access to the [file system](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API), [geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API), access to the [clipboard](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API), and even the ability to detect [gamepads](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API).
 
@@ -256,7 +256,7 @@ Web applications such as YouTube, YouTube Music, Spotify, and others take advant
   description="Accessing controls and information for YouTube Music via the Window's Taskbar.",
 ) }}
 
-For a deeper dive into video usage on the web, check out the [Media](../media#video) chapter.
+For a deeper dive into video usage on the web, check out the [Media](./media#video) chapter.
 
 ## Device Memory API
 
