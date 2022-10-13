@@ -329,7 +329,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 
 ### クライアントヒント
 
-<a hreflang="en" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints">クライアントヒント</a> は、コンテンツ制作者が画像のリサイズをHTTPコンテンツネゴシエーションに移すことを可能にします。この方法では、HTMLはマークアップを乱雑にするための追加の `<img srcset>` を必要とせず、代わりにサーバや <a hreflang="en" href="https://cloudinary.com/blog/client_hints_and_responsive_images_what_changed_in_chrome_67">最適な画像を選択するための画像CDN</a> に依存できます。これによりHTMLの簡素化が可能になり、オリジンサーバが時間の経過とともに適応し、コンテンツ層とプレゼンテーション層を切り離すことが可能になります。
+<a hreflang="en" href="https://web.dev/user-agent-client-hints/">クライアントヒント</a> は、コンテンツ制作者が画像のリサイズをHTTPコンテンツネゴシエーションに移すことを可能にします。この方法では、HTMLはマークアップを乱雑にするための追加の `<img srcset>` を必要とせず、代わりにサーバや <a hreflang="en" href="https://cloudinary.com/blog/client_hints_and_responsive_images_what_changed_in_chrome_67">最適な画像を選択するための画像CDN</a> に依存できます。これによりHTMLの簡素化が可能になり、オリジンサーバが時間の経過とともに適応し、コンテンツ層とプレゼンテーション層を切り離すことが可能になります。
 
 クライアントヒントを有効にするには、ウェブページでブラウザに追加のHTTPヘッダー`Accept-CH: DPR, Width, Viewport-Width`を使ってシグナルを送る必要があります。 _または_ HTML`<meta http-equiv="Accept-CH" content="DPR, Width, Viewport-Width">`を追加します。どちらか一方の手法の利便性は実装するチームに依存し、どちらも利便性のために提供されています。
 

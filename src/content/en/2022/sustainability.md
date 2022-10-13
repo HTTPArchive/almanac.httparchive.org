@@ -127,7 +127,7 @@ At the 90th percentile, desktop pages were over 9 MB and mobile pages over 8 MB.
   sql_file=""
 ) }}
 
-The carbon emissions for websites are very close on mobile and desktop. They seem quite low on the 10th percentile (around 0.15 g eqCO2, which would be equivalent to <a hreflang="fr" href="https://datagir.ademe.fr/apps/mon-impact-transport/">a little less than 1km with a thermal car</a>). They reach as much as 2.76 g eqCO2 on the 90th percentile (a little more than 14km with a thermal car).
+The carbon emissions for websites are very close on mobile and desktop. They seem quite low on the 10th percentile (around 0.15 g eqCO2, which would be equivalent to <a hreflang="fr" href="https://datagir.ademe.fr/apps/mon-impact-transport/">a little less than 1 meter with a thermal car</a>). They reach as much as 2.76 g eqCO2 on the 90th percentile (a little more than 14 meters with a thermal car).
 
 This doesn't seem like much but you should keep in mind that each website gets thousands or even millions of visitors each month (sometimes even more) and what you see in the graph is emissions for a single page visited once. The environmental impact each month for all websites adds up.
 
@@ -348,7 +348,7 @@ Around 34% of the websites use the `srcset` attribute, which is a great way to i
 
 ##### Lazy-loading
 
-An easy way to get a faster first load is to load images progressively: only load what you need when you need it. This is done through [lazy-loading](../2021/media#lazy-loading) and <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">most browsers now support this natively</a>. Not all users will scroll your page in its entirety so you should avoid loading images that might never be seen by the current user. As such, this is a quick win for sustainability and your users.
+An easy way to get a faster first load is to load images progressively: only load what you need when you need it. This is done through [lazy-loading](./media#lazy-loading) and <a hreflang="en" href="https://caniuse.com/loading-lazy-attr">most browsers now support this natively</a>. Not all users will scroll your page in its entirety so you should avoid loading images that might never be seen by the current user. As such, this is a quick win for sustainability and your users.
 
 {{ figure_markup(
   image="native-lazy-loading-usage.png",
@@ -434,7 +434,7 @@ Third-party requests account for 45% of all requests, with 94% of mobile website
   content="91%",
   classes="big-number",
   sheets_gid="951750086",
-  sql_file="percent_of_websites_with_third_party.sql"
+  sql_file="../third-parties/percent_of_websites_with_third_party.sql"
 )
 }}
 
@@ -455,7 +455,7 @@ The chart above shows the percentage of third-party requests served from green h
 
 As we have seen, most third-party requests are being served from green hosting. However, there is still room for improvement, especially for higher ranked sites. If you are interested in the sustainability of third-party services used on your website, <a hreflang="en" href="https://aremythirdpartiesgreen.com/">Are my third parties green?</a> is an online testing tool, directory, and API that can help you get started. _For the sake of transparency, it should be noted that this tool was created by one of the chapter authors._
 
-Beyond hosting, we should also be considering the impact of data transfer for third parties. While providers of third-party services make it relatively easy to integrate their content on another website, that doesn't mean it is always optimized to reduce the amount of data being transferred. For example, the [Third Party](/third-party) chapter of the 2022 Almanac uncovered that:
+Beyond hosting, we should also be considering the impact of data transfer for third parties. While providers of third-party services make it relatively easy to integrate their content on another website, that doesn't mean it is always optimized to reduce the amount of data being transferred. For example, the [Third Parties](./third-parties) chapter of the 2022 Almanac uncovered that:
 
 > Google fonts are the most-popular third party on mobile devices being used by 62.6% of all websites. The CSS they provide is not minified. The data shows the average page which has Google Fonts could save 13.3 KB from minifying it.
 
@@ -641,7 +641,7 @@ The charts below show the median page weight of the top five most popular eComme
   description="A bar chart showing that the median weight for Next.js pages is 2,387 KB on desktop and 2,064 KB on mobile. For Nuxt.js it's 2,877 KB on desktop and 2,210 KB on mobile. For Gatsby it's 2,049 KB on desktop and 1,731 KB on mobile. For Hugo it's 870 KB on desktop and 1,088 KB on mobile. For Jekyll it's 662 KB on desktop and 781 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvn7rDUZ96mbcJGd-R-gGdofTptGuReAxtTp-jYGUPpXaDO11ef2LjXz_aj-bk7wIA3gvFbEX_El-e/pubchart?oid=1545025671&format=interactive",
   sheets_gid="613315308",
-  sql_file="./sustainability/ssg_bytes_per_type.sql"
+  sql_file="ssg_bytes_per_type.sql"
 ) }}
 
 Of interest here is that all but three of the platforms/tools listed have a median mobile page weight that is less than the overall median (2,019 KB). These are all in the static site generator category, and especially in the case of Hugo and Jekyll, it can likely be attributed to the kinds of websites these tools are used to create—namely mostly blog and textual content, with much less reliance on JavaScript. It should also be noted that SSGs are often used with performance in mind, which makes them more likely to be further optimized than the average website using a CMS only for commodity reasons.

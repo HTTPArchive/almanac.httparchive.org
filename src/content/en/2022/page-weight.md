@@ -10,7 +10,7 @@ editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1JvJMiRsL6T9m_NEBHFh-rrQmU5a-ufdOKriSJbrEN8M/
 fellowhuman1101_bio: Jamie Indigo isn't a robot, but speaks bot. As a technical SEO at <a hreflang="en" href="https://www.deepcrawl.com">DeepCrawl</a>, they study how search engines crawl, render, and index the web. They love to tame wild JavaScript and optimize rendering strategies. When not working, Jamie likes horror movies, graphic novels, and Dungeons & Dragons.
-dwsmart_bio: Dave Smart is a developer and technical search engine consultant at <a hreflang="en" href="https://tamthebots.com">Tame the Bots</a>. They love building tools and experimenting with the modern web, and can often be found at the front in a gig or two.
+dwsmart_bio: Dave Smart is a developer and technical search engine consultant at <a hreflang="en" href="https://tamethebots.com">Tame the Bots</a>. They love building tools and experimenting with the modern web, and can often be found at the front in a gig or two.
 featured_quote: In 2022, page weight continued the trend of growing larger and larger, despite the opportunities to reduce the size of pages available.
 featured_stat_1: 110 MB
 featured_stat_label_1: The largest weight of fonts loaded on mobile page
@@ -141,7 +141,7 @@ In 2021, the 100th percentile of mobile sites used 20,452 kilobytes of font file
 
 However, the 100th percentile—while fun to investigate—will always show the worst of the web. At the 90th percentile, the mobile font weight was less extreme—though still large—401 kilobytes.
 
-More insights into the typographical nature of the web can be found in the [Fonts](./2021/third-parties) chapter.
+More insights into the typographical nature of the web can be found in the [Fonts](./fonts) chapter.
 
 ## Page weight by the numbers
 
@@ -431,9 +431,9 @@ Unlike compression, there's no overhead on the client side to minification, reso
 
 Caching allows a resource to be reused until a specified expiration. Caches are used in browsers and on servers.
 
-CDNs are a popular example. These interconnected servers are geographically distributed in order to send cached content from a network location closest to the user.
+CDNs are a popular example. These interconnected servers are geographically distributed in order to send cached content from a network location closest to the user. CDNs do not reduce page weight but rather reduce the delay by reducing the distance between requestor and resource.
 
-CDNs do not reduce page weight but rather reduce the delay by reducing the distance between requestor and resource. As such, we did not investigate these in this chapter, but both [Caching](../2021/caching) and [CDNs](../2021/cdn) were covered in more detail in last year's Web Almanac.
+As such, we did not investigate this in this chapter, but the [CDN](./cdn) chapter covers this in more detail and last year's [Caching](../2021/cdn) chapter gives more detail on that.
 
 ## Conclusion
 
